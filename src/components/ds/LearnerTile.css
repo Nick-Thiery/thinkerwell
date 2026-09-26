@@ -1,0 +1,98 @@
+.tw-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  width: var(--tile-size, 172px);
+  min-height: var(--tile-size, 172px);
+  flex: none;
+  padding: var(--space-5);
+  box-sizing: border-box;
+  border-radius: var(--radius-xl);
+  background: var(--paper);
+  border: 2px solid var(--paper);
+  font-family: var(--font-body);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: center;
+}
+
+.tw-tile:hover {
+  border-color: var(--ink);
+}
+
+.tw-tile[aria-pressed='true'] {
+  border-color: var(--ink);
+  box-shadow: 0 0 0 4px var(--lemon);
+}
+
+.tw-tile-name {
+  font-family: var(--font-display);
+  font-size: 21px;
+  line-height: 25px;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+.tw-tile-meta {
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--ink-muted);
+}
+
+.tw-tile-new {
+  background: transparent;
+  border: 2px dashed var(--ink);
+}
+
+.tw-tile-new .tw-avatar {
+  background: var(--paper);
+}
+
+/* Small, deliberate duplication of bundle.css's Avatar rules: LearnerTile
+   keeps its own copy of the Avatar helper (per the phase-2 instructions)
+   rather than importing SiteHeader's, so its CSS is duplicated here too. */
+.tw-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--ink);
+  flex: none;
+}
+
+.tw-avatar-lg {
+  width: 64px;
+  height: 64px;
+  font-size: 30px;
+}
+
+.tw-tone-lemon {
+  background: var(--lemon);
+}
+
+.tw-tone-lavender {
+  background: var(--lavender);
+}
+
+.tw-tone-history {
+  background: var(--sec-history);
+}
+
+.tw-tone-geography {
+  background: var(--sec-geography);
+}
+
+.tw-tone-civics {
+  background: var(--sec-civics);
+}
+
+.tw-tone-culture {
+  background: var(--sec-culture);
+}

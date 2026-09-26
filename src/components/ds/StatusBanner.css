@@ -1,0 +1,35 @@
+.tw-status {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-block: var(--space-3);
+  padding-inline: var(--space-5);
+  border-radius: var(--radius-lg);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.tw-status svg {
+  flex: none;
+}
+
+.tw-status-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.tw-status-offline {
+  background: var(--ink);
+  color: var(--on-ink);
+}
+
+.tw-status-back {
+  background: var(--correct-soft);
+  color: var(--ink);
+}
+
+.tw-status-info {
+  background: var(--lavender-wash);
+  color: var(--ink);
+  border: 1px solid var(--line);
+}

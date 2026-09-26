@@ -1,0 +1,32 @@
+/* Segmented control: Standard | Simpler, Write | Starters | Plan, ... */
+.tw-seg {
+  display: inline-flex;
+  padding: 4px;
+  gap: 4px;
+  border-radius: var(--radius-pill);
+  background: var(--paper);
+  border: 2px solid var(--line-strong);
+}
+
+.tw-seg button {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  /* CLAUDE.md: every tap target is at least 44px (target-min), even though
+     the reference bundle draws this pill at 40px. */
+  min-height: var(--target-min);
+  padding-inline: var(--space-4);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--ink-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.tw-seg button[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--on-ink);
+}

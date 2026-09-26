@@ -1,0 +1,46 @@
+/* Voice button ("Say it" dictation) */
+.tw-voice {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--target-min);
+  padding-block: 0;
+  padding-inline: 6px var(--space-4);
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--line-strong);
+  background: var(--paper);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.tw-voice-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--lavender);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.tw-voice-on {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--on-ink);
+}
+
+.tw-voice-on .tw-voice-dot {
+  background: var(--lemon);
+  color: var(--ink);
+  animation: tw-pulse 1.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tw-voice-on .tw-voice-dot {
+    animation: none;
+  }
+}

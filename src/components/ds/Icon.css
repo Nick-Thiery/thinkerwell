@@ -1,0 +1,11 @@
+.tw-icon {
+  display: inline-block;
+  flex: none;
+  vertical-align: middle;
+}
+
+/* Icons that point along the reading direction (arrows, ChevronRight, LogOut)
+   mirror in right-to-left; see ds/icons.ts DIRECTIONAL_ICONS. */
+[dir='rtl'] .tw-icon-directional {
+  transform: scaleX(-1);
+}

@@ -1,0 +1,43 @@
+.tw-term-wrap {
+  position: relative;
+  display: inline;
+}
+
+.tw-term {
+  position: relative;
+  font: inherit;
+  display: inline;
+  padding: 0 2px;
+  margin: 0;
+  border: 0;
+  background: var(--lavender-wash);
+  color: var(--violet);
+  font-weight: 700;
+  border-block-end: 2px dotted var(--violet);
+  border-radius: 4px 4px 0 0;
+  cursor: pointer;
+  line-height: inherit;
+}
+
+/*
+ * A glossary word sitting inside a sentence is exempt from CLAUDE.md's 44px
+ * tap target rule under WCAG 2.5.8 (inline text targets), but it's still
+ * one of the most-tapped controls for a learner reading on a tablet. This
+ * invisible pseudo-element grows the hit area to 44px tall without
+ * affecting the line's own height or the word's layout.
+ */
+.tw-term::before {
+  content: '';
+  position: absolute;
+  inset-inline: -2px;
+  inset-block-start: 50%;
+  block-size: max(44px, 100%);
+  transform: translateY(-50%);
+}
+
+.tw-term[aria-expanded='true'] {
+  background: var(--lavender);
+  color: var(--ink);
+  border-block-end-style: solid;
+  border-block-end-color: var(--ink);
+}

@@ -1,0 +1,162 @@
+.tw-stages {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tw-stages li {
+  display: flex;
+  align-items: center;
+}
+
+.tw-stages li + li::before {
+  content: '';
+  width: 20px;
+  height: 2px;
+  background: var(--line-strong);
+  flex: none;
+}
+
+.tw-stages li.tw-done + li::before {
+  background: var(--ink);
+}
+
+.tw-step {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: var(--target-min);
+  padding-block: 0;
+  padding-inline: 6px var(--space-4);
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--line-strong);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.tw-step-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--canvas);
+  color: var(--ink);
+  flex: none;
+}
+
+.tw-step[aria-current='step'] {
+  background: var(--ink);
+  color: var(--on-ink);
+  border-color: var(--ink);
+}
+
+.tw-step[aria-current='step'] .tw-step-mark {
+  background: var(--lemon);
+  color: var(--ink);
+}
+
+.tw-done .tw-step {
+  border-color: var(--ink);
+}
+
+.tw-done .tw-step-mark {
+  background: var(--ink);
+  color: var(--lemon);
+}
+
+.tw-stages-vertical {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+}
+
+.tw-stages-vertical li {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Real one to catch when porting: bundle.css's `margin-left: 27px` becomes
+   `margin-inline-start`, so the vertical connector still sits under the
+   round step marker (not its mirror) in right-to-left. */
+.tw-stages-vertical li + li::before {
+  width: 2px;
+  height: 14px;
+  margin-inline-start: 27px;
+}
+
+.tw-stages-vertical .tw-step {
+  width: 100%;
+  box-sizing: border-box;
+  padding-block: 6px;
+  padding-inline: 6px var(--space-3);
+  border-radius: var(--radius-lg);
+  min-block-size: 56px;
+}
+
+.tw-step-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  text-align: start;
+}
+
+.tw-step-sub {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  color: var(--ink-muted);
+}
+
+.tw-step[aria-current='step'] .tw-step-sub {
+  color: var(--on-ink-muted);
+}
+
+.tw-stages-compact .tw-step {
+  padding-inline: 6px;
+}
+
+.tw-stages-compact .tw-step-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.tw-stages-compact .tw-step[aria-current='step'] {
+  padding-inline-end: var(--space-4);
+}
+
+.tw-stages-compact .tw-step[aria-current='step'] .tw-step-label {
+  position: static;
+  width: auto;
+  height: auto;
+  clip-path: none;
+}
+
+.tw-stages-compact li + li::before {
+  width: 12px;
+}
+
+.tw-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}

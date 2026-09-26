@@ -1,0 +1,63 @@
+.tw-continue {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-6);
+  align-items: center;
+  padding: var(--space-8);
+  border-radius: var(--radius-2xl);
+  background: var(--lemon);
+  color: var(--ink);
+}
+
+.tw-continue-eyebrow {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.tw-continue-title {
+  margin-block: var(--space-2) var(--space-3);
+  font-family: var(--font-display);
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.tw-continue-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.tw-continue .tw-dots li {
+  background: rgb(255 255 255 / 70%);
+  box-shadow: inset 0 0 0 2px var(--ink);
+}
+
+.tw-continue .tw-dots li.tw-done {
+  background: var(--ink);
+}
+
+.tw-continue .tw-dots li.tw-now {
+  background: var(--paper);
+}
+
+@media (max-width: 600px) {
+  .tw-continue {
+    grid-template-columns: 1fr;
+    padding: var(--space-6);
+    gap: var(--space-4);
+  }
+
+  .tw-continue-title {
+    font-size: 28px;
+    line-height: 32px;
+  }
+}

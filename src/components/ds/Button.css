@@ -1,0 +1,97 @@
+/* Button: one primary (ink) button per view; four other variants. */
+.tw-btn {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--target-min);
+  padding-inline: var(--space-5);
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.1s ease;
+}
+
+.tw-btn:active {
+  transform: translateY(1px);
+}
+
+.tw-btn-lg {
+  min-height: var(--control-lg);
+  padding-inline: var(--space-6);
+  font-size: 18px;
+  border-radius: var(--radius-md);
+}
+
+.tw-btn-block {
+  display: flex;
+  inline-size: 100%;
+}
+
+.tw-btn-primary {
+  background: var(--ink);
+  color: var(--on-ink);
+}
+
+.tw-btn-primary:hover {
+  background: var(--ink-hover);
+}
+
+.tw-btn-secondary {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.tw-btn-secondary:hover {
+  background: var(--lavender-wash);
+}
+
+.tw-btn-support {
+  background: var(--lavender);
+  color: var(--ink);
+}
+
+.tw-btn-support:hover {
+  background: var(--lavender-hover);
+}
+
+.tw-btn-lemon {
+  background: var(--lemon);
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.tw-btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  padding-inline: var(--space-3);
+}
+
+.tw-btn-ghost:hover {
+  background: rgb(15 14 14 / 6%);
+}
+
+.tw-btn[disabled],
+.tw-btn[aria-disabled='true'] {
+  background: var(--disabled);
+  color: var(--ink-soft);
+  border-color: transparent;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tw-btn {
+    transition: none;
+  }
+}

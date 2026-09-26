@@ -1,0 +1,64 @@
+.tw-def {
+  box-sizing: border-box;
+  width: 320px;
+  max-width: 100%;
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  box-shadow: var(--shadow-pop);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  color: var(--ink);
+  text-align: start;
+}
+
+.tw-def-float {
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: calc(100% + 8px);
+  z-index: 5;
+  width: 320px;
+  max-width: none;
+}
+
+.tw-def-word {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 600;
+}
+
+.tw-def-text {
+  display: block;
+  margin: 0;
+  font-size: 17px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+.tw-def-ex {
+  display: block;
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--ink-muted);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.tw-def-listen {
+  align-self: flex-start;
+}
+
+@media (max-width: 600px) {
+  .tw-def-float {
+    width: 280px;
+  }
+}
