@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <!--
+      Dev only. Never linked from index.html and never added to vite.config.ts's
+      build entries, so `vite build` cannot discover it and it does not reach
+      dist/ (see README.md, "Dev tooling"). Renders every component of the
+      ORIGINAL design-system reference bundle in a representative state, for
+      /dev/reference (an iframe) to compare against the port, /dev/components.
+    -->
+    <title>Reference components (dev only)</title>
+  </head>
+  <body>
+    <div id="frame-root"></div>
+    <script type="module" src="/src/dev/screen-frame/reference-main.tsx"></script>
+  </body>
+</html>
