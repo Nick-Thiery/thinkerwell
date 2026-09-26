@@ -5,7 +5,7 @@
     "csstools/use-logical": [
       "always",
       {
-        "except": ["top", "bottom", "margin-top", "margin-bottom", "padding-top", "padding-bottom", "border-top", "border-bottom", "width", "height", "min-width", "min-height", "max-width", "max-height"]
+        "except": ["width", "height", "min-width", "min-height", "max-width", "max-height"]
       }
     ],
     "declaration-property-value-disallowed-list": {

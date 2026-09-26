@@ -10,6 +10,21 @@ export default defineConfig({
   server: {
     // Content lives outside src/ (content/*.json) and is read at build time.
     fs: { allow: ['.'] },
+    watch: {
+      // Other agents' scratch files (.build-review/) and build output
+      // (dist/) aren't source: watching them causes unrelated full-page
+      // reloads (and, worse, mid-render blanks) while several agents work
+      // in this repo at once.
+      ignored: ['**/.build-review/**', '**/dist/**'],
+    },
+  },
+  // The dev-only reference viewer (src/dev) pulls in lucide-react (all its
+  // icons are its own modules), which Vite only discovers by crawling — so
+  // the first request to /dev/components or /dev/screens/* triggers a
+  // dependency re-optimize and a full reload. Listing it here avoids that
+  // reload racing a page's first render (and Playwright's wait for it).
+  optimizeDeps: {
+    include: ['lucide-react'],
   },
   build: {
     target: 'es2022',
