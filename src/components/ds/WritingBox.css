@@ -1,0 +1,56 @@
+/* Writing box: a labelled text area for writing and reflections */
+.tw-writing {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-writing label {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.tw-writing label .tw-optional {
+  font-weight: 400;
+  color: var(--ink-muted);
+}
+
+.tw-writing-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.tw-writing textarea {
+  font-family: var(--font-body);
+  font-size: 19px;
+  line-height: 30px;
+  color: var(--ink);
+  padding-block: var(--space-4);
+  padding-inline: var(--space-5);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--line-strong);
+  background: var(--paper);
+  resize: vertical;
+  min-height: 140px;
+  box-sizing: border-box;
+  inline-size: 100%;
+}
+
+.tw-writing textarea::placeholder {
+  color: var(--ink-soft);
+}
+
+/* Shared with TextField's helper line (docs/design-system/components/TextField.md). */
+.tw-help {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ink-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}

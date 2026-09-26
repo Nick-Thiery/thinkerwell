@@ -46,5 +46,138 @@
   },
   "dev": {
     "rtlOn": "Right-to-left test mode is on. Add ?dir=ltr to the address to turn it off."
+  },
+  "ds": {
+    "chrome": {
+      "logo": {
+        "homeLabel": "Thinkerwell home"
+      },
+      "siteHeader": {
+        "switchLearner": "Switch learner, current: {name}",
+        "openMenu": "Open navigation menu"
+      },
+      "stagePath": {
+        "navLabel": "Lesson steps",
+        "doneSuffix": ", done"
+      },
+      "stageDots": {
+        "progressLabel": "{count} of 5 steps done"
+      },
+      "progressRing": {
+        "ariaLabel": "{value} of {max} done",
+        "valueLabel": "{value}/{max}"
+      }
+    },
+    "course": {
+      "sectionName": {
+        "history": "History & Human Stories",
+        "geography": "Geography & Our Environment",
+        "culture": "Culture, Society & Identity",
+        "civics": "Civics, Media & Everyday Economics"
+      },
+      "sectionBadge": {
+        "eyebrow": "Section {number}"
+      },
+      "sectionHeader": {
+        "eyebrow": "Section {number}",
+        "eyebrowWithTotal": {
+          "one": "Section {number} · {count} lesson",
+          "other": "Section {number} · {count} lessons"
+        }
+      },
+      "lessonRow": {
+        "cta": {
+          "start": "Start",
+          "continue": "Continue",
+          "review": "Review"
+        },
+        "status": {
+          "notStarted": "Not started.",
+          "inProgress": "In progress.",
+          "completed": "Completed."
+        },
+        "ariaLabelLesson": "Lesson {number}: {title}. {status} {cta}",
+        "ariaLabelQuiz": "{title}. {status} {cta}"
+      },
+      "continueCard": {
+        "label": "Continue learning",
+        "eyebrow": "Pick up where you left off",
+        "cta": "Continue"
+      },
+      "journalEntry": {
+        "lessonLine": "Lesson {number} · {title}",
+        "kindWriting": "Writing",
+        "kindReflection": "Reflection",
+        "saved": "Saved {date}",
+        "edit": "Edit"
+      },
+      "scoreSummary": {
+        "skillResult": "{got} of {of}"
+      }
+    },
+    "content": {
+      "task": {
+        "defaultEyebrow": "Your task"
+      },
+      "definition": {
+        "close": "Close",
+        "hearIt": "Hear it",
+        "meaningOf": "Meaning of {word}"
+      },
+      "evidence": {
+        "fictional": "Fictional example created for this lesson."
+      },
+      "option": {
+        "correct": "Correct",
+        "notQuite": "Not quite"
+      },
+      "feedback": {
+        "correctTitle": "Correct",
+        "retryTitle": "Not quite yet"
+      },
+      "field": {
+        "optional": "(optional)"
+      },
+      "reading": {
+        "part": "Part {n} of {total}"
+      },
+      "video": {
+        "optional": "Optional",
+        "watchLabel": "Watch the video",
+        "readInsteadDefault": "Read instead",
+        "captionsDefault": "Captions not checked yet"
+      }
+    },
+    "actions": {
+      "voiceButton": {
+        "sayIt": "Say it",
+        "stop": "Stop"
+      },
+      "listenBar": {
+        "label": "Reading aloud",
+        "play": "Play",
+        "pause": "Pause",
+        "stop": "Stop",
+        "speedLabel": "Speed",
+        "slow": "Slow",
+        "normal": "Normal"
+      },
+      "voiceRecorder": {
+        "title": "Record yourself",
+        "note": "Your recording stays on this device. Nobody else hears it.",
+        "startRecording": "Start recording",
+        "stop": "Stop",
+        "recording": "Recording {time}",
+        "listenBack": "Listen back",
+        "recordAgain": "Record again",
+        "delete": "Delete"
+      },
+      "writingBox": {
+        "optional": "(optional)"
+      },
+      "actionBar": {
+        "continue": "Continue"
+      }
+    }
   }
 }

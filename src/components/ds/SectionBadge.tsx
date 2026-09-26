@@ -1,0 +1,52 @@
+import type { CSSProperties } from 'react';
+import { useI18n } from '../../i18n';
+import { Icon } from './Icon';
+import { cx } from './internal/cx';
+import type { IconName, SectionId } from './types';
+import './SectionBadge.css';
+
+/**
+ * Each section's icon. The full names have a default (README's four section
+ * names) that lives in i18n as `ds.course.sectionName.<id>`; a caller
+ * building a real page passes the actual title from content/course.json
+ * through `name` instead.
+ */
+const SECTION_ICONS: Record<SectionId, IconName> = {
+  history: 'Landmark',
+  geography: 'Map',
+  culture: 'Palette',
+  civics: 'Scale',
+};
+
+export interface SectionBadgeProps {
+  section: SectionId;
+  number?: number;
+  name?: string;
+  showName?: boolean;
+  size?: number;
+  /** Not in the reference's index.d.ts, but bundle.js applies it (cx(..., props.className)); kept for callers that need to extend layout. */
+  className?: string;
+  style?: CSSProperties;
+}
+
+/** A section's tinted disc and icon, with its number and name (docs/design-system/components/SectionBadge.md). */
+export function SectionBadge({ section, number, name, showName = true, size, className, style }: SectionBadgeProps) {
+  const { t } = useI18n();
+  const icon = SECTION_ICONS[section] ?? SECTION_ICONS.history;
+  const discStyle: CSSProperties | undefined = size ? { width: size, height: size } : undefined;
+  return (
+    <span className={cx('tw-secbadge', className)} style={style}>
+      <span className={cx('tw-secdisc', `tw-sec-${section || 'history'}`)} style={discStyle}>
+        <Icon name={icon} size={size ? Math.round(size * 0.5) : 24} />
+      </span>
+      {showName !== false && (
+        <span className="tw-secbadge-text">
+          {number ? (
+            <span className="tw-secbadge-eyebrow">{t('ds.course.sectionBadge.eyebrow', { number })}</span>
+          ) : null}
+          <span className="tw-secbadge-name">{name || t(`ds.course.sectionName.${section}`)}</span>
+        </span>
+      )}
+    </span>
+  );
+}

@@ -1,0 +1,83 @@
+/*
+ * Shared, cross-component pieces of the design system: keyframes used by
+ * more than one component's own stylesheet. Everything else lives next to
+ * its component (src/components/ds/<Name>.css), imported by <Name>.tsx.
+ *
+ * Focus rings are not redeclared here: src/styles/global.css already gives
+ * every control a 3px violet :focus-visible ring site-wide.
+ */
+
+/* Mascot's gentle float (Mascot, MascotTip). */
+@keyframes tw-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* The recording dot and the listening mic disc (VoiceButton, VoiceRecorder). */
+@keyframes tw-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.tw-float {
+  animation: tw-float 3s ease-in-out infinite;
+}
+
+/*
+ * Shared across components that don't otherwise import each other's CSS:
+ * DefinitionCard's close button (SiteHeader also has one), the round icon
+ * disc (SectionBadge and SectionHeader both show one, each overriding its
+ * size) and the small caps "eyebrow" label above a section name (same two
+ * components). Kept here, not in either component's own file, so a
+ * code-split chunk that pulls in only one of them still gets full styling.
+ */
+.tw-menu-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-pill);
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.tw-secdisc {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.tw-secbadge-eyebrow {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tw-float,
+  .tw-pulse {
+    animation: none;
+  }
+}

@@ -1,0 +1,25 @@
+.tw-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: var(--target-min);
+  color: var(--ink);
+  text-decoration: none;
+  /* Never shrunk by a flex parent (SiteHeader): the wordmark must not run
+     under the nav when the header is narrower than its content. */
+  flex: none;
+}
+
+.tw-logo img {
+  display: block;
+  object-fit: contain;
+}
+
+.tw-logo span {
+  font-family: var(--font-wordmark);
+  font-size: 22px;
+  line-height: 24px;
+  font-weight: 500;
+  position: relative;
+  inset-block-start: 2px;
+}

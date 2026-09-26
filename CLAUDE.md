@@ -22,10 +22,10 @@ A free social-studies course, "Exploring Our World": 24 lessons in 4 sections, e
 - On-device storage: IndexedDB through a small typed wrapper (`idb`).
 - Offline: `vite-plugin-pwa` (Workbox) precaches the app, content and images. YouTube is never cached.
 - Content validation: `zod` schemas in `src/content/schema.ts`, checked by a test.
-- Tests: Vitest for logic and content, Playwright for end-to-end runs at 390, 820 and 1280px wide.
+- Tests: Vitest for logic, content and component behaviour (Testing Library), Playwright for end-to-end runs at 390, 820 and 1280px wide. A second, dev-only Playwright config (`playwright.dev.config.ts`, `npm run test:e2e:dev`) checks the `/dev/*` routes, which exist only in `npm run dev` and never reach `dist/`.
 - Later (not phase 1): Vercel Functions for `POST /api/events` and a Postgres database for pilot measurement. See `docs/research/MEASUREMENT_PLAN.md`.
 
-Commands: `npm run dev` (dev server; add `?dir=rtl` to any URL to check right-to-left), `npm run build`, `npm run typecheck`, `npm run lint` (ESLint and Stylelint), `npm test` (Vitest), `npm run test:e2e` (Playwright; run `npm run test:e2e:install` once), `npm run check:content` (lesson checker; run `sh scripts/setup-python.sh` once for wordfreq).
+Commands: `npm run dev` (dev server; add `?dir=rtl` to any URL to check right-to-left), `npm run build`, `npm run typecheck`, `npm run lint` (ESLint and Stylelint), `npm test` (Vitest), `npm run test:e2e` (Playwright; run `npm run test:e2e:install` once), `npm run test:e2e:dev` (Playwright against the dev-only `/dev/*` routes; see README.md), `npm run check:content` (lesson checker; run `sh scripts/setup-python.sh` once for wordfreq).
 
 ## Where things live
 

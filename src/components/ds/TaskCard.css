@@ -1,0 +1,42 @@
+.tw-task {
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  background: var(--lemon-soft);
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-task-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.tw-task-body {
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 500;
+  text-wrap: pretty;
+}
+
+.tw-task-body p {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .tw-task {
+    padding: var(--space-5);
+  }
+
+  .tw-task-body {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}

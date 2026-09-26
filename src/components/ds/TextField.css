@@ -1,0 +1,46 @@
+.tw-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-field label {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.tw-field label .tw-optional {
+  font-weight: 400;
+  color: var(--ink-muted);
+}
+
+.tw-field input {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--ink);
+  min-height: 52px;
+  padding-inline: var(--space-4);
+  border-radius: var(--radius-md);
+  border: 2px solid var(--line-strong);
+  background: var(--paper);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.tw-field input::placeholder {
+  color: var(--ink-soft);
+}
+
+/* Shared with WritingBox (src/components/ds/WritingBox.css also declares this
+   for its own textarea); identical rule, harmless if both stylesheets load. */
+.tw-help {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ink-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}

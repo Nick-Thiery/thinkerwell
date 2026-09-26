@@ -98,9 +98,11 @@ a {
   outline: none;
 }
 
-/* Headings and regions that receive focus from code (tabindex="-1") after a
-   page change are not controls, so they get no ring. */
-[tabindex="-1"]:focus {
+/* Headings and the <main> landmark receive focus from code (tabindex="-1")
+   after a page change; they are not controls, so they get no ring. Scoped to
+   these elements only, so a real control never loses its focus ring by
+   picking up tabindex="-1" (for example while temporarily inert). */
+:is(main, h1, h2, h3)[tabindex="-1"]:focus {
   outline: none;
 }
 

@@ -1,0 +1,64 @@
+.tw-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+  padding-block: 3px;
+  padding-inline: 10px;
+  border-radius: var(--radius-pill);
+  background: var(--canvas);
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.tw-badge-lemon {
+  background: var(--lemon);
+}
+
+.tw-badge-lavender {
+  background: var(--lavender);
+}
+
+.tw-badge-outline {
+  background: var(--paper);
+  box-shadow: inset 0 0 0 1.5px var(--line-strong);
+  color: var(--ink-muted);
+}
+
+.tw-badge-correct {
+  background: var(--correct-soft);
+  color: var(--correct);
+}
+
+.tw-badge-retry {
+  background: var(--retry-soft);
+  color: var(--retry);
+}
+
+.tw-badge-ink {
+  background: var(--ink);
+  color: var(--on-ink);
+}
+
+.tw-badge-history {
+  background: var(--sec-history);
+  color: var(--sec-history-ink);
+}
+
+.tw-badge-geography {
+  background: var(--sec-geography);
+  color: var(--sec-geography-ink);
+}
+
+.tw-badge-culture {
+  background: var(--sec-culture);
+  color: var(--sec-culture-ink);
+}
+
+.tw-badge-civics {
+  background: var(--sec-civics);
+  color: var(--sec-civics-ink);
+}

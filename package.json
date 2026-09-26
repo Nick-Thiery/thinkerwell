@@ -18,6 +18,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "PLAYWRIGHT_BROWSERS_PATH=0 playwright test",
+    "test:e2e:dev": "PLAYWRIGHT_BROWSERS_PATH=0 playwright test --config=playwright.dev.config.ts",
     "test:e2e:install": "PLAYWRIGHT_BROWSERS_PATH=0 playwright install chromium",
     "check:content": "sh scripts/check-content.sh"
   },

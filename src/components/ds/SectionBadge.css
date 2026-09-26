@@ -1,0 +1,44 @@
+/* .tw-secdisc's base rule lives in ds.css (shared, globally loaded):
+   SectionHeader uses the same class without importing this file. */
+
+.tw-sec-history {
+  background: var(--sec-history);
+  color: var(--sec-history-ink);
+}
+
+.tw-sec-geography {
+  background: var(--sec-geography);
+  color: var(--sec-geography-ink);
+}
+
+.tw-sec-culture {
+  background: var(--sec-culture);
+  color: var(--sec-culture-ink);
+}
+
+.tw-sec-civics {
+  background: var(--sec-civics);
+  color: var(--sec-civics-ink);
+}
+
+.tw-secbadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.tw-secbadge-text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .tw-secbadge-eyebrow lives in ds.css (shared, globally loaded):
+   SectionHeader uses the same class without importing this file. */
+
+.tw-secbadge-name {
+  font-family: var(--font-display);
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: 600;
+  color: var(--ink);
+}

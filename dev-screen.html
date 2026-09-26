@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <!--
+      Dev only. Never linked from index.html and never added to vite.config.ts's
+      build entries, so `vite build` cannot discover it and it does not reach
+      dist/ (see README.md, "Dev tooling"). Renders one docs/screens/*.dc.html
+      file (?name=<Name>) against the ORIGINAL design-system reference bundle,
+      isolated from the app's own CSS. Opened by /dev/screens/:name (an iframe)
+      or directly, e.g. /dev-screen.html?name=Main.
+    -->
+    <title>Screen reference (dev only)</title>
+  </head>
+  <body>
+    <div id="frame-root"></div>
+    <script type="module" src="/src/dev/screen-frame/screen-main.tsx"></script>
+  </body>
+</html>

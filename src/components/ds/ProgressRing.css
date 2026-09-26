@@ -1,0 +1,30 @@
+.tw-ring {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.tw-ring svg {
+  display: block;
+  transform: rotate(-90deg);
+}
+
+.tw-ring-track {
+  stroke: var(--line);
+}
+
+.tw-ring-fill {
+  stroke: var(--ink);
+  stroke-linecap: round;
+}
+
+.tw-ring-label {
+  position: absolute;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--ink);
+  text-align: center;
+  line-height: 1;
+}

@@ -66,11 +66,17 @@ export default tseslint.config(
     },
   },
   {
-    files: ['*.config.{js,ts}', 'e2e/**/*.ts', 'scripts/**/*.{js,mjs}'],
+    files: ['*.config.{js,ts}', 'e2e/**/*.ts', 'e2e-dev/**/*.ts', 'scripts/**/*.{js,mjs}', 'tools/**/*.{js,mjs}'],
     languageOptions: { globals: globals.node },
   },
   {
-    files: ['eslint.config.js'],
+    // tools/shoot.mjs runs in Node (Playwright) but also passes callbacks to
+    // page.evaluate() that execute in the browser, so it needs both globals.
+    files: ['tools/**/*.{js,mjs}'],
+    languageOptions: { globals: { ...globals.node, ...globals.browser } },
+  },
+  {
+    files: ['eslint.config.js', 'tools/**/*.{js,mjs}'],
     ...tseslint.configs.disableTypeChecked,
   },
 );

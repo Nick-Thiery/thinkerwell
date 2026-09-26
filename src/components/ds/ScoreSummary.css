@@ -1,0 +1,56 @@
+.tw-score {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.tw-score-skills {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tw-score-skill {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 140px auto;
+  gap: var(--space-4);
+  align-items: center;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.tw-score-skill .tw-bar-track {
+  height: 12px;
+}
+
+.tw-score-skill b {
+  font-variant-numeric: tabular-nums;
+  min-width: 3.5ch;
+  text-align: end;
+}
+
+/* Bar track/fill: ScoreSummary reuses ProgressBar's classes (bundle.js does
+   the same) but doesn't import the ProgressBar component, so its CSS module
+   isn't pulled in as a side effect. This copy matches ProgressBar.css
+   exactly; harmless if both load on a page that also uses ProgressBar. */
+.tw-bar-track {
+  height: 10px;
+  border-radius: var(--radius-pill);
+  background: var(--line);
+  overflow: hidden;
+}
+
+.tw-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: var(--ink);
+}
+
+@media (max-width: 600px) {
+  .tw-score-skill {
+    grid-template-columns: minmax(0, 1fr) 90px auto;
+  }
+}

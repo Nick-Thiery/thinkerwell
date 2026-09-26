@@ -1,0 +1,150 @@
+.tw-header {
+  background: var(--lemon);
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  box-sizing: border-box;
+}
+
+/*
+ * The centering column lives here, not on `.tw-header` itself, so its
+ * padding-inline tracks src/app/app.css's `.tw-shell-main` breakpoints
+ * (space-4 / space-8 at 820px / space-10 at 1280px) exactly: the logo's
+ * start edge then lines up with the page content column at every width.
+ */
+.tw-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  box-sizing: border-box;
+  min-block-size: 68px;
+  padding-block: 10px;
+  padding-inline: var(--space-4);
+  max-inline-size: var(--page-max);
+  margin-inline: auto;
+}
+
+.tw-header-compact .tw-header-inner {
+  min-block-size: 60px;
+}
+
+@media (min-width: 820px) {
+  .tw-header-inner {
+    padding-inline: var(--space-8);
+  }
+}
+
+@media (min-width: 1280px) {
+  .tw-header-inner {
+    padding-inline: var(--space-10);
+  }
+}
+
+@media (max-width: 600px) {
+  .tw-header-inner {
+    padding-block: 8px;
+    padding-inline: var(--space-4);
+    min-block-size: 60px;
+  }
+}
+
+.tw-header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.tw-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.tw-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: var(--target-min);
+  padding-inline: 14px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  /* A shrinking flex ancestor would otherwise wrap "My journal" and "For
+     educators" onto a second line before the header runs out of room. */
+  white-space: nowrap;
+}
+
+.tw-nav a:hover {
+  background: rgb(15 14 14 / 8%);
+}
+
+.tw-nav a[aria-current='page'] {
+  background: var(--ink);
+  color: var(--on-ink);
+}
+
+.tw-learner-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: var(--target-min);
+  padding-block: 0;
+  padding-inline: 4px var(--space-3);
+  border-radius: var(--radius-pill);
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  white-space: nowrap;
+  /* Never shrunk or squeezed by its flex siblings (the nav). */
+  flex: none;
+}
+
+.tw-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--ink);
+  flex: none;
+}
+
+/* Small, deliberate duplication of bundle.css's tone rules (also copied into
+   LearnerTile's own stylesheet by the ds-course sub-task) rather than a
+   cross-file dependency between the two Avatar helpers. */
+.tw-tone-lemon {
+  background: var(--lemon);
+}
+
+.tw-tone-lavender {
+  background: var(--lavender);
+}
+
+.tw-tone-history {
+  background: var(--sec-history);
+}
+
+.tw-tone-geography {
+  background: var(--sec-geography);
+}
+
+.tw-tone-civics {
+  background: var(--sec-civics);
+}
+
+.tw-tone-culture {
+  background: var(--sec-culture);
+}
+
+/* .tw-menu-btn lives in ds.css (shared, globally loaded): DefinitionCard's
+   close button uses the same class without importing this file. */

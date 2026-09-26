@@ -1,0 +1,55 @@
+.tw-feedback {
+  display: flex;
+  gap: var(--space-3);
+  padding-block: var(--space-4);
+  padding-inline: var(--space-5);
+  border-radius: var(--radius-md);
+  font-size: 17px;
+  line-height: 26px;
+}
+
+.tw-feedback-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  color: var(--on-ink);
+}
+
+.tw-feedback-title {
+  font-weight: 700;
+  display: block;
+}
+
+.tw-feedback-correct {
+  background: var(--correct-soft);
+  color: var(--ink);
+}
+
+.tw-feedback-correct .tw-feedback-icon {
+  background: var(--correct);
+}
+
+.tw-feedback-correct .tw-feedback-title {
+  color: var(--correct);
+}
+
+.tw-feedback-retry {
+  background: var(--retry-soft);
+  color: var(--ink);
+}
+
+.tw-feedback-retry .tw-feedback-icon {
+  background: var(--retry);
+}
+
+.tw-feedback-retry .tw-feedback-title {
+  color: var(--retry);
+}
+
+.tw-feedback-action {
+  margin-block-start: var(--space-2);
+}

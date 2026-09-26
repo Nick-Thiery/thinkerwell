@@ -1,0 +1,39 @@
+/* Chip: one-tap choices and dashed sentence starters */
+.tw-chip {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--target-min);
+  padding-block: 10px;
+  padding-inline: var(--space-4);
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--line-strong);
+  background: var(--paper);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: start;
+}
+
+.tw-chip:hover {
+  border-color: var(--ink);
+}
+
+.tw-chip[aria-pressed='true'],
+.tw-chip[aria-checked='true'] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--on-ink);
+}
+
+.tw-chip-starter {
+  border-style: dashed;
+  border-radius: var(--radius-md);
+}
+
+.tw-chip-starter .tw-icon {
+  color: var(--violet);
+}
