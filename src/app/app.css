@@ -1,0 +1,93 @@
+/*
+ * Phase 1 app shell. Deliberately plain: the real SiteHeader and page layouts
+ * come from the design-system components in later phases.
+ */
+
+.tw-shell-header {
+  background: var(--lemon);
+  border-block-end: 2px solid var(--ink);
+  padding-block: var(--space-2);
+  padding-inline: var(--space-4);
+}
+
+/* Two classes so it beats the ul[role="list"] reset in global.css. */
+.tw-shell-header .tw-shell-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-2);
+  max-inline-size: var(--page-max);
+  margin-inline: auto;
+}
+
+.tw-shell-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: var(--target-min);
+  padding-inline: var(--space-3);
+  border-radius: var(--radius-pill);
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.tw-shell-nav a[aria-current="page"] {
+  background: var(--paper);
+  box-shadow: inset 0 0 0 2px var(--ink);
+}
+
+.tw-shell-main {
+  flex: 1;
+  inline-size: 100%;
+  max-inline-size: var(--page-max);
+  margin-inline: auto;
+  padding: var(--space-8) var(--space-4) var(--space-12);
+}
+
+.tw-shell-main:focus {
+  outline: none;
+}
+
+.tw-placeholder {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-inline-size: var(--reading-measure);
+}
+
+.tw-placeholder-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.tw-placeholder-links a {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: var(--target-min);
+  font-weight: 700;
+}
+
+.tw-dev-banner {
+  margin: 0;
+  padding-block: var(--space-2);
+  padding-inline: var(--space-4);
+  background: var(--lavender-soft);
+  color: var(--ink);
+  text-align: center;
+}
+
+@media (min-width: 820px) {
+  .tw-shell-header {
+    padding-inline: var(--space-8);
+  }
+
+  .tw-shell-main {
+    padding-inline: var(--space-8);
+  }
+}
+
+@media (min-width: 1280px) {
+  .tw-shell-main {
+    padding-inline: var(--space-10);
+  }
+}
