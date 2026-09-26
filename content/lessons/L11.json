@@ -1,0 +1,276 @@
+{
+  "id": "maps-and-places",
+  "oldId": "l7",
+  "number": 11,
+  "section": "geography",
+  "title": "How do maps help us understand a place?",
+  "essentialQuestion": "What can a map show that words alone cannot?",
+  "learningGoal": "Use a map's title, key, compass rose and scale to answer a question about a place, and notice what the map leaves out.",
+  "estimatedMinutes": [
+    25,
+    45
+  ],
+  "warmUp": {
+    "question": "When you need to find a new place, what helps you most?",
+    "options": [
+      "A map",
+      "Asking a person",
+      "Written directions"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "What does each part of the map tell you about Riverstone?",
+    "cards": [
+      {
+        "type": "map",
+        "title": "Walking routes to Riverstone Community Centre",
+        "locations": [
+          {
+            "id": "a",
+            "label": "East Homes",
+            "description": "A group of houses on the east side of the river. The visitor starts here."
+          },
+          {
+            "id": "b",
+            "label": "Riverstone Community Centre",
+            "description": "A green square on the west side of the river. Classes and events happen here."
+          },
+          {
+            "id": "c",
+            "label": "Footbridge",
+            "description": "The dashed footpath crosses the river here. The footpath from East Homes to the centre is four squares long."
+          },
+          {
+            "id": "d",
+            "label": "Clinic",
+            "description": "A yellow square on the main road. The main-road route from East Homes to the centre passes the clinic. It is seven squares long and crosses two roads."
+          }
+        ],
+        "legend": [
+          {
+            "label": "River",
+            "color": "blue"
+          },
+          {
+            "label": "Main road",
+            "color": "grey"
+          },
+          {
+            "label": "Footpath (dashed line)",
+            "color": "brown"
+          },
+          {
+            "label": "Community centre",
+            "color": "green"
+          },
+          {
+            "label": "Clinic",
+            "color": "yellow"
+          }
+        ]
+      },
+      {
+        "type": "items",
+        "title": "Other parts of the Riverstone map",
+        "items": [
+          "Title: 'Walking routes to Riverstone Community Centre'",
+          "Compass rose: N (north) points to the top of the map",
+          "Scale: 1 square = 100 metres",
+          "Key: explains every colour, line and shape on the map"
+        ]
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "A map shows a place from above",
+        "text": "A map is a drawing of a place, usually as a bird would see it from the sky. A map cannot show everything, so the mapmaker chooses what to include. For example, a bus map shows bus stops, and a rain map shows where it rains most. People have made maps for thousands of years. About 2,500 years ago, someone in today's Iraq made a map of the world on a clay tablet. It shows the city of Babylon in the middle. In the Marshall Islands in the Pacific Ocean, sailors made charts from sticks and shells. The sticks showed how ocean waves moved, and the shells showed islands.",
+        "simpler": "A map is a picture of a place. It shows the place from above, like a bird sees it. A map cannot show everything. The person who makes it picks what to show. A bus map shows bus stops. People made maps long ago too. Someone in what is now Iraq made a map on clay. Sailors in the Marshall Islands made maps with sticks and shells. The shells showed islands."
+      },
+      {
+        "heading": "Four tools help you read a map",
+        "text": "Most maps include four tools that help you read them. The title tells you what the map is about. The key, which is also called a legend, explains each symbol. A symbol is a colour, line or shape that represents something real. On the Riverstone map, a blue line is the river, and a green square is the community centre. The compass rose shows directions, and sometimes it is simply an arrow pointing north. The scale shows how distance on the map compares with real distance. On this map, one square is 100 metres, so the four-square footpath is about 400 metres long.",
+        "simpler": "Most maps have four tools. The title says what the map is about. The key tells what each symbol means. A symbol is a small shape, line or colour. It stands for a real thing. On the Riverstone map, a blue line is the river. The compass rose shows north, south, east and west. The scale helps you see how far things are. Here, one square is 100 metres. The path to the centre is four squares. So it is about 400 metres long."
+      },
+      {
+        "heading": "Maps leave some things out",
+        "text": "The footpath from East Homes is about 400 metres, but the main-road route is about 700 metres, so the footpath is the shorter route. But is it the best route for every visitor? The map does not tell you if the path is muddy, if it has steps, or if it has lights at night. It also does not show whether the footbridge is open today. People who use the path every day know this information. A careful map reader uses the map as evidence and then asks local people who know the place. A map is extremely useful, but it is not the place itself.",
+        "simpler": "The path over the bridge is 400 metres. The way by the road is 700 metres. So the path is the shorter route. But is it the best route? The map does not tell us everything. Is the path muddy? Does it have steps? Is it dark at night? People who walk there every day know. So look at the map first. Then ask people who know the place."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "symbol",
+        "forms": [
+          "symbols"
+        ],
+        "definition": "A small shape, line or colour that stands for a real thing.",
+        "example": "On the Riverstone map, a green square is the symbol for the community centre."
+      },
+      {
+        "word": "key",
+        "definition": "A list on a map that tells what each symbol means.",
+        "example": "The key on the Riverstone map says a blue line is the river."
+      },
+      {
+        "word": "compass rose",
+        "definition": "A drawing on a map that shows north, south, east and west.",
+        "example": "The compass rose on the Riverstone map shows that north is at the top."
+      },
+      {
+        "word": "scale",
+        "definition": "A part of a map that shows how map distance matches real distance.",
+        "example": "The scale on the Riverstone map says one square is 100 metres."
+      },
+      {
+        "word": "route",
+        "forms": [
+          "routes"
+        ],
+        "definition": "A way to go from one place to another.",
+        "example": "The footpath is the shorter route from East Homes to the centre."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "question": "On the Riverstone map, how long is the footpath?",
+        "options": [
+          {
+            "text": "About 40 metres",
+            "correct": false,
+            "feedback": "Not quite. Each square is 100 metres, not 10 metres. Check the scale again."
+          },
+          {
+            "text": "About 400 metres",
+            "correct": true,
+            "feedback": "Yes. The footpath is four squares long, and each square is 100 metres. That makes 400 metres."
+          },
+          {
+            "text": "About 4 kilometres",
+            "correct": false,
+            "feedback": "Not quite. 4 kilometres is 4,000 metres. Four squares of 100 metres is much less. Check the scale again."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "question": "You want to know if the footpath has lights at night. What should you do?",
+        "options": [
+          {
+            "text": "Ask people who use the path",
+            "correct": true,
+            "feedback": "Yes. The map does not show lights. People who walk there every day will know."
+          },
+          {
+            "text": "Look again at the compass rose",
+            "correct": false,
+            "feedback": "Not quite. The compass rose only shows directions. Section 3 says to ask people who know the place."
+          },
+          {
+            "text": "Measure the path with the scale",
+            "correct": false,
+            "feedback": "Not quite. The scale shows distance, not lights. Section 3 says to ask people who know the place."
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "What else would you ask people before you walk on the footpath?",
+        "placeholder": "Think about steps, mud, lights, and if the bridge is open...",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Write directions for a visitor who wants to walk from East Homes to the centre. Use two facts from the map, and ask one thing the map cannot tell you.",
+    "sentenceStarters": [
+      "The map shows...",
+      "The footpath is about ___ metres, and the main-road route is...",
+      "I would take the ___ because...",
+      "Before you go, I would ask..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I used two facts from the map.",
+      "I said which route to take and why.",
+      "I asked about one thing the map cannot tell me."
+    ],
+    "example": "The map shows that the community centre is on the west side of the river. The footpath is about 400 metres, and the main-road route is about 700 metres. I would take the footpath because it is shorter. Walk west from East Homes and cross the river on the footbridge. The centre is the green square on the other side. Before you go, I would ask people who live nearby if the path has lights at night. I would also ask if it has steps."
+  },
+  "speak": {
+    "partnerTask": "One person gives directions from East Homes to the centre using map words like 'west' and '400 metres'. The other person checks the key and the scale.",
+    "independentTask": "Say one thing the Riverstone map tells you and one thing it cannot tell you."
+  },
+  "watch": {
+    "youtubeId": "o1NfYYkezys",
+    "title": "Understanding map symbols with Steve Backshall and Ordnance Survey",
+    "channel": "Ordnance Survey",
+    "durationSeconds": 56,
+    "why": "It is a very short look at map symbols and the key, the same tools you use on the Riverstone map.",
+    "beforeQuestion": "Why does a map need a key? What would happen if you had to guess what each symbol means?",
+    "afterQuestion": "Which map symbol would help a visitor most? Why?",
+    "summary": "In this short video, the explorer Steve Backshall talks about map symbols. Ordnance Survey makes maps of Great Britain. Every Ordnance Survey map has a key, which is also called a legend. The key lists the symbols and says what each one means. A symbol is a small picture, line or colour. It stands for a real thing, like a path, a river or a building. Symbols save space, so a map can show a lot in a small area. When you know the symbols, you can understand a place before you go there. Maps from other mapmakers may use different symbols. So always read the key first.",
+    "keyPoints": [
+      "Maps use symbols to show real things simply and in a small space.",
+      "The key, or legend, tells you what each symbol means.",
+      "Different mapmakers may use different symbols, so always read the key."
+    ],
+    "contentNote": null,
+    "replacementSuggestion": null
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Before I use a map, I should first check...",
+        "required": true
+      },
+      {
+        "text": "One detail I would add to the Riverstone map is...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 11. You read a map using its title, key, compass rose and scale, and you noticed what it leaves out."
+  },
+  "visual": {
+    "type": "map",
+    "description": "A simple grid map titled 'Walking routes to Riverstone Community Centre'. A blue river runs from north to south through the middle. Small houses labelled 'East Homes' sit on the east side. A brown dashed footpath goes west from East Homes over a small footbridge to a green square (the community centre); it is four squares long. A grey main road goes north from East Homes, past a yellow square (the clinic), over a road bridge and back south to the centre; it is seven squares long and crosses two roads. A compass rose sits in one corner, a scale bar reads '1 square = 100 metres', and a key lists River, Main road, Footpath, Community centre and Clinic.",
+    "alt": "Fictional grid map with two routes from East Homes to Riverstone Community Centre: a short footpath over a footbridge and a longer route along the main road past a clinic."
+  },
+  "sources": [
+    {
+      "label": "National Geographic: Map",
+      "url": "https://education.nationalgeographic.org/resource/map/"
+    },
+    {
+      "label": "Smithsonian Ocean: Navigating the waters with Micronesian stick charts",
+      "url": "https://ocean.si.edu/human-connections/history-cultures/navigating-waters-micronesian-stick-charts"
+    },
+    {
+      "label": "Smarthistory: Map of the World (Babylonian clay tablet)",
+      "url": "https://smarthistory.org/map-of-the-world/"
+    }
+  ],
+  "educatorNotes": [
+    "Riverstone is fictional. You could draw a simple map of your learning centre or a nearby market and use the same four tools.",
+    "Don't ask learners to map or describe where they live. A school, a market or the fictional map works just as well.",
+    "Map symbols differ between countries and mapmakers. The video uses British Ordnance Survey maps, so remind learners to check each map's own key."
+  ],
+  "changes": [
+    "Expanded the 89-word reading to three sections: what a map is, the four map tools, and what maps leave out.",
+    "Added real examples from Iraq (a Babylonian clay map) and the Pacific (Marshall Islands stick charts).",
+    "Turned the two list cards into a map evidence card with locations and a legend, plus an items card for the title, compass rose, scale and key.",
+    "Rewrote simpler English at about grade 3. Glossary: kept symbol and scale, replaced map and legend with key (legend is explained in the text), and added compass rose and route.",
+    "Rewrote the second check as a positive question; correct answers now sit second and first.",
+    "Added a sentence starter, a three-item self-check and a longer example answer; reworded the learning goal to use key and compass rose.",
+    "Removed nextLesson (now derived automatically)."
+  ]
+}

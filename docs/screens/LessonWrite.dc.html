@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lesson 10: Write</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/thinkerwell/tokens.css">
+<link rel="stylesheet" href="ds/thinkerwell/components/bundle.css">
+<script src="ds/thinkerwell/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;700&amp;family=Eczar:wght@500&amp;family=Funnel+Display:wght@400;500;600;700&amp;display=swap">
+<style>body{margin:0;background:var(--canvas)} .check{display:flex;align-items:center;gap:12px;min-height:44px;font-size:17px;line-height:24px;cursor:pointer} .check input{width:24px;height:24px;margin:0;accent-color:var(--ink);flex:none}</style>
+</helmet>
+<div style="width: 1280px; height: 1500px; box-sizing: border-box; padding: 0 6px 48px; background: var(--canvas); display: flex; flex-direction: column; gap: 40px; font-family: var(--font-body); color: var(--ink)">
+<x-import component-from-global-scope="Thinkerwell.SiteHeader" logo-src="{{m}}" links="{{links}}" learner="{{learner}}"></x-import>
+<div style="width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 48px; align-items: start">
+<aside aria-label="About this lesson" style="display: flex; flex-direction: column; gap: 20px">
+<a href="Course.dc.html" style="display: inline-flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 700; color: var(--ink-muted); text-decoration: none"><x-import component-from-global-scope="Thinkerwell.Icon" name="ArrowLeft" size="{{i18}}"></x-import>Geography &amp; Our Environment</a>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 14px; line-height: 18px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sec-geography-ink)">Lesson 10</span>
+<h1 style="margin: 0; font-family: var(--font-display); font-size: 30px; line-height: 34px; font-weight: 500; letter-spacing: -0.015em; text-wrap: balance">Why do people build towns near rivers?</h1>
+<p style="margin: 0; font-size: 16px; line-height: 24px; color: var(--ink-muted)">What makes one place better than another for a community to live?</p>
+</div>
+<x-import component-from-global-scope="Thinkerwell.StagePath" orientation="vertical" current="write" done="{{done}}" sublabels="{{subs}}"></x-import>
+</aside>
+<main style="display: flex; flex-direction: column; gap: 24px; min-width: 0">
+<x-import component-from-global-scope="Thinkerwell.TaskCard">Choose one place on the Riverlands map for a new town. Give two reasons for your choice and one possible problem.</x-import>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap">
+<x-import component-from-global-scope="Thinkerwell.SegmentedControl" label="Writing help" options="{{modes}}" value="starters"></x-import>
+<x-import component-from-global-scope="Thinkerwell.Button" variant="ghost" icon="Map">Look at the map again</x-import>
+</div>
+<section aria-labelledby="starters-title" style="display: flex; flex-direction: column; gap: 12px">
+<span id="starters-title" style="font-size: 16px; line-height: 22px; font-weight: 700">Tap a sentence starter to add it to your writing</span>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<x-import component-from-global-scope="Thinkerwell.Chip" variant="starter" icon="Plus">I would build the new town at the ___ site.</x-import>
+<x-import component-from-global-scope="Thinkerwell.Chip" variant="starter" icon="Plus">One reason is ___.</x-import>
+<x-import component-from-global-scope="Thinkerwell.Chip" variant="starter" icon="Plus">Another reason is ___.</x-import>
+<x-import component-from-global-scope="Thinkerwell.Chip" variant="starter" icon="Plus">One problem could be ___.</x-import>
+<x-import component-from-global-scope="Thinkerwell.Chip" variant="starter" icon="Plus">People could deal with this problem by ___.</x-import>
+</div>
+</section>
+<x-import component-from-global-scope="Thinkerwell.WritingBox" id="town-answer" label="Your answer" rows="{{n6}}" value="{{draft}}" dictate="{{yes}}" helper="4 to 6 sentences is plenty. Spelling does not matter here. Tap Say it to talk instead of typing. Saved on this device as you type."></x-import>
+<section aria-labelledby="self-check" style="display: flex; flex-direction: column; gap: 6px; padding: 20px 24px; border-radius: var(--radius-xl); background: var(--lavender-wash)">
+<h3 id="self-check" style="margin: 0 0 6px; font-family: var(--font-display); font-size: 21px; line-height: 28px; font-weight: 600">Check your answer</h3>
+<label class="check" for="c1"><input id="c1" type="checkbox" checked="checked">I named one place.</label>
+<label class="check" for="c2"><input id="c2" type="checkbox" checked="checked">I gave two reasons from the map or the reading.</label>
+<label class="check" for="c3"><input id="c3" type="checkbox">I named one problem my town could have.</label>
+</section>
+<x-import component-from-global-scope="Thinkerwell.MascotTip" src="{{m}}" size="{{tip}}">Stuck? Tap a sentence starter, then fill in the blanks.</x-import>
+<x-import component-from-global-scope="Thinkerwell.ActionBar" back="Read" next="Save and continue to Speak"></x-import>
+</main>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1500}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      m: '/images/thinkerwell-mascot-transparent.png',
+      i18: 18, n6: 6, tip: 80, yes: true,
+      done: ['read'],
+      modes: [{ label: 'Write', value: 'write', icon: 'Pencil' }, { label: 'Sentence starters', value: 'starters', icon: 'Plus' }, { label: 'Plan first', value: 'plan', icon: 'NotebookPen' }],
+      draft: 'I would build the new town at the River site. One reason is that the land is flat and fertile, so farmers can grow crops. Another reason is that boats can stop there to trade goods. One problem could be ',
+      subs: { read: 'Done', write: 'Choose a place for a town', speak: 'With a partner or on your own', watch: 'Optional · 4 min', reflect: '2 short prompts' },
+      learner: { name: 'Amina', tone: 'lemon' },
+      links: [
+        { label: 'Home' },
+        { label: 'Course', active: true },
+        { label: 'My journal' },
+        { label: 'For educators' },
+        { label: 'About' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

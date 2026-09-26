@@ -1,0 +1,273 @@
+{
+  "id": "inventions-and-daily-life",
+  "oldId": "l5",
+  "number": 9,
+  "section": "history",
+  "title": "How do inventions change everyday life?",
+  "essentialQuestion": "How can one idea change how people live?",
+  "learningGoal": "Explain how an invention can help people, what can stop people using it, and why it may not help everyone equally.",
+  "estimatedMinutes": [
+    30,
+    50
+  ],
+  "warmUp": {
+    "question": "Which kind of invention do people use most in a normal day?",
+    "options": [
+      "Something with wheels",
+      "Something with a screen",
+      "A light or lamp",
+      "Something else"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "Who gains from the bicycle trial? Who might not gain anything?",
+    "cards": [
+      {
+        "type": "table",
+        "title": "Bicycle trial in Riverstone",
+        "columns": [
+          "What we checked",
+          "What we found"
+        ],
+        "rows": [
+          [
+            "Time to the market, walking",
+            "30 minutes on the direct route"
+          ],
+          [
+            "Time to the market, cycling",
+            "12 minutes on the same route"
+          ],
+          [
+            "Cost",
+            "A bicycle costs 80 tokens. Repairs need parts and someone with the right skills."
+          ],
+          [
+            "The route",
+            "The direct route has steps, so riders must carry their bicycles up them. A longer route has no steps."
+          ]
+        ]
+      },
+      {
+        "type": "cases",
+        "title": "Three people in Riverstone",
+        "cases": [
+          {
+            "name": "Amara, delivery worker",
+            "body": "Rides to the market every day and saves time."
+          },
+          {
+            "name": "Kai, repair shop owner",
+            "body": "Has more customers who need bicycles fixed."
+          },
+          {
+            "name": "Hana, market seller",
+            "body": "Cannot pay 80 tokens, so she still walks with her goods."
+          }
+        ]
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Inventions can change daily life",
+        "text": "An invention is a new tool, machine or way of doing something. About 5,500 years ago, people in Mesopotamia used wheels to shape clay pots. Later, people put wheels on carts to carry heavy loads of grain and goods, which made farming and trade easier. Printing is another example. About 1,000 years ago in China, a man named Bi Sheng made small clay blocks, each with one written sign. Printers could move the blocks around to print new pages. Later, printers in Korea used metal blocks. In the 1400s, Johannes Gutenberg built a printing press in Germany. Books became cheaper, so more people could read and share ideas.",
+        "simpler": "An invention is a new tool or way to do something. Long ago, people in what is now Iraq used wheels to make pots. Later, people put wheels on carts to carry heavy loads. Printing is another invention. In China, Bi Sheng made small clay blocks, each with one sign. Later, people in Korea made metal blocks. Then Gutenberg made a printing press in Germany. Books cost less, so more people could read."
+      },
+      {
+        "heading": "New inventions spread quickly",
+        "text": "Some newer inventions spread very quickly. Mobile phones let people call, send messages and find information. In Kenya, a service that started in 2007 lets people send small amounts of money by phone, even without a bank. Solar lamps are another example. During the day, sunlight charges a battery inside the lamp. At night, the lamp gives light without any power lines. Many families once used lamps that burned kerosene, which made smoke and had to be bought again and again. With a solar lamp, people can cook, read or study after dark. But an invention only helps people who have access to it.",
+        "simpler": "Some new inventions spread fast. With a mobile phone, people can call, send messages and find news. In Kenya, people can send money by phone. A solar lamp charges in the sun and gives light at night. Old lamps burned oil and made smoke. With a solar lamp, people can read after dark. But an invention only helps if people have access to it."
+      },
+      {
+        "heading": "Ask who benefits",
+        "text": "Look at the bicycle trial in Riverstone. Cycling to the market takes 12 minutes instead of 30, so it saves Amara 18 minutes. That is a real benefit. But a bicycle costs 80 tokens, which Hana cannot pay, and repairs need parts and skills. The steps on the direct route are a barrier, because riders must carry their bicycles up them. Some people cannot ride a bicycle, or do not want to. Inventions can also cause problems that no one planned. Cars made travel faster, but they also made the air dirty. So when you study an invention, ask who can use it, who decides and what would help more people.",
+        "simpler": "Look at the bike trial in Riverstone. By bike, the trip takes 12 minutes, not 30. So Amara saves 18 minutes. That is a benefit. But a bike costs 80 tokens, and Hana cannot pay that. On the short route, riders must carry bikes up steps. That is a barrier. Some people cannot ride a bike. Inventions can also bring problems no one planned. Cars are fast, but they make the air dirty. So ask: Who can use it? Who does it help?"
+      }
+    ],
+    "glossary": [
+      {
+        "word": "invention",
+        "forms": [
+          "inventions",
+          "invent",
+          "invented"
+        ],
+        "definition": "A new tool, machine or way of doing something.",
+        "example": "The bicycle is an invention that changes how people in Riverstone travel."
+      },
+      {
+        "word": "solar",
+        "definition": "Using the sun's light to make power.",
+        "example": "A solar lamp charges in the day and gives light at night."
+      },
+      {
+        "word": "access",
+        "definition": "Being able to get something or use it.",
+        "example": "Hana does not have access to a bicycle because she cannot pay 80 tokens."
+      },
+      {
+        "word": "benefit",
+        "forms": [
+          "benefits"
+        ],
+        "definition": "A good result that helps someone.",
+        "example": "Saving 18 minutes is a benefit for Amara."
+      },
+      {
+        "word": "barrier",
+        "forms": [
+          "barriers"
+        ],
+        "definition": "Something that stops people from doing or getting something.",
+        "example": "The steps on the direct route are a barrier for riders who cannot lift a bicycle."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "question": "What does the bicycle trial show?",
+        "options": [
+          {
+            "text": "Amara saves 18 minutes on this one route",
+            "correct": true,
+            "feedback": "Yes. 30 minus 12 is 18. The trial shows this for one route, not for every trip."
+          },
+          {
+            "text": "Every person in Riverstone travels faster",
+            "correct": false,
+            "feedback": "Not quite. Hana cannot pay for a bicycle, and some people cannot ride. Look at the last part."
+          },
+          {
+            "text": "Walking to the market is never useful now",
+            "correct": false,
+            "feedback": "Not quite. Walking is still useful, for example on the route with steps. Look at the last part."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "question": "Why might a solar lamp fail to help some people?",
+        "options": [
+          {
+            "text": "It only works on very dark days",
+            "correct": false,
+            "feedback": "Not quite. A solar lamp charges in sunlight and shines at night. Look at the second part."
+          },
+          {
+            "text": "Some people cannot pay for one",
+            "correct": true,
+            "feedback": "Yes. An invention only helps people who have access to it. Cost can be a barrier."
+          },
+          {
+            "text": "It makes a lot of smoke at night",
+            "correct": false,
+            "feedback": "Not quite. The old lamps made smoke. A solar lamp does not. Look at the second part."
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "What should the town test or change before it gives out more bikes?",
+        "placeholder": "Think about cost, repairs, the steps and people who cannot ride. I would test ...",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Should Riverstone give bicycles to more people? Give one benefit, one barrier and one change you would make.",
+    "sentenceStarters": [
+      "The trial shows that ...",
+      "One benefit is ...",
+      "However, one barrier is ...",
+      "Before giving out more bicycles, I would ...",
+      "This would help more people because ..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I used a number from the trial.",
+      "I named one barrier and who it affects.",
+      "I suggested one change that could really happen."
+    ],
+    "example": "The trial shows that cycling saves Amara 18 minutes on the direct route to the market. One benefit is that she has more time for other work. However, one barrier is the cost. A bicycle costs 80 tokens, so Hana cannot get one. The steps on the direct route are also a barrier. Before giving out more bicycles, I would test the longer route with no steps. I would also ask if people could share bicycles. This would help more people because more of them could use one safely."
+  },
+  "speak": {
+    "partnerTask": "One person gives a benefit of the bicycle trial and the other gives a barrier. Then agree on one change that would help more people.",
+    "independentTask": "Choose one invention from the lesson. Say how it helps people, using: This helps because ... However ..."
+  },
+  "watch": {
+    "youtubeId": "0SMNYivhGsc",
+    "title": "How inventions change history (for better and for worse)",
+    "channel": "TED-Ed",
+    "durationSeconds": 314,
+    "why": "This short animated video tells the true story of one invention that made some people rich and caused great harm to others.",
+    "beforeQuestion": "Can an invention cause harm even when it makes a job faster? Watch for an example.",
+    "afterQuestion": "Why do we need to look at how people used the machine, not just at what it could do?",
+    "summary": "This video tells the story of the cotton gin, a machine invented in the United States in 1793. Cotton plants grow soft white fibre, which is used to make cloth. Before the machine, workers had to pull the seeds out of the cotton by hand, and this was very slow. The cotton gin did the job much faster. One worker could now do the work of about 10. Growing cotton began to earn much more money, and the cotton business grew fast. But the machine also had a terrible effect that no one planned. Cotton farms grew, and farm owners forced many more enslaved people to work on them. Slavery lasted longer. The video shows that one invention can bring both wealth and great harm.",
+    "keyPoints": [
+      "The cotton gin made cleaning cotton much faster.",
+      "It also caused harm that no one planned: slavery grew and lasted longer.",
+      "To judge an invention, ask who gains from it and who is harmed."
+    ],
+    "contentNote": "This video discusses slavery and exploitation on cotton farms in the United States. Preview it before class. Learners can choose Read instead.",
+    "replacementSuggestion": null
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Before I call an invention an improvement, I should ask ...",
+        "required": true
+      },
+      {
+        "text": "One invention that changed life in a place I know, or a place from the lesson, is ... because ...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 9. You explained how inventions can help people, and you asked who benefits and who might not."
+  },
+  "visual": {
+    "type": "timeline",
+    "description": "A timeline of four simple drawings from left to right. 1: a potter's wheel and a wooden cart with solid wheels (Mesopotamia, about 5,500 years ago), labelled 'moving heavy loads'. 2: small printing blocks and a printed page (China, Korea and Germany, 1000s to 1400s), labelled 'sharing books'. 3: a person using a mobile phone, labelled 'talking and learning at a distance'. 4: a solar lamp lighting a table after dark, labelled 'light without power lines'.",
+    "alt": "Timeline of four inventions: the wheel, printing with movable blocks, the mobile phone and the solar lamp, each with a label saying what it changed."
+  },
+  "sources": [
+    {
+      "label": "TED-Ed: How inventions change history (for better and for worse)",
+      "url": "https://ed.ted.com/lessons/how-inventions-change-history-for-better-and-for-worse-kenneth-c-davis"
+    },
+    {
+      "label": "Smithsonian Magazine: A Salute to the Wheel",
+      "url": "https://www.smithsonianmag.com/science-nature/a-salute-to-the-wheel-31805121/"
+    },
+    {
+      "label": "Britannica: Movable type",
+      "url": "https://www.britannica.com/technology/movable-type"
+    },
+    {
+      "label": "Lighting Global (IFC and World Bank): study on solar lighting products",
+      "url": "https://www.lightingglobal.org/ifc-world-bank-study-establishes-significant-climate-benefit-of-solar-lighting-products/"
+    }
+  ],
+  "educatorNotes": [
+    "Preview the video before class. It tells the story of the cotton gin and discusses slavery and exploitation in the United States. Learners can choose Read instead, and the written summary is short and factual.",
+    "Do not assume learners own a phone or have electricity where they live. Talk about who can use an invention, not about who in the group has one.",
+    "Riverstone, the three people and the tokens are fictional. You could swap the bicycle for a tool your learners know, such as a water pump, a shared tablet or a sewing machine."
+  ],
+  "changes": [
+    "Expanded the reading from about 140 words to about 300, with accurate material on the wheel, printing (Bi Sheng, Korean metal type and Gutenberg), mobile phones and solar lamps.",
+    "Rewrote the simpler English from scratch at about grade 2–3; Base44's version was three short summary lines.",
+    "Kept the Riverstone bicycle trial as a table and added three named people so learners can see who gains and who does not.",
+    "Glossary is now invention, solar, access, benefit and barrier; every word appears in both the text and the simpler text. Replaced 'unintended consequence' with the plain phrase 'problems that no one planned'.",
+    "Moved the Base44 video warning into watch.contentNote and added an educator note to preview the video.",
+    "Rewrote the video summary so it describes the video itself (the cotton gin) and stands alone; the harm is stated briefly and factually.",
+    "Added a warm-up, visual plan and three-item self-check; rewrote the checks so the correct answers sit in different positions."
+  ]
+}

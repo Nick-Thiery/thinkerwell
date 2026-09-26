@@ -1,0 +1,280 @@
+{
+  "id": "trade-connects-communities",
+  "oldId": "l3",
+  "number": 8,
+  "section": "history",
+  "title": "How did trade connect distant communities?",
+  "essentialQuestion": "How did goods and ideas travel across the world?",
+  "learningGoal": "Explain how trade networks moved goods and ideas between distant places, using real routes across land, sea and desert as examples.",
+  "estimatedMinutes": [
+    30,
+    50
+  ],
+  "warmUp": {
+    "question": "Think of one thing you used or saw today. Where do you think it was made?",
+    "options": [
+      "Somewhere near",
+      "Somewhere far away",
+      "I am not sure"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "How does a jar from Riverstone reach a ship at Coastport? What travels along the route besides goods?",
+    "cards": [
+      {
+        "type": "map",
+        "title": "A small trading network",
+        "locations": [
+          {
+            "id": "a",
+            "label": "Hill village",
+            "description": "Grows tea and sends it by cart to Riverstone."
+          },
+          {
+            "id": "b",
+            "label": "Riverstone",
+            "description": "Makes clay jars. Boats carry tea and jars down the river to Coastport."
+          },
+          {
+            "id": "c",
+            "label": "Coastport",
+            "description": "A port by the sea. Traders swap tea and jars for cloth and salt from visiting ships."
+          }
+        ],
+        "legend": [
+          {
+            "label": "Cart road",
+            "color": "brown"
+          },
+          {
+            "label": "River",
+            "color": "blue"
+          },
+          {
+            "label": "Sea route",
+            "color": "grey"
+          }
+        ]
+      },
+      {
+        "type": "sources",
+        "title": "A potter's note",
+        "sources": [
+          {
+            "caption": "Written by a potter in Riverstone",
+            "details": [
+              "\"A visiting trader showed us a different way to decorate our jars.\""
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Trade links places into a network",
+        "text": "Trade means giving goods to get other goods or money back. Goods are things people make or grow, like tea, jars or cloth. In the fictional network, the hill village sends tea by cart to Riverstone. Boats carry the tea and Riverstone's clay jars down the river to Coastport. At this port, traders swap them for cloth and salt from visiting ships. No single trader makes the whole journey. Each person carries the goods along one part of the route. Together, these links form a network. If the river is too low for boats, traders must find another way.",
+        "simpler": "Trade means giving something to get something back. Goods are things people make or grow. A cart takes tea from the hill village to Riverstone. Boats take tea and jars to Coastport. At the port, people swap them for cloth and salt. No one person makes the whole trip. Each person does one part of the route. All the links make a network. If the river is low, traders need a new way."
+      },
+      {
+        "heading": "Real trade routes crossed land, sea and desert",
+        "text": "Real trade networks were much bigger. The Silk Roads began more than 2,000 years ago. They were many land and sea routes, not one road, and they linked China with Central Asia, the Middle East and Europe. Silk from China travelled west, while horses and glass travelled east. On the Indian Ocean, sailors used the monsoon winds, which change direction twice a year. Ships could sail out on one wind and come home on the next. Ports in East Africa, Arabia, India, Southeast Asia and China traded spices, cloth, gold and fine pottery. In Africa, camels crossed the Sahara Desert, carrying salt south and gold north. Timbuktu, in the Mali Empire, grew rich from this trade.",
+        "simpler": "Real trade networks were much bigger. The Silk Roads began over 2,000 years ago. They were many land and sea routes. They linked China to lands far to the west. Silk went west, and horses went east. On the Indian Ocean, ships used winds that change twice a year. So ships could sail out and come back. In Africa, camels crossed the Sahara Desert. They took salt south and gold north. This trade made Timbuktu rich."
+      },
+      {
+        "heading": "Trade moved ideas as well as goods",
+        "text": "Traders carried ideas as well as goods. Paper was first made in China, and papermaking later spread along the routes to Central Asia, the Middle East and Europe. Religions and languages also travelled with traders. Timbuktu became famous for its books and teachers. In Riverstone, the potter's note shows an idea on the move, because a visiting trader shared a new way to decorate jars. But trade did not help everyone equally. Some traders grew rich, while others lost out. On some routes, traders also bought and sold enslaved people, who were forced to work for others.",
+        "simpler": "People in China made the first paper. Traders took this idea to other lands. Religions and languages moved along the routes too. In Riverstone, a trader shows the potter a new way to make jars pretty. That is an idea on the move. But trade did not help everyone. Some traders got rich. Others lost out. On some routes, traders bought and sold people. These people were enslaved and not free."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "trade",
+        "forms": [
+          "trades",
+          "traded",
+          "trading",
+          "trader",
+          "traders"
+        ],
+        "definition": "Giving something to someone and getting something else back.",
+        "example": "Coastport traders trade tea and jars for cloth and salt."
+      },
+      {
+        "word": "goods",
+        "definition": "Things that people make or grow, often to sell or swap.",
+        "example": "Tea, clay jars, cloth and salt are the goods in our network."
+      },
+      {
+        "word": "route",
+        "forms": [
+          "routes"
+        ],
+        "definition": "A way or path that people use to travel from place to place.",
+        "example": "The river is the route from Riverstone to Coastport."
+      },
+      {
+        "word": "network",
+        "forms": [
+          "networks"
+        ],
+        "definition": "A group of people or places that are all linked together.",
+        "example": "The hill village, Riverstone and Coastport form a small trading network."
+      },
+      {
+        "word": "port",
+        "forms": [
+          "ports"
+        ],
+        "definition": "A town by the sea or a river where ships stop.",
+        "example": "Coastport is a port where ships bring cloth and salt."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "question": "What in the evidence shows an idea on the move?",
+        "options": [
+          {
+            "text": "A cart takes tea to Riverstone",
+            "correct": false,
+            "feedback": "Not quite. The cart moves goods, not an idea. Look for someone sharing a skill."
+          },
+          {
+            "text": "Ships bring cloth and salt to the port",
+            "correct": false,
+            "feedback": "Not quite. Cloth and salt are goods. Look for someone sharing a skill."
+          },
+          {
+            "text": "A trader shows the potter a new design",
+            "correct": true,
+            "feedback": "Yes. The trader shares a skill with the potter. That is an idea moving, not only goods."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "question": "How did the monsoon winds help trade on the Indian Ocean?",
+        "options": [
+          {
+            "text": "They helped camels cross the Sahara Desert",
+            "correct": false,
+            "feedback": "Not quite. Camels crossed the desert in Africa, not the ocean. Look again at the second part."
+          },
+          {
+            "text": "Ships could sail out, then sail home later",
+            "correct": true,
+            "feedback": "Yes. The winds change direction twice a year, so ships could go out on one wind and come back on the next."
+          },
+          {
+            "text": "They kept every ship inside the port all year",
+            "correct": false,
+            "feedback": "Not quite. The winds helped ships travel. Look again at the second part."
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "If boats cannot reach Riverstone, which places and goods would have a problem? What could traders do?",
+        "placeholder": "If boats cannot reach Riverstone, then ... Traders could ...",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Follow one jar from Riverstone to a ship at Coastport. Explain how the goods travel and one way an idea could travel too.",
+    "sentenceStarters": [
+      "First, the jar ...",
+      "Next, ...",
+      "The places are linked by ...",
+      "An idea could travel when ...",
+      "This shows that trade ..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I followed the jar along the route.",
+      "I named at least two places in the network.",
+      "I explained how an idea could travel."
+    ],
+    "example": "First, the jar is made by a potter in Riverstone. Next, a boat trader carries it down the river to Coastport, with tea from the hill village. The places are linked by a cart road, a river and the sea. At the port, a trader swaps the jar and the tea for cloth and salt. An idea could travel when a sailor sees the pattern on the jar and copies it at home. This shows that trade can move ideas as well as goods."
+  },
+  "speak": {
+    "partnerTask": "Tell the jar's journey step by step while your partner names each link. Then say one thing that could block the route.",
+    "independentTask": "Choose one real trade route from the lesson. Say what goods and one idea travelled along it."
+  },
+  "watch": {
+    "youtubeId": "vn3e37VWc0k",
+    "title": "The Silk Road: Connecting the ancient world through trade",
+    "channel": "TED-Ed",
+    "durationSeconds": 320,
+    "why": "This animated video shows how the Silk Roads carried goods, ideas and beliefs across Asia and beyond.",
+    "beforeQuestion": "Can one thing travel farther than any one trader? Watch for how.",
+    "afterQuestion": "Why is 'network' a better word than 'one road' for the Silk Road?",
+    "summary": "This animated video tells the story of the Silk Road. It explains how, more than 2,000 years ago, trade began to grow between China and lands to the west. The Silk Road was not one road. It was a network of many routes that linked towns across Asia to the Middle East and Europe. Most traders did not travel the whole way. They carried goods along one part, then passed them on to other traders. Silk, spices, horses and many other goods moved along the routes. Ideas moved too. Beliefs, languages, art and new ways of making things spread from place to place. Some of these changes still shape how people live today. The video calls the Silk Road an early 'world wide web', because it linked so many people.",
+    "keyPoints": [
+      "The Silk Road was a network of many routes, not one road.",
+      "Most goods passed through many traders' hands.",
+      "Ideas, beliefs and skills travelled along with the goods."
+    ],
+    "contentNote": null,
+    "replacementSuggestion": null
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Trade can connect communities in more than one way because ...",
+        "required": true
+      },
+      {
+        "text": "A question I would ask a trader on one of these routes is ...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 8. You traced how goods and ideas travelled through trade networks across land, sea and desert."
+  },
+  "visual": {
+    "type": "map",
+    "description": "A map of Africa, Europe and Asia showing three trade networks in different colours: the Silk Roads over land from China through Central Asia to the Mediterranean Sea; Indian Ocean sea routes linking East Africa, Arabia, India, Southeast Asia and China, with two curved arrows showing the monsoon winds blowing one way in summer and the other way in winter; and camel routes across the Sahara linking Timbuktu with North Africa. Small icons show goods: silk, spices, salt, gold and paper.",
+    "alt": "Map of three old trade networks: the Silk Roads across Asia, sea routes across the Indian Ocean, and camel routes across the Sahara Desert."
+  },
+  "sources": [
+    {
+      "label": "UNESCO: About the Silk Roads",
+      "url": "https://www.unesco.org/en/silk-roads/about-silk-roads"
+    },
+    {
+      "label": "National Geographic Education: The Silk Roads",
+      "url": "https://education.nationalgeographic.org/resource/silk-roads/"
+    },
+    {
+      "label": "OER Project: Indian Ocean Trade Routes",
+      "url": "https://www.oerproject.com/en/oer-materials/oer-media/html-articles/origins/unit5/indian-ocean-routes"
+    },
+    {
+      "label": "OER Project: Trans-Saharan Trade Routes",
+      "url": "https://www.oerproject.com/OER-Materials/OER-Media/HTML-Articles/Origins/Unit6/Trans-Saharan-Trade-Routes"
+    }
+  ],
+  "educatorNotes": [
+    "Section 3 says in one sentence that some routes traded enslaved people. Keep any discussion short and factual; learners do not need more detail. Lesson 9's video also deals with slavery, so you may want to preview both together.",
+    "Religion is mentioned only as something that travelled with traders. Keep it neutral and do not compare or rank beliefs.",
+    "The hill village, Riverstone and Coastport are fictional. You could swap in goods from a market your learners know and trace where they come from."
+  ],
+  "changes": [
+    "Expanded the reading from about 130 words to about 300, with accurate material on the Silk Roads, Indian Ocean trade (monsoon winds) and trans-Saharan trade (salt, gold and Timbuktu).",
+    "Rewrote the simpler English from scratch at about grade 2–3; Base44's version was three short summary lines.",
+    "Added the spread of papermaking, religions and languages, and a brief, factual line that some routes traded enslaved people, with an educator note.",
+    "Turned the evidence into a labelled map card plus the potter's note; kept the fictional hill village, Riverstone and Coastport.",
+    "Glossary is now trade, goods, route, network and port; every word appears in both the text and the simpler text.",
+    "Added a warm-up, visual plan and three-item self-check; lengthened the example answer and rewrote the checks so the correct answers sit in different positions.",
+    "Rewrote the video summary so it describes the video itself and stands alone for learners who cannot load it; added National Geographic and OER Project sources."
+  ]
+}

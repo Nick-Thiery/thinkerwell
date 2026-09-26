@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lesson 10: Reflect</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/thinkerwell/tokens.css">
+<link rel="stylesheet" href="ds/thinkerwell/components/bundle.css">
+<script src="ds/thinkerwell/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;700&amp;family=Eczar:wght@500&amp;family=Funnel+Display:wght@400;500;600;700&amp;display=swap">
+<style>body{margin:0;background:var(--canvas)}</style>
+</helmet>
+<div style="width: 1280px; height: 1100px; box-sizing: border-box; padding: 0 6px 48px; background: var(--canvas); display: flex; flex-direction: column; gap: 40px; font-family: var(--font-body); color: var(--ink)">
+<x-import component-from-global-scope="Thinkerwell.SiteHeader" logo-src="{{m}}" links="{{links}}" learner="{{learner}}"></x-import>
+<div style="width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 48px; align-items: start">
+<aside aria-label="About this lesson" style="display: flex; flex-direction: column; gap: 20px">
+<a href="Course.dc.html" style="display: inline-flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 700; color: var(--ink-muted); text-decoration: none"><x-import component-from-global-scope="Thinkerwell.Icon" name="ArrowLeft" size="{{i18}}"></x-import>Geography &amp; Our Environment</a>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 14px; line-height: 18px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sec-geography-ink)">Lesson 10</span>
+<h1 style="margin: 0; font-family: var(--font-display); font-size: 30px; line-height: 34px; font-weight: 500; letter-spacing: -0.015em; text-wrap: balance">Why do people build towns near rivers?</h1>
+<p style="margin: 0; font-size: 16px; line-height: 24px; color: var(--ink-muted)">What makes one place better than another for a community to live?</p>
+</div>
+<x-import component-from-global-scope="Thinkerwell.StagePath" orientation="vertical" current="reflect" done="{{done}}" sublabels="{{subs}}"></x-import>
+</aside>
+<main style="display: flex; flex-direction: column; gap: 24px; min-width: 0">
+<x-import component-from-global-scope="Thinkerwell.TaskCard" eyebrow="Reflect" icon="RefreshCw">Take a moment to think about what you learned today. Only the first question is needed.</x-import>
+<x-import component-from-global-scope="Thinkerwell.WritingBox" id="learned" label="One thing I learned today is…" rows="{{n4}}" value="{{learned}}"></x-import>
+<x-import component-from-global-scope="Thinkerwell.WritingBox" id="question" label="One question I still have is…" optional="{{yes}}" rows="{{n3}}" placeholder="For example: What do towns do when a flood comes?"></x-import>
+<div style="display: flex; align-items: center; gap: 12px; padding: 16px 20px; border-radius: var(--radius-lg); background: var(--lavender-wash)">
+<x-import component-from-global-scope="Thinkerwell.Icon" name="NotebookPen" size="{{i22}}"></x-import>
+<span style="font-size: 16px; line-height: 24px">Your answers go into your journal on this device. Only people who use this device can see them.</span>
+</div>
+<x-import component-from-global-scope="Thinkerwell.ActionBar" back="Watch" next="Finish lesson"></x-import>
+</main>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1100}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      m: '/images/thinkerwell-mascot-transparent.png',
+      i18: 18, i22: 22, n3: 3, n4: 4,
+      yes: true,
+      done: ['read', 'write', 'speak', 'watch'],
+      learned: 'Rivers help a town with water, farms and trade. But rivers can also flood, so people have to plan for both.',
+      subs: { read: 'Done', write: 'Done', speak: 'Done', watch: 'Done', reflect: '2 short prompts' },
+      learner: { name: 'Amina', tone: 'lemon' },
+      links: [
+        { label: 'Home' },
+        { label: 'Course', active: true },
+        { label: 'My journal' },
+        { label: 'For educators' },
+        { label: 'About' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

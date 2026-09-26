@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tablet: Lesson 10 Read</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/thinkerwell/tokens.css">
+<link rel="stylesheet" href="ds/thinkerwell/components/bundle.css">
+<script src="ds/thinkerwell/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;700&amp;family=Eczar:wght@500&amp;family=Funnel+Display:wght@400;500;600;700&amp;display=swap">
+<style>body{margin:0;background:var(--canvas)}</style>
+</helmet>
+<div style="width: 820px; height: 1780px; box-sizing: border-box; padding: 0 4px 40px; background: var(--canvas); display: flex; flex-direction: column; gap: 28px; font-family: var(--font-body); color: var(--ink)">
+<x-import component-from-global-scope="Thinkerwell.SiteHeader" logo-src="{{m}}" learner="{{learner}}" compact="{{yes}}"></x-import>
+<main style="padding: 0 28px; display: flex; flex-direction: column; gap: 20px">
+<x-import component-from-global-scope="Thinkerwell.StatusBanner" tone="offline" title="You're offline.">Keep going: this lesson is saved, and your work is saved on this device.</x-import>
+<a href="Course.dc.html" style="display: inline-flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 700; color: var(--ink-muted); text-decoration: none"><x-import component-from-global-scope="Thinkerwell.Icon" name="ArrowLeft" size="{{i18}}"></x-import>Geography &amp; Our Environment</a>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 14px; line-height: 18px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sec-geography-ink)">Lesson 10</span>
+<h1 style="margin: 0; font-family: var(--font-display); font-size: 34px; line-height: 38px; font-weight: 500; letter-spacing: -0.015em">Why do people build towns near rivers?</h1>
+<p style="margin: 0; font-size: 17px; line-height: 26px; color: var(--ink-muted)">What makes one place better than another for a community to live?</p>
+</div>
+<x-import component-from-global-scope="Thinkerwell.StagePath" current="read" done="{{none}}"></x-import>
+<div role="toolbar" aria-label="Reading tools" style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap">
+<x-import component-from-global-scope="Thinkerwell.ToolToggle" icon="Volume2" pressed="{{no}}">Listen</x-import>
+<x-import component-from-global-scope="Thinkerwell.SegmentedControl" label="Reading level" options="{{levels}}" value="Simpler"></x-import>
+<x-import component-from-global-scope="Thinkerwell.ToolToggle" icon="Search" tone="support">Key words</x-import>
+</div>
+<x-import component-from-global-scope="Thinkerwell.TaskCard" eyebrow="Before you read" icon="Lightbulb">
+<p style="margin: 0 0 14px">Look at the map. Where would you build a new town? Guess now. You can change your mind later.</p>
+<div role="radiogroup" aria-label="Your first guess" style="display: flex; gap: 10px; flex-wrap: wrap">
+<x-import component-from-global-scope="Thinkerwell.Chip" role="radio" selected="{{no}}">Near the river</x-import>
+<x-import component-from-global-scope="Thinkerwell.Chip" role="radio" selected="{{yes}}">On the hill</x-import>
+<x-import component-from-global-scope="Thinkerwell.Chip" role="radio" selected="{{no}}">In the forest</x-import>
+</div>
+</x-import>
+<figure style="margin: 0; padding: 20px; border-radius: var(--radius-xl); background: var(--paper); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 14px">
+<figcaption style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<span style="font-family: var(--font-display); font-size: 21px; line-height: 26px; font-weight: 600">Riverlands: three places for a new town</span>
+<x-import component-from-global-scope="Thinkerwell.Badge" tone="lavender" icon="Info">Fictional map</x-import>
+</figcaption>
+<svg viewBox="0 0 724 340" width="724" height="340" role="img" aria-label="Fictional map of Riverlands. A wide river runs from the north to the south through farmland that sometimes floods. The River site is beside the river. The Hill site is on high ground in the north-east. The Forest site is among tall trees in the south-east, far from the river, next to a small stream." style="display: block; width: 100%; height: auto; border-radius: 14px">
+<rect x="0" y="0" width="724" height="340" rx="16" style="fill: var(--sec-geography)"></rect>
+<ellipse cx="455" cy="92" rx="104" ry="56" style="fill: #C9D9A8"></ellipse>
+<ellipse cx="455" cy="92" rx="58" ry="30" style="fill: #B5CB8E"></ellipse>
+<path d="M150 0 C 185 70, 130 130, 205 180 S 320 250, 330 340" style="fill: none; stroke: #FDE68A; stroke-width: 76; stroke-linecap: round; opacity: 0.85"></path>
+<path d="M150 0 C 185 70, 130 130, 205 180 S 320 250, 330 340" style="fill: none; stroke: #6FB6D6; stroke-width: 20; stroke-linecap: round"></path>
+<g style="fill: #7A9B4E"><circle cx="80" cy="150" r="7"></circle><circle cx="104" cy="178" r="7"></circle><circle cx="70" cy="200" r="7"></circle><circle cx="118" cy="226" r="7"></circle><circle cx="84" cy="252" r="7"></circle><circle cx="140" cy="270" r="7"></circle><circle cx="100" cy="300" r="7"></circle><circle cx="180" cy="300" r="7"></circle></g>
+<path d="M640 150 C 615 190, 660 230, 628 270 S 640 320, 622 340" style="fill: none; stroke: #6FB6D6; stroke-width: 4; stroke-dasharray: 8 7; stroke-linecap: round"></path>
+<g style="fill: #3F6B35"><circle cx="520" cy="210" r="15"></circle><circle cx="552" cy="196" r="17"></circle><circle cx="590" cy="214" r="15"></circle><circle cx="680" cy="198" r="16"></circle><circle cx="700" cy="236" r="14"></circle><circle cx="506" cy="250" r="14"></circle><circle cx="540" cy="244" r="16"></circle><circle cx="676" cy="274" r="16"></circle><circle cx="700" cy="312" r="14"></circle><circle cx="512" cy="292" r="15"></circle><circle cx="596" cy="320" r="14"></circle><circle cx="660" cy="320" r="15"></circle><circle cx="480" cy="322" r="13"></circle></g>
+<g style="font-family: var(--font-body); font-size: 18px; font-weight: 700; fill: var(--ink); paint-order: stroke; stroke: var(--paper); stroke-width: 5px; stroke-linejoin: round">
+<circle cx="214" cy="196" r="15" style="fill: var(--paper); stroke: var(--ink); stroke-width: 5"></circle><text x="238" y="176">River site</text>
+<circle cx="470" cy="86" r="15" style="fill: var(--lemon); stroke: var(--ink); stroke-width: 5"></circle><text x="494" y="72">Hill site</text>
+<circle cx="580" cy="268" r="15" style="fill: var(--paper); stroke: var(--ink); stroke-width: 5"></circle><text x="602" y="275">Forest site</text>
+</g>
+</svg>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px">
+<div style="padding: 14px; border-radius: var(--radius-lg); border: 2px solid var(--line); display: flex; flex-direction: column; gap: 4px"><span style="font-family: var(--font-display); font-size: 18px; line-height: 24px; font-weight: 600">River site</span><span style="font-size: 15px; line-height: 22px">Flat land by a slow river. Good soil. Boats stop here. It sometimes floods.</span></div>
+<div style="padding: 14px; border-radius: var(--radius-lg); border: 2px solid var(--ink); display: flex; flex-direction: column; gap: 4px"><span style="font-family: var(--font-display); font-size: 18px; line-height: 24px; font-weight: 600">Hill site</span><span style="font-size: 15px; line-height: 22px">High and dry. No floods. People carry water up. The soil is rocky.</span></div>
+<div style="padding: 14px; border-radius: var(--radius-lg); border: 2px solid var(--line); display: flex; flex-direction: column; gap: 4px"><span style="font-family: var(--font-display); font-size: 18px; line-height: 24px; font-weight: 600">Forest site</span><span style="font-size: 15px; line-height: 22px">Wood and fruit. Trees must be cut to farm. The stream dries up.</span></div>
+</div>
+</figure>
+<x-import component-from-global-scope="Thinkerwell.ReadingCard" part="Read · 3 of 3 · simpler English" heading="Rivers can also bring problems">Rivers can bring problems too. After a lot of rain, a river can <x-import component-from-global-scope="Thinkerwell.GlossaryTerm" word="flood" definition="When water covers land that is usually dry." example="In the rainy season, the river sometimes floods the River site." open="{{yes}}">flood</x-import>. Water covers fields, roads and homes for a time. People find ways to get ready. Some families build houses on tall legs. Then water can go under the house. Some towns build high walls of earth by the river. Other towns are on a hill. But then people carry water a long way. Every place has good things and <x-import component-from-global-scope="Thinkerwell.GlossaryTerm" word="risk" definition="A chance that something bad may happen.">risks</x-import>.</x-import>
+<x-import component-from-global-scope="Thinkerwell.ActionBar" next="Next: Quick check"></x-import>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":820,"height":1780}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      m: '/images/thinkerwell-mascot-transparent.png',
+      i18: 18,
+      yes: true, no: false,
+      none: [],
+      levels: ['Standard', 'Simpler'],
+      learner: { name: 'Reza', tone: 'geography' }
+    };
+  }
+}
+</script>
+</body>
+</html>

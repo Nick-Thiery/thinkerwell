@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Section check: question</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/thinkerwell/tokens.css">
+<link rel="stylesheet" href="ds/thinkerwell/components/bundle.css">
+<script src="ds/thinkerwell/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;700&amp;family=Eczar:wght@500&amp;family=Funnel+Display:wght@400;500;600;700&amp;display=swap">
+<style>body{margin:0;background:var(--canvas)}</style>
+</helmet>
+<div style="width: 1280px; height: 1000px; box-sizing: border-box; padding: 0 6px 48px; background: var(--canvas); display: flex; flex-direction: column; gap: 32px; font-family: var(--font-body); color: var(--ink)">
+<x-import component-from-global-scope="Thinkerwell.SiteHeader" logo-src="{{m}}" links="{{links}}" learner="{{learner}}"></x-import>
+<div style="width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 340px minmax(0, 1fr) auto; align-items: center; gap: 32px; padding: 16px 24px; box-sizing: border-box; border-radius: var(--radius-xl); background: var(--paper); border: 1px solid var(--line)">
+<x-import component-from-global-scope="Thinkerwell.SectionBadge" section="history" number="{{n1}}" name="Section check: History"></x-import>
+<x-import component-from-global-scope="Thinkerwell.ProgressBar" value="{{n3}}" max="{{n10}}" label="Question 4 of 10" value-label="3 answered"></x-import>
+<x-import component-from-global-scope="Thinkerwell.Button" variant="ghost" icon="LogOut">Save and stop</x-import>
+</div>
+<main style="width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px">
+<x-import component-from-global-scope="Thinkerwell.QuestionCard" id="sq4" eyebrow="Question 4 · Using sources and evidence" prompt="A drawing shows what a market looked like long ago. What can the drawing not tell you?" options="{{opts}}" selected="{{n1}}" result="correct" feedback="A drawing shows what a place looked like. It cannot show how people felt. A diary might help with that.">
+<a href="Course.dc.html" style="display: inline-flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 700; color: var(--violet)"><x-import component-from-global-scope="Thinkerwell.Icon" name="BookOpen" size="{{i16}}"></x-import>From Lesson 1: How can we find out about the past?</a>
+</x-import>
+<x-import component-from-global-scope="Thinkerwell.ActionBar" next="Next question"></x-import>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1000}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      m: '/images/thinkerwell-mascot-transparent.png',
+      i16: 16, n1: 1, n3: 3, n10: 10,
+      opts: ['What the stalls looked like', 'How the people there felt that day', 'That there was a river nearby', 'That people carried baskets'],
+      learner: { name: 'Amina', tone: 'lemon' },
+      links: [
+        { label: 'Home' },
+        { label: 'Course', active: true },
+        { label: 'My journal' },
+        { label: 'For educators' },
+        { label: 'About' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

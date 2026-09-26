@@ -1,0 +1,266 @@
+{
+  "id": "trustworthy-information",
+  "oldId": "l19",
+  "number": 23,
+  "section": "civics",
+  "title": "What makes information trustworthy?",
+  "essentialQuestion": "How can we tell reliable information from misleading information?",
+  "learningGoal": "Check a claim's source, evidence, date and context before sharing it.",
+  "estimatedMinutes": [
+    30,
+    50
+  ],
+  "warmUp": {
+    "question": "Have you ever seen or heard a message that turned out not to be true?",
+    "options": [
+      "Yes",
+      "No",
+      "I am not sure"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "Which post or message gives a clear source and a date?",
+    "cards": [
+      {
+        "type": "cases",
+        "title": "Three posts about Hillside Learning Centre",
+        "cases": [
+          {
+            "name": "Post A",
+            "body": "“CENTRE CLOSED FOREVER TOMORROW!!! Share now.” There is no name, no date and no link."
+          },
+          {
+            "name": "Post B",
+            "body": "A notice on the centre's own page, signed by the centre manager and dated today: “The centre will be closed on Tuesday from 9 to 12 for water pipe repairs. We open again at 12 noon.”"
+          },
+          {
+            "name": "Post C",
+            "body": "A photo of the centre's locked door, sent by a neighbour. The date on the photo shows it was taken last year."
+          }
+        ]
+      },
+      {
+        "type": "cases",
+        "title": "More messages to check",
+        "cases": [
+          {
+            "name": "Message D (forwarded many times)",
+            "body": "“Free football boots for every child at City Park on Saturday. Forward this to 10 friends.” It does not say who is giving the boots."
+          },
+          {
+            "name": "Message E (a health tip)",
+            "body": "“Sleeping next to a cut onion stops all colds. Doctors don't want you to know.” No doctor or health organisation is named."
+          },
+          {
+            "name": "Message F (a photo)",
+            "body": "A photo of a fish as long as a bus, “caught at Lakeside yesterday”. The edges of the fish look strange, and nobody else has a photo of it."
+          }
+        ]
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Loud is not the same as true",
+        "text": "Messages spread very fast on phones and messaging apps. Some are true, some are honest mistakes and some are completely invented. A message with capital letters that says “Share now” can feel urgent, but that does not make it true. To judge any claim, first identify its source. Post A has no name, no date and no link, so nobody can tell where it really came from. Post B is a signed notice on the centre's own page, and it is dated today. It also gives evidence: exact times and a clear reason for the closure. A clear source with specific details is usually more trustworthy.",
+        "simpler": "Messages move fast on phones. Some are true. Some are wrong. A post in big letters that says “Share now” can feel important. But that does not make it true. When you see a claim, ask about the source. Who made it? Post A has no name and no date. Post B comes from the centre itself. It has a date. It also has evidence, like exact times. So Post B is easier to trust."
+      },
+      {
+        "heading": "Check the date and the context",
+        "text": "Even a real photo can mislead people. Post C shows a real locked door, but the photo is from last year, so it cannot tell us anything about tomorrow. The date, the place and the reason for a photo are its context, and context changes what a photo means. Photos can also be edited with apps, or even made by a computer. The giant fish in Message F looks strange at the edges, and nobody else has a picture of it. When a photo or story seems surprising, look for the same news from another trusted source.",
+        "simpler": "A real photo can still trick you. Post C shows a real door. But the photo is from last year. It does not show tomorrow. When and where a photo was taken is its context. Context can change what a photo means. Some photos are changed with apps. Some are made by computers. The big fish in Message F looks strange. No one else has a photo of it. Look for the news in another place you trust."
+      },
+      {
+        "heading": "Pause, check, then share",
+        "text": "A rumour is a story that spreads from person to person without proof. Message D and Message E are both like rumours. Message D does not explain who is giving away the free boots. Message E says “doctors don't want you to know”, but it names no doctor or health organisation. Before sharing any message, try to verify it. Ask three questions: Who made it? When was it made? What is the evidence? Then compare it with a trusted source, such as a teacher, a health worker or an official notice. If you cannot verify a message, it is usually safer not to forward it.",
+        "simpler": "A rumour is a story that spreads with no proof. Messages D and E are like rumours. They do not say who made them. Before you share, try to verify the message. Ask: Who made it? When? What is the evidence? Then ask someone you trust, like a teacher or a health worker. If you cannot check it, do not send it on."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "source",
+        "forms": [
+          "sources"
+        ],
+        "definition": "The person or place that information comes from.",
+        "example": "The centre's own page is the source of Post B."
+      },
+      {
+        "word": "claim",
+        "forms": [
+          "claims"
+        ],
+        "definition": "Something a person says is true. It may be true or false.",
+        "example": "“The centre is closed forever” is a claim with no proof."
+      },
+      {
+        "word": "evidence",
+        "definition": "Facts or proof that show if something is true.",
+        "example": "The exact times in Post B are evidence."
+      },
+      {
+        "word": "context",
+        "definition": "The facts around something, like when and where it happened.",
+        "example": "Post C's date is context. It shows the photo is old."
+      },
+      {
+        "word": "rumour",
+        "forms": [
+          "rumours"
+        ],
+        "definition": "A story that people pass on without knowing if it is true.",
+        "example": "The onion tip in Message E is a rumour."
+      },
+      {
+        "word": "verify",
+        "forms": [
+          "verified"
+        ],
+        "definition": "To check if something is true.",
+        "example": "You can verify Post A by reading the centre's own notice."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "question": "Which post is the best one to trust about the centre tomorrow?",
+        "options": [
+          {
+            "text": "Post B, the signed notice with a date",
+            "correct": true,
+            "feedback": "Yes. Post B has a clear source, today's date and exact times. That makes it the strongest evidence."
+          },
+          {
+            "text": "Post A, because it says to share it now",
+            "correct": false,
+            "feedback": "Not quite. “Share now” makes a post feel urgent, not true. Post A has no name, date or link."
+          },
+          {
+            "text": "Post C, because it shows a real photo",
+            "correct": false,
+            "feedback": "Not quite. The photo is real, but it is from last year. Look for the post with a source and today's date."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "question": "What is the main problem with Post C?",
+        "options": [
+          {
+            "text": "The photo is too small to see",
+            "correct": false,
+            "feedback": "Not quite. The size is not the problem. Read the section about date and context again."
+          },
+          {
+            "text": "The photo shows the wrong door",
+            "correct": false,
+            "feedback": "Not quite. It shows the centre's real door. The problem is when the photo was taken."
+          },
+          {
+            "text": "The photo is from last year",
+            "correct": true,
+            "feedback": "Yes. The photo is real, but it is old. It cannot show what will happen tomorrow."
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "A friend sends you Message E, the onion tip. What could you do?",
+        "placeholder": "I could ask ___. I could check ___.",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Write a kind message to a friend who shared Post A. Give the facts from Post B, and explain why the old photo in Post C does not prove anything.",
+    "sentenceStarters": [
+      "Thanks for telling me, but let's check...",
+      "The centre's notice says...",
+      "The photo in Post C does not prove...",
+      "Next time, we can ask..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I was kind and did not blame my friend.",
+      "I gave the source and the date from Post B.",
+      "I explained why the old photo does not prove it."
+    ],
+    "example": "Thanks for telling me, but let's check before we share it. Post A has no name, no date and no link. The centre's notice says it will close on Tuesday from 9 to 12 for pipe repairs. It opens again at 12 noon. The notice is signed by the manager and dated today. The photo in Post C does not prove anything about tomorrow, because it is from last year. Next time, we can ask a teacher first."
+  },
+  "speak": {
+    "partnerTask": "One person reads Message D or Message E aloud. The other person asks two check questions, such as “Who made it?” and “What is the evidence?”",
+    "independentTask": "Say your three checks out loud: “Who made it? When was it made? What is the evidence?”"
+  },
+  "watch": {
+    "youtubeId": "q-Y-z6HmRgI",
+    "title": "How to choose your news",
+    "channel": "TED-Ed",
+    "durationSeconds": 289,
+    "why": "It explains how facts, opinions and mistakes get into the news, and how a careful reader can tell them apart.",
+    "beforeQuestion": "What makes you trust a piece of news?",
+    "afterQuestion": "Why can a true photo or a true fact still mislead people?",
+    "summary": "This animated video is about how to choose your news. Not long ago, most people got news from a few newspapers and TV channels. Now the internet brings much more news, from many more people. Different sources may even disagree about the facts. The video gives some tips. When you can, find the first source, like the real report or speech. When a big story is still happening, do not check every few minutes. Wait for clear facts. Read the same story in more than one place. Look for words like “think”, “likely” or “probably”. They show that a report is not sure. Be careful when a report does not say who gave the facts. Most important, check a story before you share it.",
+    "keyPoints": [
+      "Different sources may disagree, even about the facts.",
+      "Read the same story in more than one place, and look for words that show a guess.",
+      "Check a story before you share it."
+    ],
+    "contentNote": "The narration briefly mentions secret wars, assassinations, terrorist attacks, natural disasters and protests (such as the Arab Spring and protests in Ukraine) as examples of news events. Preview it first. Learners can read the written summary instead.",
+    "replacementSuggestion": null
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Before I share a message, I will check...",
+        "required": true
+      },
+      {
+        "text": "One question I still have about checking information is...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 23. You practised checking a message's source, date, evidence and context before sharing it."
+  },
+  "visual": {
+    "type": "illustration",
+    "description": "A large phone screen showing a group chat with three messages: Post A in shouting capital letters, Post B as a neat notice with a signature and today's date, and Post C as a photo of a locked door with a small date stamp from last year. Beside the phone is a checklist with three rows: 'Who made it?', 'When?' and 'What is the evidence?'. Post B has three green ticks. Post A has three grey question marks. Post C has a tick for 'Who made it?' and a cross for 'When?'.",
+    "alt": "A phone shows three messages about a learning centre. A checklist beside it shows that only the signed, dated notice passes all three checks: who made it, when, and what is the evidence."
+  },
+  "sources": [
+    {
+      "label": "TED-Ed: How to choose your news",
+      "url": "https://ed.ted.com/lessons/how-to-choose-your-news-damon-brown"
+    },
+    {
+      "label": "UNICEF: A quick guide to spotting misinformation",
+      "url": "https://www.unicef.org/eca/stories/quick-guide-spotting-misinformation"
+    },
+    {
+      "label": "UNESCO: Media and information literacy",
+      "url": "https://www.unesco.org/en/media-information-literacy"
+    }
+  ],
+  "educatorNotes": [
+    "The examples are everyday and neutral on purpose: a centre closure, free boots, a health myth and an edited photo. Do not use real rumours about sensitive topics, such as legal processes, aid or official services, in class. If a learner raises one, do not debate the details; point them to the official organisation that runs that service.",
+    "Make clear that the onion tip in Message E is a myth. For health questions, learners should ask a health worker or a clinic.",
+    "Many learners share phones or hear messages from other people. The three checks work for spoken rumours too, so the lesson does not assume a learner owns a phone.",
+    "A partner can swap Hillside Learning Centre, City Park and the fish for local places, and name a real trusted source, such as the centre's own notice board."
+  ],
+  "changes": [
+    "Kept the fictional Post A, B and C scenario and added three more messages (a forwarded message about a free event, a health myth and an edited photo), as the CTO asked.",
+    "Expanded the text from about 76 words to three sections, adding rumours, edited and computer-made photos, and three check questions to ask before sharing.",
+    "Rewrote the simpler English so every idea is there in very short sentences; the old version left most ideas out.",
+    "Glossary grown from four to six words (added claim and rumour); all appear in both versions of the text.",
+    "Made the self-check a list of three 'I...' statements and lengthened the example answer to the target length.",
+    "Moved the correct answers so they are not both in the second position, and rewrote feedback to start 'Yes.' or 'Not quite.'",
+    "Rewrote the video summary so it stands alone, and removed the stale nextLesson field."
+  ]
+}

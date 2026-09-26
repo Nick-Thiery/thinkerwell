@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lesson 10 complete</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/thinkerwell/tokens.css">
+<link rel="stylesheet" href="ds/thinkerwell/components/bundle.css">
+<script src="ds/thinkerwell/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;700&amp;family=Eczar:wght@500&amp;family=Funnel+Display:wght@400;500;600;700&amp;display=swap">
+<style>body{margin:0;background:var(--canvas)}</style>
+</helmet>
+<div style="width: 1280px; height: 900px; box-sizing: border-box; padding: 0 6px 48px; background: var(--canvas); display: flex; flex-direction: column; gap: 40px; font-family: var(--font-body); color: var(--ink)">
+<x-import component-from-global-scope="Thinkerwell.SiteHeader" logo-src="{{m}}" links="{{links}}" learner="{{learner}}"></x-import>
+<main style="width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 400px minmax(0, 1fr); border-radius: var(--radius-2xl); overflow: hidden; background: var(--paper); border: 1px solid var(--line)">
+<div style="background: var(--lavender); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; padding: 40px">
+<x-import component-from-global-scope="Thinkerwell.Mascot" src="{{m}}" size="{{big}}"></x-import>
+<x-import component-from-global-scope="Thinkerwell.Badge" tone="geography" icon="Map">Section 2 · 1 of 5 lessons done</x-import>
+</div>
+<div style="padding: 48px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 14px; line-height: 18px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted)">Lesson 10 complete</span>
+<h1 style="margin: 0; font-family: var(--font-display); font-size: 52px; line-height: 54px; font-weight: 500; letter-spacing: -0.025em; text-wrap: balance">You finished Lesson 10.</h1>
+<p style="margin: 0; font-size: 19px; line-height: 29px">In <strong>Why do people build towns near rivers?</strong> you used the map as evidence, and you thought about both the good things and the risks of a place.</p>
+</div>
+<x-import component-from-global-scope="Thinkerwell.StagePath" done="{{all}}" compact="{{no}}"></x-import>
+<p style="margin: 0; display: flex; align-items: center; gap: 8px; font-size: 16px; line-height: 24px; color: var(--ink-muted)"><x-import component-from-global-scope="Thinkerwell.Icon" name="NotebookPen" size="{{i18}}"></x-import>Your town choice and your reflection are saved in your journal.</p>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 14px; line-height: 18px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted)">Up next</span>
+<x-import component-from-global-scope="Thinkerwell.LessonRow" number="{{n11}}" title="How do maps help us understand a place?" question="What can a map show that words alone cannot?" time="25–35 min" highlight="{{yes}}" cta="Start"></x-import>
+</div>
+<div style="display: flex; gap: 12px">
+<x-import component-from-global-scope="Thinkerwell.Button" variant="secondary" icon="ArrowLeft" href="Course.dc.html">Back to the course</x-import>
+<x-import component-from-global-scope="Thinkerwell.Button" variant="ghost" icon="NotebookPen" href="Journal.dc.html">Open my journal</x-import>
+</div>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      m: '/images/thinkerwell-mascot-transparent.png',
+      big: 220, i18: 18, n11: 11,
+      yes: true, no: false,
+      all: ['read', 'write', 'speak', 'watch', 'reflect'],
+      learner: { name: 'Amina', tone: 'lemon' },
+      links: [
+        { label: 'Home' },
+        { label: 'Course', active: true },
+        { label: 'My journal' },
+        { label: 'For educators' },
+        { label: 'About' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

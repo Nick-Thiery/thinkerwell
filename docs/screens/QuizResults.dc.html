@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Section check: results</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/thinkerwell/tokens.css">
+<link rel="stylesheet" href="ds/thinkerwell/components/bundle.css">
+<script src="ds/thinkerwell/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;700&amp;family=Eczar:wght@500&amp;family=Funnel+Display:wght@400;500;600;700&amp;display=swap">
+<style>body{margin:0;background:var(--canvas)} .review{display:flex;align-items:center;gap:16px;padding:16px 20px;border-radius:var(--radius-lg);border:2px solid var(--line);background:var(--paper);color:var(--ink);text-decoration:none}</style>
+</helmet>
+<div style="width: 1280px; height: 1120px; box-sizing: border-box; padding: 0 6px 48px; background: var(--canvas); display: flex; flex-direction: column; gap: 40px; font-family: var(--font-body); color: var(--ink)">
+<x-import component-from-global-scope="Thinkerwell.SiteHeader" logo-src="{{m}}" links="{{links}}" learner="{{learner}}"></x-import>
+<main style="width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 420px minmax(0, 1fr); gap: 32px; align-items: start">
+<section aria-labelledby="score-title" style="border-radius: var(--radius-2xl); background: var(--lemon); padding: 40px; display: flex; flex-direction: column; align-items: flex-start; gap: 20px">
+<x-import component-from-global-scope="Thinkerwell.Mascot" src="{{m}}" size="{{mascot}}"></x-import>
+<span style="font-size: 14px; line-height: 18px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase">Section check · History &amp; Human Stories</span>
+<h1 id="score-title" style="margin: 0; font-family: var(--font-display); font-size: 64px; line-height: 64px; font-weight: 500; letter-spacing: -0.03em">8 out of 10</h1>
+<p style="margin: 0; font-size: 19px; line-height: 29px">You know how to use sources and tell what you see from what you guess. Two questions are worth another look.</p>
+<div style="display: flex; flex-direction: column; gap: 10px; width: 100%">
+<x-import component-from-global-scope="Thinkerwell.Button" variant="primary" size="lg" block="{{yes}}" icon="RotateCcw" href="QuizIntro.dc.html">Try the check again</x-import>
+<x-import component-from-global-scope="Thinkerwell.Button" variant="secondary" size="lg" block="{{yes}}" href="Course.dc.html">Back to the course</x-import>
+</div>
+<span style="display: flex; align-items: center; gap: 6px; font-size: 14px; line-height: 20px"><x-import component-from-global-scope="Thinkerwell.Icon" name="Lock" size="{{i16}}"></x-import>Only you can see this score. Your best try is saved.</span>
+</section>
+<div style="display: flex; flex-direction: column; gap: 24px">
+<section aria-labelledby="skills-title" style="padding: 28px 32px; border-radius: var(--radius-xl); background: var(--paper); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 20px">
+<h2 id="skills-title" style="margin: 0; font-family: var(--font-display); font-size: 26px; line-height: 32px; font-weight: 500">How you did, skill by skill</h2>
+<x-import component-from-global-scope="Thinkerwell.ScoreSummary" skills="{{skills}}"></x-import>
+</section>
+<section aria-labelledby="again-title" style="padding: 28px 32px; border-radius: var(--radius-xl); background: var(--paper); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 14px">
+<h2 id="again-title" style="margin: 0; font-family: var(--font-display); font-size: 26px; line-height: 32px; font-weight: 500">Worth another look</h2>
+<a class="review" href="Course.dc.html">
+<x-import component-from-global-scope="Thinkerwell.SectionBadge" section="history" show-name="{{no}}" size="{{d44}}"></x-import>
+<span style="flex-grow: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 18px; line-height: 26px; font-weight: 700">Question 6: Why could extra food change a village?</span><span style="font-size: 15px; line-height: 22px; color: var(--ink-muted)">Lesson 6 · How did farming change human societies?</span></span>
+<x-import component-from-global-scope="Thinkerwell.Icon" name="ChevronRight" size="{{i20}}"></x-import>
+</a>
+<a class="review" href="Course.dc.html">
+<x-import component-from-global-scope="Thinkerwell.SectionBadge" section="history" show-name="{{no}}" size="{{d44}}"></x-import>
+<span style="flex-grow: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 18px; line-height: 26px; font-weight: 700">Question 9: What makes a trading network?</span><span style="font-size: 15px; line-height: 22px; color: var(--ink-muted)">Lesson 8 · How did trade connect distant communities?</span></span>
+<x-import component-from-global-scope="Thinkerwell.Icon" name="ChevronRight" size="{{i20}}"></x-import>
+</a>
+</section>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1120}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      m: '/images/thinkerwell-mascot-transparent.png',
+      mascot: 120, i16: 16, i20: 20, d44: 44,
+      yes: true, no: false,
+      skills: [
+        { name: 'Using sources and evidence', got: 3, of: 3 },
+        { name: 'Telling what you see from what you guess', got: 2, of: 2 },
+        { name: 'How societies changed', got: 2, of: 3 },
+        { name: 'Trade and inventions', got: 1, of: 2 }
+      ],
+      learner: { name: 'Amina', tone: 'lemon' },
+      links: [
+        { label: 'Home' },
+        { label: 'Course', active: true },
+        { label: 'My journal' },
+        { label: 'For educators' },
+        { label: 'About' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

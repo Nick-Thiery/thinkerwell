@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Course map</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/thinkerwell/tokens.css">
+<link rel="stylesheet" href="ds/thinkerwell/components/bundle.css">
+<script src="ds/thinkerwell/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;700&amp;family=Eczar:wght@500&amp;family=Funnel+Display:wght@400;500;600;700&amp;display=swap">
+<style>body{margin:0;background:var(--canvas)}</style>
+</helmet>
+<div style="width: 1280px; height: 2040px; box-sizing: border-box; padding: 0 6px 48px; background: var(--canvas); display: flex; flex-direction: column; gap: 40px; font-family: var(--font-body); color: var(--ink)">
+<x-import component-from-global-scope="Thinkerwell.SiteHeader" logo-src="{{m}}" links="{{links}}" learner="{{learner}}"></x-import>
+<main style="width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
+<header style="display: flex; flex-direction: column; gap: 12px; max-width: 760px">
+<span style="font-size: 14px; line-height: 18px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted)">The course</span>
+<h1 style="margin: 0; font-family: var(--font-display); font-size: 48px; line-height: 52px; font-weight: 500; letter-spacing: -0.025em">Exploring Our World</h1>
+<p style="margin: 0; font-size: 20px; line-height: 30px">Discover how people, places, communities and decisions shape the world around us.</p>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 4px">
+<x-import component-from-global-scope="Thinkerwell.Badge" tone="outline" icon="BookOpen">24 lessons</x-import>
+<x-import component-from-global-scope="Thinkerwell.Badge" tone="outline" icon="ClipboardCheck">4 section checks</x-import>
+<x-import component-from-global-scope="Thinkerwell.Badge" tone="outline" icon="Clock">About 30 min a lesson</x-import>
+</div>
+</header>
+<div style="display: grid; grid-template-columns: 272px minmax(0, 1fr); gap: 40px; align-items: start">
+<nav aria-label="Sections" style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 14px; line-height: 18px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted); padding: 0 4px 4px">Sections</span>
+<a href="#s1" style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: var(--radius-lg); background: var(--paper); border: 2px solid var(--line); color: var(--ink); text-decoration: none">
+<x-import component-from-global-scope="Thinkerwell.SectionBadge" section="history" show-name="{{no}}" size="{{d40}}"></x-import>
+<span style="flex-grow: 1; font-size: 16px; line-height: 20px; font-weight: 700">History &amp; Human Stories</span>
+<span style="font-size: 14px; color: var(--ink-muted)">9/9</span>
+</a>
+<a href="#s2" aria-current="true" style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: var(--radius-lg); background: var(--paper); border: 2px solid var(--ink); color: var(--ink); text-decoration: none">
+<x-import component-from-global-scope="Thinkerwell.SectionBadge" section="geography" show-name="{{no}}" size="{{d40}}"></x-import>
+<span style="flex-grow: 1; font-size: 16px; line-height: 20px; font-weight: 700">Geography &amp; Our Environment</span>
+<span style="font-size: 14px; color: var(--ink-muted)">0/5</span>
+</a>
+<a href="#s3" style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: var(--radius-lg); background: var(--paper); border: 2px solid var(--line); color: var(--ink); text-decoration: none">
+<x-import component-from-global-scope="Thinkerwell.SectionBadge" section="culture" show-name="{{no}}" size="{{d40}}"></x-import>
+<span style="flex-grow: 1; font-size: 16px; line-height: 20px; font-weight: 700">Culture, Society &amp; Identity</span>
+<span style="font-size: 14px; color: var(--ink-muted)">0/5</span>
+</a>
+<a href="#s4" style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: var(--radius-lg); background: var(--paper); border: 2px solid var(--line); color: var(--ink); text-decoration: none">
+<x-import component-from-global-scope="Thinkerwell.SectionBadge" section="civics" show-name="{{no}}" size="{{d40}}"></x-import>
+<span style="flex-grow: 1; font-size: 16px; line-height: 20px; font-weight: 700">Civics, Media &amp; Everyday Economics</span>
+<span style="font-size: 14px; color: var(--ink-muted)">0/5</span>
+</a>
+<div style="display: flex; gap: 10px; margin-top: 12px; padding: 16px; border-radius: var(--radius-lg); background: var(--lavender-wash)">
+<x-import component-from-global-scope="Thinkerwell.Icon" name="Info" size="{{i20}}"></x-import>
+<span style="font-size: 15px; line-height: 22px">Nothing is locked. Start any lesson, in any order. The numbers show a good path.</span>
+</div>
+</nav>
+<div style="display: flex; flex-direction: column; gap: 24px">
+<section id="s1" aria-label="Section 1" style="border-radius: var(--radius-xl); background: var(--paper); border: 1px solid var(--line); overflow: hidden">
+<x-import component-from-global-scope="Thinkerwell.SectionHeader" section="history" number="{{n1}}" total="{{n9}}" completed="{{n9}}" question="How have people, ideas and events shaped the world we live in?"></x-import>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 24px">
+<span style="display: flex; align-items: center; gap: 8px; font-size: 16px; line-height: 22px"><x-import component-from-global-scope="Thinkerwell.Icon" name="Check" size="{{i20}}"></x-import>All 9 lessons done. Section check not taken yet.</span>
+<div style="display: flex; gap: 8px">
+<x-import component-from-global-scope="Thinkerwell.Button" variant="ghost" icon="ChevronDown">Show lessons</x-import>
+<x-import component-from-global-scope="Thinkerwell.Button" variant="secondary" icon="ClipboardCheck">Section check</x-import>
+</div>
+</div>
+</section>
+<section id="s2" aria-label="Section 2" style="border-radius: var(--radius-xl); background: var(--paper); border: 1px solid var(--line); overflow: hidden">
+<x-import component-from-global-scope="Thinkerwell.SectionHeader" section="geography" number="{{n2}}" total="{{n5}}" completed="{{n0}}" question="How do places shape people's lives, and how do people shape places?"></x-import>
+<div style="display: flex; flex-direction: column; gap: 12px; padding: 20px">
+<x-import component-from-global-scope="Thinkerwell.LessonRow" number="{{n10}}" title="Why do people build towns near rivers?" question="What makes one place better than another for a community to live?" time="25–35 min" status="in-progress" done="{{doneRead}}" current="write" highlight="{{yes}}" href="LessonWrite.dc.html"></x-import>
+<x-import component-from-global-scope="Thinkerwell.LessonRow" number="{{n11}}" title="How do maps help us understand a place?" question="What can a map show that words alone cannot?" time="25–35 min"></x-import>
+<x-import component-from-global-scope="Thinkerwell.LessonRow" number="{{n12}}" title="What makes a city grow?" question="Why do some small settlements become major cities?" time="25–35 min"></x-import>
+<x-import component-from-global-scope="Thinkerwell.LessonRow" number="{{n13}}" title="How do climate and seasons affect daily life?" question="How do long-term climate patterns shape how people live and work?" time="25–35 min"></x-import>
+<x-import component-from-global-scope="Thinkerwell.LessonRow" number="{{n14}}" title="How can communities respond to environmental change?" question="What can people do when their environment changes?" time="25–35 min"></x-import>
+<x-import component-from-global-scope="Thinkerwell.LessonRow" kind="quiz" title="Section check: Geography &amp; Our Environment" question="10 questions about Lessons 10–14. Try it any time, as often as you like." time="About 15 min" href="QuizIntro.dc.html"></x-import>
+</div>
+</section>
+<section id="s3" aria-label="Section 3" style="border-radius: var(--radius-xl); background: var(--paper); border: 1px solid var(--line); overflow: hidden">
+<x-import component-from-global-scope="Thinkerwell.SectionHeader" section="culture" number="{{n3}}" total="{{n5}}" completed="{{n0}}" question="How do people create meaning, community and belonging?"></x-import>
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 16px 24px">
+<span style="font-size: 16px; line-height: 22px; color: var(--ink-muted)">Lessons 15–19 · objects, languages, traditions, art, belonging</span>
+<x-import component-from-global-scope="Thinkerwell.Button" variant="ghost" icon="ChevronDown">Show 5 lessons</x-import>
+</div>
+</section>
+<section id="s4" aria-label="Section 4" style="border-radius: var(--radius-xl); background: var(--paper); border: 1px solid var(--line); overflow: hidden">
+<x-import component-from-global-scope="Thinkerwell.SectionHeader" section="civics" number="{{n4}}" total="{{n5}}" completed="{{n0}}" question="How do people make choices, use resources and build fairer communities together?"></x-import>
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 16px 24px">
+<span style="font-size: 16px; line-height: 22px; color: var(--ink-muted)">Lessons 20–24 · choices, trade, planning, information, community</span>
+<x-import component-from-global-scope="Thinkerwell.Button" variant="ghost" icon="ChevronDown">Show 5 lessons</x-import>
+</div>
+</section>
+</div>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":2040}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      m: '/images/thinkerwell-mascot-transparent.png',
+      i20: 20, d40: 40,
+      n0: 0, n1: 1, n2: 2, n3: 3, n4: 4, n5: 5, n9: 9, n10: 10, n11: 11, n12: 12, n13: 13, n14: 14,
+      yes: true, no: false,
+      doneRead: ['read'],
+      learner: { name: 'Amina', tone: 'lemon' },
+      links: [
+        { label: 'Home' },
+        { label: 'Course', active: true },
+        { label: 'My journal' },
+        { label: 'For educators' },
+        { label: 'About' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

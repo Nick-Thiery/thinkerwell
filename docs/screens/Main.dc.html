@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Home: who's learning</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/thinkerwell/tokens.css">
+<link rel="stylesheet" href="ds/thinkerwell/components/bundle.css">
+<script src="ds/thinkerwell/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;700&amp;family=Eczar:wght@500&amp;family=Funnel+Display:wght@400;500;600;700&amp;display=swap">
+<style>body{margin:0;background:var(--frame)}</style>
+</helmet>
+<div style="width: 1280px; height: 800px; box-sizing: border-box; padding: 6px; background: var(--frame); display: flex; flex-direction: column; gap: 6px; font-family: var(--font-body); color: var(--ink)">
+<x-import component-from-global-scope="Thinkerwell.SiteHeader" logo-src="{{m}}" links="{{links}}"></x-import>
+<div style="flex-grow: 1; min-height: 0; display: flex; gap: 6px">
+<main style="flex-grow: 1; background: var(--paper); border-radius: var(--radius-2xl); padding: 40px 64px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 24px">
+<x-import component-from-global-scope="Thinkerwell.Mascot" src="{{m}}" size="{{mascotSize}}"></x-import>
+<h1 style="margin: 0; font-family: var(--font-display); font-size: 88px; line-height: 0.92; font-weight: 500; letter-spacing: -0.035em; text-wrap: balance">Explore your world.</h1>
+<p style="margin: 0; max-width: 520px; font-size: 20px; line-height: 30px; color: var(--ink)">A free social-studies course. Learn about people, places and communities, and share your own ideas.</p>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 14px; line-height: 18px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted)">Every lesson has five steps</span>
+<div style="display: flex; gap: 8px; flex-wrap: wrap">
+<x-import component-from-global-scope="Thinkerwell.Badge" tone="outline" icon="BookOpen">Read</x-import>
+<x-import component-from-global-scope="Thinkerwell.Badge" tone="outline" icon="Pencil">Write</x-import>
+<x-import component-from-global-scope="Thinkerwell.Badge" tone="outline" icon="MessageCircle">Speak</x-import>
+<x-import component-from-global-scope="Thinkerwell.Badge" tone="outline" icon="Play">Watch</x-import>
+<x-import component-from-global-scope="Thinkerwell.Badge" tone="outline" icon="RefreshCw">Reflect</x-import>
+</div>
+</div>
+<p style="margin: 0; font-size: 16px; line-height: 24px; color: var(--ink-muted)">24 lessons in 4 sections · no account needed</p>
+</main>
+<aside aria-labelledby="who-title" style="width: 480px; flex: none; box-sizing: border-box; background: var(--lavender); border-radius: var(--radius-2xl); padding: 40px; display: flex; flex-direction: column; justify-content: center; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 14px; line-height: 18px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase">On this device</span>
+<h2 id="who-title" style="margin: 0; font-family: var(--font-display); font-size: 40px; line-height: 44px; font-weight: 500; letter-spacing: -0.02em">Who's learning today?</h2>
+<p style="margin: 0; font-size: 16px; line-height: 24px; color: var(--ink-muted)">Tap your name to carry on where you stopped.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
+<x-import component-from-global-scope="Thinkerwell.LearnerTile" name="Amina" tone="lemon" meta="Up to Lesson 10"></x-import>
+<x-import component-from-global-scope="Thinkerwell.LearnerTile" name="Reza" tone="geography" meta="Up to Lesson 3"></x-import>
+<x-import component-from-global-scope="Thinkerwell.LearnerTile" name="Hawa" tone="civics" meta="Up to Lesson 1"></x-import>
+<x-import component-from-global-scope="Thinkerwell.LearnerTile" variant="new" name="I'm new here"></x-import>
+</div>
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 6px">
+<x-import component-from-global-scope="Thinkerwell.Button" variant="ghost" icon="Eye">Just look around (nothing is saved)</x-import>
+<span style="display: flex; align-items: center; gap: 6px; font-size: 14px; line-height: 20px; color: var(--ink-muted)"><x-import component-from-global-scope="Thinkerwell.Icon" name="Lock" size="{{i16}}"></x-import>Work is saved on this device only. No passwords, no photos.</span>
+</div>
+</aside>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":800}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      m: '/images/thinkerwell-mascot-transparent.png',
+      mascotSize: 184,
+      i16: 16,
+      links: [
+        { label: 'Home', active: true },
+        { label: 'Course' },
+        { label: 'For educators' },
+        { label: 'About' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Phone: course</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/thinkerwell/tokens.css">
+<link rel="stylesheet" href="ds/thinkerwell/components/bundle.css">
+<script src="ds/thinkerwell/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;700&amp;family=Eczar:wght@500&amp;family=Funnel+Display:wght@400;500;600;700&amp;display=swap">
+<style>body{margin:0;background:var(--canvas)}</style>
+</helmet>
+<div style="width: 390px; height: 1860px; box-sizing: border-box; padding: 0 0 32px; background: var(--canvas); display: flex; flex-direction: column; gap: 24px; font-family: var(--font-body); color: var(--ink)">
+<div style="padding: 0 4px"><x-import component-from-global-scope="Thinkerwell.SiteHeader" logo-src="{{m}}" learner="{{learner}}" compact="{{yes}}"></x-import></div>
+<header style="padding: 0 16px; display: flex; flex-direction: column; gap: 8px">
+<h1 style="margin: 0; font-family: var(--font-display); font-size: 32px; line-height: 36px; font-weight: 500; letter-spacing: -0.02em">Exploring Our World</h1>
+<p style="margin: 0; font-size: 16px; line-height: 24px; color: var(--ink-muted)">24 lessons in 4 sections. Nothing is locked: start anywhere.</p>
+</header>
+<nav aria-label="Sections" style="display: flex; gap: 8px; overflow-x: auto; padding: 0 16px 4px">
+<x-import component-from-global-scope="Thinkerwell.Chip" selected="{{no}}" icon="Landmark">History</x-import>
+<x-import component-from-global-scope="Thinkerwell.Chip" selected="{{yes}}" icon="Map">Geography</x-import>
+<x-import component-from-global-scope="Thinkerwell.Chip" selected="{{no}}" icon="Palette">Culture</x-import>
+<x-import component-from-global-scope="Thinkerwell.Chip" selected="{{no}}" icon="Scale">Civics</x-import>
+</nav>
+<section aria-label="Section 2" style="margin: 0 12px; border-radius: var(--radius-xl); background: var(--paper); border: 1px solid var(--line); overflow: hidden">
+<x-import component-from-global-scope="Thinkerwell.SectionHeader" section="geography" number="{{n2}}" total="{{n5}}" completed="{{n0}}" question="How do places shape people's lives, and how do people shape places?"></x-import>
+<div style="display: flex; flex-direction: column; gap: 10px; padding: 12px">
+<x-import component-from-global-scope="Thinkerwell.LessonRow" number="{{n10}}" title="Why do people build towns near rivers?" question="What makes one place better than another for a community to live?" time="25–35 min" status="in-progress" done="{{doneRead}}" current="write" highlight="{{yes}}"></x-import>
+<x-import component-from-global-scope="Thinkerwell.LessonRow" number="{{n11}}" title="How do maps help us understand a place?" question="What can a map show that words alone cannot?" time="25–35 min"></x-import>
+<x-import component-from-global-scope="Thinkerwell.LessonRow" number="{{n12}}" title="What makes a city grow?" question="Why do some small settlements become major cities?" time="25–35 min"></x-import>
+<x-import component-from-global-scope="Thinkerwell.LessonRow" number="{{n13}}" title="How do climate and seasons affect daily life?" question="How do long-term climate patterns shape how people live and work?" time="25–35 min"></x-import>
+<x-import component-from-global-scope="Thinkerwell.LessonRow" number="{{n14}}" title="How can communities respond to environmental change?" question="What can people do when their environment changes?" time="25–35 min"></x-import>
+<x-import component-from-global-scope="Thinkerwell.LessonRow" kind="quiz" title="Section check" question="10 questions about Lessons 10–14. Try it as often as you like." time="About 15 min"></x-import>
+</div>
+</section>
+<section aria-label="Section 3" style="margin: 0 12px; border-radius: var(--radius-xl); background: var(--paper); border: 1px solid var(--line); overflow: hidden">
+<x-import component-from-global-scope="Thinkerwell.SectionHeader" section="culture" number="{{n3}}" total="{{n5}}" completed="{{n0}}" question="How do people create meaning, community and belonging?"></x-import>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1860}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      m: '/images/thinkerwell-mascot-transparent.png',
+      n0: 0, n2: 2, n3: 3, n5: 5, n10: 10, n11: 11, n12: 12, n13: 13, n14: 14,
+      yes: true, no: false,
+      doneRead: ['read'],
+      learner: { name: 'Amina', tone: 'lemon' }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Learner home</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/thinkerwell/tokens.css">
+<link rel="stylesheet" href="ds/thinkerwell/components/bundle.css">
+<script src="ds/thinkerwell/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;700&amp;family=Eczar:wght@500&amp;family=Funnel+Display:wght@400;500;600;700&amp;display=swap">
+<style>body{margin:0;background:var(--canvas)}</style>
+</helmet>
+<div style="width: 1280px; height: 1240px; box-sizing: border-box; padding: 0 6px 40px; background: var(--canvas); display: flex; flex-direction: column; gap: 40px; font-family: var(--font-body); color: var(--ink)">
+<x-import component-from-global-scope="Thinkerwell.SiteHeader" logo-src="{{m}}" links="{{links}}" learner="{{learner}}"></x-import>
+<main style="width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px">
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h1 style="margin: 0; font-family: var(--font-display); font-size: 44px; line-height: 48px; font-weight: 500; letter-spacing: -0.02em">Hi Amina</h1>
+<p style="margin: 0; font-size: 18px; line-height: 28px; color: var(--ink-muted)">You have finished 9 lessons. Next up is Lesson 10.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end">
+<x-import component-from-global-scope="Thinkerwell.Badge" tone="outline" icon="Download">Lessons 1–11 work offline</x-import>
+<x-import component-from-global-scope="Thinkerwell.Badge" tone="outline" icon="Lock">Saved on this device</x-import>
+</div>
+</div>
+<x-import component-from-global-scope="Thinkerwell.ContinueCard" title="Why do people build towns near rivers?" lesson-label="Lesson 10 · Geography" done="{{doneRead}}" current="write" stage-label="Next step: Write" cta="Continue"></x-import>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 32px; align-items: start">
+<section aria-labelledby="course-title" style="display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; align-items: baseline; justify-content: space-between">
+<h2 id="course-title" style="margin: 0; font-family: var(--font-display); font-size: 28px; line-height: 34px; font-weight: 500">Your course</h2>
+<a href="Course.dc.html" style="font-size: 16px; font-weight: 700; color: var(--violet)">See all 24 lessons</a>
+</div>
+<a href="Course.dc.html" style="display: flex; align-items: center; gap: 20px; padding: 20px 24px; border-radius: var(--radius-xl); background: var(--paper); border: 2px solid var(--line); color: var(--ink); text-decoration: none">
+<x-import component-from-global-scope="Thinkerwell.SectionBadge" section="history" number="{{n1}}" style="flex-grow: 1"></x-import>
+<span style="font-size: 16px; line-height: 22px; color: var(--ink-muted)">9 of 9 lessons</span>
+<x-import component-from-global-scope="Thinkerwell.ProgressRing" value="{{n9}}" max="{{n9}}" label="{{checkLabel}}"></x-import>
+</a>
+<a href="Course.dc.html" style="display: flex; align-items: center; gap: 20px; padding: 20px 24px; border-radius: var(--radius-xl); background: var(--paper); border: 2px solid var(--ink); color: var(--ink); text-decoration: none">
+<x-import component-from-global-scope="Thinkerwell.SectionBadge" section="geography" number="{{n2}}" style="flex-grow: 1"></x-import>
+<span style="font-size: 16px; line-height: 22px; color: var(--ink-muted)">You are here</span>
+<x-import component-from-global-scope="Thinkerwell.ProgressRing" value="{{n0}}" max="{{n5}}"></x-import>
+</a>
+<a href="Course.dc.html" style="display: flex; align-items: center; gap: 20px; padding: 20px 24px; border-radius: var(--radius-xl); background: var(--paper); border: 2px solid var(--line); color: var(--ink); text-decoration: none">
+<x-import component-from-global-scope="Thinkerwell.SectionBadge" section="culture" number="{{n3}}" style="flex-grow: 1"></x-import>
+<span style="font-size: 16px; line-height: 22px; color: var(--ink-muted)">5 lessons</span>
+<x-import component-from-global-scope="Thinkerwell.ProgressRing" value="{{n0}}" max="{{n5}}"></x-import>
+</a>
+<a href="Course.dc.html" style="display: flex; align-items: center; gap: 20px; padding: 20px 24px; border-radius: var(--radius-xl); background: var(--paper); border: 2px solid var(--line); color: var(--ink); text-decoration: none">
+<x-import component-from-global-scope="Thinkerwell.SectionBadge" section="civics" number="{{n4}}" style="flex-grow: 1"></x-import>
+<span style="font-size: 16px; line-height: 22px; color: var(--ink-muted)">5 lessons</span>
+<x-import component-from-global-scope="Thinkerwell.ProgressRing" value="{{n0}}" max="{{n5}}"></x-import>
+</a>
+</section>
+<aside style="display: flex; flex-direction: column; gap: 20px; padding-top: 50px">
+<section aria-labelledby="check-title" style="display: flex; flex-direction: column; gap: 12px; padding: 24px; border-radius: var(--radius-xl); background: var(--sec-history)">
+<span style="display: flex; align-items: center; gap: 8px; font-size: 14px; line-height: 18px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sec-history-ink)"><x-import component-from-global-scope="Thinkerwell.Icon" name="ClipboardCheck" size="{{i18}}"></x-import>Section check ready</span>
+<h3 id="check-title" style="margin: 0; font-family: var(--font-display); font-size: 24px; line-height: 30px; font-weight: 500">History &amp; Human Stories</h3>
+<p style="margin: 0; font-size: 16px; line-height: 24px">You finished all 9 lessons. Try 10 questions to see what you remember. Take it as many times as you like.</p>
+<a href="QuizIntro.dc.html" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 20px; border-radius: var(--radius-md); border: 2px solid var(--ink); background: var(--paper); color: var(--ink); font-weight: 700; font-size: 16px; text-decoration: none">Start the check</a>
+</section>
+<section aria-labelledby="journal-title" style="display: flex; flex-direction: column; gap: 12px; padding: 24px; border-radius: var(--radius-xl); background: var(--paper); border: 1px solid var(--line)">
+<h3 id="journal-title" style="margin: 0; font-family: var(--font-display); font-size: 22px; line-height: 28px; font-weight: 600">From your journal</h3>
+<span style="font-size: 14px; line-height: 20px; font-weight: 700; color: var(--ink-muted)">Lesson 9 · Reflection</span>
+<p style="margin: 0; font-size: 17px; line-height: 26px">One thing I learned today is that a new invention does not help everyone in the same way.</p>
+<a href="Journal.dc.html" style="align-self: flex-start; font-size: 16px; font-weight: 700; color: var(--violet)">Open my journal</a>
+</section>
+</aside>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1240}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      m: '/images/thinkerwell-mascot-transparent.png',
+      i18: 18,
+      n0: 0, n1: 1, n2: 2, n3: 3, n4: 4, n5: 5, n9: 9,
+      checkLabel: '9/9',
+      doneRead: ['read'],
+      learner: { name: 'Amina', tone: 'lemon' },
+      links: [
+        { label: 'Home', active: true },
+        { label: 'Course' },
+        { label: 'My journal' },
+        { label: 'For educators' },
+        { label: 'About' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

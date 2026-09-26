@@ -1,0 +1,247 @@
+{
+  "id": "changing-scale",
+  "oldId": "history-scale",
+  "number": 3,
+  "section": "history",
+  "title": "How does changing scale change the story?",
+  "essentialQuestion": "What do we notice when we zoom in or zoom out in time and place?",
+  "learningGoal": "Compare two scales of the same place and explain what each scale shows and what it hides.",
+  "estimatedMinutes": [
+    25,
+    45
+  ],
+  "warmUp": {
+    "question": "When you zoom in on a map, what do you see more clearly?",
+    "options": [
+      "Small details, like one street",
+      "The big picture, like a whole country",
+      "I am not sure yet"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "Which scale best explains why a trader arrived late today? Which scale explains why the town centre moved?",
+    "cards": [
+      {
+        "type": "timeline",
+        "title": "Riverstone at three scales",
+        "events": [
+          {
+            "year": "One afternoon",
+            "text": "Heavy rain raises the Riverstone River. The market bridge closes for six hours, so traders take a longer road."
+          },
+          {
+            "year": "20 years",
+            "text": "The town builds two new bridges as homes and markets spread to both sides of the river."
+          },
+          {
+            "year": "Several hundred years",
+            "text": "The river slowly changes its course. Old paths disappear, new neighbourhoods grow, and the town centre moves."
+          }
+        ]
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "History has a zoom",
+        "text": "On a map on a screen, you can zoom in to see one street or zoom out to see a whole country. Historians do something similar with the past, because they choose a scale. Scale means how big a piece of time, place or group you decide to study. A close scale looks at one day, one letter or one family. A wide scale might follow a whole town for 100 years, or compare many regions over thousands of years. Look at Riverstone. At the scale of one afternoon, the story is about rain and a closed bridge. Over 20 years, it is about a town that grows. Over several hundred years, it is about a river that moves.",
+        "simpler": "On a map, you can zoom in and out. Historians do this with the past too. They choose a scale. Scale means how much time or place you look at. A close scale is one day or one family. A wide scale is a town over 100 years. In Riverstone, the story of one afternoon is about rain and a bridge. Over 20 years, the town grows. Over hundreds of years, the river moves."
+      },
+      {
+        "heading": "A close view shows people",
+        "text": "A close view helps us notice people's choices, feelings and small details. A diary, a receipt or one photograph can show how an event changed one person's day. For example, a trader's diary might say that she waited six hours for the bridge to open. However, one person's day is not always the same as everyone else's. Other traders may have taken the long road instead. So close evidence needs context, which means we need to know what was happening around it at the time.",
+        "simpler": "A close view shows people. We see their choices and feelings. A diary or a receipt shows one person's day. A trader may wait six hours for the bridge. But other traders may take the long road. One person's day is not everyone's day. So we need context. Context is what is going on around the source."
+      },
+      {
+        "heading": "A wide view shows patterns",
+        "text": "A wide view helps us see a pattern, which is a change that repeats or goes on for a long time. Maps from many different years can show Riverstone slowly spreading across the river. But a wide view can also hide people, because a line on a timeline cannot show every person's choices. Some historians zoom out as far as possible, to the whole history of the universe. At that scale, one town is far too small to see. That is why historians move between scales. Neither scale is always better, because the best scale depends on the question you ask.",
+        "simpler": "A wide view shows a pattern. A pattern is a change that goes on for a long time. Maps from many years show the town getting bigger. But a wide view can hide people. A timeline cannot show every person. Some historians look at the whole universe. Then you cannot see one town at all. So historians move from close to wide. The best scale depends on your question."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "scale",
+        "definition": "How big a piece of time, place or group you study.",
+        "example": "One afternoon is a close scale. Several hundred years is a wide scale."
+      },
+      {
+        "word": "zoom",
+        "forms": [
+          "zooms",
+          "zooming"
+        ],
+        "definition": "To move closer to see details, or back to see more.",
+        "example": "Historians zoom out to see how Riverstone grew over 20 years."
+      },
+      {
+        "word": "context",
+        "definition": "What was happening around a source when it was made.",
+        "example": "Heavy rain that day gives the trader's diary context."
+      },
+      {
+        "word": "pattern",
+        "forms": [
+          "patterns"
+        ],
+        "definition": "A change that repeats or keeps going for a long time.",
+        "example": "Two new bridges in 20 years show a pattern of growth."
+      },
+      {
+        "word": "timeline",
+        "forms": [
+          "timelines"
+        ],
+        "definition": "A line that shows events in the order they happened.",
+        "example": "A timeline of Riverstone can show one afternoon or several hundred years."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "question": "Why might a historian change scale?",
+        "options": [
+          {
+            "text": "To notice a pattern they could not see",
+            "correct": true,
+            "feedback": "Yes. Zooming out can show a pattern that you cannot see in one day. Zooming in can show people that a wide view hides."
+          },
+          {
+            "text": "To make the story much longer",
+            "correct": false,
+            "feedback": "Not quite. Changing scale is not about length. It is about what you notice. Look again at the last section."
+          },
+          {
+            "text": "To stop using any sources at all",
+            "correct": false,
+            "feedback": "Not quite. Historians use sources at every scale. Look again at the last section."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "question": "Which source would best show how Riverstone grew over 20 years?",
+        "options": [
+          {
+            "text": "One photo taken on a single day",
+            "correct": false,
+            "feedback": "Not quite. One photo shows one moment, not 20 years of change. Look for a source that covers many years."
+          },
+          {
+            "text": "Maps of the town from many years",
+            "correct": true,
+            "feedback": "Yes. Maps from many years let you compare the town over time and see it grow."
+          },
+          {
+            "text": "A trader's receipt from one afternoon",
+            "correct": false,
+            "feedback": "Not quite. A receipt from one afternoon is a close-up source. Look for a source that covers many years."
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "What could a wide view hide about the people in Riverstone?",
+        "placeholder": "For example: A wide view might not show ...",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Explain what one afternoon and 20 years each tell us about the bridges in Riverstone. Then say which question each one can answer.",
+    "sentenceStarters": [
+      "At the scale of one afternoon, we notice ...",
+      "Over 20 years, the evidence shows ...",
+      "The close scale helps us answer ...",
+      "The wide scale helps us answer ...",
+      "Together, the two scales show ..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I described the one-afternoon story.",
+      "I described the 20-year story.",
+      "I said which question each scale answers."
+    ],
+    "example": "At the scale of one afternoon, we notice heavy rain and a closed bridge. A trader has to take a longer road, so she arrives late. Over 20 years, the evidence shows a town that is growing. New homes and markets spread to both sides of the river. The close scale helps us answer why one trader was late that day. The wide scale helps us answer why Riverstone built two new bridges. Together, the two scales show that one place can have more than one story."
+  },
+  "speak": {
+    "partnerTask": "One person says a town's history should start with one person's day. The other says it should start with a long timeline. Each gives one reason, then switch.",
+    "independentTask": "Say out loud: \"My claim is ... One detail is ... This matters because ...\""
+  },
+  "watch": {
+    "youtubeId": "f3nJOCfkerI",
+    "title": "Threshold 1: The Big Bang | Big History Project",
+    "channel": "OER Project",
+    "durationSeconds": 120,
+    "why": "It zooms out to the widest scale of all, the whole universe, so you can see what a very wide view shows and what it leaves out.",
+    "beforeQuestion": "What signs tell you that the video is using a very wide scale?",
+    "afterQuestion": "What does this wide scale show? What human details does it leave out?",
+    "summary": "This short video uses the widest scale there is: the history of the whole universe. Scientists explain that the universe began about 13.8 billion years ago. At first, it was very small and very hot. Then it grew bigger and cooler. It has kept changing ever since. At this scale, you do not see any person, town or country. You see only very big changes over billions of years. This helps us see that human history is a small part of a much longer story. But this scale cannot tell us why one trader was late, or how one family lived. To learn those things, historians zoom in.",
+    "keyPoints": [
+      "Scale changes what we notice.",
+      "A wide view shows long patterns but can hide people.",
+      "A close view shows people's lives and choices."
+    ],
+    "contentNote": null,
+    "replacementSuggestion": {
+      "youtubeUrl": "https://www.youtube.com/watch?v=0fKBhvDjuy0",
+      "title": "Powers of Ten™ (1977)",
+      "channel": "Eames Office",
+      "why": "It zooms out from two people on a picnic blanket to the edge of the known universe and then back in, through a hand and its cells, to the inside of an atom, which shows 'changing scale' in place very clearly. It is about nine minutes long and the narration is fairly fast, so learners could watch with the pictures first.",
+      "verify": true
+    }
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "One topic that needs both a close view and a wide view is ...",
+        "required": true
+      },
+      {
+        "text": "A timeline of Riverstone or a place I know could show ...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 3. You compared how zooming in and zooming out change the story we tell."
+  },
+  "visual": {
+    "type": "timeline",
+    "description": "Three stacked timelines for Riverstone, each one zoomed out further than the one above. Top: one afternoon (rain starts, bridge closes, traders take the long road, bridge opens six hours later). Middle: 20 years (one bridge, homes spread across the river, two new bridges). Bottom: several hundred years (the river slowly changes course and the town centre moves). A magnifying glass icon sits beside the top line and a wide-angle icon beside the bottom line.",
+    "alt": "Three timelines of Riverstone: one afternoon, 20 years and several hundred years. Each one tells a different story about the same town."
+  },
+  "sources": [
+    {
+      "label": "OER Project: Big History overview",
+      "url": "https://www.oerproject.com/Big-History"
+    },
+    {
+      "label": "OER Project: Scale and perspective in history",
+      "url": "https://www.oerproject.com/topics/scale"
+    },
+    {
+      "label": "OER Project: What is scale switching in Big History?",
+      "url": "https://www.oerproject.com/OER-Materials/OER-Media/HTML-Articles/BHP/Unit1/Scale-Switching"
+    }
+  ],
+  "educatorNotes": [
+    "Riverstone is the fictional town from Lesson 1. You could add a real local example, such as a street or market seen over one day and over many years.",
+    "The current video is about the very start of the universe. It works as an example of the widest scale, but it is mostly science. Lesson 4 explains how science accounts and faith accounts answer different questions. A replacement video about zooming is suggested.",
+    "Learners can draw the second reflection as a two-level timeline instead of writing it."
+  ],
+  "changes": [
+    "Cut the reading from four sections (273 words, grade about 7.6) to three sections at the target level.",
+    "Rewrote 'simpler English' so it is much shorter and easier, instead of a near copy of the text.",
+    "Removed the paragraph about Thinkerwell and Big History; kept one sentence about the widest scale to link to the video.",
+    "Evidence is now one timeline card with the same three Riverstone scales.",
+    "Glossary is now scale, zoom, context, pattern and timeline, and every word appears in the passages. Dropped 'evidence', which Lesson 1 teaches.",
+    "Checks now have three options each, with the correct answer in different positions.",
+    "Suggested a replacement video about zooming in and out (Powers of Ten, Eames Office)."
+  ]
+}

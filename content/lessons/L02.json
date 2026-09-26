@@ -1,0 +1,256 @@
+{
+  "id": "objects-and-people",
+  "oldId": "l2",
+  "number": 2,
+  "section": "history",
+  "title": "What can an object reveal about a person in the past?",
+  "essentialQuestion": "How can one object help us understand a life, place, or time period?",
+  "learningGoal": "Separate observations from inferences, and use a second source to test an idea about an object.",
+  "estimatedMinutes": [
+    25,
+    45
+  ],
+  "warmUp": {
+    "question": "Imagine you find an old cup with a crack that someone fixed. What might it tell you?",
+    "options": [
+      "Someone used it a lot",
+      "Someone wanted to keep it",
+      "It was special to someone",
+      "I am not sure yet"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "What can you see on the tin? What can you only guess?",
+    "cards": [
+      {
+        "type": "items",
+        "title": "Object card: a metal tin",
+        "items": [
+          "A metal tin with a handle",
+          "A dent in the lid",
+          "The letters \"ML\" cut into the metal",
+          "A hinge that someone repaired",
+          "Its age is unknown"
+        ]
+      },
+      {
+        "type": "sources",
+        "title": "Other clues",
+        "sources": [
+          {
+            "caption": "A page from a notebook",
+            "details": [
+              "\"Tuesday: packed rice and beans in my tin before going to the repair workshop. — Mina L.\"",
+              "Date unknown"
+            ]
+          },
+          {
+            "caption": "A note from the collection",
+            "details": [
+              "The tin and the notebook were found in the same box.",
+              "Nobody wrote down who put them there."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Look closely before you guess",
+        "text": "An object that people made or used in the past is called an artefact. When you study an artefact, start with what you can see. An observation is a detail that you can notice for yourself, with your eyes or your hands. The tin has a dent in the lid, the letters \"ML\" on its side and a repaired hinge. These are all observations. Next, you can make an inference, which is an idea that you build from clues. For example, you might say that the owner used this tin to carry lunch. That could be true, but the tin itself does not tell us.",
+        "simpler": "An old object that people used is an artefact. First, look at the artefact. Say what you can see. This is an observation. The tin has a dent. It has the letters ML. Someone fixed its hinge. Next, you can guess what the clues mean. This is an inference. Maybe the owner carried lunch in the tin. That could be true. But the tin does not tell us."
+      },
+      {
+        "heading": "Use a second source to test an idea",
+        "text": "A second source can help you test an inference. The notebook page says that Mina L. packed rice and beans in her tin before going to a repair workshop. The tin has the letters \"ML\", so there may be a link between Mina and the tin. This link is worth checking, but it does not prove that the tin was hers. The letters could belong to someone else, and objects often pass from one person to another. Context can help too. Context is the information around an object, such as where it was found. We know the tin and the notebook were found in the same box.",
+        "simpler": "Another source can help us check an idea. A notebook says Mina L. packed rice and beans in her tin. The tin has the letters ML. So maybe the tin was hers. But we cannot be sure. ML could stand for another person. People also give things to other people. Context helps us too. Context is what is around the object. The tin and notebook were in the same box."
+      },
+      {
+        "heading": "Say what you know and what you do not know",
+        "text": "A careful historian is honest about uncertainty. The repair shows that someone chose to fix the tin and keep using it. However, it does not prove that the owner was poor or careless, because people repair things for many reasons. Museum labels often use careful words, such as \"may\" or \"probably\", when the evidence is not certain. A good label for the tin might say, \"This tin may have carried the lunch of someone who worked at a repair workshop.\" A dated record, or a list of the tin's past owners, could make this claim stronger.",
+        "simpler": "Be honest about uncertainty. Someone fixed the tin. So someone wanted to keep it. That does not mean the owner was poor. People fix things for many reasons. Use careful words like may and probably. A label could say: This tin may have carried someone's lunch. A record with a date could help us know more."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "artefact",
+        "forms": [
+          "artefacts"
+        ],
+        "definition": "An object that people made or used in the past.",
+        "example": "The metal tin is an artefact."
+      },
+      {
+        "word": "observation",
+        "forms": [
+          "observations"
+        ],
+        "definition": "A detail you can see or touch for yourself.",
+        "example": "The dent in the lid is an observation."
+      },
+      {
+        "word": "inference",
+        "forms": [
+          "inferences"
+        ],
+        "definition": "An idea you build from clues, not something you can see.",
+        "example": "Saying the owner carried lunch in the tin is an inference."
+      },
+      {
+        "word": "context",
+        "definition": "The information around an object, like where and when it was found.",
+        "example": "The tin and the notebook were found in the same box. That is context."
+      },
+      {
+        "word": "uncertainty",
+        "definition": "Not knowing something for sure.",
+        "example": "There is uncertainty about who owned the tin."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "question": "Which of these is an observation?",
+        "options": [
+          {
+            "text": "The owner was not rich",
+            "correct": false,
+            "feedback": "Not quite. You cannot see how rich someone was by looking at a tin. That is an inference. Look for a detail you can see on the tin."
+          },
+          {
+            "text": "The hinge was repaired",
+            "correct": true,
+            "feedback": "Yes. You can see the repaired hinge on the tin itself, so it is an observation."
+          },
+          {
+            "text": "The owner liked to cook rice",
+            "correct": false,
+            "feedback": "Not quite. A tin cannot show what someone liked. That is an inference. Look for a detail you can see on the tin."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "question": "What does the notebook add to what we know about the tin?",
+        "options": [
+          {
+            "text": "Proof of how old the tin is",
+            "correct": false,
+            "feedback": "Not quite. The notebook has no date, so it cannot show the tin's age. Look again at what the notebook connects."
+          },
+          {
+            "text": "Proof that everyone used metal tins",
+            "correct": false,
+            "feedback": "Not quite. One notebook cannot tell us what everyone did. Look again at what the notebook connects."
+          },
+          {
+            "text": "A link to Mina worth checking",
+            "correct": true,
+            "feedback": "Yes. The notebook names Mina L. and a tin, and the tin has the letters ML. That is a link worth checking, but it is not proof."
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "What other record could help us find out who owned the tin?",
+        "placeholder": "For example: A list of workers at the repair workshop could ...",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Write a short museum label for the tin. Include two observations, one inference and one thing we do not know yet.",
+    "sentenceStarters": [
+      "This metal tin has ...",
+      "You can also see ...",
+      "The notebook suggests that this tin may ...",
+      "We do not know yet ...",
+      "A record that could help is ..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I wrote two things I can see on the tin.",
+      "I used \"may\" or \"probably\" for my inference.",
+      "I named one thing we do not know yet."
+    ],
+    "example": "This metal tin has a dent in the lid and the letters ML on its side. You can also see that someone repaired its hinge. The notebook suggests that this tin may have belonged to Mina L. She packed rice and beans in her tin before she went to a repair workshop. The repair shows that someone wanted to keep using the tin. We do not know yet if the tin and the notebook had the same owner. A record that could help is a list of workshop workers."
+  },
+  "speak": {
+    "partnerTask": "One person says an observation about the tin. The other adds an inference and says why it might be wrong. Then switch.",
+    "independentTask": "Say out loud: \"I notice ... This may mean ... To check, I would need ...\""
+  },
+  "watch": {
+    "youtubeId": "9IfM4rIANLc",
+    "title": "What is a primary source? (2/3) — short revisit",
+    "channel": "OpenLearn from The Open University",
+    "durationSeconds": 93,
+    "why": "It reviews primary sources from Lesson 1, and this lesson uses the same idea with an object.",
+    "beforeQuestion": "How is an object different from a piece of writing as a source?",
+    "afterQuestion": "What other source would help you understand the tin?",
+    "summary": "This is the same short video as in Lesson 1. It explains primary sources. These are things made or used at the time you are studying. An object can be a primary source, just like a letter or a diary. An object shows what it is made of. It also shows its marks and repairs. A piece of writing shows what its writer saw or did. In this lesson, the tin is one primary source and the notebook is another. When you put them together, you can build an idea about who used the tin. But finding two things in the same box does not prove they had the same owner. So a careful historian says what can be seen, then makes an inference, and then names what is still unknown.",
+    "keyPoints": [
+      "An object shows its material, marks and repairs.",
+      "A written record shows what its writer saw or did.",
+      "Finding two sources together does not prove they had the same owner."
+    ],
+    "contentNote": null,
+    "replacementSuggestion": {
+      "youtubeUrl": "https://www.youtube.com/watch?v=ZVSVHvJRy8U",
+      "title": "Intro to Archaeology | Big History Project",
+      "channel": "Big History Project (OER Project)",
+      "why": "It shows how archaeologists learn about people in the past from the objects they left behind, so Lesson 2 would have its own video about artefacts instead of repeating Lesson 1's.",
+      "verify": true
+    }
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "An observation is different from an inference because ...",
+        "required": true
+      },
+      {
+        "text": "One more question I would ask about the tin is ...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 2. You practised telling the difference between what you can see and what you infer."
+  },
+  "visual": {
+    "type": "illustration",
+    "description": "A close-up drawing of the metal tin: a handle, a dented lid, the letters ML cut into the side and a mended hinge. Small labels point to the dent, the letters and the hinge. Beside the tin is an open notebook page with one short handwritten line.",
+    "alt": "A metal tin with a dented lid, the letters ML and a repaired hinge, next to an open notebook."
+  },
+  "sources": [
+    {
+      "label": "National Archives (US): Document analysis and artifact worksheets",
+      "url": "https://www.archives.gov/education/lessons/worksheets"
+    },
+    {
+      "label": "National Geographic Education: Archaeology",
+      "url": "https://education.nationalgeographic.org/resource/archaeology/"
+    }
+  ],
+  "educatorNotes": [
+    "The tin, the notebook and Mina L. are fictional. You could bring in a real everyday object, such as a cup, a tool or a bag, and use the same routine: what I see, what it may mean, what I do not know yet.",
+    "Keep the focus on the fictional owner. Do not ask learners to describe objects that belong to their own families.",
+    "Lessons 1 and 2 share one video. A separate video about artefacts is suggested; please watch it before switching."
+  ],
+  "changes": [
+    "Rewrote the reading as three sections at the target level, with a much simpler 'simpler English' version.",
+    "Moved the evidence cards to the new schema (items and sources).",
+    "Added the glossary word 'artefact'; every glossary word now appears in the text and the simpler text (three of four did not before).",
+    "Moved the correct answers to different positions and made the options closer in length.",
+    "Added a fifth sentence starter, turned the self-check into a list of three, and lengthened the example to 60–100 words.",
+    "Kept the shared video but suggested a separate one (Big History Project: Intro to Archaeology) in replacementSuggestion.",
+    "Rewrote the video summary so it stands alone."
+  ]
+}

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>For educators</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/thinkerwell/tokens.css">
+<link rel="stylesheet" href="ds/thinkerwell/components/bundle.css">
+<script src="ds/thinkerwell/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;700&amp;family=Eczar:wght@500&amp;family=Funnel+Display:wght@400;500;600;700&amp;display=swap">
+<style>body{margin:0;background:var(--canvas)} .h2{margin:0;font-family:var(--font-display);font-size:30px;line-height:36px;font-weight:500;letter-spacing:-0.01em} .need{display:flex;align-items:center;gap:12px;font-size:17px;line-height:24px} .step{padding:24px;border-radius:var(--radius-xl);background:var(--paper);border:1px solid var(--line);display:flex;flex-direction:column;gap:10px} .step-n{width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--lemon);display:inline-flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:20px;font-weight:600}</style>
+</helmet>
+<div style="width: 1280px; height: 1780px; box-sizing: border-box; padding: 0 6px 48px; background: var(--canvas); display: flex; flex-direction: column; gap: 48px; font-family: var(--font-body); color: var(--ink)">
+<x-import component-from-global-scope="Thinkerwell.SiteHeader" logo-src="{{m}}" links="{{links}}"></x-import>
+<main style="width: 1120px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px">
+<section style="display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 40px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 14px; line-height: 18px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted)">For teachers and volunteers</span>
+<h1 style="margin: 0; font-family: var(--font-display); font-size: 52px; line-height: 56px; font-weight: 500; letter-spacing: -0.025em; text-wrap: balance">Run a Thinkerwell lesson with your group</h1>
+<p style="margin: 0; font-size: 19px; line-height: 29px; max-width: 580px">Every lesson works on one shared screen, in pairs, or on separate devices. There are no accounts to set up.</p>
+<div style="display: flex; gap: 12px; margin-top: 8px">
+<x-import component-from-global-scope="Thinkerwell.Button" variant="primary" size="lg" icon="Eye" href="LessonRead.dc.html">Preview a lesson</x-import>
+<x-import component-from-global-scope="Thinkerwell.Button" variant="secondary" size="lg" icon="Download">Lesson plans (PDF)</x-import>
+</div>
+</div>
+<aside aria-labelledby="need-title" style="padding: 28px; border-radius: var(--radius-xl); background: var(--lemon-soft); display: flex; flex-direction: column; gap: 14px">
+<h2 id="need-title" style="margin: 0; font-family: var(--font-display); font-size: 22px; line-height: 28px; font-weight: 600">What you need</h2>
+<span class="need"><x-import component-from-global-scope="Thinkerwell.Icon" name="Users" size="{{i22}}"></x-import>One device for every 1 to 3 learners, or one big screen</span>
+<span class="need"><x-import component-from-global-scope="Thinkerwell.Icon" name="Pencil" size="{{i22}}"></x-import>Paper and pencils for planning</span>
+<span class="need"><x-import component-from-global-scope="Thinkerwell.Icon" name="Clock" size="{{i22}}"></x-import>About 30 minutes a lesson</span>
+<span class="need"><x-import component-from-global-scope="Thinkerwell.Icon" name="WifiOff" size="{{i22}}"></x-import>Internet only for videos, once a lesson has opened</span>
+</aside>
+</section>
+<section aria-labelledby="how-title" style="display: flex; flex-direction: column; gap: 20px">
+<h2 id="how-title" class="h2">How a session works</h2>
+<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+<li class="step"><span class="step-n">1</span><span style="font-family: var(--font-display); font-size: 21px; line-height: 28px; font-weight: 600">Pick a lesson</span><span style="font-size: 16px; line-height: 24px">Lessons can go in any order. Choose one that fits your group, or follow the numbers.</span></li>
+<li class="step"><span class="step-n">2</span><span style="font-family: var(--font-display); font-size: 21px; line-height: 28px; font-weight: 600">Work through five steps</span><span style="font-size: 16px; line-height: 24px">Read, Write, Speak, Watch, Reflect. Pair learners for Speak. Watch can be skipped.</span></li>
+<li class="step"><span class="step-n">3</span><span style="font-family: var(--font-display); font-size: 21px; line-height: 28px; font-weight: 600">Share and reflect</span><span style="font-size: 16px; line-height: 24px">Ask two or three learners to share their answer. Everyone writes one reflection.</span></li>
+</ol>
+</section>
+<section aria-labelledby="preview-title" style="display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; align-items: baseline; justify-content: space-between">
+<h2 id="preview-title" class="h2">Preview any lesson</h2>
+<span style="font-size: 15px; color: var(--ink-muted)">Previews never save anything</span>
+</div>
+<div role="radiogroup" aria-label="Section" style="display: flex; gap: 10px; flex-wrap: wrap">
+<x-import component-from-global-scope="Thinkerwell.Chip" role="radio" selected="{{no}}" icon="Landmark">History</x-import>
+<x-import component-from-global-scope="Thinkerwell.Chip" role="radio" selected="{{yes}}" icon="Map">Geography</x-import>
+<x-import component-from-global-scope="Thinkerwell.Chip" role="radio" selected="{{no}}" icon="Palette">Culture</x-import>
+<x-import component-from-global-scope="Thinkerwell.Chip" role="radio" selected="{{no}}" icon="Scale">Civics</x-import>
+</div>
+<div style="display: flex; flex-direction: column; gap: 12px">
+<x-import component-from-global-scope="Thinkerwell.LessonRow" number="{{n10}}" title="Why do people build towns near rivers?" question="What makes one place better than another for a community to live?" time="25–35 min" cta="Preview" meta="Map activity" href="LessonRead.dc.html"></x-import>
+<x-import component-from-global-scope="Thinkerwell.LessonRow" number="{{n11}}" title="How do maps help us understand a place?" question="What can a map show that words alone cannot?" time="25–35 min" cta="Preview"></x-import>
+<x-import component-from-global-scope="Thinkerwell.LessonRow" number="{{n12}}" title="What makes a city grow?" question="Why do some small settlements become major cities?" time="25–35 min" cta="Preview"></x-import>
+</div>
+</section>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+<section aria-labelledby="codes-title" style="padding: 28px; border-radius: var(--radius-xl); background: var(--paper); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 12px">
+<x-import component-from-global-scope="Thinkerwell.Badge" tone="lavender">Pilot partners</x-import>
+<h2 id="codes-title" style="margin: 0; font-family: var(--font-display); font-size: 22px; line-height: 28px; font-weight: 600">Class codes instead of names</h2>
+<p style="margin: 0; font-size: 16px; line-height: 24px">In the pilot, each learner gets a code like HLP-07. Codes let us see how the whole group is doing without any names. You keep the list that matches names to codes.</p>
+</section>
+<section aria-labelledby="fb-title" style="padding: 28px; border-radius: var(--radius-xl); background: var(--lavender); display: flex; flex-direction: column; gap: 12px">
+<h2 id="fb-title" style="margin: 0; font-family: var(--font-display); font-size: 22px; line-height: 28px; font-weight: 600">Tell us what to fix</h2>
+<p style="margin: 0; font-size: 16px; line-height: 24px">Something confusing, too hard, or broken? A video that does not play? Email us and we will fix it.</p>
+<span style="align-self: flex-start; padding: 10px 16px; border-radius: var(--radius-md); background: var(--paper); font-size: 17px; font-weight: 700; user-select: all">[FEEDBACK EMAIL]</span>
+</section>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1780}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      m: '/images/thinkerwell-mascot-transparent.png',
+      i22: 22, n10: 10, n11: 11, n12: 12,
+      yes: true, no: false,
+      links: [
+        { label: 'Home' },
+        { label: 'Course' },
+        { label: 'For educators', active: true },
+        { label: 'About' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

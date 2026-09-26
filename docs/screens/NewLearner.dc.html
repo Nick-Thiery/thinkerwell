@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Home: new learner</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/thinkerwell/tokens.css">
+<link rel="stylesheet" href="ds/thinkerwell/components/bundle.css">
+<script src="ds/thinkerwell/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;700&amp;family=Eczar:wght@500&amp;family=Funnel+Display:wght@400;500;600;700&amp;display=swap">
+<style>body{margin:0;background:var(--frame)}</style>
+</helmet>
+<div style="width: 1280px; height: 800px; box-sizing: border-box; padding: 6px; background: var(--frame); display: flex; flex-direction: column; gap: 6px; font-family: var(--font-body); color: var(--ink)">
+<x-import component-from-global-scope="Thinkerwell.SiteHeader" logo-src="{{m}}" links="{{links}}"></x-import>
+<div style="flex-grow: 1; min-height: 0; display: flex; gap: 6px">
+<main style="flex-grow: 1; background: var(--paper); border-radius: var(--radius-2xl); padding: 40px 64px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 24px">
+<x-import component-from-global-scope="Thinkerwell.Mascot" src="{{m}}" size="{{mascotSize}}"></x-import>
+<h1 style="margin: 0; font-family: var(--font-display); font-size: 88px; line-height: 0.92; font-weight: 500; letter-spacing: -0.035em; text-wrap: balance">Explore your world.</h1>
+<p style="margin: 0; max-width: 520px; font-size: 20px; line-height: 30px">A free social-studies course. Learn about people, places and communities, and share your own ideas.</p>
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 540px; padding: 20px 24px; border-radius: var(--radius-xl); background: var(--lavender-wash)">
+<span style="font-size: 14px; line-height: 18px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted)">You will start with</span>
+<span style="font-family: var(--font-display); font-size: 24px; line-height: 30px; font-weight: 500">Lesson 1: How can we find out about the past?</span>
+<span style="font-size: 16px; line-height: 24px; color: var(--ink-muted)">You can open any lesson later from the course page.</span>
+</div>
+</main>
+<aside aria-labelledby="new-title" style="width: 480px; flex: none; box-sizing: border-box; background: var(--lavender); border-radius: var(--radius-2xl); padding: 32px 40px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<x-import component-from-global-scope="Thinkerwell.Button" variant="ghost" icon="ArrowLeft">Back</x-import>
+<span style="font-size: 14px; line-height: 20px; color: var(--ink-muted)">Step 1 of 1</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 14px; line-height: 18px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase">Welcome</span>
+<h2 id="new-title" style="margin: 0; font-family: var(--font-display); font-size: 36px; line-height: 40px; font-weight: 500; letter-spacing: -0.02em">What should we call you?</h2>
+</div>
+<x-import component-from-global-scope="Thinkerwell.TextField" id="learner-name" label="First name or nickname" value="Amina" helper="No surname needed."></x-import>
+<fieldset style="margin: 0; padding: 0; border: 0; display: flex; flex-direction: column; gap: 10px">
+<legend style="padding: 0; margin-bottom: 10px; font-size: 16px; line-height: 22px; font-weight: 700">Pick your colour</legend>
+<div role="radiogroup" aria-label="Your colour" style="display: flex; gap: 12px">
+<button type="button" role="radio" aria-checked="true" aria-label="Yellow" style="width: 48px; height: 48px; border-radius: 50%; border: 3px solid var(--ink); background: var(--lemon); box-shadow: 0 0 0 3px var(--paper); cursor: pointer"></button>
+<button type="button" role="radio" aria-checked="false" aria-label="Sand" style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--paper); background: var(--sec-history); cursor: pointer"></button>
+<button type="button" role="radio" aria-checked="false" aria-label="Green" style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--paper); background: var(--sec-geography); cursor: pointer"></button>
+<button type="button" role="radio" aria-checked="false" aria-label="Blue" style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--paper); background: var(--sec-civics); cursor: pointer"></button>
+<button type="button" role="radio" aria-checked="false" aria-label="White" style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid var(--ink-muted); background: var(--paper); cursor: pointer"></button>
+</div>
+</fieldset>
+<x-import component-from-global-scope="Thinkerwell.TextField" id="class-code" label="Class code" optional="{{yes}}" placeholder="For example HLP-07" helper="Your teacher may give you one."></x-import>
+<x-import component-from-global-scope="Thinkerwell.Button" variant="primary" size="lg" block="{{yes}}" icon-right="ArrowRight">Start Lesson 1</x-import>
+<span style="display: flex; align-items: center; gap: 6px; font-size: 14px; line-height: 20px; color: var(--ink-muted)"><x-import component-from-global-scope="Thinkerwell.Icon" name="Lock" size="{{i16}}"></x-import>Your work stays on this device.</span>
+</aside>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":800}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      m: '/images/thinkerwell-mascot-transparent.png',
+      mascotSize: 150,
+      i16: 16,
+      yes: true,
+      links: [
+        { label: 'Home', active: true },
+        { label: 'Course' },
+        { label: 'For educators' },
+        { label: 'About' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

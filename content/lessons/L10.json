@@ -1,0 +1,276 @@
+{
+  "id": "towns-near-rivers",
+  "oldId": "l6",
+  "number": 10,
+  "section": "geography",
+  "title": "Why do people build towns near rivers?",
+  "essentialQuestion": "What makes one place better than another for a community to live?",
+  "learningGoal": "Explain how rivers help communities and what problems they can bring.",
+  "estimatedMinutes": [
+    30,
+    50
+  ],
+  "warmUp": {
+    "question": "Look at the map. Where would you build a new town?",
+    "options": [
+      "Near the river",
+      "On the hill",
+      "In the forest"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "What is good and what is difficult about each place on the map?",
+    "cards": [
+      {
+        "type": "map",
+        "title": "Riverlands: three places for a new town",
+        "locations": [
+          {
+            "id": "a",
+            "label": "River site",
+            "description": "Flat land next to a wide, slow river. The soil is good for crops, and boats can stop here. In the rainy season, the river sometimes floods this land."
+          },
+          {
+            "id": "b",
+            "label": "Hill site",
+            "description": "High, dry ground about 20 minutes' walk from the river. Floods do not reach it. People must carry water up the hill, and the soil is thin and rocky."
+          },
+          {
+            "id": "c",
+            "label": "Forest site",
+            "description": "Flat land under tall trees, far from the river. There is wood for building and cooking, and fruit to pick. People must clear trees before they can farm, and the small stream here dries up in the dry season."
+          }
+        ],
+        "legend": [
+          {
+            "label": "River",
+            "color": "blue"
+          },
+          {
+            "label": "Farmland that sometimes floods",
+            "color": "yellow"
+          },
+          {
+            "label": "Hill",
+            "color": "brown"
+          },
+          {
+            "label": "Forest",
+            "color": "green"
+          },
+          {
+            "label": "Path",
+            "color": "grey"
+          }
+        ]
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Rivers give water and food",
+        "text": "Every community needs water to drink, cook and wash. In many places, a river gives fresh water all year. Farmers dig small canals to carry river water to their fields. When a river floods, it leaves a layer of mud on the land, and this mud makes the soil fertile, so crops like wheat and rice grow well. Rivers also give people fish to eat. That is why some of the first large settlements grew beside rivers. In ancient Egypt, people farmed along the Nile, and in today's Iraq, people farmed between the Tigris and Euphrates rivers. The River site in Riverlands has the same kind of flat, fertile land.",
+        "simpler": "People need water to drink, cook and wash. A river gives water. Farmers take river water to their fields. Sometimes a river floods. Then it leaves mud on the land. The mud makes the soil fertile. Crops grow well there. People also catch fish in rivers. So many early settlements grew next to rivers. One example is Egypt, by the Nile River. The River site on the map has fertile land too."
+      },
+      {
+        "heading": "Rivers help people travel and trade",
+        "text": "Rivers can work like roads made of water. Long ago, before there were trucks or trains, boats could carry heavy goods, like grain, wood and cloth, more easily than people or animals could. Towns often grew at places where boats stopped so that people could buy and sell. Many important cities today still sit on rivers. Bangkok in Thailand is on the Chao Phraya River, and Kinshasa, a large city in Central Africa, is on the Congo River. In Riverlands, boats can stop at the River site. A town there could trade with other towns up and down the river.",
+        "simpler": "Boats can move on rivers. Long ago, there were no trucks or trains. Boats carried heavy goods, like rice and wood. People bought and sold these goods in towns. So towns grew where boats stopped. Many big cities are still on rivers. Bangkok is on a river in Thailand. Kinshasa is on the Congo River in Africa. On the map, boats can stop at the River site."
+      },
+      {
+        "heading": "Rivers can also bring problems",
+        "text": "Living near a river has risks too. After heavy rain, a river can flood, and water covers roads, fields and homes for a time. People who live by rivers have found ways to prepare. In parts of Cambodia and Brazil, some families build houses on tall wooden legs, so water can pass underneath. In other places, people build high banks of earth along the river to keep the water out. Some towns are built on higher ground, like the Hill site, but then people must carry water further. No place is perfect, so a good choice compares the benefits with the risks.",
+        "simpler": "Rivers can bring problems too. After a lot of rain, a river can flood. Water covers fields, roads and homes for a time. People find ways to get ready. Some families build houses on tall legs. Then water can go under the house. Some towns build high walls of earth by the river. Other towns are on a hill. But then people carry water a long way. Every place has good things and risks."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "settlement",
+        "forms": [
+          "settlements"
+        ],
+        "definition": "A place where people live together, like a village or town.",
+        "example": "The first settlement in Riverlands could be at the River site."
+      },
+      {
+        "word": "fertile",
+        "definition": "Good for growing lots of plants and food.",
+        "example": "Mud from the river makes the land at the River site fertile."
+      },
+      {
+        "word": "crops",
+        "forms": [
+          "crop"
+        ],
+        "definition": "Plants that people grow for food, like rice or beans.",
+        "example": "Farmers at the River site could grow crops in the flat fields."
+      },
+      {
+        "word": "goods",
+        "definition": "Things that people make, grow or sell.",
+        "example": "Boats could carry goods like rice and wood from the River site."
+      },
+      {
+        "word": "flood",
+        "forms": [
+          "floods",
+          "flooded",
+          "flooding"
+        ],
+        "definition": "When water covers land that is usually dry.",
+        "example": "In the rainy season, the river sometimes floods the River site."
+      },
+      {
+        "word": "risk",
+        "forms": [
+          "risks"
+        ],
+        "definition": "A chance that something bad may happen.",
+        "example": "One risk at the River site is that the river may flood."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "question": "Why did many early farming settlements grow beside rivers?",
+        "options": [
+          {
+            "text": "Floods left mud that made the soil fertile.",
+            "correct": true,
+            "feedback": "Yes. River floods leave mud on the land. The mud makes the soil fertile, so crops grow well."
+          },
+          {
+            "text": "The land by rivers was high, dry and rocky.",
+            "correct": false,
+            "feedback": "Not quite. Land next to a river is often low and flat. Read the first section again."
+          },
+          {
+            "text": "People did not need water to grow crops.",
+            "correct": false,
+            "feedback": "Not quite. Crops always need water. The first section says farmers take river water to their fields."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "question": "What is one risk of building a town at the River site?",
+        "options": [
+          {
+            "text": "The soil there is too poor for crops.",
+            "correct": false,
+            "feedback": "Not quite. The soil at the River site is fertile. Look for a problem that comes from the river."
+          },
+          {
+            "text": "Boats are not able to reach the town.",
+            "correct": false,
+            "feedback": "Not quite. Boats can stop at the River site. Look for a problem that comes from the river."
+          },
+          {
+            "text": "The river may flood the land.",
+            "correct": true,
+            "feedback": "Yes. In the rainy season, the river sometimes floods the land at the River site."
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "Which place on the Riverlands map has the most good things? Which has the most risks?",
+        "placeholder": "I think the ___ site has the most good things because... The ___ site has the most risks because...",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Choose one place on the Riverlands map for a new town. Give two reasons for your choice and one possible problem.",
+    "sentenceStarters": [
+      "I would build the new town at the ___ site.",
+      "One reason is...",
+      "Another reason is...",
+      "One problem could be...",
+      "People could deal with this problem by..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I named one place.",
+      "I gave two reasons.",
+      "I named one problem."
+    ],
+    "example": "I would build the new town at the River site. One reason is that the land is flat and fertile, so farmers can grow crops. Another reason is that boats can stop there, so people can trade goods with other towns. One problem could be floods in the rainy season. People could deal with this problem by building houses on tall legs. They could also keep a safe place on the hill for when the water is high."
+  },
+  "speak": {
+    "partnerTask": "Tell a partner which place you chose and give your two reasons. Then ask: 'How would your town deal with its biggest problem?'",
+    "independentTask": "Say your choice and two reasons aloud in three sentences. Then add one sentence about a problem your town may face."
+  },
+  "watch": {
+    "youtubeId": "xVf5kZA0HtQ",
+    "title": "Ancient Mesopotamia 101",
+    "channel": "National Geographic",
+    "durationSeconds": 250,
+    "why": "It shows a real place where some of the world's first cities grew on fertile land between two rivers.",
+    "beforeQuestion": "What do you think two rivers could give to the people who lived between them?",
+    "afterQuestion": "How did the land between the Tigris and Euphrates rivers help people build cities?",
+    "summary": "This video is about Mesopotamia. The name means 'land between rivers'. It was a flat, fertile area between the Tigris and Euphrates rivers. Today this land is in Iraq, Syria and Kuwait. The good soil was great for farming, so people farmed there for thousands of years. About 5,000 to 6,000 years ago, some farming villages grew into some of the world's first cities. People in these cities built large temples called ziggurats. They counted in groups of 60. That is why an hour has 60 minutes. They also made one of the first kinds of writing. They pressed marks into wet clay. A king named Hammurabi had his laws written down. Many of these ideas are still used today.",
+    "keyPoints": [
+      "Mesopotamia was a fertile plain between the Tigris and Euphrates rivers.",
+      "Good farmland helped villages grow into some of the world's first cities.",
+      "People there made early writing, written laws and new ways of counting."
+    ],
+    "contentNote": null,
+    "replacementSuggestion": null
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "One thing that makes a place good for a town is...",
+        "required": true
+      },
+      {
+        "text": "One question I still have about rivers is...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 10. You explained why many towns grow near rivers and what problems rivers can bring."
+  },
+  "visual": {
+    "type": "map",
+    "description": "A simple top-down map of the fictional Riverlands. A wide blue river runs from top to bottom. On its left bank is flat yellow farmland labelled 'River site', with a small boat at the water's edge. On the right, a short walk from the river, is a brown hill labelled 'Hill site'. Further right, far from the river, is a green forest labelled 'Forest site' with a thin stream. Grey paths join the three places. A legend shows River, Farmland that sometimes floods, Hill, Forest and Path.",
+    "alt": "Fictional map of Riverlands with three possible town sites: flat farmland by a river, a hill a short walk away, and a forest far from the river."
+  },
+  "sources": [
+    {
+      "label": "National Geographic Education: River",
+      "url": "https://education.nationalgeographic.org/resource/river/"
+    },
+    {
+      "label": "National Geographic Education: Floodplain",
+      "url": "https://education.nationalgeographic.org/resource/flood-plain/"
+    },
+    {
+      "label": "National Geographic Education: Ancient Mesopotamia 101",
+      "url": "https://education.nationalgeographic.org/resource/ancient-mesopotamia-101/"
+    }
+  ],
+  "educatorNotes": [
+    "Floods come up briefly in section 3 and in the checks. Some learners may have lived through floods. Keep the talk on how towns choose places and prepare, and let learners pass if they prefer.",
+    "Riverlands is fictional. You could add a real river in or near the city where you teach as an extra example.",
+    "The video is mostly about Mesopotamia's cities, writing and laws, not floods. Use it to show how fertile land between two rivers helped some of the first cities grow."
+  ],
+  "changes": [
+    "Turned the Base44 map (mapLocations, mapLegend) into an evidence map card, and the prediction into the warm-up.",
+    "Replaced the Coast site with a Forest site to match the redesign mock-up; kept the River site and Hill site.",
+    "Split the single 55-word passage into three sections and expanded it with examples from Egypt, Iraq, Thailand, Central Africa, Cambodia and Brazil.",
+    "Rewrote simpler English at about grade 3.",
+    "Glossary: kept crops, goods, flood and risk; replaced community and benefit with settlement and fertile, which the text now uses.",
+    "Added the missing example answer and self-check (I named one place / I gave two reasons / I named one problem), plus sources.",
+    "Rewrote the checks with three options each (correct answers first and third) and moved nextLesson out (now derived automatically).",
+    "Rewrote the video summary and key points to match what the video covers (fertile land, first cities, writing, laws, counting)."
+  ]
+}

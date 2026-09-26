@@ -1,0 +1,71 @@
+:root, [data-theme="light"] {
+  --lemon: #ffff66;
+  --lemon-soft: #fffbc4;
+  --lavender: #d2c0f9;
+  --lavender-hover: #c7b1f7;
+  --lavender-soft: #ece4fd;
+  --lavender-wash: #f8f6fe;
+  --violet: #4e32b5;
+  --ink: #0f0e0e;
+  --ink-hover: #2a2730;
+  --on-ink: #ffffff;
+  --on-ink-muted: #e6e3ec;
+  --ink-muted: #4b4654;
+  --ink-soft: #625c6c;
+  --paper: #ffffff;
+  --canvas: #efedf4;
+  --frame: var(--ink);
+  --line: #d5d1dc;
+  --line-strong: #8b8497;
+  --correct: #0b6b7a;
+  --correct-soft: #ddf3f4;
+  --retry: #9b4700;
+  --retry-soft: #ffeedc;
+  --disabled: #e7e5eb;
+  --sec-history: #ffe9c7;
+  --sec-history-ink: #7a4300;
+  --sec-geography: #dcefd5;
+  --sec-geography-ink: #2d6326;
+  --sec-culture: #fde0e8;
+  --sec-culture-ink: #8c2548;
+  --sec-civics: #d7e7fb;
+  --sec-civics-ink: #1e4e94;
+  --shadow-pop: 0 16px 40px rgba(15, 14, 14, 0.18);
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
+  --radius-pill: 999px;
+  --target-min: 44px;
+  --control-lg: 56px;
+  --reading-measure: 680px;
+  --page-max: 1120px;
+  --font-display: "Funnel Display", "Funnel Sans", "Trebuchet MS", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", Verdana, system-ui, sans-serif;
+  --font-wordmark: Eczar, Georgia, serif;
+}
+.hero { font-family: var(--font-display); font-size: 88px; line-height: 0.92; font-weight: 500; letter-spacing: -0.035em; }
+.display { font-family: var(--font-display); font-size: 56px; line-height: 1; font-weight: 500; letter-spacing: -0.025em; }
+.h1 { font-family: var(--font-display); font-size: 40px; line-height: 44px; font-weight: 500; letter-spacing: -0.015em; }
+.h2 { font-family: var(--font-display); font-size: 28px; line-height: 34px; font-weight: 500; letter-spacing: -0.01em; }
+.h3 { font-family: var(--font-display); font-size: 21px; line-height: 28px; font-weight: 600; letter-spacing: -0.005em; }
+.reading { font-family: var(--font-body); font-size: 20px; line-height: 32px; font-weight: 400; }
+.body-lg { font-family: var(--font-body); font-size: 18px; line-height: 28px; font-weight: 400; }
+.body { font-family: var(--font-body); font-size: 16px; line-height: 24px; font-weight: 400; }
+.label { font-family: var(--font-body); font-size: 16px; line-height: 20px; font-weight: 700; }
+.small { font-family: var(--font-body); font-size: 14px; line-height: 20px; font-weight: 400; }
+.eyebrow { font-family: var(--font-body); font-size: 14px; line-height: 18px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+.wordmark { font-family: var(--font-wordmark); font-size: 22px; line-height: 24px; font-weight: 500; }

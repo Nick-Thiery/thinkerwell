@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Phone: home</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/thinkerwell/tokens.css">
+<link rel="stylesheet" href="ds/thinkerwell/components/bundle.css">
+<script src="ds/thinkerwell/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;700&amp;family=Eczar:wght@500&amp;family=Funnel+Display:wght@400;500;600;700&amp;display=swap">
+<style>body{margin:0;background:var(--frame)}</style>
+</helmet>
+<div style="width: 390px; height: 1260px; box-sizing: border-box; padding: 0 6px 6px; background: var(--frame); display: flex; flex-direction: column; gap: 6px; font-family: var(--font-body); color: var(--ink)">
+<x-import component-from-global-scope="Thinkerwell.SiteHeader" logo-src="{{m}}" compact="{{yes}}"></x-import>
+<main style="background: var(--paper); border-radius: var(--radius-2xl); padding: 28px 22px; display: flex; flex-direction: column; align-items: flex-start; gap: 18px">
+<x-import component-from-global-scope="Thinkerwell.Mascot" src="{{m}}" size="{{mascot}}"></x-import>
+<h1 style="margin: 0; font-family: var(--font-display); font-size: 52px; line-height: 0.95; font-weight: 500; letter-spacing: -0.035em">Explore your world.</h1>
+<p style="margin: 0; font-size: 18px; line-height: 27px">A free social-studies course. Learn about people, places and communities, and share your own ideas.</p>
+<div style="display: flex; gap: 8px; flex-wrap: wrap">
+<x-import component-from-global-scope="Thinkerwell.Badge" tone="outline" icon="BookOpen">Read</x-import>
+<x-import component-from-global-scope="Thinkerwell.Badge" tone="outline" icon="Pencil">Write</x-import>
+<x-import component-from-global-scope="Thinkerwell.Badge" tone="outline" icon="MessageCircle">Speak</x-import>
+<x-import component-from-global-scope="Thinkerwell.Badge" tone="outline" icon="Play">Watch</x-import>
+<x-import component-from-global-scope="Thinkerwell.Badge" tone="outline" icon="RefreshCw">Reflect</x-import>
+</div>
+</main>
+<aside aria-labelledby="who-title" style="background: var(--lavender); border-radius: var(--radius-2xl); padding: 26px 16px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 0 6px">
+<span style="font-size: 14px; line-height: 18px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase">On this device</span>
+<h2 id="who-title" style="margin: 0; font-family: var(--font-display); font-size: 32px; line-height: 36px; font-weight: 500; letter-spacing: -0.02em">Who's learning today?</h2>
+</div>
+<div style="--tile-size: 158px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; justify-items: center">
+<x-import component-from-global-scope="Thinkerwell.LearnerTile" name="Amina" tone="lemon" meta="Up to Lesson 10"></x-import>
+<x-import component-from-global-scope="Thinkerwell.LearnerTile" name="Reza" tone="geography" meta="Up to Lesson 3"></x-import>
+<x-import component-from-global-scope="Thinkerwell.LearnerTile" name="Hawa" tone="civics" meta="Up to Lesson 1"></x-import>
+<x-import component-from-global-scope="Thinkerwell.LearnerTile" variant="new" name="I'm new here"></x-import>
+</div>
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding: 0 6px">
+<x-import component-from-global-scope="Thinkerwell.Button" variant="ghost" icon="Eye">Just look around</x-import>
+<span style="display: flex; align-items: center; gap: 6px; font-size: 14px; line-height: 20px; color: var(--ink-muted)"><x-import component-from-global-scope="Thinkerwell.Icon" name="Lock" size="{{i16}}"></x-import>Work is saved on this device only.</span>
+</div>
+</aside>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1260}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      m: '/images/thinkerwell-mascot-transparent.png',
+      mascot: 120, i16: 16,
+      yes: true
+    };
+  }
+}
+</script>
+</body>
+</html>

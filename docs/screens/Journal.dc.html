@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>My journal</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/thinkerwell/tokens.css">
+<link rel="stylesheet" href="ds/thinkerwell/components/bundle.css">
+<script src="ds/thinkerwell/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;700&amp;family=Eczar:wght@500&amp;family=Funnel+Display:wght@400;500;600;700&amp;display=swap">
+<style>body{margin:0;background:var(--canvas)} .group{display:flex;align-items:center;gap:12px;font-size:17px;line-height:24px;font-weight:700}</style>
+</helmet>
+<div style="width: 1280px; height: 1420px; box-sizing: border-box; padding: 0 6px 48px; background: var(--canvas); display: flex; flex-direction: column; gap: 40px; font-family: var(--font-body); color: var(--ink)">
+<x-import component-from-global-scope="Thinkerwell.SiteHeader" logo-src="{{m}}" links="{{links}}" learner="{{learner}}"></x-import>
+<main style="width: 880px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h1 style="margin: 0; font-family: var(--font-display); font-size: 44px; line-height: 48px; font-weight: 500; letter-spacing: -0.02em">My journal</h1>
+<p style="margin: 0; font-size: 18px; line-height: 28px; color: var(--ink-muted)">Everything you wrote in your lessons, newest first.</p>
+</div>
+<x-import component-from-global-scope="Thinkerwell.Button" variant="secondary" icon="Printer">Print my journal</x-import>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 16px">
+<x-import component-from-global-scope="Thinkerwell.SegmentedControl" label="Show" options="{{filters}}" value="All"></x-import>
+<span style="font-size: 15px; line-height: 20px; color: var(--ink-muted)">14 pieces of writing from 10 lessons</span>
+</div>
+<div class="group"><x-import component-from-global-scope="Thinkerwell.SectionBadge" section="geography" show-name="{{no}}" size="{{d36}}"></x-import>Lesson 10 · Why do people build towns near rivers?</div>
+<x-import component-from-global-scope="Thinkerwell.JournalEntry" lesson-number="{{n10}}" lesson-title="Reflect" kind="Reflection" prompt="One thing I learned today is…" text="Rivers help a town with water, farms and trade. But rivers can also flood, so people have to plan for both." date="today"></x-import>
+<x-import component-from-global-scope="Thinkerwell.JournalEntry" lesson-number="{{n10}}" lesson-title="Write" kind="Writing" prompt="Choose one place on the map for a new town. Explain two reasons and one possible problem." text="{{townText}}" date="today"></x-import>
+<div class="group" style="margin-top: 12px"><x-import component-from-global-scope="Thinkerwell.SectionBadge" section="history" show-name="{{no}}" size="{{d36}}"></x-import>Lesson 9 · How do inventions change everyday life?</div>
+<x-import component-from-global-scope="Thinkerwell.JournalEntry" lesson-number="{{n9}}" lesson-title="Write" kind="Writing" prompt="Explain whether the bicycle trial should be expanded. Give a benefit, a limitation and one improvement." text="The trial should grow, but slowly. The bicycle made one worker's trip 18 minutes faster. But a bicycle costs 80 tokens, so not everyone can buy one, and the short road has steps. The town could share bicycles and build a ramp." date="24 Sep"></x-import>
+<div style="display: flex; gap: 12px; padding: 18px 20px; border-radius: var(--radius-lg); background: var(--lavender-wash)">
+<x-import component-from-global-scope="Thinkerwell.Icon" name="Info" size="{{i22}}"></x-import>
+<span style="font-size: 16px; line-height: 24px">Your journal lives on this device. Anyone who taps your name here can read it, so choose what you write. To keep a copy, ask your teacher to help you print it.</span>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1420}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      m: '/images/thinkerwell-mascot-transparent.png',
+      i22: 22, d36: 36, n9: 9, n10: 10,
+      no: false,
+      filters: ['All', 'Writing', 'Reflections'],
+      townText: 'I would choose the River site because farmers can use the water to grow crops. One benefit of this place is that boats can carry goods to other towns. One possible problem is floods. My town could respond by building houses on higher ground.',
+      learner: { name: 'Amina', tone: 'lemon' },
+      links: [
+        { label: 'Home' },
+        { label: 'Course' },
+        { label: 'My journal', active: true },
+        { label: 'For educators' },
+        { label: 'About' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

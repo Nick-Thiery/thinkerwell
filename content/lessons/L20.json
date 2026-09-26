@@ -1,0 +1,269 @@
+{
+  "id": "making-choices",
+  "oldId": "l16",
+  "number": 20,
+  "section": "civics",
+  "title": "Why do people have to make choices?",
+  "essentialQuestion": "What happens when people have limited resources but many needs and wants?",
+  "learningGoal": "Explain scarcity, needs, wants and opportunity cost using everyday examples.",
+  "estimatedMinutes": [
+    30,
+    50
+  ],
+  "warmUp": {
+    "question": "You have one free hour after class. What would you choose to do?",
+    "options": [
+      "Rest",
+      "Play a game",
+      "Practise English",
+      "Help a friend"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "For each resource, which use would you choose first? Why?",
+    "cards": [
+      {
+        "type": "items",
+        "title": "Noor's household this week",
+        "items": [
+          "Noor lives with her aunt and two young cousins.",
+          "They have a small amount of money for food and soap.",
+          "They share one phone with a little mobile data.",
+          "Noor has two free hours on Saturday afternoon."
+        ]
+      },
+      {
+        "type": "table",
+        "title": "One resource, two possible uses",
+        "columns": [
+          "Resource",
+          "One use",
+          "Another use"
+        ],
+        "rows": [
+          [
+            "Money",
+            "Rice, vegetables and soap",
+            "A new football"
+          ],
+          [
+            "Mobile data",
+            "Noor's online English class",
+            "Music videos for her cousins"
+          ],
+          [
+            "Saturday afternoon",
+            "Practising English with a study partner",
+            "Playing football with friends"
+          ]
+        ]
+      },
+      {
+        "type": "items",
+        "title": "Hillside Learning Centre",
+        "items": [
+          "The centre has one free room on Tuesday afternoons.",
+          "Idea 1: a homework club.",
+          "Idea 2: an art class."
+        ]
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Resources help people meet needs and wants",
+        "text": "Every day, people make choices, from what to do after class to how a household uses its food, money or phone data. To make these choices, people use resources. A resource is anything useful that people have, such as time, money, food, water, tools or skills. People use resources to meet their needs and wants. A need is something you must have to live safely and stay healthy, such as food, clean water and a safe place to sleep. A want is something you would like to have but can live without. For example, Noor's aunt needs to buy rice and soap, but a new football is a want.",
+        "simpler": "People make choices every day. To choose, they use resources. A resource is something useful that you have. Time, money, food and skills are resources. A need is something you must have to live and stay well. A want is something you would like. You can live without it. Noor's aunt needs rice and soap. A new football is a want."
+      },
+      {
+        "heading": "Scarcity means people must choose",
+        "text": "Usually, people do not have enough resources for everything they need and want. This problem is called scarcity. Scarcity does not mean there is nothing; it means there is not enough for every possible use. Noor's household shares one phone with a small amount of mobile data each week. Noor needs data for her online English class, and her cousins want to watch music videos. There is not enough data for both, so the household must decide. Communities face scarcity too. Hillside Learning Centre has one free room on Tuesday afternoons, so it must choose between a homework club and an art class.",
+        "simpler": "Often there is not enough for all our needs and wants. This is called scarcity. It does not mean there is nothing. It means there is not enough for every use. Noor's home has one phone with a little data. Noor needs data for her class. Her cousins want music videos. There is not enough for both. So they must choose. A learning centre has one free room. It can hold a homework club or an art class, not both."
+      },
+      {
+        "heading": "Every choice has an opportunity cost",
+        "text": "Whenever you choose one thing, you give up something else. The next-best option you give up is called the opportunity cost. On Saturday afternoon, Noor can play football with friends or practise English with a study partner. She chooses English, so her opportunity cost is the football game. Opportunity cost is not only about money; it can also be time, energy, space or another chance. Thinking about opportunity cost does not tell you which choice is correct. Instead, it helps you understand what you are giving up. Before deciding, ask: What do we need? What do we want? What will we give up?",
+        "simpler": "When you choose one thing, you give up another. The best thing you did not pick is the opportunity cost. On Saturday, Noor can play football. Or she can practise English with a friend. She picks English. So the football game is her opportunity cost. Opportunity cost is not only about money. It can be time or space too. It does not tell you the right choice. It shows what you give up."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "resource",
+        "forms": [
+          "resources"
+        ],
+        "definition": "Something useful that people have, like time, money, food or skills.",
+        "example": "Noor's household shares one phone. The phone and its data are resources."
+      },
+      {
+        "word": "need",
+        "forms": [
+          "needs"
+        ],
+        "definition": "Something a person must have to live safely and stay healthy.",
+        "example": "Rice and soap are needs for Noor's household."
+      },
+      {
+        "word": "want",
+        "forms": [
+          "wants"
+        ],
+        "definition": "Something a person would like to have but can live without.",
+        "example": "Music videos on the phone are a want."
+      },
+      {
+        "word": "scarcity",
+        "definition": "Not having enough of something for every way people want to use it.",
+        "example": "There is not enough data for the class and the videos. That is scarcity."
+      },
+      {
+        "word": "opportunity cost",
+        "definition": "The next-best thing you give up when you make a choice.",
+        "example": "Noor practises English. The football game she gives up is her opportunity cost."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "question": "What does scarcity mean?",
+        "options": [
+          {
+            "text": "There is not enough for every use.",
+            "correct": true,
+            "feedback": "Yes. Scarcity means there is not enough of something for every use, so people must choose."
+          },
+          {
+            "text": "People have nothing at all that they can use.",
+            "correct": false,
+            "feedback": "Not quite. Scarcity does not mean there is nothing. Look again at the section about Noor's mobile data."
+          },
+          {
+            "text": "People must never buy the things they want.",
+            "correct": false,
+            "feedback": "Not quite. People can still buy wants. Scarcity means there is not enough for every use."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "question": "Noor practises English on Saturday. What is her opportunity cost?",
+        "options": [
+          {
+            "text": "The English she learns with her partner",
+            "correct": false,
+            "feedback": "Not quite. The English practice is what Noor chooses. The opportunity cost is what she gives up."
+          },
+          {
+            "text": "The data her household uses for class",
+            "correct": false,
+            "feedback": "Not quite. The data is part of a different choice. Think about Noor's two free hours on Saturday."
+          },
+          {
+            "text": "The football game she does not play",
+            "correct": true,
+            "feedback": "Yes. Noor gives up the football game to practise English. That is her next-best choice, so it is her opportunity cost."
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "Think of a choice that a school or learning centre has to make. What might it give up?",
+        "placeholder": "The centre could choose ___. The opportunity cost would be ___.",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Pick one choice from the lesson or from a community you know. Say what the limited resource is, what is chosen and what is given up.",
+    "sentenceStarters": [
+      "The choice is between ___ and ___.",
+      "The limited resource is...",
+      "They choose...",
+      "The opportunity cost is...",
+      "I think this is a good choice because..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I named the limited resource.",
+      "I said what was chosen.",
+      "I named the opportunity cost."
+    ],
+    "example": "The choice is between Noor's online English class and music videos for her cousins. The limited resource is the mobile data on the one phone they share. There is not enough data for both. They choose the English class. The opportunity cost is the music videos they cannot watch this week. I think this is a good choice because the class helps Noor learn English. The music videos are a want, so they can wait until there is more data."
+  },
+  "speak": {
+    "partnerTask": "Hillside Learning Centre has one free room on Tuesdays. With a partner, choose a homework club or an art class, and name the opportunity cost.",
+    "independentTask": "Say one choice from the lesson or from your day. Then say: “The opportunity cost was ___.”"
+  },
+  "watch": {
+    "youtubeId": "7eMjwqO6WnY",
+    "title": "What is opportunity cost? | Everyday Money",
+    "channel": "ABC Australia",
+    "durationSeconds": null,
+    "why": "It explains opportunity cost with short, everyday money examples.",
+    "beforeQuestion": "When you choose one thing, what happens to the other things you could have chosen?",
+    "afterQuestion": "How can thinking about opportunity cost help someone choose more carefully?",
+    "summary": "This short video explains opportunity cost. Opportunity cost is what you lose when you choose one thing instead of another. It is the next-best thing you give up. In the video, a young man called Mario needs a new phone. He also wants a new games console. His money is not enough for both, so he has to choose. He could buy a cheaper phone and get both things. But then his phone has fewer features. That is his opportunity cost. The video also shows that time can be a cost, not only money. It says the real cost of a choice is more than its price. Thinking about opportunity cost helps you compare needs and wants before you decide.",
+    "keyPoints": [
+      "Choosing one thing means giving up something else.",
+      "The opportunity cost is the next-best thing you give up.",
+      "Opportunity cost is not only money. Time can be a cost too."
+    ],
+    "contentNote": null,
+    "replacementSuggestion": null
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "One choice a community I know has to make is...",
+        "required": true
+      },
+      {
+        "text": "Thinking about opportunity cost can help people because...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 20. You explained scarcity, needs, wants and opportunity cost with everyday examples."
+  },
+  "visual": {
+    "type": "diagram",
+    "description": "A simple fork-in-the-road diagram. Noor stands where the path splits on Saturday afternoon, with a small clock showing two free hours. The left path, in full colour, shows her practising English with a study partner and is labelled 'My choice'. The right path, in light grey, shows friends playing football and is labelled 'Opportunity cost'. A small box underneath lists her household's resources: money, one shared phone with data, and time.",
+    "alt": "Noor chooses between practising English and playing football. The football game she gives up is shown in grey and labelled as her opportunity cost."
+  },
+  "sources": [
+    {
+      "label": "OpenStax: How individuals make choices based on their budget constraint",
+      "url": "https://openstax.org/books/principles-economics-3e/pages/2-1-how-individuals-make-choices-based-on-their-budget-constraint"
+    },
+    {
+      "label": "Khan Academy: Scarcity, choice and opportunity costs",
+      "url": "https://www.khanacademy.org/economics-finance-domain/microeconomics/basic-economic-concepts-gen-micro/economics-introduction/a/lesson-overview-scarcity-choice-and-opportunity-cost"
+    },
+    {
+      "label": "ABC Education: My Five Cents, What is opportunity cost?",
+      "url": "https://www.abc.net.au/education/my-five-cents-what-is-opportunity-cost-video/13623476"
+    }
+  ],
+  "educatorNotes": [
+    "Examples use food, soap, a shared phone, mobile data, free time and a room at a learning centre, not pay or shopping trips. A partner can swap in local foods, a local game instead of football, or a real room or resource at their own centre.",
+    "Do not ask learners what their own household can or cannot afford. The write, speak and reflect tasks all allow an example from the lesson or from 'a community you know'.",
+    "Noor lives with her aunt and cousins on purpose, so the lesson does not assume that learners live with parents.",
+    "The video comes from ABC Australia's money series for teenagers (also shown as My Five Cents). Its example is a young man, Mario, who needs a new phone and wants a games console, and one option it gives is working an extra shift at his job. Preview it: if this does not fit your learners, use the written summary, which leaves out the job, and the lesson's own examples."
+  ],
+  "changes": [
+    "Added a fictional evidence set (Noor's household and Hillside Learning Centre), a warm-up, an example answer, a self-check and a visual plan, which were missing.",
+    "Changed three multiple-choice checks to two choice questions and one open think question. The correct answers now sit in different positions.",
+    "Adapted examples for learners who may not work, may have no bank account or may depend on aid: a shared phone and mobile data, food and soap, free time and a shared room replace shop purchases and a town building a road.",
+    "Rewrote the simpler English so it is much shorter and easier, with the same ideas and glossary words.",
+    "Glossary cut to five words (resource, need, want, scarcity, opportunity cost), all used in both versions of the text, with shorter definitions.",
+    "Removed the stale nextLesson field and rewrote the video summary so it stands alone.",
+    "Made the independent speaking task optional to personal examples ('from the lesson or from your day')."
+  ]
+}

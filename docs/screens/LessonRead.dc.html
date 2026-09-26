@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lesson 10: Read</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/thinkerwell/tokens.css">
+<link rel="stylesheet" href="ds/thinkerwell/components/bundle.css">
+<script src="ds/thinkerwell/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;700&amp;family=Eczar:wght@500&amp;family=Funnel+Display:wght@400;500;600;700&amp;display=swap">
+<style>body{margin:0;background:var(--canvas)}</style>
+</helmet>
+<div style="width: 1280px; height: 1840px; box-sizing: border-box; padding: 0 6px 48px; background: var(--canvas); display: flex; flex-direction: column; gap: 40px; font-family: var(--font-body); color: var(--ink)">
+<x-import component-from-global-scope="Thinkerwell.SiteHeader" logo-src="{{m}}" links="{{links}}" learner="{{learner}}"></x-import>
+<div style="width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 48px; align-items: start">
+<aside aria-label="About this lesson" style="display: flex; flex-direction: column; gap: 20px">
+<a href="Course.dc.html" style="display: inline-flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 700; color: var(--ink-muted); text-decoration: none"><x-import component-from-global-scope="Thinkerwell.Icon" name="ArrowLeft" size="{{i18}}"></x-import>Geography &amp; Our Environment</a>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 14px; line-height: 18px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sec-geography-ink)">Lesson 10</span>
+<h1 style="margin: 0; font-family: var(--font-display); font-size: 30px; line-height: 34px; font-weight: 500; letter-spacing: -0.015em; text-wrap: balance">Why do people build towns near rivers?</h1>
+<p style="margin: 0; font-size: 16px; line-height: 24px; color: var(--ink-muted)">What makes one place better than another for a community to live?</p>
+</div>
+<x-import component-from-global-scope="Thinkerwell.StagePath" orientation="vertical" current="read" done="{{none}}" sublabels="{{subs}}"></x-import>
+<div style="display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; border-radius: var(--radius-lg); background: var(--lavender-wash)">
+<span style="display: flex; align-items: center; gap: 6px; font-size: 14px; line-height: 18px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase"><x-import component-from-global-scope="Thinkerwell.Icon" name="Target" size="{{i16}}"></x-import>Learning goal</span>
+<p style="margin: 0; font-size: 16px; line-height: 24px">Explain how rivers help communities and what problems they can bring.</p>
+</div>
+<span style="display: flex; align-items: center; gap: 6px; font-size: 14px; line-height: 20px; color: var(--ink-muted)"><x-import component-from-global-scope="Thinkerwell.Icon" name="Clock" size="{{i16}}"></x-import>About 30–50 min. Stop and come back any time.</span>
+</aside>
+<main style="display: flex; flex-direction: column; gap: 24px; min-width: 0">
+<div role="toolbar" aria-label="Reading tools" style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap">
+<x-import component-from-global-scope="Thinkerwell.ToolToggle" icon="Volume2" pressed="{{yes}}">Listen</x-import>
+<x-import component-from-global-scope="Thinkerwell.SegmentedControl" label="Reading level" options="{{levels}}" value="Standard"></x-import>
+<x-import component-from-global-scope="Thinkerwell.ToolToggle" icon="Search" tone="support">Key words</x-import>
+</div>
+<x-import component-from-global-scope="Thinkerwell.TaskCard" eyebrow="Before you read" icon="Lightbulb">
+<p style="margin: 0 0 16px">Look at the map. Where would you build a new town? Guess now. You can change your mind later.</p>
+<div role="radiogroup" aria-label="Your first guess" style="display: flex; gap: 10px; flex-wrap: wrap">
+<x-import component-from-global-scope="Thinkerwell.Chip" role="radio" selected="{{yes}}">Near the river</x-import>
+<x-import component-from-global-scope="Thinkerwell.Chip" role="radio" selected="{{no}}">On the hill</x-import>
+<x-import component-from-global-scope="Thinkerwell.Chip" role="radio" selected="{{no}}">In the forest</x-import>
+</div>
+</x-import>
+<figure style="margin: 0; padding: 24px; border-radius: var(--radius-xl); background: var(--paper); border: 1px solid var(--line); display: flex; flex-direction: column; gap: 16px">
+<figcaption style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<span style="font-family: var(--font-display); font-size: 22px; line-height: 28px; font-weight: 600">Riverlands: three places for a new town</span>
+<x-import component-from-global-scope="Thinkerwell.Badge" tone="lavender" icon="Info">Fictional map</x-import>
+</figcaption>
+<svg viewBox="0 0 724 340" width="724" height="340" role="img" aria-label="Fictional map of Riverlands. A wide river runs from the north to the south through farmland that sometimes floods. The River site is beside the river on flat farmland. The Hill site is on high ground in the north-east, a walk away from the river. The Forest site is among tall trees in the south-east, far from the river, next to a small stream." style="display: block; width: 100%; height: auto; border-radius: 16px">
+<rect x="0" y="0" width="724" height="340" rx="16" style="fill: var(--sec-geography)"></rect>
+<ellipse cx="455" cy="92" rx="104" ry="56" style="fill: #C9D9A8"></ellipse>
+<ellipse cx="455" cy="92" rx="58" ry="30" style="fill: #B5CB8E"></ellipse>
+<path d="M150 0 C 185 70, 130 130, 205 180 S 320 250, 330 340" style="fill: none; stroke: #FDE68A; stroke-width: 76; stroke-linecap: round; opacity: 0.85"></path>
+<path d="M150 0 C 185 70, 130 130, 205 180 S 320 250, 330 340" style="fill: none; stroke: #6FB6D6; stroke-width: 20; stroke-linecap: round"></path>
+<g style="fill: #7A9B4E">
+<circle cx="80" cy="150" r="7"></circle><circle cx="104" cy="178" r="7"></circle><circle cx="70" cy="200" r="7"></circle><circle cx="118" cy="226" r="7"></circle><circle cx="84" cy="252" r="7"></circle><circle cx="140" cy="270" r="7"></circle><circle cx="100" cy="300" r="7"></circle><circle cx="180" cy="300" r="7"></circle><circle cx="150" cy="320" r="7"></circle>
+</g>
+<path d="M640 150 C 615 190, 660 230, 628 270 S 640 320, 622 340" style="fill: none; stroke: #6FB6D6; stroke-width: 4; stroke-dasharray: 8 7; stroke-linecap: round"></path>
+<g style="fill: #3F6B35">
+<circle cx="520" cy="210" r="15"></circle><circle cx="552" cy="196" r="17"></circle><circle cx="590" cy="214" r="15"></circle><circle cx="680" cy="198" r="16"></circle><circle cx="700" cy="236" r="14"></circle><circle cx="506" cy="250" r="14"></circle><circle cx="540" cy="244" r="16"></circle><circle cx="676" cy="274" r="16"></circle><circle cx="700" cy="312" r="14"></circle><circle cx="512" cy="292" r="15"></circle><circle cx="596" cy="320" r="14"></circle><circle cx="660" cy="320" r="15"></circle><circle cx="480" cy="322" r="13"></circle>
+</g>
+<g style="font-family: var(--font-body); font-size: 16px; font-weight: 700; fill: var(--ink); paint-order: stroke; stroke: var(--paper); stroke-width: 5px; stroke-linejoin: round">
+<circle cx="214" cy="196" r="14" style="fill: var(--paper); stroke: var(--ink); stroke-width: 5"></circle>
+<text x="236" y="176">River site</text>
+<circle cx="470" cy="86" r="14" style="fill: var(--paper); stroke: var(--ink); stroke-width: 5"></circle>
+<text x="492" y="72">Hill site</text>
+<circle cx="580" cy="268" r="14" style="fill: var(--paper); stroke: var(--ink); stroke-width: 5"></circle>
+<text x="602" y="274">Forest site</text>
+</g>
+</svg>
+<ul aria-label="Map key" style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 15px; line-height: 20px">
+<li style="display: flex; align-items: center; gap: 8px"><span style="width: 16px; height: 16px; border-radius: 4px; background: #6FB6D6"></span>River</li>
+<li style="display: flex; align-items: center; gap: 8px"><span style="width: 16px; height: 0; border-top: 4px dashed #6FB6D6"></span>Small stream</li>
+<li style="display: flex; align-items: center; gap: 8px"><span style="width: 16px; height: 16px; border-radius: 4px; background: #FDE68A; box-shadow: inset 0 0 0 1px var(--line-strong)"></span>Farmland that sometimes floods</li>
+<li style="display: flex; align-items: center; gap: 8px"><span style="width: 16px; height: 16px; border-radius: 50%; background: #7A9B4E"></span>Fields</li>
+<li style="display: flex; align-items: center; gap: 8px"><span style="width: 16px; height: 16px; border-radius: 4px; background: #C9D9A8; box-shadow: inset 0 0 0 1px var(--line-strong)"></span>Hill</li>
+<li style="display: flex; align-items: center; gap: 8px"><span style="width: 16px; height: 16px; border-radius: 50%; background: #3F6B35"></span>Forest</li>
+</ul>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
+<div style="padding: 16px; border-radius: var(--radius-lg); border: 2px solid var(--ink); display: flex; flex-direction: column; gap: 6px">
+<span style="font-family: var(--font-display); font-size: 19px; line-height: 24px; font-weight: 600">River site</span>
+<span style="font-size: 15px; line-height: 22px">Flat land by a wide, slow river. Good soil, and boats can stop here. It sometimes floods.</span>
+</div>
+<div style="padding: 16px; border-radius: var(--radius-lg); border: 2px solid var(--line); display: flex; flex-direction: column; gap: 6px">
+<span style="font-family: var(--font-display); font-size: 19px; line-height: 24px; font-weight: 600">Hill site</span>
+<span style="font-size: 15px; line-height: 22px">High, dry ground. Floods don't reach it. Water must be carried up, and the soil is rocky.</span>
+</div>
+<div style="padding: 16px; border-radius: var(--radius-lg); border: 2px solid var(--line); display: flex; flex-direction: column; gap: 6px">
+<span style="font-family: var(--font-display); font-size: 19px; line-height: 24px; font-weight: 600">Forest site</span>
+<span style="font-size: 15px; line-height: 22px">Wood and fruit from tall trees. Trees must be cleared to farm. The stream dries up.</span>
+</div>
+</div>
+</figure>
+<x-import component-from-global-scope="Thinkerwell.ListenBar" speed="normal" label="Reading aloud · part 1 of 3"></x-import>
+<x-import component-from-global-scope="Thinkerwell.ReadingCard" part="Read · 1 of 3" heading="Rivers give water and food">Every community needs water to drink, cook and wash. <mark class="tw-speaking">In many places, a river gives fresh water all year.</mark> Farmers dig small canals to carry river water to their fields. When a river <x-import component-from-global-scope="Thinkerwell.GlossaryTerm" definition="When water covers land that is usually dry.">floods</x-import>, it leaves a layer of mud on the land, and this mud makes the soil <x-import component-from-global-scope="Thinkerwell.GlossaryTerm" word="fertile" definition="Good for growing lots of plants and food." example="Mud from the river makes the land at the River site fertile." open="{{yes}}">fertile</x-import>, so <x-import component-from-global-scope="Thinkerwell.GlossaryTerm" definition="Plants that people grow for food, like rice or beans.">crops</x-import> like wheat and rice grow well. Rivers also give people fish to eat. That is why some of the first large <x-import component-from-global-scope="Thinkerwell.GlossaryTerm" word="settlement" definition="A place where people live together, like a village or town.">settlements</x-import> grew beside rivers. In ancient Egypt, people farmed along the Nile, and in today's Iraq, people farmed between the Tigris and Euphrates rivers. The River site in Riverlands has the same kind of flat, fertile land.</x-import>
+<x-import component-from-global-scope="Thinkerwell.ActionBar" next="Next: Quick check" helper="Tap a coloured word to see what it means."></x-import>
+</main>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1840}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      m: '/images/thinkerwell-mascot-transparent.png',
+      i16: 16, i18: 18,
+      yes: true, no: false,
+      none: [],
+      levels: ['Standard', 'Simpler'],
+      subs: { read: 'Guess · map · read · quick check', write: 'Choose a place for a town', speak: 'With a partner or on your own', watch: 'Optional · 4 min', reflect: '2 short prompts' },
+      learner: { name: 'Amina', tone: 'lemon' },
+      links: [
+        { label: 'Home' },
+        { label: 'Course', active: true },
+        { label: 'My journal' },
+        { label: 'For educators' },
+        { label: 'About' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

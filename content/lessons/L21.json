@@ -1,0 +1,258 @@
+{
+  "id": "trade-and-exchange",
+  "oldId": "l17",
+  "number": 21,
+  "section": "civics",
+  "title": "How do people trade and exchange?",
+  "essentialQuestion": "How do goods, services, money and trust help communities meet their needs?",
+  "learningGoal": "Explain how people exchange goods and services, and why barter, money and trust matter.",
+  "estimatedMinutes": [
+    30,
+    50
+  ],
+  "warmUp": {
+    "question": "Think about a pencil or a notebook. How many people helped to make it and bring it to you?",
+    "options": [
+      "One person",
+      "A few people",
+      "Many people"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "Which exchanges use money, and which do not?",
+    "cards": [
+      {
+        "type": "cases",
+        "title": "A morning at Lakeside Market",
+        "cases": [
+          {
+            "name": "Ana's vegetable stall",
+            "body": "Ana grows tomatoes and beans in a small garden. She sells them at her stall for money. Later, she uses some of the money to buy rice."
+          },
+          {
+            "name": "Kofi and Sara",
+            "body": "Kofi has extra bread. Sara has extra eggs. They swap some bread for some eggs. No money is used."
+          },
+          {
+            "name": "Ravi and Nadia",
+            "body": "Ravi fixes Nadia's bicycle. In return, Nadia promises to help Ravi's little sister with reading for one week."
+          },
+          {
+            "name": "Leo has a problem",
+            "body": "Leo has fish and wants rice. The rice seller does not want fish, so Leo cannot make a swap."
+          }
+        ]
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "No one makes everything alone",
+        "text": "No person can make everything they use. Think about a simple notebook. One person made the paper, another carried the notebooks to a market and another sold them. The things people exchange are goods and services. A good is a thing you can touch and use, such as rice or a pencil. A service is something useful that a person does for someone else, such as teaching, fixing a bicycle or cutting hair. A producer is a person or group that makes a good or provides a service. A consumer is a person who uses or buys it. At Lakeside Market, Ana is a producer when she sells tomatoes. She is also a consumer when she buys rice.",
+        "simpler": "No one can make everything they use. Think of a notebook. Many people help to make it and sell it. People swap goods and services. A good is a thing you can touch, like rice. A service is work a person does for you, like teaching. A producer makes a good or does a service. A consumer uses or buys it. Ana grows tomatoes, so she is a producer. When she buys rice, she is a consumer."
+      },
+      {
+        "heading": "Barter and money",
+        "text": "Sometimes people swap goods or services without using money. This is called barter. At Lakeside Market, Kofi swaps some of his bread for some of Sara's eggs. Ravi fixes Nadia's bicycle, and in return Nadia helps Ravi's sister with reading. Barter still happens in many places today. However, it has a problem: both people must want what the other person has, at the same time. Leo has fish and wants rice, but the rice seller does not want fish. Money solves this problem. Leo can sell his fish and use the money to buy rice. Money also helps people compare prices and keep value for later.",
+        "simpler": "Sometimes people swap things with no money. This is called barter. Kofi gives Sara bread, and she gives him eggs. Ravi fixes a bike, and Nadia helps his sister read. But barter has a problem. Both people must want what the other has. Leo has fish. He wants rice. The rice seller does not want fish. Money helps here. Leo can sell his fish for money. Then he can buy rice."
+      },
+      {
+        "heading": "Trade depends on trust",
+        "text": "Every exchange depends on trust. A buyer trusts that the food is fresh and the scales are fair. A seller trusts that the payment is real. People also trust each other to keep promises, like Nadia's promise to help with reading. If people cheat, others stop trusting them, and trade becomes harder for everyone. This is one reason many markets have rules about fair weights and measures. For thousands of years, markets have brought people together to trade. When people trade fairly, they meet more of their needs, and communities become more connected.",
+        "simpler": "Trade needs trust. A buyer trusts that the food is fresh. A seller trusts that the money is real. People trust each other to keep a promise. If someone cheats, people stop trusting them. Then trade gets harder for everyone. Markets have brought people together for a very long time. When people trade fairly, they get more of what they need."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "good",
+        "forms": [
+          "goods"
+        ],
+        "definition": "A thing you can touch and use, like rice or a pencil.",
+        "example": "Ana's tomatoes are goods."
+      },
+      {
+        "word": "service",
+        "forms": [
+          "services"
+        ],
+        "definition": "Useful work a person does for someone else, like teaching.",
+        "example": "Fixing Nadia's bicycle is a service."
+      },
+      {
+        "word": "producer",
+        "forms": [
+          "producers"
+        ],
+        "definition": "A person or group that makes a thing or does useful work.",
+        "example": "Ana is a producer because she grows tomatoes."
+      },
+      {
+        "word": "consumer",
+        "forms": [
+          "consumers"
+        ],
+        "definition": "A person who uses or buys things or useful work.",
+        "example": "When Ana buys rice, she is a consumer."
+      },
+      {
+        "word": "barter",
+        "definition": "Swapping one thing or skill for another without using money.",
+        "example": "Kofi and Sara barter bread for eggs."
+      },
+      {
+        "word": "trust",
+        "forms": [
+          "trusts",
+          "trusting"
+        ],
+        "definition": "Believing that someone will be honest and keep a promise.",
+        "example": "Ravi trusts Nadia to help his sister with reading."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "question": "Which of these is a service?",
+        "options": [
+          {
+            "text": "A bag of tomatoes from Ana's stall",
+            "correct": false,
+            "feedback": "Not quite. Tomatoes are things you can touch, so they are goods. Look for useful work a person does."
+          },
+          {
+            "text": "Teaching a child to read",
+            "correct": true,
+            "feedback": "Yes. Teaching is useful work that one person does for another, so it is a service."
+          },
+          {
+            "text": "A notebook from a shop",
+            "correct": false,
+            "feedback": "Not quite. A notebook is a thing you can touch, so it is a good. Look for useful work a person does."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "question": "What stopped Leo from swapping his fish for rice?",
+        "options": [
+          {
+            "text": "The rice seller did not want fish.",
+            "correct": true,
+            "feedback": "Yes. In barter, both people must want what the other has. The rice seller did not want fish."
+          },
+          {
+            "text": "Fish can never be swapped for anything.",
+            "correct": false,
+            "feedback": "Not quite. Fish can be swapped. Read the part about Leo again. What did the rice seller want?"
+          },
+          {
+            "text": "Leo wanted to keep all of his fish.",
+            "correct": false,
+            "feedback": "Not quite. Leo wanted to swap his fish. Read the part about Leo again. What did the rice seller want?"
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "Why do buyers and sellers need to trust each other?",
+        "placeholder": "A buyer trusts that ___. A seller trusts that ___.",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Pick one exchange from Lakeside Market or one you have seen. Explain what each person gives and gets, if money is used, and how trust helps.",
+    "sentenceStarters": [
+      "In this exchange, ___ gives ___.",
+      "In return, ___ gets ___.",
+      "This exchange is barter / uses money because...",
+      "Trust helps because...",
+      "Without trust,..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I said what each person gives and gets.",
+      "I said if it is barter or uses money.",
+      "I explained how trust helps."
+    ],
+    "example": "In this exchange, Ravi gives Nadia a service. He fixes her bicycle. In return, Ravi's little sister gets help with reading from Nadia for one week. This exchange is barter because they swap skills and no money is used. Trust helps because Ravi fixes the bicycle first. He trusts Nadia to keep her promise later. Without trust, Ravi might not help at all, and both of them would lose something useful."
+  },
+  "speak": {
+    "partnerTask": "Choose one object in the room. Together, name at least four people who helped to make it or bring it to you.",
+    "independentTask": "Speak for 30 seconds: “Trade helps communities because...”"
+  },
+  "watch": {
+    "youtubeId": "W6rx-fxJeVs",
+    "title": "Economics for Kids: Goods and Services",
+    "channel": "Teaching Without Frills",
+    "durationSeconds": null,
+    "why": "It explains the difference between goods and services with simple pictures and examples.",
+    "beforeQuestion": "What is one good and one service you have seen people use today?",
+    "afterQuestion": "How are goods and services different? Why does a community need both?",
+    "summary": "This short video for younger learners explains goods and services. First, it reminds you about needs and wants. Needs are things you must have to live, like food, water and a place to live. Wants are things you would like, like toys and games. People use money to get goods and services. Goods are things people make or grow to sell, like food, books and toys. Services are work people do for others. A doctor helps people stay healthy. A pilot flies a plane. A chef cooks food. Then the video gives some puzzles. A book is a good, but a librarian gives a service when they help you find one. A pizza is a good, but bringing it to your home is a service.",
+    "keyPoints": [
+      "Goods are things people make or grow, like food or books.",
+      "Services are work people do for others, like cooking food or flying a plane.",
+      "One thing can involve both: a pizza is a good, and bringing it to you is a service."
+    ],
+    "contentNote": null,
+    "replacementSuggestion": null
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "One way a community I know depends on trade is...",
+        "required": true
+      },
+      {
+        "text": "Trade can become unfair when...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 21. You explained goods, services, barter, money and trust with everyday examples."
+  },
+  "visual": {
+    "type": "illustration",
+    "description": "A busy outdoor market scene called Lakeside Market, with four small labelled moments. 1: Ana at her vegetable stall handing tomatoes to a customer who pays with coins (label: 'Money'). 2: Kofi and Sara swapping a loaf of bread for a few eggs (label: 'Barter: goods'). 3: Ravi fixing a bicycle while Nadia reads a picture book with a younger girl nearby (label: 'Barter: services'). 4: Leo holding a fish, with a thought bubble of rice, while the rice seller shakes her head (label: 'The barter problem'). People of different ages and backgrounds, everyday clothes.",
+    "alt": "A market where people exchange things. One stall sells tomatoes for coins, two people swap bread for eggs, one person fixes a bicycle in return for reading help, and a man with a fish cannot swap it for rice."
+  },
+  "sources": [
+    {
+      "label": "Khan Academy: Economics and finance",
+      "url": "https://www.khanacademy.org/economics-finance-domain"
+    },
+    {
+      "label": "OpenStax: Defining money by its functions",
+      "url": "https://openstax.org/books/principles-economics-3e/pages/27-1-defining-money-by-its-functions"
+    },
+    {
+      "label": "DCMP: Economics for Kids, Goods and Services",
+      "url": "https://dcmp.org/media/14711-economics-for-kids-goods-and-services"
+    }
+  ],
+  "educatorNotes": [
+    "The market, the food swap and the skill swap are general on purpose. A partner can rename Lakeside Market after a local market, use local foods and goods, and add skill swaps that learners see around them, such as help with repairs, sewing or translation.",
+    "Many learners cannot work legally. Do not ask learners how they or their households earn money. The lesson focuses on swapping and buying everyday things.",
+    "The lesson does not say that barter always came before money. Many historians and anthropologists question the idea that whole communities once lived only by barter; gifts and credit were also common. Barter is shown as one way to exchange that still happens today.",
+    "The video was made for younger primary learners (grades 3–6). Older learners may find it young in style; the written summary covers the same ideas."
+  ],
+  "changes": [
+    "Added a fictional evidence card (Lakeside Market), a warm-up, an example answer, a self-check and a visual plan, which were missing.",
+    "Changed three multiple-choice checks to two choice questions and one open think question, with the correct answers in different positions.",
+    "Made the lesson three sections, adding a market scenario that shows goods, services, barter, the barter problem and trust together.",
+    "Removed 'Before money, people used barter' because it is a disputed simplification; barter is now shown as something people still do.",
+    "Removed the Southeast Asia sentence so the lesson works for learners anywhere; the trust section now mentions fair weights and measures instead.",
+    "Rewrote the simpler English so it is much shorter and easier. Glossary cut from eight to six words, all used in both versions of the text.",
+    "Rewrote the video summary so it stands alone, and removed the stale nextLesson field.",
+    "Removed the serial comma from the essential question (British style); the meaning is unchanged."
+  ]
+}

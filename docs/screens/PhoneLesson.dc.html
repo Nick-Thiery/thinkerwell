@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Phone: Lesson 10 Write</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/thinkerwell/tokens.css">
+<link rel="stylesheet" href="ds/thinkerwell/components/bundle.css">
+<script src="ds/thinkerwell/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;700&amp;family=Eczar:wght@500&amp;family=Funnel+Display:wght@400;500;600;700&amp;display=swap">
+<style>body{margin:0;background:var(--canvas)} .check{display:flex;align-items:flex-start;gap:12px;min-height:44px;font-size:17px;line-height:24px} .check input{width:24px;height:24px;margin:0;accent-color:var(--ink);flex:none}</style>
+</helmet>
+<div style="width: 390px; height: 1900px; box-sizing: border-box; padding: 0 0 32px; background: var(--canvas); display: flex; flex-direction: column; gap: 20px; font-family: var(--font-body); color: var(--ink)">
+<div style="padding: 0 4px"><x-import component-from-global-scope="Thinkerwell.SiteHeader" logo-src="{{m}}" learner="{{learner}}" compact="{{yes}}"></x-import></div>
+<main style="padding: 0 16px; display: flex; flex-direction: column; gap: 18px">
+<a href="Course.dc.html" style="display: inline-flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 700; color: var(--ink-muted); text-decoration: none"><x-import component-from-global-scope="Thinkerwell.Icon" name="ArrowLeft" size="{{i18}}"></x-import>Geography</a>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 14px; line-height: 18px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sec-geography-ink)">Lesson 10</span>
+<h1 style="margin: 0; font-family: var(--font-display); font-size: 28px; line-height: 32px; font-weight: 500; letter-spacing: -0.015em">Why do people build towns near rivers?</h1>
+</div>
+<x-import component-from-global-scope="Thinkerwell.StagePath" compact="{{yes}}" current="write" done="{{done}}"></x-import>
+<x-import component-from-global-scope="Thinkerwell.TaskCard">Choose one place on the Riverlands map for a new town. Give two reasons for your choice and one possible problem.</x-import>
+<x-import component-from-global-scope="Thinkerwell.SegmentedControl" label="Writing help" options="{{modes}}" value="starters"></x-import>
+<section aria-labelledby="starters-title" style="display: flex; flex-direction: column; gap: 10px">
+<span id="starters-title" style="font-size: 16px; line-height: 22px; font-weight: 700">Tap a starter to add it</span>
+<x-import component-from-global-scope="Thinkerwell.Chip" variant="starter" icon="Plus">I would build the new town at the ___ site.</x-import>
+<x-import component-from-global-scope="Thinkerwell.Chip" variant="starter" icon="Plus">One reason is ___.</x-import>
+<x-import component-from-global-scope="Thinkerwell.Chip" variant="starter" icon="Plus">Another reason is ___.</x-import>
+<x-import component-from-global-scope="Thinkerwell.Chip" variant="starter" icon="Plus">One problem could be ___.</x-import>
+<x-import component-from-global-scope="Thinkerwell.Chip" variant="starter" icon="Plus">People could deal with this problem by ___.</x-import>
+</section>
+<x-import component-from-global-scope="Thinkerwell.WritingBox" id="town-answer-m" label="Your answer" rows="{{n6}}" value="{{draft}}" dictate="listening" helper="Listening. Speak slowly; your words appear in the box and you can fix them after."></x-import>
+<section aria-labelledby="self-check-m" style="display: flex; flex-direction: column; gap: 6px; padding: 18px; border-radius: var(--radius-xl); background: var(--lavender-wash)">
+<h3 id="self-check-m" style="margin: 0 0 6px; font-family: var(--font-display); font-size: 20px; line-height: 26px; font-weight: 600">Check your answer</h3>
+<label class="check" for="m1"><input id="m1" type="checkbox" checked="checked">I named one place.</label>
+<label class="check" for="m2"><input id="m2" type="checkbox" checked="checked">I gave two reasons.</label>
+<label class="check" for="m3"><input id="m3" type="checkbox">I named one problem.</label>
+</section>
+<x-import component-from-global-scope="Thinkerwell.ActionBar" back="Read" next="Save and continue"></x-import>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      m: '/images/thinkerwell-mascot-transparent.png',
+      i18: 18, n6: 6,
+      yes: true,
+      done: ['read'],
+      modes: [{ label: 'Write', value: 'write' }, { label: 'Starters', value: 'starters' }, { label: 'Plan', value: 'plan' }],
+      draft: 'I would build the new town at the River site. One reason is that the land is fertile, so farmers can grow crops. Another reason is',
+      learner: { name: 'Amina', tone: 'lemon' }
+    };
+  }
+}
+</script>
+</body>
+</html>

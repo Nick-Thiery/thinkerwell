@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Section check: start</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/thinkerwell/tokens.css">
+<link rel="stylesheet" href="ds/thinkerwell/components/bundle.css">
+<script src="ds/thinkerwell/components/bundle.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;500;700&amp;family=Eczar:wght@500&amp;family=Funnel+Display:wght@400;500;600;700&amp;display=swap">
+<style>body{margin:0;background:var(--canvas)} .fact{display:flex;align-items:center;gap:14px;font-size:18px;line-height:26px} .fact-icon{width:40px;height:40px;border-radius:50%;background:var(--sec-history);color:var(--sec-history-ink);display:inline-flex;align-items:center;justify-content:center;flex:none}</style>
+</helmet>
+<div style="width: 1280px; height: 1000px; box-sizing: border-box; padding: 0 6px 48px; background: var(--canvas); display: flex; flex-direction: column; gap: 40px; font-family: var(--font-body); color: var(--ink)">
+<x-import component-from-global-scope="Thinkerwell.SiteHeader" logo-src="{{m}}" links="{{links}}" learner="{{learner}}"></x-import>
+<main style="width: 880px; margin: 0 auto; border-radius: var(--radius-2xl); overflow: hidden; background: var(--paper); border: 1px solid var(--line)">
+<x-import component-from-global-scope="Thinkerwell.SectionHeader" section="history" number="{{n1}}" total="{{n9}}" completed="{{n9}}" question="How have people, ideas and events shaped the world we live in?"></x-import>
+<div style="padding: 40px 48px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 14px; line-height: 18px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted)">Section check</span>
+<h1 style="margin: 0; font-family: var(--font-display); font-size: 40px; line-height: 44px; font-weight: 500; letter-spacing: -0.02em; text-wrap: balance">What do you remember from History &amp; Human Stories?</h1>
+</div>
+<ul style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 24px">
+<li class="fact"><span class="fact-icon"><x-import component-from-global-scope="Thinkerwell.Icon" name="ClipboardCheck" size="{{i20}}"></x-import></span>10 questions about Lessons 1 to 9</li>
+<li class="fact"><span class="fact-icon"><x-import component-from-global-scope="Thinkerwell.Icon" name="Clock" size="{{i20}}"></x-import></span>No time limit. About 15 minutes.</li>
+<li class="fact"><span class="fact-icon"><x-import component-from-global-scope="Thinkerwell.Icon" name="RotateCcw" size="{{i20}}"></x-import></span>Try as many times as you like</li>
+<li class="fact"><span class="fact-icon"><x-import component-from-global-scope="Thinkerwell.Icon" name="Lock" size="{{i20}}"></x-import></span>Only you see your score</li>
+</ul>
+<x-import component-from-global-scope="Thinkerwell.MascotTip" src="{{m}}" size="{{tip}}">Not sure? Make your best guess. After each question you will see why the answer is right.</x-import>
+<div style="display: flex; gap: 12px">
+<x-import component-from-global-scope="Thinkerwell.Button" variant="primary" size="lg" icon-right="ArrowRight" href="QuizQuestion.dc.html">Start the check</x-import>
+<x-import component-from-global-scope="Thinkerwell.Button" variant="secondary" size="lg" href="Course.dc.html">Look at the lessons first</x-import>
+</div>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1000}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      m: '/images/thinkerwell-mascot-transparent.png',
+      i20: 20, n1: 1, n9: 9, tip: 80,
+      learner: { name: 'Amina', tone: 'lemon' },
+      links: [
+        { label: 'Home' },
+        { label: 'Course', active: true },
+        { label: 'My journal' },
+        { label: 'For educators' },
+        { label: 'About' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
