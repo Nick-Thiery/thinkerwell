@@ -1,0 +1,76 @@
+// ESLint flat config: TypeScript (type-checked), React hooks and accessibility.
+import js from '@eslint/js';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
+import reactHooks from 'eslint-plugin-react-hooks';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
+
+export default tseslint.config(
+  {
+    ignores: [
+      'dist',
+      'dev-dist',
+      'coverage',
+      'node_modules',
+      'test-results',
+      'playwright-report',
+      'blob-report',
+      '.build-review',
+      '.venv',
+      'docs/**',
+      'public/**',
+    ],
+  },
+  js.configs.recommended,
+  ...tseslint.configs.recommendedTypeChecked,
+  {
+    languageOptions: {
+      parserOptions: {
+        projectService: {
+          allowDefaultProject: ['eslint.config.js'],
+        },
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
+  {
+    files: ['src/**/*.{ts,tsx}'],
+    languageOptions: { globals: globals.browser },
+    plugins: { 'react-hooks': reactHooks },
+    rules: {
+      ...reactHooks.configs.recommended.rules,
+    },
+  },
+  {
+    files: ['src/**/*.tsx'],
+    ...jsxA11y.flatConfigs.strict,
+  },
+  {
+    files: ['src/**/*.tsx'],
+    rules: {
+      // role="list" on unstyled lists is deliberate: Safari drops list semantics without it.
+      'jsx-a11y/no-redundant-roles': ['error', { ul: ['list'], ol: ['list'] }],
+    },
+  },
+  {
+    files: ['src/**/*.{ts,tsx}'],
+    rules: {
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+      '@typescript-eslint/consistent-type-imports': 'error',
+      // Promises in React event handlers are common and handled inside.
+      '@typescript-eslint/no-misused-promises': ['error', { checksVoidReturn: { attributes: false } }],
+      'no-restricted-globals': [
+        'error',
+        { name: 'localStorage', message: 'Learner data goes in IndexedDB through src/storage.' },
+      ],
+    },
+  },
+  {
+    files: ['*.config.{js,ts}', 'e2e/**/*.ts', 'scripts/**/*.{js,mjs}'],
+    languageOptions: { globals: globals.node },
+  },
+  {
+    files: ['eslint.config.js'],
+    ...tseslint.configs.disableTypeChecked,
+  },
+);

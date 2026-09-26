@@ -1,0 +1,37 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "plugins": ["stylelint-use-logical"],
+  "rules": {
+    "csstools/use-logical": [
+      "always",
+      {
+        "except": ["top", "bottom", "margin-top", "margin-bottom", "padding-top", "padding-bottom", "border-top", "border-bottom", "width", "height", "min-width", "min-height", "max-width", "max-height"]
+      }
+    ],
+    "declaration-property-value-disallowed-list": {
+      "text-align": ["left", "right"],
+      "float": ["left", "right"],
+      "clear": ["left", "right"],
+      "/^(margin|padding|inset|border-width|border-style|border-color)$/": ["/^\\S+\\s+\\S+\\s+\\S+\\s+\\S+$/"]
+    },
+    "selector-class-pattern": null,
+    "custom-property-pattern": null,
+    "keyframes-name-pattern": null,
+    "no-descending-specificity": null,
+    "declaration-empty-line-before": null,
+    "rule-empty-line-before": null,
+    "comment-empty-line-before": null,
+    "declaration-block-single-line-max-declarations": null,
+    "color-hex-length": null,
+    "value-keyword-case": ["lower", { "camelCaseSvgKeywords": true, "ignoreProperties": ["font-family", "/^--font/"] }],
+    "font-family-name-quotes": null,
+    "import-notation": "string",
+    "media-feature-range-notation": null,
+    "selector-not-notation": null,
+    "alpha-value-notation": null,
+    "color-function-notation": null,
+    "shorthand-property-no-redundant-values": null,
+    "length-zero-no-unit": null
+  },
+  "ignoreFiles": ["src/styles/tokens.css"]
+}
