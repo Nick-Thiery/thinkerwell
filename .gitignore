@@ -1,0 +1,23 @@
+# Dependencies and builds
+node_modules
+dist
+dev-dist
+coverage
+
+# Test output
+test-results
+playwright-report
+blob-report
+# Playwright browsers installed inside the repo (PLAYWRIGHT_BROWSERS_PATH=0) live in node_modules
+
+# Local tooling and scratch
+.build-review
+.venv
+.vercel
+*.local
+.DS_Store
+
+# Secrets (Vercel Functions and the pilot database come later)
+.env
+.env.*
+!.env.example
