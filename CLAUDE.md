@@ -25,7 +25,7 @@ A free social-studies course, "Exploring Our World": 24 lessons in 4 sections, e
 - Tests: Vitest for logic and content, Playwright for end-to-end runs at 390, 820 and 1280px wide.
 - Later (not phase 1): Vercel Functions for `POST /api/events` and a Postgres database for pilot measurement. See `docs/research/MEASUREMENT_PLAN.md`.
 
-Commands: fill these in once the project is scaffolded (`dev`, `build`, `test`, `test:e2e`, `check:content`).
+Commands: `npm run dev` (dev server; add `?dir=rtl` to any URL to check right-to-left), `npm run build`, `npm run typecheck`, `npm run lint` (ESLint and Stylelint), `npm test` (Vitest), `npm run test:e2e` (Playwright; run `npm run test:e2e:install` once), `npm run check:content` (lesson checker; run `sh scripts/setup-python.sh` once for wordfreq).
 
 ## Where things live
 
