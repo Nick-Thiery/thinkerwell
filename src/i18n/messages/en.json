@@ -1,0 +1,50 @@
+{
+  "app": {
+    "name": "Thinkerwell",
+    "courseTitle": "Exploring Our World",
+    "skipToContent": "Skip to content",
+    "documentTitle": "{page} · Thinkerwell"
+  },
+  "nav": {
+    "label": "Main",
+    "home": "Home",
+    "course": "Course",
+    "journal": "My journal",
+    "educators": "For educators",
+    "about": "About"
+  },
+  "stages": {
+    "read": "Read",
+    "write": "Write",
+    "speak": "Speak",
+    "watch": "Watch",
+    "reflect": "Reflect",
+    "complete": "Lesson complete"
+  },
+  "sections": {
+    "check": "Section check"
+  },
+  "lesson": {
+    "number": "Lesson {number}",
+    "minutes": "About {min}–{max} min"
+  },
+  "pages": {
+    "home": { "title": "Who's learning today?" },
+    "course": { "title": "Course map" },
+    "lesson": { "title": "Lesson {number}: {stage}" },
+    "sectionCheck": { "title": "Section check: {section}" },
+    "journal": { "title": "My journal" },
+    "educators": { "title": "For educators" },
+    "about": { "title": "About Thinkerwell" },
+    "placeholder": "This page is coming soon."
+  },
+  "notFound": {
+    "title": "We can't find that page",
+    "body": "The link may be old or have a typo. Everything in the course is still here.",
+    "home": "Go to home",
+    "course": "See the course"
+  },
+  "dev": {
+    "rtlOn": "Right-to-left test mode is on. Add ?dir=ltr to the address to turn it off."
+  }
+}
