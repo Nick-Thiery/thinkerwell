@@ -154,6 +154,22 @@ export interface Recording {
 export type ReadingLevel = 'standard' | 'simpler';
 export type ListeningSpeed = 'slow' | 'normal';
 
+/**
+ * What the browser said when asked whether it can turn English speech into
+ * text on the device (SpeechRecognition.available({ processLocally: true })):
+ * 'available' now, 'downloadable' or 'downloading' after a language pack
+ * download, 'unavailable', or 'unsupported' where the browser has no
+ * on-device option at all.
+ */
+export type OnDeviceSpeechStatus = 'available' | 'downloadable' | 'downloading' | 'unavailable' | 'unsupported';
+
+/** The result of "Check this device" on the Settings page. */
+export interface SpeechCheck {
+  status: OnDeviceSpeechStatus;
+  /** When the check ran. */
+  checkedAt: string;
+}
+
 /** Per-device settings (shared by everyone who uses this device). */
 export interface DeviceSettings {
   /**
@@ -169,6 +185,15 @@ export interface DeviceSettings {
     /** Allow "Say it" to use a browser speech service that may send audio online. */
     allowOnlineDictation: boolean;
   };
+  /**
+   * The last "Check this device" an educator ran in Settings, or null until
+   * someone runs it. Lessons offer on-device Say it only when this says
+   * 'available': they never ask the browser themselves, because asking
+   * crashed the tab in some browsers (docs/notes/phase-5.md). Records saved
+   * before this setting existed get null from getSettings(), so it needs no
+   * migration.
+   */
+  speechCheck: SpeechCheck | null;
 }
 
 export const DEFAULT_SETTINGS: DeviceSettings = {
@@ -176,6 +201,7 @@ export const DEFAULT_SETTINGS: DeviceSettings = {
   listeningSpeed: 'normal',
   preferredReadingLevel: 'standard',
   partner: { allowOnlineDictation: false },
+  speechCheck: null,
 };
 
 /** Device-level values in the `device` store, by name. Add new ones here. */

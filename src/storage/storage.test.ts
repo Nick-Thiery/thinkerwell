@@ -406,6 +406,24 @@ describe('settings', () => {
 
     expect(await store.getSettings()).toEqual({ ...DEFAULT_SETTINGS, saveData: true });
   });
+
+  it('keeps the result of "Check this device", and has none for a record saved before it existed', async () => {
+    // A record from before speechCheck existed: it needs no migration.
+    const db = await openThinkerwellDb(name);
+    const older = { saveData: null, listeningSpeed: 'normal', preferredReadingLevel: 'standard', partner: { allowOnlineDictation: true } };
+    await db.put('settings', older as never, 'device');
+    db.close();
+    expect((await store.getSettings()).speechCheck).toBeNull();
+    expect(DEFAULT_SETTINGS.speechCheck).toBeNull();
+
+    const check = { status: 'available', checkedAt: '2026-09-28T02:00:00.000Z' } as const;
+    await store.updateSettings({ speechCheck: check });
+    const saved = await store.getSettings();
+    expect(saved.speechCheck).toEqual(check);
+    expect(saved.partner.allowOnlineDictation).toBe(true);
+    // Other changes leave it as it is.
+    expect((await store.updateSettings({ listeningSpeed: 'slow' })).speechCheck).toEqual(check);
+  });
 });
 
 describe('current learner', () => {
