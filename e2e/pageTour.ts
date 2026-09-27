@@ -236,6 +236,31 @@ export const pageTour: TourStop[] = [
     go: (page) => openPath(page, '/settings', 'Settings for this device'),
   },
   {
+    // "Load my work" with a file chosen: what it holds, before anything changes.
+    // A different learner with the tour learner's (long) name, so the longest
+    // preview text shows. Nothing is loaded.
+    name: 'settings: a work file to load',
+    go: async (page) => {
+      const file = {
+        format: 'thinkerwell-work',
+        version: 1,
+        savedAt: '2026-09-28T09:00:00.000Z',
+        learners: [
+          {
+            learner: { id: 'tour-other-learner', name: TOUR_LEARNER, colour: 'civics', createdAt: '2026-09-01T08:00:00.000Z' },
+            progress: [],
+            quizAttempts: [],
+          },
+        ],
+      };
+      await page
+        .locator('input[type="file"]')
+        .setInputFiles({ name: 'thinkerwell-all-learners-2026-09-28.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(file)) });
+      await expect(page.getByRole('group', { name: 'Check before you load' })).toBeVisible();
+      await expect(page.getByRole('button', { name: 'Load it' })).toBeVisible();
+    },
+  },
+  {
     name: 'print: lesson',
     go: async (page) => {
       await page.goto('/lesson/towns-near-rivers/print');
