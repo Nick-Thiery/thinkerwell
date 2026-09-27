@@ -320,7 +320,8 @@ function ExampleAnswer({ example, written, shown, onShow }: ExampleAnswerProps) 
     >
       <summary ref={summaryRef} className="tw-write-example-summary">
         <Icon name="ChevronDown" size={20} className="tw-write-example-chevron" />
-        <span>{t('lessonPlayer.write.compareExample')}</span>
+        {/* "Compare with" only once there is something of the learner's to compare. */}
+        <span>{t(written ? 'lessonPlayer.write.compareExample' : 'lessonPlayer.write.seeExample')}</span>
       </summary>
       <div className="tw-write-example-body">
         <span className="eyebrow tw-write-example-eyebrow">{t('lessonPlayer.write.exampleEyebrow')}</span>

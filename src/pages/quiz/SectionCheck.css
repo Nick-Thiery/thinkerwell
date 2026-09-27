@@ -134,12 +134,19 @@
 
 .tw-quiz-from-lesson {
   display: inline-flex;
-  align-items: center;
+  /* On the first line when the link wraps, not in the middle of it. */
+  align-items: flex-start;
   gap: var(--space-1);
   font-size: 15px;
+  line-height: 22px;
   font-weight: 700;
   color: var(--violet);
   text-decoration: none;
+}
+
+.tw-quiz-from-lesson .tw-icon {
+  flex: none;
+  margin-block-start: 3px;
 }
 
 .tw-quiz-from-lesson:hover {

@@ -45,7 +45,7 @@ export function QuickCheck({ headingRef, onBack }: QuickCheckProps) {
       )}
 
       <StageActionBar
-        back={t('stages.read')}
+        back={t('lessonPlayer.read.backPart', { n: lesson.read.sections.length })}
         onBack={onBack}
         helper={t('lessonPlayer.read.checkHelper')}
         onNext={() => stageEvent({ stage: 'read', kind: 'continue' })}

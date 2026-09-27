@@ -187,7 +187,8 @@ describe('ReadStage: reading parts', () => {
     expect(screen.queryByText(L10.warmUp.question, { exact: false })).not.toBeInTheDocument();
     expect(document.querySelector('.tw-reading')).toBeNull();
 
-    await user.click(screen.getByRole('button', { name: 'Read' }));
+    // Back from the quick check goes to the last part, and says so.
+    await user.click(screen.getByRole('button', { name: 'Part 3' }));
     expect(screen.getByTestId('search')).toHaveTextContent('part=3');
   });
 
@@ -443,7 +444,7 @@ describe('ReadStage with the real lesson player', () => {
     renderReal('?part=check', true);
     const q0 = L10.read.checks[0] as ChoiceCheck;
     await user.click(await screen.findByRole('radio', { name: new RegExp(q0.options[0]!.text.replace('.', '\\.')) }));
-    await user.click(screen.getByRole('button', { name: 'Read' }));
+    await user.click(screen.getByRole('button', { name: 'Part 3' }));
     await user.click(screen.getByRole('button', { name: 'Part 2' }));
     await user.click(screen.getByRole('button', { name: 'Part 1' }));
     await user.click(await screen.findByRole('radio', { name: 'Near the river' }));
