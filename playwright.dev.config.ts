@@ -17,6 +17,9 @@ export default defineConfig({
   use: {
     baseURL: externalBaseURL ?? `http://localhost:${PORT}`,
     trace: 'retain-on-failure',
+    // PW_CHROMIUM_PATH lets a machine without Playwright's own browser download
+    // (for example a locked-down cloud runner) use an installed Chromium instead.
+    ...(process.env.PW_CHROMIUM_PATH ? { launchOptions: { executablePath: process.env.PW_CHROMIUM_PATH } } : {}),
   },
   projects: [
     {
