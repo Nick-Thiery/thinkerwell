@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img">
+<title>Three kinds of questions</title>
+<desc>Three boxes show three kinds of questions about beginnings: how it happened, why it matters, and who told the account.</desc>
+<rect width="960" height="540" rx="24" fill="#FFE9C7"/>
+<g fill="#FFFFFF" stroke="#D5D1DC" stroke-width="2">
+<rect x="24" y="32" width="292" height="404" rx="18"/>
+<rect x="334" y="32" width="292" height="404" rx="18"/>
+<rect x="644" y="32" width="292" height="404" rx="18"/>
+</g>
+<g fill="#ECE4FD">
+<circle cx="170" cy="166" r="62"/><circle cx="480" cy="166" r="62"/><circle cx="790" cy="166" r="62"/>
+</g>
+
+<!-- telescope: how did it happen? -->
+<g stroke="#0F0E0E" stroke-linejoin="round" stroke-linecap="round">
+<path d="M170 176 L146 222 M170 176 L194 222 M170 176 L170 224" stroke="#A07850" stroke-width="5"/>
+<rect x="128" y="154" width="84" height="24" rx="8" fill="#D2C0F9" stroke-width="4" transform="rotate(-28 170 166)"/>
+<rect x="198" y="148" width="18" height="34" rx="5" fill="#4E32B5" stroke-width="4" transform="rotate(-28 170 166)"/>
+<rect x="118" y="158" width="12" height="16" rx="3" fill="#FFFFFF" stroke-width="3" transform="rotate(-28 170 166)"/>
+</g>
+<g fill="#FDE68A" stroke="#0F0E0E" stroke-width="2" stroke-linejoin="round">
+<path d="M136 116 L140 126 L150 130 L140 134 L136 144 L132 134 L122 130 L132 126Z"/>
+<path d="M200 104 L203 111 L210 114 L203 117 L200 124 L197 117 L190 114 L197 111Z"/>
+</g>
+
+<!-- small tree: why? what matters most? -->
+<g stroke="#0F0E0E" stroke-linejoin="round">
+<path d="M480 223 V166" fill="none" stroke="#0F0E0E" stroke-width="16"/>
+<path d="M480 221 V166" fill="none" stroke="#A07850" stroke-width="10"/>
+<path d="M436 158 C428 128, 452 106, 474 116 C482 96, 518 100, 520 124 C540 132, 534 166, 512 168 C500 180, 460 180, 446 170 C436 170, 432 164, 436 158Z" fill="#7A9B4E" stroke-width="4"/>
+<path d="M460 224 H500" stroke-width="5" stroke-linecap="round"/>
+</g>
+<g fill="#4E32B5"><circle cx="458" cy="140" r="5"/><circle cx="494" cy="128" r="5"/><circle cx="506" cy="152" r="5"/><circle cx="478" cy="156" r="5"/></g>
+
+<!-- scroll: who told it, when and why? -->
+<g stroke="#0F0E0E" stroke-width="4" stroke-linejoin="round">
+<rect x="746" y="130" width="88" height="72" fill="#F3E3C3"/>
+<rect x="734" y="122" width="16" height="88" rx="8" fill="#F3E3C3"/>
+<rect x="830" y="122" width="16" height="88" rx="8" fill="#F3E3C3"/>
+</g>
+<path d="M760 148 H820 M760 164 H812 M760 180 H820" stroke="#4B4654" stroke-width="4" stroke-linecap="round"/>
+
+<g font-family="Atkinson Hyperlegible Next, Atkinson Hyperlegible, Verdana, sans-serif" text-anchor="middle">
+<g font-size="24" font-weight="700" fill="#7A4300">
+<text x="170" y="78">Science</text>
+<text x="480" y="78">Faith and culture</text>
+<text x="790" y="78">History</text>
+</g>
+<g font-size="26" font-weight="700" fill="#0F0E0E">
+<text x="170" y="290">How did it<tspan x="170" dy="32">happen?</tspan></text>
+<text x="480" y="290">Why? What<tspan x="480" dy="32">matters most?</tspan></text>
+<text x="790" y="290">Who told it,<tspan x="790" dy="32">when and why?</tspan></text>
+</g>
+<g font-size="22" fill="#4B4654">
+<text x="170" y="378">evidence we<tspan x="170" dy="26">can measure</tspan></text>
+<text x="480" y="378">meaning and<tspan x="480" dy="26">values</tspan></text>
+<text x="790" y="378">sources and<tspan x="790" dy="26">records</tspan></text>
+</g>
+<text x="480" y="494" font-size="24" font-weight="700" fill="#7A4300">Different questions need different kinds of answers.</text>
+</g>
+</svg>

@@ -16,6 +16,7 @@ blob-report
 .vercel
 *.local
 .DS_Store
+__pycache__
 
 # Secrets (Vercel Functions and the pilot database come later)
 .env

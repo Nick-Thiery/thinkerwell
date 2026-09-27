@@ -3,11 +3,11 @@
 You are rewriting existing Thinkerwell lessons so that all 24 have the **same shape**, the **same reading level**, and are **accurate, clear and respectful** for the learners below. The CTO has approved these changes. Work only on the lessons you were assigned.
 
 Files you need:
-- Base44 originals: `/home/claude/thinkerwell/reference/base44-content.json` (`lessons` and `videos`; match a video to its lesson with `videos[].lessonId == lessons[].id`)
-- Audit of known problems: `/home/claude/thinkerwell/reference/BASE44_AUDIT.md` (sections 4 and 5)
-- Learner context: `/home/claude/thinkerwell/reference/LEARNER_CONTEXT.md`
-- Checker: `python3 /home/claude/thinkerwell/content-v2/tools/check_lesson.py <file.json>`
-- Write your output to `/home/claude/thinkerwell/content-v2/lessons/L{NN}.json` (two-digit number, e.g. `L07.json`).
+- Base44 originals: `the Base44 export (base44-content.json, kept outside this repo)` (`lessons` and `videos`; match a video to its lesson with `videos[].lessonId == lessons[].id`)
+- Audit of known problems: `docs/research/BASE44_AUDIT.md` (sections 4 and 5)
+- Learner context: `docs/research/LEARNER_CONTEXT.md`
+- Checker: `python3 scripts/check_lesson.py <file.json>`
+- Write your output to `content/lessons/L{NN}.json` (two-digit number, e.g. `L07.json`).
 
 ## 1. Who the learners are
 

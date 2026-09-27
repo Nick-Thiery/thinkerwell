@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img">
+<title>Riverstone at three scales</title>
+<desc>Three timelines of Riverstone: one afternoon, 20 years and several hundred years. Each one tells a different story about the same town.</desc>
+<rect width="960" height="540" rx="24" fill="#FFE9C7"/>
+<defs>
+<!-- time arrow along each row -->
+<g id="line"><path d="M330 62 H896" stroke="#D5D1DC" stroke-width="5" stroke-linecap="round"/><path d="M916 62 L894 50 L894 74Z" fill="#D5D1DC"/></g>
+<!-- small houses and bridges for the town maps (seen from above) -->
+<rect id="h" x="-5" y="-5" width="10" height="10" rx="1.5" fill="#F3E3C3" stroke="#A07850" stroke-width="2"/>
+<rect id="b" x="-15" y="-4" width="30" height="8" rx="1.5" fill="#A07850" stroke="#0F0E0E" stroke-width="1.5"/>
+<rect id="nb" x="-15" y="-4" width="30" height="8" rx="1.5" fill="#4E32B5" stroke="#0F0E0E" stroke-width="1.5"/>
+<rect id="m" x="-9" y="-8" width="18" height="16" rx="2" fill="#D2C0F9" stroke="#0F0E0E" stroke-width="2"/>
+<rect id="frame" x="-75" y="-42" width="150" height="84" rx="10" fill="#DCEFD5" stroke="#4B4654" stroke-width="2"/>
+<path id="arrow" d="M-44 0 H30 M44 0 L26 -11 L26 11Z" stroke="#4E32B5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="#4E32B5"/>
+</defs>
+
+<!-- ============ Row 1: one afternoon ============ -->
+<g transform="translate(0 24)">
+<rect x="24" y="0" width="912" height="156" rx="16" fill="#FFFFFF"/>
+<use href="#line"/>
+<!-- magnifying glass: a close view -->
+<g transform="translate(96 104)">
+<path d="M13 13 L30 30" stroke="#0F0E0E" stroke-width="9" stroke-linecap="round"/>
+<circle r="20" fill="#ECE4FD" stroke="#0F0E0E" stroke-width="5"/>
+</g>
+<!-- rain starts -->
+<g transform="translate(400 58)">
+<path d="M-30 6 C-40 6 -40 -12 -26 -12 C-24 -26 -4 -30 2 -18 C10 -28 30 -22 28 -8 C40 -8 40 6 30 6Z" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="3.5" stroke-linejoin="round"/>
+<path d="M-18 16 L-22 26 M-4 16 L-8 26 M10 16 L6 26 M24 16 L20 26" stroke="#6FB6D6" stroke-width="5" stroke-linecap="round"/>
+</g>
+<!-- bridge closes -->
+<g transform="translate(540 62)">
+<rect x="-44" y="16" width="88" height="18" rx="6" fill="#6FB6D6"/>
+<path d="M-44 4 H44 V14 H34 Q0 -2 -34 14 H-44Z" fill="#A07850" stroke="#0F0E0E" stroke-width="3" stroke-linejoin="round"/>
+<path d="M-24 4 V-20 M24 4 V-20" stroke="#0F0E0E" stroke-width="4" stroke-linecap="round"/>
+<rect x="-30" y="-20" width="60" height="12" rx="3" fill="#FDE68A" stroke="#0F0E0E" stroke-width="3"/>
+<path d="M-16 -20 L-22 -8 M-2 -20 L-8 -8 M12 -20 L6 -8 M26 -20 L20 -8" stroke="#0F0E0E" stroke-width="3"/>
+</g>
+<!-- traders take the long road -->
+<g transform="translate(680 62)">
+<path d="M-56 18 C-50 -30, -18 -30, -14 0 S14 34, 22 0 S50 -34, 56 -2" fill="none" stroke="#4B4654" stroke-width="13" stroke-linecap="round"/>
+<path d="M-56 18 C-50 -30, -18 -30, -14 0 S14 34, 22 0 S50 -34, 56 -2" fill="none" stroke="#D5D1DC" stroke-width="7" stroke-linecap="round"/>
+<g transform="translate(-33 -30)">
+<rect x="-15" y="-10" width="30" height="16" rx="3" fill="#A07850" stroke="#0F0E0E" stroke-width="3"/>
+<circle cx="-7" cy="9" r="6" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="3"/><circle cx="8" cy="9" r="6" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="3"/>
+</g>
+</g>
+<!-- bridge opens six hours later -->
+<g transform="translate(820 62)">
+<rect x="-44" y="16" width="88" height="18" rx="6" fill="#6FB6D6"/>
+<path d="M-44 4 H44 V14 H34 Q0 -2 -34 14 H-44Z" fill="#A07850" stroke="#0F0E0E" stroke-width="3" stroke-linejoin="round"/>
+<path d="M-24 4 V-30" stroke="#0F0E0E" stroke-width="4" stroke-linecap="round"/>
+<rect x="-30" y="-44" width="12" height="44" rx="3" fill="#FDE68A" stroke="#0F0E0E" stroke-width="3" transform="rotate(0)"/>
+<circle cx="18" cy="-24" r="16" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="3"/>
+<path d="M18 -34 V-24 H26" fill="none" stroke="#0F0E0E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+
+<!-- ============ Row 2: 20 years ============ -->
+<g transform="translate(0 190)">
+<rect x="24" y="0" width="912" height="156" rx="16" fill="#FFFFFF"/>
+<use href="#line"/>
+<!-- calendar -->
+<g transform="translate(96 104)">
+<rect x="-24" y="-22" width="48" height="44" rx="6" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="4"/>
+<rect x="-24" y="-22" width="48" height="12" rx="4" fill="#D2C0F9" stroke="#0F0E0E" stroke-width="4"/>
+<path d="M-12 -28 V-16 M12 -28 V-16" stroke="#0F0E0E" stroke-width="4" stroke-linecap="round"/>
+<path d="M-12 2 H-6 M2 2 H8 M-12 12 H-6 M2 12 H8" stroke="#4B4654" stroke-width="4" stroke-linecap="round"/>
+</g>
+<!-- before: one bridge, homes on the west side -->
+<g transform="translate(470 62)">
+<use href="#frame"/>
+<rect x="-8" y="-42" width="16" height="84" fill="#6FB6D6"/>
+<use href="#h" x="-60" y="-28"/><use href="#h" x="-44" y="-30"/><use href="#h" x="-58" y="-10"/><use href="#h" x="-60" y="10"/>
+<use href="#h" x="-44" y="26"/><use href="#h" x="-24" y="28"/><use href="#h" x="-26" y="-28"/>
+<use href="#m" x="-32" y="-2"/>
+<use href="#b" x="0" y="-2"/>
+</g>
+<use href="#arrow" x="625" y="62"/>
+<!-- after: homes on both sides, two new bridges -->
+<g transform="translate(780 62)">
+<use href="#frame"/>
+<rect x="-8" y="-42" width="16" height="84" fill="#6FB6D6"/>
+<use href="#h" x="-60" y="-28"/><use href="#h" x="-44" y="-30"/><use href="#h" x="-58" y="-10"/><use href="#h" x="-60" y="10"/>
+<use href="#h" x="-44" y="26"/><use href="#h" x="-24" y="28"/><use href="#h" x="-26" y="-28"/>
+<use href="#h" x="26" y="-30"/><use href="#h" x="44" y="-28"/><use href="#h" x="62" y="-12"/><use href="#h" x="28" y="10"/>
+<use href="#h" x="46" y="8"/><use href="#h" x="62" y="26"/><use href="#h" x="28" y="30"/><use href="#h" x="44" y="-8"/>
+<use href="#m" x="-32" y="-2"/>
+<use href="#b" x="0" y="-2"/>
+<use href="#nb" x="0" y="-24"/><use href="#nb" x="0" y="22"/>
+</g>
+</g>
+
+<!-- ============ Row 3: several hundred years ============ -->
+<g transform="translate(0 356)">
+<rect x="24" y="0" width="912" height="156" rx="16" fill="#FFFFFF"/>
+<use href="#line"/>
+<!-- wide view -->
+<g transform="translate(76 114)">
+<path d="M0 0 L54 -30 A62 62 0 0 1 54 30Z" fill="#ECE4FD" stroke="#0F0E0E" stroke-width="4" stroke-linejoin="round"/>
+<circle r="9" fill="#0F0E0E"/>
+</g>
+<!-- before: river on the west side, town centre beside it -->
+<g transform="translate(470 62)">
+<use href="#frame"/>
+<path d="M-34 -42 C-28 -14, -40 12, -34 42" fill="none" stroke="#6FB6D6" stroke-width="15"/>
+<use href="#h" x="-12" y="-30"/><use href="#h" x="6" y="-26"/><use href="#h" x="8" y="12"/><use href="#h" x="-10" y="28"/>
+<use href="#h" x="26" y="-6"/><use href="#h" x="-60" y="-24"/><use href="#h" x="-60" y="20"/>
+<use href="#m" x="-10" y="-4"/>
+</g>
+<use href="#arrow" x="625" y="62"/>
+<!-- after: the river has moved east, the centre has moved with it -->
+<g transform="translate(780 62)">
+<use href="#frame"/>
+<path d="M-34 -42 C-28 -14, -40 12, -34 42" fill="none" stroke="#6FB6D6" stroke-width="3" stroke-dasharray="6 6"/>
+<path d="M-34 -42 C-20 -26, 24 -26, 26 0 S14 34, 30 42" fill="none" stroke="#6FB6D6" stroke-width="15"/>
+<rect x="-19" y="-12" width="18" height="16" rx="2" fill="none" stroke="#4B4654" stroke-width="2" stroke-dasharray="4 3"/>
+<use href="#h" x="-12" y="-30"/><use href="#h" x="-54" y="20"/><use href="#h" x="-14" y="26"/>
+<use href="#h" x="58" y="-30"/><use href="#h" x="62" y="-8"/><use href="#h" x="60" y="14"/><use href="#h" x="58" y="32"/><use href="#h" x="-2" y="10"/>
+<use href="#m" x="46" y="4"/>
+</g>
+</g>
+
+<!-- labels -->
+<g font-family="Atkinson Hyperlegible Next, Atkinson Hyperlegible, Verdana, sans-serif" fill="#0F0E0E">
+<g font-size="24" font-weight="700" fill="#7A4300">
+<text x="48" y="64">One afternoon</text>
+<text x="48" y="230">20 years</text>
+<text x="48" y="392">Several<tspan x="48" dy="27">hundred years</tspan></text>
+</g>
+<g font-size="22" font-weight="700" text-anchor="middle">
+<text x="540" y="160">Bridge closes</text>
+<text x="820" y="160">6 hours later</text>
+<text x="470" y="326">1 bridge</text>
+<text x="780" y="326">2 new bridges</text>
+<text x="780" y="492">River and centre move</text>
+</g>
+</g>
+</svg>

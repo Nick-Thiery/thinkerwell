@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img">
+<title>Map of Riverlands</title>
+<desc>Fictional map of Riverlands with three possible town sites: flat farmland by a river, a hill a short walk away, and a forest far from the river.</desc>
+<rect width="960" height="540" rx="24" fill="#DCEFD5"/>
+<defs><clipPath id="map"><rect width="960" height="540" rx="24"/></clipPath></defs>
+<g clip-path="url(#map)">
+<!-- farmland that sometimes floods: wide on the west bank, narrow on the east bank -->
+<path d="M190 -10 C230 100, 160 200, 215 290 S270 440, 240 560" fill="none" stroke="#FDE68A" stroke-width="112" stroke-linecap="round"/>
+<ellipse cx="128" cy="300" rx="112" ry="150" fill="#FDE68A"/>
+<g stroke="#7A9B4E" stroke-width="6" stroke-linecap="round">
+<path d="M52 196 L96 196 M118 196 L160 196 M42 228 L86 228 M150 228 L190 228 M40 382 L84 382 M110 382 L152 382 M52 414 L96 414 M120 414 L162 414 M66 444 L110 444"/>
+</g>
+<!-- the river -->
+<path d="M190 -10 C230 100, 160 200, 215 290 S270 440, 240 560" fill="none" stroke="#6FB6D6" stroke-width="30" stroke-linecap="round"/>
+<!-- the hill: high, dry ground -->
+<ellipse cx="410" cy="132" rx="118" ry="80" fill="#F3E3C3" stroke="#A07850" stroke-width="4"/>
+<ellipse cx="410" cy="128" rx="76" ry="50" fill="#F3E3C3" stroke="#A07850" stroke-width="4"/>
+<ellipse cx="410" cy="124" rx="36" ry="23" fill="#A07850"/>
+<!-- forest -->
+<g fill="#3F6B35">
+<circle cx="444" cy="310" r="19"/><circle cx="478" cy="292" r="20"/><circle cx="564" cy="298" r="19"/><circle cx="602" cy="284" r="17"/><circle cx="498" cy="270" r="13"/><circle cx="540" cy="276" r="12"/>
+<circle cx="428" cy="352" r="18"/><circle cx="466" cy="338" r="17"/><circle cx="566" cy="340" r="18"/><circle cx="606" cy="330" r="18"/><circle cx="484" cy="366" r="12"/>
+<circle cx="432" cy="396" r="18"/><circle cx="468" cy="392" r="15"/><circle cx="604" cy="378" r="18"/><circle cx="572" cy="382" r="13"/>
+<circle cx="430" cy="442" r="18"/><circle cx="466" cy="432" r="13"/><circle cx="606" cy="426" r="18"/><circle cx="578" cy="428" r="12"/>
+<circle cx="448" cy="488" r="19"/><circle cx="492" cy="502" r="18"/><circle cx="538" cy="498" r="19"/><circle cx="582" cy="484" r="18"/>
+<circle cx="614" cy="520" r="16"/><circle cx="420" cy="528" r="16"/><circle cx="560" cy="530" r="14"/><circle cx="614" cy="470" r="14"/>
+</g>
+<!-- small stream that dries up in the dry season -->
+<path d="M590 246 C572 296, 600 336, 580 384 S594 470, 572 560" fill="none" stroke="#6FB6D6" stroke-width="5" stroke-dasharray="10 9" stroke-linecap="round"/>
+<!-- paths -->
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M128 300 C165 285, 190 268, 214 262 C260 252, 280 200, 330 176 C355 164, 380 150, 410 124 M410 124 C440 180, 520 230, 520 300 C520 350, 520 380, 520 412" stroke="#4B4654" stroke-width="11"/>
+<path d="M128 300 C165 285, 190 268, 214 262 C260 252, 280 200, 330 176 C355 164, 380 150, 410 124 M410 124 C440 180, 520 230, 520 300 C520 350, 520 380, 520 412" stroke="#D5D1DC" stroke-width="5"/>
+</g>
+<!-- small wooden bridge where the path crosses the river -->
+<g transform="rotate(-14 214 262)">
+<rect x="196" y="253" width="38" height="18" rx="3" fill="#A07850" stroke="#0F0E0E" stroke-width="3"/>
+<path d="M205 253 L205 271 M215 253 L215 271 M225 253 L225 271" stroke="#0F0E0E" stroke-width="2"/>
+</g>
+<!-- boat at the water's edge by the River site -->
+<g transform="translate(222 350) rotate(-8)">
+<path d="M-24 -4 L24 -4 L16 8 L-16 8Z" fill="#A07850" stroke="#0F0E0E" stroke-width="3" stroke-linejoin="round"/>
+<path d="M-2 -4 L-2 -30 L16 -8Z" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="3" stroke-linejoin="round"/>
+</g>
+</g>
+<!-- site markers -->
+<g fill="#FFFFFF" stroke="#0F0E0E" stroke-width="5">
+<circle cx="128" cy="300" r="14"/><circle cx="410" cy="124" r="14"/><circle cx="520" cy="412" r="14"/>
+</g>
+<g font-family="Atkinson Hyperlegible Next, Atkinson Hyperlegible, Verdana, sans-serif" font-size="24" font-weight="700" fill="#0F0E0E" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">
+<text x="128" y="346" text-anchor="middle">River site</text>
+<text x="436" y="94">Hill site</text>
+<text x="520" y="458" text-anchor="middle">Forest site</text>
+</g>
+<!-- north arrow -->
+<g>
+<path d="M66 60 L80 106 L66 96 L52 106Z" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="3" stroke-linejoin="round"/>
+<path d="M66 60 L66 96 L52 106Z" fill="#0F0E0E"/>
+<text x="66" y="52" text-anchor="middle" font-family="Atkinson Hyperlegible Next, Atkinson Hyperlegible, Verdana, sans-serif" font-size="22" font-weight="700" fill="#0F0E0E">N</text>
+</g>
+<!-- key -->
+<rect x="636" y="36" width="288" height="468" rx="16" fill="#FFFFFF" stroke="#D5D1DC" stroke-width="2"/>
+<g font-family="Atkinson Hyperlegible Next, Atkinson Hyperlegible, Verdana, sans-serif" font-size="22" fill="#0F0E0E">
+<text x="656" y="80" font-size="26" font-weight="700" fill="#2D6326">Riverlands</text>
+<path d="M656 132 C668 122, 682 142, 696 132" fill="none" stroke="#6FB6D6" stroke-width="12" stroke-linecap="round"/>
+<text x="712" y="140">River</text>
+<rect x="654" y="178" width="44" height="30" rx="6" fill="#FDE68A"/>
+<path d="M662 186 L674 186 M680 186 L690 186 M662 200 L674 200 M680 200 L690 200" stroke="#7A9B4E" stroke-width="4" stroke-linecap="round"/>
+<text x="712" y="190">Farmland that<tspan x="712" dy="26">sometimes floods</tspan></text>
+<ellipse cx="676" cy="274" rx="22" ry="15" fill="#F3E3C3" stroke="#A07850" stroke-width="3"/>
+<ellipse cx="676" cy="273" rx="9" ry="6" fill="#A07850"/>
+<text x="712" y="282">Hill</text>
+<g fill="#3F6B35"><circle cx="666" cy="344" r="11"/><circle cx="686" cy="338" r="11"/><circle cx="680" cy="356" r="10"/></g>
+<text x="712" y="355">Forest</text>
+<path d="M656 420 L696 420" stroke="#4B4654" stroke-width="11" stroke-linecap="round"/>
+<path d="M656 420 L696 420" stroke="#D5D1DC" stroke-width="5" stroke-linecap="round"/>
+<text x="712" y="428">Path</text>
+</g>
+</svg>

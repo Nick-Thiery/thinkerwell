@@ -1,0 +1,178 @@
+{
+  "section": "history",
+  "title": "Section check: History & Human Stories",
+  "intro": "12 questions about Lessons 1–9. Take your time. You can look back at the lessons and try again as often as you like.",
+  "questions": [
+    {
+      "id": "history-01",
+      "lesson": 1,
+      "skill": "evidence",
+      "stimulus": null,
+      "question": "The Riverstone drawing shows a river. The diary says traders came by boat. What do these two clues suggest together?",
+      "options": [
+        { "text": "The river helped traders bring goods.", "correct": true, "feedback": "Yes. The drawing shows a river, and the diary talks about boats. Together, they suggest the river helped traders reach the market." },
+        { "text": "The market was quiet, with few people.", "correct": false, "feedback": "Not quite. These two clues are about the river and boats. The diary also says market day was crowded. Look back at Lesson 1." },
+        { "text": "Most traders came by cart, not boat.", "correct": false, "feedback": "Not quite. The drawing shows one cart, but the diary says traders came by boat. Look back at Lesson 1." }
+      ]
+    },
+    {
+      "id": "history-02",
+      "lesson": 1,
+      "skill": "apply",
+      "stimulus": {
+        "type": "items",
+        "title": "A made-up source: a poster from the town of Norrin, about 40 years ago",
+        "items": [
+          "Norrin Book Fair.",
+          "On Saturday, in the town hall.",
+          "Story time for children at 10:00.",
+          "Free for everyone."
+        ]
+      },
+      "question": "A historian finds this poster. Which question needs a different source to answer?",
+      "options": [
+        { "text": "Where was the book fair?", "correct": false, "feedback": "Not quite. The poster says the fair was in the town hall. So the poster can answer this. Look back at Lesson 1." },
+        { "text": "What time did story time start?", "correct": false, "feedback": "Not quite. The poster says story time was at 10:00. So the poster can answer this. Look back at Lesson 1." },
+        { "text": "How many people came to it?", "correct": true, "feedback": "Yes. The poster does not say how many people came. A historian would need another source, like a diary or a photo." }
+      ]
+    },
+    {
+      "id": "history-03",
+      "lesson": 2,
+      "skill": "apply",
+      "stimulus": {
+        "type": "items",
+        "title": "A made-up object: a wooden spoon from the village of Tavi",
+        "items": [
+          "A long wooden spoon.",
+          "One end is dark and burned.",
+          "There is a small crack in the handle.",
+          "A star is cut into the handle."
+        ]
+      },
+      "question": "Which sentence about the spoon is an inference?",
+      "options": [
+        { "text": "The handle has a star cut into it.", "correct": false, "feedback": "Not quite. You can see the star on the handle, so this is an observation. Look back at Lesson 2." },
+        { "text": "It may have been used near a fire.", "correct": true, "feedback": "Yes. Nobody can see the fire now. You build this idea from a clue, the burned end. That makes it an inference." },
+        { "text": "There is a small crack in the handle.", "correct": false, "feedback": "Not quite. You can see the crack for yourself, so this is an observation. Look back at Lesson 2." }
+      ]
+    },
+    {
+      "id": "history-04",
+      "lesson": 3,
+      "skill": "understand",
+      "stimulus": null,
+      "question": "What can a close view of the past show that a wide view may hide?",
+      "options": [
+        { "text": "How a town grew over 100 years", "correct": false, "feedback": "Not quite. Growth over 100 years is a pattern. A wide view is good at showing patterns. Look back at Lesson 3." },
+        { "text": "One person's choices and feelings", "correct": true, "feedback": "Yes. A close view, like one diary, shows one person's choices and feelings. A wide view can hide people." },
+        { "text": "How a river moved over a long time", "correct": false, "feedback": "Not quite. A river that moves over hundreds of years is a pattern. A wide view shows this best. Look back at Lesson 3." }
+      ]
+    },
+    {
+      "id": "history-05",
+      "lesson": 4,
+      "skill": "understand",
+      "stimulus": null,
+      "question": "Each kind of account answers its own kind of question. Which of these would a historian ask about an origin account?",
+      "options": [
+        { "text": "How did the sun and the planets form?", "correct": false, "feedback": "Not quite. Scientists ask questions like this about nature. Historians ask who told an account, when and why. Look back at Lesson 4." },
+        { "text": "How should people live?", "correct": false, "feedback": "Not quite. Faith accounts and cultural accounts often answer questions like this. Historians ask who told an account, and why. Look back at Lesson 4." },
+        { "text": "Who told this account, and why?", "correct": true, "feedback": "Yes. Historians ask who told an account, when and why. Each kind of question needs its own kind of answer." }
+      ]
+    },
+    {
+      "id": "history-06",
+      "lesson": 5,
+      "skill": "vocabulary",
+      "stimulus": null,
+      "question": "A young person learns a skill from an older person. She makes it better. Then she teaches it to her friends. What is this called?",
+      "options": [
+        { "text": "Collective learning", "correct": true, "feedback": "Yes. In collective learning, people share what they know, make it better and pass it on. This is how knowledge grows." },
+        { "text": "Trading with other groups", "correct": false, "feedback": "Not quite. Trade means you give something and get something back. Here, a skill is shared and made better. Look back at Lesson 5." },
+        { "text": "Foraging for wild food", "correct": false, "feedback": "Not quite. Foraging means finding wild food. This example is about sharing a skill and making it better. Look back at Lesson 5." }
+      ]
+    },
+    {
+      "id": "history-07",
+      "lesson": 5,
+      "skill": "evidence",
+      "stimulus": null,
+      "question": "Archaeologists found these clues at early human sites. Which clue could show what people cooked?",
+      "options": [
+        { "text": "The handprints on a rock wall", "correct": false, "feedback": "Not quite. Handprints are a kind of art. They tell us other things, not what people cooked. Look back at Lesson 5." },
+        { "text": "The hearth with its burned seeds", "correct": true, "feedback": "Yes. A hearth is a place where people made a fire. Burned seeds in a hearth can show what people cooked." },
+        { "text": "Tools of the same shape, far apart", "correct": false, "feedback": "Not quite. These tools may show that people shared ideas. They do not show what people cooked. Look back at Lesson 5." }
+      ]
+    },
+    {
+      "id": "history-08",
+      "lesson": 6,
+      "skill": "vocabulary",
+      "stimulus": null,
+      "question": "After a good harvest, a farming village may have a surplus. What is a surplus?",
+      "options": [
+        { "text": "More food than people need right now", "correct": true, "feedback": "Yes. A surplus is extra food. People can store it, so not everyone has to farm." },
+        { "text": "A plant that people grow for food", "correct": false, "feedback": "Not quite. A plant that people grow for food is a crop. A surplus is extra food or goods. Look back at Lesson 6." },
+        { "text": "Finding wild food instead of growing it", "correct": false, "feedback": "Not quite. Finding wild food is called foraging. A surplus is more food than people need right now. Look back at Lesson 6." }
+      ]
+    },
+    {
+      "id": "history-09",
+      "lesson": 7,
+      "skill": "evidence",
+      "stimulus": null,
+      "question": "Banwa is a made-up city. Many things change there over time. Which of these changes shows that some people gained more power than others?",
+      "options": [
+        { "text": "Farms grow extra grain for several good years", "correct": false, "feedback": "Not quite. Extra grain helped Banwa grow. It does not show who has more power. Look back at Lesson 7." },
+        { "text": "People build a shared storehouse", "correct": false, "feedback": "Not quite. A shared storehouse shows people working together. It does not show who has more power. Look back at Lesson 7." },
+        { "text": "Some families control more land and grain", "correct": true, "feedback": "Yes. Families with more land and grain have more power. In early cities, power was not shared equally." }
+      ]
+    },
+    {
+      "id": "history-10",
+      "lesson": 7,
+      "skill": "vocabulary",
+      "stimulus": null,
+      "question": "In Babylon, King Hammurabi had rules carved on a tall stone. Everyone had to follow them. What are rules like these called?",
+      "options": [
+        { "text": "Taxes", "correct": false, "feedback": "Not quite. A tax is something people give to their government, like grain or work. Look back at Lesson 7." },
+        { "text": "Laws", "correct": true, "feedback": "Yes. A law is a rule that everyone in a place must follow. Hammurabi had about 280 laws carved on a stone." },
+        { "text": "Goods", "correct": false, "feedback": "Not quite. Goods are things people make or grow, like jars or cloth. Look back at Lesson 7." }
+      ]
+    },
+    {
+      "id": "history-11",
+      "lesson": 8,
+      "skill": "understand",
+      "stimulus": null,
+      "question": "Paper was first made in China. How did the idea of papermaking reach the Middle East and Europe?",
+      "options": [
+        { "text": "It spread along the trade routes.", "correct": true, "feedback": "Yes. Traders carried ideas as well as goods. Papermaking spread along the routes to other lands." },
+        { "text": "Each place made it at the same time.", "correct": false, "feedback": "Not quite. Paper was first made in China. The idea reached other lands later. Look back at Lesson 8." },
+        { "text": "One trader took it on one long trip.", "correct": false, "feedback": "Not quite. The idea did not travel in one trip. It moved along trade routes, from place to place. Look back at Lesson 8." }
+      ]
+    },
+    {
+      "id": "history-12",
+      "lesson": 9,
+      "skill": "apply",
+      "stimulus": {
+        "type": "text",
+        "title": "A made-up town: a new ticket machine",
+        "body": "The made-up town of Pellow puts a new ticket machine at its bus stop. Before, buying a ticket took 10 minutes. Now it takes one minute. But the screen shows words in only one language. It has no pictures to help."
+      },
+      "question": "Who might find the new machine hard to use?",
+      "options": [
+        { "text": "People who want to buy tickets quickly", "correct": false, "feedback": "Not quite. The machine is faster, so this is a benefit for these people. Look back at Lesson 9." },
+        { "text": "People who ride the bus every day", "correct": false, "feedback": "Not quite. People who ride often can save time every day. That is a benefit. Look back at Lesson 9." },
+        { "text": "People who cannot read that language", "correct": true, "feedback": "Yes. The screen uses only one language, so it is a barrier for some people. An invention only helps people who can use it." }
+      ]
+    }
+  ],
+  "results": {
+    "high": "Well done. You know a lot about how we learn about the past and how early communities changed.",
+    "middle": "Good work. You got many questions right. Look back at the lessons for the ones you missed, and try again if you like.",
+    "low": "Thank you for trying. Look back at Lessons 1–9, then try again. You can take as long as you need."
+  }
+}

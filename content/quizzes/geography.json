@@ -1,0 +1,165 @@
+{
+  "section": "geography",
+  "title": "Section check: Geography & Our Environment",
+  "intro": "10 questions about Lessons 10–14. Take your time. You can look back at the lessons and try again as often as you like.",
+  "questions": [
+    {
+      "id": "geography-01",
+      "lesson": 10,
+      "skill": "understand",
+      "stimulus": null,
+      "question": "Long ago, why did towns often grow at places where boats stopped on a river?",
+      "options": [
+        { "text": "Boats kept the river from flooding", "correct": false, "feedback": "Not quite. Boats cannot stop a river from flooding. Towns grew where boats stopped because people could trade there. Look back at Lesson 10." },
+        { "text": "People could trade goods there", "correct": true, "feedback": "Yes. Boats carried heavy goods, like grain and wood. People bought and sold these goods where the boats stopped." },
+        { "text": "The land was high and rocky", "correct": false, "feedback": "Not quite. Boats stop by the water, not on high, rocky land. Look back at Lesson 10." }
+      ]
+    },
+    {
+      "id": "geography-02",
+      "lesson": 10,
+      "skill": "evidence",
+      "stimulus": {
+        "type": "items",
+        "title": "Notes from the made-up Riverlands map in Lesson 10",
+        "items": [
+          "River site: flat land by the river. The soil is good for crops. Sometimes the river floods it.",
+          "Hill site: high, dry ground. Floods do not reach it. The soil is thin and rocky.",
+          "Forest site: far from the river. There is wood to build with. People must cut trees before they farm."
+        ]
+      },
+      "question": "Which fact is a good reason to build a farming town at the River site?",
+      "options": [
+        { "text": "The soil there is good for crops.", "correct": true, "feedback": "Yes. The map says the soil at the River site is good for crops. Mud from the river makes the land fertile." },
+        { "text": "Floods never reach the land.", "correct": false, "feedback": "Not quite. Floods do not reach the Hill site. But the river sometimes floods the River site. Look back at Lesson 10." },
+        { "text": "There is wood to build with there.", "correct": false, "feedback": "Not quite. The wood is at the Forest site. The River site is flat land next to the river. Look back at Lesson 10." }
+      ]
+    },
+    {
+      "id": "geography-03",
+      "lesson": 11,
+      "skill": "vocabulary",
+      "stimulus": null,
+      "question": "Which part of a map tells you what each colour, line and shape means?",
+      "options": [
+        { "text": "The scale", "correct": false, "feedback": "Not quite. The scale helps you see how far things are in real life. Look back at Lesson 11." },
+        { "text": "The compass rose", "correct": false, "feedback": "Not quite. The compass rose shows north, south, east and west. Look back at Lesson 11." },
+        { "text": "The key", "correct": true, "feedback": "Yes. The key, or legend, tells you what each symbol means. For example, a blue line can stand for a river." }
+      ]
+    },
+    {
+      "id": "geography-04",
+      "lesson": 11,
+      "skill": "apply",
+      "stimulus": {
+        "type": "items",
+        "title": "A made-up map of Ambrey Park",
+        "items": [
+          "Scale: 1 square = 10 metres",
+          "The path from the gate to the pond is five squares long.",
+          "Compass rose: N (north) points to the top of the map"
+        ]
+      },
+      "question": "About how long is the path from the gate to the pond?",
+      "options": [
+        { "text": "About 5 metres", "correct": false, "feedback": "Not quite. The path is five squares long, and each square is 10 metres. Look back at Lesson 11." },
+        { "text": "About 50 metres", "correct": true, "feedback": "Yes. Each square is 10 metres. Five squares make 50 metres." },
+        { "text": "About 500 metres", "correct": false, "feedback": "Not quite. That would be 50 squares. The path is only five squares of 10 metres each. Look back at Lesson 11." }
+      ]
+    },
+    {
+      "id": "geography-05",
+      "lesson": 12,
+      "skill": "understand",
+      "stimulus": null,
+      "question": "Nairobi and Shenzhen are two real cities. What helped both of them grow?",
+      "options": [
+        { "text": "Cool weather and lots of rain", "correct": false, "feedback": "Not quite. Weather did not make these two cities grow. Nairobi began as a stop on a railway, and Shenzhen grew when factories opened. Look back at Lesson 12." },
+        { "text": "Rich soil from river floods", "correct": false, "feedback": "Not quite. Rich soil helps farms grow crops. These two cities grew because of jobs and transport. Look back at Lesson 12." },
+        { "text": "New jobs and transport", "correct": true, "feedback": "Yes. Nairobi began as a stop on a railway, and factories opened in Shenzhen. Jobs and transport brought many people." }
+      ]
+    },
+    {
+      "id": "geography-06",
+      "lesson": 12,
+      "skill": "apply",
+      "stimulus": {
+        "type": "text",
+        "title": "A made-up town: Ostrin",
+        "body": "A new train line opens in the made-up town of Ostrin. A factory opens next to the station, with 600 new jobs. Five years later, twice as many people live in Ostrin. But the town still has only one small school."
+      },
+      "question": "What problem is Ostrin most likely to have?",
+      "options": [
+        { "text": "The one school gets very crowded.", "correct": true, "feedback": "Yes. The number of people grew fast, but the school did not. A service needs to grow when the population grows." },
+        { "text": "There are fewer jobs in the town.", "correct": false, "feedback": "Not quite. The factory brought 600 new jobs, so there are more jobs, not fewer. Look back at Lesson 12." },
+        { "text": "It is hard to get to other towns.", "correct": false, "feedback": "Not quite. The new train line makes travel easier. Think about the school instead. Look back at Lesson 12." }
+      ]
+    },
+    {
+      "id": "geography-07",
+      "lesson": 13,
+      "skill": "apply",
+      "stimulus": {
+        "type": "text",
+        "title": "A made-up town: Kelmar",
+        "body": "Kelmar is a made-up town. For the last 40 years, its summers have been hot and dry. Most of its rain has fallen in winter. Today, a cool wind is blowing, and grey clouds cover the sky."
+      },
+      "question": "Which one is about weather, not climate?",
+      "options": [
+        { "text": "Summers are usually hot and dry.", "correct": false, "feedback": "Not quite. This is a pattern over many years, so it is climate. Weather is what the air is like now. Look back at Lesson 13." },
+        { "text": "A cool wind is blowing today.", "correct": true, "feedback": "Yes. This is about one day, and it can change fast. That makes it weather." },
+        { "text": "Most rain falls in winter.", "correct": false, "feedback": "Not quite. This is what usually happens each year, so it is climate. Weather is what the air is like now. Look back at Lesson 13." }
+      ]
+    },
+    {
+      "id": "geography-08",
+      "lesson": 13,
+      "skill": "understand",
+      "stimulus": null,
+      "question": "What are the seasons like near the equator?",
+      "options": [
+        { "text": "Spring, summer, autumn and winter", "correct": false, "feedback": "Not quite. Many places far from the equator have these four seasons. Look back at Lesson 13." },
+        { "text": "Cold and snowy all year", "correct": false, "feedback": "Not quite. Places near the equator are warm all year. Look back at Lesson 13." },
+        { "text": "A rainy season and a dry season", "correct": true, "feedback": "Yes. Near the equator, it is warm all year. So the seasons are usually rainy or dry." }
+      ]
+    },
+    {
+      "id": "geography-09",
+      "lesson": 14,
+      "skill": "evidence",
+      "stimulus": {
+        "type": "items",
+        "title": "The made-up town of Brookside from Lesson 14: three ideas for a low bridge",
+        "items": [
+          "The problem: heavy rain sometimes covers the low footbridge with water.",
+          "Idea A: put a warning sign by the bridge. It is cheap and quick.",
+          "Idea B: build the bridge higher and add a ramp. It costs more and takes months.",
+          "Idea C: send phone messages and put up paper notices when heavy rain is coming."
+        ]
+      },
+      "question": "What is one problem with Idea A, the warning sign?",
+      "options": [
+        { "text": "It does not make the bridge safer.", "correct": true, "feedback": "Yes. A sign is quick and cheap, but the bridge stays low. Also, some people cannot read the sign." },
+        { "text": "It costs a lot and takes months.", "correct": false, "feedback": "Not quite. That is Idea B, raising the bridge. A sign is cheap and quick. Look back at Lesson 14." },
+        { "text": "Everyone needs a phone to see it.", "correct": false, "feedback": "Not quite. Phone messages are part of Idea C. A sign stands by the bridge, so no phone is needed. Look back at Lesson 14." }
+      ]
+    },
+    {
+      "id": "geography-10",
+      "lesson": 14,
+      "skill": "vocabulary",
+      "stimulus": null,
+      "question": "A made-up library puts its signs in three languages and adds pictures. Now everyone can find what they need. What is this an example of?",
+      "options": [
+        { "text": "An alert", "correct": false, "feedback": "Not quite. An alert is a message that warns people about danger. These signs help people find things. Look back at Lesson 14." },
+        { "text": "The environment", "correct": false, "feedback": "Not quite. The environment is the land, water, air, plants and animals around us. Look back at Lesson 14." },
+        { "text": "Inclusion", "correct": true, "feedback": "Yes. Inclusion means making sure everyone can take part. Signs in three languages, with pictures, help more people." }
+      ]
+    }
+  ],
+  "results": {
+    "high": "Well done. You know a lot about places, maps and how people live with their environment.",
+    "middle": "Good work. You got many questions right. Look back at the lessons for the ones you missed, and try again if you like.",
+    "low": "Thank you for trying. Look back at Lessons 10–14, then try again. You can take as long as you need."
+  }
+}

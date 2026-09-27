@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img">
+<title>The metal tin and the notebook</title>
+<desc>A metal tin with a dented lid, the letters ML and a repaired hinge, next to an open notebook.</desc>
+<rect width="960" height="540" rx="24" fill="#FFE9C7"/>
+
+<!-- the tin -->
+<g transform="translate(0 -24)">
+<g stroke="#0F0E0E" stroke-linejoin="round">
+<!-- handle -->
+<path d="M262 192 V172 Q262 150 284 150 H336 Q358 150 358 172 V192" fill="none" stroke="#4B4654" stroke-width="10" stroke-linecap="round"/>
+<!-- body -->
+<rect x="150" y="252" width="320" height="180" rx="16" fill="#D5D1DC" stroke-width="4"/>
+<path d="M150 276 H470" stroke="#4B4654" stroke-width="2.5"/>
+<!-- lid, with a dent in its top edge -->
+<path d="M156 190 H368 C386 190, 390 212, 404 212 C418 212, 422 190, 440 190 H464 Q480 190 480 204 V244 Q480 258 466 258 H154 Q140 258 140 244 V204 Q140 190 156 190Z" fill="#D5D1DC" stroke-width="4"/>
+<path d="M382 220 Q404 230 426 218" fill="none" stroke="#4B4654" stroke-width="3" stroke-linecap="round"/>
+<!-- hinge on the left side, mended with wire -->
+<rect x="126" y="226" width="22" height="16" rx="5" fill="#D5D1DC" stroke-width="2.5"/>
+<rect x="126" y="244" width="22" height="16" rx="5" fill="#D5D1DC" stroke-width="2.5"/>
+<rect x="126" y="262" width="22" height="16" rx="5" fill="#D5D1DC" stroke-width="2.5"/>
+<path d="M120 236 L154 246 M120 250 L154 260 M120 264 L154 274" stroke="#A07850" stroke-width="5" stroke-linecap="round"/>
+</g>
+<!-- shine on the metal -->
+<path d="M190 300 L214 300 M190 316 L206 316 M430 290 L440 290" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
+</g>
+<!-- the letters ML cut into the side -->
+<text x="310" y="358" text-anchor="middle" font-family="Atkinson Hyperlegible Next, Atkinson Hyperlegible, Verdana, sans-serif" font-size="64" font-weight="700" fill="#FFFFFF" stroke="#4B4654" stroke-width="3" stroke-linejoin="round">ML</text>
+
+<!-- notebook page -->
+<g transform="rotate(4 750 300) translate(0 -16)">
+<rect x="620" y="160" width="260" height="280" rx="8" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="3"/>
+<path d="M640 230 H860 M640 270 H860 M640 310 H860 M640 350 H860 M640 390 H860" stroke="#D5D1DC" stroke-width="2"/>
+<g fill="#FFFFFF" stroke="#0F0E0E" stroke-width="3">
+<circle cx="660" cy="160" r="8"/><circle cx="700" cy="160" r="8"/><circle cx="740" cy="160" r="8"/><circle cx="780" cy="160" r="8"/><circle cx="820" cy="160" r="8"/><circle cx="860" cy="160" r="8"/>
+</g>
+<path d="M646 222 q8 -9 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0 M646 262 q8 -9 16 0 t16 0 t16 0 t16 0 t16 0 t16 0 t16 0" fill="none" stroke="#4B4654" stroke-width="3" stroke-linecap="round"/>
+<text x="846" y="302" text-anchor="end" font-family="Atkinson Hyperlegible Next, Atkinson Hyperlegible, Verdana, sans-serif" font-size="24" fill="#0F0E0E">— Mina L.</text>
+</g>
+
+<!-- labels pointing to the details -->
+<g stroke="#4E32B5" stroke-width="3" stroke-linecap="round" fill="#4E32B5">
+<path d="M494 120 L412 182"/><circle cx="410" cy="184" r="5"/>
+<path d="M136 160 L136 198"/><circle cx="136" cy="202" r="5"/>
+<path d="M310 428 L310 376"/><circle cx="310" cy="372" r="5"/>
+</g>
+<g font-family="Atkinson Hyperlegible Next, Atkinson Hyperlegible, Verdana, sans-serif" font-size="24" font-weight="700" fill="#0F0E0E">
+<text x="500" y="122">Dent</text>
+<text x="40" y="150">Repaired hinge</text>
+<text x="310" y="458" text-anchor="middle">Letters ML</text>
+<text x="750" y="470" text-anchor="middle" fill="#7A4300">Notebook</text>
+</g>
+</svg>

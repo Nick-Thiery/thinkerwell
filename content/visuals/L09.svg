@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img">
+<title>Four inventions over time</title>
+<desc>Timeline of four inventions: the wheel, printing with movable blocks, the mobile phone and the solar lamp, each with a label saying what it changed.</desc>
+<rect width="960" height="540" rx="24" fill="#FFE9C7"/>
+
+<!-- time line (not to scale: the breaks show long gaps) -->
+<path d="M36 106 H904" stroke="#4B4654" stroke-width="4" stroke-linecap="round"/>
+<path d="M926 106 L902 94 L902 118Z" fill="#4B4654"/>
+<g stroke="#4B4654" stroke-width="4" stroke-linecap="round">
+<path d="M222 94 H244 V118 H222Z" fill="#FFE9C7" stroke="none"/>
+<path d="M222 120 L232 92 M234 120 L244 92"/>
+<path d="M498 94 H520 V118 H498Z" fill="#FFE9C7" stroke="none"/>
+<path d="M498 120 L508 92 M510 120 L520 92"/>
+</g>
+<g fill="#FDE68A" stroke="#0F0E0E" stroke-width="3">
+<circle cx="126" cy="106" r="9"/><circle cx="370" cy="106" r="9"/><circle cx="620" cy="106" r="9"/><circle cx="836" cy="106" r="9"/>
+</g>
+
+<!-- cards -->
+<g fill="#FFFFFF" stroke="#D5D1DC" stroke-width="2">
+<rect x="28" y="130" width="196" height="248" rx="16"/>
+<rect x="240" y="130" width="260" height="248" rx="16"/>
+<rect x="516" y="130" width="208" height="248" rx="16"/>
+</g>
+<rect x="740" y="130" width="192" height="248" rx="16" fill="#1E4E94"/>
+
+<!-- 1: potter's wheel and a cart with solid wheels -->
+<g stroke="#0F0E0E" stroke-width="3" stroke-linejoin="round">
+<rect x="66" y="210" width="16" height="26" fill="#7A4300"/>
+<path d="M44 238 H104" stroke-width="5" stroke-linecap="round"/>
+<ellipse cx="74" cy="208" rx="38" ry="9" fill="#7A4300"/>
+<path d="M60 204 C44 196, 46 176, 64 172 L66 164 H82 L84 172 C102 176, 104 196, 88 204Z" fill="#A07850"/>
+<path d="M62 164 H86" stroke-width="4" stroke-linecap="round"/>
+<path d="M58 290 L38 300" stroke-width="5" stroke-linecap="round"/>
+<ellipse cx="108" cy="266" rx="17" ry="11" fill="#F3E3C3"/><ellipse cx="140" cy="262" rx="17" ry="12" fill="#F3E3C3"/><ellipse cx="170" cy="266" rx="16" ry="11" fill="#F3E3C3"/>
+<rect x="58" y="274" width="138" height="34" rx="4" fill="#A07850"/>
+<circle cx="90" cy="318" r="24" fill="#A07850"/><circle cx="164" cy="318" r="24" fill="#A07850"/>
+<circle cx="90" cy="318" r="6" fill="#0F0E0E"/><circle cx="164" cy="318" r="6" fill="#0F0E0E"/>
+</g>
+
+<!-- 2: movable printing blocks and a printed page -->
+<g stroke="#0F0E0E" stroke-width="3" stroke-linejoin="round">
+<rect x="262" y="206" width="36" height="36" rx="3" fill="#A07850"/><rect x="302" y="206" width="36" height="36" rx="3" fill="#A07850"/>
+<rect x="262" y="246" width="36" height="36" rx="3" fill="#A07850"/><rect x="302" y="246" width="36" height="36" rx="3" fill="#A07850"/>
+<rect x="282" y="286" width="36" height="36" rx="3" fill="#A07850"/>
+</g>
+<path d="M272 218 H288 M272 230 H284 M272 256 V272 H288 M310 256 Q316 250 320 258 T330 264 M284 298 L292 310 L300 298 L308 310 L316 298" fill="none" stroke="#7A4300" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="320" cy="224" r="7" fill="none" stroke="#7A4300" stroke-width="3"/>
+<g fill="#7A4300"><circle cx="312" cy="276" r="2.5"/><circle cx="328" cy="276" r="2.5"/></g>
+<g transform="rotate(5 420 256)">
+<rect x="360" y="170" width="120" height="164" rx="4" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="3"/>
+<path d="M376 196 H464 M376 216 H452 M376 236 H464 M376 256 H440 M376 276 H464 M376 296 H448 M376 316 H420" stroke="#0F0E0E" stroke-width="5" stroke-dasharray="10 4"/>
+</g>
+
+<!-- 3: a person using a mobile phone -->
+<g stroke="#0F0E0E" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M566 356 V300 Q566 262 604 262 Q642 262 642 300 V356Z" fill="#3F6B35"/>
+<circle cx="604" cy="230" r="24" fill="#8D5524"/>
+<path d="M630 296 Q650 262 640 236" fill="none" stroke="#3F6B35" stroke-width="14"/>
+<rect x="632" y="200" width="22" height="38" rx="5" fill="#0F0E0E"/>
+<rect x="636" y="206" width="14" height="24" rx="2" fill="#BFE0E8" stroke="none"/>
+</g>
+<g fill="none" stroke="#4E32B5" stroke-width="4" stroke-linecap="round">
+<path d="M666 206 Q676 218 666 230"/><path d="M678 196 Q694 218 678 240"/><path d="M690 186 Q712 218 690 250"/>
+</g>
+<g fill="#0F0E0E"><circle cx="596" cy="226" r="3"/><circle cx="612" cy="226" r="3"/></g>
+
+<!-- 4: a solar lamp lights a table after dark -->
+<g fill="#FFFFFF"><circle cx="768" cy="160" r="3"/><circle cx="902" cy="172" r="3"/><circle cx="800" cy="196" r="2.5"/><circle cx="880" cy="148" r="2.5"/></g>
+<circle cx="836" cy="266" r="66" fill="#FDE68A"/>
+<g stroke="#0F0E0E" stroke-width="3" stroke-linejoin="round">
+<rect x="756" y="318" width="160" height="16" rx="4" fill="#A07850"/>
+<path d="M772 334 V372 M900 334 V372" stroke-width="6" stroke-linecap="round" stroke="#A07850"/>
+<path d="M812 232 H860 L852 220 H820Z" fill="#4B4654"/>
+<path d="M824 222 L822 230 M836 222 V230 M848 222 L850 230" stroke="#D5D1DC" stroke-width="2"/>
+<rect x="818" y="234" width="36" height="28" rx="6" fill="#FFFF66"/>
+<rect x="822" y="262" width="28" height="56" rx="6" fill="#FFFFFF"/>
+<path d="M864 317 L870 302 Q880 300 886 306 Q892 300 902 302 L908 317Z" fill="#FFFFFF"/><path d="M886 306 V317" stroke-width="2"/>
+</g>
+
+<g font-family="Atkinson Hyperlegible Next, Atkinson Hyperlegible, Verdana, sans-serif">
+<g font-size="22" font-weight="700" fill="#7A4300" text-anchor="middle">
+<text x="126" y="52">About 5,500<tspan x="126" dy="28">years ago</tspan></text>
+<text x="370" y="80">1000s to 1400s</text>
+<text x="728" y="80">Today</text>
+</g>
+<g font-size="22" fill="#0F0E0E" text-anchor="middle">
+<text x="126" y="410">Moving heavy<tspan x="126" dy="26">loads</tspan><tspan x="126" dy="28" fill="#4B4654">Mesopotamia</tspan></text>
+<text x="370" y="410">Sharing books<tspan x="370" dy="28" fill="#4B4654">China, Korea, Germany</tspan></text>
+<text x="620" y="410">Talking, learning<tspan x="620" dy="26">at a distance</tspan></text>
+<text x="836" y="410">Light without<tspan x="836" dy="26">power lines</tspan></text>
+</g>
+</g>
+</svg>

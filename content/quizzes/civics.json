@@ -1,0 +1,269 @@
+{
+  "section": "civics",
+  "title": "Section check: Civics, Media & Everyday Economics",
+  "intro": "10 questions about Lessons 20–24. Take your time. You can look back at the lessons and try again as often as you like.",
+  "questions": [
+    {
+      "id": "civics-01",
+      "lesson": 20,
+      "skill": "vocabulary",
+      "stimulus": null,
+      "question": "Which of these is a need, not a want?",
+      "options": [
+        {
+          "text": "Music videos on a phone",
+          "correct": false,
+          "feedback": "Not quite. Music videos are nice, but you can live without them. That makes them a want. Look back at Lesson 20."
+        },
+        {
+          "text": "A new football",
+          "correct": false,
+          "feedback": "Not quite. A new football is fun, but you can live without it. That makes it a want. Look back at Lesson 20."
+        },
+        {
+          "text": "Clean water to drink",
+          "correct": true,
+          "feedback": "Yes. You must have clean water to live and stay healthy. That makes it a need."
+        }
+      ]
+    },
+    {
+      "id": "civics-02",
+      "lesson": 20,
+      "skill": "apply",
+      "stimulus": {
+        "type": "text",
+        "title": "A made-up choice",
+        "body": "Amani and two friends share one tablet at a made-up learning centre. They have 30 minutes left on it today. They can play a word game or watch a short science video. There is not enough time for both. They choose the science video."
+      },
+      "question": "What is the opportunity cost of their choice?",
+      "options": [
+        {
+          "text": "The word game they do not play",
+          "correct": true,
+          "feedback": "Yes. The word game is the next-best thing they give up. That is their opportunity cost."
+        },
+        {
+          "text": "The science video they watch",
+          "correct": false,
+          "feedback": "Not quite. The video is what they choose. The opportunity cost is what they give up. Look back at Lesson 20."
+        },
+        {
+          "text": "The tablet that they all share",
+          "correct": false,
+          "feedback": "Not quite. The tablet is a resource they use. The opportunity cost is the thing they give up. Look back at Lesson 20."
+        }
+      ]
+    },
+    {
+      "id": "civics-03",
+      "lesson": 21,
+      "skill": "vocabulary",
+      "stimulus": null,
+      "question": "Here is a made-up example. Jun fixes a broken chair for Lucia. In return, Lucia teaches Jun a card game. No money is used. What is this kind of exchange called?",
+      "options": [
+        {
+          "text": "Scarcity",
+          "correct": false,
+          "feedback": "Not quite. Scarcity means there is not enough for every use. Here, two people swap skills with no money. Look back at Lesson 21."
+        },
+        {
+          "text": "Barter",
+          "correct": true,
+          "feedback": "Yes. Barter means swapping a thing or a skill without using money. Jun and Lucia swap skills."
+        },
+        {
+          "text": "A budget",
+          "correct": false,
+          "feedback": "Not quite. A budget is a plan for money or time. Here, two people swap skills with no money. Look back at Lesson 21."
+        }
+      ]
+    },
+    {
+      "id": "civics-04",
+      "lesson": 21,
+      "skill": "understand",
+      "stimulus": null,
+      "question": "Lesson 21 says every exchange depends on trust. What happens when a seller cheats?",
+      "options": [
+        {
+          "text": "More people want to buy from them.",
+          "correct": false,
+          "feedback": "Not quite. People do not want to buy from someone who cheats. Look back at Lesson 21."
+        },
+        {
+          "text": "People stop trusting the seller.",
+          "correct": true,
+          "feedback": "Yes. If someone cheats, people stop trusting them. Then trade gets harder for everyone."
+        },
+        {
+          "text": "Nothing changes at the market at all.",
+          "correct": false,
+          "feedback": "Not quite. Cheating breaks trust, and then trade gets harder for everyone. Look back at Lesson 21."
+        }
+      ]
+    },
+    {
+      "id": "civics-05",
+      "lesson": 22,
+      "skill": "evidence",
+      "stimulus": null,
+      "question": "Mei's time budget has 15 minutes for reading English and 15 minutes for games on the shared phone. What does this show?",
+      "options": [
+        {
+          "text": "A budget can plan time, not only money.",
+          "correct": true,
+          "feedback": "Yes. Budgets are not only for money. Mei uses a budget to plan her time in the evening."
+        },
+        {
+          "text": "A budget means Mei can never play games.",
+          "correct": false,
+          "feedback": "Not quite. Mei still has 15 minutes for games. She just has less time for them. Look back at Lesson 22."
+        },
+        {
+          "text": "A budget is only ever a plan for money.",
+          "correct": false,
+          "feedback": "Not quite. Mei's budget is a plan for her time. Budgets are not only for money. Look back at Lesson 22."
+        }
+      ]
+    },
+    {
+      "id": "civics-06",
+      "lesson": 22,
+      "skill": "understand",
+      "stimulus": null,
+      "question": "Lesson 22 says that small, short goals are useful. Why?",
+      "options": [
+        {
+          "text": "They do not need any steps or plan.",
+          "correct": false,
+          "feedback": "Not quite. You still work towards a goal step by step. Look back at Lesson 22."
+        },
+        {
+          "text": "They make sure nothing will ever change.",
+          "correct": false,
+          "feedback": "Not quite. Plans can still change. That is why a small goal you can work on now helps. Look back at Lesson 22."
+        },
+        {
+          "text": "You can start to work on them now.",
+          "correct": true,
+          "feedback": "Yes. Plans can change, but you can work on a small goal now. One example is learning 10 new words a week."
+        }
+      ]
+    },
+    {
+      "id": "civics-07",
+      "lesson": 23,
+      "skill": "evidence",
+      "stimulus": {
+        "type": "items",
+        "title": "Message F, a made-up message from Lesson 23",
+        "items": [
+          "A photo of a fish as long as a bus.",
+          "The words say: “Caught at Lakeside yesterday.”",
+          "The edges of the fish look strange.",
+          "Nobody else has a photo of this fish."
+        ]
+      },
+      "question": "Which detail is a clue that the photo may not be real?",
+      "options": [
+        {
+          "text": "It is a photo, not a written message.",
+          "correct": false,
+          "feedback": "Not quite. A photo can be real or changed. Being a photo does not show it is fake. Look back at Lesson 23."
+        },
+        {
+          "text": "The edges of the fish look strange.",
+          "correct": true,
+          "feedback": "Yes. Strange edges can show that a photo was changed with an app. Also, nobody else has a photo of this fish."
+        },
+        {
+          "text": "It says where the fish was caught.",
+          "correct": false,
+          "feedback": "Not quite. Naming a place does not show a photo is fake. Think about how the fish itself looks. Look back at Lesson 23."
+        }
+      ]
+    },
+    {
+      "id": "civics-08",
+      "lesson": 23,
+      "skill": "apply",
+      "stimulus": {
+        "type": "text",
+        "title": "A made-up message",
+        "body": "Pia plays in a football team. She sees a message in a group chat. It says: “Our match at City Park is now on Sunday. Tell the whole team.” The message has no name and no date. Pia does not know who wrote it."
+      },
+      "question": "What is the best thing for Pia to do first?",
+      "options": [
+        {
+          "text": "Send it to the whole team right now",
+          "correct": false,
+          "feedback": "Not quite. The message has no name or date, so Pia cannot trust it yet. It is safer to check first. Look back at Lesson 23."
+        },
+        {
+          "text": "Believe it, because it sounds very sure",
+          "correct": false,
+          "feedback": "Not quite. A message can sound sure and still be wrong. Pia needs to check it first. Look back at Lesson 23."
+        },
+        {
+          "text": "Ask her coach if the message is true",
+          "correct": true,
+          "feedback": "Yes. Her coach is a trusted source. Pia can verify the message before she shares it."
+        }
+      ]
+    },
+    {
+      "id": "civics-09",
+      "lesson": 24,
+      "skill": "vocabulary",
+      "stimulus": null,
+      "question": "Lesson 24 says the bus users are stakeholders. What does that word mean?",
+      "options": [
+        {
+          "text": "A person or group that a problem affects",
+          "correct": true,
+          "feedback": "Yes. The litter at the bus stop affects the bus users and the centre manager. So they are stakeholders."
+        },
+        {
+          "text": "A person who sells goods at a market stall",
+          "correct": false,
+          "feedback": "Not quite. The bus users are not selling anything. A stakeholder is someone a problem or plan affects. Look back at Lesson 24."
+        },
+        {
+          "text": "A person who checks if a message is true",
+          "correct": false,
+          "feedback": "Not quite. Checking messages is part of Lesson 23. A stakeholder is someone a problem or plan affects. Look back at Lesson 24."
+        }
+      ]
+    },
+    {
+      "id": "civics-10",
+      "lesson": 24,
+      "skill": "understand",
+      "stimulus": null,
+      "question": "What does Lesson 24 say about ways to help a community?",
+      "options": [
+        {
+          "text": "Small, everyday actions can make a difference.",
+          "correct": true,
+          "feedback": "Yes. Reading with a younger child or keeping a shared room clean can help a community."
+        },
+        {
+          "text": "Only big campaigns can make a real difference.",
+          "correct": false,
+          "feedback": "Not quite. Helping does not have to mean a big campaign. Everyday actions matter too. Look back at Lesson 24."
+        },
+        {
+          "text": "You must speak in public to help at all.",
+          "correct": false,
+          "feedback": "Not quite. You never need to speak in public, post online or take risks to help. Look back at Lesson 24."
+        }
+      ]
+    }
+  ],
+  "results": {
+    "high": "Well done. You know a lot about making choices, checking messages and helping a community.",
+    "middle": "Good work. You got many questions right. Look back at the lessons for the ones you missed, and try again if you like.",
+    "low": "Thank you for trying. Look back at Lessons 20–24, then try again. You can take as long as you need."
+  }
+}
