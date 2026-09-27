@@ -29,9 +29,14 @@ export function recordRequests(page: Page): string[] {
   return urls;
 }
 
-/** How far the page is wider than the window (0 or less: no sideways scroll). */
+/**
+ * How far the page is wider than the window (0 or less: no sideways scroll).
+ * Measured against the layout width (clientWidth), not window.innerWidth: a
+ * phone (isMobile) zooms out to fit a page that is too wide, and innerWidth
+ * then grows with it, so it would never show the problem.
+ */
 export async function horizontalOverflow(page: Page): Promise<number> {
-  return page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+  return page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
 }
 
 /**

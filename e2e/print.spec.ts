@@ -40,7 +40,7 @@ test('a lesson prints in both reading levels with every task, in black on white,
   expect(colours.text).toEqual(['rgb(0, 0, 0)']);
   expect(colours.backgrounds.every((colour) => colour === 'rgba(0, 0, 0, 0)')).toBe(true);
   expect(await page.evaluate(() => getComputedStyle(document.body).backgroundColor)).toBe('rgb(255, 255, 255)');
-  expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)).toBeLessThanOrEqual(0);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(0);
 });
 
 test("a learner's journal prints what they wrote", async ({ page }) => {

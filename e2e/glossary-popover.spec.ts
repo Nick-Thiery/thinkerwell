@@ -13,7 +13,6 @@ import { L10 } from './lessonHelpers';
 
 interface Measure {
   scrollWidth: number;
-  innerWidth: number;
   clientWidth: number;
   scrollX: number;
   pop: { left: number; right: number; top: number } | null;
@@ -30,7 +29,6 @@ async function measure(page: Page): Promise<Measure> {
     const last = lines[lines.length - 1];
     return {
       scrollWidth: document.documentElement.scrollWidth,
-      innerWidth: window.innerWidth,
       clientWidth: document.documentElement.clientWidth,
       scrollX: window.scrollX,
       pop: popRect ? { left: popRect.left, right: popRect.right, top: popRect.top } : null,
@@ -55,7 +53,7 @@ async function checkEveryWord(page: Page, where: string, tap: boolean) {
 
     const m = await measure(page);
     const label = `${where}, word ${index + 1} (${await term.textContent()})`;
-    expect(m.scrollWidth, `${label}: page wider than the screen`).toBeLessThanOrEqual(m.innerWidth);
+    expect(m.scrollWidth, `${label}: page wider than the screen`).toBeLessThanOrEqual(m.clientWidth);
     expect(m.scrollX, `${label}: page scrolled sideways`).toBe(0);
     expect(m.pop!.left, `${label}: past the left edge`).toBeGreaterThanOrEqual(0);
     expect(m.pop!.right, `${label}: past the right edge`).toBeLessThanOrEqual(m.clientWidth);
@@ -119,5 +117,5 @@ test('turning a tablet round keeps an open glossary popover open', async ({ page
   await page.setViewportSize({ width: 820, height: 1180 });
   await expect(page.locator('.tw-lesson-path-horizontal')).toBeVisible();
   await expect(dialog).toBeVisible();
-  expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)).toBeLessThanOrEqual(0);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(0);
 });

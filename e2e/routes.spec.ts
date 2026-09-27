@@ -23,7 +23,7 @@ const pages: Array<[path: string, heading: string, title?: string]> = [
 ];
 
 async function horizontalOverflow(page: Page): Promise<number> {
-  return page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+  return page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
 }
 
 /**
