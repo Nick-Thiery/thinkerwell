@@ -1,6 +1,16 @@
 // @vitest-environment node
 import { deleteDB, openDB } from 'idb';
-import { DB_VERSION, migrations, openStore, openThinkerwellDb, runMigrations, STORE_NAMES } from './index';
+import {
+  DB_VERSION,
+  DEFAULT_SETTINGS,
+  migrations,
+  openStore,
+  openThinkerwellDb,
+  runMigrations,
+  SETTINGS_KEY,
+  STORE_NAMES,
+  type ThinkerwellDB,
+} from './index';
 
 let name: string;
 
@@ -126,5 +136,56 @@ describe('migrations', () => {
     expect(onClose).toHaveBeenCalledTimes(1);
     newer.close();
     db.close();
+  });
+});
+
+/** A database exactly as a version-1 build left it, with `settings` stored (if given). */
+async function openVersion1(settings?: object): Promise<void> {
+  const db = await openDB<ThinkerwellDB>(name, 1, {
+    upgrade(database, oldVersion, _newVersion, tx) {
+      runMigrations(database, tx, oldVersion, 1);
+    },
+  });
+  await db.add('learners', { id: 'a', name: 'Amina', colour: 'lemon', createdAt: '2026-09-01T00:00:00.000Z' });
+  if (settings) await db.put('settings', settings as never, SETTINGS_KEY);
+  db.close();
+}
+
+describe('migration to version 2: "Save data" not chosen yet', () => {
+  it('turns a stored saveData false (never a choice before phase 6) into null, keeping everything else', async () => {
+    await openVersion1({ ...DEFAULT_SETTINGS, saveData: false, listeningSpeed: 'slow', partner: { allowOnlineDictation: true } });
+    const store = await openStore(name);
+    try {
+      expect(await store.getSettings()).toEqual({
+        ...DEFAULT_SETTINGS,
+        saveData: null,
+        listeningSpeed: 'slow',
+        partner: { allowOnlineDictation: true },
+      });
+      expect((await store.listLearners()).map((learner) => learner.name)).toEqual(['Amina']);
+    } finally {
+      store.close();
+    }
+  });
+
+  it('keeps a saveData true', async () => {
+    await openVersion1({ ...DEFAULT_SETTINGS, saveData: true });
+    const store = await openStore(name);
+    try {
+      expect((await store.getSettings()).saveData).toBe(true);
+    } finally {
+      store.close();
+    }
+  });
+
+  it('is fine with no settings stored', async () => {
+    await openVersion1();
+    const store = await openStore(name);
+    try {
+      expect(await store.getSettings()).toEqual(DEFAULT_SETTINGS);
+      expect(DEFAULT_SETTINGS.saveData).toBeNull();
+    } finally {
+      store.close();
+    }
   });
 });

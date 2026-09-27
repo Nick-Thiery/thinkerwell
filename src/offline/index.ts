@@ -17,3 +17,4 @@ export {
 } from './serviceWorker';
 export { useOnline } from './useOnline';
 export { BACK_ONLINE_MS, ConnectionBanner, UpdateBanner } from './ShellBanners';
+export { browserAsksToSaveData, isSaveDataOn } from './saveData';

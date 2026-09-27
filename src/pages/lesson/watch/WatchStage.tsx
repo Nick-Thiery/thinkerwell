@@ -2,6 +2,7 @@ import { useEffect, useId, useRef, useState, type FocusEvent } from 'react';
 import { Button, Icon, StatusBanner, TaskCard, VideoCard } from '../../../components/ds';
 import { useI18n } from '../../../i18n';
 import { formatDuration, hasText, splitParagraphs, useLessonPlayer } from '../../../lesson';
+import { isSaveDataOn } from '../../../offline';
 import { SayItBox, useSayIt } from '../sayIt';
 import { StageActionBar } from '../StageActionBar';
 import {
@@ -26,18 +27,14 @@ type View = 'poster' | 'player' | 'written';
 /**
  * Why the written version is showing, for its message:
  * - 'choice': the learner chose Read instead (remembered);
- * - 'save-data': the device setting (settings.saveData): no video at all;
- * - 'device-save-data': the browser's own data saver (Save-Data): starts on
- *   the written version, but the learner may still choose the video;
- * - 'timeout', 'offline', 'unavailable': the video couldn't play.
+ * - 'save-data': "Save data" is on (src/offline/saveData.ts): no video at all;
+ * - 'timeout', 'offline', 'unavailable': the video couldn't play ('offline'
+ *   also when Watch opens with the device offline).
  */
-type WrittenReason = 'choice' | 'save-data' | 'device-save-data' | 'timeout' | 'offline' | 'unavailable';
+type WrittenReason = 'choice' | 'save-data' | 'timeout' | 'offline' | 'unavailable';
 
-/** True when the browser or the operating system asks sites to save data (the Save-Data hint). */
-function browserSavesData(): boolean {
-  if (typeof navigator === 'undefined') return false;
-  const connection = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
-  return connection?.saveData === true;
+function deviceIsOffline(): boolean {
+  return typeof navigator !== 'undefined' && navigator.onLine === false;
 }
 
 type FocusTarget = 'player' | 'written' | 'watch';
@@ -59,23 +56,26 @@ type FocusTarget = 'player' | 'written' | 'watch';
  *   player itself (./youtube.ts playerSignal), never the frame's load
  *   event, which also fires for the browser's own "can't connect" page.
  *   If the player reports it can't play the video, the same happens.
- * - With "Save data" on (settings.saveData), Watch opens on the written
- *   version and doesn't offer the video at all. With the browser's own
- *   Save-Data hint on, it opens on the written version but still offers
- *   the video (phase 6's setting may use the hint as its default).
+ * - With "Save data" on, Watch opens on the written version and doesn't
+ *   offer the video at all. It is the device setting (settings.saveData),
+ *   or, until someone chooses in Settings, the browser's own data-saver
+ *   hint (src/offline/saveData.ts).
+ * - Opened while the device is offline, Watch starts on the written
+ *   version and says why; the video is offered again ("Try the video
+ *   again") for when the connection is back.
  * - A learner who chose "Read instead" comes back to the written version.
  */
 export function WatchStage() {
   const { t } = useI18n();
   const { lesson, progress, update, stageEvent, settings } = useLessonPlayer();
   const { watch } = lesson;
-  const saveData = settings.saveData;
+  const saveData = isSaveDataOn(settings.saveData);
 
   const [view, setView] = useState<View>(() =>
-    saveData || progress.watch.readInstead || browserSavesData() ? 'written' : 'poster',
+    saveData || progress.watch.readInstead || deviceIsOffline() ? 'written' : 'poster',
   );
   const [reason, setReason] = useState<WrittenReason | null>(() =>
-    saveData ? 'save-data' : progress.watch.readInstead ? 'choice' : browserSavesData() ? 'device-save-data' : null,
+    saveData ? 'save-data' : progress.watch.readInstead ? 'choice' : deviceIsOffline() ? 'offline' : null,
   );
   /** Bumped on every tap of Watch, so a retry creates a fresh player and a fresh timer. */
   const [attempt, setAttempt] = useState(0);
@@ -157,7 +157,7 @@ export function WatchStage() {
 
   const watchVideo = () => {
     if (saveData) return;
-    if (typeof navigator !== 'undefined' && navigator.onLine === false) {
+    if (deviceIsOffline()) {
       focusNext.current = 'written';
       setReason('offline');
       setView('written');
@@ -202,9 +202,7 @@ export function WatchStage() {
         ? { icon: 'Clock', title: t('lessonPlayer.watch.timeoutTitle') }
         : shownReason === 'unavailable'
           ? { icon: 'Info', title: t('lessonPlayer.watch.unavailableTitle') }
-          : shownReason === 'device-save-data'
-            ? { icon: 'WifiOff', title: t('lessonPlayer.watch.deviceSaveDataTitle') }
-            : null;
+          : null;
 
   return (
     <>

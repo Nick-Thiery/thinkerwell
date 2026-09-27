@@ -156,8 +156,12 @@ export type ListeningSpeed = 'slow' | 'normal';
 
 /** Per-device settings (shared by everyone who uses this device). */
 export interface DeviceSettings {
-  /** "Save data": videos off, Watch opens on "Read instead". */
-  saveData: boolean;
+  /**
+   * "Save data" (Settings): videos off, so Watch opens on the written
+   * version. true or false once someone chooses; null until then, when the
+   * browser's own data-saver hint decides (src/offline/saveData.ts).
+   */
+  saveData: boolean | null;
   listeningSpeed: ListeningSpeed;
   preferredReadingLevel: ReadingLevel;
   /** Options a partner organisation turns on. All off by default. */
@@ -168,7 +172,7 @@ export interface DeviceSettings {
 }
 
 export const DEFAULT_SETTINGS: DeviceSettings = {
-  saveData: false,
+  saveData: null,
   listeningSpeed: 'normal',
   preferredReadingLevel: 'standard',
   partner: { allowOnlineDictation: false },

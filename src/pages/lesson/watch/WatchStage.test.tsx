@@ -237,18 +237,41 @@ describe('WatchStage after the tap', () => {
     expect(screen.getByText("You're offline, so the video can't load now.")).toBeInTheDocument();
   });
 
-  it("opens on the written version, still offering the video, when the browser's Save-Data hint is on", () => {
+  it("with nobody's choice in Settings, follows the browser's data-saver hint: videos off", () => {
     Object.defineProperty(navigator, 'connection', { value: { saveData: true }, configurable: true });
     try {
-      const { container } = renderWatch();
-      expect(container.querySelector('iframe')).toBeNull();
+      const { container } = renderWatch(L10, { settings: { ...DEFAULT_SETTINGS, saveData: null } });
+      expect(container.querySelector('.tw-video')).toBeNull();
       expect(screen.getByText(L10.watch.keyPoints[0] as string)).toBeInTheDocument();
-      expect(screen.getByText(/Your device is saving data/)).toBeInTheDocument();
-      fireEvent.click(screen.getByRole('button', { name: 'Watch the video instead' }));
+      expect(screen.getByText('Videos are off to save data.')).toBeInTheDocument();
+      expect(screen.queryByRole('button', { name: /Watch the video/ })).not.toBeInTheDocument();
+    } finally {
+      delete (navigator as unknown as { connection?: unknown }).connection;
+    }
+  });
+
+  it("Save data turned off in Settings wins over the browser's hint: the video is offered", () => {
+    Object.defineProperty(navigator, 'connection', { value: { saveData: true }, configurable: true });
+    try {
+      const { container } = renderWatch(L10, { settings: { ...DEFAULT_SETTINGS, saveData: false } });
+      expect(container.querySelector('.tw-video')).not.toBeNull();
+      fireEvent.click(screen.getByRole('button', { name: 'Watch the video' }));
       expect(container.querySelector('iframe')).not.toBeNull();
     } finally {
       delete (navigator as unknown as { connection?: unknown }).connection;
     }
+  });
+
+  it('opens on the written version, saying why, when the device is offline', () => {
+    const onLine = vi.spyOn(navigator, 'onLine', 'get').mockReturnValue(false);
+    const { container } = renderWatch();
+    expect(container.querySelector('.tw-video')).toBeNull();
+    expect(screen.getByRole('article', { name: L10.watch.title })).toBeInTheDocument();
+    expect(screen.getByText("You're offline, so the video can't load now.")).toBeInTheDocument();
+    // For when the connection is back; nothing is saved as the learner's choice.
+    expect(screen.getByRole('button', { name: 'Try the video again' })).toBeInTheDocument();
+    expect(savedProgress().watch.readInstead).toBe(false);
+    onLine.mockRestore();
   });
 
   it('clears the fallback timer when the stage unmounts', () => {
@@ -263,9 +286,9 @@ describe('WatchStage after the tap', () => {
     expect(clearTimer.mock.calls.some((call) => call[0] === timerId)).toBe(true);
   });
 
-  it('goes straight to the written version when the device is offline', () => {
-    const onLine = vi.spyOn(navigator, 'onLine', 'get').mockReturnValue(false);
+  it('goes straight to the written version when the device is offline by the time the learner taps Watch', () => {
     const { container } = renderWatch();
+    const onLine = vi.spyOn(navigator, 'onLine', 'get').mockReturnValue(false);
     fireEvent.click(screen.getByRole('button', { name: 'Watch the video' }));
     expect(container.querySelector('iframe')).toBeNull();
     expect(screen.getByText("You're offline, so the video can't load now.")).toBeInTheDocument();

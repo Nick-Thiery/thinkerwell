@@ -29,7 +29,7 @@ export const DB_NAME = 'thinkerwell';
  *   4. Add a test to ./migrations.test.ts that opens a version-1 database with
  *      data in it, upgrades it and checks the data survived.
  */
-export const DB_VERSION = 1;
+export const DB_VERSION = 2;
 
 /** The key of the one record in the `settings` store. */
 export const SETTINGS_KEY = 'device';
@@ -104,6 +104,19 @@ export const migrations: Record<number, Migration> = {
 
     db.createObjectStore('settings');
     db.createObjectStore('device');
+  },
+  /**
+   * Phase 6: settings.saveData can be null, "nobody has chosen", so the
+   * browser's data-saver hint decides. Before, it was always false unless
+   * set, and no screen could set it, so a stored false was never a choice:
+   * it becomes null.
+   */
+  2: (_db, tx) => {
+    const settings = tx.objectStore('settings');
+    void settings.get(SETTINGS_KEY).then((record) => {
+      if (record?.saveData === false) return settings.put({ ...record, saveData: null }, SETTINGS_KEY);
+      return undefined;
+    });
   },
 };
 
