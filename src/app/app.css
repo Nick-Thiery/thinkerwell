@@ -9,35 +9,47 @@
   position: relative;
 }
 
-/* Lines the "just look around" note up with the page column below it. */
-.tw-lookaround-banner {
+/*
+ * The messages under the header (offline, back online, a new version, "just
+ * look around"), lined up with the page column below them. Collapses to
+ * nothing when there are none.
+ */
+.tw-shell-banners {
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
   max-inline-size: var(--page-max);
   margin-inline: auto;
   margin-block-start: var(--space-4);
   padding-inline: var(--space-4);
 }
 
-/* On a phone the "Choose a learner" action drops under the text rather than
-   squeezing it into a narrow column (as the lesson's own banner does). */
+.tw-shell-banners:empty {
+  display: none;
+}
+
+/* On a phone an action ("Choose a learner", "Update now") drops under the
+   text rather than squeezing it into a narrow column (as the lesson's own
+   banner does). */
 @media (max-width: 599px) {
-  .tw-lookaround-banner .tw-status {
+  .tw-shell-banners .tw-status {
     flex-wrap: wrap;
   }
 
-  .tw-lookaround-banner .tw-status-text {
+  .tw-shell-banners .tw-status-text {
     flex: 1 1 calc(100% - 40px);
   }
 }
 
 @media (min-width: 820px) {
-  .tw-lookaround-banner {
+  .tw-shell-banners {
     padding-inline: var(--space-8);
   }
 }
 
 @media (min-width: 1280px) {
-  .tw-lookaround-banner {
+  .tw-shell-banners {
     padding-inline: var(--space-10);
   }
 }

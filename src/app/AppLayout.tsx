@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { NavigationType, Outlet, ScrollRestoration, useLocation, useNavigate, useNavigationType } from 'react-router';
 import { DsLinkProvider, SiteHeader, StatusBanner } from '../components/ds';
 import { I18nProvider, readDevDirection, useI18n } from '../i18n';
+import { ConnectionBanner, UpdateBanner } from '../offline';
 import { LearnerSessionProvider, useLearnerSession } from '../session';
 import './app.css';
 import { LearnerSwitcher } from './LearnerSwitcher';
@@ -14,8 +15,9 @@ const MASCOT_SRC = '/images/thinkerwell-mascot-transparent.png';
 
 /**
  * The shell around every page: locale and direction, on-device learner
- * state, the site header and learner switcher, the "just look around" note,
- * a skip link and <main>.
+ * state, the site header and learner switcher, the messages under it
+ * (offline, back online, a new version, "just look around"), a skip link
+ * and <main>.
  */
 export function AppLayout() {
   const { search } = useLocation();
@@ -179,8 +181,11 @@ function Shell({ devRtl }: { devRtl: boolean }) {
           />
         ) : null}
       </div>
-      {session.lookAround ? (
-        <div className="tw-lookaround-banner">
+      {/* Empty (and collapsed by CSS) when there is nothing to say. */}
+      <div className="tw-shell-banners">
+        <ConnectionBanner learner={activeLearner !== null} inLesson={pathname.startsWith('/lesson/')} />
+        <UpdateBanner learner={activeLearner !== null} />
+        {session.lookAround ? (
           <StatusBanner
             tone="info"
             icon="Eye"
@@ -192,8 +197,8 @@ function Shell({ devRtl }: { devRtl: boolean }) {
           >
             {t('header.lookAroundBanner')}
           </StatusBanner>
-        </div>
-      ) : null}
+        ) : null}
+      </div>
       <main id="main" ref={mainRef} tabIndex={-1} className="tw-shell-main">
         <Outlet />
       </main>

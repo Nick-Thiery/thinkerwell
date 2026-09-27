@@ -15,3 +15,5 @@ export {
   type ServiceWorkerSnapshot,
   type WorkboxLike,
 } from './serviceWorker';
+export { useOnline } from './useOnline';
+export { BACK_ONLINE_MS, ConnectionBanner, UpdateBanner } from './ShellBanners';
