@@ -1,7 +1,5 @@
 import courseJson from '../../content/course.json';
 import {
-  ContentError,
-  courseFileSchema,
   getCourse,
   getLesson,
   getLessonByNumber,
@@ -16,12 +14,11 @@ import {
   getSectionLessons,
   getSections,
   isLastLessonInSection,
-  lessonSchema,
-  loadContent,
-  loadQuizzes,
-  quizFileSchema,
-  visualSchema,
 } from './index';
+import { assembleContent } from './assemble';
+import { ContentError } from './errors';
+import { loadContent, loadQuizzes, parseContentFile } from './load';
+import { courseFileSchema, lessonSchema, quizFileSchema, visualSchema } from './schema';
 
 const lessonFiles = import.meta.glob<unknown>('../../content/lessons/*.json', { eager: true, import: 'default' });
 const quizFiles = import.meta.glob<unknown>('../../content/quizzes/*.json', { eager: true, import: 'default' });
@@ -215,3 +212,33 @@ describe('visual.src', () => {
     }
   });
 });
+
+describe('the app uses the checked content as it is', () => {
+  it('matches what the schemas and checks produce, in course order', () => {
+    const checked = loadContent(courseJson, lessonFiles, validVisualSrcs);
+    expect(getCourse()).toEqual(checked.course);
+    expect(getSections()).toEqual(checked.sections);
+    expect(getLessons()).toEqual(checked.lessons);
+    expect(getQuizzes().map((quiz) => quiz.section).sort()).toEqual(
+      loadQuizzes(quizFiles, checked.lessons)
+        .map((quiz) => quiz.section)
+        .sort(),
+    );
+  });
+
+  it('assembleContent puts sections in number order and lessons in the order each section lists them', () => {
+    const course = getCourse();
+    const reversed = { ...course, sections: [...course.sections].reverse() };
+    const { sections, lessons } = assembleContent(reversed, [...getLessons()].reverse());
+    expect(sections.map((section) => section.number)).toEqual([1, 2, 3, 4]);
+    expect(lessons.map((lesson) => lesson.id)).toEqual(getLessons().map((lesson) => lesson.id));
+  });
+
+  it('parseContentFile names the file and the field for each problem', () => {
+    const lesson = { ...(getLesson('towns-near-rivers') as object), title: '' };
+    expect(() => parseContentFile('lesson', lesson, 'content/lessons/L10.json')).toThrow(ContentError);
+    expect(() => parseContentFile('lesson', lesson, 'content/lessons/L10.json')).toThrow(/content\/lessons\/L10\.json: title:/);
+    expect(parseContentFile('course', courseJson, 'content/course.json')).toEqual(courseFileSchema.parse(courseJson));
+  });
+});
+
