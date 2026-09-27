@@ -1,7 +1,7 @@
 /*
- * The lesson's one picture (LessonVisual.tsx), once it exists: a paper card
- * with a `line` border, as wide as the reading column. The SVG keeps its own
- * aspect ratio.
+ * The lesson's one picture (LessonVisual.tsx): a paper card with a `line`
+ * border, as wide as the reading column. The SVG keeps its own aspect ratio
+ * (its viewBox).
  */
 .tw-lesson-visual {
   box-sizing: border-box;

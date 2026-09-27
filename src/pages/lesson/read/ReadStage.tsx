@@ -6,53 +6,35 @@
  *
  * - The current part is in the URL (?part=1..n, ?part=check), see useReadPart.
  * - Standard / Simpler follows the player's readingLevel (remembered per
- *   learner). The part's text, its glossary marking and (phase 5) Listen
- *   all use the version on screen.
+ *   learner). The part's text and its glossary marking use the version on
+ *   screen; so will Listen (phase 5), which goes in the two places marked
+ *   below.
+ * - The lesson's picture is part of the evidence (LessonEvidence), right
+ *   after the warm-up.
  * - When Read counts as done is decided in src/lesson/progressRules.ts: every
  *   choice question answered, or Continue from the quick check.
  */
-import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import { ReadingCard, SegmentedControl, ToolToggle } from '../../../components/ds';
 import { useI18n } from '../../../i18n';
 import { useLessonPlayer } from '../../../lesson';
 import type { ReadingLevel } from '../../../storage';
 import { LessonEvidence } from '../evidence/LessonEvidence';
 import { StageActionBar } from '../StageActionBar';
-import { LessonVisual } from '../visual/LessonVisual';
 import { KeyWordsPanel } from './KeyWordsPanel';
 import { QuickCheck } from './QuickCheck';
 import { ReadingPassage } from './ReadingPassage';
-import { hasGlossaryTerms, visibleSectionText, type TextRange } from './readingPieces';
+import { hasGlossaryTerms, visibleSectionText } from './readingPieces';
 import { useReadPart, type ReadView } from './useReadPart';
 import { WarmUp } from './WarmUp';
 import './ReadStage.css';
-
-/** The Read stage, as LessonPage renders it. */
-export function ReadStage() {
-  return <ReadStageView />;
-}
-
-/**
- * Slots for phase 5 (Listen). Nothing passes them yet, and no Listen button
- * is shown until Listen works.
- */
-export interface ReadStageSlots {
-  /** The Listen ToolToggle: goes first in the reading tools, as in LessonRead.dc.html. */
-  listenTool?: ReactNode;
-  /** The ListenBar: shown just above the reading card while Listen is on. */
-  listenBar?: ReactNode;
-  /**
-   * The sentence being read aloud, as a character range in the current
-   * part's visible text (visibleSectionText(section, readingLevel)).
-   */
-  highlight?: TextRange;
-}
 
 function prefersReducedMotion(): boolean {
   return typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
-export function ReadStageView({ listenTool, listenBar, highlight }: ReadStageSlots) {
+/** The Read stage, as LessonPage renders it. */
+export function ReadStage() {
   const { t } = useI18n();
   const { lesson, readingLevel, setReadingLevel } = useLessonPlayer();
   const sections = lesson.read.sections;
@@ -97,8 +79,7 @@ export function ReadStageView({ listenTool, listenBar, highlight }: ReadStageSlo
   return (
     <div className="tw-read">
       <div role="toolbar" aria-label={t('lessonPlayer.read.toolsLabel')} className="tw-read-tools">
-        {/* Phase 5: the Listen ToolToggle goes here, before the level switch. */}
-        {listenTool}
+        {/* Phase 5: the Listen ToolToggle goes here, first, before the level switch (LessonRead.dc.html). */}
         <SegmentedControl
           label={t('lessonPlayer.read.levelLabel')}
           options={[
@@ -122,11 +103,9 @@ export function ReadStageView({ listenTool, listenBar, highlight }: ReadStageSlo
       {keyWordsOpen ? <KeyWordsPanel id={keyWordsId} glossary={glossary} /> : null}
 
       <WarmUp />
-      <LessonEvidence evidence={lesson.evidence} mapDrawn={Boolean(lesson.visual?.src)} />
-      <LessonVisual visual={lesson.visual} />
+      <LessonEvidence evidence={lesson.evidence} visual={lesson.visual} />
 
-      {/* Phase 5: the ListenBar sits here, just above the reading. */}
-      {listenBar}
+      {/* Phase 5: the ListenBar goes here, just above the reading, while Listen is on. */}
 
       <div ref={readingRef} className="tw-read-part">
         <ReadingCard
@@ -134,7 +113,7 @@ export function ReadStageView({ listenTool, listenBar, highlight }: ReadStageSlo
           heading={section.heading}
         >
           {/* Keyed by part and version so open definitions close when either changes. */}
-          <ReadingPassage key={`${part}-${readingLevel}`} text={text} glossary={glossary} highlight={highlight} />
+          <ReadingPassage key={`${part}-${readingLevel}`} text={text} glossary={glossary} />
         </ReadingCard>
       </div>
 

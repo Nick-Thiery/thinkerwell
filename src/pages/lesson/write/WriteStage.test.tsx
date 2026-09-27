@@ -210,15 +210,19 @@ describe('WriteStage', () => {
     expect(screen.getByText(/Saved on this device as you type\./)).toBeInTheDocument();
   });
 
-  it('toggles the evidence inline', async () => {
+  it('toggles the evidence inline, with the lesson picture', async () => {
     const user = userEvent.setup();
     renderWrite();
     await answerBox();
     const toggle = screen.getByRole('button', { name: 'Look at the map again' });
     expect(toggle).toHaveAttribute('aria-expanded', 'false');
+    expect(screen.queryByRole('img', { name: lesson.visual!.alt })).not.toBeInTheDocument();
     await user.click(toggle);
     expect(toggle).toHaveAttribute('aria-expanded', 'true');
-    expect(document.getElementById(toggle.getAttribute('aria-controls') ?? '')).toBeInTheDocument();
+    const panel = document.getElementById(toggle.getAttribute('aria-controls') ?? '');
+    expect(panel).toBeInTheDocument();
+    // "Look at the map again" shows the map itself, not only its key.
+    expect(within(panel!).getByRole('img', { name: lesson.visual!.alt })).toBeInTheDocument();
     await user.click(toggle);
     expect(toggle).toHaveAttribute('aria-expanded', 'false');
   });

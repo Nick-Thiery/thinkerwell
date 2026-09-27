@@ -1,26 +1,29 @@
 import { useId } from 'react';
 import { Badge, Icon } from '../../../components/ds';
-import { getCourse, type Evidence, type EvidenceCard } from '../../../content';
+import { getCourse, type Evidence, type EvidenceCard, type Visual } from '../../../content';
 import { useI18n } from '../../../i18n';
+import { LessonVisual } from '../visual/LessonVisual';
 import { EvidenceTable } from './EvidenceTable';
 import './LessonEvidence.css';
 
 export interface LessonEvidenceProps {
   evidence: Evidence;
-  /**
-   * True once the lesson's map picture exists (lesson.visual.src). Until
-   * then a map card's key lists its labels without colour swatches, which
-   * would describe colours that nothing on screen uses.
-   */
-  mapDrawn?: boolean;
+  /** The lesson's picture (lesson.visual), shown first, above the observation question. */
+  visual?: Visual | null;
 }
 
 type CardOf<T extends EvidenceCard['type']> = Extract<EvidenceCard, { type: T }>;
 
 /**
- * The lesson's evidence (content/lessons/*.json `evidence`): the observation
- * question, then every card, whatever its type. One renderer per card type
- * (docs/content/SPEC.md section 3), no per-lesson code.
+ * The lesson's evidence (content/lessons/*.json `evidence`): the lesson's
+ * picture, the observation question, then every card, whatever its type.
+ * One renderer per card type (docs/content/SPEC.md section 3), no per-lesson
+ * code. Read shows it after the warm-up (which often says "Look at the
+ * map"); Write shows the same thing behind "Look at the map again".
+ *
+ * The picture comes before the question and the fiction label, not inside a
+ * card: some lessons pair invented evidence with a picture of real places
+ * (Lesson 8's trade routes), and the label must not seem to cover those.
  *
  * Honesty (CLAUDE.md rule 8): when the evidence is invented, the fiction
  * label from content/course.json sits under the question, and the first
@@ -30,13 +33,14 @@ type CardOf<T extends EvidenceCard['type']> = Extract<EvidenceCard, { type: T }>
  * The page shell owns the h1 and the stage's h2, so each card's title is an
  * h3 inside its figcaption.
  */
-export function LessonEvidence({ evidence, mapDrawn = false }: LessonEvidenceProps) {
+export function LessonEvidence({ evidence, visual = null }: LessonEvidenceProps) {
   const { t } = useI18n();
   const baseId = useId();
   const fictionLabel = evidence.fictional ? getCourse().fictionLabel : null;
 
   return (
     <section className="tw-lx" aria-label={t('lessonPlayer.evidence.sectionLabel')}>
+      <LessonVisual visual={visual} />
       <div className="tw-lx-prompt">
         <span className="tw-lx-eyebrow">
           <Icon name="Eye" size={16} />
@@ -56,7 +60,6 @@ export function LessonEvidence({ evidence, mapDrawn = false }: LessonEvidencePro
           card={card}
           titleId={`${baseId}-card-${index}`}
           fictionalBadge={evidence.fictional && index === 0}
-          mapDrawn={mapDrawn}
         />
       ))}
     </section>
@@ -67,10 +70,9 @@ interface EvidenceFigureProps {
   card: EvidenceCard;
   titleId: string;
   fictionalBadge: boolean;
-  mapDrawn: boolean;
 }
 
-function EvidenceFigure({ card, titleId, fictionalBadge, mapDrawn }: EvidenceFigureProps) {
+function EvidenceFigure({ card, titleId, fictionalBadge }: EvidenceFigureProps) {
   const { t } = useI18n();
   return (
     // The type modifier is tw-lx-card-<type>, never tw-lx-<type>: the inner
@@ -87,19 +89,19 @@ function EvidenceFigure({ card, titleId, fictionalBadge, mapDrawn }: EvidenceFig
           </Badge>
         ) : null}
       </figcaption>
-      <EvidenceBody card={card} mapDrawn={mapDrawn} />
+      <EvidenceBody card={card} />
     </figure>
   );
 }
 
-function EvidenceBody({ card, mapDrawn }: { card: EvidenceCard; mapDrawn: boolean }) {
+function EvidenceBody({ card }: { card: EvidenceCard }) {
   switch (card.type) {
     case 'items':
       return <ItemsBody card={card} />;
     case 'timeline':
       return <TimelineBody card={card} />;
     case 'map':
-      return <MapBody card={card} swatches={mapDrawn} />;
+      return <MapBody card={card} />;
     case 'cases':
       return <CasesBody card={card} />;
     case 'sources':
@@ -133,7 +135,14 @@ function TimelineBody({ card }: { card: CardOf<'timeline'> }) {
   );
 }
 
-function MapBody({ card, swatches }: { card: CardOf<'map'>; swatches: boolean }) {
+/**
+ * A map card: its key and its places, as text. The key lists labels only:
+ * the lesson's picture draws its own key in the picture's own colours, and
+ * swatches here could not match every picture (the content names colours
+ * loosely, "brown" or "grey"), or would describe a map that has no picture
+ * (Lesson 8's small trading network).
+ */
+function MapBody({ card }: { card: CardOf<'map'> }) {
   const { t } = useI18n();
   const keyId = useId();
   return (
@@ -145,10 +154,7 @@ function MapBody({ card, swatches }: { card: CardOf<'map'>; swatches: boolean })
           </span>
           <ul className="tw-lx-legend-list" role="list" aria-labelledby={keyId}>
             {card.legend.map((entry, index) => (
-              <li key={index}>
-                {swatches ? <span className="tw-lx-swatch" data-color={entry.color} aria-hidden="true" /> : null}
-                {entry.label}
-              </li>
+              <li key={index}>{entry.label}</li>
             ))}
           </ul>
         </div>

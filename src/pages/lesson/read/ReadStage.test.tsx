@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { useEffect, useState } from 'react';
 import { MemoryRouter, useLocation } from 'react-router';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { getLesson, getLessons, getLessonSection, type ChoiceCheck, type Lesson } from '../../../content';
+import { getLesson, getLessons, getLessonSection, getVisualUrl, type ChoiceCheck, type Lesson } from '../../../content';
 import {
   applyStageEvent,
   checkSeed,
@@ -200,6 +200,21 @@ describe('ReadStage: reading parts', () => {
     expect(screen.getByRole('heading', { name: L10.read.sections[0]!.heading })).toBeInTheDocument();
   });
 
+  it("shows the lesson's picture after the warm-up, next to the evidence and before the reading", () => {
+    renderRead();
+    const img = screen.getByRole('img', { name: L10.visual!.alt });
+    expect(img).toHaveAttribute('src', getVisualUrl(L10.visual!.src));
+    const warmUp = screen.getByText(L10.warmUp.question, { exact: false });
+    const evidence = screen.getByRole('region', { name: 'Evidence' });
+    const reading = document.querySelector('.tw-reading')!;
+    expect(evidence).toContainElement(img);
+    expect(warmUp.compareDocumentPosition(img) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(img.compareDocumentPosition(within(evidence).getByText(L10.evidence.question)) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(img.compareDocumentPosition(reading) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    // The team-only description never reaches learners.
+    expect(document.body.textContent).not.toContain(L10.visual!.description);
+  });
+
   it('shows the key words panel with every glossary word', async () => {
     const user = userEvent.setup();
     renderRead();
@@ -358,6 +373,7 @@ describe('ReadStage: every lesson', () => {
           const text = level === 'simpler' ? section.simpler : section.text;
           expect(readingText()).toBe(text);
           expect(termButtons()).toHaveLength(glossaryEntriesIn(text, lesson.read.glossary).length);
+          if (lesson.visual) expect(screen.getByRole('img', { name: lesson.visual.alt })).toBeInTheDocument();
           cleanup();
         });
       }

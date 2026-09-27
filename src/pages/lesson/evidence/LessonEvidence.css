@@ -1,25 +1,11 @@
 /*
- * Lesson evidence (LessonEvidence.tsx): the observation question, the
- * fiction label and one figure per card. Paper cards with a `line` border,
+ * Lesson evidence (LessonEvidence.tsx): the lesson's picture
+ * (../visual/LessonVisual.css), the observation question, the fiction
+ * label and one figure per card. Paper cards with a `line` border,
  * no shadows, no section colours (those only sit beside a section's icon
  * and name), no lemon.
  */
 .tw-lx {
-  /*
-   * Map key swatches. These are map-drawing colours (the ones in
-   * docs/screens/LessonRead.dc.html's Riverlands map), not UI colours, so
-   * they live here rather than in the design tokens. They only show once a
-   * lesson's map picture exists (LessonEvidence's mapDrawn), and must then
-   * match that SVG; until then the key lists its labels only, since swatches
-   * would describe colours nothing on screen uses. Each swatch sits beside its label, so
-   * colour is never the only information.
-   */
-  --map-blue: #6fb6d6;
-  --map-yellow: #fde68a;
-  --map-green: #3f6b35;
-  --map-brown: #9a6b3f;
-  --map-grey: #8e8a94;
-
   display: flex;
   flex-direction: column;
   gap: var(--space-5);
@@ -242,21 +228,15 @@
   gap: var(--space-2);
 }
 
-.tw-lx-swatch {
-  box-sizing: border-box;
+/* A plain bullet, not a colour: the picture's own key shows the colours. */
+.tw-lx-legend-list li::before {
+  content: '';
   flex: none;
-  inline-size: 16px;
-  block-size: 16px;
-  border-radius: 4px;
-  border: 1px solid var(--line-strong);
-  background: var(--swatch, var(--paper));
+  inline-size: 6px;
+  block-size: 6px;
+  border-radius: 50%;
+  background: var(--ink-muted);
 }
-
-.tw-lx-swatch[data-color='blue'] { --swatch: var(--map-blue); }
-.tw-lx-swatch[data-color='yellow'] { --swatch: var(--map-yellow); }
-.tw-lx-swatch[data-color='green'] { --swatch: var(--map-green); }
-.tw-lx-swatch[data-color='brown'] { --swatch: var(--map-brown); }
-.tw-lx-swatch[data-color='grey'] { --swatch: var(--map-grey); }
 
 /*
  * Places on the map and cases: side by side where there is room (three

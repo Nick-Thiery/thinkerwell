@@ -260,12 +260,12 @@ export function isLastLessonInSection(lesson: Lesson): boolean {
   return section.lessons[section.lessons.length - 1] === lesson.number;
 }
 
-/** Every section check, one per section. */
 /** The built URL of a lesson picture (`visual.src`), or undefined if the file doesn't exist. */
 export function getVisualUrl(src: string): string | undefined {
   return visualUrls.get(src);
 }
 
+/** Every section check, one per section. */
 export function getQuizzes(): readonly QuizFile[] {
   return quizzes;
 }

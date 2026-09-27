@@ -132,7 +132,7 @@ export function WriteStage() {
 
       {evidenceOpen ? (
         <div id={evidenceId} className="tw-write-evidence">
-          <LessonEvidence evidence={lesson.evidence} mapDrawn={Boolean(lesson.visual?.src)} />
+          <LessonEvidence evidence={lesson.evidence} visual={lesson.visual} />
         </div>
       ) : null}
 

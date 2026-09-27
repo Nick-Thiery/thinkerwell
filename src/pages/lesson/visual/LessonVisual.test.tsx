@@ -27,9 +27,9 @@ describe('LessonVisual', () => {
 
   it('never shows the team-only description to learners', () => {
     const lesson = getLessons().find((l) => l.number === 10)!;
-    render(<LessonVisual visual={lesson.visual} className="extra" />);
+    render(<LessonVisual visual={lesson.visual} />);
     const figure = screen.getByRole('figure');
-    expect(figure).toHaveClass('tw-lesson-visual', 'extra');
+    expect(figure).toHaveClass('tw-lesson-visual');
     expect(figure.textContent).not.toContain(lesson.visual!.description);
   });
 });

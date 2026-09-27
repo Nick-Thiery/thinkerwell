@@ -1,6 +1,6 @@
 import { cleanup, render, screen, within } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi, type MockInstance } from 'vitest';
-import { getCourse, getLessons, type Evidence, type EvidenceCard } from '../../../content';
+import { getCourse, getLessons, getVisualUrl, type Evidence, type EvidenceCard, type Visual } from '../../../content';
 import { I18nProvider } from '../../../i18n';
 import { LessonEvidence } from './LessonEvidence';
 
@@ -25,10 +25,10 @@ function cardTexts(card: EvidenceCard): string[] {
   }
 }
 
-function renderEvidence(evidence: Evidence, mapDrawn = false) {
+function renderEvidence(evidence: Evidence, visual: Visual | null = null) {
   return render(
     <I18nProvider>
-      <LessonEvidence evidence={evidence} mapDrawn={mapDrawn} />
+      <LessonEvidence evidence={evidence} visual={visual} />
     </I18nProvider>,
   );
 }
@@ -133,7 +133,7 @@ describe('LessonEvidence', () => {
     expect(lesson).toBeDefined();
     renderEvidence(lesson!.evidence);
 
-    const [first, ...rest] = screen.getAllByRole('figure');
+    const [first, ...rest] = screen.getAllByRole('figure').filter((figure) => figure.classList.contains('tw-lx-card'));
     expect(first).toBeDefined();
     expect(within(first!).getByText(/^Fictional /)).toBeInTheDocument();
     for (const figure of rest) expect(within(figure).queryByText(/^Fictional /)).not.toBeInTheDocument();
@@ -148,7 +148,7 @@ describe('LessonEvidence', () => {
   it('gives each figure a type class that no inner element uses', () => {
     for (const lesson of getLessons()) {
       const { container, unmount } = renderEvidence(lesson.evidence);
-      for (const [index, figure] of [...container.querySelectorAll('figure')].entries()) {
+      for (const [index, figure] of [...container.querySelectorAll('figure.tw-lx-card')].entries()) {
         const type = lesson.evidence.cards[index]!.type;
         expect(figure).toHaveClass('tw-lx-card', `tw-lx-card-${type}`);
         for (const name of figure.classList) {
@@ -159,29 +159,42 @@ describe('LessonEvidence', () => {
     }
   });
 
-  it('lists the map key without colour swatches until the map picture exists', () => {
-    const lesson = getLessons().find((l) => l.id === 'towns-near-rivers');
-    renderEvidence(lesson!.evidence);
-    expect(screen.getByRole('list', { name: 'Map key' })).toBeInTheDocument();
-    expect(document.querySelector('.tw-lx-swatch')).toBeNull();
-  });
-
-  it('shows the map key with a swatch per legend colour once the map is drawn', () => {
+  it('shows the map key and the places as text, with no colour swatches', () => {
     const lesson = getLessons().find((l) => l.id === 'towns-near-rivers');
     expect(lesson).toBeDefined();
-    renderEvidence(lesson!.evidence, true);
+    renderEvidence(lesson!.evidence, lesson!.visual);
 
     const key = screen.getByRole('list', { name: 'Map key' });
     const map = lesson!.evidence.cards.find((card) => card.type === 'map');
     if (map?.type !== 'map') throw new Error('Lesson 10 has a map card');
-    const entries = within(key).getAllByRole('listitem');
-    expect(entries.map((li) => li.textContent)).toEqual(map.legend.map((entry) => entry.label));
-    expect(entries.map((li) => li.querySelector('.tw-lx-swatch')?.getAttribute('data-color'))).toEqual(
-      map.legend.map((entry) => entry.color),
-    );
+    expect(within(key).getAllByRole('listitem').map((li) => li.textContent)).toEqual(map.legend.map((entry) => entry.label));
+    // The picture draws its own key in its own colours; swatches here could only disagree with it.
+    expect(document.querySelector('.tw-lx-swatch, [data-color]')).toBeNull();
     expect(within(screen.getByRole('list', { name: 'Places' })).getAllByRole('listitem')).toHaveLength(
       map.locations.length,
     );
+  });
+
+  it('shows the picture first, above the question and the fiction label, with its alt text', () => {
+    const lesson = getLessons().find((l) => l.id === 'towns-near-rivers')!;
+    renderEvidence(lesson.evidence, lesson.visual);
+
+    const section = screen.getByRole('region', { name: 'Evidence' });
+    const img = within(section).getByRole('img', { name: lesson.visual!.alt });
+    expect(img).toHaveAttribute('src', getVisualUrl(lesson.visual!.src));
+    // Before the question and the label (Lesson 8 pairs invented evidence with real places).
+    const question = within(section).getByText(lesson.evidence.question);
+    const label = within(section).getByText(fictionLabel);
+    expect(img.compareDocumentPosition(question) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(img.compareDocumentPosition(label) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    // Not inside any evidence card.
+    expect(img.closest('.tw-lx-card')).toBeNull();
+  });
+
+  it('shows no picture when none is given', () => {
+    const lesson = getLessons().find((l) => l.id === 'towns-near-rivers')!;
+    renderEvidence(lesson.evidence);
+    expect(screen.queryByRole('img')).not.toBeInTheDocument();
   });
 
   it('keeps a table that fits out of the tab order', () => {
