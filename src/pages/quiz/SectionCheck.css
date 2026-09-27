@@ -91,7 +91,10 @@
 }
 
 .tw-quiz-bar .tw-secbadge {
-  flex: none;
+  /* Shrinks and wraps its long name ("Section check: Civics, Media &
+     Everyday Economics") instead of pushing the page wider than a phone. */
+  flex: 1 1 14rem;
+  min-width: 0;
 }
 
 .tw-quiz-bar .tw-bar {

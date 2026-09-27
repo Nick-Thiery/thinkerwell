@@ -20,19 +20,11 @@ interface QuizAttemptRecord {
   best: { score: number; total: number };
 }
 
-/**
- * On the `phone` project only, Chromium's mobile-viewport emulation misreports
- * `window.innerHeight` (and every layout size derived from it) at roughly 1.4x
- * the real 390x844 viewport once a question's feedback pushes the ActionBar
- * below the fold. Playwright's own actionability check clips its click point
- * to the (correctly-sized) real viewport, which lands it on the feedback card
- * instead of the button it just scrolled to -- a tooling quirk, not a real
- * overlap: the button is fully visible on screen (confirmed with a
- * screenshot) and a forced click lands correctly and advances the check.
- * `force: true` skips only that misled visibility check.
- */
+/** Moves on; the question page must never be wider than the screen (no sideways scrolling on phones). */
 async function clickNext(page: Page, name: string): Promise<void> {
-  await nextButton(page, name).click({ force: true });
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+  expect(overflow, 'page is wider than the screen').toBeLessThanOrEqual(0);
+  await nextButton(page, name).click();
 }
 
 test('a full section check: intro, ten questions with feedback, results, and a saved attempt', async ({ page }) => {
