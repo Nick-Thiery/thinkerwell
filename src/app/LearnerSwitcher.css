@@ -77,6 +77,17 @@
   padding: var(--space-1);
 }
 
+/* Smaller tiles, so a smaller name with a little more room: names break
+   between words rather than inside them. */
+.tw-switcher-tiles .tw-tile {
+  padding-inline: var(--space-3);
+}
+
+.tw-switcher-tiles .tw-tile-name {
+  font-size: 16px;
+  line-height: 20px;
+}
+
 .tw-switcher-footer {
   flex: none;
   display: flex;

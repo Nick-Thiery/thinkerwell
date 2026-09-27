@@ -48,12 +48,20 @@
 }
 
 /*
- * Below 360px (a small phone, or a laptop zoomed to 400%) the 88px hero line
- * "Explore your world." is wider than its card, so it steps down in size.
+ * On a phone the 88px hero line would fill the whole first screen and push
+ * "Who's learning today?" out of sight, so it uses PhoneHome.dc.html's 52px.
+ * That also keeps it inside its card below 360px (a small phone, or a
+ * laptop zoomed to 400%).
  */
-@media (max-width: 359px) {
+@media (max-width: 599px) {
+  .tw-home-hero {
+    padding: var(--space-6) var(--space-5);
+    gap: var(--space-4);
+  }
+
   .tw-home-hero .hero {
-    font-size: 64px;
+    font-size: 52px;
+    line-height: 0.95;
   }
 }
 
@@ -149,6 +157,28 @@
   .tw-home-tiles {
     --tile-size: 150px;
     gap: var(--space-3);
+  }
+
+  /* Room for a longer name on one line ("Abdirahman"), so names break
+     between words rather than inside them. */
+  .tw-home-tiles .tw-tile {
+    padding-inline: var(--space-3);
+  }
+
+  .tw-home-tiles .tw-tile-name {
+    font-size: 19px;
+    line-height: 23px;
+  }
+}
+
+/* Between phone and laptop the panel is as wide as the page. Two
+   half-width columns left a lone tile floating in the middle of the left
+   half, so the tiles line up from the start instead, as many to a row as
+   fit (a tablet in portrait takes four). */
+@media (min-width: 481px) and (max-width: 899px) {
+  .tw-home-tiles {
+    grid-template-columns: repeat(auto-fill, var(--tile-size, 172px));
+    justify-content: start;
   }
 }
 
