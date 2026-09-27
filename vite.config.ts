@@ -107,8 +107,8 @@ function stripTeamOnlyLessonFields(): Plugin {
  *   precache doesn't hold (YouTube's player after a learner's tap, anything
  *   on another server) are never touched by the service worker at all.
  * - Page loads (navigations) get the precached index.html, so any address,
- *   /lesson/... included, opens offline. /api/ (measurement, later) is left
- *   to the network.
+ *   /lesson/... included, opens offline. /api/ (measurement, later) and
+ *   file addresses are left to the network.
  * - registerType 'prompt': a new version installs in the background and
  *   then waits. It never takes over by itself; src/offline/serviceWorker.ts
  *   shows "New version ready" and switches only when someone taps it (or
@@ -144,7 +144,9 @@ function offline(): Plugin[] {
       globPatterns: ['**/*.{html,js,css,woff2,svg,png,jpg}'],
       globIgnores: ['icons/**', 'images/thinkerwell-mascot-white-background.png', 'images/thinkerwell-mascot-yellow-background.png'],
       navigateFallback: '/index.html',
-      navigateFallbackDenylist: [/^\/api\//],
+      // /api/ (measurement, later) and addresses of files (anything with an
+      // extension, such as /icons/icon-512.png) go to the network.
+      navigateFallbackDenylist: [/^\/api\//, /\/[^/?]+\.[^/]+$/],
       runtimeCaching: [],
       cleanupOutdatedCaches: true,
       // The first install takes charge of the open page at once, so its
