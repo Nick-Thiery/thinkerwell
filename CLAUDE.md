@@ -15,17 +15,19 @@ A free social-studies course, "Exploring Our World": 24 lessons in 4 sections, e
 
 ## Stack
 
-- Vite, React and TypeScript (strict), with React Router. It is a static site hosted on Vercel.
+- Vite, React and TypeScript (strict), with React Router. It is a static site hosted on Vercel, built with Node 22 (`engines` in `package.json`). `vercel.json` holds the build settings, the SPA rewrite (never for an address that ends in a file name), the caching headers and the security headers: a Content-Security-Policy that allows only this site plus the youtube-nocookie.com player in a frame, no referrer, no framing by other sites, and the microphone only here. `vite preview` sends the same headers, so the end-to-end tests run under the real policy. The import steps and every network request are in `docs/LAUNCH_CHECKLIST.md`.
 - Plain CSS: `src/styles/tokens.css` (copied from `docs/design-system/tokens.css`) plus component CSS ported from `docs/design-system/reference/bundle.css`, keeping its `tw-` class names. No Tailwind, no CSS-in-JS.
 - Icons: `lucide-react`. The design system uses Lucide names.
 - Fonts, self-hosted (for example Fontsource packages): Funnel Display (headings), Atkinson Hyperlegible Next (everything else) and Eczar (the "Thinkerwell" wordmark only).
 - On-device storage: IndexedDB through a small typed wrapper (`idb`).
 - Offline: `vite-plugin-pwa` (Workbox) precaches the whole site (app, every lesson and check, fonts, pictures, images) after the first page loads; nothing is cached at runtime, so YouTube and other servers are never touched. The app registers the worker itself (`src/offline/serviceWorker.ts`, production only): a new version waits and only starts when someone taps "Update now" (or the next time the site opens). Never make it reload by itself. Details and sizes: `docs/notes/phase-6.md`; `npm run size` reports them.
-- Content validation: `zod` schemas in `src/content/schema.ts`, checked by a test and whenever the content is built, served or tested (the content plugin in `vite.config.ts`, using `src/content/load.ts`). A problem stops the build. The browser never runs zod: `src/content/index.ts` uses the checked files as they are.
+- First paint: until the app starts, `index.html` shows the header's lemon bar with the mascot (inside `#root`, drawn by the site's own CSS; React replaces it). On Slow 3G that is 2 s instead of 6 s of blank page. Keep it without words (UI strings live in en.json) and without anything that fetches ahead of the scripts.
+- Content validation: `zod` schemas in `src/content/schema.ts`, checked by a test and whenever the content is built, served or tested (the content plugin in `vite.config.ts`, using `src/content/load.ts`). A problem stops the build. The browser never runs zod: `src/content/index.ts` uses the checked files as they are. App code imports only types from `schema.ts`; a value from it would bring zod into the bundle (and zod's `Function('')` check breaks the Content-Security-Policy), so the build stops if zod reaches a browser chunk.
 - Tests: Vitest for logic, content and component behaviour (Testing Library), Playwright for end-to-end runs at 390, 820 and 1280px wide. Playwright blocks the service worker except in `e2e/offline.spec.ts` (`test.use({ serviceWorkers: 'allow' })`). A second, dev-only Playwright config (`playwright.dev.config.ts`, `npm run test:e2e:dev`) checks the `/dev/*` routes, which exist only in `npm run dev` and never reach `dist/`.
+- Checks on every page type (phase 8): `e2e/pageTour.ts` visits every kind of page in one visit, and the no-sideways-scroll (320 to 1280px), axe and focus-ring, right-to-left, tap-size, privacy and Content-Security-Policy specs walk it. Add a stop there when you add a kind of page. Tests that set their own window sizes are tagged `@own-size` and run in the laptop project only. Measure sideways scroll against `document.documentElement.clientWidth`, never `window.innerWidth` (an emulated phone zooms out to fit a page that is too wide).
 - Later (not phase 1): Vercel Functions for `POST /api/events` and a Postgres database for pilot measurement. See `docs/research/MEASUREMENT_PLAN.md`.
 
-Commands: `npm run dev` (dev server; add `?dir=rtl` to any URL to check right-to-left), `npm run build`, `npm run typecheck`, `npm run lint` (ESLint and Stylelint), `npm test` (Vitest), `npm run test:e2e` (Playwright; run `npm run test:e2e:install` once), `npm run test:e2e:dev` (Playwright against the dev-only `/dev/*` routes; see README.md), `npm run check:content` (lesson checker; run `sh scripts/setup-python.sh` once for wordfreq), `npm run size` (after a build: first load and precache sizes).
+Commands: `npm run dev` (dev server; add `?dir=rtl` to any URL to check right-to-left), `npm run build`, `npm run typecheck`, `npm run lint` (ESLint and Stylelint), `npm test` (Vitest), `npm run test:e2e` (Playwright; run `npm run test:e2e:install` once), `npm run test:e2e:dev` (Playwright against the dev-only `/dev/*` routes; see README.md), `npm run check:content` (lesson checker; run `sh scripts/setup-python.sh` once for wordfreq), `npm run size` (after a build: first load and precache sizes), `npm run perf` (after a build: page timings on Slow 3G, 3G and Slow 4G with a slow CPU).
 
 ## Where things live
 
@@ -35,6 +37,7 @@ content/lessons/L01.json …     one file per lesson (source of truth for lesson
 content/quizzes/               the four section checks (history, geography, culture, civics)
 content/visuals/               one picture per lesson (SVG); a lesson's `visual.src` points here, relative to content/
 docs/PRODUCT.md                who it's for, decisions made so far
+docs/LAUNCH_CHECKLIST.md       phase 8: what was checked, Vercel import steps, every network request, what's left for people
 docs/design-system/            brand book (README.md), tokens, component notes, reference implementation
 docs/screens/                  every redesigned screen as source; see docs/screens/README.md
 docs/content/SPEC.md           the rules lesson text is written to
@@ -72,7 +75,7 @@ src/pages/print/               print views: /lesson/:id/print and /journal/print
 - When each stage counts as done is written down in `src/lesson/progressRules.ts`; change it there (and in `docs/PRODUCT.md`), not in the stage components. The course map, the learner home and the complete screen read the same saved `stagesDone`, `currentStage` and `completedAt`.
 - The lesson player (`src/lesson/`, `src/pages/lesson/`) saves through `useLessonPlayer().update()`; never write lesson progress to IndexedDB from a stage directly. Look-around and "nobody chosen" keep work in memory only.
 - `estimatedMinutes` is an estimate; show it as "About 30–50 min".
-- Pictures: show `visual.src` inline in the Read stage near the evidence, with `visual.alt` as its alt text. They follow `docs/content/VISUALS_SPEC.md`; new pictures must too.
+- Pictures: show `visual.src` inline in the Read stage near the evidence, with `visual.alt` as its alt text. They follow `docs/content/VISUALS_SPEC.md`; new pictures must too. "See it bigger" under each picture opens it in a native modal `<dialog>`, at least 640px wide (so its labels are at least 14px), with its area scrolling on a phone and pinch-zoom left on (`src/pages/lesson/visual/LessonVisual.tsx`). Never turn off pinch-zoom anywhere.
 - Section checks (`content/quizzes/<section>.json`): one question at a time, shuffled options with per-option feedback, an optional `stimulus` (a short made-up example) shown above the question, and a results message chosen by score (high: at least 8 of 10 or 10 of 12; low: under half; otherwise middle). Questions are written to `docs/content/QUIZ_SPEC.md`.
 
 ## Data kept on the device
@@ -108,7 +111,7 @@ Built in phase 6; see `docs/notes/phase-6.md`.
 ## Don't
 
 - Add accounts, logins, a chatbot "Learning Guide", ads, analytics scripts or social embeds.
-- Load anything at runtime from a third-party server except YouTube embeds the learner starts.
+- Load anything at runtime from a third-party server except YouTube embeds the learner starts. Adding a host to the Content-Security-Policy in `vercel.json` needs saying so in the pull request.
 - Use red, lock lessons, add timers, or show learners a leaderboard.
 - Put English strings straight into components.
 - Change lesson text, the design tokens or the brand rules without saying so in the pull request.

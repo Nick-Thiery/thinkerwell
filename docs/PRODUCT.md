@@ -82,6 +82,16 @@ Details, sizes and the reasons are in `docs/notes/phase-6.md`.
 - Every lesson has a print view with both reading levels, the key words, the picture, the quick check and every task, with lines to write on. The journal has one too, built from the learner's saved writing and reflections. They print in black and white with no header; the lesson picture keeps its colours.
 - On iPads and iPhones, add Thinkerwell to the Home Screen: Safari deletes a site's saved data after 7 days without a visit otherwise.
 
+### Quality pass and launch (phase 8)
+
+What was checked, the Vercel import steps, every network request and what is left for people are in `docs/LAUNCH_CHECKLIST.md`.
+
+- Every lesson picture has "See it bigger". It opens the picture in a dialog, big enough to read its labels on a phone, which can be dragged and pinch-zoomed. Pinch-zoom is never turned off anywhere.
+- The site sends a Content-Security-Policy: only this site, plus the youtube-nocookie.com player in a frame after the learner taps play. The site can't be shown inside another website (for example a learning platform's frame). If a partner needs that, it is a decision to make, not a setting to flip.
+- While the app starts on a slow connection, the page shows the header with the mascot instead of staying blank.
+- Every radio group (warm-up chips, quick-check options, Speak's choices) answers to all four arrow keys. The quick check still answers only on Space or Enter.
+- The site is built and tested with Node 22.
+
 ## Roadmap
 
 1. **Pilot build (now):** everything in `docs/BUILD_PLAN.md` phases 1–8.
