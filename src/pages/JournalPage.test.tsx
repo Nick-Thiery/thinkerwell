@@ -1,4 +1,4 @@
-import { render, screen, within } from '@testing-library/react';
+import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router';
 import { afterEach, describe, expect, it } from 'vitest';
@@ -113,7 +113,13 @@ describe('JournalPage', () => {
     await user.type(textbox, 'Water, trade and safety from floods.');
     await user.click(screen.getByRole('button', { name: 'Save' }));
 
-    expect(await screen.findByText('Water, trade and safety from floods.')).toBeInTheDocument();
+    // Wait for the save to finish and the entry to go back to reading. (While
+    // it saves, the textbox itself holds the new words, so looking for the
+    // text straight away found the textbox, which the finished save then
+    // removed: a race that failed now and then under load.)
+    await waitFor(() => expect(screen.queryByRole('textbox')).not.toBeInTheDocument());
+    const saved = screen.getByText('Water, trade and safety from floods.');
+    expect(saved.closest('article')).not.toHaveClass('tw-entry-editing');
     expect(screen.queryByText('Water and trade.')).not.toBeInTheDocument();
 
     const [record] = await store.listProgress(learnerId);

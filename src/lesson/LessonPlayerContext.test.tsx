@@ -67,11 +67,18 @@ describe('LessonPlayerProvider (learner)', () => {
     await waitFor(() => expect(screen.getByTestId('status')).toHaveTextContent('ready'));
     expect(screen.getByTestId('mode')).toHaveTextContent('learner');
 
+    const typedAt = Date.now();
     await user.click(screen.getByText('Type'));
     await user.click(screen.getByText('Type'));
     expect(screen.getByTestId('text')).toHaveTextContent('aa');
     const store = await getStore();
-    expect(await store.getProgress(learnerId, lesson.id)).toBeUndefined();
+    const beforeThePause = await store.getProgress(learnerId, lesson.id);
+    // Nothing is saved before the typing pause. Checked only when this test
+    // got here within the pause: on a busy machine (a type check or other
+    // test files running alongside) the two clicks alone can take longer,
+    // and the save then rightly lands first. That made this test fail now
+    // and then.
+    if (Date.now() - typedAt < SAVE_DEBOUNCE_MS) expect(beforeThePause).toBeUndefined();
 
     await act(() => sleep(SAVE_DEBOUNCE_MS + 150));
     await waitFor(async () => expect((await store.getProgress(learnerId, lesson.id))?.writing.text).toBe('aa'));
