@@ -31,6 +31,7 @@ sh scripts/setup-python.sh   # .venv with wordfreq, for the lesson checker
 | `npm run test:e2e` | End-to-end tests (Playwright) at 390, 820 and 1280px wide; builds and serves on port 4317 |
 | `npm run test:e2e:dev` | End-to-end tests for the dev-only `/dev/*` routes (Playwright, `playwright.dev.config.ts`); runs `vite` itself on port 4318, since those routes don't exist in a production build |
 | `npm run check:content` | Checks `content/lessons/*.json` against `docs/content/SPEC.md`; must report 0 errors |
+| `npm run size` | After `npm run build`: what a new visitor downloads for the home page and for a lesson, and what the service worker precaches, gzipped and brotli (`tools/report-sizes.mjs`) |
 
 To run the end-to-end tests against a server you already started, set `E2E_BASE_URL`, for example `E2E_BASE_URL=http://localhost:5301 npm run test:e2e`.
 
