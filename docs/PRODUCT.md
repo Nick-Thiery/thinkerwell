@@ -1,6 +1,6 @@
 # Thinkerwell: product notes
 
-Last updated 26 September 2026.
+Last updated 27 September 2026.
 
 ## What it is
 
@@ -29,6 +29,7 @@ HELP for Refugees, Jakarta. Target start: one to two weeks from 26 September 202
 - Fonts: Funnel Display for headings, Atkinson Hyperlegible Next for everything else, Eczar for the wordmark.
 - Culture's section colour is rose, so lavender always means "help".
 - Shared-device learner tiles; no accounts. An optional class code links a learner to a partner group for the pilot.
+- Learner avatar colours: Yellow, Sand, Green, Blue and White, as on the NewLearner screen, with White as the default. Sand, Green and Blue reuse the History, Geography and Civics tints, which the brand book keeps for section places, and the brand book gives avatars lavender, so this is a recorded exception. **Open for Justin and Nick to confirm**; the alternative is lavender avatars told apart by initial.
 - Nothing is locked; checks never block.
 - The old keyword "Learning Guide" is removed; AI features come later.
 - Listen (read aloud), Say it (dictation, on-device only by default) and Record yourself (stays on the device) are in.
