@@ -1,0 +1,65 @@
+# Runs every check on each push to main and on every pull request, so a
+# change that breaks the site is caught before (or right after) it goes live.
+# Vercel deploys main on its own; this workflow only reports.
+name: Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install
+        run: |
+          npm ci
+          sh scripts/setup-python.sh
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Content check
+        run: npm run check:content
+
+      - name: Build
+        run: npm run build
+
+      - name: Install the test browser
+        run: PLAYWRIGHT_BROWSERS_PATH=0 npx playwright install --with-deps chromium
+
+      - name: End-to-end tests (phone, tablet and laptop)
+        run: npm run test:e2e
+
+      - name: Keep the test report if something failed
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7

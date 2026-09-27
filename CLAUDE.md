@@ -118,6 +118,8 @@ Built in phase 6; see `docs/notes/phase-6.md`.
 
 ## How to work here
 
+- GitHub Actions (`.github/workflows/checks.yml`) runs every check (types, lint, unit tests, content, build, and the end-to-end tests at all three sizes) on each push to `main` and on every pull request. Keep it green.
+
 - Work in small steps: one feature per branch and pull request. Run the tests and the content check before committing.
 - Test on narrow screens (390px) and with the keyboard as you go, not at the end.
 - When a decision changes, update this file and `docs/PRODUCT.md` in the same pull request.
