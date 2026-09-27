@@ -12,7 +12,7 @@
 import { emptyProgress, type LessonProgress, type ReadingLevel } from '../storage';
 
 /** The learnerId written into a guest's in-memory progress records. */
-export const GUEST_ID = 'guest';
+const GUEST_ID = 'guest';
 
 const progressByLesson = new Map<string, LessonProgress>();
 let readingLevel: ReadingLevel | null = null;
