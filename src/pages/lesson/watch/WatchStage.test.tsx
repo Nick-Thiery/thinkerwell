@@ -53,6 +53,7 @@ function Harness({
     readingLevel: 'standard',
     setReadingLevel: () => undefined,
     settings,
+    setListeningSpeed: () => undefined,
     seedOwner: 'visit',
     goTo: () => undefined,
   };

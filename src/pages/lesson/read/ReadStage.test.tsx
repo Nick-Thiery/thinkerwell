@@ -61,6 +61,7 @@ function Harness({
 }) {
   const [progress, setProgress] = useState<LessonProgress>(initial ?? emptyProgress('learner-1', lesson.id));
   const [readingLevel, setLevel] = useState<ReadingLevel>(level);
+  const [settings, setSettings] = useState(DEFAULT_SETTINGS);
   useEffect(() => {
     latestProgress = progress;
   }, [progress]);
@@ -87,7 +88,8 @@ function Harness({
       spies.setReadingLevel(next);
       setLevel(next);
     },
-    settings: DEFAULT_SETTINGS,
+    settings,
+    setListeningSpeed: (listeningSpeed) => setSettings((current) => ({ ...current, listeningSpeed })),
     seedOwner,
     goTo: (step) => spies.goTo(step),
   };

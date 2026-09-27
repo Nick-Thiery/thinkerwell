@@ -59,6 +59,7 @@ import {
   keepUnsavedProgress,
   type DeviceSettings,
   type LessonProgress,
+  type ListeningSpeed,
   type ReadingLevel,
   type ThinkerwellStore,
 } from '../storage';
@@ -116,6 +117,11 @@ export interface LessonPlayerValue {
   setReadingLevel: (level: ReadingLevel) => void;
   /** Device settings (save data, listening speed, ...). DEFAULT_SETTINGS until loaded. */
   settings: DeviceSettings;
+  /**
+   * Listen's Slow / Normal. Applies at once; saved as the device's
+   * listening speed only for a chosen learner (look-around saves nothing).
+   */
+  setListeningSpeed: (speed: ListeningSpeed) => void;
   /** Owner part of the quick-check shuffle seed: the learner id, or this visit's seed for a guest. Use with checkSeed(). */
   seedOwner: string;
   /** Saves anything queued, then goes to another step of this lesson. */
@@ -436,6 +442,21 @@ function PlayerForOwner({
     [learnerId, setLearnerReadingLevel],
   );
 
+  const setListeningSpeed = useCallback(
+    (speed: ListeningSpeed) => {
+      setSettings((current) => (current.listeningSpeed === speed ? current : { ...current, listeningSpeed: speed }));
+      if (!learnerId || !session.storageAvailable) return;
+      void getStore()
+        .then((store) => store.updateSettings({ listeningSpeed: speed }))
+        .catch((error: unknown) => {
+          if (import.meta.env.DEV) console.error(error);
+        });
+    },
+    // session.storageAvailable doesn't change within a lesson (see the load effect).
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [learnerId],
+  );
+
   const goTo = useCallback(
     (target: LessonStep) => {
       void flush();
@@ -460,10 +481,28 @@ function PlayerForOwner({
       readingLevel,
       setReadingLevel,
       settings,
+      setListeningSpeed,
       seedOwner: learnerId ?? VISIT_SEED,
       goTo,
     }),
-    [lesson, section, step, status, mode, progress, saveError, update, flush, stageEvent, readingLevel, setReadingLevel, settings, learnerId, goTo],
+    [
+      lesson,
+      section,
+      step,
+      status,
+      mode,
+      progress,
+      saveError,
+      update,
+      flush,
+      stageEvent,
+      readingLevel,
+      setReadingLevel,
+      settings,
+      setListeningSpeed,
+      learnerId,
+      goTo,
+    ],
   );
 
   return <LessonPlayerContext.Provider value={value}>{children}</LessonPlayerContext.Provider>;
