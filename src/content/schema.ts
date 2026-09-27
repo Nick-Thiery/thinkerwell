@@ -6,6 +6,7 @@
  * file with these schemas.
  */
 import { z } from 'zod';
+import { QUIZ_SKILLS } from './quizSkills';
 
 export const SECTION_IDS = ['history', 'geography', 'culture', 'civics'] as const;
 export const sectionIdSchema = z.enum(SECTION_IDS);
@@ -292,7 +293,7 @@ export type Lesson = z.infer<typeof lessonSchema>;
 
 // ------------------------------------------------------- quizzes (section checks)
 
-export const QUIZ_SKILLS = ['vocabulary', 'understand', 'evidence', 'apply'] as const;
+export { QUIZ_SKILLS };
 export const quizSkillSchema = z.enum(QUIZ_SKILLS);
 export type QuizSkill = z.infer<typeof quizSkillSchema>;
 

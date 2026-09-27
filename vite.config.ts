@@ -68,6 +68,33 @@ function checkContent(): Plugin {
 }
 
 /**
+ * Stops the build if zod reaches the browser bundle. The content is checked
+ * at build time (checkContent above), so the browser never needs zod; but
+ * importing any value (not just a type) from src/content/schema.ts brings
+ * all of it in: about 25 kB gzipped, and its feature check calls
+ * Function(''), which the site's Content-Security-Policy blocks (phase 8
+ * found QUIZ_SKILLS doing exactly this).
+ */
+function keepZodOutOfTheBrowser(): Plugin {
+  return {
+    name: 'thinkerwell:keep-zod-out-of-the-browser',
+    apply: 'build',
+    generateBundle(_options, bundle) {
+      for (const output of Object.values(bundle)) {
+        if (output.type !== 'chunk') continue;
+        const ids = output.moduleIds ?? Object.keys(output.modules);
+        const zod = ids.find((id) => /[\\/]node_modules[\\/]zod[\\/]/.test(id));
+        if (zod) {
+          this.error(
+            `zod is in the browser bundle (${output.fileName}, from ${zod}). Import only types from src/content/schema.ts in app code.`,
+          );
+        }
+      }
+    },
+  };
+}
+
+/**
  * Leaves team-only lesson fields out of the production bundle, so every
  * learner device doesn't download (and carry) notes that are never shown:
  * watch.replacementSuggestion (a possible better video, with a youtube.com
@@ -163,7 +190,7 @@ function offline(): Plugin[] {
 // VITE_CACHE_DIR lets several dev servers run at once, each with its own
 // dependency cache (for example .build-review/vite-cache-5301).
 export default defineConfig({
-  plugins: [react(), checkContent(), stripTeamOnlyLessonFields(), offline()],
+  plugins: [react(), checkContent(), stripTeamOnlyLessonFields(), keepZodOutOfTheBrowser(), offline()],
   cacheDir: process.env.VITE_CACHE_DIR || 'node_modules/.vite',
   server: {
     // Content lives outside src/ (content/*.json) and is read at build time.

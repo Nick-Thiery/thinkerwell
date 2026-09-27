@@ -16,8 +16,10 @@ import { assembleContent } from './assemble';
 import { ContentError } from './errors';
 import type { CourseFile, Lesson, QuizFile, Section, SectionId } from './schema';
 
+// Types only: a value from ./schema would bring zod into the browser bundle
+// (see ./quizSkills.ts and keepZodOutOfTheBrowser in vite.config.ts).
 export type * from './schema';
-export { QUIZ_SKILLS } from './schema';
+export { QUIZ_SKILLS } from './quizSkills';
 export * from './stages';
 export { ContentError } from './errors';
 export type { LoadedContent } from './assemble';
