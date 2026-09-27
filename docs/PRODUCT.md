@@ -59,6 +59,16 @@ HELP for Refugees, Jakarta. Target start: one to two weeks from 26 September 202
 - The learner home's "Continue" goes on to the next unfinished lesson after the one finished most recently, the same "Up next" the complete screen offers.
 - Captions are on by default in the video player, for learners of English.
 
+### Listen, Say it and Record yourself (phase 5)
+
+Browser support and the reasons are in `docs/notes/phase-5.md`.
+
+- Listen uses only a voice that runs on the device, so it works offline and sends nothing. Where there is no such English voice, the Listen tool is hidden. It reads the part on screen, heading first and then one sentence at a time, and moves on from part to part by itself.
+- Say it runs only where speech can be turned into text on the device, which today means recent Chrome on a laptop with its English pack. Elsewhere it is hidden, unless an educator turns on "Allow online speech-to-text" in Settings. That setting sends what learners say to the browser maker's service, and educators should turn it on only when the organisation and the families have agreed. The setting is off unless someone turns it on.
+- Settings for this device (`/settings`) is for educators. It says what this browser can do and offers the browser's own one-time download for on-device speech to text. It is linked from the Educators page until phase 6 puts it in the header menu. Changes there are saved even while looking around.
+- Record yourself keeps the latest clip per learner and lesson on the device. It is deleted when the learner taps Delete or is removed, and not when someone else starts using the device. Guests' clips last only while the page is open. Recordings stop by themselves after 3 minutes and never count towards Speak being done.
+- The Listen speed (Slow or Normal) is a device setting, saved when a chosen learner changes it.
+
 ## Roadmap
 
 1. **Pilot build (now):** everything in `docs/BUILD_PLAN.md` phases 1–8.

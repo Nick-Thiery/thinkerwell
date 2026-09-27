@@ -85,9 +85,12 @@ The journal is built from saved writing and reflections; it is not stored separa
 
 ## Listen, Say it and Record
 
-- **Listen** uses the browser's `speechSynthesis` with a voice that runs on the device (`voice.localService === true`), reads the version on screen from the first section to the last, and marks the current sentence with `mark.tw-speaking`. Speeds: Slow (about 0.8) and Normal.
-- **Say it** (dictation in Write, Watch and Reflect) uses speech recognition only when the browser can do it on the device. Some browsers send audio to an online service to turn it into text; for children that is off unless a partner turns it on. If neither applies, hide the button. Check current browser support when you build this; it changes often.
-- **Record yourself** (Speak) uses `MediaRecorder` and stores the clip in IndexedDB. It is never uploaded.
+The code is in `src/speech/`; browser support and the decisions behind it are in `docs/notes/phase-5.md`. Each feature shows only where it works; otherwise it is hidden, with no warning.
+
+- **Listen** uses the browser's `speechSynthesis` with a voice that runs on the device (`voice.localService === true`); with no such English voice, it is hidden. It reads the version on screen from the first section to the last, one sentence per utterance, and marks the current sentence with `mark.tw-speaking`. Speeds: Slow (about 0.8) and Normal (`settings.listeningSpeed`, saved only for a chosen learner).
+- **Say it** (dictation in Write, Watch and Reflect) uses speech recognition only when the browser can do it on the device: `SpeechRecognition.available({ processLocally: true })` must say `available`, and recognition then runs with `processLocally = true`. Other recognition may send audio to an online service. For children that is off unless an educator turns on "Allow online speech-to-text" on the Settings page (`/settings`, `settings.partner.allowOnlineDictation`). If neither applies, hide the button. The browser's one-time on-device download starts only from an educator's tap in Settings. Support changes often, so check it again when you touch this.
+- **Record yourself** (Speak) uses `MediaRecorder` and stores the latest clip per learner and lesson in IndexedDB. It is never uploaded. The microphone is asked for only when the learner taps Start, and the recorder is hidden where the device lists no microphone.
+- Settings (`/settings`) saves device settings even while looking around, because it sets up the device and isn't a learner's work. Inside lessons, look-around still saves nothing.
 
 ## Don't
 
