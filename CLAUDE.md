@@ -88,7 +88,7 @@ Version the schema and write migrations. Nothing leaves the device in phase 1.
 - `progress` per learner and lesson: stages done, current stage, warm-up answer, check answers, writing and planning notes, self-check ticks, how they practised speaking, reflections, completed date.
 - `quizAttempts` per learner and section: answers, score, date (keep the best and the latest).
 - `recordings` per learner and lesson: the latest audio clip only. Delete it when the learner is removed or taps Delete.
-- `settings` per device: save data (`null` until someone chooses), listening speed, preferred reading level, partner options.
+- `settings` per device: save data (`null` until someone chooses), listening speed, preferred reading level, partner options, and the last "Check this device" result for Say it (`speechCheck`, `null` until someone checks).
 
 The journal is built from saved writing and reflections (`journalByLesson` in `src/storage/progress.ts`); it is not stored separately. Its print view is `/journal/print`; the journal page's "Print my journal" links there.
 
@@ -98,6 +98,7 @@ The code is in `src/speech/`; browser support and the decisions behind it are in
 
 - **Listen** uses the browser's `speechSynthesis` with a voice that runs on the device (`voice.localService === true`); with no such English voice, it is hidden. It reads the version on screen from the first section to the last, one sentence per utterance, and marks the current sentence with `mark.tw-speaking`. Speeds: Slow (about 0.8) and Normal (`settings.listeningSpeed`, saved only for a chosen learner).
 - **Say it** (dictation in Write, Watch and Reflect) uses speech recognition only when the browser can do it on the device: `SpeechRecognition.available({ processLocally: true })` must say `available`, and recognition then runs with `processLocally = true`. Other recognition may send audio to an online service. For children that is off unless an educator turns on "Allow online speech-to-text" on the Settings page (`/settings`, `settings.partner.allowOnlineDictation`). If neither applies, hide the button. The browser's one-time on-device download starts only from an educator's tap in Settings. Support changes often, so check it again when you touch this.
+- **Never ask about speech recognition as a page opens.** Calling `available()` as Write, Watch, Reflect or Settings opened crashed the tab in Chromium 153 on touch devices. `available()` runs only when an educator taps "Check this device" in Settings, which saves the answer with the date (`settings.speechCheck`). Lessons decide from the saved settings alone (`dictationMode()`), and make a recognition object only when the learner taps Say it. `src/pages/speechOnOpen.test.tsx` checks this; end-to-end tests use the fake in `e2e/speechFake.ts` before tapping either.
 - **Record yourself** (Speak) uses `MediaRecorder` and stores the latest clip per learner and lesson in IndexedDB. It is never uploaded. The microphone is asked for only when the learner taps Start, and the recorder is hidden where the device lists no microphone.
 - Settings (`/settings`, in the header menu, outside the five main links) saves device settings even while looking around, because it sets up the device and isn't a learner's work. Inside lessons, look-around still saves nothing.
 
@@ -107,7 +108,7 @@ Built in phase 6; see `docs/notes/phase-6.md`.
 
 - After the first visit every lesson works offline. Under the header, `StatusBanner` says when the device is offline (tone offline) and, for five seconds, when it's back (tone back). Never tell a guest their work is saved.
 - A new version shows "A new version is ready" with "Update now"; nothing reloads unless someone taps it.
-- Settings for this device (`/settings`): offline status, Save data, the reading level for anyone who hasn't chosen one, the Listen speed, and Say it.
+- Settings for this device (`/settings`): offline status, Save data, the reading level for anyone who hasn't chosen one, the Listen speed, and Say it ("Check this device", the on-device download and "Allow online speech-to-text").
 - Every lesson has a print view (`/lesson/:id/print`, linked from Read): both reading levels, key words, the picture, the quick check and every task, black text on white with no header. Printing any page leaves out the header, menus and banners (`src/styles/print.css`).
 - Teacher tools (`docs/notes/teacher-tools.md`), linked from the Educators page: every lesson has a teacher guide (`/educators/lesson/:id`) and every section check an answer key (`/educators/section/:id/answers`). Each is one page for screen and paper, built on the print views' sheet. Everything in them comes from the content files. Correct answers are marked with a tick and the words "Correct answer", never by colour alone.
 

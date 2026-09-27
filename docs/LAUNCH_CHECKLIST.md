@@ -173,7 +173,7 @@ Inside that frame, YouTube's player then loads its own scripts, images, captions
 **Nothing else.** There are no cookies (tested), no analytics, no fonts or scripts from other servers, and no API calls; the measurement endpoint comes later. Two browser features can reach other servers, but only when someone chooses them. Neither is a request from the site:
 
 - **Say it with "Allow online speech-to-text"**, which is off unless an educator turns it on in Settings. It sends what learners say to the browser maker's service.
-- **"Download speech to text"** in Settings is the browser's own one-time download (about 60 MB, from Google for Chrome). It starts only when an educator taps it.
+- **"Download speech to text"** in Settings is the browser's own one-time download (about 60 MB, from Google for Chrome). It starts only when an educator taps it. ("Check this device", next to it, only asks the browser what it can do; it downloads nothing.)
 
 Recordings never leave the device. Listen uses only voices that run on the device.
 
@@ -192,6 +192,7 @@ Recordings never leave the device. Listen uses only voices that run on the devic
 - [ ] **Test on the real pilot devices**: HELP's tablets and laptops, in the browsers they have. On each one:
   - open the site once on good internet and wait for "All 24 lessons work offline" on the learner home;
   - then turn off the Wi-Fi and open a few lessons;
+  - in Settings, tap **Check this device** under "Say it" (once per device and browser, and again after a browser update). Lessons show Say it on the device only after this says speech stays on the device; they never check by themselves. If it offers "Download speech to text", download on good Wi-Fi, then check again;
   - try Listen, Say it and Record yourself;
   - print a lesson, a teacher guide and an answer key;
   - use a lesson with the keyboard and with a screen reader (VoiceOver on iPad, TalkBack on Android, NVDA on Windows).

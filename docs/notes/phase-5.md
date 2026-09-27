@@ -7,7 +7,7 @@ Branch `phase-5-speech`. Researched and built in September 2026. Browser support
 - **Listen** on the Read stage. The Listen tool is the first reading tool. A local English voice reads the part on screen: the heading first, then one sentence at a time, in the version on screen (Standard or Simpler). The sentence being read is marked with `mark.tw-speaking`, and the page scrolls to it only when it is out of view. At the end of a part, Listen moves on to the next part and keeps reading. It stops after the last part, at the quick check, when the learner leaves the stage, and if the voice fails. The ListenBar can pause, play, stop (focus goes back to Listen) and switch between Slow (0.8) and Normal.
 - **Say it** on Write's answer box, both Watch boxes and every Reflect box (`SayItBox`). Dictated words go in at the learner's caret and are saved exactly like typing. That means a spoken answer to the required Reflect prompt completes the lesson, and a spoken answer to Watch's after question counts once listening ends. Typing in the box stops listening. While a box listens, its helper line says "Listening. Speak slowly…". If listening fails, the helper line says why in plain words.
 - **Record yourself** on the Speak stage: an optional, private recorder. The microphone is asked for only when the learner taps Start recording, and it is released when they tap Stop. A chosen learner's latest clip for each lesson is kept in IndexedDB, and Delete removes it. Guests' clips stay in memory only. Recording never counts towards Speak being done.
-- **Settings for this device** (`/settings`, for educators). It explains how this browser does speech to text, offers the browser's one-time on-device download where there is one, and has **Allow online speech-to-text**, which is off unless an educator turns it on. The Educators page links to it for now.
+- **Settings for this device** (`/settings`, for educators). Its **Check this device** button finds out how this browser does speech to text and saves the answer, it offers the browser's one-time on-device download where there is one, and it has **Allow online speech-to-text**, which is off unless an educator turns it on. The Educators page links to it for now.
 - `src/speech/` wraps the browser APIs. `src/test/speechMocks.ts` fakes `speechSynthesis`, `SpeechRecognition`, `getUserMedia` and `MediaRecorder` for Vitest. `e2e/speech.spec.ts` checks the real pages.
 
 ## Browser support and what happens elsewhere
@@ -28,7 +28,7 @@ Where no local English voice exists, the Listen tool doesn't show, and nothing e
 
 ### Say it (speech recognition)
 
-On the device means the page asks `SpeechRecognition.available({ langs: ['en-US'], processLocally: true, quality: 'dictation' })`. If the answer is `available`, it runs recognition with `processLocally = true`, which the spec says must stay on the device. If a browser doesn't answer within 3 seconds, the page treats it as not available.
+On the device means that **Check this device** in Settings asked `SpeechRecognition.available({ langs: ['en-US'], processLocally: true, quality: 'dictation' })` and the answer was `available`. The answer is saved with the date (`settings.speechCheck`), and lessons read it: they never ask the browser themselves (see "Changed" below). Say it then runs recognition with `processLocally = true`, which the spec says must stay on the device. If a browser doesn't answer within 3 seconds, the check counts as not available.
 
 | Browser / device | On the device | With "Allow online speech-to-text" on |
 | --- | --- | --- |
@@ -40,13 +40,13 @@ On the device means the page asks `SpeechRecognition.available({ langs: ['en-US'
 | Firefox | Not yet by default. Firefox 157 added on-device recognition behind a preference, and caniuse lists `processLocally` from Firefox 159. The detection will pick it up once it is on. | No recognition in current releases |
 | Samsung Internet | No | No |
 
-Say it shows only where it can work: on the device, or online when an educator has allowed that. Everywhere else, including while the check is still running, the button is hidden and the boxes are plain writing boxes. If recognition fails part-way, the box says why and the learner can type:
+Say it shows only where it can work: on the device once Check this device has said so, or online when an educator has allowed that and the browser has recognition. Everywhere else, including on a device nobody has checked, the button is hidden and the boxes are plain writing boxes. If recognition fails part-way, the box says why and the learner can type:
 
 - the microphone was refused;
 - no microphone was found;
 - the device is offline on the online path;
 - nothing was heard;
-- the on-device pack stopped working. In this case the page checks again, and the button hides if it can't come back.
+- the on-device pack stopped working. In this case Say it stops offering on-device recognition on that page (it hides, or goes online where an educator allowed that). The page doesn't ask the browser again; an educator can run Check this device again in Settings.
 
 ### Record yourself (MediaRecorder and getUserMedia)
 
@@ -72,6 +72,16 @@ Before any permission is given, the page checks for a microphone with `enumerate
 10. **Recording limits.** Recordings are made at about 32 kbps, which is roughly 240 kB a minute, and stop by themselves after 3 minutes. A recording still in progress when the learner leaves Speak is kept, as if they had tapped Stop.
 11. **The recorder's copy.** The recorder's title is "Record yourself (optional)", as on the screen. Its task line is generic, because the content has no "three sentences" frames.
 12. **No red for problems.** Problems are shown as plain words on a lavender wash (the help colour), never in red.
+
+## Changed
+
+**28 September 2026: pages no longer ask about speech recognition as they open** (branch `fix-speech-crash`). In Playwright's Chromium 153 on GitHub Actions, with phone or tablet emulation (touch), the tab crashed ("Page crashed") as soon as Write, Watch, Reflect or Settings opened. A probe showed it: without `SpeechRecognition` and `webkitSpeechRecognition` nothing crashed, and those pages called `SpeechRecognition.available()` as they opened. Learners would have seen Chrome's "Aw, Snap!" page mid-lesson, on the touch laptops and tablets the pilot uses. Now:
+
+- Lessons decide from the saved device settings only (`dictationMode()` calls nothing): Say it shows when `settings.speechCheck` says `available`, or when "Allow online speech-to-text" is on and the browser has the API. A recognition object is made only when the learner taps Say it, still with `processLocally = true` on the device.
+- Settings asks the browser only when an educator taps **Check this device**, and saves the answer with the date. The download follows from that answer, and its outcome is checked and saved the same way. Educators run the check once per device (and browser) when they set it up (`docs/LAUNCH_CHECKLIST.md`).
+- `settings.speechCheck` is null until someone checks. Settings saved before it existed read as null, so the database stays at version 2 (no migration, and an older build can still open it).
+- `src/pages/speechOnOpen.test.tsx` renders Write, Watch, Reflect and Settings and checks that neither `available()` nor the constructor is called. The end-to-end tests tap Check this device and Say it only with a fake recognition (`e2e/speechFake.ts`).
+- Not known yet: whether the crash also happens in real Chrome 153 on a touch device, or only in headless Chromium, and whether the check itself would crash there. Try Check this device on each pilot device.
 
 ## Not done, or for later
 
