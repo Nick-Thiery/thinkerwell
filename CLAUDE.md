@@ -32,8 +32,8 @@ Commands: `npm run dev` (dev server; add `?dir=rtl` to any URL to check right-to
 ```
 content/course.json            course, 4 sections, "how I practised" options, fiction label
 content/lessons/L01.json …     one file per lesson (source of truth for lesson text)
-content/quizzes/               section checks (coming)
-content/visuals/               one picture per lesson as SVG (coming)
+content/quizzes/               the four section checks (history, geography, culture, civics)
+content/visuals/               one picture per lesson (SVG); a lesson's `visual.src` points here, relative to content/
 docs/PRODUCT.md                who it's for, decisions made so far
 docs/design-system/            brand book (README.md), tokens, component notes, reference implementation
 docs/screens/                  every redesigned screen as source; see docs/screens/README.md
@@ -41,6 +41,8 @@ docs/content/SPEC.md           the rules lesson text is written to
 docs/research/                 learner context, measurement plan, audit of the old Base44 site
 public/images/                 mascot, UN goal icons, founder photo
 scripts/check_lesson.py        checks lesson files against the spec
+scripts/check_quiz.py          checks section checks against docs/content/QUIZ_SPEC.md
+scripts/render_svg.js          renders a picture to PNG and flags layout problems
 src/                           the app (created in phase 1)
 ```
 
@@ -54,7 +56,7 @@ src/                           the app (created in phase 1)
 
 ## Content
 
-- Lesson text comes only from `content/lessons/*.json`. Never hard-code lesson text in components, and don't edit it in code. To change a lesson, edit its JSON and run `python3 scripts/check_lesson.py content/lessons/*.json` (needs `pip install wordfreq`), which must report 0 errors.
+- Lesson text comes only from `content/lessons/*.json`. Never hard-code lesson text in components, and don't edit it in code. To change a lesson, edit its JSON and run `python3 scripts/check_lesson.py content/lessons/*.json` (needs `pip install wordfreq`), which must report 0 errors. Quizzes: `python3 scripts/check_quiz.py content/quizzes/*.json`.
 - `id` is a stable slug used in URLs: `/lesson/:id/:stage`. `oldId` is the Base44 id; redirect `/lesson/l6` and the other old ids to the new URLs.
 - "Next lesson" is worked out from the order, not stored.
 - Quick-check options carry their own `correct` flag and feedback. Shuffle options with a seed per learner and question so the order stays the same when the learner comes back.
@@ -64,6 +66,8 @@ src/                           the app (created in phase 1)
 - Watch: embed from `youtube-nocookie.com`, only after the learner taps play, never autoplay. If the player hasn't loaded after 20 seconds, or "Save data" is on, show the written version.
 - Reflect: the required prompt completes the lesson.
 - `estimatedMinutes` is an estimate; show it as "About 30–50 min".
+- Pictures: show `visual.src` inline in the Read stage near the evidence, with `visual.alt` as its alt text. They follow `docs/content/VISUALS_SPEC.md`; new pictures must too.
+- Section checks (`content/quizzes/<section>.json`): one question at a time, shuffled options with per-option feedback, an optional `stimulus` (a short made-up example) shown above the question, and a results message chosen by score (high: at least 8 of 10 or 10 of 12; low: under half; otherwise middle). Questions are written to `docs/content/QUIZ_SPEC.md`.
 
 ## Data kept on the device
 

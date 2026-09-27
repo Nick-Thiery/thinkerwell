@@ -24,11 +24,11 @@ Read CLAUDE.md, docs/PRODUCT.md and docs/design-system/README.md first.
 
 Set up the project for Thinkerwell as described in CLAUDE.md. Don't build any screens yet.
 
-1. Scaffold Vite + React + TypeScript (strict) with React Router, Vitest and Playwright. Use npm. Add scripts: dev, build, preview, test, test:e2e, lint, typecheck, check:content (runs python3 scripts/check_lesson.py content/lessons/*.json).
+1. Scaffold Vite + React + TypeScript (strict) with React Router, Vitest and Playwright. Use npm. Add scripts: dev, build, preview, test, test:e2e, lint, typecheck, check:content (runs python3 scripts/check_lesson.py content/lessons/*.json and python3 scripts/check_quiz.py content/quizzes/*.json).
 2. Styles: copy docs/design-system/tokens.css to src/styles/tokens.css. Create src/styles/global.css (reset, body font, the canvas background, focus ring from the design system, prefers-reduced-motion). Use CSS logical properties throughout.
 3. Fonts: self-host Funnel Display, Atkinson Hyperlegible Next and Eczar (Fontsource packages if available, otherwise files in public/fonts). No requests to Google at runtime.
 4. i18n: a tiny typed message helper reading src/i18n/messages/en.json, with lang and dir set on <html>. Add a dev-only way to force dir="rtl" so we can check layouts.
-5. Content layer: zod schemas in src/content/schema.ts for content/course.json and content/lessons/*.json exactly as they are now (read a few files and docs/content/SPEC.md section 3). Load them at build time (import.meta.glob) and export typed getters: getCourse(), getSections(), getLessons(), getLesson(id), getLessonByOldId(oldId), getNextLesson(id). Add a Vitest test that parses every lesson and fails on any schema error.
+5. Content layer: zod schemas in src/content/schema.ts for content/course.json, content/lessons/*.json and content/quizzes/*.json exactly as they are now (read a few files and docs/content/SPEC.md section 3). Load them at build time (import.meta.glob) and export typed getters: getCourse(), getSections(), getLessons(), getLesson(id), getLessonByOldId(oldId), getNextLesson(id). Add a Vitest test that parses every lesson and fails on any schema error.
 6. Storage: src/storage/ with a typed IndexedDB wrapper (idb) for learners, progress, quizAttempts, recordings and settings as listed in CLAUDE.md, with a schema version and a migration hook. Unit-test it with fake-indexeddb.
 7. App shell: routes for /, /course, /lesson/:id/:stage, /section/:id/check, /journal, /educators, /about and a friendly 404, each rendering a placeholder heading. Redirect old Base44 lesson URLs (/lesson/l6 and so on, using oldId) to the new ones.
 8. Add a short README.md with how to run everything.
@@ -104,7 +104,7 @@ Build /lesson/:id/:stage for all 24 lessons from content/lessons/*.json, one tem
 - Reflect: required and optional prompts; answering the required one completes the lesson.
 - Lesson complete screen and "next lesson" from the course order.
 - Everything saves to src/storage per learner. Look-around mode works but saves nothing.
-- The lesson's `visual` field may be null or may later have an `src`; show nothing until an SVG exists.
+- Show each lesson's picture (visual.src, an SVG in content/visuals/) on the Read stage next to the evidence, with visual.alt as alt text, scaled to the reading column.
 
 Add Playwright tests that go through Lesson 10 end to end, and a quick test that every lesson's every stage renders without errors. Stop when they pass at 390, 820 and 1280px. Open a pull request.
 ```
@@ -161,7 +161,7 @@ claude --model claude-sonnet-5 --effort medium
 ```text
 Read CLAUDE.md. Screens: docs/screens/QuizIntro, QuizQuestion, QuizResults, PhoneQuiz, Journal, Educators and About (.dc.html).
 
-1. Section checks at /section/:id/check from content/quizzes/<section>.json. If a quiz file doesn't exist yet, show the intro with "Coming soon" and don't break. Flow: intro, one question at a time with a progress bar, feedback after each answer, results with the score, the lessons to review for missed questions, and "Try again". No timer, never blocks anything. Save attempts per learner (best and latest).
+1. Section checks at /section/:id/check from content/quizzes/<section>.json (see the "Section checks" note in CLAUDE.md). Flow: intro, one question at a time with a progress bar, feedback after each answer, results with the score, the lessons to review for missed questions, and "Try again". No timer, never blocks anything. Save attempts per learner (best and latest).
 2. Journal (/journal): all saved writing and reflections for the current learner, newest first, grouped by lesson, editable, with print.
 3. Educators (/educators) and About (/about) exactly as the screens, with text in en.json. Keep "[FEEDBACK EMAIL]" as a visible placeholder. About names Justin Park (founder and CEO) and Nick (CTO) with a placeholder photo for Nick.
 4. Friendly 404.
@@ -197,4 +197,3 @@ Write a short docs/LAUNCH_CHECKLIST.md with what you checked and anything left f
 
 - **Measurement for the pilot** (after HELP confirms consent): `claude --model claude-opus-5-5 --effort high`. Build what `docs/research/MEASUREMENT_PLAN.md` describes: pilot codes, consent screen for educators, the pre and post check, an IndexedDB event queue, `POST /api/events` as a Vercel Function writing to Postgres, and a simple export for the team. Nothing identifying; learner names never leave the device.
 - **Translation**: `claude --model claude-opus-5-5 --effort high`. Language picker, translated UI strings, an Arabic-script font, right-to-left layouts, and a first-language glossary.
-- **Pictures and quizzes**: when `content/visuals/` and `content/quizzes/` arrive, `claude --model claude-sonnet-5 --effort low` is enough to wire them in.
