@@ -10,6 +10,26 @@ async function openSettingsFromHeader(page: Page): Promise<void> {
   await page.getByRole('link', { name: 'Settings', exact: true }).click();
 }
 
+/** settings.saveData as stored on the device. */
+async function storedSaveData(page: Page): Promise<unknown> {
+  return page.evaluate(
+    () =>
+      new Promise((resolve, reject) => {
+        const open = indexedDB.open('thinkerwell');
+        open.onerror = () => reject(new Error('IndexedDB open failed'));
+        open.onsuccess = () => {
+          const db = open.result;
+          const get = db.transaction('settings').objectStore('settings').get('device');
+          get.onsuccess = () => {
+            db.close();
+            resolve((get.result as { saveData?: unknown } | undefined)?.saveData);
+          };
+          get.onerror = () => reject(new Error('IndexedDB read failed'));
+        };
+      }),
+  );
+}
+
 test('Settings is in the header menu, apart from the five main links', async ({ page }) => {
   await page.goto('/course');
   await openSettingsFromHeader(page);
@@ -34,6 +54,10 @@ test('Save data turns the videos off: Watch opens on the written version', async
   await expect(saveData).toBeEnabled();
   await expect(saveData).not.toBeChecked();
   await saveData.check();
+  // Saved on the device (IndexedDB), then still on after a reload.
+  await expect.poll(() => storedSaveData(page)).toBe(true);
+  await page.reload();
+  await expect(page.getByRole('checkbox', { name: 'Save data' })).toBeChecked();
 
   await page.goto('/lesson/towns-near-rivers/watch');
   await expect(page.getByText('Videos are off to save data.')).toBeVisible();
