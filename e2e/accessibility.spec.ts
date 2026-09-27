@@ -71,6 +71,15 @@ async function weakFocusRings(page: Page): Promise<string[]> {
   });
 }
 
+/** Elements marked hidden that a component's own display rule shows anyway. */
+async function shownHiddenElements(page: Page): Promise<string[]> {
+  return page.evaluate(() =>
+    Array.from(document.querySelectorAll('[hidden]'))
+      .filter((el) => getComputedStyle(el).display !== 'none')
+      .map((el) => el.outerHTML.slice(0, 120)),
+  );
+}
+
 const SIZES = [
   { name: 'phone', viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true },
   { name: 'laptop', viewport: { width: 1280, height: 800 }, isMobile: false, hasTouch: false },
@@ -87,6 +96,7 @@ for (const size of SIZES) {
         expect.soft(violations, `${stop.name}:\n${violations.join('\n')}`).toEqual([]);
         const rings = await weakFocusRings(page);
         expect.soft(rings, `${stop.name}: focus rings`).toEqual([]);
+        expect.soft(await shownHiddenElements(page), `${stop.name}: hidden elements that show`).toEqual([]);
       });
     });
   });

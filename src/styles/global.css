@@ -60,6 +60,16 @@ h4 {
   text-wrap: balance;
 }
 
+/*
+ * An element with the hidden attribute stays hidden even when a component
+ * gives it display: flex or grid (the browser's own [hidden] rule loses to
+ * any author display). The Educators page's teaching notes were always open
+ * because of this (phase 8).
+ */
+[hidden] {
+  display: none !important;
+}
+
 ul[role="list"],
 ol[role="list"] {
   list-style: none;
