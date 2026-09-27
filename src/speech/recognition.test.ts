@@ -11,40 +11,67 @@ import {
 
 afterEach(() => restoreSpeechMocks());
 
+/** dictationMode() with the device settings it reads. */
+const mode = (onDeviceConfirmed: boolean, allowOnline: boolean) => dictationMode({ onDeviceConfirmed, allowOnline });
+
 describe('dictationMode', () => {
-  it('is null where the browser has no speech recognition (Firefox, Samsung Internet)', async () => {
+  it('is null where the browser has no speech recognition (Firefox, Samsung Internet)', () => {
     expect(hasSpeechRecognition()).toBe(false);
-    expect(await dictationMode(false)).toBeNull();
-    expect(await dictationMode(true)).toBeNull();
+    for (const confirmed of [false, true]) {
+      expect(mode(confirmed, false)).toBeNull();
+      expect(mode(confirmed, true)).toBeNull();
+    }
     expect(createRecognition('online')).toBeNull();
   });
 
-  it('uses the device when English recognition is ready there (Chrome and Edge on desktop)', async () => {
+  it('uses the device once an educator confirmed it there (Chrome on a laptop), without asking the browser', () => {
     const mock = mockSpeechRecognition({ availability: 'available' });
-    expect(await dictationMode(false)).toBe('on-device');
-    expect(await dictationMode(true)).toBe('on-device');
-    expect(mock.available).toHaveBeenCalledWith({ langs: [DICTATION_LANG], processLocally: true, quality: 'dictation' });
+    expect(mode(true, false)).toBe('on-device');
+    expect(mode(true, true)).toBe('on-device');
+    expect(mock.available).not.toHaveBeenCalled();
+    expect(mock.instances).toHaveLength(0);
   });
 
-  it('is null until the language pack is on the device, unless online is allowed', async () => {
-    for (const availability of ['downloadable', 'downloading', 'unavailable'] as const) {
-      mockSpeechRecognition({ availability });
-      expect(await dictationMode(false)).toBeNull();
-      expect(await dictationMode(true)).toBe('online');
+  it('is null until an educator confirmed the device, unless online is allowed', () => {
+    const mock = mockSpeechRecognition({ availability: 'available' });
+    expect(mode(false, false)).toBeNull();
+    expect(mode(false, true)).toBe('online');
+    expect(mock.available).not.toHaveBeenCalled();
+    expect(mock.instances).toHaveLength(0);
+  });
+
+  it('only goes online with the setting on where nothing can stay on the device (Safari, Chrome on Android)', () => {
+    // A saved "available" from another browser can't make an engine without processLocally stay on the device.
+    mockSpeechRecognition({ onDevice: false });
+    expect(mode(true, false)).toBeNull();
+    expect(mode(true, true)).toBe('online');
+    restoreSpeechMocks();
+
+    mockSpeechRecognition({ prefixedOnly: true });
+    expect(mode(false, false)).toBeNull();
+    expect(mode(true, false)).toBeNull();
+    expect(mode(false, true)).toBe('online');
+  });
+});
+
+describe('onDeviceDictationStatus (Check this device)', () => {
+  it('asks the browser about English dictation on the device', async () => {
+    for (const availability of ['available', 'downloadable', 'downloading', 'unavailable'] as const) {
+      const mock = mockSpeechRecognition({ availability });
+      expect(await onDeviceDictationStatus()).toBe(availability);
+      expect(mock.available).toHaveBeenCalledWith({ langs: [DICTATION_LANG], processLocally: true, quality: 'dictation' });
+      expect(mock.instances).toHaveLength(0);
       restoreSpeechMocks();
     }
   });
 
-  it('only goes online with the setting on where nothing can stay on the device (Safari, Chrome on Android)', async () => {
+  it('is unsupported where the browser has no on-device option', async () => {
+    expect(await onDeviceDictationStatus()).toBe('unsupported');
     mockSpeechRecognition({ onDevice: false });
     expect(await onDeviceDictationStatus()).toBe('unsupported');
-    expect(await dictationMode(false)).toBeNull();
-    expect(await dictationMode(true)).toBe('online');
     restoreSpeechMocks();
-
     mockSpeechRecognition({ prefixedOnly: true });
-    expect(await dictationMode(false)).toBeNull();
-    expect(await dictationMode(true)).toBe('online');
+    expect(await onDeviceDictationStatus()).toBe('unsupported');
   });
 
   it("treats a browser that never answers as not on the device (Brave's 'downloading' forever)", async () => {

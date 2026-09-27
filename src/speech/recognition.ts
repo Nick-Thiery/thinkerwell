@@ -15,6 +15,13 @@
  *   (settings.partner.allowOnlineDictation).
  * - Neither: Say it is hidden.
  *
+ * Only an educator's tap asks the browser (`onDeviceDictationStatus()`, from
+ * "Check this device" in Settings, which saves the answer in
+ * settings.speechCheck). Lessons decide from that saved answer with
+ * `dictationMode()`, which calls nothing, and make a recognition object only
+ * when the learner taps Say it: in Chromium 153 on touch devices, calling
+ * `available()` as a page opened crashed the tab.
+ *
  * TypeScript's DOM library has no SpeechRecognition yet, so the small part
  * used here is typed below.
  */
@@ -145,6 +152,9 @@ function withTimeout<T>(promise: Promise<T>, ms: number, fallback: T): Promise<T
  *   pack (an educator can start that from Settings);
  * - 'unavailable': this browser can't on this device;
  * - 'unsupported': this browser has no on-device option at all.
+ *
+ * Only from an educator's tap in Settings ("Check this device"), never as a
+ * page opens: see the note at the top of this file.
  */
 export async function onDeviceDictationStatus(): Promise<AvailabilityStatus | 'unsupported'> {
   const ctor = unprefixed();
@@ -174,17 +184,30 @@ export async function installOnDeviceDictation(): Promise<boolean> {
 /** How Say it turns speech into text here: on the device, or with an online service the educator allowed. */
 export type DictationMode = 'on-device' | 'online';
 
-/** The way Say it can work on this device, or null when it can't (the button is hidden). */
-export async function dictationMode(allowOnline: boolean): Promise<DictationMode | null> {
-  if (!hasSpeechRecognition()) return null;
-  if ((await onDeviceDictationStatus()) === 'available') return 'on-device';
-  return allowOnline ? 'online' : null;
+/** What the device settings say about Say it. */
+export interface DictationSettings {
+  /** An educator's "Check this device" found on-device recognition available (settings.speechCheck). */
+  onDeviceConfirmed: boolean;
+  /** "Allow online speech-to-text" is on (settings.partner.allowOnlineDictation). */
+  allowOnline: boolean;
+}
+
+/**
+ * The way Say it can work on this device, or null when it can't (the button
+ * is hidden). It reads the saved settings and whether the browser has the
+ * API, and asks the browser nothing: no available(), no recognition object.
+ */
+export function dictationMode({ onDeviceConfirmed, allowOnline }: DictationSettings): DictationMode | null {
+  if (onDeviceConfirmed && supportsOnDevice(unprefixed())) return 'on-device';
+  if (allowOnline && hasSpeechRecognition()) return 'online';
+  return null;
 }
 
 /**
  * A recognition object set up for dictation, or null if it can't be made.
  * 'on-device' sets processLocally = true, so the browser must not send the
- * audio anywhere (it fails with an error instead).
+ * audio anywhere (it fails with an error instead). Only when the learner
+ * taps Say it.
  */
 export function createRecognition(mode: DictationMode): RecognitionLike | null {
   const ctor = mode === 'on-device' ? unprefixed() : anyRecognition();

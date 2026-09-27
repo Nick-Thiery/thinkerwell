@@ -13,6 +13,7 @@ export {
   onDeviceDictationStatus,
   type AvailabilityStatus,
   type DictationMode,
+  type DictationSettings,
   type RecognitionConstructor,
   type RecognitionLike,
 } from './recognition';

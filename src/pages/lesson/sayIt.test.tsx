@@ -32,6 +32,12 @@ async function allowOnline(): Promise<void> {
   await store.updateSettings({ partner: { allowOnlineDictation: true } });
 }
 
+/** As if an educator ran "Check this device" in Settings and the browser said on-device recognition is ready. */
+async function confirmOnDevice(): Promise<void> {
+  const store = await getStore();
+  await store.updateSettings({ speechCheck: { status: 'available', checkedAt: new Date().toISOString() } });
+}
+
 function WhenReady({ children }: { children: ReactElement }) {
   const { status } = useLessonPlayer();
   return status === 'ready' ? children : null;
@@ -55,7 +61,7 @@ function renderStage(stage: keyof typeof STAGES) {
   );
 }
 
-/** Lets the availability check (a promise) settle. */
+/** Lets anything the stage started settle. */
 async function settle() {
   await act(async () => {
     await new Promise((resolve) => setTimeout(resolve, 0));
@@ -78,8 +84,29 @@ describe('Say it in the lesson', { timeout: 30_000 }, () => {
     view.unmount();
   });
 
-  it('shows on every writing box in Write, Watch and Reflect when it runs on the device', async () => {
+  it('is hidden where the device can do it but nobody has checked it in Settings yet', async () => {
+    const mock = mockSpeechRecognition({ availability: 'available' });
+    const view = renderStage('write');
+    await screen.findAllByRole('textbox');
+    await settle();
+    expect(screen.queryByRole('button', { name: 'Say it' })).not.toBeInTheDocument();
+    expect(mock.available).not.toHaveBeenCalled();
+    view.unmount();
+  });
+
+  it('is hidden where a check in Settings found the device needs the download first', async () => {
+    mockSpeechRecognition({ availability: 'downloadable' });
+    const store = await getStore();
+    await store.updateSettings({ speechCheck: { status: 'downloadable', checkedAt: new Date().toISOString() } });
+    renderStage('write');
+    await screen.findAllByRole('textbox');
+    await settle();
+    expect(screen.queryByRole('button', { name: 'Say it' })).not.toBeInTheDocument();
+  });
+
+  it('shows on every writing box in Write, Watch and Reflect once Settings found it runs on the device', async () => {
     mockSpeechRecognition({ availability: 'available' });
+    await confirmOnDevice();
     const write = renderStage('write');
     expect(await screen.findAllByRole('button', { name: 'Say it' })).toHaveLength(1);
     expect(screen.getByText(/Tap Say it to talk instead of typing/)).toBeInTheDocument();
@@ -103,6 +130,7 @@ describe('Say it in the lesson', { timeout: 30_000 }, () => {
   it("puts spoken words in Write's box, saves them like typing, and a starter goes after them", async () => {
     const user = userEvent.setup();
     const mock = mockSpeechRecognition();
+    await confirmOnDevice();
     const learnerId = await addCurrentLearner();
     renderStage('write');
     const box = await screen.findByRole('textbox', { name: 'Your answer' });
@@ -130,6 +158,7 @@ describe('Say it in the lesson', { timeout: 30_000 }, () => {
   it('explains in the helper line when the microphone is refused', async () => {
     const user = userEvent.setup();
     const mock = mockSpeechRecognition();
+    await confirmOnDevice();
     renderStage('write');
     await user.click(await screen.findByRole('button', { name: 'Say it' }));
     act(() => mock.latest().fail('not-allowed'));
@@ -145,6 +174,7 @@ describe('Say it in the lesson', { timeout: 30_000 }, () => {
   it('a spoken answer to the required Reflect prompt completes the lesson', async () => {
     const user = userEvent.setup();
     const mock = mockSpeechRecognition();
+    await confirmOnDevice();
     const learnerId = await addCurrentLearner();
     renderStage('reflect');
     const required = lesson.reflect.prompts.findIndex((p) => p.required);
@@ -164,6 +194,7 @@ describe('Say it in the lesson', { timeout: 30_000 }, () => {
   it("a spoken answer to Watch's after question counts once listening ends", async () => {
     const user = userEvent.setup();
     const mock = mockSpeechRecognition();
+    await confirmOnDevice();
     const learnerId = await addCurrentLearner();
     renderStage('watch');
     const box = await screen.findByRole('textbox', { name: new RegExp(lesson.watch.afterQuestion.slice(0, 20)) });

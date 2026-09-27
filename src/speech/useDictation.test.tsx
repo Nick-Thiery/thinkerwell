@@ -12,8 +12,16 @@ const latest: { dictation: Dictation | null } = { dictation: null };
 const onDone = vi.fn();
 
 /** Two boxes with Say it buttons, wired as a stage would. */
-function Boxes({ allowOnline = false, initial = ['', ''] }: { allowOnline?: boolean; initial?: string[] }) {
-  const dictation = useDictation(allowOnline);
+function Boxes({
+  onDeviceConfirmed = true,
+  allowOnline = false,
+  initial = ['', ''],
+}: {
+  onDeviceConfirmed?: boolean;
+  allowOnline?: boolean;
+  initial?: string[];
+}) {
+  const dictation = useDictation({ onDeviceConfirmed, allowOnline });
   useEffect(() => {
     latest.dictation = dictation;
   });
@@ -49,13 +57,28 @@ function Boxes({ allowOnline = false, initial = ['', ''] }: { allowOnline?: bool
 }
 
 describe('useDictation', () => {
-  it('hides Say it where nothing can run on the device and online is not allowed', async () => {
-    const mock = mockSpeechRecognition({ availability: 'downloadable' });
-    render(<Boxes />);
-    await waitFor(() => expect(mock.available).toHaveBeenCalled());
+  it('hides Say it until an educator confirmed the device, where online is not allowed', async () => {
+    const mock = mockSpeechRecognition({ availability: 'available' });
+    render(<Boxes onDeviceConfirmed={false} />);
     await act(async () => {});
     expect(screen.queryByRole('button', { name: /say it/i })).not.toBeInTheDocument();
     expect(latest.dictation?.available).toBe(false);
+    expect(mock.available).not.toHaveBeenCalled();
+    expect(mock.instances).toHaveLength(0);
+  });
+
+  it('shows Say it on the device from the saved check alone, and makes a recognition object only on a tap', async () => {
+    const user = userEvent.setup();
+    const mock = mockSpeechRecognition({ availability: 'available' });
+    render(<Boxes />);
+    const sayIt = await screen.findByRole('button', { name: 'Say it 0' });
+    expect(latest.dictation?.mode).toBe('on-device');
+    expect(mock.available).not.toHaveBeenCalled();
+    expect(mock.instances).toHaveLength(0);
+    await user.click(sayIt);
+    expect(mock.instances).toHaveLength(1);
+    expect(mock.latest().processLocally).toBe(true);
+    expect(mock.available).not.toHaveBeenCalled();
   });
 
   it('shows Say it for the online path only when an educator allowed it', async () => {
@@ -156,14 +179,28 @@ describe('useDictation', () => {
     expect(screen.getByTestId('notice-0')).toHaveTextContent('');
   });
 
-  it('checks again after on-device recognition stops working', async () => {
+  it('stops offering on-device recognition on the page once it stops working, without asking the browser', async () => {
     const user = userEvent.setup();
     const mock = mockSpeechRecognition();
     render(<Boxes />);
     await user.click(await screen.findByRole('button', { name: 'Say it 0' }));
-    mock.available.mockResolvedValue('downloadable');
     act(() => mock.latest().fail('service-not-allowed'));
     await waitFor(() => expect(screen.queryByRole('button', { name: /say it/i })).not.toBeInTheDocument());
+    expect(screen.getByTestId('notice-0')).toHaveTextContent('unavailable');
+    expect(mock.available).not.toHaveBeenCalled();
+  });
+
+  it('goes online after on-device recognition stops working, where an educator allowed that', async () => {
+    const user = userEvent.setup();
+    const mock = mockSpeechRecognition();
+    render(<Boxes allowOnline />);
+    await user.click(await screen.findByRole('button', { name: 'Say it 0' }));
+    expect(mock.latest().processLocally).toBe(true);
+    act(() => mock.latest().fail('language-not-supported'));
+    await waitFor(() => expect(latest.dictation?.mode).toBe('online'));
+    await user.click(screen.getByRole('button', { name: 'Say it 0' }));
+    expect(mock.latest().processLocally).toBe(false);
+    expect(mock.available).not.toHaveBeenCalled();
   });
 
   it("lets go after Stop if the browser never says it has ended", async () => {

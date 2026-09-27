@@ -6,10 +6,11 @@
  *   <SayItBox sayIt={sayIt} id={id} label={...} value={text} onValueChange={setText} />
  *   {sayIt.announcer}
  *
- * - The button shows only when speech can be turned into text on this
- *   device, or when an educator allowed the online path in Settings
+ * - The button shows only when an educator's "Check this device" in
+ *   Settings found that speech can be turned into text on this device
+ *   (settings.speechCheck), or when an educator allowed the online path
  *   (settings.partner.allowOnlineDictation). Otherwise the box is a plain
- *   WritingBox.
+ *   WritingBox. Opening a stage never asks the browser anything.
  * - While a box listens, its helper line says so; if listening didn't work,
  *   it says why in plain words until the learner tries again or types.
  * - Words arrive through the box's own onValueChange, exactly like typing,
@@ -44,7 +45,10 @@ const NOTICE_KEYS: Record<DictationNotice, MessageKey> = {
 export function useSayIt(): SayIt {
   const { t } = useI18n();
   const { settings } = useLessonPlayer();
-  const dictation = useDictation(settings.partner.allowOnlineDictation);
+  const dictation = useDictation({
+    onDeviceConfirmed: settings.speechCheck?.status === 'available',
+    allowOnline: settings.partner.allowOnlineDictation,
+  });
   const [lastId, setLastId] = useState<string | null>(null);
 
   const lastNotice = lastId ? dictation.noticeFor(lastId) : null;

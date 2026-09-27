@@ -1,14 +1,19 @@
 /**
  * "Say it": turning a learner's speech into text in a writing box.
  *
- *   const dictation = useDictation(settings.partner.allowOnlineDictation);
+ *   const dictation = useDictation({
+ *     onDeviceConfirmed: settings.speechCheck?.status === 'available',
+ *     allowOnline: settings.partner.allowOnlineDictation,
+ *   });
  *   if (dictation.available) ... show the VoiceButton ...
  *   dictation.toggle({ id: 'answer', value, onChange });
  *
- * - Available only when recognition can run on the device, or when an
- *   educator has allowed the online path (./recognition.ts). Until that is
- *   known, and wherever neither applies, `available` is false and the
- *   button stays hidden.
+ * - Available only when an educator's "Check this device" found that
+ *   recognition runs on the device, or when an educator has allowed the
+ *   online path (./recognition.ts). Wherever neither applies, `available` is
+ *   false and the button stays hidden.
+ * - It never asks the browser as the page opens: no available() call and no
+ *   recognition object until the learner taps Say it (./recognition.ts).
  * - One box listens at a time. Pressing Say it on another box stops the first.
  * - Words go in at the caret the learner last had in that box (or at the
  *   end if they never were in it), replacing only what this listening put
@@ -18,12 +23,13 @@
  * - Leaving the page (or hiding the tab) stops it too.
  * - Nothing is recorded or kept: only the words end up in the box.
  */
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { composeDictation, dictationAnchor, joinTranscript, type DictationAnchor } from './dictationText';
 import {
   createRecognition,
   dictationMode,
   type DictationMode,
+  type DictationSettings,
   type RecognitionErrorEventLike,
   type RecognitionLike,
   type RecognitionResultEventLike,
@@ -88,10 +94,18 @@ function noticeForError(error: string, mode: DictationMode): DictationNotice | n
   }
 }
 
-export function useDictation(allowOnline: boolean): Dictation {
-  const [mode, setMode] = useState<DictationMode | null>(null);
-  /** Bumped to ask again whether (and how) Say it can work, e.g. after an on-device error. */
-  const [check, setCheck] = useState(0);
+export function useDictation({ onDeviceConfirmed, allowOnline }: DictationSettings): Dictation {
+  /**
+   * True once on-device recognition stopped working on this page (the
+   * language pack was removed, say). It isn't offered again here, and the
+   * page doesn't ask the browser again: an educator can check the device
+   * again in Settings.
+   */
+  const [onDeviceFailed, setOnDeviceFailed] = useState(false);
+  const mode = useMemo(
+    () => dictationMode({ onDeviceConfirmed: onDeviceConfirmed && !onDeviceFailed, allowOnline }),
+    [onDeviceConfirmed, onDeviceFailed, allowOnline],
+  );
   const [listeningId, setListeningId] = useState<string | null>(null);
   const [notices, setNotices] = useState<Record<string, DictationNotice>>({});
   const session = useRef<Session | null>(null);
@@ -105,16 +119,6 @@ export function useDictation(allowOnline: boolean): Dictation {
       alive.current = false;
     };
   }, []);
-
-  useEffect(() => {
-    let cancelled = false;
-    void dictationMode(allowOnline).then((next) => {
-      if (!cancelled) setMode(next);
-    });
-    return () => {
-      cancelled = true;
-    };
-  }, [allowOnline, check]);
 
   const setNotice = useCallback((id: string, notice: DictationNotice | null) => {
     setNotices((current) => {
@@ -203,8 +207,9 @@ export function useDictation(allowOnline: boolean): Dictation {
         const notice = noticeForError(event.error, mode);
         if (notice && alive.current) setNotice(current.id, notice);
         // On-device recognition that stops working (the language pack was
-        // removed, say): ask again, so Say it hides if it can't come back.
-        if (mode === 'on-device' && notice === 'unavailable' && alive.current) setCheck((n) => n + 1);
+        // removed, say): stop offering it on this page. Say it hides, or
+        // goes online where an educator allowed that.
+        if (mode === 'on-device' && notice === 'unavailable' && alive.current) setOnDeviceFailed(true);
       };
       recognition.onend = () => {
         if (session.current !== current) return;
