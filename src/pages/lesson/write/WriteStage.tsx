@@ -9,17 +9,21 @@
  * - Planning boxes, the writing box and the self-check save to
  *   progress.writing through the lesson player (typing after a pause,
  *   ticks at once). Guests keep them in memory only.
+ * - The writing box has "Say it" where speech can be turned into text on
+ *   the device (../sayIt.tsx). Dictated words go in at the caret like a
+ *   starter, and are saved like typing.
  * - The example answer shows only after the learner has written something or
  *   asks to see one (CLAUDE.md), and stays open once shown (exampleShown).
  * - Continue marks Write done only when the writing box has text
  *   (src/lesson/progressRules.ts); it never blocks.
  */
-import { useLayoutEffect, useRef, useState, type SyntheticEvent } from 'react';
+import { useCallback, useLayoutEffect, useRef, useState, type SyntheticEvent } from 'react';
 import { Button, Chip, Icon, MascotTip, SegmentedControl, TaskCard, WritingBox } from '../../../components/ds';
 import { useI18n } from '../../../i18n';
 import { hasText, LESSON_PHONE_QUERY, useLessonPlayer, useMediaQuery } from '../../../lesson';
 import type { LessonProgress, WritingProgress } from '../../../storage';
 import { LessonEvidence } from '../evidence/LessonEvidence';
+import { SayItBox, useSayIt } from '../sayIt';
 import { StageActionBar } from '../StageActionBar';
 import { insertStarter } from './insertStarter';
 import './WriteStage.css';
@@ -41,6 +45,7 @@ export function WriteStage() {
 
   const [mode, setMode] = useState<WriteMode>('starters');
   const [evidenceOpen, setEvidenceOpen] = useState(false);
+  const sayIt = useSayIt();
 
   const answerId = `write-answer-${lesson.id}`;
   const evidenceId = `write-evidence-${lesson.id}`;
@@ -57,6 +62,10 @@ export function WriteStage() {
   const rememberCaret = (event: SyntheticEvent<HTMLTextAreaElement>) => {
     caret.current = event.currentTarget.selectionEnd;
   };
+  // After Say it puts words in, a starter goes after them.
+  const rememberDictatedCaret = useCallback((at: number) => {
+    caret.current = at;
+  }, []);
 
   const getAnswerBox = () => document.getElementById(answerId) as HTMLTextAreaElement | null;
 
@@ -87,8 +96,13 @@ export function WriteStage() {
     if (!writing.exampleShown) update(withWriting((w) => ({ ...w, exampleShown: true })), { immediate: true });
   };
 
-  const helper =
-    playerMode === 'learner'
+  const helper = sayIt.available
+    ? playerMode === 'learner'
+      ? t('lessonPlayer.write.helperSavingSayIt')
+      : playerMode === 'look-around'
+        ? t('lessonPlayer.write.helperLookAroundSayIt')
+        : t('lessonPlayer.write.helperNoLearnerSayIt')
+    : playerMode === 'learner'
       ? t('lessonPlayer.write.helperSaving')
       : playerMode === 'look-around'
         ? t('lessonPlayer.write.helperLookAround')
@@ -174,14 +188,15 @@ export function WriteStage() {
         </section>
       ) : null}
 
-      {/* Phase 5 adds "Say it" here: pass `dictate` and `onDictateClick` to this WritingBox when on-device dictation is available. */}
-      <WritingBox
+      <SayItBox
+        sayIt={sayIt}
         id={answerId}
         label={t('lessonPlayer.write.answerLabel')}
         rows={6}
         value={writing.text}
         helper={helper}
         onValueChange={(value) => update(withWriting((w) => ({ ...w, text: value })))}
+        onDictatedCaret={rememberDictatedCaret}
         onSelect={rememberCaret}
         onKeyUp={rememberCaret}
         onClick={rememberCaret}
@@ -231,6 +246,8 @@ export function WriteStage() {
           {t('lessonPlayer.write.tip')}
         </MascotTip>
       ) : null}
+
+      {sayIt.announcer}
 
       <StageActionBar onNext={() => stageEvent({ stage: 'write', kind: 'continue' })} />
     </>

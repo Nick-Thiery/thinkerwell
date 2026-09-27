@@ -1,7 +1,8 @@
 import { useEffect, useId, useRef, useState, type FocusEvent } from 'react';
-import { Button, Icon, StatusBanner, TaskCard, VideoCard, WritingBox } from '../../../components/ds';
+import { Button, Icon, StatusBanner, TaskCard, VideoCard } from '../../../components/ds';
 import { useI18n } from '../../../i18n';
 import { formatDuration, hasText, splitParagraphs, useLessonPlayer } from '../../../lesson';
+import { SayItBox, useSayIt } from '../sayIt';
 import { StageActionBar } from '../StageActionBar';
 import {
   PLAYER_ALLOW,
@@ -86,6 +87,7 @@ export function WatchStage() {
   const writtenHeadingRef = useRef<HTMLHeadingElement>(null);
   const focusNext = useRef<FocusTarget | null>(null);
 
+  const sayIt = useSayIt();
   const ids = useId();
   const thinkId = `${ids}-think`;
   const afterId = `${ids}-after`;
@@ -188,6 +190,8 @@ export function WatchStage() {
   const onAfterBlur = (event: FocusEvent<HTMLTextAreaElement>) => {
     if (hasText(event.currentTarget.value)) stageEvent({ stage: 'watch', kind: 'after-answered' });
   };
+  const beforeBoxId = `${ids}-before`;
+  const afterBoxId = `${ids}-after-answer`;
 
   const duration = watch.durationSeconds === null ? undefined : formatDuration(watch.durationSeconds);
   const videoFailed = shownReason === 'timeout' || shownReason === 'offline' || shownReason === 'unavailable';
@@ -227,8 +231,9 @@ export function WatchStage() {
         <h3 id={thinkId} className="eyebrow tw-watch-eyebrow">
           {t('lessonPlayer.watch.thinkFirst')}
         </h3>
-        <WritingBox
-          id={`${ids}-before`}
+        <SayItBox
+          sayIt={sayIt}
+          id={beforeBoxId}
           label={watch.beforeQuestion}
           optional
           rows={2}
@@ -315,15 +320,19 @@ export function WatchStage() {
         <h3 id={afterId} className="eyebrow tw-watch-eyebrow">
           {t('lessonPlayer.watch.afterEyebrow')}
         </h3>
-        {/* Phase 5: pass `dictate` and `onDictateClick` here for "Say it" (only when on-device speech recognition is available). */}
-        <WritingBox
-          id={`${ids}-after-answer`}
+        <SayItBox
+          sayIt={sayIt}
+          id={afterBoxId}
           label={watch.afterQuestion}
           optional
           rows={3}
           placeholder={t('lessonPlayer.watch.afterPlaceholder')}
           value={progress.watch.afterAnswer}
           onValueChange={(text) => update((p) => ({ ...p, watch: { ...p.watch, afterAnswer: text } }))}
+          // A spoken answer counts like a typed one (which counts on blur).
+          onDictationDone={(text) => {
+            if (hasText(text)) stageEvent({ stage: 'watch', kind: 'after-answered' });
+          }}
           onBlur={onAfterBlur}
         />
       </section>
@@ -338,6 +347,8 @@ export function WatchStage() {
           <p className="body">{watch.contentNote}</p>
         </details>
       ) : null}
+
+      {sayIt.announcer}
 
       <StageActionBar
         onNext={() => stageEvent({ stage: 'watch', kind: 'continue' })}
