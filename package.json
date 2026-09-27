@@ -21,7 +21,8 @@
     "test:e2e:dev": "PLAYWRIGHT_BROWSERS_PATH=0 playwright test --config=playwright.dev.config.ts",
     "test:e2e:install": "PLAYWRIGHT_BROWSERS_PATH=0 playwright install chromium",
     "check:content": "sh scripts/check-content.sh",
-    "size": "node tools/report-sizes.mjs"
+    "size": "node tools/report-sizes.mjs",
+    "perf": "node tools/measure-slow.mjs"
   },
   "dependencies": {
     "@fontsource/atkinson-hyperlegible-next": "^5.3.0",
