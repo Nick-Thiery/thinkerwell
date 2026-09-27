@@ -26,6 +26,12 @@ function isOwnOrigin(url: string, origin: string): boolean {
   return new URL(url).origin === origin;
 }
 
+/** Below about 1100px wide the five nav links live inside the phone menu sheet; open it first when it's there. */
+async function openMobileNavIfPresent(page: Page): Promise<void> {
+  const menuButton = page.getByRole('button', { name: 'Open navigation menu' });
+  if (await menuButton.isVisible()) await menuButton.click();
+}
+
 test('every request stays on the site itself', async ({ page, baseURL }) => {
   const origin = new URL(baseURL ?? 'http://localhost').origin;
   const urls = recordRequests(page);
@@ -36,8 +42,9 @@ test('every request stays on the site itself', async ({ page, baseURL }) => {
     await page.evaluate(() => document.fonts.ready.then(() => undefined));
   }
   // Follow a link too, so client-side navigation is covered.
+  await openMobileNavIfPresent(page);
   await page.getByRole('navigation', { name: 'Main' }).getByRole('link', { name: 'Course' }).click();
-  await expect(page.locator('h1')).toHaveText('Course map');
+  await expect(page.locator('h1')).toHaveText('Exploring Our World');
   await page.waitForLoadState('networkidle');
 
   expect(urls.length).toBeGreaterThan(0);
