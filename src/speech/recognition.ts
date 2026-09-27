@@ -1,0 +1,203 @@
+/**
+ * Speech recognition for "Say it" (dictation), and how to tell whether it
+ * can run on the device. See docs/notes/phase-5.md for browser support.
+ *
+ * - On the device: the Web Speech API's `SpeechRecognition.available()`
+ *   with `processLocally: true` says whether this browser can turn speech
+ *   into text without sending audio anywhere (Chrome and Edge 139+ on
+ *   desktop, once the language pack is on the device). Recognition then
+ *   runs with `processLocally = true`, which the spec says MUST stay on the
+ *   device.
+ * - Online: every other SpeechRecognition (Chrome on Android, Safari,
+ *   Chrome without the language pack, Edge's default) may send the
+ *   learner's voice to the browser maker's service. For children that is
+ *   off unless an educator turns on "Allow online speech-to-text"
+ *   (settings.partner.allowOnlineDictation).
+ * - Neither: Say it is hidden.
+ *
+ * TypeScript's DOM library has no SpeechRecognition yet, so the small part
+ * used here is typed below.
+ */
+
+/** The language Say it listens for. The course is in English; en-US is the language pack browsers ship first. */
+export const DICTATION_LANG = 'en-US';
+
+/** What Say it needs from a recognition engine: long, continuous speech from one person. */
+const DICTATION_QUALITY = 'dictation';
+
+/** How long to wait for the browser to say whether on-device recognition is ready. */
+const AVAILABILITY_TIMEOUT_MS = 3000;
+
+export interface RecognitionAlternativeLike {
+  transcript: string;
+}
+
+export interface RecognitionResultLike {
+  readonly isFinal: boolean;
+  readonly length: number;
+  [index: number]: RecognitionAlternativeLike;
+}
+
+export interface RecognitionResultListLike {
+  readonly length: number;
+  [index: number]: RecognitionResultLike;
+}
+
+export interface RecognitionResultEventLike {
+  readonly resultIndex: number;
+  readonly results: RecognitionResultListLike;
+}
+
+export interface RecognitionErrorEventLike {
+  /** 'no-speech', 'aborted', 'audio-capture', 'network', 'not-allowed', 'service-not-allowed', 'language-not-supported', ... */
+  readonly error: string;
+}
+
+/** The part of a SpeechRecognition instance Say it uses. */
+export interface RecognitionLike {
+  lang: string;
+  continuous: boolean;
+  interimResults: boolean;
+  maxAlternatives: number;
+  processLocally?: boolean;
+  onresult: ((event: RecognitionResultEventLike) => void) | null;
+  onerror: ((event: RecognitionErrorEventLike) => void) | null;
+  onend: (() => void) | null;
+  start(): void;
+  stop(): void;
+  abort(): void;
+}
+
+export type AvailabilityStatus = 'available' | 'downloadable' | 'downloading' | 'unavailable';
+
+interface RecognitionOptions {
+  langs: string[];
+  processLocally?: boolean;
+  quality?: string;
+}
+
+export interface RecognitionConstructor {
+  new (): RecognitionLike;
+  prototype: object;
+  available?: (options: RecognitionOptions) => Promise<AvailabilityStatus>;
+  install?: (options: RecognitionOptions) => Promise<boolean>;
+}
+
+type SpeechWindow = Window & {
+  SpeechRecognition?: RecognitionConstructor;
+  webkitSpeechRecognition?: RecognitionConstructor;
+};
+
+function speechWindow(): SpeechWindow | null {
+  return typeof window === 'undefined' ? null : window;
+}
+
+/** The unprefixed SpeechRecognition, the only one that can be told to stay on the device. */
+function unprefixed(): RecognitionConstructor | null {
+  return speechWindow()?.SpeechRecognition ?? null;
+}
+
+/** Any SpeechRecognition the browser has (Safari and older Chrome only have the webkit one). */
+function anyRecognition(): RecognitionConstructor | null {
+  const w = speechWindow();
+  return w?.SpeechRecognition ?? w?.webkitSpeechRecognition ?? null;
+}
+
+/** True when this browser has some kind of speech recognition. */
+export function hasSpeechRecognition(): boolean {
+  return anyRecognition() !== null;
+}
+
+/**
+ * True when the browser can be asked to keep recognition on the device: an
+ * unprefixed SpeechRecognition with `available()` and a real
+ * `processLocally` property. (Setting processLocally on an engine that
+ * doesn't know it would do nothing, and the audio could go online.)
+ */
+function supportsOnDevice(ctor: RecognitionConstructor | null): ctor is RecognitionConstructor {
+  return !!ctor && typeof ctor.available === 'function' && 'processLocally' in ctor.prototype;
+}
+
+function localOptions(): RecognitionOptions {
+  return { langs: [DICTATION_LANG], processLocally: true, quality: DICTATION_QUALITY };
+}
+
+function withTimeout<T>(promise: Promise<T>, ms: number, fallback: T): Promise<T> {
+  return new Promise<T>((resolve) => {
+    const timer = setTimeout(() => resolve(fallback), ms);
+    promise.then(
+      (value) => {
+        clearTimeout(timer);
+        resolve(value);
+      },
+      () => {
+        clearTimeout(timer);
+        resolve(fallback);
+      },
+    );
+  });
+}
+
+/**
+ * Whether English speech can be turned into text on this device:
+ * - 'available': yes, now;
+ * - 'downloadable' / 'downloading': after the browser downloads a language
+ *   pack (an educator can start that from Settings);
+ * - 'unavailable': this browser can't on this device;
+ * - 'unsupported': this browser has no on-device option at all.
+ */
+export async function onDeviceDictationStatus(): Promise<AvailabilityStatus | 'unsupported'> {
+  const ctor = unprefixed();
+  if (!supportsOnDevice(ctor)) return 'unsupported';
+  try {
+    return await withTimeout(ctor.available!(localOptions()), AVAILABILITY_TIMEOUT_MS, 'unavailable');
+  } catch {
+    return 'unavailable';
+  }
+}
+
+/**
+ * Asks the browser to download what it needs to turn English speech into
+ * text on the device. Only from a tap on the Settings page (for educators):
+ * the download can be large. Resolves true once it is ready.
+ */
+export async function installOnDeviceDictation(): Promise<boolean> {
+  const ctor = unprefixed();
+  if (!supportsOnDevice(ctor) || typeof ctor.install !== 'function') return false;
+  try {
+    return await ctor.install(localOptions());
+  } catch {
+    return false;
+  }
+}
+
+/** How Say it turns speech into text here: on the device, or with an online service the educator allowed. */
+export type DictationMode = 'on-device' | 'online';
+
+/** The way Say it can work on this device, or null when it can't (the button is hidden). */
+export async function dictationMode(allowOnline: boolean): Promise<DictationMode | null> {
+  if (!hasSpeechRecognition()) return null;
+  if ((await onDeviceDictationStatus()) === 'available') return 'on-device';
+  return allowOnline ? 'online' : null;
+}
+
+/**
+ * A recognition object set up for dictation, or null if it can't be made.
+ * 'on-device' sets processLocally = true, so the browser must not send the
+ * audio anywhere (it fails with an error instead).
+ */
+export function createRecognition(mode: DictationMode): RecognitionLike | null {
+  const ctor = mode === 'on-device' ? unprefixed() : anyRecognition();
+  if (!ctor || (mode === 'on-device' && !supportsOnDevice(ctor))) return null;
+  try {
+    const recognition = new ctor();
+    recognition.lang = DICTATION_LANG;
+    recognition.continuous = true;
+    recognition.interimResults = true;
+    recognition.maxAlternatives = 1;
+    if (mode === 'on-device') recognition.processLocally = true;
+    return recognition;
+  } catch {
+    return null;
+  }
+}
