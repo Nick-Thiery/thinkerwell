@@ -304,7 +304,8 @@
   .tw-print-questions > li,
   .tw-print-glossary > div,
   .tw-print-entry,
-  .tw-print-evidence figure {
+  .tw-print-evidence figure,
+  .tw-print-evidence .tw-lx-prompt {
     break-inside: avoid;
   }
 

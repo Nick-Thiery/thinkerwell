@@ -13,6 +13,7 @@ import { AppLayout } from './AppLayout';
 import { LessonPrintRoute } from './LessonPrintRoute';
 import { LessonRoute } from './LessonRoute';
 import { SectionCheckRoute } from './SectionCheckRoute';
+import { TeacherGuideRoute } from './TeacherGuideRoute';
 
 /**
  * Dev-only tools (docs/BUILD_PLAN.md phase 2): a live gallery of every
@@ -87,6 +88,7 @@ export const routes: RouteObject[] = [
       { path: 'journal', element: <JournalPage /> },
       { path: 'journal/print', element: <JournalPrintPage /> },
       { path: 'educators', element: <EducatorsPage /> },
+      { path: 'educators/lesson/:id', element: <TeacherGuideRoute /> },
       { path: 'about', element: <AboutPage /> },
       { path: 'settings', element: <SettingsPage /> },
       // Old Base44 paths.

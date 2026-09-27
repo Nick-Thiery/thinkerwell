@@ -1,0 +1,351 @@
+/*
+ * The teacher guide (/educators/lesson/:id) and the answer key
+ * (/educators/section/:id/answers). Both are built on the print views'
+ * sheet (../print/print.css): paper on the canvas on screen, black text on
+ * white with no header or menus on paper. This file adds what is theirs:
+ * the facts list, the marked boxes, the session plan table, the marked
+ * answers and links that still work on paper.
+ */
+
+.tw-guide-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+/* Label beside value: the facts under the title, the video's details. */
+.tw-guide-facts {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: var(--space-2) var(--space-5);
+}
+
+.tw-guide-facts > div {
+  display: contents;
+}
+
+.tw-guide-facts dt {
+  font-weight: 700;
+}
+
+.tw-guide-facts dd {
+  overflow-wrap: anywhere;
+}
+
+/*
+ * A marked box: sensitive topics, and a video's content note. An icon, a
+ * heading and a heavy ink border mark it, not colour, so it shows the same
+ * on a black-and-white printout.
+ */
+.tw-guide-callout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-5);
+  border: 2px solid var(--ink);
+  border-inline-start-width: 8px;
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+}
+
+.tw-print-sheet .tw-guide-callout h3 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-block-start: 0;
+}
+
+.tw-guide-callout h3 svg {
+  flex: none;
+}
+
+.tw-guide-notes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-guide-question {
+  font-weight: 700;
+}
+
+.tw-guide-example {
+  max-inline-size: var(--reading-measure);
+  padding-inline-start: var(--space-4);
+  border-inline-start: 3px solid var(--line-strong);
+}
+
+/* ------------------------------------------------------------ session plan */
+
+.tw-guide-plan {
+  inline-size: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.tw-guide-plan th,
+.tw-guide-plan td {
+  padding: var(--space-2) var(--space-3);
+  border-block-end: 1px solid var(--line-strong);
+  text-align: start;
+  vertical-align: top;
+  overflow-wrap: break-word;
+}
+
+/* What to do: the one column that may break a long word, so the table never grows wider than a phone. */
+.tw-guide-plan td:nth-child(2) {
+  overflow-wrap: anywhere;
+}
+
+.tw-guide-plan thead th {
+  border-block-end: 2px solid var(--ink);
+}
+
+.tw-guide-plan tfoot th,
+.tw-guide-plan tfoot td {
+  font-weight: 700;
+  border-block-start: 2px solid var(--ink);
+  border-block-end: 0;
+}
+
+.tw-guide-plan .tw-guide-plan-min {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* ------------------------------------------------------------------ answers */
+
+.tw-print-sheet .tw-key-options {
+  list-style: none;
+  padding-inline-start: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-print-sheet .tw-key-options > li + li {
+  margin-block-start: 0;
+}
+
+.tw-key-option {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+}
+
+.tw-key-option-correct {
+  border: 3px solid var(--correct);
+  background: var(--correct-soft);
+}
+
+.tw-key-option-text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+  overflow-wrap: anywhere;
+}
+
+.tw-key-option-correct .tw-key-option-text {
+  font-weight: 700;
+}
+
+.tw-key-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 2px var(--space-2);
+  border: 2px solid var(--correct);
+  border-radius: var(--radius-pill);
+  background: var(--paper);
+  color: var(--correct);
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tw-key-mark svg {
+  flex: none;
+}
+
+.tw-key-feedback {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.tw-key-feedback-label {
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------------------- links */
+
+/* Alone on their line, so a full 44px to tap (CLAUDE.md rule 5). */
+.tw-guide-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: var(--target-min);
+  overflow-wrap: anywhere;
+}
+
+.tw-print-sheet .tw-guide-links {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+.tw-print-sheet .tw-guide-links > li + li {
+  margin-block-start: 0;
+}
+
+@media (max-width: 600px) {
+  .tw-guide-facts {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .tw-guide-facts > div + div > dt {
+    margin-block-start: var(--space-2);
+  }
+
+  .tw-guide-callout {
+    padding: var(--space-3) var(--space-4);
+  }
+
+}
+
+/*
+ * On a phone, four columns leave "What to do" a word wide. Each row becomes
+ * a small grid instead: the step and its minutes on one line, what to do
+ * under them. The header keeps "Step" and the two minute columns; its "What
+ * to do" is left to screen readers, like the total's empty cell. The
+ * table's explicit roles keep it a table for screen readers.
+ */
+@media (max-width: 560px) {
+  .tw-guide-plan,
+  .tw-guide-plan thead,
+  .tw-guide-plan tbody,
+  .tw-guide-plan tfoot {
+    display: block;
+  }
+
+  .tw-guide-plan tr {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) max-content max-content;
+    gap: var(--space-1) var(--space-4);
+    padding-block: var(--space-2);
+    border-block-end: 1px solid var(--line-strong);
+  }
+
+  .tw-guide-plan thead tr {
+    border-block-end: 2px solid var(--ink);
+  }
+
+  .tw-guide-plan tfoot tr {
+    border-block-start: 2px solid var(--ink);
+    border-block-end: 0;
+  }
+
+  .tw-guide-plan th,
+  .tw-guide-plan td,
+  .tw-guide-plan thead th,
+  .tw-guide-plan tfoot th,
+  .tw-guide-plan tfoot td {
+    padding: 0;
+    border: 0;
+  }
+
+  .tw-guide-plan tr > :nth-child(1) {
+    grid-area: 1 / 1;
+  }
+
+  .tw-guide-plan tr > :nth-child(2) {
+    grid-area: 2 / 1 / 3 / -1;
+  }
+
+  .tw-guide-plan tr > :nth-child(3) {
+    grid-area: 1 / 2;
+  }
+
+  .tw-guide-plan tr > :nth-child(4) {
+    grid-area: 1 / 3;
+  }
+
+  .tw-guide-plan .tw-guide-plan-min {
+    min-inline-size: 3.5em;
+  }
+
+  .tw-guide-plan thead th:nth-child(2),
+  .tw-guide-plan tfoot td:nth-child(2) {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
+
+@media print {
+  .tw-guide-facts {
+    gap: 1mm 5mm;
+  }
+
+  .tw-guide-plan {
+    font-size: 9.5pt;
+    line-height: 1.3;
+  }
+
+  .tw-guide-plan th,
+  .tw-guide-plan td {
+    padding: 1.2mm 2mm;
+  }
+
+  /* A teacher needs the picture to talk about it, not to read from: smaller than on the learners' copy, so the evidence can share its page. */
+  .tw-guide .tw-print-evidence img {
+    max-block-size: 90mm;
+  }
+
+  .tw-guide-callout {
+    padding: 3mm 4mm;
+  }
+
+  .tw-key-option {
+    padding: 1.5mm 3mm;
+    gap: 0.5mm;
+  }
+
+  .tw-key-mark,
+  .tw-key-feedback {
+    font-size: 9.5pt;
+    line-height: 1.35;
+  }
+
+  .tw-guide-plan,
+  .tw-guide-callout,
+  .tw-key-option {
+    break-inside: avoid;
+  }
+
+  .tw-print-sheet .tw-key-options {
+    gap: 1.5mm;
+  }
+
+  /* On paper a link can't be tapped: print where it goes. */
+  .tw-guide-link {
+    display: inline;
+    min-block-size: 0;
+  }
+
+  .tw-guide-link::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    overflow-wrap: anywhere;
+  }
+}

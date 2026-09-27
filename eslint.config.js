@@ -49,7 +49,23 @@ export default tseslint.config(
     files: ['src/**/*.tsx'],
     rules: {
       // role="list" on unstyled lists is deliberate: Safari drops list semantics without it.
-      'jsx-a11y/no-redundant-roles': ['error', { ul: ['list'], ol: ['list'] }],
+      // The same for a table laid out as a grid on a phone (the teacher guide's session plan).
+      'jsx-a11y/no-redundant-roles': [
+        'error',
+        {
+          ul: ['list'],
+          ol: ['list'],
+          table: ['table'],
+          thead: ['rowgroup'],
+          tbody: ['rowgroup'],
+          tfoot: ['rowgroup'],
+          tr: ['row'],
+          th: ['columnheader', 'rowheader'],
+          td: ['cell'],
+        },
+      ],
+      // jsx-a11y counts <td> as interactive (a grid cell); role="cell" is its plain table meaning.
+      'jsx-a11y/no-interactive-element-to-noninteractive-role': ['error', { tr: ['none', 'presentation'], canvas: ['img'], td: ['cell'] }],
     },
   },
   {

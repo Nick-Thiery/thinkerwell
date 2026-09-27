@@ -180,7 +180,15 @@ describe('section checks', () => {
 });
 
 describe('not found', () => {
-  it.each(['/lesson/nope/read', '/lesson/nope', '/lesson/towns-near-rivers/quiz', '/section/nope/check', '/whatever', '/lesson/towns-near-rivers/read/extra'])(
+  it.each([
+    '/lesson/nope/read',
+    '/lesson/nope',
+    '/lesson/towns-near-rivers/quiz',
+    '/section/nope/check',
+    '/whatever',
+    '/lesson/towns-near-rivers/read/extra',
+    '/educators/lesson/nope',
+  ])(
     '%s shows the friendly 404',
     (path) => {
       const router = renderAt(path);
