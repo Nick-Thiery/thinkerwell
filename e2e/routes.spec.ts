@@ -100,9 +100,9 @@ test.describe('not found', () => {
     test(`${path} shows the friendly 404 with ways back`, async ({ page }) => {
       await page.goto(path);
       await expect(page.locator('h1')).toHaveCount(1);
-      await expect(page.locator('h1')).toHaveText("We can't find that page");
+      await expect(page.locator('h1')).toHaveText("This page isn't here");
       const main = page.locator('main');
-      await expect(main.getByRole('link', { name: 'Go to home' })).toHaveAttribute('href', '/');
+      await expect(main.getByRole('link', { name: 'Go to the home page' })).toHaveAttribute('href', '/');
       await expect(main.getByRole('link', { name: 'See the course' })).toHaveAttribute('href', '/course');
       expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
 

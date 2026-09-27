@@ -102,6 +102,6 @@ describe('/lesson/:id/print', () => {
 
   it('is not found for an unknown lesson', async () => {
     renderAt('/lesson/nope/print');
-    expect(await screen.findByRole('heading', { level: 1, name: "We can't find that page" })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { level: 1, name: "This page isn't here" })).toBeInTheDocument();
   });
 });

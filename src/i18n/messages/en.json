@@ -50,7 +50,7 @@
       "noLearnerTitle": "Nothing is saved yet.",
       "noLearnerBody": "Choose who's learning to keep your work on this device.",
       "noLearnerAction": "Choose who's learning",
-      "saveError": "Your last change didn't save on this device. Keep going; we'll try again."
+      "saveError": "Your last change didn't save on this device. Keep going: it tries again with your next change."
     },
     "read": {
       "toolsLabel": "Reading tools",
@@ -142,7 +142,7 @@
       "tip": "Stuck? Tap a sentence starter, then fill in the blanks."
     },
     "sayIt": {
-      "listening": "Listening. Speak slowly; your words appear in the box and you can fix them after.",
+      "listening": "Listening. Speak slowly. Your words appear in the box, and you can fix them after.",
       "micBlocked": "Say it needs the microphone. You can allow it in the browser's settings, or type instead.",
       "noMic": "No microphone was found. You can type instead.",
       "offline": "Say it needs the internet on this device. You can type instead.",
@@ -211,7 +211,7 @@
       "summary": "{title} {message}",
       "partwayEyebrow": "Lesson {number}",
       "partwayTitle": "You're partway through Lesson {number}.",
-      "partwayBody": "You've done {done} of {total} steps so far. Answer the first Reflect question to complete it. Nothing is locked, so open any step you like.",
+      "partwayBody": "You've done {done} of {total} steps so far. Answer the first Reflect question to finish it. Nothing is locked, so open any step you like.",
       "partwayCta": "Go to {stage}",
       "badgeProgress": {
         "one": "{title} · {completed} of {count} lesson done",
@@ -247,12 +247,11 @@
       "tileMetaNone": "Not started yet",
       "newLearner": {
         "back": "Back",
-        "step": "Step 1 of 1",
         "eyebrow": "Welcome",
-        "title": "What should we call you?",
+        "title": "What's your name?",
         "nameLabel": "First name or nickname",
         "nameHelper": "No surname needed.",
-        "nameRequired": "Tell us what to call you.",
+        "nameRequired": "Type your name or a nickname.",
         "nameTooLong": "Keep it to about 30 letters.",
         "colourLabel": "Pick your colour",
         "colour": {
@@ -277,19 +276,19 @@
         "action": "Remove",
         "label": "Remove {name}",
         "confirmTitle": "Remove {name}?",
-        "confirmBody": "This deletes their progress, quiz results and recordings from this device. It cannot be undone.",
+        "confirmBody": "This deletes their lesson work, journal, section check scores and recordings from this device. It can't be undone.",
         "confirm": "Remove {name}",
         "cancel": "Keep {name}",
         "error": "That didn't work. Try again."
       },
       "noStorage": {
         "title": "Your work can't be saved on this device",
-        "body": "This browser is blocking on-device storage, often in a private window. You can still look around, but nothing you do will be saved.",
+        "body": "This browser can't save work on this device. This often happens in a private window. You can still look around, but nothing you do is saved.",
         "cta": "Just look around"
       },
       "guest": {
         "title": "Explore the course",
-        "body": "You're looking around, so nothing you do here is saved."
+        "body": "Open any lesson to see how it works."
       },
       "dashboard": {
         "greeting": "Hi {name}",
@@ -302,6 +301,7 @@
         "startHere": "Start here",
         "startCta": "Start",
         "continueEyebrow": "Pick up where you left off",
+        "upNext": "Up next",
         "finishedTitle": "You've finished the course",
         "finishedBody": "You can go back to any lesson, or try the section checks again.",
         "finishedCta": "See the course",
@@ -348,7 +348,7 @@
       "hideLessons": "Hide lessons",
       "sectionCheckRowTitle": "Section check: {title}",
       "sectionCheckQuestion": "Covers Lessons {range}. Try it any time, as often as you like.",
-      "allDoneCheckNotTaken": "All {count} lessons done. Section check not taken yet.",
+      "allDoneCheckReady": "All {count} lessons done. The section check is ready.",
       "lessonsRange": "Lessons {range}"
     },
     "lesson": {
@@ -361,14 +361,14 @@
       "factQuestions": "{count} questions about Lessons {range}",
       "factTime": "No time limit. About {minutes} minutes.",
       "factRetry": "Try as many times as you like",
-      "factPrivate": "Only you see your score",
+      "factPrivate": "Your score stays on this device",
       "factGuest": "Nothing is saved while you look around",
       "tip": "Not sure? Make your best guess. After each question you'll see why the answer is right.",
       "start": "Start the check",
       "lookAtLessons": "Look at the lessons first",
       "questionOf": "Question {n} of {total}",
       "answeredCount": "{count} answered",
-      "saveAndStop": "Save and stop",
+      "stopCheck": "Stop the check",
       "questionEyebrow": "Question {n} · {skill}",
       "skill": {
         "vocabulary": "Words and meanings",
@@ -384,7 +384,7 @@
       "scoreHeading": "{score} out of {total}",
       "retry": "Try the check again",
       "backToCourse": "Back to the course",
-      "savedNote": "Only you can see this score. Your best try is saved.",
+      "savedNote": "Your score is saved on this device.",
       "notSavedNote": "Nothing is saved while you're looking around.",
       "skillsTitle": "How you did, skill by skill",
       "reviewTitle": "Worth another look",
@@ -422,8 +422,8 @@
       "needTitle": "What you need",
       "need1": "One device for every 1 to 3 learners, or one big screen",
       "need2": "Paper and pencils for planning",
-      "need3": "About 30 minutes a lesson",
-      "need4": "Internet only for videos, once a lesson has opened",
+      "need3": "About {min}–{max} minutes a lesson",
+      "need4": "Internet for the first visit, and for videos",
       "settingsLink": "Settings for this device",
       "howTitle": "How a session works",
       "step1Title": "Pick a lesson",
@@ -442,7 +442,7 @@
       "sourcesTitle": "Sources",
       "codesTag": "Pilot partners",
       "codesTitle": "Class codes instead of names",
-      "codesBody": "In the pilot, each learner gets a code like HLP-07. Codes let us see how the whole group is doing without any names. You keep the list that matches names to codes.",
+      "codesBody": "In the pilot, each learner can get a code like HLP-07. Later, codes will let us see how the whole group is doing, without any names. You keep the list that matches names to codes.",
       "feedbackTitle": "Tell us what to fix",
       "feedbackBody": "Something confusing, too hard, or broken? A video that does not play? Email us and we will fix it.",
       "feedbackEmail": "[FEEDBACK EMAIL]"
@@ -480,7 +480,7 @@
         "downloading": "The browser is getting what it needs. Say it appears in lessons once that's done.",
         "downloadFailed": "The download didn't finish. Try again later, on good Wi-Fi.",
         "onlineOnly": "This browser can't turn speech into text on this device. It can only do it by sending what learners say to an online service, so Say it stays hidden unless you allow that below.",
-        "none": "This browser can't turn speech into text, so Say it doesn't show. Recent Chrome or Edge on a laptop can do it on the device.",
+        "none": "This browser can't turn speech into text, so Say it doesn't show. Recent Chrome on a laptop can do it on the device.",
         "download": "Download speech to text",
         "checkAgain": "Check again",
         "allowOnline": "Allow online speech-to-text",
@@ -512,7 +512,7 @@
       "goal17Body": "Working with educators, youth networks and community groups.",
       "goal17Alt": "Sustainable Development Goal 17: Partnerships for the Goals",
       "teamTitle": "Who makes Thinkerwell",
-      "justinRole": "Founder and Director",
+      "justinRole": "Founder and director",
       "justinName": "Justin Park",
       "justinBio": "Justin is a student in Singapore who loves history, sociology and Model United Nations. He started Thinkerwell because learning should not stop at borders, displacement or a lack of resources.",
       "justinAlt": "Justin Park",
@@ -524,15 +524,15 @@
     "placeholder": "This page is coming soon."
   },
   "notFound": {
-    "title": "We can't find that page",
+    "title": "This page isn't here",
     "body": "The link may be old or have a typo. Everything in the course is still here.",
-    "home": "Go to home",
+    "home": "Go to the home page",
     "course": "See the course"
   },
   "routeError": {
     "title": "Something went wrong",
-    "body": "Sorry about that. Try reloading the page, or go back to home. Nothing you had saved is lost.",
-    "home": "Go to home"
+    "body": "Sorry about that. Try opening the page again, or go to the home page. Your saved work is still on this device.",
+    "home": "Go to the home page"
   },
   "header": {
     "switcherTitle": "Switch learner",
@@ -541,7 +541,7 @@
     "backToPicker": "Back to who's learning",
     "lookAroundTitle": "You're looking around",
     "lookAroundBanner": "Nothing you do on this visit is saved.",
-    "chooseLearner": "Choose a learner",
+    "chooseLearner": "Choose who's learning",
     "menuTitle": "Menu",
     "menuClose": "Close menu"
   },
@@ -700,7 +700,7 @@
     "lessonPageTitle": "Lesson {number}: print",
     "backToLesson": "Back to the lesson",
     "learningGoal": "Learning goal:",
-    "lessonIntro": "This is the lesson on paper: both reading levels, the key words and every task, with lines to write on. It prints in black and white, without the menus.",
+    "lessonIntro": "This is the lesson on paper: both reading levels, the key words and every task, with lines to write on. The text prints black on white, without the menus.",
     "readingStandard": "Reading: Standard English",
     "readingSimpler": "Reading: Simpler English",
     "keyWordsNote": "Key words are in bold.",

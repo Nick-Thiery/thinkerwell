@@ -175,11 +175,11 @@ test.describe('new learner flow', () => {
     await expect(page.getByRole('heading', { level: 1, name: "Who's learning today?" })).toBeVisible();
 
     await page.getByRole('button', { name: "I'm new here" }).click();
-    await expect(page.getByRole('heading', { level: 1, name: 'What should we call you?' })).toBeVisible();
+    await expect(page.getByRole('heading', { level: 1, name: "What's your name?" })).toBeVisible();
 
     // The name is required.
     await page.getByRole('button', { name: 'Start Lesson 1' }).click();
-    await expect(page.getByText('Tell us what to call you.')).toBeVisible();
+    await expect(page.getByText('Type your name or a nickname.')).toBeVisible();
 
     await page.getByLabel('First name or nickname').fill('Amina');
     await page.getByRole('radio', { name: 'Green' }).click();
@@ -313,7 +313,7 @@ test.describe('course map opens the learner\'s current section', () => {
     await expect(page.getByRole('heading', { level: 1, name: 'Exploring Our World' })).toBeVisible();
     await expect(page.getByRole('link', { name: /Lesson 10:.*In progress\./ })).toBeVisible();
     await expect(page.getByRole('link', { name: /Lesson 1:.*Completed\./ })).toBeHidden();
-    await expect(page.getByText('All 9 lessons done. Section check not taken yet.')).toBeVisible();
+    await expect(page.getByText('All 9 lessons done. The section check is ready.')).toBeVisible();
 
     // The disclosure button for the collapsed section stays focusable and
     // keeps keyboard focus when toggled (r2-checks-2 / r2-rules-2), rather
@@ -389,7 +389,7 @@ test.describe('look-around mode saves nothing', () => {
     await page.goto('/');
     await page.getByRole('button', { name: 'Just look around (nothing is saved)' }).click();
     await expect(page.getByRole('heading', { level: 1, name: 'Explore the course' })).toBeVisible();
-    await expect(page.getByText("You're looking around, so nothing you do here is saved.")).toBeVisible();
+    await expect(page.getByText('Open any lesson to see how it works.')).toBeVisible();
 
     // A real client-side navigation (not page.goto): the header's own "Course"
     // link, opening the phone menu sheet first where the nav is hidden behind
@@ -424,7 +424,7 @@ test.describe('look-around mode saves nothing', () => {
   test('?preview=true starts look-around straight away and shows the note', async ({ page }) => {
     await page.goto('/course?preview=true');
     await expect(page.getByText("You're looking around", { exact: true })).toBeVisible();
-    await expect(page.getByRole('button', { name: 'Choose a learner' })).toBeVisible();
+    await expect(page.getByRole('button', { name: "Choose who's learning" })).toBeVisible();
     const db = await dumpDb(page);
     expect(db.learners).toEqual([]);
   });
@@ -530,7 +530,7 @@ test.describe('keyboard only', () => {
     const newTile = page.getByRole('button', { name: "I'm new here" });
     await tabUntilFocused(page, newTile);
     await page.keyboard.press('Enter');
-    await expect(page.getByRole('heading', { level: 1, name: 'What should we call you?' })).toBeVisible();
+    await expect(page.getByRole('heading', { level: 1, name: "What's your name?" })).toBeVisible();
 
     const nameField = page.getByLabel('First name or nickname');
     await tabUntilFocused(page, nameField);

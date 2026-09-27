@@ -58,7 +58,7 @@ test('a full section check: intro, ten questions with feedback, results, and a s
   await expect(page.getByRole('heading', { level: 2, name: 'Worth another look' })).toBeVisible();
   const reviewLink = page.getByRole('link', { name: new RegExp(`^Question \\d+: ${escapeRegExp(Q1_TEXT)}`) });
   await expect(reviewLink).toHaveAttribute('href', '/lesson/towns-near-rivers/read');
-  await expect(page.getByText('Your best try is saved.')).toBeVisible();
+  await expect(page.getByText('Your score is saved on this device.')).toBeVisible();
 
   const dump = await dumpEverything(page);
   const record = (dump.stores['quizAttempts'] as QuizAttemptRecord[] | undefined)?.find((r) => r.sectionId === 'geography');

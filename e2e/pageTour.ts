@@ -239,7 +239,7 @@ export const pageTour: TourStop[] = [
   },
   {
     name: 'not found',
-    go: (page) => openPath(page, '/whatever', "We can't find that page"),
+    go: (page) => openPath(page, '/whatever', "This page isn't here"),
   },
   {
     name: "home (who's learning, with a learner)",

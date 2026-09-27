@@ -111,7 +111,7 @@ describe('SectionCheckPage', () => {
     ).toBeInTheDocument();
     expect(screen.getByText(quiz.results.high)).toBeInTheDocument();
     expect(screen.queryByText('Worth another look')).not.toBeInTheDocument();
-    expect(screen.getByText(/Your best try is saved/)).toBeInTheDocument();
+    expect(screen.getByText('Your score is saved on this device.')).toBeInTheDocument();
 
     const store = await getStore();
     await waitFor(async () => {

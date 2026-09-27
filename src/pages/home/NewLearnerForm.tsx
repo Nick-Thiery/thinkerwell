@@ -101,7 +101,6 @@ export function NewLearnerForm({ lesson1, onBack, onSubmit }: NewLearnerFormProp
           <Button variant="ghost" icon="ArrowLeft" onClick={onBack}>
             {t('pages.home.newLearner.back')}
           </Button>
-          <span className="small">{t('pages.home.newLearner.step')}</span>
         </div>
         <div className="tw-home-panel-intro">
           <span className="eyebrow">{t('pages.home.newLearner.eyebrow')}</span>

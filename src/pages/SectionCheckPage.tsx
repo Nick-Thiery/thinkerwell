@@ -27,7 +27,7 @@ type Screen = 'intro' | 'question' | 'results';
  *
  * Only a completed attempt is ever saved (CLAUDE.md's on-device data keeps
  * the best and the latest of each section's attempts, not a draft), and
- * only for a chosen learner — "Save and stop" and every guest visit
+ * only for a chosen learner — "Stop the check" and every guest visit
  * (looking around, or nobody chosen yet) leave nothing behind.
  *
  * Unlike the course map or the dashboard, this shows its intro right away

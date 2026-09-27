@@ -31,6 +31,9 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
   const currentSectionId = target ? getLessonSection(target.lesson).id : undefined;
   const journalEntry = latestJournalEntry(lessons, progress);
   const isNewLearner = completedCount === 0 && progress.size === 0;
+  // "Pick up where you left off" only for a lesson the learner has opened
+  // work in; the next lesson after the last one finished is "Up next".
+  const targetStarted = target ? progress.has(target.lesson.id) : false;
   const { offline } = useServiceWorker();
 
   const summary = !target
@@ -77,12 +80,18 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
       {target ? (
         <ContinueCard
           title={target.lesson.title}
-          eyebrow={t(isNewLearner ? 'pages.home.dashboard.startHere' : 'pages.home.dashboard.continueEyebrow')}
+          eyebrow={t(
+            isNewLearner
+              ? 'pages.home.dashboard.startHere'
+              : targetStarted
+                ? 'pages.home.dashboard.continueEyebrow'
+                : 'pages.home.dashboard.upNext',
+          )}
           lessonLabel={t('pages.course.lessonLabel', { number: target.lesson.number, section: getLessonSection(target.lesson).title })}
           done={stagesDoneForLesson(progress.get(target.lesson.id))}
           current={target.stage}
           stageLabel={t('lesson.nextStep', { stage: t(`stages.${target.stage}`) })}
-          cta={isNewLearner ? t('pages.home.dashboard.startCta') : undefined}
+          cta={isNewLearner || !targetStarted ? t('pages.home.dashboard.startCta') : undefined}
           href={lessonPath(target.lesson.id, target.stage)}
         />
       ) : (

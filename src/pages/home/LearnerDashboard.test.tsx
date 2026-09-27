@@ -1,8 +1,9 @@
 import { act, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import { afterEach, describe, expect, it, vi } from 'vitest';
+import { getLessons, type Lesson } from '../../content';
 import { connectServiceWorker, resetServiceWorkerForTests } from '../../offline';
-import type { Learner } from '../../storage';
+import { emptyProgress, type Learner, type LessonProgress } from '../../storage';
 import { LearnerDashboard } from './LearnerDashboard';
 
 const learner: Learner = { id: 'a', name: 'Amina', colour: 'lemon', createdAt: '2026-09-01T00:00:00.000Z' };
@@ -61,5 +62,36 @@ describe('LearnerDashboard: offline badge', () => {
     renderDashboard();
     expect(screen.queryByText(/offline/)).not.toBeInTheDocument();
     expect(screen.getByText('Saved on this device')).toBeInTheDocument();
+  });
+});
+
+describe('LearnerDashboard: the continue card', () => {
+  const [first, second] = getLessons() as [Lesson, Lesson];
+  const finished: LessonProgress = {
+    ...emptyProgress('a', first.id),
+    stagesDone: ['read', 'write', 'speak', 'watch', 'reflect'],
+    completedAt: '2026-09-02T00:00:00.000Z',
+  };
+
+  function renderWith(progress: Map<string, LessonProgress>) {
+    return render(
+      <MemoryRouter>
+        <LearnerDashboard learner={learner} progress={progress} />
+      </MemoryRouter>,
+    );
+  }
+
+  it('offers the next lesson as "Up next" with Start when it has not been opened', () => {
+    renderWith(new Map([[first.id, finished]]));
+    expect(screen.getByText('Up next')).toBeInTheDocument();
+    expect(screen.queryByText('Pick up where you left off')).not.toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /Start/ })).toHaveAttribute('href', expect.stringContaining(second.id));
+  });
+
+  it('says "Pick up where you left off" with Continue for a lesson with work in it', () => {
+    const started: LessonProgress = { ...emptyProgress('a', second.id), stagesDone: ['read'], currentStage: 'write' };
+    renderWith(new Map([[first.id, finished], [second.id, started]]));
+    expect(screen.getByText('Pick up where you left off')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /Continue/ })).toHaveAttribute('href', expect.stringContaining(second.id));
   });
 });

@@ -79,7 +79,7 @@ export function QuizQuestionScreen({
           valueLabel={t('pages.sectionCheck.answeredCount', { count: answeredCount })}
         />
         <Button variant="ghost" icon="LogOut" href={`/course#${section.id}`}>
-          {t('pages.sectionCheck.saveAndStop')}
+          {t('pages.sectionCheck.stopCheck')}
         </Button>
       </div>
       <div className="tw-quiz-question-col">

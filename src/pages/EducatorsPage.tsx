@@ -21,7 +21,11 @@ export function EducatorsPage() {
   const sections = getSections();
   const [sectionId, setSectionId] = useState<SectionId>(sections[0]!.id);
   const lessons = getSectionLessons(sectionId);
-  const firstLessonId = getLessons()[0]!.id;
+  const allLessons = getLessons();
+  const firstLessonId = allLessons[0]!.id;
+  // The same range the course page shows ("About 25–50 min a lesson").
+  const minMinutes = Math.min(...allLessons.map((lesson) => lesson.estimatedMinutes[0]));
+  const maxMinutes = Math.max(...allLessons.map((lesson) => lesson.estimatedMinutes[1]));
 
   return (
     <div className="tw-edu-page">
@@ -56,7 +60,7 @@ export function EducatorsPage() {
           </span>
           <span className="tw-edu-need-item">
             <Icon name="Clock" size={22} />
-            {t('pages.educators.need3')}
+            {t('pages.educators.need3', { min: minMinutes, max: maxMinutes })}
           </span>
           <span className="tw-edu-need-item">
             <Icon name="WifiOff" size={22} />

@@ -6,7 +6,7 @@ describe('AboutPage', () => {
   it('names Justin Park as founder and director, with his photo', () => {
     render(<AboutPage />);
     expect(screen.getByRole('heading', { level: 3, name: 'Justin Park' })).toBeInTheDocument();
-    expect(screen.getByText('Founder and Director')).toBeInTheDocument();
+    expect(screen.getByText('Founder and director')).toBeInTheDocument();
     expect(screen.getByRole('img', { name: 'Justin Park' })).toHaveAttribute('src', '/images/founder-justin-park.jpg');
   });
 

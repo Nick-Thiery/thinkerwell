@@ -55,7 +55,7 @@ export function SectionCard({ section, lessons, progress, highlightLessonId, hid
       <div className="tw-course-section-meta">
         {expanded ? null : (
           <p className="body tw-course-section-summary">
-            {hideProgress || !allDone ? t('pages.course.lessonsRange', { range }) : t('pages.course.allDoneCheckNotTaken', { count: total })}
+            {hideProgress || !allDone ? t('pages.course.lessonsRange', { range }) : t('pages.course.allDoneCheckReady', { count: total })}
           </p>
         )}
         <div className="tw-course-section-meta-actions">

@@ -150,6 +150,11 @@
   margin: 0;
 }
 
+/* The "Pilot partners" tag keeps its own width instead of stretching across the card. */
+.tw-edu-card > .tw-badge {
+  align-self: flex-start;
+}
+
 .tw-edu-card-feedback {
   background: var(--lavender);
   border-color: transparent;
