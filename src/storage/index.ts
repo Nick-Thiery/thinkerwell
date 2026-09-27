@@ -24,3 +24,17 @@ export {
   requestPersistentStorage,
   type ThinkerwellStore,
 } from './store';
+export {
+  findContinueTarget,
+  isLessonComplete,
+  latestJournalEntry,
+  nextStageForLesson,
+  progressByLessonId,
+  sectionProgress,
+  stagesDoneForLesson,
+  totalLessonsCompleted,
+  type ContinueTarget,
+  type JournalEntry,
+  type ProgressByLessonId,
+  type SectionProgress,
+} from './progress';

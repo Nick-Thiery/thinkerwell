@@ -71,7 +71,7 @@ describe('schema', () => {
 
   it('keeps data when opened again at the same version', async () => {
     const first = await openStore(name);
-    const learner = await first.addLearner({ name: 'Amina', colour: 'lavender' });
+    const learner = await first.addLearner({ name: 'Amina', colour: 'lemon' });
     await first.markStageDone(learner.id, 'towns-near-rivers', 'read');
     await first.updateSettings({ saveData: true });
     await first.setCurrentLearnerId(learner.id);
