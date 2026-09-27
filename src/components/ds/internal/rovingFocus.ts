@@ -8,13 +8,16 @@ import { useEffect, type RefObject } from 'react';
  * elements matching `selector` inside `event.currentTarget`'s nearest
  * ancestor matching `groupSelector`.
  *
- * Horizontal groups answer to ArrowLeft/ArrowRight, vertical ones to
- * ArrowUp/ArrowDown; Home/End jump to the first/last. `KeyboardEvent.key`
- * names are never mirrored by the browser for right-to-left text, so a
- * horizontal group reads its own computed `direction` and swaps which key
- * means "next" when it is `rtl`.
+ * Every group answers to all four arrow keys, as the WAI-ARIA APG radio
+ * group pattern asks (phase 8: a row of chips used to ignore ArrowDown, the
+ * key many keyboard users try first): ArrowDown and ArrowRight move to the
+ * next item, ArrowUp and ArrowLeft to the previous one; Home/End jump to
+ * the first/last. `KeyboardEvent.key` names are never mirrored by the
+ * browser for right-to-left text, so the group reads its own computed
+ * `direction` and swaps ArrowLeft and ArrowRight when it is `rtl`.
  */
 export interface RovingFocusOptions {
+  /** How the group is laid out. Kept for callers; every arrow key works either way. */
   orientation?: 'horizontal' | 'vertical';
   groupSelector?: string;
   itemSelector?: string;
@@ -31,14 +34,6 @@ export interface RovingFocusOptions {
   activation?: 'auto' | 'manual';
 }
 
-const NEXT_KEYS: Record<'horizontal' | 'vertical', string> = {
-  horizontal: 'ArrowRight',
-  vertical: 'ArrowDown',
-};
-const PREV_KEYS: Record<'horizontal' | 'vertical', string> = {
-  horizontal: 'ArrowLeft',
-  vertical: 'ArrowUp',
-};
 
 function isRtl(el: Element): boolean {
   return getComputedStyle(el).direction === 'rtl';
@@ -51,7 +46,6 @@ function isRtl(el: Element): boolean {
 export function handleRovingKeyDown(
   event: { key: string; currentTarget: HTMLElement; preventDefault: () => void },
   {
-    orientation = 'horizontal',
     groupSelector = '[role="radiogroup"], [role="group"]',
     itemSelector = '[role="radio"]',
     activation = 'auto',
@@ -63,19 +57,15 @@ export function handleRovingKeyDown(
   const currentIndex = items.indexOf(event.currentTarget);
   if (currentIndex === -1) return false;
 
-  let nextKey = NEXT_KEYS[orientation];
-  let prevKey = PREV_KEYS[orientation];
-  if (orientation === 'horizontal' && isRtl(group)) {
-    // In right-to-left, the next item sits visually to the left, so the
-    // key that moves "forward" through the group is ArrowLeft, not
-    // ArrowRight.
-    nextKey = PREV_KEYS[orientation];
-    prevKey = NEXT_KEYS[orientation];
-  }
+  // In right-to-left, the next item sits visually to the left, so the
+  // key that moves "forward" through the group is ArrowLeft, not ArrowRight.
+  const rtl = isRtl(group);
+  const nextKeys = ['ArrowDown', rtl ? 'ArrowLeft' : 'ArrowRight'];
+  const prevKeys = ['ArrowUp', rtl ? 'ArrowRight' : 'ArrowLeft'];
 
   let nextIndex: number | null = null;
-  if (event.key === nextKey) nextIndex = (currentIndex + 1) % items.length;
-  else if (event.key === prevKey) nextIndex = (currentIndex - 1 + items.length) % items.length;
+  if (nextKeys.includes(event.key)) nextIndex = (currentIndex + 1) % items.length;
+  else if (prevKeys.includes(event.key)) nextIndex = (currentIndex - 1 + items.length) % items.length;
   else if (event.key === 'Home') nextIndex = 0;
   else if (event.key === 'End') nextIndex = items.length - 1;
 

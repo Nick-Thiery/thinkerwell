@@ -85,6 +85,18 @@ describe('Chip (role="radio")', () => {
     expect(screen.getByRole('radio', { name: 'Near the river' })).toHaveFocus();
   });
 
+  it('also moves with ArrowDown and ArrowUp, as a radio group should', async () => {
+    const user = userEvent.setup();
+    render(<RadioChips />);
+
+    screen.getByRole('radio', { name: 'Near the river' }).focus();
+    await user.keyboard('{ArrowDown}');
+    expect(screen.getByRole('radio', { name: 'On the hill' })).toHaveFocus();
+    expect(screen.getByRole('radio', { name: 'On the hill' })).toHaveAttribute('aria-checked', 'true');
+    await user.keyboard('{ArrowUp}');
+    expect(screen.getByRole('radio', { name: 'Near the river' })).toHaveFocus();
+  });
+
   it('gives only the checked chip a tab stop', () => {
     render(<RadioChips />);
     expect(screen.getByRole('radio', { name: 'Near the river' })).toHaveAttribute('tabIndex', '0');

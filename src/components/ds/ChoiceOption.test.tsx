@@ -99,6 +99,19 @@ describe('ChoiceOption', () => {
     expect(options[2]).toHaveAttribute('aria-checked', 'false');
   });
 
+  it('also moves with ArrowRight and ArrowLeft, still without answering', async () => {
+    const user = userEvent.setup();
+    const options = renderOptions();
+
+    options[0]!.focus();
+    await user.keyboard('{ArrowRight}');
+    expect(options[1]).toHaveFocus();
+    expect(options[1]).toHaveAttribute('aria-checked', 'false');
+    await user.keyboard('{ArrowLeft}');
+    expect(options[0]).toHaveFocus();
+    expect(options[0]).toHaveAttribute('aria-checked', 'false');
+  });
+
   it('selects the focused option with Space or Enter, after arrowing to it', async () => {
     const user = userEvent.setup();
     const options = renderOptions();
