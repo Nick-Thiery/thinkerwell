@@ -11,7 +11,25 @@
     <title>Thinkerwell</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!--
+        Shown until the app starts, then replaced by it (phase 8): on a slow
+        connection the scripts take seconds, and until they run the page
+        would be blank. This is the header's lemon bar with the mascot, drawn
+        by the site's own stylesheet, so the page looks like Thinkerwell as
+        soon as the CSS arrives (on Slow 3G, about 2 s instead of 6 s). The
+        wordmark is left out so its font isn't fetched ahead of the scripts,
+        and the mascot waits behind them (fetchpriority="low"). No words:
+        every UI string lives in en.json.
+      -->
+      <div class="tw-boot" aria-hidden="true">
+        <header class="tw-header">
+          <div class="tw-header-inner">
+            <span class="tw-logo"><img src="/images/thinkerwell-mascot-transparent.png" alt="" width="46" height="46" fetchpriority="low" /></span>
+          </div>
+        </header>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

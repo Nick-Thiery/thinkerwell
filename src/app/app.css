@@ -9,6 +9,18 @@
   position: relative;
 }
 
+/* The header in index.html, shown until the app starts: compact below 1100px, as SiteHeader is (useIsCompactHeader). */
+@media (max-width: 1099px) {
+  .tw-boot .tw-header-inner {
+    min-block-size: 60px;
+  }
+
+  .tw-boot .tw-logo img {
+    inline-size: 40px;
+    block-size: 40px;
+  }
+}
+
 /*
  * The messages under the header (offline, back online, a new version, "just
  * look around"), lined up with the page column below them. Collapses to
