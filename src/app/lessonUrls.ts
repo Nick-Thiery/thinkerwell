@@ -5,6 +5,11 @@ export function lessonPath(lessonId: string, step: LessonStep = 'read'): string 
   return `/lesson/${encodeURIComponent(lessonId)}/${step}`;
 }
 
+/** The print view of a lesson: /lesson/:id/print. */
+export function lessonPrintPath(lessonId: string): string {
+  return `/lesson/${encodeURIComponent(lessonId)}/print`;
+}
+
 export function sectionCheckPath(sectionId: string): string {
   return `/section/${encodeURIComponent(sectionId)}/check`;
 }
@@ -38,3 +43,19 @@ export function resolveLessonRoute(id: string | undefined, stage: string | undef
 
   return { kind: 'not-found' };
 }
+
+/**
+ * Works out what /lesson/:id/print should do: show a lesson's print view,
+ * redirect an old Base44 id (or a different case) to the new one, or not
+ * found.
+ */
+export function resolveLessonPrintRoute(
+  id: string | undefined,
+): { kind: 'show'; lesson: Lesson } | { kind: 'redirect'; to: string } | { kind: 'not-found' } {
+  if (!id) return { kind: 'not-found' };
+  const lesson = getLesson(id);
+  if (lesson) return { kind: 'show', lesson };
+  const moved = getLessonByOldId(id) ?? getLessonByOldId(id.toLowerCase()) ?? getLesson(id.toLowerCase());
+  return moved ? { kind: 'redirect', to: lessonPrintPath(moved.id) } : { kind: 'not-found' };
+}
+

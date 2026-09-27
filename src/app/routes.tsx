@@ -6,9 +6,11 @@ import { EducatorsPage } from '../pages/EducatorsPage';
 import { HomePage } from '../pages/HomePage';
 import { JournalPage } from '../pages/JournalPage';
 import { NotFoundPage } from '../pages/NotFoundPage';
+import { JournalPrintPage } from '../pages/print/JournalPrintPage';
 import { RouteErrorPage } from '../pages/RouteErrorPage';
 import { SettingsPage } from '../pages/SettingsPage';
 import { AppLayout } from './AppLayout';
+import { LessonPrintRoute } from './LessonPrintRoute';
 import { LessonRoute } from './LessonRoute';
 import { SectionCheckRoute } from './SectionCheckRoute';
 
@@ -78,9 +80,12 @@ export const routes: RouteObject[] = [
       { index: true, element: <HomePage /> },
       { path: 'course', element: <CoursePage /> },
       { path: 'lesson/:id', element: <LessonRoute /> },
+      // Ranked above :stage (a fixed segment beats a dynamic one).
+      { path: 'lesson/:id/print', element: <LessonPrintRoute /> },
       { path: 'lesson/:id/:stage', element: <LessonRoute /> },
       { path: 'section/:id/check', element: <SectionCheckRoute /> },
       { path: 'journal', element: <JournalPage /> },
+      { path: 'journal/print', element: <JournalPrintPage /> },
       { path: 'educators', element: <EducatorsPage /> },
       { path: 'about', element: <AboutPage /> },
       { path: 'settings', element: <SettingsPage /> },

@@ -28,6 +28,7 @@ export { forgetUnsavedProgress, keepUnsavedProgress } from './unsavedProgress';
 export {
   findContinueTarget,
   isLessonComplete,
+  journalByLesson,
   latestJournalEntry,
   nextStageForLesson,
   progressByLessonId,
@@ -36,6 +37,8 @@ export {
   totalLessonsCompleted,
   type ContinueTarget,
   type JournalEntry,
+  type JournalLesson,
+  type JournalPiece,
   type ProgressByLessonId,
   type SectionProgress,
 } from './progress';

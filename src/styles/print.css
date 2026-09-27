@@ -1,0 +1,56 @@
+/*
+ * Printing any page (design-system README: "plain black text on white, no
+ * header"). The print views (/lesson/:id/print, /journal/print) add their
+ * own layout in src/pages/print/print.css; this covers the app shell, so
+ * printing any other page also leaves out the header, menus and messages.
+ */
+@media print {
+  @page {
+    margin: 15mm;
+  }
+
+  html,
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  .tw-skip-link,
+  .tw-header-area,
+  .tw-shell-banners,
+  .tw-mobilenav-overlay,
+  .tw-dev-banner,
+  .tw-no-print {
+    display: none !important;
+  }
+
+  .tw-shell-main {
+    max-inline-size: none;
+    padding: 0;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    break-after: avoid;
+  }
+
+  p,
+  li,
+  dd {
+    orphans: 3;
+    widows: 3;
+  }
+
+  img,
+  svg,
+  figure,
+  tr {
+    break-inside: avoid;
+  }
+}

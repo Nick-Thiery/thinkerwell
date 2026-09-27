@@ -129,3 +129,44 @@ export function latestJournalEntry(lessons: readonly Lesson[], progress: Progres
   }
   return best;
 }
+
+/** One piece of a learner's journal: Write's answer or one Reflect answer, with the prompt it answers. */
+export interface JournalPiece {
+  kind: 'writing' | 'reflection';
+  prompt: string;
+  text: string;
+}
+
+/** Everything a learner wrote in one lesson, for the journal. */
+export interface JournalLesson {
+  lesson: Lesson;
+  /** When the learner last saved work in this lesson. */
+  updatedAt: string;
+  /** Reflections first (in prompt order), then the writing: the newest stage first, as on Journal.dc.html. */
+  pieces: JournalPiece[];
+}
+
+/**
+ * The whole journal (CLAUDE.md: built from saved writing and reflections,
+ * not stored separately): every lesson with something written in Write or
+ * Reflect, the lesson worked on most recently first. Blank answers are left
+ * out. The print view (/journal/print) uses it now; the journal page itself
+ * is phase 7.
+ */
+export function journalByLesson(lessons: readonly Lesson[], progress: ProgressByLessonId): JournalLesson[] {
+  const out: JournalLesson[] = [];
+  for (const lesson of lessons) {
+    const record = progress.get(lesson.id);
+    if (!record) continue;
+    const pieces: JournalPiece[] = [];
+    lesson.reflect.prompts.forEach((prompt, index) => {
+      const text = record.reflections[index];
+      if (text?.trim()) pieces.push({ kind: 'reflection', prompt: prompt.text, text });
+    });
+    if (record.writing.text.trim()) pieces.push({ kind: 'writing', prompt: lesson.write.prompt, text: record.writing.text });
+    if (pieces.length > 0) out.push({ lesson, updatedAt: record.updatedAt, pieces });
+  }
+  // Newest first; the course order breaks ties (sort is stable).
+  return out.sort((a, b) => (a.updatedAt < b.updatedAt ? 1 : a.updatedAt > b.updatedAt ? -1 : 0));
+}
+

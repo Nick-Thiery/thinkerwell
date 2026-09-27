@@ -5,6 +5,7 @@ import type { LessonProgress } from './types';
 import {
   findContinueTarget,
   isLessonComplete,
+  journalByLesson,
   nextStageForLesson,
   progressByLessonId,
   sectionProgress,
@@ -118,3 +119,38 @@ describe('sectionProgress and totalLessonsCompleted', () => {
     }
   });
 });
+
+describe('journalByLesson', () => {
+  const [a, b, c] = [lessons[0]!, lessons[9]!, lessons[23]!];
+
+  function withWork(lessonId: string, updatedAt: string, work: Partial<LessonProgress>): LessonProgress {
+    return { ...emptyProgress(LEARNER, lessonId), updatedAt, ...work };
+  }
+
+  it('lists every lesson with writing or reflections, most recent first, reflections before writing', () => {
+    const progress = progressByLessonId([
+      withWork(a.id, '2026-09-01T10:00:00.000Z', {
+        writing: { text: 'My answer.', planning: {}, selfCheck: {}, exampleShown: false },
+      }),
+      withWork(b.id, '2026-09-03T10:00:00.000Z', {
+        writing: { text: 'Near the river.', planning: {}, selfCheck: {}, exampleShown: false },
+        reflections: { 1: 'Why do rivers flood?', 0: 'Water and trade.' },
+      }),
+      // Started, but nothing written: left out.
+      withWork(c.id, '2026-09-04T10:00:00.000Z', { reflections: { 0: '   ' } }),
+    ]);
+    const journal = journalByLesson(lessons, progress);
+    expect(journal.map((entry) => entry.lesson.id)).toEqual([b.id, a.id]);
+    expect(journal[0]!.pieces).toEqual([
+      { kind: 'reflection', prompt: b.reflect.prompts[0]!.text, text: 'Water and trade.' },
+      { kind: 'reflection', prompt: b.reflect.prompts[1]!.text, text: 'Why do rivers flood?' },
+      { kind: 'writing', prompt: b.write.prompt, text: 'Near the river.' },
+    ]);
+    expect(journal[1]!.pieces).toEqual([{ kind: 'writing', prompt: a.write.prompt, text: 'My answer.' }]);
+  });
+
+  it('is empty with no progress', () => {
+    expect(journalByLesson(lessons, progressByLessonId([]))).toEqual([]);
+  });
+});
+

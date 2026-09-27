@@ -11,7 +11,7 @@ import {
   useLessonPlayer,
   useMediaQuery,
 } from '../../lesson';
-import { lessonPath } from '../../app/lessonUrls';
+import { lessonPath, lessonPrintPath } from '../../app/lessonUrls';
 import { CompleteStage } from './complete/CompleteStage';
 import { ReadStage } from './read/ReadStage';
 import { ReflectStage } from './reflect/ReflectStage';
@@ -142,6 +142,11 @@ function LessonGoal({ lesson }: { lesson: Lesson }) {
         <Icon name="Clock" size={16} />
         {t('lessonPlayer.shell.time', { min, max })}
       </p>
+      {/* Both reading levels, the key words and every task on paper (docs/notes/phase-6.md). */}
+      <Link to={lessonPrintPath(lesson.id)} className="tw-lesson-back tw-lesson-print">
+        <Icon name="Printer" size={18} />
+        {t('print.printLesson')}
+      </Link>
     </>
   );
 }
