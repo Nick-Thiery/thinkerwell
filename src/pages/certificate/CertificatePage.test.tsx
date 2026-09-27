@@ -12,8 +12,8 @@ const geography = getSection('geography') as Section;
 const geographyLessons = getSectionLessons('geography');
 
 afterEach(async () => {
-  localStorage.clear();
-  sessionStorage.clear();
+  window.localStorage.clear();
+  window.sessionStorage.clear();
   await deleteAllData();
 });
 
@@ -166,8 +166,8 @@ describe('CertificatePage', { timeout: 30_000 }, () => {
       settings: await store.getSettings(),
       current: await store.getCurrentLearnerId(),
     }).toEqual(before);
-    expect(localStorage.length).toBe(0);
-    expect(sessionStorage.length).toBe(0);
+    expect(window.localStorage.length).toBe(0);
+    expect(window.sessionStorage.length).toBe(0);
   });
 
   it('leaves a line to write a name on by hand when the field is empty', async () => {
