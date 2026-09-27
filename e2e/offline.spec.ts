@@ -62,7 +62,7 @@ test('after the first visit, lessons open offline, with their pictures, and the 
   const offline = page.getByRole('status').filter({ hasText: "You're offline." });
   await expect(offline).toBeVisible();
 
-  const picture = page.locator('.tw-lesson-visual img');
+  const picture = page.locator('.tw-lesson-visual > img');
   await expect(picture).toBeVisible();
   await expect
     .poll(() => picture.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0))
