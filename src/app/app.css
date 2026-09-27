@@ -19,6 +19,9 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
+  /* The page's own column is a flex item too (see .tw-shell-main): without
+     this, a short message would shrink to its text and sit in the middle. */
+  inline-size: 100%;
   max-inline-size: var(--page-max);
   margin-inline: auto;
   margin-block-start: var(--space-4);

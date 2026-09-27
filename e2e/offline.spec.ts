@@ -80,6 +80,14 @@ test('after the first visit, lessons open offline, with their pictures, and the 
   await page.goto('/course');
   await expect(page.locator('h1')).toHaveText('Exploring Our World');
   await expect(offline).toBeVisible();
+  // As wide as the page column under it, however short the message.
+  const widths = await page.evaluate(() => {
+    const main = document.querySelector('.tw-shell-main')!;
+    const style = getComputedStyle(main);
+    const column = main.clientWidth - parseFloat(style.paddingInlineStart) - parseFloat(style.paddingInlineEnd);
+    return { banner: document.querySelector('.tw-status-offline')!.getBoundingClientRect().width, column };
+  });
+  expect(Math.abs(widths.banner - widths.column)).toBeLessThanOrEqual(1);
 
   await context.setOffline(false);
   await expect(page.getByRole('status').filter({ hasText: "You're back online." })).toBeVisible();
