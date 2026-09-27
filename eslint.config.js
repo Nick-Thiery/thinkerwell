@@ -73,7 +73,7 @@ export default tseslint.config(
     // tools/shoot.mjs and scripts/render_svg.js run in Node (Playwright) but
     // also pass callbacks to page.evaluate() that execute in the browser, so
     // they need both globals.
-    files: ['tools/**/*.{js,mjs}', 'scripts/render_svg.js'],
+    files: ['tools/**/*.{js,mjs}', 'scripts/render_svg.js', 'scripts/make_social_card.mjs'],
     languageOptions: { globals: { ...globals.node, ...globals.browser } },
   },
   {
