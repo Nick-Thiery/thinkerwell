@@ -29,7 +29,7 @@
 }
 
 .tw-about-card {
-  padding: var(--space-8) var(--space-8);
+  padding: var(--space-8);
   border-radius: var(--radius-xl);
   display: flex;
   flex-direction: column;
@@ -44,8 +44,12 @@
   margin: 0;
 }
 
+/* The screen draws this card in canvas on a white page. This page sits on
+   canvas, where that card would vanish (its text then looked indented for
+   no reason), so it is a paper card with a border like the UN goals. */
 .tw-about-what {
-  background: var(--canvas);
+  background: var(--paper);
+  border: 1px solid var(--line);
 }
 
 .tw-about-honesty {
@@ -116,7 +120,7 @@
 }
 
 .tw-about-person {
-  padding: var(--space-6) var(--space-7) var(--space-7);
+  padding: var(--space-6) var(--space-6) var(--space-8);
   border-radius: var(--radius-xl);
   background: var(--lavender-wash);
   display: flex;
@@ -143,6 +147,12 @@
   .tw-about-hero {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  /* Card padding steps down on a phone, as the brand book asks. */
+  .tw-about-card,
+  .tw-about-person {
+    padding: var(--space-5);
   }
 
   .tw-about-team-grid {
