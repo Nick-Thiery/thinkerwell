@@ -34,8 +34,8 @@ export interface VoiceRecorderProps {
 /**
  * A private practice recorder for the Speak stage: record, listen back,
  * record again or delete. Recordings stay on the device; keep only the
- * latest one per lesson. State and callbacks only: MediaRecorder itself is
- * wired up in a later phase.
+ * latest one per lesson. State and callbacks only: the Speak stage records
+ * with MediaRecorder (src/pages/lesson/speak/useSpeakRecorder.ts).
  */
 export function VoiceRecorder({
   state = 'idle',

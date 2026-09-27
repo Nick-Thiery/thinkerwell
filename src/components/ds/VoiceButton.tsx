@@ -17,8 +17,8 @@ export interface VoiceButtonProps {
 /**
  * The "Say it" microphone button. Idle: a lavender mic disc and "Say it".
  * Listening: the button turns ink, the disc turns lemon and pulses, and the
- * label becomes "Stop". State and the click callback only: turning speech
- * into text is wired up in a later phase.
+ * label becomes "Stop". State and the click callback only: the lesson
+ * stages turn speech into text (src/pages/lesson/sayIt.tsx).
  */
 export function VoiceButton({ state = 'idle', children, stopLabel, onClick, className }: VoiceButtonProps): ReactElement {
   const { t } = useI18n();

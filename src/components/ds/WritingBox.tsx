@@ -30,7 +30,7 @@ export interface WritingBoxProps extends ForwardedTextareaProps {
   helper?: string;
   /** true shows a "Say it" `VoiceButton` beside the label; 'listening' shows it recording. */
   dictate?: boolean | 'listening';
-  /** Fires when the Say it / Stop button is pressed. Dictation itself is wired up in a later phase. */
+  /** Fires when the Say it / Stop button is pressed. The lesson stages do the dictation (src/pages/lesson/sayIt.tsx). */
   onDictateClick?: () => void;
   className?: string;
 }
