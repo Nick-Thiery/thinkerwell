@@ -116,7 +116,7 @@ src/dev/                 dev-only routes (/dev/components, /dev/reference, /dev/
 tools/shoot.mjs          screenshot + report tool (overflow, console errors, foreign requests, tap targets, text size)
 dev-screen.html          dev-only, standalone: renders one docs/screens/*.dc.html with the original reference bundle
 dev-reference.html       dev-only, standalone: renders the original reference bundle's own components
-e2e/                     Playwright tests (production build); lesson-player.spec.ts goes through Lesson 10, lesson-stages.spec.ts renders every step of every lesson
+e2e/                     Playwright tests (production build); lesson-player.spec.ts goes through Lesson 10 (every step of every lesson is checked in Vitest: src/pages/lesson/LessonPage.test.tsx)
 e2e-dev/                 Playwright tests for the dev-only /dev/* routes (npm run test:e2e:dev)
 ```
 
