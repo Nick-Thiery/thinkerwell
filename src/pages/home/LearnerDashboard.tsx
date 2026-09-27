@@ -1,6 +1,6 @@
 import { createElement } from 'react';
 import { sectionCheckPath, lessonPath } from '../../app/lessonUrls';
-import { getLessonSection, getLessons, getSections } from '../../content';
+import { getLessonSection, getLessons, getQuiz, getSections } from '../../content';
 import { Badge, Button, ContinueCard, Icon, ProgressRing, SectionBadge, useDsLinkComponent } from '../../components/ds';
 import { useI18n } from '../../i18n';
 import { useServiceWorker } from '../../offline';
@@ -14,14 +14,6 @@ import {
   type Learner,
   type ProgressByLessonId,
 } from '../../storage';
-
-/**
- * A section check is judged "ready" the moment its lessons are all done. This
- * project doesn't yet have quiz content (content/quizzes/*.json is phase 7),
- * so the question count shown here is a placeholder matching Dashboard.dc.html
- * until that content exists (see openIssues in the phase-3 report).
- */
-const PLACEHOLDER_QUESTION_COUNT = 10;
 
 export interface LearnerDashboardProps {
   learner: Learner;
@@ -153,7 +145,7 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
               <p className="body">
                 {t('pages.home.dashboard.sectionCheckBody', {
                   count: readySection.lessons.length,
-                  questions: PLACEHOLDER_QUESTION_COUNT,
+                  questions: getQuiz(readySection.id)?.questions.length ?? 0,
                 })}
               </p>
               <Button variant="secondary" href={sectionCheckPath(readySection.id)}>
