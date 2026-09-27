@@ -138,10 +138,26 @@
     "speak": {
       "eyebrow": "Speak and listen",
       "task": "Talk about your ideas from this lesson. You can do it with a partner or on your own.",
+      "taskWithRecorder": "Talk about your ideas from this lesson. You can do it with a partner or on your own. You can record yourself if you like. Recordings stay on this device.",
       "partnerTitle": "With a partner",
       "soloTitle": "On your own",
       "practisedLegend": "How did you practise?",
-      "practisedHelp": "Choose one. Every way of practising counts."
+      "practisedHelp": "Choose one. Every way of practising counts.",
+      "recorder": {
+        "title": "Record yourself (optional)",
+        "task": "Say your answer, then listen back. Try again as many times as you like.",
+        "noteLookAround": "Not saved while you look around. It's gone when you leave this page.",
+        "noteNoLearner": "Not saved until you choose who's learning. It's gone when you leave this page.",
+        "announceStarted": "Recording.",
+        "announceSaved": "Recording stopped. It stays on this device.",
+        "announceStopped": "Recording stopped.",
+        "announceDeleted": "Recording deleted.",
+        "micBlocked": "Recording needs the microphone. You can allow it in the browser's settings, or practise without recording.",
+        "noMic": "No microphone was found. You can practise out loud or with a partner instead.",
+        "failed": "Recording didn't start on this device. You can practise out loud or with a partner instead.",
+        "playback": "This recording can't play here.",
+        "notSaved": "This recording couldn't be saved on the device. You can still listen back now."
+      }
     },
     "watch": {
       "eyebrow": "Watch · optional",

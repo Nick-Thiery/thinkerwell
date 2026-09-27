@@ -4,6 +4,8 @@ import { getCourse } from '../../../content';
 import { useI18n } from '../../../i18n';
 import { useLessonPlayer } from '../../../lesson';
 import { StageActionBar } from '../StageActionBar';
+import { SpeakRecorder } from './SpeakRecorder';
+import { useSpeakRecorder } from './useSpeakRecorder';
 import './SpeakStage.css';
 
 /**
@@ -14,11 +16,13 @@ import './SpeakStage.css';
  * Speak done. It is never required: Next is never disabled, and every way
  * of practising counts.
  *
- * Not shown on purpose:
- * - The screen's "Say it in three sentences" frames: the lesson content has
- *   no field for them (speak has only partnerTask and independentTask).
- * - The recorder: it comes in phase 5 (see the slot below). No button is
- *   shown before it works.
+ * "Record yourself" (./useSpeakRecorder.ts) sits between the tasks and the
+ * choice, where the device can record. It is optional and private: clips
+ * stay on the device and recording never counts towards Speak being done.
+ *
+ * Not shown on purpose: the screen's "Say it in three sentences" frames:
+ * the lesson content has no field for them (speak has only partnerTask and
+ * independentTask).
  */
 export function SpeakStage() {
   const { t } = useI18n();
@@ -29,6 +33,7 @@ export function SpeakStage() {
   const legendId = useId();
   const helpId = useId();
   const chosen = progress.speak.practisedHow;
+  const recorder = useSpeakRecorder();
 
   const choose = (index: number) => {
     update((p) => (p.speak.practisedHow === index ? p : { ...p, speak: { ...p.speak, practisedHow: index } }), {
@@ -40,7 +45,7 @@ export function SpeakStage() {
   return (
     <>
       <TaskCard eyebrow={t('lessonPlayer.speak.eyebrow')} icon="MessageCircle">
-        {t('lessonPlayer.speak.task')}
+        {t(recorder.view === 'hidden' ? 'lessonPlayer.speak.task' : 'lessonPlayer.speak.taskWithRecorder')}
       </TaskCard>
 
       <div className="tw-speak-tasks">
@@ -64,13 +69,7 @@ export function SpeakStage() {
         </section>
       </div>
 
-      {/*
-        Phase 5: the optional private recorder goes here, e.g.
-          <VoiceRecorder actionVariant="secondary" state={...} time={...} onRecord={...} ... />
-        It stores the latest clip in IndexedDB (recordings) and never uploads it.
-        actionVariant="secondary" keeps StageActionBar's Next the one ink primary button.
-        Recording never counts towards Speak being done.
-      */}
+      <SpeakRecorder recorder={recorder} />
 
       <fieldset className="tw-speak-practised" aria-describedby={helpId}>
         <legend id={legendId} className="tw-speak-legend">

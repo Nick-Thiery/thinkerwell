@@ -104,3 +104,21 @@
     padding: var(--space-5);
   }
 }
+
+/* Record yourself: VoiceRecorder's own card; the task and any problem inside it. */
+.tw-speak-recorder-task,
+.tw-speak-recorder-problem {
+  margin: 0;
+  font-size: 17px;
+  line-height: 26px;
+}
+
+/* Not an error colour: plain words on a lavender wash (help), never red. */
+.tw-speak-recorder-problem {
+  padding-block: var(--space-2);
+  padding-inline: var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--lavender-wash);
+  font-size: 16px;
+  line-height: 24px;
+}

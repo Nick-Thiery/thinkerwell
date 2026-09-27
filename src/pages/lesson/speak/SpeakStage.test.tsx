@@ -53,7 +53,7 @@ describe('SpeakStage', { timeout: 30_000 }, () => {
     const chips = Array.from(group.querySelectorAll('[role="radio"]'));
     expect(chips.map((chip) => chip.textContent)).toEqual(getCourse().practiceOptions);
     expect(chips.every((chip) => chip.getAttribute('aria-checked') === 'false')).toBe(true);
-    // No recorder yet (phase 5), and Next is never disabled.
+    // No recorder where the browser can't record (jsdom has no MediaRecorder), and Next is never disabled.
     expect(screen.queryByText(/record/i)).not.toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Continue to Watch' })).toBeEnabled();
   });
