@@ -169,7 +169,15 @@ function offline(): Plugin[] {
     },
     workbox: {
       globPatterns: ['**/*.{html,js,css,woff2,svg,png,jpg}'],
-      globIgnores: ['icons/**', 'images/thinkerwell-mascot-white-background.png', 'images/thinkerwell-mascot-yellow-background.png'],
+      // Not precached: the app icons (the browser fetches them when the site
+      // is installed), the flat mascots (for printouts and emails) and the
+      // link-sharing picture (only apps previewing a link fetch it).
+      globIgnores: [
+        'icons/**',
+        'images/thinkerwell-mascot-white-background.png',
+        'images/thinkerwell-mascot-yellow-background.png',
+        'social-card.png',
+      ],
       navigateFallback: '/index.html',
       // /api/ (measurement, later) and addresses of files (anything with an
       // extension, such as /icons/icon-512.png) go to the network.

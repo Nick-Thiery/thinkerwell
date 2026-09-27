@@ -19,6 +19,10 @@ offline use (vite.config.ts), so each kilobyte is downloaded by every device.
   screens) are the transparent mascot, whole and unchanged, scaled onto a
   lemon square, as in thinkerwell-mascot-yellow-background.png. The
   maskable one leaves room for Android to cut it into a circle.
+- The link-sharing picture (social-card.png, 1200 x 630, drawn by
+  scripts/make_social_card.mjs) goes to public/social-card.png as a
+  256-colour PNG. index.html points the Open Graph and Twitter tags at it.
+  It isn't precached: only the apps that preview a link fetch it.
 """
 from __future__ import annotations
 
@@ -40,6 +44,7 @@ MASCOTS = [
 ]
 UN_GOALS = ["sdg-04.png", "sdg-10.png", "sdg-16.png", "sdg-17.png"]
 PHOTOS = {"founder-justin-park.jpg": 312, "nick-thiery.jpg": 312}
+SOCIAL_CARD = "social-card.png"
 ICON_BOX = 144
 # name: (square size, how tall the mascot is drawn in it)
 APP_ICONS = {
@@ -69,6 +74,10 @@ def resized_jpeg(src: Path, dest: Path, width: int) -> None:
     image.save(dest, quality=80, optimize=True, progressive=True)
 
 
+def social_card(src: Path, dest: Path) -> None:
+    Image.open(src).convert("RGB").quantize(256, method=Image.Quantize.MEDIANCUT).save(dest, optimize=True)
+
+
 def app_icon(src: Path, dest: Path, size: int, mascot_height: int) -> None:
     mascot = Image.open(src).convert("RGBA")
     width = round(mascot.width * mascot_height / mascot.height)
@@ -85,7 +94,7 @@ def main() -> int:
         + [(name, lambda s, d: resized_png(s, d, ICON_BOX)) for name in UN_GOALS]
         + [(name, lambda s, d, w=w: resized_jpeg(s, d, w)) for name, w in PHOTOS.items()]
     )
-    known = {name for name, _ in jobs}
+    known = {name for name, _ in jobs} | {SOCIAL_CARD}
     unknown = sorted(p.name for p in SOURCE.iterdir() if p.is_file() and p.name not in known)
     if unknown:
         print(f"No rule for {', '.join(unknown)}: add one to scripts/optimise_images.py.", file=sys.stderr)
@@ -94,6 +103,9 @@ def main() -> int:
         src, dest = SOURCE / name, OUT / name
         job(src, dest)
         print(f"{name}: {src.stat().st_size / 1024:.1f} kB -> {dest.stat().st_size / 1024:.1f} kB")
+    card = ROOT / "public" / SOCIAL_CARD
+    social_card(SOURCE / SOCIAL_CARD, card)
+    print(f"{SOCIAL_CARD}: {(SOURCE / SOCIAL_CARD).stat().st_size / 1024:.1f} kB -> {card.stat().st_size / 1024:.1f} kB")
     ICONS_OUT.mkdir(parents=True, exist_ok=True)
     for name, (size, mascot_height) in APP_ICONS.items():
         dest = ICONS_OUT / name

@@ -202,4 +202,5 @@ Recordings never leave the device. Listen uses only voices that run on the devic
   - `[FEEDBACK EMAIL]` on the Educators page (`pages.educators.feedbackEmail` in `src/i18n/messages/en.json`);
   - ~~Nick's photo on the About page~~ Done: `public/images/nick-thiery.jpg`, made from `docs/design-system/assets/nick-thiery.jpg`.
 - [ ] **Decide the learner avatar colours** (open in docs/PRODUCT.md).
-- [ ] **Buy the domain**, add it in Vercel, and share only that address with HELP.
+- [ ] **Buy the domain**, add it in Vercel, and share only that address with HELP. Then change `https://thinkerwell.vercel.app` in the link-preview tags in `index.html` (`og:url`, `og:image`, `twitter:image`) to the new address.
+- [ ] **Check a link preview** on the live site: paste the address into WhatsApp (and, if you like, Facebook's Sharing Debugger or opengraph.xyz). It should show "Thinkerwell: Exploring Our World", the line under it and the lemon card with the mascot (`public/social-card.png`).
