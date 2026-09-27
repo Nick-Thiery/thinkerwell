@@ -39,7 +39,8 @@ docs/design-system/            brand book (README.md), tokens, component notes, 
 docs/screens/                  every redesigned screen as source; see docs/screens/README.md
 docs/content/SPEC.md           the rules lesson text is written to
 docs/research/                 learner context, measurement plan, audit of the old Base44 site
-public/images/                 mascot, UN goal icons, founder photo
+public/images/                 mascot, UN goal icons, founder photo (small copies made by scripts/optimise_images.py)
+docs/design-system/assets/     the full-size originals of those images
 scripts/check_lesson.py        checks lesson files against the spec
 scripts/check_quiz.py          checks section checks against docs/content/QUIZ_SPEC.md
 scripts/render_svg.js          renders a picture to PNG and flags layout problems
