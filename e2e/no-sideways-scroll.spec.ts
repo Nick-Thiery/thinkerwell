@@ -88,7 +88,14 @@ test.describe('every lesson and section check at 360px', () => {
         await page.goto(`${base}/print`);
         await expect(page.getByRole('button', { name: 'Print' })).toBeVisible();
         await check(`Lesson ${lesson.number} print`);
+        await page.goto(`/educators/lesson/${lesson.id}`);
+        await expect(page.locator('h1')).toHaveText(lesson.title);
+        await check(`Lesson ${lesson.number} teacher guide`);
       }
+
+      await page.goto(`/educators/section/${section.id}/answers`);
+      await expect(page.locator('h1')).toHaveText(`Answer key: ${section.title}`);
+      await check(`${section.title} answer key`);
 
       await page.goto(`/section/${section.id}/check`);
       await check(`${section.title} check: intro`);

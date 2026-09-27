@@ -62,3 +62,53 @@ test("a learner's journal prints what they wrote", async ({ page }) => {
   await expect(page.getByText('Rivers give towns water and a way to trade.')).toBeVisible();
   expect((await printedColours(page)).text).toEqual(['rgb(0, 0, 0)']);
 });
+
+/** How many pages the page prints on, on A4 (Chromium's own PDF). */
+async function a4Pages(page: Page): Promise<number> {
+  const pdf = await page.pdf({ format: 'A4' });
+  return pdf.toString('latin1').match(/\/Type\s*\/Page(?!s)/g)?.length ?? 0;
+}
+
+test('a teacher guide prints on a few A4 pages, in black on white, without the header or its buttons', async ({ page }) => {
+  await page.goto('/educators/lesson/towns-near-rivers');
+  await expect(page.locator('h1')).toHaveText(L10.title);
+  await expect(page.getByRole('button', { name: 'Print' })).toBeVisible();
+
+  await page.emulateMedia({ media: 'print' });
+  await expect(page.getByRole('banner')).toBeHidden();
+  for (const name of ['Print', 'See it bigger']) await expect(page.getByRole('button', { name })).toBeHidden();
+  for (const name of ['Back to the educators page', 'Preview the lesson', 'Print the lesson for learners']) {
+    await expect(page.getByRole('link', { name })).toBeHidden();
+  }
+  for (const heading of ['Before you teach', 'Session plan', 'Key words', 'The evidence and the picture', 'Quick check', 'Write', 'Speak', 'Discussion prompts', 'Watch or read instead', 'Sources']) {
+    await expect(page.getByRole('heading', { level: 2, name: heading })).toBeVisible();
+  }
+  await expect(page.getByRole('table')).toBeVisible();
+  // Correct answers are marked in words, which print too.
+  await expect(page.locator('.tw-key-option-correct').getByText('Correct answer')).toHaveCount(2);
+  // A link's address is printed after it.
+  expect(await page.locator('.tw-guide-link').first().evaluate((link) => getComputedStyle(link, '::after').content)).not.toBe('none');
+
+  const colours = await printedColours(page);
+  expect(colours.text).toEqual(['rgb(0, 0, 0)']);
+  expect(colours.backgrounds.every((colour) => colour === 'rgba(0, 0, 0, 0)')).toBe(true);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(0);
+  expect(await a4Pages(page)).toBeLessThanOrEqual(6);
+});
+
+test("a section check's answer key prints on a few A4 pages, in black on white, with every answer marked in words", async ({ page }) => {
+  await page.goto('/educators/section/history/answers');
+  await expect(page.locator('h1')).toHaveText('Answer key: History & Human Stories');
+
+  await page.emulateMedia({ media: 'print' });
+  await expect(page.getByRole('banner')).toBeHidden();
+  await expect(page.getByRole('button', { name: 'Print' })).toBeHidden();
+  await expect(page.getByRole('link', { name: 'Back to the educators page' })).toBeHidden();
+  await expect(page.locator('.tw-key-option-correct').getByText('Correct answer')).toHaveCount(12);
+  for (const mark of await page.locator('.tw-key-option-correct').getByText('Correct answer').all()) await expect(mark).toBeVisible();
+
+  const colours = await printedColours(page);
+  expect(colours.text).toEqual(['rgb(0, 0, 0)']);
+  expect(colours.backgrounds.every((colour) => colour === 'rgba(0, 0, 0, 0)')).toBe(true);
+  expect(await a4Pages(page)).toBeLessThanOrEqual(7);
+});

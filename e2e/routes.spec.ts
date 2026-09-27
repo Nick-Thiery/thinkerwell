@@ -20,6 +20,9 @@ const pages: Array<[path: string, heading: string, title?: string]> = [
   // Opened directly by a guest who did nothing: never told they finished.
   ['/lesson/towns-near-rivers/complete', "You're partway through Lesson 10.", 'Lesson 10: Lesson complete'],
   ['/lesson/young-people-contribute/reflect', 'How can young people contribute to their communities?', 'Lesson 24: Reflect'],
+  // The teacher tools: a lesson's teacher guide and a section check's answer key.
+  ['/educators/lesson/towns-near-rivers', 'Why do people build towns near rivers?', 'Lesson 10: teacher guide'],
+  ['/educators/section/history/answers', 'Answer key: History & Human Stories'],
 ];
 
 async function horizontalOverflow(page: Page): Promise<number> {
@@ -96,7 +99,7 @@ test.describe('old Base44 URLs', () => {
 });
 
 test.describe('not found', () => {
-  for (const path of ['/whatever', '/lesson/nope/read', '/lesson/towns-near-rivers/quiz', '/section/nope/check']) {
+  for (const path of ['/whatever', '/lesson/nope/read', '/lesson/towns-near-rivers/quiz', '/section/nope/check', '/educators/lesson/nope', '/educators/section/nope/answers']) {
     test(`${path} shows the friendly 404 with ways back`, async ({ page }) => {
       await page.goto(path);
       await expect(page.locator('h1')).toHaveCount(1);

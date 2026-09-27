@@ -214,6 +214,20 @@ export const pageTour: TourStop[] = [
     go: (page) => openPath(page, '/educators', 'For educators'),
   },
   {
+    name: 'educators: teacher guide',
+    go: async (page) => {
+      await page.getByRole('radio', { name: /Geography/ }).click();
+      await page.getByRole('link', { name: 'Teacher guide for Lesson 10' }).click();
+      await expect(page.locator('h1')).toHaveText(L10.title);
+      await expect(page.getByRole('table')).toBeVisible();
+    },
+  },
+  {
+    // Civics has the longest section name.
+    name: 'educators: answer key',
+    go: (page) => openPath(page, '/educators/section/civics/answers', 'Answer key: Civics, Media & Everyday Economics'),
+  },
+  {
     name: 'about',
     go: (page) => openPath(page, '/about', 'About Thinkerwell'),
   },

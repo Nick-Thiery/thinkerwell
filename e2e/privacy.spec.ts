@@ -8,6 +8,8 @@ const routes = [
   '/course',
   '/journal',
   '/educators',
+  '/educators/lesson/towns-near-rivers',
+  '/educators/section/history/answers',
   '/about',
   '/settings',
   '/lesson/l6',

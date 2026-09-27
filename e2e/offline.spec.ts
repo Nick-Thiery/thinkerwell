@@ -77,6 +77,17 @@ test('after the first visit, lessons open offline, with their pictures, and the 
   // Another lesson, by address, and the course map, by link.
   await page.goto('/lesson/young-people-contribute/reflect');
   await expect(page.locator('h1')).toHaveText('How can young people contribute to their communities?');
+  // The teacher tools too: a teacher guide, with its picture, and an answer key.
+  await page.goto('/educators/lesson/young-people-contribute');
+  await expect(page.locator('h1')).toHaveText('How can young people contribute to their communities?');
+  await expect(page.getByRole('heading', { level: 2, name: 'Session plan' })).toBeVisible();
+  const guidePicture = page.locator('.tw-lesson-visual > img');
+  await expect
+    .poll(() => guidePicture.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0))
+    .toBe(true);
+  await page.goto('/educators/section/history/answers');
+  await expect(page.locator('h1')).toHaveText('Answer key: History & Human Stories');
+  await expect(page.locator('.tw-key-option-correct')).toHaveCount(12);
   await page.goto('/course');
   await expect(page.locator('h1')).toHaveText('Exploring Our World');
   await expect(offline).toBeVisible();
