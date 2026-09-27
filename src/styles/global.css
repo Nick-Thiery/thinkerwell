@@ -29,6 +29,14 @@ body {
   background: var(--canvas);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /*
+   * A word too long for its line breaks instead of widening the page. Text
+   * learners type (names, writing, reflections) also gets
+   * `overflow-wrap: anywhere` where it sits in a flex or grid item, so the
+   * item can shrink (e2e/no-sideways-scroll.spec.ts).
+   */
+  overflow-wrap: break-word;
 }
 
 h1,

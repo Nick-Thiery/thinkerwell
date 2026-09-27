@@ -113,6 +113,7 @@
 .tw-print-question {
   font-size: 20px;
   line-height: 28px;
+  overflow-wrap: anywhere;
 }
 
 .tw-print-muted {
@@ -205,6 +206,7 @@
 
 .tw-print-answer {
   white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
 /* The evidence and picture, reused from the Read stage, lose their cards' fill on paper. */
