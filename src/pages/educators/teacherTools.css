@@ -183,15 +183,48 @@
   font-weight: 700;
 }
 
+/* One question of the answer key: its heading, made-up example, question, options and lesson. */
+.tw-key-question {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tw-print-sheet .tw-key-question h2 {
+  font-size: 22px;
+  line-height: 28px;
+  border-block-end-width: 1px;
+}
+
+.tw-key-prompt {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
 /* ------------------------------------------------------------------- links */
 
 /* Alone on their line, so a full 44px to tap (CLAUDE.md rule 5). */
-.tw-guide-link {
+.tw-guide-link,
+.tw-key-from {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
   min-block-size: var(--target-min);
   overflow-wrap: anywhere;
+}
+
+/* The lesson a question comes from: its icon stays on the first line when the words wrap. */
+.tw-key-from {
+  box-sizing: border-box;
+  align-items: flex-start;
+  padding-block: 10px;
+  font-weight: 700;
+}
+
+.tw-key-from svg {
+  flex: none;
+  margin-block-start: 3px;
 }
 
 .tw-print-sheet .tw-guide-links {
@@ -327,20 +360,53 @@
     line-height: 1.35;
   }
 
+  .tw-key-question {
+    gap: 2.5mm;
+  }
+
+  .tw-print-sheet .tw-key-question h2 {
+    font-size: 13pt;
+  }
+
+  .tw-key-prompt {
+    font-size: 12pt;
+  }
+
   .tw-guide-plan,
   .tw-guide-callout,
-  .tw-key-option {
+  .tw-key-option,
+  .tw-key-question > .tw-evidence {
     break-inside: avoid;
+  }
+
+  /*
+   * A question of the answer key may run onto the next page between its
+   * options, but its heading, example and question stay with the first
+   * option, and its lesson stays with the last.
+   */
+  .tw-key-question > h2,
+  .tw-key-question > .tw-evidence,
+  .tw-key-prompt {
+    break-after: avoid;
+  }
+
+  .tw-key-question > .tw-key-options + p {
+    break-before: avoid;
   }
 
   .tw-print-sheet .tw-key-options {
     gap: 1.5mm;
   }
 
+  .tw-guide-link,
+  .tw-key-from {
+    min-block-size: 0;
+    padding-block: 0;
+  }
+
   /* On paper a link can't be tapped: print where it goes. */
   .tw-guide-link {
     display: inline;
-    min-block-size: 0;
   }
 
   .tw-guide-link::after {

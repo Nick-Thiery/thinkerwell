@@ -188,6 +188,8 @@ describe('not found', () => {
     '/whatever',
     '/lesson/towns-near-rivers/read/extra',
     '/educators/lesson/nope',
+    '/educators/section/nope/answers',
+    '/educators/section/history',
   ])(
     '%s shows the friendly 404',
     (path) => {

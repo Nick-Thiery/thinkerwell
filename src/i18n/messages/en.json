@@ -534,6 +534,15 @@
       "contentNote": "Content note",
       "sourcesTitle": "Sources"
     },
+    "answerKey": {
+      "title": "Answer key: {section}",
+      "eyebrow": "Section {number} check",
+      "intro": "Every question in this section check, with the answers. It prints on A4, black on white, without the menus.",
+      "practice": "The section check is for practice. It never blocks learners: there is no time limit, they can try again as often as they like, and every lesson stays open whatever their score.",
+      "order": "Learners see the options in a different order, so talk about the answer itself, not where it sits.",
+      "question": "Question {n} · {skill}",
+      "fromLesson": "From Lesson {number}: {title}"
+    },
     "settings": {
       "title": "Settings for this device",
       "intro": "These settings are for teachers and volunteers. They apply to everyone who uses this device, and they stay on it.",
