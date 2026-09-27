@@ -22,7 +22,7 @@ export function WarmUp() {
   return (
     <TaskCard eyebrow={t('lessonPlayer.read.warmUpEyebrow')} icon="Lightbulb">
       <p className="tw-read-warmup-question">
-        {question} {t('lessonPlayer.read.warmUpHint')}
+        {question} {t(options ? 'lessonPlayer.read.warmUpHint' : 'lessonPlayer.read.warmUpHintWriting')}
       </p>
       {options ? (
         <div role="radiogroup" aria-label={t('lessonPlayer.read.warmUpChoices')} className="tw-read-chips">

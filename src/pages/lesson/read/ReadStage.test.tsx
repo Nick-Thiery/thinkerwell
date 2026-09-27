@@ -246,7 +246,7 @@ describe('ReadStage: warm-up', () => {
   it('saves the chosen option at once, and tapping it again keeps it chosen', async () => {
     const user = userEvent.setup();
     const { spies } = renderRead();
-    const group = screen.getByRole('radiogroup', { name: 'Your first guess' });
+    const group = screen.getByRole('radiogroup', { name: 'Your first idea' });
     const chip = within(group).getByRole('radio', { name: 'On the hill' });
     await user.click(chip);
     expect(chip).toHaveAttribute('aria-checked', 'true');
@@ -261,7 +261,7 @@ describe('ReadStage: warm-up', () => {
     const user = userEvent.setup();
     const lesson: Lesson = { ...L10, warmUp: { question: 'What do you think?' } };
     renderRead({ lesson });
-    const box = screen.getByRole('textbox', { name: 'Your guess' });
+    const box = screen.getByRole('textbox', { name: 'Your first idea' });
     await user.type(box, 'Rivers');
     expect(latestProgress?.warmUpAnswer).toBe('Rivers');
   });
