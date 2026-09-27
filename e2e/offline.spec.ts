@@ -1,5 +1,6 @@
 import { expect, test, type Page } from '@playwright/test';
-import { addLearnerViaUi } from './lessonHelpers';
+import { addLearnerViaUi, finishLessonViaReflect } from './lessonHelpers';
+import { courseLessons } from './pageTour';
 
 // Offline use (CLAUDE.md rule 2, docs/notes/phase-6.md), against the
 // production build with its real service worker. playwright.config.ts
@@ -132,4 +133,28 @@ test('a learner keeps working offline: the dashboard says so, Watch opens on Rea
   await answer.blur();
   await page.reload();
   await expect(page.getByRole('textbox').first()).toHaveValue('Rivers give towns water and a way to trade.');
+});
+
+test('a section finished offline gets its certificate offline, with the mascot and the wordmark font', async ({ page, context }) => {
+  test.setTimeout(90_000);
+  await addLearnerViaUi(page, 'Amina');
+  await waitUntilOfflineReady(page);
+
+  await context.setOffline(true);
+  for (const lesson of courseLessons.filter((each) => each.number >= 15 && each.number <= 19)) {
+    await finishLessonViaReflect(page, lesson);
+  }
+  await page.getByRole('link', { name: 'Get your certificate' }).click();
+  await expect(page).toHaveURL(/\/certificate\/section\/culture$/);
+  // A full page load too, straight from the cache.
+  await page.reload();
+  await expect(page.locator('h1')).toHaveText('Certificate');
+  await expect(page.locator('.tw-cert-name')).toHaveText('Amina');
+  const mascot = page.locator('img.tw-cert-mascot');
+  await expect.poll(() => mascot.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
+  const fontsLoaded = await page.evaluate(async () => {
+    await document.fonts.ready;
+    return [...document.fonts].filter((face) => face.status === 'loaded').map((face) => face.family.replace(/["']/g, ''));
+  });
+  expect(fontsLoaded).toEqual(expect.arrayContaining(['Eczar', 'Funnel Display', 'Atkinson Hyperlegible Next']));
 });

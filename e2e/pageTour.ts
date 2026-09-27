@@ -1,7 +1,7 @@
 import { readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { expect, type Page } from '@playwright/test';
-import { L10, nextButton } from './lessonHelpers';
+import { finishLessonViaReflect, L10, nextButton } from './lessonHelpers';
 
 // Phase 8: one walk through every kind of page, shared by the checks that
 // must hold everywhere (no sideways scroll, axe, right to left, tap sizes).
@@ -178,6 +178,28 @@ export const pageTour: TourStop[] = [
     },
   },
   {
+    name: 'certificate: lessons left',
+    go: (page) => openPath(page, '/certificate/section/geography', 'Certificate: Geography & Our Environment'),
+  },
+  {
+    // The rest of Geography, each finished through Reflect: the last one finishes the section.
+    name: 'lesson: complete, finishing a section',
+    go: async (page) => {
+      for (const lesson of courseLessons.filter((each) => each.number >= 11 && each.number <= 14)) {
+        await finishLessonViaReflect(page, lesson);
+      }
+      await expect(page.getByRole('link', { name: 'Get your certificate' })).toBeVisible();
+    },
+  },
+  {
+    name: 'certificate',
+    go: async (page) => {
+      await page.getByRole('link', { name: 'Get your certificate' }).click();
+      await expect(page.locator('h1')).toHaveText('Certificate');
+      await expect(page.locator('.tw-cert-name')).toHaveText(TOUR_LEARNER);
+    },
+  },
+  {
     // Civics has the longest section name, which once made this page too wide (docs/notes/phase-7.md).
     name: 'section check: intro',
     go: (page) => openPath(page, '/section/civics/check', 'Section check: Civics, Media & Everyday Economics'),
@@ -295,6 +317,13 @@ export const pageTour: TourStop[] = [
     go: async (page) => {
       await page.getByRole('button', { name: 'Just look around (nothing is saved)' }).click();
       await expect(page.locator('h1')).toHaveText('Explore the course');
+    },
+  },
+  {
+    name: 'certificate, with nobody chosen',
+    go: async (page) => {
+      await openPath(page, '/certificate/course', 'Course certificate');
+      await expect(page.getByText('Certificates are for learners who have finished lessons.')).toBeVisible();
     },
   },
 ];

@@ -111,3 +111,25 @@ export async function storedProgress(page: Page, lessonId: string): Promise<Stor
 export function nextButton(page: Page, name: string | RegExp): Locator {
   return page.locator('.tw-actionbar').getByRole('button', { name });
 }
+
+/**
+ * The quickest honest way to finish a lesson: answer Reflect's required
+ * prompt (the first one in every lesson) and tap "Finish lesson", which is
+ * what completes a lesson (src/lesson/progressRules.ts). Lands on the
+ * lesson's complete screen.
+ */
+export async function finishLessonViaReflect(page: Page, lesson: { id: string; number: number }, answer = 'I learned something new.'): Promise<void> {
+  await page.goto(`/lesson/${lesson.id}/reflect`);
+  await page.getByRole('textbox').first().fill(answer);
+  await nextButton(page, 'Finish lesson').click();
+  await expect(page.locator('h1')).toHaveText(`You finished Lesson ${lesson.number}.`);
+}
+
+/** How many pages a PDF has, and whether its first page is wider than it is tall. */
+export function pdfPages(pdf: Buffer): { pages: number; landscape: boolean } {
+  const text = pdf.toString('latin1');
+  const pages = text.match(/\/Type\s*\/Page(?!s)/g)?.length ?? 0;
+  const box = /\/MediaBox\s*\[\s*([\d.]+)\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s*\]/.exec(text);
+  const [x0, y0, x1, y1] = box ? box.slice(1).map(Number) : [0, 0, 0, 0];
+  return { pages, landscape: x1! - x0! > y1! - y0! };
+}
