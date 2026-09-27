@@ -187,6 +187,21 @@ function offline(): Plugin[] {
   });
 }
 
+/**
+ * The headers Vercel sends with every response (vercel.json, the "/(.*)"
+ * rule): the Content-Security-Policy and the other security headers. `vite
+ * preview` sends them too, so the end-to-end tests run the production build
+ * under the same policy as the real site. The dev server doesn't: Vite's hot
+ * reload needs inline scripts.
+ */
+function siteHeaders(): Record<string, string> {
+  const vercel = JSON.parse(readFileSync(path.join(import.meta.dirname, 'vercel.json'), 'utf8')) as {
+    headers: Array<{ source: string; headers: Array<{ key: string; value: string }> }>;
+  };
+  const everywhere = vercel.headers.find((rule) => rule.source === '/(.*)');
+  return Object.fromEntries((everywhere?.headers ?? []).map(({ key, value }) => [key, value]));
+}
+
 // VITE_CACHE_DIR lets several dev servers run at once, each with its own
 // dependency cache (for example .build-review/vite-cache-5301).
 export default defineConfig({
@@ -202,6 +217,9 @@ export default defineConfig({
       // in this repo at once.
       ignored: ['**/.build-review/**', '**/dist/**'],
     },
+  },
+  preview: {
+    headers: siteHeaders(),
   },
   // The dev-only reference viewer (src/dev) pulls in lucide-react (all its
   // icons are its own modules), which Vite only discovers by crawling — so
