@@ -101,8 +101,9 @@ function keepZodOutOfTheBrowser(): Plugin {
  * link) and `changes` (what changed from Base44). They are replaced with the
  * schema's own empty values (null and []), so the lesson still parses. The
  * files themselves are untouched, and tests and the content check read them
- * whole. educatorNotes and sources stay: the Educators page (phase 7) is
- * where they are meant to be shown.
+ * whole. sensitiveNotes, educatorNotes and sources stay: the educator pages
+ * (the Educators page and each lesson's teacher guide) are where they are
+ * meant to be shown.
  */
 function stripTeamOnlyLessonFields(): Plugin {
   return {

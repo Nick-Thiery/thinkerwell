@@ -55,7 +55,7 @@ HELP for Refugees, Jakarta. Target start: one to two weeks from 26 September 202
 - Quick-check feedback in the content starts with its verdict ("Yes." or "Not quite.", docs/content/SPEC.md); the player shows the Feedback title ("Correct" or "Not quite yet") and drops the content's lead so it isn't said twice. The lesson files are unchanged.
 - Each lesson's picture (`visual.src`) opens the evidence on Read, just after the warm-up (which often says "Look at the map"), above the evidence question and the fiction label, as wide as the reading column. It sits outside the evidence cards because some lessons pair invented evidence with a picture of real places (Lesson 8), and the fiction label must not seem to cover those. Write's "Look at the map again" (or "the evidence") shows the same picture and evidence.
 - A map card's key lists its labels as text, without colour swatches: each picture draws its own key in its own colours, and swatches built from the content's loose colour names ("brown", "grey") could not match every picture.
-- The production bundle leaves out team-only lesson fields (`watch.replacementSuggestion` and `changes`); `educatorNotes` and lesson `sources` stay for the Educators page (phase 7), where the sources are meant to be shown.
+- The production bundle leaves out team-only lesson fields (`watch.replacementSuggestion` and `changes`); `sensitiveNotes`, `educatorNotes` and lesson `sources` stay for the educator pages (the Educators page and each lesson's teacher guide), where they are meant to be shown.
 - The learner home's "Continue" goes on to the next unfinished lesson after the one finished most recently, the same "Up next" the complete screen offers.
 - Captions are on by default in the video player, for learners of English.
 

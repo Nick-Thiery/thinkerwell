@@ -25,7 +25,7 @@ interface EducatorLessonRowProps {
 export function EducatorLessonRow({ lesson }: EducatorLessonRowProps) {
   const { t } = useI18n();
   const [open, setOpen] = useState(false);
-  const hasNotes = lesson.educatorNotes.length > 0 || lesson.sources.length > 0;
+  const hasNotes = lesson.sensitiveNotes.length > 0 || lesson.educatorNotes.length > 0 || lesson.sources.length > 0;
   const bodyId = `${lesson.id}-notes`;
   const [min, max] = lesson.estimatedMinutes;
 
@@ -45,6 +45,16 @@ export function EducatorLessonRow({ lesson }: EducatorLessonRowProps) {
             {t(open ? 'pages.educators.notesHide' : 'pages.educators.notesShow')}
           </Button>
           <div id={bodyId} hidden={!open} className="tw-edu-notes">
+            {lesson.sensitiveNotes.length > 0 ? (
+              <div className="tw-edu-notes-part">
+                <p className="small tw-edu-notes-title">{t('pages.educators.sensitiveTitle')}</p>
+                <ul>
+                  {lesson.sensitiveNotes.map((note, index) => (
+                    <li key={index}>{note}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
             {lesson.educatorNotes.length > 0 ? (
               <div className="tw-edu-notes-part">
                 <p className="small tw-edu-notes-title">{t('pages.educators.notesTitle')}</p>

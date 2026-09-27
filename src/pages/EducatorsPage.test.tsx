@@ -45,6 +45,11 @@ describe('EducatorsPage', () => {
     expect(screen.getByText(L10.educatorNotes[0]!)).not.toBeVisible();
     await user.click(within(lessonRow).getByRole('button', { name: 'Show teaching notes and sources' }));
     expect(screen.getByText(L10.educatorNotes[0]!)).toBeVisible();
+    // Sensitive topics come first, under their own title.
+    const sensitive = screen.getByText(L10.sensitiveNotes[0]!);
+    expect(sensitive).toBeVisible();
+    expect(within(lessonRow).getByText('Sensitive topics').compareDocumentPosition(sensitive) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(sensitive.compareDocumentPosition(screen.getByText(L10.educatorNotes[0]!)) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
     expect(within(lessonRow).getByRole('link', { name: L10.sources[0]!.label })).toHaveAttribute('href', L10.sources[0]!.url);
 
     await user.click(within(lessonRow).getByRole('button', { name: 'Hide teaching notes and sources' }));

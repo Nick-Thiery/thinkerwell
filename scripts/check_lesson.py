@@ -95,8 +95,18 @@ def check(path):
 
     for k in ["id", "oldId", "number", "section", "title", "essentialQuestion", "learningGoal",
               "warmUp", "evidence", "read", "write", "speak", "watch", "reflect", "sources",
-              "educatorNotes", "changes"]:
+              "changes"]:
         need(L, k, "")
+    # Notes for teachers: sensitive topics in sensitiveNotes, everything else
+    # in educatorNotes. Either list may be empty, but not both.
+    for k in ("sensitiveNotes", "educatorNotes"):
+        if not isinstance(L.get(k), list):
+            errs.append(f"missing {k} (use [] if there are none)")
+    notes = (L.get("sensitiveNotes") or []) + (L.get("educatorNotes") or [])
+    if not notes:
+        errs.append("sensitiveNotes and educatorNotes are both empty: add at least one note for teachers")
+    elif len(notes) > 4:
+        warns.append(f"notes for teachers: aim for 1–4 in all, found {len(notes)}")
     if "visual" not in L:
         errs.append("missing visual (use null only if a picture would not help)")
     if L.get("section") not in SECTIONS:

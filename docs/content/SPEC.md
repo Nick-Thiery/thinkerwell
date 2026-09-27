@@ -100,6 +100,7 @@ Change:
   },
   "visual": { "type": "map", "description": "...", "alt": "..." },
   "sources": [ { "label": "National Geographic Education: Settlement", "url": "https://..." } ],
+  "sensitiveNotes": ["..."],
   "educatorNotes": ["..."],
   "changes": ["..."]
 }
@@ -128,7 +129,9 @@ Field rules:
 - `reflect.prompts`: exactly 2 sentence stems: the first `required: true`, the second `required: false`. `completionMessage`: "You finished Lesson N. You ..." (one or two sentences).
 - `visual`: a plan for one new picture the team will draw later: `type` is `map`, `timeline`, `diagram` or `illustration`; `description` says exactly what it shows; `alt` is the alt text (one or two sentences). Use `null` only if a picture would not help.
 - `sources`: 2–4 real pages. Keep valid Base44 sources. **Never invent a URL**: only use URLs you have seen in search results or fetched.
-- `educatorNotes`: 1–4 notes for teachers: sensitive points, what to preview, what they could swap for a local example.
+- Notes for teachers, 1–4 in all, in two lists (either can be `[]`, but not both):
+  - `sensitiveNotes`: sensitive points: what may be hard or personal for learners, what never to ask, which video to preview because of what it shows. The educator pages (teacher guide, Educators page) show these first, marked "Sensitive topics".
+  - `educatorNotes`: everything else: what they could swap for a local example, teaching tips, notes about a video's level or accuracy.
 - `changes`: 3–8 short bullets saying what you changed compared with Base44, for the reviewers.
 
 ## 4. Reading level and length (the checker measures these)
@@ -152,7 +155,7 @@ How to write `text`:
 ## 5. Respect and safety (most important)
 
 - **Never ask learners about their journey, why they left, their home country, their family members, losses, legal status, religion or ethnicity.** If a prompt invites a personal connection, always offer a non-personal option, for example "a place you know, or a place from the lesson". Say "a community you know", not "your country".
-- No graphic violence, war, persecution or disaster detail. Where a topic touches something hard, keep it short and factual and add an `educatorNotes` entry.
+- No graphic violence, war, persecution or disaster detail. Where a topic touches something hard, keep it short and factual and add a `sensitiveNotes` entry.
 - Do not use the word "refugee" in learner-facing text unless it is essential. Learners are learners.
 - Religion: respectful and neutral. Never rank beliefs. "Many people believe..." for faith accounts; "Scientists explain..." for science. Different accounts can answer different questions (Lesson 4).
 - Money (Lessons 20–22): adapt a little, don't rewrite the lesson. Learners may not be allowed to work, may have no bank account, may depend on aid, and may not know their future. Use examples such as: a family deciding how to use a small amount of money or food, sharing a phone or mobile data, a small market stall, swapping goods or skills, saving small amounts in a safe place or a community savings group, short-term goals (learning English, a skill, staying healthy). Avoid: salaries, "getting a job", bank loans, credit cards, mortgages, owning a home, long career plans, "your parents' jobs". Keep it general, not Indonesia-specific, and note in `educatorNotes` which examples a partner could localise.

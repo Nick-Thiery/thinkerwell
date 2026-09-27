@@ -285,6 +285,13 @@ export const lessonSchema = z.strictObject({
   reflect: reflectSchema,
   visual: visualSchema.nullable(),
   sources: z.array(sourceLinkSchema),
+  /**
+   * Notes for teachers about sensitive topics in this lesson: what may be
+   * hard or personal for learners, what never to ask, which video to
+   * preview. The educator pages show them first, marked. Can be empty.
+   */
+  sensitiveNotes: z.array(text),
+  /** Every other note for teachers: local examples to swap in, teaching tips. */
   educatorNotes: z.array(text),
   /** For reviewers: what changed from Base44. Not shown to learners. */
   changes: z.array(text),
