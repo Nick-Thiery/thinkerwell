@@ -92,7 +92,7 @@ The phase-2 design-system components that link somewhere internally (`Button` wi
 - **Standard / Simpler** is remembered per learner (`Learner.readingLevel`), falling back to `settings.preferredReadingLevel`. The reading part, glossary marking and (phase 5) Listen follow the version on screen.
 - Read's current part is in the URL (`?part=1..n`, `?part=check`), so reload and Back work without storage. Quick-check options are shuffled with a seed from the learner id, lesson and question (`src/lesson/shuffle.ts`); answers are stored by their index in the content file.
 - Watch loads nothing from YouTube or Google until the learner taps "Watch the video". The poster is drawn from the content, and the `youtube-nocookie.com` iframe gets its own `referrerpolicy="strict-origin-when-cross-origin"` (the site's meta says `no-referrer`, and the player refuses to play without one). `settings.saveData` opens Watch on the written version.
-- Phase 5 slots: `ReadStageView` takes `listenTool`, `listenBar` and `highlight`; Write, Watch and Reflect mark where `dictate` goes on each `WritingBox`; Speak marks where `VoiceRecorder actionVariant="secondary"` goes. No button shows before it works.
+- Phase 5 slots are comments, not props: Read marks where the Listen `ToolToggle` and the `ListenBar` go; Write, Watch and Reflect mark where `dictate` goes on each `WritingBox`; Speak marks where `VoiceRecorder actionVariant="secondary"` goes. No button shows before it works.
 
 ## Where things live
 

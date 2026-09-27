@@ -1,17 +1,11 @@
 /**
  * Turns one reading section (in the version on screen) into paragraphs of
- * plain text and glossary terms, ready to render, with an optional range
- * to highlight.
+ * plain text and glossary terms, ready to render.
  *
- * - Glossary words are marked across the WHOLE section first
- *   (markGlossary: first appearance only, whole words, any form), then the
- *   text is split into paragraphs, so each word is marked once per section
- *   however many paragraphs it has.
- * - `highlight` is a character range in the section's text (the version on
- *   screen). Phase 5's Listen passes the sentence being read; the pieces in
- *   that range come back grouped in runs with `highlighted: true`, which the
- *   renderer wraps in <mark class="tw-speaking">. A glossary word that the
- *   range only partly covers is highlighted whole, never split.
+ * Glossary words are marked across the WHOLE section first (markGlossary:
+ * first appearance only, whole words, any form), then the text is split
+ * into paragraphs, so each word is marked once per section however many
+ * paragraphs it has.
  */
 import type { GlossaryEntry, ReadSection } from '../../../content';
 import { markGlossary, type GlossarySegment } from '../../../lesson';
@@ -23,20 +17,15 @@ export interface TextRange {
   end: number;
 }
 
-export interface ReadingRun {
-  highlighted: boolean;
-  segments: GlossarySegment[];
-}
-
 export interface ReadingParagraph extends TextRange {
-  runs: ReadingRun[];
+  segments: GlossarySegment[];
 }
 
 interface Positioned extends TextRange {
   segment: GlossarySegment;
 }
 
-/** The text of a section in the version on screen. Listen (phase 5) reads the same string. */
+/** The text of a section in the version on screen. */
 export function visibleSectionText(section: ReadSection, level: ReadingLevel): string {
   return level === 'simpler' ? section.simpler : section.text;
 }
@@ -90,35 +79,18 @@ function cutAt(pieces: Positioned[], cuts: number[]): Positioned[] {
   return out;
 }
 
-function overlaps(piece: TextRange, range: TextRange | undefined): boolean {
-  return !!range && range.end > range.start && piece.start < range.end && piece.end > range.start;
-}
-
-/**
- * The section's paragraphs, each as runs of segments; a run is highlighted
- * when it falls inside `highlight`.
- */
-export function buildReading(
-  text: string,
-  glossary: readonly GlossaryEntry[],
-  highlight?: TextRange,
-): ReadingParagraph[] {
+/** The section's paragraphs, each as its plain-text and glossary-term segments. */
+export function buildReading(text: string, glossary: readonly GlossaryEntry[]): ReadingParagraph[] {
   const paragraphs = paragraphRanges(text);
   const cuts = paragraphs.flatMap((p) => [p.start, p.end]);
-  if (highlight) cuts.push(highlight.start, highlight.end);
   const pieces = cutAt(positioned(markGlossary(text, glossary)), cuts);
 
-  return paragraphs.map((paragraph) => {
-    const runs: ReadingRun[] = [];
-    for (const piece of pieces) {
-      if (piece.start < paragraph.start || piece.end > paragraph.end || piece.end === piece.start) continue;
-      const highlighted = overlaps(piece, highlight);
-      const last = runs[runs.length - 1];
-      if (last && last.highlighted === highlighted) last.segments.push(piece.segment);
-      else runs.push({ highlighted, segments: [piece.segment] });
-    }
-    return { ...paragraph, runs };
-  });
+  return paragraphs.map((paragraph) => ({
+    ...paragraph,
+    segments: pieces
+      .filter((piece) => piece.start >= paragraph.start && piece.end <= paragraph.end && piece.end > piece.start)
+      .map((piece) => piece.segment),
+  }));
 }
 
 /** True when the section's text (in this version) has at least one glossary word. */
