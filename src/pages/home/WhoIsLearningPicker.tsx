@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { getLessons, type Lesson } from '../../content';
 import { Button, Icon, LearnerTile } from '../../components/ds';
 import { useI18n } from '../../i18n';
+import { addedOn, learnersWithSameName } from '../../session';
 import { findContinueTarget, getStore, progressByLessonId, type Learner, type NewLearner } from '../../storage';
 import { HomeHero, HomeHeroStages } from './HomeHero';
 import { NEW_LEARNER_NAME_FIELD_ID, NewLearnerForm } from './NewLearnerForm';
@@ -25,7 +26,7 @@ export interface WhoIsLearningPickerProps {
  * adding a learner or confirming a removal — never a new page.
  */
 export function WhoIsLearningPicker({ learners, lesson1, onChoose, onAdd, onRemove, onLookAround, initialView }: WhoIsLearningPickerProps) {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
   const [view, setView] = useState<PickerView>(initialView === 'new' ? { kind: 'new' } : { kind: 'grid' });
   const [tileMeta, setTileMeta] = useState<Record<string, string>>({});
   const [removing, setRemoving] = useState(false);
@@ -111,6 +112,14 @@ export function WhoIsLearningPicker({ learners, lesson1, onChoose, onAdd, onRemo
   }
 
   const removingLearner = view.kind === 'confirmRemove' ? learners.find((l) => l.id === view.learnerId) : undefined;
+  // Two learners with the same name: their tiles also say when each was added.
+  const sameName = learnersWithSameName(learners);
+  const metaFor = (learner: Learner): string | undefined => {
+    const meta = tileMeta[learner.id];
+    const date = sameName.has(learner.id) ? addedOn(learner, lang) : '';
+    if (!date) return meta;
+    return meta ? t('pages.home.tileMetaAdded', { meta, date }) : t('pages.home.tileAdded', { date });
+  };
 
   return (
     <>
@@ -169,7 +178,7 @@ export function WhoIsLearningPicker({ learners, lesson1, onChoose, onAdd, onRemo
                 key={learner.id}
                 name={learner.name}
                 tone={learner.colour}
-                meta={tileMeta[learner.id]}
+                meta={metaFor(learner)}
                 onClick={() => onChoose(learner.id)}
                 onRemove={() => setView({ kind: 'confirmRemove', learnerId: learner.id })}
                 removeLabel={t('pages.home.remove.label', { name: learner.name })}
