@@ -68,6 +68,17 @@ describe('SectionCheckPage', () => {
     expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '0');
   });
 
+  it("shows the learner's real progress in the section, and none while looking around", async () => {
+    await addAndChooseLearner();
+    const view = renderCheck();
+    expect(await screen.findByRole('img', { name: `0 of ${section.lessons.length} done` })).toBeInTheDocument();
+    view.unmount();
+
+    renderCheck({ lookAround: true });
+    await screen.findByRole('heading', { level: 1, name: `Section check: ${section.title}` });
+    expect(screen.queryByRole('img', { name: /done$/ })).not.toBeInTheDocument();
+  });
+
   it('answers a question, shows feedback and a link to the lesson it came from, and advances', async () => {
     const user = userEvent.setup();
     renderCheck({ lookAround: true });

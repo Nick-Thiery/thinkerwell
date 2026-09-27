@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { usePageTitle } from '../app/usePageTitle';
 import type { Section } from '../content';
-import { getQuiz } from '../content';
+import { getLessons, getQuiz } from '../content';
 import { useI18n } from '../i18n';
 import { VISIT_SEED } from '../lesson';
 import { QuizIntroScreen } from './quiz/QuizIntroScreen';
@@ -9,8 +9,8 @@ import { QuizQuestionScreen } from './quiz/QuizQuestionScreen';
 import { QuizResultsScreen } from './quiz/QuizResultsScreen';
 import './quiz/SectionCheck.css';
 import { scoreQuiz, type QuizAnswers } from '../quiz';
-import { useLearnerSession } from '../session';
-import { getStore } from '../storage';
+import { useLearnerProgress, useLearnerSession } from '../session';
+import { getStore, sectionProgress } from '../storage';
 
 interface SectionCheckPageProps {
   section: Section;
@@ -42,6 +42,11 @@ export function SectionCheckPage({ section }: SectionCheckPageProps) {
   const session = useLearnerSession();
   const learnerId = session.activeLearner?.id ?? null;
   const quiz = getQuiz(section.id);
+  const learnerProgress = useLearnerProgress(learnerId);
+  const lessonsDone =
+    learnerId && learnerProgress.status === 'ready'
+      ? sectionProgress(section, getLessons(), learnerProgress.progress).completed
+      : undefined;
 
   const [screen, setScreen] = useState<Screen>('intro');
   const [index, setIndex] = useState(0);
@@ -100,7 +105,13 @@ export function SectionCheckPage({ section }: SectionCheckPageProps) {
   return (
     <div ref={containerRef}>
       {screen === 'intro' ? (
-        <QuizIntroScreen section={section} quiz={quiz} isGuest={!learnerId} onStart={() => setScreen('question')} />
+        <QuizIntroScreen
+          section={section}
+          quiz={quiz}
+          isGuest={!learnerId}
+          lessonsDone={lessonsDone}
+          onStart={() => setScreen('question')}
+        />
       ) : screen === 'question' ? (
         (() => {
           const question = quiz.questions[index]!;

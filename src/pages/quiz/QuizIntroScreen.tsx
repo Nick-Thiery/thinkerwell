@@ -14,6 +14,12 @@ export interface QuizIntroScreenProps {
   quiz: QuizFile;
   /** True while looking around or with nobody chosen: nothing will be saved. */
   isGuest: boolean;
+  /**
+   * How many of the section's lessons the learner has finished, for the
+   * header's progress ring. Undefined for a guest (no ring, as on the course
+   * page) and while the learner's work is still loading.
+   */
+  lessonsDone?: number;
   onStart: () => void;
 }
 
@@ -22,7 +28,7 @@ export interface QuizIntroScreenProps {
  * blocks and can be retried, and (CLAUDE.md rule 4, and the phase 7 note on
  * look-around) whether this attempt will be saved.
  */
-export function QuizIntroScreen({ section, quiz, isGuest, onStart }: QuizIntroScreenProps) {
+export function QuizIntroScreen({ section, quiz, isGuest, lessonsDone, onStart }: QuizIntroScreenProps) {
   const { t } = useI18n();
   const first = section.lessons[0] ?? 0;
   const last = section.lessons[section.lessons.length - 1] ?? first;
@@ -33,8 +39,8 @@ export function QuizIntroScreen({ section, quiz, isGuest, onStart }: QuizIntroSc
       <SectionHeader
         section={section.id}
         number={section.number}
-        total={section.lessons.length}
-        completed={section.lessons.length}
+        total={lessonsDone === undefined ? undefined : section.lessons.length}
+        completed={lessonsDone}
         question={section.question}
       />
       <div className="tw-quiz-intro-card">
