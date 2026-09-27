@@ -23,6 +23,6 @@ export {
   withStageDone,
   type StageEvent,
 } from './progressRules';
-export { clearGuestMemory } from './guestMemory';
+export { clearGuestMemory, VISIT_SEED } from './guestMemory';
 export { formatDuration, roundedMinutes, splitParagraphs } from './format';
 export { LESSON_PHONE_QUERY, LESSON_WIDE_QUERY, useMediaQuery } from './useMediaQuery';

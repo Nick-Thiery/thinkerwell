@@ -17,6 +17,7 @@ import { ContentError } from './errors';
 import type { CourseFile, Lesson, QuizFile, Section, SectionId } from './schema';
 
 export type * from './schema';
+export { QUIZ_SKILLS } from './schema';
 export * from './stages';
 export { ContentError } from './errors';
 export type { LoadedContent } from './assemble';

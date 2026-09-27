@@ -342,7 +342,42 @@
       "title": "Lesson {number}: {stage}"
     },
     "sectionCheck": {
-      "title": "Section check: {section}"
+      "title": "Section check: {section}",
+      "eyebrow": "Section check",
+      "introTitle": "What do you remember from {title}?",
+      "factQuestions": "{count} questions about Lessons {range}",
+      "factTime": "No time limit. About {minutes} minutes.",
+      "factRetry": "Try as many times as you like",
+      "factPrivate": "Only you see your score",
+      "factGuest": "Nothing is saved while you look around",
+      "tip": "Not sure? Make your best guess. After each question you'll see why the answer is right.",
+      "start": "Start the check",
+      "lookAtLessons": "Look at the lessons first",
+      "questionOf": "Question {n} of {total}",
+      "answeredCount": "{count} answered",
+      "saveAndStop": "Save and stop",
+      "questionEyebrow": "Question {n} · {skill}",
+      "skill": {
+        "vocabulary": "Words and meanings",
+        "understand": "Main ideas",
+        "evidence": "Using evidence",
+        "apply": "Using ideas on new examples"
+      },
+      "fromLesson": "From Lesson {number}: {question}",
+      "chooseHelper": "Choose an answer to continue.",
+      "nextQuestion": "Next question",
+      "seeResults": "See your results",
+      "resultsEyebrow": "Section check · {title}",
+      "scoreHeading": "{score} out of {total}",
+      "retry": "Try the check again",
+      "backToCourse": "Back to the course",
+      "savedNote": "Only you can see this score. Your best try is saved.",
+      "notSavedNote": "Nothing is saved while you're looking around.",
+      "skillsTitle": "How you did, skill by skill",
+      "reviewTitle": "Worth another look",
+      "reviewQuestion": "Question {n}: {question}",
+      "reviewLesson": "Lesson {number} · {question}",
+      "noQuiz": "This section check isn't ready yet."
     },
     "journal": {
       "title": "My journal"
