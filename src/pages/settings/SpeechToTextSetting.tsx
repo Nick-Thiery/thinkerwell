@@ -57,7 +57,9 @@ export function SpeechToTextSetting({ deviceSettings }: { deviceSettings: Device
   const { settings, canSave, failed, save } = deviceSettings;
   /** The last check made on this page: shown even where it couldn't be saved. */
   const [checked, setChecked] = useState<SpeechCheck | null>(null);
-  const [busy, setBusy] = useState<'checking' | 'downloading' | null>(null);
+  const [checking, setChecking] = useState(false);
+  /** A download started here is under way (until it ends, or a check says where it is). */
+  const [downloading, setDownloading] = useState(false);
   const [downloadFailed, setDownloadFailed] = useState(false);
   const headingId = useId();
   const checkHelpId = useId();
@@ -66,8 +68,13 @@ export function SpeechToTextSetting({ deviceSettings }: { deviceSettings: Device
 
   const check = checked ?? settings?.speechCheck ?? null;
   const device = deviceSpeech(check);
-  const shown: DeviceSpeech | 'checking' =
-    busy === 'checking' ? 'checking' : busy === 'downloading' ? 'downloading' : downloadFailed ? 'download-failed' : device;
+  const shown: DeviceSpeech | 'checking' = checking
+    ? 'checking'
+    : downloading
+      ? 'downloading'
+      : downloadFailed
+        ? 'download-failed'
+        : device;
   const status = STATUS[shown];
 
   /** Shows the browser's answer and saves it on the device, with the date. */
@@ -77,33 +84,36 @@ export function SpeechToTextSetting({ deviceSettings }: { deviceSettings: Device
     if (canSave) await save({ speechCheck: result });
   };
 
+  /** "Check this device": asks the browser once. Also works while a download is under way, to see where it is. */
   const checkDevice = async () => {
-    if (busy) return;
-    setBusy('checking');
-    setDownloadFailed(false);
+    if (checking) return;
+    setChecking(true);
     const answer = await onDeviceDictationStatus();
     await keep(answer);
-    setBusy(null);
+    setChecking(false);
+    setDownloading(false);
+    setDownloadFailed(false);
   };
 
   const download = async () => {
-    if (busy) return;
-    setBusy('downloading');
+    if (checking || downloading) return;
+    setDownloading(true);
     setDownloadFailed(false);
     const ok = await installOnDeviceDictation();
     const answer = await onDeviceDictationStatus();
     await keep(answer);
-    setBusy(null);
+    setDownloading(false);
     setDownloadFailed(!ok && answer !== 'available');
   };
 
+  const idle = !checking && !downloading;
   const checkedOn =
-    check && busy === null
+    check && idle
       ? t('pages.settings.sayIt.checkedOn', {
           date: new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(check.checkedAt)),
         })
       : '';
-  const offerDownload = busy === null && (shown === 'downloadable' || shown === 'download-failed');
+  const offerDownload = idle && (shown === 'downloadable' || shown === 'download-failed');
 
   return (
     <section className="tw-settings-card" aria-labelledby={headingId}>

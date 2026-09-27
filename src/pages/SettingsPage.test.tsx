@@ -144,6 +144,22 @@ describe('SettingsPage: Say it', () => {
     expect(mock.instances).toHaveLength(0);
   });
 
+  it('can check the device again while a download is under way', async () => {
+    const user = userEvent.setup();
+    const mock = mockSpeechRecognition({ availability: 'downloadable' });
+    mock.install.mockReturnValue(new Promise<never>(() => undefined));
+    renderSettings();
+    await user.click(await findCheckButton());
+    await user.click(await screen.findByRole('button', { name: 'Download speech to text' }));
+    expect(await screen.findByText(/The browser is getting what it needs/)).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Download speech to text' })).not.toBeInTheDocument();
+    mock.available.mockResolvedValue('available');
+    await user.click(checkButton());
+    expect(await screen.findByText(/What learners say is not sent anywhere/)).toBeInTheDocument();
+    expect(mock.available).toHaveBeenCalledTimes(2);
+    await waitFor(async () => expect((await storedSettings()).speechCheck?.status).toBe('available'));
+  });
+
   it('says when the download did not finish', async () => {
     const user = userEvent.setup();
     mockSpeechRecognition({ availability: 'downloadable', installResult: false });
