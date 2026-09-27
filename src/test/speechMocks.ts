@@ -119,6 +119,8 @@ export interface FakeRecognitionInstance {
 export interface RecognitionMock {
   instances: FakeRecognitionInstance[];
   latest: () => FakeRecognitionInstance;
+  /** Called each time a recognition object is made (`new SpeechRecognition()`), under either name. */
+  construct: ReturnType<typeof vi.fn>;
   available: ReturnType<typeof vi.fn>;
   install: ReturnType<typeof vi.fn>;
 }
@@ -130,14 +132,26 @@ export interface RecognitionMock {
  *   engine that can only go online (Safari, Chrome on Android).
  * - `availability`: what available({ processLocally: true }) says.
  * - `prefixedOnly`: only webkitSpeechRecognition exists (Safari).
+ * - `prefixedToo`: webkitSpeechRecognition is the same constructor, as in Chrome.
+ *
+ * Pages must not call `available` or `construct` as they open (only on a
+ * tap): Chromium 153 crashed the tab on touch devices when they did.
  */
 export function mockSpeechRecognition({
   onDevice = true,
   availability = 'available',
   prefixedOnly = false,
+  prefixedToo = false,
   installResult = true,
-}: { onDevice?: boolean; availability?: Availability; prefixedOnly?: boolean; installResult?: boolean } = {}): RecognitionMock {
+}: {
+  onDevice?: boolean;
+  availability?: Availability;
+  prefixedOnly?: boolean;
+  prefixedToo?: boolean;
+  installResult?: boolean;
+} = {}): RecognitionMock {
   const instances: FakeRecognitionInstance[] = [];
+  const construct = vi.fn();
   const available = vi.fn(() => Promise.resolve(availability));
   const install = vi.fn(() => Promise.resolve(installResult));
 
@@ -160,6 +174,7 @@ export function mockSpeechRecognition({
       this.end();
     });
     constructor() {
+      construct();
       instances.push(this as unknown as FakeRecognitionInstance);
     }
     hear(pieces: Array<[string, boolean]>) {
@@ -194,8 +209,9 @@ export function mockSpeechRecognition({
     vi.stubGlobal('webkitSpeechRecognition', Base);
   } else {
     vi.stubGlobal('SpeechRecognition', ctor);
+    if (prefixedToo) vi.stubGlobal('webkitSpeechRecognition', ctor);
   }
-  return { instances, latest: () => instances[instances.length - 1]!, available, install };
+  return { instances, latest: () => instances[instances.length - 1]!, construct, available, install };
 }
 
 /* -------------------------------------------------------------- recorder */
