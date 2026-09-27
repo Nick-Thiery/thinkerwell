@@ -1,4 +1,6 @@
+import { createElement } from 'react';
 import { useI18n } from '../../i18n';
+import { useDsLinkComponent } from './DsLinkProvider';
 import { Icon } from './Icon';
 import { cx } from './internal/cx';
 import type { IconName, StageId } from './types';
@@ -42,6 +44,7 @@ export function StagePath({
   onSelect,
 }: StagePathProps) {
   const { t } = useI18n();
+  const LinkTag = useDsLinkComponent();
   return (
     <nav aria-label={t('ds.chrome.stagePath.navLabel')}>
       <ol
@@ -82,15 +85,14 @@ export function StagePath({
           );
           return (
             <li key={id} className={cx(isDone && 'tw-done')}>
-              {href ? (
-                <a {...stepProps} href={href} onClick={onSelect ? () => onSelect(id) : undefined}>
-                  {content}
-                </a>
-              ) : (
-                <button {...stepProps} type="button" onClick={onSelect ? () => onSelect(id) : undefined}>
-                  {content}
-                </button>
-              )}
+              {href
+                ? // createElement, not JSX: see the matching comment in Button.tsx.
+                  createElement(LinkTag, { ...stepProps, href, onClick: onSelect ? () => onSelect(id) : undefined }, content)
+                : (
+                    <button {...stepProps} type="button" onClick={onSelect ? () => onSelect(id) : undefined}>
+                      {content}
+                    </button>
+                  )}
             </li>
           );
         })}

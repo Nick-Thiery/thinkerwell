@@ -26,11 +26,123 @@
   },
   "lesson": {
     "number": "Lesson {number}",
-    "minutes": "About {min}–{max} min"
+    "minutes": "About {min}–{max} min",
+    "nextStep": "Next step: {stage}"
   },
   "pages": {
-    "home": { "title": "Who's learning today?" },
-    "course": { "title": "Course map" },
+    "home": {
+      "title": "Who's learning today?",
+      "subtitle": "Tap your name to carry on where you stopped.",
+      "onThisDevice": "On this device",
+      "hero": {
+        "tagline": "Explore your world.",
+        "description": "A free social-studies course. Learn about people, places and communities, and share your own ideas.",
+        "stagesLabel": "Every lesson has five steps",
+        "footnote": "{lessons} lessons in {sections} sections · no account needed"
+      },
+      "lookAround": "Just look around (nothing is saved)",
+      "lookAroundNote": "Work is saved on this device only. No passwords, no photos.",
+      "newLearnerTile": "I'm new here",
+      "tileMeta": "Up to Lesson {number}",
+      "tileMetaNone": "Not started yet",
+      "newLearner": {
+        "back": "Back",
+        "step": "Step 1 of 1",
+        "eyebrow": "Welcome",
+        "title": "What should we call you?",
+        "nameLabel": "First name or nickname",
+        "nameHelper": "No surname needed.",
+        "nameRequired": "Tell us what to call you.",
+        "nameTooLong": "Keep it to about 30 letters.",
+        "colourLabel": "Pick your colour",
+        "colour": {
+          "lemon": "Yellow",
+          "history": "Sand",
+          "geography": "Green",
+          "civics": "Blue",
+          "paper": "White"
+        },
+        "classCodeLabel": "Class code",
+        "classCodeHelper": "Your teacher may give you one.",
+        "classCodePlaceholder": "For example HLP-07",
+        "classCodeInvalid": "Use letters, numbers and hyphens only, like HLP-07.",
+        "submit": "Start Lesson 1",
+        "submitError": "That didn't save. Try again.",
+        "startsWith": "You will start with",
+        "startsWithLesson": "Lesson {number}: {title}",
+        "startsWithNote": "You can open any lesson later from the course page.",
+        "privacyNote": "Your work stays on this device."
+      },
+      "remove": {
+        "action": "Remove",
+        "label": "Remove {name}",
+        "confirmTitle": "Remove {name}?",
+        "confirmBody": "This deletes their progress, quiz results and recordings from this device. It cannot be undone.",
+        "confirm": "Remove {name}",
+        "cancel": "Keep {name}",
+        "error": "That didn't work. Try again."
+      },
+      "noStorage": {
+        "title": "Your work can't be saved on this device",
+        "body": "This browser is blocking on-device storage, often in a private window. You can still look around, but nothing you do will be saved.",
+        "cta": "Just look around"
+      },
+      "guest": {
+        "title": "Explore the course",
+        "body": "You're looking around, so nothing you do here is saved."
+      },
+      "dashboard": {
+        "greeting": "Hi {name}",
+        "summaryNone": "You haven't started a lesson yet. Next up is Lesson {number}.",
+        "summaryInProgress": {
+          "one": "You have finished 1 lesson. Next up is Lesson {number}.",
+          "other": "You have finished {count} lessons. Next up is Lesson {number}."
+        },
+        "summaryDone": "You have finished every lesson. Well done.",
+        "startHere": "Start here",
+        "startCta": "Start",
+        "continueEyebrow": "Pick up where you left off",
+        "finishedTitle": "You've finished the course",
+        "finishedBody": "You can go back to any lesson, or try the section checks again.",
+        "finishedCta": "See the course",
+        "savedBadge": "Saved on this device",
+        "yourCourse": "Your course",
+        "seeAll": "See all {count} lessons",
+        "youAreHere": "You are here",
+        "lessonsOf": "{completed} of {total} lessons",
+        "sectionCheckReady": "Section check ready",
+        "sectionCheckBody": {
+          "one": "You finished all {count} lesson. Try {questions} questions to see what you remember. Take it as many times as you like.",
+          "other": "You finished all {count} lessons. Try {questions} questions to see what you remember. Take it as many times as you like."
+        },
+        "startCheck": "Start the check",
+        "fromJournal": "From your journal",
+        "openJournal": "Open my journal",
+        "noJournalYet": "Nothing saved yet. Your writing and reflections show up here once you start.",
+        "latestEntry": "{stage} · Lesson {number}"
+      }
+    },
+    "course": {
+      "title": "Exploring Our World",
+      "eyebrow": "The course",
+      "description": "Discover how people, places, communities and decisions shape the world around us.",
+      "lessonsBadge": { "one": "{count} lesson", "other": "{count} lessons" },
+      "checksBadge": { "one": "{count} section check", "other": "{count} section checks" },
+      "timeBadge": "About {min}–{max} min a lesson",
+      "sectionsNav": "Sections",
+      "nothingLocked": "Nothing is locked. Start any lesson, in any order. The numbers show a good path.",
+      "guestNote": "You're looking around, so progress isn't shown.",
+      "noLearnerNote": "Choose who's learning to see your progress.",
+      "lessonLabel": "Lesson {number} · {section}",
+      "sidebarCount": "{completed} of {total}",
+      "numberRange": "{first}–{last}",
+      "showLessons": "Show {count} lessons",
+      "hideLessons": "Hide lessons",
+      "sectionCheckRowTitle": "Section check: {title}",
+      "sectionCheckQuestion": "Covers Lessons {range}. Try it any time, as often as you like.",
+      "allDoneCheckNotTaken": "All {count} lessons done. Section check not taken yet.",
+      "lessonsRange": "Lessons {range}"
+    },
     "lesson": { "title": "Lesson {number}: {stage}" },
     "sectionCheck": { "title": "Section check: {section}" },
     "journal": { "title": "My journal" },
@@ -43,6 +155,22 @@
     "body": "The link may be old or have a typo. Everything in the course is still here.",
     "home": "Go to home",
     "course": "See the course"
+  },
+  "routeError": {
+    "title": "Something went wrong",
+    "body": "Sorry about that. Try reloading the page, or go back to home. Nothing you had saved is lost.",
+    "home": "Go to home"
+  },
+  "header": {
+    "switcherTitle": "Switch learner",
+    "switcherClose": "Close",
+    "lookAroundTile": "Just look around",
+    "backToPicker": "Back to who's learning",
+    "lookAroundTitle": "You're looking around",
+    "lookAroundBanner": "Nothing you do on this visit is saved.",
+    "chooseLearner": "Choose a learner",
+    "menuTitle": "Menu",
+    "menuClose": "Close menu"
   },
   "dev": {
     "rtlOn": "Right-to-left test mode is on. Add ?dir=ltr to the address to turn it off."

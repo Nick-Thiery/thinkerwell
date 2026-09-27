@@ -1,4 +1,6 @@
+import { createElement } from 'react';
 import { useI18n } from '../../i18n';
+import { useDsLinkComponent } from './DsLinkProvider';
 import './Logo.css';
 
 export interface LogoProps {
@@ -17,10 +19,12 @@ export interface LogoProps {
  */
 export function Logo({ src, size = 44, wordmark = true, href = '/' }: LogoProps) {
   const { t } = useI18n();
-  return (
-    <a className="tw-logo" href={href} aria-label={t('ds.chrome.logo.homeLabel')}>
-      <img src={src} alt="" width={size} height={size} style={{ width: size, height: size }} />
-      {wordmark === false ? null : <span>Thinkerwell</span>}
-    </a>
+  const LinkTag = useDsLinkComponent();
+  // createElement, not JSX: see the matching comment in Button.tsx.
+  return createElement(
+    LinkTag,
+    { className: 'tw-logo', href, 'aria-label': t('ds.chrome.logo.homeLabel') },
+    <img key="img" src={src} alt="" width={size} height={size} style={{ width: size, height: size }} />,
+    wordmark === false ? null : <span key="word">Thinkerwell</span>,
   );
 }

@@ -33,15 +33,22 @@ describe('SiteHeader', () => {
     expect(screen.getAllByRole('button')).toHaveLength(1);
   });
 
-  it('full layout: the learner chip has an accessible name once a learner is chosen', () => {
+  it('full layout: the learner chip names the current learner for screen readers, and says it opens the switcher', () => {
     render(<SiteHeader logoSrc={LOGO} links={LINKS} learner={{ name: 'Amina' }} />);
-    expect(screen.getByRole('button', { name: 'Amina' })).toBeInTheDocument();
+    const chip = screen.getByRole('button', { name: 'Switch learner, current: Amina' });
+    expect(chip).toBeInTheDocument();
+    expect(chip).toHaveAttribute('aria-haspopup', 'dialog');
   });
 
   it('compact layout: the learner chip names the current learner for screen readers', () => {
     render(<SiteHeader logoSrc={LOGO} learner={{ name: 'Amina' }} compact />);
     expect(screen.getByRole('button', { name: 'Switch learner, current: Amina' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Open navigation menu' })).toBeInTheDocument();
+  });
+
+  it('marks the learner chip expanded while its switcher is open', () => {
+    render(<SiteHeader logoSrc={LOGO} learner={{ name: 'Amina' }} learnerMenuOpen />);
+    expect(screen.getByRole('button', { name: 'Switch learner, current: Amina' })).toHaveAttribute('aria-expanded', 'true');
   });
 
   it('calls onLearnerClick and onMenuClick', async () => {

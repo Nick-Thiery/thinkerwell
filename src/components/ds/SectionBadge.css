@@ -30,6 +30,12 @@
 .tw-secbadge-text {
   display: flex;
   flex-direction: column;
+  /* Lets the name wrap instead of overflowing into whatever sits beside the
+     badge, wherever a caller places SectionBadge in a width-constrained row
+     (for example the dashboard's per-section rows). Flex items default to
+     min-width: auto, sized to their unwrapped content; SectionHeader's own
+     equivalent (.tw-sechead-text) already sets this for the same reason. */
+  min-width: 0;
 }
 
 /* .tw-secbadge-eyebrow lives in ds.css (shared, globally loaded):

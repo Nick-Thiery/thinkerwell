@@ -1,5 +1,6 @@
-import type { ReactNode } from 'react';
+import { createElement, type MouseEvent, type ReactNode } from 'react';
 import { useI18n } from '../../i18n';
+import { useDsLinkComponent } from './DsLinkProvider';
 import { Icon } from './Icon';
 import { Logo } from './Logo';
 import { cx } from './internal/cx';
@@ -19,9 +20,18 @@ export interface SiteHeaderProps {
   /**
    * Not in the design-system docs (index.d.ts); added so a caller can open
    * the learner switcher. Storage is wired in phase 3 — this component only
-   * makes the chip a real, labelled, focusable button.
+   * makes the chip a real, labelled, focusable button. Takes the click event
+   * so the caller can keep a reliable reference to the chip itself (Safari
+   * and Firefox don't always focus a button on click, so a caller can't
+   * assume `document.activeElement` is this chip afterwards — r2-spec-2).
    */
-  onLearnerClick?: () => void;
+  onLearnerClick?: (event: MouseEvent<HTMLButtonElement>) => void;
+  /**
+   * Not in the design-system docs; true while the popover `onLearnerClick`
+   * opens is on screen, so the chip can say so (aria-expanded/aria-haspopup:
+   * WCAG 4.1.2 — the chip is a disclosure button, not a plain link).
+   */
+  learnerMenuOpen?: boolean;
   /** Not in the design-system docs; opens the phone navigation menu. */
   onMenuClick?: () => void;
 }
@@ -51,9 +61,11 @@ export function SiteHeader({
   compact = false,
   children,
   onLearnerClick,
+  learnerMenuOpen,
   onMenuClick,
 }: SiteHeaderProps) {
   const { t } = useI18n();
+  const LinkTag = useDsLinkComponent();
   return (
     <header className={cx('tw-header', compact && 'tw-header-compact')}>
       <div className="tw-header-inner">
@@ -65,6 +77,8 @@ export function SiteHeader({
                 type="button"
                 className="tw-learner-chip"
                 aria-label={t('ds.chrome.siteHeader.switchLearner', { name: learner.name })}
+                aria-haspopup="dialog"
+                aria-expanded={learnerMenuOpen}
                 onClick={onLearnerClick}
               >
                 <Avatar name={learner.name} tone={learner.tone} />
@@ -82,17 +96,27 @@ export function SiteHeader({
         ) : (
           <div className="tw-header-right">
             <nav className="tw-nav" aria-label={t('nav.label')}>
-              {links.map((link, i) => (
-                <a key={i} href={link.href || '#'} aria-current={link.active ? 'page' : undefined}>
-                  {link.icon ? <Icon name={link.icon} size={18} /> : null}
-                  {link.label}
-                </a>
-              ))}
+              {links.map((link, i) =>
+                // createElement, not JSX: see the matching comment in Button.tsx.
+                createElement(
+                  LinkTag,
+                  { key: i, href: link.href || '#', 'aria-current': link.active ? 'page' : undefined },
+                  link.icon ? <Icon name={link.icon} size={18} /> : null,
+                  link.label,
+                ),
+              )}
             </nav>
             {learner ? (
-              <button type="button" className="tw-learner-chip" onClick={onLearnerClick}>
+              <button
+                type="button"
+                className="tw-learner-chip"
+                aria-label={t('ds.chrome.siteHeader.switchLearner', { name: learner.name })}
+                aria-haspopup="dialog"
+                aria-expanded={learnerMenuOpen}
+                onClick={onLearnerClick}
+              >
                 <Avatar name={learner.name} tone={learner.tone} />
-                <span>{learner.name}</span>
+                <span aria-hidden="true">{learner.name}</span>
                 <Icon name="ChevronDown" size={18} />
               </button>
             ) : null}
