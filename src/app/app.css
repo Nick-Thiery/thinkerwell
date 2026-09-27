@@ -109,17 +109,11 @@
   max-inline-size: var(--reading-measure);
 }
 
-.tw-placeholder-links {
+.tw-placeholder-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-4);
-}
-
-.tw-placeholder-links a {
-  display: inline-flex;
-  align-items: center;
-  min-block-size: var(--target-min);
-  font-weight: 700;
+  gap: var(--space-3);
+  margin-block-start: var(--space-2);
 }
 
 .tw-dev-banner {

@@ -1,8 +1,8 @@
-import { Link } from 'react-router';
+import { Button } from '../components/ds';
 import { useI18n } from '../i18n';
 import { usePageTitle } from '../app/usePageTitle';
 
-/** The friendly 404. Links back into the course; never a dead end. */
+/** The friendly 404. Buttons back into the course; never a dead end. */
 export function NotFoundPage() {
   const { t } = useI18n();
   usePageTitle(t('notFound.title'));
@@ -12,14 +12,14 @@ export function NotFoundPage() {
         {t('notFound.title')}
       </h1>
       <p className="body-lg">{t('notFound.body')}</p>
-      <ul role="list" className="tw-placeholder-links">
-        <li>
-          <Link to="/">{t('notFound.home')}</Link>
-        </li>
-        <li>
-          <Link to="/course">{t('notFound.course')}</Link>
-        </li>
-      </ul>
+      <div className="tw-placeholder-actions">
+        <Button variant="primary" size="lg" icon="Home" href="/">
+          {t('notFound.home')}
+        </Button>
+        <Button variant="secondary" size="lg" icon="Map" href="/course">
+          {t('notFound.course')}
+        </Button>
+      </div>
     </div>
   );
 }

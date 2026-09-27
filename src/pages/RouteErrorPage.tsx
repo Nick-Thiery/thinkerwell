@@ -20,11 +20,12 @@ export function RouteErrorPage() {
         {t('routeError.title')}
       </h1>
       <p className="body-lg">{isRouteErrorResponse(error) && error.status === 404 ? t('notFound.body') : t('routeError.body')}</p>
-      <ul role="list" className="tw-placeholder-links">
-        <li>
-          <a href="/">{t('routeError.home')}</a>
-        </li>
-      </ul>
+      <div className="tw-placeholder-actions">
+        {/* A plain link, not the router's: after a crash, a full page load starts clean. */}
+        <a className="tw-btn tw-btn-primary tw-btn-lg" href="/">
+          {t('routeError.home')}
+        </a>
+      </div>
     </div>
   );
 }
