@@ -11,6 +11,7 @@ import { RouteErrorPage } from '../pages/RouteErrorPage';
 import { SettingsPage } from '../pages/SettingsPage';
 import { AnswerKeyRoute } from './AnswerKeyRoute';
 import { AppLayout } from './AppLayout';
+import { CourseCertificateRoute, SectionCertificateRoute } from './CertificateRoute';
 import { LessonPrintRoute } from './LessonPrintRoute';
 import { LessonRoute } from './LessonRoute';
 import { SectionCheckRoute } from './SectionCheckRoute';
@@ -88,6 +89,9 @@ export const routes: RouteObject[] = [
       { path: 'section/:id/check', element: <SectionCheckRoute /> },
       { path: 'journal', element: <JournalPage /> },
       { path: 'journal/print', element: <JournalPrintPage /> },
+      // Printable certificates, built on the print views' page and toolbar.
+      { path: 'certificate/section/:id', element: <SectionCertificateRoute /> },
+      { path: 'certificate/course', element: <CourseCertificateRoute /> },
       { path: 'educators', element: <EducatorsPage /> },
       { path: 'educators/lesson/:id', element: <TeacherGuideRoute /> },
       { path: 'educators/section/:id/answers', element: <AnswerKeyRoute /> },

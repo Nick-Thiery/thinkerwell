@@ -179,6 +179,21 @@ describe('section checks', () => {
   });
 });
 
+describe('certificates', () => {
+  it.each(getSections().map((s) => [s.id, s] as const))('/certificate/section/%s shows its title', async (id, section) => {
+    renderAt(`/certificate/section/${id}`);
+    const title = t('certificates.sectionPageTitle', { section: section.title });
+    await waitFor(() => expect(heading()).toHaveTextContent(title));
+    expect(document.title).toBe(`${title} · Thinkerwell`);
+  });
+
+  it('/certificate/course shows its title', async () => {
+    renderAt('/certificate/course');
+    await waitFor(() => expect(heading()).toHaveTextContent('Course certificate'));
+    expect(document.title).toBe('Course certificate · Thinkerwell');
+  });
+});
+
 describe('not found', () => {
   it.each([
     '/lesson/nope/read',
@@ -190,6 +205,9 @@ describe('not found', () => {
     '/educators/lesson/nope',
     '/educators/section/nope/answers',
     '/educators/section/history',
+    '/certificate/section/nope',
+    '/certificate/section',
+    '/certificate/nope',
   ])(
     '%s shows the friendly 404',
     (path) => {

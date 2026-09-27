@@ -8,6 +8,7 @@
 import {
   ArrowLeft,
   ArrowRight,
+  Award,
   BookOpen,
   Captions,
   Check,
@@ -120,7 +121,9 @@ export type IconName =
   // Not in the design-system list: the header's link to Settings (phase 6).
   | 'Settings'
   // Not in the design-system list: "Load my work" in Settings (moving work between devices).
-  | 'Upload';
+  | 'Upload'
+  // Not in the design-system list: the links to a printable certificate.
+  | 'Award';
 
 /**
  * Icon names that point along the reading direction and must be mirrored
@@ -189,4 +192,5 @@ export const ICONS: Record<IconName, LucideIcon> = {
   LogOut,
   Settings,
   Upload,
+  Award,
 };

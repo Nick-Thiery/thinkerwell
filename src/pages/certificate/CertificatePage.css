@@ -1,0 +1,502 @@
+/*
+ * The certificate (/certificate/section/:id, /certificate/course). The page
+ * and toolbar come from the print views (../print/print.css).
+ *
+ * On screen: the name field, then the certificate as a sheet on the canvas.
+ * On a phone it stacks (one column of lessons, the date above the signature)
+ * instead of shrinking, so nothing is smaller than 14px and nothing scrolls
+ * sideways.
+ *
+ * On paper: one landscape page on its own named page (tw-certificate), so
+ * no other print view turns landscape after a certificate has been open in
+ * this tab. It is sized for the smaller page box of A4 and US Letter
+ * landscape (255 mm wide on Letter, 186 mm high on A4, inside 12 mm
+ * margins). Black on white with thin rules: no fills but the four small
+ * section discs, so a black-and-white printer uses little ink. The mascot
+ * keeps its colours.
+ */
+
+.tw-cert-page {
+  max-inline-size: 1040px;
+}
+
+.tw-cert-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.tw-cert-controls .tw-field {
+  max-inline-size: 480px;
+}
+
+.tw-cert-left-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* The certificate. */
+.tw-cert {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+  padding-block: var(--space-10);
+  padding-inline: var(--space-12);
+  border: 6px double var(--ink);
+  border-radius: var(--radius-xl);
+  background: var(--paper);
+  color: var(--ink);
+  text-align: center;
+  min-inline-size: 0;
+}
+
+.tw-cert p,
+.tw-cert h1,
+.tw-cert h2,
+.tw-cert ol,
+.tw-cert ul {
+  margin: 0;
+}
+
+.tw-cert-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.tw-cert-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+/* The mascot exactly as drawn: never cropped (its own proportions, contained). */
+.tw-cert-mascot {
+  display: block;
+  inline-size: 96px;
+  block-size: auto;
+  object-fit: contain;
+  flex: none;
+}
+
+.tw-cert-wordmark {
+  font-family: var(--font-wordmark);
+  font-size: 40px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.tw-cert-title {
+  font-family: var(--font-display);
+  font-size: 44px;
+  line-height: 48px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.tw-cert-who {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  inline-size: 100%;
+}
+
+/* The learner's name, large, on a rule. A long name wraps; it never widens the page. */
+.tw-cert-name {
+  max-inline-size: 100%;
+  min-inline-size: min(100%, 420px);
+  padding-block-end: var(--space-2);
+  padding-inline: var(--space-4);
+  border-block-end: 2px solid var(--ink);
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.tw-cert-name-l {
+  font-size: 60px;
+  line-height: 64px;
+}
+
+.tw-cert-name-m {
+  font-size: 48px;
+  line-height: 54px;
+}
+
+.tw-cert-name-s {
+  font-size: 38px;
+  line-height: 44px;
+}
+
+/* No name: a line to write one on by hand. */
+.tw-cert-name-blank {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  inline-size: min(100%, 420px);
+  text-align: start;
+}
+
+.tw-cert-finished {
+  max-inline-size: 36em;
+  font-size: 22px;
+  line-height: 32px;
+  text-wrap: balance;
+}
+
+/* A section certificate: the section and its lessons. */
+.tw-cert-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  inline-size: 100%;
+}
+
+.tw-cert-contents-title {
+  font: inherit;
+}
+
+.tw-cert .tw-secbadge {
+  text-align: start;
+}
+
+.tw-cert-lessons {
+  inline-size: min(100%, 780px);
+  padding: 0;
+  list-style: none;
+  columns: 2;
+  column-gap: var(--space-8);
+  text-align: start;
+  font-size: 17px;
+  line-height: 26px;
+}
+
+.tw-cert-lessons li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  padding-block: var(--space-1);
+  break-inside: avoid;
+}
+
+.tw-cert-lesson-number {
+  flex: none;
+  min-inline-size: 2ch;
+  font-weight: 700;
+  text-align: end;
+}
+
+/* The course certificate: the four sections. */
+.tw-cert-sections {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4) var(--space-8);
+  inline-size: min(100%, 780px);
+  padding: 0;
+  list-style: none;
+}
+
+/* The date and a line for a teacher to sign, then what the course is. */
+.tw-cert-foot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  inline-size: 100%;
+}
+
+.tw-cert-signs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-6) var(--space-10);
+}
+
+.tw-cert-sign {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 0 1 320px;
+  min-inline-size: 0;
+  text-align: start;
+}
+
+.tw-cert-line {
+  min-block-size: 36px;
+  padding-block-end: var(--space-1);
+  border-block-end: 2px solid var(--ink);
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.tw-cert-label,
+.tw-cert-about {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ink-muted);
+}
+
+@media screen and (max-width: 900px) {
+  .tw-cert {
+    gap: var(--space-6);
+    padding-block: var(--space-8);
+    padding-inline: var(--space-8);
+  }
+
+  .tw-cert-mascot {
+    inline-size: 80px;
+  }
+
+  .tw-cert-wordmark {
+    font-size: 34px;
+  }
+
+  .tw-cert-name-l {
+    font-size: 52px;
+    line-height: 56px;
+  }
+
+  .tw-cert-name-m {
+    font-size: 42px;
+    line-height: 48px;
+  }
+
+  .tw-cert-name-s {
+    font-size: 34px;
+    line-height: 40px;
+  }
+}
+
+/* Phone: everything stacks, still at least 14px. */
+@media screen and (max-width: 600px) {
+  .tw-cert {
+    gap: var(--space-5);
+    padding-block: var(--space-6);
+    padding-inline: var(--space-4);
+    border-width: 4px;
+    border-radius: var(--radius-lg);
+  }
+
+  .tw-cert-mascot {
+    inline-size: 64px;
+  }
+
+  .tw-cert-wordmark {
+    font-size: 28px;
+  }
+
+  .tw-cert-title {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .tw-cert-name {
+    min-inline-size: 0;
+    padding-inline: var(--space-2);
+  }
+
+  .tw-cert-name-l {
+    font-size: 38px;
+    line-height: 42px;
+  }
+
+  .tw-cert-name-m {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .tw-cert-name-s {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  .tw-cert-finished {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .tw-cert-lessons {
+    columns: 1;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .tw-cert-sections {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tw-cert-sign {
+    flex-basis: 100%;
+  }
+}
+
+@media print {
+  /* A page of its own: landscape, whichever paper is chosen (A4 or Letter). */
+  @page tw-certificate {
+    size: landscape;
+    margin: 12mm;
+  }
+
+  .tw-cert-page {
+    max-inline-size: none;
+  }
+
+  .tw-cert {
+    page: tw-certificate;
+    justify-content: space-between;
+    min-block-size: 183mm;
+    gap: 4mm;
+    padding-block: 8mm;
+    padding-inline: 14mm;
+    border: 2mm double #000;
+    border-radius: 4mm;
+    background: transparent;
+    color: #000;
+    break-inside: avoid;
+  }
+
+  .tw-cert-head {
+    gap: 1.5mm;
+  }
+
+  .tw-cert-brand {
+    gap: 3mm;
+  }
+
+  .tw-cert-mascot {
+    inline-size: 20mm;
+  }
+
+  .tw-cert-wordmark {
+    font-size: 24pt;
+  }
+
+  .tw-cert-title {
+    font-size: 26pt;
+    line-height: 1.15;
+  }
+
+  .tw-cert-who {
+    gap: 3mm;
+  }
+
+  .tw-cert-name {
+    min-inline-size: 110mm;
+    padding-block-end: 1.5mm;
+    padding-inline: 6mm;
+    border-block-end: 0.6mm solid #000;
+  }
+
+  .tw-cert-name-l {
+    font-size: 36pt;
+    line-height: 1.15;
+  }
+
+  .tw-cert-name-m {
+    font-size: 30pt;
+    line-height: 1.15;
+  }
+
+  .tw-cert-name-s {
+    font-size: 24pt;
+    line-height: 1.2;
+  }
+
+  .tw-cert-name-blank {
+    gap: 1mm;
+    inline-size: 110mm;
+  }
+
+  .tw-cert-finished {
+    font-size: 14pt;
+    line-height: 1.4;
+  }
+
+  .tw-cert-contents {
+    gap: 3mm;
+  }
+
+  .tw-cert .tw-secbadge {
+    gap: 2.5mm;
+  }
+
+  /* The section discs keep their pale tint on paper: small, and it tells the sections apart. */
+  .tw-cert .tw-secdisc {
+    inline-size: 10mm;
+    block-size: 10mm;
+    print-color-adjust: exact;
+  }
+
+  .tw-cert .tw-secdisc svg {
+    inline-size: 5mm;
+    block-size: 5mm;
+  }
+
+  .tw-cert .tw-secbadge-eyebrow {
+    font-size: 8.5pt;
+    line-height: 1.3;
+    color: #000;
+  }
+
+  .tw-cert .tw-secbadge-name {
+    font-size: 12pt;
+    line-height: 1.25;
+    color: #000;
+  }
+
+  .tw-cert-lessons {
+    inline-size: min(100%, 205mm);
+    column-gap: 10mm;
+    font-size: 10.5pt;
+    line-height: 1.35;
+  }
+
+  .tw-cert-lessons li {
+    gap: 2.5mm;
+    padding-block: 0.6mm;
+  }
+
+  .tw-cert-sections {
+    inline-size: min(100%, 205mm);
+    gap: 3mm 10mm;
+  }
+
+  .tw-cert-foot {
+    gap: 3mm;
+  }
+
+  .tw-cert-signs {
+    gap: 4mm 20mm;
+  }
+
+  .tw-cert-sign {
+    flex: 0 1 85mm;
+    gap: 1mm;
+  }
+
+  .tw-cert-line {
+    min-block-size: 8mm;
+    padding-block-end: 0.5mm;
+    border-block-end: 0.4mm solid #000;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  .tw-cert-label,
+  .tw-cert-about {
+    font-size: 9pt;
+    line-height: 1.3;
+    color: #000;
+  }
+}

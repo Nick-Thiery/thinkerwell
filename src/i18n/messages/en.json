@@ -878,5 +878,41 @@
     "chooseLearner": "Choose who's learning",
     "writing": "Writing",
     "reflection": "Reflection"
+  },
+  "certificates": {
+    "sectionPageTitle": "Certificate: {section}",
+    "coursePageTitle": "Course certificate",
+    "backToCourse": "Back to the course",
+    "backToHome": "Back to home",
+    "printIntro": "Check the name, then print. It fits on one page of A4 or Letter paper.",
+    "nameLabel": "Name on the certificate",
+    "nameHelp": "Just for this print. It isn't saved and never leaves this device.",
+    "sheet": {
+      "title": "Certificate",
+      "finishedSection": "finished the {section} section of {course}.",
+      "finishedCourse": "finished all {count} lessons of {course}.",
+      "lessons": { "one": "{count} lesson", "other": "{count} lessons" },
+      "blankName": "Name",
+      "date": "Date",
+      "signature": "Teacher's signature",
+      "about": "{course} is a free social-studies course from Thinkerwell."
+    },
+    "notYet": {
+      "section": "Your certificate is ready when you finish every lesson in this section.",
+      "course": "Your course certificate is ready when you finish all {count} lessons.",
+      "checkNotNeeded": "You don't need to do the section check for it.",
+      "lessonsLeft": { "one": "{count} lesson left", "other": "{count} lessons left" }
+    },
+    "guest": "Certificates are for learners who have finished lessons.",
+    "offer": {
+      "sectionTitle": "You finished the whole {section} section.",
+      "courseTitle": "You finished all {count} lessons.",
+      "sectionBody": "Your certificate is ready to print.",
+      "courseBody": "Your course certificate is ready to print.",
+      "getCertificate": "Get your certificate",
+      "getCertificateFor": "Get your certificate for {section}",
+      "getCourseCertificate": "Get your course certificate",
+      "getSectionCertificate": "Get your section certificate"
+    }
   }
 }

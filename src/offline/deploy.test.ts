@@ -33,7 +33,7 @@ describe('vercel.json', () => {
   it('sends every page address to index.html (files on disk still come first)', () => {
     expect(vercel.rewrites).toHaveLength(1);
     expect(vercel.rewrites[0]!.destination).toBe('/index.html');
-    for (const path of ['/', '/course', '/lesson/towns-near-rivers/read', '/lesson/l6', '/section/civics/check', '/journal/print', '/whatever']) {
+    for (const path of ['/', '/course', '/lesson/towns-near-rivers/read', '/lesson/l6', '/section/civics/check', '/journal/print', '/certificate/section/history', '/certificate/course', '/whatever']) {
       expect(rewritten(path), path).toBe(true);
     }
   });
