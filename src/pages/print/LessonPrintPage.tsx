@@ -41,7 +41,7 @@ export function LessonPrintPage({ lesson }: { lesson: Lesson }) {
           </h1>
           <p className="tw-print-question">{lesson.essentialQuestion}</p>
           <p>
-            <strong>{t('lessonPlayer.shell.learningGoal')}:</strong> {lesson.learningGoal}
+            <strong>{t('print.learningGoal')}</strong> {lesson.learningGoal}
           </p>
           <p className="tw-print-muted">{t('lesson.minutes', { min, max })}</p>
         </header>
@@ -167,9 +167,7 @@ export function LessonPrintPage({ lesson }: { lesson: Lesson }) {
             <p>{watch.beforeQuestion}</p>
             <AnswerLines count={2} />
           </div>
-          <h3>
-            {t('lessonPlayer.watch.writtenPart')}: {watch.title}
-          </h3>
+          <h3>{t('print.writtenVersion', { title: watch.title })}</h3>
           {splitParagraphs(watch.summary).map((paragraph, index) => (
             <p key={index} className="tw-print-reading-text">
               {paragraph}
