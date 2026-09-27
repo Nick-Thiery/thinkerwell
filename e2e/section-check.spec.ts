@@ -25,7 +25,7 @@ test('a full section check: intro, ten questions with feedback, results, and a s
   await addLearnerViaUi(page, 'Amina');
 
   await page.goto('/section/geography/check');
-  await expect(page.getByRole('heading', { level: 1, name: `What do you remember from ${SECTION_TITLE}?` })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1, name: `Section check: ${SECTION_TITLE}` })).toBeVisible();
   await page.getByRole('button', { name: 'Start the check' }).click();
   await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '0');
 
@@ -60,7 +60,7 @@ test('a full section check: intro, ten questions with feedback, results, and a s
 
   // Try again starts a clean attempt.
   await page.getByRole('button', { name: 'Try the check again' }).click();
-  await expect(page.getByRole('heading', { level: 1, name: `What do you remember from ${SECTION_TITLE}?` })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1, name: `Section check: ${SECTION_TITLE}` })).toBeVisible();
   await page.getByRole('button', { name: 'Start the check' }).click();
   await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '0');
 });

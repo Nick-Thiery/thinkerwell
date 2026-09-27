@@ -29,8 +29,9 @@ export function EducatorsPage() {
         <div className="tw-edu-hero-text">
           <span className="eyebrow">{t('pages.educators.eyebrow')}</span>
           <h1 className="h1" tabIndex={-1}>
-            {t('pages.educators.heroTitle')}
+            {t('pages.educators.title')}
           </h1>
+          <p className="h2 tw-edu-tagline">{t('pages.educators.heroTitle')}</p>
           <p className="body-lg">{t('pages.educators.heroBody')}</p>
           <div className="tw-edu-hero-actions">
             <Button variant="primary" size="lg" icon="Eye" href="#preview-lessons">

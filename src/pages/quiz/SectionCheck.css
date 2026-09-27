@@ -32,7 +32,8 @@
   gap: var(--space-2);
 }
 
-.tw-quiz-intro-head .h1 {
+.tw-quiz-intro-head .h1,
+.tw-quiz-intro-head p {
   margin: 0;
 }
 

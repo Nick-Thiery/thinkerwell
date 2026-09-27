@@ -29,6 +29,12 @@ type Screen = 'intro' | 'question' | 'results';
  * the best and the latest of each section's attempts, not a draft), and
  * only for a chosen learner — "Save and stop" and every guest visit
  * (looking around, or nobody chosen yet) leave nothing behind.
+ *
+ * Unlike the course map or the dashboard, this shows its intro right away
+ * rather than waiting for the learner session to load: the intro doesn't
+ * depend on it, and by the time a real answer needs a seed to shuffle
+ * options with (the question screen, reached only after "Start the check"),
+ * the session has always long since resolved.
  */
 export function SectionCheckPage({ section }: SectionCheckPageProps) {
   const { t } = useI18n();
@@ -54,12 +60,6 @@ export function SectionCheckPage({ section }: SectionCheckPageProps) {
     shownKey.current = key;
     containerRef.current?.querySelector<HTMLElement>('h1')?.focus({ preventScroll: false });
   }, [screen, index]);
-
-  // Nothing until the learner session has loaded: whether this attempt will
-  // be saved (and, for a chosen learner, the seed its options shuffle with)
-  // depends on it, and switching that mid-question would reshuffle the
-  // options under an answer the learner already gave.
-  if (session.status === 'loading') return null;
 
   if (!quiz) {
     // Content always has one quiz per section (content.test.ts checks this);

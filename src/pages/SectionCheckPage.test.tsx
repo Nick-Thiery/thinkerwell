@@ -58,7 +58,8 @@ describe('SectionCheckPage', () => {
   it('shows the intro with the check facts, then starts on "Start the check"', async () => {
     const user = userEvent.setup();
     renderCheck({ lookAround: true });
-    expect(await screen.findByRole('heading', { level: 1, name: `What do you remember from ${section.title}?` })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { level: 1, name: `Section check: ${section.title}` })).toBeInTheDocument();
+    expect(screen.getByText(`What do you remember from ${section.title}?`)).toBeInTheDocument();
     expect(screen.getByText(new RegExp(`${quiz.questions.length} questions about Lessons`))).toBeInTheDocument();
     expect(screen.getByText('Nothing is saved while you look around')).toBeInTheDocument();
 
@@ -137,7 +138,7 @@ describe('SectionCheckPage', () => {
     await screen.findByRole('button', { name: 'Try the check again' });
 
     await user.click(screen.getByRole('button', { name: 'Try the check again' }));
-    expect(await screen.findByRole('heading', { level: 1, name: `What do you remember from ${section.title}?` })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { level: 1, name: `Section check: ${section.title}` })).toBeInTheDocument();
 
     await user.click(screen.getByRole('button', { name: 'Start the check' }));
     expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '0');

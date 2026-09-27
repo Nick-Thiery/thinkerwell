@@ -41,8 +41,9 @@ export function QuizIntroScreen({ section, quiz, isGuest, onStart }: QuizIntroSc
         <div className="tw-quiz-intro-head">
           <span className="eyebrow">{t('pages.sectionCheck.eyebrow')}</span>
           <h1 className="h1" tabIndex={-1}>
-            {t('pages.sectionCheck.introTitle', { title: section.title })}
+            {t('pages.sectionCheck.title', { section: section.title })}
           </h1>
+          <p className="h2 tw-quiz-intro-tagline">{t('pages.sectionCheck.introTitle', { title: section.title })}</p>
         </div>
         <ul className="tw-quiz-facts" role="list">
           <li className="tw-quiz-fact">

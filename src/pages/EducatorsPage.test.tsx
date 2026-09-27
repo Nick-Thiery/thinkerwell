@@ -9,7 +9,8 @@ const L10 = getLesson('towns-near-rivers') as Lesson;
 describe('EducatorsPage', () => {
   it('shows the hero, what you need, and how a session works, with a link to Settings', () => {
     render(<EducatorsPage />);
-    expect(screen.getByRole('heading', { level: 1, name: 'Run a Thinkerwell lesson with your group' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1, name: 'For educators' })).toBeInTheDocument();
+    expect(screen.getByText('Run a Thinkerwell lesson with your group')).toBeInTheDocument();
     expect(screen.getByText('One device for every 1 to 3 learners, or one big screen')).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 2, name: 'How a session works' })).toBeInTheDocument();
     expect(screen.getByText('Pick a lesson')).toBeInTheDocument();
