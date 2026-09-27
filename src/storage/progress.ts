@@ -100,6 +100,44 @@ export function totalLessonsCompleted(lessons: readonly Lesson[], progress: Prog
   return lessons.filter((lesson) => isLessonComplete(progress.get(lesson.id))).length;
 }
 
+/** How far a learner is through a set of lessons (a section's, or the whole course), for certificates. */
+export interface LessonSetStatus {
+  /** True once every lesson in the set is complete (and the set isn't empty). */
+  complete: boolean;
+  /** The lessons not finished yet, in the order given. */
+  left: Lesson[];
+  /** When the last of them was finished (the latest completedAt) once every one is; null until then. */
+  finishedAt: string | null;
+}
+
+/**
+ * Whether a learner has finished every lesson in `lessons`, which are left,
+ * and when the last one was finished. Only lessons count: section checks
+ * are optional and never needed (CLAUDE.md rule 3).
+ */
+export function lessonSetStatus(lessons: readonly Lesson[], progress: ProgressByLessonId): LessonSetStatus {
+  const left: Lesson[] = [];
+  let latest = '';
+  for (const lesson of lessons) {
+    const at = progress.get(lesson.id)?.completedAt;
+    if (!at) left.push(lesson);
+    else if (at > latest) latest = at;
+  }
+  const complete = lessons.length > 0 && left.length === 0;
+  return { complete, left, finishedAt: complete ? latest : null };
+}
+
+/**
+ * True when finishing `lesson` is what completed the set: every lesson in
+ * `lessons` is complete, and this one was the last of them to be finished.
+ * The complete screen uses it to mark the moment a section (or the whole
+ * course) is finished, and not every later visit to an earlier lesson.
+ */
+export function finishedSetWith(lesson: Lesson, lessons: readonly Lesson[], progress: ProgressByLessonId): boolean {
+  const status = lessonSetStatus(lessons, progress);
+  return status.complete && progress.get(lesson.id)?.completedAt === status.finishedAt;
+}
+
 export interface JournalEntry {
   lessonNumber: number;
   stage: 'write' | 'reflect';

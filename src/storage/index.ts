@@ -43,9 +43,11 @@ export {
 export { mergeProgress, mergeQuizRecord, planImport, type ImportPlan, type ImportSummary, type LearnerOnDevice } from './mergeWork';
 export {
   findContinueTarget,
+  finishedSetWith,
   isLessonComplete,
   journalByLesson,
   latestJournalEntry,
+  lessonSetStatus,
   nextStageForLesson,
   progressByLessonId,
   sectionProgress,
@@ -55,6 +57,7 @@ export {
   type JournalEntry,
   type JournalLesson,
   type JournalPiece,
+  type LessonSetStatus,
   type ProgressByLessonId,
   type SectionProgress,
 } from './progress';

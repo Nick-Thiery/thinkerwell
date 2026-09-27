@@ -4,8 +4,10 @@ import { emptyProgress } from './store';
 import type { LessonProgress } from './types';
 import {
   findContinueTarget,
+  finishedSetWith,
   isLessonComplete,
   journalByLesson,
+  lessonSetStatus,
   nextStageForLesson,
   progressByLessonId,
   sectionProgress,
@@ -154,3 +156,61 @@ describe('journalByLesson', () => {
   });
 });
 
+describe('lessonSetStatus (certificates)', () => {
+  const geography = lessons.filter((lesson) => sections[1]!.lessons.includes(lesson.number));
+
+  function finishedAt(lessonId: string, at: string): LessonProgress {
+    return { ...completed(lessonId), completedAt: at };
+  }
+
+  it('lists every lesson as left, with no date, for a new learner', () => {
+    expect(lessonSetStatus(geography, progressByLessonId([]))).toEqual({ complete: false, left: geography, finishedAt: null });
+  });
+
+  it('keeps the lessons left in order, and gives no date until every one is finished', () => {
+    const progress = progressByLessonId([
+      finishedAt(geography[0]!.id, '2026-09-01T10:00:00.000Z'),
+      inProgress(geography[1]!.id),
+      finishedAt(geography[3]!.id, '2026-09-02T10:00:00.000Z'),
+    ]);
+    const status = lessonSetStatus(geography, progress);
+    expect(status.complete).toBe(false);
+    expect(status.left.map((lesson) => lesson.number)).toEqual([11, 12, 14]);
+    expect(status.finishedAt).toBeNull();
+  });
+
+  it('is complete once every lesson is finished, dated when the last one was (in any order)', () => {
+    const progress = progressByLessonId([
+      finishedAt(geography[0]!.id, '2026-09-01T10:00:00.000Z'),
+      finishedAt(geography[1]!.id, '2026-09-05T10:00:00.000Z'),
+      finishedAt(geography[2]!.id, '2026-09-02T10:00:00.000Z'),
+      finishedAt(geography[3]!.id, '2026-09-03T10:00:00.000Z'),
+      finishedAt(geography[4]!.id, '2026-09-04T10:00:00.000Z'),
+    ]);
+    expect(lessonSetStatus(geography, progress)).toEqual({ complete: true, left: [], finishedAt: '2026-09-05T10:00:00.000Z' });
+  });
+
+  it('never needs the section check, and an empty set is never complete', () => {
+    // Progress holds only lessons; a section check leaves nothing here.
+    expect(lessonSetStatus(geography, progressByLessonId(geography.map((lesson) => completed(lesson.id)))).complete).toBe(true);
+    expect(lessonSetStatus([], progressByLessonId([])).complete).toBe(false);
+  });
+});
+
+describe('finishedSetWith', () => {
+  const geography = lessons.filter((lesson) => sections[1]!.lessons.includes(lesson.number));
+  const at = (day: number) => `2026-09-0${day}T10:00:00.000Z`;
+
+  it('is true only for the lesson whose finish completed the set', () => {
+    // Lesson 12 was finished last.
+    const progress = progressByLessonId(
+      geography.map((lesson, index) => ({ ...completed(lesson.id), completedAt: at(lesson.number === 12 ? 9 : index + 1) })),
+    );
+    expect(geography.filter((lesson) => finishedSetWith(lesson, geography, progress)).map((lesson) => lesson.number)).toEqual([12]);
+  });
+
+  it('is false while any lesson in the set is left', () => {
+    const progress = progressByLessonId(geography.slice(0, 4).map((lesson) => completed(lesson.id)));
+    expect(geography.some((lesson) => finishedSetWith(lesson, geography, progress))).toBe(false);
+  });
+});
