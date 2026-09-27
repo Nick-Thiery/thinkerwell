@@ -200,6 +200,6 @@ Recordings never leave the device. Listen uses only voices that run on the devic
 - [ ] **Confirm HELP's consent process** before any measurement, and before an educator turns on "Allow online speech-to-text".
 - [ ] **Replace the placeholders**:
   - `[FEEDBACK EMAIL]` on the Educators page (`pages.educators.feedbackEmail` in `src/i18n/messages/en.json`);
-  - Nick's photo on the About page (`src/pages/AboutPage.tsx`; put the picture in `docs/design-system/assets/` and make its small copy with `scripts/optimise_images.py`, as for Justin's).
+  - ~~Nick's photo on the About page~~ Done: `public/images/nick-thiery.jpg`, made from `docs/design-system/assets/nick-thiery.jpg`.
 - [ ] **Decide the learner avatar colours** (open in docs/PRODUCT.md).
 - [ ] **Buy the domain**, add it in Vercel, and share only that address with HELP.

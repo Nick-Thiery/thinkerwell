@@ -25,8 +25,9 @@ const GOALS: Goal[] = [
  * scope (CLAUDE.md rule 8): a student-led project getting ready for its
  * first pilot, never claimed as a registered charity.
  *
- * Justin Park has a real photo; Nick Thiery's is a placeholder (a dashed
- * box with a person icon) until his is ready, exactly as the screen shows.
+ * Both team members are shown with their photos (public/images/, made
+ * from the originals in docs/design-system/assets/ by
+ * scripts/optimise_images.py).
  */
 export function AboutPage() {
   const { t } = useI18n();
@@ -105,10 +106,13 @@ export function AboutPage() {
             <p>{t('pages.about.justinBio')}</p>
           </article>
           <article aria-labelledby="about-nick" className="tw-about-person">
-            <div className="tw-about-photo tw-about-photo-placeholder" role="img" aria-label={t('pages.about.nickPhotoComing')}>
-              <Icon name="User" size={32} />
-              <span>{t('pages.about.nickPhotoLabel')}</span>
-            </div>
+            <img
+              src="/images/nick-thiery.jpg"
+              alt={t('pages.about.nickAlt')}
+              className="tw-about-photo"
+              width={104}
+              height={104}
+            />
             <span className="eyebrow">{t('pages.about.nickRole')}</span>
             <h3 id="about-nick" className="h2">
               {t('pages.about.nickName')}

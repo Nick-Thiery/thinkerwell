@@ -13,8 +13,8 @@ offline use (vite.config.ts), so each kilobyte is downloaded by every device.
   seen, and the files are about a seventh of the size.
 - The UN goal icons are shown at 72px (About), so they are resized to 144px
   (sharp on 2x screens) and otherwise left as they are.
-- The founder photo is shown at 104px, so it is resized to 312px wide (sharp
-  on 3x phones) as a progressive JPEG without its metadata.
+- The two team photos are shown at 104px, so they are resized to 312px wide
+  (sharp on 3x phones) as progressive JPEGs without their metadata.
 - The app icons (public/icons/, for the web app manifest and iOS home
   screens) are the transparent mascot, whole and unchanged, scaled onto a
   lemon square, as in thinkerwell-mascot-yellow-background.png. The
@@ -39,7 +39,7 @@ MASCOTS = [
     "thinkerwell-mascot-yellow-background.png",
 ]
 UN_GOALS = ["sdg-04.png", "sdg-10.png", "sdg-16.png", "sdg-17.png"]
-PHOTOS = {"founder-justin-park.jpg": 312}
+PHOTOS = {"founder-justin-park.jpg": 312, "nick-thiery.jpg": 312}
 ICON_BOX = 144
 # name: (square size, how tall the mascot is drawn in it)
 APP_ICONS = {

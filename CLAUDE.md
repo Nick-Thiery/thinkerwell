@@ -1,6 +1,6 @@
 # Thinkerwell
 
-A free social-studies course, "Exploring Our World": 24 lessons in 4 sections, each lesson in five stages (Read, Write, Speak, Watch, Reflect), plus a short check at the end of each section. It is for refugee, displaced and under-served young people, about 10–17, most of them learning English. The first pilot is with HELP for Refugees, a refugee-led learning centre in Jakarta, on shared laptops and tablets with unreliable internet. The team is Justin Park (founder and CEO, content) and Nick (CTO, build). Background: `docs/PRODUCT.md`.
+A free social-studies course, "Exploring Our World": 24 lessons in 4 sections, each lesson in five stages (Read, Write, Speak, Watch, Reflect), plus a short check at the end of each section. It is for refugee, displaced and under-served young people, about 10–17, most of them learning English. The first pilot is with HELP for Refugees, a refugee-led learning centre in Jakarta, on shared laptops and tablets with unreliable internet. The team is Justin Park (founder and director, content) and Nick (CTO, build). Background: `docs/PRODUCT.md`.
 
 ## Rules that are never traded away
 

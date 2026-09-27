@@ -3,19 +3,18 @@ import { describe, expect, it } from 'vitest';
 import { AboutPage } from './AboutPage';
 
 describe('AboutPage', () => {
-  it('names Justin Park as founder and CEO, with his photo', () => {
+  it('names Justin Park as founder and director, with his photo', () => {
     render(<AboutPage />);
     expect(screen.getByRole('heading', { level: 3, name: 'Justin Park' })).toBeInTheDocument();
-    expect(screen.getByText('Founder and CEO')).toBeInTheDocument();
+    expect(screen.getByText('Founder and Director')).toBeInTheDocument();
     expect(screen.getByRole('img', { name: 'Justin Park' })).toHaveAttribute('src', '/images/founder-justin-park.jpg');
   });
 
-  it('names Nick Thiery as CTO, with a placeholder in place of his photo', () => {
+  it('names Nick Thiery as CTO, with his photo', () => {
     render(<AboutPage />);
     expect(screen.getByRole('heading', { level: 3, name: 'Nick Thiery' })).toBeInTheDocument();
     expect(screen.getByText('Chief technology officer (CTO)')).toBeInTheDocument();
-    expect(screen.getByRole('img', { name: 'Photo of Nick, coming soon' })).toBeInTheDocument();
-    expect(screen.queryByRole('img', { name: 'Nick Thiery' })).not.toBeInTheDocument();
+    expect(screen.getByRole('img', { name: 'Nick Thiery' })).toHaveAttribute('src', '/images/nick-thiery.jpg');
   });
 
   it('is honest that Thinkerwell is not a registered charity', () => {

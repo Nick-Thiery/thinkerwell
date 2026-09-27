@@ -9,7 +9,7 @@ A free social-studies course, "Exploring Our World", for refugee, displaced and 
 - 24 lessons in 4 sections: History & Human Stories (1–9), Geography & Our Environment (10–14), Culture, Society & Identity (15–19), Civics, Media & Everyday Economics (20–24).
 - Every lesson: warm-up, evidence, Read (standard or simpler English), quick check, Write, Speak, Watch (optional), Reflect.
 - A section check after each section (9–12 questions).
-- Team: Justin Park (founder and CEO, content), Nick (CTO: builds the site and leads the AI work).
+- Team: Justin Park (founder and director, content), Nick (CTO: builds the site and leads the AI work).
 - Not a registered entity yet. Hosting on Vercel; domain to be bought when the site goes live (thinkerwell.app is the likely choice).
 
 ## Who it's for
@@ -36,7 +36,7 @@ HELP for Refugees, Jakarta. Target start: one to two weeks from 26 September 202
 - Offline use, a "Save data" mode and a print view are in.
 - English first. Translation later: probably Dari/Farsi, Somali and Arabic first. Build right-to-left support in from the start.
 - Feedback email on the educators page is a placeholder for now.
-- The About page names Justin (founder and CEO) and Nick (CTO), with a placeholder photo for Nick.
+- The About page names Justin (founder and director) and Nick (CTO), each with a photo.
 - British spelling in all copy.
 
 ### Lesson player (phase 4)
