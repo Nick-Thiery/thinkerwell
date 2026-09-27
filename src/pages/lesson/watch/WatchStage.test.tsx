@@ -137,6 +137,15 @@ describe('WatchStage after the tap', () => {
     expect(screen.getByText('The video player is open. Use its play button to start.')).toBeInTheDocument();
   });
 
+  it('a tap on the poster (its big play circle) opens the player too', () => {
+    const { container } = renderWatch();
+    // Not a button of its own: "Watch the video" stays the one control for the keyboard.
+    expect(screen.getAllByRole('button', { name: /watch/i })).toHaveLength(1);
+    expect(screen.queryByText(/Captions/)).toBeNull();
+    fireEvent.click(container.querySelector('.tw-video-play') as HTMLElement);
+    expect(container.querySelectorAll('iframe')).toHaveLength(1);
+  });
+
   it('closing the video removes the player and returns focus to Watch', () => {
     const { container } = renderWatch();
     fireEvent.click(screen.getByRole('button', { name: 'Watch the video' }));

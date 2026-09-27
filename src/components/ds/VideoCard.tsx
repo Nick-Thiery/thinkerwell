@@ -66,7 +66,12 @@ export function VideoCard({
       {player ? (
         <div className="tw-video-player">{player}</div>
       ) : (
-        <div className="tw-video-poster">
+        // The big play circle looks like something to tap, so a tap or click
+        // anywhere on the poster starts the video too, as "Watch the video"
+        // does. That button stays the one control for the keyboard and
+        // screen readers; the poster only widens the target for a pointer.
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+        <div className={cx('tw-video-poster', onWatch && 'tw-video-poster-tap')} onClick={onWatch}>
           <span className="tw-video-tag">
             <Badge tone="lemon">{t('ds.content.video.optional')}</Badge>
           </span>
@@ -91,10 +96,14 @@ export function VideoCard({
               {channel}
             </span>
           ) : null}
-          <span>
-            <Icon name="Captions" size={16} />
-            {captions || t('ds.content.video.captionsDefault')}
-          </span>
+          {/* Only when the captions are known: "Captions not checked yet" (the
+              reference's default) told learners nothing they could use. */}
+          {captions ? (
+            <span>
+              <Icon name="Captions" size={16} />
+              {captions}
+            </span>
+          ) : null}
           {language ? (
             <span>
               <Icon name="Globe" size={16} />
