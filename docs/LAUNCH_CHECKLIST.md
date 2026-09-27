@@ -13,14 +13,14 @@ Most checks walk the same **page tour** (`e2e/pageTour.ts`), which visits every 
 - every stage of Lesson 10: Read parts 1 to 3, "See it bigger" open, the quick check and its feedback, Write with the example open, Speak, Watch before the tap and "Read instead", Reflect, and the finished lesson;
 - a section check: the intro, a question after answering, and the results;
 - the journal, Educators, About and Settings;
-- both print views, and the 404;
+- both print views, a teacher guide and an answer key (added with the teacher tools), and the 404;
 - home with a learner on the device, and looking around.
 
 The tour's learner has a long name, so every place that shows a name is tested at its widest.
 
 | Check | How | Result |
 | --- | --- | --- |
-| No sideways scroll | `e2e/no-sideways-scroll.spec.ts`: `scrollWidth <= clientWidth` at every tour stop. Widths: 320, 360, 390, 640, 768, 820, 1024 and 1280px. 640 is a 1280px laptop at 200% zoom; 320 is the same at 400%, which WCAG 2.2 uses for reflow. It also checks every stage of all 24 lessons, every question of all four section checks and all 24 print views at 360px. Last, a 30-letter name with no spaces and a 90-character web address typed into Write and Reflect. | Passes after the fixes below |
+| No sideways scroll | `e2e/no-sideways-scroll.spec.ts`: `scrollWidth <= clientWidth` at every tour stop. Widths: 320, 360, 390, 640, 768, 820, 1024 and 1280px. 640 is a 1280px laptop at 200% zoom; 320 is the same at 400%, which WCAG 2.2 uses for reflow. It also checks every stage of all 24 lessons, every question of all four section checks, all 24 print views, all 24 teacher guides and all 4 answer keys at 360px. Last, a 30-letter name with no spaces and a 90-character web address typed into Write and Reflect. | Passes after the fixes below |
 | Accessibility (axe) | `e2e/accessibility.spec.ts`: @axe-core/playwright, WCAG 2.2 A and AA plus axe's best practices, at every tour stop, at 390 and 1280px. | 0 violations after the fixes below. A one-off run over every stage of all 24 lessons also found 0. |
 | Focus rings | The same walk focuses every control on every page as keyboard focus. The ring must show and have 3:1 contrast with what is around it. | Passes |
 | Hidden things stay hidden | The same walk looks for any element marked `hidden` that still shows. | Passes after the fix below |
@@ -45,7 +45,7 @@ The tour's learner has a long name, so every place that shows a name is tested a
 3. **Section check landmarks and headings.** The intro, question and results screens each had a second `<main>` inside the app's own `<main>`. A question's h3 also came straight after the h1. QuestionCard now takes `headingLevel` (2 or 3). This prop is not in the design-system reference.
 4. **Arrow keys in radio groups.** A row of chips ignored ArrowDown, and the quick check's options ignored ArrowRight. Every radio group now answers to all four arrow keys, as the WAI-ARIA pattern asks. Left and Right still swap in right to left.
 5. **The focus ring over the video player** was violet on ink (2.2:1). It is now white (on-ink).
-6. **Teaching notes on the Educators page were always open.** The notes box's `display: flex` beat the browser's rule for `hidden`, and the unit test (jsdom, no CSS) couldn't see it. A global `[hidden] { display: none !important }` fixes this and anything like it. `e2e/educators.spec.ts` checks it.
+6. **Teaching notes on the Educators page were always open.** The notes box's `display: flex` beat the browser's rule for `hidden`, and the unit test (jsdom, no CSS) couldn't see it. A global `[hidden] { display: none !important }` fixes this and anything like it. (The disclosure has since given way to each lesson's teacher guide: docs/notes/teacher-tools.md.)
 7. **zod was back in the browser.** Phase 7 exported `QUIZ_SKILLS` from `src/content/schema.ts`, which pulled all of zod into the bundle: 26 kB more to download (gzipped). zod's own feature check also calls `Function('')`, which the new Content-Security-Policy blocks. `QUIZ_SKILLS` now lives in `src/content/quizSkills.ts`, and the build stops if zod reaches a browser chunk (`vite.config.ts`).
 8. **A blank page for 6 seconds on Slow 3G.** `index.html` now shows the header's lemon bar with the mascot until the app starts (no words, `aria-hidden`).
 9. **Lesson pictures too small to read on a phone.** "See it bigger" is added (see below).
@@ -193,7 +193,7 @@ Recordings never leave the device. Listen uses only voices that run on the devic
   - open the site once on good internet and wait for "All 24 lessons work offline" on the learner home;
   - then turn off the Wi-Fi and open a few lessons;
   - try Listen, Say it and Record yourself;
-  - print a lesson;
+  - print a lesson, a teacher guide and an answer key;
   - use a lesson with the keyboard and with a screen reader (VoiceOver on iPad, TalkBack on Android, NVDA on Windows).
 - [ ] **Add Thinkerwell to the Home Screen on every iPad and iPhone.** Otherwise Safari deletes the saved work and the offline copy after 7 days without a visit.
 - [ ] **Watch all 24 videos.** Some may not suit these learners, and a HELP educator should review Lessons 4 and 19 (docs/PRODUCT.md). On HELP's own network, check that the videos play: a school filter or a regional block would show the written version instead. In DevTools, note which servers the player contacts.
@@ -202,5 +202,6 @@ Recordings never leave the device. Listen uses only voices that run on the devic
   - `[FEEDBACK EMAIL]` on the Educators page (`pages.educators.feedbackEmail` in `src/i18n/messages/en.json`);
   - ~~Nick's photo on the About page~~ Done: `public/images/nick-thiery.jpg`, made from `docs/design-system/assets/nick-thiery.jpg`.
 - [ ] **Decide the learner avatar colours** (open in docs/PRODUCT.md).
+- [ ] **Check which teaching notes are marked as sensitive topics** (`sensitiveNotes` in each lesson file; docs/notes/teacher-tools.md).
 - [ ] **Buy the domain**, add it in Vercel, and share only that address with HELP. Then change `https://thinkerwell.vercel.app` in the link-preview tags in `index.html` (`og:url`, `og:image`, `twitter:image`) to the new address.
 - [ ] **Check a link preview** on the live site: paste the address into WhatsApp (and, if you like, Facebook's Sharing Debugger or opengraph.xyz). It should show "Thinkerwell: Exploring Our World", the line under it and the lemon card with the mascot (`public/social-card.png`).

@@ -80,6 +80,7 @@ Details, sizes and the reasons are in `docs/notes/phase-6.md`.
 - "Save data" follows the browser's own data saver until someone chooses in Settings; a choice in Settings always wins. With it on, videos are off.
 - Settings for this device is in the header menu, outside the five main links: offline status, Save data, the reading level for anyone who hasn't chosen one, the Listen speed and Say it.
 - Every lesson has a print view with both reading levels, the key words, the picture, the quick check and every task, with lines to write on. The journal has one too, built from the learner's saved writing and reflections. They print in black and white with no header; the lesson picture keeps its colours.
+- For volunteer teachers, every lesson has a teacher guide and every section check an answer key, linked from the Educators page (docs/notes/teacher-tools.md). The guide opens with the notes on sensitive topics, then a suggested plan for about 45 minutes (with a 30-minute version), and has the answers to the quick check. They work offline and print on A4. The Educators page no longer has a per-lesson notes disclosure: the guide has those notes.
 - On iPads and iPhones, add Thinkerwell to the Home Screen: Safari deletes a site's saved data after 7 days without a visit otherwise.
 
 ### Quality pass and launch (phase 8)

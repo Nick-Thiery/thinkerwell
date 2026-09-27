@@ -51,6 +51,7 @@ scripts/optimise_images.py     makes public/images and public/icons from docs/de
 src/                           the app (created in phase 1)
 src/offline/                   service worker registration, connection status, the banners under the header, Save data
 src/pages/print/               print views: /lesson/:id/print and /journal/print
+src/pages/educators/           teacher tools: /educators/lesson/:id (teacher guide) and /educators/section/:id/answers (answer key)
 ```
 
 ## Design system
@@ -69,6 +70,7 @@ src/pages/print/               print views: /lesson/:id/print and /journal/print
 - Quick-check options carry their own `correct` flag and feedback. Shuffle options with a seed per learner and question so the order stays the same when the learner comes back.
 - Each glossary word is marked on its first appearance in each section, in both the standard and simpler text; tapping it opens the definition (`GlossaryTerm`).
 - Evidence with `fictional: true` shows its label ("Fictional example created for this lesson.").
+- Notes for teachers are in two lists: `sensitiveNotes` (sensitive topics, what never to ask, which video to preview) and `educatorNotes` (everything else). Educator pages show the sensitive ones first, marked. Learners never see either.
 - Write: show the example answer only after the learner has written something or asks to see one.
 - Watch: embed from `youtube-nocookie.com`, only after the learner taps play, never autoplay. If the player hasn't loaded after 20 seconds, the device is offline, or "Save data" is on, show the written version. "Save data" is the Settings choice, or the browser's own data saver (`navigator.connection.saveData`) until someone chooses (`src/offline/saveData.ts`). Before the tap nothing may be requested from YouTube or Google (no thumbnails; the poster is drawn from the content). The iframe carries its own `referrerpolicy="strict-origin-when-cross-origin"`, because `index.html` sets `no-referrer` for the site and YouTube's player refuses to play without a referrer (Error 153). The content note goes only in a collapsed "For teachers" note.
 - Reflect: the required prompt completes the lesson.
@@ -107,6 +109,7 @@ Built in phase 6; see `docs/notes/phase-6.md`.
 - A new version shows "A new version is ready" with "Update now"; nothing reloads unless someone taps it.
 - Settings for this device (`/settings`): offline status, Save data, the reading level for anyone who hasn't chosen one, the Listen speed, and Say it.
 - Every lesson has a print view (`/lesson/:id/print`, linked from Read): both reading levels, key words, the picture, the quick check and every task, black text on white with no header. Printing any page leaves out the header, menus and banners (`src/styles/print.css`).
+- Teacher tools (`docs/notes/teacher-tools.md`), linked from the Educators page: every lesson has a teacher guide (`/educators/lesson/:id`) and every section check an answer key (`/educators/section/:id/answers`). Each is one page for screen and paper, built on the print views' sheet. Everything in them comes from the content files. Correct answers are marked with a tick and the words "Correct answer", never by colour alone.
 
 ## Don't
 
