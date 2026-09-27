@@ -24,14 +24,19 @@ export default defineConfig({
     // (for example a locked-down cloud runner) use an installed Chromium instead.
     ...(process.env.PW_CHROMIUM_PATH ? { launchOptions: { executablePath: process.env.PW_CHROMIUM_PATH } } : {}),
   },
+  // Tests tagged @own-size set their own window sizes (e2e/no-sideways-scroll.spec.ts
+  // checks six widths, for example), so running them in every project would only
+  // repeat them. They run in the laptop project.
   projects: [
     {
       name: 'phone',
       use: { ...devices['Desktop Chrome'], viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true },
+      grepInvert: /@own-size/,
     },
     {
       name: 'tablet',
       use: { ...devices['Desktop Chrome'], viewport: { width: 820, height: 1180 }, hasTouch: true },
+      grepInvert: /@own-size/,
     },
     {
       name: 'laptop',
