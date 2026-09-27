@@ -12,7 +12,7 @@ Most checks walk the same **page tour** (`e2e/pageTour.ts`), which visits every 
 - the course, and the phone menu where there is one;
 - every stage of Lesson 10: Read parts 1 to 3, "See it bigger" open, the quick check and its feedback, Write with the example open, Speak, Watch before the tap and "Read instead", Reflect, and the finished lesson;
 - a section check: the intro, a question after answering, and the results;
-- the journal, Educators, About and Settings;
+- the journal, Educators, About and Settings (and Settings with a work file chosen to load);
 - both print views, a teacher guide and an answer key (added with the teacher tools), and the 404;
 - home with a learner on the device, and looking around.
 
@@ -177,6 +177,8 @@ Inside that frame, YouTube's player then loads its own scripts, images, captions
 
 Recordings never leave the device. Listen uses only voices that run on the device.
 
+Saving work to a file and loading one (Settings, "Move work to another device") make no requests: the file is made and read in the browser (`docs/notes/device-transfer.md`).
+
 ## Left, and why
 
 - **About 220 kB of JavaScript before a first visit can be used** (6 s on Slow 3G, 2 s on 3G). Most of it is by design: all 24 lessons are in one chunk, so that every lesson works offline after the first visit, and the app reads them synchronously. Loading each lesson on its own would make the first visit lighter but touch the whole app. Lazy-loading the rarely used pages (print, Educators, About, Settings) would save only about 15 kB. Later visits come from the service worker in about 0.4 s.
@@ -195,8 +197,10 @@ Recordings never leave the device. Listen uses only voices that run on the devic
   - in Settings, tap **Check this device** under "Say it" (once per device and browser, and again after a browser update). Lessons show Say it on the device only after this says speech stays on the device; they never check by themselves. If it offers "Download speech to text", download on good Wi-Fi, then check again;
   - try Listen, Say it and Record yourself;
   - print a lesson, a teacher guide and an answer key;
+  - in Settings, save a learner's work to a file, find the file (on an iPad: Files, then Downloads), and load it on another device. On an iPad, do this from the Home Screen app;
   - use a lesson with the keyboard and with a screen reader (VoiceOver on iPad, TalkBack on Android, NVDA on Windows).
 - [ ] **Add Thinkerwell to the Home Screen on every iPad and iPhone.** Otherwise Safari deletes the saved work and the offline copy after 7 days without a visit.
+- [ ] **Before resetting a tablet or replacing a device, save everyone's work to a file**: Settings, "Move work to another device", "All learners on this device", **Save my work to a file**. On the new device, **Load my work** and choose the file. Recordings aren't in the file. Tell HELP's educators this too, and to keep the file safe: anyone with it can read the work in it.
 - [ ] **Watch all 24 videos.** Some may not suit these learners, and a HELP educator should review Lessons 4 and 19 (docs/PRODUCT.md). On HELP's own network, check that the videos play: a school filter or a regional block would show the written version instead. In DevTools, note which servers the player contacts.
 - [ ] **Confirm HELP's consent process** before any measurement, and before an educator turns on "Allow online speech-to-text".
 - [ ] **Replace the placeholders**:

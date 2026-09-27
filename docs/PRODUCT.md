@@ -1,6 +1,6 @@
 # Thinkerwell: product notes
 
-Last updated 27 September 2026.
+Last updated 28 September 2026.
 
 ## What it is
 
@@ -92,6 +92,16 @@ What was checked, the Vercel import steps, every network request and what is lef
 - While the app starts on a slow connection, the page shows the header with the mascot instead of staying blank.
 - Every radio group (warm-up chips, quick-check options, Speak's choices) answers to all four arrow keys. The quick check still answers only on Space or Enter.
 - The site is built and tested with Node 22.
+
+### Moving work between devices
+
+Details, the file format and the reasons are in `docs/notes/device-transfer.md`.
+
+- Settings has "Move work to another device". It saves one learner's work, or everyone's, to a small file, and loads such a file on another device. Nothing goes online: the file is downloaded, and loading reads a file someone picks. The file holds the learners, their lesson work and their section checks. Recordings and the device's settings stay on the device.
+- Loading checks the whole file first and shows what is in it. Nothing changes until someone taps "Load it". A file that isn't Thinkerwell work, is from a newer version, is empty, is over 5 MB or is damaged in any part is refused, and nothing changes. Work for lessons this version doesn't have is left out, and the preview says how many.
+- Learners are matched by id, never by name. A learner who isn't on the device is added as they are. A different learner with the same name is added too, and tiles of learners who share a name also show the day each was added.
+- For a learner on both, nothing is lost. Every stage done on either side stays done, and a lesson completed on either side stays completed. For each answer, the copy from the lesson saved more recently wins, but an empty answer never replaces a written one. Section checks keep the best and the latest attempt, and the larger count of attempts. Loading the same file twice changes nothing the second time, and a failure while loading changes nothing at all.
+- Before a tablet is reset or replaced, an educator saves everyone's work to a file (`docs/LAUNCH_CHECKLIST.md`). The file isn't locked, so it must be kept safe.
 
 ## Roadmap
 

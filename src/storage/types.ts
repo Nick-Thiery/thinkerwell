@@ -13,6 +13,10 @@
  * The journal is built from progress (writing and reflections); it is not stored separately.
  *
  * When you change these shapes, bump DB_VERSION in ./db.ts and add a migration.
+ * Learner, LessonProgress and SectionQuizRecord also travel in work files
+ * (Settings, "Move work to another device"): update the checker in
+ * ./workFile.ts, the merge rules in ./mergeWork.ts, and WORK_FILE_VERSION if
+ * the file's shape changes.
  */
 import type { SectionId, StageId } from '../content';
 

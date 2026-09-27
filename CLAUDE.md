@@ -4,7 +4,7 @@ A free social-studies course, "Exploring Our World": 24 lessons in 4 sections, e
 
 ## Rules that are never traded away
 
-1. **Privacy.** No accounts, no passwords, no email from learners, no ads, no third-party analytics, trackers or fonts loaded from other servers. Learner data stays on the device. Recordings are never uploaded. The site never asks learners about their journey, home country, family, religion or ethnicity.
+1. **Privacy.** No accounts, no passwords, no email from learners, no ads, no third-party analytics, trackers or fonts loaded from other servers. Learner data stays on the device, except in a work file that someone saves themselves in Settings to move it to another device; nothing is ever uploaded. Recordings are never uploaded and never go in that file. The site never asks learners about their journey, home country, family, religion or ethnicity.
 2. **Works on bad internet.** After the first visit the whole course works offline. Every save is local first. Videos are optional and every video has a written version ("Read instead").
 3. **Nothing is locked.** Any lesson and any stage can be opened in any order. Quick checks and section checks never block progress, have no timers and can be retried. Wrong answers say "Not quite" in burnt orange with a hint; there is no red anywhere in learning flows.
 4. **Shared devices.** Home asks "Who's learning today?" with a tile per learner. Each learner's work is separate. Anyone can "Just look around" without saving.
@@ -82,7 +82,7 @@ src/pages/educators/           teacher tools: /educators/lesson/:id (teacher gui
 
 ## Data kept on the device
 
-Version the schema and write migrations. Nothing leaves the device in phase 1.
+Version the schema and write migrations. Nothing is sent anywhere in phase 1.
 
 - `learners`: id, name, colour, created date, optional class code, optional reading level (Standard or Simpler, last chosen).
 - `progress` per learner and lesson: stages done, current stage, warm-up answer, check answers, writing and planning notes, self-check ticks, how they practised speaking, reflections, completed date.
@@ -91,6 +91,8 @@ Version the schema and write migrations. Nothing leaves the device in phase 1.
 - `settings` per device: save data (`null` until someone chooses), listening speed, preferred reading level, partner options, and the last "Check this device" result for Say it (`speechCheck`, `null` until someone checks).
 
 The journal is built from saved writing and reflections (`journalByLesson` in `src/storage/progress.ts`); it is not stored separately. Its print view is `/journal/print`; the journal page's "Print my journal" links there.
+
+**Moving work to another device** (Settings; `docs/notes/device-transfer.md`). "Save my work to a file" downloads one learner's `learners`, `progress` and `quizAttempts` records, or everyone's, as a JSON file (`src/storage/workFile.ts`: marker `thinkerwell-work`, `WORK_FILE_VERSION`, date saved). Recordings, `settings` and the current learner stay on the device. "Load my work" checks the whole file by hand (no zod in the browser), shows what is in it, and only after "Load it" merges it in one transaction (`importWork` in `src/storage/store.ts`, rules in `src/storage/mergeWork.ts`). Learners are matched by id, never by name, and nothing is lost. When these record shapes change, bump `WORK_FILE_VERSION` and keep loading older files, and update the checker and the merge rules.
 
 ## Listen, Say it and Record
 
@@ -108,7 +110,7 @@ Built in phase 6; see `docs/notes/phase-6.md`.
 
 - After the first visit every lesson works offline. Under the header, `StatusBanner` says when the device is offline (tone offline) and, for five seconds, when it's back (tone back). Never tell a guest their work is saved.
 - A new version shows "A new version is ready" with "Update now"; nothing reloads unless someone taps it.
-- Settings for this device (`/settings`): offline status, Save data, the reading level for anyone who hasn't chosen one, the Listen speed, and Say it ("Check this device", the on-device download and "Allow online speech-to-text").
+- Settings for this device (`/settings`): offline status, Save data, moving work to another device (a file to save and load), the reading level for anyone who hasn't chosen one, the Listen speed, and Say it ("Check this device", the on-device download and "Allow online speech-to-text").
 - Every lesson has a print view (`/lesson/:id/print`, linked from Read): both reading levels, key words, the picture, the quick check and every task, black text on white with no header. Printing any page leaves out the header, menus and banners (`src/styles/print.css`).
 - Teacher tools (`docs/notes/teacher-tools.md`), linked from the Educators page: every lesson has a teacher guide (`/educators/lesson/:id`) and every section check an answer key (`/educators/section/:id/answers`). Each is one page for screen and paper, built on the print views' sheet. Everything in them comes from the content files. Correct answers are marked with a tick and the words "Correct answer", never by colour alone.
 
