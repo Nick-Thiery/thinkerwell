@@ -34,8 +34,13 @@
   display: block;
 }
 
-/* The card clips its corners, so the focus ring sits just inside the frame. */
+/*
+ * The card clips its corners, so the focus ring sits just inside the frame,
+ * over the dark player. Violet is only 2.2:1 on ink there, so this one ring
+ * is white (on-ink, 19:1), as text on an ink fill is.
+ */
 .tw-video-player iframe:focus-visible {
+  outline-color: var(--on-ink);
   outline-offset: -3px;
 }
 
