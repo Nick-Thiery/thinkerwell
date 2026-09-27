@@ -18,6 +18,12 @@ export interface QuestionCardProps {
   /** Drives a real radiogroup from outside: called with the clicked option's index. */
   onSelect?: (index: number) => void;
   className?: string;
+  /**
+   * The prompt's heading level (default 3, under a stage's "Quick check" h2).
+   * A section check question sits straight under the page's h1, so it uses 2.
+   * Not in the design-system reference; added so headings never skip a level.
+   */
+  headingLevel?: 2 | 3;
 }
 
 /** A quick-check or section-check question: prompt, options and (once answered) feedback. */
@@ -32,16 +38,18 @@ export function QuestionCard({
   children,
   onSelect,
   className,
+  headingLevel = 3,
 }: QuestionCardProps) {
   const generatedId = useId();
   const headingId = `${id ?? generatedId}-q`;
+  const Heading = headingLevel === 2 ? 'h2' : 'h3';
   return (
     <section className={cx('tw-question', className)}>
       <div className="tw-question-head">
         {eyebrow ? <span className="tw-question-num">{eyebrow}</span> : null}
-        <h3 className="tw-question-prompt" id={headingId}>
+        <Heading className="tw-question-prompt" id={headingId}>
           {prompt}
-        </h3>
+        </Heading>
       </div>
       <div className="tw-question-options" role="radiogroup" aria-labelledby={headingId}>
         {options.map((option, index) => {

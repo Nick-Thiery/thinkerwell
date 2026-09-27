@@ -83,9 +83,9 @@ export function QuizQuestionScreen({
         </Button>
       </div>
       <div className="tw-quiz-question-col">
-        <main className="tw-quiz-question-main">
+        <div className="tw-quiz-question-main">
           {/* Visually hidden: the visible heading here is the question itself
-              (QuestionCard's own h3), but each question is its own "screen"
+              (QuestionCard's heading, an h2 here), but each question is its own "screen"
               within this one route, so a heading is still needed for focus to
               land on and for screen-reader users to hear that it changed. */}
           <h1 className="tw-visually-hidden" tabIndex={-1}>
@@ -94,6 +94,7 @@ export function QuizQuestionScreen({
           {question.stimulus ? <StimulusCard stimulus={question.stimulus} /> : null}
           <QuestionCard
             id={question.id}
+            headingLevel={2}
             eyebrow={t('pages.sectionCheck.questionEyebrow', { n: index + 1, skill: t(`pages.sectionCheck.skill.${question.skill}`) })}
             prompt={question.question}
             options={order.map((entry) => entry.item.text)}
@@ -116,7 +117,7 @@ export function QuizQuestionScreen({
               </Link>
             ) : null}
           </QuestionCard>
-        </main>
+        </div>
         <ActionBar
           next={isLast ? t('pages.sectionCheck.seeResults') : t('pages.sectionCheck.nextQuestion')}
           disabled={!answer}

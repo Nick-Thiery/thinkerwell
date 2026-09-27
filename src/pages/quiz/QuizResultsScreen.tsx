@@ -39,7 +39,7 @@ export function QuizResultsScreen({ section, quiz, answers, score, total, isGues
 
   return (
     <div className="tw-quiz-page">
-      <main className="tw-quiz-results">
+      <div className="tw-quiz-results">
         <section aria-labelledby="quiz-score-title" className="tw-quiz-score-panel">
           <Mascot src={MASCOT_SRC} size={120} />
           <span className="eyebrow">{t('pages.sectionCheck.resultsEyebrow', { title: section.title })}</span>
@@ -93,7 +93,7 @@ export function QuizResultsScreen({ section, quiz, answers, score, total, isGues
             </section>
           ) : null}
         </div>
-      </main>
+      </div>
     </div>
   );
 }

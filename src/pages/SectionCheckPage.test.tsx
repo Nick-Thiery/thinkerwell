@@ -47,7 +47,7 @@ async function answerAll(
 ) {
   for (let i = 0; i < quiz.questions.length; i++) {
     const question = quiz.questions[i]!;
-    await screen.findByRole('heading', { level: 3, name: question.question });
+    await screen.findByRole('heading', { level: 2, name: question.question });
     await user.click(screen.getByRole('radio', { name: pick(question, i) }));
     const isLast = i === quiz.questions.length - 1;
     await user.click(screen.getByRole('button', { name: isLast ? 'See your results' : 'Next question' }));
@@ -64,7 +64,7 @@ describe('SectionCheckPage', () => {
     expect(screen.getByText('Nothing is saved while you look around')).toBeInTheDocument();
 
     await user.click(screen.getByRole('button', { name: 'Start the check' }));
-    expect(await screen.findByRole('heading', { level: 3, name: quiz.questions[0]!.question })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { level: 2, name: quiz.questions[0]!.question })).toBeInTheDocument();
     expect(screen.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '0');
   });
 
@@ -84,7 +84,7 @@ describe('SectionCheckPage', () => {
     expect(nextButton).toBeEnabled();
 
     await user.click(nextButton);
-    await screen.findByRole('heading', { level: 3, name: quiz.questions[1]!.question });
+    await screen.findByRole('heading', { level: 2, name: quiz.questions[1]!.question });
   });
 
   it('a perfect run saves a completed attempt for a chosen learner and shows a high-score message with nothing to review', async () => {

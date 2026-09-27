@@ -37,7 +37,7 @@ export function QuizIntroScreen({ section, quiz, isGuest, onStart }: QuizIntroSc
         completed={section.lessons.length}
         question={section.question}
       />
-      <main className="tw-quiz-intro-card">
+      <div className="tw-quiz-intro-card">
         <div className="tw-quiz-intro-head">
           <span className="eyebrow">{t('pages.sectionCheck.eyebrow')}</span>
           <h1 className="h1" tabIndex={-1}>
@@ -80,7 +80,7 @@ export function QuizIntroScreen({ section, quiz, isGuest, onStart }: QuizIntroSc
             {t('pages.sectionCheck.lookAtLessons')}
           </Button>
         </div>
-      </main>
+      </div>
     </div>
   );
 }

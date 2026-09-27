@@ -16,6 +16,15 @@ function renderCard(onSelect = vi.fn()) {
 }
 
 describe('QuestionCard', () => {
+  it('puts the prompt in an h3 unless asked for an h2', () => {
+    const { unmount } = render(<QuestionCard prompt="Why rivers?" options={OPTIONS} />);
+    expect(screen.getByRole('heading', { level: 3, name: 'Why rivers?' })).toBeInTheDocument();
+    unmount();
+    render(<QuestionCard prompt="Why rivers?" options={OPTIONS} headingLevel={2} />);
+    expect(screen.getByRole('heading', { level: 2, name: 'Why rivers?' })).toBeInTheDocument();
+    expect(screen.getByRole('radiogroup', { name: 'Why rivers?' })).toBeInTheDocument();
+  });
+
   it('calls onSelect when an option is clicked', async () => {
     const user = userEvent.setup();
     const { onSelect, options } = renderCard();
