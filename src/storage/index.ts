@@ -26,6 +26,22 @@ export {
 } from './store';
 export { forgetUnsavedProgress, keepUnsavedProgress } from './unsavedProgress';
 export {
+  buildWorkFile,
+  checkWorkFile,
+  checkWorkFileSize,
+  serialiseWorkFile,
+  workFileName,
+  MAX_WORK_FILE_BYTES,
+  WORK_FILE_FORMAT,
+  WORK_FILE_VERSION,
+  type KnownContent,
+  type LearnerWork,
+  type WorkFile,
+  type WorkFileCheck,
+  type WorkFileProblem,
+} from './workFile';
+export { mergeProgress, mergeQuizRecord, planImport, type ImportPlan, type ImportSummary, type LearnerOnDevice } from './mergeWork';
+export {
   findContinueTarget,
   isLessonComplete,
   journalByLesson,

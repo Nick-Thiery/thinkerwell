@@ -7,7 +7,9 @@
  */
 import { deleteDB, type IDBPDatabase } from 'idb';
 import { DB_NAME, openThinkerwellDb, SETTINGS_KEY, type ThinkerwellDB } from './db';
+import { planImport, type ImportSummary, type LearnerOnDevice } from './mergeWork';
 import { forgetAllUnsavedProgress, recoverUnsavedProgress } from './unsavedProgress';
+import type { LearnerWork } from './workFile';
 import {
   DEFAULT_SETTINGS,
   LEARNER_COLOURS,
@@ -73,6 +75,22 @@ export interface ThinkerwellStore {
   getRecording(learnerId: string, lessonId: string): Promise<Recording | undefined>;
   saveRecording(learnerId: string, lessonId: string, blob: Blob, durationMs: number): Promise<Recording>;
   deleteRecording(learnerId: string, lessonId: string): Promise<void>;
+
+  // Moving work between devices (./workFile.ts, ./mergeWork.ts)
+  /**
+   * Learners with their lesson work and section checks, read in one go, for
+   * a work file: the learners with these ids, or everyone when `ids` is
+   * undefined, oldest first. No recordings, settings or current learner.
+   */
+  exportWork(ids?: readonly string[]): Promise<LearnerWork[]>;
+  /**
+   * Adds the learners from a checked work file who aren't on this device and
+   * combines the work of those who are (./mergeWork.ts), all in one
+   * transaction: if any write fails, nothing changes. Writes only what
+   * would change, so loading the same file twice changes nothing the
+   * second time. The current learner is left as it is.
+   */
+  importWork(work: readonly LearnerWork[]): Promise<ImportSummary>;
 
   // Device settings
   /** Stored settings over the defaults, so settings added later get their default. */
@@ -335,6 +353,78 @@ function createStore(db: IDBPDatabase<ThinkerwellDB>): ThinkerwellStore {
 
     async deleteRecording(learnerId, lessonId) {
       await db.delete('recordings', [learnerId, lessonId]);
+    },
+
+    async exportWork(ids) {
+      const tx = db.transaction(['learners', 'progress', 'quizAttempts']);
+      const everyone = await tx.objectStore('learners').index('byCreatedAt').getAll();
+      const chosen = ids === undefined ? everyone : everyone.filter((learner) => ids.includes(learner.id));
+      return Promise.all(
+        chosen.map(async (learner): Promise<LearnerWork> => {
+          const range = learnerRange(learner.id);
+          const [progress, quizAttempts] = await Promise.all([
+            tx.objectStore('progress').index('byLearner').getAll(range),
+            tx.objectStore('quizAttempts').index('byLearner').getAll(range),
+          ]);
+          return { learner, progress, quizAttempts };
+        }),
+      );
+    },
+
+    async importWork(work) {
+      const tx = db.transaction(['learners', 'progress', 'quizAttempts'], 'readwrite');
+      const learners = tx.objectStore('learners');
+      const progress = tx.objectStore('progress');
+      const quizAttempts = tx.objectStore('quizAttempts');
+
+      async function readAndWrite(): Promise<ImportSummary> {
+        // What this device has for each learner in the file, read in the
+        // same transaction as the writes, so nothing can change in between.
+        const onDevice = new Map<string, LearnerOnDevice>();
+        await Promise.all(
+          work.map(async ({ learner }) => {
+            const here = await learners.get(learner.id);
+            if (!here) return;
+            const range = learnerRange(learner.id);
+            const [progressHere, quizHere] = await Promise.all([
+              progress.index('byLearner').getAll(range),
+              quizAttempts.index('byLearner').getAll(range),
+            ]);
+            onDevice.set(learner.id, { learner: here, progress: progressHere, quizAttempts: quizHere });
+          }),
+        );
+        const plan = planImport(work, onDevice);
+        // As in removeLearner: every request is tracked (and marked handled)
+        // as it is made, so a later one throwing leaves no unhandled errors.
+        const requests: Promise<unknown>[] = [];
+        const track = (request: Promise<unknown>): void => {
+          request.catch(() => undefined);
+          requests.push(request);
+        };
+        for (const learner of plan.learners) track(learners.add(learner));
+        for (const record of plan.progress) track(progress.put(record));
+        for (const record of plan.quizAttempts) track(quizAttempts.put(record));
+        await Promise.all(requests);
+        return plan.summary;
+      }
+
+      const done = (async () => {
+        try {
+          return await readAndWrite();
+        } catch (error) {
+          // A failed request aborts the transaction on its own; anything else
+          // (a throw before a request was made) must abort it here, so nothing is written.
+          try {
+            tx.abort();
+          } catch {
+            // Already aborted or finished.
+          }
+          throw error;
+        }
+      })();
+
+      const [summary] = await Promise.all([done, tx.done]);
+      return summary;
     },
 
     async getSettings() {
