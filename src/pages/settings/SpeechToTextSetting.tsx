@@ -107,10 +107,11 @@ export function SpeechToTextSetting({ deviceSettings }: { deviceSettings: Device
   };
 
   const idle = !checking && !downloading;
+  const checkedAt = check ? new Date(check.checkedAt) : null;
   const checkedOn =
-    check && idle
+    checkedAt && idle && !Number.isNaN(checkedAt.getTime())
       ? t('pages.settings.sayIt.checkedOn', {
-          date: new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(check.checkedAt)),
+          date: new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'long', year: 'numeric' }).format(checkedAt),
         })
       : '';
   const offerDownload = idle && (shown === 'downloadable' || shown === 'download-failed');
