@@ -15,6 +15,11 @@ export default defineConfig({
   use: {
     baseURL: externalBaseURL ?? `http://localhost:${PORT}`,
     trace: 'retain-on-failure',
+    // The production build registers a service worker that downloads the
+    // whole course in the background. Most specs don't need it (and a page
+    // it controls answers from its cache, out of reach of page.route), so
+    // it is blocked here; e2e/offline.spec.ts turns it back on.
+    serviceWorkers: 'block',
     // PW_CHROMIUM_PATH lets a machine without Playwright's own browser download
     // (for example a locked-down cloud runner) use an installed Chromium instead.
     ...(process.env.PW_CHROMIUM_PATH ? { launchOptions: { executablePath: process.env.PW_CHROMIUM_PATH } } : {}),
