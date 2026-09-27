@@ -1,18 +1,21 @@
 import { Fragment, useMemo, type ReactNode } from 'react';
-import { lessonPath, sectionCheckPath } from '../../../app/lessonUrls';
-import { Badge, Button, Icon, LessonRow, Mascot, StagePath } from '../../../components/ds';
+import { courseCertificatePath, lessonPath, sectionCertificatePath, sectionCheckPath } from '../../../app/lessonUrls';
+import { Badge, Button, Icon, LessonRow, Mascot, SectionBadge, StagePath } from '../../../components/ds';
 import {
   getLessons,
   getNextLesson,
+  getSectionLessons,
   isLastLessonInSection,
   STAGES,
   type Lesson,
+  type Section,
   type StageId,
 } from '../../../content';
 import { useI18n } from '../../../i18n';
 import { hasText, LESSON_PHONE_QUERY, useLessonPlayer, useMediaQuery } from '../../../lesson';
 import { useLearnerProgress, useLearnerSession } from '../../../session';
 import {
+  finishedSetWith,
   isLessonComplete,
   nextStageForLesson,
   sectionProgress,
@@ -69,6 +72,9 @@ export function firstUnfinishedStage(done: readonly StageId[]): StageId {
  *   what they did on this visit (kept in memory only), always with a note
  *   that nothing was saved and how to choose a learner. A guest who opens
  *   this by URL without finishing is never told they finished.
+ * - When this lesson's finish is the one that completed its section (or all
+ *   24 lessons), a learner also sees that, with a link to the certificate
+ *   (docs/notes/certificates.md). Guests have no saved work, so never.
  */
 export function CompleteStage() {
   const { t } = useI18n();
@@ -90,6 +96,11 @@ export function CompleteStage() {
 
   const finished = isLessonComplete(progress);
   const heading = t('lessonPlayer.complete.title', { number: lesson.number });
+
+  // Only a learner's saved work earns a certificate, and only once it is all read.
+  const canOffer = finished && learnerId !== null && loaded.status === 'ready';
+  const finishedSection = canOffer && finishedSetWith(lesson, getSectionLessons(section.id), allProgress);
+  const finishedCourse = canOffer && finishedSetWith(lesson, getLessons(), allProgress);
 
   const counts = sectionProgress(section, getLessons(), allProgress);
   const badgeText =
@@ -144,6 +155,10 @@ export function CompleteStage() {
           </p>
         </div>
 
+        {finishedSection || finishedCourse ? (
+          <CertificateOffer section={section} finishedSection={finishedSection} finishedCourse={finishedCourse} />
+        ) : null}
+
         <div className="tw-complete-path">
           {/* Icons only on phones, as in the lesson itself; each step keeps its name as its label. */}
           <StagePath compact={phone} done={progress.stagesDone} hrefFor={(stage) => lessonPath(lesson.id, stage)} />
@@ -173,6 +188,53 @@ export function CompleteStage() {
           <Button variant="ghost" icon="NotebookPen" href="/journal">
             {t('lessonPlayer.complete.openJournal')}
           </Button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/**
+ * The moment a finish completes a section, or the whole course: a short
+ * note with a link to the certificate. For the course, the section's own
+ * certificate is linked too (the last lesson always finishes a section).
+ * The section's tint sits only in its disc, beside its icon and its name.
+ */
+function CertificateOffer({
+  section,
+  finishedSection,
+  finishedCourse,
+}: {
+  section: Section;
+  finishedSection: boolean;
+  finishedCourse: boolean;
+}) {
+  const { t } = useI18n();
+  return (
+    <section className="tw-complete-cert" aria-labelledby="tw-complete-cert-title">
+      {finishedCourse ? (
+        <span className="tw-complete-cert-icon">
+          <Icon name="Award" size={26} />
+        </span>
+      ) : (
+        <SectionBadge section={section.id} showName={false} />
+      )}
+      <div className="tw-complete-cert-body">
+        <h2 id="tw-complete-cert-title" className="h3">
+          {finishedCourse
+            ? t('certificates.offer.courseTitle', { count: getLessons().length })
+            : t('certificates.offer.sectionTitle', { section: section.title })}
+        </h2>
+        <p>{t(finishedCourse ? 'certificates.offer.courseBody' : 'certificates.offer.sectionBody')}</p>
+        <div className="tw-complete-cert-actions">
+          <Button variant="secondary" icon="Award" href={finishedCourse ? courseCertificatePath() : sectionCertificatePath(section.id)}>
+            {t(finishedCourse ? 'certificates.offer.getCourseCertificate' : 'certificates.offer.getCertificate')}
+          </Button>
+          {finishedCourse && finishedSection ? (
+            <Button variant="ghost" href={sectionCertificatePath(section.id)}>
+              {t('certificates.offer.getSectionCertificate')}
+            </Button>
+          ) : null}
         </div>
       </div>
     </section>

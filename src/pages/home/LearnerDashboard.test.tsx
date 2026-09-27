@@ -95,3 +95,31 @@ describe('LearnerDashboard: the continue card', () => {
     expect(screen.getByRole('link', { name: /Continue/ })).toHaveAttribute('href', expect.stringContaining(second.id));
   });
 });
+
+describe('LearnerDashboard: the course certificate', () => {
+  const lessons = getLessons();
+  const done = (lesson: Lesson): LessonProgress => ({
+    ...emptyProgress('a', lesson.id),
+    stagesDone: ['read', 'write', 'speak', 'reflect'],
+    completedAt: '2026-09-02T00:00:00.000Z',
+  });
+
+  function renderWith(progress: Map<string, LessonProgress>) {
+    return render(
+      <MemoryRouter>
+        <LearnerDashboard learner={learner} progress={progress} />
+      </MemoryRouter>,
+    );
+  }
+
+  it('links to it once all 24 lessons are finished, with no section check needed', () => {
+    renderWith(new Map(lessons.map((lesson) => [lesson.id, done(lesson)])));
+    expect(screen.getByRole('heading', { level: 2, name: "You've finished the course" })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Get your course certificate' })).toHaveAttribute('href', '/certificate/course');
+  });
+
+  it('has no link while a lesson is left', () => {
+    renderWith(new Map(lessons.slice(1).map((lesson) => [lesson.id, done(lesson)])));
+    expect(screen.queryByRole('link', { name: /certificate/ })).not.toBeInTheDocument();
+  });
+});

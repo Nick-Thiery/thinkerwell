@@ -1,4 +1,4 @@
-import { lessonPath, sectionCheckPath } from '../../app/lessonUrls';
+import { lessonPath, sectionCertificatePath, sectionCheckPath } from '../../app/lessonUrls';
 import type { Lesson, Section } from '../../content';
 import { Button, LessonRow, SectionHeader } from '../../components/ds';
 import { useI18n } from '../../i18n';
@@ -23,6 +23,10 @@ export interface SectionCardProps {
  * for the section check) shown only while expanded (docs/screens/Course.dc.html).
  * Nothing is ever locked, so every row stays a real link regardless of
  * status; collapsing is only about how much of the page is on screen at once.
+ *
+ * Once every lesson in the section is finished (not while looking around),
+ * the row under the header also links to the section's certificate, open or
+ * closed. The section check is never needed for it.
  *
  * The disclosure button is a single element that stays mounted at the same
  * spot whether the section is open or closed (its label and aria-expanded
@@ -62,6 +66,16 @@ export function SectionCard({ section, lessons, progress, highlightLessonId, hid
           {!expanded && !hideProgress && allDone ? (
             <Button variant="secondary" href={sectionCheckPath(section.id)}>
               {t('pages.home.dashboard.startCheck')}
+            </Button>
+          ) : null}
+          {!hideProgress && allDone ? (
+            <Button
+              variant="ghost"
+              icon="Award"
+              href={sectionCertificatePath(section.id)}
+              aria-label={t('certificates.offer.getCertificateFor', { section: section.title })}
+            >
+              {t('certificates.offer.getCertificate')}
             </Button>
           ) : null}
           <Button variant="ghost" onClick={onToggle} aria-expanded={expanded} aria-controls={bodyId}>

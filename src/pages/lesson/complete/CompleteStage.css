@@ -74,6 +74,52 @@
   line-height: 29px;
 }
 
+/* A finished section (or course): a note with a link to the certificate. */
+.tw-complete-cert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.tw-complete-cert-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  inline-size: 48px;
+  block-size: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+}
+
+.tw-complete-cert-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  min-inline-size: 0;
+}
+
+.tw-complete-cert-body h2 {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.tw-complete-cert-body p {
+  margin: 0;
+}
+
+.tw-complete-cert-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-block-start: var(--space-2);
+}
+
 /* If a StagePath is ever wider than the column (longer stage names in another language), it wraps rather than scrolls. */
 .tw-complete-path {
   min-inline-size: 0;
@@ -156,5 +202,10 @@
   .tw-complete-actions > .tw-btn {
     flex: 1 1 100%;
     justify-content: center;
+  }
+
+  .tw-complete-cert {
+    flex-direction: column;
+    padding: var(--space-4);
   }
 }

@@ -1,8 +1,8 @@
 import { render, screen, within } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { lessonPath, sectionCheckPath } from '../../../app/lessonUrls';
-import { getLesson, getLessonByNumber, getLessons, type Lesson } from '../../../content';
+import { courseCertificatePath, lessonPath, sectionCertificatePath, sectionCheckPath } from '../../../app/lessonUrls';
+import { getLesson, getLessonByNumber, getLessons, getSectionLessons, type Lesson } from '../../../content';
 import { LessonPlayerProvider, useLessonPlayer } from '../../../lesson';
 import { clearGuestMemory, setGuestProgress } from '../../../lesson/guestMemory';
 import { LearnerSessionProvider } from '../../../session';
@@ -192,5 +192,64 @@ describe('CompleteStage', { timeout: 30_000 }, () => {
       unmount();
     }
     expect(errors).not.toHaveBeenCalled();
+  });
+});
+
+describe('CompleteStage: the certificate moment', { timeout: 30_000 }, () => {
+  /** Finishes each lesson, a day apart from 1 September 2026, in the order given. */
+  async function finishInOrder(learnerId: string, lessons: readonly Lesson[]) {
+    let day = 1;
+    for (const each of lessons) {
+      const at = new Date(Date.UTC(2026, 8, day++, 10)).toISOString();
+      await saveProgress(learnerId, each, (p) => ({ ...finished(p), completedAt: at }));
+    }
+  }
+  const geography = getSectionLessons('geography');
+
+  it('offers the section certificate when this finish completes the section', async () => {
+    const learnerId = await addCurrentLearner();
+    // Lesson 12 is finished last: out of order is fine.
+    await finishInOrder(learnerId, [byNumber(10), byNumber(11), byNumber(13), byNumber(14), byNumber(12)]);
+    renderComplete(byNumber(12));
+    const offer = await screen.findByRole('region', { name: 'You finished the whole Geography & Our Environment section.' });
+    expect(within(offer).getByText('Your certificate is ready to print.')).toBeInTheDocument();
+    expect(within(offer).getByRole('link', { name: 'Get your certificate' })).toHaveAttribute('href', sectionCertificatePath('geography'));
+    // The lemon highlight stays on "Up next".
+    expect(offer.querySelector('.tw-row-now')).toBeNull();
+  });
+
+  it("doesn't offer it while a lesson in the section is left", async () => {
+    const learnerId = await addCurrentLearner();
+    await finishInOrder(learnerId, geography.slice(0, 4));
+    renderComplete(byNumber(13));
+    expect(await screen.findByRole('heading', { level: 1, name: 'You finished Lesson 13.' })).toBeInTheDocument();
+    await screen.findByText(/Geography & Our Environment · 4 of 5 lessons done/);
+    expect(screen.queryByRole('link', { name: /certificate/ })).not.toBeInTheDocument();
+  });
+
+  it("doesn't offer it again on an earlier lesson of a finished section", async () => {
+    const learnerId = await addCurrentLearner();
+    await finishInOrder(learnerId, geography);
+    renderComplete(byNumber(10));
+    await screen.findByText(/Geography & Our Environment · 5 of 5 lessons done/);
+    expect(screen.queryByRole('link', { name: /certificate/ })).not.toBeInTheDocument();
+  });
+
+  it('never offers one to a guest', async () => {
+    for (const each of geography) finishAsGuest(each);
+    renderComplete(byNumber(14));
+    expect(await screen.findByRole('heading', { level: 1, name: 'You finished Lesson 14.' })).toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: /certificate/ })).not.toBeInTheDocument();
+  });
+
+  it('offers the course certificate, and the section one, when this finish completes all 24 lessons', async () => {
+    const learnerId = await addCurrentLearner();
+    const lessons = getLessons();
+    await finishInOrder(learnerId, lessons);
+    renderComplete(byNumber(24));
+    const offer = await screen.findByRole('region', { name: 'You finished all 24 lessons.' });
+    expect(within(offer).getByText('Your course certificate is ready to print.')).toBeInTheDocument();
+    expect(within(offer).getByRole('link', { name: 'Get your course certificate' })).toHaveAttribute('href', courseCertificatePath());
+    expect(within(offer).getByRole('link', { name: 'Get your section certificate' })).toHaveAttribute('href', sectionCertificatePath('civics'));
   });
 });

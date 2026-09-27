@@ -1,5 +1,5 @@
 import { createElement } from 'react';
-import { sectionCheckPath, lessonPath } from '../../app/lessonUrls';
+import { courseCertificatePath, sectionCheckPath, lessonPath } from '../../app/lessonUrls';
 import { getLessonSection, getLessons, getQuiz, getSections } from '../../content';
 import { Badge, Button, ContinueCard, Icon, ProgressRing, SectionBadge, useDsLinkComponent } from '../../components/ds';
 import { useI18n } from '../../i18n';
@@ -98,9 +98,14 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
         <section className="tw-dash-finished">
           <h2 className="h2">{t('pages.home.dashboard.finishedTitle')}</h2>
           <p className="body-lg">{t('pages.home.dashboard.finishedBody')}</p>
-          <Button variant="primary" size="lg" href="/course">
-            {t('pages.home.dashboard.finishedCta')}
-          </Button>
+          <div className="tw-dash-finished-actions">
+            <Button variant="primary" size="lg" href="/course">
+              {t('pages.home.dashboard.finishedCta')}
+            </Button>
+            <Button variant="secondary" size="lg" icon="Award" href={courseCertificatePath()}>
+              {t('certificates.offer.getCourseCertificate')}
+            </Button>
+          </div>
         </section>
       )}
 

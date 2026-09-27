@@ -333,6 +333,12 @@
   margin: 0;
 }
 
+.tw-dash-finished-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
 .tw-dash-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
