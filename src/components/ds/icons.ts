@@ -53,6 +53,7 @@ import {
   Target,
   Trash2,
   Type,
+  Upload,
   User,
   Users,
   Volume2,
@@ -117,7 +118,9 @@ export type IconName =
   | 'Search'
   | 'LogOut'
   // Not in the design-system list: the header's link to Settings (phase 6).
-  | 'Settings';
+  | 'Settings'
+  // Not in the design-system list: "Load my work" in Settings (moving work between devices).
+  | 'Upload';
 
 /**
  * Icon names that point along the reading direction and must be mirrored
@@ -185,4 +188,5 @@ export const ICONS: Record<IconName, LucideIcon> = {
   Search,
   LogOut,
   Settings,
+  Upload,
 };

@@ -65,6 +65,12 @@ export interface LearnerSessionValue {
   /** Clears the current learner (if any) and turns look-around off, back to the "who's learning" picker. */
   returnToPicker: () => Promise<void>;
   /**
+   * Reads the device's learners again, after learners were added outside
+   * the session (loading work from a file in Settings). The current learner
+   * and look-around stay as they are.
+   */
+  reloadLearners: () => Promise<void>;
+  /**
    * Remembers a learner's Standard / Simpler choice on their own record
    * (phase 4). Never called in look-around: the lesson player keeps a
    * guest's choice in memory instead.
@@ -254,6 +260,15 @@ export function LearnerSessionProvider({ forceLookAround = false, children }: Le
     setLookAround(false);
   }, [storageAvailable]);
 
+  const reloadLearners = useCallback(async () => {
+    if (!storageAvailable) return;
+    const store = await getStore();
+    const list = await store.listLearners();
+    if (!alive.current) return;
+    setLearners(list);
+    setCurrentLearner((prev) => (prev ? (list.find((l) => l.id === prev.id) ?? null) : null));
+  }, [storageAvailable]);
+
   const setLearnerReadingLevel = useCallback(async (id: string, level: ReadingLevel) => {
     if (!storageAvailable) return;
     const store = await getStore();
@@ -278,9 +293,10 @@ export function LearnerSessionProvider({ forceLookAround = false, children }: Le
       removeLearner,
       startLookAround,
       returnToPicker,
+      reloadLearners,
       setLearnerReadingLevel,
     }),
-    [status, storageAvailable, learners, currentLearner, lookAround, activeLearner, chooseLearner, addLearner, removeLearner, startLookAround, returnToPicker, setLearnerReadingLevel],
+    [status, storageAvailable, learners, currentLearner, lookAround, activeLearner, chooseLearner, addLearner, removeLearner, startLookAround, returnToPicker, reloadLearners, setLearnerReadingLevel],
   );
 
   return <LearnerSessionContext.Provider value={value}>{children}</LearnerSessionContext.Provider>;

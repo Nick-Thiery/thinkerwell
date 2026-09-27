@@ -169,3 +169,121 @@
   padding-block-start: 0;
   border-block-start: 0;
 }
+
+/* "Move work to another device" (WorkFileSetting.tsx): save to a file, load from one. */
+.tw-transfer-alone {
+  padding-inline-start: 0;
+}
+
+.tw-transfer-part {
+  gap: var(--space-3);
+}
+
+.tw-transfer-part .tw-settings-help {
+  padding-inline-start: 0;
+}
+
+/* Whose work: one radio per learner, then "All learners on this device". */
+.tw-transfer-who {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.tw-transfer-legend {
+  padding: 0;
+  margin-block-end: var(--space-1);
+  font-size: 15px;
+  line-height: 22px;
+  color: var(--ink-muted);
+}
+
+.tw-transfer-choice {
+  font-weight: 400;
+}
+
+/* Names come from learners (and from files): long ones wrap instead of widening the page. */
+.tw-transfer-choice span,
+.tw-transfer-list li,
+.tw-transfer-lines p {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+
+/* The live regions stay in the page (so what appears in them is announced), taking no room while empty. */
+.tw-transfer-live {
+  align-self: stretch;
+}
+
+.tw-transfer-live:empty {
+  margin-block-start: calc(-1 * var(--space-3));
+}
+
+/* A file that can't be loaded, or a file that couldn't be made: burnt orange, with an icon and words, never red. */
+.tw-transfer-problem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding-block: var(--space-3);
+  padding-inline: var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--retry-soft);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.tw-transfer-problem .tw-icon {
+  flex: none;
+  margin-block-start: 2px;
+  color: var(--retry);
+}
+
+/* What the chosen file holds, before anything changes. */
+.tw-transfer-preview {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--ink);
+  background: var(--paper);
+}
+
+.tw-transfer-preview h4[tabindex="-1"]:focus,
+.tw-transfer-live [tabindex="-1"]:focus {
+  outline: none;
+}
+
+.tw-transfer-text {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.tw-transfer-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+  padding-inline-start: var(--space-5);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.tw-transfer-lines {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-inline-size: 0;
+}
+
+@media (max-width: 600px) {
+  .tw-transfer-preview {
+    padding: var(--space-4);
+  }
+}

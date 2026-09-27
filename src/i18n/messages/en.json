@@ -585,6 +585,67 @@
         "allowOnline": "Allow online speech-to-text",
         "allowOnlineHelp": "Off unless you turn it on. When it's on and this device can't turn speech into text by itself, Say it sends what learners say to the browser maker's online service (for example Google, Apple or Microsoft), and it needs the internet. Turn it on only if your organisation and the learners' families have agreed.",
         "recordingsNote": "Record yourself is different: recordings always stay on this device and are never sent anywhere."
+      },
+      "transfer": {
+        "title": "Move work to another device",
+        "intro": "Tablets get reset and laptops get replaced. Save learners' work to a file first. Then load the file on the other device. Nothing goes online.",
+        "noStorage": "This browser window can't keep learners' work, so there's nothing to save or load here.",
+        "save": {
+          "title": "Save work to a file",
+          "who": "Whose work",
+          "learnerAdded": "{name}, added {date}",
+          "all": "All learners on this device",
+          "button": "Save my work to a file",
+          "help": "The file goes to this device's downloads. Anyone with the file can read the work in it, so keep it safe.",
+          "recordings": "Recordings stay on this device.",
+          "noLearners": "There's no saved work on this device yet.",
+          "saving": "Making the file…",
+          "saved": "Look for {file} in this device's downloads.",
+          "tooBig": "That's too much work for one file. Save each learner's work on its own.",
+          "failed": "The file couldn't be made. Try again."
+        },
+        "load": {
+          "title": "Load work from a file",
+          "button": "Load my work",
+          "help": "Choose a file saved from Thinkerwell. Nothing changes until you say so.",
+          "reading": "Checking the file…",
+          "previewTitle": "Check before you load",
+          "savedOn": "This file was saved on {date}. It has work for:",
+          "lessons": {
+            "one": "{count} lesson",
+            "other": "{count} lessons"
+          },
+          "checks": {
+            "one": "{count} section check",
+            "other": "{count} section checks"
+          },
+          "lessonsAndChecks": "{lessons} and {checks}",
+          "noWork": "no work yet",
+          "learnerNew": "{name}: {work}. New on this device.",
+          "learnerHere": "{name}: {work}. Already on this device, so this is added to their work here. Nothing is lost.",
+          "sameName": "There's already a different {name} on this device. Both are kept, and each tile shows the day it was added.",
+          "skipped": {
+            "one": "{count} piece of work is for a lesson or check that this version of Thinkerwell doesn't have. It will be left out.",
+            "other": "{count} pieces of work are for lessons or checks that this version of Thinkerwell doesn't have. They will be left out."
+          },
+          "loadIt": "Load it",
+          "cancel": "Cancel",
+          "loading": "Loading the work…",
+          "added": "Added to this device: {names}.",
+          "updated": "Added to the work already here: {names}.",
+          "unchanged": "Nothing new for {names}.",
+          "nothingNew": "This device already had all the work in this file, so nothing changed.",
+          "carryOn": "To carry on, choose who's learning on the home page.",
+          "problems": {
+            "notWorkFile": "This isn't a Thinkerwell work file, so nothing was loaded. Choose a file with a name that starts with thinkerwell.",
+            "newerVersion": "This file was saved by a newer version of Thinkerwell. Update this device first: open Thinkerwell with the internet on, then try again.",
+            "empty": "There's no work in this file, so nothing was loaded.",
+            "tooBig": "This file is too big to be Thinkerwell work, so nothing was loaded.",
+            "damaged": "Part of this file is damaged, so nothing was loaded. Save the work to a file again on the other device.",
+            "unreadable": "This file couldn't be opened. Try again.",
+            "failed": "The work couldn't be loaded, so nothing changed on this device. Try again."
+          }
+        }
       }
     },
     "about": {

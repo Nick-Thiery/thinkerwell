@@ -8,3 +8,4 @@ export {
   type LearnerSessionValue,
 } from './LearnerSessionContext';
 export { useLearnerProgress, type LearnerProgressResult, type LearnerProgressStatus } from './useLearnerProgress';
+export { addedOn, learnersWithSameName } from './sameNames';
