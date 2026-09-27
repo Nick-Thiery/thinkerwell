@@ -3,6 +3,7 @@ import { sectionCheckPath, lessonPath } from '../../app/lessonUrls';
 import { getLessonSection, getLessons, getSections } from '../../content';
 import { Badge, Button, ContinueCard, Icon, ProgressRing, SectionBadge, useDsLinkComponent } from '../../components/ds';
 import { useI18n } from '../../i18n';
+import { useServiceWorker } from '../../offline';
 import { SECTION_ICONS } from '../course/sectionIcons';
 import {
   findContinueTarget,
@@ -38,6 +39,7 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
   const currentSectionId = target ? getLessonSection(target.lesson).id : undefined;
   const journalEntry = latestJournalEntry(lessons, progress);
   const isNewLearner = completedCount === 0 && progress.size === 0;
+  const { offline } = useServiceWorker();
 
   const summary = !target
     ? t('pages.home.dashboard.summaryDone')
@@ -60,7 +62,20 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
           <p className="body-lg">{summary}</p>
         </div>
         <div className="tw-dash-badges">
-          {/* Phase 6 adds an offline-status badge here, alongside this one. */}
+          {/*
+            Every lesson is precached at once (vite.config.ts), so the badge
+            is about the whole course, not the lessons opened so far. Nothing
+            shows where this browser can't keep it offline.
+          */}
+          {offline === 'ready' ? (
+            <Badge tone="outline" icon="Download">
+              {t('pages.home.dashboard.offlineBadge', { count: lessons.length })}
+            </Badge>
+          ) : offline === 'preparing' ? (
+            <Badge tone="outline" icon="Clock">
+              {t('pages.home.dashboard.offlinePreparingBadge')}
+            </Badge>
+          ) : null}
           <Badge tone="outline" icon="Lock">
             {t('pages.home.dashboard.savedBadge')}
           </Badge>

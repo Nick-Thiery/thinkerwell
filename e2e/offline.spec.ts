@@ -1,4 +1,5 @@
 import { expect, test, type Page } from '@playwright/test';
+import { addLearnerViaUi } from './lessonHelpers';
 
 // Offline use (CLAUDE.md rule 2, docs/notes/phase-6.md), against the
 // production build with its real service worker. playwright.config.ts
@@ -83,4 +84,33 @@ test('after the first visit, lessons open offline, with their pictures, and the 
   await context.setOffline(false);
   await expect(page.getByRole('status').filter({ hasText: "You're back online." })).toBeVisible();
   await expect(offline).toHaveCount(0);
+});
+
+test('a learner keeps working offline: the dashboard says so, Watch opens on Read instead, and writing is kept', async ({
+  page,
+  context,
+}) => {
+  await addLearnerViaUi(page, 'Amina');
+  await waitUntilOfflineReady(page);
+  await page.goto('/');
+  await expect(page.getByText('All 24 lessons work offline')).toBeVisible();
+
+  await context.setOffline(true);
+  await page.reload();
+  await expect(page.locator('h1')).toHaveText('Hi Amina');
+  await expect(page.getByRole('status').filter({ hasText: "You're offline. Keep going: your work is saved on this device." })).toBeVisible();
+
+  await page.goto('/lesson/towns-near-rivers/watch');
+  await expect(page.getByText("You're offline, so the video can't load now.")).toBeVisible();
+  await expect(page.getByRole('article', { name: 'Ancient Mesopotamia 101' })).toBeVisible();
+  await expect(
+    page.getByRole('status').filter({ hasText: 'Keep going: this lesson is saved, and your work is saved on this device.' }),
+  ).toBeVisible();
+
+  await page.goto('/lesson/towns-near-rivers/reflect');
+  const answer = page.getByRole('textbox').first();
+  await answer.fill('Rivers give towns water and a way to trade.');
+  await answer.blur();
+  await page.reload();
+  await expect(page.getByRole('textbox').first()).toHaveValue('Rivers give towns water and a way to trade.');
 });
