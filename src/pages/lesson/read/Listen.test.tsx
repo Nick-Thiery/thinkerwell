@@ -68,6 +68,8 @@ function renderRead(search = '', level?: ReadingLevel) {
 const listenTool = () => screen.getByRole('button', { name: 'Listen' });
 const listenBar = () => screen.queryByRole('group', { name: /Reading aloud/ });
 const marked = () => document.querySelector('mark.tw-speaking')?.textContent ?? null;
+/** Every marked piece of the sentence, in order (a glossary word in it carries its own mark). */
+const allMarked = () => Array.from(document.querySelectorAll('mark.tw-speaking'), (mark) => mark.textContent).join('');
 
 afterEach(() => {
   restoreSpeechMocks();
@@ -221,6 +223,37 @@ describe('Listen', () => {
     speech.cancel.mockClear();
     again.unmount();
     expect(speech.cancel).toHaveBeenCalled();
+  });
+
+  it('keeps an open definition open, with focus on its word, while the highlight reaches and passes it', async () => {
+    const user = userEvent.setup();
+    const speech = mockSpeechSynthesis();
+    renderRead();
+    const all = sentences(S1.text);
+    const withTerm = all.findIndex((sentence) => /\bfertile\b/.test(sentence));
+    expect(withTerm).toBeGreaterThan(0);
+
+    await user.click(listenTool());
+    act(() => speech.finish()); // the heading: the first sentence is now marked
+    const term = screen.getByRole('button', { name: 'fertile' });
+    await user.click(term);
+    expect(term).toHaveAttribute('aria-expanded', 'true');
+
+    // On to the sentence with the word in it, then past it.
+    for (let i = 0; i < withTerm; i += 1) act(() => speech.finish());
+    // The sentence is marked around the word, and the word carries the mark inside its button.
+    expect(allMarked()).toBe(all[withTerm]);
+    expect(term.querySelector('mark.tw-speaking')).toHaveTextContent('fertile');
+    expect(screen.getByRole('button', { name: 'fertile' })).toBe(term);
+    expect(term).toHaveAttribute('aria-expanded', 'true');
+    expect(term).toHaveFocus();
+
+    act(() => speech.finish());
+    expect(allMarked()).toBe(all[withTerm + 1]);
+    expect(term.querySelector('mark')).toBeNull();
+    expect(term.isConnected).toBe(true);
+    expect(term).toHaveAttribute('aria-expanded', 'true');
+    expect(term).toHaveFocus();
   });
 
   it('stops quietly if the voice fails', async () => {

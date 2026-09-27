@@ -126,6 +126,17 @@ test('Listen reads the part aloud with a device voice, and its controls work', a
   // Paused, played and slowed: the same sentence each time.
   expect((await speech.spoken()).slice(1)).toEqual(Array(3).fill('Every community needs water to drink, cook and wash.'));
 
+  // An open definition stays open while the highlight reaches its word and moves past it.
+  const fertile = page.getByRole('button', { name: 'fertile', exact: true });
+  await fertile.click();
+  await expect(fertile).toHaveAttribute('aria-expanded', 'true');
+  for (let i = 0; i < 3; i += 1) await speech.finish();
+  await expect(fertile.locator('mark.tw-speaking')).toHaveText('fertile');
+  await speech.finish();
+  await expect(fertile.locator('mark')).toHaveCount(0);
+  await expect(fertile).toHaveAttribute('aria-expanded', 'true');
+  await expect(fertile).toBeFocused();
+
   await bar.getByRole('button', { name: 'Stop' }).click();
   await expect(bar).toHaveCount(0);
   await expect(mark).toHaveCount(0);
