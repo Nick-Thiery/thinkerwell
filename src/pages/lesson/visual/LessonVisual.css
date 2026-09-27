@@ -13,7 +13,7 @@
   border: 1px solid var(--line);
 }
 
-.tw-lesson-visual img {
+.tw-lesson-visual > img {
   display: block;
   inline-size: 100%;
   max-inline-size: 100%;
@@ -24,5 +24,108 @@
 @media (max-width: 599px) {
   .tw-lesson-visual {
     padding: var(--space-3);
+  }
+}
+
+/* "See it bigger": under the picture, at its start edge. */
+.tw-lesson-visual-tools {
+  display: flex;
+  justify-content: flex-start;
+  margin-block-start: var(--space-3);
+}
+
+/*
+ * The picture, bigger: a modal <dialog> that fills a phone's screen and sits
+ * as a large panel on tablets and laptops. It floats above the page, so it
+ * gets shadow-pop, like the other things that do.
+ */
+.tw-picture-dialog {
+  box-sizing: border-box;
+  inline-size: min(1040px, 100% - 2 * var(--space-6));
+  max-inline-size: none;
+  max-block-size: calc(100% - 2 * var(--space-6));
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: var(--shadow-pop);
+}
+
+/* Only while open: a closed <dialog> must keep the browser's display: none. */
+.tw-picture-dialog[open] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tw-picture-dialog::backdrop {
+  background: rgb(15 14 14 / 60%);
+}
+
+.tw-picture-dialog-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.tw-picture-dialog-hint {
+  display: none;
+  color: var(--ink-muted);
+}
+
+/*
+ * The hints are about fingers, so they show only on touch screens: below
+ * 700px the 640px picture is wider than the dialog and can be dragged.
+ */
+@media (pointer: coarse) and (max-width: 699px) {
+  .tw-picture-dialog-hint-narrow {
+    display: block;
+  }
+}
+
+@media (pointer: coarse) and (min-width: 700px) {
+  .tw-picture-dialog-hint-wide {
+    display: block;
+  }
+}
+
+.tw-picture-dialog-scroll {
+  flex: 1 1 auto;
+  display: flex;
+  min-block-size: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border-radius: var(--radius-lg);
+}
+
+/*
+ * At least 640px wide, so the picture's smallest labels (22 of its 960
+ * units) are at least 14px, the smallest text the brand allows; up to its
+ * own 960px where there is room.
+ */
+.tw-picture-dialog-scroll img {
+  display: block;
+  flex: none;
+  inline-size: max(100%, 640px);
+  max-inline-size: 960px;
+  block-size: auto;
+  border-radius: var(--radius-lg);
+
+  /* Centred where there is room; auto margins become 0 where there isn't, so no part is out of reach. */
+  margin: auto;
+}
+
+@media (max-width: 599px) {
+  .tw-picture-dialog {
+    inline-size: 100%;
+    max-block-size: 100%;
+    block-size: 100%;
+    margin: 0;
+    padding: var(--space-4);
+    border: 0;
+    border-radius: 0;
   }
 }

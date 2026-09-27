@@ -94,8 +94,16 @@ export const pageTour: TourStop[] = [
     },
   },
   {
+    name: 'lesson: the picture, bigger',
+    go: async (page) => {
+      await page.getByRole('button', { name: 'See it bigger' }).click();
+      await expect(page.getByRole('dialog', { name: 'The map' })).toBeVisible();
+    },
+  },
+  {
     name: 'lesson: Read part 2',
     go: async (page) => {
+      await page.getByRole('dialog', { name: 'The map' }).getByRole('button', { name: 'Close' }).click();
       await nextButton(page, 'Next: Part 2').click();
       await expect(page).toHaveURL(/\?part=2$/);
     },

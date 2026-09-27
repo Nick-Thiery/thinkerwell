@@ -62,7 +62,7 @@ export function LessonPrintPage({ lesson }: { lesson: Lesson }) {
 
         <section className="tw-print-part tw-print-evidence">
           <h2>{t('lessonPlayer.evidence.sectionLabel')}</h2>
-          <LessonEvidence evidence={lesson.evidence} visual={lesson.visual} />
+          <LessonEvidence evidence={lesson.evidence} visual={lesson.visual} enlargeablePicture={false} />
         </section>
 
         <Reading

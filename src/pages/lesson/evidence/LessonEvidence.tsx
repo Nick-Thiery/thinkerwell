@@ -10,6 +10,8 @@ export interface LessonEvidenceProps {
   evidence: Evidence;
   /** The lesson's picture (lesson.visual), shown first, above the observation question. */
   visual?: Visual | null;
+  /** Offers "See it bigger" on the picture (LessonVisual); the print view turns it off. */
+  enlargeablePicture?: boolean;
 }
 
 type CardOf<T extends EvidenceCard['type']> = Extract<EvidenceCard, { type: T }>;
@@ -33,14 +35,14 @@ type CardOf<T extends EvidenceCard['type']> = Extract<EvidenceCard, { type: T }>
  * The page shell owns the h1 and the stage's h2, so each card's title is an
  * h3 inside its figcaption.
  */
-export function LessonEvidence({ evidence, visual = null }: LessonEvidenceProps) {
+export function LessonEvidence({ evidence, visual = null, enlargeablePicture = true }: LessonEvidenceProps) {
   const { t } = useI18n();
   const baseId = useId();
   const fictionLabel = evidence.fictional ? getCourse().fictionLabel : null;
 
   return (
     <section className="tw-lx" aria-label={t('lessonPlayer.evidence.sectionLabel')}>
-      <LessonVisual visual={visual} />
+      <LessonVisual visual={visual} enlargeable={enlargeablePicture} />
       <div className="tw-lx-prompt">
         <span className="tw-lx-eyebrow">
           <Icon name="Eye" size={16} />
