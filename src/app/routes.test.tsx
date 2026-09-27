@@ -52,9 +52,13 @@ describe('top-level routes', () => {
     ['/about', t('pages.about.title')],
   ];
 
-  it.each(pages)('%s shows one h1 with its title', (path, title) => {
+  // Home and the course map read IndexedDB before they have anything to
+  // show (see AppLayout's focus-after-navigation handling), so this waits
+  // for the heading rather than asserting on the very first render; that
+  // also passes trivially for the pages that render synchronously.
+  it.each(pages)('%s shows one h1 with its title', async (path, title) => {
     renderAt(path);
-    expect(heading()).toHaveTextContent(title);
+    await waitFor(() => expect(heading()).toHaveTextContent(title));
     expect(document.title).toBe(t('app.documentTitle', { page: title }));
     expect(document.title).toBe(`${title} · Thinkerwell`);
   });
@@ -168,13 +172,15 @@ describe('old Base44 paths', () => {
   it('/onboarding redirects to home', async () => {
     const router = renderAt('/onboarding');
     await waitFor(() => expect(where(router)).toBe('/'));
-    expect(heading()).toHaveTextContent(t('pages.home.title'));
+    // Home reads IndexedDB before it has an h1 to show, so the URL can
+    // update one tick before the heading appears.
+    await waitFor(() => expect(heading()).toHaveTextContent(t('pages.home.title')));
   });
 
   it('/courses redirects to the course map', async () => {
     const router = renderAt('/courses');
     await waitFor(() => expect(where(router)).toBe('/course'));
-    expect(heading()).toHaveTextContent(t('pages.course.title'));
+    await waitFor(() => expect(heading()).toHaveTextContent(t('pages.course.title')));
   });
 });
 

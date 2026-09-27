@@ -1,38 +1,33 @@
 /*
- * Phase 1 app shell. Deliberately plain: the real SiteHeader and page layouts
- * come from the design-system components in later phases.
+ * The app shell: the header area (SiteHeader plus the learner switcher it
+ * anchors), <main>'s page column, and the phase-1 placeholder styles still
+ * used by pages this phase doesn't touch (Journal, Educators, About).
  */
 
-.tw-shell-header {
-  background: var(--lemon);
-  border-block-end: 2px solid var(--ink);
-  padding-block: var(--space-2);
+/* Positions LearnerSwitcher (position: absolute) relative to the header, not the viewport. */
+.tw-header-area {
+  position: relative;
+}
+
+/* Lines the "just look around" note up with the page column below it. */
+.tw-lookaround-banner {
+  box-sizing: border-box;
+  max-inline-size: var(--page-max);
+  margin-inline: auto;
+  margin-block-start: var(--space-4);
   padding-inline: var(--space-4);
 }
 
-/* Two classes so it beats the ul[role="list"] reset in global.css. */
-.tw-shell-header .tw-shell-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-1) var(--space-2);
-  max-inline-size: var(--page-max);
-  margin-inline: auto;
+@media (min-width: 820px) {
+  .tw-lookaround-banner {
+    padding-inline: var(--space-8);
+  }
 }
 
-.tw-shell-nav a {
-  display: inline-flex;
-  align-items: center;
-  min-block-size: var(--target-min);
-  padding-inline: var(--space-3);
-  border-radius: var(--radius-pill);
-  color: var(--ink);
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.tw-shell-nav a[aria-current="page"] {
-  background: var(--paper);
-  box-shadow: inset 0 0 0 2px var(--ink);
+@media (min-width: 1280px) {
+  .tw-lookaround-banner {
+    padding-inline: var(--space-10);
+  }
 }
 
 .tw-shell-main {
@@ -77,10 +72,6 @@
 }
 
 @media (min-width: 820px) {
-  .tw-shell-header {
-    padding-inline: var(--space-8);
-  }
-
   .tw-shell-main {
     padding-inline: var(--space-8);
   }

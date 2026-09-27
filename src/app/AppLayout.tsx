@@ -1,20 +1,36 @@
-import { useEffect, useMemo, useRef } from 'react';
-import { NavigationType, NavLink, Outlet, ScrollRestoration, useLocation, useNavigationType } from 'react-router';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { NavigationType, Outlet, ScrollRestoration, useLocation, useNavigate, useNavigationType } from 'react-router';
+import { DsLinkProvider, SiteHeader, StatusBanner } from '../components/ds';
 import { I18nProvider, readDevDirection, useI18n } from '../i18n';
+import { LearnerSessionProvider, useLearnerSession } from '../session';
 import './app.css';
+import { LearnerSwitcher } from './LearnerSwitcher';
+import { MobileNav } from './MobileNav';
+import { RouterDsLink } from './RouterDsLink';
+import { useIsCompactHeader } from './useIsCompactHeader';
+
+const MASCOT_SRC = '/images/thinkerwell-mascot-transparent.png';
 
 /**
- * The shell around every page: locale and direction, a skip link, a minimal
- * header (replaced by SiteHeader in phase 2 and 3) and <main>.
+ * The shell around every page: locale and direction, on-device learner
+ * state, the site header and learner switcher, the "just look around" note,
+ * a skip link and <main>.
  */
 export function AppLayout() {
   const { search } = useLocation();
   // Dev only: ?dir=rtl forces right-to-left until ?dir=ltr (see src/i18n/direction.ts).
   const devDir = useMemo(() => readDevDirection(search), [search]);
+  // Old Base44 educator links use ?preview=true to browse without an account;
+  // read on every navigation (not just the first), so it also works deep-linked.
+  const forceLookAround = useMemo(() => new URLSearchParams(search).get('preview') === 'true', [search]);
 
   return (
     <I18nProvider dirOverride={devDir}>
-      <Shell devRtl={devDir === 'rtl'} />
+      <LearnerSessionProvider forceLookAround={forceLookAround}>
+        <DsLinkProvider link={RouterDsLink}>
+          <Shell devRtl={devDir === 'rtl'} />
+        </DsLinkProvider>
+      </LearnerSessionProvider>
     </I18nProvider>
   );
 }
@@ -22,36 +38,105 @@ export function AppLayout() {
 function Shell({ devRtl }: { devRtl: boolean }) {
   const { t } = useI18n();
   const { pathname } = useLocation();
+  const navigate = useNavigate();
   const navigationType = useNavigationType();
+  const session = useLearnerSession();
+  const compact = useIsCompactHeader();
   const mainRef = useRef<HTMLElement>(null);
   const lastPathname = useRef(pathname);
-  // Set when a link or back navigation lands on a redirect (no h1 yet), so the
-  // page the redirect leads to still gets focus. Lasts one hop only.
+  // Set when a link or back navigation is heading to a page without an h1
+  // yet (still reading IndexedDB), so focus lands on it once it appears.
+  // Lasts one hop, and never fires for a REPLACE that isn't continuing one
+  // of those (an unrelated redirect landing while this is pending).
   const focusPending = useRef(false);
+  const observerRef = useRef<MutationObserver | null>(null);
+  // Which pathname the switcher/menu were opened on, so a navigation closes
+  // them for free (derived on every render) rather than needing its own
+  // effect just to reset a boolean.
+  const [switcherOpenAt, setSwitcherOpenAt] = useState<string | null>(null);
+  const [mobileNavOpenAt, setMobileNavOpenAt] = useState<string | null>(null);
+  const switcherOpen = switcherOpenAt === pathname;
+  const mobileNavOpen = mobileNavOpenAt === pathname;
+  // The chip element itself, captured straight from the click event rather
+  // than read back later from document.activeElement: Safari (Mac and iPad)
+  // and Firefox on Mac don't focus a button on click, so activeElement can't
+  // be trusted to still be the chip by the time the switcher reads it
+  // (r2-spec-2). State, not a ref, because it's read during render (to pass
+  // to LearnerSwitcher below) — reading a ref's value there isn't safe.
+  const [switcherTrigger, setSwitcherTrigger] = useState<HTMLButtonElement | null>(null);
 
-  // After the learner moves to another page (link or back button), move focus
-  // to the new page's heading so screen-reader and keyboard users start at the
-  // top. Not on first load, and not after a redirect (a REPLACE navigation)
-  // unless that redirect followed a link, e.g. a link to /lesson/l6.
   useEffect(() => {
     if (lastPathname.current === pathname) return;
     lastPathname.current = pathname;
     const isReplace = navigationType === NavigationType.Replace;
     if (!isReplace) focusPending.current = true;
+
+    observerRef.current?.disconnect();
+    observerRef.current = null;
     if (!focusPending.current) return;
-    const heading = mainRef.current?.querySelector<HTMLElement>('h1');
-    if (heading) heading.focus({ preventScroll: true });
-    // Keep waiting only if this was the link itself and it rendered no heading.
-    focusPending.current = !heading && !isReplace;
+
+    const tryFocus = (): boolean => {
+      const heading = mainRef.current?.querySelector<HTMLElement>('h1');
+      if (!heading) return false;
+      heading.focus({ preventScroll: true });
+      focusPending.current = false;
+      return true;
+    };
+    if (tryFocus() || !mainRef.current) return;
+
+    // Home, the dashboard and the course map read IndexedDB before they have
+    // an h1 to show. Watch for it instead of giving up after one look; the
+    // watch itself is dropped the moment another navigation starts (this
+    // effect re-running disconnects it), so a heading that finally appears
+    // after the learner has already moved on doesn't steal focus.
+    const observer = new MutationObserver(() => {
+      if (tryFocus()) {
+        observer.disconnect();
+        observerRef.current = null;
+      }
+    });
+    observer.observe(mainRef.current, { childList: true, subtree: true });
+    observerRef.current = observer;
   }, [pathname, navigationType]);
 
+  useEffect(() => () => observerRef.current?.disconnect(), []);
+
   const links = [
-    { to: '/', label: t('nav.home'), end: true },
+    { to: '/', label: t('nav.home') },
     { to: '/course', label: t('nav.course') },
     { to: '/journal', label: t('nav.journal') },
     { to: '/educators', label: t('nav.educators') },
     { to: '/about', label: t('nav.about') },
   ];
+  const headerLinks = links.map((link) => ({
+    label: link.label,
+    href: link.to,
+    active: pathname === link.to,
+  }));
+
+  // Never the header's business during look-around: whether a learner is
+  // technically still "current" underneath, nothing here should look like
+  // it's still theirs (CLAUDE.md rule 4 — shared devices, separate work).
+  // session.activeLearner is already null whenever lookAround is on.
+  const activeLearner = session.activeLearner;
+  const learnerForHeader = activeLearner ? { name: activeLearner.name, tone: activeLearner.colour } : null;
+
+  // The "who's learning" picker (and the new-learner form inside it) only
+  // exists at "/": returning to it from anywhere else must also navigate
+  // there, or the learner is left stranded on the current page with their
+  // session cleared but nothing to choose from.
+  function handleReturnToPicker(): void {
+    void session.returnToPicker();
+    if (pathname !== '/') void navigate('/');
+  }
+
+  // "I'm new here" in the switcher: clears whoever is current and opens the
+  // new-learner form directly, rather than leaving the learner on the plain
+  // grid to tap "I'm new here" a second time.
+  function handleAddNewLearner(): void {
+    void session.returnToPicker();
+    void navigate('/?new=1');
+  }
 
   return (
     <>
@@ -63,22 +148,55 @@ function Shell({ devRtl }: { devRtl: boolean }) {
           {t('dev.rtlOn')}
         </p>
       ) : null}
-      <header className="tw-shell-header">
-        <nav aria-label={t('nav.label')}>
-          <ul role="list" className="tw-shell-nav">
-            {links.map((link) => (
-              <li key={link.to}>
-                <NavLink to={link.to} end={link.end ?? false}>
-                  {link.label}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </header>
+      <div className="tw-header-area">
+        <SiteHeader
+          logoSrc={MASCOT_SRC}
+          links={headerLinks}
+          learner={learnerForHeader}
+          compact={compact}
+          learnerMenuOpen={switcherOpen}
+          onLearnerClick={
+            learnerForHeader
+              ? (event) => {
+                  setSwitcherTrigger(event.currentTarget);
+                  setSwitcherOpenAt((open) => (open === pathname ? null : pathname));
+                }
+              : undefined
+          }
+          onMenuClick={() => setMobileNavOpenAt(pathname)}
+        />
+        {switcherOpen ? (
+          <LearnerSwitcher
+            trigger={switcherTrigger}
+            learners={session.learners}
+            currentLearnerId={activeLearner?.id ?? null}
+            onChoose={(id) => void session.chooseLearner(id)}
+            onLookAround={() => session.startLookAround()}
+            onAddNew={handleAddNewLearner}
+            onBackToPicker={handleReturnToPicker}
+            onClose={() => setSwitcherOpenAt(null)}
+          />
+        ) : null}
+      </div>
+      {session.lookAround ? (
+        <div className="tw-lookaround-banner">
+          <StatusBanner
+            tone="info"
+            icon="Eye"
+            title={t('header.lookAroundTitle')}
+            // With no storage there is no picker to switch to: the action
+            // would open a grid that can't actually save anyone.
+            action={session.storageAvailable ? t('header.chooseLearner') : undefined}
+            onAction={session.storageAvailable ? handleReturnToPicker : undefined}
+          >
+            {t('header.lookAroundBanner')}
+          </StatusBanner>
+        </div>
+      ) : null}
       <main id="main" ref={mainRef} tabIndex={-1} className="tw-shell-main">
         <Outlet />
       </main>
+      {mobileNavOpen ? <MobileNav links={headerLinks} onClose={() => setMobileNavOpenAt(null)} /> : null}
       <ScrollRestoration />
     </>
   );
