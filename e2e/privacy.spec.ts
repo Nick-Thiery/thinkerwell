@@ -1,4 +1,5 @@
 import { expect, test, type Page } from '@playwright/test';
+import { walkTour } from './pageTour';
 
 // CLAUDE.md rule 1: no third-party requests of any kind (fonts, analytics,
 // trackers). Every request the app makes must go to its own origin.
@@ -55,6 +56,36 @@ test('every request stays on the site itself', async ({ page, baseURL }) => {
   for (const blocked of [/fonts\.(googleapis|gstatic)\.com/, /google-analytics|googletagmanager|doubleclick/, /youtube/]) {
     expect(urls.filter((url) => blocked.test(url))).toEqual([]);
   }
+});
+
+test('no page type asks any other server for anything, and a tap on play asks only youtube-nocookie.com', async ({
+  page,
+  context,
+  baseURL,
+}) => {
+  test.setTimeout(120_000);
+  const origin = new URL(baseURL ?? 'http://localhost').origin;
+  const urls: string[] = [];
+  // The whole browser context, so requests from any frame count too.
+  context.on('request', (request) => urls.push(request.url()));
+  await walkTour(page, async () => {});
+  expect(urls.length).toBeGreaterThan(20);
+  const elsewhere = urls.filter((url) => !isOwnOrigin(url, origin));
+  expect(elsewhere, `Requests to other servers:\n${elsewhere.join('\n')}`).toEqual([]);
+
+  // Stand in for YouTube, so the test never depends on (or contacts) it.
+  await page.route(/youtube-nocookie\.com/, (route) =>
+    route.fulfill({ status: 200, contentType: 'text/html', body: '<!doctype html><p>Player</p>' }),
+  );
+  urls.length = 0;
+  await page.goto('/lesson/towns-near-rivers/watch');
+  await page.waitForLoadState('networkidle');
+  expect(urls.filter((url) => !isOwnOrigin(url, origin))).toEqual([]);
+  await page.getByRole('button', { name: 'Watch the video' }).click();
+  await expect(page.frameLocator('iframe').getByText('Player')).toBeVisible();
+  const afterTap = urls.filter((url) => !isOwnOrigin(url, origin));
+  expect(afterTap).toHaveLength(1);
+  expect(new URL(afterTap[0]!).origin).toBe('https://www.youtube-nocookie.com');
 });
 
 test('the page sets no cookies', async ({ page, context }) => {
