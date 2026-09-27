@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { NavigationType, Outlet, ScrollRestoration, useLocation, useNavigate, useNavigationType } from 'react-router';
-import { DsLinkProvider, SiteHeader, StatusBanner } from '../components/ds';
+import { Link, NavigationType, Outlet, ScrollRestoration, useLocation, useNavigate, useNavigationType } from 'react-router';
+import { DsLinkProvider, Icon, SiteHeader, StatusBanner } from '../components/ds';
 import { I18nProvider, readDevDirection, useI18n } from '../i18n';
 import { ConnectionBanner, UpdateBanner } from '../offline';
 import { LearnerSessionProvider, useLearnerSession } from '../session';
@@ -116,6 +116,10 @@ function Shell({ devRtl }: { devRtl: boolean }) {
     href: link.to,
     active: isNavLinkActive(link.to, pathname),
   }));
+  // Settings for this device: outside the five main links (SiteHeader.md),
+  // as an icon link at the end of the full header and a separate item in
+  // the phone menu.
+  const settingsLink = { label: t('nav.settings'), href: '/settings', active: isNavLinkActive('/settings', pathname) };
 
   // Never the header's business during look-around: whether a learner is
   // technically still "current" underneath, nothing here should look like
@@ -167,7 +171,16 @@ function Shell({ devRtl }: { devRtl: boolean }) {
               : undefined
           }
           onMenuClick={() => setMobileNavOpenAt(pathname)}
-        />
+        >
+          <Link
+            to={settingsLink.href}
+            className="tw-header-settings"
+            aria-label={settingsLink.label}
+            aria-current={settingsLink.active ? 'page' : undefined}
+          >
+            <Icon name="Settings" size={22} />
+          </Link>
+        </SiteHeader>
         {switcherOpen ? (
           <LearnerSwitcher
             trigger={switcherTrigger}
@@ -202,7 +215,9 @@ function Shell({ devRtl }: { devRtl: boolean }) {
       <main id="main" ref={mainRef} tabIndex={-1} className="tw-shell-main">
         <Outlet />
       </main>
-      {mobileNavOpen ? <MobileNav links={headerLinks} onClose={() => setMobileNavOpenAt(null)} /> : null}
+      {mobileNavOpen ? (
+        <MobileNav links={headerLinks} settingsLink={settingsLink} onClose={() => setMobileNavOpenAt(null)} />
+      ) : null}
       <ScrollRestoration />
     </>
   );

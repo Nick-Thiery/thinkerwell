@@ -54,3 +54,30 @@
   background: var(--ink);
   color: var(--on-ink);
 }
+
+/* Settings for this device: below the main links, set apart by a line. */
+.tw-mobilenav-device {
+  padding-block-start: var(--space-3);
+  border-block-start: 1px solid var(--line);
+}
+
+.tw-mobilenav-device a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: var(--target-min);
+  padding-inline: var(--space-3);
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.tw-mobilenav-device a:hover {
+  background: var(--lemon-soft);
+}
+
+.tw-mobilenav-device a[aria-current='page'] {
+  background: var(--ink);
+  color: var(--on-ink);
+}

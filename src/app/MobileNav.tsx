@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef } from 'react';
+import { Link } from 'react-router';
 import { useDsLinkComponent, Icon } from '../components/ds';
 import { useI18n } from '../i18n';
 import { trapTabKey } from './internal/focusTrap';
@@ -12,11 +13,13 @@ export interface MobileNavLink {
 
 export interface MobileNavProps {
   links: MobileNavLink[];
+  /** Settings for this device, under the five main links (outside the Main navigation). */
+  settingsLink?: MobileNavLink;
   onClose: () => void;
 }
 
 /** The phone navigation sheet SiteHeader's compact menu button opens. */
-export function MobileNav({ links, onClose }: MobileNavProps) {
+export function MobileNav({ links, settingsLink, onClose }: MobileNavProps) {
   const { t } = useI18n();
   const rootRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<Element | null>(document.activeElement);
@@ -71,6 +74,14 @@ export function MobileNav({ links, onClose }: MobileNavProps) {
             ))}
           </ul>
         </nav>
+        {settingsLink ? (
+          <div className="tw-mobilenav-device">
+            <Link to={settingsLink.href} aria-current={settingsLink.active ? 'page' : undefined} onClick={close}>
+              <Icon name="Settings" size={20} />
+              {settingsLink.label}
+            </Link>
+          </div>
+        ) : null}
       </div>
     </div>
   );

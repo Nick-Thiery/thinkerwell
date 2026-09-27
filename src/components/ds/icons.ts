@@ -47,6 +47,7 @@ import {
   RotateCcw,
   Scale,
   Search,
+  Settings,
   Sprout,
   Square,
   Target,
@@ -114,7 +115,9 @@ export type IconName =
   | 'Captions'
   | 'Hand'
   | 'Search'
-  | 'LogOut';
+  | 'LogOut'
+  // Not in the design-system list: the header's link to Settings (phase 6).
+  | 'Settings';
 
 /**
  * Icon names that point along the reading direction and must be mirrored
@@ -181,4 +184,5 @@ export const ICONS: Record<IconName, LucideIcon> = {
   Hand,
   Search,
   LogOut,
+  Settings,
 };

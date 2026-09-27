@@ -30,3 +30,8 @@
   background: var(--ink);
   color: var(--on-ink);
 }
+
+.tw-seg button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

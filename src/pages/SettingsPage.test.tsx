@@ -1,7 +1,8 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { act, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router';
-import { afterEach, describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+import { connectServiceWorker, resetServiceWorkerForTests } from '../offline';
 import { LearnerSessionProvider } from '../session';
 import { deleteAllData, getStore } from '../storage';
 import { mockSpeechRecognition, restoreSpeechMocks } from '../test/speechMocks';
@@ -9,6 +10,8 @@ import { SettingsPage } from './SettingsPage';
 
 afterEach(async () => {
   restoreSpeechMocks();
+  resetServiceWorkerForTests();
+  delete (navigator as unknown as { connection?: unknown }).connection;
   await deleteAllData();
 });
 
@@ -89,5 +92,93 @@ describe('SettingsPage: Say it', () => {
     await user.click(await screen.findByRole('button', { name: 'Download speech to text' }));
     expect(await screen.findByText(/The download didn't finish/)).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Download speech to text' })).toBeInTheDocument();
+  });
+});
+
+const saveData = () => screen.getByRole('checkbox', { name: 'Save data' });
+const storedSettings = async () => (await getStore()).getSettings();
+
+describe('SettingsPage: offline and data', () => {
+  it('says when this browser can’t keep the lessons offline', () => {
+    renderSettings();
+    const card = screen.getByRole('region', { name: 'Offline and data' });
+    expect(within(card).getByRole('status')).toHaveTextContent(/can't keep the lessons for offline use/);
+  });
+
+  it('says when every lesson is saved on this device', async () => {
+    let disconnect: () => void = () => undefined;
+    await act(async () => {
+      disconnect = connectServiceWorker({
+        workbox: {
+          addEventListener: vi.fn(),
+          register: () => Promise.resolve({ active: {} } as ServiceWorkerRegistration),
+          update: () => Promise.resolve(),
+          messageSkipWaiting: vi.fn(),
+        },
+        isControlled: () => true,
+        reload: vi.fn(),
+        isOnline: () => true,
+        isVisible: () => true,
+      });
+      await Promise.resolve();
+    });
+    renderSettings();
+    expect(screen.getByRole('region', { name: 'Offline and data' })).toHaveTextContent(
+      'All 24 lessons are saved on this device, with their pictures.',
+    );
+    disconnect();
+  });
+
+  it('Save data is off by default, and saves the choice on the device', async () => {
+    const user = userEvent.setup();
+    renderSettings();
+    await waitFor(() => expect(saveData()).toBeEnabled());
+    expect(saveData()).not.toBeChecked();
+    expect(saveData()).toHaveAccessibleDescription(/Turns the videos off/);
+    await user.click(saveData());
+    expect(saveData()).toBeChecked();
+    await waitFor(async () => expect((await storedSettings()).saveData).toBe(true));
+    await user.click(saveData());
+    await waitFor(async () => expect((await storedSettings()).saveData).toBe(false));
+  });
+
+  it("follows the browser's data saver until someone chooses", async () => {
+    const user = userEvent.setup();
+    Object.defineProperty(navigator, 'connection', { value: { saveData: true }, configurable: true });
+    renderSettings();
+    await waitFor(() => expect(saveData()).toBeEnabled());
+    expect(saveData()).toBeChecked();
+    expect(saveData()).toHaveAccessibleDescription(/It's on because this device is set to save data/);
+    expect((await storedSettings()).saveData).toBeNull();
+    // Turning it off is a choice, and it wins over the browser's hint.
+    await user.click(saveData());
+    await waitFor(async () => expect((await storedSettings()).saveData).toBe(false));
+    expect(saveData()).not.toBeChecked();
+    expect(saveData()).not.toHaveAccessibleDescription(/because this device is set to save data/);
+  });
+});
+
+describe('SettingsPage: reading and listening', () => {
+  it('sets the reading level lessons open in', async () => {
+    const user = userEvent.setup();
+    renderSettings();
+    const level = screen.getByRole('group', { name: 'Reading level' });
+    await waitFor(() => expect(within(level).getByRole('button', { name: 'Standard' })).toBeEnabled());
+    expect(within(level).getByRole('button', { name: 'Standard' })).toHaveAttribute('aria-pressed', 'true');
+    expect(level).toHaveAccessibleDescription(/for anyone who hasn't chosen one yet/);
+    await user.click(within(level).getByRole('button', { name: 'Simpler' }));
+    expect(within(level).getByRole('button', { name: 'Simpler' })).toHaveAttribute('aria-pressed', 'true');
+    await waitFor(async () => expect((await storedSettings()).preferredReadingLevel).toBe('simpler'));
+  });
+
+  it('sets the Listen speed, and says when this browser has no voice for Listen', async () => {
+    const user = userEvent.setup();
+    renderSettings({ lookAround: true });
+    const speed = screen.getByRole('group', { name: 'Listen speed' });
+    await waitFor(() => expect(within(speed).getByRole('button', { name: 'Slow' })).toBeEnabled());
+    expect(within(speed).getByRole('button', { name: 'Normal' })).toHaveAttribute('aria-pressed', 'true');
+    expect(speed).toHaveAccessibleDescription(/has no voice on this device/);
+    await user.click(within(speed).getByRole('button', { name: 'Slow' }));
+    await waitFor(async () => expect((await storedSettings()).listeningSpeed).toBe('slow'));
   });
 });

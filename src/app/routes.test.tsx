@@ -93,6 +93,22 @@ describe('top-level routes', () => {
   });
 });
 
+describe('Settings in the header', () => {
+  it('is an icon link at the end of the header, outside the five main links', async () => {
+    const user = userEvent.setup();
+    const router = renderAt('/');
+    const nav = screen.getByRole('navigation', { name: t('nav.label') });
+    expect(nav.querySelectorAll('a')).toHaveLength(5);
+    const settings = screen.getByRole('link', { name: t('nav.settings') });
+    expect(nav).not.toContainElement(settings);
+    await user.click(settings);
+    await waitFor(() => expect(heading()).toHaveTextContent(t('pages.settings.title')));
+    expect(where(router)).toBe('/settings');
+    expect(screen.getByRole('link', { name: t('nav.settings') })).toHaveAttribute('aria-current', 'page');
+    expect(nav.querySelectorAll('[aria-current="page"]')).toHaveLength(0);
+  });
+});
+
 describe('lesson routes', () => {
   // The lesson player reads the learner session (IndexedDB) before it shows
   // anything, so these wait for the h1: the lesson's title on every stage,

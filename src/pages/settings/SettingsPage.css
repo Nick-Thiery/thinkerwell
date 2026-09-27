@@ -135,3 +135,29 @@
     padding-inline-start: 0;
   }
 }
+
+/* A setting with a visible label, a control and a line of help (Reading and listening). */
+.tw-settings-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding-block-start: var(--space-4);
+  border-block-start: 1px solid var(--line);
+}
+
+.tw-settings-field .tw-settings-help {
+  padding-inline-start: 0;
+}
+
+.tw-settings-label {
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+/* The first setting under a card's heading needs no line above it. */
+.tw-settings-h2 + .tw-settings-field {
+  padding-block-start: 0;
+  border-block-start: 0;
+}

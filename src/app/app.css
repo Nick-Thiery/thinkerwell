@@ -54,6 +54,27 @@
   }
 }
 
+/* The full header's Settings link: an icon at the end, the size of a tap target. */
+.tw-header-settings {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  inline-size: var(--target-min);
+  block-size: var(--target-min);
+  border-radius: 50%;
+  color: var(--ink);
+}
+
+.tw-header-settings:hover {
+  background: rgb(15 14 14 / 8%);
+}
+
+.tw-header-settings[aria-current='page'] {
+  background: var(--ink);
+  color: var(--on-ink);
+}
+
 .tw-shell-main {
   flex: 1;
   inline-size: 100%;

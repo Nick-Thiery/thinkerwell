@@ -7,16 +7,14 @@
  *   educator's tap here, never in a lesson: it comes from the browser's
  *   maker and can be large.
  * - The online switch is a device setting (settings.partner.
- *   allowOnlineDictation). It is saved even while looking around: it
- *   configures the device, it isn't a learner's work.
+ *   allowOnlineDictation), saved through the page's useDeviceSettings().
  */
 import { useEffect, useId, useState } from 'react';
 import { Button, Icon } from '../../components/ds';
 import type { IconName } from '../../components/ds';
 import { useI18n, type MessageKey } from '../../i18n';
-import { useLearnerSession } from '../../session';
 import { hasSpeechRecognition, installOnDeviceDictation, onDeviceDictationStatus } from '../../speech';
-import { getStore } from '../../storage';
+import type { DeviceSettingsState } from './useDeviceSettings';
 
 type DeviceSpeech =
   | 'checking'
@@ -44,12 +42,10 @@ const STATUS: Record<Exclude<DeviceSpeech, 'checking'>, { icon: IconName; key: M
   none: { icon: 'Info', key: 'pages.settings.sayIt.none' },
 };
 
-export function SpeechToTextSetting() {
+export function SpeechToTextSetting({ deviceSettings }: { deviceSettings: DeviceSettingsState }) {
   const { t } = useI18n();
-  const { storageAvailable } = useLearnerSession();
+  const { settings, canSave, failed, save } = deviceSettings;
   const [device, setDevice] = useState<DeviceSpeech>('checking');
-  const [allowOnline, setAllowOnline] = useState<boolean | null>(null);
-  const [saveFailed, setSaveFailed] = useState(false);
   const headingId = useId();
   const toggleId = useId();
   const toggleHelpId = useId();
@@ -59,20 +55,10 @@ export function SpeechToTextSetting() {
     void checkDeviceSpeech().then((next) => {
       if (!cancelled) setDevice(next);
     });
-    if (storageAvailable) {
-      void getStore()
-        .then((store) => store.getSettings())
-        .then((settings) => {
-          if (!cancelled) setAllowOnline(settings.partner.allowOnlineDictation);
-        })
-        .catch(() => {
-          if (!cancelled) setAllowOnline(false);
-        });
-    }
     return () => {
       cancelled = true;
     };
-  }, [storageAvailable]);
+  }, []);
 
   const download = async () => {
     setDevice('downloading');
@@ -84,19 +70,6 @@ export function SpeechToTextSetting() {
   const checkAgain = async () => {
     setDevice('checking');
     setDevice(await checkDeviceSpeech());
-  };
-
-  const changeAllowOnline = async (value: boolean) => {
-    setAllowOnline(value);
-    try {
-      const store = await getStore();
-      const saved = await store.updateSettings({ partner: { allowOnlineDictation: value } });
-      setAllowOnline(saved.partner.allowOnlineDictation);
-      setSaveFailed(false);
-    } catch {
-      setAllowOnline(!value);
-      setSaveFailed(true);
-    }
   };
 
   const status = device === 'checking' ? null : STATUS[device];
@@ -139,17 +112,17 @@ export function SpeechToTextSetting() {
             id={toggleId}
             type="checkbox"
             className="tw-settings-checkbox"
-            checked={allowOnline === true}
-            disabled={!storageAvailable || allowOnline === null}
+            checked={settings?.partner.allowOnlineDictation === true}
+            disabled={!canSave || settings === null}
             aria-describedby={toggleHelpId}
-            onChange={(event) => void changeAllowOnline(event.currentTarget.checked)}
+            onChange={(event) => void save({ partner: { allowOnlineDictation: event.currentTarget.checked } })}
           />
           <span>{t('pages.settings.sayIt.allowOnline')}</span>
         </label>
         <p id={toggleHelpId} className="tw-settings-help">
           {t('pages.settings.sayIt.allowOnlineHelp')}
-          {!storageAvailable ? ` ${t('pages.settings.noStorage')}` : ''}
-          {saveFailed ? ` ${t('pages.settings.saveFailed')}` : ''}
+          {!canSave ? ` ${t('pages.settings.noStorage')}` : ''}
+          {failed === 'partner' ? ` ${t('pages.settings.saveFailed')}` : ''}
         </p>
       </div>
 

@@ -11,7 +11,8 @@
     "course": "Course",
     "journal": "My journal",
     "educators": "For educators",
-    "about": "About"
+    "about": "About",
+    "settings": "Settings"
   },
   "stages": {
     "read": "Read",
@@ -353,6 +354,25 @@
       "intro": "These settings are for teachers and volunteers. They apply to everyone who uses this device, and they stay on it.",
       "noStorage": "This browser window can't save settings.",
       "saveFailed": "That change couldn't be saved. Try again.",
+      "offline": {
+        "title": "Offline and data",
+        "checking": "Checking whether the lessons are saved on this device…",
+        "preparing": "Saving the lessons on this device for offline use. Keep Thinkerwell open, with the internet on, until this says they're saved.",
+        "ready": "All {count} lessons are saved on this device, with their pictures. Thinkerwell works here without the internet, except the videos.",
+        "failed": "The lessons didn't finish saving for offline use. Open Thinkerwell again with the internet on, and it tries again.",
+        "unsupported": "This browser can't keep the lessons for offline use, so Thinkerwell needs the internet here. A private window can cause this.",
+        "saveData": "Save data",
+        "saveDataHelp": "Turns the videos off, so Watch opens on the written version, which has the same ideas. Everything else already works without the internet.",
+        "saveDataFromBrowser": "It's on because this device is set to save data."
+      },
+      "reading": {
+        "title": "Reading and listening",
+        "level": "Reading level",
+        "levelHelp": "Lessons open in this level for anyone who hasn't chosen one yet. Learners can switch in any lesson, and their choice is kept.",
+        "speed": "Listen speed",
+        "speedHelp": "How fast Listen reads aloud. Learners can change it while listening.",
+        "noVoice": "This browser has no voice on this device, so Listen doesn't show here."
+      },
       "sayIt": {
         "title": "Say it: speech to text",
         "intro": "Say it lets learners talk instead of typing in the writing boxes of a lesson. It shows only where it can work.",
