@@ -15,6 +15,10 @@ offline use (vite.config.ts), so each kilobyte is downloaded by every device.
   (sharp on 2x screens) and otherwise left as they are.
 - The founder photo is shown at 104px, so it is resized to 312px wide (sharp
   on 3x phones) as a progressive JPEG without its metadata.
+- The app icons (public/icons/, for the web app manifest and iOS home
+  screens) are the transparent mascot, whole and unchanged, scaled onto a
+  lemon square, as in thinkerwell-mascot-yellow-background.png. The
+  maskable one leaves room for Android to cut it into a circle.
 """
 from __future__ import annotations
 
@@ -26,6 +30,8 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "docs" / "design-system" / "assets"
 OUT = ROOT / "public" / "images"
+ICONS_OUT = ROOT / "public" / "icons"
+LEMON = (0xFF, 0xFF, 0x66, 0xFF)
 
 MASCOTS = [
     "thinkerwell-mascot-transparent.png",
@@ -35,6 +41,13 @@ MASCOTS = [
 UN_GOALS = ["sdg-04.png", "sdg-10.png", "sdg-16.png", "sdg-17.png"]
 PHOTOS = {"founder-justin-park.jpg": 312}
 ICON_BOX = 144
+# name: (square size, how tall the mascot is drawn in it)
+APP_ICONS = {
+    "icon-192.png": (192, 176),
+    "icon-512.png": (512, 423),
+    "icon-maskable-512.png": (512, 330),
+    "apple-touch-icon.png": (180, 150),
+}
 
 
 def palette_png(src: Path, dest: Path) -> None:
@@ -56,6 +69,15 @@ def resized_jpeg(src: Path, dest: Path, width: int) -> None:
     image.save(dest, quality=80, optimize=True, progressive=True)
 
 
+def app_icon(src: Path, dest: Path, size: int, mascot_height: int) -> None:
+    mascot = Image.open(src).convert("RGBA")
+    width = round(mascot.width * mascot_height / mascot.height)
+    mascot = mascot.resize((width, mascot_height), Image.Resampling.LANCZOS)
+    square = Image.new("RGBA", (size, size), LEMON)
+    square.alpha_composite(mascot, ((size - width) // 2, (size - mascot_height) // 2))
+    square.convert("RGB").quantize(256, method=Image.Quantize.MEDIANCUT).save(dest, optimize=True)
+
+
 def main() -> int:
     OUT.mkdir(parents=True, exist_ok=True)
     jobs = (
@@ -72,6 +94,11 @@ def main() -> int:
         src, dest = SOURCE / name, OUT / name
         job(src, dest)
         print(f"{name}: {src.stat().st_size / 1024:.1f} kB -> {dest.stat().st_size / 1024:.1f} kB")
+    ICONS_OUT.mkdir(parents=True, exist_ok=True)
+    for name, (size, mascot_height) in APP_ICONS.items():
+        dest = ICONS_OUT / name
+        app_icon(SOURCE / "thinkerwell-mascot-transparent.png", dest, size, mascot_height)
+        print(f"icons/{name}: {size} x {size}, {dest.stat().st_size / 1024:.1f} kB")
     return 0
 
 
