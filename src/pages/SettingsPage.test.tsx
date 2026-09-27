@@ -26,6 +26,16 @@ function renderSettings({ lookAround = false } = {}) {
 }
 
 const toggle = () => screen.getByRole('checkbox', { name: 'Allow online speech-to-text' });
+const checkButton = () => screen.getByRole('button', { name: 'Check this device' });
+const findCheckButton = () => screen.findByRole('button', { name: 'Check this device' });
+const storedSettings = async () => (await getStore()).getSettings();
+
+/** Lets anything the page started settle. */
+async function settle() {
+  await act(async () => {
+    await new Promise((resolve) => setTimeout(resolve, 0));
+  });
+}
 
 describe('SettingsPage: Say it', () => {
   it('has "Allow online speech-to-text" off by default, explained, and saves it on the device', async () => {
@@ -55,48 +65,98 @@ describe('SettingsPage: Say it', () => {
     await waitFor(async () => expect((await store.getSettings()).partner.allowOnlineDictation).toBe(true));
   });
 
-  it('says when the browser has no speech to text', async () => {
+  it('says when the browser has no speech to text, with nothing to check', async () => {
     renderSettings();
     expect(await screen.findByText(/This browser can't turn speech into text, so Say it doesn't show/)).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Check this device' })).not.toBeInTheDocument();
   });
 
-  it('says when speech stays on the device', async () => {
-    mockSpeechRecognition({ availability: 'available' });
+  it("doesn't ask the browser as the page opens: it offers Check this device", async () => {
+    const mock = mockSpeechRecognition({ availability: 'available' });
     renderSettings();
+    expect(await screen.findByText(/This device hasn't been checked yet/)).toBeInTheDocument();
+    expect(checkButton()).toHaveAccessibleDescription(/The check can take a moment/);
+    await settle();
+    expect(mock.available).not.toHaveBeenCalled();
+    expect(mock.install).not.toHaveBeenCalled();
+    expect(mock.instances).toHaveLength(0);
+    expect((await storedSettings()).speechCheck).toBeNull();
+  });
+
+  it('checks once on a tap, says speech stays on the device, and saves that with the date', async () => {
+    const user = userEvent.setup();
+    const mock = mockSpeechRecognition({ availability: 'available' });
+    renderSettings();
+    await user.click(await findCheckButton());
     expect(await screen.findByText(/What learners say is not sent anywhere/)).toBeInTheDocument();
+    expect(mock.available).toHaveBeenCalledTimes(1);
+    expect(mock.instances).toHaveLength(0);
     expect(screen.queryByRole('button', { name: 'Download speech to text' })).not.toBeInTheDocument();
+    await waitFor(async () => expect((await storedSettings()).speechCheck?.status).toBe('available'));
+    const { checkedAt } = (await storedSettings()).speechCheck!;
+    expect(Date.now() - new Date(checkedAt).getTime()).toBeLessThan(60_000);
+    const today = new Intl.DateTimeFormat('en', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(checkedAt));
+    expect(screen.getByText(new RegExp(`Checked on ${today}\\.`))).toBeInTheDocument();
+  });
+
+  it('shows the saved result and its date when the page opens, without asking again', async () => {
+    const mock = mockSpeechRecognition({ availability: 'downloadable' });
+    const store = await getStore();
+    await store.updateSettings({ speechCheck: { status: 'available', checkedAt: '2026-09-28T12:00:00.000Z' } });
+    renderSettings();
+    expect(await screen.findByText(/What learners say is not sent anywhere\. Checked on September 28, 2026\./)).toBeInTheDocument();
+    await settle();
+    expect(mock.available).not.toHaveBeenCalled();
+    expect(checkButton()).toBeInTheDocument();
   });
 
   it('says when it could only go online', async () => {
+    const user = userEvent.setup();
     mockSpeechRecognition({ onDevice: false });
     renderSettings();
+    await user.click(await findCheckButton());
     expect(await screen.findByText(/It can only do it by sending what learners say to an online service/)).toBeInTheDocument();
+    await waitFor(async () => expect((await storedSettings()).speechCheck?.status).toBe('unsupported'));
   });
 
-  it('offers the one-time download where the browser has one, and reports the result', async () => {
+  it('saves the check while looking around too', async () => {
+    const user = userEvent.setup();
+    mockSpeechRecognition({ availability: 'downloading' });
+    renderSettings({ lookAround: true });
+    await user.click(await findCheckButton());
+    expect(await screen.findByText(/The browser is getting what it needs/)).toBeInTheDocument();
+    await waitFor(async () => expect((await storedSettings()).speechCheck?.status).toBe('downloading'));
+  });
+
+  it('offers the one-time download where the check found one, and saves the result', async () => {
     const user = userEvent.setup();
     const mock = mockSpeechRecognition({ availability: 'downloadable' });
     renderSettings();
+    await user.click(await findCheckButton());
     const download = await screen.findByRole('button', { name: 'Download speech to text' });
     expect(mock.install).not.toHaveBeenCalled();
+    await waitFor(async () => expect((await storedSettings()).speechCheck?.status).toBe('downloadable'));
     mock.available.mockResolvedValue('available');
     await user.click(download);
     expect(mock.install).toHaveBeenCalledTimes(1);
     expect(await screen.findByText(/What learners say is not sent anywhere/)).toBeInTheDocument();
+    await waitFor(async () => expect((await storedSettings()).speechCheck?.status).toBe('available'));
+    expect(mock.instances).toHaveLength(0);
   });
 
   it('says when the download did not finish', async () => {
     const user = userEvent.setup();
     mockSpeechRecognition({ availability: 'downloadable', installResult: false });
     renderSettings();
+    await user.click(await findCheckButton());
     await user.click(await screen.findByRole('button', { name: 'Download speech to text' }));
     expect(await screen.findByText(/The download didn't finish/)).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Download speech to text' })).toBeInTheDocument();
+    expect(checkButton()).toBeInTheDocument();
   });
 });
 
 const saveData = () => screen.getByRole('checkbox', { name: 'Save data' });
-const storedSettings = async () => (await getStore()).getSettings();
 
 describe('SettingsPage: offline and data', () => {
   it('says when this browser can’t keep the lessons offline', () => {
