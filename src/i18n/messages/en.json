@@ -319,7 +319,30 @@
       "title": "My journal"
     },
     "educators": {
-      "title": "For educators"
+      "title": "For educators",
+      "settingsLink": "Settings for this device"
+    },
+    "settings": {
+      "title": "Settings for this device",
+      "intro": "These settings are for teachers and volunteers. They apply to everyone who uses this device, and they stay on it.",
+      "noStorage": "This browser window can't save settings.",
+      "saveFailed": "That change couldn't be saved. Try again.",
+      "sayIt": {
+        "title": "Say it: speech to text",
+        "intro": "Say it lets learners talk instead of typing in the writing boxes of a lesson. It shows only where it can work.",
+        "checking": "Checking what this browser can do…",
+        "onDevice": "This browser turns speech into text on this device. What learners say is not sent anywhere.",
+        "downloadable": "This browser can turn speech into text on this device after a one-time download from the browser's maker. The download can be large, so use good Wi-Fi.",
+        "downloading": "The browser is getting what it needs. Say it appears in lessons once that's done.",
+        "downloadFailed": "The download didn't finish. Try again later, on good Wi-Fi.",
+        "onlineOnly": "This browser can't turn speech into text on this device. It can only do it by sending what learners say to an online service, so Say it stays hidden unless you allow that below.",
+        "none": "This browser can't turn speech into text, so Say it doesn't show. Recent Chrome or Edge on a laptop can do it on the device.",
+        "download": "Download speech to text",
+        "checkAgain": "Check again",
+        "allowOnline": "Allow online speech-to-text",
+        "allowOnlineHelp": "Off unless you turn it on. When it's on and this device can't turn speech into text by itself, Say it sends what learners say to the browser maker's online service (for example Google, Apple or Microsoft), and it needs the internet. Turn it on only if your organisation and the learners' families have agreed.",
+        "recordingsNote": "Record yourself is different: recordings always stay on this device and are never sent anywhere."
+      }
     },
     "about": {
       "title": "About Thinkerwell"

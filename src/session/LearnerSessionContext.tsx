@@ -38,7 +38,10 @@ export interface LearnerSessionValue {
   /**
    * True while browsing without saving: chosen from the picker, forced by a
    * missing IndexedDB, or started from an old educator link (?preview=true).
-   * Nothing is written to storage — not even settings — while this is true.
+   * Nothing is written to storage while this is true — not even settings a
+   * lesson would otherwise remember (Listen's speed). The one exception is
+   * the Settings page (/settings), where an educator deliberately sets up
+   * the device.
    */
   lookAround: boolean;
   /**

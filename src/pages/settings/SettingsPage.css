@@ -1,0 +1,137 @@
+/* Settings for this device (/settings). Cards use borders, not shadows. */
+
+.tw-settings {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-inline-size: var(--reading-measure);
+}
+
+.tw-settings-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tw-settings-head p {
+  margin: 0;
+}
+
+.tw-settings-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.tw-settings-h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.tw-settings-text,
+.tw-settings-help,
+.tw-settings-note {
+  margin: 0;
+}
+
+.tw-settings-text {
+  font-size: 17px;
+  line-height: 26px;
+}
+
+/* How this device does speech to text: a quiet lavender wash (help), not a warning. */
+.tw-settings-status {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding-block: var(--space-3);
+  padding-inline: var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--lavender-wash);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.tw-settings-status .tw-icon {
+  flex: none;
+  margin-block-start: 2px;
+}
+
+.tw-settings-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.tw-settings-option {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-block-start: var(--space-4);
+  border-block-start: 1px solid var(--line);
+}
+
+.tw-settings-check {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-block-size: var(--target-min);
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tw-settings-checkbox {
+  flex: none;
+  inline-size: 24px;
+  block-size: 24px;
+  margin: 0;
+  accent-color: var(--ink);
+  cursor: pointer;
+}
+
+.tw-settings-checkbox:disabled,
+.tw-settings-checkbox:disabled + span {
+  cursor: not-allowed;
+  color: var(--ink-muted);
+}
+
+.tw-settings-help {
+  padding-inline-start: calc(24px + var(--space-3));
+  font-size: 15px;
+  line-height: 22px;
+  color: var(--ink-muted);
+}
+
+.tw-settings-note {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: 15px;
+  line-height: 22px;
+  color: var(--ink-muted);
+}
+
+.tw-settings-note .tw-icon {
+  flex: none;
+  margin-block-start: 2px;
+}
+
+@media (max-width: 600px) {
+  .tw-settings-card {
+    padding: var(--space-5);
+  }
+
+  .tw-settings-help {
+    padding-inline-start: 0;
+  }
+}
