@@ -1,10 +1,13 @@
 import { expect, test } from '@playwright/test';
 import { horizontalOverflow, L10, recordRequests, watchErrors } from './lessonHelpers';
+import { fakeSpeechRecognition, hear, recognitionLog } from './speechFake';
 
 // Phase 5: Listen, Say it and Record yourself. Most behaviour is covered in
-// Vitest with mocked speech and media APIs; these two check the real pages
-// in a real browser. Headless Chromium has no voices and no on-device speech
-// pack, which is exactly the "nothing is available" case.
+// Vitest with mocked speech and media APIs; these check the real pages in a
+// real browser. Headless Chromium has no voices and no on-device speech
+// pack, which is exactly the "nothing is available" case. The first test
+// leaves the browser's own SpeechRecognition in place: opening a page must
+// not ask it anything (asking crashed Chromium 153 on touch devices).
 
 interface FakeSpeech {
   spoken: string[];
@@ -37,11 +40,21 @@ test('with no device voice, on-device speech or microphone, nothing shows and no
   await expect(page.getByText(/record yourself/i)).toHaveCount(0);
   expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
 
-  // The educators' settings say why Say it is hidden, and offer the switch.
+  await page.goto(L10.path('watch'));
+  await expect(page.getByRole('textbox')).toHaveCount(2);
+  await expect(page.getByRole('button', { name: 'Say it' })).toHaveCount(0);
+
+  await page.goto(L10.path('reflect'));
+  await expect(page.getByRole('textbox').first()).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Say it' })).toHaveCount(0);
+
+  // The educators' settings say this device hasn't been checked, offer the
+  // check (not tapped here: it would ask the real browser) and the switch.
   await page.goto('/settings');
   await expect(page.getByRole('heading', { level: 1, name: 'Settings for this device' })).toBeVisible();
   await expect(page.getByRole('checkbox', { name: 'Allow online speech-to-text' })).not.toBeChecked();
-  await expect(page.getByRole('status').filter({ hasText: /speech into text/ })).toBeVisible();
+  await expect(page.getByRole('status').filter({ hasText: "This device hasn't been checked yet" })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Check this device' })).toBeVisible();
   expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
 
   expect(errors).toEqual([]);
@@ -141,5 +154,52 @@ test('Listen reads the part aloud with a device voice, and its controls work', a
   await expect(bar).toHaveCount(0);
   await expect(mark).toHaveCount(0);
   await expect(listen).toBeFocused();
+  expect(errors).toEqual([]);
+});
+
+test('Say it shows in Write, Watch and Reflect once this device was checked, and makes a recognition object only on a tap', async ({
+  page,
+}) => {
+  const errors = watchErrors(page);
+  await fakeSpeechRecognition(page, 'available');
+  const none = { availableCalls: 0, installCalls: 0, constructed: 0, started: [] };
+
+  // Not checked yet: no Say it, and nothing asked.
+  await page.goto(L10.path('write'));
+  const answer = page.getByRole('textbox', { name: 'Your answer' });
+  await expect(answer).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Say it' })).toHaveCount(0);
+  expect(await recognitionLog(page)).toEqual(none);
+
+  // An educator checks the device in Settings.
+  await page.goto('/settings');
+  await page.getByRole('button', { name: 'Check this device' }).click();
+  await expect(page.getByRole('status').filter({ hasText: 'What learners say is not sent anywhere.' })).toBeVisible();
+
+  await page.goto(L10.path('write'));
+  const sayIt = page.getByRole('button', { name: 'Say it' });
+  await expect(sayIt).toBeVisible();
+  expect(await recognitionLog(page)).toEqual(none);
+
+  // The tap makes the recognition object, told to stay on the device.
+  await sayIt.click();
+  const stop = page.getByRole('button', { name: 'Stop' });
+  await expect(stop).toHaveAttribute('aria-pressed', 'true');
+  expect(await recognitionLog(page)).toEqual({ availableCalls: 0, installCalls: 0, constructed: 1, started: [true] });
+  await hear(page, 'people need water');
+  await expect(answer).toHaveValue('People need water');
+  await stop.click();
+  await expect(sayIt).toBeVisible();
+  expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
+
+  await page.goto(L10.path('watch'));
+  await expect(page.getByRole('button', { name: 'Say it' })).toHaveCount(2);
+  expect(await recognitionLog(page)).toEqual(none);
+
+  await page.goto(L10.path('reflect'));
+  await expect(page.getByRole('button', { name: 'Say it' }).first()).toBeVisible();
+  expect(await page.getByRole('button', { name: 'Say it' }).count()).toBe(await page.getByRole('textbox').count());
+  expect(await recognitionLog(page)).toEqual(none);
+
   expect(errors).toEqual([]);
 });
