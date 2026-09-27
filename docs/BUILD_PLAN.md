@@ -164,6 +164,7 @@ Read CLAUDE.md. Screens: docs/screens/QuizIntro, QuizQuestion, QuizResults, Phon
 
 1. Section checks at /section/:id/check from content/quizzes/<section>.json (see the "Section checks" note in CLAUDE.md). Flow: intro, one question at a time with a progress bar, feedback after each answer, results with the score, the lessons to review for missed questions, and "Try again". No timer, never blocks anything. Save attempts per learner (best and latest).
 2. Journal (/journal): all saved writing and reflections for the current learner, newest first, grouped by lesson, editable, with print.
+   (Note from phase 6: the print view already exists at /journal/print, built by journalByLesson() in src/storage/progress.ts; link "Print my journal" there and reuse journalByLesson() for the list. The Educators page can link each lesson's print view, /lesson/:id/print.)
 3. Educators (/educators) and About (/about) exactly as the screens, with text in en.json. Keep "[FEEDBACK EMAIL]" as a visible placeholder. About names Justin Park (founder and CEO) and Nick (CTO) with a placeholder photo for Nick.
 4. Friendly 404.
 

@@ -51,7 +51,7 @@ HELP for Refugees, Jakarta. Target start: one to two weeks from 26 September 202
 - The complete screen: anyone who opens it before finishing sees "You're partway through Lesson N." with a link to the first step not done. For guests this is decided by what they did on this visit (kept in memory), and they also see that nothing was saved.
 - A guest's answers (look-around, or nobody chosen) live in memory only, and are forgotten whenever someone starts looking around, goes back to "Who's learning today?", or chooses or adds a learner, so the next person on a shared device never sees them.
 - Watch counts the video as working only when the youtube-nocookie player itself says it is ready (a postMessage), not when its frame loads: a refused connection, a school filter or a captive portal also "load" a page. Otherwise the written version shows after 20 seconds, or at once when the device goes offline or the player says it can't play the video.
-- Watch opens on the written version when the browser's own Save-Data hint is on, but still offers the video; the device's "Save data" setting (phase 6) turns the video off completely.
+- Watch opens on the written version when the browser's own Save-Data hint is on, but still offers the video; the device's "Save data" setting (phase 6) turns the video off completely. (Changed in phase 6: the hint now turns Save data on until someone chooses in Settings, so the video isn't offered then either.)
 - Quick-check feedback in the content starts with its verdict ("Yes." or "Not quite.", docs/content/SPEC.md); the player shows the Feedback title ("Correct" or "Not quite yet") and drops the content's lead so it isn't said twice. The lesson files are unchanged.
 - Each lesson's picture (`visual.src`) opens the evidence on Read, just after the warm-up (which often says "Look at the map"), above the evidence question and the fiction label, as wide as the reading column. It sits outside the evidence cards because some lessons pair invented evidence with a picture of real places (Lesson 8), and the fiction label must not seem to cover those. Write's "Look at the map again" (or "the evidence") shows the same picture and evidence.
 - A map card's key lists its labels as text, without colour swatches: each picture draws its own key in its own colours, and swatches built from the content's loose colour names ("brown", "grey") could not match every picture.
@@ -65,9 +65,22 @@ Browser support and the reasons are in `docs/notes/phase-5.md`.
 
 - Listen uses only a voice that runs on the device, so it works offline and sends nothing. Where there is no such English voice, the Listen tool is hidden. It reads the part on screen, heading first and then one sentence at a time, and moves on from part to part by itself.
 - Say it runs only where speech can be turned into text on the device, which today means recent Chrome on a laptop with its English pack. Elsewhere it is hidden, unless an educator turns on "Allow online speech-to-text" in Settings. That setting sends what learners say to the browser maker's service, and educators should turn it on only when the organisation and the families have agreed. The setting is off unless someone turns it on.
-- Settings for this device (`/settings`) is for educators. It says what this browser can do and offers the browser's own one-time download for on-device speech to text. It is linked from the Educators page until phase 6 puts it in the header menu. Changes there are saved even while looking around.
+- Settings for this device (`/settings`) is for educators. It says what this browser can do and offers the browser's own one-time download for on-device speech to text. It is linked from the Educators page and, since phase 6, from the header menu. Changes there are saved even while looking around.
 - Record yourself keeps the latest clip per learner and lesson on the device. It is deleted when the learner taps Delete or is removed, and not when someone else starts using the device. Guests' clips last only while the page is open. Recordings stop by themselves after 3 minutes and never count towards Speak being done.
 - The Listen speed (Slow or Normal) is a device setting, saved when a chosen learner changes it.
+
+### Offline, Save data and print (phase 6)
+
+Details, sizes and the reasons are in `docs/notes/phase-6.md`.
+
+- The whole course (every lesson, section check, picture and font) is saved on the device during the first visit, not lesson by lesson. That is about 480 kB compressed, and the first page itself about 295 kB. The learner home says "All 24 lessons work offline", and lesson rows have no "Saved for offline" badge.
+- A new version never reloads the page by itself. It waits, and shows "A new version is ready" with "Update now". Otherwise it starts the next time Thinkerwell opens.
+- Under the header, a banner says when the device is offline, and for a few seconds when it's back online. Guests are never told their work is saved.
+- Watch opened while offline starts on the written version.
+- "Save data" follows the browser's own data saver until someone chooses in Settings; a choice in Settings always wins. With it on, videos are off.
+- Settings for this device is in the header menu, outside the five main links: offline status, Save data, the reading level for anyone who hasn't chosen one, the Listen speed and Say it.
+- Every lesson has a print view with both reading levels, the key words, the picture, the quick check and every task, with lines to write on. The journal has one too, built from the learner's saved writing and reflections. They print in black and white with no header; the lesson picture keeps its colours.
+- On iPads and iPhones, add Thinkerwell to the Home Screen: Safari deletes a site's saved data after 7 days without a visit otherwise.
 
 ## Roadmap
 

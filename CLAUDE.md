@@ -20,12 +20,12 @@ A free social-studies course, "Exploring Our World": 24 lessons in 4 sections, e
 - Icons: `lucide-react`. The design system uses Lucide names.
 - Fonts, self-hosted (for example Fontsource packages): Funnel Display (headings), Atkinson Hyperlegible Next (everything else) and Eczar (the "Thinkerwell" wordmark only).
 - On-device storage: IndexedDB through a small typed wrapper (`idb`).
-- Offline: `vite-plugin-pwa` (Workbox) precaches the app, content and images. YouTube is never cached.
-- Content validation: `zod` schemas in `src/content/schema.ts`, checked by a test.
-- Tests: Vitest for logic, content and component behaviour (Testing Library), Playwright for end-to-end runs at 390, 820 and 1280px wide. A second, dev-only Playwright config (`playwright.dev.config.ts`, `npm run test:e2e:dev`) checks the `/dev/*` routes, which exist only in `npm run dev` and never reach `dist/`.
+- Offline: `vite-plugin-pwa` (Workbox) precaches the whole site (app, every lesson and check, fonts, pictures, images) after the first page loads; nothing is cached at runtime, so YouTube and other servers are never touched. The app registers the worker itself (`src/offline/serviceWorker.ts`, production only): a new version waits and only starts when someone taps "Update now" (or the next time the site opens). Never make it reload by itself. Details and sizes: `docs/notes/phase-6.md`; `npm run size` reports them.
+- Content validation: `zod` schemas in `src/content/schema.ts`, checked by a test and whenever the content is built, served or tested (the content plugin in `vite.config.ts`, using `src/content/load.ts`). A problem stops the build. The browser never runs zod: `src/content/index.ts` uses the checked files as they are.
+- Tests: Vitest for logic, content and component behaviour (Testing Library), Playwright for end-to-end runs at 390, 820 and 1280px wide. Playwright blocks the service worker except in `e2e/offline.spec.ts` (`test.use({ serviceWorkers: 'allow' })`). A second, dev-only Playwright config (`playwright.dev.config.ts`, `npm run test:e2e:dev`) checks the `/dev/*` routes, which exist only in `npm run dev` and never reach `dist/`.
 - Later (not phase 1): Vercel Functions for `POST /api/events` and a Postgres database for pilot measurement. See `docs/research/MEASUREMENT_PLAN.md`.
 
-Commands: `npm run dev` (dev server; add `?dir=rtl` to any URL to check right-to-left), `npm run build`, `npm run typecheck`, `npm run lint` (ESLint and Stylelint), `npm test` (Vitest), `npm run test:e2e` (Playwright; run `npm run test:e2e:install` once), `npm run test:e2e:dev` (Playwright against the dev-only `/dev/*` routes; see README.md), `npm run check:content` (lesson checker; run `sh scripts/setup-python.sh` once for wordfreq).
+Commands: `npm run dev` (dev server; add `?dir=rtl` to any URL to check right-to-left), `npm run build`, `npm run typecheck`, `npm run lint` (ESLint and Stylelint), `npm test` (Vitest), `npm run test:e2e` (Playwright; run `npm run test:e2e:install` once), `npm run test:e2e:dev` (Playwright against the dev-only `/dev/*` routes; see README.md), `npm run check:content` (lesson checker; run `sh scripts/setup-python.sh` once for wordfreq), `npm run size` (after a build: first load and precache sizes).
 
 ## Where things live
 
@@ -44,7 +44,10 @@ docs/design-system/assets/     the full-size originals of those images
 scripts/check_lesson.py        checks lesson files against the spec
 scripts/check_quiz.py          checks section checks against docs/content/QUIZ_SPEC.md
 scripts/render_svg.js          renders a picture to PNG and flags layout problems
+scripts/optimise_images.py     makes public/images and public/icons from docs/design-system/assets
 src/                           the app (created in phase 1)
+src/offline/                   service worker registration, connection status, the banners under the header, Save data
+src/pages/print/               print views: /lesson/:id/print and /journal/print
 ```
 
 ## Design system
@@ -64,7 +67,7 @@ src/                           the app (created in phase 1)
 - Each glossary word is marked on its first appearance in each section, in both the standard and simpler text; tapping it opens the definition (`GlossaryTerm`).
 - Evidence with `fictional: true` shows its label ("Fictional example created for this lesson.").
 - Write: show the example answer only after the learner has written something or asks to see one.
-- Watch: embed from `youtube-nocookie.com`, only after the learner taps play, never autoplay. If the player hasn't loaded after 20 seconds, or "Save data" is on, show the written version. Before the tap nothing may be requested from YouTube or Google (no thumbnails; the poster is drawn from the content). The iframe carries its own `referrerpolicy="strict-origin-when-cross-origin"`, because `index.html` sets `no-referrer` for the site and YouTube's player refuses to play without a referrer (Error 153). The content note goes only in a collapsed "For teachers" note.
+- Watch: embed from `youtube-nocookie.com`, only after the learner taps play, never autoplay. If the player hasn't loaded after 20 seconds, the device is offline, or "Save data" is on, show the written version. "Save data" is the Settings choice, or the browser's own data saver (`navigator.connection.saveData`) until someone chooses (`src/offline/saveData.ts`). Before the tap nothing may be requested from YouTube or Google (no thumbnails; the poster is drawn from the content). The iframe carries its own `referrerpolicy="strict-origin-when-cross-origin"`, because `index.html` sets `no-referrer` for the site and YouTube's player refuses to play without a referrer (Error 153). The content note goes only in a collapsed "For teachers" note.
 - Reflect: the required prompt completes the lesson.
 - When each stage counts as done is written down in `src/lesson/progressRules.ts`; change it there (and in `docs/PRODUCT.md`), not in the stage components. The course map, the learner home and the complete screen read the same saved `stagesDone`, `currentStage` and `completedAt`.
 - The lesson player (`src/lesson/`, `src/pages/lesson/`) saves through `useLessonPlayer().update()`; never write lesson progress to IndexedDB from a stage directly. Look-around and "nobody chosen" keep work in memory only.
@@ -80,9 +83,9 @@ Version the schema and write migrations. Nothing leaves the device in phase 1.
 - `progress` per learner and lesson: stages done, current stage, warm-up answer, check answers, writing and planning notes, self-check ticks, how they practised speaking, reflections, completed date.
 - `quizAttempts` per learner and section: answers, score, date (keep the best and the latest).
 - `recordings` per learner and lesson: the latest audio clip only. Delete it when the learner is removed or taps Delete.
-- `settings` per device: save data, listening speed, preferred reading level, partner options.
+- `settings` per device: save data (`null` until someone chooses), listening speed, preferred reading level, partner options.
 
-The journal is built from saved writing and reflections; it is not stored separately.
+The journal is built from saved writing and reflections (`journalByLesson` in `src/storage/progress.ts`); it is not stored separately. Its print view is `/journal/print`; the journal page's "Print my journal" links there.
 
 ## Listen, Say it and Record
 
@@ -91,7 +94,16 @@ The code is in `src/speech/`; browser support and the decisions behind it are in
 - **Listen** uses the browser's `speechSynthesis` with a voice that runs on the device (`voice.localService === true`); with no such English voice, it is hidden. It reads the version on screen from the first section to the last, one sentence per utterance, and marks the current sentence with `mark.tw-speaking`. Speeds: Slow (about 0.8) and Normal (`settings.listeningSpeed`, saved only for a chosen learner).
 - **Say it** (dictation in Write, Watch and Reflect) uses speech recognition only when the browser can do it on the device: `SpeechRecognition.available({ processLocally: true })` must say `available`, and recognition then runs with `processLocally = true`. Other recognition may send audio to an online service. For children that is off unless an educator turns on "Allow online speech-to-text" on the Settings page (`/settings`, `settings.partner.allowOnlineDictation`). If neither applies, hide the button. The browser's one-time on-device download starts only from an educator's tap in Settings. Support changes often, so check it again when you touch this.
 - **Record yourself** (Speak) uses `MediaRecorder` and stores the latest clip per learner and lesson in IndexedDB. It is never uploaded. The microphone is asked for only when the learner taps Start, and the recorder is hidden where the device lists no microphone.
-- Settings (`/settings`) saves device settings even while looking around, because it sets up the device and isn't a learner's work. Inside lessons, look-around still saves nothing.
+- Settings (`/settings`, in the header menu, outside the five main links) saves device settings even while looking around, because it sets up the device and isn't a learner's work. Inside lessons, look-around still saves nothing.
+
+## Offline, Save data and print
+
+Built in phase 6; see `docs/notes/phase-6.md`.
+
+- After the first visit every lesson works offline. Under the header, `StatusBanner` says when the device is offline (tone offline) and, for five seconds, when it's back (tone back). Never tell a guest their work is saved.
+- A new version shows "A new version is ready" with "Update now"; nothing reloads unless someone taps it.
+- Settings for this device (`/settings`): offline status, Save data, the reading level for anyone who hasn't chosen one, the Listen speed, and Say it.
+- Every lesson has a print view (`/lesson/:id/print`, linked from Read): both reading levels, key words, the picture, the quick check and every task, black text on white with no header. Printing any page leaves out the header, menus and banners (`src/styles/print.css`).
 
 ## Don't
 
