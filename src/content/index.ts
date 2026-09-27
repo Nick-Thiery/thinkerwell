@@ -30,10 +30,15 @@ const quizModules = import.meta.glob<unknown>('../../content/quizzes/*.json', {
   import: 'default',
 });
 
-/** Paths of every picture file, as they appear in a lesson's `visual.src` (e.g. "visuals/L01.svg"). */
-const visualPaths = new Set(
-  Object.keys(import.meta.glob('../../content/visuals/*.svg')).map((path) => path.replace(/^.*\/content\/visuals\//, 'visuals/')),
+/** Built URL of every picture, keyed as a lesson's `visual.src` (e.g. "visuals/L01.svg"). */
+const visualUrls = new Map(
+  Object.entries(
+    import.meta.glob<string>('../../content/visuals/*.svg', { eager: true, query: '?url', import: 'default' }),
+  ).map(([path, url]) => [path.replace(/^.*\/content\/visuals\//, 'visuals/'), url]),
 );
+
+/** Paths of every picture file, as they appear in a lesson's `visual.src`. */
+const visualPaths = new Set(visualUrls.keys());
 
 export class ContentError extends Error {
   override name = 'ContentError';
@@ -256,6 +261,11 @@ export function isLastLessonInSection(lesson: Lesson): boolean {
 }
 
 /** Every section check, one per section. */
+/** The built URL of a lesson picture (`visual.src`), or undefined if the file doesn't exist. */
+export function getVisualUrl(src: string): string | undefined {
+  return visualUrls.get(src);
+}
+
 export function getQuizzes(): readonly QuizFile[] {
   return quizzes;
 }

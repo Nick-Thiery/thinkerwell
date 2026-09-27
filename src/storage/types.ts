@@ -50,6 +50,13 @@ export interface Learner {
   createdAt: string;
   /** Optional class code linking the learner to a partner group, e.g. "HLP-07". */
   classCode?: string;
+  /**
+   * The reading level this learner last chose in a lesson (Standard or
+   * Simpler). Missing until they choose: the device's
+   * settings.preferredReadingLevel applies until then. Optional, so learners
+   * saved before phase 4 need no migration.
+   */
+  readingLevel?: ReadingLevel;
 }
 
 /** What addLearner() needs; id and createdAt are filled in. */

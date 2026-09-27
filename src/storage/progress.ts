@@ -41,8 +41,9 @@ export interface ContinueTarget {
  * may have started a later lesson while an earlier one is still untouched
  * (an old educator link, or simply working out of order); this points at
  * whichever unfinished lesson they most recently touched (by `updatedAt`),
- * so "Continue" always means what it says. Only once nothing has been
- * started yet does it fall back to the first lesson in course order.
+ * so "Continue" always means what it says. With nothing in progress it
+ * goes on to the first unfinished lesson after the one finished most
+ * recently (Lesson 1 for a brand-new learner).
  * Undefined once every lesson is complete (the dashboard then shows a
  * "finished" state instead).
  */
@@ -58,7 +59,21 @@ export function findContinueTarget(
   }
   if (mostRecent) return { lesson: mostRecent.lesson, stage: nextStageForLesson(mostRecent.record) };
 
-  for (const lesson of lessons) {
+  // Nothing in progress: go on from the lesson finished most recently, to
+  // the first unfinished lesson after it in course order (wrapping round to
+  // the start), the same "next lesson" the lesson complete screen offers.
+  // A brand-new learner starts at the first lesson.
+  let lastFinished = -1;
+  let lastFinishedAt = '';
+  lessons.forEach((lesson, index) => {
+    const at = progress.get(lesson.id)?.completedAt;
+    if (at && at > lastFinishedAt) {
+      lastFinishedAt = at;
+      lastFinished = index;
+    }
+  });
+  for (let step = 1; step <= lessons.length; step++) {
+    const lesson = lessons[(lastFinished + step) % lessons.length]!;
     if (!isLessonComplete(progress.get(lesson.id))) return { lesson, stage: 'read' };
   }
   return undefined;

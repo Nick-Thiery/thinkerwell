@@ -18,6 +18,18 @@
   padding-inline: var(--space-4);
 }
 
+/* On a phone the "Choose a learner" action drops under the text rather than
+   squeezing it into a narrow column (as the lesson's own banner does). */
+@media (max-width: 599px) {
+  .tw-lookaround-banner .tw-status {
+    flex-wrap: wrap;
+  }
+
+  .tw-lookaround-banner .tw-status-text {
+    flex: 1 1 calc(100% - 40px);
+  }
+}
+
 @media (min-width: 820px) {
   .tw-lookaround-banner {
     padding-inline: var(--space-8);

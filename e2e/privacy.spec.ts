@@ -94,3 +94,39 @@ test('the self-hosted fonts load from the site', async ({ page, baseURL }) => {
     expect(url).toMatch(/\.woff2(\?|$)/);
   }
 });
+
+test.describe('Watch: nothing from YouTube or Google until the learner taps play', () => {
+  const VIDEO_HOSTS = /youtube|ytimg|googlevideo|google\.|gstatic|doubleclick|ggpht/;
+
+  test('no request before the tap; after it, one nocookie frame with its own referrer policy and no autoplay', async ({
+    page,
+  }) => {
+    const urls = recordRequests(page);
+    // Stand in for YouTube, so the test never depends on (or contacts) it.
+    await page.route(/youtube-nocookie\.com/, (route) =>
+      route.fulfill({ status: 200, contentType: 'text/html', body: '<!doctype html><title>player</title>' }),
+    );
+
+    await page.goto('/lesson/towns-near-rivers/watch');
+    await expect(page.getByRole('button', { name: 'Watch the video' })).toBeVisible();
+    // The local poster shows the title, channel and duration from the content.
+    await expect(page.getByText('Ancient Mesopotamia 101').first()).toBeVisible();
+    await expect(page.getByText('National Geographic').first()).toBeVisible();
+    await expect(page.getByText('4:10').first()).toBeVisible();
+    await page.waitForLoadState('networkidle');
+    expect(urls.filter((url) => VIDEO_HOSTS.test(new URL(url).hostname))).toEqual([]);
+    await expect(page.locator('iframe')).toHaveCount(0);
+    expect(await page.locator('link[rel="preconnect"], link[rel="dns-prefetch"]').count()).toBe(0);
+
+    await page.getByRole('button', { name: 'Watch the video' }).click();
+    const frame = page.locator('iframe');
+    await expect(frame).toHaveCount(1);
+    await expect(frame).toHaveAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+    const src = (await frame.getAttribute('src')) ?? '';
+    expect(src.startsWith('https://www.youtube-nocookie.com/embed/xVf5kZA0HtQ?')).toBe(true);
+    expect(src).not.toMatch(/autoplay/);
+    expect((await frame.getAttribute('allow')) ?? '').not.toMatch(/autoplay/);
+    // The page itself still sends no referrer anywhere else.
+    await expect(page.locator('meta[name="referrer"]')).toHaveAttribute('content', 'no-referrer');
+  });
+});

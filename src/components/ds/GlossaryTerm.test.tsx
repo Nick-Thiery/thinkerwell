@@ -252,4 +252,16 @@ describe('GlossaryTerm', () => {
 
     expect(screen.queryByRole('button', { name: /hear it/i })).not.toBeInTheDocument();
   });
+
+  it('opens its popover placed (not left parked for measuring)', async () => {
+    const user = userEvent.setup();
+    const trigger = renderTerm();
+
+    await user.click(trigger);
+
+    const popover = screen.getByRole('dialog');
+    expect(popover).toHaveClass('tw-def-float');
+    expect(popover).not.toHaveAttribute('data-placing');
+    expect(trigger).toHaveAttribute('aria-controls', popover.id);
+  });
 });

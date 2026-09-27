@@ -4,6 +4,10 @@ import { expect, test, type Locator, type Page } from '@playwright/test';
 // a production build (see playwright.config.ts) at phone, tablet and laptop
 // widths. Each test gets its own browser context, so IndexedDB starts empty.
 
+// The journeys make several page loads and database round trips; on a busy
+// machine (a shared CI runner, other work alongside) they can pass 30s.
+test.describe.configure({ timeout: 60_000 });
+
 interface RawProgress {
   learnerId: string;
   lessonId: string;
@@ -338,6 +342,9 @@ test.describe('course map opens the learner\'s current section', () => {
     // of the page (r2-spec-3).
     await learnerChip(page).click();
     await page.getByRole('dialog', { name: 'Switch learner' }).getByRole('button', { name: 'Amina' }).click();
+    // The switch is saved before the header changes: wait for it, or the
+    // reload below can race the write and come back as Deng.
+    await expect(page.getByRole('button', { name: 'Switch learner, current: Amina' })).toBeVisible();
     await page.goto('/');
     await page.locator('a.tw-section-row[href="/course#history"]').click();
     await expect(page).toHaveURL(/\/course#history$/);

@@ -7,6 +7,7 @@
  */
 import { deleteDB, type IDBPDatabase } from 'idb';
 import { DB_NAME, openThinkerwellDb, SETTINGS_KEY, type ThinkerwellDB } from './db';
+import { forgetAllUnsavedProgress, recoverUnsavedProgress } from './unsavedProgress';
 import {
   DEFAULT_SETTINGS,
   LEARNER_COLOURS,
@@ -29,7 +30,10 @@ export interface ThinkerwellStore {
   /** Trims the name; throws if it is empty. Drops a blank class code. */
   addLearner(input: NewLearner): Promise<Learner>;
   /** Throws if the learner doesn't exist. A blank or undefined classCode removes it. */
-  updateLearner(id: string, patch: Partial<Pick<Learner, 'name' | 'colour' | 'classCode'>>): Promise<Learner>;
+  updateLearner(
+    id: string,
+    patch: Partial<Pick<Learner, 'name' | 'colour' | 'classCode' | 'readingLevel'>>,
+  ): Promise<Learner>;
   /** Deletes the learner and all their progress, quiz attempts and recordings, all or nothing. */
   removeLearner(id: string): Promise<void>;
 
@@ -47,6 +51,14 @@ export interface ThinkerwellStore {
     lessonId: string,
     update: (current: LessonProgress) => LessonProgress,
   ): Promise<LessonProgress>;
+  /**
+   * Writes a whole record in a single request, issued before this returns
+   * (no read first), and asks the browser to commit it at once. For the
+   * lesson player's last-moment save on pagehide, when the page may be gone
+   * before a read could come back; the caller must hold the full, current
+   * record. Everywhere else use updateProgress.
+   */
+  putProgress(record: LessonProgress): Promise<LessonProgress>;
   /** Adds the stage to stagesDone once, keeping the order stages were finished in. */
   markStageDone(learnerId: string, lessonId: string, stage: StageId): Promise<LessonProgress>;
   setCurrentStage(learnerId: string, lessonId: string, stage: StageId): Promise<LessonProgress>;
@@ -172,12 +184,16 @@ function createStore(db: IDBPDatabase<ThinkerwellDB>): ThinkerwellStore {
       // Check the patch first, so a bad one never opens a transaction.
       const name = patch.name === undefined ? undefined : cleanName(patch.name);
       if (patch.colour !== undefined) checkColour(patch.colour);
+      if (patch.readingLevel !== undefined && patch.readingLevel !== 'standard' && patch.readingLevel !== 'simpler') {
+        throw new Error(`Unknown reading level: ${String(patch.readingLevel)}`);
+      }
       const tx = db.transaction('learners', 'readwrite');
       const current = await tx.store.get(id);
       if (!current) throw new Error(`No learner with id ${id}`);
       const next: Learner = { ...current };
       if (name !== undefined) next.name = name;
       if (patch.colour !== undefined) next.colour = patch.colour;
+      if (patch.readingLevel !== undefined) next.readingLevel = patch.readingLevel;
       if ('classCode' in patch) {
         const classCode = patch.classCode?.trim();
         if (classCode) next.classCode = classCode;
@@ -233,6 +249,8 @@ function createStore(db: IDBPDatabase<ThinkerwellDB>): ThinkerwellStore {
       })();
 
       await Promise.all([work, tx.done]);
+      // And any last-moment copy of their work kept outside IndexedDB.
+      forgetAllUnsavedProgress(id);
     },
 
     async getProgress(learnerId, lessonId) {
@@ -252,6 +270,15 @@ function createStore(db: IDBPDatabase<ThinkerwellDB>): ThinkerwellStore {
     },
 
     updateProgress,
+
+    putProgress(record) {
+      const next: LessonProgress = { ...record, updatedAt: now() };
+      const tx = db.transaction('progress', 'readwrite');
+      const put = tx.store.put(next);
+      // Not every IndexedDB has commit(); without it the transaction still commits on its own.
+      if (typeof tx.commit === 'function') tx.commit();
+      return Promise.all([put, tx.done]).then(() => next);
+    },
 
     async markStageDone(learnerId, lessonId, stage) {
       return updateProgress(learnerId, lessonId, (current) =>
@@ -358,13 +385,19 @@ let singleton: Promise<ThinkerwellStore> | undefined;
 
 /**
  * The app-wide store, opened the first time it is asked for. If opening fails
- * (IndexedDB blocked or broken) the next call tries again.
+ * (IndexedDB blocked or broken) the next call tries again. Before it is
+ * handed out, any lesson work a page kept as a last-moment copy because it
+ * went away before its save landed is written back (./unsavedProgress.ts),
+ * so every reader sees it.
  */
 export function getStore(): Promise<ThinkerwellStore> {
   if (!singleton) {
     const opening: Promise<ThinkerwellStore> = openStore(DB_NAME, () => {
       // The connection closed on its own; open a new one next time.
       if (singleton === opening) singleton = undefined;
+    }).then(async (store) => {
+      await recoverUnsavedProgress(store);
+      return store;
     });
     singleton = opening;
     opening.catch(() => {
@@ -419,7 +452,10 @@ export async function requestPersistentStorage(): Promise<boolean> {
  * their work and recordings, and the settings. Cannot be undone.
  */
 export async function deleteAllData(name: string = DB_NAME): Promise<void> {
-  if (name === DB_NAME) await closeSingleton();
+  if (name === DB_NAME) {
+    await closeSingleton();
+    forgetAllUnsavedProgress();
+  }
   await deleteDB(name, {
     blocked() {
       // Another tab has it open; that tab closes its connection in `blocking`.

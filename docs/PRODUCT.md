@@ -39,6 +39,25 @@ HELP for Refugees, Jakarta. Target start: one to two weeks from 26 September 202
 - The About page names Justin (founder and CEO) and Nick (CTO), with a placeholder photo for Nick.
 - British spelling in all copy.
 
+### Lesson player (phase 4)
+
+- **When a stage counts as done** (`src/lesson/progressRules.ts`): Read when every quick-check choice question is answered, right or wrong, or the learner continues from the quick check; Write when they continue having written something; Speak when they choose how they practised; Watch (optional) when they answer the after question or continue; Reflect as soon as the required prompt is answered (saved with the typing, so leaving without "Finish lesson" still counts), which completes the lesson. Continuing past a stage that the rules don't tick (an empty Write box) never creates a saved record, so an unstarted lesson never shows "In progress". Nothing is locked: these only decide the ticks.
+- The reading level (Standard or Simpler) is remembered per learner, on the learner's own record, and falls back to the device's preferred level.
+- A lesson opened with nobody chosen works like "Just look around" (nothing saved) and shows a note offering to choose who's learning.
+- Write's example answer shows only once the learner has written something or taps "See an example answer", and stays open after that.
+- Speak doesn't show "Say it in three sentences" frames: the lesson content has no field for them yet.
+- The laptop StagePath's small labels under each stage are the same for every lesson ("Your writing task", "Optional · 4 min"), since the content has no per-lesson ones.
+- Read's current part is in the address (`?part=2`, `?part=check`), so reload and Back work.
+- The complete screen: anyone who opens it before finishing sees "You're partway through Lesson N." with a link to the first step not done. For guests this is decided by what they did on this visit (kept in memory), and they also see that nothing was saved.
+- A guest's answers (look-around, or nobody chosen) live in memory only, and are forgotten whenever someone starts looking around, goes back to "Who's learning today?", or chooses or adds a learner, so the next person on a shared device never sees them.
+- Watch counts the video as working only when the youtube-nocookie player itself says it is ready (a postMessage), not when its frame loads: a refused connection, a school filter or a captive portal also "load" a page. Otherwise the written version shows after 20 seconds, or at once when the device goes offline or the player says it can't play the video.
+- Watch opens on the written version when the browser's own Save-Data hint is on, but still offers the video; the device's "Save data" setting (phase 6) turns the video off completely.
+- Quick-check feedback in the content starts with its verdict ("Yes." or "Not quite.", docs/content/SPEC.md); the player shows the Feedback title ("Correct" or "Not quite yet") and drops the content's lead so it isn't said twice. The lesson files are unchanged.
+- A map card's key lists its labels only, without colour swatches, until the lesson's map picture exists; the swatches must then match the SVG.
+- The production bundle leaves out team-only lesson fields (`watch.replacementSuggestion` and `changes`); `educatorNotes` and lesson `sources` stay for the Educators page (phase 7), where the sources are meant to be shown.
+- The learner home's "Continue" goes on to the next unfinished lesson after the one finished most recently, the same "Up next" the complete screen offers.
+- Captions are on by default in the video player, for learners of English.
+
 ## Roadmap
 
 1. **Pilot build (now):** everything in `docs/BUILD_PLAN.md` phases 1–8.

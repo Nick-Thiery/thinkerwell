@@ -1,0 +1,28 @@
+/*
+ * The lesson's one picture (LessonVisual.tsx), once it exists: a paper card
+ * with a `line` border, as wide as the reading column. The SVG keeps its own
+ * aspect ratio.
+ */
+.tw-lesson-visual {
+  box-sizing: border-box;
+  margin: 0;
+  max-inline-size: 100%;
+  padding: var(--space-4);
+  border-radius: var(--radius-xl);
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.tw-lesson-visual img {
+  display: block;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  block-size: auto;
+  border-radius: var(--radius-lg);
+}
+
+@media (max-width: 599px) {
+  .tw-lesson-visual {
+    padding: var(--space-3);
+  }
+}

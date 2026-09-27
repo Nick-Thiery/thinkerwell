@@ -20,6 +20,7 @@ import {
   loadContent,
   loadQuizzes,
   quizFileSchema,
+  visualSchema,
 } from './index';
 
 const lessonFiles = import.meta.glob<unknown>('../../content/lessons/*.json', { eager: true, import: 'default' });
@@ -190,5 +191,27 @@ describe('getters', () => {
     expect(getQuiz('history')?.title).toContain('History');
     expect(getQuiz('geography')?.questions).toHaveLength(10);
     expect(getQuiz('nope')).toBeUndefined();
+  });
+});
+
+describe('visual.src', () => {
+  const base = { type: 'map', description: 'A map.', alt: 'A map of Riverlands.' } as const;
+
+  it('accepts a picture in content/visuals/ and requires one', () => {
+    expect(visualSchema.safeParse({ ...base, src: 'visuals/L10.svg' }).success).toBe(true);
+    expect(visualSchema.safeParse(base).success).toBe(false);
+  });
+
+  it('rejects anything that would load from another server or leave the folder', () => {
+    for (const src of [
+      'https://example.com/L10.svg',
+      '//example.com/L10.svg',
+      'data:image/svg+xml,<svg/>',
+      'visuals/../../L10.svg',
+      'visuals/L10.png',
+      '/images/visuals/L10.svg',
+    ]) {
+      expect(visualSchema.safeParse({ ...base, src }).success, src).toBe(false);
+    }
   });
 });

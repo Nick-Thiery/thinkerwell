@@ -5,6 +5,7 @@ import { I18nProvider, readDevDirection, useI18n } from '../i18n';
 import { LearnerSessionProvider, useLearnerSession } from '../session';
 import './app.css';
 import { LearnerSwitcher } from './LearnerSwitcher';
+import { isNavLinkActive } from './internal/navActive';
 import { MobileNav } from './MobileNav';
 import { RouterDsLink } from './RouterDsLink';
 import { useIsCompactHeader } from './useIsCompactHeader';
@@ -111,7 +112,7 @@ function Shell({ devRtl }: { devRtl: boolean }) {
   const headerLinks = links.map((link) => ({
     label: link.label,
     href: link.to,
-    active: pathname === link.to,
+    active: isNavLinkActive(link.to, pathname),
   }));
 
   // Never the header's business during look-around: whether a learner is
@@ -201,3 +202,4 @@ function Shell({ devRtl }: { devRtl: boolean }) {
     </>
   );
 }
+

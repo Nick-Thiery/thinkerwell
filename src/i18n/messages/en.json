@@ -29,6 +29,164 @@
     "minutes": "About {min}–{max} min",
     "nextStep": "Next step: {stage}"
   },
+  "lessonPlayer": {
+    "shell": {
+      "aboutLesson": "About this lesson",
+      "learningGoal": "Learning goal",
+      "time": "About {min}–{max} min. Stop and come back any time.",
+      "sublabelDone": "Done",
+      "sublabelRead": "Warm-up, reading and quick check",
+      "sublabelWrite": "Your writing task",
+      "sublabelSpeak": "With a partner or on your own",
+      "sublabelWatch": "Optional · {minutes} min",
+      "sublabelWatchNoTime": "Optional",
+      "sublabelReflect": {
+        "one": "{count} short prompt",
+        "other": "{count} short prompts"
+      },
+      "continueTo": "Continue to {stage}",
+      "finishLesson": "Finish lesson",
+      "noLearnerTitle": "Nothing is saved yet.",
+      "noLearnerBody": "Choose who's learning to keep your work on this device.",
+      "noLearnerAction": "Choose who's learning",
+      "saveError": "Your last change didn't save on this device. Keep going; we'll try again."
+    },
+    "read": {
+      "toolsLabel": "Reading tools",
+      "levelLabel": "Reading level",
+      "levelStandard": "Standard",
+      "levelSimpler": "Simpler",
+      "keyWords": "Key words",
+      "keyWordsTitle": "Key words in this lesson",
+      "keyWordsIntro": "Every key word in the reading, with what it means.",
+      "warmUpEyebrow": "Before you read",
+      "warmUpHint": "Guess now. You can change your mind later.",
+      "warmUpChoices": "Your first guess",
+      "warmUpWritingLabel": "Your guess",
+      "partLabel": "Read · {n} of {total}",
+      "partSimpler": "Read · {n} of {total} · Simpler English",
+      "nextPart": "Next: Part {n}",
+      "nextCheck": "Next: Quick check",
+      "backPart": "Part {n}",
+      "glossaryHelper": "Tap a coloured word to see what it means.",
+      "checkEyebrow": "Read · last part",
+      "checkTitle": "Quick check",
+      "checkRetryNote": "Try as many times as you like",
+      "feedbackLead": {
+        "correct": "Yes.",
+        "retry": "Not quite."
+      },
+      "questionOf": "Question {n} of {total}",
+      "thinkEyebrow": "Question {n} of {total} · think it through",
+      "thinkHelper": "There is no single right answer.",
+      "thinkHelperOptional": "This one is optional. There is no single right answer.",
+      "tryAgain": "Try again",
+      "checkHelper": "You can come back to these questions any time."
+    },
+    "evidence": {
+      "fictionalBadge": {
+        "items": "Fictional examples",
+        "timeline": "Fictional timeline",
+        "map": "Fictional map",
+        "cases": "Fictional examples",
+        "sources": "Fictional sources",
+        "table": "Fictional table"
+      },
+      "sectionLabel": "Evidence",
+      "eyebrow": "Look closely",
+      "mapKey": "Map key",
+      "places": "Places",
+      "tableLabel": "Table: {title}"
+    },
+    "write": {
+      "helpLabel": "Writing help",
+      "modeWrite": "Write",
+      "modeStarters": "Sentence starters",
+      "modePlan": "Plan first",
+      "modeWriteShort": "Write",
+      "modeStartersShort": "Starters",
+      "modePlanShort": "Plan",
+      "evidenceToggle": "Look at the evidence again",
+      "mapToggle": "Look at the map again",
+      "startersTitle": "Tap a sentence starter to add it to your writing",
+      "startersTitleShort": "Tap a starter to add it",
+      "planTitle": "Plan your ideas here, then write your answer below",
+      "answerLabel": "Your answer",
+      "helperSaving": "4 to 6 sentences is plenty. Spelling does not matter here. Saved on this device as you type.",
+      "helperLookAround": "4 to 6 sentences is plenty. Spelling does not matter here. Nothing is saved while you look around.",
+      "helperNoLearner": "4 to 6 sentences is plenty. Spelling does not matter here. Nothing is saved until you choose who's learning.",
+      "selfCheckTitle": "Check your answer",
+      "seeExample": "See an example answer",
+      "compareExample": "Compare with an example answer",
+      "exampleEyebrow": "Example answer",
+      "exampleNote": "This is one way to answer. Yours can be different.",
+      "tip": "Stuck? Tap a sentence starter, then fill in the blanks."
+    },
+    "speak": {
+      "eyebrow": "Speak and listen",
+      "task": "Talk about your ideas from this lesson. You can do it with a partner or on your own.",
+      "partnerTitle": "With a partner",
+      "soloTitle": "On your own",
+      "practisedLegend": "How did you practise?",
+      "practisedHelp": "Choose one. Every way of practising counts."
+    },
+    "watch": {
+      "eyebrow": "Watch · optional",
+      "task": "Watch a short video, or read the same ideas instead. Both count.",
+      "slowTitle": "Slow internet?",
+      "slowBody": "Choose Read instead. It has the same ideas and uses almost no data.",
+      "saveDataTitle": "Videos are off to save data.",
+      "timeoutTitle": "The video is taking a long time to load.",
+      "offlineTitle": "You're offline, so the video can't load now.",
+      "unavailableTitle": "This video can't play here right now.",
+      "deviceSaveDataTitle": "Your device is saving data, so this starts with the written version.",
+      "sameIdeas": "Here are the same ideas to read.",
+      "thinkFirst": "Think first",
+      "beforePlaceholder": "Write a quick idea, or just think about it…",
+      "readInstead": "Read instead",
+      "closeVideo": "Close the video",
+      "playerOpened": "The video player is open. Use its play button to start.",
+      "writtenPart": "Written version",
+      "keyPoints": "Key points",
+      "watchInstead": "Watch the video instead",
+      "tryAgain": "Try the video again",
+      "afterEyebrow": "After you watch or read",
+      "afterPlaceholder": "Write one or two sentences…",
+      "helper": "Watching is optional. You can skip this step.",
+      "forTeachers": "For teachers"
+    },
+    "reflect": {
+      "eyebrow": "Reflect",
+      "task": "Take a moment to think about what you learned today. Only the first question is needed.",
+      "journalNote": "Your answers go into your journal on this device. Only people who use this device can see them.",
+      "lookAroundNote": "You're looking around, so your answers aren't saved.",
+      "noLearnerNote": "Your answers aren't saved yet. Choose who's learning to keep them in a journal.",
+      "finishHelper": "Answer the first question to finish."
+    },
+    "complete": {
+      "eyebrow": "Lesson {number} complete",
+      "title": "You finished Lesson {number}.",
+      "summary": "{title} {message}",
+      "partwayEyebrow": "Lesson {number}",
+      "partwayTitle": "You're partway through Lesson {number}.",
+      "partwayBody": "You've done {done} of {total} steps so far. Answer the first Reflect question to complete it. Nothing is locked, so open any step you like.",
+      "partwayCta": "Go to {stage}",
+      "badgeProgress": {
+        "one": "{title} · {completed} of {count} lesson done",
+        "other": "{title} · {completed} of {count} lessons done"
+      },
+      "badgeSection": "Section {number} · {title}",
+      "savedBoth": "Your writing and your reflection are saved in your journal.",
+      "savedWriting": "Your writing is saved in your journal.",
+      "savedReflection": "Your reflection is saved in your journal.",
+      "guestNote": "Nothing from this lesson was saved on this visit. To keep your work, choose who's learning on the home page.",
+      "upNext": "Up next",
+      "sectionCheckTitle": "Section check: {title}",
+      "sectionCheckQuestion": "Covers Lessons {first}–{last}. Try it any time, as often as you like.",
+      "backToCourse": "Back to the course",
+      "openJournal": "Open my journal"
+    }
+  },
   "pages": {
     "home": {
       "title": "Who's learning today?",
@@ -126,8 +284,14 @@
       "title": "Exploring Our World",
       "eyebrow": "The course",
       "description": "Discover how people, places, communities and decisions shape the world around us.",
-      "lessonsBadge": { "one": "{count} lesson", "other": "{count} lessons" },
-      "checksBadge": { "one": "{count} section check", "other": "{count} section checks" },
+      "lessonsBadge": {
+        "one": "{count} lesson",
+        "other": "{count} lessons"
+      },
+      "checksBadge": {
+        "one": "{count} section check",
+        "other": "{count} section checks"
+      },
       "timeBadge": "About {min}–{max} min a lesson",
       "sectionsNav": "Sections",
       "nothingLocked": "Nothing is locked. Start any lesson, in any order. The numbers show a good path.",
@@ -143,11 +307,21 @@
       "allDoneCheckNotTaken": "All {count} lessons done. Section check not taken yet.",
       "lessonsRange": "Lessons {range}"
     },
-    "lesson": { "title": "Lesson {number}: {stage}" },
-    "sectionCheck": { "title": "Section check: {section}" },
-    "journal": { "title": "My journal" },
-    "educators": { "title": "For educators" },
-    "about": { "title": "About Thinkerwell" },
+    "lesson": {
+      "title": "Lesson {number}: {stage}"
+    },
+    "sectionCheck": {
+      "title": "Section check: {section}"
+    },
+    "journal": {
+      "title": "My journal"
+    },
+    "educators": {
+      "title": "For educators"
+    },
+    "about": {
+      "title": "About Thinkerwell"
+    },
     "placeholder": "This page is coming soon."
   },
   "notFound": {

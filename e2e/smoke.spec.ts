@@ -13,5 +13,6 @@ test('home page loads with one h1 and no horizontal scroll', async ({ page }) =>
 test('an old Base44 lesson URL redirects to the new one', async ({ page }) => {
   await page.goto('/lesson/l6');
   await expect(page).toHaveURL(/\/lesson\/towns-near-rivers\/read$/);
-  await expect(page.locator('h1')).toContainText('Lesson 10');
+  await expect(page.locator('h1')).toHaveText('Why do people build towns near rivers?');
+  await expect(page).toHaveTitle('Lesson 10: Read · Thinkerwell');
 });

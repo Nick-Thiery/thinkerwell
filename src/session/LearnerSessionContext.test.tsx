@@ -1,7 +1,8 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, describe, expect, it } from 'vitest';
-import { deleteAllData } from '../storage';
+import { getGuestProgress, setGuestProgress } from '../lesson/guestMemory';
+import { deleteAllData, emptyProgress } from '../storage';
 import { LearnerSessionProvider, useLearnerSession } from './LearnerSessionContext';
 
 afterEach(async () => {
@@ -55,6 +56,37 @@ function Inner() {
 }
 
 describe('LearnerSessionProvider', () => {
+  describe("a guest's in-memory answers never reach the next person (rule 4)", () => {
+    function rememberGuestAnswer() {
+      setGuestProgress({ ...emptyProgress('guest', 'towns-near-rivers'), warmUpAnswer: 'Guest A' });
+      expect(getGuestProgress('towns-near-rivers').warmUpAnswer).toBe('Guest A');
+    }
+
+    it.each([
+      ['Look around'],
+      ['Back to picker'],
+      ['Add Amina'],
+    ])('"%s" forgets them', async (button) => {
+      const user = userEvent.setup();
+      render(<Probe />);
+      await waitFor(() => expect(screen.getByTestId('status')).toHaveTextContent('ready'));
+      rememberGuestAnswer();
+      await user.click(screen.getByRole('button', { name: button }));
+      await waitFor(() => expect(getGuestProgress('towns-near-rivers').warmUpAnswer).toBeNull());
+    });
+
+    it('choosing a learner forgets them', async () => {
+      const user = userEvent.setup();
+      render(<Probe />);
+      await waitFor(() => expect(screen.getByTestId('status')).toHaveTextContent('ready'));
+      await user.click(screen.getByRole('button', { name: 'Add Reza' }));
+      await waitFor(() => expect(screen.getByTestId('current')).toHaveTextContent('Reza'));
+      rememberGuestAnswer();
+      await user.click(screen.getByRole('button', { name: 'Choose Reza' }));
+      await waitFor(() => expect(getGuestProgress('towns-near-rivers').warmUpAnswer).toBeNull());
+    });
+  });
+
   it('starts loading, then ready with no learners and nobody current', async () => {
     render(<Probe />);
     await waitFor(() => expect(screen.getByTestId('status')).toHaveTextContent('ready'));

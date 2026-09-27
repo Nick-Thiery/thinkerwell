@@ -1,0 +1,160 @@
+/*
+ * The lesson-complete card (docs/screens/LessonComplete.dc.html): a paper
+ * card with the lavender mascot panel beside the summary on laptop, and
+ * stacked on top on tablet and phone. Borders, not shadows.
+ *
+ * The screen's panel is 400px in a 1120px card; the app's page column is
+ * narrower (about 1040px), so the panel is 320px here and the body's padding
+ * 40px, which keeps the full StagePath on one line beside it.
+ */
+
+.tw-complete {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  min-inline-size: 0;
+}
+
+.tw-complete-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  padding-block: var(--space-10);
+  padding-inline: var(--space-6);
+  background: var(--lavender);
+  text-align: center;
+  min-inline-size: 0;
+}
+
+/* A long section name wraps inside the panel rather than being cut off. */
+.tw-complete-panel .tw-badge {
+  max-inline-size: 100%;
+  white-space: normal;
+}
+
+.tw-complete-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--space-10);
+  min-inline-size: 0;
+}
+
+.tw-complete-heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tw-complete-eyebrow {
+  margin: 0;
+  color: var(--ink-muted);
+}
+
+.tw-complete-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 52px;
+  line-height: 54px;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+.tw-complete-summary {
+  margin: 0;
+  max-inline-size: var(--reading-measure);
+  font-size: 19px;
+  line-height: 29px;
+}
+
+/* If a StagePath is ever wider than the column (longer stage names in another language), it wraps rather than scrolls. */
+.tw-complete-path {
+  min-inline-size: 0;
+}
+
+.tw-complete-path .tw-stages {
+  flex-wrap: wrap;
+  row-gap: var(--space-2);
+}
+
+.tw-complete-note {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--ink-muted);
+}
+
+.tw-complete-note .tw-icon {
+  flex: none;
+}
+
+.tw-complete-next {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tw-complete-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+/* Tablet: the panel stacks on top, mascot and badge side by side. */
+@media (max-width: 1099px) {
+  .tw-complete {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tw-complete-panel {
+    flex-flow: row wrap;
+    padding: var(--space-6);
+  }
+
+  .tw-complete-body {
+    padding: var(--space-8);
+  }
+
+  .tw-complete-title {
+    font-size: 44px;
+    line-height: 48px;
+  }
+}
+
+/* Phone: the panel stacks on top with a smaller mascot. */
+@media (max-width: 599px) {
+  .tw-complete-panel {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .tw-complete-body {
+    gap: var(--space-5);
+    padding: var(--space-5);
+  }
+
+  .tw-complete-title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .tw-complete-summary {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .tw-complete-actions > .tw-btn {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+}

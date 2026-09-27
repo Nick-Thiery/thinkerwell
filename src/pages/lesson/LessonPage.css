@@ -1,0 +1,192 @@
+/*
+ * The lesson player's page layout (docs/screens/Lesson*.dc.html at 1280,
+ * TabletLesson at 820, PhoneLesson at 390). Stage content styles live next
+ * to each stage (read/, write/, speak/, watch/, reflect/, complete/,
+ * evidence/, visual/).
+ */
+
+.tw-lesson {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-inline-size: 0;
+}
+
+/*
+ * The player is one element tree at every width (LessonPage.tsx), so a
+ * tablet turning round never remounts the stage. Narrow: banners, the
+ * "about this lesson" column (intro, horizontal StagePath, goal) and the
+ * stage stack. Laptop (1100px and wider, LESSON_WIDE_QUERY): the same column
+ * sits beside the stage.
+ */
+.tw-lesson-aside {
+  display: flex;
+  flex-direction: column;
+  gap: inherit;
+  min-inline-size: 0;
+}
+
+.tw-lesson-main {
+  display: flex;
+  flex-direction: column;
+  gap: inherit;
+  min-inline-size: 0;
+}
+
+@media (min-width: 1100px) {
+  .tw-lesson-player {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: var(--space-12);
+    align-items: start;
+  }
+
+  .tw-lesson-player > .tw-lesson-aside {
+    gap: var(--space-5);
+  }
+
+  .tw-lesson-player > .tw-lesson-main {
+    gap: var(--space-6);
+  }
+}
+
+.tw-lesson-intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.tw-lesson-back {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 6px;
+  min-block-size: var(--target-min);
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 700;
+  color: var(--ink-muted);
+  text-decoration: none;
+}
+
+.tw-lesson-back:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+.tw-lesson-titles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-lesson-number-history { color: var(--sec-history-ink); }
+.tw-lesson-number-geography { color: var(--sec-geography-ink); }
+.tw-lesson-number-culture { color: var(--sec-culture-ink); }
+.tw-lesson-number-civics { color: var(--sec-civics-ink); }
+
+.tw-lesson-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 30px;
+  line-height: 34px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+.tw-lesson-question {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--ink-muted);
+}
+
+.tw-lesson-goal {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px var(--space-5);
+  border-radius: var(--radius-lg);
+  background: var(--lavender-wash);
+}
+
+.tw-lesson-goal-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tw-lesson-time {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  color: var(--ink-muted);
+}
+
+.tw-lesson-time .tw-icon {
+  flex: none;
+}
+
+/* The horizontal StagePath can be wider than a phone: let it scroll inside itself, never the page. */
+.tw-lesson-path-horizontal {
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  overflow-x: auto;
+  padding-block: 4px;
+  padding-inline: 4px;
+  margin-inline: -4px;
+}
+
+.tw-lesson-stage {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-inline-size: 0;
+}
+
+/* Tablet (820): slightly larger title, as TabletLesson.dc.html. */
+@media (min-width: 600px) and (max-width: 1099px) {
+  .tw-lesson-title {
+    font-size: 34px;
+    line-height: 38px;
+  }
+
+  .tw-lesson-question {
+    font-size: 17px;
+    line-height: 26px;
+  }
+}
+
+/* Phone (390): PhoneLesson.dc.html. */
+@media (max-width: 599px) {
+  .tw-lesson {
+    gap: 18px;
+  }
+
+  .tw-lesson-title {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  .tw-lesson-stage {
+    gap: var(--space-5);
+  }
+}
+
+.tw-lesson-complete-page {
+  gap: var(--space-6);
+}
+
+/* On a phone the banner's action drops under its text rather than squeezing it into a narrow column. */
+@media (max-width: 599px) {
+  .tw-lesson-banner {
+    flex-wrap: wrap;
+  }
+
+  .tw-lesson-banner .tw-status-text {
+    flex: 1 1 calc(100% - 40px);
+  }
+}

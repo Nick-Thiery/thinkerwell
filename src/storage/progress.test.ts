@@ -74,6 +74,22 @@ describe('findContinueTarget', () => {
     expect(target).toEqual({ lesson: lessons[5], stage: 'speak' });
   });
 
+  it('with nothing in progress, goes on after the lesson finished most recently', () => {
+    // Finished Lesson 10 only: Continue offers Lesson 11, as the complete screen's "Up next" does.
+    const target = findContinueTarget(lessons, progressByLessonId([completed(lessons[9]!.id)]));
+    expect(target).toEqual({ lesson: lessons[10], stage: 'read' });
+  });
+
+  it('skips finished lessons and wraps round to the start of the course', () => {
+    const last = lessons.length - 1;
+    const records = [
+      { ...completed(lessons[0]!.id), completedAt: '2026-01-01T00:00:00.000Z' },
+      { ...completed(lessons[last]!.id), completedAt: '2026-03-01T00:00:00.000Z' },
+      { ...completed(lessons[5]!.id), completedAt: '2026-02-01T00:00:00.000Z' },
+    ];
+    expect(findContinueTarget(lessons, progressByLessonId(records))).toEqual({ lesson: lessons[1], stage: 'read' });
+  });
+
   it('picks the most recently updated in-progress lesson when several are unfinished', () => {
     const older: LessonProgress = { ...inProgress(lessons[1]!.id, 'write'), updatedAt: '2026-01-01T00:00:00.000Z' };
     const newer: LessonProgress = { ...inProgress(lessons[4]!.id, 'speak'), updatedAt: '2026-02-01T00:00:00.000Z' };

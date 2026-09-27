@@ -24,6 +24,7 @@ export {
   requestPersistentStorage,
   type ThinkerwellStore,
 } from './store';
+export { forgetUnsavedProgress, keepUnsavedProgress } from './unsavedProgress';
 export {
   findContinueTarget,
   isLessonComplete,

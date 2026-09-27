@@ -143,6 +143,7 @@ Read CLAUDE.md and the "Listening, speaking and low internet" section of docs/de
 1. Make the site a PWA with vite-plugin-pwa: precache the app shell, all content, fonts and images so every lesson works offline after the first visit. Never cache YouTube. Show a gentle "New version ready" prompt instead of reloading under a learner.
 2. Connection status: StatusBanner tone offline under the header when offline ("You're offline. Keep going: your work is saved on this device."), tone back for a few seconds when the connection returns. Watch shows the slow-internet note and opens on "Read instead" when offline.
 3. Settings (device-wide, reachable from the header menu): Save data (turns off video embeds), reading level default, listening speed, allow online speech-to-text (for educators).
+   (Note from phase 4: Watch already opens on the written version when the browser's Save-Data hint, `navigator.connection.saveData`, is on, while still offering the video. Consider using that hint as the Save data switch's default.)
 4. Dashboard badge showing that lessons work offline.
 5. Print view for a lesson (reading in both levels, tasks, glossary) and for the journal: black text on white, no header or navigation, good page breaks.
 6. Keep the total download small: report the size of the first load and of the precache in the pull request, and optimise images.

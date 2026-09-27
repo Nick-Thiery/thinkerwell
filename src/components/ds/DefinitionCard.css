@@ -15,13 +15,31 @@
   text-align: start;
 }
 
+/*
+ * Floating under a GlossaryTerm. Never wider than the screen minus the page
+ * gutters (16px each side), so it always fits; DefinitionCard.tsx then
+ * shifts it sideways to keep it inside those gutters. 100vw is safe here
+ * because the page itself never scrolls sideways.
+ */
 .tw-def-float {
   position: absolute;
   inset-inline-start: 0;
   inset-block-start: calc(100% + 8px);
   z-index: 5;
-  width: 320px;
+  width: min(320px, calc(100vw - 32px));
   max-width: none;
+}
+
+/*
+ * While DefinitionCard measures where to put it: fixed to the viewport's
+ * start edge and hidden, so the unplaced card can never widen the page
+ * (mobile browsers grow the layout viewport to fit anything that overflows).
+ */
+.tw-def-float[data-placing] {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  visibility: hidden;
 }
 
 .tw-def-word {
@@ -59,6 +77,6 @@
 
 @media (max-width: 600px) {
   .tw-def-float {
-    width: 280px;
+    width: min(280px, calc(100vw - 32px));
   }
 }

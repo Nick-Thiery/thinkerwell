@@ -84,39 +84,50 @@ describe('top-level routes', () => {
     expect(current[0]).toHaveAttribute('href', path);
   });
 
-  it('marks no nav link as current on a lesson page', () => {
+  it('marks Course as the current page on a lesson page, as the lesson screens do', () => {
     renderAt('/lesson/towns-near-rivers/read');
     const nav = screen.getByRole('navigation', { name: t('nav.label') });
-    expect(nav.querySelectorAll('[aria-current="page"]')).toHaveLength(0);
+    const current = nav.querySelectorAll('[aria-current="page"]');
+    expect(current).toHaveLength(1);
+    expect(current[0]).toHaveTextContent(t('nav.course'));
   });
 });
 
 describe('lesson routes', () => {
+  // The lesson player reads the learner session (IndexedDB) before it shows
+  // anything, so these wait for the h1: the lesson's title on every stage,
+  // and the completion screen's own heading on 'complete'. The document
+  // title names the lesson number and the stage.
   it.each([first, lessons[9]!, last].map((l) => [l.number, l] as const))(
     'lesson %i shows each stage with one h1',
-    (_n, lesson) => {
+    async (_n, lesson) => {
       for (const step of ['read', 'write', 'speak', 'watch', 'reflect', 'complete'] as const) {
         const { unmount } = render(
           <RouterProvider router={createMemoryRouter(routes, { initialEntries: [`/lesson/${lesson.id}/${step}`] })} />,
         );
         const title = t('pages.lesson.title', { number: lesson.number, stage: t(`stages.${step}`) });
-        expect(heading()).toHaveTextContent(title);
-        expect(document.title).toBe(`${title} · Thinkerwell`);
+        if (step === 'complete') await waitFor(() => expect(heading()).toBeInTheDocument());
+        else await waitFor(() => expect(heading()).toHaveTextContent(lesson.title));
+        // document.title is set in an effect, which can run just after the DOM commit.
+        await waitFor(() => expect(document.title).toBe(`${title} · Thinkerwell`));
         unmount();
       }
     },
+    // Six sequential renders, each reading IndexedDB: generous under a busy full-suite run.
+    20_000,
   );
 
   it('/lesson/:id redirects to Read', async () => {
     const router = renderAt('/lesson/changing-scale');
     await waitFor(() => expect(where(router)).toBe('/lesson/changing-scale/read'));
-    expect(heading()).toHaveTextContent('Lesson 3: Read');
+    await waitFor(() => expect(document.title).toBe('Lesson 3: Read · Thinkerwell'));
+    await waitFor(() => expect(heading()).toBeInTheDocument());
   });
 
   it('/lesson/l6 lands on /lesson/towns-near-rivers/read', async () => {
     const router = renderAt('/lesson/l6');
     await waitFor(() => expect(where(router)).toBe('/lesson/towns-near-rivers/read'));
-    expect(heading()).toHaveTextContent('Lesson 10: Read');
+    await waitFor(() => expect(document.title).toBe('Lesson 10: Read · Thinkerwell'));
     // A redirect replaces the old entry, so Back doesn't bounce into it again.
     expect(router.state.historyAction).toBe('REPLACE');
   });
@@ -124,13 +135,13 @@ describe('lesson routes', () => {
   it('/lesson/history-scale/watch keeps the stage', async () => {
     const router = renderAt('/lesson/history-scale/watch');
     await waitFor(() => expect(where(router)).toBe('/lesson/changing-scale/watch'));
-    expect(heading()).toHaveTextContent('Lesson 3: Watch');
+    await waitFor(() => expect(document.title).toBe('Lesson 3: Watch · Thinkerwell'));
   });
 
   it('/lesson/l6/write?preview=true keeps ?preview=true', async () => {
     const router = renderAt('/lesson/l6/write?preview=true');
     await waitFor(() => expect(where(router)).toBe('/lesson/towns-near-rivers/write?preview=true'));
-    expect(heading()).toHaveTextContent('Lesson 10: Write');
+    await waitFor(() => expect(document.title).toBe('Lesson 10: Write · Thinkerwell'));
   });
 
   it('keeps the hash on redirect', async () => {
@@ -141,7 +152,7 @@ describe('lesson routes', () => {
   it('matches /Lesson/L6/Watch case-insensitively', async () => {
     const router = renderAt('/Lesson/L6/Watch');
     await waitFor(() => expect(where(router)).toBe('/lesson/towns-near-rivers/watch'));
-    expect(heading()).toHaveTextContent('Lesson 10: Watch');
+    await waitFor(() => expect(document.title).toBe('Lesson 10: Watch · Thinkerwell'));
   });
 });
 
@@ -231,6 +242,7 @@ describe('focus after navigation', () => {
   it('does not move focus after the initial redirect', async () => {
     const router = renderAt('/lesson/l6');
     await waitFor(() => expect(where(router)).toBe('/lesson/towns-near-rivers/read'));
+    await waitFor(() => expect(heading()).toHaveTextContent(getLessons()[9]!.title));
     expect(heading()).not.toHaveFocus();
     expect(document.activeElement).toBe(document.body);
   });

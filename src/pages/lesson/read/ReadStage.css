@@ -1,0 +1,206 @@
+/*
+ * The Read stage (docs/screens/LessonRead.dc.html at 1280, TabletLesson at
+ * 820; LessonCheck.dc.html for the quick check). Component looks come from
+ * src/components/ds; this file only lays them out.
+ */
+
+.tw-read,
+.tw-read-check {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-inline-size: 0;
+}
+
+/* ---------------------------------------------------------- reading tools */
+
+.tw-read-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* ------------------------------------------------------------- key words */
+
+.tw-read-keywords {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.tw-read-keywords-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.tw-read-keywords-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.tw-read-keywords-intro {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--ink-muted);
+}
+
+.tw-read-keywords-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tw-read-keywords-grid > li {
+  display: flex;
+  min-inline-size: 0;
+}
+
+/* Standalone definitions sit in the page, not above it: no pop shadow, a
+   quiet lavender wash (the brand's tint for definitions) and a line border. */
+.tw-read-def.tw-def {
+  inline-size: auto;
+  flex: 1;
+  max-inline-size: none;
+  box-shadow: none;
+  background: var(--lavender-wash);
+  border: 1px solid var(--line);
+  padding: var(--space-4);
+  overflow-wrap: anywhere;
+}
+
+/* --------------------------------------------------------------- warm-up */
+
+/* Beats TaskCard's own `.tw-task-body p { margin: 0 }`. */
+.tw-task-body .tw-read-warmup-question {
+  margin-block: 0 var(--space-4);
+}
+
+.tw-read-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tw-read-warmup-box {
+  font-weight: 400;
+}
+
+/* --------------------------------------------------------------- reading */
+
+.tw-read-part {
+  /* Room above the card when it is scrolled into view on a new part. */
+  scroll-margin-block-start: var(--space-4);
+}
+
+.tw-read-para {
+  margin: 0;
+}
+
+.tw-read-para + .tw-read-para {
+  margin-block-start: var(--space-4);
+}
+
+/* ------------------------------------------------------------ quick check */
+
+.tw-read-check {
+  scroll-margin-block-start: var(--space-4);
+}
+
+.tw-read-check-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+}
+
+.tw-read-check-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tw-read-muted {
+  color: var(--ink-muted);
+}
+
+.tw-read-check-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+.tw-read-check-note {
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--ink-muted);
+}
+
+.tw-read-retry {
+  display: flex;
+}
+
+.tw-read-think {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.tw-read-think-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-read-think-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+@media (max-width: 600px) {
+  .tw-read,
+  .tw-read-check {
+    gap: var(--space-5);
+  }
+
+  .tw-read-keywords,
+  .tw-read-think {
+    padding: var(--space-5);
+  }
+
+  .tw-read-check-title {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .tw-read-think-title {
+    font-size: 21px;
+    line-height: 27px;
+  }
+}

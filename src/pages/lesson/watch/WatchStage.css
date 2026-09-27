@@ -1,0 +1,175 @@
+/* Watch stage (docs/screens/LessonWatch.dc.html). Borders, not shadows. */
+
+/* "Think first" and "After you watch or read": paper panels. */
+.tw-watch-panel {
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.tw-watch-think {
+  padding-block: var(--space-4) var(--space-5);
+  padding-inline: var(--space-5);
+  border-radius: var(--radius-lg);
+}
+
+/* A quick optional idea: two lines, not the full writing box height. */
+.tw-watch-think textarea {
+  min-height: 96px;
+}
+
+.tw-watch-eyebrow {
+  margin: 0;
+  color: var(--ink-muted);
+}
+
+.tw-watch-media {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.tw-watch-why {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* The written version ("Read instead"): reading text, 20/32 within the measure. */
+.tw-watch-written {
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.tw-watch-written-part {
+  color: var(--ink-muted);
+}
+
+.tw-watch-written-h {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 26px;
+  line-height: 32px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.tw-watch-written-text {
+  max-width: var(--reading-measure);
+  font-size: 20px;
+  line-height: 32px;
+  text-wrap: pretty;
+}
+
+.tw-watch-written-text p {
+  margin: 0;
+}
+
+.tw-watch-written-text p + p {
+  margin-block-start: var(--space-4);
+}
+
+.tw-watch-keypoints-h {
+  margin: 0;
+  margin-block-start: var(--space-2);
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+}
+
+.tw-watch-keypoints {
+  margin: 0;
+  padding-inline-start: var(--space-6);
+  max-width: var(--reading-measure);
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.tw-watch-keypoints li + li {
+  margin-block-start: var(--space-2);
+}
+
+.tw-watch-written-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-block-start: var(--space-2);
+}
+
+/* "For teachers": closed by default, a quiet note under the stage. */
+.tw-watch-teachers {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  min-width: 0;
+}
+
+.tw-watch-teachers summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding-block: var(--space-2);
+  padding-inline: var(--space-4);
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  list-style: none;
+  border-radius: var(--radius-lg);
+}
+
+.tw-watch-teachers summary::-webkit-details-marker {
+  display: none;
+}
+
+.tw-watch-teachers-chevron {
+  margin-inline-start: auto;
+}
+
+.tw-watch-teachers[open] .tw-watch-teachers-chevron {
+  transform: rotate(180deg);
+}
+
+.tw-watch-teachers p {
+  margin: 0;
+  padding-block: 0 var(--space-4);
+  padding-inline: var(--space-4);
+  max-width: var(--reading-measure);
+}
+
+@media (max-width: 600px) {
+  .tw-watch-panel,
+  .tw-watch-written {
+    padding: var(--space-5);
+  }
+
+  .tw-watch-think {
+    padding-block: var(--space-4);
+    padding-inline: var(--space-4);
+  }
+
+  .tw-watch-written-h {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .tw-watch-written-actions .tw-btn {
+    flex: 1;
+  }
+}

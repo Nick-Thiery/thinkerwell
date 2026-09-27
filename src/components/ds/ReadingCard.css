@@ -44,10 +44,8 @@
     line-height: 28px;
   }
 
-  .tw-reading-text {
-    font-size: 19px;
-    line-height: 31px;
-  }
+  /* Reading text stays 20px/32px at every width (CLAUDE.md rule 5 and the
+     brand book, which win over reference/bundle.css's 19/31 on phones). */
 }
 
 /* The sentence `speechSynthesis` is currently reading aloud (CLAUDE.md:

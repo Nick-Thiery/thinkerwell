@@ -1,0 +1,106 @@
+/* Speak stage (docs/screens/LessonSpeak.dc.html). */
+
+.tw-speak-tasks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.tw-speak-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  min-inline-size: 0;
+}
+
+.tw-speak-card-partner {
+  background: var(--paper);
+  border: 2px solid var(--line);
+}
+
+.tw-speak-card-solo {
+  background: var(--lavender-wash);
+  border: 2px solid var(--lavender-wash);
+}
+
+.tw-speak-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 44px;
+  block-size: 44px;
+  border-radius: 50%;
+  flex: none;
+}
+
+/* Lavender means help: the partner is the helper here. */
+.tw-speak-icon-partner {
+  background: var(--lavender);
+}
+
+.tw-speak-icon-solo {
+  background: var(--paper);
+}
+
+.tw-speak-card-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 21px;
+  line-height: 28px;
+  font-weight: 600;
+}
+
+.tw-speak-card-text {
+  margin: 0;
+  font-size: 17px;
+  line-height: 26px;
+  overflow-wrap: anywhere;
+}
+
+.tw-speak-practised {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-inline-size: 0;
+}
+
+.tw-speak-legend {
+  padding: 0;
+  margin-block-end: var(--space-2);
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.tw-speak-help {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--ink-muted);
+}
+
+.tw-speak-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Long options wrap inside the chip rather than pushing the page wider. */
+.tw-speak-chips .tw-chip {
+  max-inline-size: 100%;
+}
+
+@media (max-width: 599px) {
+  .tw-speak-tasks {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tw-speak-card {
+    padding: var(--space-5);
+  }
+}

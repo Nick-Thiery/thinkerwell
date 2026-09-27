@@ -5,7 +5,11 @@ import {
   requestPersistentStorage,
   type Learner,
   type NewLearner,
+  type ReadingLevel,
 } from '../storage';
+// Imported directly (not through src/lesson/index.ts) to keep this module
+// free of the lesson player's React code.
+import { clearGuestMemory } from '../lesson/guestMemory';
 
 export type LearnerSessionStatus = 'loading' | 'ready';
 
@@ -57,6 +61,12 @@ export interface LearnerSessionValue {
   startLookAround: () => void;
   /** Clears the current learner (if any) and turns look-around off, back to the "who's learning" picker. */
   returnToPicker: () => Promise<void>;
+  /**
+   * Remembers a learner's Standard / Simpler choice on their own record
+   * (phase 4). Never called in look-around: the lesson player keeps a
+   * guest's choice in memory instead.
+   */
+  setLearnerReadingLevel: (id: string, level: ReadingLevel) => Promise<void>;
 }
 
 const LearnerSessionContext = createContext<LearnerSessionValue | null>(null);
@@ -149,14 +159,24 @@ export function LearnerSessionProvider({ forceLookAround = false, children }: Le
   // ?preview=true starts look-around at any point, on any page, and stays on
   // until the learner (or someone else on the shared device) chooses a
   // learner or explicitly returns to the picker; it never writes to storage.
+  const lookAroundRef = useRef(lookAround);
   useEffect(() => {
+    lookAroundRef.current = lookAround;
+  }, [lookAround]);
+  useEffect(() => {
+    if (!forceLookAround) return;
+    // Entering look-around from a preview link starts a new guest, like
+    // "Just look around" does; staying in it (another preview link) doesn't.
+    if (!lookAroundRef.current) clearGuestMemory();
     // Syncing in-memory mode from the URL's own query string, an external input.
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    if (forceLookAround) setLookAround(true);
+    setLookAround(true);
   }, [forceLookAround]);
 
   const chooseLearner = useCallback(async (id: string) => {
     if (!storageAvailable) return;
+    // Whoever was looking around before is done: forget what they did.
+    clearGuestMemory();
     const store = await getStore();
     await store.setCurrentLearnerId(id);
     if (!alive.current) return;
@@ -165,6 +185,7 @@ export function LearnerSessionProvider({ forceLookAround = false, children }: Le
   }, [learners, storageAvailable]);
 
   const addLearner = useCallback(async (input: NewLearner): Promise<Learner> => {
+    clearGuestMemory();
     const store = await getStore();
     const learner = await store.addLearner(input);
     if (!alive.current) return learner;
@@ -187,6 +208,11 @@ export function LearnerSessionProvider({ forceLookAround = false, children }: Le
   }, []);
 
   const startLookAround = useCallback(() => {
+    // Every "Just look around" is a new guest on a shared device: nothing a
+    // previous guest did on this visit may show (CLAUDE.md rule 4). Cleared
+    // before the state change, so a lesson player that mounts for the new
+    // guest reads empty memory.
+    clearGuestMemory();
     setLookAround(true);
     // Only clears anything when there was a learner to clear: a brand-new
     // guest with nobody current touches storage not at all (CLAUDE.md: not
@@ -210,6 +236,10 @@ export function LearnerSessionProvider({ forceLookAround = false, children }: Le
   }, [currentLearner, storageAvailable]);
 
   const returnToPicker = useCallback(async () => {
+    // Back to "Who's learning today?": the next person starts clean. (Even
+    // with no storage, where the guest stays in look-around, this is where
+    // someone hands the device on.)
+    clearGuestMemory();
     // With no storage there is no picker to return to (Home stays on its own
     // no-storage explanation): leave look-around exactly as it is rather
     // than turning it off with nothing behind it.
@@ -219,6 +249,15 @@ export function LearnerSessionProvider({ forceLookAround = false, children }: Le
     if (!alive.current) return;
     setCurrentLearner(null);
     setLookAround(false);
+  }, [storageAvailable]);
+
+  const setLearnerReadingLevel = useCallback(async (id: string, level: ReadingLevel) => {
+    if (!storageAvailable) return;
+    const store = await getStore();
+    const updated = await store.updateLearner(id, { readingLevel: level });
+    if (!alive.current) return;
+    setLearners((prev) => prev.map((l) => (l.id === id ? updated : l)));
+    setCurrentLearner((prev) => (prev?.id === id ? updated : prev));
   }, [storageAvailable]);
 
   const activeLearner = lookAround ? null : currentLearner;
@@ -236,8 +275,9 @@ export function LearnerSessionProvider({ forceLookAround = false, children }: Le
       removeLearner,
       startLookAround,
       returnToPicker,
+      setLearnerReadingLevel,
     }),
-    [status, storageAvailable, learners, currentLearner, lookAround, activeLearner, chooseLearner, addLearner, removeLearner, startLookAround, returnToPicker],
+    [status, storageAvailable, learners, currentLearner, lookAround, activeLearner, chooseLearner, addLearner, removeLearner, startLookAround, returnToPicker, setLearnerReadingLevel],
   );
 
   return <LearnerSessionContext.Provider value={value}>{children}</LearnerSessionContext.Provider>;

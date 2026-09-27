@@ -236,10 +236,17 @@ export type Reflect = z.infer<typeof reflectSchema>;
 
 export const visualSchema = z.strictObject({
   type: z.enum(['map', 'timeline', 'diagram', 'illustration']),
+  /** For the team: what the picture should show. Not shown to learners. */
   description: text,
+  /** Alt text for the picture once it exists. */
   alt: text,
-  /** Path to the picture's SVG file, relative to content/ (e.g. "visuals/L10.svg"). */
-  src: text,
+  /**
+   * The picture: a path to an SVG in content/visuals/, relative to content/
+   * (for example "visuals/L10.svg"). Only a local path is allowed, never a
+   * URL: a picture from another server would break the privacy and offline
+   * rules (CLAUDE.md 1 and 2). getVisualUrl() turns it into the built file's URL.
+   */
+  src: z.string().regex(/^visuals\/[A-Za-z0-9_-]+\.svg$/, 'must be a path like "visuals/L10.svg" (an SVG in content/visuals/)'),
 });
 export type Visual = z.infer<typeof visualSchema>;
 

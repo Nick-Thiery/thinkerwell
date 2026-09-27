@@ -3,18 +3,23 @@ import { expect, test, type Page } from '@playwright/test';
 // Every route and three lessons (the first, lesson 10 and the last) against a
 // production build: one h1, English left to right, and no sideways scroll at
 // any of the three widths.
-const pages: Array<[path: string, heading: string]> = [
+// [path, the page's h1, its document title (defaults to the h1)]. A lesson
+// stage's h1 is the lesson's title; the completion screen's h1 is "You
+// finished Lesson N." once finished, else "You're partway through Lesson N."
+// (phase 4).
+const pages: Array<[path: string, heading: string, title?: string]> = [
   ['/', "Who's learning today?"],
   ['/course', 'Exploring Our World'],
   ['/journal', 'My journal'],
   ['/educators', 'For educators'],
   ['/about', 'About Thinkerwell'],
   ['/section/history/check', 'Section check: History & Human Stories'],
-  ['/lesson/finding-out-about-the-past/read', 'Lesson 1: Read'],
-  ['/lesson/towns-near-rivers/read', 'Lesson 10: Read'],
-  ['/lesson/towns-near-rivers/watch', 'Lesson 10: Watch'],
-  ['/lesson/towns-near-rivers/complete', 'Lesson 10: Lesson complete'],
-  ['/lesson/young-people-contribute/reflect', 'Lesson 24: Reflect'],
+  ['/lesson/finding-out-about-the-past/read', 'How can we find out about the past?', 'Lesson 1: Read'],
+  ['/lesson/towns-near-rivers/read', 'Why do people build towns near rivers?', 'Lesson 10: Read'],
+  ['/lesson/towns-near-rivers/watch', 'Why do people build towns near rivers?', 'Lesson 10: Watch'],
+  // Opened directly by a guest who did nothing: never told they finished.
+  ['/lesson/towns-near-rivers/complete', "You're partway through Lesson 10.", 'Lesson 10: Lesson complete'],
+  ['/lesson/young-people-contribute/reflect', 'How can young people contribute to their communities?', 'Lesson 24: Reflect'],
 ];
 
 async function horizontalOverflow(page: Page): Promise<number> {
@@ -32,13 +37,13 @@ async function openMobileNavIfPresent(page: Page): Promise<void> {
   if (await menuButton.isVisible()) await menuButton.click();
 }
 
-for (const [path, heading] of pages) {
+for (const [path, heading, title] of pages) {
   test(`${path} has one h1, lang and dir, and no horizontal scroll`, async ({ page }) => {
     await page.goto(path);
     const h1 = page.locator('h1');
     await expect(h1).toHaveCount(1);
     await expect(h1).toHaveText(heading);
-    await expect(page).toHaveTitle(`${heading} · Thinkerwell`);
+    await expect(page).toHaveTitle(`${title ?? heading} · Thinkerwell`);
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
     await expect(page.locator('html')).toHaveAttribute('dir', 'ltr');
     expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
@@ -49,19 +54,22 @@ test.describe('old Base44 URLs', () => {
   test('/lesson/l6 redirects to /lesson/towns-near-rivers/read', async ({ page }) => {
     await page.goto('/lesson/l6');
     await expect(page).toHaveURL(/\/lesson\/towns-near-rivers\/read$/);
-    await expect(page.locator('h1')).toHaveText('Lesson 10: Read');
+    await expect(page.locator('h1')).toHaveText('Why do people build towns near rivers?');
+    await expect(page).toHaveTitle('Lesson 10: Read · Thinkerwell');
   });
 
   test('/lesson/history-scale/watch redirects keeping the stage', async ({ page }) => {
     await page.goto('/lesson/history-scale/watch');
     await expect(page).toHaveURL(/\/lesson\/changing-scale\/watch$/);
-    await expect(page.locator('h1')).toHaveText('Lesson 3: Watch');
+    await expect(page.locator('h1')).toHaveText('How does changing scale change the story?');
+    await expect(page).toHaveTitle('Lesson 3: Watch · Thinkerwell');
   });
 
   test('/lesson/l6?preview=true keeps the query', async ({ page }) => {
     await page.goto('/lesson/l6?preview=true');
     await expect(page).toHaveURL(/\/lesson\/towns-near-rivers\/read\?preview=true$/);
-    await expect(page.locator('h1')).toHaveText('Lesson 10: Read');
+    await expect(page.locator('h1')).toHaveText('Why do people build towns near rivers?');
+    await expect(page).toHaveTitle('Lesson 10: Read · Thinkerwell');
   });
 
   test('/lesson/:id redirects to Read', async ({ page }) => {

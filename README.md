@@ -63,7 +63,7 @@ PLAYWRIGHT_BROWSERS_PATH=0 node tools/shoot.mjs <url> [more urls] \
   [--widths 390,820,1280] [--rtl] [--out .build-review/shots/<name>]
 ```
 
-For each URL and width (390, 820 and 1280 by default) it saves a full-page screenshot and prints: horizontal overflow, console errors/warnings and uncaught page errors, every request to a host other than the page's own, every visible tap target under 44×44px, and every visible text node under 14px. `--rtl` adds `?dir=rtl` to each URL. The exit code is 0 unless a page fails to load — everything else is a report, not a failure.
+For each URL and width (390, 820 and 1280 by default) it saves a full-page screenshot and prints: horizontal overflow, console errors/warnings and uncaught page errors, every request to a host other than the page's own, every visible tap target under 44×44px, and every visible text node under 14px. Glossary words in running text (`.tw-term`) are left out of the tap-target count: WCAG 2.5.8 exempts inline targets, and `GlossaryTerm.css` gives each one a 44px-tall hit area with a `::before` that the element's own box doesn't show. `--rtl` adds `?dir=rtl` to each URL. The exit code is 0 unless a page fails to load — everything else is a report, not a failure.
 
 ## On-device storage
 
@@ -81,6 +81,19 @@ Removing a learner deletes their progress, quiz attempts and recordings in one t
 
 The phase-2 design-system components that link somewhere internally (`Button` with `href`, `LessonRow`, `StagePath`, `Logo`, `SiteHeader`'s nav) render a plain `<a>` by default, so a page can use them without a router. `src/components/ds/DsLinkProvider` is a small context those components check first; `AppLayout` mounts it once with `src/app/RouterDsLink.tsx`, which renders React Router's `Link` (so internal navigation doesn't reload the page or lose look-around state). A page can use the same context directly with `useDsLinkComponent()` when it needs a bespoke element to be a router-aware link too (see `LearnerDashboard`'s per-section rows, which render their own link rather than going through `Button` — `Button` wraps every child in one `<span>`, which is right for its usual icon-plus-label case but would collapse a row with several independent flex children).
 
+## The lesson player
+
+`/lesson/:id/:stage` is one template for all 24 lessons (phase 4). Every lesson string comes from `content/lessons/*.json` and `content/course.json`, every UI string from `en.json`; there is no per-lesson code.
+
+- `src/app/LessonRoute.tsx` wraps the page in `LessonPlayerProvider` (keyed by lesson, so moving between stages keeps the loaded progress) and keys `LessonPage` by stage.
+- `src/lesson/LessonPlayerContext.tsx` holds the lesson, the learner's progress, the reading level and the device settings; stages read them with `useLessonPlayer()` and change progress with `update(change)` (pure functions, queued), `stageEvent(event)` and `goTo(step)`.
+- **Saving.** Typing is saved after 500 ms of quiet; choices, ticks, stage events and navigation save at once; blur, stage change and leaving the lesson flush. On `pagehide` and when the tab is hidden, the whole in-memory record is written in one request issued straight away (`store.putProgress`), since the page may be gone before a read could come back. That put can still be cut off at unload, so the same record is first copied synchronously to `localStorage` (`src/storage/unsavedProgress.ts`); the copy is removed once a write covering it lands, and if the page went away first, the next `getStore()` writes it back to IndexedDB before anything reads progress. IndexedDB stays the source of truth; removing a learner or all data removes their copies too. Look-around, `?preview=true` and "nobody chosen yet" keep everything in memory for the visit (`src/lesson/guestMemory.ts`) and write nothing.
+- **When a stage counts as done** is written down in `src/lesson/progressRules.ts`: Read when every choice question is answered or on Continue from the quick check; Write on Continue with something written; Speak when the learner chooses how they practised; Watch when the after question is answered or on Continue; Reflect on "Finish lesson" with the required prompt answered, which also sets `completedAt`. The course map's stage dots, the learner home's continue card and the complete screen all read the same `stagesDone`, `currentStage` and `completedAt`.
+- **Standard / Simpler** is remembered per learner (`Learner.readingLevel`), falling back to `settings.preferredReadingLevel`. The reading part, glossary marking and (phase 5) Listen follow the version on screen.
+- Read's current part is in the URL (`?part=1..n`, `?part=check`), so reload and Back work without storage. Quick-check options are shuffled with a seed from the learner id, lesson and question (`src/lesson/shuffle.ts`); answers are stored by their index in the content file.
+- Watch loads nothing from YouTube or Google until the learner taps "Watch the video". The poster is drawn from the content, and the `youtube-nocookie.com` iframe gets its own `referrerpolicy="strict-origin-when-cross-origin"` (the site's meta says `no-referrer`, and the player refuses to play without one). `settings.saveData` opens Watch on the written version.
+- Phase 5 slots: `ReadStageView` takes `listenTool`, `listenBar` and `highlight`; Write, Watch and Reflect mark where `dictate` goes on each `WritingBox`; Speak marks where `VoiceRecorder actionVariant="secondary"` goes. No button shows before it works.
+
 ## Where things live
 
 ```
@@ -91,6 +104,8 @@ scripts/                 lesson checker (check_lesson.py), check-content.sh, set
 src/main.tsx             entry: router and global styles
 src/app/                 routes, app shell (header, learner switcher, phone nav), lesson URL handling (old Base44 ids redirect here)
 src/pages/               one component per page: Home (picker/new learner/dashboard/guest), the course map, and placeholders for later phases
+src/pages/lesson/        the lesson player's page (LessonPage, StageActionBar) and one folder per stage: read, write, speak, watch, reflect, complete, plus evidence and visual
+src/lesson/              the lesson player's state and rules: LessonPlayerContext (progress, saving, reading level), progressRules (when a stage is done), shuffle, glossary marking, guest memory
 src/session/             LearnerSessionProvider/useLearnerSession (learners, current learner, look-around) and useLearnerProgress, shared by Home and the course map
 src/content/             zod schemas and typed getters for content/*.json
 src/storage/             IndexedDB (idb): learners, progress, quiz attempts, recordings, settings; src/storage/progress.ts has the pure progress-lookup helpers (continue target, per-section counts, ...)
@@ -101,7 +116,7 @@ src/dev/                 dev-only routes (/dev/components, /dev/reference, /dev/
 tools/shoot.mjs          screenshot + report tool (overflow, console errors, foreign requests, tap targets, text size)
 dev-screen.html          dev-only, standalone: renders one docs/screens/*.dc.html with the original reference bundle
 dev-reference.html       dev-only, standalone: renders the original reference bundle's own components
-e2e/                     Playwright tests (production build)
+e2e/                     Playwright tests (production build); lesson-player.spec.ts goes through Lesson 10, lesson-stages.spec.ts renders every step of every lesson
 e2e-dev/                 Playwright tests for the dev-only /dev/* routes (npm run test:e2e:dev)
 ```
 

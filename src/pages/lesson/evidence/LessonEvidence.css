@@ -1,0 +1,360 @@
+/*
+ * Lesson evidence (LessonEvidence.tsx): the observation question, the
+ * fiction label and one figure per card. Paper cards with a `line` border,
+ * no shadows, no section colours (those only sit beside a section's icon
+ * and name), no lemon.
+ */
+.tw-lx {
+  /*
+   * Map key swatches. These are map-drawing colours (the ones in
+   * docs/screens/LessonRead.dc.html's Riverlands map), not UI colours, so
+   * they live here rather than in the design tokens. They only show once a
+   * lesson's map picture exists (LessonEvidence's mapDrawn), and must then
+   * match that SVG; until then the key lists its labels only, since swatches
+   * would describe colours nothing on screen uses. Each swatch sits beside its label, so
+   * colour is never the only information.
+   */
+  --map-blue: #6fb6d6;
+  --map-yellow: #fde68a;
+  --map-green: #3f6b35;
+  --map-brown: #9a6b3f;
+  --map-grey: #8e8a94;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-inline-size: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+}
+
+/* ------------------------------------------------------------ the question */
+
+.tw-lx-prompt {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-lx-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.tw-lx-question {
+  margin: 0;
+  max-inline-size: 68ch;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+.tw-lx-fiction {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--ink-muted);
+}
+
+.tw-lx-fiction svg,
+.tw-lx-eyebrow svg {
+  flex: none;
+}
+
+/* ---------------------------------------------------------------- a figure */
+
+.tw-lx-card {
+  box-sizing: border-box;
+  margin: 0;
+  min-inline-size: 0;
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.tw-lx-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-3);
+}
+
+.tw-lx-title {
+  margin: 0;
+  min-inline-size: 0;
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 600;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+/* Shared text sizes for the smaller cards inside a figure. */
+.tw-lx-name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 19px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.tw-lx-desc {
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.tw-lx-tile {
+  box-sizing: border-box;
+  min-inline-size: 0;
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  border: 2px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-wrap: break-word;
+}
+
+/* ------------------------------------------------------------------ items */
+
+.tw-lx-items,
+.tw-lx-details {
+  margin: 0;
+  padding-inline-start: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 17px;
+  line-height: 26px;
+  max-inline-size: 68ch;
+}
+
+.tw-lx-details {
+  font-size: 16px;
+  line-height: 24px;
+  gap: 2px;
+}
+
+/* --------------------------------------------------------------- timeline */
+
+.tw-lx-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.tw-lx-event {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-inline-start: 32px;
+  max-inline-size: 68ch;
+}
+
+/* The dot for each moment. */
+.tw-lx-event::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: 3px;
+  box-sizing: border-box;
+  inline-size: 18px;
+  block-size: 18px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 3px solid var(--ink);
+}
+
+/* The line joining one dot to the next: logical, so it mirrors in rtl. */
+.tw-lx-event:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  inset-inline-start: 8px;
+  inset-block: 23px calc(-1 * var(--space-5) - 1px);
+  inline-size: 2px;
+  background: var(--line-strong);
+}
+
+.tw-lx-year {
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--ink-muted);
+}
+
+.tw-lx-event-text {
+  font-size: 17px;
+  line-height: 26px;
+}
+
+/* -------------------------------------------------------------------- map */
+
+.tw-lx-legend {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-lx-legend-label {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+  color: var(--ink-muted);
+}
+
+.tw-lx-legend-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.tw-lx-legend-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.tw-lx-swatch {
+  box-sizing: border-box;
+  flex: none;
+  inline-size: 16px;
+  block-size: 16px;
+  border-radius: 4px;
+  border: 1px solid var(--line-strong);
+  background: var(--swatch, var(--paper));
+}
+
+.tw-lx-swatch[data-color='blue'] { --swatch: var(--map-blue); }
+.tw-lx-swatch[data-color='yellow'] { --swatch: var(--map-yellow); }
+.tw-lx-swatch[data-color='green'] { --swatch: var(--map-green); }
+.tw-lx-swatch[data-color='brown'] { --swatch: var(--map-brown); }
+.tw-lx-swatch[data-color='grey'] { --swatch: var(--map-grey); }
+
+/*
+ * Places on the map and cases: side by side where there is room (three
+ * across in the laptop and tablet reading column), one column on phones.
+ */
+.tw-lx-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  gap: var(--space-3);
+}
+
+/* Four in a row would be cramped: two by two instead. */
+.tw-lx-grid:has(> li:nth-child(4):last-child) {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+}
+
+/* ---------------------------------------------------------------- sources */
+
+.tw-lx-sources {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* ------------------------------------------------------------------ table */
+
+.tw-lx-table-scroll {
+  max-inline-size: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+
+.tw-lx-table {
+  inline-size: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: start;
+}
+
+.tw-lx-table th,
+.tw-lx-table td {
+  padding-block: 10px;
+  padding-inline: 14px;
+  vertical-align: top;
+  text-align: start;
+  overflow-wrap: break-word;
+  border-block-end: 1px solid var(--line);
+}
+
+.tw-lx-table th + th,
+.tw-lx-table th + td,
+.tw-lx-table td + td {
+  border-inline-start: 1px solid var(--line);
+}
+
+.tw-lx-table tbody tr:last-child > * {
+  border-block-end: 0;
+}
+
+.tw-lx-table thead th {
+  background: var(--canvas);
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+.tw-lx-table tbody th {
+  font-weight: 700;
+}
+
+/* ----------------------------------------------------------------- widths */
+
+@media (max-width: 1099px) {
+  .tw-lx-card {
+    padding: var(--space-5);
+  }
+}
+
+@media (max-width: 599px) {
+  .tw-lx-card {
+    padding: var(--space-4);
+  }
+
+  .tw-lx-question {
+    font-size: 19px;
+    line-height: 28px;
+  }
+
+  .tw-lx-table th,
+  .tw-lx-table td {
+    padding-inline: 10px;
+  }
+}

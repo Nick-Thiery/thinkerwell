@@ -93,6 +93,18 @@ describe('learners', () => {
     expect(cleared.createdAt).toBe(learner.createdAt);
   });
 
+  it('remembers a learner\'s reading level and rejects an unknown one', async () => {
+    const learner = await store.addLearner({ name: 'Amina', colour: 'lemon' });
+    expect(learner.readingLevel).toBeUndefined();
+    const simpler = await store.updateLearner(learner.id, { readingLevel: 'simpler' });
+    expect(simpler.readingLevel).toBe('simpler');
+    expect((await store.getLearner(learner.id))?.readingLevel).toBe('simpler');
+    await expect(
+      store.updateLearner(learner.id, { readingLevel: 'hard' as unknown as 'simpler' }),
+    ).rejects.toThrow(/reading level/);
+    expect((await store.getLearner(learner.id))?.readingLevel).toBe('simpler');
+  });
+
   it('throws when updating a missing learner or with an empty name', async () => {
     await expect(store.updateLearner('nobody', { name: 'X' })).rejects.toThrow(/No learner/);
     const learner = await store.addLearner({ name: 'Amina', colour: 'lemon' });
@@ -182,6 +194,16 @@ describe('progress', () => {
       warmUpAnswer: 'Water',
     });
     expect(saved.startedAt).toBe('2026-05-01T09:00:00.000Z');
+    expect(await store.getProgress('l1', 'towns-near-rivers')).toEqual(saved);
+  });
+
+  it('putProgress writes the whole record in one go and moves updatedAt', async () => {
+    setTime('2026-05-01T09:00:00.000Z');
+    await store.updateProgress('l1', 'towns-near-rivers', (p) => ({ ...p, warmUpAnswer: 'Water' }));
+    setTime('2026-05-01T09:10:00.000Z');
+    const record = { ...emptyProgress('l1', 'towns-near-rivers'), warmUpAnswer: 'Hill', currentStage: 'write' as const };
+    const saved = await store.putProgress(record);
+    expect(saved).toEqual({ ...record, updatedAt: '2026-05-01T09:10:00.000Z' });
     expect(await store.getProgress('l1', 'towns-near-rivers')).toEqual(saved);
   });
 

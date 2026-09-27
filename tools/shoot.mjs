@@ -61,6 +61,10 @@ function findSmallTargets(minTarget) {
     if (style.display === 'none' || style.visibility === 'hidden' || Number(style.opacity) === 0) continue;
     const rect = el.getBoundingClientRect();
     if (rect.width === 0 && rect.height === 0) continue; // not rendered at all
+    // A glossary word inside running text: WCAG 2.5.8 exempts inline targets,
+    // and GlossaryTerm.css already gives each one a 44px-tall hit area with an
+    // absolutely positioned ::before, which the element's own box doesn't show.
+    if (el.matches('.tw-term')) continue;
     if (rect.width < minTarget || rect.height < minTarget) {
       const label = (el.getAttribute('aria-label') || el.textContent || '').trim().slice(0, 40);
       out.push(`${el.tagName.toLowerCase()}${el.id ? `#${el.id}` : ''} "${label}" ${Math.round(rect.width)}x${Math.round(rect.height)}`);

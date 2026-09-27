@@ -63,8 +63,10 @@ src/                           the app (created in phase 1)
 - Each glossary word is marked on its first appearance in each section, in both the standard and simpler text; tapping it opens the definition (`GlossaryTerm`).
 - Evidence with `fictional: true` shows its label ("Fictional example created for this lesson.").
 - Write: show the example answer only after the learner has written something or asks to see one.
-- Watch: embed from `youtube-nocookie.com`, only after the learner taps play, never autoplay. If the player hasn't loaded after 20 seconds, or "Save data" is on, show the written version.
+- Watch: embed from `youtube-nocookie.com`, only after the learner taps play, never autoplay. If the player hasn't loaded after 20 seconds, or "Save data" is on, show the written version. Before the tap nothing may be requested from YouTube or Google (no thumbnails; the poster is drawn from the content). The iframe carries its own `referrerpolicy="strict-origin-when-cross-origin"`, because `index.html` sets `no-referrer` for the site and YouTube's player refuses to play without a referrer (Error 153). The content note goes only in a collapsed "For teachers" note.
 - Reflect: the required prompt completes the lesson.
+- When each stage counts as done is written down in `src/lesson/progressRules.ts`; change it there (and in `docs/PRODUCT.md`), not in the stage components. The course map, the learner home and the complete screen read the same saved `stagesDone`, `currentStage` and `completedAt`.
+- The lesson player (`src/lesson/`, `src/pages/lesson/`) saves through `useLessonPlayer().update()`; never write lesson progress to IndexedDB from a stage directly. Look-around and "nobody chosen" keep work in memory only.
 - `estimatedMinutes` is an estimate; show it as "About 30–50 min".
 - Pictures: show `visual.src` inline in the Read stage near the evidence, with `visual.alt` as its alt text. They follow `docs/content/VISUALS_SPEC.md`; new pictures must too.
 - Section checks (`content/quizzes/<section>.json`): one question at a time, shuffled options with per-option feedback, an optional `stimulus` (a short made-up example) shown above the question, and a results message chosen by score (high: at least 8 of 10 or 10 of 12; low: under half; otherwise middle). Questions are written to `docs/content/QUIZ_SPEC.md`.
@@ -73,7 +75,7 @@ src/                           the app (created in phase 1)
 
 Version the schema and write migrations. Nothing leaves the device in phase 1.
 
-- `learners`: id, name, colour, created date, optional class code.
+- `learners`: id, name, colour, created date, optional class code, optional reading level (Standard or Simpler, last chosen).
 - `progress` per learner and lesson: stages done, current stage, warm-up answer, check answers, writing and planning notes, self-check ticks, how they practised speaking, reflections, completed date.
 - `quizAttempts` per learner and section: answers, score, date (keep the best and the latest).
 - `recordings` per learner and lesson: the latest audio clip only. Delete it when the learner is removed or taps Delete.
