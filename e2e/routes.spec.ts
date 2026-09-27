@@ -5,7 +5,7 @@ import { expect, test, type Page } from '@playwright/test';
 // any of the three widths.
 const pages: Array<[path: string, heading: string]> = [
   ['/', "Who's learning today?"],
-  ['/course', 'Course map'],
+  ['/course', 'Exploring Our World'],
   ['/journal', 'My journal'],
   ['/educators', 'For educators'],
   ['/about', 'About Thinkerwell'],
@@ -19,6 +19,17 @@ const pages: Array<[path: string, heading: string]> = [
 
 async function horizontalOverflow(page: Page): Promise<number> {
   return page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+}
+
+/**
+ * Below about 1100px wide, SiteHeader hides the five nav links behind a menu
+ * button (see src/app/useIsCompactHeader.ts) and shows them inside the phone
+ * navigation sheet instead. Open it first when it's there, so the tests below
+ * work the same way at every width Playwright runs them at.
+ */
+async function openMobileNavIfPresent(page: Page): Promise<void> {
+  const menuButton = page.getByRole('button', { name: 'Open navigation menu' });
+  if (await menuButton.isVisible()) await menuButton.click();
 }
 
 for (const [path, heading] of pages) {
@@ -61,7 +72,7 @@ test.describe('old Base44 URLs', () => {
   test('/courses and /onboarding redirect', async ({ page }) => {
     await page.goto('/courses');
     await expect(page).toHaveURL(/\/course$/);
-    await expect(page.locator('h1')).toHaveText('Course map');
+    await expect(page.locator('h1')).toHaveText('Exploring Our World');
     await page.goto('/onboarding');
     await expect(page).toHaveURL(/\/$/);
     await expect(page.locator('h1')).toHaveText("Who's learning today?");
@@ -89,7 +100,7 @@ test.describe('not found', () => {
 
       await main.getByRole('link', { name: 'See the course' }).click();
       await expect(page).toHaveURL(/\/course$/);
-      await expect(page.locator('h1')).toHaveText('Course map');
+      await expect(page.locator('h1')).toHaveText('Exploring Our World');
     });
   }
 });
@@ -122,13 +133,19 @@ test.describe('keyboard', () => {
 
   test('every nav link shows a visible outline when focused with the keyboard', async ({ page }) => {
     await page.goto('/');
+    await openMobileNavIfPresent(page);
     const links = page.getByRole('navigation', { name: 'Main' }).getByRole('link');
     const count = await links.count();
     expect(count).toBe(5);
 
-    await page.keyboard.press('Tab'); // skip link
-    for (let i = 0; i < count; i++) {
+    // Tab forward until the first nav link has focus (right after the skip
+    // link and logo on the full header; right after the sheet's own close
+    // button on the phone one), then step through the rest of them.
+    for (let i = 0; i < 20; i++) {
+      if (await links.first().evaluate((el) => el === document.activeElement)) break;
       await page.keyboard.press('Tab');
+    }
+    for (let i = 0; i < count; i++) {
       const link = links.nth(i);
       await expect(link).toBeFocused();
       const outline = await link.evaluate((el) => {
@@ -137,11 +154,13 @@ test.describe('keyboard', () => {
       });
       expect(outline.style).not.toBe('none');
       expect(outline.width).toBeGreaterThanOrEqual(2);
+      await page.keyboard.press('Tab');
     }
   });
 
   test('following a nav link moves focus to the new page heading', async ({ page }) => {
     await page.goto('/');
+    await openMobileNavIfPresent(page);
     await page.getByRole('navigation', { name: 'Main' }).getByRole('link', { name: 'About' }).click();
     await expect(page).toHaveURL(/\/about$/);
     await expect(page.locator('h1')).toBeFocused();
@@ -150,6 +169,7 @@ test.describe('keyboard', () => {
 
   test('nav links are at least 44px tall', async ({ page }) => {
     await page.goto('/');
+    await openMobileNavIfPresent(page);
     const links = page.getByRole('navigation', { name: 'Main' }).getByRole('link');
     for (const box of await links.evaluateAll((els) => els.map((el) => el.getBoundingClientRect().height))) {
       expect(box).toBeGreaterThanOrEqual(44);

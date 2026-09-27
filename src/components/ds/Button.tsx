@@ -1,4 +1,5 @@
-import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactElement } from 'react';
+import { createElement, type AnchorHTMLAttributes, type ButtonHTMLAttributes, type ReactElement } from 'react';
+import { useDsLinkComponent } from './DsLinkProvider';
 import { Icon } from './Icon';
 import type { IconName } from './types';
 import { cx } from './internal/cx';
@@ -43,15 +44,18 @@ export function Button({
       {iconRight ? <Icon name={iconRight} size={iconSize} /> : null}
     </>
   );
+  const LinkTag = useDsLinkComponent();
 
   if (href) {
     // An anchor has no `disabled`; a disabled-looking link should not be given an href by the caller.
     const anchorRest = rest as unknown as AnchorHTMLAttributes<HTMLAnchorElement>;
-    return (
-      <a href={href} className={cls} {...anchorRest}>
-        {content}
-      </a>
-    );
+    // createElement, not JSX: LinkTag is either 'a' or the router-aware link
+    // from DsLinkProvider — a stable reference either way, but eslint's
+    // react-hooks/static-components rule can't tell that from a JSX tag
+    // built from a variable, and flags it as a component "created" during
+    // render. createElement is the standard escape hatch for this exact,
+    // deliberate dynamic-tag pattern.
+    return createElement(LinkTag, { href, className: cls, ...anchorRest }, content);
   }
 
   return (

@@ -1,0 +1,56 @@
+.tw-mobilenav-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: color-mix(in sRGB, var(--ink) 40%, transparent);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tw-mobilenav {
+  box-sizing: border-box;
+  width: min(320px, 84vw);
+  height: 100%;
+  overflow-y: auto;
+  background: var(--paper);
+  border-inline-start: 2px solid var(--ink);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.tw-mobilenav-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.tw-mobilenav-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.tw-mobilenav-list a {
+  display: flex;
+  align-items: center;
+  min-block-size: var(--target-min);
+  padding-inline: var(--space-3);
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.tw-mobilenav-list a:hover {
+  background: var(--lemon-soft);
+}
+
+.tw-mobilenav-list a[aria-current='page'] {
+  background: var(--ink);
+  color: var(--on-ink);
+}

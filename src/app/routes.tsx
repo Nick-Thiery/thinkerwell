@@ -6,6 +6,7 @@ import { EducatorsPage } from '../pages/EducatorsPage';
 import { HomePage } from '../pages/HomePage';
 import { JournalPage } from '../pages/JournalPage';
 import { NotFoundPage } from '../pages/NotFoundPage';
+import { RouteErrorPage } from '../pages/RouteErrorPage';
 import { AppLayout } from './AppLayout';
 import { LessonRoute } from './LessonRoute';
 import { SectionCheckRoute } from './SectionCheckRoute';
@@ -70,6 +71,8 @@ export const routes: RouteObject[] = [
   {
     path: '/',
     element: <AppLayout />,
+    // A crash anywhere below never shows react-router's default error page.
+    errorElement: <RouteErrorPage />,
     children: [
       { index: true, element: <HomePage /> },
       { path: 'course', element: <CoursePage /> },

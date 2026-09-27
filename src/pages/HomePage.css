@@ -1,0 +1,412 @@
+/*
+ * Home (/): the "who's learning" picker and new-learner form (hero pane +
+ * lavender panel, Main.dc.html / NewLearner.dc.html / PhoneHome.dc.html), the
+ * learner dashboard (Dashboard.dc.html), and the simpler guest / no-storage
+ * messages. Typography leans on the shared utility classes in tokens.css
+ * (.h1, .h2, .h3, .body, .body-lg, .small, .eyebrow); this file is layout,
+ * panels and the few controls (colour swatches, section rows) with no ready
+ * ds component of their own.
+ */
+
+.tw-home-message {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  max-inline-size: var(--reading-measure);
+}
+
+/* ------------------------------------------------------------------ split */
+
+.tw-home-split {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: stretch;
+}
+
+@media (min-width: 900px) {
+  .tw-home-split {
+    flex-direction: row;
+    gap: var(--space-6);
+  }
+}
+
+.tw-home-hero {
+  flex: 1 1 55%;
+  box-sizing: border-box;
+  min-inline-size: 0;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--space-5);
+}
+
+.tw-home-panel {
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  background: var(--lavender);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+@media (min-width: 900px) {
+  .tw-home-panel {
+    flex: 0 0 420px;
+    max-inline-size: 480px;
+  }
+}
+
+.tw-home-panel-intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-home-panel-intro h1 {
+  margin: 0;
+}
+
+.tw-home-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.tw-home-stages {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tw-home-stages-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.tw-home-starts-with {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-inline-size: 480px;
+  padding: var(--space-5) var(--space-6);
+  border-radius: var(--radius-xl);
+  background: var(--lavender-wash);
+}
+
+.tw-home-starts-with-lesson {
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 500;
+}
+
+/* ------------------------------------------------------------- tile grid */
+
+.tw-home-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+  /* Every tile here has a fixed width (LearnerTile's own --tile-size), so a
+     default (stretch) grid item lines up at its column's start rather than
+     the middle of the stretched cell. Learner tiles hide that by centring
+     themselves in their column through .tw-tile-wrap's own justify-self,
+     but the bare "I'm new here" tile has no such wrapper, so it needs the
+     grid to centre it directly — otherwise it drifts out of line with the
+     row above it at any width where a column is wider than a tile, which
+     used to happen above 480px (r2-browser-3). */
+  justify-items: center;
+}
+
+/* Below about 480px wide, two of LearnerTile's default 172px tiles no longer
+   fit two to a row inside the lavender panel's own padding — they'd overlap
+   by close to 10px. PhoneHome.dc.html uses a smaller tile at this width. */
+@media (max-width: 480px) {
+  .tw-home-panel {
+    padding-inline: var(--space-4);
+  }
+
+  .tw-home-tiles {
+    --tile-size: 150px;
+    gap: var(--space-3);
+  }
+}
+
+.tw-home-lookaround {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.tw-home-lock-note {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--ink-muted);
+}
+
+/* -------------------------------------------------------------- confirm */
+
+.tw-home-confirm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border-radius: var(--radius-xl);
+  background: var(--paper);
+}
+
+.tw-home-confirm h2 {
+  margin: 0;
+}
+
+.tw-home-confirm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.tw-home-confirm-error {
+  margin: 0;
+  color: var(--retry);
+  font-weight: 700;
+}
+
+/* The new-learner form's own submit error, unlike .tw-home-confirm-error
+   above, sits straight on the lavender panel rather than on a paper card, so
+   it can't use --retry text (r2-rules-1: fails WCAG 1.4.3 there). */
+.tw-home-form-error {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.tw-home-form-error-icon {
+  color: var(--retry);
+  flex: none;
+}
+
+/* -------------------------------------------------------------- new form */
+
+.tw-home-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.tw-colour-fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tw-colour-radiogroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.tw-colour-swatch {
+  inline-size: 48px;
+  block-size: 48px;
+  border-radius: 50%;
+  padding: 0;
+  cursor: pointer;
+}
+
+.tw-colour-swatch:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 3px;
+}
+
+/* -------------------------------------------------------------- dashboard */
+
+.tw-dash {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.tw-dash-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-5);
+}
+
+.tw-dash-greeting {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-dash-greeting h1 {
+  margin: 0;
+}
+
+.tw-dash-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.tw-dash-finished {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  background: var(--lemon-soft);
+}
+
+.tw-dash-finished h2 {
+  margin: 0;
+}
+
+.tw-dash-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-8);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .tw-dash-grid {
+    grid-template-columns: minmax(0, 1fr) 380px;
+  }
+}
+
+.tw-dash-sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.tw-dash-sections-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.tw-dash-sections-head h2 {
+  margin: 0;
+}
+
+/* A full-width row (rendered directly rather than through <Button> — see the
+   comment in LearnerDashboard.tsx): the section badge, status text and
+   progress ring spread across it. Wraps onto two lines below about 480px,
+   where all three no longer fit one row without squeezing the section name
+   into an unreadably narrow column. Only "You are here" gets an ink border
+   (tw-section-row-current); every other row keeps the plain line colour, so
+   the current section actually stands out (CLAUDE.md's colour rules). */
+.tw-btn.tw-section-row {
+  display: flex;
+  inline-size: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--space-2) var(--space-5);
+  padding: var(--space-5) var(--space-6);
+  white-space: normal;
+  font-weight: 400;
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.tw-btn.tw-section-row:hover {
+  border-color: var(--line-strong);
+}
+
+.tw-btn.tw-section-row.tw-section-row-current {
+  border-color: var(--ink);
+}
+
+.tw-section-row-badge {
+  flex: 1 1 200px;
+  min-inline-size: 0;
+}
+
+.tw-section-row-status {
+  flex: none;
+  color: var(--ink-muted);
+  margin-inline-start: auto;
+}
+
+@media (max-width: 480px) {
+  .tw-section-row-status {
+    /* Lines up under the section name once the row has wrapped, rather than
+       under its icon. */
+    margin-inline-start: calc(40px + var(--space-3));
+  }
+}
+
+.tw-dash-aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.tw-check-card,
+.tw-journal-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  box-sizing: border-box;
+}
+
+.tw-journal-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.tw-check-card h3,
+.tw-journal-card h3 {
+  margin: 0;
+}
+
+.tw-check-card-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.tw-check-card-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.tw-journal-meta {
+  margin: 0;
+  color: var(--ink-muted);
+}
+
+.tw-journal-snippet {
+  margin: 0;
+}

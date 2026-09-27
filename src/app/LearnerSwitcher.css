@@ -1,0 +1,124 @@
+.tw-switcher {
+  position: absolute;
+  z-index: 40;
+  inset-inline-end: var(--space-4);
+  inset-block-start: calc(100% + var(--space-2));
+  box-sizing: border-box;
+  width: min(360px, calc(100vw - var(--space-8)));
+  /* dvh, not vh: on phones the address bar can eat a chunk of the viewport
+     that vh still counts, which is exactly the width this popover has to
+     fit at (r2-browser-2). A fixed 560px on top of that used to clip a
+     second row of tiles even on tablet and laptop, where there was more
+     than 1,000px of unused space below the popover (r3-browser-1): drop the
+     fixed part and let the popover use whatever the viewport allows, so 2-3
+     learners fit without scrolling on every tested size and only a
+     genuinely long list scrolls. */
+  max-height: calc(100dvh - 96px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border-radius: var(--radius-xl);
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  box-shadow: var(--shadow-pop);
+}
+
+.tw-switcher-head {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.tw-switcher-head h2 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 600;
+}
+
+/* Only the learner tiles scroll. "Just look around" and "Back to who's
+   learning" live in the fixed footer below, so both stay reachable
+   whatever the learner count is (r2-browser-2 / r2-checks-3): with three or
+   more learners the grid alone can be taller than the popover's own
+   max-height, but the two actions that make the switcher useful never get
+   pushed below the fold or hidden behind a scroll a learner has no cue to
+   find.
+
+   scrollbar-gutter keeps a real, laid-out scrollbar rather than an overlay
+   one a platform can hide until it's touched, and .tw-switcher-scroll--more
+   (toggled from script when there's content below the fold) adds a bottom
+   fade, so a partial list never looks like the whole one (r3-browser-1). */
+.tw-switcher-scroll {
+  flex: 1 1 auto;
+  min-block-size: 0;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  position: relative;
+}
+
+.tw-switcher-scroll--more {
+  box-shadow: inset 0 -16px 12px -12px rgb(0 0 0 / 22%);
+}
+
+.tw-switcher-tiles {
+  /* Smaller than the picker's own tiles, and centred rather than stretched:
+     the switcher is a compact popover, not the full "who's learning" panel,
+     and this is the size that fits tiles inside it without the ring around
+     a selected tile, or the dashed border on "I'm new here", being clipped
+     by the scroll container. */
+  --tile-size: 132px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+  justify-items: center;
+  padding: var(--space-1);
+}
+
+.tw-switcher-footer {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-block-start: var(--space-4);
+  border-block-start: 1px solid var(--line);
+}
+
+.tw-switcher-guest {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-block-size: var(--target-min);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--line);
+  background: var(--paper);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: start;
+}
+
+.tw-switcher-guest:hover {
+  border-color: var(--line-strong);
+}
+
+.tw-switcher-back {
+  align-self: flex-start;
+}
+
+@media (min-width: 1280px) {
+  .tw-switcher {
+    inset-inline-end: var(--space-10);
+  }
+}
+
+@media (min-width: 820px) and (max-width: 1279px) {
+  .tw-switcher {
+    inset-inline-end: var(--space-8);
+  }
+}

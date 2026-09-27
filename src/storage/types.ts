@@ -18,8 +18,27 @@ import type { SectionId, StageId } from '../content';
 
 export type { SectionId, StageId };
 
-/** Avatar colours, matching the design system's tw-tone-* classes. */
-export const LEARNER_COLOURS = ['lavender', 'lemon', 'history', 'geography', 'culture', 'civics'] as const;
+/**
+ * Avatar colours a learner can pick on the NewLearner panel, matching the
+ * design system's tw-tone-* classes: Yellow (lemon), Sand (history), Green
+ * (geography), Blue (civics), White (paper), exactly as
+ * docs/screens/NewLearner.dc.html offers them.
+ *
+ * The brand book (docs/design-system/README.md) actually lists "learner
+ * avatars" as a `lavender` use, and keeps the four section tints
+ * (`sec-history`, `sec-geography`, `sec-culture`, `sec-civics`) for section
+ * places only, "always beside the section's icon and name" — lavender, not
+ * a section tint, is its answer for avatars. NewLearner.dc.html instead
+ * reuses lemon, three of the four section tints and paper, and leaves
+ * lavender and the "culture" tint out. This file follows the screen, as a
+ * deliberate, narrow, RECORDED exception (CLAUDE.md and docs/PRODUCT.md's
+ * phase 3 decisions): a learner's own avatar colour is not "in a section
+ * place" the way a lesson card or section header is, so seeing it away from
+ * that section's icon and name reads as a colour choice, not a mislabelled
+ * section. This is still open for Justin and Nick to confirm or revert to
+ * the brand book's lavender-avatars rule.
+ */
+export const LEARNER_COLOURS = ['lemon', 'history', 'geography', 'civics', 'paper'] as const;
 export type LearnerColour = (typeof LEARNER_COLOURS)[number];
 
 export interface Learner {

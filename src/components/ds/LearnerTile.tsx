@@ -24,6 +24,17 @@ export interface LearnerTileProps {
   className?: string;
   /** Not in the reference's index.d.ts; added so a caller (phase 3) can wire the tile up. */
   onClick?: () => void;
+  /**
+   * Not in the reference's index.d.ts; added so the "Who's learning?" picker
+   * can offer to remove a learner. Only meaningful for variant="person".
+   * Rendered as its own button beside the tile, never inside it — a button
+   * can't nest inside another button — so the tile itself stays one single
+   * tap target and this is a clearly separate, smaller one. The caller
+   * builds the actual confirmation (CLAUDE.md rule 3: no bare window.confirm).
+   */
+  onRemove?: () => void;
+  /** Accessible label for the remove button, e.g. "Remove Amina". Required whenever `onRemove` is given. */
+  removeLabel?: string;
 }
 
 /**
@@ -31,7 +42,7 @@ export interface LearnerTileProps {
  * device, "I'm new", or "Just look around" (docs/design-system/components/LearnerTile.md).
  * Shows a first name only: no photos, no surnames.
  */
-export function LearnerTile({ name, tone, meta, selected, variant = 'person', className, onClick }: LearnerTileProps) {
+export function LearnerTile({ name, tone, meta, selected, variant = 'person', className, onClick, onRemove, removeLabel }: LearnerTileProps) {
   const avatar =
     variant === 'new' ? (
       <span className="tw-avatar tw-avatar-lg">
@@ -44,7 +55,7 @@ export function LearnerTile({ name, tone, meta, selected, variant = 'person', cl
     ) : (
       <Avatar large tone={tone} name={name} />
     );
-  return (
+  const tile = (
     <button
       type="button"
       className={cx('tw-tile', variant === 'new' && 'tw-tile-new', className)}
@@ -55,5 +66,16 @@ export function LearnerTile({ name, tone, meta, selected, variant = 'person', cl
       <span className="tw-tile-name">{name}</span>
       {meta ? <span className="tw-tile-meta">{meta}</span> : null}
     </button>
+  );
+
+  if (variant !== 'person' || !onRemove) return tile;
+
+  return (
+    <span className="tw-tile-wrap">
+      {tile}
+      <button type="button" className="tw-menu-btn tw-tile-remove" aria-label={removeLabel} onClick={onRemove}>
+        <Icon name="Trash2" size={18} />
+      </button>
+    </span>
   );
 }

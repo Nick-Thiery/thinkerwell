@@ -1,0 +1,214 @@
+/*
+ * Course map (docs/screens/Course.dc.html at 1280, PhoneCourse.dc.html at
+ * 390). SectionsSidebar and SectionChips are both always rendered; which one
+ * shows at which width is a pure CSS toggle here, since both are just #id
+ * anchor jumps.
+ */
+
+.tw-course-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.tw-course-intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-inline-size: var(--reading-measure);
+}
+
+.tw-course-intro .h1 {
+  margin: 0;
+}
+
+.tw-course-intro p {
+  margin: 0;
+}
+
+.tw-course-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-block-start: var(--space-1);
+}
+
+.tw-course-guest-note {
+  color: var(--ink-muted);
+}
+
+/* Mirrors SectionsSidebar's own "nothing is locked" note (hidden below), for
+   widths where the sidebar itself is hidden in favour of the chip row. */
+.tw-course-nothing-locked-mobile {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--ink-muted);
+  margin: 0;
+}
+
+@media (min-width: 1024px) {
+  .tw-course-nothing-locked-mobile {
+    display: none;
+  }
+}
+
+/* Phone/tablet section chips: a horizontal, scrollable row of jump links. */
+.tw-course-chips {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  padding-block-end: var(--space-1);
+}
+
+.tw-course-chips a {
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.tw-course-chips a[aria-current='true'] {
+  background: var(--ink);
+  color: var(--on-ink);
+  border-color: var(--ink);
+}
+
+.tw-course-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.tw-course-sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* Desktop sidebar: hidden below 1024px in favour of the chip row above. */
+.tw-course-nav {
+  display: none;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-course-nav-label {
+  color: var(--ink-muted);
+  padding: 0 var(--space-1) var(--space-1);
+}
+
+.tw-course-nav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  min-block-size: var(--target-min);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  border: 2px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.tw-course-nav-link:hover {
+  border-color: var(--line-strong);
+}
+
+/* The section holding the learner's next step: an ink border, same weight as
+   every other "you are here" treatment in the app (LearnerDashboard's own
+   section rows use the same rule). */
+.tw-course-nav-link[aria-current='true'] {
+  border-color: var(--ink);
+}
+
+.tw-course-nav-name {
+  flex-grow: 1;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+.tw-course-nav-count {
+  font-size: 14px;
+  color: var(--ink-muted);
+}
+
+.tw-course-nav-note {
+  display: flex;
+  gap: var(--space-3);
+  margin-block-start: var(--space-3);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--lavender-wash);
+}
+
+.tw-course-nav-note span {
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.tw-course-section {
+  border-radius: var(--radius-xl);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.tw-course-section-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-3);
+}
+
+.tw-course-section-body[hidden] {
+  display: none;
+}
+
+/* Sits between the SectionHeader and the (possibly hidden) lesson list: the
+   one-line summary while collapsed, plus the disclosure button, which stays
+   the same element whether the section is open or closed (see SectionCard's
+   own comment) so toggling it never moves keyboard focus. */
+.tw-course-section-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-5);
+}
+
+.tw-course-section-summary {
+  margin: 0;
+  color: var(--ink-muted);
+}
+
+.tw-course-section-meta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-inline-start: auto;
+}
+
+@media (min-width: 820px) {
+  .tw-course-section-body {
+    padding: var(--space-5);
+  }
+}
+
+@media (min-width: 1024px) {
+  .tw-course-chips {
+    display: none;
+  }
+
+  .tw-course-body {
+    display: grid;
+    grid-template-columns: 272px minmax(0, 1fr);
+    gap: var(--space-10);
+    align-items: start;
+  }
+
+  .tw-course-nav {
+    display: flex;
+  }
+}

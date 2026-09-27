@@ -73,6 +73,14 @@ The schema version is `DB_VERSION` in `src/storage/db.ts`, and `migrations` ther
 
 Removing a learner deletes their progress, quiz attempts and recordings in one transaction, so either all of it goes or none of it does.
 
+## Learners, look-around and routing
+
+`src/session/LearnerSessionProvider` (mounted once, in `AppLayout`) reads the device's learners and current learner from storage and keeps them, plus "just look around" mode, in memory for every page; `useLearnerSession()` reads it and `useLearnerProgress(learnerId)` loads one learner's saved progress into the shape `src/storage/progress.ts`'s helpers (`findContinueTarget`, `sectionProgress`, ...) take. Both effects use a `useRef` "still mounted" guard around their async storage reads — reset to `true` at the *start* of the effect, not only set to `false` in its cleanup, because React's `<StrictMode>` (which `src/main.tsx` wraps the app in) deliberately mounts, cleans up and remounts every effect once in development; a cleanup-only reset would leave the guard `false` forever and every real load would silently never finish.
+
+`?preview=true` on any URL forces look-around mode (old Base44 educator links); "Just look around" saves nothing, not even settings. Returning to the "who's learning" picker (the switcher's "I'm new here", or the look-around banner's "Choose a learner") always navigates to `/`, since the picker only exists there.
+
+The phase-2 design-system components that link somewhere internally (`Button` with `href`, `LessonRow`, `StagePath`, `Logo`, `SiteHeader`'s nav) render a plain `<a>` by default, so a page can use them without a router. `src/components/ds/DsLinkProvider` is a small context those components check first; `AppLayout` mounts it once with `src/app/RouterDsLink.tsx`, which renders React Router's `Link` (so internal navigation doesn't reload the page or lose look-around state). A page can use the same context directly with `useDsLinkComponent()` when it needs a bespoke element to be a router-aware link too (see `LearnerDashboard`'s per-section rows, which render their own link rather than going through `Button` — `Button` wraps every child in one `<span>`, which is right for its usual icon-plus-label case but would collapse a row with several independent flex children).
+
 ## Where things live
 
 ```
@@ -81,10 +89,11 @@ docs/                    product notes, build plan, design system, screen refere
 public/images/           mascot, UN goal icons, founder photo
 scripts/                 lesson checker (check_lesson.py), check-content.sh, setup-python.sh
 src/main.tsx             entry: router and global styles
-src/app/                 routes, app shell, lesson URL handling (old Base44 ids redirect here)
-src/pages/               one component per page (placeholders until later phases)
+src/app/                 routes, app shell (header, learner switcher, phone nav), lesson URL handling (old Base44 ids redirect here)
+src/pages/               one component per page: Home (picker/new learner/dashboard/guest), the course map, and placeholders for later phases
+src/session/             LearnerSessionProvider/useLearnerSession (learners, current learner, look-around) and useLearnerProgress, shared by Home and the course map
 src/content/             zod schemas and typed getters for content/*.json
-src/storage/             IndexedDB (idb): learners, progress, quiz attempts, recordings, settings
+src/storage/             IndexedDB (idb): learners, progress, quiz attempts, recordings, settings; src/storage/progress.ts has the pure progress-lookup helpers (continue target, per-section counts, ...)
 src/i18n/                message helper; every UI string is in src/i18n/messages/en.json
 src/styles/              tokens.css (copied from the design system), fonts.css, global.css
 src/components/ds/       the ported design-system components

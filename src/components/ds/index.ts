@@ -11,6 +11,8 @@
 export { Icon } from './Icon';
 export type { IconProps } from './Icon';
 export type { IconName, SectionId, StageId, Tone } from './types';
+export { DsLinkProvider, useDsLinkComponent } from './DsLinkProvider';
+export type { DsLinkComponent, DsLinkProviderProps } from './DsLinkProvider';
 
 // Actions, forms and voice.
 export { Button } from './Button';

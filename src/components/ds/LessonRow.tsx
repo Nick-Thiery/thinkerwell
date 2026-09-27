@@ -1,5 +1,7 @@
+import { createElement } from 'react';
 import { STAGES } from '../../content/stages';
 import { useI18n } from '../../i18n';
+import { useDsLinkComponent } from './DsLinkProvider';
 import { Icon } from './Icon';
 import { cx } from './internal/cx';
 import { StageDots } from './StageDots';
@@ -71,19 +73,10 @@ export function LessonRow({
     : t('ds.course.lessonRow.ariaLabelLesson', { number: number ?? '', title, status: statusText, cta: ctaText }) +
       (question ? ` ${question}` : '');
   const doneStages = done || (status === 'completed' ? [...STAGES] : []);
+  const LinkTag = useDsLinkComponent();
 
-  return (
-    <a
-      href={href || '#'}
-      className={cx(
-        'tw-row',
-        status === 'completed' && 'tw-row-done',
-        highlight && 'tw-row-now',
-        isQuiz && 'tw-row-quiz',
-        className,
-      )}
-      aria-label={ariaLabel}
-    >
+  const rowContent = (
+    <>
       <span className="tw-row-num" aria-hidden="true">
         {isQuiz ? (
           <Icon name="ClipboardCheck" size={22} />
@@ -111,6 +104,17 @@ export function LessonRow({
         {ctaText}
         <Icon name="ArrowRight" size={18} />
       </span>
-    </a>
+    </>
+  );
+
+  // createElement, not JSX: see the matching comment in Button.tsx.
+  return createElement(
+    LinkTag,
+    {
+      href: href || '#',
+      className: cx('tw-row', status === 'completed' && 'tw-row-done', highlight && 'tw-row-now', isQuiz && 'tw-row-quiz', className),
+      'aria-label': ariaLabel,
+    },
+    rowContent,
   );
 }

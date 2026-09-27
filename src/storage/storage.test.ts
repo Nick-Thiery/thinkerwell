@@ -42,7 +42,7 @@ function attempt(score: number, finishedAt: string, total = 8): QuizAttempt {
 describe('learners', () => {
   it('adds a learner with an id, a trimmed name and a created date', async () => {
     setTime('2026-01-02T03:04:05.000Z');
-    const learner = await store.addLearner({ name: '  Amina ', colour: 'lavender' });
+    const learner = await store.addLearner({ name: '  Amina ', colour: 'lemon' });
     expect(learner.id).toMatch(/^[0-9a-f-]{36}$/);
     expect(learner.name).toBe('Amina');
     expect(learner.createdAt).toBe('2026-01-02T03:04:05.000Z');
@@ -52,7 +52,7 @@ describe('learners', () => {
 
   it('keeps a class code, trimmed, and drops a blank one', async () => {
     const withCode = await store.addLearner({ name: 'Omar', colour: 'civics', classCode: ' HLP-07 ' });
-    const blank = await store.addLearner({ name: 'Sara', colour: 'culture', classCode: '   ' });
+    const blank = await store.addLearner({ name: 'Sara', colour: 'history', classCode: '   ' });
     expect(withCode.classCode).toBe('HLP-07');
     expect(blank).not.toHaveProperty('classCode');
     expect(await store.getLearner(blank.id)).not.toHaveProperty('classCode');
@@ -77,7 +77,7 @@ describe('learners', () => {
   });
 
   it('updates name, colour and class code', async () => {
-    const learner = await store.addLearner({ name: 'Amina', colour: 'lavender', classCode: 'HLP-01' });
+    const learner = await store.addLearner({ name: 'Amina', colour: 'lemon', classCode: 'HLP-01' });
     const renamed = await store.updateLearner(learner.id, { name: ' Mina ', colour: 'geography' });
     expect(renamed).toEqual({ ...learner, name: 'Mina', colour: 'geography' });
 
@@ -95,7 +95,7 @@ describe('learners', () => {
 
   it('throws when updating a missing learner or with an empty name', async () => {
     await expect(store.updateLearner('nobody', { name: 'X' })).rejects.toThrow(/No learner/);
-    const learner = await store.addLearner({ name: 'Amina', colour: 'lavender' });
+    const learner = await store.addLearner({ name: 'Amina', colour: 'lemon' });
     await expect(store.updateLearner(learner.id, { name: '  ' })).rejects.toThrow(/name/);
     expect((await store.getLearner(learner.id))?.name).toBe('Amina');
   });
@@ -103,7 +103,7 @@ describe('learners', () => {
 
 describe('removeLearner', () => {
   it("deletes only that learner's progress, quiz attempts and recordings, and clears the current learner", async () => {
-    const amina = await store.addLearner({ name: 'Amina', colour: 'lavender' });
+    const amina = await store.addLearner({ name: 'Amina', colour: 'lemon' });
     const omar = await store.addLearner({ name: 'Omar', colour: 'civics' });
     for (const id of [amina.id, omar.id]) {
       await store.markStageDone(id, 'towns-near-rivers', 'read');
@@ -129,7 +129,7 @@ describe('removeLearner', () => {
   });
 
   it('leaves the current learner alone when removing someone else', async () => {
-    const amina = await store.addLearner({ name: 'Amina', colour: 'lavender' });
+    const amina = await store.addLearner({ name: 'Amina', colour: 'lemon' });
     const omar = await store.addLearner({ name: 'Omar', colour: 'civics' });
     await store.setCurrentLearnerId(omar.id);
     await store.removeLearner(amina.id);
@@ -137,7 +137,7 @@ describe('removeLearner', () => {
   });
 
   it('deletes nothing if any step fails', async () => {
-    const amina = await store.addLearner({ name: 'Amina', colour: 'lavender' });
+    const amina = await store.addLearner({ name: 'Amina', colour: 'lemon' });
     await store.markStageDone(amina.id, 'towns-near-rivers', 'read');
     await store.recordQuizAttempt(amina.id, 'history', attempt(5, '2026-01-01T00:00:00.000Z'));
     await store.saveRecording(amina.id, 'towns-near-rivers', new Blob(['clip'], { type: 'audio/webm' }), 1200);
@@ -165,7 +165,7 @@ describe('removeLearner', () => {
   });
 
   it('does nothing for an unknown id', async () => {
-    const amina = await store.addLearner({ name: 'Amina', colour: 'lavender' });
+    const amina = await store.addLearner({ name: 'Amina', colour: 'lemon' });
     await store.removeLearner('nobody');
     expect(await store.listLearners()).toEqual([amina]);
   });
@@ -389,7 +389,7 @@ describe('settings', () => {
 describe('current learner', () => {
   it('is null until set, then remembers the learner', async () => {
     expect(await store.getCurrentLearnerId()).toBeNull();
-    const learner = await store.addLearner({ name: 'Amina', colour: 'lavender' });
+    const learner = await store.addLearner({ name: 'Amina', colour: 'lemon' });
     await store.setCurrentLearnerId(learner.id);
     expect(await store.getCurrentLearnerId()).toBe(learner.id);
     await store.setCurrentLearnerId(null);
@@ -423,7 +423,7 @@ describe('app-wide store', () => {
 
   it('deleteAllData removes everything and the next getStore starts empty', async () => {
     const first = await getStore();
-    const learner = await first.addLearner({ name: 'Amina', colour: 'lavender' });
+    const learner = await first.addLearner({ name: 'Amina', colour: 'lemon' });
     await first.updateSettings({ saveData: true });
 
     await deleteAllData();

@@ -44,3 +44,22 @@
   align-items: center;
   gap: var(--space-1);
 }
+
+.tw-field-invalid input {
+  border-color: var(--retry);
+}
+
+/* The words stay ink, not burnt orange: --retry text needs a paper, canvas
+   or retry-soft ground to clear 4.5:1, and this field can sit on lavender
+   (docs/screens/NewLearner.dc.html), where it doesn't (r2-rules-1). The icon
+   alone carries the burnt-orange "not quite" colour, at the 3:1 a graphic
+   is held to, which the border already clears too. */
+.tw-help-invalid {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.tw-help-invalid-icon {
+  color: var(--retry);
+  flex: none;
+}
