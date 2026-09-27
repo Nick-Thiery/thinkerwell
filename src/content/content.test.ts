@@ -10,15 +10,22 @@ import {
   getLessonSection,
   getNextLesson,
   getPreviousLesson,
+  getQuiz,
+  getQuizzes,
   getSection,
   getSectionLessons,
   getSections,
   isLastLessonInSection,
   lessonSchema,
   loadContent,
+  loadQuizzes,
+  quizFileSchema,
 } from './index';
 
 const lessonFiles = import.meta.glob<unknown>('../../content/lessons/*.json', { eager: true, import: 'default' });
+const quizFiles = import.meta.glob<unknown>('../../content/quizzes/*.json', { eager: true, import: 'default' });
+const visualFiles = import.meta.glob('../../content/visuals/*.svg', { eager: true });
+const validVisualSrcs = new Set(Object.keys(visualFiles).map((path) => path.replace(/^.*\/content\/visuals\//, 'visuals/')));
 
 describe('content files match the schema', () => {
   it('finds all 24 lesson files', () => {
@@ -41,6 +48,58 @@ describe('content files match the schema', () => {
 
   it('loads the whole course with cross-file checks', () => {
     expect(() => loadContent(courseJson, lessonFiles)).not.toThrow();
+  });
+
+  it('loads the whole course including the visual.src check', () => {
+    expect(() => loadContent(courseJson, lessonFiles, validVisualSrcs)).not.toThrow();
+  });
+
+  it.each(getLessons().map((l) => [l.id, l.visual] as const))('lesson %s points to a picture that exists', (_id, visual) => {
+    if (visual) expect(validVisualSrcs.has(visual.src)).toBe(true);
+  });
+});
+
+describe('quiz files match the schema', () => {
+  it('finds all 4 quiz files', () => {
+    expect(Object.keys(quizFiles)).toHaveLength(4);
+  });
+
+  it.each(Object.entries(quizFiles).map(([path, data]) => [path.replace(/^.*\//, ''), data] as const))(
+    'parses %s',
+    (_file, data) => {
+      const result = quizFileSchema.safeParse(data);
+      expect(result.success ? [] : result.error.issues.map((i) => `${i.path.join('.')}: ${i.message}`)).toEqual([]);
+    },
+  );
+
+  it('loads every quiz with cross-file checks against the lessons', () => {
+    expect(() => loadQuizzes(quizFiles, getLessons())).not.toThrow();
+  });
+});
+
+describe('loadQuizzes reports problems', () => {
+  const clone = <T>(value: T): T => structuredClone(value);
+  const [firstPath, firstQuiz] = Object.entries(quizFiles).find(([path]) => path.endsWith('history.json')) as [
+    string,
+    { questions: Array<{ id: string; lesson: number }> },
+  ];
+
+  it('rejects a question about a lesson from another section', () => {
+    const quiz = clone(firstQuiz);
+    quiz.questions[0]!.lesson = 24; // civics, not this quiz's section
+    expect(() => loadQuizzes({ ...quizFiles, [firstPath]: quiz }, getLessons())).toThrow(/is in "civics"/);
+  });
+
+  it('rejects a question about a lesson that does not exist', () => {
+    const quiz = clone(firstQuiz);
+    quiz.questions[0]!.lesson = 999;
+    expect(() => loadQuizzes({ ...quizFiles, [firstPath]: quiz }, getLessons())).toThrow(/no such lesson/);
+  });
+
+  it('rejects two questions with the same id in one file', () => {
+    const quiz = clone(firstQuiz);
+    quiz.questions[1]!.id = quiz.questions[0]!.id;
+    expect(() => loadQuizzes({ ...quizFiles, [firstPath]: quiz }, getLessons())).toThrow(/two questions have id/);
   });
 });
 
@@ -71,6 +130,12 @@ describe('loadContent reports problems', () => {
     const [, second] = entries[1] as [string, Record<string, unknown>];
     const dup = { ...clone(second), id: firstLesson.id };
     expect(() => loadContent(courseJson, { ...lessonFiles, [entries[1]![0]]: dup })).toThrow(/Two lessons have id/);
+  });
+
+  it('rejects a visual.src that has no matching file', () => {
+    const lesson = clone(firstLesson) as { visual: { src: string } | null };
+    if (lesson.visual) lesson.visual.src = 'visuals/does-not-exist.svg';
+    expect(() => loadContent(courseJson, { ...lessonFiles, [firstPath]: lesson }, validVisualSrcs)).toThrow(/no such file exists/);
   });
 });
 
@@ -118,5 +183,12 @@ describe('getters', () => {
   it('keeps ids and old ids apart so redirects are never ambiguous', () => {
     const ids = new Set(getLessons().map((l) => l.id));
     for (const lesson of getLessons()) expect(ids.has(lesson.oldId)).toBe(false);
+  });
+
+  it('returns the four section checks', () => {
+    expect(getQuizzes()).toHaveLength(4);
+    expect(getQuiz('history')?.title).toContain('History');
+    expect(getQuiz('geography')?.questions).toHaveLength(10);
+    expect(getQuiz('nope')).toBeUndefined();
   });
 });

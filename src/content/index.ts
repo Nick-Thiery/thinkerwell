@@ -6,7 +6,16 @@
  * each section lists. "Next lesson" is worked out from that order.
  */
 import courseJson from '../../content/course.json';
-import { courseFileSchema, lessonSchema, type CourseFile, type Lesson, type Section, type SectionId } from './schema';
+import {
+  courseFileSchema,
+  lessonSchema,
+  quizFileSchema,
+  type CourseFile,
+  type Lesson,
+  type QuizFile,
+  type Section,
+  type SectionId,
+} from './schema';
 
 export * from './schema';
 export * from './stages';
@@ -15,6 +24,16 @@ const lessonModules = import.meta.glob<unknown>('../../content/lessons/*.json', 
   eager: true,
   import: 'default',
 });
+
+const quizModules = import.meta.glob<unknown>('../../content/quizzes/*.json', {
+  eager: true,
+  import: 'default',
+});
+
+/** Paths of every picture file, as they appear in a lesson's `visual.src` (e.g. "visuals/L01.svg"). */
+const visualPaths = new Set(
+  Object.keys(import.meta.glob('../../content/visuals/*.svg')).map((path) => path.replace(/^.*\/content\/visuals\//, 'visuals/')),
+);
 
 export class ContentError extends Error {
   override name = 'ContentError';
@@ -27,6 +46,11 @@ export interface LoadedContent {
   lessons: Lesson[];
 }
 
+/** A quiz file's key in `rawQuizzes`, e.g. "../../content/quizzes/history.json", tells us its section. */
+function sectionFromQuizPath(path: string): string {
+  return path.replace(/^.*\//, '').replace(/\.json$/, '');
+}
+
 function describeIssues(file: string, error: { issues: Array<{ path: PropertyKey[]; message: string }> }): string {
   return error.issues.map((i) => `${file}: ${i.path.map(String).join('.') || '(root)'}: ${i.message}`).join('\n');
 }
@@ -35,7 +59,12 @@ function describeIssues(file: string, error: { issues: Array<{ path: PropertyKey
  * Parses course.json and every lesson file, then checks they agree with each
  * other. Throws a ContentError listing every problem. Exported for tests.
  */
-export function loadContent(rawCourse: unknown, rawLessons: Record<string, unknown>): LoadedContent {
+export function loadContent(
+  rawCourse: unknown,
+  rawLessons: Record<string, unknown>,
+  /** Every valid `visual.src` value (e.g. "visuals/L01.svg"); when given, each lesson's picture must exist here. */
+  validVisualSrcs?: ReadonlySet<string>,
+): LoadedContent {
   const problems: string[] = [];
 
   const courseResult = courseFileSchema.safeParse(rawCourse);
@@ -64,6 +93,9 @@ export function loadContent(rawCourse: unknown, rawLessons: Record<string, unkno
     seenIds.add(lesson.id);
     if (seenOldIds.has(lesson.oldId)) problems.push(`Two lessons have oldId "${lesson.oldId}".`);
     seenOldIds.add(lesson.oldId);
+    if (validVisualSrcs && lesson.visual && !validVisualSrcs.has(lesson.visual.src)) {
+      problems.push(`Lesson ${lesson.number} (${lesson.id}) has visual.src "${lesson.visual.src}", but no such file exists in content/visuals/.`);
+    }
   }
   for (const oldId of seenOldIds) {
     if (seenIds.has(oldId)) problems.push(`oldId "${oldId}" is also a lesson id, so its redirect would be ambiguous.`);
@@ -103,7 +135,56 @@ export function loadContent(rawCourse: unknown, rawLessons: Record<string, unkno
   return { course, sections, lessons };
 }
 
-const content = loadContent(courseJson, lessonModules);
+/**
+ * Parses every quiz file in content/quizzes/, checks it against `lessons`
+ * (every question's lesson number must exist and belong to the quiz's
+ * section) and returns one QuizFile per section. Throws a ContentError
+ * listing every problem. Exported for tests.
+ */
+export function loadQuizzes(rawQuizzes: Record<string, unknown>, lessons: readonly Lesson[]): QuizFile[] {
+  const problems: string[] = [];
+  const sectionOfLesson = new Map(lessons.map((l) => [l.number, l.section]));
+
+  const parsed: QuizFile[] = [];
+  const seenSections = new Set<string>();
+  for (const [path, raw] of Object.entries(rawQuizzes).sort(([a], [b]) => a.localeCompare(b))) {
+    const file = path.replace(/^.*content\//, 'content/');
+    const result = quizFileSchema.safeParse(raw);
+    if (!result.success) {
+      problems.push(describeIssues(file, result.error));
+      continue;
+    }
+    const quiz = result.data;
+    const expectedSection = sectionFromQuizPath(path);
+    if (quiz.section !== expectedSection) {
+      problems.push(`${file}: section is "${quiz.section}", but the file is named for "${expectedSection}".`);
+    }
+    if (seenSections.has(quiz.section)) problems.push(`Two quiz files have section "${quiz.section}".`);
+    seenSections.add(quiz.section);
+
+    const seenIds = new Set<string>();
+    for (const question of quiz.questions) {
+      if (seenIds.has(question.id)) problems.push(`${file}: two questions have id "${question.id}".`);
+      seenIds.add(question.id);
+      const lessonSection = sectionOfLesson.get(question.lesson);
+      if (lessonSection === undefined) {
+        problems.push(`${file}: question "${question.id}" is about Lesson ${question.lesson}, but there is no such lesson.`);
+      } else if (lessonSection !== quiz.section) {
+        problems.push(
+          `${file}: question "${question.id}" is about Lesson ${question.lesson}, which is in "${lessonSection}", not "${quiz.section}".`,
+        );
+      }
+    }
+    parsed.push(quiz);
+  }
+
+  if (problems.length > 0) throw new ContentError(problems.join('\n'));
+  return parsed;
+}
+
+const content = loadContent(courseJson, lessonModules, visualPaths);
+const quizzes = loadQuizzes(quizModules, content.lessons);
+const quizzesBySection = new Map(quizzes.map((q) => [q.section, q]));
 const lessonsById = new Map(content.lessons.map((l) => [l.id, l]));
 const lessonsByOldId = new Map(content.lessons.map((l) => [l.oldId, l]));
 const lessonsByNumber = new Map(content.lessons.map((l) => [l.number, l]));
@@ -172,4 +253,14 @@ export function getPreviousLesson(id: string): Lesson | undefined {
 export function isLastLessonInSection(lesson: Lesson): boolean {
   const section = getLessonSection(lesson);
   return section.lessons[section.lessons.length - 1] === lesson.number;
+}
+
+/** Every section check, one per section. */
+export function getQuizzes(): readonly QuizFile[] {
+  return quizzes;
+}
+
+/** A section's check (content/quizzes/<sectionId>.json). */
+export function getQuiz(sectionId: string): QuizFile | undefined {
+  return quizzesBySection.get(sectionId as SectionId);
 }

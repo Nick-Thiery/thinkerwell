@@ -238,6 +238,8 @@ export const visualSchema = z.strictObject({
   type: z.enum(['map', 'timeline', 'diagram', 'illustration']),
   description: text,
   alt: text,
+  /** Path to the picture's SVG file, relative to content/ (e.g. "visuals/L10.svg"). */
+  src: text,
 });
 export type Visual = z.infer<typeof visualSchema>;
 
@@ -280,3 +282,61 @@ export const lessonSchema = z.strictObject({
   changes: z.array(text),
 });
 export type Lesson = z.infer<typeof lessonSchema>;
+
+// ------------------------------------------------------- quizzes (section checks)
+
+export const QUIZ_SKILLS = ['vocabulary', 'understand', 'evidence', 'apply'] as const;
+export const quizSkillSchema = z.enum(QUIZ_SKILLS);
+export type QuizSkill = z.infer<typeof quizSkillSchema>;
+
+const quizStimulusTextSchema = z.strictObject({
+  type: z.literal('text'),
+  title: text,
+  body: text,
+});
+
+const quizStimulusItemsSchema = z.strictObject({
+  type: z.literal('items'),
+  title: text,
+  items: z.array(text).min(1),
+});
+
+export const quizStimulusSchema = z.discriminatedUnion('type', [quizStimulusTextSchema, quizStimulusItemsSchema]);
+export type QuizStimulus = z.infer<typeof quizStimulusSchema>;
+
+export const quizQuestionSchema = z
+  .strictObject({
+    /** Unique within the file, e.g. "history-01". */
+    id: slug,
+    /** The lesson number this question is based on. */
+    lesson: z.number().int().positive(),
+    skill: quizSkillSchema,
+    /** A short made-up example the question refers to, shown above it. */
+    stimulus: quizStimulusSchema.nullable(),
+    question: text,
+    options: z.array(choiceOptionSchema).length(3),
+  })
+  .refine((q) => q.options.filter((o) => o.correct).length === 1, {
+    message: 'a quiz question needs exactly one correct option',
+    path: ['options'],
+  });
+export type QuizQuestion = z.infer<typeof quizQuestionSchema>;
+
+export const quizResultsSchema = z.strictObject({
+  /** Shown for a high score (8+ of 10, 10+ of 12). */
+  high: text,
+  /** Shown for a middle score. */
+  middle: text,
+  /** Shown for a low score (under half). */
+  low: text,
+});
+export type QuizResults = z.infer<typeof quizResultsSchema>;
+
+export const quizFileSchema = z.strictObject({
+  section: sectionIdSchema,
+  title: text,
+  intro: text,
+  questions: z.array(quizQuestionSchema).min(1),
+  results: quizResultsSchema,
+});
+export type QuizFile = z.infer<typeof quizFileSchema>;
