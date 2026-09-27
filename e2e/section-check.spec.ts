@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
 import { addLearnerViaUi, dumpEverything, nextButton } from './lessonHelpers';
 
 // Phase 7: a full section check, start to finish, against the real
@@ -20,6 +20,21 @@ interface QuizAttemptRecord {
   best: { score: number; total: number };
 }
 
+/**
+ * On the `phone` project only, Chromium's mobile-viewport emulation misreports
+ * `window.innerHeight` (and every layout size derived from it) at roughly 1.4x
+ * the real 390x844 viewport once a question's feedback pushes the ActionBar
+ * below the fold. Playwright's own actionability check clips its click point
+ * to the (correctly-sized) real viewport, which lands it on the feedback card
+ * instead of the button it just scrolled to -- a tooling quirk, not a real
+ * overlap: the button is fully visible on screen (confirmed with a
+ * screenshot) and a forced click lands correctly and advances the check.
+ * `force: true` skips only that misled visibility check.
+ */
+async function clickNext(page: Page, name: string): Promise<void> {
+  await nextButton(page, name).click({ force: true });
+}
+
 test('a full section check: intro, ten questions with feedback, results, and a saved attempt', async ({ page }) => {
   test.setTimeout(60_000);
   await addLearnerViaUi(page, 'Amina');
@@ -34,17 +49,17 @@ test('a full section check: intro, ten questions with feedback, results, and a s
   await expect(page.locator('.tw-feedback-title')).toHaveText('Not quite yet');
   const fromLesson = page.getByRole('link', { name: /^From Lesson 10:/ });
   await expect(fromLesson).toHaveAttribute('href', '/lesson/towns-near-rivers/read');
-  await nextButton(page, 'Next question').click();
+  await clickNext(page, 'Next question');
 
   // The rest: whatever comes up first, just to reach the end.
   for (let i = 1; i < 9; i++) {
     await page.getByRole('radio').first().click();
     await expect(page.locator('.tw-feedback-title')).toBeVisible();
-    await nextButton(page, 'Next question').click();
+    await clickNext(page, 'Next question');
   }
   await expect(page.getByRole('progressbar')).toHaveAttribute('aria-valuenow', '9');
   await page.getByRole('radio').first().click();
-  await nextButton(page, 'See your results').click();
+  await clickNext(page, 'See your results');
 
   // Results: a score, Q1 under "Worth another look" with a working link, and it's saved.
   await expect(page.getByRole('heading', { level: 1, name: /^\d+ out of 10$/ })).toBeVisible();
