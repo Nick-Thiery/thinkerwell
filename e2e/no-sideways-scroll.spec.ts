@@ -7,9 +7,10 @@ import { courseLessons, courseSections, settle, walkTour } from './pageTour';
 // scroll sideways, and everything on it gets smaller.
 //
 // Every kind of page (e2e/pageTour.ts) at every width the pilot devices might
-// have: two phones, small and large tablets, and laptops. These tests set
-// their own sizes, so they run in one Playwright project only (@own-size, see
-// playwright.config.ts).
+// have: two phones (360, 390), small and large tablets (768, 820, 1024) and
+// laptops (1280), plus a 1280px laptop zoomed to 200% (640) and to 400% (320,
+// WCAG 2.2's reflow width). These tests set their own sizes, so they run in
+// one Playwright project only (@own-size, see playwright.config.ts).
 
 const WIDTHS = [320, 360, 390, 640, 768, 820, 1024, 1280];
 
