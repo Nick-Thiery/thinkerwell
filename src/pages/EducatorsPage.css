@@ -1,0 +1,181 @@
+/*
+ * For educators (docs/screens/Educators.dc.html): a hero with what's
+ * needed, three steps, a section-filtered lesson preview, and two closing
+ * cards (class codes, feedback).
+ */
+
+.tw-edu-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+
+.tw-edu-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.tw-edu-hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.tw-edu-hero-text .h1,
+.tw-edu-hero-text p {
+  margin: 0;
+  max-inline-size: var(--reading-measure);
+}
+
+.tw-edu-hero-actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-block-start: var(--space-1);
+}
+
+.tw-edu-need {
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  background: var(--lemon-soft);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tw-edu-need h2 {
+  margin: 0;
+}
+
+.tw-edu-need-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 17px;
+  line-height: 24px;
+}
+
+.tw-edu-need-settings {
+  align-self: flex-start;
+  margin-block-start: var(--space-2);
+}
+
+.tw-edu-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.tw-edu-section h2 {
+  margin: 0;
+}
+
+.tw-edu-section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.tw-edu-preview-note {
+  color: var(--ink-muted);
+}
+
+.tw-edu-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.tw-edu-step {
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tw-edu-step-n {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--lemon);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.tw-edu-chips {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.tw-edu-lessons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tw-edu-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.tw-edu-card {
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tw-edu-card h2,
+.tw-edu-card p {
+  margin: 0;
+}
+
+.tw-edu-card-feedback {
+  background: var(--lavender);
+  border-color: transparent;
+}
+
+.tw-edu-feedback-email {
+  align-self: flex-start;
+  padding: 10px var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+  font-size: 17px;
+  font-weight: 700;
+  user-select: all;
+}
+
+@media (max-width: 900px) {
+  .tw-edu-hero,
+  .tw-edu-steps,
+  .tw-edu-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .tw-edu-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
