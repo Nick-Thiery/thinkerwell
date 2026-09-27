@@ -47,6 +47,16 @@
   gap: var(--space-5);
 }
 
+/*
+ * Below 360px (a small phone, or a laptop zoomed to 400%) the 88px hero line
+ * "Explore your world." is wider than its card, so it steps down in size.
+ */
+@media (max-width: 359px) {
+  .tw-home-hero .hero {
+    font-size: 64px;
+  }
+}
+
 .tw-home-panel {
   flex: 1 1 auto;
   box-sizing: border-box;
@@ -147,6 +157,14 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-2);
+}
+
+/* "Just look around (nothing is saved)" is long: below 360px it wraps rather than widening the page. */
+.tw-home-lookaround .tw-btn {
+  max-inline-size: 100%;
+  white-space: normal;
+  text-align: start;
+  padding-block: var(--space-2);
 }
 
 .tw-home-lock-note {

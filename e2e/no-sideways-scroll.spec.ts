@@ -11,7 +11,7 @@ import { courseLessons, courseSections, settle, walkTour } from './pageTour';
 // their own sizes, so they run in one Playwright project only (@own-size, see
 // playwright.config.ts).
 
-const WIDTHS = [360, 390, 768, 820, 1024, 1280];
+const WIDTHS = [320, 360, 390, 640, 768, 820, 1024, 1280];
 
 /** What sticks out past the right edge (or the left, in right to left): the deepest elements, so the cause is named. */
 async function overflowReport(page: Page): Promise<{ overflow: number; culprits: string[] }> {
