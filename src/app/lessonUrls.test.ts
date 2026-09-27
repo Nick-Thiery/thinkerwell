@@ -1,6 +1,15 @@
 import { describe, expect, it } from 'vitest';
 import { getLesson, getLessons, STAGES, type LessonStep } from '../content';
-import { lessonPath, resolveLessonRoute, sectionCheckPath } from './lessonUrls';
+import {
+  answerKeyPath,
+  educatorsPath,
+  lessonPath,
+  resolveLessonPrintRoute,
+  resolveLessonRoute,
+  resolveTeacherGuideRoute,
+  sectionCheckPath,
+  teacherGuidePath,
+} from './lessonUrls';
 
 const STEPS: LessonStep[] = [...STAGES, 'complete'];
 const lessons = getLessons();
@@ -130,5 +139,34 @@ describe('sectionCheckPath', () => {
 
   it('encodes the id', () => {
     expect(sectionCheckPath('a b/c')).toBe('/section/a%20b%2Fc/check');
+  });
+});
+
+describe('teacher tools', () => {
+  it('builds the teacher guide, answer key and Educators URLs', () => {
+    expect(teacherGuidePath('towns-near-rivers')).toBe('/educators/lesson/towns-near-rivers');
+    expect(teacherGuidePath('a b/c')).toBe('/educators/lesson/a%20b%2Fc');
+    expect(answerKeyPath('history')).toBe('/educators/section/history/answers');
+    expect(answerKeyPath('a b/c')).toBe('/educators/section/a%20b%2Fc/answers');
+    expect(educatorsPath()).toBe('/educators');
+    expect(educatorsPath('geography')).toBe('/educators?section=geography');
+  });
+
+  it('shows every lesson\'s teacher guide, and redirects old and differently cased ids', () => {
+    for (const lesson of lessons) {
+      expect(resolveTeacherGuideRoute(lesson.id)).toEqual({ kind: 'show', lesson });
+      expect(resolveTeacherGuideRoute(lesson.oldId)).toEqual({ kind: 'redirect', to: `/educators/lesson/${lesson.id}` });
+    }
+    expect(resolveTeacherGuideRoute('L6')).toEqual({ kind: 'redirect', to: '/educators/lesson/towns-near-rivers' });
+    expect(resolveTeacherGuideRoute('Towns-Near-Rivers')).toEqual({ kind: 'redirect', to: '/educators/lesson/towns-near-rivers' });
+  });
+
+  it('is not found for an unknown or empty id', () => {
+    for (const id of ['nope', '', undefined, 'constructor']) expect(resolveTeacherGuideRoute(id)).toEqual({ kind: 'not-found' });
+  });
+
+  it('leaves the print view resolving as before', () => {
+    expect(resolveLessonPrintRoute('l6')).toEqual({ kind: 'redirect', to: '/lesson/towns-near-rivers/print' });
+    expect(resolveLessonPrintRoute('nope')).toEqual({ kind: 'not-found' });
   });
 });

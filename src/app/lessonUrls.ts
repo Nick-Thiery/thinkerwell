@@ -14,6 +14,21 @@ export function sectionCheckPath(sectionId: string): string {
   return `/section/${encodeURIComponent(sectionId)}/check`;
 }
 
+/** A lesson's teacher guide: /educators/lesson/:id. */
+export function teacherGuidePath(lessonId: string): string {
+  return `/educators/lesson/${encodeURIComponent(lessonId)}`;
+}
+
+/** The answer key for a section check: /educators/section/:id/answers. */
+export function answerKeyPath(sectionId: string): string {
+  return `/educators/section/${encodeURIComponent(sectionId)}/answers`;
+}
+
+/** The Educators page, with a section's lessons listed (its `?section=`). */
+export function educatorsPath(sectionId?: string): string {
+  return sectionId ? `/educators?section=${encodeURIComponent(sectionId)}` : '/educators';
+}
+
 export type LessonRouteResult =
   | { kind: 'show'; lesson: Lesson; step: LessonStep }
   | { kind: 'redirect'; to: string }
@@ -49,13 +64,27 @@ export function resolveLessonRoute(id: string | undefined, stage: string | undef
  * redirect an old Base44 id (or a different case) to the new one, or not
  * found.
  */
-export function resolveLessonPrintRoute(
-  id: string | undefined,
-): { kind: 'show'; lesson: Lesson } | { kind: 'redirect'; to: string } | { kind: 'not-found' } {
+export function resolveLessonPrintRoute(id: string | undefined): LessonPageRouteResult {
+  return resolveLessonPage(id, lessonPrintPath);
+}
+
+/**
+ * Works out what /educators/lesson/:id (a teacher guide) should do, like
+ * the print view: show it, redirect an old Base44 id (or a different case)
+ * to the new one, or not found.
+ */
+export function resolveTeacherGuideRoute(id: string | undefined): LessonPageRouteResult {
+  return resolveLessonPage(id, teacherGuidePath);
+}
+
+export type LessonPageRouteResult = { kind: 'show'; lesson: Lesson } | { kind: 'redirect'; to: string } | { kind: 'not-found' };
+
+/** A page about one whole lesson (its print view or teacher guide), found by its id or its old Base44 id. */
+function resolveLessonPage(id: string | undefined, pathFor: (lessonId: string) => string): LessonPageRouteResult {
   if (!id) return { kind: 'not-found' };
   const lesson = getLesson(id);
   if (lesson) return { kind: 'show', lesson };
   const moved = getLessonByOldId(id) ?? getLessonByOldId(id.toLowerCase()) ?? getLesson(id.toLowerCase());
-  return moved ? { kind: 'redirect', to: lessonPrintPath(moved.id) } : { kind: 'not-found' };
+  return moved ? { kind: 'redirect', to: pathFor(moved.id) } : { kind: 'not-found' };
 }
 
