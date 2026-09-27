@@ -1,14 +1,22 @@
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { describe, expect, it } from 'vitest';
-import { getLesson, type Lesson } from '../content';
+import { createMemoryRouter, RouterProvider } from 'react-router';
+import { describe, expect, it, vi } from 'vitest';
+import { getLesson, getSectionLessons, getSections, type Lesson } from '../content';
 import { EducatorsPage } from './EducatorsPage';
 
 const L10 = getLesson('towns-near-rivers') as Lesson;
 
+function renderAt(path = '/educators') {
+  vi.spyOn(window, 'scrollTo').mockImplementation(() => undefined);
+  const router = createMemoryRouter([{ path: '/educators', element: <EducatorsPage /> }], { initialEntries: [path] });
+  render(<RouterProvider router={router} />);
+  return router;
+}
+
 describe('EducatorsPage', () => {
   it('shows the hero, what you need, and how a session works, with a link to Settings', () => {
-    render(<EducatorsPage />);
+    renderAt();
     expect(screen.getByRole('heading', { level: 1, name: 'For educators' })).toBeInTheDocument();
     expect(screen.getByText('Run a Thinkerwell lesson with your group')).toBeInTheDocument();
     expect(screen.getByText('One device for every 1 to 3 learners, or one big screen')).toBeInTheDocument();
@@ -19,47 +27,72 @@ describe('EducatorsPage', () => {
 
   it('previews a lesson with ?preview=true, so nothing it does is ever saved', async () => {
     const user = userEvent.setup();
-    render(<EducatorsPage />);
+    renderAt();
 
     await user.click(screen.getByRole('radio', { name: /Geography/ }));
     const row = screen.getByRole('link', { name: new RegExp(`^Lesson 10\\b`) });
     expect(row).toHaveAttribute('href', `/lesson/${L10.id}/read?preview=true`);
   });
 
-  it("switches the lesson list when a different section chip is chosen, and never shows a lesson's own status as saved progress", async () => {
+  it("switches the lesson list when a different section chip is chosen, and keeps the choice in the address", async () => {
     const user = userEvent.setup();
-    render(<EducatorsPage />);
+    const router = renderAt();
 
-    // Some section is selected by default; Geography's Lesson 10 isn't shown until it is.
+    // History is chosen at first; Geography's Lesson 10 isn't shown until it is.
+    expect(screen.getByRole('radio', { name: /History/ })).toHaveAttribute('aria-checked', 'true');
     expect(screen.queryByText(L10.essentialQuestion)).not.toBeInTheDocument();
     await user.click(screen.getByRole('radio', { name: /Geography/ }));
     expect(screen.getByText(L10.essentialQuestion)).toBeInTheDocument();
+    expect(router.state.location.search).toBe('?section=geography');
+    // Replaced, not pushed, so Back leaves the page rather than stepping through chips.
+    expect(router.state.historyAction).toBe('REPLACE');
   });
 
-  it('shows a lesson\'s teaching notes and sources once opened, and hides them again', async () => {
-    const user = userEvent.setup();
-    render(<EducatorsPage />);
-    await user.click(screen.getByRole('radio', { name: /Geography/ }));
-    const lessonRow = screen.getByRole('link', { name: /^Lesson 10\b/ }).closest('.tw-edu-lesson') as HTMLElement;
+  it('opens on the section in the address', () => {
+    renderAt('/educators?section=civics');
+    expect(screen.getByRole('radio', { name: /Civics/ })).toHaveAttribute('aria-checked', 'true');
+    expect(screen.getByRole('link', { name: /^Lesson 20\b/ })).toBeInTheDocument();
+  });
 
-    expect(screen.getByText(L10.educatorNotes[0]!)).not.toBeVisible();
-    await user.click(within(lessonRow).getByRole('button', { name: 'Show teaching notes and sources' }));
-    expect(screen.getByText(L10.educatorNotes[0]!)).toBeVisible();
-    // Sensitive topics come first, under their own title.
-    const sensitive = screen.getByText(L10.sensitiveNotes[0]!);
-    expect(sensitive).toBeVisible();
-    expect(within(lessonRow).getByText('Sensitive topics').compareDocumentPosition(sensitive) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-    expect(sensitive.compareDocumentPosition(screen.getByText(L10.educatorNotes[0]!)) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-    expect(within(lessonRow).getByRole('link', { name: L10.sources[0]!.label })).toHaveAttribute('href', L10.sources[0]!.url);
+  it('falls back to the first section for an unknown one', () => {
+    renderAt('/educators?section=nope');
+    expect(screen.getByRole('radio', { name: /History/ })).toHaveAttribute('aria-checked', 'true');
+  });
 
-    await user.click(within(lessonRow).getByRole('button', { name: 'Hide teaching notes and sources' }));
-    expect(screen.getByText(L10.educatorNotes[0]!)).not.toBeVisible();
+  it.each(getSections().map((section) => [section.id, section] as const))(
+    '%s: each lesson has its teacher guide, and the section its answer key',
+    (id, section) => {
+      renderAt(`/educators?section=${id}`);
+      for (const lesson of getSectionLessons(id)) {
+        const guide = screen.getByRole('link', { name: `Teacher guide for Lesson ${lesson.number}` });
+        expect(guide).toHaveAttribute('href', `/educators/lesson/${lesson.id}`);
+        expect(guide).toHaveTextContent('Teacher guide');
+      }
+      expect(screen.getAllByRole('link', { name: /^Teacher guide for Lesson/ })).toHaveLength(section.lessons.length);
+      const key = screen.getByRole('link', { name: `Answer key for the ${section.title} section check` });
+      expect(key).toHaveAttribute('href', `/educators/section/${id}/answers`);
+      expect(key).toHaveTextContent('Answer key');
+      expect(screen.getByText(`Section check: ${section.title}`)).toBeInTheDocument();
+    },
+  );
+
+  it('no longer repeats the notes on the page: they are in each teacher guide', () => {
+    renderAt('/educators?section=geography');
+    expect(screen.queryByText(L10.sensitiveNotes[0]!)).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /teaching notes/ })).not.toBeInTheDocument();
   });
 
   it('keeps the feedback email a plain placeholder, not a form', () => {
-    render(<EducatorsPage />);
+    renderAt();
     expect(screen.getByText('[FEEDBACK EMAIL]')).toBeInTheDocument();
     expect(screen.queryByRole('textbox')).not.toBeInTheDocument();
     expect(screen.queryByRole('form')).not.toBeInTheDocument();
+  });
+
+  it('lists every lesson row within its section', () => {
+    renderAt('/educators?section=culture');
+    const rows = document.querySelectorAll('.tw-edu-lesson');
+    expect(rows).toHaveLength(5);
+    expect(within(rows[0] as HTMLElement).getByRole('link', { name: /^Lesson 15\b/ })).toBeInTheDocument();
   });
 });

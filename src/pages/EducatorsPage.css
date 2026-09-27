@@ -84,6 +84,11 @@
   color: var(--ink-muted);
 }
 
+.tw-edu-section .tw-edu-preview-intro {
+  margin: 0;
+  max-inline-size: var(--reading-measure);
+}
+
 .tw-edu-steps {
   margin: 0;
   padding: 0;

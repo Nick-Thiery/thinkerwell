@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router';
 import { usePageTitle } from '../app/usePageTitle';
-import { lessonPrintPath } from '../app/lessonUrls';
+import { answerKeyPath, lessonPrintPath } from '../app/lessonUrls';
 import { Badge, Button, Chip, Icon } from '../components/ds';
-import { getLessons, getSectionLessons, getSections, type SectionId } from '../content';
+import { getLessons, getQuiz, getSection, getSectionLessons, getSections, type SectionId } from '../content';
 import { useI18n } from '../i18n';
 import './EducatorsPage.css';
 import { EducatorLessonRow } from './educators/EducatorLessonRow';
@@ -11,16 +11,34 @@ import { SECTION_ICONS } from './course/sectionIcons';
 /**
  * For educators (docs/screens/Educators.dc.html): what a teacher or
  * volunteer needs to run a session, how one works, and every lesson to
- * preview (with its teaching notes and sources, docs/PRODUCT.md). Collects
- * nothing: "Tell us what to fix" keeps the "[FEEDBACK EMAIL]" placeholder
- * visible rather than a form (CLAUDE.md's no-accounts-no-collection rule).
+ * preview, each with its teacher guide, and each section's check with its
+ * answer key. Collects nothing: "Tell us what to fix" keeps the "[FEEDBACK
+ * EMAIL]" placeholder visible rather than a form (CLAUDE.md's
+ * no-accounts-no-collection rule).
+ *
+ * The chosen section is in the address (`?section=geography`), so "Back to
+ * the educators page" on a teacher guide, and the browser's own Back, return
+ * to the same list. Changing it replaces the address without scrolling.
  */
 export function EducatorsPage() {
   const { t } = useI18n();
   usePageTitle(t('pages.educators.title'));
   const sections = getSections();
-  const [sectionId, setSectionId] = useState<SectionId>(sections[0]!.id);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const sectionId: SectionId = getSection(searchParams.get('section') ?? '')?.id ?? sections[0]!.id;
+  const section = getSection(sectionId)!;
+  const quiz = getQuiz(sectionId);
   const lessons = getSectionLessons(sectionId);
+  const firstInSection = section.lessons[0] ?? 0;
+  const lastInSection = section.lessons[section.lessons.length - 1] ?? firstInSection;
+  const range =
+    firstInSection === lastInSection
+      ? String(firstInSection)
+      : t('pages.course.numberRange', { first: firstInSection, last: lastInSection });
+
+  function chooseSection(id: SectionId): void {
+    setSearchParams({ section: id }, { replace: true, preventScrollReset: true });
+  }
   const allLessons = getLessons();
   const firstLessonId = allLessons[0]!.id;
   // The same range the course page shows ("About 25–50 min a lesson").
@@ -102,16 +120,17 @@ export function EducatorsPage() {
           </h2>
           <span className="small tw-edu-preview-note">{t('pages.educators.previewNote')}</span>
         </div>
+        <p className="tw-edu-preview-intro">{t('pages.educators.previewIntro')}</p>
         <div role="radiogroup" aria-label={t('pages.educators.sectionLabel')} className="tw-edu-chips">
-          {sections.map((section) => (
+          {sections.map((option) => (
             <Chip
-              key={section.id}
+              key={option.id}
               role="radio"
-              icon={SECTION_ICONS[section.id]}
-              selected={section.id === sectionId}
-              onClick={() => setSectionId(section.id)}
+              icon={SECTION_ICONS[option.id]}
+              selected={option.id === sectionId}
+              onClick={() => chooseSection(option.id)}
             >
-              {section.title}
+              {option.title}
             </Chip>
           ))}
         </div>
@@ -119,6 +138,27 @@ export function EducatorsPage() {
           {lessons.map((lesson) => (
             <EducatorLessonRow key={lesson.id} lesson={lesson} />
           ))}
+          {quiz ? (
+            <div className="tw-edu-check">
+              <span className="tw-edu-check-icon">
+                <Icon name="ClipboardCheck" size={22} />
+              </span>
+              <span className="tw-edu-check-text">
+                <span className="tw-edu-check-title">{t('pages.sectionCheck.title', { section: section.title })}</span>
+                <span className="small tw-edu-check-meta">
+                  {t('pages.sectionCheck.factQuestions', { count: quiz.questions.length, range })}
+                </span>
+              </span>
+              <Button
+                variant="secondary"
+                icon="ClipboardCheck"
+                href={answerKeyPath(sectionId)}
+                aria-label={t('pages.educators.answerKeyLabel', { section: section.title })}
+              >
+                {t('pages.educators.answerKey')}
+              </Button>
+            </div>
+          ) : null}
         </div>
       </section>
 

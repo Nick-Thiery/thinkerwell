@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { lessonPath } from '../../app/lessonUrls';
+import { lessonPath, teacherGuidePath } from '../../app/lessonUrls';
 import { Button, LessonRow } from '../../components/ds';
 import type { Lesson } from '../../content';
 import { useI18n } from '../../i18n';
@@ -16,17 +15,13 @@ interface EducatorLessonRowProps {
  * (docs/screens/Educators.dc.html) has to hold even when a learner is
  * mid-lesson on the same device.
  *
- * Below it, a disclosure for the lesson's teaching notes and sources
- * (docs/PRODUCT.md: `educatorNotes` and `sources` reach the bundle "for the
- * Educators page... where the sources are meant to be shown"), closed by
- * default so the list stays scannable. Left out entirely for a lesson with
- * neither.
+ * Below it, the lesson's teacher guide (/educators/lesson/:id), which has
+ * its teaching notes (sensitive topics first) and sources along with the
+ * session plan and the answers. It replaces the list's old "Show teaching
+ * notes and sources" disclosure, which held a part of the same.
  */
 export function EducatorLessonRow({ lesson }: EducatorLessonRowProps) {
   const { t } = useI18n();
-  const [open, setOpen] = useState(false);
-  const hasNotes = lesson.sensitiveNotes.length > 0 || lesson.educatorNotes.length > 0 || lesson.sources.length > 0;
-  const bodyId = `${lesson.id}-notes`;
   const [min, max] = lesson.estimatedMinutes;
 
   return (
@@ -39,49 +34,15 @@ export function EducatorLessonRow({ lesson }: EducatorLessonRowProps) {
         cta={t('pages.educators.previewCta')}
         href={`${lessonPath(lesson.id)}?preview=true`}
       />
-      {hasNotes ? (
-        <>
-          <Button variant="ghost" size="md" onClick={() => setOpen((o) => !o)} aria-expanded={open} aria-controls={bodyId}>
-            {t(open ? 'pages.educators.notesHide' : 'pages.educators.notesShow')}
-          </Button>
-          <div id={bodyId} hidden={!open} className="tw-edu-notes">
-            {lesson.sensitiveNotes.length > 0 ? (
-              <div className="tw-edu-notes-part">
-                <p className="small tw-edu-notes-title">{t('pages.educators.sensitiveTitle')}</p>
-                <ul>
-                  {lesson.sensitiveNotes.map((note, index) => (
-                    <li key={index}>{note}</li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-            {lesson.educatorNotes.length > 0 ? (
-              <div className="tw-edu-notes-part">
-                <p className="small tw-edu-notes-title">{t('pages.educators.notesTitle')}</p>
-                <ul>
-                  {lesson.educatorNotes.map((note, index) => (
-                    <li key={index}>{note}</li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-            {lesson.sources.length > 0 ? (
-              <div className="tw-edu-notes-part">
-                <p className="small tw-edu-notes-title">{t('pages.educators.sourcesTitle')}</p>
-                <ul>
-                  {lesson.sources.map((source) => (
-                    <li key={source.url}>
-                      <a href={source.url} target="_blank" rel="noreferrer">
-                        {source.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-          </div>
-        </>
-      ) : null}
+      <Button
+        variant="ghost"
+        icon="GraduationCap"
+        href={teacherGuidePath(lesson.id)}
+        aria-label={t('pages.educators.teacherGuideLabel', { number: lesson.number })}
+        className="tw-edu-lesson-guide"
+      >
+        {t('pages.educators.teacherGuide')}
+      </Button>
     </div>
   );
 }

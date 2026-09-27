@@ -1,31 +1,51 @@
 .tw-edu-lesson {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: var(--space-1);
 }
 
-.tw-edu-notes {
+/* The teacher guide link keeps its own width under the row. */
+.tw-edu-lesson-guide {
+  align-self: flex-start;
+}
+
+/* The section's check, after its lessons: what it covers, and its answer key. */
+.tw-edu-check {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-4);
   padding: var(--space-4) var(--space-5);
   border-radius: var(--radius-lg);
   background: var(--paper);
   border: 1px solid var(--line);
 }
 
-.tw-edu-notes-title {
-  margin: 0 0 var(--space-1);
-  color: var(--ink-muted);
-  font-weight: 700;
+.tw-edu-check-icon {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 44px;
+  block-size: 44px;
+  border-radius: 50%;
+  background: var(--canvas);
 }
 
-.tw-edu-notes ul {
-  margin: 0;
-  padding-inline-start: var(--space-5);
+.tw-edu-check-text {
+  flex: 1 1 16rem;
+  min-inline-size: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
-  font-size: 16px;
-  line-height: 24px;
+  gap: 2px;
+}
+
+.tw-edu-check-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.tw-edu-check-meta {
+  color: var(--ink-muted);
 }
