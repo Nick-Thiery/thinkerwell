@@ -51,6 +51,7 @@ scripts/optimise_images.py     makes public/images and public/icons from docs/de
 src/                           the app (created in phase 1)
 src/offline/                   service worker registration, connection status, the banners under the header, Save data
 src/pages/print/               print views: /lesson/:id/print and /journal/print
+src/pages/certificate/         certificates: /certificate/section/:id and /certificate/course
 src/pages/educators/           teacher tools: /educators/lesson/:id (teacher guide) and /educators/section/:id/answers (answer key)
 ```
 
@@ -90,7 +91,7 @@ Version the schema and write migrations. Nothing is sent anywhere in phase 1.
 - `recordings` per learner and lesson: the latest audio clip only. Delete it when the learner is removed or taps Delete.
 - `settings` per device: save data (`null` until someone chooses), listening speed, preferred reading level, partner options, and the last "Check this device" result for Say it (`speechCheck`, `null` until someone checks).
 
-The journal is built from saved writing and reflections (`journalByLesson` in `src/storage/progress.ts`); it is not stored separately. Its print view is `/journal/print`; the journal page's "Print my journal" links there.
+The journal is built from saved writing and reflections (`journalByLesson` in `src/storage/progress.ts`); it is not stored separately. Its print view is `/journal/print`; the journal page's "Print my journal" links there. Certificates are worked out from saved progress too (`lessonSetStatus`, `finishedSetWith`); nothing about them is stored.
 
 **Moving work to another device** (Settings; `docs/notes/device-transfer.md`). "Save my work to a file" downloads one learner's `learners`, `progress` and `quizAttempts` records, or everyone's, as a JSON file (`src/storage/workFile.ts`: marker `thinkerwell-work`, `WORK_FILE_VERSION`, date saved). Recordings, `settings` and the current learner stay on the device. "Load my work" checks the whole file by hand (no zod in the browser), shows what is in it, and only after "Load it" merges it in one transaction (`importWork` in `src/storage/store.ts`, rules in `src/storage/mergeWork.ts`). Learners are matched by id, never by name, and nothing is lost. When these record shapes change, bump `WORK_FILE_VERSION` and keep loading older files, and update the checker and the merge rules.
 
@@ -112,6 +113,7 @@ Built in phase 6; see `docs/notes/phase-6.md`.
 - A new version shows "A new version is ready" with "Update now"; nothing reloads unless someone taps it.
 - Settings for this device (`/settings`): offline status, Save data, moving work to another device (a file to save and load), the reading level for anyone who hasn't chosen one, the Listen speed, and Say it ("Check this device", the on-device download and "Allow online speech-to-text").
 - Every lesson has a print view (`/lesson/:id/print`, linked from Read): both reading levels, key words, the picture, the quick check and every task, black text on white with no header. Printing any page leaves out the header, menus and banners (`src/styles/print.css`).
+- Certificates (`docs/notes/certificates.md`): one per section (`/certificate/section/:id`) and one for the course (`/certificate/course`), for a learner who has finished every lesson in it (section checks are never needed; no scores). Offered on the complete screen when that finish completes a section or the course, on a finished section's card on the course page, and on the learner home once the course is finished. The name can be changed for one print and is never saved. It prints on one landscape page that fits A4 and Letter, through a named page (`@page tw-certificate`), so other printouts stay portrait.
 - Teacher tools (`docs/notes/teacher-tools.md`), linked from the Educators page: every lesson has a teacher guide (`/educators/lesson/:id`) and every section check an answer key (`/educators/section/:id/answers`). Each is one page for screen and paper, built on the print views' sheet. Everything in them comes from the content files. Correct answers are marked with a tick and the words "Correct answer", never by colour alone.
 
 ## Don't

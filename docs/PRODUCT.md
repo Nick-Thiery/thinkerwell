@@ -83,6 +83,17 @@ Details, sizes and the reasons are in `docs/notes/phase-6.md`.
 - For volunteer teachers, every lesson has a teacher guide and every section check an answer key, linked from the Educators page (docs/notes/teacher-tools.md). The guide opens with the notes on sensitive topics, then a suggested plan for about 45 minutes (with a 30-minute version), and has the answers to the quick check. They work offline and print on A4. The Educators page no longer has a per-lesson notes disclosure: the guide has those notes.
 - On iPads and iPhones, add Thinkerwell to the Home Screen: Safari deletes a site's saved data after 7 days without a visit otherwise.
 
+### Certificates
+
+Details and the reasons are in `docs/notes/certificates.md`.
+
+- Every section has a printable certificate, and so does the whole course. A learner gets one by finishing every lesson in it (Reflect's required answer). The section checks are never needed, and no score is printed.
+- It shows the mascot and wordmark, the learner's name, what they finished, the section's lessons (or the four sections), the date the last lesson was finished and a line for a teacher to sign. It says the course is free and from Thinkerwell, and claims no accreditation.
+- The name is the learner's own on this device. Whoever prints can change it (for example to a full name) for that print only; it is never saved.
+- It is offered when a learner finishes the lesson that completes a section or the course (on the complete screen), then on that section's card on the course page, and for the course on the learner home. Opened too early, it lists the lessons left. Guests are told certificates are for learners who have finished lessons.
+- It prints on one landscape page, on A4 or Letter, in black and white with little ink. Other printouts stay portrait. It works offline.
+- The date reads "September 5, 2026", like the date in Settings. Day first would mean changing the site's English to British date order everywhere: open for Justin and Nick.
+
 ### Quality pass and launch (phase 8)
 
 What was checked, the Vercel import steps, every network request and what is left for people are in `docs/LAUNCH_CHECKLIST.md`.

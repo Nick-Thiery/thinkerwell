@@ -118,6 +118,7 @@ src/session/             LearnerSessionProvider/useLearnerSession (learners, cur
 src/content/             zod schemas (schema.ts), the checks the build and tests run (load.ts), and typed getters for content/*.json (index.ts)
 src/offline/             the service worker from the page's side, online status, the banners under the header, Save data
 src/pages/print/         print views: a lesson (/lesson/:id/print) and the journal (/journal/print)
+src/pages/certificate/   certificates: each section's (/certificate/section/:id) and the course's (/certificate/course)
 src/storage/             IndexedDB (idb): learners, progress, quiz attempts, recordings, settings; src/storage/progress.ts has the pure progress-lookup helpers (continue target, per-section counts, ...)
 src/i18n/                message helper; every UI string is in src/i18n/messages/en.json
 src/styles/              tokens.css (copied from the design system), fonts.css, global.css, print.css
@@ -134,7 +135,7 @@ e2e-dev/                 Playwright tests for the dev-only /dev/* routes (npm ru
 
 ## Routes
 
-`/`, `/course`, `/lesson/:id/:stage` (stages: read, write, speak, watch, reflect, plus `complete`), `/section/:id/check`, `/journal`, `/journal/print`, `/educators`, `/about`, `/settings` (settings for this device, for educators, in the header menu), `/lesson/:id/print` (the lesson on paper). `/lesson/:id` opens Read. Old Base44 links such as `/lesson/l6` or `/lesson/history-scale` redirect to the new lesson (`/lesson/l6` is Lesson 10, `/lesson/towns-near-rivers/read`), keeping any query string such as `?preview=true`. `/onboarding` goes to `/` and `/courses` to `/course`. Anything else shows a friendly "can't find that page".
+`/`, `/course`, `/lesson/:id/:stage` (stages: read, write, speak, watch, reflect, plus `complete`), `/section/:id/check`, `/journal`, `/journal/print`, `/educators`, `/about`, `/settings` (settings for this device, for educators, in the header menu), `/lesson/:id/print` (the lesson on paper), `/certificate/section/:id` and `/certificate/course` (printable certificates). `/lesson/:id` opens Read. Old Base44 links such as `/lesson/l6` or `/lesson/history-scale` redirect to the new lesson (`/lesson/l6` is Lesson 10, `/lesson/towns-near-rivers/read`), keeping any query string such as `?preview=true`. `/onboarding` goes to `/` and `/courses` to `/course`. Anything else shows a friendly "can't find that page".
 
 ## Offline
 
