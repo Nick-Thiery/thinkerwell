@@ -142,8 +142,8 @@ describe('journalByLesson', () => {
     const journal = journalByLesson(lessons, progress);
     expect(journal.map((entry) => entry.lesson.id)).toEqual([b.id, a.id]);
     expect(journal[0]!.pieces).toEqual([
-      { kind: 'reflection', prompt: b.reflect.prompts[0]!.text, text: 'Water and trade.' },
-      { kind: 'reflection', prompt: b.reflect.prompts[1]!.text, text: 'Why do rivers flood?' },
+      { kind: 'reflection', prompt: b.reflect.prompts[0]!.text, text: 'Water and trade.', reflectionIndex: 0 },
+      { kind: 'reflection', prompt: b.reflect.prompts[1]!.text, text: 'Why do rivers flood?', reflectionIndex: 1 },
       { kind: 'writing', prompt: b.write.prompt, text: 'Near the river.' },
     ]);
     expect(journal[1]!.pieces).toEqual([{ kind: 'writing', prompt: a.write.prompt, text: 'My answer.' }]);

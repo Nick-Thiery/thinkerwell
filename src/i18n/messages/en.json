@@ -380,7 +380,24 @@
       "noQuiz": "This section check isn't ready yet."
     },
     "journal": {
-      "title": "My journal"
+      "title": "My journal",
+      "subtitle": "Everything you wrote in your lessons, newest first.",
+      "filterLabel": "Show",
+      "filterAll": "All",
+      "filterWriting": "Writing",
+      "filterReflections": "Reflections",
+      "lessonCount": { "one": "{count} lesson", "other": "{count} lessons" },
+      "pieceCount": { "one": "{count} piece of writing from {lessons}", "other": "{count} pieces of writing from {lessons}" },
+      "groupLabel": "Lesson {number} · {title}",
+      "privacyNote": "Your journal lives on this device. Anyone who taps your name here can read it, so choose what you write. To keep a copy, ask your teacher to help you print it.",
+      "empty": "Nothing saved yet. Write or reflect in a lesson and it shows up here.",
+      "emptyFiltered": "Nothing saved yet in this view. Choose All to see everything you've written.",
+      "lookAroundNote": "You're looking around, so nothing here is saved. Choose who's learning to keep a journal.",
+      "noLearnerNote": "Choose who's learning to see their journal.",
+      "today": "today",
+      "yesterday": "yesterday",
+      "cancelEdit": "Cancel",
+      "saveEdit": "Save"
     },
     "educators": {
       "title": "For educators",

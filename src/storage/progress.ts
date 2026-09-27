@@ -135,6 +135,8 @@ export interface JournalPiece {
   kind: 'writing' | 'reflection';
   prompt: string;
   text: string;
+  /** Its index in lesson.reflect.prompts (kind 'reflection' only), for editing it back in place. */
+  reflectionIndex?: number;
 }
 
 /** Everything a learner wrote in one lesson, for the journal. */
@@ -161,7 +163,7 @@ export function journalByLesson(lessons: readonly Lesson[], progress: ProgressBy
     const pieces: JournalPiece[] = [];
     lesson.reflect.prompts.forEach((prompt, index) => {
       const text = record.reflections[index];
-      if (text?.trim()) pieces.push({ kind: 'reflection', prompt: prompt.text, text });
+      if (text?.trim()) pieces.push({ kind: 'reflection', prompt: prompt.text, text, reflectionIndex: index });
     });
     if (record.writing.text.trim()) pieces.push({ kind: 'writing', prompt: lesson.write.prompt, text: record.writing.text });
     if (pieces.length > 0) out.push({ lesson, updatedAt: record.updatedAt, pieces });
