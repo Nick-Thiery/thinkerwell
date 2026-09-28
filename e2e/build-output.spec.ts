@@ -10,9 +10,15 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
 // has to say why (and raise the budget) rather than slip in. Sizes are
 // Brotli, as Vercel sends text files; fonts and images count as they are.
 
-/** The whole course, downloaded once by the service worker: 469.1 kB when set (514.0 kB before). */
-const PRECACHE_BUDGET = 480_000;
-/** Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before). */
+/**
+ * The whole course, downloaded once by the service worker: 469.1 kB when set
+ * at 480 kB (514.0 kB before). Raised to 490 kB when the language groundwork
+ * and the pilot-day tools were merged in: 480.5 kB with them, 11.4 kB more
+ * for the language code, three new Educators pages and their words, and the
+ * "hasn't downloaded yet" page (docs/notes/slow-internet.md, "Merged").
+ */
+const PRECACHE_BUDGET = 490_000;
+/** Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before), 210.5 kB after the language and pilot-day merges. */
 const FIRST_VISIT_HOME_BUDGET = 212_000;
 
 const TEXT = /\.(html|js|css|svg|json|webmanifest)$/;
