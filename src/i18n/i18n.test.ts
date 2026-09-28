@@ -172,6 +172,18 @@ describe('en.json copy rules (CLAUDE.md)', () => {
     expect(value).not.toMatch(/\bplease\b/i);
   });
 
+  it('writes the number in plural forms as {count}, never as a digit (other languages use a form for more numbers than 1)', () => {
+    const plurals = (node: unknown, prefix = ''): Array<[string, Record<string, string>]> =>
+      node && typeof node === 'object'
+        ? 'other' in node
+          ? [[prefix, node as Record<string, string>]]
+          : Object.entries(node).flatMap(([k, v]) => plurals(v, prefix ? `${prefix}.${k}` : k))
+        : [];
+    for (const [key, forms] of plurals(en)) {
+      for (const [form, text] of Object.entries(forms)) expect(text, `${key}.${form}`).not.toMatch(/(^|\s)1(\s|$)/);
+    }
+  });
+
   it.each(all)('%s is not empty and has no stray spaces', (_key, value) => {
     expect(value.trim()).toBe(value);
     expect(value.length).toBeGreaterThan(0);

@@ -295,7 +295,7 @@
         "greeting": "Hi {name}",
         "summaryNone": "You haven't started a lesson yet. Next up is Lesson {number}.",
         "summaryInProgress": {
-          "one": "You have finished 1 lesson. Next up is Lesson {number}.",
+          "one": "You have finished {count} lesson. Next up is Lesson {number}.",
           "other": "You have finished {count} lessons. Next up is Lesson {number}."
         },
         "summaryDone": "You have finished every lesson. Well done.",
