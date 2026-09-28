@@ -1,0 +1,229 @@
+/*
+ * The class on this device (/educators/class): one card per learner, in a
+ * grid that is one column on a phone and two or three on wider screens.
+ * Cards use borders, not shadows; section tints appear only in each
+ * section's disc, beside its icon and name.
+ */
+
+.tw-class-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.tw-class-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.tw-class-toolbar .tw-btn,
+.tw-class-actions .tw-btn {
+  max-inline-size: 100%;
+  white-space: normal;
+  text-align: start;
+  padding-block: var(--space-2);
+}
+
+.tw-class-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-inline-size: var(--reading-measure);
+}
+
+.tw-class-head h1,
+.tw-class-head p {
+  margin: 0;
+}
+
+.tw-class-note {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--ink-muted);
+}
+
+.tw-class-note svg {
+  flex: none;
+  margin-block-start: 2px;
+}
+
+.tw-class-empty {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  max-inline-size: var(--reading-measure);
+}
+
+.tw-class-empty h2,
+.tw-class-empty p {
+  margin: 0;
+}
+
+.tw-class-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.tw-class-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 24rem), 1fr));
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tw-class-list > li {
+  display: flex;
+  min-inline-size: 0;
+}
+
+.tw-class-learner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  inline-size: 100%;
+  min-inline-size: 0;
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.tw-class-learner-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.tw-class-learner-head .tw-avatar {
+  flex: none;
+}
+
+.tw-class-learner-name {
+  display: flex;
+  flex-direction: column;
+  min-inline-size: 0;
+}
+
+.tw-class-learner-name h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.tw-class-code {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ink-muted);
+  overflow-wrap: anywhere;
+}
+
+/* On now and last active: label above value. */
+.tw-class-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
+  gap: var(--space-3) var(--space-5);
+  margin: 0;
+}
+
+.tw-class-facts dt,
+.tw-class-part h3 {
+  margin: 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  color: var(--ink-muted);
+}
+
+.tw-class-facts dd {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  overflow-wrap: anywhere;
+}
+
+.tw-class-lesson {
+  font-weight: 700;
+}
+
+.tw-class-muted {
+  margin: 0;
+  color: var(--ink-muted);
+}
+
+.tw-class-part {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-block-start: var(--space-3);
+  border-block-start: 1px solid var(--line);
+}
+
+.tw-class-sections,
+.tw-class-checks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.tw-class-sections li,
+.tw-class-checks li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.tw-class-sections .tw-secbadge {
+  flex: none;
+}
+
+.tw-class-section-name {
+  flex: 1 1 auto;
+  min-inline-size: 0;
+}
+
+.tw-class-section-count {
+  flex: none;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.tw-class-checks li {
+  gap: var(--space-2);
+}
+
+.tw-class-checks svg {
+  flex: none;
+}
+
+@media (max-width: 600px) {
+  .tw-class-learner,
+  .tw-class-empty {
+    padding: var(--space-4);
+  }
+}

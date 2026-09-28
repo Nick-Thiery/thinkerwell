@@ -28,6 +28,7 @@ import {
   Info,
   Landmark,
   Lightbulb,
+  ListChecks,
   Lock,
   LogOut,
   Mail,
@@ -123,7 +124,9 @@ export type IconName =
   // Not in the design-system list: "Load my work" in Settings (moving work between devices).
   | 'Upload'
   // Not in the design-system list: the links to a printable certificate.
-  | 'Award';
+  | 'Award'
+  // Not in the design-system list: the educators' "Set up this device" checklist.
+  | 'ListChecks';
 
 /**
  * Icon names that point along the reading direction and must be mirrored
@@ -193,4 +196,5 @@ export const ICONS: Record<IconName, LucideIcon> = {
   Settings,
   Upload,
   Award,
+  ListChecks,
 };
