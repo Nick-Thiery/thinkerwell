@@ -332,7 +332,7 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: ['./src/test/setup.ts'],
-    include: ['src/**/*.test.{ts,tsx}'],
+    include: ['src/**/*.test.{ts,tsx}', 'tools/**/*.test.ts'],
     css: false,
     restoreMocks: true,
     // Component tests drive the real lesson player over fake-indexeddb with

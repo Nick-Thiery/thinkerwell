@@ -45,6 +45,9 @@ jobs:
       - name: Content check
         run: npm run check:content
 
+      - name: Language check (translations against en.json)
+        run: npm run check:i18n
+
       - name: Build
         run: npm run build
 

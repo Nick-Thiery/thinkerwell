@@ -21,6 +21,9 @@
     "test:e2e:dev": "PLAYWRIGHT_BROWSERS_PATH=0 playwright test --config=playwright.dev.config.ts",
     "test:e2e:install": "PLAYWRIGHT_BROWSERS_PATH=0 playwright install chromium",
     "check:content": "sh scripts/check-content.sh",
+    "check:i18n": "node --experimental-strip-types tools/i18n/check.ts",
+    "i18n:export": "node --experimental-strip-types tools/i18n/export.ts",
+    "i18n:import": "node --experimental-strip-types tools/i18n/import.ts",
     "size": "node tools/report-sizes.mjs",
     "perf": "node tools/measure-slow.mjs"
   },
