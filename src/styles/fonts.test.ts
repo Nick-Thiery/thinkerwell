@@ -58,11 +58,13 @@ describe('fonts.css', () => {
     // Every text drawn in Eczar: the Logo's word, and app.name in every
     // locale (the certificates). A new one needs scripts/subset_wordmark_font.py.
     const logo = readFileSync(path.join(stylesDir, '..', 'components', 'ds', 'Logo.tsx'), 'utf8');
-    const texts = [...logo.matchAll(/<span key="word">([^<]+)<\/span>/g)].map((m) => m[1]!);
+    const texts = [...logo.matchAll(/<span key="word"[^>]*>([^<]+)<\/span>/g)].map((m) => m[1]!.trim());
     expect(texts).toEqual(['Thinkerwell']);
     const messagesDir = path.join(stylesDir, '..', 'i18n', 'messages');
-    for (const file of readdirSync(messagesDir).filter((name) => name.endsWith('.json'))) {
-      texts.push((JSON.parse(readFileSync(path.join(messagesDir, file), 'utf8')) as { app: { name: string } }).app.name);
+    // Translator notes (en.notes.json) aren't messages; a language without app.name shows English's.
+    for (const file of readdirSync(messagesDir).filter((name) => name.endsWith('.json') && !name.endsWith('.notes.json'))) {
+      const name = (JSON.parse(readFileSync(path.join(messagesDir, file), 'utf8')) as { app?: { name?: string } }).app?.name;
+      if (name) texts.push(name);
     }
     for (const text of texts) {
       const missing = [...text].filter((ch) => !covered.has(ch.codePointAt(0)!));
