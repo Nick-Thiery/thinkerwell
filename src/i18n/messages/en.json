@@ -575,7 +575,10 @@
       },
       "homeScreen": {
         "title": "Add Thinkerwell to the home screen",
-        "why": "Then it opens like an app. On iPad and iPhone, this also stops Safari deleting saved work after 7 days without a visit.",
+        "why": {
+          "one": "Then it opens like an app. On iPad and iPhone, this also stops Safari deleting saved work after {count} day without a visit.",
+          "other": "Then it opens like an app. On iPad and iPhone, this also stops Safari deleting saved work after {count} days without a visit."
+        },
         "first": "Do this first. Then open Thinkerwell from the home screen, and do the other steps there.",
         "installed": "Thinkerwell is open from the home screen.",
         "inBrowser": "Thinkerwell is open in the browser. If you've added it already, open it from the home screen instead.",

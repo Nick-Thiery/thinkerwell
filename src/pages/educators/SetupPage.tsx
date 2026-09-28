@@ -71,8 +71,11 @@ const SPEECH_TEXT: Record<SpeechFinding, MessageKey> = {
 
 const PLATFORM_STEPS = ['step1', 'step2', 'step3', 'step4', 'step5'] as const;
 
+/** Safari (iPad and iPhone) deletes a site's saved work after this many days without a visit, unless it is on the home screen. */
+const SAFARI_DELETES_AFTER_DAYS = 7;
+
 export function SetupPage() {
-  const { t, lang } = useI18n();
+  const { t, formatDate } = useI18n();
   const title = t('pages.setup.title');
   usePageTitle(title);
   const session = useLearnerSession();
@@ -99,7 +102,7 @@ export function SetupPage() {
   const checkedOn =
     finding !== 'none' && finding !== 'not-checked' && checkedAt && !Number.isNaN(checkedAt.getTime())
       ? `${t('pages.settings.sayIt.checkedOn', {
-          date: new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'long', year: 'numeric' }).format(checkedAt),
+          date: formatDate(checkedAt, { day: 'numeric', month: 'long', year: 'numeric' }),
         })} `
       : '';
 
@@ -127,7 +130,7 @@ export function SetupPage() {
           <SetupStep
             number={1}
             title={t('pages.setup.homeScreen.title')}
-            why={t('pages.setup.homeScreen.why')}
+            why={t('pages.setup.homeScreen.why', { count: SAFARI_DELETES_AFTER_DAYS })}
             note={t('pages.setup.homeScreen.first')}
             state={homeState}
             status={t(installed ? 'pages.setup.homeScreen.installed' : 'pages.setup.homeScreen.inBrowser')}
@@ -243,7 +246,7 @@ interface SetupStepProps {
 }
 
 function SetupStep({ number, title, why, note, how, state, status, actions, children }: SetupStepProps) {
-  const { t } = useI18n();
+  const { t, formatNumber } = useI18n();
   const badge = STATE_BADGE[state];
   return (
     <li className={`tw-setup-step tw-setup-step-${state}`}>
@@ -251,7 +254,7 @@ function SetupStep({ number, title, why, note, how, state, status, actions, chil
         {/* On paper, a box to tick. */}
         <span className="tw-setup-box" aria-hidden="true" />
         <span className="tw-setup-number" aria-hidden="true">
-          {number}
+          {formatNumber(number)}
         </span>
         <span>{title}</span>
       </h2>
@@ -309,14 +312,20 @@ function HomeScreenSteps({ platform }: { platform: DevicePlatform }) {
 }
 
 function PlatformSteps({ platform, heading }: { platform: DevicePlatform; heading: string }) {
-  const { t } = useI18n();
+  const { t, formatNumber } = useI18n();
   const headingId = useId();
   return (
     <section className="tw-setup-platform" aria-labelledby={headingId}>
       <h3 id={headingId}>{heading}</h3>
-      <ol>
-        {PLATFORM_STEPS.map((step) => (
-          <li key={step}>{t(`pages.setup.homeScreen.${platform}.${step}`)}</li>
+      {/* Numbered in the language's digits, not by the browser's list markers. */}
+      <ol role="list">
+        {PLATFORM_STEPS.map((step, index) => (
+          <li key={step}>
+            <span className="tw-setup-platform-number" aria-hidden="true">
+              {formatNumber(index + 1)}
+            </span>
+            <span>{t(`pages.setup.homeScreen.${platform}.${step}`)}</span>
+          </li>
         ))}
       </ol>
     </section>

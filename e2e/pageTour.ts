@@ -278,29 +278,29 @@ export const pageTour: TourStop[] = [
   {
     // The setup checklist, with the steps for other devices open too.
     name: 'educators: set up this device',
-    go: async (page) => {
-      await openPath(page, '/educators', 'For educators');
-      await page.getByRole('link', { name: 'Open the checklist' }).click();
-      await expect(page.locator('h1')).toHaveText('Set up this device');
-      await page.getByText('Steps for other devices').click();
-      await expect(page.getByRole('heading', { level: 3, name: 'Android tablet or phone (Chrome)' })).toBeVisible();
-      await expect(page.getByText('1 learner on this device.')).toBeVisible();
+    go: async (page, { ui }) => {
+      await openPath(page, '/educators', ui('pages.educators.title'));
+      await page.getByRole('link', { name: ui('pages.educators.setupCta') }).click();
+      await expect(page.locator('h1')).toHaveText(ui('pages.setup.title'));
+      await page.getByText(ui('pages.setup.homeScreen.otherDevices')).click();
+      await expect(page.getByRole('heading', { level: 3, name: ui('pages.setup.homeScreen.android.name') })).toBeVisible();
+      await expect(page.getByText(ui('pages.setup.learners.count', { count: 1 }))).toBeVisible();
     },
   },
   {
     name: 'educators: the class on this device',
-    go: async (page) => {
-      await page.getByRole('link', { name: 'See the class' }).click();
-      await expect(page.locator('h1')).toHaveText('The class on this device');
+    go: async (page, { ui }) => {
+      await page.getByRole('link', { name: ui('pages.setup.learners.seeClass') }).click();
+      await expect(page.locator('h1')).toHaveText(ui('pages.classView.title'));
       await expect(page.getByRole('article', { name: TOUR_LEARNER })).toBeVisible();
     },
   },
   {
     // Geography is finished, so there is one certificate.
     name: 'educators: all certificates',
-    go: async (page) => {
-      await page.getByRole('link', { name: 'Print all certificates' }).click();
-      await expect(page.locator('h1')).toHaveText('All certificates');
+    go: async (page, { ui }) => {
+      await page.getByRole('link', { name: ui('pages.classView.printAll') }).click();
+      await expect(page.locator('h1')).toHaveText(ui('pages.allCertificates.title'));
       await expect(page.locator('.tw-cert-name')).toHaveText(TOUR_LEARNER);
     },
   },

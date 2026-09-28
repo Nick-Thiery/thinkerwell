@@ -2,6 +2,7 @@ import { act, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { findLocale, I18nProvider, type LoadedLocale } from '../../i18n';
 import { connectServiceWorker, resetServiceWorkerForTests } from '../../offline';
 import { LearnerSessionProvider } from '../../session';
 import { deleteAllData, getStore } from '../../storage';
@@ -32,7 +33,7 @@ afterEach(async () => {
   await deleteAllData();
 });
 
-function renderSetup() {
+function renderSetup(loaded?: LoadedLocale) {
   const router = createMemoryRouter(
     [
       {
@@ -46,9 +47,29 @@ function renderSetup() {
     ],
     { initialEntries: ['/educators/setup'] },
   );
-  render(<RouterProvider router={router} />);
+  render(
+    <I18nProvider loaded={loaded}>
+      <RouterProvider router={router} />
+    </I18nProvider>,
+  );
   return router;
 }
+
+// Dari with made-up messages for the home screen step, as a translation would have them. Fixtures, not translations.
+const dari: LoadedLocale = {
+  definition: { ...findLocale('fa-AF')!, ready: true },
+  messages: {
+    pages: {
+      setup: {
+        homeScreen: {
+          title: 'FIXTURE home screen',
+          why: { one: 'FIXTURE {count} day', other: 'FIXTURE {count} days' },
+          desktop: { step1: 'FIXTURE step one' },
+        },
+      },
+    },
+  },
+};
 
 /** A step of the checklist, found by its title. */
 function step(title: string): HTMLElement {
@@ -175,6 +196,28 @@ describe('SetupPage', { timeout: 20_000 }, () => {
     expect(within(others).getByRole('heading', { level: 3, name: 'iPad or iPhone (Safari)', hidden: true })).toBeInTheDocument();
     expect(within(others).getByRole('heading', { level: 3, name: 'Android tablet or phone (Chrome)', hidden: true })).toBeInTheDocument();
     expect(status(card)).toHaveTextContent('Thinkerwell is open in the browser.');
+    await settle();
+  });
+
+  it("numbers the steps and the home screen steps, and writes the days, in the interface's language", async () => {
+    renderSetup(dari);
+    const card = step('FIXTURE home screen');
+    expect(card.querySelector('.tw-setup-number')).toHaveTextContent('۱');
+    expect(within(card).getByText('FIXTURE ۷ days')).toBeInTheDocument();
+    const steps = within(card).getAllByRole('list')[0]!;
+    const first = within(steps).getAllByRole('listitem')[0]!;
+    expect(first.querySelector('.tw-setup-platform-number')).toHaveTextContent('۱');
+    expect(first).toHaveTextContent('۱FIXTURE step one');
+    expect(within(steps).getAllByRole('listitem')[4]!.querySelector('.tw-setup-platform-number')).toHaveTextContent('۵');
+    await settle();
+  });
+
+  it('in English, says how many days Safari keeps work, and numbers the home screen steps', async () => {
+    renderSetup();
+    const card = step('Add Thinkerwell to the home screen');
+    expect(within(card).getByText(/stops Safari deleting saved work after 7 days without a visit\.$/)).toBeInTheDocument();
+    const steps = within(card).getAllByRole('list')[0]!;
+    expect(within(steps).getAllByRole('listitem').map((item) => item.querySelector('.tw-setup-platform-number')!.textContent)).toEqual(['1', '2', '3', '4', '5']);
     await settle();
   });
 

@@ -2,7 +2,8 @@ import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { getLessonByNumber, type Lesson } from '../../content';
+import { getLessonByNumber, getSection, type Lesson } from '../../content';
+import { findLocale, I18nProvider, type LoadedLocale } from '../../i18n';
 import { LearnerSessionProvider } from '../../session';
 import { deleteAllData, getStore, type StageId } from '../../storage';
 import { ClassPage } from './ClassPage';
@@ -19,7 +20,7 @@ afterEach(async () => {
   await deleteAllData();
 });
 
-function renderClass() {
+function renderClass(loaded?: LoadedLocale) {
   const router = createMemoryRouter(
     [
       {
@@ -33,9 +34,19 @@ function renderClass() {
     ],
     { initialEntries: ['/educators/class'] },
   );
-  render(<RouterProvider router={router} />);
+  render(
+    <I18nProvider loaded={loaded}>
+      <RouterProvider router={router} />
+    </I18nProvider>,
+  );
   return router;
 }
+
+// Dari with a few made-up messages, as a translation would have them. Fixtures, not translations.
+const dari: LoadedLocale = {
+  definition: { ...findLocale('fa-AF')!, ready: true },
+  messages: { pages: { classView: { lessonsOf: 'FIXTURE {completed} / {total}', lastActive: 'FIXTURE last active', lesson: 'FIXTURE {number}: {title}' } } },
+};
 
 async function addLearner(name: string, classCode?: string): Promise<string> {
   const store = await getStore();
@@ -154,6 +165,34 @@ describe('ClassPage', { timeout: 20_000 }, () => {
     expect(screen.getByRole('link', { name: 'Set up this device' })).toHaveAttribute('href', '/educators/setup');
     await user.click(screen.getByRole('button', { name: 'Add a learner' }));
     await waitFor(() => expect(`${router.state.location.pathname}${router.state.location.search}`).toBe('/?new=1'));
+  });
+
+  it("writes numbers and dates in the interface's language, and keeps course text marked as English", async () => {
+    const amina = await addLearner('Amina');
+    await finish(amina, [10, 11]);
+    await start(amina, 3, 'write');
+    renderClass(dari);
+    const aminaCard = await card('Amina');
+    const geography = within(aminaCard).getByText(getSection('geography')!.title);
+    expect(geography).toHaveAttribute('lang', 'en');
+    expect(geography).toHaveAttribute('dir', 'ltr');
+    expect(geography.parentElement!.querySelector('.tw-class-section-count')).toHaveTextContent('FIXTURE ۲ / ۵');
+    const lessonTitle = within(aminaCard).getByText(lesson(3).title);
+    expect(lessonTitle).toHaveAttribute('lang', 'en');
+    expect(lessonTitle.closest('.tw-class-lesson')).toHaveTextContent(`FIXTURE ۳: ${lesson(3).title}`);
+    const lastActive = within(aminaCard).getByText('FIXTURE last active').nextElementSibling!;
+    expect(lastActive.textContent).toBe(new Intl.DateTimeFormat('fa-AF', { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date()));
+    // The initial is part of the name, never translated.
+    expect(aminaCard.querySelector('.tw-avatar')).toHaveAttribute('translate', 'no');
+  });
+
+  it('adds no language markup in English', async () => {
+    const amina = await addLearner('Amina');
+    await finish(amina, [10]);
+    renderClass();
+    const aminaCard = await card('Amina');
+    expect(within(aminaCard).getByText(getSection('geography')!.title)).not.toHaveAttribute('lang');
+    expect(aminaCard.querySelectorAll('[lang], [dir]')).toHaveLength(0);
   });
 
   it('where this browser window has no storage, says there is nothing to show', async () => {

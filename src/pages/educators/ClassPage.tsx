@@ -15,7 +15,7 @@ import { allCertificatesPath, educatorsPath, setupPath } from '../../app/lessonU
 import { usePageTitle } from '../../app/usePageTitle';
 import { Button, Icon, SectionBadge } from '../../components/ds';
 import { getLessons, getSections } from '../../content';
-import { useI18n } from '../../i18n';
+import { En, useI18n } from '../../i18n';
 import { addedOn, learnersWithSameName, useLearnerSession } from '../../session';
 import { byName, summariseLearner, type LearnerSummary, type OnNow } from './classSummary';
 import './ClassPage.css';
@@ -103,24 +103,22 @@ export function ClassPage() {
   );
 }
 
-function longDate(iso: string, lang: string): string | null {
-  const date = new Date(iso);
-  if (Number.isNaN(date.getTime())) return null;
-  return new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'long', year: 'numeric' }).format(date);
-}
-
 function LearnerCard({ summary, name }: { summary: LearnerSummary; name: string }) {
-  const { t, lang } = useI18n();
+  const { t, formatDate, contentLang } = useI18n();
   const { learner, sections, onNow, lastActive, checksTried } = summary;
   const titleId = useId();
   const lessonsId = useId();
   const checksId = useId();
-  const lastActiveText = lastActive ? longDate(lastActive, lang) : null;
+  const lastActiveDate = lastActive ? new Date(lastActive) : null;
+  const lastActiveText =
+    lastActiveDate && !Number.isNaN(lastActiveDate.getTime())
+      ? formatDate(lastActiveDate, { day: 'numeric', month: 'long', year: 'numeric' })
+      : null;
 
   return (
     <article className="tw-class-learner" aria-labelledby={titleId}>
       <header className="tw-class-learner-head">
-        <span className={`tw-avatar tw-tone-${learner.colour}`} aria-hidden="true">
+        <span className={`tw-avatar tw-tone-${learner.colour}`} aria-hidden="true" translate="no">
           {learner.name.charAt(0).toUpperCase()}
         </span>
         <div className="tw-class-learner-name">
@@ -148,7 +146,9 @@ function LearnerCard({ summary, name }: { summary: LearnerSummary; name: string 
           {sections.map(({ section, completed, total }) => (
             <li key={section.id}>
               <SectionBadge section={section.id} showName={false} size={32} />
-              <span className="tw-class-section-name">{section.title}</span>
+              <span className="tw-class-section-name" {...contentLang}>
+                {section.title}
+              </span>
               <span className="tw-class-section-count">{t('pages.classView.lessonsOf', { completed, total })}</span>
             </li>
           ))}
@@ -162,7 +162,7 @@ function LearnerCard({ summary, name }: { summary: LearnerSummary; name: string 
             {checksTried.map((section) => (
               <li key={section.id}>
                 <Icon name="ClipboardCheck" size={18} />
-                <span>{section.title}</span>
+                <span {...contentLang}>{section.title}</span>
               </li>
             ))}
           </ul>
@@ -175,7 +175,7 @@ function LearnerCard({ summary, name }: { summary: LearnerSummary; name: string 
 }
 
 function OnNowText({ onNow }: { onNow: OnNow }) {
-  const { t } = useI18n();
+  const { t, tx } = useI18n();
   switch (onNow.kind) {
     case 'not-started':
       return <>{t('pages.classView.notStarted')}</>;
@@ -185,7 +185,9 @@ function OnNowText({ onNow }: { onNow: OnNow }) {
     case 'up-next':
       return (
         <>
-          <span className="tw-class-lesson">{t('pages.classView.lesson', { number: onNow.lesson.number, title: onNow.lesson.title })}</span>
+          <span className="tw-class-lesson">
+            {tx('pages.classView.lesson', { number: onNow.lesson.number, title: <En>{onNow.lesson.title}</En> })}
+          </span>
           <span className="tw-class-muted">
             {onNow.kind === 'in-progress' ? t('pages.classView.atStep', { stage: t(`stages.${onNow.stage}`) }) : t('pages.classView.upNext')}
           </span>
