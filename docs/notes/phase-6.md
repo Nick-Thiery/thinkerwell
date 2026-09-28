@@ -23,6 +23,8 @@ Branch `phase-6-offline`. Built in September 2026.
 
 ## Sizes
 
+Changed later: the language groundwork (`docs/notes/languages.md`) split the pages for teachers and for paper into chunks that load when opened, and has the current sizes. Other languages, the Arabic font and the test languages are left out of the precache until a language is ready.
+
 Measured with `npm run build && npm run size` (`tools/report-sizes.mjs`). The tool serves `dist/`, records what a fresh browser fetches, and reads the precache list from `dist/sw.js`. Each file is counted as it is on disk, gzipped and brotli-compressed, as Vercel sends text files. Fonts and images are already compressed, so they are counted as they are.
 
 | | `main` before phase 6 (gzip / brotli) | Phase 6 (gzip / brotli) |
