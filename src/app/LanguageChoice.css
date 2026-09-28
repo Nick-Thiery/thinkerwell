@@ -1,0 +1,6 @@
+/* A language picker: one chip per language, wrapping onto more lines as needed. */
+.tw-language-choice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}

@@ -1,9 +1,11 @@
-import { createElement } from 'react';
+import { createElement, useId, useState } from 'react';
+import { LanguageChoice, useHasLanguageChoice } from '../../app/LanguageChoice';
 import { courseCertificatePath, sectionCheckPath, lessonPath } from '../../app/lessonUrls';
 import { getLessonSection, getLessons, getQuiz, getSections } from '../../content';
 import { Badge, Button, ContinueCard, Icon, ProgressRing, SectionBadge, useDsLinkComponent } from '../../components/ds';
 import { useI18n } from '../../i18n';
 import { useServiceWorker } from '../../offline';
+import { useLearnerSession } from '../../session';
 import { SECTION_ICONS } from '../course/sectionIcons';
 import {
   findContinueTarget,
@@ -35,6 +37,7 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
   // work in; the next lesson after the last one finished is "Up next".
   const targetStarted = target ? progress.has(target.lesson.id) : false;
   const { offline } = useServiceWorker();
+  const hasLanguageChoice = useHasLanguageChoice();
 
   const summary = !target
     ? t('pages.home.dashboard.summaryDone')
@@ -183,8 +186,41 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
               {t('pages.home.dashboard.openJournal')}
             </Button>
           </section>
+          {hasLanguageChoice ? <DashboardLanguage learner={learner} /> : null}
         </aside>
       </div>
     </div>
+  );
+}
+
+/**
+ * The learner's own language, on their home. Only once a second language
+ * is ready. Changing it saves it on their record, and the page switches at
+ * once (src/app/AppLayout.tsx).
+ */
+function DashboardLanguage({ learner }: { learner: Learner }) {
+  const { t, locale } = useI18n();
+  const { setLearnerLanguage } = useLearnerSession();
+  const [failed, setFailed] = useState(false);
+  const helpId = useId();
+  return (
+    <section aria-labelledby="dash-language-title" className="tw-journal-card">
+      <h3 id="dash-language-title" className="h3">
+        {t('pages.home.dashboard.languageTitle')}
+      </h3>
+      <LanguageChoice
+        label={t('pages.home.dashboard.languageTitle')}
+        describedBy={helpId}
+        value={locale}
+        onChange={(code) => {
+          setFailed(false);
+          setLearnerLanguage(learner.id, code).catch(() => setFailed(true));
+        }}
+      />
+      <p id={helpId} className="small">
+        {t('pages.home.dashboard.languageHelp')}
+        {failed ? ` ${t('pages.home.dashboard.languageSaveFailed')}` : ''}
+      </p>
+    </section>
   );
 }

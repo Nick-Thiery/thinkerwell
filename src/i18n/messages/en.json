@@ -273,7 +273,9 @@
         "startsWith": "You will start with",
         "startsWithLesson": "Lesson {number}: {title}",
         "startsWithNote": "You can open any lesson later from the course page.",
-        "privacyNote": "Your work stays on this device."
+        "privacyNote": "Your work stays on this device.",
+        "languageLabel": "Your language",
+        "languageHelper": "Buttons and instructions show in this language. The lessons stay in English, so you can practise it."
       },
       "remove": {
         "action": "Remove",
@@ -324,7 +326,10 @@
         "fromJournal": "From your journal",
         "openJournal": "Open my journal",
         "noJournalYet": "Nothing saved yet. Your writing and reflections show up here once you start.",
-        "latestEntry": "{stage} · Lesson {number}"
+        "latestEntry": "{stage} · Lesson {number}",
+        "languageTitle": "Your language",
+        "languageHelp": "Buttons and instructions show in this language. The lessons stay in English, so you can practise it.",
+        "languageSaveFailed": "That didn't save. Try again."
       }
     },
     "course": {
@@ -550,6 +555,11 @@
       "intro": "These settings are for teachers and volunteers. They apply to everyone who uses this device, and they stay on it.",
       "noStorage": "This browser window can't save settings.",
       "saveFailed": "That change couldn't be saved. Try again.",
+      "language": {
+        "title": "Language",
+        "label": "Language on this device",
+        "help": "Buttons and instructions show in this language on the home screen, for anyone looking around, and for learners who haven't chosen their own. The lessons stay in English."
+      },
       "offline": {
         "title": "Offline and data",
         "checking": "Checking whether the lessons are saved on this device…",
@@ -708,7 +718,8 @@
     "menuClose": "Close menu"
   },
   "dev": {
-    "rtlOn": "Right-to-left test mode is on. Add ?dir=ltr to the address to turn it off."
+    "rtlOn": "Right-to-left test mode is on. Add ?dir=ltr to the address to turn it off.",
+    "localeOn": "Test language {locale} is on. Add ?locale=en to the address to turn it off."
   },
   "ds": {
     "chrome": {
