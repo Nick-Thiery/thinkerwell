@@ -3,7 +3,7 @@ import { LanguageChoice, useHasLanguageChoice } from '../../app/LanguageChoice';
 import { courseCertificatePath, sectionCheckPath, lessonPath } from '../../app/lessonUrls';
 import { getLessonSection, getLessons, getQuiz, getSections } from '../../content';
 import { Badge, Button, ContinueCard, Icon, ProgressRing, SectionBadge, useDsLinkComponent } from '../../components/ds';
-import { useI18n } from '../../i18n';
+import { En, useI18n } from '../../i18n';
 import { useServiceWorker } from '../../offline';
 import { useLearnerSession } from '../../session';
 import { SECTION_ICONS } from '../course/sectionIcons';
@@ -24,7 +24,7 @@ export interface LearnerDashboardProps {
 
 /** The learner home (Dashboard.dc.html): greeting, continue card, progress by section. */
 export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
-  const { t } = useI18n();
+  const { t, tx } = useI18n();
   const LinkTag = useDsLinkComponent();
   const lessons = getLessons();
   const sections = getSections();
@@ -90,7 +90,7 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
                 ? 'pages.home.dashboard.continueEyebrow'
                 : 'pages.home.dashboard.upNext',
           )}
-          lessonLabel={t('pages.course.lessonLabel', { number: target.lesson.number, section: getLessonSection(target.lesson).title })}
+          lessonLabel={tx('pages.course.lessonLabel', { number: target.lesson.number, section: <En>{getLessonSection(target.lesson).title}</En> })}
           done={stagesDoneForLesson(progress.get(target.lesson.id))}
           current={target.stage}
           stageLabel={t('lesson.nextStep', { stage: t(`stages.${target.stage}`) })}
@@ -140,7 +140,7 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
                 href: `/course#${section.id}`,
                 className: `tw-btn tw-section-row${isHere ? ' tw-section-row-current' : ''}`,
               },
-              <SectionBadge key="badge" section={section.id} number={section.number} name={section.title} className="tw-section-row-badge" />,
+              <SectionBadge key="badge" section={section.id} number={section.number} name={<En>{section.title}</En>} className="tw-section-row-badge" />,
               <span key="status" className="body tw-section-row-status">
                 {isHere ? t('pages.home.dashboard.youAreHere') : t('pages.home.dashboard.lessonsOf', { completed, total })}
               </span>,
@@ -157,7 +157,7 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
               </span>
               <h3 id="dash-check-title" className="h3 tw-check-card-title">
                 <Icon name={SECTION_ICONS[readySection.id]} size={20} />
-                {readySection.title}
+                <En>{readySection.title}</En>
               </h3>
               <p className="body">
                 {t('pages.home.dashboard.sectionCheckBody', {

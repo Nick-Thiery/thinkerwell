@@ -25,6 +25,11 @@ export function Logo({ src, size = 44, wordmark = true, href = '/' }: LogoProps)
     LinkTag,
     { className: 'tw-logo', href, 'aria-label': t('ds.chrome.logo.homeLabel') },
     <img key="img" src={src} alt="" width={size} height={size} style={{ width: size, height: size }} />,
-    wordmark === false ? null : <span key="word">Thinkerwell</span>,
+    // The wordmark is the logo, in every language: never translated.
+    wordmark === false ? null : (
+      <span key="word" translate="no">
+        Thinkerwell
+      </span>
+    ),
   );
 }

@@ -1,6 +1,10 @@
 /* Segmented control: Standard | Simpler, Write | Starters | Plan, ... */
 .tw-seg {
   display: inline-flex;
+  /* Never wider than its column: longer words in another language wrap
+     inside each option instead of pushing the page sideways. */
+  box-sizing: border-box;
+  max-inline-size: 100%;
   padding: 4px;
   gap: 4px;
   border-radius: var(--radius-pill);
@@ -24,6 +28,10 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
+  flex: 0 1 auto;
+  min-inline-size: 0;
+  text-align: center;
+  overflow-wrap: anywhere;
 }
 
 .tw-seg button[aria-pressed='true'] {

@@ -25,7 +25,7 @@ import './SpeakStage.css';
  * independentTask).
  */
 export function SpeakStage() {
-  const { t } = useI18n();
+  const { t, contentLang } = useI18n();
   const { lesson, progress, update, stageEvent } = useLessonPlayer();
   const { practiceOptions } = getCourse();
   const partnerId = useId();
@@ -56,7 +56,9 @@ export function SpeakStage() {
           <h3 id={partnerId} className="tw-speak-card-title">
             {t('lessonPlayer.speak.partnerTitle')}
           </h3>
-          <p className="tw-speak-card-text">{lesson.speak.partnerTask}</p>
+          <p className="tw-speak-card-text" {...contentLang}>
+            {lesson.speak.partnerTask}
+          </p>
         </section>
         <section className="tw-speak-card tw-speak-card-solo" aria-labelledby={soloId}>
           <span className="tw-speak-icon tw-speak-icon-solo" aria-hidden="true">
@@ -65,7 +67,9 @@ export function SpeakStage() {
           <h3 id={soloId} className="tw-speak-card-title">
             {t('lessonPlayer.speak.soloTitle')}
           </h3>
-          <p className="tw-speak-card-text">{lesson.speak.independentTask}</p>
+          <p className="tw-speak-card-text" {...contentLang}>
+            {lesson.speak.independentTask}
+          </p>
         </section>
       </div>
 
@@ -80,7 +84,8 @@ export function SpeakStage() {
         </p>
         <div role="radiogroup" aria-labelledby={legendId} className="tw-speak-chips">
           {practiceOptions.map((option, index) => (
-            <Chip key={option} role="radio" selected={chosen === index} onClick={() => choose(index)}>
+            // From content/course.json, so English like the lessons.
+            <Chip key={option} role="radio" selected={chosen === index} onClick={() => choose(index)} {...contentLang}>
               {option}
             </Chip>
           ))}

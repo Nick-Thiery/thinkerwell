@@ -1,7 +1,7 @@
 import { lessonPath, sectionCertificatePath, sectionCheckPath } from '../../app/lessonUrls';
 import type { Lesson, Section } from '../../content';
 import { Button, LessonRow, SectionHeader } from '../../components/ds';
-import { useI18n } from '../../i18n';
+import { En, useI18n } from '../../i18n';
 import { isLessonComplete, nextStageForLesson, sectionProgress, stagesDoneForLesson, type ProgressByLessonId } from '../../storage';
 
 export interface SectionCardProps {
@@ -38,7 +38,7 @@ export interface SectionCardProps {
  * while collapsed.
  */
 export function SectionCard({ section, lessons, progress, highlightLessonId, hideProgress, expanded, onToggle }: SectionCardProps) {
-  const { t } = useI18n();
+  const { t, tx } = useI18n();
   const { completed, total } = sectionProgress(section, lessons, progress);
   const firstLesson = section.lessons[0] ?? 0;
   const lastLesson = section.lessons[section.lessons.length - 1] ?? firstLesson;
@@ -47,8 +47,10 @@ export function SectionCard({ section, lessons, progress, highlightLessonId, hid
   const allDone = total > 0 && completed === total;
 
   return (
-    <section id={section.id} aria-label={section.title} className="tw-course-section">
+    // Named by its heading, which is marked as English (an aria-label can't be).
+    <section id={section.id} aria-labelledby={`${section.id}-title`} className="tw-course-section">
       <SectionHeader
+        titleId={`${section.id}-title`}
         section={section.id}
         number={section.number}
         title={section.title}
@@ -111,6 +113,7 @@ export function SectionCard({ section, lessons, progress, highlightLessonId, hid
         <LessonRow
           kind="quiz"
           title={t('pages.course.sectionCheckRowTitle', { title: section.title })}
+          displayTitle={tx('pages.course.sectionCheckRowTitle', { title: <En>{section.title}</En> })}
           question={t('pages.course.sectionCheckQuestion', { range })}
           href={sectionCheckPath(section.id)}
         />

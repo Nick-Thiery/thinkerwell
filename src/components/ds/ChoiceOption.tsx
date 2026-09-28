@@ -48,7 +48,7 @@ export function ChoiceOption({
   onKeyDown,
   ...rest
 }: ChoiceOptionProps) {
-  const { t } = useI18n();
+  const { t, contentLang } = useI18n();
   const buttonRef = useRef<HTMLButtonElement>(null);
   const checked = state !== 'idle';
   const isRadio = type === 'radio';
@@ -104,10 +104,13 @@ export function ChoiceOption({
       onKeyDown={handleKeyDown}
       {...rest}
     >
-      <span className="tw-option-letter" aria-hidden="true">
+      {/* The answer is course text, and so is its letter: both stay English. */}
+      <span className="tw-option-letter" aria-hidden="true" {...contentLang}>
         {letter}
       </span>
-      <span className="tw-option-text">{children}</span>
+      <span className="tw-option-text" {...contentLang}>
+        {children}
+      </span>
       {stateEl}
     </button>
   );

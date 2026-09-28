@@ -1,4 +1,5 @@
 import { expect, type Locator, type Page } from '@playwright/test';
+import { uiText, type UiText } from './uiText';
 
 // Shared helpers for the phase 4 lesson player specs (lesson-player,
 // glossary-popover). Not a spec file itself: Playwright only runs *.spec.ts.
@@ -118,12 +119,20 @@ export function nextButton(page: Page, name: string | RegExp): Locator {
  * what completes a lesson (src/lesson/progressRules.ts). Lands on the
  * lesson's complete screen.
  */
-export async function finishLessonViaReflect(page: Page, lesson: { id: string; number: number }, answer = 'I learned something new.'): Promise<void> {
+export async function finishLessonViaReflect(
+  page: Page,
+  lesson: { id: string; number: number },
+  answer = FINISH_ANSWER,
+  ui: UiText = uiText('en'),
+): Promise<void> {
   await page.goto(`/lesson/${lesson.id}/reflect`);
   await page.getByRole('textbox').first().fill(answer);
-  await nextButton(page, 'Finish lesson').click();
-  await expect(page.locator('h1')).toHaveText(`You finished Lesson ${lesson.number}.`);
+  await nextButton(page, ui('lessonPlayer.shell.finishLesson')).click();
+  await expect(page.locator('h1')).toHaveText(ui('lessonPlayer.complete.title', { number: lesson.number }));
 }
+
+/** What finishLessonViaReflect() types, unless told otherwise. */
+export const FINISH_ANSWER = 'I learned something new.';
 
 /** How many pages a PDF has, and whether its first page is wider than it is tall. */
 export function pdfPages(pdf: Buffer): { pages: number; landscape: boolean } {

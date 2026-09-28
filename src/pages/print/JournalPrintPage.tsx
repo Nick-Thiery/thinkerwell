@@ -12,7 +12,7 @@
 import { usePageTitle } from '../../app/usePageTitle';
 import { Button } from '../../components/ds';
 import { getLessons, getLessonSection } from '../../content';
-import { useI18n } from '../../i18n';
+import { En, useI18n } from '../../i18n';
 import { splitParagraphs } from '../../lesson';
 import { useLearnerProgress, useLearnerSession } from '../../session';
 import { journalByLesson } from '../../storage';
@@ -20,7 +20,7 @@ import { PrintToolbar } from './PrintToolbar';
 import './print.css';
 
 export function JournalPrintPage() {
-  const { t } = useI18n();
+  const { t, tx, contentLang } = useI18n();
   usePageTitle(t('print.journalPageTitle'));
   const session = useLearnerSession();
   const learner = session.activeLearner;
@@ -60,13 +60,15 @@ export function JournalPrintPage() {
           journal.map(({ lesson, pieces }) => (
             <section key={lesson.id} className="tw-print-part">
               <p className="tw-print-eyebrow">
-                {t('pages.course.lessonLabel', { number: lesson.number, section: getLessonSection(lesson).title })}
+                {tx('pages.course.lessonLabel', { number: lesson.number, section: <En>{getLessonSection(lesson).title}</En> })}
               </p>
-              <h2>{lesson.title}</h2>
+              <h2 {...contentLang}>{lesson.title}</h2>
               {pieces.map((piece, index) => (
                 <div key={index} className="tw-print-entry">
                   <h3>{t(piece.kind === 'writing' ? 'print.writing' : 'print.reflection')}</h3>
-                  <p className="tw-print-prompt">{piece.prompt}</p>
+                  <p className="tw-print-prompt" {...contentLang}>
+                    {piece.prompt}
+                  </p>
                   {splitParagraphs(piece.text).map((paragraph, paragraphIndex) => (
                     <p key={paragraphIndex} className="tw-print-answer">
                       {paragraph}

@@ -2,6 +2,7 @@ import { readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { expect, type Page } from '@playwright/test';
 import { finishLessonViaReflect, L10, nextButton } from './lessonHelpers';
+import { uiPattern, uiText, type TestLocale, type UiParams, type UiText } from './uiText';
 
 // Phase 8: one walk through every kind of page, shared by the checks that
 // must hold everywhere (no sideways scroll, axe, right to left, tap sizes).
@@ -12,17 +13,42 @@ import { finishLessonViaReflect, L10, nextButton } from './lessonHelpers';
 // section check is answered to the end, and the journal then has entries.
 // Each stop leaves the page settled on what it names, so a check can run
 // straight after it.
+//
+// Interface text is found by its key in en.json (`ui`), so the same walk
+// works in the pseudo-languages too (e2e/languages.spec.ts). Course text
+// (lesson titles, questions, answers) stays English in every language.
+
+/** Interface text in the language the tour is walking in. */
+export interface TourText {
+  locale: TestLocale;
+  ui: UiText;
+  /** A message as a pattern, its {placeholders} matching anything. */
+  pattern: (key: string, params?: UiParams) => RegExp;
+}
+
+export function tourText(locale: TestLocale = 'en'): TourText {
+  return { locale, ui: uiText(locale), pattern: (key, params) => uiPattern(locale, key, params) };
+}
 
 export interface TourStop {
   name: string;
-  go: (page: Page) => Promise<void>;
+  go: (page: Page, text: TourText) => Promise<void>;
 }
 
 /** A long name, so every place that shows it (header, greeting, switcher) is tested at its widest. */
 export const TOUR_LEARNER = 'Mohammed Abdirahman';
 
+/** What the tour types in Write and Reflect: the learner's own words, in any language. */
+export const TOUR_WRITING = 'I would build the town by the river because of the water.';
+export const TOUR_REFLECTION = 'It has water and fertile land.';
+
 const Q1_WRONG = 'The land by rivers was high, dry and rocky.';
 const Q2_RIGHT = 'The river may flood the land.';
+
+/** "Continue to Write" and the like: a stage's name inside the button's message. */
+function continueTo(ui: UiText, stage: string): string {
+  return ui('lessonPlayer.shell.continueTo', { stage: ui(`stages.${stage}`) });
+}
 
 async function openPath(page: Page, path: string, heading: string | RegExp): Promise<void> {
   await page.goto(path);
@@ -42,36 +68,36 @@ export async function settle(page: Page): Promise<void> {
 }
 
 /** Below about 1100px the five nav links sit behind a menu button; true when that button is showing. */
-async function hasMenuButton(page: Page): Promise<boolean> {
-  return page.getByRole('button', { name: 'Open navigation menu' }).isVisible();
+async function hasMenuButton(page: Page, { ui }: TourText): Promise<boolean> {
+  return page.getByRole('button', { name: ui('ds.chrome.siteHeader.openMenu') }).isVisible();
 }
 
 export const pageTour: TourStop[] = [
   {
     name: 'home (nobody on this device yet)',
-    go: (page) => openPath(page, '/', "Who's learning today?"),
+    go: (page, { ui }) => openPath(page, '/', ui('pages.home.title')),
   },
   {
     name: 'new learner form',
-    go: async (page) => {
-      await page.getByRole('button', { name: "I'm new here" }).click();
-      await expect(page.getByLabel('First name or nickname')).toBeVisible();
+    go: async (page, { ui }) => {
+      await page.getByRole('button', { name: ui('pages.home.newLearnerTile') }).click();
+      await expect(page.getByLabel(ui('pages.home.newLearner.nameLabel'))).toBeVisible();
     },
   },
   {
     name: 'learner home',
-    go: async (page) => {
-      await page.getByLabel('First name or nickname').fill(TOUR_LEARNER);
-      await page.getByRole('button', { name: 'Start Lesson 1' }).click();
+    go: async (page, { ui }) => {
+      await page.getByLabel(ui('pages.home.newLearner.nameLabel')).fill(TOUR_LEARNER);
+      await page.getByRole('button', { name: ui('pages.home.newLearner.submit') }).click();
       await expect(page).toHaveURL(/\/lesson\/.+\/read$/);
-      await openPath(page, '/', `Hi ${TOUR_LEARNER}`);
+      await openPath(page, '/', ui('pages.home.dashboard.greeting', { name: TOUR_LEARNER }));
     },
   },
   {
     name: 'learner switcher open',
-    go: async (page) => {
-      await page.getByRole('button', { name: `Switch learner, current: ${TOUR_LEARNER}` }).click();
-      await expect(page.getByRole('dialog', { name: 'Switch learner' })).toBeVisible();
+    go: async (page, { ui }) => {
+      await page.getByRole('button', { name: ui('ds.chrome.siteHeader.switchLearner', { name: TOUR_LEARNER }) }).click();
+      await expect(page.getByRole('dialog', { name: ui('header.switcherTitle') })).toBeVisible();
     },
   },
   {
@@ -80,10 +106,10 @@ export const pageTour: TourStop[] = [
   },
   {
     name: 'phone menu open (where there is one)',
-    go: async (page) => {
-      if (!(await hasMenuButton(page))) return;
-      await page.getByRole('button', { name: 'Open navigation menu' }).click();
-      await expect(page.getByRole('navigation', { name: 'Main' })).toBeVisible();
+    go: async (page, text) => {
+      if (!(await hasMenuButton(page, text))) return;
+      await page.getByRole('button', { name: text.ui('ds.chrome.siteHeader.openMenu') }).click();
+      await expect(page.getByRole('navigation', { name: text.ui('nav.label') })).toBeVisible();
     },
   },
   {
@@ -95,31 +121,31 @@ export const pageTour: TourStop[] = [
   },
   {
     name: 'lesson: the picture, bigger',
-    go: async (page) => {
-      await page.getByRole('button', { name: 'See it bigger' }).click();
-      await expect(page.getByRole('dialog', { name: 'The map' })).toBeVisible();
+    go: async (page, { ui }) => {
+      await page.getByRole('button', { name: ui('lessonPlayer.visual.seeBigger') }).click();
+      await expect(page.getByRole('dialog', { name: ui('lessonPlayer.visual.title.map') })).toBeVisible();
     },
   },
   {
     name: 'lesson: Read part 2',
-    go: async (page) => {
-      await page.getByRole('dialog', { name: 'The map' }).getByRole('button', { name: 'Close' }).click();
-      await nextButton(page, 'Next: Part 2').click();
+    go: async (page, { ui }) => {
+      await page.getByRole('dialog', { name: ui('lessonPlayer.visual.title.map') }).getByRole('button', { name: ui('lessonPlayer.visual.close') }).click();
+      await nextButton(page, ui('lessonPlayer.read.nextPart', { n: 2 })).click();
       await expect(page).toHaveURL(/\?part=2$/);
     },
   },
   {
     name: 'lesson: Read part 3',
-    go: async (page) => {
-      await nextButton(page, 'Next: Part 3').click();
+    go: async (page, { ui }) => {
+      await nextButton(page, ui('lessonPlayer.read.nextPart', { n: 3 })).click();
       await expect(page.getByRole('heading', { name: 'Rivers can also bring problems' })).toBeVisible();
     },
   },
   {
     name: 'lesson: quick check',
-    go: async (page) => {
-      await nextButton(page, 'Next: Quick check').click();
-      await expect(page.getByRole('heading', { name: 'Quick check' })).toBeVisible();
+    go: async (page, { ui }) => {
+      await nextButton(page, ui('lessonPlayer.read.nextCheck')).click();
+      await expect(page.getByRole('heading', { name: ui('lessonPlayer.read.checkTitle') })).toBeVisible();
     },
   },
   {
@@ -134,112 +160,112 @@ export const pageTour: TourStop[] = [
   },
   {
     name: 'lesson: Write (with the example answer open)',
-    go: async (page) => {
-      await nextButton(page, 'Continue to Write').click();
+    go: async (page, { ui }) => {
+      await nextButton(page, continueTo(ui, 'write')).click();
       await expect(page).toHaveURL(/\/write$/);
-      await page.getByRole('textbox', { name: 'Your answer' }).fill('I would build the town by the river because of the water.');
-      await page.getByText('Compare with an example answer').click();
-      await expect(page.getByText('This is one way to answer. Yours can be different.')).toBeVisible();
+      await page.getByRole('textbox', { name: ui('lessonPlayer.write.answerLabel') }).fill(TOUR_WRITING);
+      await page.getByText(ui('lessonPlayer.write.compareExample')).click();
+      await expect(page.getByText(ui('lessonPlayer.write.exampleNote'))).toBeVisible();
     },
   },
   {
     name: 'lesson: Speak',
-    go: async (page) => {
-      await nextButton(page, 'Continue to Speak').click();
+    go: async (page, { ui }) => {
+      await nextButton(page, continueTo(ui, 'speak')).click();
       await expect(page).toHaveURL(/\/speak$/);
     },
   },
   {
     name: 'lesson: Watch (before the tap)',
-    go: async (page) => {
-      await nextButton(page, 'Continue to Watch').click();
-      await expect(page.getByRole('button', { name: 'Watch the video' })).toBeVisible();
+    go: async (page, { ui }) => {
+      await nextButton(page, continueTo(ui, 'watch')).click();
+      await expect(page.getByRole('button', { name: ui('ds.content.video.watchLabel') })).toBeVisible();
     },
   },
   {
     name: 'lesson: Watch, read instead',
-    go: async (page) => {
-      await page.getByRole('button', { name: 'Read instead' }).click();
-      await expect(page.getByRole('heading', { name: 'Key points' })).toBeVisible();
+    go: async (page, { ui }) => {
+      await page.getByRole('button', { name: ui('lessonPlayer.watch.readInstead') }).click();
+      await expect(page.getByRole('heading', { name: ui('lessonPlayer.watch.keyPoints') })).toBeVisible();
     },
   },
   {
     name: 'lesson: Reflect',
-    go: async (page) => {
-      await nextButton(page, 'Continue to Reflect').click();
-      await page.getByRole('textbox', { name: /good for a town/ }).fill('It has water and fertile land.');
+    go: async (page, { ui }) => {
+      await nextButton(page, continueTo(ui, 'reflect')).click();
+      await page.getByRole('textbox', { name: /good for a town/ }).fill(TOUR_REFLECTION);
     },
   },
   {
     name: 'lesson: complete',
-    go: async (page) => {
-      await nextButton(page, 'Finish lesson').click();
-      await expect(page.locator('h1')).toHaveText('You finished Lesson 10.');
+    go: async (page, { ui }) => {
+      await nextButton(page, ui('lessonPlayer.shell.finishLesson')).click();
+      await expect(page.locator('h1')).toHaveText(ui('lessonPlayer.complete.title', { number: 10 }));
     },
   },
   {
     name: 'certificate: lessons left',
-    go: (page) => openPath(page, '/certificate/section/geography', 'Certificate: Geography & Our Environment'),
+    go: (page, { ui }) => openPath(page, '/certificate/section/geography', ui('certificates.sectionPageTitle', { section: sectionTitle('geography') })),
   },
   {
     // The rest of Geography, each finished through Reflect: the last one finishes the section.
     name: 'lesson: complete, finishing a section',
-    go: async (page) => {
+    go: async (page, { ui }) => {
       for (const lesson of courseLessons.filter((each) => each.number >= 11 && each.number <= 14)) {
-        await finishLessonViaReflect(page, lesson);
+        await finishLessonViaReflect(page, lesson, undefined, ui);
       }
-      await expect(page.getByRole('link', { name: 'Get your certificate' })).toBeVisible();
+      await expect(page.getByRole('link', { name: ui('certificates.offer.getCertificate') })).toBeVisible();
     },
   },
   {
     name: 'certificate',
-    go: async (page) => {
-      await page.getByRole('link', { name: 'Get your certificate' }).click();
-      await expect(page.locator('h1')).toHaveText('Certificate');
+    go: async (page, { ui }) => {
+      await page.getByRole('link', { name: ui('certificates.offer.getCertificate') }).click();
+      await expect(page.locator('h1')).toHaveText(ui('certificates.sheet.title'));
       await expect(page.locator('.tw-cert-name')).toHaveText(TOUR_LEARNER);
     },
   },
   {
     // Civics has the longest section name, which once made this page too wide (docs/notes/phase-7.md).
     name: 'section check: intro',
-    go: (page) => openPath(page, '/section/civics/check', 'Section check: Civics, Media & Everyday Economics'),
+    go: (page, { ui }) => openPath(page, '/section/civics/check', ui('pages.sectionCheck.title', { section: sectionTitle('civics') })),
   },
   {
     name: 'section check: a question after answering',
-    go: async (page) => {
-      await page.getByRole('button', { name: 'Start the check' }).click();
+    go: async (page, { ui }) => {
+      await page.getByRole('button', { name: ui('pages.sectionCheck.start') }).click();
       await page.getByRole('radio').first().click();
       await expect(page.locator('.tw-feedback-title')).toBeVisible();
     },
   },
   {
     name: 'section check: results',
-    go: async (page) => {
+    go: async (page, { ui, pattern }) => {
       for (let i = 1; i < 10; i++) {
-        await nextButton(page, 'Next question').click();
+        await nextButton(page, ui('pages.sectionCheck.nextQuestion')).click();
         await page.getByRole('radio').first().click();
         await expect(page.locator('.tw-feedback-title')).toBeVisible();
       }
-      await nextButton(page, 'See your results').click();
-      await expect(page.getByRole('heading', { level: 1, name: /^\d+ out of 10$/ })).toBeVisible();
+      await nextButton(page, ui('pages.sectionCheck.seeResults')).click();
+      await expect(page.getByRole('heading', { level: 1, name: pattern('pages.sectionCheck.scoreHeading', { total: 10 }) })).toBeVisible();
     },
   },
   {
     name: 'journal',
-    go: async (page) => {
-      await openPath(page, '/journal', 'My journal');
+    go: async (page, { ui }) => {
+      await openPath(page, '/journal', ui('pages.journal.title'));
       await expect(page.locator('article.tw-entry').first()).toBeVisible();
     },
   },
   {
     name: 'educators',
-    go: (page) => openPath(page, '/educators', 'For educators'),
+    go: (page, { ui }) => openPath(page, '/educators', ui('pages.educators.title')),
   },
   {
     name: 'educators: teacher guide',
-    go: async (page) => {
+    go: async (page, { ui }) => {
       await page.getByRole('radio', { name: /Geography/ }).click();
-      await page.getByRole('link', { name: 'Teacher guide for Lesson 10' }).click();
+      await page.getByRole('link', { name: ui('pages.educators.teacherGuideLabel', { number: 10 }) }).click();
       await expect(page.locator('h1')).toHaveText(L10.title);
       await expect(page.getByRole('table')).toBeVisible();
     },
@@ -247,22 +273,22 @@ export const pageTour: TourStop[] = [
   {
     // Civics has the longest section name.
     name: 'educators: answer key',
-    go: (page) => openPath(page, '/educators/section/civics/answers', 'Answer key: Civics, Media & Everyday Economics'),
+    go: (page, { ui }) => openPath(page, '/educators/section/civics/answers', ui('pages.answerKey.title', { section: sectionTitle('civics') })),
   },
   {
     name: 'about',
-    go: (page) => openPath(page, '/about', 'About Thinkerwell'),
+    go: (page, { ui }) => openPath(page, '/about', ui('pages.about.title')),
   },
   {
     name: 'settings',
-    go: (page) => openPath(page, '/settings', 'Settings for this device'),
+    go: (page, { ui }) => openPath(page, '/settings', ui('pages.settings.title')),
   },
   {
     // "Load my work" with a file chosen: what it holds, before anything changes.
     // A different learner with the tour learner's (long) name, so the longest
     // preview text shows. Nothing is loaded.
     name: 'settings: a work file to load',
-    go: async (page) => {
+    go: async (page, { ui }) => {
       const file = {
         format: 'thinkerwell-work',
         version: 1,
@@ -278,16 +304,16 @@ export const pageTour: TourStop[] = [
       await page
         .locator('input[type="file"]')
         .setInputFiles({ name: 'thinkerwell-all-learners-2026-09-28.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(file)) });
-      await expect(page.getByRole('group', { name: 'Check before you load' })).toBeVisible();
-      await expect(page.getByRole('button', { name: 'Load it' })).toBeVisible();
+      await expect(page.getByRole('group', { name: ui('pages.settings.transfer.load.previewTitle') })).toBeVisible();
+      await expect(page.getByRole('button', { name: ui('pages.settings.transfer.load.loadIt') })).toBeVisible();
     },
   },
   {
     name: 'print: lesson',
-    go: async (page) => {
+    go: async (page, { ui }) => {
       await page.goto('/lesson/towns-near-rivers/print');
       await expect(page.locator('h1')).toHaveCount(1);
-      await expect(page.getByRole('button', { name: 'Print' })).toBeVisible();
+      await expect(page.getByRole('button', { name: ui('print.print') })).toBeVisible();
     },
   },
   {
@@ -300,30 +326,30 @@ export const pageTour: TourStop[] = [
   },
   {
     name: 'not found',
-    go: (page) => openPath(page, '/whatever', "This page isn't here"),
+    go: (page, { ui }) => openPath(page, '/whatever', ui('notFound.title')),
   },
   {
     name: "home (who's learning, with a learner)",
-    go: async (page) => {
-      await openPath(page, '/', `Hi ${TOUR_LEARNER}`);
-      await page.getByRole('button', { name: `Switch learner, current: ${TOUR_LEARNER}` }).click();
-      await page.getByRole('button', { name: "Back to who's learning" }).click();
-      await expect(page.locator('h1')).toHaveText("Who's learning today?");
-      await expect(page.getByRole('button', { name: `Remove ${TOUR_LEARNER}` })).toBeVisible();
+    go: async (page, { ui }) => {
+      await openPath(page, '/', ui('pages.home.dashboard.greeting', { name: TOUR_LEARNER }));
+      await page.getByRole('button', { name: ui('ds.chrome.siteHeader.switchLearner', { name: TOUR_LEARNER }) }).click();
+      await page.getByRole('button', { name: ui('header.backToPicker') }).click();
+      await expect(page.locator('h1')).toHaveText(ui('pages.home.title'));
+      await expect(page.getByRole('button', { name: ui('pages.home.remove.label', { name: TOUR_LEARNER }) })).toBeVisible();
     },
   },
   {
     name: 'looking around (guest home)',
-    go: async (page) => {
-      await page.getByRole('button', { name: 'Just look around (nothing is saved)' }).click();
-      await expect(page.locator('h1')).toHaveText('Explore the course');
+    go: async (page, { ui }) => {
+      await page.getByRole('button', { name: ui('pages.home.lookAround') }).click();
+      await expect(page.locator('h1')).toHaveText(ui('pages.home.guest.title'));
     },
   },
   {
     name: 'certificate, with nobody chosen',
-    go: async (page) => {
-      await openPath(page, '/certificate/course', 'Course certificate');
-      await expect(page.getByText('Certificates are for learners who have finished lessons.')).toBeVisible();
+    go: async (page, { ui }) => {
+      await openPath(page, '/certificate/course', ui('certificates.coursePageTitle'));
+      await expect(page.getByText(ui('certificates.guest'))).toBeVisible();
     },
   },
 ];
@@ -340,10 +366,17 @@ export const courseLessons = readdirSync(path.join(contentDir, 'lessons'))
   .map((name) => JSON.parse(readFileSync(path.join(contentDir, 'lessons', name), 'utf8')) as { id: string; number: number; title: string })
   .sort((a, b) => a.number - b.number);
 
-/** Walks the whole tour, running `check` at every stop. */
-export async function walkTour(page: Page, check: (stop: TourStop) => Promise<void>): Promise<void> {
+/** A section's title, as the content (not the interface) names it. */
+export function sectionTitle(id: string): string {
+  const section = courseSections.find((each) => each.id === id);
+  if (!section) throw new Error(`No section ${id}`);
+  return section.title;
+}
+
+/** Walks the whole tour, running `check` at every stop. Interface text is found in `text`'s language (English unless given). */
+export async function walkTour(page: Page, check: (stop: TourStop) => Promise<void>, text: TourText = tourText()): Promise<void> {
   for (const stop of pageTour) {
-    await stop.go(page);
+    await stop.go(page, text);
     await settle(page);
     await check(stop);
   }

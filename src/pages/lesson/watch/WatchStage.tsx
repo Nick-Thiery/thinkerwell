@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, useState, type FocusEvent } from 'react';
 import { Button, Icon, StatusBanner, TaskCard, VideoCard } from '../../../components/ds';
-import { useI18n } from '../../../i18n';
+import { En, useI18n } from '../../../i18n';
 import { formatDuration, hasText, splitParagraphs, useLessonPlayer } from '../../../lesson';
 import { isSaveDataOn } from '../../../offline';
 import { SayItBox, useSayIt } from '../sayIt';
@@ -66,7 +66,7 @@ type FocusTarget = 'player' | 'written' | 'watch';
  * - A learner who chose "Read instead" comes back to the written version.
  */
 export function WatchStage() {
-  const { t } = useI18n();
+  const { t, formatNumber, contentLang } = useI18n();
   const { lesson, progress, update, stageEvent, settings } = useLessonPlayer();
   const { watch } = lesson;
   const saveData = isSaveDataOn(settings.saveData);
@@ -193,7 +193,7 @@ export function WatchStage() {
   const beforeBoxId = `${ids}-before`;
   const afterBoxId = `${ids}-after-answer`;
 
-  const duration = watch.durationSeconds === null ? undefined : formatDuration(watch.durationSeconds);
+  const duration = watch.durationSeconds === null ? undefined : formatDuration(watch.durationSeconds, formatNumber);
   const videoFailed = shownReason === 'timeout' || shownReason === 'offline' || shownReason === 'unavailable';
   const writtenBanner: { icon: 'WifiOff' | 'Clock' | 'Info'; title: string } | null =
     shownReason === 'offline'
@@ -232,7 +232,7 @@ export function WatchStage() {
         <SayItBox
           sayIt={sayIt}
           id={beforeBoxId}
-          label={watch.beforeQuestion}
+          label={<En>{watch.beforeQuestion}</En>}
           optional
           rows={2}
           placeholder={t('lessonPlayer.watch.beforePlaceholder')}
@@ -251,16 +251,16 @@ export function WatchStage() {
             ) : null}
             <article className="tw-watch-written" aria-labelledby={writtenId}>
               <span className="eyebrow tw-watch-written-part">{t('lessonPlayer.watch.writtenPart')}</span>
-              <h3 id={writtenId} ref={writtenHeadingRef} className="tw-watch-written-h" tabIndex={-1}>
+              <h3 id={writtenId} ref={writtenHeadingRef} className="tw-watch-written-h" tabIndex={-1} {...contentLang}>
                 {watch.title}
               </h3>
-              <div className="tw-watch-written-text">
+              <div className="tw-watch-written-text" {...contentLang}>
                 {splitParagraphs(watch.summary).map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
               </div>
               <h4 className="tw-watch-keypoints-h">{t('lessonPlayer.watch.keyPoints')}</h4>
-              <ul className="tw-watch-keypoints">
+              <ul className="tw-watch-keypoints" {...contentLang}>
                 {watch.keyPoints.map((point, index) => (
                   <li key={index}>{point}</li>
                 ))}
@@ -291,6 +291,7 @@ export function WatchStage() {
                   ref={iframeRef}
                   src={youtubeEmbedUrl(watch.youtubeId, window.location.origin)}
                   title={watch.title}
+                  {...contentLang}
                   allow={PLAYER_ALLOW}
                   allowFullScreen
                   loading="eager"
@@ -306,7 +307,9 @@ export function WatchStage() {
               ) : undefined
             }
           >
-            <p className="tw-watch-why">{watch.why}</p>
+            <p className="tw-watch-why" {...contentLang}>
+              {watch.why}
+            </p>
           </VideoCard>
         )}
         <p className="tw-visually-hidden" aria-live="polite">
@@ -321,7 +324,7 @@ export function WatchStage() {
         <SayItBox
           sayIt={sayIt}
           id={afterBoxId}
-          label={watch.afterQuestion}
+          label={<En>{watch.afterQuestion}</En>}
           optional
           rows={3}
           placeholder={t('lessonPlayer.watch.afterPlaceholder')}
@@ -342,7 +345,9 @@ export function WatchStage() {
             <span>{t('lessonPlayer.watch.forTeachers')}</span>
             <Icon name="ChevronDown" size={20} className="tw-watch-teachers-chevron" />
           </summary>
-          <p className="body">{watch.contentNote}</p>
+          <p className="body" {...contentLang}>
+            {watch.contentNote}
+          </p>
         </details>
       ) : null}
 

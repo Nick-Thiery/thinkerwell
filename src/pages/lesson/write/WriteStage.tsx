@@ -19,7 +19,7 @@
  */
 import { useCallback, useLayoutEffect, useRef, useState, type SyntheticEvent } from 'react';
 import { Button, Chip, Icon, MascotTip, SegmentedControl, TaskCard, WritingBox } from '../../../components/ds';
-import { useI18n } from '../../../i18n';
+import { En, useI18n } from '../../../i18n';
 import { hasText, LESSON_PHONE_QUERY, useLessonPlayer, useMediaQuery } from '../../../lesson';
 import type { LessonProgress, WritingProgress } from '../../../storage';
 import { LessonEvidence } from '../evidence/LessonEvidence';
@@ -37,7 +37,7 @@ function withWriting(change: (writing: WritingProgress) => WritingProgress) {
 }
 
 export function WriteStage() {
-  const { t } = useI18n();
+  const { t, contentLang } = useI18n();
   const { lesson, progress, update, stageEvent, mode: playerMode } = useLessonPlayer();
   const phone = useMediaQuery(LESSON_PHONE_QUERY);
   const write = lesson.write;
@@ -124,7 +124,9 @@ export function WriteStage() {
 
   return (
     <>
-      <TaskCard>{write.prompt}</TaskCard>
+      <TaskCard>
+        <En>{write.prompt}</En>
+      </TaskCard>
 
       <div className="tw-write-tools">
         <SegmentedControl
@@ -157,7 +159,7 @@ export function WriteStage() {
           </span>
           <div className="tw-write-chips">
             {write.sentenceStarters.map((starter, index) => (
-              <Chip key={index} variant="starter" icon="Plus" onClick={() => addStarter(starter)}>
+              <Chip key={index} variant="starter" icon="Plus" onClick={() => addStarter(starter)} {...contentLang}>
                 {starter}
               </Chip>
             ))}
@@ -175,7 +177,7 @@ export function WriteStage() {
               <WritingBox
                 key={index}
                 id={`write-plan-${lesson.id}-${index}`}
-                label={title}
+                label={<En>{title}</En>}
                 optional
                 rows={3}
                 value={writing.planning[index] ?? ''}
@@ -235,7 +237,7 @@ export function WriteStage() {
               <span className="tw-write-check-box" aria-hidden="true">
                 <Icon name="Check" size={18} strokeWidth={3} />
               </span>
-              <span>{item}</span>
+              <span {...contentLang}>{item}</span>
             </label>
           );
         })}
@@ -271,7 +273,7 @@ interface ExampleAnswerProps {
  * fold it away for now.
  */
 function ExampleAnswer({ example, written, shown, onShow }: ExampleAnswerProps) {
-  const { t } = useI18n();
+  const { t, contentLang } = useI18n();
   const [open, setOpen] = useState(shown);
   const summaryRef = useRef<HTMLElement>(null);
   const focusSummary = useRef(false);
@@ -325,7 +327,9 @@ function ExampleAnswer({ example, written, shown, onShow }: ExampleAnswerProps) 
       </summary>
       <div className="tw-write-example-body">
         <span className="eyebrow tw-write-example-eyebrow">{t('lessonPlayer.write.exampleEyebrow')}</span>
-        <p className="tw-write-example-text">{example}</p>
+        <p className="tw-write-example-text" {...contentLang}>
+          {example}
+        </p>
         <p className="tw-write-example-note">{t('lessonPlayer.write.exampleNote')}</p>
       </div>
     </details>

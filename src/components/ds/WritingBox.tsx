@@ -1,4 +1,4 @@
-import { useId, type ReactElement, type TextareaHTMLAttributes } from 'react';
+import { useId, type ReactElement, type ReactNode, type TextareaHTMLAttributes } from 'react';
 import { VoiceButton } from './VoiceButton';
 import { cx } from './internal/cx';
 import { useI18n } from '../../i18n';
@@ -11,8 +11,8 @@ type ForwardedTextareaProps = Omit<
 
 export interface WritingBoxProps extends ForwardedTextareaProps {
   id?: string;
-  /** The prompt; also the textarea's label. */
-  label?: string;
+  /** The prompt; also the textarea's label. A string, or course text marked with <En> (a lesson's question). */
+  label?: ReactNode;
   /**
    * Accessible name for the textarea when there is no visible `label` — for
    * example an id pointing at a `QuestionCard`'s prompt. Required when

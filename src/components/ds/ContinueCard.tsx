@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { useI18n } from '../../i18n';
 import { Button } from './Button';
 import { cx } from './internal/cx';
@@ -6,9 +7,11 @@ import type { StageId } from './types';
 import './ContinueCard.css';
 
 export interface ContinueCardProps {
+  /** The lesson's title: course text, marked as English. */
   title: string;
   eyebrow?: string;
-  lessonLabel?: string;
+  /** "Lesson 3 · History & Human Stories": may hold course text marked with <En>. */
+  lessonLabel?: ReactNode;
   done?: StageId[];
   current?: StageId;
   stageLabel?: string;
@@ -33,12 +36,14 @@ export function ContinueCard({
   href,
   className,
 }: ContinueCardProps) {
-  const { t } = useI18n();
+  const { t, contentLang } = useI18n();
   return (
     <section className={cx('tw-continue', className)} aria-label={t('ds.course.continueCard.label')}>
       <div>
         <span className="tw-continue-eyebrow">{eyebrow || t('ds.course.continueCard.eyebrow')}</span>
-        <h2 className="tw-continue-title">{title}</h2>
+        <h2 className="tw-continue-title" {...contentLang}>
+          {title}
+        </h2>
         <div className="tw-continue-meta">
           {lessonLabel ? <span>{lessonLabel}</span> : null}
           <StageDots done={done || []} current={current} />

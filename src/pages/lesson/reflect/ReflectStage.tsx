@@ -1,5 +1,5 @@
 import { Icon, TaskCard } from '../../../components/ds';
-import { useI18n } from '../../../i18n';
+import { En, useI18n } from '../../../i18n';
 import { applyStageEvent, isRequiredReflectionAnswered, useLessonPlayer } from '../../../lesson';
 import { SayItBox, useSayIt } from '../sayIt';
 import { StageActionBar } from '../StageActionBar';
@@ -47,7 +47,7 @@ export function ReflectStage() {
               key={index}
               sayIt={sayIt}
               id={`reflect-${lesson.id}-${index}`}
-              label={prompt.text}
+              label={<En>{prompt.text}</En>}
               optional={!prompt.required}
               rows={prompt.required ? 4 : 3}
               value={progress.reflections[index] ?? ''}

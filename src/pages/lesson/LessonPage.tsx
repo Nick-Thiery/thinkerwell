@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router';
 import { usePageTitle } from '../../app/usePageTitle';
 import { Icon, StagePath, StatusBanner } from '../../components/ds';
 import { isStageId, type Lesson, type StageId } from '../../content';
-import { useI18n } from '../../i18n';
+import { En, useI18n } from '../../i18n';
 import {
   LESSON_PHONE_QUERY,
   LESSON_WIDE_QUERY,
@@ -105,29 +105,31 @@ export function LessonPage() {
 }
 
 function LessonIntro({ lesson }: { lesson: Lesson }) {
-  const { t } = useI18n();
+  const { t, contentLang } = useI18n();
   const { section } = useLessonPlayer();
   return (
     <div className="tw-lesson-intro">
       <Link to={`/course#${section.id}`} className="tw-lesson-back">
         <Icon name="ArrowLeft" size={18} />
-        {section.title}
+        <En>{section.title}</En>
       </Link>
       <div className="tw-lesson-titles">
         <span className={`eyebrow tw-lesson-number tw-lesson-number-${section.id}`}>
           {t('lesson.number', { number: lesson.number })}
         </span>
-        <h1 className="tw-lesson-title" tabIndex={-1}>
+        <h1 className="tw-lesson-title" tabIndex={-1} {...contentLang}>
           {lesson.title}
         </h1>
-        <p className="tw-lesson-question">{lesson.essentialQuestion}</p>
+        <p className="tw-lesson-question" {...contentLang}>
+          {lesson.essentialQuestion}
+        </p>
       </div>
     </div>
   );
 }
 
 function LessonGoal({ lesson }: { lesson: Lesson }) {
-  const { t } = useI18n();
+  const { t, contentLang } = useI18n();
   const [min, max] = lesson.estimatedMinutes;
   return (
     <>
@@ -136,7 +138,9 @@ function LessonGoal({ lesson }: { lesson: Lesson }) {
           <Icon name="Target" size={16} />
           {t('lessonPlayer.shell.learningGoal')}
         </span>
-        <p className="body">{lesson.learningGoal}</p>
+        <p className="body" {...contentLang}>
+          {lesson.learningGoal}
+        </p>
       </div>
       <p className="small tw-lesson-time">
         <Icon name="Clock" size={16} />

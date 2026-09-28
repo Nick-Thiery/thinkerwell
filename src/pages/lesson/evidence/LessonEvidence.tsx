@@ -36,7 +36,7 @@ type CardOf<T extends EvidenceCard['type']> = Extract<EvidenceCard, { type: T }>
  * h3 inside its figcaption.
  */
 export function LessonEvidence({ evidence, visual = null, enlargeablePicture = true }: LessonEvidenceProps) {
-  const { t } = useI18n();
+  const { t, contentLang } = useI18n();
   const baseId = useId();
   const fictionLabel = evidence.fictional ? getCourse().fictionLabel : null;
 
@@ -48,9 +48,12 @@ export function LessonEvidence({ evidence, visual = null, enlargeablePicture = t
           <Icon name="Eye" size={16} />
           {t('lessonPlayer.evidence.eyebrow')}
         </span>
-        <p className="tw-lx-question">{evidence.question}</p>
+        <p className="tw-lx-question" {...contentLang}>
+          {evidence.question}
+        </p>
         {fictionLabel ? (
-          <p className="tw-lx-fiction">
+          // The label comes with the lesson files (content/course.json), so it stays English with them.
+          <p className="tw-lx-fiction" {...contentLang}>
             <Icon name="Info" size={16} />
             {fictionLabel}
           </p>
@@ -75,14 +78,14 @@ interface EvidenceFigureProps {
 }
 
 function EvidenceFigure({ card, titleId, fictionalBadge }: EvidenceFigureProps) {
-  const { t } = useI18n();
+  const { t, contentLang } = useI18n();
   return (
     // The type modifier is tw-lx-card-<type>, never tw-lx-<type>: the inner
     // lists already use tw-lx-items, tw-lx-timeline, tw-lx-sources and
     // tw-lx-table, and sharing a class would give the figure their styles.
     <figure className={`tw-lx-card tw-lx-card-${card.type}`} aria-labelledby={titleId}>
       <figcaption className="tw-lx-caption">
-        <h3 id={titleId} className="tw-lx-title">
+        <h3 id={titleId} className="tw-lx-title" {...contentLang}>
           {card.title}
         </h3>
         {fictionalBadge ? (
@@ -114,8 +117,9 @@ function EvidenceBody({ card }: { card: EvidenceCard }) {
 }
 
 function ItemsBody({ card }: { card: CardOf<'items'> }) {
+  const { contentLang } = useI18n();
   return (
-    <ul className="tw-lx-items">
+    <ul className="tw-lx-items" {...contentLang}>
       {card.items.map((item, index) => (
         <li key={index}>{item}</li>
       ))}
@@ -124,9 +128,10 @@ function ItemsBody({ card }: { card: CardOf<'items'> }) {
 }
 
 function TimelineBody({ card }: { card: CardOf<'timeline'> }) {
+  const { contentLang } = useI18n();
   return (
     // role="list": Safari drops list semantics from unstyled lists.
-    <ol className="tw-lx-timeline" role="list">
+    <ol className="tw-lx-timeline" role="list" {...contentLang}>
       {card.events.map((event, index) => (
         <li key={index} className="tw-lx-event">
           <span className="tw-lx-year">{event.year}</span>
@@ -145,7 +150,7 @@ function TimelineBody({ card }: { card: CardOf<'timeline'> }) {
  * (Lesson 8's small trading network).
  */
 function MapBody({ card }: { card: CardOf<'map'> }) {
-  const { t } = useI18n();
+  const { t, contentLang } = useI18n();
   const keyId = useId();
   return (
     <>
@@ -154,7 +159,7 @@ function MapBody({ card }: { card: CardOf<'map'> }) {
           <span id={keyId} className="tw-lx-legend-label">
             {t('lessonPlayer.evidence.mapKey')}
           </span>
-          <ul className="tw-lx-legend-list" role="list" aria-labelledby={keyId}>
+          <ul className="tw-lx-legend-list" role="list" aria-labelledby={keyId} {...contentLang}>
             {card.legend.map((entry, index) => (
               <li key={index}>{entry.label}</li>
             ))}
@@ -163,7 +168,7 @@ function MapBody({ card }: { card: CardOf<'map'> }) {
       ) : null}
       <ul className="tw-lx-grid tw-lx-places" role="list" aria-label={t('lessonPlayer.evidence.places')}>
         {card.locations.map((location) => (
-          <li key={location.id} className="tw-lx-tile">
+          <li key={location.id} className="tw-lx-tile" {...contentLang}>
             <span className="tw-lx-name">{location.label}</span>
             <span className="tw-lx-desc">{location.description}</span>
           </li>
@@ -174,8 +179,9 @@ function MapBody({ card }: { card: CardOf<'map'> }) {
 }
 
 function CasesBody({ card }: { card: CardOf<'cases'> }) {
+  const { contentLang } = useI18n();
   return (
-    <ul className="tw-lx-grid tw-lx-cases" role="list">
+    <ul className="tw-lx-grid tw-lx-cases" role="list" {...contentLang}>
       {card.cases.map((item, index) => (
         <li key={index} className="tw-lx-tile">
           <span className="tw-lx-name">{item.name}</span>
@@ -187,8 +193,9 @@ function CasesBody({ card }: { card: CardOf<'cases'> }) {
 }
 
 function SourcesBody({ card }: { card: CardOf<'sources'> }) {
+  const { contentLang } = useI18n();
   return (
-    <ul className="tw-lx-sources" role="list">
+    <ul className="tw-lx-sources" role="list" {...contentLang}>
       {card.sources.map((source, index) => (
         <li key={index} className="tw-lx-tile">
           <span className="tw-lx-name">{source.caption}</span>

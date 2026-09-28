@@ -20,7 +20,7 @@ export interface SectionChipsProps {
  * SectionsSidebar.
  */
 export function SectionChips({ sections, currentSectionId }: SectionChipsProps) {
-  const { t } = useI18n();
+  const { t, contentLang } = useI18n();
   const currentRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export function SectionChips({ sections, currentSectionId }: SectionChipsProps) 
         return (
           <a key={section.id} href={`#${section.id}`} className="tw-chip" aria-current={isCurrent ? 'true' : undefined} ref={isCurrent ? currentRef : undefined}>
             <Icon name={SECTION_ICONS[section.id]} size={18} />
-            <span>{section.title}</span>
+            <span {...contentLang}>{section.title}</span>
           </a>
         );
       })}

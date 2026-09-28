@@ -4,7 +4,7 @@ import { LanguageChoice, useHasLanguageChoice } from '../../app/LanguageChoice';
 import { lessonPath } from '../../app/lessonUrls';
 import type { Lesson } from '../../content';
 import { Button, Icon, TextField } from '../../components/ds';
-import { useI18n } from '../../i18n';
+import { En, useI18n } from '../../i18n';
 import type { LearnerColour, NewLearner } from '../../storage';
 import { ColourPicker } from './ColourPicker';
 import { HomeHero } from './HomeHero';
@@ -41,7 +41,7 @@ export interface NewLearnerFormProps {
  * choose); nothing else.
  */
 export function NewLearnerForm({ lesson1, onBack, onSubmit }: NewLearnerFormProps) {
-  const { t, locale } = useI18n();
+  const { t, tx, locale } = useI18n();
   const hasLanguageChoice = useHasLanguageChoice();
   const languageHelpId = useId();
   // null until the learner taps a language: then they follow the device's.
@@ -99,7 +99,7 @@ export function NewLearnerForm({ lesson1, onBack, onSubmit }: NewLearnerFormProp
         <div className="tw-home-starts-with">
           <span className="eyebrow">{t('pages.home.newLearner.startsWith')}</span>
           <span className="tw-home-starts-with-lesson">
-            {t('pages.home.newLearner.startsWithLesson', { number: lesson1.number, title: lesson1.title })}
+            {tx('pages.home.newLearner.startsWithLesson', { number: lesson1.number, title: <En>{lesson1.title}</En> })}
           </span>
           <p className="body">{t('pages.home.newLearner.startsWithNote')}</p>
         </div>
