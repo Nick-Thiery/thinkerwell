@@ -26,6 +26,7 @@
  * section checks this version doesn't have are left out and counted.
  */
 import { STAGES } from '../content/stages';
+import { LOCALE_CODE_PATTERN } from '../i18n/locales';
 import {
   LEARNER_COLOURS,
   type CheckAnswer,
@@ -47,6 +48,7 @@ export const MAX_TEXT_LENGTH = 50_000;
 /** The name form allows 30 characters; this leaves room without letting a file put a page of text on a tile. */
 export const MAX_NAME_LENGTH = 60;
 export const MAX_CLASS_CODE_LENGTH = 40;
+const MAX_LANGUAGE_LENGTH = 35;
 const MAX_ID_LENGTH = 64;
 const MAX_LEARNERS = 500;
 const MAX_LESSON_RECORDS = 1000;
@@ -254,6 +256,13 @@ function checkLearner(value: unknown): Learner {
     const level = source.readingLevel;
     if (level !== 'standard' && level !== 'simpler') fail();
     learner.readingLevel = level;
+  }
+  // Added after version 1 without a new version: older Thinkerwell drops it
+  // (extra fields are ignored), and older files simply don't have it.
+  if (source.language !== undefined) {
+    const language = source.language;
+    if (typeof language !== 'string' || language.length > MAX_LANGUAGE_LENGTH || !LOCALE_CODE_PATTERN.test(language)) fail();
+    learner.language = language;
   }
   return learner;
 }

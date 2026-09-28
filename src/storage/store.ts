@@ -6,6 +6,7 @@
  *   const learners = await store.listLearners();
  */
 import { deleteDB, type IDBPDatabase } from 'idb';
+import { LOCALE_CODE_PATTERN } from '../i18n/locales';
 import { DB_NAME, openThinkerwellDb, SETTINGS_KEY, type ThinkerwellDB } from './db';
 import { planImport, type ImportSummary, type LearnerOnDevice } from './mergeWork';
 import { forgetAllUnsavedProgress, recoverUnsavedProgress } from './unsavedProgress';
@@ -29,13 +30,14 @@ export interface ThinkerwellStore {
   /** Every learner on this device, oldest first. */
   listLearners(): Promise<Learner[]>;
   getLearner(id: string): Promise<Learner | undefined>;
-  /** Trims the name; throws if it is empty. Drops a blank class code. */
+  /** Trims the name; throws if it is empty. Drops a blank class code. Throws for a language that isn't a language code. */
   addLearner(input: NewLearner): Promise<Learner>;
-  /** Throws if the learner doesn't exist. A blank or undefined classCode removes it. */
-  updateLearner(
-    id: string,
-    patch: Partial<Pick<Learner, 'name' | 'colour' | 'classCode' | 'readingLevel'>>,
-  ): Promise<Learner>;
+  /**
+   * Throws if the learner doesn't exist. A blank or undefined classCode
+   * removes it; a null language removes the learner's choice, so the
+   * device's applies again.
+   */
+  updateLearner(id: string, patch: LearnerPatch): Promise<Learner>;
   /** Deletes the learner and all their progress, quiz attempts and recordings, all or nothing. */
   removeLearner(id: string): Promise<void>;
 
@@ -107,6 +109,11 @@ export interface ThinkerwellStore {
   close(): void;
 }
 
+/** What updateLearner() can change. */
+export type LearnerPatch = Partial<Pick<Learner, 'name' | 'colour' | 'classCode' | 'readingLevel'>> & {
+  language?: string | null;
+};
+
 const now = (): string => new Date().toISOString();
 
 /** A fresh progress record for a lesson nobody has started yet. */
@@ -143,6 +150,10 @@ function cleanName(name: string): string {
   const trimmed = name.trim();
   if (!trimmed) throw new Error('A learner needs a name.');
   return trimmed;
+}
+
+function checkLanguage(language: string): void {
+  if (!LOCALE_CODE_PATTERN.test(language)) throw new Error(`Not a language code: ${language}`);
 }
 
 function checkColour(colour: string): void {
@@ -186,6 +197,7 @@ function createStore(db: IDBPDatabase<ThinkerwellDB>): ThinkerwellStore {
 
     async addLearner(input) {
       checkColour(input.colour);
+      if (input.language !== undefined) checkLanguage(input.language);
       const learner: Learner = {
         id: crypto.randomUUID(),
         name: cleanName(input.name),
@@ -194,6 +206,7 @@ function createStore(db: IDBPDatabase<ThinkerwellDB>): ThinkerwellStore {
       };
       const classCode = input.classCode?.trim();
       if (classCode) learner.classCode = classCode;
+      if (input.language !== undefined) learner.language = input.language;
       await db.add('learners', learner);
       return learner;
     },
@@ -205,6 +218,7 @@ function createStore(db: IDBPDatabase<ThinkerwellDB>): ThinkerwellStore {
       if (patch.readingLevel !== undefined && patch.readingLevel !== 'standard' && patch.readingLevel !== 'simpler') {
         throw new Error(`Unknown reading level: ${String(patch.readingLevel)}`);
       }
+      if (typeof patch.language === 'string') checkLanguage(patch.language);
       const tx = db.transaction('learners', 'readwrite');
       const current = await tx.store.get(id);
       if (!current) throw new Error(`No learner with id ${id}`);
@@ -212,6 +226,8 @@ function createStore(db: IDBPDatabase<ThinkerwellDB>): ThinkerwellStore {
       if (name !== undefined) next.name = name;
       if (patch.colour !== undefined) next.colour = patch.colour;
       if (patch.readingLevel !== undefined) next.readingLevel = patch.readingLevel;
+      if (patch.language === null) delete next.language;
+      else if (patch.language !== undefined) next.language = patch.language;
       if ('classCode' in patch) {
         const classCode = patch.classCode?.trim();
         if (classCode) next.classCode = classCode;

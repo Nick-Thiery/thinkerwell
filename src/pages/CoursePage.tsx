@@ -17,7 +17,7 @@ import { SectionsSidebar } from './course/SectionsSidebar';
  * locked, so every row is a real link regardless of progress.
  */
 export function CoursePage() {
-  const { t } = useI18n();
+  const { t, contentLang } = useI18n();
   const session = useLearnerSession();
   const learnerId = session.activeLearner?.id ?? null;
   const progressResult = useLearnerProgress(learnerId);
@@ -127,10 +127,12 @@ export function CoursePage() {
     <div className="tw-course-page">
       <header className="tw-course-intro">
         <span className="eyebrow">{t('pages.course.eyebrow')}</span>
-        <h1 className="h1" tabIndex={-1}>
+        <h1 className="h1" tabIndex={-1} {...contentLang}>
           {title}
         </h1>
-        <p className="body-lg">{course.course.description}</p>
+        <p className="body-lg" {...contentLang}>
+          {course.course.description}
+        </p>
         <div className="tw-course-badges">
           <Badge tone="outline" icon="BookOpen">
             {t('pages.course.lessonsBadge', { count: course.course.totalLessons })}

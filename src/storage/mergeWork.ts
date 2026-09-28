@@ -6,8 +6,8 @@
  *
  * Learners
  *   Matched by id, never by name. A learner who isn't here is added as they
- *   are in the file (name, colour, class code, reading level, created
- *   date), even if someone else here has the same name. A learner who is
+ *   are in the file (name, colour, class code, reading level, language,
+ *   created date), even if someone else here has the same name. A learner who is
  *   here keeps their details from this device; only their work is combined.
  *
  * Lesson work (one record per learner and lesson), when both have a record

@@ -11,15 +11,15 @@
  * notes come first, sensitive topics before the rest and marked, so a
  * teacher reads them before planning the session.
  */
-import { Fragment } from 'react';
+import { Fragment, type ReactNode } from 'react';
 import { educatorsPath, lessonPath, lessonPrintPath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
 import { Button, Icon } from '../../components/ds';
 import { getLessonSection, type Lesson, type ThinkCheck } from '../../content';
-import { useI18n } from '../../i18n';
+import { En, useI18n } from '../../i18n';
 import { formatDuration } from '../../lesson/format';
 import { LessonEvidence } from '../lesson/evidence/LessonEvidence';
-import { withoutVerdict } from '../lesson/read/feedbackText';
+import { feedbackWithoutVerdict } from '../lesson/read/feedbackText';
 import { PrintToolbar } from '../print/PrintToolbar';
 import '../print/print.css';
 import { AnswerOptions } from './AnswerOptions';
@@ -32,7 +32,8 @@ export function youtubeWatchUrl(youtubeId: string): string {
 }
 
 export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
-  const { t } = useI18n();
+  // Everything from the lesson file is course text, marked as English (`en`).
+  const { t, tx, formatNumber, contentLang: en } = useI18n();
   usePageTitle(t('pages.teacherGuide.pageTitle', { number: lesson.number }));
   const section = getLessonSection(lesson);
   const [min, max] = lesson.estimatedMinutes;
@@ -56,21 +57,21 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
         <header className="tw-print-head">
           <p className="tw-print-brand">{t('print.brand')}</p>
           <p className="tw-print-eyebrow">{t('pages.teacherGuide.eyebrow', { number: lesson.number })}</p>
-          <h1 id="guide-title" className="tw-print-title" tabIndex={-1}>
+          <h1 id="guide-title" className="tw-print-title" tabIndex={-1} {...en}>
             {lesson.title}
           </h1>
           <dl className="tw-guide-facts">
             <div>
               <dt>{t('pages.teacherGuide.section')}</dt>
-              <dd>{t('ds.course.sectionBadge.eyebrow', { number: section.number })}: {section.title}</dd>
+              <dd>{tx('pages.teacherGuide.sectionValue', { number: section.number, title: <En>{section.title}</En> })}</dd>
             </div>
             <div>
               <dt>{t('pages.teacherGuide.essentialQuestion')}</dt>
-              <dd>{lesson.essentialQuestion}</dd>
+              <dd {...en}>{lesson.essentialQuestion}</dd>
             </div>
             <div>
               <dt>{t('pages.teacherGuide.learningGoal')}</dt>
-              <dd>{lesson.learningGoal}</dd>
+              <dd {...en}>{lesson.learningGoal}</dd>
             </div>
             <div>
               <dt>{t('pages.teacherGuide.time')}</dt>
@@ -84,7 +85,7 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
 
         <section className="tw-print-part">
           <h2>{t('pages.teacherGuide.keyWordsTitle')}</h2>
-          <dl className="tw-print-glossary">
+          <dl className="tw-print-glossary" {...en}>
             {read.glossary.map((entry) => (
               <div key={entry.word} className="tw-print-keep">
                 <dt>{entry.word}</dt>
@@ -109,12 +110,14 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
           <ol className="tw-print-questions">
             {read.checks.map((check, index) => (
               <li key={index}>
-                <p className="tw-guide-question">{check.question}</p>
+                <p className="tw-guide-question" {...en}>
+                  {check.question}
+                </p>
                 {check.type === 'choice' ? (
                   <AnswerOptions
                     options={check.options.map((option) =>
                       option.correct
-                        ? { ...option, feedback: withoutVerdict(option.feedback, t('lessonPlayer.read.feedbackLead.correct')) }
+                        ? { ...option, feedback: feedbackWithoutVerdict(option.feedback, true) }
                         : option,
                     )}
                     feedback="why"
@@ -133,11 +136,13 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
           <h2>{t('stages.write')}</h2>
           <div className="tw-print-keep">
             <h3>{t('pages.teacherGuide.writeTask')}</h3>
-            <p className="tw-print-task">{write.prompt}</p>
+            <p className="tw-print-task" {...en}>
+              {write.prompt}
+            </p>
           </div>
           <div className="tw-print-keep">
             <h3>{t('pages.teacherGuide.selfCheck')}</h3>
-            <ul>
+            <ul {...en}>
               {write.selfCheck.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
@@ -145,7 +150,9 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
           </div>
           <div className="tw-print-keep">
             <h3>{t('pages.teacherGuide.example')}</h3>
-            <p className="tw-guide-example">{write.example}</p>
+            <p className="tw-guide-example" {...en}>
+              {write.example}
+            </p>
             <p className="tw-print-muted">{t('pages.teacherGuide.exampleNote')}</p>
           </div>
         </section>
@@ -154,11 +161,11 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
           <h2>{t('stages.speak')}</h2>
           <div className="tw-print-keep">
             <h3>{t('lessonPlayer.speak.partnerTitle')}</h3>
-            <p>{speak.partnerTask}</p>
+            <p {...en}>{speak.partnerTask}</p>
           </div>
           <div className="tw-print-keep">
             <h3>{t('lessonPlayer.speak.soloTitle')}</h3>
-            <p>{speak.independentTask}</p>
+            <p {...en}>{speak.independentTask}</p>
           </div>
         </section>
 
@@ -167,11 +174,11 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
           <p className="tw-print-muted">{t('pages.teacherGuide.discussIntro')}</p>
           <div className="tw-print-keep">
             <h3>{t('pages.teacherGuide.discussWarmUp')}</h3>
-            <p>{lesson.warmUp.question}</p>
+            <p {...en}>{lesson.warmUp.question}</p>
             {lesson.warmUp.options ? (
               <>
                 <p className="tw-print-muted">{t('pages.teacherGuide.discussChoices')}</p>
-                <ul>
+                <ul {...en}>
                   {lesson.warmUp.options.map((option, index) => (
                     <li key={index}>{option}</li>
                   ))}
@@ -184,9 +191,9 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
               <h3>{t('pages.teacherGuide.discussThink')}</h3>
               {thinkChecks.map((check, index) => (
                 <Fragment key={index}>
-                  <p>{check.question}</p>
+                  <p {...en}>{check.question}</p>
                   <p className="tw-print-muted">
-                    {t('pages.teacherGuide.startHelp')} {check.placeholder}
+                    {t('pages.teacherGuide.startHelp')} <En>{check.placeholder}</En>
                   </p>
                 </Fragment>
               ))}
@@ -197,7 +204,7 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
             <ul>
               {reflect.prompts.map((prompt, index) => (
                 <li key={index}>
-                  {prompt.text}{' '}
+                  <En>{prompt.text}</En>{' '}
                   <span className="tw-print-muted">
                     {prompt.required ? t('pages.teacherGuide.reflectRequired') : t('print.optional')}
                   </span>
@@ -212,18 +219,18 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
           <dl className="tw-guide-facts">
             <div>
               <dt>{t('pages.teacherGuide.videoName')}</dt>
-              <dd>{watch.title}</dd>
+              <dd {...en}>{watch.title}</dd>
             </div>
             <div>
               <dt>{t('pages.teacherGuide.videoChannel')}</dt>
-              <dd>{watch.channel}</dd>
+              <dd {...en}>{watch.channel}</dd>
             </div>
             <div>
               <dt>{t('pages.teacherGuide.videoLength')}</dt>
               <dd>
                 {watch.durationSeconds === null
                   ? t('pages.teacherGuide.videoLengthUnknown')
-                  : formatDuration(watch.durationSeconds)}
+                  : formatDuration(watch.durationSeconds, formatNumber)}
               </dd>
             </div>
             <div>
@@ -234,7 +241,7 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
             </div>
             <div>
               <dt>{t('pages.teacherGuide.videoWhy')}</dt>
-              <dd>{watch.why}</dd>
+              <dd {...en}>{watch.why}</dd>
             </div>
           </dl>
           {watch.contentNote ? (
@@ -243,17 +250,17 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
                 <Icon name="Hand" size={20} />
                 {t('pages.teacherGuide.contentNote')}
               </h3>
-              <p>{watch.contentNote}</p>
+              <p {...en}>{watch.contentNote}</p>
             </div>
           ) : null}
           <p className="tw-print-muted">{t('pages.teacherGuide.videoOffline')}</p>
           <div className="tw-print-keep">
             <h3>{t('pages.teacherGuide.beforeVideo')}</h3>
-            <p>{watch.beforeQuestion}</p>
+            <p {...en}>{watch.beforeQuestion}</p>
           </div>
           <div className="tw-print-keep">
             <h3>{t('pages.teacherGuide.afterVideo')}</h3>
-            <p>{watch.afterQuestion}</p>
+            <p {...en}>{watch.afterQuestion}</p>
           </div>
         </section>
 
@@ -263,7 +270,9 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
             <ul className="tw-guide-links">
               {lesson.sources.map((source) => (
                 <li key={source.url}>
-                  <ExternalLink href={source.url}>{source.label}</ExternalLink>
+                  <ExternalLink href={source.url}>
+                    <En>{source.label}</En>
+                  </ExternalLink>
                 </li>
               ))}
             </ul>
@@ -276,7 +285,7 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
 
 /** The notes for teachers: sensitive topics first, in a marked box, then the rest. */
 function BeforeYouTeach({ lesson }: { lesson: Lesson }) {
-  const { t } = useI18n();
+  const { t, contentLang } = useI18n();
   const { sensitiveNotes, educatorNotes } = lesson;
   const contentNote = lesson.watch.contentNote;
   const hasSensitive = sensitiveNotes.length > 0 || contentNote !== null;
@@ -293,7 +302,9 @@ function BeforeYouTeach({ lesson }: { lesson: Lesson }) {
           </h3>
           <ul>
             {sensitiveNotes.map((note, index) => (
-              <li key={index}>{note}</li>
+              <li key={index} {...contentLang}>
+                {note}
+              </li>
             ))}
             {contentNote ? <li>{t('pages.teacherGuide.contentNotePointer')}</li> : null}
           </ul>
@@ -302,7 +313,7 @@ function BeforeYouTeach({ lesson }: { lesson: Lesson }) {
       {educatorNotes.length > 0 ? (
         <div className="tw-guide-notes">
           <h3>{t('pages.teacherGuide.notesTitle')}</h3>
-          <ul>
+          <ul {...contentLang}>
             {educatorNotes.map((note, index) => (
               <li key={index}>{note}</li>
             ))}
@@ -315,7 +326,7 @@ function BeforeYouTeach({ lesson }: { lesson: Lesson }) {
 
 /** The suggested plan for about 45 minutes (./sessionPlan.ts), with a 30-minute column and a note on shortening it. */
 function SessionPlan({ lesson }: { lesson: Lesson }) {
-  const { t } = useI18n();
+  const { t, formatNumber } = useI18n();
   const doText = (step: (typeof SESSION_PLAN)[number]['step']): string => {
     switch (step) {
       case 'read':
@@ -357,10 +368,10 @@ function SessionPlan({ lesson }: { lesson: Lesson }) {
               </th>
               <td role="cell">{doText(row.step)}</td>
               <td role="cell" className="tw-guide-plan-min">
-                {row.minutes}
+                {formatNumber(row.minutes)}
               </td>
               <td role="cell" className="tw-guide-plan-min">
-                {row.short ?? t('pages.teacherGuide.planSkip')}
+                {row.short === null ? t('pages.teacherGuide.planSkip') : formatNumber(row.short)}
               </td>
             </tr>
           ))}
@@ -372,10 +383,10 @@ function SessionPlan({ lesson }: { lesson: Lesson }) {
             </th>
             <td role="cell" />
             <td role="cell" className="tw-guide-plan-min">
-              {planTotal('minutes')}
+              {formatNumber(planTotal('minutes'))}
             </td>
             <td role="cell" className="tw-guide-plan-min">
-              {planTotal('short')}
+              {formatNumber(planTotal('short'))}
             </td>
           </tr>
         </tfoot>
@@ -390,7 +401,7 @@ function SessionPlan({ lesson }: { lesson: Lesson }) {
  * Nothing loads from there until the teacher taps it. Printed, its address
  * follows it (teacherTools.css).
  */
-function ExternalLink({ href, children }: { href: string; children: string }) {
+function ExternalLink({ href, children }: { href: string; children: ReactNode }) {
   const { t } = useI18n();
   return (
     <a className="tw-guide-link" href={href} target="_blank" rel="noreferrer">

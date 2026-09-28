@@ -20,7 +20,7 @@ export interface SectionsSidebarProps {
  * toggle: both are just anchor jumps, so no JS breakpoint is needed).
  */
 export function SectionsSidebar({ sections, progressBySection, currentSectionId, hideProgress }: SectionsSidebarProps) {
-  const { t } = useI18n();
+  const { t, contentLang } = useI18n();
   return (
     <nav aria-label={t('pages.course.sectionsNav')} className="tw-course-nav">
       <span className="eyebrow tw-course-nav-label">{t('pages.course.sectionsNav')}</span>
@@ -29,7 +29,9 @@ export function SectionsSidebar({ sections, progressBySection, currentSectionId,
         return (
           <a key={section.id} href={`#${section.id}`} className="tw-course-nav-link" aria-current={section.id === currentSectionId ? 'true' : undefined}>
             <SectionBadge section={section.id} showName={false} size={40} />
-            <span className="tw-course-nav-name">{section.title}</span>
+            <span className="tw-course-nav-name" {...contentLang}>
+              {section.title}
+            </span>
             {hideProgress ? null : (
               <span className="tw-course-nav-count">{t('pages.course.sidebarCount', { completed: progress?.completed ?? 0, total: progress?.total ?? section.lessons.length })}</span>
             )}

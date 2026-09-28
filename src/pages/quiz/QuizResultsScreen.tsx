@@ -1,7 +1,7 @@
 import { Link } from 'react-router';
 import { Button, Icon, Mascot, ScoreSummary, SectionBadge } from '../../components/ds';
 import { getLessonByNumber, type QuizFile, type Section } from '../../content';
-import { useI18n } from '../../i18n';
+import { En, useI18n } from '../../i18n';
 import { lessonPath } from '../../app/lessonUrls';
 import { missedQuestions, resultTier, skillBreakdown, type QuizAnswers } from '../../quiz';
 
@@ -24,7 +24,7 @@ export interface QuizResultsScreenProps {
  * which lessons are worth another look for any missed question.
  */
 export function QuizResultsScreen({ section, quiz, answers, score, total, isGuest, onRetry }: QuizResultsScreenProps) {
-  const { t } = useI18n();
+  const { t, tx, contentLang } = useI18n();
   const tier = resultTier(score, total);
   const skills = skillBreakdown(quiz, answers).map((s) => ({
     name: t(`pages.sectionCheck.skill.${s.skill}`),
@@ -42,11 +42,13 @@ export function QuizResultsScreen({ section, quiz, answers, score, total, isGues
       <div className="tw-quiz-results">
         <section aria-labelledby="quiz-score-title" className="tw-quiz-score-panel">
           <Mascot src={MASCOT_SRC} size={120} />
-          <span className="eyebrow">{t('pages.sectionCheck.resultsEyebrow', { title: section.title })}</span>
+          <span className="eyebrow">{tx('pages.sectionCheck.resultsEyebrow', { title: <En>{section.title}</En> })}</span>
           <h1 id="quiz-score-title" className="tw-quiz-score-heading" tabIndex={-1}>
             {t('pages.sectionCheck.scoreHeading', { score, total })}
           </h1>
-          <p className="body-lg">{quiz.results[tier]}</p>
+          <p className="body-lg" {...contentLang}>
+            {quiz.results[tier]}
+          </p>
           <div className="tw-quiz-score-actions">
             <Button variant="primary" size="lg" block icon="RotateCcw" onClick={onRetry}>
               {t('pages.sectionCheck.retry')}
@@ -79,11 +81,11 @@ export function QuizResultsScreen({ section, quiz, answers, score, total, isGues
                   <SectionBadge section={section.id} showName={false} size={44} />
                   <span className="tw-quiz-review-text">
                     <span className="tw-quiz-review-question">
-                      {t('pages.sectionCheck.reviewQuestion', { n: position, question: question.question })}
+                      {tx('pages.sectionCheck.reviewQuestion', { n: position, question: <En>{question.question}</En> })}
                     </span>
                     {lesson ? (
                       <span className="tw-quiz-review-lesson">
-                        {t('pages.sectionCheck.reviewLesson', { number: lesson.number, question: lesson.essentialQuestion })}
+                        {tx('pages.sectionCheck.reviewLesson', { number: lesson.number, question: <En>{lesson.essentialQuestion}</En> })}
                       </span>
                     ) : null}
                   </span>

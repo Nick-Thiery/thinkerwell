@@ -40,7 +40,7 @@ The code:
 **Left out:**
 
 - **Recordings.** They are too big, and the Settings section says so: "Recordings stay on this device."
-- **Device settings** (Save data, Listen speed, the reading level for anyone who hasn't chosen one, Say it). They belong to the device, not to a learner.
+- **Device settings** (Save data, Listen speed, the reading level for anyone who hasn't chosen one, Say it, the device's language). They belong to the device, not to a learner.
 - **Who is learning now** (the current learner).
 
 The file isn't locked or encrypted. The help line under the button says "Anyone with the file can read the work in it, so keep it safe."
@@ -70,9 +70,9 @@ The rules are in `src/storage/mergeWork.ts`. Each one has a test in `src/storage
 ### Learners
 
 - **Matched by id, never by name.**
-- **A learner who isn't on this device is added** as they are in the file: name, colour, class code, reading level and the date they were first added.
+- **A learner who isn't on this device is added** as they are in the file: name, colour, class code, reading level, language and the date they were first added.
 - **A different learner with the same name is still added.** Two tiles then share a name. So wherever learner tiles show (the "Who's learning today?" picker and the learner switcher), learners who share a name (ignoring case and spaces) also show the day each was added, for example "Up to Lesson 3 · added Sep 2, 2026". The list of learners under "Save work to a file" does the same, and the preview warns before loading. Nobody is renamed. Other tiles are unchanged.
-- **A learner already on this device keeps their details from this device** (name, colour, class code, reading level). Only their work is combined.
+- **A learner already on this device keeps their details from this device** (name, colour, class code, reading level, language). Only their work is combined.
 
 ### Lesson work
 
@@ -155,3 +155,7 @@ The rule can't tell which side changed an answer when the same answer was edited
 - **Recordings aren't moved.** They could go in a separate file later if educators ask.
 - **An answer edited on two devices without moving the work between** keeps only the newer record's version (see the merge rules). Per-answer dates would fix it with a new storage version.
 - **Moving work without a file** (for example device to device over the local network) isn't possible without a server, and nothing leaves the device in this phase.
+
+## Changed: a learner's language (language groundwork)
+
+A learner's record can hold their interface language (`language`, a code such as `fa-AF`; `docs/notes/languages.md`). It travels in the file like the reading level, and the checker refuses one that isn't a language code. The file version stays 1: a version-1 file without it loads as before, and an older Thinkerwell loading a newer file drops the field, as it drops every field it doesn't know.

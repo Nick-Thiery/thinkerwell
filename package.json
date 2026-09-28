@@ -21,6 +21,9 @@
     "test:e2e:dev": "PLAYWRIGHT_BROWSERS_PATH=0 playwright test --config=playwright.dev.config.ts",
     "test:e2e:install": "PLAYWRIGHT_BROWSERS_PATH=0 playwright install chromium",
     "check:content": "sh scripts/check-content.sh",
+    "check:i18n": "node --experimental-strip-types tools/i18n/check.ts",
+    "i18n:export": "node --experimental-strip-types tools/i18n/export.ts",
+    "i18n:import": "node --experimental-strip-types tools/i18n/import.ts",
     "size": "node tools/report-sizes.mjs",
     "perf": "node tools/measure-slow.mjs",
     "slow-internet": "node tools/slow-internet.mjs"
@@ -29,6 +32,7 @@
     "@fontsource/atkinson-hyperlegible-next": "^5.3.0",
     "@fontsource/eczar": "^5.3.0",
     "@fontsource/funnel-display": "^5.3.0",
+    "@fontsource/vazirmatn": "^5.3.0",
     "idb": "^8.0.3",
     "lucide-react": "^1.48.0",
     "react": "^19.3.0",

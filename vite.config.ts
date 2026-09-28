@@ -8,6 +8,15 @@ import { lazyChunkFor } from './src/app/lazy/firstPage.ts';
 import { LESSON_CATALOG_FIELDS } from './src/content/catalogFields.ts';
 import { loadContent, loadQuizzes, parseContentFile, type ContentFileKind } from './src/content/load.ts';
 import type { Lesson, QuizFile } from './src/content/schema.ts';
+import {
+  LANGUAGE_MODULE,
+  languageAssetFileName,
+  languageChunkFileName,
+  languageChunkName,
+  languagePrecacheIgnores,
+} from './src/i18n/build.ts';
+import { PSEUDO_LOCALES } from './src/i18n/locales.ts';
+import { PSEUDO_TRANSFORMS, pseudoMessages } from './src/i18n/pseudo.ts';
 
 /** Which kind of content file a module is, from its path, or null for anything else. */
 function contentKind(id: string): ContentFileKind | null {
@@ -170,7 +179,7 @@ function keepFirstVisitLight(): Plugin {
         if (chunk?.isDynamicEntry && !chunk.isEntry) {
           const by = [...firstVisit].filter((f) => chunks.get(f)?.imports.includes(fileName));
           this.error(
-            `A lazily loaded chunk (${fileName}) is in what a first visit downloads, imported by ${by.join(', ')}: something on the home page or course map imports a file from src/app/pages/ or a module only those pages should use.`,
+            `A lazily loaded chunk (${fileName}) is in what a first visit downloads, imported by ${by.join(', ')}: something on the home page or course map imports a file from src/app/lazy/ or a module only those pages should use.`,
           );
         }
       }
@@ -258,6 +267,53 @@ function stripTeamOnlyLessonFields(): Plugin {
   };
 }
 
+const PSEUDO_PREFIX = 'virtual:tw-pseudo-locale/';
+const PSEUDO_ID = '\0tw-pseudo-locale:';
+
+/**
+ * The pseudo-languages for testing (src/i18n/pseudo.ts), made from en.json
+ * whenever the site is built, served or tested, so they always match it
+ * and nobody writes them by hand. src/i18n/load.ts imports
+ * virtual:tw-pseudo-locale/<code>. They become their own chunks, which the
+ * service worker never precaches and learners are never offered.
+ */
+function pseudoLocales(): Plugin {
+  let root = process.cwd();
+  return {
+    name: 'thinkerwell:pseudo-locales',
+    configResolved(config) {
+      root = config.root;
+    },
+    resolveId(id) {
+      if (!id.startsWith(PSEUDO_PREFIX)) return null;
+      const code = id.slice(PSEUDO_PREFIX.length);
+      return PSEUDO_LOCALES.some((locale) => locale.code === code) ? `${PSEUDO_ID}${code}` : null;
+    },
+    load(id) {
+      if (!id.startsWith(PSEUDO_ID)) return null;
+      const code = id.slice(PSEUDO_ID.length);
+      const transform = PSEUDO_TRANSFORMS[code];
+      if (!transform) return null;
+      const file = path.join(root, 'src', 'i18n', 'messages', 'en.json');
+      this.addWatchFile(file);
+      const messages = pseudoMessages(JSON.parse(readFileSync(file, 'utf8')) as unknown, transform.message);
+      const pseudoModule = JSON.stringify(path.join(root, 'src', 'i18n', 'pseudo.ts').replace(/\\/g, '/'));
+      return [
+        `import { PSEUDO_TRANSFORMS } from ${pseudoModule};`,
+        `export default ${JSON.stringify(messages)};`,
+        `export const decorate = PSEUDO_TRANSFORMS[${JSON.stringify(code)}].formatted;`,
+      ].join('\n');
+    },
+  };
+}
+
+/** Codes of the message files in src/i18n/messages (en, fa-AF, ...), not the translator notes. */
+function messageFileCodes(): string[] {
+  return readdirSync(path.join(import.meta.dirname, 'src', 'i18n', 'messages'))
+    .filter((name) => name.endsWith('.json') && !name.endsWith('.notes.json'))
+    .map((name) => name.slice(0, -'.json'.length));
+}
+
 /**
  * Offline (CLAUDE.md rule 2): a Workbox service worker that precaches the
  * whole site at the first visit, so every lesson works without the internet
@@ -269,6 +325,10 @@ function stripTeamOnlyLessonFields(): Plugin {
  *   pictures and public/images. Not the two flat mascot files (for
  *   printouts and emails; no page uses them) or the app icons (the browser
  *   fetches those itself when someone installs the app).
+ * - Other languages: only those learners can choose (`ready` in
+ *   src/i18n/locales.ts), with the Arabic font only once a ready language
+ *   needs it; never the pseudo-languages for testing
+ *   (src/i18n/build.ts, languagePrecacheIgnores).
  * - Nothing else is cached at runtime, so requests the precache doesn't
  *   hold (YouTube's player after a learner's tap, anything on another
  *   server) are never touched by the service worker at all.
@@ -325,6 +385,7 @@ function offline(): Plugin[] {
         'images/thinkerwell-mascot-white-background.png',
         'images/thinkerwell-mascot-yellow-background.png',
         'social-card.png',
+        ...languagePrecacheIgnores(messageFileCodes()),
       ],
       rollupFormat: 'iife',
       sourcemap: false,
@@ -351,7 +412,17 @@ function siteHeaders(): Record<string, string> {
 // VITE_CACHE_DIR lets several dev servers run at once, each with its own
 // dependency cache (for example .build-review/vite-cache-5301).
 export default defineConfig({
-  plugins: [react(), checkContent(), lessonCatalog(), stripTeamOnlyLessonFields(), keepZodOutOfTheBrowser(), keepFirstVisitLight(), preloadFirstPage(), offline()],
+  plugins: [
+    react(),
+    checkContent(),
+    lessonCatalog(),
+    stripTeamOnlyLessonFields(),
+    keepZodOutOfTheBrowser(),
+    pseudoLocales(),
+    keepFirstVisitLight(),
+    preloadFirstPage(),
+    offline(),
+  ],
   cacheDir: process.env.VITE_CACHE_DIR || 'node_modules/.vite',
   server: {
     // Content lives outside src/ (content/*.json) and is read at build time.
@@ -390,12 +461,19 @@ export default defineConfig({
     cssCodeSplit: false,
     rolldownOptions: {
       output: {
+        // Each language (and the Arabic font) in its own folder, so the
+        // service worker can leave out those learners can't choose yet
+        // (src/i18n/build.ts).
+        chunkFileNames: (chunk) => languageChunkFileName(chunk.name),
+        assetFileNames: (asset) => languageAssetFileName(asset),
         // Separate chunks so an app update doesn't re-download the lesson
         // text or the libraries, and vice versa. The pages a first visit
         // to the home page or the course map doesn't show are in chunks of
-        // their own (src/app/pages/).
+        // their own (src/app/lazy/).
         codeSplitting: {
           groups: [
+            // One chunk per language, loaded when someone picks it; English stays in the app.
+            { name: languageChunkName, test: LANGUAGE_MODULE },
             // Every lesson and section check, in one file: the pages that
             // show them load it (src/content/catalog.ts). course.json stays
             // with the app: every page needs it.
@@ -415,7 +493,7 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: ['./src/test/setup.ts'],
-    include: ['src/**/*.test.{ts,tsx}'],
+    include: ['src/**/*.test.{ts,tsx}', 'tools/**/*.test.ts'],
     css: false,
     restoreMocks: true,
     // Component tests drive the real lesson player over fake-indexeddb with

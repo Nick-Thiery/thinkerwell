@@ -9,8 +9,8 @@ import './EditableJournalEntry.css';
 interface EditableJournalEntryProps {
   lesson: Lesson;
   piece: JournalPiece;
-  /** Already formatted for display ("today", "Sep 20", ...). */
-  date?: string;
+  /** The whole "saved" line, already in the interface's language ("Saved today", "Saved Sep 20"). */
+  savedLabel?: string;
   /** Called with the lesson's updated record once a save succeeds, so the page can show it right away. */
   onSaved: (lessonId: string, record: LessonProgress) => void;
 }
@@ -25,8 +25,8 @@ interface EditableJournalEntryProps {
  * Look-around has no journal to edit (the page never renders this then), so
  * this always has a real learner to save under.
  */
-export function EditableJournalEntry({ lesson, piece, date, onSaved }: EditableJournalEntryProps) {
-  const { t } = useI18n();
+export function EditableJournalEntry({ lesson, piece, savedLabel, onSaved }: EditableJournalEntryProps) {
+  const { t, contentLang } = useI18n();
   const { activeLearner } = useLearnerSession();
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState(piece.text);
@@ -44,7 +44,7 @@ export function EditableJournalEntry({ lesson, piece, date, onSaved }: EditableJ
         kind={kindLabel}
         prompt={piece.prompt}
         text={piece.text}
-        date={date}
+        savedLabel={savedLabel}
         onEdit={() => {
           setDraft(piece.text);
           setEditing(true);
@@ -79,7 +79,11 @@ export function EditableJournalEntry({ lesson, piece, date, onSaved }: EditableJ
           {t(isReflection ? 'ds.course.journalEntry.kindReflection' : 'ds.course.journalEntry.kindWriting')}
         </Badge>
       </div>
-      {piece.prompt ? <p className="tw-entry-prompt">{piece.prompt}</p> : null}
+      {piece.prompt ? (
+        <p className="tw-entry-prompt" {...contentLang}>
+          {piece.prompt}
+        </p>
+      ) : null}
       <WritingBox aria-label={piece.prompt || stageLabel} value={draft} onValueChange={setDraft} rows={4} disabled={saving} />
       <div className="tw-entry-foot tw-entry-edit-actions">
         <Button variant="ghost" onClick={() => setEditing(false)} disabled={saving}>

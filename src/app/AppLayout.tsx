@@ -1,7 +1,7 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { Link, NavigationType, Outlet, ScrollRestoration, useLocation, useNavigate, useNavigationType } from 'react-router';
 import { DsLinkProvider, Icon, SiteHeader, StatusBanner } from '../components/ds';
-import { I18nProvider, readDevDirection, useI18n } from '../i18n';
+import { I18nProvider, readDevDirection, readDevLocale, readyLocales, resolveLocale, useI18n, type Direction } from '../i18n';
 import { ConnectionBanner, UpdateBanner } from '../offline';
 import { LearnerSessionProvider, useLearnerSession } from '../session';
 import './app.css';
@@ -14,8 +14,8 @@ import { useIsCompactHeader } from './useIsCompactHeader';
 const MASCOT_SRC = '/images/thinkerwell-mascot-transparent.png';
 
 /**
- * The shell around every page: locale and direction, on-device learner
- * state, the site header and learner switcher, the messages under it
+ * The shell around every page: on-device learner state, the language and
+ * direction, the site header and learner switcher, the messages under it
  * (offline, back online, a new version, "just look around"), a skip link
  * and <main>.
  */
@@ -23,22 +23,42 @@ export function AppLayout() {
   const { search } = useLocation();
   // Dev only: ?dir=rtl forces right-to-left until ?dir=ltr (see src/i18n/direction.ts).
   const devDir = useMemo(() => readDevDirection(search), [search]);
+  // Dev (and automated tests) only: ?locale=en-XA shows a test language until ?locale=en (src/i18n/devLocale.ts).
+  const devLocale = useMemo(() => readDevLocale(search), [search]);
   // Old Base44 educator links use ?preview=true to browse without an account;
   // read on every navigation (not just the first), so it also works deep-linked.
   const forceLookAround = useMemo(() => new URLSearchParams(search).get('preview') === 'true', [search]);
 
   return (
-    <I18nProvider dirOverride={devDir}>
-      <LearnerSessionProvider forceLookAround={forceLookAround}>
+    <LearnerSessionProvider forceLookAround={forceLookAround}>
+      <LanguageForSession devLocale={devLocale} devDir={devDir}>
         <DsLinkProvider link={RouterDsLink}>
-          <Shell devRtl={devDir === 'rtl'} />
+          <Shell devRtl={devDir === 'rtl'} devLocale={devLocale} />
         </DsLinkProvider>
-      </LearnerSessionProvider>
+      </LanguageForSession>
+    </LearnerSessionProvider>
+  );
+}
+
+/**
+ * The interface language: the learner's own, else the device's (Settings),
+ * else English, and only ever one learners are offered
+ * (src/i18n/locales.ts). A guest, or nobody chosen (the home screen), gets
+ * the device's. Switching learner switches language. The dev switch
+ * (?locale=) wins over both.
+ */
+function LanguageForSession({ devLocale, devDir, children }: { devLocale: string | null; devDir: Direction | null; children: ReactNode }) {
+  const { activeLearner, deviceLanguage } = useLearnerSession();
+  const offered = useMemo(() => readyLocales(), []);
+  const locale = devLocale ?? resolveLocale([activeLearner?.language, deviceLanguage], offered).code;
+  return (
+    <I18nProvider locale={locale} dirOverride={devDir} offered={offered}>
+      {children}
     </I18nProvider>
   );
 }
 
-function Shell({ devRtl }: { devRtl: boolean }) {
+function Shell({ devRtl, devLocale }: { devRtl: boolean; devLocale: string | null }) {
   const { t } = useI18n();
   const { pathname } = useLocation();
   const navigate = useNavigate();
@@ -153,6 +173,11 @@ function Shell({ devRtl }: { devRtl: boolean }) {
       {import.meta.env.DEV && devRtl ? (
         <p className="tw-dev-banner small" role="status">
           {t('dev.rtlOn')}
+        </p>
+      ) : null}
+      {import.meta.env.DEV && devLocale ? (
+        <p className="tw-dev-banner small" role="status">
+          {t('dev.localeOn', { locale: devLocale })}
         </p>
       ) : null}
       <div className="tw-header-area">

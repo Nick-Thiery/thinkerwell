@@ -22,3 +22,6 @@ __pycache__
 .env
 .env.*
 !.env.example
+
+# Translation spreadsheets made by npm run i18n:export (docs/TRANSLATING.md)
+thinkerwell-*.csv

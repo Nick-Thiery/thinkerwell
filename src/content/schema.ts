@@ -6,6 +6,7 @@
  * file with these schemas.
  */
 import { z } from 'zod';
+import { LOCALES, SOURCE_LOCALE } from '../i18n/locales.ts';
 import { QUIZ_SKILLS } from './quizSkills';
 
 export const SECTION_IDS = ['history', 'geography', 'culture', 'civics'] as const;
@@ -128,12 +129,40 @@ export const readSectionSchema = z.strictObject({
 });
 export type ReadSection = z.infer<typeof readSectionSchema>;
 
+/** Every language a glossary meaning can be in: the listed languages other than English (src/i18n/locales.ts). */
+export const GLOSSARY_MEANING_LOCALES = LOCALES.filter((locale) => locale.code !== SOURCE_LOCALE).map((locale) => locale.code) as [
+  string,
+  ...string[],
+];
+
+/** The longest short meaning a glossary word can carry in another language. */
+export const GLOSSARY_MEANING_MAX = 120;
+
+/**
+ * A short meaning of a glossary word in a learner's own language, keyed by
+ * language code ("fa-AF"). One line, written or checked by a native
+ * speaker (docs/TRANSLATING.md); never machine translation.
+ */
+const glossaryMeaningSchema = z
+  .string()
+  .trim()
+  .min(1)
+  .max(GLOSSARY_MEANING_MAX, `a meaning in another language is at most ${GLOSSARY_MEANING_MAX} characters`)
+  .refine((value) => !/[\n\r]/.test(value), 'a meaning in another language is one line');
+
 export const glossaryEntrySchema = z.strictObject({
   word: text,
   /** Other forms of the word that should also be marked (plurals and so on). */
   forms: z.array(text).optional(),
   definition: text,
   example: text,
+  /**
+   * Optional: the word's meaning in other languages, shown under the English
+   * definition when the learner's interface is in that language. The lesson
+   * itself stays English. Keys are language codes from src/i18n/locales.ts
+   * (not English).
+   */
+  translations: z.partialRecord(z.enum(GLOSSARY_MEANING_LOCALES), glossaryMeaningSchema).optional(),
 });
 export type GlossaryEntry = z.infer<typeof glossaryEntrySchema>;
 

@@ -19,7 +19,7 @@ export interface EvidenceTableProps {
  * (WCAG 2.1.1; axe's scrollable-region-focusable).
  */
 export function EvidenceTable({ card }: EvidenceTableProps) {
-  const { t } = useI18n();
+  const { t, contentLang } = useI18n();
   const regionRef = useRef<HTMLDivElement>(null);
   const [scrolls, setScrolls] = useState(false);
 
@@ -56,7 +56,7 @@ export function EvidenceTable({ card }: EvidenceTableProps) {
       tabIndex={scrolls ? 0 : undefined}
       data-scrolls={scrolls ? '' : undefined}
     >
-      <table className="tw-lx-table">
+      <table className="tw-lx-table" {...contentLang}>
         {/* The card's h3 already shows the title; the caption names the table for screen readers. */}
         <caption className="tw-visually-hidden">{card.title}</caption>
         <thead>

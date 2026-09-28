@@ -4,6 +4,7 @@
 import { deleteDB } from 'idb';
 import {
   DB_NAME,
+  DB_VERSION,
   DEFAULT_SETTINGS,
   deleteAllData,
   emptyProgress,
@@ -103,6 +104,37 @@ describe('learners', () => {
       store.updateLearner(learner.id, { readingLevel: 'hard' as unknown as 'simpler' }),
     ).rejects.toThrow(/reading level/);
     expect((await store.getLearner(learner.id))?.readingLevel).toBe('simpler');
+  });
+
+  it("remembers a learner's language, and forgets it again, without a new database version", async () => {
+    expect(DB_VERSION).toBe(2);
+    const plain = await store.addLearner({ name: 'Amina', colour: 'lemon' });
+    expect(plain).not.toHaveProperty('language');
+    const omar = await store.addLearner({ name: 'Omar', colour: 'civics', language: 'fa-AF' });
+    expect((await store.getLearner(omar.id))?.language).toBe('fa-AF');
+
+    expect((await store.updateLearner(plain.id, { language: 'so' })).language).toBe('so');
+    expect((await store.getLearner(plain.id))?.language).toBe('so');
+    // Other changes leave it as it is; null takes the choice away.
+    expect((await store.updateLearner(plain.id, { name: 'Amina B' })).language).toBe('so');
+    const cleared = await store.updateLearner(plain.id, { language: null });
+    expect(cleared).not.toHaveProperty('language');
+    expect(await store.getLearner(plain.id)).not.toHaveProperty('language');
+  });
+
+  it('refuses a language that is not a language code', async () => {
+    await expect(store.addLearner({ name: 'Amina', colour: 'lemon', language: '<b>' })).rejects.toThrow(/language code/);
+    expect(await store.listLearners()).toEqual([]);
+    const learner = await store.addLearner({ name: 'Amina', colour: 'lemon', language: 'ar' });
+    await expect(store.updateLearner(learner.id, { language: 'Arabic please' })).rejects.toThrow(/language code/);
+    expect((await store.getLearner(learner.id))?.language).toBe('ar');
+  });
+
+  it('reads a learner saved before languages existed as having no choice', async () => {
+    const db = await openThinkerwellDb(name);
+    await db.put('learners', { id: 'old', name: 'Sara', colour: 'paper', createdAt: '2026-09-01T08:00:00.000Z' });
+    db.close();
+    expect((await store.getLearner('old'))?.language).toBeUndefined();
   });
 
   it('throws when updating a missing learner or with an empty name', async () => {
@@ -423,6 +455,24 @@ describe('settings', () => {
     expect(saved.partner.allowOnlineDictation).toBe(true);
     // Other changes leave it as it is.
     expect((await store.updateSettings({ listeningSpeed: 'slow' })).speechCheck).toEqual(check);
+  });
+});
+
+describe('the device language', () => {
+  it('is null (English) by default and for a record saved before it existed', async () => {
+    expect(DEFAULT_SETTINGS.language).toBeNull();
+    const db = await openThinkerwellDb(name);
+    const older = { saveData: true, listeningSpeed: 'slow', preferredReadingLevel: 'standard', partner: { allowOnlineDictation: false }, speechCheck: null };
+    await db.put('settings', older as never, 'device');
+    db.close();
+    expect((await store.getSettings()).language).toBeNull();
+  });
+
+  it('is kept, and other changes leave it as it is', async () => {
+    await store.updateSettings({ language: 'so' });
+    expect((await store.getSettings()).language).toBe('so');
+    expect((await store.updateSettings({ listeningSpeed: 'slow' })).language).toBe('so');
+    expect((await store.updateSettings({ language: null })).language).toBeNull();
   });
 });
 

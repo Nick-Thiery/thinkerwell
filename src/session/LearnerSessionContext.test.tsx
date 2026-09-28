@@ -2,7 +2,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, describe, expect, it } from 'vitest';
 import { getGuestProgress, setGuestProgress } from '../lesson/guestMemory';
-import { deleteAllData, emptyProgress } from '../storage';
+import { deleteAllData, emptyProgress, getStore } from '../storage';
 import { LearnerSessionProvider, useLearnerSession } from './LearnerSessionContext';
 
 afterEach(async () => {
@@ -173,5 +173,59 @@ describe('LearnerSessionProvider', () => {
     render(<Probe />);
     await waitFor(() => expect(screen.getByTestId('status')).toHaveTextContent('ready'));
     expect(screen.getByTestId('current')).toHaveTextContent('none');
+  });
+});
+
+describe('languages', () => {
+  function LanguageProbe() {
+    const session = useLearnerSession();
+    const amina = session.learners.find((l) => l.name === 'Amina');
+    return (
+      <div>
+        <p data-testid="status">{session.status}</p>
+        <p data-testid="device">{session.deviceLanguage ?? 'none'}</p>
+        <p data-testid="current-language">{session.currentLearner?.language ?? 'none'}</p>
+        <button onClick={() => void session.addLearner({ name: 'Amina', colour: 'lemon' })}>Add Amina</button>
+        <button onClick={() => session.startLookAround()}>Look around</button>
+        <button onClick={() => void session.setDeviceLanguage('so')}>Device Somali</button>
+        <button onClick={() => amina && void session.setLearnerLanguage(amina.id, 'fa-AF')}>Amina Dari</button>
+        <button onClick={() => amina && void session.setLearnerLanguage(amina.id, null)}>Amina none</button>
+      </div>
+    );
+  }
+
+  it("reads the device's language, and saves a new one even while looking around", async () => {
+    const store = await getStore();
+    await store.updateSettings({ language: 'ar' });
+    render(
+      <LearnerSessionProvider>
+        <LanguageProbe />
+      </LearnerSessionProvider>,
+    );
+    await waitFor(() => expect(screen.getByTestId('device')).toHaveTextContent('ar'));
+    const user = userEvent.setup();
+    await user.click(screen.getByRole('button', { name: 'Look around' }));
+    await user.click(screen.getByRole('button', { name: 'Device Somali' }));
+    await waitFor(() => expect(screen.getByTestId('device')).toHaveTextContent('so'));
+    expect((await store.getSettings()).language).toBe('so');
+  });
+
+  it("keeps a learner's language on their record, and in the current learner", async () => {
+    render(
+      <LearnerSessionProvider>
+        <LanguageProbe />
+      </LearnerSessionProvider>,
+    );
+    await waitFor(() => expect(screen.getByTestId('status')).toHaveTextContent('ready'));
+    expect(screen.getByTestId('device')).toHaveTextContent('none');
+    const user = userEvent.setup();
+    await user.click(screen.getByRole('button', { name: 'Add Amina' }));
+    await user.click(await screen.findByRole('button', { name: 'Amina Dari' }));
+    await waitFor(() => expect(screen.getByTestId('current-language')).toHaveTextContent('fa-AF'));
+    const store = await getStore();
+    expect((await store.listLearners())[0]?.language).toBe('fa-AF');
+    await user.click(screen.getByRole('button', { name: 'Amina none' }));
+    await waitFor(() => expect(screen.getByTestId('current-language')).toHaveTextContent('none'));
+    expect((await store.listLearners())[0]).not.toHaveProperty('language');
   });
 });

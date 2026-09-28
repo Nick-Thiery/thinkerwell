@@ -217,6 +217,8 @@ describe('checking a work file', () => {
     ['a colour made to look like a class name', (p) => (p.learner.colour = 'lemon tw-hidden')],
     ['an odd class code', (p) => (p.learner.classCode = 'HLP 07 <b>')],
     ['an unknown reading level', (p) => (p.learner.readingLevel = 'hard')],
+    ['a language that is not a language code', (p) => (p.learner.language = 'Dari <b>')],
+    ['a language that is not text', (p) => (p.learner.language = ['fa-AF'])],
     ['the same learner twice', (p) => p.learners.push(p.work)],
     ['progress that is not a list', (p) => (p.work.progress = 'none')],
     ['no progress list', (p) => delete p.work.progress],
@@ -285,6 +287,16 @@ describe('checking a work file', () => {
     expect(result.file.learners[0]!.progress[0]).not.toHaveProperty('secret');
     expect(result.file.learners[0]!.progress[0]!.stagesDone).toEqual(['read', 'write']);
     expect(result.file.learners[1]).toEqual({ learner: { ...AMINA, id: 'another-id', name: 'Yusuf' }, progress: [], quizAttempts: [] });
+  });
+
+  it("carries a learner's language, and a file without one (as older files are) still loads", () => {
+    const withLanguage = checkWorkFile(broken((p) => (p.learner.language = 'fa-AF')), known);
+    expect(withLanguage.ok && withLanguage.file.learners[0]!.learner.language).toBe('fa-AF');
+    const without = checkWorkFile(json(goodFile()), known);
+    expect(without.ok).toBe(true);
+    expect(without.ok && without.file.learners[0]!.learner).not.toHaveProperty('language');
+    // No new file version: older Thinkerwell drops fields it doesn't know.
+    expect(WORK_FILE_VERSION).toBe(1);
   });
 
   it('never throws, whatever it is given', () => {

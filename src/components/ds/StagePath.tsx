@@ -74,7 +74,7 @@ export function StagePath({
           const stepProps = {
             className: 'tw-step',
             'aria-current': isNow ? ('step' as const) : undefined,
-            'aria-label': compact ? label + (isDone ? t('ds.chrome.stagePath.doneSuffix') : '') : undefined,
+            'aria-label': compact ? (isDone ? t('ds.chrome.stagePath.stageDone', { stage: label }) : label) : undefined,
           };
           const content = (
             <>

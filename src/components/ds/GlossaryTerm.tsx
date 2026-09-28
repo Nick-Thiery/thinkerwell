@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useId, useRef, useState, type ReactNode } from 'react';
-import { DefinitionCard } from './DefinitionCard';
+import { DefinitionCard, type DefinitionCardProps } from './DefinitionCard';
 import './GlossaryTerm.css';
 
 export interface GlossaryTermProps {
@@ -13,6 +13,8 @@ export interface GlossaryTermProps {
   onListen?: () => void;
   /** Whether "Hear it" is mid-playback, reflected as its pressed state. */
   listening?: boolean;
+  /** Not in the design-system docs: the word's meaning in the learner's own language (DefinitionCard). */
+  meaning?: DefinitionCardProps['meaning'];
   children: ReactNode;
 }
 
@@ -22,7 +24,7 @@ export interface GlossaryTermProps {
  * Escape, an outside click or the popover's own close button closes it
  * again and returns focus to the trigger.
  */
-export function GlossaryTerm({ word, definition, example, open, onListen, listening, children }: GlossaryTermProps) {
+export function GlossaryTerm({ word, definition, example, open, onListen, listening, meaning, children }: GlossaryTermProps) {
   const [isOpen, setIsOpen] = useState(!!open);
   const wrapRef = useRef<HTMLSpanElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -106,6 +108,7 @@ export function GlossaryTerm({ word, definition, example, open, onListen, listen
           onClose={closeAndReturnFocus}
           onListen={onListen}
           listening={listening}
+          meaning={meaning}
         />
       ) : null}
     </span>

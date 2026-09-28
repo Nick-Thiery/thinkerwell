@@ -26,23 +26,29 @@ export interface EvidenceCardProps {
 
 /** A piece of evidence for a "how do we know?" question: an object, a note, a document. */
 export function EvidenceCard({ kind, title, items, text, quote, fictional, className }: EvidenceCardProps) {
-  const { t } = useI18n();
+  const { t, contentLang } = useI18n();
   return (
     <article className={cx('tw-evidence', className)}>
       <div className="tw-evidence-head">
         <span className="tw-evidence-icon">
           <Icon name={EVIDENCE_ICON[kind ?? ''] ?? 'FileText'} size={22} />
         </span>
-        <span className="tw-evidence-title">{title}</span>
+        <span className="tw-evidence-title" {...contentLang}>
+          {title}
+        </span>
       </div>
       {items ? (
-        <ul>
+        <ul {...contentLang}>
           {items.map((item, index) => (
             <li key={index}>{item}</li>
           ))}
         </ul>
       ) : null}
-      {text ? <p className={cx('tw-evidence-text', quote && 'tw-evidence-quote')}>{text}</p> : null}
+      {text ? (
+        <p className={cx('tw-evidence-text', quote && 'tw-evidence-quote')} {...contentLang}>
+          {text}
+        </p>
+      ) : null}
       {fictional ? (
         <span className="tw-evidence-foot">
           <Icon name="Info" size={16} />

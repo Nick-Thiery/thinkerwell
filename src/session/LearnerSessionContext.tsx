@@ -76,6 +76,24 @@ export interface LearnerSessionValue {
    * guest's choice in memory instead.
    */
   setLearnerReadingLevel: (id: string, level: ReadingLevel) => Promise<void>;
+  /**
+   * The device's interface language (settings.language): for the home
+   * screen, anyone looking around and every learner who hasn't chosen one.
+   * null means English, and until the settings have been read.
+   */
+  deviceLanguage: string | null;
+  /**
+   * Sets the device's language (Settings). Saved even while looking
+   * around, like every device setting. Rejects if it can't be saved, and
+   * the language stays as it was.
+   */
+  setDeviceLanguage: (code: string | null) => Promise<void>;
+  /**
+   * Remembers a learner's own language on their record; null takes the
+   * choice away, so the device's applies again. Switching learner switches
+   * language (src/app/AppLayout.tsx). Rejects if it can't be saved.
+   */
+  setLearnerLanguage: (id: string, code: string | null) => Promise<void>;
 }
 
 const LearnerSessionContext = createContext<LearnerSessionValue | null>(null);
@@ -109,6 +127,7 @@ export function LearnerSessionProvider({ forceLookAround = false, children }: Le
   const [learners, setLearners] = useState<Learner[]>([]);
   const [currentLearner, setCurrentLearner] = useState<Learner | null>(null);
   const [lookAround, setLookAround] = useState(forceLookAround);
+  const [deviceLanguage, setDeviceLanguageState] = useState<string | null>(null);
   // Guards every state update against firing after the provider (effectively
   // the whole app) has been torn down — most visible in tests, which unmount
   // between cases while a fake-indexeddb request is still in flight. Reset to
@@ -137,9 +156,10 @@ export function LearnerSessionProvider({ forceLookAround = false, children }: Le
         return;
       }
       const store = await getStore();
-      const [list, currentId] = await Promise.all([store.listLearners(), store.getCurrentLearnerId()]);
+      const [list, currentId, settings] = await Promise.all([store.listLearners(), store.getCurrentLearnerId(), store.getSettings()]);
       if (!alive.current) return;
       setLearners(list);
+      setDeviceLanguageState(settings.language);
       setCurrentLearner(currentId ? (list.find((l) => l.id === currentId) ?? null) : null);
       setStatus('ready');
     } catch (error) {
@@ -278,6 +298,23 @@ export function LearnerSessionProvider({ forceLookAround = false, children }: Le
     setCurrentLearner((prev) => (prev?.id === id ? updated : prev));
   }, [storageAvailable]);
 
+  const setDeviceLanguage = useCallback(async (code: string | null) => {
+    if (!storageAvailable) return;
+    const store = await getStore();
+    const saved = await store.updateSettings({ language: code });
+    if (!alive.current) return;
+    setDeviceLanguageState(saved.language);
+  }, [storageAvailable]);
+
+  const setLearnerLanguage = useCallback(async (id: string, code: string | null) => {
+    if (!storageAvailable) return;
+    const store = await getStore();
+    const updated = await store.updateLearner(id, { language: code });
+    if (!alive.current) return;
+    setLearners((prev) => prev.map((l) => (l.id === id ? updated : l)));
+    setCurrentLearner((prev) => (prev?.id === id ? updated : prev));
+  }, [storageAvailable]);
+
   const activeLearner = lookAround ? null : currentLearner;
 
   const value = useMemo<LearnerSessionValue>(
@@ -295,8 +332,11 @@ export function LearnerSessionProvider({ forceLookAround = false, children }: Le
       returnToPicker,
       reloadLearners,
       setLearnerReadingLevel,
+      deviceLanguage,
+      setDeviceLanguage,
+      setLearnerLanguage,
     }),
-    [status, storageAvailable, learners, currentLearner, lookAround, activeLearner, chooseLearner, addLearner, removeLearner, startLookAround, returnToPicker, reloadLearners, setLearnerReadingLevel],
+    [status, storageAvailable, learners, currentLearner, lookAround, activeLearner, chooseLearner, addLearner, removeLearner, startLookAround, returnToPicker, reloadLearners, setLearnerReadingLevel, deviceLanguage, setDeviceLanguage, setLearnerLanguage],
   );
 
   return <LearnerSessionContext.Provider value={value}>{children}</LearnerSessionContext.Provider>;

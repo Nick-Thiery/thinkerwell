@@ -1,4 +1,4 @@
-import { useI18n } from '../../i18n';
+import { En, useI18n } from '../../i18n';
 import { Badge } from './Badge';
 import { Button } from './Button';
 import { cx } from './internal/cx';
@@ -10,7 +10,10 @@ export interface JournalEntryProps {
   kind?: 'Writing' | 'Reflection';
   prompt?: string;
   text: string;
+  /** When it was saved, for "Saved {date}". */
   date?: string;
+  /** Not in the design-system docs: the whole "saved" line instead ("Saved today"), so each language can word it its own way. */
+  savedLabel?: string;
   className?: string;
   /** Not in the reference's index.d.ts; added so a caller (phase 3) can wire the Edit button up. */
   onEdit?: () => void;
@@ -28,26 +31,32 @@ export function JournalEntry({
   prompt,
   text,
   date,
+  savedLabel,
   className,
   onEdit,
 }: JournalEntryProps) {
-  const { t } = useI18n();
+  const { t, tx, contentLang } = useI18n();
   const isReflection = kind === 'Reflection';
   const kindLabel = t(isReflection ? 'ds.course.journalEntry.kindReflection' : 'ds.course.journalEntry.kindWriting');
   return (
     <article className={cx('tw-entry', className)}>
       <div className="tw-entry-head">
         <span className="tw-entry-lesson">
-          {t('ds.course.journalEntry.lessonLine', { number: lessonNumber, title: lessonTitle })}
+          {tx('ds.course.journalEntry.lessonLine', { number: lessonNumber, title: <En>{lessonTitle}</En> })}
         </span>
         <Badge tone={isReflection ? 'lavender' : 'lemon'} icon={isReflection ? 'RefreshCw' : 'Pencil'}>
           {kindLabel}
         </Badge>
       </div>
-      {prompt ? <p className="tw-entry-prompt">{prompt}</p> : null}
+      {/* The prompt is course text; the learner's own writing is theirs, in whatever language. */}
+      {prompt ? (
+        <p className="tw-entry-prompt" {...contentLang}>
+          {prompt}
+        </p>
+      ) : null}
       <p className="tw-entry-text">{text}</p>
       <div className="tw-entry-foot">
-        <span>{date ? t('ds.course.journalEntry.saved', { date }) : ''}</span>
+        <span>{savedLabel ?? (date ? t('ds.course.journalEntry.saved', { date }) : '')}</span>
         <Button variant="ghost" icon="Pencil" onClick={onEdit}>
           {t('ds.course.journalEntry.edit')}
         </Button>

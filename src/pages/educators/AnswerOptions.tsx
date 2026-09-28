@@ -1,6 +1,6 @@
 import { Icon } from '../../components/ds';
 import type { ChoiceOptionData } from '../../content';
-import { useI18n } from '../../i18n';
+import { En, useI18n } from '../../i18n';
 
 export interface AnswerOptionsProps {
   options: readonly ChoiceOptionData[];
@@ -20,7 +20,7 @@ export interface AnswerOptionsProps {
  * On paper the same marks print black.
  */
 export function AnswerOptions({ options, feedback }: AnswerOptionsProps) {
-  const { t } = useI18n();
+  const { t, contentLang } = useI18n();
   return (
     <ul className="tw-key-options">
       {options.map((option, index) => (
@@ -33,15 +33,15 @@ export function AnswerOptions({ options, feedback }: AnswerOptionsProps) {
                 <span className="tw-visually-hidden">:</span>
               </span>
             ) : null}{' '}
-            <span>{option.text}</span>
+            <span {...contentLang}>{option.text}</span>
           </p>
           {feedback === 'every' ? (
             <p className="tw-key-feedback">
-              <span className="tw-key-feedback-label">{t('pages.teacherTools.feedback')}</span> {option.feedback}
+              <span className="tw-key-feedback-label">{t('pages.teacherTools.feedback')}</span> <En>{option.feedback}</En>
             </p>
           ) : option.correct ? (
             <p className="tw-key-feedback">
-              <span className="tw-key-feedback-label">{t('pages.teacherTools.why')}</span> {option.feedback}
+              <span className="tw-key-feedback-label">{t('pages.teacherTools.why')}</span> <En>{option.feedback}</En>
             </p>
           ) : null}
         </li>

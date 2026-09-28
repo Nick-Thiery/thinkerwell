@@ -12,7 +12,7 @@ import { Fragment } from 'react';
 import { lessonPath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
 import { getLessonSection, type GlossaryEntry, type Lesson, type ReadSection } from '../../content';
-import { useI18n } from '../../i18n';
+import { En, useI18n } from '../../i18n';
 import { splitParagraphs } from '../../lesson';
 import type { ReadingLevel } from '../../storage';
 import { LessonEvidence } from '../lesson/evidence/LessonEvidence';
@@ -21,7 +21,8 @@ import { AnswerLines, PrintToolbar } from './PrintToolbar';
 import './print.css';
 
 export function LessonPrintPage({ lesson }: { lesson: Lesson }) {
-  const { t } = useI18n();
+  // Everything from the lesson file is course text, marked as English (`en`).
+  const { t, tx, contentLang: en } = useI18n();
   usePageTitle(t('print.lessonPageTitle', { number: lesson.number }));
   const section = getLessonSection(lesson);
   const [min, max] = lesson.estimatedMinutes;
@@ -35,22 +36,24 @@ export function LessonPrintPage({ lesson }: { lesson: Lesson }) {
       <article className="tw-print-sheet" aria-labelledby="print-title">
         <header className="tw-print-head">
           <p className="tw-print-brand">{t('print.brand')}</p>
-          <p className="tw-print-eyebrow">{t('pages.course.lessonLabel', { number: lesson.number, section: section.title })}</p>
-          <h1 id="print-title" className="tw-print-title" tabIndex={-1}>
+          <p className="tw-print-eyebrow">{tx('pages.course.lessonLabel', { number: lesson.number, section: <En>{section.title}</En> })}</p>
+          <h1 id="print-title" className="tw-print-title" tabIndex={-1} {...en}>
             {lesson.title}
           </h1>
-          <p className="tw-print-question">{lesson.essentialQuestion}</p>
+          <p className="tw-print-question" {...en}>
+            {lesson.essentialQuestion}
+          </p>
           <p>
-            <strong>{t('print.learningGoal')}</strong> {lesson.learningGoal}
+            <strong>{t('print.learningGoal')}</strong> <En>{lesson.learningGoal}</En>
           </p>
           <p className="tw-print-muted">{t('lesson.minutes', { min, max })}</p>
         </header>
 
         <section className="tw-print-part">
           <h2>{t('lessonPlayer.read.warmUpEyebrow')}</h2>
-          <p>{lesson.warmUp.question}</p>
+          <p {...en}>{lesson.warmUp.question}</p>
           {lesson.warmUp.options ? (
-            <ul className="tw-print-boxes">
+            <ul className="tw-print-boxes" {...en}>
               {lesson.warmUp.options.map((option, index) => (
                 <li key={index}>{option}</li>
               ))}
@@ -80,7 +83,7 @@ export function LessonPrintPage({ lesson }: { lesson: Lesson }) {
 
         <section className="tw-print-part">
           <h2>{t('lessonPlayer.read.keyWordsTitle')}</h2>
-          <dl className="tw-print-glossary">
+          <dl className="tw-print-glossary" {...en}>
             {read.glossary.map((entry) => (
               <div key={entry.word} className="tw-print-keep">
                 <dt>{entry.word}</dt>
@@ -100,11 +103,11 @@ export function LessonPrintPage({ lesson }: { lesson: Lesson }) {
             {read.checks.map((check, index) => (
               <li key={index} className="tw-print-keep">
                 <p>
-                  {check.question}
-                  {check.type === 'think' && check.optional ? ` ${t('print.optional')}` : ''}
+                  <En>{check.question}</En>
+                  {check.type === 'think' && check.optional ? <> {t('print.optional')}</> : null}
                 </p>
                 {check.type === 'choice' ? (
-                  <ul className="tw-print-boxes">
+                  <ul className="tw-print-boxes" {...en}>
                     {check.options.map((option, optionIndex) => (
                       <li key={optionIndex}>{option.text}</li>
                     ))}
@@ -119,10 +122,12 @@ export function LessonPrintPage({ lesson }: { lesson: Lesson }) {
 
         <section className="tw-print-part tw-print-new-page">
           <h2>{t('stages.write')}</h2>
-          <p className="tw-print-task">{write.prompt}</p>
+          <p className="tw-print-task" {...en}>
+            {write.prompt}
+          </p>
           <div className="tw-print-keep">
             <h3>{t('lessonPlayer.write.modeStarters')}</h3>
-            <ul>
+            <ul {...en}>
               {write.sentenceStarters.map((starter, index) => (
                 <li key={index}>{starter}</li>
               ))}
@@ -131,7 +136,7 @@ export function LessonPrintPage({ lesson }: { lesson: Lesson }) {
           <h3>{t('lessonPlayer.write.modePlan')}</h3>
           {write.planningBoxes.map((box, index) => (
             <div key={index} className="tw-print-keep">
-              <p>{box}</p>
+              <p {...en}>{box}</p>
               <AnswerLines count={2} />
             </div>
           ))}
@@ -139,7 +144,7 @@ export function LessonPrintPage({ lesson }: { lesson: Lesson }) {
           <AnswerLines count={8} />
           <div className="tw-print-keep">
             <h3>{t('lessonPlayer.write.selfCheckTitle')}</h3>
-            <ul className="tw-print-boxes">
+            <ul className="tw-print-boxes" {...en}>
               {write.selfCheck.map((item, index) => (
                 <li key={index}>{item}</li>
               ))}
@@ -151,31 +156,31 @@ export function LessonPrintPage({ lesson }: { lesson: Lesson }) {
           <h2>{t('stages.speak')}</h2>
           <div className="tw-print-keep">
             <h3>{t('lessonPlayer.speak.partnerTitle')}</h3>
-            <p>{speak.partnerTask}</p>
+            <p {...en}>{speak.partnerTask}</p>
           </div>
           <div className="tw-print-keep">
             <h3>{t('lessonPlayer.speak.soloTitle')}</h3>
-            <p>{speak.independentTask}</p>
+            <p {...en}>{speak.independentTask}</p>
           </div>
         </section>
 
         <section className="tw-print-part">
           <h2>{t('print.watchTitle')}</h2>
-          <p className="tw-print-muted">{t('print.videoNote', { title: watch.title, channel: watch.channel })}</p>
+          <p className="tw-print-muted">{tx('print.videoNote', { title: <En>{watch.title}</En>, channel: <En>{watch.channel}</En> })}</p>
           <div className="tw-print-keep">
             <h3>{t('lessonPlayer.watch.thinkFirst')}</h3>
-            <p>{watch.beforeQuestion}</p>
+            <p {...en}>{watch.beforeQuestion}</p>
             <AnswerLines count={2} />
           </div>
-          <h3>{t('print.writtenVersion', { title: watch.title })}</h3>
+          <h3>{tx('print.writtenVersion', { title: <En>{watch.title}</En> })}</h3>
           {splitParagraphs(watch.summary).map((paragraph, index) => (
-            <p key={index} className="tw-print-reading-text">
+            <p key={index} className="tw-print-reading-text" {...en}>
               {paragraph}
             </p>
           ))}
           <div className="tw-print-keep">
             <h4>{t('lessonPlayer.watch.keyPoints')}</h4>
-            <ul>
+            <ul {...en}>
               {watch.keyPoints.map((point, index) => (
                 <li key={index}>{point}</li>
               ))}
@@ -183,7 +188,7 @@ export function LessonPrintPage({ lesson }: { lesson: Lesson }) {
           </div>
           <div className="tw-print-keep">
             <h3>{t('lessonPlayer.watch.afterEyebrow')}</h3>
-            <p>{watch.afterQuestion}</p>
+            <p {...en}>{watch.afterQuestion}</p>
             <AnswerLines count={3} />
           </div>
         </section>
@@ -193,8 +198,8 @@ export function LessonPrintPage({ lesson }: { lesson: Lesson }) {
           {reflect.prompts.map((prompt, index) => (
             <div key={index} className="tw-print-keep">
               <p>
-                {prompt.text}
-                {prompt.required ? '' : ` ${t('print.optional')}`}
+                <En>{prompt.text}</En>
+                {prompt.required ? null : <> {t('print.optional')}</>}
               </p>
               <AnswerLines count={3} />
             </div>
@@ -214,16 +219,16 @@ interface ReadingProps {
 
 /** Every part of the reading in one level, key words in bold on their first appearance in each part, as on screen. */
 function Reading({ title, sections, level, glossary }: ReadingProps) {
-  const { t } = useI18n();
+  const { t, contentLang } = useI18n();
   return (
     <section className="tw-print-part tw-print-new-page">
       <h2>{title}</h2>
       <p className="tw-print-muted">{t('print.keyWordsNote')}</p>
       {sections.map((part, index) => (
         <Fragment key={index}>
-          <h3>{part.heading}</h3>
+          <h3 {...contentLang}>{part.heading}</h3>
           {buildReading(level === 'simpler' ? part.simpler : part.text, glossary).map((paragraph) => (
-            <p key={paragraph.start} className="tw-print-reading-text">
+            <p key={paragraph.start} className="tw-print-reading-text" {...contentLang}>
               {paragraph.runs.flatMap((run) => run.segments).map((segment, index) =>
                 segment.kind === 'term' ? <strong key={index}>{segment.text}</strong> : <Fragment key={index}>{segment.text}</Fragment>,
               )}

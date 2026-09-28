@@ -39,7 +39,8 @@ export interface SiteHeaderProps {
 /** A small tinted initial, shared with LearnerTile's own copy (kept separate; see CLAUDE.md notes). */
 function Avatar({ name, tone }: { name: string; tone?: string }) {
   return (
-    <span className={cx('tw-avatar', `tw-tone-${tone || 'lavender'}`)} aria-hidden="true">
+    // The first letter of the learner's own name: never translated.
+    <span className={cx('tw-avatar', `tw-tone-${tone || 'lavender'}`)} aria-hidden="true" translate="no">
       {(name || '?').charAt(0).toUpperCase()}
     </span>
   );

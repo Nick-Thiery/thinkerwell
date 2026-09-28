@@ -25,4 +25,5 @@ export {
 } from './progressRules';
 export { clearGuestMemory, VISIT_SEED } from './guestMemory';
 export { formatDuration, roundedMinutes, splitParagraphs } from './format';
+export { glossaryMeaning, type GlossaryMeaning } from './glossaryMeaning';
 export { LESSON_PHONE_QUERY, LESSON_WIDE_QUERY, useMediaQuery } from './useMediaQuery';

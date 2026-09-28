@@ -20,7 +20,7 @@ const PROBLEM_KEYS: Record<SpeakRecorderProblem, MessageKey> = {
  * Delete goes), focus moves to the new main button.
  */
 export function SpeakRecorder({ recorder }: { recorder: Recorder }) {
-  const { t } = useI18n();
+  const { t, formatNumber } = useI18n();
   const { mode } = useLessonPlayer();
   const wrapper = useRef<HTMLDivElement>(null);
   const moveFocus = useRef(false);
@@ -57,9 +57,9 @@ export function SpeakRecorder({ recorder }: { recorder: Recorder }) {
 
   const time =
     view === 'recording'
-      ? formatDuration(Math.floor(elapsedMs / 1000))
+      ? formatDuration(Math.floor(elapsedMs / 1000), formatNumber)
       : clip
-        ? formatDuration(Math.max(1, Math.round(clip.durationMs / 1000)))
+        ? formatDuration(Math.max(1, Math.round(clip.durationMs / 1000)), formatNumber)
         : undefined;
 
   return (

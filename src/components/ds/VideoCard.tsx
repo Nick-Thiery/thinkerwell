@@ -60,7 +60,7 @@ export function VideoCard({
   watching = false,
   actions,
 }: VideoCardProps) {
-  const { t } = useI18n();
+  const { t, contentLang } = useI18n();
   return (
     <section className={cx('tw-video', className)}>
       {player ? (
@@ -88,10 +88,13 @@ export function VideoCard({
         </div>
       )}
       <div className="tw-video-body">
-        <h3 className="tw-video-title">{title}</h3>
+        {/* The video's title and channel come with the lesson: course text. */}
+        <h3 className="tw-video-title" {...contentLang}>
+          {title}
+        </h3>
         <div className="tw-video-meta">
           {channel ? (
-            <span>
+            <span {...contentLang}>
               <Icon name="User" size={16} />
               {channel}
             </span>

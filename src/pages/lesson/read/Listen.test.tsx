@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { MemoryRouter, useLocation } from 'react-router';
 import { afterEach, describe, expect, it } from 'vitest';
 import { getLesson, getLessonSection, type Lesson } from '../../../content';
+import { findLocale, I18nProvider, type LoadedLocale } from '../../../i18n';
 import { LessonPlayerTestProvider, type LessonPlayerValue } from '../../../lesson';
 import { DEFAULT_SETTINGS, emptyProgress, type DeviceSettings, type ReadingLevel } from '../../../storage';
 import { fakeVoice, mockSpeechSynthesis, restoreSpeechMocks } from '../../../test/speechMocks';
@@ -254,6 +255,25 @@ describe('Listen', () => {
     expect(term.isConnected).toBe(true);
     expect(term).toHaveAttribute('aria-expanded', 'true');
     expect(term).toHaveFocus();
+  });
+
+  it("reads with an English voice, and marks what it reads as English, whatever the interface's language", async () => {
+    // A Dari interface (a fixture: the one message is a stand-in), on a
+    // device whose own default voice is Persian.
+    const dari: LoadedLocale = { definition: { ...findLocale('fa-AF')!, ready: true }, messages: { lessonPlayer: { read: { listen: 'FIXTURE listen' } } } };
+    const speech = mockSpeechSynthesis([fakeVoice('fa-IR', { isDefault: true }), fakeVoice('en-US')]);
+    render(
+      <I18nProvider loaded={dari}>
+        <MemoryRouter initialEntries={[`/lesson/${L10.id}/read`]}>
+          <Harness />
+        </MemoryRouter>
+      </I18nProvider>,
+    );
+    expect(document.querySelector('.tw-reading-text')).toHaveAttribute('lang', 'en');
+    await userEvent.click(screen.getByRole('button', { name: 'FIXTURE listen' }));
+    expect(speech.spoken[0]?.voice?.lang).toBe('en-US');
+    expect(speech.spoken[0]?.lang).toBe('en-US');
+    expect(speech.spoken[0]?.text).toBe(S1.heading);
   });
 
   it('stops quietly if the voice fails', async () => {

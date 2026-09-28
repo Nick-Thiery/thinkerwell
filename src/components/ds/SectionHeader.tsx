@@ -18,6 +18,8 @@ export interface SectionHeaderProps {
   number: number;
   title?: string;
   question?: string;
+  /** Not in the design-system docs: an id for the title, so the section around it can be named by it (aria-labelledby). */
+  titleId?: string;
   completed?: number;
   total?: number;
   rounded?: boolean;
@@ -38,8 +40,9 @@ export function SectionHeader({
   total,
   rounded,
   className,
+  titleId,
 }: SectionHeaderProps) {
-  const { t } = useI18n();
+  const { t, contentLang } = useI18n();
   const icon = SECTION_ICONS[section] ?? SECTION_ICONS.history;
   const style: CSSProperties | undefined = rounded ? { borderRadius: 'var(--radius-xl)' } : undefined;
   const eyebrow = total
@@ -54,9 +57,12 @@ export function SectionHeader({
         <span className="tw-secbadge-eyebrow" style={{ color: 'var(--ink)' }}>
           {eyebrow}
         </span>
-        <h2 className="tw-sechead-title">{title || t(`ds.course.sectionName.${section}`)}</h2>
+        {/* A title and question from the content are course text; the fallback name is the interface's. */}
+        <h2 id={titleId} className="tw-sechead-title" {...(title ? contentLang : {})}>
+          {title || t(`ds.course.sectionName.${section}`)}
+        </h2>
         {question ? (
-          <p className="tw-sechead-q" style={{ color: 'var(--ink)' }}>
+          <p className="tw-sechead-q" style={{ color: 'var(--ink)' }} {...contentLang}>
             {question}
           </p>
         ) : null}

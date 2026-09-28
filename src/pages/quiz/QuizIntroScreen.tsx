@@ -1,6 +1,6 @@
 import { Button, Icon, MascotTip, SectionHeader } from '../../components/ds';
 import type { QuizFile, Section } from '../../content';
-import { useI18n } from '../../i18n';
+import { En, useI18n } from '../../i18n';
 
 const MASCOT_SRC = '/images/thinkerwell-mascot-transparent.png';
 
@@ -29,7 +29,7 @@ export interface QuizIntroScreenProps {
  * look-around) whether this attempt will be saved.
  */
 export function QuizIntroScreen({ section, quiz, isGuest, lessonsDone, onStart }: QuizIntroScreenProps) {
-  const { t } = useI18n();
+  const { t, tx } = useI18n();
   const first = section.lessons[0] ?? 0;
   const last = section.lessons[section.lessons.length - 1] ?? first;
   const range = first === last ? String(first) : t('pages.course.numberRange', { first, last });
@@ -47,9 +47,9 @@ export function QuizIntroScreen({ section, quiz, isGuest, lessonsDone, onStart }
         <div className="tw-quiz-intro-head">
           <span className="eyebrow">{t('pages.sectionCheck.eyebrow')}</span>
           <h1 className="h1" tabIndex={-1}>
-            {t('pages.sectionCheck.title', { section: section.title })}
+            {tx('pages.sectionCheck.title', { section: <En>{section.title}</En> })}
           </h1>
-          <p className="h2 tw-quiz-intro-tagline">{t('pages.sectionCheck.introTitle', { title: section.title })}</p>
+          <p className="h2 tw-quiz-intro-tagline">{tx('pages.sectionCheck.introTitle', { title: <En>{section.title}</En> })}</p>
         </div>
         <ul className="tw-quiz-facts" role="list">
           <li className="tw-quiz-fact">

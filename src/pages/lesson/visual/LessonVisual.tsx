@@ -28,7 +28,7 @@ export interface LessonVisualProps {
  * Escape or "Close", and focus goes back to the button.
  */
 export function LessonVisual({ visual, enlargeable = true }: LessonVisualProps) {
-  const { t } = useI18n();
+  const { t, contentLang } = useI18n();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const toolsRef = useRef<HTMLDivElement>(null);
   const titleId = useId();
@@ -61,7 +61,7 @@ export function LessonVisual({ visual, enlargeable = true }: LessonVisualProps) 
   return (
     <figure className="tw-lesson-visual">
       {/* Not lazy: it sits near the top of Read, and the warm-up often asks learners to look at it. */}
-      <img src={url} alt={visual.alt} decoding="async" />
+      <img src={url} alt={visual.alt} decoding="async" {...contentLang} />
       {enlargeable ? (
         <>
           <div ref={toolsRef} className="tw-lesson-visual-tools tw-no-print">
@@ -95,7 +95,7 @@ export function LessonVisual({ visual, enlargeable = true }: LessonVisualProps) 
             */}
             {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- a scrolling region must be reachable by keyboard */}
             <div className="tw-picture-dialog-scroll" role="region" aria-label={t('lessonPlayer.visual.scrollLabel', { title })} tabIndex={0}>
-              <img src={url} alt={visual.alt} decoding="async" />
+              <img src={url} alt={visual.alt} decoding="async" {...contentLang} />
             </div>
           </dialog>
         </>

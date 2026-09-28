@@ -1,4 +1,5 @@
 import { useId, type ReactNode } from 'react';
+import { En, useI18n } from '../../i18n';
 import { ChoiceOption } from './ChoiceOption';
 import { Feedback } from './Feedback';
 import { cx } from './internal/cx';
@@ -40,6 +41,7 @@ export function QuestionCard({
   className,
   headingLevel = 3,
 }: QuestionCardProps) {
+  const { contentLang } = useI18n();
   const generatedId = useId();
   const headingId = `${id ?? generatedId}-q`;
   const Heading = headingLevel === 2 ? 'h2' : 'h3';
@@ -47,7 +49,7 @@ export function QuestionCard({
     <section className={cx('tw-question', className)}>
       <div className="tw-question-head">
         {eyebrow ? <span className="tw-question-num">{eyebrow}</span> : null}
-        <Heading className="tw-question-prompt" id={headingId}>
+        <Heading className="tw-question-prompt" id={headingId} {...contentLang}>
           {prompt}
         </Heading>
       </div>
@@ -69,7 +71,11 @@ export function QuestionCard({
           );
         })}
       </div>
-      {feedback ? <Feedback tone={result === 'retry' ? 'retry' : 'correct'}>{feedback}</Feedback> : null}
+      {feedback ? (
+        <Feedback tone={result === 'retry' ? 'retry' : 'correct'}>
+          <En>{feedback}</En>
+        </Feedback>
+      ) : null}
       {children}
     </section>
   );

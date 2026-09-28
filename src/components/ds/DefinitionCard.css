@@ -80,3 +80,30 @@
     width: min(280px, calc(100vw - 32px));
   }
 }
+
+/*
+ * The word's meaning in the learner's own language (DefinitionCard's
+ * `meaning`), under the English definition: a line above it, its
+ * language's own name as a label, in that language's direction.
+ */
+.tw-def-meaning {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+  padding-block-start: var(--space-2);
+  border-block-start: 1px solid var(--line);
+  text-align: start;
+}
+
+.tw-def-meaning-label {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  color: var(--ink-muted);
+}
+
+.tw-def-meaning-text {
+  font-size: 17px;
+  line-height: 28px;
+}

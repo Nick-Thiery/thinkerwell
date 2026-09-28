@@ -9,7 +9,8 @@ import './LearnerTile.css';
  */
 function Avatar({ name, tone, large }: { name?: string; tone?: string; large?: boolean }) {
   return (
-    <span className={cx('tw-avatar', large && 'tw-avatar-lg', `tw-tone-${tone || 'lavender'}`)} aria-hidden="true">
+    // The first letter of the learner's own name: never translated.
+    <span className={cx('tw-avatar', large && 'tw-avatar-lg', `tw-tone-${tone || 'lavender'}`)} aria-hidden="true" translate="no">
       {(name || '?').charAt(0).toUpperCase()}
     </span>
   );

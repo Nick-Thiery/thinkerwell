@@ -31,6 +31,9 @@ sh scripts/setup-python.sh   # .venv with wordfreq, for the lesson checker
 | `npm run test:e2e` | End-to-end tests (Playwright) at 390, 820 and 1280px wide; builds and serves on port 4317 |
 | `npm run test:e2e:dev` | End-to-end tests for the dev-only `/dev/*` routes (Playwright, `playwright.dev.config.ts`); runs `vite` itself on port 4318, since those routes don't exist in a production build |
 | `npm run check:content` | Checks `content/lessons/*.json` against `docs/content/SPEC.md`; must report 0 errors |
+| `npm run check:i18n` | Checks every translation in `src/i18n/messages/` against `en.json` (keys, placeholders, plural forms); says how many messages each still lacks |
+| `npm run i18n:export -- <code>` | Writes the translator's spreadsheet for a language (`thinkerwell-<code>.csv`); see `docs/TRANSLATING.md` |
+| `npm run i18n:import -- <code> <file.csv>` | Reads a filled-in spreadsheet into `src/i18n/messages/<code>.json`, refusing rows whose placeholders don't match |
 | `npm run size` | After `npm run build`: what a new visitor downloads for the home page and for a lesson, and what the service worker precaches, gzipped and brotli (`tools/report-sizes.mjs`) |
 | `npm run perf` | After `npm run build`: first paint, page ready and load for the home page and a lesson on Slow 3G, 3G and Slow 4G with a slow CPU, served with brotli as on Vercel (`tools/measure-slow.mjs`) |
 | `npm run slow-internet` | After `npm run build`: every file a first visit fetches (by kind, before and after the first screen), the whole precache with its largest files, and first paint, page ready and "offline ready" on Slow 3G and a very poor connection (`tools/slow-internet.mjs`; `-- --bytes` for sizes only). See `docs/notes/slow-internet.md` |
@@ -44,6 +47,10 @@ To run several dev servers at once, give each its own port and cache: `VITE_CACH
 In development, add `?dir=rtl` to any URL (for example http://localhost:5173/course?dir=rtl). The page switches to `dir="rtl"` and stays that way in that browser tab until you open any URL with `?dir=ltr`. A note under the header shows while it's on. Production builds ignore it.
 
 Write CSS with logical properties (`margin-inline-start`, `padding-inline`, `inset-inline-end`, `text-align: start`). Stylelint rejects `margin-left`, `left`, `float: left`, four-value `margin`/`padding` and the like.
+
+## Checking other languages
+
+In development, add `?locale=en-XA` to any URL for a test language made from en.json: every letter accented, every word about a third longer, each message in ⟦ ⟧, so English left in the code, text that doesn't fit and text cut off are easy to spot. `?locale=ar-XB` is a right-to-left one. Any language listed in `src/i18n/locales.ts` works too, ready or not, to see a translation in place. It lasts for the browser tab until `?locale=en`. Details: `docs/notes/languages.md`.
 
 ## Dev tooling
 
@@ -121,7 +128,8 @@ src/offline/             the service worker (sw.ts) and its page side, online st
 src/pages/print/         print views: a lesson (/lesson/:id/print) and the journal (/journal/print)
 src/pages/certificate/   certificates: each section's (/certificate/section/:id) and the course's (/certificate/course)
 src/storage/             IndexedDB (idb): learners, progress, quiz attempts, recordings, settings; src/storage/progress.ts has the pure progress-lookup helpers (continue target, per-section counts, ...)
-src/i18n/                message helper; every UI string is in src/i18n/messages/en.json
+src/i18n/                message helper, the language list (locales.ts), loading, fonts and test languages; every UI string is in src/i18n/messages/en.json
+tools/i18n/              the translator kit: npm run i18n:export, i18n:import and check:i18n
 src/styles/              tokens.css (copied from the design system), fonts.css, global.css, print.css
 src/components/ds/       the ported design-system components
 src/dev/                 dev-only routes (/dev/components, /dev/reference, /dev/screens); never shipped

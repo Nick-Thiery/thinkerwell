@@ -1,5 +1,6 @@
 // @vitest-environment node
 import type { Learner } from '../storage';
+import { formatDateIn } from '../i18n';
 import { addedOn, learnersWithSameName } from './sameNames';
 
 const learner = (id: string, name: string, createdAt = '2026-09-28T09:00:00.000Z'): Learner => ({ id, name, colour: 'lemon', createdAt });
@@ -15,7 +16,10 @@ describe('learnersWithSameName', () => {
 
 describe('addedOn', () => {
   it('gives the day a learner was added, short', () => {
-    expect(addedOn(learner('1', 'Amina', '2026-09-02T09:00:00.000Z'), 'en')).toBe('Sep 2, 2026');
-    expect(addedOn(learner('1', 'Amina', 'not a date'), 'en')).toBe('');
+    const english = (date: Date, options: Intl.DateTimeFormatOptions) => formatDateIn('en', date, options);
+    expect(addedOn(learner('1', 'Amina', '2026-09-02T09:00:00.000Z'), english)).toBe('Sep 2, 2026');
+    expect(addedOn(learner('1', 'Amina', 'not a date'), english)).toBe('');
+    const dari = (date: Date, options: Intl.DateTimeFormatOptions) => formatDateIn('fa-AF', date, options);
+    expect(addedOn(learner('1', 'Amina', '2026-09-02T09:00:00.000Z'), dari)).toMatch(/^[۰-۹]/);
   });
 });

@@ -1,0 +1,83 @@
+/*
+ * Arabic script for Dari/Farsi and Arabic: Vazirmatn (SIL Open Font License
+ * 1.1, self-hosted from @fontsource/vazirmatn), whose clean, open letters
+ * sit well beside Atkinson Hyperlegible Next.
+ *
+ * Loaded by src/i18n/fonts/index.ts only while a language with the
+ * 'arabic' font key is shown (src/i18n/locales.ts), and precached only once
+ * such a language is ready (vite.config.ts). Nothing here downloads for an
+ * English visit.
+ *
+ * Only Vazirmatn's Arabic-script letters, added to the site's own two
+ * families with unicode-range. So every heading (Funnel Display) and every
+ * other text (Atkinson Hyperlegible Next) keeps its Latin letters, digits
+ * and punctuation from the site's fonts, gets its Arabic letters from
+ * Vazirmatn, and the design tokens (--font-display, --font-body) stay as
+ * they are. A browser only downloads one of these files once a page shows
+ * Arabic-script letters in that weight.
+ *
+ * Arabic script has no italic: italic text (definition examples, journal
+ * prompts) gets upright letters.
+ */
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("@fontsource/vazirmatn/files/vazirmatn-arabic-400-normal.woff2") format("woff2");
+  unicode-range: U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url("@fontsource/vazirmatn/files/vazirmatn-arabic-400-normal.woff2") format("woff2");
+  unicode-range: U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url("@fontsource/vazirmatn/files/vazirmatn-arabic-500-normal.woff2") format("woff2");
+  unicode-range: U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url("@fontsource/vazirmatn/files/vazirmatn-arabic-700-normal.woff2") format("woff2");
+  unicode-range: U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC;
+}
+
+@font-face {
+  font-family: "Funnel Display";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url("@fontsource/vazirmatn/files/vazirmatn-arabic-500-normal.woff2") format("woff2");
+  unicode-range: U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC;
+}
+
+@font-face {
+  font-family: "Funnel Display";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url("@fontsource/vazirmatn/files/vazirmatn-arabic-600-normal.woff2") format("woff2");
+  unicode-range: U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC;
+}
+
+/*
+ * Arabic letters join up, so the headings' tight tracking would pull them
+ * apart. English inside such a page (lang="en") keeps its tracking.
+ */
+:is(.hero, .display, .h1, .h2, .h3, .eyebrow):is(:lang(fa), :lang(ar)) {
+  letter-spacing: normal;
+}

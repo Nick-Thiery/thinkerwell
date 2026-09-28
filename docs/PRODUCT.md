@@ -34,7 +34,7 @@ HELP for Refugees, Jakarta. Target start: one to two weeks from 26 September 202
 - The old keyword "Learning Guide" is removed; AI features come later.
 - Listen (read aloud), Say it (dictation, on-device only by default) and Record yourself (stays on the device) are in.
 - Offline use, a "Save data" mode and a print view are in.
-- English first. Translation later: probably Dari/Farsi, Somali and Arabic first. Build right-to-left support in from the start.
+- English first. Translation later: probably Dari/Farsi, Somali and Arabic first, once we know the learners' home languages. The groundwork is built (see "Languages" below); nothing is translated yet.
 - Feedback email on the educators page is a placeholder for now.
 - The About page names Justin (founder and director) and Nick (CTO), each with a photo.
 - British spelling in all copy.
@@ -94,6 +94,20 @@ Details and the reasons are in `docs/notes/certificates.md`.
 - It prints on one landscape page, on A4 or Letter, in black and white with little ink. Other printouts stay portrait. It works offline.
 - The date reads "September 5, 2026", like the date in Settings. Day first would mean changing the site's English to British date order everywhere: open for Justin and Nick.
 
+### Languages
+
+Details and the reasons are in `docs/notes/languages.md`; how a helper translates is in `docs/TRANSLATING.md`.
+
+- The lessons stay in English on purpose: the course is also English practice. What gets translated is the interface (buttons, menus, instructions), and, if wanted, one short line in the learner's language under the English meaning of each key word.
+- Dari (`fa-AF`) and Arabic (right to left) and Somali are listed but not offered: a language appears only once a native speaker has translated every interface string and a second one has reviewed it. No machine translation reaches learners. Today English is the only language, and learners see no change.
+- Each learner can have their own language (a shared tablet may have learners with different home languages), chosen when they are added or on their home page. The device has a language too, in Settings, for the home screen, anyone looking around and learners who haven't chosen. Switching learner switches language. These choices show only once a second language is ready.
+- A learner's language goes with their work when it is moved to another device.
+- In another language, lesson text stays marked as English, so screen readers and Listen read it as English. Listen and Say it always work in English.
+- Dari and Arabic use the Vazirmatn font for their letters, downloaded only when one of them is shown. Somali needs no extra font.
+- Each language downloads only when someone uses it, and is saved for offline use only once it is ready. Nothing extra downloads for English.
+- To keep the first page as small as before, the pages for teachers and for printing (Settings, For educators, teacher guides, answer keys, print views, certificates) load when they are opened. They still work offline.
+- Open: which calendar Dari dates should use (Afghanistan's solar calendar, which the browser uses by default, or the Western one), and whether the "how I practised" options and the fiction label, which come with the lesson files and so stay English, should be translatable.
+
 ### Quality pass and launch (phase 8)
 
 What was checked, the Vercel import steps, every network request and what is left for people are in `docs/LAUNCH_CHECKLIST.md`.
@@ -118,7 +132,7 @@ Details, the file format and the reasons are in `docs/notes/device-transfer.md`.
 
 1. **Pilot build (now):** everything in `docs/BUILD_PLAN.md` phases 1–8.
 2. **Measurement:** pre and post checks, pilot codes, consent and an events endpoint, as in `docs/research/MEASUREMENT_PLAN.md`. Indonesia's data protection law needs parental consent for children's data.
-3. **Translation:** language picker, first-language glossary, right-to-left layouts.
+3. **Translation:** the groundwork is in (language list and picker, per-learner language, first-language glossary lines, right-to-left layouts and font, test languages, the translator's spreadsheet). Next: learn the pilot learners' home languages, then translate and review with native speakers.
 4. **AI features (later):** diagnostic quiz, mastery tracking, reading-level rewrites, first-language glossary help, an educator dashboard, a content review flow. All privacy-first.
 5. **Service wing (later):** partnerships for device and data donations.
 

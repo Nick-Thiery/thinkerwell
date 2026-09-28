@@ -16,13 +16,17 @@ export interface ReadingCardProps {
 
 /** One reading passage or part of one, with glossary words marked inline. */
 export function ReadingCard({ part, partNumber, partTotal, heading, children, className }: ReadingCardProps) {
-  const { t } = useI18n();
+  const { t, contentLang } = useI18n();
   const partLabel =
     part ?? (partNumber && partTotal ? t('ds.content.reading.part', { n: partNumber, total: partTotal }) : undefined);
   return (
     <article className={cx('tw-reading', className)}>
       {partLabel ? <span className="tw-reading-part">{partLabel}</span> : null}
-      {heading ? <h3 className="tw-reading-h">{heading}</h3> : null}
+      {heading ? (
+        <h3 className="tw-reading-h" {...contentLang}>
+          {heading}
+        </h3>
+      ) : null}
       {/*
         A div, not a <p>: lesson text is authored as more than one paragraph
         (content/lessons/*.json), so children are typically several <p>
@@ -31,7 +35,10 @@ export function ReadingCard({ part, partNumber, partTotal, heading, children, cl
         phrasing content, so it's fine inside a <p> too — see
         DefinitionCard.tsx.)
       */}
-      <div className="tw-reading-text">{children}</div>
+      {/* Lesson text: English whatever the interface's language (the course is English practice). */}
+      <div className="tw-reading-text" {...contentLang}>
+        {children}
+      </div>
     </article>
   );
 }

@@ -2,6 +2,7 @@ import { useId } from 'react';
 import { DefinitionCard } from '../../../components/ds';
 import type { GlossaryEntry } from '../../../content';
 import { useI18n } from '../../../i18n';
+import { glossaryMeaning } from '../../../lesson/glossaryMeaning';
 
 export interface KeyWordsPanelProps {
   id: string;
@@ -14,7 +15,7 @@ export interface KeyWordsPanelProps {
  * "Key words" tool.
  */
 export function KeyWordsPanel({ id, glossary }: KeyWordsPanelProps) {
-  const { t } = useI18n();
+  const { t, definition: locale } = useI18n();
   const headingId = useId();
   return (
     <section id={id} className="tw-read-keywords" aria-labelledby={headingId}>
@@ -32,6 +33,7 @@ export function KeyWordsPanel({ id, glossary }: KeyWordsPanelProps) {
               word={entry.word}
               definition={entry.definition}
               example={entry.example}
+              meaning={glossaryMeaning(entry, locale)}
               onClose={false}
             />
           </li>

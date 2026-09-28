@@ -1,9 +1,10 @@
-import { useState, type FormEvent } from 'react';
+import { useId, useState, type FormEvent } from 'react';
 import { useNavigate } from 'react-router';
+import { LanguageChoice, useHasLanguageChoice } from '../../app/LanguageChoice';
 import { lessonPath } from '../../app/lessonUrls';
 import type { LessonSummary } from '../../content/catalog';
 import { Button, Icon, TextField } from '../../components/ds';
-import { useI18n } from '../../i18n';
+import { En, useI18n } from '../../i18n';
 import type { LearnerColour, NewLearner } from '../../storage';
 import { ColourPicker } from './ColourPicker';
 import { HomeHero } from './HomeHero';
@@ -35,10 +36,16 @@ export interface NewLearnerFormProps {
 
 /**
  * The "who's learning" panel swapped for a form (NewLearner.dc.html): first
- * name or nickname, a colour, and an optional class code. Nothing else.
+ * name or nickname, a colour, and an optional class code. Once a second
+ * language is ready, also the learner's language (the device's until they
+ * choose); nothing else.
  */
 export function NewLearnerForm({ lesson1, onBack, onSubmit }: NewLearnerFormProps) {
-  const { t } = useI18n();
+  const { t, tx, locale } = useI18n();
+  const hasLanguageChoice = useHasLanguageChoice();
+  const languageHelpId = useId();
+  // null until the learner taps a language: then they follow the device's.
+  const [language, setLanguage] = useState<string | null>(null);
   const navigate = useNavigate();
   const [name, setName] = useState('');
   const [nameError, setNameError] = useState<string | undefined>(undefined);
@@ -73,6 +80,7 @@ export function NewLearnerForm({ lesson1, onBack, onSubmit }: NewLearnerFormProp
     setSubmitting(true);
     const input: NewLearner = { name: trimmedName, colour };
     if (trimmedCode) input.classCode = trimmedCode.toUpperCase();
+    if (language) input.language = language;
     void onSubmit(input)
       .then(() => {
         // "Start LessonSummary N": actually takes the new learner straight there,
@@ -91,7 +99,7 @@ export function NewLearnerForm({ lesson1, onBack, onSubmit }: NewLearnerFormProp
         <div className="tw-home-starts-with">
           <span className="eyebrow">{t('pages.home.newLearner.startsWith')}</span>
           <span className="tw-home-starts-with-lesson">
-            {t('pages.home.newLearner.startsWithLesson', { number: lesson1.number, title: lesson1.title })}
+            {tx('pages.home.newLearner.startsWithLesson', { number: lesson1.number, title: <En>{lesson1.title}</En> })}
           </span>
           <p className="body">{t('pages.home.newLearner.startsWithNote')}</p>
         </div>
@@ -122,6 +130,20 @@ export function NewLearnerForm({ lesson1, onBack, onSubmit }: NewLearnerFormProp
             maxLength={200}
           />
           <ColourPicker value={colour} onChange={setColour} legend={t('pages.home.newLearner.colourLabel')} />
+          {hasLanguageChoice ? (
+            <fieldset className="tw-colour-fieldset">
+              <legend className="label">{t('pages.home.newLearner.languageLabel')}</legend>
+              <LanguageChoice
+                label={t('pages.home.newLearner.languageLabel')}
+                describedBy={languageHelpId}
+                value={language ?? locale}
+                onChange={setLanguage}
+              />
+              <p id={languageHelpId} className="small tw-home-language-help">
+                {t('pages.home.newLearner.languageHelper')}
+              </p>
+            </fieldset>
+          ) : null}
           <TextField
             id={CLASS_CODE_FIELD_ID}
             label={t('pages.home.newLearner.classCodeLabel')}

@@ -78,17 +78,8 @@ function knownContent(): KnownContent {
   };
 }
 
-/** "Amina, Yusuf and Sara", in the page's language where the browser can. */
-function listNames(names: string[], lang: string): string {
-  try {
-    return new Intl.ListFormat(lang, { type: 'conjunction' }).format(names);
-  } catch {
-    return names.join(', ');
-  }
-}
-
 export function WorkFileSetting() {
-  const { t, lang } = useI18n();
+  const { t, formatDate } = useI18n();
   const session = useLearnerSession();
   const { status, storageAvailable, learners, activeLearner, reloadLearners } = session;
   const headingId = useId();
@@ -238,8 +229,7 @@ export function WorkFileSetting() {
     return t('pages.settings.transfer.load.noWork');
   };
 
-  const savedOn = (iso: string): string =>
-    new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(iso));
+  const savedOn = (iso: string): string => formatDate(iso, { day: 'numeric', month: 'long', year: 'numeric' });
 
   const loadBusy = loadState.kind === 'reading' || (loadState.kind === 'preview' && loadState.loading);
 
@@ -274,7 +264,7 @@ export function WorkFileSetting() {
                       />
                       <span>
                         {sameName.has(learner.id)
-                          ? t('pages.settings.transfer.save.learnerAdded', { name: learner.name, date: addedOn(learner, lang) })
+                          ? t('pages.settings.transfer.save.learnerAdded', { name: learner.name, date: addedOn(learner, formatDate) })
                           : learner.name}
                       </span>
                     </label>
@@ -393,7 +383,7 @@ export function WorkFileSetting() {
                   <span>{t(PROBLEM_KEYS[loadState.kind === 'problem' ? loadState.problem : 'failed'])}</span>
                 </p>
               ) : loadState.kind === 'done' ? (
-                <LoadResult summary={loadState.summary} lang={lang} resultRef={resultRef} />
+                <LoadResult summary={loadState.summary} resultRef={resultRef} />
               ) : null}
             </div>
           </div>
@@ -403,17 +393,10 @@ export function WorkFileSetting() {
   );
 }
 
-function LoadResult({
-  summary,
-  lang,
-  resultRef,
-}: {
-  summary: ImportSummary;
-  lang: string;
-  resultRef: RefObject<HTMLDivElement | null>;
-}) {
-  const { t } = useI18n();
-  const names = (learners: Learner[]) => listNames(learners.map((learner) => learner.name), lang);
+function LoadResult({ summary, resultRef }: { summary: ImportSummary; resultRef: RefObject<HTMLDivElement | null> }) {
+  const { t, formatList } = useI18n();
+  // "Amina, Yusuf and Sara", in the interface's language.
+  const names = (learners: Learner[]) => formatList(learners.map((learner) => learner.name), { type: 'conjunction' });
   const changed = summary.added.length + summary.updated.length > 0;
   return (
     <div className="tw-settings-status" tabIndex={-1} ref={resultRef}>

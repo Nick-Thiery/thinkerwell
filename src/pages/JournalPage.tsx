@@ -2,12 +2,12 @@ import { useMemo, useState } from 'react';
 import { usePageTitle } from '../app/usePageTitle';
 import { Button, Icon, SectionBadge, SegmentedControl } from '../components/ds';
 import { getLessons, getLessonSection } from '../content';
-import { useI18n } from '../i18n';
+import { En, useI18n } from '../i18n';
 import { useLearnerProgress, useLearnerSession } from '../session';
 import { journalByLesson, type LessonProgress } from '../storage';
 import './JournalPage.css';
 import { EditableJournalEntry } from './journal/EditableJournalEntry';
-import { describeJournalDate } from './journal/journalDate';
+import { describeJournalDate, JOURNAL_DATE_FORMAT } from './journal/journalDate';
 
 type Filter = 'All' | 'Writing' | 'Reflections';
 
@@ -23,7 +23,7 @@ type Filter = 'All' | 'Writing' | 'Reflections';
  * depending on which of those it is, matching the course map's own wording.
  */
 export function JournalPage() {
-  const { t, lang } = useI18n();
+  const { t, tx, formatDate } = useI18n();
   usePageTitle(t('pages.journal.title'));
   const session = useLearnerSession();
   const learner = session.activeLearner;
@@ -110,20 +110,25 @@ export function JournalPage() {
             <p className="body-lg">{t('pages.journal.emptyFiltered')}</p>
           ) : (
             filtered.map(({ lesson, updatedAt, pieces }) => {
-              const dateKind = describeJournalDate(updatedAt, lang);
-              const date = dateKind.kind === 'other' ? dateKind.text : t(`pages.journal.${dateKind.kind}`);
+              const when = describeJournalDate(updatedAt);
+              const savedLabel =
+                when.kind === 'today'
+                  ? t('pages.journal.savedToday')
+                  : when.kind === 'yesterday'
+                    ? t('pages.journal.savedYesterday')
+                    : t('ds.course.journalEntry.saved', { date: formatDate(when.date, JOURNAL_DATE_FORMAT) });
               return (
                 <section key={lesson.id} className="tw-journal-group">
                   <div className="tw-journal-group-label">
                     <SectionBadge section={getLessonSection(lesson).id} showName={false} size={36} />
-                    {t('pages.journal.groupLabel', { number: lesson.number, title: lesson.title })}
+                    {tx('pages.journal.groupLabel', { number: lesson.number, title: <En>{lesson.title}</En> })}
                   </div>
                   {pieces.map((piece) => (
                     <EditableJournalEntry
                       key={piece.kind === 'reflection' ? `reflection-${piece.reflectionIndex}` : 'writing'}
                       lesson={lesson}
                       piece={piece}
-                      date={date}
+                      savedLabel={savedLabel}
                       onSaved={(lessonId, record) => setOverrides((prev) => ({ ...prev, [lessonId]: record }))}
                     />
                   ))}

@@ -76,10 +76,6 @@
       "checkEyebrow": "Read · last part",
       "checkTitle": "Quick check",
       "checkRetryNote": "Try as many times as you like",
-      "feedbackLead": {
-        "correct": "Yes.",
-        "retry": "Not quite."
-      },
       "questionOf": "Question {n} of {total}",
       "thinkEyebrow": "Question {n} of {total} · think it through",
       "thinkHelper": "There is no single right answer.",
@@ -273,7 +269,9 @@
         "startsWith": "You will start with",
         "startsWithLesson": "Lesson {number}: {title}",
         "startsWithNote": "You can open any lesson later from the course page.",
-        "privacyNote": "Your work stays on this device."
+        "privacyNote": "Your work stays on this device.",
+        "languageLabel": "Your language",
+        "languageHelper": "Buttons and instructions show in this language. The lessons stay in English, so you can practise it."
       },
       "remove": {
         "action": "Remove",
@@ -297,7 +295,7 @@
         "greeting": "Hi {name}",
         "summaryNone": "You haven't started a lesson yet. Next up is Lesson {number}.",
         "summaryInProgress": {
-          "one": "You have finished 1 lesson. Next up is Lesson {number}.",
+          "one": "You have finished {count} lesson. Next up is Lesson {number}.",
           "other": "You have finished {count} lessons. Next up is Lesson {number}."
         },
         "summaryDone": "You have finished every lesson. Well done.",
@@ -324,7 +322,10 @@
         "fromJournal": "From your journal",
         "openJournal": "Open my journal",
         "noJournalYet": "Nothing saved yet. Your writing and reflections show up here once you start.",
-        "latestEntry": "{stage} · Lesson {number}"
+        "latestEntry": "{stage} · Lesson {number}",
+        "languageTitle": "Your language",
+        "languageHelp": "Buttons and instructions show in this language. The lessons stay in English, so you can practise it.",
+        "languageSaveFailed": "That didn't save. Try again."
       }
     },
     "course": {
@@ -410,8 +411,8 @@
       "emptyFiltered": "Nothing saved yet in this view. Choose All to see everything you've written.",
       "lookAroundNote": "You're looking around, so nothing here is saved. Choose who's learning to keep a journal.",
       "noLearnerNote": "Choose who's learning to see their journal.",
-      "today": "today",
-      "yesterday": "yesterday",
+      "savedToday": "Saved today",
+      "savedYesterday": "Saved yesterday",
       "cancelEdit": "Cancel",
       "saveEdit": "Save"
     },
@@ -465,6 +466,7 @@
       "previewLesson": "Preview the lesson",
       "learnerPrint": "Print the lesson for learners",
       "section": "Section",
+      "sectionValue": "Section {number}: {title}",
       "essentialQuestion": "Essential question",
       "learningGoal": "Learning goal",
       "time": "Time",
@@ -550,6 +552,11 @@
       "intro": "These settings are for teachers and volunteers. They apply to everyone who uses this device, and they stay on it.",
       "noStorage": "This browser window can't save settings.",
       "saveFailed": "That change couldn't be saved. Try again.",
+      "language": {
+        "title": "Language",
+        "label": "Language on this device",
+        "help": "Buttons and instructions show in this language on the home screen, for anyone looking around, and for learners who haven't chosen their own. The lessons stay in English."
+      },
       "offline": {
         "title": "Offline and data",
         "checking": "Checking whether the lessons are saved on this device…",
@@ -708,7 +715,8 @@
     "menuClose": "Close menu"
   },
   "dev": {
-    "rtlOn": "Right-to-left test mode is on. Add ?dir=ltr to the address to turn it off."
+    "rtlOn": "Right-to-left test mode is on. Add ?dir=ltr to the address to turn it off.",
+    "localeOn": "Test language {locale} is on. Add ?locale=en to the address to turn it off."
   },
   "ds": {
     "chrome": {
@@ -721,7 +729,8 @@
       },
       "stagePath": {
         "navLabel": "Lesson steps",
-        "doneSuffix": ", done"
+        "doneSuffix": ", done",
+        "stageDone": "{stage}, done"
       },
       "stageDots": {
         "progressLabel": "{count} of 5 steps done"
@@ -760,6 +769,7 @@
           "completed": "Completed."
         },
         "ariaLabelLesson": "Lesson {number}: {title}. {status} {cta}",
+        "ariaLabelLessonQuestion": "Lesson {number}: {title}. {status} {cta} {question}",
         "ariaLabelQuiz": "{title}. {status} {cta}"
       },
       "continueCard": {

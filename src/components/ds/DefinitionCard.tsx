@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef, type Ref, type ReactNode } from 'react';
-import { useI18n } from '../../i18n';
+import { useI18n, type Direction } from '../../i18n';
 import { Icon } from './Icon';
 import { cx } from './internal/cx';
 import { ToolToggle } from './ToolToggle';
@@ -20,6 +20,12 @@ export interface DefinitionCardProps {
   onListen?: () => void;
   /** Whether "Hear it" is mid-playback, reflected as its pressed state. */
   listening?: boolean;
+  /**
+   * Not in the design-system docs: the word's short meaning in the
+   * learner's own language, shown under the English definition, labelled
+   * with the language's own name and in its own lang and dir.
+   */
+  meaning?: { text: string; lang: string; dir: Direction; languageName: string };
   className?: string;
 }
 
@@ -79,9 +85,10 @@ export function DefinitionCard({
   onClose,
   onListen,
   listening,
+  meaning,
   className,
 }: DefinitionCardProps) {
-  const { t } = useI18n();
+  const { t, contentLang, uiLang } = useI18n();
   const rootRef = useRef<HTMLElement>(null);
 
   // `.tw-def-float` is a popover anchored to the start edge of an inline
@@ -147,7 +154,7 @@ export function DefinitionCard({
       window.removeEventListener('resize', place);
       viewportApi?.removeEventListener('resize', place);
     };
-  }, [floating, word, definition, example]);
+  }, [floating, word, definition, example, meaning]);
 
   // Floating (anchored under a GlossaryTerm) sits inline in a reading
   // paragraph, so it must be phrasing content: `<span>`, never `<div>` or
@@ -177,9 +184,11 @@ export function DefinitionCard({
       // here, inside GlossaryTerm's wrapper.
       tabIndex={floating ? -1 : undefined}
       aria-label={floating ? t('ds.content.definition.meaningOf', { word: wordText(word) }) : undefined}
+      // Floating, it sits inside English lesson text: its buttons are back in the interface's language.
+      {...uiLang}
     >
       <Row className="tw-def-word">
-        <span>{word}</span>
+        <span {...contentLang}>{word}</span>
         {onClose !== false ? (
           // The reference caps this at 36x36; CLAUDE.md requires every tap target to
           // stay at least 44px, so this keeps .tw-menu-btn's own default size.
@@ -188,8 +197,20 @@ export function DefinitionCard({
           </button>
         ) : null}
       </Row>
-      <Text className="tw-def-text">{definition}</Text>
-      {example ? <Text className="tw-def-ex">{example}</Text> : null}
+      <Text className="tw-def-text" {...contentLang}>
+        {definition}
+      </Text>
+      {example ? (
+        <Text className="tw-def-ex" {...contentLang}>
+          {example}
+        </Text>
+      ) : null}
+      {meaning ? (
+        <Text className="tw-def-meaning" lang={meaning.lang} dir={meaning.dir}>
+          <span className="tw-def-meaning-label">{meaning.languageName}</span>
+          <span className="tw-def-meaning-text">{meaning.text}</span>
+        </Text>
+      ) : null}
       {listen !== false && onListen ? (
         <ToolToggle icon="Volume2" className="tw-def-listen" pressed={listening} onClick={onListen}>
           {t('ds.content.definition.hearIt')}

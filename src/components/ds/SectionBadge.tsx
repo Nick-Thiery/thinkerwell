@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import { useI18n } from '../../i18n';
 import { Icon } from './Icon';
 import { cx } from './internal/cx';
@@ -21,7 +21,8 @@ const SECTION_ICONS: Record<SectionId, IconName> = {
 export interface SectionBadgeProps {
   section: SectionId;
   number?: number;
-  name?: string;
+  /** The section's name: course text marked with <En>, or a message holding it. The interface's own name when left out. */
+  name?: ReactNode;
   showName?: boolean;
   size?: number;
   /** Not in the reference's index.d.ts, but bundle.js applies it (cx(..., props.className)); kept for callers that need to extend layout. */
