@@ -117,7 +117,7 @@ public/images/           mascot, UN goal icons, founder photo (small copies; ori
 public/icons/            app icons for the web app manifest and iOS home screens
 scripts/                 lesson checker (check_lesson.py), check-content.sh, setup-python.sh, optimise_images.py, subset_wordmark_font.py
 src/main.tsx             entry: router and global styles
-src/app/                 routes, app shell (header, learner switcher, phone nav), lesson URL handling (old Base44 ids redirect here); src/app/lazy/ holds the pages that load when first opened
+src/app/                 routes, app shell (header, learner switcher, phone nav), lesson URL handling (old Base44 ids redirect here); src/app/lazy/ holds the three chunks of pages that load when first opened, and lazyPage.tsx loads them ("This page hasn't downloaded yet" if it can't)
 src/pages/               one component per page: Home (picker/new learner/dashboard/guest), the course map, and placeholders for later phases
 src/pages/lesson/        the lesson player's page (LessonPage, StageActionBar) and one folder per stage: read, write, speak, watch, reflect, complete, plus evidence and visual
 src/speech/              Listen, Say it and Record yourself: local voice choice, read-aloud player, on-device speech recognition detection and dictation, MediaRecorder
@@ -127,6 +127,7 @@ src/content/             zod schemas (schema.ts), the checks the build and tests
 src/offline/             the service worker (sw.ts) and its page side, online status, the banners under the header, Save data
 src/pages/print/         print views: a lesson (/lesson/:id/print) and the journal (/journal/print)
 src/pages/certificate/   certificates: each section's (/certificate/section/:id) and the course's (/certificate/course)
+src/pages/educators/     teacher guides and answer keys; the pilot-day tools: the setup checklist, the class view and all certificates
 src/storage/             IndexedDB (idb): learners, progress, quiz attempts, recordings, settings; src/storage/progress.ts has the pure progress-lookup helpers (continue target, per-section counts, ...)
 src/i18n/                message helper, the language list (locales.ts), loading, fonts and test languages; every UI string is in src/i18n/messages/en.json
 tools/i18n/              the translator kit: npm run i18n:export, i18n:import and check:i18n
@@ -145,11 +146,13 @@ e2e-dev/                 Playwright tests for the dev-only /dev/* routes (npm ru
 
 ## Routes
 
-`/`, `/course`, `/lesson/:id/:stage` (stages: read, write, speak, watch, reflect, plus `complete`), `/section/:id/check`, `/journal`, `/journal/print`, `/educators`, `/about`, `/settings` (settings for this device, for educators, in the header menu), `/lesson/:id/print` (the lesson on paper), `/certificate/section/:id` and `/certificate/course` (printable certificates). `/lesson/:id` opens Read. Old Base44 links such as `/lesson/l6` or `/lesson/history-scale` redirect to the new lesson (`/lesson/l6` is Lesson 10, `/lesson/towns-near-rivers/read`), keeping any query string such as `?preview=true`. `/onboarding` goes to `/` and `/courses` to `/course`. Anything else shows a friendly "can't find that page".
+`/`, `/course`, `/lesson/:id/:stage` (stages: read, write, speak, watch, reflect, plus `complete`), `/section/:id/check`, `/journal`, `/journal/print`, `/educators`, `/educators/lesson/:id` (a teacher guide), `/educators/section/:id/answers` (an answer key), `/educators/setup` (set up this device), `/educators/class` (the class on this device) and `/educators/class/certificates` (all its certificates), `/about`, `/settings` (settings for this device, for educators, in the header menu; `#say-it` and `#move-work` go to those parts), `/lesson/:id/print` (the lesson on paper), `/certificate/section/:id` and `/certificate/course` (printable certificates). `/lesson/:id` opens Read. Old Base44 links such as `/lesson/l6` or `/lesson/history-scale` redirect to the new lesson (`/lesson/l6` is Lesson 10, `/lesson/towns-near-rivers/read`), keeping any query string such as `?preview=true`. `/onboarding` goes to `/` and `/courses` to `/course`. Anything else shows a friendly "can't find that page".
 
 ## Offline
 
 A production build has a service worker (`dist/sw.js`, built by vite-plugin-pwa from `src/offline/sw.ts` and `vite.config.ts`) that precaches the whole site after the first page loads, six files at a time. `npm run dev` has none, so nothing is ever served from an old copy while you work. To try it: `npm run build && npm run preview`, open the site once, then turn the network off in the browser's developer tools (Network, Offline) and reload or open any lesson. After a new build, reload once: the new version installs in the background and waits, and the page shows "A new version is ready" until you tap "Update now" (an open page also checks by itself every hour). To start again, unregister the worker and clear site data in the developer tools (Application). `docs/notes/phase-6.md` has the details; `docs/notes/slow-internet.md` has the sizes and times (`npm run slow-internet`).
+
+Only home, the course map and the 404 come with the first page; every other page loads its code when first opened, in three chunks (`src/app/lazy/`). To see what a first visit does when the connection drops before the course is stored, block `/assets/lessonPages-*.js` in the developer tools (Network, right-click, Block request URL) and open a lesson: it says "This page hasn't downloaded yet", with "Try again" (`e2e/page-not-downloaded.spec.ts`).
 
 ## Deploying
 

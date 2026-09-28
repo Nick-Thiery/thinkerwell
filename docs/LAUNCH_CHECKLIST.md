@@ -144,7 +144,8 @@ Checked by recording every request from every frame, and from the service worker
 | --- | --- |
 | The page's address, for example `/` or `/lesson/towns-near-rivers/read` | `index.html` |
 | `/assets/index-[hash].js`, `NotFoundPage-[hash].js`, `vendor-[hash].js`, `rolldown-runtime-[hash].js` | The app shell with home, the course map and the 404 (`NotFoundPage-` is the code they share with the other pages, named after one of its files), the libraries, and the chunk loader |
-| `/assets/lessonPages-[hash].js`, `content-[hash].js` and the chunks they share (`lessonRoutes-`, `speech-`) | Only on a lesson or section check page: the lesson player, and all lessons and checks. The Educators, teacher, print and journal pages load `teacherPages-`; Settings, About and certificates `morePages-` (`docs/notes/slow-internet.md`) |
+| `/assets/first-page-[hash].js` | A tiny script that, on a first visit straight to a page that loads lazily (a lesson from a link), starts downloading that page's code alongside the app's |
+| `/assets/lessonPages-[hash].js`, `content-[hash].js` and the chunks they share (`lessonRoutes-`, `speech-`) | Only on a lesson or section check page: the lesson player, and all lessons and checks. The Educators pages (with the teacher guides, answer keys, setup checklist, class view and all certificates), print and journal pages load `teacherPages-`; Settings, About and certificates `morePages-`; the certificate sheet they share is `CertificatePage-` (`docs/notes/slow-internet.md`) |
 | `/assets/style-[hash].css` | All styles |
 | `/images/thinkerwell-mascot-transparent.png` | The mascot in the header, and the tab icon |
 | `/assets/*.woff2`, as text needs them | The self-hosted fonts: Atkinson Hyperlegible Next (400, 500, 700, 400 italic), Funnel Display (500, 600) and Eczar (500, only the wordmark's letters). Latin first; latin-ext only when a character needs it. |
@@ -152,7 +153,7 @@ Checked by recording every request from every frame, and from the service worker
 
 **The service worker's first install** happens once per version, in the background, six files at a time:
 
-- the precache: 57 files. These are `/index.html`, all the JavaScript (every page's) and the CSS, all 13 font files, 22 lesson pictures (`/assets/L01-[hash].svg` and so on), the images in `/images/` (the mascot, 4 UN goal icons and the two team photos) and `/manifest.webmanifest`.
+- the precache: 59 files. These are `/index.html`, all the JavaScript (every page's, but no other language's and none of the test languages') and the CSS, all 13 font files, 22 lesson pictures (`/assets/L01-[hash].svg` and so on), the images in `/images/` (the mascot, 4 UN goal icons and the two team photos) and `/manifest.webmanifest`. A language joins it only once it is `ready`, with the Vazirmatn font if it needs it (`docs/notes/languages.md`); today none does.
 - Once it controls the page, the page loads the other pages' code from it (not from the internet).
 
 Lessons 2 and 4 have no picture file: their pictures are small enough to be inlined into the JavaScript as `data:` URLs.
@@ -165,6 +166,9 @@ Lessons 2 and 4 have no picture file: their pictures are small enough to be inli
 | `/images/sdg-04.png`, `sdg-10.png`, `sdg-16.png`, `sdg-17.png`, `/images/founder-justin-park.jpg`, `nick-thiery.jpg` | The About page |
 | `/sw.js` | The browser checks for a new version when a page opens, and the site checks once an hour while it is open, online and on screen |
 | `/manifest.webmanifest`, `/icons/*.png` | Only when someone installs the site or adds it to a home screen (the browser asks) |
+| `/assets/locales/{code}/[hash].js`, then `/assets/fonts-arabic/arabic-[hash].css` and its `vazirmatn-arabic-*.woff2` files | Only when a language other than English is shown: its messages, and for Dari or Arabic the Vazirmatn stylesheet, whose fonts load only for Arabic letters on screen. No language but English is offered yet, so today never |
+| `/assets/pseudo/*.js` | Only in automated tests (the test languages en-XA and ar-XB, `docs/notes/languages.md`); never offered, never precached |
+| `HEAD /` | Only after "Try again" on "This page hasn't downloaded yet" (a first visit that lost the connection before the course was stored), to see whether the site answers before loading the page again |
 
 After the service worker has installed, page loads answer from it, and nothing is downloaded until a new version comes out.
 
@@ -183,7 +187,7 @@ Saving work to a file and loading one (Settings, "Move work to another device") 
 
 ## Left, and why
 
-- **About 130 kB of JavaScript before a first visit to the home page can be used**, most of it React and React Router (91 kB). The lessons and the other pages now load with the pages that show them (`docs/notes/slow-internet.md`); a lesson opened straight from a link still needs them all (about 225 kB). Later visits come from the service worker.
+- **About 135 kB of JavaScript before a first visit to the home page can be used**, most of it React and React Router (91 kB); the language groundwork and the pilot-day pages' words added about 5 kB. The lessons and the other pages load with the pages that show them (`docs/notes/slow-internet.md`); a lesson opened straight from a link still needs them all (about 231 kB). Later visits come from the service worker.
 - **The YouTube player's own requests** were not observed (see above).
 - **axe's "needs review" items:** the numbers inside the progress rings on the course and learner home. axe can't see the ring's ground through the SVG. They are ink on a section tint or canvas, at least 15:1.
 - **Text-only zoom** (Safari's and Firefox's zoom text only) wasn't tested; Chromium has none. The layouts use px sizes from the tokens, so check it on a device.
@@ -198,6 +202,7 @@ Saving work to a file and loading one (Settings, "Move work to another device") 
 - [ ] **Test on the real pilot devices**: HELP's tablets and laptops, in the browsers they have. On each one:
   - work through **Set up this device** (Educators) from top to bottom, and check that its home screen steps match what the browser really shows (menus move between versions), and whether "Keep work safe" gets a yes;
   - open the site once on good internet and wait for "All 24 lessons work offline" on the learner home;
+  - on a device that has never opened Thinkerwell, open the home page, turn off the Wi-Fi before "All 24 lessons work offline", then open a lesson: it should say "This page hasn't downloaded yet"; turn the Wi-Fi back on and tap **Try again**. Tell staff that this is what to do if they see it;
   - then turn off the Wi-Fi and open a few lessons;
   - in Settings, tap **Check this device** under "Say it" (once per device and browser, and again after a browser update). Lessons show Say it on the device only after this says speech stays on the device; they never check by themselves. If it offers "Download speech to text", download on good Wi-Fi, then check again;
   - try Listen, Say it and Record yourself;

@@ -27,7 +27,7 @@ The file has no imports, so the build (`vite.config.ts`), the content schema and
 
 - English (`src/i18n/messages/en.json`) is bundled, as before.
 - Every other language is `src/i18n/messages/<code>.json`, a chunk of its own (`assets/locales/<code>/<hash>.js`), fetched the first time someone uses it. None exists yet; `npm run i18n:import` makes one. A listed language with no file loads as empty, so it shows English.
-- The service worker precaches a language's chunk only once it is `ready`, so it works offline like the rest of the course; the Arabic font the same, once a ready language needs it; the test languages never. `languagePrecacheIgnores` in `src/i18n/build.ts` decides this from the list, and its test covers "Dari ready" and "Somali ready" cases. Today the precache holds nothing for other languages, and `e2e/languages.spec.ts` checks that an English visit fetches nothing of them and that `sw.js` lists none.
+- The service worker (`src/offline/sw.ts`) precaches a language's chunk only once it is `ready`, so it works offline like the rest of the course; the Arabic font the same, once a ready language needs it; the test languages never. `languagePrecacheIgnores` in `src/i18n/build.ts` decides this from the list, as the precache's `globIgnores` (`vite.config.ts`), and its test covers "Dari ready" and "Somali ready" cases. Today the precache holds nothing for other languages, and `e2e/languages.spec.ts` checks that an English visit fetches nothing of them and that `sw.js` lists none.
 - While a language loads (from the precache, a few milliseconds), the language shown before stays. At start-up that is English for a moment.
 
 ### Which language shows (`src/app/AppLayout.tsx`)
@@ -65,7 +65,7 @@ When the interface is in another language, everything from `content/` carries `l
 
 ### Fonts (`src/i18n/fonts/`)
 
-Vazirmatn (SIL Open Font License 1.1, `@fontsource/vazirmatn` from npm) for Dari/Farsi and Arabic. `arabic.css` adds only its Arabic-script letters (`unicode-range`) to the site's own families, "Atkinson Hyperlegible Next" (400, 400 italic, 500, 700) and "Funnel Display" (500, 600). So Latin letters, digits and punctuation keep the site's fonts, Arabic letters come from Vazirmatn, and the design tokens don't change. It is loaded only while a language with the `arabic` font key is shown, and a browser downloads a file only when a page shows Arabic letters in that weight. Arabic script has no italic, so italic text gets upright letters, and headings drop their tight tracking in Arabic script (letters join up). Four files, about 21 kB each.
+Vazirmatn (SIL Open Font License 1.1, `@fontsource/vazirmatn` from npm) for Dari/Farsi and Arabic. `arabic.css` adds only its Arabic-script letters (`unicode-range`) to the site's own families, "Atkinson Hyperlegible Next" (400, 400 italic, 500, 700) and "Funnel Display" (500, 600). So Latin letters, digits and punctuation keep the site's fonts, Arabic letters come from Vazirmatn, and the design tokens don't change. It is loaded only while a language with the `arabic` font key is shown, and a browser downloads a file only when a page shows Arabic letters in that weight. It is a stylesheet of its own (`assets/fonts-arabic/arabic-[hash].css`), imported as a file (`?url`) and added with a `<link>` by `src/i18n/fonts/index.ts`: the site has one stylesheet for every page (`cssCodeSplit: false`, `docs/notes/slow-internet.md`), which takes in any CSS the code imports, even on demand, so an `import('./arabic.css')` would put Vazirmatn's rules in every visit's stylesheet. The build stops if they ever reach it (`keepFirstVisitLight` in `vite.config.ts`). Arabic script has no italic, so italic text gets upright letters, and headings drop their tight tracking in Arabic script (letters join up). Four files, about 21 kB each.
 
 Somali uses the 26 basic Latin letters and the apostrophe, which the site's fonts already have (`src/i18n/fonts/fonts.test.ts` checks).
 
@@ -98,18 +98,17 @@ A glossary entry in a lesson file can carry `"translations": { "fa-AF": "…" }`
 
 ### Pages that load when opened
 
-To keep the English first load no bigger, Settings, the Educators page, teacher guides, answer keys, the print views and certificates load when opened (`src/app/routes.tsx`); they are precached like everything else. The rest of the app stays one chunk (`app`), as before (the `codeSplitting` group in `vite.config.ts`).
+This branch first made Settings, the Educators page, teacher guides, answer keys, the print views and certificates chunks of their own, fetched when opened, with the rest of the app one `app` chunk, to keep the English first load no bigger. It was merged after `slow-internet` (`docs/notes/slow-internet.md`, 28 September 2026), which already loads every page but home, the course map and the 404 when opened, in three chunks, with a lesson catalog, idle preloading and a first-page script. That scheme replaced this one, so pages load one way only (`src/app/lazyPage.tsx`, `src/app/lazy/`). A language's messages and the test languages keep their own chunks and folders (`assets/locales/`, `assets/pseudo/`), and the Arabic font its own stylesheet, whichever way pages load.
 
-Measured with `npm run build && npm run size` (gzip / brotli):
+What the language work adds, measured with `npm run build && npm run slow-internet -- --bytes` (Brotli, as Vercel sends it), on top of `slow-internet`:
 
-| | Before (`main`, fddb9d8) | After |
-| --- | --- | --- |
-| Main app chunk | `index`: 274.3 kB, 76.9 kB gzipped | `app`: 235.0 kB, 70.4 kB gzipped (plus a 0.7 kB entry) |
-| First load, home page | 359.2 kB / 315.0 kB (13 files) | **349.8 kB / 308.3 kB** (14 files) |
-| First load, Lesson 10 Read | 373.6 kB / 329.2 kB (15 files) | **364.3 kB / 322.4 kB** (16 files) |
-| Precache | 571.1 kB / 514.0 kB (51 files) | 582.3 kB / 525.4 kB (66 files) |
+| | `slow-internet` | With the language groundwork |
+| --- | ---: | ---: |
+| First visit, home page | 204.5 kB | 207.2 kB |
+| First visit, Lesson 10 Read from a link | 314.4 kB | 317.5 kB |
+| Precache | 469.1 kB | 472.4 kB |
 
-The precache is about 11 kB bigger: the language code (about 3.5 kB), and the teacher and print pages as separate files, which compress a little less well. Nothing of other languages, the test languages or the Arabic font is in it.
+About 3 kB: the language code in the first chunk (the list, loading, the provider's formatters, the test-language switch) and the reworded messages. Nothing of other languages, the test languages or the Arabic font is in the precache or a first visit.
 
 ## How to add a language
 

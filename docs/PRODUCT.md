@@ -73,7 +73,8 @@ Browser support and the reasons are in `docs/notes/phase-5.md`.
 
 Details, sizes and the reasons are in `docs/notes/phase-6.md`.
 
-- The whole course (every lesson, section check, picture and font) is saved on the device during the first visit, not lesson by lesson. That is about 470 kB compressed. The first page itself downloads only what it shows: about 205 kB for the home page, about 315 kB for a lesson opened from a link (`docs/notes/slow-internet.md`). The learner home says "All 24 lessons work offline", and lesson rows have no "Saved for offline" badge.
+- The whole course (every lesson, section check, picture and font, and every page's code) is saved on the device during the first visit, not lesson by lesson. That is about 480 kB compressed. The first page itself downloads only what it shows: about 210 kB for the home page, about 320 kB for a lesson opened from a link. Home, the course map and the 404 come first; every other page (lessons, section checks, the journal, Educators and its tools, print views, certificates, Settings, About) loads when it is first opened, and from the saved copy once there is one (`docs/notes/slow-internet.md`). The learner home says "All 24 lessons work offline", and lesson rows have no "Saved for offline" badge.
+- If the connection drops on a first visit before the course is saved, a page that hasn't downloaded yet says so, calmly and under the header: "This page hasn't downloaded yet. Connect to the internet, then try again.", with "Try again" and a link home. It never shows "Something went wrong" for this.
 - A new version never reloads the page by itself. It waits, and shows "A new version is ready" with "Update now". Otherwise it starts the next time Thinkerwell opens.
 - Under the header, a banner says when the device is offline, and for a few seconds when it's back online. Guests are never told their work is saved.
 - Watch opened while offline starts on the written version.
@@ -81,7 +82,7 @@ Details, sizes and the reasons are in `docs/notes/phase-6.md`.
 - Settings for this device is in the header menu, outside the five main links: offline status, Save data, the reading level for anyone who hasn't chosen one, the Listen speed and Say it.
 - Every lesson has a print view with both reading levels, the key words, the picture, the quick check and every task, with lines to write on. The journal has one too, built from the learner's saved writing and reflections. They print in black and white with no header; the lesson picture keeps its colours.
 - For volunteer teachers, every lesson has a teacher guide and every section check an answer key, linked from the Educators page (docs/notes/teacher-tools.md). The guide opens with the notes on sensitive topics, then a suggested plan for about 45 minutes (with a 30-minute version), and has the answers to the quick check. They work offline and print on A4. The Educators page no longer has a per-lesson notes disclosure: the guide has those notes.
-- On iPads and iPhones, add Thinkerwell to the Home Screen: Safari deletes a site's saved data after 7 days without a visit otherwise.
+- On iPads and iPhones, add Thinkerwell to the Home Screen (the first step of **Set up this device**, below): Safari deletes a site's saved data after 7 days without a visit otherwise.
 
 ### Certificates
 
@@ -105,7 +106,6 @@ Details and the reasons are in `docs/notes/languages.md`; how a helper translate
 - In another language, lesson text stays marked as English, so screen readers and Listen read it as English. Listen and Say it always work in English.
 - Dari and Arabic use the Vazirmatn font for their letters, downloaded only when one of them is shown. Somali needs no extra font.
 - Each language downloads only when someone uses it, and is saved for offline use only once it is ready. Nothing extra downloads for English.
-- To keep the first page as small as before, the pages for teachers and for printing (Settings, For educators, teacher guides, answer keys, print views, certificates) load when they are opened. They still work offline.
 - Open: which calendar Dari dates should use (Afghanistan's solar calendar, which the browser uses by default, or the Western one), and whether the "how I practised" options and the fiction label, which come with the lesson files and so stay English, should be translatable.
 
 ### Quality pass and launch (phase 8)
@@ -135,6 +135,7 @@ Details and the reasons are in `docs/notes/pilot-day-tools.md`. The founders won
 - **Set up this device** (`/educators/setup`): a checklist for each laptop or tablet that says which steps are done on that device. The order matters: add Thinkerwell to the home screen first (on iPad the Home Screen app keeps its own saved work, apart from Safari), then the offline download, keeping saved work safe (the browser is asked only when someone taps), adding learners, and last the speech check (the saved result of Settings' "Check this device"; the page never asks the browser about speech itself). Then a reminder to save everyone's work to a file before a device is reset. It prints as a one-page checklist.
 - **The class on this device** (`/educators/class`): every learner by name, with lessons finished per section, the lesson they're on, when they last worked and which section checks they've tried. No scores and no ranking, because any learner on a shared device can open it. It doesn't link to journals: a journal is always the current learner's, and this page never switches learners.
 - **Print all certificates**: every certificate earned on the device, one landscape page each. Names come from the device; a learner's own certificate page is where a name can be changed for one print.
+- Like the other Educators pages, they load when first opened and are saved for offline use with the rest of the course. Their dates and numbers follow the interface's language, and lesson and section names stay marked as English.
 
 ## Roadmap
 
