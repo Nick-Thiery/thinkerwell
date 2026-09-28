@@ -24,6 +24,7 @@ beforeEach(() => {
 });
 
 afterEach(async () => {
+  vi.unstubAllGlobals();
   restoreSpeechMocks();
   resetServiceWorkerForTests();
   delete (navigator as unknown as Nav).storage;
@@ -198,6 +199,18 @@ describe('SetupPage', { timeout: 20_000 }, () => {
     await waitFor(() => expect(status(card)).toHaveTextContent('No learners on this device yet.'));
     expect(status(card)).toHaveTextContent('Not done yet');
     expect(within(card).queryByRole('link', { name: 'See the class' })).not.toBeInTheDocument();
+  });
+
+  it('where this browser window has no storage, says so instead of offering to add learners', async () => {
+    await deleteAllData();
+    vi.stubGlobal('indexedDB', undefined);
+    renderSetup();
+    const learners = step('Add the learners');
+    await waitFor(() => expect(status(learners)).toHaveTextContent("This browser window can't save learners' work at all."));
+    expect(status(learners)).toHaveTextContent('Not on this browser');
+    expect(within(learners).queryByRole('button')).not.toBeInTheDocument();
+    expect(status(step('Keep saved work safe'))).toHaveTextContent('Not on this browser');
+    expect(within(step('Keep saved work safe')).queryByRole('button')).not.toBeInTheDocument();
   });
 
   it('shows the saved speech check with its date, and never asks the browser', async () => {

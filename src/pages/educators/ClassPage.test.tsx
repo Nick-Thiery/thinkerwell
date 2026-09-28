@@ -14,6 +14,7 @@ beforeEach(() => {
 });
 
 afterEach(async () => {
+  vi.unstubAllGlobals();
   window.localStorage.clear();
   await deleteAllData();
 });
@@ -153,6 +154,14 @@ describe('ClassPage', { timeout: 20_000 }, () => {
     expect(screen.getByRole('link', { name: 'Set up this device' })).toHaveAttribute('href', '/educators/setup');
     await user.click(screen.getByRole('button', { name: 'Add a learner' }));
     await waitFor(() => expect(`${router.state.location.pathname}${router.state.location.search}`).toBe('/?new=1'));
+  });
+
+  it('where this browser window has no storage, says there is nothing to show', async () => {
+    await deleteAllData();
+    vi.stubGlobal('indexedDB', undefined);
+    renderClass();
+    expect(await screen.findByText(/This browser window can't keep learners' work, so there's nothing to show here\./)).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Add a learner' })).not.toBeInTheDocument();
   });
 
   it('shows everyone while someone is looking around too: it reads the device, not a learner', async () => {

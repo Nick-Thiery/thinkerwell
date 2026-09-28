@@ -170,7 +170,7 @@ export function SetupPage() {
               !learnersReady
                 ? ''
                 : !session.storageAvailable
-                  ? t('pages.classView.noStorage')
+                  ? t('pages.setup.storage.noStorage')
                   : session.learners.length === 0
                     ? t('pages.setup.learners.none')
                     : t('pages.setup.learners.count', { count: session.learners.length })
