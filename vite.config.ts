@@ -156,6 +156,10 @@ function keepZodOutOfTheBrowser(): Plugin {
  *   them (src/content/catalog.ts). A value imported from src/content/index.ts
  *   by any module on the home page or course map would bring all 24 back.
  * - No dev-only page (src/dev) in any chunk, and no source map anywhere.
+ * - No Arabic font in the site's one stylesheet: it is a stylesheet of its
+ *   own, added only while a language that needs it is shown
+ *   (src/i18n/fonts/index.ts). Imported from code as CSS rather than as a
+ *   file (`?url`), cssCodeSplit: false would take it into the site's.
  */
 function keepFirstVisitLight(): Plugin {
   return {
@@ -196,6 +200,17 @@ function keepFirstVisitLight(): Plugin {
       }
       const map = Object.keys(bundle).find((fileName) => fileName.endsWith('.map'));
       if (map) this.error(`A source map is in the production build (${map}).`);
+    },
+    // The site's stylesheet is made after the other plugins' generateBundle.
+    writeBundle(_options, bundle) {
+      for (const output of Object.values(bundle)) {
+        if (output.type !== 'asset' || !output.fileName.endsWith('.css') || output.fileName.startsWith('assets/fonts-arabic/')) continue;
+        if (/vazirmatn/i.test(String(output.source))) {
+          this.error(
+            `The Arabic font is in the site's stylesheet (${output.fileName}). Import src/i18n/fonts/arabic.css only with ?url (src/i18n/fonts/index.ts).`,
+          );
+        }
+      }
     },
   };
 }

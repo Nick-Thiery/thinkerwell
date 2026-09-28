@@ -148,7 +148,7 @@ test.describe('nothing extra for English', () => {
     const requests = recordRequests(page);
     await page.goto('/?locale=ar-XB');
     await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
-    await expect.poll(() => requests.some((url) => /\/assets\/fonts-arabic\/font-arabic-[^/]+\.css$/.test(url))).toBe(true);
+    await expect.poll(() => requests.some((url) => /\/assets\/fonts-arabic\/[^/]+\.css$/.test(url))).toBe(true);
     expect(requests.some((url) => /\/assets\/pseudo\/pseudo-ar-XB-[^/]+\.js$/.test(url))).toBe(true);
     // Its words are Latin letters, so no Arabic letters are needed and no font file is fetched.
     expect(requests.filter((url) => /\.woff2$/.test(url) && /vazirmatn/.test(url))).toEqual([]);
