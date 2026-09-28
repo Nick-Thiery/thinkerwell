@@ -1,7 +1,7 @@
 import { useSearchParams } from 'react-router';
 import { usePageTitle } from '../app/usePageTitle';
-import { answerKeyPath, lessonPrintPath } from '../app/lessonUrls';
-import { Badge, Button, Chip, Icon } from '../components/ds';
+import { allCertificatesPath, answerKeyPath, classPath, lessonPrintPath, setupPath } from '../app/lessonUrls';
+import { Badge, Button, Chip, Icon, type IconName } from '../components/ds';
 import { getLessons, getQuiz, getSection, getSectionLessons, getSections, type SectionId } from '../content';
 import { useI18n } from '../i18n';
 import './EducatorsPage.css';
@@ -10,9 +10,10 @@ import { SECTION_ICONS } from './course/sectionIcons';
 
 /**
  * For educators (docs/screens/Educators.dc.html): what a teacher or
- * volunteer needs to run a session, how one works, and every lesson to
- * preview, each with its teacher guide, and each section's check with its
- * answer key. Collects nothing: "Tell us what to fix" keeps the "[FEEDBACK
+ * volunteer needs to run a session, the tools for setting up this device and
+ * following the group on it (a setup checklist, the class view and every
+ * certificate to print), how a session works, and every lesson to preview,
+ * each with its teacher guide, and each section's check with its answer key. Collects nothing: "Tell us what to fix" keeps the "[FEEDBACK
  * EMAIL]" placeholder visible rather than a form (CLAUDE.md's
  * no-accounts-no-collection rule).
  *
@@ -39,6 +40,30 @@ export function EducatorsPage() {
   function chooseSection(id: SectionId): void {
     setSearchParams({ section: id }, { replace: true, preventScrollReset: true });
   }
+  // Pilot-day tools for this device (docs/notes/pilot-day-tools.md).
+  const tools: Array<{ icon: IconName; title: string; body: string; cta: string; href: string }> = [
+    {
+      icon: 'ListChecks',
+      title: t('pages.educators.setupTitle'),
+      body: t('pages.educators.setupBody'),
+      cta: t('pages.educators.setupCta'),
+      href: setupPath(),
+    },
+    {
+      icon: 'Users',
+      title: t('pages.educators.classTitle'),
+      body: t('pages.educators.classBody'),
+      cta: t('pages.educators.classCta'),
+      href: classPath(),
+    },
+    {
+      icon: 'Award',
+      title: t('pages.educators.certificatesTitle'),
+      body: t('pages.educators.certificatesBody'),
+      cta: t('pages.educators.certificatesCta'),
+      href: allCertificatesPath(),
+    },
+  ];
   const allLessons = getLessons();
   const firstLessonId = allLessons[0]!.id;
   // The same range the course page shows ("About 25–50 min a lesson").
@@ -88,6 +113,29 @@ export function EducatorsPage() {
             {t('pages.educators.settingsLink')}
           </Button>
         </aside>
+      </section>
+
+      <section aria-labelledby="tools-title" className="tw-edu-section">
+        <h2 id="tools-title" className="h2">
+          {t('pages.educators.toolsTitle')}
+        </h2>
+        <p className="tw-edu-preview-intro">{t('pages.educators.toolsIntro')}</p>
+        <ul className="tw-edu-tools" role="list">
+          {tools.map((tool) => (
+            <li key={tool.href} className="tw-edu-check tw-edu-tool">
+              <span className="tw-edu-check-icon">
+                <Icon name={tool.icon} size={22} />
+              </span>
+              <span className="tw-edu-check-text">
+                <span className="tw-edu-check-title">{tool.title}</span>
+                <span className="small tw-edu-check-meta">{tool.body}</span>
+              </span>
+              <Button variant="secondary" icon={tool.icon} href={tool.href}>
+                {tool.cta}
+              </Button>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section aria-labelledby="how-title" className="tw-edu-section">
