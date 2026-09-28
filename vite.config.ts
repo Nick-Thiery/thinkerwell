@@ -240,6 +240,10 @@ export default defineConfig({
   },
   build: {
     target: 'es2022',
+    // Fonts are always files: the Content-Security-Policy allows fonts only
+    // from this site (font-src 'self'), not data: URLs, and the small
+    // wordmark font (src/styles/fonts/) would otherwise be inlined into the CSS.
+    assetsInlineLimit: (file) => (file.endsWith('.woff2') ? false : undefined),
     // No source maps in production: smaller downloads on bad connections.
     sourcemap: false,
     rolldownOptions: {
