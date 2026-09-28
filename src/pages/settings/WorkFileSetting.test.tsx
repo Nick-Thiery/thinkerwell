@@ -227,9 +227,10 @@ describe('SettingsPage: loading work from a file', () => {
     renderSettings();
     await choose(user, await fileFrom(otherDevice));
     const preview = await screen.findByRole('group', { name: 'Check before you load' });
-    expect(within(preview).getAllByRole('listitem').map((item) => item.textContent)).toEqual([
-      'Yusuf: 2 lessons. Already on this device, so this is added to their work here. Nothing is lost.',
+    // Both learners on the other device can be made in the same millisecond, so their order isn't fixed.
+    expect(within(preview).getAllByRole('listitem').map((item) => item.textContent).sort()).toEqual([
       "Amina: no work yet. New on this device. There's already a different Amina on this device. Both are kept, and each tile shows the day it was added.",
+      'Yusuf: 2 lessons. Already on this device, so this is added to their work here. Nothing is lost.',
     ]);
     await user.click(within(preview).getByRole('button', { name: 'Load it' }));
     expect(await within(card()).findByText('Added to this device: Amina.')).toBeInTheDocument();
