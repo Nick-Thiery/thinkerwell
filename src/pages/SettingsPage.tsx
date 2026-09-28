@@ -1,5 +1,8 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router';
 import { usePageTitle } from '../app/usePageTitle';
 import { useI18n } from '../i18n';
+import { useLearnerSession } from '../session';
 import { OfflineSetting } from './settings/OfflineSetting';
 import { ReadingSetting } from './settings/ReadingSetting';
 import { SpeechToTextSetting } from './settings/SpeechToTextSetting';
@@ -14,11 +17,15 @@ import './settings/SettingsPage.css';
  * Say it (phase 5). Everything else here is a device setting (settings
  * store), shared by everyone who uses the device, and saved even while
  * looking around.
+ *
+ * Two parts have addresses of their own, for the educators' "Set up this
+ * device" page: /settings#say-it and /settings#move-work (settingsPath()).
  */
 export function SettingsPage() {
   const { t } = useI18n();
   usePageTitle(t('pages.settings.title'));
   const deviceSettings = useDeviceSettings();
+  useScrollToPart(deviceSettings.settings !== null);
   return (
     <div className="tw-settings">
       <header className="tw-settings-head">
@@ -33,4 +40,32 @@ export function SettingsPage() {
       <SpeechToTextSetting deviceSettings={deviceSettings} />
     </div>
   );
+}
+
+/**
+ * With a part in the address (#say-it), scrolls to it and moves focus to its
+ * heading once the page has loaded. Scrolling as the page first draws (what
+ * the router does by itself) lands in the wrong place, because the parts
+ * above it grow once the settings and the learners are read.
+ */
+function useScrollToPart(settingsLoaded: boolean): void {
+  const { hash } = useLocation();
+  const { status } = useLearnerSession();
+  const ready = settingsLoaded && status === 'ready';
+  useEffect(() => {
+    if (!ready || hash.length < 2) return undefined;
+    let id: string;
+    try {
+      id = decodeURIComponent(hash.slice(1));
+    } catch {
+      return undefined;
+    }
+    const part = document.getElementById(id);
+    if (!part) return undefined;
+    const frame = requestAnimationFrame(() => {
+      part.scrollIntoView({ block: 'start' });
+      part.querySelector<HTMLElement>('h2[tabindex="-1"]')?.focus({ preventScroll: true });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [ready, hash]);
 }

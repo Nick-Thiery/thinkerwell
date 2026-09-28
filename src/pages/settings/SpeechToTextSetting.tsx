@@ -16,12 +16,16 @@
  *   allowOnlineDictation), saved through the page's useDeviceSettings().
  */
 import { useId, useState } from 'react';
+import type { SettingsPart } from '../../app/lessonUrls';
 import { Button, Icon } from '../../components/ds';
 import type { IconName } from '../../components/ds';
 import { useI18n, type MessageKey } from '../../i18n';
 import { hasSpeechRecognition, installOnDeviceDictation, onDeviceDictationStatus } from '../../speech';
 import type { OnDeviceSpeechStatus, SpeechCheck } from '../../storage';
 import type { DeviceSettingsState } from './useDeviceSettings';
+
+/** The section's address on the page (/settings#say-it), for links from elsewhere. */
+const SAY_IT_PART: SettingsPart = 'say-it';
 
 type DeviceSpeech =
   | 'not-checked'
@@ -117,8 +121,8 @@ export function SpeechToTextSetting({ deviceSettings }: { deviceSettings: Device
   const offerDownload = idle && (shown === 'downloadable' || shown === 'download-failed');
 
   return (
-    <section className="tw-settings-card" aria-labelledby={headingId}>
-      <h2 id={headingId} className="tw-settings-h2">
+    <section id={SAY_IT_PART} className="tw-settings-card" aria-labelledby={headingId}>
+      <h2 id={headingId} className="tw-settings-h2" tabIndex={-1}>
         {t('pages.settings.sayIt.title')}
       </h2>
       <p className="tw-settings-text">{t('pages.settings.sayIt.intro')}</p>
