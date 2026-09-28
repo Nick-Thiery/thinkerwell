@@ -4,6 +4,7 @@ import path from 'node:path';
 import { defineConfig, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
+import { lazyChunkFor } from './src/app/lazy/firstPage.ts';
 import { LESSON_CATALOG_FIELDS } from './src/content/catalogFields.ts';
 import { loadContent, loadQuizzes, parseContentFile, type ContentFileKind } from './src/content/load.ts';
 import type { Lesson, QuizFile } from './src/content/schema.ts';
@@ -191,6 +192,47 @@ function keepFirstVisitLight(): Plugin {
 }
 
 /**
+ * A first visit straight to a page that loads lazily (a lesson from a
+ * shared link, say) would otherwise download the app, run it, and only then
+ * ask for the lesson's code and the lessons: one more round trip, and more
+ * than a second on a slow connection. index.html gets a tiny script (a
+ * file, so the Content-Security-Policy allows it) that, before anything
+ * else runs, starts downloading the chunks that page needs, alongside the
+ * app's (modulepreload, so nothing is fetched twice). Which chunk a page
+ * needs is src/app/lazy/firstPage.ts, copied in as it is.
+ */
+function preloadFirstPage(): Plugin {
+  let fileName = '';
+  return {
+    name: 'thinkerwell:preload-first-page',
+    apply: 'build',
+    generateBundle(_options, bundle) {
+      const chunks = Object.values(bundle).filter((output) => output.type === 'chunk');
+      const byFile = new Map(chunks.map((chunk) => [chunk.fileName, chunk]));
+      const closure = (start: string, into = new Set<string>()): Set<string> => {
+        if (into.has(start)) return into;
+        into.add(start);
+        for (const imported of byFile.get(start)?.imports ?? []) closure(imported, into);
+        return into;
+      };
+      const firstVisit = new Set(chunks.filter((chunk) => chunk.isEntry).flatMap((chunk) => [...closure(chunk.fileName)]));
+      const files: Record<string, string[]> = {};
+      for (const name of ['lessonPages', 'teacherPages', 'morePages']) {
+        const chunk = chunks.find((c) => c.isDynamicEntry && c.facadeModuleId?.replace(/\\/g, '/').endsWith(`/src/app/lazy/${name}.ts`));
+        if (!chunk) this.error(`No chunk for src/app/lazy/${name}.ts`);
+        files[name] = [...closure(chunk.fileName)].filter((file) => !firstVisit.has(file)).map((file) => `/${file}`);
+      }
+      const source = `(()=>{const f=${JSON.stringify(files)}[(${lazyChunkFor.toString()})(location.pathname)]||[];for(const h of f){const l=document.createElement("link");l.rel="modulepreload";l.crossOrigin="";l.href=h;document.head.append(l)}})();\n`;
+      fileName = this.getFileName(this.emitFile({ type: 'asset', name: 'first-page.js', source }));
+    },
+    transformIndexHtml: {
+      order: 'post',
+      handler: () => (fileName ? [{ tag: 'script', attrs: { src: `/${fileName}`, async: true }, injectTo: 'head' }] : []),
+    },
+  };
+}
+
+/**
  * Leaves team-only lesson fields out of the production bundle, so every
  * learner device doesn't download (and carry) notes that are never shown:
  * watch.replacementSuggestion (a possible better video, with a youtube.com
@@ -309,7 +351,7 @@ function siteHeaders(): Record<string, string> {
 // VITE_CACHE_DIR lets several dev servers run at once, each with its own
 // dependency cache (for example .build-review/vite-cache-5301).
 export default defineConfig({
-  plugins: [react(), checkContent(), lessonCatalog(), stripTeamOnlyLessonFields(), keepZodOutOfTheBrowser(), keepFirstVisitLight(), offline()],
+  plugins: [react(), checkContent(), lessonCatalog(), stripTeamOnlyLessonFields(), keepZodOutOfTheBrowser(), keepFirstVisitLight(), preloadFirstPage(), offline()],
   cacheDir: process.env.VITE_CACHE_DIR || 'node_modules/.vite',
   server: {
     // Content lives outside src/ (content/*.json) and is read at build time.
