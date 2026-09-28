@@ -15,6 +15,7 @@
  * around too, since it sets up the device rather than saving a guest's work.
  */
 import { useEffect, useId, useRef, useState, type ChangeEvent, type RefObject } from 'react';
+import type { SettingsPart } from '../../app/lessonUrls';
 import { Button, Icon } from '../../components/ds';
 import { getLessons, getSections } from '../../content/catalog';
 import { useI18n, type MessageKey } from '../../i18n';
@@ -36,6 +37,9 @@ import {
 import { downloadFile, readFileText } from './files';
 
 const ALL = 'all';
+
+/** The section's address on the page (/settings#move-work), for links from elsewhere. */
+const MOVE_WORK_PART: SettingsPart = 'move-work';
 
 type SaveState =
   | { kind: 'idle' }
@@ -234,8 +238,8 @@ export function WorkFileSetting() {
   const loadBusy = loadState.kind === 'reading' || (loadState.kind === 'preview' && loadState.loading);
 
   return (
-    <section className="tw-settings-card" aria-labelledby={headingId}>
-      <h2 id={headingId} className="tw-settings-h2">
+    <section id={MOVE_WORK_PART} className="tw-settings-card" aria-labelledby={headingId}>
+      <h2 id={headingId} className="tw-settings-h2" tabIndex={-1}>
         {t('pages.settings.transfer.title')}
       </h2>
       <p className="tw-settings-text">{t('pages.settings.transfer.intro')}</p>

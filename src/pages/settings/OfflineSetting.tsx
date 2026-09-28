@@ -4,19 +4,12 @@
  * data", which turns the videos off (src/offline/saveData.ts).
  */
 import { useId } from 'react';
-import { Icon, type IconName } from '../../components/ds';
+import { Icon } from '../../components/ds';
 import { getLessons } from '../../content/catalog';
-import { useI18n, type MessageKey } from '../../i18n';
-import { browserAsksToSaveData, isSaveDataOn, useServiceWorker, type OfflineStatus } from '../../offline';
+import { useI18n } from '../../i18n';
+import { browserAsksToSaveData, isSaveDataOn, useServiceWorker } from '../../offline';
+import { OFFLINE_STATUS } from './offlineStatus';
 import type { DeviceSettingsState } from './useDeviceSettings';
-
-const STATUS: Record<OfflineStatus, { icon: IconName; key: MessageKey }> = {
-  checking: { icon: 'Clock', key: 'pages.settings.offline.checking' },
-  preparing: { icon: 'Download', key: 'pages.settings.offline.preparing' },
-  ready: { icon: 'Check', key: 'pages.settings.offline.ready' },
-  failed: { icon: 'Info', key: 'pages.settings.offline.failed' },
-  unsupported: { icon: 'Info', key: 'pages.settings.offline.unsupported' },
-};
 
 export function OfflineSetting({ deviceSettings }: { deviceSettings: DeviceSettingsState }) {
   const { t } = useI18n();
@@ -25,7 +18,7 @@ export function OfflineSetting({ deviceSettings }: { deviceSettings: DeviceSetti
   const headingId = useId();
   const toggleId = useId();
   const helpId = useId();
-  const status = STATUS[offline];
+  const status = OFFLINE_STATUS[offline];
   const choice = settings?.saveData ?? null;
   const followsBrowser = choice === null && browserAsksToSaveData();
 

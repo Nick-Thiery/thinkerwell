@@ -4,7 +4,7 @@
  * views' page and toolbar (../print), with its own sheet: on screen a
  * certificate on the canvas, on paper one landscape page that fits A4 and
  * US Letter, black on white apart from the mascot and the section discs
- * (./CertificatePage.css, docs/notes/certificates.md).
+ * (./Certificate.tsx, ./CertificatePage.css, docs/notes/certificates.md).
  *
  * Who sees what (nothing is locked, so anyone can open this by address):
  * - A learner who has finished every lesson in it (Reflect's required
@@ -17,32 +17,20 @@
 import { useState, type ReactNode } from 'react';
 import { lessonPath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
-import { Button, LessonRow, SectionBadge, TextField } from '../../components/ds';
-import { getCourse, getLessons, getSectionLessons, getSections, type LessonSummary, type Section } from '../../content/catalog';
+import { Button, LessonRow, TextField } from '../../components/ds';
+import { getLessons, type LessonSummary } from '../../content/catalog';
 import { En, useI18n } from '../../i18n';
 import { useLearnerProgress, useLearnerSession } from '../../session';
 import { isLessonComplete, lessonSetStatus, nextStageForLesson, stagesDoneForLesson, type ProgressByLessonId } from '../../storage';
 import { PrintToolbar } from '../print/PrintToolbar';
 import '../print/print.css';
+import { Certificate, certificateLessons, type CertificateScope } from './Certificate';
 import './CertificatePage.css';
 
-const MASCOT_SRC = '/images/thinkerwell-mascot-transparent.png';
+export { certificateLessons, certificateNameSize, type CertificateScope } from './Certificate';
 
 /** The longest name the field takes: a full name, and still one page. */
 export const CERTIFICATE_NAME_MAX = 60;
-
-export type CertificateScope = { kind: 'section'; section: Section } | { kind: 'course' };
-
-/** The lessons a certificate is for: a section's, or all 24. */
-export function certificateLessons(scope: CertificateScope): readonly LessonSummary[] {
-  return scope.kind === 'section' ? getSectionLessons(scope.section.id) : getLessons();
-}
-
-/** How big the name is printed: smaller for a longer name, so it stays on two lines at most. */
-export function certificateNameSize(name: string): 'l' | 'm' | 's' {
-  const length = name.trim().length;
-  return length <= 22 ? 'l' : length <= 36 ? 'm' : 's';
-}
 
 export interface CertificatePageProps {
   scope: CertificateScope;
@@ -154,10 +142,10 @@ function LessonsLeft({
 }
 
 /**
- * The certificate itself, with the name field above it (never printed).
- * The name starts as the learner's name on this device; changing it here
- * is only for this print: it lives in this component's state and is never
- * saved or sent anywhere.
+ * The certificate, with the name field above it (never printed). The name
+ * starts as the learner's name on this device; changing it here is only for
+ * this print: it lives in this component's state and is never saved or sent
+ * anywhere.
  */
 function CertificateSheet({
   scope,
@@ -168,11 +156,8 @@ function CertificateSheet({
   learnerName: string;
   finishedAt: string;
 }) {
-  const { t, tx, formatDate } = useI18n();
+  const { t } = useI18n();
   const [name, setName] = useState(learnerName);
-  const shownName = name.trim();
-  const course = <En>{getCourse().course.title}</En>;
-  const date = formatDate(finishedAt, { day: 'numeric', month: 'long', year: 'numeric' });
 
   return (
     <>
@@ -187,84 +172,7 @@ function CertificateSheet({
           spellCheck={false}
         />
       </div>
-
-      <article className="tw-cert" aria-labelledby="cert-title">
-        <header className="tw-cert-head">
-          <p className="tw-cert-brand">
-            <img className="tw-cert-mascot" src={MASCOT_SRC} alt="" width={422} height={423} />
-            <span className="tw-cert-wordmark">{t('app.name')}</span>
-          </p>
-          <h1 id="cert-title" className="tw-cert-title" tabIndex={-1}>
-            {t('certificates.sheet.title')}
-          </h1>
-        </header>
-
-        <div className="tw-cert-who">
-          {shownName ? (
-            <p className={`tw-cert-name tw-cert-name-${certificateNameSize(shownName)}`}>{shownName}</p>
-          ) : (
-            // No name: a line to write one on by hand.
-            <div className="tw-cert-name-blank">
-              <p className="tw-cert-line" />
-              <p className="tw-cert-label">{t('certificates.sheet.blankName')}</p>
-            </div>
-          )}
-          <p className="tw-cert-finished">
-            {scope.kind === 'section'
-              ? tx('certificates.sheet.finishedSection', { section: <En>{scope.section.title}</En>, course })
-              : tx('certificates.sheet.finishedCourse', { count: getLessons().length, course })}
-          </p>
-        </div>
-
-        {scope.kind === 'section' ? <SectionLessons section={scope.section} /> : <CourseSections />}
-
-        <footer className="tw-cert-foot">
-          <div className="tw-cert-signs">
-            <div className="tw-cert-sign">
-              <p className="tw-cert-line">{date}</p>
-              <p className="tw-cert-label">{t('certificates.sheet.date')}</p>
-            </div>
-            <div className="tw-cert-sign">
-              <p className="tw-cert-line" />
-              <p className="tw-cert-label">{t('certificates.sheet.signature')}</p>
-            </div>
-          </div>
-          <p className="tw-cert-about">{tx('certificates.sheet.about', { course })}</p>
-        </footer>
-      </article>
+      <Certificate scope={scope} name={name} finishedAt={finishedAt} />
     </>
-  );
-}
-
-/** A section certificate's contents: the section (its colour only beside its icon and name) and its lessons. */
-function SectionLessons({ section }: { section: Section }) {
-  const { contentLang } = useI18n();
-  return (
-    <section className="tw-cert-contents" aria-labelledby="cert-contents-title">
-      <h2 id="cert-contents-title" className="tw-cert-contents-title">
-        <SectionBadge section={section.id} number={section.number} name={<En>{section.title}</En>} />
-      </h2>
-      <ol className="tw-cert-lessons" role="list">
-        {getSectionLessons(section.id).map((lesson) => (
-          <li key={lesson.id}>
-            <span className="tw-cert-lesson-number">{lesson.number}</span>
-            <span {...contentLang}>{lesson.title}</span>
-          </li>
-        ))}
-      </ol>
-    </section>
-  );
-}
-
-/** The course certificate's contents: the four sections. */
-function CourseSections() {
-  return (
-    <ul className="tw-cert-sections" role="list">
-      {getSections().map((section) => (
-        <li key={section.id}>
-          <SectionBadge section={section.id} number={section.number} name={<En>{section.title}</En>} />
-        </li>
-      ))}
-    </ul>
   );
 }

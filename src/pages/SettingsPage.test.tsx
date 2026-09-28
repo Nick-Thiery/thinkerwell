@@ -258,3 +258,30 @@ describe('SettingsPage: reading and listening', () => {
     await waitFor(async () => expect((await storedSettings()).listeningSpeed).toBe('slow'));
   });
 });
+
+describe('SettingsPage: parts with an address of their own', () => {
+  it.each([
+    ['say-it', 'Say it: speech to text'],
+    ['move-work', 'Move work to another device'],
+  ])('/settings#%s scrolls to that part once the page has loaded, and moves focus to its heading', async (part, heading) => {
+    const scrolled: Element[] = [];
+    const scrollIntoView = vi.fn(function (this: Element) {
+      scrolled.push(this);
+    });
+    Object.defineProperty(Element.prototype, 'scrollIntoView', { value: scrollIntoView, configurable: true, writable: true });
+    try {
+      render(
+        <MemoryRouter initialEntries={[`/settings#${part}`]}>
+          <LearnerSessionProvider>
+            <SettingsPage />
+          </LearnerSessionProvider>
+        </MemoryRouter>,
+      );
+      await waitFor(() => expect(screen.getByRole('heading', { level: 2, name: heading })).toHaveFocus());
+      expect(scrolled.at(-1)).toHaveAttribute('id', part);
+      expect(scrolled.at(-1)).toHaveAccessibleName(heading);
+    } finally {
+      delete (Element.prototype as { scrollIntoView?: unknown }).scrollIntoView;
+    }
+  });
+});

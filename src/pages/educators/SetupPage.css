@@ -1,0 +1,338 @@
+/*
+ * "Set up this device" (/educators/setup), on the print views' sheet
+ * (../print/print.css), like the teacher guides.
+ *
+ * On screen: one card per step, with its number, what it is for, what to do,
+ * the state on this device (a Badge and a line on the lavender help wash)
+ * and its buttons.
+ *
+ * On paper: one A4 page to work through device by device. Each step gets a
+ * box to tick; the states and buttons are left out, and the home screen
+ * steps for all three kinds of device sit side by side.
+ */
+
+.tw-setup-page {
+  max-inline-size: 860px;
+}
+
+.tw-setup-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.tw-print-sheet .tw-setup-steps {
+  list-style: none;
+  padding-inline-start: 0;
+}
+
+.tw-print-sheet .tw-setup-steps > li + li {
+  margin-block-start: 0;
+}
+
+.tw-setup-step,
+.tw-setup-later {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-inline-size: 0;
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+}
+
+/* The one step that isn't a setup step: a marked box, as in the teacher guide. */
+.tw-setup-later {
+  border: 2px solid var(--ink);
+  border-inline-start-width: 8px;
+}
+
+/* A step's title: its number (and, on paper, a box to tick) beside the words. */
+.tw-print-sheet .tw-setup-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-block-end: 0;
+  border: 0;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.tw-setup-title > span:last-child {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+
+.tw-setup-title svg {
+  flex: none;
+}
+
+.tw-setup-number {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 40px;
+  block-size: 40px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--on-ink);
+  font-size: 19px;
+  font-weight: 600;
+}
+
+/* The box to tick exists on paper only. */
+.tw-setup-box {
+  display: none;
+}
+
+/* "Do this first" and "Do this last". */
+.tw-setup-note {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-weight: 700;
+}
+
+.tw-setup-note svg {
+  flex: none;
+  margin-block-start: 3px;
+}
+
+/* What the app knows about the step on this device. */
+.tw-setup-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  padding-block: var(--space-3);
+  padding-inline: var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--lavender-wash);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.tw-setup-status > span:last-child {
+  flex: 1 1 14rem;
+  min-inline-size: 0;
+}
+
+.tw-setup-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+/* Long button labels wrap on a small phone rather than widening the page. */
+.tw-setup-actions .tw-btn {
+  max-inline-size: 100%;
+  padding-block: var(--space-2);
+  white-space: normal;
+  text-align: start;
+}
+
+/* ------------------------------------------------------ home screen steps */
+
+.tw-setup-platforms {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tw-setup-platform {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-print-sheet .tw-setup-platform h3 {
+  margin-block-start: 0;
+  font-size: 17px;
+  line-height: 24px;
+}
+
+.tw-setup-platform ol {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.tw-setup-more {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line-strong);
+}
+
+.tw-setup-more summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: var(--target-min);
+  padding-block: var(--space-2);
+  padding-inline: var(--space-4);
+  box-sizing: border-box;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.tw-setup-more summary::-webkit-details-marker {
+  display: none;
+}
+
+.tw-setup-more-chevron {
+  flex: none;
+  margin-inline-start: auto;
+}
+
+.tw-setup-more[open] .tw-setup-more-chevron {
+  transform: rotate(180deg);
+}
+
+.tw-setup-more-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding-block: var(--space-1) var(--space-4);
+  padding-inline: var(--space-4);
+}
+
+@media (max-width: 600px) {
+  .tw-setup-step,
+  .tw-setup-later {
+    padding: var(--space-4);
+  }
+
+  .tw-print-sheet .tw-setup-title {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .tw-setup-number {
+    inline-size: 34px;
+    block-size: 34px;
+    font-size: 17px;
+  }
+}
+
+@media print {
+  .tw-setup-page {
+    max-inline-size: none;
+  }
+
+  .tw-print-sheet.tw-setup {
+    gap: 4mm;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+
+  .tw-setup .tw-print-title {
+    font-size: 20pt;
+  }
+
+  /* Device and date, with lines to write on. */
+  .tw-setup-fill {
+    display: flex;
+    align-items: flex-end;
+    gap: 3mm;
+    margin-block-start: 2mm;
+    font-size: 11pt;
+    font-weight: 700;
+  }
+
+  .tw-setup-blank {
+    flex: 1 1 0;
+    block-size: 6mm;
+    border-block-end: 0.3mm solid #000;
+  }
+
+  .tw-setup-blank:nth-of-type(2) {
+    margin-inline-end: 6mm;
+  }
+
+  .tw-setup-steps {
+    gap: 3.5mm;
+  }
+
+  .tw-setup-step,
+  .tw-setup-later {
+    gap: 1mm;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    break-inside: avoid;
+  }
+
+  .tw-setup-later {
+    padding: 2.5mm 3.5mm;
+    border: 0.4mm solid #000;
+    border-inline-start-width: 1.5mm;
+    border-radius: 2mm;
+  }
+
+  .tw-print-sheet .tw-setup-title {
+    gap: 2.5mm;
+    font-size: 12.5pt;
+    line-height: 1.25;
+  }
+
+  .tw-setup-box {
+    display: block;
+    flex: none;
+    inline-size: 6mm;
+    block-size: 6mm;
+    border: 0.5mm solid #000;
+    border-radius: 1mm;
+  }
+
+  .tw-setup-number {
+    inline-size: auto;
+    block-size: auto;
+    font-size: 12.5pt;
+  }
+
+  .tw-setup-number::after {
+    content: ".";
+  }
+
+  /* The words line up under the title, past the box and the number. */
+  .tw-setup-step > :not(.tw-setup-title) {
+    margin-inline-start: 8.5mm;
+  }
+
+  .tw-setup-note svg {
+    inline-size: 4mm;
+    block-size: 4mm;
+    margin-block-start: 0.3mm;
+  }
+
+  /* The three kinds of device side by side. */
+  .tw-setup-platforms-paper {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4mm;
+    margin-block-start: 1mm;
+  }
+
+  .tw-setup-platform {
+    gap: 0.5mm;
+  }
+
+  .tw-print-sheet .tw-setup-platform h3 {
+    font-size: 9.5pt;
+    line-height: 1.25;
+  }
+
+  .tw-print-sheet .tw-setup-platform ol {
+    padding-inline-start: 4mm;
+    font-size: 8.5pt;
+    line-height: 1.3;
+  }
+
+  .tw-print-sheet .tw-setup-platform li + li {
+    margin-block-start: 0.5mm;
+  }
+}

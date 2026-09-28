@@ -9,7 +9,10 @@
   align-self: flex-start;
 }
 
-/* The section's check, after its lessons: what it covers, and its answer key. */
+/*
+ * The section's check, after its lessons: what it covers, and its answer key.
+ * The Educators page's tools for this device (.tw-edu-tool) share the look.
+ */
 .tw-edu-check {
   display: flex;
   align-items: center;

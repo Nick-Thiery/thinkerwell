@@ -1,0 +1,53 @@
+# Pilot-day tools
+
+Branch `pilot-day-tools`. Built on 28 September 2026.
+
+On pilot day, HELP's staff set up shared laptops and tablets and follow their group without the founders in the room. Three pages under Educators help them do that. All three work offline, read only what is on the device, and send nothing anywhere.
+
+## What was built
+
+- **Set up this device** at `/educators/setup` (`src/pages/educators/SetupPage.tsx`). A checklist to work through once on each device. Each step says whether it is done on this device, where the app can know:
+  1. **Add Thinkerwell to the home screen.** Done when Thinkerwell runs as an installed app (`display-mode: standalone`, `fullscreen` or `minimal-ui`, or Safari's `navigator.standalone`). Short steps for iPad or iPhone (Safari), Android (Chrome), and Windows laptops or Chromebooks (Chrome or Edge). The steps for this kind of device come first, from the user agent (an iPad that asks for the desktop site is told apart from a Mac by its touch screen). The others are behind "Steps for other devices".
+  2. **Download the course for offline use.** The same states and words as Settings' "Offline and data" (`src/pages/settings/offlineStatus.ts`, shared by both): done, in progress, checking, didn't finish, or not possible in this browser.
+  3. **Keep saved work safe.** Whether storage is persistent (`navigator.storage.persisted()`). "Keep work safe" calls `navigator.storage.persist()` on the tap, and says if the browser says no.
+  4. **Add the learners who use this device.** How many learners there are, "Add a learner" (clears the current learner and opens the new-learner form, as the header's "I'm new here" does) and "See the class".
+  5. **Check speech to text.** The saved result of Settings' "Check this device" (`settings.speechCheck`), with its date, and "Check it in Settings", which goes to `/settings#say-it`.
+  - Then **Before you reset this device or give it back**: save everyone's work to a file, with a link to `/settings#move-work`.
+- **The class on this device** at `/educators/class` (`ClassPage.tsx`, numbers in `classSummary.ts`). Every learner on the device, by name. Each card shows the lessons finished in each section ("5 of 9"), the lesson they are on now and its step (or the lesson up next), the day they last worked, and which section checks they have tried. It shows everyone while someone is looking around too: like Settings, it is about the device.
+- **All certificates** at `/educators/class/certificates` (`AllCertificatesPage.tsx`), from the class view's "Print all certificates". Every certificate earned on this device: each learner's finished sections, then the course certificate if earned, learners by name. Each prints on a landscape page of its own, in the layout of a learner's own certificate.
+- **The Educators page** has a new part, "Set up devices and follow your group", between the introduction and "How a session works", with a row for each page. The rows look like a section's check and answer key under the lesson list.
+- **Settings** now has two addresses of its own: `/settings#say-it` and `/settings#move-work` (`settingsPath()` in `src/app/lessonUrls.ts`). Opened with one, the page scrolls to that part and moves focus to its heading once the settings and learners are read.
+
+## Decisions
+
+1. **The home screen step comes first, and the speech check last.** The task listed the download first. On iPad and iPhone, a Home Screen web app keeps its own saved work, apart from Safari: learners added in Safari would not appear in the Home Screen app. So staff add Thinkerwell to the home screen first and do everything else from there. Chrome is also more likely to grant persistent storage to an installed app, so "Keep saved work safe" comes after it. The speech check is last because asking about speech recognition has crashed the tab on touch devices (`src/speech/recognition.ts`); if it does, everything else is already done. The page says both in one plain line.
+2. **Nothing risky as the page opens.** It reads the service worker's state, `persisted()` (which never prompts), the display mode, the user agent and the saved settings. `persist()` runs only on the tap. The page never calls a SpeechRecognition API; it only checks whether the browser has one at all, as Settings does, to say "Not needed" where there is nothing to check. `src/pages/speechOnOpen.test.tsx` now opens it too.
+3. **"Download the course" has no button.** Settings has none either: the course downloads by itself after the first visit, and a failed download is tried again the next time Thinkerwell opens. The step shows Settings' own words, which say what to do.
+4. **A speech check counts as done whatever it found.** The step is to check; lessons then know what to do. "It needs a one-time download first" shows as in progress, with the way to do it in Settings.
+5. **On paper, one A4 page.** The same page prints as a checklist: a box to tick for each step, a line for the device and the date, the home screen steps for all three kinds of device side by side, and none of the states or buttons. `.tw-print-only` (in `src/pages/print/print.css`) marks what shows only on paper.
+6. **No scores and no ranking in the class view.** Any learner on a shared device can open it, and the course has no leaderboards. Learners are sorted by name (ignoring case and accents); learners who share a name keep the order they were added in and show the day each was added. Section checks show only whether they were tried.
+7. **"On now"** is worked out as the learner home's "Continue" is (`findContinueTarget`): the unfinished lesson worked on most recently, with its step, or, with nothing unfinished open, the next lesson up. "Last active" is the latest save of any lesson or section check.
+8. **No links to journals.** The journal always shows the learner using the device now, and there is no way to open another learner's journal without switching to them. The class view never switches who is learning, so it doesn't link there.
+9. **Certificates reuse the certificate itself.** The sheet moved into `src/pages/certificate/Certificate.tsx`, with its ids from `useId` and its heading level as a prop (h1 on a learner's own page, h2 here), so any number can share a page. Each one after the first starts a new page (`break-before: page`), and they all use the named landscape page (`@page tw-certificate`); the heading and notes above them never print, so the first page is a certificate too.
+10. **Names can't be changed in "All certificates".** They are the names on this device. The page says so and how: choose that learner, then open their certificate from the course page, where the name can be changed for one print. That page shows the learner using the device now, so there is no direct link for each learner.
+11. **Reading the whole device** uses `store.exportWork()`, the same single read as "Save my work to a file" (`src/pages/educators/useClassWork.ts`). No new stored data and no change to `DB_VERSION`.
+12. **Not lazy-loaded**, like the teacher tools: the router would render nothing while the page loads on an educator's first visit. See "Sizes".
+13. **A new icon**, `ListChecks` (Lucide), for the checklist. It isn't in the design-system list, like `Award`.
+
+## Sizes
+
+Measured with `npm run build && npm run size` against `main`: the app code grows by 6.1 kB gzipped (the three pages and their words) and the styles by 1.1 kB. First load of Lesson 10 Read is 380.9 kB gzipped (373.6 kB on `main` on the same machine), and the precache 578.4 kB (571.1 kB).
+
+## Checks
+
+- Vitest: the step states, platform detection and persistent-storage calls (`setup/deviceChecks.test.ts`); the setup page's states, "Keep work safe" asking only on the tap, the home screen steps, the learner count and "Add a learner", and the saved speech check without asking the browser (`SetupPage.test.tsx`); lessons per section, "On now", "Last active", checks tried, name order and certificates earned (`classSummary.test.ts`); the class view's cards, no scores and no journal links, same names, and the empty state (`ClassPage.test.tsx`); all certificates, labelled, with unique ids, and the empty state (`AllCertificatesPage.test.tsx`); the Educators page's links; Settings' two addresses; the routes.
+- `e2e/pilot-day.spec.ts`, at 390, 820 and 1280px: works through the checklist (nothing asked of the browser as it opens, "Keep work safe" asks once, the speech step goes to Settings' "Check this device", one portrait A4 page on paper, "Add a learner"); adds two learners through the app, finishes Culture for one and Geography for the other, and a section check; checks the class view's order and numbers, no scores and no links; and prints all certificates on A4 and Letter as two pages, both landscape. A third test checks the empty states.
+- The page tour (`e2e/pageTour.ts`) has three new stops (the checklist with "Steps for other devices" open, the class view and all certificates), so the sideways-scroll (320 to 1280px), axe and focus-ring, right-to-left, tap-size, privacy and Content-Security-Policy specs cover them.
+- `e2e/offline.spec.ts` opens all three offline; the checklist then says the course is saved.
+
+## Left for later
+
+- **Try it on HELP's devices.** Nothing here was tried on an iPad, an Android tablet or a Chromebook. The home screen steps follow each browser's menus as of September 2026, and menus move: check the words on the real devices. Whether `persist()` says yes depends on the browser; Safari's and Chrome's answers weren't seen here.
+- **Print on HELP's printer**, like the certificates: the checklist and the certificates were checked with Chromium's PDF output only.
+- **A printable class list** (for a teacher's records) wasn't asked for. The class view prints with the site's plain print rules, but wasn't designed for paper.
+- **Changing a name for every certificate at once** would need a name field on this page. It was left out on purpose: the names come from the device.

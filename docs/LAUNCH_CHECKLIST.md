@@ -14,6 +14,7 @@ Most checks walk the same **page tour** (`e2e/pageTour.ts`), which visits every 
 - a section check: the intro, a question after answering, and the results;
 - the journal, Educators, About and Settings (and Settings with a work file chosen to load);
 - both print views, a teacher guide and an answer key (added with the teacher tools), and the 404;
+- the setup checklist, the class view and all certificates (added with the pilot-day tools, `docs/notes/pilot-day-tools.md`);
 - home with a learner on the device, and looking around.
 
 The tour's learner has a long name, so every place that shows a name is tested at its widest.
@@ -191,17 +192,20 @@ Saving work to a file and loading one (Settings, "Move work to another device") 
 
 ## Before the pilot: what only people can do
 
+**For HELP's staff on each device:** open Thinkerwell, then **For educators**, then **Set up this device** (`/educators/setup`). It walks through adding Thinkerwell to the home screen, the offline download, keeping saved work safe, adding learners and checking speech to text, and says which steps are done on that device. It prints as a one-page checklist to tick device by device. **The class on this device** (`/educators/class`) then shows what each learner has done, and prints every certificate earned on the device. Show staff these pages before the founders leave, and send them the printed checklist.
+
 - [ ] **Import the repository into Vercel** (steps above), then run the checks under "After the first deploy".
 - [ ] **Test on the real pilot devices**: HELP's tablets and laptops, in the browsers they have. On each one:
+  - work through **Set up this device** (Educators) from top to bottom, and check that its home screen steps match what the browser really shows (menus move between versions), and whether "Keep work safe" gets a yes;
   - open the site once on good internet and wait for "All 24 lessons work offline" on the learner home;
   - then turn off the Wi-Fi and open a few lessons;
   - in Settings, tap **Check this device** under "Say it" (once per device and browser, and again after a browser update). Lessons show Say it on the device only after this says speech stays on the device; they never check by themselves. If it offers "Download speech to text", download on good Wi-Fi, then check again;
   - try Listen, Say it and Record yourself;
-  - print a lesson, a teacher guide and an answer key;
+  - print a lesson, a teacher guide, an answer key, the setup checklist and "Print all certificates" (landscape, one certificate a page);
   - in Settings, save a learner's work to a file, find the file (on an iPad: Files, then Downloads), and load it on another device. On an iPad, do this from the Home Screen app;
   - use a lesson with the keyboard and with a screen reader (VoiceOver on iPad, TalkBack on Android, NVDA on Windows).
-- [ ] **Add Thinkerwell to the Home Screen on every iPad and iPhone.** Otherwise Safari deletes the saved work and the offline copy after 7 days without a visit.
-- [ ] **Before resetting a tablet or replacing a device, save everyone's work to a file**: Settings, "Move work to another device", "All learners on this device", **Save my work to a file**. On the new device, **Load my work** and choose the file. Recordings aren't in the file. Tell HELP's educators this too, and to keep the file safe: anyone with it can read the work in it.
+- [ ] **Add Thinkerwell to the Home Screen on every iPad and iPhone**, first, before adding learners (step 1 of **Set up this device**). Otherwise Safari deletes the saved work and the offline copy after 7 days without a visit. The Home Screen app keeps its own saved work, apart from Safari, so learners added in Safari don't appear in it.
+- [ ] **Before resetting a tablet or replacing a device, save everyone's work to a file** (the last box of **Set up this device** links there): Settings, "Move work to another device", "All learners on this device", **Save my work to a file**. On the new device, **Load my work** and choose the file. Recordings aren't in the file. Tell HELP's educators this too, and to keep the file safe: anyone with it can read the work in it.
 - [ ] **Watch all 24 videos.** Some may not suit these learners, and a HELP educator should review Lessons 4 and 19 (docs/PRODUCT.md). On HELP's own network, check that the videos play: a school filter or a regional block would show the written version instead. In DevTools, note which servers the player contacts.
 - [ ] **Confirm HELP's consent process** before any measurement, and before an educator turns on "Allow online speech-to-text".
 - [ ] **Replace the placeholders**:

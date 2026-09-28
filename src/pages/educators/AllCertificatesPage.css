@@ -1,0 +1,42 @@
+/*
+ * Print all certificates (/educators/class/certificates). Each certificate
+ * is the same sheet as on a learner's own page (../certificate/
+ * CertificatePage.css), which puts it on the named landscape page
+ * (tw-certificate). Here they are stacked on screen, and on paper each one
+ * starts a page of its own. The heading and the notes above them never
+ * print, so the first page is a certificate too.
+ */
+
+.tw-allcert-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-inline-size: var(--reading-measure);
+}
+
+.tw-allcert-head h1,
+.tw-allcert-head p {
+  margin: 0;
+}
+
+.tw-allcert-names {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--ink-muted);
+}
+
+.tw-allcert-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+@media print {
+  .tw-allcert-list {
+    display: block;
+  }
+
+  .tw-allcert-list > .tw-cert + .tw-cert {
+    break-before: page;
+  }
+}

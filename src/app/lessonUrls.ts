@@ -34,6 +34,29 @@ export function courseCertificatePath(): string {
   return '/certificate/course';
 }
 
+/** A part of Settings that other pages link straight to. */
+export type SettingsPart = 'say-it' | 'move-work';
+
+/** Settings for this device, or one part of it (/settings#say-it): the page scrolls to it once it has loaded. */
+export function settingsPath(part?: SettingsPart): string {
+  return part ? `/settings#${part}` : '/settings';
+}
+
+/** The educators' checklist for setting up a device: /educators/setup. */
+export function setupPath(): string {
+  return '/educators/setup';
+}
+
+/** Every learner on this device and what each has done: /educators/class. */
+export function classPath(): string {
+  return '/educators/class';
+}
+
+/** Every certificate earned on this device, to print: /educators/class/certificates. */
+export function allCertificatesPath(): string {
+  return '/educators/class/certificates';
+}
+
 /** The Educators page, with a section's lessons listed (its `?section=`). */
 export function educatorsPath(sectionId?: string): string {
   return sectionId ? `/educators?section=${encodeURIComponent(sectionId)}` : '/educators';

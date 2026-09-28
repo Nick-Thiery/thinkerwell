@@ -1,7 +1,11 @@
 // Loaded when one of these is first opened (src/app/routes.tsx): the
-// Educators page, teacher guides, answer keys, the print views and the
-// journal. They use the lessons too.
+// Educators page, teacher guides, answer keys, the pilot-day tools (setting
+// up a device, the class on it and all its certificates), the print views
+// and the journal. They use the lessons too.
 export { EducatorsPage } from '../../pages/EducatorsPage';
+export { AllCertificatesPage } from '../../pages/educators/AllCertificatesPage';
+export { ClassPage } from '../../pages/educators/ClassPage';
+export { SetupPage } from '../../pages/educators/SetupPage';
 export { JournalPage } from '../../pages/JournalPage';
 export { JournalPrintPage } from '../../pages/print/JournalPrintPage';
 export { AnswerKeyRoute } from '../AnswerKeyRoute';

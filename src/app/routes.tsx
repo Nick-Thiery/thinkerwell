@@ -113,6 +113,11 @@ export const routes: RouteObject[] = [
       { path: 'educators', ...page(teacherPages, (m) => m.EducatorsPage) },
       { path: 'educators/lesson/:id', ...page(teacherPages, (m) => m.TeacherGuideRoute) },
       { path: 'educators/section/:id/answers', ...page(teacherPages, (m) => m.AnswerKeyRoute) },
+      // Pilot-day tools: setting up a device, the class on it and all its
+      // certificates (docs/notes/pilot-day-tools.md), with the other Educators pages.
+      { path: 'educators/setup', ...page(teacherPages, (m) => m.SetupPage) },
+      { path: 'educators/class', ...page(teacherPages, (m) => m.ClassPage) },
+      { path: 'educators/class/certificates', ...page(teacherPages, (m) => m.AllCertificatesPage) },
       { path: 'about', ...page(morePages, (m) => m.AboutPage) },
       { path: 'settings', ...page(morePages, (m) => m.SettingsPage) },
       // Old Base44 paths.

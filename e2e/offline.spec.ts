@@ -158,3 +158,30 @@ test('a section finished offline gets its certificate offline, with the mascot a
   });
   expect(fontsLoaded).toEqual(expect.arrayContaining(['Eczar', 'Funnel Display', 'Atkinson Hyperlegible Next']));
 });
+
+test('the setup checklist, the class view and all certificates open offline, and the checklist says the course is saved', async ({
+  page,
+  context,
+}) => {
+  test.setTimeout(90_000);
+  await addLearnerViaUi(page, 'Amina');
+  for (const lesson of courseLessons.filter((each) => each.number >= 10 && each.number <= 14)) {
+    await finishLessonViaReflect(page, lesson);
+  }
+  await waitUntilOfflineReady(page);
+
+  await context.setOffline(true);
+  await page.goto('/educators/setup');
+  await expect(page.locator('h1')).toHaveText('Set up this device');
+  const download = page.locator('.tw-setup-step').filter({ has: page.getByRole('heading', { name: 'Download the course for offline use' }) });
+  await expect(download.getByRole('status')).toContainText('Done');
+  await expect(download.getByRole('status')).toContainText('All 24 lessons are saved on this device');
+  await expect(page.getByText('1 learner on this device.')).toBeVisible();
+
+  await page.goto('/educators/class');
+  await expect(page.getByRole('article', { name: 'Amina' }).locator('.tw-class-sections li').nth(1)).toHaveText(
+    /Geography & Our Environment\s*5 of 5/,
+  );
+  await page.goto('/educators/class/certificates');
+  await expect(page.locator('.tw-cert-name')).toHaveText('Amina');
+});

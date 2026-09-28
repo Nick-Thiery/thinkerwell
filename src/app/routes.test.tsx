@@ -200,6 +200,18 @@ describe('certificates', () => {
   });
 });
 
+describe('pilot-day tools for educators', () => {
+  it.each([
+    ['/educators/setup', 'Set up this device'],
+    ['/educators/class', 'The class on this device'],
+    ['/educators/class/certificates', 'All certificates'],
+  ])('%s shows one h1 with its title', async (path, title) => {
+    await renderAt(path);
+    await waitFor(() => expect(heading()).toHaveTextContent(title));
+    expect(document.title).toBe(`${title} · Thinkerwell`);
+  });
+});
+
 describe('not found', () => {
   it.each([
     '/lesson/nope/read',

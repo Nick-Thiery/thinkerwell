@@ -25,6 +25,19 @@ describe('EducatorsPage', () => {
     expect(screen.getByRole('link', { name: 'Settings for this device' })).toHaveAttribute('href', '/settings');
   });
 
+  it('links the tools for setting up this device and following the group on it', () => {
+    renderAt();
+    const tools = screen.getByRole('region', { name: 'Set up devices and follow your group' });
+    expect(within(tools).getAllByRole('listitem').map((item) => item.querySelector('.tw-edu-check-title')?.textContent)).toEqual([
+      'Set up this device',
+      'The class on this device',
+      'Certificates',
+    ]);
+    expect(within(tools).getByRole('link', { name: 'Open the checklist' })).toHaveAttribute('href', '/educators/setup');
+    expect(within(tools).getByRole('link', { name: 'See the class' })).toHaveAttribute('href', '/educators/class');
+    expect(within(tools).getByRole('link', { name: 'Print all certificates' })).toHaveAttribute('href', '/educators/class/certificates');
+  });
+
   it('previews a lesson with ?preview=true, so nothing it does is ever saved', async () => {
     const user = userEvent.setup();
     renderAt();
