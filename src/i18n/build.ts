@@ -11,7 +11,7 @@
  * once a ready language needs it. Never the pseudo-languages. So today, with
  * only English ready, the precache holds nothing more than before.
  */
-import { LOCALES, readyLocales, type LocaleDefinition } from './locales';
+import { LOCALES, readyLocales, type LocaleDefinition } from './locales.ts';
 
 /** Matches a language's message file, a pseudo-language, the pseudo-language code and the Arabic font stylesheet in the module graph. */
 export const LANGUAGE_MODULE = /(?:[\\/]src[\\/]i18n[\\/](?:messages[\\/][^\\/]+\.json|pseudo\.ts|fonts[\\/]arabic\.css)|tw-pseudo-locale:[^\\/]+)$/;

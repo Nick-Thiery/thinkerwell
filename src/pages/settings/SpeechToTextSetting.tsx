@@ -53,7 +53,7 @@ const STATUS: Record<DeviceSpeech | 'checking', { icon: IconName; key: MessageKe
 };
 
 export function SpeechToTextSetting({ deviceSettings }: { deviceSettings: DeviceSettingsState }) {
-  const { t, lang } = useI18n();
+  const { t, formatDate } = useI18n();
   const { settings, canSave, failed, save } = deviceSettings;
   /** The last check made on this page: shown even where it couldn't be saved. */
   const [checked, setChecked] = useState<SpeechCheck | null>(null);
@@ -111,7 +111,7 @@ export function SpeechToTextSetting({ deviceSettings }: { deviceSettings: Device
   const checkedOn =
     checkedAt && idle && !Number.isNaN(checkedAt.getTime())
       ? t('pages.settings.sayIt.checkedOn', {
-          date: new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'long', year: 'numeric' }).format(checkedAt),
+          date: formatDate(checkedAt, { day: 'numeric', month: 'long', year: 'numeric' }),
         })
       : '';
   const offerDownload = idle && (shown === 'downloadable' || shown === 'download-failed');

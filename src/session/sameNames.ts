@@ -20,9 +20,16 @@ export function learnersWithSameName(learners: readonly Learner[]): Set<string> 
   return new Set([...byName.values()].filter((ids) => ids.length > 1).flat());
 }
 
-/** The day a learner was added, short ("Sep 28, 2026"), or '' if the date can't be read. */
-export function addedOn(learner: Pick<Learner, 'createdAt'>, lang: string): string {
+/**
+ * The day a learner was added, short ("Sep 28, 2026"), or '' if the date
+ * can't be read. `formatDate` is useI18n's, so it reads in the interface's
+ * language.
+ */
+export function addedOn(
+  learner: Pick<Learner, 'createdAt'>,
+  formatDate: (date: Date, options: Intl.DateTimeFormatOptions) => string,
+): string {
   const date = new Date(learner.createdAt);
   if (Number.isNaN(date.getTime())) return '';
-  return new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'short', year: 'numeric' }).format(date);
+  return formatDate(date, { day: 'numeric', month: 'short', year: 'numeric' });
 }

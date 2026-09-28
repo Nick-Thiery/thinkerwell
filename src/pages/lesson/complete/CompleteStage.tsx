@@ -1,4 +1,4 @@
-import { Fragment, useMemo, type ReactNode } from 'react';
+import { useMemo } from 'react';
 import { courseCertificatePath, lessonPath, sectionCertificatePath, sectionCheckPath } from '../../../app/lessonUrls';
 import { Badge, Button, Icon, LessonRow, Mascot, SectionBadge, StagePath } from '../../../components/ds';
 import {
@@ -11,7 +11,7 @@ import {
   type Section,
   type StageId,
 } from '../../../content';
-import { useI18n } from '../../../i18n';
+import { En, translate, useI18n } from '../../../i18n';
 import { hasText, LESSON_PHONE_QUERY, useLessonPlayer, useMediaQuery } from '../../../lesson';
 import { useLearnerProgress, useLearnerSession } from '../../../session';
 import {
@@ -28,24 +28,12 @@ import './CompleteStage.css';
 
 const MASCOT_SRC = '/images/thinkerwell-mascot-transparent.png';
 
-/** A marker that can't appear in a message, used to put a React node inside translated text. */
-const SLOT = '\u0000';
-
-/** Renders `text` with each SLOT replaced by `node` (keeps word order in the translation's hands). */
-function withSlot(text: string, node: ReactNode): ReactNode {
-  const parts = text.split(SLOT);
-  return parts.map((part, index) => (
-    <Fragment key={index}>
-      {index > 0 ? node : null}
-      {part}
-    </Fragment>
-  ));
-}
-
 /**
  * The completion message without its first sentence when that sentence is
- * the page's own h1 ("You finished Lesson 10."), so it isn't said twice.
- * Every lesson follows that pattern today; any other message shows whole.
+ * the page's own h1 in English ("You finished Lesson 10."), so it isn't said
+ * twice. Every lesson follows that pattern today; any other message shows
+ * whole. The message is course text, which stays English, so `heading` is
+ * the English h1 whatever the interface's language.
  */
 export function completionSummary(message: string, heading: string): string {
   const trimmed = message.trim();
@@ -77,7 +65,7 @@ export function firstUnfinishedStage(done: readonly StageId[]): StageId {
  *   (docs/notes/certificates.md). Guests have no saved work, so never.
  */
 export function CompleteStage() {
-  const { t } = useI18n();
+  const { t, tx, contentLang } = useI18n();
   const { lesson, section, progress, mode, saving } = useLessonPlayer();
   const session = useLearnerSession();
   const phone = useMediaQuery(LESSON_PHONE_QUERY);
@@ -103,21 +91,24 @@ export function CompleteStage() {
   const finishedCourse = canOffer && finishedSetWith(lesson, getLessons(), allProgress);
 
   const counts = sectionProgress(section, getLessons(), allProgress);
+  const sectionTitle = <En>{section.title}</En>;
   const badgeText =
     learnerId && loaded.status === 'ready'
-      ? t('lessonPlayer.complete.badgeProgress', {
+      ? tx('lessonPlayer.complete.badgeProgress', {
           // The section's tint always sits beside its icon and name (README).
-          title: section.title,
+          title: sectionTitle,
           completed: counts.completed,
           count: counts.total,
         })
-      : t('lessonPlayer.complete.badgeSection', { number: section.number, title: section.title });
+      : tx('lessonPlayer.complete.badgeSection', { number: section.number, title: sectionTitle });
 
-  const titleNode = <strong>{lesson.title}</strong>;
+  const titleNode = <strong {...contentLang}>{lesson.title}</strong>;
   const nextStage = firstUnfinishedStage(progress.stagesDone);
-  const summaryMessage = finished
-    ? completionSummary(lesson.reflect.completionMessage, heading)
-    : t('lessonPlayer.complete.partwayBody', { done: progress.stagesDone.length, total: STAGES.length });
+  const summaryMessage = finished ? (
+    <En>{completionSummary(lesson.reflect.completionMessage, translate('en', 'lessonPlayer.complete.title', { number: lesson.number }))}</En>
+  ) : (
+    t('lessonPlayer.complete.partwayBody', { done: progress.stagesDone.length, total: STAGES.length })
+  );
 
   const wroteSomething = hasText(progress.writing.text);
   const reflected = Object.values(progress.reflections).some((text) => hasText(text));
@@ -151,7 +142,7 @@ export function CompleteStage() {
             {finished ? heading : t('lessonPlayer.complete.partwayTitle', { number: lesson.number })}
           </h1>
           <p className="tw-complete-summary">
-            {withSlot(t('lessonPlayer.complete.summary', { title: SLOT, message: summaryMessage }), titleNode)}
+            {tx('lessonPlayer.complete.summary', { title: titleNode, message: summaryMessage })}
           </p>
         </div>
 
@@ -209,7 +200,7 @@ function CertificateOffer({
   finishedSection: boolean;
   finishedCourse: boolean;
 }) {
-  const { t } = useI18n();
+  const { t, tx } = useI18n();
   return (
     <section className="tw-complete-cert" aria-labelledby="tw-complete-cert-title">
       {finishedCourse ? (
@@ -223,7 +214,7 @@ function CertificateOffer({
         <h2 id="tw-complete-cert-title" className="h3">
           {finishedCourse
             ? t('certificates.offer.courseTitle', { count: getLessons().length })
-            : t('certificates.offer.sectionTitle', { section: section.title })}
+            : tx('certificates.offer.sectionTitle', { section: <En>{section.title}</En> })}
         </h2>
         <p>{t(finishedCourse ? 'certificates.offer.courseBody' : 'certificates.offer.sectionBody')}</p>
         <div className="tw-complete-cert-actions">
@@ -258,7 +249,7 @@ function UpNext({
   progress: ProgressByLessonId | undefined;
   highlightFirst: boolean;
 }) {
-  const { t } = useI18n();
+  const { t, tx } = useI18n();
   const { section } = useLessonPlayer();
   const showCheck = isLastLessonInSection(lesson);
   const next = getNextLesson(lesson.id);
@@ -277,6 +268,7 @@ function UpNext({
         <LessonRow
           kind="quiz"
           title={t('lessonPlayer.complete.sectionCheckTitle', { title: section.title })}
+          displayTitle={tx('lessonPlayer.complete.sectionCheckTitle', { title: <En>{section.title}</En> })}
           question={t('lessonPlayer.complete.sectionCheckQuestion', { first: first ?? '', last: last ?? '' })}
           href={sectionCheckPath(section.id)}
           highlight={highlightFirst}

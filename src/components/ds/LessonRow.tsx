@@ -1,4 +1,4 @@
-import { createElement } from 'react';
+import { createElement, type ReactNode } from 'react';
 import { STAGES } from '../../content/stages';
 import { useI18n } from '../../i18n';
 import { useDsLinkComponent } from './DsLinkProvider';
@@ -10,7 +10,11 @@ import './LessonRow.css';
 
 export interface LessonRowProps {
   number?: number;
+  /** The lesson's title: course text, marked as English. For the section check (`kind="quiz"`), an interface message. Also used in the row's name for screen readers. */
   title: string;
+  /** What the row shows instead of `title`, when that holds course text marked with <En> (the section check's row). */
+  displayTitle?: ReactNode;
+  /** The lesson's guiding question: course text. For the section check, an interface message. */
   question?: string;
   time?: string;
   status?: 'not-started' | 'in-progress' | 'completed';
@@ -33,6 +37,7 @@ export interface LessonRowProps {
 export function LessonRow({
   number,
   title,
+  displayTitle,
   question,
   time,
   status = 'not-started',
@@ -45,7 +50,7 @@ export function LessonRow({
   meta,
   className,
 }: LessonRowProps) {
-  const { t } = useI18n();
+  const { t, contentLang } = useI18n();
   const isQuiz = kind === 'quiz';
   const ctaText =
     cta ||
@@ -68,10 +73,13 @@ export function LessonRow({
   // `aria-label` fully replaces the accessible name (WCAG 2.5.3), so it
   // must repeat the question and the action verb itself, not just the
   // status, or a screen-reader or voice-control user loses them.
+  // The title and question are course text, which stays English; an
+  // attribute can't mark part of itself as English (docs/notes/languages.md).
   const ariaLabel = isQuiz
     ? t('ds.course.lessonRow.ariaLabelQuiz', { title, status: statusText, cta: ctaText })
-    : t('ds.course.lessonRow.ariaLabelLesson', { number: number ?? '', title, status: statusText, cta: ctaText }) +
-      (question ? ` ${question}` : '');
+    : question
+      ? t('ds.course.lessonRow.ariaLabelLessonQuestion', { number: number ?? '', title, status: statusText, cta: ctaText, question })
+      : t('ds.course.lessonRow.ariaLabelLesson', { number: number ?? '', title, status: statusText, cta: ctaText });
   const doneStages = done || (status === 'completed' ? [...STAGES] : []);
   const LinkTag = useDsLinkComponent();
 
@@ -87,8 +95,14 @@ export function LessonRow({
         )}
       </span>
       <span className="tw-row-main">
-        <span className="tw-row-title">{title}</span>
-        {question ? <span className="tw-row-q">{question}</span> : null}
+        <span className="tw-row-title" {...(isQuiz || displayTitle !== undefined ? {} : contentLang)}>
+          {displayTitle ?? title}
+        </span>
+        {question ? (
+          <span className="tw-row-q" {...(isQuiz ? {} : contentLang)}>
+            {question}
+          </span>
+        ) : null}
         <span className="tw-row-meta">
           {time ? (
             <span>

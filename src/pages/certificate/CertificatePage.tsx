@@ -14,12 +14,12 @@
  * - Guests (looking around, or nobody chosen) have no saved work: they are
  *   told certificates are for learners who have finished lessons.
  */
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { lessonPath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
 import { Button, LessonRow, SectionBadge, TextField } from '../../components/ds';
 import { getCourse, getLessons, getSectionLessons, getSections, type Lesson, type Section } from '../../content';
-import { useI18n } from '../../i18n';
+import { En, useI18n } from '../../i18n';
 import { useLearnerProgress, useLearnerSession } from '../../session';
 import { isLessonComplete, lessonSetStatus, nextStageForLesson, stagesDoneForLesson, type ProgressByLessonId } from '../../storage';
 import { PrintToolbar } from '../print/PrintToolbar';
@@ -49,12 +49,17 @@ export interface CertificatePageProps {
 }
 
 export function CertificatePage({ scope }: CertificatePageProps) {
-  const { t } = useI18n();
+  const { t, tx } = useI18n();
   const title =
     scope.kind === 'section'
       ? t('certificates.sectionPageTitle', { section: scope.section.title })
       : t('certificates.coursePageTitle');
   usePageTitle(title);
+  // The same, with the section's name (course text) marked as English.
+  const heading =
+    scope.kind === 'section'
+      ? tx('certificates.sectionPageTitle', { section: <En>{scope.section.title}</En> })
+      : title;
   const session = useLearnerSession();
   const learner = session.activeLearner;
   const { status, progress } = useLearnerProgress(learner?.id ?? null);
@@ -77,7 +82,7 @@ export function CertificatePage({ scope }: CertificatePageProps) {
         <article className="tw-print-sheet" aria-labelledby="cert-title">
           <header className="tw-print-head">
             <h1 id="cert-title" className="tw-print-title" tabIndex={-1}>
-              {title}
+              {heading}
             </h1>
           </header>
           <div className="tw-print-part">
@@ -92,7 +97,7 @@ export function CertificatePage({ scope }: CertificatePageProps) {
       ) : certificate.complete && certificate.finishedAt ? (
         <CertificateSheet key={learner.id} scope={scope} learnerName={learner.name} finishedAt={certificate.finishedAt} />
       ) : (
-        <LessonsLeft scope={scope} title={title} left={certificate.left} progress={progress} />
+        <LessonsLeft scope={scope} title={heading} left={certificate.left} progress={progress} />
       )}
     </div>
   );
@@ -106,7 +111,7 @@ function LessonsLeft({
   progress,
 }: {
   scope: CertificateScope;
-  title: string;
+  title: ReactNode;
   left: readonly Lesson[];
   progress: ProgressByLessonId;
 }) {
@@ -163,11 +168,11 @@ function CertificateSheet({
   learnerName: string;
   finishedAt: string;
 }) {
-  const { t, lang } = useI18n();
+  const { t, tx, formatDate } = useI18n();
   const [name, setName] = useState(learnerName);
   const shownName = name.trim();
-  const course = getCourse().course.title;
-  const date = new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(finishedAt));
+  const course = <En>{getCourse().course.title}</En>;
+  const date = formatDate(finishedAt, { day: 'numeric', month: 'long', year: 'numeric' });
 
   return (
     <>
@@ -206,8 +211,8 @@ function CertificateSheet({
           )}
           <p className="tw-cert-finished">
             {scope.kind === 'section'
-              ? t('certificates.sheet.finishedSection', { section: scope.section.title, course })
-              : t('certificates.sheet.finishedCourse', { count: getLessons().length, course })}
+              ? tx('certificates.sheet.finishedSection', { section: <En>{scope.section.title}</En>, course })
+              : tx('certificates.sheet.finishedCourse', { count: getLessons().length, course })}
           </p>
         </div>
 
@@ -224,7 +229,7 @@ function CertificateSheet({
               <p className="tw-cert-label">{t('certificates.sheet.signature')}</p>
             </div>
           </div>
-          <p className="tw-cert-about">{t('certificates.sheet.about', { course })}</p>
+          <p className="tw-cert-about">{tx('certificates.sheet.about', { course })}</p>
         </footer>
       </article>
     </>
@@ -233,16 +238,17 @@ function CertificateSheet({
 
 /** A section certificate's contents: the section (its colour only beside its icon and name) and its lessons. */
 function SectionLessons({ section }: { section: Section }) {
+  const { contentLang } = useI18n();
   return (
     <section className="tw-cert-contents" aria-labelledby="cert-contents-title">
       <h2 id="cert-contents-title" className="tw-cert-contents-title">
-        <SectionBadge section={section.id} number={section.number} name={section.title} />
+        <SectionBadge section={section.id} number={section.number} name={<En>{section.title}</En>} />
       </h2>
       <ol className="tw-cert-lessons" role="list">
         {getSectionLessons(section.id).map((lesson) => (
           <li key={lesson.id}>
             <span className="tw-cert-lesson-number">{lesson.number}</span>
-            <span>{lesson.title}</span>
+            <span {...contentLang}>{lesson.title}</span>
           </li>
         ))}
       </ol>
@@ -256,7 +262,7 @@ function CourseSections() {
     <ul className="tw-cert-sections" role="list">
       {getSections().map((section) => (
         <li key={section.id}>
-          <SectionBadge section={section.id} number={section.number} name={section.title} />
+          <SectionBadge section={section.id} number={section.number} name={<En>{section.title}</En>} />
         </li>
       ))}
     </ul>

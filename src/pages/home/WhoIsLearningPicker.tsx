@@ -26,7 +26,7 @@ export interface WhoIsLearningPickerProps {
  * adding a learner or confirming a removal — never a new page.
  */
 export function WhoIsLearningPicker({ learners, lesson1, onChoose, onAdd, onRemove, onLookAround, initialView }: WhoIsLearningPickerProps) {
-  const { t, lang } = useI18n();
+  const { t, formatDate } = useI18n();
   const [view, setView] = useState<PickerView>(initialView === 'new' ? { kind: 'new' } : { kind: 'grid' });
   const [tileMeta, setTileMeta] = useState<Record<string, string>>({});
   const [removing, setRemoving] = useState(false);
@@ -116,7 +116,7 @@ export function WhoIsLearningPicker({ learners, lesson1, onChoose, onAdd, onRemo
   const sameName = learnersWithSameName(learners);
   const metaFor = (learner: Learner): string | undefined => {
     const meta = tileMeta[learner.id];
-    const date = sameName.has(learner.id) ? addedOn(learner, lang) : '';
+    const date = sameName.has(learner.id) ? addedOn(learner, formatDate) : '';
     if (!date) return meta;
     return meta ? t('pages.home.tileMetaAdded', { meta, date }) : t('pages.home.tileAdded', { date });
   };

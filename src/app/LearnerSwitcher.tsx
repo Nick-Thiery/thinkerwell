@@ -38,7 +38,7 @@ export interface LearnerSwitcherProps {
  * toggling the state straight back open would fight this).
  */
 export function LearnerSwitcher({ trigger, learners, currentLearnerId, onChoose, onLookAround, onAddNew, onBackToPicker, onClose }: LearnerSwitcherProps) {
-  const { t, lang } = useI18n();
+  const { t, formatDate } = useI18n();
   const rootRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   // Whether the tile list has content below the fold. Drives the bottom
@@ -119,7 +119,7 @@ export function LearnerSwitcher({ trigger, learners, currentLearnerId, onChoose,
               key={learner.id}
               name={learner.name}
               tone={learner.colour}
-              meta={sameName.has(learner.id) ? t('pages.home.tileAdded', { date: addedOn(learner, lang) }) : undefined}
+              meta={sameName.has(learner.id) ? t('pages.home.tileAdded', { date: addedOn(learner, formatDate) }) : undefined}
               selected={learner.id === currentLearnerId}
               onClick={() => {
                 onChoose(learner.id);

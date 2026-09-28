@@ -76,10 +76,6 @@
       "checkEyebrow": "Read · last part",
       "checkTitle": "Quick check",
       "checkRetryNote": "Try as many times as you like",
-      "feedbackLead": {
-        "correct": "Yes.",
-        "retry": "Not quite."
-      },
       "questionOf": "Question {n} of {total}",
       "thinkEyebrow": "Question {n} of {total} · think it through",
       "thinkHelper": "There is no single right answer.",
@@ -415,8 +411,8 @@
       "emptyFiltered": "Nothing saved yet in this view. Choose All to see everything you've written.",
       "lookAroundNote": "You're looking around, so nothing here is saved. Choose who's learning to keep a journal.",
       "noLearnerNote": "Choose who's learning to see their journal.",
-      "today": "today",
-      "yesterday": "yesterday",
+      "savedToday": "Saved today",
+      "savedYesterday": "Saved yesterday",
       "cancelEdit": "Cancel",
       "saveEdit": "Save"
     },
@@ -470,6 +466,7 @@
       "previewLesson": "Preview the lesson",
       "learnerPrint": "Print the lesson for learners",
       "section": "Section",
+      "sectionValue": "Section {number}: {title}",
       "essentialQuestion": "Essential question",
       "learningGoal": "Learning goal",
       "time": "Time",
@@ -732,7 +729,8 @@
       },
       "stagePath": {
         "navLabel": "Lesson steps",
-        "doneSuffix": ", done"
+        "doneSuffix": ", done",
+        "stageDone": "{stage}, done"
       },
       "stageDots": {
         "progressLabel": "{count} of 5 steps done"
@@ -771,6 +769,7 @@
           "completed": "Completed."
         },
         "ariaLabelLesson": "Lesson {number}: {title}. {status} {cta}",
+        "ariaLabelLessonQuestion": "Lesson {number}: {title}. {status} {cta} {question}",
         "ariaLabelQuiz": "{title}. {status} {cta}"
       },
       "continueCard": {

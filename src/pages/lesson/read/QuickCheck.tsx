@@ -4,7 +4,7 @@ import type { ChoiceCheck, ThinkCheck } from '../../../content';
 import { useI18n } from '../../../i18n';
 import { checkSeed, seededShuffle, useLessonPlayer } from '../../../lesson';
 import { StageActionBar } from '../StageActionBar';
-import { withoutVerdict } from './feedbackText';
+import { feedbackWithoutVerdict } from './feedbackText';
 
 export interface QuickCheckProps {
   /** The "Quick check" heading, focused when the learner arrives from the reading. */
@@ -118,14 +118,7 @@ function ChoiceQuestion({ check, index, total }: QuestionProps<ChoiceCheck>) {
         options={order.map((entry) => entry.item.text)}
         selected={position}
         result={result}
-        feedback={
-          shownOption
-            ? withoutVerdict(
-                shownOption.feedback,
-                t(shownOption.correct ? 'lessonPlayer.read.feedbackLead.correct' : 'lessonPlayer.read.feedbackLead.retry'),
-              )
-            : undefined
-        }
+        feedback={shownOption ? feedbackWithoutVerdict(shownOption.feedback, shownOption.correct) : undefined}
         onSelect={choose}
       >
         {result === 'retry' ? (
@@ -148,7 +141,7 @@ function ChoiceQuestion({ check, index, total }: QuestionProps<ChoiceCheck>) {
 }
 
 function ThinkQuestion({ check, index, total }: QuestionProps<ThinkCheck>) {
-  const { t } = useI18n();
+  const { t, contentLang } = useI18n();
   const { progress, update } = useLessonPlayer();
   const headingId = useId();
   const saved = progress.checkAnswers[index];
@@ -158,12 +151,14 @@ function ThinkQuestion({ check, index, total }: QuestionProps<ThinkCheck>) {
     <section className="tw-read-think" aria-labelledby={headingId}>
       <div className="tw-read-think-head">
         <span className="eyebrow tw-read-muted">{t('lessonPlayer.read.thinkEyebrow', { n: index + 1, total })}</span>
-        <h3 id={headingId} className="tw-read-think-title">
+        <h3 id={headingId} className="tw-read-think-title" {...contentLang}>
           {check.question}
         </h3>
       </div>
       <WritingBox
         aria-labelledby={headingId}
+        // The sentence starter is course text, and the answer is English practice.
+        {...contentLang}
         placeholder={check.placeholder}
         rows={4}
         helper={check.optional ? t('lessonPlayer.read.thinkHelperOptional') : t('lessonPlayer.read.thinkHelper')}

@@ -2,10 +2,10 @@ import { useMemo } from 'react';
 import { Link } from 'react-router';
 import { ActionBar, Button, EvidenceCard, Icon, ProgressBar, QuestionCard, SectionBadge } from '../../components/ds';
 import { getLessonByNumber, type QuizFile, type QuizQuestion, type QuizStimulus, type Section } from '../../content';
-import { useI18n } from '../../i18n';
+import { En, useI18n } from '../../i18n';
 import { checkSeed, seededShuffle } from '../../lesson';
 import { lessonPath } from '../../app/lessonUrls';
-import { withoutVerdict } from '../lesson/read/feedbackText';
+import { feedbackWithoutVerdict } from '../lesson/read/feedbackText';
 import type { QuizAnswer } from '../../quiz';
 
 /** The made-up example a question refers to (docs/content/QUIZ_SPEC.md), shown above it. */
@@ -49,7 +49,7 @@ export function QuizQuestionScreen({
   onAnswer,
   onNext,
 }: QuizQuestionScreenProps) {
-  const { t } = useI18n();
+  const { t, tx } = useI18n();
   const total = quiz.questions.length;
   const isLast = index === total - 1;
   const lesson = getLessonByNumber(question.lesson);
@@ -71,7 +71,7 @@ export function QuizQuestionScreen({
   return (
     <div className="tw-quiz-page">
       <div className="tw-quiz-bar">
-        <SectionBadge section={section.id} number={section.number} name={t('pages.sectionCheck.title', { section: section.title })} />
+        <SectionBadge section={section.id} number={section.number} name={tx('pages.sectionCheck.title', { section: <En>{section.title}</En> })} />
         <ProgressBar
           value={answeredCount}
           max={total}
@@ -100,20 +100,13 @@ export function QuizQuestionScreen({
             options={order.map((entry) => entry.item.text)}
             selected={shownPosition !== undefined && shownPosition >= 0 ? shownPosition : undefined}
             result={result}
-            feedback={
-              shownOption
-                ? withoutVerdict(
-                    shownOption.feedback,
-                    t(shownOption.correct ? 'lessonPlayer.read.feedbackLead.correct' : 'lessonPlayer.read.feedbackLead.retry'),
-                  )
-                : undefined
-            }
+            feedback={shownOption ? feedbackWithoutVerdict(shownOption.feedback, shownOption.correct) : undefined}
             onSelect={choose}
           >
             {lesson ? (
               <Link className="tw-quiz-from-lesson" to={lessonPath(lesson.id)}>
                 <Icon name="BookOpen" size={16} />
-                {t('pages.sectionCheck.fromLesson', { number: lesson.number, question: lesson.essentialQuestion })}
+                <span>{tx('pages.sectionCheck.fromLesson', { number: lesson.number, question: <En>{lesson.essentialQuestion}</En> })}</span>
               </Link>
             ) : null}
           </QuestionCard>
