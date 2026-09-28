@@ -20,6 +20,13 @@ function header(source: string, key: string): string | undefined {
   return vercel.headers.find((rule) => rule.source === source)?.headers.find((h) => h.key === key)?.value;
 }
 
+/** Every Cache-Control value vercel.json sends for an address (its sources here read as regular expressions too). */
+function cacheControl(pathname: string): string[] {
+  return vercel.headers
+    .filter((rule) => new RegExp(`^${rule.source}$`).test(pathname))
+    .flatMap((rule) => rule.headers.filter((h) => h.key === 'Cache-Control').map((h) => h.value));
+}
+
 /** Vercel's source patterns are path-to-regexp; this one is a single raw regex group, so it reads as a RegExp. */
 function rewritten(pathname: string): boolean {
   return vercel.rewrites.some((rule) => new RegExp(`^${rule.source}$`).test(pathname));
@@ -47,14 +54,19 @@ describe('vercel.json', () => {
     }
   });
 
-  it('never lets a browser keep an old service worker or manifest without asking', () => {
-    expect(header('/sw.js', 'Cache-Control')).toBe('public, max-age=0, must-revalidate');
-    expect(header('/manifest.webmanifest', 'Cache-Control')).toBe('public, max-age=0, must-revalidate');
+  it('never lets a browser keep an old page, service worker or manifest without asking', () => {
+    for (const path of ['/', '/index.html', '/course', '/lesson/towns-near-rivers/read', '/sw.js', '/manifest.webmanifest']) {
+      expect(cacheControl(path), path).toEqual(['public, max-age=0, must-revalidate']);
+    }
   });
 
-  it('caches the hashed build files for a year', () => {
-    expect(header('/assets/(.*)', 'Cache-Control')).toBe('public, max-age=31536000, immutable');
-    expect(header('/workbox-(.*).js', 'Cache-Control')).toBe('public, max-age=31536000, immutable');
+  it('caches the hashed build files for a year, and only those', () => {
+    // docs/notes/slow-internet.md: a hashed file never changes, so a browser never asks for it again.
+    for (const path of ['/assets/index-abc123.js', '/assets/index-abc123.css', '/assets/L10-abc.svg', '/assets/eczar-wordmark-500-abc.woff2']) {
+      expect(cacheControl(path), path).toEqual(['public, max-age=31536000, immutable']);
+    }
+    // Files without a hash in their name get Vercel's default (revalidate).
+    for (const path of ['/images/sdg-04.png', '/icons/icon-192.png', '/social-card.png']) expect(cacheControl(path), path).toEqual([]);
   });
 
   describe('security headers, on every response', () => {
