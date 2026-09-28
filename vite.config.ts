@@ -169,6 +169,10 @@ function pseudoLocales(): Plugin {
   };
 }
 
+/** The pages that load when opened (src/app/routes.tsx), and what only they use. */
+const LATER_PAGES =
+  /[\\/]src[\\/](?:app[\\/](?:TeacherGuideRoute|AnswerKeyRoute|LessonPrintRoute|CertificateRoute)\.tsx|pages[\\/](?:SettingsPage|EducatorsPage)\.(?:tsx|css)|pages[\\/](?:settings|educators|print|certificate)[\\/])/;
+
 /** Codes of the message files in src/i18n/messages (en, fa-AF, ...), not the translator notes. */
 function messageFileCodes(): string[] {
   return readdirSync(path.join(import.meta.dirname, 'src', 'i18n', 'messages'))
@@ -321,6 +325,11 @@ export default defineConfig({
             // (src/offline/serviceWorker.ts), so its library comes after, too.
             { name: 'workbox-window', test: /[\\/]node_modules[\\/]workbox-window[\\/]/ },
             { name: 'vendor', test: /[\\/]node_modules[\\/]/ },
+            // The pages for teachers and for paper load when opened
+            // (src/app/routes.tsx); everything else the app needs is one
+            // chunk, as before, rather than the handful of small shared
+            // chunks the bundler would make otherwise.
+            { name: (id) => (LATER_PAGES.test(id) ? null : 'app'), test: /[\\/]src[\\/]/ },
           ],
         },
       },

@@ -1,21 +1,43 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, type ComponentType, type LazyExoticComponent } from 'react';
 import { Navigate, type RouteObject } from 'react-router';
 import { AboutPage } from '../pages/AboutPage';
 import { CoursePage } from '../pages/CoursePage';
-import { EducatorsPage } from '../pages/EducatorsPage';
 import { HomePage } from '../pages/HomePage';
 import { JournalPage } from '../pages/JournalPage';
 import { NotFoundPage } from '../pages/NotFoundPage';
-import { JournalPrintPage } from '../pages/print/JournalPrintPage';
 import { RouteErrorPage } from '../pages/RouteErrorPage';
-import { SettingsPage } from '../pages/SettingsPage';
-import { AnswerKeyRoute } from './AnswerKeyRoute';
 import { AppLayout } from './AppLayout';
-import { CourseCertificateRoute, SectionCertificateRoute } from './CertificateRoute';
-import { LessonPrintRoute } from './LessonPrintRoute';
 import { LessonRoute } from './LessonRoute';
 import { SectionCheckRoute } from './SectionCheckRoute';
-import { TeacherGuideRoute } from './TeacherGuideRoute';
+
+/**
+ * Pages for teachers and for paper (Settings, the Educators page, teacher
+ * guides, answer keys, print views and certificates) load when they are
+ * opened, so a learner's first page downloads less. The service worker
+ * precaches them with everything else, so they open offline all the same.
+ * Nothing shows in the page area for the moment it takes, and the
+ * header stays (AppLayout moves focus to the h1 once it appears).
+ */
+function later<T extends Record<string, unknown>>(load: () => Promise<T>, name: keyof T): LazyExoticComponent<ComponentType> {
+  return lazy(() => load().then((module) => ({ default: module[name] as ComponentType })));
+}
+
+const SettingsPage = later(() => import('../pages/SettingsPage'), 'SettingsPage');
+const EducatorsPage = later(() => import('../pages/EducatorsPage'), 'EducatorsPage');
+const TeacherGuideRoute = later(() => import('./TeacherGuideRoute'), 'TeacherGuideRoute');
+const AnswerKeyRoute = later(() => import('./AnswerKeyRoute'), 'AnswerKeyRoute');
+const LessonPrintRoute = later(() => import('./LessonPrintRoute'), 'LessonPrintRoute');
+const JournalPrintPage = later(() => import('../pages/print/JournalPrintPage'), 'JournalPrintPage');
+const SectionCertificateRoute = later(() => import('./CertificateRoute'), 'SectionCertificateRoute');
+const CourseCertificateRoute = later(() => import('./CertificateRoute'), 'CourseCertificateRoute');
+
+function whenLoaded(Page: ComponentType) {
+  return (
+    <Suspense fallback={null}>
+      <Page />
+    </Suspense>
+  );
+}
 
 /**
  * Dev-only tools (docs/BUILD_PLAN.md phase 2): a live gallery of every
@@ -84,19 +106,19 @@ export const routes: RouteObject[] = [
       { path: 'course', element: <CoursePage /> },
       { path: 'lesson/:id', element: <LessonRoute /> },
       // Ranked above :stage (a fixed segment beats a dynamic one).
-      { path: 'lesson/:id/print', element: <LessonPrintRoute /> },
+      { path: 'lesson/:id/print', element: whenLoaded(LessonPrintRoute) },
       { path: 'lesson/:id/:stage', element: <LessonRoute /> },
       { path: 'section/:id/check', element: <SectionCheckRoute /> },
       { path: 'journal', element: <JournalPage /> },
-      { path: 'journal/print', element: <JournalPrintPage /> },
+      { path: 'journal/print', element: whenLoaded(JournalPrintPage) },
       // Printable certificates, built on the print views' page and toolbar.
-      { path: 'certificate/section/:id', element: <SectionCertificateRoute /> },
-      { path: 'certificate/course', element: <CourseCertificateRoute /> },
-      { path: 'educators', element: <EducatorsPage /> },
-      { path: 'educators/lesson/:id', element: <TeacherGuideRoute /> },
-      { path: 'educators/section/:id/answers', element: <AnswerKeyRoute /> },
+      { path: 'certificate/section/:id', element: whenLoaded(SectionCertificateRoute) },
+      { path: 'certificate/course', element: whenLoaded(CourseCertificateRoute) },
+      { path: 'educators', element: whenLoaded(EducatorsPage) },
+      { path: 'educators/lesson/:id', element: whenLoaded(TeacherGuideRoute) },
+      { path: 'educators/section/:id/answers', element: whenLoaded(AnswerKeyRoute) },
       { path: 'about', element: <AboutPage /> },
-      { path: 'settings', element: <SettingsPage /> },
+      { path: 'settings', element: whenLoaded(SettingsPage) },
       // Old Base44 paths.
       { path: 'onboarding', element: <Navigate replace to="/" /> },
       { path: 'courses', element: <Navigate replace to="/course" /> },

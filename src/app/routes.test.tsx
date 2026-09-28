@@ -210,9 +210,10 @@ describe('not found', () => {
     '/certificate/nope',
   ])(
     '%s shows the friendly 404',
-    (path) => {
+    async (path) => {
       const router = renderAt(path);
-      expect(heading()).toHaveTextContent(notFoundTitle);
+      // Teacher and print pages load when opened (src/app/routes.tsx), so their 404 can take a moment.
+      await waitFor(() => expect(heading()).toHaveTextContent(notFoundTitle));
       expect(screen.getByText(t('notFound.body'))).toBeInTheDocument();
       expect(screen.getByRole('link', { name: t('notFound.home') })).toHaveAttribute('href', '/');
       expect(screen.getByRole('link', { name: t('notFound.course') })).toHaveAttribute('href', '/course');
