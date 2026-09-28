@@ -3,18 +3,26 @@ in docs/design-system/assets/.
 
     python3 scripts/optimise_images.py
 
-Needs Pillow (pip install pillow). Run it again whenever an original changes
-or a new image is added, and commit both. Every image here is precached for
-offline use (vite.config.ts), so each kilobyte is downloaded by every device.
+Needs Pillow and pyoxipng (.venv/bin/python -m pip install pillow pyoxipng).
+Run it again whenever an original changes or a new image is added, and
+commit both. Every image here is precached for offline use (vite.config.ts),
+so each kilobyte is downloaded by every device.
+
+Every PNG is then recompressed by oxipng (zopfli), which is lossless: the
+pixels are exactly the same, only the file is smaller (about 15%).
 
 - The mascot files keep their exact size (422 x 423) and artwork. They are
   saved as 256-colour PNGs: the transparency is unchanged and the colours
   differ from the original by less than 1/255 on average, which can't be
   seen, and the files are about a seventh of the size.
 - The UN goal icons are shown at 72px (About), so they are resized to 144px
-  (sharp on 2x screens) and otherwise left as they are.
-- The two team photos are shown at 104px, so they are resized to 312px wide
-  (sharp on 3x phones) as progressive JPEGs without their metadata.
+  (sharp on 2x screens), then saved as 256-colour PNGs without dithering
+  (27 kB instead of 44 kB for the four). They are flat colours and white
+  shapes; only anti-aliased edge pixels change, by less than 1/255 on
+  average (at most 0.4/255, for goals 10 and 16), which can't be seen, even
+  enlarged three times beside the full-colour version.
+- The two team photos are shown at 104px, so they are resized to 208px wide
+  (sharp on 2x screens) as progressive JPEGs without their metadata.
 - The app icons (public/icons/, for the web app manifest and iOS home
   screens) are the transparent mascot, whole and unchanged, scaled onto a
   lemon square, as in thinkerwell-mascot-yellow-background.png. The
@@ -29,6 +37,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
+import oxipng
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -43,7 +52,7 @@ MASCOTS = [
     "thinkerwell-mascot-yellow-background.png",
 ]
 UN_GOALS = ["sdg-04.png", "sdg-10.png", "sdg-16.png", "sdg-17.png"]
-PHOTOS = {"founder-justin-park.jpg": 312, "nick-thiery.jpg": 312}
+PHOTOS = {"founder-justin-park.jpg": 208, "nick-thiery.jpg": 208}
 SOCIAL_CARD = "social-card.png"
 ICON_BOX = 144
 # name: (square size, how tall the mascot is drawn in it)
@@ -55,16 +64,23 @@ APP_ICONS = {
 }
 
 
+def lossless(dest: Path) -> None:
+    """Recompresses a PNG without changing a pixel."""
+    oxipng.optimize(dest, level=6, strip=oxipng.StripChunks.safe(), deflate=oxipng.Deflaters.zopfli(15))
+
+
 def palette_png(src: Path, dest: Path) -> None:
     image = Image.open(src).convert("RGBA")
     # FASTOCTREE is the Pillow quantizer that keeps the alpha channel.
     image.quantize(256, method=Image.Quantize.FASTOCTREE).save(dest, optimize=True)
+    lossless(dest)
 
 
-def resized_png(src: Path, dest: Path, box: int) -> None:
-    image = Image.open(src)
+def resized_palette_png(src: Path, dest: Path, box: int) -> None:
+    image = Image.open(src).convert("RGB")  # the icons are fully opaque
     image.thumbnail((box, box), Image.Resampling.LANCZOS)
-    image.save(dest, optimize=True)
+    image.quantize(256, method=Image.Quantize.MEDIANCUT, dither=Image.Dither.NONE).save(dest, optimize=True)
+    lossless(dest)
 
 
 def resized_jpeg(src: Path, dest: Path, width: int) -> None:
@@ -76,6 +92,7 @@ def resized_jpeg(src: Path, dest: Path, width: int) -> None:
 
 def social_card(src: Path, dest: Path) -> None:
     Image.open(src).convert("RGB").quantize(256, method=Image.Quantize.MEDIANCUT).save(dest, optimize=True)
+    lossless(dest)
 
 
 def app_icon(src: Path, dest: Path, size: int, mascot_height: int) -> None:
@@ -85,13 +102,14 @@ def app_icon(src: Path, dest: Path, size: int, mascot_height: int) -> None:
     square = Image.new("RGBA", (size, size), LEMON)
     square.alpha_composite(mascot, ((size - width) // 2, (size - mascot_height) // 2))
     square.convert("RGB").quantize(256, method=Image.Quantize.MEDIANCUT).save(dest, optimize=True)
+    lossless(dest)
 
 
 def main() -> int:
     OUT.mkdir(parents=True, exist_ok=True)
     jobs = (
         [(name, lambda s, d: palette_png(s, d)) for name in MASCOTS]
-        + [(name, lambda s, d: resized_png(s, d, ICON_BOX)) for name in UN_GOALS]
+        + [(name, lambda s, d: resized_palette_png(s, d, ICON_BOX)) for name in UN_GOALS]
         + [(name, lambda s, d, w=w: resized_jpeg(s, d, w)) for name, w in PHOTOS.items()]
     )
     known = {name for name, _ in jobs} | {SOCIAL_CARD}
