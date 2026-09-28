@@ -133,3 +133,12 @@ export function pdfPages(pdf: Buffer): { pages: number; landscape: boolean } {
   const [x0, y0, x1, y1] = box ? box.slice(1).map(Number) : [0, 0, 0, 0];
   return { pages, landscape: x1! - x0! > y1! - y0! };
 }
+
+/** Whether each page of a PDF is landscape (wider than it is tall), in order. */
+export function pdfPageOrientations(pdf: Buffer): Array<'landscape' | 'portrait'> {
+  const text = pdf.toString('latin1');
+  return [...text.matchAll(/\/MediaBox\s*\[\s*([\d.]+)\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s*\]/g)].map((box) => {
+    const [x0, y0, x1, y1] = box.slice(1).map(Number);
+    return x1! - x0! > y1! - y0! ? 'landscape' : 'portrait';
+  });
+}
