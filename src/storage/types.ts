@@ -61,6 +61,14 @@ export interface Learner {
    * saved before phase 4 need no migration.
    */
   readingLevel?: ReadingLevel;
+  /**
+   * The language this learner sees the interface in (a code from
+   * src/i18n/locales.ts). Missing until they choose one: the device's
+   * settings.language applies until then. A code that isn't offered (not
+   * ready in this version) is ignored, never an error. Optional, so
+   * learners saved before it existed need no migration.
+   */
+  language?: string;
 }
 
 /** What addLearner() needs; id and createdAt are filled in. */
@@ -68,6 +76,8 @@ export interface NewLearner {
   name: string;
   colour: LearnerColour;
   classCode?: string;
+  /** Only when a language other than the device's was chosen. */
+  language?: string;
 }
 
 /** A saved answer to one quick-check question, keyed by the question's index in lesson.read.checks. */
@@ -198,6 +208,13 @@ export interface DeviceSettings {
    * migration.
    */
   speechCheck: SpeechCheck | null;
+  /**
+   * The interface language for the home screen, anyone looking around and
+   * any learner who hasn't chosen one (a code from src/i18n/locales.ts), or
+   * null for English. Records saved before this setting existed get null
+   * from getSettings(), so it needs no migration.
+   */
+  language: string | null;
 }
 
 export const DEFAULT_SETTINGS: DeviceSettings = {
@@ -206,6 +223,7 @@ export const DEFAULT_SETTINGS: DeviceSettings = {
   preferredReadingLevel: 'standard',
   partner: { allowOnlineDictation: false },
   speechCheck: null,
+  language: null,
 };
 
 /** Device-level values in the `device` store, by name. Add new ones here. */
