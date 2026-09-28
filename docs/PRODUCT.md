@@ -16,7 +16,7 @@ A free social-studies course, "Exploring Our World", for refugee, displaced and 
 
 - Learners about 10–17, many learning English, many with interrupted schooling. Home languages include Dari/Farsi, Rohingya, Somali and Arabic. Many live in "transit" countries where they can't work legally or open a bank account and don't know where they will live next.
 - They use shared laptops and tablets, often with a volunteer teacher, on unreliable Wi-Fi.
-- Educators at partner organisations run sessions and may want simple progress information.
+- Educators at partner organisations run sessions and may want simple progress information. The class view shows it for each device, without scores.
 - Details in `docs/research/LEARNER_CONTEXT.md`.
 
 ## First pilot
@@ -113,6 +113,14 @@ Details, the file format and the reasons are in `docs/notes/device-transfer.md`.
 - Learners are matched by id, never by name. A learner who isn't on the device is added as they are. A different learner with the same name is added too, and tiles of learners who share a name also show the day each was added.
 - For a learner on both, nothing is lost. Every stage done on either side stays done, and a lesson completed on either side stays completed. For each answer, the copy from the lesson saved more recently wins, but an empty answer never replaces a written one. Section checks keep the best and the latest attempt, and the larger count of attempts. Loading the same file twice changes nothing the second time, and a failure while loading changes nothing at all.
 - Before a tablet is reset or replaced, an educator saves everyone's work to a file (`docs/LAUNCH_CHECKLIST.md`). The file isn't locked, so it must be kept safe.
+
+### Pilot-day tools
+
+Details and the reasons are in `docs/notes/pilot-day-tools.md`. The founders won't be at the pilot, so HELP's staff set up devices and follow their group with three pages under Educators. All work offline and read only what is on the device.
+
+- **Set up this device** (`/educators/setup`): a checklist for each laptop or tablet that says which steps are done on that device. The order matters: add Thinkerwell to the home screen first (on iPad the Home Screen app keeps its own saved work, apart from Safari), then the offline download, keeping saved work safe (the browser is asked only when someone taps), adding learners, and last the speech check (the saved result of Settings' "Check this device"; the page never asks the browser about speech itself). Then a reminder to save everyone's work to a file before a device is reset. It prints as a one-page checklist.
+- **The class on this device** (`/educators/class`): every learner by name, with lessons finished per section, the lesson they're on, when they last worked and which section checks they've tried. No scores and no ranking, because any learner on a shared device can open it. It doesn't link to journals: a journal is always the current learner's, and this page never switches learners.
+- **Print all certificates**: every certificate earned on the device, one landscape page each. Names come from the device; a learner's own certificate page is where a name can be changed for one print.
 
 ## Roadmap
 

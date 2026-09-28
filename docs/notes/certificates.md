@@ -50,4 +50,4 @@ Measured with `npm run build && npm run size` against `main`: the app code grows
 
 - **Print one on HELP's own printer and paper**, in black and white. Everything here was checked with Chromium's PDF output, not on paper, on an iPad or in Safari.
 - **Other languages.** The name sits on its own line above "finished the … section of …". Some languages will want the name inside the sentence; the message can take a `{name}` then.
-- **Printing for a whole class.** A teacher prints each certificate from that learner's page on the shared device. There is no page to print everyone's at once.
+- ~~**Printing for a whole class.**~~ Done: "Print all certificates" on the class view (`/educators/class/certificates`, `docs/notes/pilot-day-tools.md`) prints every certificate earned on the device, one landscape page each, with the names on the device.

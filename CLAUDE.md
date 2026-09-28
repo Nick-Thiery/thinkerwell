@@ -52,7 +52,8 @@ src/                           the app (created in phase 1)
 src/offline/                   service worker registration, connection status, the banners under the header, Save data
 src/pages/print/               print views: /lesson/:id/print and /journal/print
 src/pages/certificate/         certificates: /certificate/section/:id and /certificate/course
-src/pages/educators/           teacher tools: /educators/lesson/:id (teacher guide) and /educators/section/:id/answers (answer key)
+src/pages/educators/           teacher tools: /educators/lesson/:id (teacher guide) and /educators/section/:id/answers (answer key);
+                               pilot-day tools: /educators/setup, /educators/class and /educators/class/certificates
 ```
 
 ## Design system
@@ -115,6 +116,7 @@ Built in phase 6; see `docs/notes/phase-6.md`.
 - Every lesson has a print view (`/lesson/:id/print`, linked from Read): both reading levels, key words, the picture, the quick check and every task, black text on white with no header. Printing any page leaves out the header, menus and banners (`src/styles/print.css`).
 - Certificates (`docs/notes/certificates.md`): one per section (`/certificate/section/:id`) and one for the course (`/certificate/course`), for a learner who has finished every lesson in it (section checks are never needed; no scores). Offered on the complete screen when that finish completes a section or the course, on a finished section's card on the course page, and on the learner home once the course is finished. The name can be changed for one print and is never saved. It prints on one landscape page that fits A4 and Letter, through a named page (`@page tw-certificate`), so other printouts stay portrait.
 - Teacher tools (`docs/notes/teacher-tools.md`), linked from the Educators page: every lesson has a teacher guide (`/educators/lesson/:id`) and every section check an answer key (`/educators/section/:id/answers`). Each is one page for screen and paper, built on the print views' sheet. Everything in them comes from the content files. Correct answers are marked with a tick and the words "Correct answer", never by colour alone.
+- Pilot-day tools (`docs/notes/pilot-day-tools.md`), linked from the Educators page: "Set up this device" (`/educators/setup`), a checklist that says which steps are done on this device and prints on one page; it never asks the browser anything that could prompt or crash as it opens (`persist()` only on a tap, the speech step from `settings.speechCheck`). "The class on this device" (`/educators/class`): every learner by name, lessons finished per section, where they are, last active, checks tried; never scores or a ranking, and no journal links. "Print all certificates" (`/educators/class/certificates`): every certificate earned on the device, one landscape page each. Settings' Say it and moving-work parts have addresses of their own (`/settings#say-it`, `/settings#move-work`).
 
 ## Don't
 
