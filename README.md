@@ -33,6 +33,7 @@ sh scripts/setup-python.sh   # .venv with wordfreq, for the lesson checker
 | `npm run check:content` | Checks `content/lessons/*.json` against `docs/content/SPEC.md`; must report 0 errors |
 | `npm run size` | After `npm run build`: what a new visitor downloads for the home page and for a lesson, and what the service worker precaches, gzipped and brotli (`tools/report-sizes.mjs`) |
 | `npm run perf` | After `npm run build`: first paint, page ready and load for the home page and a lesson on Slow 3G, 3G and Slow 4G with a slow CPU, served with brotli as on Vercel (`tools/measure-slow.mjs`) |
+| `npm run slow-internet` | After `npm run build`: every file a first visit fetches (by kind, before and after the first screen), the whole precache with its largest files, and first paint, page ready and "offline ready" on Slow 3G and a very poor connection (`tools/slow-internet.mjs`; `-- --bytes` for sizes only). See `docs/notes/slow-internet.md` |
 
 To run the end-to-end tests against a server you already started, set `E2E_BASE_URL`, for example `E2E_BASE_URL=http://localhost:5301 npm run test:e2e`.
 
@@ -107,16 +108,16 @@ content/                 lesson text and course structure (JSON), the source of 
 docs/                    product notes, build plan, design system, screen references, research
 public/images/           mascot, UN goal icons, founder photo (small copies; originals in docs/design-system/assets/)
 public/icons/            app icons for the web app manifest and iOS home screens
-scripts/                 lesson checker (check_lesson.py), check-content.sh, setup-python.sh, optimise_images.py
+scripts/                 lesson checker (check_lesson.py), check-content.sh, setup-python.sh, optimise_images.py, subset_wordmark_font.py
 src/main.tsx             entry: router and global styles
-src/app/                 routes, app shell (header, learner switcher, phone nav), lesson URL handling (old Base44 ids redirect here)
+src/app/                 routes, app shell (header, learner switcher, phone nav), lesson URL handling (old Base44 ids redirect here); src/app/lazy/ holds the pages that load when first opened
 src/pages/               one component per page: Home (picker/new learner/dashboard/guest), the course map, and placeholders for later phases
 src/pages/lesson/        the lesson player's page (LessonPage, StageActionBar) and one folder per stage: read, write, speak, watch, reflect, complete, plus evidence and visual
 src/speech/              Listen, Say it and Record yourself: local voice choice, read-aloud player, on-device speech recognition detection and dictation, MediaRecorder
 src/lesson/              the lesson player's state and rules: LessonPlayerContext (progress, saving, reading level), progressRules (when a stage is done), shuffle, glossary marking, guest memory
 src/session/             LearnerSessionProvider/useLearnerSession (learners, current learner, look-around) and useLearnerProgress, shared by Home and the course map
-src/content/             zod schemas (schema.ts), the checks the build and tests run (load.ts), and typed getters for content/*.json (index.ts)
-src/offline/             the service worker from the page's side, online status, the banners under the header, Save data
+src/content/             zod schemas (schema.ts), the checks the build and tests run (load.ts), typed getters for content/*.json (index.ts, only for the pages that show lessons) and the lesson catalog every page can use (catalog.ts)
+src/offline/             the service worker (sw.ts) and its page side, online status, the banners under the header, Save data
 src/pages/print/         print views: a lesson (/lesson/:id/print) and the journal (/journal/print)
 src/pages/certificate/   certificates: each section's (/certificate/section/:id) and the course's (/certificate/course)
 src/storage/             IndexedDB (idb): learners, progress, quiz attempts, recordings, settings; src/storage/progress.ts has the pure progress-lookup helpers (continue target, per-section counts, ...)
@@ -127,6 +128,7 @@ src/dev/                 dev-only routes (/dev/components, /dev/reference, /dev/
 tools/shoot.mjs          screenshot + report tool (overflow, console errors, foreign requests, tap targets, text size)
 tools/report-sizes.mjs   npm run size: first load and precache, gzipped and brotli
 tools/measure-slow.mjs   npm run perf: page timings on slow connections
+tools/slow-internet.mjs  npm run slow-internet: first visit and precache bytes, and times on Slow 3G and a very poor connection
 dev-screen.html          dev-only, standalone: renders one docs/screens/*.dc.html with the original reference bundle
 dev-reference.html       dev-only, standalone: renders the original reference bundle's own components
 e2e/                     Playwright tests (production build); lesson-player.spec.ts goes through Lesson 10 (every step of every lesson is checked in Vitest: src/pages/lesson/LessonPage.test.tsx)
@@ -139,7 +141,7 @@ e2e-dev/                 Playwright tests for the dev-only /dev/* routes (npm ru
 
 ## Offline
 
-A production build has a service worker (`dist/sw.js`, generated by vite-plugin-pwa from `vite.config.ts`) that precaches the whole site after the first page loads. `npm run dev` has none, so nothing is ever served from an old copy while you work. To try it: `npm run build && npm run preview`, open the site once, then turn the network off in the browser's developer tools (Network, Offline) and reload or open any lesson. After a new build, reload once: the new version installs in the background and waits, and the page shows "A new version is ready" until you tap "Update now" (an open page also checks by itself every hour). To start again, unregister the worker and clear site data in the developer tools (Application). `docs/notes/phase-6.md` has the details and the sizes (`npm run size`).
+A production build has a service worker (`dist/sw.js`, built by vite-plugin-pwa from `src/offline/sw.ts` and `vite.config.ts`) that precaches the whole site after the first page loads, six files at a time. `npm run dev` has none, so nothing is ever served from an old copy while you work. To try it: `npm run build && npm run preview`, open the site once, then turn the network off in the browser's developer tools (Network, Offline) and reload or open any lesson. After a new build, reload once: the new version installs in the background and waits, and the page shows "A new version is ready" until you tap "Update now" (an open page also checks by itself every hour). To start again, unregister the worker and clear site data in the developer tools (Application). `docs/notes/phase-6.md` has the details; `docs/notes/slow-internet.md` has the sizes and times (`npm run slow-internet`).
 
 ## Deploying
 

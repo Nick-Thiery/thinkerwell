@@ -97,3 +97,127 @@ Median of 3 cold first visits.
 (Downloaded is what the browser reports, headers included.)
 
 **Offline ready takes 4 to 5 times as long as the page.** Workbox's precache downloads its files one at a time ("Cache entries one at a time", `workbox-precaching`), so each of the 39 files it fetches over the network costs a full round trip before the next one starts. On Slow 3G that is about 16 s of waiting (39 x 400 ms) for 4.4 s of data; on Very poor about 23 s (39 x 600 ms) for 12 s of data. A learner who closes the laptop in that time has no offline course.
+
+## After (this branch)
+
+### Before and after
+
+Brotli, as Vercel sends it. Times are the median of 3 cold first visits (tablet size, network throttled, CPU not).
+
+| | `main` | This branch |
+| --- | ---: | ---: |
+| First visit, home page | 315.0 kB, 13 files | **204.5 kB**, 14 files |
+| ... of which before the first screen | 281.5 kB | **170.9 kB** |
+| First visit, Lesson 10 Read from a link | 329.2 kB, 15 files | **314.4 kB**, 20 files |
+| The whole course (precache) | 514.0 kB, 51 files | **469.1 kB**, 58 files |
+| `sw.js` and the Workbox runtime | 6.0 kB, 2 files | 6.1 kB, 1 file |
+| Everything a first visit to the home page downloads (page + service worker, as the browser reports it) | 561 kB | **513 kB** |
+
+| Connection | Page | First paint | Page ready | Largest paint | Offline ready |
+| --- | --- | ---: | ---: | ---: | ---: |
+| Slow 3G | Home | 2.2 → 2.1 s | 6.0 → **4.1 s** | 6.0 → **4.1 s** | 28.6 → **15.3 s** |
+| Slow 3G | Lesson 10 Read | 2.2 → 2.3 s | 6.1 → 6.1 s | 6.7 → 6.8 s | 26.6 → **14.8 s** |
+| Very poor | Home | 5.0 → 4.8 s | 15.0 → **9.7 s** | 15.0 → **9.7 s** | 55.6 → **34.3 s** |
+| Very poor | Lesson 10 Read | 5.0 → 5.3 s | 15.1 → 15.1 s | 16.5 → 16.5 s | 54.0 → **32.8 s** |
+
+The three runs were within 0.1 s of each other for page ready and within 0.5 s for offline ready.
+
+### First visit, home page
+
+| Kind | Files | Raw | gzip -9 | Brotli |
+| --- | ---: | ---: | ---: | ---: |
+| HTML | 1 | 3.9 kB | 1.4 kB | 1.0 kB |
+| JS | 6 | 477.3 kB | 149.7 kB | 130.1 kB |
+| CSS | 1 | 104.3 kB | 16.0 kB | 14.0 kB |
+| Fonts | 5 | 50.4 kB | 50.4 kB | 50.4 kB |
+| Images | 1 | 9.0 kB | 9.0 kB | 9.0 kB |
+| **Total** | **14** | **644.7 kB** | **226.4 kB** | **204.5 kB** |
+| Before the first screen | 11 | 611.2 kB | 192.9 kB | 170.9 kB |
+| What follows | 3 | 33.6 kB | 33.6 kB | 33.6 kB |
+
+Before the first screen: `index.html` 1.0 kB; the libraries 91.3 kB, the code home, the course map and the 404 share with the other pages (`NotFoundPage-`, named after one of its files) 25.0 kB, the app shell with home and the course map (`index-`) 11.1 kB, the chunk loader 0.4 kB, the first-page script 0.4 kB, workbox-window 2.0 kB; the stylesheet 14.0 kB; the mascot 9.0 kB; the wordmark font 4.1 kB and Atkinson 700 12.7 kB. No lesson.
+
+### First visit, Lesson 10 Read from a link
+
+| Kind | Files | Raw | gzip -9 | Brotli |
+| --- | ---: | ---: | ---: | ---: |
+| HTML | 1 | 3.9 kB | 1.4 kB | 1.0 kB |
+| JS | 10 | 873.2 kB | 263.1 kB | 225.9 kB |
+| CSS | 1 | 104.3 kB | 16.0 kB | 14.0 kB |
+| Fonts | 6 | 63.0 kB | 63.0 kB | 63.0 kB |
+| Images | 2 | 14.9 kB | 10.8 kB | 10.5 kB |
+| **Total** | **20** | **1059.2 kB** | **354.2 kB** | **314.4 kB** |
+| Before the first screen | 15 | 1007.1 kB | 306.2 kB | 266.8 kB |
+| What follows | 5 | 52.2 kB | 48.0 kB | 47.7 kB |
+
+The home page's files, plus the lesson player (`lessonPages-` 14.3 kB, `lessonRoutes-` 9.1 kB, `speech-` 2.0 kB) and the lessons (`content-` 70.4 kB), all started at once by the first-page script.
+
+### The whole course (the precache)
+
+| Kind | Files | Raw | gzip -9 | Brotli |
+| --- | ---: | ---: | ---: | ---: |
+| HTML | 1 | 3.9 kB | 1.4 kB | 1.0 kB |
+| JS | 13 | 938.2 kB | 278.4 kB | 239.8 kB |
+| CSS | 1 | 104.3 kB | 16.0 kB | 14.0 kB |
+| Fonts | 13 | 119.8 kB | 119.8 kB | 119.8 kB |
+| Images (22 lesson pictures, 7 in `public/images`) | 29 | 277.0 kB | 107.1 kB | 94.1 kB |
+| Other (the manifest) | 1 | 0.6 kB | 0.3 kB | 0.3 kB |
+| **Total** | **58** | **1443.8 kB** | **523.0 kB** | **469.1 kB** |
+| `sw.js` (Workbox inside) | 1 | 20.7 kB | 6.8 kB | 6.1 kB |
+
+| # | File | Raw | gzip -9 | Brotli |
+| ---: | --- | ---: | ---: | ---: |
+| 1 | `assets/vendor-DdbVw-XQ.js` | 336.5 kB | 105.6 kB | 91.3 kB |
+| 2 | `assets/content-GfYKze01.js` | 307.3 kB | 84.7 kB | 70.4 kB |
+| 3 | `assets/NotFoundPage-DU2shXIC.js` | 90.7 kB | 28.4 kB | 25.0 kB |
+| 4 | `assets/lessonPages-JqI_5tPr.js` | 54.2 kB | 16.2 kB | 14.3 kB |
+| 5 | `assets/atkinson-hyperlegible-next-latin-400-italic-DZBmTazM.woff2` | 14.2 kB | 14.2 kB | 14.2 kB |
+| 6 | `assets/style-P77CJc1h.css` | 104.3 kB | 16.0 kB | 14.0 kB |
+| 7 | `assets/atkinson-hyperlegible-next-latin-700-normal-Dpiyiu63.woff2` | 12.7 kB | 12.7 kB | 12.7 kB |
+| 8 | `assets/atkinson-hyperlegible-next-latin-500-normal-gHP6TDRs.woff2` | 12.6 kB | 12.6 kB | 12.6 kB |
+| 9 | `assets/atkinson-hyperlegible-next-latin-400-normal-FfmJh7DR.woff2` | 12.1 kB | 12.1 kB | 12.1 kB |
+| 10 | `assets/index-D55KraBN.js` | 42.6 kB | 12.5 kB | 11.1 kB |
+| 11 | `assets/funnel-display-latin-600-normal-Mgf2EgkJ.woff2` | 10.8 kB | 10.8 kB | 10.8 kB |
+| 12 | `assets/funnel-display-latin-500-normal-CfaoK8W9.woff2` | 10.7 kB | 10.7 kB | 10.7 kB |
+| 13 | `images/sdg-16.png` | 9.1 kB | 9.1 kB | 9.1 kB |
+| 14 | `assets/lessonRoutes-DpH5LKQC.js` | 29.0 kB | 10.3 kB | 9.1 kB |
+| 15 | `images/thinkerwell-mascot-transparent.png` | 9.0 kB | 9.0 kB | 9.0 kB |
+
+## What changed
+
+1. **The offline copy downloads six files at a time** (`src/offline/sw.ts`). The worker is our own now (vite-plugin-pwa's injectManifest), with Workbox's precache, routes, cache name and update prompt as before; only its install hands the files to Workbox's precache strategy six at a time instead of one by one. Measured at that commit, before the pages were split (one run each), offline ready went from 28.6 to 12.9 s on Slow 3G and from 55.6 to 32.8 s on Very poor. Workbox is bundled into `sw.js`, so registering fetches one file, not two.
+2. **A first visit downloads only what its page needs.** Home, the course map and the 404 are the first chunk; every other page loads when first opened (react-router `lazy`), in three chunks (`src/app/lazy/`): lessons and section checks; teacher pages, print views and the journal; Settings, About and certificates.
+   - The home page and course map list lessons from `src/content/catalog.ts`: each lesson's id, number, section, title, question and time, and each check's number of questions, made at build time from the checked content (`virtual:thinkerwell/lesson-catalog` in `vite.config.ts`, about 1.5 kB). All 24 lessons (70 kB) load only with the pages that show them. A test checks the catalog says exactly what the lessons say.
+   - `main.tsx` keeps index.html's header bar until the first page's code is there, as before, so nothing new flashes.
+   - A first visit straight to a lesson (or any lazily loaded page) runs a tiny first-page script (`preloadFirstPage` in `vite.config.ts`) that starts that page's chunks alongside the app's, instead of after it. Without it, a lesson from a link showed 0.6 s later on Slow 3G and 1.2 s later on Very poor than on `main`. Which chunk an address needs is `src/app/lazy/firstPage.ts`; a test checks it against the router.
+   - Once a service worker controls the page, `main.tsx` loads every page's code from the offline copy while idle: pages then open at once, and a tab left open keeps working after another tab updates.
+   - One stylesheet for every page (`cssCodeSplit: false`), so rules keep their order whatever opens first. Two print rules depended on the old order; they now say what they did (`src/pages/print/print.css`). Every element's computed style at every page-tour stop, on screen and in print, at 390, 820 and 1280px, matches `main`.
+   - The build stops if a lesson file, a lazily loaded chunk, a `src/dev` page or a source map would reach a first visit (`keepFirstVisitLight`).
+3. **The wordmark font is 4 kB instead of 22 kB** (`scripts/subset_wordmark_font.py`). Eczar draws only "Thinkerwell". The file keeps those letters (and the space, which sets the line's baseline, and the letters FreeType's auto-hinter measures a font by) with their outlines, spacing and kerning unchanged. The header, course, About and a lesson render pixel for pixel as before at 390 and 1280px, 1x and 2x. Every other font file stays: only latin and latin-ext were ever bundled, every weight and style is used, and latin-ext stays for names and later languages (Somali). Fonts are never inlined as `data:` URLs (the CSP allows fonts only from this site).
+4. **Images, 87.8 kB down to 49.0 kB precached** (`scripts/optimise_images.py`). Every PNG is recompressed with oxipng (zopfli), keeping every pixel; the mascot is 9.0 kB instead of 10.7 kB. The UN goal icons become 256-colour PNGs (flat colours; edge pixels move by under 0.4/255 on average, checked by eye enlarged three times). The team photos are 208px wide, twice the 104px About shows them at. The social card and app icons are smaller too (not precached).
+5. **Caching headers** (`vercel.json`): every page address and `/index.html` are always revalidated, as `sw.js` and the manifest were; hashed files in `/assets/` stay `public, max-age=31536000, immutable`. The Workbox runtime rule goes (it is inside `sw.js`). The Content-Security-Policy is unchanged.
+6. **Tests.** `e2e/build-output.spec.ts`: the precache stays under 480 kB and a first visit to the home page under 212 kB (Brotli) and fetches no lesson; no source maps and no dev-only pages. Unit tests for the catalog, the first-page mapping, the wordmark font and the caching headers.
+
+## Tried and dropped
+
+- **Minifying the lesson pictures** (svgo). A configuration that keeps every pixel (checked by rendering each picture at 360, 640, 960 and 1920px) saves 2.1 kB Brotli across the 22 precached pictures (4.6%). Rewriting path data saves 6 kB but moves anti-aliasing in 13 of the 24 pictures. The pictures are hand-edited content with comments, so it would need a build step of its own; not worth it for 2 kB.
+- **A stylesheet per chunk** (Vite's default) would save 5.4 kB on the home page's first visit, but the order the rules load in would depend on which page opens first; a print view's lists and picture already came out differently.
+- **One chunk per page**: 85 precached files, and 17 kB more JavaScript and 4.6 kB more CSS in all, because small files compress worse. Three lazy chunks instead.
+- **Stripping index.html's comments** would save 0.4 kB of its 1.0 kB; not worth a build step.
+- **Not done, could be next:** importing the design-system components one by one instead of through `components/ds/index.ts` would take the lesson-only ones (about 7 kB) out of the first visit, but moves rules around in the stylesheet. Giving the mascot a hashed name would save the 9 kB the service worker downloads again after the page has it (Workbox refetches files without a hash).
+
+## Devices that already have the old version
+
+Checked by serving `main`'s build to a browser, letting its worker store the course, then serving this branch's build to the same browser:
+
+- The browser finds the new `sw.js` (always revalidated) and installs it in the background, next to the old one. It uses the same cache, so it downloads only what changed: 20 files and `index.html`, about 220 kB (the libraries, 12 of the 13 font files and the 22 lesson pictures are reused). The lessons chunk is among them: its contents moved, though no lesson text changed.
+- As before, it then waits: "A new version is ready" with "Update now". Nothing reloads by itself. After the switch, the old files (the old chunks, the two old Eczar files) are deleted, the cache holds exactly the new list, and lessons open offline.
+- A tab still running `main` after another tab updates keeps working: `main` had every page in one file. From this version on, pages load separately, so each tab loads every page's code from its own offline copy as soon as it can (see 2 above); a tab left open on this version keeps working through the next update the same way.
+- The old worker's `workbox-9c191d2f.js` isn't needed by the new one. Nothing on the device (IndexedDB) changes.
+
+## Left
+
+- **A lesson opened from a link** downloads 15 kB less but is ready no sooner (6.1 s on Slow 3G): it now needs 15 files before its first screen, not 10. Its first paint is 0.1 to 0.6 s later in these runs: the local test server speaks HTTP/1.1, where the lesson's code shares the connection equally with the stylesheet; Vercel's HTTP/2 lets the browser send the stylesheet first.
+- **A first visit that loses the connection** after the home page shows but before the course is stored can no longer open a lesson (it shows "Something went wrong"); on `main` the lessons came with the first page. The course now takes 15 s to store on Slow 3G instead of 29 s.
+- **Offline ready is now close to the connection's limit**: 513 kB at 150 kbit/s is 27 s, and it takes 34 s. The rest is waiting for the page to finish loading before the worker starts (by design, phase 6). Splitting the pages moved about 100 kB from the first page to the worker's download, so the home page's offline ready is 15.3 s on Slow 3G rather than the 12.9 s the parallel download gave on its own, in exchange for the page being ready 1.9 s sooner.
+- Nothing here was tried on the pilot's tablets and laptops or on Vercel itself.

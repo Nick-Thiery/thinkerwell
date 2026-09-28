@@ -92,7 +92,7 @@ The biggest remaining cost is the JavaScript that must arrive before the page ca
 
 - the framework (Vite) and the install (`npm ci`), build (`npm run build`) and output (`dist`) settings;
 - a rewrite that answers every page address with `index.html`. Files on disk are served first, and an address that ends in a file name, such as a missing `/assets/…js`, gets a 404 instead of the page;
-- the service worker and manifest are always revalidated (`max-age=0, must-revalidate`), and hashed files in `/assets/` and the Workbox runtime are cached for a year (from phase 6);
+- the service worker, the manifest, `index.html` and every page address are always revalidated (`max-age=0, must-revalidate`), and hashed files in `/assets/` are cached for a year, `immutable` (from phase 6; the Workbox runtime is now inside `sw.js`: `docs/notes/slow-internet.md`);
 - these security headers on every response:
   - a Content-Security-Policy that allows only this site, plus the youtube-nocookie.com player in a frame. `img-src` also allows `data:`, because two small lesson pictures are inlined into the JavaScript, and `media-src` allows `blob:`, for playing back recordings;
   - `Referrer-Policy: no-referrer`, `X-Content-Type-Options: nosniff`, and `X-Frame-Options: DENY` with `frame-ancestors 'none'`, so the site can't be shown inside another site;
@@ -142,16 +142,17 @@ Checked by recording every request from every frame, and from the service worker
 | Request | What it is |
 | --- | --- |
 | The page's address, for example `/` or `/lesson/towns-near-rivers/read` | `index.html` |
-| `/assets/index-[hash].js`, `vendor-[hash].js`, `content-[hash].js`, `rolldown-runtime-[hash].js` | The app, the libraries, all lessons and checks, and the chunk loader |
-| `/assets/index-[hash].css` | All styles |
+| `/assets/index-[hash].js`, `NotFoundPage-[hash].js`, `vendor-[hash].js`, `rolldown-runtime-[hash].js` | The app shell with home, the course map and the 404 (`NotFoundPage-` is the code they share with the other pages, named after one of its files), the libraries, and the chunk loader |
+| `/assets/lessonPages-[hash].js`, `content-[hash].js` and the chunks they share (`lessonRoutes-`, `speech-`) | Only on a lesson or section check page: the lesson player, and all lessons and checks. The Educators, teacher, print and journal pages load `teacherPages-`; Settings, About and certificates `morePages-` (`docs/notes/slow-internet.md`) |
+| `/assets/style-[hash].css` | All styles |
 | `/images/thinkerwell-mascot-transparent.png` | The mascot in the header, and the tab icon |
-| `/assets/*.woff2`, as text needs them | The self-hosted fonts: Atkinson Hyperlegible Next (400, 500, 700, 400 italic), Funnel Display (500, 600) and Eczar (500). Latin first; latin-ext only when a character needs it. |
+| `/assets/*.woff2`, as text needs them | The self-hosted fonts: Atkinson Hyperlegible Next (400, 500, 700, 400 italic), Funnel Display (500, 600) and Eczar (500, only the wordmark's letters). Latin first; latin-ext only when a character needs it. |
 | `/assets/workbox-window-[hash].js`, then `/sw.js` | Registers the service worker, after the page has loaded |
 
-**The service worker's first install** happens once per version, in the background:
+**The service worker's first install** happens once per version, in the background, six files at a time:
 
-- `/workbox-[hash].js`;
-- the precache: 50 files. These are `/index.html`, all the JavaScript and CSS, all 14 font files, 22 lesson pictures (`/assets/L01-[hash].svg` and so on), the images in `/images/` (the mascot, 4 UN goal icons and Justin's photo) and `/manifest.webmanifest`.
+- the precache: 57 files. These are `/index.html`, all the JavaScript (every page's) and the CSS, all 13 font files, 22 lesson pictures (`/assets/L01-[hash].svg` and so on), the images in `/images/` (the mascot, 4 UN goal icons and the two team photos) and `/manifest.webmanifest`.
+- Once it controls the page, the page loads the other pages' code from it (not from the internet).
 
 Lessons 2 and 4 have no picture file: their pictures are small enough to be inlined into the JavaScript as `data:` URLs.
 
@@ -160,7 +161,7 @@ Lessons 2 and 4 have no picture file: their pictures are small enough to be inli
 | Request | When |
 | --- | --- |
 | `/assets/L{NN}-[hash].svg` | Read, Write and print show a lesson's picture (from the precache once it is there) |
-| `/images/sdg-04.png`, `sdg-10.png`, `sdg-16.png`, `sdg-17.png`, `/images/founder-justin-park.jpg` | The About page |
+| `/images/sdg-04.png`, `sdg-10.png`, `sdg-16.png`, `sdg-17.png`, `/images/founder-justin-park.jpg`, `nick-thiery.jpg` | The About page |
 | `/sw.js` | The browser checks for a new version when a page opens, and the site checks once an hour while it is open, online and on screen |
 | `/manifest.webmanifest`, `/icons/*.png` | Only when someone installs the site or adds it to a home screen (the browser asks) |
 
@@ -181,7 +182,7 @@ Saving work to a file and loading one (Settings, "Move work to another device") 
 
 ## Left, and why
 
-- **About 220 kB of JavaScript before a first visit can be used** (6 s on Slow 3G, 2 s on 3G). Most of it is by design: all 24 lessons are in one chunk, so that every lesson works offline after the first visit, and the app reads them synchronously. Loading each lesson on its own would make the first visit lighter but touch the whole app. Lazy-loading the rarely used pages (print, Educators, About, Settings) would save only about 15 kB. Later visits come from the service worker in about 0.4 s.
+- **About 130 kB of JavaScript before a first visit to the home page can be used**, most of it React and React Router (91 kB). The lessons and the other pages now load with the pages that show them (`docs/notes/slow-internet.md`); a lesson opened straight from a link still needs them all (about 225 kB). Later visits come from the service worker.
 - **The YouTube player's own requests** were not observed (see above).
 - **axe's "needs review" items:** the numbers inside the progress rings on the course and learner home. axe can't see the ring's ground through the SVG. They are ink on a section tint or canvas, at least 15:1.
 - **Text-only zoom** (Safari's and Firefox's zoom text only) wasn't tested; Chromium has none. The layouts use px sizes from the tokens, so check it on a device.

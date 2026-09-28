@@ -73,7 +73,7 @@ Browser support and the reasons are in `docs/notes/phase-5.md`.
 
 Details, sizes and the reasons are in `docs/notes/phase-6.md`.
 
-- The whole course (every lesson, section check, picture and font) is saved on the device during the first visit, not lesson by lesson. That is about 480 kB compressed, and the first page itself about 295 kB. The learner home says "All 24 lessons work offline", and lesson rows have no "Saved for offline" badge.
+- The whole course (every lesson, section check, picture and font) is saved on the device during the first visit, not lesson by lesson. That is about 470 kB compressed. The first page itself downloads only what it shows: about 205 kB for the home page, about 315 kB for a lesson opened from a link (`docs/notes/slow-internet.md`). The learner home says "All 24 lessons work offline", and lesson rows have no "Saved for offline" badge.
 - A new version never reloads the page by itself. It waits, and shows "A new version is ready" with "Update now". Otherwise it starts the next time Thinkerwell opens.
 - Under the header, a banner says when the device is offline, and for a few seconds when it's back online. Guests are never told their work is saved.
 - Watch opened while offline starts on the written version.
