@@ -23,6 +23,13 @@
   gap: var(--space-3);
 }
 
+/* Only on paper (a line to write the date on, for example). */
+@media screen {
+  .tw-print-only {
+    display: none !important;
+  }
+}
+
 .tw-print-intro {
   margin: 0;
   font-size: 16px;

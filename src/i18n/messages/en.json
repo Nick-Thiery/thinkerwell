@@ -449,7 +449,18 @@
       "codesBody": "In the pilot, each learner can get a code like HLP-07. Later, codes will let us see how the whole group is doing, without any names. You keep the list that matches names to codes.",
       "feedbackTitle": "Tell us what to fix",
       "feedbackBody": "Something confusing, too hard, or broken? A video that does not play? Email us and we will fix it.",
-      "feedbackEmail": "[FEEDBACK EMAIL]"
+      "feedbackEmail": "[FEEDBACK EMAIL]",
+      "toolsTitle": "Set up devices and follow your group",
+      "toolsIntro": "For the day you start, and every day after. Everything here stays on this device.",
+      "setupTitle": "Set up this device",
+      "setupBody": "A checklist for each laptop or tablet. Print it to tick on paper.",
+      "setupCta": "Open the checklist",
+      "classTitle": "The class on this device",
+      "classBody": "Lessons finished and where each learner is now. No scores.",
+      "classCta": "See the class",
+      "certificatesTitle": "Certificates",
+      "certificatesBody": "Every certificate earned on this device, one to a page.",
+      "certificatesCta": "Print all certificates"
     },
     "teacherTools": {
       "back": "Back to the educators page",
@@ -544,6 +555,140 @@
       "order": "Learners see the options in a different order, so talk about the answer itself, not where it sits.",
       "question": "Question {n} · {skill}",
       "fromLesson": "From Lesson {number}: {title}"
+    },
+    "setup": {
+      "title": "Set up this device",
+      "intro": "Do these steps once on each laptop or tablet. Each step says whether it's done on this device.",
+      "paperIntro": "On each device, open Thinkerwell, then For educators, then Set up this device. Tick each step when it's done.",
+      "device": "Device",
+      "date": "Date",
+      "stepsLabel": "Steps",
+      "state": {
+        "done": "Done",
+        "todo": "Not done yet",
+        "inProgress": "In progress",
+        "checking": "Checking",
+        "notHere": "Not on this browser",
+        "notNeeded": "Not needed"
+      },
+      "homeScreen": {
+        "title": "Add Thinkerwell to the home screen",
+        "why": "Then it opens like an app. On iPad and iPhone, this also stops Safari deleting saved work after 7 days without a visit.",
+        "first": "Do this first. Then open Thinkerwell from the home screen, and do the other steps there.",
+        "installed": "Thinkerwell is open from the home screen.",
+        "inBrowser": "Thinkerwell is open in the browser. If you've added it already, open it from the home screen instead.",
+        "thisDevice": "Steps for this device: {device}",
+        "otherDevices": "Steps for other devices",
+        "apple": {
+          "name": "iPad or iPhone (Safari)",
+          "step1": "Open Thinkerwell in Safari.",
+          "step2": "Tap Share: the square with an arrow pointing up.",
+          "step3": "Tap Add to Home Screen. You may need to scroll down to find it.",
+          "step4": "Tap Add.",
+          "step5": "Open Thinkerwell from its icon. It keeps its own saved work, apart from Safari, so add learners there."
+        },
+        "android": {
+          "name": "Android tablet or phone (Chrome)",
+          "step1": "Open Thinkerwell in Chrome.",
+          "step2": "Tap the menu: the three dots at the top.",
+          "step3": "Tap Add to home screen, or Install app.",
+          "step4": "Tap Install, or Add.",
+          "step5": "Open Thinkerwell from its icon."
+        },
+        "desktop": {
+          "name": "Windows laptop or Chromebook (Chrome or Edge)",
+          "step1": "Open Thinkerwell in Chrome or Edge.",
+          "step2": "Click the install button at the end of the address bar. If there isn't one, open the menu: the three dots.",
+          "step3": "Choose Install Thinkerwell. In the menu it may be under Cast, save and share, or under Apps.",
+          "step4": "Click Install.",
+          "step5": "Open Thinkerwell from its icon."
+        }
+      },
+      "offline": {
+        "title": "Download the course for offline use",
+        "why": "Then every lesson works without the internet. Only the videos need it.",
+        "how": "Open Thinkerwell with the internet on, and keep it open until the lessons are saved. It does this by itself."
+      },
+      "storage": {
+        "title": "Keep saved work safe",
+        "why": "Otherwise the browser may delete learners' work when the device is low on space.",
+        "how": "Tap Keep work safe. If the browser asks, choose Allow.",
+        "button": "Keep work safe",
+        "checking": "Checking what the browser does with saved work…",
+        "asking": "Asking the browser…",
+        "done": "The browser keeps saved work on this device, even when space runs low.",
+        "todo": "The browser may delete saved work when space runs low.",
+        "refused": "The browser said no for now. Browsers often agree once Thinkerwell is on the home screen and used for a few days. Try again then.",
+        "unsupported": "This browser can't be asked. Adding Thinkerwell to the home screen helps keep work safe.",
+        "noStorage": "This browser window can't save learners' work at all. A private window can cause this. Open Thinkerwell in a normal window."
+      },
+      "learners": {
+        "title": "Add the learners who use this device",
+        "why": "Each learner gets a tile on the home page, and their work is kept apart.",
+        "how": "Tap Add a learner, or let each learner tap I'm new here on the home page.",
+        "count": {
+          "one": "{count} learner on this device.",
+          "other": "{count} learners on this device."
+        },
+        "none": "No learners on this device yet.",
+        "add": "Add a learner",
+        "seeClass": "See the class"
+      },
+      "speech": {
+        "title": "Check speech to text",
+        "why": "Say it lets learners talk instead of typing. The check tells lessons whether it can work here.",
+        "last": "Do this step last. On some tablets the check has closed the browser tab. If that happens, open Thinkerwell again.",
+        "how": "In Settings, under Say it, tap Check this device.",
+        "notChecked": "Not checked on this device yet.",
+        "onDevice": "Speech to text works on this device, and what learners say is not sent anywhere.",
+        "download": "It needs a one-time download first. In Settings, tap Download speech to text on good Wi-Fi, then check again.",
+        "notOnDevice": "This browser can't do it on the device, so Say it stays hidden. Learners type instead.",
+        "none": "This browser can't turn speech into text, so there's nothing to check. Say it stays hidden, and learners type instead.",
+        "open": "Check it in Settings"
+      },
+      "later": {
+        "title": "Before you reset this device or give it back",
+        "body": "Save everyone's work to a file, then load the file on the next device. Recordings aren't in the file. Keep the file safe: anyone with it can read the work.",
+        "open": "Save work to a file in Settings"
+      }
+    },
+    "classView": {
+      "title": "The class on this device",
+      "intro": "Every learner on this device, by name, and what each one has done.",
+      "noScores": "There are no scores here, because anyone using this device can open this page.",
+      "printAll": "Print all certificates",
+      "listLabel": "Learners",
+      "learnerAdded": "{name}, added {date}",
+      "classCode": "Class code {code}",
+      "onNow": "On now",
+      "lesson": "Lesson {number}: {title}",
+      "atStep": "Step: {stage}",
+      "upNext": "Up next",
+      "notStarted": "Not started yet",
+      "finished": "Finished every lesson",
+      "lastActive": "Last active",
+      "never": "Not yet",
+      "lessonsDone": "Lessons finished",
+      "lessonsOf": "{completed} of {total}",
+      "checksTried": "Section checks tried",
+      "checksNone": "None yet",
+      "empty": "No learners on this device yet.",
+      "emptyBody": "Learners show up here once they're added. Each learner can add themselves with I'm new here on the home page.",
+      "noStorage": "This browser window can't keep learners' work, so there's nothing to show here. A private window can cause this."
+    },
+    "allCertificates": {
+      "title": "All certificates",
+      "count": {
+        "one": "{count} certificate earned on this device. It prints on a landscape page of its own.",
+        "other": "{count} certificates earned on this device. Each prints on a landscape page of its own."
+      },
+      "names": "Names come from this device and can't be changed here. To print a different name, choose that learner, then open their certificate from the course page.",
+      "namesLink": "Go to the course page",
+      "back": "Back to the class",
+      "labelSection": "Certificate for {name}: {section}",
+      "labelCourse": "Course certificate for {name}",
+      "empty": "Nobody on this device has a certificate yet.",
+      "emptyBody": "A learner gets one by finishing every lesson in a section. The section check isn't needed."
     },
     "settings": {
       "title": "Settings for this device",

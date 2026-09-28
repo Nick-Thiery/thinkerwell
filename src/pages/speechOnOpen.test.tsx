@@ -1,5 +1,6 @@
 /**
- * Opening a page with Say it never asks the browser about speech
+ * Opening a page with Say it (or the educators' "Set up this device", which
+ * shows the saved speech check) never asks the browser about speech
  * recognition. In Chromium 153 on touch devices (phones, tablets and touch
  * laptops, which is what the pilot uses), calling
  * SpeechRecognition.available() as Write, Watch, Reflect or Settings opened
@@ -19,6 +20,7 @@ import { mockSpeechRecognition, restoreSpeechMocks } from '../test/speechMocks';
 import { ReflectStage } from './lesson/reflect/ReflectStage';
 import { WatchStage } from './lesson/watch/WatchStage';
 import { WriteStage } from './lesson/write/WriteStage';
+import { SetupPage } from './educators/SetupPage';
 import { SettingsPage } from './SettingsPage';
 
 const lesson = getLesson('towns-near-rivers') as Lesson;
@@ -39,7 +41,16 @@ const STAGES = {
   reflect: () => <ReflectStage />,
 } satisfies Partial<Record<StageId, () => ReactElement>>;
 
-function renderPage(page: keyof typeof STAGES | 'settings') {
+function renderPage(page: keyof typeof STAGES | 'settings' | 'setup') {
+  if (page === 'setup') {
+    return render(
+      <MemoryRouter initialEntries={['/educators/setup']}>
+        <LearnerSessionProvider>
+          <SetupPage />
+        </LearnerSessionProvider>
+      </MemoryRouter>,
+    );
+  }
   if (page === 'settings') {
     return render(
       <MemoryRouter initialEntries={['/settings']}>
@@ -76,15 +87,16 @@ const DEVICES: Array<[string, Partial<DeviceSettings>]> = [
   ['online speech-to-text allowed', { partner: { allowOnlineDictation: true } }],
 ];
 
-describe('opening Write, Watch, Reflect and Settings never asks the browser about speech recognition', { timeout: 30_000 }, () => {
+describe('opening Write, Watch, Reflect, Settings and Set up this device never asks the browser about speech recognition', { timeout: 30_000 }, () => {
   it.each(DEVICES)('%s', async (_name, settings) => {
     // Chrome's shape: both names, available(), install() and processLocally.
     const mock = mockSpeechRecognition({ availability: 'available', prefixedToo: true });
     await (await getStore()).updateSettings(settings);
 
-    for (const page of ['write', 'watch', 'reflect', 'settings'] as const) {
+    for (const page of ['write', 'watch', 'reflect', 'settings', 'setup'] as const) {
       const view = renderPage(page);
       if (page === 'settings') await screen.findByRole('heading', { level: 2, name: 'Say it: speech to text' });
+      else if (page === 'setup') await screen.findByRole('heading', { level: 2, name: /Check speech to text/ });
       else await screen.findAllByRole('textbox');
       await settle();
       expect(mock.available, page).not.toHaveBeenCalled();
@@ -95,7 +107,7 @@ describe('opening Write, Watch, Reflect and Settings never asks the browser abou
     expect(mock.instances).toHaveLength(0);
   });
 
-  it('while Say it shows, and while the Settings page shows the saved check', async () => {
+  it('while Say it shows, and while Settings and Set up this device show the saved check', async () => {
     const mock = mockSpeechRecognition({ availability: 'available', prefixedToo: true });
     await (await getStore()).updateSettings({ speechCheck: { status: 'available', checkedAt: '2026-09-28T12:00:00.000Z' } });
 
@@ -108,8 +120,12 @@ describe('opening Write, Watch, Reflect and Settings never asks the browser abou
     const reflect = renderPage('reflect');
     expect(await screen.findAllByRole('button', { name: 'Say it' })).toHaveLength(lesson.reflect.prompts.length);
     reflect.unmount();
-    renderPage('settings');
+    const settings = renderPage('settings');
     expect(await screen.findByText(/What learners say is not sent anywhere/)).toBeInTheDocument();
+    await settle();
+    settings.unmount();
+    renderPage('setup');
+    expect(await screen.findByText(/Speech to text works on this device/)).toBeInTheDocument();
     await settle();
 
     expect(mock.available).not.toHaveBeenCalled();
