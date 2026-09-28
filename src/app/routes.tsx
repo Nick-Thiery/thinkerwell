@@ -9,6 +9,7 @@ import { NotFoundPage } from '../pages/NotFoundPage';
 import { JournalPrintPage } from '../pages/print/JournalPrintPage';
 import { RouteErrorPage } from '../pages/RouteErrorPage';
 import { SettingsPage } from '../pages/SettingsPage';
+import { AllCertificatesPage } from '../pages/educators/AllCertificatesPage';
 import { ClassPage } from '../pages/educators/ClassPage';
 import { SetupPage } from '../pages/educators/SetupPage';
 import { AnswerKeyRoute } from './AnswerKeyRoute';
@@ -100,6 +101,7 @@ export const routes: RouteObject[] = [
       // Pilot-day tools: setting up a device (docs/notes/pilot-day-tools.md).
       { path: 'educators/setup', element: <SetupPage /> },
       { path: 'educators/class', element: <ClassPage /> },
+      { path: 'educators/class/certificates', element: <AllCertificatesPage /> },
       { path: 'about', element: <AboutPage /> },
       { path: 'settings', element: <SettingsPage /> },
       // Old Base44 paths.
