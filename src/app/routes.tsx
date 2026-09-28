@@ -1,23 +1,11 @@
-import { lazy, Suspense, type ComponentType } from 'react';
+import { lazy, Suspense } from 'react';
 import { Navigate, type RouteObject } from 'react-router';
 import { CoursePage } from '../pages/CoursePage';
 import { HomePage } from '../pages/HomePage';
 import { NotFoundPage } from '../pages/NotFoundPage';
 import { RouteErrorPage } from '../pages/RouteErrorPage';
 import { AppLayout } from './AppLayout';
-
-/**
- * A route whose page loads when it is first opened (react-router's `lazy`),
- * so a first visit to the home page or the course map doesn't wait for the
- * code, lessons and styles of pages it isn't showing
- * (docs/notes/slow-internet.md). Every one of these files is still in the
- * service worker's precache, so they all open offline after the first visit.
- * While one loads, the page you are on stays; on a first visit straight to
- * one, index.html's header bar stays until it is ready (main.tsx).
- */
-function page<M>(load: () => Promise<M>, pick: (module: M) => ComponentType): Pick<RouteObject, 'lazy'> {
-  return { lazy: async () => ({ Component: pick(await load()) }) };
-}
+import { lazyPage as page } from './lazyPage';
 
 // Three chunks rather than one per page: fewer files to fetch and keep,
 // and they compress better together.
