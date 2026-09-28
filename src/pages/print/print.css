@@ -77,8 +77,9 @@
   font-weight: 700;
 }
 
-.tw-print-sheet ul,
-.tw-print-sheet ol {
+/* Not role="list" lists: global.css takes their padding away, and wins. */
+.tw-print-sheet ul:where(:not([role="list"])),
+.tw-print-sheet ol:where(:not([role="list"])) {
   padding-inline-start: var(--space-6);
 }
 
@@ -309,10 +310,9 @@
     break-inside: avoid;
   }
 
-  /* The picture: not wider than the page, and not taller than most of it. */
+  /* The picture: not taller than most of the page. Its width is
+     LessonVisual.css's (the page's), and an SVG keeps its shape. */
   .tw-print-evidence img {
     max-block-size: 120mm;
-    inline-size: auto;
-    max-inline-size: 100%;
   }
 }
