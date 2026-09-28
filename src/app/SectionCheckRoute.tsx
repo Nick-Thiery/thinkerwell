@@ -1,5 +1,5 @@
 import { useParams } from 'react-router';
-import { getSection } from '../content';
+import { getSection } from '../content/catalog';
 import { NotFoundPage } from '../pages/NotFoundPage';
 import { SectionCheckPage } from '../pages/SectionCheckPage';
 

@@ -1,13 +1,13 @@
 import { lessonPath } from '../../app/lessonUrls';
-import type { Lesson } from '../../content';
+import type { LessonSummary } from '../../content/catalog';
 import { Button, ContinueCard } from '../../components/ds';
 import { useI18n } from '../../i18n';
 
 export interface GuestHomeProps {
-  lesson1: Lesson;
+  lesson1: LessonSummary;
 }
 
-/** Look-around mode's home: browse without saving, pointed straight at Lesson 1. */
+/** Look-around mode's home: browse without saving, pointed straight at LessonSummary 1. */
 export function GuestHome({ lesson1 }: GuestHomeProps) {
   const { t } = useI18n();
   return (

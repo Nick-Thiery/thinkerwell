@@ -1,6 +1,7 @@
 import { act, cleanup, render, screen, waitFor, within } from '@testing-library/react';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 import { afterEach, beforeEach, describe, expect, it, vi, type MockInstance } from 'vitest';
+import { firstPageReady } from '../../app/firstPageReady';
 import { routes } from '../../app/routes';
 import { getLessons, type Lesson } from '../../content';
 import { t } from '../../i18n';
@@ -124,6 +125,8 @@ describe('every lesson, every step', () => {
     async (_number, lesson) => {
       const all = steps(lesson);
       const router = createMemoryRouter(routes, { initialEntries: [`/lesson/${lesson.id}/${all[0]!.path}`] });
+      // The lesson pages load when first opened (routes.tsx); mount once they have, as main.tsx does.
+      await firstPageReady(router);
       render(<RouterProvider router={router} />);
 
       for (const [index, step] of all.entries()) {

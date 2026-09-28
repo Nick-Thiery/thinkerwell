@@ -1,21 +1,39 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, type ComponentType } from 'react';
 import { Navigate, type RouteObject } from 'react-router';
-import { AboutPage } from '../pages/AboutPage';
 import { CoursePage } from '../pages/CoursePage';
-import { EducatorsPage } from '../pages/EducatorsPage';
 import { HomePage } from '../pages/HomePage';
-import { JournalPage } from '../pages/JournalPage';
 import { NotFoundPage } from '../pages/NotFoundPage';
-import { JournalPrintPage } from '../pages/print/JournalPrintPage';
 import { RouteErrorPage } from '../pages/RouteErrorPage';
-import { SettingsPage } from '../pages/SettingsPage';
-import { AnswerKeyRoute } from './AnswerKeyRoute';
 import { AppLayout } from './AppLayout';
-import { CourseCertificateRoute, SectionCertificateRoute } from './CertificateRoute';
-import { LessonPrintRoute } from './LessonPrintRoute';
-import { LessonRoute } from './LessonRoute';
-import { SectionCheckRoute } from './SectionCheckRoute';
-import { TeacherGuideRoute } from './TeacherGuideRoute';
+
+/**
+ * A route whose page loads when it is first opened (react-router's `lazy`),
+ * so a first visit to the home page or the course map doesn't wait for the
+ * code, lessons and styles of pages it isn't showing
+ * (docs/notes/slow-internet.md). Every one of these files is still in the
+ * service worker's precache, so they all open offline after the first visit.
+ * While one loads, the page you are on stays; on a first visit straight to
+ * one, index.html's header bar stays until it is ready (main.tsx).
+ */
+function page<M>(load: () => Promise<M>, pick: (module: M) => ComponentType): Pick<RouteObject, 'lazy'> {
+  return { lazy: async () => ({ Component: pick(await load()) }) };
+}
+
+// Three chunks rather than one per page: fewer files to fetch and keep,
+// and they compress better together.
+const lessonPages = () => import('./lazy/lessonPages');
+const teacherPages = () => import('./lazy/teacherPages');
+const morePages = () => import('./lazy/morePages');
+const lesson = page(lessonPages, (m) => m.LessonRoute);
+
+/**
+ * Loads every lazily loaded page's code. main.tsx calls it once a service
+ * worker controls the page, when the files come from the offline copy
+ * rather than the internet.
+ */
+export function loadEveryPage(): Promise<unknown> {
+  return Promise.all([lessonPages(), teacherPages(), morePages()]);
+}
 
 /**
  * Dev-only tools (docs/BUILD_PLAN.md phase 2): a live gallery of every
@@ -82,21 +100,21 @@ export const routes: RouteObject[] = [
     children: [
       { index: true, element: <HomePage /> },
       { path: 'course', element: <CoursePage /> },
-      { path: 'lesson/:id', element: <LessonRoute /> },
+      { path: 'lesson/:id', ...lesson },
       // Ranked above :stage (a fixed segment beats a dynamic one).
-      { path: 'lesson/:id/print', element: <LessonPrintRoute /> },
-      { path: 'lesson/:id/:stage', element: <LessonRoute /> },
-      { path: 'section/:id/check', element: <SectionCheckRoute /> },
-      { path: 'journal', element: <JournalPage /> },
-      { path: 'journal/print', element: <JournalPrintPage /> },
+      { path: 'lesson/:id/print', ...page(teacherPages, (m) => m.LessonPrintRoute) },
+      { path: 'lesson/:id/:stage', ...lesson },
+      { path: 'section/:id/check', ...page(lessonPages, (m) => m.SectionCheckRoute) },
+      { path: 'journal', ...page(teacherPages, (m) => m.JournalPage) },
+      { path: 'journal/print', ...page(teacherPages, (m) => m.JournalPrintPage) },
       // Printable certificates, built on the print views' page and toolbar.
-      { path: 'certificate/section/:id', element: <SectionCertificateRoute /> },
-      { path: 'certificate/course', element: <CourseCertificateRoute /> },
-      { path: 'educators', element: <EducatorsPage /> },
-      { path: 'educators/lesson/:id', element: <TeacherGuideRoute /> },
-      { path: 'educators/section/:id/answers', element: <AnswerKeyRoute /> },
-      { path: 'about', element: <AboutPage /> },
-      { path: 'settings', element: <SettingsPage /> },
+      { path: 'certificate/section/:id', ...page(morePages, (m) => m.SectionCertificateRoute) },
+      { path: 'certificate/course', ...page(morePages, (m) => m.CourseCertificateRoute) },
+      { path: 'educators', ...page(teacherPages, (m) => m.EducatorsPage) },
+      { path: 'educators/lesson/:id', ...page(teacherPages, (m) => m.TeacherGuideRoute) },
+      { path: 'educators/section/:id/answers', ...page(teacherPages, (m) => m.AnswerKeyRoute) },
+      { path: 'about', ...page(morePages, (m) => m.AboutPage) },
+      { path: 'settings', ...page(morePages, (m) => m.SettingsPage) },
       // Old Base44 paths.
       { path: 'onboarding', element: <Navigate replace to="/" /> },
       { path: 'courses', element: <Navigate replace to="/course" /> },

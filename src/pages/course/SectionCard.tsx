@@ -1,12 +1,12 @@
 import { lessonPath, sectionCertificatePath, sectionCheckPath } from '../../app/lessonUrls';
-import type { Lesson, Section } from '../../content';
+import type { LessonSummary, Section } from '../../content/catalog';
 import { Button, LessonRow, SectionHeader } from '../../components/ds';
 import { useI18n } from '../../i18n';
 import { isLessonComplete, nextStageForLesson, sectionProgress, stagesDoneForLesson, type ProgressByLessonId } from '../../storage';
 
 export interface SectionCardProps {
   section: Section;
-  lessons: readonly Lesson[];
+  lessons: readonly LessonSummary[];
   progress: ProgressByLessonId;
   /** The one lesson to highlight (findContinueTarget's result), or undefined for a guest or a finished learner. */
   highlightLessonId?: string;

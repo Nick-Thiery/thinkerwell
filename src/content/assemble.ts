@@ -1,11 +1,11 @@
 // With the extension: vite.config.ts loads this through ./load.ts.
 import type { CourseFile, Lesson, Section } from './schema.ts';
 
-export interface LoadedContent {
+export interface LoadedContent<L extends Pick<Lesson, 'number'> = Lesson> {
   course: CourseFile;
   sections: Section[];
   /** In course order. */
-  lessons: Lesson[];
+  lessons: L[];
 }
 
 /**
@@ -14,7 +14,7 @@ export interface LoadedContent {
  * ./load.ts does that, at build time and in the tests, before the content
  * reaches the app.
  */
-export function assembleContent(course: CourseFile, lessons: readonly Lesson[]): LoadedContent {
+export function assembleContent<L extends Pick<Lesson, 'number'>>(course: CourseFile, lessons: readonly L[]): LoadedContent<L> {
   const sections = [...course.sections].sort((a, b) => a.number - b.number);
   const byNumber = new Map(lessons.map((lesson) => [lesson.number, lesson]));
   return {

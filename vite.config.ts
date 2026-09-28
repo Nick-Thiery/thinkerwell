@@ -4,7 +4,9 @@ import path from 'node:path';
 import { defineConfig, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
+import { LESSON_CATALOG_FIELDS } from './src/content/catalogFields.ts';
 import { loadContent, loadQuizzes, parseContentFile, type ContentFileKind } from './src/content/load.ts';
+import type { Lesson, QuizFile } from './src/content/schema.ts';
 
 /** Which kind of content file a module is, from its path, or null for anything else. */
 function contentKind(id: string): ContentFileKind | null {
@@ -67,6 +69,48 @@ function checkContent(): Plugin {
   };
 }
 
+const LESSON_CATALOG = 'virtual:thinkerwell/lesson-catalog';
+
+/**
+ * The lesson catalog (src/content/catalog.ts): each lesson's catalog fields
+ * (src/content/catalogFields.ts) and each section check's number of
+ * questions, made from the content files as they are checked and parsed
+ * (zod trims stray spaces), so it always matches them. It lets the home
+ * page and the course map list the lessons without loading their text.
+ */
+function lessonCatalog(): Plugin {
+  let root = process.cwd();
+  const resolved = `\0${LESSON_CATALOG}`;
+  return {
+    name: 'thinkerwell:lesson-catalog',
+    configResolved(config) {
+      root = config.root;
+    },
+    resolveId(id) {
+      return id === LESSON_CATALOG ? resolved : null;
+    },
+    load(id) {
+      if (id !== resolved) return null;
+      const parsed = (sub: 'lessons' | 'quizzes', kind: ContentFileKind): unknown[] => {
+        const dir = path.join(root, 'content', sub);
+        return readdirSync(dir)
+          .filter((name) => name.endsWith('.json'))
+          .sort()
+          .map((name) => {
+            const file = path.join(dir, name);
+            this.addWatchFile(file);
+            return parseContentFile(kind, JSON.parse(readFileSync(file, 'utf8')), `content/${sub}/${name}`);
+          });
+      };
+      const lessons = (parsed('lessons', 'lesson') as Lesson[]).map((lesson) =>
+        Object.fromEntries(LESSON_CATALOG_FIELDS.map((field) => [field, lesson[field]])),
+      );
+      const quizQuestions = Object.fromEntries((parsed('quizzes', 'quiz') as QuizFile[]).map((quiz) => [quiz.section, quiz.questions.length]));
+      return `export default ${JSON.stringify({ lessons, quizQuestions })};`;
+    },
+  };
+}
+
 /**
  * Stops the build if zod reaches the browser bundle. The content is checked
  * at build time (checkContent above), so the browser never needs zod; but
@@ -90,6 +134,58 @@ function keepZodOutOfTheBrowser(): Plugin {
           );
         }
       }
+    },
+  };
+}
+
+/**
+ * Stops the build if a first visit would download something it shouldn't
+ * (docs/notes/slow-internet.md). "First visit" is the entry chunk and every
+ * chunk it imports statically: what index.html loads before any page shows.
+ * - No lesson or section check file: they load with the pages that show
+ *   them (src/content/catalog.ts). A value imported from src/content/index.ts
+ *   by any module on the home page or course map would bring all 24 back.
+ * - No dev-only page (src/dev) in any chunk, and no source map anywhere.
+ */
+function keepFirstVisitLight(): Plugin {
+  return {
+    name: 'thinkerwell:keep-first-visit-light',
+    apply: 'build',
+    generateBundle(_options, bundle) {
+      const chunks = new Map(
+        Object.values(bundle)
+          .filter((output) => output.type === 'chunk')
+          .map((chunk) => [chunk.fileName, chunk]),
+      );
+      const firstVisit = new Set<string>();
+      const visit = (fileName: string) => {
+        if (firstVisit.has(fileName)) return;
+        firstVisit.add(fileName);
+        for (const imported of chunks.get(fileName)?.imports ?? []) visit(imported);
+      };
+      for (const chunk of chunks.values()) if (chunk.isEntry) visit(chunk.fileName);
+      for (const fileName of firstVisit) {
+        const chunk = chunks.get(fileName);
+        if (chunk?.isDynamicEntry && !chunk.isEntry) {
+          const by = [...firstVisit].filter((f) => chunks.get(f)?.imports.includes(fileName));
+          this.error(
+            `A lazily loaded chunk (${fileName}) is in what a first visit downloads, imported by ${by.join(', ')}: something on the home page or course map imports a file from src/app/pages/ or a module only those pages should use.`,
+          );
+        }
+      }
+      for (const chunk of chunks.values()) {
+        const ids = chunk.moduleIds ?? Object.keys(chunk.modules);
+        const lesson = ids.find((id) => /[\\/]content[\\/](lessons|quizzes)[\\/][^\\/]+\.json$/.test(id));
+        if (lesson && firstVisit.has(chunk.fileName)) {
+          this.error(
+            `A lesson file is in what a first visit downloads (${chunk.fileName}, from ${lesson}). Pages on the first screen read src/content/catalog.ts; only lazy pages import values from src/content/index.ts.`,
+          );
+        }
+        const dev = ids.find((id) => /[\\/]src[\\/]dev[\\/]/.test(id));
+        if (dev) this.error(`A dev-only page is in the production build (${chunk.fileName}, from ${dev}).`);
+      }
+      const map = Object.keys(bundle).find((fileName) => fileName.endsWith('.map'));
+      if (map) this.error(`A source map is in the production build (${map}).`);
     },
   };
 }
@@ -213,7 +309,7 @@ function siteHeaders(): Record<string, string> {
 // VITE_CACHE_DIR lets several dev servers run at once, each with its own
 // dependency cache (for example .build-review/vite-cache-5301).
 export default defineConfig({
-  plugins: [react(), checkContent(), stripTeamOnlyLessonFields(), keepZodOutOfTheBrowser(), offline()],
+  plugins: [react(), checkContent(), lessonCatalog(), stripTeamOnlyLessonFields(), keepZodOutOfTheBrowser(), keepFirstVisitLight(), offline()],
   cacheDir: process.env.VITE_CACHE_DIR || 'node_modules/.vite',
   server: {
     // Content lives outside src/ (content/*.json) and is read at build time.
@@ -245,13 +341,23 @@ export default defineConfig({
     assetsInlineLimit: (file) => (file.endsWith('.woff2') ? false : undefined),
     // No source maps in production: smaller downloads on bad connections.
     sourcemap: false,
+    // One stylesheet for every page, as before the pages were split into
+    // chunks: with a stylesheet per chunk, a page's styles could load in a
+    // different order and one rule win over another (the print view's
+    // evidence cards did). It is about 5 kB more on a first visit.
+    cssCodeSplit: false,
     rolldownOptions: {
       output: {
         // Separate chunks so an app update doesn't re-download the lesson
-        // text or the libraries, and vice versa.
+        // text or the libraries, and vice versa. The pages a first visit
+        // to the home page or the course map doesn't show are in chunks of
+        // their own (src/app/pages/).
         codeSplitting: {
           groups: [
-            { name: 'content', test: /[\\/]content[\\/].*\.json$/ },
+            // Every lesson and section check, in one file: the pages that
+            // show them load it (src/content/catalog.ts). course.json stays
+            // with the app: every page needs it.
+            { name: 'content', test: /[\\/]content[\\/](lessons|quizzes)[\\/][^\\/]+\.json$/ },
             // Registering the service worker waits for the page to load
             // (src/offline/serviceWorker.ts), so its library comes after, too.
             { name: 'workbox-window', test: /[\\/]node_modules[\\/]workbox-window[\\/]/ },

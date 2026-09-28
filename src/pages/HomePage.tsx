@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { usePageTitle } from '../app/usePageTitle';
-import { getLessonByNumber } from '../content';
+import { getLessonByNumber } from '../content/catalog';
 import { useI18n } from '../i18n';
 import { GuestHome } from './home/GuestHome';
 import { LearnerDashboard } from './home/LearnerDashboard';

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { getLessons, type Lesson } from '../../content';
+import { getLessons, type LessonSummary } from '../../content/catalog';
 import { Button, Icon, LearnerTile } from '../../components/ds';
 import { useI18n } from '../../i18n';
 import { addedOn, learnersWithSameName } from '../../session';
@@ -11,7 +11,7 @@ type PickerView = { kind: 'grid' } | { kind: 'new' } | { kind: 'confirmRemove'; 
 
 export interface WhoIsLearningPickerProps {
   learners: Learner[];
-  lesson1: Lesson;
+  lesson1: LessonSummary;
   onChoose: (id: string) => void;
   onAdd: (input: NewLearner) => Promise<void>;
   onRemove: (id: string) => Promise<void>;
@@ -37,7 +37,7 @@ export function WhoIsLearningPicker({ learners, lesson1, onChoose, onAdd, onRemo
   const isFirstRender = useRef(true);
 
   // Loads each learner's continue target once the picker shows, for the
-  // tiles' "Up to Lesson N" meta text — the exact same lookup
+  // tiles' "Up to LessonSummary N" meta text — the exact same lookup
   // (findContinueTarget over every saved lesson) the dashboard uses, so a
   // tile never names a different lesson than that learner's own dashboard
   // does once chosen. Fails soft: a learner whose lookup errors just shows

@@ -16,7 +16,7 @@
  */
 import { useEffect, useId, useRef, useState, type ChangeEvent, type RefObject } from 'react';
 import { Button, Icon } from '../../components/ds';
-import { getLessons, getSections } from '../../content';
+import { getLessons, getSections } from '../../content/catalog';
 import { useI18n, type MessageKey } from '../../i18n';
 import { addedOn, learnersWithSameName, useLearnerSession } from '../../session';
 import {

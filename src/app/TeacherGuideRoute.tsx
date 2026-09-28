@@ -1,7 +1,7 @@
 import { Navigate, useLocation, useParams } from 'react-router';
 import { NotFoundPage } from '../pages/NotFoundPage';
 import { TeacherGuidePage } from '../pages/educators/TeacherGuidePage';
-import { resolveTeacherGuideRoute } from './lessonUrls';
+import { resolveTeacherGuideRoute } from './lessonRoutes';
 
 /** /educators/lesson/:id: a lesson's teacher guide, with old Base44 ids redirected like the lesson itself. */
 export function TeacherGuideRoute() {

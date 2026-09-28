@@ -18,7 +18,7 @@ import { useState } from 'react';
 import { lessonPath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
 import { Button, LessonRow, SectionBadge, TextField } from '../../components/ds';
-import { getCourse, getLessons, getSectionLessons, getSections, type Lesson, type Section } from '../../content';
+import { getCourse, getLessons, getSectionLessons, getSections, type LessonSummary, type Section } from '../../content/catalog';
 import { useI18n } from '../../i18n';
 import { useLearnerProgress, useLearnerSession } from '../../session';
 import { isLessonComplete, lessonSetStatus, nextStageForLesson, stagesDoneForLesson, type ProgressByLessonId } from '../../storage';
@@ -34,7 +34,7 @@ export const CERTIFICATE_NAME_MAX = 60;
 export type CertificateScope = { kind: 'section'; section: Section } | { kind: 'course' };
 
 /** The lessons a certificate is for: a section's, or all 24. */
-export function certificateLessons(scope: CertificateScope): readonly Lesson[] {
+export function certificateLessons(scope: CertificateScope): readonly LessonSummary[] {
   return scope.kind === 'section' ? getSectionLessons(scope.section.id) : getLessons();
 }
 
@@ -107,7 +107,7 @@ function LessonsLeft({
 }: {
   scope: CertificateScope;
   title: string;
-  left: readonly Lesson[];
+  left: readonly LessonSummary[];
   progress: ProgressByLessonId;
 }) {
   const { t } = useI18n();

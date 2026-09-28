@@ -1,7 +1,7 @@
 import { Navigate, useLocation, useParams } from 'react-router';
 import { NotFoundPage } from '../pages/NotFoundPage';
 import { LessonPrintPage } from '../pages/print/LessonPrintPage';
-import { resolveLessonPrintRoute } from './lessonUrls';
+import { resolveLessonPrintRoute } from './lessonRoutes';
 
 /** /lesson/:id/print: a lesson's print view, with old Base44 ids redirected like the lesson itself. */
 export function LessonPrintRoute() {

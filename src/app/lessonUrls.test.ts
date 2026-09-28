@@ -1,15 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { getLesson, getLessons, STAGES, type LessonStep } from '../content';
-import {
-  answerKeyPath,
-  educatorsPath,
-  lessonPath,
-  resolveLessonPrintRoute,
-  resolveLessonRoute,
-  resolveTeacherGuideRoute,
-  sectionCheckPath,
-  teacherGuidePath,
-} from './lessonUrls';
+import { resolveLessonPrintRoute, resolveLessonRoute, resolveTeacherGuideRoute } from './lessonRoutes';
+import { answerKeyPath, educatorsPath, lessonPath, sectionCheckPath, teacherGuidePath } from './lessonUrls';
 
 const STEPS: LessonStep[] = [...STAGES, 'complete'];
 const lessons = getLessons();

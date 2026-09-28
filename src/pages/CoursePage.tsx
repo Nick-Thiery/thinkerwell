@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router';
 import { usePageTitle } from '../app/usePageTitle';
 import { Badge, Icon } from '../components/ds';
-import { getCourse, getLessonSection, getLessons, getSectionLessons, getSections } from '../content';
+import { getCourse, getLessonSection, getLessons, getSectionLessons, getSections } from '../content/catalog';
 import { useI18n } from '../i18n';
 import { useLearnerProgress, useLearnerSession } from '../session';
 import { findContinueTarget, sectionProgress, type SectionProgress } from '../storage';

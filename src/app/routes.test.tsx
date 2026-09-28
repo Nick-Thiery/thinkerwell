@@ -4,12 +4,18 @@ import { createMemoryRouter, RouterProvider } from 'react-router';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { getLessons, getSections } from '../content';
 import { DEV_DIR_STORAGE_KEY, t } from '../i18n';
+import { firstPageReady } from './firstPageReady';
 import { routes } from './routes';
 
 type Router = ReturnType<typeof createMemoryRouter>;
 
-function renderAt(path: string): Router {
+/**
+ * Mounts the app at `path` once the router has the page's code, as main.tsx
+ * does: most pages load when first opened (routes.tsx).
+ */
+async function renderAt(path: string): Promise<Router> {
   const router = createMemoryRouter(routes, { initialEntries: [path] });
+  await firstPageReady(router);
   render(<RouterProvider router={router} />);
   return router;
 }
@@ -57,35 +63,35 @@ describe('top-level routes', () => {
   // for the heading rather than asserting on the very first render; that
   // also passes trivially for the pages that render synchronously.
   it.each(pages)('%s shows one h1 with its title', async (path, title) => {
-    renderAt(path);
+    await renderAt(path);
     await waitFor(() => expect(heading()).toHaveTextContent(title));
     expect(document.title).toBe(t('app.documentTitle', { page: title }));
     expect(document.title).toBe(`${title} · Thinkerwell`);
   });
 
-  it('sets lang and dir on <html>', () => {
-    renderAt('/');
+  it('sets lang and dir on <html>', async () => {
+    await renderAt('/');
     expect(document.documentElement.lang).toBe('en');
     expect(document.documentElement.dir).toBe('ltr');
   });
 
-  it('has a skip link to #main, and main has that id', () => {
-    renderAt('/');
+  it('has a skip link to #main, and main has that id', async () => {
+    await renderAt('/');
     const skip = screen.getByRole('link', { name: t('app.skipToContent') });
     expect(skip).toHaveAttribute('href', '#main');
     expect(screen.getByRole('main')).toHaveAttribute('id', 'main');
   });
 
-  it.each(pages)('marks the current nav link on %s with aria-current=page', (path) => {
-    renderAt(path);
+  it.each(pages)('marks the current nav link on %s with aria-current=page', async (path) => {
+    await renderAt(path);
     const nav = screen.getByRole('navigation', { name: t('nav.label') });
     const current = nav.querySelectorAll('[aria-current="page"]');
     expect(current).toHaveLength(1);
     expect(current[0]).toHaveAttribute('href', path);
   });
 
-  it('marks Course as the current page on a lesson page, as the lesson screens do', () => {
-    renderAt('/lesson/towns-near-rivers/read');
+  it('marks Course as the current page on a lesson page, as the lesson screens do', async () => {
+    await renderAt('/lesson/towns-near-rivers/read');
     const nav = screen.getByRole('navigation', { name: t('nav.label') });
     const current = nav.querySelectorAll('[aria-current="page"]');
     expect(current).toHaveLength(1);
@@ -96,7 +102,7 @@ describe('top-level routes', () => {
 describe('Settings in the header', () => {
   it('is an icon link at the end of the header, outside the five main links', async () => {
     const user = userEvent.setup();
-    const router = renderAt('/');
+    const router = await renderAt('/');
     const nav = screen.getByRole('navigation', { name: t('nav.label') });
     expect(nav.querySelectorAll('a')).toHaveLength(5);
     const settings = screen.getByRole('link', { name: t('nav.settings') });
@@ -134,14 +140,14 @@ describe('lesson routes', () => {
   );
 
   it('/lesson/:id redirects to Read', async () => {
-    const router = renderAt('/lesson/changing-scale');
+    const router = await renderAt('/lesson/changing-scale');
     await waitFor(() => expect(where(router)).toBe('/lesson/changing-scale/read'));
     await waitFor(() => expect(document.title).toBe('Lesson 3: Read · Thinkerwell'));
     await waitFor(() => expect(heading()).toBeInTheDocument());
   });
 
   it('/lesson/l6 lands on /lesson/towns-near-rivers/read', async () => {
-    const router = renderAt('/lesson/l6');
+    const router = await renderAt('/lesson/l6');
     await waitFor(() => expect(where(router)).toBe('/lesson/towns-near-rivers/read'));
     await waitFor(() => expect(document.title).toBe('Lesson 10: Read · Thinkerwell'));
     // A redirect replaces the old entry, so Back doesn't bounce into it again.
@@ -149,46 +155,46 @@ describe('lesson routes', () => {
   });
 
   it('/lesson/history-scale/watch keeps the stage', async () => {
-    const router = renderAt('/lesson/history-scale/watch');
+    const router = await renderAt('/lesson/history-scale/watch');
     await waitFor(() => expect(where(router)).toBe('/lesson/changing-scale/watch'));
     await waitFor(() => expect(document.title).toBe('Lesson 3: Watch · Thinkerwell'));
   });
 
   it('/lesson/l6/write?preview=true keeps ?preview=true', async () => {
-    const router = renderAt('/lesson/l6/write?preview=true');
+    const router = await renderAt('/lesson/l6/write?preview=true');
     await waitFor(() => expect(where(router)).toBe('/lesson/towns-near-rivers/write?preview=true'));
     await waitFor(() => expect(document.title).toBe('Lesson 10: Write · Thinkerwell'));
   });
 
   it('keeps the hash on redirect', async () => {
-    const router = renderAt('/lesson/l6?preview=true#check');
+    const router = await renderAt('/lesson/l6?preview=true#check');
     await waitFor(() => expect(where(router)).toBe('/lesson/towns-near-rivers/read?preview=true#check'));
   });
 
   it('matches /Lesson/L6/Watch case-insensitively', async () => {
-    const router = renderAt('/Lesson/L6/Watch');
+    const router = await renderAt('/Lesson/L6/Watch');
     await waitFor(() => expect(where(router)).toBe('/lesson/towns-near-rivers/watch'));
     await waitFor(() => expect(document.title).toBe('Lesson 10: Watch · Thinkerwell'));
   });
 });
 
 describe('section checks', () => {
-  it.each(getSections().map((s) => [s.id, s] as const))('/section/%s/check shows its title', (id, section) => {
-    renderAt(`/section/${id}/check`);
+  it.each(getSections().map((s) => [s.id, s] as const))('/section/%s/check shows its title', async (id, section) => {
+    await renderAt(`/section/${id}/check`);
     expect(heading()).toHaveTextContent(t('pages.sectionCheck.title', { section: section.title }));
   });
 });
 
 describe('certificates', () => {
   it.each(getSections().map((s) => [s.id, s] as const))('/certificate/section/%s shows its title', async (id, section) => {
-    renderAt(`/certificate/section/${id}`);
+    await renderAt(`/certificate/section/${id}`);
     const title = t('certificates.sectionPageTitle', { section: section.title });
     await waitFor(() => expect(heading()).toHaveTextContent(title));
     expect(document.title).toBe(`${title} · Thinkerwell`);
   });
 
   it('/certificate/course shows its title', async () => {
-    renderAt('/certificate/course');
+    await renderAt('/certificate/course');
     await waitFor(() => expect(heading()).toHaveTextContent('Course certificate'));
     expect(document.title).toBe('Course certificate · Thinkerwell');
   });
@@ -210,8 +216,8 @@ describe('not found', () => {
     '/certificate/nope',
   ])(
     '%s shows the friendly 404',
-    (path) => {
-      const router = renderAt(path);
+    async (path) => {
+      const router = await renderAt(path);
       expect(heading()).toHaveTextContent(notFoundTitle);
       expect(screen.getByText(t('notFound.body'))).toBeInTheDocument();
       expect(screen.getByRole('link', { name: t('notFound.home') })).toHaveAttribute('href', '/');
@@ -225,7 +231,7 @@ describe('not found', () => {
 
 describe('old Base44 paths', () => {
   it('/onboarding redirects to home', async () => {
-    const router = renderAt('/onboarding');
+    const router = await renderAt('/onboarding');
     await waitFor(() => expect(where(router)).toBe('/'));
     // Home reads IndexedDB before it has an h1 to show, so the URL can
     // update one tick before the heading appears.
@@ -233,22 +239,22 @@ describe('old Base44 paths', () => {
   });
 
   it('/courses redirects to the course map', async () => {
-    const router = renderAt('/courses');
+    const router = await renderAt('/courses');
     await waitFor(() => expect(where(router)).toBe('/course'));
     await waitFor(() => expect(heading()).toHaveTextContent(t('pages.course.title')));
   });
 });
 
 describe('right-to-left dev switch', () => {
-  it('?dir=rtl sets dir="rtl" on <html> and shows the notice', () => {
-    renderAt('/?dir=rtl');
+  it('?dir=rtl sets dir="rtl" on <html> and shows the notice', async () => {
+    await renderAt('/?dir=rtl');
     expect(document.documentElement.dir).toBe('rtl');
     expect(sessionStorage.getItem(DEV_DIR_STORAGE_KEY)).toBe('rtl');
     expect(screen.getByRole('status')).toHaveTextContent(t('dev.rtlOn'));
   });
 
   it('persists across navigation, and ?dir=ltr clears it', async () => {
-    const router = renderAt('/?dir=rtl');
+    const router = await renderAt('/?dir=rtl');
     expect(document.documentElement.dir).toBe('rtl');
 
     await act(() => router.navigate('/course'));
@@ -264,27 +270,27 @@ describe('right-to-left dev switch', () => {
     expect(document.documentElement.dir).toBe('ltr');
   });
 
-  it('is remembered from earlier in the tab', () => {
+  it('is remembered from earlier in the tab', async () => {
     sessionStorage.setItem(DEV_DIR_STORAGE_KEY, 'rtl');
-    renderAt('/course');
+    await renderAt('/course');
     expect(document.documentElement.dir).toBe('rtl');
   });
 
   it('keeps ?dir=rtl through a lesson redirect', async () => {
-    const router = renderAt('/lesson/l6?dir=rtl');
+    const router = await renderAt('/lesson/l6?dir=rtl');
     await waitFor(() => expect(where(router)).toBe('/lesson/towns-near-rivers/read?dir=rtl'));
     expect(document.documentElement.dir).toBe('rtl');
   });
 });
 
 describe('focus after navigation', () => {
-  it('does not move focus on first load', () => {
-    renderAt('/course');
+  it('does not move focus on first load', async () => {
+    await renderAt('/course');
     expect(document.activeElement).toBe(document.body);
   });
 
   it('does not move focus after the initial redirect', async () => {
-    const router = renderAt('/lesson/l6');
+    const router = await renderAt('/lesson/l6');
     await waitFor(() => expect(where(router)).toBe('/lesson/towns-near-rivers/read'));
     await waitFor(() => expect(heading()).toHaveTextContent(getLessons()[9]!.title));
     expect(heading()).not.toHaveFocus();
@@ -293,7 +299,7 @@ describe('focus after navigation', () => {
 
   it('moves focus to the h1 after clicking a nav link', async () => {
     const user = userEvent.setup();
-    renderAt('/');
+    await renderAt('/');
     await user.click(screen.getByRole('link', { name: t('nav.course') }));
     await waitFor(() => expect(heading()).toHaveTextContent(t('pages.course.title')));
     expect(heading()).toHaveFocus();
@@ -301,7 +307,7 @@ describe('focus after navigation', () => {
 
   it('moves focus to the h1 after going back', async () => {
     const user = userEvent.setup();
-    const router = renderAt('/');
+    const router = await renderAt('/');
     await user.click(screen.getByRole('link', { name: t('nav.about') }));
     await waitFor(() => expect(heading()).toHaveTextContent(t('pages.about.title')));
     (document.activeElement as HTMLElement | null)?.blur();
@@ -312,14 +318,14 @@ describe('focus after navigation', () => {
   });
 
   it('moves focus to the h1 after a link that redirects (an old lesson id)', async () => {
-    const router = renderAt('/');
+    const router = await renderAt('/');
     await act(() => router.navigate('/lesson/l6'));
     await waitFor(() => expect(where(router)).toBe('/lesson/towns-near-rivers/read'));
     expect(heading()).toHaveFocus();
   });
 
   it('moves focus to the 404 heading after a link to an unknown page', async () => {
-    const router = renderAt('/');
+    const router = await renderAt('/');
     await act(() => router.navigate('/whatever'));
     expect(heading()).toHaveTextContent(notFoundTitle);
     expect(heading()).toHaveFocus();

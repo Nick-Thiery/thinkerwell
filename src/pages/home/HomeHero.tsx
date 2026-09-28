@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
-import { getCourse, getSections } from '../../content';
+import { getCourse, getSections } from '../../content/catalog';
 import { Badge, Mascot } from '../../components/ds';
 import { useI18n } from '../../i18n';
-import { LESSON_PHONE_QUERY, useMediaQuery } from '../../lesson';
+import { LESSON_PHONE_QUERY, useMediaQuery } from '../../lesson/useMediaQuery';
 
 const MASCOT_SRC = '/images/thinkerwell-mascot-transparent.png';
 

@@ -1,6 +1,6 @@
 import { createElement } from 'react';
 import { courseCertificatePath, sectionCheckPath, lessonPath } from '../../app/lessonUrls';
-import { getLessonSection, getLessons, getQuiz, getSections } from '../../content';
+import { getLessonSection, getLessons, getQuizQuestionCount, getSections } from '../../content/catalog';
 import { Badge, Button, ContinueCard, Icon, ProgressRing, SectionBadge, useDsLinkComponent } from '../../components/ds';
 import { useI18n } from '../../i18n';
 import { useServiceWorker } from '../../offline';
@@ -159,7 +159,7 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
               <p className="body">
                 {t('pages.home.dashboard.sectionCheckBody', {
                   count: readySection.lessons.length,
-                  questions: getQuiz(readySection.id)?.questions.length ?? 0,
+                  questions: getQuizQuestionCount(readySection.id),
                 })}
               </p>
               <Button variant="secondary" href={sectionCheckPath(readySection.id)}>

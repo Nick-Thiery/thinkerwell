@@ -7,6 +7,9 @@
  * already has the data loaded.
  */
 import type { Lesson, Section } from '../content';
+
+/** What these helpers need of a lesson: a catalog entry (src/content/catalog.ts) or a whole lesson. */
+type LessonRef = Pick<Lesson, 'id' | 'number'>;
 import type { LessonProgress, StageId } from './types';
 
 /** A lookup from lessonId to that learner's progress, built once per render. */
@@ -31,8 +34,8 @@ export function nextStageForLesson(progress: LessonProgress | undefined): StageI
   return progress?.currentStage ?? 'read';
 }
 
-export interface ContinueTarget {
-  lesson: Lesson;
+export interface ContinueTarget<L extends LessonRef = Lesson> {
+  lesson: L;
   stage: StageId;
 }
 
@@ -47,11 +50,11 @@ export interface ContinueTarget {
  * Undefined once every lesson is complete (the dashboard then shows a
  * "finished" state instead).
  */
-export function findContinueTarget(
-  lessons: readonly Lesson[],
+export function findContinueTarget<L extends LessonRef>(
+  lessons: readonly L[],
   progress: ProgressByLessonId,
-): ContinueTarget | undefined {
-  let mostRecent: { lesson: Lesson; record: LessonProgress } | undefined;
+): ContinueTarget<L> | undefined {
+  let mostRecent: { lesson: L; record: LessonProgress } | undefined;
   for (const lesson of lessons) {
     const record = progress.get(lesson.id);
     if (!record || isLessonComplete(record)) continue;
@@ -87,7 +90,7 @@ export interface SectionProgress {
 /** How many of a section's lessons are complete, out of how many there are. */
 export function sectionProgress(
   section: Pick<Section, 'lessons'>,
-  lessons: readonly Lesson[],
+  lessons: readonly LessonRef[],
   progress: ProgressByLessonId,
 ): SectionProgress {
   const sectionLessons = lessons.filter((lesson) => section.lessons.includes(lesson.number));
@@ -96,16 +99,16 @@ export function sectionProgress(
 }
 
 /** How many lessons (across every section) a learner has finished. */
-export function totalLessonsCompleted(lessons: readonly Lesson[], progress: ProgressByLessonId): number {
+export function totalLessonsCompleted(lessons: readonly LessonRef[], progress: ProgressByLessonId): number {
   return lessons.filter((lesson) => isLessonComplete(progress.get(lesson.id))).length;
 }
 
 /** How far a learner is through a set of lessons (a section's, or the whole course), for certificates. */
-export interface LessonSetStatus {
+export interface LessonSetStatus<L extends LessonRef = Lesson> {
   /** True once every lesson in the set is complete (and the set isn't empty). */
   complete: boolean;
   /** The lessons not finished yet, in the order given. */
-  left: Lesson[];
+  left: L[];
   /** When the last of them was finished (the latest completedAt) once every one is; null until then. */
   finishedAt: string | null;
 }
@@ -115,8 +118,8 @@ export interface LessonSetStatus {
  * and when the last one was finished. Only lessons count: section checks
  * are optional and never needed (CLAUDE.md rule 3).
  */
-export function lessonSetStatus(lessons: readonly Lesson[], progress: ProgressByLessonId): LessonSetStatus {
-  const left: Lesson[] = [];
+export function lessonSetStatus<L extends LessonRef>(lessons: readonly L[], progress: ProgressByLessonId): LessonSetStatus<L> {
+  const left: L[] = [];
   let latest = '';
   for (const lesson of lessons) {
     const at = progress.get(lesson.id)?.completedAt;
@@ -133,7 +136,7 @@ export function lessonSetStatus(lessons: readonly Lesson[], progress: ProgressBy
  * The complete screen uses it to mark the moment a section (or the whole
  * course) is finished, and not every later visit to an earlier lesson.
  */
-export function finishedSetWith(lesson: Lesson, lessons: readonly Lesson[], progress: ProgressByLessonId): boolean {
+export function finishedSetWith(lesson: LessonRef, lessons: readonly LessonRef[], progress: ProgressByLessonId): boolean {
   const status = lessonSetStatus(lessons, progress);
   return status.complete && progress.get(lesson.id)?.completedAt === status.finishedAt;
 }
@@ -151,7 +154,7 @@ export interface JournalEntry {
  * it has no store of its own (CLAUDE.md's "data kept on the device").
  * Undefined when nothing has been written yet.
  */
-export function latestJournalEntry(lessons: readonly Lesson[], progress: ProgressByLessonId): JournalEntry | undefined {
+export function latestJournalEntry(lessons: readonly LessonRef[], progress: ProgressByLessonId): JournalEntry | undefined {
   let best: (JournalEntry & { updatedAt: string }) | undefined;
   for (const lesson of lessons) {
     const record = progress.get(lesson.id);

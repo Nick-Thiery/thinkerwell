@@ -5,7 +5,7 @@
  */
 import { useId } from 'react';
 import { Icon, type IconName } from '../../components/ds';
-import { getLessons } from '../../content';
+import { getLessons } from '../../content/catalog';
 import { useI18n, type MessageKey } from '../../i18n';
 import { browserAsksToSaveData, isSaveDataOn, useServiceWorker, type OfflineStatus } from '../../offline';
 import type { DeviceSettingsState } from './useDeviceSettings';

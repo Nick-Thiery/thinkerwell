@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from 'react';
 import { useNavigate } from 'react-router';
 import { lessonPath } from '../../app/lessonUrls';
-import type { Lesson } from '../../content';
+import type { LessonSummary } from '../../content/catalog';
 import { Button, Icon, TextField } from '../../components/ds';
 import { useI18n } from '../../i18n';
 import type { LearnerColour, NewLearner } from '../../storage';
@@ -27,8 +27,8 @@ const CLASS_CODE_PATTERN = /^[A-Za-z0-9-]+$/;
 const DEFAULT_COLOUR: LearnerColour = 'paper';
 
 export interface NewLearnerFormProps {
-  /** Lesson 1, shown in the hero pane and used to label the submit button's target. */
-  lesson1: Lesson;
+  /** LessonSummary 1, shown in the hero pane and used to label the submit button's target. */
+  lesson1: LessonSummary;
   onBack: () => void;
   onSubmit: (input: NewLearner) => Promise<void>;
 }
@@ -75,7 +75,7 @@ export function NewLearnerForm({ lesson1, onBack, onSubmit }: NewLearnerFormProp
     if (trimmedCode) input.classCode = trimmedCode.toUpperCase();
     void onSubmit(input)
       .then(() => {
-        // "Start Lesson N": actually takes the new learner straight there,
+        // "Start LessonSummary N": actually takes the new learner straight there,
         // rather than leaving them on a dashboard the button never mentioned.
         void navigate(lessonPath(lesson1.id, 'read'));
       })

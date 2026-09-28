@@ -2,7 +2,7 @@ import { Navigate, useLocation, useParams } from 'react-router';
 import { LessonPlayerProvider } from '../lesson';
 import { LessonPage } from '../pages/lesson/LessonPage';
 import { NotFoundPage } from '../pages/NotFoundPage';
-import { resolveLessonRoute } from './lessonUrls';
+import { resolveLessonRoute } from './lessonRoutes';
 
 /**
  * Handles /lesson/:id and /lesson/:id/:stage, including redirects from old
