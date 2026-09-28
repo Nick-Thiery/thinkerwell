@@ -131,9 +131,9 @@ function stripTeamOnlyLessonFields(): Plugin {
  *   pictures and public/images. Not the two flat mascot files (for
  *   printouts and emails; no page uses them) or the app icons (the browser
  *   fetches those itself when someone installs the app).
- * - Nothing else is cached at runtime: no runtimeCaching, so requests the
- *   precache doesn't hold (YouTube's player after a learner's tap, anything
- *   on another server) are never touched by the service worker at all.
+ * - Nothing else is cached at runtime, so requests the precache doesn't
+ *   hold (YouTube's player after a learner's tap, anything on another
+ *   server) are never touched by the service worker at all.
  * - Page loads (navigations) get the precached index.html, so any address,
  *   /lesson/... included, opens offline. /api/ (measurement, later) and
  *   file addresses are left to the network.
@@ -143,6 +143,10 @@ function stripTeamOnlyLessonFields(): Plugin {
  *   the next time Thinkerwell opens with no other tab on the old one).
  * - The app registers the worker itself (injectRegister: false), in
  *   production only.
+ * - The worker is src/offline/sw.ts (injectManifest): the same Workbox
+ *   precache and routes the generated worker had, but the first visit
+ *   downloads the precache six files at a time instead of one after another
+ *   (docs/notes/slow-internet.md).
  */
 function offline(): Plugin[] {
   return VitePWA({
@@ -168,7 +172,12 @@ function offline(): Plugin[] {
         { src: '/icons/icon-maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
       ],
     },
-    workbox: {
+    // The worker is our own (src/offline/sw.ts): Workbox's precache and
+    // routing, but downloading the precache several files at a time.
+    strategies: 'injectManifest',
+    srcDir: 'src/offline',
+    filename: 'sw.ts',
+    injectManifest: {
       globPatterns: ['**/*.{html,js,css,woff2,svg,png,jpg}'],
       // Not precached: the app icons (the browser fetches them when the site
       // is installed), the flat mascots (for printouts and emails) and the
@@ -179,17 +188,7 @@ function offline(): Plugin[] {
         'images/thinkerwell-mascot-yellow-background.png',
         'social-card.png',
       ],
-      navigateFallback: '/index.html',
-      // /api/ (measurement, later) and addresses of files (anything with an
-      // extension, such as /icons/icon-512.png) go to the network.
-      navigateFallbackDenylist: [/^\/api\//, /\/[^/?]+\.[^/]+$/],
-      runtimeCaching: [],
-      cleanupOutdatedCaches: true,
-      // The first install takes charge of the open page at once, so its
-      // pictures and fonts come from the precache offline straight away.
-      // Updates still wait for a tap (skipWaiting stays off).
-      clientsClaim: true,
-      skipWaiting: false,
+      rollupFormat: 'iife',
       sourcemap: false,
     },
     devOptions: { enabled: false },

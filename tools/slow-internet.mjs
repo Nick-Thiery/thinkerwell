@@ -218,7 +218,7 @@ async function bytesReport(browser, origin) {
 
   const sw = await readFile(path.join(DIST, 'sw.js'), 'utf8').catch(() => null);
   if (sw) {
-    const precached = [...sw.matchAll(/url:"([^"]+)"/g)].map((m) => m[1]);
+    const precached = [...sw.matchAll(/"?url"?:"([^"]+)"/g)].map((m) => m[1]);
     const workbox = [...sw.matchAll(/"\.\/(workbox-[\w-]+)"/g)].map((m) => `${m[1]}.js`);
     const p = await tally(precached);
     printTally('Precache: the whole course, downloaded by the service worker after the first visit', p);

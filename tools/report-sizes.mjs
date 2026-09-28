@@ -116,7 +116,7 @@ try {
 }
 
 async function reportPrecache(sw) {
-  const precached = [...sw.matchAll(/url:"([^"]+)"/g)].map((match) => match[1]);
+  const precached = [...sw.matchAll(/"?url"?:"([^"]+)"/g)].map((match) => match[1]);
   const workbox = [...sw.matchAll(/"\.\/(workbox-[\w-]+)"/g)].map((match) => `${match[1]}.js`);
   print('Precache (the whole site, for offline use)', await total(precached), true);
   print('Service worker itself (sw.js and the Workbox runtime)', await total(['sw.js', ...workbox]), false);

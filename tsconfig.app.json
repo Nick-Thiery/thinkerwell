@@ -23,5 +23,6 @@
     "noImplicitOverride": true,
     "exactOptionalPropertyTypes": false
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["src/offline/sw.ts"]
 }
