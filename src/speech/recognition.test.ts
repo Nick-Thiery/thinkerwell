@@ -106,6 +106,21 @@ describe('createRecognition', () => {
     expect(made.interimResults).toBe(true);
   });
 
+  it('listens for English whatever language the interface is in (the answers are English practice)', () => {
+    const mock = mockSpeechRecognition();
+    document.documentElement.lang = 'fa-AF';
+    document.documentElement.dir = 'rtl';
+    try {
+      createRecognition('on-device');
+      expect(mock.latest().lang).toBe('en-US');
+      createRecognition('online');
+      expect(mock.latest().lang).toBe('en-US');
+    } finally {
+      document.documentElement.lang = 'en';
+      document.documentElement.dir = 'ltr';
+    }
+  });
+
   it('leaves processLocally off for the online path', () => {
     const mock = mockSpeechRecognition();
     createRecognition('online');

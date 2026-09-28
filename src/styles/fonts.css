@@ -8,8 +8,9 @@
  *   for definition examples and journal prompts).
  * Eczar: the "Thinkerwell" wordmark only (500).
  *
- * Arabic-script locales will need their own font (for example Vazirmatn)
- * when they are added.
+ * Arabic-script languages (Dari/Farsi, Arabic) add Vazirmatn's Arabic
+ * letters to these families from src/i18n/fonts/arabic.css, loaded only
+ * while such a language is shown. Somali uses these fonts as they are.
  */
 
 @font-face {
