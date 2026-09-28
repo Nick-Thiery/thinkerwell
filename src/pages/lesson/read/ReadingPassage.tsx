@@ -1,6 +1,8 @@
 import { Fragment, useMemo, type ReactNode } from 'react';
 import { GlossaryTerm } from '../../../components/ds';
 import type { GlossaryEntry } from '../../../content';
+import { useI18n } from '../../../i18n';
+import { glossaryMeaning, type GlossaryMeaning } from '../../../lesson/glossaryMeaning';
 import { buildReading, type ReadingParagraph, type TextRange } from './readingPieces';
 
 export interface ReadingPassageProps {
@@ -27,7 +29,7 @@ export interface ReadingPassageProps {
  * highlighted text on either side gets a <mark> of its own, and the word
  * carries the highlight inside its button.
  */
-function renderParagraph(paragraph: ReadingParagraph): ReactNode[] {
+function renderParagraph(paragraph: ReadingParagraph, meaningOf: (entry: GlossaryEntry) => GlossaryMeaning | undefined): ReactNode[] {
   const nodes: ReactNode[] = [];
   let at = paragraph.start;
   for (const run of paragraph.runs) {
@@ -52,6 +54,7 @@ function renderParagraph(paragraph: ReadingParagraph): ReactNode[] {
             word={segment.entry.word}
             definition={segment.entry.definition}
             example={segment.entry.example}
+            meaning={meaningOf(segment.entry)}
           >
             {run.highlighted ? <mark className="tw-speaking">{segment.text}</mark> : segment.text}
           </GlossaryTerm>,
@@ -75,6 +78,8 @@ function renderParagraph(paragraph: ReadingParagraph): ReactNode[] {
  * a ReadingCard.
  */
 export function ReadingPassage({ text, glossary, highlight }: ReadingPassageProps) {
+  const { definition: locale } = useI18n();
+  const meaningOf = (entry: GlossaryEntry) => glossaryMeaning(entry, locale);
   const start = highlight?.start;
   const end = highlight?.end;
   const paragraphs = useMemo(
@@ -85,7 +90,7 @@ export function ReadingPassage({ text, glossary, highlight }: ReadingPassageProp
     <>
       {paragraphs.map((paragraph) => (
         <p key={paragraph.start} className="tw-read-para">
-          {renderParagraph(paragraph)}
+          {renderParagraph(paragraph, meaningOf)}
         </p>
       ))}
     </>
