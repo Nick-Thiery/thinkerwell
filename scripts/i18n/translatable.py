@@ -38,7 +38,7 @@ FIXED_KEYS = {"id", "oldId", "type", "color", "correct", "optional", "required",
 # Whole branches that stay in English: notes for the team or the video's own
 # title and channel (the video itself stays in English).
 FIXED_PATHS = {
-    ("section",), ("sources",), ("educatorNotes",), ("sensitiveNotes",), ("changes",),
+    ("section",), ("changes",),
     ("watch", "title"), ("watch", "channel"), ("watch", "replacementSuggestion"),
     ("visual", "description"),
 }

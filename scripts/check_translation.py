@@ -95,7 +95,8 @@ def check_lesson(lang, eng_path, tr_path):
     for path, value in T.translatable(E):
         tr = T.get_path(R, path)
         if isinstance(value, str) and tr == value and len(words(value)) > 3:
-            errs.append(f"{T.path_str(path)}: still the same as English")
+            # A source's title can be all names ("UNESCO World Heritage Centre: Tassili n'Ajjer").
+            (warns if path[0] == "sources" else errs).append(f"{T.path_str(path)}: still the same as English")
 
     name = os.path.basename(eng_path)[:-5]
     warns += stale(lang, name, [(T.path_str(p), v) for p, v in T.translatable(E)])
@@ -209,7 +210,8 @@ def check_quiz(lang, eng_path, tr_path):
     for path, value in T.translatable(E):
         tr = T.get_path(R, path)
         if isinstance(value, str) and tr == value and len(words(value)) > 3:
-            errs.append(f"{T.path_str(path)}: still the same as English")
+            # A source's title can be all names ("UNESCO World Heritage Centre: Tassili n'Ajjer").
+            (warns if path[0] == "sources" else errs).append(f"{T.path_str(path)}: still the same as English")
         if isinstance(value, str) and isinstance(tr, str):
             lost = numbers(value) - numbers(tr)
             if lost:

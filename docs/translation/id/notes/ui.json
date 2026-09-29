@@ -2399,9 +2399,9 @@
   },
   "pages.settings.language.help": {
     "flag": true,
-    "note": "English ends 'The lessons stay in English' and the English note says to keep it. But Indonesian is a full translation (lessons follow this language), so that sentence would be false here. Translated as 'The lessons also show in this language.' Confirm. | Reviewer: Fixed: English says the lessons follow this language only for Indonesian ('In Indonesian, the lessons do too'); the draft said lessons always appear in the chosen language, which isn't true for languages without translated lessons.",
-    "source": "Buttons and instructions show in this language on the home screen, for anyone looking around, and for learners who haven't chosen their own. In Indonesian, the lessons do too.",
-    "back": "Buttons and instructions appear in this language on the home screen, for anyone who is just looking around, and for learners who haven't chosen their own language yet. For Indonesian, lessons also appear in this language."
+    "note": "New or changed with the one language setting (Nick). Check it reads naturally.",
+    "source": "Everything shows in this language at once: buttons, instructions and, in Indonesian, the lessons too. It is kept for this device, for the first page and anyone who hasn't chosen who's learning.",
+    "back": "Everything shows in this language at once: buttons, instructions and, for Indonesian, the lessons too. This choice is kept for this device, for the first page and anyone who hasn't chosen who is learning."
   },
   "pages.settings.offline.title": {
     "flag": true,
@@ -3488,5 +3488,29 @@
   "certificates.offer.getSectionCertificate": {
     "source": "Get your section certificate",
     "back": "Get your section certificate"
+  },
+  "header.language.title": {
+    "back": "Language",
+    "source": "Language",
+    "flag": true,
+    "note": "New or changed with the one language setting (Nick). Check it reads naturally."
+  },
+  "header.language.button": {
+    "back": "Language: {language}",
+    "source": "Language: {language}",
+    "flag": true,
+    "note": "New or changed with the one language setting (Nick). Check it reads naturally."
+  },
+  "pages.settings.language.labelLearner": {
+    "back": "Language for {name}",
+    "source": "Language for {name}",
+    "flag": true,
+    "note": "New or changed with the one language setting (Nick). Check it reads naturally."
+  },
+  "pages.settings.language.helpLearner": {
+    "back": "Everything shows in this language at once: buttons, instructions and, for Indonesian, the lessons too. This choice is kept for {name}, and changes again when someone else is chosen.",
+    "source": "Everything shows in this language at once: buttons, instructions and, in Indonesian, the lessons too. It is kept for {name}, and changes back when someone else is chosen.",
+    "flag": true,
+    "note": "New or changed with the one language setting (Nick). Check it reads naturally."
   }
 }
