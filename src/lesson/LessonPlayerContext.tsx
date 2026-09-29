@@ -49,7 +49,8 @@ import {
 } from 'react';
 import { useNavigate } from 'react-router';
 import { lessonPath } from '../app/lessonUrls';
-import { getLessonSection, isStageId, type Lesson, type LessonStep, type Section, type StageId } from '../content';
+import { isStageId, type Lesson, type LessonStep, type Section, type StageId } from '../content';
+import { useContent } from '../content/useContent';
 import { useLearnerSession } from '../session';
 import {
   DEFAULT_SETTINGS,
@@ -178,7 +179,8 @@ function PlayerForOwner({
   const navigate = useNavigate();
   const learner = mode === 'learner' ? session.activeLearner : null;
   const learnerId = learner?.id ?? null;
-  const section = getLessonSection(lesson);
+  const content = useContent();
+  const section = content.getLessonSection(lesson);
 
   const [status, setStatus] = useState<'loading' | 'ready'>(learnerId ? 'loading' : 'ready');
   const [progress, setProgressState] = useState<LessonProgress>(() =>

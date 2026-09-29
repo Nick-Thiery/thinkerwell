@@ -1,13 +1,15 @@
 import { Navigate, useLocation, useParams } from 'react-router';
 import { NotFoundPage } from '../pages/NotFoundPage';
 import { LessonPrintPage } from '../pages/print/LessonPrintPage';
+import { useContent } from '../content/useContent';
 import { resolveLessonPrintRoute } from './lessonRoutes';
 
 /** /lesson/:id/print: a lesson's print view, with old Base44 ids redirected like the lesson itself. */
 export function LessonPrintRoute() {
   const { id } = useParams();
   const { search, hash } = useLocation();
-  const result = resolveLessonPrintRoute(id);
+  const content = useContent();
+  const result = resolveLessonPrintRoute(id, content);
   switch (result.kind) {
     case 'redirect':
       return <Navigate replace to={`${result.to}${search}${hash}`} />;

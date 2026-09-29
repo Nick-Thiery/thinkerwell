@@ -6,14 +6,14 @@
 import { useId } from 'react';
 import { SegmentedControl } from '../../components/ds';
 import { useI18n } from '../../i18n';
-import { useListenVoice } from '../../speech';
+import { speechLangFor, useListenVoice } from '../../speech';
 import type { ListeningSpeed, ReadingLevel } from '../../storage';
 import type { DeviceSettingsState } from './useDeviceSettings';
 
 export function ReadingSetting({ deviceSettings }: { deviceSettings: DeviceSettingsState }) {
-  const { t } = useI18n();
+  const { t, contentLocale } = useI18n();
   const { settings, canSave, failed, save } = deviceSettings;
-  const voice = useListenVoice();
+  const voice = useListenVoice(speechLangFor(contentLocale));
   const headingId = useId();
   const levelHelpId = useId();
   const speedHelpId = useId();

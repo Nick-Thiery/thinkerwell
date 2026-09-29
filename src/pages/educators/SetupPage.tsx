@@ -16,11 +16,11 @@ import { useId, useState, type ReactNode } from 'react';
 import { classPath, educatorsPath, settingsPath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
 import { Badge, Button, Icon, type BadgeProps, type IconName } from '../../components/ds';
-import { getLessons } from '../../content';
+import { useContent } from '../../content/useContent';
 import { useI18n, type MessageKey } from '../../i18n';
 import { useServiceWorker } from '../../offline';
 import { useLearnerSession } from '../../session';
-import { hasSpeechRecognition } from '../../speech';
+import { hasSpeechRecognition, speechCheckFor, speechLangFor } from '../../speech';
 import { PrintToolbar } from '../print/PrintToolbar';
 import '../print/print.css';
 import { OFFLINE_STATUS } from '../settings/offlineStatus';
@@ -75,7 +75,8 @@ const PLATFORM_STEPS = ['step1', 'step2', 'step3', 'step4', 'step5'] as const;
 const SAFARI_DELETES_AFTER_DAYS = 7;
 
 export function SetupPage() {
-  const { t, formatDate } = useI18n();
+  const { t, formatDate, contentLocale } = useI18n();
+  const content = useContent();
   const title = t('pages.setup.title');
   usePageTitle(title);
   const session = useLearnerSession();
@@ -94,7 +95,8 @@ export function SetupPage() {
   const learnersState: StepState = learnersReady
     ? learnersStepState(session.learners.length, session.storageAvailable)
     : 'checking';
-  const check = settings?.speechCheck ?? null;
+  // Say it in the lessons' language on this page (English, or id-ID for Indonesian lessons).
+  const check = settings ? speechCheckFor(settings, speechLangFor(contentLocale)) : null;
   const finding = speechFinding(check, hasSpeechRecognition());
   const speechState: StepState = settings === null && finding !== 'none' ? 'checking' : speechStepState(finding);
 
@@ -144,7 +146,7 @@ export function SetupPage() {
             why={t('pages.setup.offline.why')}
             how={t('pages.setup.offline.how')}
             state={offlineState}
-            status={t(OFFLINE_STATUS[offline].key, { count: getLessons().length })}
+            status={t(OFFLINE_STATUS[offline].key, { count: content.getLessons().length })}
           />
 
           <SetupStep

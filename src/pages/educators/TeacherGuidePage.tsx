@@ -15,8 +15,9 @@ import { Fragment, type ReactNode } from 'react';
 import { educatorsPath, lessonPath, lessonPrintPath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
 import { Button, Icon } from '../../components/ds';
-import { getLessonSection, type Lesson, type ThinkCheck } from '../../content';
-import { En, useI18n } from '../../i18n';
+import { type Lesson, type ThinkCheck } from '../../content';
+import { useContent } from '../../content/useContent';
+import { AlwaysEn, En, useI18n } from '../../i18n';
 import { formatDuration } from '../../lesson/format';
 import { LessonEvidence } from '../lesson/evidence/LessonEvidence';
 import { feedbackWithoutVerdict } from '../lesson/read/feedbackText';
@@ -33,9 +34,11 @@ export function youtubeWatchUrl(youtubeId: string): string {
 
 export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
   // Everything from the lesson file is course text, marked as English (`en`).
-  const { t, tx, formatNumber, contentLang: en } = useI18n();
+  // en: course text (translated with the lessons); alwaysEn: the video's details, the sources and the teachers' notes, English in every language.
+  const { t, tx, formatNumber, contentLang: en, englishLang: alwaysEn, contentLocale } = useI18n();
+  const content = useContent();
   usePageTitle(t('pages.teacherGuide.pageTitle', { number: lesson.number }));
-  const section = getLessonSection(lesson);
+  const section = content.getLessonSection(lesson);
   const [min, max] = lesson.estimatedMinutes;
   const { read, write, speak, watch, reflect } = lesson;
   const thinkChecks = read.checks.filter((check): check is ThinkCheck => check.type === 'think');
@@ -117,7 +120,7 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
                   <AnswerOptions
                     options={check.options.map((option) =>
                       option.correct
-                        ? { ...option, feedback: feedbackWithoutVerdict(option.feedback, true) }
+                        ? { ...option, feedback: feedbackWithoutVerdict(option.feedback, true, contentLocale.code) }
                         : option,
                     )}
                     feedback="why"
@@ -219,11 +222,11 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
           <dl className="tw-guide-facts">
             <div>
               <dt>{t('pages.teacherGuide.videoName')}</dt>
-              <dd {...en}>{watch.title}</dd>
+              <dd {...alwaysEn}>{watch.title}</dd>
             </div>
             <div>
               <dt>{t('pages.teacherGuide.videoChannel')}</dt>
-              <dd {...en}>{watch.channel}</dd>
+              <dd {...alwaysEn}>{watch.channel}</dd>
             </div>
             <div>
               <dt>{t('pages.teacherGuide.videoLength')}</dt>
@@ -271,7 +274,7 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
               {lesson.sources.map((source) => (
                 <li key={source.url}>
                   <ExternalLink href={source.url}>
-                    <En>{source.label}</En>
+                    <AlwaysEn>{source.label}</AlwaysEn>
                   </ExternalLink>
                 </li>
               ))}
@@ -285,7 +288,8 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
 
 /** The notes for teachers: sensitive topics first, in a marked box, then the rest. */
 function BeforeYouTeach({ lesson }: { lesson: Lesson }) {
-  const { t, contentLang } = useI18n();
+  // The teachers' notes stay English in every language.
+  const { t, englishLang } = useI18n();
   const { sensitiveNotes, educatorNotes } = lesson;
   const contentNote = lesson.watch.contentNote;
   const hasSensitive = sensitiveNotes.length > 0 || contentNote !== null;
@@ -302,7 +306,7 @@ function BeforeYouTeach({ lesson }: { lesson: Lesson }) {
           </h3>
           <ul>
             {sensitiveNotes.map((note, index) => (
-              <li key={index} {...contentLang}>
+              <li key={index} {...englishLang}>
                 {note}
               </li>
             ))}
@@ -313,7 +317,7 @@ function BeforeYouTeach({ lesson }: { lesson: Lesson }) {
       {educatorNotes.length > 0 ? (
         <div className="tw-guide-notes">
           <h3>{t('pages.teacherGuide.notesTitle')}</h3>
-          <ul {...contentLang}>
+          <ul {...englishLang}>
             {educatorNotes.map((note, index) => (
               <li key={index}>{note}</li>
             ))}

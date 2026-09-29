@@ -1,6 +1,7 @@
 import { Link } from 'react-router';
 import { Button, Icon, Mascot, ScoreSummary, SectionBadge } from '../../components/ds';
-import { getLessonByNumber, type QuizFile, type Section } from '../../content';
+import { type QuizFile, type Section } from '../../content';
+import { useContent } from '../../content/useContent';
 import { En, useI18n } from '../../i18n';
 import { lessonPath } from '../../app/lessonUrls';
 import { missedQuestions, resultTier, skillBreakdown, type QuizAnswers } from '../../quiz';
@@ -25,6 +26,7 @@ export interface QuizResultsScreenProps {
  */
 export function QuizResultsScreen({ section, quiz, answers, score, total, isGuest, onRetry }: QuizResultsScreenProps) {
   const { t, tx, contentLang } = useI18n();
+  const content = useContent();
   const tier = resultTier(score, total);
   const skills = skillBreakdown(quiz, answers).map((s) => ({
     name: t(`pages.sectionCheck.skill.${s.skill}`),
@@ -34,7 +36,7 @@ export function QuizResultsScreen({ section, quiz, answers, score, total, isGues
   const missed = missedQuestions(quiz, answers).map((question) => ({
     question,
     position: quiz.questions.indexOf(question) + 1,
-    lesson: getLessonByNumber(question.lesson),
+    lesson: content.getLessonByNumber(question.lesson),
   }));
 
   return (

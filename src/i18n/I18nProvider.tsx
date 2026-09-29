@@ -8,6 +8,7 @@ import {
   formatNumberIn,
   resolveMessage,
   translate,
+  type ContentTranslation,
   type Direction,
   type LoadedLocale,
   type LocaleDefinition,
@@ -47,12 +48,28 @@ export interface I18nContextValue {
   /** "A, B and C" in the language's own words. */
   formatList: (items: readonly string[], options?: Intl.ListFormatOptions) => string;
   /**
-   * Spread on an element that holds English course text (anything from
-   * content/): lang="en", and dir="ltr" in a right-to-left page, while the
-   * interface is in another language, so screen readers and Listen read it
-   * as English. Nothing while the interface is English.
+   * Spread on an element that holds course text (anything from content/):
+   * lang="en", and dir="ltr" in a right-to-left page, while the interface
+   * is in another language and the lessons are in English, so screen
+   * readers and Listen read it as English. Nothing while the interface is
+   * English, or while it is a language whose lessons are translated too
+   * (Indonesian): then the course text is in the page's own language.
    */
   contentLang: LangProps;
+  /**
+   * Like contentLang, for text that stays English in every language: the
+   * videos' titles and channels, and the teachers' notes and sources in a
+   * lesson file. Nothing while the interface is English.
+   */
+  englishLang: LangProps;
+  /**
+   * The language's translated lessons, section checks and course text, or
+   * undefined while the lessons are in English. The content hooks
+   * (src/content/useCatalog.ts, useContent.ts) read it.
+   */
+  content: ContentTranslation | undefined;
+  /** The language the lessons are in: the interface's own when they are translated, otherwise English. */
+  contentLocale: LocaleDefinition;
   /**
    * Spread on interface text that sits inside English course text (a
    * glossary word's popover in a reading), to put it back in the
@@ -69,6 +86,8 @@ function makeValue(active: LoadedLocale, dirOverride: Direction | null, offered:
   const intl = formatLocale(definition);
   const decorate = active.decorate ?? ((text: string) => text);
   const english = lang === SOURCE_LOCALE;
+  const content = definition.content ? active.content : undefined;
+  const englishMarking: LangProps = english ? {} : dir === 'rtl' ? { lang: SOURCE_LOCALE, dir: 'ltr' } : { lang: SOURCE_LOCALE };
   return {
     locale: lang,
     lang,
@@ -84,7 +103,10 @@ function makeValue(active: LoadedLocale, dirOverride: Direction | null, offered:
     formatNumber: (value, options) => formatNumberIn(intl, value, options),
     formatDate: (value, options) => decorate(formatDateIn(intl, value, options)),
     formatList: (items, options) => decorate(formatListIn(intl, items, options)),
-    contentLang: english ? {} : dir === 'rtl' ? { lang: SOURCE_LOCALE, dir: 'ltr' } : { lang: SOURCE_LOCALE },
+    contentLang: content ? {} : englishMarking,
+    englishLang: englishMarking,
+    content,
+    contentLocale: content ? definition : ENGLISH.definition,
     uiLang: english ? {} : { lang, dir },
   };
 }
@@ -158,4 +180,15 @@ export function En({ children }: { children: ReactNode }) {
   const { contentLang } = useI18n();
   if (!contentLang.lang) return <>{children}</>;
   return <span {...contentLang}>{children}</span>;
+}
+
+/**
+ * Text that stays English in every language (a video's title) inside
+ * interface text: like <En>, but marked English even when the lessons are
+ * translated.
+ */
+export function AlwaysEn({ children }: { children: ReactNode }) {
+  const { englishLang } = useI18n();
+  if (!englishLang.lang) return <>{children}</>;
+  return <span {...englishLang}>{children}</span>;
 }

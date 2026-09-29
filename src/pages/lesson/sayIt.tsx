@@ -21,7 +21,7 @@ import { useState, type ReactElement } from 'react';
 import { WritingBox, type WritingBoxProps } from '../../components/ds';
 import { useI18n, type MessageKey } from '../../i18n';
 import { useLessonPlayer } from '../../lesson';
-import { useDictation, type Dictation, type DictationNotice } from '../../speech';
+import { speechCheckFor, speechLangFor, useDictation, type Dictation, type DictationNotice } from '../../speech';
 
 export interface SayIt {
   /** Say it can be offered on this device. */
@@ -43,11 +43,15 @@ const NOTICE_KEYS: Record<DictationNotice, MessageKey> = {
 
 /** One per stage: every SayItBox in the stage shares it, so only one box listens at a time. */
 export function useSayIt(): SayIt {
-  const { t } = useI18n();
+  const { t, contentLocale } = useI18n();
   const { settings } = useLessonPlayer();
+  // Listens in the lesson's language (id-ID for Indonesian lessons), on the
+  // device only if the educator's check found that language available there.
+  const lang = speechLangFor(contentLocale);
   const dictation = useDictation({
-    onDeviceConfirmed: settings.speechCheck?.status === 'available',
+    onDeviceConfirmed: speechCheckFor(settings, lang)?.status === 'available',
     allowOnline: settings.partner.allowOnlineDictation,
+    lang,
   });
   const [lastId, setLastId] = useState<string | null>(null);
 

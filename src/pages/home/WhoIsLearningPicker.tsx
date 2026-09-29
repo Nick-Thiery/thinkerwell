@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { getLessons, type LessonSummary } from '../../content/catalog';
+import { type LessonSummary } from '../../content/catalog';
+import { useCatalog } from '../../content/useCatalog';
 import { Button, Icon, LearnerTile } from '../../components/ds';
 import { useI18n } from '../../i18n';
 import { addedOn, learnersWithSameName } from '../../session';
@@ -27,6 +28,7 @@ export interface WhoIsLearningPickerProps {
  */
 export function WhoIsLearningPicker({ learners, lesson1, onChoose, onAdd, onRemove, onLookAround, initialView }: WhoIsLearningPickerProps) {
   const { t, formatDate } = useI18n();
+  const catalog = useCatalog();
   const [view, setView] = useState<PickerView>(initialView === 'new' ? { kind: 'new' } : { kind: 'grid' });
   const [tileMeta, setTileMeta] = useState<Record<string, string>>({});
   const [removing, setRemoving] = useState(false);
@@ -45,7 +47,7 @@ export function WhoIsLearningPicker({ learners, lesson1, onChoose, onAdd, onRemo
   useEffect(() => {
     if (view.kind !== 'grid' || learners.length === 0) return;
     let cancelled = false;
-    const lessons = getLessons();
+    const lessons = catalog.getLessons();
     void (async () => {
       const entries = await Promise.all(
         learners.map(async (learner): Promise<[string, string]> => {
@@ -68,7 +70,7 @@ export function WhoIsLearningPicker({ learners, lesson1, onChoose, onAdd, onRemo
     return () => {
       cancelled = true;
     };
-  }, [learners, view.kind, t]);
+  }, [learners, view.kind, t, catalog]);
 
   // Moves focus to match each in-page view change (not the very first render:
   // AppLayout already lands focus on the h1 once it first appears).

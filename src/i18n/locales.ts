@@ -3,16 +3,19 @@
  * choose. Plain data with no imports, so the build (vite.config.ts, for the
  * offline precache) and the translator tools (tools/i18n/) read it too.
  *
- * English is the only language offered today. The others are listed so the
- * build, the translator kit and the checks know about them, but they are not
+ * English and Indonesian are offered. The others are listed so the build,
+ * the translator kit and the checks know about them, but they are not
  * `ready`: nobody can choose them until a native speaker has translated and
  * checked every interface string (docs/TRANSLATING.md). Their message files
  * (src/i18n/messages/<code>.json) don't exist yet; `npm run i18n:import`
  * makes one.
  *
- * The lessons themselves stay in English on purpose: the course is also
- * English practice. Only the interface (buttons, instructions) and, if a
- * lesson file has them, short glossary meanings are translated.
+ * For most languages the lessons stay in English on purpose: the course is
+ * also English practice. Only the interface (buttons, instructions) and, if
+ * a lesson file has them, short glossary meanings are translated. A language
+ * marked `content` (Indonesian, for the Jakarta pilot) is the exception: its
+ * lessons, section checks, course text and lesson pictures are translated
+ * too (content/<code>/), and learners who choose it learn in it.
  *
  * To add a language, see docs/notes/languages.md.
  */
@@ -39,6 +42,20 @@ export interface LocaleDefinition {
   font: FontKey;
   /** True once every interface string is translated and checked by a native speaker. Only ready languages are offered. */
   ready: boolean;
+  /**
+   * The lessons, section checks, course text and lesson pictures are
+   * translated too (content/<code>/, docs/notes/languages.md), so a learner
+   * in this language learns in it rather than in English. The videos stay
+   * in English.
+   */
+  content?: boolean;
+  /**
+   * The language tag to ask speech tools for when the lesson is in this
+   * language: an on-device voice for Listen, recognition for Say it. Only
+   * for a language with `content`; every other language's lessons are
+   * English (en-US).
+   */
+  speechLang?: string;
   /** A made-up test language (src/i18n/pseudo.ts): never offered to learners. */
   pseudo?: boolean;
   /** The Intl locale for plurals, numbers and dates, when it differs from `code` (pseudo-languages format like English). */
@@ -59,6 +76,10 @@ export const LOCALES: readonly LocaleDefinition[] = [
   { code: 'fa-AF', englishName: 'Dari', endonym: 'دری', dir: 'rtl', font: 'arabic', ready: false },
   { code: 'ar', englishName: 'Arabic', endonym: 'العربية', dir: 'rtl', font: 'arabic', ready: false },
   { code: 'so', englishName: 'Somali', endonym: 'Soomaali', dir: 'ltr', font: 'latin', ready: false },
+  // Bahasa Indonesia, for the Jakarta pilot: the interface and the lessons.
+  // Machine-drafted and cross-checked; it waits for native-speaker review
+  // (docs/translation/id/) before it reaches learners.
+  { code: 'id', englishName: 'Indonesian', endonym: 'Indonesia', dir: 'ltr', font: 'latin', ready: true, content: true, speechLang: 'id-ID' },
 ];
 
 /**
@@ -86,6 +107,14 @@ export function findLocale(code: string | null | undefined, locales: readonly Lo
   if (!code) return undefined;
   const wanted = code.toLowerCase();
   return locales.find((locale) => locale.code.toLowerCase() === wanted);
+}
+
+/**
+ * The language the lessons are in for this interface language: its own when
+ * it has translated content, otherwise English.
+ */
+export function contentLocale(locale: LocaleDefinition): LocaleDefinition {
+  return locale.content ? locale : (findLocale(SOURCE_LOCALE) ?? LOCALES[0]!);
 }
 
 /** The Intl locale for a language's plurals, numbers and dates. */

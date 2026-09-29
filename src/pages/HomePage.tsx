@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { usePageTitle } from '../app/usePageTitle';
-import { getLessonByNumber } from '../content/catalog';
+import { useCatalog } from '../content/useCatalog';
 import { useI18n } from '../i18n';
 import { GuestHome } from './home/GuestHome';
 import { LearnerDashboard } from './home/LearnerDashboard';
@@ -28,7 +28,8 @@ export function HomePage() {
   const session = useLearnerSession();
   const progressLearnerId = session.status === 'ready' ? (session.activeLearner?.id ?? null) : null;
   const progressResult = useLearnerProgress(progressLearnerId);
-  const lesson1 = getLessonByNumber(1);
+  const catalog = useCatalog();
+  const lesson1 = catalog.getLessonByNumber(1);
 
   // ?new=1 (from the header switcher's "I'm new here", which clears the
   // current learner and then lands here) opens the new-learner form straight

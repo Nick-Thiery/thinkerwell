@@ -43,7 +43,7 @@ describe('language chunks', () => {
 });
 
 describe('what the service worker precaches', () => {
-  it('today leaves out every other language, the test languages and the Arabic font', () => {
+  it('today keeps Indonesian and leaves out every other language, the test languages and the Arabic font', () => {
     expect(languagePrecacheIgnores([])).toEqual([
       'assets/pseudo/**',
       'assets/locales/ar/**',
@@ -69,5 +69,29 @@ describe('what the service worker precaches', () => {
     const ignores = languagePrecacheIgnores(['fa']);
     expect(ignores).toContain('assets/locales/fa/**');
     expect(ignores.filter((glob) => glob.startsWith('assets/locales/fa')).sort()).toEqual(['assets/locales/fa-AF/**', 'assets/locales/fa/**']);
+  });
+});
+
+describe("a language's translated lessons", () => {
+  it('go in its own chunk, with its messages, never in the lessons\' chunk', () => {
+    for (const file of ['course.json', 'lessons/L01.json', 'quizzes/history.json']) {
+      const id = `/repo/content/id/${file}`;
+      expect(LANGUAGE_MODULE.test(id), file).toBe(true);
+      expect(languageChunkName(id), file).toBe('locale-id');
+    }
+    expect(languageChunkName('/repo/content/id/visuals/L01.svg?url')).toBe('locale-id');
+    expect(LANGUAGE_MODULE.test('/repo/content/id/visuals/L01.svg?url')).toBe(true);
+  });
+
+  it("leave the English content alone", () => {
+    for (const file of ['course.json', 'lessons/L01.json', 'quizzes/history.json', 'visuals/L01.svg']) {
+      expect(LANGUAGE_MODULE.test(`/repo/content/${file}`), file).toBe(false);
+      expect(languageChunkName(`/repo/content/${file}`), file).toBeNull();
+    }
+  });
+
+  it('put its pictures in its own folder, so they are precached only once it is ready', () => {
+    expect(languageAssetFileName({ originalFileNames: ['content/id/visuals/L01.svg'] })).toBe('assets/locales/id/visuals/[name]-[hash][extname]');
+    expect(languageAssetFileName({ originalFileNames: ['content/visuals/L01.svg'] })).toBe('assets/[name]-[hash][extname]');
   });
 });

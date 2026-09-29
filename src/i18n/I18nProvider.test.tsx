@@ -134,3 +134,44 @@ describe('I18nProvider', () => {
     expect(screen.getByTestId('content')).not.toHaveAttribute('dir');
   });
 });
+
+describe('a language whose lessons are translated too', () => {
+  function Marks() {
+    const { contentLang, englishLang, content, contentLocale } = useI18n();
+    return <p data-testid="marks">{JSON.stringify({ contentLang, englishLang, content: Boolean(content), contentLocale: contentLocale.code })}</p>;
+  }
+  const content = { course: {}, lessons: {}, quizzes: {}, visuals: {} };
+
+  it('shows its course text as its own, and keeps the videos and teachers’ notes marked English', () => {
+    const indonesian: LoadedLocale = {
+      definition: { code: 'id', englishName: 'Indonesian', endonym: 'Indonesia', dir: 'ltr', font: 'latin', ready: true, content: true },
+      messages: {},
+      content,
+    };
+    render(
+      <I18nProvider loaded={indonesian}>
+        <Marks />
+      </I18nProvider>,
+    );
+    expect(JSON.parse(screen.getByTestId('marks').textContent)).toEqual({
+      contentLang: {},
+      englishLang: { lang: 'en' },
+      content: true,
+      contentLocale: 'id',
+    });
+  });
+
+  it('marks course text English in a language whose lessons stay English', () => {
+    render(
+      <I18nProvider loaded={dari}>
+        <Marks />
+      </I18nProvider>,
+    );
+    expect(JSON.parse(screen.getByTestId('marks').textContent)).toEqual({
+      contentLang: { lang: 'en', dir: 'ltr' },
+      englishLang: { lang: 'en', dir: 'ltr' },
+      content: false,
+      contentLocale: 'en',
+    });
+  });
+});

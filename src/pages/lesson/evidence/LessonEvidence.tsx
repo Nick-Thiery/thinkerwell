@@ -1,6 +1,7 @@
 import { useId } from 'react';
 import { Badge, Icon } from '../../../components/ds';
-import { getCourse, type Evidence, type EvidenceCard, type Visual } from '../../../content';
+import { type Evidence, type EvidenceCard, type Visual } from '../../../content';
+import { useContent } from '../../../content/useContent';
 import { useI18n } from '../../../i18n';
 import { LessonVisual } from '../visual/LessonVisual';
 import { EvidenceTable } from './EvidenceTable';
@@ -37,8 +38,9 @@ type CardOf<T extends EvidenceCard['type']> = Extract<EvidenceCard, { type: T }>
  */
 export function LessonEvidence({ evidence, visual = null, enlargeablePicture = true }: LessonEvidenceProps) {
   const { t, contentLang } = useI18n();
+  const content = useContent();
   const baseId = useId();
-  const fictionLabel = evidence.fictional ? getCourse().fictionLabel : null;
+  const fictionLabel = evidence.fictional ? content.getCourse().fictionLabel : null;
 
   return (
     <section className="tw-lx" aria-label={t('lessonPlayer.evidence.sectionLabel')}>

@@ -66,7 +66,7 @@ type FocusTarget = 'player' | 'written' | 'watch';
  * - A learner who chose "Read instead" comes back to the written version.
  */
 export function WatchStage() {
-  const { t, formatNumber, contentLang } = useI18n();
+  const { t, formatNumber, contentLang, englishLang, content } = useI18n();
   const { lesson, progress, update, stageEvent, settings } = useLessonPlayer();
   const { watch } = lesson;
   const saveData = isSaveDataOn(settings.saveData);
@@ -251,7 +251,7 @@ export function WatchStage() {
             ) : null}
             <article className="tw-watch-written" aria-labelledby={writtenId}>
               <span className="eyebrow tw-watch-written-part">{t('lessonPlayer.watch.writtenPart')}</span>
-              <h3 id={writtenId} ref={writtenHeadingRef} className="tw-watch-written-h" tabIndex={-1} {...contentLang}>
+              <h3 id={writtenId} ref={writtenHeadingRef} className="tw-watch-written-h" tabIndex={-1} {...englishLang}>
                 {watch.title}
               </h3>
               <div className="tw-watch-written-text" {...contentLang}>
@@ -291,7 +291,7 @@ export function WatchStage() {
                   ref={iframeRef}
                   src={youtubeEmbedUrl(watch.youtubeId, window.location.origin)}
                   title={watch.title}
-                  {...contentLang}
+                  {...englishLang}
                   allow={PLAYER_ALLOW}
                   allowFullScreen
                   loading="eager"
@@ -310,6 +310,13 @@ export function WatchStage() {
             <p className="tw-watch-why" {...contentLang}>
               {watch.why}
             </p>
+            {/* The videos stay in English; say so when the lesson is in another language. */}
+            {content ? (
+              <p className="tw-watch-language">
+                <Icon name="Globe" size={20} />
+                <span>{t('lessonPlayer.watch.videoInEnglish')}</span>
+              </p>
+            ) : null}
           </VideoCard>
         )}
         <p className="tw-visually-hidden" aria-live="polite">

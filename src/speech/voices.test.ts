@@ -49,3 +49,28 @@ describe('useListenVoice', () => {
     expect(result.current).toBeNull();
   });
 });
+
+describe('Listen in the lesson’s language', () => {
+  it('reads Indonesian lessons with an Indonesian voice on the device', () => {
+    const voices = [fakeVoice('en-GB', { isDefault: true }), fakeVoice('id-ID', { name: 'Damayanti' })];
+    expect(pickListenVoice(voices, 'id-ID')?.name).toBe('Damayanti');
+    expect(pickListenVoice(voices)?.lang).toBe('en-GB');
+  });
+
+  it('never reads Indonesian with an English voice, or with one that runs online', () => {
+    expect(pickListenVoice([fakeVoice('en-GB', { isDefault: true }), fakeVoice('en-US')], 'id-ID')).toBeNull();
+    expect(pickListenVoice([fakeVoice('id-ID', { local: false })], 'id-ID')).toBeNull();
+  });
+
+  it('knows Indonesian by its old code and with an underscore', () => {
+    expect(pickListenVoice([fakeVoice('in_ID', { name: 'Old Android' })], 'id-ID')?.name).toBe('Old Android');
+  });
+
+  it('follows a change of language', () => {
+    mockSpeechSynthesis([fakeVoice('en-GB'), fakeVoice('id-ID')]);
+    const { result, rerender } = renderHook(({ lang }) => useListenVoice(lang), { initialProps: { lang: 'en' } });
+    expect(result.current?.lang).toBe('en-GB');
+    rerender({ lang: 'id-ID' });
+    expect(result.current?.lang).toBe('id-ID');
+  });
+});

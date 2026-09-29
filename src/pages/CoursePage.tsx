@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router';
 import { usePageTitle } from '../app/usePageTitle';
 import { Badge, Icon } from '../components/ds';
-import { getCourse, getLessonSection, getLessons, getSectionLessons, getSections } from '../content/catalog';
+import { useCatalog } from '../content/useCatalog';
 import { useI18n } from '../i18n';
 import { useLearnerProgress, useLearnerSession } from '../session';
 import { findContinueTarget, sectionProgress, type SectionProgress } from '../storage';
@@ -22,7 +22,8 @@ export function CoursePage() {
   const learnerId = session.activeLearner?.id ?? null;
   const progressResult = useLearnerProgress(learnerId);
   const location = useLocation();
-  const course = getCourse();
+  const catalog = useCatalog();
+  const course = catalog.getCourse();
   const title = course.course.title;
   usePageTitle(title);
 
@@ -31,8 +32,8 @@ export function CoursePage() {
   // and would otherwise move focus to a placeholder that then gets replaced.
   const loading = session.status === 'loading' || (learnerId !== null && progressResult.status === 'loading');
 
-  const sections = getSections();
-  const lessons = getLessons();
+  const sections = catalog.getSections();
+  const lessons = catalog.getLessons();
   const progress = progressResult.progress;
   // Looking around (chosen from the picker, ?preview=true, or forced by a
   // missing IndexedDB) never has any progress to show, by design — nothing
@@ -52,7 +53,7 @@ export function CoursePage() {
     sections.map((section) => [section.id, sectionProgress(section, lessons, progress)]),
   );
 
-  const currentSectionId = continueTarget ? getLessonSection(continueTarget.lesson).id : (sections[0]?.id ?? undefined);
+  const currentSectionId = continueTarget ? catalog.getLessonSection(continueTarget.lesson).id : (sections[0]?.id ?? undefined);
 
   // Only the section holding the learner's next step opens by default; every
   // other section collapses to a one-line summary (docs/screens/Course.dc.html).
@@ -160,7 +161,7 @@ export function CoursePage() {
             <SectionCard
               key={section.id}
               section={section}
-              lessons={getSectionLessons(section.id)}
+              lessons={catalog.getSectionLessons(section.id)}
               progress={progress}
               highlightLessonId={continueTarget?.lesson.id}
               hideProgress={hideProgress}

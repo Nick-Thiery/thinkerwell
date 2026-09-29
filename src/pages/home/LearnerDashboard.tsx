@@ -1,7 +1,7 @@
 import { createElement, useId, useState } from 'react';
 import { LanguageChoice, useHasLanguageChoice } from '../../app/LanguageChoice';
 import { courseCertificatePath, sectionCheckPath, lessonPath } from '../../app/lessonUrls';
-import { getLessonSection, getLessons, getQuizQuestionCount, getSections } from '../../content/catalog';
+import { useCatalog } from '../../content/useCatalog';
 import { Badge, Button, ContinueCard, Icon, ProgressRing, SectionBadge, useDsLinkComponent } from '../../components/ds';
 import { En, useI18n } from '../../i18n';
 import { useServiceWorker } from '../../offline';
@@ -26,11 +26,12 @@ export interface LearnerDashboardProps {
 export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
   const { t, tx } = useI18n();
   const LinkTag = useDsLinkComponent();
-  const lessons = getLessons();
-  const sections = getSections();
+  const catalog = useCatalog();
+  const lessons = catalog.getLessons();
+  const sections = catalog.getSections();
   const target = findContinueTarget(lessons, progress);
   const completedCount = totalLessonsCompleted(lessons, progress);
-  const currentSectionId = target ? getLessonSection(target.lesson).id : undefined;
+  const currentSectionId = target ? catalog.getLessonSection(target.lesson).id : undefined;
   const journalEntry = latestJournalEntry(lessons, progress);
   const isNewLearner = completedCount === 0 && progress.size === 0;
   // "Pick up where you left off" only for a lesson the learner has opened
@@ -90,7 +91,7 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
                 ? 'pages.home.dashboard.continueEyebrow'
                 : 'pages.home.dashboard.upNext',
           )}
-          lessonLabel={tx('pages.course.lessonLabel', { number: target.lesson.number, section: <En>{getLessonSection(target.lesson).title}</En> })}
+          lessonLabel={tx('pages.course.lessonLabel', { number: target.lesson.number, section: <En>{catalog.getLessonSection(target.lesson).title}</En> })}
           done={stagesDoneForLesson(progress.get(target.lesson.id))}
           current={target.stage}
           stageLabel={t('lesson.nextStep', { stage: t(`stages.${target.stage}`) })}
@@ -162,7 +163,7 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
               <p className="body">
                 {t('pages.home.dashboard.sectionCheckBody', {
                   count: readySection.lessons.length,
-                  questions: getQuizQuestionCount(readySection.id),
+                  questions: catalog.getQuizQuestionCount(readySection.id),
                 })}
               </p>
               <Button variant="secondary" href={sectionCheckPath(readySection.id)}>

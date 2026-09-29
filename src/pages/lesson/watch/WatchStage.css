@@ -41,6 +41,22 @@
   line-height: 24px;
 }
 
+/* "This video is in English": shown when the lesson is in another language. */
+.tw-watch-language {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.tw-watch-language .tw-icon {
+  flex: none;
+  margin-block-start: 2px;
+}
+
 /* The written version ("Read instead"): reading text, 20/32 within the measure. */
 .tw-watch-written {
   padding: var(--space-8);

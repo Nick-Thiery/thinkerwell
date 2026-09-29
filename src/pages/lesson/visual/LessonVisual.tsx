@@ -1,6 +1,7 @@
 import { useId, useRef } from 'react';
 import { Button } from '../../../components/ds';
-import { getVisualUrl, type Visual } from '../../../content';
+import { type Visual } from '../../../content';
+import { useContent } from '../../../content/useContent';
 import { useI18n } from '../../../i18n';
 import './LessonVisual.css';
 
@@ -29,10 +30,11 @@ export interface LessonVisualProps {
  */
 export function LessonVisual({ visual, enlargeable = true }: LessonVisualProps) {
   const { t, contentLang } = useI18n();
+  const content = useContent();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const toolsRef = useRef<HTMLDivElement>(null);
   const titleId = useId();
-  const url = visual ? getVisualUrl(visual.src) : undefined;
+  const url = visual ? content.getVisualUrl(visual.src) : undefined;
   if (!visual || !url) return null;
   const title = t(`lessonPlayer.visual.title.${visual.type}`);
 

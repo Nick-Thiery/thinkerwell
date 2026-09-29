@@ -2,6 +2,7 @@ import { Navigate, useLocation, useParams } from 'react-router';
 import { LessonPlayerProvider } from '../lesson';
 import { LessonPage } from '../pages/lesson/LessonPage';
 import { NotFoundPage } from '../pages/NotFoundPage';
+import { useContent } from '../content/useContent';
 import { resolveLessonRoute } from './lessonRoutes';
 
 /**
@@ -17,7 +18,8 @@ import { resolveLessonRoute } from './lessonRoutes';
 export function LessonRoute() {
   const { id, stage } = useParams();
   const { search, hash } = useLocation();
-  const result = resolveLessonRoute(id, stage);
+  const content = useContent();
+  const result = resolveLessonRoute(id, stage, content);
 
   switch (result.kind) {
     case 'redirect':

@@ -2,15 +2,12 @@ import { useMemo } from 'react';
 import { courseCertificatePath, lessonPath, sectionCertificatePath, sectionCheckPath } from '../../../app/lessonUrls';
 import { Badge, Button, Icon, LessonRow, Mascot, SectionBadge, StagePath } from '../../../components/ds';
 import {
-  getLessons,
-  getNextLesson,
-  getSectionLessons,
-  isLastLessonInSection,
   STAGES,
   type Lesson,
   type Section,
   type StageId,
 } from '../../../content';
+import { useContent } from '../../../content/useContent';
 import { En, translate, useI18n } from '../../../i18n';
 import { hasText, LESSON_PHONE_QUERY, useLessonPlayer, useMediaQuery } from '../../../lesson';
 import { useLearnerProgress, useLearnerSession } from '../../../session';
@@ -32,8 +29,9 @@ const MASCOT_SRC = '/images/thinkerwell-mascot-transparent.png';
  * The completion message without its first sentence when that sentence is
  * the page's own h1 in English ("You finished Lesson 10."), so it isn't said
  * twice. Every lesson follows that pattern today; any other message shows
- * whole. The message is course text, which stays English, so `heading` is
- * the English h1 whatever the interface's language.
+ * whole. The message is course text, in the lessons' language, so
+ * `heading` is the h1 in that language: English whatever the interface's
+ * language, or the interface's own when the lessons are translated too.
  */
 export function completionSummary(message: string, heading: string): string {
   const trimmed = message.trim();
@@ -65,7 +63,8 @@ export function firstUnfinishedStage(done: readonly StageId[]): StageId {
  *   (docs/notes/certificates.md). Guests have no saved work, so never.
  */
 export function CompleteStage() {
-  const { t, tx, contentLang } = useI18n();
+  const { t, tx, contentLang, content: translated } = useI18n();
+  const content = useContent();
   const { lesson, section, progress, mode, saving } = useLessonPlayer();
   const session = useLearnerSession();
   const phone = useMediaQuery(LESSON_PHONE_QUERY);
@@ -87,10 +86,10 @@ export function CompleteStage() {
 
   // Only a learner's saved work earns a certificate, and only once it is all read.
   const canOffer = finished && learnerId !== null && loaded.status === 'ready';
-  const finishedSection = canOffer && finishedSetWith(lesson, getSectionLessons(section.id), allProgress);
-  const finishedCourse = canOffer && finishedSetWith(lesson, getLessons(), allProgress);
+  const finishedSection = canOffer && finishedSetWith(lesson, content.getSectionLessons(section.id), allProgress);
+  const finishedCourse = canOffer && finishedSetWith(lesson, content.getLessons(), allProgress);
 
-  const counts = sectionProgress(section, getLessons(), allProgress);
+  const counts = sectionProgress(section, content.getLessons(), allProgress);
   const sectionTitle = <En>{section.title}</En>;
   const badgeText =
     learnerId && loaded.status === 'ready'
@@ -105,7 +104,7 @@ export function CompleteStage() {
   const titleNode = <strong {...contentLang}>{lesson.title}</strong>;
   const nextStage = firstUnfinishedStage(progress.stagesDone);
   const summaryMessage = finished ? (
-    <En>{completionSummary(lesson.reflect.completionMessage, translate('en', 'lessonPlayer.complete.title', { number: lesson.number }))}</En>
+    <En>{completionSummary(lesson.reflect.completionMessage, translated ? t('lessonPlayer.complete.title', { number: lesson.number }) : translate('en', 'lessonPlayer.complete.title', { number: lesson.number }))}</En>
   ) : (
     t('lessonPlayer.complete.partwayBody', { done: progress.stagesDone.length, total: STAGES.length })
   );
@@ -201,6 +200,7 @@ function CertificateOffer({
   finishedCourse: boolean;
 }) {
   const { t, tx } = useI18n();
+  const content = useContent();
   return (
     <section className="tw-complete-cert" aria-labelledby="tw-complete-cert-title">
       {finishedCourse ? (
@@ -213,7 +213,7 @@ function CertificateOffer({
       <div className="tw-complete-cert-body">
         <h2 id="tw-complete-cert-title" className="h3">
           {finishedCourse
-            ? t('certificates.offer.courseTitle', { count: getLessons().length })
+            ? t('certificates.offer.courseTitle', { count: content.getLessons().length })
             : tx('certificates.offer.sectionTitle', { section: <En>{section.title}</En> })}
         </h2>
         <p>{t(finishedCourse ? 'certificates.offer.courseBody' : 'certificates.offer.sectionBody')}</p>
@@ -251,8 +251,9 @@ function UpNext({
 }) {
   const { t, tx } = useI18n();
   const { section } = useLessonPlayer();
-  const showCheck = isLastLessonInSection(lesson);
-  const next = getNextLesson(lesson.id);
+  const content = useContent();
+  const showCheck = content.isLastLessonInSection(lesson);
+  const next = content.getNextLesson(lesson.id);
   if (!showCheck && !next) return null;
 
   const record = next ? progress?.get(next.id) : undefined;

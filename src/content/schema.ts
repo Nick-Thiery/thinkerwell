@@ -130,7 +130,9 @@ export const readSectionSchema = z.strictObject({
 export type ReadSection = z.infer<typeof readSectionSchema>;
 
 /** Every language a glossary meaning can be in: the listed languages other than English (src/i18n/locales.ts). */
-export const GLOSSARY_MEANING_LOCALES = LOCALES.filter((locale) => locale.code !== SOURCE_LOCALE).map((locale) => locale.code) as [
+// Not a language whose lessons are translated too (Indonesian): its learners
+// read the key words, and their meanings, in their own language already.
+export const GLOSSARY_MEANING_LOCALES = LOCALES.filter((locale) => locale.code !== SOURCE_LOCALE && !locale.content).map((locale) => locale.code) as [
   string,
   ...string[],
 ];

@@ -5,7 +5,7 @@
  */
 import { useId } from 'react';
 import { Icon } from '../../components/ds';
-import { getLessons } from '../../content/catalog';
+import { useCatalog } from '../../content/useCatalog';
 import { useI18n } from '../../i18n';
 import { browserAsksToSaveData, isSaveDataOn, useServiceWorker } from '../../offline';
 import { OFFLINE_STATUS } from './offlineStatus';
@@ -13,6 +13,7 @@ import type { DeviceSettingsState } from './useDeviceSettings';
 
 export function OfflineSetting({ deviceSettings }: { deviceSettings: DeviceSettingsState }) {
   const { t } = useI18n();
+  const catalog = useCatalog();
   const { offline } = useServiceWorker();
   const { settings, canSave, failed, save } = deviceSettings;
   const headingId = useId();
@@ -29,7 +30,7 @@ export function OfflineSetting({ deviceSettings }: { deviceSettings: DeviceSetti
       </h2>
       <div className="tw-settings-status" role="status">
         <Icon name={status.icon} size={20} />
-        <span>{t(status.key, { count: getLessons().length })}</span>
+        <span>{t(status.key, { count: catalog.getLessons().length })}</span>
       </div>
 
       <div className="tw-settings-option">

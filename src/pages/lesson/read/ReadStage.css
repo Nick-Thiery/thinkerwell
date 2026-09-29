@@ -21,6 +21,14 @@
   gap: var(--space-3);
 }
 
+/* "Listen can't read this lesson here": a translated lesson on a device with no voice for it. */
+.tw-read-listen-note {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--ink-muted);
+}
+
 /* ------------------------------------------------------------- key words */
 
 .tw-read-keywords {

@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { getCourse, getSections } from '../../content/catalog';
+import { useCatalog } from '../../content/useCatalog';
 import { Badge, Mascot } from '../../components/ds';
 import { useI18n } from '../../i18n';
 import { LESSON_PHONE_QUERY, useMediaQuery } from '../../lesson/useMediaQuery';
@@ -32,8 +32,9 @@ export function HomeHero({ size = 184, children }: { size?: number; children: Re
 /** The five stage badges and footnote shown on the plain picker view. */
 export function HomeHeroStages() {
   const { t } = useI18n();
-  const totalLessons = getCourse().course.totalLessons;
-  const totalSections = getSections().length;
+  const catalog = useCatalog();
+  const totalLessons = catalog.getCourse().course.totalLessons;
+  const totalSections = catalog.getSections().length;
   return (
     <div className="tw-home-stages">
       <span className="eyebrow">{t('pages.home.hero.stagesLabel')}</span>

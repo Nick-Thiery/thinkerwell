@@ -11,6 +11,7 @@
 import { assembleContent, type LoadedContent } from './assemble.ts';
 import { ContentError } from './errors.ts';
 import { courseFileSchema, lessonSchema, quizFileSchema, type Lesson, type QuizFile } from './schema.ts';
+import { applyTranslation, missingTranslations, translationProblems } from './translation.ts';
 
 export type ContentFileKind = 'course' | 'lesson' | 'quiz';
 
@@ -161,4 +162,73 @@ export function loadQuizzes(rawQuizzes: Record<string, unknown>, lessons: readon
 
   if (problems.length > 0) throw new ContentError(problems.join('\n'));
   return parsed;
+}
+
+/** A language's translation files (content/<code>/), as read from disk. */
+export interface TranslationFiles {
+  course: unknown;
+  /** By path, e.g. "content/id/lessons/L01.json". */
+  lessons: Record<string, unknown>;
+  /** By path, e.g. "content/id/quizzes/history.json". */
+  quizzes: Record<string, unknown>;
+  /** Picture files, e.g. "visuals/L01.svg". */
+  visuals: ReadonlySet<string>;
+}
+
+/** The English files, by path, as checkTranslation compares them. */
+export interface EnglishFiles {
+  course: unknown;
+  lessons: Record<string, unknown>;
+  quizzes: Record<string, unknown>;
+}
+
+const baseName = (path: string) => path.slice(path.lastIndexOf('/') + 1);
+
+/**
+ * Checks one language's translation (content/<code>/) against the English:
+ * every file has the English file's shape and translates every string a
+ * learner reads, and nothing else (./translation.ts); laid over the English,
+ * everything still passes the schemas and the cross-file checks; and every
+ * English lesson picture has its translated copy. Throws a ContentError
+ * listing every problem. Runs at build time (vite.config.ts) and in tests.
+ */
+export function checkTranslation(code: string, english: EnglishFiles, translation: TranslationFiles): void {
+  const problems: string[] = [];
+  const where = (kind: string, name: string) => `content/${code}/${kind}${name}`;
+  const compare = (label: string, en: unknown, tr: unknown) => {
+    for (const problem of translationProblems(en, tr)) problems.push(`${label}: ${problem}`);
+    for (const path of missingTranslations(en, tr)) problems.push(`${label}: ${path}: not translated`);
+  };
+
+  compare(where('', 'course.json'), english.course, translation.course);
+  const byName = (files: Record<string, unknown>) => new Map(Object.entries(files).map(([path, raw]) => [baseName(path), raw]));
+  const lessons = byName(translation.lessons);
+  const quizzes = byName(translation.quizzes);
+  const mergedLessons: Record<string, unknown> = {};
+  for (const [path, raw] of Object.entries(english.lessons)) {
+    const name = baseName(path);
+    if (!lessons.has(name)) problems.push(`${where('lessons/', name)} is missing.`);
+    else compare(where('lessons/', name), raw, lessons.get(name));
+    mergedLessons[path] = applyTranslation(raw, lessons.get(name));
+    const src = (raw as { visual?: { src?: string } | null }).visual?.src;
+    if (src && !translation.visuals.has(src)) problems.push(`content/${code}/${src} is missing (a copy of content/${src} with its words translated).`);
+  }
+  const mergedQuizzes: Record<string, unknown> = {};
+  for (const [path, raw] of Object.entries(english.quizzes)) {
+    const name = baseName(path);
+    if (!quizzes.has(name)) problems.push(`${where('quizzes/', name)} is missing.`);
+    else compare(where('quizzes/', name), raw, quizzes.get(name));
+    mergedQuizzes[path] = applyTranslation(raw, quizzes.get(name));
+  }
+  for (const name of lessons.keys()) {
+    if (!Object.keys(english.lessons).some((path) => baseName(path) === name)) problems.push(`${where('lessons/', name)} has no English lesson.`);
+  }
+  if (problems.length > 0) throw new ContentError(problems.join('\n'));
+
+  try {
+    const { lessons: loaded } = loadContent(applyTranslation(english.course, translation.course), mergedLessons);
+    loadQuizzes(mergedQuizzes, loaded);
+  } catch (error) {
+    throw new ContentError(`The ${code} translation, laid over the English:\n${error instanceof Error ? error.message : String(error)}`);
+  }
 }

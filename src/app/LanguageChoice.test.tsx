@@ -16,19 +16,34 @@ import { LanguageChoice } from './LanguageChoice';
 const second: LocaleDefinition = { ...findLocale('so')!, ready: true, endonym: 'Second' };
 const rtl: LocaleDefinition = { ...findLocale('fa-AF')!, ready: true, endonym: 'Third' };
 const offered = [LOCALES[0]!, second, rtl];
+// Only English, as for a build with no other language ready.
+const englishOnly = [LOCALES[0]!];
 
 afterEach(async () => {
   await deleteAllData();
 });
 
 describe('LanguageChoice', () => {
-  it('shows nothing while English is the only language offered (today)', () => {
+  it('shows nothing while English is the only language offered', () => {
     const { container } = render(
-      <I18nProvider>
+      <I18nProvider offered={englishOnly}>
         <LanguageChoice label="Your language" value="en" onChange={() => undefined} />
       </I18nProvider>,
     );
     expect(container).toBeEmptyDOMElement();
+  });
+
+  it('offers English and Indonesian today, each by its own name', () => {
+    render(
+      <I18nProvider>
+        <LanguageChoice label="Your language" value="en" onChange={() => undefined} />
+      </I18nProvider>,
+    );
+    const group = screen.getByRole('radiogroup', { name: 'Your language' });
+    expect(within(group).getAllByRole('radio').map((radio) => [radio.textContent, radio.getAttribute('lang')])).toEqual([
+      ['English', 'en'],
+      ['Indonesia', 'id'],
+    ]);
   });
 
   it('offers each language by its own name, in its own language and direction', async () => {
@@ -62,9 +77,11 @@ function Current() {
 describe('Settings: the language on this device', () => {
   it('is hidden while English is the only language', () => {
     render(
-      <LearnerSessionProvider>
-        <LanguageSetting />
-      </LearnerSessionProvider>,
+      <I18nProvider offered={englishOnly}>
+        <LearnerSessionProvider>
+          <LanguageSetting />
+        </LearnerSessionProvider>
+      </I18nProvider>,
     );
     expect(screen.queryByRole('heading', { name: 'Language' })).not.toBeInTheDocument();
   });
@@ -80,7 +97,7 @@ describe('Settings: the language on this device', () => {
     );
     expect(screen.getByRole('heading', { name: 'Language' })).toBeInTheDocument();
     const group = screen.getByRole('radiogroup', { name: 'Language on this device' });
-    expect(group).toHaveAccessibleDescription(/The lessons stay in English/);
+    expect(group).toHaveAccessibleDescription(/In Indonesian, the lessons do too/);
     await waitFor(() => expect(within(group).getByRole('radio', { name: 'English' })).toBeEnabled());
     await userEvent.click(within(group).getByRole('radio', { name: 'Second' }));
     await waitFor(() => expect(screen.getByTestId('state')).toHaveTextContent('none so'));
@@ -121,9 +138,11 @@ describe('a new learner', () => {
 
   it('is not asked while English is the only language', () => {
     render(
-      <MemoryRouter>
-        <NewLearnerForm lesson1={lesson1} onBack={() => undefined} onSubmit={() => Promise.resolve()} />
-      </MemoryRouter>,
+      <I18nProvider offered={englishOnly}>
+        <MemoryRouter>
+          <NewLearnerForm lesson1={lesson1} onBack={() => undefined} onSubmit={() => Promise.resolve()} />
+        </MemoryRouter>
+      </I18nProvider>,
     );
     expect(screen.queryByRole('radiogroup', { name: 'Your language' })).not.toBeInTheDocument();
   });
@@ -154,9 +173,11 @@ describe("a learner's home", () => {
   it('shows no language choice while English is the only language', () => {
     const learner = { id: 'a', name: 'Amina', colour: 'lemon' as const, createdAt: '2026-09-01T00:00:00.000Z' };
     render(
-      <MemoryRouter>
-        <LearnerDashboard learner={learner} progress={new Map()} />
-      </MemoryRouter>,
+      <I18nProvider offered={englishOnly}>
+        <MemoryRouter>
+          <LearnerDashboard learner={learner} progress={new Map()} />
+        </MemoryRouter>
+      </I18nProvider>,
     );
     expect(screen.queryByRole('heading', { name: 'Your language' })).not.toBeInTheDocument();
   });

@@ -12,13 +12,52 @@
  *
  * Nothing here downloads anything for an English-only visit.
  */
-import { ENGLISH, type LoadedLocale, type MessageTree } from './core';
+import { ENGLISH, type ContentTranslation, type LoadedLocale, type MessageTree } from './core';
 import { findLocale, SOURCE_LOCALE } from './locales';
 
 /** src/i18n/messages/<code>.json for every language but English, each loaded on first use. */
 const messageFiles = import.meta.glob<MessageTree>(['./messages/*.json', '!./messages/en.json', '!./messages/en.notes.json'], {
   import: 'default',
 });
+
+/**
+ * content/<code>/: the translated course, lessons, section checks and
+ * pictures of a language marked `content`, each loaded on first use. They
+ * go in the language's own chunk (src/i18n/build.ts), fetched with its
+ * messages.
+ */
+const contentFiles = import.meta.glob<unknown>(
+  ['../../content/*/course.json', '../../content/*/lessons/*.json', '../../content/*/quizzes/*.json'],
+  { import: 'default' },
+);
+const visualFiles = import.meta.glob<string>('../../content/*/visuals/*.svg', { query: '?url', import: 'default' });
+
+/** Loads every content/<code>/ file of one language. */
+async function fetchContent(code: string): Promise<ContentTranslation> {
+  const prefix = `../../content/${code}/`;
+  const fileName = (path: string) => path.slice(path.lastIndexOf('/') + 1);
+  const load = async <T,>(files: Record<string, () => Promise<T>>, dir: string) =>
+    Object.fromEntries(
+      await Promise.all(
+        Object.entries(files)
+          .filter(([path]) => path.startsWith(`${prefix}${dir}/`))
+          .map(async ([path, file]) => [fileName(path), await file()] as const),
+      ),
+    ) as Record<string, T>;
+  const course = contentFiles[`${prefix}course.json`];
+  const [courseTranslation, lessons, quizzes, visuals] = await Promise.all([
+    course ? course() : Promise.resolve({}),
+    load(contentFiles, 'lessons'),
+    load(contentFiles, 'quizzes'),
+    load(visualFiles, 'visuals'),
+  ]);
+  return {
+    course: courseTranslation,
+    lessons,
+    quizzes,
+    visuals: Object.fromEntries(Object.entries(visuals).map(([name, url]) => [`visuals/${name}`, url])),
+  };
+}
 
 interface PseudoModule {
   default: MessageTree;
@@ -75,7 +114,11 @@ async function fetchLocale(code: string): Promise<LoadedLocale> {
     return { definition, messages: module.default, decorate: module.decorate };
   }
   const file = messageFiles[`./messages/${code}.json`];
-  return { definition, messages: file ? await file() : {} };
+  const [messages, content] = await Promise.all([
+    file ? file() : Promise.resolve({}),
+    definition.content ? fetchContent(definition.code) : Promise.resolve(undefined),
+  ]);
+  return content ? { definition, messages, content } : { definition, messages };
 }
 
 /** Codes that have a message file in this build, for tests. */

@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { usePageTitle } from '../app/usePageTitle';
 import { Button, Icon, SectionBadge, SegmentedControl } from '../components/ds';
-import { getLessons, getLessonSection } from '../content';
+import { useContent } from '../content/useContent';
 import { En, useI18n } from '../i18n';
 import { useLearnerProgress, useLearnerSession } from '../session';
 import { journalByLesson, type LessonProgress } from '../storage';
@@ -24,6 +24,7 @@ type Filter = 'All' | 'Writing' | 'Reflections';
  */
 export function JournalPage() {
   const { t, tx, formatDate } = useI18n();
+  const content = useContent();
   usePageTitle(t('pages.journal.title'));
   const session = useLearnerSession();
   const learner = session.activeLearner;
@@ -36,7 +37,7 @@ export function JournalPage() {
 
   const loading = session.status === 'loading' || (learner !== null && status === 'loading');
 
-  const lessons = getLessons();
+  const lessons = content.getLessons();
   const effectiveProgress = useMemo(() => {
     if (Object.keys(overrides).length === 0) return progress;
     const merged = new Map(progress);
@@ -120,7 +121,7 @@ export function JournalPage() {
               return (
                 <section key={lesson.id} className="tw-journal-group">
                   <div className="tw-journal-group-label">
-                    <SectionBadge section={getLessonSection(lesson).id} showName={false} size={36} />
+                    <SectionBadge section={content.getLessonSection(lesson).id} showName={false} size={36} />
                     {tx('pages.journal.groupLabel', { number: lesson.number, title: <En>{lesson.title}</En> })}
                   </div>
                   {pieces.map((piece) => (

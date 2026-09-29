@@ -37,7 +37,17 @@ describe('loadLocale', () => {
     expect(loadedLocale('de')).toBeUndefined();
   });
 
-  it('finds no message file but English and its notes today', () => {
-    expect(messageFileCodes()).toEqual([]);
+  it('finds a message file for Indonesian, the one other language translated today', () => {
+    expect(messageFileCodes()).toEqual(['id']);
+  });
+
+  it("loads Indonesian's messages together with its translated lessons, section checks and pictures", async () => {
+    const indonesian = await loadLocale('id');
+    expect(indonesian.definition.code).toBe('id');
+    expect(Object.keys(indonesian.messages).length).toBeGreaterThan(10);
+    expect(Object.keys(indonesian.content?.lessons ?? {})).toHaveLength(24);
+    expect(Object.keys(indonesian.content?.quizzes ?? {}).sort()).toEqual(['civics.json', 'culture.json', 'geography.json', 'history.json']);
+    expect(Object.keys(indonesian.content?.visuals ?? {})).toContain('visuals/L01.svg');
+    expect(indonesian.content?.course).toHaveProperty('sections');
   });
 });

@@ -11,7 +11,7 @@
  */
 import { usePageTitle } from '../../app/usePageTitle';
 import { Button } from '../../components/ds';
-import { getLessons, getLessonSection } from '../../content';
+import { useContent } from '../../content/useContent';
 import { En, useI18n } from '../../i18n';
 import { splitParagraphs } from '../../lesson';
 import { useLearnerProgress, useLearnerSession } from '../../session';
@@ -21,6 +21,7 @@ import './print.css';
 
 export function JournalPrintPage() {
   const { t, tx, contentLang } = useI18n();
+  const content = useContent();
   usePageTitle(t('print.journalPageTitle'));
   const session = useLearnerSession();
   const learner = session.activeLearner;
@@ -30,7 +31,7 @@ export function JournalPrintPage() {
   // like home and the course map (AppLayout moves focus to the h1 once it appears).
   if (session.status === 'loading' || status === 'loading') return null;
 
-  const journal = learner ? journalByLesson(getLessons(), progress) : [];
+  const journal = learner ? journalByLesson(content.getLessons(), progress) : [];
 
   return (
     <div className="tw-print-page">
@@ -60,7 +61,7 @@ export function JournalPrintPage() {
           journal.map(({ lesson, pieces }) => (
             <section key={lesson.id} className="tw-print-part">
               <p className="tw-print-eyebrow">
-                {tx('pages.course.lessonLabel', { number: lesson.number, section: <En>{getLessonSection(lesson).title}</En> })}
+                {tx('pages.course.lessonLabel', { number: lesson.number, section: <En>{content.getLessonSection(lesson).title}</En> })}
               </p>
               <h2 {...contentLang}>{lesson.title}</h2>
               {pieces.map((piece, index) => (
