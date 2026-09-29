@@ -24,6 +24,9 @@
     "check:i18n": "node --experimental-strip-types tools/i18n/check.ts",
     "i18n:export": "node --experimental-strip-types tools/i18n/export.ts",
     "i18n:import": "node --experimental-strip-types tools/i18n/import.ts",
+    "review:export": "sh scripts/py.sh scripts/i18n/export_review.py id",
+    "review:import": "sh scripts/py.sh scripts/i18n/import_review.py id",
+    "test:review": "sh scripts/py.sh -m unittest discover -s scripts/i18n -p \"test_*.py\"",
     "size": "node tools/report-sizes.mjs",
     "perf": "node tools/measure-slow.mjs",
     "slow-internet": "node tools/slow-internet.mjs"
