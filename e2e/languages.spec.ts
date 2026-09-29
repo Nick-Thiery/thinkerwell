@@ -31,9 +31,12 @@ const LEARNER_TEXT = [TOUR_LEARNER, TOUR_WRITING, TOUR_REFLECTION, FINISH_ANSWER
 async function untranslated(page: Page): Promise<string[]> {
   return page.evaluate((learnerText) => {
     const problems = new Set<string>();
+    // Course text (lang="en"), and a language's own name in the language
+    // choice (lang="id" on "Indonesia"): in another language on purpose.
+    const pageLang = document.documentElement.lang.toLowerCase();
     const isCourseText = (el: Element) => {
       const lang = el.closest('[lang]')?.getAttribute('lang')?.toLowerCase() ?? '';
-      return lang === 'en';
+      return lang === 'en' || (lang !== pageLang && !lang.endsWith('-xa') && !lang.endsWith('-xb'));
     };
     const skipped = (el: Element) => el.closest('script, style, noscript, template, [translate="no"]') !== null;
     const withoutLearnerText = (text: string) => learnerText.reduce((rest, typed) => rest.split(typed).join(''), text);
@@ -137,10 +140,11 @@ test.describe('nothing extra for English', () => {
     expect(requests.filter((url) => /\/assets\/(locales|pseudo|fonts-arabic)\//.test(url))).toEqual([]);
   });
 
-  test('the offline copy holds no other language, no test language and no Arabic font, while only English is ready', async ({ request }) => {
+  test('the offline copy holds Indonesian, the one other language ready, and no test language, no language not ready and no Arabic font', async ({ request }) => {
     const worker = await (await request.get('/sw.js')).text();
     expect(worker).toContain('index.html');
-    expect(worker).not.toMatch(/assets\/(locales|pseudo|fonts-arabic)\//);
+    expect(worker).toMatch(/assets\/locales\/id\//);
+    expect(worker).not.toMatch(/assets\/(locales\/(?!id\/)|pseudo|fonts-arabic)/);
     expect(worker).not.toMatch(/vazirmatn/i);
   });
 
