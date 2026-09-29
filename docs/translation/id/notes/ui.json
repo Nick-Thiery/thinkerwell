@@ -1,0 +1,3492 @@
+{
+  "app.name": {
+    "back": "Thinkerwell",
+    "source": "Thinkerwell"
+  },
+  "app.courseTitle": {
+    "back": "Exploring Our World",
+    "source": "Exploring Our World"
+  },
+  "app.skipToContent": {
+    "back": "Go straight to content",
+    "source": "Skip to content"
+  },
+  "app.documentTitle": {
+    "back": "{page} · Thinkerwell",
+    "source": "{page} · Thinkerwell"
+  },
+  "nav.label": {
+    "back": "Main",
+    "source": "Main"
+  },
+  "nav.home": {
+    "back": "Home",
+    "source": "Home"
+  },
+  "nav.course": {
+    "flag": true,
+    "note": "\"Kursus\" for the course. Alternative: \"Materi\". Used in several places (Kembali ke kursus, Lihat kursus).",
+    "back": "Course",
+    "source": "Course"
+  },
+  "nav.journal": {
+    "back": "My journal",
+    "source": "My journal"
+  },
+  "nav.educators": {
+    "back": "For educators",
+    "source": "For educators"
+  },
+  "nav.about": {
+    "back": "About",
+    "source": "About"
+  },
+  "nav.settings": {
+    "back": "Settings",
+    "source": "Settings"
+  },
+  "stages.read": {
+    "back": "Read",
+    "source": "Read"
+  },
+  "stages.write": {
+    "back": "Write",
+    "source": "Write"
+  },
+  "stages.speak": {
+    "back": "Speak",
+    "source": "Speak"
+  },
+  "stages.watch": {
+    "back": "Watch",
+    "source": "Watch"
+  },
+  "stages.reflect": {
+    "back": "Reflection",
+    "source": "Reflect"
+  },
+  "stages.complete": {
+    "back": "Lesson finished",
+    "source": "Lesson complete"
+  },
+  "sections.check": {
+    "back": "Section check",
+    "source": "Section check"
+  },
+  "lesson.number": {
+    "back": "Lesson {number}",
+    "source": "Lesson {number}"
+  },
+  "lesson.minutes": {
+    "back": "About {min}–{max} minutes",
+    "source": "About {min}–{max} min"
+  },
+  "lesson.nextStep": {
+    "back": "Next step: {stage}",
+    "source": "Next step: {stage}"
+  },
+  "lessonPlayer.shell.aboutLesson": {
+    "back": "About this lesson",
+    "source": "About this lesson"
+  },
+  "lessonPlayer.shell.learningGoal": {
+    "back": "Learning goal",
+    "source": "Learning goal"
+  },
+  "lessonPlayer.shell.time": {
+    "back": "About {min}–{max} minutes. You can stop and come back any time.",
+    "source": "About {min}–{max} min. Stop and come back any time."
+  },
+  "lessonPlayer.shell.sublabelDone": {
+    "back": "Done",
+    "source": "Done"
+  },
+  "lessonPlayer.shell.sublabelRead": {
+    "back": "Warm-up, reading and quick check",
+    "source": "Warm-up, reading and quick check"
+  },
+  "lessonPlayer.shell.sublabelWrite": {
+    "back": "Your writing task",
+    "source": "Your writing task"
+  },
+  "lessonPlayer.shell.sublabelSpeak": {
+    "back": "With a friend or alone",
+    "source": "With a partner or on your own"
+  },
+  "lessonPlayer.shell.sublabelWatch": {
+    "flag": true,
+    "note": "\"Optional\" → \"Tidak wajib\" (not required) everywhere, clearer for children than \"Opsional\" or \"Pilihan\". Same in watch.eyebrow, ds.content.video.optional and the \"(tidak wajib)\" field labels.",
+    "back": "Not required · {minutes} minutes",
+    "source": "Optional · {minutes} min"
+  },
+  "lessonPlayer.shell.sublabelWatchNoTime": {
+    "back": "Not required",
+    "source": "Optional"
+  },
+  "lessonPlayer.shell.sublabelReflect": {
+    "back": "{count} short questions",
+    "source": "{count} short prompts"
+  },
+  "lessonPlayer.shell.continueTo": {
+    "back": "Continue to {stage}",
+    "source": "Continue to {stage}"
+  },
+  "lessonPlayer.shell.finishLesson": {
+    "back": "Finish the lesson",
+    "source": "Finish lesson"
+  },
+  "lessonPlayer.shell.noLearnerTitle": {
+    "back": "Nothing is saved yet.",
+    "source": "Nothing is saved yet."
+  },
+  "lessonPlayer.shell.noLearnerBody": {
+    "back": "Choose who is learning so that your work is saved on this device.",
+    "source": "Choose who's learning to keep your work on this device."
+  },
+  "lessonPlayer.shell.noLearnerAction": {
+    "back": "Choose who is learning",
+    "source": "Choose who's learning"
+  },
+  "lessonPlayer.shell.saveError": {
+    "flag": true,
+    "note": "'it tries again' = impersonal 'akan dicoba lagi' (no 'kami').",
+    "source": "Your last change didn't save on this device. Keep going: it tries again with your next change.",
+    "back": "Your last change has not been saved on this device yet. Just carry on: it will be tried again when you make your next change."
+  },
+  "lessonPlayer.read.toolsLabel": {
+    "back": "Reading tools",
+    "source": "Reading tools"
+  },
+  "lessonPlayer.read.listen": {
+    "source": "Listen",
+    "back": "Listen"
+  },
+  "lessonPlayer.read.listenNoVoice": {
+    "source": "Listen can't read this lesson aloud here: this device has no voice for its language.",
+    "flag": true,
+    "note": "New message (Nick). Shown under the reading tools when the device has no Indonesian voice for Listen. Check it is short and clear.",
+    "back": "Listen can't read this lesson aloud here yet, because this device has no Indonesian-language voice."
+  },
+  "lessonPlayer.read.listenLabel": {
+    "source": "Reading aloud · part {n} of {total}",
+    "back": "Being read aloud · part {n} of {total}"
+  },
+  "lessonPlayer.read.levelLabel": {
+    "back": "Reading level",
+    "source": "Reading level"
+  },
+  "lessonPlayer.read.levelStandard": {
+    "back": "Standard",
+    "source": "Standard"
+  },
+  "lessonPlayer.read.levelSimpler": {
+    "back": "Easier",
+    "source": "Simpler"
+  },
+  "lessonPlayer.read.keyWords": {
+    "back": "Key words",
+    "source": "Key words"
+  },
+  "lessonPlayer.read.keyWordsTitle": {
+    "back": "Key words in this lesson",
+    "source": "Key words in this lesson"
+  },
+  "lessonPlayer.read.keyWordsIntro": {
+    "back": "All the key words in this reading, with their meanings.",
+    "source": "Every key word in the reading, with what it means."
+  },
+  "lessonPlayer.read.warmUpEyebrow": {
+    "back": "Before reading",
+    "source": "Before you read"
+  },
+  "lessonPlayer.read.warmUpHint": {
+    "source": "Choose one. You can change it later.",
+    "back": "Choose one. You can change it later."
+  },
+  "lessonPlayer.read.warmUpHintWriting": {
+    "source": "Write a quick idea. You can change it later.",
+    "back": "Write a short idea. You can change it later."
+  },
+  "lessonPlayer.read.warmUpChoices": {
+    "source": "Your first idea",
+    "back": "Your first idea"
+  },
+  "lessonPlayer.read.warmUpWritingLabel": {
+    "source": "Your first idea",
+    "back": "Your first idea"
+  },
+  "lessonPlayer.read.partLabel": {
+    "back": "Read · {n} of {total}",
+    "source": "Read · {n} of {total}"
+  },
+  "lessonPlayer.read.partSimpler": {
+    "flag": true,
+    "note": "\"Simpler English\" → \"Versi lebih mudah\" (the text is Indonesian now), as KEY_TERMS suggests.",
+    "back": "Read · {n} of {total} · Easier version",
+    "source": "Read · {n} of {total} · Simpler English"
+  },
+  "lessonPlayer.read.nextPart": {
+    "flag": true,
+    "note": "\"Part\" of a reading → \"Bagian\", the same word KEY_TERMS uses for course sections. Clear in context, but check it doesn't confuse. Same for backPart, checkEyebrow and ds.content.reading.part.",
+    "back": "Next: Section/Part {n}",
+    "source": "Next: Part {n}"
+  },
+  "lessonPlayer.read.nextCheck": {
+    "back": "Next: Quick check",
+    "source": "Next: Quick check"
+  },
+  "lessonPlayer.read.backPart": {
+    "back": "Section/Part {n}",
+    "source": "Part {n}"
+  },
+  "lessonPlayer.read.glossaryHelper": {
+    "back": "Tap a coloured word to see its meaning.",
+    "source": "Tap a coloured word to see what it means."
+  },
+  "lessonPlayer.read.checkEyebrow": {
+    "back": "Read · last part",
+    "source": "Read · last part"
+  },
+  "lessonPlayer.read.checkTitle": {
+    "back": "Quick check",
+    "source": "Quick check"
+  },
+  "lessonPlayer.read.checkRetryNote": {
+    "back": "Try as many times as you want",
+    "flag": true,
+    "note": "\"Coba sebanyak yang kamu mau\" lacks \"kali\" and reads a little clipped (\"try as much as you want\"). Consider \"Boleh coba berkali-kali\" or \"Coba sesering yang kamu mau\" (matches sectionCheckQuestion).",
+    "source": "Try as many times as you like"
+  },
+  "lessonPlayer.read.questionOf": {
+    "back": "Question {n} of {total}",
+    "source": "Question {n} of {total}"
+  },
+  "lessonPlayer.read.thinkEyebrow": {
+    "back": "Question {n} of {total} · think it through carefully",
+    "source": "Question {n} of {total} · think it through"
+  },
+  "lessonPlayer.read.thinkHelper": {
+    "back": "There can be more than one right answer.",
+    "flag": true,
+    "note": "\"yang paling benar\" (the most correct) hints that answers can be more or less right; English is \"no single right answer\". Consider \"Jawabannya bisa berbeda-beda.\" Same in thinkHelperOptional. | Fixed after review: \"yang paling benar\" suggested some answers are more right; English says there is no single right answer.",
+    "source": "There is no single right answer."
+  },
+  "lessonPlayer.read.thinkHelperOptional": {
+    "back": "This question is optional. There can be more than one right answer.",
+    "flag": true,
+    "note": "See thinkHelper: \"paling benar\" vs \"no single right answer\". | Fixed after review: same as thinkHelper.",
+    "source": "This one is optional. There is no single right answer."
+  },
+  "lessonPlayer.read.tryAgain": {
+    "back": "Try again",
+    "source": "Try again"
+  },
+  "lessonPlayer.read.checkHelper": {
+    "back": "You can come back to these questions any time.",
+    "source": "You can come back to these questions any time."
+  },
+  "lessonPlayer.evidence.fictionalBadge.items": {
+    "back": "Fictional example",
+    "source": "Fictional examples"
+  },
+  "lessonPlayer.evidence.fictionalBadge.timeline": {
+    "back": "Fictional timeline",
+    "source": "Fictional timeline"
+  },
+  "lessonPlayer.evidence.fictionalBadge.map": {
+    "back": "Fictional map",
+    "source": "Fictional map"
+  },
+  "lessonPlayer.evidence.fictionalBadge.cases": {
+    "back": "Fictional example",
+    "source": "Fictional examples"
+  },
+  "lessonPlayer.evidence.fictionalBadge.sources": {
+    "back": "Fictional source",
+    "source": "Fictional sources"
+  },
+  "lessonPlayer.evidence.fictionalBadge.table": {
+    "back": "Fictional table",
+    "source": "Fictional table"
+  },
+  "lessonPlayer.evidence.sectionLabel": {
+    "back": "Evidence",
+    "source": "Evidence"
+  },
+  "lessonPlayer.evidence.eyebrow": {
+    "back": "Look carefully",
+    "source": "Look closely"
+  },
+  "lessonPlayer.evidence.mapKey": {
+    "flag": true,
+    "note": "\"Map key\" → \"Keterangan peta\". Schools also say \"Legenda peta\".",
+    "back": "Map key",
+    "source": "Map key"
+  },
+  "lessonPlayer.evidence.places": {
+    "back": "Places",
+    "source": "Places"
+  },
+  "lessonPlayer.evidence.tableLabel": {
+    "back": "Table: {title}",
+    "source": "Table: {title}"
+  },
+  "lessonPlayer.visual.seeBigger": {
+    "source": "See it bigger",
+    "back": "See bigger"
+  },
+  "lessonPlayer.visual.close": {
+    "source": "Close",
+    "back": "Close"
+  },
+  "lessonPlayer.visual.title.map": {
+    "source": "The map",
+    "back": "Map"
+  },
+  "lessonPlayer.visual.title.timeline": {
+    "source": "The timeline",
+    "back": "Timeline"
+  },
+  "lessonPlayer.visual.title.diagram": {
+    "source": "The diagram",
+    "back": "Diagram"
+  },
+  "lessonPlayer.visual.title.illustration": {
+    "source": "The picture",
+    "back": "Picture"
+  },
+  "lessonPlayer.visual.scrollLabel": {
+    "source": "{title}, bigger",
+    "back": "{title}, enlarged"
+  },
+  "lessonPlayer.visual.touchHintNarrow": {
+    "flag": true,
+    "note": "'Pinch' = 'Cubit' (as in Android Indonesian). Check that learners understand it.",
+    "source": "Drag to see all of it. Pinch to zoom in more.",
+    "back": "Swipe to see all of it. Pinch to enlarge more."
+  },
+  "lessonPlayer.visual.touchHintWide": {
+    "source": "Pinch to zoom in.",
+    "back": "Pinch to enlarge."
+  },
+  "lessonPlayer.write.helpLabel": {
+    "back": "Writing help",
+    "source": "Writing help"
+  },
+  "lessonPlayer.write.modeWrite": {
+    "back": "Write",
+    "source": "Write"
+  },
+  "lessonPlayer.write.modeStarters": {
+    "back": "Sentence beginnings",
+    "source": "Sentence starters"
+  },
+  "lessonPlayer.write.modePlan": {
+    "back": "Plan first",
+    "source": "Plan first"
+  },
+  "lessonPlayer.write.modeWriteShort": {
+    "back": "Write",
+    "source": "Write"
+  },
+  "lessonPlayer.write.modeStartersShort": {
+    "flag": true,
+    "note": "Phone tab label for \"Sentence starters\". \"Awal kalimat\" felt too long for a 3-way tab, so \"Pembuka\" (opener). It differs from \"awal kalimat\" used elsewhere; if the team picks \"pembuka kalimat\" as the key term, everything lines up.",
+    "back": "Openers",
+    "source": "Starters"
+  },
+  "lessonPlayer.write.modePlanShort": {
+    "back": "Plan",
+    "source": "Plan"
+  },
+  "lessonPlayer.write.evidenceToggle": {
+    "back": "See the evidence again",
+    "source": "Look at the evidence again"
+  },
+  "lessonPlayer.write.mapToggle": {
+    "back": "See the map again",
+    "source": "Look at the map again"
+  },
+  "lessonPlayer.write.startersTitle": {
+    "back": "Tap a sentence beginning to add it to your writing",
+    "source": "Tap a sentence starter to add it to your writing"
+  },
+  "lessonPlayer.write.startersTitleShort": {
+    "flag": true,
+    "note": "\"Tap a starter to add it\" → \"Ketuk satu untuk memakainya\" (tap one to use it), to stay short on phones.",
+    "back": "Tap one to use it",
+    "source": "Tap a starter to add it"
+  },
+  "lessonPlayer.write.planTitle": {
+    "back": "Plan your ideas here, then write your answer below",
+    "source": "Plan your ideas here, then write your answer below"
+  },
+  "lessonPlayer.write.answerLabel": {
+    "back": "Your answer",
+    "source": "Your answer"
+  },
+  "lessonPlayer.write.helperSaving": {
+    "back": "4 to 6 sentences is enough. Spelling doesn't matter here. Your writing is saved on this device as you type.",
+    "source": "4 to 6 sentences is plenty. Spelling does not matter here. Saved on this device as you type."
+  },
+  "lessonPlayer.write.helperLookAround": {
+    "back": "4 to 6 sentences is enough. Spelling doesn't matter here. Nothing is saved while you are looking around.",
+    "source": "4 to 6 sentences is plenty. Spelling does not matter here. Nothing is saved while you look around."
+  },
+  "lessonPlayer.write.helperNoLearner": {
+    "back": "4 to 6 sentences is enough. Spelling doesn't matter here. Nothing is saved until you choose who is learning.",
+    "source": "4 to 6 sentences is plenty. Spelling does not matter here. Nothing is saved until you choose who's learning."
+  },
+  "lessonPlayer.write.helperSavingSayIt": {
+    "source": "4 to 6 sentences is plenty. Spelling does not matter here. Tap Say it to talk instead of typing. Saved on this device as you type.",
+    "back": "4 to 6 sentences is enough. Spelling doesn't matter here. Tap Say it to speak, with no need to type. Your writing is saved on this device as you type."
+  },
+  "lessonPlayer.write.helperLookAroundSayIt": {
+    "source": "4 to 6 sentences is plenty. Spelling does not matter here. Tap Say it to talk instead of typing. Nothing is saved while you look around.",
+    "back": "4 to 6 sentences is enough. Spelling doesn't matter here. Tap Say it to speak, with no need to type. Nothing is saved while you are looking around."
+  },
+  "lessonPlayer.write.helperNoLearnerSayIt": {
+    "source": "4 to 6 sentences is plenty. Spelling does not matter here. Tap Say it to talk instead of typing. Nothing is saved until you choose who's learning.",
+    "back": "4 to 6 sentences is enough. Spelling doesn't matter here. Tap Say it to speak, with no need to type. Nothing is saved yet until you choose who is learning."
+  },
+  "lessonPlayer.write.selfCheckTitle": {
+    "back": "Check your answer",
+    "source": "Check your answer"
+  },
+  "lessonPlayer.write.seeExample": {
+    "back": "See an example answer",
+    "source": "See an example answer"
+  },
+  "lessonPlayer.write.compareExample": {
+    "back": "Compare with an example answer",
+    "source": "Compare with an example answer"
+  },
+  "lessonPlayer.write.exampleEyebrow": {
+    "back": "Example answer",
+    "source": "Example answer"
+  },
+  "lessonPlayer.write.exampleNote": {
+    "back": "This is one way of answering. Your answer may be different.",
+    "source": "This is one way to answer. Yours can be different."
+  },
+  "lessonPlayer.write.tip": {
+    "back": "Confused? Tap one of the sentence beginnings, then fill in the empty part.",
+    "source": "Stuck? Tap a sentence starter, then fill in the blanks."
+  },
+  "lessonPlayer.sayIt.listening": {
+    "source": "Listening. Speak slowly. Your words appear in the box, and you can fix them after.",
+    "back": "Listening. Speak slowly. Your words appear in the box, and you can fix them later."
+  },
+  "lessonPlayer.sayIt.micBlocked": {
+    "source": "Say it needs the microphone. You can allow it in the browser's settings, or type instead.",
+    "back": "Say it needs the microphone. You can allow it in the browser settings, or just type."
+  },
+  "lessonPlayer.sayIt.noMic": {
+    "source": "No microphone was found. You can type instead.",
+    "back": "Microphone not found. You can just type."
+  },
+  "lessonPlayer.sayIt.offline": {
+    "source": "Say it needs the internet on this device. You can type instead.",
+    "back": "Say it needs internet on this device. You can just type."
+  },
+  "lessonPlayer.sayIt.noSpeech": {
+    "source": "Nothing was heard. Tap Say it to try again, or type instead.",
+    "back": "No sound was heard. Tap Say it to try again, or just type."
+  },
+  "lessonPlayer.sayIt.unavailable": {
+    "source": "Say it isn't working on this device right now. You can type instead.",
+    "back": "Say it is not working on this device right now. You can just type."
+  },
+  "lessonPlayer.speak.eyebrow": {
+    "back": "Speak and listen",
+    "source": "Speak and listen"
+  },
+  "lessonPlayer.speak.task": {
+    "back": "Tell your ideas from this lesson. You can do it with a friend or alone.",
+    "source": "Talk about your ideas from this lesson. You can do it with a partner or on your own."
+  },
+  "lessonPlayer.speak.taskWithRecorder": {
+    "source": "Talk about your ideas from this lesson. You can do it with a partner or on your own. You can record yourself if you like. Recordings stay on this device.",
+    "back": "Tell your ideas from this lesson. You can do it with a partner or alone. If you want, you can record your voice. The recording stays on this device."
+  },
+  "lessonPlayer.speak.partnerTitle": {
+    "back": "With a friend",
+    "source": "With a partner"
+  },
+  "lessonPlayer.speak.soloTitle": {
+    "back": "Alone",
+    "source": "On your own"
+  },
+  "lessonPlayer.speak.practisedLegend": {
+    "back": "How did you practise?",
+    "source": "How did you practise?"
+  },
+  "lessonPlayer.speak.practisedHelp": {
+    "flag": true,
+    "note": "\"Every way of practising counts\" → \"Cara apa pun tetap dihitung\". \"Dihitung\" is literal; check it doesn't sound like scoring. Same idea in watch.task (\"Keduanya sama-sama dihitung\").",
+    "back": "Choose one. Any way still counts.",
+    "source": "Choose one. Every way of practising counts."
+  },
+  "lessonPlayer.speak.recorder.title": {
+    "source": "Record yourself (optional)",
+    "back": "Record your voice (optional)"
+  },
+  "lessonPlayer.speak.recorder.task": {
+    "source": "Say your answer, then listen back. Try again as many times as you like.",
+    "back": "Say your answer, then listen back. Try as many times as you want."
+  },
+  "lessonPlayer.speak.recorder.noteLookAround": {
+    "source": "Not saved while you look around. It's gone when you leave this page.",
+    "back": "Not saved while you are looking around. The recording disappears when you leave this page."
+  },
+  "lessonPlayer.speak.recorder.noteNoLearner": {
+    "source": "Not saved until you choose who's learning. It's gone when you leave this page.",
+    "back": "Not saved yet until you choose who is learning. The recording disappears when you leave this page."
+  },
+  "lessonPlayer.speak.recorder.announceStarted": {
+    "source": "Recording.",
+    "back": "Recording."
+  },
+  "lessonPlayer.speak.recorder.announceSaved": {
+    "source": "Recording stopped. It stays on this device.",
+    "back": "Recording stopped. The recording stays on this device."
+  },
+  "lessonPlayer.speak.recorder.announceStopped": {
+    "source": "Recording stopped.",
+    "back": "Recording stopped."
+  },
+  "lessonPlayer.speak.recorder.announceDeleted": {
+    "source": "Recording deleted.",
+    "back": "Recording deleted."
+  },
+  "lessonPlayer.speak.recorder.micBlocked": {
+    "source": "Recording needs the microphone. You can allow it in the browser's settings, or practise without recording.",
+    "back": "Recording needs the microphone. You can allow it in the browser settings, or practise without recording."
+  },
+  "lessonPlayer.speak.recorder.noMic": {
+    "flag": true,
+    "note": "'practise out loud' = 'berlatih dengan suara lantang'.",
+    "source": "No microphone was found. You can practise out loud or with a partner instead.",
+    "back": "Microphone not found. You can practise out loud or with a partner."
+  },
+  "lessonPlayer.speak.recorder.failed": {
+    "source": "Recording didn't start on this device. You can practise out loud or with a partner instead.",
+    "back": "Recording can't start on this device. You can practise out loud or with a partner."
+  },
+  "lessonPlayer.speak.recorder.playback": {
+    "source": "This recording can't play here.",
+    "back": "This recording can't be played here."
+  },
+  "lessonPlayer.speak.recorder.notSaved": {
+    "source": "This recording couldn't be saved on the device. You can still listen back now.",
+    "back": "This recording can't be saved on the device. You can still listen to it now."
+  },
+  "lessonPlayer.watch.eyebrow": {
+    "back": "Watch · not required",
+    "source": "Watch · optional"
+  },
+  "lessonPlayer.watch.task": {
+    "back": "Watch a short video, or just read the same ideas. Both count equally.",
+    "source": "Watch a short video, or read the same ideas instead. Both count."
+  },
+  "lessonPlayer.watch.slowTitle": {
+    "back": "Slow internet?",
+    "source": "Slow internet?"
+  },
+  "lessonPlayer.watch.slowBody": {
+    "back": "Choose \"Just read\". It has the same content and uses almost no data.",
+    "flag": true,
+    "note": "\"Pilih Baca saja\" names the button \"Baca saja\", but can be parsed as \"just choose Read\". Same in videoInEnglish. Consider quoting the button name: Pilih \"Baca saja\". | Fixed after review: the button name is now in quotes, so \"Baca saja\" reads as the button, not \"just read\".",
+    "source": "Choose Read instead. It has the same ideas and uses almost no data."
+  },
+  "lessonPlayer.watch.saveDataTitle": {
+    "back": "Video is turned off to save data.",
+    "source": "Videos are off to save data."
+  },
+  "lessonPlayer.watch.timeoutTitle": {
+    "back": "The video is taking a long time to load.",
+    "source": "The video is taking a long time to load."
+  },
+  "lessonPlayer.watch.offlineTitle": {
+    "flag": true,
+    "note": "Avoided the word \"offline\": \"tidak tersambung ke internet\".",
+    "back": "You are not connected to the internet right now, so the video can't load yet.",
+    "source": "You're offline, so the video can't load now."
+  },
+  "lessonPlayer.watch.unavailableTitle": {
+    "back": "This video can't be played here right now.",
+    "source": "This video can't play here right now."
+  },
+  "lessonPlayer.watch.sameIdeas": {
+    "back": "These are the same ideas to read.",
+    "source": "Here are the same ideas to read."
+  },
+  "lessonPlayer.watch.thinkFirst": {
+    "back": "Think first",
+    "source": "Think first"
+  },
+  "lessonPlayer.watch.beforePlaceholder": {
+    "back": "Write a short idea, or just think…",
+    "source": "Write a quick idea, or just think about it…"
+  },
+  "lessonPlayer.watch.readInstead": {
+    "back": "Just read",
+    "source": "Read instead"
+  },
+  "lessonPlayer.watch.closeVideo": {
+    "back": "Close video",
+    "source": "Close the video"
+  },
+  "lessonPlayer.watch.playerOpened": {
+    "back": "The video player is open. Press its play button to start.",
+    "source": "The video player is open. Use its play button to start."
+  },
+  "lessonPlayer.watch.writtenPart": {
+    "back": "Written version",
+    "source": "Written version"
+  },
+  "lessonPlayer.watch.keyPoints": {
+    "back": "Key points",
+    "source": "Key points"
+  },
+  "lessonPlayer.watch.watchInstead": {
+    "back": "Just watch the video",
+    "source": "Watch the video instead"
+  },
+  "lessonPlayer.watch.tryAgain": {
+    "back": "Try playing the video again",
+    "source": "Try the video again"
+  },
+  "lessonPlayer.watch.afterEyebrow": {
+    "back": "After watching or reading",
+    "source": "After you watch or read"
+  },
+  "lessonPlayer.watch.afterPlaceholder": {
+    "back": "Write one or two sentences…",
+    "source": "Write one or two sentences…"
+  },
+  "lessonPlayer.watch.helper": {
+    "back": "Watching is not required. You may skip this step.",
+    "source": "Watching is optional. You can skip this step."
+  },
+  "lessonPlayer.watch.forTeachers": {
+    "back": "For teachers",
+    "source": "For teachers"
+  },
+  "lessonPlayer.watch.videoInEnglish": {
+    "flag": true,
+    "note": "Says the button name \"Baca saja\" and \"bahasa Indonesia\" explicitly (the English says \"your language\"). | Fixed after review: button name in quotes, as in slowBody.",
+    "back": "This video is in English. Choose \"Just read\" for the same ideas in Indonesian.",
+    "source": "This video is in English. Read instead has the same ideas in your language."
+  },
+  "lessonPlayer.reflect.eyebrow": {
+    "back": "Reflection",
+    "source": "Reflect"
+  },
+  "lessonPlayer.reflect.task": {
+    "back": "Take a moment to think about what you learned today. Only the first question is required.",
+    "source": "Take a moment to think about what you learned today. Only the first question is needed."
+  },
+  "lessonPlayer.reflect.journalNote": {
+    "back": "Your answers go into your journal on this device. Only people who use this device can see it.",
+    "source": "Your answers go into your journal on this device. Only people who use this device can see them."
+  },
+  "lessonPlayer.reflect.lookAroundNote": {
+    "back": "You are looking around, so your answers are not saved.",
+    "source": "You're looking around, so your answers aren't saved."
+  },
+  "lessonPlayer.reflect.noLearnerNote": {
+    "back": "Your answers are not saved yet. Choose who is learning so that your answers are saved in the journal.",
+    "source": "Your answers aren't saved yet. Choose who's learning to keep them in a journal."
+  },
+  "lessonPlayer.reflect.finishHelper": {
+    "back": "Answer the first question to finish the lesson.",
+    "source": "Answer the first question to finish."
+  },
+  "lessonPlayer.complete.eyebrow": {
+    "back": "Lesson {number} finished",
+    "source": "Lesson {number} complete"
+  },
+  "lessonPlayer.complete.title": {
+    "back": "You have finished Lesson {number}.",
+    "source": "You finished Lesson {number}."
+  },
+  "lessonPlayer.complete.summary": {
+    "back": "{title} {message}",
+    "source": "{title} {message}"
+  },
+  "lessonPlayer.complete.partwayEyebrow": {
+    "back": "Lesson {number}",
+    "source": "Lesson {number}"
+  },
+  "lessonPlayer.complete.partwayTitle": {
+    "flag": true,
+    "note": "\"You're partway through\" → \"Kamu sudah mengerjakan sebagian ...\" (you've done part of).",
+    "back": "You have done part of Lesson {number}.",
+    "source": "You're partway through Lesson {number}."
+  },
+  "lessonPlayer.complete.partwayBody": {
+    "source": "You've done {done} of {total} steps so far. Answer the first Reflect question to finish it. Nothing is locked, so open any step you like.",
+    "back": "So far you have finished {done} of {total} steps. Answer the first question in Reflect to finish it. Nothing is locked, so you may open any step."
+  },
+  "lessonPlayer.complete.partwayCta": {
+    "flag": true,
+    "note": "\"Go to {stage}\" → \"Buka {stage}\" (open).",
+    "back": "Open {stage}",
+    "source": "Go to {stage}"
+  },
+  "lessonPlayer.complete.badgeProgress": {
+    "back": "{title} · {completed} of {count} lessons finished",
+    "source": "{title} · {completed} of {count} lessons done"
+  },
+  "lessonPlayer.complete.badgeSection": {
+    "back": "Section {number} · {title}",
+    "source": "Section {number} · {title}"
+  },
+  "lessonPlayer.complete.savedBoth": {
+    "back": "Your writing and reflection are saved in your journal.",
+    "source": "Your writing and your reflection are saved in your journal."
+  },
+  "lessonPlayer.complete.savedWriting": {
+    "back": "Your writing is saved in your journal.",
+    "source": "Your writing is saved in your journal."
+  },
+  "lessonPlayer.complete.savedReflection": {
+    "back": "Your reflection is saved in your journal.",
+    "source": "Your reflection is saved in your journal."
+  },
+  "lessonPlayer.complete.guestNote": {
+    "back": "None of this lesson's work was saved this time. To have your work saved, choose who is learning on the home page.",
+    "source": "Nothing from this lesson was saved on this visit. To keep your work, choose who's learning on the home page."
+  },
+  "lessonPlayer.complete.upNext": {
+    "back": "Next",
+    "source": "Up next"
+  },
+  "lessonPlayer.complete.sectionCheckTitle": {
+    "back": "Section check: {title}",
+    "source": "Section check: {title}"
+  },
+  "lessonPlayer.complete.sectionCheckQuestion": {
+    "back": "Covers Lessons {first}–{last}. Try any time, as often as you want.",
+    "source": "Covers Lessons {first}–{last}. Try it any time, as often as you like."
+  },
+  "lessonPlayer.complete.backToCourse": {
+    "back": "Back to the course",
+    "source": "Back to the course"
+  },
+  "lessonPlayer.complete.openJournal": {
+    "back": "Open my journal",
+    "source": "Open my journal"
+  },
+  "pages.home.title": {
+    "back": "Who is learning today?",
+    "source": "Who's learning today?"
+  },
+  "pages.home.subtitle": {
+    "back": "Tap your name to carry on from where you stopped.",
+    "source": "Tap your name to carry on where you stopped."
+  },
+  "pages.home.onThisDevice": {
+    "back": "On this device",
+    "source": "On this device"
+  },
+  "pages.home.hero.tagline": {
+    "back": "Explore your world.",
+    "source": "Explore your world."
+  },
+  "pages.home.hero.description": {
+    "flag": true,
+    "note": "\"social-studies course\" → \"Kursus IPS\" (the school subject name learners know). Alternative: \"kursus ilmu sosial\".",
+    "back": "A free social studies (IPS) course. Learn about people, places and communities, then share your own ideas.",
+    "source": "A free social-studies course. Learn about people, places and communities, and share your own ideas."
+  },
+  "pages.home.hero.stagesLabel": {
+    "back": "Every lesson has five steps",
+    "source": "Every lesson has five steps"
+  },
+  "pages.home.hero.footnote": {
+    "back": "{lessons} lessons in {sections} sections · no account needed",
+    "source": "{lessons} lessons in {sections} sections · no account needed"
+  },
+  "pages.home.lookAround": {
+    "flag": true,
+    "note": "\"(nothing is saved)\" → \"(tanpa menyimpan)\" to keep the button short. Fuller: \"(tidak ada yang disimpan)\".",
+    "back": "Just look around (without saving)",
+    "source": "Just look around (nothing is saved)"
+  },
+  "pages.home.lookAroundNote": {
+    "back": "Work is only saved on this device. No password, no photo.",
+    "source": "Work is saved on this device only. No passwords, no photos."
+  },
+  "pages.home.newLearnerTile": {
+    "back": "I'm new here",
+    "source": "I'm new here"
+  },
+  "pages.home.tileMeta": {
+    "back": "Up to Lesson {number}",
+    "source": "Up to Lesson {number}"
+  },
+  "pages.home.tileMetaNone": {
+    "back": "Not started yet",
+    "source": "Not started yet"
+  },
+  "pages.home.tileAdded": {
+    "source": "Added {date}",
+    "back": "Added {date}"
+  },
+  "pages.home.tileMetaAdded": {
+    "source": "{meta} · added {date}",
+    "back": "{meta} · added {date}"
+  },
+  "pages.home.newLearner.back": {
+    "back": "Back",
+    "source": "Back"
+  },
+  "pages.home.newLearner.eyebrow": {
+    "back": "Welcome",
+    "source": "Welcome"
+  },
+  "pages.home.newLearner.title": {
+    "source": "What's your name?",
+    "back": "What is your name?"
+  },
+  "pages.home.newLearner.nameLabel": {
+    "back": "First name or nickname",
+    "source": "First name or nickname"
+  },
+  "pages.home.newLearner.nameHelper": {
+    "back": "No need for a last name.",
+    "source": "No surname needed."
+  },
+  "pages.home.newLearner.nameRequired": {
+    "source": "Type your name or a nickname.",
+    "back": "Write your name or your nickname."
+  },
+  "pages.home.newLearner.nameTooLong": {
+    "back": "About 30 letters is enough.",
+    "flag": true,
+    "note": "Error shown when the name is too long. \"Cukup sekitar 30 huruf saja\" (about 30 letters is enough) may not tell a child the name is too long. Consider \"Namanya terlalu panjang. Cukup sekitar 30 huruf.\"",
+    "source": "Keep it to about 30 letters."
+  },
+  "pages.home.newLearner.colourLabel": {
+    "back": "Choose your colour",
+    "source": "Pick your colour"
+  },
+  "pages.home.newLearner.colour.lemon": {
+    "back": "Yellow",
+    "source": "Yellow"
+  },
+  "pages.home.newLearner.colour.history": {
+    "flag": true,
+    "note": "Colour \"Sand\" → \"Krem\" (cream), the everyday colour name. Literal: \"Pasir\".",
+    "back": "Cream/beige",
+    "source": "Sand"
+  },
+  "pages.home.newLearner.colour.geography": {
+    "back": "Green",
+    "source": "Green"
+  },
+  "pages.home.newLearner.colour.civics": {
+    "back": "Blue",
+    "source": "Blue"
+  },
+  "pages.home.newLearner.colour.paper": {
+    "back": "White",
+    "source": "White"
+  },
+  "pages.home.newLearner.classCodeLabel": {
+    "back": "Class code",
+    "source": "Class code"
+  },
+  "pages.home.newLearner.classCodeHelper": {
+    "back": "Your teacher might give you a code.",
+    "source": "Your teacher may give you one."
+  },
+  "pages.home.newLearner.classCodePlaceholder": {
+    "back": "For example HLP-07",
+    "source": "For example HLP-07"
+  },
+  "pages.home.newLearner.classCodeInvalid": {
+    "back": "Use only letters, numbers and hyphens, like HLP-07.",
+    "source": "Use letters, numbers and hyphens only, like HLP-07."
+  },
+  "pages.home.newLearner.submit": {
+    "back": "Start Lesson 1",
+    "source": "Start Lesson 1"
+  },
+  "pages.home.newLearner.submitError": {
+    "back": "Not saved yet. Try again.",
+    "source": "That didn't save. Try again."
+  },
+  "pages.home.newLearner.startsWith": {
+    "back": "You will start with",
+    "source": "You will start with"
+  },
+  "pages.home.newLearner.startsWithLesson": {
+    "back": "Lesson {number}: {title}",
+    "source": "Lesson {number}: {title}"
+  },
+  "pages.home.newLearner.startsWithNote": {
+    "back": "Later you can open any lesson from the course page.",
+    "source": "You can open any lesson later from the course page."
+  },
+  "pages.home.newLearner.privacyNote": {
+    "back": "Your work stays on this device.",
+    "source": "Your work stays on this device."
+  },
+  "pages.home.newLearner.languageLabel": {
+    "source": "Your language",
+    "back": "Your language"
+  },
+  "pages.home.newLearner.languageHelper": {
+    "flag": true,
+    "note": "Updated by Nick to match the corrected English (the lessons follow the language only for Indonesian).",
+    "source": "Buttons and instructions show in this language. In Indonesian, the lessons do too. In other languages they stay in English, so you can practise it.",
+    "back": "Buttons and instructions show in this language. In Indonesian, the lessons do too. In other languages, the lessons stay in English so you can practise."
+  },
+  "pages.home.remove.action": {
+    "back": "Delete",
+    "source": "Remove"
+  },
+  "pages.home.remove.label": {
+    "back": "Delete {name}",
+    "source": "Remove {name}"
+  },
+  "pages.home.remove.confirmTitle": {
+    "back": "Delete {name}?",
+    "source": "Remove {name}?"
+  },
+  "pages.home.remove.confirmBody": {
+    "source": "This deletes their lesson work, journal, section check scores and recordings from this device. It can't be undone.",
+    "back": "Their lesson work, journal, section check scores and recording will be deleted from this device. This can't be undone.",
+    "flag": true,
+    "note": "Reviewer: 'Hasil pelajaran' can read as 'lesson results/grades'. Elsewhere the UI uses 'hasil kerja' for work: maybe 'Hasil kerja pelajaran, jurnal, ...'."
+  },
+  "pages.home.remove.confirm": {
+    "back": "Delete {name}",
+    "source": "Remove {name}"
+  },
+  "pages.home.remove.cancel": {
+    "flag": true,
+    "note": "\"Keep {name}\" → \"Jangan hapus {name}\" (don't remove), since \"Simpan\" would read as \"save\".",
+    "back": "Don't delete {name}",
+    "source": "Keep {name}"
+  },
+  "pages.home.remove.error": {
+    "back": "That didn't work. Try again.",
+    "source": "That didn't work. Try again."
+  },
+  "pages.home.noStorage.title": {
+    "back": "Your work can't be saved on this device",
+    "source": "Your work can't be saved on this device"
+  },
+  "pages.home.noStorage.body": {
+    "source": "This browser can't save work on this device. This often happens in a private window. You can still look around, but nothing you do is saved.",
+    "back": "This browser can't save work on this device. This often happens in a private window. You can still look around, but whatever you do isn't saved."
+  },
+  "pages.home.noStorage.cta": {
+    "back": "Just look around",
+    "source": "Just look around"
+  },
+  "pages.home.guest.title": {
+    "back": "Explore the course",
+    "source": "Explore the course"
+  },
+  "pages.home.guest.body": {
+    "source": "Open any lesson to see how it works.",
+    "back": "Open any lesson to see how it works."
+  },
+  "pages.home.dashboard.greeting": {
+    "back": "Hi {name}",
+    "source": "Hi {name}"
+  },
+  "pages.home.dashboard.summaryNone": {
+    "back": "You haven't started any lessons yet. Next is Lesson {number}.",
+    "source": "You haven't started a lesson yet. Next up is Lesson {number}."
+  },
+  "pages.home.dashboard.summaryInProgress": {
+    "back": "You have finished {count} lessons. Next is Lesson {number}.",
+    "source": "You have finished {count} lessons. Next up is Lesson {number}."
+  },
+  "pages.home.dashboard.summaryDone": {
+    "back": "You have finished all the lessons. Good work.",
+    "source": "You have finished every lesson. Well done."
+  },
+  "pages.home.dashboard.startHere": {
+    "back": "Start here",
+    "source": "Start here"
+  },
+  "pages.home.dashboard.startCta": {
+    "back": "Start",
+    "source": "Start"
+  },
+  "pages.home.dashboard.continueEyebrow": {
+    "back": "Carry on from where you stopped",
+    "source": "Pick up where you left off"
+  },
+  "pages.home.dashboard.upNext": {
+    "source": "Up next",
+    "back": "Next"
+  },
+  "pages.home.dashboard.finishedTitle": {
+    "back": "You have finished this course",
+    "source": "You've finished the course"
+  },
+  "pages.home.dashboard.finishedBody": {
+    "back": "You can go back to any lesson, or try the section checks again.",
+    "source": "You can go back to any lesson, or try the section checks again."
+  },
+  "pages.home.dashboard.finishedCta": {
+    "back": "See the course",
+    "source": "See the course"
+  },
+  "pages.home.dashboard.offlineBadge": {
+    "flag": true,
+    "note": "'work offline' = 'bisa dibuka tanpa internet'; about 50 characters, longer than the English badge. 'offline' is also widely understood if a shorter version is needed. | Reviewer: Badge text is about 50 characters against the English 32, so it may wrap on a 390px phone. Shorter options: 'Semua {count} pelajaran siap tanpa internet' or use 'offline', which learners know.",
+    "source": "All {count} lessons work offline",
+    "back": "All {count} lessons can be opened without internet"
+  },
+  "pages.home.dashboard.offlinePreparingBadge": {
+    "flag": true,
+    "note": "Longer than the English badge (about 50 characters). | Reviewer: Badge text is about 51 characters against the English 30, may wrap on a phone. Shorter option: 'Menyiapkan pelajaran untuk tanpa internet' or 'Menyimpan pelajaran untuk offline'.",
+    "source": "Saving lessons for offline use",
+    "back": "Saving lessons so they can be opened without internet"
+  },
+  "pages.home.dashboard.savedBadge": {
+    "back": "Saved on this device",
+    "source": "Saved on this device"
+  },
+  "pages.home.dashboard.yourCourse": {
+    "back": "Your course",
+    "source": "Your course"
+  },
+  "pages.home.dashboard.seeAll": {
+    "back": "See all {count} lessons",
+    "source": "See all {count} lessons"
+  },
+  "pages.home.dashboard.youAreHere": {
+    "back": "You are here",
+    "source": "You are here"
+  },
+  "pages.home.dashboard.lessonsOf": {
+    "back": "{completed} of {total} lessons",
+    "source": "{completed} of {total} lessons"
+  },
+  "pages.home.dashboard.sectionCheckReady": {
+    "back": "Section check ready",
+    "source": "Section check ready"
+  },
+  "pages.home.dashboard.sectionCheckBody": {
+    "back": "You have finished all {count} lessons. Try {questions} questions to see what you remember. You may try it as often as you want.",
+    "source": "You finished all {count} lessons. Try {questions} questions to see what you remember. Take it as many times as you like."
+  },
+  "pages.home.dashboard.startCheck": {
+    "back": "Start the check",
+    "source": "Start the check"
+  },
+  "pages.home.dashboard.fromJournal": {
+    "back": "From your journal",
+    "source": "From your journal"
+  },
+  "pages.home.dashboard.openJournal": {
+    "back": "Open my journal",
+    "source": "Open my journal"
+  },
+  "pages.home.dashboard.noJournalYet": {
+    "back": "Nothing is saved yet. Your writing and reflections will appear here after you start.",
+    "source": "Nothing saved yet. Your writing and reflections show up here once you start."
+  },
+  "pages.home.dashboard.latestEntry": {
+    "back": "{stage} · Lesson {number}",
+    "source": "{stage} · Lesson {number}"
+  },
+  "pages.home.dashboard.languageTitle": {
+    "source": "Your language",
+    "back": "Your language"
+  },
+  "pages.home.dashboard.languageHelp": {
+    "flag": true,
+    "note": "Updated by Nick to match the corrected English (the lessons follow the language only for Indonesian).",
+    "source": "Buttons and instructions show in this language. In Indonesian, the lessons do too. In other languages they stay in English, so you can practise it.",
+    "back": "Buttons and instructions show in this language. In Indonesian, the lessons do too. In other languages, the lessons stay in English so you can practise."
+  },
+  "pages.home.dashboard.languageSaveFailed": {
+    "source": "That didn't save. Try again.",
+    "back": "Not saved yet. Try again."
+  },
+  "pages.course.title": {
+    "back": "Exploring Our World",
+    "source": "Exploring Our World"
+  },
+  "pages.course.eyebrow": {
+    "back": "Course",
+    "source": "The course"
+  },
+  "pages.course.description": {
+    "back": "Discover how people, places, communities and decisions shape the world around us.",
+    "source": "Discover how people, places, communities and decisions shape the world around us."
+  },
+  "pages.course.lessonsBadge": {
+    "back": "{count} lessons",
+    "source": "{count} lessons"
+  },
+  "pages.course.checksBadge": {
+    "back": "{count} section checks",
+    "source": "{count} section checks"
+  },
+  "pages.course.timeBadge": {
+    "back": "About {min}–{max} minutes per lesson",
+    "source": "About {min}–{max} min a lesson"
+  },
+  "pages.course.sectionsNav": {
+    "back": "Sections",
+    "source": "Sections"
+  },
+  "pages.course.nothingLocked": {
+    "back": "Nothing is locked. Start any lesson, in any order. The numbers show the suggested order.",
+    "source": "Nothing is locked. Start any lesson, in any order. The numbers show a good path."
+  },
+  "pages.course.guestNote": {
+    "back": "You are looking around, so learning progress isn't shown.",
+    "source": "You're looking around, so progress isn't shown."
+  },
+  "pages.course.noLearnerNote": {
+    "back": "Choose who is learning to see your progress.",
+    "source": "Choose who's learning to see your progress."
+  },
+  "pages.course.lessonLabel": {
+    "back": "Lesson {number} · {section}",
+    "source": "Lesson {number} · {section}"
+  },
+  "pages.course.sidebarCount": {
+    "back": "{completed} of {total}",
+    "source": "{completed} of {total}"
+  },
+  "pages.course.numberRange": {
+    "back": "{first}–{last}",
+    "source": "{first}–{last}"
+  },
+  "pages.course.showLessons": {
+    "back": "Show {count} lessons",
+    "source": "Show {count} lessons"
+  },
+  "pages.course.hideLessons": {
+    "back": "Hide lessons",
+    "source": "Hide lessons"
+  },
+  "pages.course.sectionCheckRowTitle": {
+    "back": "Section check: {title}",
+    "source": "Section check: {title}"
+  },
+  "pages.course.sectionCheckQuestion": {
+    "back": "Covers Lessons {range}. Try any time, as often as you want.",
+    "source": "Covers Lessons {range}. Try it any time, as often as you like."
+  },
+  "pages.course.allDoneCheckReady": {
+    "source": "All {count} lessons done. The section check is ready.",
+    "back": "All {count} lessons finished. The section check is ready."
+  },
+  "pages.course.lessonsRange": {
+    "back": "Lessons {range}",
+    "source": "Lessons {range}"
+  },
+  "pages.lesson.title": {
+    "back": "Lesson {number}: {stage}",
+    "source": "Lesson {number}: {stage}"
+  },
+  "pages.sectionCheck.title": {
+    "back": "Section check: {section}",
+    "source": "Section check: {section}"
+  },
+  "pages.sectionCheck.eyebrow": {
+    "source": "Section check",
+    "back": "Section check"
+  },
+  "pages.sectionCheck.introTitle": {
+    "source": "What do you remember from {title}?",
+    "back": "What do you remember from {title}?"
+  },
+  "pages.sectionCheck.factQuestions": {
+    "source": "{count} questions about Lessons {range}",
+    "back": "{count} questions about Lessons {range}"
+  },
+  "pages.sectionCheck.factTime": {
+    "source": "No time limit. About {minutes} minutes.",
+    "back": "No time limit. About {minutes} minutes."
+  },
+  "pages.sectionCheck.factRetry": {
+    "source": "Try as many times as you like",
+    "back": "Try as many times as you want"
+  },
+  "pages.sectionCheck.factPrivate": {
+    "source": "Your score stays on this device",
+    "back": "Your score stays on this device"
+  },
+  "pages.sectionCheck.factGuest": {
+    "source": "Nothing is saved while you look around",
+    "back": "Nothing is saved while you are looking around"
+  },
+  "pages.sectionCheck.tip": {
+    "flag": true,
+    "note": "'Make your best guess' = 'Tebak sebaik yang kamu bisa'. | Reviewer: 'Tebak sebaik yang kamu bisa' is a literal calque of 'best guess'. More natural: 'Tebak saja sebisamu.'",
+    "source": "Not sure? Make your best guess. After each question you'll see why the answer is right.",
+    "back": "Not sure? Guess as best you can. After each question, you will see why the answer is right."
+  },
+  "pages.sectionCheck.start": {
+    "source": "Start the check",
+    "back": "Start check"
+  },
+  "pages.sectionCheck.lookAtLessons": {
+    "source": "Look at the lessons first",
+    "back": "Look at the lessons first"
+  },
+  "pages.sectionCheck.questionOf": {
+    "source": "Question {n} of {total}",
+    "back": "Question {n} of {total}"
+  },
+  "pages.sectionCheck.answeredCount": {
+    "source": "{count} answered",
+    "back": "{count} answered"
+  },
+  "pages.sectionCheck.stopCheck": {
+    "source": "Stop the check",
+    "back": "Stop check"
+  },
+  "pages.sectionCheck.questionEyebrow": {
+    "source": "Question {n} · {skill}",
+    "back": "Question {n} · {skill}"
+  },
+  "pages.sectionCheck.skill.vocabulary": {
+    "source": "Words and meanings",
+    "back": "Words and their meanings"
+  },
+  "pages.sectionCheck.skill.understand": {
+    "flag": true,
+    "note": "'Main ideas' = 'Ide utama' (schools also say 'ide pokok' / 'gagasan utama').",
+    "source": "Main ideas",
+    "back": "Main idea"
+  },
+  "pages.sectionCheck.skill.evidence": {
+    "source": "Using evidence",
+    "back": "Using evidence"
+  },
+  "pages.sectionCheck.skill.apply": {
+    "source": "Using ideas on new examples",
+    "back": "Using the idea on a new example"
+  },
+  "pages.sectionCheck.fromLesson": {
+    "source": "From Lesson {number}: {question}",
+    "back": "From Lesson {number}: {question}"
+  },
+  "pages.sectionCheck.chooseHelper": {
+    "source": "Choose an answer to continue.",
+    "back": "Choose an answer to continue."
+  },
+  "pages.sectionCheck.nextQuestion": {
+    "source": "Next question",
+    "back": "Next question"
+  },
+  "pages.sectionCheck.seeResults": {
+    "source": "See your results",
+    "back": "See your results"
+  },
+  "pages.sectionCheck.resultsEyebrow": {
+    "source": "Section check · {title}",
+    "back": "Section check · {title}"
+  },
+  "pages.sectionCheck.scoreHeading": {
+    "source": "{score} out of {total}",
+    "back": "{score} of {total}"
+  },
+  "pages.sectionCheck.retry": {
+    "source": "Try the check again",
+    "back": "Try the check again"
+  },
+  "pages.sectionCheck.backToCourse": {
+    "source": "Back to the course",
+    "back": "Back to the course"
+  },
+  "pages.sectionCheck.savedNote": {
+    "source": "Your score is saved on this device.",
+    "back": "Your score is saved on this device."
+  },
+  "pages.sectionCheck.notSavedNote": {
+    "source": "Nothing is saved while you're looking around.",
+    "back": "Nothing is saved while you are looking around."
+  },
+  "pages.sectionCheck.skillsTitle": {
+    "source": "How you did, skill by skill",
+    "back": "Your results for each skill"
+  },
+  "pages.sectionCheck.reviewTitle": {
+    "flag": true,
+    "note": "'Worth another look' = 'Layak dilihat lagi'; alternative 'Coba lihat lagi'.",
+    "source": "Worth another look",
+    "back": "Worth looking at again"
+  },
+  "pages.sectionCheck.reviewQuestion": {
+    "source": "Question {n}: {question}",
+    "back": "Question {n}: {question}"
+  },
+  "pages.sectionCheck.reviewLesson": {
+    "source": "Lesson {number} · {question}",
+    "back": "Lesson {number} · {question}"
+  },
+  "pages.sectionCheck.noQuiz": {
+    "source": "This section check isn't ready yet.",
+    "back": "This section check isn't ready yet."
+  },
+  "pages.journal.title": {
+    "back": "My journal",
+    "source": "My journal"
+  },
+  "pages.journal.subtitle": {
+    "source": "Everything you wrote in your lessons, newest first.",
+    "back": "Everything you wrote in lessons, starting from the newest."
+  },
+  "pages.journal.filterLabel": {
+    "source": "Show",
+    "back": "Show"
+  },
+  "pages.journal.filterAll": {
+    "source": "All",
+    "back": "All"
+  },
+  "pages.journal.filterWriting": {
+    "source": "Writing",
+    "back": "Writing"
+  },
+  "pages.journal.filterReflections": {
+    "source": "Reflections",
+    "back": "Reflections"
+  },
+  "pages.journal.lessonCount": {
+    "source": "{count} lessons",
+    "back": "{count} lessons"
+  },
+  "pages.journal.pieceCount": {
+    "source": "{count} pieces of writing from {lessons}",
+    "back": "{count} pieces of writing from {lessons}"
+  },
+  "pages.journal.groupLabel": {
+    "source": "Lesson {number} · {title}",
+    "back": "Lesson {number} · {title}"
+  },
+  "pages.journal.privacyNote": {
+    "flag": true,
+    "note": "'choose what you write' = 'pikirkan apa yang kamu tulis' (think about what you write), which reads more naturally.",
+    "source": "Your journal lives on this device. Anyone who taps your name here can read it, so choose what you write. To keep a copy, ask your teacher to help you print it.",
+    "back": "Your journal is on this device. Anyone who taps your name here can read it, so think about what you write. If you want to keep a copy, ask your teacher to help print it."
+  },
+  "pages.journal.empty": {
+    "source": "Nothing saved yet. Write or reflect in a lesson and it shows up here.",
+    "back": "Nothing saved yet. Write or make a reflection in a lesson, and then it will appear here.",
+    "flag": true,
+    "note": "Reviewer: 'Menulislah' sounds a little formal/stiff for a 10-year-old. Maybe 'Tulis sesuatu atau buat refleksi di sebuah pelajaran, nanti hasilnya muncul di sini.'"
+  },
+  "pages.journal.emptyFiltered": {
+    "source": "Nothing saved yet in this view. Choose All to see everything you've written.",
+    "back": "Nothing saved in this view yet. Choose All to see everything you have written."
+  },
+  "pages.journal.lookAroundNote": {
+    "source": "You're looking around, so nothing here is saved. Choose who's learning to keep a journal.",
+    "back": "You are looking around, so nothing is saved here. Choose who is learning so that you have a journal."
+  },
+  "pages.journal.noLearnerNote": {
+    "source": "Choose who's learning to see their journal.",
+    "back": "Choose who is learning to see their journal."
+  },
+  "pages.journal.savedToday": {
+    "source": "Saved today",
+    "back": "Saved today"
+  },
+  "pages.journal.savedYesterday": {
+    "source": "Saved yesterday",
+    "back": "Saved yesterday"
+  },
+  "pages.journal.cancelEdit": {
+    "source": "Cancel",
+    "back": "Cancel"
+  },
+  "pages.journal.saveEdit": {
+    "source": "Save",
+    "back": "Save"
+  },
+  "pages.educators.title": {
+    "back": "For educators",
+    "source": "For educators"
+  },
+  "pages.educators.eyebrow": {
+    "source": "For teachers and volunteers",
+    "back": "For teachers and volunteers"
+  },
+  "pages.educators.heroTitle": {
+    "source": "Run a Thinkerwell lesson with your group",
+    "back": "Run Thinkerwell lessons with your group"
+  },
+  "pages.educators.heroBody": {
+    "source": "Every lesson works on one shared screen, in pairs, or on separate devices. There are no accounts to set up.",
+    "back": "Every lesson can be used on one shared screen, in pairs, or on each person's own device. No account needs to be made."
+  },
+  "pages.educators.previewLesson": {
+    "flag": true,
+    "note": "Used 'Pratinjau' (standard software term) for preview throughout the teacher pages. Simpler alternative: 'Coba lihat pelajaran'.",
+    "source": "Preview a lesson",
+    "back": "Lesson preview"
+  },
+  "pages.educators.printLesson": {
+    "source": "See a lesson on paper",
+    "back": "See the print version of the lesson"
+  },
+  "pages.educators.needTitle": {
+    "source": "What you need",
+    "back": "What you need"
+  },
+  "pages.educators.need1": {
+    "source": "One device for every 1 to 3 learners, or one big screen",
+    "back": "One device for every 1 to 3 learners, or one big screen"
+  },
+  "pages.educators.need2": {
+    "source": "Paper and pencils for planning",
+    "back": "Paper and pencils for making plans"
+  },
+  "pages.educators.need3": {
+    "source": "About {min}–{max} minutes a lesson",
+    "back": "About {min}–{max} minutes per lesson"
+  },
+  "pages.educators.need4": {
+    "source": "Internet for the first visit, and for videos",
+    "back": "Internet for the first visit and for videos"
+  },
+  "pages.educators.settingsLink": {
+    "source": "Settings for this device",
+    "back": "Settings of this device"
+  },
+  "pages.educators.howTitle": {
+    "source": "How a session works",
+    "back": "How one session goes"
+  },
+  "pages.educators.step1Title": {
+    "source": "Pick a lesson",
+    "back": "Choose a lesson"
+  },
+  "pages.educators.step1Body": {
+    "source": "Lessons can go in any order. Choose one that fits your group, or follow the numbers.",
+    "back": "Lessons can be taken in any order. Choose what fits your group, or follow the numbers."
+  },
+  "pages.educators.step2Title": {
+    "source": "Work through five steps",
+    "back": "Do the five steps"
+  },
+  "pages.educators.step2Body": {
+    "source": "Read, Write, Speak, Watch, Reflect. Pair learners for Speak. Watch can be skipped.",
+    "back": "Read, Write, Speak, Watch, Reflect. Pair learners up for Speak. Watch may be skipped."
+  },
+  "pages.educators.step3Title": {
+    "source": "Share and reflect",
+    "back": "Share and reflect"
+  },
+  "pages.educators.step3Body": {
+    "source": "Ask two or three learners to share their answer. Everyone writes one reflection.",
+    "back": "Ask two or three learners to share their answer. Everyone writes one reflection."
+  },
+  "pages.educators.previewTitle": {
+    "source": "Preview any lesson",
+    "back": "Preview any lesson"
+  },
+  "pages.educators.previewNote": {
+    "source": "Previews never save anything",
+    "back": "Preview never saves anything"
+  },
+  "pages.educators.previewIntro": {
+    "source": "Every lesson has a teacher guide with a session plan and the answers, and every section check has an answer key.",
+    "back": "Every lesson has a teacher guide containing a session plan and its answers, and every section check has an answer key."
+  },
+  "pages.educators.sectionLabel": {
+    "source": "Section",
+    "back": "Section"
+  },
+  "pages.educators.previewCta": {
+    "source": "Preview",
+    "back": "Preview"
+  },
+  "pages.educators.teacherGuide": {
+    "source": "Teacher guide",
+    "back": "Teacher guide"
+  },
+  "pages.educators.teacherGuideLabel": {
+    "source": "Teacher guide for Lesson {number}",
+    "back": "Teacher guide for Lesson {number}"
+  },
+  "pages.educators.answerKey": {
+    "source": "Answer key",
+    "back": "Answer key"
+  },
+  "pages.educators.answerKeyLabel": {
+    "source": "Answer key for the {section} section check",
+    "back": "Answer key for section check {section}"
+  },
+  "pages.educators.codesTag": {
+    "flag": true,
+    "note": "'Pilot' translated as 'uji coba' (here and in codesBody). Alternative: 'program percontohan'.",
+    "source": "Pilot partners",
+    "back": "Pilot partner"
+  },
+  "pages.educators.codesTitle": {
+    "source": "Class codes instead of names",
+    "back": "Class codes instead of names"
+  },
+  "pages.educators.codesBody": {
+    "source": "In the pilot, each learner can get a code like HLP-07. Later, codes will let us see how the whole group is doing, without any names. You keep the list that matches names to codes.",
+    "back": "During the pilot, each learner can get a code like HLP-07. Later, this code will help us see the progress of the whole group without anyone's name. You are the one who keeps the list of name-and-code pairs."
+  },
+  "pages.educators.feedbackTitle": {
+    "source": "Tell us what to fix",
+    "back": "Tell us what needs fixing"
+  },
+  "pages.educators.feedbackBody": {
+    "source": "Something confusing, too hard, or broken? A video that does not play? Email us and we will fix it.",
+    "back": "Is something confusing, too hard, or broken? Is there a video that won't play? Send us an email and we will fix it."
+  },
+  "pages.educators.feedbackEmail": {
+    "source": "[FEEDBACK EMAIL]",
+    "back": "[FEEDBACK EMAIL]"
+  },
+  "pages.educators.toolsTitle": {
+    "source": "Set up devices and follow your group",
+    "back": "Set up devices and monitor your group"
+  },
+  "pages.educators.toolsIntro": {
+    "source": "For the day you start, and every day after. Everything here stays on this device.",
+    "back": "For the first day you start, and every day after. Everything here stays on this device."
+  },
+  "pages.educators.setupTitle": {
+    "source": "Set up this device",
+    "back": "Set up this device"
+  },
+  "pages.educators.setupBody": {
+    "source": "A checklist for each laptop or tablet. Print it to tick on paper.",
+    "back": "A checklist for every laptop or tablet. Print it to tick off on paper."
+  },
+  "pages.educators.setupCta": {
+    "source": "Open the checklist",
+    "back": "Open the checklist"
+  },
+  "pages.educators.classTitle": {
+    "source": "The class on this device",
+    "back": "The class on this device"
+  },
+  "pages.educators.classBody": {
+    "source": "Lessons finished and where each learner is now. No scores.",
+    "back": "Lessons already finished and where each learner is now. No scores."
+  },
+  "pages.educators.classCta": {
+    "source": "See the class",
+    "back": "See the class"
+  },
+  "pages.educators.certificatesTitle": {
+    "source": "Certificates",
+    "back": "Certificates"
+  },
+  "pages.educators.certificatesBody": {
+    "source": "Every certificate earned on this device, one to a page.",
+    "back": "All certificates earned on this device, one per page."
+  },
+  "pages.educators.certificatesCta": {
+    "source": "Print all certificates",
+    "back": "Print all certificates"
+  },
+  "pages.teacherTools.back": {
+    "source": "Back to the educators page",
+    "back": "Back to the educators' page"
+  },
+  "pages.teacherTools.correctAnswer": {
+    "source": "Correct answer",
+    "back": "The correct answer"
+  },
+  "pages.teacherTools.why": {
+    "flag": true,
+    "note": "Translator note says the explanation after it is in English; in the Indonesian build it will be Indonesian. 'Alasannya:'.",
+    "source": "Why:",
+    "back": "The reason:"
+  },
+  "pages.teacherTools.feedback": {
+    "source": "Feedback:",
+    "back": "Feedback:"
+  },
+  "pages.teacherTools.newTab": {
+    "source": "(opens in a new tab)",
+    "back": "(opens in a new tab)"
+  },
+  "pages.teacherGuide.pageTitle": {
+    "source": "Lesson {number}: teacher guide",
+    "back": "Lesson {number}: teacher guide"
+  },
+  "pages.teacherGuide.eyebrow": {
+    "source": "Teacher guide · Lesson {number}",
+    "back": "Teacher guide · Lesson {number}"
+  },
+  "pages.teacherGuide.intro": {
+    "source": "Everything you need to teach this lesson, with the answers. It prints on A4, black on white, without the menus.",
+    "back": "Everything you need to teach this lesson, complete with its answers. Can be printed on A4 paper, black on white, without menus."
+  },
+  "pages.teacherGuide.previewLesson": {
+    "source": "Preview the lesson",
+    "back": "Lesson preview"
+  },
+  "pages.teacherGuide.learnerPrint": {
+    "source": "Print the lesson for learners",
+    "back": "Print the lesson for learners"
+  },
+  "pages.teacherGuide.section": {
+    "source": "Section",
+    "back": "Section"
+  },
+  "pages.teacherGuide.sectionValue": {
+    "source": "Section {number}: {title}",
+    "back": "Section {number}: {title}"
+  },
+  "pages.teacherGuide.essentialQuestion": {
+    "flag": true,
+    "note": "'Pertanyaan utama'. Alternative: 'Pertanyaan pokok' or 'Pertanyaan esensial' (curriculum term).",
+    "source": "Essential question",
+    "back": "Main question"
+  },
+  "pages.teacherGuide.learningGoal": {
+    "source": "Learning goal",
+    "back": "Learning goal"
+  },
+  "pages.teacherGuide.time": {
+    "source": "Time",
+    "back": "Time"
+  },
+  "pages.teacherGuide.beforeTitle": {
+    "source": "Before you teach",
+    "back": "Before teaching"
+  },
+  "pages.teacherGuide.sensitiveTitle": {
+    "source": "Sensitive topics: read before class",
+    "back": "Sensitive topic: read before class"
+  },
+  "pages.teacherGuide.contentNotePointer": {
+    "source": "The video has a content note. Read it before class: it is with the video, below.",
+    "back": "This video has a content note. Read it before class: the note is with the video, below."
+  },
+  "pages.teacherGuide.notesTitle": {
+    "source": "Teaching notes",
+    "back": "Teaching notes"
+  },
+  "pages.teacherGuide.planTitle": {
+    "source": "Session plan",
+    "back": "Session plan"
+  },
+  "pages.teacherGuide.planIntro": {
+    "source": "A suggested plan for a session of about 45 minutes. Change it to suit your group.",
+    "back": "A suggested plan for a session of about 45 minutes. Change it to suit your group."
+  },
+  "pages.teacherGuide.planStep": {
+    "source": "Step",
+    "back": "Step"
+  },
+  "pages.teacherGuide.planDoTitle": {
+    "source": "What to do",
+    "back": "What is done",
+    "flag": true,
+    "note": "Reviewer: Minor: 'Yang dilakukan' = 'what is done'; English is 'What to do' (instructions). 'Yang perlu dilakukan' may read more naturally as a column heading."
+  },
+  "pages.teacherGuide.planColumn": {
+    "flag": true,
+    "note": "Table heading asked to be very short, so 'mnt' abbreviation. Same abbreviation used in planShorter ('kolom 30 mnt'). Use 'menit' if space allows.",
+    "source": "{minutes} min",
+    "back": "{minutes} min"
+  },
+  "pages.teacherGuide.planTotal": {
+    "source": "Total",
+    "back": "Total"
+  },
+  "pages.teacherGuide.planSkip": {
+    "source": "Skip",
+    "back": "Skip"
+  },
+  "pages.teacherGuide.planShorter": {
+    "source": "Only 30 minutes? Use the 30 min column: skip Watch or read instead, and take a little time off the other steps. Learners can open Watch later, because nothing is locked.",
+    "back": "Only have 30 minutes? Use the 30 min column: skip Watch or use Just read, and cut a little time from the other steps. Learners can open Watch later, because nothing is locked."
+  },
+  "pages.teacherGuide.planSteps.warmUp": {
+    "source": "Warm-up",
+    "back": "Warm-up"
+  },
+  "pages.teacherGuide.planSteps.read": {
+    "source": "Read in parts",
+    "back": "Read part by part"
+  },
+  "pages.teacherGuide.planSteps.check": {
+    "source": "Quick check",
+    "back": "Quick check"
+  },
+  "pages.teacherGuide.planSteps.write": {
+    "source": "Write",
+    "back": "Write"
+  },
+  "pages.teacherGuide.planSteps.speak": {
+    "source": "Speak",
+    "back": "Speak"
+  },
+  "pages.teacherGuide.planSteps.watch": {
+    "source": "Watch or read instead",
+    "back": "Watch or just read"
+  },
+  "pages.teacherGuide.planSteps.reflect": {
+    "source": "Reflect",
+    "back": "Reflect"
+  },
+  "pages.teacherGuide.planDo.warmUp": {
+    "source": "Ask the warm-up question. Every answer is fine: it gets everyone thinking.",
+    "back": "Ask the warm-up question. All answers are allowed: the aim is so that everyone starts thinking."
+  },
+  "pages.teacherGuide.planDo.read": {
+    "flag": true,
+    "note": "Every lesson has 3 parts, so one form is fine. 'Standard or Simpler English' rendered as 'versi Standar atau Lebih mudah' to match the reading-level toggle (the text is not English in Indonesian).",
+    "source": "Read the {count} parts one at a time, in Standard or Simpler English. Look at the evidence and the picture together.",
+    "back": "Read the {count} parts of the text one at a time, in the Standard or Easier version. Look at the evidence and pictures together."
+  },
+  "pages.teacherGuide.planDo.check": {
+    "source": "Learners answer the {count} quick-check questions, then talk about the answers.",
+    "back": "Learners answer the {count} quick-check questions, then discuss the answers together."
+  },
+  "pages.teacherGuide.planDo.write": {
+    "source": "Learners plan and write their answer, then tick the self-check. Sentence starters help.",
+    "back": "Learners make a plan and write their answer, then tick the self-check. Sentence starters can help."
+  },
+  "pages.teacherGuide.planDo.speak": {
+    "source": "Learners tell a partner their answer, or practise on their own.",
+    "back": "Learners tell their answer to a friend, or practise alone."
+  },
+  "pages.teacherGuide.planDo.watch": {
+    "source": "Watch the video together, or read the written version instead.",
+    "back": "Watch the video together, or read its written version."
+  },
+  "pages.teacherGuide.planDo.reflect": {
+    "source": "Everyone answers the first reflect question. It finishes the lesson.",
+    "back": "Everyone answers the first reflection question. Answering it will finish the lesson."
+  },
+  "pages.teacherGuide.keyWordsTitle": {
+    "source": "Key words",
+    "back": "Key words"
+  },
+  "pages.teacherGuide.evidenceTitle": {
+    "source": "The evidence and the picture",
+    "back": "The evidence and its pictures"
+  },
+  "pages.teacherGuide.checkTitle": {
+    "source": "Quick check",
+    "back": "Quick check"
+  },
+  "pages.teacherGuide.checkIntro": {
+    "source": "Learners see the options in a different order, and can try again as often as they like.",
+    "back": "Learners see the answer options in a different order, and can try again as often as they want."
+  },
+  "pages.teacherGuide.think": {
+    "flag": true,
+    "note": "'Think question' as 'Pertanyaan untuk dipikirkan'; 'no single right answer' as 'jawaban yang benar bisa lebih dari satu', matching the learner screen. Same for thinkOptional. | Reviewer: Meaning shift: English 'there is no single right answer' (open question); Indonesian says 'the right answer can be more than one', which still implies some answers are right and others wrong. Consider 'tidak ada satu jawaban yang paling benar'.",
+    "source": "Think question: there is no single right answer.",
+    "back": "A question to think about: there can be more than one right answer."
+  },
+  "pages.teacherGuide.thinkOptional": {
+    "source": "Think question, optional: there is no single right answer.",
+    "back": "A question to think about, not required: there can be more than one right answer.",
+    "flag": true,
+    "note": "Reviewer: Same as 'think': 'jawaban yang benar bisa lebih dari satu' is not quite 'no single right answer'. Keep both the same wording."
+  },
+  "pages.teacherGuide.writeTask": {
+    "source": "The task",
+    "back": "The task"
+  },
+  "pages.teacherGuide.selfCheck": {
+    "flag": true,
+    "note": "'Self-check' as 'Cek mandiri' (also in planDo.write). Learners see this box titled 'Periksa jawabanmu'; the English also uses a different word, so kept distinct.",
+    "source": "Self-check",
+    "back": "Self-check"
+  },
+  "pages.teacherGuide.example": {
+    "source": "Example answer",
+    "back": "Example answer"
+  },
+  "pages.teacherGuide.exampleNote": {
+    "source": "One way to answer. Learners' answers can be different.",
+    "back": "This is one way to answer. Learners' answers may differ."
+  },
+  "pages.teacherGuide.discussTitle": {
+    "flag": true,
+    "note": "'Discussion prompts' as 'Bahan diskusi'. Alternative: 'Pertanyaan diskusi'.",
+    "source": "Discussion prompts",
+    "back": "Discussion material"
+  },
+  "pages.teacherGuide.discussIntro": {
+    "flag": true,
+    "note": "'Let anyone pass' read as 'anyone may skip their turn' -> 'Siapa pun boleh melewatkan gilirannya'.",
+    "source": "Questions from the lesson to talk about together. Let anyone pass.",
+    "back": "Questions from the lesson to discuss together. Anyone may skip their turn."
+  },
+  "pages.teacherGuide.discussWarmUp": {
+    "source": "Before reading: the warm-up",
+    "back": "Before reading: warm-up"
+  },
+  "pages.teacherGuide.discussChoices": {
+    "source": "Choices on screen",
+    "back": "Choices on the screen"
+  },
+  "pages.teacherGuide.discussThink": {
+    "source": "After the quick check",
+    "back": "After the quick check"
+  },
+  "pages.teacherGuide.discussReflect": {
+    "source": "At the end: Reflect",
+    "back": "At the end: Reflect"
+  },
+  "pages.teacherGuide.startHelp": {
+    "source": "Help to start:",
+    "back": "Help for starting:"
+  },
+  "pages.teacherGuide.reflectRequired": {
+    "source": "Learners answer this one to finish the lesson.",
+    "back": "Learners answer this question to finish the lesson."
+  },
+  "pages.teacherGuide.videoTitle": {
+    "source": "Watch or read instead",
+    "back": "Watch or just read"
+  },
+  "pages.teacherGuide.videoName": {
+    "source": "Video",
+    "back": "Video"
+  },
+  "pages.teacherGuide.videoChannel": {
+    "source": "Channel",
+    "back": "Channel"
+  },
+  "pages.teacherGuide.videoLength": {
+    "source": "Length",
+    "back": "Duration"
+  },
+  "pages.teacherGuide.videoLengthUnknown": {
+    "source": "Not known",
+    "back": "Unknown"
+  },
+  "pages.teacherGuide.videoLink": {
+    "source": "Link",
+    "back": "Link"
+  },
+  "pages.teacherGuide.videoOpen": {
+    "source": "Open on YouTube",
+    "back": "Open on YouTube"
+  },
+  "pages.teacherGuide.videoWhy": {
+    "source": "Why this video",
+    "back": "Why this video"
+  },
+  "pages.teacherGuide.videoOffline": {
+    "source": "The video needs the internet. The written version (Read instead) works offline and has the same ideas.",
+    "back": "This video needs internet. Its written version (Just read) can be opened without internet and contains the same ideas."
+  },
+  "pages.teacherGuide.beforeVideo": {
+    "source": "Before the video",
+    "back": "Before the video"
+  },
+  "pages.teacherGuide.afterVideo": {
+    "source": "After the video or the reading",
+    "back": "After the video or reading"
+  },
+  "pages.teacherGuide.contentNote": {
+    "flag": true,
+    "note": "'Content note' (warning about sensitive content) as 'Catatan isi'. Alternatives: 'Catatan konten', 'Peringatan isi'. Also in contentNotePointer.",
+    "source": "Content note",
+    "back": "Content note"
+  },
+  "pages.teacherGuide.sourcesTitle": {
+    "source": "Sources",
+    "back": "Sources"
+  },
+  "pages.answerKey.title": {
+    "source": "Answer key: {section}",
+    "back": "Answer key: {section}"
+  },
+  "pages.answerKey.eyebrow": {
+    "source": "Section {number} check",
+    "back": "Section check {number}"
+  },
+  "pages.answerKey.intro": {
+    "source": "Every question in this section check, with the answers. It prints on A4, black on white, without the menus.",
+    "back": "All the questions in this section check, complete with their answers. Can be printed on A4 paper, black on white, without menus."
+  },
+  "pages.answerKey.practice": {
+    "source": "The section check is for practice. It never blocks learners: there is no time limit, they can try again as often as they like, and every lesson stays open whatever their score.",
+    "back": "This section check is for practice. This check never blocks learners: there is no time limit, they can try again as often as they want, and all lessons stay open whatever the score."
+  },
+  "pages.answerKey.order": {
+    "source": "Learners see the options in a different order, so talk about the answer itself, not where it sits.",
+    "back": "Learners see the answer options in a different order, so discuss the content of the answer, not its position."
+  },
+  "pages.answerKey.question": {
+    "source": "Question {n} · {skill}",
+    "back": "Question {n} · {skill}"
+  },
+  "pages.answerKey.fromLesson": {
+    "source": "From Lesson {number}: {title}",
+    "back": "From Lesson {number}: {title}"
+  },
+  "pages.setup.title": {
+    "flag": true,
+    "note": "'Siapkan perangkat ini'. The same English appears as pages.educators.setupTitle (another worklist) and is quoted in paperIntro; all three should match.",
+    "source": "Set up this device",
+    "back": "Set up this device"
+  },
+  "pages.setup.intro": {
+    "source": "Do these steps once on each laptop or tablet. Each step says whether it's done on this device.",
+    "back": "Do these steps once on every laptop or tablet. Each step shows whether it is already done on this device."
+  },
+  "pages.setup.paperIntro": {
+    "source": "On each device, open Thinkerwell, then For educators, then Set up this device. Tick each step when it's done.",
+    "back": "On each device, open Thinkerwell, then For educators, then Set up this device. Tick each step that is done."
+  },
+  "pages.setup.device": {
+    "source": "Device",
+    "back": "Device"
+  },
+  "pages.setup.date": {
+    "source": "Date",
+    "back": "Date"
+  },
+  "pages.setup.stepsLabel": {
+    "source": "Steps",
+    "back": "Steps"
+  },
+  "pages.setup.state.done": {
+    "source": "Done",
+    "back": "Done"
+  },
+  "pages.setup.state.todo": {
+    "source": "Not done yet",
+    "back": "Not done yet"
+  },
+  "pages.setup.state.inProgress": {
+    "source": "In progress",
+    "back": "In progress"
+  },
+  "pages.setup.state.checking": {
+    "source": "Checking",
+    "back": "Checking"
+  },
+  "pages.setup.state.notHere": {
+    "source": "Not on this browser",
+    "back": "Not available in this browser"
+  },
+  "pages.setup.state.notNeeded": {
+    "source": "Not needed",
+    "back": "Not needed"
+  },
+  "pages.setup.homeScreen.title": {
+    "source": "Add Thinkerwell to the home screen",
+    "back": "Add Thinkerwell to the home screen"
+  },
+  "pages.setup.homeScreen.why": {
+    "source": "Then it opens like an app. On iPad and iPhone, this also stops Safari deleting saved work after {count} days without a visit.",
+    "back": "After that, Thinkerwell opens like an app. On iPad and iPhone, this also stops Safari from deleting saved work if Thinkerwell isn't opened for {count} days."
+  },
+  "pages.setup.homeScreen.first": {
+    "source": "Do this first. Then open Thinkerwell from the home screen, and do the other steps there.",
+    "back": "Do this first. Then open Thinkerwell from the home screen, and do the other steps there."
+  },
+  "pages.setup.homeScreen.installed": {
+    "source": "Thinkerwell is open from the home screen.",
+    "back": "Thinkerwell is being opened from the home screen.",
+    "flag": true,
+    "note": "Reviewer: 'sedang dibuka' can read as 'is being opened (right now)'. English is a status: 'is open from the home screen'. Consider 'Thinkerwell terbuka dari layar utama.'"
+  },
+  "pages.setup.homeScreen.inBrowser": {
+    "source": "Thinkerwell is open in the browser. If you've added it already, open it from the home screen instead.",
+    "back": "Thinkerwell is being opened in the browser. If you have already added it, just open it from the home screen.",
+    "flag": true,
+    "note": "Reviewer: Same as 'installed': 'sedang dibuka di browser' reads as an action in progress. Consider 'Thinkerwell terbuka di browser.'"
+  },
+  "pages.setup.homeScreen.thisDevice": {
+    "source": "Steps for this device: {device}",
+    "back": "Steps for this device: {device}"
+  },
+  "pages.setup.homeScreen.otherDevices": {
+    "source": "Steps for other devices",
+    "back": "Steps for other devices"
+  },
+  "pages.setup.homeScreen.apple.name": {
+    "source": "iPad or iPhone (Safari)",
+    "back": "iPad or iPhone (Safari)"
+  },
+  "pages.setup.homeScreen.apple.step1": {
+    "source": "Open Thinkerwell in Safari.",
+    "back": "Open Thinkerwell in Safari."
+  },
+  "pages.setup.homeScreen.apple.step2": {
+    "flag": true,
+    "note": "Safari's Indonesian labels assumed: 'Bagikan'. Check on an iPad set to Indonesian.",
+    "source": "Tap Share: the square with an arrow pointing up.",
+    "back": "Tap Share: the box with an arrow pointing up."
+  },
+  "pages.setup.homeScreen.apple.step3": {
+    "flag": true,
+    "note": "Safari's Indonesian label assumed: 'Tambah ke Layar Utama' (and 'Tambah' in step4). Check on an iPad set to Indonesian.",
+    "source": "Tap Add to Home Screen. You may need to scroll down to find it.",
+    "back": "Tap Add to Home Screen. You may need to scroll down to find it."
+  },
+  "pages.setup.homeScreen.apple.step4": {
+    "source": "Tap Add.",
+    "back": "Tap Add."
+  },
+  "pages.setup.homeScreen.apple.step5": {
+    "source": "Open Thinkerwell from its icon. It keeps its own saved work, apart from Safari, so add learners there.",
+    "back": "Open Thinkerwell from its icon. Work saved there is separate from Safari, so add learners there."
+  },
+  "pages.setup.homeScreen.android.name": {
+    "source": "Android tablet or phone (Chrome)",
+    "back": "Android tablet or phone (Chrome)"
+  },
+  "pages.setup.homeScreen.android.step1": {
+    "source": "Open Thinkerwell in Chrome.",
+    "back": "Open Thinkerwell in Chrome."
+  },
+  "pages.setup.homeScreen.android.step2": {
+    "source": "Tap the menu: the three dots at the top.",
+    "back": "Tap the menu: three dots at the top."
+  },
+  "pages.setup.homeScreen.android.step3": {
+    "flag": true,
+    "note": "Chrome Android Indonesian labels assumed: 'Tambahkan ke layar utama', 'Instal aplikasi' (and 'Instal', 'Tambahkan' in step4). Check on a device.",
+    "source": "Tap Add to home screen, or Install app.",
+    "back": "Tap Add to home screen, or Install app."
+  },
+  "pages.setup.homeScreen.android.step4": {
+    "source": "Tap Install, or Add.",
+    "back": "Tap Install, or Add."
+  },
+  "pages.setup.homeScreen.android.step5": {
+    "source": "Open Thinkerwell from its icon.",
+    "back": "Open Thinkerwell from its icon."
+  },
+  "pages.setup.homeScreen.desktop.name": {
+    "source": "Windows laptop or Chromebook (Chrome or Edge)",
+    "back": "Windows laptop or Chromebook (Chrome or Edge)"
+  },
+  "pages.setup.homeScreen.desktop.step1": {
+    "source": "Open Thinkerwell in Chrome or Edge.",
+    "back": "Open Thinkerwell in Chrome or Edge."
+  },
+  "pages.setup.homeScreen.desktop.step2": {
+    "source": "Click the install button at the end of the address bar. If there isn't one, open the menu: the three dots.",
+    "back": "Click the install button at the end of the address bar. If there isn't one, open the menu: three dots."
+  },
+  "pages.setup.homeScreen.desktop.step3": {
+    "flag": true,
+    "note": "Chrome desktop Indonesian labels assumed: 'Instal Thinkerwell', 'Transmisikan, simpan, dan bagikan', 'Aplikasi'. Check on a laptop set to Indonesian. | Reviewer: Check that 'Transmisikan, simpan, dan bagikan' and 'Aplikasi' match the exact labels in Indonesian Chrome/Edge menus; the same for 'Tambahkan ke layar utama' / 'Instal aplikasi' (Android) and 'Tambah ke Layar Utama' (iPad).",
+    "source": "Choose Install Thinkerwell. In the menu it may be under Cast, save and share, or under Apps.",
+    "back": "Choose Install Thinkerwell. In the menu, this option may be under Cast, save, and share, or under Apps."
+  },
+  "pages.setup.homeScreen.desktop.step4": {
+    "source": "Click Install.",
+    "back": "Click Install."
+  },
+  "pages.setup.homeScreen.desktop.step5": {
+    "source": "Open Thinkerwell from its icon.",
+    "back": "Open Thinkerwell from its icon."
+  },
+  "pages.setup.offline.title": {
+    "source": "Download the course for offline use",
+    "back": "Download the course for use without internet"
+  },
+  "pages.setup.offline.why": {
+    "source": "Then every lesson works without the internet. Only the videos need it.",
+    "back": "After that, all lessons can be used without internet. Only videos need internet."
+  },
+  "pages.setup.offline.how": {
+    "source": "Open Thinkerwell with the internet on, and keep it open until the lessons are saved. It does this by itself.",
+    "back": "Open Thinkerwell while the internet is on, and leave it open until all lessons are saved. Thinkerwell does it by itself."
+  },
+  "pages.setup.storage.title": {
+    "source": "Keep saved work safe",
+    "back": "Keep work safe"
+  },
+  "pages.setup.storage.why": {
+    "source": "Otherwise the browser may delete learners' work when the device is low on space.",
+    "back": "Otherwise, the browser can delete learners' work when the device's storage space is almost full."
+  },
+  "pages.setup.storage.how": {
+    "flag": true,
+    "note": "'Allow' = browser prompt 'Izinkan'. Button name 'Keep work safe' translated as 'Amankan hasil kerja' (matches pages.setup.storage.button).",
+    "source": "Tap Keep work safe. If the browser asks, choose Allow.",
+    "back": "Tap Secure work. If the browser asks, choose Allow."
+  },
+  "pages.setup.storage.button": {
+    "source": "Keep work safe",
+    "back": "Secure work"
+  },
+  "pages.setup.storage.checking": {
+    "source": "Checking what the browser does with saved work…",
+    "back": "Checking what the browser does with saved work…"
+  },
+  "pages.setup.storage.asking": {
+    "source": "Asking the browser…",
+    "back": "Asking the browser…"
+  },
+  "pages.setup.storage.done": {
+    "source": "The browser keeps saved work on this device, even when space runs low.",
+    "back": "The browser keeps work on this device, even when storage space is almost full."
+  },
+  "pages.setup.storage.todo": {
+    "source": "The browser may delete saved work when space runs low.",
+    "back": "The browser can delete saved work when storage space is almost full."
+  },
+  "pages.setup.storage.refused": {
+    "source": "The browser said no for now. Browsers often agree once Thinkerwell is on the home screen and used for a few days. Try again then.",
+    "back": "For now the browser hasn't allowed it. Usually the browser will allow it after Thinkerwell is on the home screen and has been used for a few days. Try again later."
+  },
+  "pages.setup.storage.unsupported": {
+    "source": "This browser can't be asked. Adding Thinkerwell to the home screen helps keep work safe.",
+    "back": "This browser can't be asked. Adding Thinkerwell to the home screen helps keep work safe."
+  },
+  "pages.setup.storage.noStorage": {
+    "flag": true,
+    "note": "'private window' = 'jendela pribadi (penyamaran)': Safari says 'Pribadi', Chrome says 'Penyamaran'. Same in pages.settings.offline.unsupported.",
+    "source": "This browser window can't save learners' work at all. A private window can cause this. Open Thinkerwell in a normal window.",
+    "back": "This browser window can't save learners' work at all. This can happen in a private (incognito) window. Open Thinkerwell in a normal window."
+  },
+  "pages.setup.learners.title": {
+    "source": "Add the learners who use this device",
+    "back": "Add the learners who use this device"
+  },
+  "pages.setup.learners.why": {
+    "source": "Each learner gets a tile on the home page, and their work is kept apart.",
+    "back": "Each learner gets one box on the home page, and their work is saved separately."
+  },
+  "pages.setup.learners.how": {
+    "source": "Tap Add a learner, or let each learner tap I'm new here on the home page.",
+    "back": "Tap Add learner, or let each learner tap I'm new here on the home page."
+  },
+  "pages.setup.learners.count": {
+    "source": "{count} learners on this device.",
+    "back": "There are {count} learners on this device."
+  },
+  "pages.setup.learners.none": {
+    "source": "No learners on this device yet.",
+    "back": "There are no learners on this device yet."
+  },
+  "pages.setup.learners.add": {
+    "source": "Add a learner",
+    "back": "Add learner"
+  },
+  "pages.setup.learners.seeClass": {
+    "source": "See the class",
+    "back": "See the class"
+  },
+  "pages.setup.speech.title": {
+    "flag": true,
+    "note": "'speech to text' = 'suara ke teks' (used in speech.title, sayIt.title, sayIt.download, allowOnline); 'turn speech into text' = 'mengubah ucapan menjadi teks'. Not in KEY_TERMS.",
+    "source": "Check speech to text",
+    "back": "Check the voice-to-text feature"
+  },
+  "pages.setup.speech.why": {
+    "source": "Say it lets learners talk instead of typing. The check tells lessons whether it can work here.",
+    "back": "With Say it, learners can speak instead of typing. This check tells the lessons whether Say it can be used here."
+  },
+  "pages.setup.speech.last": {
+    "source": "Do this step last. On some tablets the check has closed the browser tab. If that happens, open Thinkerwell again.",
+    "back": "Do this step last. On some tablets, this check has made the browser tab close. If that happens, open Thinkerwell again."
+  },
+  "pages.setup.speech.how": {
+    "source": "In Settings, under Say it, tap Check this device.",
+    "back": "In Settings, in the Say it section, tap Check this device."
+  },
+  "pages.setup.speech.notChecked": {
+    "source": "Not checked on this device yet.",
+    "back": "Not yet checked on this device."
+  },
+  "pages.setup.speech.onDevice": {
+    "source": "Speech to text works on this device, and what learners say is not sent anywhere.",
+    "back": "The voice-to-text feature can be used on this device, and learners' speech isn't sent anywhere."
+  },
+  "pages.setup.speech.download": {
+    "source": "It needs a one-time download first. In Settings, tap Download speech to text on good Wi-Fi, then check again.",
+    "back": "This feature needs to be downloaded once first. In Settings, tap Download voice-to-text feature when the Wi-Fi is good, then check again."
+  },
+  "pages.setup.speech.notOnDevice": {
+    "source": "This browser can't do it on the device, so Say it stays hidden. Learners type instead.",
+    "back": "This browser can't do it on the device, so Say it stays hidden. Learners just type."
+  },
+  "pages.setup.speech.none": {
+    "source": "This browser can't turn speech into text, so there's nothing to check. Say it stays hidden, and learners type instead.",
+    "back": "This browser can't turn speech into text, so there is nothing to check. Say it stays hidden, and learners just type."
+  },
+  "pages.setup.speech.open": {
+    "source": "Check it in Settings",
+    "back": "Check in Settings"
+  },
+  "pages.setup.later.title": {
+    "source": "Before you reset this device or give it back",
+    "back": "Before you reset this device or return it"
+  },
+  "pages.setup.later.body": {
+    "source": "Save everyone's work to a file, then load the file on the next device. Recordings aren't in the file. Keep the file safe: anyone with it can read the work.",
+    "back": "Save all learners' work to a file, then load that file on the next device. Recordings don't go into the file. Keep that file carefully: anyone who holds it can read the work inside."
+  },
+  "pages.setup.later.open": {
+    "source": "Save work to a file in Settings",
+    "back": "Save work to a file in Settings"
+  },
+  "pages.classView.title": {
+    "source": "The class on this device",
+    "back": "The class on this device"
+  },
+  "pages.classView.intro": {
+    "source": "Every learner on this device, by name, and what each one has done.",
+    "back": "All the learners on this device, with their names, and what each one has done."
+  },
+  "pages.classView.noScores": {
+    "source": "There are no scores here, because anyone using this device can open this page.",
+    "back": "There are no scores here, because anyone who uses this device can open this page."
+  },
+  "pages.classView.printAll": {
+    "source": "Print all certificates",
+    "back": "Print all certificates"
+  },
+  "pages.classView.listLabel": {
+    "source": "Learners",
+    "back": "Learners"
+  },
+  "pages.classView.learnerAdded": {
+    "source": "{name}, added {date}",
+    "back": "{name}, added {date}"
+  },
+  "pages.classView.classCode": {
+    "source": "Class code {code}",
+    "back": "Class code {code}"
+  },
+  "pages.classView.onNow": {
+    "flag": true,
+    "note": "Label above the lesson a learner is on (or up next). 'Sekarang' is short; alternative 'Posisi sekarang'.",
+    "source": "On now",
+    "back": "Now"
+  },
+  "pages.classView.lesson": {
+    "source": "Lesson {number}: {title}",
+    "back": "Lesson {number}: {title}"
+  },
+  "pages.classView.atStep": {
+    "source": "Step: {stage}",
+    "back": "Step: {stage}"
+  },
+  "pages.classView.upNext": {
+    "source": "Up next",
+    "back": "Next"
+  },
+  "pages.classView.notStarted": {
+    "source": "Not started yet",
+    "back": "Not started yet"
+  },
+  "pages.classView.finished": {
+    "source": "Finished every lesson",
+    "back": "All lessons finished"
+  },
+  "pages.classView.lastActive": {
+    "source": "Last active",
+    "back": "Last active"
+  },
+  "pages.classView.never": {
+    "flag": true,
+    "note": "Value for 'Last active' when never active: 'Belum pernah' (literally 'never yet'), rather than a word-for-word 'Belum'.",
+    "source": "Not yet",
+    "back": "Never yet"
+  },
+  "pages.classView.lessonsDone": {
+    "source": "Lessons finished",
+    "back": "Lessons finished"
+  },
+  "pages.classView.lessonsOf": {
+    "source": "{completed} of {total}",
+    "back": "{completed} of {total}"
+  },
+  "pages.classView.checksTried": {
+    "source": "Section checks tried",
+    "back": "Section checks already tried"
+  },
+  "pages.classView.checksNone": {
+    "source": "None yet",
+    "back": "None yet"
+  },
+  "pages.classView.empty": {
+    "source": "No learners on this device yet.",
+    "back": "There are no learners on this device yet."
+  },
+  "pages.classView.emptyBody": {
+    "source": "Learners show up here once they're added. Each learner can add themselves with I'm new here on the home page.",
+    "back": "Learners appear here after they are added. Each learner can add themselves via I'm new here on the home page."
+  },
+  "pages.classView.noStorage": {
+    "flag": true,
+    "note": "Added '(mode penyamaran)', the name Chrome uses in Indonesian for a private window, so staff recognise it. Remove if unwanted.",
+    "source": "This browser window can't keep learners' work, so there's nothing to show here. A private window can cause this.",
+    "back": "This browser window can't save learners' work, so there is nothing that can be shown here. A private window (incognito mode) could be the cause."
+  },
+  "pages.allCertificates.title": {
+    "source": "All certificates",
+    "back": "All certificates"
+  },
+  "pages.allCertificates.count": {
+    "source": "{count} certificates earned on this device. Each prints on a landscape page of its own.",
+    "back": "{count} certificates earned on this device. Each certificate is printed on its own landscape page."
+  },
+  "pages.allCertificates.names": {
+    "source": "Names come from this device and can't be changed here. To print a different name, choose that learner, then open their certificate from the course page.",
+    "back": "Names are taken from this device and can't be changed here. To print a different name, choose that learner, then open their certificate from the course page."
+  },
+  "pages.allCertificates.namesLink": {
+    "source": "Go to the course page",
+    "back": "Open the course page"
+  },
+  "pages.allCertificates.back": {
+    "source": "Back to the class",
+    "back": "Back to the class"
+  },
+  "pages.allCertificates.labelSection": {
+    "source": "Certificate for {name}: {section}",
+    "back": "Certificate for {name}: {section}"
+  },
+  "pages.allCertificates.labelCourse": {
+    "source": "Course certificate for {name}",
+    "back": "Course certificate for {name}"
+  },
+  "pages.allCertificates.empty": {
+    "source": "Nobody on this device has a certificate yet.",
+    "back": "Nobody has a certificate on this device yet."
+  },
+  "pages.allCertificates.emptyBody": {
+    "flag": true,
+    "note": "'The section check isn't needed' as 'Cek bagian tidak diperlukan untuk itu' (not needed to get a certificate).",
+    "source": "A learner gets one by finishing every lesson in a section. The section check isn't needed.",
+    "back": "Learners get a certificate by finishing all the lessons in one section. The section check isn't needed for that."
+  },
+  "pages.settings.title": {
+    "flag": true,
+    "note": "Changed from 'Pengaturan' to 'Pengaturan perangkat ini' to follow the new English. pages.educators.settingsLink ('Settings for this device', other worklist) should match. The nav item stays 'Pengaturan'.",
+    "source": "Settings for this device",
+    "back": "Settings of this device"
+  },
+  "pages.settings.intro": {
+    "source": "These settings are for teachers and volunteers. They apply to everyone who uses this device, and they stay on it.",
+    "back": "These settings are for teachers and volunteers. These settings apply to everyone who uses this device, and stay saved on this device."
+  },
+  "pages.settings.noStorage": {
+    "source": "This browser window can't save settings.",
+    "back": "This browser window can't save settings."
+  },
+  "pages.settings.saveFailed": {
+    "source": "That change couldn't be saved. Try again.",
+    "back": "That change hasn't been saved yet. Try again."
+  },
+  "pages.settings.language.title": {
+    "source": "Language",
+    "back": "Language"
+  },
+  "pages.settings.language.label": {
+    "source": "Language on this device",
+    "back": "Language on this device"
+  },
+  "pages.settings.language.help": {
+    "flag": true,
+    "note": "English ends 'The lessons stay in English' and the English note says to keep it. But Indonesian is a full translation (lessons follow this language), so that sentence would be false here. Translated as 'The lessons also show in this language.' Confirm. | Reviewer: Fixed: English says the lessons follow this language only for Indonesian ('In Indonesian, the lessons do too'); the draft said lessons always appear in the chosen language, which isn't true for languages without translated lessons.",
+    "source": "Buttons and instructions show in this language on the home screen, for anyone looking around, and for learners who haven't chosen their own. In Indonesian, the lessons do too.",
+    "back": "Buttons and instructions appear in this language on the home screen, for anyone who is just looking around, and for learners who haven't chosen their own language yet. For Indonesian, lessons also appear in this language."
+  },
+  "pages.settings.offline.title": {
+    "flag": true,
+    "note": "'Offline and data' = 'Tanpa internet dan data'. 'Offline' rendered as 'tanpa internet' throughout rather than 'luring'/'offline'. | Reviewer: 'Tanpa internet dan data' can read as 'without internet and without data'. English is 'Offline and data' (the section holds offline status and Save data). Consider 'Tanpa internet & hemat data'.",
+    "source": "Offline and data",
+    "back": "Without internet and data"
+  },
+  "pages.settings.offline.checking": {
+    "source": "Checking whether the lessons are saved on this device…",
+    "back": "Checking whether the lessons are already saved on this device…"
+  },
+  "pages.settings.offline.preparing": {
+    "source": "Saving the lessons on this device for offline use. Keep Thinkerwell open, with the internet on, until this says they're saved.",
+    "back": "Saving the lessons on this device so they can be used without internet. Leave Thinkerwell open, with the internet on, until it says here that the lessons are saved."
+  },
+  "pages.settings.offline.ready": {
+    "source": "All {count} lessons are saved on this device, with their pictures. Thinkerwell works here without the internet, except the videos.",
+    "back": "All {count} lessons are saved on this device, complete with their pictures. Thinkerwell can be used here without internet, except for the videos."
+  },
+  "pages.settings.offline.failed": {
+    "source": "The lessons didn't finish saving for offline use. Open Thinkerwell again with the internet on, and it tries again.",
+    "back": "The lessons haven't finished saving for use without internet. Open Thinkerwell again with the internet on, and Thinkerwell will try again."
+  },
+  "pages.settings.offline.unsupported": {
+    "source": "This browser can't keep the lessons for offline use, so Thinkerwell needs the internet here. A private window can cause this.",
+    "back": "This browser can't save lessons for use without internet, so here Thinkerwell needs internet. This can happen in a private (incognito) window."
+  },
+  "pages.settings.offline.saveData": {
+    "source": "Save data",
+    "back": "Save data"
+  },
+  "pages.settings.offline.saveDataHelp": {
+    "source": "Turns the videos off, so Watch opens on the written version, which has the same ideas. Everything else already works without the internet.",
+    "back": "Turns off videos, so Watch opens the written version straight away, which has the same content. All other parts can already be used without internet."
+  },
+  "pages.settings.offline.saveDataFromBrowser": {
+    "source": "It's on because this device is set to save data.",
+    "back": "This setting is on because this device is set to save data."
+  },
+  "pages.settings.reading.title": {
+    "source": "Reading and listening",
+    "back": "Reading and listening"
+  },
+  "pages.settings.reading.level": {
+    "source": "Reading level",
+    "back": "Reading level"
+  },
+  "pages.settings.reading.levelHelp": {
+    "source": "Lessons open in this level for anyone who hasn't chosen one yet. Learners can switch in any lesson, and their choice is kept.",
+    "back": "Lessons open at this level for anyone who hasn't chosen yet. Learners can change it in any lesson, and their choice is saved."
+  },
+  "pages.settings.reading.speed": {
+    "flag": true,
+    "note": "'Listen speed' rendered as 'Kecepatan suara' (voice speed); 'Kecepatan Dengarkan' reads awkwardly. The help text names Dengarkan.",
+    "source": "Listen speed",
+    "back": "Voice speed"
+  },
+  "pages.settings.reading.speedHelp": {
+    "source": "How fast Listen reads aloud. Learners can change it while listening.",
+    "back": "How fast Listen reads the text aloud. Learners can change it while listening."
+  },
+  "pages.settings.reading.noVoice": {
+    "source": "This browser has no voice on this device, so Listen doesn't show here.",
+    "back": "This browser has no voice on this device, so Listen doesn't appear here."
+  },
+  "pages.settings.sayIt.title": {
+    "source": "Say it: speech to text",
+    "back": "Say it: voice to text"
+  },
+  "pages.settings.sayIt.intro": {
+    "source": "Say it lets learners talk instead of typing in the writing boxes of a lesson. It shows only where it can work.",
+    "back": "With Say it, learners can speak instead of typing, in the writing boxes in the lessons. Say it only appears if it can be used."
+  },
+  "pages.settings.sayIt.notChecked": {
+    "source": "This device hasn't been checked yet. Check it once, so lessons know whether Say it can work here.",
+    "back": "This device hasn't been checked yet. Check it just once, so the lessons know whether Say it can be used here."
+  },
+  "pages.settings.sayIt.checkDevice": {
+    "source": "Check this device",
+    "back": "Check this device"
+  },
+  "pages.settings.sayIt.checkHelp": {
+    "source": "The check can take a moment.",
+    "back": "The check can take a little while."
+  },
+  "pages.settings.sayIt.checkedOn": {
+    "source": "Checked on {date}.",
+    "back": "Checked on {date}."
+  },
+  "pages.settings.sayIt.checking": {
+    "source": "Checking what this browser can do…",
+    "back": "Checking what this browser can do…"
+  },
+  "pages.settings.sayIt.onDevice": {
+    "source": "This browser turns speech into text on this device. What learners say is not sent anywhere.",
+    "back": "This browser turns speech into text on this device. Learners' speech isn't sent anywhere."
+  },
+  "pages.settings.sayIt.downloadable": {
+    "source": "This browser can turn speech into text on this device after a one-time download from the browser's maker. The download can be large, so use good Wi-Fi.",
+    "back": "This browser can turn speech into text on this device after downloading once from the browser maker. The download can be big, so use good Wi-Fi."
+  },
+  "pages.settings.sayIt.downloading": {
+    "source": "The browser is getting what it needs. When it's done, check this device again, and Say it appears in lessons.",
+    "back": "The browser is downloading what it needs. When it's finished, check this device again, and Say it will appear in the lessons."
+  },
+  "pages.settings.sayIt.downloadFailed": {
+    "source": "The download didn't finish. Try again later, on good Wi-Fi.",
+    "back": "The download hasn't finished. Try again later, with good Wi-Fi."
+  },
+  "pages.settings.sayIt.onlineOnly": {
+    "source": "This browser can't turn speech into text on this device. It can only do it by sending what learners say to an online service, so Say it stays hidden unless you allow that below.",
+    "back": "This browser can't turn speech into text on this device. This browser can only do it by sending learners' speech to an online service, so Say it stays hidden unless you allow it below."
+  },
+  "pages.settings.sayIt.none": {
+    "source": "This browser can't turn speech into text, so Say it doesn't show. Recent Chrome on a laptop can do it on the device.",
+    "back": "This browser can't turn speech into text, so Say it doesn't appear. The latest version of Chrome on a laptop can do it on the device."
+  },
+  "pages.settings.sayIt.download": {
+    "source": "Download speech to text",
+    "back": "Download voice-to-text feature"
+  },
+  "pages.settings.sayIt.allowOnline": {
+    "source": "Allow online speech-to-text",
+    "back": "Allow voice to text online"
+  },
+  "pages.settings.sayIt.allowOnlineHelp": {
+    "source": "Off unless you turn it on. When it's on and this device can't turn speech into text by itself, Say it sends what learners say to the browser maker's online service (for example Google, Apple or Microsoft), and it needs the internet. Turn it on only if your organisation and the learners' families have agreed.",
+    "back": "Off unless you turn it on. If it's on and this device can't turn speech into text by itself, Say it sends learners' speech to an online service owned by the browser maker (for example Google, Apple or Microsoft), and needs internet. Turn it on only if your organisation and the learners' families have agreed."
+  },
+  "pages.settings.sayIt.recordingsNote": {
+    "source": "Record yourself is different: recordings always stay on this device and are never sent anywhere.",
+    "back": "Record your voice is different: recordings always stay on this device and are never sent anywhere.",
+    "flag": true,
+    "note": "Reviewer: 'Rekam suaramu berbeda' can at first read as a command ('record your voice differently'). Consider marking the feature name, e.g. 'Fitur Rekam suaramu berbeda: ...'."
+  },
+  "pages.settings.transfer.title": {
+    "source": "Move work to another device",
+    "back": "Move work to another device"
+  },
+  "pages.settings.transfer.intro": {
+    "source": "Tablets get reset and laptops get replaced. Save learners' work to a file first. Then load the file on the other device. Nothing goes online.",
+    "back": "Tablets can be reset and laptops can be replaced. First save learners' work to a file. Then load that file on the other device. Nothing is sent to the internet."
+  },
+  "pages.settings.transfer.noStorage": {
+    "source": "This browser window can't keep learners' work, so there's nothing to save or load here.",
+    "back": "This browser window can't save learners' work, so there is nothing that can be saved or loaded here."
+  },
+  "pages.settings.transfer.save.title": {
+    "source": "Save work to a file",
+    "back": "Save work to a file"
+  },
+  "pages.settings.transfer.save.who": {
+    "source": "Whose work",
+    "back": "Whose work"
+  },
+  "pages.settings.transfer.save.learnerAdded": {
+    "source": "{name}, added {date}",
+    "back": "{name}, added {date}"
+  },
+  "pages.settings.transfer.save.all": {
+    "source": "All learners on this device",
+    "back": "All learners on this device"
+  },
+  "pages.settings.transfer.save.button": {
+    "flag": true,
+    "note": "English says 'my work' on a staff page; kept learner-voiced 'hasil kerjaku' as the English does (also load.button).",
+    "source": "Save my work to a file",
+    "back": "Save my work to a file"
+  },
+  "pages.settings.transfer.save.help": {
+    "source": "The file goes to this device's downloads. Anyone with the file can read the work in it, so keep it safe.",
+    "back": "The file will go into this device's downloads folder. Anyone who holds this file can read the work inside, so keep it carefully."
+  },
+  "pages.settings.transfer.save.recordings": {
+    "source": "Recordings stay on this device.",
+    "back": "Recordings stay on this device."
+  },
+  "pages.settings.transfer.save.noLearners": {
+    "source": "There's no saved work on this device yet.",
+    "back": "There is no work saved on this device yet."
+  },
+  "pages.settings.transfer.save.saving": {
+    "source": "Making the file…",
+    "back": "Making the file…"
+  },
+  "pages.settings.transfer.save.saved": {
+    "source": "Look for {file} in this device's downloads.",
+    "back": "Look for {file} in this device's downloads folder."
+  },
+  "pages.settings.transfer.save.tooBig": {
+    "source": "That's too much work for one file. Save each learner's work on its own.",
+    "back": "There is too much work for one file. Save each learner's work one at a time."
+  },
+  "pages.settings.transfer.save.failed": {
+    "source": "The file couldn't be made. Try again.",
+    "back": "The file couldn't be made yet. Try again."
+  },
+  "pages.settings.transfer.load.title": {
+    "source": "Load work from a file",
+    "back": "Load work from a file"
+  },
+  "pages.settings.transfer.load.button": {
+    "source": "Load my work",
+    "back": "Load my work"
+  },
+  "pages.settings.transfer.load.help": {
+    "source": "Choose a file saved from Thinkerwell. Nothing changes until you say so.",
+    "back": "Choose a file saved from Thinkerwell. Nothing changes until you agree."
+  },
+  "pages.settings.transfer.load.reading": {
+    "source": "Checking the file…",
+    "back": "Checking the file…"
+  },
+  "pages.settings.transfer.load.previewTitle": {
+    "source": "Check before you load",
+    "back": "Check first before it is loaded"
+  },
+  "pages.settings.transfer.load.savedOn": {
+    "source": "This file was saved on {date}. It has work for:",
+    "back": "This file was saved on {date}. It contains work for:"
+  },
+  "pages.settings.transfer.load.lessons": {
+    "source": "{count} lessons",
+    "back": "{count} lessons"
+  },
+  "pages.settings.transfer.load.checks": {
+    "source": "{count} section checks",
+    "back": "{count} section checks"
+  },
+  "pages.settings.transfer.load.lessonsAndChecks": {
+    "source": "{lessons} and {checks}",
+    "back": "{lessons} and {checks}"
+  },
+  "pages.settings.transfer.load.noWork": {
+    "source": "no work yet",
+    "back": "no work yet"
+  },
+  "pages.settings.transfer.load.learnerNew": {
+    "source": "{name}: {work}. New on this device.",
+    "back": "{name}: {work}. New on this device."
+  },
+  "pages.settings.transfer.load.learnerHere": {
+    "source": "{name}: {work}. Already on this device, so this is added to their work here. Nothing is lost.",
+    "back": "{name}: {work}. Already on this device, so this is added to their work here. Nothing is lost."
+  },
+  "pages.settings.transfer.load.sameName": {
+    "source": "There's already a different {name} on this device. Both are kept, and each tile shows the day it was added.",
+    "back": "There is already another {name} on this device. Both are kept, and each box shows the date that learner was added."
+  },
+  "pages.settings.transfer.load.skipped": {
+    "source": "{count} pieces of work are for lessons or checks that this version of Thinkerwell doesn't have. They will be left out.",
+    "back": "There are {count} pieces of work for lessons or checks that don't exist in this version of Thinkerwell. That work won't be loaded.",
+    "flag": true,
+    "note": "Reviewer: Fixed: the first sentence had no verb (a bare noun phrase). Added 'Ada' at the start."
+  },
+  "pages.settings.transfer.load.loadIt": {
+    "source": "Load it",
+    "back": "Load"
+  },
+  "pages.settings.transfer.load.cancel": {
+    "source": "Cancel",
+    "back": "Cancel"
+  },
+  "pages.settings.transfer.load.loading": {
+    "source": "Loading the work…",
+    "back": "Loading the work…"
+  },
+  "pages.settings.transfer.load.added": {
+    "source": "Added to this device: {names}.",
+    "back": "Added to this device: {names}."
+  },
+  "pages.settings.transfer.load.updated": {
+    "source": "Added to the work already here: {names}.",
+    "back": "Added to the existing work: {names}."
+  },
+  "pages.settings.transfer.load.unchanged": {
+    "source": "Nothing new for {names}.",
+    "back": "Nothing new for {names}."
+  },
+  "pages.settings.transfer.load.nothingNew": {
+    "source": "This device already had all the work in this file, so nothing changed.",
+    "back": "This device already has all the work in this file, so nothing changed."
+  },
+  "pages.settings.transfer.load.carryOn": {
+    "source": "To carry on, choose who's learning on the home page.",
+    "back": "To continue, choose who is learning on the home page."
+  },
+  "pages.settings.transfer.load.problems.notWorkFile": {
+    "source": "This isn't a Thinkerwell work file, so nothing was loaded. Choose a file with a name that starts with thinkerwell.",
+    "back": "This isn't a Thinkerwell work file, so nothing was loaded. Choose a file whose name starts with thinkerwell."
+  },
+  "pages.settings.transfer.load.problems.newerVersion": {
+    "source": "This file was saved by a newer version of Thinkerwell. Update this device first: open Thinkerwell with the internet on, then try again.",
+    "back": "This file was saved by a newer version of Thinkerwell. Update this device first: open Thinkerwell with the internet on, then try again."
+  },
+  "pages.settings.transfer.load.problems.empty": {
+    "source": "There's no work in this file, so nothing was loaded.",
+    "back": "There is no work in this file, so nothing was loaded."
+  },
+  "pages.settings.transfer.load.problems.tooBig": {
+    "source": "This file is too big to be Thinkerwell work, so nothing was loaded.",
+    "back": "This file is too big for a Thinkerwell work file, so nothing was loaded."
+  },
+  "pages.settings.transfer.load.problems.damaged": {
+    "source": "Part of this file is damaged, so nothing was loaded. Save the work to a file again on the other device.",
+    "back": "Part of this file is damaged, so nothing was loaded. Save the work to a file again on the other device."
+  },
+  "pages.settings.transfer.load.problems.unreadable": {
+    "source": "This file couldn't be opened. Try again.",
+    "back": "This file can't be opened. Try again."
+  },
+  "pages.settings.transfer.load.problems.failed": {
+    "source": "The work couldn't be loaded, so nothing changed on this device. Try again.",
+    "back": "The work couldn't be loaded yet, so nothing changed on this device. Try again."
+  },
+  "pages.about.title": {
+    "back": "About Thinkerwell",
+    "source": "About Thinkerwell"
+  },
+  "pages.about.tagline": {
+    "flag": true,
+    "note": "Imperatives matching the stage names. 'Watch with intention' rendered 'Tonton dengan saksama' (watch carefully); 'Reflect and connect' as 'Refleksikan dan hubungkan'. Check it reads well as a motto.",
+    "source": "Read with curiosity. Write with evidence. Speak with purpose. Watch with intention. Reflect and connect.",
+    "back": "Read with curiosity. Write with evidence. Speak with purpose. Watch carefully. Reflect and connect."
+  },
+  "pages.about.whatTitle": {
+    "source": "What Thinkerwell is",
+    "back": "What Thinkerwell is"
+  },
+  "pages.about.whatBody": {
+    "flag": true,
+    "note": "'displaced' = 'yang terpaksa meninggalkan tempat tinggalnya'; 'civic life' = 'kehidupan sebagai warga'. Long; check phrasing.",
+    "source": "Thinkerwell is a free social-studies course for young people across Southeast Asia, made with refugee, displaced and under-served learners in mind. Learners explore history, geography, culture and civic life through reading, writing, talking and reflecting.",
+    "back": "Thinkerwell is a free social-studies course for young people across Southeast Asia, made with refugee learners, learners forced to leave their homes, and under-served learners in mind. Learners explore history, geography, culture and life as citizens through reading, writing, speaking and reflecting."
+  },
+  "pages.about.whatHonesty": {
+    "flag": true,
+    "note": "'student-led' = 'dipimpin oleh pelajar'; 'registered charity' = 'lembaga amal yang terdaftar'. Must stay accurate (not a registered charity).",
+    "source": "It is a student-led project, getting ready for its first pilot with a learning centre. It is not a registered charity.",
+    "back": "Thinkerwell is a project led by students, and is getting ready for its first pilot with a learning centre. Thinkerwell is not a registered charity."
+  },
+  "pages.about.promiseTitle": {
+    "source": "Our promise to learners",
+    "back": "Our promise to learners"
+  },
+  "pages.about.promise1": {
+    "source": "It is free, with no adverts and no accounts.",
+    "back": "Free, with no ads and no accounts."
+  },
+  "pages.about.promise2": {
+    "source": "We never ask about your past, your family or where you come from.",
+    "back": "We never ask about your past, your family, or where you come from."
+  },
+  "pages.about.promise3": {
+    "source": "Your writing stays on your device. You choose what to share.",
+    "back": "Your writing stays on your device. You choose what to share."
+  },
+  "pages.about.goalsTitle": {
+    "flag": true,
+    "note": "'work towards' simplified to 'kami dukung' (we support).",
+    "source": "The UN goals we work towards",
+    "back": "UN goals we support"
+  },
+  "pages.about.goal4Title": {
+    "source": "Goal 4: Quality Education",
+    "back": "Goal 4: Quality Education"
+  },
+  "pages.about.goal4Body": {
+    "source": "Free social-studies learning for young people who face barriers to school.",
+    "back": "Free social-studies learning for young people who face barriers to going to school."
+  },
+  "pages.about.goal4Alt": {
+    "source": "Sustainable Development Goal 4: Quality Education",
+    "back": "Sustainable Development Goal 4: Quality Education"
+  },
+  "pages.about.goal10Title": {
+    "flag": true,
+    "note": "Used the official Indonesian SDG names (Bappenas/BPS): Pendidikan Berkualitas, Berkurangnya Kesenjangan, Perdamaian, Keadilan dan Kelembagaan yang Tangguh, Kemitraan untuk Mencapai Tujuan; 'Tujuan Pembangunan Berkelanjutan' for SDG. Please verify.",
+    "source": "Goal 10: Reduced Inequalities",
+    "back": "Goal 10: Reduced Inequalities"
+  },
+  "pages.about.goal10Body": {
+    "source": "Good learning materials for refugee, displaced and under-served youth.",
+    "back": "Good learning materials for young people who are refugees, who were forced to leave their homes, and who are under-served."
+  },
+  "pages.about.goal10Alt": {
+    "source": "Sustainable Development Goal 10: Reduced Inequalities",
+    "back": "Sustainable Development Goal 10: Reduced Inequalities"
+  },
+  "pages.about.goal16Title": {
+    "source": "Goal 16: Peace, Justice and Strong Institutions",
+    "back": "Goal 16: Peace, Justice and Strong Institutions"
+  },
+  "pages.about.goal16Body": {
+    "source": "History, civics and media skills, and the habit of respectful discussion.",
+    "back": "History, civics and media skills, plus the habit of discussing with mutual respect."
+  },
+  "pages.about.goal16Alt": {
+    "source": "Sustainable Development Goal 16: Peace, Justice and Strong Institutions",
+    "back": "Sustainable Development Goal 16: Peace, Justice and Strong Institutions"
+  },
+  "pages.about.goal17Title": {
+    "source": "Goal 17: Partnerships for the Goals",
+    "back": "Goal 17: Partnerships to Achieve the Goals"
+  },
+  "pages.about.goal17Body": {
+    "source": "Working with educators, youth networks and community groups.",
+    "back": "Working together with educators, youth networks and community groups."
+  },
+  "pages.about.goal17Alt": {
+    "source": "Sustainable Development Goal 17: Partnerships for the Goals",
+    "back": "Sustainable Development Goal 17: Partnerships to Achieve the Goals"
+  },
+  "pages.about.teamTitle": {
+    "source": "Who makes Thinkerwell",
+    "back": "Who makes Thinkerwell"
+  },
+  "pages.about.justinRole": {
+    "source": "Founder and director",
+    "back": "Founder and director"
+  },
+  "pages.about.justinName": {
+    "source": "Justin Park",
+    "back": "Justin Park"
+  },
+  "pages.about.justinBio": {
+    "source": "Justin is a student in Singapore who loves history, sociology and Model United Nations. He started Thinkerwell because learning should not stop at borders, displacement or a lack of resources.",
+    "back": "Justin is a student in Singapore who likes history, sociology and Model United Nations. He started Thinkerwell because learning must not be stopped by national borders, having to flee, or a lack of resources."
+  },
+  "pages.about.justinAlt": {
+    "source": "Justin Park",
+    "back": "Justin Park"
+  },
+  "pages.about.nickRole": {
+    "flag": true,
+    "note": "'Chief technology officer' as 'Kepala teknologi (CTO)'.",
+    "source": "Chief technology officer (CTO)",
+    "back": "Head of technology (CTO)"
+  },
+  "pages.about.nickName": {
+    "source": "Nick Thiery",
+    "back": "Nick Thiery"
+  },
+  "pages.about.nickBio": {
+    "source": "Nick is a student in Singapore. He builds the Thinkerwell website and leads our work with AI. He is interested in how AI can help more people learn in their own language.",
+    "back": "Nick is a student in Singapore. He builds the Thinkerwell website and leads our work with AI. He is interested in how AI can help more people learn in their own language."
+  },
+  "pages.about.nickAlt": {
+    "source": "Nick Thiery",
+    "back": "Nick Thiery"
+  },
+  "pages.placeholder": {
+    "back": "This page is coming soon.",
+    "source": "This page is coming soon."
+  },
+  "notFound.title": {
+    "source": "This page isn't here",
+    "back": "This page doesn't exist"
+  },
+  "notFound.body": {
+    "back": "The link may be old or mistyped. All the course content is still here.",
+    "source": "The link may be old or have a typo. Everything in the course is still here."
+  },
+  "notFound.home": {
+    "source": "Go to the home page",
+    "back": "To home"
+  },
+  "notFound.course": {
+    "back": "See the course",
+    "source": "See the course"
+  },
+  "routeError.title": {
+    "back": "Something isn't right",
+    "source": "Something went wrong"
+  },
+  "routeError.body": {
+    "source": "Sorry about that. Try opening the page again, or go to the home page. Your saved work is still on this device.",
+    "back": "Sorry. Try opening this page again, or go home. Your work that's already saved is still on this device."
+  },
+  "routeError.home": {
+    "source": "Go to the home page",
+    "back": "To home"
+  },
+  "pageNotDownloaded.title": {
+    "source": "This page hasn't downloaded yet",
+    "back": "This page hasn't been downloaded yet"
+  },
+  "pageNotDownloaded.body": {
+    "source": "Connect to the internet, then try again. Your saved work is still on this device.",
+    "back": "Connect to the internet, then try again. Your work that's already saved is still on this device."
+  },
+  "pageNotDownloaded.retry": {
+    "source": "Try again",
+    "back": "Try again"
+  },
+  "pageNotDownloaded.trying": {
+    "source": "Trying again…",
+    "back": "Trying again…"
+  },
+  "pageNotDownloaded.stillOffline": {
+    "source": "There's still no internet connection. Try again once you're connected.",
+    "back": "Still no internet connection. Try again after you are connected."
+  },
+  "pageNotDownloaded.home": {
+    "source": "Go to the home page",
+    "back": "To home"
+  },
+  "header.switcherTitle": {
+    "back": "Change learner",
+    "source": "Switch learner"
+  },
+  "header.switcherClose": {
+    "back": "Close",
+    "source": "Close"
+  },
+  "header.lookAroundTile": {
+    "back": "Just look around",
+    "source": "Just look around"
+  },
+  "header.backToPicker": {
+    "flag": true,
+    "note": "\"Back to who's learning\" → \"Kembali ke daftar pelajar\" (back to the list of learners).",
+    "back": "Back to the list of learners",
+    "source": "Back to who's learning"
+  },
+  "header.lookAroundTitle": {
+    "back": "You are looking around",
+    "source": "You're looking around"
+  },
+  "header.lookAroundBanner": {
+    "back": "Nothing is saved during this visit.",
+    "source": "Nothing you do on this visit is saved."
+  },
+  "header.chooseLearner": {
+    "source": "Choose who's learning",
+    "back": "Choose who is learning"
+  },
+  "header.menuTitle": {
+    "flag": true,
+    "note": "\"Menu\" is the same word in Indonesian.",
+    "back": "Menu",
+    "source": "Menu"
+  },
+  "header.menuClose": {
+    "back": "Close menu",
+    "source": "Close menu"
+  },
+  "dev.rtlOn": {
+    "back": "Right-to-left test mode is on. Add ?dir=ltr to the address to turn it off.",
+    "source": "Right-to-left test mode is on. Add ?dir=ltr to the address to turn it off."
+  },
+  "dev.localeOn": {
+    "source": "Test language {locale} is on. Add ?locale=en to the address to turn it off.",
+    "back": "Test language {locale} is on. Add ?locale=en to the address to turn it off."
+  },
+  "ds.chrome.logo.homeLabel": {
+    "back": "Thinkerwell home",
+    "source": "Thinkerwell home"
+  },
+  "ds.chrome.siteHeader.switchLearner": {
+    "back": "Change learner, now: {name}",
+    "source": "Switch learner, current: {name}"
+  },
+  "ds.chrome.siteHeader.openMenu": {
+    "back": "Open navigation menu",
+    "source": "Open navigation menu"
+  },
+  "ds.chrome.stagePath.navLabel": {
+    "back": "Lesson steps",
+    "source": "Lesson steps"
+  },
+  "ds.chrome.stagePath.doneSuffix": {
+    "back": ", done",
+    "source": ", done"
+  },
+  "ds.chrome.stagePath.stageDone": {
+    "source": "{stage}, done",
+    "back": "{stage}, done"
+  },
+  "ds.chrome.stageDots.progressLabel": {
+    "back": "{count} of 5 steps done",
+    "source": "{count} of 5 steps done"
+  },
+  "ds.chrome.progressRing.ariaLabel": {
+    "back": "{value} of {max} done",
+    "source": "{value} of {max} done"
+  },
+  "ds.chrome.progressRing.valueLabel": {
+    "back": "{value}/{max}",
+    "source": "{value}/{max}"
+  },
+  "ds.course.sectionName.history": {
+    "back": "History & Human Stories",
+    "source": "History & Human Stories"
+  },
+  "ds.course.sectionName.geography": {
+    "back": "Geography & Our Environment",
+    "source": "Geography & Our Environment"
+  },
+  "ds.course.sectionName.culture": {
+    "back": "Culture, Society & Identity",
+    "source": "Culture, Society & Identity"
+  },
+  "ds.course.sectionName.civics": {
+    "back": "Citizenship, Media & Everyday Economics",
+    "source": "Civics, Media & Everyday Economics"
+  },
+  "ds.course.sectionBadge.eyebrow": {
+    "back": "Section {number}",
+    "source": "Section {number}"
+  },
+  "ds.course.sectionHeader.eyebrow": {
+    "back": "Section {number}",
+    "source": "Section {number}"
+  },
+  "ds.course.sectionHeader.eyebrowWithTotal": {
+    "back": "Section {number} · {count} lessons",
+    "source": "Section {number} · {count} lessons"
+  },
+  "ds.course.lessonRow.cta.start": {
+    "back": "Start",
+    "source": "Start"
+  },
+  "ds.course.lessonRow.cta.continue": {
+    "back": "Continue",
+    "source": "Continue"
+  },
+  "ds.course.lessonRow.cta.review": {
+    "back": "See again",
+    "source": "Review"
+  },
+  "ds.course.lessonRow.status.notStarted": {
+    "back": "Not started yet.",
+    "source": "Not started."
+  },
+  "ds.course.lessonRow.status.inProgress": {
+    "back": "Being worked on.",
+    "source": "In progress."
+  },
+  "ds.course.lessonRow.status.completed": {
+    "back": "Finished.",
+    "source": "Completed."
+  },
+  "ds.course.lessonRow.ariaLabelLesson": {
+    "back": "Lesson {number}: {title}. {status} {cta}",
+    "source": "Lesson {number}: {title}. {status} {cta}"
+  },
+  "ds.course.lessonRow.ariaLabelLessonQuestion": {
+    "source": "Lesson {number}: {title}. {status} {cta} {question}",
+    "back": "Lesson {number}: {title}. {status} {cta} {question}"
+  },
+  "ds.course.lessonRow.ariaLabelQuiz": {
+    "back": "{title}. {status} {cta}",
+    "source": "{title}. {status} {cta}"
+  },
+  "ds.course.continueCard.label": {
+    "back": "Continue learning",
+    "source": "Continue learning"
+  },
+  "ds.course.continueCard.eyebrow": {
+    "back": "Carry on from where you stopped",
+    "source": "Pick up where you left off"
+  },
+  "ds.course.continueCard.cta": {
+    "back": "Continue",
+    "source": "Continue"
+  },
+  "ds.course.journalEntry.lessonLine": {
+    "back": "Lesson {number} · {title}",
+    "source": "Lesson {number} · {title}"
+  },
+  "ds.course.journalEntry.kindWriting": {
+    "back": "Writing",
+    "source": "Writing"
+  },
+  "ds.course.journalEntry.kindReflection": {
+    "back": "Reflection",
+    "source": "Reflection"
+  },
+  "ds.course.journalEntry.saved": {
+    "back": "Saved {date}",
+    "source": "Saved {date}"
+  },
+  "ds.course.journalEntry.edit": {
+    "flag": true,
+    "note": "\"Edit\" → \"Ubah\". \"Edit\" is also common in Indonesian.",
+    "back": "Change",
+    "source": "Edit"
+  },
+  "ds.course.scoreSummary.skillResult": {
+    "back": "{got} of {of}",
+    "source": "{got} of {of}"
+  },
+  "ds.content.task.defaultEyebrow": {
+    "back": "Your task",
+    "source": "Your task"
+  },
+  "ds.content.definition.close": {
+    "back": "Close",
+    "source": "Close"
+  },
+  "ds.content.definition.hearIt": {
+    "back": "Listen",
+    "source": "Hear it"
+  },
+  "ds.content.definition.meaningOf": {
+    "back": "Meaning of the word {word}",
+    "source": "Meaning of {word}"
+  },
+  "ds.content.evidence.fictional": {
+    "back": "Fictional example made for this lesson.",
+    "source": "Fictional example created for this lesson."
+  },
+  "ds.content.option.correct": {
+    "back": "Correct",
+    "source": "Correct"
+  },
+  "ds.content.option.notQuite": {
+    "back": "Not quite right yet",
+    "source": "Not quite"
+  },
+  "ds.content.feedback.correctTitle": {
+    "back": "Correct",
+    "source": "Correct"
+  },
+  "ds.content.feedback.retryTitle": {
+    "flag": true,
+    "note": "\"Not quite yet\" → \"Belum tepat\"; \"belum\" already carries \"yet\".",
+    "back": "Not quite right yet",
+    "source": "Not quite yet"
+  },
+  "ds.content.field.optional": {
+    "back": "(not required)",
+    "source": "(optional)"
+  },
+  "ds.content.reading.part": {
+    "back": "Part/Section {n} of {total}",
+    "source": "Part {n} of {total}"
+  },
+  "ds.content.video.optional": {
+    "back": "Not required",
+    "source": "Optional"
+  },
+  "ds.content.video.watchLabel": {
+    "back": "Watch video",
+    "source": "Watch the video"
+  },
+  "ds.content.video.readInsteadDefault": {
+    "back": "Just read",
+    "source": "Read instead"
+  },
+  "ds.actions.voiceButton.sayIt": {
+    "back": "Say it",
+    "source": "Say it"
+  },
+  "ds.actions.voiceButton.stop": {
+    "back": "Stop",
+    "source": "Stop"
+  },
+  "ds.actions.listenBar.label": {
+    "flag": true,
+    "note": "\"Reading aloud\" → \"Dengarkan bacaan\" (listen to the reading), matching the Listen key term.",
+    "back": "Listen to the reading",
+    "source": "Reading aloud"
+  },
+  "ds.actions.listenBar.play": {
+    "back": "Play",
+    "source": "Play"
+  },
+  "ds.actions.listenBar.pause": {
+    "back": "Pause",
+    "source": "Pause"
+  },
+  "ds.actions.listenBar.stop": {
+    "back": "Stop",
+    "source": "Stop"
+  },
+  "ds.actions.listenBar.speedLabel": {
+    "back": "Speed",
+    "source": "Speed"
+  },
+  "ds.actions.listenBar.slow": {
+    "back": "Slow",
+    "source": "Slow"
+  },
+  "ds.actions.listenBar.normal": {
+    "flag": true,
+    "note": "\"Normal\" speed → \"Biasa\".",
+    "back": "Normal",
+    "source": "Normal"
+  },
+  "ds.actions.voiceRecorder.title": {
+    "back": "Record your voice",
+    "source": "Record yourself"
+  },
+  "ds.actions.voiceRecorder.note": {
+    "back": "Your recording stays on this device. No one else hears it.",
+    "source": "Your recording stays on this device. Nobody else hears it."
+  },
+  "ds.actions.voiceRecorder.startRecording": {
+    "back": "Start recording",
+    "source": "Start recording"
+  },
+  "ds.actions.voiceRecorder.stop": {
+    "back": "Stop",
+    "source": "Stop"
+  },
+  "ds.actions.voiceRecorder.recording": {
+    "back": "Recording {time}",
+    "source": "Recording {time}"
+  },
+  "ds.actions.voiceRecorder.listenBack": {
+    "back": "Listen again",
+    "source": "Listen back"
+  },
+  "ds.actions.voiceRecorder.recordAgain": {
+    "back": "Record again",
+    "source": "Record again"
+  },
+  "ds.actions.voiceRecorder.delete": {
+    "back": "Delete",
+    "source": "Delete"
+  },
+  "ds.actions.writingBox.optional": {
+    "back": "(not required)",
+    "source": "(optional)"
+  },
+  "ds.actions.actionBar.continue": {
+    "back": "Continue",
+    "source": "Continue"
+  },
+  "offline.offlineTitle": {
+    "flag": true,
+    "note": "'You're offline' = 'Kamu sedang tidak tersambung ke internet' to match lessonPlayer.watch.offlineTitle; longer than the English. Shorter option: 'Kamu sedang offline.'",
+    "source": "You're offline.",
+    "back": "You are not connected to the internet."
+  },
+  "offline.offlineLearner": {
+    "source": "Keep going: your work is saved on this device.",
+    "back": "Just carry on: your work is saved on this device."
+  },
+  "offline.offlineLesson": {
+    "source": "Keep going: this lesson is saved, and your work is saved on this device.",
+    "back": "Just carry on: this lesson is already saved, and your work is saved on this device."
+  },
+  "offline.offlineGuest": {
+    "source": "Keep going: the lessons work without the internet.",
+    "back": "Just carry on: lessons can still be opened without internet."
+  },
+  "offline.offlineGuestNotReady": {
+    "source": "You can keep reading what's open.",
+    "back": "You can still read what is already open."
+  },
+  "offline.backTitle": {
+    "source": "You're back online.",
+    "back": "You are connected to the internet again."
+  },
+  "offline.backLearner": {
+    "source": "Your work is saved.",
+    "back": "Your work is already saved."
+  },
+  "offline.updateTitle": {
+    "source": "A new version is ready.",
+    "back": "A new version is ready."
+  },
+  "offline.updateBody": {
+    "flag": true,
+    "note": "'It starts the next time Thinkerwell opens' = 'This version is used when Thinkerwell is opened again later'. | Reviewer: Slightly stiff ('This version is used when Thinkerwell is opened again later'). Maybe 'Versi baru mulai dipakai saat Thinkerwell dibuka lagi.' Same for updateBodyLearner.",
+    "source": "It starts the next time Thinkerwell opens.",
+    "back": "This version is used when Thinkerwell is opened again later."
+  },
+  "offline.updateBodyLearner": {
+    "source": "It starts the next time Thinkerwell opens. Your work is saved.",
+    "back": "This version is used when Thinkerwell is opened again later. Your work is already saved."
+  },
+  "offline.updateAction": {
+    "source": "Update now",
+    "back": "Update now"
+  },
+  "print.print": {
+    "source": "Print",
+    "back": "Print"
+  },
+  "print.brand": {
+    "source": "Thinkerwell · Exploring Our World",
+    "back": "Thinkerwell · Exploring Our World"
+  },
+  "print.printLesson": {
+    "source": "Print this lesson",
+    "back": "Print this lesson"
+  },
+  "print.lessonPageTitle": {
+    "source": "Lesson {number}: print",
+    "back": "Lesson {number}: print"
+  },
+  "print.backToLesson": {
+    "source": "Back to the lesson",
+    "back": "Back to the lesson"
+  },
+  "print.learningGoal": {
+    "source": "Learning goal:",
+    "back": "Learning goal:"
+  },
+  "print.lessonIntro": {
+    "source": "This is the lesson on paper: both reading levels, the key words and every task, with lines to write on. The text prints black on white, without the menus.",
+    "back": "This is the lesson in paper form: both reading levels, the key words and all the tasks, with lines for writing. The text is printed black on white, with no menus."
+  },
+  "print.readingStandard": {
+    "flag": true,
+    "note": "English 'Standard English' / 'Simpler English'; used 'versi standar' / 'versi lebih mudah' per KEY_TERMS (not English any more).",
+    "source": "Reading: Standard English",
+    "back": "Reading: standard version"
+  },
+  "print.readingSimpler": {
+    "flag": true,
+    "note": "See print.readingStandard.",
+    "source": "Reading: Simpler English",
+    "back": "Reading: easier version"
+  },
+  "print.keyWordsNote": {
+    "source": "Key words are in bold.",
+    "back": "Key words are printed in bold."
+  },
+  "print.optional": {
+    "source": "(optional)",
+    "back": "(optional)"
+  },
+  "print.watchTitle": {
+    "source": "Watch or read",
+    "back": "Watch or read"
+  },
+  "print.videoNote": {
+    "source": "Video: {title} ({channel}). The written version below has the same ideas.",
+    "back": "Video: {title} ({channel}). The written version below has the same ideas."
+  },
+  "print.writtenVersion": {
+    "source": "Written version: {title}",
+    "back": "Written version: {title}"
+  },
+  "print.journalPageTitle": {
+    "source": "Print my journal",
+    "back": "Print my journal"
+  },
+  "print.printJournal": {
+    "source": "Print my journal",
+    "back": "Print my journal"
+  },
+  "print.backToJournal": {
+    "source": "Back to my journal",
+    "back": "Back to my journal"
+  },
+  "print.journalEmpty": {
+    "source": "Nothing saved yet. Writing and reflections show up here once you start.",
+    "back": "Nothing saved yet. Your writing and reflections will appear here after you start."
+  },
+  "print.journalNoLearner": {
+    "source": "Choose who's learning to print their journal. Nothing is saved while you look around.",
+    "back": "Choose who is learning to print their journal. Nothing is saved while you are looking around."
+  },
+  "print.chooseLearner": {
+    "source": "Choose who's learning",
+    "back": "Choose who is learning"
+  },
+  "print.writing": {
+    "source": "Writing",
+    "back": "Writing"
+  },
+  "print.reflection": {
+    "source": "Reflection",
+    "back": "Reflection"
+  },
+  "certificates.sectionPageTitle": {
+    "source": "Certificate: {section}",
+    "back": "Certificate: {section}"
+  },
+  "certificates.coursePageTitle": {
+    "source": "Course certificate",
+    "back": "Course certificate"
+  },
+  "certificates.backToCourse": {
+    "source": "Back to the course",
+    "back": "Back to the course"
+  },
+  "certificates.backToHome": {
+    "source": "Back to home",
+    "back": "Back to home"
+  },
+  "certificates.printIntro": {
+    "source": "Check the name, then print. It fits on one page of A4 or Letter paper.",
+    "back": "Check the name, then print. This certificate fits on one A4 or Letter sheet of paper."
+  },
+  "certificates.nameLabel": {
+    "source": "Name on the certificate",
+    "back": "Name on the certificate"
+  },
+  "certificates.nameHelp": {
+    "source": "Just for this print. It isn't saved and never leaves this device.",
+    "back": "Only for this printout. This name is not saved and never leaves this device."
+  },
+  "certificates.sheet.title": {
+    "source": "Certificate",
+    "back": "Certificate"
+  },
+  "certificates.sheet.finishedSection": {
+    "flag": true,
+    "note": "Follows the name: 'Amina telah menyelesaikan bagian ... dalam kursus ...'. {section} is wrapped in the content-language span in Certificate.tsx, which is fine now that course text is Indonesian.",
+    "source": "finished the {section} section of {course}.",
+    "back": "has completed the section {section} in the course {course}."
+  },
+  "certificates.sheet.finishedCourse": {
+    "source": "finished all {count} lessons of {course}.",
+    "back": "has completed all {count} lessons in the course {course}."
+  },
+  "certificates.sheet.lessons": {
+    "source": "{count} lessons",
+    "back": "{count} lessons"
+  },
+  "certificates.sheet.blankName": {
+    "source": "Name",
+    "back": "Name"
+  },
+  "certificates.sheet.date": {
+    "source": "Date",
+    "back": "Date"
+  },
+  "certificates.sheet.signature": {
+    "source": "Teacher's signature",
+    "back": "Teacher's signature"
+  },
+  "certificates.sheet.about": {
+    "source": "{course} is a free social-studies course from Thinkerwell.",
+    "back": "{course} is a free social-studies course from Thinkerwell."
+  },
+  "certificates.notYet.section": {
+    "source": "Your certificate is ready when you finish every lesson in this section.",
+    "back": "Your certificate is ready after you finish all the lessons in this section."
+  },
+  "certificates.notYet.course": {
+    "source": "Your course certificate is ready when you finish all {count} lessons.",
+    "back": "Your course certificate is ready after you finish all {count} lessons."
+  },
+  "certificates.notYet.checkNotNeeded": {
+    "source": "You don't need to do the section check for it.",
+    "back": "You don't need to do the section check to get it."
+  },
+  "certificates.notYet.lessonsLeft": {
+    "source": "{count} lessons left",
+    "back": "{count} more lessons to go"
+  },
+  "certificates.guest": {
+    "source": "Certificates are for learners who have finished lessons.",
+    "back": "This certificate is for learners who have finished lessons."
+  },
+  "certificates.offer.sectionTitle": {
+    "source": "You finished the whole {section} section.",
+    "back": "You have finished the whole section {section}."
+  },
+  "certificates.offer.courseTitle": {
+    "source": "You finished all {count} lessons.",
+    "back": "You have finished all {count} lessons."
+  },
+  "certificates.offer.sectionBody": {
+    "source": "Your certificate is ready to print.",
+    "back": "Your certificate is ready to print."
+  },
+  "certificates.offer.courseBody": {
+    "source": "Your course certificate is ready to print.",
+    "back": "Your course certificate is ready to print."
+  },
+  "certificates.offer.getCertificate": {
+    "flag": true,
+    "note": "'Get your certificate' = 'Ambil sertifikatmu' (short); alternative 'Dapatkan sertifikatmu'.",
+    "source": "Get your certificate",
+    "back": "Get your certificate"
+  },
+  "certificates.offer.getCertificateFor": {
+    "source": "Get your certificate for {section}",
+    "back": "Get your certificate for {section}"
+  },
+  "certificates.offer.getCourseCertificate": {
+    "source": "Get your course certificate",
+    "back": "Get your course certificate"
+  },
+  "certificates.offer.getSectionCertificate": {
+    "source": "Get your section certificate",
+    "back": "Get your section certificate"
+  }
+}
