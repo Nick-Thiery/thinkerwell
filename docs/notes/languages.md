@@ -18,6 +18,7 @@ Each language has a code (BCP 47, also `<html lang>` and the message file's name
 | `fa-AF` | Dari | rtl | arabic | no |
 | `ar` | Arabic | rtl | arabic | no |
 | `so` | Somali | ltr | latin | no |
+| `id` | Indonesian | ltr | latin | yes (lessons too) |
 
 Iranian Farsi would be `fa`, a language of its own. Rohingya (also named in `docs/PRODUCT.md`) isn't listed: it has no settled written form in CLDR, so how to support it is a question for the centre.
 
@@ -110,9 +111,24 @@ What the language work adds, measured with `npm run build && npm run slow-intern
 
 About 3 kB: the language code in the first chunk (the list, loading, the provider's formatters, the test-language switch) and the reworded messages. Nothing of other languages, the test languages or the Arabic font is in the precache or a first visit.
 
+## Bahasa Indonesia (branch `bahasa-indonesia`, September 2026)
+
+Indonesian is ready, and it is the first language whose **lessons are translated too**, for the Jakarta pilot: a learner who chooses it gets the interface, the lessons, the section checks, the course text and the lesson pictures in Indonesian. The videos stay English, and the Watch step says so. This reverses "the lessons stay in English" for this one language, at the team's request; every other language still translates the interface only. The Indonesian was drafted and cross-checked by AI and waits for native-speaker review before it reaches learners (`docs/translation/README.md`).
+
+- **The flag.** `content: true` (and `speechLang: 'id-ID'`) on the language in `src/i18n/locales.ts`. `contentLocale()` gives the lessons' language for an interface language: its own when `content`, otherwise English.
+- **The files.** `content/id/course.json`, `content/id/lessons/*.json`, `content/id/quizzes/*.json` and `content/id/visuals/*.svg`. A translation file holds only the text learners read, in the English file's shape; `src/content/translation.ts` lays it over the English, so ids, correct answers, videos, links and the teachers' notes always come from English (`scripts/i18n/translatable.py` applies the same rules for the checks and the spreadsheet). A glossary entry's `forms` is replaced whole.
+- **Loading.** They load with the language's messages (`fetchContent` in `src/i18n/load.ts`), in the same chunk (`assets/locales/id/`), and its pictures go in `assets/locales/id/visuals/` (`src/i18n/build.ts`), so the precache rules for ready languages cover them. An English visit fetches none of it.
+- **Showing it.** `useI18n().content` is the loaded translation (or undefined while the lessons are English). `useCatalog()` (`src/content/useCatalog.ts`, any page) and `useContent()` (`src/content/useContent.ts`, the lazy pages that show lessons) give the same getters as the English module-level ones, over the translated content (`catalogFor`, `contentFor`, built once per language). Every page uses them; helpers outside components take the content as a parameter that defaults to English.
+- **Course text marking.** `contentLang` is empty when the lessons are in the page's own language; `englishLang` (and `<AlwaysEn>`) marks what stays English in every language: video titles and channels, sources and teachers' notes.
+- **The lesson player.** Quick-check and section-check feedback starts with "Benar." or "Belum tepat." in Indonesian, which the player drops like "Yes." and "Not quite." (`CONTENT_VERDICTS_BY_LANG` in `src/pages/lesson/read/feedbackText.ts`). The complete screen compares the completion message with its heading in the lessons' language. Key words are matched with the lessons' language. Glossary meanings (`translations`) aren't offered for a language whose lessons are translated.
+- **Listen** reads with an on-device voice in the lessons' language (`pickListenVoice(voices, 'id-ID')`), never another language's voice; with none, the Read step says so (`lessonPlayer.read.listenNoVoice`) instead of hiding Listen silently. **Say it** listens in the lessons' language (`speechLangFor`), on the device only if an educator's "Check this device" found that language available there: English's answer stays in `settings.speechCheck`, other languages' in `settings.speechChecks` (by speech tag), with no migration (`src/speech/language.ts`).
+- **Checks.** The build checks the translation against the English (`checkTranslation`); `npm test`, `npm run check:content` (`scripts/check_translation.py`) and `e2e/indonesian.spec.ts` check it further (`docs/translation/README.md`, "Checks").
+- **Size.** Measured with `npm run build`: the Indonesian chunk is 367 kB (95 kB gzipped), the pictures about 45 kB compressed. English first visits don't change. The precache (every device's offline copy, since a ready language is precached) is 609 kB, up from 481 kB; its budget is 620 kB. If that matters more than having Indonesian offline on every device, precache a language only on devices that use it: that needs runtime caching, which the service worker avoids today.
+- **English copy changed.** Three help texts beside the language choice said "The lessons stay in English"; they now say the lessons follow the language in Indonesian.
+
 ## How to add a language
 
-1. Add it to `LOCALES` in `src/i18n/locales.ts` with `ready: false`: its code, English name, own name (`new Intl.DisplayNames([code], { type: 'language' }).of(code)`; `locales.test.ts` checks it), direction and font key. A script the site's fonts and Vazirmatn don't cover needs a font file in `src/i18n/fonts/`, a font key, and its place in `src/i18n/build.ts` (file names and precache rule).
+1. Add it to `LOCALES` in `src/i18n/locales.ts` with `ready: false` (and `content: true`, a `speechLang` and translated `content/<code>/` files only if its lessons are to be translated too, as for Indonesian): its code, English name, own name (`new Intl.DisplayNames([code], { type: 'language' }).of(code)`; `locales.test.ts` checks it), direction and font key. A script the site's fonts and Vazirmatn don't cover needs a font file in `src/i18n/fonts/`, a font key, and its place in `src/i18n/build.ts` (file names and precache rule).
 2. `npm run i18n:export -- <code>` and send the spreadsheet to a translator with `docs/TRANSLATING.md`.
 3. `npm run i18n:import -- <code> <file.csv>`, then `npm run check:i18n`.
 4. Look at it: `npm run dev`, then `?locale=<code>` on any address. Walk the page tour at phone and laptop width.
