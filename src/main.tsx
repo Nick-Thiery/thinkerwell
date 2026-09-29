@@ -3,7 +3,9 @@ import { createRoot } from 'react-dom/client';
 import { createBrowserRouter } from 'react-router';
 import { RouterProvider } from 'react-router/dom';
 import { firstPageReady } from './app/firstPageReady';
+import { readLanguageHint } from './app/languageHint';
 import { loadEveryPage, routes } from './app/routes';
+import { loadLocale } from './i18n/load';
 import { startServiceWorker } from './offline';
 import './styles/index.css';
 
@@ -15,9 +17,15 @@ if (!root) throw new Error('Missing #root element');
 // Offline use: production only, so the dev server never serves an old copy.
 if (import.meta.env.PROD) startServiceWorker();
 
+// The language this device showed last, loaded before the first paint so a
+// reload opens in it (app/languageHint.ts). If it can't load, English.
+const hint = readLanguageHint();
+document.documentElement.lang = hint;
+const languageReady = hint === 'en' ? Promise.resolve() : loadLocale(hint).then(() => undefined, () => undefined);
+
 // Most pages load their code when first opened (app/routes.tsx): keep
 // index.html's header bar until the first one's is here.
-void firstPageReady(router).then(() => {
+void Promise.all([firstPageReady(router), languageReady]).then(() => {
   createRoot(root).render(
     <StrictMode>
       <RouterProvider router={router} />

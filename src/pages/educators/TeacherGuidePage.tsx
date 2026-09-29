@@ -17,7 +17,7 @@ import { usePageTitle } from '../../app/usePageTitle';
 import { Button, Icon } from '../../components/ds';
 import { type Lesson, type ThinkCheck } from '../../content';
 import { useContent } from '../../content/useContent';
-import { AlwaysEn, En, useI18n } from '../../i18n';
+import { En, useI18n } from '../../i18n';
 import { formatDuration } from '../../lesson/format';
 import { LessonEvidence } from '../lesson/evidence/LessonEvidence';
 import { feedbackWithoutVerdict } from '../lesson/read/feedbackText';
@@ -34,7 +34,7 @@ export function youtubeWatchUrl(youtubeId: string): string {
 
 export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
   // Everything from the lesson file is course text, marked as English (`en`).
-  // en: course text (translated with the lessons); alwaysEn: the video's details, the sources and the teachers' notes, English in every language.
+  // en: course text (translated with the lessons); alwaysEn: the video's title and channel, English in every language.
   const { t, tx, formatNumber, contentLang: en, englishLang: alwaysEn, contentLocale } = useI18n();
   const content = useContent();
   usePageTitle(t('pages.teacherGuide.pageTitle', { number: lesson.number }));
@@ -274,7 +274,7 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
               {lesson.sources.map((source) => (
                 <li key={source.url}>
                   <ExternalLink href={source.url}>
-                    <AlwaysEn>{source.label}</AlwaysEn>
+                    <En>{source.label}</En>
                   </ExternalLink>
                 </li>
               ))}
@@ -288,8 +288,8 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
 
 /** The notes for teachers: sensitive topics first, in a marked box, then the rest. */
 function BeforeYouTeach({ lesson }: { lesson: Lesson }) {
-  // The teachers' notes stay English in every language.
-  const { t, englishLang } = useI18n();
+  // Course text: translated with the lessons (Indonesian), else English.
+  const { t, contentLang } = useI18n();
   const { sensitiveNotes, educatorNotes } = lesson;
   const contentNote = lesson.watch.contentNote;
   const hasSensitive = sensitiveNotes.length > 0 || contentNote !== null;
@@ -306,7 +306,7 @@ function BeforeYouTeach({ lesson }: { lesson: Lesson }) {
           </h3>
           <ul>
             {sensitiveNotes.map((note, index) => (
-              <li key={index} {...englishLang}>
+              <li key={index} {...contentLang}>
                 {note}
               </li>
             ))}
@@ -317,7 +317,7 @@ function BeforeYouTeach({ lesson }: { lesson: Lesson }) {
       {educatorNotes.length > 0 ? (
         <div className="tw-guide-notes">
           <h3>{t('pages.teacherGuide.notesTitle')}</h3>
-          <ul {...englishLang}>
+          <ul {...contentLang}>
             {educatorNotes.map((note, index) => (
               <li key={index}>{note}</li>
             ))}

@@ -187,7 +187,7 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
               {t('pages.home.dashboard.openJournal')}
             </Button>
           </section>
-          {hasLanguageChoice ? <DashboardLanguage learner={learner} /> : null}
+          {hasLanguageChoice ? <DashboardLanguage /> : null}
         </aside>
       </div>
     </div>
@@ -195,13 +195,13 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
 }
 
 /**
- * The learner's own language, on their home. Only once a second language
- * is ready. Changing it saves it on their record, and the page switches at
- * once (src/app/AppLayout.tsx).
+ * The learner's own language, on their home: the app's one language
+ * setting, as in the header's switch. Only once a second language is ready.
+ * Changing it switches every page at once and saves it on their record.
  */
-function DashboardLanguage({ learner }: { learner: Learner }) {
-  const { t, locale } = useI18n();
-  const { setLearnerLanguage } = useLearnerSession();
+function DashboardLanguage() {
+  const { t } = useI18n();
+  const { language, setLanguage } = useLearnerSession();
   const [failed, setFailed] = useState(false);
   const helpId = useId();
   return (
@@ -212,10 +212,10 @@ function DashboardLanguage({ learner }: { learner: Learner }) {
       <LanguageChoice
         label={t('pages.home.dashboard.languageTitle')}
         describedBy={helpId}
-        value={locale}
+        value={language}
         onChange={(code) => {
           setFailed(false);
-          setLearnerLanguage(learner.id, code).catch(() => setFailed(true));
+          setLanguage(code).catch(() => setFailed(true));
         }}
       />
       <p id={helpId} className="small">

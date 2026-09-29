@@ -59,7 +59,7 @@ describe('applyTranslation', () => {
 });
 
 describe('translationProblems and missingTranslations', () => {
-  const english = { id: 'x', title: 'T', items: ['a', 'b'], checks: [{ correct: true, text: 'c' }], educatorNotes: ['n'] };
+  const english = { id: 'x', title: 'T', items: ['a', 'b'], checks: [{ correct: true, text: 'c' }], changes: ['n'] };
 
   it('accept a translation of the text only', () => {
     expect(translationProblems(english, { title: 'U', items: ['p', 'q'], checks: [{ text: 'r' }] })).toEqual([]);
@@ -70,15 +70,15 @@ describe('translationProblems and missingTranslations', () => {
     expect(translationProblems(english, { checks: [{ correct: false }] })).toEqual([
       'checks.0.correct: is not translated (it comes from the English file)',
     ]);
-    expect(translationProblems(english, { educatorNotes: ['m'] })).toEqual([
-      'educatorNotes: is not translated (it comes from the English file)',
+    expect(translationProblems(english, { changes: ['m'] })).toEqual([
+      'changes: is not translated (it comes from the English file)',
     ]);
     expect(translationProblems(english, { items: ['p'] })).toEqual(['items: has 1 items, English has 2']);
     expect(translationProblems(english, { extra: 'z' })).toEqual(['extra: not in the English file']);
     expect(translationProblems(english, { title: ' ' })).toEqual(['title: empty']);
   });
 
-  it('find text left untranslated, and never ask for the teachers’ notes', () => {
+  it('find text left untranslated, and never ask for the team’s notes', () => {
     expect(missingTranslations(english, { title: 'U', items: ['p'] })).toEqual(['items.1', 'checks.0.text']);
   });
 });
@@ -175,7 +175,9 @@ describe('the Indonesian lessons and section checks', async () => {
 
     it(`Lesson ${lesson.number}: keeps the ids, correct answers, videos and teachers' notes of the English`, () => {
       expect(fixedParts(lesson)).toEqual(fixedParts(english));
-      expect(lesson.educatorNotes).toEqual(english.educatorNotes);
+      // The teachers' notes and the sources' titles are translated too; their links aren't.
+      expect(lesson.educatorNotes).toHaveLength(english.educatorNotes.length);
+      expect(lesson.sources.map((source) => source.url)).toEqual(english.sources.map((source) => source.url));
       expect(lesson.watch.youtubeId).toBe(english.watch.youtubeId);
     });
 

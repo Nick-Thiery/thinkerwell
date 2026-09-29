@@ -68,7 +68,8 @@ export const SOURCE_LOCALE = 'en';
 /**
  * Real languages. English first; then the languages the plan names for the
  * first pilot. Their endonyms are CLDR's (checked against Intl.DisplayNames
- * in locales.test.ts), not a translation.
+ * in locales.test.ts), not a translation, except where the name people use
+ * differs (Indonesian: "Bahasa Indonesia").
  */
 export const LOCALES: readonly LocaleDefinition[] = [
   { code: 'en', englishName: 'English', endonym: 'English', dir: 'ltr', font: 'latin', ready: true },
@@ -79,7 +80,8 @@ export const LOCALES: readonly LocaleDefinition[] = [
   // Bahasa Indonesia, for the Jakarta pilot: the interface and the lessons.
   // Machine-drafted and cross-checked; it waits for native-speaker review
   // (docs/translation/id/) before it reaches learners.
-  { code: 'id', englishName: 'Indonesian', endonym: 'Indonesia', dir: 'ltr', font: 'latin', ready: true, content: true, speechLang: 'id-ID' },
+  // Its own name as Indonesians say it: "Bahasa Indonesia" (CLDR has just "Indonesia").
+  { code: 'id', englishName: 'Indonesian', endonym: 'Bahasa Indonesia', dir: 'ltr', font: 'latin', ready: true, content: true, speechLang: 'id-ID' },
 ];
 
 /**

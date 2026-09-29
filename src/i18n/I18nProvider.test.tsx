@@ -144,7 +144,7 @@ describe('a language whose lessons are translated too', () => {
 
   it('shows its course text as its own, and keeps the videos and teachers’ notes marked English', () => {
     const indonesian: LoadedLocale = {
-      definition: { code: 'id', englishName: 'Indonesian', endonym: 'Indonesia', dir: 'ltr', font: 'latin', ready: true, content: true },
+      definition: { code: 'id', englishName: 'Indonesian', endonym: 'Bahasa Indonesia', dir: 'ltr', font: 'latin', ready: true, content: true },
       messages: {},
       content,
     };

@@ -35,8 +35,10 @@ describe('the language list', () => {
   });
 
   it("gives every language its own name as CLDR writes it, and its English name", () => {
+    // Where the name people use differs from CLDR's, and why.
+    const ownNames: Record<string, string> = { id: 'Bahasa Indonesia' }; // CLDR: "Indonesia"
     for (const locale of LOCALES) {
-      expect(new Intl.DisplayNames([locale.code], { type: 'language' }).of(locale.code), locale.code).toBe(locale.endonym);
+      expect(ownNames[locale.code] ?? new Intl.DisplayNames([locale.code], { type: 'language' }).of(locale.code), locale.code).toBe(locale.endonym);
       expect(new Intl.DisplayNames(['en'], { type: 'language' }).of(locale.code), locale.code).toBe(locale.englishName);
     }
   });

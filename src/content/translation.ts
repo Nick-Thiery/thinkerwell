@@ -7,9 +7,10 @@
  * A translation file (content/<lang>/lessons/L01.json, content/<lang>/course.json,
  * content/<lang>/quizzes/history.json)
  * has the same shape as the English file but holds only the text learners
- * read. Everything else (ids, numbers, correct flags, video ids, links, notes
- * for teachers and the team) comes from the English file, so a translation
- * can never change which answer is right or which video plays.
+ * read (and teachers: their notes and the sources' titles). Everything else
+ * (ids, numbers, correct flags, video ids, links, notes for the team) comes
+ * from the English file, so a translation can never change which answer is
+ * right or which video plays.
  *
  * - Objects: every key in the translation must exist in the English object.
  * - Arrays: the same length as the English array, merged item by item. The
@@ -58,9 +59,6 @@ const FIXED_KEYS = new Set([
  */
 const FIXED_PATHS: ReadonlyArray<Path> = [
   ['section'],
-  ['sources'],
-  ['educatorNotes'],
-  ['sensitiveNotes'],
   ['changes'],
   ['watch', 'title'],
   ['watch', 'channel'],

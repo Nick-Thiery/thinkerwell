@@ -1,6 +1,7 @@
 import { useId, useState, type FormEvent } from 'react';
 import { useNavigate } from 'react-router';
 import { LanguageChoice, useHasLanguageChoice } from '../../app/LanguageChoice';
+import { useLearnerSession } from '../../session';
 import { lessonPath } from '../../app/lessonUrls';
 import type { LessonSummary } from '../../content/catalog';
 import { Button, Icon, TextField } from '../../components/ds';
@@ -37,15 +38,15 @@ export interface NewLearnerFormProps {
 /**
  * The "who's learning" panel swapped for a form (NewLearner.dc.html): first
  * name or nickname, a colour, and an optional class code. Once a second
- * language is ready, also the learner's language (the device's until they
- * choose); nothing else.
+ * language is ready, also their language: the app's one language setting,
+ * so choosing one changes the page at once (saved for the device, as nobody
+ * is chosen yet), and the new learner keeps the language on screen.
  */
 export function NewLearnerForm({ lesson1, onBack, onSubmit }: NewLearnerFormProps) {
-  const { t, tx, locale } = useI18n();
+  const { t, tx } = useI18n();
   const hasLanguageChoice = useHasLanguageChoice();
   const languageHelpId = useId();
-  // null until the learner taps a language: then they follow the device's.
-  const [language, setLanguage] = useState<string | null>(null);
+  const { language, setLanguage } = useLearnerSession();
   const navigate = useNavigate();
   const [name, setName] = useState('');
   const [nameError, setNameError] = useState<string | undefined>(undefined);
@@ -80,7 +81,8 @@ export function NewLearnerForm({ lesson1, onBack, onSubmit }: NewLearnerFormProp
     setSubmitting(true);
     const input: NewLearner = { name: trimmedName, colour };
     if (trimmedCode) input.classCode = trimmedCode.toUpperCase();
-    if (language) input.language = language;
+    // Theirs from now on: the language on screen as they join.
+    input.language = language;
     void onSubmit(input)
       .then(() => {
         // "Start LessonSummary N": actually takes the new learner straight there,
@@ -136,8 +138,12 @@ export function NewLearnerForm({ lesson1, onBack, onSubmit }: NewLearnerFormProp
               <LanguageChoice
                 label={t('pages.home.newLearner.languageLabel')}
                 describedBy={languageHelpId}
-                value={language ?? locale}
-                onChange={setLanguage}
+                value={language}
+                onChange={(code) => {
+                  setLanguage(code).catch((error: unknown) => {
+                    if (import.meta.env.DEV) console.error(error);
+                  });
+                }}
               />
               <p id={languageHelpId} className="small tw-home-language-help">
                 {t('pages.home.newLearner.languageHelper')}

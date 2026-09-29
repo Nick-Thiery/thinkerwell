@@ -705,7 +705,9 @@
       "language": {
         "title": "Language",
         "label": "Language on this device",
-        "help": "Buttons and instructions show in this language on the home screen, for anyone looking around, and for learners who haven't chosen their own. In Indonesian, the lessons do too."
+        "labelLearner": "Language for {name}",
+        "help": "Everything shows in this language at once: buttons, instructions and, in Indonesian, the lessons too. It is kept for this device, for the first page and anyone who hasn't chosen who's learning.",
+        "helpLearner": "Everything shows in this language at once: buttons, instructions and, in Indonesian, the lessons too. It is kept for {name}, and changes back when someone else is chosen."
       },
       "offline": {
         "title": "Offline and data",
@@ -870,7 +872,11 @@
     "lookAroundBanner": "Nothing you do on this visit is saved.",
     "chooseLearner": "Choose who's learning",
     "menuTitle": "Menu",
-    "menuClose": "Close menu"
+    "menuClose": "Close menu",
+    "language": {
+      "title": "Language",
+      "button": "Language: {language}"
+    }
   },
   "dev": {
     "rtlOn": "Right-to-left test mode is on. Add ?dir=ltr to the address to turn it off.",

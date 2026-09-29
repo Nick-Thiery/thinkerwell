@@ -18,6 +18,11 @@ export interface SiteHeaderProps {
   /** Extra controls at the end, in the full (non-compact) layout. */
   children?: ReactNode;
   /**
+   * Not in the design-system docs: the language switch, shown in both
+   * layouts (before the learner), so it is on every page from the first.
+   */
+  language?: ReactNode;
+  /**
    * Not in the design-system docs (index.d.ts); added so a caller can open
    * the learner switcher. Storage is wired in phase 3 — this component only
    * makes the chip a real, labelled, focusable button. Takes the click event
@@ -64,6 +69,7 @@ export function SiteHeader({
   onLearnerClick,
   learnerMenuOpen,
   onMenuClick,
+  language,
 }: SiteHeaderProps) {
   const { t } = useI18n();
   const LinkTag = useDsLinkComponent();
@@ -73,6 +79,7 @@ export function SiteHeader({
         <Logo src={logoSrc} size={compact ? 40 : 46} />
         {compact ? (
           <div className="tw-header-right">
+            {language}
             {learner ? (
               <button
                 type="button"
@@ -107,6 +114,7 @@ export function SiteHeader({
                 ),
               )}
             </nav>
+            {language}
             {learner ? (
               <button
                 type="button"

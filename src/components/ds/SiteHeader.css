@@ -153,3 +153,30 @@
 
 /* .tw-menu-btn lives in ds.css (shared, globally loaded): DefinitionCard's
    close button uses the same class without importing this file. */
+
+/* The narrowest phones: the header holds the logo, the language switch, the
+   learner and the menu, so the gaps close up and, at 360px and below, the
+   wordmark is set a little smaller (the mascot is untouched). */
+@media (max-width: 479px) {
+  .tw-header-inner {
+    gap: var(--space-2);
+  }
+
+  .tw-header-right {
+    gap: var(--space-1);
+  }
+}
+
+@media (max-width: 360px) {
+  .tw-header-inner {
+    padding-inline: var(--space-3);
+  }
+
+  .tw-header .tw-logo {
+    gap: var(--space-1);
+  }
+
+  .tw-header .tw-logo span {
+    font-size: 19px;
+  }
+}

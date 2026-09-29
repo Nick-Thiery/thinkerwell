@@ -698,7 +698,9 @@
       "language": {
         "title": "Bahasa",
         "label": "Bahasa di perangkat ini",
-        "help": "Tombol dan petunjuk tampil dalam bahasa ini di layar beranda, untuk siapa saja yang sedang lihat-lihat, dan untuk pelajar yang belum memilih bahasanya sendiri. Untuk bahasa Indonesia, pelajaran juga tampil dalam bahasa ini."
+        "labelLearner": "Bahasa untuk {name}",
+        "help": "Semuanya langsung tampil dalam bahasa ini: tombol, petunjuk, dan untuk bahasa Indonesia, pelajarannya juga. Pilihan ini disimpan untuk perangkat ini, untuk halaman pertama dan siapa saja yang belum memilih siapa yang belajar.",
+        "helpLearner": "Semuanya langsung tampil dalam bahasa ini: tombol, petunjuk, dan untuk bahasa Indonesia, pelajarannya juga. Pilihan ini disimpan untuk {name}, dan berganti lagi saat orang lain dipilih."
       },
       "offline": {
         "title": "Tanpa internet dan data",
@@ -860,7 +862,11 @@
     "lookAroundBanner": "Tidak ada yang disimpan selama kunjungan ini.",
     "chooseLearner": "Pilih siapa yang belajar",
     "menuTitle": "Menu",
-    "menuClose": "Tutup menu"
+    "menuClose": "Tutup menu",
+    "language": {
+      "title": "Bahasa",
+      "button": "Bahasa: {language}"
+    }
   },
   "dev": {
     "rtlOn": "Mode uji kanan-ke-kiri sedang aktif. Tambahkan ?dir=ltr ke alamat untuk mematikannya.",
