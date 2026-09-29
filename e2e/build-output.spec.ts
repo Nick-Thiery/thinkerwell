@@ -24,8 +24,12 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * (docs/notes/languages.md, "Bahasa Indonesia").
  */
 const PRECACHE_BUDGET = 620_000;
-/** Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before), 210.5 kB after the language and pilot-day merges. */
-const FIRST_VISIT_HOME_BUDGET = 212_000;
+/**
+ * Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before),
+ * 210.5 kB after the language and pilot-day merges, 212.7 kB with the header's language switch and the one language
+ * setting (every page, from the first, can change the language; about 2 kB).
+ */
+const FIRST_VISIT_HOME_BUDGET = 214_000;
 
 const TEXT = /\.(html|js|css|svg|json|webmanifest)$/;
 
