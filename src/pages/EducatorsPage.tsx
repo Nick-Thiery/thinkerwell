@@ -1,6 +1,15 @@
 import { useSearchParams } from 'react-router';
 import { usePageTitle } from '../app/usePageTitle';
-import { allCertificatesPath, answerKeyPath, classPath, lessonPrintPath, setupPath } from '../app/lessonUrls';
+import {
+  allCertificatesPath,
+  answerKeyPath,
+  classPath,
+  codeCardsPath,
+  consentFormPath,
+  lessonPrintPath,
+  organisationsPath,
+  setupPath,
+} from '../app/lessonUrls';
 import { Badge, Button, Chip, Icon, type IconName } from '../components/ds';
 import { type SectionId } from '../content';
 import { useContent } from '../content/useContent';
@@ -12,8 +21,9 @@ import { SECTION_ICONS } from './course/sectionIcons';
 /**
  * For educators (docs/screens/Educators.dc.html): what a teacher or
  * volunteer needs to run a session, the tools for setting up this device and
- * following the group on it (a setup checklist, the class view and every
- * certificate to print), how a session works, and every lesson to preview,
+ * following the group on it (under "Starting a pilot": For organisations,
+ * the consent form, code cards and the setup checklist; then the class view
+ * and every certificate to print), how a session works, and every lesson to preview,
  * each with its teacher guide, and each section's check with its answer key. Collects nothing: "Tell us what to fix" keeps the "[FEEDBACK
  * EMAIL]" placeholder visible rather than a form (CLAUDE.md's
  * no-accounts-no-collection rule).
@@ -42,8 +52,29 @@ export function EducatorsPage() {
   function chooseSection(id: SectionId): void {
     setSearchParams({ section: id }, { replace: true, preventScrollReset: true });
   }
-  // Pilot-day tools for this device (docs/notes/pilot-day-tools.md).
-  const tools: Array<{ icon: IconName; title: string; body: string; cta: string; href: string }> = [
+  // Starting a pilot: the partner kit, and setting up each device.
+  const pilot: Tool[] = [
+    {
+      icon: 'Info',
+      title: t('pages.educators.pilotAboutTitle'),
+      body: t('pages.educators.pilotAboutBody'),
+      cta: t('pages.educators.pilotAboutCta'),
+      href: organisationsPath(),
+    },
+    {
+      icon: 'FileText',
+      title: t('pages.educators.pilotConsentTitle'),
+      body: t('pages.educators.pilotConsentBody'),
+      cta: t('pages.educators.pilotConsentCta'),
+      href: consentFormPath(),
+    },
+    {
+      icon: 'User',
+      title: t('pages.educators.pilotCodesTitle'),
+      body: t('pages.educators.pilotCodesBody'),
+      cta: t('pages.educators.pilotCodesCta'),
+      href: codeCardsPath(),
+    },
     {
       icon: 'ListChecks',
       title: t('pages.educators.setupTitle'),
@@ -51,6 +82,9 @@ export function EducatorsPage() {
       cta: t('pages.educators.setupCta'),
       href: setupPath(),
     },
+  ];
+  // Pilot-day tools for following the group on this device (docs/notes/pilot-day-tools.md).
+  const tools: Tool[] = [
     {
       icon: 'Users',
       title: t('pages.educators.classTitle'),
@@ -117,27 +151,20 @@ export function EducatorsPage() {
         </aside>
       </section>
 
+      <section aria-labelledby="pilot-title" className="tw-edu-section">
+        <h2 id="pilot-title" className="h2">
+          {t('pages.educators.pilotTitle')}
+        </h2>
+        <p className="tw-edu-preview-intro">{t('pages.educators.pilotIntro')}</p>
+        <ToolList tools={pilot} />
+      </section>
+
       <section aria-labelledby="tools-title" className="tw-edu-section">
         <h2 id="tools-title" className="h2">
-          {t('pages.educators.toolsTitle')}
+          {t('pages.educators.followTitle')}
         </h2>
         <p className="tw-edu-preview-intro">{t('pages.educators.toolsIntro')}</p>
-        <ul className="tw-edu-tools" role="list">
-          {tools.map((tool) => (
-            <li key={tool.href} className="tw-edu-check tw-edu-tool">
-              <span className="tw-edu-check-icon">
-                <Icon name={tool.icon} size={22} />
-              </span>
-              <span className="tw-edu-check-text">
-                <span className="tw-edu-check-title">{tool.title}</span>
-                <span className="small tw-edu-check-meta">{tool.body}</span>
-              </span>
-              <Button variant="secondary" icon={tool.icon} href={tool.href}>
-                {tool.cta}
-              </Button>
-            </li>
-          ))}
-        </ul>
+        <ToolList tools={tools} />
       </section>
 
       <section aria-labelledby="how-title" className="tw-edu-section">
@@ -220,6 +247,9 @@ export function EducatorsPage() {
             {t('pages.educators.codesTitle')}
           </h2>
           <p>{t('pages.educators.codesBody')}</p>
+          <Button variant="secondary" icon="User" href={codeCardsPath()} className="tw-edu-card-action">
+            {t('pages.educators.pilotCodesCta')}
+          </Button>
         </section>
         <section aria-labelledby="fb-title" className="tw-edu-card tw-edu-card-feedback">
           <h2 id="fb-title" className="h3">
@@ -230,5 +260,35 @@ export function EducatorsPage() {
         </section>
       </div>
     </div>
+  );
+}
+
+interface Tool {
+  icon: IconName;
+  title: string;
+  body: string;
+  cta: string;
+  href: string;
+}
+
+/** A list of tools, each with what it's for and a button to open it. */
+function ToolList({ tools }: { tools: readonly Tool[] }) {
+  return (
+    <ul className="tw-edu-tools" role="list">
+      {tools.map((tool) => (
+        <li key={tool.href} className="tw-edu-check tw-edu-tool">
+          <span className="tw-edu-check-icon">
+            <Icon name={tool.icon} size={22} />
+          </span>
+          <span className="tw-edu-check-text">
+            <span className="tw-edu-check-title">{tool.title}</span>
+            <span className="small tw-edu-check-meta">{tool.body}</span>
+          </span>
+          <Button variant="secondary" icon={tool.icon} href={tool.href}>
+            {tool.cta}
+          </Button>
+        </li>
+      ))}
+    </ul>
   );
 }

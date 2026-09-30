@@ -38,6 +38,9 @@ export interface TourStop {
 /** A long name, so every place that shows it (header, greeting, switcher) is tested at its widest. */
 export const TOUR_LEARNER = 'Mohammed Abdirahman';
 
+/** An organisation's name for the consent form: long, and in Indonesian, as a Jakarta partner's might be. */
+export const TOUR_ORGANISATION = 'Yayasan Pendidikan Anak Pengungsi Jakarta Selatan';
+
 /** What the tour types in Write and Reflect: the learner's own words, in any language. */
 export const TOUR_WRITING = 'I would build the town by the river because of the water.';
 export const TOUR_REFLECTION = 'It has water and fertile land.';
@@ -307,6 +310,35 @@ export const pageTour: TourStop[] = [
   {
     name: 'about',
     go: (page, { ui }) => openPath(page, '/about', ui('pages.about.title')),
+  },
+  {
+    // The partner kit, from the footer and the Educators page's "Starting a pilot".
+    name: 'for organisations',
+    go: async (page, { ui }) => {
+      await page.locator('.tw-site-footer').getByRole('link', { name: ui('footer.organisations') }).click();
+      await expect(page.locator('h1')).toHaveText(ui('pages.organisations.title'));
+    },
+  },
+  {
+    // A long organisation name, so the form is tested at its widest.
+    name: 'educators: consent form',
+    go: async (page, { ui }) => {
+      await page.getByRole('link', { name: ui('pages.educators.pilotConsentCta') }).click();
+      await expect(page.locator('h1')).toHaveText(ui('pages.consentForm.title'));
+      await page.getByRole('textbox', { name: ui('pages.consentForm.orgLabel') }).fill(TOUR_ORGANISATION);
+      await expect(page.locator('.tw-consent strong').first()).toHaveText(TOUR_ORGANISATION);
+    },
+  },
+  {
+    name: 'educators: code cards',
+    go: async (page, { ui }) => {
+      await openPath(page, '/educators', ui('pages.educators.title'));
+      await page.locator('.tw-edu-tools').getByRole('link', { name: ui('pages.educators.pilotCodesCta') }).click();
+      await expect(page.locator('h1')).toHaveText(ui('pages.codeCards.title'));
+      await page.getByRole('textbox', { name: ui('pages.codeCards.prefixLabel') }).fill('HLP');
+      await page.getByRole('textbox', { name: ui('pages.codeCards.countLabel') }).fill('12');
+      await expect(page.locator('.tw-code-card')).toHaveCount(12);
+    },
   },
   {
     name: 'settings',

@@ -1,0 +1,213 @@
+/*
+ * The consent form (/educators/consent-form). On screen: the organisation's
+ * name and the staff note, then the form as a white sheet. On paper: the
+ * form alone, black on white, on one A4 page (print.css does the colours).
+ */
+
+.tw-consent-setup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-inline-size: 68ch;
+}
+
+.tw-consent-setup h1,
+.tw-consent-setup p {
+  margin: 0;
+}
+
+/* Help for the staff member, so lavender (brand book: lavender means help). */
+.tw-consent-staff {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  background: var(--lavender);
+  color: var(--ink);
+}
+
+.tw-consent-staff > svg {
+  flex: none;
+  margin-block-start: 3px;
+}
+
+.tw-consent-staff div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-consent-staff h2 {
+  margin: 0;
+}
+
+.tw-print-sheet.tw-consent {
+  gap: var(--space-5);
+}
+
+.tw-consent-parts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4) var(--space-6);
+}
+
+.tw-consent-part {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.tw-print-sheet .tw-consent-part h3,
+.tw-print-sheet .tw-consent-answer h3 {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+/* A line to write on. Inline in a sentence (the organisation's name), or
+   filling its row in the answer part. */
+.tw-consent-blank {
+  display: inline-block;
+  inline-size: 12em;
+  block-size: 1em;
+  border-block-end: 1px solid var(--ink);
+  vertical-align: baseline;
+}
+
+.tw-consent-blank-wide {
+  display: block;
+  inline-size: 100%;
+  block-size: 28px;
+}
+
+.tw-consent-answer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border: 1px solid var(--ink);
+  border-radius: var(--radius-md);
+}
+
+.tw-print-sheet .tw-consent-choices {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: 0;
+  list-style: none;
+}
+
+.tw-consent-choices li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.tw-consent-box {
+  flex: none;
+  inline-size: 22px;
+  block-size: 22px;
+  border: 2px solid var(--ink);
+  border-radius: 4px;
+}
+
+.tw-print-sheet .tw-consent-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3) var(--space-6);
+}
+
+.tw-consent-fields div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.tw-consent-fields dt {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.tw-consent-fields dd {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .tw-consent-parts,
+  .tw-print-sheet .tw-consent-fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tw-print-sheet.tw-consent {
+    padding: var(--space-5);
+  }
+}
+
+@media print {
+  .tw-consent-page {
+    max-inline-size: none;
+  }
+
+  .tw-print-sheet.tw-consent {
+    gap: 3.5mm;
+    font-size: 10pt;
+    line-height: 1.4;
+  }
+
+  .tw-consent .tw-print-title {
+    font-size: 18pt;
+  }
+
+  /* Two columns on paper whatever the window's width was. */
+  .tw-consent-parts,
+  .tw-print-sheet .tw-consent-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3mm 7mm;
+  }
+
+  .tw-print-sheet .tw-consent-part h3,
+  .tw-print-sheet .tw-consent-answer h3 {
+    font-size: 10.5pt;
+    line-height: 1.3;
+  }
+
+  .tw-print-sheet .tw-consent-part p,
+  .tw-consent .small {
+    font-size: 9.5pt;
+  }
+
+  .tw-consent-blank {
+    border-block-end: 0.3mm solid #000;
+  }
+
+  .tw-consent-blank-wide {
+    block-size: 8mm;
+  }
+
+  .tw-consent-answer {
+    gap: 2.5mm;
+    padding: 4mm 5mm;
+    border: 0.4mm solid #000;
+    border-radius: 2mm;
+    break-inside: avoid;
+  }
+
+  .tw-consent-box {
+    inline-size: 5mm;
+    block-size: 5mm;
+    border: 0.4mm solid #000;
+    border-radius: 0.8mm;
+  }
+
+  .tw-consent-fields dt {
+    font-size: 9.5pt;
+  }
+
+  /* The last field (the date) sits alone: keep it half width, like the others. */
+  .tw-consent-fields div:last-child {
+    grid-column: 1;
+  }
+}
