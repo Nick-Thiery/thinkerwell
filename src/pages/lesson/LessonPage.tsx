@@ -13,6 +13,7 @@ import {
 } from '../../lesson';
 import { lessonPath, lessonPrintPath } from '../../app/lessonUrls';
 import { CompleteStage } from './complete/CompleteStage';
+import { LessonSources } from './LessonSources';
 import { ReadStage } from './read/ReadStage';
 import { ReflectStage } from './reflect/ReflectStage';
 import { SpeakStage } from './speak/SpeakStage';
@@ -63,6 +64,7 @@ export function LessonPage() {
       <div className="tw-lesson tw-lesson-complete-page">
         {banners}
         {ready ? <CompleteStage /> : null}
+        <LessonSources lesson={lesson} />
       </div>
     );
   }
@@ -99,6 +101,7 @@ export function LessonPage() {
       <div className="tw-lesson-main">
         {wide ? banners : null}
         {stageBody}
+        <LessonSources lesson={lesson} />
       </div>
     </div>
   );

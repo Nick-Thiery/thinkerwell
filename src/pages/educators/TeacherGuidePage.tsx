@@ -270,7 +270,8 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
         {lesson.sources.length > 0 ? (
           <section className="tw-print-part">
             <h2>{t('pages.teacherGuide.sourcesTitle')}</h2>
-            <ul className="tw-guide-links">
+            <p>{t('pages.teacherGuide.sourcesIntro')}</p>
+            <ul className="tw-guide-links tw-guide-sources">
               {lesson.sources.map((source) => (
                 <li key={source.url}>
                   <ExternalLink href={source.url}>

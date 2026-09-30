@@ -1,0 +1,69 @@
+.tw-lesson-sources {
+  margin-block-start: var(--space-8);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  min-inline-size: 0;
+}
+
+.tw-lesson-sources summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: 44px;
+  padding-block: var(--space-2);
+  padding-inline: var(--space-4);
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  list-style: none;
+  border-radius: var(--radius-lg);
+}
+
+.tw-lesson-sources summary::-webkit-details-marker {
+  display: none;
+}
+
+.tw-lesson-sources-chevron {
+  margin-inline-start: auto;
+}
+
+.tw-lesson-sources[open] .tw-lesson-sources-chevron {
+  transform: rotate(180deg);
+}
+
+.tw-lesson-sources p {
+  margin: 0;
+  padding-inline: var(--space-4);
+  color: var(--ink-muted);
+}
+
+.tw-lesson-sources ul {
+  margin: 0;
+  padding-block: var(--space-2) var(--space-4);
+  padding-inline: var(--space-8) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+/* A 44px tap target (CLAUDE.md rule 5), even for a one-line title. */
+.tw-lesson-sources a {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 44px;
+  padding-block: var(--space-1);
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 24px;
+  overflow-wrap: anywhere;
+}
+
+@media print {
+  .tw-lesson-sources {
+    display: none;
+  }
+}
