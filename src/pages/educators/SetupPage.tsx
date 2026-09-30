@@ -194,7 +194,9 @@ export function SetupPage() {
                 </>
               ) : null
             }
-          />
+          >
+            <p>{t('pages.setup.learners.codes')}</p>
+          </SetupStep>
 
           <SetupStep
             number={5}

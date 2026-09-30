@@ -1553,10 +1553,6 @@
     "source": "[FEEDBACK EMAIL]",
     "back": "[FEEDBACK EMAIL]"
   },
-  "pages.educators.toolsTitle": {
-    "source": "Set up devices and follow your group",
-    "back": "Set up devices and monitor your group"
-  },
   "pages.educators.toolsIntro": {
     "source": "For the day you start, and every day after. Everything here stays on this device.",
     "back": "For the first day you start, and every day after. Everything here stays on this device."
@@ -3614,5 +3610,403 @@
     "note": "New in the sources check (September 2026): drafted by AI, not yet reviewed.",
     "back": "The UN Sustainable Development Goals site",
     "source": "The UN Sustainable Development Goals website"
+  },
+  "pages.educators.pilotTitle": {
+    "back": "Starting a pilot",
+    "source": "Starting a pilot"
+  },
+  "pages.educators.pilotIntro": {
+    "back": "For organisations trying Thinkerwell with a group of learners. Everything here can be printed on A4 paper, in black and white.",
+    "source": "For an organisation trying Thinkerwell with a group of learners. Everything here prints on A4, in black and white."
+  },
+  "pages.educators.pilotAboutTitle": {
+    "back": "For organisations",
+    "source": "For organisations"
+  },
+  "pages.educators.pilotAboutBody": {
+    "back": "What the pilot involves, what we ask of you, and how learners' privacy is protected.",
+    "source": "What a pilot involves, what we ask, and how learners' privacy is kept."
+  },
+  "pages.educators.pilotAboutCta": {
+    "back": "Read about the pilot",
+    "source": "Read about pilots"
+  },
+  "pages.educators.pilotConsentTitle": {
+    "back": "Consent form",
+    "source": "Consent form"
+  },
+  "pages.educators.pilotConsentBody": {
+    "back": "A form for each learner's parent or guardian to sign, with your organisation's name in it.",
+    "source": "A form for each learner's parent or guardian to sign, with your organisation's name on it."
+  },
+  "pages.educators.pilotConsentCta": {
+    "back": "Print the consent form",
+    "source": "Print consent forms"
+  },
+  "pages.educators.pilotCodesTitle": {
+    "back": "Code cards",
+    "source": "Code cards"
+  },
+  "pages.educators.pilotCodesBody": {
+    "back": "Cards with a code for each learner, used instead of their names, and a list for you to keep.",
+    "source": "A card with a code for each learner to use instead of their name, and a list for you to keep."
+  },
+  "pages.educators.pilotCodesCta": {
+    "back": "Make code cards",
+    "source": "Make code cards"
+  },
+  "pages.educators.followTitle": {
+    "back": "Keep track of your group",
+    "source": "Follow your group"
+  },
+  "pages.organisations.title": {
+    "back": "For organisations",
+    "source": "For organisations"
+  },
+  "pages.organisations.eyebrow": {
+    "back": "Starting a pilot",
+    "source": "Starting a pilot"
+  },
+  "pages.organisations.intro": {
+    "flag": true,
+    "note": "New in the partner kit (September 2026). Register: this page and the printed consent form speak to adults as \"Anda\"; the other educator pages use \"kamu\". Decide which fits.",
+    "back": "Thinkerwell is a free social studies course for children and teenagers aged about 10 to 17 who are learning English. This page is for organisations that want to try it with their learners.",
+    "source": "Thinkerwell is a free social-studies course for young people aged about 10 to 17 who are learning English. This page is for organisations that would like to try it with their learners."
+  },
+  "pages.organisations.honesty": {
+    "back": "Thinkerwell is a project led by students. Thinkerwell is not a registered charity or nonprofit organisation.",
+    "source": "Thinkerwell is a student-led project. It is not a registered charity or nonprofit."
+  },
+  "pages.organisations.whatTitle": {
+    "back": "What Thinkerwell is",
+    "source": "What Thinkerwell is"
+  },
+  "pages.organisations.whatBody": {
+    "back": "One course, Exploring Our World: {lessons} lessons about history, geography, culture, and civics. Each lesson has five steps: read, write, speak, watch, and reflect. Thinkerwell runs in a web browser on laptops and tablets, and can be used without internet after the first visit. Available in English and Bahasa Indonesia.",
+    "source": "One course, Exploring Our World: {lessons} lessons about history, geography, culture and civics. Each lesson has five steps: read, write, speak, watch and reflect. It runs in a web browser on laptops and tablets, and works without internet after the first visit. It is in English and Bahasa Indonesia."
+  },
+  "pages.organisations.getTitle": {
+    "back": "What you get",
+    "source": "What you get"
+  },
+  "pages.organisations.get1": {
+    "back": "The whole course, free. No accounts, no ads, and nothing is locked.",
+    "source": "The whole course, free. No accounts, no ads, and nothing locked."
+  },
+  "pages.organisations.get2": {
+    "flag": true,
+    "note": "New in the partner kit (September 2026). 'Cek bagian' for 'section check' may not match the term used elsewhere in the course (e.g. kuis).",
+    "back": "A teacher guide for every lesson, answer keys for the section checks, and every lesson ready to print.",
+    "source": "A teacher guide for every lesson, answer keys for the section checks, and every lesson ready to print."
+  },
+  "pages.organisations.get3": {
+    "back": "What you need to start: a consent form, code cards for learners, and a checklist for each device.",
+    "source": "What you need to start: a consent form, code cards for learners and a checklist for each device."
+  },
+  "pages.organisations.get4": {
+    "back": "Answers to your questions by email, and changes to the course based on your feedback.",
+    "source": "Answers to your questions by email, and changes to the course based on what you tell us."
+  },
+  "pages.organisations.askTitle": {
+    "back": "What we ask",
+    "source": "What we ask"
+  },
+  "pages.organisations.ask1": {
+    "back": "One person we can contact at your organisation.",
+    "source": "One contact person at your organisation."
+  },
+  "pages.organisations.ask2": {
+    "back": "A few laptops or tablets with a web browser. Learners may take turns using them.",
+    "source": "Some laptops or tablets with a web browser. Learners can share them."
+  },
+  "pages.organisations.ask3": {
+    "back": "A few sessions a week for 4 to 6 weeks. One lesson takes about {min}–{max} minutes.",
+    "source": "A few sessions a week for 4 to 6 weeks. A lesson takes about {min}–{max} minutes."
+  },
+  "pages.organisations.ask4": {
+    "back": "Honest feedback: what worked, what didn't, and what confused learners.",
+    "source": "Honest feedback: what worked, what didn't, and what confused learners."
+  },
+  "pages.organisations.privacyTitle": {
+    "back": "Privacy",
+    "source": "Privacy"
+  },
+  "pages.organisations.privacy1": {
+    "back": "No names. Each learner gets a code card, such as HLP-01, and types that code as their name. Only you keep the list matching codes to names.",
+    "source": "No names. Each learner gets a code card, like HLP-01, and types the code as their name. Only you keep the list that matches codes to names."
+  },
+  "pages.organisations.privacy2": {
+    "back": "No accounts, no email addresses, and no ads. Learners' work stays on the device they use, and voice recordings never leave that device.",
+    "source": "No accounts, no email addresses and no ads. Learners' work stays on the device they use, and voice recordings never leave it."
+  },
+  "pages.organisations.privacy3": {
+    "flag": true,
+    "note": "New in the partner kit (September 2026). Says 'kuis' (quiz) while the course calls these section checks, and data collection is stated here but denied in the next line; check wording is not confusing. Rewritten after the first back-translation so it no longer seems to contradict \"nothing leaves the device\" (privacyNow).",
+    "back": "Parental consent. If the pilot measures learning results, a parent or guardian signs a consent form first, and only anonymous data is collected: length of study time, lessons finished, and quiz scores.",
+    "source": "Parental consent. If the pilot measures learning, a parent or guardian signs a consent form first, and only anonymous data is collected: time spent, lessons finished and quiz scores."
+  },
+  "pages.organisations.privacyNow": {
+    "back": "At the moment, nothing leaves the device. We will tell you before that changes.",
+    "source": "Today, nothing at all leaves the device. We will tell you before that changes."
+  },
+  "pages.organisations.privacy4": {
+    "back": "Videos are optional. Videos play from YouTube, only after a learner taps the play button, and every video has a written version.",
+    "source": "Videos are optional. They play from YouTube, only when a learner taps play, and every video has a written version."
+  },
+  "pages.organisations.startTitle": {
+    "back": "Getting ready",
+    "source": "Get ready"
+  },
+  "pages.organisations.startBody": {
+    "back": "Print what you need, and set up each device before the first session.",
+    "source": "Print what you need, and set up each device before the first session."
+  },
+  "pages.organisations.contactTitle": {
+    "back": "Contact us",
+    "source": "Contact us"
+  },
+  "pages.organisations.contactBody": {
+    "back": "Email us to start a pilot or to ask a question. Tell us your organisation's name, your location, and roughly how many learners will take part.",
+    "source": "Email us to start a pilot or to ask a question. Tell us your organisation's name, where you are, and about how many learners would take part."
+  },
+  "pages.organisations.contactEmail": {
+    "back": "[CONTACT EMAIL]",
+    "source": "[CONTACT EMAIL]"
+  },
+  "pages.consentForm.title": {
+    "back": "Consent form",
+    "source": "Consent form"
+  },
+  "pages.consentForm.intro": {
+    "back": "Print one form for each learner's family before the pilot starts. Type your organisation's name so it prints on the form, or leave it blank to write by hand.",
+    "source": "Print one form for each learner's family before the pilot starts. Type your organisation's name to put it on the form, or leave it empty to write it by hand."
+  },
+  "pages.consentForm.orgLabel": {
+    "back": "Your organisation's name",
+    "source": "Your organisation's name"
+  },
+  "pages.consentForm.orgHelper": {
+    "back": "This name is only used on this form, and is not saved.",
+    "source": "It is only used on this form, and is not saved."
+  },
+  "pages.consentForm.staffTitle": {
+    "back": "For staff: this is a template",
+    "source": "For staff: this is a template"
+  },
+  "pages.consentForm.staffBody": {
+    "flag": true,
+    "note": "New in the partner kit (September 2026). Legal disclaimer wording needs a native check; 'templat' and 'nasihat hukum' should be confirmed as natural.",
+    "back": "This is not legal advice. Before using it, check this form against your own organisation's rules and the data protection laws where you work, then change anything that does not fit. A signed form contains a name: keep it safe. Thinkerwell never sees it.",
+    "source": "It is not legal advice. Before you use it, check it against your organisation's own rules and the data protection law where you work, and change anything that doesn't fit. Signed forms have names on them: keep them safe. Thinkerwell never sees them."
+  },
+  "pages.consentForm.orgBlank": {
+    "back": "organisation name",
+    "source": "organisation's name"
+  },
+  "pages.consentForm.formTitle": {
+    "flag": true,
+    "note": "New in the partner kit (September 2026). The printed form is read by parents and guardians: it uses \"Anda\". Check it reads as a clear, respectful form.",
+    "back": "Taking part in the Thinkerwell pilot",
+    "source": "Taking part in the Thinkerwell pilot"
+  },
+  "pages.consentForm.formFor": {
+    "back": "For parents or guardians",
+    "source": "For a parent or guardian"
+  },
+  "pages.consentForm.formIntro": {
+    "flag": true,
+    "note": "New in the partner kit (September 2026). Consent text read by parents; 'beberapa sesi seminggu' is slightly ambiguous and 'daring' may be unfamiliar to some parents.",
+    "back": "{organisation} is trying Thinkerwell, a free online course about history, geography, culture, and civics for children and teenagers who are learning English. Your child is invited to join a few sessions every week for 4 to 6 weeks.",
+    "source": "{organisation} is trying Thinkerwell, a free online course about history, geography, culture and civics for young people learning English. Your child is invited to take part in a few sessions a week for 4 to 6 weeks."
+  },
+  "pages.consentForm.collectTitle": {
+    "back": "What is collected",
+    "source": "What is collected"
+  },
+  "pages.consentForm.collectBody": {
+    "flag": true,
+    "note": "New in the partner kit (September 2026). Consent wording: check 'anonim', 'kuis' and that the code-versus-name explanation is clear to parents.",
+    "back": "Only anonymous data: how long your child learns in this course, which lessons they finish, and their quiz scores. This data is linked to a code, such as HLP-01, not to your child's name.",
+    "source": "Only anonymous data: how long your child spends on the course, which lessons they finish, and their quiz scores. It is linked to a code, like HLP-01, not to your child's name."
+  },
+  "pages.consentForm.notTitle": {
+    "back": "What is not collected",
+    "source": "What is not collected"
+  },
+  "pages.consentForm.notBody": {
+    "flag": true,
+    "note": "New in the partner kit (September 2026). Consent wording is a list fragment; check it reads clearly and completely to parents.",
+    "back": "Your child's name, your child's photo, your child's location, or anything they write in their answers. Their writing and voice recordings stay on the device they use.",
+    "source": "Your child's name, photos of your child, where your child is, or anything your child writes in their answers. Their writing and any voice recordings stay on the device they use."
+  },
+  "pages.consentForm.whoTitle": {
+    "back": "Who can see it",
+    "source": "Who can see it"
+  },
+  "pages.consentForm.whoBody": {
+    "flag": true,
+    "note": "New in the partner kit (September 2026). Consent wording about who sees data needs careful native and legal review.",
+    "back": "Only the Thinkerwell team. {organisation} keeps the list matching codes to names, and Thinkerwell never sees it. {organisation} receives a short report about the whole group, not about one child.",
+    "source": "Only the Thinkerwell team. {organisation} keeps the list that matches codes to names, and Thinkerwell never sees it. {organisation} gets a short report about the whole group, not about one child."
+  },
+  "pages.consentForm.deleteTitle": {
+    "back": "When data is deleted",
+    "source": "When it is deleted"
+  },
+  "pages.consentForm.deleteBody": {
+    "flag": true,
+    "note": "New in the partner kit (September 2026). Legal commitment on retention; needs careful review.",
+    "back": "Data is deleted no later than 6 months after the pilot ends.",
+    "source": "The data is deleted within 6 months after the pilot ends."
+  },
+  "pages.consentForm.videoTitle": {
+    "back": "Videos",
+    "source": "Videos"
+  },
+  "pages.consentForm.videoBody": {
+    "flag": true,
+    "note": "New in the partner kit (September 2026). 'Alamat internet perangkat' (IP address) may confuse parents, and the data-sharing disclosure needs care. \"alamat IP\" added after the first back-translation, so parents recognise it.",
+    "back": "Some lessons have a video from YouTube that does not have to be watched. When a video is played, YouTube (owned by Google) receives some information, such as the device's internet address (IP address). Every video has a written version, so your child can just read it.",
+    "source": "Some lessons have an optional video from YouTube. When a video plays, YouTube (owned by Google) receives some information, such as the device's internet (IP) address. Every video has a written version, so your child can read instead."
+  },
+  "pages.consentForm.choiceTitle": {
+    "back": "This is your choice",
+    "source": "It is your choice"
+  },
+  "pages.consentForm.choiceBody": {
+    "flag": true,
+    "note": "New in the partner kit (September 2026). 'Tempat anak Anda di {organisation}' is ambiguous (place in the programme or the organisation?); consent wording needs care. Changed after the first back-translation: \"place at\" was ambiguous in English too. Consent wording: check it carefully.",
+    "back": "Taking part is voluntary. Refusing, or changing your mind later, is fine: it will not affect your child's other activities at {organisation}. Your child may also refuse. To stop, tell {organisation}.",
+    "source": "Taking part is voluntary. Saying no, or changing your mind later, is fine: it won't affect anything else your child does at {organisation}. Your child can say no too. To stop, tell {organisation}."
+  },
+  "pages.consentForm.questions": {
+    "back": "Any questions? Ask {organisation}, or email Thinkerwell at [CONTACT EMAIL].",
+    "source": "Questions? Ask {organisation}, or email Thinkerwell at [CONTACT EMAIL]."
+  },
+  "pages.consentForm.honesty": {
+    "back": "Thinkerwell is a project led by students, not a registered charity.",
+    "source": "Thinkerwell is a student-led project, not a registered charity."
+  },
+  "pages.consentForm.answerTitle": {
+    "back": "Your answer",
+    "source": "Your answer"
+  },
+  "pages.consentForm.yes": {
+    "back": "Yes, my child may take part.",
+    "source": "Yes, my child can take part."
+  },
+  "pages.consentForm.no": {
+    "back": "No, my child will not take part.",
+    "source": "No, my child will not take part."
+  },
+  "pages.consentForm.childName": {
+    "back": "Child's name",
+    "source": "Child's name"
+  },
+  "pages.consentForm.childCode": {
+    "back": "Child's code",
+    "source": "Child's code"
+  },
+  "pages.consentForm.parentName": {
+    "back": "Name of parent or guardian",
+    "source": "Parent or guardian's name"
+  },
+  "pages.consentForm.signature": {
+    "back": "Signature",
+    "source": "Signature"
+  },
+  "pages.consentForm.date": {
+    "back": "Date",
+    "source": "Date"
+  },
+  "pages.consentForm.keep": {
+    "back": "{organisation} keeps this form. It is not sent to Thinkerwell.",
+    "source": "{organisation} keeps this form. It is not sent to Thinkerwell."
+  },
+  "pages.codeCards.title": {
+    "back": "Code cards",
+    "source": "Code cards"
+  },
+  "pages.codeCards.intro": {
+    "back": "Each learner gets a code to type as their name, so their real name is never on the device. Choose a short prefix for your group and the number of learners. You will get cards to cut out, and a list to write names on.",
+    "source": "Each learner gets a code to type as their name, so their real name is never on the device. Choose a short prefix for your group and the number of learners. You get cards to cut out, and a list to write names on."
+  },
+  "pages.codeCards.prefixLabel": {
+    "back": "Prefix",
+    "source": "Prefix"
+  },
+  "pages.codeCards.prefixHelper": {
+    "back": "2 to 5 letters or numbers, for example HLP.",
+    "source": "2 to 5 letters or numbers, for example HLP."
+  },
+  "pages.codeCards.prefixInvalid": {
+    "back": "Use 2 to 5 letters or numbers.",
+    "source": "Use 2 to 5 letters or numbers."
+  },
+  "pages.codeCards.countLabel": {
+    "back": "Number of learners",
+    "source": "Number of learners"
+  },
+  "pages.codeCards.countHelper": {
+    "back": "From 1 to {max}.",
+    "source": "From 1 to {max}."
+  },
+  "pages.codeCards.countInvalid": {
+    "back": "Choose a number from 1 to {max}.",
+    "source": "Choose a number from 1 to {max}."
+  },
+  "pages.codeCards.summary": {
+    "back": "{count} cards, from {first} to {last}. Print on A4 paper and cut along the dotted lines.",
+    "source": "{count} cards, from {first} to {last}. Print on A4 and cut along the dashed lines."
+  },
+  "pages.codeCards.cardsTitle": {
+    "back": "Cards to cut out",
+    "source": "Cards to cut out"
+  },
+  "pages.codeCards.cardLabel": {
+    "back": "Your Thinkerwell code",
+    "source": "Your Thinkerwell code"
+  },
+  "pages.codeCards.cardHow": {
+    "back": "Tap \"{tile}\" and type this code as your name.",
+    "source": "Tap “{tile}” and type this code as your name."
+  },
+  "pages.codeCards.cardKeep": {
+    "back": "Keep this card.",
+    "source": "Keep this card."
+  },
+  "pages.codeCards.listTitle": {
+    "back": "Codes and names",
+    "source": "Codes and names"
+  },
+  "pages.codeCards.listIntro": {
+    "back": "Write each learner's name next to their code. Keep this list safe with your staff. Do not type names into Thinkerwell, and do not send this list to anyone.",
+    "source": "Write each learner's name next to their code. Keep this list safe with your staff. Don't type names into Thinkerwell, and don't send this list to anyone."
+  },
+  "pages.codeCards.listCode": {
+    "back": "Code",
+    "source": "Code"
+  },
+  "pages.codeCards.listName": {
+    "back": "Name",
+    "source": "Name"
+  },
+  "pages.setup.learners.codes": {
+    "back": "Using code cards? Each learner types their code as their name.",
+    "source": "Using code cards? Each learner types their code as their name."
+  },
+  "footer.label": {
+    "flag": true,
+    "note": "New in the partner kit (September 2026). Reads a little stiff as a footer navigation label.",
+    "back": "About Thinkerwell",
+    "source": "More about Thinkerwell"
+  },
+  "footer.organisations": {
+    "back": "For organisations",
+    "source": "For organisations"
+  },
+  "footer.honesty": {
+    "back": "Thinkerwell is a project led by students, not a registered charity.",
+    "source": "Thinkerwell is a student-led project, not a registered charity."
   }
 }

@@ -282,6 +282,29 @@ async function voices(page: Page, list: Array<[lang: string, local: boolean]>): 
   }, list);
 }
 
+test.describe('the header keeps its links on laptops @own-size', () => {
+  // Indonesian words are longer, so the full header (every link, the
+  // language by name, the learner's name) can be too wide for its row. It
+  // then tightens (the language as its code, the learner as their avatar)
+  // before it ever hides the links behind the phone menu button.
+  for (const width of [1180, 1280, 1440]) {
+    test(`at ${width}px wide, with a learner chosen, in Indonesian and English`, async ({ page }) => {
+      await page.setViewportSize({ width, height: 900 });
+      await addLearner(page, 'Dewi', en);
+      for (const [language, messages] of [[INDONESIAN, id], [ENGLISH, en]] as const) {
+        if (language === INDONESIAN) await headerSwitch(page, INDONESIAN);
+        else await headerSwitch(page, ENGLISH);
+        const header = page.locator('header.tw-header');
+        await expect(header.getByRole('navigation', { name: msg(messages, 'nav.label') })).toBeVisible();
+        await expect(header.getByRole('button', { name: msg(messages, 'ds.chrome.siteHeader.openMenu') })).toHaveCount(0);
+        const row = header.locator('.tw-header-inner');
+        const [scroll, client] = await row.evaluate((el) => [el.scrollWidth, el.clientWidth]);
+        expect(scroll, `${language} header at ${width}px`).toBeLessThanOrEqual(client + 1);
+      }
+    });
+  }
+});
+
 test.describe('Listen follows the language', () => {
   test('reads Indonesian with an Indonesian voice on the device, and switches back to English with the page', async ({ page }) => {
     await voices(page, [['en-GB', true], ['id-ID', true]]);
@@ -380,8 +403,11 @@ test.describe('with Indonesian on, every page is Indonesian and fits', () => {
       '/journal/print',
       '/settings',
       '/about',
+      '/organisations',
       '/educators',
       '/educators/setup',
+      '/educators/consent-form',
+      '/educators/code-cards?prefix=HLP&count=12',
       '/educators/class',
       '/educators/class/certificates',
       `/educators/lesson/${L10.id}`,
@@ -397,6 +423,11 @@ test.describe('with Indonesian on, every page is Indonesian and fits', () => {
       await expect(page.locator('h1').first()).toBeVisible();
       await expectAllIndonesian(page, address, allowed);
     }
+
+    // The consent form with an organisation's name typed in (the name is theirs, in any language).
+    await page.goto('/educators/consent-form');
+    await page.getByRole('textbox', { name: msg(id, 'pages.consentForm.orgLabel') }).fill('HELP for Refugees');
+    await expectAllIndonesian(page, 'consent form, with a name', [...allowed, 'HELP for Refugees']);
 
     // What opens: a key word's meaning, the language panel, the learner switcher, the phone menu.
     await page.goto(`/lesson/${L10.id}/read?part=1`);

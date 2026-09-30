@@ -15,6 +15,13 @@ export interface SiteHeaderProps {
   learner?: { name: string; tone?: string } | null;
   /** Phone layout: logo, learner avatar and a menu button. */
   compact?: boolean;
+  /**
+   * Not in the design-system docs: the full layout squeezed to fit (every
+   * link, smaller gaps, the learner as their avatar only), for when the full
+   * one is too wide but there's no need to hide the links behind a menu.
+   * Ignored when `compact` is set.
+   */
+  tight?: boolean;
   /** Extra controls at the end, in the full (non-compact) layout. */
   children?: ReactNode;
   /**
@@ -65,6 +72,7 @@ export function SiteHeader({
   links = [],
   learner = null,
   compact = false,
+  tight = false,
   children,
   onLearnerClick,
   learnerMenuOpen,
@@ -74,7 +82,7 @@ export function SiteHeader({
   const { t } = useI18n();
   const LinkTag = useDsLinkComponent();
   return (
-    <header className={cx('tw-header', compact && 'tw-header-compact')}>
+    <header className={cx('tw-header', compact && 'tw-header-compact', !compact && tight && 'tw-header-tight')}>
       <div className="tw-header-inner">
         <Logo src={logoSrc} size={compact ? 40 : 46} />
         {compact ? (
@@ -125,7 +133,7 @@ export function SiteHeader({
                 onClick={onLearnerClick}
               >
                 <Avatar name={learner.name} tone={learner.tone} />
-                <span aria-hidden="true">{learner.name}</span>
+                {tight ? null : <span aria-hidden="true">{learner.name}</span>}
                 <Icon name="ChevronDown" size={18} />
               </button>
             ) : null}
