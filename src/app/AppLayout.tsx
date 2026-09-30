@@ -7,6 +7,7 @@ import { LearnerSessionProvider, useLearnerSession } from '../session';
 import './app.css';
 import { readLanguageHint, writeLanguageHint } from './languageHint';
 import { LanguageSwitch } from './LanguageSwitch';
+import { SiteFooter } from './SiteFooter';
 import { LearnerSwitcher } from './LearnerSwitcher';
 import { isNavLinkActive } from './internal/navActive';
 import { MobileNav } from './MobileNav';
@@ -255,6 +256,7 @@ function Shell({ devRtl, devLocale }: { devRtl: boolean; devLocale: string | nul
       <main id="main" ref={mainRef} tabIndex={-1} className="tw-shell-main">
         <Outlet />
       </main>
+      <SiteFooter />
       {mobileNavOpen ? (
         <MobileNav links={headerLinks} settingsLink={settingsLink} onClose={() => setMobileNavOpenAt(null)} />
       ) : null}

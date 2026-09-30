@@ -139,6 +139,13 @@ Details and the reasons are in `docs/notes/pilot-day-tools.md`. The founders won
 - **Print all certificates**: every certificate earned on the device, one landscape page each. Names come from the device; a learner's own certificate page is where a name can be changed for one print.
 - Like the other Educators pages, they load when first opened and are saved for offline use with the rest of the course. Their dates and numbers follow the interface's language, and lesson and section names stay marked as English.
 
+### Partner kit
+
+Details and the reasons are in `docs/notes/partner-kit.md`. It gives a new partner organisation what it needs to start a pilot, in English and Bahasa Indonesia, under "Starting a pilot" on the Educators page:
+- **For organisations** (`/organisations`, also linked from the new footer on every page): what a pilot involves, what partners get, what we ask, how privacy is kept, and a `[CONTACT EMAIL]` placeholder. It says that Thinkerwell is a student-led project, not a registered charity, and that today nothing leaves the device.
+- **A consent form** for parents and guardians, one A4 page in black and white, with the organisation's name typed in or written by hand. It promises what the measurement build must keep to: anonymous data only (time spent, lessons finished, quiz scores, linked to a code), only the team sees it, it is deleted within 6 months of the pilot ending, YouTube gets some data when a video plays, and taking part is voluntary. A staff note, shown on screen only, says it is a template, not legal advice.
+- **Code cards**: a prefix and a number make cut-out cards (HLP-01 …) and a list for names, which the organisation keeps. Learners type their code as their name.
+
 ## Roadmap
 
 1. **Pilot build (now):** everything in `docs/BUILD_PLAN.md` phases 1–8.

@@ -25,15 +25,25 @@ describe('EducatorsPage', () => {
     expect(screen.getByRole('link', { name: 'Settings for this device' })).toHaveAttribute('href', '/settings');
   });
 
-  it('links the tools for setting up this device and following the group on it', () => {
+  it('links everything for starting a pilot, then the tools for following the group', () => {
     renderAt();
-    const tools = screen.getByRole('region', { name: 'Set up devices and follow your group' });
-    expect(within(tools).getAllByRole('listitem').map((item) => item.querySelector('.tw-edu-check-title')?.textContent)).toEqual([
+    const pilot = screen.getByRole('region', { name: 'Starting a pilot' });
+    expect(within(pilot).getAllByRole('listitem').map((item) => item.querySelector('.tw-edu-check-title')?.textContent)).toEqual([
+      'For organisations',
+      'Consent form',
+      'Code cards',
       'Set up this device',
+    ]);
+    expect(within(pilot).getByRole('link', { name: 'Read about pilots' })).toHaveAttribute('href', '/organisations');
+    expect(within(pilot).getByRole('link', { name: 'Print consent forms' })).toHaveAttribute('href', '/educators/consent-form');
+    expect(within(pilot).getByRole('link', { name: 'Make code cards' })).toHaveAttribute('href', '/educators/code-cards');
+    expect(within(pilot).getByRole('link', { name: 'Open the checklist' })).toHaveAttribute('href', '/educators/setup');
+
+    const tools = screen.getByRole('region', { name: 'Follow your group' });
+    expect(within(tools).getAllByRole('listitem').map((item) => item.querySelector('.tw-edu-check-title')?.textContent)).toEqual([
       'The class on this device',
       'Certificates',
     ]);
-    expect(within(tools).getByRole('link', { name: 'Open the checklist' })).toHaveAttribute('href', '/educators/setup');
     expect(within(tools).getByRole('link', { name: 'See the class' })).toHaveAttribute('href', '/educators/class');
     expect(within(tools).getByRole('link', { name: 'Print all certificates' })).toHaveAttribute('href', '/educators/class/certificates');
   });

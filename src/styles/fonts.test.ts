@@ -94,6 +94,7 @@ describe('fonts.css', () => {
     walk(path.join(stylesDir, '..'));
     expect(uses.sort()).toEqual([
       'CertificatePage.css: .tw-cert-wordmark',
+      'CodeCardsPage.css: .tw-code-card-brand',
       'Logo.css: .tw-logo span',
       'tokens.css: .wordmark',
     ]);

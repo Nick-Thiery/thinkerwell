@@ -1,0 +1,104 @@
+/* For organisations (/organisations): paper cards with borders, like About. */
+
+.tw-org-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-inline-size: 880px;
+}
+
+.tw-org-hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tw-org-hero h1,
+.tw-org-hero p {
+  margin: 0;
+}
+
+.tw-org-honesty {
+  color: var(--ink-muted);
+}
+
+.tw-org-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  min-inline-size: 0;
+}
+
+.tw-org-card h2,
+.tw-org-card p {
+  margin: 0;
+}
+
+.tw-org-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+}
+
+.tw-org-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tw-org-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.tw-org-list li > svg {
+  flex: none;
+  margin-block-start: 2px;
+}
+
+.tw-org-now {
+  font-weight: 700;
+}
+
+.tw-org-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+/* Getting in touch is help, so lavender, as on the Educators page. */
+.tw-org-contact {
+  background: var(--lavender);
+  border-color: transparent;
+}
+
+.tw-org-email {
+  align-self: flex-start;
+  padding: 10px var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+  font-size: 17px;
+  font-weight: 700;
+  user-select: all;
+}
+
+@media (max-width: 700px) {
+  .tw-org-pair {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Card padding steps down on a phone, as the brand book asks. */
+  .tw-org-card {
+    padding: var(--space-5);
+  }
+}

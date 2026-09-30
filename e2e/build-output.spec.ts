@@ -22,14 +22,19 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * 124 kB), so the Jakarta pilot's learners have the whole course in
  * Indonesian offline. English first visits don't change
  * (docs/notes/languages.md, "Bahasa Indonesia").
+ * Raised to 630 kB with the sources check and the partner kit: 624.8 kB with
+ * them, for each lesson's Sources, the About credits, three new pages (For
+ * organisations, the consent form, code cards) and their words in both
+ * languages (docs/notes/partner-kit.md).
  */
-const PRECACHE_BUDGET = 620_000;
+const PRECACHE_BUDGET = 630_000;
 /**
  * Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before),
  * 210.5 kB after the language and pilot-day merges, 212.7 kB with the header's language switch and the one language
- * setting (every page, from the first, can change the language; about 2 kB).
+ * setting (every page, from the first, can change the language; about 2 kB), 216.3 kB with the sources check and
+ * the partner kit (their English messages load with the rest of en.json, and the footer is on every page).
  */
-const FIRST_VISIT_HOME_BUDGET = 214_000;
+const FIRST_VISIT_HOME_BUDGET = 218_000;
 
 const TEXT = /\.(html|js|css|svg|json|webmanifest)$/;
 

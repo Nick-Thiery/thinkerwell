@@ -380,8 +380,11 @@ test.describe('with Indonesian on, every page is Indonesian and fits', () => {
       '/journal/print',
       '/settings',
       '/about',
+      '/organisations',
       '/educators',
       '/educators/setup',
+      '/educators/consent-form',
+      '/educators/code-cards?prefix=HLP&count=12',
       '/educators/class',
       '/educators/class/certificates',
       `/educators/lesson/${L10.id}`,
@@ -397,6 +400,11 @@ test.describe('with Indonesian on, every page is Indonesian and fits', () => {
       await expect(page.locator('h1').first()).toBeVisible();
       await expectAllIndonesian(page, address, allowed);
     }
+
+    // The consent form with an organisation's name typed in (the name is theirs, in any language).
+    await page.goto('/educators/consent-form');
+    await page.getByRole('textbox', { name: msg(id, 'pages.consentForm.orgLabel') }).fill('HELP for Refugees');
+    await expectAllIndonesian(page, 'consent form, with a name', [...allowed, 'HELP for Refugees']);
 
     // What opens: a key word's meaning, the language panel, the learner switcher, the phone menu.
     await page.goto(`/lesson/${L10.id}/read?part=1`);

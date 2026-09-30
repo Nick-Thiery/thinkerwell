@@ -206,3 +206,8 @@
     align-items: stretch;
   }
 }
+
+/* "Make code cards" keeps its own width under the class codes card's text. */
+.tw-edu-card > .tw-edu-card-action {
+  align-self: flex-start;
+}

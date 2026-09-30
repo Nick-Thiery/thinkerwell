@@ -61,3 +61,18 @@ export function allCertificatesPath(): string {
 export function educatorsPath(sectionId?: string): string {
   return sectionId ? `/educators?section=${encodeURIComponent(sectionId)}` : '/educators';
 }
+
+/** What a pilot involves, for organisations thinking of one: /organisations. */
+export function organisationsPath(): string {
+  return '/organisations';
+}
+
+/** The parents' and guardians' consent form to print: /educators/consent-form. */
+export function consentFormPath(): string {
+  return '/educators/consent-form';
+}
+
+/** Learners' code cards and the list of names to keep, to print: /educators/code-cards. */
+export function codeCardsPath(): string {
+  return '/educators/code-cards';
+}
