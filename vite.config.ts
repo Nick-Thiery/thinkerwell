@@ -135,7 +135,9 @@ function lessonCatalog(): Plugin {
         Object.fromEntries(LESSON_CATALOG_FIELDS.map((field) => [field, lesson[field]])),
       );
       const quizQuestions = Object.fromEntries((parsed('quizzes', 'quiz') as QuizFile[]).map((quiz) => [quiz.section, quiz.questions.length]));
-      return `export default ${JSON.stringify({ lessons, quizQuestions })};`;
+      // The embedded videos' channels, for the credits on the About page.
+      const videoChannels = [...new Set((parsed('lessons', 'lesson') as Lesson[]).map((lesson) => lesson.watch.channel))].sort((a, b) => a.localeCompare(b));
+      return `export default ${JSON.stringify({ lessons, quizQuestions, videoChannels })};`;
     },
   };
 }

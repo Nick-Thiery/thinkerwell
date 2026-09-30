@@ -37,7 +37,14 @@ const catalog = catalogData as {
   lessons: LessonSummary[];
   /** How many questions each section check has. */
   quizQuestions: Partial<Record<SectionId, number>>;
+  /** The embedded videos' YouTube channels, once each, in order. */
+  videoChannels: string[];
 };
+
+/** The YouTube channels of the lessons' videos (the About page's credits). The same in every language. */
+export function getVideoChannels(): readonly string[] {
+  return catalog.videoChannels;
+}
 
 /** The catalog's getters, for one language. */
 export interface Catalog {

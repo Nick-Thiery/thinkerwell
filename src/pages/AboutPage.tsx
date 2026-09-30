@@ -1,9 +1,13 @@
 import { usePageTitle } from '../app/usePageTitle';
 import { Icon, Mascot } from '../components/ds';
+import { getVideoChannels } from '../content/catalog';
 import { useI18n } from '../i18n';
 import './AboutPage.css';
 
 const MASCOT_SRC = '/images/thinkerwell-mascot-transparent.png';
+const UN_SDG_URL = 'https://www.un.org/sustainabledevelopment';
+
+const FONT_KEYS = ['creditsFontFunnel', 'creditsFontAtkinson', 'creditsFontEczar', 'creditsFontVazirmatn'] as const;
 
 interface Goal {
   src: string;
@@ -28,6 +32,10 @@ const GOALS: Goal[] = [
  * Both team members are shown with their photos (public/images/, made
  * from the originals in docs/design-system/assets/ by
  * scripts/optimise_images.py).
+ *
+ * Credits close the page: the fonts, the icons, the channels whose videos
+ * the lessons embed (from the lessons, so a new video credits itself) and
+ * the UN goal icons with the UN's own disclaimer.
  */
 export function AboutPage() {
   const { t } = useI18n();
@@ -120,6 +128,38 @@ export function AboutPage() {
             <p>{t('pages.about.nickBio')}</p>
           </article>
         </div>
+      </section>
+
+      <section aria-labelledby="about-credits" className="tw-about-card tw-about-credits">
+        <h2 id="about-credits" className="h2">
+          {t('pages.about.creditsTitle')}
+        </h2>
+        <h3 className="h3">{t('pages.about.creditsFontsTitle')}</h3>
+        <p>{t('pages.about.creditsFontsBody')}</p>
+        <ul>
+          {FONT_KEYS.map((key) => (
+            <li key={key}>{t(`pages.about.${key}`)}</li>
+          ))}
+        </ul>
+        <p>{t('pages.about.creditsIcons')}</p>
+        <h3 className="h3">{t('pages.about.creditsVideosTitle')}</h3>
+        <p>{t('pages.about.creditsVideosBody')}</p>
+        <ul>
+          {getVideoChannels().map((channel) => (
+            <li key={channel} lang="en">
+              {channel}
+            </li>
+          ))}
+        </ul>
+        <h3 className="h3">{t('pages.about.creditsGoalsTitle')}</h3>
+        <p>{t('pages.about.creditsGoalsBody')}</p>
+        <p className="small tw-about-honesty">{t('pages.about.creditsGoalsStatement')}</p>
+        <p>
+          <a href={UN_SDG_URL} target="_blank" rel="noreferrer">
+            {t('pages.about.creditsGoalsLink')}
+            <span className="tw-visually-hidden"> {t('pages.teacherTools.newTab')}</span>
+          </a>
+        </p>
       </section>
     </div>
   );
