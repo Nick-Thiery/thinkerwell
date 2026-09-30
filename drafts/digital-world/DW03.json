@@ -1,0 +1,307 @@
+{
+  "id": "dw-when-ai-gets-it-wrong",
+  "oldId": null,
+  "number": 3,
+  "section": "how-ai-works",
+  "title": "When AI gets it wrong",
+  "essentialQuestion": "Why does AI sometimes work well for some people and badly for others?",
+  "learningGoal": "Explain how missing examples in training data can make an AI tool unfair, and suggest one way to fix it.",
+  "estimatedMinutes": [
+    30,
+    50
+  ],
+  "warmUp": {
+    "question": "A tool works well for adults but makes many mistakes for children. Why could that be?",
+    "options": [
+      "It is too hard to build",
+      "It learned mostly from adults",
+      "Something else",
+      "Not sure"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "For each tool, whose examples were missing?",
+    "cards": [
+      {
+        "type": "table",
+        "title": "Three tools tested at Riverbend Learning Centre",
+        "columns": [
+          "Tool",
+          "What it learned from",
+          "What happened"
+        ],
+        "rows": [
+          [
+            "Voice typing tool",
+            "Mostly recordings of adults reading aloud",
+            "It worked well for the teachers. It typed many words wrongly for the youngest learners."
+          ],
+          [
+            "Translation tool",
+            "Lots of writing in a few languages, and very little in some others",
+            "It was good in languages with lots of writing online. It made many mistakes in languages with little writing online."
+          ],
+          [
+            "Leaf model from Lesson 2 (Round 2)",
+            "Leaves from one kind of plant",
+            "It called healthy striped leaves from a new plant “sick”."
+          ]
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "type": "compare-results",
+    "stage": "read",
+    "placement": "after-evidence",
+    "title": "Test the voice typing tool",
+    "instructions": "The Riverbend team read the same 20 words to the voice typing tool. Each group took a turn. Tap the group the tool got wrong most often.",
+    "measure": "Words typed correctly",
+    "groups": [
+      {
+        "id": "teachers",
+        "label": "Teachers",
+        "right": 19,
+        "of": 20
+      },
+      {
+        "id": "older",
+        "label": "Older learners",
+        "right": 16,
+        "of": 20
+      },
+      {
+        "id": "youngest",
+        "label": "Youngest learners",
+        "right": 9,
+        "of": 20
+      }
+    ],
+    "mostMistakes": "youngest",
+    "afterTap": {
+      "question": "Whose examples were probably missing from the training data?",
+      "options": [
+        {
+          "text": "Recordings of children's voices",
+          "correct": true,
+          "feedback": "Yes. The tool learned mostly from adults, so children's voices were new to it."
+        },
+        {
+          "text": "Recordings of teachers' voices",
+          "correct": false,
+          "feedback": "Not quite. The tool did well for the teachers. Look for the group with the most mistakes."
+        },
+        {
+          "text": "More of the same 20 words",
+          "correct": false,
+          "feedback": "Not quite. Every group read the same words. The difference is who was speaking."
+        }
+      ]
+    },
+    "extension": "Optional, reusing Lesson 2's trainer: give one example leaf the wrong label and test again. The model copies the mistake, which shows how a person's wrong or unfair labels get into a model.",
+    "saves": "The learner's answer, with the lesson's other answers.",
+    "offline": "Everything is in the lesson file. Nothing is recorded or sent anywhere; no microphone is used."
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Mistakes can come from missing examples",
+        "text": "In Lesson 2, the leaf model made mistakes when its training data left something out. Real AI tools can go wrong in the same way. At Riverbend Learning Centre, a voice typing tool worked well for the adult teachers, but it typed many words wrongly for the youngest learners. The tool had learned mostly from recordings of adults, so children's voices were new to it. Researchers have found this problem in real life too. Many speech tools are much less accurate with children's voices. One reason is that there are far fewer recordings of children for the tools to learn from.",
+        "simpler": "In Lesson 2, the leaf model made mistakes. Its examples left something out. Real AI tools can do this too. At Riverbend, a voice typing tool worked well for teachers. It made many mistakes for young learners. It learned mostly from adult voices. So children's voices were new to it. Researchers found this in real life too. Many speech tools are less accurate for children. One reason is that there are fewer recordings of children."
+      },
+      {
+        "heading": "When a group is left out, AI can be unfair",
+        "text": "When a tool works well for some groups of people and badly for others, we say that it has a bias. Bias in AI often starts in the training data. The Riverbend translation tool is good at translating between languages that have lots of writing online. It makes many more mistakes in languages with only a little writing online. Researchers have found the same pattern in real AI language tools. Nobody planned to leave those speakers out, but the result is still not fair. Some people get a helpful tool, while other people get a tool that often makes mistakes.",
+        "simpler": "Some tools work well for some people and badly for others. This is called bias. Bias often starts in the training data. The Riverbend translation tool is good for some languages. These languages have lots of writing online. It makes more mistakes in languages with little writing online. Researchers found this with real tools too. Nobody meant to leave people out. But it is still not fair."
+      },
+      {
+        "heading": "Finding and fixing the problem",
+        "text": "To find bias, people test a tool with many different groups, not only with the people who built it. Then they compare the results for each group. If one group gets more mistakes, they ask whose examples are missing. They can collect more examples from that group, but only with people's permission. However, collecting more data does not fix everything. People also check the labels, because a person's unfair ideas can end up in the labels too. For important decisions, a person should always check what the AI says.",
+        "simpler": "To find bias, test the tool with many groups of people. Then compare the results. Does one group get more mistakes? Then ask whose examples are missing. Add examples from that group. Ask people first. But more data does not fix everything. People must also check the labels. Unfair ideas can get into labels. For big decisions, a person should check the AI."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "training data",
+        "definition": "The examples a computer learns from, each with the right answer.",
+        "example": "The voice tool's training data was mostly adults reading aloud."
+      },
+      {
+        "word": "accurate",
+        "forms": [
+          "accuracy"
+        ],
+        "definition": "Correct, with few or no mistakes.",
+        "example": "The voice tool was accurate for teachers, but not for young learners."
+      },
+      {
+        "word": "researcher",
+        "forms": [
+          "researchers"
+        ],
+        "definition": "A person whose job is to study something carefully to find new facts.",
+        "example": "Researchers tested speech tools with children's voices."
+      },
+      {
+        "word": "bias",
+        "definition": "When a tool treats some groups better than others, often by accident.",
+        "example": "The translation tool has a bias towards languages with lots of writing online."
+      },
+      {
+        "word": "fair",
+        "forms": [
+          "unfair"
+        ],
+        "definition": "Treating everyone in the right way, so no group is left out.",
+        "example": "A fair voice tool works well for children and adults."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "question": "Why did the voice typing tool make more mistakes for the youngest learners?",
+        "options": [
+          {
+            "text": "The young learners used the wrong words",
+            "correct": false,
+            "feedback": "Not quite. The problem was in the tool, not the learners. Look at what the tool learned from."
+          },
+          {
+            "text": "The tool was turned off for part of the time",
+            "correct": false,
+            "feedback": "Not quite. The tool worked. Look at what it learned from in the first section."
+          },
+          {
+            "text": "It learned mostly from recordings of adults",
+            "correct": true,
+            "feedback": "Yes. Children's voices were new to the tool, because its training data was mostly adults."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "question": "A tool makes more mistakes for one group. What is a good first step?",
+        "options": [
+          {
+            "text": "Find out whose examples are missing",
+            "correct": true,
+            "feedback": "Yes. Then the team can add examples from that group, with their permission, and test again."
+          },
+          {
+            "text": "Stop testing it with that group",
+            "correct": false,
+            "feedback": "Not quite. That hides the problem. Read the third section about finding bias."
+          },
+          {
+            "text": "Tell that group to talk like adults",
+            "correct": false,
+            "feedback": "Not quite. The tool should change, not the people. Read the third section about fixing bias."
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "Pick a tool from this lesson. Who else should test it before people trust it?",
+        "placeholder": "The ___ should also be tested by ... because ...",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Choose one tool from the Riverbend table. Explain whose examples were missing, what went wrong, and one way to fix it.",
+    "sentenceStarters": [
+      "I chose ...",
+      "It learned mostly from ...",
+      "The examples of ___ were missing, so ...",
+      "This is unfair because ...",
+      "One way to fix it is ..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I named one tool and what it learned from.",
+      "I said whose examples were missing and what went wrong.",
+      "I gave one way to fix it."
+    ],
+    "example": "I chose the voice typing tool. It learned mostly from recordings of adults reading aloud. The examples of children's voices were missing, so it typed many words wrongly for the youngest learners. It got 9 of 20 words right for them, and 19 for the teachers. This is unfair because the children get a tool that makes lots of mistakes. One way to fix it is to add recordings of children, if they and their families agree. Then the team can test it again."
+  },
+  "speak": {
+    "partnerTask": "Your partner names a tool from the Riverbend table. You say whose examples were missing and one way to fix it. Then switch.",
+    "independentTask": "Say out loud what bias means. Give one example from the lesson and one way to fix it."
+  },
+  "watch": {
+    "youtubeId": "x2mRoFNm22g",
+    "title": "AI: Training Data & Bias",
+    "channel": "Code.org",
+    "durationSeconds": 161,
+    "why": "In under three minutes, it explains how missing or one-sided training data can make AI work worse for some people.",
+    "beforeQuestion": "Where do you think the examples for an AI tool come from?",
+    "afterQuestion": "What two questions should you ask about any training data?",
+    "summary": "This video explains why training data matters so much. A machine learning tool is only as good as the data it learns from. Data can come from many places. For example, a video site keeps track of what people watch, sometimes without them knowing. Then it uses that data to suggest more videos. In health care, experts label thousands of medical pictures, so a computer can learn to spot illness. But there is a problem. Suppose most of the X-ray pictures come from men. Then the tool may make more mistakes for women. People can put their own bias into training data without meaning to. So the video asks two questions about any training data. Is there enough of it? Does it include many kinds of people and situations?",
+    "keyPoints": [
+      "An AI tool is only as good as its training data.",
+      "If some people are missing from the data, the tool can work worse for them.",
+      "Ask: is there enough data, and does it include many kinds of people?"
+    ],
+    "contentNote": "The video mentions that companies collect data about what people watch, sometimes without them knowing, and uses a medical example (X-rays mostly from men). Preview it first; learners can read the written summary instead.",
+    "replacementSuggestion": null
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "One way to make an AI tool fairer is ...",
+        "required": true
+      },
+      {
+        "text": "A question I would ask the people who build AI tools is ...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 3. You found whose examples were missing and explained how to make a tool fairer."
+  },
+  "visual": {
+    "type": "diagram",
+    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW03.svg is only a planned path. A simple bar chart of the voice typing test: three bars for Teachers (19 of 20 words right), Older learners (16 of 20) and Youngest learners (9 of 20), each bar labelled with its number in words and digits, so colour is never the only clue. Beside it, a small box of training-data cards shows mostly adult figures and only one child, with the words “Mostly adult voices”. No real faces; simple figures only.",
+    "alt": "A bar chart: the voice typing tool got 19 of 20 words right for teachers, 16 for older learners and 9 for the youngest learners. Its training data had mostly adult voices.",
+    "src": "visuals/DW03.svg"
+  },
+  "sources": [
+    {
+      "label": "Attia and others (AIES 2024): Kid-Whisper, the gap in speech recognition between children and adults",
+      "url": "https://ojs.aaai.org/index.php/AIES/article/view/31618"
+    },
+    {
+      "label": "Stanford Report (2025): How AI is leaving non-English speakers behind",
+      "url": "https://news.stanford.edu/stories/2025/05/digital-divide-ai-llms-exclusion-non-english-speakers-research"
+    },
+    {
+      "label": "Code.org: Machine learning and bias (lesson plan)",
+      "url": "https://curriculum.code.org/csp-20/unit9/6/"
+    },
+    {
+      "label": "Experience AI (Raspberry Pi Foundation): Lesson 3, Bias in, bias out",
+      "url": "https://experience-ai.org/en/units/foundations-of-ai/lessons/3"
+    }
+  ],
+  "sensitiveNotes": [
+    "Some learners may have found that tools work badly in their own language or for their accent. Let them say so if they want to, but never ask which language they speak at home, where they come from or about their family. The lesson works with the fictional Riverbend tools alone.",
+    "Bias in real tools can touch race, gender and other identities (the Lesson 2 video mentions face recognition). Keep the discussion on how training data causes it and how to fix it; don't ask learners to share times they were treated unfairly."
+  ],
+  "educatorNotes": [
+    "The numbers in the activity (19, 16 and 9 of 20) are made up to show the idea. Real research also found big gaps for children's voices; see the sources.",
+    "Lesson 2's leaf model is reused on purpose: learners can see the same cause (missing examples) in a small model they trained and in real tools."
+  ],
+  "changes": [
+    "New lesson (Digital World draft 1). There is no Base44 original, so oldId is null.",
+    "section is a Digital World section id (how-ai-works), which the Our World checker and schema don't accept yet.",
+    "Adds a compare-results activity, documented in docs/content/DIGITAL_WORLD_SPEC.md.",
+    "visual.src points to a picture that doesn't exist yet.",
+    "Needs review by an AI researcher for accuracy, by Justin for level and tone, and by a partner educator for the sensitive notes."
+  ]
+}
