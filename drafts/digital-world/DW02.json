@@ -1,0 +1,575 @@
+{
+  "id": "dw-how-ai-learns",
+  "oldId": null,
+  "number": 2,
+  "section": "how-ai-works",
+  "title": "How AI learns from examples",
+  "essentialQuestion": "How can a computer learn from examples, and why do the examples matter?",
+  "learningGoal": "Train a tiny model with examples and explain why more, and more varied, examples make its guesses better.",
+  "estimatedMinutes": [
+    35,
+    55
+  ],
+  "warmUp": {
+    "question": "You want to teach a young child to tell a healthy leaf from a sick leaf. What would you do?",
+    "options": [
+      "Show many leaves",
+      "Write a list of rules",
+      "Show one leaf",
+      "Something else"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "What changed each time the model got more leaves right?",
+    "cards": [
+      {
+        "type": "table",
+        "title": "The Sunrise Garden leaf model",
+        "columns": [
+          "Round",
+          "Examples it learned from",
+          "New leaves it got right"
+        ],
+        "rows": [
+          [
+            "Round 1",
+            "2 examples: a big dark green leaf (healthy) and a brown leaf with spots (sick)",
+            "4 of 6"
+          ],
+          [
+            "Round 2",
+            "6 examples: the 2 from Round 1, plus a small new leaf and a green leaf with tiny marks (healthy), and a yellow leaf with no spots and a small spotted leaf (sick)",
+            "6 of 6"
+          ],
+          [
+            "Round 2, a new plant",
+            "The same 6 examples",
+            "0 of 2 long, striped leaves"
+          ],
+          [
+            "Round 3",
+            "8 examples: the 6 from Round 2, plus a long striped leaf (healthy) and a long brown leaf with spots (sick)",
+            "8 of 8"
+          ]
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "type": "train-model",
+    "stage": "read",
+    "placement": "after-evidence",
+    "title": "Train the leaf model",
+    "instructions": "Teach the model by giving each example leaf a label: healthy or sick. Then test it on new leaves and see how many it gets right. Nothing you do here is sent anywhere.",
+    "labels": [
+      {
+        "id": "healthy",
+        "label": "Healthy"
+      },
+      {
+        "id": "sick",
+        "label": "Sick"
+      }
+    ],
+    "method": "nearest-neighbour",
+    "k": 1,
+    "features": [
+      {
+        "id": "green",
+        "label": "How green",
+        "scale": "0 brown or yellow, 10 dark green"
+      },
+      {
+        "id": "spots",
+        "label": "Spots",
+        "scale": "0 none, 10 covered"
+      },
+      {
+        "id": "size",
+        "label": "Size",
+        "scale": "0 very small, 10 very big"
+      },
+      {
+        "id": "long",
+        "label": "Shape",
+        "scale": "0 round, 10 long and thin"
+      }
+    ],
+    "examples": [
+      {
+        "id": "e1",
+        "description": "Big dark green leaf",
+        "gardenerSays": "healthy",
+        "features": [
+          10,
+          0,
+          9,
+          2
+        ]
+      },
+      {
+        "id": "e2",
+        "description": "Brown leaf with spots",
+        "gardenerSays": "sick",
+        "features": [
+          1,
+          7,
+          5,
+          3
+        ]
+      },
+      {
+        "id": "e3",
+        "description": "Small new leaf, light green",
+        "gardenerSays": "healthy",
+        "features": [
+          4,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "id": "e4",
+        "description": "Yellow leaf with no spots",
+        "gardenerSays": "sick",
+        "features": [
+          4,
+          0,
+          8,
+          1
+        ]
+      },
+      {
+        "id": "e5",
+        "description": "Green leaf with a few tiny marks",
+        "gardenerSays": "healthy",
+        "features": [
+          8,
+          3,
+          6,
+          1
+        ]
+      },
+      {
+        "id": "e6",
+        "description": "Small leaf with many spots",
+        "gardenerSays": "sick",
+        "features": [
+          4,
+          7,
+          2,
+          2
+        ]
+      },
+      {
+        "id": "e7",
+        "description": "Long thin leaf with pale stripes",
+        "gardenerSays": "healthy",
+        "features": [
+          6,
+          4,
+          4,
+          10
+        ]
+      },
+      {
+        "id": "e8",
+        "description": "Long thin brown leaf with spots",
+        "gardenerSays": "sick",
+        "features": [
+          2,
+          7,
+          4,
+          10
+        ]
+      }
+    ],
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Green leaf",
+        "gardenerSays": "healthy",
+        "features": [
+          8,
+          0,
+          8,
+          2
+        ]
+      },
+      {
+        "id": "t2",
+        "description": "Brown leaf with spots",
+        "gardenerSays": "sick",
+        "features": [
+          3,
+          7,
+          6,
+          2
+        ]
+      },
+      {
+        "id": "t3",
+        "description": "Small new leaf, light green",
+        "gardenerSays": "healthy",
+        "features": [
+          4,
+          1,
+          3,
+          3
+        ]
+      },
+      {
+        "id": "t4",
+        "description": "Yellow leaf with no spots",
+        "gardenerSays": "sick",
+        "features": [
+          5,
+          0,
+          6,
+          3
+        ]
+      },
+      {
+        "id": "t5",
+        "description": "Green leaf with a few tiny marks",
+        "gardenerSays": "healthy",
+        "features": [
+          7,
+          3,
+          6,
+          1
+        ]
+      },
+      {
+        "id": "t6",
+        "description": "Small leaf with many spots",
+        "gardenerSays": "sick",
+        "features": [
+          3,
+          7,
+          3,
+          1
+        ]
+      },
+      {
+        "id": "t7",
+        "description": "Long thin leaf with pale stripes",
+        "gardenerSays": "healthy",
+        "features": [
+          5,
+          5,
+          5,
+          10
+        ]
+      },
+      {
+        "id": "t8",
+        "description": "Long thin leaf with pale stripes",
+        "gardenerSays": "healthy",
+        "features": [
+          5,
+          5,
+          4,
+          9
+        ]
+      }
+    ],
+    "rounds": [
+      {
+        "id": "round-1",
+        "title": "Round 1: two examples",
+        "addExamples": [
+          "e1",
+          "e2"
+        ],
+        "test": [
+          "t1",
+          "t2",
+          "t3",
+          "t4",
+          "t5",
+          "t6"
+        ],
+        "expectedIfLabelledLikeTheGardener": {
+          "right": 4,
+          "of": 6,
+          "wrong": [
+            "t3",
+            "t4"
+          ]
+        },
+        "debrief": "The model got 4 of 6 right. It had only two leaves to compare with, so it mixed up the small new leaf and the yellow leaf."
+      },
+      {
+        "id": "round-2",
+        "title": "Round 2: more, different examples",
+        "addExamples": [
+          "e3",
+          "e4",
+          "e5",
+          "e6"
+        ],
+        "test": [
+          "t1",
+          "t2",
+          "t3",
+          "t4",
+          "t5",
+          "t6"
+        ],
+        "expectedIfLabelledLikeTheGardener": {
+          "right": 6,
+          "of": 6,
+          "wrong": []
+        },
+        "debrief": "Now the model got all 6 right. The new examples showed it leaves that looked different."
+      },
+      {
+        "id": "round-2-new-plant",
+        "title": "A new plant",
+        "addExamples": [],
+        "test": [
+          "t7",
+          "t8"
+        ],
+        "expectedIfLabelledLikeTheGardener": {
+          "right": 0,
+          "of": 2,
+          "wrong": [
+            "t7",
+            "t8"
+          ]
+        },
+        "debrief": "Both striped leaves are healthy, but the model said “sick”. None of its examples looked like them."
+      },
+      {
+        "id": "round-3",
+        "title": "Round 3: add the new plant",
+        "addExamples": [
+          "e7",
+          "e8"
+        ],
+        "test": [
+          "t1",
+          "t2",
+          "t3",
+          "t4",
+          "t5",
+          "t6",
+          "t7",
+          "t8"
+        ],
+        "expectedIfLabelledLikeTheGardener": {
+          "right": 8,
+          "of": 8,
+          "wrong": []
+        },
+        "debrief": "With examples of the new plant, the model got all 8 right. A model can only learn from the examples it is given."
+      }
+    ],
+    "freePlay": "After Round 3, the learner can take examples out, or change a label, and test again. The model follows the learner's labels, even when they differ from the gardener's.",
+    "explainGuess": "After each guess, show the example the model thought was most like the new leaf: “It looked most like this example, so the model said sick.”",
+    "saves": "Which rounds the learner finished, with the lesson's other answers. The labels are not needed again and can stay in memory.",
+    "offline": "Everything is in the lesson file and runs on the device. No camera, no upload, no network, no machine learning library."
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "A model learns from labelled examples",
+        "text": "Some AI learns in a way that is a bit like studying with flashcards. First, people collect training data: examples that already have the correct answer, called a label. At Sunrise Garden, every picture of a leaf has a label, either “healthy” or “sick”. The computer uses these examples to build a model. A model is what the computer has learned from the examples, and the computer uses it to predict the label of a leaf it has never seen. This way of making AI is called machine learning. Nobody writes the rule “spots mean sick”; the computer discovers patterns like that in the examples.",
+        "simpler": "Some AI learns from examples. First, people collect training data. Each example has the right answer. This answer is a label. At Sunrise Garden, each leaf picture has a label: “healthy” or “sick”. The computer uses the examples to make a model. The model is what it learned. It uses the model to guess about new leaves. This is machine learning. Nobody tells it “spots mean sick”. It finds that in the examples."
+      },
+      {
+        "heading": "Test the model with new examples",
+        "text": "To find out whether a model works, you test it with new leaves that it did not learn from. The garden's first model learned from only two examples, a big dark green leaf and a brown leaf with spots. It makes its guess in a simple way: it finds the example that is most similar to the new leaf and gives the same label. It correctly labelled four of six new leaves. However, it called a small, light green new leaf “sick”, and it called a yellow leaf with no spots “healthy”. The model was not broken. It simply had too few examples to compare with.",
+        "simpler": "Then you test the model. You show it leaves it has not seen. The first model had only two examples. One was dark green. One was brown with spots. The model finds the example most like the new leaf. It gives the same label. It got four of six right. It said a small new leaf was “sick”. It said a yellow leaf was “healthy”. It had too few examples."
+      },
+      {
+        "heading": "More, and different, examples help",
+        "text": "Next, the team added four more examples, including a small new leaf and a yellow leaf with no spots. This time, the model correctly labelled all six new leaves. Then the team tested two leaves from a different plant. They were long and thin with pale stripes, and both were healthy. The model called them both “sick”, because none of its examples looked similar. After the team added two striped leaves as examples, the model got them right. A model can only learn from the examples it is given, so good training data includes many examples, of many different kinds.",
+        "simpler": "Next, the team added four more examples. Now the model got all six right. Then the team tried a new plant. Its leaves are long and striped. They are healthy. But the model said “sick”. No example looked like them. The team added two striped leaves. Then the model got them right. A model only learns from its examples. Good training data has many kinds of examples."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "training data",
+        "definition": "The examples a computer learns from, each with the right answer.",
+        "example": "The leaf pictures and their labels are the training data."
+      },
+      {
+        "word": "label",
+        "forms": [
+          "labels",
+          "labelled"
+        ],
+        "definition": "The answer given to an example, like “healthy” or “sick”.",
+        "example": "The big dark green leaf has the label “healthy”."
+      },
+      {
+        "word": "model",
+        "forms": [
+          "models"
+        ],
+        "definition": "What a computer has learned from examples. It uses it to guess.",
+        "example": "The garden's model guessed that the yellow leaf was healthy."
+      },
+      {
+        "word": "machine learning",
+        "definition": "A way for computers to learn patterns from examples, not from written rules.",
+        "example": "The leaf model is an example of machine learning."
+      },
+      {
+        "word": "test",
+        "forms": [
+          "tests",
+          "tested",
+          "testing"
+        ],
+        "definition": "To try something with new examples to see if it works.",
+        "example": "The team tested the model with six new leaves."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "question": "Why did the model call the small new leaf “sick” in Round 1?",
+        "options": [
+          {
+            "text": "It had only two examples to compare with",
+            "correct": true,
+            "feedback": "Yes. With only two examples, the new leaf was closer to the brown one. More examples fixed this."
+          },
+          {
+            "text": "Small leaves are nearly always sick",
+            "correct": false,
+            "feedback": "Not quite. The gardener says the small new leaf is healthy. Read about Round 1 in the second section."
+          },
+          {
+            "text": "The model was broken and needed fixing",
+            "correct": false,
+            "feedback": "Not quite. The lesson says the model was not broken. Read the end of the second section."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "question": "What made the model better in Round 2?",
+        "options": [
+          {
+            "text": "The team made all the leaf pictures brighter",
+            "correct": false,
+            "feedback": "Not quite. The pictures did not change. Look at what the team added in the third section."
+          },
+          {
+            "text": "The team added more, different examples",
+            "correct": true,
+            "feedback": "Yes. The new examples showed the model leaves that looked different, so it got all six right."
+          },
+          {
+            "text": "The team wrote a rule about spots",
+            "correct": false,
+            "feedback": "Not quite. In machine learning, nobody writes that rule. Look at what the team added in the third section."
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "The garden grows a new plant with red leaves. What should the team do before they trust the model with it?",
+        "placeholder": "First they should ... Then they should ...",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Explain how the garden's model got better from Round 1 to Round 3. Use numbers from the lesson.",
+    "sentenceStarters": [
+      "In Round 1, the model learned from ...",
+      "It got ... right, because ...",
+      "In Round 2, the team added ...",
+      "The striped leaves show that ...",
+      "Good training data needs ..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I described Round 1 and one of its mistakes.",
+      "I explained what changed in Round 2 and Round 3.",
+      "I said what good training data needs."
+    ],
+    "example": "In Round 1, the model learned from only two examples. It got four of six new leaves right, because it had too few examples to compare with. It called a small new leaf “sick”. In Round 2, the team added four different examples, and the model got all six right. The striped leaves show that a model makes mistakes when its examples leave something out. Good training data needs many examples and many different kinds."
+  },
+  "speak": {
+    "partnerTask": "Tell your partner how you would train a model to sort two kinds of things, like ripe and unripe fruit. Your partner asks, “How will you test it?” Then switch.",
+    "independentTask": "Say out loud three steps: collect examples, train the model, test it. Give one example for each step."
+  },
+  "watch": {
+    "youtubeId": "2hXG8v8p0KM",
+    "title": "How Computer Vision Works",
+    "channel": "Code.org",
+    "durationSeconds": 384,
+    "why": "It shows a computer learning to tell shapes apart from labelled examples, the same idea as the leaf model.",
+    "beforeQuestion": "How could a computer learn to tell two shapes apart?",
+    "afterQuestion": "Why is it hard to write exact rules for a shape, like the letter X?",
+    "summary": "This video explains computer vision. Computer vision is how a computer finds meaning in pictures. A computer does not see a picture like you do. It sees a number for each tiny dot of colour. Writing exact rules for a shape, like the letter X, does not work well, because people draw an X in many ways. With machine learning, the computer learns from many labelled examples instead. It is like learning with flashcards. The computer guesses, checks the answer and slowly gets better. Harder pictures, like faces, need bigger models. The video shows farm robots that tell crops from weeds. It also warns about a problem. If the training data leaves some people out, the tool can fail for them. So training data must be large and varied.",
+    "keyPoints": [
+      "A computer sees a picture as numbers, one for each tiny dot.",
+      "With machine learning, a computer learns from many labelled examples, like flashcards.",
+      "If the training data leaves some people out, the tool can fail for them."
+    ],
+    "contentNote": "About six minutes, longer than most Thinkerwell videos. The speakers work for a farm-robot company and a car company and name them. Near the end, it says face recognition can fail for groups of people left out of the training data; Lesson 3 comes back to this. Preview it first; learners can read the written summary instead.",
+    "replacementSuggestion": null
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "One thing I learned about training data is ...",
+        "required": true
+      },
+      {
+        "text": "Something I would like to teach a model to sort is ...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 2. You trained a model with examples and saw why the examples matter."
+  },
+  "visual": {
+    "type": "illustration",
+    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW02.svg is only a planned path. The eight example leaves and eight test leaves drawn as simple flat cards, in the same style the activity will use, so learners recognise them: dark green, light green new leaf, green with tiny marks, brown with spots, yellow with no spots, small spotted, and two long thin leaves with pale stripes. Healthy and sick are shown by a word under each card, never by colour alone. The same drawings are reused by the activity; there are no photos.",
+    "alt": "Leaf cards from Sunrise Garden: green, light green, yellow, brown and spotted leaves, and two long leaves with pale stripes, each labelled healthy or sick.",
+    "src": "visuals/DW02.svg"
+  },
+  "sources": [
+    {
+      "label": "Experience AI (Raspberry Pi Foundation): Lesson 3, Bias in, bias out (training data, test data, accuracy)",
+      "url": "https://experience-ai.org/en/units/foundations-of-ai/lessons/3"
+    },
+    {
+      "label": "The Royal Society: Machine learning, the power and promise of computers that learn by example (introduction)",
+      "url": "https://royalsociety.org/-/media/policy/projects/machine-learning/publications/machine-learning-introduction.pdf"
+    },
+    {
+      "label": "DCMP: How Computer Vision Works (Code.org video, description)",
+      "url": "https://dcmp.org/media/25568-how-computer-vision-works"
+    }
+  ],
+  "sensitiveNotes": [],
+  "educatorNotes": [
+    "If the activity can't run (a printout, or a device without it), use the evidence table: it shows exactly what the activity does. Learners can also play it on paper: one learner is the model and may only copy the label of the most similar example card.",
+    "The model in the activity is deliberately simple (it copies the label of the most similar example). Real AI is far bigger, but the lesson about examples is the same.",
+    "If a learner labels an example differently from the gardener, the model follows the learner. That is a good moment to ask: who decides the right label?"
+  ],
+  "changes": [
+    "New lesson (Digital World draft 1). There is no Base44 original, so oldId is null.",
+    "section is a Digital World section id (how-ai-works), which the Our World checker and schema don't accept yet.",
+    "Adds a train-model activity with a tested set of leaf cards; the results in the evidence table and the reading are what the activity gives when the learner labels like the gardener (checked with a small script; see the spec).",
+    "visual.src points to a picture that doesn't exist yet.",
+    "Needs review by an AI researcher for accuracy, and by Justin for level and tone."
+  ]
+}

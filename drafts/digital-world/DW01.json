@@ -1,0 +1,345 @@
+{
+  "id": "dw-what-ai-is",
+  "oldId": null,
+  "number": 1,
+  "section": "how-ai-works",
+  "title": "What AI is, and what it isn't",
+  "essentialQuestion": "How can you tell when a machine is using AI?",
+  "learningGoal": "Explain how AI makes guesses from patterns in examples, and sort everyday tools into AI and not AI.",
+  "estimatedMinutes": [
+    30,
+    50
+  ],
+  "warmUp": {
+    "question": "Which of these do you think uses AI?",
+    "options": [
+      "A calculator",
+      "A tool that turns speech into typed words",
+      "A classroom bell",
+      "Not sure"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "Which tools always do the same thing? Which tools have to guess?",
+    "cards": [
+      {
+        "type": "table",
+        "title": "Tools at Hillview Learning Centre",
+        "columns": [
+          "Tool",
+          "What it does"
+        ],
+        "rows": [
+          [
+            "Calculator",
+            "Adds, takes away, multiplies and divides numbers."
+          ],
+          [
+            "Voice typing tool",
+            "Turns spoken words into typed words."
+          ],
+          [
+            "Translation tool",
+            "Turns a sentence in one language into another language."
+          ],
+          [
+            "Classroom bell",
+            "Rings at nine o'clock every morning."
+          ],
+          [
+            "Video suggestions",
+            "A video site suggests what to watch next, from what people watched before."
+          ],
+          [
+            "Light by the door",
+            "Turns on when someone walks past."
+          ],
+          [
+            "Photo sorter",
+            "Finds all the photos that show a tree."
+          ],
+          [
+            "“Smart” fan",
+            "The box says “smart”. It turns on when the room gets hot."
+          ]
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "type": "sort",
+    "stage": "read",
+    "placement": "after-evidence",
+    "title": "AI or not AI?",
+    "instructions": "Put each Hillview tool into a group. There is no score. After you place a tool, you can see what most people would say.",
+    "groups": [
+      {
+        "id": "ai",
+        "label": "Uses AI"
+      },
+      {
+        "id": "not-ai",
+        "label": "Not AI"
+      },
+      {
+        "id": "hard",
+        "label": "Hard to say"
+      }
+    ],
+    "items": [
+      {
+        "id": "calculator",
+        "text": "Calculator",
+        "suggested": "not-ai",
+        "feedback": "Most people would say not AI. It follows fixed steps and gives the same answer every time."
+      },
+      {
+        "id": "voice-typing",
+        "text": "Voice typing tool",
+        "suggested": "ai",
+        "feedback": "Most people would say it uses AI. Every voice is a little different, so it has to guess the words."
+      },
+      {
+        "id": "translation",
+        "text": "Translation tool",
+        "suggested": "ai",
+        "feedback": "Most people would say it uses AI. It learned from many sentences and guesses a translation for a new one."
+      },
+      {
+        "id": "bell",
+        "text": "Classroom bell",
+        "suggested": "not-ai",
+        "feedback": "Most people would say not AI. Someone set a timer, and it rings at the same time every day."
+      },
+      {
+        "id": "video-suggestions",
+        "text": "Video suggestions",
+        "suggested": "ai",
+        "feedback": "Most people would say it uses AI. It finds patterns in what people watched and guesses what they will like."
+      },
+      {
+        "id": "door-light",
+        "text": "Light by the door",
+        "suggested": "not-ai",
+        "feedback": "Most people would say not AI. It follows one simple rule: if something moves, turn on."
+      },
+      {
+        "id": "photo-sorter",
+        "text": "Photo sorter",
+        "suggested": "ai",
+        "feedback": "Most people would say it uses AI. Every tree looks different, so it has to guess which photos show one."
+      },
+      {
+        "id": "smart-fan",
+        "text": "“Smart” fan",
+        "suggested": "hard",
+        "feedback": "Any group can be right here. The fan may follow one rule about heat, or it may learn. The word “smart” does not tell you."
+      }
+    ],
+    "saves": "The group the learner chose for each item, with the lesson's other answers.",
+    "offline": "Everything is in the lesson file. Nothing is sent anywhere."
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "AI makes guesses from examples",
+        "text": "AI stands for artificial intelligence. Artificial means made by people. Today, most AI is a computer program that learns from examples. People give the program a lot of data, such as photos, sentences or voice recordings. The program looks for a pattern in the data. Then it uses that pattern to make a prediction, which is a guess about something new. At Hillview Learning Centre, the translation tool learned from many sentences in two languages. When you type a sentence it has never seen, it predicts a good translation.",
+        "simpler": "AI means artificial intelligence. It is made by people. Most AI is a program that learns from examples. People give it a lot of data, like photos or voices. The program finds a pattern in the data. Then it makes a prediction. A prediction is a guess about something new. At Hillview, the translation tool learned from many sentences. You type a new sentence. It tries to give a good translation."
+      },
+      {
+        "heading": "Not every machine uses AI",
+        "text": "Many machines are not AI. They follow fixed steps that a person wrote, and they do the same thing every time. A calculator always gives 12 for 7 + 5, and it never learned that from examples. The bell at Hillview rings at nine o'clock because someone set a timer. An AI tool is different, because it has to guess. A new sentence or photo is never exactly like its examples. The line between AI and other programs is not always clear. Some older AI followed rules that people wrote. A fan called “smart” might follow one simple rule, or it might learn. Sometimes the honest answer is “hard to say”.",
+        "simpler": "Many machines are not AI. They follow steps that a person wrote. They do the same thing every time. A calculator always says 7 + 5 is 12. It did not learn from examples. The Hillview bell rings at nine. Someone set a timer. AI is different. It has to guess. A new photo is never the same as its examples. Sometimes it is hard to tell. A “smart” fan may follow one rule. Or it may learn. So the answer can be “hard to say”."
+      },
+      {
+        "heading": "AI is a tool, not a person",
+        "text": "AI can seem clever, but it does not think or feel like a person. It does not understand a photo or a sentence the way you do. It finds patterns in data and makes a guess. That guess can be wrong, especially when something is new or very different from its examples. People decide what an AI tool is for, what data it learns from and when to trust its answers. So you can ask three questions about any AI tool. What does it guess? What examples did it learn from? Who checks if it is right?",
+        "simpler": "AI can seem clever. But it does not think or feel like a person. It finds patterns and makes a guess. The guess can be wrong. This happens more when something is new. People decide what AI is for. People choose its data. People decide when to trust it. Ask three questions about AI. What does it guess? What did it learn from? Who checks it?"
+      }
+    ],
+    "glossary": [
+      {
+        "word": "artificial intelligence",
+        "forms": [
+          "AI"
+        ],
+        "definition": "Computer programs that find patterns in examples and use them to guess.",
+        "example": "The Hillview translation tool uses artificial intelligence."
+      },
+      {
+        "word": "program",
+        "forms": [
+          "programs"
+        ],
+        "definition": "A set of steps that tells a computer what to do.",
+        "example": "The calculator program follows the same steps every time."
+      },
+      {
+        "word": "data",
+        "definition": "Facts, words, pictures or sounds that a computer can use.",
+        "example": "The translation tool learned from data: many sentences in two languages."
+      },
+      {
+        "word": "pattern",
+        "forms": [
+          "patterns"
+        ],
+        "definition": "Something that happens again and again in a similar way.",
+        "example": "The video site finds a pattern in what people watch."
+      },
+      {
+        "word": "prediction",
+        "forms": [
+          "predictions"
+        ],
+        "definition": "A guess about something you do not know yet.",
+        "example": "The translation is a prediction. It may not be right."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "question": "Why does the Hillview translation tool count as AI?",
+        "options": [
+          {
+            "text": "It runs on the centre's shared laptop",
+            "correct": false,
+            "feedback": "Not quite. Many programs on a laptop are not AI. Look at how the translation tool learned."
+          },
+          {
+            "text": "It learned patterns from many examples",
+            "correct": true,
+            "feedback": "Yes. It learned from many sentences. Then it uses the pattern to guess a translation for a new one."
+          },
+          {
+            "text": "It gives the same answer every time",
+            "correct": false,
+            "feedback": "Not quite. Doing the same thing every time is what a calculator does. Read the first section again."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "question": "The Hillview bell rings at nine o'clock every day. What is the best way to describe it?",
+        "options": [
+          {
+            "text": "It learned the time from examples",
+            "correct": false,
+            "feedback": "Not quite. Nobody gave the bell examples. Read about the bell in the second section."
+          },
+          {
+            "text": "It guesses when learners will arrive",
+            "correct": false,
+            "feedback": "Not quite. The bell does not guess. Read about the bell in the second section."
+          },
+          {
+            "text": "It follows a fixed step a person set",
+            "correct": true,
+            "feedback": "Yes. Someone set a timer. The bell does the same thing every day, so most people would say it is not AI."
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "Pick a tool from the lesson, or one you have seen. Do you think it uses AI? Why?",
+        "placeholder": "I think ___ uses AI because ... / I think ___ is not AI because ...",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Choose one tool from the Hillview list. Explain whether it uses AI, and give a reason from the lesson.",
+    "sentenceStarters": [
+      "I chose ...",
+      "I think it uses AI because ... / I think it is not AI because ...",
+      "It learned from ... / It follows ...",
+      "One mistake it could make is ...",
+      "A person should check ..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I named one tool.",
+      "I said if it uses AI and gave a reason.",
+      "I named one mistake it could make or one thing a person should check."
+    ],
+    "example": "I chose the voice typing tool. I think it uses AI because it has to guess the words from each new voice. It learned from lots of voice recordings and found patterns in them. One mistake it could make is typing the wrong word when someone speaks fast or quietly. A person should check the typed words before using them. The calculator is different. It follows fixed steps and gives the same answer every time."
+  },
+  "speak": {
+    "partnerTask": "Take turns naming a tool from the Hillview list. Your partner says “AI”, “not AI” or “hard to say”, and gives one reason.",
+    "independentTask": "Say out loud what AI is in two sentences. Then name one thing AI cannot do."
+  },
+  "watch": {
+    "youtubeId": "KHbwOetbmbs",
+    "title": "What is Machine Learning?",
+    "channel": "Code.org",
+    "durationSeconds": 173,
+    "why": "Two people who work with AI explain, in under three minutes, that most AI today learns patterns from examples.",
+    "beforeQuestion": "Where do you think AI is used every day?",
+    "afterQuestion": "How is machine learning different from a program that follows fixed steps?",
+    "summary": "In this short video, two people who work with AI talk about machine learning. AI is already part of everyday life. It helps choose what people see online, for example when they search. Many people imagine AI as a robot that thinks like a person. The speakers say that kind of AI is still many years away. Most AI today is machine learning. In the past, people had to write every step for a computer. With machine learning, people give the computer lots of examples. The computer finds patterns in the examples by itself. This is a bit like how you learn from practice. It is a new way to get computers to do useful jobs.",
+    "keyPoints": [
+      "AI is already part of everyday tools, like internet searches.",
+      "Most AI today is machine learning: it finds patterns in examples.",
+      "People do not write every step. They give the computer examples."
+    ],
+    "contentNote": "The speakers name the companies they work for, and say that AI that thinks like a person is still decades away. That is their opinion, not a settled fact. Preview it first; learners can read the written summary instead.",
+    "replacementSuggestion": null
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "One thing AI can do is ... One thing it cannot do is ...",
+        "required": true
+      },
+      {
+        "text": "A question I have about AI is ...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 1. You explained what AI is and sorted tools into AI and not AI."
+  },
+  "visual": {
+    "type": "diagram",
+    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW01.svg is only a planned path. A simple left-to-right diagram in three steps: on the left, a pile of example cards (small drawings of sentences, photos and a sound wave) labelled “Examples (data)”; in the middle, a magnifying glass over a repeating shape labelled “Find a pattern”; on the right, a speech bubble with a question mark labelled “Make a guess (prediction)”. Below, a separate small row shows a calculator and a bell with an arrow that loops back on itself, labelled “Fixed steps: same answer every time”.",
+    "alt": "A diagram: examples go in, the computer finds a pattern, and then it makes a guess. Below, a calculator and a bell follow the same fixed steps every time.",
+    "src": "visuals/DW01.svg"
+  },
+  "sources": [
+    {
+      "label": "UNESCO: AI competency framework for students (2024)",
+      "url": "https://www.unesco.org/en/articles/ai-competency-framework-students"
+    },
+    {
+      "label": "OECD.AI: What is AI? Can you make a clear distinction between AI and non-AI systems?",
+      "url": "https://oecd.ai/en/wonk/definition"
+    },
+    {
+      "label": "The Royal Society: Machine learning, the power and promise of computers that learn by example (introduction)",
+      "url": "https://royalsociety.org/-/media/policy/projects/machine-learning/publications/machine-learning-introduction.pdf"
+    },
+    {
+      "label": "UNICEF: AI guide for teens (2021)",
+      "url": "https://www.unicef.org/innocenti/media/1381/file/UNICEF-Global-Insight-AI%20guide%20for%20teens-2021.pdf"
+    }
+  ],
+  "sensitiveNotes": [],
+  "educatorNotes": [
+    "There is no single agreed line between AI and other programs (see the OECD source). Accept “hard to say” and reward reasons, not the group a learner picks. The activity has no score.",
+    "Learners may not own a phone. Every tool in the list is one they might see at a centre or a shop, and the think question lets them pick a tool from the lesson.",
+    "The video is fast, native-speaker English and names real companies. The written summary covers the main idea. Someone on the team must still watch it before use (see drafts/digital-world/README.md)."
+  ],
+  "changes": [
+    "New lesson (Digital World draft 1). There is no Base44 original, so oldId is null.",
+    "section is a Digital World section id (how-ai-works), which the Our World checker and schema don't accept yet.",
+    "Adds an activity object (a sort into three groups), documented in docs/content/DIGITAL_WORLD_SPEC.md.",
+    "visual.src points to a picture that doesn't exist yet.",
+    "Needs review by an AI researcher for accuracy, and by Justin for level and tone."
+  ]
+}

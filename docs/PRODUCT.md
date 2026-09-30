@@ -158,6 +158,7 @@ Details and the reasons are in `docs/notes/partner-kit.md`. It gives a new partn
 3. **Translation:** the groundwork is in (language list and picker, per-learner language, first-language glossary lines, right-to-left layouts and font, test languages, the translator's spreadsheet), and Bahasa Indonesia is fully translated and offered, with native-speaker review in progress. Next: that review; then learn the pilot learners' home languages, and translate and review those with native speakers.
 4. **AI features (later):** diagnostic quiz, mastery tracking, reading-level rewrites, first-language glossary help, an educator dashboard, a content review flow. All privacy-first.
 5. **Service wing (later):** partnerships for device and data donations.
+6. **Digital World (later, a second course):** the course spec and the first three draft lessons are in `docs/content/DIGITAL_WORLD_SPEC.md` and `drafts/digital-world/`; they are not in the app, and only Our World is on during the HELP pilot.
 
 ## Open content decisions
 
