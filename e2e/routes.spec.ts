@@ -13,6 +13,7 @@ const pages: Array<[path: string, heading: string, title?: string]> = [
   ['/journal', 'My journal'],
   ['/educators', 'For educators'],
   ['/about', 'About Thinkerwell'],
+  ['/credits', 'Credits'],
   ['/section/history/check', 'Section check: History & Human Stories'],
   ['/lesson/finding-out-about-the-past/read', 'How can we find out about the past?', 'Lesson 1: Read'],
   ['/lesson/towns-near-rivers/read', 'Why do people build towns near rivers?', 'Lesson 10: Read'],

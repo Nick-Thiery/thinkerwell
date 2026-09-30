@@ -1,18 +1,20 @@
 import { Link, useLocation } from 'react-router';
 import { useI18n } from '../i18n';
-import { organisationsPath } from './lessonUrls';
+import { creditsPath, organisationsPath } from './lessonUrls';
 import './SiteFooter.css';
 
 /**
  * The foot of every page: For organisations, for the adults deciding on a
- * pilot (the header already links For educators and About), and the honest
- * line that Thinkerwell is a student-led project, not a registered charity
- * (CLAUDE.md rule 8). Never printed.
+ * pilot (the header already links For educators and About), and Credits.
+ * Never printed.
  */
 export function SiteFooter() {
   const { t } = useI18n();
   const { pathname } = useLocation();
-  const links = [{ href: organisationsPath(), label: t('footer.organisations') }];
+  const links = [
+    { href: organisationsPath(), label: t('footer.organisations') },
+    { href: creditsPath(), label: t('footer.credits') },
+  ];
   return (
     <footer className="tw-site-footer">
       <nav aria-label={t('footer.label')}>
@@ -26,7 +28,6 @@ export function SiteFooter() {
           ))}
         </ul>
       </nav>
-      <p className="small">{t('footer.honesty')}</p>
     </footer>
   );
 }

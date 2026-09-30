@@ -31,7 +31,7 @@ These are the redesigned screens from the Thinkerwell Redesign canvas, as source
 | `QuizResults.dc.html` | 1280 | Section check results: score, what to review, try again |
 | `Journal.dc.html` | 1280 | My journal: saved writing and reflections, print |
 | `Educators.dc.html` | 1280 | For educators: how it works, what you need, lesson plans, contact placeholder |
-| `About.dc.html` | 1280 | About: what it is, promise to learners, UN goals, team |
+| `About.dc.html` | 1280 | About: what it is, promise to learners, UN goals, team (the built page leaves out the promise and links to `/credits` at the end; see `docs/PRODUCT.md`) |
 | `TabletLesson.dc.html` | 820 | Tablet Read stage in simpler English while offline |
 | `PhoneHome.dc.html` | 390 | Phone home |
 | `PhoneCourse.dc.html` | 390 | Phone course map with section chips |

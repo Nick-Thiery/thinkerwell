@@ -11,7 +11,8 @@
  */
 export function lazyChunkFor(pathname: string): 'lessonPages' | 'teacherPages' | 'morePages' | null {
   const path = pathname.toLowerCase().replace(/\/+$/, '');
-  if (/^\/lesson\/[^/]+\/print$/.test(path) || /^\/(journal|educators)(\/|$)/.test(path)) return 'teacherPages';
+  if (/^\/lesson\/[^/]+\/print$/.test(path) || /^\/(journal|educators)(\/|$)/.test(path) || /^\/(organisations|credits)$/.test(path))
+    return 'teacherPages';
   if (/^\/lesson\/[^/]+(\/[^/]+)?$/.test(path) || /^\/section\/[^/]+\/check$/.test(path)) return 'lessonPages';
   if (/^\/(about|settings)$/.test(path) || /^\/certificate\/(course|section\/[^/]+)$/.test(path)) return 'morePages';
   return null;

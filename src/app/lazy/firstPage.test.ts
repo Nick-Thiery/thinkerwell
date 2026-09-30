@@ -41,6 +41,8 @@ describe('lazyChunkFor', () => {
     '/educators/setup',
     '/educators/class',
     '/educators/class/certificates',
+    '/organisations',
+    '/credits',
     '/about',
     '/settings',
     '/certificate/course',

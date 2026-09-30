@@ -1,7 +1,7 @@
 /*
- * About (docs/screens/About.dc.html): a hero with the mascot, then four
- * stacked cards -- what Thinkerwell is, the promise to learners, the UN
- * goals, and the team.
+ * About (docs/screens/About.dc.html): a hero with the mascot, then
+ * stacked cards -- what Thinkerwell is, the UN goals, the team, and a link
+ * to the credits.
  */
 
 .tw-about-page {
@@ -50,22 +50,6 @@
 .tw-about-what {
   background: var(--paper);
   border: 1px solid var(--line);
-}
-
-.tw-about-honesty {
-  color: var(--ink-muted);
-}
-
-.tw-about-promise {
-  background: var(--lavender);
-}
-
-.tw-about-promise-item {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-3);
-  font-size: 18px;
-  line-height: 27px;
 }
 
 .tw-about-goals {
@@ -165,20 +149,10 @@
   border: 1px solid var(--line);
 }
 
-.tw-about-credits h3 {
-  margin: var(--space-3) 0 0;
-}
-
-.tw-about-credits ul {
-  margin: 0;
-  padding-inline-start: var(--space-6);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-}
-
-.tw-about-credits a {
+.tw-about-credits-link {
   display: inline-flex;
   align-items: center;
+  gap: var(--space-2);
   min-block-size: 44px;
+  font-weight: 700;
 }

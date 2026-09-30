@@ -1,0 +1,124 @@
+/* Credits (/credits): a title, a short list of what's on the page, then one
+   paper card per part, like the About page's cards. */
+
+.tw-credits-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-inline-size: 880px;
+}
+
+.tw-credits-hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tw-credits-hero .h1,
+.tw-credits-hero p {
+  margin: 0;
+}
+
+.tw-credits-contents h2 {
+  margin: 0 0 var(--space-1);
+}
+
+.tw-credits-contents ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tw-credits-contents a {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: var(--target-min);
+  min-inline-size: var(--target-min);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.tw-credits-card {
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  scroll-margin-block-start: var(--space-6);
+}
+
+.tw-credits-card h2,
+.tw-credits-card h3,
+.tw-credits-card p {
+  margin: 0;
+}
+
+.tw-credits-card h3 {
+  margin-block-start: var(--space-2);
+}
+
+.tw-credits-card ul {
+  margin: 0;
+  padding-inline-start: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.tw-credits-card li {
+  overflow-wrap: anywhere;
+}
+
+/* Every link here is at least 44px tall (CLAUDE.md rule 5), even the ones
+   in a list, which the "inline in a sentence" exception doesn't cover. */
+.tw-credits-card a {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: var(--target-min);
+  min-inline-size: var(--target-min);
+}
+
+.tw-credits-lesson {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* One row per lesson, divided by a line, so each video stays with its lesson. */
+.tw-credits-card .tw-credits-videos {
+  list-style: none;
+  padding: 0;
+  gap: 0;
+}
+
+.tw-credits-videos li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-block: var(--space-3);
+  border-block-end: 1px solid var(--line);
+}
+
+.tw-credits-videos li:last-child {
+  border-block-end: 0;
+  padding-block-end: 0;
+}
+
+.tw-credits-video-lesson {
+  font-weight: 700;
+}
+
+.tw-credits-muted {
+  color: var(--ink-muted);
+}
+
+@media (max-width: 600px) {
+  .tw-credits-card {
+    padding: var(--space-5);
+  }
+}

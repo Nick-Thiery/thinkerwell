@@ -1,7 +1,13 @@
 import { render, screen } from '@testing-library/react';
+import { createMemoryRouter, RouterProvider } from 'react-router';
 import { describe, expect, it } from 'vitest';
-import { getLessons } from '../content';
-import { AboutPage } from './AboutPage';
+import { AboutPage as AboutPageOnly } from './AboutPage';
+
+/** About has a link (to Credits), so it needs a router. */
+function AboutPage() {
+  const router = createMemoryRouter([{ path: '/about', element: <AboutPageOnly /> }], { initialEntries: ['/about'] });
+  return <RouterProvider router={router} />;
+}
 
 describe('AboutPage', () => {
   it('names Justin Park as founder and director, with his photo', () => {
@@ -18,10 +24,9 @@ describe('AboutPage', () => {
     expect(screen.getByRole('img', { name: 'Nick Thiery' })).toHaveAttribute('src', '/images/nick-thiery.jpg');
   });
 
-  it('is honest that Thinkerwell is not a registered charity', () => {
+  it('never claims Thinkerwell is a registered charity or nonprofit', () => {
     render(<AboutPage />);
-    expect(screen.getByText(/not a registered charity/)).toBeInTheDocument();
-    expect(screen.getByText(/student-led project/)).toBeInTheDocument();
+    expect(screen.queryByText(/registered charity|nonprofit/i)).not.toBeInTheDocument();
   });
 
   it('shows all four UN goals it works towards', () => {
@@ -32,16 +37,11 @@ describe('AboutPage', () => {
     expect(screen.getByText('Goal 17: Partnerships for the Goals')).toBeInTheDocument();
   });
 
-  it('credits the fonts, the icons, every video channel and the UN goal icons', () => {
+  it('links to the credits instead of listing them', () => {
     render(<AboutPage />);
-    expect(screen.getByRole('heading', { level: 2, name: 'Credits' })).toBeInTheDocument();
-    for (const font of ['Funnel Display', 'Atkinson Hyperlegible Next', 'Eczar']) expect(screen.getByText(new RegExp(`^${font},`))).toBeInTheDocument();
-    expect(screen.getByText(/Lucide/)).toBeInTheDocument();
-    for (const channel of new Set(getLessons().map((lesson) => lesson.watch.channel))) {
-      expect(screen.getByText(channel, { selector: 'li' })).toHaveAttribute('lang', 'en');
-    }
-    expect(screen.getByText(/Thinkerwell is not endorsed by the United Nations/)).toBeInTheDocument();
-    expect(screen.getByText(/has not been approved by the United Nations/)).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /Sustainable Development Goals website/ })).toHaveAttribute('href', 'https://www.un.org/sustainabledevelopment');
+    expect(screen.getByRole('heading', { level: 2, name: 'Credits and sources' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'See the credits' })).toHaveAttribute('href', '/credits');
+    expect(screen.queryByText(/Funnel Display/)).not.toBeInTheDocument();
+    expect(screen.queryByText('Our promise to learners')).not.toBeInTheDocument();
   });
 });
