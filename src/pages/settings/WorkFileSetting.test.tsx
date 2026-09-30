@@ -58,8 +58,18 @@ const card = () => screen.getByRole('region', { name: 'Move work to another devi
 const fileInput = () => card().querySelector<HTMLInputElement>('input[type="file"]')!;
 const loadButton = () => within(card()).getByRole('button', { name: 'Load my work' });
 
+async function nextMillisecond(): Promise<void> {
+  const start = Date.now();
+  while (Date.now() === start) await new Promise((resolve) => setTimeout(resolve, 1));
+}
+
 /** A learner on the other device, with work in some lessons and section checks. */
 async function learnerWithWork(store: ThinkerwellStore, name: string, lessons: string[], checks = 0): Promise<Learner> {
+  // Learners are listed oldest first. Two added in the same millisecond have
+  // the same createdAt and come out in random order (by their random ids),
+  // which made "Amina, Yusuf" flaky on fast machines. Wait for the clock to
+  // move on, so each learner here is newer than the one before.
+  await nextMillisecond();
   const learner = await store.addLearner({ name, colour: 'civics' });
   for (const lessonId of lessons) {
     await store.updateProgress(learner.id, lessonId, (p) => ({
