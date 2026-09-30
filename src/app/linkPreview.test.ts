@@ -35,6 +35,7 @@ describe('link previews (index.html)', () => {
     expect(meta('name', 'twitter:card')).toBe('summary_large_image');
     expect(meta('property', 'og:type')).toBe('website');
     // The page and the picture are on the same site.
+    expect(meta('property', 'og:url')).toBe('https://thinkerwell.app/');
     const site = new URL(meta('property', 'og:url')!).origin;
     expect(new URL(meta('property', 'og:image')!).origin).toBe(site);
   });
