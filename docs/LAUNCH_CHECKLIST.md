@@ -115,7 +115,7 @@ The biggest remaining cost is the JavaScript that must arrive before the page ca
 4. In the project's **Settings → Build and Deployment**, set **Node.js Version** to **22.x**, to match `package.json` (Vercel follows `engines` either way).
 5. In **Settings → Git**, set the **Production Branch** to `main`.
 6. In **Settings → Deployment Protection**, leave the default: preview deployments need a Vercel login, and the production address is public. Give HELP only the production address.
-7. Once the domain is bought (probably thinkerwell.app), add it under **Settings → Domains** and follow the DNS steps shown there.
+7. The domain, thinkerwell.app, is under **Settings → Domains** (bought in September 2026). Share only that address.
 
 ### After the first deploy
 
@@ -218,5 +218,5 @@ Saving work to a file and loading one (Settings, "Move work to another device") 
   - ~~Nick's photo on the About page~~ Done: `public/images/nick-thiery.jpg`, made from `docs/design-system/assets/nick-thiery.jpg`.
 - [ ] **Decide the learner avatar colours** (open in docs/PRODUCT.md).
 - [ ] **Check which teaching notes are marked as sensitive topics** (`sensitiveNotes` in each lesson file; docs/notes/teacher-tools.md).
-- [ ] **Buy the domain**, add it in Vercel, and share only that address with HELP. Then change `https://thinkerwell.vercel.app` in the link-preview tags in `index.html` (`og:url`, `og:image`, `twitter:image`) to the new address.
+- [x] **Buy the domain**: thinkerwell.app, added in Vercel. The link-preview tags in `index.html` (`og:url`, `og:image`, `twitter:image`) use it. Share only that address with HELP.
 - [ ] **Check a link preview** on the live site: paste the address into WhatsApp (and, if you like, Facebook's Sharing Debugger or opengraph.xyz). It should show "Thinkerwell: Exploring Our World", the line under it and the lemon card with the mascot (`public/social-card.png`).

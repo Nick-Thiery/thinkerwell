@@ -10,7 +10,7 @@ A free social-studies course, "Exploring Our World", for refugee, displaced and 
 - Every lesson: warm-up, evidence, Read (standard or simpler English), quick check, Write, Speak, Watch (optional), Reflect.
 - A section check after each section (9–12 questions).
 - Team: Justin Park (founder and director, content), Nick (CTO: builds the site and leads the AI work).
-- Not a registered entity yet. Hosting on Vercel; domain to be bought when the site goes live (thinkerwell.app is the likely choice).
+- Not a registered entity yet. Hosted on Vercel at https://thinkerwell.app (bought in September 2026).
 
 ## Who it's for
 
