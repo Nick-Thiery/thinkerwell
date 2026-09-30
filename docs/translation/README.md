@@ -26,18 +26,18 @@ A glossary entry's `forms` list is replaced whole: list the word forms that appe
 - **The build** (`vite.config.ts`, `checkContent`) stops if a translation has the wrong shape, leaves a learner-facing string untranslated, translates something that must stay, breaks the schemas or cross-file checks once laid over the English, or lacks a picture (`checkTranslation` in `src/content/load.ts`).
 - **`npm test`**: every Indonesian lesson keeps the English ids and correct answers, marks every key word in both the standard and the simpler text of one reading part (with the app's own matcher), keeps the simpler text clearly shorter, and starts quick-check feedback with "Benar." or "Belum tepat." (which the player drops, as it drops "Yes." and "Not quite."); section checks the same; the completion messages match the complete screen's heading.
 - **`npm run check:i18n`**: `id.json` has every message of `en.json` with the same placeholders.
-- **`npm run check:content`** runs `scripts/check_translation.py id` after the English checks: house style ("kamu", never "Anda"; no "silakan" or "tolong"; "Aku ..." self-checks; "Kamu sudah menyelesaikan Pelajaran N."), numbers and names kept, uncommon words in the simpler text, the same short string translated two ways, the pictures, and **strings whose English changed after they were translated** (each note keeps the English it was translated from as `source`).
+- **`npm run check:content`** runs `scripts/check_translation.py id` after the English checks: house style in the lessons and checks ("kamu", never "Anda"; no "silakan" or "tolong"; "Aku ..." self-checks; "Kamu sudah menyelesaikan Pelajaran N."), numbers and names kept, uncommon words in the simpler text, the same short string translated two ways, the pictures, and **strings whose English changed after they were translated** (each note keeps the English it was translated from as `source`).
 - **`e2e/indonesian.spec.ts`**: the one language setting (the header's switch on the first page and every other, Settings, the new-learner form), back and forth mid-lesson with no reload, two learners keeping their own languages, a reload keeping it, Listen and Say it following it, the video note; then every kind of page, its popovers and every step of all 24 lessons at 390, 820 and 1280px, failing on sideways scroll, text cut off and **any English left** (`e2e/englishText.ts`).
 - **`npm run test:review`** tests the spreadsheet scripts on a copy of the content.
 
 ## How the Indonesian was made
 
 1. The terms that repeat across the course were chosen first (`id/KEY_TERMS.md`), so every translator used the same words.
-2. AI translators worked from a written brief: everyday Indonesian for 10 to 17-year-olds, "kamu", the simpler text clearly simpler, quick checks still clearly right, names kept, Lesson 4's faiths named in the standard Indonesian way and treated with care. Each flagged what it was unsure about.
+2. AI translators worked from a written brief: everyday Indonesian for 10 to 17-year-olds, "kamu" (pages for adults were later changed to "Anda"), the simpler text clearly simpler, quick checks still clearly right, names kept, Lesson 4's faiths named in the standard Indonesian way and treated with care. Each flagged what it was unsure about.
 3. A second AI reviewer back-translated every string into English **before** looking at the English, then compared, fixed clear mistakes and flagged doubts.
 4. Nick's session fixed the clearest meaning shifts the reviewers found (for example, Lesson 4's wording, which could read as ranking science above faith) and made repeated strings consistent.
 
-About 330 of 3,760 strings are flagged for the native reviewers.
+About 430 of 4,050 strings are flagged for the native reviewers (the count grows as new pages are added).
 
 ## Reviewing (for Justin and the reviewers)
 
