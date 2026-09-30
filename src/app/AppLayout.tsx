@@ -12,7 +12,7 @@ import { LearnerSwitcher } from './LearnerSwitcher';
 import { isNavLinkActive } from './internal/navActive';
 import { MobileNav } from './MobileNav';
 import { RouterDsLink } from './RouterDsLink';
-import { useHeaderFits } from './useHeaderFits';
+import { useHeaderLevel } from './useHeaderFits';
 import { useIsCompactHeader } from './useIsCompactHeader';
 
 const MASCOT_SRC = '/images/thinkerwell-mascot-transparent.png';
@@ -76,10 +76,13 @@ function Shell({ devRtl, devLocale }: { devRtl: boolean; devLocale: string | nul
   const session = useLearnerSession();
   const narrow = useIsCompactHeader();
   const headerAreaRef = useRef<HTMLDivElement>(null);
-  // Below 1100px always the compact header; above, whenever the full one
-  // doesn't fit (longer words in Indonesian, a long name).
-  const fits = useHeaderFits(headerAreaRef, `${locale}|${session.activeLearner?.name ?? ''}`, !narrow);
-  const compact = narrow || !fits;
+  // Below 1100px always the compact header. Above, the full one if it fits,
+  // else a tighter one that keeps every link (the language as its code, the
+  // learner as their avatar), and compact only if even that doesn't fit
+  // (longer words in Indonesian, a long name).
+  const level = useHeaderLevel(headerAreaRef, `${locale}|${session.activeLearner?.name ?? ''}`, !narrow);
+  const compact = narrow || level === 'compact';
+  const tight = !compact && level === 'tight';
   const mainRef = useRef<HTMLElement>(null);
   const lastPathname = useRef(pathname);
   // Set when a link or back navigation is heading to a page without an h1
@@ -198,10 +201,11 @@ function Shell({ devRtl, devLocale }: { devRtl: boolean; devLocale: string | nul
       <div className="tw-header-area" ref={headerAreaRef}>
         <SiteHeader
           logoSrc={MASCOT_SRC}
-          language={<LanguageSwitch compact={compact} />}
+          language={<LanguageSwitch compact={compact || tight} />}
           links={headerLinks}
           learner={learnerForHeader}
           compact={compact}
+          tight={tight}
           learnerMenuOpen={switcherOpen}
           onLearnerClick={
             learnerForHeader

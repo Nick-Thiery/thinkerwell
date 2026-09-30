@@ -151,6 +151,25 @@
   box-shadow: inset 0 0 0 2px var(--ink-muted);
 }
 
+/* Tight: the full layout squeezed before falling back to compact (longer
+   words in Indonesian, a long name). Every link stays; the gaps and the
+   links' padding close up, and the learner chip shows only the avatar. */
+.tw-header-tight .tw-header-inner {
+  gap: var(--space-4);
+}
+
+.tw-header-tight .tw-header-right {
+  gap: var(--space-2);
+}
+
+.tw-header-tight .tw-nav {
+  gap: 0;
+}
+
+.tw-header-tight .tw-nav a {
+  padding-inline: 10px;
+}
+
 /* .tw-menu-btn lives in ds.css (shared, globally loaded): DefinitionCard's
    close button uses the same class without importing this file. */
 
