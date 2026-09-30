@@ -415,3 +415,11 @@
     overflow-wrap: anywhere;
   }
 }
+
+/* On paper a link is only its words: print each source's web address after it. */
+@media print {
+  .tw-guide-sources a::after {
+    content: ' (' attr(href) ')';
+    overflow-wrap: anywhere;
+  }
+}

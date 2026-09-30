@@ -40,6 +40,7 @@ interface LessonText {
   title: string;
   read: { sections: unknown[] };
   watch: { summary: string };
+  sources: unknown[];
 }
 const names = readdirSync(path.join(root, 'content', 'lessons')).filter((name) => /^L\d\d\.json$/.test(name)).sort();
 const lessons = names.map((name) => {
@@ -435,7 +436,7 @@ test.describe('with Indonesian on, every page is Indonesian and fits', () => {
         if (step !== 'complete') await expect(page.locator('h1')).toHaveText(lesson.title);
         await expectAllIndonesian(page, step);
       }
-      // What opens on Read's quick check (an answer's feedback), Write (starters, planning, the example) and Watch (the written version).
+      // What opens on Read's quick check (an answer's feedback), Write (starters, planning, the example), Watch (the written version) and the sources.
       await page.goto(`/lesson/${lesson.id}/read?part=check`);
       await page.getByRole('radio').first().click();
       await expectAllIndonesian(page, 'quick check answered');
@@ -453,6 +454,10 @@ test.describe('with Indonesian on, every page is Indonesian and fits', () => {
       await page.goto(`/lesson/${lesson.id}/watch`);
       await page.getByRole('button', { name: msg(id, 'lessonPlayer.watch.readInstead') }).click();
       await expectAllIndonesian(page, 'watch: written version');
+      // The lesson's sources, at the bottom of every step.
+      await page.locator('.tw-lesson-sources summary').click();
+      await expect(page.locator('.tw-lesson-sources a')).toHaveCount(lesson.sources.length);
+      await expectAllIndonesian(page, 'sources');
     });
   }
 });

@@ -2,7 +2,7 @@
 
 Indonesian is the one language, besides English, in which Thinkerwell is **fully** translated: the interface, and also the lessons, the section checks, the course text and the words in the lesson pictures. (Every other language translates the interface only; the lessons stay English. See `docs/notes/languages.md`.) The videos stay English, and say so.
 
-**The Indonesian was drafted by AI and cross-checked by AI. It must not reach learners until native speakers have reviewed it** (this pull request waits for that).
+**The Indonesian was drafted by AI and cross-checked by AI. It is intentionally offered to everyone while native speakers review it**, so the Jakarta pilot can use it now; their changes are applied as they come in (see Reviewing below). It is the one exception to the rule that machine translation never reaches learners (`CLAUDE.md`, rule 7).
 
 ## Where things live
 

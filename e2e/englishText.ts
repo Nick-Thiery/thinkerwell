@@ -12,9 +12,10 @@ import type { Page } from '@playwright/test';
 // or (2) at least two common English words that Indonesian never uses
 // ("the", "your", "and" ...), or one English word that is a whole button
 // or label on its own ("Continue"), or (3) an English month name (a date not
-// written in Indonesian). Allowed: the name Thinkerwell, learners' names, and
-// the English videos' titles and channels (the videos stay English), passed
-// in as `allowed`.
+// written in Indonesian). Allowed: the name Thinkerwell, learners' names
+// (passed in as `allowed`), the English videos' titles and channels (the
+// videos stay English), and the names of institutions and works in the
+// sources' titles, which the translation keeps.
 
 const root = path.join(import.meta.dirname, '..');
 const readJson = <T>(...parts: string[]) => JSON.parse(readFileSync(path.join(root, ...parts), 'utf8')) as T;
@@ -39,6 +40,27 @@ export const VIDEO_TEXT = readdirSync(path.join(root, 'content', 'lessons'))
   .flatMap((name) => {
     const { watch } = readJson<{ watch: { title: string; channel: string } }>('content', 'lessons', name);
     return [watch.title, watch.channel];
+  });
+
+/**
+ * The names in the sources' titles that the translation keeps in English:
+ * each piece of an English title (split at ":", "(", ")" and ",") of two
+ * words or more that its Indonesian title repeats word for word, such as
+ * "The Metropolitan Museum of Art" or "Hunting for History".
+ */
+export const SOURCE_NAMES = readdirSync(path.join(root, 'content', 'lessons'))
+  .filter((name) => name.endsWith('.json'))
+  .flatMap((name) => {
+    type Sources = { sources: Array<{ label: string }> };
+    const english = readJson<Sources>('content', 'lessons', name).sources;
+    const indonesian = readJson<Partial<Sources>>('content', 'id', 'lessons', name).sources ?? [];
+    return english.flatMap((source, index) => {
+      const translated = indonesian[index]?.label ?? '';
+      return source.label
+        .split(/[:(),]/)
+        .map((piece) => piece.trim())
+        .filter((piece) => piece.includes(' ') && translated.includes(piece));
+    });
   });
 
 export interface EnglishFound {
@@ -108,6 +130,6 @@ export async function englishOnPage(page: Page, allowed: readonly string[]): Pro
       }
       return found;
     },
-    { patterns: ENGLISH_MESSAGE_PATTERNS, allowed: [...allowed, ...VIDEO_TEXT] },
+    { patterns: ENGLISH_MESSAGE_PATTERNS, allowed: [...allowed, ...VIDEO_TEXT, ...SOURCE_NAMES] },
   );
 }

@@ -12,7 +12,8 @@ import { clearGuestMemory } from '../../lesson';
  * app routes and lesson player (phase 4): each Read part, the quick check,
  * Write, Speak, Watch, Reflect and the completion screen, with nobody chosen
  * (so nothing is saved). Each step shows one h1, the right title, its own
- * lesson content, one ink primary button, and no console errors or warnings.
+ * lesson content and sources, one ink primary button, and no console errors
+ * or warnings.
  *
  * Layout (sideways scrolling, sizes) needs a real browser: e2e/ covers it
  * for Lesson 10 and the routes spec.
@@ -95,6 +96,16 @@ function steps(lesson: Lesson): Array<{ path: string; check: () => void }> {
   ];
 }
 
+/** Every step ends with the lesson's sources, each linking to its page in a new tab. */
+function expectSources(lesson: Lesson): void {
+  const details = document.querySelector('details.tw-lesson-sources');
+  expect(details).not.toBeNull();
+  expect(within(details as HTMLElement).getByText(t('lessonPlayer.sources.title'))).toBeInTheDocument();
+  const links = within(details as HTMLElement).getAllByRole('link', { hidden: true });
+  expect(links.map((link) => link.getAttribute('href'))).toEqual(lesson.sources.map((source) => source.url));
+  for (const link of links) expect(link).toHaveAttribute('target', '_blank');
+}
+
 function escapeRegExp(text: string): string {
   return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
@@ -140,6 +151,7 @@ describe('every lesson, every step', () => {
           expect(h1()).toHaveTextContent(lesson.title);
         }
         step.check();
+        expectSources(lesson);
         const primaries = primaryButtons();
         if (stage === 'complete') expect(primaries.length, step.path).toBeLessThanOrEqual(1);
         else expect(primaries, step.path).toHaveLength(1);

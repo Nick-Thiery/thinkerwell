@@ -3,6 +3,7 @@ import { createMemoryRouter, RouterProvider } from 'react-router';
 import { describe, expect, it, vi } from 'vitest';
 import { routes } from '../../app/routes';
 import { getLesson, getLessons, getLessonSection, getVisualUrl, type Lesson } from '../../content';
+import { t } from '../../i18n';
 import { formatDuration } from '../../lesson/format';
 import { planTotal, SESSION_PLAN } from './sessionPlan';
 import { TeacherGuidePage, youtubeWatchUrl } from './TeacherGuidePage';
@@ -146,6 +147,7 @@ describe('TeacherGuidePage', () => {
 
       // Sources.
       const sources = part('Sources');
+      expect(within(sources).getByText(t('pages.teacherGuide.sourcesIntro'))).toBeInTheDocument();
       for (const source of lesson.sources) {
         expect(within(sources).getByRole('link', { name: new RegExp(`^${source.label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`) })).toHaveAttribute(
           'href',
