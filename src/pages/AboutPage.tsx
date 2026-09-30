@@ -1,13 +1,11 @@
+import { Link } from 'react-router';
+import { creditsPath } from '../app/lessonUrls';
 import { usePageTitle } from '../app/usePageTitle';
 import { Icon, Mascot } from '../components/ds';
-import { getVideoChannels } from '../content/catalog';
 import { useI18n } from '../i18n';
 import './AboutPage.css';
 
 const MASCOT_SRC = '/images/thinkerwell-mascot-transparent.png';
-const UN_SDG_URL = 'https://www.un.org/sustainabledevelopment';
-
-const FONT_KEYS = ['creditsFontFunnel', 'creditsFontAtkinson', 'creditsFontEczar', 'creditsFontVazirmatn'] as const;
 
 interface Goal {
   src: string;
@@ -24,18 +22,16 @@ const GOALS: Goal[] = [
 ];
 
 /**
- * About (docs/screens/About.dc.html): what Thinkerwell is, the promise to
- * learners, the UN goals it works towards, and who makes it. Honest about
- * scope (CLAUDE.md rule 8): a student-led project getting ready for its
- * first pilot, never claimed as a registered charity.
+ * About (docs/screens/About.dc.html): what Thinkerwell is, the UN goals it
+ * works towards, and who makes it. It never claims Thinkerwell is a
+ * registered charity or nonprofit (CLAUDE.md rule 8).
  *
  * Both team members are shown with their photos (public/images/, made
  * from the originals in docs/design-system/assets/ by
  * scripts/optimise_images.py).
  *
- * Credits close the page: the fonts, the icons, the channels whose videos
- * the lessons embed (from the lessons, so a new video credits itself) and
- * the UN goal icons with the UN's own disclaimer.
+ * The page ends with a link to Credits (/credits), which lists the lessons'
+ * sources, the videos, the fonts, the pictures and the software in full.
  */
 export function AboutPage() {
   const { t } = useI18n();
@@ -58,25 +54,6 @@ export function AboutPage() {
           {t('pages.about.whatTitle')}
         </h2>
         <p className="body-lg">{t('pages.about.whatBody')}</p>
-        <p className="small tw-about-honesty">{t('pages.about.whatHonesty')}</p>
-      </section>
-
-      <section aria-labelledby="about-promise" className="tw-about-card tw-about-promise">
-        <h2 id="about-promise" className="h2">
-          {t('pages.about.promiseTitle')}
-        </h2>
-        <span className="tw-about-promise-item">
-          <Icon name="Check" size={24} />
-          {t('pages.about.promise1')}
-        </span>
-        <span className="tw-about-promise-item">
-          <Icon name="Check" size={24} />
-          {t('pages.about.promise2')}
-        </span>
-        <span className="tw-about-promise-item">
-          <Icon name="Check" size={24} />
-          {t('pages.about.promise3')}
-        </span>
       </section>
 
       <section aria-labelledby="about-goals" className="tw-about-card tw-about-goals">
@@ -132,33 +109,14 @@ export function AboutPage() {
 
       <section aria-labelledby="about-credits" className="tw-about-card tw-about-credits">
         <h2 id="about-credits" className="h2">
-          {t('pages.about.creditsTitle')}
+          {t('pages.about.creditsLinkTitle')}
         </h2>
-        <h3 className="h3">{t('pages.about.creditsFontsTitle')}</h3>
-        <p>{t('pages.about.creditsFontsBody')}</p>
-        <ul>
-          {FONT_KEYS.map((key) => (
-            <li key={key}>{t(`pages.about.${key}`)}</li>
-          ))}
-        </ul>
-        <p>{t('pages.about.creditsIcons')}</p>
-        <h3 className="h3">{t('pages.about.creditsVideosTitle')}</h3>
-        <p>{t('pages.about.creditsVideosBody')}</p>
-        <ul>
-          {getVideoChannels().map((channel) => (
-            <li key={channel} lang="en">
-              {channel}
-            </li>
-          ))}
-        </ul>
-        <h3 className="h3">{t('pages.about.creditsGoalsTitle')}</h3>
-        <p>{t('pages.about.creditsGoalsBody')}</p>
-        <p className="small tw-about-honesty">{t('pages.about.creditsGoalsStatement')}</p>
+        <p>{t('pages.about.creditsLinkBody')}</p>
         <p>
-          <a href={UN_SDG_URL} target="_blank" rel="noreferrer">
-            {t('pages.about.creditsGoalsLink')}
-            <span className="tw-visually-hidden"> {t('pages.teacherTools.newTab')}</span>
-          </a>
+          <Link to={creditsPath()} className="tw-about-credits-link">
+            {t('pages.about.creditsLinkCta')}
+            <Icon name="ArrowRight" size={20} />
+          </Link>
         </p>
       </section>
     </div>

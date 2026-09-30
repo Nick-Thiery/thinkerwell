@@ -146,6 +146,11 @@ Details and the reasons are in `docs/notes/partner-kit.md`. It gives a new partn
 - **A consent form** for parents and guardians, one A4 page in black and white, with the organisation's name typed in or written by hand. It promises what the measurement build must keep to: anonymous data only (time spent, lessons finished, quiz scores, linked to a code), only the team sees it, it is deleted within 6 months of the pilot ending, YouTube gets some data when a video plays, and taking part is voluntary. A staff note, shown on screen only, says it is a template, not legal advice.
 - **Code cards**: a prefix and a number make cut-out cards (HLP-01 …) and a list for names, which the organisation keeps. Learners type their code as their name.
 
+### About and Credits
+
+- **About** (`/about`) says what Thinkerwell is, the UN goals it works towards and who makes it, and ends with a link to Credits. The "Our promise to learners" box and the line about not being a registered charity were taken off About, and that line off the footer, in September 2026 (Nick's call). Nothing anywhere may claim Thinkerwell is a registered charity or nonprofit; For organisations and the consent form still say plainly that it isn't one.
+- **Credits** (`/credits`, linked from About and the footer) lists every lesson's sources, every lesson's video with its channel (links only, nothing embedded), the pictures and the UN goal icons with the UN's statement, the fonts and their licence, the open-source software in the site, and how the Indonesian was made. The sources and videos come from the lesson files, so a new lesson credits itself.
+
 ## Roadmap
 
 1. **Pilot build (now):** everything in `docs/BUILD_PLAN.md` phases 1–8.

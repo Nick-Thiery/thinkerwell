@@ -62,6 +62,11 @@ export function educatorsPath(sectionId?: string): string {
   return sectionId ? `/educators?section=${encodeURIComponent(sectionId)}` : '/educators';
 }
 
+/** Everyone whose work Thinkerwell is built on: /credits. */
+export function creditsPath(): string {
+  return '/credits';
+}
+
 /** What a pilot involves, for organisations thinking of one: /organisations. */
 export function organisationsPath(): string {
   return '/organisations';

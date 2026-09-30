@@ -112,6 +112,8 @@ export const routes: RouteObject[] = [
       { path: 'educators/class', ...page(teacherPages, (m) => m.ClassPage) },
       { path: 'educators/class/certificates', ...page(teacherPages, (m) => m.AllCertificatesPage) },
       { path: 'about', ...page(morePages, (m) => m.AboutPage) },
+      // Credits read the lessons (sources, videos), so they load with the teacher guides.
+      { path: 'credits', ...page(teacherPages, (m) => m.CreditsPage) },
       { path: 'settings', ...page(morePages, (m) => m.SettingsPage) },
       // Old Base44 paths.
       { path: 'onboarding', element: <Navigate replace to="/" /> },

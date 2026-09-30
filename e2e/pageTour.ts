@@ -312,6 +312,14 @@ export const pageTour: TourStop[] = [
     go: (page, { ui }) => openPath(page, '/about', ui('pages.about.title')),
   },
   {
+    // Credits, from the link at the end of About: every lesson's sources and video, and the rest.
+    name: 'credits',
+    go: async (page, { ui }) => {
+      await page.getByRole('link', { name: ui('pages.about.creditsLinkCta') }).click();
+      await expect(page.locator('h1')).toHaveText(ui('pages.credits.title'));
+    },
+  },
+  {
     // The partner kit, from the footer and the Educators page's "Starting a pilot".
     name: 'for organisations',
     go: async (page, { ui }) => {

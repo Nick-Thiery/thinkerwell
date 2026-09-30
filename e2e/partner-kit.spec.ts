@@ -53,7 +53,7 @@ async function printed(page: Page): Promise<{ pages: string[]; colours: string[]
 test('an organisation finds the kit from the first page, in the footer and on the Educators page', async ({ page }) => {
   await page.goto('/');
   const footer = page.locator('footer.tw-site-footer');
-  await expect(footer).toContainText('Thinkerwell is a student-led project, not a registered charity.');
+  await expect(footer.getByRole('link', { name: 'Credits' })).toHaveAttribute('href', '/credits');
   await footer.getByRole('link', { name: 'For organisations' }).click();
   await expect(page.locator('h1')).toHaveText('For organisations');
   await expect(page.getByText('Thinkerwell is a student-led project. It is not a registered charity or nonprofit.')).toBeVisible();
