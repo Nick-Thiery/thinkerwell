@@ -34,7 +34,7 @@ HELP for Refugees, Jakarta. Target start: one to two weeks from 26 September 202
 - The old keyword "Learning Guide" is removed; AI features come later.
 - Listen (read aloud), Say it (dictation, on-device only by default) and Record yourself (stays on the device) are in.
 - Offline use, a "Save data" mode and a print view are in.
-- English first. Translation later: probably Dari/Farsi, Somali and Arabic first, once we know the learners' home languages. The groundwork is built (see "Languages" below); nothing is translated yet.
+- English is the default. Bahasa Indonesia is a full second language for the Jakarta pilot, lessons included, waiting for native-speaker review (see "Languages" below). Dari/Farsi, Somali and Arabic may follow, interface only, once we know the learners' home languages.
 - Feedback email on the educators page is a placeholder for now.
 - The About page names Justin (founder and director) and Nick (CTO), each with a photo.
 - British spelling in all copy.
@@ -100,10 +100,12 @@ Details and the reasons are in `docs/notes/certificates.md`.
 Details and the reasons are in `docs/notes/languages.md`; how a helper translates is in `docs/TRANSLATING.md`.
 
 - The lessons stay in English on purpose: the course is also English practice. What gets translated is the interface (buttons, menus, instructions), and, if wanted, one short line in the learner's language under the English meaning of each key word.
-- Dari (`fa-AF`) and Arabic (right to left) and Somali are listed but not offered: a language appears only once a native speaker has translated every interface string and a second one has reviewed it. No machine translation reaches learners. Today English is the only language, and learners see no change.
+- **Exception: Bahasa Indonesia** (decided September 2026, for the Jakarta pilot; Justin to confirm). Learners who choose it get everything in Indonesian: the interface, all 24 lessons (standard and simpler reading, key words, quick checks, writing help, example answers, self-checks), the section checks, the course and section names, certificates and the lesson pictures. The videos stay English; the Watch step says so and offers the written version, which is translated. Only the videos' titles stay English; teachers' notes and sources are translated too. Listen reads Indonesian only with an Indonesian voice on the device, and says so when there is none; Say it listens in Indonesian under the same on-device rules. It was drafted and cross-checked by AI and must be reviewed by native speakers before learners see it (`docs/translation/README.md`). Every device's offline copy grows by about 124 kB for it.
+- Dari (`fa-AF`) and Arabic (right to left) and Somali are listed but not offered: a language appears only once a native speaker has translated every interface string and a second one has reviewed it. No machine translation reaches learners. English and Indonesian are offered.
 - Each learner can have their own language (a shared tablet may have learners with different home languages), chosen when they are added or on their home page. The device has a language too, in Settings, for the home screen, anyone looking around and learners who haven't chosen. Switching learner switches language. These choices show only once a second language is ready.
+- **One language setting, switchable everywhere.** A globe button in the header, on every page including the first one, shows the language in its own name ("English", "Bahasa Indonesia") and changes it at once, no reload. Settings, the new-learner form and the learner home change the same setting. Before anyone is chosen it is saved for the device (the first page uses it); once a learner is chosen, it is theirs, and choosing a learner switches to their language. A reload keeps it.
 - A learner's language goes with their work when it is moved to another device.
-- In another language, lesson text stays marked as English, so screen readers and Listen read it as English. Listen and Say it always work in English.
+- In another language, lesson text stays marked as English, so screen readers and Listen read it as English. Listen and Say it always work in English, except in Indonesian, whose lessons are Indonesian.
 - Dari and Arabic use the Vazirmatn font for their letters, downloaded only when one of them is shown. Somali needs no extra font.
 - Each language downloads only when someone uses it, and is saved for offline use only once it is ready. Nothing extra downloads for English.
 - Open: which calendar Dari dates should use (Afghanistan's solar calendar, which the browser uses by default, or the Western one), and whether the "how I practised" options and the fiction label, which come with the lesson files and so stay English, should be translatable.
@@ -141,7 +143,7 @@ Details and the reasons are in `docs/notes/pilot-day-tools.md`. The founders won
 
 1. **Pilot build (now):** everything in `docs/BUILD_PLAN.md` phases 1–8.
 2. **Measurement:** pre and post checks, pilot codes, consent and an events endpoint, as in `docs/research/MEASUREMENT_PLAN.md`. Indonesia's data protection law needs parental consent for children's data.
-3. **Translation:** the groundwork is in (language list and picker, per-learner language, first-language glossary lines, right-to-left layouts and font, test languages, the translator's spreadsheet). Next: learn the pilot learners' home languages, then translate and review with native speakers.
+3. **Translation:** the groundwork is in (language list and picker, per-learner language, first-language glossary lines, right-to-left layouts and font, test languages, the translator's spreadsheet), and Bahasa Indonesia is fully translated, awaiting native-speaker review. Next: that review; then learn the pilot learners' home languages, and translate and review those with native speakers.
 4. **AI features (later):** diagnostic quiz, mastery tracking, reading-level rewrites, first-language glossary help, an educator dashboard, a content review flow. All privacy-first.
 5. **Service wing (later):** partnerships for device and data donations.
 

@@ -18,8 +18,17 @@ export interface RecognitionLog {
   started: boolean[];
 }
 
+/** Which languages the page asked about and listened for (window.__recognitionLangs). */
+export interface RecognitionLangs {
+  /** The langs of each available() and install() call, in order. */
+  asked: string[][];
+  /** recognition.lang at each start(), in order. */
+  started: string[];
+}
+
 type FakeWindow = Window & {
   __recognition: RecognitionLog;
+  __recognitionLangs: RecognitionLangs;
   /** Sends a final result to the recognition listening now. */
   __hear: (text: string) => void;
 };
@@ -37,13 +46,16 @@ export async function fakeSpeechRecognition(
     type Handler<T> = ((event: T) => void) | null;
     const log: RecognitionLog = { availableCalls: 0, installCalls: 0, constructed: 0, started: [] };
     const made: FakeRecognition[] = [];
+    const langs: RecognitionLangs = { asked: [], started: [] };
 
     class FakeRecognition {
-      static available() {
+      static available(options?: { langs?: string[] }) {
+        langs.asked.push(options?.langs ?? []);
         log.availableCalls += 1;
         return Promise.resolve(answer);
       }
-      static install() {
+      static install(options?: { langs?: string[] }) {
+        langs.asked.push(options?.langs ?? []);
         log.installCalls += 1;
         return Promise.resolve(true);
       }
@@ -69,6 +81,7 @@ export async function fakeSpeechRecognition(
       }
       start() {
         log.started.push(this.local);
+        langs.started.push(this.lang);
         this.running = true;
       }
       stop() {
@@ -89,6 +102,7 @@ export async function fakeSpeechRecognition(
     }
     const w = window as unknown as FakeWindow;
     w.__recognition = log;
+    w.__recognitionLangs = langs;
     w.__hear = (text) => {
       const result = Object.assign([{ transcript: text }], { isFinal: true });
       made.filter((recognition) => recognition.running).at(-1)?.onresult?.({ resultIndex: 0, results: [result] });
@@ -104,4 +118,9 @@ export function recognitionLog(page: Page): Promise<RecognitionLog> {
 /** The fake hears `text` (a final result) in the box listening now. */
 export function hear(page: Page, text: string): Promise<void> {
   return page.evaluate((words) => (window as unknown as FakeWindow).__hear(words), text);
+}
+
+/** The languages the page asked about and listened for, on the page open now. */
+export function recognitionLangs(page: Page): Promise<RecognitionLangs> {
+  return page.evaluate(() => structuredClone((window as unknown as FakeWindow).__recognitionLangs));
 }

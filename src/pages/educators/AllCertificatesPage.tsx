@@ -12,7 +12,7 @@
 import { Link } from 'react-router';
 import { classPath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
-import { getLessons, getSections } from '../../content';
+import { useContent } from '../../content/useContent';
 import { useI18n } from '../../i18n';
 import { Certificate } from '../certificate/Certificate';
 import '../certificate/CertificatePage.css';
@@ -24,6 +24,7 @@ import { useClassWork } from './useClassWork';
 
 export function AllCertificatesPage() {
   const { t, lang } = useI18n();
+  const content = useContent();
   const title = t('pages.allCertificates.title');
   usePageTitle(title);
   const { status, work } = useClassWork();
@@ -31,7 +32,7 @@ export function AllCertificatesPage() {
   // Nothing (not even a heading) until every learner's work is read.
   if (status === 'loading') return null;
 
-  const certificates = earnedCertificates(work, getLessons(), getSections(), lang);
+  const certificates = earnedCertificates(work, content.getLessons(), content.getSections(), lang);
 
   return (
     <div className="tw-print-page tw-cert-page tw-allcert-page">

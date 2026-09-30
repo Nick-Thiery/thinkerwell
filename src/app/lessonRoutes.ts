@@ -1,4 +1,4 @@
-import { getLesson, getLessonByOldId, isLessonStep, type Lesson, type LessonStep } from '../content';
+import { englishContent, isLessonStep, type Content, type Lesson, type LessonStep } from '../content';
 import { lessonPath, lessonPrintPath, teacherGuidePath } from './lessonUrls';
 
 // What the lesson pages' addresses resolve to. These need the lessons
@@ -18,18 +18,22 @@ export type LessonRouteResult =
  * - An unknown lesson or stage is not found.
  * Stage names are matched case-insensitively (old links were typed by hand).
  */
-export function resolveLessonRoute(id: string | undefined, stage: string | undefined): LessonRouteResult {
+export function resolveLessonRoute(
+  id: string | undefined,
+  stage: string | undefined,
+  content: Content = englishContent,
+): LessonRouteResult {
   if (!id) return { kind: 'not-found' };
   const step = stage?.toLowerCase();
   if (step !== undefined && !isLessonStep(step)) return { kind: 'not-found' };
 
-  const lesson = getLesson(id);
+  const lesson = content.getLesson(id);
   if (lesson) {
     if (step === undefined || step !== stage) return { kind: 'redirect', to: lessonPath(lesson.id, step ?? 'read') };
     return { kind: 'show', lesson, step };
   }
 
-  const moved = getLessonByOldId(id) ?? getLessonByOldId(id.toLowerCase()) ?? getLesson(id.toLowerCase());
+  const moved = content.getLessonByOldId(id) ?? content.getLessonByOldId(id.toLowerCase()) ?? content.getLesson(id.toLowerCase());
   if (moved) return { kind: 'redirect', to: lessonPath(moved.id, step ?? 'read') };
 
   return { kind: 'not-found' };
@@ -40,8 +44,8 @@ export function resolveLessonRoute(id: string | undefined, stage: string | undef
  * redirect an old Base44 id (or a different case) to the new one, or not
  * found.
  */
-export function resolveLessonPrintRoute(id: string | undefined): LessonPageRouteResult {
-  return resolveLessonPage(id, lessonPrintPath);
+export function resolveLessonPrintRoute(id: string | undefined, content: Content = englishContent): LessonPageRouteResult {
+  return resolveLessonPage(id, lessonPrintPath, content);
 }
 
 /**
@@ -49,18 +53,22 @@ export function resolveLessonPrintRoute(id: string | undefined): LessonPageRoute
  * the print view: show it, redirect an old Base44 id (or a different case)
  * to the new one, or not found.
  */
-export function resolveTeacherGuideRoute(id: string | undefined): LessonPageRouteResult {
-  return resolveLessonPage(id, teacherGuidePath);
+export function resolveTeacherGuideRoute(id: string | undefined, content: Content = englishContent): LessonPageRouteResult {
+  return resolveLessonPage(id, teacherGuidePath, content);
 }
 
 export type LessonPageRouteResult = { kind: 'show'; lesson: Lesson } | { kind: 'redirect'; to: string } | { kind: 'not-found' };
 
 /** A page about one whole lesson (its print view or teacher guide), found by its id or its old Base44 id. */
-function resolveLessonPage(id: string | undefined, pathFor: (lessonId: string) => string): LessonPageRouteResult {
+function resolveLessonPage(
+  id: string | undefined,
+  pathFor: (lessonId: string) => string,
+  content: Content,
+): LessonPageRouteResult {
   if (!id) return { kind: 'not-found' };
-  const lesson = getLesson(id);
+  const lesson = content.getLesson(id);
   if (lesson) return { kind: 'show', lesson };
-  const moved = getLessonByOldId(id) ?? getLessonByOldId(id.toLowerCase()) ?? getLesson(id.toLowerCase());
+  const moved = content.getLessonByOldId(id) ?? content.getLessonByOldId(id.toLowerCase()) ?? content.getLesson(id.toLowerCase());
   return moved ? { kind: 'redirect', to: pathFor(moved.id) } : { kind: 'not-found' };
 }
 

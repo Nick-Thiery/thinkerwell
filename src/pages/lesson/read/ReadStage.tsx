@@ -24,7 +24,7 @@ import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { ListenBar, ReadingCard, SegmentedControl, ToolToggle } from '../../../components/ds';
 import { useI18n } from '../../../i18n';
 import { useLessonPlayer } from '../../../lesson';
-import { LISTEN_RATES, useListenVoice } from '../../../speech';
+import { LISTEN_RATES, speechLangFor, useListenVoiceState } from '../../../speech';
 import type { ReadingLevel } from '../../../storage';
 import { LessonEvidence } from '../evidence/LessonEvidence';
 import { StageActionBar } from '../StageActionBar';
@@ -53,7 +53,7 @@ function bringIntoView(element: Element) {
 
 /** The Read stage, as LessonPage renders it. */
 export function ReadStage() {
-  const { t } = useI18n();
+  const { t, contentLocale } = useI18n();
   const { lesson, readingLevel, setReadingLevel, settings, setListeningSpeed } = useLessonPlayer();
   const sections = lesson.read.sections;
   const glossary = lesson.read.glossary;
@@ -78,7 +78,8 @@ export function ReadStage() {
     () => (section ? [section.heading, ...sentences.map((range) => text.slice(range.start, range.end))] : []),
     [section, sentences, text],
   );
-  const voice = useListenVoice();
+  // Reads in the lesson's language (id-ID for Indonesian lessons), never with another language's voice.
+  const { voice, settled: voicesListed } = useListenVoiceState(speechLangFor(contentLocale));
   const focusListenTool = () => document.getElementById(listenToolId)?.focus();
   const listen = useListen({
     voice,
@@ -176,6 +177,10 @@ export function ReadStage() {
           {t('lessonPlayer.read.keyWords')}
         </ToolToggle>
       </div>
+      {/* English lessons simply hide Listen without a voice; a translated lesson says why it isn't there. */}
+      {!voice && voicesListed && contentLocale.content ? (
+        <p className="tw-read-listen-note">{t('lessonPlayer.read.listenNoVoice')}</p>
+      ) : null}
 
       {keyWordsOpen ? <KeyWordsPanel id={keyWordsId} glossary={glossary} /> : null}
 
@@ -214,7 +219,7 @@ export function ReadStage() {
         next={isLast ? t('lessonPlayer.read.nextCheck') : t('lessonPlayer.read.nextPart', { n: part + 1 })}
         nextStep={null}
         onNext={() => setView(isLast ? 'check' : part + 1)}
-        helper={hasGlossaryTerms(text, glossary) ? t('lessonPlayer.read.glossaryHelper') : undefined}
+        helper={hasGlossaryTerms(text, glossary, contentLocale.code) ? t('lessonPlayer.read.glossaryHelper') : undefined}
       />
     </div>
   );

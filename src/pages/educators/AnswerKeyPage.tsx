@@ -9,7 +9,8 @@ import { Link } from 'react-router';
 import { educatorsPath, teacherGuidePath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
 import { EvidenceCard, Icon } from '../../components/ds';
-import { getLessonByNumber, type QuizFile, type QuizStimulus, type Section } from '../../content';
+import { type QuizFile, type QuizStimulus, type Section } from '../../content';
+import { useContent } from '../../content/useContent';
 import { En, useI18n } from '../../i18n';
 import { PrintToolbar } from '../print/PrintToolbar';
 import '../print/print.css';
@@ -23,6 +24,7 @@ export interface AnswerKeyPageProps {
 
 export function AnswerKeyPage({ section, quiz }: AnswerKeyPageProps) {
   const { t, tx, contentLang } = useI18n();
+  const content = useContent();
   const title = t('pages.answerKey.title', { section: section.title });
   usePageTitle(title);
   const first = section.lessons[0] ?? 0;
@@ -47,7 +49,7 @@ export function AnswerKeyPage({ section, quiz }: AnswerKeyPageProps) {
         </header>
 
         {quiz.questions.map((question, index) => {
-          const lesson = getLessonByNumber(question.lesson);
+          const lesson = content.getLessonByNumber(question.lesson);
           return (
             <section key={question.id} className="tw-print-part tw-key-question">
               <h2>

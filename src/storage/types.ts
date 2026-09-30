@@ -209,6 +209,12 @@ export interface DeviceSettings {
    */
   speechCheck: SpeechCheck | null;
   /**
+   * The same check for Say it in another lesson language (Indonesian), by
+   * its speech tag ("id-ID"): src/speech/language.ts. Missing until an
+   * educator checks; records saved before it existed need no migration.
+   */
+  speechChecks?: Record<string, SpeechCheck>;
+  /**
    * The interface language for the home screen, anyone looking around and
    * any learner who hasn't chosen one (a code from src/i18n/locales.ts), or
    * null for English. Records saved before this setting existed get null

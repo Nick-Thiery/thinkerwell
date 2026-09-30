@@ -16,10 +16,20 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * and the pilot-day tools were merged in: 480.5 kB with them, 11.4 kB more
  * for the language code, three new Educators pages and their words, and the
  * "hasn't downloaded yet" page (docs/notes/slow-internet.md, "Merged").
+ * Raised to 620 kB when Bahasa Indonesia became ready: 609.2 kB with it. A
+ * ready language is in every device's offline copy, and Indonesian brings
+ * its lessons, section checks and pictures as well as its messages (about
+ * 124 kB), so the Jakarta pilot's learners have the whole course in
+ * Indonesian offline. English first visits don't change
+ * (docs/notes/languages.md, "Bahasa Indonesia").
  */
-const PRECACHE_BUDGET = 490_000;
-/** Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before), 210.5 kB after the language and pilot-day merges. */
-const FIRST_VISIT_HOME_BUDGET = 212_000;
+const PRECACHE_BUDGET = 620_000;
+/**
+ * Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before),
+ * 210.5 kB after the language and pilot-day merges, 212.7 kB with the header's language switch and the one language
+ * setting (every page, from the first, can change the language; about 2 kB).
+ */
+const FIRST_VISIT_HOME_BUDGET = 214_000;
 
 const TEXT = /\.(html|js|css|svg|json|webmanifest)$/;
 

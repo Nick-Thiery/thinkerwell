@@ -52,9 +52,28 @@ export type MessageKey = Leaves<Messages>;
 export type MessageParams = Record<string, string | number>;
 
 /** A language ready to use: what it is, its messages, and how its formatted dates and lists are changed (pseudo-languages only). */
+/**
+ * A language's translated course content (content/<code>/), for a language
+ * marked `content` in ./locales.ts. Translation files hold only the text
+ * learners read; src/content/translation.ts lays them over the English
+ * files, which keep the ids, correct answers and videos.
+ */
+export interface ContentTranslation {
+  /** content/<code>/course.json */
+  course: unknown;
+  /** content/<code>/lessons/*.json, by file name ("L01.json"). */
+  lessons: Record<string, unknown>;
+  /** content/<code>/quizzes/*.json, by file name ("history.json"). */
+  quizzes: Record<string, unknown>;
+  /** Built URLs of the translated pictures (content/<code>/visuals/), keyed like a lesson's visual.src ("visuals/L01.svg"). */
+  visuals: Record<string, string>;
+}
+
 export interface LoadedLocale {
   definition: LocaleDefinition;
   messages: MessageTree;
+  /** The translated lessons, section checks and course text, for a language marked `content`. */
+  content?: ContentTranslation;
   /** Changes a formatted date or list (a pseudo-language accents it, as it does its messages). */
   decorate?: (text: string) => string;
 }

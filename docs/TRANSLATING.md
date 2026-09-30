@@ -6,6 +6,8 @@ This is for someone who speaks a learner's home language well and wants to help 
 
 Thinkerwell is also a way to practise English, so **the lessons stay in English**. You translate the words around them: buttons, menus, headings, instructions and messages. We call this "the interface".
 
+(Bahasa Indonesia is the one exception: for the Jakarta pilot its lessons are translated too. That work has its own spreadsheet and review, described in `docs/translation/README.md`.)
+
 You translate:
 
 - Buttons and links ("Start", "Next: Part 2", "Open my journal").

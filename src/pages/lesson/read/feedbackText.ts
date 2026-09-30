@@ -11,15 +11,23 @@
 
 /**
  * The verdicts lesson and quiz files open their feedback with. They are
- * course text, which stays English whatever the interface's language, so
- * they live here and not in en.json, where a translation would stop them
- * matching.
+ * course text, in the lessons' language (English, whatever the interface's
+ * language, except where the lessons are translated too), so they live
+ * here and not in en.json, where an interface translation would stop them
+ * matching. scripts/check_translation.py checks translated files use theirs.
  */
 export const CONTENT_VERDICTS = { correct: 'Yes.', retry: 'Not quite.' } as const;
 
-/** Feedback for a right or wrong option, without the content's own verdict. */
-export function feedbackWithoutVerdict(feedback: string, correct: boolean): string {
-  return withoutVerdict(feedback, CONTENT_VERDICTS[correct ? 'correct' : 'retry']);
+/** The verdicts by the lessons' language code (src/i18n/locales.ts). */
+export const CONTENT_VERDICTS_BY_LANG: Readonly<Record<string, { correct: string; retry: string }>> = {
+  en: CONTENT_VERDICTS,
+  id: { correct: 'Benar.', retry: 'Belum tepat.' },
+};
+
+/** Feedback for a right or wrong option, without the content's own verdict (in `lang`, the lessons' language). */
+export function feedbackWithoutVerdict(feedback: string, correct: boolean, lang = 'en'): string {
+  const verdicts = CONTENT_VERDICTS_BY_LANG[lang] ?? CONTENT_VERDICTS;
+  return withoutVerdict(feedback, verdicts[correct ? 'correct' : 'retry']);
 }
 
 export function withoutVerdict(feedback: string, lead: string): string {

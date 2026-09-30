@@ -1,9 +1,9 @@
 /**
- * "Language" in Settings: the interface language for this device's home
- * screen, anyone looking around, and every learner who hasn't chosen their
- * own (settings.language). Shows only once a second language is ready
- * (src/i18n/locales.ts). Saved even while looking around, like every
- * device setting.
+ * "Language" in Settings: the app's one language setting, as in the
+ * header's switch (useLearnerSession().language). It changes every page at
+ * once, and is saved for the chosen learner, or for the device before
+ * anyone is chosen (the first page, looking around). Shows only once a
+ * second language is ready (src/i18n/locales.ts).
  */
 import { useId, useState } from 'react';
 import { LanguageChoice, useHasLanguageChoice } from '../../app/LanguageChoice';
@@ -12,16 +12,13 @@ import { useLearnerSession } from '../../session';
 
 export function LanguageSetting() {
   const { t } = useI18n();
-  const { storageAvailable, deviceLanguage, setDeviceLanguage } = useLearnerSession();
-  const { offered } = useI18n();
+  const { storageAvailable, activeLearner, language, setLanguage } = useLearnerSession();
   const hasChoice = useHasLanguageChoice();
   const headingId = useId();
   const helpId = useId();
   const [failed, setFailed] = useState(false);
   if (!hasChoice) return null;
-  const label = t('pages.settings.language.label');
-  // A saved language that isn't offered any more shows as English, as the pages do.
-  const value = offered.some((locale) => locale.code === deviceLanguage) ? deviceLanguage! : 'en';
+  const label = activeLearner ? t('pages.settings.language.labelLearner', { name: activeLearner.name }) : t('pages.settings.language.label');
 
   return (
     <section className="tw-settings-card" aria-labelledby={headingId}>
@@ -35,15 +32,14 @@ export function LanguageSetting() {
         <LanguageChoice
           label={label}
           describedBy={helpId}
-          disabled={!storageAvailable}
-          value={value}
+          value={language}
           onChange={(code) => {
             setFailed(false);
-            setDeviceLanguage(code === 'en' ? null : code).catch(() => setFailed(true));
+            setLanguage(code).catch(() => setFailed(true));
           }}
         />
         <p id={helpId} className="tw-settings-help">
-          {t('pages.settings.language.help')}
+          {activeLearner ? t('pages.settings.language.helpLearner', { name: activeLearner.name }) : t('pages.settings.language.help')}
           {failed ? ` ${t('pages.settings.saveFailed')}` : ''}
         </p>
       </div>

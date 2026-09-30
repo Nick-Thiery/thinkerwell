@@ -26,7 +26,12 @@
  * used here is typed below.
  */
 
-/** The language Say it listens for. The course is in English; en-US is the language pack browsers ship first. */
+/**
+ * The language Say it listens for by default. The course is in English;
+ * en-US is the language pack browsers ship first. When a learner's lessons
+ * are in Indonesian it listens for id-ID instead (speechLangFor in
+ * ./language.ts), under exactly the same on-device rules.
+ */
 export const DICTATION_LANG = 'en-US';
 
 /** What Say it needs from a recognition engine: long, continuous speech from one person. */
@@ -125,8 +130,8 @@ function supportsOnDevice(ctor: RecognitionConstructor | null): ctor is Recognit
   return !!ctor && typeof ctor.available === 'function' && 'processLocally' in ctor.prototype;
 }
 
-function localOptions(): RecognitionOptions {
-  return { langs: [DICTATION_LANG], processLocally: true, quality: DICTATION_QUALITY };
+function localOptions(lang: string): RecognitionOptions {
+  return { langs: [lang], processLocally: true, quality: DICTATION_QUALITY };
 }
 
 function withTimeout<T>(promise: Promise<T>, ms: number, fallback: T): Promise<T> {
@@ -146,7 +151,8 @@ function withTimeout<T>(promise: Promise<T>, ms: number, fallback: T): Promise<T
 }
 
 /**
- * Whether English speech can be turned into text on this device:
+ * Whether speech in `lang` (English unless given) can be turned into text
+ * on this device:
  * - 'available': yes, now;
  * - 'downloadable' / 'downloading': after the browser downloads a language
  *   pack (an educator can start that from Settings);
@@ -156,26 +162,27 @@ function withTimeout<T>(promise: Promise<T>, ms: number, fallback: T): Promise<T
  * Only from an educator's tap in Settings ("Check this device"), never as a
  * page opens: see the note at the top of this file.
  */
-export async function onDeviceDictationStatus(): Promise<AvailabilityStatus | 'unsupported'> {
+export async function onDeviceDictationStatus(lang: string = DICTATION_LANG): Promise<AvailabilityStatus | 'unsupported'> {
   const ctor = unprefixed();
   if (!supportsOnDevice(ctor)) return 'unsupported';
   try {
-    return await withTimeout(ctor.available!(localOptions()), AVAILABILITY_TIMEOUT_MS, 'unavailable');
+    return await withTimeout(ctor.available!(localOptions(lang)), AVAILABILITY_TIMEOUT_MS, 'unavailable');
   } catch {
     return 'unavailable';
   }
 }
 
 /**
- * Asks the browser to download what it needs to turn English speech into
- * text on the device. Only from a tap on the Settings page (for educators):
- * the download can be large. Resolves true once it is ready.
+ * Asks the browser to download what it needs to turn speech in `lang`
+ * (English unless given) into text on the device. Only from a tap on the
+ * Settings page (for educators): the download can be large. Resolves true
+ * once it is ready.
  */
-export async function installOnDeviceDictation(): Promise<boolean> {
+export async function installOnDeviceDictation(lang: string = DICTATION_LANG): Promise<boolean> {
   const ctor = unprefixed();
   if (!supportsOnDevice(ctor) || typeof ctor.install !== 'function') return false;
   try {
-    return await ctor.install(localOptions());
+    return await ctor.install(localOptions(lang));
   } catch {
     return false;
   }
@@ -209,12 +216,12 @@ export function dictationMode({ onDeviceConfirmed, allowOnline }: DictationSetti
  * audio anywhere (it fails with an error instead). Only when the learner
  * taps Say it.
  */
-export function createRecognition(mode: DictationMode): RecognitionLike | null {
+export function createRecognition(mode: DictationMode, lang: string = DICTATION_LANG): RecognitionLike | null {
   const ctor = mode === 'on-device' ? unprefixed() : anyRecognition();
   if (!ctor || (mode === 'on-device' && !supportsOnDevice(ctor))) return null;
   try {
     const recognition = new ctor();
-    recognition.lang = DICTATION_LANG;
+    recognition.lang = lang;
     recognition.continuous = true;
     recognition.interimResults = true;
     recognition.maxAlternatives = 1;

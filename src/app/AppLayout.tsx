@@ -1,14 +1,17 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { Link, NavigationType, Outlet, ScrollRestoration, useLocation, useNavigate, useNavigationType } from 'react-router';
 import { DsLinkProvider, Icon, SiteHeader, StatusBanner } from '../components/ds';
-import { I18nProvider, readDevDirection, readDevLocale, readyLocales, resolveLocale, useI18n, type Direction } from '../i18n';
+import { I18nProvider, readDevDirection, readDevLocale, readyLocales, useI18n, type Direction } from '../i18n';
 import { ConnectionBanner, UpdateBanner } from '../offline';
 import { LearnerSessionProvider, useLearnerSession } from '../session';
 import './app.css';
+import { readLanguageHint, writeLanguageHint } from './languageHint';
+import { LanguageSwitch } from './LanguageSwitch';
 import { LearnerSwitcher } from './LearnerSwitcher';
 import { isNavLinkActive } from './internal/navActive';
 import { MobileNav } from './MobileNav';
 import { RouterDsLink } from './RouterDsLink';
+import { useHeaderFits } from './useHeaderFits';
 import { useIsCompactHeader } from './useIsCompactHeader';
 
 const MASCOT_SRC = '/images/thinkerwell-mascot-transparent.png';
@@ -41,16 +44,22 @@ export function AppLayout() {
 }
 
 /**
- * The interface language: the learner's own, else the device's (Settings),
- * else English, and only ever one learners are offered
- * (src/i18n/locales.ts). A guest, or nobody chosen (the home screen), gets
- * the device's. Switching learner switches language. The dev switch
- * (?locale=) wins over both.
+ * The language on screen: the app's one language setting
+ * (useLearnerSession().language: the chosen learner's own, else the
+ * device's, else English, and only ever one learners are offered). Every
+ * language switch changes that setting, and every page follows it at once.
+ * Switching learner switches language. The dev switch (?locale=) wins.
  */
 function LanguageForSession({ devLocale, devDir, children }: { devLocale: string | null; devDir: Direction | null; children: ReactNode }) {
-  const { activeLearner, deviceLanguage } = useLearnerSession();
+  const { status, language } = useLearnerSession();
   const offered = useMemo(() => readyLocales(), []);
-  const locale = devLocale ?? resolveLocale([activeLearner?.language, deviceLanguage], offered).code;
+  // Until the learner and the device's setting are read, the language this
+  // device showed last (so a reload doesn't flash English first).
+  const [hint] = useState(readLanguageHint);
+  const locale = devLocale ?? (status === 'loading' ? hint : language);
+  useEffect(() => {
+    if (status === 'ready' && !devLocale) writeLanguageHint(language);
+  }, [status, language, devLocale]);
   return (
     <I18nProvider locale={locale} dirOverride={devDir} offered={offered}>
       {children}
@@ -59,12 +68,17 @@ function LanguageForSession({ devLocale, devDir, children }: { devLocale: string
 }
 
 function Shell({ devRtl, devLocale }: { devRtl: boolean; devLocale: string | null }) {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const navigationType = useNavigationType();
   const session = useLearnerSession();
-  const compact = useIsCompactHeader();
+  const narrow = useIsCompactHeader();
+  const headerAreaRef = useRef<HTMLDivElement>(null);
+  // Below 1100px always the compact header; above, whenever the full one
+  // doesn't fit (longer words in Indonesian, a long name).
+  const fits = useHeaderFits(headerAreaRef, `${locale}|${session.activeLearner?.name ?? ''}`, !narrow);
+  const compact = narrow || !fits;
   const mainRef = useRef<HTMLElement>(null);
   const lastPathname = useRef(pathname);
   // Set when a link or back navigation is heading to a page without an h1
@@ -180,9 +194,10 @@ function Shell({ devRtl, devLocale }: { devRtl: boolean; devLocale: string | nul
           {t('dev.localeOn', { locale: devLocale })}
         </p>
       ) : null}
-      <div className="tw-header-area">
+      <div className="tw-header-area" ref={headerAreaRef}>
         <SiteHeader
           logoSrc={MASCOT_SRC}
+          language={<LanguageSwitch compact={compact} />}
           links={headerLinks}
           learner={learnerForHeader}
           compact={compact}

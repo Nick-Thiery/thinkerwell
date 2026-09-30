@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { getLessons, getQuizzes } from '../../../content';
-import { CONTENT_VERDICTS, feedbackWithoutVerdict, withoutVerdict } from './feedbackText';
+import { CONTENT_VERDICTS, CONTENT_VERDICTS_BY_LANG, feedbackWithoutVerdict, withoutVerdict } from './feedbackText';
 
 describe('withoutVerdict', () => {
   it('drops the lead the Feedback title already says', () => {
@@ -36,5 +36,15 @@ describe('withoutVerdict', () => {
         }
       }
     }
+  });
+});
+
+describe('verdicts in the lessons’ language', () => {
+  it('drops the Indonesian verdict from Indonesian feedback, and only that', () => {
+    expect(CONTENT_VERDICTS_BY_LANG.id).toEqual({ correct: 'Benar.', retry: 'Belum tepat.' });
+    expect(feedbackWithoutVerdict('Benar. Nota itu menunjukkan harga.', true, 'id')).toBe('Nota itu menunjukkan harga.');
+    expect(feedbackWithoutVerdict('Belum tepat. Lihat lagi.', false, 'id')).toBe('Lihat lagi.');
+    expect(feedbackWithoutVerdict('Yes. The receipt shows prices.', true, 'id')).toBe('Yes. The receipt shows prices.');
+    expect(feedbackWithoutVerdict('Yes. The receipt shows prices.', true)).toBe('The receipt shows prices.');
   });
 });

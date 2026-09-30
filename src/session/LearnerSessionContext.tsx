@@ -10,6 +10,8 @@ import {
 // Imported directly (not through src/lesson/index.ts) to keep this module
 // free of the lesson player's React code.
 import { clearGuestMemory } from '../lesson/guestMemory';
+import { readyLocales, resolveLocale, SOURCE_LOCALE } from '../i18n/locales';
+import { forgetPendingLanguage, readPendingLanguage, rememberPendingLanguage } from '../storage/pendingLanguage';
 
 export type LearnerSessionStatus = 'loading' | 'ready';
 
@@ -94,6 +96,20 @@ export interface LearnerSessionValue {
    * language (src/app/AppLayout.tsx). Rejects if it can't be saved.
    */
   setLearnerLanguage: (id: string, code: string | null) => Promise<void>;
+  /**
+   * The language on screen: the chosen learner's own, else the device's,
+   * else English; only ever one learners are offered (src/i18n/locales.ts).
+   * The one language setting for the whole app: every language switch
+   * shows it and changes it with setLanguage.
+   */
+  language: string;
+  /**
+   * Changes the language on screen at once, and saves it: on the chosen
+   * learner's record, or, before anyone is chosen (the first page, looking
+   * around), for the device. Rejects if it couldn't be saved; the language
+   * still changes for now.
+   */
+  setLanguage: (code: string) => Promise<void>;
 }
 
 const LearnerSessionContext = createContext<LearnerSessionValue | null>(null);
@@ -156,7 +172,20 @@ export function LearnerSessionProvider({ forceLookAround = false, children }: Le
         return;
       }
       const store = await getStore();
-      const [list, currentId, settings] = await Promise.all([store.listLearners(), store.getCurrentLearnerId(), store.getSettings()]);
+      const [savedList, currentId, savedSettings] = await Promise.all([store.listLearners(), store.getCurrentLearnerId(), store.getSettings()]);
+      let list = savedList;
+      let settings = savedSettings;
+      // A language change the last visit showed but didn't finish saving (see ./pendingLanguage.ts).
+      const pending = readPendingLanguage();
+      if (pending) {
+        const deviceCode = pending.code === SOURCE_LOCALE ? null : pending.code;
+        if (pending.learnerId === null) settings = await store.updateSettings({ language: deviceCode });
+        else if (list.some((l) => l.id === pending.learnerId)) {
+          const updated = await store.updateLearner(pending.learnerId, { language: pending.code });
+          list = list.map((l) => (l.id === updated.id ? updated : l));
+        }
+        forgetPendingLanguage(pending);
+      }
       if (!alive.current) return;
       setLearners(list);
       setDeviceLanguageState(settings.language);
@@ -316,6 +345,29 @@ export function LearnerSessionProvider({ forceLookAround = false, children }: Le
   }, [storageAvailable]);
 
   const activeLearner = lookAround ? null : currentLearner;
+  const language = resolveLocale([activeLearner?.language, deviceLanguage], readyLocales()).code;
+
+  const setLanguage = useCallback(
+    async (code: string) => {
+      const learner = lookAround ? null : currentLearner;
+      // Kept at once, in case the page goes before the save below lands.
+      const pending = { learnerId: learner?.id ?? null, code };
+      if (storageAvailable) rememberPendingLanguage(pending);
+      if (learner) {
+        // On screen at once, then saved on their record.
+        const changed = { ...learner, language: code };
+        setCurrentLearner(changed);
+        setLearners((prev) => prev.map((l) => (l.id === learner.id ? changed : l)));
+        await setLearnerLanguage(learner.id, code);
+      } else {
+        const deviceCode = code === SOURCE_LOCALE ? null : code;
+        setDeviceLanguageState(deviceCode);
+        await setDeviceLanguage(deviceCode);
+      }
+      forgetPendingLanguage(pending);
+    },
+    [lookAround, currentLearner, storageAvailable, setLearnerLanguage, setDeviceLanguage],
+  );
 
   const value = useMemo<LearnerSessionValue>(
     () => ({
@@ -335,8 +387,10 @@ export function LearnerSessionProvider({ forceLookAround = false, children }: Le
       deviceLanguage,
       setDeviceLanguage,
       setLearnerLanguage,
+      language,
+      setLanguage,
     }),
-    [status, storageAvailable, learners, currentLearner, lookAround, activeLearner, chooseLearner, addLearner, removeLearner, startLookAround, returnToPicker, reloadLearners, setLearnerReadingLevel, deviceLanguage, setDeviceLanguage, setLearnerLanguage],
+    [status, storageAvailable, learners, currentLearner, lookAround, activeLearner, chooseLearner, addLearner, removeLearner, startLookAround, returnToPicker, reloadLearners, setLearnerReadingLevel, deviceLanguage, setDeviceLanguage, setLearnerLanguage, language, setLanguage],
   );
 
   return <LearnerSessionContext.Provider value={value}>{children}</LearnerSessionContext.Provider>;

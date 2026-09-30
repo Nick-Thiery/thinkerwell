@@ -1,7 +1,8 @@
 import { useMemo } from 'react';
 import { Link } from 'react-router';
 import { ActionBar, Button, EvidenceCard, Icon, ProgressBar, QuestionCard, SectionBadge } from '../../components/ds';
-import { getLessonByNumber, type QuizFile, type QuizQuestion, type QuizStimulus, type Section } from '../../content';
+import { type QuizFile, type QuizQuestion, type QuizStimulus, type Section } from '../../content';
+import { useContent } from '../../content/useContent';
 import { En, useI18n } from '../../i18n';
 import { checkSeed, seededShuffle } from '../../lesson';
 import { lessonPath } from '../../app/lessonUrls';
@@ -49,10 +50,11 @@ export function QuizQuestionScreen({
   onAnswer,
   onNext,
 }: QuizQuestionScreenProps) {
-  const { t, tx } = useI18n();
+  const { t, tx, contentLocale } = useI18n();
+  const content = useContent();
   const total = quiz.questions.length;
   const isLast = index === total - 1;
-  const lesson = getLessonByNumber(question.lesson);
+  const lesson = content.getLessonByNumber(question.lesson);
 
   const order = useMemo(
     () => seededShuffle(question.options, checkSeed(seedOwner, section.id, index)),
@@ -100,7 +102,7 @@ export function QuizQuestionScreen({
             options={order.map((entry) => entry.item.text)}
             selected={shownPosition !== undefined && shownPosition >= 0 ? shownPosition : undefined}
             result={result}
-            feedback={shownOption ? feedbackWithoutVerdict(shownOption.feedback, shownOption.correct) : undefined}
+            feedback={shownOption ? feedbackWithoutVerdict(shownOption.feedback, shownOption.correct, contentLocale.code) : undefined}
             onSelect={choose}
           >
             {lesson ? (

@@ -4,15 +4,22 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { getLessons, type Lesson } from '../../content';
 import { connectServiceWorker, resetServiceWorkerForTests } from '../../offline';
 import { emptyProgress, type Learner, type LessonProgress } from '../../storage';
+import { I18nProvider, LOCALES } from '../../i18n';
 import { LearnerDashboard } from './LearnerDashboard';
 
 const learner: Learner = { id: 'a', name: 'Amina', colour: 'lemon', createdAt: '2026-09-01T00:00:00.000Z' };
+// These tests are about the dashboard's cards, not its language choice
+// (src/app/LanguageChoice.test.tsx), which needs a learner session: offer
+// English alone so it doesn't show.
+const englishOnly = [LOCALES[0]!];
 
 function renderDashboard() {
   return render(
-    <MemoryRouter>
-      <LearnerDashboard learner={learner} progress={new Map()} />
-    </MemoryRouter>,
+    <I18nProvider offered={englishOnly}>
+      <MemoryRouter>
+        <LearnerDashboard learner={learner} progress={new Map()} />
+      </MemoryRouter>
+    </I18nProvider>,
   );
 }
 
@@ -75,9 +82,11 @@ describe('LearnerDashboard: the continue card', () => {
 
   function renderWith(progress: Map<string, LessonProgress>) {
     return render(
-      <MemoryRouter>
-        <LearnerDashboard learner={learner} progress={progress} />
-      </MemoryRouter>,
+      <I18nProvider offered={englishOnly}>
+        <MemoryRouter>
+          <LearnerDashboard learner={learner} progress={progress} />
+        </MemoryRouter>
+      </I18nProvider>,
     );
   }
 
@@ -106,9 +115,11 @@ describe('LearnerDashboard: the course certificate', () => {
 
   function renderWith(progress: Map<string, LessonProgress>) {
     return render(
-      <MemoryRouter>
-        <LearnerDashboard learner={learner} progress={progress} />
-      </MemoryRouter>,
+      <I18nProvider offered={englishOnly}>
+        <MemoryRouter>
+          <LearnerDashboard learner={learner} progress={progress} />
+        </MemoryRouter>
+      </I18nProvider>,
     );
   }
 

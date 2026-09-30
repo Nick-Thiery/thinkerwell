@@ -1,5 +1,7 @@
 #!/bin/sh
-# Creates .venv (gitignored) with wordfreq, which scripts/check_lesson.py uses.
+# Creates .venv (gitignored) with wordfreq, which scripts/check_lesson.py and
+# scripts/check_translation.py use, and openpyxl, which the translation review
+# spreadsheet scripts (scripts/i18n/, npm run review:export) use.
 #
 # Why not just `pip install wordfreq`: Homebrew's Python 3.14.7 on macOS 26
 # can't load its XML module (pyexpat is linked against an older system
@@ -26,5 +28,5 @@ fi
 echo "Using $PY ($("$PY" --version 2>&1))"
 "$PY" -m venv .venv
 .venv/bin/python -m pip install --quiet --upgrade pip
-.venv/bin/python -m pip install --quiet wordfreq
-.venv/bin/python -c "from wordfreq import zipf_frequency; print('wordfreq ok')"
+.venv/bin/python -m pip install --quiet wordfreq openpyxl
+.venv/bin/python -c "from wordfreq import zipf_frequency; import openpyxl; print('wordfreq and openpyxl ok')"

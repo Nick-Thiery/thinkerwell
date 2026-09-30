@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { usePageTitle } from '../app/usePageTitle';
 import type { Section } from '../content';
-import { getLessons, getQuiz } from '../content';
+import { useContent } from '../content/useContent';
 import { useI18n } from '../i18n';
 import { VISIT_SEED } from '../lesson';
 import { QuizIntroScreen } from './quiz/QuizIntroScreen';
@@ -38,14 +38,15 @@ type Screen = 'intro' | 'question' | 'results';
  */
 export function SectionCheckPage({ section }: SectionCheckPageProps) {
   const { t } = useI18n();
+  const content = useContent();
   usePageTitle(t('pages.sectionCheck.title', { section: section.title }));
   const session = useLearnerSession();
   const learnerId = session.activeLearner?.id ?? null;
-  const quiz = getQuiz(section.id);
+  const quiz = content.getQuiz(section.id);
   const learnerProgress = useLearnerProgress(learnerId);
   const lessonsDone =
     learnerId && learnerProgress.status === 'ready'
-      ? sectionProgress(section, getLessons(), learnerProgress.progress).completed
+      ? sectionProgress(section, content.getLessons(), learnerProgress.progress).completed
       : undefined;
 
   const [screen, setScreen] = useState<Screen>('intro');

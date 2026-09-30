@@ -11,7 +11,8 @@
  */
 import { useId } from 'react';
 import { SectionBadge } from '../../components/ds';
-import { getCourse, getLessons, getSectionLessons, getSections, type LessonSummary, type Section } from '../../content/catalog';
+import { englishCatalog, type Catalog, type LessonSummary, type Section } from '../../content/catalog';
+import { useCatalog } from '../../content/useCatalog';
 import { En, useI18n } from '../../i18n';
 
 const MASCOT_SRC = '/images/thinkerwell-mascot-transparent.png';
@@ -19,8 +20,8 @@ const MASCOT_SRC = '/images/thinkerwell-mascot-transparent.png';
 export type CertificateScope = { kind: 'section'; section: Section } | { kind: 'course' };
 
 /** The lessons a certificate is for: a section's, or all 24. */
-export function certificateLessons(scope: CertificateScope): readonly LessonSummary[] {
-  return scope.kind === 'section' ? getSectionLessons(scope.section.id) : getLessons();
+export function certificateLessons(scope: CertificateScope, catalog: Catalog = englishCatalog): readonly LessonSummary[] {
+  return scope.kind === 'section' ? catalog.getSectionLessons(scope.section.id) : catalog.getLessons();
 }
 
 /** How big the name is printed: smaller for a longer name, so it stays on two lines at most. */
@@ -46,10 +47,11 @@ export interface CertificateProps {
 
 export function Certificate({ scope, name, finishedAt, headingLevel = 1, label }: CertificateProps) {
   const { t, tx, formatDate } = useI18n();
+  const catalog = useCatalog();
   const titleId = useId();
   const shownName = name.trim();
   // Course text (the course's and a section's names) stays marked as English.
-  const course = <En>{getCourse().course.title}</En>;
+  const course = <En>{catalog.getCourse().course.title}</En>;
   const date = formatDate(finishedAt, { day: 'numeric', month: 'long', year: 'numeric' });
   const Title = headingLevel === 1 ? 'h1' : 'h2';
 
@@ -78,7 +80,7 @@ export function Certificate({ scope, name, finishedAt, headingLevel = 1, label }
         <p className="tw-cert-finished">
           {scope.kind === 'section'
             ? tx('certificates.sheet.finishedSection', { section: <En>{scope.section.title}</En>, course })
-            : tx('certificates.sheet.finishedCourse', { count: getLessons().length, course })}
+            : tx('certificates.sheet.finishedCourse', { count: catalog.getLessons().length, course })}
         </p>
       </div>
 
@@ -108,6 +110,7 @@ export function Certificate({ scope, name, finishedAt, headingLevel = 1, label }
 /** A section certificate's contents: the section (its colour only beside its icon and name) and its lessons. */
 function SectionLessons({ section, headingLevel }: { section: Section; headingLevel: 1 | 2 }) {
   const { contentLang } = useI18n();
+  const catalog = useCatalog();
   const headingId = useId();
   const Heading = headingLevel === 1 ? 'h2' : 'h3';
   return (
@@ -116,7 +119,7 @@ function SectionLessons({ section, headingLevel }: { section: Section; headingLe
         <SectionBadge section={section.id} number={section.number} name={<En>{section.title}</En>} />
       </Heading>
       <ol className="tw-cert-lessons" role="list">
-        {getSectionLessons(section.id).map((lesson) => (
+        {catalog.getSectionLessons(section.id).map((lesson) => (
           <li key={lesson.id}>
             <span className="tw-cert-lesson-number">{lesson.number}</span>
             <span {...contentLang}>{lesson.title}</span>
@@ -129,9 +132,10 @@ function SectionLessons({ section, headingLevel }: { section: Section; headingLe
 
 /** The course certificate's contents: the four sections. */
 function CourseSections() {
+  const catalog = useCatalog();
   return (
     <ul className="tw-cert-sections" role="list">
-      {getSections().map((section) => (
+      {catalog.getSections().map((section) => (
         <li key={section.id}>
           <SectionBadge section={section.id} number={section.number} name={<En>{section.title}</En>} />
         </li>

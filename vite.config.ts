@@ -1,12 +1,12 @@
 /// <reference types="vitest/config" />
-import { readdirSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { defineConfig, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 import { lazyChunkFor } from './src/app/lazy/firstPage.ts';
 import { LESSON_CATALOG_FIELDS } from './src/content/catalogFields.ts';
-import { loadContent, loadQuizzes, parseContentFile, type ContentFileKind } from './src/content/load.ts';
+import { checkTranslation, loadContent, loadQuizzes, parseContentFile, type ContentFileKind } from './src/content/load.ts';
 import type { Lesson, QuizFile } from './src/content/schema.ts';
 import {
   LANGUAGE_MODULE,
@@ -15,7 +15,7 @@ import {
   languageChunkName,
   languagePrecacheIgnores,
 } from './src/i18n/build.ts';
-import { PSEUDO_LOCALES } from './src/i18n/locales.ts';
+import { LOCALES, PSEUDO_LOCALES } from './src/i18n/locales.ts';
 import { PSEUDO_TRANSFORMS, pseudoMessages } from './src/i18n/pseudo.ts';
 
 /** Which kind of content file a module is, from its path, or null for anything else. */
@@ -39,7 +39,9 @@ function contentKind(id: string): ContentFileKind | null {
  *   parsed form (zod trims stray spaces).
  * - At the start: all of them against each other (every section's lessons
  *   exist, ids are unique, pictures exist, section checks point at real
- *   lessons), as src/content/load.ts does for the tests.
+ *   lessons), as src/content/load.ts does for the tests. Then each
+ *   language whose lessons are translated (`content` in src/i18n/locales.ts):
+ *   its content/<code>/ files against the English (checkTranslation).
  */
 function checkContent(): Plugin {
   let root = process.cwd();
@@ -60,8 +62,25 @@ function checkContent(): Plugin {
       const course = JSON.parse(readFileSync(path.join(root, 'content', 'course.json'), 'utf8')) as unknown;
       const visuals = new Set(readdirSync(dir('visuals')).filter((name) => name.endsWith('.svg')).map((name) => `visuals/${name}`));
       try {
-        const { lessons } = loadContent(course, readAll('lessons'), visuals);
-        loadQuizzes(readAll('quizzes'), lessons);
+        const lessonFiles = readAll('lessons');
+        const quizFiles = readAll('quizzes');
+        const { lessons } = loadContent(course, lessonFiles, visuals);
+        loadQuizzes(quizFiles, lessons);
+        for (const locale of LOCALES.filter((l) => l.content)) {
+          const own = (sub: string) => (existsSync(dir(`${locale.code}/${sub}`)) ? readAll(`${locale.code}/${sub}`) : {});
+          const coursePath = path.join(dir(locale.code), 'course.json');
+          const pictures = existsSync(dir(`${locale.code}/visuals`)) ? readdirSync(dir(`${locale.code}/visuals`)) : [];
+          checkTranslation(
+            locale.code,
+            { course, lessons: lessonFiles, quizzes: quizFiles },
+            {
+              course: existsSync(coursePath) ? (JSON.parse(readFileSync(coursePath, 'utf8')) as unknown) : {},
+              lessons: own('lessons'),
+              quizzes: own('quizzes'),
+              visuals: new Set(pictures.filter((name) => name.endsWith('.svg')).map((name) => `visuals/${name}`)),
+            },
+          );
+        }
       } catch (error) {
         this.error(`The content has problems:\n${error instanceof Error ? error.message : String(error)}`);
       }

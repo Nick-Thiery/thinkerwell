@@ -78,13 +78,13 @@ function renderParagraph(paragraph: ReadingParagraph, meaningOf: (entry: Glossar
  * a ReadingCard.
  */
 export function ReadingPassage({ text, glossary, highlight }: ReadingPassageProps) {
-  const { definition: locale } = useI18n();
+  const { definition: locale, contentLocale } = useI18n();
   const meaningOf = (entry: GlossaryEntry) => glossaryMeaning(entry, locale);
   const start = highlight?.start;
   const end = highlight?.end;
   const paragraphs = useMemo(
-    () => buildReading(text, glossary, start !== undefined && end !== undefined ? { start, end } : undefined),
-    [text, glossary, start, end],
+    () => buildReading(text, glossary, start !== undefined && end !== undefined ? { start, end } : undefined, contentLocale.code),
+    [text, glossary, start, end, contentLocale.code],
   );
   return (
     <>

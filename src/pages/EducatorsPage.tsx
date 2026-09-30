@@ -2,7 +2,8 @@ import { useSearchParams } from 'react-router';
 import { usePageTitle } from '../app/usePageTitle';
 import { allCertificatesPath, answerKeyPath, classPath, lessonPrintPath, setupPath } from '../app/lessonUrls';
 import { Badge, Button, Chip, Icon, type IconName } from '../components/ds';
-import { getLessons, getQuiz, getSection, getSectionLessons, getSections, type SectionId } from '../content';
+import { type SectionId } from '../content';
+import { useContent } from '../content/useContent';
 import { En, useI18n } from '../i18n';
 import './EducatorsPage.css';
 import { EducatorLessonRow } from './educators/EducatorLessonRow';
@@ -23,13 +24,14 @@ import { SECTION_ICONS } from './course/sectionIcons';
  */
 export function EducatorsPage() {
   const { t, tx, contentLang } = useI18n();
+  const content = useContent();
   usePageTitle(t('pages.educators.title'));
-  const sections = getSections();
+  const sections = content.getSections();
   const [searchParams, setSearchParams] = useSearchParams();
-  const sectionId: SectionId = getSection(searchParams.get('section') ?? '')?.id ?? sections[0]!.id;
-  const section = getSection(sectionId)!;
-  const quiz = getQuiz(sectionId);
-  const lessons = getSectionLessons(sectionId);
+  const sectionId: SectionId = content.getSection(searchParams.get('section') ?? '')?.id ?? sections[0]!.id;
+  const section = content.getSection(sectionId)!;
+  const quiz = content.getQuiz(sectionId);
+  const lessons = content.getSectionLessons(sectionId);
   const firstInSection = section.lessons[0] ?? 0;
   const lastInSection = section.lessons[section.lessons.length - 1] ?? firstInSection;
   const range =
@@ -64,7 +66,7 @@ export function EducatorsPage() {
       href: allCertificatesPath(),
     },
   ];
-  const allLessons = getLessons();
+  const allLessons = content.getLessons();
   const firstLessonId = allLessons[0]!.id;
   // The same range the course page shows ("About 25–50 min a lesson").
   const minMinutes = Math.min(...allLessons.map((lesson) => lesson.estimatedMinutes[0]));

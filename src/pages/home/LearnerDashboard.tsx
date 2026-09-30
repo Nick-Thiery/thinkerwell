@@ -1,7 +1,7 @@
 import { createElement, useId, useState } from 'react';
 import { LanguageChoice, useHasLanguageChoice } from '../../app/LanguageChoice';
 import { courseCertificatePath, sectionCheckPath, lessonPath } from '../../app/lessonUrls';
-import { getLessonSection, getLessons, getQuizQuestionCount, getSections } from '../../content/catalog';
+import { useCatalog } from '../../content/useCatalog';
 import { Badge, Button, ContinueCard, Icon, ProgressRing, SectionBadge, useDsLinkComponent } from '../../components/ds';
 import { En, useI18n } from '../../i18n';
 import { useServiceWorker } from '../../offline';
@@ -26,11 +26,12 @@ export interface LearnerDashboardProps {
 export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
   const { t, tx } = useI18n();
   const LinkTag = useDsLinkComponent();
-  const lessons = getLessons();
-  const sections = getSections();
+  const catalog = useCatalog();
+  const lessons = catalog.getLessons();
+  const sections = catalog.getSections();
   const target = findContinueTarget(lessons, progress);
   const completedCount = totalLessonsCompleted(lessons, progress);
-  const currentSectionId = target ? getLessonSection(target.lesson).id : undefined;
+  const currentSectionId = target ? catalog.getLessonSection(target.lesson).id : undefined;
   const journalEntry = latestJournalEntry(lessons, progress);
   const isNewLearner = completedCount === 0 && progress.size === 0;
   // "Pick up where you left off" only for a lesson the learner has opened
@@ -90,7 +91,7 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
                 ? 'pages.home.dashboard.continueEyebrow'
                 : 'pages.home.dashboard.upNext',
           )}
-          lessonLabel={tx('pages.course.lessonLabel', { number: target.lesson.number, section: <En>{getLessonSection(target.lesson).title}</En> })}
+          lessonLabel={tx('pages.course.lessonLabel', { number: target.lesson.number, section: <En>{catalog.getLessonSection(target.lesson).title}</En> })}
           done={stagesDoneForLesson(progress.get(target.lesson.id))}
           current={target.stage}
           stageLabel={t('lesson.nextStep', { stage: t(`stages.${target.stage}`) })}
@@ -162,7 +163,7 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
               <p className="body">
                 {t('pages.home.dashboard.sectionCheckBody', {
                   count: readySection.lessons.length,
-                  questions: getQuizQuestionCount(readySection.id),
+                  questions: catalog.getQuizQuestionCount(readySection.id),
                 })}
               </p>
               <Button variant="secondary" href={sectionCheckPath(readySection.id)}>
@@ -186,7 +187,7 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
               {t('pages.home.dashboard.openJournal')}
             </Button>
           </section>
-          {hasLanguageChoice ? <DashboardLanguage learner={learner} /> : null}
+          {hasLanguageChoice ? <DashboardLanguage /> : null}
         </aside>
       </div>
     </div>
@@ -194,13 +195,13 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
 }
 
 /**
- * The learner's own language, on their home. Only once a second language
- * is ready. Changing it saves it on their record, and the page switches at
- * once (src/app/AppLayout.tsx).
+ * The learner's own language, on their home: the app's one language
+ * setting, as in the header's switch. Only once a second language is ready.
+ * Changing it switches every page at once and saves it on their record.
  */
-function DashboardLanguage({ learner }: { learner: Learner }) {
-  const { t, locale } = useI18n();
-  const { setLearnerLanguage } = useLearnerSession();
+function DashboardLanguage() {
+  const { t } = useI18n();
+  const { language, setLanguage } = useLearnerSession();
   const [failed, setFailed] = useState(false);
   const helpId = useId();
   return (
@@ -211,10 +212,10 @@ function DashboardLanguage({ learner }: { learner: Learner }) {
       <LanguageChoice
         label={t('pages.home.dashboard.languageTitle')}
         describedBy={helpId}
-        value={locale}
+        value={language}
         onChange={(code) => {
           setFailed(false);
-          setLearnerLanguage(learner.id, code).catch(() => setFailed(true));
+          setLanguage(code).catch(() => setFailed(true));
         }}
       />
       <p id={helpId} className="small">

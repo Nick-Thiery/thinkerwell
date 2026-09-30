@@ -11,8 +11,9 @@
 import { Fragment } from 'react';
 import { lessonPath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
-import { getLessonSection, type GlossaryEntry, type Lesson, type ReadSection } from '../../content';
-import { En, useI18n } from '../../i18n';
+import { type GlossaryEntry, type Lesson, type ReadSection } from '../../content';
+import { useContent } from '../../content/useContent';
+import { AlwaysEn, En, useI18n } from '../../i18n';
 import { splitParagraphs } from '../../lesson';
 import type { ReadingLevel } from '../../storage';
 import { LessonEvidence } from '../lesson/evidence/LessonEvidence';
@@ -23,8 +24,9 @@ import './print.css';
 export function LessonPrintPage({ lesson }: { lesson: Lesson }) {
   // Everything from the lesson file is course text, marked as English (`en`).
   const { t, tx, contentLang: en } = useI18n();
+  const content = useContent();
   usePageTitle(t('print.lessonPageTitle', { number: lesson.number }));
-  const section = getLessonSection(lesson);
+  const section = content.getLessonSection(lesson);
   const [min, max] = lesson.estimatedMinutes;
   const { read, write, speak, watch, reflect } = lesson;
 
@@ -166,13 +168,13 @@ export function LessonPrintPage({ lesson }: { lesson: Lesson }) {
 
         <section className="tw-print-part">
           <h2>{t('print.watchTitle')}</h2>
-          <p className="tw-print-muted">{tx('print.videoNote', { title: <En>{watch.title}</En>, channel: <En>{watch.channel}</En> })}</p>
+          <p className="tw-print-muted">{tx('print.videoNote', { title: <AlwaysEn>{watch.title}</AlwaysEn>, channel: <AlwaysEn>{watch.channel}</AlwaysEn> })}</p>
           <div className="tw-print-keep">
             <h3>{t('lessonPlayer.watch.thinkFirst')}</h3>
             <p {...en}>{watch.beforeQuestion}</p>
             <AnswerLines count={2} />
           </div>
-          <h3>{tx('print.writtenVersion', { title: <En>{watch.title}</En> })}</h3>
+          <h3>{tx('print.writtenVersion', { title: <AlwaysEn>{watch.title}</AlwaysEn> })}</h3>
           {splitParagraphs(watch.summary).map((paragraph, index) => (
             <p key={index} className="tw-print-reading-text" {...en}>
               {paragraph}

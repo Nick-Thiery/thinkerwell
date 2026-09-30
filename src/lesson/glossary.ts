@@ -12,12 +12,13 @@
  *
  * `lang` is the language of the lesson text, used for case-insensitive
  * matching (Turkish-style dotted and dotless i, for example, fold
- * differently by language). Lessons are English for now; when translated
- * lesson files arrive (CLAUDE.md rule 7), pass their language here.
+ * differently by language). Callers pass the lessons' language
+ * (useI18n().contentLocale.code): English, or Indonesian for a learner whose
+ * lessons are translated.
  */
 import type { GlossaryEntry } from '../content';
 
-/** The language every lesson file is written in today. */
+/** The language of the English lesson files, when no language is given. */
 export const CONTENT_LANG = 'en';
 
 export type GlossarySegment =

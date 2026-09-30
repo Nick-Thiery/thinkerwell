@@ -18,7 +18,8 @@ import { useState, type ReactNode } from 'react';
 import { lessonPath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
 import { Button, LessonRow, TextField } from '../../components/ds';
-import { getLessons, type LessonSummary } from '../../content/catalog';
+import { type LessonSummary } from '../../content/catalog';
+import { useCatalog } from '../../content/useCatalog';
 import { En, useI18n } from '../../i18n';
 import { useLearnerProgress, useLearnerSession } from '../../session';
 import { isLessonComplete, lessonSetStatus, nextStageForLesson, stagesDoneForLesson, type ProgressByLessonId } from '../../storage';
@@ -38,6 +39,7 @@ export interface CertificatePageProps {
 
 export function CertificatePage({ scope }: CertificatePageProps) {
   const { t, tx } = useI18n();
+  const catalog = useCatalog();
   const title =
     scope.kind === 'section'
       ? t('certificates.sectionPageTitle', { section: scope.section.title })
@@ -60,7 +62,7 @@ export function CertificatePage({ scope }: CertificatePageProps) {
     scope.kind === 'section'
       ? { href: `/course#${scope.section.id}`, label: t('certificates.backToCourse') }
       : { href: '/', label: t('certificates.backToHome') };
-  const lessons = certificateLessons(scope);
+  const lessons = certificateLessons(scope, catalog);
   const certificate = learner ? lessonSetStatus(lessons, progress) : null;
 
   return (
@@ -104,6 +106,7 @@ function LessonsLeft({
   progress: ProgressByLessonId;
 }) {
   const { t } = useI18n();
+  const catalog = useCatalog();
   return (
     <article className="tw-print-sheet tw-cert-left" aria-labelledby="cert-title">
       <header className="tw-print-head">
@@ -113,7 +116,7 @@ function LessonsLeft({
         <p className="tw-print-question">
           {scope.kind === 'section'
             ? t('certificates.notYet.section')
-            : t('certificates.notYet.course', { count: getLessons().length })}
+            : t('certificates.notYet.course', { count: catalog.getLessons().length })}
         </p>
         {scope.kind === 'section' ? <p className="tw-print-muted">{t('certificates.notYet.checkNotNeeded')}</p> : null}
       </header>

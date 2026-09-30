@@ -62,7 +62,7 @@ interface QuestionProps<C> {
 }
 
 function ChoiceQuestion({ check, index, total }: QuestionProps<ChoiceCheck>) {
-  const { t } = useI18n();
+  const { t, contentLocale } = useI18n();
   const { lesson, progress, update, stageEvent, seedOwner } = useLessonPlayer();
   const cardRef = useRef<HTMLDivElement>(null);
   // "Try again" hides the shown answer here only; the saved one stays until
@@ -118,7 +118,7 @@ function ChoiceQuestion({ check, index, total }: QuestionProps<ChoiceCheck>) {
         options={order.map((entry) => entry.item.text)}
         selected={position}
         result={result}
-        feedback={shownOption ? feedbackWithoutVerdict(shownOption.feedback, shownOption.correct) : undefined}
+        feedback={shownOption ? feedbackWithoutVerdict(shownOption.feedback, shownOption.correct, contentLocale.code) : undefined}
         onSelect={choose}
       >
         {result === 'retry' ? (

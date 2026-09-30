@@ -14,7 +14,7 @@ import { useId } from 'react';
 import { allCertificatesPath, educatorsPath, setupPath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
 import { Button, Icon, SectionBadge } from '../../components/ds';
-import { getLessons, getSections } from '../../content';
+import { useContent } from '../../content/useContent';
 import { En, useI18n } from '../../i18n';
 import { addedOn, learnersWithSameName, useLearnerSession } from '../../session';
 import { byName, summariseLearner, type LearnerSummary, type OnNow } from './classSummary';
@@ -24,6 +24,7 @@ import { useClassWork } from './useClassWork';
 
 export function ClassPage() {
   const { t, lang, formatDate } = useI18n();
+  const content = useContent();
   const title = t('pages.classView.title');
   usePageTitle(title);
   const session = useLearnerSession();
@@ -34,8 +35,8 @@ export function ClassPage() {
   // home and the course map (AppLayout moves focus to the h1 once it appears).
   if (status === 'loading') return null;
 
-  const lessons = getLessons();
-  const sections = getSections();
+  const lessons = content.getLessons();
+  const sections = content.getSections();
   const summaries = byName(
     work.map((each) => summariseLearner(each, lessons, sections)),
     lang,

@@ -30,10 +30,11 @@ sh scripts/setup-python.sh   # .venv with wordfreq, for the lesson checker
 | `npm test` | Unit and content tests (Vitest); `npm run test:watch` reruns them as you edit |
 | `npm run test:e2e` | End-to-end tests (Playwright) at 390, 820 and 1280px wide; builds and serves on port 4317 |
 | `npm run test:e2e:dev` | End-to-end tests for the dev-only `/dev/*` routes (Playwright, `playwright.dev.config.ts`); runs `vite` itself on port 4318, since those routes don't exist in a production build |
-| `npm run check:content` | Checks `content/lessons/*.json` against `docs/content/SPEC.md`; must report 0 errors |
+| `npm run check:content` | Checks `content/lessons/*.json` against `docs/content/SPEC.md`, the section checks, and the Indonesian translation (`content/id/`) against the English; must report 0 errors |
 | `npm run check:i18n` | Checks every translation in `src/i18n/messages/` against `en.json` (keys, placeholders, plural forms); says how many messages each still lacks |
 | `npm run i18n:export -- <code>` | Writes the translator's spreadsheet for a language (`thinkerwell-<code>.csv`); see `docs/TRANSLATING.md` |
 | `npm run i18n:import -- <code> <file.csv>` | Reads a filled-in spreadsheet into `src/i18n/messages/<code>.json`, refusing rows whose placeholders don't match |
+| `npm run review:export` / `npm run review:import -- <file.xlsx> [--dry-run]` | The Bahasa Indonesia review spreadsheet (interface, lessons, pictures and section checks): writes it, and applies reviewers' changes; see `docs/translation/README.md`. `npm run test:review` tests both |
 | `npm run size` | After `npm run build`: what a new visitor downloads for the home page and for a lesson, and what the service worker precaches, gzipped and brotli (`tools/report-sizes.mjs`) |
 | `npm run perf` | After `npm run build`: first paint, page ready and load for the home page and a lesson on Slow 3G, 3G and Slow 4G with a slow CPU, served with brotli as on Vercel (`tools/measure-slow.mjs`) |
 | `npm run slow-internet` | After `npm run build`: every file a first visit fetches (by kind, before and after the first screen), the whole precache with its largest files, and first paint, page ready and "offline ready" on Slow 3G and a very poor connection (`tools/slow-internet.mjs`; `-- --bytes` for sizes only). See `docs/notes/slow-internet.md` |
@@ -131,6 +132,8 @@ src/pages/educators/     teacher guides and answer keys; the pilot-day tools: th
 src/storage/             IndexedDB (idb): learners, progress, quiz attempts, recordings, settings; src/storage/progress.ts has the pure progress-lookup helpers (continue target, per-section counts, ...)
 src/i18n/                message helper, the language list (locales.ts), loading, fonts and test languages; every UI string is in src/i18n/messages/en.json
 tools/i18n/              the translator kit: npm run i18n:export, i18n:import and check:i18n
+scripts/i18n/            the Indonesian review spreadsheet: npm run review:export, review:import (Python, openpyxl)
+content/id/              Bahasa Indonesia: the course, lessons, section checks and pictures, translated
 src/styles/              tokens.css (copied from the design system), fonts.css, global.css, print.css
 src/components/ds/       the ported design-system components
 src/dev/                 dev-only routes (/dev/components, /dev/reference, /dev/screens); never shipped

@@ -17,7 +17,8 @@
 import { useEffect, useId, useRef, useState, type ChangeEvent, type RefObject } from 'react';
 import type { SettingsPart } from '../../app/lessonUrls';
 import { Button, Icon } from '../../components/ds';
-import { getLessons, getSections } from '../../content/catalog';
+import { englishCatalog, type Catalog } from '../../content/catalog';
+import { useCatalog } from '../../content/useCatalog';
 import { useI18n, type MessageKey } from '../../i18n';
 import { addedOn, learnersWithSameName, useLearnerSession } from '../../session';
 import {
@@ -75,10 +76,10 @@ const PROBLEM_KEYS: Record<LoadProblem, MessageKey> = {
 };
 
 /** The lessons and section checks this version has; work for any other is left out of a file. */
-function knownContent(): KnownContent {
+function knownContent(catalog: Catalog = englishCatalog): KnownContent {
   return {
-    lessonIds: new Set(getLessons().map((lesson) => lesson.id)),
-    sectionIds: new Set(getSections().map((section) => section.id)),
+    lessonIds: new Set(catalog.getLessons().map((lesson) => lesson.id)),
+    sectionIds: new Set(catalog.getSections().map((section) => section.id)),
   };
 }
 
@@ -86,6 +87,7 @@ export function WorkFileSetting() {
   const { t, formatDate } = useI18n();
   const session = useLearnerSession();
   const { status, storageAvailable, learners, activeLearner, reloadLearners } = session;
+  const catalog = useCatalog();
   const headingId = useId();
   const saveHelpId = useId();
   const radioName = useId();
@@ -138,7 +140,7 @@ export function WorkFileSetting() {
       const now = new Date();
       const text = serialiseWorkFile(buildWorkFile(work, now));
       // A file that couldn't be loaded again is no use: check it as loading will.
-      const check = checkWorkFile(text, knownContent());
+      const check = checkWorkFile(text, knownContent(catalog));
       if (!check.ok) {
         if (alive.current) setSaveState({ kind: 'failed', tooBig: check.problem === 'too-big' });
         return;
@@ -179,7 +181,7 @@ export function WorkFileSetting() {
       if (alive.current) setLoadState({ kind: 'problem', problem: 'unreadable' });
       return;
     }
-    const result = checkWorkFile(text, knownContent());
+    const result = checkWorkFile(text, knownContent(catalog));
     if (!result.ok) {
       if (alive.current) setLoadState({ kind: 'problem', problem: result.problem });
       return;

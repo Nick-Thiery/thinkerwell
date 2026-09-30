@@ -15,7 +15,8 @@ import { Fragment, type ReactNode } from 'react';
 import { educatorsPath, lessonPath, lessonPrintPath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
 import { Button, Icon } from '../../components/ds';
-import { getLessonSection, type Lesson, type ThinkCheck } from '../../content';
+import { type Lesson, type ThinkCheck } from '../../content';
+import { useContent } from '../../content/useContent';
 import { En, useI18n } from '../../i18n';
 import { formatDuration } from '../../lesson/format';
 import { LessonEvidence } from '../lesson/evidence/LessonEvidence';
@@ -33,9 +34,11 @@ export function youtubeWatchUrl(youtubeId: string): string {
 
 export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
   // Everything from the lesson file is course text, marked as English (`en`).
-  const { t, tx, formatNumber, contentLang: en } = useI18n();
+  // en: course text (translated with the lessons); alwaysEn: the video's title and channel, English in every language.
+  const { t, tx, formatNumber, contentLang: en, englishLang: alwaysEn, contentLocale } = useI18n();
+  const content = useContent();
   usePageTitle(t('pages.teacherGuide.pageTitle', { number: lesson.number }));
-  const section = getLessonSection(lesson);
+  const section = content.getLessonSection(lesson);
   const [min, max] = lesson.estimatedMinutes;
   const { read, write, speak, watch, reflect } = lesson;
   const thinkChecks = read.checks.filter((check): check is ThinkCheck => check.type === 'think');
@@ -117,7 +120,7 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
                   <AnswerOptions
                     options={check.options.map((option) =>
                       option.correct
-                        ? { ...option, feedback: feedbackWithoutVerdict(option.feedback, true) }
+                        ? { ...option, feedback: feedbackWithoutVerdict(option.feedback, true, contentLocale.code) }
                         : option,
                     )}
                     feedback="why"
@@ -219,11 +222,11 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
           <dl className="tw-guide-facts">
             <div>
               <dt>{t('pages.teacherGuide.videoName')}</dt>
-              <dd {...en}>{watch.title}</dd>
+              <dd {...alwaysEn}>{watch.title}</dd>
             </div>
             <div>
               <dt>{t('pages.teacherGuide.videoChannel')}</dt>
-              <dd {...en}>{watch.channel}</dd>
+              <dd {...alwaysEn}>{watch.channel}</dd>
             </div>
             <div>
               <dt>{t('pages.teacherGuide.videoLength')}</dt>
@@ -285,6 +288,7 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
 
 /** The notes for teachers: sensitive topics first, in a marked box, then the rest. */
 function BeforeYouTeach({ lesson }: { lesson: Lesson }) {
+  // Course text: translated with the lessons (Indonesian), else English.
   const { t, contentLang } = useI18n();
   const { sensitiveNotes, educatorNotes } = lesson;
   const contentNote = lesson.watch.contentNote;

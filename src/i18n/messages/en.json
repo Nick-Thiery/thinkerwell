@@ -55,6 +55,7 @@
     "read": {
       "toolsLabel": "Reading tools",
       "listen": "Listen",
+      "listenNoVoice": "Listen can't read this lesson aloud here: this device has no voice for its language.",
       "listenLabel": "Reading aloud · part {n} of {total}",
       "levelLabel": "Reading level",
       "levelStandard": "Standard",
@@ -192,7 +193,8 @@
       "afterEyebrow": "After you watch or read",
       "afterPlaceholder": "Write one or two sentences…",
       "helper": "Watching is optional. You can skip this step.",
-      "forTeachers": "For teachers"
+      "forTeachers": "For teachers",
+      "videoInEnglish": "This video is in English. Read instead has the same ideas in your language."
     },
     "reflect": {
       "eyebrow": "Reflect",
@@ -271,7 +273,7 @@
         "startsWithNote": "You can open any lesson later from the course page.",
         "privacyNote": "Your work stays on this device.",
         "languageLabel": "Your language",
-        "languageHelper": "Buttons and instructions show in this language. The lessons stay in English, so you can practise it."
+        "languageHelper": "Buttons and instructions show in this language. In Indonesian, the lessons do too. In other languages they stay in English, so you can practise it."
       },
       "remove": {
         "action": "Remove",
@@ -324,7 +326,7 @@
         "noJournalYet": "Nothing saved yet. Your writing and reflections show up here once you start.",
         "latestEntry": "{stage} · Lesson {number}",
         "languageTitle": "Your language",
-        "languageHelp": "Buttons and instructions show in this language. The lessons stay in English, so you can practise it.",
+        "languageHelp": "Buttons and instructions show in this language. In Indonesian, the lessons do too. In other languages they stay in English, so you can practise it.",
         "languageSaveFailed": "That didn't save. Try again."
       }
     },
@@ -703,7 +705,9 @@
       "language": {
         "title": "Language",
         "label": "Language on this device",
-        "help": "Buttons and instructions show in this language on the home screen, for anyone looking around, and for learners who haven't chosen their own. The lessons stay in English."
+        "labelLearner": "Language for {name}",
+        "help": "Everything shows in this language at once: buttons, instructions and, in Indonesian, the lessons too. It is kept for this device, for the first page and anyone who hasn't chosen who's learning.",
+        "helpLearner": "Everything shows in this language at once: buttons, instructions and, in Indonesian, the lessons too. It is kept for {name}, and changes back when someone else is chosen."
       },
       "offline": {
         "title": "Offline and data",
@@ -868,7 +872,11 @@
     "lookAroundBanner": "Nothing you do on this visit is saved.",
     "chooseLearner": "Choose who's learning",
     "menuTitle": "Menu",
-    "menuClose": "Close menu"
+    "menuClose": "Close menu",
+    "language": {
+      "title": "Language",
+      "button": "Language: {language}"
+    }
   },
   "dev": {
     "rtlOn": "Right-to-left test mode is on. Add ?dir=ltr to the address to turn it off.",

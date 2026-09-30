@@ -1,0 +1,1085 @@
+{
+  "app": {
+    "name": "Thinkerwell",
+    "courseTitle": "Menjelajahi Dunia Kita",
+    "skipToContent": "Langsung ke isi",
+    "documentTitle": "{page} · Thinkerwell"
+  },
+  "nav": {
+    "label": "Utama",
+    "home": "Beranda",
+    "course": "Kursus",
+    "journal": "Jurnalku",
+    "educators": "Untuk pendidik",
+    "about": "Tentang",
+    "settings": "Pengaturan"
+  },
+  "stages": {
+    "read": "Baca",
+    "write": "Tulis",
+    "speak": "Bicara",
+    "watch": "Tonton",
+    "reflect": "Refleksi",
+    "complete": "Pelajaran selesai"
+  },
+  "sections": {
+    "check": "Cek bagian"
+  },
+  "lesson": {
+    "number": "Pelajaran {number}",
+    "minutes": "Sekitar {min}–{max} menit",
+    "nextStep": "Langkah berikutnya: {stage}"
+  },
+  "lessonPlayer": {
+    "shell": {
+      "aboutLesson": "Tentang pelajaran ini",
+      "learningGoal": "Tujuan belajar",
+      "time": "Sekitar {min}–{max} menit. Kamu bisa berhenti dan kembali kapan saja.",
+      "sublabelDone": "Selesai",
+      "sublabelRead": "Pemanasan, bacaan, dan cek cepat",
+      "sublabelWrite": "Tugas menulismu",
+      "sublabelSpeak": "Dengan teman atau sendiri",
+      "sublabelWatch": "Tidak wajib · {minutes} menit",
+      "sublabelWatchNoTime": "Tidak wajib",
+      "sublabelReflect": {
+        "other": "{count} pertanyaan singkat"
+      },
+      "continueTo": "Lanjut ke {stage}",
+      "finishLesson": "Selesaikan pelajaran",
+      "noLearnerTitle": "Belum ada yang tersimpan.",
+      "noLearnerBody": "Pilih siapa yang belajar supaya hasil kerjamu tersimpan di perangkat ini.",
+      "noLearnerAction": "Pilih siapa yang belajar",
+      "saveError": "Perubahan terakhirmu belum tersimpan di perangkat ini. Lanjut saja: akan dicoba lagi saat kamu membuat perubahan berikutnya."
+    },
+    "read": {
+      "toolsLabel": "Alat bantu membaca",
+      "listen": "Dengarkan",
+      "listenNoVoice": "Dengarkan belum bisa membacakan pelajaran ini di sini, karena perangkat ini tidak punya suara bahasa Indonesia.",
+      "listenLabel": "Dibacakan · bagian {n} dari {total}",
+      "levelLabel": "Tingkat bacaan",
+      "levelStandard": "Standar",
+      "levelSimpler": "Lebih mudah",
+      "keyWords": "Kata kunci",
+      "keyWordsTitle": "Kata kunci di pelajaran ini",
+      "keyWordsIntro": "Semua kata kunci di bacaan ini, beserta artinya.",
+      "warmUpEyebrow": "Sebelum membaca",
+      "warmUpHint": "Pilih satu. Nanti kamu bisa mengubahnya.",
+      "warmUpHintWriting": "Tulis ide singkat. Nanti kamu bisa mengubahnya.",
+      "warmUpChoices": "Ide pertamamu",
+      "warmUpWritingLabel": "Ide pertamamu",
+      "partLabel": "Baca · {n} dari {total}",
+      "partSimpler": "Baca · {n} dari {total} · Versi lebih mudah",
+      "nextPart": "Berikutnya: Bagian {n}",
+      "nextCheck": "Berikutnya: Cek cepat",
+      "backPart": "Bagian {n}",
+      "glossaryHelper": "Ketuk kata yang berwarna untuk melihat artinya.",
+      "checkEyebrow": "Baca · bagian terakhir",
+      "checkTitle": "Cek cepat",
+      "checkRetryNote": "Coba sebanyak yang kamu mau",
+      "questionOf": "Pertanyaan {n} dari {total}",
+      "thinkEyebrow": "Pertanyaan {n} dari {total} · pikirkan baik-baik",
+      "thinkHelper": "Jawaban yang benar bisa lebih dari satu.",
+      "thinkHelperOptional": "Pertanyaan ini tidak wajib. Jawaban yang benar bisa lebih dari satu.",
+      "tryAgain": "Coba lagi",
+      "checkHelper": "Kamu bisa kembali ke pertanyaan-pertanyaan ini kapan saja."
+    },
+    "evidence": {
+      "fictionalBadge": {
+        "items": "Contoh fiksi",
+        "timeline": "Garis waktu fiksi",
+        "map": "Peta fiksi",
+        "cases": "Contoh fiksi",
+        "sources": "Sumber fiksi",
+        "table": "Tabel fiksi"
+      },
+      "sectionLabel": "Bukti",
+      "eyebrow": "Perhatikan baik-baik",
+      "mapKey": "Keterangan peta",
+      "places": "Tempat",
+      "tableLabel": "Tabel: {title}"
+    },
+    "visual": {
+      "seeBigger": "Lihat lebih besar",
+      "close": "Tutup",
+      "title": {
+        "map": "Peta",
+        "timeline": "Garis waktu",
+        "diagram": "Diagram",
+        "illustration": "Gambar"
+      },
+      "scrollLabel": "{title}, diperbesar",
+      "touchHintNarrow": "Geser untuk melihat semuanya. Cubit untuk memperbesar lagi.",
+      "touchHintWide": "Cubit untuk memperbesar."
+    },
+    "write": {
+      "helpLabel": "Bantuan menulis",
+      "modeWrite": "Tulis",
+      "modeStarters": "Awal kalimat",
+      "modePlan": "Rencanakan dulu",
+      "modeWriteShort": "Tulis",
+      "modeStartersShort": "Pembuka",
+      "modePlanShort": "Rencana",
+      "evidenceToggle": "Lihat buktinya lagi",
+      "mapToggle": "Lihat petanya lagi",
+      "startersTitle": "Ketuk awal kalimat untuk menambahkannya ke tulisanmu",
+      "startersTitleShort": "Ketuk satu untuk memakainya",
+      "planTitle": "Rencanakan idemu di sini, lalu tulis jawabanmu di bawah",
+      "answerLabel": "Jawabanmu",
+      "helperSaving": "4 sampai 6 kalimat sudah cukup. Ejaan tidak penting di sini. Tulisanmu tersimpan di perangkat ini sambil kamu mengetik.",
+      "helperLookAround": "4 sampai 6 kalimat sudah cukup. Ejaan tidak penting di sini. Tidak ada yang tersimpan selama kamu lihat-lihat.",
+      "helperNoLearner": "4 sampai 6 kalimat sudah cukup. Ejaan tidak penting di sini. Belum ada yang tersimpan sampai kamu memilih siapa yang belajar.",
+      "helperSavingSayIt": "4 sampai 6 kalimat sudah cukup. Ejaan tidak penting di sini. Ketuk Ucapkan untuk bicara, tanpa perlu mengetik. Tulisanmu tersimpan di perangkat ini sambil kamu mengetik.",
+      "helperLookAroundSayIt": "4 sampai 6 kalimat sudah cukup. Ejaan tidak penting di sini. Ketuk Ucapkan untuk bicara, tanpa perlu mengetik. Tidak ada yang tersimpan selama kamu lihat-lihat.",
+      "helperNoLearnerSayIt": "4 sampai 6 kalimat sudah cukup. Ejaan tidak penting di sini. Ketuk Ucapkan untuk bicara, tanpa perlu mengetik. Belum ada yang tersimpan sampai kamu memilih siapa yang belajar.",
+      "selfCheckTitle": "Periksa jawabanmu",
+      "seeExample": "Lihat contoh jawaban",
+      "compareExample": "Bandingkan dengan contoh jawaban",
+      "exampleEyebrow": "Contoh jawaban",
+      "exampleNote": "Ini salah satu cara menjawab. Jawabanmu boleh berbeda.",
+      "tip": "Bingung? Ketuk salah satu awal kalimat, lalu isi bagian yang kosong."
+    },
+    "sayIt": {
+      "listening": "Mendengarkan. Bicaralah pelan-pelan. Kata-katamu muncul di kotak, dan kamu bisa memperbaikinya nanti.",
+      "micBlocked": "Ucapkan butuh mikrofon. Kamu bisa mengizinkannya di pengaturan browser, atau mengetik saja.",
+      "noMic": "Mikrofon tidak ditemukan. Kamu bisa mengetik saja.",
+      "offline": "Ucapkan butuh internet di perangkat ini. Kamu bisa mengetik saja.",
+      "noSpeech": "Tidak ada suara yang terdengar. Ketuk Ucapkan untuk mencoba lagi, atau mengetik saja.",
+      "unavailable": "Ucapkan sedang tidak berfungsi di perangkat ini. Kamu bisa mengetik saja."
+    },
+    "speak": {
+      "eyebrow": "Bicara dan dengarkan",
+      "task": "Ceritakan ide-idemu dari pelajaran ini. Kamu bisa melakukannya dengan teman atau sendiri.",
+      "taskWithRecorder": "Ceritakan ide-idemu dari pelajaran ini. Kamu bisa melakukannya dengan teman atau sendiri. Kalau mau, kamu bisa merekam suaramu. Rekaman tetap di perangkat ini.",
+      "partnerTitle": "Dengan teman",
+      "soloTitle": "Sendiri",
+      "practisedLegend": "Bagaimana kamu berlatih?",
+      "practisedHelp": "Pilih satu. Cara apa pun tetap dihitung.",
+      "recorder": {
+        "title": "Rekam suaramu (tidak wajib)",
+        "task": "Ucapkan jawabanmu, lalu dengarkan lagi. Coba sebanyak yang kamu mau.",
+        "noteLookAround": "Tidak disimpan selama kamu lihat-lihat. Rekaman hilang saat kamu meninggalkan halaman ini.",
+        "noteNoLearner": "Belum disimpan sampai kamu memilih siapa yang belajar. Rekaman hilang saat kamu meninggalkan halaman ini.",
+        "announceStarted": "Merekam.",
+        "announceSaved": "Rekaman berhenti. Rekaman tetap di perangkat ini.",
+        "announceStopped": "Rekaman berhenti.",
+        "announceDeleted": "Rekaman dihapus.",
+        "micBlocked": "Merekam butuh mikrofon. Kamu bisa mengizinkannya di pengaturan browser, atau berlatih tanpa merekam.",
+        "noMic": "Mikrofon tidak ditemukan. Kamu bisa berlatih dengan suara lantang atau bersama teman.",
+        "failed": "Perekaman tidak bisa dimulai di perangkat ini. Kamu bisa berlatih dengan suara lantang atau bersama teman.",
+        "playback": "Rekaman ini tidak bisa diputar di sini.",
+        "notSaved": "Rekaman ini tidak bisa disimpan di perangkat. Kamu tetap bisa mendengarkannya sekarang."
+      }
+    },
+    "watch": {
+      "eyebrow": "Tonton · tidak wajib",
+      "task": "Tonton video pendek, atau baca saja ide yang sama. Keduanya sama-sama dihitung.",
+      "slowTitle": "Internet lambat?",
+      "slowBody": "Pilih \"Baca saja\". Isinya sama dan hampir tidak memakai data.",
+      "saveDataTitle": "Video dimatikan untuk menghemat data.",
+      "timeoutTitle": "Videonya butuh waktu lama untuk dimuat.",
+      "offlineTitle": "Kamu sedang tidak tersambung ke internet, jadi videonya belum bisa dimuat.",
+      "unavailableTitle": "Video ini tidak bisa diputar di sini sekarang.",
+      "sameIdeas": "Ini ide yang sama untuk dibaca.",
+      "thinkFirst": "Pikirkan dulu",
+      "beforePlaceholder": "Tulis ide singkat, atau pikirkan saja…",
+      "readInstead": "Baca saja",
+      "closeVideo": "Tutup video",
+      "playerOpened": "Pemutar video sudah terbuka. Tekan tombol putarnya untuk mulai.",
+      "writtenPart": "Versi tulisan",
+      "keyPoints": "Poin penting",
+      "watchInstead": "Tonton videonya saja",
+      "tryAgain": "Coba putar video lagi",
+      "afterEyebrow": "Setelah menonton atau membaca",
+      "afterPlaceholder": "Tulis satu atau dua kalimat…",
+      "helper": "Menonton tidak wajib. Kamu boleh melewati langkah ini.",
+      "forTeachers": "Untuk guru",
+      "videoInEnglish": "Video ini berbahasa Inggris. Pilih \"Baca saja\" untuk ide yang sama dalam bahasa Indonesia."
+    },
+    "reflect": {
+      "eyebrow": "Refleksi",
+      "task": "Luangkan waktu sebentar untuk memikirkan apa yang kamu pelajari hari ini. Hanya pertanyaan pertama yang wajib.",
+      "journalNote": "Jawabanmu masuk ke jurnalmu di perangkat ini. Hanya orang yang memakai perangkat ini yang bisa melihatnya.",
+      "lookAroundNote": "Kamu sedang lihat-lihat, jadi jawabanmu tidak disimpan.",
+      "noLearnerNote": "Jawabanmu belum disimpan. Pilih siapa yang belajar supaya jawabanmu tersimpan di jurnal.",
+      "finishHelper": "Jawab pertanyaan pertama untuk menyelesaikan pelajaran."
+    },
+    "complete": {
+      "eyebrow": "Pelajaran {number} selesai",
+      "title": "Kamu sudah menyelesaikan Pelajaran {number}.",
+      "summary": "{title} {message}",
+      "partwayEyebrow": "Pelajaran {number}",
+      "partwayTitle": "Kamu sudah mengerjakan sebagian Pelajaran {number}.",
+      "partwayBody": "Sejauh ini kamu sudah menyelesaikan {done} dari {total} langkah. Jawab pertanyaan pertama di Refleksi untuk menyelesaikannya. Tidak ada yang dikunci, jadi kamu boleh membuka langkah mana saja.",
+      "partwayCta": "Buka {stage}",
+      "badgeProgress": {
+        "other": "{title} · {completed} dari {count} pelajaran selesai"
+      },
+      "badgeSection": "Bagian {number} · {title}",
+      "savedBoth": "Tulisan dan refleksimu tersimpan di jurnalmu.",
+      "savedWriting": "Tulisanmu tersimpan di jurnalmu.",
+      "savedReflection": "Refleksimu tersimpan di jurnalmu.",
+      "guestNote": "Tidak ada hasil pelajaran ini yang tersimpan kali ini. Supaya hasil kerjamu tersimpan, pilih siapa yang belajar di beranda.",
+      "upNext": "Berikutnya",
+      "sectionCheckTitle": "Cek bagian: {title}",
+      "sectionCheckQuestion": "Mencakup Pelajaran {first}–{last}. Coba kapan saja, sesering yang kamu mau.",
+      "backToCourse": "Kembali ke kursus",
+      "openJournal": "Buka jurnalku"
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "Siapa yang belajar hari ini?",
+      "subtitle": "Ketuk namamu untuk melanjutkan dari tempat kamu berhenti.",
+      "onThisDevice": "Di perangkat ini",
+      "hero": {
+        "tagline": "Jelajahi duniamu.",
+        "description": "Kursus IPS gratis. Belajar tentang orang, tempat, dan komunitas, lalu bagikan idemu sendiri.",
+        "stagesLabel": "Setiap pelajaran punya lima langkah",
+        "footnote": "{lessons} pelajaran dalam {sections} bagian · tidak perlu akun"
+      },
+      "lookAround": "Lihat-lihat saja (tanpa menyimpan)",
+      "lookAroundNote": "Hasil kerja hanya disimpan di perangkat ini. Tanpa kata sandi, tanpa foto.",
+      "newLearnerTile": "Aku baru di sini",
+      "tileMeta": "Sampai Pelajaran {number}",
+      "tileMetaNone": "Belum mulai",
+      "tileAdded": "Ditambahkan {date}",
+      "tileMetaAdded": "{meta} · ditambahkan {date}",
+      "newLearner": {
+        "back": "Kembali",
+        "eyebrow": "Selamat datang",
+        "title": "Siapa namamu?",
+        "nameLabel": "Nama depan atau nama panggilan",
+        "nameHelper": "Tidak perlu nama belakang.",
+        "nameRequired": "Tulis namamu atau nama panggilanmu.",
+        "nameTooLong": "Cukup sekitar 30 huruf saja.",
+        "colourLabel": "Pilih warnamu",
+        "colour": {
+          "lemon": "Kuning",
+          "history": "Krem",
+          "geography": "Hijau",
+          "civics": "Biru",
+          "paper": "Putih"
+        },
+        "classCodeLabel": "Kode kelas",
+        "classCodeHelper": "Gurumu mungkin akan memberimu kode.",
+        "classCodePlaceholder": "Contohnya HLP-07",
+        "classCodeInvalid": "Pakai huruf, angka, dan tanda hubung saja, seperti HLP-07.",
+        "submit": "Mulai Pelajaran 1",
+        "submitError": "Belum tersimpan. Coba lagi.",
+        "startsWith": "Kamu akan mulai dengan",
+        "startsWithLesson": "Pelajaran {number}: {title}",
+        "startsWithNote": "Nanti kamu bisa membuka pelajaran mana saja dari halaman kursus.",
+        "privacyNote": "Hasil kerjamu tetap ada di perangkat ini.",
+        "languageLabel": "Bahasamu",
+        "languageHelper": "Tombol dan petunjuk tampil dalam bahasa ini. Dalam bahasa Indonesia, pelajaran juga. Dalam bahasa lain, pelajaran tetap dalam bahasa Inggris supaya kamu bisa berlatih."
+      },
+      "remove": {
+        "action": "Hapus",
+        "label": "Hapus {name}",
+        "confirmTitle": "Hapus {name}?",
+        "confirmBody": "Hasil pelajaran, jurnal, nilai cek bagian, dan rekamannya akan dihapus dari perangkat ini. Ini tidak bisa dibatalkan.",
+        "confirm": "Hapus {name}",
+        "cancel": "Jangan hapus {name}",
+        "error": "Tidak berhasil. Coba lagi."
+      },
+      "noStorage": {
+        "title": "Hasil kerjamu tidak bisa disimpan di perangkat ini",
+        "body": "Browser ini tidak bisa menyimpan hasil kerja di perangkat ini. Ini sering terjadi di jendela pribadi. Kamu tetap bisa lihat-lihat, tetapi apa pun yang kamu lakukan tidak disimpan.",
+        "cta": "Lihat-lihat saja"
+      },
+      "guest": {
+        "title": "Jelajahi kursus",
+        "body": "Buka pelajaran mana saja untuk melihat cara kerjanya."
+      },
+      "dashboard": {
+        "greeting": "Hai {name}",
+        "summaryNone": "Kamu belum memulai pelajaran apa pun. Berikutnya Pelajaran {number}.",
+        "summaryInProgress": {
+          "other": "Kamu sudah menyelesaikan {count} pelajaran. Berikutnya Pelajaran {number}."
+        },
+        "summaryDone": "Kamu sudah menyelesaikan semua pelajaran. Kerja bagus.",
+        "startHere": "Mulai di sini",
+        "startCta": "Mulai",
+        "continueEyebrow": "Lanjutkan dari tempat kamu berhenti",
+        "upNext": "Berikutnya",
+        "finishedTitle": "Kamu sudah menyelesaikan kursus ini",
+        "finishedBody": "Kamu bisa kembali ke pelajaran mana saja, atau mencoba cek bagian lagi.",
+        "finishedCta": "Lihat kursus",
+        "offlineBadge": "Semua {count} pelajaran bisa dibuka tanpa internet",
+        "offlinePreparingBadge": "Menyimpan pelajaran agar bisa dibuka tanpa internet",
+        "savedBadge": "Tersimpan di perangkat ini",
+        "yourCourse": "Kursusmu",
+        "seeAll": "Lihat semua {count} pelajaran",
+        "youAreHere": "Kamu di sini",
+        "lessonsOf": "{completed} dari {total} pelajaran",
+        "sectionCheckReady": "Cek bagian siap",
+        "sectionCheckBody": {
+          "other": "Kamu sudah menyelesaikan semua {count} pelajaran. Coba {questions} pertanyaan untuk melihat apa yang kamu ingat. Kamu boleh mencobanya sesering yang kamu mau."
+        },
+        "startCheck": "Mulai cek",
+        "fromJournal": "Dari jurnalmu",
+        "openJournal": "Buka jurnalku",
+        "noJournalYet": "Belum ada yang tersimpan. Tulisan dan refleksimu akan muncul di sini setelah kamu mulai.",
+        "latestEntry": "{stage} · Pelajaran {number}",
+        "languageTitle": "Bahasamu",
+        "languageHelp": "Tombol dan petunjuk tampil dalam bahasa ini. Dalam bahasa Indonesia, pelajaran juga. Dalam bahasa lain, pelajaran tetap dalam bahasa Inggris supaya kamu bisa berlatih.",
+        "languageSaveFailed": "Belum tersimpan. Coba lagi."
+      }
+    },
+    "course": {
+      "title": "Menjelajahi Dunia Kita",
+      "eyebrow": "Kursus",
+      "description": "Temukan bagaimana orang, tempat, komunitas, dan keputusan membentuk dunia di sekitar kita.",
+      "lessonsBadge": {
+        "other": "{count} pelajaran"
+      },
+      "checksBadge": {
+        "other": "{count} cek bagian"
+      },
+      "timeBadge": "Sekitar {min}–{max} menit per pelajaran",
+      "sectionsNav": "Bagian",
+      "nothingLocked": "Tidak ada yang dikunci. Mulai pelajaran mana saja, dengan urutan apa saja. Nomornya menunjukkan urutan yang disarankan.",
+      "guestNote": "Kamu sedang lihat-lihat, jadi kemajuan belajar tidak ditampilkan.",
+      "noLearnerNote": "Pilih siapa yang belajar untuk melihat kemajuanmu.",
+      "lessonLabel": "Pelajaran {number} · {section}",
+      "sidebarCount": "{completed} dari {total}",
+      "numberRange": "{first}–{last}",
+      "showLessons": "Tampilkan {count} pelajaran",
+      "hideLessons": "Sembunyikan pelajaran",
+      "sectionCheckRowTitle": "Cek bagian: {title}",
+      "sectionCheckQuestion": "Mencakup Pelajaran {range}. Coba kapan saja, sesering yang kamu mau.",
+      "allDoneCheckReady": "Semua {count} pelajaran selesai. Cek bagian sudah siap.",
+      "lessonsRange": "Pelajaran {range}"
+    },
+    "lesson": {
+      "title": "Pelajaran {number}: {stage}"
+    },
+    "sectionCheck": {
+      "title": "Cek bagian: {section}",
+      "eyebrow": "Cek bagian",
+      "introTitle": "Apa yang kamu ingat dari {title}?",
+      "factQuestions": "{count} pertanyaan tentang Pelajaran {range}",
+      "factTime": "Tanpa batas waktu. Sekitar {minutes} menit.",
+      "factRetry": "Coba sebanyak yang kamu mau",
+      "factPrivate": "Nilaimu tetap di perangkat ini",
+      "factGuest": "Tidak ada yang disimpan selama kamu lihat-lihat",
+      "tip": "Tidak yakin? Tebak sebaik yang kamu bisa. Setelah setiap pertanyaan, kamu akan melihat mengapa jawabannya benar.",
+      "start": "Mulai cek",
+      "lookAtLessons": "Lihat pelajarannya dulu",
+      "questionOf": "Pertanyaan {n} dari {total}",
+      "answeredCount": "{count} sudah dijawab",
+      "stopCheck": "Hentikan cek",
+      "questionEyebrow": "Pertanyaan {n} · {skill}",
+      "skill": {
+        "vocabulary": "Kata dan artinya",
+        "understand": "Ide utama",
+        "evidence": "Memakai bukti",
+        "apply": "Memakai ide pada contoh baru"
+      },
+      "fromLesson": "Dari Pelajaran {number}: {question}",
+      "chooseHelper": "Pilih jawaban untuk lanjut.",
+      "nextQuestion": "Pertanyaan berikutnya",
+      "seeResults": "Lihat hasilmu",
+      "resultsEyebrow": "Cek bagian · {title}",
+      "scoreHeading": "{score} dari {total}",
+      "retry": "Coba cek lagi",
+      "backToCourse": "Kembali ke kursus",
+      "savedNote": "Nilaimu tersimpan di perangkat ini.",
+      "notSavedNote": "Tidak ada yang disimpan selama kamu lihat-lihat.",
+      "skillsTitle": "Hasilmu untuk setiap keterampilan",
+      "reviewTitle": "Layak dilihat lagi",
+      "reviewQuestion": "Pertanyaan {n}: {question}",
+      "reviewLesson": "Pelajaran {number} · {question}",
+      "noQuiz": "Cek bagian ini belum siap."
+    },
+    "journal": {
+      "title": "Jurnalku",
+      "subtitle": "Semua yang kamu tulis di pelajaran, mulai dari yang terbaru.",
+      "filterLabel": "Tampilkan",
+      "filterAll": "Semua",
+      "filterWriting": "Tulisan",
+      "filterReflections": "Refleksi",
+      "lessonCount": {
+        "other": "{count} pelajaran"
+      },
+      "pieceCount": {
+        "other": "{count} tulisan dari {lessons}"
+      },
+      "groupLabel": "Pelajaran {number} · {title}",
+      "privacyNote": "Jurnalmu ada di perangkat ini. Siapa pun yang mengetuk namamu di sini bisa membacanya, jadi pikirkan apa yang kamu tulis. Kalau mau menyimpan salinannya, minta gurumu membantu mencetaknya.",
+      "empty": "Belum ada yang tersimpan. Menulislah atau buat refleksi di sebuah pelajaran, nanti hasilnya muncul di sini.",
+      "emptyFiltered": "Belum ada yang tersimpan di tampilan ini. Pilih Semua untuk melihat semua yang sudah kamu tulis.",
+      "lookAroundNote": "Kamu sedang lihat-lihat, jadi tidak ada yang disimpan di sini. Pilih siapa yang belajar supaya kamu punya jurnal.",
+      "noLearnerNote": "Pilih siapa yang belajar untuk melihat jurnalnya.",
+      "savedToday": "Disimpan hari ini",
+      "savedYesterday": "Disimpan kemarin",
+      "cancelEdit": "Batal",
+      "saveEdit": "Simpan"
+    },
+    "educators": {
+      "title": "Untuk pendidik",
+      "eyebrow": "Untuk guru dan relawan",
+      "heroTitle": "Jalankan pelajaran Thinkerwell bersama kelompokmu",
+      "heroBody": "Setiap pelajaran bisa dipakai di satu layar bersama, berpasangan, atau di perangkat masing-masing. Tidak ada akun yang perlu dibuat.",
+      "previewLesson": "Pratinjau pelajaran",
+      "printLesson": "Lihat pelajaran versi cetak",
+      "needTitle": "Yang kamu butuhkan",
+      "need1": "Satu perangkat untuk setiap 1 sampai 3 pelajar, atau satu layar besar",
+      "need2": "Kertas dan pensil untuk membuat rencana",
+      "need3": "Sekitar {min}–{max} menit per pelajaran",
+      "need4": "Internet untuk kunjungan pertama dan untuk video",
+      "settingsLink": "Pengaturan perangkat ini",
+      "howTitle": "Jalannya satu sesi",
+      "step1Title": "Pilih pelajaran",
+      "step1Body": "Pelajaran bisa diambil dengan urutan apa saja. Pilih yang cocok untuk kelompokmu, atau ikuti nomornya.",
+      "step2Title": "Kerjakan lima langkah",
+      "step2Body": "Baca, Tulis, Bicara, Tonton, Refleksi. Pasangkan pelajar untuk Bicara. Tonton boleh dilewati.",
+      "step3Title": "Berbagi dan refleksi",
+      "step3Body": "Minta dua atau tiga pelajar membagikan jawabannya. Semua orang menulis satu refleksi.",
+      "previewTitle": "Pratinjau pelajaran mana saja",
+      "previewNote": "Pratinjau tidak pernah menyimpan apa pun",
+      "previewIntro": "Setiap pelajaran punya panduan guru berisi rencana sesi dan jawabannya, dan setiap cek bagian punya kunci jawaban.",
+      "sectionLabel": "Bagian",
+      "previewCta": "Pratinjau",
+      "teacherGuide": "Panduan guru",
+      "teacherGuideLabel": "Panduan guru untuk Pelajaran {number}",
+      "answerKey": "Kunci jawaban",
+      "answerKeyLabel": "Kunci jawaban cek bagian {section}",
+      "codesTag": "Mitra uji coba",
+      "codesTitle": "Kode kelas sebagai ganti nama",
+      "codesBody": "Selama uji coba, setiap pelajar bisa mendapat kode seperti HLP-07. Nanti, kode ini akan membantu kami melihat perkembangan seluruh kelompok tanpa nama siapa pun. Kamu yang menyimpan daftar pasangan nama dan kodenya.",
+      "feedbackTitle": "Beri tahu kami yang perlu diperbaiki",
+      "feedbackBody": "Ada yang membingungkan, terlalu sulit, atau rusak? Ada video yang tidak bisa diputar? Kirim email ke kami dan kami akan memperbaikinya.",
+      "feedbackEmail": "[FEEDBACK EMAIL]",
+      "toolsTitle": "Siapkan perangkat dan pantau kelompokmu",
+      "toolsIntro": "Untuk hari pertama kamu mulai, dan setiap hari sesudahnya. Semua yang ada di sini tetap di perangkat ini.",
+      "setupTitle": "Siapkan perangkat ini",
+      "setupBody": "Daftar periksa untuk setiap laptop atau tablet. Cetak untuk dicentang di kertas.",
+      "setupCta": "Buka daftar periksa",
+      "classTitle": "Kelas di perangkat ini",
+      "classBody": "Pelajaran yang sudah selesai dan posisi setiap pelajar sekarang. Tanpa nilai.",
+      "classCta": "Lihat kelas",
+      "certificatesTitle": "Sertifikat",
+      "certificatesBody": "Semua sertifikat yang diraih di perangkat ini, satu per halaman.",
+      "certificatesCta": "Cetak semua sertifikat"
+    },
+    "teacherTools": {
+      "back": "Kembali ke halaman pendidik",
+      "correctAnswer": "Jawaban yang benar",
+      "why": "Alasannya:",
+      "feedback": "Umpan balik:",
+      "newTab": "(terbuka di tab baru)"
+    },
+    "teacherGuide": {
+      "pageTitle": "Pelajaran {number}: panduan guru",
+      "eyebrow": "Panduan guru · Pelajaran {number}",
+      "intro": "Semua yang kamu butuhkan untuk mengajarkan pelajaran ini, lengkap dengan jawabannya. Bisa dicetak di kertas A4, hitam di atas putih, tanpa menu.",
+      "previewLesson": "Pratinjau pelajaran",
+      "learnerPrint": "Cetak pelajaran untuk pelajar",
+      "section": "Bagian",
+      "sectionValue": "Bagian {number}: {title}",
+      "essentialQuestion": "Pertanyaan utama",
+      "learningGoal": "Tujuan belajar",
+      "time": "Waktu",
+      "beforeTitle": "Sebelum mengajar",
+      "sensitiveTitle": "Topik sensitif: baca sebelum kelas",
+      "contentNotePointer": "Video ini punya catatan isi. Baca sebelum kelas: catatannya ada bersama video, di bawah.",
+      "notesTitle": "Catatan mengajar",
+      "planTitle": "Rencana sesi",
+      "planIntro": "Saran rencana untuk sesi sekitar 45 menit. Ubah sesuai kelompokmu.",
+      "planStep": "Langkah",
+      "planDoTitle": "Yang dilakukan",
+      "planColumn": "{minutes} mnt",
+      "planTotal": "Total",
+      "planSkip": "Lewati",
+      "planShorter": "Hanya punya 30 menit? Pakai kolom 30 mnt: lewati Tonton atau pakai Baca saja, dan kurangi sedikit waktu langkah lainnya. Pelajar bisa membuka Tonton nanti, karena tidak ada yang dikunci.",
+      "planSteps": {
+        "warmUp": "Pemanasan",
+        "read": "Baca per bagian",
+        "check": "Cek cepat",
+        "write": "Tulis",
+        "speak": "Bicara",
+        "watch": "Tonton atau baca saja",
+        "reflect": "Refleksi"
+      },
+      "planDo": {
+        "warmUp": "Ajukan pertanyaan pemanasan. Semua jawaban boleh: tujuannya supaya semua orang mulai berpikir.",
+        "read": {
+          "other": "Baca {count} bagian teks satu per satu, dalam versi Standar atau Lebih mudah. Lihat bukti dan gambarnya bersama-sama."
+        },
+        "check": {
+          "other": "Pelajar menjawab {count} pertanyaan cek cepat, lalu membahas jawabannya bersama."
+        },
+        "write": "Pelajar membuat rencana dan menulis jawabannya, lalu mencentang cek mandiri. Awal kalimat bisa membantu.",
+        "speak": "Pelajar menceritakan jawabannya kepada teman, atau berlatih sendiri.",
+        "watch": "Tonton videonya bersama, atau baca versi tulisannya.",
+        "reflect": "Semua orang menjawab pertanyaan refleksi pertama. Menjawabnya akan menyelesaikan pelajaran."
+      },
+      "keyWordsTitle": "Kata kunci",
+      "evidenceTitle": "Bukti dan gambarnya",
+      "checkTitle": "Cek cepat",
+      "checkIntro": "Pelajar melihat pilihan jawaban dengan urutan yang berbeda, dan bisa mencoba lagi sesering yang mereka mau.",
+      "think": "Pertanyaan untuk dipikirkan: jawaban yang benar bisa lebih dari satu.",
+      "thinkOptional": "Pertanyaan untuk dipikirkan, tidak wajib: jawaban yang benar bisa lebih dari satu.",
+      "writeTask": "Tugasnya",
+      "selfCheck": "Cek mandiri",
+      "example": "Contoh jawaban",
+      "exampleNote": "Ini salah satu cara menjawab. Jawaban pelajar boleh berbeda.",
+      "discussTitle": "Bahan diskusi",
+      "discussIntro": "Pertanyaan dari pelajaran untuk dibahas bersama. Siapa pun boleh melewatkan gilirannya.",
+      "discussWarmUp": "Sebelum membaca: pemanasan",
+      "discussChoices": "Pilihan di layar",
+      "discussThink": "Setelah cek cepat",
+      "discussReflect": "Di akhir: Refleksi",
+      "startHelp": "Bantuan untuk mulai:",
+      "reflectRequired": "Pelajar menjawab pertanyaan ini untuk menyelesaikan pelajaran.",
+      "videoTitle": "Tonton atau baca saja",
+      "videoName": "Video",
+      "videoChannel": "Kanal",
+      "videoLength": "Durasi",
+      "videoLengthUnknown": "Tidak diketahui",
+      "videoLink": "Tautan",
+      "videoOpen": "Buka di YouTube",
+      "videoWhy": "Mengapa video ini",
+      "videoOffline": "Video ini butuh internet. Versi tulisannya (Baca saja) bisa dibuka tanpa internet dan berisi ide yang sama.",
+      "beforeVideo": "Sebelum video",
+      "afterVideo": "Setelah video atau bacaan",
+      "contentNote": "Catatan isi",
+      "sourcesTitle": "Sumber"
+    },
+    "answerKey": {
+      "title": "Kunci jawaban: {section}",
+      "eyebrow": "Cek bagian {number}",
+      "intro": "Semua pertanyaan di cek bagian ini, lengkap dengan jawabannya. Bisa dicetak di kertas A4, hitam di atas putih, tanpa menu.",
+      "practice": "Cek bagian ini untuk latihan. Cek ini tidak pernah menghalangi pelajar: tidak ada batas waktu, mereka bisa mencoba lagi sesering yang mereka mau, dan semua pelajaran tetap terbuka berapa pun nilainya.",
+      "order": "Pelajar melihat pilihan jawaban dengan urutan yang berbeda, jadi bahas isi jawabannya, bukan letaknya.",
+      "question": "Pertanyaan {n} · {skill}",
+      "fromLesson": "Dari Pelajaran {number}: {title}"
+    },
+    "setup": {
+      "title": "Siapkan perangkat ini",
+      "intro": "Lakukan langkah-langkah ini sekali di setiap laptop atau tablet. Setiap langkah menunjukkan apakah sudah selesai di perangkat ini.",
+      "paperIntro": "Di setiap perangkat, buka Thinkerwell, lalu Untuk pendidik, lalu Siapkan perangkat ini. Centang setiap langkah yang sudah selesai.",
+      "device": "Perangkat",
+      "date": "Tanggal",
+      "stepsLabel": "Langkah",
+      "state": {
+        "done": "Selesai",
+        "todo": "Belum selesai",
+        "inProgress": "Sedang berjalan",
+        "checking": "Memeriksa",
+        "notHere": "Tidak ada di browser ini",
+        "notNeeded": "Tidak perlu"
+      },
+      "homeScreen": {
+        "title": "Tambahkan Thinkerwell ke layar utama",
+        "why": {
+          "other": "Setelah itu, Thinkerwell terbuka seperti aplikasi. Di iPad dan iPhone, ini juga mencegah Safari menghapus hasil kerja yang tersimpan kalau Thinkerwell tidak dibuka selama {count} hari."
+        },
+        "first": "Lakukan ini dulu. Lalu buka Thinkerwell dari layar utama, dan lakukan langkah-langkah lain di sana.",
+        "installed": "Thinkerwell sedang dibuka dari layar utama.",
+        "inBrowser": "Thinkerwell sedang dibuka di browser. Kalau kamu sudah menambahkannya, buka dari layar utama saja.",
+        "thisDevice": "Langkah untuk perangkat ini: {device}",
+        "otherDevices": "Langkah untuk perangkat lain",
+        "apple": {
+          "name": "iPad atau iPhone (Safari)",
+          "step1": "Buka Thinkerwell di Safari.",
+          "step2": "Ketuk Bagikan: kotak dengan panah ke atas.",
+          "step3": "Ketuk Tambah ke Layar Utama. Mungkin kamu perlu menggulir ke bawah untuk menemukannya.",
+          "step4": "Ketuk Tambah.",
+          "step5": "Buka Thinkerwell dari ikonnya. Hasil kerja yang tersimpan di sana terpisah dari Safari, jadi tambahkan pelajar di sana."
+        },
+        "android": {
+          "name": "Tablet atau HP Android (Chrome)",
+          "step1": "Buka Thinkerwell di Chrome.",
+          "step2": "Ketuk menu: tiga titik di bagian atas.",
+          "step3": "Ketuk Tambahkan ke layar utama, atau Instal aplikasi.",
+          "step4": "Ketuk Instal, atau Tambahkan.",
+          "step5": "Buka Thinkerwell dari ikonnya."
+        },
+        "desktop": {
+          "name": "Laptop Windows atau Chromebook (Chrome atau Edge)",
+          "step1": "Buka Thinkerwell di Chrome atau Edge.",
+          "step2": "Klik tombol instal di ujung kolom alamat. Kalau tidak ada, buka menu: tiga titik.",
+          "step3": "Pilih Instal Thinkerwell. Di menu, pilihan ini mungkin ada di bawah Transmisikan, simpan, dan bagikan, atau di bawah Aplikasi.",
+          "step4": "Klik Instal.",
+          "step5": "Buka Thinkerwell dari ikonnya."
+        }
+      },
+      "offline": {
+        "title": "Unduh kursus untuk dipakai tanpa internet",
+        "why": "Setelah itu, semua pelajaran bisa dipakai tanpa internet. Hanya video yang butuh internet.",
+        "how": "Buka Thinkerwell saat internet menyala, dan biarkan terbuka sampai semua pelajaran tersimpan. Thinkerwell melakukannya sendiri."
+      },
+      "storage": {
+        "title": "Jaga hasil kerja tetap aman",
+        "why": "Kalau tidak, browser bisa menghapus hasil kerja pelajar saat ruang penyimpanan perangkat hampir penuh.",
+        "how": "Ketuk Amankan hasil kerja. Kalau browser bertanya, pilih Izinkan.",
+        "button": "Amankan hasil kerja",
+        "checking": "Memeriksa apa yang dilakukan browser dengan hasil kerja yang tersimpan…",
+        "asking": "Sedang bertanya ke browser…",
+        "done": "Browser menyimpan hasil kerja di perangkat ini, bahkan saat ruang penyimpanan hampir penuh.",
+        "todo": "Browser bisa menghapus hasil kerja yang tersimpan saat ruang penyimpanan hampir penuh.",
+        "refused": "Untuk sekarang browser belum mengizinkan. Biasanya browser mau mengizinkan setelah Thinkerwell ada di layar utama dan dipakai selama beberapa hari. Coba lagi nanti.",
+        "unsupported": "Browser ini tidak bisa ditanya. Menambahkan Thinkerwell ke layar utama membantu menjaga hasil kerja tetap aman.",
+        "noStorage": "Jendela browser ini sama sekali tidak bisa menyimpan hasil kerja pelajar. Ini bisa terjadi di jendela pribadi (penyamaran). Buka Thinkerwell di jendela biasa."
+      },
+      "learners": {
+        "title": "Tambahkan pelajar yang memakai perangkat ini",
+        "why": "Setiap pelajar mendapat satu kotak di halaman beranda, dan hasil kerja mereka disimpan terpisah.",
+        "how": "Ketuk Tambah pelajar, atau biarkan setiap pelajar mengetuk Aku baru di sini di halaman beranda.",
+        "count": {
+          "other": "Ada {count} pelajar di perangkat ini."
+        },
+        "none": "Belum ada pelajar di perangkat ini.",
+        "add": "Tambah pelajar",
+        "seeClass": "Lihat kelas"
+      },
+      "speech": {
+        "title": "Periksa fitur suara ke teks",
+        "why": "Dengan Ucapkan, pelajar bisa berbicara, bukan mengetik. Pemeriksaan ini memberi tahu pelajaran apakah Ucapkan bisa dipakai di sini.",
+        "last": "Lakukan langkah ini paling akhir. Di beberapa tablet, pemeriksaan ini pernah membuat tab browser tertutup. Kalau itu terjadi, buka Thinkerwell lagi.",
+        "how": "Di Pengaturan, di bagian Ucapkan, ketuk Periksa perangkat ini.",
+        "notChecked": "Belum diperiksa di perangkat ini.",
+        "onDevice": "Fitur suara ke teks bisa dipakai di perangkat ini, dan ucapan pelajar tidak dikirim ke mana pun.",
+        "download": "Fitur ini perlu diunduh sekali dulu. Di Pengaturan, ketuk Unduh fitur suara ke teks saat Wi-Fi bagus, lalu periksa lagi.",
+        "notOnDevice": "Browser ini tidak bisa melakukannya di perangkat, jadi Ucapkan tetap tersembunyi. Pelajar mengetik saja.",
+        "none": "Browser ini tidak bisa mengubah ucapan menjadi teks, jadi tidak ada yang perlu diperiksa. Ucapkan tetap tersembunyi, dan pelajar mengetik saja.",
+        "open": "Periksa di Pengaturan"
+      },
+      "later": {
+        "title": "Sebelum kamu mereset perangkat ini atau mengembalikannya",
+        "body": "Simpan hasil kerja semua pelajar ke sebuah file, lalu muat file itu di perangkat berikutnya. Rekaman tidak ikut masuk ke file. Simpan file itu baik-baik: siapa pun yang memegangnya bisa membaca hasil kerja di dalamnya.",
+        "open": "Simpan hasil kerja ke file di Pengaturan"
+      }
+    },
+    "classView": {
+      "title": "Kelas di perangkat ini",
+      "intro": "Semua pelajar di perangkat ini, dengan namanya, dan apa yang sudah dikerjakan masing-masing.",
+      "noScores": "Di sini tidak ada nilai, karena siapa pun yang memakai perangkat ini bisa membuka halaman ini.",
+      "printAll": "Cetak semua sertifikat",
+      "listLabel": "Pelajar",
+      "learnerAdded": "{name}, ditambahkan {date}",
+      "classCode": "Kode kelas {code}",
+      "onNow": "Sekarang",
+      "lesson": "Pelajaran {number}: {title}",
+      "atStep": "Langkah: {stage}",
+      "upNext": "Berikutnya",
+      "notStarted": "Belum mulai",
+      "finished": "Semua pelajaran selesai",
+      "lastActive": "Terakhir aktif",
+      "never": "Belum pernah",
+      "lessonsDone": "Pelajaran yang selesai",
+      "lessonsOf": "{completed} dari {total}",
+      "checksTried": "Cek bagian yang sudah dicoba",
+      "checksNone": "Belum ada",
+      "empty": "Belum ada pelajar di perangkat ini.",
+      "emptyBody": "Pelajar muncul di sini setelah ditambahkan. Setiap pelajar bisa menambahkan dirinya sendiri lewat Aku baru di sini di beranda.",
+      "noStorage": "Jendela browser ini tidak bisa menyimpan hasil kerja pelajar, jadi tidak ada yang bisa ditampilkan di sini. Jendela pribadi (mode penyamaran) bisa menjadi penyebabnya."
+    },
+    "allCertificates": {
+      "title": "Semua sertifikat",
+      "count": {
+        "other": "{count} sertifikat diraih di perangkat ini. Setiap sertifikat dicetak di halaman lanskapnya sendiri."
+      },
+      "names": "Nama diambil dari perangkat ini dan tidak bisa diubah di sini. Untuk mencetak nama lain, pilih pelajar itu, lalu buka sertifikatnya dari halaman kursus.",
+      "namesLink": "Buka halaman kursus",
+      "back": "Kembali ke kelas",
+      "labelSection": "Sertifikat untuk {name}: {section}",
+      "labelCourse": "Sertifikat kursus untuk {name}",
+      "empty": "Belum ada yang punya sertifikat di perangkat ini.",
+      "emptyBody": "Pelajar mendapat sertifikat dengan menyelesaikan semua pelajaran di satu bagian. Cek bagian tidak diperlukan untuk itu."
+    },
+    "settings": {
+      "title": "Pengaturan perangkat ini",
+      "intro": "Pengaturan ini untuk guru dan relawan. Pengaturan ini berlaku untuk semua orang yang memakai perangkat ini, dan tetap tersimpan di perangkat ini.",
+      "noStorage": "Jendela browser ini tidak bisa menyimpan pengaturan.",
+      "saveFailed": "Perubahan itu belum tersimpan. Coba lagi.",
+      "language": {
+        "title": "Bahasa",
+        "label": "Bahasa di perangkat ini",
+        "labelLearner": "Bahasa untuk {name}",
+        "help": "Semuanya langsung tampil dalam bahasa ini: tombol, petunjuk, dan untuk bahasa Indonesia, pelajarannya juga. Pilihan ini disimpan untuk perangkat ini, untuk halaman pertama dan siapa saja yang belum memilih siapa yang belajar.",
+        "helpLearner": "Semuanya langsung tampil dalam bahasa ini: tombol, petunjuk, dan untuk bahasa Indonesia, pelajarannya juga. Pilihan ini disimpan untuk {name}, dan berganti lagi saat orang lain dipilih."
+      },
+      "offline": {
+        "title": "Tanpa internet dan data",
+        "checking": "Memeriksa apakah pelajaran sudah tersimpan di perangkat ini…",
+        "preparing": "Menyimpan pelajaran di perangkat ini agar bisa dipakai tanpa internet. Biarkan Thinkerwell terbuka, dengan internet menyala, sampai di sini tertulis bahwa pelajaran sudah tersimpan.",
+        "ready": "Semua {count} pelajaran sudah tersimpan di perangkat ini, lengkap dengan gambarnya. Thinkerwell bisa dipakai di sini tanpa internet, kecuali videonya.",
+        "failed": "Pelajaran belum selesai disimpan untuk dipakai tanpa internet. Buka Thinkerwell lagi dengan internet menyala, dan Thinkerwell akan mencoba lagi.",
+        "unsupported": "Browser ini tidak bisa menyimpan pelajaran untuk dipakai tanpa internet, jadi di sini Thinkerwell butuh internet. Ini bisa terjadi di jendela pribadi (penyamaran).",
+        "saveData": "Hemat data",
+        "saveDataHelp": "Mematikan video, jadi Tonton langsung membuka versi tulisan, yang isinya sama. Semua bagian lain sudah bisa dipakai tanpa internet.",
+        "saveDataFromBrowser": "Pengaturan ini menyala karena perangkat ini diatur untuk menghemat data."
+      },
+      "reading": {
+        "title": "Membaca dan mendengarkan",
+        "level": "Tingkat bacaan",
+        "levelHelp": "Pelajaran terbuka di tingkat ini untuk siapa saja yang belum memilih. Pelajar bisa menggantinya di pelajaran mana pun, dan pilihan mereka disimpan.",
+        "speed": "Kecepatan suara",
+        "speedHelp": "Seberapa cepat Dengarkan membacakan teks. Pelajar bisa mengubahnya sambil mendengarkan.",
+        "noVoice": "Browser ini tidak punya suara di perangkat ini, jadi Dengarkan tidak muncul di sini."
+      },
+      "sayIt": {
+        "title": "Ucapkan: suara ke teks",
+        "intro": "Dengan Ucapkan, pelajar bisa berbicara, bukan mengetik, di kotak tulisan dalam pelajaran. Ucapkan hanya muncul kalau bisa dipakai.",
+        "notChecked": "Perangkat ini belum diperiksa. Periksa sekali saja, agar pelajaran tahu apakah Ucapkan bisa dipakai di sini.",
+        "checkDevice": "Periksa perangkat ini",
+        "checkHelp": "Pemeriksaannya bisa makan waktu sebentar.",
+        "checkedOn": "Diperiksa pada {date}.",
+        "checking": "Memeriksa apa yang bisa dilakukan browser ini…",
+        "onDevice": "Browser ini mengubah ucapan menjadi teks di perangkat ini. Ucapan pelajar tidak dikirim ke mana pun.",
+        "downloadable": "Browser ini bisa mengubah ucapan menjadi teks di perangkat ini setelah mengunduh sekali dari pembuat browser. Unduhannya bisa besar, jadi pakai Wi-Fi yang bagus.",
+        "downloading": "Browser sedang mengunduh yang dibutuhkan. Setelah selesai, periksa perangkat ini lagi, dan Ucapkan akan muncul di pelajaran.",
+        "downloadFailed": "Unduhannya belum selesai. Coba lagi nanti, dengan Wi-Fi yang bagus.",
+        "onlineOnly": "Browser ini tidak bisa mengubah ucapan menjadi teks di perangkat ini. Browser ini hanya bisa melakukannya dengan mengirim ucapan pelajar ke layanan online, jadi Ucapkan tetap tersembunyi kecuali kamu mengizinkannya di bawah.",
+        "none": "Browser ini tidak bisa mengubah ucapan menjadi teks, jadi Ucapkan tidak muncul. Chrome versi terbaru di laptop bisa melakukannya di perangkat.",
+        "download": "Unduh fitur suara ke teks",
+        "allowOnline": "Izinkan suara ke teks secara online",
+        "allowOnlineHelp": "Mati kecuali kamu menyalakannya. Kalau menyala dan perangkat ini tidak bisa mengubah ucapan menjadi teks sendiri, Ucapkan mengirim ucapan pelajar ke layanan online milik pembuat browser (misalnya Google, Apple, atau Microsoft), dan butuh internet. Nyalakan hanya kalau lembagamu dan keluarga pelajar sudah setuju.",
+        "recordingsNote": "Rekam suaramu berbeda: rekaman selalu tetap di perangkat ini dan tidak pernah dikirim ke mana pun."
+      },
+      "transfer": {
+        "title": "Pindahkan hasil kerja ke perangkat lain",
+        "intro": "Tablet bisa direset dan laptop bisa diganti. Simpan dulu hasil kerja pelajar ke sebuah file. Lalu muat file itu di perangkat lain. Tidak ada yang dikirim ke internet.",
+        "noStorage": "Jendela browser ini tidak bisa menyimpan hasil kerja pelajar, jadi tidak ada yang bisa disimpan atau dimuat di sini.",
+        "save": {
+          "title": "Simpan hasil kerja ke file",
+          "who": "Hasil kerja siapa",
+          "learnerAdded": "{name}, ditambahkan {date}",
+          "all": "Semua pelajar di perangkat ini",
+          "button": "Simpan hasil kerjaku ke file",
+          "help": "File akan masuk ke folder unduhan perangkat ini. Siapa pun yang memegang file ini bisa membaca hasil kerja di dalamnya, jadi simpan baik-baik.",
+          "recordings": "Rekaman tetap di perangkat ini.",
+          "noLearners": "Belum ada hasil kerja yang tersimpan di perangkat ini.",
+          "saving": "Sedang membuat file…",
+          "saved": "Cari {file} di folder unduhan perangkat ini.",
+          "tooBig": "Hasil kerjanya terlalu banyak untuk satu file. Simpan hasil kerja setiap pelajar satu per satu.",
+          "failed": "File belum bisa dibuat. Coba lagi."
+        },
+        "load": {
+          "title": "Muat hasil kerja dari file",
+          "button": "Muat hasil kerjaku",
+          "help": "Pilih file yang disimpan dari Thinkerwell. Tidak ada yang berubah sampai kamu setuju.",
+          "reading": "Sedang memeriksa file…",
+          "previewTitle": "Periksa dulu sebelum dimuat",
+          "savedOn": "File ini disimpan pada {date}. Isinya hasil kerja untuk:",
+          "lessons": {
+            "other": "{count} pelajaran"
+          },
+          "checks": {
+            "other": "{count} cek bagian"
+          },
+          "lessonsAndChecks": "{lessons} dan {checks}",
+          "noWork": "belum ada hasil kerja",
+          "learnerNew": "{name}: {work}. Baru di perangkat ini.",
+          "learnerHere": "{name}: {work}. Sudah ada di perangkat ini, jadi ini ditambahkan ke hasil kerjanya di sini. Tidak ada yang hilang.",
+          "sameName": "Sudah ada {name} lain di perangkat ini. Keduanya disimpan, dan setiap kotak menunjukkan tanggal pelajar itu ditambahkan.",
+          "skipped": {
+            "other": "Ada {count} hasil kerja untuk pelajaran atau cek yang tidak ada di versi Thinkerwell ini. Hasil kerja itu tidak akan dimuat."
+          },
+          "loadIt": "Muat",
+          "cancel": "Batal",
+          "loading": "Sedang memuat hasil kerja…",
+          "added": "Ditambahkan ke perangkat ini: {names}.",
+          "updated": "Ditambahkan ke hasil kerja yang sudah ada: {names}.",
+          "unchanged": "Tidak ada yang baru untuk {names}.",
+          "nothingNew": "Perangkat ini sudah punya semua hasil kerja di file ini, jadi tidak ada yang berubah.",
+          "carryOn": "Untuk melanjutkan, pilih siapa yang belajar di halaman beranda.",
+          "problems": {
+            "notWorkFile": "Ini bukan file hasil kerja Thinkerwell, jadi tidak ada yang dimuat. Pilih file yang namanya diawali thinkerwell.",
+            "newerVersion": "File ini disimpan oleh Thinkerwell versi yang lebih baru. Perbarui perangkat ini dulu: buka Thinkerwell dengan internet menyala, lalu coba lagi.",
+            "empty": "Tidak ada hasil kerja di file ini, jadi tidak ada yang dimuat.",
+            "tooBig": "File ini terlalu besar untuk file hasil kerja Thinkerwell, jadi tidak ada yang dimuat.",
+            "damaged": "Sebagian file ini rusak, jadi tidak ada yang dimuat. Simpan lagi hasil kerja ke file di perangkat yang lain.",
+            "unreadable": "File ini tidak bisa dibuka. Coba lagi.",
+            "failed": "Hasil kerja belum bisa dimuat, jadi tidak ada yang berubah di perangkat ini. Coba lagi."
+          }
+        }
+      }
+    },
+    "about": {
+      "title": "Tentang Thinkerwell",
+      "tagline": "Baca dengan rasa ingin tahu. Tulis dengan bukti. Bicara dengan tujuan. Tonton dengan saksama. Refleksikan dan hubungkan.",
+      "whatTitle": "Apa itu Thinkerwell",
+      "whatBody": "Thinkerwell adalah kursus IPS gratis untuk anak muda di seluruh Asia Tenggara, yang dibuat dengan memikirkan pelajar pengungsi, pelajar yang terpaksa meninggalkan tempat tinggalnya, dan pelajar yang kurang terlayani. Para pelajar menjelajahi sejarah, geografi, budaya, dan kehidupan sebagai warga lewat membaca, menulis, berbicara, dan berefleksi.",
+      "whatHonesty": "Thinkerwell adalah proyek yang dipimpin oleh pelajar, dan sedang bersiap untuk uji coba pertamanya bersama sebuah pusat belajar. Thinkerwell bukan lembaga amal yang terdaftar.",
+      "promiseTitle": "Janji kami kepada pelajar",
+      "promise1": "Gratis, tanpa iklan dan tanpa akun.",
+      "promise2": "Kami tidak pernah menanyakan masa lalumu, keluargamu, atau dari mana kamu berasal.",
+      "promise3": "Tulisanmu tetap di perangkatmu. Kamu yang memilih apa yang mau dibagikan.",
+      "goalsTitle": "Tujuan PBB yang kami dukung",
+      "goal4Title": "Tujuan 4: Pendidikan Berkualitas",
+      "goal4Body": "Belajar IPS gratis untuk anak muda yang menghadapi hambatan untuk bersekolah.",
+      "goal4Alt": "Tujuan Pembangunan Berkelanjutan 4: Pendidikan Berkualitas",
+      "goal10Title": "Tujuan 10: Berkurangnya Kesenjangan",
+      "goal10Body": "Bahan belajar yang baik untuk anak muda pengungsi, yang terpaksa meninggalkan tempat tinggalnya, dan yang kurang terlayani.",
+      "goal10Alt": "Tujuan Pembangunan Berkelanjutan 10: Berkurangnya Kesenjangan",
+      "goal16Title": "Tujuan 16: Perdamaian, Keadilan dan Kelembagaan yang Tangguh",
+      "goal16Body": "Keterampilan sejarah, kewarganegaraan, dan media, serta kebiasaan berdiskusi dengan saling menghormati.",
+      "goal16Alt": "Tujuan Pembangunan Berkelanjutan 16: Perdamaian, Keadilan dan Kelembagaan yang Tangguh",
+      "goal17Title": "Tujuan 17: Kemitraan untuk Mencapai Tujuan",
+      "goal17Body": "Bekerja sama dengan pendidik, jaringan anak muda, dan kelompok masyarakat.",
+      "goal17Alt": "Tujuan Pembangunan Berkelanjutan 17: Kemitraan untuk Mencapai Tujuan",
+      "teamTitle": "Siapa yang membuat Thinkerwell",
+      "justinRole": "Pendiri dan direktur",
+      "justinName": "Justin Park",
+      "justinBio": "Justin adalah pelajar di Singapura yang suka sejarah, sosiologi, dan Model United Nations. Ia memulai Thinkerwell karena belajar tidak boleh terhenti karena batas negara, keharusan mengungsi, atau kurangnya sumber daya.",
+      "justinAlt": "Justin Park",
+      "nickRole": "Kepala teknologi (CTO)",
+      "nickName": "Nick Thiery",
+      "nickBio": "Nick adalah pelajar di Singapura. Ia membangun situs web Thinkerwell dan memimpin pekerjaan kami dengan AI. Ia tertarik pada bagaimana AI bisa membantu lebih banyak orang belajar dalam bahasa mereka sendiri.",
+      "nickAlt": "Nick Thiery"
+    },
+    "placeholder": "Halaman ini segera hadir."
+  },
+  "notFound": {
+    "title": "Halaman ini tidak ada",
+    "body": "Tautannya mungkin sudah lama atau salah ketik. Semua isi kursus masih ada di sini.",
+    "home": "Ke beranda",
+    "course": "Lihat kursus"
+  },
+  "routeError": {
+    "title": "Ada yang tidak beres",
+    "body": "Maaf, ya. Coba buka halaman ini lagi, atau ke beranda. Hasil kerjamu yang sudah tersimpan masih ada di perangkat ini.",
+    "home": "Ke beranda"
+  },
+  "pageNotDownloaded": {
+    "title": "Halaman ini belum terunduh",
+    "body": "Sambungkan ke internet, lalu coba lagi. Hasil kerjamu yang sudah tersimpan masih ada di perangkat ini.",
+    "retry": "Coba lagi",
+    "trying": "Mencoba lagi…",
+    "stillOffline": "Masih belum ada sambungan internet. Coba lagi setelah kamu tersambung.",
+    "home": "Ke beranda"
+  },
+  "header": {
+    "switcherTitle": "Ganti pelajar",
+    "switcherClose": "Tutup",
+    "lookAroundTile": "Lihat-lihat saja",
+    "backToPicker": "Kembali ke daftar pelajar",
+    "lookAroundTitle": "Kamu sedang lihat-lihat",
+    "lookAroundBanner": "Tidak ada yang disimpan selama kunjungan ini.",
+    "chooseLearner": "Pilih siapa yang belajar",
+    "menuTitle": "Menu",
+    "menuClose": "Tutup menu",
+    "language": {
+      "title": "Bahasa",
+      "button": "Bahasa: {language}"
+    }
+  },
+  "dev": {
+    "rtlOn": "Mode uji kanan-ke-kiri sedang aktif. Tambahkan ?dir=ltr ke alamat untuk mematikannya.",
+    "localeOn": "Bahasa uji {locale} sedang aktif. Tambahkan ?locale=en ke alamat untuk mematikannya."
+  },
+  "ds": {
+    "chrome": {
+      "logo": {
+        "homeLabel": "Beranda Thinkerwell"
+      },
+      "siteHeader": {
+        "switchLearner": "Ganti pelajar, sekarang: {name}",
+        "openMenu": "Buka menu navigasi"
+      },
+      "stagePath": {
+        "navLabel": "Langkah pelajaran",
+        "doneSuffix": ", selesai",
+        "stageDone": "{stage}, selesai"
+      },
+      "stageDots": {
+        "progressLabel": "{count} dari 5 langkah selesai"
+      },
+      "progressRing": {
+        "ariaLabel": "{value} dari {max} selesai",
+        "valueLabel": "{value}/{max}"
+      }
+    },
+    "course": {
+      "sectionName": {
+        "history": "Sejarah & Kisah Manusia",
+        "geography": "Geografi & Lingkungan Kita",
+        "culture": "Budaya, Masyarakat & Identitas",
+        "civics": "Kewarganegaraan, Media & Ekonomi Sehari-hari"
+      },
+      "sectionBadge": {
+        "eyebrow": "Bagian {number}"
+      },
+      "sectionHeader": {
+        "eyebrow": "Bagian {number}",
+        "eyebrowWithTotal": {
+          "other": "Bagian {number} · {count} pelajaran"
+        }
+      },
+      "lessonRow": {
+        "cta": {
+          "start": "Mulai",
+          "continue": "Lanjut",
+          "review": "Lihat lagi"
+        },
+        "status": {
+          "notStarted": "Belum dimulai.",
+          "inProgress": "Sedang dikerjakan.",
+          "completed": "Selesai."
+        },
+        "ariaLabelLesson": "Pelajaran {number}: {title}. {status} {cta}",
+        "ariaLabelLessonQuestion": "Pelajaran {number}: {title}. {status} {cta} {question}",
+        "ariaLabelQuiz": "{title}. {status} {cta}"
+      },
+      "continueCard": {
+        "label": "Lanjutkan belajar",
+        "eyebrow": "Lanjutkan dari tempat kamu berhenti",
+        "cta": "Lanjut"
+      },
+      "journalEntry": {
+        "lessonLine": "Pelajaran {number} · {title}",
+        "kindWriting": "Tulisan",
+        "kindReflection": "Refleksi",
+        "saved": "Disimpan {date}",
+        "edit": "Ubah"
+      },
+      "scoreSummary": {
+        "skillResult": "{got} dari {of}"
+      }
+    },
+    "content": {
+      "task": {
+        "defaultEyebrow": "Tugasmu"
+      },
+      "definition": {
+        "close": "Tutup",
+        "hearIt": "Dengarkan",
+        "meaningOf": "Arti kata {word}"
+      },
+      "evidence": {
+        "fictional": "Contoh fiksi yang dibuat untuk pelajaran ini."
+      },
+      "option": {
+        "correct": "Benar",
+        "notQuite": "Belum tepat"
+      },
+      "feedback": {
+        "correctTitle": "Benar",
+        "retryTitle": "Belum tepat"
+      },
+      "field": {
+        "optional": "(tidak wajib)"
+      },
+      "reading": {
+        "part": "Bagian {n} dari {total}"
+      },
+      "video": {
+        "optional": "Tidak wajib",
+        "watchLabel": "Tonton video",
+        "readInsteadDefault": "Baca saja"
+      }
+    },
+    "actions": {
+      "voiceButton": {
+        "sayIt": "Ucapkan",
+        "stop": "Berhenti"
+      },
+      "listenBar": {
+        "label": "Dengarkan bacaan",
+        "play": "Putar",
+        "pause": "Jeda",
+        "stop": "Berhenti",
+        "speedLabel": "Kecepatan",
+        "slow": "Pelan",
+        "normal": "Biasa"
+      },
+      "voiceRecorder": {
+        "title": "Rekam suaramu",
+        "note": "Rekamanmu tetap di perangkat ini. Tidak ada orang lain yang mendengarnya.",
+        "startRecording": "Mulai merekam",
+        "stop": "Berhenti",
+        "recording": "Merekam {time}",
+        "listenBack": "Dengarkan lagi",
+        "recordAgain": "Rekam lagi",
+        "delete": "Hapus"
+      },
+      "writingBox": {
+        "optional": "(tidak wajib)"
+      },
+      "actionBar": {
+        "continue": "Lanjut"
+      }
+    }
+  },
+  "offline": {
+    "offlineTitle": "Kamu sedang tidak tersambung ke internet.",
+    "offlineLearner": "Lanjut saja: hasil kerjamu tersimpan di perangkat ini.",
+    "offlineLesson": "Lanjut saja: pelajaran ini sudah tersimpan, dan hasil kerjamu tersimpan di perangkat ini.",
+    "offlineGuest": "Lanjut saja: pelajaran tetap bisa dibuka tanpa internet.",
+    "offlineGuestNotReady": "Kamu masih bisa membaca yang sudah terbuka.",
+    "backTitle": "Kamu tersambung lagi ke internet.",
+    "backLearner": "Hasil kerjamu sudah tersimpan.",
+    "updateTitle": "Versi baru sudah siap.",
+    "updateBody": "Versi ini dipakai saat Thinkerwell dibuka lagi nanti.",
+    "updateBodyLearner": "Versi ini dipakai saat Thinkerwell dibuka lagi nanti. Hasil kerjamu sudah tersimpan.",
+    "updateAction": "Perbarui sekarang"
+  },
+  "print": {
+    "print": "Cetak",
+    "brand": "Thinkerwell · Menjelajahi Dunia Kita",
+    "printLesson": "Cetak pelajaran ini",
+    "lessonPageTitle": "Pelajaran {number}: cetak",
+    "backToLesson": "Kembali ke pelajaran",
+    "learningGoal": "Tujuan belajar:",
+    "lessonIntro": "Ini pelajaran dalam bentuk kertas: kedua tingkat bacaan, kata kunci, dan semua tugas, dengan garis untuk menulis. Teksnya dicetak hitam di atas putih, tanpa menu.",
+    "readingStandard": "Bacaan: versi standar",
+    "readingSimpler": "Bacaan: versi lebih mudah",
+    "keyWordsNote": "Kata kunci dicetak tebal.",
+    "optional": "(tidak wajib)",
+    "watchTitle": "Tonton atau baca",
+    "videoNote": "Video: {title} ({channel}). Versi tulisan di bawah berisi ide yang sama.",
+    "writtenVersion": "Versi tulisan: {title}",
+    "journalPageTitle": "Cetak jurnalku",
+    "printJournal": "Cetak jurnalku",
+    "backToJournal": "Kembali ke jurnalku",
+    "journalEmpty": "Belum ada yang tersimpan. Tulisan dan refleksimu akan muncul di sini setelah kamu mulai.",
+    "journalNoLearner": "Pilih siapa yang belajar untuk mencetak jurnalnya. Tidak ada yang disimpan selama kamu lihat-lihat.",
+    "chooseLearner": "Pilih siapa yang belajar",
+    "writing": "Tulisan",
+    "reflection": "Refleksi"
+  },
+  "certificates": {
+    "sectionPageTitle": "Sertifikat: {section}",
+    "coursePageTitle": "Sertifikat kursus",
+    "backToCourse": "Kembali ke kursus",
+    "backToHome": "Kembali ke beranda",
+    "printIntro": "Periksa namanya, lalu cetak. Sertifikat ini muat di satu halaman kertas A4 atau Letter.",
+    "nameLabel": "Nama di sertifikat",
+    "nameHelp": "Hanya untuk cetakan ini. Nama ini tidak disimpan dan tidak pernah keluar dari perangkat ini.",
+    "sheet": {
+      "title": "Sertifikat",
+      "finishedSection": "telah menyelesaikan bagian {section} dalam kursus {course}.",
+      "finishedCourse": "telah menyelesaikan semua {count} pelajaran dalam kursus {course}.",
+      "lessons": {
+        "other": "{count} pelajaran"
+      },
+      "blankName": "Nama",
+      "date": "Tanggal",
+      "signature": "Tanda tangan guru",
+      "about": "{course} adalah kursus IPS gratis dari Thinkerwell."
+    },
+    "notYet": {
+      "section": "Sertifikatmu siap setelah kamu menyelesaikan semua pelajaran di bagian ini.",
+      "course": "Sertifikat kursusmu siap setelah kamu menyelesaikan semua {count} pelajaran.",
+      "checkNotNeeded": "Kamu tidak perlu mengerjakan cek bagian untuk mendapatkannya.",
+      "lessonsLeft": {
+        "other": "Tinggal {count} pelajaran lagi"
+      }
+    },
+    "guest": "Sertifikat ini untuk pelajar yang sudah menyelesaikan pelajaran.",
+    "offer": {
+      "sectionTitle": "Kamu sudah menyelesaikan seluruh bagian {section}.",
+      "courseTitle": "Kamu sudah menyelesaikan semua {count} pelajaran.",
+      "sectionBody": "Sertifikatmu siap dicetak.",
+      "courseBody": "Sertifikat kursusmu siap dicetak.",
+      "getCertificate": "Ambil sertifikatmu",
+      "getCertificateFor": "Ambil sertifikatmu untuk {section}",
+      "getCourseCertificate": "Ambil sertifikat kursusmu",
+      "getSectionCertificate": "Ambil sertifikat bagianmu"
+    }
+  }
+}

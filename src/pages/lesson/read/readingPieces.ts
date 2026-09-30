@@ -104,11 +104,13 @@ export function buildReading(
   text: string,
   glossary: readonly GlossaryEntry[],
   highlight?: TextRange,
+  /** The lesson's language, for matching key words case-insensitively. */
+  lang?: string,
 ): ReadingParagraph[] {
   const paragraphs = paragraphRanges(text);
   const cuts = paragraphs.flatMap((p) => [p.start, p.end]);
   if (highlight) cuts.push(highlight.start, highlight.end);
-  const pieces = cutAt(positioned(markGlossary(text, glossary)), cuts);
+  const pieces = cutAt(positioned(markGlossary(text, glossary, lang)), cuts);
 
   return paragraphs.map((paragraph) => {
     const runs: ReadingRun[] = [];
@@ -164,6 +166,6 @@ export function sentenceRanges(text: string): TextRange[] {
 }
 
 /** True when the section's text (in this version) has at least one glossary word. */
-export function hasGlossaryTerms(text: string, glossary: readonly GlossaryEntry[]): boolean {
-  return markGlossary(text, glossary).some((segment) => segment.kind === 'term');
+export function hasGlossaryTerms(text: string, glossary: readonly GlossaryEntry[], lang?: string): boolean {
+  return markGlossary(text, glossary, lang).some((segment) => segment.kind === 'term');
 }

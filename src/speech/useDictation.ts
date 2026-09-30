@@ -27,6 +27,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { composeDictation, dictationAnchor, joinTranscript, type DictationAnchor } from './dictationText';
 import {
   createRecognition,
+  DICTATION_LANG,
   dictationMode,
   type DictationMode,
   type DictationSettings,
@@ -94,7 +95,7 @@ function noticeForError(error: string, mode: DictationMode): DictationNotice | n
   }
 }
 
-export function useDictation({ onDeviceConfirmed, allowOnline }: DictationSettings): Dictation {
+export function useDictation({ onDeviceConfirmed, allowOnline, lang = DICTATION_LANG }: DictationSettings & { lang?: string }): Dictation {
   /**
    * True once on-device recognition stopped working on this page (the
    * language pack was removed, say). It isn't offered again here, and the
@@ -172,7 +173,7 @@ export function useDictation({ onDeviceConfirmed, allowOnline }: DictationSettin
   const start = useCallback(
     (field: DictationField) => {
       if (!mode) return;
-      const recognition = createRecognition(mode);
+      const recognition = createRecognition(mode, lang);
       if (!recognition) {
         setNotice(field.id, 'unavailable');
         return;
@@ -230,7 +231,7 @@ export function useDictation({ onDeviceConfirmed, allowOnline }: DictationSettin
         setNotice(field.id, 'unavailable');
       }
     },
-    [mode, setNotice],
+    [mode, lang, setNotice],
   );
 
   const toggle = useCallback(

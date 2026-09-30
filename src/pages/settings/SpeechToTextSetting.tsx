@@ -20,7 +20,7 @@ import type { SettingsPart } from '../../app/lessonUrls';
 import { Button, Icon } from '../../components/ds';
 import type { IconName } from '../../components/ds';
 import { useI18n, type MessageKey } from '../../i18n';
-import { hasSpeechRecognition, installOnDeviceDictation, onDeviceDictationStatus } from '../../speech';
+import { hasSpeechRecognition, installOnDeviceDictation, onDeviceDictationStatus, speechCheckFor, speechCheckPatch, speechLangFor } from '../../speech';
 import type { OnDeviceSpeechStatus, SpeechCheck } from '../../storage';
 import type { DeviceSettingsState } from './useDeviceSettings';
 
@@ -57,8 +57,11 @@ const STATUS: Record<DeviceSpeech | 'checking', { icon: IconName; key: MessageKe
 };
 
 export function SpeechToTextSetting({ deviceSettings }: { deviceSettings: DeviceSettingsState }) {
-  const { t, formatDate } = useI18n();
+  const { t, formatDate, contentLocale } = useI18n();
   const { settings, canSave, failed, save } = deviceSettings;
+  // The check is for the lessons' language on this page: English, or id-ID
+  // when the lessons are in Indonesian. Each language's answer is kept apart.
+  const lang = speechLangFor(contentLocale);
   /** The last check made on this page: shown even where it couldn't be saved. */
   const [checked, setChecked] = useState<SpeechCheck | null>(null);
   const [checking, setChecking] = useState(false);
@@ -70,7 +73,7 @@ export function SpeechToTextSetting({ deviceSettings }: { deviceSettings: Device
   const toggleId = useId();
   const toggleHelpId = useId();
 
-  const check = checked ?? settings?.speechCheck ?? null;
+  const check = checked ?? (settings ? speechCheckFor(settings, lang) : null);
   const device = deviceSpeech(check);
   const shown: DeviceSpeech | 'checking' = checking
     ? 'checking'
@@ -85,14 +88,14 @@ export function SpeechToTextSetting({ deviceSettings }: { deviceSettings: Device
   const keep = async (answer: OnDeviceSpeechStatus) => {
     const result: SpeechCheck = { status: answer, checkedAt: new Date().toISOString() };
     setChecked(result);
-    if (canSave) await save({ speechCheck: result });
+    if (canSave) await save(speechCheckPatch(settings, lang, result));
   };
 
   /** "Check this device": asks the browser once. Also works while a download is under way, to see where it is. */
   const checkDevice = async () => {
     if (checking) return;
     setChecking(true);
-    const answer = await onDeviceDictationStatus();
+    const answer = await onDeviceDictationStatus(lang);
     await keep(answer);
     setChecking(false);
     setDownloading(false);
@@ -103,8 +106,8 @@ export function SpeechToTextSetting({ deviceSettings }: { deviceSettings: Device
     if (checking || downloading) return;
     setDownloading(true);
     setDownloadFailed(false);
-    const ok = await installOnDeviceDictation();
-    const answer = await onDeviceDictationStatus();
+    const ok = await installOnDeviceDictation(lang);
+    const answer = await onDeviceDictationStatus(lang);
     await keep(answer);
     setDownloading(false);
     setDownloadFailed(!ok && answer !== 'available');
