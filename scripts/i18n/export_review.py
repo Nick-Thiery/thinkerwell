@@ -30,7 +30,7 @@ LANGUAGE_NAMES = {"id": "Indonesian"}
 BRIEF = [
     "How to review this translation",
     "Readers are 10 to 17 years old, many learning to read, some reading slowly. Most are refugee or displaced young people in Jakarta.",
-    "Plain, everyday Indonesian. Speak to the learner as \"kamu\" (never \"Anda\"). No \"silakan\" or \"tolong\", no exclamation marks. It should not sound stiff or like a textbook.",
+    "Plain, everyday Indonesian. Speak to the learner as \"kamu\" (never \"Anda\"). Pages for adults (Educators, teacher guides, Settings, For organisations, the consent form) use \"Anda\". No \"silakan\" or \"tolong\", no exclamation marks. It should not sound stiff or like a textbook.",
     "The SIMPLER text must stay clearly simpler than the standard text: short sentences, everyday words.",
     "Quick checks: the \"Where it appears\" column says which option is the CORRECT answer. Check it is still clearly right in Indonesian and the others clearly wrong.",
     "Fix rather than rewrite: change only what needs changing, straight in the Indonesian column. Put your name or initials in Reviewer on rows you checked.",

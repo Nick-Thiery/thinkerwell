@@ -6,7 +6,7 @@ These words come up again and again across the interface and the 24 lessons. Ple
 - **Other options** are real alternatives, not mistakes.
 - Write the final choice in **Decision**. If it differs from the suggestion, tell Nick. The suggestion appears in many places, so it's changed everywhere at once rather than row by row in the spreadsheet.
 
-Style used throughout: everyday Indonesian for 10 to 17-year-olds, **kamu** for the learner (never *Anda*), **aku** when the learner speaks ("Aku baru di sini", self-check items "Aku ..."), no *silakan* or *tolong*, no exclamation marks, and sentence case.
+Style used throughout: everyday Indonesian for 10 to 17-year-olds, **kamu** for the learner (never *Anda*), **Anda** on pages for adults (the Educators pages, teacher guides, Settings, For organisations, the consent form, code cards; never *kamu* there), **aku** when the learner speaks ("Aku baru di sini", self-check items "Aku ..."), no *silakan* or *tolong*, no exclamation marks, and sentence case.
 
 ## Course, places in the app and buttons
 
