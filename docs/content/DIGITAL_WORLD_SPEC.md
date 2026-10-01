@@ -1,6 +1,6 @@
 # Digital World: course spec (draft)
 
-Status: draft for Justin and Nick, written September 2026. Nothing here is in the app. The first three draft lessons are in `drafts/digital-world/` (see its README).
+Status: draft for Justin and Nick, written September 2026. Nothing here is in the app. Draft lessons 1–11 are in `drafts/digital-world/` (see its README).
 
 ## 1. What it is for, and who it's for
 
@@ -24,14 +24,14 @@ The course follows UNESCO's *AI competency framework for students* (2024): four 
 | 1 | What AI is, and what it isn't | AI techniques and applications | Understand | AI foundations | Sort everyday tools into “Uses AI”, “Not AI”, “Hard to say” (drafted) |
 | 2 | How AI learns from examples | AI techniques and applications | Understand, some Apply | AI foundations | Train a tiny model on the device (drafted; section 6) |
 | 3 | When AI gets it wrong | Ethics of AI | Understand | Embodied ethics | Compare a tool's results by group; find whose examples were missing (drafted) |
-| 4 | Spotting fake photos, videos and voices | Ethics of AI | Understand, some Apply | Embodied ethics; Safe and responsible use | Real or fake? Look for the clues in made-up examples |
-| 5 | Checking a claim before you share it | Human-centred mindset | Apply | Human accountability | Check a made-up news story against other made-up sources |
-| 6 | Scams: fake prizes, loans and job offers | Human-centred mindset | Understand, some Apply | Human agency | Spot warning signs in made-up messages |
-| 7 | Your privacy | Ethics of AI | Apply | Safe and responsible use | Decide what is safe to share, and with whom, for made-up characters |
-| 8 | Asking an AI tool good questions | AI techniques and applications | Apply | Application skills | Improve a question, then check a pre-written answer (no real chatbot) |
-| 9 | Numbers that persuade | Human-centred mindset | Understand | Human agency | Find what a misleading made-up chart hides |
-| 10 | AI in your community | Human-centred mindset | Understand | Human agency (towards Citizenship in the era of AI) | Weigh helps and risks in translation, farming and health examples |
-| 11 | Project: design an AI helper | AI system design | Understand to Create | Problem scoping; Architecture design; Iteration and feedback loops | Plan a helper for a real problem where you live |
+| 4 | Spotting fake photos, videos and voices | Ethics of AI | Understand, some Apply | Embodied ethics; Safe and responsible use | Real or fake? Look for the clues in made-up examples (drafted) |
+| 5 | Checking a claim before you share it | Human-centred mindset | Apply | Human accountability | Check a made-up news story against other made-up sources (drafted) |
+| 6 | Scams: fake prizes, loans and job offers | Human-centred mindset | Understand, some Apply | Human agency | Spot warning signs in made-up messages (drafted) |
+| 7 | Your privacy | Ethics of AI | Apply | Safe and responsible use | Decide what is safe to share, and with whom, for made-up characters (drafted) |
+| 8 | Asking an AI tool good questions | AI techniques and applications | Apply | Application skills | Improve a question, then check a pre-written answer (no real chatbot) (drafted) |
+| 9 | Numbers that persuade | Human-centred mindset | Understand | Human agency | Find what a misleading made-up chart hides (drafted) |
+| 10 | AI in your community | Human-centred mindset | Understand | Human agency (towards Citizenship in the era of AI) | Weigh helps and risks in translation, farming and health examples (drafted) |
+| 11 | Project: design an AI helper | AI system design | Understand to Create | Problem scoping; Architecture design; Iteration and feedback loops | Plan a helper for a real problem where you live (drafted) |
 
 The levels and blocks are a first mapping for review. Lesson 11 is a design on paper: it covers problem scoping (should AI be used here at all?) and a simple plan, and touches Create through one round of feedback. It does not build a working tool.
 
@@ -48,7 +48,7 @@ The Our World schema needs four sections. A proposal, in lesson order:
 | `use-tools-wisely` | Use tools wisely | 7–9 |
 | `ai-where-you-live` | AI where you live | 10–11 |
 
-The drafts use `how-ai-works`. The section colours and icons are open (section 8).
+The drafts use these ids. The section colours and icons are open (section 8).
 
 ## 5. Rules that differ from or add to `docs/content/SPEC.md`
 
@@ -68,7 +68,7 @@ At most one per lesson. Fields every activity has:
 
 | Field | Meaning |
 |---|---|
-| `type` | Which activity player to use: `sort`, `train-model`, `compare-results` so far. |
+| `type` | Which activity player to use: `sort`, `train-model`, `compare-results`, `check-claim`, `spot-signs`, `ask-tool`, `chart-check`, `design-plan` so far. |
 | `stage`, `placement` | Where it appears, for example `read` / `after-evidence`. |
 | `title`, `instructions` | Learner-facing, at the level of other learner text (grade 5.5 or lower). |
 | `saves` | What is saved with the learner's lesson work (for the team; not shown). |
@@ -79,6 +79,13 @@ Type-specific fields:
 - `sort`: `groups` (`id`, `label`) and `items` (`id`, `text`, `suggested` group or `hard`, `feedback`). There is no score and nothing is marked wrong: feedback says what most people would say and why. A “Hard to say” group is allowed where experts disagree.
 - `train-model`: section 6.
 - `compare-results`: `groups` with made-up results (`label`, `right`, `of`), `mostMistakes`, and an `afterTap` choice question with per-option feedback, written like a quick check.
+- `check-claim` (Lesson 5): a `claim` (`from`, `text`), `askFirst` (the three questions to show), `sources` (`id`, `name`, `who`, `says`), each opened with a tap like a new page and in any order, and a `question` (choice, per-option feedback). The question is never locked behind opening the sources.
+- `spot-signs` (Lesson 6): `signs` (`id`, `label`), `notASign` (the message for a part that isn't one), and `messages` (`id`, `from`, `parts`: `text`, `sign` id or `null`, `feedback`). The learner taps parts; each tap shows the sign's label and feedback. No score; “Show all signs” is always available. Every part is a real button for keyboard and screen readers.
+- `ask-tool` (Lesson 8): `toolLabel` (always shown: it is a pretend tool, section 5.6), `improve` (a `start` prompt and answer, a `question`, and `options` with `prompt`, `answer`, `correct`, `feedback`) and `check` (a `prompt`, a sure-but-wrong `answer`, a `trustedSource` with `name` and `says`, and a choice `question`). Every answer is written in the file.
+- `chart-check` (Lesson 9): `measure`, `bars` (`label`, `value`), `views` (`id`, `label`, `axisStart`, `axisEnd`, `note`) and a choice `question`. The player draws each view as a bar chart with every bar's number written on it.
+- `design-plan` (Lesson 11): `problems` (`id`, `text`; one may be `own: true`, a problem the learner writes), and `steps` (`id`, `title`, `kind` `text` or `choice`, `prompt`, optional `starter`, `options` with `feedback`, or `questions` for feedback). It sits in the Write stage; the learner can go back to any step. What the learner writes is saved like other lesson writing, on the device only.
+
+The five newer types are proposals made with Lessons 4–11; the team may merge some (for example `check-claim` and `ask-tool` are both “open a card, then answer”).
 
 Rules for every activity: nothing is locked and nothing blocks the lesson; no timers; no red (wrong answers use “Not quite” in burnt orange, as elsewhere); keyboard and screen-reader use; 44px tap targets; works at 320px wide; the same result is available without the activity (the evidence card, the print view, or a paper version in `educatorNotes`). Whether finishing an activity counts towards a stage being done is open (section 8).
 

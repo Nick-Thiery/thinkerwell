@@ -1,0 +1,335 @@
+{
+  "id": "dw-asking-good-questions",
+  "oldId": null,
+  "number": 8,
+  "section": "use-tools-wisely",
+  "title": "Asking an AI tool good questions",
+  "essentialQuestion": "How can you get a useful answer from an AI tool, and how do you know if it is right?",
+  "learningGoal": "Improve a prompt for an AI tool by making it specific, and check the tool's answer against a trusted source.",
+  "estimatedMinutes": [
+    30,
+    50
+  ],
+  "warmUp": {
+    "question": "Which question would get a more useful answer?",
+    "options": [
+      "Tell me about plants.",
+      "How often should a tomato plant get water in hot weather?",
+      "Not sure"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "Which answer is most useful? Which answer is wrong?",
+    "cards": [
+      {
+        "type": "table",
+        "title": "The Hillview homework helper (a pretend tool)",
+        "columns": [
+          "Prompt",
+          "The pretend tool's answer"
+        ],
+        "rows": [
+          [
+            "Tell me about AI.",
+            "AI is a kind of technology. It is used in many places. Some people like it and some people do not."
+          ],
+          [
+            "In two short sentences, explain what training data is, for a 12-year-old.",
+            "Training data is the examples a computer learns from. A tool that spots sick leaves learns from leaf photos. People labelled each photo healthy or sick."
+          ],
+          [
+            "How many legs does a spider have?",
+            "Every spider has six legs, like all insects. I am very sure about this."
+          ]
+        ]
+      },
+      {
+        "type": "sources",
+        "title": "The Hillview science book",
+        "sources": [
+          {
+            "caption": "Page 12: Spiders and insects",
+            "details": [
+              "Spiders have eight legs.",
+              "Insects, like ants, have six legs.",
+              "Spiders are not insects."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "type": "ask-tool",
+    "stage": "read",
+    "placement": "after-evidence",
+    "title": "Try the pretend tool",
+    "toolLabel": "Pretend tool. Its answers were written in advance for this lesson. It is not a real AI, and nothing you choose is sent anywhere.",
+    "instructions": "First, pick a better prompt and see the answer. Then check an answer from the tool.",
+    "improve": {
+      "start": {
+        "prompt": "Tell me about AI.",
+        "answer": "AI is a kind of technology. It is used in many places. Some people like it and some people do not."
+      },
+      "question": "Which prompt would get a more useful answer?",
+      "options": [
+        {
+          "prompt": "Tell me everything about AI.",
+          "answer": "AI is a very big topic. There are many kinds of AI. Many people use it for many different things.",
+          "correct": false,
+          "feedback": "Not quite. This is still vague. The answer is longer, but not more useful."
+        },
+        {
+          "prompt": "In two short sentences, explain what training data is, for a 12-year-old.",
+          "answer": "Training data is the examples a computer learns from. A tool that spots sick leaves learns from leaf photos. People labelled each photo healthy or sick.",
+          "correct": true,
+          "feedback": "Yes. It says what you want to know, who it is for and how long the answer should be."
+        },
+        {
+          "prompt": "AI?",
+          "answer": "AI stands for artificial intelligence.",
+          "correct": false,
+          "feedback": "Not quite. A very short prompt gets a very short answer. Add what you want to know and who it is for."
+        }
+      ]
+    },
+    "check": {
+      "prompt": "How many legs does a spider have?",
+      "answer": "Every spider has six legs, like all insects. I am very sure about this.",
+      "trustedSource": {
+        "name": "The Hillview science book",
+        "says": "Spiders have eight legs. Insects, like ants, have six legs. Spiders are not insects."
+      },
+      "question": "The tool sounds very sure. How can you check its answer?",
+      "options": [
+        {
+          "text": "Ask the tool the same question again",
+          "correct": false,
+          "feedback": "Not quite. The tool may give the same wrong answer. Check a different source."
+        },
+        {
+          "text": "Look in the Hillview science book",
+          "correct": true,
+          "feedback": "Yes. The book says spiders have eight legs, and they are not insects. The tool was wrong, even though it sounded sure."
+        },
+        {
+          "text": "Trust it, because it sounds sure",
+          "correct": false,
+          "feedback": "Not quite. A tool can sound sure and still be wrong. Check a trusted source."
+        }
+      ]
+    },
+    "saves": "The learner's choices, with the lesson's other answers. Nothing is typed into a real tool.",
+    "offline": "Every prompt and answer is written in the lesson file. No AI model runs, and nothing is sent anywhere."
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "An AI chat tool guesses its answers",
+        "text": "Some AI tools answer questions in writing, almost like a person in a chat. These tools are called chatbots. A chatbot learned from enormous amounts of writing, and it answers by guessing which words are likely to come next. Its answers can sound friendly, clever and completely certain. But a chatbot does not understand the world the way you do, so its guesses can be wrong. This lesson uses a pretend tool called the Hillview homework helper. Its answers were written in advance, so you can practise safely without the internet.",
+        "simpler": "Some AI tools answer questions in writing. They are called chatbots. A chatbot learned from lots and lots of writing. It tries to guess which words come next. Its answers can sound friendly and very sure. But it does not understand things like you do. So its guess can be wrong. This lesson uses a pretend tool. It is called the Hillview homework helper. Its answers are written already. So you can practise with no internet."
+      },
+      {
+        "heading": "Clear prompts get better answers",
+        "text": "The question or instruction you give a chatbot is called a prompt. A vague prompt, like “Tell me about AI”, usually gets a vague answer. A specific prompt gets a more useful one. To make a prompt specific, say exactly what you want to know, who the answer is for and how long it should be. Compare “Tell me about AI” with “In two short sentences, explain what training data is, for a 12-year-old”. The second prompt gives the tool much more to work with. If the first answer isn't quite right, you can add another instruction, such as “Use an example about plants.”",
+        "simpler": "The question you give a chatbot is called a prompt. A vague prompt gets a vague answer. A specific prompt gets a better answer. Say what you want to know. Say who the answer is for. Say how long it should be. “Tell me about AI” is vague. “Explain training data for a 12-year-old” is specific. Not happy with the answer? Add more, like “Use an example about plants.”"
+      },
+      {
+        "heading": "Always check the answer",
+        "text": "Chatbots sometimes give answers that are wrong or completely made up. This is often called a hallucination. The difficult part is that a wrong answer can sound just as certain as a right one. When asked how many legs a spider has, the Hillview helper said six, “just like all insects”. The Hillview science book says spiders have eight legs and are not insects. So check important answers with a trusted source, such as a book, a teacher or an expert. Never type private information into a chatbot. For anything about health or safety, ask a person who knows.",
+        "simpler": "Chatbots sometimes give wrong answers. Some answers are made up. This is called a hallucination. A wrong answer can sound very sure. The Hillview helper said a spider has six legs. The science book says eight. Spiders are not insects. So check answers with a trusted source. A book, a teacher or an expert can help. Never type private information into a chatbot. For health or safety, ask a person."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "chatbot",
+        "forms": [
+          "chatbots"
+        ],
+        "definition": "A computer program you can chat with in writing.",
+        "example": "The Hillview homework helper is a pretend chatbot."
+      },
+      {
+        "word": "prompt",
+        "forms": [
+          "prompts"
+        ],
+        "definition": "The question or instruction you give an AI tool.",
+        "example": "“Tell me about AI” is a vague prompt."
+      },
+      {
+        "word": "vague",
+        "definition": "Not clear, without enough detail.",
+        "example": "A vague prompt gets a vague answer."
+      },
+      {
+        "word": "specific",
+        "definition": "Clear and exact, with the details that matter.",
+        "example": "A specific prompt says what you want, who it is for and how long."
+      },
+      {
+        "word": "hallucination",
+        "forms": [
+          "hallucinations"
+        ],
+        "definition": "A wrong or made-up answer from an AI tool that sounds real.",
+        "example": "“Every spider has six legs” is a hallucination."
+      },
+      {
+        "word": "trusted source",
+        "definition": "A person, book or place that is known to give correct information.",
+        "example": "The Hillview science book is a trusted source."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "question": "Which prompt is the most specific?",
+        "options": [
+          {
+            "text": "Tell me all about rivers and water",
+            "correct": false,
+            "feedback": "Not quite. “All about” is very wide. A specific prompt asks one clear thing."
+          },
+          {
+            "text": "What are rivers and lakes?",
+            "correct": false,
+            "feedback": "Not quite. This asks about two big topics at once. Look for one clear question."
+          },
+          {
+            "text": "How do rivers help farmers?",
+            "correct": true,
+            "feedback": "Yes. It asks one clear thing, so the answer can be more useful. You could also say who it is for."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "question": "The tool says spiders have six legs. What should you do?",
+        "options": [
+          {
+            "text": "Check it in a trusted source",
+            "correct": true,
+            "feedback": "Yes. The science book says eight legs. A trusted source showed the tool was wrong."
+          },
+          {
+            "text": "Believe it, because it sounds sure",
+            "correct": false,
+            "feedback": "Not quite. A wrong answer can sound sure too. Read the third section."
+          },
+          {
+            "text": "Ask the same question again",
+            "correct": false,
+            "feedback": "Not quite. The tool may give the same wrong answer. Read the third section."
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "Make this prompt more specific: “Tell me about food.”",
+        "placeholder": "In ___ short sentences, explain ... for ...",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Write a specific prompt for the Hillview helper about a topic from this course. Then explain how you would check its answer.",
+    "sentenceStarters": [
+      "My first prompt was ...",
+      "To make it specific, I added ...",
+      "My new prompt is ...",
+      "To check the answer, I would ...",
+      "I would not type ___ into a chatbot because ..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I wrote a prompt that says what, who it is for and how long.",
+      "I explained what I added to make it specific.",
+      "I said how I would check the answer."
+    ],
+    "example": "My first prompt was “Tell me about scams”. It was vague. To make it specific, I added what I want to know, who it is for and how long the answer should be. My new prompt is “In three short sentences, explain the warning signs of a scam, for a 12-year-old”. To check the answer, I would compare it with Lesson 6. I would also ask a teacher. I would not type a full name or address into a chatbot. That is private information."
+  },
+  "speak": {
+    "partnerTask": "Say a vague prompt. Your partner makes it specific by adding what, who it is for, or how long. Then switch.",
+    "independentTask": "Say out loud two ways to make a prompt better, and one way to check an answer."
+  },
+  "watch": {
+    "youtubeId": "gmUHEvrpYoU",
+    "title": "What are AI Chatbots?",
+    "channel": "Common Sense Education",
+    "durationSeconds": 200,
+    "why": "This short cartoon explains why many chatbots are made to sound like people.",
+    "beforeQuestion": "Why do you think a chatbot can sound like a real person?",
+    "afterQuestion": "Why should you check what a chatbot says, even when it sounds sure?",
+    "summary": "This short cartoon is about AI chatbots. A chatbot is a computer program that you can chat with in writing, a bit like sending messages to a person. The video explains that many chatbots are made to sound human. They can sound friendly and very sure of themselves. They may agree with you, ask you questions as if they care, or act as if they know you. These things can make a chatbot feel like a friend. They can also make its answers feel more true than they are. But a chatbot is not a person, and it can be wrong. So think about how a chatbot makes you feel, and stay in charge when you use one.",
+    "keyPoints": [
+      "Many chatbots are made to sound like a person.",
+      "Sounding friendly and sure does not make an answer true.",
+      "Stay in charge: notice how a chatbot makes you feel, and check its answers."
+    ],
+    "contentNote": "An American cartoon for secondary school, about 3 minutes 20 seconds. The summary was written from Common Sense Education's description of the video and the lessons that use it, not from watching it, so check the summary before use. Preview it first; learners can read the written summary instead.",
+    "replacementSuggestion": null
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Before I trust an answer from a chatbot, I will ...",
+        "required": true
+      },
+      {
+        "text": "A good prompt has ...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 8. You wrote a specific prompt and checked an answer that sounded sure but was wrong."
+  },
+  "visual": {
+    "type": "diagram",
+    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW08.svg is only a planned path. Top row: a prompt card “Tell me about AI” with an arrow to a cloudy answer bubble labelled “Vague answer”. Second row: a prompt card “In two short sentences, explain what training data is, for a 12-year-old” with three parts labelled “How long”, “What” and “Who for”, and an arrow to a clear answer bubble labelled “Useful answer”. Bottom row: the tool's bubble “Six legs” next to an open book that says “Eight legs”, with the words “Check a trusted source”. A small tag on every bubble says “Pretend tool”.",
+    "alt": "A vague prompt gets a vague answer; a prompt that says what, who it is for and how long gets a useful one. Below, a science book corrects the tool: spiders have eight legs.",
+    "src": "visuals/DW08.svg"
+  },
+  "sources": [
+    {
+      "label": "MIT Sloan Teaching and Learning Technologies: Effective prompts for AI, the essentials",
+      "url": "https://mitsloanedtech.mit.edu/ai/basics/effective-prompts/"
+    },
+    {
+      "label": "Common Sense Education: Designed to feel human (lesson on chatbot design, including sounding confident)",
+      "url": "https://www.commonsense.org/education/digital-literacy/designed-to-feel-human"
+    },
+    {
+      "label": "UN News (2023): UNESCO guidance on generative AI in education (data privacy, age limit of 13)",
+      "url": "https://news.un.org/en/story/2023/09/1140477"
+    },
+    {
+      "label": "CK-12 Life Science for Middle School: Arachnids (spiders have eight legs, insects six)",
+      "url": "https://k12.libretexts.org/Bookshelves/Science_and_Technology/Life_Science_for_Middle_School_(CK-12)/09:_Invertebrates/9.13:_Arachnids"
+    },
+    {
+      "label": "DCMP: How Chatbots and Language Models Work (Code.org video, description)",
+      "url": "https://dcmp.org/media/25569-how-chatbots-and-language-models-work"
+    }
+  ],
+  "sensitiveNotes": [
+    "Don't ask learners to type questions into a real AI tool in class, or to say what they have asked one. UNESCO's 2023 guidance recommends a minimum age of 13 for generative AI tools in the classroom, and many learners are younger. The pretend tool keeps everyone offline and safe."
+  ],
+  "educatorNotes": [
+    "The tool's wrong answer about spiders is written on purpose, so learners practise checking (spiders have eight legs; insects have six). The explanation of chatbots (“guesses which words are likely to come next”) is a simplification; the AI-accuracy reviewer should check it.",
+    "Open question for reviewers (spec section 8, item 6): is a pretend tool with pre-written answers enough, or should a later version use an on-device model? Paper version of the activity: read the prompts and answers aloud and let learners choose."
+  ],
+  "changes": [
+    "New lesson (Digital World draft). There is no Base44 original, so oldId is null.",
+    "section is a proposed Digital World section id (use-tools-wisely), which the Our World checker and schema don't accept yet.",
+    "Adds a new activity type, ask-tool: a clearly labelled pretend tool with pre-written answers, including one that sounds sure but is wrong (spec section 5.6). Documented in docs/content/DIGITAL_WORLD_SPEC.md.",
+    "visual.src points to a picture that doesn't exist yet.",
+    "Needs review by an AI researcher (the chatbot explanation), and by Justin for level and tone."
+  ]
+}
