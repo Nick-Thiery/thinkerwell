@@ -128,9 +128,12 @@
   font-weight: 700;
 }
 
+/* "0 of 9" stays on one line: wrapped, it read as three stacked numbers. */
 .tw-course-nav-count {
+  flex: none;
   font-size: 14px;
   color: var(--ink-muted);
+  white-space: nowrap;
 }
 
 .tw-course-nav-note {
@@ -216,5 +219,12 @@
 
   .tw-course-nav {
     display: flex;
+  }
+}
+
+/* A laptop's wider page column gives the sidebar room for whole section names. */
+@media (min-width: 1280px) {
+  .tw-course-body {
+    grid-template-columns: 320px minmax(0, 1fr);
   }
 }

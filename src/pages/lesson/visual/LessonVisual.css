@@ -1,12 +1,13 @@
 /*
  * The lesson's one picture (LessonVisual.tsx): a paper card with a `line`
- * border, as wide as the reading column. The SVG keeps its own aspect ratio
- * (its viewBox).
+ * border, as wide as the lesson's column up to 800px, so on a wide laptop it
+ * doesn't fill the whole screen's height ("See it bigger" is there for that).
+ * The SVG keeps its own aspect ratio (its viewBox).
  */
 .tw-lesson-visual {
   box-sizing: border-box;
   margin: 0;
-  max-inline-size: 100%;
+  max-inline-size: min(100%, 800px);
   padding: var(--space-4);
   border-radius: var(--radius-xl);
   background: var(--paper);

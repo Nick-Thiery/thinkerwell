@@ -7,6 +7,27 @@
   max-inline-size: var(--reading-measure);
 }
 
+/* On a laptop the cards flow into two columns, top to bottom then the next
+   column, so the page order (and the keyboard's) stays the same. */
+@media (min-width: 1100px) {
+  .tw-settings {
+    display: block;
+    max-inline-size: none;
+    column-count: 2;
+    column-gap: var(--space-6);
+  }
+
+  .tw-settings > * {
+    break-inside: avoid;
+    margin-block-end: var(--space-6);
+  }
+
+  .tw-settings > .tw-settings-head {
+    column-span: all;
+    max-inline-size: var(--reading-measure);
+  }
+}
+
 .tw-settings-head {
   display: flex;
   flex-direction: column;

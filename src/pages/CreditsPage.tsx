@@ -84,24 +84,26 @@ export function CreditsPage() {
           {t('pages.credits.sourcesTitle')}
         </h2>
         <p>{t('pages.credits.sourcesBody')}</p>
-        {lessons.map((lesson) =>
-          lesson.sources.length > 0 ? (
-            <div className="tw-credits-lesson" key={lesson.id}>
-              <h3 className="h3">
-                {tx('pages.credits.lessonHeading', { number: lesson.number, title: <span {...contentLang}>{lesson.title}</span> })}
-              </h3>
-              <ul>
-                {lesson.sources.map((source) => (
-                  <li key={source.url}>
-                    <ExternalLink href={source.url}>
-                      <span {...contentLang}>{source.label}</span>
-                    </ExternalLink>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : null,
-        )}
+        <div className="tw-credits-grid">
+          {lessons.map((lesson) =>
+            lesson.sources.length > 0 ? (
+              <div className="tw-credits-lesson" key={lesson.id}>
+                <h3 className="h3">
+                  {tx('pages.credits.lessonHeading', { number: lesson.number, title: <span {...contentLang}>{lesson.title}</span> })}
+                </h3>
+                <ul>
+                  {lesson.sources.map((source) => (
+                    <li key={source.url}>
+                      <ExternalLink href={source.url}>
+                        <span {...contentLang}>{source.label}</span>
+                      </ExternalLink>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null,
+          )}
+        </div>
       </section>
 
       <section aria-labelledby="credits-videos" className="tw-credits-card">
@@ -126,61 +128,63 @@ export function CreditsPage() {
         </ul>
       </section>
 
-      <section aria-labelledby="credits-pictures" className="tw-credits-card">
-        <h2 id="credits-pictures" className="h2">
-          {t('pages.credits.picturesTitle')}
-        </h2>
-        <p>{t('pages.credits.picturesBody')}</p>
-        <h3 className="h3">{t('pages.credits.goalsTitle')}</h3>
-        <p>{t('pages.credits.goalsBody')}</p>
-        <p className="small tw-credits-muted">{t('pages.credits.goalsStatement')}</p>
-        <p>
-          <ExternalLink href={UN_SDG_URL}>{t('pages.credits.goalsLink')}</ExternalLink>
-        </p>
-      </section>
+      <div className="tw-credits-grid tw-credits-more">
+        <section aria-labelledby="credits-pictures" className="tw-credits-card">
+          <h2 id="credits-pictures" className="h2">
+            {t('pages.credits.picturesTitle')}
+          </h2>
+          <p>{t('pages.credits.picturesBody')}</p>
+          <h3 className="h3">{t('pages.credits.goalsTitle')}</h3>
+          <p>{t('pages.credits.goalsBody')}</p>
+          <p className="small tw-credits-muted">{t('pages.credits.goalsStatement')}</p>
+          <p>
+            <ExternalLink href={UN_SDG_URL}>{t('pages.credits.goalsLink')}</ExternalLink>
+          </p>
+        </section>
 
-      <section aria-labelledby="credits-fonts" className="tw-credits-card">
-        <h2 id="credits-fonts" className="h2">
-          {t('pages.credits.fontsTitle')}
-        </h2>
-        <p>{t('pages.credits.fontsBody')}</p>
-        <ul>
-          {FONT_KEYS.map((key) => (
-            <li key={key}>{t(key)}</li>
-          ))}
-        </ul>
-        <p>
-          <ExternalLink href={OFL_URL}>{t('pages.credits.fontsLicenceLink')}</ExternalLink>
-        </p>
-      </section>
+        <section aria-labelledby="credits-fonts" className="tw-credits-card">
+          <h2 id="credits-fonts" className="h2">
+            {t('pages.credits.fontsTitle')}
+          </h2>
+          <p>{t('pages.credits.fontsBody')}</p>
+          <ul>
+            {FONT_KEYS.map((key) => (
+              <li key={key}>{t(key)}</li>
+            ))}
+          </ul>
+          <p>
+            <ExternalLink href={OFL_URL}>{t('pages.credits.fontsLicenceLink')}</ExternalLink>
+          </p>
+        </section>
 
-      <section aria-labelledby="credits-software" className="tw-credits-card">
-        <h2 id="credits-software" className="h2">
-          {t('pages.credits.softwareTitle')}
-        </h2>
-        <p>{t('pages.credits.softwareBody')}</p>
-        <ul>
-          {SOFTWARE.map((item) => (
-            <li key={item.name}>
-              {tx('pages.credits.softwareItem', {
-                name: (
-                  <ExternalLink href={item.url}>
-                    <span {...englishLang}>{item.name}</span>
-                  </ExternalLink>
-                ),
-                licence: <span {...englishLang}>{item.licence}</span>,
-              })}
-            </li>
-          ))}
-        </ul>
-      </section>
+        <section aria-labelledby="credits-software" className="tw-credits-card">
+          <h2 id="credits-software" className="h2">
+            {t('pages.credits.softwareTitle')}
+          </h2>
+          <p>{t('pages.credits.softwareBody')}</p>
+          <ul>
+            {SOFTWARE.map((item) => (
+              <li key={item.name}>
+                {tx('pages.credits.softwareItem', {
+                  name: (
+                    <ExternalLink href={item.url}>
+                      <span {...englishLang}>{item.name}</span>
+                    </ExternalLink>
+                  ),
+                  licence: <span {...englishLang}>{item.licence}</span>,
+                })}
+              </li>
+            ))}
+          </ul>
+        </section>
 
-      <section aria-labelledby="credits-translation" className="tw-credits-card">
-        <h2 id="credits-translation" className="h2">
-          {t('pages.credits.translationTitle')}
-        </h2>
-        <p>{t('pages.credits.translationBody')}</p>
-      </section>
+        <section aria-labelledby="credits-translation" className="tw-credits-card">
+          <h2 id="credits-translation" className="h2">
+            {t('pages.credits.translationTitle')}
+          </h2>
+          <p>{t('pages.credits.translationBody')}</p>
+        </section>
+      </div>
     </div>
   );
 }

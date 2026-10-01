@@ -5,8 +5,24 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
-  max-inline-size: 880px;
 }
+
+.tw-credits-hero > p {
+  max-inline-size: var(--reading-measure);
+}
+
+/* The lessons' sources and the smaller parts at the end: one column, then
+   two side by side on a laptop. */
+.tw-credits-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.tw-credits-more {
+  gap: var(--space-6);
+}
+
 
 .tw-credits-hero {
   display: flex;
@@ -120,5 +136,31 @@
 @media (max-width: 600px) {
   .tw-credits-card {
     padding: var(--space-5);
+  }
+}
+
+@media (min-width: 1100px) {
+  .tw-credits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-6) var(--space-10);
+    align-items: start;
+  }
+
+  .tw-credits-more {
+    gap: var(--space-6);
+    align-items: stretch;
+  }
+
+  /* The videos, two columns of rows. */
+  .tw-credits-card .tw-credits-videos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--space-10);
+  }
+
+  .tw-credits-videos li:nth-last-child(2):nth-child(odd) {
+    border-block-end: 0;
+    padding-block-end: 0;
   }
 }

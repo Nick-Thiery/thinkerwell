@@ -410,10 +410,14 @@
   min-inline-size: 0;
 }
 
+/* The badge takes the free space, so "You are here" and the ring sit at the end. */
+.tw-btn.tw-section-row .tw-section-row-badge {
+  margin-inline-end: auto;
+}
+
 .tw-section-row-status {
   flex: none;
   color: var(--ink-muted);
-  margin-inline-start: auto;
 }
 
 @media (max-width: 480px) {
