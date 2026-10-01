@@ -57,7 +57,8 @@ test('an organisation finds the kit from the first page, in the footer and on th
   await footer.getByRole('link', { name: 'For organisations' }).click();
   await expect(page.locator('h1')).toHaveText('For organisations');
   await expect(page.getByText('Thinkerwell is a student-led project. It is not a registered charity or nonprofit.')).toBeVisible();
-  await expect(page.getByText('[CONTACT EMAIL]')).toBeVisible();
+  // No placeholder address anywhere until the team has a real one (src/app/contact.ts).
+  await expect(page.getByText(/\[CONTACT EMAIL\]/)).toHaveCount(0);
 
   await page.goto('/educators');
   const pilot = page.getByRole('region', { name: 'Starting a pilot' });

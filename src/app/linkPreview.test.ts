@@ -18,7 +18,7 @@ function meta(attribute: 'name' | 'property', key: string): string | undefined {
 
 describe('link previews (index.html)', () => {
   it('has a description and a theme colour', () => {
-    expect(meta('name', 'description')).toMatch(/free social-studies course/);
+    expect(meta('name', 'description')).toMatch(/^Free social studies learning for youth across Southeast Asia, especially those facing barriers to education\./);
     expect(meta('name', 'theme-color')).toBe('#ffff66');
   });
 
@@ -28,7 +28,7 @@ describe('link previews (index.html)', () => {
       ['name', 'twitter'],
     ] as const) {
       expect(meta(attribute, `${prefix}:title`)).toBe('Thinkerwell: Exploring Our World');
-      expect(meta(attribute, `${prefix}:description`)).toMatch(/free social-studies course/);
+      expect(meta(attribute, `${prefix}:description`)).toMatch(/^Free social studies learning for youth across Southeast Asia, especially those facing barriers to education\./);
       expect(meta(attribute, `${prefix}:image`)).toMatch(/^https:\/\/[^/]+\/social-card\.png$/);
       expect(meta(attribute, `${prefix}:image:alt`)).toBeTruthy();
     }

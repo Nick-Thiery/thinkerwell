@@ -13,6 +13,7 @@
  * the form alone.
  */
 import { useState, type ReactNode } from 'react';
+import { CONTACT_EMAIL } from '../../app/contact';
 import { educatorsPath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
 import { Icon, TextField } from '../../components/ds';
@@ -93,7 +94,7 @@ export function ConsentFormPage() {
             </section>
           ))}
         </div>
-        <p>{tx('pages.consentForm.questions', { organisation: org })}</p>
+        <p>{CONTACT_EMAIL ? tx('pages.consentForm.questionsEmail', { organisation: org, email: CONTACT_EMAIL }) : tx('pages.consentForm.questions', { organisation: org })}</p>
         <p className="small">{t('pages.consentForm.honesty')}</p>
 
         <section className="tw-consent-answer" aria-labelledby="consent-answer-title">

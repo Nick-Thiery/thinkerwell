@@ -389,7 +389,7 @@ function offline(): Plugin[] {
       id: '/',
       name: 'Thinkerwell: Exploring Our World',
       short_name: 'Thinkerwell',
-      description: 'Exploring Our World: a free social-studies course. Works offline, with no accounts.',
+      description: 'Free social studies learning for youth across Southeast Asia, especially those facing barriers to education. Works offline, with no accounts.',
       lang: 'en',
       dir: 'ltr',
       start_url: '/',

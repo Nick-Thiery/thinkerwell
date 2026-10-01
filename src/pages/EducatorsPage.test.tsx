@@ -105,9 +105,10 @@ describe('EducatorsPage', () => {
     expect(screen.queryByRole('button', { name: /teaching notes/ })).not.toBeInTheDocument();
   });
 
-  it('keeps the feedback email a plain placeholder, not a form', () => {
+  it('leaves out "Tell us what to fix" while there is no email address, and never shows a placeholder or a form', () => {
     renderAt();
-    expect(screen.getByText('[FEEDBACK EMAIL]')).toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: 'Tell us what to fix' })).not.toBeInTheDocument();
+    expect(screen.queryByText(/\[FEEDBACK EMAIL\]|\[CONTACT EMAIL\]/)).not.toBeInTheDocument();
     expect(screen.queryByRole('textbox')).not.toBeInTheDocument();
     expect(screen.queryByRole('form')).not.toBeInTheDocument();
   });

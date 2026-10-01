@@ -24,9 +24,19 @@ describe('AboutPage', () => {
     expect(screen.getByRole('img', { name: 'Nick Thiery' })).toHaveAttribute('src', '/images/nick-thiery.jpg');
   });
 
-  it('never claims Thinkerwell is a registered charity or nonprofit', () => {
+  it('states the one mission, the pilot status, and that Thinkerwell is not a registered charity or nonprofit', () => {
     render(<AboutPage />);
-    expect(screen.queryByText(/registered charity|nonprofit/i)).not.toBeInTheDocument();
+    expect(screen.getByText('Free social studies learning for youth across Southeast Asia, especially those facing barriers to education.')).toBeInTheDocument();
+    expect(screen.getByText(/^Thinkerwell is a student-led project working to expand access to free digital social studies learning/)).toHaveTextContent(
+      'Its first course, Exploring Our World, has 24 lessons',
+    );
+    expect(screen.getByText('Thinkerwell is preparing its first pilot with a learning organisation. It is not a registered charity or nonprofit.')).toBeInTheDocument();
+    expect(screen.queryByText(/Read with curiosity/)).not.toBeInTheDocument();
+  });
+
+  it('says the UN goal icons are not an endorsement', () => {
+    render(<AboutPage />);
+    expect(screen.getByText(/Thinkerwell is not endorsed by the United Nations/)).toBeInTheDocument();
   });
 
   it('shows all four UN goals it works towards', () => {

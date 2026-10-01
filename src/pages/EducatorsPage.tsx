@@ -1,4 +1,5 @@
 import { useSearchParams } from 'react-router';
+import { CONTACT_EMAIL } from '../app/contact';
 import { usePageTitle } from '../app/usePageTitle';
 import {
   allCertificatesPath,
@@ -251,13 +252,22 @@ export function EducatorsPage() {
             {t('pages.educators.pilotCodesCta')}
           </Button>
         </section>
-        <section aria-labelledby="fb-title" className="tw-edu-card tw-edu-card-feedback">
-          <h2 id="fb-title" className="h3">
-            {t('pages.educators.feedbackTitle')}
-          </h2>
-          <p>{t('pages.educators.feedbackBody')}</p>
-          <span className="tw-edu-feedback-email">{t('pages.educators.feedbackEmail')}</span>
-        </section>
+        {CONTACT_EMAIL ? (
+          <section aria-labelledby="fb-title" className="tw-edu-card tw-edu-card-feedback">
+            <h2 id="fb-title" className="h3">
+              {t('pages.educators.feedbackTitle')}
+            </h2>
+            <p>
+              {tx('pages.educators.feedbackBody', {
+                email: (
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="tw-edu-feedback-email">
+                    {CONTACT_EMAIL}
+                  </a>
+                ),
+              })}
+            </p>
+          </section>
+        ) : null}
       </div>
     </div>
   );

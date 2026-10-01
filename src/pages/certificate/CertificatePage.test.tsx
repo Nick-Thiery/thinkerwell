@@ -80,7 +80,7 @@ describe('CertificatePage', { timeout: 30_000 }, () => {
     expect(within(sheet).getByText(longDate('2026-09-05T10:00:00.000Z'))).toBeInTheDocument();
     expect(within(sheet).getByText('Date')).toBeInTheDocument();
     expect(within(sheet).getByText("Teacher's signature")).toBeInTheDocument();
-    expect(within(sheet).getByText('Exploring Our World is a free social-studies course from Thinkerwell.')).toBeInTheDocument();
+    expect(within(sheet).getByText('Exploring Our World is a free social studies course from Thinkerwell.')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Print' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Back to the course' })).toHaveAttribute('href', '/course#geography');
   });
