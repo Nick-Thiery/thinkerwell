@@ -6,12 +6,15 @@
  * footer of every page.
  *
  * Honest about scope (CLAUDE.md rule 8): a student-led project, not a
- * registered charity. Honest about data too: today nothing leaves the
- * device; the anonymous pilot data the consent form describes comes later
- * (docs/research/MEASUREMENT_PLAN.md). The contact address is the
- * "[CONTACT EMAIL]" placeholder, shown as it is until there is a real one;
- * there is no form, so nothing is collected here.
+ * registered charity. Honest about data too: today learners' work and
+ * progress aren't sent to Thinkerwell, YouTube and online speech-to-text are
+ * the outside services a learner can reach, and the anonymous pilot data the
+ * consent form describes comes later (docs/research/MEASUREMENT_PLAN.md).
+ * The contact card shows only once there is a real address (CONTACT_EMAIL);
+ * there is no form, so nothing is collected here. The wording follows
+ * docs/content/PUBLIC_COPY.md.
  */
+import { CONTACT_EMAIL } from '../app/contact';
 import { codeCardsPath, consentFormPath, setupPath } from '../app/lessonUrls';
 import { usePageTitle } from '../app/usePageTitle';
 import { Button, Icon, type IconName } from '../components/ds';
@@ -129,13 +132,17 @@ export function OrganisationsPage() {
         </div>
       </section>
 
-      <section aria-labelledby="org-contact" className="tw-org-card tw-org-contact">
-        <h2 id="org-contact" className="h2">
-          {t('pages.organisations.contactTitle')}
-        </h2>
-        <p>{t('pages.organisations.contactBody')}</p>
-        <span className="tw-org-email">{t('pages.organisations.contactEmail')}</span>
-      </section>
+      {CONTACT_EMAIL ? (
+        <section aria-labelledby="org-contact" className="tw-org-card tw-org-contact">
+          <h2 id="org-contact" className="h2">
+            {t('pages.organisations.contactTitle')}
+          </h2>
+          <p>{t('pages.organisations.contactBody')}</p>
+          <a href={`mailto:${CONTACT_EMAIL}`} className="tw-org-email">
+            {CONTACT_EMAIL}
+          </a>
+        </section>
+      ) : null}
     </div>
   );
 }

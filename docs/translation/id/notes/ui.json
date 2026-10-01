@@ -797,17 +797,19 @@
   },
   "pages.home.hero.description": {
     "flag": true,
-    "note": "\"social-studies course\" → \"Kursus IPS\" (the school subject name learners know). Alternative: \"kursus ilmu sosial\".",
-    "back": "A free social studies (IPS) course. Learn about people, places and communities, then share your own ideas.",
-    "source": "A free social-studies course. Learn about people, places and communities, and share your own ideas."
+    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed.",
+    "back": "Free social studies learning for teenagers in Southeast Asia, especially those who face obstacles in education. Explore history, geography, culture and community life at your own pace.",
+    "source": "Free social studies learning for youth across Southeast Asia, especially those facing barriers to education. Explore history, geography, culture and civic life at your own pace."
   },
   "pages.home.hero.stagesLabel": {
     "back": "Every lesson has five steps",
     "source": "Every lesson has five steps"
   },
   "pages.home.hero.footnote": {
-    "back": "{lessons} lessons in {sections} sections · no account needed",
-    "source": "{lessons} lessons in {sections} sections · no account needed"
+    "back": "{lessons} lessons · {sections} sections · no account needed",
+    "source": "{lessons} lessons · {sections} sections · no account needed",
+    "flag": true,
+    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed."
   },
   "pages.home.lookAround": {
     "flag": true,
@@ -1424,8 +1426,10 @@
     "note": "Changed from \"kamu\" to \"Anda\" (September 2026): pages for adults (educators, partners, parents) use \"Anda\"; pages for learners keep \"kamu\". Drafted by AI, not yet reviewed."
   },
   "pages.educators.heroBody": {
-    "source": "Every lesson works on one shared screen, in pairs, or on separate devices. There are no accounts to set up.",
-    "back": "Every lesson can be used on one shared screen, in pairs, or on each person's own device. No account needs to be made."
+    "source": "Use Thinkerwell's free social studies lessons with your group. Teach on one shared screen, in pairs or on separate devices, or print the lessons. No learner accounts are needed.",
+    "back": "Use Thinkerwell's free social studies lessons with your group. Teach on one shared screen, in pairs, or on separate devices, or print the lessons. Learners don't need to make accounts.",
+    "flag": true,
+    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed."
   },
   "pages.educators.previewLesson": {
     "flag": true,
@@ -1550,12 +1554,10 @@
     "back": "Tell us what needs fixing"
   },
   "pages.educators.feedbackBody": {
-    "source": "Something confusing, too hard, or broken? A video that does not play? Email us and we will fix it.",
-    "back": "Is something confusing, too hard, or broken? Is there a video that won't play? Send us an email and we will fix it."
-  },
-  "pages.educators.feedbackEmail": {
-    "source": "[FEEDBACK EMAIL]",
-    "back": "[FEEDBACK EMAIL]"
+    "source": "Something confusing, too difficult or broken? Tell us at {email}. Don't send learners' names or written answers.",
+    "back": "Something confusing, too difficult or broken? Tell us at {email}. Don't send learners' names or their written answers.",
+    "flag": true,
+    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed."
   },
   "pages.educators.toolsIntro": {
     "source": "For the day you start, and every day after. Everything here stays on this device.",
@@ -2737,9 +2739,9 @@
   },
   "pages.about.tagline": {
     "flag": true,
-    "note": "Imperatives matching the stage names. 'Watch with intention' rendered 'Tonton dengan saksama' (watch carefully); 'Reflect and connect' as 'Refleksikan dan hubungkan'. Check it reads well as a motto.",
-    "source": "Read with curiosity. Write with evidence. Speak with purpose. Watch with intention. Reflect and connect.",
-    "back": "Read with curiosity. Write with evidence. Speak with purpose. Watch carefully. Reflect and connect."
+    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed.",
+    "source": "Free social studies learning for youth across Southeast Asia, especially those facing barriers to education.",
+    "back": "Free social studies learning for teenagers in Southeast Asia, especially those who face obstacles in education."
   },
   "pages.about.whatTitle": {
     "source": "What Thinkerwell is",
@@ -2747,9 +2749,15 @@
   },
   "pages.about.whatBody": {
     "flag": true,
-    "note": "'displaced' = 'yang terpaksa meninggalkan tempat tinggalnya'; 'civic life' = 'kehidupan sebagai warga'. Long; check phrasing.",
-    "source": "Thinkerwell is a free social-studies course for young people across Southeast Asia, made with refugee, displaced and under-served learners in mind. Learners explore history, geography, culture and civic life through reading, writing, talking and reflecting.",
-    "back": "Thinkerwell is a free social-studies course for young people across Southeast Asia, made with refugee learners, learners forced to leave their homes, and under-served learners in mind. Learners explore history, geography, culture and life as citizens through reading, writing, speaking and reflecting."
+    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed.",
+    "source": "Thinkerwell is a student-led project working to expand access to free digital social studies learning for underserved youth across Southeast Asia. Its first course, {course}, has {lessons} lessons in history, geography, culture and civic life. It is designed with refugee, displaced and other learners facing barriers to education in mind. Learners can use it on their own or with an educator.",
+    "back": "Thinkerwell is a project led by students to widen access to free digital social studies learning for underserved teenagers in Southeast Asia. Its first course, {course}, has {lessons} lessons about history, geography, culture and community life. The course is designed with refugee learners, learners forced to leave their homes, and other learners who face obstacles in education in mind. Learners can use it alone or with an educator."
+  },
+  "pages.about.whatStatus": {
+    "flag": true,
+    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed.",
+    "back": "Thinkerwell is getting ready for its first pilot with an education organisation. Thinkerwell is not a registered charity or nonprofit organisation.",
+    "source": "Thinkerwell is preparing its first pilot with a learning organisation. It is not a registered charity or nonprofit."
   },
   "pages.about.creditsLinkTitle": {
     "flag": true,
@@ -2771,17 +2779,19 @@
   },
   "pages.about.goalsTitle": {
     "flag": true,
-    "note": "'work towards' simplified to 'kami dukung' (we support).",
-    "source": "The UN goals we work towards",
-    "back": "UN goals we support"
+    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed.",
+    "source": "How Thinkerwell connects to the UN goals",
+    "back": "How Thinkerwell relates to the UN goals"
   },
   "pages.about.goal4Title": {
     "source": "Goal 4: Quality Education",
     "back": "Goal 4: Quality Education"
   },
   "pages.about.goal4Body": {
-    "source": "Free social-studies learning for young people who face barriers to school.",
-    "back": "Free social-studies learning for young people who face barriers to going to school."
+    "source": "Free learning materials",
+    "back": "Free learning materials",
+    "flag": true,
+    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed."
   },
   "pages.about.goal4Alt": {
     "source": "Sustainable Development Goal 4: Quality Education",
@@ -2794,8 +2804,10 @@
     "back": "Goal 10: Reduced Inequalities"
   },
   "pages.about.goal10Body": {
-    "source": "Good learning materials for refugee, displaced and under-served youth.",
-    "back": "Good learning materials for young people who are refugees, who were forced to leave their homes, and who are under-served."
+    "source": "Designed for learners facing barriers to education",
+    "back": "Designed for learners who face obstacles in education",
+    "flag": true,
+    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed."
   },
   "pages.about.goal10Alt": {
     "source": "Sustainable Development Goal 10: Reduced Inequalities",
@@ -2806,8 +2818,10 @@
     "back": "Goal 16: Peace, Justice and Strong Institutions"
   },
   "pages.about.goal16Body": {
-    "source": "History, civics and media skills, and the habit of respectful discussion.",
-    "back": "History, civics and media skills, plus the habit of discussing with mutual respect."
+    "source": "Civic and media literacy",
+    "back": "Civic and media literacy",
+    "flag": true,
+    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed."
   },
   "pages.about.goal16Alt": {
     "source": "Sustainable Development Goal 16: Peace, Justice and Strong Institutions",
@@ -2818,12 +2832,20 @@
     "back": "Goal 17: Partnerships to Achieve the Goals"
   },
   "pages.about.goal17Body": {
-    "source": "Working with educators, youth networks and community groups.",
-    "back": "Working together with educators, youth networks and community groups."
+    "source": "Looking for educators and community groups to work with",
+    "back": "Looking for educators and community groups to work together with",
+    "flag": true,
+    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed."
   },
   "pages.about.goal17Alt": {
     "source": "Sustainable Development Goal 17: Partnerships for the Goals",
     "back": "Sustainable Development Goal 17: Partnerships to Achieve the Goals"
+  },
+  "pages.about.goalsNote": {
+    "flag": true,
+    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed.",
+    "back": "These goal icons are from the United Nations. Thinkerwell is not officially supported by the United Nations.",
+    "source": "The goal icons are from the United Nations. Thinkerwell is not endorsed by the United Nations."
   },
   "pages.about.teamTitle": {
     "source": "Who makes Thinkerwell",
@@ -2838,8 +2860,10 @@
     "back": "Justin Park"
   },
   "pages.about.justinBio": {
-    "source": "Justin is a student in Singapore who loves history, sociology and Model United Nations. He started Thinkerwell because learning should not stop at borders, displacement or a lack of resources.",
-    "back": "Justin is a student in Singapore who likes history, sociology and Model United Nations. He started Thinkerwell because learning must not be stopped by national borders, having to flee, or a lack of resources."
+    "source": "Justin is a student in Singapore and Thinkerwell's founder and director. His interest in history and social studies led him to start a free course for youth who face barriers to education.",
+    "back": "Justin is a student in Singapore and also Thinkerwell's founder and director. His interest in history and social studies made him start a free course for teenagers who face obstacles in education.",
+    "flag": true,
+    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed."
   },
   "pages.about.justinAlt": {
     "source": "Justin Park",
@@ -2856,8 +2880,10 @@
     "back": "Nick Thiery"
   },
   "pages.about.nickBio": {
-    "source": "Nick is a student in Singapore. He builds the Thinkerwell website and leads our work with AI. He is interested in how AI can help more people learn in their own language.",
-    "back": "Nick is a student in Singapore. He builds the Thinkerwell website and leads our work with AI. He is interested in how AI can help more people learn in their own language."
+    "source": "Nick is a student in Singapore and Thinkerwell's chief technology officer. He builds the website and works on tools that help more people learn in their own language.",
+    "back": "Nick is a student in Singapore and also Thinkerwell's head of technology (CTO). He builds this website and develops tools that help more people learn in their own language.",
+    "flag": true,
+    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed."
   },
   "pages.about.nickAlt": {
     "source": "Nick Thiery",
@@ -3604,8 +3630,10 @@
     "back": "Teacher's signature"
   },
   "certificates.sheet.about": {
-    "source": "{course} is a free social-studies course from Thinkerwell.",
-    "back": "{course} is a free social-studies course from Thinkerwell."
+    "source": "{course} is a free social studies course from Thinkerwell.",
+    "back": "{course} is a free social studies (IPS) course from Thinkerwell.",
+    "flag": true,
+    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed."
   },
   "certificates.notYet.section": {
     "source": "Your certificate is ready when you finish every lesson in this section.",
@@ -3767,9 +3795,9 @@
   },
   "pages.organisations.intro": {
     "flag": true,
-    "note": "New in the partner kit (September 2026). Register: this page and the printed consent form speak to adults as \"Anda\"; the other educator pages use \"kamu\". Decide which fits.",
-    "back": "Thinkerwell is a free social studies course for children and teenagers aged about 10 to 17 who are learning English. This page is for organisations that want to try it with their learners.",
-    "source": "Thinkerwell is a free social-studies course for young people aged about 10 to 17 who are learning English. This page is for organisations that would like to try it with their learners."
+    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed.",
+    "back": "Thinkerwell is a project led by students to widen access to free digital social studies learning for underserved teenagers in Southeast Asia. We are preparing a pilot of our course with education organisations. This page explains what a pilot includes.",
+    "source": "Thinkerwell is a student-led project working to expand access to free digital social studies learning for underserved youth across Southeast Asia. We are preparing a pilot of our course with learning organisations. This page explains what a pilot involves."
   },
   "pages.organisations.honesty": {
     "back": "Thinkerwell is a project led by students. Thinkerwell is not a registered charity or nonprofit organisation.",
@@ -3780,8 +3808,10 @@
     "source": "What Thinkerwell is"
   },
   "pages.organisations.whatBody": {
-    "back": "One course, Exploring Our World: {lessons} lessons about history, geography, culture, and civics. Each lesson has five steps: read, write, speak, watch, and reflect. Thinkerwell runs in a web browser on laptops and tablets, and can be used without internet after the first visit. Available in English and Bahasa Indonesia.",
-    "source": "One course, Exploring Our World: {lessons} lessons about history, geography, culture and civics. Each lesson has five steps: read, write, speak, watch and reflect. It runs in a web browser on laptops and tablets, and works without internet after the first visit. It is in English and Bahasa Indonesia."
+    "back": "One course, Exploring Our World: {lessons} lessons about history, geography, culture and community life, for learners aged about 10 to 17. Each lesson has five steps: read, write, speak, watch and reflect. The course runs in a web browser on shared laptops and tablets, in English or Bahasa Indonesia. Lessons can be used without internet after the first visit; the optional videos need internet.",
+    "source": "One course, Exploring Our World: {lessons} lessons about history, geography, culture and civic life, for learners aged about 10 to 17. Each lesson has five steps: read, write, speak, watch and reflect. It runs in a web browser on shared laptops and tablets, in English or Bahasa Indonesia. Lessons work offline after the first visit; the optional videos need the internet.",
+    "flag": true,
+    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed."
   },
   "pages.organisations.getTitle": {
     "back": "What you get",
@@ -3830,8 +3860,10 @@
     "source": "Privacy"
   },
   "pages.organisations.privacy1": {
-    "back": "No names. Each learner gets a code card, such as HLP-01, and types that code as their name. Only you keep the list matching codes to names.",
-    "source": "No names. Each learner gets a code card, like HLP-01, and types the code as their name. Only you keep the list that matches codes to names."
+    "back": "Pilot groups can use codes, not names. Each learner gets a code card, like HLP-01, and types that code as their name. Only you keep the list pairing codes and names.",
+    "source": "Pilot groups can use codes instead of names. Each learner gets a code card, like HLP-01, and types the code as their name. Only you keep the list that matches codes to names.",
+    "flag": true,
+    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed."
   },
   "pages.organisations.privacy2": {
     "back": "No accounts, no email addresses, and no ads. Learners' work stays on the device they use, and voice recordings never leave that device.",
@@ -3839,13 +3871,15 @@
   },
   "pages.organisations.privacy3": {
     "flag": true,
-    "note": "New in the partner kit (September 2026). Says 'kuis' (quiz) while the course calls these section checks, and data collection is stated here but denied in the next line; check wording is not confusing. Rewritten after the first back-translation so it no longer seems to contradict \"nothing leaves the device\" (privacyNow).",
-    "back": "Parental consent. If the pilot measures learning results, a parent or guardian signs a consent form first, and only anonymous data is collected: length of study time, lessons finished, and quiz scores.",
-    "source": "Parental consent. If the pilot measures learning, a parent or guardian signs a consent form first, and only anonymous data is collected: time spent, lessons finished and quiz scores."
+    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed.",
+    "back": "Parental consent. Before any learning data is shared with Thinkerwell, a parent or guardian signs a consent form. The data is only anonymous data: time spent learning, lessons finished and quiz scores.",
+    "source": "Parental consent. Before any learning data is shared with Thinkerwell, a parent or guardian signs a consent form. It would only be anonymous data: time spent, lessons finished and quiz scores."
   },
   "pages.organisations.privacyNow": {
-    "back": "At the moment, nothing leaves the device. We will tell you before that changes.",
-    "source": "Today, nothing at all leaves the device. We will tell you before that changes."
+    "back": "Right now, learners' work and progress are not sent to Thinkerwell. The online speech-to-text feature is off unless your staff turn it on; if it is on, learners' speech is sent to the browser maker's service. We will tell you before anything else changes.",
+    "source": "Today, learners' work and progress are not sent to Thinkerwell. Online speech-to-text is off unless your staff turn it on; when it is on, what learners say goes to the browser maker's service. We will tell you before anything else changes.",
+    "flag": true,
+    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed."
   },
   "pages.organisations.privacy4": {
     "back": "Videos are optional. Videos play from YouTube, only after a learner taps the play button, and every video has a written version.",
@@ -3866,10 +3900,6 @@
   "pages.organisations.contactBody": {
     "back": "Email us to start a pilot or to ask a question. Tell us your organisation's name, your location, and roughly how many learners will take part.",
     "source": "Email us to start a pilot or to ask a question. Tell us your organisation's name, where you are, and about how many learners would take part."
-  },
-  "pages.organisations.contactEmail": {
-    "back": "[CONTACT EMAIL]",
-    "source": "[CONTACT EMAIL]"
   },
   "pages.consentForm.title": {
     "back": "Consent form",
@@ -3917,9 +3947,9 @@
   },
   "pages.consentForm.formIntro": {
     "flag": true,
-    "note": "New in the partner kit (September 2026). Consent text read by parents; 'beberapa sesi seminggu' is slightly ambiguous and 'daring' may be unfamiliar to some parents.",
-    "back": "{organisation} is trying Thinkerwell, a free online course about history, geography, culture, and civics for children and teenagers who are learning English. Your child is invited to join a few sessions every week for 4 to 6 weeks.",
-    "source": "{organisation} is trying Thinkerwell, a free online course about history, geography, culture and civics for young people learning English. Your child is invited to take part in a few sessions a week for 4 to 6 weeks."
+    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed.",
+    "back": "{organisation} is trying Thinkerwell, a free online course about history, geography, culture and community life for teenagers aged about 10 to 17. Your child is invited to take part in a few sessions every week for 4 to 6 weeks.",
+    "source": "{organisation} is trying Thinkerwell, a free online course about history, geography, culture and civic life for youth aged about 10 to 17. Your child is invited to take part in a few sessions a week for 4 to 6 weeks."
   },
   "pages.consentForm.collectTitle": {
     "back": "What is collected",
@@ -3982,8 +4012,16 @@
     "source": "Taking part is voluntary. Saying no, or changing your mind later, is fine: it won't affect anything else your child does at {organisation}. Your child can say no too. To stop, tell {organisation}."
   },
   "pages.consentForm.questions": {
-    "back": "Any questions? Ask {organisation}, or email Thinkerwell at [CONTACT EMAIL].",
-    "source": "Questions? Ask {organisation}, or email Thinkerwell at [CONTACT EMAIL]."
+    "back": "Any questions? Ask {organisation}.",
+    "source": "Questions? Ask {organisation}.",
+    "flag": true,
+    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed."
+  },
+  "pages.consentForm.questionsEmail": {
+    "flag": true,
+    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed.",
+    "back": "Any questions? Ask {organisation}, or send an email to Thinkerwell at {email}.",
+    "source": "Questions? Ask {organisation}, or email Thinkerwell at {email}."
   },
   "pages.consentForm.honesty": {
     "back": "Thinkerwell is a project led by students, not a registered charity.",

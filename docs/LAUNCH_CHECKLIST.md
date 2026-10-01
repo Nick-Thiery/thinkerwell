@@ -213,8 +213,7 @@ Saving work to a file and loading one (Settings, "Move work to another device") 
 - [ ] **Before resetting a tablet or replacing a device, save everyone's work to a file** (the last box of **Set up this device** links there): Settings, "Move work to another device", "All learners on this device", **Save my work to a file**. On the new device, **Load my work** and choose the file. Recordings aren't in the file. Tell HELP's educators this too, and to keep the file safe: anyone with it can read the work in it.
 - [ ] **Watch all 24 videos.** Some may not suit these learners, and a HELP educator should review Lessons 4 and 19 (docs/PRODUCT.md). On HELP's own network, check that the videos play: a school filter or a regional block would show the written version instead. In DevTools, note which servers the player contacts.
 - [ ] **Confirm HELP's consent process** before any measurement, and before an educator turns on "Allow online speech-to-text".
-- [ ] **Replace the placeholders**:
-  - `[FEEDBACK EMAIL]` on the Educators page (`pages.educators.feedbackEmail` in `src/i18n/messages/en.json`);
+- [ ] **Choose a contact email** and set `CONTACT_EMAIL` in `src/app/contact.ts`. That turns on "Tell us what to fix" on the Educators page, the contact card on For organisations and the email in the consent form's "Questions?" line. Until then they are left out (no placeholders on the site).
   - ~~Nick's photo on the About page~~ Done: `public/images/nick-thiery.jpg`, made from `docs/design-system/assets/nick-thiery.jpg`.
 - [ ] **Decide the learner avatar colours** (open in docs/PRODUCT.md).
 - [ ] **Check which teaching notes are marked as sensitive topics** (`sensitiveNotes` in each lesson file; docs/notes/teacher-tools.md).

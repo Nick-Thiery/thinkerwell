@@ -2,6 +2,7 @@ import { Link } from 'react-router';
 import { creditsPath } from '../app/lessonUrls';
 import { usePageTitle } from '../app/usePageTitle';
 import { Icon, Mascot } from '../components/ds';
+import { useCatalog } from '../content/useCatalog';
 import { useI18n } from '../i18n';
 import './AboutPage.css';
 
@@ -22,9 +23,11 @@ const GOALS: Goal[] = [
 ];
 
 /**
- * About (docs/screens/About.dc.html): what Thinkerwell is, the UN goals it
- * works towards, and who makes it. It never claims Thinkerwell is a
- * registered charity or nonprofit (CLAUDE.md rule 8).
+ * About (docs/screens/About.dc.html): what Thinkerwell is, how it connects
+ * to the UN goals, and who makes it. The wording follows the public copy
+ * guide (docs/content/PUBLIC_COPY.md): one mission statement, the pilot
+ * status, and that Thinkerwell is not a registered charity or nonprofit
+ * (CLAUDE.md rule 8). The UN icons carry a no-endorsement note.
  *
  * Both team members are shown with their photos (public/images/, made
  * from the originals in docs/design-system/assets/ by
@@ -34,7 +37,8 @@ const GOALS: Goal[] = [
  * sources, the videos, the fonts, the pictures and the software in full.
  */
 export function AboutPage() {
-  const { t } = useI18n();
+  const { t, tx, contentLang } = useI18n();
+  const catalog = useCatalog();
   usePageTitle(t('pages.about.title'));
 
   return (
@@ -53,7 +57,13 @@ export function AboutPage() {
         <h2 id="about-what" className="h2">
           {t('pages.about.whatTitle')}
         </h2>
-        <p className="body-lg">{t('pages.about.whatBody')}</p>
+        <p className="body-lg">
+          {tx('pages.about.whatBody', {
+            course: <span {...contentLang}>{catalog.getCourse().course.title}</span>,
+            lessons: catalog.getLessons().length,
+          })}
+        </p>
+        <p className="small tw-about-status">{t('pages.about.whatStatus')}</p>
       </section>
 
       <section aria-labelledby="about-goals" className="tw-about-card tw-about-goals">
@@ -69,6 +79,7 @@ export function AboutPage() {
             </div>
           </div>
         ))}
+        <p className="small tw-about-status">{t('pages.about.goalsNote')}</p>
       </section>
 
       <section aria-labelledby="about-team" className="tw-about-team">
