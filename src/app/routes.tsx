@@ -38,6 +38,9 @@ function devRoutes(): RouteObject[] {
   const ReferencePage = lazy(() => import('../dev/ReferencePage'));
   const ScreensIndexPage = lazy(() => import('../dev/ScreensIndexPage'));
   const ScreenViewerPage = lazy(() => import('../dev/ScreenViewerPage'));
+  // A prototype of Digital World Lesson 2's "train a tiny model" activity
+  // (docs/content/DIGITAL_WORLD_SPEC.md, section 6). Not part of the course.
+  const TinyModelPage = lazy(() => import('../dev/tiny-model/TinyModelPage'));
   return [
     {
       path: 'dev/components',
@@ -68,6 +71,14 @@ function devRoutes(): RouteObject[] {
       element: (
         <Suspense fallback={null}>
           <ScreenViewerPage />
+        </Suspense>
+      ),
+    },
+    {
+      path: 'dev/tiny-model',
+      element: (
+        <Suspense fallback={null}>
+          <TinyModelPage />
         </Suspense>
       ),
     },
