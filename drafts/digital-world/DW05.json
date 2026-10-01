@@ -1,0 +1,333 @@
+{
+  "id": "dw-checking-a-claim",
+  "oldId": null,
+  "number": 5,
+  "section": "check-what-you-see",
+  "title": "Checking a claim before you share it",
+  "essentialQuestion": "How can you find out if a story is true before you share it?",
+  "learningGoal": "Use lateral reading to check a made-up news story against other sources, and decide whether to share it.",
+  "estimatedMinutes": [
+    30,
+    50
+  ],
+  "warmUp": {
+    "question": "A friend sends you a surprising story. What do you do first?",
+    "options": [
+      "Share it",
+      "Check it",
+      "Ignore it",
+      "Not sure"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "What does the post say? What do the other sources say?",
+    "cards": [
+      {
+        "type": "cases",
+        "title": "A post shared in Brightwater",
+        "cases": [
+          {
+            "name": "Brightwater Daily Truth",
+            "body": "“BIG NEWS. The Brightwater bridge closes for a WHOLE YEAR from tomorrow. Share this before they delete it.” There are no names, and no link to the town council."
+          }
+        ]
+      },
+      {
+        "type": "table",
+        "title": "What other sources say",
+        "columns": [
+          "Source",
+          "Who is behind it",
+          "What it says"
+        ],
+        "rows": [
+          [
+            "About Brightwater Daily Truth",
+            "The page does not say who runs it.",
+            "It posts a shocking story every day. Many were false."
+          ],
+          [
+            "Town council notice",
+            "The group that runs the town and looks after the bridge.",
+            "The bridge closes for repairs on 3 and 4 May. It opens again on 5 May."
+          ],
+          [
+            "Brightwater Radio news",
+            "A local news team. It names its reporters.",
+            "Workers will fix the bridge on 3 and 4 May. Take the ferry on those two days."
+          ],
+          [
+            "Brightwater Fact Check",
+            "A group that checks stories people share.",
+            "False. The bridge closes for two days, not a year."
+          ]
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "type": "check-claim",
+    "stage": "read",
+    "placement": "after-evidence",
+    "title": "Read sideways",
+    "instructions": "Here is a post about the Brightwater bridge. Before you decide, open the other sources one at a time, like a fact-checker opening new pages. Then answer the question. You can open them in any order.",
+    "claim": {
+      "from": "Brightwater Daily Truth",
+      "text": "BIG NEWS. The Brightwater bridge closes for a WHOLE YEAR from tomorrow. Share this before they delete it."
+    },
+    "askFirst": [
+      "Who is behind it?",
+      "What is the evidence?",
+      "What do other sources say?"
+    ],
+    "sources": [
+      {
+        "id": "about-page",
+        "name": "About Brightwater Daily Truth",
+        "who": "The page does not say who runs it.",
+        "says": "It posts a shocking story every day. Many were false."
+      },
+      {
+        "id": "council",
+        "name": "Town council notice",
+        "who": "The group that runs the town and looks after the bridge.",
+        "says": "The bridge closes for repairs on 3 and 4 May. It opens again on 5 May."
+      },
+      {
+        "id": "radio",
+        "name": "Brightwater Radio news",
+        "who": "A local news team. It names its reporters.",
+        "says": "Workers will fix the bridge on 3 and 4 May. Take the ferry on those two days."
+      },
+      {
+        "id": "fact-check",
+        "name": "Brightwater Fact Check",
+        "who": "A group that checks stories people share.",
+        "says": "False. The bridge closes for two days, not a year."
+      }
+    ],
+    "question": {
+      "question": "What do the other sources say about the bridge?",
+      "options": [
+        {
+          "text": "It closes for a whole year",
+          "correct": false,
+          "feedback": "Not quite. Only the first post says that. Open the council notice and see what it says."
+        },
+        {
+          "text": "It closes for two days, not a year",
+          "correct": true,
+          "feedback": "Yes. Three trusted sources agree. The first post is false, so don't share it."
+        },
+        {
+          "text": "Nobody knows yet",
+          "correct": false,
+          "feedback": "Not quite. The council, the radio and the fact-checkers all give the same dates."
+        }
+      ]
+    },
+    "saves": "Which source cards the learner opened, and their answer, with the lesson's other answers.",
+    "offline": "Everything is in the lesson file. The “other sources” are made-up cards, not real websites; nothing is opened, searched or sent."
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Ask three questions before you share",
+        "text": "Messages can spread very quickly, and a shocking story often travels fastest. In Brightwater, a page called Brightwater Daily Truth posted that the town bridge would close for a whole year. The post used capital letters and said, “Share this before they delete it.” Words like these push people to hurry, and hurrying makes it easy to share something false. Before you share, ask three questions. Who is behind the information? What is the evidence? What do other sources say? The Brightwater post gives no names, no evidence and no link to the town council, which looks after the bridge.",
+        "simpler": "Messages spread fast. Shocking stories spread fastest. A page in Brightwater said the bridge will close for a year. It said, “Share this before they delete it.” Words like this make you hurry. When you hurry, you can share something false. So first, ask three questions. Who is behind it? What is the evidence? What do other sources say? The Brightwater post has no names. It has no evidence."
+      },
+      {
+        "heading": "Read sideways, like a fact-checker",
+        "text": "Researchers once watched how different people checked websites. Students, and even history professors, stayed on one page and read it carefully from top to bottom. A page that looked official often fooled them. Professional fact-checkers did something different. They left the page quickly and opened other sources to find out who was behind it and what others said about it. This is called lateral reading, which means reading sideways across many sources instead of down one page. The fact-checkers reached better answers in much less time. In the activity, you can read sideways too, by opening the Brightwater sources one at a time.",
+        "simpler": "Researchers watched people check websites. Students read one page from top to bottom. So did history teachers. A page that looked real often fooled them. Fact-checkers did something else. They left the page fast. They opened other sources. They found out who made the page. This is called lateral reading. It means reading sideways, across many sources. The fact-checkers got better answers, and faster."
+      },
+      {
+        "heading": "Decide what to share",
+        "text": "When several trusted sources agree, a claim is more likely to be true. The town council, the local radio news and a fact-checking group all say the bridge will close for two days of repairs, not a whole year. So the first post is false, even though it looked exciting. If a claim is false, don't share it. If you want to help, share the council's notice instead. Sometimes you can't check a claim, for example when there is no internet. Then you can ask a teacher or someone who knows, or simply wait. A story that is true will still be true tomorrow.",
+        "simpler": "Do many trusted sources agree? Then the claim is more likely true. The council says the bridge closes for two days. The radio says two days. The fact-checkers say two days. So the first post is false. Don't share a false claim. Share the notice from the council instead. Sometimes you can't check, like when there is no internet. Ask a teacher, or wait. A true story is still true tomorrow."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "claim",
+        "forms": [
+          "claims"
+        ],
+        "definition": "Something a person says is true. It may be true or false.",
+        "example": "“The bridge closes for a whole year” is a claim."
+      },
+      {
+        "word": "evidence",
+        "definition": "Facts or proof that show if something is true.",
+        "example": "The council notice gives the dates of the repairs. That is evidence."
+      },
+      {
+        "word": "source",
+        "forms": [
+          "sources"
+        ],
+        "definition": "The person or place that information comes from.",
+        "example": "The radio news is one source about the bridge."
+      },
+      {
+        "word": "fact-checker",
+        "forms": [
+          "fact-checkers"
+        ],
+        "definition": "A person whose job is to find out if claims are true.",
+        "example": "The fact-checkers said the post about the bridge was false."
+      },
+      {
+        "word": "lateral reading",
+        "definition": "Checking a page by looking at what other sources say about it.",
+        "example": "Lateral reading showed that the bridge closes for two days."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "question": "What did the fact-checkers do differently?",
+        "options": [
+          {
+            "text": "Read every word on the page slowly",
+            "correct": false,
+            "feedback": "Not quite. That is what the students and professors did. Read the second section again."
+          },
+          {
+            "text": "Opened other sources to check",
+            "correct": true,
+            "feedback": "Yes. They left the page and read sideways across other sources. This is lateral reading."
+          },
+          {
+            "text": "Looked closely at the pictures",
+            "correct": false,
+            "feedback": "Not quite. A false page can have good pictures. Read about what the fact-checkers did."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "question": "Three trusted sources say the bridge closes for two days. What should you do with the first post?",
+        "options": [
+          {
+            "text": "Don't share it",
+            "correct": true,
+            "feedback": "Yes. The post is false. You could share the council's notice instead."
+          },
+          {
+            "text": "Share it so people can decide",
+            "correct": false,
+            "feedback": "Not quite. Sharing a false post helps it spread. Read the third section."
+          },
+          {
+            "text": "Share it, because it might be true",
+            "correct": false,
+            "feedback": "Not quite. Three trusted sources say it is false. Read the third section."
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "Think of a surprising message from the lesson, or one you heard about. Who could you ask to check it?",
+        "placeholder": "I could ask ___. I could also look at ___.",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "A friend wants to share the Brightwater bridge post. Explain how you checked it, and what you would tell your friend.",
+    "sentenceStarters": [
+      "First, I asked ...",
+      "The post had no ...",
+      "Then I read sideways. The ___ said ...",
+      "So I think the post is ...",
+      "I would tell my friend ..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I used at least one of the three questions.",
+      "I said what two other sources say.",
+      "I said what my friend should do."
+    ],
+    "example": "First, I asked who is behind the post. The post had no names, no evidence and no link to the council. Then I read sideways. The council notice said the bridge closes on 3 and 4 May for repairs. The radio news said the same, and the fact-checking group said the post is false. So I think the post is wrong about the whole year. I would tell my friend not to share it, and to share the council's notice instead."
+  },
+  "speak": {
+    "partnerTask": "Your partner reads the Brightwater post aloud. You ask the three questions, and your partner answers from the lesson. Then switch.",
+    "independentTask": "Say out loud what lateral reading means, and how a fact-checker uses it."
+  },
+  "watch": {
+    "youtubeId": "SHNprb2hgzU",
+    "title": "Sort Fact from Fiction Online with Lateral Reading",
+    "channel": "Digital Inquiry Group",
+    "durationSeconds": null,
+    "why": "It comes from the group that studied the fact-checkers in this lesson. It explains lateral reading.",
+    "beforeQuestion": "How do you decide if a website can be trusted?",
+    "afterQuestion": "How is reading sideways different from reading down one page?",
+    "summary": "This short video explains lateral reading. It is a way to check information that professional fact-checkers use. Many people check a website by reading down the page. They look at how it looks and what it says about itself. But a page can look serious and still give false or one-sided information. Fact-checkers do something different. After a quick look, they leave the page. They open new pages and search for what other sources say about it and about who is behind it. By reading less of the page and more about it, they learn more, and they learn it faster. You can do the same thing. Before you trust a page, find out who made it and what others say about it.",
+    "keyPoints": [
+      "One page can fool you, even if it looks serious.",
+      "Fact-checkers leave the page and read what other sources say about it.",
+      "Find out who is behind the information before you trust it."
+    ],
+    "contentNote": "Fast American English, made for secondary school. It shows searching online, which learners on an offline device can't do; the activity's source cards stand in for new pages. The summary was written from the Digital Inquiry Group's own description and the research it is based on, not from watching it, and the length is not confirmed. Preview it first; learners can read the written summary instead.",
+    "replacementSuggestion": null
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Before I share a story, I will ask ...",
+        "required": true
+      },
+      {
+        "text": "A kind of source I would trust is ... because ...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 5. You read sideways to check a story before sharing it."
+  },
+  "visual": {
+    "type": "diagram",
+    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW05.svg is only a planned path. Two pictures side by side. Left, labelled “Reading down”: one tall page that says “1 year”, with an arrow going down it and a small figure reading only that page. Right, labelled “Reading sideways”: the same page with three arrows going sideways to three cards labelled “Council”, “Radio news” and “Fact check”, each with “2 days” written on it. Words carry every meaning, so colour is never the only clue.",
+    "alt": "Reading down one page compared with reading sideways: three other sources all say the bridge closes for two days, not one year.",
+    "src": "visuals/DW05.svg"
+  },
+  "sources": [
+    {
+      "label": "Digital Inquiry Group: Civic Online Reasoning (the three questions)",
+      "url": "https://cor.inquirygroup.org/"
+    },
+    {
+      "label": "Wineburg and McGrew (2017/2019): Lateral reading, reading less and learning more when evaluating digital information (summary, SSRC MediaWell)",
+      "url": "https://mediawell.ssrc.org/citations/lateral-reading-reading-less-and-learning-more-when-evaluating-digital-information/"
+    },
+    {
+      "label": "Digital Inquiry Group: Lateral reading video",
+      "url": "https://cor.inquirygroup.org/videos/lateral-reading-video"
+    },
+    {
+      "label": "Liputan6 Cek Fakta (2026): Mafindo on checking hoaxes (Indonesian)",
+      "url": "https://www.liputan6.com/cek-fakta/read/6293913/hoaks-masih-beredar-luas-mafindo-masyarakat-perlu-tingkatkan-literasi-digital"
+    }
+  ],
+  "sensitiveNotes": [
+    "Use only harmless, made-up stories. Don't use real rumours about sensitive topics such as legal processes, aid, resettlement or official services, which can be too close to home. If a learner raises one, don't debate the details; point them to the official organisation that runs that service."
+  ],
+  "educatorNotes": [
+    "This builds on Our World Lesson 23 (What makes information trustworthy?), which teaches source, date and context. This lesson adds lateral reading. If a class uses both courses, start by recalling Lesson 23's checks.",
+    "Lateral reading normally needs the internet. On an offline device the activity's source cards stand in for new pages; in class, a teacher can play “the other sources” on paper. In Indonesia, Mafindo recommends fact-checking sites such as TurnBackHoax and CekFakta (Liputan6, 2026)."
+  ],
+  "changes": [
+    "New lesson (Digital World draft). There is no Base44 original, so oldId is null.",
+    "section is a proposed Digital World section id (check-what-you-see), which the Our World checker and schema don't accept yet.",
+    "Adds a new activity type, check-claim (open made-up sources one at a time, then answer), documented in docs/content/DIGITAL_WORLD_SPEC.md.",
+    "visual.src points to a picture that doesn't exist yet.",
+    "Needs review by Justin for level and tone, and for overlap with Our World Lesson 23."
+  ]
+}

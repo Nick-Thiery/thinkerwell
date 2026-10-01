@@ -1,0 +1,318 @@
+{
+  "id": "dw-numbers-that-persuade",
+  "oldId": null,
+  "number": 9,
+  "section": "use-tools-wisely",
+  "title": "Numbers that persuade",
+  "essentialQuestion": "How can a chart or a number be true and still mislead you?",
+  "learningGoal": "Explain how a chart's scale, a small survey and missing information can mislead, and use the real numbers to judge a claim.",
+  "estimatedMinutes": [
+    30,
+    50
+  ],
+  "warmUp": {
+    "question": "A poster says “9 out of 10 people love Sunny Juice”. What would you want to know?",
+    "options": [
+      "How many people were asked",
+      "Who asked them",
+      "Nothing, it sounds true",
+      "Not sure"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "What does the poster want you to think? What do the real numbers say?",
+    "cards": [
+      {
+        "type": "cases",
+        "title": "Stall A's poster at the Riverbend Sunday market",
+        "cases": [
+          {
+            "name": "The chart",
+            "body": "A bar chart of bananas sold each day. Stall A's bar is three times as tall as Stall B's. Big letters say: “We sell 3 times more than Stall B.” The numbers on the side start at 49, not 0."
+          },
+          {
+            "name": "The survey",
+            "body": "Big letters say: “8 out of 10 shoppers prefer our bananas.” Small letters say: “We asked 10 of our regular shoppers.”"
+          }
+        ]
+      },
+      {
+        "type": "table",
+        "title": "The real numbers",
+        "columns": [
+          "What",
+          "Stall A",
+          "Stall B"
+        ],
+        "rows": [
+          [
+            "Bananas sold each day, on average",
+            "52",
+            "50"
+          ],
+          [
+            "People asked in the survey",
+            "10, all regular Stall A shoppers",
+            "None"
+          ]
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "type": "chart-check",
+    "stage": "read",
+    "placement": "after-evidence",
+    "title": "Fix the chart",
+    "instructions": "Here is Stall A's chart. Tap “Start at zero” to see the same numbers drawn in a fair way. Then answer the question.",
+    "measure": "Bananas sold each day",
+    "bars": [
+      {
+        "label": "Stall A",
+        "value": 52
+      },
+      {
+        "label": "Stall B",
+        "value": 50
+      }
+    ],
+    "views": [
+      {
+        "id": "poster",
+        "label": "Stall A's poster",
+        "axisStart": 49,
+        "axisEnd": 53,
+        "note": "The scale starts at 49. Stall A's bar looks three times as tall."
+      },
+      {
+        "id": "zero",
+        "label": "Start at zero",
+        "axisStart": 0,
+        "axisEnd": 60,
+        "note": "The scale starts at 0. The two bars look almost the same."
+      }
+    ],
+    "question": {
+      "question": "How many more bananas does Stall A really sell each day?",
+      "options": [
+        {
+          "text": "About three times as many",
+          "correct": false,
+          "feedback": "Not quite. That is how the poster makes it look. Check the numbers: 52 and 50."
+        },
+        {
+          "text": "2 more bananas a day",
+          "correct": true,
+          "feedback": "Yes. 52 take away 50 is 2. That is a small difference, not three times as many."
+        },
+        {
+          "text": "2 fewer bananas a day",
+          "correct": false,
+          "feedback": "Not quite. Stall A sells a little more. 52 is 2 more than 50."
+        }
+      ]
+    },
+    "saves": "Which views the learner opened, and their answer, with the lesson's other answers.",
+    "offline": "Both charts are drawn on the device from the two numbers in the lesson file, with each bar's number written on it so colour and height are never the only clue. Nothing is sent anywhere."
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "A chart can stretch a small difference",
+        "text": "Charts help people understand numbers quickly and easily, so posters and news reports use them a lot. But a chart can also mislead you, even when every number on it is correct. At the Riverbend Sunday market, Stall A sells 52 bananas a day on average, and Stall B sells 50. On Stall A's poster, Stall A's bar looks three times as tall as Stall B's. How is that possible? The scale on the side of the chart begins at 49, not at zero. So Stall A's bar shows only the 3 bananas above 49, and Stall B's shows only 1. In a bar chart, people compare the heights of the bars, so the scale should start at zero.",
+        "simpler": "Charts help us see numbers fast. But a chart can mislead you. Even its numbers can all be right. Stall A sells 52 bananas a day. Stall B sells 50. On Stall A's poster, its bar looks three times as tall. Why? The scale starts at 49, not at zero. So the bars show only a small part. Stall A's bar shows 3. Stall B's bar shows 1. In a bar chart, the scale should start at zero."
+      },
+      {
+        "heading": "Ask who was asked, and how many",
+        "text": "Stall A's poster also says, “8 out of 10 shoppers prefer our bananas”. That sounds impressive, as if 80 per cent of all shoppers agree. But the small print says the stall asked only 10 people, and all of them were its own regular shoppers. A survey of a few people who already like one stall can't tell you what most shoppers think. When you see a number from a survey, ask two questions. Who was asked? How many people were asked? A bigger group, chosen fairly, usually gives a more trustworthy answer than a small group chosen by the seller.",
+        "simpler": "The poster also says, “8 out of 10 shoppers like our bananas best”. That sounds like a lot. But Stall A asked only 10 people. All 10 already shop at Stall A. So the survey does not show what most shoppers think. Ask two questions about a survey. Who was asked? How many were asked? A big group, chosen fairly, is better."
+      },
+      {
+        "heading": "Look for what is missing",
+        "text": "Charts and numbers can also mislead by leaving things out. A poster might show only the one day when Stall B ran out of bananas early, and hide all the other days. Choosing only the numbers that help your side is called cherry-picking. So whenever a chart or a number tries to persuade you, slow down and check four things. Read the labels, look at the actual numbers, check where the scale starts, and ask what might be missing. Then do the maths yourself, because a quick calculation often tells the real story. For Stall A, 52 take away 50 is just 2 bananas a day, not three times as many.",
+        "simpler": "Numbers can also mislead by leaving things out. A poster could show only one day. Maybe Stall B ran out of bananas that day. Picking only the numbers that help you is called cherry-picking. So check four things. Read the labels. Look at the numbers. Check where the scale starts. Ask what is missing. Then do the maths. 52 take away 50 is 2. That is a small difference."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "chart",
+        "forms": [
+          "charts"
+        ],
+        "definition": "A picture that shows numbers, for example with bars or lines.",
+        "example": "Stall A's poster has a bar chart of bananas sold."
+      },
+      {
+        "word": "scale",
+        "definition": "The numbers along the side of a chart.",
+        "example": "The scale on Stall A's chart starts at 49."
+      },
+      {
+        "word": "mislead",
+        "forms": [
+          "misleading"
+        ],
+        "definition": "To make someone believe something that is not true.",
+        "example": "The tall bar can mislead shoppers."
+      },
+      {
+        "word": "survey",
+        "forms": [
+          "surveys"
+        ],
+        "definition": "Asking a group of people the same questions to learn what they think.",
+        "example": "Stall A's survey asked only 10 people."
+      },
+      {
+        "word": "cherry-picking",
+        "definition": "Choosing only the facts that help your side and hiding the rest.",
+        "example": "Showing only the day Stall B ran out of bananas is cherry-picking."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "question": "Why does Stall A's bar look so much taller on the poster?",
+        "options": [
+          {
+            "text": "Stall A sells far more bananas each day",
+            "correct": false,
+            "feedback": "Not quite. Stall A sells 52 and Stall B sells 50. Read the first section again."
+          },
+          {
+            "text": "The scale starts at 49, not 0",
+            "correct": true,
+            "feedback": "Yes. Starting the scale at 49 makes a difference of 2 bananas look huge."
+          },
+          {
+            "text": "The bars use different colours",
+            "correct": false,
+            "feedback": "Not quite. The colour is not the trick. Look at where the scale starts."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "question": "What is the problem with the “8 out of 10 shoppers” claim?",
+        "options": [
+          {
+            "text": "The survey asked far too many people at once",
+            "correct": false,
+            "feedback": "Not quite. It asked only 10 people. Read the second section."
+          },
+          {
+            "text": "Most of the shoppers said no",
+            "correct": false,
+            "feedback": "Not quite. 8 of the 10 said yes. Look at who was asked."
+          },
+          {
+            "text": "Only 10 of its own shoppers were asked",
+            "correct": true,
+            "feedback": "Yes. Ten people who already shop at Stall A can't show what most shoppers think."
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "If you made an honest poster for Stall A, what would it say?",
+        "placeholder": "An honest poster would say ... It would show ...",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Explain how Stall A's poster could mislead shoppers. Use the real numbers, and say what an honest poster would show.",
+    "sentenceStarters": [
+      "Stall A's poster says ...",
+      "The chart looks ___ because ...",
+      "The real numbers are ...",
+      "The survey only ...",
+      "An honest poster would ..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I explained one trick on the poster.",
+      "I used the real numbers from the lesson.",
+      "I said what an honest poster would show."
+    ],
+    "example": "Stall A's poster says it sells three times more bananas than Stall B. The chart looks that way because the scale starts at 49, not at zero. The real numbers are 52 bananas a day for Stall A and 50 for Stall B, so the difference is only 2. The survey only asked 10 of Stall A's own shoppers. An honest poster would start the scale at zero and say how many people were asked, and who."
+  },
+  "speak": {
+    "partnerTask": "Your partner points to one trick on Stall A's poster. You explain how it misleads, using the real numbers. Then switch.",
+    "independentTask": "Say out loud four things to check when a chart tries to persuade you."
+  },
+  "watch": {
+    "youtubeId": "E91bGT9BjYk",
+    "title": "How to spot a misleading graph - Lea Gaslowitz",
+    "channel": "TED-Ed",
+    "durationSeconds": 229,
+    "why": "This animated lesson uses real examples to show how a graph can mislead.",
+    "beforeQuestion": "Can a chart mislead you if every number on it is true?",
+    "afterQuestion": "What four things does the video say to look at in a graph?",
+    "summary": "This animated lesson explains how graphs can mislead. Many people trust a graph because it shows numbers, not opinions. But graphs can still trick us. The most common trick is changing the scale. One advert used a scale that went only from 95 to 100 per cent. A tiny difference between two kinds of truck looked huge. This trick is worst in bar graphs, because we expect the size of the bars to match the numbers. A graph can also choose a time range, or a few points, that hide what really happened. This is called cherry-picking. A graph can also leave out facts that matter, like a growing population. At the end, the video says to look at the labels, the numbers, the scale and the context before you trust a graph.",
+    "keyPoints": [
+      "A scale that does not start at zero can make a tiny difference look huge.",
+      "Cherry-picking a time range or a few points can hide what really happened.",
+      "Look at the labels, the numbers, the scale and the context."
+    ],
+    "contentNote": "TED-Ed animation, 3 minutes 49 seconds, in fast English. Its examples name real companies (a 1992 truck advert from Chevy, compared with Toyota), US unemployment figures, the Super Bowl and ocean temperatures, and it mentions advertising and politicians. The summary was checked against TED's published transcript. Learners can read the written summary instead.",
+    "replacementSuggestion": null
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "When a chart tries to persuade me, I will check ...",
+        "required": true
+      },
+      {
+        "text": "A kind of number that could mislead people is ...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 9. You found what a misleading chart hides, and did the maths yourself."
+  },
+  "visual": {
+    "type": "diagram",
+    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW09.svg is only a planned path. Two bar charts of the same numbers, side by side, each with two bars labelled “Stall A: 52” and “Stall B: 50”. Left, titled “Stall A's poster”: the scale runs from 49 to 53, so Stall A's bar is three times as tall as Stall B's. Right, titled “Starting at zero”: the scale runs from 0 to 60, and the two bars are almost the same height. Every bar has its number written on it, so colour and height are never the only clue.",
+    "alt": "Two bar charts of the same numbers. Starting at 49, Stall A's bar looks three times as tall. Starting at zero, 52 and 50 look almost the same.",
+    "src": "visuals/DW09.svg"
+  },
+  "sources": [
+    {
+      "label": "TED-Ed: How to spot a misleading graph, Lea Gaslowitz (transcript)",
+      "url": "https://www.ted.com/talks/lea_gaslowitz_how_to_spot_a_misleading_graph/transcript"
+    },
+    {
+      "label": "Calling Bullshit (Bergstrom and West): Misleading axes on graphs",
+      "url": "https://www.callingbullshit.org/tools/tools_misleading_axes.html"
+    },
+    {
+      "label": "Full Fact: How to spot misleading poll figures",
+      "url": "https://fullfact.org/toolkit/how-spot-misleading-poll-figures/"
+    },
+    {
+      "label": "Full Fact (2013): New Year's resolution 5, I will not make bad graphs",
+      "url": "https://fullfact.org/news/new-years-resolution-5-i-will-not-make-bad-graphs/"
+    }
+  ],
+  "sensitiveNotes": [],
+  "educatorNotes": [
+    "Maths as reasoning, not drills: 52 take away 50 is 2. On the poster the bars show only the part above 49 (3 and 1), so one looks three times as tall. Paper version of the activity: draw both charts on squared paper, one starting at 49 and one at zero.",
+    "The “start at zero” rule is for bar charts. Line charts that show change over time don't always need to start at zero (Calling Bullshit). A bigger survey is better only when the people are chosen fairly (Full Fact).",
+    "Some learners have had little maths at school. Nothing here is a test: let partners work out the difference together, and use the words “take away”."
+  ],
+  "changes": [
+    "New lesson (Digital World draft). There is no Base44 original, so oldId is null.",
+    "section is a proposed Digital World section id (use-tools-wisely), which the Our World checker and schema don't accept yet.",
+    "Adds a new activity type, chart-check (switch between the poster's chart and one that starts at zero), documented in docs/content/DIGITAL_WORLD_SPEC.md.",
+    "visual.src points to a picture that doesn't exist yet.",
+    "Needs review by Justin for level and tone. “Sunny Juice” in the warm-up is a made-up brand."
+  ]
+}

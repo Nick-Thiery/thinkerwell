@@ -1,0 +1,326 @@
+{
+  "id": "dw-spotting-fakes",
+  "oldId": null,
+  "number": 4,
+  "section": "check-what-you-see",
+  "title": "Spotting fake photos, videos and voices",
+  "essentialQuestion": "How can you tell if a photo, video or voice is real?",
+  "learningGoal": "Explain how AI can make fakes, and use clues and the source to decide whether to trust a picture, video or voice.",
+  "estimatedMinutes": [
+    30,
+    50
+  ],
+  "warmUp": {
+    "question": "You see a photo of a pumpkin as big as a car. What do you think first?",
+    "options": [
+      "It is real",
+      "It is fake",
+      "I would check first",
+      "Not sure"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "Which posts have clues that something is wrong? Which ones can you not tell yet?",
+    "cards": [
+      {
+        "type": "cases",
+        "title": "Posts in the Greenhill news group",
+        "cases": [
+          {
+            "name": "Post A: a giant pumpkin",
+            "body": "A photo of a pumpkin as big as a car. A farmer stands next to it. Her hand has six fingers, and the sign behind her is full of messy letters. Nobody else posted a photo of it."
+          },
+          {
+            "name": "Post B: a talking goat",
+            "body": "A video of a goat that says “Good morning” in clear words. Its mouth does not move with the words, and the edges of its head flicker."
+          },
+          {
+            "name": "Post C: rain at the market",
+            "body": "A photo of the market in heavy rain, posted by the market's own page this morning. Other people posted photos of the same rain."
+          },
+          {
+            "name": "Post D: a voice message",
+            "body": "A voice message that sounds like Coach Ana. It says: “The football game moves to six in the morning.” It came from a number nobody knows. The notice board at the centre still says four in the afternoon."
+          },
+          {
+            "name": "Post E: a cat on a roof",
+            "body": "A photo of a cat asleep on a roof. Nothing looks strange. There is no name and no date."
+          },
+          {
+            "name": "Post F: a fruit seller",
+            "body": "A photo of a fruit seller. Her skin looks smooth and shiny, like plastic, and the fruit behind her seems to melt into the wall."
+          }
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "type": "sort",
+    "stage": "read",
+    "placement": "after-evidence",
+    "title": "Real or fake?",
+    "instructions": "Put each Greenhill post into a group. There is no score. After you place a post, you can see what most people would say and why.",
+    "groups": [
+      {
+        "id": "real",
+        "label": "Probably real"
+      },
+      {
+        "id": "fake",
+        "label": "Probably fake"
+      },
+      {
+        "id": "check",
+        "label": "Can't tell yet: check first"
+      }
+    ],
+    "items": [
+      {
+        "id": "pumpkin",
+        "text": "Post A: a giant pumpkin",
+        "suggested": "fake",
+        "feedback": "Most people would say probably fake. Six fingers, messy letters and no other photos are all clues. To be sure, check the source."
+      },
+      {
+        "id": "goat",
+        "text": "Post B: a talking goat",
+        "suggested": "fake",
+        "feedback": "Most people would say probably fake. Goats can't talk, and the mouth does not move with the words."
+      },
+      {
+        "id": "rain",
+        "text": "Post C: rain at the market",
+        "suggested": "real",
+        "feedback": "Most people would say probably real. It comes from the market's own page, and other people show the same rain."
+      },
+      {
+        "id": "voice",
+        "text": "Post D: a voice message",
+        "suggested": "check",
+        "feedback": "Most people would say check first. It sounds like Coach Ana, but it came from a number nobody knows, and the notice board says something else. Ask her in person."
+      },
+      {
+        "id": "cat",
+        "text": "Post E: a cat on a roof",
+        "suggested": "check",
+        "feedback": "Any group can be right here. Nothing looks strange, but new fakes can look perfect. With no name and no date, you can't tell yet."
+      },
+      {
+        "id": "seller",
+        "text": "Post F: a fruit seller",
+        "suggested": "fake",
+        "feedback": "Most people would say probably fake. Skin like plastic and a melting background are clues. The source can tell you more."
+      }
+    ],
+    "saves": "The group the learner chose for each post, with the lesson's other answers.",
+    "offline": "Everything is in the lesson file. The posts are short descriptions (and, later, simple drawings); there are no real photos, videos or sounds, and nothing is sent anywhere."
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "AI can make pictures, videos and voices",
+        "text": "Some AI tools can create new pictures, videos and voices. These tools learned from enormous numbers of real examples, so what they create can look and sound very realistic. A picture or video that shows something that never happened is called a fake. When AI is used to make a fake of a real person, it is often called a deepfake. Some fakes are made just for fun, like a video of a talking goat. Others are made to trick people, usually to get money or attention. In the Greenhill news group, someone posted a photo of a pumpkin as big as a car. Is it real, or fake?",
+        "simpler": "Some AI tools make new pictures, videos and voices. They learned from lots of real examples. So the new ones look realistic. A picture of something that never happened is a fake. A fake of a real person is called a deepfake. Some fakes are for fun, like a talking goat. Some fakes trick people to get money. In Greenhill, a photo shows a huge pumpkin. Is it real?"
+      },
+      {
+        "heading": "Look for clues",
+        "text": "AI tools often make small mistakes, and these mistakes can be useful clues. In pictures, look carefully at hands, because AI sometimes adds an extra finger. Writing on signs can turn into messy, impossible letters, and backgrounds can look strange. Skin can look unusually smooth, almost like plastic. In videos, check whether the mouth moves together with the words, and look for blurring or flickering around the edges. With voices, listen for a flat tone or unusual sounds in the background. The Greenhill pumpkin photo has two clues: the farmer's hand has six fingers, and the sign behind her is full of messy letters.",
+        "simpler": "AI tools often make small mistakes. These mistakes are clues. Look at the hands. AI sometimes adds a finger. Writing on signs can be messy. Skin can look too smooth. In a video, does the mouth move with the words? Do the edges shake or blur? A fake voice can sound flat. The pumpkin photo has two clues. The farmer has six fingers. The sign has messy letters."
+      },
+      {
+        "heading": "Clues are not proof, so check the source",
+        "text": "Clues can help, but they are not proof. AI tools keep improving, so a new fake may have no visible mistakes, and a real photo can also look strange when it is blurry. So the most important check is the source. Who posted it, and when? Do other trusted sources show the same thing? The rain photo came from the market's own page, and other people posted the same rain, so it is probably real. For a voice message, contact the person in a different way. Coach Ana's message came from an unknown number, so ask her in person. If you still can't tell, don't share it.",
+        "simpler": "Clues help, but they are not proof. A new fake may have no mistakes. A real photo can look strange too. So check the source. Who posted it? When? Do other people you trust show the same thing? The rain photo came from the market itself. Other people posted the same rain. So it is probably real. Coach Ana's message came from a number nobody knows. So ask her in person. Not sure? Don't share it."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "realistic",
+        "definition": "Looking or sounding like the real thing.",
+        "example": "The pumpkin photo looks realistic at first."
+      },
+      {
+        "word": "fake",
+        "forms": [
+          "fakes"
+        ],
+        "definition": "Made to look real, but it is not real.",
+        "example": "The video of the talking goat is a fake."
+      },
+      {
+        "word": "deepfake",
+        "forms": [
+          "deepfakes"
+        ],
+        "definition": "A fake picture, video or voice of a real person, made with AI.",
+        "example": "A deepfake can make it look like someone said words they never said."
+      },
+      {
+        "word": "clue",
+        "forms": [
+          "clues"
+        ],
+        "definition": "A small sign that helps you find out something.",
+        "example": "Six fingers on one hand is a clue that a picture may be fake."
+      },
+      {
+        "word": "source",
+        "forms": [
+          "sources"
+        ],
+        "definition": "The person or place that information comes from.",
+        "example": "The market's own page is the source of the rain photo."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "question": "Which clue suggests that AI made the pumpkin photo?",
+        "options": [
+          {
+            "text": "The farmer's hand has six fingers",
+            "correct": true,
+            "feedback": "Yes. AI tools sometimes add an extra finger. The messy letters on the sign are another clue."
+          },
+          {
+            "text": "The pumpkin is a bright orange",
+            "correct": false,
+            "feedback": "Not quite. Real pumpkins are orange too. Look at the hands and the sign in the second section."
+          },
+          {
+            "text": "It was posted in the morning",
+            "correct": false,
+            "feedback": "Not quite. The time of day is not a clue. Read about the clues in the second section."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "question": "A voice message sounds just like Coach Ana. What is the best thing to do?",
+        "options": [
+          {
+            "text": "Share it with the whole team now",
+            "correct": false,
+            "feedback": "Not quite. AI can copy a voice, so it may not be her. Read the third section."
+          },
+          {
+            "text": "Trust it because it sounds like her",
+            "correct": false,
+            "feedback": "Not quite. Sounding real is not proof. Read about voice messages in the third section."
+          },
+          {
+            "text": "Ask Coach Ana in person first",
+            "correct": true,
+            "feedback": "Yes. Checking with the person in another way is the best test for a voice message."
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "Why is it not enough to look for clues in a picture?",
+        "placeholder": "It is not enough because ... So I should also ...",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Choose one post from the Greenhill news group. Say if you think it is real or fake, give your clues, and explain how you would check it.",
+    "sentenceStarters": [
+      "I chose ...",
+      "I think it is probably ___ because ...",
+      "One clue is ...",
+      "To check it, I would ...",
+      "Before I share it, I ..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I named one post and said what I think it is.",
+      "I gave at least one clue from the post.",
+      "I said how I would check the source."
+    ],
+    "example": "I chose Post A, the giant pumpkin. I think it is probably fake because it has two clues. One clue is that the farmer's hand has six fingers. Another clue is that the sign behind her is full of messy letters. Also, nobody else posted a photo of a pumpkin that big. To check it, I would look for the same pumpkin on the farm's own page, or ask someone who was there. Before I share it, I would wait until I know it is real."
+  },
+  "speak": {
+    "partnerTask": "Your partner picks a Greenhill post. You say “probably real”, “probably fake” or “can't tell yet”, and give one reason. Then switch.",
+    "independentTask": "Say out loud three clues that a picture or video may be fake. Then say why clues are not proof."
+  },
+  "watch": {
+    "youtubeId": "U3ct1Mi5njY",
+    "title": "AI Unlocked: Recognizing AI-generated content",
+    "channel": "MediaWise",
+    "durationSeconds": null,
+    "why": "It was made with teenage fact-checkers, and it shows the clues in AI-made pictures, videos and voices.",
+    "beforeQuestion": "What do you think a fake video might get wrong?",
+    "afterQuestion": "Why is it not enough to trust a tool that says if something is fake?",
+    "summary": "This video comes from a series made with a team of teenage fact-checkers. It explains that some people use AI to make fake pictures, videos and sounds. They often do it to get money, attention or power. The video shows clues to look for. AI pictures can have strange hands, odd shadows and strange backgrounds. In AI videos, look for edges that blur or flicker. Check the shadows, and check if the lips move with the words. For AI voices, listen to the tone and to the sounds in the background. The video also shows tools that can help, like a search that finds where else a picture appears online. But these tools are not always right. A person still needs to think and check before sharing.",
+    "keyPoints": [
+      "AI fakes can have clues: odd hands, shadows, backgrounds, edges or lips.",
+      "For a voice, listen to the tone and the background sounds.",
+      "Tools that spot fakes are not always right, so a person still needs to check."
+    ],
+    "contentNote": "Fast American English with real examples of AI-made content. It mentions tools that need the internet (reverse image search and AI detection apps); on an offline device, learners can ask a teacher instead. The summary was written from PBS NewsHour Classroom's lesson plan for this video, not from watching it. Preview it first; learners can read the written summary instead.",
+    "replacementSuggestion": null
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Before I share a surprising picture or video, I will ...",
+        "required": true
+      },
+      {
+        "text": "One thing about AI fakes that surprised me is ...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 4. You looked for clues in fake pictures, videos and voices, and checked the source."
+  },
+  "visual": {
+    "type": "illustration",
+    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW04.svg is only a planned path. A simple drawing of the Greenhill pumpkin photo, with three numbered circles: the farmer's hand with six fingers (1), the sign behind her with messy letters (2), and a small note “Nobody else posted this” (3). Each circle has its words beside it, so colour is never the only clue. Beside it, a card titled “Check the source” lists three questions: Who posted it? When? Do others show the same thing? Simple drawn figures only; no real faces.",
+    "alt": "The giant pumpkin photo with three clues circled: six fingers, messy letters on a sign, and nobody else posted it. A card says to check the source.",
+    "src": "visuals/DW04.svg"
+  },
+  "sources": [
+    {
+      "label": "News Literacy Project: AI or not? (lesson plan, 2025)",
+      "url": "https://newslit.org/wp-content/uploads/2025/02/AI-or-not_Lesson-Plan.pdf"
+    },
+    {
+      "label": "MIT Media Lab: Detect DeepFakes, how to counteract misinformation created by AI",
+      "url": "https://www.media.mit.edu/projects/detect-fakes/overview/"
+    },
+    {
+      "label": "PBS NewsHour Classroom: Lesson plan, AI Unlocked, how to recognize AI-generated content (2025)",
+      "url": "https://www.pbs.org/newshour/classroom/lesson-plans/2025/04/recognizing-ai-generated-content"
+    },
+    {
+      "label": "US Federal Trade Commission: Family emergency scams (voice cloning)",
+      "url": "https://consumer.ftc.gov/scams/family-emergency-scams"
+    },
+    {
+      "label": "Liputan6 Cek Fakta (2026): Mafindo on hoaxes and AI-based hoaxes (Indonesian)",
+      "url": "https://www.liputan6.com/cek-fakta/read/6293913/hoaks-masih-beredar-luas-mafindo-masyarakat-perlu-tingkatkan-literasi-digital"
+    }
+  ],
+  "sensitiveNotes": [
+    "Deepfakes are used to hurt real people: fake pictures that shame someone, fake videos of leaders, and cloned voices in scams (for example a call that sounds like a relative asking for money; see the FTC source). The lesson keeps its examples silly on purpose. Don't show real deepfakes of real people in class. If a learner says a fake was made of them or someone they know, don't discuss the details in class; follow the partner's own safeguarding process."
+  ],
+  "educatorNotes": [
+    "Visual clues go out of date fast: newer tools make fewer mistakes with hands and writing (News Literacy Project). Teach clues as reasons to check, never as proof, and accept “can't tell yet” as a strong answer. The activity has no score.",
+    "In Indonesia, Mafindo's TurnBackHoax and CekFakta check viral pictures and videos, and Mafindo says AI-based hoaxes are getting harder to tell apart (Liputan6, 2026). A teacher with internet can show one checked example; learners don't need to go online."
+  ],
+  "changes": [
+    "New lesson (Digital World draft). There is no Base44 original, so oldId is null.",
+    "section is a proposed Digital World section id (check-what-you-see), which the Our World checker and schema don't accept yet.",
+    "Adds a sort activity with a “Can't tell yet” group, so clues are taught as reasons to check, not proof.",
+    "visual.src points to a picture that doesn't exist yet.",
+    "Needs review by an AI researcher (how fakes are made, which clues still hold), by Justin for level and tone, and by a partner educator for the sensitive notes."
+  ]
+}

@@ -1,0 +1,328 @@
+{
+  "id": "dw-design-an-ai-helper",
+  "oldId": null,
+  "number": 11,
+  "section": "ai-where-you-live",
+  "title": "Project: design an AI helper",
+  "essentialQuestion": "How would you design an AI helper that is useful, fair and safe?",
+  "learningGoal": "Plan an AI helper for a problem many people share: decide if AI should be used, what it learns from, what could go wrong, and how to improve it after feedback.",
+  "estimatedMinutes": [
+    40,
+    60
+  ],
+  "warmUp": {
+    "question": "Which of these jobs could an AI helper do well?",
+    "options": [
+      "Sorting rubbish into the right bin",
+      "Choosing who should be friends",
+      "Guessing when a bus will come",
+      "Not sure"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "For each plan, should AI be used? What could go wrong, and who checks it?",
+    "cards": [
+      {
+        "type": "cases",
+        "title": "Three plans from the Maple Street design club",
+        "cases": [
+          {
+            "name": "Plan 1: the bin helper",
+            "body": "Problem: people often put plastic in the paper bin. Idea: a camera above the bins looks at each item and lights up the right bin. It learns from photos of rubbish that the club labels “plastic” or “paper”. Risk: crushed or dirty items look different, and the camera must never film faces. Who checks: the club looks in the bins every Friday."
+          },
+          {
+            "name": "Plan 2: the bus helper",
+            "body": "Problem: the bus is often late, and people wait in the rain. Idea: a tool says when the bus will probably come, from notes of when it came over two months. Risk: new roadworks can change the times. Who checks: the club compares its answers with the real times each week."
+          },
+          {
+            "name": "Plan 3: the friend chooser",
+            "body": "Problem: new learners can feel alone. Idea: a tool that chooses who should be friends. The club decided this is not a job for AI, because people should choose their own friends. Instead, they planned a buddy group run by people."
+          }
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "type": "design-plan",
+    "stage": "write",
+    "placement": "before-prompt",
+    "title": "Plan your AI helper",
+    "instructions": "Plan a helper in five steps. Pick a problem from the lesson, or a problem that many people share in a community you know. Don't write anyone's real name or private information. You can go back and change any step.",
+    "problems": [
+      {
+        "id": "bins",
+        "text": "Plastic often goes in the wrong bin at the centre."
+      },
+      {
+        "id": "bus",
+        "text": "The bus is often late, and people wait in the rain."
+      },
+      {
+        "id": "tap",
+        "text": "The garden tap at the centre is often left running."
+      },
+      {
+        "id": "own",
+        "text": "A problem many people share in a community I know",
+        "own": true
+      }
+    ],
+    "steps": [
+      {
+        "id": "problem",
+        "title": "1. The problem",
+        "kind": "text",
+        "prompt": "What is the problem, and who does it affect?",
+        "starter": "The problem is ... It affects ..."
+      },
+      {
+        "id": "should-ai",
+        "title": "2. Should AI be used?",
+        "kind": "choice",
+        "prompt": "Think about three questions. Does the helper need to guess from many examples? Could a simple rule or a person do it better? Could it hurt someone if it is wrong? Then decide.",
+        "options": [
+          {
+            "text": "Yes, AI could help",
+            "feedback": "Go on to step 3. Keep the risks in mind."
+          },
+          {
+            "text": "No, another way is better",
+            "feedback": "That is a good design choice too. Write the other way in your plan, like the club's buddy group."
+          },
+          {
+            "text": "Not sure yet",
+            "feedback": "That is fine. Go on, and decide again after step 4."
+          }
+        ]
+      },
+      {
+        "id": "learns",
+        "title": "3. What it learns from",
+        "kind": "text",
+        "prompt": "What examples would it learn from? Who would label them? Whose examples might be missing?",
+        "starter": "It would learn from ... Examples of ___ might be missing."
+      },
+      {
+        "id": "risks",
+        "title": "4. Risks and checks",
+        "kind": "text",
+        "prompt": "What could go wrong? Who would check it, and how?",
+        "starter": "One risk is ... ___ would check it by ..."
+      },
+      {
+        "id": "feedback",
+        "title": "5. Feedback and version 2",
+        "kind": "text",
+        "prompt": "Read your plan to a partner, or read it again yourself. Answer one of these questions. Then change one thing.",
+        "questions": [
+          "Who might this helper leave out?",
+          "What happens if it makes a mistake?",
+          "Is there a simpler way without AI?"
+        ],
+        "starter": "After feedback, I changed ... because ..."
+      }
+    ],
+    "saves": "The learner's choices and short answers, with the lesson's other writing, on this device only. While “just looking around”, nothing is saved.",
+    "offline": "Everything is in the lesson file. Nothing is built, run or sent anywhere."
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Start with the problem, not the tool",
+        "text": "In this project, you will plan an AI helper for a problem that many people share in a community. Good designers don't start with the tool. They start with the problem and the people it affects. Then they ask a difficult question: should AI be used here at all? AI is useful when a helper must guess from many examples, like telling plastic from paper. But sometimes a simple rule or a person does the job better. The Maple Street design club wanted a tool to choose who should be friends. They decided this is not a job for AI, because people should choose their own friends.",
+        "simpler": "In this project, you plan an AI helper. It is for a problem many people share. Good designers start with the problem. They think about the people it affects. Then they ask: should AI be used here? AI is good when a helper must guess from many examples. It can tell plastic from paper. But sometimes a simple rule is better. The club did not want AI to choose friends. People should choose their own friends."
+      },
+      {
+        "heading": "Plan what it learns and what could go wrong",
+        "text": "Next, a designer plans what the helper will learn from. The club's bin helper would learn from photos of rubbish that club members label “plastic” or “paper”. This is its training data. As you learned in Lesson 3, a tool can fail for anything missing from its examples, so the club adds photos of crushed and dirty items too. Then the designer lists the risks. A camera near the bins must never film people's faces, because that would break their privacy. Finally, the designer decides who checks the helper. The club will look inside the bins every Friday to see if the helper is working.",
+        "simpler": "Next, plan what the helper learns from. The bin helper learns from photos of rubbish. Club members label each photo. This is its training data. A tool can fail when examples are missing. So the club adds photos of crushed rubbish too. Then list the risks. The camera must never film faces. That would break people's privacy. Last, decide who checks it. The club looks in the bins every Friday."
+      },
+      {
+        "heading": "Test, listen and improve",
+        "text": "No design is perfect the first time. Designers test their plan with the people who will use it, listen to feedback, change the plan and test it again. This is called iteration, and it never really stops, because the world keeps changing. The club's bus helper learned from two months of notes about when the bus came. Then new roadworks started, and its answers were often wrong. So the club added new examples and compared its answers with the real times each week. When you share your plan, ask a partner for feedback, and change at least one thing. Your new plan is called version 2.",
+        "simpler": "No plan is perfect the first time. Designers test it with users. They listen to feedback. They change the plan. Then they test again. This is called iteration. The bus helper learned from notes about the bus. Then workers started fixing the road. Its answers were often wrong. So the club added new examples. Share your plan with a partner. Ask for feedback. Change one thing. Now you have version 2."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "designer",
+        "forms": [
+          "designers"
+        ],
+        "definition": "A person who plans how something will look and work.",
+        "example": "The Maple Street club are designers. They plan helpers."
+      },
+      {
+        "word": "training data",
+        "definition": "The examples a computer learns from, each with the right answer.",
+        "example": "The bin helper's training data is labelled photos of rubbish."
+      },
+      {
+        "word": "risk",
+        "forms": [
+          "risks"
+        ],
+        "definition": "The chance that something bad could happen.",
+        "example": "One risk is that the camera films people's faces."
+      },
+      {
+        "word": "feedback",
+        "definition": "What other people tell you about your work, to help you improve it.",
+        "example": "A partner's feedback helped the club change its plan."
+      },
+      {
+        "word": "iteration",
+        "definition": "Testing a plan, changing it, and testing it again, many times.",
+        "example": "After the roadworks, iteration made the bus helper better."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "question": "Why did the club drop the friend chooser?",
+        "options": [
+          {
+            "text": "The camera at the centre was broken that day",
+            "correct": false,
+            "feedback": "Not quite. The friend chooser had no camera. Read the first section."
+          },
+          {
+            "text": "People should choose their own friends",
+            "correct": true,
+            "feedback": "Yes. Some choices belong to people. The club planned a buddy group run by people instead."
+          },
+          {
+            "text": "Computers are too slow to choose friends",
+            "correct": false,
+            "feedback": "Not quite. Speed was not the reason. Read the first section about when AI should not be used."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "question": "The bus helper is often wrong after new roadworks. What should the club do?",
+        "options": [
+          {
+            "text": "Stop asking people what they think",
+            "correct": false,
+            "feedback": "Not quite. Feedback helps a plan improve. Read the third section."
+          },
+          {
+            "text": "Keep the plan exactly as it is",
+            "correct": false,
+            "feedback": "Not quite. The world changed, so the plan must change too. Read the third section."
+          },
+          {
+            "text": "Add new examples and test again",
+            "correct": true,
+            "feedback": "Yes. This is iteration: change the plan, then test it again."
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "What problem that many people share could an AI helper help with? You can pick one from the lesson.",
+        "placeholder": "A problem many people share is ... An AI helper could ...",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Write your plan for an AI helper. Say the problem, whether AI should be used, what it learns from, one risk, and one change you made after feedback.",
+    "sentenceStarters": [
+      "The problem is ... It affects ...",
+      "I think AI should / should not be used because ...",
+      "It would learn from ...",
+      "One risk is ..., so ___ would check it.",
+      "After feedback, I changed ..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I said the problem and whether AI should be used.",
+      "I said what it learns from and one risk.",
+      "I said one change I made after feedback."
+    ],
+    "example": "The problem is that plastic often goes in the paper bin at the centre. It affects everyone, because the bins get mixed up. I think AI could help, because it must guess from lots of examples. It would learn from photos of rubbish that we label “plastic” or “paper”. One risk is that the camera films people, so it must point only at the bins. After feedback, I changed my plan to add photos of crushed bottles, because they were missing."
+  },
+  "speak": {
+    "partnerTask": "Explain your plan to a partner in one minute. Your partner asks one question from step 5. Change one thing, and say your version 2.",
+    "independentTask": "Say your plan out loud. Then ask yourself who it might leave out, and answer."
+  },
+  "watch": {
+    "youtubeId": "b0KaGBOU4Ys",
+    "title": "What is AI?",
+    "channel": "Common Sense Education",
+    "durationSeconds": 157,
+    "why": "This short cartoon goes over training data, and why people must use AI with care.",
+    "beforeQuestion": "What do you remember about how AI learns?",
+    "afterQuestion": "Why do people need to be careful when they make or use AI?",
+    "summary": "This short cartoon goes over the basics of AI. AI tools learn from training data. This is a large set of examples that helps them find patterns and make guesses. Some AI tools sort things or make guesses about them. Other tools, called generative AI, make new things, like writing or pictures. The video explains that AI can be very useful, but it is not perfect. It learns from what people give it, so it can repeat their mistakes. That is why the people who make and use AI need to be responsible. They need to check its answers and think about who it might affect. This is a good review before you design your own AI helper.",
+    "keyPoints": [
+      "AI learns patterns from training data.",
+      "Generative AI makes new things, like writing or pictures.",
+      "People who make and use AI must be responsible and check it."
+    ],
+    "contentNote": "An American cartoon for middle school, 2 minutes 37 seconds. It goes over ideas from Lessons 1 to 3 and mentions generative AI. The summary was written from Common Sense Education's description, not from watching it. Preview it first; learners can read the written summary instead.",
+    "replacementSuggestion": null
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "If I could build one AI helper for a community, it would ... because ...",
+        "required": true
+      },
+      {
+        "text": "The most important thing I learned in Digital World is ...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 11. You planned an AI helper, decided if AI should be used, and improved your plan after feedback."
+  },
+  "visual": {
+    "type": "diagram",
+    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW11.svg is only a planned path. A loop of five numbered boxes joined by arrows: “1. The problem”, “2. Should AI be used?”, “3. What it learns from”, “4. Risks and checks”, “5. Feedback”. From box 2, a side arrow leads to a small box “No: find another way”. From box 5, a curved arrow goes back to box 1 with the words “Version 2”. Words carry every meaning, so colour is never the only clue.",
+    "alt": "A five-step design loop: the problem, should AI be used, what it learns from, risks and checks, and feedback, then back to the start for version 2.",
+    "src": "visuals/DW11.svg"
+  },
+  "sources": [
+    {
+      "label": "UNESCO: AI competency framework for students (2024)",
+      "url": "https://www.unesco.org/en/articles/ai-competency-framework-students"
+    },
+    {
+      "label": "Human-Centred AI lab, Igor Sikorsky Kyiv Polytechnic Institute: Reflections on UNESCO's AI competency framework for students (AI system design)",
+      "url": "https://hcai.kpi.ua/?p=82"
+    },
+    {
+      "label": "UNICEF Innocenti (2025): Guidance on AI and children, version 3.0",
+      "url": "https://www.unicef.org/innocenti/reports/policy-guidance-ai-children"
+    },
+    {
+      "label": "Common Sense Education: What is AI? (video page)",
+      "url": "https://www.commonsense.org/education/videos/what-is-ai"
+    }
+  ],
+  "sensitiveNotes": [
+    "Problems must be ones that many people share in a community, not personal ones. Don't ask learners about problems in their own life, home or family. If a learner picks a problem about health, safety, legal matters or a particular person, gently steer them to one of the lesson's problems.",
+    "Plans are saved with the learner's work on this device. Learners must not write real people's names or private information in them."
+  ],
+  "educatorNotes": [
+    "This is a design on paper: nothing is built. It covers UNESCO's AI system design aspect at the Understand level (problem scoping, including when AI should not be used, and a simple plan) and touches Create through one round of feedback. Accept “No, another way is better” as a strong design decision. Paper version: the five steps as a worksheet.",
+    "For older learners (spec section 8, item 8), a later version could add a test plan: which examples to test with, and how to tell if the helper works."
+  ],
+  "changes": [
+    "New lesson (Digital World draft). There is no Base44 original, so oldId is null.",
+    "section is a proposed Digital World section id (ai-where-you-live), which the Our World checker and schema don't accept yet.",
+    "A project lesson with the same shape as the others. Adds a new activity type, design-plan (five planning steps, placed in the Write stage), documented in docs/content/DIGITAL_WORLD_SPEC.md.",
+    "estimatedMinutes is 40–60, longer than other lessons, because it is a project.",
+    "visual.src points to a picture that doesn't exist yet.",
+    "Needs review by Justin for level and tone, and by an AI researcher for the design steps."
+  ]
+}
