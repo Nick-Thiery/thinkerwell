@@ -1,0 +1,366 @@
+/* Dev-only prototype (/dev/tiny-model). Never shipped: see src/app/routes.tsx. */
+
+.tw-tm {
+  display: grid;
+  gap: var(--space-6);
+  max-inline-size: var(--page-max);
+  margin-inline: auto;
+  padding: var(--space-4);
+  box-sizing: border-box;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 700px) {
+  .tw-tm {
+    padding: var(--space-8);
+  }
+}
+
+@media (min-width: 1100px) {
+  .tw-tm {
+    padding: var(--space-10);
+    grid-template-columns: minmax(0, 1fr) 340px;
+    align-items: start;
+  }
+
+  .tw-tm-intro,
+  .tw-tm > nav {
+    grid-column: 1 / -1;
+  }
+
+  /* Results so far stay in view while the cards scroll. */
+  .tw-tm-side {
+    position: sticky;
+    inset-block-start: var(--space-6);
+  }
+}
+
+.tw-tm p,
+.tw-tm h1,
+.tw-tm h2,
+.tw-tm h3 {
+  margin: 0;
+}
+
+.tw-tm-intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tw-tm-measure {
+  max-inline-size: var(--reading-measure);
+}
+
+.tw-tm-muted {
+  color: var(--ink-muted);
+}
+
+.tw-tm-devnote {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  max-inline-size: var(--reading-measure);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--lavender-wash);
+  border: 1px solid var(--line);
+  color: var(--ink-muted);
+}
+
+.tw-tm-devnote .tw-icon {
+  flex: none;
+  margin-block-start: 1px;
+}
+
+/* The rounds, in order. The current one is the screen's one lemon highlight. */
+.tw-tm-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tw-tm-step {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: var(--target-min);
+  padding-inline: var(--space-3) var(--space-4);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+  color: var(--ink-muted);
+}
+
+.tw-tm-step[aria-current='step'] {
+  background: var(--lemon);
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.tw-tm-step[data-done] {
+  color: var(--ink);
+}
+
+.tw-tm-step-num {
+  display: inline-grid;
+  place-items: center;
+  inline-size: 24px;
+  block-size: 24px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid currentColor;
+}
+
+.tw-tm-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-inline-size: 0;
+  padding: var(--space-4);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+@media (min-width: 700px) {
+  .tw-tm-panel {
+    padding: var(--space-6);
+  }
+}
+
+.tw-tm-side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-inline-size: 0;
+}
+
+.tw-tm-side .tw-btn {
+  align-self: flex-start;
+}
+
+/* Groups of example cards. Neutral colours: a label is never right or wrong. */
+.tw-tm-groups {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 760px) {
+  .tw-tm-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.tw-tm-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-inline-size: 0;
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+  border: 2px dashed var(--line-strong);
+  background: var(--canvas);
+}
+
+@media (min-width: 700px) {
+  .tw-tm-group {
+    padding: var(--space-4);
+  }
+}
+
+.tw-tm-group[data-group='unsorted'] {
+  background: var(--lemon-soft);
+  border-style: solid;
+  border-color: var(--line);
+}
+
+.tw-tm-group-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.tw-tm-cards,
+.tw-tm-guesses {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tw-tm-guesses {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+}
+
+.tw-tm-card,
+.tw-tm-guess {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  block-size: 100%;
+  box-sizing: border-box;
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.tw-tm-card-top {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-inline-size: 0;
+}
+
+.tw-tm-leaf {
+  flex: none;
+  border-radius: var(--radius-md);
+  background: var(--lavender-wash);
+}
+
+.tw-tm-card .tw-seg {
+  align-self: stretch;
+}
+
+.tw-tm-card .tw-seg button {
+  flex: 1 1 0;
+  justify-content: center;
+}
+
+.tw-tm-numbers {
+  align-self: stretch;
+}
+
+.tw-tm-numbers summary {
+  display: flex;
+  align-items: center;
+  min-block-size: var(--target-min);
+  color: var(--violet);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tw-tm-numbers dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-1) var(--space-3);
+  margin-block: var(--space-2) 0;
+}
+
+.tw-tm-numbers dl > div,
+.tw-tm-says > div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.tw-tm-numbers dd,
+.tw-tm-says dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.tw-tm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.tw-tm-actions:empty {
+  display: none;
+}
+
+.tw-tm-results {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding-block-start: var(--space-5);
+  border-block-start: 1px solid var(--line);
+}
+
+.tw-tm-guess-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.tw-tm-guess[data-right='true'] {
+  border-color: var(--correct);
+}
+
+.tw-tm-guess[data-right='false'] {
+  border-color: var(--retry);
+}
+
+.tw-tm-says {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  align-self: stretch;
+  margin: 0;
+}
+
+.tw-tm-nearest {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  align-self: stretch;
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  background: var(--lavender-wash);
+}
+
+.tw-tm-history,
+.tw-tm-how {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.tw-tm-history {
+  padding: 0;
+  list-style: none;
+}
+
+.tw-tm-history li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-block: var(--space-2);
+  border-block-end: 1px solid var(--line);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.tw-tm-history b {
+  white-space: nowrap;
+}
+
+.tw-tm-how {
+  padding-inline-start: var(--space-5);
+}
+
+.tw-tm-steps .tw-icon {
+  color: var(--correct);
+}
+
+.tw-tm-step[aria-current='step'] .tw-icon {
+  color: var(--ink);
+}
