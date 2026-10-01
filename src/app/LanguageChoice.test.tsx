@@ -71,7 +71,11 @@ describe('LanguageChoice', () => {
 
 function Current() {
   const { currentLearner, deviceLanguage, language } = useLearnerSession();
-  return <p data-testid="state">{`${language} ${currentLearner?.language ?? 'none'} ${deviceLanguage ?? 'none'}`}</p>;
+  return (
+    <p data-testid="state" data-learner={currentLearner?.id ?? ''}>
+      {`${language} ${currentLearner?.language ?? 'none'} ${deviceLanguage ?? 'none'}`}
+    </p>
+  );
 }
 
 /** "<language on screen> <learner's saved language> <device's saved language>", once storage has answered. */
@@ -195,7 +199,11 @@ describe("a learner's home", () => {
       </I18nProvider>,
     );
     const group = screen.getByRole('radiogroup', { name: 'Your language' });
-    await waitFor(() => expect(state()).toHaveTextContent('en none none'));
+    // Wait until the session has read Amina as the current learner. "en none none" alone
+    // also matches before that, and a tap then changed the device's language instead,
+    // which made this test fail now and then in CI ("id none id").
+    await waitFor(() => expect(state()).toHaveAttribute('data-learner', amina.id));
+    expect(state()).toHaveTextContent('en none none');
     await userEvent.click(within(group).getByRole('radio', { name: 'Bahasa Indonesia' }));
     await waitFor(() => expect(state()).toHaveTextContent('id id none'));
     expect((await store.getLearner(amina.id))?.language).toBe('id');
