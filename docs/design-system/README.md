@@ -40,7 +40,7 @@ Thinkerwell is a free social-studies course for young people aged about 10–15,
 - Corners: buttons, fields and options `radius-md`; cards and questions `radius-lg`; page panels `radius-xl`; the home panels and the lesson-complete card `radius-2xl`; chips and steps `radius-pill`.
 - Structure comes from borders and fills, not shadows. `shadow-pop` is only for things floating above the page (definition popovers, the learner switcher, menus).
 - Every tap target is at least `target-min` (44px). The main lesson action is `control-lg` (56px) and sits in the `ActionBar` at the bottom of each stage.
-- Layouts: the home page keeps the ink frame with a large white hero and a lavender panel. The dashboard and course pages use a `page-max` container. A lesson on laptop has the vertical `StagePath` on the left and one reading column on the right; on tablet and phone the `StagePath` turns horizontal and compact above the content.
+- Layouts: the home page keeps the ink frame with a large white hero and a lavender panel. Every page sits in a `page-max` container (1440px since October 2026, up from 1120px, so a laptop's screen is used). On a laptop (1100px and wider), pages made of cards (About, Credits, For organisations, the journal, Settings) put them in two columns; reading text still stops at `reading-measure`. A lesson on laptop has the vertical `StagePath` on the left and one reading column on the right; on tablet and phone the `StagePath` turns horizontal and compact above the content.
 - Show one idea at a time. Split long readings into parts ("Part 1 of 3") with a Next button, rather than one long scroll.
 
 ## Mascot

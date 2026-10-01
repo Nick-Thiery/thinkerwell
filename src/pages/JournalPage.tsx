@@ -110,32 +110,34 @@ export function JournalPage() {
           ) : filtered.length === 0 ? (
             <p className="body-lg">{t('pages.journal.emptyFiltered')}</p>
           ) : (
-            filtered.map(({ lesson, updatedAt, pieces }) => {
-              const when = describeJournalDate(updatedAt);
-              const savedLabel =
-                when.kind === 'today'
-                  ? t('pages.journal.savedToday')
-                  : when.kind === 'yesterday'
-                    ? t('pages.journal.savedYesterday')
-                    : t('ds.course.journalEntry.saved', { date: formatDate(when.date, JOURNAL_DATE_FORMAT) });
-              return (
-                <section key={lesson.id} className="tw-journal-group">
-                  <div className="tw-journal-group-label">
-                    <SectionBadge section={content.getLessonSection(lesson).id} showName={false} size={36} />
-                    {tx('pages.journal.groupLabel', { number: lesson.number, title: <En>{lesson.title}</En> })}
-                  </div>
-                  {pieces.map((piece) => (
-                    <EditableJournalEntry
-                      key={piece.kind === 'reflection' ? `reflection-${piece.reflectionIndex}` : 'writing'}
-                      lesson={lesson}
-                      piece={piece}
-                      savedLabel={savedLabel}
-                      onSaved={(lessonId, record) => setOverrides((prev) => ({ ...prev, [lessonId]: record }))}
-                    />
-                  ))}
-                </section>
-              );
-            })
+            <div className="tw-journal-groups">
+              {filtered.map(({ lesson, updatedAt, pieces }) => {
+                const when = describeJournalDate(updatedAt);
+                const savedLabel =
+                  when.kind === 'today'
+                    ? t('pages.journal.savedToday')
+                    : when.kind === 'yesterday'
+                      ? t('pages.journal.savedYesterday')
+                      : t('ds.course.journalEntry.saved', { date: formatDate(when.date, JOURNAL_DATE_FORMAT) });
+                return (
+                  <section key={lesson.id} className="tw-journal-group">
+                    <div className="tw-journal-group-label">
+                      <SectionBadge section={content.getLessonSection(lesson).id} showName={false} size={36} />
+                      {tx('pages.journal.groupLabel', { number: lesson.number, title: <En>{lesson.title}</En> })}
+                    </div>
+                    {pieces.map((piece) => (
+                      <EditableJournalEntry
+                        key={piece.kind === 'reflection' ? `reflection-${piece.reflectionIndex}` : 'writing'}
+                        lesson={lesson}
+                        piece={piece}
+                        savedLabel={savedLabel}
+                        onSaved={(lessonId, record) => setOverrides((prev) => ({ ...prev, [lessonId]: record }))}
+                      />
+                    ))}
+                  </section>
+                );
+              })}
+            </div>
           )}
 
           <div className="tw-journal-privacy">

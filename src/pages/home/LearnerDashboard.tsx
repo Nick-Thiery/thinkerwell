@@ -128,8 +128,8 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
             const isHere = section.id === currentSectionId && completed < total;
             // Not <Button>: it wraps every child in one inner <span> (fine for
             // an icon plus a text label, its usual case), which would collapse
-            // this row's three independent parts — the badge, the status text
-            // and the ring — into plain inline flow instead of the flex row
+            // this row's independent parts — the badge, "You are here" on the
+            // current section, and the ring — into plain inline flow instead of the flex row
             // ".tw-section-row" below expects. Rendered directly with the
             // "tw-btn" class for the same sizing, plus its own border colour
             // (an ink border only for "You are here" — CLAUDE.md's lemon/ink
@@ -142,9 +142,13 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
                 className: `tw-btn tw-section-row${isHere ? ' tw-section-row-current' : ''}`,
               },
               <SectionBadge key="badge" section={section.id} number={section.number} name={<En>{section.title}</En>} className="tw-section-row-badge" />,
-              <span key="status" className="body tw-section-row-status">
-                {isHere ? t('pages.home.dashboard.youAreHere') : t('pages.home.dashboard.lessonsOf', { completed, total })}
-              </span>,
+              // The ring already says "0/5" (and reads "0 of 5" aloud), so only
+              // the current section gets words beside it.
+              isHere ? (
+                <span key="status" className="body tw-section-row-status">
+                  {t('pages.home.dashboard.youAreHere')}
+                </span>
+              ) : null,
               <ProgressRing key="ring" value={completed} max={total} />,
             );
           })}
