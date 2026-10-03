@@ -3756,10 +3756,10 @@
     "source": "Consent form"
   },
   "pages.educators.pilotConsentBody": {
-    "back": "A form for each learner's parent or guardian to sign, with your organisation's name in it.",
-    "source": "A form for each learner's parent or guardian to sign, with your organisation's name on it.",
+    "back": "Form to be signed by the parent or guardian of each learner, with one page for the learner's own answer, and your organization's name in it.",
+    "source": "A form for each learner's parent or guardian to sign, and a page for the learner's own answer, with your organisation's name on it.",
     "flag": true,
-    "note": "Changed from \"kamu\" to \"Anda\" (September 2026): pages for adults (educators, partners, parents) use \"Anda\"; pages for learners keep \"kamu\". Drafted by AI, not yet reviewed."
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
   },
   "pages.educators.pilotConsentCta": {
     "back": "Print the consent form",
@@ -3870,10 +3870,10 @@
     "source": "No accounts, no email addresses and no ads. Learners' work stays on the device they use, and voice recordings never leave it."
   },
   "pages.organisations.privacy3": {
+    "back": "Parental consent. Before any learning data is shared with Thinkerwell, the parent or guardian signs a consent form, and the learner also agrees. This research will only use data that is connected with a code, never with a name: short questions and several sentences in the first and last sessions, as well as length of study time, completed lessons, and quiz scores.",
+    "source": "Parental consent. Before any learning data is shared with Thinkerwell, a parent or guardian signs a consent form, and the learner says yes too. The study would only use data linked to a code, never a name: short questions and a few sentences in the first and last sessions, and time spent, lessons finished and quiz scores.",
     "flag": true,
-    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed.",
-    "back": "Parental consent. Before any learning data is shared with Thinkerwell, a parent or guardian signs a consent form. The data is only anonymous data: time spent learning, lessons finished and quiz scores.",
-    "source": "Parental consent. Before any learning data is shared with Thinkerwell, a parent or guardian signs a consent form. It would only be anonymous data: time spent, lessons finished and quiz scores."
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
   },
   "pages.organisations.privacyNow": {
     "back": "Right now, learners' work and progress are not sent to Thinkerwell. The online speech-to-text feature is off unless your staff turn it on; if it is on, learners' speech is sent to the browser maker's service. We will tell you before anything else changes.",
@@ -3906,10 +3906,10 @@
     "source": "Consent form"
   },
   "pages.consentForm.intro": {
-    "back": "Print one form for each learner's family before the pilot starts. Type your organisation's name so it prints on the form, or leave it empty to write by hand.",
-    "source": "Print one form for each learner's family before the pilot starts. Type your organisation's name to put it on the form, or leave it empty to write it by hand.",
+    "back": "Print one form for each learner before the trial begins: one page for the parent or guardian, and one page for the learner. Type your organization's name so it prints on the form, or leave blank to be handwritten.",
+    "source": "Print one form for each learner before the pilot starts: a page for the parent or guardian, and a page for the learner. Type your organisation's name to put it on the form, or leave it empty to write it by hand.",
     "flag": true,
-    "note": "Changed from \"kamu\" to \"Anda\" (September 2026): pages for adults (educators, partners, parents) use \"Anda\"; pages for learners keep \"kamu\". Drafted by AI, not yet reviewed."
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
   },
   "pages.consentForm.orgLabel": {
     "back": "Your organisation's name",
@@ -3931,9 +3931,21 @@
     "back": "This is not legal advice. Before using it, check this form against your organisation's own rules and the data protection law where you work, then change anything that doesn't fit. Signed forms contain names: keep them safe. Thinkerwell never sees them.",
     "source": "It is not legal advice. Before you use it, check it against your organisation's own rules and the data protection law where you work, and change anything that doesn't fit. Signed forms have names on them: keep them safe. Thinkerwell never sees them."
   },
+  "pages.consentForm.staffUse": {
+    "back": "Give the information sheet to each family together with this form. If the parent or guardian cannot read, read both in their language, then sign the witness section on page 2. Students aged 18 years and above sign themselves. This form does not cover online voice to text, so make sure that option stays off in Settings.",
+    "source": "Give each family the information sheet with the form. If a parent or guardian can't read, read both aloud in their language, and sign as a witness on page 2. Learners aged 18 or older sign for themselves. The form doesn't cover online speech-to-text, so keep it off in Settings.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. Changed after the first back-translation: \"biarkan pilihan itu mati\" read as informal, so \"pastikan pilihan itu tetap mati\". The second back-translation still found \"mati\" (off) informal; it is the word Settings uses (\"Mati kecuali Anda menyalakannya\"), so it was kept."
+  },
   "pages.consentForm.orgBlank": {
     "back": "organisation name",
     "source": "organisation's name"
+  },
+  "pages.consentForm.pageOf": {
+    "back": "Page {page} of {count}",
+    "source": "Page {page} of {count}",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
   },
   "pages.consentForm.formTitle": {
     "flag": true,
@@ -3946,70 +3958,26 @@
     "source": "For a parent or guardian"
   },
   "pages.consentForm.formIntro": {
+    "back": "{organisation} is trying Thinkerwell, a free online course about history, geography, culture, and community life for teenagers aged around 10 to 17 years. Your child's class will use it several sessions every week for 4 to 6 weeks. There is also a small study to see how useful Thinkerwell is.",
+    "source": "{organisation} is trying Thinkerwell, a free online course about history, geography, culture and civic life for youth aged about 10 to 17. Your child's class will use it a few sessions a week for 4 to 6 weeks. There is also a small study of how well it works.",
     "flag": true,
-    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed.",
-    "back": "{organisation} is trying Thinkerwell, a free online course about history, geography, culture and community life for teenagers aged about 10 to 17. Your child is invited to take part in a few sessions every week for 4 to 6 weeks.",
-    "source": "{organisation} is trying Thinkerwell, a free online course about history, geography, culture and civic life for youth aged about 10 to 17. Your child is invited to take part in a few sessions a week for 4 to 6 weeks."
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. \"seberapa bermanfaat Thinkerwell\" (how useful Thinkerwell is) stands for \"how well it works\": check."
   },
-  "pages.consentForm.collectTitle": {
-    "back": "What is collected",
-    "source": "What is collected"
-  },
-  "pages.consentForm.collectBody": {
+  "pages.consentForm.studyTitle": {
+    "back": "Pilot study",
+    "source": "The pilot study",
     "flag": true,
-    "note": "New in the partner kit (September 2026). Consent wording: check 'anonim', 'kuis' and that the code-versus-name explanation is clear to parents.",
-    "back": "Only anonymous data: how long your child learns in this course, which lessons they finish, and their quiz scores. This data is linked to a code, such as HLP-01, not to your child's name.",
-    "source": "Only anonymous data: how long your child spends on the course, which lessons they finish, and their quiz scores. It is linked to a code, like HLP-01, not to your child's name."
-  },
-  "pages.consentForm.notTitle": {
-    "back": "What is not collected",
-    "source": "What is not collected"
-  },
-  "pages.consentForm.notBody": {
-    "flag": true,
-    "note": "New in the partner kit (September 2026). Consent wording is a list fragment; check it reads clearly and completely to parents.",
-    "back": "Your child's name, your child's photo, your child's location, or anything they write in their answers. Their writing and voice recordings stay on the device they use.",
-    "source": "Your child's name, photos of your child, where your child is, or anything your child writes in their answers. Their writing and any voice recordings stay on the device they use."
-  },
-  "pages.consentForm.whoTitle": {
-    "back": "Who can see it",
-    "source": "Who can see it"
-  },
-  "pages.consentForm.whoBody": {
-    "flag": true,
-    "note": "New in the partner kit (September 2026). Consent wording about who sees data needs careful native and legal review.",
-    "back": "Only the Thinkerwell team. {organisation} keeps the list matching codes to names, and Thinkerwell never sees it. {organisation} receives a short report about the whole group, not about one child.",
-    "source": "Only the Thinkerwell team. {organisation} keeps the list that matches codes to names, and Thinkerwell never sees it. {organisation} gets a short report about the whole group, not about one child."
-  },
-  "pages.consentForm.deleteTitle": {
-    "back": "When data is deleted",
-    "source": "When it is deleted"
-  },
-  "pages.consentForm.deleteBody": {
-    "flag": true,
-    "note": "New in the partner kit (September 2026). Legal commitment on retention; needs careful review.",
-    "back": "Data is deleted no later than 6 months after the pilot ends.",
-    "source": "The data is deleted within 6 months after the pilot ends."
-  },
-  "pages.consentForm.videoTitle": {
-    "back": "Videos",
-    "source": "Videos"
-  },
-  "pages.consentForm.videoBody": {
-    "flag": true,
-    "note": "New in the partner kit (September 2026). 'Alamat internet perangkat' (IP address) may confuse parents, and the data-sharing disclosure needs care. \"alamat IP\" added after the first back-translation, so parents recognise it.",
-    "back": "Some lessons have a video from YouTube that does not have to be watched. When a video is played, YouTube (owned by Google) receives some information, such as the device's internet address (IP address). Every video has a written version, so your child can just read it.",
-    "source": "Some lessons have an optional video from YouTube. When a video plays, YouTube (owned by Google) receives some information, such as the device's internet (IP) address. Every video has a written version, so your child can read instead."
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. \"penelitian uji coba\" for \"the pilot study\" (docs/translation/id/KEY_TERMS.md: \"uji coba\" is the pilot, \"penelitian\" the study)."
   },
   "pages.consentForm.choiceTitle": {
     "back": "This is your choice",
     "source": "It is your choice"
   },
   "pages.consentForm.choiceBody": {
+    "back": "Answering no to one of the questions below will not affect your child's other activities at {organisation}. If you answer no to the research, your child can still use Thinkerwell in class, only their answers won't be used. You can change your mind anytime, even after the trial finishes: inform {organisation}, and your child's answers will be deleted. Your child may also refuse, and their refusal remains valid.",
+    "source": "Saying no to either question below won't affect anything else your child does at {organisation}. If you say no to the study, your child can still use Thinkerwell in class; their answers just aren't used. You can change your mind at any time, even after the pilot: tell {organisation}, and your child's answers are deleted. Your child can say no too, and their no counts.",
     "flag": true,
-    "note": "New in the partner kit (September 2026). 'Tempat anak Anda di {organisation}' is ambiguous (place in the programme or the organisation?); consent wording needs care. Changed after the first back-translation: \"place at\" was ambiguous in English too. Consent wording: check it carefully.",
-    "back": "Taking part is voluntary. Refusing, or changing your mind later, is fine: it will not affect your child's other activities at {organisation}. Your child may also refuse. To stop, tell {organisation}.",
-    "source": "Taking part is voluntary. Saying no, or changing your mind later, is fine: it won't affect anything else your child does at {organisation}. Your child can say no too. To stop, tell {organisation}."
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. \"penolakannya tetap berlaku\" (their refusal still stands) for \"their no counts\": check it is clear and kind."
   },
   "pages.consentForm.questions": {
     "back": "Any questions? Ask {organisation}.",
@@ -4028,40 +3996,238 @@
     "source": "Thinkerwell is a student-led project, not a registered charity."
   },
   "pages.consentForm.answerTitle": {
-    "back": "Your answer",
-    "source": "Your answer"
+    "back": "Your answers",
+    "source": "Your answers",
+    "flag": true,
+    "note": "The English became plural (\"Your answers\": there are two questions now, October 2026); \"Jawaban Anda\" covers both. Drafted by AI, not yet reviewed."
+  },
+  "pages.consentForm.classQuestion": {
+    "back": "My child may use Thinkerwell in class at {organisation}.",
+    "source": "My child can use Thinkerwell in class at {organisation}.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
+  },
+  "pages.consentForm.studyQuestion": {
+    "back": "My child may participate in the pilot study. The answers are used with a code, never with their name.",
+    "source": "My child can take part in the pilot study. Their answers are used with a code, never their name.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. \"penelitian uji coba\" for \"the pilot study\"."
   },
   "pages.consentForm.yes": {
-    "back": "Yes, my child may take part.",
-    "source": "Yes, my child can take part."
+    "back": "Yes",
+    "source": "Yes",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
   },
   "pages.consentForm.no": {
-    "back": "No, my child will not take part.",
-    "source": "No, my child will not take part."
+    "back": "No",
+    "source": "No",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
   },
   "pages.consentForm.childName": {
     "back": "Child's name",
     "source": "Child's name"
   },
-  "pages.consentForm.childCode": {
-    "back": "Child's code",
-    "source": "Child's code"
+  "pages.consentForm.pilotCode": {
+    "back": "Trial code (filled in by organization): {code}",
+    "source": "Pilot code (the organisation fills this in): {code}",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. \"kode uji coba\" for \"pilot code\". {code} is a line to write the code on."
   },
   "pages.consentForm.parentName": {
     "back": "Name of parent or guardian",
     "source": "Parent or guardian's name"
   },
   "pages.consentForm.signature": {
-    "back": "Signature",
-    "source": "Signature"
+    "back": "Signature or thumbprint",
+    "source": "Signature or thumbprint",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. \"cap jempol\" (thumbprint): confirm it is the word families and staff use, or \"cap ibu jari\"."
   },
   "pages.consentForm.date": {
     "back": "Date",
     "source": "Date"
   },
   "pages.consentForm.keep": {
-    "back": "{organisation} keeps this form. It is not sent to Thinkerwell.",
-    "source": "{organisation} keeps this form. It is not sent to Thinkerwell."
+    "back": "{organisation} keeps this form in a locked place. Thinkerwell never sees it.",
+    "source": "{organisation} keeps this form somewhere locked. Thinkerwell never sees it.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
+  },
+  "pages.consentForm.learnerTitle": {
+    "back": "The learner's own answer",
+    "source": "The learner's own answer",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.consentForm.learnerFor": {
+    "back": "Filled in by staff",
+    "source": "For staff to fill in",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.consentForm.learnerIntro": {
+    "back": "Read this to the learner, in their language:",
+    "source": "Read this aloud to the learner, in their language:",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. \"Bacakan\" is \"read aloud to\"."
+  },
+  "pages.consentForm.learnerScript": {
+    "back": "We are trying a new learning site called Thinkerwell. In the first and last lessons, you will answer some questions and write some sentences. This is not an exam, and nothing is graded. We use a number, not your name. You may refuse, or stop anytime, and you can still use Thinkerwell and come to class. Do you want your answers to be part of this research?",
+    "source": "We're trying a new learning website called Thinkerwell. In the first and last lessons, you'll answer some questions and write a few sentences. It isn't a test, and nobody gets a mark. We use a number, not your name. You can say no, or stop at any time, and you can still use Thinkerwell and come to class. Do you want your answers to be part of the study?",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. Read aloud by staff to a child, so \"kamu\" and spoken words: \"Kamu boleh menolak\" for \"You can say no\", \"bukan ujian\" for \"isn't a test\", \"tidak ada yang diberi nilai\" for \"nobody gets a mark\". Check it sounds natural said aloud to a 10-year-old."
+  },
+  "pages.consentForm.learnerAnswer": {
+    "back": "Learner's answer",
+    "source": "The learner's answer",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.consentForm.staffInitials": {
+    "back": "Staff initials",
+    "source": "Staff initials",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. \"Paraf\" for initials."
+  },
+  "pages.consentForm.learnerWins": {
+    "back": "If the parent answers yes and the learner answers no, the learner's no answer is the one that applies.",
+    "source": "If the parent says yes and the learner says no, the learner's no wins.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. A rule for staff: keep it as firm as the English."
+  },
+  "pages.consentForm.witnessTitle": {
+    "back": "If the parent or guardian cannot read or write",
+    "source": "If the parent or guardian can't read or write",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.consentForm.witnessBody": {
+    "back": "I have read out the information sheet and this form in {language} language. The parent or guardian has understood and given answers on page 1.",
+    "source": "I read the information sheet and this form aloud in {language} (language). The parent or guardian understood and gave the answers on page 1.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. Changed after the first back-translation, which read it as present tense: \"telah\" makes it past. The line after \"dalam bahasa\" is left empty to write the language on. Second AI's doubt: \"dalam bahasa {language}\" includes the word \"bahasa\" (language) before the placeholder. If {language} is filled with just the language name (\"Indonesia\", \"Inggris\"), this is correct. If {language} already includes \"Bahasa\" (\"Bahasa Indonesia\"), it will read redundantly as \"in Bahasa Indonesian language\". Consider using just \"dalam {language}\" if the placeholder includes \"Bahasa\"."
+  },
+  "pages.consentForm.languageBlank": {
+    "back": "language",
+    "source": "language",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.consentForm.codeBlank": {
+    "back": "trial code",
+    "source": "pilot code",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. Read out by screen readers only, where the printed form has a line for the code."
+  },
+  "pages.consentForm.staffName": {
+    "back": "Staff name",
+    "source": "Staff member's name",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.consentForm.staffSignature": {
+    "back": "Staff signature",
+    "source": "Staff member's signature",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.pilotStudy.intro": {
+    "back": "If you answer yes to the research, then in the first and last sessions your child:",
+    "source": "If you say yes to the study, then in the first and last sessions your child:",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
+  },
+  "pages.pilotStudy.questions": {
+    "back": "answers 16 short questions (about 15 minutes each time)",
+    "source": "answers 16 short questions (about 15 minutes each time)",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
+  },
+  "pages.pilotStudy.writing": {
+    "back": "writes several sentences about a fictional city, on paper (about 8 minutes)",
+    "source": "writes a few sentences about a made-up town, on paper (about 8 minutes)",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
+  },
+  "pages.pilotStudy.faces": {
+    "back": "chooses a face picture for each of 5 sentences, such as \"I can use a map to find information\" (about 1 minute)",
+    "source": "chooses a face for each of 5 sentences, like “I can use a map to find information” (about 1 minute)",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. The sentence in quotation marks is one the learner reads, so \"Aku ...\"."
+  },
+  "pages.pilotStudy.site": {
+    "back": "In each session, Thinkerwell also records how long your child uses it, which lessons they open and complete, and their quiz scores.",
+    "source": "In every session, Thinkerwell also notes how long your child uses it, which lessons they open and finish, and their quiz scores.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
+  },
+  "pages.pilotStudy.notTest": {
+    "back": "All of this is not an exam. Nothing depends on the answers.",
+    "source": "None of this is a test. Nothing depends on the answers.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. \"Semua ini bukan ujian\" for \"None of this is a test\": the back-translation gave \"All of this is not an exam\"; check it reads as \"none of it\"."
+  },
+  "pages.pilotStudy.keepTitle": {
+    "back": "What we keep, and what we don't",
+    "source": "What we keep, and what we don't",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.pilotStudy.keepCode": {
+    "back": "Your child's answers are connected with a code, like {code}, never with their name.",
+    "source": "Your child's answers are linked to a code, like {code}, never to their name.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. {code} is the example code HLP-01."
+  },
+  "pages.pilotStudy.keepList": {
+    "back": "{organisation} keeps the list of names and codes on paper. Thinkerwell never sees it.",
+    "source": "{organisation} keeps the list of names and codes on paper. Thinkerwell never sees it.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
+  },
+  "pages.pilotStudy.keepNeverAsk": {
+    "back": "Thinkerwell never asks about family, journey, country of origin, religion, or ethnicity.",
+    "source": "Thinkerwell never asks about family, journey, home country, religion or ethnicity.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. \"perjalanan\" (journey) means how a family travelled here: check it reads that way, and gently. \"suku\" for ethnicity: confirm, or \"suku atau etnis\"."
+  },
+  "pages.pilotStudy.keepNoDocuments": {
+    "back": "Thinkerwell never asks for UNHCR number or any documents.",
+    "source": "Thinkerwell never asks for UNHCR numbers or any documents.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. Families may know the UNHCR card by another name (\"kartu UNHCR\"): check \"nomor UNHCR\" is clear."
+  },
+  "pages.pilotStudy.keepNoPhotos": {
+    "back": "Thinkerwell never collects your child's photos, or their location.",
+    "source": "Thinkerwell never collects photos of your child, or where they are.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
+  },
+  "pages.pilotStudy.keepDevice": {
+    "back": "What your child writes and records in the lessons stays on the device they use.",
+    "source": "What your child writes and records in the lessons stays on the device they use.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
+  },
+  "pages.pilotStudy.keepGroup": {
+    "back": "Only the Thinkerwell team sees the answers. {organisation} receives results for the whole group, never for one child.",
+    "source": "Only the Thinkerwell team sees the answers. {organisation} gets results for the whole group, never for one child.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
+  },
+  "pages.pilotStudy.keepDelete": {
+    "back": "Everything kept for the research is deleted at the latest 6 months after the trial finishes.",
+    "source": "Everything the study keeps is deleted within 6 months after the pilot ends.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
+  },
+  "pages.pilotStudy.keepVideo": {
+    "back": "Some lessons have YouTube videos that are not mandatory to watch. When a video is played, YouTube (owned by Google) receives some information, such as the internet address (IP address) of the device. Every video has a written version: choosing \"{readInstead}\" doesn't send anything to YouTube.",
+    "source": "Some lessons have an optional YouTube video. When one plays, YouTube (owned by Google) gets some information, such as the device's internet (IP) address. Every video has a written version: choosing “{readInstead}” sends nothing to YouTube.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
   },
   "pages.codeCards.title": {
     "back": "Code cards",

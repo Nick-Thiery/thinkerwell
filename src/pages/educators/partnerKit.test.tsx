@@ -42,51 +42,144 @@ describe('For organisations', () => {
     // No contact card, and no placeholder, until there is a real address (src/app/contact.ts).
     expect(screen.queryByRole('heading', { name: 'Contact us' })).not.toBeInTheDocument();
     expect(screen.queryByText(/\[CONTACT EMAIL\]/)).not.toBeInTheDocument();
+    expect(within(privacy).getByText(/a parent or guardian signs a consent form, and the learner says yes too/)).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Print consent forms' })).toHaveAttribute('href', '/educators/consent-form');
     expect(screen.getByRole('link', { name: 'Make code cards' })).toHaveAttribute('href', '/educators/code-cards');
     expect(screen.getByRole('link', { name: 'Open the checklist' })).toHaveAttribute('href', '/educators/setup');
   });
 });
 
+/** The study and what is kept (./pilotStudy.tsx). */
+const STUDY = [
+  /answers 16 short questions \(about 15 minutes each time\)/,
+  /writes a few sentences about a made-up town, on paper \(about 8 minutes\)/,
+  /chooses a face for each of 5 sentences/,
+  /notes how long your child uses it, which lessons they open and finish, and their quiz scores/,
+  /None of this is a test\. Nothing depends on the answers\./,
+];
+const KEPT = [
+  /linked to a code, like HLP-01, never to their name/,
+  /keeps the list of names and codes on paper\. Thinkerwell never sees it\./,
+  /never asks about family, journey, home country, religion or ethnicity/,
+  /never asks for UNHCR numbers or any documents/,
+  /never collects photos of your child, or where they are/,
+  /writes and records in the lessons stays on the device they use/,
+  /Only the Thinkerwell team sees the answers\. .* gets results for the whole group, never for one child\./,
+  /deleted within 6 months after the pilot ends/,
+  /When one plays, YouTube \(owned by Google\) gets some information.* choosing “Read instead” sends nothing to YouTube/,
+];
+
+/** A part of a printed page, by its heading. */
+function part(page: HTMLElement, name: string): HTMLElement {
+  return within(page).getByRole('heading', { level: 3, name }).parentElement!;
+}
+
 describe('the consent form', () => {
+  const pages = () => screen.getAllByRole('article');
+
+  it('is two pages, each headed with the form’s title, the page number and a line for the pilot code', () => {
+    renderAt('/educators/consent-form', <ConsentFormPage />);
+    const [parent, learner] = pages();
+    expect(pages()).toHaveLength(2);
+    expect(parent).toHaveAccessibleName('Taking part in the Thinkerwell pilot');
+    expect(learner).toHaveAccessibleName('Taking part in the Thinkerwell pilot For staff to fill in');
+    for (const [page, number] of [
+      [parent!, 1],
+      [learner!, 2],
+    ] as const) {
+      expect(within(page).getByRole('heading', { level: 2 })).toHaveTextContent('Taking part in the Thinkerwell pilot');
+      expect(within(page).getByText(`Page ${number} of 2`)).toBeInTheDocument();
+      expect(within(page).getByText(/^Pilot code \(the organisation fills this in\):/)).toBeInTheDocument();
+    }
+    expect(within(parent!).getByText('For a parent or guardian')).toBeInTheDocument();
+  });
+
   it('puts the organisation’s name into the form, or a line to write it on', async () => {
     const user = userEvent.setup();
     renderAt('/educators/consent-form', <ConsentFormPage />);
-    const form = screen.getByRole('article', { name: 'Taking part in the Thinkerwell pilot' });
-    expect(within(form).queryByText('HELP for Refugees')).toBeNull();
-    expect(within(form).getAllByText("organisation's name").length).toBeGreaterThan(0);
+    const [parent, learner] = pages();
+    expect(screen.queryByText('HELP for Refugees')).toBeNull();
+    expect(within(parent!).getAllByText("organisation's name").length).toBeGreaterThan(0);
     await user.type(screen.getByRole('textbox', { name: "Your organisation's name" }), 'HELP for Refugees');
-    // Every {organisation} in the form: the introduction, who sees the data (twice), the choice (twice), questions, and who keeps it.
-    expect(within(form).getAllByText('HELP for Refugees')).toHaveLength(7);
-    expect(form.textContent).not.toContain('{');
-    expect(within(form).queryByText("organisation's name")).toBeNull();
+    // Every {organisation} on the parent's page: the introduction, what is kept (twice), the choice
+    // (twice), questions, the first question and who keeps the form; and who keeps it, on the second.
+    expect(within(parent!).getAllByText('HELP for Refugees')).toHaveLength(8);
+    expect(within(learner!).getAllByText('HELP for Refugees')).toHaveLength(1);
+    for (const name of screen.getAllByText('HELP for Refugees')) expect(name).toHaveAttribute('translate', 'no');
+    expect(parent!.textContent + learner!.textContent).not.toContain('{');
+    expect(screen.queryByText("organisation's name")).toBeNull();
   });
 
-  it('says what is and isn’t collected, who sees it, when it is deleted, YouTube, and that it is voluntary', () => {
+  it('says what the study involves, what is kept and what isn’t, and that it is the family’s choice', () => {
     renderAt('/educators/consent-form', <ConsentFormPage />);
-    const form = screen.getByRole('article', { name: 'Taking part in the Thinkerwell pilot' });
-    const part = (name: string) => within(form).getByRole('heading', { level: 3, name }).parentElement!;
-    expect(part('What is collected')).toHaveTextContent(/Only anonymous data: how long .* which lessons they finish, and their quiz scores/);
-    expect(part('What is not collected')).toHaveTextContent(/name, photos .* where your child is, or anything your child writes/);
-    expect(part('Who can see it')).toHaveTextContent(/Only the Thinkerwell team/);
-    expect(part('When it is deleted')).toHaveTextContent(/deleted within 6 months/);
-    expect(part('Videos')).toHaveTextContent(/YouTube \(owned by Google\)/);
-    expect(part('It is your choice')).toHaveTextContent(/Taking part is voluntary/);
-    expect(within(form).getByText(/student-led project, not a registered charity/)).toBeInTheDocument();
+    const parentPage = pages()[0]!;
+    const parent = within(parentPage);
+    expect(parent.getByText(/is trying Thinkerwell, a free online course .* for youth aged about 10 to 17/)).toBeInTheDocument();
+    const study = part(parentPage, 'The pilot study');
+    expect(study).toHaveTextContent(/If you say yes to the study, then in the first and last sessions your child:/);
+    for (const line of STUDY) expect(study).toHaveTextContent(line);
+    const kept = part(parentPage, "What we keep, and what we don't");
+    for (const line of KEPT) expect(kept).toHaveTextContent(line);
+    expect(within(kept).getAllByRole('listitem')).toHaveLength(KEPT.length);
+    const choice = part(parentPage, 'It is your choice');
+    expect(choice).toHaveTextContent(/Saying no to either question below won't affect anything else your child does at/);
+    expect(choice).toHaveTextContent(/If you say no to the study, your child can still use Thinkerwell in class/);
+    expect(choice).toHaveTextContent(/change your mind at any time, even after the pilot: tell .*, and your child's answers are deleted/);
+    expect(choice).toHaveTextContent(/Your child can say no too, and their no counts\./);
+    expect(parent.getByText(/student-led project, not a registered charity/)).toBeInTheDocument();
     // No email address yet: "Questions?" sends parents to the organisation, with no placeholder.
-    expect(within(form).getByText(/^Questions\? Ask/)).toHaveTextContent(/^Questions\? Ask organisation's name\.$/);
-    expect(form.textContent).not.toContain('[CONTACT EMAIL]');
-    for (const label of ["Child's name", "Child's code", "Parent or guardian's name", 'Signature', 'Date']) {
-      expect(within(form).getByText(label, { selector: 'dt' })).toBeInTheDocument();
-    }
+    expect(parent.getByText(/^Questions\? Ask/)).toHaveTextContent(/^Questions\? Ask organisation's name\.$/);
+    expect(pages()[0]!.textContent).not.toContain('[CONTACT EMAIL]');
   });
 
-  it('shows staff that it is a template, on screen only', () => {
+  it('asks the two questions separately, each with a Yes and a No, then a signature or thumbprint', () => {
+    renderAt('/educators/consent-form', <ConsentFormPage />);
+    const answers = screen.getByRole('region', { name: 'Your answers' });
+    const questions = within(answers).getAllByRole('listitem').filter((item) => item.parentElement!.tagName === 'OL');
+    expect(questions.map((item) => item.querySelector('p')!.textContent)).toEqual([
+      "My child can use Thinkerwell in class at organisation's name.",
+      'My child can take part in the pilot study. Their answers are used with a code, never their name.',
+    ]);
+    for (const question of questions) {
+      expect(within(question).getAllByRole('listitem').map((choice) => choice.textContent)).toEqual(['Yes', 'No']);
+    }
+    for (const label of ["Child's name", "Parent or guardian's name", 'Date', 'Signature or thumbprint']) {
+      expect(within(answers).getByText(label, { selector: 'dt' })).toBeInTheDocument();
+    }
+    expect(answers).toHaveTextContent(/keeps this form somewhere locked\. Thinkerwell never sees it\./);
+  });
+
+  it('has the learner’s own answer and the witness line on the second page', () => {
+    renderAt('/educators/consent-form', <ConsentFormPage />);
+    const learnerPage = within(pages()[1]!);
+    expect(learnerPage.getByText("Child's name", { selector: 'dt' })).toBeInTheDocument();
+    const learner = learnerPage.getByRole('region', { name: "The learner's own answer" });
+    expect(learner).toHaveTextContent(/Read this aloud to the learner, in their language:/);
+    expect(within(learner).getByText(/^We're trying a new learning website called Thinkerwell\./)).toHaveTextContent(
+      /It isn't a test, and nobody gets a mark\. We use a number, not your name\. You can say no, or stop at any time, and you can still use Thinkerwell and come to class\. Do you want your answers to be part of the study\?$/,
+    );
+    expect(within(learner).getAllByRole('listitem').map((choice) => choice.textContent)).toEqual(['Yes', 'No']);
+    expect(within(learner).getByText('Staff initials', { selector: 'dt' })).toBeInTheDocument();
+    expect(within(learner).getByText("If the parent says yes and the learner says no, the learner's no wins.")).toBeInTheDocument();
+    const witness = learnerPage.getByRole('region', { name: "If the parent or guardian can't read or write" });
+    expect(witness).toHaveTextContent(
+      /^If the parent or guardian can't read or writeI read the information sheet and this form aloud in language \(language\)\. The parent or guardian understood and gave the answers on page 1\./,
+    );
+    for (const label of ["Staff member's name", "Staff member's signature", 'Date']) {
+      expect(within(witness).getByText(label, { selector: 'dt' })).toBeInTheDocument();
+    }
+    expect(learnerPage.getByText(/keeps this form somewhere locked\. Thinkerwell never sees it\./)).toBeInTheDocument();
+  });
+
+  it('shows staff that it is a template, and how to use it, on screen only', () => {
     renderAt('/educators/consent-form', <ConsentFormPage />);
     const note = screen.getByRole('complementary', { name: 'For staff: this is a template' });
     expect(note).toHaveTextContent(/not legal advice/);
+    expect(note).toHaveTextContent(/Give each family the information sheet with the form/);
+    expect(note).toHaveTextContent(/Learners aged 18 or older sign for themselves\./);
+    expect(note).toHaveTextContent(/doesn't cover online speech-to-text/);
     expect(note.closest('.tw-no-print')).not.toBeNull();
-    expect(screen.getByRole('article').closest('.tw-no-print')).toBeNull();
+    for (const page of pages()) expect(page.closest('.tw-no-print')).toBeNull();
   });
 });
 
