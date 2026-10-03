@@ -5,11 +5,13 @@ import { pdfPageOrientations } from './lessonHelpers';
 import { settle } from './pageTour';
 
 // The partner kit (docs/notes/partner-kit.md): For organisations, reached
-// from the footer of the first page and from the Educators page; the consent form and
-// code cards on paper, A4 and black on white, in English and in Indonesian;
-// and the device setup checklist still one page in Indonesian. The kit's
-// pages on screen (layout, tap sizes, axe, right to left, no English in
-// Indonesian) are in the page tour (e2e/pageTour.ts) and indonesian.spec.ts.
+// from the footer of the first page and from the Educators page; on paper,
+// in English and in Indonesian, the information sheet (one page) and the
+// consent form (two pages) on A4 and Letter with nothing smaller than the
+// site's smallest text, and code cards on A4, all black on white; and the
+// device setup checklist still one page in Indonesian. The kit's pages on
+// screen (layout, tap sizes, axe, right to left, no English in Indonesian)
+// are in the page tour (e2e/pageTour.ts) and indonesian.spec.ts.
 
 type Tree = { [key: string]: string | Tree };
 const messages = (locale: string) =>
@@ -25,6 +27,33 @@ async function useIndonesian(page: Page): Promise<void> {
   await page.getByRole('button', { name: /^(Language|Bahasa): / }).click();
   await page.locator('.tw-language-switch-panel').getByRole('radio', { name: 'Bahasa Indonesia' }).click();
   await expect(page.locator('html')).toHaveAttribute('lang', 'id');
+}
+
+/** The longest organisation name the information sheet and consent form take (60 characters), as a Jakarta partner's might be. */
+const LONGEST_ORGANISATION = 'Yayasan Pendidikan dan Pemberdayaan Anak Pengungsi Indonesia';
+
+/** How many pages the page prints on, on A4 and on Letter (Chromium's own PDF, print media). */
+async function pageCounts(page: Page): Promise<{ A4: number; Letter: number }> {
+  await page.emulateMedia({ media: 'print' });
+  await settle(page);
+  const A4 = pdfPageOrientations(await page.pdf({ format: 'A4' })).length;
+  const Letter = pdfPageOrientations(await page.pdf({ format: 'Letter' })).length;
+  await page.emulateMedia({ media: 'screen' });
+  return { A4, Letter };
+}
+
+/** Printed text smaller than the site's smallest, 14px (10.5pt): none, on the partner kit's printouts. */
+async function printedTooSmall(page: Page): Promise<string[]> {
+  await page.emulateMedia({ media: 'print' });
+  const small = await page.evaluate(() =>
+    [...document.body.querySelectorAll('*')]
+      .filter((el): el is HTMLElement => el instanceof HTMLElement && el.checkVisibility() && !el.closest('.tw-visually-hidden'))
+      .filter((el) => [...el.childNodes].some((n) => n.nodeType === Node.TEXT_NODE && n.textContent!.trim()))
+      .filter((el) => parseFloat(getComputedStyle(el).fontSize) < 14)
+      .map((el) => `${el.tagName.toLowerCase()}.${el.className} ${getComputedStyle(el).fontSize}: ${el.textContent.trim().slice(0, 40)}`),
+  );
+  await page.emulateMedia({ media: 'screen' });
+  return small;
 }
 
 /** The page as it prints on A4: its pages' orientations, and whether any colour is left. */
@@ -60,10 +89,16 @@ test('an organisation finds the kit from the first page, in the footer and on th
   // No placeholder address anywhere until the team has a real one (src/app/contact.ts).
   await expect(page.getByText(/\[CONTACT EMAIL\]/)).toHaveCount(0);
 
+  // For organisations' "Get ready": the information sheet beside the consent form.
+  const ready = page.getByRole('region', { name: 'Get ready' });
+  await expect(ready.getByRole('link', { name: 'Print information sheets' })).toHaveAttribute('href', '/educators/information-sheet');
+  await expect(ready.getByRole('link', { name: 'Print consent forms' })).toHaveAttribute('href', '/educators/consent-form');
+
   await page.goto('/educators');
   const pilot = page.getByRole('region', { name: 'Starting a pilot' });
   for (const [cta, url] of [
     ['Read about pilots', '/organisations'],
+    ['Print information sheets', '/educators/information-sheet'],
     ['Print consent forms', '/educators/consent-form'],
     ['Make code cards', '/educators/code-cards'],
     ['Open the checklist', '/educators/setup'],
@@ -78,17 +113,64 @@ for (const locale of ['en', 'id'] as const) {
       if (locale === 'id') await useIndonesian(page);
     });
 
-    test('the consent form is one A4 page, black on white, with the organisation’s name and without the staff note', async ({ page }) => {
+    test('the consent form is two pages, A4 or Letter, black on white, with the organisation’s name and without the staff note', async ({
+      page,
+    }) => {
       await page.goto('/educators/consent-form');
-      await page.getByRole('textbox', { name: msg(locale, 'pages.consentForm.orgLabel') }).fill('HELP for Refugees');
+      const name = page.getByRole('textbox', { name: msg(locale, 'pages.consentForm.orgLabel') });
+      await name.fill('HELP for Refugees');
       const result = await printed(page);
-      expect(result.pages).toEqual(['portrait']);
+      // Page 1 for the parent or guardian; page 2 for the learner's own answer and the witness line.
+      expect(result.pages).toEqual(['portrait', 'portrait']);
       expect(result.colours).toEqual([]);
+      expect(await printedTooSmall(page)).toEqual([]);
       await page.emulateMedia({ media: 'print' });
       await expect(page.getByText(msg(locale, 'pages.consentForm.staffTitle'))).toBeHidden();
       await expect(page.getByRole('button', { name: msg(locale, 'print.print') })).toBeHidden();
-      await expect(page.locator('.tw-consent strong', { hasText: 'HELP for Refugees' })).toHaveCount(7);
-      await expect(page.getByText(msg(locale, 'pages.consentForm.yes'))).toBeVisible();
+      await expect(page.locator('.tw-consent').first().locator('strong', { hasText: 'HELP for Refugees' })).toHaveCount(8);
+      await expect(page.locator('.tw-consent').nth(1).locator('strong', { hasText: 'HELP for Refugees' })).toHaveCount(1);
+      await expect(page.getByText(msg(locale, 'pages.consentForm.yes'), { exact: true })).toHaveCount(3);
+      await expect(page.getByText(msg(locale, 'pages.consentForm.pageOf', { page: 2, count: 2 }))).toBeVisible();
+      await page.emulateMedia({ media: 'screen' });
+
+      // Still two pages with the name left to write by hand, or the longest name the box takes, on either paper.
+      expect(await pageCounts(page)).toEqual({ A4: 2, Letter: 2 });
+      await name.fill('');
+      expect(await pageCounts(page)).toEqual({ A4: 2, Letter: 2 });
+      await name.fill(LONGEST_ORGANISATION + ' and more');
+      await expect(name).toHaveValue(LONGEST_ORGANISATION);
+      expect(await pageCounts(page)).toEqual({ A4: 2, Letter: 2 });
+    });
+
+    test('the information sheet is one page, A4 or Letter, black on white, with what staff typed and without the staff note', async ({ page }) => {
+      await page.goto('/educators/information-sheet');
+      await expect(page.locator('h1')).toHaveText(msg(locale, 'pages.infoSheet.title'));
+      // Empty boxes print lines to write on.
+      expect(await pageCounts(page)).toEqual({ A4: 1, Letter: 1 });
+      const fill = async (organisation: string, contact: string) => {
+        for (const [key, value] of [
+          ['pages.consentForm.orgLabel', organisation],
+          ['pages.infoSheet.startLabel', locale === 'id' ? '13 Oktober 2026' : '13 October 2026'],
+          ['pages.infoSheet.endLabel', '21 November 2026'],
+          ['pages.infoSheet.sessionsLabel', '12'],
+          ['pages.infoSheet.contactLabel', contact],
+        ] as const) {
+          await page.getByRole('textbox', { name: msg(locale, key) }).fill(value);
+        }
+      };
+      await fill(LONGEST_ORGANISATION, 'Ibu Sari Wulandari binti Abdurrahman');
+      expect(await pageCounts(page)).toEqual({ A4: 1, Letter: 1 });
+      await fill('HELP for Refugees', 'Sari');
+      const result = await printed(page);
+      expect(result.pages).toEqual(['portrait']);
+      expect(result.colours).toEqual([]);
+      expect(await printedTooSmall(page)).toEqual([]);
+      await page.emulateMedia({ media: 'print' });
+      await expect(page.getByText(msg(locale, 'pages.consentForm.staffTitle'))).toBeHidden();
+      await expect(page.getByRole('group', { name: msg(locale, 'pages.infoSheet.fieldsTitle') })).toBeHidden();
+      await expect(page.locator('.tw-sheet strong', { hasText: 'HELP for Refugees' })).toHaveCount(5);
+      await expect(page.locator('.tw-sheet strong', { hasText: 'Sari' })).toHaveCount(1);
+      await expect(page.getByText(msg(locale, 'pages.infoSheet.runBy'))).toBeVisible();
       await page.emulateMedia({ media: 'screen' });
     });
 

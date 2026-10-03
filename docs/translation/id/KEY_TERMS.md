@@ -83,6 +83,14 @@ Style used throughout: everyday Indonesian for 10 to 17-year-olds, **kamu** for 
 | preview | pratinjau | | | |
 | session plan | rencana sesi | | | |
 | pilot (the pilot study) | uji coba | | "mitra uji coba" for pilot partner | |
+| the pilot study (what is measured, on the consent form and information sheet) | penelitian uji coba; "penelitian" alone for "the study" | studi uji coba | Added October 2026. "uji coba" alone is the whole pilot; the study is the part families say yes or no to | |
+| consent form | formulir persetujuan | | | |
+| information sheet (for families) | lembar informasi | | Added October 2026 | |
+| pilot code (a learner's code, like HLP-01) | kode uji coba | | Added October 2026 | |
+| signature or thumbprint | tanda tangan atau cap jempol | cap ibu jari | Added October 2026 | |
+| staff initials | paraf staf | | Added October 2026 | |
+| witness (staff who read the form aloud) | saksi | | Added October 2026 | |
+| contact person | narahubung | orang yang bisa dihubungi | Added October 2026; formal, check it is understood | |
 | essential question | pertanyaan utama | | | |
 | content note | catatan isi | | | |
 | checklist | daftar periksa | | | |

@@ -26,15 +26,22 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * them, for each lesson's Sources, the About credits, three new pages (For
  * organisations, the consent form, code cards) and their words in both
  * languages (docs/notes/partner-kit.md).
+ * Raised to 635 kB with the consent form's study parts and the information
+ * sheet: 630.4 kB with them (626.2 kB before), all of it their words and
+ * code: the English messages 1.3 kB, the Indonesian 1.2 kB, the pages' code
+ * 1.1 kB and their styles 0.5 kB (docs/notes/slow-internet.md, "Later budget changes").
  */
-const PRECACHE_BUDGET = 630_000;
+const PRECACHE_BUDGET = 635_000;
 /**
  * Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before),
  * 210.5 kB after the language and pilot-day merges, 212.7 kB with the header's language switch and the one language
  * setting (every page, from the first, can change the language; about 2 kB), 216.3 kB with the sources check and
- * the partner kit (their English messages load with the rest of en.json, and the footer is on every page).
+ * the partner kit (their English messages load with the rest of en.json, and the footer is on every page),
+ * 218.8 kB with the consent form's study parts and the information sheet (216.9 kB before): their English words,
+ * 1.3 kB, are in en.json, which is in the app's first chunk with every interface word, and their styles, 0.5 kB,
+ * are in the one stylesheet every page shares. No page code reaches the first visit.
  */
-const FIRST_VISIT_HOME_BUDGET = 218_000;
+const FIRST_VISIT_HOME_BUDGET = 220_000;
 
 const TEXT = /\.(html|js|css|svg|json|webmanifest)$/;
 

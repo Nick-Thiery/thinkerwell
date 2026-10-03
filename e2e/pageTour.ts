@@ -38,7 +38,7 @@ export interface TourStop {
 /** A long name, so every place that shows it (header, greeting, switcher) is tested at its widest. */
 export const TOUR_LEARNER = 'Mohammed Abdirahman';
 
-/** An organisation's name for the consent form: long, and in Indonesian, as a Jakarta partner's might be. */
+/** An organisation's name for the consent form and the information sheet: long, and in Indonesian, as a Jakarta partner's might be. */
 export const TOUR_ORGANISATION = 'Yayasan Pendidikan Anak Pengungsi Jakarta Selatan';
 
 /** What the tour types in Write and Reflect: the learner's own words, in any language. */
@@ -335,6 +335,25 @@ export const pageTour: TourStop[] = [
       await expect(page.locator('h1')).toHaveText(ui('pages.consentForm.title'));
       await page.getByRole('textbox', { name: ui('pages.consentForm.orgLabel') }).fill(TOUR_ORGANISATION);
       await expect(page.locator('.tw-consent strong').first()).toHaveText(TOUR_ORGANISATION);
+    },
+  },
+  {
+    // Every box filled, with long words, so the sheet is tested at its widest.
+    name: 'educators: information sheet',
+    go: async (page, { ui }) => {
+      await openPath(page, '/educators', ui('pages.educators.title'));
+      await page.locator('.tw-edu-tools').getByRole('link', { name: ui('pages.educators.pilotSheetCta') }).click();
+      await expect(page.locator('h1')).toHaveText(ui('pages.infoSheet.title'));
+      for (const [label, value] of [
+        ['pages.consentForm.orgLabel', TOUR_ORGANISATION],
+        ['pages.infoSheet.startLabel', 'Senin, 13 Oktober 2026'],
+        ['pages.infoSheet.endLabel', 'Jumat, 21 November 2026'],
+        ['pages.infoSheet.sessionsLabel', '12'],
+        ['pages.infoSheet.contactLabel', TOUR_LEARNER],
+      ] as const) {
+        await page.getByRole('textbox', { name: ui(label) }).fill(value);
+      }
+      await expect(page.locator('.tw-sheet strong').first()).toHaveText('Senin, 13 Oktober 2026');
     },
   },
   {

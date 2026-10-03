@@ -7,6 +7,7 @@ import {
   classPath,
   codeCardsPath,
   consentFormPath,
+  informationSheetPath,
   lessonPrintPath,
   organisationsPath,
   setupPath,
@@ -23,8 +24,9 @@ import { SECTION_ICONS } from './course/sectionIcons';
  * For educators (docs/screens/Educators.dc.html): what a teacher or
  * volunteer needs to run a session, the tools for setting up this device and
  * following the group on it (under "Starting a pilot": For organisations,
- * the consent form, code cards and the setup checklist; then the class view
- * and every certificate to print), how a session works, and every lesson to preview,
+ * the information sheet, the consent form, code cards and the setup
+ * checklist; then the class view and every certificate to print), how a
+ * session works, and every lesson to preview,
  * each with its teacher guide, and each section's check with its answer key. Collects nothing: "Tell us what to fix" keeps the "[FEEDBACK
  * EMAIL]" placeholder visible rather than a form (CLAUDE.md's
  * no-accounts-no-collection rule).
@@ -61,6 +63,13 @@ export function EducatorsPage() {
       body: t('pages.educators.pilotAboutBody'),
       cta: t('pages.educators.pilotAboutCta'),
       href: organisationsPath(),
+    },
+    {
+      icon: 'BookOpen',
+      title: t('pages.educators.pilotSheetTitle'),
+      body: t('pages.educators.pilotSheetBody'),
+      cta: t('pages.educators.pilotSheetCta'),
+      href: informationSheetPath(),
     },
     {
       icon: 'FileText',

@@ -1,7 +1,11 @@
 /*
- * The consent form (/educators/consent-form). On screen: the organisation's
- * name and the staff note, then the form as a white sheet. On paper: the
- * form alone, black on white, on one A4 page (print.css does the colours).
+ * The consent form (/educators/consent-form) and the information sheet
+ * (/educators/information-sheet, which adds InformationSheetPage.css). On
+ * screen: what staff fill in and the staff note, then each printed page as
+ * a white sheet. On paper: the sheets alone, black on white (print.css does
+ * the colours), the consent form on two pages and the information sheet on
+ * one, A4 or Letter. Nothing on paper is smaller than the site's smallest
+ * text, 14px (10.5pt): e2e/partner-kit.spec.ts checks it.
  */
 
 .tw-consent-setup {
@@ -46,24 +50,77 @@
   gap: var(--space-5);
 }
 
-.tw-consent-parts {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-4) var(--space-6);
+/* The title and the page number, then who the page is for and the pilot
+   code: each pair at either end of its line. */
+.tw-consent-topline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-4);
+}
+
+.tw-consent-titleline {
+  padding-block-end: var(--space-2);
+  border-block-end: 2px solid var(--ink);
+}
+
+.tw-print-sheet .tw-consent-titleline h2 {
+  padding: 0;
+  border: 0;
+}
+
+/* The parts, flowing in two columns on a wide screen and on paper, so the
+   columns come out even. A part stays in one column, except a long list
+   (.tw-consent-flow-long), which may go on in the next between two points. */
+.tw-consent-flow > section {
+  margin-block-end: var(--space-5);
+}
+
+.tw-consent-flow > section:last-child {
+  margin-block-end: 0;
+}
+
+@media (min-width: 900px) {
+  .tw-consent-flow {
+    columns: 2;
+    column-gap: var(--space-8);
+  }
+
+  .tw-consent-flow > section {
+    break-inside: avoid;
+  }
+}
+
+.tw-consent-part,
+.tw-consent-about {
+  display: flex;
+  flex-direction: column;
 }
 
 .tw-consent-part {
-  display: flex;
-  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-consent-about {
   gap: var(--space-1);
 }
 
 .tw-print-sheet .tw-consent-part h3,
 .tw-print-sheet .tw-consent-answer h3 {
+  margin: 0;
   font-family: var(--font-body);
-  font-size: 17px;
-  line-height: 24px;
+  font-size: 18px;
+  line-height: 26px;
   font-weight: 700;
+}
+
+.tw-print-sheet ul.tw-consent-list {
+  padding-inline-start: var(--space-5);
+}
+
+.tw-consent-code {
+  white-space: nowrap;
 }
 
 /* A line to write on. Inline in a sentence (the organisation's name), or
@@ -71,6 +128,7 @@
 .tw-consent-blank {
   display: inline-block;
   inline-size: 12em;
+  max-inline-size: 100%;
   block-size: 1em;
   border-block-end: 1px solid var(--ink);
   vertical-align: baseline;
@@ -82,6 +140,28 @@
   block-size: 28px;
 }
 
+/* Where a signature or a thumbprint goes: a box, big enough for a thumb.
+   The line beside it sits level with its bottom. */
+.tw-consent-field-box dd {
+  display: flex;
+}
+
+.tw-consent-field-box .tw-consent-blank-wide {
+  flex: 1;
+  block-size: 84px;
+  border: 1px solid var(--ink);
+  border-radius: var(--radius-sm);
+}
+
+/* The pilot code, to write in beside who the page is for. */
+.tw-consent-code-line {
+  font-weight: 700;
+}
+
+.tw-consent-code-line .tw-consent-blank {
+  inline-size: 8em;
+}
+
 .tw-consent-answer {
   display: flex;
   flex-direction: column;
@@ -91,18 +171,45 @@
   border-radius: var(--radius-md);
 }
 
-.tw-print-sheet .tw-consent-choices {
+.tw-print-sheet .tw-consent-questions {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: var(--space-3);
+  padding-inline-start: var(--space-6);
+}
+
+.tw-print-sheet .tw-consent-questions > li {
+  margin: 0;
+}
+
+/* A question, then its Yes and No boxes: beside it where there is room. */
+.tw-consent-question {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-6);
+}
+
+.tw-consent-question > p {
+  flex: 1 1 24em;
+  font-weight: 700;
+}
+
+/* Yes and No side by side, each with a box to tick. */
+.tw-print-sheet .tw-consent-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-6);
   padding: 0;
   list-style: none;
 }
 
-.tw-consent-choices li {
+.tw-print-sheet .tw-consent-choices li {
   display: flex;
   align-items: center;
   gap: var(--space-3);
+  margin: 0;
 }
 
 .tw-consent-box {
@@ -135,11 +242,34 @@
   margin: 0;
 }
 
+/* The script staff read aloud to the learner. */
+.tw-print-sheet .tw-consent-script {
+  margin: 0;
+  padding-inline-start: var(--space-4);
+  border-inline-start: 3px solid var(--ink);
+}
+
+.tw-consent-learner-answer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-6);
+}
+
+.tw-print-sheet .tw-consent-learner-answer .tw-consent-choices {
+  margin: 0;
+}
+
+.tw-consent-label,
+.tw-consent-rule {
+  font-weight: 700;
+}
+
 @media (max-width: 640px) {
-  .tw-consent-parts,
   .tw-print-sheet .tw-consent-fields {
     grid-template-columns: minmax(0, 1fr);
   }
+
 
   .tw-print-sheet.tw-consent {
     padding: var(--space-5);
@@ -151,32 +281,119 @@
     max-inline-size: none;
   }
 
+  /* Margins of 12mm, like the certificates', so more fits a page. */
+  @page tw-consent {
+    margin: 12mm;
+  }
+
+  /* 10.5pt is 14px, the site's smallest text: nothing here goes below it. */
   .tw-print-sheet.tw-consent {
-    gap: 3.5mm;
-    font-size: 10pt;
-    line-height: 1.4;
+    page: tw-consent;
+    gap: 2mm;
+    font-size: 10.5pt;
+    line-height: 1.2;
   }
 
-  .tw-consent .tw-print-title {
-    font-size: 18pt;
+  .tw-consent-second {
+    break-before: page;
   }
 
-  /* Two columns on paper whatever the window's width was. */
-  .tw-consent-parts,
-  .tw-print-sheet .tw-consent-fields {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 3mm 7mm;
+  .tw-consent .tw-print-head {
+    gap: 1mm;
   }
 
-  .tw-print-sheet .tw-consent-part h3,
-  .tw-print-sheet .tw-consent-answer h3 {
+  .tw-consent .tw-print-brand,
+  .tw-consent .tw-print-eyebrow {
     font-size: 10.5pt;
     line-height: 1.3;
   }
 
-  .tw-print-sheet .tw-consent-part p,
-  .tw-consent .small {
-    font-size: 9.5pt;
+  .tw-consent .tw-print-title {
+    padding-block-end: 1.5mm;
+    font-size: 15pt;
+  }
+
+  .tw-consent .tw-consent-titleline {
+    padding-block-end: 1.5mm;
+    border-block-end-width: 0.5mm;
+  }
+
+  .tw-print-sheet .tw-consent-titleline .tw-print-title {
+    padding: 0;
+  }
+
+  /* The parent's four fields in one row: two names, the date, and the box. */
+  .tw-print-sheet .tw-consent-fields.tw-consent-fields-four {
+    grid-template-columns: 1.1fr 1.1fr 0.7fr 1.45fr;
+    gap: 2.5mm 5mm;
+  }
+
+  /* There, the box's label sits inside its top, so the row is only as
+     tall as the box. */
+  .tw-print-sheet .tw-consent-fields-four .tw-consent-field-box {
+    position: relative;
+  }
+
+  .tw-print-sheet .tw-consent-fields-four .tw-consent-field-box dt {
+    position: absolute;
+    inset-block-start: 1mm;
+    inset-inline: 2mm;
+  }
+
+  .tw-print-sheet .tw-consent-fields-four .tw-consent-field-box .tw-consent-blank-wide {
+    block-size: 20mm;
+  }
+
+  /* Two columns on paper whatever the window's width was. */
+  .tw-print-sheet .tw-consent-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5mm 6mm;
+  }
+
+  .tw-consent-flow {
+    columns: 2;
+    column-gap: 6mm;
+  }
+
+  .tw-consent-flow > section {
+    margin-block-end: 2mm;
+    break-inside: auto;
+  }
+
+  .tw-consent-flow > section:not(.tw-consent-flow-long),
+  .tw-consent-flow li {
+    break-inside: avoid;
+  }
+
+  .tw-consent-part {
+    gap: 1mm;
+  }
+
+  /* "Questions?" and the line about Thinkerwell, one after the other. */
+  .tw-consent-about {
+    display: block;
+  }
+
+  .tw-consent-about p {
+    display: inline;
+  }
+
+  .tw-consent-about p + p::before {
+    content: " ";
+  }
+
+  .tw-print-sheet .tw-consent-part h3,
+  .tw-print-sheet .tw-consent-answer h3 {
+    font-size: 11pt;
+    line-height: 1.25;
+  }
+
+  .tw-print-sheet ul.tw-consent-list {
+    padding-inline-start: 4.5mm;
+  }
+
+  .tw-print-sheet .tw-consent-list li + li {
+    margin-block-start: 0.4mm;
   }
 
   .tw-consent-blank {
@@ -184,30 +401,54 @@
   }
 
   .tw-consent-blank-wide {
-    block-size: 8mm;
+    block-size: 6.5mm;
+  }
+
+  .tw-consent-field-box .tw-consent-blank-wide {
+    block-size: 16mm;
+    border: 0.3mm solid #000;
+    border-radius: 1mm;
   }
 
   .tw-consent-answer {
-    gap: 2.5mm;
-    padding: 4mm 5mm;
+    gap: 1.5mm;
+    padding: 2mm 3.5mm;
     border: 0.4mm solid #000;
     border-radius: 2mm;
     break-inside: avoid;
   }
 
+  .tw-print-sheet .tw-consent-questions {
+    gap: 2mm;
+    padding-inline-start: 5mm;
+  }
+
+  .tw-consent-question {
+    gap: 1mm 6mm;
+  }
+
+  .tw-print-sheet .tw-consent-choices {
+    gap: 1mm 6mm;
+  }
+
+  .tw-print-sheet .tw-consent-choices li + li {
+    margin: 0;
+  }
+
   .tw-consent-box {
-    inline-size: 5mm;
-    block-size: 5mm;
+    inline-size: 4.5mm;
+    block-size: 4.5mm;
     border: 0.4mm solid #000;
     border-radius: 0.8mm;
   }
 
   .tw-consent-fields dt {
-    font-size: 9.5pt;
+    font-size: 10.5pt;
+    line-height: 1.3;
   }
 
-  /* The last field (the date) sits alone: keep it half width, like the others. */
-  .tw-consent-fields div:last-child {
-    grid-column: 1;
+  .tw-print-sheet .tw-consent-script {
+    padding-inline-start: 3mm;
+    border-inline-start: 0.6mm solid #000;
   }
 }

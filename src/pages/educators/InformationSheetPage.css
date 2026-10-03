@@ -1,0 +1,53 @@
+/*
+ * The information sheet (/educators/information-sheet). It shares the
+ * consent form's look (ConsentFormPage.css), its parts flowing in two
+ * columns on a wide screen and on paper like the form's; this adds what
+ * staff fill in before printing.
+ */
+
+.tw-sheet-fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.tw-sheet-fields legend {
+  margin: 0;
+  padding: 0;
+}
+
+.tw-sheet-fields-help {
+  color: var(--ink-muted);
+}
+
+.tw-sheet-fields-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.tw-sheet-field-wide {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 640px) {
+  .tw-sheet-fields-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media print {
+  /* Families read this one at home: a little more room between lines than
+     the form, which still fits on one page. */
+  .tw-print-sheet.tw-consent.tw-sheet {
+    line-height: 1.32;
+  }
+
+  .tw-print-sheet.tw-sheet .tw-consent-list li + li {
+    margin-block-start: 1mm;
+  }
+}

@@ -15,7 +15,7 @@
  * docs/content/PUBLIC_COPY.md.
  */
 import { CONTACT_EMAIL } from '../app/contact';
-import { codeCardsPath, consentFormPath, setupPath } from '../app/lessonUrls';
+import { codeCardsPath, consentFormPath, informationSheetPath, setupPath } from '../app/lessonUrls';
 import { usePageTitle } from '../app/usePageTitle';
 import { Button, Icon, type IconName } from '../components/ds';
 import { useContent } from '../content/useContent';
@@ -120,6 +120,9 @@ export function OrganisationsPage() {
         </h2>
         <p>{t('pages.organisations.startBody')}</p>
         <div className="tw-org-actions">
+          <Button variant="secondary" icon="BookOpen" href={informationSheetPath()}>
+            {t('pages.educators.pilotSheetCta')}
+          </Button>
           <Button variant="secondary" icon="FileText" href={consentFormPath()}>
             {t('pages.educators.pilotConsentCta')}
           </Button>
