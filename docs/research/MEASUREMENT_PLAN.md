@@ -65,7 +65,7 @@ Report it as "learners improved by X on what the course taught, versus Y on ques
   - Claim: states a clear idea.
   - Evidence: uses a detail from the clues.
   - Reasoning: explains how the clue supports the idea, or names a limit.
-- **Blind marking**: mix pre and post scripts, hide learner codes and dates, and have **two people** mark every script. Report how often they agreed. This is what turns qualitative writing into a defensible number.
+- **Blind marking**: mix pre and post scripts, hide learner codes and dates, and have **two people** mark every script. Report how often they agreed. This is what turns qualitative writing into a defensible number. Both markers must be members of the Thinkerwell team: the consent form says only the team sees the answers.
 
 ## 3. Confidence check (1 minute)
 
@@ -79,7 +79,7 @@ Five statements, each rated on a 4-face scale (😟 🙁 🙂 😀), pre and pos
 
 ## 4. In-app usage data (automatic)
 
-Log these events, all tied to a pilot code, never a name:
+Log these events, all tied to a pilot code, never a name. The consent form's "in every session" line names each kind of event below in plain words; log nothing it doesn't cover without changing the form first (`docs/notes/partner-kit.md`):
 
 - `session_start`, `session_end`, and `heartbeat` (every 30 seconds while the page is visible and there was input in the last 60 seconds). Heartbeats give "active minutes" without counting a tablet left open.
 - `lesson_open`, `stage_enter`, `stage_complete`, `lesson_complete`.

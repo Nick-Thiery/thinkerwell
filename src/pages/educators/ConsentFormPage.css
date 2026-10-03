@@ -289,7 +289,7 @@
   /* 10.5pt is 14px, the site's smallest text: nothing here goes below it. */
   .tw-print-sheet.tw-consent {
     page: tw-consent;
-    gap: 2.5mm;
+    gap: 2mm;
     font-size: 10.5pt;
     line-height: 1.2;
   }
@@ -324,8 +324,24 @@
 
   /* The parent's four fields in one row: two names, the date, and the box. */
   .tw-print-sheet .tw-consent-fields.tw-consent-fields-four {
-    grid-template-columns: 1.25fr 1.25fr 0.75fr 1fr;
+    grid-template-columns: 1.1fr 1.1fr 0.7fr 1.45fr;
     gap: 2.5mm 5mm;
+  }
+
+  /* There, the box's label sits inside its top, so the row is only as
+     tall as the box. */
+  .tw-print-sheet .tw-consent-fields-four .tw-consent-field-box {
+    position: relative;
+  }
+
+  .tw-print-sheet .tw-consent-fields-four .tw-consent-field-box dt {
+    position: absolute;
+    inset-block-start: 1mm;
+    inset-inline: 2mm;
+  }
+
+  .tw-print-sheet .tw-consent-fields-four .tw-consent-field-box .tw-consent-blank-wide {
+    block-size: 20mm;
   }
 
   /* Two columns on paper whatever the window's width was. */
@@ -340,7 +356,7 @@
   }
 
   .tw-consent-flow > section {
-    margin-block-end: 2.5mm;
+    margin-block-end: 2mm;
     break-inside: auto;
   }
 
@@ -396,7 +412,7 @@
 
   .tw-consent-answer {
     gap: 1.5mm;
-    padding: 2.5mm 3.5mm;
+    padding: 2mm 3.5mm;
     border: 0.4mm solid #000;
     border-radius: 2mm;
     break-inside: avoid;

@@ -56,7 +56,8 @@ const STUDY = [
   /answers 16 short questions \(about 15 minutes each time\)/,
   /writes a few sentences about a made-up town, on paper \(about 8 minutes\)/,
   /chooses a face for each of 5 sentences/,
-  /notes how long your child uses it, which lessons they open and finish, and their quiz scores/,
+  // Everything the pilot's measurement logs in every session (docs/research/MEASUREMENT_PLAN.md, section 4).
+  /In every session, Thinkerwell also notes how your child uses it: how long, which lessons and steps they open and finish, their answers to quick checks and quizzes, whether they use the simpler reading or have it read aloud, whether they watch the videos \(and how much\) or read instead, and how many words they write, never the words themselves\./,
   /None of this is a test\. Nothing depends on the answers\./,
 ];
 const KEPT = [
