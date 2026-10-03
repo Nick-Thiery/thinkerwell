@@ -159,7 +159,7 @@ test('a section finished offline gets its certificate offline, with the mascot a
   expect(fontsLoaded).toEqual(expect.arrayContaining(['Eczar', 'Funnel Display', 'Atkinson Hyperlegible Next']));
 });
 
-test('the setup checklist, the class view and all certificates open offline, and the checklist says the course is saved', async ({
+test('the setup checklist, the class view, all certificates and the partner kit open offline, and the checklist says the course is saved', async ({
   page,
   context,
 }) => {
@@ -184,4 +184,12 @@ test('the setup checklist, the class view and all certificates open offline, and
   );
   await page.goto('/educators/class/certificates');
   await expect(page.locator('.tw-cert-name')).toHaveText('Amina');
+
+  // The partner kit's printouts, saved with the rest of the course.
+  await page.goto('/educators/information-sheet');
+  await expect(page.locator('h1')).toHaveText('Information sheet');
+  await expect(page.getByRole('heading', { name: 'About the Thinkerwell pilot' })).toBeVisible();
+  await page.goto('/educators/consent-form');
+  await expect(page.locator('h1')).toHaveText('Consent form');
+  await expect(page.getByRole('article')).toHaveCount(2);
 });

@@ -77,6 +77,11 @@ export function consentFormPath(): string {
   return '/educators/consent-form';
 }
 
+/** The information sheet for families, given with the consent form, to print: /educators/information-sheet. */
+export function informationSheetPath(): string {
+  return '/educators/information-sheet';
+}
+
 /** Learners' code cards and the list of names to keep, to print: /educators/code-cards. */
 export function codeCardsPath(): string {
   return '/educators/code-cards';

@@ -1,12 +1,13 @@
-import { render, screen, within } from '@testing-library/react';
+import { cleanup, render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 import { describe, expect, it } from 'vitest';
 import { OrganisationsPage } from '../OrganisationsPage';
 import { CodeCardsPage } from './CodeCardsPage';
 import { ConsentFormPage } from './ConsentFormPage';
+import { InformationSheetPage } from './InformationSheetPage';
 
-/** The partner kit: For organisations, the consent form and code cards. */
+/** The partner kit: For organisations, the information sheet, the consent form and code cards. */
 
 function renderAt(path: string, element: React.ReactElement) {
   const router = createMemoryRouter([{ path: path.replace(/\?.*$/, ''), element }], { initialEntries: [path] });
@@ -43,13 +44,14 @@ describe('For organisations', () => {
     expect(screen.queryByRole('heading', { name: 'Contact us' })).not.toBeInTheDocument();
     expect(screen.queryByText(/\[CONTACT EMAIL\]/)).not.toBeInTheDocument();
     expect(within(privacy).getByText(/a parent or guardian signs a consent form, and the learner says yes too/)).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Print information sheets' })).toHaveAttribute('href', '/educators/information-sheet');
     expect(screen.getByRole('link', { name: 'Print consent forms' })).toHaveAttribute('href', '/educators/consent-form');
     expect(screen.getByRole('link', { name: 'Make code cards' })).toHaveAttribute('href', '/educators/code-cards');
     expect(screen.getByRole('link', { name: 'Open the checklist' })).toHaveAttribute('href', '/educators/setup');
   });
 });
 
-/** The study and what is kept (./pilotStudy.tsx). */
+/** The study and what is kept: the same words on the form and the sheet (./pilotStudy.tsx). */
 const STUDY = [
   /answers 16 short questions \(about 15 minutes each time\)/,
   /writes a few sentences about a made-up town, on paper \(about 8 minutes\)/,
@@ -180,6 +182,79 @@ describe('the consent form', () => {
     expect(note).toHaveTextContent(/doesn't cover online speech-to-text/);
     expect(note.closest('.tw-no-print')).not.toBeNull();
     for (const page of pages()) expect(page.closest('.tw-no-print')).toBeNull();
+  });
+});
+
+describe('the information sheet', () => {
+  it('puts what staff typed into the sheet, or lines to write it on', async () => {
+    const user = userEvent.setup();
+    renderAt('/educators/information-sheet', <InformationSheetPage />);
+    const sheet = screen.getByRole('article', { name: 'About the Thinkerwell pilot' });
+    const happen = part(sheet, 'What will happen?');
+    expect(happen).toHaveTextContent(
+      "From start date to end date, your child's class at organisation's name will use Thinkerwell on its tablets and laptops, about number of sessions times. A teacher from organisation's name leads every session.",
+    );
+    expect(part(sheet, 'Questions')).toHaveTextContent(/^QuestionsAsk contact person's name at organisation's name\./);
+
+    for (const [label, value] of [
+      ["Your organisation's name", 'HELP for Refugees'],
+      ['Start date', '13 October 2026'],
+      ['End date', '21 November 2026'],
+      ['Number of sessions', '12'],
+      ['Contact person', 'Sari'],
+    ] as const) {
+      await user.type(screen.getByRole('textbox', { name: label }), value);
+    }
+    expect(happen).toHaveTextContent(
+      "From 13 October 2026 to 21 November 2026, your child's class at HELP for Refugees will use Thinkerwell on its tablets and laptops, about 12 times. A teacher from HELP for Refugees leads every session.",
+    );
+    expect(part(sheet, 'Questions')).toHaveTextContent(/^QuestionsAsk Sari at HELP for Refugees\./);
+    for (const value of ['13 October 2026', '21 November 2026', '12', 'Sari']) {
+      expect(within(sheet).getByText(value)).toHaveAttribute('translate', 'no');
+    }
+    expect(within(sheet).getAllByText('HELP for Refugees')).toHaveLength(5);
+    expect(sheet.textContent).not.toContain('{');
+  });
+
+  it('says what Thinkerwell is, what will happen, the study, what is kept, the choice and whom to ask', () => {
+    renderAt('/educators/information-sheet', <InformationSheetPage />);
+    const sheetPage = screen.getByRole('article', { name: 'About the Thinkerwell pilot' });
+    expect(part(sheetPage, 'What is Thinkerwell?')).toHaveTextContent(
+      /Thinkerwell is a free learning website\. .* in simple English or Bahasa Indonesia\. It is made by a small team of students in Singapore\./,
+    );
+    const study = part(sheetPage, 'The pilot study: you choose');
+    for (const line of STUDY) expect(study).toHaveTextContent(line);
+    const kept = part(sheetPage, "What we keep, and what we don't");
+    for (const line of KEPT) expect(kept).toHaveTextContent(line);
+    const choice = part(sheetPage, 'Saying yes or no');
+    expect(choice).toHaveTextContent(/It is your choice, and you answer on the consent form\./);
+    expect(choice).toHaveTextContent(/If you say no to the study, your child still comes to class and can still use Thinkerwell\./);
+    expect(choice).toHaveTextContent(/even after the pilot\. Tell a teacher, and your child's answers are deleted\./);
+    expect(choice).toHaveTextContent(/Your child can also say no, and their no counts\./);
+    const questions = part(sheetPage, 'Questions');
+    expect(questions).toHaveTextContent(/Thinkerwell is run by Justin Park and Nick Thiery\. It is a student-led project, not a registered charity\./);
+    // No email address yet (src/app/contact.ts): no placeholder, and no "write to Thinkerwell".
+    expect(questions).not.toHaveTextContent(/write to Thinkerwell|\[/);
+  });
+
+  it('makes the same promises as the consent form, in the same words', () => {
+    renderAt('/educators/information-sheet', <InformationSheetPage />);
+    const sheetKept = part(screen.getByRole('article'), "What we keep, and what we don't").querySelector('ul')!.innerHTML;
+    const sheetStudy = part(screen.getByRole('article'), 'The pilot study: you choose').querySelector('ul')!.innerHTML;
+    cleanup();
+    renderAt('/educators/consent-form', <ConsentFormPage />);
+    const form = screen.getAllByRole('article')[0]!;
+    expect(part(form, "What we keep, and what we don't").querySelector('ul')!.innerHTML).toBe(sheetKept);
+    expect(part(form, 'The pilot study').querySelector('ul')!.innerHTML).toBe(sheetStudy);
+  });
+
+  it('shows staff that it is a template, on screen only', () => {
+    renderAt('/educators/information-sheet', <InformationSheetPage />);
+    const note = screen.getByRole('complementary', { name: 'For staff: this is a template' });
+    expect(note).toHaveTextContent(/not legal advice/);
+    expect(note.closest('.tw-no-print')).not.toBeNull();
+    expect(screen.getByRole('group', { name: 'Before you print' }).closest('.tw-no-print')).not.toBeNull();
+    expect(screen.getByRole('article').closest('.tw-no-print')).toBeNull();
   });
 });
 

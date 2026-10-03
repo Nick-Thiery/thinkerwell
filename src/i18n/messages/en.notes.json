@@ -200,6 +200,15 @@
   "pages.pilotStudy.keepGroup": "A promise to families, printed on the consent form and the information sheet: translate it exactly, without softening or strengthening it. {organisation} is the organisation's name, or a line to write it on.",
   "pages.pilotStudy.keepDelete": "A promise to families, printed on the consent form and the information sheet: translate it exactly, without softening or strengthening it.",
   "pages.pilotStudy.keepVideo": "A promise to families, printed on the consent form and the information sheet: translate it exactly, without softening or strengthening it. {readInstead} is the Watch step's button (lessonPlayer.watch.readInstead), shown in quotation marks.",
+  "pages.infoSheet.happenBody": "Printed for parents and guardians. {start} and {end} are dates and {sessions} a number of sessions, as staff typed them, or lines to write them on. {organisation} is the organisation's name, or a line.",
+  "pages.infoSheet.questions": "{contact} is a staff member's name and {organisation} the organisation's, as typed, or lines to write them on. Used while the team has no email address (src/app/contact.ts).",
+  "pages.infoSheet.questionsEmail": "{email} is the team's email address. Keep it as it is. Used instead of pages.infoSheet.questions once the team has an address.",
+  "pages.infoSheet.whatBody": "Printed for parents and guardians. Name the languages the course is offered in: English and Bahasa Indonesia.",
+  "pages.infoSheet.runBy": "Names stay as they are. Honest about what Thinkerwell is: never call it a charity or a registered organisation.",
+  "pages.infoSheet.startBlank": "Screen readers only: read out where the printed sheet has a line to write this on.",
+  "pages.infoSheet.endBlank": "Screen readers only: read out where the printed sheet has a line to write this on.",
+  "pages.infoSheet.sessionsBlank": "Screen readers only: read out where the printed sheet has a line to write this on.",
+  "pages.infoSheet.contactBlank": "Screen readers only: read out where the printed sheet has a line to write this on.",
   "pages.consentForm.pilotCode": "Printed at the top of both pages of the consent form. {code} is a line for the organisation to write the learner's code on (like HLP-01).",
   "pages.consentForm.codeBlank": "Screen readers only: read out where the printed form has a line to write the learner's pilot code on."
 }

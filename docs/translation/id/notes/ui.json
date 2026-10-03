@@ -3765,6 +3765,24 @@
     "back": "Print the consent form",
     "source": "Print consent forms"
   },
+  "pages.educators.pilotSheetTitle": {
+    "back": "Information sheet",
+    "source": "Information sheet",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.educators.pilotSheetBody": {
+    "back": "Everything that happens in the trial and its research, to be kept by each family, with your organization's name in it.",
+    "source": "What the pilot and its study involve, for each family to keep, with your organisation's name on it.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.educators.pilotSheetCta": {
+    "back": "Print information sheet",
+    "source": "Print information sheets",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
   "pages.educators.pilotCodesTitle": {
     "back": "Code cards",
     "source": "Code cards"
@@ -3828,8 +3846,10 @@
     "source": "A teacher guide for every lesson, answer keys for the section checks, and every lesson ready to print."
   },
   "pages.organisations.get3": {
-    "back": "What you need to start: a consent form, code cards for learners, and a checklist for each device.",
-    "source": "What you need to start: a consent form, code cards for learners and a checklist for each device."
+    "back": "What you need to start: information sheet and consent form for families, code cards for learners, and a checklist for each device.",
+    "source": "What you need to start: an information sheet and a consent form for families, code cards for learners and a checklist for each device.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
   },
   "pages.organisations.get4": {
     "back": "Answers to your questions by email, and changes to the course based on your feedback.",
@@ -4226,6 +4246,162 @@
   "pages.pilotStudy.keepVideo": {
     "back": "Some lessons have YouTube videos that are not mandatory to watch. When a video is played, YouTube (owned by Google) receives some information, such as the internet address (IP address) of the device. Every video has a written version: choosing \"{readInstead}\" doesn't send anything to YouTube.",
     "source": "Some lessons have an optional YouTube video. When one plays, YouTube (owned by Google) gets some information, such as the device's internet (IP) address. Every video has a written version: choosing “{readInstead}” sends nothing to YouTube.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
+  },
+  "pages.infoSheet.title": {
+    "back": "Information sheet",
+    "source": "Information sheet",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.infoSheet.intro": {
+    "back": "Print one sheet for each learner's family, to be given together with the consent form. Fill in what you already know so it prints on this sheet, or leave the boxes empty to be handwritten.",
+    "source": "Print one for each learner's family, to give with the consent form. Fill in what you know to put it on the sheet, or leave a box empty to write it by hand.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.infoSheet.fieldsTitle": {
+    "back": "Before printing",
+    "source": "Before you print",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.infoSheet.fieldsHelper": {
+    "back": "Only used on this sheet, and not saved.",
+    "source": "Only used on this sheet, and not saved.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.infoSheet.startLabel": {
+    "back": "Start date",
+    "source": "Start date",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.infoSheet.endLabel": {
+    "back": "End date",
+    "source": "End date",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.infoSheet.sessionsLabel": {
+    "back": "Number of sessions",
+    "source": "Number of sessions",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.infoSheet.contactLabel": {
+    "back": "Contact person",
+    "source": "Contact person",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. \"Narahubung\" (contact person) is formal: confirm staff use it."
+  },
+  "pages.infoSheet.staffBody": {
+    "back": "This is not legal advice. Check this sheet against your own organization's rules, then change anything that doesn't fit. If the parent or guardian cannot read, read this sheet in their language.",
+    "source": "It is not legal advice. Check it against your organisation's own rules, and change anything that doesn't fit. If a parent or guardian can't read, read it aloud in their language.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.infoSheet.startBlank": {
+    "back": "start date",
+    "source": "start date",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.infoSheet.endBlank": {
+    "back": "end date",
+    "source": "end date",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.infoSheet.sessionsBlank": {
+    "back": "number of sessions",
+    "source": "number of sessions",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.infoSheet.contactBlank": {
+    "back": "contact person's name",
+    "source": "contact person's name",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.infoSheet.sheetTitle": {
+    "back": "About the Thinkerwell trial",
+    "source": "About the Thinkerwell pilot",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.infoSheet.sheetFor": {
+    "back": "To be kept by parent or guardian",
+    "source": "For a parent or guardian to keep",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.infoSheet.whatTitle": {
+    "back": "What is Thinkerwell?",
+    "source": "What is Thinkerwell?",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.infoSheet.whatBody": {
+    "back": "Thinkerwell is a free learning site. Thinkerwell teaches history, maps and places, culture, and how societies make decisions. Learners read, write, speak, watch short videos, and think about what they learn, in simple English or Indonesian language. Thinkerwell is made by a small team of students in Singapore.",
+    "source": "Thinkerwell is a free learning website. It teaches history, maps and places, cultures, and how communities make decisions. Learners read, write, speak, watch short videos and think about what they learned, in simple English or Bahasa Indonesia. It is made by a small team of students in Singapore.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. \"pelajar\" here means the students who make Thinkerwell (as in \"proyek yang dipimpin oleh pelajar\"); elsewhere it means learners. Check it isn't confusing."
+  },
+  "pages.infoSheet.happenTitle": {
+    "back": "What will happen?",
+    "source": "What will happen?",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.infoSheet.happenBody": {
+    "back": "From {start} to {end}, your child's class at {organisation} will use Thinkerwell on tablets and laptops owned by the organization, around {sessions} times. A teacher from {organisation} leads each session.",
+    "source": "From {start} to {end}, your child's class at {organisation} will use Thinkerwell on its tablets and laptops, about {sessions} times. A teacher from {organisation} leads every session.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. \"milik organisasi\" (belonging to the organisation) for \"its\"."
+  },
+  "pages.infoSheet.studyTitle": {
+    "back": "Pilot study: You choose",
+    "source": "The pilot study: you choose",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.infoSheet.choiceTitle": {
+    "back": "Answering yes or no",
+    "source": "Saying yes or no",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.infoSheet.choiceBody": {
+    "back": "This is your choice, and you answer it on the consent form. If you answer no to the research, your child still comes to class and can still use Thinkerwell. Just that the answers are not used in the research. You can change your mind anytime, even after the trial finishes. Tell a teacher, and your child's answers will be deleted. Your child may also refuse, and their refusal still stands.",
+    "source": "It is your choice, and you answer on the consent form. If you say no to the study, your child still comes to class and can still use Thinkerwell. Their answers just aren't used in the study. You can change your mind at any time, even after the pilot. Tell a teacher, and your child's answers are deleted. Your child can also say no, and their no counts.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. \"penolakannya tetap berlaku\" (their refusal still stands) for \"their no counts\": check it is clear and kind."
+  },
+  "pages.infoSheet.questionsTitle": {
+    "back": "Questions",
+    "source": "Questions",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.infoSheet.questions": {
+    "back": "Ask {contact} at {organisation}.",
+    "source": "Ask {contact} at {organisation}.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.infoSheet.questionsEmail": {
+    "back": "Ask {contact} at {organisation}, or send an email to Thinkerwell at {email}.",
+    "source": "Ask {contact} at {organisation}, or write to Thinkerwell at {email}.",
+    "flag": true,
+    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
+  },
+  "pages.infoSheet.runBy": {
+    "back": "Thinkerwell is run by Justin Park and Nick Thiery. Thinkerwell is a student-led project, not a registered charity.",
+    "source": "Thinkerwell is run by Justin Park and Nick Thiery. It is a student-led project, not a registered charity.",
     "flag": true,
     "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
   },

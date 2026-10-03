@@ -30,11 +30,13 @@ describe('EducatorsPage', () => {
     const pilot = screen.getByRole('region', { name: 'Starting a pilot' });
     expect(within(pilot).getAllByRole('listitem').map((item) => item.querySelector('.tw-edu-check-title')?.textContent)).toEqual([
       'For organisations',
+      'Information sheet',
       'Consent form',
       'Code cards',
       'Set up this device',
     ]);
     expect(within(pilot).getByRole('link', { name: 'Read about pilots' })).toHaveAttribute('href', '/organisations');
+    expect(within(pilot).getByRole('link', { name: 'Print information sheets' })).toHaveAttribute('href', '/educators/information-sheet');
     expect(within(pilot).getByRole('link', { name: 'Print consent forms' })).toHaveAttribute('href', '/educators/consent-form');
     expect(within(pilot).getByRole('link', { name: 'Make code cards' })).toHaveAttribute('href', '/educators/code-cards');
     expect(within(pilot).getByRole('link', { name: 'Open the checklist' })).toHaveAttribute('href', '/educators/setup');
