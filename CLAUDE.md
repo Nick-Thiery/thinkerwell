@@ -141,5 +141,6 @@ Built in phase 6; see `docs/notes/phase-6.md`.
 - GitHub Actions (`.github/workflows/checks.yml`) runs every check (types, lint, unit tests, content, build, and the end-to-end tests at all three sizes) on each push to `main` and on every pull request. Keep it green.
 
 - Work in small steps: one feature per branch and pull request. Run the tests and the content check before committing.
+- Claude Code checks a lesson, a section check or an Indonesian file as soon as it edits one, with the same checkers as `npm run check:content` (`.claude/hooks/check_content_edit.py`, set in `.claude/settings.json`), and fixes any errors straight away. Run `sh scripts/setup-python.sh` once so the wordfreq checks run too.
 - Test on narrow screens (390px) and with the keyboard as you go, not at the end.
 - When a decision changes, update this file and `docs/PRODUCT.md` in the same pull request.
