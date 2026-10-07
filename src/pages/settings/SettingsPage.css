@@ -200,6 +200,11 @@
   align-self: flex-start;
 }
 
+/* Where the lessons have recordings, the device's voice comes after their sample, as the voice for what has none. */
+.tw-listen-voice-device {
+  margin-block-start: var(--space-3);
+}
+
 /* Like the design system's text field (TextField.css): a plain native list, at least 44px tall. */
 .tw-settings-select {
   inline-size: 100%;
@@ -378,4 +383,19 @@
   .tw-transfer-preview {
     padding: var(--space-4);
   }
+}
+
+/* "Lesson audio" (LessonAudioSetting.tsx): how much is on the device, and the download's progress. */
+.tw-lesson-audio {
+  align-items: stretch;
+}
+
+.tw-lesson-audio > .tw-btn {
+  align-self: flex-start;
+}
+
+.tw-lesson-audio-progress {
+  inline-size: 100%;
+  block-size: 12px;
+  accent-color: var(--ink);
 }
