@@ -14,6 +14,12 @@ Claude so it can fix the file straight away. Warnings stay quiet; `npm run
 check:content` still shows them. Any other file, or anything unexpected (no
 Python for the checkers, bad input), exits 0 and changes nothing.
 
+After a lesson or Indonesian file, it also runs `npm run check:audio`'s
+check (tools/audio/check.ts). When the edit changed text Listen reads, the
+recordings no longer match, and it reminds Claude (without blocking) that
+`npm run audio:generate` must record them again before the pull request:
+CI fails until it has (docs/notes/recorded-audio.md).
+
 Uses .venv/bin/python when it exists (sh scripts/setup-python.sh), like
 scripts/py.sh, so the wordfreq checks run too.
 """
@@ -48,6 +54,7 @@ def main() -> int:
 
     venv = os.path.join(root, ".venv", "bin", "python")
     python = venv if os.access(venv, os.X_OK) else "python3"
+    reminder = audio_reminder(root) if not rel.startswith("content/quizzes/") else ""
     try:
         done = subprocess.run(
             [python, *cmd], cwd=root, capture_output=True, text=True, timeout=60
@@ -55,6 +62,8 @@ def main() -> int:
     except Exception:
         return 0
     if done.returncode == 0:
+        if reminder:
+            print(json.dumps({"hookSpecificOutput": {"hookEventName": "PostToolUse", "additionalContext": reminder}}))
         return 0
 
     lines = (done.stdout + done.stderr).strip().splitlines()
@@ -68,7 +77,29 @@ def main() -> int:
         file=sys.stderr,
     )
     print("\n".join(shown), file=sys.stderr)
+    if reminder:
+        print(f"\n{reminder}", file=sys.stderr)
     return 2
+
+
+def audio_reminder(root: str) -> str:
+    """A reminder when Listen's recordings no longer match the lessons (tools/audio/check.ts), else ""."""
+    try:
+        done = subprocess.run(
+            ["node", "--experimental-strip-types", "--no-warnings", "tools/audio/check.ts"],
+            cwd=root, capture_output=True, text=True, timeout=60,
+        )
+    except Exception:
+        return ""
+    if done.returncode == 0:
+        return ""
+    lines = [l for l in done.stderr.strip().splitlines() if l.strip()][:8]
+    return (
+        "This edit changed text that Listen reads, so its recordings no longer match "
+        "(npm run check:audio, which CI runs, now fails). Before the pull request, run "
+        "`npm run audio:generate` (scripts/audio/README.md) and commit public/audio/, "
+        "tools/audio/manifest.json and src/audio/recordings.json:\n" + "\n".join(lines)
+    )
 
 
 if __name__ == "__main__":
