@@ -21,9 +21,9 @@ export interface ListenBarProps {
 
 /**
  * The controls shown while a reading is read aloud (the Listen tool),
- * above the reading card. Uses the device's own voice, so it works offline.
- * State and callbacks only: the Read stage reads with speechSynthesis
- * (src/pages/lesson/read/useListen.ts).
+ * above the reading card. State and callbacks only: the Read stage plays
+ * the part's recording, or reads with the device's voice where there is
+ * none (src/pages/lesson/read/useListen.ts, docs/notes/recorded-audio.md).
  */
 export function ListenBar({
   state,
