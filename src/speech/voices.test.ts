@@ -2,7 +2,7 @@ import { act, renderHook } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { ListenVoiceChoice } from '../storage/types';
 import { fakeVoice, mockSpeechSynthesis, restoreSpeechMocks } from '../test/speechMocks';
-import { getSpeechSynthesis, isChosenVoice, pickListenVoice, useDeviceVoices, useListenVoice, voiceChoice } from './voices';
+import { getSpeechSynthesis, isChosenVoice, isChromeOS, listenVoices, pickListenVoice, useDeviceVoices, useListenVoice, voiceChoice } from './voices';
 
 afterEach(() => restoreSpeechMocks());
 
@@ -31,6 +31,27 @@ describe('pickListenVoice', () => {
   it('reads older Android language tags (en_GB)', () => {
     const voice = fakeVoice('en_GB');
     expect(pickListenVoice([fakeVoice('en-ZA'), voice])).toBe(voice);
+  });
+});
+
+describe('on a Chromebook', () => {
+  const CHROMEBOOK = 'Mozilla/5.0 (X11; CrOS x86_64 16181.61.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36';
+
+  it('knows a Chromebook by its user agent', () => {
+    expect(isChromeOS(CHROMEBOOK)).toBe(true);
+    expect(isChromeOS('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36')).toBe(false);
+  });
+
+  it('never offers or uses a "Natural" voice there, even one marked as on the device, nor a chosen one', () => {
+    vi.spyOn(navigator, 'userAgent', 'get').mockReturnValue(CHROMEBOOK);
+    try {
+      const natural = fakeVoice('en-GB', { name: 'Chrome OS UK English 2 (Natural)' });
+      const own = fakeVoice('en-US', { name: 'Chrome OS US English 1' });
+      expect(listenVoices([natural, own])).toEqual([own]);
+      expect(pickListenVoice([natural, own], 'en', voiceChoice(natural))).toBe(own);
+    } finally {
+      vi.restoreAllMocks();
+    }
   });
 });
 

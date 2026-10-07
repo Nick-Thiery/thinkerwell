@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { pickListenVoice } from './voices';
-import { baseLang, rankListenVoices, soundsOnline, voiceQuality, type VoiceInfo } from './voiceRanking';
+import { baseLang, rankListenVoices, sendsTextAway, voiceQuality, type VoiceInfo } from './voiceRanking';
 
 // What each platform's browser lists, as far as docs/notes/listen-voices.md
 // could check it: names and voiceURIs in the shape each browser gives them.
@@ -88,8 +88,15 @@ const windowsEdge = [
   voice('Microsoft Susan - English (United Kingdom)', 'en-GB'),
 ];
 
-/** ChromeOS: its own voices, Android's (local and network) and eSpeak's. */
+/**
+ * ChromeOS: its own voices, Android's (local and network), eSpeak's, and
+ * Google's natural voices, which Google says send the text to Google, here
+ * marked as on the device, as a browser might.
+ */
 const chromeOS = [
+  voice('Google UK English 2 (Natural)', 'en-GB'),
+  voice('Google Bahasa Indonesia 1 (Natural)', 'id-ID'),
+  voice('Chrome OS UK English 2 (Natural)', 'en-GB'),
   voice('eSpeak English (Great Britain)', 'en-GB'),
   voice('Chrome OS US English 1', 'en-US', { isDefault: true }),
   voice('Chrome OS UK English 1', 'en-GB'),
@@ -117,7 +124,7 @@ describe('the ranking table', () => {
     expect(voiceQuality(voice('Daniel (Enhanced)', 'en-GB'))).toBe('high');
     expect(voiceQuality(voice('Daniel', 'en-GB', { uri: 'com.apple.voice.enhanced.en-GB.Daniel' }))).toBe('high');
     expect(voiceQuality(voice('Ava', 'en-US', { uri: 'com.apple.voice.premium.en-US.Ava' }))).toBe('high');
-    expect(voiceQuality(voice('Google UK English 2 (Natural)', 'en-GB'))).toBe('high');
+    expect(voiceQuality(voice('Microsoft Libby (Natural) - English (United Kingdom)', 'en-GB'))).toBe('high');
     expect(voiceQuality(voice('Some Neural Voice', 'en-GB'))).toBe('high');
     expect(voiceQuality(voice('Siri Voice 2', 'en-GB'))).toBe('high');
     expect(voiceQuality(voice('Daniel', 'en-GB', { uri: 'com.apple.voice.compact.en-GB.Daniel' }))).toBe('standard');
@@ -133,11 +140,19 @@ describe('the ranking table', () => {
     expect(voiceQuality(voice('Samantha', 'en-US', { uri: 'com.apple.voice.super-compact.en-US.Samantha' }))).toBe('low');
   });
 
-  it('never uses a voice whose name says it is online, whatever localService says', () => {
-    expect(soundsOnline(voice('Microsoft Libby Online (Natural) - English (United Kingdom)', 'en-GB'))).toBe(true);
-    expect(soundsOnline(voice('Android Speech Recognition and Synthesis from Google en-gb-x-gba-network', 'en-GB'))).toBe(true);
-    expect(soundsOnline(voice('Android Speech Recognition and Synthesis from Google en-gb-x-gba-local', 'en-GB'))).toBe(false);
+  it('never uses a voice documented as sending its text away, whatever localService says', () => {
+    expect(sendsTextAway(voice('Microsoft Libby Online (Natural) - English (United Kingdom)', 'en-GB'))).toBe(true);
+    expect(sendsTextAway(voice('Android Speech Recognition and Synthesis from Google en-gb-x-gba-network', 'en-GB'))).toBe(true);
+    expect(sendsTextAway(voice('Android Speech Recognition and Synthesis from Google en-gb-x-gba-local', 'en-GB'))).toBe(false);
+    // Google's own voices: Chrome's on a laptop, and its natural voices (sent to Google, its Chromebook help says).
+    expect(sendsTextAway(voice('Google UK English Female', 'en-GB'))).toBe(true);
+    expect(sendsTextAway(voice('Google US English 5 (Natural)', 'en-US'))).toBe(true);
+    // On a Chromebook any "Natural" voice; elsewhere a natural voice on the device is a good one.
+    expect(sendsTextAway(voice('Chrome OS UK English 2 (Natural)', 'en-GB'), { chromeOS: true })).toBe(true);
+    expect(sendsTextAway(voice('Microsoft Libby (Natural) - English (United Kingdom)', 'en-GB'))).toBe(false);
+    expect(sendsTextAway(voice('Microsoft Libby (Natural) - English (United Kingdom)', 'en-GB'), { chromeOS: true })).toBe(true);
     expect(rankListenVoices([voice('Microsoft Libby Online (Natural) - English (United Kingdom)', 'en-GB')])).toEqual([]);
+    expect(rankListenVoices([voice('Google UK English Female', 'en-GB'), voice('Google US English 5 (Natural)', 'en-US')])).toEqual([]);
   });
 
   it('reads language tags the way each browser writes them', () => {
@@ -197,6 +212,13 @@ describe('the best voice on each platform', () => {
     expect(pickListenVoice(samsungInternet, 'id-ID')?.name).toBe('Indonesia Indonesia');
   });
 
+  it('Windows: a natural voice that runs on the device, where a browser lists one, comes first', () => {
+    const libby = voice('Microsoft Libby (Natural) - English (United Kingdom)', 'en-GB');
+    expect(pickListenVoice([...windowsChrome, libby])).toBe(libby);
+    // Chrome's Google voices stay out even if a browser called them local.
+    expect(names(rankListenVoices([voice('Google UK English Female', 'en-GB'), ...windowsChrome]))[0]).toBe('Microsoft Hazel - English (United Kingdom)');
+  });
+
   it('Chrome on Windows: a British Windows voice, never Google’s online voices', () => {
     expect(names(rankListenVoices(windowsChrome))).toEqual([
       'Microsoft Hazel - English (United Kingdom)',
@@ -213,14 +235,16 @@ describe('the best voice on each platform', () => {
     expect(pickListenVoice(windowsEdge, 'id-ID')).toBeNull();
   });
 
-  it('ChromeOS: its own or Android’s local voice before eSpeak, and never a "-network" voice', () => {
-    expect(names(rankListenVoices(chromeOS))).toEqual([
+  it('ChromeOS: its own or Android’s local voice before eSpeak, never a natural voice (sent to Google) or a "-network" one', () => {
+    expect(names(rankListenVoices(chromeOS, 'en', { chromeOS: true }))).toEqual([
       'Chrome OS UK English 1',
       'Android Speech Recognition and Synthesis from Google en-gb-x-gba-local',
       'Chrome OS US English 1',
       'eSpeak English (Great Britain)',
     ]);
-    // eSpeak is used only when there is nothing else.
-    expect(pickListenVoice(chromeOS, 'id-ID')?.name).toBe('eSpeak Indonesian');
+    // eSpeak is used only when there is nothing else; Google's natural Indonesian voice never.
+    expect(rankListenVoices(chromeOS, 'id-ID', { chromeOS: true }).map((each) => each.name)).toEqual(['eSpeak Indonesian']);
+    // Google's natural voices are out on any device; ChromeOS's own "Natural" ones on a Chromebook.
+    expect(names(rankListenVoices(chromeOS))).not.toContain('Google UK English 2 (Natural)');
   });
 });

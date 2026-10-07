@@ -5,6 +5,7 @@
 export {
   getSpeechSynthesis,
   isChosenVoice,
+  isChromeOS,
   listenVoices,
   pickListenVoice,
   useDeviceVoices,
@@ -12,7 +13,7 @@ export {
   useListenVoiceState,
   voiceChoice,
 } from './voices';
-export { rankListenVoices, voiceQuality, type VoiceQuality } from './voiceRanking';
+export { rankListenVoices, sendsTextAway, voiceQuality, type VoiceContext, type VoiceQuality } from './voiceRanking';
 export {
   listenLanguages,
   listenVoiceFor,

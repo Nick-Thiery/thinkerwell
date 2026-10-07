@@ -26,7 +26,9 @@
  *   Chrome's "Google …" voices use the internet (`localService` false) and
  *   are never used.
  * - ChromeOS: its own voices, Android's ("… en-gb-x-gba-local" or
- *   "…-network") and eSpeak's ("eSpeak English"), which sound very robotic.
+ *   "…-network") and eSpeak's ("eSpeak English"), which sound very robotic,
+ *   and Google's natural voices, which Google's help says send the text to
+ *   Google: never used, whatever `localService` says (sendsTextAway).
  *
  * The order: quality first (QUALITY below; novelty voices are never used at
  * all), then the region (British English first, the course's spelling),
@@ -91,9 +93,11 @@ const ELOQUENCE_NAMES = new Set(['eddy', 'flo', 'grandma', 'grandpa', 'jacques',
 const QUALITY: ReadonlyArray<{ quality: VoiceQuality; test: (voice: VoiceInfo, base: string) => boolean }> = [
   {
     // A downloaded higher-quality voice: Apple's "(Enhanced)" and "(Premium)"
-    // (in Safari, "com.apple.voice.enhanced…" and "…premium…"), Microsoft's
-    // and Google's "Natural", other "Neural" voices, and "Siri" voices where
-    // a browser lists them.
+    // (in Safari, "com.apple.voice.enhanced…" and "…premium…"), "Natural"
+    // voices that run on the device (Windows' own, where a browser lists
+    // them; Google's and ChromeOS's natural voices never get this far:
+    // sendsTextAway), other "Neural" voices, and "Siri" voices where a
+    // browser lists them.
     quality: 'high',
     test: (voice) => /\b(premium|enhanced|natural|neural|siri)\b/i.test(voice.name) || /\b(premium|enhanced)\b/i.test(voice.voiceURI),
   },
@@ -114,13 +118,27 @@ function baseName(name: string): string {
     .toLowerCase();
 }
 
+/** Where the voices are listed: on a Chromebook (its user agent says "CrOS"), "Natural" means Google's servers. */
+export interface VoiceContext {
+  chromeOS?: boolean;
+}
+
 /**
- * A voice whose name says it needs the internet, whatever `localService`
- * says: Edge's "… Online (Natural)" voices, and Google's Android voices
- * ending "-network" (ChromeOS can list those too). Never used.
+ * A voice that sends what it reads off the device, by its name, whatever
+ * `localService` says (CLAUDE.md: Listen never sends what a learner reads
+ * anywhere). Never used, never offered:
+ * - "Online" in the name: Edge's "… Online (Natural)" voices;
+ * - "-network" at the end: Google's Android voices that use its servers
+ *   (ChromeOS can list those too);
+ * - a name starting "Google": Chrome's own voices on a laptop ("Google UK
+ *   English Female", which need the internet) and Google's natural voices
+ *   ("Google UK English 2 (Natural)"), whose text Google's Chromebook help
+ *   says is sent to Google;
+ * - on ChromeOS, any "Natural" voice, for the same reason, whatever it is called.
  */
-export function soundsOnline(voice: VoiceInfo): boolean {
-  return /\bonline\b|-network\b/i.test(voice.name);
+export function sendsTextAway(voice: VoiceInfo, { chromeOS = false }: VoiceContext = {}): boolean {
+  const name = voice.name.trim();
+  return /\bonline\b|-network\b/i.test(name) || /^google\b/i.test(name) || (chromeOS && /\bnatural\b/i.test(name));
 }
 
 /** How good `voice` is likely to sound, or null for a novelty voice that is never used. */
@@ -178,16 +196,17 @@ const QUALITY_ORDER: Record<VoiceQuality, number> = { high: 0, standard: 1, low:
 /**
  * The voices Listen may use for `speechLang` ("en", "en-US", "id-ID"), best
  * first: on the device (`localService`), in that language, not a novelty
- * voice and not one whose name says it is online. The same voice listed
- * twice (name and region) appears once.
+ * voice and not one that sends its text away (sendsTextAway; `context`
+ * says whether this is a Chromebook). The same voice listed twice (name
+ * and region) appears once.
  */
-export function rankListenVoices<V extends VoiceInfo>(voices: readonly V[], speechLang = 'en'): V[] {
+export function rankListenVoices<V extends VoiceInfo>(voices: readonly V[], speechLang = 'en', context: VoiceContext = {}): V[] {
   const base = baseLang(speechLang);
   const usable = voices
     .map((voice, index) => ({ voice, index, quality: voiceQuality(voice) }))
     .filter(
       (each): each is { voice: V; index: number; quality: VoiceQuality } =>
-        each.voice.localService && baseLang(each.voice.lang) === base && each.quality !== null && !soundsOnline(each.voice),
+        each.voice.localService && baseLang(each.voice.lang) === base && each.quality !== null && !sendsTextAway(each.voice, context),
     );
   // Safari says every voice is the default, which tells nothing: then it isn't used.
   const defaultMeansSomething = usable.some((each) => !each.voice.default);

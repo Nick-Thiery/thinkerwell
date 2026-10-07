@@ -28,13 +28,18 @@ export function getSpeechSynthesis(): SpeechSynthesis | null {
   return synth && typeof synth.speak === 'function' ? synth : null;
 }
 
+/** True on a Chromebook, where "Natural" voices send their text to Google (./voiceRanking.ts, sendsTextAway). */
+export function isChromeOS(userAgent: string = typeof navigator === 'undefined' ? '' : navigator.userAgent): boolean {
+  return /\bCrOS\b/.test(userAgent);
+}
+
 /**
  * The voices Listen may use for the lesson language `speechLang` ("en",
  * "id-ID"), best first: on the device, in that language, never a novelty
- * voice. Settings offers exactly these.
+ * voice and never one that sends its text away. Settings offers exactly these.
  */
 export function listenVoices(voices: readonly SpeechSynthesisVoice[], speechLang = 'en'): SpeechSynthesisVoice[] {
-  return rankListenVoices(voices, speechLang);
+  return rankListenVoices(voices, speechLang, { chromeOS: isChromeOS() });
 }
 
 /** True when `voice` is the one an educator chose (`choice`). */
