@@ -11,6 +11,21 @@
     "young people"); the course description and one section description in
     content/course.json are.
   Use this file as the reference for any new public-facing copy.
+
+  Changed on 7 October 2026 (the team's "Our mission" brief):
+  - About's "What Thinkerwell is" card is now "Our mission", holding only
+    this approved paragraph, word for word:
+    "Thinkerwell began with a love of social studies and a question: how
+    can more youth have the chance to explore the world they live in? We
+    built a free digital platform to make digital learning tools and social
+    studies education accessible to youth facing barriers to education. Our
+    goal is to help learners ask questions, grow their critical thinking
+    skills, explore diverse perspectives, and share their own ideas."
+    The course description, the pilot status and the charity line are off
+    About; For organisations and the consent form still carry the last two.
+  - Public copy calls Thinkerwell a "platform", never a "project" ("a
+    student-led platform"). Where this guide below says "project" about
+    Thinkerwell, read "platform".
 -->
 
 # Thinkerwell public copy: consistency and simplification handoff

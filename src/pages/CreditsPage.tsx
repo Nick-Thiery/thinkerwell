@@ -34,6 +34,8 @@ const SOFTWARE: ReadonlyArray<{ name: string; licence: string; url: string }> = 
   { name: 'React', licence: 'MIT License', url: 'https://react.dev' },
   { name: 'React Router', licence: 'MIT License', url: 'https://reactrouter.com' },
   { name: 'Lucide icons', licence: 'ISC License', url: 'https://lucide.dev' },
+  // The LinkedIn logo on About comes from Font Awesome Free's brand icons.
+  { name: 'Font Awesome Free', licence: 'CC BY 4.0', url: 'https://fontawesome.com/license/free' },
   { name: 'idb', licence: 'ISC License', url: 'https://github.com/jakearchibald/idb' },
   { name: 'Workbox', licence: 'MIT License', url: 'https://developer.chrome.com/docs/workbox' },
   { name: 'Fontsource', licence: 'MIT License', url: 'https://fontsource.org' },

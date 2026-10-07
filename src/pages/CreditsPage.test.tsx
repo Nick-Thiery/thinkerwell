@@ -56,7 +56,7 @@ describe('CreditsPage', () => {
     }
     expect(screen.getByRole('link', { name: /Read the SIL Open Font License/ })).toHaveAttribute('href', 'https://openfontlicense.org');
     const software = screen.getByRole('region', { name: 'Software' });
-    for (const name of ['React', 'React Router', 'Lucide icons', 'idb', 'Workbox', 'Fontsource']) {
+    for (const name of ['React', 'React Router', 'Lucide icons', 'Font Awesome Free', 'idb', 'Workbox', 'Fontsource']) {
       expect(within(software).getByRole('link', { name: new RegExp(`^${name}\\s*\\(`) })).toBeInTheDocument();
     }
     expect(screen.getByText(/Thinkerwell is not endorsed by the United Nations/)).toBeInTheDocument();

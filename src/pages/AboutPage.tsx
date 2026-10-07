@@ -1,8 +1,8 @@
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
 import { Link } from 'react-router';
 import { creditsPath } from '../app/lessonUrls';
 import { usePageTitle } from '../app/usePageTitle';
 import { Icon, Mascot } from '../components/ds';
-import { useCatalog } from '../content/useCatalog';
 import { useI18n } from '../i18n';
 import './AboutPage.css';
 
@@ -22,23 +22,63 @@ const GOALS: Goal[] = [
   { src: '/images/sdg-17.png', titleKey: 'goal17Title', bodyKey: 'goal17Body', altKey: 'goal17Alt' },
 ];
 
+/** The team's LinkedIn profiles, shown under their names. */
+const LINKEDIN = {
+  justin: 'https://www.linkedin.com/in/justin-park-a567b03a5/',
+  nick: 'https://www.linkedin.com/in/nicholasthiery/',
+} as const;
+
 /**
- * About (docs/screens/About.dc.html): what Thinkerwell is, how it connects
- * to the UN goals, and who makes it. The wording follows the public copy
- * guide (docs/content/PUBLIC_COPY.md): one mission statement, the pilot
- * status, and that Thinkerwell is not a registered charity or nonprofit
- * (CLAUDE.md rule 8). The UN icons carry a no-endorsement note.
+ * LinkedIn's logo, from Font Awesome Free's brand icons (CC BY 4.0, credited
+ * on /credits). Drawn inline from the package's path, so nothing is fetched
+ * from LinkedIn or anywhere else. In ink, one of the colours LinkedIn's
+ * brand rules allow for its logo.
+ */
+function LinkedInLogo() {
+  const [width, height, , , path] = faLinkedin.icon;
+  return (
+    <svg
+      className="tw-about-linkedin-logo"
+      viewBox={`0 0 ${width} ${height}`}
+      width={20}
+      height={20}
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d={Array.isArray(path) ? path.join(' ') : path} fill="currentColor" />
+    </svg>
+  );
+}
+
+/** "LinkedIn", under a team member's name; opens their profile in a new tab. */
+function LinkedInLink({ href, name }: { href: string; name: string }) {
+  const { t } = useI18n();
+  return (
+    <a href={href} target="_blank" rel="noreferrer" className="tw-about-linkedin" aria-label={t('pages.about.linkedinLabel', { name })}>
+      <LinkedInLogo />
+      <span translate="no">{t('pages.about.linkedin')}</span>
+    </a>
+  );
+}
+
+/**
+ * About (docs/screens/About.dc.html): the mission, how it connects to the
+ * UN goals, and who makes it. The mission card carries the team's approved
+ * mission statement and nothing else (October 2026); what the course is
+ * lives on Home, the course page and For organisations, and the pilot status
+ * and that Thinkerwell is not a registered charity or nonprofit (CLAUDE.md
+ * rule 8) live on For organisations and the consent form. The UN icons
+ * carry a no-endorsement note.
  *
  * Both team members are shown with their photos (public/images/, made
  * from the originals in docs/design-system/assets/ by
- * scripts/optimise_images.py).
+ * scripts/optimise_images.py) and a link to their LinkedIn profiles.
  *
  * The page ends with a link to Credits (/credits), which lists the lessons'
  * sources, the videos, the fonts, the pictures and the software in full.
  */
 export function AboutPage() {
-  const { t, tx, contentLang } = useI18n();
-  const catalog = useCatalog();
+  const { t } = useI18n();
   usePageTitle(t('pages.about.title'));
 
   return (
@@ -53,17 +93,11 @@ export function AboutPage() {
         </div>
       </header>
 
-      <section aria-labelledby="about-what" className="tw-about-card tw-about-what">
-        <h2 id="about-what" className="h2">
-          {t('pages.about.whatTitle')}
+      <section aria-labelledby="about-mission" className="tw-about-card tw-about-mission">
+        <h2 id="about-mission" className="h2">
+          {t('pages.about.missionTitle')}
         </h2>
-        <p className="body-lg">
-          {tx('pages.about.whatBody', {
-            course: <span {...contentLang}>{catalog.getCourse().course.title}</span>,
-            lessons: catalog.getLessons().length,
-          })}
-        </p>
-        <p className="small tw-about-status">{t('pages.about.whatStatus')}</p>
+        <p className="body-lg">{t('pages.about.missionBody')}</p>
       </section>
 
       <section aria-labelledby="about-goals" className="tw-about-card tw-about-goals">
@@ -99,6 +133,7 @@ export function AboutPage() {
             <h3 id="about-justin" className="h2">
               {t('pages.about.justinName')}
             </h3>
+            <LinkedInLink href={LINKEDIN.justin} name={t('pages.about.justinName')} />
             <p>{t('pages.about.justinBio')}</p>
           </article>
           <article aria-labelledby="about-nick" className="tw-about-person">
@@ -113,6 +148,7 @@ export function AboutPage() {
             <h3 id="about-nick" className="h2">
               {t('pages.about.nickName')}
             </h3>
+            <LinkedInLink href={LINKEDIN.nick} name={t('pages.about.nickName')} />
             <p>{t('pages.about.nickBio')}</p>
           </article>
         </div>

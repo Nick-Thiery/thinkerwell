@@ -19,7 +19,7 @@ describe('For organisations', () => {
   it('says what Thinkerwell is, and plainly that it is not a registered charity', () => {
     renderAt('/organisations', <OrganisationsPage />);
     expect(screen.getByRole('heading', { level: 1, name: 'For organisations' })).toBeInTheDocument();
-    expect(screen.getByText(/Thinkerwell is a student-led project working to expand access to free digital social studies learning/)).toBeInTheDocument();
+    expect(screen.getByText(/Thinkerwell is a student-led platform working to expand access to free digital social studies learning/)).toBeInTheDocument();
     expect(screen.getByText(/It is not a registered charity or nonprofit/)).toBeInTheDocument();
     expect(screen.getByText(/One course, Exploring Our World: 24 lessons .* for learners aged about 10 to 17/)).toBeInTheDocument();
   });
@@ -129,7 +129,7 @@ describe('the consent form', () => {
     expect(choice).toHaveTextContent(/If you say no to the study, your child can still use Thinkerwell in class/);
     expect(choice).toHaveTextContent(/change your mind at any time, even after the pilot: tell .*, and your child's answers are deleted/);
     expect(choice).toHaveTextContent(/Your child can say no too, and their no counts\./);
-    expect(parent.getByText(/student-led project, not a registered charity/)).toBeInTheDocument();
+    expect(parent.getByText(/student-led platform, not a registered charity/)).toBeInTheDocument();
     // No email address yet: "Questions?" sends parents to the organisation, with no placeholder.
     expect(parent.getByText(/^Questions\? Ask/)).toHaveTextContent(/^Questions\? Ask organisation's name\.$/);
     expect(pages()[0]!.textContent).not.toContain('[CONTACT EMAIL]');
@@ -233,7 +233,7 @@ describe('the information sheet', () => {
     expect(choice).toHaveTextContent(/even after the pilot\. Tell a teacher, and your child's answers are deleted\./);
     expect(choice).toHaveTextContent(/Your child can also say no, and their no counts\./);
     const questions = part(sheetPage, 'Questions');
-    expect(questions).toHaveTextContent(/Thinkerwell is run by Justin Park and Nick Thiery\. It is a student-led project, not a registered charity\./);
+    expect(questions).toHaveTextContent(/Thinkerwell is run by Justin Park and Nick Thiery\. It is a student-led platform, not a registered charity\./);
     // No email address yet (src/app/contact.ts): no placeholder, and no "write to Thinkerwell".
     expect(questions).not.toHaveTextContent(/write to Thinkerwell|\[/);
   });
