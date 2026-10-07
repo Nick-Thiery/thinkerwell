@@ -84,15 +84,18 @@ describe('RecordedPlayer', () => {
     expect(media.paused).toBe(false);
   });
 
-  it('starts from a later piece, waiting for the recording’s length before seeking', () => {
+  it('starts from a later piece before the recording has loaded, as Safari needs, and seeks again once it has', () => {
     const { media, player } = setup();
     media.readyState = 0;
     player.play(recording(), 2);
-    expect(media.played).toEqual([]);
+    // play() isn't held back: Safari loads nothing until it is called.
+    expect(media.played).toEqual(['blob:part-1']);
+    expect(media.currentTime).toBe(4.35);
+    // Loading put the clock back to the start: once the length is known, it seeks again.
+    media.currentTime = 0;
     media.readyState = 1;
     media.emit('loadedmetadata');
     expect(media.currentTime).toBe(4.35);
-    expect(media.played).toEqual(['blob:part-1']);
   });
 
   it('finishes at the end of the recording, and reports a broken file', () => {

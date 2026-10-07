@@ -151,19 +151,31 @@ export class RecordedPlayer {
     this.report(piece);
     if (this.media.src !== recording.url) this.media.src = recording.url;
     setSpeed(this.media, this.rate);
-    const go = () => {
-      this.media.removeEventListener('loadedmetadata', go);
-      if (generation !== this.generation) return;
-      this.media.currentTime = at;
-      Promise.resolve(this.media.play()).catch((error: unknown) => {
-        // A newer play, pause or src change interrupts this one: that is ours, not a failure.
-        if (generation === this.generation && (error as { name?: string } | null)?.name !== 'AbortError') this.failed();
-      });
-      this.timer = setInterval(() => this.track(), TRACK_MS);
+    const seek = () => {
+      if (Math.abs(this.media.currentTime - at) > 0.05) this.media.currentTime = at;
     };
-    // HAVE_METADATA: seeking works once the element knows the recording's length.
-    if (this.media.readyState >= 1) go();
-    else this.media.addEventListener('loadedmetadata', go);
+    if (this.media.readyState >= 1) {
+      seek();
+    } else {
+      // Not loaded yet. Safari on iPads and iPhones loads nothing until play(), so play() isn't
+      // held back for it: the start is set now (browsers keep it as where to start), and again
+      // once the recording's length is known, before anything is heard.
+      try {
+        this.media.currentTime = at;
+      } catch {
+        // Some browsers refuse a seek before the length is known; the listener below does it.
+      }
+      const loaded = () => {
+        this.media.removeEventListener('loadedmetadata', loaded);
+        if (generation === this.generation) seek();
+      };
+      this.media.addEventListener('loadedmetadata', loaded);
+    }
+    Promise.resolve(this.media.play()).catch((error: unknown) => {
+      // A newer play, pause or src change interrupts this one: that is ours, not a failure.
+      if (generation === this.generation && (error as { name?: string } | null)?.name !== 'AbortError') this.failed();
+    });
+    this.timer = setInterval(() => this.track(), TRACK_MS);
   }
 
   private report(index: number | null): void {

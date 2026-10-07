@@ -213,7 +213,7 @@ export function ReadStage() {
       {/* Plays the recordings; never shown (the ListenBar is the controls). Its captions are the
           reading itself: the part on screen, with the sentence being played marked. */}
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-      <audio ref={audioRef} preload="none" hidden className="tw-read-audio" />
+      <audio ref={audioRef} preload="auto" hidden className="tw-read-audio" />
 
       {keyWordsOpen ? <KeyWordsPanel id={keyWordsId} glossary={glossary} /> : null}
 
