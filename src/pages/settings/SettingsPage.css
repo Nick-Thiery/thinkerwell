@@ -191,6 +191,77 @@
   border-block-start: 0;
 }
 
+/* "Listen voice" (ListenVoiceSetting.tsx): a voice for each lessons' language, then how to get a clearer one. */
+.tw-listen-voice {
+  align-items: stretch;
+}
+
+.tw-listen-voice > .tw-btn {
+  align-self: flex-start;
+}
+
+/* Like the design system's text field (TextField.css): a plain native list, at least 44px tall. */
+.tw-settings-select {
+  inline-size: 100%;
+  max-inline-size: 100%;
+  min-block-size: 52px;
+  padding-inline: var(--space-4);
+  border-radius: var(--radius-md);
+  border: 2px solid var(--line-strong);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.tw-settings-select:disabled {
+  cursor: not-allowed;
+  color: var(--ink-muted);
+}
+
+/* A voice's name comes from the device: a long one wraps rather than widening the page. */
+.tw-listen-voice .tw-settings-help {
+  overflow-wrap: anywhere;
+}
+
+.tw-listen-voice-alone {
+  padding-inline-start: 0;
+}
+
+.tw-listen-voice-better {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-block-start: var(--space-4);
+  border-block-start: 1px solid var(--line);
+}
+
+.tw-listen-voice-h3 {
+  margin: 0;
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.tw-listen-voice-devices {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.tw-listen-voice-devices li {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
 /* "Move work to another device" (WorkFileSetting.tsx): save to a file, load from one. */
 .tw-transfer-alone {
   padding-inline-start: 0;

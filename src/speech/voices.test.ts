@@ -1,7 +1,8 @@
 import { act, renderHook } from '@testing-library/react';
-import { afterEach, describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+import type { ListenVoiceChoice } from '../storage/types';
 import { fakeVoice, mockSpeechSynthesis, restoreSpeechMocks } from '../test/speechMocks';
-import { getSpeechSynthesis, pickListenVoice, useListenVoice } from './voices';
+import { getSpeechSynthesis, isChosenVoice, isChromeOS, listenVoices, pickListenVoice, useDeviceVoices, useListenVoice, voiceChoice } from './voices';
 
 afterEach(() => restoreSpeechMocks());
 
@@ -16,18 +17,69 @@ describe('pickListenVoice', () => {
     expect(pickListenVoice([fakeVoice('fr-FR'), fakeVoice('en-IN')])?.lang).toBe('en-IN');
   });
 
-  it("prefers the device's default English voice, then British English", () => {
+  it("prefers British English, and the device's default only breaks ties", () => {
     const us = fakeVoice('en-US');
     const gb = fakeVoice('en-GB');
     const au = fakeVoice('en-AU', { isDefault: true });
-    expect(pickListenVoice([us, gb, au])).toBe(au);
-    expect(pickListenVoice([us, gb])).toBe(gb);
+    expect(pickListenVoice([us, gb, au])).toBe(gb);
+    expect(pickListenVoice([us, au])).toBe(us);
     expect(pickListenVoice([fakeVoice('en-GB', { local: false }), us])).toBe(us);
+    const gbDefault = fakeVoice('en-GB', { name: 'Second en-GB', isDefault: true });
+    expect(pickListenVoice([us, gb, gbDefault])).toBe(gbDefault);
   });
 
   it('reads older Android language tags (en_GB)', () => {
     const voice = fakeVoice('en_GB');
     expect(pickListenVoice([fakeVoice('en-ZA'), voice])).toBe(voice);
+  });
+});
+
+describe('on a Chromebook', () => {
+  const CHROMEBOOK = 'Mozilla/5.0 (X11; CrOS x86_64 16181.61.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36';
+
+  it('knows a Chromebook by its user agent', () => {
+    expect(isChromeOS(CHROMEBOOK)).toBe(true);
+    expect(isChromeOS('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36')).toBe(false);
+  });
+
+  it('never offers or uses a "Natural" voice there, even one marked as on the device, nor a chosen one', () => {
+    vi.spyOn(navigator, 'userAgent', 'get').mockReturnValue(CHROMEBOOK);
+    try {
+      const natural = fakeVoice('en-GB', { name: 'Chrome OS UK English 2 (Natural)' });
+      const own = fakeVoice('en-US', { name: 'Chrome OS US English 1' });
+      expect(listenVoices([natural, own])).toEqual([own]);
+      expect(pickListenVoice([natural, own], 'en', voiceChoice(natural))).toBe(own);
+    } finally {
+      vi.restoreAllMocks();
+    }
+  });
+});
+
+describe('the voice chosen in Settings', () => {
+  const daniel = fakeVoice('en-GB', { name: 'Daniel (Enhanced)' });
+  const karen = fakeVoice('en-AU', { name: 'Karen' });
+  const eddy = fakeVoice('en-US', { name: 'Eddy (English (United States))' });
+
+  it('wins over the ranking', () => {
+    expect(pickListenVoice([daniel, karen, eddy])).toBe(daniel);
+    expect(pickListenVoice([daniel, karen, eddy], 'en', voiceChoice(karen))).toBe(karen);
+    // Even a voice the ranking puts last, when an educator chose it.
+    expect(pickListenVoice([daniel, karen, eddy], 'en', voiceChoice(eddy))).toBe(eddy);
+  });
+
+  it("falls back to the best voice when the chosen one isn't on this device", () => {
+    const gone = { name: 'Zoe (Premium)', voiceURI: 'Zoe (Premium)', lang: 'en-US' };
+    expect(pickListenVoice([daniel, karen], 'en', gone)).toBe(daniel);
+    // Nor when it is here but can't be used: online now, or in another language.
+    const online = fakeVoice('en-US', { name: 'Karen', local: false });
+    expect(pickListenVoice([daniel, online], 'en', voiceChoice(karen))).toBe(daniel);
+    expect(pickListenVoice([daniel, karen], 'id-ID', voiceChoice(karen))).toBeNull();
+  });
+
+  it('is found again by its name and voiceURI', () => {
+    expect(isChosenVoice(karen, voiceChoice(karen))).toBe(true);
+    expect(isChosenVoice(karen, { ...voiceChoice(karen), voiceURI: 'other' })).toBe(false);
+    expect(voiceChoice(karen)).toEqual({ name: 'Karen', voiceURI: 'Karen', lang: 'en-AU' });
   });
 });
 
@@ -47,6 +99,46 @@ describe('useListenVoice', () => {
     expect(result.current).toBe(voice);
     act(() => speech.setVoices([fakeVoice('en-US', { local: false })]));
     expect(result.current).toBeNull();
+  });
+
+  it('keeps the same voice object when the browser lists the same voices again, so reading never restarts', () => {
+    const speech = mockSpeechSynthesis([fakeVoice('en-GB', { name: 'Daniel' })]);
+    const { result } = renderHook(() => useListenVoice());
+    const first = result.current;
+    expect(first?.name).toBe('Daniel');
+    // New objects with the same details, as some browsers give on every getVoices().
+    act(() => speech.setVoices([fakeVoice('en-GB', { name: 'Daniel' }), fakeVoice('en-US', { name: 'Samantha' })]));
+    expect(result.current).toBe(first);
+  });
+
+  it('uses the chosen voice, and the best one again when the choice is cleared', () => {
+    const daniel = fakeVoice('en-GB', { name: 'Daniel' });
+    const samantha = fakeVoice('en-US', { name: 'Samantha' });
+    mockSpeechSynthesis([samantha, daniel]);
+    const initialProps: { chosen: ListenVoiceChoice | null } = { chosen: voiceChoice(samantha) };
+    const { result, rerender } = renderHook(({ chosen }) => useListenVoice('en', chosen), { initialProps });
+    expect(result.current).toBe(samantha);
+    rerender({ chosen: null });
+    expect(result.current).toBe(daniel);
+  });
+});
+
+describe('useDeviceVoices', () => {
+  it('says the list is settled at once without speech, and after the last re-read with it', () => {
+    expect(renderHook(() => useDeviceVoices()).result.current).toEqual({ voices: [], settled: true });
+    vi.useFakeTimers();
+    try {
+      mockSpeechSynthesis([fakeVoice('en-GB')]);
+      const { result } = renderHook(() => useDeviceVoices());
+      expect(result.current.settled).toBe(false);
+      expect(result.current.voices).toHaveLength(1);
+      act(() => {
+        vi.advanceTimersByTime(3000);
+      });
+      expect(result.current.settled).toBe(true);
+    } finally {
+      vi.useRealTimers();
+    }
   });
 });
 

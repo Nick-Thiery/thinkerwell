@@ -2,9 +2,29 @@
 // APIs, wrapped so the lesson stages stay simple. Nothing here sends a
 // learner's voice anywhere unless an educator allows online speech-to-text.
 // See CLAUDE.md ("Listen, Say it and Record") and docs/notes/phase-5.md.
-export { getSpeechSynthesis, pickListenVoice, useListenVoice, useListenVoiceState } from './voices';
-export { speechCheckFor, speechCheckPatch, speechLangFor } from './language';
-export { LISTEN_RATES, ReadAloudPlayer, type ReadAloudCallbacks } from './readAloud';
+export {
+  getSpeechSynthesis,
+  isChosenVoice,
+  isChromeOS,
+  listenVoices,
+  pickListenVoice,
+  useDeviceVoices,
+  useListenVoice,
+  useListenVoiceState,
+  voiceChoice,
+} from './voices';
+export { rankListenVoices, sendsTextAway, voiceQuality, type VoiceContext, type VoiceQuality } from './voiceRanking';
+export {
+  listenLanguages,
+  listenVoiceFor,
+  listenVoiceKey,
+  listenVoicePatch,
+  speechCheckFor,
+  speechCheckPatch,
+  speechLangFor,
+} from './language';
+export { LISTEN_SAMPLES, listenSample, speakSample } from './sample';
+export { LISTEN_RATES, ReadAloudPlayer, type ListenItem, type ListenPiece, type ReadAloudCallbacks } from './readAloud';
 export {
   DICTATION_LANG,
   createRecognition,

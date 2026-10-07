@@ -60,7 +60,7 @@ English-only assumptions fixed on the way:
 
 When the interface is in another language, everything from `content/` carries `lang="en"`, and `dir="ltr"` in a right-to-left page (`contentLang` from `useI18n()`, or `<En>` inside a message). Screen readers then read it as English, and it keeps its left-to-right layout. English pages get no extra markup at all. Interface text inside course text (a glossary word's popover inside a reading) is put back with `uiLang`. The wordmark and the avatar initials are `translate="no"`.
 
-- Listen reads with an English on-device voice whatever the interface language, and sets each utterance's `lang` to it (`src/speech/voices.ts`, tested with a Persian default voice). Say it always listens for `en-US`.
+- Listen reads with an English on-device voice whatever the interface language, and sets each utterance's `lang` to it (`src/speech/voices.ts`, tested with a Persian default voice; which English voice: `docs/notes/listen-voices.md`). Say it always listens for `en-US`.
 - The practice options ("I practised with a partner") and the fiction label come from `content/course.json`, so they are course text and stay English. Moving them to en.json would make them translatable: a decision for Justin and Nick.
 - `ds.course.sectionName.*` in en.json names a section only where a page has no name from the content; the course pages show the content's English section names.
 

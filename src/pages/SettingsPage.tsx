@@ -4,6 +4,7 @@ import { usePageTitle } from '../app/usePageTitle';
 import { useI18n } from '../i18n';
 import { useLearnerSession } from '../session';
 import { LanguageSetting } from './settings/LanguageSetting';
+import { ListenVoiceSetting } from './settings/ListenVoiceSetting';
 import { OfflineSetting } from './settings/OfflineSetting';
 import { ReadingSetting } from './settings/ReadingSetting';
 import { SpeechToTextSetting } from './settings/SpeechToTextSetting';
@@ -15,13 +16,14 @@ import './settings/SettingsPage.css';
  * Settings for this device (/settings), for teachers and volunteers, linked
  * from the header menu: the interface language (once a second one is
  * ready), offline use and Save data, moving learners' work to another
- * device through a file, the reading level and Listen speed, and Say it
- * (phase 5). Everything else here is a device setting (settings
+ * device through a file, the reading level and Listen speed, Listen's
+ * voice, and Say it (phase 5). Everything else here is a device setting (settings
  * store), shared by everyone who uses the device, and saved even while
  * looking around.
  *
- * Two parts have addresses of their own, for the educators' "Set up this
- * device" page: /settings#say-it and /settings#move-work (settingsPath()).
+ * Three parts have addresses of their own, for the educators' "Set up this
+ * device" page: /settings#listen-voice, /settings#say-it and
+ * /settings#move-work (settingsPath()).
  */
 export function SettingsPage() {
   const { t } = useI18n();
@@ -40,6 +42,7 @@ export function SettingsPage() {
       <OfflineSetting deviceSettings={deviceSettings} />
       <WorkFileSetting />
       <ReadingSetting deviceSettings={deviceSettings} />
+      <ListenVoiceSetting deviceSettings={deviceSettings} />
       <SpeechToTextSetting deviceSettings={deviceSettings} />
     </div>
   );

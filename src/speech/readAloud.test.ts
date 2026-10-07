@@ -95,4 +95,50 @@ describe('ReadAloudPlayer', () => {
     player.resume();
     expect(speech.spoken.map((u) => u.text)).toEqual(['One.', 'Uno.']);
   });
+
+  it('leaves a short silence after a piece that asks for one (a heading), then carries on', () => {
+    vi.useFakeTimers();
+    try {
+      const { speech, player, onItem } = setup();
+      player.play([{ text: 'Rivers.', pauseAfterMs: 400 }, 'They flood.']);
+      speech.finish();
+      expect(speech.spoken.map((u) => u.text)).toEqual(['Rivers.']);
+      expect(onItem).toHaveBeenLastCalledWith(0);
+      vi.advanceTimersByTime(399);
+      expect(speech.spoken).toHaveLength(1);
+      vi.advanceTimersByTime(1);
+      expect(speech.spoken.map((u) => u.text)).toEqual(['Rivers.', 'They flood.']);
+      expect(onItem).toHaveBeenLastCalledWith(1);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it('stopping or pausing in that silence cancels what comes next', () => {
+    vi.useFakeTimers();
+    try {
+      const { speech, player, onFinish } = setup();
+      player.play([{ text: 'Rivers.', pauseAfterMs: 400 }, 'They flood.']);
+      speech.finish();
+      player.pause();
+      vi.advanceTimersByTime(1000);
+      expect(speech.spoken).toHaveLength(1);
+      expect(player.position).toBe(0);
+      player.resume();
+      speech.finish();
+      player.stop();
+      vi.advanceTimersByTime(1000);
+      expect(speech.spoken.map((u) => u.text)).toEqual(['Rivers.', 'Rivers.']);
+      expect(onFinish).not.toHaveBeenCalled();
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it('skips an empty heading piece (one that repeats the first sentence)', () => {
+    const { speech, player, onItem } = setup();
+    player.play([{ text: '', pauseAfterMs: 0 }, 'Each source answers different questions.']);
+    expect(speech.spoken.map((u) => u.text)).toEqual(['Each source answers different questions.']);
+    expect(onItem).toHaveBeenLastCalledWith(1);
+  });
 });

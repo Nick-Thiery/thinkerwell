@@ -37,7 +37,9 @@ A glossary entry's `forms` list is replaced whole: list the word forms that appe
 3. A second AI reviewer back-translated every string into English **before** looking at the English, then compared, fixed clear mistakes and flagged doubts.
 4. Nick's session fixed the clearest meaning shifts the reviewers found (for example, Lesson 4's wording, which could read as ranking science above faith) and made repeated strings consistent.
 
-About 510 of 4,100 strings are flagged for the native reviewers (the count grows as new pages are added; the consent form's study parts and the information sheet added about 80, all flagged, in October 2026).
+About 540 of 4,130 strings are flagged for the native reviewers (the count grows as new pages are added; the consent form's study parts and the information sheet added about 80, all flagged, in October 2026, and Settings' "Listen voice" and the setup checklist's voice step about 30, also flagged, with their menu names to check on devices set to Indonesian).
+
+One Indonesian sentence lives in code rather than in these files: the sample "Play a sample" reads with an Indonesian voice, "Ini suara yang membacakan pelajaran." (`LISTEN_SAMPLES` in `src/speech/sample.ts`). It is spoken in the lessons' language whatever the interface's, like the quick-check verdicts, so it isn't in `id.json`. Reviewers: check it too.
 
 ## Reviewing (for Justin and the reviewers)
 

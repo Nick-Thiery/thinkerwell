@@ -11,11 +11,37 @@
  * from its start. speechSynthesis.pause() and resume() are unreliable
  * (on Android, pause() ends the speech for good), so they aren't used.
  * Changing the speed restarts the current piece at the new rate.
+ *
+ * A piece can ask for a short silence after it (`pauseAfterMs`): the
+ * heading, so it is heard as a heading and not run into the first sentence
+ * (docs/notes/listen-voices.md).
  */
 import type { ListeningSpeed } from '../storage';
 
-/** Speech rates for the ListenBar's speeds: Slow is about 0.8 (docs/design-system/components/ListenBar.md). */
+/**
+ * Speech rates for the ListenBar's speeds: Slow is about 0.8
+ * (docs/design-system/components/ListenBar.md). Normal is the voice's own
+ * speed, and the pitch is always the voice's own: changing either makes
+ * on-device voices sound less natural, not more.
+ */
 export const LISTEN_RATES: Record<ListeningSpeed, number> = { slow: 0.8, normal: 1 };
+
+/** A piece to read aloud, with an optional silence after it. */
+export interface ListenPiece {
+  text: string;
+  pauseAfterMs?: number;
+}
+
+/** A piece to read: its text, or the text with a pause after it. */
+export type ListenItem = string | ListenPiece;
+
+function textOf(item: ListenItem | undefined): string {
+  return typeof item === 'string' ? item : (item?.text ?? '');
+}
+
+function pauseAfter(item: ListenItem | undefined): number {
+  return typeof item === 'string' ? 0 : Math.max(0, item?.pauseAfterMs ?? 0);
+}
 
 export interface ReadAloudCallbacks {
   /** The piece being read now (its index), or null once stopped. */
@@ -27,13 +53,15 @@ export interface ReadAloudCallbacks {
 }
 
 export class ReadAloudPlayer {
-  private items: readonly string[] = [];
+  private items: readonly ListenItem[] = [];
   private index = 0;
   private playing = false;
   /** Bumped on every play, pause and stop, so events from an older utterance are ignored. */
   private generation = 0;
   /** Held so the browser can't garbage-collect the utterance (and drop its events) mid-sentence. */
   private current: SpeechSynthesisUtterance | null = null;
+  /** The silence after a piece (a heading) before the next one starts. */
+  private gap: ReturnType<typeof setTimeout> | null = null;
   private readonly synth: SpeechSynthesis;
   private voice: SpeechSynthesisVoice;
   private rate: number;
@@ -57,7 +85,7 @@ export class ReadAloudPlayer {
   }
 
   /** Reads `items` from `from` to the end. */
-  play(items: readonly string[], from = 0): void {
+  play(items: readonly ListenItem[], from = 0): void {
     this.items = items;
     this.speakFrom(from);
   }
@@ -73,7 +101,7 @@ export class ReadAloudPlayer {
   }
 
   /** Moves to the start of new items without speaking (paused on a new part). */
-  load(items: readonly string[]): void {
+  load(items: readonly ListenItem[]): void {
     this.halt();
     this.items = items;
     this.index = 0;
@@ -101,6 +129,8 @@ export class ReadAloudPlayer {
     this.playing = false;
     this.generation += 1;
     this.current = null;
+    if (this.gap !== null) clearTimeout(this.gap);
+    this.gap = null;
     this.synth.cancel();
   }
 
@@ -115,7 +145,7 @@ export class ReadAloudPlayer {
   private speakItem(start: number, generation: number): void {
     if (generation !== this.generation) return;
     let index = start;
-    while (index < this.items.length && !this.items[index]!.trim()) index += 1;
+    while (index < this.items.length && !textOf(this.items[index]).trim()) index += 1;
     if (index >= this.items.length) {
       this.playing = false;
       this.current = null;
@@ -124,13 +154,24 @@ export class ReadAloudPlayer {
       return;
     }
     this.index = index;
-    const utterance = new SpeechSynthesisUtterance(this.items[index]);
+    const item = this.items[index];
+    const utterance = new SpeechSynthesisUtterance(textOf(item));
     utterance.voice = this.voice;
     utterance.lang = this.voice.lang;
     utterance.rate = this.rate;
     utterance.onend = () => {
       if (generation !== this.generation || this.current !== utterance) return;
-      this.speakItem(index + 1, generation);
+      const pause = pauseAfter(item);
+      if (pause === 0) {
+        this.speakItem(index + 1, generation);
+        return;
+      }
+      // Finished: a late event from this utterance changes nothing during the silence.
+      this.current = null;
+      this.gap = setTimeout(() => {
+        this.gap = null;
+        this.speakItem(index + 1, generation);
+      }, pause);
     };
     utterance.onerror = () => {
       if (generation !== this.generation || this.current !== utterance) return;

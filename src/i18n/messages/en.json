@@ -727,7 +727,8 @@
         "inProgress": "In progress",
         "checking": "Checking",
         "notHere": "Not on this browser",
-        "notNeeded": "Not needed"
+        "notNeeded": "Not needed",
+        "optional": "Optional"
       },
       "homeScreen": {
         "title": "Add Thinkerwell to the home screen",
@@ -795,6 +796,15 @@
         "none": "No learners on this device yet.",
         "add": "Add a learner",
         "seeClass": "See the class"
+      },
+      "voice": {
+        "title": "Choose the Listen voice (optional)",
+        "why": "Listen reads lessons aloud with the best voice it finds on the device. You can hear each voice and choose another, or download a clearer one.",
+        "how": "In Settings, under Listen voice, play a sample and choose the clearest voice.",
+        "automatic": "Listen reads with {voice}, the best voice on this device.",
+        "chosen": "Listen reads with {voice}, chosen in Settings.",
+        "none": "This device has no voice that Listen can use, so Listen doesn't show. Settings says how to add one.",
+        "open": "Choose it in Settings"
       },
       "speech": {
         "title": "Check speech to text",
@@ -882,6 +892,41 @@
         "speed": "Listen speed",
         "speedHelp": "How fast Listen reads aloud. Learners can change it while listening.",
         "noVoice": "This browser has no voice on this device, so Listen doesn't show here."
+      },
+      "listenVoice": {
+        "title": "Listen voice",
+        "intro": "Listen reads lessons aloud with a voice that works on this device, so nothing is sent online. Some voices sound clearer than others: play a sample, then choose.",
+        "voiceFor": {
+          "en": "Voice for English lessons",
+          "id": "Voice for Indonesian lessons"
+        },
+        "automatic": "Automatic (best on this device)",
+        "automaticNow": "Automatic uses {voice} on this device.",
+        "nameWithLang": "{name} ({lang})",
+        "sample": "Play a sample",
+        "noVoice": "This device has no English voice that Listen can use, so Listen doesn't show. The steps below add one.",
+        "noVoiceIndonesian": "This device has no Indonesian voice yet, so Listen can't read Indonesian lessons. The steps below add one.",
+        "better": {
+          "title": "Get a clearer voice",
+          "intro": "Most devices can download better voices for free. Voices can be large, so use good Wi-Fi. Then open this page again and choose the new voice.",
+          "apple": {
+            "name": "iPad or iPhone",
+            "steps": "Open Settings, then Accessibility, then Spoken Content (called Read & Speak on newer versions), then Voices. Choose English or Indonesian, then a voice marked Enhanced or Premium, and download it.",
+            "note": "Safari doesn't let websites use every voice you download. If the new voice isn't in the list above, keep the one you have."
+          },
+          "android": {
+            "name": "Android tablet or phone",
+            "steps": "Open Settings and search for text-to-speech. Next to Preferred engine, tap the settings button, then Install voice data. Choose English or Indonesian, then download a voice."
+          },
+          "windows": {
+            "name": "Windows laptop",
+            "steps": "Open Settings, then Time & language, then Speech. Next to Manage voices, choose Add voices, then English (United Kingdom) or Indonesian. You may need an administrator account. Then close the browser and open it again."
+          },
+          "chromebook": {
+            "name": "Chromebook",
+            "steps": "Open Settings, then Accessibility, then Text-to-Speech, then Text-to-Speech voice settings. Install the voices for English or Indonesian."
+          }
+        }
       },
       "sayIt": {
         "title": "Say it: speech to text",

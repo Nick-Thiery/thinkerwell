@@ -9,7 +9,8 @@
  *   learner). The part's text, its glossary marking and Listen all use the
  *   version on screen.
  * - Listen (./useListen.ts) shows only where the device has an English
- *   voice of its own (src/speech/voices.ts). It reads the part on screen,
+ *   voice of its own (src/speech/voices.ts): the one chosen in Settings,
+ *   or the best one there. It reads the part on screen,
  *   heading first, one sentence at a time, marking the sentence with
  *   mark.tw-speaking and bringing it into view when it isn't. At the end of
  *   a part it moves on to the next part and carries on, until the last part
@@ -24,14 +25,14 @@ import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { ListenBar, ReadingCard, SegmentedControl, ToolToggle } from '../../../components/ds';
 import { useI18n } from '../../../i18n';
 import { useLessonPlayer } from '../../../lesson';
-import { LISTEN_RATES, speechLangFor, useListenVoiceState } from '../../../speech';
+import { LISTEN_RATES, listenVoiceFor, speechLangFor, useListenVoiceState } from '../../../speech';
 import type { ReadingLevel } from '../../../storage';
 import { LessonEvidence } from '../evidence/LessonEvidence';
 import { StageActionBar } from '../StageActionBar';
 import { KeyWordsPanel } from './KeyWordsPanel';
 import { QuickCheck } from './QuickCheck';
 import { ReadingPassage } from './ReadingPassage';
-import { hasGlossaryTerms, sentenceRanges, visibleSectionText } from './readingPieces';
+import { hasGlossaryTerms, listenPieces, sentenceRanges, visibleSectionText } from './readingPieces';
 import { useListen } from './useListen';
 import { useReadPart, type ReadView } from './useReadPart';
 import { WarmUp } from './WarmUp';
@@ -74,12 +75,11 @@ export function ReadStage() {
   const section = view === 'check' ? null : sections[view - 1]!;
   const text = section ? visibleSectionText(section, readingLevel) : '';
   const sentences = useMemo(() => sentenceRanges(text), [text]);
-  const listenItems = useMemo(
-    () => (section ? [section.heading, ...sentences.map((range) => text.slice(range.start, range.end))] : []),
-    [section, sentences, text],
-  );
-  // Reads in the lesson's language (id-ID for Indonesian lessons), never with another language's voice.
-  const { voice, settled: voicesListed } = useListenVoiceState(speechLangFor(contentLocale));
+  const listenItems = useMemo(() => (section ? listenPieces(section.heading, text, sentences) : []), [section, sentences, text]);
+  // Reads in the lesson's language (id-ID for Indonesian lessons), never with another language's voice,
+  // with the voice chosen for it in Settings when that is still on this device.
+  const speechLang = speechLangFor(contentLocale);
+  const { voice, settled: voicesListed } = useListenVoiceState(speechLang, listenVoiceFor(settings, speechLang));
   const focusListenTool = () => document.getElementById(listenToolId)?.focus();
   const listen = useListen({
     voice,

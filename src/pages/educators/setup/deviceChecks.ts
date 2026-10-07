@@ -15,8 +15,8 @@ import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from '
 import type { OfflineStatus } from '../../../offline';
 import type { SpeechCheck } from '../../../storage';
 
-/** How a step stands on this device. */
-export type StepState = 'done' | 'in-progress' | 'checking' | 'todo' | 'not-here' | 'not-needed';
+/** How a step stands on this device ('optional': fine as it is, and can be done). */
+export type StepState = 'done' | 'in-progress' | 'checking' | 'todo' | 'optional' | 'not-here' | 'not-needed';
 
 // ------------------------------------------------------------------ offline
 
@@ -176,6 +176,20 @@ export function useInstalledApp(): boolean {
 export function learnersStepState(count: number, storageAvailable: boolean): StepState {
   if (!storageAvailable) return 'not-here';
   return count > 0 ? 'done' : 'todo';
+}
+
+// -------------------------------------------------------------- Listen voice
+
+/**
+ * The Listen voice (optional): done once an educator chose one in Settings
+ * and it is on this device; optional while Listen uses the best voice by
+ * itself; not here when the device has no voice Listen can use, once the
+ * browser has had time to list them (checking until then). Reading the
+ * voice list asks the browser for nothing.
+ */
+export function voiceStepState({ voice, chosen, settled }: { voice: unknown; chosen: boolean; settled: boolean }): StepState {
+  if (voice) return chosen ? 'done' : 'optional';
+  return settled ? 'not-here' : 'checking';
 }
 
 // ------------------------------------------------------------ speech to text

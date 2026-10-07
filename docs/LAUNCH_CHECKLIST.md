@@ -196,7 +196,7 @@ Saving work to a file and loading one (Settings, "Move work to another device") 
 
 ## Before the pilot: what only people can do
 
-**For HELP's staff on each device:** open Thinkerwell, then **For educators**, then **Set up this device** (`/educators/setup`). It walks through adding Thinkerwell to the home screen, the offline download, keeping saved work safe, adding learners and checking speech to text, and says which steps are done on that device. It prints as a one-page checklist to tick device by device. **The class on this device** (`/educators/class`) then shows what each learner has done, and prints every certificate earned on the device. Show staff these pages before the founders leave, and send them the printed checklist.
+**For HELP's staff on each device:** open Thinkerwell, then **For educators**, then **Set up this device** (`/educators/setup`). It walks through adding Thinkerwell to the home screen, the offline download, keeping saved work safe, adding learners, choosing Listen's voice (optional) and checking speech to text, and says which steps are done on that device. It prints as a one-page checklist to tick device by device. **The class on this device** (`/educators/class`) then shows what each learner has done, and prints every certificate earned on the device. Show staff these pages before the founders leave, and send them the printed checklist.
 
 - [ ] **Import the repository into Vercel** (steps above), then run the checks under "After the first deploy".
 - [ ] **Test on the real pilot devices**: HELP's tablets and laptops, in the browsers they have. On each one:
@@ -205,6 +205,7 @@ Saving work to a file and loading one (Settings, "Move work to another device") 
   - on a device that has never opened Thinkerwell, open the home page, turn off the Wi-Fi before "All 24 lessons work offline", then open a lesson: it should say "This page hasn't downloaded yet"; turn the Wi-Fi back on and tap **Try again**. Tell staff that this is what to do if they see it;
   - then turn off the Wi-Fi and open a few lessons;
   - in Settings, tap **Check this device** under "Say it" (once per device and browser, and again after a browser update). Lessons show Say it on the device only after this says speech stays on the device; they never check by themselves. If it offers "Download speech to text", download on good Wi-Fi, then check again;
+  - in Settings, under "Listen voice", play a sample of each voice and choose the clearest (or leave Automatic). If none is clear, try the steps there for a better voice, and see whether it appears in the list (Safari often doesn't show downloaded voices). On a Mac, check Listen isn't silent with a Premium or Enhanced voice (`docs/notes/listen-voices.md`);
   - try Listen, Say it and Record yourself;
   - print a lesson, a teacher guide, an answer key, the setup checklist and "Print all certificates" (landscape, one certificate a page);
   - in Settings, save a learner's work to a file, find the file (on an iPad: Files, then Downloads), and load it on another device. On an iPad, do this from the Home Screen app;

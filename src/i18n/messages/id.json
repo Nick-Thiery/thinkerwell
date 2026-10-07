@@ -723,7 +723,8 @@
         "inProgress": "Sedang berjalan",
         "checking": "Memeriksa",
         "notHere": "Tidak ada di browser ini",
-        "notNeeded": "Tidak perlu"
+        "notNeeded": "Tidak perlu",
+        "optional": "Opsional"
       },
       "homeScreen": {
         "title": "Tambahkan Thinkerwell ke layar utama",
@@ -789,6 +790,15 @@
         "none": "Belum ada pelajar di perangkat ini.",
         "add": "Tambah pelajar",
         "seeClass": "Lihat kelas"
+      },
+      "voice": {
+        "title": "Pilih suara Dengarkan (opsional)",
+        "why": "Dengarkan membacakan pelajaran dengan suara terbaik yang ditemukannya di perangkat. Anda bisa mendengar setiap suara dan memilih yang lain, atau mengunduh suara yang lebih jelas.",
+        "how": "Di Pengaturan, di bagian Suara Dengarkan, putar contoh dan pilih suara yang paling jelas.",
+        "automatic": "Dengarkan membaca dengan {voice}, suara terbaik di perangkat ini.",
+        "chosen": "Dengarkan membaca dengan {voice}, yang dipilih di Pengaturan.",
+        "none": "Perangkat ini tidak punya suara yang bisa dipakai Dengarkan, jadi Dengarkan tidak muncul. Pengaturan menjelaskan cara menambahkannya.",
+        "open": "Pilih di Pengaturan"
       },
       "speech": {
         "title": "Periksa fitur suara ke teks",
@@ -875,6 +885,41 @@
         "speed": "Kecepatan suara",
         "speedHelp": "Seberapa cepat Dengarkan membacakan teks. Pelajar bisa mengubahnya sambil mendengarkan.",
         "noVoice": "Browser ini tidak punya suara di perangkat ini, jadi Dengarkan tidak muncul di sini."
+      },
+      "listenVoice": {
+        "title": "Suara Dengarkan",
+        "intro": "Dengarkan membacakan pelajaran dengan suara yang ada di perangkat ini, jadi tidak ada yang dikirim ke internet. Ada suara yang terdengar lebih jelas daripada yang lain: putar contohnya, lalu pilih.",
+        "voiceFor": {
+          "en": "Suara untuk pelajaran dalam bahasa Inggris",
+          "id": "Suara untuk pelajaran dalam bahasa Indonesia"
+        },
+        "automatic": "Otomatis (yang terbaik di perangkat ini)",
+        "automaticNow": "Otomatis memakai {voice} di perangkat ini.",
+        "nameWithLang": "{name} ({lang})",
+        "sample": "Putar contoh",
+        "noVoice": "Perangkat ini tidak punya suara bahasa Inggris yang bisa dipakai Dengarkan, jadi Dengarkan tidak muncul. Langkah-langkah di bawah ini menjelaskan cara menambahkannya.",
+        "noVoiceIndonesian": "Perangkat ini belum punya suara bahasa Indonesia, jadi Dengarkan belum bisa membacakan pelajaran dalam bahasa Indonesia. Langkah-langkah di bawah ini menjelaskan cara menambahkannya.",
+        "better": {
+          "title": "Dapatkan suara yang lebih jelas",
+          "intro": "Sebagian besar perangkat bisa mengunduh suara yang lebih bagus secara gratis. Ukurannya bisa besar, jadi pakai Wi-Fi yang bagus. Lalu buka halaman ini lagi dan pilih suara barunya.",
+          "apple": {
+            "name": "iPad atau iPhone",
+            "steps": "Buka Pengaturan, lalu Aksesibilitas, lalu Konten Lisan (di versi yang lebih baru: Read & Speak), lalu Suara. Pilih bahasa Inggris atau bahasa Indonesia, lalu unduh suara yang bertanda Enhanced atau Premium.",
+            "note": "Safari tidak mengizinkan situs web memakai setiap suara yang Anda unduh. Kalau suara baru itu tidak ada di daftar di atas, tetap pakai suara yang sudah ada."
+          },
+          "android": {
+            "name": "Tablet atau HP Android",
+            "steps": "Buka Pengaturan dan cari text-to-speech. Di samping Mesin pilihan, ketuk tombol pengaturan, lalu Instal data suara. Pilih bahasa Inggris atau bahasa Indonesia, lalu unduh suaranya."
+          },
+          "windows": {
+            "name": "Laptop Windows",
+            "steps": "Buka Pengaturan, lalu Waktu & bahasa, lalu Ucapan. Di samping Kelola suara, pilih Tambahkan suara, lalu bahasa Inggris (Inggris Raya) atau bahasa Indonesia. Mungkin Anda perlu akun administrator. Lalu tutup browser dan buka lagi."
+          },
+          "chromebook": {
+            "name": "Chromebook",
+            "steps": "Buka Setelan, lalu Aksesibilitas, lalu Text-to-Speech, lalu setelan suaranya. Instal suara untuk bahasa Inggris atau bahasa Indonesia."
+          }
+        }
       },
       "sayIt": {
         "title": "Ucapkan: suara ke teks",

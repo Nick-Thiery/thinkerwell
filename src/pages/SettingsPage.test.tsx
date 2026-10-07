@@ -5,7 +5,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { connectServiceWorker, resetServiceWorkerForTests } from '../offline';
 import { LearnerSessionProvider } from '../session';
 import { deleteAllData, getStore } from '../storage';
-import { mockSpeechRecognition, restoreSpeechMocks } from '../test/speechMocks';
+import { fakeVoice, mockSpeechRecognition, mockSpeechSynthesis, restoreSpeechMocks } from '../test/speechMocks';
 import { SettingsPage } from './SettingsPage';
 
 afterEach(async () => {
@@ -259,8 +259,116 @@ describe('SettingsPage: reading and listening', () => {
   });
 });
 
+describe('SettingsPage: Listen voice', () => {
+  /** Safari on an iPad: Apple's identifiers, every voice "default", novelty and Eloquence voices first. */
+  const ipad = () => [
+    fakeVoice('en-US', { name: 'Albert', isDefault: true }),
+    fakeVoice('en-US', { name: 'Eddy', isDefault: true }),
+    fakeVoice('en-AU', { name: 'Karen', isDefault: true }),
+    fakeVoice('en-GB', { name: 'Daniel', isDefault: true }),
+    fakeVoice('en-US', { name: 'Samantha (Enhanced)', isDefault: true }),
+    fakeVoice('en-US', { name: 'Google US English', local: false }),
+    fakeVoice('fr-FR', { name: 'Thomas', isDefault: true }),
+  ];
+  const englishGroup = () => screen.getByRole('group', { name: 'Voice for English lessons' });
+  const englishList = () => screen.getByRole('combobox', { name: 'Voice for English lessons' });
+  const options = (select: HTMLElement) => within(select).getAllByRole('option').map((option) => option.textContent);
+
+  it('offers the voices on this device, best first, never a novelty voice or one that needs the internet, with Automatic first', async () => {
+    const speech = mockSpeechSynthesis(ipad());
+    renderSettings();
+    expect(screen.getByRole('heading', { level: 2, name: 'Listen voice' })).toBeInTheDocument();
+    await waitFor(() => expect(englishList()).toBeEnabled());
+    expect(options(englishList())).toEqual(['Automatic (best on this device)', 'Samantha (Enhanced)', 'Daniel', 'Karen', 'Eddy']);
+    expect(englishList()).toHaveValue('');
+    expect(englishList()).toHaveAccessibleDescription('Automatic uses Samantha (Enhanced) on this device.');
+    // No Indonesian voice here, so no Indonesian list; and nothing spoken as the page opens.
+    expect(screen.queryByRole('combobox', { name: 'Voice for Indonesian lessons' })).not.toBeInTheDocument();
+    expect(speech.spoken).toEqual([]);
+    expect(screen.getByRole('heading', { level: 3, name: 'Get a clearer voice' })).toBeInTheDocument();
+    for (const device of ['iPad or iPhone', 'Android tablet or phone', 'Windows laptop', 'Chromebook']) {
+      expect(screen.getByText(device)).toBeInTheDocument();
+    }
+  });
+
+  it('saves the chosen voice for this device, even while looking around, and goes back to Automatic', async () => {
+    const user = userEvent.setup();
+    mockSpeechSynthesis(ipad());
+    renderSettings({ lookAround: true });
+    await waitFor(() => expect(englishList()).toBeEnabled());
+    await user.selectOptions(englishList(), 'Karen');
+    expect(within(englishList()).getByRole('option', { name: 'Karen' })).toHaveProperty('selected', true);
+    await waitFor(async () => expect((await storedSettings()).listenVoices).toEqual({ en: { name: 'Karen', voiceURI: 'Karen', lang: 'en-AU' } }));
+    expect(englishList()).not.toHaveAccessibleDescription(/Automatic uses/);
+
+    await user.selectOptions(englishList(), 'Automatic (best on this device)');
+    await waitFor(async () => expect((await storedSettings()).listenVoices).toEqual({}));
+    expect(englishList()).toHaveValue('');
+  });
+
+  it('plays a sample only when tapped: the chosen voice, or the one Automatic uses, at the Listen speed', async () => {
+    const user = userEvent.setup();
+    const speech = mockSpeechSynthesis(ipad());
+    await (await getStore()).updateSettings({ listeningSpeed: 'slow' });
+    const view = renderSettings();
+    await waitFor(() => expect(englishList()).toBeEnabled());
+    const sample = within(englishGroup()).getByRole('button', { name: 'Play a sample' });
+
+    await user.click(sample);
+    expect(speech.spoken.map((u) => [u.text, u.voice?.name, u.lang, u.rate])).toEqual([
+      ['This is the voice that reads the lessons aloud.', 'Samantha (Enhanced)', 'en-US', 0.8],
+    ]);
+    await user.selectOptions(englishList(), 'Daniel');
+    await user.click(sample);
+    expect(speech.spoken.at(-1)?.voice?.name).toBe('Daniel');
+    // Another tap stops the sample before starting it again; leaving the page stops it too.
+    expect(speech.cancel).toHaveBeenCalled();
+    speech.cancel.mockClear();
+    view.unmount();
+    expect(speech.cancel).toHaveBeenCalledTimes(1);
+  });
+
+  it('has a list for Indonesian lessons where the device has an Indonesian voice, with an Indonesian sample', async () => {
+    const user = userEvent.setup();
+    const speech = mockSpeechSynthesis([...ipad(), fakeVoice('id-ID', { name: 'Damayanti', isDefault: true }), fakeVoice('id-ID', { name: 'Gadis Online', local: false })]);
+    renderSettings();
+    const indonesian = await screen.findByRole('combobox', { name: 'Voice for Indonesian lessons' });
+    await waitFor(() => expect(indonesian).toBeEnabled());
+    expect(options(indonesian)).toEqual(['Automatic (best on this device)', 'Damayanti']);
+    await user.click(within(screen.getByRole('group', { name: 'Voice for Indonesian lessons' })).getByRole('button', { name: 'Play a sample' }));
+    expect(speech.spoken.map((u) => [u.text, u.voice?.name])).toEqual([['Ini suara yang membacakan pelajaran.', 'Damayanti']]);
+    await user.selectOptions(indonesian, 'Damayanti');
+    await waitFor(async () => expect((await storedSettings()).listenVoices).toEqual({ id: { name: 'Damayanti', voiceURI: 'Damayanti', lang: 'id-ID' } }));
+  });
+
+  it("shows Automatic when the saved voice isn't on this device, without a word about it", async () => {
+    mockSpeechSynthesis(ipad());
+    await (await getStore()).updateSettings({ listenVoices: { en: { name: 'Zoe (Premium)', voiceURI: 'com.apple.voice.premium.en-US.Zoe', lang: 'en-US' } } });
+    renderSettings();
+    await waitFor(() => expect(englishList()).toBeEnabled());
+    expect(englishList()).toHaveValue('');
+    expect(englishList()).toHaveAccessibleDescription('Automatic uses Samantha (Enhanced) on this device.');
+    expect(screen.queryByText(/Zoe/)).not.toBeInTheDocument();
+  });
+
+  it('adds the language to two voices with the same name', async () => {
+    mockSpeechSynthesis([fakeVoice('en-GB', { name: 'Eddy' }), { ...fakeVoice('en-US', { name: 'Eddy' }), voiceURI: 'eddy-us' }]);
+    renderSettings();
+    await waitFor(() => expect(englishList()).toBeEnabled());
+    expect(options(englishList())).toEqual(['Automatic (best on this device)', 'Eddy (en-GB)', 'Eddy (en-US)']);
+  });
+
+  it('says when this device has no English voice Listen can use, and how to get one', async () => {
+    renderSettings();
+    expect(await screen.findByText(/This device has no English voice that Listen can use/)).toBeInTheDocument();
+    expect(screen.queryByRole('combobox')).not.toBeInTheDocument();
+    expect(screen.getByText(/Next to Preferred engine, tap the settings button/)).toBeInTheDocument();
+  });
+});
+
 describe('SettingsPage: parts with an address of their own', () => {
   it.each([
+    ['listen-voice', 'Listen voice'],
     ['say-it', 'Say it: speech to text'],
     ['move-work', 'Move work to another device'],
   ])('/settings#%s scrolls to that part once the page has loaded, and moves focus to its heading', async (part, heading) => {

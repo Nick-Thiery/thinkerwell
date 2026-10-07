@@ -2,7 +2,7 @@
  * Listen on the Read stage: reads the part on screen aloud, one piece
  * (the heading, then each sentence) at a time, with the device's own voice.
  *
- * - `items` are the texts to read; when `itemsKey` changes (a new part, or
+ * - `items` are the pieces to read (./readingPieces.ts, listenPieces); when `itemsKey` changes (a new part, or
  *   Standard / Simpler), reading starts again from the first piece of the
  *   new items, or, when paused, waits at it.
  * - `onPartEnd` runs when the last piece has been read. Return true when
@@ -11,13 +11,13 @@
  * - Stopping, leaving the stage or losing the voice cancels any speech.
  */
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { getSpeechSynthesis, ReadAloudPlayer } from '../../../speech';
+import { getSpeechSynthesis, ReadAloudPlayer, type ListenItem } from '../../../speech';
 
 export type ListenState = 'off' | 'playing' | 'paused';
 
 export interface ListenOptions {
   voice: SpeechSynthesisVoice | null;
-  items: readonly string[];
+  items: readonly ListenItem[];
   itemsKey: string;
   rate: number;
   onPartEnd: () => boolean;

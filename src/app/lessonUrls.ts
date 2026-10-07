@@ -35,7 +35,7 @@ export function courseCertificatePath(): string {
 }
 
 /** A part of Settings that other pages link straight to. */
-export type SettingsPart = 'say-it' | 'move-work';
+export type SettingsPart = 'listen-voice' | 'say-it' | 'move-work';
 
 /** Settings for this device, or one part of it (/settings#say-it): the page scrolls to it once it has loaded. */
 export function settingsPath(part?: SettingsPart): string {

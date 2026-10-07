@@ -11,8 +11,15 @@
  * language's voice (an English voice reading Indonesian can't be
  * understood). With no local voice for English, Listen is hidden; for
  * Indonesian, the Read step says so instead (src/pages/lesson/read/ReadStage.tsx).
+ *
+ * Which voice: the one an educator chose in Settings ("Listen voice"), if
+ * it is still on the device; otherwise the best one, by the ranking in
+ * ./voiceRanking.ts (docs/notes/listen-voices.md). Reading the voice list
+ * (getVoices) asks the browser for nothing and never prompts.
  */
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import type { ListenVoiceChoice } from '../storage/types';
+import { rankListenVoices } from './voiceRanking';
 
 /** The page's speechSynthesis, or null where the browser has none. */
 export function getSpeechSynthesis(): SpeechSynthesis | null {
@@ -21,40 +28,48 @@ export function getSpeechSynthesis(): SpeechSynthesis | null {
   return synth && typeof synth.speak === 'function' ? synth : null;
 }
 
-/** "en_US" (older Android) → "en-us". */
-function normalLang(lang: string): string {
-  return lang.replace(/_/g, '-').toLowerCase();
+/** True on a Chromebook, where "Natural" voices send their text to Google (./voiceRanking.ts, sendsTextAway). */
+export function isChromeOS(userAgent: string = typeof navigator === 'undefined' ? '' : navigator.userAgent): boolean {
+  return /\bCrOS\b/.test(userAgent);
 }
-
-/** "en-GB" → "en"; older Android and Java systems still say "in" for Indonesian. */
-function baseLang(tag: string): string {
-  const base = normalLang(tag).split('-')[0] ?? '';
-  return base === 'in' ? 'id' : base;
-}
-
-/** Regional English voices in order of preference after the device's own default. */
-const PREFERRED_LANGS = ['en-gb', 'en-us', 'en-au', 'en-ie', 'en-ca', 'en-nz', 'en-za', 'en-in'];
 
 /**
- * The voice Listen reads with: a voice in the lesson's language
- * (`speechLang`, English unless given) that runs on the device. The
- * device's default voice wins if it qualifies (the learner or the school
- * may have chosen it); then, for English, British English (the course is
- * written in British spelling) and other English voices, and for another
- * language its own region (id-ID). null when there is none.
+ * The voices Listen may use for the lesson language `speechLang` ("en",
+ * "id-ID"), best first: on the device, in that language, never a novelty
+ * voice and never one that sends its text away. Settings offers exactly these.
  */
-export function pickListenVoice(voices: readonly SpeechSynthesisVoice[], speechLang = 'en'): SpeechSynthesisVoice | null {
-  const base = baseLang(speechLang);
-  const local = voices.filter((voice) => voice.localService && baseLang(voice.lang) === base);
-  if (local.length === 0) return null;
-  const preferredDefault = local.find((voice) => voice.default);
-  if (preferredDefault) return preferredDefault;
-  const preferred = base === 'en' ? PREFERRED_LANGS : [normalLang(speechLang)];
-  for (const lang of preferred) {
-    const match = local.find((voice) => normalLang(voice.lang) === lang);
+export function listenVoices(voices: readonly SpeechSynthesisVoice[], speechLang = 'en'): SpeechSynthesisVoice[] {
+  return rankListenVoices(voices, speechLang, { chromeOS: isChromeOS() });
+}
+
+/** True when `voice` is the one an educator chose (`choice`). */
+export function isChosenVoice(voice: Pick<SpeechSynthesisVoice, 'name' | 'voiceURI'>, choice: ListenVoiceChoice): boolean {
+  return voice.voiceURI === choice.voiceURI && voice.name === choice.name;
+}
+
+/** What to save for `voice` when an educator chooses it. */
+export function voiceChoice(voice: Pick<SpeechSynthesisVoice, 'name' | 'voiceURI' | 'lang'>): ListenVoiceChoice {
+  return { name: voice.name, voiceURI: voice.voiceURI, lang: voice.lang };
+}
+
+/**
+ * The voice Listen reads with in the lesson's language (`speechLang`,
+ * English unless given): the educator's choice (`chosen`) when it is still
+ * among this device's usable voices, otherwise the best usable voice.
+ * A choice that has gone (another device, a voice removed) falls back to
+ * the best voice without a word. null when there is no usable voice.
+ */
+export function pickListenVoice(
+  voices: readonly SpeechSynthesisVoice[],
+  speechLang = 'en',
+  chosen?: ListenVoiceChoice | null,
+): SpeechSynthesisVoice | null {
+  const usable = listenVoices(voices, speechLang);
+  if (chosen) {
+    const match = usable.find((voice) => isChosenVoice(voice, chosen));
     if (match) return match;
   }
-  return local[0] ?? null;
+  return usable[0] ?? null;
 }
 
 /**
@@ -64,35 +79,47 @@ export function pickListenVoice(voices: readonly SpeechSynthesisVoice[], speechL
  */
 const RECHECK_MS = [250, 1000, 3000];
 
-/**
- * The local voice for Listen in the lesson's language (`speechLang`, English
- * unless given), or null (none yet, or none at all). Updates when the
- * browser's voice list changes.
- */
-export function useListenVoice(speechLang = 'en'): SpeechSynthesisVoice | null {
-  return useListenVoiceState(speechLang).voice;
+function sameVoice(a: SpeechSynthesisVoice, b: SpeechSynthesisVoice): boolean {
+  return a.voiceURI === b.voiceURI && a.name === b.name && a.lang === b.lang && a.localService === b.localService && a.default === b.default;
 }
 
 /**
- * The voice (as useListenVoice), and whether the browser has had time to
- * list its voices (after its last re-read, or at once without speech), so a
- * page can say "no voice" without flashing it while the list fills in.
+ * The browser's list again, keeping the voice objects (and the list itself)
+ * that haven't changed, so a voice in use stays the same object and
+ * reading doesn't restart when the browser lists its voices again.
  */
-export function useListenVoiceState(speechLang = 'en'): { voice: SpeechSynthesisVoice | null; settled: boolean } {
+function keepSame(current: readonly SpeechSynthesisVoice[], next: readonly SpeechSynthesisVoice[]): readonly SpeechSynthesisVoice[] {
+  const merged = next.map((voice) => current.find((old) => sameVoice(old, voice)) ?? voice);
+  return merged.length === current.length && merged.every((voice, index) => voice === current[index]) ? current : merged;
+}
+
+function readVoices(synth: SpeechSynthesis): readonly SpeechSynthesisVoice[] {
+  try {
+    return synth.getVoices();
+  } catch {
+    return [];
+  }
+}
+
+const NO_VOICES: readonly SpeechSynthesisVoice[] = [];
+
+/**
+ * Every voice the browser lists (none without speechSynthesis), updated as
+ * the list changes, and whether the browser has had time to list them
+ * (after its last re-read, or at once without speech), so a page can say
+ * "no voice" without flashing it while the list fills in.
+ */
+export function useDeviceVoices(): { voices: readonly SpeechSynthesisVoice[]; settled: boolean } {
   const [settled, setSettled] = useState(() => getSpeechSynthesis() === null);
-  const [voice, setVoice] = useState<SpeechSynthesisVoice | null>(() => {
+  const [voices, setVoices] = useState<readonly SpeechSynthesisVoice[]>(() => {
     const synth = getSpeechSynthesis();
-    return synth ? pickListenVoice(synth.getVoices(), speechLang) : null;
+    return synth ? readVoices(synth) : NO_VOICES;
   });
 
   useEffect(() => {
     const synth = getSpeechSynthesis();
     if (!synth) return undefined;
-    const refresh = () => {
-      const next = pickListenVoice(synth.getVoices(), speechLang);
-      // Keep the same object while the choice stays the same, so nothing restarts.
-      setVoice((current) => (current && next && current.voiceURI === next.voiceURI ? current : next));
-    };
+    const refresh = () => setVoices((current) => keepSame(current, readVoices(synth)));
     refresh();
     synth.addEventListener('voiceschanged', refresh);
     const timers = RECHECK_MS.map((ms, index) =>
@@ -105,7 +132,28 @@ export function useListenVoiceState(speechLang = 'en'): { voice: SpeechSynthesis
       synth.removeEventListener('voiceschanged', refresh);
       timers.forEach(clearTimeout);
     };
-  }, [speechLang]);
+  }, []);
 
+  return { voices, settled };
+}
+
+/**
+ * The local voice for Listen in the lesson's language (`speechLang`,
+ * English unless given), or null (none yet, or none at all). `chosen` is
+ * the educator's choice from Settings for that language. Updates when the
+ * browser's voice list changes.
+ */
+export function useListenVoice(speechLang = 'en', chosen?: ListenVoiceChoice | null): SpeechSynthesisVoice | null {
+  return useListenVoiceState(speechLang, chosen).voice;
+}
+
+/** The voice (as useListenVoice), and whether the browser has had time to list its voices (useDeviceVoices). */
+export function useListenVoiceState(
+  speechLang = 'en',
+  chosen?: ListenVoiceChoice | null,
+): { voice: SpeechSynthesisVoice | null; settled: boolean } {
+  const { voices, settled } = useDeviceVoices();
+  // The same voice object while the choice stays the same (keepSame), so nothing restarts.
+  const voice = useMemo(() => pickListenVoice(voices, speechLang, chosen), [voices, speechLang, chosen]);
   return { voice, settled };
 }

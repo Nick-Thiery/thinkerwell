@@ -30,8 +30,13 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * sheet: 630.4 kB with them (626.2 kB before), all of it their words and
  * code: the English messages 1.3 kB, the Indonesian 1.2 kB, the pages' code
  * 1.1 kB and their styles 0.5 kB (docs/notes/slow-internet.md, "Later budget changes").
+ * Raised to 645 kB with the Listen voice choice and the About page's mission
+ * card: 635.4 kB with both (630.4 kB before), for the voice ranking, the
+ * "Listen voice" part of Settings, the setup checklist's voice step and their
+ * words in both languages (docs/notes/listen-voices.md), and the About
+ * changes merged alongside. It leaves room for one more small feature.
  */
-const PRECACHE_BUDGET = 635_000;
+const PRECACHE_BUDGET = 645_000;
 /**
  * Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before),
  * 210.5 kB after the language and pilot-day merges, 212.7 kB with the header's language switch and the one language

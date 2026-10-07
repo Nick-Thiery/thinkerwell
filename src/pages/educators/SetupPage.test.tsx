@@ -6,7 +6,7 @@ import { findLocale, I18nProvider, type LoadedLocale } from '../../i18n';
 import { connectServiceWorker, resetServiceWorkerForTests } from '../../offline';
 import { LearnerSessionProvider } from '../../session';
 import { deleteAllData, getStore } from '../../storage';
-import { mockSpeechRecognition, restoreSpeechMocks } from '../../test/speechMocks';
+import { fakeVoice, mockSpeechRecognition, mockSpeechSynthesis, restoreSpeechMocks } from '../../test/speechMocks';
 import { SetupPage } from './SetupPage';
 
 type Nav = { storage?: unknown; standalone?: boolean };
@@ -97,7 +97,8 @@ describe('SetupPage', { timeout: 20_000 }, () => {
       '2Download the course for offline use',
       '3Keep saved work safe',
       '4Add the learners who use this device',
-      '5Check speech to text',
+      '5Choose the Listen voice (optional)',
+      '6Check speech to text',
     ]);
     expect(within(step('Check speech to text')).getByText(/Do this step last\. On some tablets the check has closed the browser tab\./)).toBeInTheDocument();
     const later = screen.getByRole('region', { name: 'Before you reset this device or give it back' });
@@ -276,6 +277,34 @@ describe('SetupPage', { timeout: 20_000 }, () => {
     const card = step('Check speech to text');
     await waitFor(() => expect(status(card)).toHaveTextContent('Not checked on this device yet.'));
     expect(status(card)).toHaveTextContent('Not done yet');
+  });
+
+  it('shows the voice Listen uses, which is optional, and links to Settings\' Listen voice', async () => {
+    const speech = mockSpeechSynthesis([fakeVoice('en-US', { name: 'Albert', isDefault: true }), fakeVoice('en-GB', { name: 'Daniel', isDefault: true })]);
+    renderSetup();
+    const card = step('Choose the Listen voice');
+    await waitFor(() => expect(status(card)).toHaveTextContent('Listen reads with Daniel, the best voice on this device.'));
+    expect(status(card)).toHaveTextContent('Optional');
+    expect(within(card).getByRole('link', { name: 'Choose it in Settings' })).toHaveAttribute('href', '/settings#listen-voice');
+    expect(within(card).getByText('In Settings, under Listen voice, play a sample and choose the clearest voice.')).toBeInTheDocument();
+    // Reading the voice list speaks nothing.
+    expect(speech.spoken).toEqual([]);
+  });
+
+  it('counts a voice chosen in Settings as done', async () => {
+    mockSpeechSynthesis([fakeVoice('en-GB', { name: 'Daniel' }), fakeVoice('en-AU', { name: 'Karen' })]);
+    await (await getStore()).updateSettings({ listenVoices: { en: { name: 'Karen', voiceURI: 'Karen', lang: 'en-AU' } } });
+    renderSetup();
+    const card = step('Choose the Listen voice');
+    await waitFor(() => expect(status(card)).toHaveTextContent('Listen reads with Karen, chosen in Settings.'));
+    expect(status(card)).toHaveTextContent('Done');
+  });
+
+  it('says when the device has no voice Listen can use', async () => {
+    renderSetup();
+    const card = step('Choose the Listen voice');
+    await waitFor(() => expect(status(card)).toHaveTextContent("This device has no voice that Listen can use, so Listen doesn't show."));
+    expect(status(card)).toHaveTextContent('Not on this browser');
   });
 
   it('where the browser has no speech to text, there is nothing to check', async () => {

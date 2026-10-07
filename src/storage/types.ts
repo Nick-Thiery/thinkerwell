@@ -184,6 +184,17 @@ export interface SpeechCheck {
   checkedAt: string;
 }
 
+/**
+ * The voice an educator chose for Listen in one lesson language (Settings,
+ * "Listen voice"): what the browser calls it, so it can be found again
+ * among the device's voices (src/speech/voices.ts).
+ */
+export interface ListenVoiceChoice {
+  name: string;
+  voiceURI: string;
+  lang: string;
+}
+
 /** Per-device settings (shared by everyone who uses this device). */
 export interface DeviceSettings {
   /**
@@ -214,6 +225,13 @@ export interface DeviceSettings {
    * educator checks; records saved before it existed need no migration.
    */
   speechChecks?: Record<string, SpeechCheck>;
+  /**
+   * The voice Listen reads with, chosen in Settings, by the lessons'
+   * language ("en", "id"): src/speech/language.ts. A language with no entry
+   * is "Automatic", the best voice on the device. Missing until an educator
+   * chooses; records saved before it existed need no migration.
+   */
+  listenVoices?: Record<string, ListenVoiceChoice>;
   /**
    * The interface language for the home screen, anyone looking around and
    * any learner who hasn't chosen one (a code from src/i18n/locales.ts), or
