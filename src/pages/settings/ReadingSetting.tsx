@@ -4,6 +4,7 @@
  * Listen's speed (settings.listeningSpeed).
  */
 import { useId } from 'react';
+import { recordingsOf } from '../../audio/recordings';
 import { SegmentedControl } from '../../components/ds';
 import { useI18n } from '../../i18n';
 import { speechLangFor, useListenVoice } from '../../speech';
@@ -13,7 +14,10 @@ import type { DeviceSettingsState } from './useDeviceSettings';
 export function ReadingSetting({ deviceSettings }: { deviceSettings: DeviceSettingsState }) {
   const { t, contentLocale } = useI18n();
   const { settings, canSave, failed, save } = deviceSettings;
-  const voice = useListenVoice(speechLangFor(contentLocale));
+  const lessonsLang = speechLangFor(contentLocale);
+  const voice = useListenVoice(lessonsLang);
+  // Listen shows where the lessons have recordings or the device has a voice.
+  const listenShows = !!voice || !!recordingsOf(lessonsLang);
   const headingId = useId();
   const levelHelpId = useId();
   const speedHelpId = useId();
@@ -65,7 +69,7 @@ export function ReadingSetting({ deviceSettings }: { deviceSettings: DeviceSetti
         />
         <p id={speedHelpId} className="tw-settings-help">
           {t('pages.settings.reading.speedHelp')}
-          {voice ? '' : ` ${t('pages.settings.reading.noVoice')}`}
+          {listenShows ? '' : ` ${t('pages.settings.reading.noVoice')}`}
           {failed === 'listeningSpeed' ? ` ${t('pages.settings.saveFailed')}` : ''}
         </p>
       </div>

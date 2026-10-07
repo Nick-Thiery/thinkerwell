@@ -12,9 +12,12 @@
  * only when tapped, and the speech step shows the saved result of Settings'
  * "Check this device": this page never touches SpeechRecognition. The
  * optional Listen voice step reads the device's voice list, which asks
- * nothing, and links to Settings' "Listen voice".
+ * nothing, and links to Settings' "Listen voice". The offline step points
+ * to Settings' "Lesson audio", where Listen's recordings are downloaded
+ * for use without the internet (they aren't in the offline copy).
  */
 import { useId, useState, type ReactNode } from 'react';
+import { recordedLanguages } from '../../audio/recordings';
 import { classPath, educatorsPath, settingsPath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
 import { Badge, Button, Icon, type BadgeProps, type IconName } from '../../components/ds';
@@ -91,6 +94,8 @@ export function SetupPage() {
   const [platform] = useState<DevicePlatform>(thisPlatform);
   const addLearner = useAddLearner();
 
+  // Listen's recordings download on their own, apart from the offline copy (Settings, "Lesson audio").
+  const recorded = recordedLanguages().length > 0;
   // Each step's state and what to say about it on this device.
   const homeState: StepState = installed ? 'done' : 'todo';
   const offlineState = offlineStepState(offline);
@@ -156,7 +161,18 @@ export function SetupPage() {
             how={t('pages.setup.offline.how')}
             state={offlineState}
             status={t(OFFLINE_STATUS[offline].key, { count: content.getLessons().length })}
-          />
+            actions={
+              recorded ? (
+                <Button variant="secondary" icon="Download" href={settingsPath('lesson-audio')}>
+                  {t('pages.setup.offline.audioOpen')}
+                </Button>
+              ) : null
+            }
+          >
+            {/* Listen's recordings aren't in the offline copy: point to Settings' "Lesson audio". On screen
+                only: on paper the checklist must still fit one A4 page in Indonesian. */}
+            {recorded ? <p className="tw-no-print">{t('pages.setup.offline.audio')}</p> : null}
+          </SetupStep>
 
           <SetupStep
             number={3}
@@ -210,7 +226,7 @@ export function SetupPage() {
           <SetupStep
             number={5}
             title={t('pages.setup.voice.title')}
-            why={t('pages.setup.voice.why')}
+            why={t(recorded ? 'pages.setup.voice.whyRecorded' : 'pages.setup.voice.why')}
             whyOnPaper={false}
             how={t('pages.setup.voice.how')}
             state={voiceState}
@@ -221,7 +237,7 @@ export function SetupPage() {
                   ? tx(voiceChosen ? 'pages.setup.voice.chosen' : 'pages.setup.voice.automatic', {
                       voice: <span translate="no">{voice.name}</span>,
                     })
-                  : t('pages.setup.voice.none')
+                  : t(recorded ? 'pages.setup.voice.noneRecorded' : 'pages.setup.voice.none')
             }
             actions={
               <Button variant="secondary" icon="Settings" href={settingsPath('listen-voice')}>

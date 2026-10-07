@@ -7,7 +7,7 @@
  */
 import { z } from 'zod';
 import { LOCALES, SOURCE_LOCALE } from '../i18n/locales.ts';
-import { QUIZ_SKILLS } from './quizSkills';
+import { QUIZ_SKILLS } from './quizSkills.ts';
 
 export const SECTION_IDS = ['history', 'geography', 'culture', 'civics'] as const;
 export const sectionIdSchema = z.enum(SECTION_IDS);

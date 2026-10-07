@@ -10,6 +10,15 @@
  *   so every lesson works offline after the first visit.
  * - Page loads (navigations) get the precached index.html, except /api/ and
  *   addresses of files (anything with an extension).
+ * - Listen's recordings (/audio/, docs/notes/recorded-audio.md) are not in
+ *   the precache (they are tens of megabytes): each is kept in a cache of
+ *   its own (AUDIO_CACHE) the first time the page fetches it, when Listen
+ *   plays it or a teacher downloads them all in Settings, and answered from
+ *   there after that, so they work offline. Their names carry a hash of
+ *   their content, so a kept file never goes stale; files no section uses
+ *   any more are deleted when a new version starts and whenever a
+ *   language's new timings file arrives (pruneAudio). A new version never
+ *   empties this cache: recordings that didn't change stay.
  * - Nothing else is cached, and nothing is fetched from other servers.
  * - A new version waits until the page sends SKIP_WAITING ("Update now");
  *   the first install takes charge of the open page (clientsClaim).
@@ -27,6 +36,8 @@
 import { clientsClaim } from 'workbox-core';
 import { cleanupOutdatedCaches, PrecacheController, PrecacheRoute, type PrecacheEntry } from 'workbox-precaching';
 import { NavigationRoute, registerRoute } from 'workbox-routing';
+import { AUDIO_CACHE, AUDIO_PREFIX } from '../audio/cache';
+import recordings from '../audio/recordings.json';
 
 declare const self: ServiceWorkerGlobalScope & { __WB_MANIFEST: Array<PrecacheEntry | string> };
 
@@ -63,8 +74,72 @@ async function installPrecache(event: ExtendableEvent): Promise<void> {
   await Promise.all(Array.from({ length: CONCURRENCY }, next));
 }
 
+/** Each recorded language's current timings file (src/audio/recordings.json): it lists the recordings in use. */
+const recorded: Readonly<Record<string, { timings: string }>> = recordings;
+const currentTimings = new Map(Object.entries(recorded).map(([lang, entry]) => [lang, entry.timings]));
+
+/** The language of a path under /audio/ ("/audio/id/x.mp3" → "id"). */
+function audioLang(path: string): string {
+  return path.slice(AUDIO_PREFIX.length).split('/')[0] ?? '';
+}
+
+/**
+ * Deletes kept recordings that no section uses any more: for each language,
+ * everything its current timings file doesn't list (old timings files too),
+ * and everything of a language that has no recordings now. A language whose
+ * current timings file isn't kept yet is fetched first if `fetchMissing`;
+ * if that fails (offline), its files stay until it arrives.
+ */
+async function pruneAudio(fetchMissing: boolean): Promise<void> {
+  const cache = await caches.open(AUDIO_CACHE);
+  const byLang = new Map<string, string[]>();
+  for (const request of await cache.keys()) {
+    const path = new URL(request.url).pathname;
+    const lang = audioLang(path);
+    byLang.set(lang, [...(byLang.get(lang) ?? []), path]);
+  }
+  for (const [lang, paths] of byLang) {
+    const current = currentTimings.get(lang);
+    let timings = current ? await cache.match(current) : undefined;
+    if (current && !timings && fetchMissing) {
+      try {
+        const response = await fetch(current);
+        if (response.ok) {
+          await cache.put(current, response.clone());
+          timings = response;
+        }
+      } catch {
+        // Offline: decide another time.
+      }
+    }
+    if (current && !timings) continue;
+    const sections = timings ? ((await timings.json()) as { sections: Record<string, { f: string }> }).sections : {};
+    const keep = new Set([current, ...Object.values(sections).map((section) => `${AUDIO_PREFIX}${lang}/${section.f}`)]);
+    await Promise.all(paths.filter((path) => !keep.has(path)).map((path) => cache.delete(path)));
+  }
+}
+
+/** A recording or timings file: from the cache, else from the site, kept for next time. */
+async function audioFromCache(request: Request, event: ExtendableEvent): Promise<Response> {
+  const cache = await caches.open(AUDIO_CACHE);
+  const kept = await cache.match(request);
+  if (kept) return kept;
+  const response = await fetch(request);
+  if (response.status === 200 && response.type === 'basic') {
+    const path = new URL(request.url).pathname;
+    const stored = cache.put(request, response.clone());
+    // A language's new timings file: the recordings it doesn't list can go.
+    const isTimings = currentTimings.get(audioLang(path)) === path;
+    event.waitUntil(isTimings ? stored.then(() => pruneAudio(false)) : stored);
+  }
+  return response;
+}
+
 self.addEventListener('install', (event) => event.waitUntil(installPrecache(event)));
-self.addEventListener('activate', (event) => event.waitUntil(precache.activate(event)));
+self.addEventListener('activate', (event) => {
+  event.waitUntil(precache.activate(event));
+  event.waitUntil(pruneAudio(true).catch(() => undefined));
+});
 
 self.addEventListener('message', (event) => {
   if ((event.data as { type?: string } | null)?.type === 'SKIP_WAITING') void self.skipWaiting();
@@ -73,6 +148,12 @@ clientsClaim();
 
 registerRoute(new PrecacheRoute(precache));
 cleanupOutdatedCaches();
+// Listen's recordings: whole files only (a byte-range request, which this site never makes, goes to the network).
+registerRoute(
+  ({ url, request, sameOrigin }) =>
+    sameOrigin && url.pathname.startsWith(AUDIO_PREFIX) && request.method === 'GET' && !request.headers.has('range'),
+  ({ request, event }) => audioFromCache(request, event),
+);
 registerRoute(
   new NavigationRoute(precache.createHandlerBoundToURL('/index.html'), {
     // /api/ (measurement, later) and addresses of files (such as

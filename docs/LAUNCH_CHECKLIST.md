@@ -175,6 +175,7 @@ Lessons 2 and 4 have no picture file: their pictures are small enough to be inli
 | `/assets/locales/{code}/[hash].js`, then `/assets/fonts-arabic/arabic-[hash].css` and its `vazirmatn-arabic-*.woff2` files | Only when a language other than English is shown: its messages, and for Dari or Arabic the Vazirmatn stylesheet, whose fonts load only for Arabic letters on screen. No language but English is offered yet, so today never |
 | `/assets/pseudo/*.js` | Only in automated tests (the test languages en-XA and ar-XB, `docs/notes/languages.md`); never offered, never precached |
 | `HEAD /` | Only after "Try again" on "This page hasn't downloaded yet" (a first visit that lost the connection before the course was stored), to see whether the site answers before loading the page again |
+| `/audio/{en,id}/timings.[hash].json`, then `/audio/{en,id}/[lesson]-[level]-[part].[hash].mp3` | Listen's recordings (added October 2026, `docs/notes/recorded-audio.md`): only after a tap on Listen, the language's timings file and the part's recording, and the next part's while it plays (not with Save data on); or every recording of the device's lessons' languages after a teacher taps "Download lesson audio" in Settings; or the sample's after "Play a sample". Kept by the service worker in a cache of their own, then answered from there. Never in the precache, never from another server |
 
 After the service worker has installed, page loads answer from it, and nothing is downloaded until a new version comes out.
 
@@ -187,7 +188,7 @@ Inside that frame, YouTube's player then loads its own scripts, images, captions
 - **Say it with "Allow online speech-to-text"**, which is off unless an educator turns it on in Settings. It sends what learners say to the browser maker's service.
 - **"Download speech to text"** in Settings is the browser's own one-time download (about 60 MB, from Google for Chrome). It starts only when an educator taps it. ("Check this device", next to it, only asks the browser what it can do; it downloads nothing.)
 
-Recordings never leave the device. Listen uses only voices that run on the device.
+Recordings never leave the device. Listen plays recordings from this site, and otherwise uses only voices that run on the device.
 
 Saving work to a file and loading one (Settings, "Move work to another device") make no requests: the file is made and read in the browser (`docs/notes/device-transfer.md`).
 

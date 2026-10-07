@@ -13,6 +13,9 @@ blob-report
 # Local tooling and scratch
 .build-review
 .venv
+# Listen's recordings: the Python for them and each piece's recording (scripts/audio/README.md)
+.venv-audio
+.audio-cache
 .vercel
 *.local
 .DS_Store

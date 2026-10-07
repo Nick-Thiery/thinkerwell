@@ -32,6 +32,8 @@ sh scripts/setup-python.sh   # .venv with wordfreq, for the lesson checker
 | `npm run test:e2e:dev` | End-to-end tests for the dev-only `/dev/*` routes (Playwright, `playwright.dev.config.ts`); runs `vite` itself on port 4318, since those routes don't exist in a production build |
 | `npm run check:content` | Checks `content/lessons/*.json` against `docs/content/SPEC.md`, the section checks, and the Indonesian translation (`content/id/`) against the English; must report 0 errors |
 | `npm run check:i18n` | Checks every translation in `src/i18n/messages/` against `en.json` (keys, placeholders, plural forms); says how many messages each still lacks |
+| `npm run check:audio` | Checks Listen's recordings (`public/audio/`) against what Listen reads in the lessons now; fails when any is stale or missing |
+| `npm run audio:generate [-- --lang en\|id]` | Records Listen's audio again with Kokoro (English) and MMS-TTS (Indonesian), only what changed; needs `sh scripts/audio/setup.sh` and ffmpeg. See `scripts/audio/README.md` and `docs/notes/recorded-audio.md` |
 | `npm run i18n:export -- <code>` | Writes the translator's spreadsheet for a language (`thinkerwell-<code>.csv`); see `docs/TRANSLATING.md` |
 | `npm run i18n:import -- <code> <file.csv>` | Reads a filled-in spreadsheet into `src/i18n/messages/<code>.json`, refusing rows whose placeholders don't match |
 | `npm run review:export` / `npm run review:import -- <file.xlsx> [--dry-run]` | The Bahasa Indonesia review spreadsheet (interface, lessons, pictures and section checks): writes it, and applies reviewers' changes; see `docs/translation/README.md`. `npm run test:review` tests both |
@@ -122,7 +124,11 @@ src/main.tsx             entry: router and global styles
 src/app/                 routes, app shell (header, learner switcher, phone nav), lesson URL handling (old Base44 ids redirect here); src/app/lazy/ holds the three chunks of pages that load when first opened, and lazyPage.tsx loads them ("This page hasn't downloaded yet" if it can't)
 src/pages/               one component per page: Home (picker/new learner/dashboard/guest), the course map, and placeholders for later phases
 src/pages/lesson/        the lesson player's page (LessonPage, StageActionBar) and one folder per stage: read, write, speak, watch, reflect, complete, plus evidence and visual
-src/speech/              Listen, Say it and Record yourself: local voice choice, read-aloud player, on-device speech recognition detection and dictation, MediaRecorder
+src/speech/              Listen, Say it and Record yourself: the sentences Listen reads, local voice choice, read-aloud player, on-device speech recognition detection and dictation, MediaRecorder
+src/audio/               Listen's recordings: loading, playing with the highlight, falling back to the device voice, downloading them for offline use
+public/audio/            Listen's recordings (MP3) and their timings, one folder per language, made by npm run audio:generate
+tools/audio/             what Listen reads (export), what the voices are given to say (normalise), npm run check:audio and its manifest
+scripts/audio/           recording Listen's audio: npm run audio:generate (Python: Kokoro, MMS-TTS, ffmpeg)
 src/lesson/              the lesson player's state and rules: LessonPlayerContext (progress, saving, reading level), progressRules (when a stage is done), shuffle, glossary marking, guest memory
 src/session/             LearnerSessionProvider/useLearnerSession (learners, current learner, look-around) and useLearnerProgress, shared by Home and the course map
 src/content/             zod schemas (schema.ts), the checks the build and tests run (load.ts), typed getters for content/*.json (index.ts, only for the pages that show lessons) and the lesson catalog every page can use (catalog.ts)

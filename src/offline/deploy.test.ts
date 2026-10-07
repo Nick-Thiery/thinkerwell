@@ -65,7 +65,15 @@ describe('vercel.json', () => {
 
   it('caches the hashed build files for a year, and only those', () => {
     // docs/notes/slow-internet.md: a hashed file never changes, so a browser never asks for it again.
-    for (const path of ['/assets/index-abc123.js', '/assets/index-abc123.css', '/assets/L10-abc.svg', '/assets/eczar-wordmark-500-abc.woff2']) {
+    for (const path of [
+      '/assets/index-abc123.js',
+      '/assets/index-abc123.css',
+      '/assets/L10-abc.svg',
+      '/assets/eczar-wordmark-500-abc.woff2',
+      // Listen's recordings and their timings carry a hash of their content too (docs/notes/recorded-audio.md).
+      '/audio/en/towns-near-rivers-standard-1.0a1b2c3d4e.mp3',
+      '/audio/id/timings.0a1b2c3d4e.json',
+    ]) {
       expect(cacheControl(path), path).toEqual(['public, max-age=31536000, immutable']);
     }
     // Files without a hash in their name get Vercel's default (revalidate).

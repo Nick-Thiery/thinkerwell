@@ -8,7 +8,10 @@ import { findLocale, I18nProvider, type LoadedLocale } from '../../../i18n';
 import { LessonPlayerTestProvider, type LessonPlayerValue } from '../../../lesson';
 import { DEFAULT_SETTINGS, emptyProgress, type DeviceSettings, type ReadingLevel } from '../../../storage';
 import { fakeVoice, mockSpeechSynthesis, restoreSpeechMocks } from '../../../test/speechMocks';
-import { HEADING_PAUSE_MS, sentenceRanges } from './readingPieces';
+import { setAudioFetchForTests } from '../../../audio/load';
+import { setRecordingsForTests } from '../../../audio/recordings';
+import { piecesHash } from '../../../audio/textHash';
+import { HEADING_PAUSE_MS, listenPieces, sentenceRanges } from './readingPieces';
 import { ReadStage } from './ReadStage';
 
 const L10 = getLesson('towns-near-rivers') as Lesson;
@@ -339,5 +342,103 @@ describe('Listen', () => {
     expect(listenBar()).not.toBeInTheDocument();
     expect(listenTool()).toHaveAttribute('aria-pressed', 'false');
     expect(screen.queryByRole('alert')).not.toBeInTheDocument();
+  });
+});
+
+describe('Listen with recordings', () => {
+  const TIMINGS = '/audio/en/timings.test.json';
+  const pieces = (section: typeof S1) => listenPieces(section.heading, section.text, sentenceRanges(section.text)).map((item) => (typeof item === 'string' ? item : item.text));
+  // Part 1's heading, then each sentence, a second apart.
+  const times = pieces(S1).map((_, i) => [i * 2 + 0.1, i * 2 + 1.5]);
+  let fetched: string[];
+  let play: ReturnType<typeof vi.fn<() => Promise<void>>>;
+
+  function recordings({ online = true, hash = piecesHash(pieces(S1)) } = {}) {
+    setRecordingsForTests({ en: { timings: TIMINGS, files: 1, bytes: 1000 } });
+    setAudioFetchForTests((url) => {
+      fetched.push(url);
+      if (!online) return Promise.reject(new TypeError('Failed to fetch'));
+      if (url === TIMINGS) {
+        return Promise.resolve(
+          new Response(JSON.stringify({ lang: 'en', sections: { [`${L10.id}/standard/1`]: { f: 'part-1.x.mp3', h: hash, b: 1000, t: times } } })),
+        );
+      }
+      return Promise.resolve(new Response(new Uint8Array(1000)));
+    });
+  }
+
+  /** jsdom's audio element can't play: it says it knows the recording's length, keeps the clock it is given, and records play(). */
+  function playableAudio() {
+    const audio = document.querySelector<HTMLAudioElement>('audio.tw-read-audio')!;
+    Object.defineProperty(audio, 'readyState', { value: 4, configurable: true });
+    Object.defineProperty(audio, 'currentTime', { value: 0, writable: true, configurable: true });
+    Object.defineProperty(audio, 'paused', { get: () => !play.mock.calls.length, configurable: true });
+    return audio;
+  }
+
+  beforeEach(() => {
+    fetched = [];
+    play = vi.fn(() => Promise.resolve());
+    vi.spyOn(HTMLMediaElement.prototype, 'play').mockImplementation(play);
+    vi.spyOn(HTMLMediaElement.prototype, 'pause').mockImplementation(() => undefined);
+    vi.spyOn(URL, 'createObjectURL').mockReturnValue('blob:part-1');
+    vi.spyOn(URL, 'revokeObjectURL').mockImplementation(() => undefined);
+  });
+
+  it('shows Listen even on a device with no voice, and plays the part’s recording, marking each sentence as it plays', async () => {
+    const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+    recordings();
+    renderRead();
+    const audio = playableAudio();
+    await user.click(listenTool());
+    expect(fetched).toEqual([TIMINGS, '/audio/en/part-1.x.mp3']);
+    await vi.waitFor(() => expect(audio.src).toBe('blob:part-1'));
+    expect(audio.playbackRate).toBe(1);
+    expect(audio.preservesPitch).toBe(true);
+    act(() => {
+      audio.currentTime = 2.2;
+      audio.dispatchEvent(new Event('timeupdate'));
+    });
+    expect(marked()).toBe(sentences(S1.text)[0]);
+    act(() => {
+      audio.currentTime = 4.2;
+      audio.dispatchEvent(new Event('timeupdate'));
+    });
+    expect(marked()).toBe(sentences(S1.text)[1]);
+
+    // Slow, mid-sentence: the same place, at 0.8, with the same sentence marked.
+    await user.click(within(listenBar()!).getByRole('button', { name: 'Slow' }));
+    expect(audio.playbackRate).toBe(0.8);
+    expect(audio.currentTime).toBe(4.2);
+    expect(marked()).toBe(sentences(S1.text)[1]);
+  });
+
+  it('reads with the device voice when the recording can’t be had (offline, not on the device)', async () => {
+    const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+    const speech = mockSpeechSynthesis();
+    recordings({ online: false });
+    renderRead();
+    await user.click(listenTool());
+    await vi.waitFor(() => expect(speech.spoken.map((u) => u.text)).toEqual([said(S1.heading)]));
+  });
+
+  it('reads with the device voice when the text has changed since it was recorded', async () => {
+    const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+    const speech = mockSpeechSynthesis();
+    recordings({ hash: 'recorded-before-an-edit' });
+    renderRead();
+    await user.click(listenTool());
+    await vi.waitFor(() => expect(speech.spoken.map((u) => u.text)).toEqual([said(S1.heading)]));
+    expect(fetched).toEqual([TIMINGS]);
+  });
+
+  it('says why, and turns off, with neither a recording here nor a voice: never a button that does nothing', async () => {
+    const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+    recordings({ online: false });
+    renderRead();
+    await user.click(listenTool());
+    expect(await screen.findByText(/recording isn't on this device/)).toBeInTheDocument();
+    expect(listenBar()).not.toBeInTheDocument();
+    expect(listenTool()).toHaveAttribute('aria-pressed', 'false');
   });
 });

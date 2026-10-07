@@ -6,6 +6,7 @@
     "lib": ["ES2023", "WebWorker"],
     "module": "ESNext",
     "moduleResolution": "bundler",
+    "resolveJsonModule": true,
     "types": [],
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
@@ -19,5 +20,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true
   },
-  "include": ["src/offline/sw.ts"]
+  "include": ["src/offline/sw.ts", "src/audio/cache.ts", "src/audio/recordings.json"]
 }

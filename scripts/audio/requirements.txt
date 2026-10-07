@@ -1,0 +1,8 @@
+# Listen's recordings (scripts/audio/generate.py). Install with sh scripts/audio/setup.sh.
+# The versions the recordings were made with in October 2026.
+kokoro==0.9.4
+misaki[en]==0.9.4
+transformers==5.18.0
+torch==2.14.1
+soundfile==0.14.0
+numpy==2.4.4

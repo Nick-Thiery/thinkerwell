@@ -10,13 +10,11 @@
  * Indonesian was drafted by AI and is listed for the native reviewers
  * (docs/translation/README.md).
  */
+import { LISTEN_SAMPLES } from './sampleText';
 import { baseLang } from './voiceRanking';
 
-/** The sample sentence by the lessons' language ("en", "id"). */
-export const LISTEN_SAMPLES: Readonly<Record<string, string>> = {
-  en: 'This is the voice that reads the lessons aloud.',
-  id: 'Ini suara yang membacakan pelajaran.',
-};
+/** The sample sentence by the lessons' language ("en", "id"), in ./sampleText.ts so the recordings use it too. */
+export { LISTEN_SAMPLES };
 
 /** The sample sentence for a speech tag ("en-GB", "id-ID"); English for a language with none. */
 export function listenSample(speechLang: string): string {

@@ -2,6 +2,8 @@
 
 Branch `listen-voices`. Researched and built on 7 October 2026. Learners said Listen sounded robotic. Browsers change what they list often, so check this again before relying on it.
 
+Since the `recorded-audio` branch (8 October 2026, `docs/notes/recorded-audio.md`), Listen plays recordings of a natural voice wherever it can, and the device's voice described here reads only what has no recording on the device at the time (offline before it was downloaded, a file that fails, text changed since it was recorded). Settings' "Play a sample" now plays the recorded sample; the device voice has "Hear this voice".
+
 ## Why it sounded robotic
 
 `pickListenVoice` took the device's default local voice first, then the first voice with a preferred region. Two things made that a bad choice:

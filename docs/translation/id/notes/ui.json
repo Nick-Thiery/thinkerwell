@@ -168,9 +168,21 @@
     "note": "New message (Nick). Shown under the reading tools when the device has no Indonesian voice for Listen. Check it is short and clear.",
     "back": "Listen can't read this lesson aloud here yet, because this device has no Indonesian-language voice."
   },
+  "lessonPlayer.read.listenUnavailable": {
+    "back": "Listen can't play this part here yet. Its recording isn't on this device yet, and this device doesn't have a voice to read it. Connect to the internet, then tap Listen again.",
+    "source": "Listen can't play this part here yet. Its recording isn't on this device, and the device has no voice to read it with. Connect to the internet, then tap Listen again.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
   "lessonPlayer.read.listenLabel": {
     "source": "Reading aloud · part {n} of {total}",
     "back": "Being read aloud · part {n} of {total}"
+  },
+  "lessonPlayer.read.listenLoading": {
+    "back": "Getting the recording · part {n} of {total}",
+    "source": "Getting the recording · part {n} of {total}",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
   },
   "lessonPlayer.read.levelLabel": {
     "back": "Reading level",
@@ -2124,6 +2136,18 @@
     "source": "Open Thinkerwell with the internet on, and keep it open until the lessons are saved. It does this by itself.",
     "back": "Open Thinkerwell while the internet is on, and leave it open until all lessons are saved. Thinkerwell does it by itself."
   },
+  "pages.setup.offline.audio": {
+    "back": "So that Listen can be used without the internet, also download the lesson audio: in Settings, in the Lesson audio section.",
+    "source": "For Listen without the internet, also download the lesson audio: in Settings, under Lesson audio.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.setup.offline.audioOpen": {
+    "back": "Lesson audio in Settings",
+    "source": "Lesson audio in Settings",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
   "pages.setup.storage.title": {
     "source": "Keep saved work safe",
     "back": "Keep work safe"
@@ -2212,6 +2236,12 @@
     "flag": true,
     "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
   },
+  "pages.setup.voice.whyRecorded": {
+    "back": "Listen plays recordings of a natural voice. If the recording isn't on the device yet and there's no internet, Listen reads with the best voice it finds on the device. You can hear each voice and choose another, or download a clearer voice.",
+    "source": "Listen plays recordings of a natural voice. Where a recording isn't on the device and there's no internet, it reads with the best voice it finds on the device. You can hear each voice and choose another, or download a clearer one.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
   "pages.setup.voice.how": {
     "back": "In Settings, in the Listen voice section, play a sample and choose the clearest voice.",
     "source": "In Settings, under Listen voice, play a sample and choose the clearest voice.",
@@ -2235,6 +2265,12 @@
     "source": "This device has no voice that Listen can use, so Listen doesn't show. Settings says how to add one.",
     "flag": true,
     "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.setup.voice.noneRecorded": {
+    "back": "This device doesn't have its own voice that Listen can use, so Listen only plays recordings. Settings explains how to add a voice.",
+    "source": "This device has no voice of its own that Listen can use, so Listen plays only the recordings. Settings says how to add a voice.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
   },
   "pages.setup.voice.open": {
     "back": "Choose in Settings",
@@ -2538,6 +2574,12 @@
     "flag": true,
     "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
   },
+  "pages.settings.listenVoice.introRecorded": {
+    "back": "Listen plays recordings of a natural voice, made for every lesson. If a part's recording isn't on this device yet and there's no internet, Listen reads it with this device's voice, so nothing is sent to the internet. Choose that voice here.",
+    "source": "Listen plays recordings of a natural voice, made for every lesson. Where a part's recording isn't on this device and there's no internet, it reads with a voice of this device instead, so nothing is sent online. Choose that voice here.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
   "pages.settings.listenVoice.voiceFor.en": {
     "back": "Voice for lessons in English",
     "source": "Voice for English lessons",
@@ -2574,17 +2616,41 @@
     "flag": true,
     "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
   },
+  "pages.settings.listenVoice.deviceSample": {
+    "back": "Hear this voice",
+    "source": "Hear this voice",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.listenVoice.sampleUnavailable": {
+    "back": "The sample isn't on this device yet, and this device doesn't have a voice to read it. Connect to the internet and try again.",
+    "source": "The sample isn't on this device yet, and the device has no voice to read it with. Connect to the internet and try again.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
   "pages.settings.listenVoice.noVoice": {
     "back": "This device has no English voice that Listen can use, so Listen doesn't appear. The steps below explain how to add one.",
     "source": "This device has no English voice that Listen can use, so Listen doesn't show. The steps below add one.",
     "flag": true,
     "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
   },
+  "pages.settings.listenVoice.noVoiceRecorded": {
+    "back": "This device doesn't have an English voice. Listen still plays recordings, but can't read a part whose recording isn't on this device yet while there's no internet. The steps below explain how to add a voice.",
+    "source": "This device has no English voice. Listen still plays the recordings, but can't read a part whose recording isn't on this device while there's no internet. The steps below add a voice.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
   "pages.settings.listenVoice.noVoiceIndonesian": {
     "back": "This device doesn't have an Indonesian voice yet, so Listen can't read lessons in Indonesian yet. The steps below explain how to add one.",
     "source": "This device has no Indonesian voice yet, so Listen can't read Indonesian lessons. The steps below add one.",
     "flag": true,
     "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.listenVoice.noVoiceIndonesianRecorded": {
+    "back": "This device doesn't have an Indonesian voice yet. Listen still plays recordings, but can't read a part whose recording isn't on this device yet while there's no internet. The steps below explain how to add a voice.",
+    "source": "This device has no Indonesian voice. Listen still plays the recordings, but can't read a part whose recording isn't on this device while there's no internet. The steps below add a voice.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
   },
   "pages.settings.listenVoice.better.title": {
     "back": "Get a clearer voice",
@@ -3219,6 +3285,30 @@
     "note": "New in the credits page (September 2026): drafted by AI, not yet reviewed.",
     "back": "{name} ({licence})",
     "source": "{name} ({licence})"
+  },
+  "pages.credits.voicesTitle": {
+    "back": "Listen's voices",
+    "source": "Listen's voices",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.credits.voicesBody": {
+    "back": "Listen plays recordings made for Thinkerwell from the lesson text with these free text-to-speech voices. The recordings were made by a computer, not by a person, and the voices themselves were not changed.",
+    "source": "Listen plays recordings made for Thinkerwell from the lesson text with these free text-to-speech voices. A computer made them, not a person, and the voices themselves were not changed.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.credits.voiceEnglish": {
+    "back": "Lessons in English: {model} by hexgrad, voice Heart, with the {licence} licence.",
+    "source": "English lessons: {model} by hexgrad, voice Heart, under the {licence}.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.credits.voiceIndonesian": {
+    "back": "Lessons in Indonesian: {model} by Meta, part of Massively Multilingual Speech, with the {licence} licence. This licence only allows non-commercial use. Thinkerwell is free, and only uses it that way.",
+    "source": "Bahasa Indonesia lessons: {model} by Meta, part of Massively Multilingual Speech, under the {licence}. This licence allows only non-commercial use. Thinkerwell is free, and uses it only that way.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
   },
   "pages.credits.translationTitle": {
     "flag": true,
@@ -4681,6 +4771,126 @@
     "note": "New in the credits page (September 2026): drafted by AI, not yet reviewed.",
     "back": "Thanks (credits)",
     "source": "Credits"
+  },
+  "pages.settings.listenVoice.recordedWith": {
+    "back": "Listen plays recordings made with {voice}.",
+    "source": "Listen plays recordings made with {voice}.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.listenVoice.deviceVoice": {
+    "back": "Device voice, if there's no recording",
+    "source": "Device voice, when there's no recording",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.lessonAudio.title": {
+    "back": "Lesson audio",
+    "source": "Lesson audio",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.lessonAudio.intro": {
+    "back": "Listen downloads each part's recording the first time it plays it. So that Listen can be used without the internet, download all of them here with good Wi-Fi.",
+    "source": "Listen downloads each part's recording the first time it plays it. To use Listen without the internet, download all of them here, on good Wi-Fi.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.lessonAudio.stored": {
+    "back": "On this device: {stored} MB of {total} MB.",
+    "source": "On this device: {stored} MB of {total} MB.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.lessonAudio.storedAll": {
+    "back": "All of it is already on this device. Listen can be used here without the internet.",
+    "source": "All of it is on this device. Listen works here without the internet.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.lessonAudio.storedNone": {
+    "back": "Nothing is saved on this device yet.",
+    "source": "None of it is on this device yet.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.lessonAudio.download": {
+    "back": "Download lesson audio",
+    "source": "Download lesson audio",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.lessonAudio.stop": {
+    "back": "Stop downloading",
+    "source": "Stop downloading",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.lessonAudio.progress": {
+    "back": "Downloading: {done} MB of {total} MB",
+    "source": "Downloading: {done} MB of {total} MB",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.lessonAudio.progressLabel": {
+    "back": "Lesson audio that has been downloaded",
+    "source": "Lesson audio downloaded",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.lessonAudio.stopped": {
+    "back": "Stopped. What has been downloaded stays on this device.",
+    "source": "Stopped. What was downloaded stays on this device.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.lessonAudio.failed": {
+    "back": "Some recordings didn't download successfully. Check the connection and try again. What has been downloaded stays.",
+    "source": "Some recordings didn't download. Check the connection and try again. What was downloaded stays.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.lessonAudio.saveData": {
+    "back": "Save data is on, so nothing is downloaded from here. Turn off Save data above to download the lesson audio.",
+    "source": "Save data is on, so nothing downloads from here. Turn Save data off above to download the lesson audio.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.lessonAudio.notReady": {
+    "back": "This can start after the lessons are saved on this device for use without the internet, above.",
+    "source": "This can start once the lessons are saved on this device for offline use, above.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.lessonAudio.unsupported": {
+    "back": "This browser can't save lesson audio, so here Listen needs the internet.",
+    "source": "This browser can't keep lesson audio, so Listen needs the internet here.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.lessonAudio.forEnglish": {
+    "back": "For lessons in English: {size} MB in total.",
+    "source": "For English lessons: {size} MB in all.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.lessonAudio.forIndonesian": {
+    "back": "For lessons in Indonesian: {size} MB in total.",
+    "source": "For Bahasa Indonesia lessons: {size} MB in all.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.lessonAudio.forBoth": {
+    "back": "For lessons in English and Indonesian: {size} MB in total.",
+    "source": "For English and Bahasa Indonesia lessons: {size} MB in all.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.lessonAudio.forDevice": {
+    "back": "For the lessons used on this device: {size} MB in total.",
+    "source": "For the lessons used on this device: {size} MB in all.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
   },
   "seo.home.title": {
     "source": "Thinkerwell | Free Social Studies Learning for Youth",

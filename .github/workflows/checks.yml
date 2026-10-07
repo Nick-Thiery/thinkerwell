@@ -48,6 +48,12 @@ jobs:
       - name: Language check (translations against en.json)
         run: npm run check:i18n
 
+      # CI can't run the voice models: a lesson edit that changes what Listen
+      # reads fails here until someone runs `npm run audio:generate` and
+      # commits the new recordings (docs/notes/recorded-audio.md).
+      - name: Listen's recordings match the lessons
+        run: npm run check:audio
+
       - name: Build
         run: npm run build
 
