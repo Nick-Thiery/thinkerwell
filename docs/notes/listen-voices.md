@@ -69,6 +69,10 @@ The Indonesian versions use the menus' Indonesian names as far as they are known
 - **Speeds unchanged**: Slow stays 0.8 and Normal 1, and the pitch is never set. Normal is each voice's own speed, which is what makes a voice sound like itself; nothing pointed to a different speed being clearer for these learners. Learners can still slow it down.
 - One utterance per sentence, as before (phase 5), so there is a natural pause between sentences and the highlight keeps up.
 
+## Sizes
+
+Measured as `e2e/build-output.spec.ts` counts them (Brotli), against `main` built on the same machine: the course's offline copy grows by 4.1 kB (630.4 to 634.5 kB; the budget is 635 kB), for the ranking, the Settings part, the checklist step and their words in English and Indonesian. A first visit to the home page grows by 0.7 kB (218.8 to 219.5 kB; the budget is 220 kB): the new English words are in en.json, which every first visit loads, and the styles are in the one stylesheet. No budget was raised, but both are now within 0.5 kB of their limits.
+
 ## Not done, or for later
 
 - **Try it on the pilot devices.** Nothing here was tried on an iPad, an Android tablet, a Windows laptop or a Chromebook. On each: does Settings list the voices you expect, does Automatic pick a clear one, does "Play a sample" speak, and does a downloaded voice appear (Safari may not show it)?

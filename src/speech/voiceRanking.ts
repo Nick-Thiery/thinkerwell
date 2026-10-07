@@ -87,16 +87,20 @@ const NOVELTY_URI =
  */
 const ELOQUENCE_NAMES = new Set(['eddy', 'flo', 'grandma', 'grandpa', 'jacques', 'reed', 'rocko', 'sandy', 'shelley']);
 
-/** The quality table, checked in this order. */
-const QUALITY: ReadonlyArray<{ quality: VoiceQuality; why: string; test: (voice: VoiceInfo, base: string) => boolean }> = [
+/** The quality table, checked in this order; a voice that matches neither is 'standard'. */
+const QUALITY: ReadonlyArray<{ quality: VoiceQuality; test: (voice: VoiceInfo, base: string) => boolean }> = [
   {
+    // A downloaded higher-quality voice: Apple's "(Enhanced)" and "(Premium)"
+    // (in Safari, "com.apple.voice.enhanced…" and "…premium…"), Microsoft's
+    // and Google's "Natural", other "Neural" voices, and "Siri" voices where
+    // a browser lists them.
     quality: 'high',
-    why: 'A downloaded higher-quality voice: Apple\'s "(Enhanced)" and "(Premium)", Microsoft\'s and Google\'s "Natural", other "Neural" voices, and "Siri" voices where a browser lists them.',
     test: (voice) => /\b(premium|enhanced|natural|neural|siri)\b/i.test(voice.name) || /\b(premium|enhanced)\b/i.test(voice.voiceURI),
   },
   {
+    // The most robotic: Apple's Eloquence voices, eSpeak's (ChromeOS, Linux)
+    // and Apple's super-compact ones.
     quality: 'low',
-    why: "Apple's Eloquence voices, eSpeak's (ChromeOS, Linux) and Apple's super-compact ones: the most robotic.",
     test: (voice, base) =>
       ELOQUENCE_NAMES.has(base) || /eloquence|espeak|super-?compact/i.test(voice.voiceURI) || /\bespeak\b/i.test(voice.name),
   },
