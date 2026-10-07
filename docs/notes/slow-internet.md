@@ -218,6 +218,7 @@ Each time `e2e/build-output.spec.ts` went over a budget, the cause was looked fo
 | --- | ---: | ---: | --- |
 | Sources check and the partner kit (September 2026) | 624.8 kB | 216.3 kB | 630 kB, 218 kB |
 | The consent form's study parts and the information sheet (October 2026) | 630.4 kB (626.2 kB before) | 218.8 kB (216.9 kB before) | 635 kB, 220 kB |
+| The Listen voice choice, with the About page's mission card (October 2026) | 635.4 kB (630.4 kB before) | within 220 kB | 645 kB, 220 kB |
 
 - **The consent form's study parts and the information sheet** (`docs/notes/partner-kit.md`). The precache grew by 4.2 kB: the English messages 1.3 kB (`NotFoundPage-`, which holds en.json), the Indonesian 1.2 kB (`assets/locales/id/`), the pages' code 1.1 kB (`teacherPages-`: the information sheet, the study parts both printouts share, and the two-page form) and their styles 0.5 kB (`style-`). The first visit grew by 1.9 kB: the English words and the styles, because every interface word is in en.json, which the app's first chunk carries (`src/i18n/core.ts`, CLAUDE.md rule 7), and every page shares one stylesheet (`cssCodeSplit: false`). No page code reached the first visit (`index-` grew by 33 bytes). The study and its promises are written once and used by both printouts (`pages.pilotStudy`), and the form's six old parts went when the new ones came in, so there is little left to cut without cutting what the brief asked for. Moving printouts' words out of en.json into their own chunk would save the 1.3 kB, but would break the one-messages-file rule; not done.
 
