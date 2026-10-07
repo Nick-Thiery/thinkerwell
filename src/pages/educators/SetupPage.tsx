@@ -169,8 +169,9 @@ export function SetupPage() {
               ) : null
             }
           >
-            {/* Listen's recordings aren't in the offline copy: point to Settings' "Lesson audio". */}
-            {recorded ? <p>{t('pages.setup.offline.audio')}</p> : null}
+            {/* Listen's recordings aren't in the offline copy: point to Settings' "Lesson audio". On screen
+                only: on paper the checklist must still fit one A4 page in Indonesian. */}
+            {recorded ? <p className="tw-no-print">{t('pages.setup.offline.audio')}</p> : null}
           </SetupStep>
 
           <SetupStep
