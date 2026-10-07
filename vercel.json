@@ -4,7 +4,20 @@
   "installCommand": "npm ci",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "rewrites": [{ "source": "/((?!.*\\.[^/]+$).*)", "destination": "/index.html" }],
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/:path(.*)", "has": [{ "type": "host", "value": "thinkerwell.vercel.app" }], "destination": "https://thinkerwell.app/:path", "permanent": true },
+    { "source": "/:path(.*)", "has": [{ "type": "host", "value": "www.thinkerwell.app" }], "destination": "https://thinkerwell.app/:path", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/course", "destination": "/course.html" },
+    { "source": "/educators", "destination": "/educators.html" },
+    { "source": "/organisations", "destination": "/organisations.html" },
+    { "source": "/credits", "destination": "/credits.html" },
+    { "source": "/lesson/:id(finding-out-about-the-past|objects-and-people|changing-scale|origin-accounts|early-humans|farming-changes-societies|cities-and-states|trade-connects-communities|inventions-and-daily-life|towns-near-rivers|maps-and-places|how-cities-grow|climate-and-seasons|responding-to-environmental-change|objects-and-identity|languages-connect-people|why-traditions-matter|art-tells-stories|what-belonging-means|making-choices|trade-and-exchange|planning-for-the-future|trustworthy-information|young-people-contribute)/read", "destination": "/lesson/:id/read.html" },
+    { "source": "/((?!.*\\.[^/]+$).*)", "destination": "/app.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -27,7 +40,7 @@
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
     },
     {
-      "source": "/index.html",
+      "source": "/(.*)\\.html",
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
     },
     {

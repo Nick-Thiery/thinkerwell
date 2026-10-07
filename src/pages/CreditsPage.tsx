@@ -14,7 +14,7 @@
  * chunk with the teacher guides, which read them too.
  */
 import type { ReactNode } from 'react';
-import { usePageTitle } from '../app/usePageTitle';
+import { useFullPageTitle } from '../app/usePageTitle';
 import { useContent } from '../content/useContent';
 import { useI18n, type MessageKey } from '../i18n';
 import './CreditsPage.css';
@@ -57,7 +57,7 @@ export function CreditsPage() {
   const { t, tx, contentLang, englishLang } = useI18n();
   const content = useContent();
   const title = t('pages.credits.title');
-  usePageTitle(title);
+  useFullPageTitle(t('seo.credits.title'));
   const lessons = content.getLessons();
 
   return (

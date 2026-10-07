@@ -157,7 +157,9 @@ describe('every lesson, every step', () => {
         else expect(primaries, step.path).toHaveLength(1);
         await waitFor(() =>
           expect(document.title).toBe(
-            `${t('pages.lesson.title', { number: lesson.number, stage: t(`stages.${stage}`) })} · Thinkerwell`,
+            stage === 'read'
+              ? t('seo.lessonTitle', { number: lesson.number, title: lesson.title })
+              : `${t('pages.lesson.title', { number: lesson.number, stage: t(`stages.${stage}`) })} | Thinkerwell`,
           ),
         );
       }

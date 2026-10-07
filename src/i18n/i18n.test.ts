@@ -29,14 +29,14 @@ describe('translate', () => {
   });
 
   it('fills in {params}', () => {
-    expect(t('app.documentTitle', { page: 'Course map' })).toBe('Course map · Thinkerwell');
+    expect(t('app.documentTitle', { page: 'Course map' })).toBe('Course map | Thinkerwell');
     expect(t('pages.lesson.title', { number: 10, stage: 'Read' })).toBe('Lesson 10: Read');
     expect(t('lesson.minutes', { min: 30, max: 50 })).toBe('About 30–50 min');
   });
 
   it('leaves a missing param as {name}', () => {
     expect(t('pages.lesson.title', { number: 3 })).toBe('Lesson 3: {stage}');
-    expect(t('app.documentTitle')).toBe('{page} · Thinkerwell');
+    expect(t('app.documentTitle')).toBe('{page} | Thinkerwell');
   });
 
   it('ignores params that are not in the message', () => {

@@ -3,7 +3,8 @@
     "name": "Thinkerwell",
     "courseTitle": "Exploring Our World",
     "skipToContent": "Skip to content",
-    "documentTitle": "{page} · Thinkerwell"
+    "documentTitle": "{page} | Thinkerwell",
+    "mascotAlt": "The Thinkerwell mascot, a purple reader holding a book"
   },
   "nav": {
     "label": "Main",
@@ -1111,7 +1112,37 @@
   "footer": {
     "label": "More about Thinkerwell",
     "organisations": "For organisations",
-    "credits": "Credits"
+    "credits": "Credits",
+    "linkedin": "Thinkerwell on LinkedIn"
+  },
+  "seo": {
+    "home": {
+      "title": "Thinkerwell | Free Social Studies Learning for Youth",
+      "description": "Free social studies learning for youth across Southeast Asia, especially those facing barriers to education. Explore history, geography, culture and civic life."
+    },
+    "about": {
+      "title": "About Thinkerwell | Our Mission",
+      "description": "Learn why Thinkerwell began and how its free digital platform makes social studies learning more accessible to youth facing barriers to education."
+    },
+    "course": {
+      "title": "Exploring Our World | Free Social Studies Course",
+      "description": "Explore Thinkerwell's {lessons} free lessons in history, geography, culture and civic life. Learn independently or with an educator."
+    },
+    "educators": {
+      "title": "For Educators | Thinkerwell",
+      "description": "Teach Thinkerwell's free social studies lessons with teacher guides, printable materials and flexible activities for shared devices."
+    },
+    "organisations": {
+      "title": "For Organisations | Thinkerwell",
+      "description": "Learn how a pilot with Thinkerwell could support social studies learning for youth facing barriers to education."
+    },
+    "credits": {
+      "title": "Credits and Sources | Thinkerwell",
+      "description": "Explore the sources, videos, images and software behind Thinkerwell's free social studies lessons."
+    },
+    "lessonTitle": "Lesson {number}: {title} | Thinkerwell",
+    "lessonDescription": "Lesson {number} of {course}, Thinkerwell's free social studies course. Learning goal: {goal}",
+    "imageAlt": "The Thinkerwell mascot, a purple reader holding a book, above the words Thinkerwell: Exploring Our World."
   },
   "dev": {
     "rtlOn": "Right-to-left test mode is on. Add ?dir=ltr to the address to turn it off.",

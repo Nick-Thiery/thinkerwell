@@ -3,7 +3,8 @@
     "name": "Thinkerwell",
     "courseTitle": "Menjelajahi Dunia Kita",
     "skipToContent": "Langsung ke isi",
-    "documentTitle": "{page} · Thinkerwell"
+    "documentTitle": "{page} | Thinkerwell",
+    "mascotAlt": "Maskot Thinkerwell, pembaca berwarna ungu yang memegang buku"
   },
   "nav": {
     "label": "Utama",
@@ -1101,7 +1102,37 @@
   "footer": {
     "label": "Tentang Thinkerwell",
     "organisations": "Untuk organisasi",
-    "credits": "Ucapan terima kasih"
+    "credits": "Ucapan terima kasih",
+    "linkedin": "Thinkerwell di LinkedIn"
+  },
+  "seo": {
+    "home": {
+      "title": "Thinkerwell | Belajar IPS Gratis untuk Remaja",
+      "description": "Belajar IPS gratis untuk remaja di Asia Tenggara, terutama mereka yang menghadapi hambatan dalam pendidikan. Jelajahi sejarah, geografi, budaya, dan kehidupan bermasyarakat."
+    },
+    "about": {
+      "title": "Tentang Thinkerwell | Misi Kami",
+      "description": "Ketahui mengapa Thinkerwell dimulai dan bagaimana platform digital gratisnya membuat belajar IPS lebih mudah diakses oleh remaja yang menghadapi hambatan dalam pendidikan."
+    },
+    "course": {
+      "title": "Menjelajahi Dunia Kita | Kursus IPS Gratis",
+      "description": "Jelajahi {lessons} pelajaran gratis dari Thinkerwell tentang sejarah, geografi, budaya, dan kehidupan bermasyarakat. Belajar sendiri atau bersama pendidik."
+    },
+    "educators": {
+      "title": "Untuk Pendidik | Thinkerwell",
+      "description": "Ajarkan pelajaran IPS gratis dari Thinkerwell dengan panduan guru, bahan yang bisa dicetak, dan kegiatan fleksibel untuk perangkat yang dipakai bersama."
+    },
+    "organisations": {
+      "title": "Untuk Organisasi | Thinkerwell",
+      "description": "Pelajari bagaimana uji coba bersama Thinkerwell dapat mendukung pembelajaran IPS bagi remaja yang menghadapi hambatan dalam pendidikan."
+    },
+    "credits": {
+      "title": "Ucapan Terima Kasih dan Sumber | Thinkerwell",
+      "description": "Jelajahi sumber, video, gambar, dan perangkat lunak di balik pelajaran IPS gratis dari Thinkerwell."
+    },
+    "lessonTitle": "Pelajaran {number}: {title} | Thinkerwell",
+    "lessonDescription": "Pelajaran {number} dari {course}, kursus IPS gratis dari Thinkerwell. Tujuan belajar: {goal}",
+    "imageAlt": "Maskot Thinkerwell, pembaca berwarna ungu yang memegang buku, di atas tulisan Thinkerwell: Exploring Our World."
   },
   "dev": {
     "rtlOn": "Mode uji kanan-ke-kiri sedang aktif. Tambahkan ?dir=ltr ke alamat untuk mematikannya.",

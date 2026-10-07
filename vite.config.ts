@@ -17,6 +17,8 @@ import {
 } from './src/i18n/build.ts';
 import { LOCALES, PSEUDO_LOCALES } from './src/i18n/locales.ts';
 import { PSEUDO_TRANSFORMS, pseudoMessages } from './src/i18n/pseudo.ts';
+import { pageHead, seoPages, shellHead, sitemapXml, withHead, type SeoInput, type SeoLesson } from './src/seo/build.ts';
+import { SHELL_FILE } from './src/seo/site.ts';
 
 /** Which kind of content file a module is, from its path, or null for anything else. */
 function contentKind(id: string): ContentFileKind | null {
@@ -301,6 +303,34 @@ function stripTeamOnlyLessonFields(): Plugin {
   };
 }
 
+/**
+ * Leaves the words only the build uses out of the messages the browser
+ * downloads: the pages' search descriptions and the share picture's
+ * description (en.json and id.json, `seo.*.description`,
+ * `seo.lessonDescription`, `seo.imageAlt`). seoFiles() writes them into
+ * each page's HTML head from the files on disk; the app only shows the
+ * search titles (useFullPageTitle). en.json is in the first chunk, so this
+ * keeps about half a kilobyte off every first visit. The files themselves
+ * are untouched, and tests and check:i18n read them whole.
+ */
+function stripBuildOnlyMessages(): Plugin {
+  return {
+    name: 'thinkerwell:strip-build-only-messages',
+    apply: 'build',
+    enforce: 'pre',
+    transform(code, id) {
+      if (!/[\\/]src[\\/]i18n[\\/]messages[\\/](?!.*\.notes\.json$)[^\\/]+\.json$/.test(id)) return null;
+      const messages = JSON.parse(code) as { seo?: Record<string, unknown> };
+      if (!messages.seo) return null;
+      for (const [key, value] of Object.entries(messages.seo)) {
+        if (value && typeof value === 'object') delete (value as Record<string, unknown>).description;
+        else if (key === 'lessonDescription' || key === 'imageAlt') delete messages.seo[key];
+      }
+      return { code: JSON.stringify(messages), map: null };
+    },
+  };
+}
+
 const PSEUDO_PREFIX = 'virtual:tw-pseudo-locale/';
 const PSEUDO_ID = '\0tw-pseudo-locale:';
 
@@ -341,6 +371,93 @@ function pseudoLocales(): Plugin {
   };
 }
 
+/**
+ * Search engines and link previews (docs/notes/seo.md). The app is drawn in
+ * the browser, and crawlers and link previews read the HTML file, so each
+ * public page gets a file of its own with its own head: title, description,
+ * canonical link, Open Graph and Twitter tags (src/seo/build.ts, words from
+ * en.json's `seo`).
+ * - index.html (the home page) gets the home page's head, in the dev server
+ *   too, at its <!--page-metadata--> marker.
+ * - about.html, course.html, educators.html, organisations.html,
+ *   credits.html and lesson/<id>/read.html: the same file with that page's
+ *   head. vercel.json rewrites each address to its file.
+ * - app.html: the same file with `noindex` and no canonical link, for every
+ *   other address (vercel.json's last rewrite): journals, Settings, teacher
+ *   tools, certificates, checks, print views, the other lesson steps and
+ *   unknown addresses.
+ * - sitemap.xml: the public pages' canonical addresses (public/robots.txt
+ *   points to it).
+ * None of these is precached: the service worker answers every page load
+ * with index.html, as before (`offline()`).
+ *
+ * `vite preview` serves them the way Vercel does, so the end-to-end tests
+ * check the real thing: an address with a file of its own gets it, any other
+ * page address gets app.html, and an address ending in "/" is redirected
+ * without it (vercel.json's trailingSlash: false).
+ */
+function seoFiles(): Plugin {
+  let root = process.cwd();
+  const input = (): SeoInput => {
+    const read = (...parts: string[]) => JSON.parse(readFileSync(path.join(root, ...parts), 'utf8')) as unknown;
+    const lessons = readdirSync(path.join(root, 'content', 'lessons'))
+      .filter((name) => name.endsWith('.json'))
+      .map((name) => read('content', 'lessons', name) as SeoLesson);
+    const course = read('content', 'course.json') as { course: { title: string } };
+    return { messages: read('src', 'i18n', 'messages', 'en.json'), courseTitle: course.course.title, lessons };
+  };
+  return {
+    name: 'thinkerwell:seo-files',
+    configResolved(config) {
+      root = config.root;
+    },
+    transformIndexHtml: {
+      order: 'pre',
+      handler(html) {
+        const seo = input();
+        return withHead(html, pageHead(seoPages(seo)[0]!, seo.messages));
+      },
+    },
+    generateBundle: {
+      order: 'post',
+      handler(_options, bundle) {
+        const index = bundle['index.html'];
+        if (!index || index.type !== 'asset') {
+          this.error('thinkerwell:seo-files: index.html is not in the bundle yet');
+        }
+        const html = String(index.source);
+        const seo = input();
+        const pages = seoPages(seo);
+        for (const page of pages) {
+          if (page.file === 'index.html') continue;
+          this.emitFile({ type: 'asset', fileName: page.file, source: withHead(html, pageHead(page, seo.messages)) });
+        }
+        this.emitFile({ type: 'asset', fileName: SHELL_FILE, source: withHead(html, shellHead(seo.messages)) });
+        this.emitFile({ type: 'asset', fileName: 'sitemap.xml', source: sitemapXml(pages) });
+      },
+    },
+    configurePreviewServer(server) {
+      const dist = path.resolve(server.config.root, server.config.build.outDir);
+      server.middlewares.use((req, res, next) => {
+        if (req.method !== 'GET' && req.method !== 'HEAD') return next();
+        const url = new URL(req.url ?? '/', 'http://preview');
+        const pathname = decodeURIComponent(url.pathname);
+        // The home page, files (anything with an extension) and anything odd go on as before.
+        if (pathname === '/' || /\.[^/]+$/.test(pathname) || pathname.includes('..')) return next();
+        if (pathname.endsWith('/')) {
+          res.statusCode = 308;
+          res.setHeader('Location', `${pathname.replace(/\/+$/, '')}${url.search}`);
+          res.end();
+          return;
+        }
+        if (existsSync(path.join(dist, `${pathname}.html`))) return next();
+        req.url = `/${SHELL_FILE}${url.search}`;
+        next();
+      });
+    },
+  };
+}
+
 /** Codes of the message files in src/i18n/messages (en, fa-AF, ...), not the translator notes. */
 function messageFileCodes(): string[] {
   return readdirSync(path.join(import.meta.dirname, 'src', 'i18n', 'messages'))
@@ -353,7 +470,8 @@ function messageFileCodes(): string[] {
  * whole site at the first visit, so every lesson works without the internet
  * afterwards. See docs/notes/phase-6.md.
  *
- * - Precached: index.html, all JS (the app, the libraries and every lesson
+ * - Precached: index.html (not the other pages' HTML files or app.html,
+ *   `seoFiles()`: page loads get index.html anyway), all JS (the app, the libraries and every lesson
  *   and section check, which are bundled into the `content` chunk), the CSS,
  *   the fonts (woff2 only; fonts.css asks for nothing else), the lesson
  *   pictures and public/images. Not the two flat mascot files (for
@@ -410,7 +528,8 @@ function offline(): Plugin[] {
     srcDir: 'src/offline',
     filename: 'sw.ts',
     injectManifest: {
-      globPatterns: ['**/*.{html,js,css,woff2,svg,png,jpg}'],
+      // Of the HTML files, only index.html: every page load gets it (sw.ts).
+      globPatterns: ['index.html', '**/*.{js,css,woff2,svg,png,jpg}'],
       // Not precached: the app icons (the browser fetches them when the site
       // is installed), the flat mascots (for printouts and emails) and the
       // link-sharing picture (only apps previewing a link fetch it).
@@ -451,10 +570,12 @@ export default defineConfig({
     checkContent(),
     lessonCatalog(),
     stripTeamOnlyLessonFields(),
+    stripBuildOnlyMessages(),
     keepZodOutOfTheBrowser(),
     pseudoLocales(),
     keepFirstVisitLight(),
     preloadFirstPage(),
+    seoFiles(),
     offline(),
   ],
   cacheDir: process.env.VITE_CACHE_DIR || 'node_modules/.vite',

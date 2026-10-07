@@ -153,6 +153,21 @@ Details and the reasons are in `docs/notes/partner-kit.md`. It gives a new partn
 - **About** (`/about`) has the mission, the UN goals it works towards and who makes it, and ends with a link to Credits. The "Our promise to learners" box and the line about not being a registered charity were taken off About, and that line off the footer, in September 2026 (Nick's call); the copy guide put the charity line back on 1 October. On 7 October 2026 the "What Thinkerwell is" card became **"Our mission"**, holding only the team's approved mission paragraph: the course description lives on Home, the course page and For organisations, and the pilot status and the charity line on For organisations and the consent form. Each team member's card has a LinkedIn link under their name (opens in a new tab; the logo is Font Awesome Free's, drawn inline, so nothing is fetched). Public copy calls Thinkerwell a "platform", never a "project". Nothing anywhere may claim Thinkerwell is a registered charity or nonprofit; For organisations and the consent form still say plainly that it isn't one.
 - **Credits** (`/credits`, linked from About and the footer) lists every lesson's sources, every lesson's video with its channel (links only, nothing embedded), the pictures and the UN goal icons with the UN's statement, the fonts and their licence, the open-source software in the site, and how the Indonesian was made. The sources and videos come from the lesson files, so a new lesson credits itself.
 
+### Search engines and LinkedIn (October 2026)
+
+From the team's Google SEO brief (`docs/notes/seo.md`):
+
+- **Public pages:** the home page, About, the course, For educators, For organisations, Credits, and each lesson's Read step. Each has its own HTML file with an approved title and description, a canonical link on https://thinkerwell.app, link-preview tags, and the same title in the browser tab. Each lesson's description is its own learning goal.
+- **Everything else says `noindex`:** the journal, Settings, teacher tools, certificates, checks, print views, the other lesson steps and unknown addresses.
+- **Sitemap and robots.txt:** `sitemap.xml` lists only the public pages, and `robots.txt` points to it.
+- **Redirects:** `/about/` goes to `/about`, and thinkerwell.vercel.app and www.thinkerwell.app go to thinkerwell.app.
+- **Structured data:** the home page has WebSite and Organization data, with the LinkedIn Page and nothing more.
+- **LinkedIn:** the footer links Thinkerwell's LinkedIn Page ("Thinkerwell on LinkedIn", a new tab). It uses the address as given until someone signed in confirms the clean address.
+- **Not done:**
+  - Prerendering page text, which would show English for a moment to Indonesian learners.
+  - Indonesian addresses (`/id/...`), which are proposed in the notes.
+  - Taking down the old Base44 site, which only its owner can do.
+
 ## Roadmap
 
 1. **Pilot build (now):** everything in `docs/BUILD_PLAN.md` phases 1–8.

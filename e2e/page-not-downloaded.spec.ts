@@ -57,7 +57,7 @@ test("a lesson whose code hasn't downloaded says so, and Try again opens it once
   await expect(page.locator('h1')).toHaveText(ui('pageNotDownloaded.title'));
   expect(blocked).toBeGreaterThan(0);
   await expect(page).toHaveURL(new RegExp(`${L1_READ}$`));
-  await expect(page).toHaveTitle(`${ui('pageNotDownloaded.title')} · Thinkerwell`);
+  await expect(page).toHaveTitle(`${ui('pageNotDownloaded.title')} | Thinkerwell`);
   await expect(page.getByText(ui('pageNotDownloaded.body'))).toBeVisible();
   await expect(page.getByText(ui('routeError.title'))).toHaveCount(0);
   // The header stays: every page already downloaded is a tap away.

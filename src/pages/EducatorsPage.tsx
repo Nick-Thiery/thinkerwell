@@ -1,6 +1,6 @@
 import { useSearchParams } from 'react-router';
 import { CONTACT_EMAIL } from '../app/contact';
-import { usePageTitle } from '../app/usePageTitle';
+import { useFullPageTitle } from '../app/usePageTitle';
 import {
   allCertificatesPath,
   answerKeyPath,
@@ -38,7 +38,7 @@ import { SECTION_ICONS } from './course/sectionIcons';
 export function EducatorsPage() {
   const { t, tx, contentLang } = useI18n();
   const content = useContent();
-  usePageTitle(t('pages.educators.title'));
+  useFullPageTitle(t('seo.educators.title'));
   const sections = content.getSections();
   const [searchParams, setSearchParams] = useSearchParams();
   const sectionId: SectionId = content.getSection(searchParams.get('section') ?? '')?.id ?? sections[0]!.id;

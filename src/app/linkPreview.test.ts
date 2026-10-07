@@ -2,21 +2,27 @@
 import { readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { describe, expect, it } from 'vitest';
+import { pageHead, seoPages, withHead, type SeoLesson } from '../seo/build';
 
-// What a pasted link to the site shows in WhatsApp, Telegram, Facebook, X
-// and so on comes from the tags in index.html (every page address is
-// answered with it). Crawlers don't run the app, so the tags have to be
-// there in the file itself.
+// What a pasted link to the site shows in WhatsApp, Telegram, Facebook, X,
+// LinkedIn and so on comes from the tags in each page's HTML file, which the
+// build writes from src/seo/ (docs/notes/seo.md). Crawlers don't run the
+// app, so the tags have to be in the file itself. These check the home
+// page's file as the build makes it: index.html with its head filled in.
 
 const root = path.join(import.meta.dirname, '..', '..');
-const html = readFileSync(path.join(root, 'index.html'), 'utf8');
+const read = (...parts: string[]) => JSON.parse(readFileSync(path.join(root, ...parts), 'utf8')) as unknown;
+const messages = read('src', 'i18n', 'messages', 'en.json');
+const lessons = Array.from({ length: 24 }, (_, i) => read('content', 'lessons', `L${String(i + 1).padStart(2, '0')}.json`) as SeoLesson);
+const home = seoPages({ messages, courseTitle: 'Exploring Our World', lessons })[0]!;
+const html = withHead(readFileSync(path.join(root, 'index.html'), 'utf8'), pageHead(home, messages));
 
 function meta(attribute: 'name' | 'property', key: string): string | undefined {
   const tag = new RegExp(`<meta\\s+${attribute}="${key.replace(/[.:]/g, '\\$&')}"\\s+content="([^"]*)"`).exec(html);
   return tag?.[1];
 }
 
-describe('link previews (index.html)', () => {
+describe('link previews (the home page)', () => {
   it('has a description and a theme colour', () => {
     expect(meta('name', 'description')).toMatch(/^Free social studies learning for youth across Southeast Asia, especially those facing barriers to education\./);
     expect(meta('name', 'theme-color')).toBe('#ffff66');
@@ -27,7 +33,7 @@ describe('link previews (index.html)', () => {
       ['property', 'og'],
       ['name', 'twitter'],
     ] as const) {
-      expect(meta(attribute, `${prefix}:title`)).toBe('Thinkerwell: Exploring Our World');
+      expect(meta(attribute, `${prefix}:title`)).toBe('Thinkerwell | Free Social Studies Learning for Youth');
       expect(meta(attribute, `${prefix}:description`)).toMatch(/^Free social studies learning for youth across Southeast Asia, especially those facing barriers to education\./);
       expect(meta(attribute, `${prefix}:image`)).toMatch(/^https:\/\/[^/]+\/social-card\.png$/);
       expect(meta(attribute, `${prefix}:image:alt`)).toBeTruthy();

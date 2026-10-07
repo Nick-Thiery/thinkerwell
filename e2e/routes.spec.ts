@@ -3,26 +3,28 @@ import { expect, test, type Page } from '@playwright/test';
 // Every route and three lessons (the first, lesson 10 and the last) against a
 // production build: one h1, English left to right, and no sideways scroll at
 // any of the three widths.
-// [path, the page's h1, its document title (defaults to the h1)]. A lesson
+// [path, the page's h1, its document title (defaults to "<h1> | Thinkerwell")].
+// The public pages' titles are their search titles (en.json seo.*,
+// docs/notes/seo.md); so is a lesson's Read step. A lesson
 // stage's h1 is the lesson's title; the completion screen's h1 is "You
 // finished Lesson N." once finished, else "You're partway through Lesson N."
 // (phase 4).
 const pages: Array<[path: string, heading: string, title?: string]> = [
-  ['/', "Who's learning today?"],
-  ['/course', 'Exploring Our World'],
+  ['/', "Who's learning today?", 'Thinkerwell | Free Social Studies Learning for Youth'],
+  ['/course', 'Exploring Our World', 'Exploring Our World | Free Social Studies Course'],
   ['/journal', 'My journal'],
-  ['/educators', 'For educators'],
-  ['/about', 'About Thinkerwell'],
-  ['/credits', 'Credits'],
+  ['/educators', 'For educators', 'For Educators | Thinkerwell'],
+  ['/about', 'About Thinkerwell', 'About Thinkerwell | Our Mission'],
+  ['/credits', 'Credits', 'Credits and Sources | Thinkerwell'],
   ['/section/history/check', 'Section check: History & Human Stories'],
-  ['/lesson/finding-out-about-the-past/read', 'How can we find out about the past?', 'Lesson 1: Read'],
-  ['/lesson/towns-near-rivers/read', 'Why do people build towns near rivers?', 'Lesson 10: Read'],
-  ['/lesson/towns-near-rivers/watch', 'Why do people build towns near rivers?', 'Lesson 10: Watch'],
+  ['/lesson/finding-out-about-the-past/read', 'How can we find out about the past?', 'Lesson 1: How can we find out about the past? | Thinkerwell'],
+  ['/lesson/towns-near-rivers/read', 'Why do people build towns near rivers?', 'Lesson 10: Why do people build towns near rivers? | Thinkerwell'],
+  ['/lesson/towns-near-rivers/watch', 'Why do people build towns near rivers?', 'Lesson 10: Watch | Thinkerwell'],
   // Opened directly by a guest who did nothing: never told they finished.
-  ['/lesson/towns-near-rivers/complete', "You're partway through Lesson 10.", 'Lesson 10: Lesson complete'],
-  ['/lesson/young-people-contribute/reflect', 'How can young people contribute to their communities?', 'Lesson 24: Reflect'],
+  ['/lesson/towns-near-rivers/complete', "You're partway through Lesson 10.", 'Lesson 10: Lesson complete | Thinkerwell'],
+  ['/lesson/young-people-contribute/reflect', 'How can young people contribute to their communities?', 'Lesson 24: Reflect | Thinkerwell'],
   // The teacher tools: a lesson's teacher guide and a section check's answer key.
-  ['/educators/lesson/towns-near-rivers', 'Why do people build towns near rivers?', 'Lesson 10: teacher guide'],
+  ['/educators/lesson/towns-near-rivers', 'Why do people build towns near rivers?', 'Lesson 10: teacher guide | Thinkerwell'],
   ['/educators/section/history/answers', 'Answer key: History & Human Stories'],
 ];
 
@@ -47,7 +49,7 @@ for (const [path, heading, title] of pages) {
     const h1 = page.locator('h1');
     await expect(h1).toHaveCount(1);
     await expect(h1).toHaveText(heading);
-    await expect(page).toHaveTitle(`${title ?? heading} · Thinkerwell`);
+    await expect(page).toHaveTitle(title ?? `${heading} | Thinkerwell`);
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
     await expect(page.locator('html')).toHaveAttribute('dir', 'ltr');
     expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
@@ -59,21 +61,21 @@ test.describe('old Base44 URLs', () => {
     await page.goto('/lesson/l6');
     await expect(page).toHaveURL(/\/lesson\/towns-near-rivers\/read$/);
     await expect(page.locator('h1')).toHaveText('Why do people build towns near rivers?');
-    await expect(page).toHaveTitle('Lesson 10: Read · Thinkerwell');
+    await expect(page).toHaveTitle('Lesson 10: Why do people build towns near rivers? | Thinkerwell');
   });
 
   test('/lesson/history-scale/watch redirects keeping the stage', async ({ page }) => {
     await page.goto('/lesson/history-scale/watch');
     await expect(page).toHaveURL(/\/lesson\/changing-scale\/watch$/);
     await expect(page.locator('h1')).toHaveText('How does changing scale change the story?');
-    await expect(page).toHaveTitle('Lesson 3: Watch · Thinkerwell');
+    await expect(page).toHaveTitle('Lesson 3: Watch | Thinkerwell');
   });
 
   test('/lesson/l6?preview=true keeps the query', async ({ page }) => {
     await page.goto('/lesson/l6?preview=true');
     await expect(page).toHaveURL(/\/lesson\/towns-near-rivers\/read\?preview=true$/);
     await expect(page.locator('h1')).toHaveText('Why do people build towns near rivers?');
-    await expect(page).toHaveTitle('Lesson 10: Read · Thinkerwell');
+    await expect(page).toHaveTitle('Lesson 10: Why do people build towns near rivers? | Thinkerwell');
   });
 
   test('/lesson/:id redirects to Read', async ({ page }) => {

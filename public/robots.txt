@@ -1,0 +1,7 @@
+# Thinkerwell (docs/notes/seo.md). Every page may be crawled: pages that
+# shouldn't appear in search results say so themselves (noindex), and a
+# crawler has to be able to fetch them to see that.
+User-agent: *
+Allow: /
+
+Sitemap: https://thinkerwell.app/sitemap.xml
