@@ -73,6 +73,8 @@ export function useListen({ voice, items, itemsKey, recording, next = null, lang
   }, []);
   const stateRef = useRef<ListenState>('off');
   const session = useRef<ListenSession | null>(null);
+  /** The next part's recording already asked for, so it is downloaded once, not at every sentence. */
+  const prefetched = useRef<string | null>(null);
   const latest = useRef({ items, recording, next, onPartEnd, rate, voice, saveData, media });
   useEffect(() => {
     latest.current = { items, recording, next, onPartEnd, rate, voice, saveData, media };
@@ -99,9 +101,13 @@ export function useListen({ voice, items, itemsKey, recording, next = null, lang
       {
         onItem: (index) => {
           setCurrent(index);
-          // Reading: download the next part's recording meanwhile.
+          // Reading: download the next part's recording meanwhile, once.
           const ahead = latest.current.next;
-          if (index !== null && ahead && !latest.current.saveData) prefetchRecording(ahead);
+          const aheadKey = ahead ? `${ahead.lang}/${ahead.key}/${ahead.hash}` : null;
+          if (index !== null && ahead && aheadKey !== prefetched.current && !latest.current.saveData) {
+            prefetched.current = aheadKey;
+            prefetchRecording(ahead);
+          }
         },
         onFinish: () => {
           setCurrent(null);
