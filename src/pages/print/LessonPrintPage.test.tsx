@@ -92,7 +92,7 @@ describe('/lesson/:id/print', () => {
   it('shows the print view, titled for the lesson', async () => {
     renderAt('/lesson/towns-near-rivers/print');
     expect(await screen.findByRole('heading', { level: 1, name: L10.title })).toBeInTheDocument();
-    await waitFor(() => expect(document.title).toBe('Lesson 10: print · Thinkerwell'));
+    await waitFor(() => expect(document.title).toBe('Lesson 10: print | Thinkerwell'));
   });
 
   it('redirects an old Base44 id', async () => {

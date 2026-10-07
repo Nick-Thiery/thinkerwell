@@ -223,5 +223,22 @@
   "pages.consentForm.pilotCode": "Printed at the top of both pages of the consent form. {code} is a line for the organisation to write the learner's code on (like HLP-01).",
   "pages.consentForm.codeBlank": "Screen readers only: read out where the printed form has a line to write the learner's pilot code on.",
   "pages.about.linkedin": "The site's name, LinkedIn. Keep it as it is.",
-  "pages.about.linkedinLabel": "Read aloud by screen readers for the LinkedIn link under a team member's name. {name} is the person's name."
+  "pages.about.linkedinLabel": "Read aloud by screen readers for the LinkedIn link under a team member's name. {name} is the person's name.",
+  "app.mascotAlt": "Alt text for the mascot picture on the home page and About, read by screen readers.",
+  "footer.linkedin": "A link to Thinkerwell's LinkedIn Page, at the foot of every page. Keep the name LinkedIn.",
+  "seo.home.title": "This page's title in search results and the browser tab. Keep \"Thinkerwell\" and the \"|\". The six page titles use capital letters on the main words, as approved.",
+  "seo.home.description": "Shown under the title in search results and in link previews. One or two plain sentences; promise nothing the site doesn't do.",
+  "seo.about.title": "This page's title in search results and the browser tab. Keep \"Thinkerwell\" and the \"|\". The six page titles use capital letters on the main words, as approved.",
+  "seo.about.description": "Shown under the title in search results and in link previews. One or two plain sentences; promise nothing the site doesn't do.",
+  "seo.course.title": "This page's title in search results and the browser tab. Keep \"Thinkerwell\" and the \"|\". The six page titles use capital letters on the main words, as approved.",
+  "seo.course.description": "Shown under the title in search results and in link previews. One or two plain sentences; promise nothing the site doesn't do. {lessons} is the number of lessons.",
+  "seo.educators.title": "This page's title in search results and the browser tab. Keep \"Thinkerwell\" and the \"|\". The six page titles use capital letters on the main words, as approved.",
+  "seo.educators.description": "Shown under the title in search results and in link previews. One or two plain sentences; promise nothing the site doesn't do.",
+  "seo.organisations.title": "This page's title in search results and the browser tab. Keep \"Thinkerwell\" and the \"|\". The six page titles use capital letters on the main words, as approved.",
+  "seo.organisations.description": "Shown under the title in search results and in link previews. One or two plain sentences; promise nothing the site doesn't do.",
+  "seo.credits.title": "This page's title in search results and the browser tab. Keep \"Thinkerwell\" and the \"|\". The six page titles use capital letters on the main words, as approved.",
+  "seo.credits.description": "Shown under the title in search results and in link previews. One or two plain sentences; promise nothing the site doesn't do.",
+  "seo.lessonTitle": "A lesson's title in search results and the browser tab. {title} is the lesson's own title (its question), in the lessons' language.",
+  "seo.lessonDescription": "Shown under a lesson in search results. {course} is the course name and {goal} the lesson's learning goal, from the lesson file.",
+  "seo.imageAlt": "Describes the picture that link previews show (public/social-card.png). Its words, \"Thinkerwell: Exploring Our World\", are in English on the picture."
 }

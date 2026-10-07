@@ -1,7 +1,7 @@
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin';
 import { Link } from 'react-router';
 import { creditsPath } from '../app/lessonUrls';
-import { usePageTitle } from '../app/usePageTitle';
+import { useFullPageTitle } from '../app/usePageTitle';
 import { Icon, Mascot } from '../components/ds';
 import { useI18n } from '../i18n';
 import './AboutPage.css';
@@ -79,12 +79,12 @@ function LinkedInLink({ href, name }: { href: string; name: string }) {
  */
 export function AboutPage() {
   const { t } = useI18n();
-  usePageTitle(t('pages.about.title'));
+  useFullPageTitle(t('seo.about.title'));
 
   return (
     <div className="tw-about-page">
       <header className="tw-about-hero">
-        <Mascot src={MASCOT_SRC} size={150} />
+        <Mascot src={MASCOT_SRC} size={150} alt={t('app.mascotAlt')} />
         <div className="tw-about-hero-text">
           <h1 className="h1" tabIndex={-1}>
             {t('pages.about.title')}

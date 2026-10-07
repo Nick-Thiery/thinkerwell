@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
-import { usePageTitle } from '../app/usePageTitle';
+import { useFullPageTitle } from '../app/usePageTitle';
 import { useCatalog } from '../content/useCatalog';
 import { useI18n } from '../i18n';
 import { GuestHome } from './home/GuestHome';
@@ -59,15 +59,18 @@ export function HomePage() {
               : 'dashboard'
             : 'picker';
 
+  // The "who's learning" picker is what a first visit, a search engine and a
+  // link preview see, so it carries the home page's search title
+  // (seo.home.title, docs/notes/seo.md); the other branches name themselves.
   const pageTitle =
     branch === 'noStorage'
-      ? t('pages.home.noStorage.title')
+      ? t('app.documentTitle', { page: t('pages.home.noStorage.title') })
       : branch === 'guest'
-        ? t('pages.home.guest.title')
+        ? t('app.documentTitle', { page: t('pages.home.guest.title') })
         : branch === 'dashboard' && session.activeLearner
-          ? t('pages.home.dashboard.greeting', { name: session.activeLearner.name })
-          : t('pages.home.title');
-  usePageTitle(pageTitle);
+          ? t('app.documentTitle', { page: t('pages.home.dashboard.greeting', { name: session.activeLearner.name }) })
+          : t('seo.home.title');
+  useFullPageTitle(pageTitle);
 
   // Moves focus to this branch's own h1 when the visible branch changes while
   // staying on "/" (adding a learner, switching learners, removing the

@@ -16,7 +16,7 @@
  */
 import { CONTACT_EMAIL } from '../app/contact';
 import { codeCardsPath, consentFormPath, informationSheetPath, setupPath } from '../app/lessonUrls';
-import { usePageTitle } from '../app/usePageTitle';
+import { useFullPageTitle } from '../app/usePageTitle';
 import { Button, Icon, type IconName } from '../components/ds';
 import { useContent } from '../content/useContent';
 import { useI18n, type MessageKey } from '../i18n';
@@ -40,7 +40,7 @@ export function OrganisationsPage() {
   const { t } = useI18n();
   const content = useContent();
   const title = t('pages.organisations.title');
-  usePageTitle(title);
+  useFullPageTitle(t('seo.organisations.title'));
   const lessons = content.getLessons();
   // The same range the course and Educators pages show.
   const min = Math.min(...lessons.map((lesson) => lesson.estimatedMinutes[0]));

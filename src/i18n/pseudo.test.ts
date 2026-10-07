@@ -27,7 +27,7 @@ describe('en-XA (longer)', () => {
 
   it('leaves {placeholders} exactly as they are', () => {
     expect(pseudoLonger('Hi {name}')).toBe('⟦Ĥîî {name}⟧');
-    expect(pseudoLonger('{page} · Thinkerwell')).toMatch(/^⟦\{page\} · Ţĥ/);
+    expect(pseudoLonger('{page} | Thinkerwell')).toMatch(/^⟦\{page\} \| Ţĥ/);
   });
 
   it('leaves no plain English letters in any message', () => {

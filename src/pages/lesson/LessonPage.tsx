@@ -1,6 +1,6 @@
 import type { ComponentType } from 'react';
 import { Link, useNavigate } from 'react-router';
-import { usePageTitle } from '../../app/usePageTitle';
+import { useFullPageTitle } from '../../app/usePageTitle';
 import { Icon, StagePath, StatusBanner } from '../../components/ds';
 import { isStageId, type Lesson, type StageId } from '../../content';
 import { En, useI18n } from '../../i18n';
@@ -52,7 +52,14 @@ export function LessonPage() {
   const { t } = useI18n();
   const player = useLessonPlayer();
   const { lesson, step, status, mode, saveError } = player;
-  usePageTitle(t('pages.lesson.title', { number: lesson.number, stage: t(`stages.${step}`) }));
+  // The Read step is the lesson's public, indexed address, so its tab says
+  // what its HTML file says to search engines (seo.lessonTitle,
+  // docs/notes/seo.md); the other steps name the step.
+  useFullPageTitle(
+    step === 'read'
+      ? t('seo.lessonTitle', { number: lesson.number, title: lesson.title })
+      : t('app.documentTitle', { page: t('pages.lesson.title', { number: lesson.number, stage: t(`stages.${step}`) }) }),
+  );
   const wide = useMediaQuery(LESSON_WIDE_QUERY);
   const phone = useMediaQuery(LESSON_PHONE_QUERY);
   const ready = status === 'ready';

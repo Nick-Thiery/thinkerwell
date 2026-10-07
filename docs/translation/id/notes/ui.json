@@ -12,8 +12,9 @@
     "source": "Skip to content"
   },
   "app.documentTitle": {
-    "back": "{page} · Thinkerwell",
-    "source": "{page} · Thinkerwell"
+    "back": "{page} | Thinkerwell",
+    "source": "{page} | Thinkerwell",
+    "note": "The separator changed from \"·\" to \"|\" to match the search titles (October 2026)."
   },
   "nav.label": {
     "back": "Main",
@@ -4680,5 +4681,107 @@
     "note": "New in the credits page (September 2026): drafted by AI, not yet reviewed.",
     "back": "Thanks (credits)",
     "source": "Credits"
+  },
+  "seo.home.title": {
+    "source": "Thinkerwell | Free Social Studies Learning for Youth",
+    "back": "Thinkerwell | Free Social Studies (IPS) Learning for Teenagers",
+    "flag": true,
+    "note": "Search titles and descriptions (October 2026, Google SEO brief): drafted by AI, not yet reviewed by a native speaker. Used in browser tab titles now, and ready for Indonesian search pages later (docs/notes/seo.md)."
+  },
+  "seo.home.description": {
+    "source": "Free social studies learning for youth across Southeast Asia, especially those facing barriers to education. Explore history, geography, culture and civic life.",
+    "back": "Free social studies learning for teenagers in Southeast Asia, especially those who face obstacles in education. Explore history, geography, culture and community life.",
+    "flag": true,
+    "note": "Search titles and descriptions (October 2026, Google SEO brief): drafted by AI, not yet reviewed by a native speaker. Used in browser tab titles now, and ready for Indonesian search pages later (docs/notes/seo.md)."
+  },
+  "seo.about.title": {
+    "source": "About Thinkerwell | Our Mission",
+    "back": "About Thinkerwell | Our Mission",
+    "flag": true,
+    "note": "Search titles and descriptions (October 2026, Google SEO brief): drafted by AI, not yet reviewed by a native speaker. Used in browser tab titles now, and ready for Indonesian search pages later (docs/notes/seo.md)."
+  },
+  "seo.about.description": {
+    "source": "Learn why Thinkerwell began and how its free digital platform makes social studies learning more accessible to youth facing barriers to education.",
+    "back": "Find out why Thinkerwell started and how its free digital platform makes learning social studies more accessible to teenagers who face obstacles in education.",
+    "flag": true,
+    "note": "Search titles and descriptions (October 2026, Google SEO brief): drafted by AI, not yet reviewed by a native speaker. Used in browser tab titles now, and ready for Indonesian search pages later (docs/notes/seo.md)."
+  },
+  "seo.course.title": {
+    "source": "Exploring Our World | Free Social Studies Course",
+    "back": "Exploring Our World | Free Social Studies Course",
+    "flag": true,
+    "note": "Search titles and descriptions (October 2026, Google SEO brief): drafted by AI, not yet reviewed by a native speaker. Used in browser tab titles now, and ready for Indonesian search pages later (docs/notes/seo.md)."
+  },
+  "seo.course.description": {
+    "source": "Explore Thinkerwell's {lessons} free lessons in history, geography, culture and civic life. Learn independently or with an educator.",
+    "back": "Explore Thinkerwell's {lessons} free lessons about history, geography, culture and community life. Learn on your own or with an educator.",
+    "flag": true,
+    "note": "Search titles and descriptions (October 2026, Google SEO brief): drafted by AI, not yet reviewed by a native speaker. Used in browser tab titles now, and ready for Indonesian search pages later (docs/notes/seo.md)."
+  },
+  "seo.educators.title": {
+    "source": "For Educators | Thinkerwell",
+    "back": "For Educators | Thinkerwell",
+    "flag": true,
+    "note": "Search titles and descriptions (October 2026, Google SEO brief): drafted by AI, not yet reviewed by a native speaker. Used in browser tab titles now, and ready for Indonesian search pages later (docs/notes/seo.md)."
+  },
+  "seo.educators.description": {
+    "source": "Teach Thinkerwell's free social studies lessons with teacher guides, printable materials and flexible activities for shared devices.",
+    "back": "Teach Thinkerwell's free social studies lessons with teacher guides, materials that can be printed, and flexible activities for shared devices.",
+    "flag": true,
+    "note": "Search titles and descriptions (October 2026, Google SEO brief): drafted by AI, not yet reviewed by a native speaker. Used in browser tab titles now, and ready for Indonesian search pages later (docs/notes/seo.md)."
+  },
+  "seo.organisations.title": {
+    "source": "For Organisations | Thinkerwell",
+    "back": "For Organisations | Thinkerwell",
+    "flag": true,
+    "note": "Search titles and descriptions (October 2026, Google SEO brief): drafted by AI, not yet reviewed by a native speaker. Used in browser tab titles now, and ready for Indonesian search pages later (docs/notes/seo.md)."
+  },
+  "seo.organisations.description": {
+    "source": "Learn how a pilot with Thinkerwell could support social studies learning for youth facing barriers to education.",
+    "back": "Learn how a pilot with Thinkerwell can support social studies learning for teenagers who face obstacles in education.",
+    "flag": true,
+    "note": "Search titles and descriptions (October 2026, Google SEO brief): drafted by AI, not yet reviewed by a native speaker. Used in browser tab titles now, and ready for Indonesian search pages later (docs/notes/seo.md)."
+  },
+  "seo.credits.title": {
+    "source": "Credits and Sources | Thinkerwell",
+    "back": "Thanks and Sources | Thinkerwell",
+    "flag": true,
+    "note": "Search titles and descriptions (October 2026, Google SEO brief): drafted by AI, not yet reviewed by a native speaker. Used in browser tab titles now, and ready for Indonesian search pages later (docs/notes/seo.md)."
+  },
+  "seo.credits.description": {
+    "source": "Explore the sources, videos, images and software behind Thinkerwell's free social studies lessons.",
+    "back": "Explore the sources, videos, images and software behind Thinkerwell's free social studies lessons.",
+    "flag": true,
+    "note": "Search titles and descriptions (October 2026, Google SEO brief): drafted by AI, not yet reviewed by a native speaker. Used in browser tab titles now, and ready for Indonesian search pages later (docs/notes/seo.md)."
+  },
+  "seo.lessonTitle": {
+    "source": "Lesson {number}: {title} | Thinkerwell",
+    "back": "Lesson {number}: {title} | Thinkerwell",
+    "flag": true,
+    "note": "Search titles and descriptions (October 2026, Google SEO brief): drafted by AI, not yet reviewed by a native speaker. Used in browser tab titles now, and ready for Indonesian search pages later (docs/notes/seo.md)."
+  },
+  "seo.lessonDescription": {
+    "source": "Lesson {number} of {course}, Thinkerwell's free social studies course. Learning goal: {goal}",
+    "back": "Lesson {number} of {course}, Thinkerwell's free social studies course. Learning goal: {goal}",
+    "flag": true,
+    "note": "Search titles and descriptions (October 2026, Google SEO brief): drafted by AI, not yet reviewed by a native speaker. Used in browser tab titles now, and ready for Indonesian search pages later (docs/notes/seo.md)."
+  },
+  "seo.imageAlt": {
+    "source": "The Thinkerwell mascot, a purple reader holding a book, above the words Thinkerwell: Exploring Our World.",
+    "back": "The Thinkerwell mascot, a purple reader holding a book, above the words Thinkerwell: Exploring Our World.",
+    "flag": true,
+    "note": "Search titles and descriptions (October 2026, Google SEO brief): drafted by AI, not yet reviewed by a native speaker. Used in browser tab titles now, and ready for Indonesian search pages later (docs/notes/seo.md)."
+  },
+  "footer.linkedin": {
+    "source": "Thinkerwell on LinkedIn",
+    "back": "Thinkerwell on LinkedIn",
+    "flag": true,
+    "note": "Search titles and descriptions (October 2026, Google SEO brief): drafted by AI, not yet reviewed by a native speaker. Used in browser tab titles now, and ready for Indonesian search pages later (docs/notes/seo.md)."
+  },
+  "app.mascotAlt": {
+    "source": "The Thinkerwell mascot, a purple reader holding a book",
+    "back": "The Thinkerwell mascot, a purple reader holding a book",
+    "flag": true,
+    "note": "Search titles and descriptions (October 2026, Google SEO brief): drafted by AI, not yet reviewed by a native speaker. Used in browser tab titles now, and ready for Indonesian search pages later (docs/notes/seo.md)."
   }
 }

@@ -56,7 +56,7 @@ test('a staff member works through the setup checklist, which asks the browser n
   await page.getByRole('link', { name: 'Open the checklist' }).click();
   await expect(page).toHaveURL(/\/educators\/setup$/);
   await expect(page.locator('h1')).toHaveText('Set up this device');
-  await expect(page).toHaveTitle('Set up this device · Thinkerwell');
+  await expect(page).toHaveTitle('Set up this device | Thinkerwell');
 
   // Each step says where it stands on this device.
   await expect(step(page, 'Add Thinkerwell to the home screen').getByRole('status')).toContainText('Not done yet');

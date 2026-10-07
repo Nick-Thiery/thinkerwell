@@ -13,7 +13,7 @@ test('a teacher goes from a section to a teacher guide and back to the same sect
   await page.getByRole('link', { name: 'Teacher guide for Lesson 10' }).click();
   await expect(page).toHaveURL(/\/educators\/lesson\/towns-near-rivers$/);
   await expect(page.locator('h1')).toHaveText(L10.title);
-  await expect(page).toHaveTitle('Lesson 10: teacher guide · Thinkerwell');
+  await expect(page).toHaveTitle('Lesson 10: teacher guide | Thinkerwell');
   await expect(page.getByRole('heading', { level: 3, name: 'Sensitive topics: read before class' })).toBeVisible();
 
   await page.getByRole('link', { name: 'Back to the educators page' }).click();
@@ -38,7 +38,7 @@ test("a section's answer key opens from the Educators page, and its questions le
   await page.getByRole('link', { name: 'Answer key for the Civics, Media & Everyday Economics section check' }).click();
   await expect(page).toHaveURL(/\/educators\/section\/civics\/answers$/);
   await expect(page.locator('h1')).toHaveText('Answer key: Civics, Media & Everyday Economics');
-  await expect(page).toHaveTitle('Answer key: Civics, Media & Everyday Economics · Thinkerwell');
+  await expect(page).toHaveTitle('Answer key: Civics, Media & Everyday Economics | Thinkerwell');
   // One marked answer per question, marked in words.
   await expect(page.locator('.tw-key-question')).toHaveCount(10);
   await expect(page.locator('.tw-key-option-correct')).toHaveCount(10);
@@ -46,5 +46,5 @@ test("a section's answer key opens from the Educators page, and its questions le
 
   await page.getByRole('link', { name: /^From Lesson 20:/ }).first().click();
   await expect(page).toHaveURL(/\/educators\/lesson\/making-choices$/);
-  await expect(page).toHaveTitle('Lesson 20: teacher guide · Thinkerwell');
+  await expect(page).toHaveTitle('Lesson 20: teacher guide | Thinkerwell');
 });

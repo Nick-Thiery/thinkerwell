@@ -50,23 +50,24 @@ afterEach(() => {
 });
 
 describe('top-level routes', () => {
-  const pages: Array<[string, string]> = [
-    ['/', t('pages.home.title')],
-    ['/course', t('pages.course.title')],
-    ['/journal', t('pages.journal.title')],
-    ['/educators', t('pages.educators.title')],
-    ['/about', t('pages.about.title')],
+  // [path, h1, document title]: the public pages' tabs carry their search
+  // titles (en.json seo.*, docs/notes/seo.md), the others "<page> | Thinkerwell".
+  const pages: Array<[string, string, string]> = [
+    ['/', t('pages.home.title'), t('seo.home.title')],
+    ['/course', t('pages.course.title'), t('seo.course.title')],
+    ['/journal', t('pages.journal.title'), `${t('pages.journal.title')} | Thinkerwell`],
+    ['/educators', t('pages.educators.title'), t('seo.educators.title')],
+    ['/about', t('pages.about.title'), t('seo.about.title')],
   ];
 
   // Home and the course map read IndexedDB before they have anything to
   // show (see AppLayout's focus-after-navigation handling), so this waits
   // for the heading rather than asserting on the very first render; that
   // also passes trivially for the pages that render synchronously.
-  it.each(pages)('%s shows one h1 with its title', async (path, title) => {
+  it.each(pages)('%s shows one h1 with its title', async (path, title, documentTitle) => {
     await renderAt(path);
     await waitFor(() => expect(heading()).toHaveTextContent(title));
-    expect(document.title).toBe(t('app.documentTitle', { page: title }));
-    expect(document.title).toBe(`${title} · Thinkerwell`);
+    await waitFor(() => expect(document.title).toBe(documentTitle));
   });
 
   it('sets lang and dir on <html>', async () => {
@@ -127,11 +128,15 @@ describe('lesson routes', () => {
         const { unmount } = render(
           <RouterProvider router={createMemoryRouter(routes, { initialEntries: [`/lesson/${lesson.id}/${step}`] })} />,
         );
-        const title = t('pages.lesson.title', { number: lesson.number, stage: t(`stages.${step}`) });
+        // The Read step is the lesson's public page: its tab carries its search title.
+        const title =
+          step === 'read'
+            ? t('seo.lessonTitle', { number: lesson.number, title: lesson.title })
+            : `${t('pages.lesson.title', { number: lesson.number, stage: t(`stages.${step}`) })} | Thinkerwell`;
         if (step === 'complete') await waitFor(() => expect(heading()).toBeInTheDocument());
         else await waitFor(() => expect(heading()).toHaveTextContent(lesson.title));
         // document.title is set in an effect, which can run just after the DOM commit.
-        await waitFor(() => expect(document.title).toBe(`${title} · Thinkerwell`));
+        await waitFor(() => expect(document.title).toBe(title));
         unmount();
       }
     },
@@ -142,14 +147,14 @@ describe('lesson routes', () => {
   it('/lesson/:id redirects to Read', async () => {
     const router = await renderAt('/lesson/changing-scale');
     await waitFor(() => expect(where(router)).toBe('/lesson/changing-scale/read'));
-    await waitFor(() => expect(document.title).toBe('Lesson 3: Read · Thinkerwell'));
+    await waitFor(() => expect(document.title).toBe('Lesson 3: How does changing scale change the story? | Thinkerwell'));
     await waitFor(() => expect(heading()).toBeInTheDocument());
   });
 
   it('/lesson/l6 lands on /lesson/towns-near-rivers/read', async () => {
     const router = await renderAt('/lesson/l6');
     await waitFor(() => expect(where(router)).toBe('/lesson/towns-near-rivers/read'));
-    await waitFor(() => expect(document.title).toBe('Lesson 10: Read · Thinkerwell'));
+    await waitFor(() => expect(document.title).toBe('Lesson 10: Why do people build towns near rivers? | Thinkerwell'));
     // A redirect replaces the old entry, so Back doesn't bounce into it again.
     expect(router.state.historyAction).toBe('REPLACE');
   });
@@ -157,13 +162,13 @@ describe('lesson routes', () => {
   it('/lesson/history-scale/watch keeps the stage', async () => {
     const router = await renderAt('/lesson/history-scale/watch');
     await waitFor(() => expect(where(router)).toBe('/lesson/changing-scale/watch'));
-    await waitFor(() => expect(document.title).toBe('Lesson 3: Watch · Thinkerwell'));
+    await waitFor(() => expect(document.title).toBe('Lesson 3: Watch | Thinkerwell'));
   });
 
   it('/lesson/l6/write?preview=true keeps ?preview=true', async () => {
     const router = await renderAt('/lesson/l6/write?preview=true');
     await waitFor(() => expect(where(router)).toBe('/lesson/towns-near-rivers/write?preview=true'));
-    await waitFor(() => expect(document.title).toBe('Lesson 10: Write · Thinkerwell'));
+    await waitFor(() => expect(document.title).toBe('Lesson 10: Write | Thinkerwell'));
   });
 
   it('keeps the hash on redirect', async () => {
@@ -174,7 +179,7 @@ describe('lesson routes', () => {
   it('matches /Lesson/L6/Watch case-insensitively', async () => {
     const router = await renderAt('/Lesson/L6/Watch');
     await waitFor(() => expect(where(router)).toBe('/lesson/towns-near-rivers/watch'));
-    await waitFor(() => expect(document.title).toBe('Lesson 10: Watch · Thinkerwell'));
+    await waitFor(() => expect(document.title).toBe('Lesson 10: Watch | Thinkerwell'));
   });
 });
 
@@ -190,13 +195,13 @@ describe('certificates', () => {
     await renderAt(`/certificate/section/${id}`);
     const title = t('certificates.sectionPageTitle', { section: section.title });
     await waitFor(() => expect(heading()).toHaveTextContent(title));
-    expect(document.title).toBe(`${title} · Thinkerwell`);
+    expect(document.title).toBe(`${title} | Thinkerwell`);
   });
 
   it('/certificate/course shows its title', async () => {
     await renderAt('/certificate/course');
     await waitFor(() => expect(heading()).toHaveTextContent('Course certificate'));
-    expect(document.title).toBe('Course certificate · Thinkerwell');
+    expect(document.title).toBe('Course certificate | Thinkerwell');
   });
 });
 
@@ -208,7 +213,7 @@ describe('pilot-day tools for educators', () => {
   ])('%s shows one h1 with its title', async (path, title) => {
     await renderAt(path);
     await waitFor(() => expect(heading()).toHaveTextContent(title));
-    expect(document.title).toBe(`${title} · Thinkerwell`);
+    expect(document.title).toBe(`${title} | Thinkerwell`);
   });
 });
 
@@ -234,7 +239,7 @@ describe('not found', () => {
       expect(screen.getByText(t('notFound.body'))).toBeInTheDocument();
       expect(screen.getByRole('link', { name: t('notFound.home') })).toHaveAttribute('href', '/');
       expect(screen.getByRole('link', { name: t('notFound.course') })).toHaveAttribute('href', '/course');
-      expect(document.title).toBe(`${notFoundTitle} · Thinkerwell`);
+      expect(document.title).toBe(`${notFoundTitle} | Thinkerwell`);
       // It stays on the URL that was asked for, so the learner can see the typo.
       expect(router.state.location.pathname).toBe(path);
     },

@@ -92,7 +92,7 @@ describe('/educators/section/:id/answers', () => {
     renderAt(`/educators/section/${id}/answers`);
     const title = `Answer key: ${section.title}`;
     expect(await screen.findByRole('heading', { level: 1, name: title })).toBeInTheDocument();
-    await waitFor(() => expect(document.title).toBe(`${title} · Thinkerwell`));
+    await waitFor(() => expect(document.title).toBe(`${title} | Thinkerwell`));
   });
 
   it('is not found for an unknown section', async () => {

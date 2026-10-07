@@ -126,7 +126,13 @@ curl -sI https://SITE/ | grep -iE 'content-security-policy|x-frame-options|refer
 curl -sI https://SITE/sw.js | grep -i cache-control               # public, max-age=0, must-revalidate
 curl -sI https://SITE/lesson/towns-near-rivers/read | head -1      # 200, and content-type text/html
 curl -sI https://SITE/assets/not-a-file.js | head -1               # 404, not the page
+curl -s https://SITE/about | grep -o '<title>[^<]*</title>'         # About Thinkerwell | Our Mission (docs/notes/seo.md)
+curl -s https://SITE/journal | grep -o 'noindex'                   # noindex
+curl -sI https://SITE/about/ | head -1                             # 308, to /about
+curl -s https://SITE/robots.txt; curl -s https://SITE/sitemap.xml | grep -c '<loc>'   # 30
 ```
+
+For search: submit the sitemap in Google Search Console and check the link previews (`docs/notes/seo.md`, "After deploying").
 
 Then, in Chrome's DevTools on the live site:
 

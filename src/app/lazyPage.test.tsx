@@ -86,7 +86,7 @@ describe('a lazily loaded page', () => {
     expect(screen.getByRole('button', { name: t('pageNotDownloaded.retry') })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: t('pageNotDownloaded.home') })).toHaveAttribute('href', '/');
     expect(screen.queryByText(t('routeError.title'))).not.toBeInTheDocument();
-    await waitFor(() => expect(document.title).toBe(`${t('pageNotDownloaded.title')} · Thinkerwell`));
+    await waitFor(() => expect(document.title).toBe(`${t('pageNotDownloaded.title')} | Thinkerwell`));
   });
 
   it('shows the page once Try again downloads it', async () => {

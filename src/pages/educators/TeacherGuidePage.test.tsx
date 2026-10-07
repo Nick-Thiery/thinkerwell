@@ -219,7 +219,7 @@ describe('/educators/lesson/:id', () => {
   it('shows the teacher guide, titled for the lesson, with For educators marked in the header', async () => {
     renderAt('/educators/lesson/towns-near-rivers');
     expect(await screen.findByRole('heading', { level: 1, name: L10.title })).toBeInTheDocument();
-    await waitFor(() => expect(document.title).toBe('Lesson 10: teacher guide · Thinkerwell'));
+    await waitFor(() => expect(document.title).toBe('Lesson 10: teacher guide | Thinkerwell'));
     const nav = screen.getByRole('navigation', { name: 'Main' });
     expect(within(nav).getByRole('link', { name: 'For educators' })).toHaveAttribute('aria-current', 'page');
   });

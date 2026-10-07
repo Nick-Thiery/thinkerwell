@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router';
-import { usePageTitle } from '../app/usePageTitle';
+import { useFullPageTitle } from '../app/usePageTitle';
 import { Badge, Icon } from '../components/ds';
 import { useCatalog } from '../content/useCatalog';
 import { useI18n } from '../i18n';
@@ -25,7 +25,7 @@ export function CoursePage() {
   const catalog = useCatalog();
   const course = catalog.getCourse();
   const title = course.course.title;
-  usePageTitle(title);
+  useFullPageTitle(t('seo.course.title'));
 
   // Home, the dashboard and the course map render nothing with a heading
   // while their data is still loading: AppLayout waits for the first h1

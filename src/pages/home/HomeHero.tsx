@@ -21,7 +21,7 @@ export function HomeHero({ size = 184, children }: { size?: number; children: Re
   const phone = useMediaQuery(LESSON_PHONE_QUERY);
   return (
     <section className="tw-home-hero">
-      <Mascot src={MASCOT_SRC} size={phone ? 120 : size} />
+      <Mascot src={MASCOT_SRC} size={phone ? 120 : size} alt={t('app.mascotAlt')} />
       <p className="hero">{t('pages.home.hero.tagline')}</p>
       <p className="body-lg">{t('pages.home.hero.description')}</p>
       {children}

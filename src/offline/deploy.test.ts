@@ -37,9 +37,12 @@ describe('vercel.json', () => {
     expect(vercel).toMatchObject({ framework: 'vite', installCommand: 'npm ci', buildCommand: 'npm run build', outputDirectory: 'dist' });
   });
 
-  it('sends every page address to index.html (files on disk still come first)', () => {
-    expect(vercel.rewrites).toHaveLength(1);
-    expect(vercel.rewrites[0]!.destination).toBe('/index.html');
+  it('sends every page address to the app: a public page to its own file, everything else to app.html (files on disk still come first)', () => {
+    // docs/notes/seo.md: the public pages' rewrites come first (src/seo/seo.test.ts checks them),
+    // and the last one sends every other page address to app.html, the same app with noindex.
+    const last = vercel.rewrites.at(-1)!;
+    expect(last.destination).toBe('/app.html');
+    for (const rule of vercel.rewrites.slice(0, -1)) expect(rule.destination, rule.source).toMatch(/^\/[\w/:-]+\.html$/);
     for (const path of ['/', '/course', '/lesson/towns-near-rivers/read', '/lesson/l6', '/section/civics/check', '/journal/print', '/certificate/section/history', '/certificate/course', '/whatever']) {
       expect(rewritten(path), path).toBe(true);
     }
