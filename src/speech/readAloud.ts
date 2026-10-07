@@ -26,14 +26,10 @@ import type { ListeningSpeed } from '../storage';
  */
 export const LISTEN_RATES: Record<ListeningSpeed, number> = { slow: 0.8, normal: 1 };
 
-/** A piece to read aloud, with an optional silence after it. */
-export interface ListenPiece {
-  text: string;
-  pauseAfterMs?: number;
-}
+// The pieces Listen reads are made in ./sentences.ts (shared with the recorded-audio tools).
+import type { ListenItem, ListenPiece } from './sentences';
 
-/** A piece to read: its text, or the text with a pause after it. */
-export type ListenItem = string | ListenPiece;
+export type { ListenItem, ListenPiece };
 
 function textOf(item: ListenItem | undefined): string {
   return typeof item === 'string' ? item : (item?.text ?? '');
