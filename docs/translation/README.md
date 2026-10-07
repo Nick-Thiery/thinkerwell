@@ -37,9 +37,11 @@ A glossary entry's `forms` list is replaced whole: list the word forms that appe
 3. A second AI reviewer back-translated every string into English **before** looking at the English, then compared, fixed clear mistakes and flagged doubts.
 4. Nick's session fixed the clearest meaning shifts the reviewers found (for example, Lesson 4's wording, which could read as ranking science above faith) and made repeated strings consistent.
 
-About 540 of 4,130 strings are flagged for the native reviewers (the count grows as new pages are added; the consent form's study parts and the information sheet added about 80, all flagged, in October 2026, and Settings' "Listen voice" and the setup checklist's voice step about 30, also flagged, with their menu names to check on devices set to Indonesian).
+About 575 of 4,170 strings are flagged for the native reviewers (the count grows as new pages are added; the consent form's study parts and the information sheet added about 80, all flagged, in October 2026, and Settings' "Listen voice" and the setup checklist's voice step about 30, also flagged, with their menu names to check on devices set to Indonesian; Listen's recordings 34 more, all flagged: Settings' "Lesson audio", the recorded sample, the Read step's notes, the checklist's pointer and the Credits page's voices).
 
-One Indonesian sentence lives in code rather than in these files: the sample "Play a sample" reads with an Indonesian voice, "Ini suara yang membacakan pelajaran." (`LISTEN_SAMPLES` in `src/speech/sample.ts`). It is spoken in the lessons' language whatever the interface's, like the quick-check verdicts, so it isn't in `id.json`. Reviewers: check it too.
+One Indonesian sentence lives in code rather than in these files: the sample "Play a sample" plays in Indonesian, "Ini suara yang membacakan pelajaran." (`LISTEN_SAMPLES` in `src/speech/sampleText.ts`). It is spoken in the lessons' language whatever the interface's, like the quick-check verdicts, so it isn't in `id.json`. Reviewers: check it too.
+
+**Listen's Indonesian recordings say the lesson text as it is** (`docs/notes/recorded-audio.md`), with numbers, letters and a few abbreviations written out in words for the voice (`tools/audio/normalise.ts`: 1.000 as "seribu", "Tahun ke-8" as "tahun kedelapan", PBB as "pe be be"). `tools/audio/manifest.json` lists each one under `speak`. When a reviewer changes a lesson's Indonesian, the recordings must be made again (`npm run audio:generate`); `npm run check:audio` fails until they are. Reviewers listening to the recordings: note any word the voice says wrongly, with the lesson and part.
 
 ## Reviewing (for Justin and the reviewers)
 
