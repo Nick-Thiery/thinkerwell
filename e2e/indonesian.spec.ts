@@ -5,6 +5,7 @@ import { englishOnPage } from './englishText';
 import { recordRequests } from './lessonHelpers';
 import { overflowReport } from './overflow';
 import { fakeSpeechRecognition, recognitionLangs } from './speechFake';
+import { fakeVoices, IPAD_VOICES, spoken } from './voiceFake';
 
 // Bahasa Indonesia (docs/notes/languages.md, docs/translation/README.md).
 //
@@ -314,6 +315,33 @@ test.describe('Listen follows the language', () => {
     await expect(page.getByText(msg(id, 'lessonPlayer.read.listenNoVoice'))).toHaveCount(0);
     await headerSwitch(page, ENGLISH);
     await expect(page.getByRole('button', { name: msg(en, 'lessonPlayer.read.listen') })).toBeVisible();
+  });
+
+  test("Settings' Listen voice is all Indonesian, and the chosen Indonesian voice reads Indonesian lessons", async ({ page }) => {
+    await fakeVoices(page, IPAD_VOICES);
+    await page.goto('/settings#listen-voice');
+    await headerSwitch(page, INDONESIAN);
+    const indonesian = page.getByRole('combobox', { name: msg(id, 'pages.settings.listenVoice.voiceFor.id') });
+    await expect(indonesian).toBeEnabled();
+    await expect(page.getByRole('combobox', { name: msg(id, 'pages.settings.listenVoice.voiceFor.en') })).toBeEnabled();
+    await expectAllIndonesian(page, 'Settings, Listen voice');
+    await indonesian.selectOption({ label: 'Damayanti' });
+    await page.goto(`/lesson/${L10.id}/read`);
+    await page.getByRole('button', { name: msg(id, 'lessonPlayer.read.listen') }).click();
+    await expect.poll(async () => (await spoken(page))[0]?.voice).toBe('Damayanti');
+    expect((await spoken(page))[0]?.lang).toBe('id-ID');
+  });
+
+  test('with no Indonesian voice, Settings says so, in Indonesian', async ({ page }) => {
+    await fakeVoices(
+      page,
+      IPAD_VOICES.filter((voice) => voice.lang !== 'id-ID'),
+    );
+    await page.goto('/settings#listen-voice');
+    await headerSwitch(page, INDONESIAN);
+    await expect(page.getByText(msg(id, 'pages.settings.listenVoice.noVoiceIndonesian'))).toBeVisible({ timeout: 8000 });
+    await expect(page.getByRole('combobox', { name: msg(id, 'pages.settings.listenVoice.voiceFor.id') })).toHaveCount(0);
+    await expectAllIndonesian(page, 'Settings, no Indonesian voice');
   });
 
   test('with only English (or online) voices, says so instead of reading Indonesian with them', async ({ page }) => {

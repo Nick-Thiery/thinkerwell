@@ -3,6 +3,7 @@ import path from 'node:path';
 import { expect, type Page } from '@playwright/test';
 import { finishLessonViaReflect, L10, nextButton } from './lessonHelpers';
 import { uiPattern, uiText, type TestLocale, type UiParams, type UiText } from './uiText';
+import { fakeVoices } from './voiceFake';
 
 // Phase 8: one walk through every kind of page, shared by the checks that
 // must hold everywhere (no sideways scroll, axe, right to left, tap sizes).
@@ -394,6 +395,21 @@ export const pageTour: TourStop[] = [
         .setInputFiles({ name: 'thinkerwell-all-learners-2026-09-28.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(file)) });
       await expect(page.getByRole('group', { name: ui('pages.settings.transfer.load.previewTitle') })).toBeVisible();
       await expect(page.getByRole('button', { name: ui('pages.settings.transfer.load.loadIt') })).toBeVisible();
+    },
+  },
+  {
+    // Listen's voice with voices on the device (an iPad's, with Indonesian):
+    // both lists, the line saying what Automatic uses, and how to get a
+    // clearer voice. From here on the tour's pages have these voices.
+    name: 'settings: Listen voice',
+    go: async (page, { ui }) => {
+      await fakeVoices(page);
+      // Settings is open already, so only the address's #part would change: reload, so the voices are there.
+      await page.goto('/settings#listen-voice');
+      await page.reload();
+      await expect(page.locator('h1')).toHaveText(ui('pages.settings.title'));
+      await expect(page.getByRole('combobox', { name: ui('pages.settings.listenVoice.voiceFor.id') })).toBeEnabled();
+      await expect(page.getByRole('combobox', { name: ui('pages.settings.listenVoice.voiceFor.en') })).toBeEnabled();
     },
   },
   {

@@ -121,7 +121,8 @@ test('Listen reads the part aloud with a device voice, and its controls work', a
   const bar = page.getByRole('group', { name: 'Reading aloud · part 1 of 3' });
   await expect(bar).toBeVisible();
   await expect(listen).toHaveAttribute('aria-pressed', 'true');
-  expect(await speech.spoken()).toEqual(['Rivers give water and food']);
+  // The heading as a finished phrase, then (after a short silence) each sentence.
+  expect(await speech.spoken()).toEqual(['Rivers give water and food.']);
 
   // The first sentence is marked, in view, with the lemon highlight.
   await speech.finish();
