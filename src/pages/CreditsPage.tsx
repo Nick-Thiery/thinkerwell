@@ -7,7 +7,8 @@
  * - Videos: each lesson's video, its channel and a link to it on YouTube.
  *   Only links: nothing is embedded or fetched here.
  * - Pictures and design, the UN goal icons (with the UN's own statement),
- *   the fonts, the open-source software the site ships, and how the
+ *   the fonts, the open-source software the site ships, Listen's recorded
+ *   voices with their licences (docs/notes/recorded-audio.md), and how the
  *   Bahasa Indonesia version was made.
  *
  * It reads the lessons (useContent), so it lives in the teacher pages'
@@ -41,7 +42,29 @@ const SOFTWARE: ReadonlyArray<{ name: string; licence: string; url: string }> = 
   { name: 'Fontsource', licence: 'MIT License', url: 'https://fontsource.org' },
 ];
 
-const SECTIONS = ['sources', 'videos', 'pictures', 'fonts', 'software', 'translation'] as const;
+/**
+ * The voice models Listen's recordings were made with (scripts/audio/generate.py).
+ * MMS-TTS's licence (CC BY-NC 4.0) allows only non-commercial use: if
+ * Thinkerwell ever charges for anything, it must be replaced (docs/PRODUCT.md).
+ */
+const VOICES = [
+  {
+    key: 'pages.credits.voiceEnglish',
+    model: 'Kokoro-82M',
+    url: 'https://huggingface.co/hexgrad/Kokoro-82M',
+    licence: 'Apache License 2.0',
+    licenceUrl: 'https://www.apache.org/licenses/LICENSE-2.0',
+  },
+  {
+    key: 'pages.credits.voiceIndonesian',
+    model: 'MMS-TTS (facebook/mms-tts-ind)',
+    url: 'https://huggingface.co/facebook/mms-tts-ind',
+    licence: 'Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0)',
+    licenceUrl: 'https://creativecommons.org/licenses/by-nc/4.0/',
+  },
+] as const satisfies ReadonlyArray<{ key: MessageKey; model: string; url: string; licence: string; licenceUrl: string }>;
+
+const SECTIONS = ['sources', 'videos', 'pictures', 'fonts', 'software', 'voices', 'translation'] as const;
 
 function ExternalLink({ href, children }: { href: string; children: ReactNode }) {
   const { t } = useI18n();
@@ -174,6 +197,31 @@ export function CreditsPage() {
                     </ExternalLink>
                   ),
                   licence: <span {...englishLang}>{item.licence}</span>,
+                })}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section aria-labelledby="credits-voices" className="tw-credits-card">
+          <h2 id="credits-voices" className="h2">
+            {t('pages.credits.voicesTitle')}
+          </h2>
+          <p>{t('pages.credits.voicesBody')}</p>
+          <ul>
+            {VOICES.map((voice) => (
+              <li key={voice.model}>
+                {tx(voice.key, {
+                  model: (
+                    <ExternalLink href={voice.url}>
+                      <span {...englishLang}>{voice.model}</span>
+                    </ExternalLink>
+                  ),
+                  licence: (
+                    <ExternalLink href={voice.licenceUrl}>
+                      <span {...englishLang}>{voice.licence}</span>
+                    </ExternalLink>
+                  ),
                 })}
               </li>
             ))}
