@@ -233,5 +233,8 @@ describe('the LinkedIn Page', () => {
     const url = new URL(THINKERWELL_LINKEDIN);
     expect(url.host).toBe('www.linkedin.com');
     expect(url.pathname).toBe('/company/thinkerwell/');
+    // The clean address: no tracking parameters in a permanent public link.
+    expect(url.search).toBe('');
+    expect(url.hash).toBe('');
   });
 });

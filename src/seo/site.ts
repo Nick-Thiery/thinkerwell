@@ -10,17 +10,10 @@ export const SITE_ORIGIN = 'https://thinkerwell.app';
 
 /**
  * Thinkerwell's LinkedIn Page, linked from the footer and named in the home
- * page's Organization data (sameAs).
- *
- * This is the address exactly as the team gave it (7 October 2026). The
- * clean address, https://www.linkedin.com/company/thinkerwell/, is very
- * likely the same Page (the `lipi` part is LinkedIn's own tracking), but
- * LinkedIn only shows a sign-in wall to automated browsers, so it couldn't
- * be checked. Once someone signed in confirms the clean address opens
- * Thinkerwell's Page, replace this with it; nothing else needs to change.
+ * page's Organization data (sameAs). The clean address, without LinkedIn's
+ * tracking parameters (confirmed by the team, 8 October 2026).
  */
-export const THINKERWELL_LINKEDIN =
-  'https://www.linkedin.com/company/thinkerwell/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BPhAY2ZlzQTmhGf%2FGk6Pzfw%3D%3D';
+export const THINKERWELL_LINKEDIN = 'https://www.linkedin.com/company/thinkerwell/';
 
 /** The public pages besides the lessons: their address, the file the build writes for it, and their key under `seo` in en.json. */
 export const PUBLIC_PAGES = [
