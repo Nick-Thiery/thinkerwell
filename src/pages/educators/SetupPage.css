@@ -267,8 +267,9 @@
     margin-inline-end: 6mm;
   }
 
+  /* 3mm (3.5mm before the optional Listen voice step) keeps six steps on one A4 page, in Indonesian too. */
   .tw-setup-steps {
-    gap: 3.5mm;
+    gap: 3mm;
   }
 
   .tw-setup-step,

@@ -211,6 +211,7 @@ export function SetupPage() {
             number={5}
             title={t('pages.setup.voice.title')}
             why={t('pages.setup.voice.why')}
+            whyOnPaper={false}
             how={t('pages.setup.voice.how')}
             state={voiceState}
             status={
@@ -268,6 +269,8 @@ interface SetupStepProps {
   number: number;
   title: string;
   why: string;
+  /** False to leave the reason off paper, where the checklist must fit one A4 page (the optional Listen voice step). */
+  whyOnPaper?: boolean;
   /** "Do this first" or "Do this last", and why. */
   note?: string;
   /** What to do, in words that work on screen and on paper. */
@@ -280,7 +283,7 @@ interface SetupStepProps {
   children?: ReactNode;
 }
 
-function SetupStep({ number, title, why, note, how, state, status, actions, children }: SetupStepProps) {
+function SetupStep({ number, title, why, whyOnPaper = true, note, how, state, status, actions, children }: SetupStepProps) {
   const { t, formatNumber } = useI18n();
   const badge = STATE_BADGE[state];
   return (
@@ -293,7 +296,7 @@ function SetupStep({ number, title, why, note, how, state, status, actions, chil
         </span>
         <span>{title}</span>
       </h2>
-      <p>{why}</p>
+      <p className={whyOnPaper ? undefined : 'tw-no-print'}>{why}</p>
       {note ? (
         <p className="tw-setup-note">
           <Icon name="Info" size={20} />
