@@ -133,7 +133,7 @@ Nothing is over a limit. Sources: [GitHub: About large files](https://docs.githu
 
 ### Sizes of the site itself
 
-Measured as `e2e/build-output.spec.ts` counts them (Brotli), against `main` built on the same machine. The offline copy (precache) grew by 6.5 kB, from 635.4 to 641.9 kB, within its 645 kB budget: the player and download manager (a chunk of their own, 2.8 kB), Settings' parts, the Read stage's, the checklist's and their words in English and Indonesian. A first visit to the home page grew by 0.8 kB, from 220.0 to 220.8 kB, all of it the new words in en.json (which every first visit loads, CLAUDE.md rule 7) and a few styles; `main` was already at its 220 kB budget, which is now 222 kB (`docs/notes/slow-internet.md`, "Later budget changes"). No player code and no recording reaches a first visit or the precache.
+Measured as `e2e/build-output.spec.ts` counts them (Brotli), against `main` built on the same machine. The offline copy (precache) grew by 6.4 kB, from 636.1 to 642.5 kB, within its 645 kB budget: the player and download manager (a chunk of their own, 2.8 kB), Settings' parts, the Read stage's, the checklist's and their words in English and Indonesian. A first visit to the home page grew by 0.7 kB, from 220.5 to 221.2 kB, all of it the new words in en.json (which every first visit loads, CLAUDE.md rule 7) and a few styles, which took it over `main`'s 221 kB budget, now 222 kB (`docs/notes/slow-internet.md`, "Later budget changes"). No player code and no recording reaches a first visit or the precache.
 
 ## Not done, or for later
 

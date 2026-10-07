@@ -35,7 +35,8 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * "Listen voice" part of Settings, the setup checklist's voice step and their
  * words in both languages (docs/notes/listen-voices.md), and the About
  * changes merged alongside. It leaves room for one more small feature.
- * Listen's recordings took 6.5 kB of that room (641.9 kB): the player and
+ * It was 636.1 kB with search engines and LinkedIn. Listen's recordings
+ * took 6.4 kB more (642.5 kB): the player and
  * the download manager (a chunk of their own, 2.8 kB, and Settings' and the
  * Read stage's parts) and their words in both languages. The recordings
  * themselves (about 45 MB) are never precached: each is kept once it has
@@ -53,7 +54,7 @@ const PRECACHE_BUDGET = 645_000;
  * choice, and 220.5 kB with search engines and LinkedIn (docs/notes/seo.md): the home page's own title, canonical
  * link and structured data in index.html, the pages' search titles in en.json (their descriptions are left out of
  * the browser's copy, stripBuildOnlyMessages) and the footer's LinkedIn link; raised to 221 kB.
- * Raised to 222 kB with Listen's recordings: MEASURED_FV kB with them (220.5 kB before, measured on the same machine),
+ * Raised to 222 kB with Listen's recordings: 221.2 kB with them (220.5 kB before, measured on the same machine),
  * all of it their words (35 messages: Settings' "Lesson audio", the recorded sample, the Read step's notes, the setup
  * checklist's pointer and the Credits page's voices) in en.json, and a few bytes of styles. The player, the download
  * manager and the recordings themselves load with the lesson and Settings pages, or on a tap, never on a first visit
