@@ -482,8 +482,8 @@
     "organisations": {
       "title": "Untuk organisasi",
       "eyebrow": "Memulai uji coba",
-      "intro": "Thinkerwell adalah proyek yang dipimpin oleh pelajar untuk memperluas akses ke pembelajaran IPS digital yang gratis bagi remaja yang kurang terlayani di Asia Tenggara. Kami sedang menyiapkan uji coba kursus kami bersama organisasi pendidikan. Halaman ini menjelaskan apa saja yang termasuk dalam uji coba.",
-      "honesty": "Thinkerwell adalah proyek yang dipimpin oleh pelajar. Thinkerwell bukan lembaga amal atau organisasi nirlaba yang terdaftar.",
+      "intro": "Thinkerwell adalah platform yang dipimpin oleh pelajar untuk memperluas akses ke pembelajaran IPS digital yang gratis bagi remaja yang kurang terlayani di Asia Tenggara. Kami sedang menyiapkan uji coba kursus kami bersama organisasi pendidikan. Halaman ini menjelaskan apa saja yang termasuk dalam uji coba.",
+      "honesty": "Thinkerwell adalah platform yang dipimpin oleh pelajar. Thinkerwell bukan lembaga amal atau organisasi nirlaba yang terdaftar.",
       "whatTitle": "Apa itu Thinkerwell",
       "whatBody": "Satu kursus, Menjelajahi Dunia Kita: {lessons} pelajaran tentang sejarah, geografi, budaya, dan kehidupan bermasyarakat, untuk pelajar berusia sekitar 10 sampai 17 tahun. Setiap pelajaran punya lima langkah: baca, tulis, bicara, tonton, dan refleksi. Kursus ini berjalan di browser web pada laptop dan tablet yang dipakai bersama, dalam bahasa Inggris atau Bahasa Indonesia. Pelajaran bisa dipakai tanpa internet setelah kunjungan pertama; video pilihan membutuhkan internet.",
       "getTitle": "Yang Anda dapatkan",
@@ -525,7 +525,7 @@
       "choiceBody": "Menjawab tidak untuk salah satu pertanyaan di bawah tidak akan memengaruhi kegiatan lain anak Anda di {organisation}. Jika Anda menjawab tidak untuk penelitian, anak Anda tetap bisa memakai Thinkerwell di kelas, hanya jawabannya tidak dipakai. Anda bisa berubah pikiran kapan saja, bahkan setelah uji coba selesai: beri tahu {organisation}, dan jawaban anak Anda akan dihapus. Anak Anda juga boleh menolak, dan penolakannya tetap berlaku.",
       "questions": "Ada pertanyaan? Tanyakan kepada {organisation}.",
       "questionsEmail": "Ada pertanyaan? Tanyakan kepada {organisation}, atau kirim email ke Thinkerwell di {email}.",
-      "honesty": "Thinkerwell adalah proyek yang dipimpin oleh pelajar, bukan lembaga amal yang terdaftar.",
+      "honesty": "Thinkerwell adalah platform yang dipimpin oleh pelajar, bukan lembaga amal yang terdaftar.",
       "answerTitle": "Jawaban Anda",
       "classQuestion": "Anak saya boleh memakai Thinkerwell dalam kelas di {organisation}.",
       "studyQuestion": "Anak saya boleh ikut dalam penelitian uji coba. Jawabannya dipakai dengan kode, tidak pernah dengan namanya.",
@@ -595,7 +595,7 @@
       "questionsTitle": "Pertanyaan",
       "questions": "Tanyakan kepada {contact} di {organisation}.",
       "questionsEmail": "Tanyakan kepada {contact} di {organisation}, atau kirim email ke Thinkerwell di {email}.",
-      "runBy": "Thinkerwell dijalankan oleh Justin Park dan Nick Thiery. Thinkerwell adalah proyek yang dipimpin oleh pelajar, bukan lembaga amal yang terdaftar."
+      "runBy": "Thinkerwell dijalankan oleh Justin Park dan Nick Thiery. Thinkerwell adalah platform yang dipimpin oleh pelajar, bukan lembaga amal yang terdaftar."
     },
     "codeCards": {
       "title": "Kartu kode",
@@ -957,9 +957,8 @@
     "about": {
       "title": "Tentang Thinkerwell",
       "tagline": "Belajar IPS gratis untuk remaja di Asia Tenggara, terutama mereka yang menghadapi hambatan dalam pendidikan.",
-      "whatTitle": "Apa itu Thinkerwell",
-      "whatBody": "Thinkerwell adalah proyek yang dipimpin oleh pelajar untuk memperluas akses ke pembelajaran IPS digital yang gratis bagi remaja yang kurang terlayani di Asia Tenggara. Kursus pertamanya, {course}, punya {lessons} pelajaran tentang sejarah, geografi, budaya, dan kehidupan bermasyarakat. Kursus ini dirancang dengan memikirkan pelajar pengungsi, pelajar yang terpaksa meninggalkan tempat tinggalnya, dan pelajar lain yang menghadapi hambatan dalam pendidikan. Pelajar bisa memakainya sendiri atau bersama pendidik.",
-      "whatStatus": "Thinkerwell sedang bersiap untuk uji coba pertamanya bersama sebuah organisasi pendidikan. Thinkerwell bukan lembaga amal atau organisasi nirlaba yang terdaftar.",
+      "missionTitle": "Misi kami",
+      "missionBody": "Thinkerwell berawal dari kecintaan pada IPS dan sebuah pertanyaan: bagaimana agar lebih banyak remaja punya kesempatan untuk menjelajahi dunia tempat mereka tinggal? Kami membangun platform digital gratis agar alat belajar digital dan pendidikan IPS bisa diakses oleh remaja yang menghadapi hambatan dalam pendidikan. Tujuan kami adalah membantu pelajar mengajukan pertanyaan, mengembangkan kemampuan berpikir kritis, menjelajahi beragam sudut pandang, dan membagikan gagasan mereka sendiri.",
       "goalsTitle": "Hubungan Thinkerwell dengan tujuan PBB",
       "goal4Title": "Tujuan 4: Pendidikan Berkualitas",
       "goal4Body": "Bahan belajar gratis",
@@ -983,6 +982,8 @@
       "nickName": "Nick Thiery",
       "nickBio": "Nick adalah pelajar di Singapura sekaligus kepala bidang teknologi (CTO) Thinkerwell. Ia membangun situs web ini dan mengembangkan alat yang membantu lebih banyak orang belajar dalam bahasa mereka sendiri.",
       "nickAlt": "Nick Thiery",
+      "linkedin": "LinkedIn",
+      "linkedinLabel": "{name} di LinkedIn (terbuka di tab baru)",
       "creditsLinkTitle": "Ucapan terima kasih dan sumber",
       "creditsLinkBody": "Sumber di balik setiap pelajaran, serta video, huruf, gambar, dan perangkat lunak yang dipakai Thinkerwell.",
       "creditsLinkCta": "Lihat ucapan terima kasih"

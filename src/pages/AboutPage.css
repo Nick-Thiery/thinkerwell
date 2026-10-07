@@ -1,6 +1,6 @@
 /*
  * About (docs/screens/About.dc.html): a hero with the mascot, then cards --
- * what Thinkerwell is, the UN goals, the team, and a link to the credits.
+ * the mission, the UN goals, the team, and a link to the credits.
  * Stacked on phones and tablets; two columns on a laptop.
  */
 
@@ -10,8 +10,10 @@
   gap: var(--space-6);
 }
 
-/* On a laptop the page uses the whole column: "What Thinkerwell is" and the
-   UN goals side by side, the team and the credits link across both. */
+/* On a laptop the page uses the whole column: the mission and the UN goals
+   side by side, the team and the credits link across both. Each card is as
+   tall as its own content (align-items: start), so the short mission card
+   isn't stretched to the goals card's height with an empty area inside. */
 @media (min-width: 1100px) {
   .tw-about-page {
     display: grid;
@@ -23,11 +25,6 @@
   .tw-about-team,
   .tw-about-credits {
     grid-column: 1 / -1;
-  }
-
-  .tw-about-what,
-  .tw-about-goals {
-    align-self: stretch;
   }
 }
 
@@ -68,7 +65,7 @@
 /* The screen draws this card in canvas on a white page. This page sits on
    canvas, where that card would vanish (its text then looked indented for
    no reason), so it is a paper card with a border like the UN goals. */
-.tw-about-what {
+.tw-about-mission {
   background: var(--paper);
   border: 1px solid var(--line);
 }
@@ -150,6 +147,36 @@
   object-fit: cover;
   display: block;
   margin-block-end: var(--space-1);
+}
+
+/* LinkedIn, under each name: a quiet pill like a chip, the logo in ink
+   beside the word, a full 44px tap target. */
+.tw-about-linkedin {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: var(--target-min);
+  padding-block: var(--space-2);
+  padding-inline: var(--space-3) var(--space-4);
+  margin-block-end: var(--space-2);
+  border: 2px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.tw-about-linkedin:hover {
+  border-color: var(--ink);
+}
+
+.tw-about-linkedin-logo {
+  flex: none;
+  display: block;
 }
 
 @media (max-width: 700px) {

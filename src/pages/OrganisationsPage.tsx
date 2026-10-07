@@ -5,7 +5,7 @@
  * contact us. Linked from the Educators page ("Starting a pilot") and the
  * footer of every page.
  *
- * Honest about scope (CLAUDE.md rule 8): a student-led project, not a
+ * Honest about scope (CLAUDE.md rule 8): a student-led platform, not a
  * registered charity. Honest about data too: today learners' work and
  * progress aren't sent to Thinkerwell, YouTube and online speech-to-text are
  * the outside services a learner can reach, and the anonymous pilot data the
