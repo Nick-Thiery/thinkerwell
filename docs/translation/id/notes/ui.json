@@ -2477,6 +2477,132 @@
     "source": "This browser has no voice on this device, so Listen doesn't show here.",
     "back": "This browser has no voice on this device, so Listen doesn't appear here."
   },
+  "pages.settings.listenVoice.title": {
+    "back": "Listen's voice",
+    "source": "Listen voice",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.listenVoice.intro": {
+    "back": "Listen reads lessons aloud with a voice that works on this device, so nothing is sent to the internet. Some voices sound clearer than others: play a sample, then choose.",
+    "source": "Listen reads lessons aloud with a voice that works on this device, so nothing is sent online. Some voices sound clearer than others: play a sample, then choose.",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.listenVoice.voiceFor.en": {
+    "back": "Voice for lessons in English",
+    "source": "Voice for English lessons",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.listenVoice.voiceFor.id": {
+    "back": "Voice for lessons in Indonesian",
+    "source": "Voice for Indonesian lessons",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.listenVoice.automatic": {
+    "back": "Automatic (the best on this device)",
+    "source": "Automatic (best on this device)",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.listenVoice.automaticNow": {
+    "back": "Automatic uses {voice} on this device.",
+    "source": "Automatic uses {voice} on this device.",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.listenVoice.nameWithLang": {
+    "back": "{name} ({lang})",
+    "source": "{name} ({lang})",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.listenVoice.sample": {
+    "back": "Play an example",
+    "source": "Play a sample",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.listenVoice.noVoice": {
+    "back": "This device has no English voice that Listen can use, so Listen doesn't appear. The steps below add one.",
+    "source": "This device has no English voice that Listen can use, so Listen doesn't show. The steps below add one.",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.listenVoice.noVoiceIndonesian": {
+    "back": "This device doesn't have an Indonesian voice yet, so Listen can't read lessons in Indonesian yet. The steps below add one.",
+    "source": "This device has no Indonesian voice yet, so Listen can't read Indonesian lessons. The steps below add one.",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.listenVoice.better.title": {
+    "back": "Get a clearer voice",
+    "source": "Get a clearer voice",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.listenVoice.better.intro": {
+    "back": "Most devices can download better voices for free. They can be large, so use good Wi-Fi. Then open this page again and choose the new voice.",
+    "source": "Most devices can download better voices for free. Voices can be large, so use good Wi-Fi. Then open this page again and choose the new voice.",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.listenVoice.better.apple.name": {
+    "back": "iPad or iPhone",
+    "source": "iPad or iPhone",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.listenVoice.better.apple.steps": {
+    "back": "Open Settings, then Accessibility, then Spoken Content (in newer versions: Read & Speak), then Voices. Choose English or Indonesian, then a voice marked Enhanced or Premium, and download it.",
+    "source": "Open Settings, then Accessibility, then Spoken Content (called Read & Speak on newer versions), then Voices. Choose English or Indonesian, then a voice marked Enhanced or Premium, and download it.",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker. The device's menu names (Pengaturan, Aksesibilitas, Konten Lisan, Suara; Mesin pilihan, Instal data suara; Waktu & bahasa, Ucapan, Kelola suara, Tambahkan suara; Setelan) were written from what each system is known to call them in Indonesian, not checked on a device: check them on a device set to Indonesian. Read & Speak, Enhanced, Premium and Text-to-Speech stay in English because their Indonesian labels couldn't be checked."
+  },
+  "pages.settings.listenVoice.better.apple.note": {
+    "back": "Safari doesn't allow websites to use every voice you download. If the new voice isn't in the list above, keep using the voice you already have.",
+    "source": "Safari doesn't let websites use every voice you download. If the new voice isn't in the list above, keep the one you have.",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.listenVoice.better.android.name": {
+    "back": "Android tablet or phone",
+    "source": "Android tablet or phone",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.listenVoice.better.android.steps": {
+    "back": "Open Settings and search for text-to-speech. Beside Preferred engine, tap the settings button, then Install voice data. Choose English or Indonesian, then download its voice.",
+    "source": "Open Settings and search for text-to-speech. Next to Preferred engine, tap the settings button, then Install voice data. Choose English or Indonesian, then download a voice.",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker. The device's menu names (Pengaturan, Aksesibilitas, Konten Lisan, Suara; Mesin pilihan, Instal data suara; Waktu & bahasa, Ucapan, Kelola suara, Tambahkan suara; Setelan) were written from what each system is known to call them in Indonesian, not checked on a device: check them on a device set to Indonesian. Read & Speak, Enhanced, Premium and Text-to-Speech stay in English because their Indonesian labels couldn't be checked."
+  },
+  "pages.settings.listenVoice.better.windows.name": {
+    "back": "Windows laptop",
+    "source": "Windows laptop",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.listenVoice.better.windows.steps": {
+    "back": "Open Settings, then Time & language, then Speech. Beside Manage voices, choose Add voices, then English (United Kingdom) or Indonesian. You may need an administrator account. Then close the browser and open it again.",
+    "source": "Open Settings, then Time & language, then Speech. Next to Manage voices, choose Add voices, then English (United Kingdom) or Indonesian. You may need an administrator account. Then close the browser and open it again.",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker. The device's menu names (Pengaturan, Aksesibilitas, Konten Lisan, Suara; Mesin pilihan, Instal data suara; Waktu & bahasa, Ucapan, Kelola suara, Tambahkan suara; Setelan) were written from what each system is known to call them in Indonesian, not checked on a device: check them on a device set to Indonesian. Read & Speak, Enhanced, Premium and Text-to-Speech stay in English because their Indonesian labels couldn't be checked."
+  },
+  "pages.settings.listenVoice.better.chromebook.name": {
+    "back": "Chromebook",
+    "source": "Chromebook",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.listenVoice.better.chromebook.steps": {
+    "back": "Open Settings, then Accessibility, then Text-to-Speech, then its voice settings. Install the voices for English or Indonesian.",
+    "source": "Open Settings, then Accessibility, then Text-to-Speech, then Text-to-Speech voice settings. Install the voices for English or Indonesian.",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker. The device's menu names (Pengaturan, Aksesibilitas, Konten Lisan, Suara; Mesin pilihan, Instal data suara; Waktu & bahasa, Ucapan, Kelola suara, Tambahkan suara; Setelan) were written from what each system is known to call them in Indonesian, not checked on a device: check them on a device set to Indonesian. Read & Speak, Enhanced, Premium and Text-to-Speech stay in English because their Indonesian labels couldn't be checked."
+  },
   "pages.settings.sayIt.title": {
     "source": "Say it: speech to text",
     "back": "Say it: voice to text"
