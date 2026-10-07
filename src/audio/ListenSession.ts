@@ -121,6 +121,8 @@ export class ListenSession {
     this.halt();
     this.part = part;
     this.index = from;
+    // Neither engine has this part yet: until one does, the place is `index`.
+    this.mode = null;
     const ref = part.recording;
     if (!ref) {
       this.speak(from);
