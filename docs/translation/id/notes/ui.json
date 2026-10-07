@@ -4796,27 +4796,9 @@
     "flag": true,
     "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
   },
-  "pages.settings.lessonAudio.forLanguages": {
-    "back": "For lessons in {languages}: {size} in total.",
-    "source": "For {languages} lessons: {size} in all.",
-    "flag": true,
-    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
-  },
-  "pages.settings.lessonAudio.lang.en": {
-    "back": "English",
-    "source": "English",
-    "flag": true,
-    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
-  },
-  "pages.settings.lessonAudio.lang.id": {
-    "back": "Indonesian",
-    "source": "Bahasa Indonesia",
-    "flag": true,
-    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
-  },
   "pages.settings.lessonAudio.stored": {
-    "back": "On this device: {stored} of {total}.",
-    "source": "On this device: {stored} of {total}.",
+    "back": "On this device: {stored} MB of {total} MB.",
+    "source": "On this device: {stored} MB of {total} MB.",
     "flag": true,
     "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
   },
@@ -4845,8 +4827,8 @@
     "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
   },
   "pages.settings.lessonAudio.progress": {
-    "back": "Downloading: {done} of {total}",
-    "source": "Downloading: {done} of {total}",
+    "back": "Downloading: {done} MB of {total} MB",
+    "source": "Downloading: {done} MB of {total} MB",
     "flag": true,
     "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
   },
@@ -4883,6 +4865,30 @@
   "pages.settings.lessonAudio.unsupported": {
     "back": "This browser can't save lesson audio, so here Listen needs the internet.",
     "source": "This browser can't keep lesson audio, so Listen needs the internet here.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.lessonAudio.forEnglish": {
+    "back": "For lessons in English: {size} MB in total.",
+    "source": "For English lessons: {size} MB in all.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.lessonAudio.forIndonesian": {
+    "back": "For lessons in Indonesian: {size} MB in total.",
+    "source": "For Bahasa Indonesia lessons: {size} MB in all.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.lessonAudio.forBoth": {
+    "back": "For lessons in English and Indonesian: {size} MB in total.",
+    "source": "For English and Bahasa Indonesia lessons: {size} MB in all.",
+    "flag": true,
+    "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.settings.lessonAudio.forDevice": {
+    "back": "For the lessons used on this device: {size} MB in total.",
+    "source": "For the lessons used on this device: {size} MB in all.",
     "flag": true,
     "note": "New for Listen's recorded audio (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
   },

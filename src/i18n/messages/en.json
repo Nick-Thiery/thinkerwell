@@ -945,17 +945,16 @@
       "lessonAudio": {
         "title": "Lesson audio",
         "intro": "Listen downloads each part's recording the first time it plays it. To use Listen without the internet, download all of them here, on good Wi-Fi.",
-        "forLanguages": "For {languages} lessons: {size} in all.",
-        "lang": {
-          "en": "English",
-          "id": "Bahasa Indonesia"
-        },
-        "stored": "On this device: {stored} of {total}.",
+        "forEnglish": "For English lessons: {size} MB in all.",
+        "forIndonesian": "For Bahasa Indonesia lessons: {size} MB in all.",
+        "forBoth": "For English and Bahasa Indonesia lessons: {size} MB in all.",
+        "forDevice": "For the lessons used on this device: {size} MB in all.",
+        "stored": "On this device: {stored} MB of {total} MB.",
         "storedAll": "All of it is on this device. Listen works here without the internet.",
         "storedNone": "None of it is on this device yet.",
         "download": "Download lesson audio",
         "stop": "Stop downloading",
-        "progress": "Downloading: {done} of {total}",
+        "progress": "Downloading: {done} MB of {total} MB",
         "progressLabel": "Lesson audio downloaded",
         "stopped": "Stopped. What was downloaded stays on this device.",
         "failed": "Some recordings didn't download. Check the connection and try again. What was downloaded stays.",

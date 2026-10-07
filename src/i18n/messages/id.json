@@ -938,17 +938,16 @@
       "lessonAudio": {
         "title": "Audio pelajaran",
         "intro": "Dengarkan mengunduh rekaman setiap bagian saat pertama kali memutarnya. Agar Dengarkan bisa dipakai tanpa internet, unduh semuanya di sini dengan Wi-Fi yang bagus.",
-        "forLanguages": "Untuk pelajaran dalam {languages}: totalnya {size}.",
-        "lang": {
-          "en": "bahasa Inggris",
-          "id": "bahasa Indonesia"
-        },
-        "stored": "Di perangkat ini: {stored} dari {total}.",
+        "forEnglish": "Untuk pelajaran dalam bahasa Inggris: totalnya {size} MB.",
+        "forIndonesian": "Untuk pelajaran dalam bahasa Indonesia: totalnya {size} MB.",
+        "forBoth": "Untuk pelajaran dalam bahasa Inggris dan bahasa Indonesia: totalnya {size} MB.",
+        "forDevice": "Untuk pelajaran yang dipakai di perangkat ini: totalnya {size} MB.",
+        "stored": "Di perangkat ini: {stored} MB dari {total} MB.",
         "storedAll": "Semuanya sudah ada di perangkat ini. Dengarkan bisa dipakai di sini tanpa internet.",
         "storedNone": "Belum ada yang tersimpan di perangkat ini.",
         "download": "Unduh audio pelajaran",
         "stop": "Berhenti mengunduh",
-        "progress": "Mengunduh: {done} dari {total}",
+        "progress": "Mengunduh: {done} MB dari {total} MB",
         "progressLabel": "Audio pelajaran yang sudah diunduh",
         "stopped": "Dihentikan. Yang sudah diunduh tetap ada di perangkat ini.",
         "failed": "Sebagian rekaman tidak berhasil diunduh. Periksa koneksi dan coba lagi. Yang sudah diunduh tetap ada.",

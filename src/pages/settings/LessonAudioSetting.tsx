@@ -32,13 +32,20 @@ function lessonsLangOf(code: string | null | undefined): string {
   return recordingLang(contentLocale(locale).code);
 }
 
+/** How big it is, by the languages it is for: whole sentences, never joined in code. */
+const FOR_LANGUAGES: Readonly<Record<string, MessageKey>> = {
+  en: 'pages.settings.lessonAudio.forEnglish',
+  id: 'pages.settings.lessonAudio.forIndonesian',
+  'en id': 'pages.settings.lessonAudio.forBoth',
+};
+
 const RESULT_TEXT: Record<Exclude<DownloadResult, 'done'>, MessageKey> = {
   stopped: 'pages.settings.lessonAudio.stopped',
   failed: 'pages.settings.lessonAudio.failed',
 };
 
 export function LessonAudioSetting({ deviceSettings }: { deviceSettings: DeviceSettingsState }) {
-  const { t, formatList, formatNumber } = useI18n();
+  const { t } = useI18n();
   const { settings } = deviceSettings;
   const { learners, deviceLanguage } = useLearnerSession();
   const { offline } = useServiceWorker();
@@ -73,8 +80,8 @@ export function LessonAudioSetting({ deviceSettings }: { deviceSettings: DeviceS
 
   if (langs.length === 0 || total === 0) return null;
 
-  const size = (bytes: number) =>
-    formatNumber(bytes / 1_000_000, { style: 'unit', unit: 'megabyte', unitDisplay: 'short', maximumFractionDigits: bytes < 10_000_000 ? 1 : 0 });
+  // Megabytes, to one decimal below 10 MB (the messages say "MB"; t() formats the number for the language).
+  const size = (bytes: number) => (bytes < 10_000_000 ? Math.round(bytes / 100_000) / 10 : Math.round(bytes / 1_000_000));
   const saveData = isSaveDataOn(settings?.saveData ?? null);
   const supported = canKeepAudio() && offline !== 'unsupported';
   const ready = offline === 'ready';
@@ -94,15 +101,13 @@ export function LessonAudioSetting({ deviceSettings }: { deviceSettings: DeviceS
   };
   const stop = () => stopper.current?.abort();
 
-  const names = formatList(langs.map((lang) => t(`pages.settings.lessonAudio.lang.${lang}` as MessageKey)));
-
   return (
     <section id={LESSON_AUDIO_PART} className="tw-settings-card" aria-labelledby={headingId}>
       <h2 id={headingId} className="tw-settings-h2" tabIndex={-1}>
         {t('pages.settings.lessonAudio.title')}
       </h2>
       <p className="tw-settings-text">{t('pages.settings.lessonAudio.intro')}</p>
-      <p className="tw-settings-text">{t('pages.settings.lessonAudio.forLanguages', { languages: names, size: size(total) })}</p>
+      <p className="tw-settings-text">{t(FOR_LANGUAGES[langsKey] ?? 'pages.settings.lessonAudio.forDevice', { size: size(total) })}</p>
 
       {!supported ? (
         <p className="tw-settings-status">{t('pages.settings.lessonAudio.unsupported')}</p>
