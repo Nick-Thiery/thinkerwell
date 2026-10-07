@@ -56,7 +56,9 @@
       "toolsLabel": "Alat bantu membaca",
       "listen": "Dengarkan",
       "listenNoVoice": "Dengarkan belum bisa membacakan pelajaran ini di sini, karena perangkat ini tidak punya suara bahasa Indonesia.",
+      "listenUnavailable": "Dengarkan belum bisa memutar bagian ini di sini. Rekamannya belum ada di perangkat ini, dan perangkat ini tidak punya suara untuk membacakannya. Sambungkan ke internet, lalu ketuk Dengarkan lagi.",
       "listenLabel": "Dibacakan · bagian {n} dari {total}",
+      "listenLoading": "Mengambil rekaman · bagian {n} dari {total}",
       "levelLabel": "Tingkat bacaan",
       "levelStandard": "Standar",
       "levelSimpler": "Lebih mudah",
@@ -765,7 +767,9 @@
       "offline": {
         "title": "Unduh kursus untuk dipakai tanpa internet",
         "why": "Setelah itu, semua pelajaran bisa dipakai tanpa internet. Hanya video yang butuh internet.",
-        "how": "Buka Thinkerwell saat internet menyala, dan biarkan terbuka sampai semua pelajaran tersimpan. Thinkerwell melakukannya sendiri."
+        "how": "Buka Thinkerwell saat internet menyala, dan biarkan terbuka sampai semua pelajaran tersimpan. Thinkerwell melakukannya sendiri.",
+        "audio": "Agar Dengarkan bisa dipakai tanpa internet, unduh juga audio pelajaran: di Pengaturan, di bagian Audio pelajaran.",
+        "audioOpen": "Audio pelajaran di Pengaturan"
       },
       "storage": {
         "title": "Jaga hasil kerja tetap aman",
@@ -795,10 +799,12 @@
       "voice": {
         "title": "Pilih suara Dengarkan (opsional)",
         "why": "Dengarkan membacakan pelajaran dengan suara terbaik yang ditemukannya di perangkat. Anda bisa mendengar setiap suara dan memilih yang lain, atau mengunduh suara yang lebih jelas.",
+        "whyRecorded": "Dengarkan memutar rekaman suara yang alami. Kalau rekamannya belum ada di perangkat dan tidak ada internet, Dengarkan membaca dengan suara terbaik yang ditemukannya di perangkat. Anda bisa mendengar setiap suara dan memilih yang lain, atau mengunduh suara yang lebih jelas.",
         "how": "Di Pengaturan, di bagian Suara Dengarkan, putar contoh dan pilih suara yang paling jelas.",
         "automatic": "Dengarkan membaca dengan {voice}, suara terbaik di perangkat ini.",
         "chosen": "Dengarkan membaca dengan {voice}, yang dipilih di Pengaturan.",
         "none": "Perangkat ini tidak punya suara yang bisa dipakai Dengarkan, jadi Dengarkan tidak muncul. Pengaturan menjelaskan cara menambahkannya.",
+        "noneRecorded": "Perangkat ini tidak punya suara sendiri yang bisa dipakai Dengarkan, jadi Dengarkan hanya memutar rekaman. Pengaturan menjelaskan cara menambahkan suara.",
         "open": "Pilih di Pengaturan"
       },
       "speech": {
@@ -890,16 +896,23 @@
       "listenVoice": {
         "title": "Suara Dengarkan",
         "intro": "Dengarkan membacakan pelajaran dengan suara yang ada di perangkat ini, jadi tidak ada yang dikirim ke internet. Ada suara yang terdengar lebih jelas daripada yang lain: putar contohnya, lalu pilih.",
+        "introRecorded": "Dengarkan memutar rekaman suara yang alami, yang dibuat untuk setiap pelajaran. Kalau rekaman suatu bagian belum ada di perangkat ini dan tidak ada internet, Dengarkan membacakannya dengan suara perangkat ini, jadi tidak ada yang dikirim ke internet. Pilih suara itu di sini.",
         "voiceFor": {
           "en": "Suara untuk pelajaran dalam bahasa Inggris",
           "id": "Suara untuk pelajaran dalam bahasa Indonesia"
         },
+        "recordedWith": "Dengarkan memutar rekaman yang dibuat dengan {voice}.",
+        "deviceVoice": "Suara perangkat, kalau tidak ada rekaman",
         "automatic": "Otomatis (yang terbaik di perangkat ini)",
         "automaticNow": "Otomatis memakai {voice} di perangkat ini.",
         "nameWithLang": "{name} ({lang})",
         "sample": "Putar contoh",
+        "deviceSample": "Dengar suara ini",
+        "sampleUnavailable": "Contohnya belum ada di perangkat ini, dan perangkat ini tidak punya suara untuk membacakannya. Sambungkan ke internet dan coba lagi.",
         "noVoice": "Perangkat ini tidak punya suara bahasa Inggris yang bisa dipakai Dengarkan, jadi Dengarkan tidak muncul. Langkah-langkah di bawah ini menjelaskan cara menambahkannya.",
+        "noVoiceRecorded": "Perangkat ini tidak punya suara bahasa Inggris. Dengarkan tetap memutar rekaman, tetapi tidak bisa membacakan bagian yang rekamannya belum ada di perangkat ini selama tidak ada internet. Langkah-langkah di bawah ini menjelaskan cara menambahkan suara.",
         "noVoiceIndonesian": "Perangkat ini belum punya suara bahasa Indonesia, jadi Dengarkan belum bisa membacakan pelajaran dalam bahasa Indonesia. Langkah-langkah di bawah ini menjelaskan cara menambahkannya.",
+        "noVoiceIndonesianRecorded": "Perangkat ini belum punya suara bahasa Indonesia. Dengarkan tetap memutar rekaman, tetapi tidak bisa membacakan bagian yang rekamannya belum ada di perangkat ini selama tidak ada internet. Langkah-langkah di bawah ini menjelaskan cara menambahkan suara.",
         "better": {
           "title": "Dapatkan suara yang lebih jelas",
           "intro": "Sebagian besar perangkat bisa mengunduh suara yang lebih bagus secara gratis. Ukurannya bisa besar, jadi pakai Wi-Fi yang bagus. Lalu buka halaman ini lagi dan pilih suara barunya.",
@@ -921,6 +934,27 @@
             "steps": "Buka Setelan, lalu Aksesibilitas, lalu Text-to-Speech, lalu setelan suaranya. Instal suara untuk bahasa Inggris atau bahasa Indonesia."
           }
         }
+      },
+      "lessonAudio": {
+        "title": "Audio pelajaran",
+        "intro": "Dengarkan mengunduh rekaman setiap bagian saat pertama kali memutarnya. Agar Dengarkan bisa dipakai tanpa internet, unduh semuanya di sini dengan Wi-Fi yang bagus.",
+        "forLanguages": "Untuk pelajaran dalam {languages}: totalnya {size}.",
+        "lang": {
+          "en": "bahasa Inggris",
+          "id": "bahasa Indonesia"
+        },
+        "stored": "Di perangkat ini: {stored} dari {total}.",
+        "storedAll": "Semuanya sudah ada di perangkat ini. Dengarkan bisa dipakai di sini tanpa internet.",
+        "storedNone": "Belum ada yang tersimpan di perangkat ini.",
+        "download": "Unduh audio pelajaran",
+        "stop": "Berhenti mengunduh",
+        "progress": "Mengunduh: {done} dari {total}",
+        "progressLabel": "Audio pelajaran yang sudah diunduh",
+        "stopped": "Dihentikan. Yang sudah diunduh tetap ada di perangkat ini.",
+        "failed": "Sebagian rekaman tidak berhasil diunduh. Periksa koneksi dan coba lagi. Yang sudah diunduh tetap ada.",
+        "saveData": "Hemat data menyala, jadi tidak ada yang diunduh dari sini. Matikan Hemat data di atas untuk mengunduh audio pelajaran.",
+        "notReady": "Ini bisa dimulai setelah pelajaran tersimpan di perangkat ini untuk dipakai tanpa internet, di atas.",
+        "unsupported": "Browser ini tidak bisa menyimpan audio pelajaran, jadi di sini Dengarkan butuh internet."
       },
       "sayIt": {
         "title": "Ucapkan: suara ke teks",
@@ -1060,6 +1094,10 @@
       "softwareTitle": "Perangkat lunak",
       "softwareBody": "Situs ini dibuat dengan alat-alat gratis dan bersumber terbuka ini:",
       "softwareItem": "{name} ({licence})",
+      "voicesTitle": "Suara Dengarkan",
+      "voicesBody": "Dengarkan memutar rekaman yang dibuat untuk Thinkerwell dari teks pelajaran dengan suara-suara text-to-speech gratis ini. Rekaman itu dibuat oleh komputer, bukan oleh manusia, dan suaranya sendiri tidak diubah.",
+      "voiceEnglish": "Pelajaran dalam bahasa Inggris: {model} karya hexgrad, suara Heart, dengan lisensi {licence}.",
+      "voiceIndonesian": "Pelajaran dalam bahasa Indonesia: {model} karya Meta, bagian dari Massively Multilingual Speech, dengan lisensi {licence}. Lisensi ini hanya mengizinkan penggunaan nonkomersial. Thinkerwell gratis, dan hanya memakainya dengan cara itu.",
       "translationTitle": "Terjemahan",
       "translationBody": "Versi Bahasa Indonesia pertama kali disusun dengan bantuan AI. Penutur asli sedang memeriksanya."
     },

@@ -57,7 +57,9 @@
       "toolsLabel": "Reading tools",
       "listen": "Listen",
       "listenNoVoice": "Listen can't read this lesson aloud here: this device has no voice for its language.",
+      "listenUnavailable": "Listen can't play this part here yet. Its recording isn't on this device, and the device has no voice to read it with. Connect to the internet, then tap Listen again.",
       "listenLabel": "Reading aloud · part {n} of {total}",
+      "listenLoading": "Getting the recording · part {n} of {total}",
       "levelLabel": "Reading level",
       "levelStandard": "Standard",
       "levelSimpler": "Simpler",
@@ -770,7 +772,9 @@
       "offline": {
         "title": "Download the course for offline use",
         "why": "Then every lesson works without the internet. Only the videos need it.",
-        "how": "Open Thinkerwell with the internet on, and keep it open until the lessons are saved. It does this by itself."
+        "how": "Open Thinkerwell with the internet on, and keep it open until the lessons are saved. It does this by itself.",
+        "audio": "For Listen without the internet, also download the lesson audio: in Settings, under Lesson audio.",
+        "audioOpen": "Lesson audio in Settings"
       },
       "storage": {
         "title": "Keep saved work safe",
@@ -801,10 +805,12 @@
       "voice": {
         "title": "Choose the Listen voice (optional)",
         "why": "Listen reads lessons aloud with the best voice it finds on the device. You can hear each voice and choose another, or download a clearer one.",
+        "whyRecorded": "Listen plays recordings of a natural voice. Where a recording isn't on the device and there's no internet, it reads with the best voice it finds on the device. You can hear each voice and choose another, or download a clearer one.",
         "how": "In Settings, under Listen voice, play a sample and choose the clearest voice.",
         "automatic": "Listen reads with {voice}, the best voice on this device.",
         "chosen": "Listen reads with {voice}, chosen in Settings.",
         "none": "This device has no voice that Listen can use, so Listen doesn't show. Settings says how to add one.",
+        "noneRecorded": "This device has no voice of its own that Listen can use, so Listen plays only the recordings. Settings says how to add a voice.",
         "open": "Choose it in Settings"
       },
       "speech": {
@@ -897,16 +903,23 @@
       "listenVoice": {
         "title": "Listen voice",
         "intro": "Listen reads lessons aloud with a voice that works on this device, so nothing is sent online. Some voices sound clearer than others: play a sample, then choose.",
+        "introRecorded": "Listen plays recordings of a natural voice, made for every lesson. Where a part's recording isn't on this device and there's no internet, it reads with a voice of this device instead, so nothing is sent online. Choose that voice here.",
         "voiceFor": {
           "en": "Voice for English lessons",
           "id": "Voice for Indonesian lessons"
         },
+        "recordedWith": "Listen plays recordings made with {voice}.",
+        "deviceVoice": "Device voice, when there's no recording",
         "automatic": "Automatic (best on this device)",
         "automaticNow": "Automatic uses {voice} on this device.",
         "nameWithLang": "{name} ({lang})",
         "sample": "Play a sample",
+        "deviceSample": "Hear this voice",
+        "sampleUnavailable": "The sample isn't on this device yet, and the device has no voice to read it with. Connect to the internet and try again.",
         "noVoice": "This device has no English voice that Listen can use, so Listen doesn't show. The steps below add one.",
+        "noVoiceRecorded": "This device has no English voice. Listen still plays the recordings, but can't read a part whose recording isn't on this device while there's no internet. The steps below add a voice.",
         "noVoiceIndonesian": "This device has no Indonesian voice yet, so Listen can't read Indonesian lessons. The steps below add one.",
+        "noVoiceIndonesianRecorded": "This device has no Indonesian voice. Listen still plays the recordings, but can't read a part whose recording isn't on this device while there's no internet. The steps below add a voice.",
         "better": {
           "title": "Get a clearer voice",
           "intro": "Most devices can download better voices for free. Voices can be large, so use good Wi-Fi. Then open this page again and choose the new voice.",
@@ -928,6 +941,27 @@
             "steps": "Open Settings, then Accessibility, then Text-to-Speech, then Text-to-Speech voice settings. Install the voices for English or Indonesian."
           }
         }
+      },
+      "lessonAudio": {
+        "title": "Lesson audio",
+        "intro": "Listen downloads each part's recording the first time it plays it. To use Listen without the internet, download all of them here, on good Wi-Fi.",
+        "forLanguages": "For {languages} lessons: {size} in all.",
+        "lang": {
+          "en": "English",
+          "id": "Bahasa Indonesia"
+        },
+        "stored": "On this device: {stored} of {total}.",
+        "storedAll": "All of it is on this device. Listen works here without the internet.",
+        "storedNone": "None of it is on this device yet.",
+        "download": "Download lesson audio",
+        "stop": "Stop downloading",
+        "progress": "Downloading: {done} of {total}",
+        "progressLabel": "Lesson audio downloaded",
+        "stopped": "Stopped. What was downloaded stays on this device.",
+        "failed": "Some recordings didn't download. Check the connection and try again. What was downloaded stays.",
+        "saveData": "Save data is on, so nothing downloads from here. Turn Save data off above to download the lesson audio.",
+        "notReady": "This can start once the lessons are saved on this device for offline use, above.",
+        "unsupported": "This browser can't keep lesson audio, so Listen needs the internet here."
       },
       "sayIt": {
         "title": "Say it: speech to text",
@@ -1070,6 +1104,10 @@
       "softwareTitle": "Software",
       "softwareBody": "The site is built with these free, open-source tools:",
       "softwareItem": "{name} ({licence})",
+      "voicesTitle": "Listen's voices",
+      "voicesBody": "Listen plays recordings made for Thinkerwell from the lesson text with these free text-to-speech voices. A computer made them, not a person, and the voices themselves were not changed.",
+      "voiceEnglish": "English lessons: {model} by hexgrad, voice Heart, under the {licence}.",
+      "voiceIndonesian": "Bahasa Indonesia lessons: {model} by Meta, part of Massively Multilingual Speech, under the {licence}. This licence allows only non-commercial use. Thinkerwell is free, and uses it only that way.",
       "translationTitle": "Translation",
       "translationBody": "The Bahasa Indonesia version was first drafted with the help of AI. Native speakers are checking it."
     },

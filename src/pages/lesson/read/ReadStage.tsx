@@ -8,23 +8,27 @@
  * - Standard / Simpler follows the player's readingLevel (remembered per
  *   learner). The part's text, its glossary marking and Listen all use the
  *   version on screen.
- * - Listen (./useListen.ts) shows only where the device has an English
- *   voice of its own (src/speech/voices.ts): the one chosen in Settings,
- *   or the best one there. It reads the part on screen,
- *   heading first, one sentence at a time, marking the sentence with
- *   mark.tw-speaking and bringing it into view when it isn't. At the end of
- *   a part it moves on to the next part and carries on, until the last part
- *   ends; it stops at the quick check. Slow / Normal is the device's
- *   listening speed.
+ * - Listen (./useListen.ts) plays the part's recording of a natural voice
+ *   (src/audio/, docs/notes/recorded-audio.md), and reads with the device's
+ *   own voice (src/speech/voices.ts: the one chosen in Settings, or the
+ *   best one there) where there is no recording to play. It shows where
+ *   the lessons' language has recordings or the device has a voice for it.
+ *   It reads the part on screen, heading first, one sentence at a time,
+ *   marking the sentence with mark.tw-speaking and bringing it into view
+ *   when it isn't. At the end of a part it moves on to the next part and
+ *   carries on, until the last part ends; it stops at the quick check.
+ *   Slow / Normal is the device's listening speed.
  * - The lesson's picture is part of the evidence (LessonEvidence), right
  *   after the warm-up.
  * - When Read counts as done is decided in src/lesson/progressRules.ts: every
  *   choice question answered, or Continue from the quick check.
  */
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
+import { recordingRef, sectionKey } from '../../../audio/recordings';
 import { ListenBar, ReadingCard, SegmentedControl, ToolToggle } from '../../../components/ds';
 import { useI18n } from '../../../i18n';
 import { useLessonPlayer } from '../../../lesson';
+import { isSaveDataOn } from '../../../offline';
 import { LISTEN_RATES, listenVoiceFor, speechLangFor, useListenVoiceState } from '../../../speech';
 import type { ReadingLevel } from '../../../storage';
 import { LessonEvidence } from '../evidence/LessonEvidence';
@@ -68,6 +72,8 @@ export function ReadStage() {
   const readingRef = useRef<HTMLDivElement>(null);
   const listenBarRef = useRef<HTMLDivElement>(null);
   const checkHeadingRef = useRef<HTMLHeadingElement>(null);
+  /** Plays the recordings (in the page, hidden, so tests can see its speed). */
+  const audioRef = useRef<HTMLAudioElement>(null);
   /** True when Listen (not the learner) moved on to the next part: don't move focus. */
   const listenMovedOn = useRef(false);
 
@@ -80,11 +86,29 @@ export function ReadStage() {
   // with the voice chosen for it in Settings when that is still on this device.
   const speechLang = speechLangFor(contentLocale);
   const { voice, settled: voicesListed } = useListenVoiceState(speechLang, listenVoiceFor(settings, speechLang));
+  // The part's recording (null for a language without recordings), and the next part's, to download ahead.
+  const partNumber = typeof view === 'number' ? view : 0;
+  const recording = useMemo(
+    () => (section ? recordingRef(speechLang, sectionKey(lesson.id, readingLevel, partNumber), listenItems) : null),
+    [section, speechLang, lesson.id, readingLevel, partNumber, listenItems],
+  );
+  const nextSection = typeof view === 'number' ? sections[view] : undefined;
+  const nextRecording = useMemo(() => {
+    if (!nextSection) return null;
+    const nextText = visibleSectionText(nextSection, readingLevel);
+    const nextItems = listenPieces(nextSection.heading, nextText, sentenceRanges(nextText));
+    return recordingRef(speechLang, sectionKey(lesson.id, readingLevel, partNumber + 1), nextItems);
+  }, [nextSection, readingLevel, speechLang, lesson.id, partNumber]);
   const focusListenTool = () => document.getElementById(listenToolId)?.focus();
   const listen = useListen({
     voice,
     items: listenItems,
     itemsKey: `${String(view)}:${readingLevel}`,
+    recording,
+    next: nextRecording,
+    lang: speechLang,
+    saveData: isSaveDataOn(settings.saveData),
+    media: () => audioRef.current,
     rate: LISTEN_RATES[settings.listeningSpeed],
     onPartEnd: () => {
       if (typeof view === 'number' && view < total) {
@@ -147,7 +171,7 @@ export function ReadStage() {
   return (
     <div className="tw-read">
       <div role="toolbar" aria-label={t('lessonPlayer.read.toolsLabel')} className="tw-read-tools">
-        {voice ? (
+        {voice || recording ? (
           <ToolToggle
             id={listenToolId}
             icon="Volume2"
@@ -177,10 +201,19 @@ export function ReadStage() {
           {t('lessonPlayer.read.keyWords')}
         </ToolToggle>
       </div>
-      {/* English lessons simply hide Listen without a voice; a translated lesson says why it isn't there. */}
-      {!voice && voicesListed && contentLocale.content ? (
+      {/* English lessons simply hide Listen without a voice or recordings; a translated lesson says why it isn't there. */}
+      {!voice && !recording && voicesListed && contentLocale.content ? (
         <p className="tw-read-listen-note">{t('lessonPlayer.read.listenNoVoice')}</p>
       ) : null}
+      {listen.unavailable ? (
+        <p className="tw-read-listen-note" role="status">
+          {t('lessonPlayer.read.listenUnavailable')}
+        </p>
+      ) : null}
+      {/* Plays the recordings; never shown (the ListenBar is the controls). Its captions are the
+          reading itself: the part on screen, with the sentence being played marked. */}
+      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+      <audio ref={audioRef} preload="none" hidden className="tw-read-audio" />
 
       {keyWordsOpen ? <KeyWordsPanel id={keyWordsId} glossary={glossary} /> : null}
 
@@ -192,7 +225,7 @@ export function ReadStage() {
           <ListenBar
             state={listen.state === 'paused' ? 'paused' : 'playing'}
             speed={settings.listeningSpeed}
-            label={t('lessonPlayer.read.listenLabel', { n: part, total })}
+            label={t(listen.loading ? 'lessonPlayer.read.listenLoading' : 'lessonPlayer.read.listenLabel', { n: part, total })}
             onPlayPause={() => (listen.state === 'playing' ? listen.pause() : listen.play())}
             onSpeedChange={setListeningSpeed}
             onStop={() => {
