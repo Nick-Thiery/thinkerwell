@@ -44,9 +44,12 @@ const PRECACHE_BUDGET = 645_000;
  * the partner kit (their English messages load with the rest of en.json, and the footer is on every page),
  * 218.8 kB with the consent form's study parts and the information sheet (216.9 kB before): their English words,
  * 1.3 kB, are in en.json, which is in the app's first chunk with every interface word, and their styles, 0.5 kB,
- * are in the one stylesheet every page shares. No page code reaches the first visit.
+ * are in the one stylesheet every page shares. No page code reaches the first visit. 220.0 kB after the Listen voice
+ * choice, and 220.5 kB with search engines and LinkedIn (docs/notes/seo.md): the home page's own title, canonical
+ * link and structured data in index.html, the pages' search titles in en.json (their descriptions are left out of
+ * the browser's copy, stripBuildOnlyMessages) and the footer's LinkedIn link; raised to 221 kB.
  */
-const FIRST_VISIT_HOME_BUDGET = 220_000;
+const FIRST_VISIT_HOME_BUDGET = 221_000;
 
 const TEXT = /\.(html|js|css|svg|json|webmanifest)$/;
 

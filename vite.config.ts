@@ -303,6 +303,34 @@ function stripTeamOnlyLessonFields(): Plugin {
   };
 }
 
+/**
+ * Leaves the words only the build uses out of the messages the browser
+ * downloads: the pages' search descriptions and the share picture's
+ * description (en.json and id.json, `seo.*.description`,
+ * `seo.lessonDescription`, `seo.imageAlt`). seoFiles() writes them into
+ * each page's HTML head from the files on disk; the app only shows the
+ * search titles (useFullPageTitle). en.json is in the first chunk, so this
+ * keeps about half a kilobyte off every first visit. The files themselves
+ * are untouched, and tests and check:i18n read them whole.
+ */
+function stripBuildOnlyMessages(): Plugin {
+  return {
+    name: 'thinkerwell:strip-build-only-messages',
+    apply: 'build',
+    enforce: 'pre',
+    transform(code, id) {
+      if (!/[\\/]src[\\/]i18n[\\/]messages[\\/](?!.*\.notes\.json$)[^\\/]+\.json$/.test(id)) return null;
+      const messages = JSON.parse(code) as { seo?: Record<string, unknown> };
+      if (!messages.seo) return null;
+      for (const [key, value] of Object.entries(messages.seo)) {
+        if (value && typeof value === 'object') delete (value as Record<string, unknown>).description;
+        else if (key === 'lessonDescription' || key === 'imageAlt') delete messages.seo[key];
+      }
+      return { code: JSON.stringify(messages), map: null };
+    },
+  };
+}
+
 const PSEUDO_PREFIX = 'virtual:tw-pseudo-locale/';
 const PSEUDO_ID = '\0tw-pseudo-locale:';
 
@@ -542,6 +570,7 @@ export default defineConfig({
     checkContent(),
     lessonCatalog(),
     stripTeamOnlyLessonFields(),
+    stripBuildOnlyMessages(),
     keepZodOutOfTheBrowser(),
     pseudoLocales(),
     keepFirstVisitLight(),
