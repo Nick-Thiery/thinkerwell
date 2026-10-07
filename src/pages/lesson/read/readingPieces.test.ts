@@ -1,7 +1,8 @@
 import { describe, expect, it } from 'vitest';
-import { getLessons, type GlossaryEntry } from '../../../content';
+import { contentFor, getLessons, type GlossaryEntry } from '../../../content';
+import { loadLocale } from '../../../i18n/load';
 import { glossaryEntriesIn } from '../../../lesson';
-import { buildReading, hasGlossaryTerms, paragraphRanges, sentenceRanges, visibleSectionText } from './readingPieces';
+import { buildReading, HEADING_PAUSE_MS, hasGlossaryTerms, listenPieces, paragraphRanges, sentenceRanges, visibleSectionText } from './readingPieces';
 
 const glossary: GlossaryEntry[] = [
   { word: 'flood', forms: ['floods'], definition: 'Water on dry land.', example: 'The river floods.' },
@@ -90,6 +91,16 @@ describe('sentenceRanges', () => {
     ]);
   });
 
+  it("keeps a title and its name together (\"Dr. Ahmed\"), and \"No. 5\", which the splitter would break", () => {
+    expect(slices('Dr. Ahmed met Mr. Lee. They looked at map No. 5 together. Was it No. It was not.')).toEqual([
+      'Dr. Ahmed met Mr. Lee.',
+      'They looked at map No. 5 together.',
+      'Was it No.',
+      'It was not.',
+    ]);
+    expect(slices('Some rivers flood, e.g. The Nile. Bpk. Budi tahu.')).toEqual(['Some rivers flood, e.g. The Nile.', 'Bpk. Budi tahu.']);
+  });
+
   it('gives the same sentences without Intl.Segmenter', () => {
     const intl = Intl as { Segmenter?: typeof Intl.Segmenter };
     const segmenter = intl.Segmenter;
@@ -98,6 +109,7 @@ describe('sentenceRanges', () => {
       delete intl.Segmenter;
       expect(slices('One. "Two," she said. Three?\n\nFour.')).toEqual(['One.', '"Two," she said.', 'Three?', 'Four.']);
       expect(slices('Mina L. packed rice.')).toEqual(['Mina L. packed rice.']);
+      expect(slices('Dr. Ahmed came. He sat.')).toEqual(['Dr. Ahmed came.', 'He sat.']);
     } finally {
       intl.Segmenter = segmenter;
     }
@@ -114,6 +126,50 @@ describe('sentenceRanges', () => {
           expect(ranges.flatMap((r) => words(text.slice(r.start, r.end)))).toEqual(words(text));
           for (const [i, r] of ranges.entries()) {
             if (i > 0) expect(r.start).toBeGreaterThanOrEqual(ranges[i - 1]!.end);
+          }
+        }
+      }
+    }
+  });
+});
+
+describe('listenPieces', () => {
+  const pieces = (heading: string, text: string) => listenPieces(heading, text, sentenceRanges(text));
+
+  it('says the heading as a finished phrase, with a short silence after it, then each sentence', () => {
+    expect(pieces('Rivers give water and food', 'Every town needs water. Rivers give it.')).toEqual([
+      { text: 'Rivers give water and food.', pauseAfterMs: HEADING_PAUSE_MS },
+      'Every town needs water.',
+      'Rivers give it.',
+    ]);
+    // A heading with its own mark keeps it.
+    expect(pieces('What matters most?', 'Many things.')[0]).toEqual({ text: 'What matters most?', pauseAfterMs: HEADING_PAUSE_MS });
+  });
+
+  it("doesn't read the heading when the first sentence says the same words, so nothing is read twice", () => {
+    expect(pieces('Each source answers different questions', 'Each source answers different questions. A map shows places.')).toEqual([
+      { text: '', pauseAfterMs: 0 },
+      'Each source answers different questions.',
+      'A map shows places.',
+    ]);
+  });
+
+  it('keeps piece n + 1 as sentence n (the one highlighted), in every lesson, in English and Indonesian', async () => {
+    const indonesian = contentFor((await loadLocale('id')).content);
+    for (const lessons of [getLessons(), indonesian.getLessons()]) {
+      for (const lesson of lessons) {
+        for (const section of lesson.read.sections) {
+          for (const level of ['standard', 'simpler'] as const) {
+            const text = visibleSectionText(section, level);
+            const ranges = sentenceRanges(text);
+            const said = listenPieces(section.heading, text, ranges);
+            expect(said).toHaveLength(ranges.length + 1);
+            expect(said.slice(1)).toEqual(ranges.map((r) => text.slice(r.start, r.end)));
+            // No piece is said twice in a row (the heading and a first sentence that repeats it).
+            const texts = said.map((piece) => (typeof piece === 'string' ? piece : piece.text).toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim());
+            for (let i = 1; i < texts.length; i += 1) {
+              if (texts[i]) expect(texts[i], `${lesson.id} ${level}: ${section.heading}`).not.toBe(texts[i - 1]);
+            }
           }
         }
       }

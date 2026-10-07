@@ -2,13 +2,13 @@ import { act, render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { useState } from 'react';
 import { MemoryRouter, useLocation } from 'react-router';
-import { afterEach, describe, expect, it } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { getLesson, getLessonSection, type Lesson } from '../../../content';
 import { findLocale, I18nProvider, type LoadedLocale } from '../../../i18n';
 import { LessonPlayerTestProvider, type LessonPlayerValue } from '../../../lesson';
 import { DEFAULT_SETTINGS, emptyProgress, type DeviceSettings, type ReadingLevel } from '../../../storage';
 import { fakeVoice, mockSpeechSynthesis, restoreSpeechMocks } from '../../../test/speechMocks';
-import { sentenceRanges } from './readingPieces';
+import { HEADING_PAUSE_MS, sentenceRanges } from './readingPieces';
 import { ReadStage } from './ReadStage';
 
 const L10 = getLesson('towns-near-rivers') as Lesson;
@@ -18,15 +18,26 @@ function sentences(text: string): string[] {
   return sentenceRanges(text).map((r) => text.slice(r.start, r.end));
 }
 
+/** A heading as Listen says it: with a full stop, so voices say it as a finished phrase. */
+const said = (heading: string) => `${heading}.`;
+
+/** Ends the heading being read, and the short silence after it: the first sentence starts. */
+function finishHeading(speech: { finish: () => void }) {
+  act(() => {
+    speech.finish();
+    vi.advanceTimersByTime(HEADING_PAUSE_MS);
+  });
+}
+
 let savedSettings: DeviceSettings = DEFAULT_SETTINGS;
 
 function LocationProbe() {
   return <p data-testid="search">{useLocation().search}</p>;
 }
 
-function Harness({ level = 'standard' }: { level?: ReadingLevel }) {
+function Harness({ level = 'standard', initialSettings = DEFAULT_SETTINGS }: { level?: ReadingLevel; initialSettings?: DeviceSettings }) {
   const [readingLevel, setReadingLevel] = useState<ReadingLevel>(level);
-  const [settings, setSettings] = useState<DeviceSettings>(DEFAULT_SETTINGS);
+  const [settings, setSettings] = useState<DeviceSettings>(initialSettings);
   const value: LessonPlayerValue = {
     lesson: L10,
     section: getLessonSection(L10),
@@ -58,10 +69,10 @@ function Harness({ level = 'standard' }: { level?: ReadingLevel }) {
   );
 }
 
-function renderRead(search = '', level?: ReadingLevel) {
+function renderRead(search = '', level?: ReadingLevel, initialSettings?: DeviceSettings) {
   return render(
     <MemoryRouter initialEntries={[`/lesson/${L10.id}/read${search}`]}>
-      <Harness level={level} />
+      <Harness level={level} initialSettings={initialSettings} />
     </MemoryRouter>,
   );
 }
@@ -72,7 +83,13 @@ const marked = () => document.querySelector('mark.tw-speaking')?.textContent ?? 
 /** Every marked piece of the sentence, in order (a glossary word in it carries its own mark). */
 const allMarked = () => Array.from(document.querySelectorAll('mark.tw-speaking'), (mark) => mark.textContent).join('');
 
+beforeEach(() => {
+  // The silence after a heading is a timer; everything else runs as it would.
+  vi.useFakeTimers({ shouldAdvanceTime: true });
+});
+
 afterEach(() => {
+  vi.useRealTimers();
   restoreSpeechMocks();
   savedSettings = DEFAULT_SETTINGS;
 });
@@ -103,12 +120,17 @@ describe('Listen', () => {
     await user.click(listenTool());
     expect(listenTool()).toHaveAttribute('aria-pressed', 'true');
     expect(listenBar()).toHaveAccessibleName('Reading aloud · part 1 of 3');
-    expect(speech.spoken[0]?.text).toBe(S1.heading);
+    expect(speech.spoken[0]?.text).toBe(said(S1.heading));
     expect(speech.spoken[0]?.voice).toBe(voice);
     expect(marked()).toBeNull();
 
+    // A short silence after the heading, then the first sentence.
     const expected = sentences(S1.text);
     act(() => speech.finish());
+    expect(speech.spoken).toHaveLength(1);
+    act(() => {
+      vi.advanceTimersByTime(HEADING_PAUSE_MS);
+    });
     expect(speech.spoken[1]?.text).toBe(expected[0]);
     expect(marked()).toBe(expected[0]);
     expect(document.querySelectorAll('mark.tw-speaking')).toHaveLength(1);
@@ -121,7 +143,7 @@ describe('Listen', () => {
     const speech = mockSpeechSynthesis();
     renderRead();
     await user.click(listenTool());
-    act(() => speech.finish());
+    finishHeading(speech);
     const first = sentences(S1.text)[0];
 
     await user.click(within(listenBar()!).getByRole('button', { name: 'Pause' }));
@@ -145,7 +167,7 @@ describe('Listen', () => {
     const speech = mockSpeechSynthesis();
     renderRead();
     await user.click(listenTool());
-    act(() => speech.finish());
+    finishHeading(speech);
     await user.click(within(listenBar()!).getByRole('button', { name: 'Stop' }));
     expect(listenBar()).not.toBeInTheDocument();
     expect(marked()).toBeNull();
@@ -166,12 +188,12 @@ describe('Listen', () => {
     const speech = mockSpeechSynthesis();
     renderRead('', 'simpler');
     await user.click(listenTool());
-    act(() => speech.finish());
+    finishHeading(speech);
     expect(marked()).toBe(sentences(S1.simpler)[0]);
 
     await user.click(within(screen.getByRole('group', { name: 'Reading level' })).getByRole('button', { name: 'Standard' }));
-    expect(speech.spoken.at(-1)?.text).toBe(S1.heading);
-    act(() => speech.finish());
+    expect(speech.spoken.at(-1)?.text).toBe(said(S1.heading));
+    finishHeading(speech);
     expect(marked()).toBe(sentences(S1.text)[0]);
   });
 
@@ -184,16 +206,18 @@ describe('Listen', () => {
     expect(tool).toHaveFocus();
 
     // The heading and every sentence of part 2.
-    for (let i = 0; i <= sentences(S2.text).length; i += 1) act(() => speech.finish());
+    finishHeading(speech);
+    for (let i = 0; i < sentences(S2.text).length; i += 1) act(() => speech.finish());
     expect(screen.getByTestId('search')).toHaveTextContent('?part=3');
     expect(screen.getByRole('heading', { name: S3.heading })).toBeInTheDocument();
-    expect(speech.spoken.at(-1)?.text).toBe(S3.heading);
+    expect(speech.spoken.at(-1)?.text).toBe(said(S3.heading));
     expect(listenBar()).toHaveAccessibleName('Reading aloud · part 3 of 3');
     expect(tool).toHaveFocus();
 
     // Focus on Pause when the last part ends: it goes back to Listen, not to nowhere.
     within(listenBar()!).getByRole('button', { name: 'Pause' }).focus();
-    for (let i = 0; i <= sentences(S3.text).length; i += 1) act(() => speech.finish());
+    finishHeading(speech);
+    for (let i = 0; i < sentences(S3.text).length; i += 1) act(() => speech.finish());
     expect(listenBar()).not.toBeInTheDocument();
     expect(screen.getByTestId('search')).toHaveTextContent('?part=3');
     expect(listenTool()).toHaveFocus();
@@ -205,7 +229,7 @@ describe('Listen', () => {
     renderRead();
     await user.click(listenTool());
     await user.click(screen.getByRole('button', { name: /Part 2/ }));
-    expect(speech.spoken.at(-1)?.text).toBe(S2.heading);
+    expect(speech.spoken.at(-1)?.text).toBe(said(S2.heading));
     expect(listenBar()).toHaveAccessibleName('Reading aloud · part 2 of 3');
   });
 
@@ -235,7 +259,7 @@ describe('Listen', () => {
     expect(withTerm).toBeGreaterThan(0);
 
     await user.click(listenTool());
-    act(() => speech.finish()); // the heading: the first sentence is now marked
+    finishHeading(speech); // the first sentence is now marked
     const term = screen.getByRole('button', { name: 'fertile' });
     await user.click(term);
     expect(term).toHaveAttribute('aria-expanded', 'true');
@@ -273,7 +297,37 @@ describe('Listen', () => {
     await userEvent.click(screen.getByRole('button', { name: 'FIXTURE listen' }));
     expect(speech.spoken[0]?.voice?.lang).toBe('en-US');
     expect(speech.spoken[0]?.lang).toBe('en-US');
-    expect(speech.spoken[0]?.text).toBe(S1.heading);
+    expect(speech.spoken[0]?.text).toBe(said(S1.heading));
+  });
+
+  it('reads with the best voice on the device, never a novelty voice, even when Safari calls every voice the default', async () => {
+    const user = userEvent.setup();
+    const daniel = fakeVoice('en-GB', { name: 'Daniel', isDefault: true });
+    const speech = mockSpeechSynthesis([
+      fakeVoice('en-US', { name: 'Albert', isDefault: true }),
+      fakeVoice('en-GB', { name: 'Eddy', isDefault: true }),
+      fakeVoice('en-US', { name: 'Samantha', isDefault: true }),
+      daniel,
+    ]);
+    renderRead();
+    await user.click(listenTool());
+    expect(speech.spoken[0]?.voice).toBe(daniel);
+  });
+
+  it('reads with the voice chosen in Settings, and with the best voice when that one is not on this device', async () => {
+    const user = userEvent.setup();
+    const daniel = fakeVoice('en-GB', { name: 'Daniel' });
+    const karen = fakeVoice('en-AU', { name: 'Karen' });
+    const speech = mockSpeechSynthesis([daniel, karen]);
+    const chosen = (name: string) => ({ ...DEFAULT_SETTINGS, listenVoices: { en: { name, voiceURI: name, lang: 'en-AU' } } });
+    const first = renderRead('', undefined, chosen('Karen'));
+    await user.click(listenTool());
+    expect(speech.spoken.at(-1)?.voice).toBe(karen);
+    first.unmount();
+
+    renderRead('', undefined, chosen('Zoe (Premium)'));
+    await user.click(listenTool());
+    expect(speech.spoken.at(-1)?.voice).toBe(daniel);
   });
 
   it('stops quietly if the voice fails', async () => {
