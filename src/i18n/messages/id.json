@@ -723,7 +723,8 @@
         "inProgress": "Sedang berjalan",
         "checking": "Memeriksa",
         "notHere": "Tidak ada di browser ini",
-        "notNeeded": "Tidak perlu"
+        "notNeeded": "Tidak perlu",
+        "optional": "Opsional"
       },
       "homeScreen": {
         "title": "Tambahkan Thinkerwell ke layar utama",
@@ -789,6 +790,15 @@
         "none": "Belum ada pelajar di perangkat ini.",
         "add": "Tambah pelajar",
         "seeClass": "Lihat kelas"
+      },
+      "voice": {
+        "title": "Pilih suara Dengarkan (opsional)",
+        "why": "Dengarkan membacakan pelajaran dengan suara terbaik yang ditemukannya di perangkat. Anda bisa mendengar setiap suara dan memilih yang lain, atau mengunduh suara yang lebih jelas.",
+        "how": "Di Pengaturan, di bagian Suara Dengarkan, putar contoh dan pilih suara yang paling jelas.",
+        "automatic": "Dengarkan membaca dengan {voice}, suara terbaik di perangkat ini.",
+        "chosen": "Dengarkan membaca dengan {voice}, yang dipilih di Pengaturan.",
+        "none": "Perangkat ini tidak punya suara yang bisa dipakai Dengarkan, jadi Dengarkan tidak muncul. Pengaturan menjelaskan cara menambahkannya.",
+        "open": "Pilih di Pengaturan"
       },
       "speech": {
         "title": "Periksa fitur suara ke teks",

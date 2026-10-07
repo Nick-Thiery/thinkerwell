@@ -727,7 +727,8 @@
         "inProgress": "In progress",
         "checking": "Checking",
         "notHere": "Not on this browser",
-        "notNeeded": "Not needed"
+        "notNeeded": "Not needed",
+        "optional": "Optional"
       },
       "homeScreen": {
         "title": "Add Thinkerwell to the home screen",
@@ -795,6 +796,15 @@
         "none": "No learners on this device yet.",
         "add": "Add a learner",
         "seeClass": "See the class"
+      },
+      "voice": {
+        "title": "Choose the Listen voice (optional)",
+        "why": "Listen reads lessons aloud with the best voice it finds on the device. You can hear each voice and choose another, or download a clearer one.",
+        "how": "In Settings, under Listen voice, play a sample and choose the clearest voice.",
+        "automatic": "Listen reads with {voice}, the best voice on this device.",
+        "chosen": "Listen reads with {voice}, chosen in Settings.",
+        "none": "This device has no voice that Listen can use, so Listen doesn't show. Settings says how to add one.",
+        "open": "Choose it in Settings"
       },
       "speech": {
         "title": "Check speech to text",

@@ -10,7 +10,9 @@
  * Opening it asks the browser nothing that could prompt or fail
  * (./setup/deviceChecks.ts). "Keep work safe" asks for persistent storage
  * only when tapped, and the speech step shows the saved result of Settings'
- * "Check this device": this page never touches SpeechRecognition.
+ * "Check this device": this page never touches SpeechRecognition. The
+ * optional Listen voice step reads the device's voice list, which asks
+ * nothing, and links to Settings' "Listen voice".
  */
 import { useId, useState, type ReactNode } from 'react';
 import { classPath, educatorsPath, settingsPath } from '../../app/lessonUrls';
@@ -20,7 +22,7 @@ import { useContent } from '../../content/useContent';
 import { useI18n, type MessageKey } from '../../i18n';
 import { useServiceWorker } from '../../offline';
 import { useLearnerSession } from '../../session';
-import { hasSpeechRecognition, speechCheckFor, speechLangFor } from '../../speech';
+import { hasSpeechRecognition, isChosenVoice, listenVoiceFor, speechCheckFor, speechLangFor, useListenVoiceState } from '../../speech';
 import { PrintToolbar } from '../print/PrintToolbar';
 import '../print/print.css';
 import { OFFLINE_STATUS } from '../settings/offlineStatus';
@@ -35,6 +37,7 @@ import {
   thisPlatform,
   useInstalledApp,
   usePersistence,
+  voiceStepState,
   type DevicePlatform,
   type Persistence,
   type SpeechFinding,
@@ -48,6 +51,7 @@ const STATE_BADGE: Record<StepState, { tone: BadgeProps['tone']; icon?: IconName
   todo: { tone: 'ink', key: 'pages.setup.state.todo' },
   'in-progress': { tone: 'outline', icon: 'Clock', key: 'pages.setup.state.inProgress' },
   checking: { tone: 'outline', icon: 'Clock', key: 'pages.setup.state.checking' },
+  optional: { tone: 'outline', icon: 'Info', key: 'pages.setup.state.optional' },
   'not-here': { tone: 'outline', icon: 'Info', key: 'pages.setup.state.notHere' },
   'not-needed': { tone: 'outline', icon: 'Info', key: 'pages.setup.state.notNeeded' },
 };
@@ -75,7 +79,7 @@ const PLATFORM_STEPS = ['step1', 'step2', 'step3', 'step4', 'step5'] as const;
 const SAFARI_DELETES_AFTER_DAYS = 7;
 
 export function SetupPage() {
-  const { t, formatDate, contentLocale } = useI18n();
+  const { t, tx, formatDate, contentLocale } = useI18n();
   const content = useContent();
   const title = t('pages.setup.title');
   usePageTitle(title);
@@ -95,8 +99,13 @@ export function SetupPage() {
   const learnersState: StepState = learnersReady
     ? learnersStepState(session.learners.length, session.storageAvailable)
     : 'checking';
-  // Say it in the lessons' language on this page (English, or id-ID for Indonesian lessons).
-  const check = settings ? speechCheckFor(settings, speechLangFor(contentLocale)) : null;
+  // Listen and Say it in the lessons' language on this page (English, or id-ID for Indonesian lessons).
+  const lessonsLang = speechLangFor(contentLocale);
+  const chosenVoice = listenVoiceFor(settings, lessonsLang);
+  const { voice, settled: voicesListed } = useListenVoiceState(lessonsLang, chosenVoice);
+  const voiceChosen = !!voice && !!chosenVoice && isChosenVoice(voice, chosenVoice);
+  const voiceState = voiceStepState({ voice, chosen: voiceChosen, settled: voicesListed });
+  const check = settings ? speechCheckFor(settings, lessonsLang) : null;
   const finding = speechFinding(check, hasSpeechRecognition());
   const speechState: StepState = settings === null && finding !== 'none' ? 'checking' : speechStepState(finding);
 
@@ -200,6 +209,28 @@ export function SetupPage() {
 
           <SetupStep
             number={5}
+            title={t('pages.setup.voice.title')}
+            why={t('pages.setup.voice.why')}
+            how={t('pages.setup.voice.how')}
+            state={voiceState}
+            status={
+              voiceState === 'checking'
+                ? ''
+                : voice
+                  ? tx(voiceChosen ? 'pages.setup.voice.chosen' : 'pages.setup.voice.automatic', {
+                      voice: <span translate="no">{voice.name}</span>,
+                    })
+                  : t('pages.setup.voice.none')
+            }
+            actions={
+              <Button variant="secondary" icon="Settings" href={settingsPath('listen-voice')}>
+                {t('pages.setup.voice.open')}
+              </Button>
+            }
+          />
+
+          <SetupStep
+            number={6}
             title={t('pages.setup.speech.title')}
             why={t('pages.setup.speech.why')}
             note={t('pages.setup.speech.last')}
@@ -243,7 +274,7 @@ interface SetupStepProps {
   how?: string;
   state: StepState;
   /** What the app knows about this step on this device (never printed). */
-  status: string;
+  status: ReactNode;
   /** Buttons for the step (never printed). */
   actions?: ReactNode;
   children?: ReactNode;

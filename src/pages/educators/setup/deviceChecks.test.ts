@@ -8,6 +8,7 @@ import {
   speechFinding,
   speechStepState,
   storageStepState,
+  voiceStepState,
 } from './deviceChecks';
 
 const UA = {
@@ -104,5 +105,15 @@ describe('step states', () => {
     // Checked is done, whatever the answer: lessons now know what to do.
     expect(speechStepState('on-device')).toBe('done');
     expect(speechStepState('not-on-device')).toBe('done');
+  });
+});
+
+describe('the Listen voice step', () => {
+  it('is done once a voice is chosen, optional while Listen picks one, and not here without a voice', () => {
+    const voice = { name: 'Daniel' };
+    expect(voiceStepState({ voice, chosen: true, settled: true })).toBe('done');
+    expect(voiceStepState({ voice, chosen: false, settled: false })).toBe('optional');
+    expect(voiceStepState({ voice: null, chosen: false, settled: false })).toBe('checking');
+    expect(voiceStepState({ voice: null, chosen: false, settled: true })).toBe('not-here');
   });
 });

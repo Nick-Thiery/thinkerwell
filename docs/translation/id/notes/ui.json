@@ -1993,6 +1993,12 @@
     "source": "Not needed",
     "back": "Not needed"
   },
+  "pages.setup.state.optional": {
+    "back": "Optional",
+    "source": "Optional",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
   "pages.setup.homeScreen.title": {
     "source": "Add Thinkerwell to the home screen",
     "back": "Add Thinkerwell to the home screen"
@@ -2192,6 +2198,48 @@
   "pages.setup.learners.seeClass": {
     "source": "See the class",
     "back": "See the class"
+  },
+  "pages.setup.voice.title": {
+    "back": "Choose the Listen voice (optional)",
+    "source": "Choose the Listen voice (optional)",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.setup.voice.why": {
+    "back": "Listen reads lessons aloud with the best voice it finds on the device. You can hear every voice and choose another, or download a clearer voice.",
+    "source": "Listen reads lessons aloud with the best voice it finds on the device. You can hear each voice and choose another, or download a clearer one.",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.setup.voice.how": {
+    "back": "In Settings, in the Listen voice section, play a sample and choose the clearest voice.",
+    "source": "In Settings, under Listen voice, play a sample and choose the clearest voice.",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.setup.voice.automatic": {
+    "back": "Listen reads with {voice}, the best voice on this device.",
+    "source": "Listen reads with {voice}, the best voice on this device.",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.setup.voice.chosen": {
+    "back": "Listen reads with {voice}, which was chosen in Settings.",
+    "source": "Listen reads with {voice}, chosen in Settings.",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.setup.voice.none": {
+    "back": "This device has no voice that Listen can use, so Listen doesn't appear. Settings explains how to add one.",
+    "source": "This device has no voice that Listen can use, so Listen doesn't show. Settings says how to add one.",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
+  },
+  "pages.setup.voice.open": {
+    "back": "Choose in Settings",
+    "source": "Choose it in Settings",
+    "flag": true,
+    "note": "New for the Listen voice setting and the setup checklist's Listen voice step (October 2026): drafted by AI and back-translated in the same session (not by a second AI that hadn't seen the English), not yet reviewed by a native speaker."
   },
   "pages.setup.speech.title": {
     "flag": true,
