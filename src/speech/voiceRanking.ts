@@ -12,7 +12,7 @@
  *   "com.apple.eloquence.en-US.Eddy", "com.apple.speech.synthesis.voice.Albert").
  *   Every voice says `default: true`, so `default` tells nothing there. The
  *   first English voice in Safari's list can be an Eloquence or novelty
- *   voice, which is why Listen sounded robotic on iPads.
+ *   voice, the likely reason Listen sounded robotic on iPads.
  * - Chrome on a Mac: the names Apple shows ("Daniel (Enhanced)",
  *   "Zoe (Premium)"), with the language added when two voices share a name
  *   ("Eddy (English (United States))"); `voiceURI` is the name.
