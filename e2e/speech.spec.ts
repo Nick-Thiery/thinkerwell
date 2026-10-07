@@ -8,13 +8,16 @@ import { fakeSpeechRecognition, hear, recognitionLog } from './speechFake';
 // pack, which is exactly the "nothing is available" case. The first test
 // leaves the browser's own SpeechRecognition in place: opening a page must
 // not ask it anything (asking crashed Chromium 153 on touch devices).
+// Listen plays recordings where it can (e2e/recorded-audio.spec.ts); here
+// they are blocked, so it reads with the device voice, as it does when a
+// recording can't be had.
 
 interface FakeSpeech {
   spoken: string[];
   finish: () => void;
 }
 
-test('with no device voice, on-device speech or microphone, nothing shows and nothing breaks', async ({
+test('with no device voice, on-device speech or microphone, only Listen (its recordings) shows, and nothing breaks', async ({
   page,
   baseURL,
 }) => {
@@ -28,7 +31,9 @@ test('with no device voice, on-device speech or microphone, nothing shows and no
   await page.goto(L10.path('read'));
   await expect(page.getByRole('toolbar', { name: 'Reading tools' })).toBeVisible();
   await expect(page.getByRole('group', { name: 'Reading level' })).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Listen' })).toHaveCount(0);
+  // Listen plays the lessons' recordings, so it shows without a voice; nothing downloads until it is tapped.
+  await expect(page.getByRole('button', { name: 'Listen' })).toBeVisible();
+  expect(requests.filter((url) => url.includes('/audio/'))).toEqual([]);
 
   await page.goto(L10.path('write'));
   await expect(page.getByRole('textbox', { name: 'Your answer' })).toBeVisible();
@@ -62,8 +67,10 @@ test('with no device voice, on-device speech or microphone, nothing shows and no
   expect(requests.filter((url) => !url.startsWith('data:') && new URL(url).origin !== origin)).toEqual([]);
 });
 
-test('Listen reads the part aloud with a device voice, and its controls work', async ({ page }) => {
+test('Listen reads the part aloud with a device voice when its recording can’t be had, and its controls work', async ({ page }) => {
   const errors = watchErrors(page);
+  // The recordings can't be downloaded (offline before they were kept, say).
+  await page.route('**/audio/**', (route) => route.abort());
   // A local English voice, spoken by hand: finish() ends the current sentence.
   await page.addInitScript(() => {
     type Utterance = { text: string; onend?: (() => void) | null; onerror?: ((e: { error: string }) => void) | null };
@@ -155,7 +162,8 @@ test('Listen reads the part aloud with a device voice, and its controls work', a
   await expect(bar).toHaveCount(0);
   await expect(mark).toHaveCount(0);
   await expect(listen).toBeFocused();
-  expect(errors).toEqual([]);
+  // The browser logs each blocked recording; nothing else went wrong.
+  expect(errors.filter((error) => error !== 'console: Failed to load resource: net::ERR_FAILED')).toEqual([]);
 });
 
 test('Say it shows in Write, Watch and Reflect once this device was checked, and makes a recognition object only on a tap', async ({

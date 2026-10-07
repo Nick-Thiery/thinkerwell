@@ -317,8 +317,10 @@ test.describe('Listen follows the language', () => {
     await expect(page.getByRole('button', { name: msg(en, 'lessonPlayer.read.listen') })).toBeVisible();
   });
 
-  test("Settings' Listen voice is all Indonesian, and the chosen Indonesian voice reads Indonesian lessons", async ({ page }) => {
+  test("Settings' Listen voice is all Indonesian, and the chosen Indonesian voice reads Indonesian lessons without their recordings", async ({ page }) => {
     await fakeVoices(page, IPAD_VOICES);
+    // Without the recordings (not downloaded, offline), the device voice reads.
+    await page.route('**/audio/**', (route) => route.abort());
     await page.goto('/settings#listen-voice');
     await headerSwitch(page, INDONESIAN);
     const indonesian = page.getByRole('combobox', { name: msg(id, 'pages.settings.listenVoice.voiceFor.id') });
@@ -339,17 +341,27 @@ test.describe('Listen follows the language', () => {
     );
     await page.goto('/settings#listen-voice');
     await headerSwitch(page, INDONESIAN);
-    await expect(page.getByText(msg(id, 'pages.settings.listenVoice.noVoiceIndonesian'))).toBeVisible({ timeout: 8000 });
+    await expect(page.getByText(msg(id, 'pages.settings.listenVoice.noVoiceIndonesianRecorded'))).toBeVisible({ timeout: 8000 });
     await expect(page.getByRole('combobox', { name: msg(id, 'pages.settings.listenVoice.voiceFor.id') })).toHaveCount(0);
+    // The recorded Indonesian voice is still there, with its sample.
+    await expect(page.getByRole('group', { name: msg(id, 'pages.settings.listenVoice.voiceFor.id') }).getByRole('button', { name: msg(id, 'pages.settings.listenVoice.sample') })).toBeVisible();
     await expectAllIndonesian(page, 'Settings, no Indonesian voice');
   });
 
-  test('with only English (or online) voices, says so instead of reading Indonesian with them', async ({ page }) => {
+  test('with only English (or online) voices and no recording here, says so instead of reading Indonesian with them', async ({ page }) => {
     await voices(page, [['en-GB', true], ['id-ID', false]]);
+    await page.route('**/audio/**', (route) => route.abort());
     await page.goto(`/lesson/${L10.id}/read`);
     await headerSwitch(page, INDONESIAN);
-    await expect(page.getByText(msg(id, 'lessonPlayer.read.listenNoVoice'))).toBeVisible({ timeout: 8000 });
-    await expect(page.getByRole('button', { name: msg(id, 'lessonPlayer.read.listen') })).toHaveCount(0);
+    // The Indonesian recordings: Listen shows, with no note.
+    const listen = page.getByRole('button', { name: msg(id, 'lessonPlayer.read.listen') });
+    await expect(listen).toBeVisible();
+    await expect(page.getByText(msg(id, 'lessonPlayer.read.listenNoVoice'))).toHaveCount(0);
+    // They can't be had, and there's no Indonesian voice: it says so, and never reads Indonesian with the English voice.
+    await listen.click();
+    await expect(page.getByText(msg(id, 'lessonPlayer.read.listenUnavailable'))).toBeVisible();
+    await expect(listen).toHaveAttribute('aria-pressed', 'false');
+    await expectAllIndonesian(page, 'Read, Listen unavailable');
   });
 });
 
