@@ -195,6 +195,7 @@ function VoicePicker({ lang, voices, recorded, chosen, disabled, failed, noSampl
   const labelId = useId();
   const selectId = useId();
   const helpId = useId();
+  const deviceLabelId = useId();
   // A saved voice that isn't on this device (any more) shows as Automatic, which is what lessons use.
   const chosenVoice = chosen ? voices.find((voice) => isChosenVoice(voice, chosen)) : undefined;
   const best = voices[0];
@@ -215,7 +216,16 @@ function VoicePicker({ lang, voices, recorded, chosen, disabled, failed, noSampl
 
   const select = (
     <>
-      <select id={selectId} className="tw-settings-select" value={value} disabled={disabled} aria-describedby={helpId} onChange={change}>
+      <select
+        id={selectId}
+        className="tw-settings-select"
+        value={value}
+        disabled={disabled}
+        // With recordings, the list is named for its language too ("Voice for English lessons Device voice, …").
+        aria-labelledby={recorded ? `${labelId} ${deviceLabelId}` : undefined}
+        aria-describedby={helpId}
+        onChange={change}
+      >
         <option value={AUTOMATIC}>{t('pages.settings.listenVoice.automatic')}</option>
         {voices.map((voice) => (
           <option key={optionValue(voice)} value={optionValue(voice)} translate="no">
@@ -264,7 +274,7 @@ function VoicePicker({ lang, voices, recorded, chosen, disabled, failed, noSampl
       ) : null}
       {voices.length > 0 ? (
         <>
-          <label htmlFor={selectId} className="tw-settings-label tw-listen-voice-device">
+          <label id={deviceLabelId} htmlFor={selectId} className="tw-settings-label tw-listen-voice-device">
             {t('pages.settings.listenVoice.deviceVoice')}
           </label>
           {select}
