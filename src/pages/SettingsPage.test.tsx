@@ -2,6 +2,7 @@ import { act, render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router';
 import { afterEach, describe, expect, it, vi } from 'vitest';
+import { setRecordingsForTests } from '../audio/recordings';
 import { connectServiceWorker, resetServiceWorkerForTests } from '../offline';
 import { LearnerSessionProvider } from '../session';
 import { deleteAllData, getStore } from '../storage';
@@ -391,5 +392,81 @@ describe('SettingsPage: parts with an address of their own', () => {
     } finally {
       delete (Element.prototype as { scrollIntoView?: unknown }).scrollIntoView;
     }
+  });
+});
+
+describe('SettingsPage: lesson audio', () => {
+  /** The course is kept offline here (a fake service worker that controls the page). */
+  async function offlineReady(): Promise<() => void> {
+    let disconnect: () => void = () => undefined;
+    await act(async () => {
+      disconnect = connectServiceWorker({
+        workbox: {
+          addEventListener: vi.fn(),
+          register: () => Promise.resolve({ active: {} } as ServiceWorkerRegistration),
+          update: () => Promise.resolve(),
+          messageSkipWaiting: vi.fn(),
+        },
+        isControlled: () => true,
+        reload: vi.fn(),
+        isOnline: () => true,
+        isVisible: () => true,
+      });
+      await Promise.resolve();
+    });
+    return disconnect;
+  }
+
+  /** An empty Cache API: nothing is on the device yet. */
+  function emptyCaches() {
+    const cache = { match: () => Promise.resolve(undefined), keys: () => Promise.resolve([]), put: vi.fn(() => Promise.resolve()) };
+    vi.stubGlobal('caches', { open: () => Promise.resolve(cache), match: () => Promise.resolve(undefined) });
+  }
+
+  afterEach(() => vi.unstubAllGlobals());
+
+  it('is not shown without recordings', () => {
+    renderSettings();
+    expect(screen.queryByRole('region', { name: 'Lesson audio' })).not.toBeInTheDocument();
+  });
+
+  it('says how big the recordings of the device’s lessons’ languages are, and offers them once the course is kept', async () => {
+    setRecordingsForTests({ en: { timings: '/audio/en/t.json', files: 145, bytes: 18_900_000 }, id: { timings: '/audio/id/t.json', files: 145, bytes: 26_700_000 } });
+    emptyCaches();
+    const disconnect = await offlineReady();
+    renderSettings();
+    const part = await screen.findByRole('region', { name: 'Lesson audio' });
+    // Nobody here uses Indonesian: only the English recordings.
+    expect(part).toHaveTextContent('For English lessons: 19 MB in all.');
+    expect(await within(part).findByText('None of it is on this device yet.')).toBeInTheDocument();
+    expect(within(part).getByRole('button', { name: 'Download lesson audio' })).toBeEnabled();
+    disconnect();
+  });
+
+  it('counts Bahasa Indonesia once the device or a learner uses it', async () => {
+    setRecordingsForTests({ en: { timings: '/audio/en/t.json', files: 145, bytes: 18_900_000 }, id: { timings: '/audio/id/t.json', files: 145, bytes: 26_700_000 } });
+    emptyCaches();
+    await (await getStore()).updateSettings({ language: 'id' });
+    renderSettings();
+    const part = await screen.findByRole('region', { name: /Audio pelajaran|Lesson audio/ });
+    await waitFor(() => expect(part).toHaveTextContent(/27 MB/));
+  });
+
+  it('waits for the course to be kept offline, and never downloads with Save data on', async () => {
+    setRecordingsForTests({ en: { timings: '/audio/en/t.json', files: 145, bytes: 18_900_000 } });
+    emptyCaches();
+    const { unmount } = renderSettings();
+    let part = await screen.findByRole('region', { name: 'Lesson audio' });
+    // No service worker here: nothing can keep them.
+    expect(part).toHaveTextContent("This browser can't keep lesson audio");
+    unmount();
+
+    const disconnect = await offlineReady();
+    await (await getStore()).updateSettings({ saveData: true });
+    renderSettings();
+    part = await screen.findByRole('region', { name: 'Lesson audio' });
+    await waitFor(() => expect(within(part).getByRole('button', { name: 'Download lesson audio' })).toBeDisabled());
+    expect(part).toHaveTextContent('Save data is on, so nothing downloads from here.');
+    disconnect();
   });
 });
