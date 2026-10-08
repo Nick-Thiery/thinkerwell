@@ -41,6 +41,11 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * Read stage's parts) and their words in both languages. The recordings
  * themselves (about 45 MB) are never precached: each is kept once it has
  * played, or when a teacher downloads them (docs/notes/recorded-audio.md).
+ * The course model and Digital World's hidden preview took 1.4 kB more
+ * (643.8 kB, within the budget): the shared lesson pages' course plumbing and
+ * the small list of courses. Digital World itself (its lessons, activities,
+ * words and styles, 56.5 kB) is in assets/preview/, never precached
+ * (the test below; docs/notes/digital-world-preview.md).
  */
 const PRECACHE_BUDGET = 645_000;
 /**
@@ -59,6 +64,8 @@ const PRECACHE_BUDGET = 645_000;
  * checklist's pointer and the Credits page's voices) in en.json, and a few bytes of styles. The player, the download
  * manager and the recordings themselves load with the lesson and Settings pages, or on a tap, never on a first visit
  * (docs/notes/recorded-audio.md, docs/notes/slow-internet.md "Later budget changes").
+ * 221.6 kB with the course model and Digital World's hidden preview: the device setting that turns a preview on and
+ * the few lines that look for it. No Digital World words or code reach a first visit (the test below).
  */
 const FIRST_VISIT_HOME_BUDGET = 222_000;
 
@@ -121,4 +128,55 @@ test('the production build has no source maps and no dev-only pages', { tag: '@o
   }
   await page.goto('/dev/components');
   await expect(page.locator('h1')).toHaveText("This page isn't here");
+});
+
+// Digital World is a preview course (docs/notes/digital-world-preview.md):
+// its lessons, activities, words and styles are built into assets/preview/,
+// which the service worker never precaches, and load only on a device that
+// turned the preview on. These words and names appear nowhere else.
+const DIGITAL_WORLD = [
+  'Draft course: not yet reviewed',
+  'Kursus draf',
+  "What AI is, and what it isn't",
+  'Train the leaf model',
+  'Plan your AI helper',
+  'dw-what-ai-is',
+  'tw-dw-',
+];
+
+test('no Digital World content or code is precached or reaches a first visit', { tag: '@own-size' }, async ({ page, request, baseURL }) => {
+  const urls = await precacheList(request);
+  expect(urls.filter((url) => url.includes('/preview/'))).toEqual([]);
+  for (const url of urls.filter((u) => TEXT.test(u))) {
+    const text = (await sentSize(request, url)).body.toString('utf8');
+    for (const marker of DIGITAL_WORLD) expect(text.includes(marker), `${url} has "${marker}"`).toBe(false);
+  }
+
+  const origin = new URL(baseURL ?? 'http://localhost').origin;
+  const firstVisit = new Set<string>();
+  page.on('request', (r) => {
+    if (new URL(r.url()).origin === origin) firstVisit.add(new URL(r.url()).pathname);
+  });
+  for (const path of ['/', '/course']) {
+    await page.goto(path);
+    await expect(page.locator('h1')).toBeVisible();
+    await page.waitForLoadState('networkidle');
+  }
+  expect([...firstVisit].filter((url) => url.includes('/preview/'))).toEqual([]);
+  for (const url of [...firstVisit].filter((u) => TEXT.test(u) || u === '/')) {
+    const text = (await sentSize(request, url)).body.toString('utf8');
+    for (const marker of DIGITAL_WORLD) expect(text.includes(marker), `${url} has "${marker}"`).toBe(false);
+  }
+
+  // The words are real: with the preview on, they arrive from assets/preview/.
+  const previewFiles: string[] = [];
+  page.on('response', (r) => {
+    if (r.url().includes('/assets/preview/')) previewFiles.push(r.url());
+  });
+  await page.goto('/preview/digital-world');
+  await expect(page.locator('h1')).toHaveText('Digital World preview is on');
+  await page.waitForLoadState('networkidle');
+  let previewText = '';
+  for (const url of previewFiles) previewText += (await sentSize(request, url)).body.toString('utf8');
+  for (const marker of DIGITAL_WORLD) expect(previewText, marker).toContain(marker);
 });
