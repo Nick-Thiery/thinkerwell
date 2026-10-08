@@ -3,11 +3,11 @@ import { courseCertificatePath, lessonPath, sectionCertificatePath, sectionCheck
 import { Badge, Button, Icon, LessonRow, Mascot, SectionBadge, StagePath } from '../../../components/ds';
 import {
   STAGES,
-  type Lesson,
-  type Section,
+  type CourseLesson,
+  type CourseSection,
   type StageId,
 } from '../../../content';
-import { useContent } from '../../../content/useContent';
+import { useLessonContent } from '../../../content/useContent';
 import { En, translate, useI18n } from '../../../i18n';
 import { hasText, LESSON_PHONE_QUERY, useLessonPlayer, useMediaQuery } from '../../../lesson';
 import { useLearnerProgress, useLearnerSession } from '../../../session';
@@ -20,7 +20,6 @@ import {
   type LessonProgress,
   type ProgressByLessonId,
 } from '../../../storage';
-import { SECTION_ICONS } from '../../course/sectionIcons';
 import './CompleteStage.css';
 
 const MASCOT_SRC = '/images/thinkerwell-mascot-transparent.png';
@@ -64,7 +63,7 @@ export function firstUnfinishedStage(done: readonly StageId[]): StageId {
  */
 export function CompleteStage() {
   const { t, tx, contentLang, content: translated } = useI18n();
-  const content = useContent();
+  const content = useLessonContent();
   const { lesson, section, progress, mode, saving } = useLessonPlayer();
   const session = useLearnerSession();
   const phone = useMediaQuery(LESSON_PHONE_QUERY);
@@ -85,7 +84,8 @@ export function CompleteStage() {
   const heading = t('lessonPlayer.complete.title', { number: lesson.number });
 
   // Only a learner's saved work earns a certificate, and only once it is all read.
-  const canOffer = finished && learnerId !== null && loaded.status === 'ready';
+  // A course without section checks has no certificates yet (a preview course).
+  const canOffer = finished && learnerId !== null && loaded.status === 'ready' && content.hasSectionChecks;
   const finishedSection = canOffer && finishedSetWith(lesson, content.getSectionLessons(section.id), allProgress);
   const finishedCourse = canOffer && finishedSetWith(lesson, content.getLessons(), allProgress);
 
@@ -101,6 +101,7 @@ export function CompleteStage() {
         })
       : tx('lessonPlayer.complete.badgeSection', { number: section.number, title: sectionTitle });
 
+  const look = content.sectionLook(section.id);
   const titleNode = <strong {...contentLang}>{lesson.title}</strong>;
   const nextStage = firstUnfinishedStage(progress.stagesDone);
   const summaryMessage = finished ? (
@@ -125,7 +126,7 @@ export function CompleteStage() {
     <section className="tw-complete" aria-labelledby="tw-complete-title">
       <div className="tw-complete-panel">
         <Mascot src={MASCOT_SRC} size={phone ? 120 : 160} />
-        <Badge tone={section.id} icon={SECTION_ICONS[section.id]}>
+        <Badge tone={look.tone} icon={look.icon}>
           {badgeText}
         </Badge>
       </div>
@@ -172,7 +173,7 @@ export function CompleteStage() {
         <UpNext lesson={lesson} progress={learnerId ? allProgress : undefined} highlightFirst={finished} />
 
         <div className="tw-complete-actions">
-          <Button variant="secondary" icon="ArrowLeft" href={`/course#${section.id}`}>
+          <Button variant="secondary" icon="ArrowLeft" href={content.coursePath(section.id)}>
             {t('lessonPlayer.complete.backToCourse')}
           </Button>
           <Button variant="ghost" icon="NotebookPen" href="/journal">
@@ -195,12 +196,12 @@ function CertificateOffer({
   finishedSection,
   finishedCourse,
 }: {
-  section: Section;
+  section: CourseSection;
   finishedSection: boolean;
   finishedCourse: boolean;
 }) {
   const { t, tx } = useI18n();
-  const content = useContent();
+  const content = useLessonContent();
   return (
     <section className="tw-complete-cert" aria-labelledby="tw-complete-cert-title">
       {finishedCourse ? (
@@ -208,7 +209,7 @@ function CertificateOffer({
           <Icon name="Award" size={26} />
         </span>
       ) : (
-        <SectionBadge section={section.id} showName={false} />
+        <SectionBadge section={content.sectionLook(section.id).tone} showName={false} />
       )}
       <div className="tw-complete-cert-body">
         <h2 id="tw-complete-cert-title" className="h3">
@@ -244,15 +245,16 @@ function UpNext({
   progress,
   highlightFirst,
 }: {
-  lesson: Lesson;
+  lesson: CourseLesson;
   /** The learner's progress, or undefined for guests (rows show "Start"). */
   progress: ProgressByLessonId | undefined;
   highlightFirst: boolean;
 }) {
   const { t, tx } = useI18n();
   const { section } = useLessonPlayer();
-  const content = useContent();
-  const showCheck = content.isLastLessonInSection(lesson);
+  const content = useLessonContent();
+  // A course without section checks (a preview course) offers the next lesson only.
+  const showCheck = content.hasSectionChecks && content.isLastLessonInSection(lesson);
   const next = content.getNextLesson(lesson.id);
   if (!showCheck && !next) return null;
 

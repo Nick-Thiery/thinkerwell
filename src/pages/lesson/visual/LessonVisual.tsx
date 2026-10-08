@@ -1,7 +1,7 @@
 import { useId, useRef } from 'react';
 import { Button } from '../../../components/ds';
 import { type Visual } from '../../../content';
-import { useContent } from '../../../content/useContent';
+import { useLessonContent } from '../../../content/useContent';
 import { useI18n } from '../../../i18n';
 import './LessonVisual.css';
 
@@ -30,7 +30,7 @@ export interface LessonVisualProps {
  */
 export function LessonVisual({ visual, enlargeable = true }: LessonVisualProps) {
   const { t, contentLang } = useI18n();
-  const content = useContent();
+  const content = useLessonContent();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const toolsRef = useRef<HTMLDivElement>(null);
   const titleId = useId();

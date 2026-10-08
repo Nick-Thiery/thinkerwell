@@ -28,6 +28,7 @@ import { recordingRef, sectionKey } from '../../../audio/recordings';
 import { ListenBar, ReadingCard, SegmentedControl, ToolToggle } from '../../../components/ds';
 import { useI18n } from '../../../i18n';
 import { useLessonPlayer } from '../../../lesson';
+import { LessonSlot } from '../../../lesson/extras';
 import { isSaveDataOn } from '../../../offline';
 import { LISTEN_RATES, listenVoiceFor, speechLangFor, useListenVoiceState } from '../../../speech';
 import type { ReadingLevel } from '../../../storage';
@@ -219,6 +220,8 @@ export function ReadStage() {
 
       <WarmUp />
       <LessonEvidence evidence={lesson.evidence} visual={lesson.visual} />
+      {/* A course's own activity, where its lesson file puts it (src/lesson/extras.tsx); nothing in Our World. */}
+      <LessonSlot name="read:after-evidence" />
 
       {listening ? (
         <div ref={listenBarRef} id={listenBarId}>

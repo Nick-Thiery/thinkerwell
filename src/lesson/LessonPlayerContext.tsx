@@ -49,8 +49,8 @@ import {
 } from 'react';
 import { useNavigate } from 'react-router';
 import { lessonPath } from '../app/lessonUrls';
-import { isStageId, type Lesson, type LessonStep, type Section, type StageId } from '../content';
-import { useContent } from '../content/useContent';
+import { isStageId, type CourseLesson, type CourseSection, type LessonStep, type StageId } from '../content';
+import { useLessonContent } from '../content/useContent';
 import { useLearnerSession } from '../session';
 import {
   DEFAULT_SETTINGS,
@@ -93,8 +93,9 @@ export interface UpdateOptions {
 }
 
 export interface LessonPlayerValue {
-  lesson: Lesson;
-  section: Section;
+  /** The lesson, from any course (src/content/courses.ts). */
+  lesson: CourseLesson;
+  section: CourseSection;
   /** The step in the URL: a stage, or 'complete'. */
   step: LessonStep;
   /** 'loading' until the learner's progress and the device settings are read. Stages render nothing until 'ready'. */
@@ -141,7 +142,7 @@ export function useLessonPlayer(): LessonPlayerValue {
 export const LessonPlayerTestProvider = LessonPlayerContext.Provider;
 
 export interface LessonPlayerProviderProps {
-  lesson: Lesson;
+  lesson: CourseLesson;
   step: LessonStep;
   children: ReactNode;
 }
@@ -179,7 +180,7 @@ function PlayerForOwner({
   const navigate = useNavigate();
   const learner = mode === 'learner' ? session.activeLearner : null;
   const learnerId = learner?.id ?? null;
-  const content = useContent();
+  const content = useLessonContent();
   const section = content.getLessonSection(lesson);
 
   const [status, setStatus] = useState<'loading' | 'ready'>(learnerId ? 'loading' : 'ready');

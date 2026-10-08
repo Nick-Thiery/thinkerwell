@@ -11,20 +11,21 @@
 import { Fragment } from 'react';
 import { lessonPath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
-import { type GlossaryEntry, type Lesson, type ReadSection } from '../../content';
-import { useContent } from '../../content/useContent';
+import { type CourseLesson, type GlossaryEntry, type ReadSection } from '../../content';
+import { useLessonContent } from '../../content/useContent';
 import { AlwaysEn, En, useI18n } from '../../i18n';
 import { splitParagraphs } from '../../lesson';
+import { LessonSlot } from '../../lesson/extras';
 import type { ReadingLevel } from '../../storage';
 import { LessonEvidence } from '../lesson/evidence/LessonEvidence';
 import { buildReading } from '../lesson/read/readingPieces';
 import { AnswerLines, PrintToolbar } from './PrintToolbar';
 import './print.css';
 
-export function LessonPrintPage({ lesson }: { lesson: Lesson }) {
+export function LessonPrintPage({ lesson }: { lesson: CourseLesson }) {
   // Everything from the lesson file is course text, marked as English (`en`).
   const { t, tx, contentLang: en } = useI18n();
-  const content = useContent();
+  const content = useLessonContent();
   usePageTitle(t('print.lessonPageTitle', { number: lesson.number }));
   const section = content.getLessonSection(lesson);
   const [min, max] = lesson.estimatedMinutes;
@@ -38,6 +39,7 @@ export function LessonPrintPage({ lesson }: { lesson: Lesson }) {
       <article className="tw-print-sheet" aria-labelledby="print-title">
         <header className="tw-print-head">
           <p className="tw-print-brand">{t('print.brand')}</p>
+          <LessonSlot name="sheet:top" />
           <p className="tw-print-eyebrow">{tx('pages.course.lessonLabel', { number: lesson.number, section: <En>{section.title}</En> })}</p>
           <h1 id="print-title" className="tw-print-title" tabIndex={-1} {...en}>
             {lesson.title}
@@ -69,6 +71,7 @@ export function LessonPrintPage({ lesson }: { lesson: Lesson }) {
           <h2>{t('lessonPlayer.evidence.sectionLabel')}</h2>
           <LessonEvidence evidence={lesson.evidence} visual={lesson.visual} enlargeablePicture={false} />
         </section>
+        <LessonSlot name="print:after-evidence" />
 
         <Reading
           title={t('print.readingStandard')}

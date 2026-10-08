@@ -33,7 +33,10 @@
  * this lesson. Opening a stage only writes it when the learner already has a
  * saved record for the lesson; otherwise their first real save carries it.
  */
-import type { Lesson } from '../content';
+import type { CourseLesson } from '../content';
+
+/** What the rules read of a lesson: any course's (src/content/courses.ts). */
+type Lesson = Pick<CourseLesson, 'read' | 'reflect'>;
 import type { CheckAnswer, LessonProgress, StageId } from '../storage';
 
 /** The indexes (in lesson.read.checks) of the choice questions. */
