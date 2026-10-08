@@ -1,6 +1,6 @@
 # Digital World: course spec (draft)
 
-Status: draft for Justin and Nick, written September 2026. Nothing here is in the app. Draft lessons 1–11 are in `drafts/digital-world/` (see its README).
+Status: draft for Justin and Nick, written September 2026. Since October 2026 the 11 draft lessons are in the app as a **preview**: in `content/courses/digital-world/` (see its README), checked by the build, and shown only on a device that has visited `/preview/digital-world`, with a "Draft course: not yet reviewed" banner. Nobody else sees them, and they haven't been reviewed. How it works, the choices made where this spec is open, and what's left: `docs/notes/digital-world-preview.md`.
 
 ## 1. What it is for, and who it's for
 
@@ -170,6 +170,8 @@ As in Our World: one short video from a reputable educational channel per lesson
 ## 9. The path to the app
 
 Digital World is not switched on during the HELP pilot. Before any Digital World lesson can load:
+
+(October 2026: the preview has done item 1, the players for every activity type, and item 6, and keeps Digital World out of every other device's download. Items 2–5 and 7 are still to do before it is switched on for everyone; item 3 is a simple course choice for preview devices only. `docs/notes/digital-world-preview.md`.)
 
 1. **Multi-course support.** A course id in the content (for example `content/courses/our-world/` and `content/courses/digital-world/`, or a `course` field), the schema's section ids per course, `oldId` optional, and the `activity` object with a player for each type. Routes stay stable for Our World (`/lesson/:id/:stage` still works, since `dw-` ids never clash).
 2. **Storage.** Progress and recordings are already keyed by learner and lesson id, and section checks by learner and section id, so separate ids keep work separate. The work file (`src/storage/workFile.ts`) and class view need to know which course a lesson belongs to. Certificates per course.

@@ -42,8 +42,8 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * themselves (about 45 MB) are never precached: each is kept once it has
  * played, or when a teacher downloads them (docs/notes/recorded-audio.md).
  * The course model and Digital World's hidden preview took 1.4 kB more
- * (643.8 kB, within the budget): the shared lesson pages' course plumbing and
- * the small list of courses. Digital World itself (its lessons, activities,
+ * (643.8 kB, within the budget): the shared lesson pages' course plumbing,
+ * the routes and the small list of courses. Digital World itself (its lessons, activities,
  * words and styles, 56.5 kB) is in assets/preview/, never precached
  * (the test below; docs/notes/digital-world-preview.md).
  */
@@ -64,8 +64,9 @@ const PRECACHE_BUDGET = 645_000;
  * checklist's pointer and the Credits page's voices) in en.json, and a few bytes of styles. The player, the download
  * manager and the recordings themselves load with the lesson and Settings pages, or on a tap, never on a first visit
  * (docs/notes/recorded-audio.md, docs/notes/slow-internet.md "Later budget changes").
- * 221.6 kB with the course model and Digital World's hidden preview: the device setting that turns a preview on and
- * the few lines that look for it. No Digital World words or code reach a first visit (the test below).
+ * 221.6 kB with the course model and Digital World's hidden preview (221.0 kB before): the device setting that turns a
+ * preview on and the few lines that look for it. No Digital World words or code reach a first visit (the test below;
+ * docs/notes/slow-internet.md "Later budget changes").
  */
 const FIRST_VISIT_HOME_BUDGET = 222_000;
 

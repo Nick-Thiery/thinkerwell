@@ -171,6 +171,18 @@ From the team's Google SEO brief (`docs/notes/seo.md`):
   - Indonesian addresses (`/id/...`), which are proposed in the notes.
   - Taking down the old Base44 site, which only its owner can do.
 
+### Digital World preview (October 2026)
+
+Details: `docs/notes/digital-world-preview.md`.
+
+- **A hidden preview.** Digital World's 11 draft lessons are in the app, but only a device that visits `/preview/digital-world` shows them; it stays on for that device until someone taps "Turn preview off". Nothing links to the address, search engines are told not to index it, and every other device, including every HELP pilot device, sees and downloads nothing of it. Every Digital World page says "Draft course: not yet reviewed", and every printed sheet says not to use it with learners yet.
+- **A course choice only where a preview is on**: "Courses on this device", Our World first, at the top of the course map, the learner home and "Just look around".
+- **Activities don't count towards a stage being done** (spec section 8, item 2, still open); their answers are saved with the lesson's work on the device. Lesson 2 has picture cards only, no drawing mode. Lesson 8's tool is a labelled pretend tool with pre-written answers.
+- **Sections** borrow Our World's four section colours, each with an icon of its own (How AI works amber with a light bulb, Check what you see sage with an eye, Use tools wisely rose with a hand, AI where you live sky with people), until the brand book has colours for them. "Digital World" is still the working name.
+- **No section checks or certificates** until they are drafted, and no recordings: Listen uses the device's voice.
+- **In Indonesian**, Digital World's interface is Indonesian (AI-drafted and flagged, like the rest) and its lessons stay English, marked as English, with a line saying so in the banner.
+- **For reviewers**: each lesson's print view has its activity on paper, its teacher guide has the answers and the lesson's review notes, and "Print all lessons" prints the whole course.
+
 ## Roadmap
 
 1. **Pilot build (now):** everything in `docs/BUILD_PLAN.md` phases 1–8.
@@ -178,7 +190,7 @@ From the team's Google SEO brief (`docs/notes/seo.md`):
 3. **Translation:** the groundwork is in (language list and picker, per-learner language, first-language glossary lines, right-to-left layouts and font, test languages, the translator's spreadsheet), and Bahasa Indonesia is fully translated and offered, with native-speaker review in progress. Next: that review; then learn the pilot learners' home languages, and translate and review those with native speakers.
 4. **AI features (later):** diagnostic quiz, mastery tracking, reading-level rewrites, first-language glossary help, an educator dashboard, a content review flow. All privacy-first. The first step, on-device Suggestions (an optional starting check, a suggested reading level, "worth another look" by skill and hints for teachers, all worked out on the device), is specified in `docs/content/PERSONALIZATION_SPEC.md` and planned for after the HELP pilot.
 5. **Service wing (later):** partnerships for device and data donations.
-6. **Digital World (later, a second course):** the course spec and the first three draft lessons are in `docs/content/DIGITAL_WORLD_SPEC.md` and `drafts/digital-world/`; they are not in the app, and only Our World is on during the HELP pilot.
+6. **Digital World (later, a second course):** the course spec is `docs/content/DIGITAL_WORLD_SPEC.md`, and all 11 draft lessons are in `content/courses/digital-world/`, in the app as a hidden preview for reviewers (above). Only Our World is on during the HELP pilot. Before it is on for everyone: the AI-accuracy review, partner review (Lesson 6 required), section checks, Indonesian, recordings, pictures, watched videos, and storing it for offline use (`docs/notes/digital-world-preview.md`).
 
 ## Open content decisions
 

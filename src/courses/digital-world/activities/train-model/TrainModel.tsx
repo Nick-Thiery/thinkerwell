@@ -18,8 +18,9 @@ import { test as runTest, train, type TestRun } from './model';
  * - The model follows the learner's labels; the learner is never scored or
  *   told a label is wrong. "Right" and "Not quite" are about the model's
  *   guesses against the gardener's answers.
- * - Labels stay in memory (spec: "the labels are not needed again"); only
- *   the rounds trained are saved, with the lesson's other answers.
+ * - Labels stay in memory (the lesson file's `saves`: "The labels are not
+ *   needed again"); only the rounds trained are saved, with the lesson's
+ *   other answers.
  * - No camera, microphone, network or machine-learning library; the
  *   drawings are made on the device from each card's numbers.
  */

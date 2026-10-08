@@ -140,6 +140,8 @@ src/i18n/                message helper, the language list (locales.ts), loading
 tools/i18n/              the translator kit: npm run i18n:export, i18n:import and check:i18n
 scripts/i18n/            the Indonesian review spreadsheet: npm run review:export, review:import (Python, openpyxl)
 content/id/              Bahasa Indonesia: the course, lessons, section checks and pictures, translated
+content/courses/digital-world/  Digital World, a preview course (its lessons, course.json and review notes)
+src/courses/             preview courses: the switch, the door to their pages and build helpers; digital-world/ has its pages and activity players
 src/styles/              tokens.css (copied from the design system), fonts.css, global.css, print.css
 src/components/ds/       the ported design-system components
 src/dev/                 dev-only routes (/dev/components, /dev/reference, /dev/screens); never shipped
@@ -156,6 +158,8 @@ e2e-dev/                 Playwright tests for the dev-only /dev/* routes (npm ru
 ## Routes
 
 `/`, `/course`, `/lesson/:id/:stage` (stages: read, write, speak, watch, reflect, plus `complete`), `/section/:id/check`, `/journal`, `/journal/print`, `/educators`, `/educators/lesson/:id` (a teacher guide), `/educators/section/:id/answers` (an answer key), `/educators/setup` (set up this device), `/educators/class` (the class on this device) and `/educators/class/certificates` (all its certificates), `/about`, `/settings` (settings for this device, for educators, in the header menu; `#say-it` and `#move-work` go to those parts), `/lesson/:id/print` (the lesson on paper), `/certificate/section/:id` and `/certificate/course` (printable certificates). `/lesson/:id` opens Read. Old Base44 links such as `/lesson/l6` or `/lesson/history-scale` redirect to the new lesson (`/lesson/l6` is Lesson 10, `/lesson/towns-near-rivers/read`), keeping any query string such as `?preview=true`. `/onboarding` goes to `/` and `/courses` to `/course`. Anything else shows a friendly "can't find that page".
+
+Digital World, a preview course, adds `/preview/digital-world` (turns its preview on for this device; linked from nowhere), `/course/digital-world` and `/course/digital-world/print`, and its lessons at `/lesson/dw-…`. On a device without the preview they all show "can't find that page" (`docs/notes/digital-world-preview.md`).
 
 ## Offline
 
