@@ -98,7 +98,7 @@ There is deliberately nothing else: no NGO or nonprofit type, legal name, postal
 
 The footer has "Thinkerwell on LinkedIn" after For organisations and Credits. It's an ordinary link in the footer's link style, opening in a new tab with `rel="noreferrer"` and "(opens in a new tab)" for screen readers. There is no LinkedIn script, feed or button.
 
-The address is `THINKERWELL_LINKEDIN` in `src/seo/site.ts`, exactly as the team gave it, including LinkedIn's `lipi` tracking part. LinkedIn shows only a sign-in wall to automated browsers, so the clean address `https://www.linkedin.com/company/thinkerwell/` couldn't be confirmed. Once someone signed in confirms it opens Thinkerwell's Page, put the clean address in that constant. The footer and the structured data both use it.
+The address is `THINKERWELL_LINKEDIN` in `src/seo/site.ts`: the Page's clean address, `https://www.linkedin.com/company/thinkerwell/`, without the `lipi` tracking part the team's copy had (confirmed by the team on 8 October 2026). The footer and the structured data both use it.
 
 ## What isn't done, and why
 
