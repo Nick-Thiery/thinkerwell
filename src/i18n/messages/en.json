@@ -1391,5 +1391,164 @@
       "getCourseCertificate": "Get your course certificate",
       "getSectionCertificate": "Get your section certificate"
     }
+  },
+  "digitalWorld": {
+    "activity": {
+      "eyebrow": "Activity",
+      "guideTitle": "The activity",
+      "guideIntro": "What learners do on the device, with what most people would say and the answers. A class can also do it on paper from the print view."
+    },
+    "banner": {
+      "title": "Draft course: not yet reviewed",
+      "body": "Digital World is a draft. An AI researcher and a partner organisation still need to check it. Only this device shows it.",
+      "bodyEnglishLessons": "Digital World is a draft. An AI researcher and a partner organisation still need to check it. Only this device shows it. Its lessons are in English for now.",
+      "turnOff": "Turn preview off"
+    },
+    "sheet": {
+      "draft": "Digital World, draft course: not yet reviewed. Don't use it with learners yet."
+    },
+    "choice": {
+      "label": "Courses on this device",
+      "draft": "Draft"
+    },
+    "chart": {
+      "viewsLabel": "Which chart",
+      "bar": "{label}: {value}",
+      "figureLabel": "Bar chart. {measure}. {bars}. The scale goes from {start} to {end}."
+    },
+    "claim": {
+      "askFirst": "Ask these questions first",
+      "opened": "Opened",
+      "openedCount": "Sources opened: {count} of {total}",
+      "postFrom": "A post from {from}",
+      "says": "What it says",
+      "who": "Who is behind it",
+      "sourcesTitle": "Other sources: open them in any order"
+    },
+    "compare": {
+      "value": "{right} of {of} right",
+      "mostMistakes": "The tool made the most mistakes for {group}.",
+      "notMost": "The tool did better for {group}. Look for the group with the fewest right.",
+      "paperAnswer": "The group with the most mistakes:"
+    },
+    "map": {
+      "noChecks": "There are no section checks or certificates in this draft yet.",
+      "forTeachersTitle": "For teachers and reviewers",
+      "forTeachersBody": "Each lesson has a teacher guide with its notes, the answers, the activity on paper and notes for reviewers. You can also print the whole course.",
+      "printAll": "Print all lessons",
+      "guideLink": "Teacher guide, Lesson {number}: {title}"
+    },
+    "plan": {
+      "answerLabel": "Your answer",
+      "back": "Back",
+      "next": "Next step",
+      "helperSaving": "Your plan is saved on this device.",
+      "helperLookAround": "You're looking around, so your plan isn't saved.",
+      "helperNoLearner": "Nobody is chosen, so your plan isn't saved.",
+      "notYet": "Not answered yet",
+      "ownHelp": "Don't write anyone's real name or private information.",
+      "ownLabel": "Your problem",
+      "problemHelp": "Pick a problem from the lesson, or write one that many people share in a community you know.",
+      "problemTitle": "The problem",
+      "stepAnswered": "Answered",
+      "stepOf": "Step {n} of {total}",
+      "stepsLabel": "Steps",
+      "useStarter": "Use the sentence starter",
+      "yourPlan": "Your plan"
+    },
+    "printAll": {
+      "back": "Back to Digital World",
+      "intro": "Every Digital World lesson, one after another. Each one starts on a new page. Print them, or save them as a PDF.",
+      "pageTitle": "Digital World: every lesson"
+    },
+    "reviewer": {
+      "title": "For reviewers",
+      "intro": "Notes from the people who wrote this draft: what is new and what needs checking. Learners never see them.",
+      "pictureTitle": "Picture still to draw",
+      "activityTitle": "About the activity",
+      "saves": "What it saves",
+      "offline": "How it works offline"
+    },
+    "signs": {
+      "keyTitle": "Warning signs to look for",
+      "showAll": "Show all signs"
+    },
+    "sort": {
+      "empty": "Nothing here yet.",
+      "mostPeople": "Most people would say: {group}.",
+      "notPlaced": "Still to place: {count}",
+      "yourGroups": "Your groups"
+    },
+    "switch": {
+      "pageTitle": "Digital World preview",
+      "onTitle": "Digital World preview is on",
+      "onBody": "This device now shows Digital World, a draft course about AI and online information. Nobody else sees it, and nothing about it is sent anywhere. It stays on until you turn it off.",
+      "reviewNote": "It hasn't been reviewed yet. An AI researcher still needs to check its facts, and a partner organisation its sensitive topics. Don't use it with learners yet.",
+      "noStorage": "This browser can't save settings here, so the preview stays on only until you close this page.",
+      "open": "Open Digital World",
+      "printAll": "Print all lessons",
+      "turnOff": "Turn preview off",
+      "offTitle": "Digital World preview is off",
+      "offBody": "This device doesn't show Digital World any more.",
+      "turnOn": "Turn it on again",
+      "goTo": "Go to {title}",
+      "saveFailed": "This device couldn't save that. It applies until you close this page."
+    },
+    "tool": {
+      "badge": "Pretend tool",
+      "improveTitle": "Ask a better question",
+      "checkTitle": "Check an answer",
+      "youAsk": "You ask",
+      "toolSays": "The pretend tool says",
+      "paperAnswers": "The pretend tool's answer to each prompt:"
+    },
+    "trainModel": {
+      "changed": "Your examples changed. Train the model again to see its new guesses.",
+      "freePlayIntro": "Take examples out, or change a label, then train the model again. The model follows your labels, even when they are different from the gardener's.",
+      "freePlayTitle": "Try it yourself",
+      "gardenerSays": "The gardener says",
+      "groupCount": { "one": "{count} example", "other": "{count} examples" },
+      "groupEmpty": "No examples here yet.",
+      "groupTitle": "{label} examples",
+      "historyNone": "No results yet. Train the model to see how it does.",
+      "historyScore": "{right} of {of}",
+      "historyTitle": "Results so far",
+      "how1": "It keeps every example you gave it, with your label.",
+      "how2": "For a new leaf, it finds the example with the closest numbers.",
+      "how3": "It gives the new leaf that example's label. This is called a nearest-neighbour model.",
+      "howTitle": "How this model works",
+      "labelFor": "Label for: {description}",
+      "learnedFrom": { "one": "It learned from {count} example.", "other": "It learned from {count} examples." },
+      "lookedLike": "It looked most like this example, so the model said “{label}”.",
+      "modelSaid": "The model said",
+      "newExamples": { "one": "There is {count} new example. Give it a label, and it moves into that group.", "other": "There are {count} new examples. Give each one a label, and it moves into that group." },
+      "next": "Go on to “{title}”",
+      "noNewExamples": "No new examples this time. Test the model on leaves from a new plant.",
+      "notQuite": "Not quite",
+      "notUsedHelp": "The model doesn't learn from these. Give one a label to use it again.",
+      "notUsedTitle": "Not used",
+      "numbersIntro": { "one": "The model doesn't see the picture. It sees {count} number from 0 to 10:", "other": "The model doesn't see the picture. It sees {count} numbers from 0 to 10:" },
+      "numbersSummary": "What the model sees",
+      "paperCard": "Leaf",
+      "paperExamples": "Examples to label",
+      "paperExpected": "Labelled like the gardener, the model gets {right} of {of} right.",
+      "paperTests": "New leaves to test",
+      "paperYourLabel": "Your label",
+      "resultsTitle": "The model's guesses",
+      "right": "Right",
+      "roundsLabel": "Rounds",
+      "score": "The model got {right} of {of} right.",
+      "startAgain": "Start again",
+      "stepOf": "Step {n} of {total}",
+      "takeOut": "Take out",
+      "takeOutFor": "Take out: {description}",
+      "testNewPlant": "Test the new leaves",
+      "toSortHelp": "Give each leaf a label. It moves into that group.",
+      "toSortTitle": "To sort",
+      "train": "Train the model",
+      "trainHelpEmpty": "Give at least one leaf a label to train the model.",
+      "trainHelpSort": { "one": "Sort {count} more leaf to train the model.", "other": "Sort {count} more leaves to train the model." },
+      "yourLabelsDiffer": "Some of your labels are different from the gardener's. The model learned your labels, so its guesses follow them."
+    }
   }
 }
