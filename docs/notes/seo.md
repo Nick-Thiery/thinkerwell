@@ -94,6 +94,17 @@ The home page has JSON-LD with two items. **WebSite** gives the name and address
 
 There is deliberately nothing else: no NGO or nonprofit type, legal name, postal address, awards, ratings, reviews or partners (CLAUDE.md rule 8). This makes no rich result likely; it only names the site.
 
+## The favicon
+
+The icon beside the site in Google Search results, and in browser tabs (Justin's request, 8 October 2026). It used to be the mascot picture itself, which is 422 x 423. Google Search shows only square favicons, so it showed a blank globe instead.
+
+- **The files:** `public/icons/favicon-96.png` is the transparent mascot, whole and unchanged, centred on a transparent square at 96 x 96. That's a multiple of 48 and larger than 48px, as Google recommends, and it's about 2 kB. `public/favicon.ico` has the same picture at 16, 32 and 48px, for anything that asks for `/favicon.ico` by default. Both are made by `scripts/optimise_images.py`.
+- **The link:** `index.html` links the PNG with `<link rel="icon" sizes="96x96">`, so every page has it, the home page included, which is the one Google reads.
+- **Not precached:** browsers keep their own copy of a site's icon.
+- **Keep the address stable.** Google expects a favicon's address not to change often.
+- **Tests:** `src/seo/seo.test.ts` checks both files are square and the link points at the PNG. `e2e/seo.spec.ts` checks the built site serves them.
+- **Timing:** Google picks up a new favicon when it next crawls the home page. That can take days to weeks. Requesting indexing of `https://thinkerwell.app/` in URL Inspection speeds it up, and nothing guarantees it will be shown.
+
 ## The LinkedIn Page
 
 The footer has "Thinkerwell on LinkedIn" after For organisations and Credits. It's an ordinary link in the footer's link style, opening in a new tab with `rel="noreferrer"` and "(opens in a new tab)" for screen readers. There is no LinkedIn script, feed or button.
@@ -112,6 +123,8 @@ The address is `THINKERWELL_LINKEDIN` in `src/seo/site.ts`: the Page's clean add
 - **The old Base44 site** (thinkerwell-app.base44.app) is still live with the old course and the title "thinkerwell.app". Only someone with access to the Base44 project can unpublish it, or point it to thinkerwell.app if Base44 allows. It can't be redirected from this repository.
 
 ## After deploying
+
+(The favicon has its own note above: after a change, request indexing of the home page.)
 
 1. **Check the files.** Open `https://thinkerwell.app/robots.txt` and `https://thinkerwell.app/sitemap.xml`. Then view the page source of `/about` and one lesson: each should show its own `<title>` and a `<link rel="canonical">` to itself. `https://thinkerwell.vercel.app/about` and `https://thinkerwell.app/about/` should both land on `https://thinkerwell.app/about`.
 2. **Google Search Console.**

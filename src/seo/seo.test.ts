@@ -228,6 +228,38 @@ describe('vercel.json serves each page its file', () => {
   });
 });
 
+describe('the favicon', () => {
+  // Google Search shows a favicon beside the site only if it's square
+  // (docs/notes/seo.md). The mascot picture is 422 x 423, so it can't be one.
+  const png = (file: string) => {
+    const bytes = readFileSync(path.join(root, file));
+    expect(bytes.subarray(1, 4).toString('ascii'), file).toBe('PNG');
+    // The IHDR chunk: width and height, big-endian, at bytes 16 and 20.
+    return [bytes.readUInt32BE(16), bytes.readUInt32BE(20)];
+  };
+
+  it('index.html links one square PNG, a multiple of 48px and larger than 48px, as Google recommends', () => {
+    const links = [...readText('index.html').matchAll(/<link rel="icon"([^>]*)>/g)].map((match) => match[1]!);
+    expect(links).toHaveLength(1);
+    expect(links[0]).toContain('href="/icons/favicon-96.png"');
+    expect(links[0]).toContain('sizes="96x96"');
+    const [width, height] = png('public/icons/favicon-96.png');
+    expect(width).toBe(height);
+    expect(width).toBe(96);
+    expect(width! % 48).toBe(0);
+  });
+
+  it('favicon.ico holds square 16, 32 and 48px icons', () => {
+    const ico = readFileSync(path.join(root, 'public', 'favicon.ico'));
+    // ICONDIR: reserved 0, type 1 (icon), then the number of images; each ICONDIRENTRY is 16 bytes (width, height; 0 means 256).
+    expect([ico.readUInt16LE(0), ico.readUInt16LE(2)]).toEqual([0, 1]);
+    const count = ico.readUInt16LE(4);
+    const sizes = Array.from({ length: count }, (_, i) => [ico[6 + i * 16]! || 256, ico[7 + i * 16]! || 256]);
+    for (const [w, h] of sizes) expect(w).toBe(h);
+    expect(sizes.map(([w]) => w).sort((a, b) => a! - b!)).toEqual([16, 32, 48]);
+  });
+});
+
 describe('the LinkedIn Page', () => {
   it('is a LinkedIn company Page for thinkerwell', () => {
     const url = new URL(THINKERWELL_LINKEDIN);

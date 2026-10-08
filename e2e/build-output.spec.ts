@@ -67,8 +67,12 @@ const PRECACHE_BUDGET = 645_000;
  * 221.6 kB with the course model and Digital World's hidden preview (221.0 kB before): the device setting that turns a
  * preview on and the few lines that look for it. No Digital World words or code reach a first visit (the test below;
  * docs/notes/slow-internet.md "Later budget changes").
+ * Raised to 224.5 kB with the square favicon: 224.0 kB with it (221.6 kB before). Google Search shows only square
+ * favicons, and the mascot picture the tab used is 422 x 423, so the tab icon is now a file of its own,
+ * icons/favicon-96.png (2.3 kB, a 256-colour PNG, which can't be compressed further). Before, the browser reused the
+ * mascot picture the first screen loads anyway (docs/notes/seo.md "The favicon").
  */
-const FIRST_VISIT_HOME_BUDGET = 222_000;
+const FIRST_VISIT_HOME_BUDGET = 224_500;
 
 const TEXT = /\.(html|js|css|svg|json|webmanifest)$/;
 
