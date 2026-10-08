@@ -257,6 +257,14 @@ export interface DeviceSettings {
    * from getSettings(), so it needs no migration.
    */
   language: string | null;
+  /**
+   * Preview courses this device shows (src/content/courses.ts): a draft
+   * course is hidden everywhere until someone visits its hidden address
+   * (/preview/digital-world), and again once they turn it off. Missing or
+   * empty for every other device; records saved before it existed need no
+   * migration.
+   */
+  previewCourses?: string[];
 }
 
 export const DEFAULT_SETTINGS: DeviceSettings = {

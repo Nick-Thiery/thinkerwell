@@ -14,7 +14,10 @@ const SECTION_ICONS: Record<SectionId, IconName> = {
 };
 
 export interface SectionHeaderProps {
+  /** The section's tint (and its icon, unless `icon` says otherwise). */
   section: SectionId;
+  /** Not in the design-system docs: another course's section icon, beside the tint it borrows (src/content/courses.ts). */
+  icon?: IconName;
   number: number;
   title?: string;
   question?: string;
@@ -41,9 +44,10 @@ export function SectionHeader({
   rounded,
   className,
   titleId,
+  icon: iconName,
 }: SectionHeaderProps) {
   const { t, contentLang } = useI18n();
-  const icon = SECTION_ICONS[section] ?? SECTION_ICONS.history;
+  const icon = iconName ?? SECTION_ICONS[section] ?? SECTION_ICONS.history;
   const style: CSSProperties | undefined = rounded ? { borderRadius: 'var(--radius-xl)' } : undefined;
   const eyebrow = total
     ? t('ds.course.sectionHeader.eyebrowWithTotal', { number: number || 1, count: total })

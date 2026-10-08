@@ -97,3 +97,13 @@ describe('check:audio', () => {
     expect(audioProblems(expected(), manifest, root)).toEqual([expect.stringMatching(/recordings\.json: en doesn't match/)]);
   });
 });
+
+describe('preview courses', () => {
+  it('are skipped on purpose: nothing of Digital World is recorded or checked', async () => {
+    const { listenUtterances, SKIPPED_COURSES } = await import('./utterances.ts');
+    expect(SKIPPED_COURSES).toEqual(['digital-world']);
+    for (const language of listenUtterances()) {
+      expect(language.sections.filter((section) => section.key.startsWith('dw-'))).toEqual([]);
+    }
+  });
+});

@@ -11,7 +11,7 @@
 // (scripts/audio/README.md). docs/notes/recorded-audio.md.
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
-import { listenUtterances, ROOT, type LanguageUtterances } from './utterances.ts';
+import { listenUtterances, ROOT, SKIPPED_COURSES, type LanguageUtterances } from './utterances.ts';
 
 interface ManifestPiece {
   hash: string;
@@ -132,6 +132,7 @@ function main(): void {
   for (const [lang, recorded] of Object.entries(manifest!.languages)) {
     console.log(`${lang}: ${recorded.files} recordings match the lessons (${(recorded.bytes / 1e6).toFixed(1)} MB).`);
   }
+  if (SKIPPED_COURSES.length) console.log(`Not recorded, on purpose (preview courses; Listen uses the device's voice): ${SKIPPED_COURSES.join(', ')}.`);
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(import.meta.filename)) main();

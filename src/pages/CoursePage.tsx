@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router';
+import { PreviewCourses } from '../app/PreviewCourses';
 import { useFullPageTitle } from '../app/usePageTitle';
 import { Badge, Icon } from '../components/ds';
 import { useCatalog } from '../content/useCatalog';
@@ -126,6 +127,7 @@ export function CoursePage() {
 
   return (
     <div className="tw-course-page">
+      <PreviewCourses current="our-world" />
       <header className="tw-course-intro">
         <span className="eyebrow">{t('pages.course.eyebrow')}</span>
         <h1 className="h1" tabIndex={-1} {...contentLang}>

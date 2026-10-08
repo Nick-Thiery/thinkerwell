@@ -3,7 +3,12 @@ import { LessonPlayerProvider } from '../lesson';
 import { LessonPage } from '../pages/lesson/LessonPage';
 import { NotFoundPage } from '../pages/NotFoundPage';
 import { useContent } from '../content/useContent';
+import { previewCourseOfLesson } from '../content/courses';
+import { previewDoor } from './previewDoor';
 import { resolveLessonRoute } from './lessonRoutes';
+
+// A preview course's lesson ("dw-..."): its own code, only where its preview is on (src/courses/).
+const PreviewLessonRoute = previewDoor((routes) => routes.PreviewLessonRoute);
 
 /**
  * Handles /lesson/:id and /lesson/:id/:stage, including redirects from old
@@ -19,6 +24,7 @@ export function LessonRoute() {
   const { id, stage } = useParams();
   const { search, hash } = useLocation();
   const content = useContent();
+  if (id && previewCourseOfLesson(id)) return <PreviewLessonRoute lessonId={id} stage={stage} />;
   const result = resolveLessonRoute(id, stage, content);
 
   switch (result.kind) {

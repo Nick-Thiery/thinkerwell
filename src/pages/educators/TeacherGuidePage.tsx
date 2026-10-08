@@ -46,7 +46,11 @@ export function TeacherGuidePage({ lesson }: { lesson: CourseLesson }) {
 
   return (
     <div className="tw-print-page tw-guide-page">
-      <PrintToolbar backHref={content.educatorsPath(section.id)} backLabel={t('pages.teacherTools.back')} />
+      {content.educatorsPath ? (
+        <PrintToolbar backHref={content.educatorsPath(section.id)} backLabel={t('pages.teacherTools.back')} />
+      ) : (
+        <PrintToolbar backHref={content.coursePath(section.id)} backLabel={t('lessonPlayer.complete.backToCourse')} />
+      )}
       <div className="tw-guide-actions tw-no-print">
         <Button variant="secondary" icon="Eye" href={`${lessonPath(lesson.id)}?preview=true`}>
           {t('pages.teacherGuide.previewLesson')}

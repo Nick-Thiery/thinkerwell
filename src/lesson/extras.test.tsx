@@ -44,7 +44,6 @@ describe('useLessonContent', () => {
         hasSectionChecks: false,
         sectionLook: () => ({ tone: 'civics', icon: 'Info' }),
         coursePath: () => '/course/made-up-course',
-        educatorsPath: () => '/course/made-up-course',
       },
     );
     const wrapper = ({ children }: { children: ReactNode }) => <CourseContentProvider value={course}>{children}</CourseContentProvider>;
@@ -61,7 +60,7 @@ describe('Our World’s course details', () => {
     expect(englishContent.hasSectionChecks).toBe(true);
     expect(englishContent.coursePath()).toBe('/course');
     expect(englishContent.coursePath('history')).toBe('/course#history');
-    expect(englishContent.educatorsPath('civics')).toBe('/educators?section=civics');
+    expect(englishContent.educatorsPath?.('civics')).toBe('/educators?section=civics');
     expect(englishContent.sectionLook('geography')).toEqual({ tone: 'geography', icon: 'Map' });
   });
 });

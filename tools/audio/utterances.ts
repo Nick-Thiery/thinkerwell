@@ -1,7 +1,11 @@
 // What Listen reads, as the app splits it: every reading section of every
-// lesson, in each lessons' language (English, and each ready language whose
-// lessons are translated) and both reading levels, plus the Settings sample
-// sentence. Used by `npm run audio:generate` (to record it) and
+// Our World lesson, in each lessons' language (English, and each ready
+// language whose lessons are translated) and both reading levels, plus the
+// Settings sample sentence. Preview courses (Digital World, in
+// content/courses/, src/content/courses.ts) are skipped on purpose: they are
+// drafts with no recordings yet, so Listen reads them with the device's own
+// voice, and their text can change without failing check:audio
+// (SKIPPED_COURSES). Used by `npm run audio:generate` (to record it) and
 // `npm run check:audio` (to find recordings that no longer match).
 //
 // Nothing here splits text itself: the lessons are read and checked the way
@@ -15,12 +19,16 @@ import { textHash, piecesHash } from '../../src/audio/textHash.ts';
 import { parseContentFile } from '../../src/content/load.ts';
 import type { Lesson } from '../../src/content/schema.ts';
 import { applyTranslation } from '../../src/content/translation.ts';
+import { PREVIEW_COURSES } from '../../src/content/courses.ts';
 import { LOCALES } from '../../src/i18n/locales.ts';
 import { LISTEN_SAMPLES } from '../../src/speech/sampleText.ts';
 import { listenPieces, sentenceRanges, visibleSectionText } from '../../src/speech/sentences.ts';
 import { NORMALISER_VERSION, speechInput } from './normalise.ts';
 
 export const ROOT = path.resolve(import.meta.dirname, '..', '..');
+
+/** Courses with no recordings, on purpose: the preview courses (drafts). Listen uses the device's voice for them. */
+export const SKIPPED_COURSES: readonly string[] = PREVIEW_COURSES.map((course) => course.id);
 
 /** What follows a piece in the recording: a heading's silence, a paragraph's, a sentence's, or the end. */
 export type PieceGap = 'heading' | 'paragraph' | 'sentence' | 'end';

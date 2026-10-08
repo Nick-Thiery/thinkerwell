@@ -9,3 +9,14 @@ declare module 'virtual:tw-pseudo-locale/*' {
   /** How the language changes a formatted date or list. */
   export function decorate(text: string): string;
 }
+
+// A preview course's own interface words (its group of en.json, id.json and
+// the rest, by language code), made by the course messages plugin in
+// vite.config.ts and loaded only with the course's code (src/courses/).
+declare module 'virtual:thinkerwell/course-messages/*' {
+  interface CourseMessageTree {
+    [key: string]: string | CourseMessageTree;
+  }
+  const words: Record<string, CourseMessageTree>;
+  export default words;
+}

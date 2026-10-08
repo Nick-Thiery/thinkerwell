@@ -7,6 +7,15 @@ import { VitePWA } from 'vite-plugin-pwa';
 import { lazyChunkFor } from './src/app/lazy/firstPage.ts';
 import { LESSON_CATALOG_FIELDS } from './src/content/catalogFields.ts';
 import { COURSES, DEFAULT_COURSE_ID } from './src/content/courses.ts';
+import {
+  COURSE_MESSAGES_ID,
+  COURSE_MESSAGES_PREFIX,
+  PREVIEW_ASSET_DIR,
+  PREVIEW_PRECACHE_IGNORES,
+  isPreviewModule,
+  previewAssetFileName,
+  previewChunkFileName,
+} from './src/courses/build.ts';
 import { checkTranslation, loadContent, loadCourse, loadQuizzes, parseContentFile, type ContentFileKind } from './src/content/load.ts';
 import type { Lesson, QuizFile } from './src/content/schema.ts';
 import {
@@ -235,6 +244,14 @@ function keepFirstVisitLight(): Plugin {
         }
         const dev = ids.find((id) => /[\\/]src[\\/]dev[\\/]/.test(id));
         if (dev) this.error(`A dev-only page is in the production build (${chunk.fileName}, from ${dev}).`);
+        // A preview course (src/content/courses.ts) is only for devices that turned it on:
+        // its code, lessons and words, and the door to it, stay in assets/preview/, which nothing precaches.
+        const preview = ids.find((id) => isPreviewModule(id));
+        if (preview && (!chunk.fileName.startsWith(PREVIEW_ASSET_DIR) || firstVisit.has(chunk.fileName))) {
+          this.error(
+            `A preview course's module is in ${chunk.fileName} (from ${preview}), which ${firstVisit.has(chunk.fileName) ? 'a first visit downloads' : 'every device stores offline'}. Import src/courses/ only with import(): src/app/previewDoor.tsx and src/app/PreviewCourses.tsx (src/courses/build.ts).`,
+          );
+        }
       }
       const map = Object.keys(bundle).find((fileName) => fileName.endsWith('.map'));
       if (map) this.error(`A source map is in the production build (${map}).`);
@@ -246,6 +263,11 @@ function keepFirstVisitLight(): Plugin {
         if (/vazirmatn/i.test(String(output.source))) {
           this.error(
             `The Arabic font is in the site's stylesheet (${output.fileName}). Import src/i18n/fonts/arabic.css only with ?url (src/i18n/fonts/index.ts).`,
+          );
+        }
+        if (!output.fileName.startsWith(PREVIEW_ASSET_DIR) && /\.tw-dw-/.test(String(output.source))) {
+          this.error(
+            `A preview course's styles are in the site's stylesheet (${output.fileName}). Import its CSS only with ?url (src/courses/digital-world/stylesheet.ts).`,
           );
         }
       }
@@ -280,7 +302,9 @@ function preloadFirstPage(): Plugin {
       const firstVisit = new Set(chunks.filter((chunk) => chunk.isEntry).flatMap((chunk) => [...closure(chunk.fileName)]));
       const files: Record<string, string[]> = {};
       for (const name of ['lessonPages', 'teacherPages', 'morePages']) {
-        const chunk = chunks.find((c) => c.isDynamicEntry && c.facadeModuleId?.replace(/\\/g, '/').endsWith(`/src/app/lazy/${name}.ts`));
+        // The chunk that holds the page module. A preview course imports these chunks too
+        // (src/courses/digital-world/index.tsx), so the module may not be the chunk's facade.
+        const chunk = chunks.find((c) => (c.moduleIds ?? Object.keys(c.modules)).some((id) => id.replace(/\\/g, '/').endsWith(`/src/app/lazy/${name}.ts`)));
         if (!chunk) this.error(`No chunk for src/app/lazy/${name}.ts`);
         files[name] = [...closure(chunk.fileName)].filter((file) => !firstVisit.has(file)).map((file) => `/${file}`);
       }
@@ -329,6 +353,10 @@ function stripTeamOnlyLessonFields(): Plugin {
  * search titles (useFullPageTitle). en.json is in the first chunk, so this
  * keeps about half a kilobyte off every first visit. The files themselves
  * are untouched, and tests and check:i18n read them whole.
+ *
+ * It also leaves out each preview course's own words (`digitalWorld`, its
+ * `messages` in src/content/courses.ts): they reach the browser only with
+ * the course's code, through courseMessages() below.
  */
 function stripBuildOnlyMessages(): Plugin {
   return {
@@ -337,13 +365,52 @@ function stripBuildOnlyMessages(): Plugin {
     enforce: 'pre',
     transform(code, id) {
       if (!/[\\/]src[\\/]i18n[\\/]messages[\\/](?!.*\.notes\.json$)[^\\/]+\.json$/.test(id)) return null;
-      const messages = JSON.parse(code) as { seo?: Record<string, unknown> };
-      if (!messages.seo) return null;
-      for (const [key, value] of Object.entries(messages.seo)) {
+      const messages = JSON.parse(code) as { seo?: Record<string, unknown> } & Record<string, unknown>;
+      for (const [key, value] of Object.entries(messages.seo ?? {})) {
         if (value && typeof value === 'object') delete (value as Record<string, unknown>).description;
-        else if (key === 'lessonDescription' || key === 'imageAlt') delete messages.seo[key];
+        else if (key === 'lessonDescription' || key === 'imageAlt') delete messages.seo![key];
       }
+      // A preview course's own words go with its code instead (courseMessages below).
+      for (const course of COURSES) if (course.messages) delete messages[course.messages];
       return { code: JSON.stringify(messages), map: null };
+    },
+  };
+}
+
+/**
+ * A preview course's own interface words (src/content/courses.ts,
+ * `messages`): the top-level group of that name in every message file
+ * (en.json, id.json, ...), which stripBuildOnlyMessages() leaves out of the
+ * app's messages. The course's code imports
+ * virtual:thinkerwell/course-messages/<id> (src/courses/<id>/i18n.tsx), so
+ * the words load with it, only on a device that has turned the preview on,
+ * and never reach a first visit or the precache. In the dev server and in
+ * tests the app's messages still have them too.
+ */
+function courseMessages(): Plugin {
+  let root = process.cwd();
+  return {
+    name: 'thinkerwell:course-messages',
+    configResolved(config) {
+      root = config.root;
+    },
+    resolveId(id) {
+      if (!id.startsWith(COURSE_MESSAGES_PREFIX)) return null;
+      const course = COURSES.find((c) => c.messages && c.id === id.slice(COURSE_MESSAGES_PREFIX.length));
+      return course ? `${COURSE_MESSAGES_ID}${course.id}` : null;
+    },
+    load(id) {
+      if (!id.startsWith(COURSE_MESSAGES_ID)) return null;
+      const group = COURSES.find((c) => c.id === id.slice(COURSE_MESSAGES_ID.length))?.messages;
+      if (!group) return null;
+      const words: Record<string, unknown> = {};
+      for (const code of messageFileCodes()) {
+        const file = path.join(root, 'src', 'i18n', 'messages', `${code}.json`);
+        this.addWatchFile(file);
+        const messages = JSON.parse(readFileSync(file, 'utf8')) as Record<string, unknown>;
+        if (messages[group]) words[code] = { [group]: messages[group] };
+      }
+      return `export default ${JSON.stringify(words)};`;
     },
   };
 }
@@ -556,6 +623,8 @@ function offline(): Plugin[] {
         'images/thinkerwell-mascot-yellow-background.png',
         'social-card.png',
         ...languagePrecacheIgnores(messageFileCodes()),
+        // Preview courses: only devices that turned one on load it (src/courses/build.ts).
+        ...PREVIEW_PRECACHE_IGNORES,
       ],
       rollupFormat: 'iife',
       sourcemap: false,
@@ -588,6 +657,7 @@ export default defineConfig({
     lessonCatalog(),
     stripTeamOnlyLessonFields(),
     stripBuildOnlyMessages(),
+    courseMessages(),
     keepZodOutOfTheBrowser(),
     pseudoLocales(),
     keepFirstVisitLight(),
@@ -635,9 +705,10 @@ export default defineConfig({
       output: {
         // Each language (and the Arabic font) in its own folder, so the
         // service worker can leave out those learners can't choose yet
-        // (src/i18n/build.ts).
-        chunkFileNames: (chunk) => languageChunkFileName(chunk.name),
-        assetFileNames: (asset) => languageAssetFileName(asset),
+        // (src/i18n/build.ts), and each preview course in assets/preview/,
+        // which it never stores (src/courses/build.ts).
+        chunkFileNames: (chunk) => previewChunkFileName(chunk) ?? languageChunkFileName(chunk.name),
+        assetFileNames: (asset) => previewAssetFileName(asset) ?? languageAssetFileName(asset),
         // Separate chunks so an app update doesn't re-download the lesson
         // text or the libraries, and vice versa. The pages a first visit
         // to the home page or the course map doesn't show are in chunks of
