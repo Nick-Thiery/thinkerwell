@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 2,
+  "course": {
+    "title": "Digital World",
+    "description": "A free course with 11 lessons about AI and online information: how AI learns, how to check what you see, and how to stay safe.",
+    "totalLessons": 11,
+    "estimatedHours": 7
+  },
+  "sections": [
+    {
+      "id": "how-ai-works",
+      "number": 1,
+      "title": "How AI works",
+      "question": "How does AI learn, and why does it make mistakes?",
+      "description": "Find out what AI is, how it learns from examples, and why missing examples lead to mistakes.",
+      "lessons": [1, 2, 3]
+    },
+    {
+      "id": "check-what-you-see",
+      "number": 2,
+      "title": "Check what you see",
+      "question": "How can I tell if something online is true?",
+      "description": "Look for clues in fake pictures and voices, check a story before you share it, and spot the signs of a scam.",
+      "lessons": [4, 5, 6]
+    },
+    {
+      "id": "use-tools-wisely",
+      "number": 3,
+      "title": "Use tools wisely",
+      "question": "How can I use online tools safely and well?",
+      "description": "Keep private things private, ask an AI tool good questions and check its answers, and read numbers with care.",
+      "lessons": [7, 8, 9]
+    },
+    {
+      "id": "ai-where-you-live",
+      "number": 4,
+      "title": "AI where you live",
+      "question": "How could AI help, or harm, a community?",
+      "description": "Weigh the helps and risks of AI tools in a community, then plan an AI helper of your own.",
+      "lessons": [10, 11]
+    }
+  ],
+  "practiceOptions": [
+    "I practised with a partner",
+    "I practised in a group",
+    "I practised on my own",
+    "I practised another way (quietly, with sign, or in writing)"
+  ],
+  "fictionLabel": "Fictional example created for this lesson."
+}

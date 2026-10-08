@@ -6,7 +6,8 @@ import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 import { lazyChunkFor } from './src/app/lazy/firstPage.ts';
 import { LESSON_CATALOG_FIELDS } from './src/content/catalogFields.ts';
-import { checkTranslation, loadContent, loadQuizzes, parseContentFile, type ContentFileKind } from './src/content/load.ts';
+import { COURSES, DEFAULT_COURSE_ID } from './src/content/courses.ts';
+import { checkTranslation, loadContent, loadCourse, loadQuizzes, parseContentFile, type ContentFileKind } from './src/content/load.ts';
 import type { Lesson, QuizFile } from './src/content/schema.ts';
 import {
   LANGUAGE_MODULE,
@@ -20,14 +21,20 @@ import { PSEUDO_TRANSFORMS, pseudoMessages } from './src/i18n/pseudo.ts';
 import { pageHead, seoPages, shellHead, sitemapXml, withHead, type SeoInput, type SeoLesson } from './src/seo/build.ts';
 import { SHELL_FILE } from './src/seo/site.ts';
 
-/** Which kind of content file a module is, from its path, or null for anything else. */
-function contentKind(id: string): ContentFileKind | null {
+/**
+ * Which kind of content file a module is, and which course's
+ * (src/content/courses.ts), from its path, or null for anything else.
+ * Our World's files are in content/; another course's in content/courses/<id>/.
+ */
+function contentKind(id: string): { kind: ContentFileKind; course: string } | null {
   // An id with a query (?raw, ?url) isn't the JSON module itself.
   if (id.includes('?')) return null;
   const file = id.replace(/\\/g, '/');
-  if (/\/content\/course\.json$/.test(file)) return 'course';
-  if (/\/content\/lessons\/[^/]+\.json$/.test(file)) return 'lesson';
-  if (/\/content\/quizzes\/[^/]+\.json$/.test(file)) return 'quiz';
+  if (/\/content\/course\.json$/.test(file)) return { kind: 'course', course: DEFAULT_COURSE_ID };
+  if (/\/content\/lessons\/[^/]+\.json$/.test(file)) return { kind: 'lesson', course: DEFAULT_COURSE_ID };
+  if (/\/content\/quizzes\/[^/]+\.json$/.test(file)) return { kind: 'quiz', course: DEFAULT_COURSE_ID };
+  const other = /\/content\/courses\/([^/]+)\/(course\.json|lessons\/[^/]+\.json)$/.exec(file);
+  if (other) return { kind: other[2] === 'course.json' ? 'course' : 'lesson', course: other[1]! };
   return null;
 }
 
@@ -83,16 +90,26 @@ function checkContent(): Plugin {
             },
           );
         }
+        // Every other course (content/courses/<id>/): its own schemas, the
+        // same checks, and each lesson's activity. A preview course's
+        // pictures may not be drawn yet (src/content/load.ts, loadCourse).
+        for (const course of COURSES.filter((c) => c.dir)) {
+          const lessons = readAll(`${course.dir}/lessons`);
+          const raw = JSON.parse(readFileSync(path.join(dir(course.dir), 'course.json'), 'utf8')) as unknown;
+          const pictureDir = dir(`${course.dir}/visuals`);
+          const pictures = existsSync(pictureDir) ? readdirSync(pictureDir).filter((name) => name.endsWith('.svg')).map((name) => `visuals/${name}`) : [];
+          loadCourse(course.id, raw, lessons, { pictures: new Set(pictures), picturesRequired: !course.preview });
+        }
       } catch (error) {
         this.error(`The content has problems:\n${error instanceof Error ? error.message : String(error)}`);
       }
     },
     transform(code, id) {
-      const kind = contentKind(id);
-      if (!kind) return null;
+      const found = contentKind(id);
+      if (!found) return null;
       const file = path.relative(root, id).replace(/\\/g, '/');
       try {
-        return { code: JSON.stringify(parseContentFile(kind, JSON.parse(code), file)), map: null };
+        return { code: JSON.stringify(parseContentFile(found.kind, JSON.parse(code), file, found.course)), map: null };
       } catch (error) {
         this.error(error instanceof Error ? error.message : String(error));
       }

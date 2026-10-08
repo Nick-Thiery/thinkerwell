@@ -1,6 +1,6 @@
 /**
  * The "train a tiny model" activity's data, read from the draft lesson
- * (drafts/digital-world/DW02.json, `activity`), so the prototype and the
+ * (content/courses/digital-world/lessons/DW02.json, `activity`), so the prototype and the
  * draft can't drift apart. Dev only: the drafts are never part of the
  * production build (src/dev never is; see src/app/routes.tsx).
  *
@@ -8,7 +8,7 @@
  * the multi-course support in docs/content/DIGITAL_WORLD_SPEC.md section 9,
  * and is checked by the content schema instead of the narrowing below.
  */
-import dw02 from '../../../drafts/digital-world/DW02.json';
+import dw02 from '../../../content/courses/digital-world/lessons/DW02.json';
 
 export const LEAF_LABELS = ['healthy', 'sick'] as const;
 export type LeafLabel = (typeof LEAF_LABELS)[number];

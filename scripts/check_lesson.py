@@ -4,6 +4,14 @@
 Usage: check_lesson.py L01.json [L02.json ...]
 Prints ERROR / WARN lines per lesson, reading stats, and (for several files)
 a summary of where the correct answer sits.
+
+Our World's lessons are in content/lessons/. Another course's are in
+content/courses/<id>/lessons/ (src/content/courses.ts): their sections come
+from that course's own course.json, they have no Base44 original (oldId is
+null), and a lesson may have an activity (docs/content/DIGITAL_WORLD_SPEC.md
+section 5.2). Its learner-facing words are held to the same level and
+house style as the rest of the lesson, and a train-model activity's rounds
+must give the results the lesson expects.
 """
 import json, re, sys, os
 from collections import Counter
@@ -80,12 +88,125 @@ def learner_strings(L):
     return out
 
 
+def course_of(path):
+    """(course id, its section ids) for a lesson file: Our World's, or another course's from its course.json."""
+    full = os.path.abspath(path).replace(os.sep, "/")
+    m = re.search(r"/content/courses/([^/]+)/lessons/[^/]+$", full)
+    if not m:
+        return None, SECTIONS
+    course_file = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(path))), "course.json")
+    try:
+        sections = {s["id"] for s in json.load(open(course_file))["sections"]}
+    except Exception:
+        sections = set()
+    return m.group(1), sections
+
+
+def activity_strings(a):
+    """Everything a learner reads in an activity (docs/content/DIGITAL_WORLD_SPEC.md 5.2), as (where, text)."""
+    out = [("activity title", a.get("title", "")), ("activity instructions", a.get("instructions", ""))]
+    t = a.get("type")
+
+    def question(where, q):
+        out.append((where, q.get("question", "")))
+        for o in q.get("options") or []:
+            out.append((where + " option", o.get("text", "")))
+            out.append((where + " feedback", o.get("feedback", "")))
+
+    if t == "sort":
+        out += [("group", g.get("label", "")) for g in a.get("groups") or []]
+        for i in a.get("items") or []:
+            out += [("item", i.get("text", "")), ("item feedback", i.get("feedback", ""))]
+    elif t == "train-model":
+        out += [("label", l.get("label", "")) for l in a.get("labels") or []]
+        for f in a.get("features") or []:
+            out += [("feature", f.get("label", "")), ("feature scale", f.get("scale", ""))]
+        out += [("card", c.get("description", "")) for c in (a.get("examples") or []) + (a.get("tests") or [])]
+        for r in a.get("rounds") or []:
+            out += [("round title", r.get("title", "")), ("round debrief", r.get("debrief", ""))]
+    elif t == "compare-results":
+        out.append(("measure", a.get("measure", "")))
+        out += [("group", g.get("label", "")) for g in a.get("groups") or []]
+        question("afterTap", a.get("afterTap") or {})
+    elif t == "check-claim":
+        c = a.get("claim") or {}
+        out += [("claim from", c.get("from", "")), ("claim", c.get("text", ""))]
+        out += [("askFirst", q) for q in a.get("askFirst") or []]
+        for so in a.get("sources") or []:
+            out += [("source", so.get("name", "")), ("source who", so.get("who", "")), ("source says", so.get("says", ""))]
+        question("question", a.get("question") or {})
+    elif t == "spot-signs":
+        out += [("sign", g.get("label", "")) for g in a.get("signs") or []]
+        out.append(("notASign", a.get("notASign", "")))
+        for m in a.get("messages") or []:
+            out.append(("message from", m.get("from", "")))
+            for p in m.get("parts") or []:
+                out += [("message part", p.get("text", "")), ("part feedback", p.get("feedback", "") or "")]
+    elif t == "ask-tool":
+        out.append(("toolLabel", a.get("toolLabel", "")))
+        im = a.get("improve") or {}
+        st = im.get("start") or {}
+        out += [("prompt", st.get("prompt", "")), ("tool answer", st.get("answer", "")), ("improve question", im.get("question", ""))]
+        for o in im.get("options") or []:
+            out += [("prompt", o.get("prompt", "")), ("tool answer", o.get("answer", "")), ("improve feedback", o.get("feedback", ""))]
+        ch = a.get("check") or {}
+        ts = ch.get("trustedSource") or {}
+        out += [("prompt", ch.get("prompt", "")), ("tool answer", ch.get("answer", "")), ("source", ts.get("name", "")), ("source says", ts.get("says", ""))]
+        question("check", ch)
+    elif t == "chart-check":
+        out.append(("measure", a.get("measure", "")))
+        out += [("bar", b.get("label", "")) for b in a.get("bars") or []]
+        for v in a.get("views") or []:
+            out += [("view", v.get("label", "")), ("view note", v.get("note", ""))]
+        question("question", a.get("question") or {})
+    elif t == "design-plan":
+        out += [("problem", p.get("text", "")) for p in a.get("problems") or []]
+        for st in a.get("steps") or []:
+            out += [("step title", st.get("title", "")), ("step prompt", st.get("prompt", "")), ("starter", st.get("starter", "") or "")]
+            for o in st.get("options") or []:
+                out += [("step option", o.get("text", "")), ("step feedback", o.get("feedback", ""))]
+            out += [("step question", q) for q in st.get("questions") or []]
+    return [(w, x) for w, x in out if x]
+
+
+def train_model_errors(a):
+    """Each round's expected result against a nearest-neighbour model (k = 1, ties to the example added first)."""
+    errs = []
+    examples = {c["id"]: c for c in a.get("examples") or []}
+    tests = {c["id"]: c for c in a.get("tests") or []}
+    added = []
+    for r in a.get("rounds") or []:
+        added += [examples[i] for i in r.get("addExamples") or [] if i in examples]
+        if not added:
+            errs.append(f'activity round "{r.get("id")}" has no examples to learn from')
+            continue
+        wrong = []
+        for tid in r.get("test") or []:
+            t = tests.get(tid)
+            if not t:
+                errs.append(f'activity round "{r.get("id")}" tests "{tid}", which is not a test leaf')
+                continue
+            best = None
+            for e in added:
+                d = sum((x - y) ** 2 for x, y in zip(t["features"], e["features"])) ** 0.5
+                if best is None or d < best[0]:
+                    best = (d, e)
+            if best[1]["gardenerSays"] != t["gardenerSays"]:
+                wrong.append(tid)
+        exp = r.get("expectedIfLabelledLikeTheGardener") or {}
+        n = len(r.get("test") or [])
+        if exp.get("of") != n or exp.get("right") != n - len(wrong) or exp.get("wrong") != wrong:
+            errs.append(f'activity round "{r.get("id")}" expects {exp.get("right")} of {exp.get("of")}, but the model gets {n - len(wrong)} of {n} (wrong: {", ".join(wrong) or "none"})')
+    return errs
+
+
 def check(path):
     errs, warns, stats = [], [], {}
     try:
         L = json.load(open(path))
     except Exception as e:
         return [f"invalid JSON: {e}"], [], {}, None
+    course, sections = course_of(path)
 
     def need(obj, key, where):
         if not isinstance(obj, dict) or key not in obj or obj[key] in (None, "", []):
@@ -93,10 +214,18 @@ def check(path):
             return False
         return True
 
-    for k in ["id", "oldId", "number", "section", "title", "essentialQuestion", "learningGoal",
+    for k in ["id", "number", "section", "title", "essentialQuestion", "learningGoal",
               "warmUp", "evidence", "read", "write", "speak", "watch", "reflect", "sources",
               "changes"]:
         need(L, k, "")
+    if course is None:
+        need(L, "oldId", "")
+    elif "oldId" not in L or L["oldId"] is not None:
+        errs.append(f"oldId must be null: {course} lessons have no Base44 original")
+    if course is not None and "activity" in L and not isinstance(L["activity"], dict):
+        errs.append("activity must be an object (docs/content/DIGITAL_WORLD_SPEC.md 5.2)")
+    if course is None and "activity" in L:
+        errs.append("activity: Our World lessons have none")
     # Notes for teachers: sensitive topics in sensitiveNotes, everything else
     # in educatorNotes. Either list may be empty, but not both.
     for k in ("sensitiveNotes", "educatorNotes"):
@@ -109,8 +238,8 @@ def check(path):
         warns.append(f"notes for teachers: aim for 1–4 in all, found {len(notes)}")
     if "visual" not in L:
         errs.append("missing visual (use null only if a picture would not help)")
-    if L.get("section") not in SECTIONS:
-        errs.append(f"section must be one of {sorted(SECTIONS)}")
+    if L.get("section") not in sections:
+        errs.append(f"section must be one of {sorted(sections)}")
     if "nextLesson" in L:
         warns.append("nextLesson is derived automatically now; remove it")
 
@@ -297,7 +426,14 @@ def check(path):
         warns.append("sources: aim for 2–4")
 
     # learner-facing strings level
-    for where, s in learner_strings(L):
+    act = L.get("activity") if isinstance(L.get("activity"), dict) else None
+    act_strings = activity_strings(act) if act else []
+    if act:
+        g_a = fk("\n".join(x for _, x in act_strings))[0]
+        stats["activity_grade"] = g_a
+        if act.get("type") == "train-model":
+            errs += train_model_errors(act)
+    for where, s in learner_strings(L) + act_strings:
         if len(words(s)) >= 12:
             g = fk(s)[0]
             if g > 5.5:
@@ -308,6 +444,7 @@ def check(path):
     blob_parts += wr.get("sentenceStarters") or []
     blob_parts += [sp.get("partnerTask", ""), sp.get("independentTask", "")]
     blob_parts += [g.get("definition", "") + " " + g.get("example", "") for g in gl]
+    blob_parts += [x for _, x in act_strings]
     blob = "\n".join(blob_parts)
     for pat in SENSITIVE:
         m = re.search(pat, blob, re.I)
@@ -333,7 +470,8 @@ def main(paths):
         if stats:
             print(f"   text {stats.get('text_words')}w grade {stats.get('text_grade')} avg {stats.get('text_avg')} | "
                   f"simpler {stats.get('simple_words')}w grade {stats.get('simple_grade')} avg {stats.get('simple_avg')} longest {stats.get('simple_longest')} | "
-                  f"correct at {[x + 1 for x in stats.get('correct_positions', [])]}")
+                  f"correct at {[x + 1 for x in stats.get('correct_positions', [])]}"
+                  + (f" | activity grade {stats['activity_grade']}" if "activity_grade" in stats else ""))
             all_pos += stats.get("correct_positions", [])
             all_long += stats.get("longest_is_correct", 0)
         for e in errs:

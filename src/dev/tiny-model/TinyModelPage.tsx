@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Badge, Button, Icon, SegmentedControl, TaskCard } from '../../components/ds';
 import { ACTIVITY, examplesUpTo, testById, type LeafCard, type LeafLabel } from './activity';
 import { LeafPicture } from './LeafPicture';
-import { test as runTest, train, type TestRun } from './model';
+import { test as runTest, train, type TestRun } from '../../courses/digital-world/activities/train-model/model';
 import { TEXT } from './text';
 import '../dev.css';
 import './tinyModel.css';
