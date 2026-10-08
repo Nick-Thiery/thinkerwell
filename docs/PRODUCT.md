@@ -165,6 +165,7 @@ From the team's Google SEO brief (`docs/notes/seo.md`):
 - **Sitemap and robots.txt:** `sitemap.xml` lists only the public pages, and `robots.txt` points to it.
 - **Redirects:** `/about/` goes to `/about`, and thinkerwell.vercel.app and www.thinkerwell.app go to thinkerwell.app.
 - **Structured data:** the home page has WebSite and Organization data, with the LinkedIn Page and nothing more.
+- **Favicon:** the mascot on a transparent square (`/icons/favicon-96.png`, `/favicon.ico`), because Google Search shows only square favicons (8 October 2026, Justin's request).
 - **LinkedIn:** the footer links Thinkerwell's LinkedIn Page ("Thinkerwell on LinkedIn", a new tab). Its address is the Page's clean address, https://www.linkedin.com/company/thinkerwell/.
 - **Not done:**
   - Prerendering page text, which would show English for a moment to Indonesian learners.

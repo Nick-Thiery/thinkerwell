@@ -98,6 +98,21 @@ test.describe('raw HTML @own-size', () => {
     }
   });
 
+  test('every public page links the square favicon, and the site serves it and /favicon.ico', async ({ request }) => {
+    for (const page of pages) {
+      const html = await (await request.get(page.path)).text();
+      expect(attr(html, /<link rel="icon"[^>]*href="([^"]+)"/), page.path).toBe('/icons/favicon-96.png');
+    }
+    const icon = await request.get('/icons/favicon-96.png');
+    expect(icon.status()).toBe(200);
+    expect(icon.headers()['content-type']).toBe('image/png');
+    const bytes = await icon.body();
+    expect([bytes.readUInt32BE(16), bytes.readUInt32BE(20)]).toEqual([96, 96]);
+    const ico = await request.get('/favicon.ico');
+    expect(ico.status()).toBe(200);
+    expect((await ico.body()).readUInt16LE(2)).toBe(1);
+  });
+
   test('robots.txt allows crawling and points to the sitemap', async ({ request }) => {
     const response = await request.get('/robots.txt');
     expect(response.status()).toBe(200);

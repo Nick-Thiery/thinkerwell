@@ -27,6 +27,15 @@ pixels are exactly the same, only the file is smaller (about 15%).
   screens) are the transparent mascot, whole and unchanged, scaled onto a
   lemon square, as in thinkerwell-mascot-yellow-background.png. The
   maskable one leaves room for Android to cut it into a circle.
+- The favicon (the icon in browser tabs and beside the site in Google
+  Search) is the transparent mascot, whole and unchanged, centred on a
+  transparent square: Google Search shows only square favicons, and the
+  mascot is 422 x 423 (docs/notes/seo.md). public/favicon.ico holds it at
+  16, 32 and 48px, for anything that asks for /favicon.ico by default;
+  public/icons/favicon-96.png is the one index.html links: a multiple of
+  48px and larger than 48px, as Google recommends, and small (about 2 kB),
+  because every first visit fetches it. Neither is precached: browsers
+  keep their own copy of a site's icon.
 - The link-sharing picture (social-card.png, 1200 x 630, drawn by
   scripts/make_social_card.mjs) goes to public/social-card.png as a
   256-colour PNG. index.html points the Open Graph and Twitter tags at it.
@@ -62,6 +71,8 @@ APP_ICONS = {
     "icon-maskable-512.png": (512, 330),
     "apple-touch-icon.png": (180, 150),
 }
+FAVICON_PNG = ("favicon-96.png", 96)
+FAVICON_ICO_SIZES = [(16, 16), (32, 32), (48, 48)]
 
 
 def lossless(dest: Path) -> None:
@@ -105,6 +116,28 @@ def app_icon(src: Path, dest: Path, size: int, mascot_height: int) -> None:
     lossless(dest)
 
 
+def square_mascot(src: Path) -> Image.Image:
+    """The mascot, whole and unchanged, centred on a transparent square as wide as its longer side."""
+    mascot = Image.open(src).convert("RGBA")
+    side = max(mascot.size)
+    square = Image.new("RGBA", (side, side), (0, 0, 0, 0))
+    square.alpha_composite(mascot, ((side - mascot.width) // 2, (side - mascot.height) // 2))
+    return square
+
+
+def favicons(src: Path) -> None:
+    square = square_mascot(src)
+    name, size = FAVICON_PNG
+    dest = ICONS_OUT / name
+    square.resize((size, size), Image.Resampling.LANCZOS).quantize(256, method=Image.Quantize.FASTOCTREE).save(dest, optimize=True)
+    lossless(dest)
+    print(f"icons/{name}: {size} x {size}, {dest.stat().st_size / 1024:.1f} kB")
+    ico = ROOT / "public" / "favicon.ico"
+    # Pillow scales the square down to each size (LANCZOS) and stores them all in one file.
+    square.save(ico, sizes=FAVICON_ICO_SIZES)
+    print(f"favicon.ico: {', '.join(f'{w}' for w, _ in FAVICON_ICO_SIZES)}px, {ico.stat().st_size / 1024:.1f} kB")
+
+
 def main() -> int:
     OUT.mkdir(parents=True, exist_ok=True)
     jobs = (
@@ -129,6 +162,7 @@ def main() -> int:
         dest = ICONS_OUT / name
         app_icon(SOURCE / "thinkerwell-mascot-transparent.png", dest, size, mascot_height)
         print(f"icons/{name}: {size} x {size}, {dest.stat().st_size / 1024:.1f} kB")
+    favicons(SOURCE / "thinkerwell-mascot-transparent.png")
     return 0
 
 
