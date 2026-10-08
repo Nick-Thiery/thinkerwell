@@ -154,6 +154,28 @@
   }
 }
 
+/* A long button label ("Go on to “Round 2: more, different examples”")
+   wraps rather than running past a phone's edge. */
+.tw-dw-activity .tw-btn {
+  max-inline-size: 100%;
+  padding-block: var(--space-2);
+  white-space: normal;
+  text-align: center;
+}
+
+/* A question inside an activity is a box in a box: on a phone it gives its
+   answers more of the width, and an answer's "Correct" goes onto a line of
+   its own when the answer's words need the room. */
+@media (max-width: 600px) {
+  .tw-dw-activity .tw-question {
+    padding: var(--space-4);
+  }
+}
+
+.tw-dw-activity .tw-option {
+  flex-wrap: wrap;
+}
+
 .tw-dw-activity-head {
   display: flex;
   flex-direction: column;

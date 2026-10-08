@@ -18,6 +18,33 @@ async function turnOn(page: Page) {
 
 const banner = (page: Page) => page.getByText('Draft course: not yet reviewed', { exact: true });
 
+/**
+ * What runs past the window's right edge or is cut off inside its own box
+ * (a button whose label doesn't fit), even where a parent hides it from
+ * the page's own sideways scroll.
+ */
+async function cutOff(page: Page): Promise<string[]> {
+  return page.evaluate(() => {
+    const width = document.documentElement.clientWidth;
+    // A wide table in a box that scrolls sideways on its own (as Our World's evidence tables do) is meant to.
+    const inScroller = (el: HTMLElement) => {
+      for (let up = el.parentElement; up && up.tagName !== 'MAIN'; up = up.parentElement) {
+        if (/auto|scroll/.test(getComputedStyle(up).overflowX)) return true;
+      }
+      return false;
+    };
+    return [...document.querySelectorAll<HTMLElement>('main *')]
+      .filter((el) => {
+        const box = el.getBoundingClientRect();
+        if (box.width === 0 || box.height === 0 || inScroller(el)) return false;
+        // Glossary words in a sentence wrap with it, so they're left out, as in Our World's lessons.
+        return box.right > width + 0.5 || (el.matches('button:not(.tw-term), a') && el.clientWidth > 0 && el.scrollWidth > el.clientWidth + 1);
+      })
+      .map((el) => `${el.tagName.toLowerCase()}.${el.getAttribute('class') ?? ''} "${el.textContent?.trim().slice(0, 40)}"`)
+      .slice(0, 5);
+  });
+}
+
 test.describe('with the preview off', () => {
   test('nothing about Digital World appears, and nothing of it is downloaded', async ({ page, request }) => {
     const urls = recordRequests(page);
@@ -148,6 +175,7 @@ test.describe('with the preview on', () => {
     await label('Brown leaf with spots', 'Sick');
     await train.click();
     await expect(score).toHaveText('The model got 4 of 6 right.');
+    expect(await cutOff(page)).toEqual([]);
     await expect(page.locator(':focus')).toHaveText("The model's guesses");
 
     await page.getByRole('button', { name: 'Go on to “Round 2: more, different examples”' }).click();
@@ -240,11 +268,18 @@ test.describe('every page and activity', { tag: '@own-size' }, () => {
         const closed = page.locator('.tw-dw-page-button[aria-expanded="false"], .tw-dw-tm-numbers:not([open]) > summary');
         for (let opened = 0; opened < 20 && (await closed.count()) > 0; opened++) await closed.first().click();
         expect(await horizontalOverflow(page), `${path} at ${width}px`).toBeLessThanOrEqual(0);
+        expect(await cutOff(page), `${path} at ${width}px`).toEqual([]);
         const results = await new AxeBuilder({ page }).withTags(TAGS).analyze();
         expect(
           results.violations.map((v) => `${v.id}: ${v.nodes.map((n) => n.target.join(' ')).slice(0, 3).join(' | ')}`),
           `${path} at ${width}px`,
         ).toEqual([]);
+        // An answered question shows more ("Correct", what most people say): it fits too.
+        const answer = page.locator('.tw-dw-activity').getByRole('radio').first();
+        if (await answer.count()) {
+          await answer.check();
+          expect(await cutOff(page), `${path} at ${width}px, answered`).toEqual([]);
+        }
       }
     }
   });
