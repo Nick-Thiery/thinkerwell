@@ -1,0 +1,1105 @@
+/*
+ * Digital World (a preview course): its own stylesheet, loaded with a
+ * <link> only when its code loads (./stylesheet.ts), never in the site's
+ * stylesheet or the offline copy. Every class starts "tw-dw-"; the build
+ * stops if one reaches the site's stylesheet (vite.config.ts).
+ *
+ * Colours come from the design tokens: no red anywhere ("Not quite" is the
+ * design system's burnt orange), lemon only for the screen's one highlight.
+ */
+
+/* ------------------------------------------------------------ the frame */
+
+.tw-dw-banner {
+  margin-block-end: var(--space-6);
+}
+
+@media (max-width: 599px) {
+  .tw-dw-banner .tw-status {
+    flex-wrap: wrap;
+  }
+
+  .tw-dw-banner .tw-status-text {
+    flex: 1 1 calc(100% - 40px);
+  }
+}
+
+.tw-dw-sheet-note {
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-md);
+}
+
+/* The course choice: Our World first, then Digital World. */
+.tw-dw-choice {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* On the home page it sits above the greeting. */
+.tw-home-root > .tw-dw-choice {
+  margin-block-end: var(--space-6);
+}
+
+.tw-dw-choice-label {
+  color: var(--ink-muted);
+}
+
+.tw-dw-choice-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tw-dw-choice-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: var(--target-min);
+  padding-block: var(--space-2);
+  padding-inline: var(--space-3) var(--space-4);
+  border: 2px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  text-decoration: none;
+}
+
+.tw-dw-choice-link:hover {
+  border-color: var(--ink);
+}
+
+.tw-dw-choice-link[aria-current='page'] {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--on-ink);
+}
+
+.tw-dw-choice-link[aria-current='page'] .tw-badge {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* --------------------------------------------------------- course pages */
+
+.tw-dw-map .tw-course-sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.tw-dw-reviewers {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: var(--lavender-wash);
+}
+
+.tw-dw-reviewers h2,
+.tw-dw-reviewers p {
+  margin: 0;
+}
+
+.tw-dw-guides {
+  display: grid;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tw-dw-guide-link {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: var(--target-min);
+  color: var(--violet);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.tw-dw-switch .h1 {
+  margin: 0;
+}
+
+/* ----------------------------------------------------------- activities */
+
+.tw-dw-activity {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-inline-size: 0;
+  padding: var(--space-4);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-xl);
+  background: var(--paper);
+}
+
+@media (min-width: 700px) {
+  .tw-dw-activity {
+    padding: var(--space-6);
+  }
+}
+
+/* A long button label ("Go on to “Round 2: more, different examples”")
+   wraps rather than running past a phone's edge. */
+.tw-dw-activity .tw-btn {
+  max-inline-size: 100%;
+  padding-block: var(--space-2);
+  white-space: normal;
+  text-align: center;
+}
+
+/* A question inside an activity is a box in a box: on a phone it gives its
+   answers more of the width, and an answer's "Correct" goes onto a line of
+   its own when the answer's words need the room. */
+@media (max-width: 600px) {
+  .tw-dw-activity .tw-question {
+    padding: var(--space-4);
+  }
+}
+
+.tw-dw-activity .tw-option {
+  flex-wrap: wrap;
+}
+
+.tw-dw-activity-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-dw-activity p,
+.tw-dw-activity h3,
+.tw-dw-activity h4,
+.tw-dw-activity h5 {
+  margin: 0;
+}
+
+.tw-dw-activity-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--violet);
+}
+
+.tw-dw-measure {
+  max-inline-size: var(--reading-measure);
+}
+
+.tw-dw-muted {
+  color: var(--ink-muted);
+}
+
+.tw-dw-pre {
+  white-space: pre-wrap;
+}
+
+.tw-dw-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.tw-dw-actions:empty {
+  display: none;
+}
+
+.tw-dw-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tw-dw-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-inline-size: 0;
+  margin: 0;
+  padding: var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--canvas);
+}
+
+.tw-dw-sort-text {
+  float: none;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  color: var(--ink);
+}
+
+.tw-dw-summary-title {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+/* Choices as real radio buttons, each a 44px target with its words. */
+.tw-dw-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.tw-dw-options-stacked {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.tw-dw-option {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: var(--target-min);
+  box-sizing: border-box;
+  padding-block: var(--space-2);
+  padding-inline: var(--space-3) var(--space-4);
+  border: 2px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  cursor: pointer;
+}
+
+.tw-dw-option input {
+  flex: none;
+  inline-size: 20px;
+  block-size: 20px;
+  margin: 0;
+  accent-color: var(--ink);
+}
+
+.tw-dw-option:hover {
+  border-color: var(--ink);
+}
+
+.tw-dw-option:has(input:checked) {
+  border-color: var(--ink);
+  background: var(--lavender-wash);
+}
+
+.tw-dw-option:has(input:focus-visible) {
+  outline: 3px solid var(--violet);
+  outline-offset: 2px;
+}
+
+.tw-dw-note {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin: 0;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--lavender-wash);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.tw-dw-note .tw-icon {
+  flex: none;
+  margin-block-start: 3px;
+}
+
+.tw-dw-note-sign {
+  border-inline-start: 4px solid var(--ink);
+}
+
+.tw-dw-summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-block-start: var(--space-4);
+  border-block-start: 1px solid var(--line);
+}
+
+.tw-dw-sort-groups {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  margin: 0;
+}
+
+.tw-dw-sort-group {
+  padding: var(--space-3);
+  border: 2px dashed var(--line-strong);
+  border-radius: var(--radius-lg);
+}
+
+.tw-dw-sort-group dt {
+  font-weight: 700;
+}
+
+.tw-dw-sort-group dd {
+  margin: var(--space-1) 0 0;
+}
+
+.tw-dw-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin: 0;
+  padding-inline-start: var(--space-5);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.tw-dw-facts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.tw-dw-facts dt {
+  font-weight: 700;
+}
+
+.tw-dw-facts dd {
+  margin: 0;
+}
+
+/* compare-results: bars with their numbers written beside them. */
+.tw-dw-bars {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-dw-bar-option {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  min-block-size: var(--target-min);
+  padding: var(--space-3);
+  border: 2px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  cursor: pointer;
+}
+
+.tw-dw-bar-option input {
+  inline-size: 20px;
+  block-size: 20px;
+  margin: 0;
+  accent-color: var(--ink);
+}
+
+.tw-dw-bar-option:has(input:checked) {
+  border-color: var(--ink);
+  background: var(--lavender-wash);
+}
+
+.tw-dw-bar-option:has(input:focus-visible) {
+  outline: 3px solid var(--violet);
+  outline-offset: 2px;
+}
+
+.tw-dw-bar-text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-3);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.tw-dw-bar-label {
+  font-weight: 700;
+}
+
+.tw-dw-bar {
+  grid-column: 2;
+  display: block;
+  block-size: 14px;
+  border-radius: var(--radius-pill);
+  background: var(--canvas);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.tw-dw-bar-fill {
+  display: block;
+  block-size: 100%;
+  background: var(--violet);
+}
+
+/* check-claim and ask-tool: a post, made-up pages to open, a chat. */
+.tw-dw-claim,
+.tw-dw-tool,
+.tw-dw-compare,
+.tw-dw-signs,
+.tw-dw-chart,
+.tw-dw-plan,
+.tw-dw-sort {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-inline-size: 0;
+}
+
+.tw-dw-post {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+  padding: var(--space-4);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+}
+
+.tw-dw-post-from {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--ink-muted);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.tw-dw-post-text {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.tw-dw-page {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  overflow: hidden;
+}
+
+.tw-dw-page-open {
+  border-color: var(--ink);
+}
+
+.tw-dw-page-button {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  inline-size: 100%;
+  min-block-size: var(--target-min);
+  padding: var(--space-3);
+  border: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  text-align: start;
+  cursor: pointer;
+}
+
+.tw-dw-page-button:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: -3px;
+}
+
+.tw-dw-page-name {
+  flex: 1 1 auto;
+  min-inline-size: 0;
+}
+
+.tw-dw-page-body {
+  padding: var(--space-4);
+  border-block-start: 1px solid var(--line);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.tw-dw-tool-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border: 2px solid var(--violet);
+  border-radius: var(--radius-lg);
+  background: var(--lavender-wash);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.tw-dw-tool-part {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-block-start: var(--space-4);
+  border-block-start: 1px solid var(--line);
+}
+
+.tw-dw-chat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-dw-chat-you,
+.tw-dw-chat-tool {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  max-inline-size: min(100%, 560px);
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.tw-dw-chat-you {
+  align-self: flex-end;
+  background: var(--ink);
+  color: var(--on-ink);
+}
+
+.tw-dw-chat-you .eyebrow {
+  color: var(--on-ink-muted);
+}
+
+.tw-dw-chat-tool {
+  align-self: flex-start;
+  border: 1px solid var(--line-strong);
+  background: var(--canvas);
+}
+
+.tw-dw-chat-tool .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--ink-muted);
+}
+
+/* spot-signs: every part of a message is a button. */
+.tw-dw-sign-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tw-dw-message {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 2px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+}
+
+.tw-dw-message-from {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  color: var(--ink-muted);
+}
+
+.tw-dw-parts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tw-dw-parts li {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-dw-part {
+  display: block;
+  inline-size: 100%;
+  min-block-size: var(--target-min);
+  padding: var(--space-2) var(--space-3);
+  border: 2px dashed var(--line-strong);
+  border-radius: var(--radius-md);
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 28px;
+  text-align: start;
+  cursor: pointer;
+}
+
+.tw-dw-part:hover {
+  border-color: var(--ink);
+}
+
+.tw-dw-part[aria-pressed='true'] {
+  border-style: solid;
+  border-color: var(--ink);
+  background: var(--paper);
+  box-shadow: inset 4px 0 0 var(--ink);
+}
+
+[dir='rtl'] .tw-dw-part[aria-pressed='true'] {
+  box-shadow: inset -4px 0 0 var(--ink);
+}
+
+.tw-dw-part:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 2px;
+}
+
+/* chart-check: drawn on the device, every bar's number written on it. */
+.tw-dw-chart-figure {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.tw-dw-chart-svg {
+  inline-size: 100%;
+  max-inline-size: 480px;
+  block-size: auto;
+}
+
+.tw-dw-chart-bar {
+  fill: var(--violet);
+}
+
+.tw-dw-chart-line {
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+
+.tw-dw-chart-grid {
+  stroke: var(--line-strong);
+  stroke-dasharray: 4 4;
+}
+
+.tw-dw-chart-value,
+.tw-dw-chart-label,
+.tw-dw-chart-axis {
+  fill: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+}
+
+.tw-dw-chart-value {
+  font-weight: 700;
+}
+
+/* design-plan */
+.tw-dw-plan-step {
+  background: var(--paper);
+}
+
+.tw-dw-plan-choice {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* --------------------------------------------------- train-model (Lesson 2) */
+
+.tw-dw-tm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-inline-size: 0;
+}
+
+/* Rounds (and the design plan's steps): any can be opened at any time. */
+.tw-dw-tm-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tw-dw-tm-step {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: var(--target-min);
+  padding-block: var(--space-1);
+  padding-inline: var(--space-3) var(--space-4);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  text-align: start;
+  cursor: pointer;
+}
+
+.tw-dw-tm-step:hover {
+  border-color: var(--ink);
+}
+
+.tw-dw-tm-step:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 2px;
+}
+
+.tw-dw-tm-step[aria-current='step'] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--on-ink);
+}
+
+.tw-dw-tm-step-num {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  inline-size: 24px;
+  block-size: 24px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid currentColor;
+}
+
+.tw-dw-tm-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-inline-size: 0;
+  padding: var(--space-4);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--line);
+  background: var(--canvas);
+}
+
+/* Groups of example cards. Neutral colours: a label is never right or wrong. */
+.tw-dw-tm-groups {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 760px) {
+  .tw-dw-tm-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.tw-dw-tm-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-inline-size: 0;
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+  border: 2px dashed var(--line-strong);
+  background: var(--paper);
+}
+
+.tw-dw-tm-group[data-group='unsorted'] {
+  border-style: solid;
+  border-color: var(--ink);
+}
+
+.tw-dw-tm-group-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.tw-dw-tm-cards,
+.tw-dw-tm-guesses {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tw-dw-tm-guesses {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+}
+
+.tw-dw-tm-card,
+.tw-dw-tm-guess {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  block-size: 100%;
+  box-sizing: border-box;
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.tw-dw-tm-card-top {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-inline-size: 0;
+}
+
+.tw-dw-tm-leaf {
+  flex: none;
+  border-radius: var(--radius-md);
+  background: var(--lavender-wash);
+}
+
+.tw-dw-tm-card .tw-seg {
+  align-self: stretch;
+}
+
+.tw-dw-tm-card .tw-seg button {
+  flex: 1 1 0;
+  justify-content: center;
+}
+
+.tw-dw-tm-numbers {
+  align-self: stretch;
+}
+
+.tw-dw-tm-numbers summary {
+  display: flex;
+  align-items: center;
+  min-block-size: var(--target-min);
+  color: var(--violet);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tw-dw-tm-numbers dl {
+  display: grid;
+  gap: var(--space-1);
+  margin-block: var(--space-2) 0;
+}
+
+.tw-dw-tm-numbers dl > div,
+.tw-dw-tm-says > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-2);
+}
+
+.tw-dw-tm-numbers dd,
+.tw-dw-tm-says dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.tw-dw-tm-numbers dd .tw-dw-muted {
+  font-weight: 400;
+}
+
+.tw-dw-tm-results {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-block-start: var(--space-4);
+  border-block-start: 1px solid var(--line);
+}
+
+.tw-dw-tm-guess-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.tw-dw-tm-guess[data-right='true'] {
+  border-color: var(--correct);
+}
+
+.tw-dw-tm-guess[data-right='false'] {
+  border-color: var(--retry);
+}
+
+.tw-dw-tm-says {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  align-self: stretch;
+  margin: 0;
+}
+
+.tw-dw-tm-nearest {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  align-self: stretch;
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  background: var(--lavender-wash);
+}
+
+.tw-dw-tm-nearest p {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.tw-dw-tm-nearest-name {
+  font-weight: 700;
+}
+
+.tw-dw-tm-history,
+.tw-dw-tm-how {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.tw-dw-tm-history {
+  padding: 0;
+  list-style: none;
+}
+
+.tw-dw-tm-history li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-block: var(--space-2);
+  border-block-end: 1px solid var(--line);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.tw-dw-tm-history b {
+  white-space: nowrap;
+}
+
+.tw-dw-tm-how {
+  padding-inline-start: var(--space-5);
+}
+
+/* ------------------------------------------------------------- on paper */
+
+.tw-dw-paper-table {
+  inline-size: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.tw-dw-paper-table caption {
+  text-align: start;
+  font-weight: 700;
+  padding-block-end: var(--space-1);
+}
+
+.tw-dw-paper-table th,
+.tw-dw-paper-table td {
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid #666;
+  text-align: start;
+  vertical-align: top;
+}
+
+.tw-dw-paper-card {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid #666;
+  border-radius: var(--radius-md);
+}
+
+.tw-dw-paper-quote {
+  margin: 0;
+  padding-inline-start: var(--space-3);
+  border-inline-start: 3px solid #000;
+}
+
+.tw-dw-paper-charts {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+}
+
+.tw-dw-paper-scales {
+  display: grid;
+  gap: var(--space-1);
+  margin: 0;
+}
+
+.tw-dw-paper-scales dt {
+  font-weight: 700;
+}
+
+.tw-dw-paper-scales dd {
+  margin: 0 0 var(--space-1);
+}
+
+.tw-dw-review-notes {
+  border-block-start: 2px solid #000;
+}
+
+.tw-dw-review-facts dt {
+  font-weight: 700;
+}
+
+.tw-dw-review-facts dd {
+  margin: 0 0 var(--space-2);
+}
+
+/* A wide paper table scrolls on its own on a narrow screen; on paper it fits the page. */
+@media screen and (max-width: 699px) {
+  .tw-dw-paper .tw-print-keep:has(> .tw-dw-paper-table) {
+    overflow-x: auto;
+  }
+}
+
+@media print {
+  .tw-dw-chart-bar {
+    fill: #555;
+  }
+
+  .tw-dw-paper-table th,
+  .tw-dw-paper-table td {
+    border-color: #000;
+  }
+}

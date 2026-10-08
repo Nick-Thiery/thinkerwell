@@ -19,7 +19,10 @@ const SECTION_ICONS: Record<SectionId, IconName> = {
 };
 
 export interface SectionBadgeProps {
+  /** The section's tint (and its icon, unless `icon` says otherwise). */
   section: SectionId;
+  /** Not in the reference: another course's section icon, beside the tint it borrows (src/content/courses.ts). */
+  icon?: IconName;
   number?: number;
   /** The section's name: course text marked with <En>, or a message holding it. The interface's own name when left out. */
   name?: ReactNode;
@@ -31,9 +34,9 @@ export interface SectionBadgeProps {
 }
 
 /** A section's tinted disc and icon, with its number and name (docs/design-system/components/SectionBadge.md). */
-export function SectionBadge({ section, number, name, showName = true, size, className, style }: SectionBadgeProps) {
+export function SectionBadge({ section, icon: iconName, number, name, showName = true, size, className, style }: SectionBadgeProps) {
   const { t } = useI18n();
-  const icon = SECTION_ICONS[section] ?? SECTION_ICONS.history;
+  const icon = iconName ?? SECTION_ICONS[section] ?? SECTION_ICONS.history;
   const discStyle: CSSProperties | undefined = size ? { width: size, height: size } : undefined;
   return (
     <span className={cx('tw-secbadge', className)} style={style}>

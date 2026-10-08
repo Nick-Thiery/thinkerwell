@@ -111,7 +111,12 @@ function makeValue(active: LoadedLocale, dirOverride: Direction | null, offered:
   };
 }
 
-const I18nContext = createContext<I18nContextValue>(makeValue(ENGLISH, null, readyLocales()));
+/**
+ * Exported for a preview course's pages only (src/courses/<id>/i18n.tsx),
+ * which add their own words and mark their English lessons as English;
+ * everything else uses I18nProvider and useI18n().
+ */
+export const I18nContext = createContext<I18nContextValue>(makeValue(ENGLISH, null, readyLocales()));
 
 interface I18nProviderProps {
   /**

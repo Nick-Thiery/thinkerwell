@@ -8,20 +8,40 @@
  */
 // With extensions: vite.config.ts imports this file, and Vite's coming
 // native config loader (Node itself) needs them.
+import { activityProblems } from './activityChecks.ts';
 import { assembleContent, type LoadedContent } from './assemble.ts';
+import { COURSES, DEFAULT_COURSE_ID, type CourseDefinition } from './courses.ts';
 import { ContentError } from './errors.ts';
-import { courseFileSchema, lessonSchema, quizFileSchema, type Lesson, type QuizFile } from './schema.ts';
+import {
+  COURSE_SCHEMAS,
+  quizFileSchema,
+  type AnyCourseFile,
+  type CourseLesson,
+  type CourseSchemaId,
+  type Lesson,
+  type QuizFile,
+} from './schema.ts';
 import { applyTranslation, missingTranslations, translationProblems } from './translation.ts';
 
 export type ContentFileKind = 'course' | 'lesson' | 'quiz';
+
+/** A course's schemas (./schema.ts COURSE_SCHEMAS), or a ContentError for a course with none. */
+function schemasFor(courseId: string, file: string) {
+  const schemas = COURSE_SCHEMAS[courseId as CourseSchemaId] as (typeof COURSE_SCHEMAS)[CourseSchemaId] | undefined;
+  if (!schemas) throw new ContentError(`${file}: there are no schemas for the course "${courseId}" (src/content/schema.ts, COURSE_SCHEMAS).`);
+  return schemas;
+}
 
 /**
  * Parses one content file with its schema and returns the parsed value
  * (zod trims stray spaces from text). Throws a ContentError naming every
  * problem, with `file` (e.g. "content/lessons/L10.json") in each line.
+ * `courseId` picks another course's schemas (src/content/courses.ts):
+ * Digital World's lessons have their own sections and activities.
  */
-export function parseContentFile(kind: ContentFileKind, raw: unknown, file: string): unknown {
-  const schema = kind === 'course' ? courseFileSchema : kind === 'lesson' ? lessonSchema : quizFileSchema;
+export function parseContentFile(kind: ContentFileKind, raw: unknown, file: string, courseId: string = DEFAULT_COURSE_ID): unknown {
+  const schemas = schemasFor(courseId, file);
+  const schema = kind === 'course' ? schemas.course : kind === 'lesson' ? schemas.lesson : quizFileSchema;
   const result = schema.safeParse(raw);
   if (!result.success) throw new ContentError(describeIssues(file, result.error));
   return result.data;
@@ -46,36 +66,88 @@ export function loadContent(
   /** Every valid `visual.src` value (e.g. "visuals/L01.svg"); when given, each lesson's picture must exist here. */
   validVisualSrcs?: ReadonlySet<string>,
 ): LoadedContent {
+  return loadCourseFiles(COURSES[0]!, rawCourse, rawLessons, validVisualSrcs ? { pictures: validVisualSrcs, picturesRequired: true } : {}) as unknown as LoadedContent;
+}
+
+export interface CourseLoadOptions {
+  /** Every picture the course has (e.g. "visuals/L01.svg"), to check each lesson's `visual.src` against. */
+  pictures?: ReadonlySet<string>;
+  /**
+   * True: a lesson whose picture isn't there is a problem (Our World).
+   * False: it is planned and not drawn yet (a draft course says so in
+   * `visual.description`); the lesson shows no picture until it is.
+   */
+  picturesRequired?: boolean;
+}
+
+/**
+ * Parses another course's files (content/courses/<id>/: course.json and
+ * lessons/*.json) with that course's schemas, and checks them against each
+ * other as loadContent() does Our World's, plus: every lesson id starts with
+ * the course's prefix (src/content/courses.ts), and each lesson's activity
+ * passes ./activityChecks.ts. Throws a ContentError listing every problem.
+ */
+export function loadCourse(
+  courseId: string,
+  rawCourse: unknown,
+  rawLessons: Record<string, unknown>,
+  options: CourseLoadOptions = {},
+): LoadedContent<CourseLesson, AnyCourseFile> {
+  const definition = COURSES.find((course) => course.id === courseId);
+  if (!definition) throw new ContentError(`There is no course "${courseId}" in src/content/courses.ts.`);
+  return loadCourseFiles(definition, rawCourse, rawLessons, options);
+}
+
+function loadCourseFiles(
+  definition: CourseDefinition,
+  rawCourse: unknown,
+  rawLessons: Record<string, unknown>,
+  options: CourseLoadOptions,
+): LoadedContent<CourseLesson, AnyCourseFile> {
   const problems: string[] = [];
+  const base = definition.dir ? `content/${definition.dir}/` : 'content/';
+  const schemas = schemasFor(definition.id, `${base}course.json`);
 
-  const courseResult = courseFileSchema.safeParse(rawCourse);
-  if (!courseResult.success) problems.push(describeIssues('content/course.json', courseResult.error));
+  const courseResult = schemas.course.safeParse(rawCourse);
+  if (!courseResult.success) problems.push(describeIssues(`${base}course.json`, courseResult.error));
 
-  const parsed: Lesson[] = [];
+  const parsed: CourseLesson[] = [];
   for (const [path, raw] of Object.entries(rawLessons).sort(([a], [b]) => a.localeCompare(b))) {
     const file = path.replace(/^.*content\//, 'content/');
-    const result = lessonSchema.safeParse(raw);
-    if (result.success) parsed.push(result.data);
-    else problems.push(describeIssues(file, result.error));
+    const result = schemas.lesson.safeParse(raw);
+    if (result.success) {
+      const lesson = result.data as CourseLesson;
+      parsed.push(lesson);
+      if (lesson.activity) problems.push(...activityProblems(lesson.activity, `${file}: activity`));
+    } else problems.push(describeIssues(file, result.error));
   }
 
   if (!courseResult.success || problems.length > 0) throw new ContentError(problems.join('\n'));
-  const course = courseResult.data;
+  const course = courseResult.data as AnyCourseFile;
 
   const sections = [...course.sections].sort((a, b) => a.number - b.number);
-  const byNumber = new Map<number, Lesson>();
+  const byNumber = new Map<number, CourseLesson>();
   const seenIds = new Set<string>();
   const seenOldIds = new Set<string>();
+  // Every other course's lesson prefix: no lesson here may start with one (its address would go to that course).
+  const otherPrefixes = COURSES.filter((other) => other !== definition && other.lessonIdPrefix).map((other) => other.lessonIdPrefix);
 
   for (const lesson of parsed) {
     if (byNumber.has(lesson.number)) problems.push(`Two lessons have number ${lesson.number}.`);
     byNumber.set(lesson.number, lesson);
     if (seenIds.has(lesson.id)) problems.push(`Two lessons have id "${lesson.id}".`);
     seenIds.add(lesson.id);
-    if (seenOldIds.has(lesson.oldId)) problems.push(`Two lessons have oldId "${lesson.oldId}".`);
-    seenOldIds.add(lesson.oldId);
-    if (validVisualSrcs && lesson.visual && !validVisualSrcs.has(lesson.visual.src)) {
-      problems.push(`Lesson ${lesson.number} (${lesson.id}) has visual.src "${lesson.visual.src}", but no such file exists in content/visuals/.`);
+    if (definition.lessonIdPrefix && !lesson.id.startsWith(definition.lessonIdPrefix)) {
+      problems.push(`Lesson ${lesson.number} (${lesson.id}) needs an id starting "${definition.lessonIdPrefix}", like every lesson in ${base}.`);
+    }
+    const clash = otherPrefixes.find((prefix) => lesson.id.startsWith(prefix));
+    if (clash) problems.push(`Lesson ${lesson.number} (${lesson.id}) starts with "${clash}", another course's lesson prefix (src/content/courses.ts).`);
+    if (lesson.oldId !== null) {
+      if (seenOldIds.has(lesson.oldId)) problems.push(`Two lessons have oldId "${lesson.oldId}".`);
+      seenOldIds.add(lesson.oldId);
+    }
+    if (options.pictures && options.picturesRequired && lesson.visual && !options.pictures.has(lesson.visual.src)) {
+      problems.push(`Lesson ${lesson.number} (${lesson.id}) has visual.src "${lesson.visual.src}", but no such file exists in ${base}visuals/.`);
     }
   }
   for (const oldId of seenOldIds) {
@@ -85,7 +157,7 @@ export function loadContent(
   const sectionIds = new Set<string>();
   const sectionNumbers = new Set<number>();
   const listed = new Set<number>();
-  const lessons: Lesson[] = [];
+  const lessons: CourseLesson[] = [];
   for (const section of sections) {
     if (sectionIds.has(section.id)) problems.push(`Two sections have id "${section.id}".`);
     sectionIds.add(section.id);
@@ -106,15 +178,15 @@ export function loadContent(
     }
   }
   for (const n of byNumber.keys()) {
-    if (!listed.has(n)) problems.push(`Lesson ${n} is not listed in any section of course.json.`);
+    if (!listed.has(n)) problems.push(`Lesson ${n} is not listed in any section of ${base}course.json.`);
   }
   if (course.course.totalLessons !== parsed.length) {
-    problems.push(`course.json says totalLessons is ${course.course.totalLessons}, but there are ${parsed.length} lesson files.`);
+    problems.push(`${base}course.json says totalLessons is ${course.course.totalLessons}, but there are ${parsed.length} lesson files.`);
   }
 
   if (problems.length > 0) throw new ContentError(problems.join('\n'));
   // The same order the app puts them in (./assemble.ts), which lessons[] above already follows.
-  return assembleContent(course, lessons);
+  return assembleContent<CourseLesson, AnyCourseFile>(course, lessons);
 }
 
 /**

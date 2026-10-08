@@ -1384,5 +1384,164 @@
       "getCourseCertificate": "Ambil sertifikat kursusmu",
       "getSectionCertificate": "Ambil sertifikat bagianmu"
     }
+  },
+  "digitalWorld": {
+    "activity": {
+      "eyebrow": "Kegiatan",
+      "guideTitle": "Kegiatannya",
+      "guideIntro": "Yang dikerjakan pelajar di perangkat, dengan apa yang akan dikatakan kebanyakan orang dan jawabannya. Kelas juga bisa mengerjakannya di kertas dari tampilan cetak."
+    },
+    "banner": {
+      "title": "Kursus draf: belum ditinjau",
+      "body": "Digital World masih berupa draf. Seorang peneliti AI dan sebuah organisasi mitra masih perlu memeriksanya. Hanya perangkat ini yang menampilkannya.",
+      "bodyEnglishLessons": "Digital World masih berupa draf. Seorang peneliti AI dan sebuah organisasi mitra masih perlu memeriksanya. Hanya perangkat ini yang menampilkannya. Untuk saat ini, pelajarannya masih dalam bahasa Inggris.",
+      "turnOff": "Matikan pratinjau"
+    },
+    "sheet": {
+      "draft": "Digital World, kursus draf: belum ditinjau. Jangan dipakai dengan pelajar dulu."
+    },
+    "choice": {
+      "label": "Kursus di perangkat ini",
+      "draft": "Draf"
+    },
+    "chart": {
+      "viewsLabel": "Grafik yang mana",
+      "bar": "{label}: {value}",
+      "figureLabel": "Grafik batang. {measure}. {bars}. Skalanya dari {start} sampai {end}."
+    },
+    "claim": {
+      "askFirst": "Tanyakan ini dulu",
+      "opened": "Sudah dibuka",
+      "openedCount": "Sumber yang sudah dibuka: {count} dari {total}",
+      "postFrom": "Unggahan dari {from}",
+      "says": "Apa katanya",
+      "who": "Siapa di baliknya",
+      "sourcesTitle": "Sumber lain: buka dengan urutan apa saja"
+    },
+    "compare": {
+      "value": "{right} dari {of} benar",
+      "mostMistakes": "Alat itu paling banyak salah untuk {group}.",
+      "notMost": "Alat itu lebih baik untuk {group}. Cari kelompok yang paling sedikit benar.",
+      "paperAnswer": "Kelompok dengan kesalahan paling banyak:"
+    },
+    "map": {
+      "noChecks": "Draf ini belum punya cek bagian atau sertifikat.",
+      "forTeachersTitle": "Untuk guru dan peninjau",
+      "forTeachersBody": "Setiap pelajaran punya panduan guru berisi catatan, jawaban, kegiatan versi kertas, dan catatan untuk peninjau. Anda juga bisa mencetak seluruh kursus.",
+      "printAll": "Cetak semua pelajaran",
+      "guideLink": "Panduan guru, Pelajaran {number}: {title}"
+    },
+    "plan": {
+      "answerLabel": "Jawabanmu",
+      "back": "Kembali",
+      "next": "Langkah berikutnya",
+      "helperSaving": "Rencanamu disimpan di perangkat ini.",
+      "helperLookAround": "Kamu sedang lihat-lihat, jadi rencanamu tidak disimpan.",
+      "helperNoLearner": "Belum ada yang dipilih, jadi rencanamu tidak disimpan.",
+      "notYet": "Belum dijawab",
+      "ownHelp": "Jangan tulis nama asli atau informasi pribadi siapa pun.",
+      "ownLabel": "Masalahmu",
+      "problemHelp": "Pilih masalah dari pelajaran, atau tulis masalah yang dialami banyak orang di komunitas yang kamu kenal.",
+      "problemTitle": "Masalahnya",
+      "stepAnswered": "Sudah dijawab",
+      "stepOf": "Langkah {n} dari {total}",
+      "stepsLabel": "Langkah",
+      "useStarter": "Pakai awal kalimat",
+      "yourPlan": "Rencanamu"
+    },
+    "printAll": {
+      "back": "Kembali ke Digital World",
+      "intro": "Semua pelajaran Digital World, satu per satu. Setiap pelajaran mulai di halaman baru. Cetak, atau simpan sebagai PDF.",
+      "pageTitle": "Digital World: semua pelajaran"
+    },
+    "reviewer": {
+      "title": "Untuk peninjau",
+      "intro": "Catatan dari penulis draf ini: apa yang baru dan apa yang perlu diperiksa. Pelajar tidak pernah melihatnya.",
+      "pictureTitle": "Gambar yang masih perlu dibuat",
+      "activityTitle": "Tentang kegiatannya",
+      "saves": "Apa yang disimpan",
+      "offline": "Cara kerjanya tanpa internet"
+    },
+    "signs": {
+      "keyTitle": "Tanda bahaya yang perlu dicari",
+      "showAll": "Tampilkan semua tanda"
+    },
+    "sort": {
+      "empty": "Belum ada apa-apa di sini.",
+      "mostPeople": "Kebanyakan orang akan bilang: {group}.",
+      "notPlaced": "Belum ditempatkan: {count}",
+      "yourGroups": "Kelompokmu"
+    },
+    "switch": {
+      "pageTitle": "Pratinjau Digital World",
+      "onTitle": "Pratinjau Digital World menyala",
+      "onBody": "Perangkat ini sekarang menampilkan Digital World, kursus draf tentang AI dan informasi online. Tidak ada orang lain yang melihatnya, dan tidak ada apa pun tentangnya yang dikirim ke mana pun. Pratinjau tetap menyala sampai Anda mematikannya.",
+      "reviewNote": "Kursus ini belum ditinjau. Seorang peneliti AI masih perlu memeriksa faktanya, dan sebuah organisasi mitra memeriksa topik-topik sensitifnya. Jangan dipakai dengan pelajar dulu.",
+      "noStorage": "Browser ini tidak bisa menyimpan pengaturan di sini, jadi pratinjau hanya menyala sampai Anda menutup halaman ini.",
+      "open": "Buka Digital World",
+      "printAll": "Cetak semua pelajaran",
+      "turnOff": "Matikan pratinjau",
+      "offTitle": "Pratinjau Digital World mati",
+      "offBody": "Perangkat ini tidak lagi menampilkan Digital World.",
+      "turnOn": "Nyalakan lagi",
+      "goTo": "Buka {title}",
+      "saveFailed": "Perangkat ini tidak bisa menyimpannya. Pengaturan ini berlaku sampai Anda menutup halaman ini."
+    },
+    "tool": {
+      "badge": "Alat pura-pura",
+      "improveTitle": "Ajukan pertanyaan yang lebih baik",
+      "checkTitle": "Periksa sebuah jawaban",
+      "youAsk": "Kamu bertanya",
+      "toolSays": "Alat pura-pura menjawab",
+      "paperAnswers": "Jawaban alat pura-pura untuk setiap perintah:"
+    },
+    "trainModel": {
+      "changed": "Contohmu berubah. Latih modelnya lagi untuk melihat tebakan barunya.",
+      "freePlayIntro": "Keluarkan contoh, atau ubah labelnya, lalu latih modelnya lagi. Model mengikuti labelmu, walaupun berbeda dengan label tukang kebun.",
+      "freePlayTitle": "Coba sendiri",
+      "gardenerSays": "Kata tukang kebun",
+      "groupCount": { "other": "{count} contoh" },
+      "groupEmpty": "Belum ada contoh di sini.",
+      "groupTitle": "Contoh {label}",
+      "historyNone": "Belum ada hasil. Latih modelnya untuk melihat hasilnya.",
+      "historyScore": "{right} dari {of}",
+      "historyTitle": "Hasil sejauh ini",
+      "how1": "Model menyimpan setiap contoh yang kamu berikan, dengan labelmu.",
+      "how2": "Untuk daun baru, model mencari contoh dengan angka yang paling dekat.",
+      "how3": "Model memberi daun baru itu label dari contoh tersebut. Ini disebut model tetangga terdekat.",
+      "howTitle": "Cara kerja model ini",
+      "labelFor": "Label untuk: {description}",
+      "learnedFrom": { "other": "Model belajar dari {count} contoh." },
+      "lookedLike": "Daun itu paling mirip dengan contoh ini, jadi model bilang “{label}”.",
+      "modelSaid": "Kata model",
+      "newExamples": { "other": "Ada {count} contoh baru. Beri setiap contoh label, lalu contoh itu pindah ke kelompok tersebut." },
+      "next": "Lanjut ke “{title}”",
+      "noNewExamples": "Kali ini tidak ada contoh baru. Uji model dengan daun dari tanaman baru.",
+      "notQuite": "Belum tepat",
+      "notUsedHelp": "Model tidak belajar dari contoh ini. Beri salah satunya label untuk memakainya lagi.",
+      "notUsedTitle": "Tidak dipakai",
+      "numbersIntro": { "other": "Model tidak melihat gambarnya. Model melihat {count} angka dari 0 sampai 10:" },
+      "numbersSummary": "Yang dilihat model",
+      "paperCard": "Daun",
+      "paperExamples": "Contoh yang perlu diberi label",
+      "paperExpected": "Kalau diberi label seperti tukang kebun, model benar {right} dari {of}.",
+      "paperTests": "Daun baru untuk diuji",
+      "paperYourLabel": "Labelmu",
+      "resultsTitle": "Tebakan model",
+      "right": "Benar",
+      "roundsLabel": "Putaran",
+      "score": "Model benar {right} dari {of}.",
+      "startAgain": "Mulai lagi",
+      "stepOf": "Langkah {n} dari {total}",
+      "takeOut": "Keluarkan",
+      "takeOutFor": "Keluarkan: {description}",
+      "testNewPlant": "Uji daun-daun baru",
+      "toSortHelp": "Beri setiap daun label. Daun itu pindah ke kelompok tersebut.",
+      "toSortTitle": "Untuk dipilah",
+      "train": "Latih modelnya",
+      "trainHelpEmpty": "Beri label pada minimal satu daun untuk melatih model.",
+      "trainHelpSort": { "other": "Pilah {count} daun lagi untuk melatih model." },
+      "yourLabelsDiffer": "Beberapa labelmu berbeda dengan label tukang kebun. Model mempelajari labelmu, jadi tebakannya mengikuti labelmu."
+    }
   }
 }

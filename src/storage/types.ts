@@ -115,6 +115,22 @@ export interface WatchProgress {
   readInstead: boolean;
 }
 
+/**
+ * A lesson's hands-on activity (a Digital World lesson,
+ * docs/content/DIGITAL_WORLD_SPEC.md 5.2): what the learner chose or wrote,
+ * keyed by the activity's own ids, and what they opened or finished. Only
+ * a lesson with an activity has it. Optional, so records saved before it
+ * existed, and every Our World lesson, need no migration (DB_VERSION is
+ * unchanged). Work files leave it out: ./workFile.ts keeps only the fields
+ * it knows, and no Digital World lesson moves between devices yet.
+ */
+export interface ActivityProgress {
+  /** A choice (a group id, an option's index) or a piece of writing, by item, question or step id. */
+  answers: Record<string, string>;
+  /** Ids of what was opened, tapped or finished (sources, chart views, message parts, rounds), once each, in order. */
+  seen: string[];
+}
+
 /** One learner's work on one lesson. */
 export interface LessonProgress {
   learnerId: string;
@@ -135,6 +151,8 @@ export interface LessonProgress {
   updatedAt: string;
   /** Set when the required reflect prompt is answered. */
   completedAt: string | null;
+  /** The lesson's activity, if it has one and the learner has started it. */
+  activity?: ActivityProgress;
 }
 
 /** One go at a section check. */
@@ -239,6 +257,14 @@ export interface DeviceSettings {
    * from getSettings(), so it needs no migration.
    */
   language: string | null;
+  /**
+   * Preview courses this device shows (src/content/courses.ts): a draft
+   * course is hidden everywhere until someone visits its hidden address
+   * (/preview/digital-world), and again once they turn it off. Missing or
+   * empty for every other device; records saved before it existed need no
+   * migration.
+   */
+  previewCourses?: string[];
 }
 
 export const DEFAULT_SETTINGS: DeviceSettings = {

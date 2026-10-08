@@ -21,6 +21,7 @@ import { useCallback, useLayoutEffect, useRef, useState, type SyntheticEvent } f
 import { Button, Chip, Icon, MascotTip, SegmentedControl, TaskCard, WritingBox } from '../../../components/ds';
 import { En, useI18n } from '../../../i18n';
 import { hasText, LESSON_PHONE_QUERY, useLessonPlayer, useMediaQuery } from '../../../lesson';
+import { LessonSlot } from '../../../lesson/extras';
 import type { LessonProgress, WritingProgress } from '../../../storage';
 import { LessonEvidence } from '../evidence/LessonEvidence';
 import { SayItBox, useSayIt } from '../sayIt';
@@ -124,6 +125,8 @@ export function WriteStage() {
 
   return (
     <>
+      {/* A course's own activity, where its lesson file puts it (src/lesson/extras.tsx); nothing in Our World. */}
+      <LessonSlot name="write:before-prompt" />
       <TaskCard>
         <En>{write.prompt}</En>
       </TaskCard>

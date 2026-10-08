@@ -12,12 +12,13 @@
  * teacher reads them before planning the session.
  */
 import { Fragment, type ReactNode } from 'react';
-import { educatorsPath, lessonPath, lessonPrintPath } from '../../app/lessonUrls';
+import { lessonPath, lessonPrintPath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
 import { Button, Icon } from '../../components/ds';
-import { type Lesson, type ThinkCheck } from '../../content';
-import { useContent } from '../../content/useContent';
+import { type CourseLesson, type ThinkCheck } from '../../content';
+import { useLessonContent } from '../../content/useContent';
 import { En, useI18n } from '../../i18n';
+import { LessonSlot } from '../../lesson/extras';
 import { formatDuration } from '../../lesson/format';
 import { LessonEvidence } from '../lesson/evidence/LessonEvidence';
 import { feedbackWithoutVerdict } from '../lesson/read/feedbackText';
@@ -32,11 +33,11 @@ export function youtubeWatchUrl(youtubeId: string): string {
   return `https://www.youtube.com/watch?v=${encodeURIComponent(youtubeId)}`;
 }
 
-export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
+export function TeacherGuidePage({ lesson }: { lesson: CourseLesson }) {
   // Everything from the lesson file is course text, marked as English (`en`).
   // en: course text (translated with the lessons); alwaysEn: the video's title and channel, English in every language.
   const { t, tx, formatNumber, contentLang: en, englishLang: alwaysEn, contentLocale } = useI18n();
-  const content = useContent();
+  const content = useLessonContent();
   usePageTitle(t('pages.teacherGuide.pageTitle', { number: lesson.number }));
   const section = content.getLessonSection(lesson);
   const [min, max] = lesson.estimatedMinutes;
@@ -45,7 +46,11 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
 
   return (
     <div className="tw-print-page tw-guide-page">
-      <PrintToolbar backHref={educatorsPath(section.id)} backLabel={t('pages.teacherTools.back')} />
+      {content.educatorsPath ? (
+        <PrintToolbar backHref={content.educatorsPath(section.id)} backLabel={t('pages.teacherTools.back')} />
+      ) : (
+        <PrintToolbar backHref={content.coursePath(section.id)} backLabel={t('lessonPlayer.complete.backToCourse')} />
+      )}
       <div className="tw-guide-actions tw-no-print">
         <Button variant="secondary" icon="Eye" href={`${lessonPath(lesson.id)}?preview=true`}>
           {t('pages.teacherGuide.previewLesson')}
@@ -59,6 +64,7 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
       <article className="tw-print-sheet tw-guide" aria-labelledby="guide-title">
         <header className="tw-print-head">
           <p className="tw-print-brand">{t('print.brand')}</p>
+          <LessonSlot name="sheet:top" />
           <p className="tw-print-eyebrow">{t('pages.teacherGuide.eyebrow', { number: lesson.number })}</p>
           <h1 id="guide-title" className="tw-print-title" tabIndex={-1} {...en}>
             {lesson.title}
@@ -106,6 +112,7 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
           <h2>{t('pages.teacherGuide.evidenceTitle')}</h2>
           <LessonEvidence evidence={lesson.evidence} visual={lesson.visual} />
         </section>
+        <LessonSlot name="guide:after-evidence" />
 
         <section className="tw-print-part">
           <h2>{t('pages.teacherGuide.checkTitle')}</h2>
@@ -282,13 +289,14 @@ export function TeacherGuidePage({ lesson }: { lesson: Lesson }) {
             </ul>
           </section>
         ) : null}
+        <LessonSlot name="guide:end" />
       </article>
     </div>
   );
 }
 
 /** The notes for teachers: sensitive topics first, in a marked box, then the rest. */
-function BeforeYouTeach({ lesson }: { lesson: Lesson }) {
+function BeforeYouTeach({ lesson }: { lesson: CourseLesson }) {
   // Course text: translated with the lessons (Indonesian), else English.
   const { t, contentLang } = useI18n();
   const { sensitiveNotes, educatorNotes } = lesson;
@@ -330,7 +338,7 @@ function BeforeYouTeach({ lesson }: { lesson: Lesson }) {
 }
 
 /** The suggested plan for about 45 minutes (./sessionPlan.ts), with a 30-minute column and a note on shortening it. */
-function SessionPlan({ lesson }: { lesson: Lesson }) {
+function SessionPlan({ lesson }: { lesson: CourseLesson }) {
   const { t, formatNumber } = useI18n();
   const doText = (step: (typeof SESSION_PLAN)[number]['step']): string => {
     switch (step) {

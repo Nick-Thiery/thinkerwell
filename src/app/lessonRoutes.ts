@@ -1,4 +1,4 @@
-import { englishContent, isLessonStep, type Content, type Lesson, type LessonStep } from '../content';
+import { englishContent, isLessonStep, type CourseLesson, type LessonContent, type LessonStep } from '../content';
 import { lessonPath, lessonPrintPath, teacherGuidePath } from './lessonUrls';
 
 // What the lesson pages' addresses resolve to. These need the lessons
@@ -6,7 +6,7 @@ import { lessonPath, lessonPrintPath, teacherGuidePath } from './lessonUrls';
 // routes use them; the links (./lessonUrls.ts) need no lesson at all.
 
 export type LessonRouteResult =
-  | { kind: 'show'; lesson: Lesson; step: LessonStep }
+  | { kind: 'show'; lesson: CourseLesson; step: LessonStep }
   | { kind: 'redirect'; to: string }
   | { kind: 'not-found' };
 
@@ -21,7 +21,7 @@ export type LessonRouteResult =
 export function resolveLessonRoute(
   id: string | undefined,
   stage: string | undefined,
-  content: Content = englishContent,
+  content: LessonContent = englishContent,
 ): LessonRouteResult {
   if (!id) return { kind: 'not-found' };
   const step = stage?.toLowerCase();
@@ -44,7 +44,7 @@ export function resolveLessonRoute(
  * redirect an old Base44 id (or a different case) to the new one, or not
  * found.
  */
-export function resolveLessonPrintRoute(id: string | undefined, content: Content = englishContent): LessonPageRouteResult {
+export function resolveLessonPrintRoute(id: string | undefined, content: LessonContent = englishContent): LessonPageRouteResult {
   return resolveLessonPage(id, lessonPrintPath, content);
 }
 
@@ -53,17 +53,17 @@ export function resolveLessonPrintRoute(id: string | undefined, content: Content
  * the print view: show it, redirect an old Base44 id (or a different case)
  * to the new one, or not found.
  */
-export function resolveTeacherGuideRoute(id: string | undefined, content: Content = englishContent): LessonPageRouteResult {
+export function resolveTeacherGuideRoute(id: string | undefined, content: LessonContent = englishContent): LessonPageRouteResult {
   return resolveLessonPage(id, teacherGuidePath, content);
 }
 
-export type LessonPageRouteResult = { kind: 'show'; lesson: Lesson } | { kind: 'redirect'; to: string } | { kind: 'not-found' };
+export type LessonPageRouteResult = { kind: 'show'; lesson: CourseLesson } | { kind: 'redirect'; to: string } | { kind: 'not-found' };
 
 /** A page about one whole lesson (its print view or teacher guide), found by its id or its old Base44 id. */
 function resolveLessonPage(
   id: string | undefined,
   pathFor: (lessonId: string) => string,
-  content: Content,
+  content: LessonContent,
 ): LessonPageRouteResult {
   if (!id) return { kind: 'not-found' };
   const lesson = content.getLesson(id);

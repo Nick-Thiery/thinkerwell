@@ -2,7 +2,8 @@ import type { ComponentType } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { useFullPageTitle } from '../../app/usePageTitle';
 import { Icon, StagePath, StatusBanner } from '../../components/ds';
-import { isStageId, type Lesson, type StageId } from '../../content';
+import { isStageId, type CourseLesson, type StageId } from '../../content';
+import { useLessonContent } from '../../content/useContent';
 import { En, useI18n } from '../../i18n';
 import {
   LESSON_PHONE_QUERY,
@@ -114,17 +115,18 @@ export function LessonPage() {
   );
 }
 
-function LessonIntro({ lesson }: { lesson: Lesson }) {
+function LessonIntro({ lesson }: { lesson: CourseLesson }) {
   const { t, contentLang } = useI18n();
   const { section } = useLessonPlayer();
+  const content = useLessonContent();
   return (
     <div className="tw-lesson-intro">
-      <Link to={`/course#${section.id}`} className="tw-lesson-back">
+      <Link to={content.coursePath(section.id)} className="tw-lesson-back">
         <Icon name="ArrowLeft" size={18} />
         <En>{section.title}</En>
       </Link>
       <div className="tw-lesson-titles">
-        <span className={`eyebrow tw-lesson-number tw-lesson-number-${section.id}`}>
+        <span className={`eyebrow tw-lesson-number tw-lesson-number-${content.sectionLook(section.id).tone}`}>
           {t('lesson.number', { number: lesson.number })}
         </span>
         <h1 className="tw-lesson-title" tabIndex={-1} {...contentLang}>
@@ -138,7 +140,7 @@ function LessonIntro({ lesson }: { lesson: Lesson }) {
   );
 }
 
-function LessonGoal({ lesson }: { lesson: Lesson }) {
+function LessonGoal({ lesson }: { lesson: CourseLesson }) {
   const { t, contentLang } = useI18n();
   const [min, max] = lesson.estimatedMinutes;
   return (

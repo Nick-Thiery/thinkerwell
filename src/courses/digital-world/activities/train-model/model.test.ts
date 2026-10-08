@@ -1,5 +1,16 @@
-import { ACTIVITY, examplesUpTo, testById } from './activity';
+import dw02 from '../../../../../content/courses/digital-world/lessons/DW02.json';
+import { parseContentFile } from '../../../../content/load';
+import type { DigitalWorldLesson, TrainModelActivity } from '../../../../content/schema';
 import { distance, predict, test as runTest, train, type LabelledExample } from './model';
+
+// The lesson as the build checks it (zod is fine in tests; never in the browser).
+const lesson = parseContentFile('lesson', dw02, 'content/courses/digital-world/lessons/DW02.json', 'digital-world') as DigitalWorldLesson;
+if (lesson.activity?.type !== 'train-model') throw new Error('DW02 has no train-model activity');
+const ACTIVITY: TrainModelActivity = lesson.activity;
+const exampleById = (id: string) => ACTIVITY.examples.find((e) => e.id === id)!;
+const testById = (id: string) => ACTIVITY.tests.find((t) => t.id === id)!;
+/** The examples a round has, counting those added in earlier rounds, in the order they were added. */
+const examplesUpTo = (roundIndex: number) => ACTIVITY.rounds.slice(0, roundIndex + 1).flatMap((r) => r.addExamples.map(exampleById));
 
 describe('distance', () => {
   it('is the straight-line distance over the numbers', () => {
@@ -50,15 +61,21 @@ describe('DW02 rounds, labelled like the gardener', () => {
       model,
       round.test.map(testById).map((t) => ({ id: t.id, features: t.features, answer: t.gardenerSays })),
     );
+    const expected = round.expectedIfLabelledLikeTheGardener;
     expect({ right: run.right, of: run.of, wrong: run.wrong }).toEqual({
-      right: round.expected.right,
-      of: round.expected.of,
-      wrong: [...round.expected.wrong],
+      right: expected.right,
+      of: expected.of,
+      wrong: [...expected.wrong],
     });
   });
 
   it('matches the worked numbers in the spec', () => {
-    expect(ACTIVITY.rounds.map((r) => `${r.expected.right}/${r.expected.of}`)).toEqual(['4/6', '6/6', '0/2', '8/8']);
+    expect(ACTIVITY.rounds.map((r) => `${r.expectedIfLabelledLikeTheGardener.right}/${r.expectedIfLabelledLikeTheGardener.of}`)).toEqual([
+      '4/6',
+      '6/6',
+      '0/2',
+      '8/8',
+    ]);
   });
 
   it('follows the learner when a label differs from the gardener', () => {
@@ -66,7 +83,7 @@ describe('DW02 rounds, labelled like the gardener', () => {
     const swapped = examplesUpTo(0).map((e) => ({
       id: e.id,
       features: e.features,
-      label: e.gardenerSays === 'healthy' ? ('sick' as const) : ('healthy' as const),
+      label: e.gardenerSays === 'healthy' ? 'sick' : 'healthy',
     }));
     const model = train(swapped);
     const t1 = testById('t1');

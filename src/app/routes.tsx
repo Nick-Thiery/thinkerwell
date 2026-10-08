@@ -6,12 +6,15 @@ import { NotFoundPage } from '../pages/NotFoundPage';
 import { RouteErrorPage } from '../pages/RouteErrorPage';
 import { AppLayout } from './AppLayout';
 import { lazyPage as page } from './lazyPage';
+import { loadPreviewDoor } from './previewDoor';
 
 // Three chunks rather than one per page: fewer files to fetch and keep,
 // and they compress better together.
 const lessonPages = () => import('./lazy/lessonPages');
 const teacherPages = () => import('./lazy/teacherPages');
 const morePages = () => import('./lazy/morePages');
+// Never stored offline or preloaded: only for a device that turns a preview course on (src/courses/).
+const previewPages = loadPreviewDoor;
 const lesson = page(lessonPages, (m) => m.LessonRoute);
 
 /**
@@ -38,9 +41,6 @@ function devRoutes(): RouteObject[] {
   const ReferencePage = lazy(() => import('../dev/ReferencePage'));
   const ScreensIndexPage = lazy(() => import('../dev/ScreensIndexPage'));
   const ScreenViewerPage = lazy(() => import('../dev/ScreenViewerPage'));
-  // A prototype of Digital World Lesson 2's "train a tiny model" activity
-  // (docs/content/DIGITAL_WORLD_SPEC.md, section 6). Not part of the course.
-  const TinyModelPage = lazy(() => import('../dev/tiny-model/TinyModelPage'));
   return [
     {
       path: 'dev/components',
@@ -71,14 +71,6 @@ function devRoutes(): RouteObject[] {
       element: (
         <Suspense fallback={null}>
           <ScreenViewerPage />
-        </Suspense>
-      ),
-    },
-    {
-      path: 'dev/tiny-model',
-      element: (
-        <Suspense fallback={null}>
-          <TinyModelPage />
         </Suspense>
       ),
     },
@@ -127,6 +119,12 @@ export const routes: RouteObject[] = [
       // Credits read the lessons (sources, videos), so they load with the teacher guides.
       { path: 'credits', ...page(teacherPages, (m) => m.CreditsPage) },
       { path: 'settings', ...page(morePages, (m) => m.SettingsPage) },
+      // A preview course (src/courses/): its map, its lessons on paper, and
+      // the hidden address that turns it on for this device. "This page
+      // isn't here" on every device that hasn't, and nothing downloaded.
+      { path: 'course/:courseId', ...page(previewPages, (m) => m.PreviewCourseRoute) },
+      { path: 'course/:courseId/print', ...page(previewPages, (m) => m.PreviewCoursePrintRoute) },
+      { path: 'preview/:courseId', ...page(previewPages, (m) => m.PreviewSwitchRoute) },
       // Old Base44 paths.
       { path: 'onboarding', element: <Navigate replace to="/" /> },
       { path: 'courses', element: <Navigate replace to="/course" /> },

@@ -1,5 +1,5 @@
 import { Icon } from '../../components/ds';
-import type { Lesson } from '../../content';
+import type { CourseLesson } from '../../content';
 import { useI18n } from '../../i18n';
 import './LessonSources.css';
 
@@ -9,7 +9,7 @@ import './LessonSources.css';
  * tab. The lesson is written in Thinkerwell's own words; this says where
  * its facts come from. Nothing is fetched until someone follows a link.
  */
-export function LessonSources({ lesson }: { lesson: Lesson }) {
+export function LessonSources({ lesson }: { lesson: CourseLesson }) {
   const { t, contentLang } = useI18n();
   if (lesson.sources.length === 0) return null;
   return (

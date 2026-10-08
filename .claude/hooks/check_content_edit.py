@@ -6,6 +6,7 @@ When the edited file is a lesson, a section check or an Indonesian file, it runs
 the same checker as `npm run check:content` on just that file:
 
   content/lessons/*.json   scripts/check_lesson.py <file>
+  content/courses/*/lessons/*.json   the same (another course: its own sections, its activity)
   content/quizzes/*.json   scripts/check_quiz.py <file>
   content/id/**            scripts/check_translation.py id
 
@@ -43,7 +44,8 @@ def main() -> int:
         return 0
     rel = os.path.relpath(os.path.abspath(os.path.join(root, path)), root).replace(os.sep, "/")
 
-    if rel.startswith("content/lessons/") and rel.endswith(".json"):
+    preview_course = rel.startswith("content/courses/") and "/lessons/" in rel and rel.endswith(".json")
+    if (rel.startswith("content/lessons/") and rel.endswith(".json")) or preview_course:
         cmd = ["scripts/check_lesson.py", rel]
     elif rel.startswith("content/quizzes/") and rel.endswith(".json"):
         cmd = ["scripts/check_quiz.py", rel]
@@ -54,7 +56,8 @@ def main() -> int:
 
     venv = os.path.join(root, ".venv", "bin", "python")
     python = venv if os.access(venv, os.X_OK) else "python3"
-    reminder = audio_reminder(root) if not rel.startswith("content/quizzes/") else ""
+    # Only Our World has recordings: another course's lessons are skipped by check:audio.
+    reminder = audio_reminder(root) if not rel.startswith("content/quizzes/") and not preview_course else ""
     try:
         done = subprocess.run(
             [python, *cmd], cwd=root, capture_output=True, text=True, timeout=60

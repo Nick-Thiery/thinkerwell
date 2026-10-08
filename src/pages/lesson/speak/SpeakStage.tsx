@@ -1,6 +1,6 @@
 import { useId } from 'react';
 import { Chip, Icon, TaskCard } from '../../../components/ds';
-import { useContent } from '../../../content/useContent';
+import { useLessonContent } from '../../../content/useContent';
 import { useI18n } from '../../../i18n';
 import { useLessonPlayer } from '../../../lesson';
 import { StageActionBar } from '../StageActionBar';
@@ -26,7 +26,7 @@ import './SpeakStage.css';
  */
 export function SpeakStage() {
   const { t, contentLang } = useI18n();
-  const content = useContent();
+  const content = useLessonContent();
   const { lesson, progress, update, stageEvent } = useLessonPlayer();
   const { practiceOptions } = content.getCourse();
   const partnerId = useId();

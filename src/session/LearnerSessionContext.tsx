@@ -110,6 +110,18 @@ export interface LearnerSessionValue {
    * still changes for now.
    */
   setLanguage: (code: string) => Promise<void>;
+  /**
+   * The preview courses this device shows (settings.previewCourses), turned
+   * on at their hidden address (/preview/<id>, src/courses/). Empty on
+   * every other device: then nothing about them appears anywhere.
+   */
+  previewCourses: readonly string[];
+  /**
+   * Turns a preview course on or off for this device. Saved even while
+   * looking around, like every device setting; kept for this visit only
+   * where there is no storage.
+   */
+  setPreviewCourse: (id: string, on: boolean) => Promise<void>;
 }
 
 const LearnerSessionContext = createContext<LearnerSessionValue | null>(null);
@@ -144,6 +156,8 @@ export function LearnerSessionProvider({ forceLookAround = false, children }: Le
   const [currentLearner, setCurrentLearner] = useState<Learner | null>(null);
   const [lookAround, setLookAround] = useState(forceLookAround);
   const [deviceLanguage, setDeviceLanguageState] = useState<string | null>(null);
+  const [previewCourses, setPreviewCourses] = useState<readonly string[]>([]);
+  const previewRef = useRef<readonly string[]>([]);
   // Guards every state update against firing after the provider (effectively
   // the whole app) has been torn down — most visible in tests, which unmount
   // between cases while a fake-indexeddb request is still in flight. Reset to
@@ -189,6 +203,10 @@ export function LearnerSessionProvider({ forceLookAround = false, children }: Le
       if (!alive.current) return;
       setLearners(list);
       setDeviceLanguageState(settings.language);
+      if (Array.isArray(settings.previewCourses)) {
+        previewRef.current = settings.previewCourses.filter((id) => typeof id === 'string');
+        setPreviewCourses(previewRef.current);
+      }
       setCurrentLearner(currentId ? (list.find((l) => l.id === currentId) ?? null) : null);
       setStatus('ready');
     } catch (error) {
@@ -344,6 +362,19 @@ export function LearnerSessionProvider({ forceLookAround = false, children }: Le
     setCurrentLearner((prev) => (prev?.id === id ? updated : prev));
   }, [storageAvailable]);
 
+  const setPreviewCourse = useCallback(
+    async (id: string, on: boolean) => {
+      const current = previewRef.current;
+      const next = on ? (current.includes(id) ? current : [...current, id]) : current.filter((course) => course !== id);
+      previewRef.current = next;
+      setPreviewCourses(next);
+      if (!storageAvailable) return;
+      const store = await getStore();
+      await store.updateSettings({ previewCourses: [...next] });
+    },
+    [storageAvailable],
+  );
+
   const activeLearner = lookAround ? null : currentLearner;
   const language = resolveLocale([activeLearner?.language, deviceLanguage], readyLocales()).code;
 
@@ -389,8 +420,10 @@ export function LearnerSessionProvider({ forceLookAround = false, children }: Le
       setLearnerLanguage,
       language,
       setLanguage,
+      previewCourses,
+      setPreviewCourse,
     }),
-    [status, storageAvailable, learners, currentLearner, lookAround, activeLearner, chooseLearner, addLearner, removeLearner, startLookAround, returnToPicker, reloadLearners, setLearnerReadingLevel, deviceLanguage, setDeviceLanguage, setLearnerLanguage, language, setLanguage],
+    [status, storageAvailable, learners, currentLearner, lookAround, activeLearner, chooseLearner, addLearner, removeLearner, startLookAround, returnToPicker, reloadLearners, setLearnerReadingLevel, deviceLanguage, setDeviceLanguage, setLearnerLanguage, language, setLanguage, previewCourses, setPreviewCourse],
   );
 
   return <LearnerSessionContext.Provider value={value}>{children}</LearnerSessionContext.Provider>;

@@ -8,6 +8,7 @@
 import { z } from 'zod';
 import { LOCALES, SOURCE_LOCALE } from '../i18n/locales.ts';
 import { QUIZ_SKILLS } from './quizSkills.ts';
+import { STAGES } from './stages.ts';
 
 export const SECTION_IDS = ['history', 'geography', 'culture', 'civics'] as const;
 export const sectionIdSchema = z.enum(SECTION_IDS);
@@ -328,6 +329,299 @@ export const lessonSchema = z.strictObject({
   changes: z.array(text),
 });
 export type Lesson = z.infer<typeof lessonSchema>;
+
+// ------------------------------------------------------------------ any course
+//
+// Our World's types above are the narrowest (its four section ids, a Base44
+// id on every lesson). Pages that show any course's lessons (the lesson
+// player, its print view and teacher guide) use these instead; an Our World
+// lesson or section is one too. src/content/courses.ts lists the courses.
+
+/** A section of any course. */
+export type CourseSection = Omit<Section, 'id'> & { id: string };
+/** A lesson of any course: Digital World's have no Base44 id, sections of their own and may have an activity. */
+export type CourseLesson = Omit<Lesson, 'oldId' | 'section'> & { oldId: string | null; section: string; activity?: Activity };
+/** Any course's course.json. */
+export type AnyCourseFile = Omit<CourseFile, 'sections'> & { sections: CourseSection[] };
+
+// ------------------------------------------------------------------ activities
+//
+// A Digital World lesson can have one hands-on activity
+// (docs/content/DIGITAL_WORLD_SPEC.md section 5.2), with fields every
+// activity has and fields of its own type. src/courses/digital-world/
+// activities/ has a player for each type. `saves`, `offline` and the
+// train-model and compare-results notes are for the team and never shown.
+// Cross-checks the schema can't make (a round's expected results, a
+// suggested group that exists) are in ./activityChecks.ts.
+
+/** Where an activity sits: Read, after the evidence; or Write, before the writing task. */
+export const ACTIVITY_PLACEMENTS = ['after-evidence', 'before-prompt'] as const;
+export type ActivityPlacement = (typeof ACTIVITY_PLACEMENTS)[number];
+
+const activityBase = {
+  stage: z.enum(STAGES),
+  placement: z.enum(ACTIVITY_PLACEMENTS),
+  /** Learner-facing. */
+  title: text,
+  instructions: text,
+  /** For the team: what is saved with the learner's lesson work. Not shown. */
+  saves: text,
+  /** For the team: how it works with no network. Not shown. */
+  offline: text,
+};
+
+const idLabelSchema = z.strictObject({ id: slug, label: text });
+
+const oneCorrect = (options: readonly { correct: boolean }[]) => options.filter((option) => option.correct).length === 1;
+
+/** A choice question inside an activity, written like a quick check: one right option, feedback on each. */
+export const activityQuestionSchema = z
+  .strictObject({
+    question: text,
+    options: z.array(choiceOptionSchema).min(2).max(4),
+  })
+  .refine((q) => oneCorrect(q.options), { message: 'a question needs exactly one correct option', path: ['options'] });
+export type ActivityQuestion = z.infer<typeof activityQuestionSchema>;
+
+/** `sort`: put each item in a group. No score; each item's feedback says what most people would say and why. */
+export const sortActivitySchema = z.strictObject({
+  type: z.literal('sort'),
+  ...activityBase,
+  groups: z.array(idLabelSchema).min(2).max(4),
+  items: z
+    .array(
+      z.strictObject({
+        id: slug,
+        text,
+        /** The group most people would choose (a group id; a "hard to say" group is one too). */
+        suggested: slug,
+        feedback: text,
+      }),
+    )
+    .min(2),
+});
+
+const leafCardSchema = z.strictObject({
+  id: slug,
+  description: text,
+  /** The label the gardener gives it: a label id. */
+  gardenerSays: slug,
+  /** One number from 0 to 10 per feature, in the features' order. */
+  features: z.array(z.number().min(0).max(10)).min(1),
+});
+
+const trainRoundSchema = z.strictObject({
+  id: slug,
+  title: text,
+  /** Example ids added this round (the earlier rounds' stay). */
+  addExamples: z.array(slug),
+  /** Test leaf ids the model guesses this round. */
+  test: z.array(slug).min(1),
+  /** What the model gets with every example labelled like the gardener (checked in ./activityChecks.ts). */
+  expectedIfLabelledLikeTheGardener: z.strictObject({
+    right: z.number().int().min(0),
+    of: z.number().int().positive(),
+    wrong: z.array(slug),
+  }),
+  debrief: text,
+});
+
+/** `train-model` (Lesson 2): teach a nearest-neighbour model with leaf cards, round by round (spec section 6). */
+export const trainModelActivitySchema = z.strictObject({
+  type: z.literal('train-model'),
+  ...activityBase,
+  labels: z.array(idLabelSchema).length(2),
+  method: z.literal('nearest-neighbour'),
+  k: z.literal(1),
+  features: z.array(z.strictObject({ id: slug, label: text, scale: text })).min(1),
+  examples: z.array(leafCardSchema).min(1),
+  tests: z.array(leafCardSchema).min(1),
+  rounds: z.array(trainRoundSchema).min(1),
+  /** For the team: what free play allows. Not shown. */
+  freePlay: text,
+  /** For the team: how a guess is explained. Not shown. */
+  explainGuess: text,
+});
+
+/** `compare-results` (Lesson 3): find the group a tool gets wrong most often, then say whose examples were missing. */
+export const compareResultsActivitySchema = z.strictObject({
+  type: z.literal('compare-results'),
+  ...activityBase,
+  /** What the numbers count ("Words typed correctly"). */
+  measure: text,
+  groups: z
+    .array(z.strictObject({ id: slug, label: text, right: z.number().int().min(0), of: z.number().int().positive() }))
+    .min(2),
+  /** The group with the most mistakes. */
+  mostMistakes: slug,
+  /** Shown once a group has been tapped (any group). */
+  afterTap: activityQuestionSchema,
+  /** For the team: an optional extension. Not shown. */
+  extension: text.optional(),
+});
+
+/** `check-claim` (Lesson 5): a made-up post, sources to open in any order, then a question that is never locked. */
+export const checkClaimActivitySchema = z.strictObject({
+  type: z.literal('check-claim'),
+  ...activityBase,
+  claim: z.strictObject({ from: text, text }),
+  /** The questions to ask first. */
+  askFirst: z.array(text).min(1),
+  sources: z.array(z.strictObject({ id: slug, name: text, who: text, says: text })).min(1),
+  question: activityQuestionSchema,
+});
+
+/** `spot-signs` (Lesson 6): tap the warning signs in made-up messages. No score; "Show all signs" is always there. */
+export const spotSignsActivitySchema = z.strictObject({
+  type: z.literal('spot-signs'),
+  ...activityBase,
+  signs: z.array(idLabelSchema).min(1),
+  /** Shown for a part that isn't a warning sign. */
+  notASign: text,
+  messages: z
+    .array(
+      z.strictObject({
+        id: slug,
+        from: text,
+        parts: z
+          .array(
+            z.strictObject({
+              text,
+              /** A sign id, or null for a part that isn't a sign. */
+              sign: slug.nullable(),
+              /** Why it is a sign (every sign part has one). */
+              feedback: text.optional(),
+            }),
+          )
+          .min(1),
+      }),
+    )
+    .min(1),
+});
+
+/** `ask-tool` (Lesson 8): a labelled pretend tool with pre-written answers. Never a real AI model (spec 5.6). */
+export const askToolActivitySchema = z.strictObject({
+  type: z.literal('ask-tool'),
+  ...activityBase,
+  /** Always shown: it says the tool is pretend. */
+  toolLabel: text,
+  improve: z
+    .strictObject({
+      start: z.strictObject({ prompt: text, answer: text }),
+      question: text,
+      options: z.array(z.strictObject({ prompt: text, answer: text, correct: z.boolean(), feedback: text })).min(2).max(4),
+    })
+    .refine((improve) => oneCorrect(improve.options), { message: 'a question needs exactly one correct option', path: ['options'] }),
+  check: z
+    .strictObject({
+      prompt: text,
+      /** An answer that sounds sure but is wrong. */
+      answer: text,
+      trustedSource: z.strictObject({ name: text, says: text }),
+      question: text,
+      options: z.array(choiceOptionSchema).min(2).max(4),
+    })
+    .refine((check) => oneCorrect(check.options), { message: 'a question needs exactly one correct option', path: ['options'] }),
+});
+
+/** `chart-check` (Lesson 9): the same numbers drawn on two scales, every bar's number written on it. */
+export const chartCheckActivitySchema = z.strictObject({
+  type: z.literal('chart-check'),
+  ...activityBase,
+  measure: text,
+  bars: z.array(z.strictObject({ label: text, value: z.number() })).min(1),
+  views: z
+    .array(z.strictObject({ id: slug, label: text, axisStart: z.number(), axisEnd: z.number(), note: text }))
+    .min(1),
+  question: activityQuestionSchema,
+});
+
+/** `design-plan` (Lesson 11): plan an AI helper in steps, in the Write stage; any step can be changed again. */
+export const designPlanActivitySchema = z.strictObject({
+  type: z.literal('design-plan'),
+  ...activityBase,
+  problems: z
+    .array(
+      z.strictObject({
+        id: slug,
+        text,
+        /** The learner writes this problem themselves. */
+        own: z.literal(true).optional(),
+      }),
+    )
+    .min(1),
+  steps: z
+    .array(
+      z.strictObject({
+        id: slug,
+        title: text,
+        kind: z.enum(['text', 'choice']),
+        prompt: text,
+        /** A sentence starter for a text step. */
+        starter: text.optional(),
+        /** A choice step's options: a design choice, so each has feedback and none is wrong. */
+        options: z.array(z.strictObject({ text, feedback: text })).min(2).optional(),
+        /** Questions to choose from (the feedback step). */
+        questions: z.array(text).min(1).optional(),
+      }),
+    )
+    .min(1),
+});
+
+export const activitySchema = z.discriminatedUnion('type', [
+  sortActivitySchema,
+  trainModelActivitySchema,
+  compareResultsActivitySchema,
+  checkClaimActivitySchema,
+  spotSignsActivitySchema,
+  askToolActivitySchema,
+  chartCheckActivitySchema,
+  designPlanActivitySchema,
+]);
+export type Activity = z.infer<typeof activitySchema>;
+export type ActivityType = Activity['type'];
+export type SortActivity = z.infer<typeof sortActivitySchema>;
+export type TrainModelActivity = z.infer<typeof trainModelActivitySchema>;
+export type CompareResultsActivity = z.infer<typeof compareResultsActivitySchema>;
+export type CheckClaimActivity = z.infer<typeof checkClaimActivitySchema>;
+export type SpotSignsActivity = z.infer<typeof spotSignsActivitySchema>;
+export type AskToolActivity = z.infer<typeof askToolActivitySchema>;
+export type ChartCheckActivity = z.infer<typeof chartCheckActivitySchema>;
+export type DesignPlanActivity = z.infer<typeof designPlanActivitySchema>;
+export type LeafCardData = z.infer<typeof leafCardSchema>;
+
+// --------------------------------------------------------------- Digital World
+//
+// content/courses/digital-world/ (docs/content/DIGITAL_WORLD_SPEC.md): a
+// preview course (src/content/courses.ts). Its lessons have every field an
+// Our World lesson has, with no Base44 id, its own four sections and an
+// optional activity.
+
+export const DIGITAL_WORLD_SECTION_IDS = ['how-ai-works', 'check-what-you-see', 'use-tools-wisely', 'ai-where-you-live'] as const;
+export type DigitalWorldSectionId = (typeof DIGITAL_WORLD_SECTION_IDS)[number];
+
+export const digitalWorldSectionSchema = sectionSchema.extend({ id: z.enum(DIGITAL_WORLD_SECTION_IDS) });
+export type DigitalWorldSection = z.infer<typeof digitalWorldSectionSchema>;
+
+export const digitalWorldCourseFileSchema = courseFileSchema.extend({
+  sections: z.array(digitalWorldSectionSchema).length(4),
+});
+export type DigitalWorldCourseFile = z.infer<typeof digitalWorldCourseFileSchema>;
+
+export const digitalWorldLessonSchema = lessonSchema.extend({
+  /** No Base44 original. */
+  oldId: z.null(),
+  section: z.enum(DIGITAL_WORLD_SECTION_IDS),
+  activity: activitySchema.optional(),
+});
+export type DigitalWorldLesson = z.infer<typeof digitalWorldLessonSchema>;
+
+/** Each course's course.json and lesson schemas, by course id (src/content/courses.ts). */
+export const COURSE_SCHEMAS = {
+  'our-world': { course: courseFileSchema, lesson: lessonSchema },
+  'digital-world': { course: digitalWorldCourseFileSchema, lesson: digitalWorldLessonSchema },
+} as const;
+export type CourseSchemaId = keyof typeof COURSE_SCHEMAS;
 
 // ------------------------------------------------------- quizzes (section checks)
 

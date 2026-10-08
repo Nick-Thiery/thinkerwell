@@ -1,5 +1,5 @@
 import { useId } from 'react';
-import type { LeafCard } from './activity';
+import type { LeafCardData } from '../../../../content';
 
 /**
  * A leaf card's drawing, made on the device as inline SVG from the card's
@@ -8,10 +8,11 @@ import type { LeafCard } from './activity';
  *
  * The colour can't come from the numbers: "how green" is 4 for both the
  * light green new leaf and the yellow leaf (which is part of why the model
- * mixes them up in Round 1). So each card's colour is listed here. When this
- * becomes a real lesson, these hints belong in the lesson file next to each
- * card (for example a `look` field), and the drawings follow
- * docs/content/VISUALS_SPEC.md.
+ * mixes them up in Round 1). So each card's colour is listed here, by card
+ * id. These hints belong in the lesson file next to each card (for example
+ * a `look` field) once the team decides how Lesson 2's pictures are drawn
+ * (docs/content/VISUALS_SPEC.md); the lesson's wording wasn't changed for
+ * the preview. A card without one is drawn green.
  *
  * The drawing is decorative (aria-hidden): every card shows its description
  * as text beside it.
@@ -69,11 +70,11 @@ function seeded(seed: string): () => number {
   };
 }
 
-export function LeafPicture({ card, size = 112 }: { card: LeafCard; size?: number }) {
+export function LeafPicture({ card, size = 112 }: { card: LeafCardData; size?: number }) {
   // useId's characters aren't all safe inside url(#...).
-  const clipId = `tw-tm-clip-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
+  const clipId = `tw-dw-tm-clip-${useId().replace(/[^a-zA-Z0-9_-]/g, '')}`;
   const look = LOOKS[card.id] ?? { colour: 'green' };
-  const [, spots, leafSize, long] = card.features;
+  const [, spots = 0, leafSize = 5, long = 0] = card.features;
 
   // Height grows with size; width shrinks as the shape gets longer.
   const scale = 0.45 + 0.055 * leafSize;
@@ -96,7 +97,7 @@ export function LeafPicture({ card, size = 112 }: { card: LeafCard; size?: numbe
 
   return (
     <svg
-      className="tw-tm-leaf"
+      className="tw-dw-tm-leaf"
       width={size}
       height={size}
       viewBox="-50 -50 100 100"

@@ -1,5 +1,6 @@
 #!/bin/sh
-# Checks every lesson file against docs/content/SPEC.md with
+# Checks every lesson file (Our World's, and every other course's in
+# content/courses/<id>/lessons/) against docs/content/SPEC.md with
 # scripts/check_lesson.py, and every section check against
 # docs/content/QUIZ_SPEC.md with scripts/check_quiz.py (which imports
 # check_lesson.py from the same folder), then each translation
@@ -20,6 +21,16 @@ fi
 status=0
 "$PY" scripts/check_lesson.py content/lessons/*.json || status=1
 "$PY" scripts/check_quiz.py content/quizzes/*.json || status=1
+# Every other course (content/courses/<id>/, src/content/courses.ts): its
+# lessons against the same spec, with its own sections and its activities.
+# Digital World has no section checks or translations yet, so nothing else
+# of it is checked here.
+for lessons in content/courses/*/lessons; do
+  [ -d "$lessons" ] || continue
+  echo
+  echo "Course: $(basename "$(dirname "$lessons")")"
+  "$PY" scripts/check_lesson.py "$lessons"/*.json || status=1
+done
 # Each language whose lessons are translated (content/<code>/, src/i18n/locales.ts)
 # against the English, with scripts/check_translation.py.
 for course in content/*/course.json; do
