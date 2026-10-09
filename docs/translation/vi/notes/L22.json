@@ -1,0 +1,515 @@
+{
+  "title": {
+    "flag": true,
+    "note": "'Lập kế hoạch cho tương lai' kept plain. Check that it reads naturally for 10 to 17 year olds.",
+    "source": "How do people plan for the future?",
+    "back": "How do people plan for the future?"
+  },
+  "essentialQuestion": {
+    "flag": true,
+    "note": "'chi phí cơ hội' is the economics term for opportunity cost; no everyday word. Check a 12-year-old can follow it (the lesson explains it with Mei's 15 minutes).",
+    "source": "How can saving, spending, budgeting and opportunity cost shape everyday decisions?",
+    "back": "How can saving, spending, budgeting and opportunity cost affect everyday decisions?"
+  },
+  "learningGoal": {
+    "source": "Make a simple, flexible plan for a small goal using saving, budgeting and trade-offs.",
+    "back": "Make a simple, flexible plan for a small goal, by saving, budgeting and weighing a trade-off."
+  },
+  "warmUp.question": {
+    "source": "What is one small thing you would like to be able to do one month from now?",
+    "back": "What is one small thing you want to be able to do in a month?"
+  },
+  "warmUp.options.0": {
+    "source": "Read a short book in English",
+    "back": "Read a short book in English"
+  },
+  "warmUp.options.1": {
+    "source": "Learn a new skill",
+    "back": "Learn a new skill"
+  },
+  "warmUp.options.2": {
+    "flag": true,
+    "note": "'Get fitter' as 'Rèn luyện cho khỏe hơn'. Alternatives: 'Khỏe mạnh hơn', 'Có thể lực tốt hơn'.",
+    "source": "Get fitter",
+    "back": "Train to get healthier"
+  },
+  "warmUp.options.3": {
+    "source": "Something else",
+    "back": "Something else"
+  },
+  "evidence.label": {
+    "source": "Fictional example created for this lesson.",
+    "back": "Fictional example, created specially for this lesson."
+  },
+  "evidence.question": {
+    "source": "What does each person give up now to reach their goal later?",
+    "back": "What does each person give up right now to reach their goal later?"
+  },
+  "evidence.cards.0.title": {
+    "source": "Three small plans",
+    "back": "Three small plans"
+  },
+  "evidence.cards.0.cases.0.name": {
+    "source": "Mei's reading goal",
+    "back": "Mei's reading goal"
+  },
+  "evidence.cards.0.cases.0.body": {
+    "source": "Goal: read a short English storybook by herself in four weeks. Plan A: read for 15 minutes every evening. Plan B: if the evening is busy, read at lunchtime instead.",
+    "back": "Goal: finish reading a short story in English on her own in four weeks. Plan A: read 15 minutes each evening. Plan B: if the evening is busy, read at lunchtime."
+  },
+  "evidence.cards.0.cases.1.name": {
+    "source": "Sami's notebook goal",
+    "back": "Sami's notebook goal"
+  },
+  "evidence.cards.0.cases.1.body": {
+    "flag": true,
+    "note": "Sami is called 'cậu' (he). 'coins' = 'đồng xu'; check that refugee learners recognise 'xu' as small coins in many currencies, or prefer 'tiền lẻ'.",
+    "source": "Goal: buy a notebook and two pens for English class. Plan: when Sami gets a few coins, he puts half of them in a tin at home. He buys fewer sweets.",
+    "back": "Goal: buy a notebook and two pens for English class. Plan: whenever Sami has a few coins, he puts half into a tin box at home. He buys less candy."
+  },
+  "evidence.cards.0.cases.2.name": {
+    "flag": true,
+    "note": "'Friday savings group' = 'Nhóm tiết kiệm thứ Sáu'. The familiar Vietnamese word for a rotating savings group is hụi/họ (KEY_TERMS says not used yet). Reviewer to decide whether to use it.",
+    "source": "The Friday savings group",
+    "back": "The Friday savings group"
+  },
+  "evidence.cards.0.cases.2.body": {
+    "flag": true,
+    "note": "Rotating savings group described without naming hụi/họ. 'máy lọc nước' for water filter.",
+    "source": "A group of 10 neighbours meets every Friday. Each person puts in the same small amount. Each week, one person takes all of it, until everyone has had a turn. Rosa used her turn to buy a water filter for her home.",
+    "back": "A group of 10 neighbours meets every Friday. Each person contributes the same small amount of money. Each week, one person receives all the money, until everyone has had a turn. Rosa uses her turn to buy a water filter for the house."
+  },
+  "evidence.cards.1.title": {
+    "source": "Mei's time budget for one evening",
+    "back": "Mei's time budget for one evening"
+  },
+  "evidence.cards.1.columns.0": {
+    "source": "Activity",
+    "back": "Activity"
+  },
+  "evidence.cards.1.columns.1": {
+    "source": "Time",
+    "back": "Time"
+  },
+  "evidence.cards.1.rows.0.0": {
+    "source": "Helping with dinner",
+    "back": "Helping prepare dinner"
+  },
+  "evidence.cards.1.rows.0.1": {
+    "source": "30 minutes",
+    "back": "30 minutes"
+  },
+  "evidence.cards.1.rows.1.0": {
+    "source": "Reading English",
+    "back": "Reading English"
+  },
+  "evidence.cards.1.rows.1.1": {
+    "source": "15 minutes",
+    "back": "15 minutes"
+  },
+  "evidence.cards.1.rows.2.0": {
+    "flag": true,
+    "note": "'Games on the shared phone' = 'Chơi game trên điện thoại dùng chung'. 'game' is a loanword; alternative 'chơi trò chơi'.",
+    "source": "Games on the shared phone",
+    "back": "Playing games on the shared phone"
+  },
+  "evidence.cards.1.rows.2.1": {
+    "source": "15 minutes",
+    "back": "15 minutes"
+  },
+  "evidence.cards.1.rows.3.0": {
+    "source": "Resting and talking",
+    "back": "Resting and chatting"
+  },
+  "evidence.cards.1.rows.3.1": {
+    "source": "One hour",
+    "back": "One hour"
+  },
+  "read.sections.0.heading": {
+    "source": "Spending now and saving for later",
+    "back": "Spending now and saving for later"
+  },
+  "read.sections.0.text": {
+    "flag": true,
+    "note": "'Chi tiêu' (spend) and 'tiết kiệm' (save) are the chosen glossary words. 'một thứ khác'/'những thứ khác' for 'other resources' (not 'tài nguyên', which KEY_TERMS reserves for Lesson 20). Check the long sentence about the savings group.",
+    "source": "Some choices affect only today, but others affect what we can do later. To spend means to use money or another resource to get something now, such as food or a bus ride. Spending is not bad, because everyone needs some things now. To save means to keep some money or resources for later. Saving is hard when there is not much, but small amounts can add up over time. Sami puts a few coins in a tin at home until he has enough for a notebook. In some communities, neighbours save together in a group. Each person puts a small amount into the group every week, and each week one person takes it all.",
+    "back": "Some choices affect only today, but some affect what we can do later. To spend means to use money or something else to get something right now, like food or a bus ride. Spending is not bad, because everyone needs some things right now. To save means to keep back a little money or other things for later. Saving is very hard when you have little, but small amounts can add up over time. Sami puts a few coins into a tin box at home until there is enough to buy a notebook. In some communities, neighbours save together in a group. Every week, each person contributes a small amount to the group, and every week one person receives all the money."
+  },
+  "read.sections.0.simpler": {
+    "flag": true,
+    "note": "Check it is natural and simple enough; 'tiết kiệm theo nhóm' for 'save as a group'.",
+    "source": "Some choices are for today. Some are for later. To spend is to use money or things now. Everyone needs to spend on some things, like food. To save is to keep some money or things for later. Many small amounts make a bigger amount. Sami puts a few coins in a tin. Soon he can buy a notebook. Some neighbours save as a group. Each person puts in a little every week. Each week, one person takes it all.",
+    "back": "There are choices for today. There are choices for later. To spend is to use money or things right now. Everyone needs to spend on some things, like food. To save is to keep back a little money or things for later. Many small amounts become a bigger amount. Sami puts a few coins into a tin box. Soon he can buy a notebook. Some neighbours save in a group. Every week, each person contributes a little. Every week, one person gets it all."
+  },
+  "read.sections.1.heading": {
+    "source": "A budget is a plan",
+    "back": "A budget is a plan"
+  },
+  "read.sections.1.text": {
+    "flag": true,
+    "note": "'Ngân sách' (budget) for money AND time: 'ngân sách thời gian' is understandable but slightly unusual. Alternative: 'kế hoạch thời gian'. 'chi phí cơ hội' for opportunity cost (not a glossary word, explained in the next sentences). Mei is repeated by name instead of a pronoun to avoid confusion with the learner 'bạn'.",
+    "source": "A budget is a plan for how to use money or time. It helps you compare what you have with what you need and want. Budgets are not only for money. Mei makes a time budget for her evenings. She plans time to help with dinner, to rest and to read English for 15 minutes. Budgeting is really about choices, and every choice has an opportunity cost. If Mei reads for 15 minutes, she has 15 fewer minutes for games on the shared phone. This is a trade-off: giving up one thing to get another. A careful budget helps you see your trade-offs before you choose.",
+    "back": "A budget is a plan for how to use money or time. It helps you compare what you have with what you need and want. A budget is not only for money. Mei makes a time budget for her evenings. Mei plans time to help prepare dinner, to rest and to read English for 15 minutes. Budgeting is really about choices, and every choice has an opportunity cost. If Mei reads for 15 minutes, Mei will have 15 minutes less to play games on the shared phone. This is a trade-off: giving up one thing to get another. A careful budget helps you see your trade-offs before you choose."
+  },
+  "read.sections.1.simpler": {
+    "flag": true,
+    "note": "Repeats 'Mei' at the start of several short sentences instead of 'bạn ấy'; check it does not sound choppy.",
+    "source": "A budget is a plan for your money or time. It helps you see what you have and what you need. Mei makes a time budget for her evenings. She helps with dinner. She rests. She reads English for 15 minutes. So she has less time for games on the phone. That is a trade-off. You give up one thing to get another.",
+    "back": "A budget is a plan for your money or your time. It helps you see what you have and what you need. Mei makes a time budget for the evening. Mei helps prepare dinner. Mei rests. Mei reads English for 15 minutes. So Mei has less time to play games on the phone. That is a trade-off. You give up one thing to get another."
+  },
+  "read.sections.2.heading": {
+    "source": "Small goals and flexible plans",
+    "back": "Small goals and flexible plans"
+  },
+  "read.sections.2.text": {
+    "flag": true,
+    "note": "'Kế hoạch tốt cũng phải linh hoạt' for 'A strong plan is also flexible'. 'bắt tay vào' is a common idiom for 'start working on'. | Review: English says 'A strong plan is also flexible' (a description, not a must). [Reviewer changed: Một kế hoạch tốt cũng phải linh hoạt. → Một kế hoạch tốt cũng linh hoạt.]",
+    "source": "A goal is something you want to do or get, and you work towards it step by step. Nobody can control everything about the future, and plans can change when things around us change. That is why small, short goals are useful. They are goals you can work on now, such as learning 10 new English words a week, practising a skill or staying healthy. A strong plan is also flexible. Mei's Plan A is to read every evening. Her Plan B is to read at lunchtime if the evening gets busy. A flexible plan still works when life changes.",
+    "back": "A goal is something you want to do or to have, and you try to reach it step by step. No one controls everything about the future, and plans can change when things around us change. So small, short goals are useful. These are goals you can start on right now, like learning 10 new English words each week, practising a skill or looking after your health. A good plan must also be flexible. Mei's Plan A is to read every evening. Mei's Plan B is to read at lunchtime if the evening is busy. A flexible plan can still be used when life changes."
+  },
+  "read.sections.2.simpler": {
+    "source": "A goal is something you want to do or get. You work towards it step by step. No one can control the future. Plans can change. So small goals help. You can work on them now. For example, you can learn 10 new words a week. A strong plan is flexible. Mei's Plan A is to read in the evening. If the evening is busy, she reads at lunch. That is her Plan B.",
+    "back": "A goal is something you want to do or to have. You reach it step by step. No one controls the future. Plans can change. So small goals are very useful. You can do them right now. For example, you can learn 10 new words each week. A good plan is flexible. Mei's Plan A is to read in the evening. If the evening is busy, Mei reads at lunchtime. That is Mei's Plan B."
+  },
+  "read.glossary.0.word": {
+    "flag": true,
+    "note": "'chi tiêu' for 'spend'. Alternative: 'tiêu'. Also fits the Lesson 22 trade-off idea.",
+    "source": "spend",
+    "back": "spend"
+  },
+  "read.glossary.0.forms": {
+    "source": [
+      "spending",
+      "spends"
+    ],
+    "back": ""
+  },
+  "read.glossary.0.definition": {
+    "source": "To use money or other things to get something now.",
+    "back": "Using money or other things to get something right now."
+  },
+  "read.glossary.0.example": {
+    "source": "Sami could spend his coins on sweets today.",
+    "back": "Today Sami can spend his coins on candy."
+  },
+  "read.glossary.1.word": {
+    "flag": true,
+    "note": "'tiết kiệm' also means 'thrifty/economical'. Here it means to keep for later. Check it is clear. Alternative: 'dành dụm', 'để dành'.",
+    "source": "save",
+    "back": "save"
+  },
+  "read.glossary.1.forms": {
+    "source": [
+      "saving",
+      "saves"
+    ],
+    "back": ""
+  },
+  "read.glossary.1.definition": {
+    "source": "To keep money or other things so you can use them later.",
+    "back": "Keeping back money or other things so that you can use them later."
+  },
+  "read.glossary.1.example": {
+    "source": "Sami saves coins in a tin for a notebook.",
+    "back": "Sami saves coins in a tin box to buy a notebook."
+  },
+  "read.glossary.2.word": {
+    "flag": true,
+    "note": "'ngân sách' is a somewhat formal word for 'budget' (usually used for governments). Alternatives: 'kế hoạch chi tiêu', 'dự toán'.",
+    "source": "budget",
+    "back": "budget"
+  },
+  "read.glossary.2.forms": {
+    "source": [
+      "budgets",
+      "budgeting"
+    ],
+    "back": ""
+  },
+  "read.glossary.2.definition": {
+    "source": "A plan for how to use your money or your time.",
+    "back": "A plan for how to use your money or time."
+  },
+  "read.glossary.2.example": {
+    "source": "Mei's time budget shows 15 minutes for reading English.",
+    "back": "Mei's time budget has 15 minutes for reading English."
+  },
+  "read.glossary.3.word": {
+    "flag": true,
+    "note": "'sự đánh đổi' per KEY_TERMS.",
+    "source": "trade-off",
+    "back": "the trade-off (an exchange of giving up)"
+  },
+  "read.glossary.3.forms": {
+    "source": [
+      "trade-offs"
+    ],
+    "back": ""
+  },
+  "read.glossary.3.definition": {
+    "source": "Giving up one thing so that you can have another.",
+    "back": "Giving up one thing so that you can have another."
+  },
+  "read.glossary.3.example": {
+    "source": "Fewer phone games for more reading time is Mei's trade-off.",
+    "back": "Playing fewer phone games to have more time to read is Mei's trade-off."
+  },
+  "read.glossary.4.word": {
+    "source": "goal",
+    "back": "goal"
+  },
+  "read.glossary.4.forms": {
+    "source": [
+      "goals"
+    ],
+    "back": ""
+  },
+  "read.glossary.4.definition": {
+    "source": "Something you want to do or get, and work towards.",
+    "back": "Something you want to do or to have, and try to reach."
+  },
+  "read.glossary.4.example": {
+    "source": "Mei's goal is to read a short storybook by herself.",
+    "back": "Mei's goal is to finish a short story on her own."
+  },
+  "read.glossary.5.word": {
+    "source": "flexible",
+    "back": "flexible"
+  },
+  "read.glossary.5.definition": {
+    "source": "Able to change easily when things change.",
+    "back": "Able to change easily when things change."
+  },
+  "read.glossary.5.example": {
+    "flag": true,
+    "note": "Mei, not 'bạn ấy', to avoid 'bạn' ambiguity.",
+    "source": "Mei's plan is flexible because she has a Plan B.",
+    "back": "Mei's plan is flexible because Mei has a Plan B."
+  },
+  "read.checks.0.question": {
+    "source": "Which example shows saving?",
+    "back": "Which example shows saving?"
+  },
+  "read.checks.0.options.0.text": {
+    "source": "Using all the phone data on the first day",
+    "back": "Using up the phone data on the very first day"
+  },
+  "read.checks.0.options.0.feedback": {
+    "source": "Not quite. Using all the data at once is spending it now. Look for something kept for later.",
+    "back": "Not quite. Using up the data all at once is spending it right now. Look for what is kept back for later."
+  },
+  "read.checks.0.options.1.text": {
+    "flag": true,
+    "note": "'Tiêu hết tiền vào kẹo' uses plain 'tiêu' rather than 'chi tiêu' on purpose; check it is still clearly the same idea as the English.",
+    "source": "Spending all the money on sweets at once",
+    "back": "Spending all the money on candy at the same time"
+  },
+  "read.checks.0.options.1.feedback": {
+    "source": "Not quite. That is spending everything now. Look for something kept for later, like Sami's coins.",
+    "back": "Not quite. That is spending everything right now. Look for what is kept back for later, like Sami's coins."
+  },
+  "read.checks.0.options.2.text": {
+    "source": "Keeping a few coins in a tin for later",
+    "back": "Keeping a few coins in a tin box to use later"
+  },
+  "read.checks.0.options.2.feedback": {
+    "source": "Yes. Keeping coins to use later is saving, just like Sami does for his notebook.",
+    "back": "Yes. Keeping coins to use later is saving, like Sami does to buy a notebook."
+  },
+  "read.checks.1.question": {
+    "source": "Why does Mei have a Plan B?",
+    "back": "Why does Mei have a Plan B?"
+  },
+  "read.checks.1.options.0.text": {
+    "source": "So she can stop reading when it gets hard",
+    "back": "So Mei can stop reading when it feels hard"
+  },
+  "read.checks.1.options.0.feedback": {
+    "source": "Not quite. Plan B helps Mei keep reading. Read the part about flexible plans again.",
+    "back": "Not quite. Plan B helps Mei keep reading. Read again the part about flexible plans."
+  },
+  "read.checks.1.options.1.text": {
+    "flag": true,
+    "note": "'nếu một ngày của Mei thay đổi' follows the English 'her day changes'. Check it sounds natural.",
+    "source": "So she can still read if her day changes",
+    "back": "So Mei can still read if one of Mei's days changes"
+  },
+  "read.checks.1.options.1.feedback": {
+    "source": "Yes. If the evening is busy, Mei reads at lunchtime. Her plan is flexible, so it still works.",
+    "back": "Yes. If the evening is busy, Mei reads at lunchtime. Mei's plan is flexible so it can still be used."
+  },
+  "read.checks.1.options.2.text": {
+    "source": "So she can play more games on the shared phone",
+    "back": "So Mei can play more games on the shared phone"
+  },
+  "read.checks.1.options.2.feedback": {
+    "source": "Not quite. Plan B is about reading at a different time. Read the part about flexible plans again.",
+    "back": "Not quite. Plan B is reading at a different time. Read again the part about flexible plans."
+  },
+  "read.checks.2.question": {
+    "source": "What is one small goal a learner could work towards in the next month? What is the first step?",
+    "back": "What is one small goal a learner could carry out next month? What is the first step?",
+    "flag": true,
+    "note": "Review: 'work towards' rendered 'thực hiện' (carry out); check naturalness."
+  },
+  "read.checks.2.placeholder": {
+    "source": "The goal is ___. The first step is ___.",
+    "back": "The goal is ___. The first step is ___."
+  },
+  "write.prompt": {
+    "source": "Make a simple plan for Mei, Sami or another learner with one small goal. Include what they save or give up, the trade-off and a Plan B.",
+    "back": "Make a simple plan for Mei, Sami or another learner with a small goal. State what they save or give up, the trade-off and Plan B."
+  },
+  "write.sentenceStarters.0": {
+    "source": "The goal is...",
+    "back": "The goal is..."
+  },
+  "write.sentenceStarters.1": {
+    "source": "Each day or week, they will...",
+    "back": "Every day or every week, they will..."
+  },
+  "write.sentenceStarters.2": {
+    "source": "They will save or give up...",
+    "back": "They will save or give up..."
+  },
+  "write.sentenceStarters.3": {
+    "source": "The trade-off is...",
+    "back": "The trade-off is..."
+  },
+  "write.sentenceStarters.4": {
+    "source": "If things change, Plan B is...",
+    "back": "If things change, Plan B is..."
+  },
+  "write.planningBoxes.0": {
+    "flag": true,
+    "note": "'Ý chính của mình' for 'My main idea'. The other lessons should use the same wording (consistency check).",
+    "source": "My main idea",
+    "back": "My main idea"
+  },
+  "write.planningBoxes.1": {
+    "flag": true,
+    "note": "'Bằng chứng từ bài học' for 'Evidence from the lesson'.",
+    "source": "Evidence from the lesson",
+    "back": "Evidence from the lesson"
+  },
+  "write.planningBoxes.2": {
+    "source": "Why it matters",
+    "back": "Why this matters"
+  },
+  "write.planningBoxes.3": {
+    "source": "A question I still have",
+    "back": "A question I still have"
+  },
+  "write.selfCheck.0": {
+    "source": "I named one small goal.",
+    "back": "I stated a small goal."
+  },
+  "write.selfCheck.1": {
+    "source": "I said what they save or give up.",
+    "back": "I said what they save or give up."
+  },
+  "write.selfCheck.2": {
+    "source": "I gave a Plan B.",
+    "back": "I gave a Plan B."
+  },
+  "write.example": {
+    "flag": true,
+    "note": "Sami as 'cậu'. 'xin trung tâm học tập cho mượn một quyển vở dự phòng' for 'ask the learning centre for a spare notebook'. 'từ bỏ bớt kẹo' for 'give up some sweets'. | Review: English: 'half of any coins he gets' (coins received, not coins owned). [Reviewer changed: một nửa số xu mình có → một nửa số xu cậu nhận được]",
+    "source": "The goal is for Sami to buy a notebook and two pens for English class. Each week, he will put half of any coins he gets into a tin at home. He will save these coins and give up some sweets. The trade-off is fewer sweets now, but a notebook later. If things change, Plan B is to ask the learning centre for a spare notebook he can use until he has saved enough.",
+    "back": "The goal is for Sami to buy a notebook and two pens for English class. Every week, he will put half of the coins he has into a tin box at home. He will save these coins and give up some candy. The trade-off is eating less candy now, but having a notebook later. If things change, Plan B is to ask the learning centre to lend him a spare notebook to use until he has saved enough."
+  },
+  "speak.partnerTask": {
+    "flag": true,
+    "note": "'youth group' as 'nhóm bạn trẻ'. Alternatives: 'nhóm thanh thiếu niên', 'nhóm thanh niên'. | Review: 'youth group' rendered 'Một nhóm bạn trẻ'; native speaker to check it reads as a group with a small budget.",
+    "source": "A youth group has a small amount of money for one activity: a sports day, a reading corner or a clean-up. Choose one together and name the opportunity cost.",
+    "back": "A group of young friends has a small amount of money for an activity: a sports day, a reading corner or a clean-up. Together choose one activity and state the opportunity cost."
+  },
+  "speak.independentTask": {
+    "source": "Say: “A small goal I could work on is ___. My first step is ___.” You can choose a goal for Mei or Sami instead.",
+    "back": "Say: \"One small goal I can carry out is ___. My first step is ___.\" You can choose a goal for Mei or Sami instead."
+  },
+  "watch.why": {
+    "source": "It explains saving and spending with simple examples and pictures.",
+    "back": "The video explains saving and spending with simple examples and pictures."
+  },
+  "watch.beforeQuestion": {
+    "source": "When is it better to spend now, and when is it better to save for later?",
+    "back": "When is it better to spend right now, and when is it better to save for later?"
+  },
+  "watch.afterQuestion": {
+    "source": "How can spending and saving both be useful?",
+    "back": "How can both spending and saving be useful?"
+  },
+  "watch.summary": {
+    "flag": true,
+    "note": "'scarcity' as 'sự khan hiếm'. 'cupcake' kept as 'bánh cupcake' so it can be read aloud; alternative 'bánh nướng nhỏ'. 'good and bad sides' as 'mặt tốt và mặt xấu'.",
+    "source": "This short video for younger learners explains spending and saving. People use money to get the things they need and want. But no one can have everything they want. This is called scarcity, so people must make choices. People usually get what they need before what they want. For example, the speaker needs a healthy lunch but wants a cupcake. So lunch comes first. Then the speaker checks if there is money left for the cupcake. When you spend, you get something now. But it may be small, and you may have little money left. When you save, you have to wait, and that can be hard. But later you can get something that costs more. There is no one right answer. Think about the good and bad sides of each choice.",
+    "back": "This short video is for younger learners and explains spending and saving. People use money to get the things they need and want. But no one can have everything they want. This is called scarcity, so people must choose. Often people get what they need before what they want. For example, the speaker needs a healthy lunch but wants a cupcake. So lunch is put first. Then the speaker sees whether there is money left to buy the cupcake. When you spend, you get something right now. But it may be small, and you may have little money left. When you save, you have to wait, and that can be hard. But later you may be able to get something more expensive. There is no single right answer. Think about the good side and bad side of each choice."
+  },
+  "watch.keyPoints.0": {
+    "source": "Spending means using money to get something now.",
+    "back": "To spend means to use money to get something right now."
+  },
+  "watch.keyPoints.1": {
+    "source": "Saving means waiting, so you can get something that costs more later.",
+    "back": "To save means to wait, so that later you can get something more expensive."
+  },
+  "watch.keyPoints.2": {
+    "source": "There is no one right answer: think about the good and bad sides of each choice.",
+    "back": "There is no single right answer: think about the good side and bad side of each choice."
+  },
+  "reflect.prompts.0.text": {
+    "source": "One small goal a learner could work towards this month is...",
+    "back": "One small goal a learner could carry out this month is..."
+  },
+  "reflect.prompts.1.text": {
+    "source": "A Plan B can help because...",
+    "back": "Plan B can help because..."
+  },
+  "reflect.completionMessage": {
+    "source": "You finished Lesson 22. You made a small, flexible plan using saving, budgeting and trade-offs.",
+    "back": "You have finished Lesson 22. You made a small, flexible plan by saving, budgeting and weighing a trade-off."
+  },
+  "visual.alt": {
+    "flag": true,
+    "note": "'stepping stones' as 'những phiến đá bước'. Check the picture's labels match.",
+    "source": "A path of stepping stones leads to Mei's reading goal. A side path shows her Plan B, which joins the main path again, and a note shows her trade-off of fewer phone games.",
+    "back": "A path of stepping stones leads to Mei's reading goal. A side path shows Mei's Plan B, joining back to the main path, and a note shows Mei's trade-off is playing fewer phone games."
+  },
+  "sources.0.label": {
+    "source": "Khan Academy: Personal finance",
+    "back": "Khan Academy: Personal finance"
+  },
+  "sources.1.label": {
+    "flag": true,
+    "note": "Rotating savings groups: 'nhóm tiết kiệm luân phiên'; the FAO title is translated, not an official Vietnamese title.",
+    "source": "FAO: The group savings resource book (rotating savings and credit associations)",
+    "back": "FAO: Reference book on savings groups (rotating savings and credit associations)"
+  },
+  "sources.2.label": {
+    "flag": true,
+    "note": "Series title translated, not an official Vietnamese title.",
+    "source": "DCMP: Economics for Kids video series",
+    "back": "DCMP: Economics for Kids video series"
+  },
+  "sensitiveNotes.0": {
+    "flag": true,
+    "note": "Adult register. Check tone is gentle and clear for volunteer teachers.",
+    "source": "The lesson avoids pay, bank accounts, loans and long career plans on purpose. Keep discussion to small, short goals that learners can control. Do not ask learners where they will live in future or about their household's money. If a learner finds talk about the future upsetting, return to the small goals in the lesson and do not press.",
+    "back": "The lesson deliberately avoids talking about wages, bank accounts, loans and long-term career plans. Keep the discussion on small, short goals that learners can control themselves. Do not ask learners where they will live later, or ask about their family's money. If a learner feels sad talking about the future, go back to the small goals in the lesson and do not force it."
+  },
+  "sensitiveNotes.1": {
+    "source": "The video opens by saying that many people earn money by working, and its examples are a cupcake, an ice cream and a toy. Preview it; the written summary leaves out the part about working.",
+    "back": "The video begins by saying that many people earn money by going to work, and the video's examples are cupcakes, ice cream and toys. Watch the video first; the written summary has left out the part about going to work."
+  },
+  "educatorNotes.0": {
+    "flag": true,
+    "note": "Country names Ghana, Indonesia, Ethiopia kept in their international spelling (also written Gha-na, In-đô-nê-xi-a, Ê-ti-ô-pi-a). 'tontine' kept in its French form. Check.",
+    "source": "The Friday savings group is a rotating savings group. These are found in many parts of the world under local names; the FAO source lists, for example, susu (Ghana), arisan (Indonesia), ekub (Ethiopia) and tontines (West Africa). A partner can use a local name. Present it as something adults organise, based on trust, not as advice for learners to join one.",
+    "back": "The Friday savings group is a rotating savings group. This kind of group exists in many places in the world under local names; for example, the FAO source lists susu (Ghana), arisan (Indonesia), ekub (Ethiopia) and tontine (West Africa). Partners can use the local name. Present this as something adults organise, based on trust, and not as advice for learners to join such a group."
+  },
+  "educatorNotes.1": {
+    "source": "Sami's tin, Mei's time budget and Rosa's water filter can be swapped for local examples, such as saving phone credit or data, or planning study time around chores and classes.",
+    "back": "Sami's tin box, Mei's time budget and Rosa's water filter can be replaced with local examples, like saving phone money or data, or planning study time around housework and lessons."
+  }
+}

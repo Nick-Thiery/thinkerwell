@@ -1,6 +1,7 @@
 // What Listen reads, as the app splits it: every reading section of every
-// Our World lesson, in each lessons' language (English, and each ready
-// language whose lessons are translated) and both reading levels, plus the
+// Our World lesson, in each lessons' language (English, and each language
+// whose lessons are translated, ready or still a hidden preview such as
+// Vietnamese) and both reading levels, plus the
 // Settings sample sentence. Preview courses (Digital World, in
 // content/courses/, src/content/courses.ts) are skipped on purpose: they are
 // drafts with no recordings yet, so Listen reads them with the device's own
@@ -13,7 +14,7 @@
 // translations are laid over the English the way the app does
 // (src/content/translation.ts), and the pieces are the Read stage's own
 // (src/speech/sentences.ts). docs/notes/recorded-audio.md.
-import { readdirSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { textHash, piecesHash } from '../../src/audio/textHash.ts';
 import { parseContentFile } from '../../src/content/load.ts';
@@ -54,8 +55,14 @@ export interface SectionUtterances {
 }
 
 export interface LanguageUtterances {
-  /** The recordings' language: "en", or a translated lessons' language ("id"). */
+  /** The recordings' language: "en", or a translated lessons' language ("id", "vi"). */
   lang: string;
+  /**
+   * True when learners can choose the language (src/i18n/locales.ts). A language that is
+   * not ready (a hidden preview such as Vietnamese) is recorded only when asked for, and
+   * `npm run check:audio` checks it only once it has recordings (./check.ts).
+   */
+  ready?: boolean;
   /** ./normalise.ts's NORMALISER_VERSION, for the record. */
   normaliser: number;
   sections: SectionUtterances[];
@@ -78,9 +85,24 @@ function englishLessons(root: string): Map<string, Lesson> {
   );
 }
 
-/** The languages that get recordings: English, and every ready language whose lessons are translated. */
-export function recordedLanguages(): string[] {
-  return ['en', ...LOCALES.filter((locale) => locale.ready && locale.content).map((locale) => locale.code)];
+/** True when a language's lessons are translated: it is marked `content`, or has a content/<code>/lessons folder. */
+function hasTranslatedLessons(code: string, root: string): boolean {
+  return existsSync(path.join(root, 'content', code, 'lessons'));
+}
+
+/**
+ * The languages Listen can have recordings in: English, and every language whose
+ * lessons are translated, ready or not (Vietnamese is a hidden preview until a
+ * native speaker has reviewed it). Whether one is recorded and checked is decided
+ * by `ready` and by whether it has recordings (scripts/audio/generate.py, ./check.ts).
+ */
+export function recordedLanguages(root = ROOT): string[] {
+  return [
+    'en',
+    ...LOCALES.filter((locale) => locale.code !== 'en' && !locale.pseudo && (locale.content || hasTranslatedLessons(locale.code, root))).map(
+      (locale) => locale.code,
+    ),
+  ];
 }
 
 /** One language's lessons, as the app shows them: English, or the translation laid over it. */
@@ -110,7 +132,7 @@ function sectionOf(lang: string, key: string, label: string, texts: readonly str
 /** Everything Listen reads, by language. */
 export function listenUtterances(root = ROOT): LanguageUtterances[] {
   const english = englishLessons(root);
-  return recordedLanguages().map((lang) => {
+  return recordedLanguages(root).map((lang) => {
     const sections: SectionUtterances[] = [];
     for (const lesson of lessonsIn(lang, english, root)) {
       lesson.read.sections.forEach((section, index) => {
@@ -134,6 +156,7 @@ export function listenUtterances(root = ROOT): LanguageUtterances[] {
     }
     const sample = LISTEN_SAMPLES[lang];
     if (sample) sections.push(sectionOf(lang, 'sample', 'Settings sample', [sample], ['end']));
-    return { lang, normaliser: NORMALISER_VERSION, sections };
+    const ready = LOCALES.find((locale) => locale.code === lang)?.ready ?? false;
+    return { lang, ready, normaliser: NORMALISER_VERSION, sections };
   });
 }

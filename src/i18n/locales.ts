@@ -27,9 +27,11 @@ export type Direction = 'ltr' | 'rtl';
  * Display, Atkinson Hyperlegible Next), which cover English and Somali.
  * 'arabic' adds Vazirmatn's Arabic-script letters for Dari/Farsi and
  * Arabic (src/i18n/fonts/arabic.css), loaded only while such a language is
- * in use.
+ * in use. 'vietnamese' replaces the Latin letters with Be Vietnam Pro
+ * (src/i18n/fonts/vietnamese.css), because the site's two fonts lack most of
+ * Vietnamese's letters (ơ, ư and every dotted or hooked vowel).
  */
-export type FontKey = 'latin' | 'arabic';
+export type FontKey = 'latin' | 'arabic' | 'vietnamese';
 
 export interface LocaleDefinition {
   /** BCP 47 tag: <html lang>, the message file's name and the Intl locale. */
@@ -82,6 +84,11 @@ export const LOCALES: readonly LocaleDefinition[] = [
   // (docs/translation/id/) before it reaches learners.
   // Its own name as Indonesians say it: "Bahasa Indonesia" (CLDR has just "Indonesia").
   { code: 'id', englishName: 'Indonesian', endonym: 'Bahasa Indonesia', dir: 'ltr', font: 'latin', ready: true, content: true, speechLang: 'id-ID' },
+  // Tiếng Việt: a hidden preview. Drafted by AI and cross-checked by AI; it is
+  // never offered (ready: false) until a native speaker has reviewed it
+  // (docs/translation/vi/, docs/notes/vietnamese-preview.md). Unlike
+  // Indonesian, it is not an exception to "no machine translation for learners".
+  { code: 'vi', englishName: 'Vietnamese', endonym: 'Tiếng Việt', dir: 'ltr', font: 'vietnamese', ready: false, content: true, speechLang: 'vi-VN' },
 ];
 
 /**

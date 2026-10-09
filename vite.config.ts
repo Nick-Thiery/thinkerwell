@@ -26,7 +26,7 @@ import {
   languagePrecacheIgnores,
 } from './src/i18n/build.ts';
 import { LAZY_MESSAGE_GROUPS, LAZY_MESSAGES_ID, LAZY_MESSAGES_PREFIX } from './src/i18n/lazyGroups.ts';
-import { LOCALES, PSEUDO_LOCALES } from './src/i18n/locales.ts';
+import { LOCALES, PSEUDO_LOCALES, readyLocales } from './src/i18n/locales.ts';
 import { PSEUDO_TRANSFORMS, pseudoMessages } from './src/i18n/pseudo.ts';
 import { pageHead, seoPages, shellHead, sitemapXml, withHead, type SeoInput, type SeoLesson } from './src/seo/build.ts';
 import { SHELL_FILE } from './src/seo/site.ts';
@@ -204,8 +204,8 @@ function keepZodOutOfTheBrowser(): Plugin {
  *   them (src/content/catalog.ts). A value imported from src/content/index.ts
  *   by any module on the home page or course map would bring all 24 back.
  * - No dev-only page (src/dev) in any chunk, and no source map anywhere.
- * - No Arabic font in the site's one stylesheet: it is a stylesheet of its
- *   own, added only while a language that needs it is shown
+ * - No Arabic or Vietnamese font in the site's one stylesheet: each is a
+ *   stylesheet of its own, added only while a language that needs it is shown
  *   (src/i18n/fonts/index.ts). Imported from code as CSS rather than as a
  *   file (`?url`), cssCodeSplit: false would take it into the site's.
  */
@@ -260,10 +260,15 @@ function keepFirstVisitLight(): Plugin {
     // The site's stylesheet is made after the other plugins' generateBundle.
     writeBundle(_options, bundle) {
       for (const output of Object.values(bundle)) {
-        if (output.type !== 'asset' || !output.fileName.endsWith('.css') || output.fileName.startsWith('assets/fonts-arabic/')) continue;
+        if (output.type !== 'asset' || !output.fileName.endsWith('.css') || /^assets\/fonts-(arabic|vietnamese)\//.test(output.fileName)) continue;
         if (/vazirmatn/i.test(String(output.source))) {
           this.error(
             `The Arabic font is in the site's stylesheet (${output.fileName}). Import src/i18n/fonts/arabic.css only with ?url (src/i18n/fonts/index.ts).`,
+          );
+        }
+        if (/be vietnam pro|be-vietnam-pro/i.test(String(output.source))) {
+          this.error(
+            `The Vietnamese font is in the site's stylesheet (${output.fileName}). Import src/i18n/fonts/vietnamese.css only with ?url (src/i18n/fonts/index.ts).`,
           );
         }
         if (!output.fileName.startsWith(PREVIEW_ASSET_DIR) && /\.tw-dw-/.test(String(output.source))) {
@@ -398,6 +403,7 @@ function stripBuildOnlyMessages(): Plugin {
  */
 function lazyMessages(): Plugin {
   let root = process.cwd();
+  let building = false;
   const groupOf = (id: string): string | null => {
     if (id.startsWith(COURSE_MESSAGES_ID)) return COURSES.find((c) => c.id === id.slice(COURSE_MESSAGES_ID.length))?.messages ?? null;
     if (id.startsWith(LAZY_MESSAGES_ID)) {
@@ -410,6 +416,7 @@ function lazyMessages(): Plugin {
     name: 'thinkerwell:lazy-messages',
     configResolved(config) {
       root = config.root;
+      building = config.command === 'build';
     },
     resolveId(id) {
       if (id.startsWith(COURSE_MESSAGES_PREFIX)) {
@@ -426,7 +433,12 @@ function lazyMessages(): Plugin {
       const group = groupOf(id);
       if (!group) return null;
       const words: Record<string, unknown> = {};
+      // In a production build a lazily loaded page's words (these chunks are precached) carry only
+      // English and the languages learners can choose: a language that is not ready (the Vietnamese
+      // preview) ships nothing to every device. A preview course's words are never precached anyway.
+      const offered = new Set(['en', ...readyLocales().map((locale) => locale.code)]);
       for (const code of messageFileCodes()) {
+        if (building && id.startsWith(LAZY_MESSAGES_ID) && !offered.has(code)) continue;
         const file = path.join(root, 'src', 'i18n', 'messages', `${code}.json`);
         this.addWatchFile(file);
         const messages = JSON.parse(readFileSync(file, 'utf8')) as Record<string, unknown>;
@@ -584,8 +596,8 @@ function messageFileCodes(): string[] {
  *   printouts and emails; no page uses them) or the app icons (the browser
  *   fetches those itself when someone installs the app).
  * - Other languages: only those learners can choose (`ready` in
- *   src/i18n/locales.ts), with the Arabic font only once a ready language
- *   needs it; never the pseudo-languages for testing
+ *   src/i18n/locales.ts), with the Arabic or Vietnamese font only once a ready
+ *   language needs it; never the pseudo-languages for testing
  *   (src/i18n/build.ts, languagePrecacheIgnores).
  * - Nothing else is cached at runtime, so requests the precache doesn't
  *   hold (YouTube's player after a learner's tap, anything on another
@@ -729,7 +741,7 @@ export default defineConfig({
     cssCodeSplit: false,
     rolldownOptions: {
       output: {
-        // Each language (and the Arabic font) in its own folder, so the
+        // Each language (and the Arabic and Vietnamese fonts) in its own folder, so the
         // service worker can leave out those learners can't choose yet
         // (src/i18n/build.ts), and each preview course in assets/preview/,
         // which it never stores (src/courses/build.ts).

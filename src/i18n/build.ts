@@ -8,9 +8,10 @@
  *   assets/locales/<code>/visuals/...   that language's lesson pictures (content/<code>/visuals/)
  *   assets/pseudo/...                   the pseudo-languages for testing
  *   assets/fonts-arabic/...             Vazirmatn's Arabic letters and their stylesheet
+ *   assets/fonts-vietnamese/...         Be Vietnam Pro's letters and their stylesheet
  *
- * Precached: a language's messages once it is `ready`, and the Arabic font
- * once a ready language needs it. Never the pseudo-languages. So today, with
+ * Precached: a language's messages once it is `ready`, and the Arabic or
+ * Vietnamese font once a ready language needs it. Never the pseudo-languages. So today, with
  * only English ready, the precache holds nothing more than before.
  */
 import { LOCALES, readyLocales, type LocaleDefinition } from './locales.ts';
@@ -18,10 +19,10 @@ import { LOCALES, readyLocales, type LocaleDefinition } from './locales.ts';
 /**
  * Matches a language's message file, its translated content (content/<code>/:
  * course, lessons, section checks and pictures' URLs), a pseudo-language,
- * the pseudo-language code and the Arabic font stylesheet in the module graph.
+ * the pseudo-language code and the fonts' stylesheets in the module graph.
  */
 export const LANGUAGE_MODULE =
-  /(?:[\\/]src[\\/]i18n[\\/](?:messages[\\/][^\\/]+\.json|pseudo\.ts|fonts[\\/]arabic\.css)|[\\/]content[\\/][a-z]{2,3}(?:-[A-Za-z0-9]+)*[\\/](?:course\.json|(?:lessons|quizzes)[\\/][^\\/]+\.json|visuals[\\/][^\\/]+\.svg\?url)|tw-pseudo-locale:[^\\/]+)$/;
+  /(?:[\\/]src[\\/]i18n[\\/](?:messages[\\/][^\\/]+\.json|pseudo\.ts|fonts[\\/](?:arabic|vietnamese)\.css)|[\\/]content[\\/][a-z]{2,3}(?:-[A-Za-z0-9]+)*[\\/](?:course\.json|(?:lessons|quizzes)[\\/][^\\/]+\.json|visuals[\\/][^\\/]+\.svg\?url)|tw-pseudo-locale:[^\\/]+)$/;
 
 /** A language's translated content file (content/<code>/...), by its code, or null. */
 function contentLanguage(id: string): string | null {
@@ -44,6 +45,7 @@ export function languageChunkName(moduleId: string): string | null {
   if (pseudo) return `pseudo-${pseudo[1]}`;
   if (/\/src\/i18n\/pseudo\.ts$/.test(id)) return 'pseudo';
   if (/\/src\/i18n\/fonts\/arabic\.css$/.test(id)) return 'font-arabic';
+  if (/\/src\/i18n\/fonts\/vietnamese\.css$/.test(id)) return 'font-vietnamese';
   return null;
 }
 
@@ -52,12 +54,13 @@ export function languageChunkFileName(chunkName: string): string {
   if (chunkName.startsWith('locale-')) return `assets/locales/${chunkName.slice('locale-'.length)}/[hash].js`;
   if (chunkName === 'pseudo' || chunkName.startsWith('pseudo-')) return 'assets/pseudo/[name]-[hash].js';
   if (chunkName === 'font-arabic') return 'assets/fonts-arabic/[name]-[hash].js';
+  if (chunkName === 'font-vietnamese') return 'assets/fonts-vietnamese/[name]-[hash].js';
   return 'assets/[name]-[hash].js';
 }
 
 /**
- * The file name pattern for an asset (output.assetFileNames): the Arabic
- * font's files and stylesheet go with it, and a language's lesson pictures
+ * The file name pattern for an asset (output.assetFileNames): the Arabic and
+ * Vietnamese fonts' files and stylesheets go with them, and a language's lesson pictures
  * with its messages.
  */
 export function languageAssetFileName(asset: { names?: readonly string[]; originalFileNames?: readonly string[] }): string {
@@ -67,6 +70,9 @@ export function languageAssetFileName(asset: { names?: readonly string[]; origin
   if (picture) return `assets/locales/${picture[1]}/visuals/[name]-[hash][extname]`;
   if (sources.some((name) => /@fontsource\/vazirmatn\/|(?:^|\/)vazirmatn-|(?:^|\/)font-arabic\.css$|\/src\/i18n\/fonts\/arabic\.css$/.test(name))) {
     return 'assets/fonts-arabic/[name]-[hash][extname]';
+  }
+  if (sources.some((name) => /@fontsource\/be-vietnam-pro\/|(?:^|\/)be-vietnam-pro-|(?:^|\/)font-vietnamese\.css$|\/src\/i18n\/fonts\/vietnamese\.css$/.test(name))) {
+    return 'assets/fonts-vietnamese/[name]-[hash][extname]';
   }
   return 'assets/[name]-[hash][extname]';
 }
@@ -86,5 +92,6 @@ export function languagePrecacheIgnores(
     'assets/pseudo/**',
     ...[...notReady].sort().map((code) => `assets/locales/${code}/**`),
     ...(ready.some((locale) => locale.font === 'arabic') ? [] : ['assets/fonts-arabic/**']),
+    ...(ready.some((locale) => locale.font === 'vietnamese') ? [] : ['assets/fonts-vietnamese/**']),
   ];
 }

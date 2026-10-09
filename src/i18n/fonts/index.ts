@@ -8,15 +8,17 @@
  * The site has one stylesheet for every page (vite.config.ts, cssCodeSplit
  * false), which takes in every CSS file the code imports, even one imported
  * on demand. So each font's stylesheet is imported as a file of its own
- * (`?url`: built, with its font files, into assets/fonts-arabic/) and added
+ * (`?url`: built, with its font files, into assets/fonts-arabic/ or assets/fonts-vietnamese/) and added
  * with a <link> when a language first needs it. The build stops if it ever
  * lands in the site's stylesheet (keepFirstVisitLight in vite.config.ts).
  */
 import type { FontKey } from '../locales';
 import arabicStylesheet from './arabic.css?url';
+import vietnameseStylesheet from './vietnamese.css?url';
 
 const stylesheets: Record<Exclude<FontKey, 'latin'>, string> = {
   arabic: arabicStylesheet,
+  vietnamese: vietnameseStylesheet,
 };
 
 const started = new Map<FontKey, Promise<void>>();
@@ -47,7 +49,7 @@ export function loadFont(key: FontKey): Promise<void> {
   let pending = started.get(key);
   if (!pending) {
     pending = addStylesheet(key, stylesheets[key]).catch((error: unknown) => {
-      // Offline before it was ever fetched: the browser's own Arabic-script font shows instead.
+      // Offline before it was ever fetched: the browser's own fonts show instead.
       started.delete(key);
       if (import.meta.env.DEV) console.warn(`[i18n] Couldn't load the ${key} font.`, error);
     });

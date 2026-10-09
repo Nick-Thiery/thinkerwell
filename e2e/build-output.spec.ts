@@ -81,8 +81,11 @@ const PRECACHE_BUDGET = 655_000;
  * 224.3 kB with Thinkerwell's own videos (224.0 kB before): their words are the first message group to load with
  * the pages that show them instead of with en.json (src/i18n/lazyGroups.ts), so the transcripts never reach a first
  * visit; what did is the poster's styles and a few bytes of the shared VideoCard (docs/notes/site-videos.md).
+ * Raised to 224.7 kB with the Vietnamese preview: 224.6 kB with it (224.5 kB before). The hidden language's row in the
+ * language list and its three short strings in app code (the quick-check verdicts and the Listen sample); none of its
+ * words, lessons or font reach a first visit (the test below; docs/notes/vietnamese-preview.md).
  */
-const FIRST_VISIT_HOME_BUDGET = 224_500;
+const FIRST_VISIT_HOME_BUDGET = 224_700;
 
 const TEXT = /\.(html|js|css|svg|json|webmanifest)$/;
 
@@ -158,6 +161,34 @@ const DIGITAL_WORLD = [
   'dw-what-ai-is',
   'tw-dw-',
 ];
+
+// Vietnamese is a hidden preview language (ready: false, docs/notes/languages.md):
+// its messages, lessons and pictures are built into assets/locales/vi/, its font
+// into assets/fonts-vietnamese/, and none of it is precached or fetched by an
+// English visit. (Its few words in app code, like the quick-check verdicts and
+// the Listen sample, are not markers here.)
+const VIETNAMESE = ['Khám phá thế giới của chúng ta', 'Hai phút về lý do chúng mình', 'Ví dụ hư cấu', 'Be Vietnam Pro', 'be-vietnam-pro'];
+
+test('no Vietnamese preview content is precached or reaches a first visit', { tag: '@own-size' }, async ({ page, request, baseURL }) => {
+  const urls = await precacheList(request);
+  expect(urls.filter((url) => url.includes('/locales/vi/') || url.includes('/fonts-vietnamese/'))).toEqual([]);
+  for (const url of urls.filter((u) => TEXT.test(u))) {
+    const text = (await sentSize(request, url)).body.toString('utf8');
+    for (const marker of VIETNAMESE) expect(text.includes(marker), `${url} has "${marker}"`).toBe(false);
+  }
+
+  const origin = new URL(baseURL ?? 'http://localhost').origin;
+  const firstVisit = new Set<string>();
+  page.on('request', (r) => {
+    if (new URL(r.url()).origin === origin) firstVisit.add(new URL(r.url()).pathname);
+  });
+  for (const path of ['/', '/course']) {
+    await page.goto(path);
+    await expect(page.locator('h1')).toBeVisible();
+    await page.waitForLoadState('networkidle');
+  }
+  expect([...firstVisit].filter((url) => url.includes('/locales/vi/') || url.includes('/fonts-vietnamese/'))).toEqual([]);
+});
 
 test('no Digital World content or code is precached or reaches a first visit', { tag: '@own-size' }, async ({ page, request, baseURL }) => {
   const urls = await precacheList(request);

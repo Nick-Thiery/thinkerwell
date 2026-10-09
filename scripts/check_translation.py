@@ -25,7 +25,10 @@ try:
 except Exception:  # pragma: no cover
     zipf_frequency = None
 
-# House style per language. Only Indonesian so far.
+# House style per language: Indonesian, and Vietnamese (a hidden preview,
+# docs/translation/vi/). Optional keys: simple_avg_warn / simple_long_warn
+# (Vietnamese counts syllables as words, so its sentences run longer),
+# voice_hint (what the forbidden-word errors tell the translator).
 STYLE = {
     "id": {
         "correct_lead": "Benar.",
@@ -34,6 +37,17 @@ STYLE = {
         "self_check_start": "Aku ",
         # Formal "you" and "please": the course speaks to the learner as "kamu".
         "forbidden": [r"\bAnda\b", r"\bsilakan\b", r"\btolong\b", r"\bengkau\b"],
+    },
+    "vi": {
+        "correct_lead": "Đúng rồi.",
+        "retry_lead": "Chưa đúng lắm.",
+        "completion": "Bạn đã hoàn thành Bài {n}.",
+        "self_check_start": "Mình ",
+        # "bạn" for the learner, "mình" when the learner speaks; no "please", no formal "quý vị", no "em" or "con".
+        "forbidden": [r"(?i)\bvui lòng\b", r"(?i)\blàm ơn\b", r"(?i)\bxin vui\b", r"(?i)\bquý vị\b", r"(?i)\bquý khách\b"],
+        "voice_hint": 'speak to the learner as "bạn", without "please" (vui lòng, làm ơn) or "quý vị"',
+        "simple_avg_warn": 14,
+        "simple_long_warn": 22,
     },
 }
 
@@ -118,10 +132,12 @@ def check_lesson(lang, eng_path, tr_path):
         errs.append(f"simpler has {n_s} words, standard {n_t}: simpler must be clearly shorter")
     if avg_s >= avg_t:
         errs.append(f"simpler sentences average {avg_s:.1f} words, standard {avg_t:.1f}: simpler must use shorter sentences")
-    if avg_s > 10:
-        warns.append(f"simpler sentences average {avg_s:.1f} words (aim for 9 or fewer)")
-    if long_s > 15:
-        warns.append(f"simpler has a sentence of {long_s} words (aim for 14 or fewer)")
+    avg_warn = style.get("simple_avg_warn", 10)
+    long_warn = style.get("simple_long_warn", 15)
+    if avg_s > avg_warn:
+        warns.append(f"simpler sentences average {avg_s:.1f} words (aim for {avg_warn - 1} or fewer)")
+    if long_s > long_warn:
+        warns.append(f"simpler has a sentence of {long_s} words (aim for {long_warn - 1} or fewer)")
     if wl_s > wl_t + 0.2:
         warns.append(f"simpler uses longer words on average ({wl_s:.1f} letters) than standard ({wl_t:.1f})")
     for i, s in enumerate(secs):
@@ -171,7 +187,7 @@ def check_lesson(lang, eng_path, tr_path):
     for pat in style["forbidden"]:
         m = re.search(pat, blob)
         if m:
-            errs.append(f'uses "{m.group(0)}": speak to the learner as "kamu", without "please"')
+            errs.append(f'uses "{m.group(0)}": ' + style.get("voice_hint", 'speak to the learner as "kamu", without "please"'))
     if "!" in blob:
         warns.append("exclamation mark in learner text")
 
@@ -232,7 +248,7 @@ def check_quiz(lang, eng_path, tr_path):
     for pat in style["forbidden"]:
         m = re.search(pat, blob)
         if m:
-            errs.append(f'uses "{m.group(0)}": speak to the learner as "kamu", without "please"')
+            errs.append(f'uses "{m.group(0)}": ' + style.get("voice_hint", 'speak to the learner as "kamu", without "please"'))
     name = os.path.basename(eng_path)[:-5]
     warns += stale(lang, f"quiz-{name}", [(T.path_str(p), v) for p, v in T.translatable(E)])
     return errs, warns

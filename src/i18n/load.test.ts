@@ -37,8 +37,8 @@ describe('loadLocale', () => {
     expect(loadedLocale('de')).toBeUndefined();
   });
 
-  it('finds a message file for Indonesian, the one other language translated today', () => {
-    expect(messageFileCodes()).toEqual(['id']);
+  it('finds a message file for Indonesian and for Vietnamese (a hidden preview, not ready)', () => {
+    expect(messageFileCodes()).toEqual(['id', 'vi']);
   });
 
   it("loads Indonesian's messages together with its translated lessons, section checks and pictures", async () => {

@@ -1,11 +1,11 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-function fontLinks(): HTMLLinkElement[] {
-  return [...document.head.querySelectorAll<HTMLLinkElement>('link[rel="stylesheet"][data-font="arabic"]')];
+function fontLinks(key = 'arabic'): HTMLLinkElement[] {
+  return [...document.head.querySelectorAll<HTMLLinkElement>(`link[rel="stylesheet"][data-font="${key}"]`)];
 }
 
 afterEach(() => {
-  for (const link of fontLinks()) link.remove();
+  for (const link of [...fontLinks(), ...fontLinks('vietnamese')]) link.remove();
   vi.resetModules();
 });
 
@@ -24,6 +24,16 @@ describe('loadFont', () => {
     const links = fontLinks();
     expect(links).toHaveLength(1);
     links[0]!.dispatchEvent(new Event('load'));
+    await expect(first).resolves.toBeUndefined();
+  });
+
+  it("adds the Vietnamese font's own stylesheet once, and not the Arabic one with it", async () => {
+    const { loadFont } = await import('./index');
+    const first = loadFont('vietnamese');
+    expect(loadFont('vietnamese')).toBe(first);
+    expect(fontLinks('vietnamese')).toHaveLength(1);
+    expect(fontLinks()).toHaveLength(0);
+    fontLinks('vietnamese')[0]!.dispatchEvent(new Event('load'));
     await expect(first).resolves.toBeUndefined();
   });
 

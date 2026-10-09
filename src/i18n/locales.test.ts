@@ -24,13 +24,14 @@ describe('the language list', () => {
     expect(SOURCE_LOCALE).toBe('en');
   });
 
-  it('lists the languages the pilot plan names, and Indonesian, the only one ready', () => {
+  it('lists the languages the pilot plan names, and Indonesian, the only one ready besides English', () => {
     expect(LOCALES.map((locale) => [locale.code, locale.dir, locale.font, locale.ready])).toEqual([
       ['en', 'ltr', 'latin', true],
       ['fa-AF', 'rtl', 'arabic', false],
       ['ar', 'rtl', 'arabic', false],
       ['so', 'ltr', 'latin', false],
       ['id', 'ltr', 'latin', true],
+      ['vi', 'ltr', 'vietnamese', false],
     ]);
   });
 
@@ -95,8 +96,11 @@ describe('resolveLocale', () => {
 });
 
 describe('languages whose lessons are translated too', () => {
-  it('is only Indonesian, which reads and listens in id-ID', () => {
-    expect(LOCALES.filter((locale) => locale.content).map((locale) => [locale.code, locale.speechLang])).toEqual([['id', 'id-ID']]);
+  it('is Indonesian (ready) and Vietnamese (a hidden preview), which read and listen in id-ID and vi-VN', () => {
+    expect(LOCALES.filter((locale) => locale.content).map((locale) => [locale.code, locale.speechLang, locale.ready])).toEqual([
+      ['id', 'id-ID', true],
+      ['vi', 'vi-VN', false],
+    ]);
   });
 
   it('gives the lessons in Indonesian for Indonesian, and in English for every other language', () => {
