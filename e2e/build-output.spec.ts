@@ -46,14 +46,15 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * the routes and the small list of courses. Digital World itself (its lessons, activities,
  * words and styles, 56.5 kB) is in assets/preview/, never precached
  * (the test below; docs/notes/digital-world-preview.md).
- * Raised to 650 kB with Thinkerwell's own videos on About, For educators
- * and For organisations: 648.5 kB with them (643.8 kB before), all of it
- * the player and the two videos' words in both languages, in the chunk
- * those pages share, so "Read instead" works offline. The video files
- * themselves (12 MB) are never precached and download only on a tap
- * (docs/notes/site-videos.md).
+ * Raised to 655 kB with Thinkerwell's own videos on About, For educators,
+ * For organisations and the setup checklist: 649.4 kB with them (643.8 kB
+ * before), all of it the player and the three videos' words in both
+ * languages, in the chunk those pages share, so "Read instead" works
+ * offline. The video files themselves (17 MB) are never precached and
+ * download only on a tap (docs/notes/site-videos.md). It leaves room for
+ * one more small feature.
  */
-const PRECACHE_BUDGET = 650_000;
+const PRECACHE_BUDGET = 655_000;
 /**
  * Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before),
  * 210.5 kB after the language and pilot-day merges, 212.7 kB with the header's language switch and the one language

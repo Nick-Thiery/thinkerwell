@@ -33,6 +33,7 @@ const PAGES = [
   { path: '/about', heading: 'About Thinkerwell', title: 'Explore your world' },
   { path: '/educators', heading: 'For educators', title: 'Run a session' },
   { path: '/organisations', heading: 'For organisations', title: 'Run a session' },
+  { path: '/educators/setup', heading: 'Set up this device', title: 'Set up a device' },
 ];
 
 for (const { path, heading, title } of PAGES) {
@@ -41,7 +42,8 @@ for (const { path, heading, title } of PAGES) {
     await page.goto(path);
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(heading);
     const card = page.locator('.tw-sitevideo');
-    await expect(card.getByRole('heading', { level: 3, name: title })).toBeVisible();
+    // Under the checklist's h1 the title is an h2; elsewhere it sits under a section's h2.
+    await expect(card.getByRole('heading', { level: path === '/educators/setup' ? 2 : 3, name: title })).toBeVisible();
     await expect(card.getByRole('button', { name: 'Watch the video' })).toBeVisible();
     await expect(card.getByRole('button', { name: 'Read instead' })).toBeVisible();
     await page.waitForLoadState('networkidle');
@@ -50,6 +52,16 @@ for (const { path, heading, title } of PAGES) {
     await expect(card.locator('.tw-video-poster img')).toHaveAttribute('src', '/images/thinkerwell-mascot-transparent.png');
   });
 }
+
+test('the setup checklist’s video is on screen only: the printed checklist leaves it out', async ({ page }) => {
+  await page.goto('/educators/setup');
+  const card = page.locator('.tw-sitevideo');
+  await expect(card).toBeVisible();
+  await page.emulateMedia({ media: 'print' });
+  await expect(card).toBeHidden();
+  await page.emulateMedia({ media: 'screen' });
+  await expect(card).toBeVisible();
+});
 
 test('the tap requests only the site’s own file and captions, into a player with controls and no autoplay', async ({ page, baseURL }) => {
   const origin = new URL(baseURL ?? 'http://localhost').origin;

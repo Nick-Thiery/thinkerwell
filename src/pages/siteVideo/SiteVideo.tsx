@@ -66,6 +66,8 @@ export interface SiteVideoProps {
   watchVariant?: 'primary' | 'secondary';
   /** On a laptop, the picture and its details side by side (a video across the whole page). */
   wide?: boolean;
+  /** The title's heading level: 3 under a section's h2 (the default), 2 where the card follows the page's h1. */
+  headingLevel?: 2 | 3;
 }
 
 /**
@@ -85,7 +87,8 @@ export interface SiteVideoProps {
  *   costs nothing to anyone who doesn't watch it. Its words are in the
  *   offline copy with this code, so "Read instead" works offline.
  */
-export function SiteVideo({ video: id, watchVariant = 'primary', wide = false }: SiteVideoProps) {
+export function SiteVideo({ video: id, watchVariant = 'primary', wide = false, headingLevel = 3 }: SiteVideoProps) {
+  const WrittenHeading = headingLevel === 2 ? 'h2' : 'h3';
   // The videos' words (`siteVideo` in en.json and id.json) load with this
   // code, not with the app (src/i18n/lazyGroups.ts): a first visit to the
   // home page never downloads the transcripts.
@@ -211,9 +214,9 @@ export function SiteVideo({ video: id, watchVariant = 'primary', wide = false }:
           ) : null}
           <article className="tw-sitevideo-written" aria-labelledby={writtenId}>
             <span className="eyebrow tw-sitevideo-written-part">{t('siteVideo.writtenPart')}</span>
-            <h3 id={writtenId} ref={writtenHeadingRef} className="tw-sitevideo-written-h" tabIndex={-1}>
+            <WrittenHeading id={writtenId} ref={writtenHeadingRef} className="tw-sitevideo-written-h" tabIndex={-1}>
               {title}
-            </h3>
+            </WrittenHeading>
             <div className="tw-sitevideo-written-text">
               {video.words.map((key) => (
                 <p key={key}>{t(key)}</p>
@@ -233,6 +236,7 @@ export function SiteVideo({ video: id, watchVariant = 'primary', wide = false }:
         <VideoCard
           title={title}
           titleInEnglish={false}
+          headingLevel={headingLevel}
           duration={formatDuration(video.seconds, formatNumber)}
           captions={t('siteVideo.captions')}
           watchVariant={watchVariant}

@@ -50,6 +50,8 @@ export interface VideoCardProps {
    * hidden from screen readers. Not in the reference.
    */
   posterArt?: ReactNode;
+  /** The title's heading level: 3 (the reference, under a stage's heading) or 2 where the card follows the page's h1. Not in the reference. */
+  headingLevel?: 2 | 3;
 }
 
 /**
@@ -74,7 +76,9 @@ export function VideoCard({
   actions,
   titleInEnglish = true,
   posterArt,
+  headingLevel = 3,
 }: VideoCardProps) {
+  const Heading = headingLevel === 2 ? 'h2' : 'h3';
   const { t, englishLang: english } = useI18n();
   const englishLang = titleInEnglish ? english : {};
   return (
@@ -110,9 +114,9 @@ export function VideoCard({
       )}
       <div className="tw-video-body">
         {/* A lesson video's title and channel: English in every language, even when the lesson is translated (the video is English). */}
-        <h3 className="tw-video-title" {...englishLang}>
+        <Heading className="tw-video-title" {...englishLang}>
           {title}
-        </h3>
+        </Heading>
         <div className="tw-video-meta">
           {channel ? (
             <span {...englishLang}>

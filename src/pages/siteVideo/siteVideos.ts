@@ -2,7 +2,7 @@ import type { MessageKey } from '../../i18n';
 
 /**
  * Thinkerwell's own videos about Thinkerwell (docs/notes/site-videos.md),
- * shown on About, For educators and For organisations. They are files on
+ * shown on About, For educators, For organisations and the setup checklist. They are files on
  * this site (public/video/), not YouTube embeds, so nothing loads from
  * another server. Each file name carries a version: the files are cached
  * for a year (vercel.json), so a changed video gets a new name.
@@ -29,7 +29,7 @@ export interface SiteVideo {
   sources?: MessageKey;
 }
 
-export type SiteVideoId = 'explore' | 'session';
+export type SiteVideoId = 'explore' | 'session' | 'setup';
 
 export const SITE_VIDEOS: Record<SiteVideoId, SiteVideo> = {
   // "Explore your world" (v3): what Thinkerwell is and why. On About, under the mission.
@@ -65,6 +65,23 @@ export const SITE_VIDEOS: Record<SiteVideoId, SiteVideo> = {
       'siteVideo.session.p4',
       'siteVideo.session.p5',
       'siteVideo.session.p6',
+    ],
+  },
+  // "Set up a device": the checklist, step by step. On "Set up this device".
+  setup: {
+    src: '/video/set-up-a-device-v1.mp4',
+    captions: '/video/set-up-a-device-v1.en.vtt',
+    seconds: 79,
+    megabytes: 5,
+    title: 'siteVideo.setup.title',
+    blurb: 'siteVideo.setup.blurb',
+    words: [
+      'siteVideo.setup.p1',
+      'siteVideo.setup.p2',
+      'siteVideo.setup.p3',
+      'siteVideo.setup.p4',
+      'siteVideo.setup.p5',
+      'siteVideo.setup.p6',
     ],
   },
 };
