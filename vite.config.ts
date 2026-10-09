@@ -25,6 +25,7 @@ import {
   languageChunkName,
   languagePrecacheIgnores,
 } from './src/i18n/build.ts';
+import { LAZY_MESSAGE_GROUPS, LAZY_MESSAGES_ID, LAZY_MESSAGES_PREFIX } from './src/i18n/lazyGroups.ts';
 import { LOCALES, PSEUDO_LOCALES } from './src/i18n/locales.ts';
 import { PSEUDO_TRANSFORMS, pseudoMessages } from './src/i18n/pseudo.ts';
 import { pageHead, seoPages, shellHead, sitemapXml, withHead, type SeoInput, type SeoLesson } from './src/seo/build.ts';
@@ -355,8 +356,10 @@ function stripTeamOnlyLessonFields(): Plugin {
  * are untouched, and tests and check:i18n read them whole.
  *
  * It also leaves out each preview course's own words (`digitalWorld`, its
- * `messages` in src/content/courses.ts): they reach the browser only with
- * the course's code, through courseMessages() below.
+ * `messages` in src/content/courses.ts) and the groups only lazily loaded
+ * pages show (`LAZY_MESSAGE_GROUPS`, src/i18n/lazyGroups.ts): they reach
+ * the browser only with the code that shows them, through lazyMessages()
+ * below.
  */
 function stripBuildOnlyMessages(): Plugin {
   return {
@@ -370,38 +373,57 @@ function stripBuildOnlyMessages(): Plugin {
         if (value && typeof value === 'object') delete (value as Record<string, unknown>).description;
         else if (key === 'lessonDescription' || key === 'imageAlt') delete messages.seo![key];
       }
-      // A preview course's own words go with its code instead (courseMessages below).
+      // A preview course's own words, and a lazily loaded group's, go with the code that shows them instead (lazyMessages below).
       for (const course of COURSES) if (course.messages) delete messages[course.messages];
+      for (const group of LAZY_MESSAGE_GROUPS) delete messages[group];
       return { code: JSON.stringify(messages), map: null };
     },
   };
 }
 
 /**
- * A preview course's own interface words (src/content/courses.ts,
- * `messages`): the top-level group of that name in every message file
- * (en.json, id.json, ...), which stripBuildOnlyMessages() leaves out of the
- * app's messages. The course's code imports
- * virtual:thinkerwell/course-messages/<id> (src/courses/<id>/i18n.tsx), so
- * the words load with it, only on a device that has turned the preview on,
- * and never reach a first visit or the precache. In the dev server and in
- * tests the app's messages still have them too.
+ * Words that load with the code that shows them, not with the app: a
+ * preview course's own interface words (src/content/courses.ts,
+ * `messages`) and the lazily loaded groups (src/i18n/lazyGroups.ts). Each
+ * is a top-level group of that name in every message file (en.json,
+ * id.json, ...), which stripBuildOnlyMessages() leaves out of the app's
+ * messages. The code that shows them imports
+ * virtual:thinkerwell/course-messages/<course id> (src/courses/<id>/i18n.tsx)
+ * or virtual:thinkerwell/messages/<group> (for example
+ * src/pages/siteVideo/), so the words load with it: a course's only on a
+ * device that has turned the preview on, never on a first visit or in the
+ * precache; a group's with the lazily loaded pages that show it, never on
+ * a first visit to the home page. In the dev server and in tests the app's
+ * messages still have them too.
  */
-function courseMessages(): Plugin {
+function lazyMessages(): Plugin {
   let root = process.cwd();
+  const groupOf = (id: string): string | null => {
+    if (id.startsWith(COURSE_MESSAGES_ID)) return COURSES.find((c) => c.id === id.slice(COURSE_MESSAGES_ID.length))?.messages ?? null;
+    if (id.startsWith(LAZY_MESSAGES_ID)) {
+      const group = id.slice(LAZY_MESSAGES_ID.length);
+      return (LAZY_MESSAGE_GROUPS as readonly string[]).includes(group) ? group : null;
+    }
+    return null;
+  };
   return {
-    name: 'thinkerwell:course-messages',
+    name: 'thinkerwell:lazy-messages',
     configResolved(config) {
       root = config.root;
     },
     resolveId(id) {
-      if (!id.startsWith(COURSE_MESSAGES_PREFIX)) return null;
-      const course = COURSES.find((c) => c.messages && c.id === id.slice(COURSE_MESSAGES_PREFIX.length));
-      return course ? `${COURSE_MESSAGES_ID}${course.id}` : null;
+      if (id.startsWith(COURSE_MESSAGES_PREFIX)) {
+        const course = COURSES.find((c) => c.messages && c.id === id.slice(COURSE_MESSAGES_PREFIX.length));
+        return course ? `${COURSE_MESSAGES_ID}${course.id}` : null;
+      }
+      if (id.startsWith(LAZY_MESSAGES_PREFIX)) {
+        const group = id.slice(LAZY_MESSAGES_PREFIX.length);
+        return (LAZY_MESSAGE_GROUPS as readonly string[]).includes(group) ? `${LAZY_MESSAGES_ID}${group}` : null;
+      }
+      return null;
     },
     load(id) {
-      if (!id.startsWith(COURSE_MESSAGES_ID)) return null;
-      const group = COURSES.find((c) => c.id === id.slice(COURSE_MESSAGES_ID.length))?.messages;
+      const group = groupOf(id);
       if (!group) return null;
       const words: Record<string, unknown> = {};
       for (const code of messageFileCodes()) {
@@ -615,10 +637,14 @@ function offline(): Plugin[] {
       // Of the HTML files, only index.html: every page load gets it (sw.ts).
       globPatterns: ['index.html', '**/*.{js,css,woff2,svg,png,jpg}'],
       // Not precached: the app icons (the browser fetches them when the site
-      // is installed), the flat mascots (for printouts and emails) and the
-      // link-sharing picture (only apps previewing a link fetch it).
+      // is installed), the flat mascots (for printouts and emails), the
+      // link-sharing picture (only apps previewing a link fetch it) and
+      // Thinkerwell's own videos (public/video/: downloaded only when someone
+      // taps Watch; the MP4 and caption files don't match the patterns
+      // above, but anything else put there would).
       globIgnores: [
         'icons/**',
+        'video/**',
         'images/thinkerwell-mascot-white-background.png',
         'images/thinkerwell-mascot-yellow-background.png',
         'social-card.png',
@@ -657,7 +683,7 @@ export default defineConfig({
     lessonCatalog(),
     stripTeamOnlyLessonFields(),
     stripBuildOnlyMessages(),
-    courseMessages(),
+    lazyMessages(),
     keepZodOutOfTheBrowser(),
     pseudoLocales(),
     keepFirstVisitLight(),

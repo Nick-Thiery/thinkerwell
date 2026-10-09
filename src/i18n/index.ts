@@ -6,3 +6,5 @@ export type { I18nContextValue, LangProps } from './I18nProvider';
 export { applyDocumentLocale, readDevDirection, DEV_DIR_STORAGE_KEY } from './direction';
 export { readDevLocale, DEV_LOCALE_STORAGE_KEY } from './devLocale';
 export { loadLocale, loadedLocale } from './load';
+export { withWords } from './words';
+export { LAZY_MESSAGE_GROUPS, LAZY_MESSAGES_ID, LAZY_MESSAGES_PREFIX, type LazyMessageGroup } from './lazyGroups';

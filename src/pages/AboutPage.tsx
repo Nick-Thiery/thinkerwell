@@ -5,6 +5,7 @@ import { useFullPageTitle } from '../app/usePageTitle';
 import { Icon, Mascot } from '../components/ds';
 import { useI18n } from '../i18n';
 import './AboutPage.css';
+import { SiteVideo } from './siteVideo/SiteVideo';
 
 const MASCOT_SRC = '/images/thinkerwell-mascot-transparent.png';
 
@@ -74,6 +75,10 @@ function LinkedInLink({ href, name }: { href: string; name: string }) {
  * from the originals in docs/design-system/assets/ by
  * scripts/optimise_images.py) and a link to their LinkedIn profiles.
  *
+ * Under the mission, Thinkerwell's video "Explore your world"
+ * (./siteVideo/, docs/notes/site-videos.md), played from this site only
+ * when tapped, with its words as the written version.
+ *
  * The page ends with a link to Credits (/credits), which lists the lessons'
  * sources, the videos, the fonts, the pictures and the software in full.
  */
@@ -93,12 +98,16 @@ export function AboutPage() {
         </div>
       </header>
 
-      <section aria-labelledby="about-mission" className="tw-about-card tw-about-mission">
-        <h2 id="about-mission" className="h2">
-          {t('pages.about.missionTitle')}
-        </h2>
-        <p className="body-lg">{t('pages.about.missionBody')}</p>
-      </section>
+      {/* The mission, and under it the video "Explore your world": one column on a laptop, beside the UN goals. */}
+      <div className="tw-about-main">
+        <section aria-labelledby="about-mission" className="tw-about-card tw-about-mission">
+          <h2 id="about-mission" className="h2">
+            {t('pages.about.missionTitle')}
+          </h2>
+          <p className="body-lg">{t('pages.about.missionBody')}</p>
+        </section>
+        <SiteVideo video="explore" />
+      </div>
 
       <section aria-labelledby="about-goals" className="tw-about-card tw-about-goals">
         <h2 id="about-goals" className="h2">

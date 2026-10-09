@@ -1,0 +1,146 @@
+/*
+ * Thinkerwell's own videos (SiteVideo.tsx): the design system's VideoCard
+ * with a poster drawn from the mascot, a <video> in the player's place, and
+ * the written version in a card of the same shape.
+ */
+
+.tw-sitevideo {
+  min-inline-size: 0;
+}
+
+/* The poster: VideoCard's lavender, as a lesson's video, with the mascot on it. */
+.tw-sitevideo-mascot {
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-start: 6%;
+  block-size: 58%;
+  inline-size: auto;
+  display: block;
+}
+
+.tw-sitevideo .tw-video-player video {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  display: block;
+  background: var(--ink);
+}
+
+/* As for the lesson player: the ring sits just inside the dark frame, in white. */
+.tw-sitevideo .tw-video-player video:focus-visible {
+  outline-color: var(--on-ink);
+  outline-offset: -3px;
+}
+
+.tw-sitevideo-blurb,
+.tw-sitevideo-data,
+.tw-sitevideo-language {
+  margin: 0;
+}
+
+.tw-sitevideo-data {
+  color: var(--ink-muted);
+}
+
+.tw-sitevideo-language {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.tw-sitevideo-language .tw-icon {
+  flex: none;
+}
+
+/* The written version: the same card as the video. */
+.tw-sitevideo-written-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.tw-sitevideo-written {
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-inline-size: 0;
+}
+
+.tw-sitevideo-written-part {
+  color: var(--ink-muted);
+}
+
+.tw-sitevideo-written-h {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 26px;
+  line-height: 32px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.tw-sitevideo-written-text {
+  max-inline-size: var(--reading-measure);
+  font-size: 18px;
+  line-height: 29px;
+  text-wrap: pretty;
+}
+
+.tw-sitevideo-written-text p {
+  margin: 0;
+}
+
+.tw-sitevideo-written-text p + p {
+  margin-block-start: var(--space-4);
+}
+
+.tw-sitevideo-sources {
+  margin: 0;
+  color: var(--ink-muted);
+}
+
+.tw-sitevideo-written-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-block-start: var(--space-2);
+}
+
+/* A video across a laptop's page: the picture and its details side by side. */
+@media (min-width: 1100px) {
+  .tw-sitevideo-wide .tw-video {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .tw-sitevideo-written {
+    padding: var(--space-5);
+  }
+
+  .tw-sitevideo-written-h {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .tw-sitevideo-written-actions .tw-btn {
+    flex: 1;
+  }
+}
+
+/* On paper a video is no use: About and For organisations print without it. */
+@media print {
+  .tw-sitevideo {
+    display: none;
+  }
+}

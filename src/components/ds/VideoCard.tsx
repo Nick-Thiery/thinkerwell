@@ -37,6 +37,19 @@ export interface VideoCardProps {
   watching?: boolean;
   /** Extra buttons after "Watch the video" and "Read instead" (for example "Close the video"). Not in the reference. */
   actions?: ReactNode;
+  /**
+   * Whether the title and channel are the video's own English words, marked
+   * `lang="en"` in every language (a lesson's video). Pass false for a title
+   * from the interface's messages, which is in the reader's language
+   * (Thinkerwell's own videos, src/pages/siteVideo/). Not in the reference.
+   */
+  titleInEnglish?: boolean;
+  /**
+   * A picture drawn on the poster, behind the play button, from what is
+   * already on this site (never a thumbnail from a video host). Decorative:
+   * hidden from screen readers. Not in the reference.
+   */
+  posterArt?: ReactNode;
 }
 
 /**
@@ -59,8 +72,11 @@ export function VideoCard({
   player,
   watching = false,
   actions,
+  titleInEnglish = true,
+  posterArt,
 }: VideoCardProps) {
-  const { t, englishLang } = useI18n();
+  const { t, englishLang: english } = useI18n();
+  const englishLang = titleInEnglish ? english : {};
   return (
     <section className={cx('tw-video', className)}>
       {player ? (
@@ -72,6 +88,11 @@ export function VideoCard({
         // screen readers; the poster only widens the target for a pointer.
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
         <div className={cx('tw-video-poster', onWatch && 'tw-video-poster-tap')} onClick={onWatch}>
+          {posterArt ? (
+            <span className="tw-video-art" aria-hidden="true">
+              {posterArt}
+            </span>
+          ) : null}
           <span className="tw-video-tag">
             <Badge tone="lemon">{t('ds.content.video.optional')}</Badge>
           </span>
@@ -88,7 +109,7 @@ export function VideoCard({
         </div>
       )}
       <div className="tw-video-body">
-        {/* The video's title and channel: English in every language, even when the lesson is translated (the video is English). */}
+        {/* A lesson video's title and channel: English in every language, even when the lesson is translated (the video is English). */}
         <h3 className="tw-video-title" {...englishLang}>
           {title}
         </h3>

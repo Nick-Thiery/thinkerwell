@@ -46,8 +46,14 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * the routes and the small list of courses. Digital World itself (its lessons, activities,
  * words and styles, 56.5 kB) is in assets/preview/, never precached
  * (the test below; docs/notes/digital-world-preview.md).
+ * Raised to 650 kB with Thinkerwell's own videos on About, For educators
+ * and For organisations: 648.5 kB with them (643.8 kB before), all of it
+ * the player and the two videos' words in both languages, in the chunk
+ * those pages share, so "Read instead" works offline. The video files
+ * themselves (12 MB) are never precached and download only on a tap
+ * (docs/notes/site-videos.md).
  */
-const PRECACHE_BUDGET = 645_000;
+const PRECACHE_BUDGET = 650_000;
 /**
  * Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before),
  * 210.5 kB after the language and pilot-day merges, 212.7 kB with the header's language switch and the one language
@@ -71,6 +77,9 @@ const PRECACHE_BUDGET = 645_000;
  * favicons, and the mascot picture the tab used is 422 x 423, so the tab icon is now a file of its own,
  * icons/favicon-96.png (2.3 kB, a 256-colour PNG, which can't be compressed further). Before, the browser reused the
  * mascot picture the first screen loads anyway (docs/notes/seo.md "The favicon").
+ * 224.3 kB with Thinkerwell's own videos (224.0 kB before): their words are the first message group to load with
+ * the pages that show them instead of with en.json (src/i18n/lazyGroups.ts), so the transcripts never reach a first
+ * visit; what did is the poster's styles and a few bytes of the shared VideoCard (docs/notes/site-videos.md).
  */
 const FIRST_VISIT_HOME_BUDGET = 224_500;
 

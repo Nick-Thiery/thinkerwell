@@ -44,11 +44,19 @@
   outline-offset: -3px;
 }
 
+/* posterArt: fills the poster, under the badges and the play button. */
+.tw-video-art {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
 .tw-video-poster-tap {
   cursor: pointer;
 }
 
 .tw-video-play {
+  position: relative;
   width: 80px;
   height: 80px;
   border-radius: 50%;

@@ -41,6 +41,15 @@ describe('AboutPage', () => {
     expect(screen.queryByText(/Read with curiosity/)).not.toBeInTheDocument();
   });
 
+  it('shows the video "Explore your world" right under the mission, not yet loaded', () => {
+    const { container } = render(<AboutPage />);
+    const mission = screen.getByRole('region', { name: 'Our mission' });
+    const video = screen.getByRole('heading', { level: 3, name: 'Explore your world' });
+    expect(mission.nextElementSibling).toContainElement(video);
+    expect(mission.parentElement).toHaveClass('tw-about-main');
+    expect(container.querySelector('video')).toBeNull();
+  });
+
   it("links to each team member's LinkedIn under their name, in a new tab", () => {
     render(<AboutPage />);
     for (const [name, href] of [

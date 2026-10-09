@@ -176,6 +176,7 @@ Lessons 2 and 4 have no picture file: their pictures are small enough to be inli
 | `/assets/pseudo/*.js` | Only in automated tests (the test languages en-XA and ar-XB, `docs/notes/languages.md`); never offered, never precached |
 | `HEAD /` | Only after "Try again" on "This page hasn't downloaded yet" (a first visit that lost the connection before the course was stored), to see whether the site answers before loading the page again |
 | `/audio/{en,id}/timings.[hash].json`, then `/audio/{en,id}/[lesson]-[level]-[part].[hash].mp3` | Listen's recordings (added October 2026, `docs/notes/recorded-audio.md`): only after a tap on Listen, the language's timings file and the part's recording, and the next part's while it plays (not with Save data on); or every recording of the device's lessons' languages after a teacher taps "Download lesson audio" in Settings; or the sample's after "Play a sample". Kept by the service worker in a cache of their own, then answered from there. Never in the precache, never from another server |
+| `/video/explore-your-world-v3.mp4`, `/video/run-a-session-v1.mp4` and their `.en.vtt` captions | Thinkerwell's own videos (added October 2026, `docs/notes/site-videos.md`), on About, For educators and For organisations: only after a tap on "Watch the video" (never with Save data on), the file and its captions, from this site. Never in the precache, never cached, never from another server |
 
 After the service worker has installed, page loads answer from it, and nothing is downloaded until a new version comes out.
 
