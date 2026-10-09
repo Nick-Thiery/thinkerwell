@@ -16,6 +16,13 @@ export interface SiteVideo {
   src: string;
   /** English captions (WebVTT), made from the narration's word timings. */
   captions: string;
+  /**
+   * Subtitles in other languages (WebVTT), by language code: the written
+   * version's words on the English lines' timings. The Indonesian is
+   * AI-drafted and flagged for the native reviewers like the rest of the
+   * interface (docs/translation/README.md).
+   */
+  subtitles: Readonly<Record<string, string>>;
   /** Length in seconds, shown on the poster. */
   seconds: number;
   /** About how many megabytes it downloads, rounded up, said under the title. */
@@ -36,6 +43,7 @@ export const SITE_VIDEOS: Record<SiteVideoId, SiteVideo> = {
   explore: {
     src: '/video/explore-your-world-v3.mp4',
     captions: '/video/explore-your-world-v3.en.vtt',
+    subtitles: { id: '/video/explore-your-world-v3.id.vtt' },
     seconds: 113,
     megabytes: 8,
     title: 'siteVideo.explore.title',
@@ -54,6 +62,7 @@ export const SITE_VIDEOS: Record<SiteVideoId, SiteVideo> = {
   session: {
     src: '/video/run-a-session-v1.mp4',
     captions: '/video/run-a-session-v1.en.vtt',
+    subtitles: { id: '/video/run-a-session-v1.id.vtt' },
     seconds: 69,
     megabytes: 5,
     title: 'siteVideo.session.title',
@@ -71,6 +80,7 @@ export const SITE_VIDEOS: Record<SiteVideoId, SiteVideo> = {
   setup: {
     src: '/video/set-up-a-device-v1.mp4',
     captions: '/video/set-up-a-device-v1.en.vtt',
+    subtitles: { id: '/video/set-up-a-device-v1.id.vtt' },
     seconds: 79,
     megabytes: 5,
     title: 'siteVideo.setup.title',

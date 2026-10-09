@@ -77,16 +77,20 @@ test('the tap requests only the site’s own file and captions, into a player wi
   await expect(video).toHaveAttribute('src', '/video/explore-your-world-v3.mp4');
   await expect(video).toHaveAttribute('controls', '');
   await expect(video).not.toHaveAttribute('autoplay');
-  await expect(video.locator('track')).toHaveAttribute('src', '/video/explore-your-world-v3.en.vtt');
+  await expect(video.locator('track[srclang="en"]')).toHaveAttribute('src', '/video/explore-your-world-v3.en.vtt');
+  await expect(video.locator('track[srclang="id"]')).toHaveAttribute('src', '/video/explore-your-world-v3.id.vtt');
   await expect(page.locator('.tw-sitevideo').getByRole('button', { name: 'Close the video' })).toBeVisible();
-  // The tap started it (never by itself), with the English captions showing.
+  // The tap started it (never by itself), with the English captions showing and the Indonesian subtitles there to choose.
   await expect.poll(() => video.evaluate((v: HTMLVideoElement) => v.currentTime)).toBeGreaterThan(0);
-  expect(await video.evaluate((v: HTMLVideoElement) => [...v.textTracks].map((t) => `${t.kind}:${t.language}:${t.mode}`))).toEqual(['captions:en:showing']);
+  expect(await video.evaluate((v: HTMLVideoElement) => [...v.textTracks].map((t) => `${t.kind}:${t.language}:${t.mode}`))).toEqual([
+    'captions:en:showing',
+    'subtitles:id:disabled',
+  ]);
 
   await expect.poll(() => all.slice(before).filter((url) => url.includes('/video/')).length).toBeGreaterThan(0);
   const after = all.slice(before);
   expect(after.filter((url) => !url.startsWith('blob:') && new URL(url).origin !== origin)).toEqual([]);
-  expect(after.filter((url) => url.includes('/video/')).every((url) => /\/video\/explore-your-world-v3\.(mp4|en\.vtt)$/.test(new URL(url).pathname))).toBe(true);
+  expect(after.filter((url) => url.includes('/video/')).every((url) => /\/video\/explore-your-world-v3\.(mp4|en\.vtt|id\.vtt)$/.test(new URL(url).pathname))).toBe(true);
 });
 
 test('"Read instead" shows every word of the video, and the video can be chosen again', async ({ page }) => {
@@ -149,6 +153,13 @@ test('in Indonesian, the title, the note that the video is English and the writt
   const card = page.locator('.tw-sitevideo');
   await expect(card.getByRole('heading', { level: 3, name: 'Jelajahi duniamu' })).toBeVisible();
   await expect(card.getByText('Video ini berbahasa Inggris', { exact: false })).toBeVisible();
+  // The tap turns the Indonesian subtitles on instead of the English captions.
+  await playableVideos(page);
+  await card.getByRole('button', { name: 'Tonton video' }).click();
+  const video = card.locator('video');
+  await expect(video.locator('track[srclang="id"]')).toHaveAttribute('default', '');
+  await expect(video.locator('track[srclang="en"]')).not.toHaveAttribute('default');
+  await card.getByRole('button', { name: 'Tutup video' }).click();
   await card.getByRole('button', { name: 'Baca saja' }).click();
   await expect(card.getByText(/Setiap pelajar berhak mendapat kesempatan/)).toBeVisible();
 });

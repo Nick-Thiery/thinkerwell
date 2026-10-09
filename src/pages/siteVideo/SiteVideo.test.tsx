@@ -1,6 +1,7 @@
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { I18nProvider } from '../../i18n';
 import en from '../../i18n/messages/en.json';
 import { deleteAllData, getStore } from '../../storage';
 import { SiteVideo, SITE_VIDEO_TIMEOUT_MS } from './SiteVideo';
@@ -64,11 +65,17 @@ describe('SiteVideo', () => {
     expect(video).toHaveAttribute('controls');
     expect(video).not.toHaveAttribute('autoplay');
     expect(video).toHaveAccessibleName('Run a session');
-    const track = video.querySelector('track')!;
-    expect(track).toHaveAttribute('kind', 'captions');
-    expect(track).toHaveAttribute('src', SITE_VIDEOS.session.captions);
-    expect(track).toHaveAttribute('srclang', 'en');
-    expect(track).toHaveAttribute('default');
+    const [captions, indonesian] = [...video.querySelectorAll('track')];
+    expect(captions).toHaveAttribute('kind', 'captions');
+    expect(captions).toHaveAttribute('src', SITE_VIDEOS.session.captions);
+    expect(captions).toHaveAttribute('srclang', 'en');
+    expect(captions).toHaveAttribute('label', 'English');
+    expect(captions).toHaveAttribute('default');
+    expect(indonesian).toHaveAttribute('kind', 'subtitles');
+    expect(indonesian).toHaveAttribute('src', SITE_VIDEOS.session.subtitles.id);
+    expect(indonesian).toHaveAttribute('srclang', 'id');
+    expect(indonesian).toHaveAttribute('label', 'Bahasa Indonesia');
+    expect(indonesian).not.toHaveAttribute('default');
     expect(play).toHaveBeenCalledTimes(1);
     expect(video).toHaveFocus();
     expect(screen.queryByRole('button', { name: 'Watch the video' })).not.toBeInTheDocument();
@@ -96,12 +103,29 @@ describe('SiteVideo', () => {
     expect(videoElement(container)).not.toBeNull();
   });
 
-  it('gives every video a paragraph for each of its messages', () => {
+  it('gives every video a paragraph for each of its messages, English captions and Indonesian subtitles', () => {
     for (const video of Object.values(SITE_VIDEOS)) {
       expect(video.words.length).toBeGreaterThan(0);
       expect(video.src).toMatch(/^\/video\/[a-z0-9-]+-v\d+\.mp4$/);
       expect(video.captions).toBe(video.src.replace(/\.mp4$/, '.en.vtt'));
+      expect(video.subtitles).toEqual({ id: video.src.replace(/\.mp4$/, '.id.vtt') });
     }
+  });
+
+  it('turns the Indonesian subtitles on, instead of the English captions, when the page is Indonesian', async () => {
+    const user = userEvent.setup();
+    const { container } = render(
+      <I18nProvider locale="id">
+        <SiteVideo video="session" />
+      </I18nProvider>,
+    );
+    await user.click(await screen.findByRole('button', { name: 'Tonton video' }));
+    const [captions, indonesian] = [...videoElement(container)!.querySelectorAll('track')];
+    expect(captions).toHaveAttribute('srclang', 'en');
+    expect(captions).not.toHaveAttribute('default');
+    expect(indonesian).toHaveAttribute('srclang', 'id');
+    expect(indonesian).toHaveAttribute('default');
+    expect(screen.getByRole('heading', { level: 3, name: 'Menjalankan satu sesi' })).toBeInTheDocument();
   });
 
   it('shows only the written version when Save data is on', async () => {

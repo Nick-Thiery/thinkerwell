@@ -1,7 +1,7 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import words from 'virtual:thinkerwell/messages/siteVideo';
 import { Button, Icon, StatusBanner, VideoCard } from '../../components/ds';
-import { useI18n, withWords } from '../../i18n';
+import { ENGLISH, findLocale, useI18n, withWords } from '../../i18n';
 import { formatDuration } from '../../lesson/format';
 import { isSaveDataOn } from '../../offline/saveData';
 import { getStore } from '../../storage';
@@ -76,7 +76,8 @@ export interface SiteVideoProps {
  *
  * - Nothing of the video downloads until "Watch the video" is tapped; the
  *   poster is drawn here from the mascot already on the site. The tap
- *   starts it (it never plays by itself), with English captions on.
+ *   starts it (it never plays by itself), with captions on: the page's
+ *   language's subtitles where there are some (Indonesian), else English.
  * - "Read instead" shows what the video says, in the reader's language.
  * - With "Save data" on (Settings, or the browser's data saver until
  *   someone chooses) the written version shows and the video isn't offered.
@@ -93,7 +94,7 @@ export function SiteVideo({ video: id, watchVariant = 'primary', wide = false, h
   // code, not with the app (src/i18n/lazyGroups.ts): a first visit to the
   // home page never downloads the transcripts.
   const parent = useI18n();
-  const { t, formatNumber, englishLang } = useMemo(() => withWords(parent, words), [parent]);
+  const { t, formatNumber, englishLang, locale } = useMemo(() => withWords(parent, words), [parent]);
   const saveData = isSaveDataOn(useSaveDataChoice());
   const video = SITE_VIDEOS[id];
   const title = t(video.title);
@@ -261,7 +262,11 @@ export function SiteVideo({ video: id, watchVariant = 'primary', wide = false, h
                 onLoadedData={() => setLoaded(true)}
                 onError={onVideoError}
               >
-                <track kind="captions" src={video.captions} srcLang="en" label={t('siteVideo.captionsTrack')} default />
+                {/* Each track's name in the player's menu is the language's own name, as the header's switch shows it. The page's language's track is on; English captions otherwise. */}
+                <track kind="captions" src={video.captions} srcLang="en" label={ENGLISH.definition.endonym} default={!(locale in video.subtitles)} />
+                {Object.entries(video.subtitles).map(([code, src]) => (
+                  <track key={code} kind="subtitles" src={src} srcLang={code} label={findLocale(code)?.endonym ?? code} default={code === locale} />
+                ))}
               </video>
             ) : undefined
           }
