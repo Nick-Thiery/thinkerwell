@@ -20,3 +20,15 @@ declare module 'virtual:thinkerwell/course-messages/*' {
   const words: Record<string, CourseMessageTree>;
   export default words;
 }
+
+// A lazily loaded message group's words (src/i18n/lazyGroups.ts: its group
+// of en.json, id.json and the rest, by language code), made by the lazy
+// messages plugin in vite.config.ts and loaded only with the pages' code
+// that shows them (withWords, src/i18n/words.tsx).
+declare module 'virtual:thinkerwell/messages/*' {
+  interface LazyMessageTree {
+    [key: string]: string | LazyMessageTree;
+  }
+  const words: Record<string, LazyMessageTree>;
+  export default words;
+}

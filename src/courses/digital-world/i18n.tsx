@@ -14,58 +14,18 @@
  * (contentLocale), with the banner saying so. The interface stays in the
  * learner's language.
  */
-import { Fragment, useMemo, type ReactNode } from 'react';
+import { useMemo, type ReactNode } from 'react';
 import words from 'virtual:thinkerwell/course-messages/digital-world';
-import {
-  ENGLISH,
-  formatLocale,
-  formatMessage,
-  formatMessageParts,
-  I18nContext,
-  useI18n,
-  type I18nContextValue,
-  type MessageTree,
-} from '../../i18n';
-
-function lookup(tree: unknown, key: string): unknown {
-  let node: unknown = tree;
-  for (const part of key.split('.')) {
-    if (node === null || typeof node !== 'object') return undefined;
-    node = (node as Record<string, unknown>)[part];
-  }
-  return node;
-}
+import { ENGLISH, I18nContext, useI18n, withWords, type I18nContextValue, type MessageTree } from '../../i18n';
 
 /**
  * The page's i18n with the course's own words added (in the language on
- * screen, else English) and its lessons marked as English. Exported for tests.
+ * screen, else English: withWords, src/i18n/words.tsx) and its lessons
+ * marked as English. Exported for tests.
  */
 export function withCourseWords(parent: I18nContextValue, own: Readonly<Record<string, MessageTree>>): I18nContextValue {
-  const lang = formatLocale(parent.definition);
-  /** A course word: the language's own, then the app's (the dev server and the test languages have them all), then English. */
-  const resolve = (key: string): { value: unknown; lang: string } | null => {
-    const mine = lookup(own[parent.locale], key);
-    if (mine !== undefined) return { value: mine, lang };
-    return null;
-  };
-  const english = (key: string) => lookup(own.en, key);
   return {
-    ...parent,
-    t: (key, params) => {
-      const found = resolve(key);
-      if (found) return formatMessage(found.value, found.lang, params) ?? key;
-      const app = parent.t(key, params);
-      if (app !== key) return app;
-      const value = english(key);
-      return value === undefined ? key : (formatMessage(value, 'en', params) ?? key);
-    },
-    tx: (key, params) => {
-      const found = resolve(key);
-      const value = found?.value ?? english(key);
-      if (value === undefined) return parent.tx(key, params);
-      const parts = formatMessageParts(value, found ? found.lang : 'en', params) ?? [key];
-      return parts.map((part, index) => <Fragment key={index}>{part as ReactNode}</Fragment>);
-    },
+    ...withWords(parent, own),
     // The lessons are English for now, whatever the interface's language.
     content: undefined,
     contentLang: parent.englishLang,

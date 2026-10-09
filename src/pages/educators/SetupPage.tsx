@@ -6,6 +6,8 @@
  * The same page on screen and on paper, like the teacher guides: printed, it
  * is a one-page checklist with a box to tick for each step and the home
  * screen steps for every kind of device, without the states or buttons.
+ * On screen, the video "Set up a device" (./../siteVideo/, the checklist in
+ * about a minute) sits between the introduction and the steps.
  *
  * Opening it asks the browser nothing that could prompt or fail
  * (./setup/deviceChecks.ts). "Keep work safe" asks for persistent storage
@@ -30,6 +32,7 @@ import { PrintToolbar } from '../print/PrintToolbar';
 import '../print/print.css';
 import { OFFLINE_STATUS } from '../settings/offlineStatus';
 import { useDeviceSettings } from '../settings/useDeviceSettings';
+import { SiteVideo } from '../siteVideo/SiteVideo';
 import {
   DEVICE_PLATFORMS,
   learnersStepState,
@@ -141,6 +144,11 @@ export function SetupPage() {
             <span className="tw-setup-blank" />
           </p>
         </header>
+
+        {/* "Set up a device": the checklist shown in about a minute (src/pages/siteVideo/). On screen only; the paper checklist has no use for it. */}
+        <div className="tw-no-print tw-setup-video">
+          <SiteVideo video="setup" watchVariant="secondary" headingLevel={2} />
+        </div>
 
         <ol className="tw-setup-steps" role="list" aria-label={t('pages.setup.stepsLabel')}>
           <SetupStep

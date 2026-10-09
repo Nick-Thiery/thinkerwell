@@ -85,6 +85,8 @@ for (const [dir, parts] of [
       if (part > 1) {
         await page.locator('.tw-actionbar').getByRole('button', { name: `Next: Part ${part}` }).click();
         await expect(page).toHaveURL(new RegExp(`part=${part}$`));
+        // The address changes before the reading swaps its text: wait for the new part, so its words are the ones counted.
+        await expect(page.locator('.tw-reading').getByText(new RegExp(`Read · ${part} of \\d`))).toBeVisible();
       }
       await checkEveryWord(page, `${dir} part ${part}`, tap);
     }

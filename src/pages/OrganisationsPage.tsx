@@ -1,6 +1,7 @@
 /**
  * For organisations (/organisations): what a partner organisation needs to
- * decide on a pilot. What Thinkerwell is, what partners get, what we ask,
+ * decide on a pilot. What Thinkerwell is, a short video of a session (the
+ * site's own file, played only when tapped: ./siteVideo/), what partners get, what we ask,
  * how learners' privacy is kept, the tools to get ready, and how to
  * contact us. Linked from the Educators page ("Starting a pilot") and the
  * footer of every page.
@@ -21,6 +22,7 @@ import { Button, Icon, type IconName } from '../components/ds';
 import { useContent } from '../content/useContent';
 import { useI18n, type MessageKey } from '../i18n';
 import './OrganisationsPage.css';
+import { SiteVideo } from './siteVideo/SiteVideo';
 
 const GET: readonly MessageKey[] = [
   'pages.organisations.get1',
@@ -69,6 +71,9 @@ export function OrganisationsPage() {
         </h2>
         <p>{t('pages.organisations.whatBody', { lessons: lessons.length })}</p>
       </section>
+
+      {/* "Run a session": what a session with a group looks like. */}
+      <SiteVideo video="session" wide />
 
       <div className="tw-org-pair">
         <section aria-labelledby="org-get" className="tw-org-card">
