@@ -7,11 +7,12 @@ import { expect, test, type Page } from '@playwright/test';
 // own files. CLAUDE.md rule 2: nothing of a video downloads before the tap,
 // every video has a written version, and Save data turns the videos off.
 //
-// Playwright's Chromium has no H.264 decoder, so the real MP4 can't play in
-// these tests (the player then shows the written version, as it would on
-// any device that can't play it). To check the player itself, a test
-// answers the MP4 request with a two-second VP9 clip (e2e/fixtures/clip.webm,
-// made by ffmpeg from a plain colour and a tone) that this Chromium can play.
+// Whether Playwright's Chromium can decode H.264 depends on the build (the
+// one CI installs can, an older one can't), so no test relies on the real
+// MP4 playing or failing. To check the player, a test answers the MP4
+// request with a two-second VP9 clip (e2e/fixtures/clip.webm, made by
+// ffmpeg from a plain colour and a tone), which every build plays; to check
+// the fallback, it answers with bytes that aren't a video.
 
 const CLIP = readFileSync(path.join(import.meta.dirname, 'fixtures', 'clip.webm'));
 
@@ -136,7 +137,8 @@ test('offline, the written version shows with a way to try the video again', asy
 });
 
 test('a file that can’t play here gives way to the written version, with a way to try again', async ({ page }) => {
-  // Not routed: the real MP4, which this Chromium can't decode.
+  // The file comes back broken (some Chromium builds can decode the real H.264 file and some can't, so the test makes the failure itself).
+  await page.route(/\/video\/.*\.mp4$/, (route) => route.fulfill({ status: 200, contentType: 'video/mp4', body: Buffer.from('not a video') }));
   await page.goto('/educators');
   const card = page.locator('.tw-sitevideo');
   await card.getByRole('button', { name: 'Watch the video' }).click();

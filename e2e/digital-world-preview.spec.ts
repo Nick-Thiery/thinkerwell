@@ -129,7 +129,11 @@ test.describe('with the preview on', () => {
     await page.getByText('I practised on my own').click();
     await page.getByRole('button', { name: 'Continue to Watch' }).click();
     await page.getByRole('button', { name: 'Continue to Reflect' }).click();
-    await page.getByRole('textbox').first().fill('AI guesses from examples.');
+    // Wait for Reflect: until it renders, the first text box is still Watch's "Think first".
+    await expect(page).toHaveURL(/\/reflect$/);
+    const reflection = page.getByRole('textbox').first();
+    await reflection.fill('AI guesses from examples.');
+    await expect(page.getByRole('button', { name: 'Finish lesson' })).toBeEnabled();
     await page.getByRole('button', { name: 'Finish lesson' }).click();
 
     await expect(page.getByRole('heading', { level: 1, name: 'You finished Lesson 1.' })).toBeVisible();
