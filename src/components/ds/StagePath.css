@@ -92,16 +92,17 @@
 .tw-stages-vertical li + li::before {
   width: 2px;
   height: 14px;
-  margin-inline-start: 27px;
+  margin-inline-start: 25px;
 }
 
 .tw-stages-vertical .tw-step {
   width: 100%;
   box-sizing: border-box;
-  padding-block: 6px;
-  padding-inline: 6px var(--space-3);
+  padding-block: 8px;
+  padding-inline: 8px var(--space-4);
   border-radius: var(--radius-lg);
-  min-block-size: 56px;
+  min-block-size: 64px;
+  font-size: 18px;
 }
 
 .tw-step-text {
@@ -112,8 +113,8 @@
 }
 
 .tw-step-sub {
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 15px;
+  line-height: 20px;
   font-weight: 400;
   color: var(--ink-muted);
 }

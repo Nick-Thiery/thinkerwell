@@ -90,8 +90,11 @@ const PRECACHE_BUDGET = 795_000;
  * Raised to 225 kB with Bahasa Melayu: 224.9 kB with it (224.6 kB before). Its row in the language list, its quick-check
  * verdicts and Listen sample in app code, and the eight English messages it added to en.json (Settings' Malay voice
  * and download sizes, the Credits line); none of its words, lessons or pictures reach a first visit (docs/notes/languages.md).
+ * Raised to 225.5 kB with the layout polish: 225.1 kB with it (224.9 kB before). Only styles in the one stylesheet:
+ * the page column's two wide-screen steps, the home cards filling the window, and the bigger course section list
+ * and lesson step list (docs/notes/slow-internet.md).
  */
-const FIRST_VISIT_HOME_BUDGET = 225_000;
+const FIRST_VISIT_HOME_BUDGET = 225_500;
 
 const TEXT = /\.(html|js|css|svg|json|webmanifest)$/;
 

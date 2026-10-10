@@ -50,6 +50,18 @@
   }
 }
 
+@media (min-width: 1280px) {
+  .tw-lesson-player {
+    grid-template-columns: 340px minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 1700px) {
+  .tw-lesson-player {
+    grid-template-columns: 380px minmax(0, 1fr);
+  }
+}
+
 .tw-lesson-intro {
   display: flex;
   flex-direction: column;

@@ -28,7 +28,7 @@ export function SectionsSidebar({ sections, progressBySection, currentSectionId,
         const progress = progressBySection.get(section.id);
         return (
           <a key={section.id} href={`#${section.id}`} className="tw-course-nav-link" aria-current={section.id === currentSectionId ? 'true' : undefined}>
-            <SectionBadge section={section.id} showName={false} size={40} />
+            <SectionBadge section={section.id} showName={false} size={48} />
             <span className="tw-course-nav-name" {...contentLang}>
               {section.title}
             </span>
