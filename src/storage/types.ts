@@ -153,6 +153,13 @@ export interface LessonProgress {
   completedAt: string | null;
   /** The lesson's activity, if it has one and the learner has started it. */
   activity?: ActivityProgress;
+  /**
+   * The reading level the learner had on screen when Read first counted as
+   * done. Optional, saved once and never changed, so older records read as
+   * "not known". Kept for the planned Suggestions feature
+   * (docs/content/PERSONALIZATION_SPEC.md); nothing shows it yet.
+   */
+  readLevel?: ReadingLevel;
 }
 
 /** One go at a section check. */

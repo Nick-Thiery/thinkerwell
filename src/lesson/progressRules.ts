@@ -29,6 +29,10 @@
  *            (completedAt), which is what "Lesson complete" everywhere
  *            means. Clearing the answer later doesn't undo a completion.
  *
+ * When Read first counts as done, the reading level on screen is saved with
+ * it (`readLevel`, once, never changed later). Nothing shows it yet: it is
+ * the input for the planned Suggestions (docs/content/PERSONALIZATION_SPEC.md).
+ *
  * "Current stage" (for Continue) is the stage the learner last opened in
  * this lesson. Opening a stage only writes it when the learner already has a
  * saved record for the lesson; otherwise their first real save carries it.
@@ -37,7 +41,7 @@ import type { CourseLesson } from '../content';
 
 /** What the rules read of a lesson: any course's (src/content/courses.ts). */
 type Lesson = Pick<CourseLesson, 'read' | 'reflect'>;
-import type { CheckAnswer, LessonProgress, StageId } from '../storage';
+import type { CheckAnswer, LessonProgress, ReadingLevel, StageId } from '../storage';
 
 /** The indexes (in lesson.read.checks) of the choice questions. */
 export function choiceCheckIndexes(lesson: Lesson): number[] {
@@ -108,9 +112,18 @@ export function withStageDone(progress: LessonProgress, stage: StageId): LessonP
  * if the lesson was already complete). Pure: returns the same object when
  * nothing changes.
  */
-export function applyStageEvent(lesson: Lesson, progress: LessonProgress, event: StageEvent, now: string): LessonProgress {
+export function applyStageEvent(
+  lesson: Lesson,
+  progress: LessonProgress,
+  event: StageEvent,
+  now: string,
+  context: { readingLevel?: ReadingLevel } = {},
+): LessonProgress {
   if (!eventMarksStageDone(lesson, progress, event)) return progress;
-  const next = withStageDone(progress, event.stage);
+  let next = withStageDone(progress, event.stage);
+  if (event.stage === 'read' && !progress.stagesDone.includes('read') && progress.readLevel === undefined && context.readingLevel) {
+    next = { ...next, readLevel: context.readingLevel };
+  }
   if (event.stage === 'reflect' && !next.completedAt) return { ...next, completedAt: now };
   return next;
 }

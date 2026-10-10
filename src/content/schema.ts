@@ -179,6 +179,13 @@ export type ChoiceOptionData = z.infer<typeof choiceOptionSchema>;
 export const choiceCheckSchema = z
   .strictObject({
     type: z.literal('choice'),
+    /**
+     * The skill the question tests, the same four as a section check's
+     * (vocabulary, understand, evidence, apply). Optional until every lesson
+     * is tagged; added by the content team, never by code. Not shown to
+     * learners; the planned Suggestions read it (docs/content/PERSONALIZATION_SPEC.md).
+     */
+    skill: z.enum(QUIZ_SKILLS).optional(),
     question: text,
     options: z.array(choiceOptionSchema).length(3),
   })

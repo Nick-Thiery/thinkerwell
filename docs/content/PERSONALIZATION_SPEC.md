@@ -1,6 +1,6 @@
 # Suggestions: on-device personalisation (design spec)
 
-Status: **proposed, not built.** Planned for after the HELP pilot, using what the pilot shows. Nothing here changes the pilot build.
+Status: **proposed, not built.** Planned for after the HELP pilot, using what the pilot shows. Only the groundwork below is in the pilot build, and learners cannot see it: the optional `skill` field on quick-check questions (schema and `scripts/check_lesson.py`; the tags themselves are still to be written by Justin) and the reading level saved per lesson (`LessonProgress.readLevel`, in the work file and its merge). No suggestion is worked out or shown.
 
 Every rule in `CLAUDE.md` applies; where this spec seems to disagree, `CLAUDE.md` wins. In the interface the feature is called **Suggestions**; the code goes in `src/suggestions/`.
 
@@ -150,8 +150,8 @@ The consent form promises anonymous data only: time spent, lessons finished and 
 
 Small PRs, each green on CI, with en.json, en.notes.json and id.json updated, and `CLAUDE.md` and `docs/PRODUCT.md` when a decision lands.
 
-1. **Skill tags on quick checks.** Content and schema (`skill` on choice checks), `check_lesson.py` rule. Tests: schema test, content check, every lesson has both tags.
-2. **The model, no UI.** `src/suggestions/`: observations from progress and quiz attempts, estimates, bands, rules, reasons; `readLevel` saved when Read is done. Tests: unit tests for every worked example in this spec, the window, the thresholds' edges, and that nothing is stored.
+1. **Skill tags on quick checks.** *Groundwork done:* the optional `skill` on choice checks (schema, `check_lesson.py` rule: both choice questions tagged or neither, one of the four values, never on the think question; schema tests). *Still to do:* Justin writes the tags (about 48 questions), then a test that every lesson has both. Indonesian lessons take them from the English.
+2. **The model, no UI.** `src/suggestions/`: observations from progress and quiz attempts, estimates, bands, rules, reasons. (*Groundwork done:* `readLevel` is saved when Read first counts as done, once and never changed; it is also in the work file and its merge, with no new file version because it is an optional field. Lessons finished before this change have no `readLevel`, and the model must treat that as "not known".) Tests: unit tests for every worked example in this spec, the window, the thresholds' edges, and that nothing is stored.
 3. **Reading-level suggestion.** Card at the start of Read, `Learner.suggestions`, merge rule (no file version change yet: an optional field), Settings switch. Tests: component tests, e2e at 390/820/1280, axe and focus, `e2e/languages.spec.ts`, page tour stop, keyboard.
 4. **Worth another look.** Learner home and section-check results. Tests: as above, plus the "no counts of wrong answers" copy check.
 5. **Teacher hints.** Class page disclosure, closed by default. Tests: `classSummary.test.ts` hints, no sorting by hint, print only when open.

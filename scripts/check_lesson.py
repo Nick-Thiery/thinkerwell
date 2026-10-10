@@ -21,6 +21,8 @@ try:
 except Exception:  # pragma: no cover
     zipf_frequency = None
 
+# A quick-check choice question may carry one of the section checks' four skills (src/content/quizSkills.ts).
+QUICK_CHECK_SKILLS = {"vocabulary", "understand", "evidence", "apply"}
 SECTIONS = {"history", "geography", "culture", "civics"}
 CARD_TYPES = {"items", "timeline", "map", "cases", "sources", "table"}
 VISUAL_TYPES = {"map", "timeline", "diagram", "illustration"}
@@ -331,8 +333,15 @@ def check(path):
     if types != ["choice", "choice", "think"]:
         errs.append(f"read.checks must be [choice, choice, think], found {types}")
     longest_correct = 0
+    tagged = [c.get("skill") for c in ck if c.get("type") == "choice" and "skill" in c]
+    if tagged and len(tagged) != sum(1 for c in ck if c.get("type") == "choice"):
+        errs.append("read.checks: tag both choice questions with a skill, or neither")
     for i, c in enumerate(ck):
+        if c.get("type") == "think" and "skill" in c:
+            errs.append(f"checks[{i}]: only choice questions carry a skill")
         if c.get("type") == "choice":
+            if "skill" in c and c["skill"] not in QUICK_CHECK_SKILLS:
+                errs.append(f"checks[{i}]: skill must be one of {sorted(QUICK_CHECK_SKILLS)}, found {c['skill']!r}")
             opts = c.get("options") or []
             if len(opts) != 3:
                 errs.append(f"checks[{i}]: need 3 options, found {len(opts)}")
@@ -360,6 +369,7 @@ def check(path):
             if not c.get("placeholder"):
                 warns.append(f"checks[{i}]: think question needs a placeholder")
     stats["correct_positions"] = positions
+    stats["skills"] = [c.get("skill") for c in ck if c.get("type") == "choice"]
     stats["longest_is_correct"] = longest_correct
 
     # write
@@ -462,6 +472,7 @@ def check(path):
 
 def main(paths):
     all_pos, all_long, total_err = [], 0, 0
+    all_skills = []
     for p in paths:
         errs, warns, stats, L = check(p)
         total_err += len(errs)
@@ -474,6 +485,7 @@ def main(paths):
                   + (f" | activity grade {stats['activity_grade']}" if "activity_grade" in stats else ""))
             all_pos += stats.get("correct_positions", [])
             all_long += stats.get("longest_is_correct", 0)
+            all_skills += stats.get("skills", [])
         for e in errs:
             print("   ERROR", e)
         for w in warns:
@@ -482,6 +494,9 @@ def main(paths):
         c = Counter(x + 1 for x in all_pos)
         print(f"\nCorrect option position across files: {dict(sorted(c.items()))} "
               f"(longest option is the correct one in {all_long} of {len(all_pos)})")
+    if len(paths) > 1 and any(all_skills):
+        tags = Counter(s for s in all_skills if s)
+        print(f"Quick-check skill tags: {sum(tags.values())} of {len(all_skills)} questions tagged {dict(sorted(tags.items()))}")
     return 1 if total_err else 0
 
 

@@ -117,6 +117,22 @@ describe('loadContent reports problems', () => {
     expect(() => loadContent(courseJson, { ...lessonFiles, [firstPath]: lesson })).toThrow(/exactly one correct/);
   });
 
+  it('accepts a skill on a choice check, and only one of the four', () => {
+    const withSkill = (skill: unknown) => {
+      const lesson = clone(firstLesson) as { read: { checks: Array<{ type: string; skill?: unknown }> } };
+      lesson.read.checks.find((c) => c.type === 'choice')!.skill = skill;
+      return { ...lessonFiles, [firstPath]: lesson };
+    };
+    expect(() => loadContent(courseJson, withSkill('evidence'))).not.toThrow();
+    expect(() => loadContent(courseJson, withSkill('grammar'))).toThrow(ContentError);
+  });
+
+  it('rejects a skill on the think question', () => {
+    const lesson = clone(firstLesson) as { read: { checks: Array<{ type: string; skill?: unknown }> } };
+    lesson.read.checks.find((c) => c.type === 'think')!.skill = 'apply';
+    expect(() => loadContent(courseJson, { ...lessonFiles, [firstPath]: lesson })).toThrow(ContentError);
+  });
+
   it('rejects a lesson missing from course.json', () => {
     const course = clone(courseJson);
     course.sections[0]!.lessons = course.sections[0]!.lessons.slice(1);
