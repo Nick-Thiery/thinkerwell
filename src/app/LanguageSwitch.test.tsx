@@ -38,6 +38,7 @@ describe('the header’s language switch', () => {
     expect(within(group).getAllByRole('radio').map((radio) => [radio.textContent, radio.getAttribute('lang')])).toEqual([
       ['English', 'en'],
       ['Bahasa Indonesia', 'id'],
+      ['Bahasa Melayu', 'ms'],
     ]);
     // The chosen one has focus, for the arrow keys.
     expect(within(group).getByRole('radio', { name: 'English' })).toHaveFocus();

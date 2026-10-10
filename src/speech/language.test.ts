@@ -36,7 +36,7 @@ describe("Listen's voice, chosen per language", () => {
   const damayanti = { name: 'Damayanti', voiceURI: 'com.apple.voice.compact.id-ID.Damayanti', lang: 'id-ID' };
 
   it('is English, then each ready language whose lessons are translated', () => {
-    expect(listenLanguages()).toEqual(['en', 'id-ID']);
+    expect(listenLanguages()).toEqual(['en', 'id-ID', 'ms-MY']);
     expect(listenLanguages(LOCALES.filter((locale) => locale.code === 'en'))).toEqual(['en']);
   });
 

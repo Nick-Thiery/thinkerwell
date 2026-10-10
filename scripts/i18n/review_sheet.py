@@ -22,8 +22,21 @@ PRIORITY_LESSONS = ["L01", "L02", "L11", "L12", "L16", "L23"]
 # After the lessons: one tab per section check.
 QUIZ_TITLES = {"history": "Check - History", "geography": "Check - Geography", "culture": "Check - Culture", "civics": "Check - Civics"}
 
-COLUMNS = ["ID", "Where it appears", "English", "Indonesian", "Back-translation into English",
-           "Flag", "Reviewer", "Notes", "Exported Indonesian (do not edit)"]
+LANGUAGE_NAMES = {"id": "Indonesian", "ms": "Malay", "vi": "Vietnamese"}
+
+
+def language_name(lang):
+    return LANGUAGE_NAMES.get(lang, lang)
+
+
+def columns(lang):
+    """The sheet's columns: the translation's is named for the language ("Indonesian", "Malay")."""
+    name = language_name(lang)
+    return ["ID", "Where it appears", "English", name, "Back-translation into English",
+            "Flag", "Reviewer", "Notes", f"Exported {name} (do not edit)"]
+
+
+COLUMNS = columns("id")
 
 
 def lesson_names():
