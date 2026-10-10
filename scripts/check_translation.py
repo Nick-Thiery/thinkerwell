@@ -25,6 +25,27 @@ try:
 except Exception:  # pragma: no cover
     zipf_frequency = None
 
+# Words (and stems, as regular expressions) that are Indonesian rather than
+# Malaysian Malay: in the Malay they are mistakes (docs/translation/ms/BRIEF.md
+# has the Malaysian word for each). Kept to words that are wrong in Malaysia in
+# every sense, so a hit is always worth fixing. tools/i18n/check.ts reads this
+# list for the interface messages.
+INDONESIAN_NOT_MALAY = [
+    "uang", "mobil", "kantor", "bisa", "gratis", "karena", "mau", "coba", "mencoba", "dicoba", "jawaban",
+    "pertanyaan", "berbeda", "perbedaan", "bagian", "sebagian", "perangkat", "unduh", "diunduh",
+    "mengunduh", "unggah", "diunggah", "mengunggah", "tombol", "ketuk", "situs", "sertifikat",
+    "kuis", "komunitas", "identitas", "kualitas", "aktivitas", "universitas", "fasilitas", "realitas", "informasi",
+    "ide", "musik", "tim", "siswa", "klaim", "utang",
+    "bisnis", "kesehatan", "sehat", "obat", "dokter", "tetangga", "pabrik", "jembatan", "bandara", "stasiun",
+    "sopir", "truk", "sepatu", "sepeda", "pajak", "persen", "miliar", "menit", "jadwal", "kalender", "tanggal",
+    "nomor", "kartu", "formulir", "penelitian", "yaitu", "yakni", "Eropa", "Jepang", "Italia", "Spanyol",
+    "Prancis", "Inggris", "Tiongkok", "Irak", "Suriah", "Brasil", "Kristen", "abu-abu", "cokelat", "sapi",
+    "pohon", "danau", "polusi", "daur ulang", "turis", "liburan", "rute",
+    "mitra", "pengungsi", "Desember", "Agustus", "Juli", "Maret", "Senin", "Kamis", "Jumat", "nggak", "enggak",
+    "banget", "bikin", "pengaturan", "setelan", "pratinjau", "tampilan", "menampilkan", "ditampilkan", "rekaman",
+    "merekam", "direkam", "ponsel", "apotek", "delapan",
+]
+
 # House style per language: Indonesian, and Vietnamese (a hidden preview,
 # docs/translation/vi/). Optional keys: simple_avg_warn / simple_long_warn
 # (Vietnamese counts syllables as words, so its sentences run longer),
@@ -48,6 +69,17 @@ STYLE = {
         "voice_hint": 'speak to the learner as "bạn", without "please" (vui lòng, làm ơn) or "quý vị"',
         "simple_avg_warn": 14,
         "simple_long_warn": 22,
+    },
+    "ms": {
+        "correct_lead": "Betul.",
+        "retry_lead": "Belum tepat.",
+        "completion": "Kamu telah menamatkan Pelajaran {n}.",
+        "self_check_start": "Saya ",
+        # "kamu" for the learner, lower-case "anda" only in teachers' notes; no "please".
+        # Then words that are Indonesian, not Malaysian Malay (docs/translation/ms/KEY_TERMS.md).
+        "forbidden": [r"\bAnda\b", r"(?i)\bsila\b", r"(?i)\bsilakan\b", r"(?i)\btolong\b", r"(?i)\bengkau\b"]
+        + [r"(?i)(?<![\w-])" + w + r"(?![\w])" for w in INDONESIAN_NOT_MALAY],
+        "voice_hint": 'speak to the learner as "kamu", without "please" (sila, tolong), and in Malaysian Malay, not Indonesian',
     },
 }
 
