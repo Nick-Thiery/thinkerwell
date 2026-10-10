@@ -46,7 +46,7 @@ describe('SiteVideo', () => {
     expect(screen.getByRole('heading', { level: 3, name: 'Explore your world' })).toBeInTheDocument();
     expect(screen.getByText('1:53')).toBeInTheDocument();
     expect(screen.getByText('English captions')).toBeInTheDocument();
-    expect(screen.getByText('Uses about 8 MB of data.')).toBeInTheDocument();
+    expect(screen.getByText('Uses about 9 MB of data.')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Watch the video' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Read instead' })).toBeInTheDocument();
     expect(videoElement(container)).toBeNull();
