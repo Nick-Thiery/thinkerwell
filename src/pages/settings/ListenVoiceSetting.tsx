@@ -56,7 +56,7 @@ const AUTOMATIC = '';
 const DEVICES = ['apple', 'android', 'windows', 'chromebook'] as const;
 
 /** The recorded voice of each language, by its own name (not translated). */
-const RECORDED_VOICE: Readonly<Record<string, string>> = { en: 'Kokoro (Heart)', id: 'MMS-TTS (Meta)' };
+const RECORDED_VOICE: Readonly<Record<string, string>> = { en: 'Kokoro (Heart)', id: 'MMS-TTS (Meta)', ms: 'MMS-TTS (Meta)' };
 
 /** A voice's value in the select: what the browser calls it. */
 function optionValue(voice: Pick<SpeechSynthesisVoice, 'name' | 'voiceURI'>): string {

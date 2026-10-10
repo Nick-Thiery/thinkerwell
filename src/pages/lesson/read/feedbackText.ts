@@ -22,6 +22,7 @@ export const CONTENT_VERDICTS = { correct: 'Yes.', retry: 'Not quite.' } as cons
 export const CONTENT_VERDICTS_BY_LANG: Readonly<Record<string, { correct: string; retry: string }>> = {
   en: CONTENT_VERDICTS,
   id: { correct: 'Benar.', retry: 'Belum tepat.' },
+  ms: { correct: 'Betul.', retry: 'Belum tepat.' },
   vi: { correct: 'Đúng rồi.', retry: 'Chưa đúng lắm.' },
 };
 

@@ -103,12 +103,12 @@ describe('SiteVideo', () => {
     expect(videoElement(container)).not.toBeNull();
   });
 
-  it('gives every video a paragraph for each of its messages, English captions and Indonesian subtitles', () => {
+  it('gives every video a paragraph for each of its messages, English captions and Indonesian and Malay subtitles', () => {
     for (const video of Object.values(SITE_VIDEOS)) {
       expect(video.words.length).toBeGreaterThan(0);
       expect(video.src).toMatch(/^\/video\/[a-z0-9-]+-v\d+\.mp4$/);
       expect(video.captions).toBe(video.src.replace(/\.mp4$/, '.en.vtt'));
-      expect(video.subtitles).toEqual({ id: video.src.replace(/\.mp4$/, '.id.vtt') });
+      expect(video.subtitles).toEqual({ id: video.src.replace(/\.mp4$/, '.id.vtt'), ms: video.src.replace(/\.mp4$/, '.ms.vtt') });
     }
   });
 
@@ -126,6 +126,23 @@ describe('SiteVideo', () => {
     expect(indonesian).toHaveAttribute('srclang', 'id');
     expect(indonesian).toHaveAttribute('default');
     expect(screen.getByRole('heading', { level: 3, name: 'Menjalankan satu sesi' })).toBeInTheDocument();
+  });
+
+  it('turns the Malay subtitles on, instead of the English captions, when the page is Malay', async () => {
+    const user = userEvent.setup();
+    const { container } = render(
+      <I18nProvider locale="ms">
+        <SiteVideo video="session" />
+      </I18nProvider>,
+    );
+    await user.click(await screen.findByRole('button', { name: 'Tonton video' }));
+    const tracks = [...videoElement(container)!.querySelectorAll('track')];
+    const malay = tracks.find((track) => track.getAttribute('srclang') === 'ms');
+    expect(tracks[0]).toHaveAttribute('srclang', 'en');
+    expect(tracks[0]).not.toHaveAttribute('default');
+    expect(malay).toHaveAttribute('src', SITE_VIDEOS.session.subtitles.ms);
+    expect(malay).toHaveAttribute('default');
+    expect(screen.getByRole('heading', { level: 3, name: 'Jalankan sesi' })).toBeInTheDocument();
   });
 
   it('shows only the written version when Save data is on', async () => {
