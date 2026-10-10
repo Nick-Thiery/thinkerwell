@@ -135,6 +135,26 @@ Nothing is over a limit. Sources: [GitHub: About large files](https://docs.githu
 
 Measured as `e2e/build-output.spec.ts` counts them (Brotli), against `main` built on the same machine. The offline copy (precache) grew by 6.4 kB, from 636.1 to 642.5 kB, within its 645 kB budget: the player and download manager (a chunk of their own, 2.8 kB), Settings' parts, the Read stage's, the checklist's and their words in English and Indonesian. A first visit to the home page grew by 0.7 kB, from 220.5 to 221.2 kB, all of it the new words in en.json (which every first visit loads, CLAUDE.md rule 7) and a few styles, which took it over `main`'s 221 kB budget, now 222 kB (`docs/notes/slow-internet.md`, "Later budget changes"). No player code and no recording reaches a first visit or the precache.
 
+## Malay (October 2026)
+
+Bahasa Melayu (Malaysian Malay) is recorded the same way as Indonesian, with Meta's **MMS-TTS Malay** (`facebook/mms-tts-zlm`; MMS files Standard Malay under the macrolanguage code `zlm`). **Licence: CC BY-NC 4.0, the same as the Indonesian voice: non-commercial only, replace it before Thinkerwell ever charges** (`docs/PRODUCT.md`). It is on the Credits page with the others.
+
+**Why this voice.** Free and open-source Malay voices are rare. Listening tests on a handful of lesson sentences ruled out two multilingual models (Chatterbox Multilingual and OmniVoice: their Malay came out as a foreign accent or dropped words), and left MMS-TTS Malay, which is plain and a little flat, like the Indonesian voice learners already accepted, but says the right words in a Malaysian way. It is a single voice, so a person cannot choose between voices.
+
+**How it is fed.** `tools/audio/normalise.ts` writes numbers, ordinals, decimals, percentages and letters in Malay words (1,000 as "seribu", 2.5 as "dua perpuluhan lima", 18 as "lapan belas", 8th as "kelapan"; 0 as "kosong"), because the model's alphabet has no digits beyond 0, 3 to 6 and cannot say a digit run. The model's alphabet also lacks `v` and `x`, so `v` is said as `f` and `x` as `ks`, and accents are stripped. A test checks that no digit is left in any Malay lesson text. Output is 16 kHz mono MP3 at 32 kbit/s, like Indonesian.
+
+**Accuracy (measured).** A speech-recognition round trip: 60 sentences spread across the lessons were spoken by the voice, written down again by Whisper (`openai/whisper-small`, told the language is Malay) and compared with what the voice was given. Word error rate **12.6%** (565 words), letter error rate 3.6%; 24 of the 60 sentences came back word for word, and 11.5% (68% of sentences with at most one wrong word) once the three sentences where Whisper wrote a number as digits are left out. Whisper's own mistakes are in that figure (it wrote "zoom" for "zum", and makes errors on clear Malay speech too), so it is an upper bound on the voice's errors, and it does not measure accent or naturalness; only a Malaysian listener can. Typical misses are names and loan words (an English name said as Malay letters, "telefon" heard as "telehon") and a few run-together words. Reproduce it with `asr_check.py`-style code: record, then have Whisper transcribe the cached pieces in `.audio-cache/ms/`.
+
+| | Bahasa Melayu |
+| --- | ---: |
+| Recordings (sections and the sample) | 145 |
+| Length | 101.1 min |
+| Size | 24.3 MB |
+
+A device used in Malay only downloads 24.3 MB to have every recording offline; in all three languages, about 70 MB (Settings' "Lesson audio" lists each combination).
+
+**For a Malaysian reviewer, with the translation:** listen to a few parts (Lessons 1, 9 and 17 first), and say whether the voice is clear enough for 10 to 17-year-olds, and which words it gets wrong. A better free voice, or a commercial one once there is money, replaces it by changing `VOICES["ms"]` in `scripts/audio/generate.py` and running `npm run audio:generate -- --lang ms`.
+
 ## Vietnamese (hidden preview)
 
 Branch `vietnamese-preview`, October 2026. Vietnamese is a hidden preview language: its interface and lessons are AI drafts that no native speaker has reviewed (`ready: false` in `src/i18n/locales.ts`; CLAUDE.md rule 7), so nobody can choose it yet. The pipeline can record it, so the team can hear it, but the recordings are not on `main`.
