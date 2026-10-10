@@ -2,20 +2,21 @@
 """Claude Code hook: check a content file right after Claude edits it.
 
 Runs after Edit, Write and MultiEdit (PostToolUse, set in .claude/settings.json).
-When the edited file is a lesson, a section check or an Indonesian file, it runs
+When the edited file is a lesson, a section check or an Indonesian or Malay file, it runs
 the same checker as `npm run check:content` on just that file:
 
   content/lessons/*.json   scripts/check_lesson.py <file>
   content/courses/*/lessons/*.json   the same (another course: its own sections, its activity)
   content/quizzes/*.json   scripts/check_quiz.py <file>
   content/id/**            scripts/check_translation.py id
+  content/ms/**            scripts/check_translation.py ms
 
 If the checker reports errors, the hook exits 2, which shows its output to
 Claude so it can fix the file straight away. Warnings stay quiet; `npm run
 check:content` still shows them. Any other file, or anything unexpected (no
 Python for the checkers, bad input), exits 0 and changes nothing.
 
-After a lesson or Indonesian file, it also runs `npm run check:audio`'s
+After a lesson, Indonesian or Malay file, it also runs `npm run check:audio`'s
 check (tools/audio/check.ts). When the edit changed text Listen reads, the
 recordings no longer match, and it reminds Claude (without blocking) that
 `npm run audio:generate` must record them again before the pull request:
@@ -51,6 +52,8 @@ def main() -> int:
         cmd = ["scripts/check_quiz.py", rel]
     elif rel.startswith("content/id/"):
         cmd = ["scripts/check_translation.py", "id"]
+    elif rel.startswith("content/ms/"):
+        cmd = ["scripts/check_translation.py", "ms"]
     else:
         return 0
 

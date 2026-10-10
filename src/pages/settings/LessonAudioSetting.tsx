@@ -6,7 +6,7 @@
  *
  * - The device's languages: the lessons' language of the device's own
  *   language and of every learner on the device (English, Bahasa Indonesia,
- *   or both), so a device used only in Indonesian doesn't download English.
+ *   Bahasa Melayu, or more than one), so a device used only in Indonesian doesn't download English.
  * - Says how big it is, how much is on the device, and the progress while
  *   downloading, which can be stopped (what has arrived stays).
  * - Offered only once the course itself is kept on the device (the service
@@ -37,6 +37,10 @@ const FOR_LANGUAGES: Readonly<Record<string, MessageKey>> = {
   en: 'pages.settings.lessonAudio.forEnglish',
   id: 'pages.settings.lessonAudio.forIndonesian',
   'en id': 'pages.settings.lessonAudio.forBoth',
+  ms: 'pages.settings.lessonAudio.forMalay',
+  'en ms': 'pages.settings.lessonAudio.forEnglishMalay',
+  'id ms': 'pages.settings.lessonAudio.forIndonesianMalay',
+  'en id ms': 'pages.settings.lessonAudio.forAll',
 };
 
 const RESULT_TEXT: Record<Exclude<DownloadResult, 'done'>, MessageKey> = {

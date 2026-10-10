@@ -1,0 +1,1612 @@
+{
+  "app": {
+    "name": "Thinkerwell",
+    "courseTitle": "Meneroka Dunia Kita",
+    "skipToContent": "Langkau ke kandungan",
+    "documentTitle": "{page} | Thinkerwell",
+    "mascotAlt": "Maskot Thinkerwell, seorang pembaca berwarna ungu yang memegang buku"
+  },
+  "nav": {
+    "label": "Utama",
+    "home": "Laman utama",
+    "course": "Kursus",
+    "journal": "Jurnal saya",
+    "educators": "Untuk pendidik",
+    "about": "Tentang",
+    "settings": "Tetapan"
+  },
+  "stages": {
+    "read": "Baca",
+    "write": "Tulis",
+    "speak": "Cakap",
+    "watch": "Tonton",
+    "reflect": "Refleksi",
+    "complete": "Pelajaran selesai"
+  },
+  "sections": {
+    "check": "Semakan bahagian"
+  },
+  "lesson": {
+    "number": "Pelajaran {number}",
+    "minutes": "Kira-kira {min}–{max} minit",
+    "nextStep": "Langkah seterusnya: {stage}"
+  },
+  "lessonPlayer": {
+    "shell": {
+      "aboutLesson": "Tentang pelajaran ini",
+      "learningGoal": "Matlamat pembelajaran",
+      "time": "Kira-kira {min}–{max} minit. Kamu boleh berhenti dan kembali bila-bila masa.",
+      "sublabelDone": "Selesai",
+      "sublabelRead": "Pemanasan, bacaan dan semakan pantas",
+      "sublabelWrite": "Tugasan menulis kamu",
+      "sublabelSpeak": "Dengan rakan atau sendiri",
+      "sublabelWatch": "Tidak wajib · {minutes} minit",
+      "sublabelWatchNoTime": "Tidak wajib",
+      "sublabelReflect": {
+        "other": "{count} soalan ringkas"
+      },
+      "continueTo": "Teruskan ke {stage}",
+      "finishLesson": "Tamatkan pelajaran",
+      "noLearnerTitle": "Belum ada apa-apa yang disimpan.",
+      "noLearnerBody": "Pilih siapa yang belajar untuk menyimpan hasil kerja kamu pada peranti ini.",
+      "noLearnerAction": "Pilih siapa yang belajar",
+      "saveError": "Perubahan terakhir kamu tidak disimpan pada peranti ini. Teruskan sahaja: ia akan cuba lagi apabila kamu membuat perubahan seterusnya."
+    },
+    "read": {
+      "toolsLabel": "Alat bacaan",
+      "listen": "Dengar",
+      "listenNoVoice": "Dengar tidak dapat membacakan pelajaran ini di sini: peranti ini tiada suara untuk bahasanya.",
+      "listenUnavailable": "Dengar belum dapat memainkan petikan ini di sini. Rakamannya tiada pada peranti ini, dan peranti ini tiada suara untuk membacanya. Sambung ke internet, kemudian tekan Dengar sekali lagi.",
+      "listenLabel": "Membaca dengan kuat · petikan {n} daripada {total}",
+      "listenLoading": "Mendapatkan rakaman · petikan {n} daripada {total}",
+      "levelLabel": "Tahap bacaan",
+      "levelStandard": "Biasa",
+      "levelSimpler": "Lebih mudah",
+      "keyWords": "Kata kunci",
+      "keyWordsTitle": "Kata kunci dalam pelajaran ini",
+      "keyWordsIntro": "Setiap kata kunci dalam bacaan, dengan maksudnya.",
+      "warmUpEyebrow": "Sebelum kamu membaca",
+      "warmUpHint": "Pilih satu. Kamu boleh mengubahnya nanti.",
+      "warmUpHintWriting": "Tulis satu idea ringkas. Kamu boleh mengubahnya nanti.",
+      "warmUpChoices": "Idea pertama kamu",
+      "warmUpWritingLabel": "Idea pertama kamu",
+      "partLabel": "Baca · {n} daripada {total}",
+      "partSimpler": "Baca · {n} daripada {total} · Versi lebih mudah",
+      "nextPart": "Seterusnya: Petikan {n}",
+      "nextCheck": "Seterusnya: Semakan pantas",
+      "backPart": "Petikan {n}",
+      "glossaryHelper": "Tekan perkataan berwarna untuk melihat maksudnya.",
+      "checkEyebrow": "Baca · petikan terakhir",
+      "checkTitle": "Semakan pantas",
+      "checkRetryNote": "Cuba seberapa banyak kali yang kamu mahu",
+      "questionOf": "Soalan {n} daripada {total}",
+      "thinkEyebrow": "Soalan {n} daripada {total} · fikirkan baik-baik",
+      "thinkHelper": "Jawapan yang betul bukan satu sahaja.",
+      "thinkHelperOptional": "Soalan ini tidak wajib. Jawapan yang betul bukan satu sahaja.",
+      "tryAgain": "Cuba lagi",
+      "checkHelper": "Kamu boleh kembali kepada soalan-soalan ini bila-bila masa."
+    },
+    "evidence": {
+      "fictionalBadge": {
+        "items": "Contoh rekaan",
+        "timeline": "Garis masa rekaan",
+        "map": "Peta rekaan",
+        "cases": "Contoh rekaan",
+        "sources": "Sumber rekaan",
+        "table": "Jadual rekaan"
+      },
+      "sectionLabel": "Bukti",
+      "eyebrow": "Lihat dengan teliti",
+      "mapKey": "Petunjuk peta",
+      "places": "Tempat",
+      "tableLabel": "Jadual: {title}"
+    },
+    "visual": {
+      "seeBigger": "Lihat lebih besar",
+      "close": "Tutup",
+      "title": {
+        "map": "Peta",
+        "timeline": "Garis masa",
+        "diagram": "Rajah",
+        "illustration": "Gambar"
+      },
+      "scrollLabel": "{title}, lebih besar",
+      "touchHintNarrow": "Seret untuk melihat semuanya. Cubit untuk zum masuk lagi.",
+      "touchHintWide": "Cubit untuk zum masuk."
+    },
+    "write": {
+      "helpLabel": "Bantuan menulis",
+      "modeWrite": "Tulis",
+      "modeStarters": "Permulaan ayat",
+      "modePlan": "Rancang dahulu",
+      "modeWriteShort": "Tulis",
+      "modeStartersShort": "Permulaan",
+      "modePlanShort": "Rancang",
+      "evidenceToggle": "Lihat bukti sekali lagi",
+      "mapToggle": "Lihat peta sekali lagi",
+      "startersTitle": "Tekan permulaan ayat untuk menambahkannya pada tulisan kamu",
+      "startersTitleShort": "Tekan permulaan ayat untuk menambahnya",
+      "planTitle": "Rancang idea kamu di sini, kemudian tulis jawapan kamu di bawah",
+      "answerLabel": "Jawapan kamu",
+      "helperSaving": "4 hingga 6 ayat sudah cukup. Ejaan tidak penting di sini. Disimpan pada peranti ini semasa kamu menaip.",
+      "helperLookAround": "4 hingga 6 ayat sudah cukup. Ejaan tidak penting di sini. Tiada apa-apa yang disimpan semasa kamu melihat-lihat.",
+      "helperNoLearner": "4 hingga 6 ayat sudah cukup. Ejaan tidak penting di sini. Tiada apa-apa yang disimpan sehingga kamu memilih siapa yang belajar.",
+      "helperSavingSayIt": "4 hingga 6 ayat sudah cukup. Ejaan tidak penting di sini. Tekan Sebut untuk bercakap tanpa perlu menaip. Disimpan pada peranti ini semasa kamu menaip.",
+      "helperLookAroundSayIt": "4 hingga 6 ayat sudah cukup. Ejaan tidak penting di sini. Tekan Sebut untuk bercakap tanpa perlu menaip. Tiada apa-apa yang disimpan semasa kamu melihat-lihat.",
+      "helperNoLearnerSayIt": "4 hingga 6 ayat sudah cukup. Ejaan tidak penting di sini. Tekan Sebut untuk bercakap tanpa perlu menaip. Tiada apa-apa yang disimpan sehingga kamu memilih siapa yang belajar.",
+      "selfCheckTitle": "Semak jawapan kamu",
+      "seeExample": "Lihat contoh jawapan",
+      "compareExample": "Bandingkan dengan contoh jawapan",
+      "exampleEyebrow": "Contoh jawapan",
+      "exampleNote": "Ini satu cara untuk menjawab. Jawapan kamu boleh berbeza.",
+      "tip": "Buntu? Tekan permulaan ayat, kemudian isi tempat kosong."
+    },
+    "sayIt": {
+      "listening": "Sedang mendengar. Cakap perlahan-lahan. Perkataan kamu akan muncul dalam kotak, dan kamu boleh membetulkannya selepas itu.",
+      "micBlocked": "Sebut memerlukan mikrofon. Kamu boleh membenarkannya dalam tetapan pelayar, atau taip sahaja.",
+      "noMic": "Tiada mikrofon dijumpai. Kamu boleh taip sahaja.",
+      "offline": "Sebut memerlukan internet pada peranti ini. Kamu boleh taip sahaja.",
+      "noSpeech": "Tiada apa-apa yang didengar. Tekan Sebut untuk cuba lagi, atau taip sahaja.",
+      "unavailable": "Sebut tidak berfungsi pada peranti ini buat masa ini. Kamu boleh taip sahaja."
+    },
+    "speak": {
+      "eyebrow": "Cakap dan dengar",
+      "task": "Bercakap tentang idea kamu daripada pelajaran ini. Kamu boleh melakukannya dengan rakan atau sendiri.",
+      "taskWithRecorder": "Bercakap tentang idea kamu daripada pelajaran ini. Kamu boleh melakukannya dengan rakan atau sendiri. Kamu boleh merakam suara kamu jika mahu. Rakaman kekal pada peranti ini.",
+      "partnerTitle": "Dengan rakan",
+      "soloTitle": "Sendiri",
+      "practisedLegend": "Bagaimana kamu berlatih?",
+      "practisedHelp": "Pilih satu. Setiap cara berlatih dikira.",
+      "recorder": {
+        "title": "Rakam suara kamu (tidak wajib)",
+        "task": "Sebut jawapan kamu, kemudian dengar semula. Cuba lagi seberapa banyak kali yang kamu mahu.",
+        "noteLookAround": "Tidak disimpan semasa kamu lihat-lihat sahaja. Rakaman ini hilang apabila kamu meninggalkan halaman ini.",
+        "noteNoLearner": "Tidak disimpan sehingga kamu memilih siapa yang belajar. Rakaman ini hilang apabila kamu meninggalkan halaman ini.",
+        "announceStarted": "Sedang merakam.",
+        "announceSaved": "Rakaman dihentikan. Rakaman ini kekal pada peranti ini.",
+        "announceStopped": "Rakaman dihentikan.",
+        "announceDeleted": "Rakaman dipadam.",
+        "micBlocked": "Rakaman memerlukan mikrofon. Kamu boleh membenarkannya dalam tetapan pelayar, atau berlatih tanpa merakam.",
+        "noMic": "Tiada mikrofon dijumpai. Kamu boleh berlatih dengan bercakap kuat atau bersama rakan.",
+        "failed": "Rakaman tidak bermula pada peranti ini. Kamu boleh berlatih dengan bercakap kuat atau bersama rakan.",
+        "playback": "Rakaman ini tidak dapat dimainkan di sini.",
+        "notSaved": "Rakaman ini tidak dapat disimpan pada peranti. Kamu masih boleh mendengarnya semula sekarang."
+      }
+    },
+    "watch": {
+      "eyebrow": "Tonton · tidak wajib",
+      "task": "Tonton video pendek, atau baca idea yang sama. Kedua-duanya dikira.",
+      "slowTitle": "Internet perlahan?",
+      "slowBody": "Pilih Baca versi bertulis. Ideanya sama dan hampir tidak menggunakan data.",
+      "saveDataTitle": "Video dimatikan untuk jimat data.",
+      "timeoutTitle": "Video ini mengambil masa yang lama untuk dimuatkan.",
+      "offlineTitle": "Kamu berada di luar talian, jadi video tidak dapat dimuatkan sekarang.",
+      "unavailableTitle": "Video ini tidak dapat dimainkan di sini buat masa ini.",
+      "sameIdeas": "Ini idea yang sama untuk dibaca.",
+      "thinkFirst": "Fikir dahulu",
+      "beforePlaceholder": "Tulis idea ringkas, atau fikirkan sahaja…",
+      "readInstead": "Baca versi bertulis",
+      "closeVideo": "Tutup video",
+      "playerOpened": "Pemain video sudah dibuka. Tekan butang mainnya untuk mula.",
+      "writtenPart": "Versi bertulis",
+      "keyPoints": "Isi penting",
+      "watchInstead": "Tonton video pula",
+      "tryAgain": "Cuba main video lagi",
+      "afterEyebrow": "Selepas menonton atau membaca",
+      "afterPlaceholder": "Tulis satu atau dua ayat…",
+      "helper": "Menonton tidak wajib. Kamu boleh langkau langkah ini.",
+      "forTeachers": "Untuk guru",
+      "videoInEnglish": "Video ini dalam bahasa Inggeris. Pilih Baca versi bertulis untuk mendapatkan idea yang sama dalam bahasa kamu."
+    },
+    "sources": {
+      "title": "Sumber",
+      "intro": "Pelajaran ini ditulis dengan kata-kata Thinkerwell sendiri. Ini laman web yang menjadi rujukannya. Laman web ini dibuka dalam tab baharu, dalam bahasa Inggeris."
+    },
+    "reflect": {
+      "eyebrow": "Refleksi",
+      "task": "Luangkan sedikit masa untuk memikirkan apa yang kamu pelajari hari ini. Hanya soalan pertama yang perlu dijawab.",
+      "journalNote": "Jawapan kamu masuk ke dalam jurnal kamu pada peranti ini. Hanya orang yang menggunakan peranti ini boleh melihatnya.",
+      "lookAroundNote": "Kamu sedang lihat-lihat sahaja, jadi jawapan kamu tidak disimpan.",
+      "noLearnerNote": "Jawapan kamu belum disimpan. Pilih siapa yang belajar untuk menyimpannya dalam jurnal.",
+      "finishHelper": "Jawab soalan pertama untuk selesai."
+    },
+    "complete": {
+      "eyebrow": "Pelajaran {number} selesai",
+      "title": "Kamu telah menamatkan Pelajaran {number}.",
+      "summary": "{title} {message}",
+      "partwayEyebrow": "Pelajaran {number}",
+      "partwayTitle": "Kamu sudah memulakan Pelajaran {number}, tetapi belum selesai.",
+      "partwayBody": "Setakat ini kamu telah membuat {done} daripada {total} langkah. Jawab soalan Refleksi yang pertama untuk menamatkannya. Tiada langkah yang dikunci, jadi buka mana-mana langkah yang kamu mahu.",
+      "partwayCta": "Pergi ke {stage}",
+      "badgeProgress": {
+        "other": "{title} · {completed} daripada {count} pelajaran selesai"
+      },
+      "badgeSection": "Bahagian {number} · {title}",
+      "savedBoth": "Tulisan dan refleksi kamu disimpan dalam jurnal kamu.",
+      "savedWriting": "Tulisan kamu disimpan dalam jurnal kamu.",
+      "savedReflection": "Refleksi kamu disimpan dalam jurnal kamu.",
+      "guestNote": "Tiada apa-apa daripada pelajaran ini disimpan pada lawatan ini. Untuk menyimpan hasil kerja kamu, pilih siapa yang belajar di laman utama.",
+      "upNext": "Seterusnya",
+      "sectionCheckTitle": "Semakan bahagian: {title}",
+      "sectionCheckQuestion": "Merangkumi Pelajaran {first}–{last}. Cuba bila-bila masa, seberapa kerap yang kamu mahu.",
+      "backToCourse": "Kembali ke kursus",
+      "openJournal": "Buka jurnal saya"
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "Siapa yang belajar hari ini?",
+      "subtitle": "Tekan nama kamu untuk sambung dari tempat kamu berhenti.",
+      "onThisDevice": "Pada peranti ini",
+      "hero": {
+        "tagline": "Terokai dunia kamu.",
+        "description": "Pembelajaran kajian sosial percuma untuk belia di seluruh Asia Tenggara, terutamanya mereka yang menghadapi halangan dalam pendidikan. Terokai sejarah, geografi, budaya dan kehidupan sivik mengikut kadar kamu sendiri.",
+        "stagesLabel": "Setiap pelajaran ada lima langkah",
+        "footnote": "{lessons} pelajaran · {sections} bahagian · tidak perlu akaun"
+      },
+      "lookAround": "Lihat-lihat sahaja (tiada apa-apa disimpan)",
+      "lookAroundNote": "Hasil kerja disimpan pada peranti ini sahaja. Tiada kata laluan, tiada gambar.",
+      "newLearnerTile": "Saya baru di sini",
+      "tileMeta": "Sampai Pelajaran {number}",
+      "tileMetaNone": "Belum bermula",
+      "tileAdded": "Ditambah {date}",
+      "tileMetaAdded": "{meta} · ditambah {date}",
+      "newLearner": {
+        "back": "Kembali",
+        "eyebrow": "Selamat datang",
+        "title": "Siapa nama kamu?",
+        "nameLabel": "Nama atau nama panggilan",
+        "nameHelper": "Tidak perlu nama keluarga.",
+        "nameRequired": "Taip nama atau nama panggilan kamu.",
+        "nameTooLong": "Hadkan kepada lebih kurang 30 huruf.",
+        "colourLabel": "Pilih warna kamu",
+        "colour": {
+          "lemon": "Kuning",
+          "history": "Pasir",
+          "geography": "Hijau",
+          "civics": "Biru",
+          "paper": "Putih"
+        },
+        "classCodeLabel": "Kod kelas",
+        "classCodeHelper": "Guru kamu mungkin akan memberikannya.",
+        "classCodePlaceholder": "Contohnya HLP-07",
+        "classCodeInvalid": "Guna huruf, nombor dan tanda sempang sahaja, seperti HLP-07.",
+        "submit": "Mula Pelajaran 1",
+        "submitError": "Tidak berjaya disimpan. Cuba lagi.",
+        "startsWith": "Kamu akan bermula dengan",
+        "startsWithLesson": "Pelajaran {number}: {title}",
+        "startsWithNote": "Kamu boleh membuka mana-mana pelajaran kemudian dari halaman kursus.",
+        "privacyNote": "Hasil kerja kamu kekal pada peranti ini.",
+        "languageLabel": "Bahasa kamu",
+        "languageHelper": "Butang dan arahan dipaparkan dalam bahasa ini. Dalam bahasa Indonesia dan bahasa Melayu, pelajaran juga begitu. Dalam bahasa lain, pelajaran kekal dalam bahasa Inggeris, supaya kamu boleh berlatih bahasa Inggeris."
+      },
+      "remove": {
+        "action": "Keluarkan",
+        "label": "Keluarkan {name}",
+        "confirmTitle": "Keluarkan {name}?",
+        "confirmBody": "Tindakan ini memadamkan hasil kerja pelajaran, jurnal, markah semakan bahagian dan rakaman mereka daripada peranti ini. Tindakan ini tidak boleh dibatalkan.",
+        "confirm": "Keluarkan {name}",
+        "cancel": "Kekalkan {name}",
+        "error": "Tidak berjaya. Cuba lagi."
+      },
+      "noStorage": {
+        "title": "Hasil kerja kamu tidak dapat disimpan pada peranti ini",
+        "body": "Pelayar ini tidak dapat menyimpan hasil kerja pada peranti ini. Ini sering berlaku dalam tetingkap peribadi. Kamu masih boleh lihat-lihat, tetapi apa sahaja yang kamu buat tidak akan disimpan.",
+        "cta": "Lihat-lihat sahaja"
+      },
+      "guest": {
+        "title": "Terokai kursus",
+        "body": "Buka mana-mana pelajaran untuk melihat cara ia berfungsi."
+      },
+      "dashboard": {
+        "greeting": "Hai {name}",
+        "summaryNone": "Kamu belum memulakan sebarang pelajaran. Seterusnya ialah Pelajaran {number}.",
+        "summaryInProgress": {
+          "other": "Kamu telah menamatkan {count} pelajaran. Seterusnya ialah Pelajaran {number}."
+        },
+        "summaryDone": "Kamu telah menamatkan semua pelajaran. Syabas.",
+        "startHere": "Mula di sini",
+        "startCta": "Mula",
+        "continueEyebrow": "Sambung dari tempat kamu berhenti",
+        "upNext": "Seterusnya",
+        "finishedTitle": "Kamu telah menamatkan kursus ini",
+        "finishedBody": "Kamu boleh kembali ke mana-mana pelajaran, atau cuba semakan bahagian sekali lagi.",
+        "finishedCta": "Lihat kursus",
+        "offlineBadge": "Semua {count} pelajaran boleh digunakan di luar talian",
+        "offlinePreparingBadge": "Menyimpan pelajaran untuk kegunaan luar talian",
+        "savedBadge": "Disimpan pada peranti ini",
+        "yourCourse": "Kursus kamu",
+        "seeAll": "Lihat semua {count} pelajaran",
+        "youAreHere": "Kamu di sini",
+        "sectionCheckReady": "Semakan bahagian sedia",
+        "sectionCheckBody": {
+          "other": "Kamu telah menamatkan semua {count} pelajaran. Cuba {questions} soalan untuk melihat apa yang kamu ingat. Buatlah seberapa banyak kali yang kamu mahu."
+        },
+        "startCheck": "Mula semakan",
+        "fromJournal": "Daripada jurnal kamu",
+        "openJournal": "Buka jurnal saya",
+        "noJournalYet": "Belum ada apa-apa yang disimpan. Tulisan dan refleksi kamu akan dipaparkan di sini sebaik sahaja kamu bermula.",
+        "latestEntry": "{stage} · Pelajaran {number}",
+        "languageTitle": "Bahasa kamu",
+        "languageHelp": "Butang dan arahan dipaparkan dalam bahasa ini. Dalam bahasa Indonesia dan bahasa Melayu, pelajaran juga begitu. Dalam bahasa lain, pelajaran kekal dalam bahasa Inggeris, supaya kamu boleh berlatih bahasa Inggeris.",
+        "languageSaveFailed": "Tidak berjaya disimpan. Cuba lagi."
+      }
+    },
+    "course": {
+      "title": "Meneroka Dunia Kita",
+      "eyebrow": "Kursus",
+      "description": "Ketahui bagaimana manusia, tempat, komuniti dan keputusan membentuk dunia di sekeliling kita.",
+      "lessonsBadge": {
+        "other": "{count} pelajaran"
+      },
+      "checksBadge": {
+        "other": "{count} semakan bahagian"
+      },
+      "timeBadge": "Kira-kira {min}–{max} minit setiap pelajaran",
+      "sectionsNav": "Bahagian",
+      "nothingLocked": "Tiada apa-apa yang dikunci. Mulakan mana-mana pelajaran, ikut susunan yang kamu mahu. Nombor-nombor itu menunjukkan laluan yang baik.",
+      "guestNote": "Kamu sedang melihat-lihat, jadi kemajuan tidak dipaparkan.",
+      "noLearnerNote": "Pilih siapa yang belajar untuk melihat kemajuan kamu.",
+      "lessonLabel": "Pelajaran {number} · {section}",
+      "sidebarCount": "{completed} daripada {total}",
+      "numberRange": "{first}–{last}",
+      "showLessons": "Papar {count} pelajaran",
+      "hideLessons": "Sembunyikan pelajaran",
+      "sectionCheckRowTitle": "Semakan bahagian: {title}",
+      "sectionCheckQuestion": "Merangkumi Pelajaran {range}. Cuba bila-bila masa, seberapa kerap yang kamu mahu.",
+      "allDoneCheckReady": "Kesemua {count} pelajaran selesai. Semakan bahagian sudah sedia.",
+      "lessonsRange": "Pelajaran {range}"
+    },
+    "lesson": {
+      "title": "Pelajaran {number}: {stage}"
+    },
+    "sectionCheck": {
+      "title": "Semakan bahagian: {section}",
+      "eyebrow": "Semakan bahagian",
+      "introTitle": "Apa yang kamu ingat daripada {title}?",
+      "factQuestions": "{count} soalan tentang Pelajaran {range}",
+      "factTime": "Tiada had masa. Kira-kira {minutes} minit.",
+      "factRetry": "Cuba seberapa banyak kali yang kamu mahu",
+      "factPrivate": "Markah kamu kekal pada peranti ini",
+      "factGuest": "Tiada apa-apa disimpan semasa kamu melihat-lihat",
+      "tip": "Tidak pasti? Buat tekaan terbaik kamu. Selepas setiap soalan, kamu akan lihat mengapa jawapan itu betul.",
+      "start": "Mulakan semakan",
+      "lookAtLessons": "Lihat pelajaran dahulu",
+      "questionOf": "Soalan {n} daripada {total}",
+      "answeredCount": "{count} dijawab",
+      "stopCheck": "Hentikan semakan",
+      "questionEyebrow": "Soalan {n} · {skill}",
+      "skill": {
+        "vocabulary": "Perkataan dan maksud",
+        "understand": "Idea utama",
+        "evidence": "Menggunakan bukti",
+        "apply": "Menggunakan idea pada contoh baharu"
+      },
+      "fromLesson": "Daripada Pelajaran {number}: {question}",
+      "chooseHelper": "Pilih jawapan untuk teruskan.",
+      "nextQuestion": "Soalan seterusnya",
+      "seeResults": "Lihat keputusan kamu",
+      "resultsEyebrow": "Semakan bahagian · {title}",
+      "scoreHeading": "{score} daripada {total}",
+      "retry": "Cuba semakan sekali lagi",
+      "backToCourse": "Kembali ke kursus",
+      "savedNote": "Markah kamu disimpan pada peranti ini.",
+      "notSavedNote": "Tiada apa-apa disimpan semasa kamu melihat-lihat.",
+      "skillsTitle": "Prestasi kamu mengikut kemahiran",
+      "reviewTitle": "Elok dilihat semula",
+      "reviewQuestion": "Soalan {n}: {question}",
+      "reviewLesson": "Pelajaran {number} · {question}",
+      "noQuiz": "Semakan bahagian ini belum sedia."
+    },
+    "journal": {
+      "title": "Jurnal saya",
+      "subtitle": "Semua yang kamu tulis dalam pelajaran, yang terbaharu dahulu.",
+      "filterLabel": "Papar",
+      "filterAll": "Semua",
+      "filterWriting": "Tulisan",
+      "filterReflections": "Refleksi",
+      "lessonCount": {
+        "other": "{count} pelajaran"
+      },
+      "pieceCount": {
+        "other": "{count} hasil tulisan daripada {lessons}"
+      },
+      "groupLabel": "Pelajaran {number} · {title}",
+      "privacyNote": "Jurnal kamu disimpan pada peranti ini. Sesiapa yang menyentuh nama kamu di sini boleh membacanya, jadi pilih apa yang kamu tulis. Untuk menyimpan salinan, minta guru kamu membantu mencetaknya.",
+      "empty": "Belum ada apa-apa yang disimpan. Tulis atau buat refleksi dalam sesuatu pelajaran, dan ia akan muncul di sini.",
+      "emptyFiltered": "Belum ada apa-apa yang disimpan dalam paparan ini. Pilih Semua untuk melihat semua yang kamu tulis.",
+      "lookAroundNote": "Kamu sedang melihat-lihat, jadi tiada apa-apa di sini yang disimpan. Pilih siapa yang belajar untuk menyimpan jurnal.",
+      "noLearnerNote": "Pilih siapa yang belajar untuk melihat jurnalnya.",
+      "savedToday": "Disimpan hari ini",
+      "savedYesterday": "Disimpan semalam",
+      "cancelEdit": "Batal",
+      "saveEdit": "Simpan"
+    },
+    "educators": {
+      "title": "Untuk pendidik",
+      "eyebrow": "Untuk guru dan sukarelawan",
+      "heroTitle": "Jalankan pelajaran Thinkerwell bersama kumpulan anda",
+      "heroBody": "Gunakan pelajaran kajian sosial percuma Thinkerwell bersama kumpulan anda. Ajar pada satu skrin yang dikongsi, secara berpasangan atau pada peranti berasingan, atau cetak pelajaran itu. Pelajar tidak perlu mempunyai akaun.",
+      "pilotTitle": "Memulakan rintis",
+      "pilotIntro": "Untuk organisasi yang mencuba Thinkerwell bersama sekumpulan pelajar. Semua di sini boleh dicetak pada kertas A4, hitam putih.",
+      "pilotAboutTitle": "Untuk organisasi",
+      "pilotAboutBody": "Apa yang terlibat dalam rintis, apa yang kami minta, dan bagaimana privasi pelajar dijaga.",
+      "pilotAboutCta": "Baca tentang rintis",
+      "pilotConsentTitle": "Borang persetujuan",
+      "pilotConsentBody": "Borang untuk ditandatangani oleh ibu bapa atau penjaga setiap pelajar, dan satu halaman untuk jawapan pelajar sendiri, dengan nama organisasi anda padanya.",
+      "pilotConsentCta": "Cetak borang persetujuan",
+      "pilotSheetTitle": "Helaian maklumat",
+      "pilotSheetBody": "Perkara yang terlibat dalam rintis dan kajiannya, untuk disimpan oleh setiap keluarga, dengan nama organisasi anda padanya.",
+      "pilotSheetCta": "Cetak helaian maklumat",
+      "pilotCodesTitle": "Kad kod",
+      "pilotCodesBody": "Kad dengan kod untuk digunakan oleh setiap pelajar sebagai ganti nama mereka, dan senarai untuk anda simpan.",
+      "pilotCodesCta": "Buat kad kod",
+      "previewLesson": "Pratonton pelajaran",
+      "printLesson": "Lihat pelajaran versi cetak",
+      "needTitle": "Perkara yang anda perlukan",
+      "need1": "Satu peranti bagi setiap 1 hingga 3 pelajar, atau satu skrin besar",
+      "need2": "Kertas dan pensel untuk merancang",
+      "need3": "Kira-kira {min}–{max} minit setiap pelajaran",
+      "need4": "Internet untuk kali pertama membuka laman web, dan untuk video",
+      "settingsLink": "Tetapan untuk peranti ini",
+      "howTitle": "Cara sesi berjalan",
+      "step1Title": "Pilih pelajaran",
+      "step1Body": "Pelajaran boleh diikuti mengikut apa-apa susunan. Pilih satu yang sesuai dengan kumpulan anda, atau ikut nombornya.",
+      "step2Title": "Lalui lima langkah",
+      "step2Body": "Baca, Tulis, Cakap, Tonton, Refleksi. Pasangkan pelajar untuk Cakap. Tonton boleh dilangkau.",
+      "step3Title": "Kongsi dan buat refleksi",
+      "step3Body": "Minta dua atau tiga pelajar berkongsi jawapan mereka. Semua orang menulis satu refleksi.",
+      "previewTitle": "Pratonton mana-mana pelajaran",
+      "previewNote": "Pratonton tidak pernah menyimpan apa-apa",
+      "previewIntro": "Setiap pelajaran ada panduan guru dengan rancangan sesi dan jawapan, dan setiap semakan bahagian ada skema jawapan.",
+      "sectionLabel": "Bahagian",
+      "previewCta": "Pratonton",
+      "teacherGuide": "Panduan guru",
+      "teacherGuideLabel": "Panduan guru untuk Pelajaran {number}",
+      "answerKey": "Skema jawapan",
+      "answerKeyLabel": "Skema jawapan untuk semakan bahagian {section}",
+      "codesTag": "Rakan kongsi rintis",
+      "codesTitle": "Kod kelas sebagai ganti nama",
+      "codesBody": "Dalam rintis, setiap pelajar boleh mendapat kod seperti HLP-07. Kelak, kod ini akan membolehkan kami melihat kemajuan seluruh kumpulan, tanpa sebarang nama. Anda menyimpan senarai yang memadankan nama dengan kod.",
+      "feedbackTitle": "Beritahu kami apa yang perlu dibaiki",
+      "feedbackBody": "Ada yang mengelirukan, terlalu sukar atau rosak? Beritahu kami di {email}. Jangan hantar nama pelajar atau jawapan bertulis mereka.",
+      "toolsIntro": "Untuk hari anda bermula, dan setiap hari selepasnya. Semua di sini kekal pada peranti ini.",
+      "followTitle": "Ikuti perkembangan kumpulan anda",
+      "setupTitle": "Sediakan peranti ini",
+      "setupBody": "Senarai semak untuk setiap laptop atau tablet. Cetak untuk ditanda di atas kertas.",
+      "setupCta": "Buka senarai semak",
+      "classTitle": "Kelas pada peranti ini",
+      "classBody": "Pelajaran yang telah selesai dan di mana setiap pelajar berada sekarang. Tiada markah.",
+      "classCta": "Lihat kelas",
+      "certificatesTitle": "Sijil",
+      "certificatesBody": "Setiap sijil yang diperoleh pada peranti ini, satu bagi setiap halaman.",
+      "certificatesCta": "Cetak semua sijil"
+    },
+    "organisations": {
+      "title": "Untuk organisasi",
+      "eyebrow": "Memulakan program rintis",
+      "intro": "Thinkerwell ialah platform yang diterajui pelajar dan berusaha meluaskan akses kepada pembelajaran kajian sosial digital secara percuma untuk belia yang kurang mendapat perkhidmatan di seluruh Asia Tenggara. Kami sedang menyediakan program rintis kursus kami bersama organisasi pembelajaran. Halaman ini menerangkan apa yang terlibat dalam program rintis.",
+      "honesty": "Thinkerwell ialah platform yang diterajui pelajar. Ia bukan badan amal atau pertubuhan bukan berasaskan keuntungan yang berdaftar.",
+      "whatTitle": "Apa itu Thinkerwell",
+      "whatBody": "Satu kursus, Meneroka Dunia Kita: {lessons} pelajaran tentang sejarah, geografi, budaya dan kehidupan sivik, untuk pelajar berumur kira-kira 10 hingga 17 tahun. Setiap pelajaran ada lima langkah: baca, tulis, cakap, tonton dan refleksi. Kursus ini berfungsi dalam pelayar web pada laptop dan tablet yang dikongsi, dalam bahasa Inggeris, bahasa Indonesia atau bahasa Melayu. Pelajaran boleh digunakan di luar talian selepas lawatan pertama, tetapi video, yang tidak wajib, memerlukan internet.",
+      "getTitle": "Apa yang anda dapat",
+      "get1": "Seluruh kursus, percuma. Tiada akaun, tiada iklan dan tiada apa-apa yang dikunci.",
+      "get2": "Panduan guru untuk setiap pelajaran, skema jawapan untuk semakan bahagian, dan setiap pelajaran sedia untuk dicetak.",
+      "get3": "Apa yang anda perlukan untuk bermula: helaian maklumat dan borang persetujuan untuk keluarga, kad kod untuk pelajar dan senarai semak untuk setiap peranti.",
+      "get4": "Jawapan kepada soalan anda melalui e-mel, dan perubahan pada kursus berdasarkan apa yang anda beritahu kami.",
+      "askTitle": "Apa yang kami minta",
+      "ask1": "Satu orang hubungan di organisasi anda.",
+      "ask2": "Beberapa komputer riba atau tablet dengan pelayar web. Pelajar boleh berkongsi peranti.",
+      "ask3": "Beberapa sesi seminggu selama 4 hingga 6 minggu. Satu pelajaran mengambil masa kira-kira {min}–{max} minit.",
+      "ask4": "Maklum balas yang jujur: apa yang berkesan, apa yang tidak, dan apa yang mengelirukan pelajar.",
+      "privacyTitle": "Privasi",
+      "privacy1": "Kumpulan rintis boleh menggunakan kod dan bukan nama. Setiap pelajar mendapat kad kod, seperti HLP-01, dan menaip kod itu sebagai nama mereka. Hanya anda yang menyimpan senarai yang memadankan kod dengan nama.",
+      "privacy2": "Tiada akaun, tiada alamat e-mel dan tiada iklan. Hasil kerja pelajar kekal pada peranti yang mereka gunakan, dan rakaman suara tidak sekali-kali keluar daripada peranti itu.",
+      "privacy3": "Persetujuan ibu bapa. Sebelum sebarang data pembelajaran dikongsi dengan Thinkerwell, ibu bapa atau penjaga menandatangani borang persetujuan, dan pelajar juga berkata ya. Kajian ini hanya akan menggunakan data yang dikaitkan dengan kod, tidak sekali-kali dengan nama: soalan pendek dan beberapa ayat dalam sesi pertama dan terakhir, dan, dalam setiap sesi, cara pelajar menggunakan Thinkerwell: masa, pelajaran dan langkah, jawapan, bantuan yang mereka gunakan, video dan bilangan perkataan, tidak sekali-kali apa yang mereka tulis.",
+      "privacyNow": "Buat masa ini, hasil kerja dan kemajuan pelajar tidak dihantar kepada Thinkerwell. Pertuturan ke teks dalam talian dimatikan melainkan kakitangan anda menghidupkannya; apabila ia dihidupkan, apa yang dikatakan pelajar dihantar ke perkhidmatan syarikat pembuat pelayar. Kami akan memberitahu anda sebelum apa-apa lagi berubah.",
+      "privacy4": "Video tidak wajib. Video dimainkan dari YouTube, hanya apabila pelajar menekan butang main, dan setiap video ada versi bertulis.",
+      "startTitle": "Bersedia",
+      "startBody": "Cetak apa yang anda perlukan, dan sediakan setiap peranti sebelum sesi pertama.",
+      "contactTitle": "Hubungi kami",
+      "contactBody": "Hantar e-mel kepada kami untuk memulakan program rintis atau bertanya soalan. Beritahu kami nama organisasi anda, lokasi anda, dan kira-kira berapa ramai pelajar yang akan menyertai."
+    },
+    "consentForm": {
+      "title": "Borang persetujuan",
+      "intro": "Cetak satu borang untuk setiap pelajar sebelum program rintis bermula: satu halaman untuk ibu bapa atau penjaga, dan satu halaman untuk pelajar. Taip nama organisasi anda untuk memaparkannya pada borang, atau biarkan kosong untuk menulisnya dengan tangan.",
+      "orgLabel": "Nama organisasi anda",
+      "orgHelper": "Ia hanya digunakan pada borang ini, dan tidak disimpan.",
+      "staffTitle": "Untuk kakitangan: ini ialah templat",
+      "staffBody": "Ini bukan nasihat undang-undang. Sebelum menggunakannya, semak borang ini dengan peraturan organisasi anda sendiri dan undang-undang perlindungan data di tempat anda bekerja, dan ubah apa-apa yang tidak sesuai. Borang yang ditandatangani mengandungi nama: simpan dengan selamat. Thinkerwell tidak pernah melihatnya.",
+      "staffUse": "Berikan helaian maklumat bersama borang ini kepada setiap keluarga. Jika ibu bapa atau penjaga tidak boleh membaca, bacakan kedua-duanya dengan kuat dalam bahasa mereka, dan turunkan tandatangan sebagai saksi di halaman 2. Pelajar berumur 18 tahun ke atas menandatangani untuk diri sendiri. Borang ini tidak meliputi pertuturan ke teks dalam talian, jadi pastikan ciri itu dimatikan dalam Tetapan.",
+      "orgBlank": "nama organisasi",
+      "pageOf": "Halaman {page} daripada {count}",
+      "formTitle": "Menyertai program rintis Thinkerwell",
+      "formFor": "Untuk ibu bapa atau penjaga",
+      "formIntro": "{organisation} sedang mencuba Thinkerwell, kursus dalam talian percuma tentang sejarah, geografi, budaya dan kehidupan sivik untuk belia berumur kira-kira 10 hingga 17 tahun. Kelas anak anda akan menggunakannya beberapa sesi seminggu selama 4 hingga 6 minggu. Ada juga satu kajian kecil tentang sejauh mana ia berkesan.",
+      "studyTitle": "Kajian rintis",
+      "choiceTitle": "Ini pilihan anda",
+      "choiceBody": "Jika anda menjawab tidak kepada mana-mana soalan di bawah, ini tidak akan menjejaskan apa-apa lagi yang anak anda lakukan di {organisation}. Jika anda menjawab tidak kepada kajian ini, anak anda masih boleh menggunakan Thinkerwell di dalam kelas; cuma jawapannya tidak digunakan. Anda boleh mengubah fikiran pada bila-bila masa, walaupun selepas program rintis: beritahu {organisation}, dan jawapan anak anda akan dipadam. Anak anda juga boleh berkata tidak, dan keputusannya itu dihormati.",
+      "questions": "Ada soalan? Tanya {organisation}.",
+      "questionsEmail": "Ada soalan? Tanya {organisation}, atau hantar e-mel kepada Thinkerwell di {email}.",
+      "honesty": "Thinkerwell ialah platform yang diterajui pelajar, bukan badan amal berdaftar.",
+      "answerTitle": "Jawapan anda",
+      "classQuestion": "Anak saya boleh menggunakan Thinkerwell di dalam kelas di {organisation}.",
+      "studyQuestion": "Anak saya boleh menyertai kajian rintis. Jawapannya digunakan dengan kod, tidak sekali-kali dengan namanya.",
+      "yes": "Ya",
+      "no": "Tidak",
+      "childName": "Nama anak",
+      "pilotCode": "Kod rintis (diisi oleh organisasi): {code}",
+      "parentName": "Nama ibu bapa atau penjaga",
+      "signature": "Tandatangan atau cap jari",
+      "date": "Tarikh",
+      "keep": "{organisation} menyimpan borang ini di tempat berkunci. Thinkerwell tidak pernah melihatnya.",
+      "learnerTitle": "Jawapan pelajar sendiri",
+      "learnerFor": "Untuk diisi oleh kakitangan",
+      "learnerIntro": "Bacakan ini dengan kuat kepada pelajar, dalam bahasa mereka:",
+      "learnerScript": "Kami sedang mencuba laman web pembelajaran baharu bernama Thinkerwell. Dalam pelajaran pertama dan terakhir, kamu akan menjawab beberapa soalan dan menulis beberapa ayat. Ini bukan ujian, dan tiada siapa yang diberi markah. Kami menggunakan nombor, bukan nama kamu. Kamu boleh berkata tidak, atau berhenti pada bila-bila masa, dan kamu masih boleh menggunakan Thinkerwell dan datang ke kelas. Adakah kamu mahu jawapan kamu menjadi sebahagian daripada kajian ini?",
+      "learnerAnswer": "Jawapan pelajar",
+      "staffInitials": "Parap kakitangan",
+      "learnerWins": "Jika ibu bapa berkata ya tetapi pelajar berkata tidak, keputusan pelajar itu yang diikut.",
+      "witnessTitle": "Jika ibu bapa atau penjaga tidak boleh membaca atau menulis",
+      "witnessBody": "Saya telah membacakan helaian maklumat dan borang ini dengan kuat dalam {language} (bahasa). Ibu bapa atau penjaga itu faham dan telah memberikan jawapan di halaman 1.",
+      "languageBlank": "bahasa",
+      "codeBlank": "kod rintis",
+      "staffName": "Nama kakitangan",
+      "staffSignature": "Tandatangan kakitangan"
+    },
+    "pilotStudy": {
+      "intro": "Jika anda menjawab ya kepada kajian ini, dalam sesi pertama dan terakhir, anak anda:",
+      "questions": "menjawab 16 soalan pendek (kira-kira 15 minit setiap kali)",
+      "writing": "menulis beberapa ayat tentang sebuah bandar rekaan, di atas kertas (kira-kira 8 minit)",
+      "faces": "memilih satu muka bagi setiap satu daripada 5 ayat, seperti “Saya boleh menggunakan peta untuk mencari maklumat” (kira-kira 1 minit)",
+      "site": "Dalam setiap sesi, Thinkerwell juga mencatat cara anak anda menggunakannya: berapa lama, pelajaran dan langkah mana yang dibuka dan diselesaikannya, jawapannya kepada semakan pantas dan kuiz, sama ada dia menggunakan versi bacaan lebih mudah atau mendengar teks dibacakan, sama ada dia menonton video (dan berapa banyak) atau membaca versi bertulis, dan berapa banyak perkataan yang ditulisnya, tidak sekali-kali perkataan itu sendiri.",
+      "notTest": "Semua ini bukan ujian. Tiada apa-apa yang bergantung pada jawapannya.",
+      "keepTitle": "Apa yang kami simpan, dan apa yang tidak",
+      "keepCode": "Jawapan anak anda dikaitkan dengan kod, seperti {code}, tidak sekali-kali dengan namanya.",
+      "keepList": "{organisation} menyimpan senarai nama dan kod di atas kertas. Thinkerwell tidak pernah melihatnya.",
+      "keepNeverAsk": "Thinkerwell tidak sekali-kali bertanya tentang keluarga, perjalanan, negara asal, agama atau etnik.",
+      "keepNoDocuments": "Thinkerwell tidak sekali-kali meminta nombor UNHCR atau apa-apa dokumen.",
+      "keepNoPhotos": "Thinkerwell tidak sekali-kali mengumpul gambar anak anda, atau lokasinya.",
+      "keepDevice": "Apa yang anak anda tulis dan rakam dalam pelajaran kekal pada peranti yang digunakannya.",
+      "keepGroup": "Hanya pasukan Thinkerwell yang melihat jawapan. {organisation} menerima keputusan untuk seluruh kumpulan, tidak sekali-kali untuk seorang kanak-kanak sahaja.",
+      "keepDelete": "Semua yang disimpan oleh kajian ini dipadam dalam tempoh 6 bulan selepas program rintis tamat.",
+      "keepVideo": "Sesetengah pelajaran ada video YouTube yang tidak wajib. Apabila video dimainkan, YouTube (milik Google) menerima beberapa maklumat, seperti alamat internet (IP) peranti. Setiap video ada versi bertulis: memilih “{readInstead}” tidak menghantar apa-apa kepada YouTube."
+    },
+    "infoSheet": {
+      "title": "Helaian maklumat",
+      "intro": "Cetak satu untuk keluarga setiap pelajar, untuk diberikan bersama borang persetujuan. Isi maklumat yang anda tahu untuk memaparkannya pada helaian, atau biarkan kotak kosong untuk menulisnya dengan tangan.",
+      "fieldsTitle": "Sebelum anda mencetak",
+      "fieldsHelper": "Hanya digunakan pada helaian ini, dan tidak disimpan.",
+      "startLabel": "Tarikh mula",
+      "endLabel": "Tarikh tamat",
+      "sessionsLabel": "Bilangan sesi",
+      "contactLabel": "Orang hubungan",
+      "staffBody": "Ini bukan nasihat undang-undang. Semak helaian ini dengan peraturan organisasi anda sendiri, dan ubah apa-apa yang tidak sesuai. Jika ibu bapa atau penjaga tidak boleh membaca, bacakan helaian ini dengan kuat dalam bahasa mereka.",
+      "startBlank": "tarikh mula",
+      "endBlank": "tarikh tamat",
+      "sessionsBlank": "bilangan sesi",
+      "contactBlank": "nama orang hubungan",
+      "sheetTitle": "Tentang program rintis Thinkerwell",
+      "sheetFor": "Untuk disimpan oleh ibu bapa atau penjaga",
+      "whatTitle": "Apa itu Thinkerwell?",
+      "whatBody": "Thinkerwell ialah laman web pembelajaran percuma. Ia mengajar sejarah, peta dan tempat, budaya, dan cara komuniti membuat keputusan. Pelajar membaca, menulis, bercakap, menonton video pendek dan memikirkan apa yang telah mereka pelajari, dalam bahasa Inggeris yang mudah, bahasa Indonesia atau bahasa Melayu. Ia dibuat oleh sebuah pasukan kecil pelajar di Singapura.",
+      "happenTitle": "Apa yang akan berlaku?",
+      "happenBody": "Dari {start} hingga {end}, kelas anak anda di {organisation} akan menggunakan Thinkerwell pada tablet dan komputer riba kelas itu, kira-kira {sessions} kali. Seorang guru dari {organisation} memimpin setiap sesi.",
+      "studyTitle": "Kajian rintis: anda yang memilih",
+      "choiceTitle": "Berkata ya atau tidak",
+      "choiceBody": "Ini pilihan anda, dan anda menjawab pada borang persetujuan. Jika anda berkata tidak kepada kajian ini, anak anda masih datang ke kelas dan masih boleh menggunakan Thinkerwell. Cuma jawapannya tidak digunakan dalam kajian. Anda boleh mengubah fikiran pada bila-bila masa, walaupun selepas program rintis. Beritahu guru, dan jawapan anak anda akan dipadam. Anak anda juga boleh berkata tidak, dan keputusannya itu dihormati.",
+      "questionsTitle": "Soalan",
+      "questions": "Tanya {contact} di {organisation}.",
+      "questionsEmail": "Tanya {contact} di {organisation}, atau tulis kepada Thinkerwell di {email}.",
+      "runBy": "Thinkerwell dikendalikan oleh Justin Park dan Nick Thiery. Ia ialah platform yang diterajui pelajar, bukan badan amal berdaftar."
+    },
+    "codeCards": {
+      "title": "Kad kod",
+      "intro": "Setiap pelajar mendapat kod untuk ditaip sebagai nama mereka, jadi nama sebenar mereka tidak pernah ada pada peranti. Pilih awalan pendek untuk kumpulan anda dan bilangan pelajar. Anda akan mendapat kad untuk digunting, dan senarai untuk menulis nama.",
+      "prefixLabel": "Awalan",
+      "prefixHelper": "2 hingga 5 huruf atau nombor, contohnya HLP.",
+      "prefixInvalid": "Gunakan 2 hingga 5 huruf atau nombor.",
+      "countLabel": "Bilangan pelajar",
+      "countHelper": "Dari 1 hingga {max}.",
+      "countInvalid": "Pilih nombor dari 1 hingga {max}.",
+      "summary": "{count} kad, dari {first} hingga {last}. Cetak pada kertas A4 dan gunting di sepanjang garis putus-putus.",
+      "cardsTitle": "Kad untuk digunting",
+      "cardLabel": "Kod Thinkerwell kamu",
+      "cardHow": "Tekan “{tile}” dan taip kod ini sebagai nama kamu.",
+      "cardKeep": "Simpan kad ini.",
+      "listTitle": "Kod dan nama",
+      "listIntro": "Tulis nama setiap pelajar di sebelah kodnya. Pastikan senarai ini disimpan dengan selamat oleh kakitangan anda. Jangan taip nama ke dalam Thinkerwell, dan jangan hantar senarai ini kepada sesiapa pun.",
+      "listCode": "Kod",
+      "listName": "Nama"
+    },
+    "teacherTools": {
+      "back": "Kembali ke halaman pendidik",
+      "correctAnswer": "Jawapan betul",
+      "why": "Sebab:",
+      "feedback": "Maklum balas:",
+      "newTab": "(dibuka dalam tab baharu)"
+    },
+    "teacherGuide": {
+      "pageTitle": "Pelajaran {number}: panduan guru",
+      "eyebrow": "Panduan guru · Pelajaran {number}",
+      "intro": "Semua yang anda perlukan untuk mengajar pelajaran ini, bersama jawapannya. Halaman ini boleh dicetak pada kertas A4, hitam di atas putih, tanpa menu.",
+      "previewLesson": "Pratonton pelajaran",
+      "learnerPrint": "Cetak pelajaran untuk pelajar",
+      "section": "Bahagian",
+      "sectionValue": "Bahagian {number}: {title}",
+      "essentialQuestion": "Soalan utama",
+      "learningGoal": "Matlamat pembelajaran",
+      "time": "Masa",
+      "beforeTitle": "Sebelum mengajar",
+      "sensitiveTitle": "Topik sensitif: baca sebelum kelas",
+      "contentNotePointer": "Video ini ada nota kandungan. Baca nota itu sebelum kelas: ia ada bersama video, di bawah.",
+      "notesTitle": "Nota pengajaran",
+      "planTitle": "Rancangan sesi",
+      "planIntro": "Cadangan rancangan untuk sesi kira-kira 45 minit. Ubah suai mengikut kumpulan anda.",
+      "planStep": "Langkah",
+      "planDoTitle": "Apa yang perlu dibuat",
+      "planColumn": "{minutes} min",
+      "planTotal": "Jumlah",
+      "planSkip": "Langkau",
+      "planShorter": "Hanya ada 30 minit? Gunakan lajur 30 min: langkau langkah “Tonton atau baca versi bertulis”, dan kurangkan sedikit masa untuk langkah lain. Pelajar boleh membuka Tonton kemudian, kerana tiada apa-apa yang dikunci.",
+      "planSteps": {
+        "warmUp": "Pemanasan",
+        "read": "Baca mengikut petikan",
+        "check": "Semakan pantas",
+        "write": "Tulis",
+        "speak": "Cakap",
+        "watch": "Tonton atau baca versi bertulis",
+        "reflect": "Refleksi"
+      },
+      "planDo": {
+        "warmUp": "Tanya soalan pemanasan. Semua jawapan boleh diterima: soalan ini membuat semua orang berfikir.",
+        "read": {
+          "other": "Baca teks ({count} petikan) satu demi satu, dalam versi Biasa atau versi lebih mudah. Lihat bukti dan gambar bersama-sama."
+        },
+        "check": {
+          "other": "Pelajar menjawab soalan semakan pantas ({count} soalan), kemudian berbincang tentang jawapannya."
+        },
+        "write": "Pelajar merancang dan menulis jawapan mereka, kemudian menanda semakan kendiri. Permulaan ayat dapat membantu.",
+        "speak": "Pelajar memberitahu jawapan mereka kepada rakan, atau berlatih sendiri.",
+        "watch": "Tonton video bersama-sama, atau baca versi bertulis sebagai ganti.",
+        "reflect": "Semua orang menjawab soalan refleksi yang pertama. Soalan ini menamatkan pelajaran."
+      },
+      "keyWordsTitle": "Kata kunci",
+      "evidenceTitle": "Bukti dan gambar",
+      "checkTitle": "Semakan pantas",
+      "checkIntro": "Pelajar melihat pilihan jawapan dalam susunan yang berbeza, dan boleh mencuba lagi seberapa kerap yang mereka mahu.",
+      "think": "Soalan berfikir: jawapan yang betul bukan hanya satu.",
+      "thinkOptional": "Soalan berfikir, tidak wajib: jawapan yang betul bukan hanya satu.",
+      "writeTask": "Tugasan",
+      "selfCheck": "Semakan kendiri",
+      "example": "Contoh jawapan",
+      "exampleNote": "Satu cara untuk menjawab. Jawapan pelajar boleh berbeza.",
+      "discussTitle": "Soalan perbincangan",
+      "discussIntro": "Soalan daripada pelajaran untuk dibincangkan bersama-sama. Sesiapa yang tidak mahu menjawab boleh melepaskan giliran.",
+      "discussWarmUp": "Sebelum membaca: pemanasan",
+      "discussChoices": "Pilihan pada skrin",
+      "discussThink": "Selepas semakan pantas",
+      "discussReflect": "Di akhir: Refleksi",
+      "startHelp": "Bantuan untuk bermula:",
+      "reflectRequired": "Pelajar menjawab soalan ini untuk menamatkan pelajaran.",
+      "videoTitle": "Tonton atau baca versi bertulis",
+      "videoName": "Video",
+      "videoChannel": "Saluran",
+      "videoLength": "Tempoh",
+      "videoLengthUnknown": "Tidak diketahui",
+      "videoLink": "Pautan",
+      "videoOpen": "Buka di YouTube",
+      "videoWhy": "Mengapa video ini",
+      "videoOffline": "Video ini memerlukan internet. Versi bertulis (Baca versi bertulis) boleh digunakan di luar talian dan mempunyai idea yang sama.",
+      "beforeVideo": "Sebelum video",
+      "afterVideo": "Selepas video atau bacaan",
+      "contentNote": "Nota kandungan",
+      "sourcesTitle": "Sumber",
+      "sourcesIntro": "Pelajaran ini ditulis dalam kata-kata Thinkerwell sendiri, berdasarkan sumber-sumber ini. Gunakannya untuk menyemak fakta atau mengetahui lebih lanjut (sumber ini dalam bahasa Inggeris)."
+    },
+    "answerKey": {
+      "title": "Skema jawapan: {section}",
+      "eyebrow": "Semakan Bahagian {number}",
+      "intro": "Setiap soalan dalam semakan bahagian ini, bersama jawapannya. Halaman ini boleh dicetak pada kertas A4, hitam di atas putih, tanpa menu.",
+      "practice": "Semakan bahagian ini untuk latihan. Ia tidak pernah menghalang pelajar: tiada had masa, mereka boleh mencuba lagi seberapa kerap yang mereka mahu, dan setiap pelajaran tetap terbuka walau berapa pun markah mereka.",
+      "order": "Pelajar melihat pilihan jawapan dalam susunan yang berbeza, jadi bincangkan jawapan itu sendiri, bukan kedudukannya.",
+      "question": "Soalan {n} · {skill}",
+      "fromLesson": "Daripada Pelajaran {number}: {title}"
+    },
+    "setup": {
+      "title": "Sediakan peranti ini",
+      "intro": "Lakukan langkah-langkah ini sekali pada setiap laptop atau tablet. Setiap langkah menunjukkan sama ada ia sudah selesai pada peranti ini.",
+      "paperIntro": "Pada setiap peranti, buka Thinkerwell, kemudian Untuk pendidik, kemudian Sediakan peranti ini. Tandakan setiap langkah apabila selesai.",
+      "device": "Peranti",
+      "date": "Tarikh",
+      "stepsLabel": "Langkah",
+      "state": {
+        "done": "Selesai",
+        "todo": "Belum selesai",
+        "inProgress": "Sedang berjalan",
+        "checking": "Menyemak",
+        "notHere": "Tiada pada pelayar ini",
+        "notNeeded": "Tidak perlu",
+        "optional": "Tidak wajib"
+      },
+      "homeScreen": {
+        "title": "Tambah Thinkerwell ke skrin utama",
+        "why": {
+          "other": "Selepas itu, ia dibuka seperti aplikasi. Pada iPad dan iPhone, langkah ini juga menghalang Safari daripada memadamkan hasil kerja yang disimpan jika Thinkerwell tidak dibuka selama {count} hari."
+        },
+        "first": "Lakukan langkah ini dahulu. Kemudian buka Thinkerwell dari skrin utama, dan lakukan langkah-langkah lain di situ.",
+        "installed": "Thinkerwell dibuka dari skrin utama.",
+        "inBrowser": "Thinkerwell dibuka dalam pelayar. Jika anda sudah menambahnya, buka dari skrin utama.",
+        "thisDevice": "Langkah untuk peranti ini: {device}",
+        "otherDevices": "Langkah untuk peranti lain",
+        "apple": {
+          "name": "iPad atau iPhone (Safari)",
+          "step1": "Buka Thinkerwell dalam Safari.",
+          "step2": "Tekan Kongsi: segi empat dengan anak panah ke atas.",
+          "step3": "Tekan Tambah ke Skrin Utama. Anda mungkin perlu menatal ke bawah untuk mencarinya.",
+          "step4": "Tekan Tambah.",
+          "step5": "Buka Thinkerwell dari ikonnya. Ia menyimpan hasil kerjanya sendiri, berasingan daripada Safari, jadi tambah pelajar di situ."
+        },
+        "android": {
+          "name": "Tablet atau telefon Android (Chrome)",
+          "step1": "Buka Thinkerwell dalam Chrome.",
+          "step2": "Tekan menu: tiga titik di bahagian atas.",
+          "step3": "Tekan Tambah ke skrin utama, atau Pasang apl.",
+          "step4": "Tekan Pasang, atau Tambah.",
+          "step5": "Buka Thinkerwell dari ikonnya."
+        },
+        "desktop": {
+          "name": "Laptop Windows atau Chromebook (Chrome atau Edge)",
+          "step1": "Buka Thinkerwell dalam Chrome atau Edge.",
+          "step2": "Klik butang pasang di hujung bar alamat. Jika tiada, buka menu: tiga titik.",
+          "step3": "Pilih Pasang Thinkerwell. Dalam menu, ia mungkin di bawah Hantar, simpan dan kongsi, atau di bawah Apl.",
+          "step4": "Klik Pasang.",
+          "step5": "Buka Thinkerwell dari ikonnya."
+        }
+      },
+      "offline": {
+        "title": "Muat turun kursus untuk kegunaan luar talian",
+        "why": "Selepas itu, setiap pelajaran boleh digunakan tanpa internet. Hanya video yang memerlukannya.",
+        "how": "Buka Thinkerwell semasa internet bersambung, dan biarkan ia terbuka sehingga pelajaran disimpan. Ia melakukannya sendiri.",
+        "audio": "Untuk menggunakan Dengar tanpa internet, muat turun juga audio pelajaran: dalam Tetapan, di bawah Audio pelajaran.",
+        "audioOpen": "Audio pelajaran dalam Tetapan"
+      },
+      "storage": {
+        "title": "Lindungi hasil kerja yang disimpan",
+        "why": "Jika tidak, pelayar mungkin memadamkan hasil kerja pelajar apabila ruang storan peranti hampir penuh.",
+        "how": "Tekan Lindungi hasil kerja. Jika pelayar bertanya, pilih Benarkan.",
+        "button": "Lindungi hasil kerja",
+        "checking": "Menyemak apa yang pelayar lakukan dengan hasil kerja yang disimpan…",
+        "asking": "Bertanya kepada pelayar…",
+        "done": "Pelayar menyimpan hasil kerja pada peranti ini, walaupun ruang storan hampir penuh.",
+        "todo": "Pelayar mungkin memadamkan hasil kerja yang disimpan apabila ruang storan hampir penuh.",
+        "refused": "Buat masa ini pelayar tidak membenarkannya. Pelayar biasanya membenarkan selepas Thinkerwell ditambah ke skrin utama dan digunakan selama beberapa hari. Cuba lagi pada masa itu.",
+        "unsupported": "Kebenaran tidak dapat diminta daripada pelayar ini. Menambah Thinkerwell ke skrin utama membantu melindungi hasil kerja.",
+        "noStorage": "Tetingkap pelayar ini langsung tidak dapat menyimpan hasil kerja pelajar. Tetingkap peribadi boleh menyebabkan perkara ini. Buka Thinkerwell dalam tetingkap biasa."
+      },
+      "learners": {
+        "title": "Tambah pelajar yang menggunakan peranti ini",
+        "why": "Setiap pelajar mendapat petak pada laman utama, dan hasil kerja mereka disimpan secara berasingan.",
+        "how": "Tekan Tambah pelajar, atau biarkan setiap pelajar menekan Saya baru di sini pada laman utama.",
+        "codes": "Menggunakan kad kod? Setiap pelajar menaip kod mereka sebagai nama.",
+        "count": {
+          "other": "{count} pelajar pada peranti ini."
+        },
+        "none": "Belum ada pelajar pada peranti ini.",
+        "add": "Tambah pelajar",
+        "seeClass": "Lihat kelas"
+      },
+      "voice": {
+        "title": "Pilih suara Dengar (tidak wajib)",
+        "why": "Dengar membacakan pelajaran dengan suara terbaik yang ditemuinya pada peranti. Anda boleh mendengar setiap suara dan memilih suara lain, atau memuat turun suara yang lebih jelas.",
+        "whyRecorded": "Dengar memainkan rakaman suara semula jadi. Jika rakaman tiada pada peranti dan tiada internet, ia membacakan dengan suara terbaik yang ditemuinya pada peranti. Anda boleh mendengar setiap suara dan memilih suara lain, atau memuat turun suara yang lebih jelas.",
+        "how": "Dalam Tetapan, di bawah Suara Dengar, mainkan contoh dan pilih suara yang paling jelas.",
+        "automatic": "Dengar membaca dengan {voice}, suara terbaik pada peranti ini.",
+        "chosen": "Dengar membaca dengan {voice}, yang dipilih dalam Tetapan.",
+        "none": "Peranti ini tiada suara yang boleh digunakan oleh Dengar, jadi Dengar tidak dipaparkan. Tetapan menerangkan cara untuk menambah suara.",
+        "noneRecorded": "Peranti ini tiada suaranya sendiri yang boleh digunakan oleh Dengar, jadi Dengar hanya memainkan rakaman. Tetapan menerangkan cara untuk menambah suara.",
+        "open": "Pilih dalam Tetapan"
+      },
+      "speech": {
+        "title": "Semak pertuturan ke teks",
+        "why": "Sebut membolehkan pelajar bercakap dan bukannya menaip. Semakan ini memberitahu pelajaran sama ada ia boleh berfungsi di sini.",
+        "last": "Lakukan langkah ini paling akhir. Pada sesetengah tablet, semakan ini pernah menutup tab pelayar. Jika itu berlaku, buka Thinkerwell semula.",
+        "how": "Dalam Tetapan, di bawah Sebut, tekan Semak peranti ini.",
+        "notChecked": "Belum disemak pada peranti ini.",
+        "onDevice": "Pertuturan ke teks berfungsi pada peranti ini, dan apa yang pelajar sebut tidak dihantar ke mana-mana.",
+        "download": "Ia perlu dimuat turun sekali dahulu. Dalam Tetapan, tekan Muat turun pertuturan ke teks semasa Wi-Fi baik, kemudian semak semula.",
+        "notOnDevice": "Pelayar ini tidak dapat melakukannya pada peranti, jadi Sebut kekal tersembunyi. Pelajar menaip sebagai ganti.",
+        "none": "Pelayar ini tidak dapat menukar pertuturan kepada teks, jadi tiada apa yang perlu disemak. Sebut kekal tersembunyi, dan pelajar menaip sebagai ganti.",
+        "open": "Semak dalam Tetapan"
+      },
+      "later": {
+        "title": "Sebelum anda menetapkan semula peranti ini atau memulangkannya",
+        "body": "Simpan hasil kerja semua orang ke dalam fail, kemudian buka fail itu pada peranti seterusnya. Rakaman tidak termasuk dalam fail. Simpan fail itu dengan selamat: sesiapa yang memilikinya boleh membaca hasil kerja itu.",
+        "open": "Simpan hasil kerja ke fail dalam Tetapan"
+      }
+    },
+    "classView": {
+      "title": "Kelas pada peranti ini",
+      "intro": "Setiap pelajar pada peranti ini, mengikut nama, dan apa yang telah dibuat oleh setiap seorang.",
+      "noScores": "Tiada markah di sini kerana sesiapa sahaja yang menggunakan peranti ini boleh membuka halaman ini.",
+      "printAll": "Cetak semua sijil",
+      "listLabel": "Pelajar",
+      "learnerAdded": "{name}, ditambah {date}",
+      "classCode": "Kod kelas {code}",
+      "onNow": "Sedang aktif",
+      "lesson": "Pelajaran {number}: {title}",
+      "atStep": "Langkah: {stage}",
+      "upNext": "Seterusnya",
+      "notStarted": "Belum mula lagi",
+      "finished": "Selesai semua pelajaran",
+      "lastActive": "Kali terakhir aktif",
+      "never": "Belum lagi",
+      "lessonsDone": "Pelajaran yang selesai",
+      "lessonsOf": "{completed} daripada {total}",
+      "checksTried": "Semakan bahagian yang dicuba",
+      "checksNone": "Belum ada lagi",
+      "empty": "Belum ada pelajar pada peranti ini.",
+      "emptyBody": "Pelajar akan dipaparkan di sini selepas mereka ditambah. Setiap pelajar boleh menambah diri sendiri melalui Saya baru di sini di laman utama.",
+      "noStorage": "Tetingkap pelayar ini tidak dapat menyimpan hasil kerja pelajar, jadi tiada apa-apa untuk dipaparkan di sini. Tetingkap peribadi boleh menyebabkan perkara ini."
+    },
+    "allCertificates": {
+      "title": "Semua sijil",
+      "count": {
+        "other": "{count} sijil diperoleh pada peranti ini. Setiap sijil dicetak pada satu halaman landskap sendiri."
+      },
+      "names": "Nama diambil daripada peranti ini dan tidak boleh diubah di sini. Untuk mencetak nama lain, pilih pelajar itu, kemudian buka sijilnya dari halaman kursus.",
+      "namesLink": "Pergi ke halaman kursus",
+      "back": "Kembali ke kelas",
+      "labelSection": "Sijil untuk {name}: {section}",
+      "labelCourse": "Sijil kursus untuk {name}",
+      "empty": "Belum ada sesiapa pada peranti ini yang mempunyai sijil.",
+      "emptyBody": "Pelajar mendapat sijil dengan menamatkan semua pelajaran dalam satu bahagian. Semakan bahagian tidak diperlukan."
+    },
+    "settings": {
+      "title": "Tetapan untuk peranti ini",
+      "intro": "Tetapan ini untuk guru dan sukarelawan. Ia terpakai kepada semua orang yang menggunakan peranti ini, dan kekal pada peranti ini.",
+      "noStorage": "Tetingkap pelayar ini tidak dapat menyimpan tetapan.",
+      "saveFailed": "Perubahan itu tidak dapat disimpan. Cuba lagi.",
+      "language": {
+        "title": "Bahasa",
+        "label": "Bahasa pada peranti ini",
+        "labelLearner": "Bahasa untuk {name}",
+        "help": "Semuanya dipaparkan dalam bahasa ini serta-merta: butang, arahan dan, dalam bahasa Indonesia dan bahasa Melayu, pelajaran juga. Pilihan ini disimpan untuk peranti ini, untuk halaman pertama dan untuk sesiapa yang belum memilih siapa yang belajar.",
+        "helpLearner": "Semuanya dipaparkan dalam bahasa ini serta-merta: butang, arahan dan, dalam bahasa Indonesia dan bahasa Melayu, pelajaran juga. Pilihan ini disimpan untuk {name}, dan bertukar semula apabila orang lain dipilih."
+      },
+      "offline": {
+        "title": "Luar talian dan data",
+        "checking": "Menyemak sama ada pelajaran telah disimpan pada peranti ini…",
+        "preparing": "Menyimpan pelajaran pada peranti ini untuk kegunaan luar talian. Biarkan Thinkerwell terbuka, dengan internet dihidupkan, sehingga mesej ini menyatakan pelajaran sudah disimpan.",
+        "ready": "Kesemua {count} pelajaran telah disimpan pada peranti ini, bersama gambarnya. Thinkerwell boleh digunakan di sini tanpa internet, kecuali video.",
+        "failed": "Pelajaran tidak selesai disimpan untuk kegunaan luar talian. Buka Thinkerwell semula dengan internet dihidupkan, dan ia akan mencuba lagi.",
+        "unsupported": "Pelayar ini tidak dapat menyimpan pelajaran untuk kegunaan luar talian, jadi Thinkerwell memerlukan internet di sini. Tetingkap peribadi boleh menyebabkan perkara ini.",
+        "saveData": "Jimat data",
+        "saveDataHelp": "Mematikan video, jadi Tonton dibuka pada versi bertulis, yang mempunyai idea yang sama. Semua yang lain sudah boleh digunakan tanpa internet.",
+        "saveDataFromBrowser": "Tetapan ini dihidupkan kerana peranti ini ditetapkan untuk menjimatkan data."
+      },
+      "reading": {
+        "title": "Membaca dan mendengar",
+        "level": "Tahap bacaan",
+        "levelHelp": "Pelajaran dibuka pada tahap ini bagi sesiapa yang belum memilih tahap. Pelajar boleh menukarnya dalam mana-mana pelajaran, dan pilihan mereka akan disimpan.",
+        "speed": "Kelajuan Dengar",
+        "speedHelp": "Seberapa laju Dengar membaca dengan kuat. Pelajar boleh menukarnya semasa mendengar.",
+        "noVoice": "Pelayar ini tiada suara pada peranti ini, jadi Dengar tidak dipaparkan di sini."
+      },
+      "listenVoice": {
+        "title": "Suara Dengar",
+        "intro": "Dengar membacakan pelajaran dengan suara yang berfungsi pada peranti ini, jadi tiada apa-apa yang dihantar dalam talian. Sesetengah suara lebih jelas daripada yang lain: mainkan sampel, kemudian pilih.",
+        "introRecorded": "Dengar memainkan rakaman suara semula jadi yang dibuat untuk setiap pelajaran. Jika rakaman sesuatu petikan tiada pada peranti ini dan tiada internet, Dengar akan membaca dengan suara peranti ini, jadi tiada apa-apa yang dihantar dalam talian. Pilih suara itu di sini.",
+        "voiceFor": {
+          "en": "Suara untuk pelajaran dalam bahasa Inggeris",
+          "id": "Suara untuk pelajaran dalam bahasa Indonesia",
+          "ms": "Suara untuk pelajaran dalam bahasa Melayu"
+        },
+        "recordedWith": "Dengar memainkan rakaman yang dibuat dengan {voice}.",
+        "deviceVoice": "Suara peranti, apabila tiada rakaman",
+        "automatic": "Automatik (terbaik pada peranti ini)",
+        "automaticNow": "Automatik menggunakan {voice} pada peranti ini.",
+        "nameWithLang": "{name} ({lang})",
+        "sample": "Mainkan sampel",
+        "deviceSample": "Dengar suara ini",
+        "sampleUnavailable": "Sampel belum ada pada peranti ini, dan peranti ini tiada suara untuk membacanya. Sambung ke internet dan cuba lagi.",
+        "noVoice": "Peranti ini tiada suara bahasa Inggeris yang boleh digunakan oleh Dengar, jadi Dengar tidak dipaparkan. Langkah di bawah menunjukkan cara menambahnya.",
+        "noVoiceRecorded": "Peranti ini tiada suara bahasa Inggeris. Dengar masih memainkan rakaman, tetapi tidak dapat membaca petikan yang rakamannya tiada pada peranti ini semasa tiada internet. Langkah di bawah menunjukkan cara menambah suara.",
+        "noVoiceIndonesian": "Peranti ini belum ada suara bahasa Indonesia, jadi Dengar tidak dapat membaca pelajaran dalam bahasa Indonesia. Langkah di bawah menunjukkan cara menambahnya.",
+        "noVoiceIndonesianRecorded": "Peranti ini tiada suara bahasa Indonesia. Dengar masih memainkan rakaman, tetapi tidak dapat membaca petikan yang rakamannya tiada pada peranti ini semasa tiada internet. Langkah di bawah menunjukkan cara menambah suara.",
+        "noVoiceMalay": "Peranti ini belum ada suara bahasa Melayu, jadi Dengar tidak dapat membacakan pelajaran dalam bahasa Melayu. Langkah di bawah akan menambah suara itu.",
+        "noVoiceMalayRecorded": "Peranti ini tiada suara bahasa Melayu. Dengar masih memainkan rakaman, tetapi tidak dapat membacakan petikan yang rakamannya tiada pada peranti ini semasa tiada internet. Langkah di bawah akan menambah suara.",
+        "better": {
+          "title": "Dapatkan suara yang lebih jelas",
+          "intro": "Kebanyakan peranti boleh memuat turun suara yang lebih baik secara percuma. Saiz suara boleh menjadi besar, jadi gunakan Wi-Fi yang baik. Kemudian buka halaman ini semula dan pilih suara baharu itu.",
+          "apple": {
+            "name": "iPad atau iPhone",
+            "steps": "Buka Tetapan, kemudian Kebolehcapaian, kemudian Kandungan Dituturkan (dipanggil Baca & Tutur pada versi lebih baharu), kemudian Suara. Pilih bahasa Inggeris, bahasa Indonesia atau bahasa Melayu, kemudian suara yang bertanda Dipertingkat atau Premium, dan muat turun suara itu.",
+            "note": "Safari tidak membenarkan laman web menggunakan setiap suara yang anda muat turun. Jika suara baharu itu tiada dalam senarai di atas, kekalkan suara yang anda ada."
+          },
+          "android": {
+            "name": "Tablet atau telefon Android",
+            "steps": "Buka Tetapan dan cari teks ke pertuturan. Di sebelah Enjin pilihan, tekan butang tetapan, kemudian Pasang data suara. Pilih bahasa Inggeris, bahasa Indonesia atau bahasa Melayu, kemudian muat turun suara."
+          },
+          "windows": {
+            "name": "Komputer riba Windows",
+            "steps": "Buka Tetapan, kemudian Masa & bahasa, kemudian Pertuturan. Di sebelah Urus suara, pilih Tambah suara, kemudian bahasa Inggeris (United Kingdom), bahasa Indonesia atau bahasa Melayu. Akaun pentadbir mungkin diperlukan. Kemudian tutup pelayar dan buka semula."
+          },
+          "chromebook": {
+            "name": "Chromebook",
+            "steps": "Buka Tetapan, kemudian Kebolehcapaian, kemudian Teks ke Pertuturan, kemudian Tetapan suara Teks ke Pertuturan. Pasang suara untuk bahasa Inggeris, bahasa Indonesia atau bahasa Melayu."
+          }
+        }
+      },
+      "lessonAudio": {
+        "title": "Audio pelajaran",
+        "intro": "Dengar memuat turun rakaman setiap petikan pada kali pertama ia dimainkan. Untuk menggunakan Dengar tanpa internet, muat turun semuanya di sini, dengan Wi-Fi yang baik.",
+        "forEnglish": "Untuk pelajaran dalam bahasa Inggeris: {size} MB kesemuanya.",
+        "forIndonesian": "Untuk pelajaran dalam bahasa Indonesia: {size} MB kesemuanya.",
+        "forBoth": "Untuk pelajaran dalam bahasa Inggeris dan bahasa Indonesia: {size} MB kesemuanya.",
+        "forMalay": "Untuk pelajaran dalam bahasa Melayu: {size} MB kesemuanya.",
+        "forEnglishMalay": "Untuk pelajaran dalam bahasa Inggeris dan bahasa Melayu: {size} MB kesemuanya.",
+        "forIndonesianMalay": "Untuk pelajaran dalam bahasa Indonesia dan bahasa Melayu: {size} MB kesemuanya.",
+        "forAll": "Untuk pelajaran dalam bahasa Inggeris, bahasa Indonesia dan bahasa Melayu: {size} MB kesemuanya.",
+        "forDevice": "Untuk pelajaran yang digunakan pada peranti ini: {size} MB kesemuanya.",
+        "stored": "Pada peranti ini: {stored} MB daripada {total} MB.",
+        "storedAll": "Kesemuanya ada pada peranti ini. Dengar boleh digunakan di sini tanpa internet.",
+        "storedNone": "Belum ada apa-apa pada peranti ini.",
+        "download": "Muat turun audio pelajaran",
+        "stop": "Berhenti memuat turun",
+        "progress": "Memuat turun: {done} MB daripada {total} MB",
+        "progressLabel": "Audio pelajaran yang dimuat turun",
+        "stopped": "Dihentikan. Apa yang telah dimuat turun kekal pada peranti ini.",
+        "failed": "Sesetengah rakaman tidak dapat dimuat turun. Semak sambungan dan cuba lagi. Apa yang telah dimuat turun akan kekal.",
+        "saveData": "Jimat data dihidupkan, jadi tiada apa-apa yang dimuat turun dari sini. Matikan Jimat data di atas untuk memuat turun audio pelajaran.",
+        "notReady": "Ini boleh dimulakan setelah pelajaran disimpan pada peranti ini untuk kegunaan luar talian, di atas.",
+        "unsupported": "Pelayar ini tidak dapat menyimpan audio pelajaran, jadi Dengar memerlukan internet di sini."
+      },
+      "sayIt": {
+        "title": "Sebut: pertuturan ke teks",
+        "intro": "Sebut membolehkan pelajar bercakap dan bukannya menaip dalam kotak tulisan pelajaran. Ia hanya dipaparkan di tempat yang ia boleh berfungsi.",
+        "notChecked": "Peranti ini belum disemak. Semak sekali, supaya pelajaran tahu sama ada Sebut boleh berfungsi di sini.",
+        "checkDevice": "Semak peranti ini",
+        "checkHelp": "Semakan ini mungkin mengambil sedikit masa.",
+        "checkedOn": "Disemak pada {date}.",
+        "checking": "Menyemak keupayaan pelayar ini…",
+        "onDevice": "Pelayar ini menukar pertuturan kepada teks pada peranti ini. Apa yang dikatakan oleh pelajar tidak dihantar ke mana-mana.",
+        "downloadable": "Pelayar ini boleh menukar pertuturan kepada teks pada peranti ini selepas satu muat turun sekali sahaja daripada pembuat pelayar. Muat turun ini mungkin besar, jadi gunakan Wi-Fi yang baik.",
+        "downloading": "Pelayar sedang mendapatkan apa yang diperlukannya. Setelah selesai, semak peranti ini sekali lagi, dan Sebut akan muncul dalam pelajaran.",
+        "downloadFailed": "Muat turun tidak selesai. Cuba lagi kemudian, dengan Wi-Fi yang baik.",
+        "onlineOnly": "Pelayar ini tidak dapat menukar pertuturan kepada teks pada peranti ini. Ia hanya dapat berbuat demikian dengan menghantar apa yang dikatakan oleh pelajar kepada perkhidmatan dalam talian, jadi Sebut kekal tersembunyi melainkan anda membenarkannya di bawah.",
+        "none": "Pelayar ini tidak dapat menukar pertuturan kepada teks, jadi Sebut tidak dipaparkan. Chrome versi terkini pada komputer riba boleh melakukannya pada peranti.",
+        "download": "Muat turun pertuturan ke teks",
+        "allowOnline": "Benarkan pertuturan ke teks dalam talian",
+        "allowOnlineHelp": "Dimatikan melainkan anda menghidupkannya. Apabila dihidupkan dan peranti ini tidak dapat menukar pertuturan kepada teks dengan sendirinya, Sebut menghantar apa yang dikatakan oleh pelajar kepada perkhidmatan dalam talian pembuat pelayar (contohnya Google, Apple atau Microsoft), dan ia memerlukan internet. Hidupkan hanya jika organisasi anda dan keluarga pelajar telah bersetuju.",
+        "recordingsNote": "Rakam suara kamu berbeza: rakaman sentiasa kekal pada peranti ini dan tidak pernah dihantar ke mana-mana."
+      },
+      "transfer": {
+        "title": "Pindahkan hasil kerja ke peranti lain",
+        "intro": "Tablet boleh ditetapkan semula dan komputer riba boleh diganti. Simpan hasil kerja pelajar ke dalam fail dahulu. Kemudian buka fail itu pada peranti lain. Tiada apa-apa yang dihantar dalam talian.",
+        "noStorage": "Tetingkap pelayar ini tidak dapat menyimpan hasil kerja pelajar, jadi tiada apa-apa untuk disimpan atau dibuka di sini.",
+        "save": {
+          "title": "Simpan hasil kerja ke fail",
+          "who": "Hasil kerja siapa",
+          "learnerAdded": "{name}, ditambah {date}",
+          "all": "Semua pelajar pada peranti ini",
+          "button": "Simpan hasil kerja saya ke fail",
+          "help": "Fail ini akan masuk ke folder muat turun peranti ini. Sesiapa yang mempunyai fail ini boleh membaca hasil kerja di dalamnya, jadi simpan fail ini dengan selamat.",
+          "recordings": "Rakaman kekal pada peranti ini.",
+          "noLearners": "Belum ada hasil kerja yang disimpan pada peranti ini.",
+          "saving": "Menyediakan fail…",
+          "saved": "Cari {file} dalam folder muat turun peranti ini.",
+          "tooBig": "Hasil kerja terlalu banyak untuk satu fail. Simpan hasil kerja setiap pelajar secara berasingan.",
+          "failed": "Fail tidak dapat disediakan. Cuba lagi."
+        },
+        "load": {
+          "title": "Buka hasil kerja daripada fail",
+          "button": "Buka hasil kerja saya",
+          "help": "Pilih fail yang disimpan daripada Thinkerwell. Tiada apa-apa yang berubah sehingga anda mengesahkannya.",
+          "reading": "Menyemak fail…",
+          "previewTitle": "Semak sebelum membuka",
+          "savedOn": "Fail ini disimpan pada {date}. Ia mengandungi hasil kerja untuk:",
+          "lessons": {
+            "other": "{count} pelajaran"
+          },
+          "checks": {
+            "other": "{count} semakan bahagian"
+          },
+          "lessonsAndChecks": "{lessons} dan {checks}",
+          "noWork": "belum ada hasil kerja",
+          "learnerNew": "{name}: {work}. Baharu pada peranti ini.",
+          "learnerHere": "{name}: {work}. Sudah ada pada peranti ini, jadi ini ditambah kepada hasil kerjanya di sini. Tiada apa-apa yang hilang.",
+          "sameName": "Sudah ada {name} yang lain pada peranti ini. Kedua-duanya disimpan, dan setiap petak nama menunjukkan hari ia ditambah.",
+          "skipped": {
+            "other": "Ada {count} hasil kerja untuk pelajaran atau semakan yang tiada dalam versi Thinkerwell ini. Hasil kerja itu tidak akan dimasukkan."
+          },
+          "loadIt": "Buka",
+          "cancel": "Batal",
+          "loading": "Memasukkan hasil kerja…",
+          "added": "Ditambah pada peranti ini: {names}.",
+          "updated": "Ditambah kepada hasil kerja yang sedia ada: {names}.",
+          "unchanged": "Tiada yang baharu untuk {names}.",
+          "nothingNew": "Peranti ini sudah mempunyai semua hasil kerja dalam fail ini, jadi tiada apa-apa yang berubah.",
+          "carryOn": "Untuk meneruskan, pilih siapa yang belajar di laman utama.",
+          "problems": {
+            "notWorkFile": "Ini bukan fail kerja Thinkerwell, jadi tiada apa-apa yang dimasukkan. Pilih fail yang namanya bermula dengan thinkerwell.",
+            "newerVersion": "Fail ini disimpan oleh versi Thinkerwell yang lebih baharu. Kemas kini peranti ini dahulu: buka Thinkerwell dengan internet dihidupkan, kemudian cuba lagi.",
+            "empty": "Tiada hasil kerja dalam fail ini, jadi tiada apa-apa yang dimasukkan.",
+            "tooBig": "Fail ini terlalu besar untuk menjadi hasil kerja Thinkerwell, jadi tiada apa-apa yang dimasukkan.",
+            "damaged": "Sebahagian fail ini rosak, jadi tiada apa-apa yang dimasukkan. Simpan semula hasil kerja ke fail pada peranti lain itu.",
+            "unreadable": "Fail ini tidak dapat dibuka. Cuba lagi.",
+            "failed": "Hasil kerja tidak dapat dimasukkan, jadi tiada apa-apa yang berubah pada peranti ini. Cuba lagi."
+          }
+        }
+      }
+    },
+    "about": {
+      "title": "Tentang Thinkerwell",
+      "tagline": "Pembelajaran kajian sosial percuma untuk belia di seluruh Asia Tenggara, terutamanya mereka yang menghadapi halangan pendidikan.",
+      "missionTitle": "Misi kami",
+      "missionBody": "Thinkerwell bermula daripada kecintaan terhadap kajian sosial dan satu soalan: bagaimanakah lebih ramai belia boleh mendapat peluang untuk meneroka dunia yang mereka diami? Kami membina platform digital percuma supaya alat pembelajaran digital dan pendidikan kajian sosial mudah diakses oleh belia yang menghadapi halangan pendidikan. Matlamat kami ialah membantu pelajar bertanya soalan, mengembangkan kemahiran berfikir kritis mereka, meneroka pelbagai perspektif dan berkongsi idea mereka sendiri.",
+      "goalsTitle": "Bagaimana Thinkerwell berkait dengan matlamat PBB",
+      "goal4Title": "Matlamat 4: Pendidikan Berkualiti",
+      "goal4Body": "Bahan pembelajaran percuma",
+      "goal4Alt": "Matlamat Pembangunan Mampan 4: Pendidikan Berkualiti",
+      "goal10Title": "Matlamat 10: Mengurangkan Ketidaksamaan",
+      "goal10Body": "Direka untuk pelajar yang menghadapi halangan pendidikan",
+      "goal10Alt": "Matlamat Pembangunan Mampan 10: Mengurangkan Ketidaksamaan",
+      "goal16Title": "Matlamat 16: Keamanan, Keadilan dan Institusi yang Kukuh",
+      "goal16Body": "Literasi sivik dan media",
+      "goal16Alt": "Matlamat Pembangunan Mampan 16: Keamanan, Keadilan dan Institusi yang Kukuh",
+      "goal17Title": "Matlamat 17: Perkongsian untuk Matlamat",
+      "goal17Body": "Mencari pendidik dan kumpulan komuniti untuk bekerjasama",
+      "goal17Alt": "Matlamat Pembangunan Mampan 17: Perkongsian untuk Matlamat",
+      "goalsNote": "Ikon matlamat ini diambil daripada Pertubuhan Bangsa-Bangsa Bersatu. Thinkerwell tidak disokong secara rasmi oleh Pertubuhan Bangsa-Bangsa Bersatu.",
+      "teamTitle": "Siapa yang menghasilkan Thinkerwell",
+      "justinRole": "Pengasas dan pengarah",
+      "justinName": "Justin Park",
+      "justinBio": "Justin ialah seorang pelajar di Singapura serta pengasas dan pengarah Thinkerwell. Minatnya terhadap sejarah dan kajian sosial mendorongnya memulakan kursus percuma untuk belia yang menghadapi halangan pendidikan.",
+      "justinAlt": "Justin Park",
+      "nickRole": "Ketua pegawai teknologi (CTO)",
+      "nickName": "Nick Thiery",
+      "nickBio": "Nick ialah seorang pelajar di Singapura dan ketua pegawai teknologi Thinkerwell. Dia membina laman web ini dan mengusahakan alat yang membantu lebih ramai orang belajar dalam bahasa mereka sendiri.",
+      "nickAlt": "Nick Thiery",
+      "linkedin": "LinkedIn",
+      "linkedinLabel": "{name} di LinkedIn (dibuka dalam tab baharu)",
+      "creditsLinkTitle": "Penghargaan dan sumber",
+      "creditsLinkBody": "Sumber di sebalik setiap pelajaran, serta video, fon, gambar dan perisian yang digunakan oleh Thinkerwell.",
+      "creditsLinkCta": "Lihat penghargaan"
+    },
+    "credits": {
+      "title": "Penghargaan",
+      "intro": "Thinkerwell dibina atas hasil kerja ramai orang dan organisasi. Terima kasih kepada mereka semua. Halaman ini menyenaraikan sumber di sebalik pelajaran, video yang ditunjukkan dalam pelajaran, serta fon, gambar dan perisian yang digunakan untuk membina laman ini.",
+      "contents": "Dalam halaman ini",
+      "sourcesTitle": "Sumber pelajaran",
+      "sourcesBody": "Fakta dalam setiap pelajaran diambil daripada sumber-sumber ini. Pelajaran ditulis dengan kata-kata kami sendiri.",
+      "lessonHeading": "Pelajaran {number}: {title}",
+      "videosTitle": "Video",
+      "videosBody": "Setiap pelajaran boleh memaparkan satu video pendek. Video ini dihasilkan oleh saluran YouTube berikut, bukan oleh Thinkerwell. Video dimainkan daripada YouTube, dan hanya apabila pelajar menekan butang main.",
+      "videoBy": "Oleh {channel}",
+      "picturesTitle": "Gambar dan reka bentuk",
+      "picturesBody": "Maskot Thinkerwell, gambar pelajaran dan reka bentuk laman ini dihasilkan untuk Thinkerwell.",
+      "goalsTitle": "Ikon Matlamat Pembangunan Mampan PBB",
+      "goalsBody": "Ikon matlamat di halaman Tentang diambil daripada Pertubuhan Bangsa-Bangsa Bersatu dan digunakan mengikut garis panduannya. Thinkerwell tidak disokong secara rasmi oleh Pertubuhan Bangsa-Bangsa Bersatu.",
+      "goalsStatement": "Kandungan penerbitan ini tidak diluluskan oleh Pertubuhan Bangsa-Bangsa Bersatu dan tidak mencerminkan pandangan Pertubuhan Bangsa-Bangsa Bersatu atau pegawainya atau Negara Anggotanya.",
+      "goalsLink": "Laman web Matlamat Pembangunan Mampan PBB",
+      "fontsTitle": "Fon",
+      "fontsBody": "Thinkerwell menggunakan fon percuma berikut, setiap satunya di bawah SIL Open Font License 1.1:",
+      "fontFunnel": "Funnel Display, oleh Funnel Project Authors (tajuk)",
+      "fontAtkinson": "Atkinson Hyperlegible Next, oleh Atkinson Hyperlegible Next Project Authors (kebanyakan teks)",
+      "fontEczar": "Eczar, oleh Eczar Project Authors (nama Thinkerwell)",
+      "fontVazirmatn": "Vazirmatn, oleh Vazirmatn Project Authors (huruf Arab, hanya apabila bahasa yang ditulis dengan huruf itu dipaparkan)",
+      "fontsLicenceLink": "Baca SIL Open Font License",
+      "softwareTitle": "Perisian",
+      "softwareBody": "Laman ini dibina dengan alat percuma dan sumber terbuka berikut:",
+      "softwareItem": "{name} ({licence})",
+      "voicesTitle": "Suara untuk butang Dengar",
+      "voicesBody": "Butang Dengar memainkan rakaman yang dibuat untuk Thinkerwell daripada teks pelajaran menggunakan suara teks ke pertuturan percuma berikut. Rakaman ini dihasilkan oleh komputer, bukan oleh manusia, dan suara itu sendiri tidak diubah.",
+      "voiceEnglish": "Pelajaran dalam bahasa Inggeris: {model} oleh hexgrad, suara Heart, di bawah {licence}.",
+      "voiceIndonesian": "Pelajaran dalam Bahasa Indonesia: {model} oleh Meta, sebahagian daripada Massively Multilingual Speech, di bawah {licence}. Lesen ini hanya membenarkan penggunaan bukan komersial. Thinkerwell percuma, dan menggunakannya hanya dengan cara itu.",
+      "voiceMalay": "Pelajaran dalam bahasa Melayu: {model} oleh Meta, sebahagian daripada Massively Multilingual Speech, di bawah {licence}. Lesen ini hanya membenarkan penggunaan bukan komersial. Thinkerwell percuma dan hanya menggunakannya dengan cara itu.",
+      "translationTitle": "Terjemahan",
+      "translationBody": "Versi Bahasa Indonesia mula-mula dirangka dengan bantuan AI. Penutur asli sedang menyemaknya.",
+      "translationBodyMalay": "Versi bahasa Melayu juga dirangka dengan bantuan AI, daripada bahasa Inggeris, dan disemak dengan menterjemahkannya semula ke dalam bahasa Inggeris. Versi ini masih menunggu semakan oleh penutur asli."
+    },
+    "placeholder": "Halaman ini akan tersedia tidak lama lagi."
+  },
+  "siteVideo": {
+    "captions": "Sari kata bahasa Inggeris",
+    "dataUse": "Menggunakan kira-kira {mb} MB data.",
+    "inEnglish": "Video ini dalam bahasa Inggeris. Butang \"Baca versi bertulis\" memaparkan kata-kata yang sama dalam bahasa kamu.",
+    "playerOpened": "Video telah dibuka. Gunakan kawalannya untuk menjeda video atau mematikan sari kata.",
+    "closeVideo": "Tutup video",
+    "writtenPart": "Versi bertulis",
+    "watchInstead": "Tonton video pula",
+    "tryAgain": "Cuba main video lagi",
+    "saveDataTitle": "Video dimatikan untuk menjimatkan data.",
+    "offlineTitle": "Kamu berada di luar talian, jadi video tidak dapat dimuatkan sekarang.",
+    "timeoutTitle": "Video mengambil masa yang lama untuk dimuatkan.",
+    "unavailableTitle": "Video ini tidak dapat dimainkan di sini sekarang.",
+    "sameWords": "Ini kata-katanya, untuk kamu baca.",
+    "explore": {
+      "title": "Terokai duniamu",
+      "blurb": "Dua minit tentang sebab kami membina Thinkerwell dan apa yang ada di dalamnya.",
+      "p1": "Setiap pelajar berhak mendapat peluang untuk meneroka dunia yang mereka diami. Tetapi di seluruh Asia Tenggara, ramai belia menghadapi halangan pendidikan. Di Myanmar, kira-kira 3.8 juta orang terpaksa meninggalkan rumah mereka tetapi masih berada di dalam negara sendiri. Di Malaysia, kanak-kanak pelarian tidak boleh bersekolah di sekolah kerajaan. Dan di Asia Timur dan Pasifik, satu daripada tiga kanak-kanak usia sekolah tidak mempunyai internet di rumah.",
+      "p2": "Apabila sekolah terbeban, pelajaran selalunya hanya menumpukan perkara asas: membaca, matematik dan kemahiran untuk bekerja. Semua itu penting. Tetapi hanya sedikit ruang yang tinggal untuk kemahiran yang membuka dunia: berfikir secara kritis, berkomunikasi dengan bukti dan melihat dari perspektif orang lain.",
+      "p3": "Penyelidikan menyokong perkara ini. Dalam satu kajian Stanford, pelajar yang belajar sejarah dengan menyoal sumber sebenar menunjukkan kemajuan yang lebih besar dalam pemikiran sejarah, membaca dan pengetahuan berbanding pelajar di kelas biasa.",
+      "p4": "Itulah sebabnya kami membina Thinkerwell: pelajaran percuma dalam kajian sosial dan lebih lagi, untuk belia yang menghadapi halangan pendidikan. Kursus pertama kami, Meneroka Dunia Kita, mempunyai 24 pelajaran tentang sejarah, geografi, budaya dan kehidupan sivik, dan setiap pelajaran mempunyai lima langkah: baca, tulis, cakap, tonton dan refleksi. Setiap bacaan mempunyai versi lebih mudah dan boleh dibacakan dengan kuat, dan pelajaran boleh digunakan di luar talian, dalam bahasa Inggeris dan Bahasa Indonesia.",
+      "p5": "Thinkerwell tidak menggantikan guru. Ia meringankan beban mereka, dengan panduan siap sedia untuk setiap pelajaran, serta skema jawapan dan bahan cetakan.",
+      "p6": "Matlamat kami ialah membantu pelajar bertanya soalan, mengembangkan kemahiran berfikir kritis mereka, meneroka pelbagai perspektif dan berkongsi idea mereka sendiri. Thinkerwell. Kajian sosial dan lebih lagi. Terokai duniamu.",
+      "sources": "Sumber: UNHCR (2026); UNICEF dan ITU (2020); Reisman, Stanford (2012)."
+    },
+    "session": {
+      "title": "Jalankan sesi",
+      "blurb": "Satu pelajaran Thinkerwell bersama kumpulan, dari mula hingga akhir, dalam kira-kira satu minit.",
+      "p1": "Akaun, kata laluan atau bajet yang besar tidak diperlukan untuk menjalankan pelajaran Thinkerwell. Inilah satu sesi, dari mula hingga akhir.",
+      "p2": "Sebelum sesi pertama, sediakan setiap tablet atau komputer riba sekali sahaja, menggunakan senarai semak di bawah Untuk pendidik. Thinkerwell menyimpan pelajaran pada peranti, jadi pelajaran boleh digunakan tanpa internet.",
+      "p3": "Pelajar boleh berkongsi peranti. Setiap pelajar menekan nama masing-masing, dan hasil kerja mereka kekal pada peranti itu.",
+      "p4": "Pilih mana-mana pelajaran. Panduan gurunya mempunyai rancangan untuk 30 atau 45 minit, berserta jawapan. Kemudian pelajar melalui lima langkah. Mereka membaca, dalam bahasa Inggeris biasa atau lebih mudah. Mereka menulis. Mereka berbincang dengan rakan. Mereka menonton video pendek, atau membaca versi bertulisnya. Dan mereka membuat refleksi.",
+      "p5": "Selepas itu, lihat sejauh mana kemajuan setiap pelajar. Tiada markah, hanya pelajaran yang telah selesai. Tiada peranti pada hari itu? Setiap pelajaran dan panduan guru boleh dicetak hitam putih.",
+      "p6": "Thinkerwell percuma, tanpa iklan. Kajian sosial dan lebih lagi. Semua bahan untuk guru ada di thinkerwell.app, di bawah Untuk pendidik."
+    },
+    "setup": {
+      "title": "Sediakan peranti",
+      "blurb": "Senarai semak, langkah demi langkah, dalam kira-kira satu minit.",
+      "p1": "Sebelum sesi pertama, sediakan setiap komputer riba atau tablet sekali sahaja. Begini caranya. Buka thinkerwell.app, tekan Untuk pendidik, kemudian Sediakan peranti ini. Senarai semak menunjukkan langkah yang sudah selesai pada peranti ini.",
+      "p2": "Mula-mula, tambahkan Thinkerwell pada skrin utama supaya ia dibuka seperti aplikasi. Senarai semak menunjukkan langkah untuk jenis peranti anda. Pada iPad, langkah ini juga menghalang Safari daripada memadam hasil kerja yang disimpan.",
+      "p3": "Kemudian buka Thinkerwell daripada ikonnya, dengan internet dihidupkan, dan biarkan ia terbuka semasa pelajaran disimpan. Selepas itu, setiap pelajaran boleh digunakan di luar talian. Seterusnya, tekan Simpan kerja dengan selamat, supaya pelayar menyimpan hasil kerja pelajar, walaupun ruang storan hampir penuh.",
+      "p4": "Tambahkan pelajar yang menggunakan peranti ini. Setiap pelajar mendapat satu petak di laman utama. Menggunakan kad kod? Pelajar menaip kod mereka sebagai nama.",
+      "p5": "Dalam Tetapan, anda boleh memilih suara yang membacakan pelajaran dengan kuat. Buat semakan pertuturan paling akhir: di bawah Sebut, tekan Semak peranti ini.",
+      "p6": "Sebelum anda menetapkan semula peranti atau memulangkannya, simpan hasil kerja semua orang dalam satu fail, dan buka fail itu pada peranti seterusnya. Senarai semak boleh dicetak pada satu halaman, supaya anda boleh menandakannya di atas kertas. Thinkerwell. Kajian sosial dan lebih lagi."
+    }
+  },
+  "notFound": {
+    "title": "Halaman ini tiada di sini",
+    "body": "Pautan ini mungkin sudah lama atau ada kesilapan taip. Semua kandungan kursus masih ada di sini.",
+    "home": "Pergi ke laman utama",
+    "course": "Lihat kursus"
+  },
+  "routeError": {
+    "title": "Ada sesuatu yang tidak kena",
+    "body": "Maaf. Cuba buka halaman ini sekali lagi, atau pergi ke laman utama. Hasil kerja kamu yang disimpan masih ada pada peranti ini.",
+    "home": "Pergi ke laman utama"
+  },
+  "pageNotDownloaded": {
+    "title": "Halaman ini belum dimuat turun",
+    "body": "Sambung ke internet, kemudian cuba lagi. Hasil kerja kamu yang disimpan masih ada pada peranti ini.",
+    "retry": "Cuba lagi",
+    "trying": "Mencuba lagi…",
+    "stillOffline": "Masih tiada sambungan internet. Cuba lagi apabila kamu sudah bersambung.",
+    "home": "Pergi ke laman utama"
+  },
+  "header": {
+    "switcherTitle": "Tukar pelajar",
+    "switcherClose": "Tutup",
+    "lookAroundTile": "Lihat-lihat sahaja",
+    "backToPicker": "Kembali ke pilihan pelajar",
+    "lookAroundTitle": "Kamu sedang melihat-lihat",
+    "lookAroundBanner": "Apa-apa yang kamu buat dalam lawatan ini tidak disimpan.",
+    "chooseLearner": "Pilih siapa yang belajar",
+    "menuTitle": "Menu",
+    "menuClose": "Tutup menu",
+    "language": {
+      "title": "Bahasa",
+      "button": "Bahasa: {language}"
+    }
+  },
+  "footer": {
+    "label": "Lebih lanjut tentang Thinkerwell",
+    "organisations": "Untuk organisasi",
+    "credits": "Penghargaan",
+    "linkedin": "Thinkerwell di LinkedIn"
+  },
+  "seo": {
+    "home": {
+      "title": "Thinkerwell | Pembelajaran Kajian Sosial Percuma untuk Belia",
+      "description": "Pembelajaran kajian sosial percuma untuk belia di seluruh Asia Tenggara, terutamanya mereka yang menghadapi halangan pendidikan. Terokai sejarah, geografi, budaya dan kehidupan sivik."
+    },
+    "about": {
+      "title": "Tentang Thinkerwell | Misi Kami",
+      "description": "Ketahui mengapa Thinkerwell bermula dan bagaimana platform digitalnya yang percuma menjadikan pembelajaran kajian sosial lebih mudah dicapai oleh belia yang menghadapi halangan pendidikan."
+    },
+    "course": {
+      "title": "Meneroka Dunia Kita | Kursus Kajian Sosial Percuma",
+      "description": "Terokai {lessons} pelajaran percuma Thinkerwell tentang sejarah, geografi, budaya dan kehidupan sivik. Belajar sendiri atau bersama pendidik."
+    },
+    "educators": {
+      "title": "Untuk Pendidik | Thinkerwell",
+      "description": "Ajarkan pelajaran kajian sosial percuma Thinkerwell dengan panduan guru, bahan yang boleh dicetak dan aktiviti fleksibel untuk peranti yang dikongsi."
+    },
+    "organisations": {
+      "title": "Untuk Organisasi | Thinkerwell",
+      "description": "Ketahui bagaimana program rintis bersama Thinkerwell boleh menyokong pembelajaran kajian sosial untuk belia yang menghadapi halangan pendidikan."
+    },
+    "credits": {
+      "title": "Penghargaan dan Sumber | Thinkerwell",
+      "description": "Terokai sumber, video, gambar dan perisian di sebalik pelajaran kajian sosial percuma Thinkerwell."
+    },
+    "lessonTitle": "Pelajaran {number}: {title} | Thinkerwell",
+    "lessonDescription": "Pelajaran {number} dalam {course}, kursus kajian sosial percuma Thinkerwell. Matlamat pembelajaran: {goal}",
+    "imageAlt": "Maskot Thinkerwell, seorang pembaca berwarna ungu yang memegang buku, di atas perkataan Thinkerwell: Exploring Our World."
+  },
+  "dev": {
+    "rtlOn": "Mod ujian kanan ke kiri dihidupkan. Tambah ?dir=ltr pada alamat untuk mematikannya.",
+    "localeOn": "Bahasa ujian {locale} dihidupkan. Tambah ?locale=en pada alamat untuk mematikannya."
+  },
+  "ds": {
+    "chrome": {
+      "logo": {
+        "homeLabel": "Laman utama Thinkerwell"
+      },
+      "siteHeader": {
+        "switchLearner": "Tukar pelajar, sekarang: {name}",
+        "openMenu": "Buka menu navigasi"
+      },
+      "stagePath": {
+        "navLabel": "Langkah pelajaran",
+        "doneSuffix": ", selesai",
+        "stageDone": "{stage}, selesai"
+      },
+      "stageDots": {
+        "progressLabel": "{count} daripada 5 langkah selesai"
+      },
+      "progressRing": {
+        "ariaLabel": "{value} daripada {max} selesai",
+        "valueLabel": "{value}/{max}"
+      }
+    },
+    "course": {
+      "sectionName": {
+        "history": "Sejarah & Kisah Manusia",
+        "geography": "Geografi & Alam Sekitar Kita",
+        "culture": "Budaya, Masyarakat & Identiti",
+        "civics": "Sivik, Media & Ekonomi Harian"
+      },
+      "sectionBadge": {
+        "eyebrow": "Bahagian {number}"
+      },
+      "sectionHeader": {
+        "eyebrow": "Bahagian {number}",
+        "eyebrowWithTotal": {
+          "other": "Bahagian {number} · {count} pelajaran"
+        }
+      },
+      "lessonRow": {
+        "cta": {
+          "start": "Mula",
+          "continue": "Teruskan",
+          "review": "Lihat semula"
+        },
+        "status": {
+          "notStarted": "Belum dimulakan.",
+          "inProgress": "Sedang berjalan.",
+          "completed": "Selesai."
+        },
+        "ariaLabelLesson": "Pelajaran {number}: {title}. {status} {cta}",
+        "ariaLabelLessonQuestion": "Pelajaran {number}: {title}. {status} {cta} {question}",
+        "ariaLabelQuiz": "{title}. {status} {cta}"
+      },
+      "continueCard": {
+        "label": "Teruskan belajar",
+        "eyebrow": "Sambung dari tempat kamu berhenti",
+        "cta": "Teruskan"
+      },
+      "journalEntry": {
+        "lessonLine": "Pelajaran {number} · {title}",
+        "kindWriting": "Penulisan",
+        "kindReflection": "Refleksi",
+        "saved": "Disimpan {date}",
+        "edit": "Sunting"
+      },
+      "scoreSummary": {
+        "skillResult": "{got} daripada {of}"
+      }
+    },
+    "content": {
+      "task": {
+        "defaultEyebrow": "Tugasan kamu"
+      },
+      "definition": {
+        "close": "Tutup",
+        "hearIt": "Dengar",
+        "meaningOf": "Maksud {word}"
+      },
+      "evidence": {
+        "fictional": "Contoh rekaan yang dibuat untuk pelajaran ini."
+      },
+      "option": {
+        "correct": "Betul",
+        "notQuite": "Belum tepat"
+      },
+      "feedback": {
+        "correctTitle": "Betul",
+        "retryTitle": "Belum tepat lagi"
+      },
+      "field": {
+        "optional": "(tidak wajib)"
+      },
+      "reading": {
+        "part": "Petikan {n} daripada {total}"
+      },
+      "video": {
+        "optional": "Tidak wajib",
+        "watchLabel": "Tonton video",
+        "readInsteadDefault": "Baca versi bertulis"
+      }
+    },
+    "actions": {
+      "voiceButton": {
+        "sayIt": "Sebut",
+        "stop": "Berhenti"
+      },
+      "listenBar": {
+        "label": "Membaca dengan kuat",
+        "play": "Main",
+        "pause": "Jeda",
+        "stop": "Berhenti",
+        "speedLabel": "Kelajuan",
+        "slow": "Perlahan",
+        "normal": "Biasa"
+      },
+      "voiceRecorder": {
+        "title": "Rakam suara kamu",
+        "note": "Rakaman kamu kekal pada peranti ini. Tiada orang lain yang mendengarnya.",
+        "startRecording": "Mula merakam",
+        "stop": "Berhenti",
+        "recording": "Merakam {time}",
+        "listenBack": "Dengar semula",
+        "recordAgain": "Rakam semula",
+        "delete": "Padam"
+      },
+      "writingBox": {
+        "optional": "(tidak wajib)"
+      },
+      "actionBar": {
+        "continue": "Teruskan"
+      }
+    }
+  },
+  "offline": {
+    "offlineTitle": "Kamu berada di luar talian.",
+    "offlineLearner": "Teruskan: hasil kerja kamu disimpan pada peranti ini.",
+    "offlineLesson": "Teruskan: pelajaran ini sudah disimpan, dan hasil kerja kamu disimpan pada peranti ini.",
+    "offlineGuest": "Teruskan: pelajaran boleh digunakan tanpa internet.",
+    "offlineGuestNotReady": "Kamu boleh terus membaca apa yang sudah dibuka.",
+    "backTitle": "Kamu kembali dalam talian.",
+    "backLearner": "Hasil kerja kamu telah disimpan.",
+    "updateTitle": "Versi baharu sudah sedia.",
+    "updateBody": "Versi baharu akan digunakan apabila Thinkerwell dibuka semula.",
+    "updateBodyLearner": "Versi baharu akan digunakan apabila Thinkerwell dibuka semula. Hasil kerja kamu telah disimpan.",
+    "updateAction": "Kemas kini sekarang"
+  },
+  "print": {
+    "print": "Cetak",
+    "brand": "Thinkerwell · Meneroka Dunia Kita",
+    "printLesson": "Cetak pelajaran ini",
+    "lessonPageTitle": "Pelajaran {number}: cetak",
+    "backToLesson": "Kembali ke pelajaran",
+    "learningGoal": "Matlamat pembelajaran:",
+    "lessonIntro": "Ini ialah pelajaran dalam bentuk kertas: kedua-dua tahap bacaan, kata kunci dan setiap tugasan, dengan garisan untuk menulis. Teks dicetak hitam di atas putih, tanpa menu.",
+    "readingStandard": "Bacaan: versi biasa",
+    "readingSimpler": "Bacaan: versi lebih mudah",
+    "keyWordsNote": "Kata kunci ditulis dalam huruf tebal.",
+    "optional": "(tidak wajib)",
+    "watchTitle": "Tonton atau baca",
+    "videoNote": "Video: {title} ({channel}). Versi bertulis di bawah mempunyai idea yang sama.",
+    "writtenVersion": "Versi bertulis: {title}",
+    "journalPageTitle": "Cetak jurnal saya",
+    "printJournal": "Cetak jurnal saya",
+    "backToJournal": "Kembali ke jurnal saya",
+    "journalEmpty": "Belum ada apa-apa yang disimpan. Tulisan dan refleksi akan dipaparkan di sini sebaik sahaja kamu mula.",
+    "journalNoLearner": "Pilih siapa yang belajar untuk mencetak jurnalnya. Tiada apa-apa yang disimpan semasa kamu melihat-lihat.",
+    "chooseLearner": "Pilih siapa yang belajar",
+    "writing": "Tulisan",
+    "reflection": "Refleksi"
+  },
+  "certificates": {
+    "sectionPageTitle": "Sijil: {section}",
+    "coursePageTitle": "Sijil kursus",
+    "backToCourse": "Kembali ke kursus",
+    "backToHome": "Kembali ke laman utama",
+    "printIntro": "Semak nama, kemudian cetak. Sijil ini muat pada sehelai kertas A4 atau Letter.",
+    "nameLabel": "Nama pada sijil",
+    "nameHelp": "Hanya untuk cetakan ini. Nama ini tidak disimpan dan tidak akan keluar dari peranti ini.",
+    "sheet": {
+      "title": "Sijil",
+      "finishedSection": "telah menamatkan bahagian {section} dalam {course}.",
+      "finishedCourse": "telah menamatkan kesemua {count} pelajaran dalam {course}.",
+      "lessons": {
+        "other": "{count} pelajaran"
+      },
+      "blankName": "Nama",
+      "date": "Tarikh",
+      "signature": "Tandatangan guru",
+      "about": "{course} ialah kursus kajian sosial percuma daripada Thinkerwell."
+    },
+    "notYet": {
+      "section": "Sijil kamu akan sedia apabila kamu menamatkan setiap pelajaran dalam bahagian ini.",
+      "course": "Sijil kursus kamu akan sedia apabila kamu menamatkan kesemua {count} pelajaran.",
+      "checkNotNeeded": "Kamu tidak perlu membuat semakan bahagian untuk sijil ini.",
+      "lessonsLeft": {
+        "other": "{count} pelajaran lagi"
+      }
+    },
+    "guest": "Sijil adalah untuk pelajar yang telah menamatkan pelajaran.",
+    "offer": {
+      "sectionTitle": "Kamu telah menamatkan seluruh bahagian {section}.",
+      "courseTitle": "Kamu telah menamatkan kesemua {count} pelajaran.",
+      "sectionBody": "Sijil kamu sudah sedia untuk dicetak.",
+      "courseBody": "Sijil kursus kamu sudah sedia untuk dicetak.",
+      "getCertificate": "Dapatkan sijil kamu",
+      "getCertificateFor": "Dapatkan sijil kamu untuk {section}",
+      "getCourseCertificate": "Dapatkan sijil kursus kamu",
+      "getSectionCertificate": "Dapatkan sijil bahagian kamu"
+    }
+  },
+  "digitalWorld": {
+    "activity": {
+      "eyebrow": "Aktiviti",
+      "guideTitle": "Aktiviti ini",
+      "guideIntro": "Apa yang pelajar lakukan pada peranti, beserta apa yang mungkin dikatakan oleh kebanyakan orang, dan jawapannya. Kelas juga boleh melakukannya di atas kertas melalui paparan cetak."
+    },
+    "banner": {
+      "title": "Kursus draf: belum disemak",
+      "body": "Digital World ialah draf. Seorang penyelidik AI dan sebuah organisasi rakan kongsi masih perlu menyemaknya. Hanya peranti ini yang memaparkannya.",
+      "bodyEnglishLessons": "Digital World ialah draf. Seorang penyelidik AI dan sebuah organisasi rakan kongsi masih perlu menyemaknya. Hanya peranti ini yang memaparkannya. Pelajarannya dalam bahasa Inggeris buat masa ini.",
+      "turnOff": "Matikan pratonton"
+    },
+    "sheet": {
+      "draft": "Digital World, kursus draf: belum disemak. Jangan gunakan dengan pelajar dahulu."
+    },
+    "choice": {
+      "label": "Kursus pada peranti ini",
+      "draft": "Draf"
+    },
+    "chart": {
+      "viewsLabel": "Carta yang mana",
+      "bar": "{label}: {value}",
+      "figureLabel": "Carta bar. {measure}. {bars}. Skalanya dari {start} hingga {end}."
+    },
+    "claim": {
+      "askFirst": "Tanya soalan-soalan ini dahulu",
+      "opened": "Dibuka",
+      "openedCount": "Sumber dibuka: {count} daripada {total}",
+      "postFrom": "Siaran daripada {from}",
+      "says": "Apa yang dikatakan",
+      "who": "Siapa di belakangnya",
+      "sourcesTitle": "Sumber lain: buka dalam apa-apa urutan"
+    },
+    "compare": {
+      "value": "{right} daripada {of} betul",
+      "mostMistakes": "Alat ini paling banyak membuat kesilapan untuk {group}.",
+      "notMost": "Alat ini lebih baik untuk {group}. Cari kumpulan dengan paling sedikit jawapan betul.",
+      "paperAnswer": "Kumpulan dengan kesilapan paling banyak:"
+    },
+    "map": {
+      "noChecks": "Belum ada semakan bahagian atau sijil dalam draf ini.",
+      "forTeachersTitle": "Untuk guru dan penyemak",
+      "forTeachersBody": "Setiap pelajaran ada panduan guru dengan nota, jawapan, aktiviti di atas kertas dan nota untuk penyemak. Seluruh kursus juga boleh dicetak.",
+      "printAll": "Cetak semua pelajaran",
+      "guideLink": "Panduan guru, Pelajaran {number}: {title}"
+    },
+    "plan": {
+      "answerLabel": "Jawapan kamu",
+      "back": "Kembali",
+      "next": "Langkah seterusnya",
+      "helperSaving": "Rancangan kamu disimpan pada peranti ini.",
+      "helperLookAround": "Kamu sedang melihat-lihat, jadi rancangan kamu tidak disimpan.",
+      "helperNoLearner": "Tiada sesiapa yang dipilih, jadi rancangan kamu tidak disimpan.",
+      "notYet": "Belum dijawab",
+      "ownHelp": "Jangan tulis nama sebenar atau maklumat peribadi sesiapa.",
+      "ownLabel": "Masalah kamu",
+      "problemHelp": "Pilih satu masalah daripada pelajaran, atau tulis masalah yang dihadapi ramai orang dalam komuniti yang kamu kenali.",
+      "problemTitle": "Masalah",
+      "stepAnswered": "Dijawab",
+      "stepOf": "Langkah {n} daripada {total}",
+      "stepsLabel": "Langkah",
+      "useStarter": "Guna permulaan ayat",
+      "yourPlan": "Rancangan kamu"
+    },
+    "printAll": {
+      "back": "Kembali ke Digital World",
+      "intro": "Setiap pelajaran Digital World, satu demi satu. Setiap pelajaran bermula pada halaman baharu. Cetak semuanya, atau simpan sebagai PDF.",
+      "pageTitle": "Digital World: semua pelajaran"
+    },
+    "reviewer": {
+      "title": "Untuk penyemak",
+      "intro": "Nota daripada penulis draf ini: apa yang baharu dan apa yang perlu disemak. Pelajar tidak akan melihatnya.",
+      "pictureTitle": "Gambar yang belum dilukis",
+      "activityTitle": "Tentang aktiviti ini",
+      "saves": "Apa yang disimpan",
+      "offline": "Cara ia berfungsi secara luar talian"
+    },
+    "signs": {
+      "keyTitle": "Tanda amaran untuk diperhatikan",
+      "showAll": "Tunjukkan semua tanda"
+    },
+    "sort": {
+      "empty": "Belum ada apa-apa di sini.",
+      "mostPeople": "Kebanyakan orang akan berkata: {group}.",
+      "notPlaced": "Belum diletakkan: {count}",
+      "yourGroups": "Kumpulan kamu"
+    },
+    "switch": {
+      "pageTitle": "Pratonton Digital World",
+      "onTitle": "Pratonton Digital World dihidupkan",
+      "onBody": "Peranti ini kini memaparkan Digital World, kursus draf tentang AI dan maklumat dalam talian. Orang lain tidak melihatnya, dan tiada apa-apa tentangnya dihantar ke mana-mana. Ia kekal hidup sehingga anda mematikannya.",
+      "reviewNote": "Ia belum disemak lagi. Seorang penyelidik AI masih perlu menyemak faktanya, dan sebuah organisasi rakan kongsi perlu menyemak topik sensitifnya. Jangan gunakannya dengan pelajar dahulu.",
+      "noStorage": "Pelayar ini tidak dapat menyimpan tetapan di sini, jadi pratonton kekal hidup hanya sehingga anda menutup halaman ini.",
+      "open": "Buka Digital World",
+      "printAll": "Cetak semua pelajaran",
+      "turnOff": "Matikan pratonton",
+      "offTitle": "Pratonton Digital World dimatikan",
+      "offBody": "Peranti ini tidak lagi memaparkan Digital World.",
+      "turnOn": "Hidupkan semula",
+      "goTo": "Pergi ke {title}",
+      "saveFailed": "Peranti ini tidak dapat menyimpan tetapan itu. Ia hanya berkuat kuasa sehingga anda menutup halaman ini."
+    },
+    "tool": {
+      "badge": "Alat rekaan",
+      "improveTitle": "Tanya soalan yang lebih baik",
+      "checkTitle": "Semak jawapan",
+      "youAsk": "Kamu bertanya",
+      "toolSays": "Alat rekaan berkata",
+      "paperAnswers": "Jawapan alat rekaan bagi setiap gesaan:"
+    },
+    "trainModel": {
+      "changed": "Contoh kamu telah berubah. Latih model sekali lagi untuk melihat tekaan baharunya.",
+      "freePlayIntro": "Keluarkan contoh, atau tukar label, kemudian latih model sekali lagi. Model mengikut label kamu, walaupun label itu berbeza daripada label tukang kebun.",
+      "freePlayTitle": "Cuba sendiri",
+      "gardenerSays": "Tukang kebun berkata",
+      "groupCount": {
+        "other": "{count} contoh"
+      },
+      "groupEmpty": "Belum ada contoh di sini.",
+      "groupTitle": "Contoh {label}",
+      "historyNone": "Belum ada keputusan. Latih model untuk melihat prestasinya.",
+      "historyScore": "{right} daripada {of}",
+      "historyTitle": "Keputusan setakat ini",
+      "how1": "Ia menyimpan setiap contoh yang kamu berikan, bersama label kamu.",
+      "how2": "Untuk daun baharu, ia mencari contoh yang nombornya paling hampir.",
+      "how3": "Ia memberi daun baharu itu label contoh tersebut. Ini dipanggil model jiran terdekat.",
+      "howTitle": "Cara model ini berfungsi",
+      "labelFor": "Label untuk: {description}",
+      "learnedFrom": {
+        "other": "Ia belajar daripada {count} contoh."
+      },
+      "lookedLike": "Ia paling serupa dengan contoh ini, jadi model berkata “{label}”.",
+      "modelSaid": "Model berkata",
+      "newExamples": {
+        "other": "Ada {count} contoh baharu. Beri setiap satu label, dan ia akan berpindah ke kumpulan itu."
+      },
+      "next": "Teruskan ke “{title}”",
+      "noNewExamples": "Tiada contoh baharu kali ini. Uji model dengan daun daripada pokok baharu.",
+      "notQuite": "Belum tepat",
+      "notUsedHelp": "Model tidak belajar daripada contoh ini. Beri label kepada satu contoh untuk menggunakannya semula.",
+      "notUsedTitle": "Tidak digunakan",
+      "numbersIntro": {
+        "other": "Model tidak melihat gambar itu. Ia melihat {count} nombor dari 0 hingga 10:"
+      },
+      "numbersSummary": "Apa yang model lihat",
+      "paperCard": "Daun",
+      "paperExamples": "Contoh untuk dilabel",
+      "paperExpected": "Jika dilabel seperti tukang kebun, model meneka {right} daripada {of} dengan betul.",
+      "paperTests": "Daun baharu untuk diuji",
+      "paperYourLabel": "Label kamu",
+      "resultsTitle": "Tekaan model",
+      "right": "Betul",
+      "roundsLabel": "Pusingan",
+      "score": "Model meneka {right} daripada {of} dengan betul.",
+      "startAgain": "Mula semula",
+      "stepOf": "Langkah {n} daripada {total}",
+      "takeOut": "Keluarkan",
+      "takeOutFor": "Keluarkan: {description}",
+      "testNewPlant": "Uji daun baharu",
+      "toSortHelp": "Beri setiap daun label. Ia akan berpindah ke kumpulan itu.",
+      "toSortTitle": "Untuk diisih",
+      "train": "Latih model",
+      "trainHelpEmpty": "Beri label kepada sekurang-kurangnya satu daun untuk melatih model.",
+      "trainHelpSort": {
+        "other": "Isih {count} helai daun lagi untuk melatih model."
+      },
+      "yourLabelsDiffer": "Sebahagian label kamu berbeza daripada label tukang kebun. Model mempelajari label kamu, jadi tekaannya mengikut label itu."
+    }
+  }
+}

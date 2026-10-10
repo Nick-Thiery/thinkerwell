@@ -19,6 +19,7 @@ Each language has a code (BCP 47, also `<html lang>` and the message file's name
 | `ar` | Arabic | rtl | arabic | no |
 | `so` | Somali | ltr | latin | no |
 | `id` | Indonesian | ltr | latin | yes (lessons too) |
+| `ms` | Malay (Bahasa Melayu) | ltr | latin | yes (lessons too) |
 
 Iranian Farsi would be `fa`, a language of its own. Rohingya (also named in `docs/PRODUCT.md`) isn't listed: it has no settled written form in CLDR, so how to support it is a question for the centre.
 
@@ -143,6 +144,21 @@ Indonesian is ready, and it is the first language whose **lessons are translated
 - **Size.** Measured with `npm run build`: the Indonesian chunk is 367 kB (95 kB gzipped), the pictures about 45 kB compressed. English first visits don't change. The precache (every device's offline copy, since a ready language is precached) is 609 kB, up from 481 kB; its budget is 620 kB. If that matters more than having Indonesian offline on every device, precache a language only on devices that use it: that needs runtime caching, which the service worker avoids today.
 - **English copy changed.** Three help texts beside the language choice said "The lessons stay in English"; they now say the lessons follow the language in Indonesian. Settings' language help now says whose language it is (the learner's, or the device's before anyone is chosen).
 - **No English left.** `e2e/indonesian.spec.ts` walks every kind of page, every lesson step and the popovers with Indonesian on, and fails on English text, screen-reader labels, placeholders, alt text or tab titles (`e2e/englishText.ts`: English messages, common English words, English month names), apart from "Thinkerwell", learners' names, what they typed and the videos' titles.
+
+## Bahasa Melayu (branch `malay`, October 2026)
+
+Malay is the second language whose **lessons are translated too**, built exactly as Indonesian was (everything in the section above applies): `content: true` and `speechLang: 'ms-MY'` in `src/i18n/locales.ts`, `content/ms/` laid over the English, its messages and pictures in `assets/locales/ms/`, the header's switch, Settings, the new-learner form and the learner home all through the one language setting. What is specific to it:
+
+- **Malaysian, not Indonesian.** Standard Malaysian Malay (DBP spelling, Malaysian school terms such as *sumber primer*, *skema jawapan*, *inferens*). `scripts/check_translation.py ms` refuses Indonesian-only words (`INDONESIAN_NOT_MALAY`) and the style rules differ: correct answers start "Betul." and wrong ones "Belum tepat." (`CONTENT_VERDICTS_BY_LANG` in `src/pages/lesson/read/feedbackText.ts`), the completion message is "Kamu telah menamatkan Pelajaran N.", self-checks say "Saya ...", and adult pages say lower-case "anda". Never *sila*, *silakan* or *tolong*.
+- **Key terms** for one native Malaysian speaker to decide first: `docs/translation/ms/KEY_TERMS.md`. Lesson 4 (faiths) needs a Malaysian reviewer's particular care.
+- **Listen.** Recordings made with `facebook/mms-tts-zlm` (`docs/notes/recorded-audio.md`, "Malay"); without one, a device voice in `ms-MY` only (the on-device voice must be Malay, never Indonesian's). Settings names the Malay voice list (`voiceFor.ms`) and says so when the device has none (`noVoiceMalay`, `noVoiceMalayRecorded`). `LessonAudioSetting` lists the language combinations' download sizes.
+- **Say it** listens in `ms-MY` under the same on-device rules; Settings' speech check is saved per speech tag.
+- **Videos.** Thinkerwell's own videos have Malay subtitles (`public/video/*.ms.vtt`, from `tw-ms-work/vtt.py`'s method: the written version's sentences on the English lines' timings). Their written version is `siteVideo.*` in `ms.json`.
+- **Review.** `npm run review:export -- ms` makes `docs/translation/ms/review/thinkerwell-ms-review.xlsx`; `npm run review:import -- ms <file>` applies it. About 520 of 4,354 strings are flagged for reviewers (Lessons 6, 9, 17 and 4 most).
+- **Credits and wording.** The Credits page says how the Malay was made (`pages.credits.translationBodyMalay`) and lists its voice. "Platform", never *projek* (`src/i18n/platformWording.test.ts`).
+- **No English left.** `e2e/malay.spec.ts` is `indonesian.spec.ts` in Malay, using `e2e/englishText.ts` with the language as an argument (English messages that read the same in Malay, such as "Menu", are not counted as English).
+
+The English copy that names the languages now names Malay too ("In Indonesian and Malay, the lessons do too.").
 
 ## How to add a language
 

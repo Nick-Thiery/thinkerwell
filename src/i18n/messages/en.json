@@ -280,7 +280,7 @@
         "startsWithNote": "You can open any lesson later from the course page.",
         "privacyNote": "Your work stays on this device.",
         "languageLabel": "Your language",
-        "languageHelper": "Buttons and instructions show in this language. In Indonesian, the lessons do too. In other languages they stay in English, so you can practise it."
+        "languageHelper": "Buttons and instructions show in this language. In Indonesian and Malay, the lessons do too. In other languages they stay in English, so you can practise it."
       },
       "remove": {
         "action": "Remove",
@@ -332,7 +332,7 @@
         "noJournalYet": "Nothing saved yet. Your writing and reflections show up here once you start.",
         "latestEntry": "{stage} · Lesson {number}",
         "languageTitle": "Your language",
-        "languageHelp": "Buttons and instructions show in this language. In Indonesian, the lessons do too. In other languages they stay in English, so you can practise it.",
+        "languageHelp": "Buttons and instructions show in this language. In Indonesian and Malay, the lessons do too. In other languages they stay in English, so you can practise it.",
         "languageSaveFailed": "That didn't save. Try again."
       }
     },
@@ -490,7 +490,7 @@
       "intro": "Thinkerwell is a student-led platform working to expand access to free digital social studies learning for underserved youth across Southeast Asia. We are preparing a pilot of our course with learning organisations. This page explains what a pilot involves.",
       "honesty": "Thinkerwell is a student-led platform. It is not a registered charity or nonprofit.",
       "whatTitle": "What Thinkerwell is",
-      "whatBody": "One course, Exploring Our World: {lessons} lessons about history, geography, culture and civic life, for learners aged about 10 to 17. Each lesson has five steps: read, write, speak, watch and reflect. It runs in a web browser on shared laptops and tablets, in English or Bahasa Indonesia. Lessons work offline after the first visit; the optional videos need the internet.",
+      "whatBody": "One course, Exploring Our World: {lessons} lessons about history, geography, culture and civic life, for learners aged about 10 to 17. Each lesson has five steps: read, write, speak, watch and reflect. It runs in a web browser on shared laptops and tablets, in English, Bahasa Indonesia or Bahasa Melayu. Lessons work offline after the first visit; the optional videos need the internet.",
       "getTitle": "What you get",
       "get1": "The whole course, free. No accounts, no ads, and nothing locked.",
       "get2": "A teacher guide for every lesson, answer keys for the section checks, and every lesson ready to print.",
@@ -591,7 +591,7 @@
       "sheetTitle": "About the Thinkerwell pilot",
       "sheetFor": "For a parent or guardian to keep",
       "whatTitle": "What is Thinkerwell?",
-      "whatBody": "Thinkerwell is a free learning website. It teaches history, maps and places, cultures, and how communities make decisions. Learners read, write, speak, watch short videos and think about what they learned, in simple English or Bahasa Indonesia. It is made by a small team of students in Singapore.",
+      "whatBody": "Thinkerwell is a free learning website. It teaches history, maps and places, cultures, and how communities make decisions. Learners read, write, speak, watch short videos and think about what they learned, in simple English, Bahasa Indonesia or Bahasa Melayu. It is made by a small team of students in Singapore.",
       "happenTitle": "What will happen?",
       "happenBody": "From {start} to {end}, your child's class at {organisation} will use Thinkerwell on its tablets and laptops, about {sessions} times. A teacher from {organisation} leads every session.",
       "studyTitle": "The pilot study: you choose",
@@ -878,8 +878,8 @@
         "title": "Language",
         "label": "Language on this device",
         "labelLearner": "Language for {name}",
-        "help": "Everything shows in this language at once: buttons, instructions and, in Indonesian, the lessons too. It is kept for this device, for the first page and anyone who hasn't chosen who's learning.",
-        "helpLearner": "Everything shows in this language at once: buttons, instructions and, in Indonesian, the lessons too. It is kept for {name}, and changes back when someone else is chosen."
+        "help": "Everything shows in this language at once: buttons, instructions and, in Indonesian and Malay, the lessons too. It is kept for this device, for the first page and anyone who hasn't chosen who's learning.",
+        "helpLearner": "Everything shows in this language at once: buttons, instructions and, in Indonesian and Malay, the lessons too. It is kept for {name}, and changes back when someone else is chosen."
       },
       "offline": {
         "title": "Offline and data",
@@ -906,7 +906,8 @@
         "introRecorded": "Listen plays recordings of a natural voice, made for every lesson. Where a part's recording isn't on this device and there's no internet, it reads with a voice of this device instead, so nothing is sent online. Choose that voice here.",
         "voiceFor": {
           "en": "Voice for English lessons",
-          "id": "Voice for Indonesian lessons"
+          "id": "Voice for Indonesian lessons",
+          "ms": "Voice for Malay lessons"
         },
         "recordedWith": "Listen plays recordings made with {voice}.",
         "deviceVoice": "Device voice, when there's no recording",
@@ -920,25 +921,27 @@
         "noVoiceRecorded": "This device has no English voice. Listen still plays the recordings, but can't read a part whose recording isn't on this device while there's no internet. The steps below add a voice.",
         "noVoiceIndonesian": "This device has no Indonesian voice yet, so Listen can't read Indonesian lessons. The steps below add one.",
         "noVoiceIndonesianRecorded": "This device has no Indonesian voice. Listen still plays the recordings, but can't read a part whose recording isn't on this device while there's no internet. The steps below add a voice.",
+        "noVoiceMalay": "This device has no Malay voice yet, so Listen can't read Malay lessons. The steps below add one.",
+        "noVoiceMalayRecorded": "This device has no Malay voice. Listen still plays the recordings, but can't read a part whose recording isn't on this device while there's no internet. The steps below add a voice.",
         "better": {
           "title": "Get a clearer voice",
           "intro": "Most devices can download better voices for free. Voices can be large, so use good Wi-Fi. Then open this page again and choose the new voice.",
           "apple": {
             "name": "iPad or iPhone",
-            "steps": "Open Settings, then Accessibility, then Spoken Content (called Read & Speak on newer versions), then Voices. Choose English or Indonesian, then a voice marked Enhanced or Premium, and download it.",
+            "steps": "Open Settings, then Accessibility, then Spoken Content (called Read & Speak on newer versions), then Voices. Choose English, Indonesian or Malay, then a voice marked Enhanced or Premium, and download it.",
             "note": "Safari doesn't let websites use every voice you download. If the new voice isn't in the list above, keep the one you have."
           },
           "android": {
             "name": "Android tablet or phone",
-            "steps": "Open Settings and search for text-to-speech. Next to Preferred engine, tap the settings button, then Install voice data. Choose English or Indonesian, then download a voice."
+            "steps": "Open Settings and search for text-to-speech. Next to Preferred engine, tap the settings button, then Install voice data. Choose English, Indonesian or Malay, then download a voice."
           },
           "windows": {
             "name": "Windows laptop",
-            "steps": "Open Settings, then Time & language, then Speech. Next to Manage voices, choose Add voices, then English (United Kingdom) or Indonesian. You may need an administrator account. Then close the browser and open it again."
+            "steps": "Open Settings, then Time & language, then Speech. Next to Manage voices, choose Add voices, then English (United Kingdom), Indonesian or Malay. You may need an administrator account. Then close the browser and open it again."
           },
           "chromebook": {
             "name": "Chromebook",
-            "steps": "Open Settings, then Accessibility, then Text-to-Speech, then Text-to-Speech voice settings. Install the voices for English or Indonesian."
+            "steps": "Open Settings, then Accessibility, then Text-to-Speech, then Text-to-Speech voice settings. Install the voices for English, Indonesian or Malay."
           }
         }
       },
@@ -948,6 +951,10 @@
         "forEnglish": "For English lessons: {size} MB in all.",
         "forIndonesian": "For Bahasa Indonesia lessons: {size} MB in all.",
         "forBoth": "For English and Bahasa Indonesia lessons: {size} MB in all.",
+        "forMalay": "For Bahasa Melayu lessons: {size} MB in all.",
+        "forEnglishMalay": "For English and Bahasa Melayu lessons: {size} MB in all.",
+        "forIndonesianMalay": "For Bahasa Indonesia and Bahasa Melayu lessons: {size} MB in all.",
+        "forAll": "For English, Bahasa Indonesia and Bahasa Melayu lessons: {size} MB in all.",
         "forDevice": "For the lessons used on this device: {size} MB in all.",
         "stored": "On this device: {stored} MB of {total} MB.",
         "storedAll": "All of it is on this device. Listen works here without the internet.",
@@ -1107,8 +1114,10 @@
       "voicesBody": "Listen plays recordings made for Thinkerwell from the lesson text with these free text-to-speech voices. A computer made them, not a person, and the voices themselves were not changed.",
       "voiceEnglish": "English lessons: {model} by hexgrad, voice Heart, under the {licence}.",
       "voiceIndonesian": "Bahasa Indonesia lessons: {model} by Meta, part of Massively Multilingual Speech, under the {licence}. This licence allows only non-commercial use. Thinkerwell is free, and uses it only that way.",
+      "voiceMalay": "Bahasa Melayu lessons: {model} by Meta, part of Massively Multilingual Speech, under the {licence}. This licence allows only non-commercial use. Thinkerwell is free, and uses it only that way.",
       "translationTitle": "Translation",
-      "translationBody": "The Bahasa Indonesia version was first drafted with the help of AI. Native speakers are checking it."
+      "translationBody": "The Bahasa Indonesia version was first drafted with the help of AI. Native speakers are checking it.",
+      "translationBodyMalay": "The Bahasa Melayu version was drafted with the help of AI too, from the English, and checked by translating it back into English. It is waiting for native speakers to check it."
     },
     "placeholder": "This page is coming soon."
   },

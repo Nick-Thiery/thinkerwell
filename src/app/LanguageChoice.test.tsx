@@ -33,7 +33,7 @@ describe('LanguageChoice', () => {
     expect(container).toBeEmptyDOMElement();
   });
 
-  it('offers English and Indonesian today, each by its own name', () => {
+  it('offers English, Indonesian and Malay today, each by its own name', () => {
     render(
       <I18nProvider>
         <LanguageChoice label="Your language" value="en" onChange={() => undefined} />
@@ -43,6 +43,7 @@ describe('LanguageChoice', () => {
     expect(within(group).getAllByRole('radio').map((radio) => [radio.textContent, radio.getAttribute('lang')])).toEqual([
       ['English', 'en'],
       ['Bahasa Indonesia', 'id'],
+      ['Bahasa Melayu', 'ms'],
     ]);
   });
 

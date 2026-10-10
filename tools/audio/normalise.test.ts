@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { indonesianNumber, indonesianOrdinal, speechInput } from './normalise';
+import { indonesianNumber, indonesianOrdinal, malayNumber, malayOrdinal, speechInput } from './normalise';
 import { listenUtterances } from './utterances';
 
 describe('indonesianNumber', () => {
@@ -74,6 +74,74 @@ describe('speechInput, Indonesian', () => {
     const indonesian = listenUtterances().find((language) => language.lang === 'id');
     expect(indonesian).toBeDefined();
     for (const section of indonesian!.sections) {
+      for (const piece of section.pieces) expect(say(piece.text), piece.text).not.toMatch(/\d/);
+    }
+  });
+});
+
+describe('malayNumber', () => {
+  it.each([
+    [0, 'kosong'],
+    [8, 'lapan'],
+    [11, 'sebelas'],
+    [18, 'lapan belas'],
+    [75, 'tujuh puluh lima'],
+    [100, 'seratus'],
+    [280, 'dua ratus lapan puluh'],
+    [1000, 'seribu'],
+    [1899, 'seribu lapan ratus sembilan puluh sembilan'],
+    [2007, 'dua ribu tujuh'],
+    [75000, 'tujuh puluh lima ribu'],
+    [1000000, 'sejuta'],
+    [2000000, 'dua juta'],
+    [13800000000, 'tiga belas bilion lapan ratus juta'],
+  ])('%i is "%s"', (n, words) => {
+    expect(malayNumber(n)).toBe(words);
+  });
+
+  it('says ordinals', () => {
+    expect(malayOrdinal(1)).toBe('pertama');
+    expect(malayOrdinal(8)).toBe('kelapan');
+    expect(malayOrdinal(15)).toBe('kelima belas');
+  });
+});
+
+describe('speechInput, Malay', () => {
+  const say = (text: string) => speechInput(text, 'ms');
+
+  it('reads numbers the way Malaysian Malay writes them, like English', () => {
+    expect(say('Lebih daripada 10,000 tahun dahulu.')).toBe('Lebih daripada sepuluh ribu tahun dahulu.');
+    expect(say('kira-kira 13.8 bilion tahun')).toBe('kira-kira tiga belas perpuluhan lapan bilion tahun');
+    expect(say('pada tahun 1899 sebagai')).toBe('pada tahun seribu lapan ratus sembilan puluh sembilan sebagai');
+  });
+
+  it('keeps the sentence’s own commas and full stops out of the numbers', () => {
+    expect(say('Pada tahun 1980, hanya kira-kira 30,000 orang.')).toBe(
+      'Pada tahun seribu sembilan ratus lapan puluh, hanya kira-kira tiga puluh ribu orang.',
+    );
+    expect(say('Jumlahnya lebih daripada 300.')).toBe('Jumlahnya lebih daripada tiga ratus.');
+    expect(say('ambil 12 minit, bukan 30, jadi')).toBe('ambil dua belas minit, bukan tiga puluh, jadi');
+  });
+
+  it('reads ordinals, decades, percentages and ranges', () => {
+    expect(say('Pada Tahun ke-8, jalan baharu dibuka.')).toBe('Pada Tahun kelapan, jalan baharu dibuka.');
+    expect(say('Pada tahun 1400-an, Johannes')).toBe('Pada tahun seribu empat ratusan, Johannes');
+    expect(say('kira-kira 50% penduduk')).toBe('kira-kira lima puluh peratus penduduk');
+    expect(say('antara 10–20 tahun')).toBe('antara sepuluh hingga dua puluh tahun');
+  });
+
+  it('spells out letters and abbreviations as Malaysians say them', () => {
+    expect(say('Pertubuhan Bangsa-Bangsa Bersatu (PBB) berkata')).toBe('Pertubuhan Bangsa-Bangsa Bersatu (pi bi bi) berkata');
+    expect(say('huruf ML pada tin')).toBe('huruf em el pada tin');
+    expect(say('Mina L. membawa beras')).toBe('Mina el membawa beras');
+    expect(say('buku, pen, dll.')).toBe('buku, pen, dan lain-lain');
+    expect(say('Café & kedai')).toBe('Cafe dan kedai');
+  });
+
+  it('leaves no digit in any Malay lesson text', () => {
+    const malay = listenUtterances().find((language) => language.lang === 'ms');
+    expect(malay).toBeDefined();
+    for (const section of malay!.sections) {
       for (const piece of section.pieces) expect(say(piece.text), piece.text).not.toMatch(/\d/);
     }
   });

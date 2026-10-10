@@ -278,7 +278,7 @@
         "startsWithNote": "Nanti kamu bisa membuka pelajaran mana saja dari halaman kursus.",
         "privacyNote": "Hasil kerjamu tetap ada di perangkat ini.",
         "languageLabel": "Bahasamu",
-        "languageHelper": "Tombol dan petunjuk tampil dalam bahasa ini. Dalam bahasa Indonesia, pelajaran juga. Dalam bahasa lain, pelajaran tetap dalam bahasa Inggris supaya kamu bisa berlatih."
+        "languageHelper": "Tombol dan petunjuk tampil dalam bahasa ini. Dalam bahasa Indonesia dan bahasa Melayu, pelajaran juga. Dalam bahasa lain, pelajaran tetap dalam bahasa Inggris supaya kamu bisa berlatih."
       },
       "remove": {
         "action": "Hapus",
@@ -328,7 +328,7 @@
         "noJournalYet": "Belum ada yang tersimpan. Tulisan dan refleksimu akan muncul di sini setelah kamu mulai.",
         "latestEntry": "{stage} · Pelajaran {number}",
         "languageTitle": "Bahasamu",
-        "languageHelp": "Tombol dan petunjuk tampil dalam bahasa ini. Dalam bahasa Indonesia, pelajaran juga. Dalam bahasa lain, pelajaran tetap dalam bahasa Inggris supaya kamu bisa berlatih.",
+        "languageHelp": "Tombol dan petunjuk tampil dalam bahasa ini. Dalam bahasa Indonesia dan bahasa Melayu, pelajaran juga. Dalam bahasa lain, pelajaran tetap dalam bahasa Inggris supaya kamu bisa berlatih.",
         "languageSaveFailed": "Belum tersimpan. Coba lagi."
       }
     },
@@ -488,7 +488,7 @@
       "intro": "Thinkerwell adalah platform yang dipimpin oleh pelajar untuk memperluas akses ke pembelajaran IPS digital yang gratis bagi remaja yang kurang terlayani di Asia Tenggara. Kami sedang menyiapkan uji coba kursus kami bersama organisasi pendidikan. Halaman ini menjelaskan apa saja yang termasuk dalam uji coba.",
       "honesty": "Thinkerwell adalah platform yang dipimpin oleh pelajar. Thinkerwell bukan lembaga amal atau organisasi nirlaba yang terdaftar.",
       "whatTitle": "Apa itu Thinkerwell",
-      "whatBody": "Satu kursus, Menjelajahi Dunia Kita: {lessons} pelajaran tentang sejarah, geografi, budaya, dan kehidupan bermasyarakat, untuk pelajar berusia sekitar 10 sampai 17 tahun. Setiap pelajaran punya lima langkah: baca, tulis, bicara, tonton, dan refleksi. Kursus ini berjalan di browser web pada laptop dan tablet yang dipakai bersama, dalam bahasa Inggris atau Bahasa Indonesia. Pelajaran bisa dipakai tanpa internet setelah kunjungan pertama; video pilihan membutuhkan internet.",
+      "whatBody": "Satu kursus, Menjelajahi Dunia Kita: {lessons} pelajaran tentang sejarah, geografi, budaya, dan kehidupan bermasyarakat, untuk pelajar berusia sekitar 10 sampai 17 tahun. Setiap pelajaran punya lima langkah: baca, tulis, bicara, tonton, dan refleksi. Kursus ini berjalan di browser web pada laptop dan tablet yang dipakai bersama, dalam bahasa Inggris, Bahasa Indonesia, atau Bahasa Melayu. Pelajaran bisa dipakai tanpa internet setelah kunjungan pertama; video pilihan membutuhkan internet.",
       "getTitle": "Yang Anda dapatkan",
       "get1": "Seluruh kursus, gratis. Tanpa akun, tanpa iklan, dan tidak ada yang dikunci.",
       "get2": "Panduan guru untuk setiap pelajaran, kunci jawaban untuk cek bagian, dan setiap pelajaran siap dicetak.",
@@ -589,7 +589,7 @@
       "sheetTitle": "Tentang uji coba Thinkerwell",
       "sheetFor": "Untuk disimpan oleh orang tua atau wali",
       "whatTitle": "Apa itu Thinkerwell?",
-      "whatBody": "Thinkerwell adalah situs belajar gratis. Thinkerwell mengajarkan sejarah, peta dan tempat, budaya, dan cara masyarakat mengambil keputusan. Pelajar membaca, menulis, berbicara, menonton video pendek, dan memikirkan apa yang mereka pelajari, dalam bahasa Inggris sederhana atau bahasa Indonesia. Thinkerwell dibuat oleh tim kecil pelajar di Singapura.",
+      "whatBody": "Thinkerwell adalah situs belajar gratis. Thinkerwell mengajarkan sejarah, peta dan tempat, budaya, dan cara masyarakat mengambil keputusan. Pelajar membaca, menulis, berbicara, menonton video pendek, dan memikirkan apa yang mereka pelajari, dalam bahasa Inggris sederhana, bahasa Indonesia, atau bahasa Melayu. Thinkerwell dibuat oleh tim kecil pelajar di Singapura.",
       "happenTitle": "Apa yang akan terjadi?",
       "happenBody": "Dari {start} sampai {end}, kelas anak Anda di {organisation} akan memakai Thinkerwell di tablet dan laptop milik organisasi, sekitar {sessions} kali. Seorang guru dari {organisation} memimpin setiap sesi.",
       "studyTitle": "Penelitian uji coba: Anda yang memilih",
@@ -871,8 +871,8 @@
         "title": "Bahasa",
         "label": "Bahasa di perangkat ini",
         "labelLearner": "Bahasa untuk {name}",
-        "help": "Semuanya langsung tampil dalam bahasa ini: tombol, petunjuk, dan untuk bahasa Indonesia, pelajarannya juga. Pilihan ini disimpan untuk perangkat ini, untuk halaman pertama dan siapa saja yang belum memilih siapa yang belajar.",
-        "helpLearner": "Semuanya langsung tampil dalam bahasa ini: tombol, petunjuk, dan untuk bahasa Indonesia, pelajarannya juga. Pilihan ini disimpan untuk {name}, dan berganti lagi saat orang lain dipilih."
+        "help": "Semuanya langsung tampil dalam bahasa ini: tombol, petunjuk, dan untuk bahasa Indonesia dan bahasa Melayu, pelajarannya juga. Pilihan ini disimpan untuk perangkat ini, untuk halaman pertama dan siapa saja yang belum memilih siapa yang belajar.",
+        "helpLearner": "Semuanya langsung tampil dalam bahasa ini: tombol, petunjuk, dan untuk bahasa Indonesia dan bahasa Melayu, pelajarannya juga. Pilihan ini disimpan untuk {name}, dan berganti lagi saat orang lain dipilih."
       },
       "offline": {
         "title": "Tanpa internet dan data",
@@ -899,7 +899,8 @@
         "introRecorded": "Dengarkan memutar rekaman suara yang alami, yang dibuat untuk setiap pelajaran. Kalau rekaman suatu bagian belum ada di perangkat ini dan tidak ada internet, Dengarkan membacakannya dengan suara perangkat ini, jadi tidak ada yang dikirim ke internet. Pilih suara itu di sini.",
         "voiceFor": {
           "en": "Suara untuk pelajaran dalam bahasa Inggris",
-          "id": "Suara untuk pelajaran dalam bahasa Indonesia"
+          "id": "Suara untuk pelajaran dalam bahasa Indonesia",
+          "ms": "Suara untuk pelajaran dalam bahasa Melayu"
         },
         "recordedWith": "Dengarkan memutar rekaman yang dibuat dengan {voice}.",
         "deviceVoice": "Suara perangkat, kalau tidak ada rekaman",
@@ -913,25 +914,27 @@
         "noVoiceRecorded": "Perangkat ini tidak punya suara bahasa Inggris. Dengarkan tetap memutar rekaman, tetapi tidak bisa membacakan bagian yang rekamannya belum ada di perangkat ini selama tidak ada internet. Langkah-langkah di bawah ini menjelaskan cara menambahkan suara.",
         "noVoiceIndonesian": "Perangkat ini belum punya suara bahasa Indonesia, jadi Dengarkan belum bisa membacakan pelajaran dalam bahasa Indonesia. Langkah-langkah di bawah ini menjelaskan cara menambahkannya.",
         "noVoiceIndonesianRecorded": "Perangkat ini belum punya suara bahasa Indonesia. Dengarkan tetap memutar rekaman, tetapi tidak bisa membacakan bagian yang rekamannya belum ada di perangkat ini selama tidak ada internet. Langkah-langkah di bawah ini menjelaskan cara menambahkan suara.",
+        "noVoiceMalay": "Perangkat ini belum punya suara bahasa Melayu, jadi Dengarkan belum bisa membacakan pelajaran dalam bahasa Melayu. Langkah-langkah di bawah ini menjelaskan cara menambahkannya.",
+        "noVoiceMalayRecorded": "Perangkat ini belum punya suara bahasa Melayu. Dengarkan tetap memutar rekaman, tetapi tidak bisa membacakan bagian yang rekamannya belum ada di perangkat ini selama tidak ada internet. Langkah-langkah di bawah ini menjelaskan cara menambahkan suara.",
         "better": {
           "title": "Dapatkan suara yang lebih jelas",
           "intro": "Sebagian besar perangkat bisa mengunduh suara yang lebih bagus secara gratis. Ukurannya bisa besar, jadi pakai Wi-Fi yang bagus. Lalu buka halaman ini lagi dan pilih suara barunya.",
           "apple": {
             "name": "iPad atau iPhone",
-            "steps": "Buka Pengaturan, lalu Aksesibilitas, lalu Konten Lisan (di versi yang lebih baru: Read & Speak), lalu Suara. Pilih bahasa Inggris atau bahasa Indonesia, lalu unduh suara yang bertanda Enhanced atau Premium.",
+            "steps": "Buka Pengaturan, lalu Aksesibilitas, lalu Konten Lisan (di versi yang lebih baru: Read & Speak), lalu Suara. Pilih bahasa Inggris, bahasa Indonesia, atau bahasa Melayu, lalu unduh suara yang bertanda Enhanced atau Premium.",
             "note": "Safari tidak mengizinkan situs web memakai setiap suara yang Anda unduh. Kalau suara baru itu tidak ada di daftar di atas, tetap pakai suara yang sudah ada."
           },
           "android": {
             "name": "Tablet atau HP Android",
-            "steps": "Buka Pengaturan dan cari text-to-speech. Di samping Mesin pilihan, ketuk tombol pengaturan, lalu Instal data suara. Pilih bahasa Inggris atau bahasa Indonesia, lalu unduh suaranya."
+            "steps": "Buka Pengaturan dan cari text-to-speech. Di samping Mesin pilihan, ketuk tombol pengaturan, lalu Instal data suara. Pilih bahasa Inggris, bahasa Indonesia, atau bahasa Melayu, lalu unduh suaranya."
           },
           "windows": {
             "name": "Laptop Windows",
-            "steps": "Buka Pengaturan, lalu Waktu & bahasa, lalu Ucapan. Di samping Kelola suara, pilih Tambahkan suara, lalu bahasa Inggris (Inggris Raya) atau bahasa Indonesia. Mungkin Anda perlu akun administrator. Lalu tutup browser dan buka lagi."
+            "steps": "Buka Pengaturan, lalu Waktu & bahasa, lalu Ucapan. Di samping Kelola suara, pilih Tambahkan suara, lalu bahasa Inggris (Inggris Raya), bahasa Indonesia, atau bahasa Melayu. Mungkin Anda perlu akun administrator. Lalu tutup browser dan buka lagi."
           },
           "chromebook": {
             "name": "Chromebook",
-            "steps": "Buka Setelan, lalu Aksesibilitas, lalu Text-to-Speech, lalu setelan suaranya. Instal suara untuk bahasa Inggris atau bahasa Indonesia."
+            "steps": "Buka Setelan, lalu Aksesibilitas, lalu Text-to-Speech, lalu setelan suaranya. Instal suara untuk bahasa Inggris, bahasa Indonesia, atau bahasa Melayu."
           }
         }
       },
@@ -941,6 +944,10 @@
         "forEnglish": "Untuk pelajaran dalam bahasa Inggris: totalnya {size} MB.",
         "forIndonesian": "Untuk pelajaran dalam bahasa Indonesia: totalnya {size} MB.",
         "forBoth": "Untuk pelajaran dalam bahasa Inggris dan bahasa Indonesia: totalnya {size} MB.",
+        "forMalay": "Untuk pelajaran dalam bahasa Melayu: totalnya {size} MB.",
+        "forEnglishMalay": "Untuk pelajaran dalam bahasa Inggris dan bahasa Melayu: totalnya {size} MB.",
+        "forIndonesianMalay": "Untuk pelajaran dalam bahasa Indonesia dan bahasa Melayu: totalnya {size} MB.",
+        "forAll": "Untuk pelajaran dalam bahasa Inggris, bahasa Indonesia, dan bahasa Melayu: totalnya {size} MB.",
         "forDevice": "Untuk pelajaran yang dipakai di perangkat ini: totalnya {size} MB.",
         "stored": "Di perangkat ini: {stored} MB dari {total} MB.",
         "storedAll": "Semuanya sudah ada di perangkat ini. Dengarkan bisa dipakai di sini tanpa internet.",
@@ -1097,8 +1104,10 @@
       "voicesBody": "Dengarkan memutar rekaman yang dibuat untuk Thinkerwell dari teks pelajaran dengan suara-suara text-to-speech gratis ini. Rekaman itu dibuat oleh komputer, bukan oleh manusia, dan suaranya sendiri tidak diubah.",
       "voiceEnglish": "Pelajaran dalam bahasa Inggris: {model} karya hexgrad, suara Heart, dengan lisensi {licence}.",
       "voiceIndonesian": "Pelajaran dalam bahasa Indonesia: {model} karya Meta, bagian dari Massively Multilingual Speech, dengan lisensi {licence}. Lisensi ini hanya mengizinkan penggunaan nonkomersial. Thinkerwell gratis, dan hanya memakainya dengan cara itu.",
+      "voiceMalay": "Pelajaran dalam bahasa Melayu: {model} karya Meta, bagian dari Massively Multilingual Speech, dengan lisensi {licence}. Lisensi ini hanya mengizinkan penggunaan nonkomersial. Thinkerwell gratis, dan hanya memakainya dengan cara itu.",
       "translationTitle": "Terjemahan",
-      "translationBody": "Versi Bahasa Indonesia pertama kali disusun dengan bantuan AI. Penutur asli sedang memeriksanya."
+      "translationBody": "Versi Bahasa Indonesia pertama kali disusun dengan bantuan AI. Penutur asli sedang memeriksanya.",
+      "translationBodyMalay": "Versi Bahasa Melayu juga disusun dengan bantuan AI, dari bahasa Inggris, lalu diperiksa dengan menerjemahkannya kembali ke bahasa Inggris. Versi ini masih menunggu pemeriksaan oleh penutur asli."
     },
     "placeholder": "Halaman ini segera hadir."
   },

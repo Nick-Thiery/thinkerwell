@@ -59,3 +59,9 @@ One Indonesian sentence lives in code rather than in these files: the sample "Pl
    The import changes only rows whose Indonesian was edited. If the same text also changed in the repository since the export, it reports a conflict and keeps the repository's text. It refuses an empty text or a broken `{placeholder}`, and a picture label it can't find as one piece of text (change those in the SVG by hand). Reviewers' names and notes go into `id/notes/`.
 
 `npm run i18n:export -- id` and `npm run i18n:import -- id file.csv` (the interface-only translator kit, `docs/TRANSLATING.md`) work for Indonesian too; the spreadsheet above covers the lessons as well.
+
+## Bahasa Melayu (Malaysian Malay)
+
+Malay is the third language translated in full, made the same way and by the same scripts, and kept in the same places: `src/i18n/messages/ms.json`, `content/ms/`, `docs/translation/ms/` (`BRIEF.md`, `KEY_TERMS.md`, `README.md`, `notes/*.json`, `review/thinkerwell-ms-review.xlsx`). Read `docs/translation/ms/README.md` first: it says what is different (Malaysian, not Indonesian, wording; "kamu" and "anda"; which words reviewers should decide first) and how it was checked (a back-translation of every string, and `scripts/check_translation.py ms`, which refuses Indonesian-only words).
+
+Every command above takes the language: `npm run review:export -- ms`, `npm run review:import -- ms reviewed.xlsx`, `python3 scripts/check_translation.py ms`. When English learner text changes, the Malay goes stale exactly as the Indonesian does (`npm run check:content` says which strings). `e2e/malay.spec.ts` is the Malay twin of `e2e/indonesian.spec.ts`.

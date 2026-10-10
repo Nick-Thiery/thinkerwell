@@ -140,11 +140,12 @@ test.describe('nothing extra for English', () => {
     expect(requests.filter((url) => /\/assets\/(locales|pseudo|fonts-arabic|fonts-vietnamese)\//.test(url))).toEqual([]);
   });
 
-  test('the offline copy holds Indonesian, the one other language ready, and no test language, no language not ready and no Arabic or Vietnamese font', async ({ request }) => {
+  test('the offline copy holds Indonesian and Malay, the other languages ready, and no test language, no language not ready and no Arabic or Vietnamese font', async ({ request }) => {
     const worker = await (await request.get('/sw.js')).text();
     expect(worker).toContain('index.html');
     expect(worker).toMatch(/assets\/locales\/id\//);
-    expect(worker).not.toMatch(/assets\/(locales\/(?!id\/)|pseudo|fonts-arabic|fonts-vietnamese)/);
+    expect(worker).toMatch(/assets\/locales\/ms\//);
+    expect(worker).not.toMatch(/assets\/(locales\/(?!id\/|ms\/)|pseudo|fonts-arabic|fonts-vietnamese)/);
     expect(worker).not.toMatch(/vazirmatn|be-vietnam-pro/i);
   });
 

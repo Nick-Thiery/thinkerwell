@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Apply reviewers' changes from a review spreadsheet (made by export_review.py).
 
-Usage: import_review.py <lang> <file.xlsx> [--dry-run]
+Usage: import_review.py [<lang>] <file.xlsx> [--dry-run]   (<lang> is id when left out)
 
 For every row, compares the reviewer's text in the translation column with
 the hidden copy of what was exported:
@@ -67,11 +67,16 @@ def same(file_value, cell):
 
 def main(argv):
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("lang")
-    parser.add_argument("xlsx")
+    parser.add_argument("lang_or_file", help="the language code (id, ms, vi), then the file; Indonesian when only the file is given")
+    parser.add_argument("xlsx", nargs="?")
     parser.add_argument("--dry-run", action="store_true", help="report what would change, write nothing")
     args = parser.parse_args(argv)
+    if args.xlsx is None:
+        args.lang, args.xlsx = "id", args.lang_or_file
+    else:
+        args.lang = args.lang_or_file
     lang = args.lang
+    column = S.language_name(lang)
 
     files, notes = {}, {}
     changes, conflicts, refused, questions, broken = [], [], [], [], []
@@ -116,7 +121,7 @@ def main(argv):
                 questions.append(f"{row_id} ({reviewer or 'no name'}): {note}")
             changed_notes.add(name)
 
-        new, exported = text(row.get("Indonesian")), text(row.get("Exported Indonesian (do not edit)"))
+        new, exported = text(row.get(column)), text(row.get(f"Exported {column} (do not edit)"))
         if new == exported:
             continue
         if path and path[0] == "picture":
@@ -128,7 +133,7 @@ def main(argv):
             svg = picture[1]
             old_markup, new_markup = f">{html.escape(exported, quote=False)}<", f">{html.escape(new, quote=False)}<"
             if not new:
-                refused.append(f"{row_id}: the Indonesian is empty")
+                refused.append(f"{row_id}: the {column} is empty")
             elif svg.count(old_markup) != 1:
                 refused.append(f"{row_id}: \"{exported}\" isn't one piece of text in {os.path.relpath(picture[0], T.ROOT)} "
                                f"(split over lines, or changed since the export); change it in the picture by hand")
@@ -143,7 +148,7 @@ def main(argv):
                              f"Sheet: {new!r} | file now: {S.cell_text(current)!r}")
             continue
         if path[-1] != "forms" and not new:
-            refused.append(f"{row_id}: the Indonesian is empty")
+            refused.append(f"{row_id}: the {column} is empty")
             continue
         if name == "ui":
             eng_text = S.ui_value(english, ".".join(path))

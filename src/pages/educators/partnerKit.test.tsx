@@ -221,7 +221,7 @@ describe('the information sheet', () => {
     renderAt('/educators/information-sheet', <InformationSheetPage />);
     const sheetPage = screen.getByRole('article', { name: 'About the Thinkerwell pilot' });
     expect(part(sheetPage, 'What is Thinkerwell?')).toHaveTextContent(
-      /Thinkerwell is a free learning website\. .* in simple English or Bahasa Indonesia\. It is made by a small team of students in Singapore\./,
+      /Thinkerwell is a free learning website\. .* in simple English, Bahasa Indonesia or Bahasa Melayu\. It is made by a small team of students in Singapore\./,
     );
     const study = part(sheetPage, 'The pilot study: you choose');
     for (const line of STUDY) expect(study).toHaveTextContent(line);

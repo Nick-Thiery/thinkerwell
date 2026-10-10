@@ -128,3 +128,50 @@ class ReviewRoundTrip(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class MalayReview(unittest.TestCase):
+    """The same sheet for Malay: its column is named "Malay", its brief says Malaysian Malay, and a change comes back in."""
+
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp()
+        for part in ["content", os.path.join("src", "i18n", "messages"), os.path.join("docs", "translation")]:
+            shutil.copytree(os.path.join(REPO, part), os.path.join(self.tmp, part))
+        self.env = {**os.environ, "THINKERWELL_ROOT": self.tmp}
+        self.xlsx = os.path.join(self.tmp, "review-ms.xlsx")
+
+    def tearDown(self):
+        shutil.rmtree(self.tmp)
+
+    def run_script(self, script, *args):
+        return subprocess.run([sys.executable, os.path.join(HERE, script), *args], env=self.env, capture_output=True, text=True)
+
+    def test_export_names_the_language_and_import_reads_it_back(self):
+        from openpyxl import load_workbook
+        out = self.run_script("export_review.py", "ms", "--out", self.xlsx)
+        self.assertEqual(out.returncode, 0, out.stdout + out.stderr)
+        wb = load_workbook(self.xlsx)
+        self.assertEqual(len(wb.sheetnames), 29)
+        header = next(r for r in wb["Lesson 1"].iter_rows(values_only=True) if r[0] == "ID")
+        self.assertEqual(list(header[3:5]), ["Malay", "Back-translation into English"])
+        self.assertEqual(header[8], "Exported Malay (do not edit)")
+        brief = " ".join(str(r[0]) for r in wb["Interface"].iter_rows(max_row=10, values_only=True) if r[0])
+        for words in ("Malaysian Malay", "anda", "kamu", "docs/translation/ms/KEY_TERMS.md"):
+            self.assertIn(words, brief)
+        self.assertNotIn("Indonesian", brief.replace("not Indonesian", "").replace("Indonesian word", ""))
+        for ws in wb.worksheets:
+            header = None
+            for row in ws.iter_rows():
+                values = [c.value for c in row]
+                if header is None:
+                    if values and values[0] == "ID":
+                        header = values
+                    continue
+                if values[0] == "L01:read.sections.0.heading":
+                    row[header.index("Malay")].value = "Sumber ialah petunjuk tentang masa lalu"
+                    row[header.index("Reviewer")].value = "AB"
+        wb.save(self.xlsx)
+        result = self.run_script("import_review.py", "ms", self.xlsx)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        with open(os.path.join(self.tmp, "content", "ms", "lessons", "L01.json"), encoding="utf-8") as f:
+            self.assertEqual(json.load(f)["read"]["sections"][0]["heading"], "Sumber ialah petunjuk tentang masa lalu")

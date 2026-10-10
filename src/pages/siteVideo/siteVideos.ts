@@ -43,7 +43,7 @@ export const SITE_VIDEOS: Record<SiteVideoId, SiteVideo> = {
   explore: {
     src: '/video/explore-your-world-v3.mp4',
     captions: '/video/explore-your-world-v3.en.vtt',
-    subtitles: { id: '/video/explore-your-world-v3.id.vtt' },
+    subtitles: { id: '/video/explore-your-world-v3.id.vtt', ms: '/video/explore-your-world-v3.ms.vtt' },
     seconds: 113,
     megabytes: 8,
     title: 'siteVideo.explore.title',
@@ -62,7 +62,7 @@ export const SITE_VIDEOS: Record<SiteVideoId, SiteVideo> = {
   session: {
     src: '/video/run-a-session-v1.mp4',
     captions: '/video/run-a-session-v1.en.vtt',
-    subtitles: { id: '/video/run-a-session-v1.id.vtt' },
+    subtitles: { id: '/video/run-a-session-v1.id.vtt', ms: '/video/run-a-session-v1.ms.vtt' },
     seconds: 69,
     megabytes: 5,
     title: 'siteVideo.session.title',
@@ -80,7 +80,7 @@ export const SITE_VIDEOS: Record<SiteVideoId, SiteVideo> = {
   setup: {
     src: '/video/set-up-a-device-v1.mp4',
     captions: '/video/set-up-a-device-v1.en.vtt',
-    subtitles: { id: '/video/set-up-a-device-v1.id.vtt' },
+    subtitles: { id: '/video/set-up-a-device-v1.id.vtt', ms: '/video/set-up-a-device-v1.ms.vtt' },
     seconds: 79,
     megabytes: 5,
     title: 'siteVideo.setup.title',

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Records Listen's audio: every piece of text Listen reads, in English,
-Indonesian and (once asked for) Vietnamese, both reading levels, from the
+Indonesian, Malay and (once asked for) Vietnamese, both reading levels, from the
 list tools/audio/export.ts makes (the app's own sentences).
 `npm run audio:generate` runs both steps; see scripts/audio/README.md and
 docs/notes/recorded-audio.md.
@@ -12,6 +12,7 @@ docs/notes/recorded-audio.md.
 
 1. Synthesis. Each piece is spoken on its own (English: Kokoro-82M, voice
    af_heart, speed 0.92; Indonesian: Meta's MMS-TTS, facebook/mms-tts-ind;
+   Malay: MMS-TTS, facebook/mms-tts-zlm;
    Vietnamese: VieNeu-TTS v3 Turbo, a preset voice) and kept in
    .audio-cache/<lang>/ under a hash of the voice and what it was given to say. A piece already there isn't spoken again, so a stopped
    run carries on where it was, and a lesson edit records only what changed.
@@ -73,6 +74,16 @@ VOICES = {
     "id": {
         "engine": "mms-tts",
         "model": "facebook/mms-tts-ind",
+        "licence": "CC-BY-NC-4.0",
+        "seed": 1,
+        "sampleRate": 16000,
+    },
+    # Malaysian Malay (Standard Malay, ISO 639-3 zsm, which MMS files under the
+    # macrolanguage code zlm): the same family of model as Indonesian, chosen
+    # after listening (docs/notes/recorded-audio.md, "Malay").
+    "ms": {
+        "engine": "mms-tts",
+        "model": "facebook/mms-tts-zlm",
         "licence": "CC-BY-NC-4.0",
         "seed": 1,
         "sampleRate": 16000,
@@ -178,11 +189,12 @@ class Kokoro:
 
 
 class Mms:
-    def __init__(self) -> None:
+    def __init__(self, lang: str) -> None:
         from transformers import AutoTokenizer, VitsModel
 
         set_torch_threads()
-        v = VOICES["id"]
+        self.lang = lang
+        v = VOICES[lang]
         self.model = VitsModel.from_pretrained(v["model"])
         self.model.eval()
         self.tokenizer = AutoTokenizer.from_pretrained(v["model"])
@@ -201,7 +213,7 @@ class Mms:
 
         self.check(text)
         inputs = self.tokenizer(text, return_tensors="pt")
-        torch.manual_seed(VOICES["id"]["seed"])
+        torch.manual_seed(VOICES[self.lang]["seed"])
         with torch.no_grad():
             wave = self.model(**inputs).waveform[0].numpy()
         return wave.astype(np.float32)
@@ -313,7 +325,7 @@ def engine_for(lang: str):
         return Kokoro()
     if lang == "vi":
         return VieNeu()
-    return Mms()
+    return Mms(lang)
 
 
 def synthesise(lang: str, sections: list[dict]) -> None:
@@ -475,7 +487,7 @@ def main() -> int:
     global THREADS
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("export", nargs="?", help="the JSON tools/audio/export.ts wrote")
-    parser.add_argument("--lang", action="append", help="only this language (en, id, vi); may be given more than once. Without it: the ready languages, and any already recorded")
+    parser.add_argument("--lang", action="append", help="only this language (en, id, ms, vi); may be given more than once. Without it: the ready languages, and any already recorded")
     parser.add_argument("--synth-only", action="store_true", help="record the pieces, but don't make the files")
     parser.add_argument("--threads", type=int, default=int(os.environ.get("AUDIO_THREADS", "0") or 0), help="CPU threads (0: each engine's default)")
     parser.add_argument("--vi-voice", help=f"VieNeu preset voice for Vietnamese (default {VI_VOICE!r}; AUDIO_VI_VOICE does the same); --list-vi-voices lists them")

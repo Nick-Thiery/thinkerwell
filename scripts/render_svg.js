@@ -18,7 +18,7 @@ try {
 (async () => {
   const files = process.argv.slice(2);
   if (!files.length) { console.log('usage: node render_svg.js file.svg ...'); process.exit(2); }
-  const browser = await chromium.launch();
+  const browser = await chromium.launch(process.env.PW_CHROMIUM_PATH ? { executablePath: process.env.PW_CHROMIUM_PATH } : {});
   const page = await browser.newPage({ viewport: { width: 1280, height: 720 } });
   for (const f of files) {
     const svg = fs.readFileSync(f, 'utf8');

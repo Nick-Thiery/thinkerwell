@@ -12,6 +12,8 @@ export default tseslint.config(
       'dev-dist',
       'coverage',
       'node_modules',
+      '.venv',
+      '.venv-audio',
       'test-results',
       'playwright-report',
       'blob-report',

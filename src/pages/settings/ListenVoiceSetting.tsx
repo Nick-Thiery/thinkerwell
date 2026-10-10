@@ -1,8 +1,8 @@
 /**
  * "Listen voice" in Settings (/settings#listen-voice), for educators: which
  * of this device's voices Listen reads with, one choice per lessons'
- * language that has a voice here (English, and Indonesian where the device
- * has an Indonesian voice), and how to get a clearer voice.
+ * language that has a voice here (English, and Indonesian or Malay where the
+ * device has a voice for it), and how to get a clearer voice.
  *
  * - Only voices that run on the device are offered, never one that needs
  *   the internet, and never a novelty voice (src/speech/voiceRanking.ts),
@@ -42,6 +42,7 @@ import {
   useDeviceVoices,
   voiceChoice,
 } from '../../speech';
+import { baseLang } from '../../speech/voiceRanking';
 import type { ListenVoiceChoice } from '../../storage';
 import type { DeviceSettingsState } from './useDeviceSettings';
 
@@ -55,12 +56,18 @@ const AUTOMATIC = '';
 const DEVICES = ['apple', 'android', 'windows', 'chromebook'] as const;
 
 /** The recorded voice of each language, by its own name (not translated). */
-const RECORDED_VOICE: Readonly<Record<string, string>> = { en: 'Kokoro (Heart)', id: 'MMS-TTS (Meta)' };
+const RECORDED_VOICE: Readonly<Record<string, string>> = { en: 'Kokoro (Heart)', id: 'MMS-TTS (Meta)', ms: 'MMS-TTS (Meta)' };
 
 /** A voice's value in the select: what the browser calls it. */
 function optionValue(voice: Pick<SpeechSynthesisVoice, 'name' | 'voiceURI'>): string {
   return `${voice.voiceURI}\u0000${voice.name}`;
 }
+
+/** What to say when the lessons' language has no voice on this device, by language: whole sentences, never joined in code. */
+const NO_VOICE: Readonly<Record<string, { recorded: MessageKey; none: MessageKey }>> = {
+  id: { recorded: 'pages.settings.listenVoice.noVoiceIndonesianRecorded', none: 'pages.settings.listenVoice.noVoiceIndonesian' },
+  ms: { recorded: 'pages.settings.listenVoice.noVoiceMalayRecorded', none: 'pages.settings.listenVoice.noVoiceMalay' },
+};
 
 export function ListenVoiceSetting({ deviceSettings }: { deviceSettings: DeviceSettingsState }) {
   const { t, contentLocale } = useI18n();
@@ -84,7 +91,7 @@ export function ListenVoiceSetting({ deviceSettings }: { deviceSettings: DeviceS
   const groups = listenLanguages().map((lang) => ({ lang, voices: listenVoices(voices, lang), recorded: !!recordingsOf(lang) }));
   const [english, ...others] = groups;
   const shown = others.filter((group) => group.voices.length > 0 || group.recorded);
-  // Lessons in Indonesian on this page, and no Indonesian voice: say so (in English, nothing to say).
+  // Lessons in Indonesian or Malay on this page, and no voice for them: say so (in English, nothing to say).
   const lessonsLang = speechLangFor(contentLocale);
   const missingHere = contentLocale.content && others.some((group) => group.lang === lessonsLang && group.voices.length === 0);
   const rate = LISTEN_RATES[settings?.listeningSpeed ?? 'normal'];
@@ -142,9 +149,9 @@ export function ListenVoiceSetting({ deviceSettings }: { deviceSettings: DeviceS
       {settled && missingHere ? (
         <p className="tw-settings-status">
           {t(
-            others.some((group) => group.lang === lessonsLang && group.recorded)
-              ? 'pages.settings.listenVoice.noVoiceIndonesianRecorded'
-              : 'pages.settings.listenVoice.noVoiceIndonesian',
+            (NO_VOICE[baseLang(lessonsLang)] ?? NO_VOICE.id!)[
+              others.some((group) => group.lang === lessonsLang && group.recorded) ? 'recorded' : 'none'
+            ],
           )}
         </p>
       ) : null}

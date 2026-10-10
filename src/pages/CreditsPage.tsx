@@ -62,6 +62,13 @@ const VOICES = [
     licence: 'Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0)',
     licenceUrl: 'https://creativecommons.org/licenses/by-nc/4.0/',
   },
+  {
+    key: 'pages.credits.voiceMalay',
+    model: 'MMS-TTS (facebook/mms-tts-zlm)',
+    url: 'https://huggingface.co/facebook/mms-tts-zlm',
+    licence: 'Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0)',
+    licenceUrl: 'https://creativecommons.org/licenses/by-nc/4.0/',
+  },
 ] as const satisfies ReadonlyArray<{ key: MessageKey; model: string; url: string; licence: string; licenceUrl: string }>;
 
 const SECTIONS = ['sources', 'videos', 'pictures', 'fonts', 'software', 'voices', 'translation'] as const;
@@ -233,6 +240,7 @@ export function CreditsPage() {
             {t('pages.credits.translationTitle')}
           </h2>
           <p>{t('pages.credits.translationBody')}</p>
+          <p>{t('pages.credits.translationBodyMalay')}</p>
         </section>
       </div>
     </div>
