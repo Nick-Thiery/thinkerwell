@@ -39,13 +39,13 @@ export interface SiteVideo {
 export type SiteVideoId = 'explore' | 'session' | 'setup';
 
 export const SITE_VIDEOS: Record<SiteVideoId, SiteVideo> = {
-  // "Explore your world" (v3): what Thinkerwell is and why. On About, under the mission.
+  // "Explore your world" (v4): what Thinkerwell is and why. On About, under the mission.
   explore: {
-    src: '/video/explore-your-world-v3.mp4',
-    captions: '/video/explore-your-world-v3.en.vtt',
-    subtitles: { id: '/video/explore-your-world-v3.id.vtt', ms: '/video/explore-your-world-v3.ms.vtt' },
+    src: '/video/explore-your-world-v4.mp4',
+    captions: '/video/explore-your-world-v4.en.vtt',
+    subtitles: { id: '/video/explore-your-world-v4.id.vtt', ms: '/video/explore-your-world-v4.ms.vtt' },
     seconds: 113,
-    megabytes: 8,
+    megabytes: 9,
     title: 'siteVideo.explore.title',
     blurb: 'siteVideo.explore.blurb',
     words: [
@@ -60,9 +60,9 @@ export const SITE_VIDEOS: Record<SiteVideoId, SiteVideo> = {
   },
   // "Run a session": a session from start to finish. On For educators and For organisations.
   session: {
-    src: '/video/run-a-session-v1.mp4',
-    captions: '/video/run-a-session-v1.en.vtt',
-    subtitles: { id: '/video/run-a-session-v1.id.vtt', ms: '/video/run-a-session-v1.ms.vtt' },
+    src: '/video/run-a-session-v2.mp4',
+    captions: '/video/run-a-session-v2.en.vtt',
+    subtitles: { id: '/video/run-a-session-v2.id.vtt', ms: '/video/run-a-session-v2.ms.vtt' },
     seconds: 69,
     megabytes: 5,
     title: 'siteVideo.session.title',
@@ -78,9 +78,9 @@ export const SITE_VIDEOS: Record<SiteVideoId, SiteVideo> = {
   },
   // "Set up a device": the checklist, step by step. On "Set up this device".
   setup: {
-    src: '/video/set-up-a-device-v1.mp4',
-    captions: '/video/set-up-a-device-v1.en.vtt',
-    subtitles: { id: '/video/set-up-a-device-v1.id.vtt', ms: '/video/set-up-a-device-v1.ms.vtt' },
+    src: '/video/set-up-a-device-v2.mp4',
+    captions: '/video/set-up-a-device-v2.en.vtt',
+    subtitles: { id: '/video/set-up-a-device-v2.id.vtt', ms: '/video/set-up-a-device-v2.ms.vtt' },
     seconds: 79,
     megabytes: 5,
     title: 'siteVideo.setup.title',
