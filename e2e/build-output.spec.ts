@@ -53,8 +53,11 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * offline. The video files themselves (17 MB) are never precached and
  * download only on a tap (docs/notes/site-videos.md). It leaves room for
  * one more small feature.
+ * Raised to 795 kB for Bahasa Melayu, a third language translated in full: 790.5 kB with it (649.8 kB before). Every ready
+ * language is in every device's offline copy, as Indonesian is: its messages, 24 lessons, 4 checks and course text in
+ * one chunk (`assets/locales/ms/`, 428 kB, about 85 kB Brotli) and its 24 pictures (about 46 kB). See docs/notes/slow-internet.md.
  */
-const PRECACHE_BUDGET = 655_000;
+const PRECACHE_BUDGET = 795_000;
 /**
  * Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before),
  * 210.5 kB after the language and pilot-day merges, 212.7 kB with the header's language switch and the one language
@@ -84,8 +87,11 @@ const PRECACHE_BUDGET = 655_000;
  * Raised to 224.7 kB with the Vietnamese preview: 224.6 kB with it (224.5 kB before). The hidden language's row in the
  * language list and its three short strings in app code (the quick-check verdicts and the Listen sample); none of its
  * words, lessons or font reach a first visit (the test below; docs/notes/vietnamese-preview.md).
+ * Raised to 225 kB with Bahasa Melayu: 224.9 kB with it (224.6 kB before). Its row in the language list, its quick-check
+ * verdicts and Listen sample in app code, and the eight English messages it added to en.json (Settings' Malay voice
+ * and download sizes, the Credits line); none of its words, lessons or pictures reach a first visit (docs/notes/languages.md).
  */
-const FIRST_VISIT_HOME_BUDGET = 224_700;
+const FIRST_VISIT_HOME_BUDGET = 225_000;
 
 const TEXT = /\.(html|js|css|svg|json|webmanifest)$/;
 
