@@ -35,8 +35,8 @@ describe('the real message files', () => {
     for (const key of Object.keys(readNotes())) expect(keys.has(key), key).toBe(true);
   });
 
-  it('has the Indonesian translation', () => {
-    expect(translatedCodes()).toEqual(['id']);
+  it('has the Indonesian translation, and the Vietnamese preview', () => {
+    expect(translatedCodes()).toEqual(['id', 'vi']);
   });
 });
 

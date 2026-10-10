@@ -6,3 +6,10 @@ transformers==5.18.0
 torch==2.14.1
 soundfile==0.14.0
 numpy==2.4.4
+# Vietnamese (VieNeu-TTS v3 Turbo, Apache-2.0): ONNX on the CPU, no torch needed, so this venv can be shared with the others.
+# sea-g2p (Apache-2.0) is its text normaliser and phonemiser; soxr resamples 48 kHz to 24 kHz. Pinned: their output decides the recording.
+vieneu==3.8.3
+sea-g2p==0.10.0
+soxr
+onnxruntime==1.31.0
+huggingface_hub

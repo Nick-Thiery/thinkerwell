@@ -9,6 +9,12 @@
 // Runs in CI (.github/workflows/checks.yml), which can't run the voice
 // models: the fix is always `npm run audio:generate` on a computer that can
 // (scripts/audio/README.md). docs/notes/recorded-audio.md.
+//
+// Which languages: every language learners can choose (`ready`), and any
+// language that already has recordings (in the manifest or in
+// public/audio/<lang>/). A translated language that isn't ready and has no
+// recordings (Vietnamese, a hidden preview whose audio is kept out of main
+// until it is ready) is not checked and doesn't fail anything.
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { listenUtterances, ROOT, SKIPPED_COURSES, type LanguageUtterances } from './utterances.ts';
@@ -42,14 +48,33 @@ export const INDEX_PATH = path.join('src', 'audio', 'recordings.json');
 
 const FIX = 'Run `npm run audio:generate` (scripts/audio/README.md) to record them again, then commit public/audio/, tools/audio/manifest.json and src/audio/recordings.json.';
 
-/** What is wrong with the recordings, compared with what Listen reads now (`expected`); empty when they match. */
-export function audioProblems(expected: readonly LanguageUtterances[], manifest: Manifest | null, root = ROOT): string[] {
+/** True when public/audio/<lang>/ holds any file. */
+function hasRecordingFiles(lang: string, root: string): boolean {
+  const dir = path.join(root, 'public', 'audio', lang);
+  return existsSync(dir) && readdirSync(dir).length > 0;
+}
+
+/**
+ * The languages whose recordings are checked: those learners can choose (`ready`, or not said), and any that has
+ * recordings already. A not-ready language with none yet (Vietnamese, a hidden preview) is left out.
+ */
+export function checkedLanguages(expected: readonly LanguageUtterances[], manifest: Manifest | null, root = ROOT): LanguageUtterances[] {
+  return expected.filter((language) => language.ready !== false || Boolean(manifest?.languages[language.lang]) || hasRecordingFiles(language.lang, root));
+}
+
+/** What is wrong with the recordings, compared with what Listen reads now (`all`); empty when they match. */
+export function audioProblems(all: readonly LanguageUtterances[], manifest: Manifest | null, root = ROOT): string[] {
   if (!manifest) return [`${MANIFEST_PATH} is missing: nothing has been recorded.`];
   const problems: string[] = [];
+  const expected = checkedLanguages(all, manifest, root);
   for (const language of expected) {
     const recorded = manifest.languages[language.lang];
     if (!recorded) {
-      problems.push(`${language.lang}: no recordings at all.`);
+      problems.push(
+        hasRecordingFiles(language.lang, root)
+          ? `${language.lang}: public/audio/${language.lang}/ has files, but ${MANIFEST_PATH} has no recordings in it.`
+          : `${language.lang}: no recordings at all.`,
+      );
       continue;
     }
     for (const section of language.sections) {
@@ -100,7 +125,7 @@ export function audioProblems(expected: readonly LanguageUtterances[], manifest:
     }
   }
   for (const lang of Object.keys(manifest.languages)) {
-    if (!expected.some((language) => language.lang === lang)) problems.push(`${lang}: recorded, but Listen has no lessons in it.`);
+    if (!all.some((language) => language.lang === lang)) problems.push(`${lang}: recorded, but Listen has no lessons in it.`);
   }
   // What the app reads (src/audio/recordings.json) must point at the same files.
   const indexFile = path.join(root, INDEX_PATH);
@@ -110,6 +135,9 @@ export function audioProblems(expected: readonly LanguageUtterances[], manifest:
     if (!entry || entry.timings !== `/${recorded.timings}` || entry.files !== recorded.files || entry.bytes !== recorded.bytes) {
       problems.push(`${INDEX_PATH}: ${lang} doesn't match ${MANIFEST_PATH}.`);
     }
+  }
+  for (const lang of Object.keys(index)) {
+    if (!manifest.languages[lang]) problems.push(`${INDEX_PATH}: ${lang} is listed, but ${MANIFEST_PATH} has no recordings in it.`);
   }
   return problems;
 }
@@ -121,7 +149,8 @@ export function readManifest(root = ROOT): Manifest | null {
 
 function main(): void {
   const manifest = readManifest();
-  const problems = audioProblems(listenUtterances(), manifest);
+  const all = listenUtterances();
+  const problems = audioProblems(all, manifest);
   if (problems.length) {
     console.error(`Listen's recordings don't match the lessons (${problems.length} problem${problems.length === 1 ? '' : 's'}):`);
     for (const problem of problems.slice(0, 30)) console.error(`  ${problem}`);
@@ -132,6 +161,9 @@ function main(): void {
   for (const [lang, recorded] of Object.entries(manifest!.languages)) {
     console.log(`${lang}: ${recorded.files} recordings match the lessons (${(recorded.bytes / 1e6).toFixed(1)} MB).`);
   }
+  const checked = new Set(checkedLanguages(all, manifest).map((language) => language.lang));
+  const waiting = all.filter((language) => !checked.has(language.lang)).map((language) => language.lang);
+  if (waiting.length) console.log(`Not checked, on purpose (not ready for learners and not recorded yet; Listen uses the device's voice): ${waiting.join(', ')}.`);
   if (SKIPPED_COURSES.length) console.log(`Not recorded, on purpose (preview courses; Listen uses the device's voice): ${SKIPPED_COURSES.join(', ')}.`);
 }
 

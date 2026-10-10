@@ -1,0 +1,512 @@
+{
+  "title": {
+    "flag": true,
+    "note": "Check 'Vì sao mọi người phải đưa ra lựa chọn?' is natural; 'đưa ra lựa chọn' vs 'phải chọn'.",
+    "source": "Why do people have to make choices?",
+    "back": "Why do people have to make choices?"
+  },
+  "essentialQuestion": {
+    "flag": true,
+    "note": "'tài nguyên' (KEY_TERMS) for 'resources' is used here in the sense of time, money, food and skills. In everyday Vietnamese 'tài nguyên' means natural resources, so 'nguồn lực' may be better for these. A reviewer should decide, and the change would apply throughout this lesson.",
+    "source": "What happens when people have limited resources but many needs and wants?",
+    "back": "What happens when people have limited resources but many essential needs and wishes?"
+  },
+  "learningGoal": {
+    "flag": true,
+    "note": "'nhu cầu thiết yếu' for 'needs' and 'mong muốn' for 'wants': my choice (not in KEY_TERMS). I avoided plain 'nhu cầu' because in Vietnamese it can also cover wants. Alternatives: nhu cầu cần thiết / điều muốn có, ước muốn. 'sự khan hiếm' for scarcity; 'chi phí cơ hội' for opportunity cost (standard economics term, but abstract for a 10-year-old).",
+    "source": "Explain scarcity, needs, wants and opportunity cost using everyday examples.",
+    "back": "Explain scarcity, essential needs, wishes and opportunity cost using everyday examples."
+  },
+  "warmUp.question": {
+    "source": "You have one free hour after class. What would you choose to do?",
+    "back": "You have one free hour after school. What would you choose to do?"
+  },
+  "warmUp.options.0": {
+    "source": "Rest",
+    "back": "Rest"
+  },
+  "warmUp.options.1": {
+    "source": "Play a game",
+    "back": "Play a game"
+  },
+  "warmUp.options.2": {
+    "source": "Practise English",
+    "back": "Practise English"
+  },
+  "warmUp.options.3": {
+    "source": "Help a friend",
+    "back": "Help a friend"
+  },
+  "evidence.label": {
+    "source": "Fictional example created for this lesson.",
+    "back": "Fictional example, created specially for this lesson."
+  },
+  "evidence.question": {
+    "source": "For each resource, which use would you choose first? Why?",
+    "back": "For each resource, which way of using it would you choose first? Why?"
+  },
+  "evidence.cards.0.title": {
+    "flag": true,
+    "note": "'household' rendered as 'gia đình' / 'cả nhà'. Noor lives with an aunt, so 'hộ gia đình' may be more exact; the word 'gia đình' was chosen for plain speech.",
+    "source": "Noor's household this week",
+    "back": "Noor's family this week"
+  },
+  "evidence.cards.0.items.0": {
+    "source": "Noor lives with her aunt and two young cousins.",
+    "back": "Noor lives with her maternal aunt and two small younger cousins.",
+    "flag": true,
+    "note": "Review: 'dì' means mother's sister specifically; English 'aunt' is general. Native speaker: is 'dì' ok in all three uses (cards, text, notes) or use a general word?"
+  },
+  "evidence.cards.0.items.1": {
+    "source": "They have a small amount of money for food and soap.",
+    "back": "The whole household has a little money to buy food and soap."
+  },
+  "evidence.cards.0.items.2": {
+    "flag": true,
+    "note": "'dữ liệu di động' for 'mobile data'; many Vietnamese say 'data' or '4G'. Check.",
+    "source": "They share one phone with a little mobile data.",
+    "back": "The whole household shares one phone with a little mobile data."
+  },
+  "evidence.cards.0.items.3": {
+    "source": "Noor has two free hours on Saturday afternoon.",
+    "back": "Noor has two free hours on Saturday afternoon."
+  },
+  "evidence.cards.1.title": {
+    "source": "One resource, two possible uses",
+    "back": "One resource, two ways of using it"
+  },
+  "evidence.cards.1.columns.0": {
+    "source": "Resource",
+    "back": "Resource"
+  },
+  "evidence.cards.1.columns.1": {
+    "source": "One use",
+    "back": "One way of using it"
+  },
+  "evidence.cards.1.columns.2": {
+    "source": "Another use",
+    "back": "Another way of using it"
+  },
+  "evidence.cards.1.rows.0.0": {
+    "source": "Money",
+    "back": "Money"
+  },
+  "evidence.cards.1.rows.0.1": {
+    "source": "Rice, vegetables and soap",
+    "back": "Rice, vegetables and soap"
+  },
+  "evidence.cards.1.rows.0.2": {
+    "source": "A new football",
+    "back": "A new football"
+  },
+  "evidence.cards.1.rows.1.0": {
+    "source": "Mobile data",
+    "back": "Mobile data"
+  },
+  "evidence.cards.1.rows.1.1": {
+    "source": "Noor's online English class",
+    "back": "Noor's online English class"
+  },
+  "evidence.cards.1.rows.1.2": {
+    "source": "Music videos for her cousins",
+    "back": "Music videos for the younger cousins"
+  },
+  "evidence.cards.1.rows.2.0": {
+    "source": "Saturday afternoon",
+    "back": "Saturday afternoon"
+  },
+  "evidence.cards.1.rows.2.1": {
+    "flag": true,
+    "note": "'bạn học' for 'study partner' follows KEY_TERMS (partner = bạn học).",
+    "source": "Practising English with a study partner",
+    "back": "Practising English with a classmate"
+  },
+  "evidence.cards.1.rows.2.2": {
+    "source": "Playing football with friends",
+    "back": "Playing football with friends"
+  },
+  "evidence.cards.2.title": {
+    "flag": true,
+    "note": "'Hillside Learning Centre' became 'Trung tâm học tập Hillside' (name kept, 'Learning Centre' translated). Check this is acceptable for an invented name.",
+    "source": "Hillside Learning Centre",
+    "back": "Hillside Learning Centre"
+  },
+  "evidence.cards.2.items.0": {
+    "source": "The centre has one free room on Tuesday afternoons.",
+    "back": "The centre has an empty room on Tuesday afternoons."
+  },
+  "evidence.cards.2.items.1": {
+    "source": "Idea 1: a homework club.",
+    "back": "Idea 1: a homework club."
+  },
+  "evidence.cards.2.items.2": {
+    "source": "Idea 2: an art class.",
+    "back": "Idea 2: an art class."
+  },
+  "read.sections.0.heading": {
+    "flag": true,
+    "note": "Long heading. 'Tài nguyên giúp con người đáp ứng nhu cầu thiết yếu và mong muốn' is the longer side of a heading; check if it should be shortened.",
+    "source": "Resources help people meet needs and wants",
+    "back": "Resources help people meet essential needs and wishes"
+  },
+  "read.sections.0.text": {
+    "flag": true,
+    "note": "Key economics terms introduced here (tài nguyên, nhu cầu thiết yếu, mong muốn). Check that the definitions read naturally and a learner can tell need from want. The dì (maternal or paternal aunt: 'dì' is mother's younger sister; 'cô' is father's sister, 'mợ'/'thím' other aunts): 'dì' was chosen, but the English only says 'aunt', so check a neutral word such as 'dì' is acceptable.",
+    "source": "Every day, people make choices, from what to do after class to how a household uses its food, money or phone data. To make these choices, people use resources. A resource is anything useful that people have, such as time, money, food, water, tools or skills. People use resources to meet their needs and wants. A need is something you must have to live safely and stay healthy, such as food, clean water and a safe place to sleep. A want is something you would like to have but can live without. For example, Noor's aunt needs to buy rice and soap, but a new football is a want.",
+    "back": "Every day, everyone has to make choices, from what to do after school to how a family uses food, money or phone data. To choose, people use resources. A resource is any useful thing people have, like time, money, food, water, tools or skills. People use resources to meet their essential needs and wishes. An essential need is something you must have in order to live safely and stay healthy, like food, clean water and a safe place to sleep. A wish is something you like to have but can still live if you lack it. For example, Noor's aunt needs to buy rice and soap, while a new football is a wish."
+  },
+  "read.sections.0.simpler": {
+    "flag": true,
+    "note": "Check it keeps the same ideas and is simple enough. 'Thiếu nó bạn vẫn sống được' for 'You can live without it'.",
+    "source": "People make choices every day. To choose, they use resources. A resource is something useful that you have. Time, money, food and skills are resources. A need is something you must have to live and stay well. A want is something you would like. You can live without it. Noor's aunt needs rice and soap. A new football is a want.",
+    "back": "Every day everyone has to choose. To choose, people use resources. A resource is a useful thing you have. Time, money, food and skills are all resources. An essential need is something you must have to live and be healthy. A wish is something you like to have. Lacking it, you can still live. Noor's aunt needs to buy rice and soap. A new football is a wish."
+  },
+  "read.sections.1.heading": {
+    "source": "Scarcity means people must choose",
+    "back": "Scarcity means people must choose"
+  },
+  "read.sections.1.text": {
+    "flag": true,
+    "note": "'Sự khan hiếm' explained as 'không đủ cho mọi cách dùng có thể có'. Check clarity. 'Các cộng đồng cũng gặp sự khan hiếm' uses 'sự khan hiếm' as the glossary word.",
+    "source": "Usually, people do not have enough resources for everything they need and want. This problem is called scarcity. Scarcity does not mean there is nothing; it means there is not enough for every possible use. Noor's household shares one phone with a small amount of mobile data each week. Noor needs data for her online English class, and her cousins want to watch music videos. There is not enough data for both, so the household must decide. Communities face scarcity too. Hillside Learning Centre has one free room on Tuesday afternoons, so it must choose between a homework club and an art class.",
+    "back": "Usually, people do not have enough resources for everything they need and wish. This problem is called scarcity. Scarcity does not mean there is nothing at all; it means there is not enough for every possible way of using it. Noor's family shares one phone with a little mobile data each week. Noor needs the data for the online English class, while her younger cousins want to watch music videos. The data is not enough for both, so the whole family must decide. Communities also meet scarcity. Hillside Learning Centre has only one empty room on Tuesday afternoon, so it must choose between a homework club and an art class."
+  },
+  "read.sections.1.simpler": {
+    "flag": true,
+    "note": "'Thường thì ta không có đủ ...' uses 'ta' (general 'we'); check it fits the register. The longest sentence is 21 syllables; consider splitting.",
+    "source": "Often there is not enough for all our needs and wants. This is called scarcity. It does not mean there is nothing. It means there is not enough for every use. Noor's home has one phone with a little data. Noor needs data for her class. Her cousins want music videos. There is not enough for both. So they must choose. A learning centre has one free room. It can hold a homework club or an art class, not both.",
+    "back": "Usually we do not have enough for all essential needs and wishes. This is called scarcity. Scarcity does not mean having nothing. It means there is not enough for every use. Noor's home has one phone with little data. Noor needs data for the class. Her younger cousins want to watch music videos. The data is not enough for both. So the whole family must choose. A learning centre has one empty room. That room can be used for a homework club or an art class, not both."
+  },
+  "read.sections.2.heading": {
+    "source": "Every choice has an opportunity cost",
+    "back": "Every choice has an opportunity cost"
+  },
+  "read.sections.2.text": {
+    "flag": true,
+    "note": "'Chi phí cơ hội' defined as 'lựa chọn tốt nhất tiếp theo mà bạn bỏ đi'. 'chỗ ở' (space) in 'thời gian, sức lực, chỗ ở' may be misread as 'a place to live'; a reviewer should replace it with a word for 'room or space' (không gian, chỗ). | Review: 'chỗ ở' means housing/accommodation; English 'space' (e.g. a room). Meaning error. Native speaker: is 'không gian' clear for a 12-year-old, or would 'chỗ' / 'một căn phòng' be better? [Reviewer changed: sức lực, chỗ ở hoặc một cơ hội khác → sức lực, không gian hoặc một cơ hội khác]",
+    "source": "Whenever you choose one thing, you give up something else. The next-best option you give up is called the opportunity cost. On Saturday afternoon, Noor can play football with friends or practise English with a study partner. She chooses English, so her opportunity cost is the football game. Opportunity cost is not only about money; it can also be time, energy, space or another chance. Thinking about opportunity cost does not tell you which choice is correct. Instead, it helps you understand what you are giving up. Before deciding, ask: What do we need? What do we want? What will we give up?",
+    "back": "Each time you choose one thing, you must give up another. The next best choice that you throw away is called opportunity cost. On Saturday afternoon, Noor can play football with friends or practise English with a classmate. She chooses English, so her opportunity cost is the football match. Opportunity cost is not only about money; it can also be time, energy, living place (accommodation) or another opportunity. Thinking about opportunity cost does not tell you which choice is right. Instead, it helps you understand what you are giving up. Before deciding, ask: What do we need? What do we want? What will we give up?"
+  },
+  "read.sections.2.simpler": {
+    "flag": true,
+    "note": "'thời gian hay chỗ' for 'time or space'; same worry about 'chỗ'. | Review: 'chỗ' alone is vague (spot/seat); matched to standard text 'không gian'. [Reviewer changed: Nó cũng có thể là thời gian hay chỗ. → Nó cũng có thể là thời gian hay không gian.]",
+    "source": "When you choose one thing, you give up another. The best thing you did not pick is the opportunity cost. On Saturday, Noor can play football. Or she can practise English with a friend. She picks English. So the football game is her opportunity cost. Opportunity cost is not only about money. It can be time or space too. It does not tell you the right choice. It shows what you give up.",
+    "back": "When you choose one thing, you throw away another. The best thing that you do not choose is the opportunity cost. On Saturday, Noor can play football. Or she can practise English with a classmate. She chooses English. So the football match is her opportunity cost. Opportunity cost is not only about money. It can also be time or place/spot. It does not tell which choice is right. It shows what you are throwing away."
+  },
+  "read.glossary.0.word": {
+    "flag": true,
+    "note": "'tài nguyên' for 'resource': see essentialQuestion note.",
+    "source": "resource",
+    "back": "resource"
+  },
+  "read.glossary.0.forms": {
+    "source": [
+      "resources"
+    ],
+    "back": ""
+  },
+  "read.glossary.0.definition": {
+    "source": "Something useful that people have, like time, money, food or skills.",
+    "back": "A useful thing people have, like time, money, food or skills."
+  },
+  "read.glossary.0.example": {
+    "source": "Noor's household shares one phone. The phone and its data are resources.",
+    "back": "Noor's family shares one phone. The phone and its data are resources."
+  },
+  "read.glossary.1.word": {
+    "flag": true,
+    "note": "'nhu cầu thiết yếu' for 'need'. Not in KEY_TERMS.",
+    "source": "need",
+    "back": "essential need"
+  },
+  "read.glossary.1.forms": {
+    "source": [
+      "needs"
+    ],
+    "back": ""
+  },
+  "read.glossary.1.definition": {
+    "source": "Something a person must have to live safely and stay healthy.",
+    "back": "Something a person must have in order to live safely and stay healthy."
+  },
+  "read.glossary.1.example": {
+    "source": "Rice and soap are needs for Noor's household.",
+    "back": "Rice and soap are essential needs of Noor's family."
+  },
+  "read.glossary.2.word": {
+    "flag": true,
+    "note": "'mong muốn' for 'want'. Not in KEY_TERMS. | Review: 'mong muốn' for 'want' is fine, but check that learners do not read it as 'wish/desire' only; the definition clarifies it.",
+    "source": "want",
+    "back": "wish"
+  },
+  "read.glossary.2.forms": {
+    "source": [
+      "wants"
+    ],
+    "back": ""
+  },
+  "read.glossary.2.definition": {
+    "source": "Something a person would like to have but can live without.",
+    "back": "Something a person likes to have but can still live if lacking it."
+  },
+  "read.glossary.2.example": {
+    "source": "Music videos on the phone are a want.",
+    "back": "Watching music videos on the phone is a wish."
+  },
+  "read.glossary.3.word": {
+    "flag": true,
+    "note": "'sự khan hiếm' for 'scarcity'. Not in KEY_TERMS.",
+    "source": "scarcity",
+    "back": "scarcity"
+  },
+  "read.glossary.3.definition": {
+    "source": "Not having enough of something for every way people want to use it.",
+    "back": "Not having enough of something for every way people want to use it."
+  },
+  "read.glossary.3.example": {
+    "source": "There is not enough data for the class and the videos. That is scarcity.",
+    "back": "The data is not enough for the class and for the videos. That is scarcity."
+  },
+  "read.glossary.4.word": {
+    "flag": true,
+    "note": "'chi phí cơ hội' for 'opportunity cost'. Not in KEY_TERMS; a standard term.",
+    "source": "opportunity cost",
+    "back": "opportunity cost"
+  },
+  "read.glossary.4.definition": {
+    "source": "The next-best thing you give up when you make a choice.",
+    "back": "The next best choice you throw away when you make a decision."
+  },
+  "read.glossary.4.example": {
+    "source": "Noor practises English. The football game she gives up is her opportunity cost.",
+    "back": "Noor practises English. The football match she gives up is her opportunity cost."
+  },
+  "read.checks.0.question": {
+    "source": "What does scarcity mean?",
+    "back": "What does scarcity mean?"
+  },
+  "read.checks.0.options.0.text": {
+    "source": "There is not enough for every use.",
+    "back": "Not enough for every way of using it."
+  },
+  "read.checks.0.options.0.feedback": {
+    "source": "Yes. Scarcity means there is not enough of something for every use, so people must choose.",
+    "back": "Right. Scarcity means not having enough of something for every way of using it, so people must choose."
+  },
+  "read.checks.0.options.1.text": {
+    "source": "People have nothing at all that they can use.",
+    "back": "People have absolutely nothing to use."
+  },
+  "read.checks.0.options.1.feedback": {
+    "source": "Not quite. Scarcity does not mean there is nothing. Look again at the section about Noor's mobile data.",
+    "back": "Not quite. Scarcity does not mean there is nothing at all. Read again the part about Noor's mobile data."
+  },
+  "read.checks.0.options.2.text": {
+    "source": "People must never buy the things they want.",
+    "back": "People are never allowed to buy what they want."
+  },
+  "read.checks.0.options.2.feedback": {
+    "source": "Not quite. People can still buy wants. Scarcity means there is not enough for every use.",
+    "back": "Not quite. People can still buy things they want. Scarcity means not enough for every way of using it."
+  },
+  "read.checks.1.question": {
+    "source": "Noor practises English on Saturday. What is her opportunity cost?",
+    "back": "Noor practises English on Saturday afternoon. What is her opportunity cost?"
+  },
+  "read.checks.1.options.0.text": {
+    "source": "The English she learns with her partner",
+    "back": "The English she learns together with her classmate"
+  },
+  "read.checks.1.options.0.feedback": {
+    "source": "Not quite. The English practice is what Noor chooses. The opportunity cost is what she gives up.",
+    "back": "Not quite. Practising English is what Noor chooses. The opportunity cost is what she gives up."
+  },
+  "read.checks.1.options.1.text": {
+    "flag": true,
+    "note": "Wrong option about data; check it stays clearly wrong and not longer than the others.",
+    "source": "The data her household uses for class",
+    "back": "The data the whole family uses for the class"
+  },
+  "read.checks.1.options.1.feedback": {
+    "source": "Not quite. The data is part of a different choice. Think about Noor's two free hours on Saturday.",
+    "back": "Not quite. The data belongs to a different choice. Think about Noor's two free hours on Saturday afternoon."
+  },
+  "read.checks.1.options.2.text": {
+    "source": "The football game she does not play",
+    "back": "The football match she does not play"
+  },
+  "read.checks.1.options.2.feedback": {
+    "source": "Yes. Noor gives up the football game to practise English. That is her next-best choice, so it is her opportunity cost.",
+    "back": "Right. Noor gives up the football match to practise English. That is her next best choice, so it is the opportunity cost."
+  },
+  "read.checks.2.question": {
+    "source": "Think of a choice that a school or learning centre has to make. What might it give up?",
+    "back": "Think about a choice that a school or learning centre has to make. What might they have to give up?"
+  },
+  "read.checks.2.placeholder": {
+    "flag": true,
+    "note": "Kept the blanks (___).",
+    "source": "The centre could choose ___. The opportunity cost would be ___.",
+    "back": "The centre could choose ___. The opportunity cost would be ___."
+  },
+  "write.prompt": {
+    "source": "Pick one choice from the lesson or from a community you know. Say what the limited resource is, what is chosen and what is given up.",
+    "back": "Pick one choice in the lesson or in a community you know. Say clearly what the limited resource is, what is chosen and what is given up."
+  },
+  "write.sentenceStarters.0": {
+    "flag": true,
+    "note": "Kept the two blanks. 'Lựa chọn là giữa ___ và ___.'",
+    "source": "The choice is between ___ and ___.",
+    "back": "The choice is between ___ and ___."
+  },
+  "write.sentenceStarters.1": {
+    "source": "The limited resource is...",
+    "back": "The limited resource is..."
+  },
+  "write.sentenceStarters.2": {
+    "source": "They choose...",
+    "back": "They choose..."
+  },
+  "write.sentenceStarters.3": {
+    "source": "The opportunity cost is...",
+    "back": "The opportunity cost is..."
+  },
+  "write.sentenceStarters.4": {
+    "source": "I think this is a good choice because...",
+    "back": "I think this is a good choice because..."
+  },
+  "write.planningBoxes.0": {
+    "source": "My main idea",
+    "back": "My main idea"
+  },
+  "write.planningBoxes.1": {
+    "source": "Evidence from the lesson",
+    "back": "Evidence from the lesson"
+  },
+  "write.planningBoxes.2": {
+    "source": "Why it matters",
+    "back": "Why this matters"
+  },
+  "write.planningBoxes.3": {
+    "source": "A question I still have",
+    "back": "A question I still have"
+  },
+  "write.selfCheck.0": {
+    "source": "I named the limited resource.",
+    "back": "I named the limited resource."
+  },
+  "write.selfCheck.1": {
+    "source": "I said what was chosen.",
+    "back": "I said what was chosen."
+  },
+  "write.selfCheck.2": {
+    "source": "I named the opportunity cost.",
+    "back": "I named the opportunity cost."
+  },
+  "write.example": {
+    "flag": true,
+    "note": "Check it uses the starters in order and stays within about the same length.",
+    "source": "The choice is between Noor's online English class and music videos for her cousins. The limited resource is the mobile data on the one phone they share. There is not enough data for both. They choose the English class. The opportunity cost is the music videos they cannot watch this week. I think this is a good choice because the class helps Noor learn English. The music videos are a want, so they can wait until there is more data.",
+    "back": "The choice is between Noor's online English class and music videos for the younger cousins. The limited resource is the mobile data on the phone the whole family shares. The data is not enough for both. They choose the English class. The opportunity cost is the music videos that the children cannot watch this week. I think this is a good choice because the class helps Noor learn English. Music videos are a wish, so they can wait until there is more data."
+  },
+  "speak.partnerTask": {
+    "flag": true,
+    "note": "Instruction is long; check it reads as plain commands.",
+    "source": "Hillside Learning Centre has one free room on Tuesdays. With a partner, choose a homework club or an art class, and name the opportunity cost.",
+    "back": "Hillside Learning Centre has an empty room on Tuesdays. Together with a classmate, choose between a homework club and an art class, then state the opportunity cost."
+  },
+  "speak.independentTask": {
+    "source": "Say one choice from the lesson or from your day. Then say: “The opportunity cost was ___.”",
+    "back": "Talk about one choice in the lesson or in your day. Then say: \"The opportunity cost is ___.\""
+  },
+  "watch.why": {
+    "flag": true,
+    "note": "Short; check 'ví dụ ngắn, đời thường về tiền'.",
+    "source": "It explains opportunity cost with short, everyday money examples.",
+    "back": "The video explains opportunity cost using short, everyday examples about money."
+  },
+  "watch.beforeQuestion": {
+    "source": "When you choose one thing, what happens to the other things you could have chosen?",
+    "back": "When you choose one thing, what happens to the other things you might have chosen?"
+  },
+  "watch.afterQuestion": {
+    "source": "How can thinking about opportunity cost help someone choose more carefully?",
+    "back": "How can thinking about opportunity cost help a person choose more carefully?"
+  },
+  "watch.summary": {
+    "flag": true,
+    "note": "Names 'Mario' (kept). 'anh' used for Mario (a young man); 'máy chơi game' for games console. A reviewer should check the tone and the sentence 'Video cũng cho thấy thời gian cũng có thể là một cái giá phải trả' (repeated 'cũng'; may be reworded). | Review: Doubled 'cũng ... cũng' was stiff. [Reviewer changed: thời gian cũng có thể là một cái giá phải trả, không chỉ tiền → rằng không chỉ tiền, thời gian cũng có thể là một cái giá phải trả]",
+    "source": "This short video explains opportunity cost. When you pick one thing, you cannot have another. The next-best thing you give up is your opportunity cost. In the video, a young man called Mario needs a new phone. He also wants a new games console. His money is not enough for both, so he has to choose. He could buy a cheaper phone and get both things. But then his phone has fewer features. That is his opportunity cost. The video also shows that time can be a cost, not only money. It says the real cost of a choice is more than its price. Thinking about opportunity cost helps you compare needs and wants before you decide.",
+    "back": "This short video explains opportunity cost. When you choose one thing, you cannot have another. The next best thing you throw away is your opportunity cost. In the video, a young man named Mario needs a new phone. He also wants a new game console. His money is not enough for both, so he must choose. He could buy a cheaper phone and have both things. But then his phone has fewer features. That is his opportunity cost. The video also shows that time can also be a price to pay, not only money. The video says the real price of a choice is bigger than its money price. Thinking about opportunity cost helps you compare essential needs and wishes before deciding."
+  },
+  "watch.keyPoints.0": {
+    "source": "Choosing one thing means giving up something else.",
+    "back": "Choosing one thing means giving up another."
+  },
+  "watch.keyPoints.1": {
+    "source": "The opportunity cost is the next-best thing you give up.",
+    "back": "Opportunity cost is the next best thing you throw away."
+  },
+  "watch.keyPoints.2": {
+    "source": "Opportunity cost is not only money. Time can be a cost too.",
+    "back": "Opportunity cost is not only money. Time can also be a price."
+  },
+  "reflect.prompts.0.text": {
+    "source": "One choice a community I know has to make is...",
+    "back": "A choice that a community I know has to make is..."
+  },
+  "reflect.prompts.1.text": {
+    "source": "Thinking about opportunity cost can help people because...",
+    "back": "Thinking about opportunity cost can help people because..."
+  },
+  "reflect.completionMessage": {
+    "source": "You finished Lesson 20. You explained scarcity, needs, wants and opportunity cost with everyday examples.",
+    "back": "You have completed Lesson 20. You explained scarcity, essential needs, wishes and opportunity cost using everyday examples."
+  },
+  "visual.alt": {
+    "flag": true,
+    "note": "Check it matches the picture's labels, especially 'chi phí cơ hội' and 'bóng đá'.",
+    "source": "Noor chooses between practising English and playing football. The football game she gives up is shown in grey and labelled as her opportunity cost.",
+    "back": "Noor chooses between practising English and playing football. The football match she gives up is drawn in grey and labelled as her opportunity cost."
+  },
+  "sources.0.label": {
+    "flag": true,
+    "note": "Source titles translated for the label only; the pages are English. A reviewer may prefer English titles.",
+    "source": "OpenStax: How individuals make choices based on their budget constraint",
+    "back": "OpenStax: How each person chooses based on their budget limit"
+  },
+  "sources.1.label": {
+    "source": "Khan Academy: Scarcity, choice and opportunity costs",
+    "back": "Khan Academy: Scarcity, choice and opportunity cost"
+  },
+  "sources.2.label": {
+    "flag": true,
+    "note": "'My Five Cents' kept in English because it is a programme name.",
+    "source": "ABC Education: My Five Cents, What is opportunity cost?",
+    "back": "ABC Education: My Five Cents, What is opportunity cost?"
+  },
+  "sensitiveNotes.0": {
+    "flag": true,
+    "note": "Sensitive: must not ask what a household can afford. Check the tone and that 'một cộng đồng bạn biết' keeps the non-personal option.",
+    "source": "Do not ask learners what their own household can or cannot afford. The write, speak and reflect tasks all allow an example from the lesson or from 'a community you know'.",
+    "back": "Do not ask learners what their family can or cannot afford. The writing, speaking and reflecting tasks all allow using an example from the lesson or from \"a community you know\"."
+  },
+  "sensitiveNotes.1": {
+    "flag": true,
+    "note": "Educator-facing; mentions a job as an option in the video. Check the register for adults and that it still advises previewing the video.",
+    "source": "The video comes from ABC Australia's money series for teenagers (also shown as My Five Cents). Its example is a young man, Mario, who needs a new phone and wants a games console, and one option it gives is working an extra shift at his job. Preview it: if this does not fit your learners, use the written summary, which leaves out the job, and the lesson's own examples.",
+    "back": "The video comes from a series about money for teenagers by ABC Australia (also shown under the name My Five Cents). The video's example is a young man, Mario, who needs a new phone and wants a game console, and one option the video gives is to work an extra shift at work. Watch it first: if this does not suit your learners, use the written summary, which omits the job part, together with the lesson's own examples."
+  },
+  "educatorNotes.0": {
+    "flag": true,
+    "note": "'tài nguyên' used for 'resource' to match the learner text (see essentialQuestion note). Check the whole sentence for naturalness.",
+    "source": "Examples use food, soap, a shared phone, mobile data, free time and a room at a learning centre, not pay or shopping trips. A partner can swap in local foods, a local game instead of football, or a real room or resource at their own centre.",
+    "back": "The examples use food, soap, a shared phone, mobile data, free time and a room at a learning centre, not wages or shopping trips. The partner can replace them with local dishes, a local game instead of football, or a real room or resource at their own centre."
+  },
+  "educatorNotes.1": {
+    "flag": true,
+    "note": "'mặc định rằng người học sống với cha mẹ' for 'assume that learners live with parents'. Check naturalness.",
+    "source": "Noor lives with her aunt and cousins on purpose, so the lesson does not assume that learners live with parents.",
+    "back": "Noor living with her aunt and younger cousins is deliberate, so the lesson does not assume that learners live with their parents."
+  }
+}

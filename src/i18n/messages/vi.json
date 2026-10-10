@@ -1,0 +1,1603 @@
+{
+  "app": {
+    "name": "Thinkerwell",
+    "courseTitle": "Khám phá thế giới của chúng ta",
+    "skipToContent": "Chuyển đến nội dung",
+    "documentTitle": "{page} | Thinkerwell",
+    "mascotAlt": "Linh vật của Thinkerwell, một nhân vật màu tím đang cầm quyển sách"
+  },
+  "nav": {
+    "label": "Chính",
+    "home": "Trang chủ",
+    "course": "Khóa học",
+    "journal": "Nhật ký của mình",
+    "educators": "Dành cho nhà giáo dục",
+    "about": "Giới thiệu",
+    "settings": "Cài đặt"
+  },
+  "stages": {
+    "read": "Đọc",
+    "write": "Viết",
+    "speak": "Nói",
+    "watch": "Xem",
+    "reflect": "Suy ngẫm",
+    "complete": "Hoàn thành bài học"
+  },
+  "sections": {
+    "check": "Ôn tập phần"
+  },
+  "lesson": {
+    "number": "Bài {number}",
+    "minutes": "Khoảng {min}–{max} phút",
+    "nextStep": "Bước tiếp theo: {stage}"
+  },
+  "lessonPlayer": {
+    "shell": {
+      "aboutLesson": "Về bài học này",
+      "learningGoal": "Mục tiêu học tập",
+      "time": "Khoảng {min}–{max} phút. Bạn có thể dừng lại và quay lại bất cứ lúc nào.",
+      "sublabelDone": "Đã xong",
+      "sublabelRead": "Khởi động, đọc và câu hỏi nhanh",
+      "sublabelWrite": "Nhiệm vụ viết của bạn",
+      "sublabelSpeak": "Với bạn học hoặc một mình",
+      "sublabelWatch": "Không bắt buộc · {minutes} phút",
+      "sublabelWatchNoTime": "Không bắt buộc",
+      "sublabelReflect": {
+        "other": "{count} câu hỏi ngắn"
+      },
+      "continueTo": "Tiếp tục với {stage}",
+      "finishLesson": "Hoàn thành bài học",
+      "noLearnerTitle": "Chưa có gì được lưu.",
+      "noLearnerBody": "Chọn người đang học để giữ bài làm của bạn trên thiết bị này.",
+      "noLearnerAction": "Chọn người đang học",
+      "saveError": "Thay đổi gần nhất của bạn chưa được lưu trên thiết bị này. Cứ tiếp tục: thiết bị sẽ thử lưu lại cùng với thay đổi tiếp theo của bạn."
+    },
+    "read": {
+      "toolsLabel": "Công cụ đọc",
+      "listen": "Nghe",
+      "listenNoVoice": "Nút Nghe không đọc to được bài học này ở đây: thiết bị này không có giọng đọc cho ngôn ngữ của bài.",
+      "listenUnavailable": "Nút Nghe chưa phát được đoạn này ở đây. Bản ghi âm của đoạn chưa có trên thiết bị này, và thiết bị cũng không có giọng đọc nào để đọc đoạn này. Kết nối mạng, rồi chạm vào Nghe lần nữa.",
+      "listenLabel": "Đang đọc to · đoạn {n} trên {total}",
+      "listenLoading": "Đang tải bản ghi âm · đoạn {n} trên {total}",
+      "levelLabel": "Mức độ đọc",
+      "levelStandard": "Chuẩn",
+      "levelSimpler": "Dễ hơn",
+      "keyWords": "Từ khóa",
+      "keyWordsTitle": "Từ khóa trong bài học này",
+      "keyWordsIntro": "Mọi từ khóa trong bài đọc, kèm nghĩa của chúng.",
+      "warmUpEyebrow": "Trước khi đọc",
+      "warmUpHint": "Chọn một đáp án. Bạn có thể đổi sau.",
+      "warmUpHintWriting": "Viết nhanh một ý. Bạn có thể đổi sau.",
+      "warmUpChoices": "Ý đầu tiên của bạn",
+      "warmUpWritingLabel": "Ý đầu tiên của bạn",
+      "partLabel": "Đọc · đoạn {n} trên {total}",
+      "partSimpler": "Đọc · đoạn {n} trên {total} · Bản dễ hơn",
+      "nextPart": "Tiếp theo: Đoạn {n}",
+      "nextCheck": "Tiếp theo: Câu hỏi nhanh",
+      "backPart": "Đoạn {n}",
+      "glossaryHelper": "Chạm vào từ có màu để xem nghĩa của từ.",
+      "checkEyebrow": "Đọc · đoạn cuối",
+      "checkTitle": "Câu hỏi nhanh",
+      "checkRetryNote": "Bạn thử bao nhiêu lần cũng được",
+      "questionOf": "Câu hỏi {n} trên {total}",
+      "thinkEyebrow": "Câu hỏi {n} trên {total} · hãy suy nghĩ kĩ",
+      "thinkHelper": "Không có một đáp án đúng duy nhất.",
+      "thinkHelperOptional": "Câu này không bắt buộc. Không có một đáp án đúng duy nhất.",
+      "tryAgain": "Thử lại",
+      "checkHelper": "Bạn có thể quay lại các câu hỏi này bất cứ lúc nào."
+    },
+    "evidence": {
+      "fictionalBadge": {
+        "items": "Ví dụ hư cấu",
+        "timeline": "Dòng thời gian hư cấu",
+        "map": "Bản đồ hư cấu",
+        "cases": "Ví dụ hư cấu",
+        "sources": "Nguồn hư cấu",
+        "table": "Bảng hư cấu"
+      },
+      "sectionLabel": "Bằng chứng",
+      "eyebrow": "Quan sát kĩ",
+      "mapKey": "Chú giải bản đồ",
+      "places": "Địa điểm",
+      "tableLabel": "Bảng: {title}"
+    },
+    "visual": {
+      "seeBigger": "Xem lớn hơn",
+      "close": "Đóng",
+      "title": {
+        "map": "Bản đồ",
+        "timeline": "Dòng thời gian",
+        "diagram": "Sơ đồ",
+        "illustration": "Hình minh họa"
+      },
+      "scrollLabel": "{title}, bản lớn hơn",
+      "touchHintNarrow": "Kéo để xem toàn bộ. Chụm hai ngón tay để phóng to thêm.",
+      "touchHintWide": "Chụm hai ngón tay để phóng to."
+    },
+    "write": {
+      "helpLabel": "Trợ giúp khi viết",
+      "modeWrite": "Viết",
+      "modeStarters": "Câu mở đầu gợi ý",
+      "modePlan": "Lập kế hoạch trước",
+      "modeWriteShort": "Viết",
+      "modeStartersShort": "Gợi ý",
+      "modePlanShort": "Kế hoạch",
+      "evidenceToggle": "Xem lại bằng chứng",
+      "mapToggle": "Xem lại bản đồ",
+      "startersTitle": "Chạm vào một câu mở đầu để thêm nó vào bài viết của bạn",
+      "startersTitleShort": "Chạm vào một gợi ý để thêm",
+      "planTitle": "Lập kế hoạch cho các ý của bạn ở đây, rồi viết câu trả lời bên dưới",
+      "answerLabel": "Câu trả lời của bạn",
+      "helperSaving": "Viết 4 đến 6 câu là đủ. Chính tả không quan trọng ở đây. Bài viết được lưu trên thiết bị này khi bạn gõ.",
+      "helperLookAround": "Viết 4 đến 6 câu là đủ. Chính tả không quan trọng ở đây. Không có gì được lưu khi bạn xem qua.",
+      "helperNoLearner": "Viết 4 đến 6 câu là đủ. Chính tả không quan trọng ở đây. Chưa có gì được lưu cho đến khi bạn chọn người đang học.",
+      "helperSavingSayIt": "Viết 4 đến 6 câu là đủ. Chính tả không quan trọng ở đây. Chạm vào “Nói để gõ” nếu bạn muốn nói thay vì gõ. Bài viết được lưu trên thiết bị này khi bạn gõ.",
+      "helperLookAroundSayIt": "Viết 4 đến 6 câu là đủ. Chính tả không quan trọng ở đây. Chạm vào “Nói để gõ” nếu bạn muốn nói thay vì gõ. Không có gì được lưu khi bạn xem qua.",
+      "helperNoLearnerSayIt": "Viết 4 đến 6 câu là đủ. Chính tả không quan trọng ở đây. Chạm vào “Nói để gõ” nếu bạn muốn nói thay vì gõ. Chưa có gì được lưu cho đến khi bạn chọn người đang học.",
+      "selfCheckTitle": "Kiểm tra bài của bạn",
+      "seeExample": "Xem câu trả lời mẫu",
+      "compareExample": "So sánh với câu trả lời mẫu",
+      "exampleEyebrow": "Câu trả lời mẫu",
+      "exampleNote": "Đây chỉ là một cách trả lời. Câu trả lời của bạn có thể khác.",
+      "tip": "Bị kẹt? Chạm vào một câu mở đầu gợi ý, rồi điền vào chỗ trống."
+    },
+    "sayIt": {
+      "listening": "Đang nghe. Bạn nói chậm thôi. Lời bạn nói sẽ hiện trong ô, và sau đó bạn có thể sửa.",
+      "micBlocked": "“Nói để gõ” cần dùng micrô. Bạn có thể cho phép trong phần cài đặt của trình duyệt, hoặc gõ phím thay thế.",
+      "noMic": "Không tìm thấy micrô. Bạn có thể gõ phím thay thế.",
+      "offline": "“Nói để gõ” cần có mạng trên thiết bị này. Bạn có thể gõ phím thay thế.",
+      "noSpeech": "Không nghe thấy gì. Chạm vào “Nói để gõ” để thử lại, hoặc gõ phím thay thế.",
+      "unavailable": "“Nói để gõ” hiện không hoạt động trên thiết bị này. Bạn có thể gõ phím thay thế."
+    },
+    "speak": {
+      "eyebrow": "Nói và nghe",
+      "task": "Hãy nói về những ý bạn rút ra từ bài học này. Bạn có thể nói với bạn học hoặc tự nói một mình.",
+      "taskWithRecorder": "Hãy nói về những ý bạn rút ra từ bài học này. Bạn có thể nói với bạn học hoặc tự nói một mình. Nếu muốn, bạn có thể ghi âm giọng của mình. Bản ghi âm chỉ nằm trên thiết bị này.",
+      "partnerTitle": "Với bạn học",
+      "soloTitle": "Một mình",
+      "practisedLegend": "Bạn đã luyện tập bằng cách nào?",
+      "practisedHelp": "Chọn một cách. Cách luyện tập nào cũng được tính.",
+      "recorder": {
+        "title": "Ghi âm giọng của bạn (không bắt buộc)",
+        "task": "Nói câu trả lời của bạn, rồi nghe lại. Bạn thử lại bao nhiêu lần cũng được.",
+        "noteLookAround": "Bản ghi âm không được lưu khi bạn xem qua. Nó sẽ mất khi bạn rời khỏi trang này.",
+        "noteNoLearner": "Bản ghi âm không được lưu cho đến khi bạn chọn người đang học. Nó sẽ mất khi bạn rời khỏi trang này.",
+        "announceStarted": "Đang ghi âm.",
+        "announceSaved": "Đã dừng ghi âm. Bản ghi âm nằm lại trên thiết bị này.",
+        "announceStopped": "Đã dừng ghi âm.",
+        "announceDeleted": "Đã xóa bản ghi âm.",
+        "micBlocked": "Ghi âm cần dùng micrô. Bạn có thể cho phép trong phần cài đặt của trình duyệt, hoặc luyện tập mà không ghi âm.",
+        "noMic": "Không tìm thấy micrô. Bạn có thể luyện nói thành tiếng hoặc luyện cùng bạn học.",
+        "failed": "Không bắt đầu ghi âm được trên thiết bị này. Bạn có thể luyện nói thành tiếng hoặc luyện cùng bạn học.",
+        "playback": "Bản ghi âm này không phát được ở đây.",
+        "notSaved": "Không lưu được bản ghi âm này trên thiết bị. Bạn vẫn có thể nghe lại ngay bây giờ."
+      }
+    },
+    "watch": {
+      "eyebrow": "Xem · không bắt buộc",
+      "task": "Xem một video ngắn, hoặc đọc những ý tương tự. Cách nào cũng được tính.",
+      "slowTitle": "Mạng chậm?",
+      "slowBody": "Chọn Đọc thay thế. Có cùng những ý ấy và gần như không tốn dữ liệu.",
+      "saveDataTitle": "Video đang tắt để tiết kiệm dữ liệu.",
+      "timeoutTitle": "Video tải lâu quá.",
+      "offlineTitle": "Bạn đang không có mạng nên chưa tải được video.",
+      "unavailableTitle": "Video này hiện không phát được ở đây.",
+      "sameIdeas": "Đây là những ý tương tự để bạn đọc.",
+      "thinkFirst": "Nghĩ trước đã",
+      "beforePlaceholder": "Viết nhanh một ý, hoặc chỉ cần nghĩ về nó…",
+      "readInstead": "Đọc thay thế",
+      "closeVideo": "Đóng video",
+      "playerOpened": "Trình phát video đã mở. Dùng nút phát của nó để bắt đầu.",
+      "writtenPart": "Bản viết",
+      "keyPoints": "Ý chính",
+      "watchInstead": "Xem video thay vì đọc",
+      "tryAgain": "Thử xem lại video",
+      "afterEyebrow": "Sau khi xem hoặc đọc",
+      "afterPlaceholder": "Viết một hoặc hai câu…",
+      "helper": "Xem video là không bắt buộc. Bạn có thể bỏ qua bước này.",
+      "forTeachers": "Dành cho giáo viên",
+      "videoInEnglish": "Video này bằng tiếng Anh. Đọc thay thế có cùng những ý ấy bằng tiếng Việt."
+    },
+    "sources": {
+      "title": "Nguồn",
+      "intro": "Bài học này được viết bằng lời của chính Thinkerwell. Đây là các trang web mà bài học dựa vào. Chúng mở trong một thẻ mới, bằng tiếng Anh."
+    },
+    "reflect": {
+      "eyebrow": "Suy ngẫm",
+      "task": "Hãy dành một chút thời gian nghĩ về những gì bạn đã học hôm nay. Chỉ cần trả lời câu hỏi đầu tiên.",
+      "journalNote": "Câu trả lời của bạn được lưu vào nhật ký trên thiết bị này. Chỉ những người dùng thiết bị này mới xem được.",
+      "lookAroundNote": "Bạn đang xem qua, nên câu trả lời của bạn không được lưu.",
+      "noLearnerNote": "Câu trả lời của bạn chưa được lưu. Chọn người đang học để giữ chúng trong nhật ký.",
+      "finishHelper": "Trả lời câu hỏi đầu tiên để hoàn thành bài."
+    },
+    "complete": {
+      "eyebrow": "Hoàn thành Bài {number}",
+      "title": "Bạn đã hoàn thành Bài {number}.",
+      "summary": "{title} {message}",
+      "partwayEyebrow": "Bài {number}",
+      "partwayTitle": "Bạn đang học dở Bài {number}.",
+      "partwayBody": "Đến giờ bạn đã làm xong {done} trên {total} bước. Trả lời câu hỏi Suy ngẫm đầu tiên để hoàn thành bài. Không có gì bị khóa, nên bạn có thể mở bất kì bước nào.",
+      "partwayCta": "Chuyển sang {stage}",
+      "badgeProgress": {
+        "other": "{title} · đã xong {completed} trên {count} bài học"
+      },
+      "badgeSection": "Phần {number} · {title}",
+      "savedBoth": "Bài viết và phần suy ngẫm của bạn đã được lưu trong nhật ký.",
+      "savedWriting": "Bài viết của bạn đã được lưu trong nhật ký.",
+      "savedReflection": "Phần suy ngẫm của bạn đã được lưu trong nhật ký.",
+      "guestNote": "Lần xem này không có gì từ bài học được lưu. Để giữ bài làm của bạn, hãy chọn người đang học ở trang chủ.",
+      "upNext": "Tiếp theo",
+      "sectionCheckTitle": "Ôn tập phần: {title}",
+      "sectionCheckQuestion": "Gồm Bài {first}–{last}. Bạn làm lúc nào cũng được, bao nhiêu lần cũng được.",
+      "backToCourse": "Quay lại khóa học",
+      "openJournal": "Mở nhật ký của mình"
+    }
+  },
+  "pages": {
+    "home": {
+      "title": "Hôm nay ai học?",
+      "subtitle": "Chạm vào tên bạn để học tiếp từ chỗ đã dừng.",
+      "onThisDevice": "Trên thiết bị này",
+      "hero": {
+        "tagline": "Khám phá thế giới của bạn.",
+        "description": "Học khoa học xã hội miễn phí cho thanh thiếu niên khắp Đông Nam Á, nhất là các bạn gặp rào cản trong việc học. Khám phá lịch sử, địa lí, văn hóa và đời sống công dân theo nhịp của riêng bạn.",
+        "stagesLabel": "Bài học nào cũng có năm bước",
+        "footnote": "{lessons} bài học · {sections} phần · không cần tài khoản"
+      },
+      "lookAround": "Chỉ xem qua (không lưu gì cả)",
+      "lookAroundNote": "Bài làm chỉ được lưu trên thiết bị này. Không mật khẩu, không ảnh.",
+      "newLearnerTile": "Mình mới đến đây",
+      "tileMeta": "Đến Bài {number}",
+      "tileMetaNone": "Chưa bắt đầu",
+      "tileAdded": "Thêm ngày {date}",
+      "tileMetaAdded": "{meta} · thêm ngày {date}",
+      "newLearner": {
+        "back": "Quay lại",
+        "eyebrow": "Chào mừng",
+        "title": "Tên bạn là gì?",
+        "nameLabel": "Tên hoặc biệt danh",
+        "nameHelper": "Không cần ghi họ.",
+        "nameRequired": "Nhập tên hoặc biệt danh của bạn.",
+        "nameTooLong": "Tối đa khoảng 30 chữ cái.",
+        "colourLabel": "Chọn màu của bạn",
+        "colour": {
+          "lemon": "Vàng",
+          "history": "Cát",
+          "geography": "Xanh lá",
+          "civics": "Xanh dương",
+          "paper": "Trắng"
+        },
+        "classCodeLabel": "Mã lớp",
+        "classCodeHelper": "Thầy cô có thể đưa mã cho bạn.",
+        "classCodePlaceholder": "Ví dụ HLP-07",
+        "classCodeInvalid": "Chỉ dùng chữ cái, số và dấu gạch nối, như HLP-07.",
+        "submit": "Bắt đầu Bài 1",
+        "submitError": "Chưa lưu được. Thử lại.",
+        "startsWith": "Bạn sẽ bắt đầu với",
+        "startsWithLesson": "Bài {number}: {title}",
+        "startsWithNote": "Sau này bạn có thể mở bất kỳ bài học nào từ trang khóa học.",
+        "privacyNote": "Bài làm của bạn chỉ nằm trên thiết bị này.",
+        "languageLabel": "Ngôn ngữ của bạn",
+        "languageHelper": "Nút và hướng dẫn hiện bằng ngôn ngữ này. Với tiếng Việt và tiếng Indonesia, bài học cũng hiện bằng ngôn ngữ đó. Với các ngôn ngữ khác, bài học vẫn bằng tiếng Anh để bạn luyện tập."
+      },
+      "remove": {
+        "action": "Xóa",
+        "label": "Xóa {name}",
+        "confirmTitle": "Xóa {name}?",
+        "confirmBody": "Việc này sẽ xóa bài làm, nhật ký, điểm ôn tập phần và các bản ghi âm của bạn ấy khỏi thiết bị này. Không thể hoàn tác.",
+        "confirm": "Xóa {name}",
+        "cancel": "Giữ {name}",
+        "error": "Chưa được. Thử lại."
+      },
+      "noStorage": {
+        "title": "Thiết bị này không lưu được bài làm của bạn",
+        "body": "Trình duyệt này không lưu được bài làm trên thiết bị. Điều này hay xảy ra trong cửa sổ ẩn danh. Bạn vẫn xem qua được, nhưng mọi thứ bạn làm sẽ không được lưu.",
+        "cta": "Chỉ xem qua"
+      },
+      "guest": {
+        "title": "Khám phá khóa học",
+        "body": "Mở bất kỳ bài học nào để xem cách học."
+      },
+      "dashboard": {
+        "greeting": "Chào {name}",
+        "summaryNone": "Bạn chưa bắt đầu bài học nào. Tiếp theo là Bài {number}.",
+        "summaryInProgress": {
+          "other": "Bạn đã hoàn thành {count} bài học. Tiếp theo là Bài {number}."
+        },
+        "summaryDone": "Bạn đã hoàn thành mọi bài học. Giỏi lắm.",
+        "startHere": "Bắt đầu từ đây",
+        "startCta": "Bắt đầu",
+        "continueEyebrow": "Học tiếp từ chỗ bạn đã dừng",
+        "upNext": "Tiếp theo",
+        "finishedTitle": "Bạn đã hoàn thành khóa học",
+        "finishedBody": "Bạn có thể quay lại bất kỳ bài học nào, hoặc làm lại các phần ôn tập.",
+        "finishedCta": "Xem khóa học",
+        "offlineBadge": "Cả {count} bài học dùng được khi không có mạng",
+        "offlinePreparingBadge": "Đang lưu bài học để dùng khi không có mạng",
+        "savedBadge": "Đã lưu trên thiết bị này",
+        "yourCourse": "Khóa học của bạn",
+        "seeAll": "Xem cả {count} bài học",
+        "youAreHere": "Bạn đang ở đây",
+        "sectionCheckReady": "Phần ôn tập đã sẵn sàng",
+        "sectionCheckBody": {
+          "other": "Bạn đã học hết {count} bài học. Thử {questions} câu hỏi để xem bạn nhớ được gì. Bạn làm bao nhiêu lần cũng được."
+        },
+        "startCheck": "Bắt đầu ôn tập",
+        "fromJournal": "Từ nhật ký của bạn",
+        "openJournal": "Mở nhật ký của mình",
+        "noJournalYet": "Chưa lưu gì. Bài viết và phần suy ngẫm của bạn sẽ hiện ở đây khi bạn bắt đầu.",
+        "latestEntry": "{stage} · Bài {number}",
+        "languageTitle": "Ngôn ngữ của bạn",
+        "languageHelp": "Nút và hướng dẫn hiện bằng ngôn ngữ này. Với tiếng Việt và tiếng Indonesia, bài học cũng hiện bằng ngôn ngữ đó. Với các ngôn ngữ khác, bài học vẫn bằng tiếng Anh để bạn luyện tập.",
+        "languageSaveFailed": "Chưa lưu được. Thử lại."
+      }
+    },
+    "course": {
+      "title": "Khám phá thế giới của chúng ta",
+      "eyebrow": "Khóa học",
+      "description": "Tìm hiểu cách con người, địa điểm, cộng đồng và các quyết định định hình thế giới quanh ta.",
+      "lessonsBadge": {
+        "other": "{count} bài học"
+      },
+      "checksBadge": {
+        "other": "{count} phần ôn tập"
+      },
+      "timeBadge": "Khoảng {min}–{max} phút mỗi bài",
+      "sectionsNav": "Các phần",
+      "nothingLocked": "Không có gì bị khóa. Bạn có thể bắt đầu bất kỳ bài nào, theo thứ tự nào cũng được. Các con số gợi ý một lộ trình hay.",
+      "guestNote": "Bạn đang xem qua nên tiến độ không hiện.",
+      "noLearnerNote": "Chọn ai đang học để xem tiến độ của bạn.",
+      "lessonLabel": "Bài {number} · {section}",
+      "sidebarCount": "{completed} trên {total}",
+      "numberRange": "{first}–{last}",
+      "showLessons": "Hiện {count} bài học",
+      "hideLessons": "Ẩn các bài học",
+      "sectionCheckRowTitle": "Ôn tập phần: {title}",
+      "sectionCheckQuestion": "Gồm Bài {range}. Làm lúc nào cũng được, bao nhiêu lần cũng được.",
+      "allDoneCheckReady": "Đã xong cả {count} bài học. Phần ôn tập đã sẵn sàng.",
+      "lessonsRange": "Bài {range}"
+    },
+    "lesson": {
+      "title": "Bài {number}: {stage}"
+    },
+    "sectionCheck": {
+      "title": "Ôn tập phần: {section}",
+      "eyebrow": "Ôn tập phần",
+      "introTitle": "Bạn nhớ gì từ {title}?",
+      "factQuestions": "{count} câu hỏi về Bài {range}",
+      "factTime": "Không giới hạn thời gian. Khoảng {minutes} phút.",
+      "factRetry": "Làm lại bao nhiêu lần cũng được",
+      "factPrivate": "Điểm của bạn chỉ nằm trên thiết bị này",
+      "factGuest": "Khi bạn xem qua, không có gì được lưu",
+      "tip": "Chưa chắc? Cứ chọn đáp án bạn thấy hợp lý nhất. Sau mỗi câu, bạn sẽ thấy vì sao đáp án đó đúng.",
+      "start": "Bắt đầu ôn tập",
+      "lookAtLessons": "Xem các bài học trước đã",
+      "questionOf": "Câu {n} trên {total}",
+      "answeredCount": "Đã trả lời {count} câu",
+      "stopCheck": "Dừng ôn tập",
+      "questionEyebrow": "Câu {n} · {skill}",
+      "skill": {
+        "vocabulary": "Từ ngữ và nghĩa",
+        "understand": "Ý chính",
+        "evidence": "Dùng bằng chứng",
+        "apply": "Dùng ý tưởng vào ví dụ mới"
+      },
+      "fromLesson": "Từ Bài {number}: {question}",
+      "chooseHelper": "Chọn một đáp án để tiếp tục.",
+      "nextQuestion": "Câu tiếp theo",
+      "seeResults": "Xem kết quả của bạn",
+      "resultsEyebrow": "Ôn tập phần · {title}",
+      "scoreHeading": "{score} trên {total}",
+      "retry": "Làm lại phần ôn tập",
+      "backToCourse": "Quay lại khóa học",
+      "savedNote": "Điểm của bạn được lưu trên thiết bị này.",
+      "notSavedNote": "Khi bạn xem qua, không có gì được lưu.",
+      "skillsTitle": "Kết quả của bạn theo từng kỹ năng",
+      "reviewTitle": "Nên xem lại",
+      "reviewQuestion": "Câu {n}: {question}",
+      "reviewLesson": "Bài {number} · {question}",
+      "noQuiz": "Phần ôn tập này chưa sẵn sàng."
+    },
+    "journal": {
+      "title": "Nhật ký của mình",
+      "subtitle": "Mọi điều bạn đã viết trong các bài học, mới nhất ở trên cùng.",
+      "filterLabel": "Hiện",
+      "filterAll": "Tất cả",
+      "filterWriting": "Bài viết",
+      "filterReflections": "Suy ngẫm",
+      "lessonCount": {
+        "other": "{count} bài học"
+      },
+      "pieceCount": {
+        "other": "{count} bài viết từ {lessons}"
+      },
+      "groupLabel": "Bài {number} · {title}",
+      "privacyNote": "Nhật ký của bạn nằm trên thiết bị này. Ai chạm vào tên bạn ở đây cũng đọc được, nên hãy cân nhắc điều bạn viết. Muốn giữ một bản, nhờ thầy cô giúp bạn in ra.",
+      "empty": "Chưa lưu gì. Viết hoặc suy ngẫm trong một bài học, rồi nó sẽ hiện ở đây.",
+      "emptyFiltered": "Chưa lưu gì trong mục này. Chọn Tất cả để xem mọi điều bạn đã viết.",
+      "lookAroundNote": "Bạn đang xem qua nên không có gì ở đây được lưu. Chọn ai đang học để giữ một cuốn nhật ký.",
+      "noLearnerNote": "Chọn ai đang học để xem nhật ký của bạn ấy.",
+      "savedToday": "Đã lưu hôm nay",
+      "savedYesterday": "Đã lưu hôm qua",
+      "cancelEdit": "Hủy",
+      "saveEdit": "Lưu"
+    },
+    "educators": {
+      "title": "Dành cho nhà giáo dục",
+      "eyebrow": "Dành cho giáo viên và tình nguyện viên",
+      "heroTitle": "Dạy một bài Thinkerwell cho nhóm của bạn",
+      "heroBody": "Dùng các bài học khoa học xã hội miễn phí của Thinkerwell với nhóm của bạn. Bạn có thể dạy trên một màn hình chung, theo cặp hoặc trên từng thiết bị riêng, hoặc in bài học ra giấy. Người học không cần tạo tài khoản.",
+      "pilotTitle": "Bắt đầu một đợt thí điểm",
+      "pilotIntro": "Dành cho tổ chức muốn dùng thử Thinkerwell với một nhóm người học. Mọi thứ ở đây đều in được trên giấy A4, đen trắng.",
+      "pilotAboutTitle": "Dành cho tổ chức",
+      "pilotAboutBody": "Một đợt thí điểm gồm những gì, chúng tôi đề nghị gì, và quyền riêng tư của người học được giữ như thế nào.",
+      "pilotAboutCta": "Đọc về thí điểm",
+      "pilotConsentTitle": "Phiếu đồng ý",
+      "pilotConsentBody": "Một phiếu để phụ huynh hoặc người giám hộ của từng người học ký, và một trang cho câu trả lời của chính người học, có in tên tổ chức của bạn.",
+      "pilotConsentCta": "In phiếu đồng ý",
+      "pilotSheetTitle": "Phiếu thông tin",
+      "pilotSheetBody": "Đợt thí điểm và nghiên cứu gồm những gì, để mỗi gia đình giữ lại, có in tên tổ chức của bạn.",
+      "pilotSheetCta": "In phiếu thông tin",
+      "pilotCodesTitle": "Thẻ mã",
+      "pilotCodesBody": "Một thẻ có mã cho mỗi người học dùng thay cho tên, và một danh sách để bạn giữ.",
+      "pilotCodesCta": "Tạo thẻ mã",
+      "previewLesson": "Xem trước một bài học",
+      "printLesson": "Xem một bài học trên giấy",
+      "needTitle": "Bạn cần gì",
+      "need1": "Một thiết bị cho mỗi 1 đến 3 người học, hoặc một màn hình lớn",
+      "need2": "Giấy và bút chì để lập kế hoạch",
+      "need3": "Khoảng {min}–{max} phút cho mỗi bài học",
+      "need4": "Internet cho lần truy cập đầu tiên và để xem video",
+      "settingsLink": "Cài đặt cho thiết bị này",
+      "howTitle": "Một buổi học diễn ra thế nào",
+      "step1Title": "Chọn một bài học",
+      "step1Body": "Các bài học có thể học theo thứ tự bất kỳ. Chọn bài phù hợp với nhóm của bạn, hoặc theo số thứ tự.",
+      "step2Title": "Làm năm bước",
+      "step2Body": "Đọc, Viết, Nói, Xem, Suy ngẫm. Ghép cặp người học ở bước Nói. Có thể bỏ qua bước Xem.",
+      "step3Title": "Chia sẻ và suy ngẫm",
+      "step3Body": "Mời hai hoặc ba người học chia sẻ câu trả lời của mình. Mọi người đều viết một phần suy ngẫm.",
+      "previewTitle": "Xem trước bất kỳ bài học nào",
+      "previewNote": "Xem trước không lưu bất cứ điều gì",
+      "previewIntro": "Mỗi bài học có một hướng dẫn giáo viên với kế hoạch buổi học và đáp án, và mỗi bài ôn tập phần có một bộ đáp án.",
+      "sectionLabel": "Phần",
+      "previewCta": "Xem trước",
+      "teacherGuide": "Hướng dẫn giáo viên",
+      "teacherGuideLabel": "Hướng dẫn giáo viên cho Bài {number}",
+      "answerKey": "Đáp án",
+      "answerKeyLabel": "Đáp án cho bài ôn tập phần {section}",
+      "codesTag": "Đối tác thí điểm",
+      "codesTitle": "Mã lớp thay cho tên",
+      "codesBody": "Trong đợt thí điểm, mỗi người học có thể nhận một mã như HLP-07. Sau này, các mã sẽ giúp chúng tôi xem cả nhóm đang học thế nào mà không cần tên nào. Bạn giữ danh sách ghép tên với mã.",
+      "feedbackTitle": "Cho chúng tôi biết cần sửa gì",
+      "feedbackBody": "Có điều gì gây khó hiểu, quá khó hoặc bị lỗi? Hãy cho chúng tôi biết qua {email}. Đừng gửi tên hay bài viết của người học.",
+      "toolsIntro": "Dành cho ngày bạn bắt đầu và mọi ngày sau đó. Mọi thứ ở đây đều chỉ nằm trên thiết bị này.",
+      "followTitle": "Theo dõi nhóm của bạn",
+      "setupTitle": "Thiết lập thiết bị này",
+      "setupBody": "Một danh sách kiểm tra cho từng máy tính xách tay hoặc máy tính bảng. In ra để đánh dấu trên giấy.",
+      "setupCta": "Mở danh sách kiểm tra",
+      "classTitle": "Lớp học trên thiết bị này",
+      "classBody": "Các bài đã hoàn thành và mỗi người học đang ở đâu. Không có điểm.",
+      "classCta": "Xem lớp học",
+      "certificatesTitle": "Giấy chứng nhận",
+      "certificatesBody": "Mọi giấy chứng nhận đã đạt được trên thiết bị này, mỗi giấy một trang.",
+      "certificatesCta": "In tất cả giấy chứng nhận"
+    },
+    "organisations": {
+      "title": "Dành cho tổ chức",
+      "eyebrow": "Bắt đầu một đợt thí điểm",
+      "intro": "Thinkerwell là một nền tảng do học sinh dẫn dắt, nỗ lực mở rộng cơ hội tiếp cận việc học khoa học xã hội kỹ thuật số miễn phí cho thanh thiếu niên thiếu điều kiện học tập trên khắp Đông Nam Á. Chúng tôi đang chuẩn bị thí điểm khóa học này cùng các tổ chức giáo dục. Trang này giải thích một đợt thí điểm gồm những gì.",
+      "honesty": "Thinkerwell là một nền tảng do học sinh dẫn dắt. Đây không phải là tổ chức từ thiện đã đăng ký, cũng không phải tổ chức phi lợi nhuận đã đăng ký.",
+      "whatTitle": "Thinkerwell là gì",
+      "whatBody": "Một khóa học, Khám phá thế giới của chúng ta: {lessons} bài học về lịch sử, địa lí, văn hóa và đời sống công dân, dành cho người học khoảng 10 đến 17 tuổi. Mỗi bài học có năm bước: đọc, viết, nói, xem và suy ngẫm. Khóa học chạy trên trình duyệt web, trên máy tính xách tay và máy tính bảng dùng chung, bằng tiếng Anh hoặc tiếng Indonesia. Các bài học dùng được khi không có mạng sau lần truy cập đầu tiên; các video không bắt buộc thì cần internet.",
+      "getTitle": "Bạn nhận được gì",
+      "get1": "Toàn bộ khóa học, miễn phí. Không tài khoản, không quảng cáo, và không có gì bị khóa.",
+      "get2": "Một hướng dẫn giáo viên cho mỗi bài học, đáp án cho các bài ôn tập phần, và mọi bài học đều sẵn sàng để in.",
+      "get3": "Những thứ bạn cần để bắt đầu: phiếu thông tin và phiếu đồng ý cho các gia đình, thẻ mã cho người học và danh sách kiểm tra cho từng thiết bị.",
+      "get4": "Giải đáp thắc mắc của bạn qua email, và điều chỉnh khóa học dựa trên những gì bạn cho chúng tôi biết.",
+      "askTitle": "Chúng tôi đề nghị gì",
+      "ask1": "Một người liên hệ tại tổ chức của bạn.",
+      "ask2": "Một số máy tính xách tay hoặc máy tính bảng có trình duyệt web. Người học có thể dùng chung.",
+      "ask3": "Vài buổi mỗi tuần trong 4 đến 6 tuần. Một bài học mất khoảng {min}–{max} phút.",
+      "ask4": "Phản hồi thẳng thắn: điều gì đã hiệu quả, điều gì chưa, và điều gì khiến người học bối rối.",
+      "privacyTitle": "Quyền riêng tư",
+      "privacy1": "Các nhóm thí điểm có thể dùng mã thay cho tên. Mỗi người học nhận một thẻ mã, như HLP-01, và nhập mã đó làm tên. Chỉ bạn giữ danh sách ghép mã với tên.",
+      "privacy2": "Không tài khoản, không địa chỉ email và không quảng cáo. Bài làm của người học ở lại trên thiết bị họ dùng, và bản ghi âm giọng nói không bao giờ rời khỏi thiết bị.",
+      "privacy3": "Sự đồng ý của phụ huynh. Trước khi bất kỳ dữ liệu học tập nào được chia sẻ với Thinkerwell, phụ huynh hoặc người giám hộ ký phiếu đồng ý, và người học cũng đồng ý. Nghiên cứu sẽ chỉ dùng dữ liệu gắn với một mã, không bao giờ gắn với tên: những câu hỏi ngắn và vài câu viết trong buổi học đầu tiên và cuối cùng, và, trong mọi buổi học, cách người học dùng Thinkerwell: thời gian, bài học và các bước, câu trả lời, sự trợ giúp họ dùng, video và số từ, không bao giờ là nội dung họ viết.",
+      "privacyNow": "Hiện nay, bài làm và tiến độ của người học không được gửi đến Thinkerwell. Chuyển giọng nói thành văn bản trực tuyến tắt trừ khi nhân viên của bạn bật; khi bật, những gì người học nói sẽ được gửi đến dịch vụ của nhà sản xuất trình duyệt. Chúng tôi sẽ báo cho bạn trước khi có bất kỳ thay đổi nào khác.",
+      "privacy4": "Video không bắt buộc. Video phát từ YouTube, chỉ khi người học bấm phát, và mỗi video đều có bản viết.",
+      "startTitle": "Chuẩn bị",
+      "startBody": "In những thứ bạn cần, và thiết lập từng thiết bị trước buổi học đầu tiên.",
+      "contactTitle": "Liên hệ với chúng tôi",
+      "contactBody": "Gửi email cho chúng tôi để bắt đầu một đợt thí điểm hoặc đặt câu hỏi. Cho chúng tôi biết tên tổ chức của bạn, bạn ở đâu, và khoảng bao nhiêu người học sẽ tham gia."
+    },
+    "consentForm": {
+      "title": "Phiếu đồng ý",
+      "intro": "In một phiếu cho mỗi người học trước khi đợt thí điểm bắt đầu: một trang cho phụ huynh hoặc người giám hộ, và một trang cho người học. Gõ tên tổ chức của bạn để in lên phiếu, hoặc để trống để viết tay.",
+      "orgLabel": "Tên tổ chức của bạn",
+      "orgHelper": "Chỉ dùng trên phiếu này và không được lưu.",
+      "staffTitle": "Dành cho nhân viên: đây là mẫu",
+      "staffBody": "Đây không phải là tư vấn pháp lý. Trước khi dùng, hãy đối chiếu với quy định riêng của tổ chức bạn và luật bảo vệ dữ liệu nơi bạn làm việc, rồi sửa những chỗ không phù hợp. Các phiếu đã ký có ghi tên: hãy giữ cẩn thận. Thinkerwell không bao giờ nhìn thấy chúng.",
+      "staffUse": "Đưa cho mỗi gia đình phiếu thông tin kèm phiếu đồng ý. Nếu phụ huynh hoặc người giám hộ không biết đọc, hãy đọc to cả hai bằng ngôn ngữ của họ, và ký làm người làm chứng ở trang 2. Người học từ 18 tuổi trở lên tự ký. Phiếu này không bao gồm việc chuyển giọng nói thành văn bản trực tuyến, nên hãy để tính năng đó ở trạng thái tắt trong Cài đặt.",
+      "orgBlank": "tên tổ chức",
+      "pageOf": "Trang {page} trên {count}",
+      "formTitle": "Tham gia đợt thí điểm Thinkerwell",
+      "formFor": "Dành cho phụ huynh hoặc người giám hộ",
+      "formIntro": "{organisation} đang thử dùng Thinkerwell, một khóa học trực tuyến miễn phí về lịch sử, địa lí, văn hóa và đời sống công dân dành cho thanh thiếu niên khoảng 10 đến 17 tuổi. Lớp của con bạn sẽ dùng Thinkerwell vài buổi mỗi tuần trong 4 đến 6 tuần. Ngoài ra còn có một nghiên cứu nhỏ để xem Thinkerwell hiệu quả đến đâu.",
+      "studyTitle": "Nghiên cứu thí điểm",
+      "choiceTitle": "Quyền lựa chọn là của bạn",
+      "choiceBody": "Nếu bạn trả lời Không cho một trong hai câu hỏi dưới đây, điều đó sẽ không ảnh hưởng đến bất kỳ điều gì khác mà con bạn làm tại {organisation}. Nếu bạn trả lời Không với nghiên cứu, con bạn vẫn có thể dùng Thinkerwell trong lớp; chỉ là câu trả lời của con không được dùng. Bạn có thể đổi ý bất cứ lúc nào, kể cả sau khi đợt thí điểm kết thúc: hãy báo cho {organisation}, và câu trả lời của con bạn sẽ bị xóa. Con bạn cũng có thể nói không, và lời từ chối của con được tính.",
+      "questions": "Có câu hỏi? Hãy hỏi {organisation}.",
+      "questionsEmail": "Có câu hỏi? Hãy hỏi {organisation}, hoặc gửi email cho Thinkerwell theo địa chỉ {email}.",
+      "honesty": "Thinkerwell là một nền tảng do học sinh dẫn dắt, không phải tổ chức từ thiện đã đăng ký.",
+      "answerTitle": "Câu trả lời của bạn",
+      "classQuestion": "Con tôi có thể dùng Thinkerwell trong lớp tại {organisation}.",
+      "studyQuestion": "Con tôi có thể tham gia nghiên cứu thí điểm. Câu trả lời của con được dùng kèm một mã, không bao giờ kèm tên.",
+      "yes": "Có",
+      "no": "Không",
+      "childName": "Tên của con",
+      "pilotCode": "Mã thí điểm (tổ chức điền): {code}",
+      "parentName": "Tên phụ huynh hoặc người giám hộ",
+      "signature": "Chữ ký hoặc dấu vân tay",
+      "date": "Ngày",
+      "keep": "{organisation} giữ phiếu này ở nơi có khóa. Thinkerwell không bao giờ nhìn thấy phiếu này.",
+      "learnerTitle": "Câu trả lời của chính người học",
+      "learnerFor": "Dành cho nhân viên điền",
+      "learnerIntro": "Đọc to đoạn này cho người học nghe, bằng ngôn ngữ của người học:",
+      "learnerScript": "Chúng mình đang thử một trang web học tập mới tên là Thinkerwell. Trong bài học đầu tiên và bài học cuối cùng, bạn sẽ trả lời một số câu hỏi và viết vài câu. Đây không phải là bài kiểm tra, và không ai bị chấm điểm. Chúng mình dùng một mã số, không dùng tên của bạn. Bạn có thể nói không, hoặc dừng lại bất cứ lúc nào, và bạn vẫn có thể dùng Thinkerwell và đến lớp như bình thường. Bạn có muốn câu trả lời của mình là một phần của nghiên cứu không?",
+      "learnerAnswer": "Câu trả lời của người học",
+      "staffInitials": "Chữ ký tắt của nhân viên",
+      "learnerWins": "Nếu phụ huynh đồng ý mà người học trả lời không, thì câu trả lời không của người học được làm theo.",
+      "witnessTitle": "Nếu phụ huynh hoặc người giám hộ không biết đọc hoặc viết",
+      "witnessBody": "Tôi đã đọc to phiếu thông tin và phiếu này bằng {language} (ngôn ngữ). Phụ huynh hoặc người giám hộ đã hiểu và đưa ra các câu trả lời ở trang 1.",
+      "languageBlank": "ngôn ngữ",
+      "codeBlank": "mã thí điểm",
+      "staffName": "Tên nhân viên",
+      "staffSignature": "Chữ ký của nhân viên"
+    },
+    "pilotStudy": {
+      "intro": "Nếu bạn đồng ý cho con tham gia nghiên cứu, thì trong buổi học đầu tiên và buổi học cuối cùng, con bạn:",
+      "questions": "trả lời 16 câu hỏi ngắn (khoảng 15 phút mỗi lần)",
+      "writing": "viết vài câu về một thị trấn hư cấu, trên giấy (khoảng 8 phút)",
+      "faces": "chọn một khuôn mặt cho mỗi câu trong 5 câu, ví dụ “Mình có thể dùng bản đồ để tìm thông tin” (khoảng 1 phút)",
+      "site": "Trong mọi buổi học, Thinkerwell cũng ghi lại cách con bạn sử dụng: dùng bao lâu, mở và hoàn thành những bài học và bước nào, các câu trả lời cho câu hỏi nhanh và ôn tập phần, có dùng bản đọc dễ hơn hoặc nghe đọc to hay không, có xem video (và xem bao nhiêu) hay đọc thay thế, và con viết bao nhiêu từ, không bao giờ ghi lại chính những từ ấy.",
+      "notTest": "Không điều nào trong số này là bài kiểm tra. Không có gì phụ thuộc vào các câu trả lời.",
+      "keepTitle": "Những gì chúng tôi giữ lại, và những gì không",
+      "keepCode": "Câu trả lời của con bạn được gắn với một mã, như {code}, không bao giờ gắn với tên của con.",
+      "keepList": "{organisation} giữ danh sách tên và mã trên giấy. Thinkerwell không bao giờ nhìn thấy danh sách này.",
+      "keepNeverAsk": "Thinkerwell không bao giờ hỏi về gia đình, hành trình, đất nước quê hương, tôn giáo hoặc dân tộc.",
+      "keepNoDocuments": "Thinkerwell không bao giờ yêu cầu số UNHCR hay bất kỳ giấy tờ nào.",
+      "keepNoPhotos": "Thinkerwell không bao giờ thu thập ảnh của con bạn, hay vị trí của con.",
+      "keepDevice": "Những gì con bạn viết và ghi âm trong các bài học vẫn nằm trên thiết bị con dùng.",
+      "keepGroup": "Chỉ nhóm Thinkerwell xem được các câu trả lời. {organisation} nhận kết quả của cả nhóm, không bao giờ nhận kết quả của riêng một em nào.",
+      "keepDelete": "Mọi thứ mà nghiên cứu lưu giữ sẽ bị xóa trong vòng 6 tháng sau khi đợt thí điểm kết thúc.",
+      "keepVideo": "Một số bài học có video YouTube không bắt buộc. Khi một video được phát, YouTube (thuộc sở hữu của Google) nhận được một số thông tin, chẳng hạn địa chỉ internet (IP) của thiết bị. Mọi video đều có bản viết: chọn “{readInstead}” thì không gửi gì đến YouTube."
+    },
+    "infoSheet": {
+      "title": "Phiếu thông tin",
+      "intro": "In một phiếu cho gia đình của mỗi người học, để đưa kèm phiếu đồng ý. Điền những gì bạn biết để in lên phiếu, hoặc để trống ô để viết tay.",
+      "fieldsTitle": "Trước khi in",
+      "fieldsHelper": "Chỉ dùng trên phiếu này và không được lưu.",
+      "startLabel": "Ngày bắt đầu",
+      "endLabel": "Ngày kết thúc",
+      "sessionsLabel": "Số buổi học",
+      "contactLabel": "Người liên hệ",
+      "staffBody": "Đây không phải là tư vấn pháp lý. Hãy đối chiếu với quy định riêng của tổ chức bạn, và sửa những chỗ không phù hợp. Nếu phụ huynh hoặc người giám hộ không biết đọc, hãy đọc to cho họ nghe bằng ngôn ngữ của họ.",
+      "startBlank": "ngày bắt đầu",
+      "endBlank": "ngày kết thúc",
+      "sessionsBlank": "số buổi học",
+      "contactBlank": "tên người liên hệ",
+      "sheetTitle": "Về đợt thí điểm Thinkerwell",
+      "sheetFor": "Dành cho phụ huynh hoặc người giám hộ giữ lại",
+      "whatTitle": "Thinkerwell là gì?",
+      "whatBody": "Thinkerwell là một trang web học tập miễn phí. Trang dạy lịch sử, bản đồ và địa điểm, các nền văn hóa, và cách các cộng đồng đưa ra quyết định. Người học đọc, viết, nói, xem video ngắn và suy ngẫm về những gì đã học, bằng tiếng Anh đơn giản hoặc tiếng Indonesia (Bahasa Indonesia). Trang do một nhóm nhỏ học sinh ở Singapore thực hiện.",
+      "happenTitle": "Điều gì sẽ diễn ra?",
+      "happenBody": "Từ {start} đến {end}, lớp của con bạn tại {organisation} sẽ dùng Thinkerwell trên máy tính bảng và máy tính xách tay của lớp, khoảng {sessions} buổi. Một giáo viên của {organisation} dẫn dắt mọi buổi học.",
+      "studyTitle": "Nghiên cứu thí điểm: bạn lựa chọn",
+      "choiceTitle": "Trả lời Có hoặc Không",
+      "choiceBody": "Quyền lựa chọn là của bạn, và bạn trả lời trên phiếu đồng ý. Nếu bạn trả lời Không với nghiên cứu, con bạn vẫn đến lớp và vẫn có thể dùng Thinkerwell. Chỉ là câu trả lời của con không được dùng trong nghiên cứu. Bạn có thể đổi ý bất cứ lúc nào, kể cả sau khi đợt thí điểm kết thúc. Hãy báo cho một giáo viên, và câu trả lời của con bạn sẽ bị xóa. Con bạn cũng có thể nói không, và lời từ chối của con được tính.",
+      "questionsTitle": "Câu hỏi",
+      "questions": "Hãy hỏi {contact} tại {organisation}.",
+      "questionsEmail": "Hãy hỏi {contact} tại {organisation}, hoặc viết thư cho Thinkerwell theo địa chỉ {email}.",
+      "runBy": "Thinkerwell do Justin Park và Nick Thiery điều hành. Đây là một nền tảng do học sinh dẫn dắt, không phải tổ chức từ thiện đã đăng ký."
+    },
+    "codeCards": {
+      "title": "Thẻ mã",
+      "intro": "Mỗi người học nhận một mã để nhập làm tên, nên tên thật của họ không bao giờ nằm trên thiết bị. Chọn một tiền tố ngắn cho nhóm của bạn và số người học. Bạn sẽ nhận các thẻ để cắt ra, và một danh sách để ghi tên.",
+      "prefixLabel": "Tiền tố",
+      "prefixHelper": "2 đến 5 chữ cái hoặc chữ số, ví dụ HLP.",
+      "prefixInvalid": "Dùng 2 đến 5 chữ cái hoặc chữ số.",
+      "countLabel": "Số người học",
+      "countHelper": "Từ 1 đến {max}.",
+      "countInvalid": "Chọn một số từ 1 đến {max}.",
+      "summary": "{count} thẻ, từ {first} đến {last}. In trên giấy A4 và cắt theo các đường nét đứt.",
+      "cardsTitle": "Các thẻ để cắt ra",
+      "cardLabel": "Mã Thinkerwell của bạn",
+      "cardHow": "Chạm vào “{tile}” và nhập mã này làm tên của bạn.",
+      "cardKeep": "Hãy giữ thẻ này.",
+      "listTitle": "Mã và tên",
+      "listIntro": "Ghi tên từng người học bên cạnh mã của họ. Giữ danh sách này cẩn thận cùng nhân viên của bạn. Đừng nhập tên vào Thinkerwell, và đừng gửi danh sách này cho bất kỳ ai.",
+      "listCode": "Mã",
+      "listName": "Tên"
+    },
+    "teacherTools": {
+      "back": "Quay lại trang dành cho nhà giáo dục",
+      "correctAnswer": "Đáp án đúng",
+      "why": "Vì sao:",
+      "feedback": "Phản hồi:",
+      "newTab": "(mở trong thẻ mới)"
+    },
+    "teacherGuide": {
+      "pageTitle": "Bài {number}: hướng dẫn giáo viên",
+      "eyebrow": "Hướng dẫn giáo viên · Bài {number}",
+      "intro": "Mọi thứ bạn cần để dạy bài học này, kèm đáp án. Trang này in được trên giấy A4, chữ đen trên nền trắng, không có menu.",
+      "previewLesson": "Xem trước bài học",
+      "learnerPrint": "In bài học cho người học",
+      "section": "Phần",
+      "sectionValue": "Phần {number}: {title}",
+      "essentialQuestion": "Câu hỏi cốt lõi",
+      "learningGoal": "Mục tiêu học tập",
+      "time": "Thời gian",
+      "beforeTitle": "Trước khi dạy",
+      "sensitiveTitle": "Chủ đề nhạy cảm: đọc trước giờ học",
+      "contentNotePointer": "Video có một ghi chú về nội dung. Đọc ghi chú trước giờ học: nó nằm cùng với video, ở bên dưới.",
+      "notesTitle": "Ghi chú khi dạy",
+      "planTitle": "Kế hoạch buổi học",
+      "planIntro": "Một kế hoạch gợi ý cho buổi học khoảng 45 phút. Hãy chỉnh cho phù hợp với nhóm của bạn.",
+      "planStep": "Bước",
+      "planDoTitle": "Việc cần làm",
+      "planColumn": "{minutes} phút",
+      "planTotal": "Tổng",
+      "planSkip": "Bỏ qua",
+      "planShorter": "Chỉ có 30 phút? Dùng cột 30 phút: bỏ qua bước Xem hoặc đọc bản thay thế, và bớt một ít thời gian ở các bước khác. Người học có thể mở bước Xem sau, vì không có gì bị khóa.",
+      "planSteps": {
+        "warmUp": "Khởi động",
+        "read": "Đọc từng đoạn",
+        "check": "Câu hỏi nhanh",
+        "write": "Viết",
+        "speak": "Nói",
+        "watch": "Xem hoặc đọc thay thế",
+        "reflect": "Suy ngẫm"
+      },
+      "planDo": {
+        "warmUp": "Hỏi câu hỏi khởi động. Câu trả lời nào cũng được: câu hỏi này giúp mọi người bắt đầu suy nghĩ.",
+        "read": {
+          "other": "Đọc {count} đoạn, từng đoạn một, ở bản Chuẩn hoặc bản Dễ hơn. Cùng xem bằng chứng và hình minh họa."
+        },
+        "check": {
+          "other": "Người học trả lời {count} câu hỏi nhanh, rồi cùng nói về các đáp án."
+        },
+        "write": "Người học lập kế hoạch và viết câu trả lời, rồi đánh dấu phần tự kiểm tra. Các câu mở đầu gợi ý sẽ giúp ích.",
+        "speak": "Người học nói câu trả lời của mình với một bạn học, hoặc tự luyện tập.",
+        "watch": "Cùng xem video, hoặc đọc bản viết thay thế.",
+        "reflect": "Mọi người trả lời câu hỏi suy ngẫm đầu tiên. Câu này hoàn thành bài học."
+      },
+      "keyWordsTitle": "Từ khóa",
+      "evidenceTitle": "Bằng chứng và hình minh họa",
+      "checkTitle": "Câu hỏi nhanh",
+      "checkIntro": "Người học thấy các lựa chọn theo thứ tự khác nhau, và có thể thử lại bao nhiêu lần tùy ý.",
+      "think": "Câu hỏi để suy nghĩ: không có một đáp án đúng duy nhất.",
+      "thinkOptional": "Câu hỏi để suy nghĩ, không bắt buộc: không có một đáp án đúng duy nhất.",
+      "writeTask": "Nhiệm vụ",
+      "selfCheck": "Tự kiểm tra",
+      "example": "Câu trả lời mẫu",
+      "exampleNote": "Đây là một cách trả lời. Câu trả lời của người học có thể khác.",
+      "discussTitle": "Gợi ý thảo luận",
+      "discussIntro": "Những câu hỏi từ bài học để cùng trò chuyện. Ai muốn bỏ qua thì cứ bỏ qua.",
+      "discussWarmUp": "Trước khi đọc: khởi động",
+      "discussChoices": "Các lựa chọn trên màn hình",
+      "discussThink": "Sau câu hỏi nhanh",
+      "discussReflect": "Ở cuối bài: Suy ngẫm",
+      "startHelp": "Gợi ý để bắt đầu:",
+      "reflectRequired": "Người học trả lời câu này để hoàn thành bài học.",
+      "videoTitle": "Xem hoặc đọc thay thế",
+      "videoName": "Video",
+      "videoChannel": "Kênh",
+      "videoLength": "Thời lượng",
+      "videoLengthUnknown": "Chưa rõ",
+      "videoLink": "Liên kết",
+      "videoOpen": "Mở trên YouTube",
+      "videoWhy": "Vì sao chọn video này",
+      "videoOffline": "Video cần internet. Bản viết (Đọc thay thế) dùng được khi không có mạng và có cùng các ý.",
+      "beforeVideo": "Trước khi xem video",
+      "afterVideo": "Sau khi xem video hoặc đọc",
+      "contentNote": "Ghi chú về nội dung",
+      "sourcesTitle": "Nguồn",
+      "sourcesIntro": "Bài học được viết bằng lời của chính Thinkerwell, dựa trên những nguồn này. Dùng chúng để kiểm tra một thông tin hoặc tìm hiểu thêm (các nguồn này bằng tiếng Anh)."
+    },
+    "answerKey": {
+      "title": "Đáp án: {section}",
+      "eyebrow": "Ôn tập phần {number}",
+      "intro": "Mọi câu hỏi trong phần ôn tập này, kèm đáp án. Trang in được trên khổ A4, chữ đen trên nền trắng, không có menu.",
+      "practice": "Phần ôn tập chỉ để luyện tập. Nó không bao giờ chặn người học: không giới hạn thời gian, người học làm lại bao nhiêu lần cũng được, và mọi bài học vẫn mở dù điểm thế nào.",
+      "order": "Người học thấy các lựa chọn theo thứ tự khác nhau, nên hãy nói về chính đáp án, đừng nói về vị trí của nó.",
+      "question": "Câu {n} · {skill}",
+      "fromLesson": "Từ Bài {number}: {title}"
+    },
+    "setup": {
+      "title": "Thiết lập thiết bị này",
+      "intro": "Làm các bước này một lần trên mỗi máy tính xách tay hoặc máy tính bảng. Mỗi bước cho biết đã làm xong trên thiết bị này chưa.",
+      "paperIntro": "Trên mỗi thiết bị, mở Thinkerwell, rồi chọn Dành cho nhà giáo dục, rồi Thiết lập thiết bị này. Đánh dấu từng bước khi đã xong.",
+      "device": "Thiết bị",
+      "date": "Ngày",
+      "stepsLabel": "Các bước",
+      "state": {
+        "done": "Đã xong",
+        "todo": "Chưa xong",
+        "inProgress": "Đang làm",
+        "checking": "Đang kiểm tra",
+        "notHere": "Không có trên trình duyệt này",
+        "notNeeded": "Không cần",
+        "optional": "Không bắt buộc"
+      },
+      "homeScreen": {
+        "title": "Thêm Thinkerwell vào màn hình chính",
+        "why": {
+          "other": "Khi đó Thinkerwell mở ra như một ứng dụng. Trên iPad và iPhone, cách này còn giúp Safari không xóa bài làm đã lưu sau {count} ngày không truy cập."
+        },
+        "first": "Làm bước này trước. Sau đó mở Thinkerwell từ màn hình chính và làm các bước còn lại ở đó.",
+        "installed": "Thinkerwell đang mở từ màn hình chính.",
+        "inBrowser": "Thinkerwell đang mở trong trình duyệt. Nếu bạn đã thêm rồi, hãy mở từ màn hình chính.",
+        "thisDevice": "Các bước cho thiết bị này: {device}",
+        "otherDevices": "Các bước cho thiết bị khác",
+        "apple": {
+          "name": "iPad hoặc iPhone (Safari)",
+          "step1": "Mở Thinkerwell trong Safari.",
+          "step2": "Nhấn Chia sẻ: hình vuông có mũi tên chỉ lên.",
+          "step3": "Nhấn Thêm vào Màn hình chính. Bạn có thể cần cuộn xuống để thấy.",
+          "step4": "Nhấn Thêm.",
+          "step5": "Mở Thinkerwell từ biểu tượng của nó. Thinkerwell giữ bài làm đã lưu riêng, tách khỏi Safari, nên hãy thêm người học ở đó."
+        },
+        "android": {
+          "name": "Máy tính bảng hoặc điện thoại Android (Chrome)",
+          "step1": "Mở Thinkerwell trong Chrome.",
+          "step2": "Nhấn vào menu: ba dấu chấm ở phía trên.",
+          "step3": "Nhấn Thêm vào màn hình chính, hoặc Cài đặt ứng dụng.",
+          "step4": "Nhấn Cài đặt, hoặc Thêm.",
+          "step5": "Mở Thinkerwell từ biểu tượng của nó."
+        },
+        "desktop": {
+          "name": "Máy tính xách tay Windows hoặc Chromebook (Chrome hoặc Edge)",
+          "step1": "Mở Thinkerwell trong Chrome hoặc Edge.",
+          "step2": "Nhấp vào nút cài đặt ứng dụng ở cuối thanh địa chỉ. Nếu không có, hãy mở menu: ba dấu chấm.",
+          "step3": "Chọn Cài đặt Thinkerwell. Trong menu, mục này có thể nằm dưới Truyền, lưu và chia sẻ, hoặc dưới Ứng dụng.",
+          "step4": "Nhấp Cài đặt.",
+          "step5": "Mở Thinkerwell từ biểu tượng của nó."
+        }
+      },
+      "offline": {
+        "title": "Tải khóa học để dùng khi không có mạng",
+        "why": "Khi đó mọi bài học đều dùng được mà không cần internet. Chỉ video cần có internet.",
+        "how": "Mở Thinkerwell khi có internet và để nó mở cho đến khi các bài học được lưu xong. Thinkerwell tự làm việc này.",
+        "audio": "Để dùng Nghe khi không có internet, hãy tải cả âm thanh bài học: trong Cài đặt, ở mục Âm thanh bài học.",
+        "audioOpen": "Âm thanh bài học trong Cài đặt"
+      },
+      "storage": {
+        "title": "Giữ bài làm đã lưu được an toàn",
+        "why": "Nếu không, trình duyệt có thể xóa bài làm của người học khi thiết bị sắp hết dung lượng.",
+        "how": "Nhấn Giữ bài làm an toàn. Nếu trình duyệt hỏi, chọn Cho phép.",
+        "button": "Giữ bài làm an toàn",
+        "checking": "Đang kiểm tra cách trình duyệt xử lý bài làm đã lưu…",
+        "asking": "Đang hỏi trình duyệt…",
+        "done": "Trình duyệt giữ bài làm đã lưu trên thiết bị này, kể cả khi sắp hết dung lượng.",
+        "todo": "Trình duyệt có thể xóa bài làm đã lưu khi sắp hết dung lượng.",
+        "refused": "Trình duyệt tạm thời từ chối. Trình duyệt thường đồng ý khi Thinkerwell đã nằm trên màn hình chính và được dùng vài ngày. Hãy thử lại khi đó.",
+        "unsupported": "Không thể hỏi trình duyệt này. Thêm Thinkerwell vào màn hình chính giúp giữ bài làm an toàn.",
+        "noStorage": "Cửa sổ trình duyệt này hoàn toàn không thể lưu bài làm của người học. Cửa sổ ẩn danh có thể gây ra điều này. Hãy mở Thinkerwell trong một cửa sổ bình thường."
+      },
+      "learners": {
+        "title": "Thêm những người học dùng thiết bị này",
+        "why": "Mỗi người học có một ô trên trang chủ, và bài làm của họ được giữ riêng.",
+        "how": "Nhấn Thêm người học, hoặc để mỗi người học tự nhấn Mình mới đến đây trên trang chủ.",
+        "codes": "Dùng thẻ mã? Mỗi người học gõ mã của mình làm tên.",
+        "count": {
+          "other": "{count} người học trên thiết bị này."
+        },
+        "none": "Chưa có người học nào trên thiết bị này.",
+        "add": "Thêm người học",
+        "seeClass": "Xem cả lớp"
+      },
+      "voice": {
+        "title": "Chọn giọng cho Nghe (không bắt buộc)",
+        "why": "Nghe đọc to bài học bằng giọng tốt nhất mà nó tìm thấy trên thiết bị. Bạn có thể nghe thử từng giọng và chọn giọng khác, hoặc tải một giọng rõ hơn.",
+        "whyRecorded": "Nghe phát các bản ghi âm giọng đọc tự nhiên. Khi thiết bị không có bản ghi âm và không có internet, Nghe sẽ đọc bằng giọng tốt nhất mà nó tìm thấy trên thiết bị. Bạn có thể nghe thử từng giọng và chọn giọng khác, hoặc tải một giọng rõ hơn.",
+        "how": "Trong Cài đặt, ở mục Giọng của Nghe, phát một đoạn mẫu và chọn giọng rõ nhất.",
+        "automatic": "Nghe đọc bằng {voice}, giọng tốt nhất trên thiết bị này.",
+        "chosen": "Nghe đọc bằng {voice}, được chọn trong Cài đặt.",
+        "none": "Thiết bị này không có giọng nào mà Nghe dùng được, nên Nghe không hiện. Cài đặt cho biết cách thêm giọng.",
+        "noneRecorded": "Thiết bị này không có giọng riêng nào mà Nghe dùng được, nên Nghe chỉ phát các bản ghi âm. Cài đặt cho biết cách thêm giọng.",
+        "open": "Chọn trong Cài đặt"
+      },
+      "speech": {
+        "title": "Kiểm tra chuyển giọng nói thành văn bản",
+        "why": "Nói để gõ cho phép người học nói thay vì gõ. Bước kiểm tra cho các bài học biết tính năng này có dùng được ở đây không.",
+        "last": "Làm bước này sau cùng. Trên một số máy tính bảng, bước kiểm tra đã làm đóng thẻ trình duyệt. Nếu điều đó xảy ra, hãy mở lại Thinkerwell.",
+        "how": "Trong Cài đặt, ở mục Nói để gõ, nhấn Kiểm tra thiết bị này.",
+        "notChecked": "Chưa kiểm tra trên thiết bị này.",
+        "onDevice": "Chuyển giọng nói thành văn bản dùng được trên thiết bị này, và những gì người học nói không được gửi đi đâu.",
+        "download": "Trước hết cần tải về một lần. Trong Cài đặt, nhấn Tải chuyển giọng nói thành văn bản khi có Wi-Fi tốt, rồi kiểm tra lại.",
+        "notOnDevice": "Trình duyệt này không làm được ngay trên thiết bị, nên Nói để gõ vẫn bị ẩn. Người học sẽ gõ.",
+        "none": "Trình duyệt này không thể chuyển giọng nói thành văn bản, nên không có gì để kiểm tra. Nói để gõ vẫn bị ẩn, và người học sẽ gõ.",
+        "open": "Kiểm tra trong Cài đặt"
+      },
+      "later": {
+        "title": "Trước khi đặt lại hoặc trả thiết bị này",
+        "body": "Lưu bài làm của mọi người vào một tệp, rồi nhập bài làm từ tệp đó trên thiết bị tiếp theo. Bản ghi âm không nằm trong tệp. Giữ tệp cẩn thận: ai có tệp cũng đọc được bài làm.",
+        "open": "Lưu bài làm vào tệp trong Cài đặt"
+      }
+    },
+    "classView": {
+      "title": "Lớp học trên thiết bị này",
+      "intro": "Mọi người học trên thiết bị này, theo tên, và những gì mỗi người đã làm.",
+      "noScores": "Ở đây không có điểm, vì bất kỳ ai dùng thiết bị này cũng có thể mở trang này.",
+      "printAll": "In tất cả giấy chứng nhận",
+      "listLabel": "Người học",
+      "learnerAdded": "{name}, thêm ngày {date}",
+      "classCode": "Mã lớp {code}",
+      "onNow": "Đang học",
+      "lesson": "Bài {number}: {title}",
+      "atStep": "Bước: {stage}",
+      "upNext": "Tiếp theo",
+      "notStarted": "Chưa bắt đầu",
+      "finished": "Đã học hết mọi bài",
+      "lastActive": "Hoạt động gần nhất",
+      "never": "Chưa có",
+      "lessonsDone": "Bài học đã hoàn thành",
+      "lessonsOf": "{completed} trên {total}",
+      "checksTried": "Phần ôn tập đã thử",
+      "checksNone": "Chưa có",
+      "empty": "Chưa có người học nào trên thiết bị này.",
+      "emptyBody": "Người học sẽ hiện ở đây khi được thêm vào. Mỗi người học có thể tự thêm mình bằng nút Mình mới đến đây ở trang chủ.",
+      "noStorage": "Cửa sổ trình duyệt này không giữ được bài làm của người học nên không có gì để hiện ở đây. Cửa sổ ẩn danh có thể gây ra điều này."
+    },
+    "allCertificates": {
+      "title": "Tất cả giấy chứng nhận",
+      "count": {
+        "other": "Có {count} giấy chứng nhận đã đạt được trên thiết bị này. Mỗi giấy được in trên một trang ngang riêng."
+      },
+      "names": "Tên lấy từ thiết bị này và không thể đổi ở đây. Muốn in một tên khác, hãy chọn người học đó, rồi mở giấy chứng nhận của họ từ trang khóa học.",
+      "namesLink": "Đến trang khóa học",
+      "back": "Quay lại lớp",
+      "labelSection": "Giấy chứng nhận của {name}: {section}",
+      "labelCourse": "Giấy chứng nhận khóa học của {name}",
+      "empty": "Chưa ai trên thiết bị này có giấy chứng nhận.",
+      "emptyBody": "Người học nhận được giấy khi hoàn thành mọi bài học trong một phần. Không cần làm phần ôn tập."
+    },
+    "settings": {
+      "title": "Cài đặt cho thiết bị này",
+      "intro": "Các cài đặt này dành cho giáo viên và tình nguyện viên. Chúng áp dụng cho tất cả mọi người dùng thiết bị này và được giữ lại trên thiết bị.",
+      "noStorage": "Cửa sổ trình duyệt này không lưu được cài đặt.",
+      "saveFailed": "Chưa lưu được thay đổi này. Thử lại.",
+      "language": {
+        "title": "Ngôn ngữ",
+        "label": "Ngôn ngữ trên thiết bị này",
+        "labelLearner": "Ngôn ngữ của {name}",
+        "help": "Mọi thứ hiện ngay bằng ngôn ngữ này: nút, hướng dẫn và, với tiếng Việt và tiếng Indonesia, cả các bài học. Lựa chọn được giữ cho thiết bị này, cho trang đầu tiên và cho những ai chưa chọn người học.",
+        "helpLearner": "Mọi thứ hiện ngay bằng ngôn ngữ này: nút, hướng dẫn và, với tiếng Việt và tiếng Indonesia, cả các bài học. Lựa chọn được giữ cho {name} và quay lại như cũ khi có người khác được chọn."
+      },
+      "offline": {
+        "title": "Không có mạng và dữ liệu",
+        "checking": "Đang kiểm tra xem các bài học đã được lưu trên thiết bị này chưa…",
+        "preparing": "Đang lưu các bài học trên thiết bị này để dùng khi không có mạng. Giữ Thinkerwell mở và bật internet cho đến khi có thông báo đã lưu xong.",
+        "ready": "Cả {count} bài học đã được lưu trên thiết bị này, cùng với hình ảnh. Thinkerwell dùng được ở đây khi không có internet, trừ các video.",
+        "failed": "Các bài học chưa lưu xong để dùng khi không có mạng. Mở lại Thinkerwell khi có internet, và Thinkerwell sẽ thử lại.",
+        "unsupported": "Trình duyệt này không giữ được các bài học để dùng khi không có mạng, nên ở đây Thinkerwell cần có internet. Cửa sổ ẩn danh có thể gây ra điều này.",
+        "saveData": "Tiết kiệm dữ liệu",
+        "saveDataHelp": "Tắt các video, nên bước Xem mở ra bản viết, có cùng những ý. Mọi thứ khác vốn đã dùng được khi không có internet.",
+        "saveDataFromBrowser": "Chế độ này đang bật vì thiết bị này được đặt để tiết kiệm dữ liệu."
+      },
+      "reading": {
+        "title": "Đọc và nghe",
+        "level": "Mức độ đọc",
+        "levelHelp": "Các bài học mở ở mức này với những ai chưa chọn mức nào. Người học có thể đổi ở bất kỳ bài học nào, và lựa chọn của họ được giữ lại.",
+        "speed": "Tốc độ Nghe",
+        "speedHelp": "Tốc độ đọc to của Nghe. Người học có thể đổi tốc độ khi đang nghe.",
+        "noVoice": "Trình duyệt này không có giọng đọc nào trên thiết bị, nên Nghe không hiện ở đây."
+      },
+      "listenVoice": {
+        "title": "Giọng đọc của Nghe",
+        "intro": "Nghe đọc to các bài học bằng một giọng chạy ngay trên thiết bị này, nên không có gì được gửi qua mạng. Có giọng nghe rõ hơn giọng khác: phát thử một đoạn mẫu rồi chọn.",
+        "introRecorded": "Nghe phát các bản ghi âm giọng đọc tự nhiên, được làm cho mọi bài học. Khi bản ghi âm của một đoạn chưa có trên thiết bị này và không có internet, Nghe sẽ đọc bằng một giọng của thiết bị, nên không có gì được gửi qua mạng. Chọn giọng đó ở đây.",
+        "voiceFor": {
+          "en": "Giọng cho các bài học bằng tiếng Anh",
+          "id": "Giọng cho các bài học bằng tiếng Indonesia"
+        },
+        "recordedWith": "Nghe phát các bản ghi âm được làm bằng {voice}.",
+        "deviceVoice": "Giọng của thiết bị, khi không có bản ghi âm",
+        "automatic": "Tự động (giọng tốt nhất trên thiết bị này)",
+        "automaticNow": "Chế độ tự động dùng {voice} trên thiết bị này.",
+        "nameWithLang": "{name} ({lang})",
+        "sample": "Phát thử đoạn mẫu",
+        "deviceSample": "Nghe thử giọng này",
+        "sampleUnavailable": "Đoạn mẫu chưa có trên thiết bị này, và thiết bị không có giọng nào để đọc nó. Kết nối internet rồi thử lại.",
+        "noVoice": "Thiết bị này không có giọng tiếng Anh nào mà Nghe dùng được, nên Nghe không hiện. Các bước bên dưới sẽ thêm một giọng.",
+        "noVoiceRecorded": "Thiết bị này không có giọng tiếng Anh. Nghe vẫn phát các bản ghi âm, nhưng không đọc được đoạn nào chưa có bản ghi âm trên thiết bị khi không có internet. Các bước bên dưới sẽ thêm một giọng.",
+        "noVoiceIndonesian": "Thiết bị này chưa có giọng tiếng Indonesia, nên Nghe chưa đọc được các bài học bằng tiếng Indonesia. Các bước bên dưới sẽ thêm một giọng.",
+        "noVoiceIndonesianRecorded": "Thiết bị này không có giọng tiếng Indonesia. Nghe vẫn phát các bản ghi âm, nhưng không đọc được đoạn nào chưa có bản ghi âm trên thiết bị khi không có internet. Các bước bên dưới sẽ thêm một giọng.",
+        "better": {
+          "title": "Tải giọng đọc rõ hơn",
+          "intro": "Hầu hết thiết bị có thể tải miễn phí những giọng đọc tốt hơn. Giọng đọc có thể có dung lượng lớn, nên hãy dùng Wi-Fi tốt. Sau đó mở lại trang này và chọn giọng mới.",
+          "apple": {
+            "name": "iPad hoặc iPhone",
+            "steps": "Mở Cài đặt, rồi Trợ năng, rồi Nội dung được đọc (tên là Đọc & Nói trên các phiên bản mới hơn), rồi Giọng nói. Chọn tiếng Anh hoặc tiếng Indonesia, rồi chọn một giọng có nhãn Nâng cao hoặc Cao cấp, và tải về.",
+            "note": "Safari không cho các trang web dùng mọi giọng mà bạn tải về. Nếu giọng mới không có trong danh sách ở trên, hãy giữ giọng bạn đang có."
+          },
+          "android": {
+            "name": "Máy tính bảng hoặc điện thoại Android",
+            "steps": "Mở Cài đặt và tìm chuyển văn bản thành giọng nói. Cạnh Công cụ ưu tiên, chạm vào nút cài đặt, rồi Cài đặt dữ liệu giọng nói. Chọn tiếng Anh hoặc tiếng Indonesia, rồi tải một giọng."
+          },
+          "windows": {
+            "name": "Máy tính xách tay Windows",
+            "steps": "Mở Cài đặt, rồi Thời gian & ngôn ngữ, rồi Giọng nói. Cạnh Quản lý giọng nói, chọn Thêm giọng nói, rồi Tiếng Anh (Vương quốc Anh) hoặc Tiếng Indonesia. Bạn có thể cần một tài khoản quản trị viên. Sau đó đóng trình duyệt và mở lại."
+          },
+          "chromebook": {
+            "name": "Chromebook",
+            "steps": "Mở Cài đặt, rồi Trợ năng, rồi Chuyển văn bản thành giọng nói, rồi Cài đặt giọng chuyển văn bản thành giọng nói. Cài các giọng tiếng Anh hoặc tiếng Indonesia."
+          }
+        }
+      },
+      "lessonAudio": {
+        "title": "Âm thanh bài học",
+        "intro": "Nghe tải bản ghi âm của mỗi đoạn vào lần đầu phát đoạn đó. Để dùng Nghe khi không có internet, hãy tải tất cả về thiết bị này tại đây, khi có Wi-Fi tốt.",
+        "forEnglish": "Cho các bài học bằng tiếng Anh: tổng cộng {size} MB.",
+        "forIndonesian": "Cho các bài học bằng tiếng Indonesia: tổng cộng {size} MB.",
+        "forBoth": "Cho các bài học bằng tiếng Anh và tiếng Indonesia: tổng cộng {size} MB.",
+        "forDevice": "Cho các bài học dùng trên thiết bị này: tổng cộng {size} MB.",
+        "stored": "Đã có trên thiết bị này: {stored} MB trên tổng số {total} MB.",
+        "storedAll": "Tất cả đã có trên thiết bị này. Nghe dùng được ở đây khi không có internet.",
+        "storedNone": "Chưa có gì trên thiết bị này.",
+        "download": "Tải âm thanh bài học",
+        "stop": "Dừng tải",
+        "progress": "Đang tải: {done} MB trên tổng số {total} MB",
+        "progressLabel": "Âm thanh bài học đã tải",
+        "stopped": "Đã dừng. Phần đã tải vẫn còn trên thiết bị này.",
+        "failed": "Một số bản ghi âm chưa tải được. Kiểm tra kết nối và thử lại. Phần đã tải vẫn được giữ.",
+        "saveData": "Tiết kiệm dữ liệu đang bật, nên sẽ không tải gì từ đây. Tắt Tiết kiệm dữ liệu ở trên để tải âm thanh bài học.",
+        "notReady": "Bạn có thể bắt đầu sau khi các bài học đã được lưu trên thiết bị này để dùng khi không có mạng (xem phần trên).",
+        "unsupported": "Trình duyệt này không giữ được âm thanh bài học, nên ở đây Nghe cần có internet."
+      },
+      "sayIt": {
+        "title": "Nói để gõ: chuyển giọng nói thành văn bản",
+        "intro": "Nói để gõ cho phép người học nói thay vì gõ vào các ô viết của bài học. Chức năng này chỉ hiện ở nơi nó dùng được.",
+        "notChecked": "Thiết bị này chưa được kiểm tra. Hãy kiểm tra một lần, để các bài học biết Nói để gõ có dùng được ở đây không.",
+        "checkDevice": "Kiểm tra thiết bị này",
+        "checkHelp": "Việc kiểm tra có thể mất một lúc.",
+        "checkedOn": "Đã kiểm tra ngày {date}.",
+        "checking": "Đang kiểm tra trình duyệt này làm được những gì…",
+        "onDevice": "Trình duyệt này chuyển giọng nói thành văn bản ngay trên thiết bị. Những gì người học nói không được gửi đi đâu cả.",
+        "downloadable": "Trình duyệt này có thể chuyển giọng nói thành văn bản ngay trên thiết bị sau khi tải một lần từ nhà sản xuất trình duyệt. Bản tải có thể có dung lượng lớn, nên hãy dùng Wi-Fi tốt.",
+        "downloading": "Trình duyệt đang lấy những gì cần thiết. Khi xong, hãy kiểm tra lại thiết bị này, và Nói để gõ sẽ hiện trong các bài học.",
+        "downloadFailed": "Chưa tải xong. Thử lại sau, khi có Wi-Fi tốt.",
+        "onlineOnly": "Trình duyệt này không chuyển giọng nói thành văn bản ngay trên thiết bị được. Nó chỉ làm được bằng cách gửi những gì người học nói đến một dịch vụ trực tuyến, nên Nói để gõ vẫn bị ẩn trừ khi bạn cho phép ở bên dưới.",
+        "none": "Trình duyệt này không chuyển được giọng nói thành văn bản, nên Nói để gõ không hiện. Chrome bản mới trên máy tính xách tay có thể làm việc này ngay trên thiết bị.",
+        "download": "Tải tính năng chuyển giọng nói thành văn bản",
+        "allowOnline": "Cho phép chuyển giọng nói thành văn bản qua mạng",
+        "allowOnlineHelp": "Tắt, trừ khi bạn bật. Khi bật và thiết bị này không tự chuyển được giọng nói thành văn bản, Nói để gõ gửi những gì người học nói đến dịch vụ trực tuyến của nhà sản xuất trình duyệt (ví dụ Google, Apple hoặc Microsoft), và cần có internet. Chỉ bật khi tổ chức của bạn và gia đình của người học đã đồng ý.",
+        "recordingsNote": "Ghi âm giọng của bạn thì khác: các bản ghi âm luôn ở lại trên thiết bị này và không bao giờ được gửi đi đâu."
+      },
+      "transfer": {
+        "title": "Chuyển bài làm sang thiết bị khác",
+        "intro": "Máy tính bảng có thể bị đặt lại và máy tính xách tay có thể bị thay. Hãy lưu bài làm của người học vào một tệp trước. Sau đó nhập bài làm từ tệp đó vào thiết bị kia. Không có gì được gửi lên mạng.",
+        "noStorage": "Cửa sổ trình duyệt này không giữ được bài làm của người học, nên ở đây không có gì để lưu hay nhập.",
+        "save": {
+          "title": "Lưu bài làm vào một tệp",
+          "who": "Bài làm của ai",
+          "learnerAdded": "{name}, thêm ngày {date}",
+          "all": "Tất cả người học trên thiết bị này",
+          "button": "Lưu bài làm của mình vào một tệp",
+          "help": "Tệp sẽ nằm trong mục tải xuống của thiết bị này. Ai có tệp đều đọc được bài làm trong đó, nên hãy giữ tệp cẩn thận.",
+          "recordings": "Các bản ghi âm ở lại trên thiết bị này.",
+          "noLearners": "Thiết bị này chưa có bài làm nào được lưu.",
+          "saving": "Đang tạo tệp…",
+          "saved": "Tìm {file} trong mục tải xuống của thiết bị này.",
+          "tooBig": "Bài làm quá nhiều cho một tệp. Hãy lưu riêng bài làm của từng người học.",
+          "failed": "Chưa tạo được tệp. Thử lại."
+        },
+        "load": {
+          "title": "Nhập bài làm từ một tệp",
+          "button": "Nhập bài làm của mình",
+          "help": "Chọn một tệp đã được lưu từ Thinkerwell. Chưa có gì thay đổi cho đến khi bạn đồng ý.",
+          "reading": "Đang kiểm tra tệp…",
+          "previewTitle": "Kiểm tra trước khi nhập",
+          "savedOn": "Tệp này được lưu ngày {date}. Trong tệp có bài làm cho:",
+          "lessons": {
+            "other": "{count} bài học"
+          },
+          "checks": {
+            "other": "{count} bài ôn tập phần"
+          },
+          "lessonsAndChecks": "{lessons} và {checks}",
+          "noWork": "chưa có bài làm",
+          "learnerNew": "{name}: {work}. Mới trên thiết bị này.",
+          "learnerHere": "{name}: {work}. Đã có trên thiết bị này, nên phần này được thêm vào bài làm hiện có ở đây. Không có gì bị mất.",
+          "sameName": "Trên thiết bị này đã có một người học khác tên {name}. Cả hai đều được giữ, và mỗi ô cho thấy ngày được thêm.",
+          "skipped": {
+            "other": "{count} phần bài làm thuộc về những bài học hoặc bài ôn tập phần mà phiên bản Thinkerwell này không có. Những phần đó sẽ bị bỏ qua."
+          },
+          "loadIt": "Nhập",
+          "cancel": "Hủy",
+          "loading": "Đang nhập bài làm…",
+          "added": "Đã thêm vào thiết bị này: {names}.",
+          "updated": "Đã thêm vào bài làm có sẵn: {names}.",
+          "unchanged": "Không có gì mới cho {names}.",
+          "nothingNew": "Thiết bị này đã có tất cả bài làm trong tệp này, nên không có gì thay đổi.",
+          "carryOn": "Để tiếp tục, hãy chọn ai đang học ở trang chủ.",
+          "problems": {
+            "notWorkFile": "Đây không phải tệp bài làm của Thinkerwell, nên chưa nhập gì cả. Chọn một tệp có tên bắt đầu bằng thinkerwell.",
+            "newerVersion": "Tệp này được lưu bởi một phiên bản Thinkerwell mới hơn. Hãy cập nhật thiết bị này trước: mở Thinkerwell khi có internet, rồi thử lại.",
+            "empty": "Tệp này không có bài làm nào, nên chưa nhập gì cả.",
+            "tooBig": "Tệp này quá lớn so với một tệp bài làm của Thinkerwell, nên chưa nhập gì cả.",
+            "damaged": "Một phần của tệp này bị hỏng, nên chưa nhập gì cả. Hãy lưu lại bài làm vào một tệp trên thiết bị kia.",
+            "unreadable": "Không mở được tệp này. Thử lại.",
+            "failed": "Chưa nhập được bài làm, nên không có gì thay đổi trên thiết bị này. Thử lại."
+          }
+        }
+      }
+    },
+    "about": {
+      "title": "Giới thiệu Thinkerwell",
+      "tagline": "Học khoa học xã hội miễn phí cho thanh thiếu niên khắp Đông Nam Á, nhất là các bạn gặp rào cản trong việc học.",
+      "missionTitle": "Sứ mệnh của chúng tôi",
+      "missionBody": "Thinkerwell bắt đầu từ tình yêu với khoa học xã hội và một câu hỏi: làm sao để nhiều thanh thiếu niên hơn có cơ hội khám phá thế giới mình đang sống? Chúng tôi đã xây dựng một nền tảng số miễn phí để các công cụ học tập số và giáo dục khoa học xã hội đến được với thanh thiếu niên gặp rào cản trong việc học. Mục tiêu của chúng tôi là giúp người học đặt câu hỏi, phát triển kỹ năng tư duy phản biện, khám phá những góc nhìn đa dạng và chia sẻ ý tưởng của riêng mình.",
+      "goalsTitle": "Thinkerwell gắn với các mục tiêu của Liên Hợp Quốc như thế nào",
+      "goal4Title": "Mục tiêu 4: Giáo dục có chất lượng",
+      "goal4Body": "Tài liệu học miễn phí",
+      "goal4Alt": "Mục tiêu Phát triển bền vững 4: Giáo dục có chất lượng",
+      "goal10Title": "Mục tiêu 10: Giảm bất bình đẳng",
+      "goal10Body": "Thiết kế cho người học gặp rào cản trong việc học",
+      "goal10Alt": "Mục tiêu Phát triển bền vững 10: Giảm bất bình đẳng",
+      "goal16Title": "Mục tiêu 16: Hòa bình, công lý và thể chế vững mạnh",
+      "goal16Body": "Hiểu biết về đời sống công dân và truyền thông",
+      "goal16Alt": "Mục tiêu Phát triển bền vững 16: Hòa bình, công lý và thể chế vững mạnh",
+      "goal17Title": "Mục tiêu 17: Quan hệ đối tác để thực hiện mục tiêu",
+      "goal17Body": "Đang tìm các nhà giáo dục và nhóm cộng đồng để cùng làm việc",
+      "goal17Alt": "Mục tiêu Phát triển bền vững 17: Quan hệ đối tác để thực hiện mục tiêu",
+      "goalsNote": "Các biểu tượng mục tiêu là của Liên Hợp Quốc. Thinkerwell không được Liên Hợp Quốc bảo trợ hay phê duyệt.",
+      "teamTitle": "Ai làm ra Thinkerwell",
+      "justinRole": "Người sáng lập và giám đốc",
+      "justinName": "Justin Park",
+      "justinBio": "Justin là học sinh ở Singapore, đồng thời là người sáng lập và giám đốc của Thinkerwell. Niềm yêu thích lịch sử và khoa học xã hội đã đưa bạn ấy đến việc bắt đầu một khóa học miễn phí cho thanh thiếu niên gặp rào cản trong việc học.",
+      "justinAlt": "Justin Park",
+      "nickRole": "Giám đốc công nghệ (CTO)",
+      "nickName": "Nick Thiery",
+      "nickBio": "Nick là học sinh ở Singapore và là giám đốc công nghệ của Thinkerwell. Bạn ấy xây dựng trang web và làm các công cụ giúp nhiều người hơn học bằng chính ngôn ngữ của mình.",
+      "nickAlt": "Nick Thiery",
+      "linkedin": "LinkedIn",
+      "linkedinLabel": "{name} trên LinkedIn (mở trong thẻ mới)",
+      "creditsLinkTitle": "Ghi công và nguồn",
+      "creditsLinkBody": "Các nguồn đằng sau mọi bài học, cùng video, phông chữ, hình ảnh và phần mềm mà Thinkerwell sử dụng.",
+      "creditsLinkCta": "Xem phần ghi công"
+    },
+    "credits": {
+      "title": "Ghi công",
+      "intro": "Thinkerwell được xây dựng trên công sức của nhiều người và nhiều tổ chức. Cảm ơn tất cả họ. Trang này liệt kê các nguồn đằng sau bài học, các video được hiển thị, cùng phông chữ, hình ảnh và phần mềm làm nên trang web.",
+      "contents": "Trong trang này",
+      "sourcesTitle": "Nguồn của các bài học",
+      "sourcesBody": "Các dữ kiện trong mỗi bài học đến từ những nguồn này. Bài học được viết bằng lời của chúng tôi.",
+      "lessonHeading": "Bài {number}: {title}",
+      "videosTitle": "Video",
+      "videosBody": "Mỗi bài học có thể hiện một video ngắn. Các video do những kênh YouTube này làm, không phải Thinkerwell. Video phát từ YouTube, và chỉ khi người học chạm vào nút phát.",
+      "videoBy": "Của {channel}",
+      "picturesTitle": "Hình ảnh và thiết kế",
+      "picturesBody": "Linh vật của Thinkerwell, các hình minh họa trong bài học và thiết kế của trang web được làm riêng cho Thinkerwell.",
+      "goalsTitle": "Biểu tượng các Mục tiêu Phát triển bền vững của Liên Hợp Quốc",
+      "goalsBody": "Các biểu tượng mục tiêu ở trang Giới thiệu là của Liên Hợp Quốc, được dùng đúng theo hướng dẫn của tổ chức này. Thinkerwell không được Liên Hợp Quốc bảo trợ hay phê duyệt.",
+      "goalsStatement": "Nội dung của ấn phẩm này chưa được Liên Hợp Quốc phê duyệt và không phản ánh quan điểm của Liên Hợp Quốc, các quan chức hay các Quốc gia Thành viên của tổ chức này.",
+      "goalsLink": "Trang web các Mục tiêu Phát triển bền vững của Liên Hợp Quốc",
+      "fontsTitle": "Phông chữ",
+      "fontsBody": "Thinkerwell dùng những phông chữ miễn phí này, mỗi phông theo giấy phép SIL Open Font License 1.1:",
+      "fontFunnel": "Funnel Display, của Funnel Project Authors (tiêu đề)",
+      "fontAtkinson": "Atkinson Hyperlegible Next, của Atkinson Hyperlegible Next Project Authors (phần lớn văn bản)",
+      "fontEczar": "Eczar, của Eczar Project Authors (tên Thinkerwell)",
+      "fontVazirmatn": "Vazirmatn, của Vazirmatn Project Authors (chữ Ả Rập, chỉ khi hiện một ngôn ngữ viết bằng chữ này)",
+      "fontsLicenceLink": "Đọc SIL Open Font License",
+      "softwareTitle": "Phần mềm",
+      "softwareBody": "Trang web được xây dựng bằng các công cụ mã nguồn mở, miễn phí này:",
+      "softwareItem": "{name} ({licence})",
+      "voicesTitle": "Giọng đọc của tính năng Nghe",
+      "voicesBody": "Nghe phát các bản ghi âm được làm cho Thinkerwell từ nội dung bài học, bằng những giọng đọc chuyển văn bản thành giọng nói miễn phí này. Các bản ghi do máy tính tạo ra, không phải người thật, và bản thân các giọng đọc không bị chỉnh sửa.",
+      "voiceEnglish": "Bài học tiếng Anh: {model} của hexgrad, giọng Heart, theo {licence}.",
+      "voiceIndonesian": "Bài học tiếng Indonesia: {model} của Meta, một phần của Massively Multilingual Speech, theo {licence}. Giấy phép này chỉ cho phép dùng phi thương mại. Thinkerwell miễn phí và chỉ dùng theo cách đó.",
+      "translationTitle": "Bản dịch",
+      "translationBody": "Bản tiếng Indonesia lúc đầu được soạn nháp với sự hỗ trợ của AI. Người bản ngữ đang kiểm tra."
+    },
+    "placeholder": "Trang này sắp ra mắt."
+  },
+  "siteVideo": {
+    "captions": "Phụ đề tiếng Anh",
+    "dataUse": "Dùng khoảng {mb} MB dữ liệu.",
+    "inEnglish": "Video này bằng tiếng Anh. Đọc thay thế có cùng nội dung bằng ngôn ngữ của bạn.",
+    "playerOpened": "Video đã mở. Dùng các nút điều khiển của video để tạm dừng hoặc tắt phụ đề.",
+    "closeVideo": "Đóng video",
+    "writtenPart": "Bản viết",
+    "watchInstead": "Xem video thay thế",
+    "tryAgain": "Thử xem lại video",
+    "saveDataTitle": "Video đang tắt để tiết kiệm dữ liệu.",
+    "offlineTitle": "Bạn đang không có mạng, nên lúc này video không tải được.",
+    "timeoutTitle": "Video tải lâu quá.",
+    "unavailableTitle": "Lúc này video này không phát được ở đây.",
+    "sameWords": "Đây là nội dung video, để bạn đọc.",
+    "explore": {
+      "title": "Khám phá thế giới của bạn",
+      "blurb": "Hai phút về lý do chúng mình tạo ra Thinkerwell và những gì có trong đó.",
+      "p1": "Người học nào cũng xứng đáng có cơ hội khám phá thế giới mình đang sống. Nhưng khắp Đông Nam Á, nhiều thanh thiếu niên gặp rào cản trong việc học. Ở Myanmar, khoảng 3,8 triệu người phải rời nơi ở của mình nhưng vẫn ở trong chính đất nước mình. Ở Malaysia, trẻ em tị nạn không thể vào học ở các trường công lập. Và ở Đông Á và Thái Bình Dương, cứ ba trẻ em trong độ tuổi đến trường thì có một em không có internet ở nhà.",
+      "p2": "Ở những nơi trường học đang quá tải, bài học thường chỉ xoay quanh những điều cơ bản: đọc, toán và kỹ năng để làm việc. Những điều đó rất quan trọng. Nhưng còn rất ít chỗ cho những kỹ năng mở ra cả thế giới: suy nghĩ phản biện, trình bày có bằng chứng và nhìn từ góc nhìn của người khác.",
+      "p3": "Nghiên cứu ủng hộ điều này. Trong một nghiên cứu của Stanford, những học sinh học lịch sử bằng cách đặt câu hỏi về các nguồn thật đã tiến bộ nhiều hơn về tư duy lịch sử, kỹ năng đọc và kiến thức so với học sinh ở các lớp học thông thường.",
+      "p4": "Đó là lý do chúng mình tạo ra Thinkerwell: các bài học miễn phí về khoa học xã hội và hơn thế nữa, dành cho thanh thiếu niên gặp rào cản trong việc học. Khóa học đầu tiên của chúng mình, Khám phá thế giới của chúng ta, có 24 bài học về lịch sử, địa lí, văn hóa và đời sống công dân, và mỗi bài học có năm bước: đọc, viết, nói, xem và suy ngẫm. Bài đọc nào cũng có một bản dễ hơn và có thể nghe đọc thành tiếng, và các bài học dùng được khi không có mạng, bằng tiếng Anh và Bahasa Indonesia.",
+      "p5": "Thinkerwell không thay thế giáo viên. Nền tảng giúp giáo viên nhẹ gánh hơn, với hướng dẫn soạn sẵn cho mỗi bài học, cùng đáp án và tài liệu để in.",
+      "p6": "Mục tiêu của chúng mình là giúp người học đặt câu hỏi, phát triển kỹ năng tư duy phản biện, khám phá những góc nhìn đa dạng và chia sẻ ý tưởng của riêng mình. Thinkerwell. Khoa học xã hội và hơn thế nữa. Khám phá thế giới của bạn.",
+      "sources": "Nguồn: UNHCR (2026); UNICEF và ITU (2020); Reisman, Stanford (2012)."
+    },
+    "session": {
+      "title": "Tổ chức một buổi học",
+      "blurb": "Một bài học Thinkerwell với một nhóm, từ đầu đến cuối, trong khoảng một phút.",
+      "p1": "Bạn không cần tài khoản, mật khẩu hay ngân sách lớn để tổ chức một bài học Thinkerwell. Đây là một buổi học, từ đầu đến cuối.",
+      "p2": "Trước buổi học đầu tiên, bạn thiết lập mỗi máy tính bảng hoặc máy tính xách tay một lần, theo danh sách kiểm tra trong mục Dành cho nhà giáo dục. Thinkerwell lưu các bài học trên thiết bị, nên chúng dùng được khi không có internet.",
+      "p3": "Người học có thể dùng chung một thiết bị. Mỗi người chạm vào tên mình, và bài làm của họ vẫn nằm trên thiết bị đó.",
+      "p4": "Chọn một bài học bất kỳ. Hướng dẫn giáo viên của bài có kế hoạch cho buổi học 30 hoặc 45 phút, kèm đáp án. Sau đó người học làm năm bước. Họ đọc, bằng tiếng Anh chuẩn hoặc tiếng Anh dễ hơn. Họ viết. Họ trao đổi với một bạn học. Họ xem một video ngắn, hoặc đọc bản viết thay thế. Và họ suy ngẫm.",
+      "p5": "Sau đó, bạn xem từng người học đang ở bước nào. Không có điểm số, chỉ có số bài học đã hoàn thành. Hôm đó không có thiết bị? Mọi bài học và hướng dẫn giáo viên đều in được bằng đen trắng.",
+      "p6": "Thinkerwell miễn phí và không có quảng cáo. Khoa học xã hội và hơn thế nữa. Mọi thứ dành cho giáo viên có tại thinkerwell.app, trong mục Dành cho nhà giáo dục."
+    },
+    "setup": {
+      "title": "Thiết lập một thiết bị",
+      "blurb": "Danh sách kiểm tra, từng bước một, trong khoảng một phút.",
+      "p1": "Trước buổi học đầu tiên, bạn thiết lập mỗi máy tính xách tay hoặc máy tính bảng một lần. Cách làm như sau. Mở thinkerwell.app, chạm vào Dành cho nhà giáo dục, rồi chạm vào Thiết lập thiết bị này. Danh sách kiểm tra cho biết bước nào đã xong trên thiết bị này.",
+      "p2": "Trước hết, thêm Thinkerwell vào màn hình chính để nó mở như một ứng dụng. Danh sách kiểm tra hiện các bước phù hợp với loại thiết bị của bạn. Trên iPad, việc này còn giúp Safari không xóa bài làm đã lưu.",
+      "p3": "Sau đó mở Thinkerwell từ biểu tượng của nó, khi đang có internet, và để nó mở trong lúc các bài học được lưu. Từ đó, mọi bài học đều dùng được khi không có mạng. Tiếp theo, chạm vào Giữ bài làm an toàn, để trình duyệt giữ bài làm của người học, kể cả khi dung lượng sắp hết.",
+      "p4": "Thêm những người học dùng thiết bị này. Mỗi người có một ô trên trang chủ. Dùng thẻ mã? Người học gõ mã của mình thay cho tên.",
+      "p5": "Trong Cài đặt, bạn có thể chọn giọng đọc các bài học thành tiếng. Làm bước kiểm tra giọng nói sau cùng: trong Nói để gõ, chạm vào Kiểm tra thiết bị này.",
+      "p6": "Trước khi đặt lại một thiết bị hoặc trả nó đi, bạn lưu bài làm của mọi người vào một tệp, rồi nhập bài làm từ tệp đó vào thiết bị tiếp theo. Danh sách kiểm tra in vừa một trang, nên bạn có thể đánh dấu trên giấy. Thinkerwell. Khoa học xã hội và hơn thế nữa."
+    }
+  },
+  "notFound": {
+    "title": "Không tìm thấy trang này",
+    "body": "Liên kết có thể đã cũ hoặc bị gõ sai. Mọi thứ trong khóa học vẫn còn ở đây.",
+    "home": "Về trang chủ",
+    "course": "Xem khóa học"
+  },
+  "routeError": {
+    "title": "Đã có lỗi xảy ra",
+    "body": "Rất tiếc về điều này. Thử mở lại trang, hoặc về trang chủ. Bài làm đã lưu của bạn vẫn còn trên thiết bị này.",
+    "home": "Về trang chủ"
+  },
+  "pageNotDownloaded": {
+    "title": "Trang này chưa được tải xuống",
+    "body": "Kết nối mạng, rồi thử lại. Bài làm đã lưu của bạn vẫn còn trên thiết bị này.",
+    "retry": "Thử lại",
+    "trying": "Đang thử lại…",
+    "stillOffline": "Vẫn chưa có kết nối mạng. Thử lại khi bạn đã kết nối.",
+    "home": "Về trang chủ"
+  },
+  "header": {
+    "switcherTitle": "Đổi người học",
+    "switcherClose": "Đóng",
+    "lookAroundTile": "Chỉ xem qua",
+    "backToPicker": "Quay lại phần chọn người học",
+    "lookAroundTitle": "Bạn đang xem qua",
+    "lookAroundBanner": "Mọi việc bạn làm trong lần xem này sẽ không được lưu.",
+    "chooseLearner": "Chọn người đang học",
+    "menuTitle": "Menu",
+    "menuClose": "Đóng menu",
+    "language": {
+      "title": "Ngôn ngữ",
+      "button": "Ngôn ngữ: {language}"
+    }
+  },
+  "footer": {
+    "label": "Thêm về Thinkerwell",
+    "organisations": "Dành cho tổ chức",
+    "credits": "Ghi công",
+    "linkedin": "Thinkerwell trên LinkedIn"
+  },
+  "seo": {
+    "home": {
+      "title": "Thinkerwell | Học khoa học xã hội miễn phí cho thanh thiếu niên",
+      "description": "Học khoa học xã hội miễn phí cho thanh thiếu niên khắp Đông Nam Á, nhất là những bạn gặp rào cản trong học tập. Khám phá lịch sử, địa lí, văn hóa và đời sống công dân."
+    },
+    "about": {
+      "title": "Giới thiệu Thinkerwell | Sứ mệnh của chúng tôi",
+      "description": "Tìm hiểu vì sao Thinkerwell ra đời và nền tảng số miễn phí của Thinkerwell giúp thanh thiếu niên gặp rào cản trong học tập tiếp cận khoa học xã hội dễ hơn."
+    },
+    "course": {
+      "title": "Khám phá thế giới của chúng ta | Khóa học khoa học xã hội miễn phí",
+      "description": "Khám phá {lessons} bài học miễn phí của Thinkerwell về lịch sử, địa lí, văn hóa và đời sống công dân. Học một mình hoặc cùng một nhà giáo dục."
+    },
+    "educators": {
+      "title": "Dành cho nhà giáo dục | Thinkerwell",
+      "description": "Dạy các bài học khoa học xã hội miễn phí của Thinkerwell với hướng dẫn giáo viên, tài liệu in được và các hoạt động linh hoạt cho thiết bị dùng chung."
+    },
+    "organisations": {
+      "title": "Dành cho tổ chức | Thinkerwell",
+      "description": "Tìm hiểu cách một chương trình thí điểm với Thinkerwell có thể hỗ trợ việc học khoa học xã hội của thanh thiếu niên gặp rào cản trong học tập."
+    },
+    "credits": {
+      "title": "Ghi công và nguồn | Thinkerwell",
+      "description": "Khám phá các nguồn, video, hình ảnh và phần mềm đứng sau những bài học khoa học xã hội miễn phí của Thinkerwell."
+    },
+    "lessonTitle": "Bài {number}: {title} | Thinkerwell",
+    "lessonDescription": "Bài {number} của {course}, khóa học khoa học xã hội miễn phí của Thinkerwell. Mục tiêu học tập: {goal}",
+    "imageAlt": "Linh vật của Thinkerwell, một nhân vật màu tím đang cầm quyển sách, phía trên dòng chữ Thinkerwell: Exploring Our World."
+  },
+  "dev": {
+    "rtlOn": "Chế độ thử nghiệm viết từ phải sang trái đang bật. Thêm ?dir=ltr vào địa chỉ để tắt.",
+    "localeOn": "Ngôn ngữ thử nghiệm {locale} đang bật. Thêm ?locale=en vào địa chỉ để tắt."
+  },
+  "ds": {
+    "chrome": {
+      "logo": {
+        "homeLabel": "Trang chủ Thinkerwell"
+      },
+      "siteHeader": {
+        "switchLearner": "Đổi người học, hiện tại: {name}",
+        "openMenu": "Mở menu điều hướng"
+      },
+      "stagePath": {
+        "navLabel": "Các bước của bài học",
+        "doneSuffix": ", đã xong",
+        "stageDone": "{stage}, đã xong"
+      },
+      "stageDots": {
+        "progressLabel": "Đã xong {count} trên 5 bước"
+      },
+      "progressRing": {
+        "ariaLabel": "Đã xong {value} trên {max}",
+        "valueLabel": "{value}/{max}"
+      }
+    },
+    "course": {
+      "sectionName": {
+        "history": "Lịch sử và những câu chuyện của loài người",
+        "geography": "Địa lí và môi trường của chúng ta",
+        "culture": "Văn hóa, xã hội và bản sắc",
+        "civics": "Công dân, truyền thông và kinh tế hằng ngày"
+      },
+      "sectionBadge": {
+        "eyebrow": "Phần {number}"
+      },
+      "sectionHeader": {
+        "eyebrow": "Phần {number}",
+        "eyebrowWithTotal": {
+          "other": "Phần {number} · {count} bài học"
+        }
+      },
+      "lessonRow": {
+        "cta": {
+          "start": "Bắt đầu",
+          "continue": "Tiếp tục",
+          "review": "Xem lại"
+        },
+        "status": {
+          "notStarted": "Chưa bắt đầu.",
+          "inProgress": "Đang học.",
+          "completed": "Đã hoàn thành."
+        },
+        "ariaLabelLesson": "Bài {number}: {title}. {status} {cta}",
+        "ariaLabelLessonQuestion": "Bài {number}: {title}. {status} {cta} {question}",
+        "ariaLabelQuiz": "{title}. {status} {cta}"
+      },
+      "continueCard": {
+        "label": "Tiếp tục học",
+        "eyebrow": "Học tiếp từ chỗ bạn đã dừng",
+        "cta": "Tiếp tục"
+      },
+      "journalEntry": {
+        "lessonLine": "Bài {number} · {title}",
+        "kindWriting": "Bài viết",
+        "kindReflection": "Phần suy ngẫm",
+        "saved": "Đã lưu {date}",
+        "edit": "Sửa"
+      },
+      "scoreSummary": {
+        "skillResult": "Đúng {got} trên {of}"
+      }
+    },
+    "content": {
+      "task": {
+        "defaultEyebrow": "Nhiệm vụ của bạn"
+      },
+      "definition": {
+        "close": "Đóng",
+        "hearIt": "Nghe từ này",
+        "meaningOf": "Nghĩa của {word}"
+      },
+      "evidence": {
+        "fictional": "Ví dụ hư cấu, được tạo riêng cho bài học này."
+      },
+      "option": {
+        "correct": "Đúng",
+        "notQuite": "Chưa đúng lắm"
+      },
+      "feedback": {
+        "correctTitle": "Đúng rồi",
+        "retryTitle": "Chưa đúng lắm"
+      },
+      "field": {
+        "optional": "(không bắt buộc)"
+      },
+      "reading": {
+        "part": "Đoạn {n} trên {total}"
+      },
+      "video": {
+        "optional": "Không bắt buộc",
+        "watchLabel": "Xem video",
+        "readInsteadDefault": "Đọc thay thế"
+      }
+    },
+    "actions": {
+      "voiceButton": {
+        "sayIt": "Nói để gõ",
+        "stop": "Dừng"
+      },
+      "listenBar": {
+        "label": "Đang đọc to",
+        "play": "Phát",
+        "pause": "Tạm dừng",
+        "stop": "Dừng",
+        "speedLabel": "Tốc độ",
+        "slow": "Chậm",
+        "normal": "Thường"
+      },
+      "voiceRecorder": {
+        "title": "Ghi âm giọng của bạn",
+        "note": "Bản ghi âm của bạn chỉ nằm trên thiết bị này. Không ai khác nghe được.",
+        "startRecording": "Bắt đầu ghi âm",
+        "stop": "Dừng",
+        "recording": "Đang ghi âm {time}",
+        "listenBack": "Nghe lại",
+        "recordAgain": "Ghi âm lại",
+        "delete": "Xóa"
+      },
+      "writingBox": {
+        "optional": "(không bắt buộc)"
+      },
+      "actionBar": {
+        "continue": "Tiếp tục"
+      }
+    }
+  },
+  "offline": {
+    "offlineTitle": "Bạn đang không có mạng.",
+    "offlineLearner": "Cứ tiếp tục: bài làm của bạn được lưu trên thiết bị này.",
+    "offlineLesson": "Cứ tiếp tục: bài học này đã được lưu, và bài làm của bạn được lưu trên thiết bị này.",
+    "offlineGuest": "Cứ tiếp tục: các bài học vẫn dùng được khi không có mạng.",
+    "offlineGuestNotReady": "Bạn vẫn có thể đọc tiếp những gì đang mở.",
+    "backTitle": "Bạn đã có mạng trở lại.",
+    "backLearner": "Bài làm của bạn đã được lưu.",
+    "updateTitle": "Đã có phiên bản mới.",
+    "updateBody": "Phiên bản mới sẽ bắt đầu vào lần tới khi Thinkerwell được mở.",
+    "updateBodyLearner": "Phiên bản mới sẽ bắt đầu vào lần tới khi Thinkerwell được mở. Bài làm của bạn đã được lưu.",
+    "updateAction": "Cập nhật ngay"
+  },
+  "print": {
+    "print": "In",
+    "brand": "Thinkerwell · Khám phá thế giới của chúng ta",
+    "printLesson": "In bài học này",
+    "lessonPageTitle": "Bài {number}: bản in",
+    "backToLesson": "Quay lại bài học",
+    "learningGoal": "Mục tiêu học tập:",
+    "lessonIntro": "Đây là bài học trên giấy: cả hai mức đọc, các từ khóa và mọi nhiệm vụ, có dòng kẻ để viết. Chữ in màu đen trên nền trắng, không có menu.",
+    "readingStandard": "Bài đọc: bản chuẩn",
+    "readingSimpler": "Bài đọc: bản dễ hơn",
+    "keyWordsNote": "Từ khóa được in đậm.",
+    "optional": "(không bắt buộc)",
+    "watchTitle": "Xem hoặc đọc",
+    "videoNote": "Video: {title} ({channel}). Bản viết bên dưới có cùng những ý ấy.",
+    "writtenVersion": "Bản viết: {title}",
+    "journalPageTitle": "In nhật ký của mình",
+    "printJournal": "In nhật ký của mình",
+    "backToJournal": "Quay lại nhật ký của mình",
+    "journalEmpty": "Chưa có gì được lưu. Bài viết và phần suy ngẫm sẽ hiện ở đây khi bạn bắt đầu.",
+    "journalNoLearner": "Chọn người đang học để in nhật ký của người đó. Không có gì được lưu khi bạn xem qua.",
+    "chooseLearner": "Chọn người đang học",
+    "writing": "Bài viết",
+    "reflection": "Phần suy ngẫm"
+  },
+  "certificates": {
+    "sectionPageTitle": "Giấy chứng nhận: {section}",
+    "coursePageTitle": "Giấy chứng nhận khóa học",
+    "backToCourse": "Quay lại khóa học",
+    "backToHome": "Về trang chủ",
+    "printIntro": "Kiểm tra tên, rồi in. Giấy chứng nhận vừa một trang giấy A4 hoặc Letter.",
+    "nameLabel": "Tên trên giấy chứng nhận",
+    "nameHelp": "Chỉ dùng cho lần in này. Tên không được lưu và không bao giờ rời khỏi thiết bị này.",
+    "sheet": {
+      "title": "Giấy chứng nhận",
+      "finishedSection": "đã hoàn thành phần {section} của {course}.",
+      "finishedCourse": "đã hoàn thành cả {count} bài học của {course}.",
+      "lessons": {
+        "other": "{count} bài học"
+      },
+      "blankName": "Họ tên",
+      "date": "Ngày",
+      "signature": "Chữ ký của giáo viên",
+      "about": "{course} là khóa học khoa học xã hội miễn phí của Thinkerwell."
+    },
+    "notYet": {
+      "section": "Giấy chứng nhận của bạn sẽ sẵn sàng khi bạn hoàn thành mọi bài học trong phần này.",
+      "course": "Giấy chứng nhận khóa học của bạn sẽ sẵn sàng khi bạn hoàn thành cả {count} bài học.",
+      "checkNotNeeded": "Bạn không cần làm phần ôn tập để nhận giấy này.",
+      "lessonsLeft": {
+        "other": "Còn {count} bài học"
+      }
+    },
+    "guest": "Giấy chứng nhận dành cho những người học đã hoàn thành bài học.",
+    "offer": {
+      "sectionTitle": "Bạn đã hoàn thành cả phần {section}.",
+      "courseTitle": "Bạn đã hoàn thành cả {count} bài học.",
+      "sectionBody": "Giấy chứng nhận của bạn đã sẵn sàng để in.",
+      "courseBody": "Giấy chứng nhận khóa học của bạn đã sẵn sàng để in.",
+      "getCertificate": "Nhận giấy chứng nhận của bạn",
+      "getCertificateFor": "Nhận giấy chứng nhận của bạn cho {section}",
+      "getCourseCertificate": "Nhận giấy chứng nhận khóa học",
+      "getSectionCertificate": "Nhận giấy chứng nhận phần học"
+    }
+  },
+  "digitalWorld": {
+    "activity": {
+      "eyebrow": "Hoạt động",
+      "guideTitle": "Hoạt động",
+      "guideIntro": "Những việc người học làm trên thiết bị, cùng điều đa số mọi người sẽ nói và các đáp án. Lớp học cũng có thể làm trên giấy từ bản in."
+    },
+    "banner": {
+      "title": "Khóa học nháp: chưa được xem xét",
+      "body": "Digital World là bản nháp. Một nhà nghiên cứu AI và một tổ chức đối tác vẫn cần kiểm tra nó. Chỉ thiết bị này hiển thị nó.",
+      "bodyEnglishLessons": "Digital World là bản nháp. Một nhà nghiên cứu AI và một tổ chức đối tác vẫn cần kiểm tra nó. Chỉ thiết bị này hiển thị nó. Hiện các bài học vẫn bằng tiếng Anh.",
+      "turnOff": "Tắt chế độ xem trước"
+    },
+    "sheet": {
+      "draft": "Digital World, khóa học nháp: chưa được xem xét. Chưa nên dùng với người học."
+    },
+    "choice": {
+      "label": "Các khóa học trên thiết bị này",
+      "draft": "Bản nháp"
+    },
+    "chart": {
+      "viewsLabel": "Biểu đồ nào",
+      "bar": "{label}: {value}",
+      "figureLabel": "Biểu đồ cột. {measure}. {bars}. Thang đo đi từ {start} đến {end}."
+    },
+    "claim": {
+      "askFirst": "Hỏi những câu này trước",
+      "opened": "Đã mở",
+      "openedCount": "Nguồn đã mở: {count} trên {total}",
+      "postFrom": "Một bài đăng từ {from}",
+      "says": "Nội dung nói gì",
+      "who": "Ai đứng sau",
+      "sourcesTitle": "Các nguồn khác: mở theo thứ tự nào cũng được"
+    },
+    "compare": {
+      "value": "đúng {right} trên {of}",
+      "mostMistakes": "Công cụ mắc nhiều lỗi nhất với {group}.",
+      "notMost": "Công cụ làm tốt hơn với {group}. Hãy tìm nhóm có ít câu đúng nhất.",
+      "paperAnswer": "Nhóm có nhiều lỗi nhất:"
+    },
+    "map": {
+      "noChecks": "Bản nháp này chưa có bài ôn tập phần hay giấy chứng nhận.",
+      "forTeachersTitle": "Dành cho giáo viên và người xem xét",
+      "forTeachersBody": "Mỗi bài học có một hướng dẫn giáo viên, gồm ghi chú, đáp án, hoạt động trên giấy và ghi chú cho người xem xét. Bạn cũng có thể in cả khóa học.",
+      "printAll": "In tất cả bài học",
+      "guideLink": "Hướng dẫn giáo viên, Bài {number}: {title}"
+    },
+    "plan": {
+      "answerLabel": "Câu trả lời của bạn",
+      "back": "Quay lại",
+      "next": "Bước tiếp theo",
+      "helperSaving": "Kế hoạch của bạn được lưu trên thiết bị này.",
+      "helperLookAround": "Bạn đang xem qua, nên kế hoạch của bạn không được lưu.",
+      "helperNoLearner": "Chưa chọn ai, nên kế hoạch của bạn không được lưu.",
+      "notYet": "Chưa trả lời",
+      "ownHelp": "Đừng viết tên thật hay thông tin riêng tư của bất kỳ ai.",
+      "ownLabel": "Vấn đề của bạn",
+      "problemHelp": "Chọn một vấn đề trong bài học, hoặc viết một vấn đề mà nhiều người cùng gặp trong một cộng đồng bạn biết.",
+      "problemTitle": "Vấn đề",
+      "stepAnswered": "Đã trả lời",
+      "stepOf": "Bước {n} trên {total}",
+      "stepsLabel": "Các bước",
+      "useStarter": "Dùng câu mở đầu gợi ý",
+      "yourPlan": "Kế hoạch của bạn"
+    },
+    "printAll": {
+      "back": "Quay lại Digital World",
+      "intro": "Mọi bài học Digital World, lần lượt từng bài. Mỗi bài bắt đầu trên một trang mới. Bạn có thể in chúng, hoặc lưu thành tệp PDF.",
+      "pageTitle": "Digital World: mọi bài học"
+    },
+    "reviewer": {
+      "title": "Dành cho người xem xét",
+      "intro": "Ghi chú từ những người viết bản nháp này: điều gì mới và điều gì cần kiểm tra. Người học không bao giờ thấy chúng.",
+      "pictureTitle": "Hình còn phải vẽ",
+      "activityTitle": "Về hoạt động",
+      "saves": "Hoạt động lưu gì",
+      "offline": "Cách hoạt động khi không có mạng"
+    },
+    "signs": {
+      "keyTitle": "Dấu hiệu cảnh báo cần để ý",
+      "showAll": "Hiện tất cả dấu hiệu"
+    },
+    "sort": {
+      "empty": "Chưa có gì ở đây.",
+      "mostPeople": "Đa số mọi người sẽ nói: {group}.",
+      "notPlaced": "Còn phải xếp: {count}",
+      "yourGroups": "Các nhóm của bạn"
+    },
+    "switch": {
+      "pageTitle": "Xem trước Digital World",
+      "onTitle": "Chế độ xem trước Digital World đang bật",
+      "onBody": "Thiết bị này hiện đang hiển thị Digital World, một khóa học nháp về AI và thông tin trên mạng. Không ai khác thấy nó, và không có gì về nó được gửi đi đâu cả. Chế độ này vẫn bật cho đến khi bạn tắt.",
+      "reviewNote": "Khóa học chưa được xem xét. Một nhà nghiên cứu AI vẫn cần kiểm tra các dữ kiện của nó, và một tổ chức đối tác vẫn cần kiểm tra các chủ đề nhạy cảm. Chưa nên dùng với người học.",
+      "noStorage": "Trình duyệt này không lưu được cài đặt ở đây, nên chế độ xem trước chỉ bật cho đến khi bạn đóng trang này.",
+      "open": "Mở Digital World",
+      "printAll": "In tất cả bài học",
+      "turnOff": "Tắt chế độ xem trước",
+      "offTitle": "Chế độ xem trước Digital World đang tắt",
+      "offBody": "Thiết bị này không còn hiển thị Digital World nữa.",
+      "turnOn": "Bật lại",
+      "goTo": "Đến {title}",
+      "saveFailed": "Thiết bị này không lưu được thay đổi đó. Thay đổi chỉ có hiệu lực cho đến khi bạn đóng trang này."
+    },
+    "tool": {
+      "badge": "Công cụ giả lập",
+      "improveTitle": "Hỏi một câu hỏi tốt hơn",
+      "checkTitle": "Kiểm tra một câu trả lời",
+      "youAsk": "Bạn hỏi",
+      "toolSays": "Công cụ giả lập nói",
+      "paperAnswers": "Câu trả lời của công cụ giả lập cho từng gợi ý:"
+    },
+    "trainModel": {
+      "changed": "Các ví dụ của bạn đã thay đổi. Huấn luyện lại mô hình để xem các dự đoán mới của nó.",
+      "freePlayIntro": "Bỏ bớt ví dụ, hoặc đổi một nhãn, rồi huấn luyện lại mô hình. Mô hình làm theo nhãn của bạn, kể cả khi chúng khác với nhãn của người làm vườn.",
+      "freePlayTitle": "Tự thử",
+      "gardenerSays": "Người làm vườn nói",
+      "groupCount": {
+        "other": "{count} ví dụ"
+      },
+      "groupEmpty": "Chưa có ví dụ nào ở đây.",
+      "groupTitle": "Ví dụ {label}",
+      "historyNone": "Chưa có kết quả. Huấn luyện mô hình để xem nó làm tốt đến đâu.",
+      "historyScore": "{right} trên {of}",
+      "historyTitle": "Kết quả cho đến giờ",
+      "how1": "Nó giữ lại mọi ví dụ bạn đưa cho nó, kèm nhãn của bạn.",
+      "how2": "Với một chiếc lá mới, nó tìm ví dụ có các con số gần nhất.",
+      "how3": "Nó gán cho chiếc lá mới nhãn của ví dụ đó. Đây gọi là mô hình láng giềng gần nhất.",
+      "howTitle": "Mô hình này hoạt động thế nào",
+      "labelFor": "Nhãn cho: {description}",
+      "learnedFrom": {
+        "other": "Nó đã học từ {count} ví dụ."
+      },
+      "lookedLike": "Nó trông giống nhất với ví dụ này, nên mô hình nói “{label}”.",
+      "modelSaid": "Mô hình nói",
+      "newExamples": {
+        "other": "Có {count} ví dụ mới. Gắn nhãn cho từng ví dụ, và nó sẽ chuyển vào nhóm đó."
+      },
+      "next": "Tiếp tục với “{title}”",
+      "noNewExamples": "Lần này không có ví dụ mới. Thử mô hình trên lá của một loại cây mới.",
+      "notQuite": "Chưa đúng lắm",
+      "notUsedHelp": "Mô hình không học từ những ví dụ này. Gắn nhãn cho một ví dụ để dùng lại nó.",
+      "notUsedTitle": "Không dùng",
+      "numbersIntro": {
+        "other": "Mô hình không nhìn thấy hình ảnh. Nó thấy {count} số từ 0 đến 10:"
+      },
+      "numbersSummary": "Mô hình nhìn thấy gì",
+      "paperCard": "Chiếc lá",
+      "paperExamples": "Ví dụ cần gắn nhãn",
+      "paperExpected": "Gắn nhãn giống người làm vườn, mô hình đoán đúng {right} trên {of}.",
+      "paperTests": "Lá mới để thử",
+      "paperYourLabel": "Nhãn của bạn",
+      "resultsTitle": "Các dự đoán của mô hình",
+      "right": "Đúng",
+      "roundsLabel": "Các vòng",
+      "score": "Mô hình đoán đúng {right} trên {of}.",
+      "startAgain": "Bắt đầu lại",
+      "stepOf": "Bước {n} trên {total}",
+      "takeOut": "Bỏ ra",
+      "takeOutFor": "Bỏ ra: {description}",
+      "testNewPlant": "Thử các lá mới",
+      "toSortHelp": "Gắn nhãn cho từng chiếc lá. Nó sẽ chuyển vào nhóm đó.",
+      "toSortTitle": "Cần phân loại",
+      "train": "Huấn luyện mô hình",
+      "trainHelpEmpty": "Gắn nhãn cho ít nhất một chiếc lá để huấn luyện mô hình.",
+      "trainHelpSort": {
+        "other": "Phân loại thêm {count} chiếc lá nữa để huấn luyện mô hình."
+      },
+      "yourLabelsDiffer": "Một số nhãn của bạn khác với nhãn của người làm vườn. Mô hình đã học nhãn của bạn, nên các dự đoán của nó cũng theo nhãn đó."
+    }
+  }
+}

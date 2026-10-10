@@ -130,22 +130,22 @@ test.describe('course text stays English', () => {
 });
 
 test.describe('nothing extra for English', () => {
-  test('an English visit fetches no other language, no test language and no Arabic font', async ({ page }) => {
+  test('an English visit fetches no other language, no test language, no Arabic font and no Vietnamese font', async ({ page }) => {
     const requests = recordRequests(page);
     await page.goto('/');
     await page.goto(L10.path('read'));
     await expect(page.locator('h1')).toHaveText(L10.title);
     await page.goto('/settings');
     await expect(page.locator('h1')).toBeVisible();
-    expect(requests.filter((url) => /\/assets\/(locales|pseudo|fonts-arabic)\//.test(url))).toEqual([]);
+    expect(requests.filter((url) => /\/assets\/(locales|pseudo|fonts-arabic|fonts-vietnamese)\//.test(url))).toEqual([]);
   });
 
-  test('the offline copy holds Indonesian, the one other language ready, and no test language, no language not ready and no Arabic font', async ({ request }) => {
+  test('the offline copy holds Indonesian, the one other language ready, and no test language, no language not ready and no Arabic or Vietnamese font', async ({ request }) => {
     const worker = await (await request.get('/sw.js')).text();
     expect(worker).toContain('index.html');
     expect(worker).toMatch(/assets\/locales\/id\//);
-    expect(worker).not.toMatch(/assets\/(locales\/(?!id\/)|pseudo|fonts-arabic)/);
-    expect(worker).not.toMatch(/vazirmatn/i);
+    expect(worker).not.toMatch(/assets\/(locales\/(?!id\/)|pseudo|fonts-arabic|fonts-vietnamese)/);
+    expect(worker).not.toMatch(/vazirmatn|be-vietnam-pro/i);
   });
 
   test('a right-to-left language fetches its messages and the Arabic font stylesheet when it is used', async ({ page }) => {

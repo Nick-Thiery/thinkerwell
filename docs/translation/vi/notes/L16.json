@@ -1,0 +1,451 @@
+{
+  "title": {
+    "flag": true,
+    "note": "Kept as a question. 'Kết nối' for 'connect'; check it is the natural verb for language linking people.",
+    "source": "How do languages connect people?",
+    "back": "How does language connect people?"
+  },
+  "essentialQuestion": {
+    "flag": true,
+    "note": "'Cảm giác thuộc về' follows KEY_TERMS (belonging). 'Build belonging and understanding' rendered as 'giúp tạo nên cảm giác thuộc về và sự hiểu nhau'; check it is not stiff.",
+    "source": "How does language build belonging and understanding?",
+    "back": "How does language help create a feeling of belonging and mutual understanding?"
+  },
+  "learningGoal": {
+    "flag": true,
+    "note": "'Thế mạnh' for 'strength' and 'giao tiếp' for communicate; check tone.",
+    "source": "Explain how languages and other ways of communicating connect people, and why speaking more than one language is a strength.",
+    "back": "Explain how language and other ways of communicating connect people, and why speaking many languages is a strength."
+  },
+  "warmUp.question": {
+    "source": "How can people share a message if they do not speak the same language?",
+    "back": "How can people share a message when they do not speak the same language?"
+  },
+  "warmUp.options.0": {
+    "source": "Use pictures",
+    "back": "Use pictures"
+  },
+  "warmUp.options.1": {
+    "source": "Use gestures",
+    "back": "Use gestures"
+  },
+  "warmUp.options.2": {
+    "source": "Ask someone to help",
+    "back": "Ask other people to help"
+  },
+  "warmUp.options.3": {
+    "source": "Write it down",
+    "back": "Write it on paper"
+  },
+  "evidence.label": {
+    "source": "Fictional example created for this lesson.",
+    "back": "Fictional example, created specially for this lesson."
+  },
+  "evidence.question": {
+    "flag": true,
+    "note": "The English notice is written in English, so the question still says 'đọc tiếng Anh'. See evidence.cards.0.cases.0.body.",
+    "source": "Which parts of the notice could someone understand without reading English?",
+    "back": "Which parts of the notice can a person understand without needing to read English?"
+  },
+  "evidence.cards.0.title": {
+    "flag": true,
+    "note": "'Hillside' kept as the invented name; 'Learning Centre' translated as 'Trung tâm học tập'. Check the centre name reads as a name.",
+    "source": "Notice at Hillside Learning Centre",
+    "back": "Notice at the Hillside Learning Centre"
+  },
+  "evidence.cards.0.cases.0.name": {
+    "source": "Written notice",
+    "back": "Written notice"
+  },
+  "evidence.cards.0.cases.0.body": {
+    "flag": true,
+    "note": "The notice is meant to be an English notice (the question asks what can be understood without reading English). To keep that logic, the Vietnamese says it is written in English and gives the meaning in Vietnamese. A team decision may be needed on whether to show the English words too. '4 giờ chiều' for '4 p.m.' so it can be read aloud. | Review: Translator added 'Thông báo viết bằng tiếng Anh:' before the quoted Vietnamese notice, so the premise (an English notice) is kept; a native speaker should check this is clear.",
+    "source": "“Free food for everyone: Friday, 4 p.m., Hillside Learning Centre.”",
+    "back": "The notice is written in English: \"Free food for everyone: Friday, 4 pm, Hillside Learning Centre.\""
+  },
+  "evidence.cards.0.cases.1.name": {
+    "source": "Volunteer says",
+    "back": "Volunteer speaking"
+  },
+  "evidence.cards.0.cases.1.body": {
+    "flag": true,
+    "note": "'Ngôn ngữ kí hiệu' for sign language (kí with i, following KEY_TERMS 'kí hiệu'; the official spelling is usually 'ký hiệu'). Check the spelling decision.",
+    "source": "“Some visitors read English easily. Others ask a friend to help, look at the pictures, use sign language, or speak another language with one of us.”",
+    "back": "\"Some guests read English easily. Others ask friends to help, look at pictures, use sign language, or speak a different language with one of us.\""
+  },
+  "evidence.cards.1.title": {
+    "flag": true,
+    "note": "'Pictogram' rendered as 'hình biểu tượng'. No standard everyday word; reviewer to choose (alternatives: 'hình ký hiệu', 'tranh chỉ dẫn').",
+    "source": "Picture version of the notice (pictogram)",
+    "back": "Notice with pictures (icons)"
+  },
+  "evidence.cards.1.items.0": {
+    "source": "A box of food",
+    "back": "A box of food"
+  },
+  "evidence.cards.1.items.1": {
+    "source": "A clock showing 4:00",
+    "back": "A clock showing 4:00"
+  },
+  "evidence.cards.1.items.2": {
+    "source": "A calendar with Friday circled",
+    "back": "A calendar page with Friday circled"
+  },
+  "evidence.cards.1.items.3": {
+    "source": "A small map with a pin on the centre",
+    "back": "A small map with a pin marking the centre"
+  },
+  "read.sections.0.heading": {
+    "source": "Language helps people connect",
+    "back": "Language helps people connect"
+  },
+  "read.sections.0.text": {
+    "flag": true,
+    "note": "'Đa ngôn ngữ' for multilingual (glossary word); some may prefer 'nói được nhiều thứ tiếng'. Language names: tiếng Tây Ban Nha, Guaraní (kept), Somali, Ả Rập, Tamil, 'Mã Lai' for Malay (some use 'Malay'). Please check each. The last two sentences (English skill does not show cleverness) should be checked for kindness and clarity. | Review: 'Nghe một từ mình biết' uses mình generically; 'bạn' may be safer. Also 'kí hiệu' (L11, L07, L16, geography) vs 'ký hiệu' (course.json, culture.json) are inconsistent across files.",
+    "source": "People use language to share news, jokes, memories and care. Hearing a word you know can help you feel welcome in a new place. Many people in the world are multilingual. In Paraguay, for example, many people speak both Spanish and Guaraní. Someone who speaks Somali, Arabic and English, or Tamil and Malay, can help different groups understand each other. That is a real skill. How well a person speaks English does not show how clever they are. It does not show whether their ideas matter.",
+    "back": "People use language to share news, jokes, memories and care. Hearing a word you know can help you feel welcomed in a new place. Many people in the world are multilingual, meaning they speak more than one language. For example in Paraguay, many people speak both Spanish and Guaraní. A person who speaks Somali, Arabic and English, or Tamil and Malay, can help different groups of people understand each other. That is a real skill. How well a person speaks English does not show how smart that person is. It also does not show whether their opinion matters or not."
+  },
+  "read.sections.0.simpler": {
+    "flag": true,
+    "note": "Check naturalness and that 'đa ngôn ngữ' is understood after the short explanation. 'Kỹ năng' per KEY_TERMS.",
+    "source": "People use language to share news, jokes and care. A word you know can help you feel welcome. Many people are multilingual. They speak two or more languages. In Paraguay, lots of people speak Spanish and Guaraní. If you speak two or three languages, you can help others. That is a real skill. Good English does not show how smart you are. All people's ideas matter.",
+    "back": "People use language to share news, jokes and care. A word you know helps you feel welcomed. Many people are multilingual. They speak two or more languages. In Paraguay, many people speak Spanish and Guaraní. If you can speak two or three languages, you can help other people. That is a real skill. Speaking English well does not show that a person is smart. Everyone's opinion matters."
+  },
+  "read.sections.1.heading": {
+    "source": "People communicate in many ways",
+    "back": "People communicate in many ways"
+  },
+  "read.sections.1.text": {
+    "flag": true,
+    "note": "'Người khiếm thính' for Deaf people (the English capital-D Deaf community). Some Vietnamese Deaf community members prefer 'người điếc'; a native check, ideally with a Deaf reader, is needed. 'Hơn 300 ngôn ngữ kí hiệu' is the UN figure. 'Hình biểu tượng', 'dễ tiếp cận' (accessible), 'phiên dịch' (interpret) are glossary choices.",
+    "source": "Communication is not only speaking and writing. Deaf communities use sign languages, which are full languages with their own grammar. The United Nations says there are more than 300 sign languages in the world. People also use gestures, pictures and clear design. The pictogram on the notice shows food, a clock, a calendar and a map. This makes the notice more accessible, because more people can understand the main message. But a picture cannot give every detail, such as what to bring. A volunteer who can interpret still helps.",
+    "back": "Communication is not only speaking and writing. Deaf communities use sign language. These are full languages with their own grammar. The United Nations says the world has more than 300 sign languages. People also use gestures, pictures and clear design. The icons on the notice draw food, a clock, a calendar and a map. Because of that the notice is more accessible, since more people can understand the main message. But a picture cannot say every detail, for example what to bring. A volunteer who can interpret is still very helpful."
+  },
+  "read.sections.1.simpler": {
+    "flag": true,
+    "note": "Check that 'dễ tiếp cận' and 'phiên dịch' are clear to a child. 'Nét mặt' for faces (facial expressions).",
+    "source": "Communication is more than talking and writing. Deaf people use sign languages. These are full languages. There are more than 300 of them. People also use hands, faces and pictures. The notice has pictures of food, a clock and a map. This makes it more accessible. More people can understand it. But a picture cannot say what to bring. A helper who can interpret is still useful.",
+    "back": "Communication is not only speaking and writing. Deaf people use sign language. These are full languages. There are more than 300 such languages. People also use hands, facial expressions and pictures. The notice has pictures of food, a clock and a map. Because of that it is more accessible. More people can understand it. But pictures cannot say what to bring. A person who can interpret is still very helpful."
+  },
+  "read.sections.2.heading": {
+    "source": "Languages change and share words",
+    "back": "Languages change and borrow words from each other"
+  },
+  "read.sections.2.text": {
+    "flag": true,
+    "note": "Examples in other languages are kept as in the English: qahwah, kahveh, caffè, 'coffee'. Note that Vietnamese 'cà phê' itself came from French; the lesson does not mention it, but a reviewer may want a note. Language names: tiếng Thổ Nhĩ Kỳ, tiếng Ý, tiếng Hindi, tiếng Ba Tư (Persian), tiếng Hausa. 'Họ ngôn ngữ' for language family (alternative 'ngữ hệ', more formal). Check the claim about families reads correctly.",
+    "source": "Languages change over time. They also borrow words from each other when people meet and trade. The English word “coffee” travelled a long way. It started as the Arabic word qahwah. It became kahveh in Turkish and caffè in Italian, and then it reached English. Many languages are also related. English, Hindi and Persian belong to one language family, because they grew from one very old language. Arabic, Somali and Hausa belong to another family. No language is better than another. Each one carries the knowledge and stories of the people who speak it.",
+    "back": "Languages change over time. They also borrow words from each other when people meet and trade. The English word \"coffee\" has come a long way. At first it was the Arabic word qahwah. It became kahveh in Turkish and caffè in Italian, and only then came to English. Many languages are also related like relatives. English, Hindi and Persian belong to the same language family, because they all developed from one very ancient language. Arabic, Somali and Hausa belong to another family. No language is better than another. Each language carries the knowledge and stories of the people who speak it."
+  },
+  "read.sections.2.simpler": {
+    "flag": true,
+    "note": "'Giống như anh em họ' for 'like cousins'. Check that the family idea is clear and 'họ ngôn ngữ' is understood.",
+    "source": "Languages change over time. They take words from each other. Look at the word “coffee”. It began in Arabic. Then it went into Turkish and Italian. Then it came into English. Some languages are like cousins. They grew from one old language. So they are in one language family. English, Hindi and Persian are in one. Arabic, Somali and Hausa are in a different one. No language is the best. Each one holds the stories of the people who speak it.",
+    "back": "Languages change over time. They take words from each other. Look at the word \"coffee\". It started in Arabic. Then it went into Turkish and Italian. Then it came to English. Some languages are like cousins. They grew up together from one old language. So they belong to the same language family. English, Hindi and Persian belong to one family. Arabic, Somali and Hausa belong to another family. No language is the best. Each language keeps the stories of the people who speak it."
+  },
+  "read.glossary.0.word": {
+    "flag": true,
+    "note": "'Đa ngôn ngữ' (Hán Việt) chosen as a short noun-like word that can be shown in text; alternative 'nói được nhiều ngôn ngữ'.",
+    "source": "multilingual",
+    "back": "multilingual"
+  },
+  "read.glossary.0.definition": {
+    "source": "Able to speak and understand more than one language.",
+    "back": "Speaking and understanding more than one language."
+  },
+  "read.glossary.0.example": {
+    "source": "A person who speaks Tamil and Malay is multilingual.",
+    "back": "A person who speaks Tamil and Malay is multilingual."
+  },
+  "read.glossary.1.word": {
+    "source": "communication",
+    "back": "communicate",
+    "flag": true,
+    "note": "Review: 'giao tiếp' is used for 'communication' (noun) and the verb in the text; check it reads as the key word in both levels."
+  },
+  "read.glossary.1.definition": {
+    "source": "Sharing ideas or information with other people.",
+    "back": "Share ideas or information with other people."
+  },
+  "read.glossary.1.example": {
+    "source": "The notice and the pictogram are both kinds of communication.",
+    "back": "Notices and icons are both ways to communicate."
+  },
+  "read.glossary.2.word": {
+    "source": "accessible",
+    "back": "accessible"
+  },
+  "read.glossary.2.definition": {
+    "source": "Made so that more people can use or understand it.",
+    "back": "Made so that more people can use or understand it."
+  },
+  "read.glossary.2.example": {
+    "source": "The pictures make the notice more accessible.",
+    "back": "The drawings make the notice more accessible."
+  },
+  "read.glossary.3.word": {
+    "flag": true,
+    "note": "'Phiên dịch' used for the helper who interprets; it works for both spoken and written help. Alternative 'thông dịch'. Note Lesson 18 uses 'cách diễn giải' for 'interpretation', a different meaning on purpose.",
+    "source": "interpret",
+    "back": "interpret"
+  },
+  "read.glossary.3.forms": {
+    "source": [
+      "interprets"
+    ],
+    "back": ""
+  },
+  "read.glossary.3.definition": {
+    "source": "To help people understand each other across languages.",
+    "back": "Help people who speak different languages understand each other."
+  },
+  "read.glossary.3.example": {
+    "source": "A volunteer can interpret for a visitor at the centre.",
+    "back": "A volunteer can interpret for guests at the centre."
+  },
+  "read.glossary.4.word": {
+    "flag": true,
+    "note": "'Họ ngôn ngữ' vs 'ngữ hệ'. Chosen to match the 'cousins' picture in the simpler text.",
+    "source": "language family",
+    "back": "language family"
+  },
+  "read.glossary.4.definition": {
+    "source": "A group of languages that grew from one older language.",
+    "back": "A group of languages that developed together from one older language."
+  },
+  "read.glossary.4.example": {
+    "source": "English and Persian belong to the same language family.",
+    "back": "English and Persian belong to the same language family."
+  },
+  "read.checks.0.question": {
+    "source": "What is one limit of the pictogram?",
+    "back": "What is one limit of icons?"
+  },
+  "read.checks.0.options.0.text": {
+    "flag": true,
+    "note": "Correct answer. Kept similar in length to the other options.",
+    "source": "It cannot show every detail, like what to bring.",
+    "back": "They cannot show every detail, like what to bring."
+  },
+  "read.checks.0.options.0.feedback": {
+    "source": "Yes. The pictures show the main message, but not every detail. A volunteer can help with the rest.",
+    "back": "Right. The pictures show the main message but not every detail. A volunteer can help with the rest."
+  },
+  "read.checks.0.options.1.text": {
+    "source": "It means the volunteers never need to talk at all.",
+    "back": "They mean volunteers never need to talk."
+  },
+  "read.checks.0.options.1.feedback": {
+    "source": "Not quite. The lesson says a volunteer who can interpret still helps. Look for what the pictures cannot show.",
+    "back": "Not quite. The lesson says a volunteer who can interpret is still helpful. Look for what the pictures cannot show."
+  },
+  "read.checks.0.options.2.text": {
+    "source": "It proves that everyone can read English well.",
+    "back": "They prove that everyone can read English well."
+  },
+  "read.checks.0.options.2.feedback": {
+    "source": "Not quite. The pictures help people who do not read English. Look for what the pictures cannot show.",
+    "back": "Not quite. The pictures help people who cannot read English. Look for what the pictures cannot show."
+  },
+  "read.checks.1.question": {
+    "source": "Which idea about languages comes from the lesson?",
+    "back": "Which idea about language comes from the lesson?",
+    "note": "Review: 'đến từ bài học' was a calque of 'comes from the lesson'. [Reviewer changed: Ý nào về ngôn ngữ đến từ bài học? → Ý nào về ngôn ngữ có trong bài học?]"
+  },
+  "read.checks.1.options.0.text": {
+    "source": "Speaking English well shows a person is clever.",
+    "back": "Speaking English well shows a person is smart."
+  },
+  "read.checks.1.options.0.feedback": {
+    "source": "Not quite. The lesson says how well someone speaks English does not show how clever they are.",
+    "back": "Not quite. The lesson says that how well someone speaks English does not show how smart they are."
+  },
+  "read.checks.1.options.1.text": {
+    "source": "Only spoken languages are real languages.",
+    "back": "Only spoken languages are real languages."
+  },
+  "read.checks.1.options.1.feedback": {
+    "source": "Not quite. Sign languages are full languages with their own grammar.",
+    "back": "Not quite. Sign languages are full languages with their own grammar."
+  },
+  "read.checks.1.options.2.text": {
+    "flag": true,
+    "note": "Keeps 'coffee' in English as the word being discussed.",
+    "source": "Languages borrow words, like “coffee” from Arabic.",
+    "back": "Languages borrow from each other, like \"coffee\" from Arabic."
+  },
+  "read.checks.1.options.2.feedback": {
+    "source": "Yes. “Coffee” came from Arabic, through Turkish and Italian, into English.",
+    "back": "Right. The word \"coffee\" went from Arabic, through Turkish and Italian, and into English."
+  },
+  "read.checks.2.question": {
+    "source": "What else could the centre add so that more people understand the notice?",
+    "back": "What else could the centre add so more people understand the notice?"
+  },
+  "read.checks.2.placeholder": {
+    "source": "Think about people who cannot read, people who are Deaf, and people who speak other languages ...",
+    "back": "Think about people who cannot read, people who are deaf and people who speak other languages ..."
+  },
+  "write.prompt": {
+    "source": "Suggest two ways to make the centre's notice clear to more people. Say how each one helps and one thing it cannot do.",
+    "back": "Suggest two ways to make the centre's notice clear to more people. Say how each one helps and one thing it cannot do.",
+    "flag": true,
+    "note": "Review: 'Nói mỗi cách giúp ích...' (Say how each helps) is a little blunt; 'Cho biết' may be more natural."
+  },
+  "write.sentenceStarters.0": {
+    "flag": true,
+    "note": "Starter changed to 'Mình sẽ thêm ...' (first person, future) to match the English 'I would add'.",
+    "source": "I would add ...",
+    "back": "I would add ..."
+  },
+  "write.sentenceStarters.1": {
+    "source": "This helps because ...",
+    "back": "This helps because ..."
+  },
+  "write.sentenceStarters.2": {
+    "source": "I would also ...",
+    "back": "I would also ..."
+  },
+  "write.sentenceStarters.3": {
+    "source": "One limit is ...",
+    "back": "One limit is ..."
+  },
+  "write.sentenceStarters.4": {
+    "source": "This shows that ...",
+    "back": "This shows that ..."
+  },
+  "write.planningBoxes.0": {
+    "source": "My main idea",
+    "back": "My main idea"
+  },
+  "write.planningBoxes.1": {
+    "source": "Evidence from the lesson",
+    "back": "Evidence from the lesson"
+  },
+  "write.planningBoxes.2": {
+    "source": "Why it matters",
+    "back": "Why this matters"
+  },
+  "write.planningBoxes.3": {
+    "source": "A question I still have",
+    "back": "A question I still have"
+  },
+  "write.selfCheck.0": {
+    "source": "I suggested two changes to the notice.",
+    "back": "I suggested two changes to the notice."
+  },
+  "write.selfCheck.1": {
+    "source": "I explained how each change helps.",
+    "back": "I explained how each change helps."
+  },
+  "write.selfCheck.2": {
+    "source": "I named one limit.",
+    "back": "I named one limit."
+  },
+  "write.example": {
+    "flag": true,
+    "note": "Written in first person with 'mình', like the English 'I'. Check it reads naturally for a learner's own voice.",
+    "source": "I would add the notice in two or three languages that visitors use. This helps because more people can read it in a language they know. I would also add a helper at the door who can interpret. This helps people ask questions, like what to bring. One limit is that a written notice cannot help people who do not read. The pictures and the helper can help with that. This shows that using more than one way to share a message helps more people feel welcome.",
+    "back": "I would add the notice in two or three languages that the visiting guests use. This helps because more people can read it in a language I know. I would also add a helper at the door, who can interpret. This helps everyone ask, for example, what to bring. One limit is that a written notice does not help people who cannot read. Pictures and the helper can help with that. This shows that using many ways to share one message helps more people feel welcomed."
+  },
+  "speak.partnerTask": {
+    "flag": true,
+    "note": "'Bạn học' for partner per KEY_TERMS.",
+    "source": "Explain the notice to your partner using simple words and a gesture or a drawing. Your partner says what was clear.",
+    "back": "Explain the notice to your partner in simple words, with a gesture or a drawing. Your partner will say which part was clear."
+  },
+  "speak.independentTask": {
+    "source": "Explain why speaking more than one language is a useful skill. Use one example from the lesson.",
+    "back": "Explain why speaking many languages is a useful skill. Use one example from the lesson."
+  },
+  "watch.why": {
+    "source": "This animated TED-Ed lesson shows how languages change over time and why some languages are related.",
+    "back": "This animated TED-Ed lesson shows how language changes over time and why some languages are related like relatives."
+  },
+  "watch.beforeQuestion": {
+    "source": "How can two languages be related, like members of a family?",
+    "back": "In what way can two languages be related, like members of one family?"
+  },
+  "watch.afterQuestion": {
+    "source": "What does a shared language family tell us, and what does it not tell us?",
+    "back": "What does it tell us that languages are in the same language family, and what does it not tell us?"
+  },
+  "watch.summary": {
+    "flag": true,
+    "note": "Numbers 3,000 and 8,000 written as 3.000 and 8.000. 'Họ ngôn ngữ' as in the lesson. Check 'chuyên gia ngôn ngữ' (language experts) is natural. | Review: English says different experts count between 3,000 and 8,000; the Vietnamese lost 'different experts' and read as one count covering a range. [Reviewer changed: Vì vậy, các chuyên gia đếm được từ 3.000 đến 8.000 ngôn ngữ trên thế giới. → Vì vậy, mỗi chuyên gia đếm ra một con số khác nhau, từ 3.000 đến 8.000 ngôn ngữ trên thế giới.]",
+    "source": "This animated video explains how languages change. Long ago, groups of people who spoke one language moved apart. They lived in new places and met new neighbours. Over many years, each group changed the way it spoke. New words came in, and sounds changed. In time, one language became several languages. Languages that grew from one older language form a language family. Language experts compare grammar and basic words, like numbers, to find these links. Some words are borrowed from neighbours, so experts check them with care. It can be hard to say where one language ends and another begins. So different experts count between 3,000 and 8,000 languages in the world. The video ends with an idea: a language that sounds new to you may be related to one you know.",
+    "back": "This animated video explains how language changes. A very long time ago, groups of people who spoke the same language moved far from each other. They lived in new places and met new neighbours. Over many years, each group changed its way of speaking. New words appeared, and sounds changed too. Gradually, one language became many languages. Languages that grew from one older language form a language family. Language experts compare grammar and basic words, like counting numbers, to find this connection. Some words are borrowed from neighbours, so the experts check them very carefully. Sometimes it is hard to say where one language ends and where another begins. Because of this, experts count between 3,000 and 8,000 languages in the world. The video ends with one idea: a language that sounds strange to you may be related to a language you already know."
+  },
+  "watch.keyPoints.0": {
+    "source": "Languages change slowly over time.",
+    "back": "Languages change slowly over time."
+  },
+  "watch.keyPoints.1": {
+    "source": "Related languages grew from one older language.",
+    "back": "Related languages grew from one older language."
+  },
+  "watch.keyPoints.2": {
+    "source": "Languages also borrow words from their neighbours.",
+    "back": "Languages also borrow words from their neighbours."
+  },
+  "watch.contentNote": {
+    "flag": true,
+    "note": "'Tháp Babel' for the Tower of Babel story. This is a religious story; check the wording is neutral and that the name is the one a Vietnamese reader would use.",
+    "source": "The video opens with the Tower of Babel story as a hook, then describes early human groups moving apart. The narration is fast and the vocabulary is quite advanced, so pause often or use the written summary.",
+    "back": "The video opens with the story of the Tower of Babel to get attention, then describes ancient groups of people moving far apart. The narration is fast and the vocabulary fairly hard, so pause often or use the written summary."
+  },
+  "reflect.prompts.0.text": {
+    "source": "One way people can communicate without speaking is ...",
+    "back": "One way people can communicate without speaking is ..."
+  },
+  "reflect.prompts.1.text": {
+    "source": "A question I have about how languages change is ...",
+    "back": "A question I have about how language changes is ..."
+  },
+  "reflect.completionMessage": {
+    "source": "You finished Lesson 16. You explained how languages and other ways of communicating connect people.",
+    "back": "You finished Lesson 16. You explained how language and other ways of communicating connect people."
+  },
+  "visual.alt": {
+    "flag": true,
+    "note": "Keeps 'coffee' in English as the word shown in the picture. The picture's labels should match (qahwah, kahveh, caffè, coffee stay as they are).",
+    "source": "Arrows show the word coffee moving from Arabic to Turkish to Italian to English. Below, a notice uses pictures of food, a clock, a calendar and a map.",
+    "back": "Arrows show the word coffee going from Arabic to Turkish, Italian and then English. Below, a notice uses pictures of food, a clock, a calendar and a map."
+  },
+  "sources.0.label": {
+    "source": "TED-Ed: How languages evolve",
+    "back": "TED-Ed: How languages evolve (animated lesson)"
+  },
+  "sources.1.label": {
+    "flag": true,
+    "note": "UN day name: 'Ngày Quốc tế Ngôn ngữ Kí hiệu'; the UN's own Vietnamese name may spell 'Ký'. Check.",
+    "source": "United Nations: International Day of Sign Languages",
+    "back": "United Nations: International Day of Sign Languages"
+  },
+  "sources.2.label": {
+    "source": "VOA Learning English: English words borrowed from Arabic",
+    "back": "VOA Learning English: English words borrowed from Arabic"
+  },
+  "sources.3.label": {
+    "flag": true,
+    "note": "'Phi-Á' for Afro-Asiatic; check the term.",
+    "source": "Britannica: Afro-Asiatic languages",
+    "back": "Britannica: Afro-Asiatic languages"
+  },
+  "sensitiveNotes.0": {
+    "flag": true,
+    "note": "Check the register for teachers ('trân trọng', 'ngôn ngữ mẹ đẻ'). 'Home languages' rendered as 'ngôn ngữ mẹ đẻ'; the English avoids asking about home or family, so a more neutral 'ngôn ngữ của mình' might be better.",
+    "source": "Many learners speak two or three languages. Celebrate this, but do not ask learners to name their home languages or to speak them in front of others. Let anyone who wants to share do so.",
+    "back": "Many learners speak two or three languages. Value this, but do not ask learners to say their mother tongue or to speak that language in front of others. Whoever wants to share, just let them share."
+  },
+  "educatorNotes.0": {
+    "source": "Accents and levels of English differ a lot in any group. Model patience, and never correct pronunciation in a way that embarrasses someone.",
+    "back": "Accents and levels of English differ a lot in any group. Be patient when modelling, and never correct pronunciation in a way that makes someone ashamed."
+  },
+  "educatorNotes.1": {
+    "flag": true,
+    "note": "Dutch, Arabic and English are the English example. Reviewer may want to swap for languages more relevant to Vietnamese-speaking learners.",
+    "source": "You could add a local example of a borrowed word (for instance, a word the local language shares with Arabic, English or Dutch), or show the centre notice in the languages your learners use.",
+    "back": "You can add a local example of a borrowed word (for example a word the local language shares with Arabic, English or Dutch), or show the centre's notice in the languages your learners use."
+  }
+}

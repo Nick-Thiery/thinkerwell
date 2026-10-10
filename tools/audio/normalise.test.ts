@@ -85,3 +85,60 @@ describe('speechInput, English', () => {
     expect(speechInput('Ages 10–17 & up', 'en')).toBe('Ages 10 to 17 and up');
   });
 });
+
+describe('speechInput, Vietnamese', () => {
+  const say = (text: string) => speechInput(text, 'vi');
+
+  it('leaves numbers, years and units to the voice, which reads them in Vietnamese', () => {
+    // VieNeu's own normaliser says "5.500" as "năm nghìn năm trăm", "13,8" as "mười ba phẩy tám",
+    // "1899" as "một nghìn tám trăm chín mươi chín", "Năm 8" as "năm tám" and "10–17" as "mười đến mười bảy".
+    for (const text of [
+      'Khoảng 5.500 năm trước, người ở Lưỡng Hà dùng bánh xe.',
+      'vũ trụ bắt đầu cách đây khoảng 13,8 tỉ năm.',
+      'Nairobi bắt đầu vào năm 1899 như một điểm dừng.',
+      'Vào Năm 8, một con đường mới được mở.',
+      'Tuổi từ 10–17, nặng 3 kg, cách 5 km, 50% dân số.',
+    ]) {
+      expect(say(text)).toBe(text);
+    }
+  });
+
+  it('tidies spaces, apostrophes inside names and the Italian caffè', () => {
+    expect(say('khoảng\u00a013,8\u202ftỉ  năm')).toBe('khoảng 13,8 tỉ năm');
+    expect(say("Ở Tassili n'Ajjer tại Algeria")).toBe('Ở Tassili nAjjer tại Algeria');
+    expect(say('trong tiếng Ý caffè, rồi')).toBe('trong tiếng Ý café, rồi');
+    expect(say('Caffè là')).toBe('Café là');
+  });
+
+  it('splits the clusters of Vietnamese spellings of foreign names into syllables', () => {
+    expect(say('giữa hai con sông Ti-grơ và Ơ-phrát.')).toBe('giữa hai con sông Ti-gờ rơ và Ơ-phờ rát.');
+    expect(say('Grơ')).toBe('Gờ rơ');
+  });
+
+  it('leaves English names and ordinary Vietnamese words alone', () => {
+    const text = 'Hãy nhìn Bayview, Brookside, Tallgrass, Gutenberg, Pháp, Phước, trời, cờ, ML và Mina L.';
+    expect(say(text)).toBe(text);
+  });
+
+  it('is stable', () => {
+    const once = say("Ti-grơ n'Ajjer caffè");
+    expect(say(once)).toBe(once);
+  });
+
+  it('keeps every number in the Vietnamese lessons in the form the voice reads', () => {
+    const vietnamese = listenUtterances().find((language) => language.lang === 'vi');
+    if (!vietnamese) return; // the Vietnamese preview's lessons live on their own branch until it is ready
+    expect(vietnamese.sections.length).toBeGreaterThan(0);
+    for (const section of vietnamese.sections) {
+      for (const piece of section.pieces) {
+        // Vietnamese writes 5.500 and 13,8; the voice would read 1,000 as "một" and 1.5 as "một chấm năm".
+        expect(piece.speak, piece.text).not.toMatch(/\d,\d{3}(?!\d)|\d\.\d{1,2}(?!\d)/);
+        expect(piece.speak, piece.text).not.toMatch(/\p{L}['’]\p{L}|[\u00a0\u202f]|caffè/iu);
+        // A Vietnamese-spelt word starting with a foreign cluster ("grơ", "phrát") has been split.
+        for (const word of piece.speak.match(/\p{L}+/gu) ?? []) {
+          if (/[àáảãạăắằẳẵặâấầẩẫậèéẻẽẹêếềểễệìíỉĩịòóỏõọôốồổỗộơớờởỡợùúủũụưứừửữựỳýỷỹỵđ]/iu.test(word)) expect(word, piece.text).not.toMatch(/^(?:ph|[bcdgkp])[rl]/i);
+        }
+      }
+    }
+  });
+});

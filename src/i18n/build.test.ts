@@ -11,6 +11,7 @@ describe('language chunks', () => {
     expect(languageChunkName('\0tw-pseudo-locale:en-XA')).toBe('pseudo-en-XA');
     expect(languageChunkName('/repo/src/i18n/pseudo.ts')).toBe('pseudo');
     expect(languageChunkName('/repo/src/i18n/fonts/arabic.css')).toBe('font-arabic');
+    expect(languageChunkName('/repo/src/i18n/fonts/vietnamese.css')).toBe('font-vietnamese');
     expect(languageChunkName('/repo/src/i18n/core.ts')).toBeNull();
     expect(languageChunkName('/repo/content/lessons/L01.json')).toBeNull();
   });
@@ -18,6 +19,9 @@ describe('language chunks', () => {
   it('matches only language modules', () => {
     expect(LANGUAGE_MODULE.test('/repo/src/i18n/messages/ar.json')).toBe(true);
     expect(LANGUAGE_MODULE.test('\0tw-pseudo-locale:ar-XB')).toBe(true);
+    expect(LANGUAGE_MODULE.test('/repo/src/i18n/fonts/arabic.css')).toBe(true);
+    expect(LANGUAGE_MODULE.test('/repo/src/i18n/fonts/vietnamese.css')).toBe(true);
+    expect(LANGUAGE_MODULE.test('/repo/src/i18n/fonts/index.ts')).toBe(false);
     expect(LANGUAGE_MODULE.test('/repo/src/i18n/load.ts')).toBe(false);
   });
 
@@ -26,8 +30,21 @@ describe('language chunks', () => {
     expect(languageChunkFileName('pseudo-en-XA')).toBe('assets/pseudo/[name]-[hash].js');
     expect(languageChunkFileName('pseudo')).toBe('assets/pseudo/[name]-[hash].js');
     expect(languageChunkFileName('font-arabic')).toBe('assets/fonts-arabic/[name]-[hash].js');
+    expect(languageChunkFileName('font-vietnamese')).toBe('assets/fonts-vietnamese/[name]-[hash].js');
     expect(languageChunkFileName('index')).toBe('assets/[name]-[hash].js');
     expect(languageChunkFileName('content')).toBe('assets/[name]-[hash].js');
+  });
+
+  it('keeps the Vietnamese font files and stylesheet together, apart from the Arabic ones and the site fonts', () => {
+    expect(languageAssetFileName({ originalFileNames: ['node_modules/@fontsource/be-vietnam-pro/files/be-vietnam-pro-vietnamese-400-normal.woff2'] })).toBe(
+      'assets/fonts-vietnamese/[name]-[hash][extname]',
+    );
+    expect(languageAssetFileName({ names: ['be-vietnam-pro-latin-700-normal.woff2'] })).toBe('assets/fonts-vietnamese/[name]-[hash][extname]');
+    expect(languageAssetFileName({ originalFileNames: ['/repo/src/i18n/fonts/vietnamese.css'] })).toBe('assets/fonts-vietnamese/[name]-[hash][extname]');
+    expect(languageAssetFileName({ names: ['font-vietnamese.css'] })).toBe('assets/fonts-vietnamese/[name]-[hash][extname]');
+    expect(languageAssetFileName({ originalFileNames: ['node_modules/@fontsource/atkinson-hyperlegible-next/files/atkinson-hyperlegible-next-latin-400-normal.woff2'] })).toBe(
+      'assets/[name]-[hash][extname]',
+    );
   });
 
   it('keeps the Arabic font files and stylesheet together', () => {
@@ -43,19 +60,38 @@ describe('language chunks', () => {
 });
 
 describe('what the service worker precaches', () => {
-  it('today keeps Indonesian and leaves out every other language, the test languages and the Arabic font', () => {
+  it('today keeps Indonesian and leaves out every other language, the test languages and the Arabic and Vietnamese fonts', () => {
     expect(languagePrecacheIgnores([])).toEqual([
       'assets/pseudo/**',
       'assets/locales/ar/**',
       'assets/locales/fa-AF/**',
       'assets/locales/so/**',
+      'assets/locales/vi/**',
       'assets/fonts-arabic/**',
+      'assets/fonts-vietnamese/**',
     ]);
+  });
+
+  it('keeps the Vietnamese font out of the precache while Vietnamese is a hidden preview, and in once it is ready', () => {
+    expect(languagePrecacheIgnores(['vi'])).toContain('assets/fonts-vietnamese/**');
+    expect(languagePrecacheIgnores(['vi'])).toContain('assets/locales/vi/**');
+    const viReady: LocaleDefinition[] = LOCALES.map((locale) => (locale.code === 'vi' ? { ...locale, ready: true } : locale));
+    const ignores = languagePrecacheIgnores(['vi'], viReady);
+    expect(ignores).not.toContain('assets/fonts-vietnamese/**');
+    expect(ignores).not.toContain('assets/locales/vi/**');
+    // The Arabic font is a different file set: Vietnamese being ready doesn't bring it in.
+    expect(ignores).toContain('assets/fonts-arabic/**');
   });
 
   it('keeps a ready language and, for a right-to-left one, the Arabic font', () => {
     const dariReady: LocaleDefinition[] = LOCALES.map((locale) => (locale.code === 'fa-AF' ? { ...locale, ready: true } : locale));
-    expect(languagePrecacheIgnores(['fa-AF', 'so'], dariReady)).toEqual(['assets/pseudo/**', 'assets/locales/ar/**', 'assets/locales/so/**']);
+    expect(languagePrecacheIgnores(['fa-AF', 'so'], dariReady)).toEqual([
+      'assets/pseudo/**',
+      'assets/locales/ar/**',
+      'assets/locales/so/**',
+      'assets/locales/vi/**',
+      'assets/fonts-vietnamese/**',
+    ]);
     const somaliReady: LocaleDefinition[] = LOCALES.map((locale) => (locale.code === 'so' ? { ...locale, ready: true } : locale));
     expect(languagePrecacheIgnores(['so'], somaliReady)).toContain('assets/fonts-arabic/**');
     expect(languagePrecacheIgnores(['so'], somaliReady)).not.toContain('assets/locales/so/**');

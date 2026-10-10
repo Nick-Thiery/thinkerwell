@@ -70,6 +70,22 @@ Vazirmatn (SIL Open Font License 1.1, `@fontsource/vazirmatn` from npm) for Dari
 
 Somali uses the 26 basic Latin letters and the apostrophe, which the site's fonts already have (`src/i18n/fonts/fonts.test.ts` checks).
 
+### Vietnamese fonts (`src/i18n/fonts/vietnamese.css`)
+
+The site's own fonts cannot write Vietnamese. Atkinson Hyperlegible Next and Funnel Display both lack 96 of the alphabet's 146 letters (ơ, ư, ĩ, ũ and every dotted, hooked or stacked vowel, U+1EA0-1EF9), so "Chào mừng bạn" would show its marked letters in a random system font in the middle of the word. `fonts.test.ts` reads the fonts' own cmap tables to check that count (`woff2Cmap.ts` parses them: no font library).
+
+So, for any language with the `vietnamese` font key (today `vi`, a hidden preview: `ready: false`), **Be Vietnam Pro** (SIL Open Font License 1.1, `@fontsource/be-vietnam-pro` 5.3.0 from npm) replaces the site's Latin fonts, for headings and body text both. A second family for only the missing letters would still mix two designs inside one word; one family supplies every letter, digit and mark. `vietnamese.css`:
+
+- `@font-face` for "Be Vietnam Pro" in weights 400, 400 italic, 500, 600 and 700 (what the design uses; Arabic's `unicode-range` trick isn't needed since it is the only family), each from the package's `latin`, `latin-ext` and `vietnamese` files (15 files, 11.5 to 22.2 kB each, 236 kB in all; a browser downloads only the ones a page shows letters of, in the weights it shows: for a typical page, `latin` and `vietnamese` of 4 weights, about 135 kB, more if latin-ext is needed).
+- It overrides the two font custom properties for `:root:lang(vi)` only (`--font-display` and `--font-body`, Be Vietnam Pro first and the site's old stacks behind it as the fallback). `tokens.css` is untouched. The lessons are English (`lang="en"`) inside a Vietnamese page and keep Atkinson Hyperlegible Next and Funnel Display; interface text inside them (`lang="vi"` again) goes back to Be Vietnam Pro.
+- Headings (`.hero`, `.display`, `.h1` to `.h3`) drop their tight tracking and get a little more line height for `:lang(vi)`, because Be Vietnam Pro is wider and its stacked marks (ế, ỗ, ặ) would touch the line above. No font size changes, so nothing goes below 14px.
+
+It is a stylesheet of its own, loaded the way the Arabic one is: `src/i18n/fonts/index.ts` imports it with `?url` and adds a `<link data-font="vietnamese">` only while such a language is shown; the build puts it and its files in `assets/fonts-vietnamese/` (`src/i18n/build.ts`), `languagePrecacheIgnores` leaves that folder out of the precache until a `ready` language uses the font, and `keepFirstVisitLight` stops the build if Be Vietnam Pro reaches the site's stylesheet. Measured with `npm run build` and `npm run size`: first visit (home, Brotli) 224.5 kB and the precache 649.8 kB, both exactly as without the font (the home page's raw size grows 0.1 kB for one more entry in the font list in the first chunk). An English visit fetches none of it (`e2e/languages.spec.ts`).
+
+Why Be Vietnam Pro: it was designed for Vietnamese, with the marks drawn to sit well with the letters, a clear, open sans like Atkinson's, and one family has all the weights. Lexend was drawn to ease reading but for Latin; its Vietnamese came later and Noto Sans is a general family with no particular care for stacked marks. A native reviewer, or Justin, may prefer another Open Font License font: only `vietnamese.css` and the package change (the test reads the family and file names from the CSS, and `languageAssetFileName` in `src/i18n/build.ts` matches the package's name).
+
+Not done yet: Be Vietnam Pro isn't on the Credits page (its font list is in en.json, which this work left alone): add "Be Vietnam Pro, by the Be Vietnam Pro Project Authors (Vietnamese letters, only when Vietnamese is shown)" beside Vazirmatn's line (`pages.credits.fontVazirmatn`), with its note in `en.notes.json` and the Indonesian line, before Vietnamese is ever offered.
+
 ### Test languages (`src/i18n/pseudo.ts`)
 
 Made from en.json whenever the site is built, served or tested (the `pseudoLocales` plugin in `vite.config.ts`), never written by hand:

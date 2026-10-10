@@ -17,6 +17,16 @@
 //   names; a few abbreviations are written out; q and x become k and ks;
 //   accents are taken off. scripts/audio/generate.py checks that what is
 //   left is only what the tokenizer keeps, plus punctuation it drops.
+// - Vietnamese (VieNeu-TTS v3 Turbo): its own normaliser (sea-g2p) already
+//   reads numbers, years, Vietnamese thousands ("5.500", "75.000") and decimal
+//   commas ("13,8"), ranges, percentages, units, Roman numerals and the
+//   hyphens in "Ba-bi-lon" correctly, and reads Latin-script names and words
+//   (Bayview, Kenya, token) and capital letters (ML) with English sounds.
+//   Checked on every sentence of the Vietnamese lessons
+//   (docs/notes/recorded-audio.md, "Vietnamese"), so the digits are left to
+//   the voice and only what it gets wrong is respelt: Vietnamese
+//   transliterations with consonant clusters ("Ti-grơ", "Ơ-phrát"), the
+//   Italian "caffè", apostrophes inside names, and odd spaces.
 
 /** Bumped when the output changes, so `npm run audio:generate` records again what it now says differently. */
 export const NORMALISER_VERSION = 1;
@@ -137,6 +147,41 @@ function normaliseIndonesian(text: string): string {
   return out.replace(/\s+/g, ' ').trim();
 }
 
+/** A letter that only Vietnamese uses, with or without a tone mark (not in any other language the lessons name). */
+const VIETNAMESE_LETTER = /[àáâãèéêìíòóôõùúýăđĩũơưạảấầẩẫậắằẳẵặẹẻẽếềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]/iu;
+
+/** What a consonant letter is called by itself in Vietnamese ("g" → "gờ"), for the first letter of a cluster. */
+const VI_CONSONANT_NAMES: Readonly<Record<string, string>> = { b: 'bờ', c: 'cờ', d: 'dờ', g: 'gờ', k: 'kờ', p: 'pờ', ph: 'phờ' };
+
+/**
+ * Vietnamese spellings of foreign names keep the foreign clusters ("Ti-grơ" for Tigris, "Ơ-phrát" for the
+ * Euphrates), which are not Vietnamese syllables, and VieNeu reads "grơ" as the English "the" plus "rơ". Each is
+ * said as two syllables ("gờ rơ", "phờ rát"). Only a word with a Vietnamese-only letter in it, so English
+ * names such as "Brookside" and "Tallgrass" are left alone.
+ */
+function splitForeignClusters(text: string): string {
+  return text.replace(/(?<![\p{L}])(ph|[bcdgkp])([rl])(\p{L}+)/giu, (word, first: string, second: string, rest: string) => {
+    const startsWithVowel = /^[aeiouy]/i.test(rest.normalize('NFD'));
+    if (!startsWithVowel || !VIETNAMESE_LETTER.test(word)) return word;
+    const name = VI_CONSONANT_NAMES[first.toLowerCase()]!;
+    const spoken = first[0] !== first[0]!.toLowerCase() ? name[0]!.toUpperCase() + name.slice(1) : name;
+    return `${spoken} ${second}${rest}`;
+  });
+}
+
+function normaliseVietnamese(text: string): string {
+  let out = text
+    .normalize('NFC')
+    .replace(/[\u00a0\u2007\u202f\u2009\u200a]/g, ' ')
+    .replace(/\u200b|\u200c|\u200d|\ufeff/g, '');
+  // An apostrophe inside a name ("n'Ajjer") is read as a letter name; take it out.
+  out = out.replace(/(?<=\p{L})['’](?=\p{L})/gu, '');
+  out = splitForeignClusters(out);
+  // The Italian "caffè" is cut short after "caf" (the voice drops the final syllable); "café" is read in full.
+  out = out.replace(/(?<![\p{L}])caffè(?![\p{L}])/giu, (word) => (word[0] === 'C' ? 'Café' : 'café'));
+  return out.replace(/\s+/g, ' ').trim();
+}
+
 function normaliseEnglish(text: string): string {
   return text
     .normalize('NFC')
@@ -146,8 +191,9 @@ function normaliseEnglish(text: string): string {
     .trim();
 }
 
-/** What the recording voice for `lang` ("en", "id") is given for `text`. */
+/** What the recording voice for `lang` ("en", "id", "vi") is given for `text`. */
 export function speechInput(text: string, lang: string): string {
   if (lang === 'id') return normaliseIndonesian(text);
+  if (lang === 'vi') return normaliseVietnamese(text);
   return normaliseEnglish(text);
 }

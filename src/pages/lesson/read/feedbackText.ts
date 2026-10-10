@@ -22,6 +22,7 @@ export const CONTENT_VERDICTS = { correct: 'Yes.', retry: 'Not quite.' } as cons
 export const CONTENT_VERDICTS_BY_LANG: Readonly<Record<string, { correct: string; retry: string }>> = {
   en: CONTENT_VERDICTS,
   id: { correct: 'Benar.', retry: 'Belum tepat.' },
+  vi: { correct: 'Đúng rồi.', retry: 'Chưa đúng lắm.' },
 };
 
 /** Feedback for a right or wrong option, without the content's own verdict (in `lang`, the lessons' language). */

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img">
+<title>Bản đồ lối đi bộ ở Riverstone</title>
+<desc>Bản đồ ô vuông hư cấu với hai đường đi từ East Homes đến Trung tâm cộng đồng Riverstone: một lối đi bộ ngắn qua cầu đi bộ và một đường dài hơn dọc theo đường chính, đi qua một phòng khám.</desc>
+<rect width="960" height="540" rx="24" fill="#DCEFD5"/>
+<text x="32" y="62" font-family="Atkinson Hyperlegible Next, Atkinson Hyperlegible, Verdana, sans-serif" font-size="26" font-weight="700" fill="#0F0E0E">Các đường đi bộ đến Trung tâm cộng đồng Riverstone</text>
+<!-- map: 8 x 6 squares, each square is 64 units (100 metres) -->
+<rect x="32" y="88" width="512" height="384" fill="#FFFFFF"/>
+<!-- river, north to south through the middle -->
+<path d="M320 88 C332 150, 308 200, 320 250 S332 400, 318 472" fill="none" stroke="#6FB6D6" stroke-width="34"/>
+<!-- grid -->
+<path d="M96 88 V472 M160 88 V472 M224 88 V472 M288 88 V472 M352 88 V472 M416 88 V472 M480 88 V472 M32 152 H544 M32 216 H544 M32 280 H544 M32 344 H544 M32 408 H544" stroke="#D5D1DC" stroke-width="2"/>
+<rect x="32" y="88" width="512" height="384" fill="none" stroke="#4B4654" stroke-width="3"/>
+<!-- side roads that the main road crosses -->
+<g fill="none" stroke-linecap="butt">
+<path d="M192 88 V300 M384 88 V300" stroke="#4B4654" stroke-width="12"/>
+<path d="M192 88 V300 M384 88 V300" stroke="#D5D1DC" stroke-width="6"/>
+</g>
+<!-- main road route: north from East Homes, west over the road bridge, south to the centre (7 squares) -->
+<g fill="none" stroke-linejoin="round">
+<path d="M448 280 V248 H128 V344" stroke="#4B4654" stroke-width="18"/>
+<path d="M448 282 V248 H128 V342" stroke="#D5D1DC" stroke-width="10"/>
+</g>
+<!-- road bridge rails -->
+<path d="M296 234 H344 M296 262 H344" stroke="#0F0E0E" stroke-width="4" stroke-linecap="round"/>
+<!-- footpath: west from East Homes over the footbridge to the centre (4 squares) -->
+<path d="M296 364 H344 M296 388 H344" stroke="#0F0E0E" stroke-width="4" stroke-linecap="round"/>
+<rect x="298" y="366" width="44" height="20" fill="#FFFFFF"/>
+<path d="M416 376 H160" fill="none" stroke="#A07850" stroke-width="7" stroke-dasharray="14 9"/>
+<!-- clinic (yellow square) beside the main road -->
+<rect x="232" y="160" width="48" height="48" rx="4" fill="#FDE68A" stroke="#0F0E0E" stroke-width="3"/>
+<!-- community centre (green square) -->
+<rect x="104" y="352" width="48" height="48" rx="4" fill="#7A9B4E" stroke="#0F0E0E" stroke-width="3"/>
+<!-- East Homes -->
+<g fill="#F3E3C3" stroke="#0F0E0E" stroke-width="2.5" stroke-linejoin="round">
+<rect x="434" y="306" width="28" height="22"/><path d="M430 308 L448 292 L466 308Z" fill="#A07850"/>
+<rect x="434" y="370" width="28" height="22"/><path d="M430 372 L448 356 L466 372Z" fill="#A07850"/>
+<rect x="498" y="306" width="28" height="22"/><path d="M494 308 L512 292 L530 308Z" fill="#A07850"/>
+<rect x="498" y="370" width="28" height="22"/><path d="M494 372 L512 356 L530 372Z" fill="#A07850"/>
+</g>
+<!-- compass rose -->
+<g>
+<path d="M508 122 L514 144 L536 150 L514 156 L508 178 L502 156 L480 150 L502 144Z" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M508 122 L514 144 L508 150 L502 144Z" fill="#0F0E0E"/>
+</g>
+<g font-family="Atkinson Hyperlegible Next, Atkinson Hyperlegible, Verdana, sans-serif" font-size="22" font-weight="700" fill="#0F0E0E" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">
+<text x="508" y="116" text-anchor="middle">B</text>
+<text x="480" y="424" text-anchor="middle">East Homes</text>
+<text x="320" y="448" text-anchor="middle">Cầu đi bộ</text>
+</g>
+<!-- scale bar -->
+<g>
+<rect x="32" y="494" width="64" height="12" fill="#0F0E0E"/>
+<path d="M32 488 V512 M96 488 V512" stroke="#0F0E0E" stroke-width="3"/>
+<text x="110" y="508" font-family="Atkinson Hyperlegible Next, Atkinson Hyperlegible, Verdana, sans-serif" font-size="22" fill="#0F0E0E">1 ô vuông = 100 mét</text>
+</g>
+<!-- key -->
+<rect x="572" y="88" width="356" height="384" rx="16" fill="#FFFFFF" stroke="#D5D1DC" stroke-width="2"/>
+<g font-family="Atkinson Hyperlegible Next, Atkinson Hyperlegible, Verdana, sans-serif" font-size="22" fill="#0F0E0E">
+<text x="596" y="128" font-size="24" font-weight="700" fill="#2D6326">Chú giải</text>
+<path d="M596 176 H652" stroke="#6FB6D6" stroke-width="16"/>
+<text x="672" y="184">Sông</text>
+<path d="M596 236 H652" stroke="#4B4654" stroke-width="18"/>
+<path d="M596 236 H652" stroke="#D5D1DC" stroke-width="10"/>
+<text x="672" y="244">Đường chính</text>
+<path d="M596 296 H652" stroke="#A07850" stroke-width="7" stroke-dasharray="14 9"/>
+<text x="672" y="304">Lối đi bộ</text>
+<rect x="604" y="336" width="40" height="40" rx="4" fill="#7A9B4E" stroke="#0F0E0E" stroke-width="3"/>
+<text x="672" y="364">Trung tâm cộng đồng</text>
+<rect x="604" y="398" width="40" height="40" rx="4" fill="#FDE68A" stroke="#0F0E0E" stroke-width="3"/>
+<text x="672" y="426">Phòng khám</text>
+</g>
+</svg>

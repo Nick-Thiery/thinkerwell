@@ -1,15 +1,19 @@
 #!/usr/bin/env python3
-"""Records Listen's audio: every piece of text Listen reads, in English and
-Indonesian, both reading levels, from the list tools/audio/export.ts makes
-(the app's own sentences). `npm run audio:generate` runs both steps; see
-scripts/audio/README.md and docs/notes/recorded-audio.md.
+"""Records Listen's audio: every piece of text Listen reads, in English,
+Indonesian and (once asked for) Vietnamese, both reading levels, from the
+list tools/audio/export.ts makes (the app's own sentences).
+`npm run audio:generate` runs both steps; see scripts/audio/README.md and
+docs/notes/recorded-audio.md.
 
   python3 scripts/audio/generate.py EXPORT.json [--lang en] [--synth-only]
+  python3 scripts/audio/generate.py EXPORT.json --lang vi --sample DIR [--limit 3] [--vi-voice NAME]
+  python3 scripts/audio/generate.py --fetch-vieneu
+  python3 scripts/audio/generate.py --list-vi-voices
 
 1. Synthesis. Each piece is spoken on its own (English: Kokoro-82M, voice
-   af_heart, speed 0.92; Indonesian: Meta's MMS-TTS, facebook/mms-tts-ind)
-   and kept in .audio-cache/<lang>/ under a hash of the voice and what it
-   was given to say. A piece already there isn't spoken again, so a stopped
+   af_heart, speed 0.92; Indonesian: Meta's MMS-TTS, facebook/mms-tts-ind;
+   Vietnamese: VieNeu-TTS v3 Turbo, a preset voice) and kept in
+   .audio-cache/<lang>/ under a hash of the voice and what it was given to say. A piece already there isn't spoken again, so a stopped
    run carries on where it was, and a lesson edit records only what changed.
 2. Assembly. Each section (one lesson, one reading level, one part) becomes
    one MP3 in public/audio/<lang>/: the pieces trimmed of silence and joined
@@ -31,6 +35,7 @@ import hashlib
 import json
 import math
 import os
+import random
 import re
 import subprocess
 import sys
@@ -46,6 +51,12 @@ CACHE = ROOT / ".audio-cache"
 PUBLIC = ROOT / "public" / "audio"
 MANIFEST = ROOT / "tools" / "audio" / "manifest.json"
 INDEX = ROOT / "src" / "audio" / "recordings.json"
+
+# Vietnamese: the preset voice (VieNeu-TTS v3 Turbo's own names, see
+# `--list-vi-voices`). The team chooses it after listening to samples
+# (`--sample`); override it with the AUDIO_VI_VOICE environment variable or
+# `--vi-voice`. Changing it records every Vietnamese piece again.
+VI_VOICE = "Trúc Ly"
 
 # The voices the founders approved (docs/notes/recorded-audio.md). Changing
 # any of these records everything in that language again.
@@ -66,7 +77,45 @@ VOICES = {
         "seed": 1,
         "sampleRate": 16000,
     },
+    "vi": {
+        "engine": "vieneu-v3-turbo",
+        "package": "vieneu==3.8.3",
+        "model": "pnnbao-ump/VieNeu-TTS-v3-Turbo",
+        "modelRevision": "61b85e3d937fbbacb387714180e8182823512523",
+        "modelFolder": "onnx_update",
+        "codec": "OpenMOSS-Team/MOSS-Audio-Tokenizer-Nano-ONNX",
+        "codecRevision": "ceff0d0749bfb3fa2d61149794ec6feef0d1e1ae",
+        "licence": "Apache-2.0",
+        "voice": os.environ.get("AUDIO_VI_VOICE") or VI_VOICE,
+        # Sampling, fixed so that a piece sounds the same each time it is recorded (and a change records again).
+        # Each piece is also seeded from its own words (VieNeu.say).
+        "seed": 1,
+        "temperature": 0.6,
+        "topK": 25,
+        "topP": 0.95,
+        "repetitionPenalty": 1.2,
+        "silenceP": 0.15,
+        # The model speaks at 48 kHz; the recordings are 24 kHz mono, like English.
+        "modelSampleRate": 48000,
+        "sampleRate": 24000,
+    },
 }
+
+# Where VieNeu's model files are kept: real files, not the Hugging Face cache's symlinks (see fetch_vieneu_models).
+VIENEU_DIR = CACHE / "models" / "vieneu"
+# Files the ONNX engine reads (vieneu/_v3_turbo_engine/onnx_runtime_lite.py, _GRAPH_FILES and _CODEC_FILES).
+VIENEU_MODEL_FILES = [
+    "vieneu_prefill.onnx", "vieneu_decode_step.onnx", "vieneu_acoustic_cached.onnx",
+    "vieneu_backbone_shared.data", "vieneu_v3_heads.npz", "config.json", "tokenizer.json",
+]
+VIENEU_CODEC_FILES = [
+    "moss_audio_tokenizer_decode_full.onnx", "moss_audio_tokenizer_decode_shared.data",
+    "moss_audio_tokenizer_decode_step.onnx", "codec_browser_onnx_meta.json",
+    "moss_audio_tokenizer_encode.onnx", "moss_audio_tokenizer_encode.data",
+]
+
+# CPU threads for the engines (--threads, or AUDIO_THREADS); 0 is each engine's own default.
+THREADS = 0
 
 # Pauses, in seconds, after each kind of piece (tools/audio/utterances.ts, PieceGap).
 GAPS = {"heading": 0.75, "paragraph": 0.6, "sentence": 0.35, "end": 0.3}
@@ -99,9 +148,19 @@ def cache_path(lang: str, speak: str) -> Path:
     return CACHE / lang / key[:2] / f"{key}.wav"
 
 
+def set_torch_threads() -> None:
+    """--threads for the torch engines (English, Indonesian). Vietnamese needs no torch, so it isn't imported for it."""
+    if THREADS:
+        import torch
+
+        torch.set_num_threads(THREADS)
+
+
 class Kokoro:
     def __init__(self) -> None:
         from kokoro import KPipeline
+
+        set_torch_threads()
 
         v = VOICES["en"]
         self.pipe = KPipeline(lang_code=v["langCode"], repo_id=v["model"])
@@ -122,6 +181,7 @@ class Mms:
     def __init__(self) -> None:
         from transformers import AutoTokenizer, VitsModel
 
+        set_torch_threads()
         v = VOICES["id"]
         self.model = VitsModel.from_pretrained(v["model"])
         self.model.eval()
@@ -147,8 +207,113 @@ class Mms:
         return wave.astype(np.float32)
 
 
+def real_files(folder: Path, names: list[str]) -> bool:
+    """True when every file is there as a real file: onnxruntime refuses a symlink that leaves the model's folder."""
+    return all((folder / n).is_file() and not (folder / n).is_symlink() for n in names)
+
+
+def fetch_vieneu_models() -> tuple[Path, Path, Path]:
+    """Downloads VieNeu v3 Turbo's ONNX files and its audio codec to .audio-cache/models/vieneu/ (once), as REAL files.
+
+    The Hugging Face cache (~/.cache/huggingface) keeps files as symlinks into its blobs folder, and
+    onnxruntime 1.31 refuses them ("External data path escapes model directory"), so
+    `local_dir=` is used, which writes ordinary files. Both repositories are fetched at the revisions in
+    VOICES["vi"], so the model can't change under the recordings. Returns (root, model folder, codec folder).
+    """
+    from huggingface_hub import snapshot_download
+
+    v = VOICES["vi"]
+    model_dir = VIENEU_DIR / v["modelFolder"]
+    codec_dir = VIENEU_DIR / "codec"
+    if not real_files(model_dir, VIENEU_MODEL_FILES):
+        log(f"[vi] downloading {v['model']}/{v['modelFolder']} (about 480 MB) to {VIENEU_DIR}")
+        snapshot_download(
+            v["model"], revision=v["modelRevision"], local_dir=VIENEU_DIR,
+            allow_patterns=[f"{v['modelFolder']}/{n}" for n in VIENEU_MODEL_FILES],
+        )
+    if not real_files(codec_dir, VIENEU_CODEC_FILES):
+        log(f"[vi] downloading {v['codec']} (about 90 MB) to {codec_dir}")
+        snapshot_download(v["codec"], revision=v["codecRevision"], local_dir=codec_dir, allow_patterns=VIENEU_CODEC_FILES)
+    for folder, names in ((model_dir, VIENEU_MODEL_FILES), (codec_dir, VIENEU_CODEC_FILES)):
+        if not real_files(folder, names):
+            raise RuntimeError(f"{folder} should hold real (not symlinked) copies of {names}: delete it and run again")
+    return VIENEU_DIR, model_dir, codec_dir
+
+
+class VieNeu:
+    """VieNeu-TTS v3 Turbo (Apache-2.0), ONNX on the CPU, no torch. A preset voice, 48 kHz out, written at 24 kHz."""
+
+    def __init__(self) -> None:
+        import importlib.metadata
+
+        v = VOICES["vi"]
+        name, _, wanted = v["package"].partition("==")
+        have = importlib.metadata.version(name)
+        if have != wanted:
+            raise RuntimeError(f"The Vietnamese recordings were made with {v['package']}, but {name}=={have} is installed: pip install {v['package']}")
+        root, model_dir, codec_dir = fetch_vieneu_models()
+
+        from vieneu import Vieneu
+        from vieneu._v3_turbo_engine import onnx_runtime_lite as lite
+
+        # V3TurboVieNeuTTS passes `onnx_dir` on but not `codec_dir`, so the engine would look for the codec in the
+        # Hugging Face cache (symlinks again). Hand it our real copy instead.
+        fetch_original = lite.OnnxV3LiteEngine._fetch
+
+        def fetch(repo: str, files: list[str], subfolder: str | None) -> Path:
+            return codec_dir if repo == lite._CODEC_REPO else fetch_original(repo, files, subfolder)
+
+        lite.OnnxV3LiteEngine._fetch = staticmethod(fetch)
+        # backbone_repo is the folder itself, so nothing else is looked up on the Hub while it starts.
+        self.tts = Vieneu(backbone_repo=str(root), onnx_dir=str(model_dir), threads=THREADS)
+        assert self.tts.sample_rate == v["modelSampleRate"], self.tts.sample_rate
+        voices = [voice for _, voice in self.tts.list_preset_voices()]
+        if self.tts.resolve_voice_name(v["voice"]) is None:
+            raise ValueError(f"No Vietnamese voice called {v['voice']!r}. The voices are: {', '.join(voices)}")
+        self.preset = self.tts.get_preset_voice(v["voice"])
+        self.rate = v["sampleRate"]
+        from sea_g2p import Normalizer
+
+        self.normalizer = Normalizer("vi")
+
+    def check(self, text: str) -> None:
+        """Fails if VieNeu's own text normaliser would drop a character without reading it (tools/audio/normalise.ts should have changed it)."""
+        dropped = self.normalizer.audit(text)
+        if dropped:
+            raise ValueError(f"VieNeu can't say {dropped} in {text!r}: change it in tools/audio/normalise.ts")
+
+    def say(self, text: str) -> np.ndarray:
+        import soxr
+
+        v = VOICES["vi"]
+        self.check(text)
+        # The engine samples with numpy's global generator: seed it from the piece's own words, so the same piece
+        # always sounds the same, whatever was recorded before it.
+        seed = (int(hashlib.sha1(text.encode()).hexdigest()[:8], 16) + v["seed"]) % (2**32)
+        random.seed(seed)
+        np.random.seed(seed)
+        wave = self.tts.infer(
+            text=text,
+            voice=self.preset,
+            temperature=v["temperature"],
+            top_k=v["topK"],
+            top_p=v["topP"],
+            repetition_penalty=v["repetitionPenalty"],
+            silence_p=v["silenceP"],
+            apply_watermark=False,  # the optional Perth watermark is not used
+        )
+        if wave is None or len(wave) == 0:
+            raise RuntimeError(f"VieNeu said nothing for {text!r}")
+        wave = np.asarray(wave, dtype=np.float32).reshape(-1)
+        return soxr.resample(wave, v["modelSampleRate"], v["sampleRate"], quality="VHQ").astype(np.float32)
+
+
 def engine_for(lang: str):
-    return Kokoro() if lang == "en" else Mms()
+    if lang == "en":
+        return Kokoro()
+    if lang == "vi":
+        return VieNeu()
+    return Mms()
 
 
 def synthesise(lang: str, sections: list[dict]) -> None:
@@ -215,9 +380,10 @@ def slug(key: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", unicodedata.normalize("NFKD", key).lower()).strip("-")
 
 
-def assemble(lang: str, sections: list[dict], normaliser: int) -> dict:
+def assemble(lang: str, sections: list[dict], normaliser: int, out_dir: Path | None = None, prune: bool = True) -> dict:
+    """Joins each section's pieces into its MP3. `out_dir` (default public/audio/<lang>) and `prune=False` are for --sample, which writes elsewhere."""
     rate = VOICES[lang]["sampleRate"]
-    out_dir = PUBLIC / lang
+    out_dir = out_dir or PUBLIC / lang
     out_dir.mkdir(parents=True, exist_ok=True)
     entries: dict[str, dict] = {}
     timings: dict[str, dict] = {}
@@ -276,7 +442,7 @@ def assemble(lang: str, sections: list[dict], normaliser: int) -> dict:
     timings_name = f"timings.{hashlib.sha256(timings_json).hexdigest()[:10]}.json"
     (out_dir / timings_name).write_bytes(timings_json)
     keep = {e["file"] for e in entries.values()} | {timings_name}
-    for old in out_dir.iterdir():
+    for old in out_dir.iterdir() if prune else []:
         if old.name not in keep:
             old.unlink()
             log(f"[{lang}] deleted {old.name} (no section uses it now)")
@@ -294,20 +460,71 @@ def assemble(lang: str, sections: list[dict], normaliser: int) -> dict:
     }
 
 
+def list_vi_voices() -> None:
+    """Prints VieNeu's preset voices (name, gender, region, style), from its own list, without loading the model."""
+    import importlib.resources
+
+    path = importlib.resources.files("vieneu") / "assets" / "voices_v3_turbo.json"
+    data = json.loads(path.read_text("utf-8"))
+    for name, voice in data.get("presets", {}).items():
+        log(f"{name}\t{voice.get('gender', '')}\t{voice.get('description', '')}")
+    log(f"Default in generate.py: {VI_VOICE}. Choose another with --vi-voice NAME or AUDIO_VI_VOICE=NAME.")
+
+
 def main() -> int:
+    global THREADS
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("export", help="the JSON tools/audio/export.ts wrote")
-    parser.add_argument("--lang", action="append", help="only this language (en, id); may be given more than once")
+    parser.add_argument("export", nargs="?", help="the JSON tools/audio/export.ts wrote")
+    parser.add_argument("--lang", action="append", help="only this language (en, id, vi); may be given more than once. Without it: the ready languages, and any already recorded")
     parser.add_argument("--synth-only", action="store_true", help="record the pieces, but don't make the files")
-    parser.add_argument("--threads", type=int, default=int(os.environ.get("AUDIO_THREADS", "0") or 0), help="torch threads (0: torch's default)")
+    parser.add_argument("--threads", type=int, default=int(os.environ.get("AUDIO_THREADS", "0") or 0), help="CPU threads (0: each engine's default)")
+    parser.add_argument("--vi-voice", help=f"VieNeu preset voice for Vietnamese (default {VI_VOICE!r}; AUDIO_VI_VOICE does the same); --list-vi-voices lists them")
+    parser.add_argument("--list-vi-voices", action="store_true", help="list VieNeu's preset voices and stop")
+    parser.add_argument("--fetch-vieneu", action="store_true", help="download VieNeu's model files to .audio-cache/models/vieneu/ and stop")
+    parser.add_argument("--sample", metavar="DIR", help="record a few sections to DIR for listening (MP3 and timings), writing nothing to the repository")
+    parser.add_argument("--limit", type=int, default=3, help="with --sample: how many sections (default 3)")
+    parser.add_argument("--only", help="with --sample: only sections whose key contains this (for example 'l10/standard')")
     args = parser.parse_args()
 
-    if args.threads:
-        import torch
+    THREADS = args.threads
+    if args.vi_voice:
+        VOICES["vi"]["voice"] = args.vi_voice
+    if args.list_vi_voices:
+        list_vi_voices()
+        return 0
+    if args.fetch_vieneu:
+        fetch_vieneu_models()
+        log("[vi] VieNeu's model files are in " + str(VIENEU_DIR))
+        return 0
+    if not args.export:
+        parser.error("the export JSON is required (npm run audio:generate makes it)")
 
-        torch.set_num_threads(args.threads)
     export = json.loads(Path(args.export).read_text("utf-8"))
-    languages = [l for l in export["languages"] if not args.lang or l["lang"] in args.lang]
+    manifest = json.loads(MANIFEST.read_text("utf-8")) if MANIFEST.exists() else {}
+    recorded = manifest.get("languages", {})
+    if args.lang:
+        languages = [l for l in export["languages"] if l["lang"] in args.lang]
+    else:
+        # Not-ready languages (Vietnamese, a hidden preview) are recorded only when asked for, or once they have recordings.
+        languages = [l for l in export["languages"] if l.get("ready", True) or l["lang"] in recorded]
+        for l in export["languages"]:
+            if l not in languages:
+                log(f"[{l['lang']}] isn't ready and has no recordings yet: skipped (record it with --lang {l['lang']})")
+
+    if args.sample:
+        out = Path(args.sample).resolve()
+        if (out == ROOT or ROOT in out.parents) and CACHE.resolve() not in (out, *out.parents):
+            parser.error("--sample writes listening files: point it outside the repository, or into .audio-cache/")
+        for language in languages:
+            if language["lang"] not in VOICES:
+                log(f"No voice is set for {language['lang']} in scripts/audio/generate.py (VOICES).")
+                return 1
+            chosen = [s for s in language["sections"] if not args.only or args.only in s["key"]][: args.limit]
+            synthesise(language["lang"], chosen)
+            result = assemble(language["lang"], chosen, language["normaliser"], out_dir=out / language["lang"], prune=False)
+            log(f"[{language['lang']}] {result['files']} sample file(s) in {out / language['lang']}: {result['seconds'] / 60:.1f} min, voice {VOICES[language['lang']].get('voice', '')}")
+        return 0
+
     for language in languages:
         if language["lang"] not in VOICES:
             log(f"No voice is set for {language['lang']} in scripts/audio/generate.py (VOICES).")
@@ -316,8 +533,6 @@ def main() -> int:
     if args.synth_only:
         return 0
 
-    manifest = json.loads(MANIFEST.read_text("utf-8")) if MANIFEST.exists() else {}
-    recorded = manifest.get("languages", {})
     for language in languages:
         recorded[language["lang"]] = assemble(language["lang"], language["sections"], language["normaliser"])
     # A language no longer recorded (not in the export) goes from the manifest and the site.
