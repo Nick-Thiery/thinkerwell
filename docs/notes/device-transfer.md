@@ -159,3 +159,7 @@ The rule can't tell which side changed an answer when the same answer was edited
 ## Changed: a learner's language (language groundwork)
 
 A learner's record can hold their interface language (`language`, a code such as `fa-AF`; `docs/notes/languages.md`). It travels in the file like the reading level, and the checker refuses one that isn't a language code. The file version stays 1: a version-1 file without it loads as before, and an older Thinkerwell loading a newer file drops the field, as it drops every field it doesn't know.
+
+## Changed: the reading level a lesson was read at (pilot groundwork)
+
+A lesson's record can hold `readLevel` (`standard` or `simpler`): the reading level on screen when Read first counted as done. It is saved once and never changed. The checker refuses any other value. The file version stays 1: a file without it loads as before, and an older Thinkerwell loading a newer file drops the field. When the same lesson is combined from this device and a file, this device's `readLevel` is kept, else the file's.

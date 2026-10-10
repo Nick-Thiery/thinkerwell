@@ -42,7 +42,7 @@ HELP for Refugees, Jakarta. Target start: one to two weeks from 26 September 202
 ### Lesson player (phase 4)
 
 - **When a stage counts as done** (`src/lesson/progressRules.ts`): Read when every quick-check choice question is answered, right or wrong, or the learner continues from the quick check; Write when they continue having written something; Speak when they choose how they practised; Watch (optional) when they answer the after question or continue; Reflect as soon as the required prompt is answered (saved with the typing, so leaving without "Finish lesson" still counts), which completes the lesson. Continuing past a stage that the rules don't tick (an empty Write box) never creates a saved record, so an unstarted lesson never shows "In progress". Nothing is locked: these only decide the ticks.
-- The reading level (Standard or Simpler) is remembered per learner, on the learner's own record, and falls back to the device's preferred level.
+- The reading level (Standard or Simpler) is remembered per learner, on the learner's own record, and falls back to the device's preferred level. Each lesson's record also keeps the level on screen when Read first counted as done (`readLevel`, saved once, nothing shows it yet; groundwork for Suggestions).
 - A lesson opened with nobody chosen works like "Just look around" (nothing saved) and shows a note offering to choose who's learning.
 - Write's example answer shows only once the learner has written something or taps "See an example answer", and stays open after that.
 - Speak doesn't show "Say it in three sentences" frames: the lesson content has no field for them yet.
