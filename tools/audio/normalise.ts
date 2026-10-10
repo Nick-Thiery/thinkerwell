@@ -23,7 +23,9 @@
 //   English; "lapan", "perpuluhan", "peratus", "bilion"), ordinals ("ke-8",
 //   "kelapan"), decades, ranges ("hingga"); capitals that are letters (PBB)
 //   spelt out with the names Malaysians use (pi bi bi); a few abbreviations
-//   written out; accents taken off.
+//   written out; accents taken off. Its alphabet has no v and no x (it also
+//   lacks the digits 7, 8 and 9), so v is written f and x ks: "video" is
+//   read "fideo", the nearest the voice can get.
 // - Vietnamese (VieNeu-TTS v3 Turbo): its own normaliser (sea-g2p) already
 //   reads numbers, years, Vietnamese thousands ("5.500", "75.000") and decimal
 //   commas ("13,8"), ranges, percentages, units, Roman numerals and the
@@ -219,7 +221,7 @@ const MS_NUMBER = String.raw`\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?`;
 /** Letters said one by one, as Malaysians say them (the English names): PBB → "pi bi bi". */
 const MS_LETTERS: Readonly<Record<string, string>> = {
   A: 'ei', B: 'bi', C: 'si', D: 'di', E: 'i', F: 'ef', G: 'ji', H: 'ec', I: 'ai', J: 'je', K: 'ke', L: 'el', M: 'em',
-  N: 'en', O: 'o', P: 'pi', Q: 'kiu', R: 'ar', S: 'es', T: 'ti', U: 'yu', V: 'vi', W: 'dablyu', X: 'eks', Y: 'wai', Z: 'zed',
+  N: 'en', O: 'o', P: 'pi', Q: 'kiu', R: 'ar', S: 'es', T: 'ti', U: 'yu', V: 'fi', W: 'dablyu', X: 'eks', Y: 'wai', Z: 'zed',
 };
 
 /** Abbreviations written out (with their full stop), and units after a number. */
@@ -255,8 +257,15 @@ function normaliseMalay(text: string): string {
   // Symbols the voice can't say.
   out = out.replace(/&/g, ' dan ').replace(/\+/g, ' tambah ').replace(/[=]/g, ' sama dengan ');
   out = out.replace(/[/\\]/g, ' ').replace(/[–]/g, ' — ');
-  // Accents off (the voice reads only a to z): "café" → "cafe".
-  out = out.normalize('NFD').replace(/\p{M}/gu, '');
+  // Accents off: "café" → "cafe". The voice has no v and no x: v is said as f
+  // ("video" → "fideo", which is how it sounds) and x as ks.
+  out = out
+    .normalize('NFD')
+    .replace(/\p{M}/gu, '')
+    .replace(/v/g, 'f')
+    .replace(/V/g, 'F')
+    .replace(/x/g, 'ks')
+    .replace(/X/g, 'Ks');
   return out.replace(/\s+/g, ' ').trim();
 }
 
