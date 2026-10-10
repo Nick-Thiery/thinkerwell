@@ -4,6 +4,7 @@ Listen plays recordings of a natural voice for everything it reads: every readin
 
 - **English**: Kokoro-82M (`hexgrad/Kokoro-82M`, Apache-2.0), voice `af_heart` (American English, `lang_code='a'`), speed 0.92.
 - **Bahasa Indonesia**: Meta's MMS-TTS (`facebook/mms-tts-ind`, CC BY-NC 4.0: non-commercial use only, with attribution; see `docs/PRODUCT.md`).
+- **Bahasa Melayu** (Malaysian Malay): MMS-TTS too (`facebook/mms-tts-zlm`, the same licence and the same `Mms` class; why this voice: `docs/notes/recorded-audio.md`, "Malay").
 - **Vietnamese** (hidden preview; recorded only when asked for, see below): VieNeu-TTS v3 Turbo (`pnnbao-ump/VieNeu-TTS-v3-Turbo`, Apache-2.0, PyPI `vieneu` 3.8.3), a preset voice (`VI_VOICE` in `generate.py`, "Trúc Ly" until the team has listened and chosen).
 
 These are the founders' choices. Changing a voice, its speed or the encoding in `generate.py` (`VOICES`, `GAPS`, `BITRATE`) records everything in that language again.
@@ -29,8 +30,9 @@ A computer that records only Vietnamese needs just `pip install vieneu==3.8.3 se
 ## Recording
 
 ```sh
-npm run audio:generate                 # the ready languages (English, Indonesian), and any other that already has recordings
-npm run audio:generate -- --lang id    # only Indonesian (the other language's files are kept)
+npm run audio:generate                 # the ready languages (English, Indonesian, Malay), and any other that already has recordings
+npm run audio:generate -- --lang id    # only Indonesian (the other languages' files are kept)
+npm run audio:generate -- --lang ms    # only Malay
 npm run audio:generate -- --lang vi    # Vietnamese (a hidden preview: only when asked for, see below)
 AUDIO_THREADS=1 npm run audio:generate -- --lang en   # one CPU thread (run en and id side by side)
 ```
@@ -85,4 +87,4 @@ Nothing else is looked up on the Hub while it records (the model folder is given
 
 ## Format
 
-MP3, 32 kbit/s constant bit rate, mono, 24 kHz for English (Kokoro's own rate) and Vietnamese (VieNeu speaks at 48 kHz; it is resampled) and 16 kHz for Indonesian (MMS's): every browser plays it, iPad Safari and old Android Chrome included, and speech stays clear. One file per section, per reading level, per language, so a device downloads only the parts it plays.
+MP3, 32 kbit/s constant bit rate, mono, 24 kHz for English (Kokoro's own rate) and Vietnamese (VieNeu speaks at 48 kHz; it is resampled) and 16 kHz for Indonesian and Malay (MMS's): every browser plays it, iPad Safari and old Android Chrome included, and speech stays clear. One file per section, per reading level, per language, so a device downloads only the parts it plays.

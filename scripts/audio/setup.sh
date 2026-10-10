@@ -1,7 +1,7 @@
 #!/bin/sh
 # Makes .venv-audio (gitignored) with what scripts/audio/generate.py needs to
 # record Listen's audio: Kokoro (English), transformers with torch (MMS-TTS,
-# Indonesian) and vieneu (VieNeu-TTS v3 Turbo, Vietnamese: ONNX on the CPU, no
+# Indonesian and Malay) and vieneu (VieNeu-TTS v3 Turbo, Vietnamese: ONNX on the CPU, no
 # torch of its own, so it shares this one). Several gigabytes; only needed by whoever runs
 # `npm run audio:generate`, never by the site or CI. Needs ffmpeg on the PATH
 # (macOS: brew install ffmpeg; Debian or Ubuntu: apt install ffmpeg). Kokoro's

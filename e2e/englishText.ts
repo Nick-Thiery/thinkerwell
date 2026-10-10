@@ -2,7 +2,7 @@ import { readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import type { Page } from '@playwright/test';
 
-// Finds English left on a page that should be all Indonesian: visible text,
+// Finds English left on a page that should be all Indonesian (or Malay): visible text,
 // and the aria-label, placeholder, title and alt of anything visible, and
 // the browser tab's title. Not a spec file itself.
 //
@@ -27,12 +27,19 @@ function leaves(tree: Tree): string[] {
 }
 
 const englishMessages = leaves(readJson<Tree>('src', 'i18n', 'messages', 'en.json'));
-const indonesianMessages = new Set(leaves(readJson<Tree>('src', 'i18n', 'messages', 'id.json')));
 
-/** English messages as patterns ({placeholders} match anything), leaving out any that read the same in Indonesian ("Menu"). */
-export const ENGLISH_MESSAGE_PATTERNS = englishMessages
-  .filter((message) => message.replace(/\{\w+\}/g, '').replace(/[^A-Za-z]/g, '').length >= 3 && !indonesianMessages.has(message))
-  .map((message) => `^${message.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\\\{\w+\\\}/g, '.*')}$`);
+/** The languages whose pages this can check: the interface and the lessons are both translated. */
+export type TranslatedLang = 'id' | 'ms';
+
+/** English messages as patterns ({placeholders} match anything), leaving out any that read the same in the language ("Menu"). */
+export function englishMessagePatterns(lang: TranslatedLang): string[] {
+  const same = new Set(leaves(readJson<Tree>('src', 'i18n', 'messages', `${lang}.json`)));
+  return englishMessages
+    .filter((message) => message.replace(/\{\w+\}/g, '').replace(/[^A-Za-z]/g, '').length >= 3 && !same.has(message))
+    .map((message) => `^${message.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\\\{\w+\\\}/g, '.*')}$`);
+}
+
+export const ENGLISH_MESSAGE_PATTERNS = englishMessagePatterns('id');
 
 /** The videos' titles and channels: they stay English in every language. */
 export const VIDEO_TEXT = readdirSync(path.join(root, 'content', 'lessons'))
@@ -48,20 +55,24 @@ export const VIDEO_TEXT = readdirSync(path.join(root, 'content', 'lessons'))
  * words or more that its Indonesian title repeats word for word, such as
  * "The Metropolitan Museum of Art" or "Hunting for History".
  */
-export const SOURCE_NAMES = readdirSync(path.join(root, 'content', 'lessons'))
-  .filter((name) => name.endsWith('.json'))
-  .flatMap((name) => {
-    type Sources = { sources: Array<{ label: string }> };
-    const english = readJson<Sources>('content', 'lessons', name).sources;
-    const indonesian = readJson<Partial<Sources>>('content', 'id', 'lessons', name).sources ?? [];
-    return english.flatMap((source, index) => {
-      const translated = indonesian[index]?.label ?? '';
-      return source.label
-        .split(/[:(),]/)
-        .map((piece) => piece.trim())
-        .filter((piece) => piece.includes(' ') && translated.includes(piece));
+export function sourceNames(lang: TranslatedLang): string[] {
+  return readdirSync(path.join(root, 'content', 'lessons'))
+    .filter((name) => name.endsWith('.json'))
+    .flatMap((name) => {
+      type Sources = { sources: Array<{ label: string }> };
+      const english = readJson<Sources>('content', 'lessons', name).sources;
+      const translatedSources = readJson<Partial<Sources>>('content', lang, 'lessons', name).sources ?? [];
+      return english.flatMap((source, index) => {
+        const translated = translatedSources[index]?.label ?? '';
+        return source.label
+          .split(/[:(),]/)
+          .map((piece) => piece.trim())
+          .filter((piece) => piece.includes(' ') && translated.includes(piece));
+      });
     });
-  });
+}
+
+export const SOURCE_NAMES = sourceNames('id');
 
 export interface EnglishFound {
   where: string;
@@ -69,7 +80,7 @@ export interface EnglishFound {
 }
 
 /** English left on the page, outside `allowed` (and always allowing "Thinkerwell"). */
-export async function englishOnPage(page: Page, allowed: readonly string[]): Promise<EnglishFound[]> {
+export async function englishOnPage(page: Page, allowed: readonly string[], lang: TranslatedLang = 'id'): Promise<EnglishFound[]> {
   return page.evaluate(
     ({ patterns, allowed }) => {
       const STOP = new Set(
@@ -82,7 +93,7 @@ export async function englishOnPage(page: Page, allowed: readonly string[]): Pro
           ' ',
         ),
       );
-      // Only the months Indonesian spells differently (April, September and November are the same).
+      // Only the months Indonesian and Malay spell differently (April, September and November are the same).
       const MONTHS = /\b(January|February|March|May|June|July|August|October|December)\b/;
       const messages = patterns.map((source) => new RegExp(source));
       // Allowed text becomes a one-letter stand-in, so a message around it ("Watch: {title}") still matches.
@@ -130,6 +141,6 @@ export async function englishOnPage(page: Page, allowed: readonly string[]): Pro
       }
       return found;
     },
-    { patterns: ENGLISH_MESSAGE_PATTERNS, allowed: [...allowed, ...VIDEO_TEXT, ...SOURCE_NAMES] },
+    { patterns: englishMessagePatterns(lang), allowed: [...allowed, ...VIDEO_TEXT, ...sourceNames(lang)] },
   );
 }
