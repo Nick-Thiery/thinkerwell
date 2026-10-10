@@ -3,7 +3,7 @@
  * choose. Plain data with no imports, so the build (vite.config.ts, for the
  * offline precache) and the translator tools (tools/i18n/) read it too.
  *
- * English and Indonesian are offered. The others are listed so the build,
+ * English, Indonesian and Malay are offered. The others are listed so the build,
  * the translator kit and the checks know about them, but they are not
  * `ready`: nobody can choose them until a native speaker has translated and
  * checked every interface string (docs/TRANSLATING.md). Their message files
@@ -13,7 +13,8 @@
  * For most languages the lessons stay in English on purpose: the course is
  * also English practice. Only the interface (buttons, instructions) and, if
  * a lesson file has them, short glossary meanings are translated. A language
- * marked `content` (Indonesian, for the Jakarta pilot) is the exception: its
+ * marked `content` (Indonesian, for the Jakarta pilot, and Malay, for a
+ * partner in Malaysia) is the exception: its
  * lessons, section checks, course text and lesson pictures are translated
  * too (content/<code>/), and learners who choose it learn in it.
  *
@@ -84,6 +85,11 @@ export const LOCALES: readonly LocaleDefinition[] = [
   // (docs/translation/id/) before it reaches learners.
   // Its own name as Indonesians say it: "Bahasa Indonesia" (CLDR has just "Indonesia").
   { code: 'id', englishName: 'Indonesian', endonym: 'Bahasa Indonesia', dir: 'ltr', font: 'latin', ready: true, content: true, speechLang: 'id-ID' },
+  // Bahasa Melayu (Malaysian Malay), for a partner in Malaysia: the interface
+  // and the lessons. Drafted by AI and cross-checked by back-translation, and
+  // offered to everyone while native speakers review it, as Indonesian is
+  // (docs/translation/ms/). Malaysians call it "Bahasa Melayu" (CLDR: "Melayu").
+  { code: 'ms', englishName: 'Malay', endonym: 'Bahasa Melayu', dir: 'ltr', font: 'latin', ready: true, content: true, speechLang: 'ms-MY' },
   // Tiếng Việt: a hidden preview. Drafted by AI and cross-checked by AI; it is
   // never offered (ready: false) until a native speaker has reviewed it
   // (docs/translation/vi/, docs/notes/vietnamese-preview.md). Unlike

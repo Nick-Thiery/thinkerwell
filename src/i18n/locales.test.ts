@@ -18,26 +18,27 @@ const fixture: LocaleDefinition[] = [
 ];
 
 describe('the language list', () => {
-  it('starts with English, and offers English and Indonesian today', () => {
+  it('starts with English, and offers English, Indonesian and Malay today', () => {
     expect(LOCALES[0]).toMatchObject({ code: 'en', dir: 'ltr', font: 'latin', ready: true });
-    expect(readyLocales().map((locale) => locale.code)).toEqual(['en', 'id']);
+    expect(readyLocales().map((locale) => locale.code)).toEqual(['en', 'id', 'ms']);
     expect(SOURCE_LOCALE).toBe('en');
   });
 
-  it('lists the languages the pilot plan names, and Indonesian, the only one ready besides English', () => {
+  it('lists the languages the pilot plan names, and Indonesian and Malay, the only ones ready besides English', () => {
     expect(LOCALES.map((locale) => [locale.code, locale.dir, locale.font, locale.ready])).toEqual([
       ['en', 'ltr', 'latin', true],
       ['fa-AF', 'rtl', 'arabic', false],
       ['ar', 'rtl', 'arabic', false],
       ['so', 'ltr', 'latin', false],
       ['id', 'ltr', 'latin', true],
+      ['ms', 'ltr', 'latin', true],
       ['vi', 'ltr', 'vietnamese', false],
     ]);
   });
 
   it("gives every language its own name as CLDR writes it, and its English name", () => {
     // Where the name people use differs from CLDR's, and why.
-    const ownNames: Record<string, string> = { id: 'Bahasa Indonesia' }; // CLDR: "Indonesia"
+    const ownNames: Record<string, string> = { id: 'Bahasa Indonesia', ms: 'Bahasa Melayu' }; // CLDR: "Indonesia", "Melayu"
     for (const locale of LOCALES) {
       expect(ownNames[locale.code] ?? new Intl.DisplayNames([locale.code], { type: 'language' }).of(locale.code), locale.code).toBe(locale.endonym);
       expect(new Intl.DisplayNames(['en'], { type: 'language' }).of(locale.code), locale.code).toBe(locale.englishName);
@@ -52,7 +53,7 @@ describe('the language list', () => {
 
   it('never offers a pseudo-language, even one marked ready', () => {
     expect(PSEUDO_LOCALES.every((locale) => locale.pseudo && !locale.ready)).toBe(true);
-    expect(readyLocales([...LOCALES, { ...PSEUDO_LOCALES[0]!, ready: true }]).map((locale) => locale.code)).toEqual(['en', 'id']);
+    expect(readyLocales([...LOCALES, { ...PSEUDO_LOCALES[0]!, ready: true }]).map((locale) => locale.code)).toEqual(['en', 'id', 'ms']);
   });
 
   it('formats pseudo-languages like English and every other language as itself', () => {
@@ -96,15 +97,17 @@ describe('resolveLocale', () => {
 });
 
 describe('languages whose lessons are translated too', () => {
-  it('is Indonesian (ready) and Vietnamese (a hidden preview), which read and listen in id-ID and vi-VN', () => {
+  it('is Indonesian and Malay (ready) and Vietnamese (a hidden preview), which read and listen in id-ID, ms-MY and vi-VN', () => {
     expect(LOCALES.filter((locale) => locale.content).map((locale) => [locale.code, locale.speechLang, locale.ready])).toEqual([
       ['id', 'id-ID', true],
+      ['ms', 'ms-MY', true],
       ['vi', 'vi-VN', false],
     ]);
   });
 
-  it('gives the lessons in Indonesian for Indonesian, and in English for every other language', () => {
+  it('gives the lessons in Indonesian for Indonesian, in Malay for Malay, and in English for every other language', () => {
     expect(contentLocale(findLocale('id')!).code).toBe('id');
+    expect(contentLocale(findLocale('ms')!).code).toBe('ms');
     for (const code of ['en', 'fa-AF', 'ar', 'so', 'en-XA', 'ar-XB']) expect(contentLocale(findLocale(code)!).code).toBe('en');
   });
 });

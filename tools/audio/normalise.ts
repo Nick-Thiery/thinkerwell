@@ -17,6 +17,13 @@
 //   names; a few abbreviations are written out; q and x become k and ks;
 //   accents are taken off. scripts/audio/generate.py checks that what is
 //   left is only what the tokenizer keeps, plus punctuation it drops.
+// - Malay (MMS-TTS, facebook/mms-tts-zlm): the same kind of tokenizer as
+//   the Indonesian voice's, so the same is done in Malay: numbers written
+//   out in Malay words as Malaysians write them (1,000 and 13.8, like
+//   English; "lapan", "perpuluhan", "peratus", "bilion"), ordinals ("ke-8",
+//   "kelapan"), decades, ranges ("hingga"); capitals that are letters (PBB)
+//   spelt out with the names Malaysians use (pi bi bi); a few abbreviations
+//   written out; accents taken off.
 // - Vietnamese (VieNeu-TTS v3 Turbo): its own normaliser (sea-g2p) already
 //   reads numbers, years, Vietnamese thousands ("5.500", "75.000") and decimal
 //   commas ("13,8"), ranges, percentages, units, Roman numerals and the
@@ -147,6 +154,112 @@ function normaliseIndonesian(text: string): string {
   return out.replace(/\s+/g, ' ').trim();
 }
 
+const MS_ONES = ['kosong', 'satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'lapan', 'sembilan'];
+
+/** 0 to 999 in Malay words ("" for 0 inside a bigger number). */
+function malayBelowThousand(n: number): string {
+  const words: string[] = [];
+  const hundreds = Math.floor(n / 100);
+  const rest = n % 100;
+  if (hundreds === 1) words.push('seratus');
+  else if (hundreds > 1) words.push(`${MS_ONES[hundreds]} ratus`);
+  if (rest === 10) words.push('sepuluh');
+  else if (rest === 11) words.push('sebelas');
+  else if (rest > 11 && rest < 20) words.push(`${MS_ONES[rest - 10]} belas`);
+  else if (rest >= 20) {
+    words.push(`${MS_ONES[Math.floor(rest / 10)]} puluh`);
+    if (rest % 10) words.push(MS_ONES[rest % 10]!);
+  } else if (rest > 0) words.push(MS_ONES[rest]!);
+  return words.join(' ');
+}
+
+const MS_SCALES: Array<[number, string]> = [
+  [1e12, 'trilion'],
+  [1e9, 'bilion'],
+  [1e6, 'juta'],
+  [1e3, 'ribu'],
+];
+
+/** A whole number in Malay words: 1950 → "seribu sembilan ratus lima puluh". */
+export function malayNumber(n: number): string {
+  if (!Number.isSafeInteger(n) || n < 0) throw new Error(`Can't say ${n} in Malay words`);
+  if (n === 0) return 'kosong';
+  const words: string[] = [];
+  let rest = n;
+  for (const [size, name] of MS_SCALES) {
+    const count = Math.floor(rest / size);
+    rest %= size;
+    if (!count) continue;
+    // "seribu" and "sejuta"; "satu bilion" for the larger ones.
+    if (count === 1 && size === 1e3) words.push('seribu');
+    else if (count === 1 && size === 1e6) words.push('sejuta');
+    else words.push(`${malayBelowThousand(count)} ${name}`);
+  }
+  if (rest) words.push(malayBelowThousand(rest));
+  return words.join(' ');
+}
+
+/** An ordinal: 1 → "pertama", 8 → "kelapan", 15 → "kelima belas". */
+export function malayOrdinal(n: number): string {
+  return n === 1 ? 'pertama' : `ke${malayNumber(n)}`;
+}
+
+/** Digits as Malaysian Malay writes them, like English: "75,000" (a comma between thousands), "13.8" (a decimal point). */
+function malayValue(written: string): string {
+  const [whole, decimals] = written.split('.');
+  const said = malayNumber(Number(whole!.replace(/,/g, '')));
+  if (decimals === undefined) return said;
+  // After the point each digit is said on its own: 13.25 → "tiga belas perpuluhan dua lima".
+  return `${said} perpuluhan ${[...decimals].map((d) => MS_ONES[Number(d)]).join(' ')}`;
+}
+
+/** A written number: 1,000 / 75,000 / 13.8 / 1899 (not a comma or full stop at the end of a sentence). */
+const MS_NUMBER = String.raw`\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?`;
+
+/** Letters said one by one, as Malaysians say them (the English names): PBB → "pi bi bi". */
+const MS_LETTERS: Readonly<Record<string, string>> = {
+  A: 'ei', B: 'bi', C: 'si', D: 'di', E: 'i', F: 'ef', G: 'ji', H: 'ec', I: 'ai', J: 'je', K: 'ke', L: 'el', M: 'em',
+  N: 'en', O: 'o', P: 'pi', Q: 'kiu', R: 'ar', S: 'es', T: 'ti', U: 'yu', V: 'vi', W: 'dablyu', X: 'eks', Y: 'wai', Z: 'zed',
+};
+
+/** Abbreviations written out (with their full stop), and units after a number. */
+const MS_ABBREVIATIONS: ReadonlyArray<[RegExp, string]> = [
+  [/\bdll\./g, 'dan lain-lain'],
+  [/\bdsb\./g, 'dan sebagainya'],
+  [/\bspt\./g, 'seperti'],
+  [/\bNo\.(?=\s*\d)/g, 'nombor'],
+  [/\bDr\./g, 'Doktor'],
+  [/\bProf\./g, 'Profesor'],
+  [/\bkm\b/g, 'kilometer'],
+  [/\bkg\b/g, 'kilogram'],
+  [/\bcm\b/g, 'sentimeter'],
+  [/°C/g, ' darjah Celsius'],
+];
+
+function normaliseMalay(text: string): string {
+  let out = text.normalize('NFC');
+  for (const [pattern, words] of MS_ABBREVIATIONS) out = out.replace(pattern, words);
+  // Ranges: "10–20" or "10-20" → "10 hingga 20".
+  out = out.replace(new RegExp(`(${MS_NUMBER})\\s*[–-]\\s*(?=\\d)`, 'g'), '$1 hingga ');
+  // Ordinals: "ke-8" → "kelapan".
+  out = out.replace(/\bke-(\d+)\b/gi, (_m, n: string) => malayOrdinal(Number(n)));
+  // Decades and centuries: "1400-an" → "seribu empat ratusan".
+  out = out.replace(/\b(\d+)-an\b/g, (_m, n: string) => `${malayNumber(Number(n))}an`);
+  // Percentages: "50%" → "lima puluh peratus".
+  out = out.replace(new RegExp(`(${MS_NUMBER})\\s*%`, 'g'), (_m, n: string) => `${malayValue(n)} peratus`);
+  // Every other number. A trailing "." or "," is the sentence's, not the number's.
+  out = out.replace(new RegExp(`(?<![\\d.,])(${MS_NUMBER})(?![\\d])`, 'g'), (_m, n: string) => malayValue(n));
+  // Letters said one by one: PBB → "pi bi bi"; an initial ("Mina L.") → "el".
+  out = out.replace(/\b[A-Z]{2,5}\b/g, (word) => [...word].map((ch) => MS_LETTERS[ch]).join(' '));
+  out = out.replace(/\b([A-Z])\.(?=\s|$)/g, (_m, ch: string) => MS_LETTERS[ch]!);
+  // Symbols the voice can't say.
+  out = out.replace(/&/g, ' dan ').replace(/\+/g, ' tambah ').replace(/[=]/g, ' sama dengan ');
+  out = out.replace(/[/\\]/g, ' ').replace(/[–]/g, ' — ');
+  // Accents off (the voice reads only a to z): "café" → "cafe".
+  out = out.normalize('NFD').replace(/\p{M}/gu, '');
+  return out.replace(/\s+/g, ' ').trim();
+}
+
 /** A letter that only Vietnamese uses, with or without a tone mark (not in any other language the lessons name). */
 const VIETNAMESE_LETTER = /[àáâãèéêìíòóôõùúýăđĩũơưạảấầẩẫậắằẳẵặẹẻẽếềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]/iu;
 
@@ -191,9 +304,10 @@ function normaliseEnglish(text: string): string {
     .trim();
 }
 
-/** What the recording voice for `lang` ("en", "id", "vi") is given for `text`. */
+/** What the recording voice for `lang` ("en", "id", "ms", "vi") is given for `text`. */
 export function speechInput(text: string, lang: string): string {
   if (lang === 'id') return normaliseIndonesian(text);
+  if (lang === 'ms') return normaliseMalay(text);
   if (lang === 'vi') return normaliseVietnamese(text);
   return normaliseEnglish(text);
 }
