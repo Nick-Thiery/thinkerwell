@@ -77,7 +77,8 @@ STYLE = {
         "self_check_start": "Saya ",
         # "kamu" for the learner, lower-case "anda" only in teachers' notes; no "please".
         # Then words that are Indonesian, not Malaysian Malay (docs/translation/ms/KEY_TERMS.md).
-        "forbidden": [r"\bAnda\b", r"(?i)\bsila\b", r"(?i)\bsilakan\b", r"(?i)\btolong\b", r"(?i)\bengkau\b"]
+        # "Anda" is lower case in the middle of a sentence; a sentence may begin with it (teachers' notes).
+        "forbidden": [r"(?<=[a-z,;] )Anda\b", r"(?i)\bsila\b", r"(?i)\bsilakan\b", r"(?i)\btolong\b", r"(?i)\bengkau\b"]
         + [r"(?i)(?<![\w-])" + w + r"(?![\w])" for w in INDONESIAN_NOT_MALAY],
         "voice_hint": 'speak to the learner as "kamu", without "please" (sila, tolong), and in Malaysian Malay, not Indonesian',
     },
