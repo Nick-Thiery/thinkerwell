@@ -39,12 +39,12 @@ export interface SiteVideo {
 export type SiteVideoId = 'explore' | 'session' | 'setup';
 
 export const SITE_VIDEOS: Record<SiteVideoId, SiteVideo> = {
-  // "Explore your world" (v4): what Thinkerwell is and why. On About, under the mission.
+  // "Explore your world" (v5): what Thinkerwell is and why. On About, under the mission.
   explore: {
-    src: '/video/explore-your-world-v4.mp4',
-    captions: '/video/explore-your-world-v4.en.vtt',
-    subtitles: { id: '/video/explore-your-world-v4.id.vtt', ms: '/video/explore-your-world-v4.ms.vtt' },
-    seconds: 113,
+    src: '/video/explore-your-world-v5.mp4',
+    captions: '/video/explore-your-world-v5.en.vtt',
+    subtitles: { id: '/video/explore-your-world-v5.id.vtt', ms: '/video/explore-your-world-v5.ms.vtt' },
+    seconds: 112,
     megabytes: 9,
     title: 'siteVideo.explore.title',
     blurb: 'siteVideo.explore.blurb',

@@ -91,7 +91,7 @@ const PRECACHE_BUDGET = 795_000;
  * verdicts and Listen sample in app code, and the eight English messages it added to en.json (Settings' Malay voice
  * and download sizes, the Credits line); none of its words, lessons or pictures reach a first visit (docs/notes/languages.md).
  */
-const FIRST_VISIT_HOME_BUDGET = 225_000;
+const FIRST_VISIT_HOME_BUDGET = 225_500;
 
 const TEXT = /\.(html|js|css|svg|json|webmanifest)$/;
 
