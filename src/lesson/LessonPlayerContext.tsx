@@ -383,10 +383,13 @@ function PlayerForOwner({
     );
   }, [learnerId, flush, writtenUpTo]);
 
+  const readingLevel: ReadingLevel =
+    (learnerId ? learner?.readingLevel : guestLevel) ?? settings.preferredReadingLevel;
+
   const stageEvent = useCallback(
     (event: StageEvent) => {
       const now = new Date().toISOString();
-      const change: ProgressChange = (p) => applyStageEvent(lesson, p, event, now);
+      const change: ProgressChange = (p) => applyStageEvent(lesson, p, event, now, { readingLevel });
       // An event that marks nothing done (Continue with an empty Write box)
       // changes nothing, so it must not create a record for a lesson the
       // learner hasn't started: just looking never counts as "In progress".
@@ -394,7 +397,7 @@ function PlayerForOwner({
       if (change(current) === current && (learnerId ? !hasRecord.current : true)) return;
       update(change, { immediate: true });
     },
-    [lesson, update, learnerId],
+    [lesson, update, learnerId, readingLevel],
   );
 
   // Opening a stage records it as the current one, but only for a lesson the
@@ -426,9 +429,6 @@ function PlayerForOwner({
       void flush();
     };
   }, [learnerId, flush, saveNow]);
-
-  const readingLevel: ReadingLevel =
-    (learnerId ? learner?.readingLevel : guestLevel) ?? settings.preferredReadingLevel;
 
   const { setLearnerReadingLevel } = session;
   const setReadingLevel = useCallback(

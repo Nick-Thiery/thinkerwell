@@ -139,7 +139,7 @@ export function mergeProgress(device: LessonProgress, file: LessonProgress): Les
     device.completedAt && file.completedAt
       ? earlier(device.completedAt, file.completedAt)
       : (device.completedAt ?? file.completedAt);
-  return {
+  const merged: LessonProgress = {
     learnerId: device.learnerId,
     lessonId: device.lessonId,
     stagesDone: [...device.stagesDone, ...file.stagesDone.filter((stage) => !device.stagesDone.includes(stage))],
@@ -163,6 +163,10 @@ export function mergeProgress(device: LessonProgress, file: LessonProgress): Les
     updatedAt: later(device.updatedAt, file.updatedAt),
     completedAt,
   };
+  // The level Read was first finished at: this device's, else the file's.
+  const readLevel = device.readLevel ?? file.readLevel;
+  if (readLevel) merged.readLevel = readLevel;
+  return merged;
 }
 
 /** The better attempt: the higher score, then the later one, then this device's. */

@@ -44,6 +44,40 @@ describe('Read', () => {
   });
 });
 
+describe('the reading level used', () => {
+  const answered = {
+    ...fresh(),
+    checkAnswers: {
+      0: { type: 'choice' as const, selected: 0, correct: true, tries: 1 },
+      1: { type: 'choice' as const, selected: 0, correct: false, tries: 2 },
+    },
+  };
+  const checks = { stage: 'read', kind: 'check-answered' } as const;
+
+  it('is saved when Read first counts as done', () => {
+    expect(applyStageEvent(lesson, answered, checks, NOW, { readingLevel: 'simpler' }).readLevel).toBe('simpler');
+    expect(applyStageEvent(lesson, fresh(), { stage: 'read', kind: 'continue' }, NOW, { readingLevel: 'standard' }).readLevel).toBe('standard');
+  });
+
+  it('is not saved while Read is not done, or when no level is given', () => {
+    const one = { ...fresh(), checkAnswers: { 0: answered.checkAnswers[0] } };
+    expect(applyStageEvent(lesson, one, checks, NOW, { readingLevel: 'simpler' }).readLevel).toBeUndefined();
+    expect(applyStageEvent(lesson, answered, checks, NOW).readLevel).toBeUndefined();
+  });
+
+  it('is kept as it was when Read is finished again at another level', () => {
+    const first = applyStageEvent(lesson, answered, checks, NOW, { readingLevel: 'simpler' });
+    expect(applyStageEvent(lesson, first, { stage: 'read', kind: 'continue' }, NOW, { readingLevel: 'standard' })).toBe(first);
+  });
+
+  it('is not guessed for Read finished before it was saved, and other stages never set it', () => {
+    const old = { ...answered, stagesDone: ['read' as const] };
+    expect(applyStageEvent(lesson, old, { stage: 'read', kind: 'continue' }, NOW, { readingLevel: 'standard' }).readLevel).toBeUndefined();
+    const written = { ...fresh(), writing: { ...fresh().writing, text: 'Rivers.' } };
+    expect(applyStageEvent(lesson, written, { stage: 'write', kind: 'continue' }, NOW, { readingLevel: 'simpler' }).readLevel).toBeUndefined();
+  });
+});
+
 describe('Write', () => {
   it('needs some writing before continue counts', () => {
     expect(applyStageEvent(lesson, fresh(), { stage: 'write', kind: 'continue' }, NOW).stagesDone).toEqual([]);

@@ -292,7 +292,7 @@ function checkProgress(value: unknown, learnerId: string): LessonProgress {
     const checked = stage(done);
     if (!stagesDone.includes(checked)) stagesDone.push(checked);
   }
-  return {
+  const progress: LessonProgress = {
     learnerId,
     lessonId: slug(source.lessonId),
     stagesDone,
@@ -316,6 +316,14 @@ function checkProgress(value: unknown, learnerId: string): LessonProgress {
     updatedAt: date(source.updatedAt),
     completedAt: source.completedAt === null ? null : date(source.completedAt),
   };
+  // Added after version 1 without a new version: older Thinkerwell drops it
+  // (extra fields are ignored), and older files simply don't have it.
+  if (source.readLevel !== undefined) {
+    const level = source.readLevel;
+    if (level !== 'standard' && level !== 'simpler') fail();
+    progress.readLevel = level;
+  }
+  return progress;
 }
 
 function checkAttempt(value: unknown): QuizAttempt {

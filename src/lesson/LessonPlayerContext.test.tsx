@@ -214,6 +214,18 @@ describe('LessonPlayerProvider (learner)', () => {
     expect((await store.getLearner(learnerId))?.readingLevel).toBe('simpler');
   });
 
+  it('saves the reading level on screen with the lesson when Read is done', async () => {
+    const user = userEvent.setup();
+    const learnerId = await addCurrentLearner();
+    renderPlayer('read');
+    await waitFor(() => expect(screen.getByTestId('status')).toHaveTextContent('ready'));
+    await user.click(screen.getByText('Simpler'));
+    await waitFor(() => expect(screen.getByTestId('level')).toHaveTextContent('simpler'));
+    await user.click(screen.getByText('Read done'));
+    const store = await getStore();
+    await waitFor(async () => expect((await store.getProgress(learnerId, lesson.id))?.readLevel).toBe('simpler'));
+  });
+
   it('falls back to the device setting for a learner who has not chosen', async () => {
     await addCurrentLearner();
     const store = await getStore();

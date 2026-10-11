@@ -38,6 +38,12 @@ describe('merging one lesson', () => {
     expect(merged(record(EARLY), record(LATE)).completedAt).toBeNull();
   });
 
+  it('keeps the reading level Read was finished at, this device\'s first', () => {
+    expect(merged(record(EARLY), record(LATE, { readLevel: 'simpler' })).readLevel).toBe('simpler');
+    expect(merged(record(LATE, { readLevel: 'standard' }), record(EARLY, { readLevel: 'simpler' })).readLevel).toBe('standard');
+    expect('readLevel' in merged(record(EARLY), record(LATE))).toBe(false);
+  });
+
   it('keeps the earlier start and the later update (not the time of loading)', () => {
     const result = merged(record(EARLY, { startedAt: '2026-08-30T10:00:00.000Z' }), record(LATE));
     expect(result.startedAt).toBe('2026-08-30T10:00:00.000Z');
