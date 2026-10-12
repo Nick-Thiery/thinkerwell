@@ -93,16 +93,21 @@
 }
 
 .tw-course-nav-label {
-  color: var(--ink-muted);
+  color: var(--ink);
   padding: 0 var(--space-1) var(--space-1);
 }
 
+/* A section's badge on the left, its name over "0 of 9" on the right: the
+   count sits under the name (not squeezed beside it), so a long name has the
+   whole width and the count is easy to read. */
 .tw-course-nav-link {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas: 'badge name' 'badge count';
   align-items: center;
-  gap: var(--space-3);
-  padding: var(--space-3);
-  min-block-size: var(--target-min);
+  gap: 2px var(--space-4);
+  padding: var(--space-4);
+  min-block-size: 72px;
   border-radius: var(--radius-lg);
   background: var(--paper);
   border: 2px solid var(--line);
@@ -121,17 +126,24 @@
   border-color: var(--ink);
 }
 
+.tw-course-nav-link > :first-child {
+  grid-area: badge;
+}
+
 .tw-course-nav-name {
-  flex-grow: 1;
-  font-size: 16px;
-  line-height: 20px;
+  grid-area: name;
+  font-size: 18px;
+  line-height: 24px;
   font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 /* "0 of 9" stays on one line: wrapped, it read as three stacked numbers. */
 .tw-course-nav-count {
-  flex: none;
-  font-size: 14px;
+  grid-area: count;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 700;
   color: var(--ink-muted);
   white-space: nowrap;
 }
@@ -146,8 +158,8 @@
 }
 
 .tw-course-nav-note span {
-  font-size: 15px;
-  line-height: 22px;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 .tw-course-section {
@@ -222,9 +234,24 @@
   }
 }
 
+/* The list stays in view while the sections scroll, when the window is tall
+   enough to hold it (a short laptop keeps it in the page). */
+@media (min-width: 1024px) and (min-height: 760px) {
+  .tw-course-nav {
+    position: sticky;
+    inset-block-start: var(--space-6);
+  }
+}
+
 /* A laptop's wider page column gives the sidebar room for whole section names. */
 @media (min-width: 1280px) {
   .tw-course-body {
-    grid-template-columns: 320px minmax(0, 1fr);
+    grid-template-columns: 340px minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 1700px) {
+  .tw-course-body {
+    grid-template-columns: 380px minmax(0, 1fr);
   }
 }

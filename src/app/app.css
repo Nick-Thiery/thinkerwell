@@ -136,3 +136,22 @@
     padding-inline: var(--space-10);
   }
 }
+
+/*
+ * Big screens (a desktop monitor, a laptop at 100% on a large display): the
+ * page column grows in two steps instead of staying a 1440px strip with wide
+ * empty sides. --page-max is read by the header, the banners, the page and the
+ * footer, so they all move together; --reading-measure stays, so reading text
+ * never gets wider than 68 characters.
+ */
+@media (min-width: 1700px) {
+  :root {
+    --page-max: 1680px;
+  }
+}
+
+@media (min-width: 2100px) {
+  :root {
+    --page-max: 1920px;
+  }
+}
