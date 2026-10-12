@@ -476,3 +476,31 @@
   margin: 0;
   overflow-wrap: anywhere;
 }
+
+/*
+ * On a laptop or bigger the picker's two cards fill the window under the
+ * header (not just as tall as their words), so the first screen is one
+ * balanced block. The page grows to the window's height; the cards share it.
+ */
+@media (min-width: 900px) {
+  .tw-shell-main:has(> .tw-home-split) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tw-home-split {
+    flex: 1 1 auto;
+    min-block-size: 520px;
+  }
+
+  .tw-home-panel {
+    justify-content: center;
+  }
+}
+
+/* The hero line grows a little with a big screen. */
+@media (min-width: 1700px) {
+  .tw-home-hero .hero {
+    font-size: 104px;
+  }
+}
