@@ -41,12 +41,22 @@ describe('AboutPage', () => {
     expect(screen.queryByText(/Read with curiosity/)).not.toBeInTheDocument();
   });
 
-  it('shows the video "Explore your world" right under the mission, not yet loaded', () => {
+  it('shows the mission, the UN goals and then the video "Explore your world" as a picture only, not yet loaded', () => {
     const { container } = render(<AboutPage />);
     const mission = screen.getByRole('region', { name: 'Our mission' });
-    const video = screen.getByRole('heading', { level: 3, name: 'Explore your world' });
-    expect(mission.nextElementSibling).toContainElement(video);
-    expect(mission.parentElement).toHaveClass('tw-about-main');
+    const goals = screen.getByRole('region', { name: 'How Thinkerwell connects to the UN goals' });
+    const play = screen.getByRole('button', { name: 'Play the video: Explore your world' });
+    expect(mission.parentElement).toHaveClass('tw-about-cards');
+    expect(mission.nextElementSibling).toBe(goals);
+    expect(goals.nextElementSibling).toContainElement(play);
+    // The picture is the card: no "Optional" tag, title, blurb or "Watch the video" button.
+    expect(screen.queryByText('Optional')).not.toBeInTheDocument();
+    expect(screen.queryByRole('heading', { name: 'Explore your world' })).not.toBeInTheDocument();
+    expect(screen.queryByText(/Two minutes on why we built Thinkerwell/)).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Watch the video' })).not.toBeInTheDocument();
+    // The written version and the data it uses stay one quiet line away.
+    expect(screen.getByRole('button', { name: 'Read instead' })).toBeVisible();
+    expect(screen.getByText('Uses about 9 MB of data.')).toBeInTheDocument();
     expect(container.querySelector('video')).toBeNull();
   });
 

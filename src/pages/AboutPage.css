@@ -10,11 +10,8 @@
   gap: var(--space-6);
 }
 
-/* On a laptop the page uses the whole column: the mission (with the video
-   under it) and the UN goals side by side, the team and the credits link
-   across both. Each card is as tall as its own content (align-items: start),
-   so the short mission card isn't stretched to the goals card's height with
-   an empty area inside. */
+/* On a laptop the page uses the whole column: the team in two columns, the
+   cards above it laid out in .tw-about-cards, the credits link across. */
 @media (min-width: 1100px) {
   .tw-about-page {
     display: grid;
@@ -23,10 +20,57 @@
   }
 
   .tw-about-hero,
+  .tw-about-cards,
   .tw-about-team,
   .tw-about-credits {
     grid-column: 1 / -1;
   }
+}
+
+/*
+ * The mission, the UN goals and the video. Phone and tablet: stacked in that
+ * order. Laptop: the mission with the video under it, beside the goals (the
+ * second row takes any spare height, so nothing opens a gap between the
+ * mission and the video). Wide screen: all three in a row, tops aligned. Each
+ * card is as tall as its own content, never stretched with an empty area.
+ */
+.tw-about-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+@media (min-width: 1100px) {
+  .tw-about-cards {
+    display: grid;
+    grid-template:
+      'mission goals' auto
+      'video goals' 1fr
+      / minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .tw-about-mission {
+    grid-area: mission;
+  }
+
+  .tw-about-goals {
+    grid-area: goals;
+  }
+
+  .tw-about-video {
+    grid-area: video;
+  }
+}
+
+@media (min-width: 1400px) {
+  .tw-about-cards {
+    grid-template: 'mission goals video' auto / minmax(0, 1fr) minmax(0, 1.15fr) minmax(0, 1fr);
+  }
+}
+
+.tw-about-video {
+  min-inline-size: 0;
 }
 
 .tw-about-hero {
@@ -61,14 +105,6 @@
 
 .tw-about-card p {
   margin: 0;
-}
-
-/* The mission and the video under it, one column on a laptop. */
-.tw-about-main {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
-  min-inline-size: 0;
 }
 
 /* The screen draws this card in canvas on a white page. This page sits on
