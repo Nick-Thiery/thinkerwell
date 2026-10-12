@@ -98,32 +98,33 @@ export function AboutPage() {
         </div>
       </header>
 
-      {/* The mission, and under it the video "Explore your world": one column on a laptop, beside the UN goals. */}
-      <div className="tw-about-main">
+      {/* The mission, the UN goals and the video "Explore your world": stacked in that order on a phone, the mission with the video under it beside the goals on a laptop, and all three in a row on a wide screen (AboutPage.css). */}
+      <div className="tw-about-cards">
         <section aria-labelledby="about-mission" className="tw-about-card tw-about-mission">
           <h2 id="about-mission" className="h2">
             {t('pages.about.missionTitle')}
           </h2>
           <p className="body-lg">{t('pages.about.missionBody')}</p>
         </section>
-        <SiteVideo video="explore" />
-      </div>
-
-      <section aria-labelledby="about-goals" className="tw-about-card tw-about-goals">
-        <h2 id="about-goals" className="h2">
-          {t('pages.about.goalsTitle')}
-        </h2>
-        {GOALS.map((goal) => (
-          <div className="tw-about-goal" key={goal.src}>
-            <img src={goal.src} alt={t(`pages.about.${goal.altKey}`)} width={72} height={72} />
-            <div>
-              <strong>{t(`pages.about.${goal.titleKey}`)}</strong>
-              <span>{t(`pages.about.${goal.bodyKey}`)}</span>
+        <section aria-labelledby="about-goals" className="tw-about-card tw-about-goals">
+          <h2 id="about-goals" className="h2">
+            {t('pages.about.goalsTitle')}
+          </h2>
+          {GOALS.map((goal) => (
+            <div className="tw-about-goal" key={goal.src}>
+              <img src={goal.src} alt={t(`pages.about.${goal.altKey}`)} width={72} height={72} />
+              <div>
+                <strong>{t(`pages.about.${goal.titleKey}`)}</strong>
+                <span>{t(`pages.about.${goal.bodyKey}`)}</span>
+              </div>
             </div>
-          </div>
-        ))}
-        <p className="small tw-about-status">{t('pages.about.goalsNote')}</p>
-      </section>
+          ))}
+          <p className="small tw-about-status">{t('pages.about.goalsNote')}</p>
+        </section>
+        <div className="tw-about-video">
+          <SiteVideo video="explore" compact />
+        </div>
+      </div>
 
       <section aria-labelledby="about-team" className="tw-about-team">
         <h2 id="about-team" className="h2">

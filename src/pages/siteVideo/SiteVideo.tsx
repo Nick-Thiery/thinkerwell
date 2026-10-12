@@ -1,6 +1,6 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import words from 'virtual:thinkerwell/messages/siteVideo';
-import { Button, Icon, StatusBanner, VideoCard } from '../../components/ds';
+import { Badge, Button, Icon, StatusBanner, VideoCard } from '../../components/ds';
 import { ENGLISH, findLocale, useI18n, withWords } from '../../i18n';
 import { formatDuration } from '../../lesson/format';
 import { isSaveDataOn } from '../../offline/saveData';
@@ -68,6 +68,13 @@ export interface SiteVideoProps {
   wide?: boolean;
   /** The title's heading level: 3 under a section's h2 (the default), 2 where the card follows the page's h1. */
   headingLevel?: 2 | 3;
+  /**
+   * The picture alone as the card (About): no "Optional" tag, title or
+   * details. The poster is the play button, named with the video's title;
+   * "Read instead" and the data it uses sit in one quiet line under it, so
+   * the written version is still one tap away.
+   */
+  compact?: boolean;
 }
 
 /**
@@ -88,7 +95,7 @@ export interface SiteVideoProps {
  *   costs nothing to anyone who doesn't watch it. Its words are in the
  *   offline copy with this code, so "Read instead" works offline.
  */
-export function SiteVideo({ video: id, watchVariant = 'primary', wide = false, headingLevel = 3 }: SiteVideoProps) {
+export function SiteVideo({ video: id, watchVariant = 'primary', wide = false, headingLevel = 3, compact = false }: SiteVideoProps) {
   const WrittenHeading = headingLevel === 2 ? 'h2' : 'h3';
   // The videos' words (`siteVideo` in en.json and id.json) load with this
   // code, not with the app (src/i18n/lazyGroups.ts): a first visit to the
@@ -122,7 +129,7 @@ export function SiteVideo({ video: id, watchVariant = 'primary', wide = false, h
     focusNext.current = null;
     if (target === 'player') videoRef.current?.focus();
     else if (target === 'written') writtenHeadingRef.current?.focus();
-    else if (target === 'watch') rootRef.current?.querySelector<HTMLButtonElement>('.tw-video-actions button')?.focus();
+    else if (target === 'watch') rootRef.current?.querySelector<HTMLButtonElement>('.tw-video-actions button, .tw-sitevideo-poster')?.focus();
   }, [shownView, attempt]);
 
   // The tap on "Watch the video" starts it. If the browser won't (some ask
@@ -192,6 +199,31 @@ export function SiteVideo({ video: id, watchVariant = 'primary', wide = false, h
     setView('written');
   };
 
+  const player =
+    shownView === 'player' ? (
+      <video
+        key={attempt}
+        ref={videoRef}
+        src={video.src}
+        controls
+        playsInline
+        // Focusable everywhere (most browsers make a video with
+        // controls focusable; this makes sure), so focus can move
+        // to it from the removed "Watch the video" button or poster.
+        tabIndex={0}
+        preload="auto"
+        aria-label={title}
+        onLoadedData={() => setLoaded(true)}
+        onError={onVideoError}
+      >
+        {/* Each track's name in the player's menu is the language's own name, as the header's switch shows it. The page's language's track is on; English captions otherwise. */}
+        <track kind="captions" src={video.captions} srcLang="en" label={ENGLISH.definition.endonym} default={!(locale in video.subtitles)} />
+        {Object.entries(video.subtitles).map(([code, src]) => (
+          <track key={code} kind="subtitles" src={src} srcLang={code} label={findLocale(code)?.endonym ?? code} default={code === locale} />
+        ))}
+      </video>
+    ) : null;
+
   const videoFailed = shownReason === 'timeout' || shownReason === 'offline' || shownReason === 'unavailable';
   const banner: { icon: 'WifiOff' | 'Clock' | 'Info'; title: string } | null =
     shownReason === 'save-data'
@@ -233,6 +265,40 @@ export function SiteVideo({ video: id, watchVariant = 'primary', wide = false, h
             )}
           </article>
         </div>
+      ) : compact ? (
+        <div className="tw-sitevideo-compact">
+          <div className="tw-sitevideo-frame">
+            {player ?? (
+              <button type="button" className="tw-sitevideo-poster" onClick={watchVideo} aria-label={t('siteVideo.playLabel', { title })}>
+                <img className="tw-sitevideo-mascot" src={MASCOT_SRC} alt="" width={422} height={423} />
+                <span className="tw-video-play" aria-hidden="true">
+                  <Icon name="Play" size={34} />
+                </span>
+                <span className="tw-video-len" aria-hidden="true">
+                  <Badge tone="ink" icon="Clock">
+                    {formatDuration(video.seconds, formatNumber)}
+                  </Badge>
+                </span>
+              </button>
+            )}
+          </div>
+          <div className="tw-sitevideo-quiet">
+            <button type="button" className="tw-sitevideo-link" onClick={readInstead}>
+              <Icon name="BookOpen" size={20} />
+              {t('ds.content.video.readInsteadDefault')}
+            </button>
+            {shownView === 'player' ? (
+              <button type="button" className="tw-sitevideo-link" onClick={closeVideo}>
+                <Icon name="X" size={20} />
+                {t('siteVideo.closeVideo')}
+              </button>
+            ) : (
+              <span className="small tw-sitevideo-data">{t('siteVideo.dataUse', { mb: video.megabytes })}</span>
+            )}
+          </div>
+          {/* The video is in English; say so when the page isn't. */}
+          {englishLang.lang ? <p className="small tw-sitevideo-data tw-sitevideo-compact-note">{t('siteVideo.inEnglish')}</p> : null}
+        </div>
       ) : (
         <VideoCard
           title={title}
@@ -245,31 +311,7 @@ export function SiteVideo({ video: id, watchVariant = 'primary', wide = false, h
           onReadInstead={readInstead}
           watching={shownView === 'player'}
           posterArt={<img className="tw-sitevideo-mascot" src={MASCOT_SRC} alt="" width={422} height={423} />}
-          player={
-            shownView === 'player' ? (
-              <video
-                key={attempt}
-                ref={videoRef}
-                src={video.src}
-                controls
-                playsInline
-                // Focusable everywhere (most browsers make a video with
-                // controls focusable; this makes sure), so focus can move
-                // to it from the removed "Watch the video" button.
-                tabIndex={0}
-                preload="auto"
-                aria-label={title}
-                onLoadedData={() => setLoaded(true)}
-                onError={onVideoError}
-              >
-                {/* Each track's name in the player's menu is the language's own name, as the header's switch shows it. The page's language's track is on; English captions otherwise. */}
-                <track kind="captions" src={video.captions} srcLang="en" label={ENGLISH.definition.endonym} default={!(locale in video.subtitles)} />
-                {Object.entries(video.subtitles).map(([code, src]) => (
-                  <track key={code} kind="subtitles" src={src} srcLang={code} label={findLocale(code)?.endonym ?? code} default={code === locale} />
-                ))}
-              </video>
-            ) : undefined
-          }
+          player={player ?? undefined}
           actions={
             shownView === 'player' ? (
               <Button variant="ghost" icon="X" onClick={closeVideo}>

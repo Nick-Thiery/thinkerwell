@@ -217,3 +217,60 @@ describe('SiteVideo', () => {
     expect(screen.getByText("You're offline, so the video can't load now.")).toBeInTheDocument();
   });
 });
+
+describe('SiteVideo compact (About)', () => {
+  it('is the picture alone: a play button named with the title, the length, and one quiet line', () => {
+    const { container } = render(<SiteVideo video="explore" compact />);
+    const poster = screen.getByRole('button', { name: 'Play the video: Explore your world' });
+    expect(poster.querySelector('img')).toHaveAttribute('src', '/images/thinkerwell-mascot-transparent.png');
+    expect(screen.getByText('1:52')).toBeInTheDocument();
+    // No "Optional" tag, title, captions line, blurb or "Watch the video" button.
+    expect(screen.queryByText('Optional')).not.toBeInTheDocument();
+    expect(screen.queryByRole('heading')).not.toBeInTheDocument();
+    expect(screen.queryByText('English captions')).not.toBeInTheDocument();
+    expect(screen.queryByText(en.siteVideo.explore.blurb)).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Watch the video' })).not.toBeInTheDocument();
+    // "Read instead" and the data it uses are still there.
+    expect(screen.getByRole('button', { name: 'Read instead' })).toBeInTheDocument();
+    expect(screen.getByText('Uses about 9 MB of data.')).toBeInTheDocument();
+    expect(videoElement(container)).toBeNull();
+    expect(container.innerHTML).not.toContain('/video/');
+  });
+
+  it('plays on a tap on the picture, in the same frame, and closes back to it', async () => {
+    const user = userEvent.setup();
+    const { container } = render(<SiteVideo video="explore" compact />);
+    const frame = container.querySelector('.tw-sitevideo-frame');
+    await user.click(screen.getByRole('button', { name: 'Play the video: Explore your world' }));
+    const video = videoElement(container)!;
+    expect(frame).toContainElement(video);
+    expect(video).toHaveAttribute('src', SITE_VIDEOS.explore.src);
+    expect(video).toHaveAttribute('controls');
+    expect(video.querySelector('track[kind="captions"]')).toHaveAttribute('default');
+    expect(play).toHaveBeenCalledTimes(1);
+    expect(video).toHaveFocus();
+    expect(screen.queryByText('Uses about 9 MB of data.')).not.toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: 'Close the video' }));
+    expect(videoElement(container)).toBeNull();
+    expect(screen.getByRole('button', { name: 'Play the video: Explore your world' })).toHaveFocus();
+  });
+
+  it('shows every word of the video on "Read instead", and can go back to the video', async () => {
+    const user = userEvent.setup();
+    const { container } = render(<SiteVideo video="explore" compact />);
+    await user.click(screen.getByRole('button', { name: 'Read instead' }));
+    expect(screen.getByText(en.siteVideo.explore.p1)).toBeInTheDocument();
+    expect(screen.getByText(en.siteVideo.explore.sources)).toBeInTheDocument();
+    await user.click(screen.getByRole('button', { name: 'Watch the video instead' }));
+    expect(videoElement(container)).not.toBeNull();
+  });
+
+  it('with Save data on, shows the written version and offers no video', async () => {
+    Object.defineProperty(navigator, 'connection', { value: { saveData: true }, configurable: true });
+    render(<SiteVideo video="explore" compact />);
+    await settingsRead();
+    expect(screen.getByText('Videos are off to save data.')).toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /Play the video/ })).not.toBeInTheDocument();
+  });
+});

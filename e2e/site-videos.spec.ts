@@ -31,7 +31,6 @@ function videoRequests(page: Page): string[] {
 }
 
 const PAGES = [
-  { path: '/about', heading: 'About Thinkerwell', title: 'Explore your world' },
   { path: '/educators', heading: 'For educators', title: 'Run a session' },
   { path: '/organisations', heading: 'For organisations', title: 'Run a session' },
   { path: '/educators/setup', heading: 'Set up this device', title: 'Set up a device' },
@@ -54,6 +53,42 @@ for (const { path, heading, title } of PAGES) {
   });
 }
 
+test('/about offers "Explore your world" as the picture alone, and downloads nothing of it before the tap', async ({ page }) => {
+  const requested = videoRequests(page);
+  await page.goto('/about');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('About Thinkerwell');
+  const card = page.locator('.tw-sitevideo');
+  const poster = card.getByRole('button', { name: 'Play the video: Explore your world' });
+  await expect(poster).toBeVisible();
+  await expect(card.getByRole('button', { name: 'Read instead' })).toBeVisible();
+  await expect(card.getByText('Uses about 9 MB of data.')).toBeVisible();
+  // No "Optional" tag, title, details or "Watch the video" button.
+  await expect(card.getByText('Optional')).toHaveCount(0);
+  await expect(card.getByRole('heading')).toHaveCount(0);
+  await expect(card.getByRole('button', { name: 'Watch the video' })).toHaveCount(0);
+  await expect(poster.locator('img')).toHaveAttribute('src', '/images/thinkerwell-mascot-transparent.png');
+  await page.waitForLoadState('networkidle');
+  expect(requested).toEqual([]);
+});
+
+test('on About the video keeps its size when it plays, so nothing under it moves', async ({ page }) => {
+  await playableVideos(page);
+  await page.goto('/about');
+  // Where each sits on the page (not in the window: focus moves to the player and may scroll it into view).
+  const onPage = () =>
+    page.evaluate(() => {
+      const box = (element: Element | null) => {
+        const r = element!.getBoundingClientRect();
+        return [Math.round(r.left + window.scrollX), Math.round(r.top + window.scrollY), Math.round(r.width), Math.round(r.height)];
+      };
+      return { frame: box(document.querySelector('.tw-sitevideo-frame')), team: box(document.querySelector('.tw-about-team')) };
+    });
+  const before = await onPage();
+  await page.getByRole('button', { name: 'Play the video: Explore your world' }).click();
+  await expect(page.locator('.tw-sitevideo-frame video')).toHaveCount(1);
+  expect(await onPage()).toEqual(before);
+});
+
 test('the setup checklist’s video is on screen only: the printed checklist leaves it out', async ({ page }) => {
   await page.goto('/educators/setup');
   const card = page.locator('.tw-sitevideo');
@@ -73,7 +108,7 @@ test('the tap requests only the site’s own file and captions, into a player wi
   await page.waitForLoadState('networkidle');
   const before = all.length;
 
-  await page.locator('.tw-sitevideo').getByRole('button', { name: 'Watch the video' }).click();
+  await page.locator('.tw-sitevideo').getByRole('button', { name: 'Play the video: Explore your world' }).click();
   const video = page.locator('.tw-sitevideo video');
   await expect(video).toHaveAttribute('src', '/video/explore-your-world-v5.mp4');
   await expect(video).toHaveAttribute('controls', '');
@@ -155,11 +190,10 @@ test('in Indonesian, the title, the note that the video is English and the writt
   await page.locator('.tw-language-switch-panel').getByRole('radio', { name: 'Bahasa Indonesia' }).click();
   await expect(page.locator('html')).toHaveAttribute('lang', 'id');
   const card = page.locator('.tw-sitevideo');
-  await expect(card.getByRole('heading', { level: 3, name: 'Jelajahi duniamu' })).toBeVisible();
   await expect(card.getByText('Video ini berbahasa Inggris', { exact: false })).toBeVisible();
   // The tap turns the Indonesian subtitles on instead of the English captions.
   await playableVideos(page);
-  await card.getByRole('button', { name: 'Tonton video' }).click();
+  await card.getByRole('button', { name: 'Putar video: Jelajahi duniamu' }).click();
   const video = card.locator('video');
   await expect(video.locator('track[srclang="id"]')).toHaveAttribute('default', '');
   await expect(video.locator('track[srclang="en"]')).not.toHaveAttribute('default');

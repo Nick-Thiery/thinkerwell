@@ -144,3 +144,107 @@
     display: none;
   }
 }
+
+/*
+ * compact (About): the picture is the card. The lavender frame keeps 16:9
+ * before and after the tap, so nothing below it moves; "Read instead" and the
+ * data it uses sit in one quiet line under it.
+ */
+.tw-sitevideo-compact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-sitevideo-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--lavender);
+}
+
+.tw-sitevideo-frame video {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  display: block;
+  background: var(--ink);
+}
+
+.tw-sitevideo-frame video:focus-visible {
+  outline-color: var(--on-ink);
+  outline-offset: -3px;
+}
+
+.tw-sitevideo-poster {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
+  block-size: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: inherit;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* The card clips its corners, so the ring sits just inside the frame. */
+.tw-sitevideo-poster:focus-visible {
+  outline-offset: -4px;
+}
+
+.tw-sitevideo-poster:hover .tw-video-play {
+  transform: scale(1.06);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tw-sitevideo-poster .tw-video-play {
+    transition: transform 150ms ease;
+  }
+}
+
+.tw-sitevideo-quiet {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 var(--space-4);
+  padding-inline: var(--space-1);
+}
+
+.tw-sitevideo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: var(--target-min);
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.tw-sitevideo-link:hover {
+  text-decoration-thickness: 2px;
+}
+
+.tw-sitevideo-link .tw-icon {
+  flex: none;
+}
+
+.tw-sitevideo-compact-note {
+  margin: 0;
+  padding-inline: var(--space-1);
+}
