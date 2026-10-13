@@ -1,6 +1,7 @@
 import { Button, Icon, MascotTip, SectionHeader } from '../../components/ds';
 import type { QuizFile, Section } from '../../content';
 import { En, useI18n } from '../../i18n';
+import { useMeasurementState } from '../../measurement/track';
 
 const MASCOT_SRC = '/images/thinkerwell-mascot-transparent.png';
 
@@ -30,6 +31,8 @@ export interface QuizIntroScreenProps {
  */
 export function QuizIntroScreen({ section, quiz, isGuest, lessonsDone, onStart }: QuizIntroScreenProps) {
   const { t, tx } = useI18n();
+  // A learner whose results the pilot counts is told so (src/measurement/gate.ts).
+  const counted = useMeasurementState().gate !== null;
   const first = section.lessons[0] ?? 0;
   const last = section.lessons[section.lessons.length - 1] ?? first;
   const range = first === last ? String(first) : t('pages.course.numberRange', { first, last });
@@ -74,7 +77,7 @@ export function QuizIntroScreen({ section, quiz, isGuest, lessonsDone, onStart }
             <span className="tw-quiz-fact-icon">
               <Icon name={isGuest ? 'Eye' : 'Lock'} size={20} />
             </span>
-            {isGuest ? t('pages.sectionCheck.factGuest') : t('pages.sectionCheck.factPrivate')}
+            {isGuest ? t('pages.sectionCheck.factGuest') : t(counted ? 'pages.sectionCheck.factPrivatePilot' : 'pages.sectionCheck.factPrivate')}
           </li>
         </ul>
         <MascotTip src={MASCOT_SRC}>{t('pages.sectionCheck.tip')}</MascotTip>

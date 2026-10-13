@@ -19,6 +19,8 @@ export const LAZY_MESSAGE_GROUPS = [
   'siteVideo',
   // The pilot day guide for staff (src/pages/educators/PilotDayPage.tsx): one printable page, in the Educators chunk.
   'pilotDay',
+  // Settings' "Share pilot results" (src/pages/settings/PilotResultsSetting.tsx): educators only.
+  'pilotResults',
 ] as const;
 
 export type LazyMessageGroup = (typeof LAZY_MESSAGE_GROUPS)[number];

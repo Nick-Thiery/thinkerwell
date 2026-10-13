@@ -73,6 +73,8 @@ import {
   VISIT_SEED,
 } from './guestMemory';
 import { applyStageEvent, type StageEvent } from './progressRules';
+import { newlyFinished, writingWordCounts } from '../measurement/progressEvents';
+import { getMeasurementState, leaveLesson, track, useMeasurementState } from '../measurement/track';
 
 /** How long typing must pause before a save. */
 export const SAVE_DEBOUNCE_MS = 500;
@@ -200,6 +202,8 @@ function PlayerForOwner({
   const alive = useRef(true);
   const hasRecord = useRef(false);
   const queue = useRef<QueuedChange[]>([]);
+  /** The word counts last told to pilot measurement, by stage (src/measurement/progressEvents.ts). */
+  const reportedWords = useRef<Record<string, number>>({});
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const writing = useRef<Promise<void>>(Promise.resolve());
   /** The store once opened, for the synchronous last-moment save. */
@@ -255,6 +259,8 @@ function PlayerForOwner({
           hasRecord.current = true;
           // Anything changed before the load finished is replayed on top.
           const pending = queue.current;
+          // Words already there are not "new writing" for pilot measurement.
+          reportedWords.current = { ...writingWordCounts(saved) };
           setProgress(pending.reduce((acc, item) => item.change(acc), saved));
         }
       } catch (error) {
@@ -304,6 +310,23 @@ function PlayerForOwner({
     return writing.current;
   }, [learnerId, lesson.id, writtenUpTo]);
 
+  // Pilot measurement (off unless this learner is being measured: src/measurement/gate.ts): how many words
+  // each stage's writing has, never the words. Reported when a count changes; the collector sends one
+  // event after a quiet moment.
+  const reportWriting = useCallback(
+    (record: LessonProgress) => {
+      if (!getMeasurementState().gate) return;
+      const counts = writingWordCounts(record);
+      for (const stage of ['read', 'write', 'watch', 'reflect'] as const) {
+        const words = counts[stage];
+        if ((reportedWords.current[stage] ?? 0) === words) continue;
+        reportedWords.current[stage] = words;
+        track('writing_saved', { lessonId: lesson.id, stage, value: { words } });
+      }
+    },
+    [lesson.id],
+  );
+
   const update = useCallback(
     (change: ProgressChange, options?: UpdateOptions) => {
       const current = stepRef.current;
@@ -317,6 +340,7 @@ function PlayerForOwner({
       }
       const changed = change(progressRef.current);
       setProgress(stage && changed.currentStage !== stage ? { ...changed, currentStage: stage } : changed);
+      reportWriting(changed);
       changeCount.current += 1;
       queue.current.push({ change, stage });
       // The queued change will create the record if there isn't one yet, so
@@ -331,7 +355,7 @@ function PlayerForOwner({
         timer.current = setTimeout(() => void flush(), SAVE_DEBOUNCE_MS);
       }
     },
-    [learnerId, flush, setProgress],
+    [learnerId, flush, setProgress, reportWriting],
   );
 
   /**
@@ -394,7 +418,13 @@ function PlayerForOwner({
       // changes nothing, so it must not create a record for a lesson the
       // learner hasn't started: just looking never counts as "In progress".
       const current = progressRef.current;
-      if (change(current) === current && (learnerId ? !hasRecord.current : true)) return;
+      const changed = change(current);
+      if (changed === current && (learnerId ? !hasRecord.current : true)) return;
+      if (learnerId && changed !== current) {
+        const finished = newlyFinished(current, changed);
+        for (const stage of finished.stages) track('stage_complete', { lessonId: lesson.id, stage });
+        if (finished.lessonComplete) track('lesson_complete', { lessonId: lesson.id });
+      }
       update(change, { immediate: true });
     },
     [lesson, update, learnerId, readingLevel],
@@ -407,6 +437,24 @@ function PlayerForOwner({
     if (status !== 'ready' || !learnerId || !isStageId(step) || !hasRecord.current) return;
     update((p) => (p.currentStage === step ? p : { ...p, currentStage: step }), { immediate: true });
   }, [status, learnerId, step, update]);
+
+  // Pilot measurement: which lesson and step is open (nothing happens unless this learner is being measured).
+  // `measured` is in the lists so that a page opened straight on a lesson still reports it when the device's
+  // settings finish loading a moment after the lesson, and reports again for a learner who takes over.
+  const measured = useMeasurementState().gate?.pilotCode ?? null;
+  useEffect(() => {
+    if (status !== 'ready' || !measured) return undefined;
+    track('lesson_open', { lessonId: lesson.id });
+    return () => leaveLesson();
+  }, [status, lesson.id, measured]);
+  useEffect(() => {
+    if (status !== 'ready' || !measured || !isStageId(step)) return;
+    track('stage_enter', { lessonId: lesson.id, stage: step });
+  }, [status, step, lesson.id, measured]);
+  useEffect(() => {
+    // Writing typed before measurement was ready still counts (words that were there before are not new).
+    if (status === 'ready' && measured) reportWriting(progressRef.current);
+  }, [status, measured, reportWriting]);
 
   // Flush when the stage changes (the cleanup runs before the next stage's effects).
   useEffect(() => () => void flush(), [step, flush]);
@@ -433,6 +481,7 @@ function PlayerForOwner({
   const { setLearnerReadingLevel } = session;
   const setReadingLevel = useCallback(
     (level: ReadingLevel) => {
+      if (level !== readingLevel) track('simpler_toggle', { lessonId: lesson.id, value: { level } });
       if (learnerId) {
         void setLearnerReadingLevel(learnerId, level).catch((error: unknown) => {
           if (import.meta.env.DEV) console.error(error);
@@ -442,7 +491,7 @@ function PlayerForOwner({
         setGuestLevelState(level);
       }
     },
-    [learnerId, setLearnerReadingLevel],
+    [learnerId, setLearnerReadingLevel, readingLevel, lesson.id],
   );
 
   const setListeningSpeed = useCallback(

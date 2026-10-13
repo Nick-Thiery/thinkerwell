@@ -11,6 +11,7 @@ import {
   getStore,
   isStorageAvailable,
   openStore,
+  onSettingsSaved,
   openThinkerwellDb,
   type QuizAttempt,
   type ThinkerwellStore,
@@ -455,6 +456,33 @@ describe('settings', () => {
     expect(saved.partner.allowOnlineDictation).toBe(true);
     // Other changes leave it as it is.
     expect((await store.updateSettings({ listeningSpeed: 'slow' })).speechCheck).toEqual(check);
+  });
+});
+
+describe('settings: pilot measurement', () => {
+  it('is off by default, with no organisation code', async () => {
+    const settings = await store.getSettings();
+    expect(settings.partner.sharePilotResults).toBeUndefined();
+    expect(settings.partner.organisationCode).toBeUndefined();
+    expect(DEFAULT_SETTINGS.partner).toEqual({ allowOnlineDictation: false });
+  });
+
+  it('saves the opt-in and the code key by key, with no schema change', async () => {
+    await store.updateSettings({ partner: { allowOnlineDictation: true } });
+    await store.updateSettings({ partner: { organisationCode: 'help-jakarta' } });
+    const next = await store.updateSettings({ partner: { sharePilotResults: true } });
+    expect(next.partner).toEqual({ allowOnlineDictation: true, organisationCode: 'help-jakarta', sharePilotResults: true });
+    expect((await store.updateSettings({ partner: { sharePilotResults: false } })).partner.organisationCode).toBe('help-jakarta');
+  });
+
+  it('tells the app a save happened, so sharing can be turned on or off at once', async () => {
+    const heard: boolean[] = [];
+    const stop = onSettingsSaved((settings) => heard.push(settings.partner.sharePilotResults === true));
+    await store.updateSettings({ partner: { organisationCode: 'help-jakarta', sharePilotResults: true } });
+    await store.updateSettings({ partner: { sharePilotResults: false } });
+    stop();
+    await store.updateSettings({ partner: { sharePilotResults: true } });
+    expect(heard).toEqual([true, false]);
   });
 });
 

@@ -4,6 +4,7 @@ import type { Section } from '../content';
 import { useContent } from '../content/useContent';
 import { useI18n } from '../i18n';
 import { VISIT_SEED } from '../lesson';
+import { getMeasurementState, track } from '../measurement/track';
 import { QuizIntroScreen } from './quiz/QuizIntroScreen';
 import { QuizQuestionScreen } from './quiz/QuizQuestionScreen';
 import { QuizResultsScreen } from './quiz/QuizResultsScreen';
@@ -52,6 +53,8 @@ export function SectionCheckPage({ section }: SectionCheckPageProps) {
   const [screen, setScreen] = useState<Screen>('intro');
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<QuizAnswers>({});
+  // Which go this is for the learner (pilot measurement only: counted from the saved attempts when the check starts).
+  const attempt = useRef(1);
 
   // Focus (and announce) each screen's heading as it appears, the way a real
   // page navigation would — this route doesn't change between the intro,
@@ -83,12 +86,28 @@ export function SectionCheckPage({ section }: SectionCheckPageProps) {
     setScreen('intro');
   }
 
+  function start(): void {
+    setScreen('question');
+    if (!learnerId || !getMeasurementState().gate) return;
+    void getStore()
+      .then((store) => store.getQuizRecord(learnerId, section.id))
+      .then(
+        (record) => record?.attempts ?? 0,
+        () => 0,
+      )
+      .then((before) => {
+        attempt.current = before + 1;
+        track('quiz_start', { value: { section: section.id } });
+      });
+  }
+
   function finish(finalAnswers: QuizAnswers): void {
     setScreen('results');
     if (!learnerId || !quiz) return;
     const selected: Record<string, number> = {};
     for (const [questionId, answer] of Object.entries(finalAnswers)) selected[questionId] = answer.selected;
     const { score, total } = scoreQuiz(quiz, finalAnswers);
+    track('quiz_submit', { value: { section: section.id, score, total, attempt: attempt.current } });
     void getStore()
       .then((store) =>
         store.recordQuizAttempt(learnerId, section.id, {
@@ -111,7 +130,7 @@ export function SectionCheckPage({ section }: SectionCheckPageProps) {
           quiz={quiz}
           isGuest={!learnerId}
           lessonsDone={lessonsDone}
-          onStart={() => setScreen('question')}
+          onStart={start}
         />
       ) : screen === 'question' ? (
         (() => {
@@ -125,9 +144,10 @@ export function SectionCheckPage({ section }: SectionCheckPageProps) {
               answer={answers[question.id]}
               answeredCount={Object.keys(answers).length}
               seedOwner={learnerId ?? VISIT_SEED}
-              onAnswer={(selected, correct) =>
-                setAnswers((prev) => ({ ...prev, [question.id]: { selected, correct } }))
-              }
+              onAnswer={(selected, correct) => {
+                setAnswers((prev) => ({ ...prev, [question.id]: { selected, correct } }));
+                if (learnerId) track('quiz_answer', { value: { section: section.id, q: index, selected, correct, attempt: attempt.current } });
+              }}
               onNext={() => {
                 if (index + 1 < quiz.questions.length) {
                   setIndex((i) => i + 1);

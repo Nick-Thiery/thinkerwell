@@ -278,7 +278,8 @@
         "startsWithNote": "Kamu boleh membuka mana-mana pelajaran kemudian dari halaman kursus.",
         "privacyNote": "Hasil kerja kamu kekal pada peranti ini.",
         "languageLabel": "Bahasa kamu",
-        "languageHelper": "Butang dan arahan dipaparkan dalam bahasa ini. Dalam bahasa Indonesia dan bahasa Melayu, pelajaran juga begitu. Dalam bahasa lain, pelajaran kekal dalam bahasa Inggeris, supaya kamu boleh berlatih bahasa Inggeris."
+        "languageHelper": "Butang dan arahan dipaparkan dalam bahasa ini. Dalam bahasa Indonesia dan bahasa Melayu, pelajaran juga begitu. Dalam bahasa lain, pelajaran kekal dalam bahasa Inggeris, supaya kamu boleh berlatih bahasa Inggeris.",
+        "privacyNotePilot": "Tulisan dan rakaman kamu kekal pada peranti ini. Jika kamu menggunakan kod rintis, Thinkerwell juga mengira cara kamu menggunakannya. Thinkerwell tidak sekali-kali mendapat nama kamu."
       },
       "remove": {
         "action": "Keluarkan",
@@ -368,6 +369,7 @@
       "factTime": "Tiada had masa. Kira-kira {minutes} minit.",
       "factRetry": "Cuba seberapa banyak kali yang kamu mahu",
       "factPrivate": "Markah kamu kekal pada peranti ini",
+      "factPrivatePilot": "Markah kamu disimpan di sini. Program rintis juga mengiranya, dengan kod dan bukan nama.",
       "factGuest": "Tiada apa-apa disimpan semasa kamu melihat-lihat",
       "tip": "Tidak pasti? Buat tekaan terbaik kamu. Selepas setiap soalan, kamu akan lihat mengapa jawapan itu betul.",
       "start": "Mulakan semakan",
@@ -504,9 +506,9 @@
       "ask4": "Maklum balas yang jujur: apa yang berkesan, apa yang tidak, dan apa yang mengelirukan pelajar.",
       "privacyTitle": "Privasi",
       "privacy1": "Kumpulan rintis boleh menggunakan kod dan bukan nama. Setiap pelajar mendapat kad kod, seperti ABC-01, dan menaip kod itu sebagai nama mereka. Hanya anda yang menyimpan senarai yang memadankan kod dengan nama.",
-      "privacy2": "Tiada akaun, tiada alamat e-mel dan tiada iklan. Hasil kerja pelajar kekal pada peranti yang mereka gunakan, dan rakaman suara tidak sekali-kali keluar daripada peranti itu.",
+      "privacy2": "Tiada akaun, tiada alamat e-mel dan tiada iklan. Tulisan pelajar kekal pada peranti yang mereka gunakan, dan rakaman suara tidak sekali-kali keluar daripada peranti itu.",
       "privacy3": "Persetujuan ibu bapa. Sebelum sebarang data pembelajaran dikongsi dengan Thinkerwell, ibu bapa atau penjaga menandatangani borang persetujuan, dan pelajar juga berkata ya. Kajian ini hanya akan menggunakan data yang dikaitkan dengan kod, tidak sekali-kali dengan nama: soalan pendek dan beberapa ayat dalam sesi pertama dan terakhir, dan, dalam setiap sesi, cara pelajar menggunakan Thinkerwell: masa, pelajaran dan langkah, jawapan, bantuan yang mereka gunakan, video dan bilangan perkataan, tidak sekali-kali apa yang mereka tulis.",
-      "privacyNow": "Buat masa ini, hasil kerja dan kemajuan pelajar tidak dihantar kepada Thinkerwell. Pertuturan ke teks dalam talian dimatikan melainkan kakitangan anda menghidupkannya; apabila ia dihidupkan, apa yang dikatakan pelajar dihantar ke perkhidmatan syarikat pembuat pelayar. Kami akan memberitahu anda sebelum apa-apa lagi berubah.",
+      "privacyNow": "Hasil kerja dan kemajuan pelajar tidak dihantar kepada Thinkerwell. Satu-satunya pengecualian ialah program rintis yang dijalankan bersama anda: selepas keluarga menandatangani borang persetujuan, dan hanya apabila kakitangan anda menghidupkan “Kongsi hasil rintis” dalam Tetapan, tapak ini menghantar cara pelajar menggunakannya, dikaitkan dengan kod dan tidak sekali-kali dengan nama. Pertuturan ke teks dalam talian dimatikan melainkan kakitangan anda menghidupkannya; apabila ia dihidupkan, apa yang dikatakan pelajar dihantar ke perkhidmatan syarikat pembuat pelayar. Kami akan memberitahu anda sebelum apa-apa lagi berubah.",
       "privacy4": "Video tidak wajib. Video dimainkan dari YouTube, hanya apabila pelajar menekan butang main, dan setiap video ada versi bertulis.",
       "startTitle": "Bersedia",
       "startBody": "Cetak apa yang anda perlukan, dan sediakan setiap peranti sebelum sesi pertama.",
@@ -1652,5 +1654,25 @@
       },
       "yourLabelsDiffer": "Sebahagian label kamu berbeza daripada label tukang kebun. Model mempelajari label kamu, jadi tekaannya mengikut label itu."
     }
+  },
+  "pilotResults": {
+    "title": "Kongsi hasil rintis",
+    "intro": "Gunakan ini hanya untuk program rintis yang dijalankan organisasi anda bersama Thinkerwell, selepas setiap keluarga menandatangani borang persetujuan. Ia dimatikan sehingga anda menghidupkannya.",
+    "codeLabel": "Kod organisasi",
+    "codeHelp": "Thinkerwell memberi anda kod ini, seperti help-jakarta.",
+    "codeInvalid": "Gunakan huruf, nombor dan tanda sempang, 2 hingga 32 aksara, seperti help-jakarta.",
+    "codeSave": "Simpan kod",
+    "codeSaved": "Kod disimpan.",
+    "shareLabel": "Kongsi hasil rintis daripada peranti ini",
+    "shareNeedsCode": "Simpan kod organisasi dahulu.",
+    "shareHelp": "Apabila dihidupkan, pelajar yang menaip kod rintis seperti HLP-01 sebagai nama mereka menghantar cara mereka menggunakan Thinkerwell kepada pasukan Thinkerwell: berapa lama, pelajaran dan langkah mana yang mereka buka dan selesaikan, jawapan mereka kepada semakan pantas dan kuiz, sama ada mereka menggunakan versi bacaan lebih mudah atau Dengar, sama ada mereka menonton video atau membaca versi bertulis, dan berapa banyak perkataan yang mereka tulis. Semua itu dihantar bersama kod mereka dan kod organisasi anda. Tidak sekali-kali ada nama, tulisan atau rakaman. Pelajar yang hanya melihat-lihat, atau menggunakan nama lain, tidak menghantar apa-apa.",
+    "shareOffHelp": "Apabila dimatikan, hasil yang masih menunggu untuk dihantar daripada peranti ini turut dipadam.",
+    "statusOff": "Perkongsian dimatikan. Tiada apa-apa dihantar.",
+    "statusOn": "Berkongsi dengan {org}.",
+    "waiting": "Hasil yang menunggu untuk dihantar: {count}",
+    "paused": "Penghantaran dijeda kerana Thinkerwell belum dapat menerima hasil. Ia dicuba lagi kemudian.",
+    "delete": "Padam hasil yang menunggu",
+    "deleteHelp": "Memadam hasil yang belum dihantar. Hasil yang sudah dihantar dipadam dalam tempoh 6 bulan selepas program rintis tamat.",
+    "deleted": "Hasil yang menunggu telah dipadam."
   }
 }

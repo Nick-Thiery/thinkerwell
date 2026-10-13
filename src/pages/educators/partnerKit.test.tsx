@@ -37,7 +37,11 @@ describe('For organisations', () => {
     expect(within(privacy).getByText(/Pilot groups can use codes instead of names\. Each learner gets a code card/)).toBeInTheDocument();
     expect(within(privacy).getByText(/Parental consent\./)).toBeInTheDocument();
     // Honest about the outside services a learner can reach: never "nothing leaves the device".
-    expect(within(privacy).getByText(/learners' work and progress are not sent to Thinkerwell\. Online speech-to-text is off/)).toBeInTheDocument();
+    expect(
+      within(privacy).getByText(
+        /Learners' work and progress are not sent to Thinkerwell\. The one exception is a pilot run with you: once families have signed the consent form, and only when your staff turn on “Share pilot results” in Settings, the site sends how learners use it, linked to a code and never a name\. Online speech-to-text is off/,
+      ),
+    ).toBeInTheDocument();
     expect(within(privacy).getByText(/They play from YouTube/)).toBeInTheDocument();
     expect(screen.queryByText(/nothing at all leaves the device/)).not.toBeInTheDocument();
     // No contact card, and no placeholder, until there is a real address (src/app/contact.ts).

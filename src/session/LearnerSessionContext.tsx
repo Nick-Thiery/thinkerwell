@@ -10,6 +10,7 @@ import {
 // Imported directly (not through src/lesson/index.ts) to keep this module
 // free of the lesson player's React code.
 import { clearGuestMemory } from '../lesson/guestMemory';
+import { forgetLearner } from '../measurement/track';
 import { readyLocales, resolveLocale, SOURCE_LOCALE } from '../i18n/locales';
 import { forgetPendingLanguage, readPendingLanguage, rememberPendingLanguage } from '../storage/pendingLanguage';
 
@@ -277,7 +278,10 @@ export function LearnerSessionProvider({ forceLookAround = false, children }: Le
 
   const removeLearner = useCallback(async (id: string) => {
     const store = await getStore();
+    const removed = await store.getLearner(id);
     await store.removeLearner(id);
+    // Pilot results of theirs that haven't been sent yet are deleted too (nothing happens unless sharing was on).
+    if (removed) forgetLearner(removed.name);
     if (!alive.current) return;
     setLearners((prev) => prev.filter((l) => l.id !== id));
     setCurrentLearner((prev) => (prev?.id === id ? null : prev));

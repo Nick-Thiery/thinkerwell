@@ -6,6 +6,7 @@ import { lessonPath } from '../../app/lessonUrls';
 import type { LessonSummary } from '../../content/catalog';
 import { Button, Icon, TextField } from '../../components/ds';
 import { En, useI18n } from '../../i18n';
+import { useMeasurementState } from '../../measurement/track';
 import type { LearnerColour, NewLearner } from '../../storage';
 import { ColourPicker } from './ColourPicker';
 import { HomeHero } from './HomeHero';
@@ -47,6 +48,8 @@ export function NewLearnerForm({ lesson1, onBack, onSubmit }: NewLearnerFormProp
   const hasLanguageChoice = useHasLanguageChoice();
   const languageHelpId = useId();
   const { language, setLanguage } = useLearnerSession();
+  // While this device shares pilot results, the line under the form says so (src/measurement/gate.ts).
+  const sharing = useMeasurementState().org !== null;
   const navigate = useNavigate();
   const [name, setName] = useState('');
   const [nameError, setNameError] = useState<string | undefined>(undefined);
@@ -178,7 +181,8 @@ export function NewLearnerForm({ lesson1, onBack, onSubmit }: NewLearnerFormProp
           </Button>
         </form>
         <span className="tw-home-lock-note small">
-          <Icon name="Lock" size={16} /> {t('pages.home.newLearner.privacyNote')}
+          <Icon name="Lock" size={16} />{' '}
+          {t(sharing ? 'pages.home.newLearner.privacyNotePilot' : 'pages.home.newLearner.privacyNote')}
         </span>
       </section>
     </>

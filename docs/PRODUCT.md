@@ -192,10 +192,18 @@ Details: `docs/notes/digital-world-preview.md`.
 - **In Indonesian**, Digital World's interface is Indonesian (AI-drafted and flagged, like the rest) and its lessons stay English, marked as English, with a line saying so in the banner.
 - **For reviewers**: each lesson's print view has its activity on paper, its teacher guide has the answers and the lesson's review notes, and "Print all lessons" prints the whole course.
 
+### Pilot measurement (built October 2026, off by default; `docs/notes/pilot-measurement.md`)
+
+- **The one exception to "learner data stays on the device".** The site can send how learners use it to the Thinkerwell team for the pilot study, **only when all of these are true**: the learner has a pilot code (their name is a code card's code, like HLP-01); an educator turned on "Share pilot results" in Settings on that device; an organisation code is saved there; and the family has signed the consent form (the organisation's job, not something the app can check). Otherwise nothing is queued, sent or even downloaded.
+- **Only what the consent form promises**: time spent, which lessons and steps are opened and finished, quick-check and section-check answers, the simpler reading and Listen, videos or reading instead, and word counts. **Never** recordings, writing, names or anything typed. Linked to the pilot code and the organisation's code, never a name. Not for anyone looking around, or for a learner with any other name.
+- **Per organisation.** Every event carries the organisation's code, the server accepts only codes it was set up for, and results are exported one organisation at a time by the team with a protected link. Group results go to the organisation, never one learner's. Everything is deleted within 6 months of the pilot ending, or sooner when a family asks.
+- **Not live until a person sets it up.** The server answers "not configured" until a database and the organisation list are set in Vercel, and the app then stops quietly. Nothing is switched on, and no database exists, as a result of building it. The pre/post check's answers and confidence ratings are not built (the app has no such feature yet).
+
 ## Roadmap
 
 1. **Pilot build (now):** everything in `docs/BUILD_PLAN.md` phases 1–8.
 2. **Measurement:** pre and post checks, pilot codes, consent and an events endpoint, as in `docs/research/MEASUREMENT_PLAN.md`. Indonesia's data protection law needs parental consent for children's data; a partner in another country needs its own check (Malaysia: `docs/notes/malaysia-partner-notes.md`).
+2. **Measurement:** the in-app usage events and their endpoint are built and off (see "Pilot measurement" above). Still to build: pre and post checks, as in `docs/research/MEASUREMENT_PLAN.md`. Indonesia's data protection law needs parental consent for children's data.
 3. **Translation:** the groundwork is in (language list and picker, per-learner language, first-language glossary lines, right-to-left layouts and font, test languages, the translator's spreadsheet), and Bahasa Indonesia is fully translated and offered, with native-speaker review in progress. Next: that review; then learn the pilot learners' home languages, and translate and review those with native speakers.
 4. **AI features (later):** diagnostic quiz, mastery tracking, reading-level rewrites, first-language glossary help, an educator dashboard, a content review flow. All privacy-first. The first step, on-device Suggestions (an optional starting check, a suggested reading level, "worth another look" by skill and hints for teachers, all worked out on the device), is specified in `docs/content/PERSONALIZATION_SPEC.md` and planned for after the HELP pilot.
 5. **Service wing (later):** partnerships for device and data donations.

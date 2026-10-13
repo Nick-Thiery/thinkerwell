@@ -89,3 +89,65 @@ export function playerSignal(event: Pick<MessageEvent, 'origin' | 'source' | 'da
   if (name === 'onError') return 'error';
   return typeof name === 'string' && READY_EVENTS.has(name) ? 'ready' : null;
 }
+
+/** What the player says about playback: its state (1 playing, 2 paused, 0 ended), how far in and how long, in seconds. */
+export interface PlayerInfo {
+  state: number | null;
+  currentTime: number | null;
+  duration: number | null;
+}
+
+const finite = (value: unknown): number | null => (typeof value === 'number' && Number.isFinite(value) ? value : null);
+
+/**
+ * The playback details in a message from the player in this page's own
+ * frame, or null for any other message. These arrive on the same
+ * postMessage channel as playerSignal (after the "listening" message
+ * above), so reading them loads nothing from YouTube. Used only for pilot
+ * measurement (src/measurement), which is off unless the learner is being
+ * measured: it counts when a video plays and how far, never what is said.
+ */
+export function playerInfo(event: Pick<MessageEvent, 'origin' | 'source' | 'data'>, frame: Window | null | undefined): PlayerInfo | null {
+  if (event.origin !== YOUTUBE_EMBED_ORIGIN || !frame || event.source !== frame) return null;
+  let data: unknown = event.data;
+  if (typeof data === 'string') {
+    try {
+      data = JSON.parse(data);
+    } catch {
+      return null;
+    }
+  }
+  if (!data || typeof data !== 'object') return null;
+  const { event: name, info } = data as { event?: unknown; info?: unknown };
+  if (name === 'onStateChange') return { state: finite(info), currentTime: null, duration: null };
+  if (name === 'infoDelivery' && info && typeof info === 'object') {
+    const details = info as { playerState?: unknown; currentTime?: unknown; duration?: unknown };
+    return { state: finite(details.playerState), currentTime: finite(details.currentTime), duration: finite(details.duration) };
+  }
+  return null;
+}
+
+/** What a tracker reports: the video started, or reached this share of its length. */
+export type VideoMoment = 'play' | 25 | 50 | 75 | 100;
+
+/** Turns what the player says into moments, each reported once per tracker. */
+export function createVideoTracker(): (info: PlayerInfo) => VideoMoment[] {
+  const done = new Set<VideoMoment>();
+  let duration = 0;
+  return (info) => {
+    const moments: VideoMoment[] = [];
+    const report = (moment: VideoMoment) => {
+      if (done.has(moment)) return;
+      done.add(moment);
+      moments.push(moment);
+    };
+    if (info.duration !== null && info.duration > 0) duration = info.duration;
+    if (info.state === 1) report('play');
+    if (info.currentTime !== null && duration > 0) {
+      const share = info.currentTime / duration;
+      for (const mark of [25, 50, 75] as const) if (share >= mark / 100) report(mark);
+    }
+    if (info.state === 0) report(100);
+    return moments;
+  };
+}

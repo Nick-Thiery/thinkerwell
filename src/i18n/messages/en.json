@@ -280,7 +280,8 @@
         "startsWithNote": "You can open any lesson later from the course page.",
         "privacyNote": "Your work stays on this device.",
         "languageLabel": "Your language",
-        "languageHelper": "Buttons and instructions show in this language. In Indonesian and Malay, the lessons do too. In other languages they stay in English, so you can practise it."
+        "languageHelper": "Buttons and instructions show in this language. In Indonesian and Malay, the lessons do too. In other languages they stay in English, so you can practise it.",
+        "privacyNotePilot": "Your writing and recordings stay on this device. If you use a pilot code, Thinkerwell also counts how you use it. It never gets your name."
       },
       "remove": {
         "action": "Remove",
@@ -374,6 +375,7 @@
       "factTime": "No time limit. About {minutes} minutes.",
       "factRetry": "Try as many times as you like",
       "factPrivate": "Your score stays on this device",
+      "factPrivatePilot": "Your score is saved here. Your pilot also counts it, by code and not by name.",
       "factGuest": "Nothing is saved while you look around",
       "tip": "Not sure? Make your best guess. After each question you'll see why the answer is right.",
       "start": "Start the check",
@@ -411,8 +413,14 @@
       "filterAll": "All",
       "filterWriting": "Writing",
       "filterReflections": "Reflections",
-      "lessonCount": { "one": "{count} lesson", "other": "{count} lessons" },
-      "pieceCount": { "one": "{count} piece of writing from {lessons}", "other": "{count} pieces of writing from {lessons}" },
+      "lessonCount": {
+        "one": "{count} lesson",
+        "other": "{count} lessons"
+      },
+      "pieceCount": {
+        "one": "{count} piece of writing from {lessons}",
+        "other": "{count} pieces of writing from {lessons}"
+      },
       "groupLabel": "Lesson {number} · {title}",
       "privacyNote": "Your journal lives on this device. Anyone who taps your name here can read it, so choose what you write. To keep a copy, ask your teacher to help you print it.",
       "empty": "Nothing saved yet. Write or reflect in a lesson and it shows up here.",
@@ -506,9 +514,9 @@
       "ask4": "Honest feedback: what worked, what didn't, and what confused learners.",
       "privacyTitle": "Privacy",
       "privacy1": "Pilot groups can use codes instead of names. Each learner gets a code card, like ABC-01, and types the code as their name. Only you keep the list that matches codes to names.",
-      "privacy2": "No accounts, no email addresses and no ads. Learners' work stays on the device they use, and voice recordings never leave it.",
+      "privacy2": "No accounts, no email addresses and no ads. Learners' writing stays on the device they use, and voice recordings never leave it.",
       "privacy3": "Parental consent. Before any learning data is shared with Thinkerwell, a parent or guardian signs a consent form, and the learner says yes too. The study would only use data linked to a code, never a name: short questions and a few sentences in the first and last sessions, and, in every session, how learners use Thinkerwell: time, lessons and steps, answers, the help they use, videos and word counts, never what they write.",
-      "privacyNow": "Today, learners' work and progress are not sent to Thinkerwell. Online speech-to-text is off unless your staff turn it on; when it is on, what learners say goes to the browser maker's service. We will tell you before anything else changes.",
+      "privacyNow": "Learners' work and progress are not sent to Thinkerwell. The one exception is a pilot run with you: once families have signed the consent form, and only when your staff turn on “Share pilot results” in Settings, the site sends how learners use it, linked to a code and never a name. Online speech-to-text is off unless your staff turn it on; when it is on, what learners say goes to the browser maker's service. We will tell you before anything else changes.",
       "privacy4": "Videos are optional. They play from YouTube, only when a learner taps play, and every video has a written version.",
       "startTitle": "Get ready",
       "startBody": "Print what you need, and set up each device before the first session.",
@@ -1467,7 +1475,10 @@
       "title": "Certificate",
       "finishedSection": "finished the {section} section of {course}.",
       "finishedCourse": "finished all {count} lessons of {course}.",
-      "lessons": { "one": "{count} lesson", "other": "{count} lessons" },
+      "lessons": {
+        "one": "{count} lesson",
+        "other": "{count} lessons"
+      },
       "blankName": "Name",
       "date": "Date",
       "signature": "Teacher's signature",
@@ -1477,7 +1488,10 @@
       "section": "Your certificate is ready when you finish every lesson in this section.",
       "course": "Your course certificate is ready when you finish all {count} lessons.",
       "checkNotNeeded": "You don't need to do the section check for it.",
-      "lessonsLeft": { "one": "{count} lesson left", "other": "{count} lessons left" }
+      "lessonsLeft": {
+        "one": "{count} lesson left",
+        "other": "{count} lessons left"
+      }
     },
     "guest": "Certificates are for learners who have finished lessons.",
     "offer": {
@@ -1606,7 +1620,10 @@
       "freePlayIntro": "Take examples out, or change a label, then train the model again. The model follows your labels, even when they are different from the gardener's.",
       "freePlayTitle": "Try it yourself",
       "gardenerSays": "The gardener says",
-      "groupCount": { "one": "{count} example", "other": "{count} examples" },
+      "groupCount": {
+        "one": "{count} example",
+        "other": "{count} examples"
+      },
       "groupEmpty": "No examples here yet.",
       "groupTitle": "{label} examples",
       "historyNone": "No results yet. Train the model to see how it does.",
@@ -1617,16 +1634,25 @@
       "how3": "It gives the new leaf that example's label. This is called a nearest-neighbour model.",
       "howTitle": "How this model works",
       "labelFor": "Label for: {description}",
-      "learnedFrom": { "one": "It learned from {count} example.", "other": "It learned from {count} examples." },
+      "learnedFrom": {
+        "one": "It learned from {count} example.",
+        "other": "It learned from {count} examples."
+      },
       "lookedLike": "It looked most like this example, so the model said “{label}”.",
       "modelSaid": "The model said",
-      "newExamples": { "one": "There is {count} new example. Give it a label, and it moves into that group.", "other": "There are {count} new examples. Give each one a label, and it moves into that group." },
+      "newExamples": {
+        "one": "There is {count} new example. Give it a label, and it moves into that group.",
+        "other": "There are {count} new examples. Give each one a label, and it moves into that group."
+      },
       "next": "Go on to “{title}”",
       "noNewExamples": "No new examples this time. Test the model on leaves from a new plant.",
       "notQuite": "Not quite",
       "notUsedHelp": "The model doesn't learn from these. Give one a label to use it again.",
       "notUsedTitle": "Not used",
-      "numbersIntro": { "one": "The model doesn't see the picture. It sees {count} number from 0 to 10:", "other": "The model doesn't see the picture. It sees {count} numbers from 0 to 10:" },
+      "numbersIntro": {
+        "one": "The model doesn't see the picture. It sees {count} number from 0 to 10:",
+        "other": "The model doesn't see the picture. It sees {count} numbers from 0 to 10:"
+      },
       "numbersSummary": "What the model sees",
       "paperCard": "Leaf",
       "paperExamples": "Examples to label",
@@ -1646,8 +1672,31 @@
       "toSortTitle": "To sort",
       "train": "Train the model",
       "trainHelpEmpty": "Give at least one leaf a label to train the model.",
-      "trainHelpSort": { "one": "Sort {count} more leaf to train the model.", "other": "Sort {count} more leaves to train the model." },
+      "trainHelpSort": {
+        "one": "Sort {count} more leaf to train the model.",
+        "other": "Sort {count} more leaves to train the model."
+      },
       "yourLabelsDiffer": "Some of your labels are different from the gardener's. The model learned your labels, so its guesses follow them."
     }
+  },
+  "pilotResults": {
+    "title": "Share pilot results",
+    "intro": "Use this only for a pilot your organisation runs with Thinkerwell, after every family has signed the consent form. It is off until you turn it on.",
+    "codeLabel": "Organisation code",
+    "codeHelp": "Thinkerwell gives you this code, like help-jakarta.",
+    "codeInvalid": "Use letters, numbers and hyphens, 2 to 32 in all, like help-jakarta.",
+    "codeSave": "Save code",
+    "codeSaved": "Code saved.",
+    "shareLabel": "Share pilot results from this device",
+    "shareNeedsCode": "Save an organisation code first.",
+    "shareHelp": "When this is on, a learner who types a pilot code like HLP-01 as their name sends how they use Thinkerwell to the Thinkerwell team: how long, which lessons and steps they open and finish, their answers to quick checks and quizzes, whether they use the simpler reading or Listen, whether they watch videos or read instead, and how many words they write. It goes with their code and your organisation code. It never includes names, writing or recordings. Learners who look around, or who use any other name, send nothing.",
+    "shareOffHelp": "Turning this off also deletes any results still waiting to be sent from this device.",
+    "statusOff": "Sharing is off. Nothing is sent.",
+    "statusOn": "Sharing with {org}.",
+    "waiting": "Results waiting to be sent: {count}",
+    "paused": "Sending is paused because Thinkerwell can't take results yet. It tries again later.",
+    "delete": "Delete waiting results",
+    "deleteHelp": "Deletes results that haven't been sent yet. Results already sent are deleted within 6 months after the pilot ends.",
+    "deleted": "Waiting results deleted."
   }
 }

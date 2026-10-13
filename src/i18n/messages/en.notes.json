@@ -296,5 +296,15 @@
   "siteVideo.setup.p1": "siteVideo.setup.p1 to p6: what the video says, a paragraph each, shown as its written version. It speaks to teachers and staff. \"For educators\" and \"Set up this device\" are the menu's and the page's names (nav.educators, pages.setup.title).",
   "siteVideo.setup.p3": "\"Keep work safe\" is the checklist's button (pages.setup.storage.button).",
   "siteVideo.setup.p5": "\"Say it\" and \"Check this device\" are Settings' own names (pages.settings.sayIt.title, pages.settings.sayIt.checkDevice).",
-  "siteVideo.setup.p6": "\"Social studies and beyond\" is Thinkerwell's motto; translate it as in siteVideo.explore.p4."
+  "siteVideo.setup.p6": "\"Social studies and beyond\" is Thinkerwell's motto; translate it as in siteVideo.explore.p4.",
+  "pilotResults.title": "The heading of a part of Settings, and the name of a switch in it. It means sending the pilot study's measurements (how learners use Thinkerwell) to the Thinkerwell team. Only an educator sees this page.",
+  "pilotResults.codeLabel": "The label of a text box. An organisation is a school or centre running a pilot. Thinkerwell gives each one a short code.",
+  "pilotResults.codeHelp": "help-jakarta is an example code: keep it exactly as it is.",
+  "pilotResults.codeInvalid": "Keep help-jakarta as it is. 2 to 32 is the number of characters allowed.",
+  "pilotResults.shareHelp": "Sensitive privacy wording, checked against the consent form (pages.pilotStudy.site): keep every kind of data it names, and keep the promises that names, writing and recordings are never sent. HLP-01 is an example pilot code: keep it as it is.",
+  "pilotResults.statusOn": "{org} is the organisation's code, like help-jakarta. Keep it as it is.",
+  "pilotResults.waiting": "{count} is a number of results (measurements) kept on this device until the device is online.",
+  "pilotResults.paused": "Shown when Thinkerwell's server is not set up to take results yet. Thinkerwell is the site's name.",
+  "pages.home.newLearner.privacyNotePilot": "Shown instead of pages.home.newLearner.privacyNote when the device is set to share pilot results. A pilot code is a code like HLP-01 on a learner's code card.",
+  "pages.sectionCheck.factPrivatePilot": "Shown instead of pages.sectionCheck.factPrivate, for a learner whose results are shared with the pilot. By code means HLP-01, not by name."
 }
