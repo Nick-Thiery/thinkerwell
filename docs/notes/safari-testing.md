@@ -2,7 +2,7 @@
 
 The learners' shared tablets are often iPads, so the end-to-end tests also run in WebKit (the engine behind Safari).
 
-- One-time setup: `npm run test:e2e:install:safari` (it downloads WebKit; if the shared browser folder is read-only, set `PLAYWRIGHT_BROWSERS_PATH` to a folder you can write to for both commands).
+- One-time setup: `npm run test:e2e:install:safari` (WebKit goes in `node_modules`, like Chromium, so both scripts set `PLAYWRIGHT_BROWSERS_PATH=0`).
 - Run: `npm run build`, then `npm run test:e2e:safari`. The `ipad-safari` project (820 x 1180, touch) is off unless `PW_WEBKIT` is set, so `npm run test:e2e` is unchanged and CI stays on Chromium.
 - Tests tagged `@own-size` or `@chromium-only` are skipped there.
 
