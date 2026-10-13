@@ -146,7 +146,7 @@ export function ContentSection() {
       <h3 className="h3">TextField</h3>
       <div className="tw-dev-row" style={{ width: '100%', maxWidth: 480 }}>
         <TextField id="dev-name" label="First name or nickname" value="Amina" helper="No surname needed." />
-        <TextField id="dev-class" label="Class code" optional placeholder="For example HLP-07" />
+        <TextField id="dev-class" label="Class code" optional placeholder="For example ABC-07" />
       </div>
 
       <h3 className="h3">VideoCard</h3>

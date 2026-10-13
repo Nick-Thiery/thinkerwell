@@ -930,12 +930,12 @@
     "source": "Your teacher may give you one."
   },
   "pages.home.newLearner.classCodePlaceholder": {
-    "back": "For example HLP-07",
-    "source": "For example HLP-07"
+    "back": "For example ABC-07",
+    "source": "For example ABC-07"
   },
   "pages.home.newLearner.classCodeInvalid": {
-    "back": "Use letters, numbers and hyphens only, like HLP-07.",
-    "source": "Use letters, numbers and hyphens only, like HLP-07."
+    "back": "Use letters, numbers and hyphens only, like ABC-07.",
+    "source": "Use letters, numbers and hyphens only, like ABC-07."
   },
   "pages.home.newLearner.submit": {
     "back": "Start Lesson 1",
@@ -1443,7 +1443,7 @@
   },
   "pages.educators.pilotTitle": {
     "flag": true,
-    "note": "Translator: 'Memulakan rintis' follows the key term but may sound short on its own. Check whether 'Memulakan program rintis' reads more naturally. 'Projek rintis' is avoided on purpose. Back-translation check: Translator flag stands. Check whether 'rintis' on its own reads naturally. 'Program rintis' is a possible option. 'Projek rintis' is avoided on purpose.",
+    "note": "Translator: 'Memulakan rintis' follows the key term but may sound short on its own. Check whether 'Memulakan program rintis' reads more naturally. 'Projek rintis' is avoided on purpose. Back-translation check: Translator flag stands. Check whether 'rintis' on its own reads naturally. 'Program rintis' is a possible option. 'Projek rintis' is avoided on purpose. Changed in the partner-neutral wording pass (October 2026): bare 'rintis' as a noun became 'program rintis' (the Malay key term 'rintis' is a modifier, as in 'program rintis'). A native reviewer should still decide between 'program rintis' and 'program perintis'/'projek perintis' for Malaysian partner staff (KEY_TERMS.md says never 'projek rintis').",
     "back": "Starting a pilot",
     "source": "Starting a pilot"
   },
@@ -1457,11 +1457,13 @@
   },
   "pages.educators.pilotAboutBody": {
     "back": "What is involved in the pilot, what we ask, and how students' privacy is protected.",
-    "source": "What a pilot involves, what we ask, and how learners' privacy is kept."
+    "source": "What a pilot involves, what we ask, and how learners' privacy is kept.",
+    "flag": true,
+    "note": "Changed in the partner-neutral wording pass (October 2026): bare 'rintis' as a noun became 'program rintis' (the Malay key term 'rintis' is a modifier, as in 'program rintis'). A native reviewer should still decide between 'program rintis' and 'program perintis'/'projek perintis' for Malaysian partner staff (KEY_TERMS.md says never 'projek rintis')."
   },
   "pages.educators.pilotAboutCta": {
     "flag": true,
-    "note": "Translator: Same doubt: check that 'rintis' standing alone as a noun ('tentang rintis') reads naturally to Malaysian partner staff. Back-translation check: Translator flag stands. Check that 'tentang rintis', with 'rintis' as a noun on its own, reads naturally to Malaysian partner staff.",
+    "note": "Translator: Same doubt: check that 'rintis' standing alone as a noun ('tentang rintis') reads naturally to Malaysian partner staff. Back-translation check: Translator flag stands. Check that 'tentang rintis', with 'rintis' as a noun on its own, reads naturally to Malaysian partner staff. Changed in the partner-neutral wording pass (October 2026): bare 'rintis' as a noun became 'program rintis' (the Malay key term 'rintis' is a modifier, as in 'program rintis'). A native reviewer should still decide between 'program rintis' and 'program perintis'/'projek perintis' for Malaysian partner staff (KEY_TERMS.md says never 'projek rintis').",
     "back": "Read about the pilot",
     "source": "Read about pilots"
   },
@@ -1485,7 +1487,9 @@
   },
   "pages.educators.pilotSheetBody": {
     "back": "The things involved in the pilot and its study, for each family to keep, with your organisation's name on it.",
-    "source": "What the pilot and its study involve, for each family to keep, with your organisation's name on it."
+    "source": "What the pilot and its study involve, for each family to keep, with your organisation's name on it.",
+    "flag": true,
+    "note": "Changed in the partner-neutral wording pass (October 2026): bare 'rintis' as a noun became 'program rintis' (the Malay key term 'rintis' is a modifier, as in 'program rintis'). A native reviewer should still decide between 'program rintis' and 'program perintis'/'projek perintis' for Malaysian partner staff (KEY_TERMS.md says never 'projek rintis')."
   },
   "pages.educators.pilotSheetCta": {
     "back": "Print information sheet",
@@ -1613,8 +1617,10 @@
     "source": "Class codes instead of names"
   },
   "pages.educators.codesBody": {
-    "back": "In a pilot, each student can get a code such as HLP-07. Later on, these codes will let us see the progress of the whole group, without any names. You keep the list that matches names to codes.",
-    "source": "In the pilot, each learner can get a code like HLP-07. Later, codes will let us see how the whole group is doing, without any names. You keep the list that matches names to codes."
+    "back": "In a pilot, each student can get a code such as ABC-07. Later on, these codes will let us see the progress of the whole group, without any names. You keep the list that matches names to codes.",
+    "source": "In the pilot, each learner can get a code like ABC-07. Later, codes will let us see how the whole group is doing, without any names. You keep the list that matches names to codes.",
+    "flag": true,
+    "note": "Changed in the partner-neutral wording pass (October 2026): bare 'rintis' as a noun became 'program rintis' (the Malay key term 'rintis' is a modifier, as in 'program rintis'). A native reviewer should still decide between 'program rintis' and 'program perintis'/'projek perintis' for Malaysian partner staff (KEY_TERMS.md says never 'projek rintis')."
   },
   "pages.educators.feedbackTitle": {
     "back": "Tell us what needs fixing",
@@ -1747,8 +1753,8 @@
     "source": "Privacy"
   },
   "pages.organisations.privacy1": {
-    "back": "Pilot groups can use codes instead of names. Each learner gets a code card, such as HLP-01, and types that code as their name. Only you keep the list that matches codes to names.",
-    "source": "Pilot groups can use codes instead of names. Each learner gets a code card, like HLP-01, and types the code as their name. Only you keep the list that matches codes to names."
+    "back": "Pilot groups can use codes instead of names. Each learner gets a code card, such as ABC-01, and types that code as their name. Only you keep the list that matches codes to names.",
+    "source": "Pilot groups can use codes instead of names. Each learner gets a code card, like ABC-01, and types the code as their name. Only you keep the list that matches codes to names."
   },
   "pages.organisations.privacy2": {
     "back": "No accounts, no email addresses and no ads. Learners' work stays on the device they use, and voice recordings never leave that device.",
@@ -2153,8 +2159,8 @@
     "source": "Prefix"
   },
   "pages.codeCards.prefixHelper": {
-    "back": "2 to 5 letters or numbers, for example HLP.",
-    "source": "2 to 5 letters or numbers, for example HLP."
+    "back": "2 to 5 letters or numbers, for example ABC.",
+    "source": "2 to 5 letters or numbers, for example ABC."
   },
   "pages.codeCards.prefixInvalid": {
     "back": "Use 2 to 5 letters or numbers.",

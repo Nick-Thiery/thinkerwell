@@ -1,6 +1,6 @@
 /**
  * Learners' codes for a pilot (/educators/code-cards): a group's prefix and
- * a number, like HLP-01. A learner types their code as their name, so no
+ * a number, like ABC-01. A learner types their code as their name, so no
  * real name is on the device; the organisation keeps the list that matches
  * codes to names, on paper (docs/research/MEASUREMENT_PLAN.md).
  */
@@ -33,7 +33,7 @@ export function parseCount(raw: string): number | null {
   return count >= 1 && count <= MAX_LEARNERS ? count : null;
 }
 
-/** HLP-01, HLP-02 … with at least two digits, so the codes sort and line up. */
+/** ABC-01, ABC-02 … with at least two digits, so the codes sort and line up. */
 export function learnerCodes(prefix: string, count: number): string[] {
   const width = Math.max(2, String(count).length);
   return Array.from({ length: count }, (_, index) => `${prefix}-${String(index + 1).padStart(width, '0')}`);

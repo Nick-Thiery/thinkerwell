@@ -1,7 +1,7 @@
 /**
  * Code cards (/educators/code-cards): an educator types a prefix for their
- * group (HLP) and the number of learners, and gets A4 pages of cards to cut
- * out (HLP-01, HLP-02 …, ten to a page) and a matching list with a blank
+ * group (ABC) and the number of learners, and gets A4 pages of cards to cut
+ * out (ABC-01, ABC-02 …, ten to a page) and a matching list with a blank
  * space for each learner's name, for the organisation to keep. Learners
  * type their code as their name on the device, so no real name is ever in
  * Thinkerwell (docs/research/MEASUREMENT_PLAN.md, "Pilot codes, not names").
@@ -9,7 +9,7 @@
  * Codes are marked translate="no": they are identifiers, the same in every
  * language, and a browser's own translation must never change them.
  *
- * The prefix and number are in the address (?prefix=HLP&count=20), so a
+ * The prefix and number are in the address (?prefix=ABC&count=20), so a
  * reload or a shared link makes the same cards. Nothing is saved, and no
  * name is ever typed here.
  */
