@@ -899,7 +899,8 @@
         "introRecorded": "Nghe phát các bản ghi âm giọng đọc tự nhiên, được làm cho mọi bài học. Khi bản ghi âm của một đoạn chưa có trên thiết bị này và không có internet, Nghe sẽ đọc bằng một giọng của thiết bị, nên không có gì được gửi qua mạng. Chọn giọng đó ở đây.",
         "voiceFor": {
           "en": "Giọng cho các bài học bằng tiếng Anh",
-          "id": "Giọng cho các bài học bằng tiếng Indonesia"
+          "id": "Giọng cho các bài học bằng tiếng Indonesia",
+          "ms": "Giọng cho các bài học bằng tiếng Mã Lai"
         },
         "recordedWith": "Nghe phát các bản ghi âm được làm bằng {voice}.",
         "deviceVoice": "Giọng của thiết bị, khi không có bản ghi âm",
@@ -933,7 +934,9 @@
             "name": "Chromebook",
             "steps": "Mở Cài đặt, rồi Trợ năng, rồi Chuyển văn bản thành giọng nói, rồi Cài đặt giọng chuyển văn bản thành giọng nói. Cài các giọng tiếng Anh hoặc tiếng Indonesia."
           }
-        }
+        },
+        "noVoiceMalay": "Thiết bị này chưa có giọng tiếng Mã Lai, nên Nghe chưa đọc được các bài học bằng tiếng Mã Lai. Các bước bên dưới sẽ thêm một giọng.",
+        "noVoiceMalayRecorded": "Thiết bị này không có giọng tiếng Mã Lai. Nghe vẫn phát các bản ghi âm, nhưng không đọc được đoạn nào chưa có bản ghi âm trên thiết bị khi không có internet. Các bước bên dưới sẽ thêm một giọng."
       },
       "lessonAudio": {
         "title": "Âm thanh bài học",
@@ -953,7 +956,11 @@
         "failed": "Một số bản ghi âm chưa tải được. Kiểm tra kết nối và thử lại. Phần đã tải vẫn được giữ.",
         "saveData": "Tiết kiệm dữ liệu đang bật, nên sẽ không tải gì từ đây. Tắt Tiết kiệm dữ liệu ở trên để tải âm thanh bài học.",
         "notReady": "Bạn có thể bắt đầu sau khi các bài học đã được lưu trên thiết bị này để dùng khi không có mạng (xem phần trên).",
-        "unsupported": "Trình duyệt này không giữ được âm thanh bài học, nên ở đây Nghe cần có internet."
+        "unsupported": "Trình duyệt này không giữ được âm thanh bài học, nên ở đây Nghe cần có internet.",
+        "forMalay": "Cho các bài học bằng tiếng Mã Lai: tổng cộng {size} MB.",
+        "forEnglishMalay": "Cho các bài học bằng tiếng Anh và tiếng Mã Lai: tổng cộng {size} MB.",
+        "forIndonesianMalay": "Cho các bài học bằng tiếng Indonesia và tiếng Mã Lai: tổng cộng {size} MB.",
+        "forAll": "Cho các bài học bằng tiếng Anh, tiếng Indonesia và tiếng Mã Lai: tổng cộng {size} MB."
       },
       "sayIt": {
         "title": "Nói để gõ: chuyển giọng nói thành văn bản",
@@ -1098,7 +1105,9 @@
       "voiceEnglish": "Bài học tiếng Anh: {model} của hexgrad, giọng Heart, theo {licence}.",
       "voiceIndonesian": "Bài học tiếng Indonesia: {model} của Meta, một phần của Massively Multilingual Speech, theo {licence}. Giấy phép này chỉ cho phép dùng phi thương mại. Thinkerwell miễn phí và chỉ dùng theo cách đó.",
       "translationTitle": "Bản dịch",
-      "translationBody": "Bản tiếng Indonesia lúc đầu được soạn nháp với sự hỗ trợ của AI. Người bản ngữ đang kiểm tra."
+      "translationBody": "Bản tiếng Indonesia lúc đầu được soạn nháp với sự hỗ trợ của AI. Người bản ngữ đang kiểm tra.",
+      "voiceMalay": "Bài học tiếng Mã Lai: {model} của Meta, một phần của Massively Multilingual Speech, theo {licence}. Giấy phép này chỉ cho phép dùng phi thương mại. Thinkerwell miễn phí và chỉ dùng theo cách đó.",
+      "translationBodyMalay": "Bản tiếng Mã Lai cũng được soạn nháp với sự hỗ trợ của AI, từ bản tiếng Anh, rồi được kiểm tra bằng cách dịch ngược sang tiếng Anh. Người bản ngữ sẽ kiểm tra bản này."
     },
     "placeholder": "Trang này sắp ra mắt."
   },
