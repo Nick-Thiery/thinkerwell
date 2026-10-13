@@ -192,4 +192,8 @@ test('the setup checklist, the class view, all certificates and the partner kit 
   await page.goto('/educators/consent-form');
   await expect(page.locator('h1')).toHaveText('Consent form');
   await expect(page.getByRole('article')).toHaveCount(2);
+  // The staff's one-page guide, whose words come with the page.
+  await page.goto('/educators/pilot-day');
+  await expect(page.locator('h1')).toHaveText('Pilot day guide');
+  await expect(page.getByRole('heading', { level: 3, name: 'If something goes wrong' })).toBeVisible();
 });

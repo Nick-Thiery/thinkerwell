@@ -10,6 +10,7 @@ import {
   informationSheetPath,
   lessonPrintPath,
   organisationsPath,
+  pilotDayPath,
   setupPath,
 } from '../app/lessonUrls';
 import { Badge, Button, Chip, Icon, type IconName } from '../components/ds';
@@ -25,8 +26,8 @@ import { SiteVideo } from './siteVideo/SiteVideo';
  * For educators (docs/screens/Educators.dc.html): what a teacher or
  * volunteer needs to run a session, the tools for setting up this device and
  * following the group on it (under "Starting a pilot": For organisations,
- * the information sheet, the consent form, code cards and the setup
- * checklist; then the class view and every certificate to print), how a
+ * the information sheet, the consent form, code cards, the setup
+ * checklist and the pilot day guide for staff; then the class view and every certificate to print), how a
  * session works (with the video "Run a session", ./siteVideo/), and every
  * lesson to preview,
  * each with its teacher guide, and each section's check with its answer key. Collects nothing: "Tell us what to fix" keeps the "[FEEDBACK
@@ -93,6 +94,13 @@ export function EducatorsPage() {
       body: t('pages.educators.setupBody'),
       cta: t('pages.educators.setupCta'),
       href: setupPath(),
+    },
+    {
+      icon: 'GraduationCap',
+      title: t('pages.educators.pilotDayTitle'),
+      body: t('pages.educators.pilotDayBody'),
+      cta: t('pages.educators.pilotDayCta'),
+      href: pilotDayPath(),
     },
   ];
   // Pilot-day tools for following the group on this device (docs/notes/pilot-day-tools.md).
