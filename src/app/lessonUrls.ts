@@ -47,6 +47,11 @@ export function setupPath(): string {
   return '/educators/setup';
 }
 
+/** The staff's one-page guide for a pilot day, to print: /educators/pilot-day. */
+export function pilotDayPath(): string {
+  return '/educators/pilot-day';
+}
+
 /** Every learner on this device and what each has done: /educators/class. */
 export function classPath(): string {
   return '/educators/class';

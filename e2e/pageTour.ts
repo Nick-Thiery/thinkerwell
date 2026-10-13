@@ -358,6 +358,17 @@ export const pageTour: TourStop[] = [
     },
   },
   {
+    // The staff's one-page guide: its words load with the page (the lazily loaded `pilotDay` group).
+    name: 'educators: pilot day guide',
+    go: async (page, { ui }) => {
+      await openPath(page, '/educators', ui('pages.educators.title'));
+      await page.locator('.tw-edu-tools').getByRole('link', { name: ui('pages.educators.pilotDayCta') }).click();
+      await expect(page.locator('h1')).toHaveText(ui('pilotDay.title'));
+      await expect(page.getByRole('heading', { level: 3, name: ui('pilotDay.wrongTitle') })).toBeVisible();
+      await expect(page.getByRole('heading', { level: 3 })).toHaveCount(6);
+    },
+  },
+  {
     name: 'educators: code cards',
     go: async (page, { ui }) => {
       await openPath(page, '/educators', ui('pages.educators.title'));

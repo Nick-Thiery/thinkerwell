@@ -451,6 +451,7 @@ test.describe('with Malay on, every page is Malay and fits', () => {
       '/organisations',
       '/educators',
       '/educators/setup',
+      '/educators/pilot-day',
       '/educators/information-sheet',
       '/educators/consent-form',
       '/educators/code-cards?prefix=HLP&count=12',

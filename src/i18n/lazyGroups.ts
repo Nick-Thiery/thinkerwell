@@ -17,6 +17,8 @@
 export const LAZY_MESSAGE_GROUPS = [
   // Thinkerwell's own videos' words: About, For educators and For organisations (src/pages/siteVideo/).
   'siteVideo',
+  // The pilot day guide for staff (src/pages/educators/PilotDayPage.tsx): one printable page, in the Educators chunk.
+  'pilotDay',
 ] as const;
 
 export type LazyMessageGroup = (typeof LAZY_MESSAGE_GROUPS)[number];

@@ -44,6 +44,8 @@ export function withWords(parent: I18nContextValue, own: Readonly<Record<string,
     },
     tx: (key, params) => {
       const found = resolve(key);
+      // Not in the language's own words: the app's messages have it (the dev server, tests and the test languages), as t does.
+      if (!found && parent.t(key) !== key) return parent.tx(key, params);
       const value = found?.value ?? english(key);
       if (value === undefined) return parent.tx(key, params);
       const parts = formatMessageParts(value, found ? found.lang : 'en', params) ?? [key];

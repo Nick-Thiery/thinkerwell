@@ -1,0 +1,22 @@
+/*
+ * The pilot day guide for staff (/educators/pilot-day). It uses the consent
+ * form's sheet and its parts (ConsentFormPage.css, flowing in two columns on
+ * a wide screen and on paper). This only gives its lists a little more room
+ * than the form has, since the guide has fewer words: it is one page, A4 or
+ * Letter, in English, Indonesian and Malay (e2e/pilot-day-guide.spec.ts).
+ * The text stays at 10.5pt (14px), the smallest the site prints.
+ */
+
+@media print {
+  .tw-print-sheet.tw-consent.tw-pilotday {
+    line-height: 1.3;
+  }
+
+  .tw-print-sheet.tw-pilotday .tw-consent-flow > section {
+    margin-block-end: 3.5mm;
+  }
+
+  .tw-print-sheet.tw-pilotday .tw-consent-list li + li {
+    margin-block-start: 1.4mm;
+  }
+}

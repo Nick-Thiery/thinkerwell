@@ -40,6 +40,7 @@ describe('lazyChunkFor', () => {
     '/educators/lesson/towns-near-rivers',
     '/educators/section/civics/answers',
     '/educators/setup',
+    '/educators/pilot-day',
     '/educators/class',
     '/educators/class/certificates',
     '/educators/consent-form',

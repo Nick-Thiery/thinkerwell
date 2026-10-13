@@ -56,8 +56,11 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * Raised to 795 kB for Bahasa Melayu, a third language translated in full: 790.5 kB with it (649.8 kB before). Every ready
  * language is in every device's offline copy, as Indonesian is: its messages, 24 lessons, 4 checks and course text in
  * one chunk (`assets/locales/ms/`, 428 kB, about 85 kB Brotli) and its 24 pictures (about 46 kB). See docs/notes/slow-internet.md.
+ * Raised to 800 kB for the pilot day guide for staff: 795.5 kB with it (791.3 kB before), all of it the page's code and its
+ * 38 messages in three languages (English, Indonesian, Malay), in the Educators pages' chunk, plus an Educators page row.
+ * See docs/notes/slow-internet.md.
  */
-const PRECACHE_BUDGET = 795_000;
+const PRECACHE_BUDGET = 800_000;
 /**
  * Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before),
  * 210.5 kB after the language and pilot-day merges, 212.7 kB with the header's language switch and the one language
