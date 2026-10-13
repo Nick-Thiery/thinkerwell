@@ -2903,8 +2903,10 @@
     "source": "Before you reset this device or give it back"
   },
   "pages.setup.later.body": {
-    "back": "Save everyone's work into a file, then open that file on the next device. Recordings are not included in the file. Keep that file safely: anyone who has it can read that work.",
-    "source": "Save everyone's work to a file, then load the file on the next device. Recordings aren't in the file. Keep the file safe: anyone with it can read the work."
+    "back": "In Settings, choose All learners on this device, save the work into a file, then open it on the next device. Recordings are not included. Keep the file safely: anyone who has it can read it.",
+    "source": "In Settings, choose All learners on this device, save the work to a file, then load the file on the next device. Recordings aren't in the file. Keep the file safe: anyone with it can read the work.",
+    "flag": true,
+    "note": "Changed October 2026 (pilot dry run): the checklist now says which Settings choice saves everyone's work, because Settings opens on the learner using the device. AI-drafted from the new English; the Settings label quoted is the one in this language's file. Needs a native reviewer."
   },
   "pages.setup.later.open": {
     "back": "Save work to a file in Settings",

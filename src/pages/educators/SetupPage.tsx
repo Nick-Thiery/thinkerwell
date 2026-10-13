@@ -190,8 +190,18 @@ export function SetupPage() {
             state={storageState}
             status={t(session.storageAvailable ? PERSISTENCE_TEXT[persistence] : 'pages.setup.storage.noStorage')}
             actions={
-              session.storageAvailable && (persistence === 'not-persisted' || persistence === 'refused') ? (
-                <Button variant="secondary" icon="Lock" onClick={() => void ask()}>
+              session.storageAvailable &&
+              (persistence === 'not-persisted' || persistence === 'refused' || persistence === 'asking') ? (
+                // Stays in the page while the browser is asked (aria-disabled, never `disabled`), so keyboard
+                // focus doesn't fall to the top of the page when the answer comes back.
+                <Button
+                  variant="secondary"
+                  icon="Lock"
+                  aria-disabled={persistence === 'asking' ? true : undefined}
+                  onClick={() => {
+                    if (persistence !== 'asking') void ask();
+                  }}
+                >
                   {t('pages.setup.storage.button')}
                 </Button>
               ) : null

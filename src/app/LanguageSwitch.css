@@ -50,6 +50,24 @@
    480px the chevron goes; below 380px the short code too, leaving the globe
    (the button keeps its full name, "Language: English", for screen readers). */
 @media (max-width: 479px) {
+  /* The panel is as wide as the screen allows, measured from the header's
+     edges, not from the button: with a learner chosen the button sits left
+     of their avatar and the menu, and a panel hung from its end edge ran off
+     the start edge of the screen. */
+  .tw-header-inner:has(.tw-language-switch) {
+    position: relative;
+  }
+
+  .tw-language-switch {
+    position: static;
+  }
+
+  .tw-language-switch-panel {
+    inset-inline: var(--space-4);
+    inline-size: auto;
+    max-inline-size: none;
+  }
+
   .tw-language-switch-button {
     padding-inline: var(--space-2);
   }
