@@ -118,6 +118,7 @@ This covers the handoff's "educator feasibility" measures.
   - Say what's collected, why, who can see it, and when it's deleted.
   - Thinkerwell is based in Singapore, so check Singapore's PDPA too.
   - This isn't legal advice. HELP may already have a process you can use.
+  - This section is about the Jakarta pilot. A pilot in another country needs the same questions asked under that country's law (Malaysia: see `docs/notes/malaysia-partner-notes.md`).
 - **Collect the minimum.** No names, photos, locations, free-text answers or device fingerprints. Delete the raw event data after the pilot report, for example within 6 months, and say so on the consent form.
 - **Third parties.** Even `youtube-nocookie.com` sends some data to Google once a video plays. Mention it on the form. It's another reason the "Read instead" option matters.
 

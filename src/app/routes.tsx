@@ -109,6 +109,7 @@ export const routes: RouteObject[] = [
       // (For organisations, the information sheet, the consent form and code
       // cards), with the other Educators pages.
       { path: 'educators/setup', ...page(teacherPages, (m) => m.SetupPage) },
+      { path: 'educators/pilot-day', ...page(teacherPages, (m) => m.PilotDayPage) },
       { path: 'educators/information-sheet', ...page(teacherPages, (m) => m.InformationSheetPage) },
       { path: 'educators/consent-form', ...page(teacherPages, (m) => m.ConsentFormPage) },
       { path: 'educators/code-cards', ...page(teacherPages, (m) => m.CodeCardsPage) },

@@ -59,6 +59,8 @@ test('every request stays on the site itself', async ({ page, baseURL }) => {
   for (const blocked of [/fonts\.(googleapis|gstatic)\.com/, /google-analytics|googletagmanager|doubleclick/, /youtube/]) {
     expect(urls.filter((url) => blocked.test(url))).toEqual([]);
   }
+  // Pilot measurement is off unless an educator turns it on (e2e/measurement.spec.ts): not even a request to this site's own /api.
+  expect(urls.filter((url) => new URL(url).pathname.startsWith('/api/'))).toEqual([]);
 });
 
 test('no page type asks any other server for anything, and a tap on play asks only youtube-nocookie.com', async ({
@@ -75,6 +77,8 @@ test('no page type asks any other server for anything, and a tap on play asks on
   expect(urls.length).toBeGreaterThan(20);
   const elsewhere = urls.filter((url) => !isOwnOrigin(url, origin));
   expect(elsewhere, `Requests to other servers:\n${elsewhere.join('\n')}`).toEqual([]);
+  // Nothing is sent to this site's own server either: pilot measurement is off by default (e2e/measurement.spec.ts).
+  expect(urls.filter((url) => new URL(url).pathname.startsWith('/api/'))).toEqual([]);
 
   // Stand in for YouTube, so the test never depends on (or contacts) it.
   await page.route(/youtube-nocookie\.com/, (route) =>

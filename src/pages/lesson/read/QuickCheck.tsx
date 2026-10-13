@@ -3,6 +3,7 @@ import { Button, QuestionCard, WritingBox } from '../../../components/ds';
 import type { ChoiceCheck, ThinkCheck } from '../../../content';
 import { useI18n } from '../../../i18n';
 import { checkSeed, seededShuffle, useLessonPlayer } from '../../../lesson';
+import { track } from '../../../measurement/track';
 import { StageActionBar } from '../StageActionBar';
 import { feedbackWithoutVerdict } from './feedbackText';
 
@@ -96,6 +97,11 @@ function ChoiceQuestion({ check, index, total }: QuestionProps<ChoiceCheck>) {
     if (!cleared && entry.index === savedIndex) return; // already the shown answer
     setCleared(false);
     const correct = entry.item.correct;
+    // Pilot measurement (nothing happens unless this learner is being measured): which question, which option, which go.
+    track('quick_check_answer', {
+      lessonId: lesson.id,
+      value: { q: index, selected: entry.index, correct, attempt: (saved?.type === 'choice' ? saved.tries : 0) + 1 },
+    });
     update(
       (p) => {
         const previous = p.checkAnswers[index];

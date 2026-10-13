@@ -23,6 +23,8 @@ A free social-studies course, "Exploring Our World", for refugee, displaced and 
 
 HELP for Refugees, Jakarta. Target start: one to two weeks from 26 September 2026 (no hard deadline). Still waiting on HELP for: learners' ages and number, home languages and English level, devices and browsers, who runs sessions, which lessons to pilot, and their parental-consent process.
 
+A second, prospective partner in Malaysia would use the Malay version. The partner kit is written for any organisation (`docs/notes/partner-kit.md`, "Any partner"); what a Malaysian partner needs before a pilot, and how to add a second organisation, is in `docs/notes/malaysia-partner-notes.md`.
+
 ## Decisions so far
 
 - Keep the colour scheme, logo and mascot; the layout and user experience are redesigned (see `docs/screens/`).
@@ -147,11 +149,11 @@ Details and the reasons are in `docs/notes/pilot-day-tools.md`. The founders won
 
 ### Partner kit
 
-Details and the reasons are in `docs/notes/partner-kit.md`. It gives a new partner organisation what it needs to start a pilot, in English and Bahasa Indonesia, under "Starting a pilot" on the Educators page:
+Details and the reasons are in `docs/notes/partner-kit.md`. It gives a new partner organisation what it needs to start a pilot, in English, Bahasa Indonesia and Bahasa Melayu, under "Starting a pilot" on the Educators page:
 - **For organisations** (`/organisations`, also linked from the new footer on every page): what a pilot involves, what partners get, what we ask, how privacy is kept, and how to get in touch once there is a contact address (`src/app/contact.ts`; no placeholder is shown meanwhile). It says that Thinkerwell is a student-led platform, not a registered charity, that today learners' work and progress aren't sent to Thinkerwell, and which optional features use outside services. The wording follows `docs/content/PUBLIC_COPY.md`.
 - **An information sheet** for each family to keep (October 2026), one page in black and white, A4 or Letter, next to the consent form wherever it is linked: what Thinkerwell is, what will happen, the pilot study, what is kept and what isn't, saying yes or no, and whom to ask. Staff can type the organisation's name, the dates, the number of sessions and a contact person, or leave them to write by hand.
 - **A consent form**, the one consent form for a pilot: two pages in black and white, A4 or Letter, with the organisation's name typed in or written by hand. Page 1 is for the parent or guardian: what the pilot study involves (16 short questions, a few sentences on paper and five faces to choose, in the first and last sessions; and, in every session, how the learner uses Thinkerwell: time, lessons and steps, answers to quick checks and quizzes, the simpler reading and Listen, videos or reading instead, and how many words they write, never the words), what is kept and what isn't, and two separate yes/no questions (Thinkerwell in class; the pilot study), with a signature or thumbprint. Page 2 is for staff: the learner's own yes or no, from a script read aloud (the learner's no wins), and a witness line for a parent or guardian who can't read or write. It promises what the measurement build must keep to: a code, never the name; the organisation keeps the list of names and codes on paper, and Thinkerwell never sees it; nothing about family, journey, home country, religion or ethnicity, no UNHCR numbers or documents, no photos; writing and recordings stay on the device; only the team sees the answers and the organisation gets group results; deleted within 6 months of the pilot ending; YouTube gets some data when a video plays, and "Read instead" avoids it; saying no changes nothing, and families can change their mind at any time, even after the pilot. The information sheet makes the same promises in the same words. A staff note, shown on screen only, says it is a template, not legal advice, and that learners aged 18 or older sign for themselves.
-- **Code cards**: a prefix and a number make cut-out cards (HLP-01 …) and a list for names, which the organisation keeps. Learners type their code as their name.
+- **Code cards**: a prefix and a number make cut-out cards (ABC-01 …) and a list for names, which the organisation keeps. Learners type their code as their name.
 
 ### About and Credits
 
@@ -190,10 +192,18 @@ Details: `docs/notes/digital-world-preview.md`.
 - **In Indonesian**, Digital World's interface is Indonesian (AI-drafted and flagged, like the rest) and its lessons stay English, marked as English, with a line saying so in the banner.
 - **For reviewers**: each lesson's print view has its activity on paper, its teacher guide has the answers and the lesson's review notes, and "Print all lessons" prints the whole course.
 
+### Pilot measurement (built October 2026, off by default; `docs/notes/pilot-measurement.md`)
+
+- **The one exception to "learner data stays on the device".** The site can send how learners use it to the Thinkerwell team for the pilot study, **only when all of these are true**: the learner has a pilot code (their name is a code card's code, like HLP-01); an educator turned on "Share pilot results" in Settings on that device; an organisation code is saved there; and the family has signed the consent form (the organisation's job, not something the app can check). Otherwise nothing is queued, sent or even downloaded.
+- **Only what the consent form promises**: time spent, which lessons and steps are opened and finished, quick-check and section-check answers, the simpler reading and Listen, videos or reading instead, and word counts. **Never** recordings, writing, names or anything typed. Linked to the pilot code and the organisation's code, never a name. Not for anyone looking around, or for a learner with any other name.
+- **Per organisation.** Every event carries the organisation's code, the server accepts only codes it was set up for, and results are exported one organisation at a time by the team with a protected link. Group results go to the organisation, never one learner's. Everything is deleted within 6 months of the pilot ending, or sooner when a family asks.
+- **Not live until a person sets it up.** The server answers "not configured" until a database and the organisation list are set in Vercel, and the app then stops quietly. Nothing is switched on, and no database exists, as a result of building it. The pre/post check's answers and confidence ratings are not built (the app has no such feature yet).
+
 ## Roadmap
 
 1. **Pilot build (now):** everything in `docs/BUILD_PLAN.md` phases 1–8.
-2. **Measurement:** pre and post checks, pilot codes, consent and an events endpoint, as in `docs/research/MEASUREMENT_PLAN.md`. Indonesia's data protection law needs parental consent for children's data.
+2. **Measurement:** pre and post checks, pilot codes, consent and an events endpoint, as in `docs/research/MEASUREMENT_PLAN.md`. Indonesia's data protection law needs parental consent for children's data; a partner in another country needs its own check (Malaysia: `docs/notes/malaysia-partner-notes.md`).
+2. **Measurement:** the in-app usage events and their endpoint are built and off (see "Pilot measurement" above). Still to build: pre and post checks, as in `docs/research/MEASUREMENT_PLAN.md`. Indonesia's data protection law needs parental consent for children's data.
 3. **Translation:** the groundwork is in (language list and picker, per-learner language, first-language glossary lines, right-to-left layouts and font, test languages, the translator's spreadsheet), and Bahasa Indonesia is fully translated and offered, with native-speaker review in progress. Next: that review; then learn the pilot learners' home languages, and translate and review those with native speakers.
 4. **AI features (later):** diagnostic quiz, mastery tracking, reading-level rewrites, first-language glossary help, an educator dashboard, a content review flow. All privacy-first. The first step, on-device Suggestions (an optional starting check, a suggested reading level, "worth another look" by skill and hints for teachers, all worked out on the device), is specified in `docs/content/PERSONALIZATION_SPEC.md` and planned for after the HELP pilot.
 5. **Service wing (later):** partnerships for device and data donations.

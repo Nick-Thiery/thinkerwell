@@ -7,6 +7,7 @@ import { LanguageSetting } from './settings/LanguageSetting';
 import { LessonAudioSetting } from './settings/LessonAudioSetting';
 import { ListenVoiceSetting } from './settings/ListenVoiceSetting';
 import { OfflineSetting } from './settings/OfflineSetting';
+import { PilotResultsSetting } from './settings/PilotResultsSetting';
 import { ReadingSetting } from './settings/ReadingSetting';
 import { SpeechToTextSetting } from './settings/SpeechToTextSetting';
 import { useDeviceSettings } from './settings/useDeviceSettings';
@@ -18,13 +19,14 @@ import './settings/SettingsPage.css';
  * from the header menu: the interface language (once a second one is
  * ready), offline use and Save data, moving learners' work to another
  * device through a file, the reading level and Listen speed, Listen's
- * voice, the lesson audio for Listen without the internet, and Say it (phase 5). Everything else here is a device setting (settings
+ * voice, the lesson audio for Listen without the internet, Say it (phase 5) and, for a pilot only, "Share pilot results" (off unless an educator turns it on). Everything else here is a device setting (settings
  * store), shared by everyone who uses the device, and saved even while
  * looking around.
  *
- * Four parts have addresses of their own, for the educators' "Set up this
- * device" page: /settings#listen-voice, /settings#lesson-audio,
- * /settings#say-it and /settings#move-work (settingsPath()).
+ * Five parts have addresses of their own, for the educators' "Set up this
+ * device" page and the pilot notes: /settings#listen-voice,
+ * /settings#lesson-audio, /settings#say-it, /settings#move-work and
+ * /settings#share-results (settingsPath()).
  */
 export function SettingsPage() {
   const { t } = useI18n();
@@ -46,6 +48,7 @@ export function SettingsPage() {
       <ListenVoiceSetting deviceSettings={deviceSettings} />
       <LessonAudioSetting deviceSettings={deviceSettings} />
       <SpeechToTextSetting deviceSettings={deviceSettings} />
+      <PilotResultsSetting deviceSettings={deviceSettings} />
     </div>
   );
 }

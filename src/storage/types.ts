@@ -52,7 +52,7 @@ export interface Learner {
   name: string;
   colour: LearnerColour;
   createdAt: string;
-  /** Optional class code linking the learner to a partner group, e.g. "HLP-07". */
+  /** Optional class code linking the learner to a partner group, e.g. "ABC-07". */
   classCode?: string;
   /**
    * The reading level this learner last chose in a lesson (Standard or
@@ -234,6 +234,16 @@ export interface DeviceSettings {
   partner: {
     /** Allow "Say it" to use a browser speech service that may send audio online. */
     allowOnlineDictation: boolean;
+    /**
+     * "Share pilot results" (Settings): an educator turned on sending the
+     * pilot measurement events for learners who use a pilot code. Off when
+     * missing. Needs organisationCode too (src/measurement/gate.ts; consent
+     * first: docs/notes/pilot-measurement.md). Optional, so records saved
+     * before it existed need no migration.
+     */
+    sharePilotResults?: boolean;
+    /** The organisation's code, like "help-jakarta", given by Thinkerwell; see sharePilotResults. */
+    organisationCode?: string;
   };
   /**
    * The last "Check this device" an educator ran in Settings, or null until
@@ -273,6 +283,9 @@ export interface DeviceSettings {
    */
   previewCourses?: string[];
 }
+
+/** A change to the settings: any of them, and for the partner options only the ones that change. */
+export type SettingsPatch = Omit<Partial<DeviceSettings>, 'partner'> & { partner?: Partial<DeviceSettings['partner']> };
 
 export const DEFAULT_SETTINGS: DeviceSettings = {
   saveData: null,

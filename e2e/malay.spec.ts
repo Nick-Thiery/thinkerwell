@@ -451,9 +451,10 @@ test.describe('with Malay on, every page is Malay and fits', () => {
       '/organisations',
       '/educators',
       '/educators/setup',
+      '/educators/pilot-day',
       '/educators/information-sheet',
       '/educators/consent-form',
-      '/educators/code-cards?prefix=HLP&count=12',
+      '/educators/code-cards?prefix=ABC&count=12',
       '/educators/class',
       '/educators/class/certificates',
       `/educators/lesson/${L10.id}`,
@@ -472,12 +473,12 @@ test.describe('with Malay on, every page is Malay and fits', () => {
 
     // The consent form with an organisation's name typed in (the name is theirs, in any language).
     await page.goto('/educators/consent-form');
-    await page.getByRole('textbox', { name: msg(ms, 'pages.consentForm.orgLabel') }).fill('HELP for Refugees');
-    await expectAllMalay(page, 'consent form, with a name', [...allowed, 'HELP for Refugees']);
+    await page.getByRole('textbox', { name: msg(ms, 'pages.consentForm.orgLabel') }).fill('Pusat Belajar Harapan');
+    await expectAllMalay(page, 'consent form, with a name', [...allowed, 'Pusat Belajar Harapan']);
     // The information sheet with every box filled in.
     await page.goto('/educators/information-sheet');
     for (const [key, value] of [
-      ['pages.consentForm.orgLabel', 'HELP for Refugees'],
+      ['pages.consentForm.orgLabel', 'Pusat Belajar Harapan'],
       ['pages.infoSheet.startLabel', '13 Oktober 2026'],
       ['pages.infoSheet.endLabel', '21 November 2026'],
       ['pages.infoSheet.sessionsLabel', '12'],
@@ -485,7 +486,7 @@ test.describe('with Malay on, every page is Malay and fits', () => {
     ] as const) {
       await page.getByRole('textbox', { name: msg(ms, key) }).fill(value);
     }
-    await expectAllMalay(page, 'information sheet, filled in', [...allowed, 'HELP for Refugees']);
+    await expectAllMalay(page, 'information sheet, filled in', [...allowed, 'Pusat Belajar Harapan']);
 
     // What opens: a key word's meaning, the language panel, the learner switcher, the phone menu.
     await page.goto(`/lesson/${L10.id}/read?part=1`);

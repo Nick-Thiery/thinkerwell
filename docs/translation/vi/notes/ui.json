@@ -992,12 +992,12 @@
     "back": "Your teacher can give you the code."
   },
   "pages.home.newLearner.classCodePlaceholder": {
-    "source": "For example HLP-07",
-    "back": "For example HLP-07"
+    "source": "For example ABC-07",
+    "back": "For example ABC-07"
   },
   "pages.home.newLearner.classCodeInvalid": {
-    "source": "Use letters, numbers and hyphens only, like HLP-07.",
-    "back": "Use only letters, numbers and hyphens, like HLP-07."
+    "source": "Use letters, numbers and hyphens only, like ABC-07.",
+    "back": "Use only letters, numbers and hyphens, like ABC-07."
   },
   "pages.home.newLearner.submit": {
     "source": "Start Lesson 1",
@@ -1725,10 +1725,10 @@
     "back": "Class codes instead of names"
   },
   "pages.educators.codesBody": {
-    "source": "In the pilot, each learner can get a code like HLP-07. Later, codes will let us see how the whole group is doing, without any names. You keep the list that matches names to codes.",
+    "source": "In the pilot, each learner can get a code like ABC-07. Later, codes will let us see how the whole group is doing, without any names. You keep the list that matches names to codes.",
     "flag": true,
-    "note": "'không cần tên nào' is a little awkward; check. HLP-07 kept.",
-    "back": "In the pilot, each learner can receive a code such as HLP-07. Later, the codes will help us see how the whole group is learning without needing any names. You keep the list matching names to codes."
+    "note": "'không cần tên nào' is a little awkward; check. ABC-07 kept.",
+    "back": "In the pilot, each learner can receive a code such as ABC-07. Later, the codes will help us see how the whole group is learning without needing any names. You keep the list matching names to codes."
   },
   "pages.educators.feedbackTitle": {
     "source": "Tell us what to fix",
@@ -1872,14 +1872,16 @@
     "back": "Privacy"
   },
   "pages.organisations.privacy1": {
-    "source": "Pilot groups can use codes instead of names. Each learner gets a code card, like HLP-01, and types the code as their name. Only you keep the list that matches codes to names.",
+    "source": "Pilot groups can use codes instead of names. Each learner gets a code card, like ABC-01, and types the code as their name. Only you keep the list that matches codes to names.",
     "flag": true,
-    "note": "'Thẻ mã' for code card, 'HLP-01' kept.",
-    "back": "Pilot groups can use codes instead of names. Each learner gets a code card, such as HLP-01, and enters that code as their name. Only you keep the list matching codes to names."
+    "note": "'Thẻ mã' for code card, 'ABC-01' kept.",
+    "back": "Pilot groups can use codes instead of names. Each learner gets a code card, such as ABC-01, and enters that code as their name. Only you keep the list matching codes to names."
   },
   "pages.organisations.privacy2": {
-    "source": "No accounts, no email addresses and no ads. Learners' work stays on the device they use, and voice recordings never leave it.",
-    "back": "No accounts, no email addresses and no ads. Learners' work stays on the device they use, and voice recordings never leave the device."
+    "source": "No accounts, no email addresses and no ads. Learners' writing stays on the device they use, and voice recordings never leave it.",
+    "back": "No accounts, no email addresses and no ads. Learners' writing stays on the device they use, and voice recordings never leave the device.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording. Changed in October 2026 to describe the pilot exception."
   },
   "pages.organisations.privacy3": {
     "source": "Parental consent. Before any learning data is shared with Thinkerwell, a parent or guardian signs a consent form, and the learner says yes too. The study would only use data linked to a code, never a name: short questions and a few sentences in the first and last sessions, and, in every session, how learners use Thinkerwell: time, lessons and steps, answers, the help they use, videos and word counts, never what they write.",
@@ -1888,10 +1890,10 @@
     "back": "Parents' consent. Before any learning data is shared with Thinkerwell, the parent or guardian signs a consent form, and the learner agrees too. The research uses only data tied to a code, never tied to a name: short questions and a few written sentences in the first and last sessions, and, in every session, how the learner uses Thinkerwell: time, lessons and steps, answers, the help they use, videos and word counts, never what they write."
   },
   "pages.organisations.privacyNow": {
-    "source": "Today, learners' work and progress are not sent to Thinkerwell. Online speech-to-text is off unless your staff turn it on; when it is on, what learners say goes to the browser maker's service. We will tell you before anything else changes.",
+    "source": "Learners' work and progress are not sent to Thinkerwell. The one exception is a pilot run with you: once families have signed the consent form, and only when your staff turn on “Share pilot results” in Settings, the site sends how learners use it, linked to a code and never a name. Online speech-to-text is off unless your staff turn it on; when it is on, what learners say goes to the browser maker's service. We will tell you before anything else changes.",
+    "back": "Learners' work and progress are not sent to Thinkerwell. The only exception is a pilot run with you: after families have signed the consent form, and only when your staff turn on “Share pilot results” in Settings, the website sends how learners use it, linked to a code and never to a name. Online speech-to-text is off unless your staff turn it on; when on, what learners say is sent to the browser maker's service. We will tell you before anything else changes.",
     "flag": true,
-    "note": "'Online speech-to-text' = 'chuyển giọng nói thành văn bản trực tuyến' (KEY_TERMS gives speech to text only); must match Settings' label. 'browser maker' = 'nhà sản xuất trình duyệt'. | Review: 'luôn' (always) was extra. [Reviewer changed: luôn tắt trừ khi → tắt trừ khi]",
-    "back": "At present, learners' work and progress are not sent to Thinkerwell. Online speech-to-text is always off unless your staff turn it on; when it is on, what learners say is sent to the browser maker's service. We will tell you before any other change."
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording. Changed in October 2026 to describe the pilot exception."
   },
   "pages.organisations.privacy4": {
     "source": "Videos are optional. They play from YouTube, only when a learner taps play, and every video has a written version.",
@@ -2350,10 +2352,10 @@
     "back": "Prefix"
   },
   "pages.codeCards.prefixHelper": {
-    "source": "2 to 5 letters or numbers, for example HLP.",
+    "source": "2 to 5 letters or numbers, for example ABC.",
     "flag": true,
-    "note": "HLP kept as example.",
-    "back": "2 to 5 letters or digits, for example HLP."
+    "note": "ABC kept as example.",
+    "back": "2 to 5 letters or digits, for example ABC."
   },
   "pages.codeCards.prefixInvalid": {
     "source": "Use 2 to 5 letters or numbers.",
@@ -3176,10 +3178,10 @@
     "back": "Before resetting or returning this device"
   },
   "pages.setup.later.body": {
-    "source": "Save everyone's work to a file, then load the file on the next device. Recordings aren't in the file. Keep the file safe: anyone with it can read the work.",
-    "back": "Save everyone's work to a file, then upload that file onto the next device. Recordings are not in the file. Keep the file carefully: anyone who has the file can read the work.",
+    "source": "In Settings, choose All learners on this device, save the work to a file, then load the file on the next device. Recordings aren't in the file. Keep the file safe: anyone with it can read the work.",
+    "back": "In Settings, choose All learners on this device, save the work to a file, then load the work from that file on the next device. Recordings are not in the file. Keep the file carefully: anyone who has the file can read the work.",
     "flag": true,
-    "note": "Review: MEANING ERROR: 'tải ... lên' reads as 'upload', which contradicts the privacy rule that nothing is uploaded. Now matches Settings' 'Tải bài làm từ một tệp'. The same 'tải tệp lên' wording appears in other slices (Settings move-work intro 'Sau đó tải tệp lên thiết bị kia'; setup-guide p6 'tải tệp đó lên thiết bị tiếp theo') and should be fixed there. [Reviewer changed: rồi tải tệp đó lên thiết bị tiếp theo → rồi tải bài làm từ tệp đó trên thiết bị tiếp theo]"
+    "note": "Changed October 2026 (pilot dry run): the checklist now says which Settings choice saves everyone's work, because Settings opens on the learner using the device. AI-drafted from the new English; the Settings label quoted is the one in this language's file. Needs a native reviewer."
   },
   "pages.setup.later.open": {
     "source": "Save work to a file in Settings",
@@ -5807,5 +5809,125 @@
   "digitalWorld.trainModel.yourLabelsDiffer": {
     "source": "Some of your labels are different from the gardener's. The model learned your labels, so its guesses follow them.",
     "back": "Some of your labels differ from the gardener's labels. The model learned your labels, so its predictions follow them too."
+  },
+  "pilotResults.title": {
+    "source": "Share pilot results",
+    "back": "Share pilot results",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+  },
+  "pilotResults.intro": {
+    "source": "Use this only for a pilot your organisation runs with Thinkerwell, after every family has signed the consent form. It is off until you turn it on.",
+    "back": "Use this section only for a pilot that your organisation runs with Thinkerwell, after every family has signed the consent form. This section is off until you turn it on.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+  },
+  "pilotResults.codeLabel": {
+    "source": "Organisation code",
+    "back": "Organisation code",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+  },
+  "pilotResults.codeHelp": {
+    "source": "Thinkerwell gives you this code, like help-jakarta.",
+    "back": "Thinkerwell gives you this code, for example help-jakarta.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+  },
+  "pilotResults.codeInvalid": {
+    "source": "Use letters, numbers and hyphens, 2 to 32 in all, like help-jakarta.",
+    "back": "Use letters, numbers and hyphens, from 2 to 32 characters, for example help-jakarta.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+  },
+  "pilotResults.codeSave": {
+    "source": "Save code",
+    "back": "Save code",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+  },
+  "pilotResults.codeSaved": {
+    "source": "Code saved.",
+    "back": "Code saved.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+  },
+  "pilotResults.shareLabel": {
+    "source": "Share pilot results from this device",
+    "back": "Share pilot results from this device",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+  },
+  "pilotResults.shareNeedsCode": {
+    "source": "Save an organisation code first.",
+    "back": "Save the organisation code first.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+  },
+  "pilotResults.shareHelp": {
+    "source": "When this is on, a learner who types a pilot code like HLP-01 as their name sends how they use Thinkerwell to the Thinkerwell team: how long, which lessons and steps they open and finish, their answers to quick checks and quizzes, whether they use the simpler reading or Listen, whether they watch videos or read instead, and how many words they write. It goes with their code and your organisation code. It never includes names, writing or recordings. Learners who look around, or who use any other name, send nothing.",
+    "back": "When on, learners who type a pilot code like HLP-01 as their name send the Thinkerwell team how they use Thinkerwell: how long, which lessons and steps they open and finish, answers to quick checks and section reviews, whether they use the easier reading or listen to it read aloud, whether they watch video or read instead, and how many words they write. All is sent with their code and your organisation code. Never names, writing or voice recordings. Learners who only look around, or use another name, send nothing.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+  },
+  "pilotResults.shareOffHelp": {
+    "source": "Turning this off also deletes any results still waiting to be sent from this device.",
+    "back": "When off, results still waiting to be sent on this device are also deleted.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+  },
+  "pilotResults.statusOff": {
+    "source": "Sharing is off. Nothing is sent.",
+    "back": "Sharing is off. Nothing is sent.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+  },
+  "pilotResults.statusOn": {
+    "source": "Sharing with {org}.",
+    "back": "Sharing with {org}.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+  },
+  "pilotResults.waiting": {
+    "source": "Results waiting to be sent: {count}",
+    "back": "Results waiting to be sent: {count}",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+  },
+  "pilotResults.paused": {
+    "source": "Sending is paused because Thinkerwell can't take results yet. It tries again later.",
+    "back": "Sending is paused because Thinkerwell cannot receive results yet. It will try again later.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+  },
+  "pilotResults.delete": {
+    "source": "Delete waiting results",
+    "back": "Delete waiting results",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+  },
+  "pilotResults.deleteHelp": {
+    "source": "Deletes results that haven't been sent yet. Results already sent are deleted within 6 months after the pilot ends.",
+    "back": "Deletes results that have not been sent. Results already sent are deleted within 6 months after the pilot ends.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+  },
+  "pilotResults.deleted": {
+    "source": "Waiting results deleted.",
+    "back": "Waiting results have been deleted.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+  },
+  "pages.home.newLearner.privacyNotePilot": {
+    "source": "Your writing and recordings stay on this device. If you use a pilot code, Thinkerwell also counts how you use it. It never gets your name.",
+    "back": "Your writing and recordings stay only on this device. If you use a pilot code, Thinkerwell also counts how you use it. Thinkerwell never receives your name.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+  },
+  "pages.sectionCheck.factPrivatePilot": {
+    "source": "Your score is saved here. Your pilot also counts it, by code and not by name.",
+    "back": "Your score is saved here. The pilot also counts this score, by code and not by name.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
   }
 }

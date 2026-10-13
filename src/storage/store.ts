@@ -1,6 +1,9 @@
 /**
  * The typed on-device storage API. Everything is kept in IndexedDB on this
- * device and nothing is ever sent anywhere.
+ * device. Nothing in it is ever sent anywhere, except the pilot measurement
+ * events (src/measurement), which are a separate, off-by-default queue made
+ * of codes, counts and answers to choice questions, never anything stored
+ * here.
  *
  *   const store = await getStore();
  *   const learners = await store.listLearners();
@@ -8,6 +11,7 @@
 import { deleteDB, type IDBPDatabase } from 'idb';
 import { LOCALE_CODE_PATTERN } from '../i18n/locales';
 import { DB_NAME, openThinkerwellDb, SETTINGS_KEY, type ThinkerwellDB } from './db';
+import { announceSettings } from './settingsEvents';
 import { planImport, type ImportSummary, type LearnerOnDevice } from './mergeWork';
 import { forgetAllUnsavedProgress, recoverUnsavedProgress } from './unsavedProgress';
 import type { LearnerWork } from './workFile';
@@ -22,6 +26,7 @@ import {
   type Recording,
   type SectionId,
   type SectionQuizRecord,
+  type SettingsPatch,
   type StageId,
 } from './types';
 
@@ -98,7 +103,7 @@ export interface ThinkerwellStore {
   /** Stored settings over the defaults, so settings added later get their default. */
   getSettings(): Promise<DeviceSettings>;
   /** Merges the patch in (partner options merged key by key) and returns the result. */
-  updateSettings(patch: Partial<DeviceSettings>): Promise<DeviceSettings>;
+  updateSettings(patch: SettingsPatch): Promise<DeviceSettings>;
 
   // Device values
   /** The current learner, or null if none is set or that learner was removed. */
@@ -137,7 +142,7 @@ export function emptyProgress(learnerId: string, lessonId: string): LessonProgre
 }
 
 /** DEFAULT_SETTINGS with whatever is stored on top, partner options merged key by key. */
-function mergeSettings(base: DeviceSettings, patch: Partial<DeviceSettings> | undefined): DeviceSettings {
+function mergeSettings(base: DeviceSettings, patch: SettingsPatch | undefined): DeviceSettings {
   if (!patch) return { ...base, partner: { ...base.partner } };
   return {
     ...base,
@@ -452,6 +457,7 @@ function createStore(db: IDBPDatabase<ThinkerwellDB>): ThinkerwellStore {
       const current = mergeSettings(DEFAULT_SETTINGS, await tx.store.get(SETTINGS_KEY));
       const next = mergeSettings(current, patch);
       await Promise.all([tx.store.put(next, SETTINGS_KEY), tx.done]);
+      announceSettings(next);
       return next;
     },
 
@@ -568,4 +574,6 @@ export async function deleteAllData(name: string = DB_NAME): Promise<void> {
       console.warn('Thinkerwell storage: waiting for other tabs to close before removing everything.');
     },
   });
+  // Pilot results waiting to be sent go too (src/measurement/queue.ts, QUEUE_DB_NAME; a test keeps the names equal).
+  if (name === DB_NAME) await deleteDB('thinkerwell-measurement');
 }

@@ -269,8 +269,8 @@
         },
         "classCodeLabel": "Mã lớp",
         "classCodeHelper": "Thầy cô có thể đưa mã cho bạn.",
-        "classCodePlaceholder": "Ví dụ HLP-07",
-        "classCodeInvalid": "Chỉ dùng chữ cái, số và dấu gạch nối, như HLP-07.",
+        "classCodePlaceholder": "Ví dụ ABC-07",
+        "classCodeInvalid": "Chỉ dùng chữ cái, số và dấu gạch nối, như ABC-07.",
         "submit": "Bắt đầu Bài 1",
         "submitError": "Chưa lưu được. Thử lại.",
         "startsWith": "Bạn sẽ bắt đầu với",
@@ -278,7 +278,8 @@
         "startsWithNote": "Sau này bạn có thể mở bất kỳ bài học nào từ trang khóa học.",
         "privacyNote": "Bài làm của bạn chỉ nằm trên thiết bị này.",
         "languageLabel": "Ngôn ngữ của bạn",
-        "languageHelper": "Nút và hướng dẫn hiện bằng ngôn ngữ này. Với tiếng Việt và tiếng Indonesia, bài học cũng hiện bằng ngôn ngữ đó. Với các ngôn ngữ khác, bài học vẫn bằng tiếng Anh để bạn luyện tập."
+        "languageHelper": "Nút và hướng dẫn hiện bằng ngôn ngữ này. Với tiếng Việt và tiếng Indonesia, bài học cũng hiện bằng ngôn ngữ đó. Với các ngôn ngữ khác, bài học vẫn bằng tiếng Anh để bạn luyện tập.",
+        "privacyNotePilot": "Bài viết và bản ghi âm của bạn chỉ nằm trên thiết bị này. Nếu bạn dùng mã thí điểm, Thinkerwell cũng đếm cách bạn dùng. Thinkerwell không bao giờ nhận được tên của bạn."
       },
       "remove": {
         "action": "Xóa",
@@ -368,6 +369,7 @@
       "factTime": "Không giới hạn thời gian. Khoảng {minutes} phút.",
       "factRetry": "Làm lại bao nhiêu lần cũng được",
       "factPrivate": "Điểm của bạn chỉ nằm trên thiết bị này",
+      "factPrivatePilot": "Điểm của bạn được lưu ở đây. Đợt thí điểm cũng đếm điểm này, theo mã chứ không theo tên.",
       "factGuest": "Khi bạn xem qua, không có gì được lưu",
       "tip": "Chưa chắc? Cứ chọn đáp án bạn thấy hợp lý nhất. Sau mỗi câu, bạn sẽ thấy vì sao đáp án đó đúng.",
       "start": "Bắt đầu ôn tập",
@@ -467,7 +469,7 @@
       "answerKeyLabel": "Đáp án cho bài ôn tập phần {section}",
       "codesTag": "Đối tác thí điểm",
       "codesTitle": "Mã lớp thay cho tên",
-      "codesBody": "Trong đợt thí điểm, mỗi người học có thể nhận một mã như HLP-07. Sau này, các mã sẽ giúp chúng tôi xem cả nhóm đang học thế nào mà không cần tên nào. Bạn giữ danh sách ghép tên với mã.",
+      "codesBody": "Trong đợt thí điểm, mỗi người học có thể nhận một mã như ABC-07. Sau này, các mã sẽ giúp chúng tôi xem cả nhóm đang học thế nào mà không cần tên nào. Bạn giữ danh sách ghép tên với mã.",
       "feedbackTitle": "Cho chúng tôi biết cần sửa gì",
       "feedbackBody": "Có điều gì gây khó hiểu, quá khó hoặc bị lỗi? Hãy cho chúng tôi biết qua {email}. Đừng gửi tên hay bài viết của người học.",
       "toolsIntro": "Dành cho ngày bạn bắt đầu và mọi ngày sau đó. Mọi thứ ở đây đều chỉ nằm trên thiết bị này.",
@@ -500,10 +502,10 @@
       "ask3": "Vài buổi mỗi tuần trong 4 đến 6 tuần. Một bài học mất khoảng {min}–{max} phút.",
       "ask4": "Phản hồi thẳng thắn: điều gì đã hiệu quả, điều gì chưa, và điều gì khiến người học bối rối.",
       "privacyTitle": "Quyền riêng tư",
-      "privacy1": "Các nhóm thí điểm có thể dùng mã thay cho tên. Mỗi người học nhận một thẻ mã, như HLP-01, và nhập mã đó làm tên. Chỉ bạn giữ danh sách ghép mã với tên.",
-      "privacy2": "Không tài khoản, không địa chỉ email và không quảng cáo. Bài làm của người học ở lại trên thiết bị họ dùng, và bản ghi âm giọng nói không bao giờ rời khỏi thiết bị.",
+      "privacy1": "Các nhóm thí điểm có thể dùng mã thay cho tên. Mỗi người học nhận một thẻ mã, như ABC-01, và nhập mã đó làm tên. Chỉ bạn giữ danh sách ghép mã với tên.",
+      "privacy2": "Không tài khoản, không địa chỉ email và không quảng cáo. Bài viết của người học ở lại trên thiết bị họ dùng, và bản ghi âm giọng nói không bao giờ rời khỏi thiết bị.",
       "privacy3": "Sự đồng ý của phụ huynh. Trước khi bất kỳ dữ liệu học tập nào được chia sẻ với Thinkerwell, phụ huynh hoặc người giám hộ ký phiếu đồng ý, và người học cũng đồng ý. Nghiên cứu sẽ chỉ dùng dữ liệu gắn với một mã, không bao giờ gắn với tên: những câu hỏi ngắn và vài câu viết trong buổi học đầu tiên và cuối cùng, và, trong mọi buổi học, cách người học dùng Thinkerwell: thời gian, bài học và các bước, câu trả lời, sự trợ giúp họ dùng, video và số từ, không bao giờ là nội dung họ viết.",
-      "privacyNow": "Hiện nay, bài làm và tiến độ của người học không được gửi đến Thinkerwell. Chuyển giọng nói thành văn bản trực tuyến tắt trừ khi nhân viên của bạn bật; khi bật, những gì người học nói sẽ được gửi đến dịch vụ của nhà sản xuất trình duyệt. Chúng tôi sẽ báo cho bạn trước khi có bất kỳ thay đổi nào khác.",
+      "privacyNow": "Bài làm và tiến độ của người học không được gửi đến Thinkerwell. Ngoại lệ duy nhất là đợt thí điểm chạy cùng bạn: sau khi các gia đình đã ký phiếu đồng ý, và chỉ khi nhân viên của bạn bật “Chia sẻ kết quả thí điểm” trong Cài đặt, trang web gửi cách người học sử dụng, gắn với một mã và không bao giờ với tên. Chuyển giọng nói thành văn bản trực tuyến tắt trừ khi nhân viên của bạn bật; khi bật, những gì người học nói sẽ được gửi đến dịch vụ của nhà sản xuất trình duyệt. Chúng tôi sẽ báo cho bạn trước khi có bất kỳ thay đổi nào khác.",
       "privacy4": "Video không bắt buộc. Video phát từ YouTube, chỉ khi người học bấm phát, và mỗi video đều có bản viết.",
       "startTitle": "Chuẩn bị",
       "startBody": "In những thứ bạn cần, và thiết lập từng thiết bị trước buổi học đầu tiên.",
@@ -604,7 +606,7 @@
       "title": "Thẻ mã",
       "intro": "Mỗi người học nhận một mã để nhập làm tên, nên tên thật của họ không bao giờ nằm trên thiết bị. Chọn một tiền tố ngắn cho nhóm của bạn và số người học. Bạn sẽ nhận các thẻ để cắt ra, và một danh sách để ghi tên.",
       "prefixLabel": "Tiền tố",
-      "prefixHelper": "2 đến 5 chữ cái hoặc chữ số, ví dụ HLP.",
+      "prefixHelper": "2 đến 5 chữ cái hoặc chữ số, ví dụ ABC.",
       "prefixInvalid": "Dùng 2 đến 5 chữ cái hoặc chữ số.",
       "countLabel": "Số người học",
       "countHelper": "Từ 1 đến {max}.",
@@ -821,7 +823,7 @@
       },
       "later": {
         "title": "Trước khi đặt lại hoặc trả thiết bị này",
-        "body": "Lưu bài làm của mọi người vào một tệp, rồi nhập bài làm từ tệp đó trên thiết bị tiếp theo. Bản ghi âm không nằm trong tệp. Giữ tệp cẩn thận: ai có tệp cũng đọc được bài làm.",
+        "body": "Trong Cài đặt, chọn Tất cả người học trên thiết bị này, lưu bài làm vào một tệp, rồi tải bài làm từ tệp đó trên thiết bị tiếp theo. Bản ghi âm không nằm trong tệp. Giữ tệp cẩn thận: ai có tệp cũng đọc được bài làm.",
         "open": "Lưu bài làm vào tệp trong Cài đặt"
       }
     },
@@ -1609,5 +1611,25 @@
       },
       "yourLabelsDiffer": "Một số nhãn của bạn khác với nhãn của người làm vườn. Mô hình đã học nhãn của bạn, nên các dự đoán của nó cũng theo nhãn đó."
     }
+  },
+  "pilotResults": {
+    "title": "Chia sẻ kết quả thí điểm",
+    "intro": "Chỉ dùng mục này cho đợt thí điểm mà tổ chức của bạn chạy cùng Thinkerwell, sau khi mọi gia đình đã ký phiếu đồng ý. Mục này tắt cho đến khi bạn bật.",
+    "codeLabel": "Mã tổ chức",
+    "codeHelp": "Thinkerwell cấp cho bạn mã này, ví dụ help-jakarta.",
+    "codeInvalid": "Dùng chữ cái, số và dấu gạch ngang, từ 2 đến 32 ký tự, ví dụ help-jakarta.",
+    "codeSave": "Lưu mã",
+    "codeSaved": "Đã lưu mã.",
+    "shareLabel": "Chia sẻ kết quả thí điểm từ thiết bị này",
+    "shareNeedsCode": "Lưu mã tổ chức trước.",
+    "shareHelp": "Khi bật, người học gõ mã thí điểm như HLP-01 làm tên sẽ gửi cho nhóm Thinkerwell cách họ dùng Thinkerwell: dùng bao lâu, mở và hoàn thành những bài học và bước nào, câu trả lời cho câu hỏi nhanh và ôn tập phần, có dùng bản đọc dễ hơn hoặc nghe đọc to hay không, có xem video hay đọc thay thế, và viết bao nhiêu từ. Tất cả được gửi kèm mã của họ và mã tổ chức của bạn. Không bao giờ có tên, bài viết hay bản ghi âm. Người học chỉ xem qua, hoặc dùng tên khác, không gửi gì cả.",
+    "shareOffHelp": "Khi tắt, các kết quả còn chờ gửi trên thiết bị này cũng bị xóa.",
+    "statusOff": "Chia sẻ đang tắt. Không có gì được gửi.",
+    "statusOn": "Đang chia sẻ với {org}.",
+    "waiting": "Kết quả đang chờ gửi: {count}",
+    "paused": "Việc gửi đang tạm dừng vì Thinkerwell chưa thể nhận kết quả. Sẽ thử lại sau.",
+    "delete": "Xóa kết quả đang chờ",
+    "deleteHelp": "Xóa các kết quả chưa được gửi. Kết quả đã gửi sẽ bị xóa trong vòng 6 tháng sau khi đợt thí điểm kết thúc.",
+    "deleted": "Đã xóa các kết quả đang chờ."
   }
 }

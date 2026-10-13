@@ -930,12 +930,12 @@
     "source": "Your teacher may give you one."
   },
   "pages.home.newLearner.classCodePlaceholder": {
-    "back": "For example HLP-07",
-    "source": "For example HLP-07"
+    "back": "For example ABC-07",
+    "source": "For example ABC-07"
   },
   "pages.home.newLearner.classCodeInvalid": {
-    "back": "Use letters, numbers and hyphens only, like HLP-07.",
-    "source": "Use letters, numbers and hyphens only, like HLP-07."
+    "back": "Use letters, numbers and hyphens only, like ABC-07.",
+    "source": "Use letters, numbers and hyphens only, like ABC-07."
   },
   "pages.home.newLearner.submit": {
     "back": "Start Lesson 1",
@@ -1443,7 +1443,7 @@
   },
   "pages.educators.pilotTitle": {
     "flag": true,
-    "note": "Translator: 'Memulakan rintis' follows the key term but may sound short on its own. Check whether 'Memulakan program rintis' reads more naturally. 'Projek rintis' is avoided on purpose. Back-translation check: Translator flag stands. Check whether 'rintis' on its own reads naturally. 'Program rintis' is a possible option. 'Projek rintis' is avoided on purpose.",
+    "note": "Translator: 'Memulakan rintis' follows the key term but may sound short on its own. Check whether 'Memulakan program rintis' reads more naturally. 'Projek rintis' is avoided on purpose. Back-translation check: Translator flag stands. Check whether 'rintis' on its own reads naturally. 'Program rintis' is a possible option. 'Projek rintis' is avoided on purpose. Changed in the partner-neutral wording pass (October 2026): bare 'rintis' as a noun became 'program rintis' (the Malay key term 'rintis' is a modifier, as in 'program rintis'). A native reviewer should still decide between 'program rintis' and 'program perintis'/'projek perintis' for Malaysian partner staff (KEY_TERMS.md says never 'projek rintis').",
     "back": "Starting a pilot",
     "source": "Starting a pilot"
   },
@@ -1457,11 +1457,13 @@
   },
   "pages.educators.pilotAboutBody": {
     "back": "What is involved in the pilot, what we ask, and how students' privacy is protected.",
-    "source": "What a pilot involves, what we ask, and how learners' privacy is kept."
+    "source": "What a pilot involves, what we ask, and how learners' privacy is kept.",
+    "flag": true,
+    "note": "Changed in the partner-neutral wording pass (October 2026): bare 'rintis' as a noun became 'program rintis' (the Malay key term 'rintis' is a modifier, as in 'program rintis'). A native reviewer should still decide between 'program rintis' and 'program perintis'/'projek perintis' for Malaysian partner staff (KEY_TERMS.md says never 'projek rintis')."
   },
   "pages.educators.pilotAboutCta": {
     "flag": true,
-    "note": "Translator: Same doubt: check that 'rintis' standing alone as a noun ('tentang rintis') reads naturally to Malaysian partner staff. Back-translation check: Translator flag stands. Check that 'tentang rintis', with 'rintis' as a noun on its own, reads naturally to Malaysian partner staff.",
+    "note": "Translator: Same doubt: check that 'rintis' standing alone as a noun ('tentang rintis') reads naturally to Malaysian partner staff. Back-translation check: Translator flag stands. Check that 'tentang rintis', with 'rintis' as a noun on its own, reads naturally to Malaysian partner staff. Changed in the partner-neutral wording pass (October 2026): bare 'rintis' as a noun became 'program rintis' (the Malay key term 'rintis' is a modifier, as in 'program rintis'). A native reviewer should still decide between 'program rintis' and 'program perintis'/'projek perintis' for Malaysian partner staff (KEY_TERMS.md says never 'projek rintis').",
     "back": "Read about the pilot",
     "source": "Read about pilots"
   },
@@ -1485,7 +1487,9 @@
   },
   "pages.educators.pilotSheetBody": {
     "back": "The things involved in the pilot and its study, for each family to keep, with your organisation's name on it.",
-    "source": "What the pilot and its study involve, for each family to keep, with your organisation's name on it."
+    "source": "What the pilot and its study involve, for each family to keep, with your organisation's name on it.",
+    "flag": true,
+    "note": "Changed in the partner-neutral wording pass (October 2026): bare 'rintis' as a noun became 'program rintis' (the Malay key term 'rintis' is a modifier, as in 'program rintis'). A native reviewer should still decide between 'program rintis' and 'program perintis'/'projek perintis' for Malaysian partner staff (KEY_TERMS.md says never 'projek rintis')."
   },
   "pages.educators.pilotSheetCta": {
     "back": "Print information sheet",
@@ -1613,8 +1617,10 @@
     "source": "Class codes instead of names"
   },
   "pages.educators.codesBody": {
-    "back": "In a pilot, each student can get a code such as HLP-07. Later on, these codes will let us see the progress of the whole group, without any names. You keep the list that matches names to codes.",
-    "source": "In the pilot, each learner can get a code like HLP-07. Later, codes will let us see how the whole group is doing, without any names. You keep the list that matches names to codes."
+    "back": "In a pilot, each student can get a code such as ABC-07. Later on, these codes will let us see the progress of the whole group, without any names. You keep the list that matches names to codes.",
+    "source": "In the pilot, each learner can get a code like ABC-07. Later, codes will let us see how the whole group is doing, without any names. You keep the list that matches names to codes.",
+    "flag": true,
+    "note": "Changed in the partner-neutral wording pass (October 2026): bare 'rintis' as a noun became 'program rintis' (the Malay key term 'rintis' is a modifier, as in 'program rintis'). A native reviewer should still decide between 'program rintis' and 'program perintis'/'projek perintis' for Malaysian partner staff (KEY_TERMS.md says never 'projek rintis')."
   },
   "pages.educators.feedbackTitle": {
     "back": "Tell us what needs fixing",
@@ -1747,22 +1753,24 @@
     "source": "Privacy"
   },
   "pages.organisations.privacy1": {
-    "back": "Pilot groups can use codes instead of names. Each learner gets a code card, such as HLP-01, and types that code as their name. Only you keep the list that matches codes to names.",
-    "source": "Pilot groups can use codes instead of names. Each learner gets a code card, like HLP-01, and types the code as their name. Only you keep the list that matches codes to names."
+    "back": "Pilot groups can use codes instead of names. Each learner gets a code card, such as ABC-01, and types that code as their name. Only you keep the list that matches codes to names.",
+    "source": "Pilot groups can use codes instead of names. Each learner gets a code card, like ABC-01, and types the code as their name. Only you keep the list that matches codes to names."
   },
   "pages.organisations.privacy2": {
-    "back": "No accounts, no email addresses and no ads. Learners' work stays on the device they use, and voice recordings never leave that device.",
-    "source": "No accounts, no email addresses and no ads. Learners' work stays on the device they use, and voice recordings never leave it."
+    "source": "No accounts, no email addresses and no ads. Learners' writing stays on the device they use, and voice recordings never leave it.",
+    "back": "No accounts, no email addresses and no ads. Learners' writing stays on the device they use, and voice recordings never leave that device.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: anda, for adults. Changed in October 2026 to describe the pilot exception."
   },
   "pages.organisations.privacy3": {
     "back": "Parental consent. Before any learning data is shared with Thinkerwell, the parent or guardian signs a consent form, and the learner also says yes. This study will only use data linked to a code, never to a name: short questions and a few sentences in the first and last sessions, and, in every session, how the learner uses Thinkerwell: time, lessons and steps, answers, the help they used, videos and word counts, never what they write.",
     "source": "Parental consent. Before any learning data is shared with Thinkerwell, a parent or guardian signs a consent form, and the learner says yes too. The study would only use data linked to a code, never a name: short questions and a few sentences in the first and last sessions, and, in every session, how learners use Thinkerwell: time, lessons and steps, answers, the help they use, videos and word counts, never what they write."
   },
   "pages.organisations.privacyNow": {
+    "source": "Learners' work and progress are not sent to Thinkerwell. The one exception is a pilot run with you: once families have signed the consent form, and only when your staff turn on “Share pilot results” in Settings, the site sends how learners use it, linked to a code and never a name. Online speech-to-text is off unless your staff turn it on; when it is on, what learners say goes to the browser maker's service. We will tell you before anything else changes.",
+    "back": "Learners' work and progress are not sent to Thinkerwell. The only exception is a pilot programme run with you: after families sign the consent form, and only when your staff switch on “Share pilot results” in Settings, the site sends how learners use it, linked to a code and never to a name. Online speech-to-text is switched off unless your staff switch it on; when it is on, what learners say is sent to the browser maker's company service. We will tell you before anything else changes.",
     "flag": true,
-    "note": "Translator: 'browser maker's service' is translated as 'perkhidmatan syarikat pembuat pelayar'. Check that families will understand it. Back-translation check: Check that families will understand 'perkhidmatan syarikat pembuat pelayar' (browser maker's service). It is accurate but wordy.",
-    "back": "For now, learners' work and progress are not sent to Thinkerwell. Online speech-to-text is turned off unless your staff turn it on; when it is on, what learners say is sent to the service of the company that makes the browser. We will tell you before anything else changes.",
-    "source": "Today, learners' work and progress are not sent to Thinkerwell. Online speech-to-text is off unless your staff turn it on; when it is on, what learners say goes to the browser maker's service. We will tell you before anything else changes."
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: anda, for adults. Changed in October 2026 to describe the pilot exception."
   },
   "pages.organisations.privacy4": {
     "back": "Videos are not compulsory. Videos play from YouTube, only when the learner presses the play button, and every video has a written version.",
@@ -2153,8 +2161,8 @@
     "source": "Prefix"
   },
   "pages.codeCards.prefixHelper": {
-    "back": "2 to 5 letters or numbers, for example HLP.",
-    "source": "2 to 5 letters or numbers, for example HLP."
+    "back": "2 to 5 letters or numbers, for example ABC.",
+    "source": "2 to 5 letters or numbers, for example ABC."
   },
   "pages.codeCards.prefixInvalid": {
     "back": "Use 2 to 5 letters or numbers.",
@@ -2903,8 +2911,10 @@
     "source": "Before you reset this device or give it back"
   },
   "pages.setup.later.body": {
-    "back": "Save everyone's work into a file, then open that file on the next device. Recordings are not included in the file. Keep that file safely: anyone who has it can read that work.",
-    "source": "Save everyone's work to a file, then load the file on the next device. Recordings aren't in the file. Keep the file safe: anyone with it can read the work."
+    "back": "In Settings, choose All learners on this device, save the work into a file, then open it on the next device. Recordings are not included. Keep the file safely: anyone who has it can read it.",
+    "source": "In Settings, choose All learners on this device, save the work to a file, then load the file on the next device. Recordings aren't in the file. Keep the file safe: anyone with it can read the work.",
+    "flag": true,
+    "note": "Changed October 2026 (pilot dry run): the checklist now says which Settings choice saves everyone's work, because Settings opens on the learner using the device. AI-drafted from the new English; the Settings label quoted is the one in this language's file. Needs a native reviewer."
   },
   "pages.setup.later.open": {
     "back": "Save work to a file in Settings",
@@ -5335,5 +5345,371 @@
   "pages.credits.translationBodyMalay": {
     "back": "The Malay version was also drafted with the help of AI, from English, and checked by translating it back into English. This version is still waiting for review by a native speaker.",
     "source": "The Bahasa Melayu version was drafted with the help of AI too, from the English, and checked by translating it back into English. It is waiting for native speakers to check it."
+  },
+  "pilotDay.title": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "Pilot day guide",
+    "back": "Pilot day guide"
+  },
+  "pilotDay.intro": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "One page for the adults running a session. Print it and keep it with the devices.",
+    "back": "One page for adults who run the session. Print it and keep it together with the devices."
+  },
+  "pilotDay.sheetTitle": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker. 'kakitangan' (staff), as in the consent form's staff parts.",
+    "source": "Pilot day: a one-page guide for staff",
+    "back": "Pilot day: a one-page guide for staff"
+  },
+  "pilotDay.sheetFor": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "For the adults running a session",
+    "back": "For adults who run the session"
+  },
+  "pilotDay.beforeTitle": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "Before the session",
+    "back": "Before the session"
+  },
+  "pilotDay.beforeSetup": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "Set up each device once: open {educators}, then {setup}. The checklist shows what is done on that device.",
+    "back": "Prepare each device once only: open {educators}, then {setup}. That checklist shows what is already ready on the device."
+  },
+  "pilotDay.beforeCodes": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "Print the code cards from {educators}. Each learner types their code as their name.",
+    "back": "Print the code cards from {educators}. Each learner types their code as a name."
+  },
+  "pilotDay.beforeConsent": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker. 'keputusan pelajar itu yang diikut' follows pages.consentForm.learnerWins (the learner's no wins).",
+    "source": "Check that every family has the information sheet and has answered the consent form. A learner's own no wins.",
+    "back": "Make sure every family has received the information sheet and has answered the consent form. If the learner themselves answers no, the learner's decision is the one followed."
+  },
+  "pilotDay.startTitle": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "Start of the session",
+    "back": "Beginning of the session"
+  },
+  "pilotDay.startWho": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "Open Thinkerwell on each device. The home page asks {who} Each learner taps their own tile.",
+    "back": "Open Thinkerwell on each device. The home page asks {who} Each learner presses their own tile."
+  },
+  "pilotDay.startNew": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "New learners tap {new} and type their name or code.",
+    "back": "New learners press {new} and type their name or code."
+  },
+  "pilotDay.startLook": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker. 'pelawat' (visitors) is new in the interface; check it, and 'tetamu' as an alternative.",
+    "source": "{look} is for visitors. Nothing is saved while someone looks around, so learners should not use it for their own work.",
+    "back": "The {look} option is for visitors. Nothing is saved while someone looks around, so learners should not use it for their own work."
+  },
+  "pilotDay.learnTitle": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "What learners do",
+    "back": "What learners do"
+  },
+  "pilotDay.learnStages": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "Every lesson has five stages: {stages}. Answering the {reflect} question finishes the lesson.",
+    "back": "Each lesson has five steps: {stages}. Answering the {reflect} question completes the lesson."
+  },
+  "pilotDay.learnOrder": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker. 'semakan pantas' is the key term for quick check.",
+    "source": "Nothing is locked. Learners can open any lesson and any stage, in any order, and try the quick checks again.",
+    "back": "Nothing is locked. Learners can open any lesson and any step, in any order, and try the quick check again."
+  },
+  "pilotDay.learnTime": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "A lesson takes about {min}–{max} minutes. Each teacher guide has a plan for {full} minutes and a shorter one for {short}.",
+    "back": "One lesson takes about {min}–{max} minutes. Each teacher guide has a plan for {full} minutes and another, shorter one for {short} minutes."
+  },
+  "pilotDay.wrongTitle": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "If something goes wrong",
+    "back": "If something is not right"
+  },
+  "pilotDay.wrongDownloadLead": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "A page hasn't downloaded yet.",
+    "back": "A page has not been downloaded yet."
+  },
+  "pilotDay.wrongDownload": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "Connect to the internet and tap {retry}. Saved work stays on the device.",
+    "back": "Connect to the internet and press {retry}. Saved work stays on the device."
+  },
+  "pilotDay.wrongOfflineLead": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "No internet.",
+    "back": "No internet."
+  },
+  "pilotDay.wrongOffline": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "Keep going. Once the course is saved on the device, every lesson works without the internet, and work saves on the device. Only videos need the internet.",
+    "back": "Carry on. Once the course is saved on the device, every lesson can be used without the internet, and work is saved on the device. Only videos need the internet."
+  },
+  "pilotDay.wrongSharedLead": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "Several learners, one device.",
+    "back": "Several learners, one device."
+  },
+  "pilotDay.wrongShared": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "Each learner taps their own tile on the home page. Each learner's work is kept apart.",
+    "back": "Each learner presses their own tile on the home page. Each learner's work is saved separately."
+  },
+  "pilotDay.wrongLostLead": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "Work seems to be missing.",
+    "back": "Work looks lost."
+  },
+  "pilotDay.wrongLost": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker. 'folder muat turun' for the device's downloads: check what each browser calls it on Malaysian devices.",
+    "source": "Work is saved on the device only, never online. If you saved a file, open {settings}, tap {load} and choose it. Look in the device's downloads for a name that starts with {file}.",
+    "back": "Work is only saved on the device, never online. If you have saved it into a file, open {settings}, press {load} and choose that file. Look in the device's downloads folder, at a name beginning with {file}."
+  },
+  "pilotDay.wrongVideoLead": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "A video won't play.",
+    "back": "The video cannot be played."
+  },
+  "pilotDay.wrongVideo": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "Tap {readInstead}. It has the same ideas and works without the internet.",
+    "back": "Press {readInstead}. The ideas are the same and it can be used without the internet."
+  },
+  "pilotDay.wrongSoundLead": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "No sound, or no {sayIt} button.",
+    "back": "No sound, or the {sayIt} button is missing."
+  },
+  "pilotDay.wrongSound": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "This is normal. {listen} and {sayIt} show only where the device can do them. Learners can read and type instead.",
+    "back": "This is normal. {listen} and {sayIt} appear only on devices that can run them. Learners can read and type instead."
+  },
+  "pilotDay.topicsTitle": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "Sensitive topics",
+    "back": "Sensitive topics"
+  },
+  "pilotDay.topicsNever": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker. Matches pages.pilotStudy.keepNeverAsk: 'etnik' for ethnicity.",
+    "source": "Never ask learners about their journey, home country, family, religion or ethnicity. Thinkerwell never asks them either.",
+    "back": "Never ask learners about their journey, home country, family, religion or ethnicity. Thinkerwell also never asks about it."
+  },
+  "pilotDay.topicsGuide": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "Before you teach a lesson, read its teacher guide. It starts with {sensitive}, and it says which videos to preview.",
+    "back": "Before you teach a lesson, read its teacher guide. The guide begins with {sensitive} and states which videos should be watched first."
+  },
+  "pilotDay.topicsReview": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "Lessons {first} and {second} ask for a local educator to review them first.",
+    "back": "Lessons {first} and {second} need to be checked first by a local educator."
+  },
+  "pilotDay.topicsShare": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker. 'Langkah perlindungan' follows Lesson 19's teacher notes ('langkah perlindungan pusat anda'); keep them matching.",
+    "source": "If a learner shares something personal, thank them and move on. If you are worried, follow your organisation's safeguarding steps.",
+    "back": "If a learner shares something personal, say thank you and carry on. If you are worried, follow the protection steps at your organisation."
+  },
+  "pilotDay.endTitle": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "End of the session",
+    "back": "End of the session"
+  },
+  "pilotDay.endSave": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "Before you reset a device or give it back, save the work to a file: open {settings}, then {transfer}, then {save}. Load the file on the next device.",
+    "back": "Before you reset the device or return it, save the work into a file: open {settings}, then {transfer}, then {save}. Open that file on the next device."
+  },
+  "pilotDay.endCertificates": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "Print certificates for finished sections: open {educators}, then {certificates}.",
+    "back": "Print certificates for sections that have been completed: open {educators}, then {certificates}."
+  },
+  "pilotDay.endClass": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "See where everyone is: open {educators}, then {class}. It shows no scores.",
+    "back": "See the standing of each learner: open {educators}, then {class}. It does not show marks."
+  },
+  "pages.educators.pilotDayTitle": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "Pilot day guide",
+    "back": "Pilot day guide"
+  },
+  "pages.educators.pilotDayBody": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "One page for the adults running a session: before, during and after, and what to do if something goes wrong.",
+    "back": "One page for adults who run a session: before, during and after, and what needs to be done if something is not right."
+  },
+  "pages.educators.pilotDayCta": {
+    "flag": true,
+    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
+    "source": "Print the guide",
+    "back": "Print the guide"
+  },
+  "pilotResults.title": {
+    "source": "Share pilot results",
+    "back": "Share pilot results",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: anda, for adults."
+  },
+  "pilotResults.intro": {
+    "source": "Use this only for a pilot your organisation runs with Thinkerwell, after every family has signed the consent form. It is off until you turn it on.",
+    "back": "Use this only for a pilot programme that your organisation runs with Thinkerwell, after every family has signed the consent form. It is switched off until you switch it on.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: anda, for adults."
+  },
+  "pilotResults.codeLabel": {
+    "source": "Organisation code",
+    "back": "Organisation code",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: anda, for adults."
+  },
+  "pilotResults.codeHelp": {
+    "source": "Thinkerwell gives you this code, like help-jakarta.",
+    "back": "Thinkerwell gives you this code, like help-jakarta.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: anda, for adults."
+  },
+  "pilotResults.codeInvalid": {
+    "source": "Use letters, numbers and hyphens, 2 to 32 in all, like help-jakarta.",
+    "back": "Use letters, numbers and hyphens, 2 to 32 characters, like help-jakarta.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: anda, for adults."
+  },
+  "pilotResults.codeSave": {
+    "source": "Save code",
+    "back": "Save code",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: anda, for adults."
+  },
+  "pilotResults.codeSaved": {
+    "source": "Code saved.",
+    "back": "Code saved.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: anda, for adults."
+  },
+  "pilotResults.shareLabel": {
+    "source": "Share pilot results from this device",
+    "back": "Share pilot results from this device",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: anda, for adults."
+  },
+  "pilotResults.shareNeedsCode": {
+    "source": "Save an organisation code first.",
+    "back": "Save the organisation code first.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: anda, for adults."
+  },
+  "pilotResults.shareHelp": {
+    "source": "When this is on, a learner who types a pilot code like HLP-01 as their name sends how they use Thinkerwell to the Thinkerwell team: how long, which lessons and steps they open and finish, their answers to quick checks and quizzes, whether they use the simpler reading or Listen, whether they watch videos or read instead, and how many words they write. It goes with their code and your organisation code. It never includes names, writing or recordings. Learners who look around, or who use any other name, send nothing.",
+    "back": "When switched on, learners who type a pilot code like HLP-01 as their name send how they use Thinkerwell to the Thinkerwell team: how long, which lessons and steps they open and finish, their answers to quick checks and quizzes, whether they use the easier reading version or Listen, whether they watch videos or read the written version, and how many words they write. All of it is sent with their code and your organisation code. Never any names, writing or recordings. Learners who are only looking around, or who use another name, send nothing.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: anda, for adults."
+  },
+  "pilotResults.shareOffHelp": {
+    "source": "Turning this off also deletes any results still waiting to be sent from this device.",
+    "back": "When switched off, results still waiting to be sent from this device are also deleted.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: anda, for adults."
+  },
+  "pilotResults.statusOff": {
+    "source": "Sharing is off. Nothing is sent.",
+    "back": "Sharing is switched off. Nothing is sent.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: anda, for adults."
+  },
+  "pilotResults.statusOn": {
+    "source": "Sharing with {org}.",
+    "back": "Sharing with {org}.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: anda, for adults."
+  },
+  "pilotResults.waiting": {
+    "source": "Results waiting to be sent: {count}",
+    "back": "Results waiting to be sent: {count}",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: anda, for adults."
+  },
+  "pilotResults.paused": {
+    "source": "Sending is paused because Thinkerwell can't take results yet. It tries again later.",
+    "back": "Sending is paused because Thinkerwell cannot yet receive results. It is tried again later.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: anda, for adults."
+  },
+  "pilotResults.delete": {
+    "source": "Delete waiting results",
+    "back": "Delete waiting results",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: anda, for adults."
+  },
+  "pilotResults.deleteHelp": {
+    "source": "Deletes results that haven't been sent yet. Results already sent are deleted within 6 months after the pilot ends.",
+    "back": "Deletes results that have not been sent. Results already sent are deleted within 6 months after the pilot programme ends.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: anda, for adults."
+  },
+  "pilotResults.deleted": {
+    "source": "Waiting results deleted.",
+    "back": "The waiting results have been deleted.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: anda, for adults."
+  },
+  "pages.home.newLearner.privacyNotePilot": {
+    "source": "Your writing and recordings stay on this device. If you use a pilot code, Thinkerwell also counts how you use it. It never gets your name.",
+    "back": "Your writing and recordings stay on this device. If you use a pilot code, Thinkerwell also counts how you use it. Thinkerwell never gets your name.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: anda, for adults."
+  },
+  "pages.sectionCheck.factPrivatePilot": {
+    "source": "Your score is saved here. Your pilot also counts it, by code and not by name.",
+    "back": "Your score is saved here. The pilot programme also counts it, with a code and not a name.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: anda, for adults."
   }
 }

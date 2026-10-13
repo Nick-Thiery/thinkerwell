@@ -183,7 +183,7 @@ test.describe('new learner flow', () => {
 
     await page.getByLabel('First name or nickname').fill('Amina');
     await page.getByRole('radio', { name: 'Green' }).click();
-    await page.getByLabel('Class code').fill('hlp-07');
+    await page.getByLabel('Class code').fill('abc-07');
     await page.getByRole('button', { name: 'Start Lesson 1' }).click();
 
     // "Start Lesson 1" does exactly that.
@@ -197,7 +197,7 @@ test.describe('new learner flow', () => {
     // Saved with the colour picked and the class code trimmed and upper-cased.
     const db = await dumpDb(page);
     expect(db.learners).toHaveLength(1);
-    expect(db.learners[0]).toMatchObject({ name: 'Amina', colour: 'geography', classCode: 'HLP-07' });
+    expect(db.learners[0]).toMatchObject({ name: 'Amina', colour: 'geography', classCode: 'ABC-07' });
   });
 
   test('a name over 30 characters is rejected', async ({ page }) => {
@@ -215,7 +215,7 @@ test.describe('new learner flow', () => {
     await page.getByLabel('First name or nickname').fill('Yusuf');
     await page.getByLabel('Class code').fill('not a code!');
     await page.getByRole('button', { name: 'Start Lesson 1' }).click();
-    await expect(page.getByText('Use letters, numbers and hyphens only, like HLP-07.')).toBeVisible();
+    await expect(page.getByText('Use letters, numbers and hyphens only, like ABC-07.')).toBeVisible();
     expect((await dumpDb(page)).learners).toHaveLength(0);
   });
 });

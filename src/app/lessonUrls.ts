@@ -35,7 +35,7 @@ export function courseCertificatePath(): string {
 }
 
 /** A part of Settings that other pages link straight to. */
-export type SettingsPart = 'listen-voice' | 'lesson-audio' | 'say-it' | 'move-work';
+export type SettingsPart = 'listen-voice' | 'lesson-audio' | 'say-it' | 'move-work' | 'share-results';
 
 /** Settings for this device, or one part of it (/settings#say-it): the page scrolls to it once it has loaded. */
 export function settingsPath(part?: SettingsPart): string {
@@ -45,6 +45,11 @@ export function settingsPath(part?: SettingsPart): string {
 /** The educators' checklist for setting up a device: /educators/setup. */
 export function setupPath(): string {
   return '/educators/setup';
+}
+
+/** The staff's one-page guide for a pilot day, to print: /educators/pilot-day. */
+export function pilotDayPath(): string {
+  return '/educators/pilot-day';
 }
 
 /** Every learner on this device and what each has done: /educators/class. */

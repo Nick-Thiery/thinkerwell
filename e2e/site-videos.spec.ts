@@ -83,6 +83,10 @@ test('on About the video keeps its size when it plays, so nothing under it moves
       };
       return { frame: box(document.querySelector('.tw-sitevideo-frame')), team: box(document.querySelector('.tw-about-team')) };
     });
+  // Let the fonts and pictures settle first: on a slow runner the page above the video can still be growing or shrinking.
+  await page.evaluate(() => document.fonts.ready);
+  await page.waitForLoadState('networkidle');
+  await expect.poll(async () => JSON.stringify(await onPage()), { intervals: [200, 200, 200], timeout: 5000 }).toBe(JSON.stringify(await onPage()));
   const before = await onPage();
   await page.getByRole('button', { name: 'Play the video: Explore your world' }).click();
   await expect(page.locator('.tw-sitevideo-frame video')).toHaveCount(1);

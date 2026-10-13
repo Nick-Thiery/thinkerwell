@@ -19,10 +19,13 @@ export function Blank({ label, wide }: { label: string; wide?: boolean }) {
   );
 }
 
-/** Text staff typed (a name, a date), never translated by us or by the browser; a line to write on when they left it empty. */
+/**
+ * Text staff typed (a name, a date), never translated by us or by the browser; a line to write on when they left it empty.
+ * `dir="auto"` lets a name in another script (Jawi or Arabic, say) set its own direction inside a left-to-right form.
+ */
 export function typedOrBlank(value: string, blankLabel: string): ReactNode {
   const text = value.trim();
-  return text ? <strong translate="no">{text}</strong> : <Blank label={blankLabel} />;
+  return text ? <strong translate="no" dir="auto">{text}</strong> : <Blank label={blankLabel} />;
 }
 
 const STUDY_STEPS: readonly MessageKey[] = ['pages.pilotStudy.questions', 'pages.pilotStudy.writing', 'pages.pilotStudy.faces'];
@@ -48,11 +51,11 @@ export function StudyParts() {
 export function KeepList({ organisation }: { organisation: ReactNode }) {
   const { t, tx } = useI18n();
   const items: ReactNode[] = [
-    // An example code, on one line ("HLP-" at the end of one line and "01" on the next would read as two things).
+    // An example code, on one line ("ABC-" at the end of one line and "01" on the next would read as two things).
     tx('pages.pilotStudy.keepCode', {
       code: (
         <span className="tw-consent-code" translate="no">
-          HLP-01
+          ABC-01
         </span>
       ),
     }),

@@ -37,7 +37,11 @@ describe('For organisations', () => {
     expect(within(privacy).getByText(/Pilot groups can use codes instead of names\. Each learner gets a code card/)).toBeInTheDocument();
     expect(within(privacy).getByText(/Parental consent\./)).toBeInTheDocument();
     // Honest about the outside services a learner can reach: never "nothing leaves the device".
-    expect(within(privacy).getByText(/learners' work and progress are not sent to Thinkerwell\. Online speech-to-text is off/)).toBeInTheDocument();
+    expect(
+      within(privacy).getByText(
+        /Learners' work and progress are not sent to Thinkerwell\. The one exception is a pilot run with you: once families have signed the consent form, and only when your staff turn on “Share pilot results” in Settings, the site sends how learners use it, linked to a code and never a name\. Online speech-to-text is off/,
+      ),
+    ).toBeInTheDocument();
     expect(within(privacy).getByText(/They play from YouTube/)).toBeInTheDocument();
     expect(screen.queryByText(/nothing at all leaves the device/)).not.toBeInTheDocument();
     // No contact card, and no placeholder, until there is a real address (src/app/contact.ts).
@@ -61,7 +65,7 @@ const STUDY = [
   /None of this is a test\. Nothing depends on the answers\./,
 ];
 const KEPT = [
-  /linked to a code, like HLP-01, never to their name/,
+  /linked to a code, like ABC-01, never to their name/,
   /keeps the list of names and codes on paper\. Thinkerwell never sees it\./,
   /never asks about family, journey, home country, religion or ethnicity/,
   /never asks for UNHCR numbers or any documents/,
@@ -111,6 +115,27 @@ describe('the consent form', () => {
     for (const name of screen.getAllByText('HELP for Refugees')) expect(name).toHaveAttribute('translate', 'no');
     expect(parent!.textContent + learner!.textContent).not.toContain('{');
     expect(screen.queryByText("organisation's name")).toBeNull();
+  });
+
+  // Any organisation, in any country: the name is typed text, printed as it is, in the form's own direction or its own.
+  it.each([
+    ['a Malay name', 'Pusat Pembelajaran Harapan Sdn. Bhd.'],
+    ['a name with an ampersand, quotes and a number', 'Rumah Kita & "Sinar" 2'],
+    ['a name in Jawi script', 'مرکز pembelajaran'],
+    ['a name in Chinese', '希望学习中心'],
+    ['a name with accents', 'École Étoile'],
+  ])('prints %s as typed, in every place the form names the organisation', async (_label, name) => {
+    const user = userEvent.setup();
+    renderAt('/educators/consent-form', <ConsentFormPage />);
+    const [parent, learner] = pages();
+    await user.type(screen.getByRole('textbox', { name: "Your organisation's name" }), name);
+    expect(within(parent!).getAllByText(name)).toHaveLength(8);
+    expect(within(learner!).getAllByText(name)).toHaveLength(1);
+    for (const printed of screen.getAllByText(name)) {
+      expect(printed).toHaveAttribute('translate', 'no');
+      expect(printed).toHaveAttribute('dir', 'auto');
+    }
+    expect(parent!.textContent + learner!.textContent).not.toContain('{');
   });
 
   it('says what the study involves, what is kept and what isn’t, and that it is the family’s choice', () => {
@@ -266,14 +291,14 @@ describe('code cards', () => {
     // No prefix yet: nothing to print.
     expect(screen.queryByRole('button', { name: 'Print' })).toBeNull();
     const prefix = screen.getByRole('textbox', { name: 'Prefix' });
-    await user.type(prefix, 'hlp');
+    await user.type(prefix, 'abc');
     const count = screen.getByRole('textbox', { name: 'Number of learners' });
     await user.clear(count);
     await user.type(count, '12');
 
-    expect(document.querySelector('.tw-codes-summary')).toHaveTextContent('12 cards, from HLP-01 to HLP-12. Print on A4 and cut along the dashed lines.');
+    expect(document.querySelector('.tw-codes-summary')).toHaveTextContent('12 cards, from ABC-01 to ABC-12. Print on A4 and cut along the dashed lines.');
     const cards = [...document.querySelectorAll('.tw-code-card-code')].map((card) => card.textContent);
-    expect(cards).toEqual(Array.from({ length: 12 }, (_, i) => `HLP-${String(i + 1).padStart(2, '0')}`));
+    expect(cards).toEqual(Array.from({ length: 12 }, (_, i) => `ABC-${String(i + 1).padStart(2, '0')}`));
     expect(document.querySelectorAll('.tw-codes-sheet')).toHaveLength(2);
     expect(screen.getAllByText("Tap “I'm new here” and type this code as your name.")).toHaveLength(12);
 
@@ -282,7 +307,7 @@ describe('code cards', () => {
     expect(rows.map((row) => within(row).getByRole('rowheader').textContent)).toEqual(cards);
     for (const row of rows) expect(within(row).getByRole('cell')).toBeEmptyDOMElement();
     expect(screen.getByRole('button', { name: 'Print' })).toBeInTheDocument();
-    expect(router.state.location.search).toBe('?prefix=HLP&count=12');
+    expect(router.state.location.search).toBe('?prefix=ABC&count=12');
   });
 
   it('comes back with the same cards from the address, and says kindly what to fix', async () => {
