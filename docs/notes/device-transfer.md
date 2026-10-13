@@ -28,7 +28,7 @@ The code:
   "version": 1,
   "savedAt": "2026-09-28T09:00:00.000Z",
   "learners": [
-    { "learner": { "id": "…", "name": "Amina", "colour": "geography", "createdAt": "…", "classCode": "HLP-07", "readingLevel": "simpler" },
+    { "learner": { "id": "…", "name": "Amina", "colour": "geography", "createdAt": "…", "classCode": "ABC-07", "readingLevel": "simpler" },
       "progress": [ /* one LessonProgress per lesson started, as stored */ ],
       "quizAttempts": [ /* one SectionQuizRecord per section check taken, as stored */ ] }
   ]

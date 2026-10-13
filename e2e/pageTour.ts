@@ -374,7 +374,7 @@ export const pageTour: TourStop[] = [
       await openPath(page, '/educators', ui('pages.educators.title'));
       await page.locator('.tw-edu-tools').getByRole('link', { name: ui('pages.educators.pilotCodesCta') }).click();
       await expect(page.locator('h1')).toHaveText(ui('pages.codeCards.title'));
-      await page.getByRole('textbox', { name: ui('pages.codeCards.prefixLabel') }).fill('HLP');
+      await page.getByRole('textbox', { name: ui('pages.codeCards.prefixLabel') }).fill('ABC');
       await page.getByRole('textbox', { name: ui('pages.codeCards.countLabel') }).fill('12');
       await expect(page.locator('.tw-code-card')).toHaveCount(12);
     },

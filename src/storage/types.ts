@@ -52,7 +52,7 @@ export interface Learner {
   name: string;
   colour: LearnerColour;
   createdAt: string;
-  /** Optional class code linking the learner to a partner group, e.g. "HLP-07". */
+  /** Optional class code linking the learner to a partner group, e.g. "ABC-07". */
   classCode?: string;
   /**
    * The reading level this learner last chose in a lesson (Standard or

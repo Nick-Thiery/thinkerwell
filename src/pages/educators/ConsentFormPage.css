@@ -281,9 +281,10 @@
     max-inline-size: none;
   }
 
-  /* Margins of 12mm, like the certificates', so more fits a page. */
+  /* Margins of 10mm, so more fits a page: Malay is longer than English or Indonesian, and with a 60-character
+     organisation's name page 1 spilled onto a third page on Letter paper at 12mm. */
   @page tw-consent {
-    margin: 12mm;
+    margin: 10mm;
   }
 
   /* 10.5pt is 14px, the site's smallest text: nothing here goes below it. */

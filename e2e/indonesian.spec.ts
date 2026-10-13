@@ -450,7 +450,7 @@ test.describe('with Indonesian on, every page is Indonesian and fits', () => {
       '/educators/pilot-day',
       '/educators/information-sheet',
       '/educators/consent-form',
-      '/educators/code-cards?prefix=HLP&count=12',
+      '/educators/code-cards?prefix=ABC&count=12',
       '/educators/class',
       '/educators/class/certificates',
       `/educators/lesson/${L10.id}`,
