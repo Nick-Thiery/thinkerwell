@@ -42,6 +42,15 @@ export default defineConfig({
       name: 'laptop',
       use: { ...devices['Desktop Chrome'], viewport: { width: 1280, height: 800 } },
     },
+    // Safari's engine (WebKit) at an iPad's size: the pilot's likeliest device, and the one Chromium can't stand in for
+    // (storage, the picture dialog, media, print). Not in the default run, which needs `npx playwright install webkit`:
+    // `npm run test:e2e:safari`. PW_CHROMIUM_PATH is for Chromium only, so it is cleared here.
+    {
+      name: 'ipad-safari',
+      use: { ...devices['iPad (gen 7)'], viewport: { width: 820, height: 1180 }, launchOptions: {} },
+      grepInvert: /@own-size|@chromium-only/,
+      ...(process.env.PW_WEBKIT ? {} : { testMatch: /^$/ }),
+    },
   ],
   ...(externalBaseURL
     ? {}

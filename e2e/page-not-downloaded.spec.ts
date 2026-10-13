@@ -41,7 +41,7 @@ async function redIn(page: Page, selector: string): Promise<string[]> {
   });
 }
 
-test("a lesson whose code hasn't downloaded says so, and Try again opens it once the connection is back", async ({ page }) => {
+test("a lesson whose code hasn't downloaded says so, and Try again opens it once the connection is back", { tag: '@chromium-only' }, async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('h1')).toHaveText(ui('pages.home.title'));
 
