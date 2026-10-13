@@ -28,6 +28,7 @@ import { recordingRef, sectionKey } from '../../../audio/recordings';
 import { ListenBar, ReadingCard, SegmentedControl, ToolToggle } from '../../../components/ds';
 import { useI18n } from '../../../i18n';
 import { useLessonPlayer } from '../../../lesson';
+import { track } from '../../../measurement/track';
 import { LessonSlot } from '../../../lesson/extras';
 import { isSaveDataOn } from '../../../offline';
 import { LISTEN_RATES, listenVoiceFor, speechLangFor, useListenVoiceState } from '../../../speech';
@@ -178,7 +179,14 @@ export function ReadStage() {
             icon="Volume2"
             pressed={listening}
             aria-controls={listening ? listenBarId : undefined}
-            onClick={() => (listening ? listen.stop() : listen.start())}
+            onClick={() => {
+              if (listening) {
+                listen.stop();
+              } else {
+                listen.start();
+                track('listen_play', { lessonId: lesson.id });
+              }
+            }}
           >
             {t('lessonPlayer.read.listen')}
           </ToolToggle>

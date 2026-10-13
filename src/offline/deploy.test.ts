@@ -10,6 +10,7 @@ interface VercelConfig {
   installCommand: string;
   buildCommand: string;
   outputDirectory: string;
+  functions?: Record<string, { maxDuration?: number }>;
   rewrites: Array<{ source: string; destination: string }>;
   headers: Array<{ source: string; headers: Array<{ key: string; value: string }> }>;
 }
@@ -55,6 +56,19 @@ describe('vercel.json', () => {
     for (const path of ['/assets/index-abc123.js', '/assets/L10-abc.svg', '/sw.js', '/workbox-9c191d2f.js', '/manifest.webmanifest', '/images/x.png', '/icons/icon-192.png']) {
       expect(rewritten(path), path).toBe(false);
     }
+  });
+
+  it('leaves /api to the functions: never the page, and no page Cache-Control (pilot measurement, docs/notes/pilot-measurement.md)', () => {
+    for (const path of ['/api/events', '/api/export']) {
+      expect(rewritten(path), path).toBe(false);
+      expect(cacheControl(path), path).toEqual([]);
+    }
+    // The two functions exist, with short limits.
+    expect(Object.keys(vercel.functions ?? {}).sort()).toEqual(['api/events.ts', 'api/export.ts']);
+    expect(vercel.functions?.['api/events.ts']?.maxDuration).toBeLessThanOrEqual(10);
+    // Every page address is still answered with the app.
+    expect(rewritten('/api-not-a-function')).toBe(true);
+    expect(rewritten('/course')).toBe(true);
   });
 
   it('never lets a browser keep an old page, service worker or manifest without asking', () => {

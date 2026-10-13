@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useLearnerSession } from '../../session';
-import { DEFAULT_SETTINGS, getStore, type DeviceSettings } from '../../storage';
+import { DEFAULT_SETTINGS, getStore, type DeviceSettings, type SettingsPatch } from '../../storage';
 
 /** Which part of the settings a change was to: its top-level key. */
 export type SettingKey = keyof DeviceSettings;
@@ -13,7 +13,7 @@ export interface DeviceSettingsState {
   /** The setting whose last change didn't save (it is put back as it was), or null. */
   failed: SettingKey | null;
   /** Shows the change at once, then saves it on the device; puts it back if saving fails. */
-  save: (patch: Partial<DeviceSettings>) => Promise<void>;
+  save: (patch: SettingsPatch) => Promise<void>;
 }
 
 /**
@@ -52,7 +52,7 @@ export function useDeviceSettings(): DeviceSettingsState {
   }, [storageAvailable, setSettings]);
 
   const save = useCallback(
-    async (patch: Partial<DeviceSettings>) => {
+    async (patch: SettingsPatch) => {
       const key = Object.keys(patch)[0] as SettingKey | undefined;
       const before = current.current;
       if (before) setSettings({ ...before, ...patch, partner: { ...before.partner, ...patch.partner } });

@@ -7,6 +7,7 @@ import { LearnerSessionProvider, useLearnerSession } from '../session';
 import './app.css';
 import { readLanguageHint, writeLanguageHint } from './languageHint';
 import { LanguageSwitch } from './LanguageSwitch';
+import { MeasurementGate } from './MeasurementGate';
 import { SiteFooter } from './SiteFooter';
 import { LearnerSwitcher } from './LearnerSwitcher';
 import { isNavLinkActive } from './internal/navActive';
@@ -35,6 +36,7 @@ export function AppLayout() {
 
   return (
     <LearnerSessionProvider forceLookAround={forceLookAround}>
+      <MeasurementGate />
       <LanguageForSession devLocale={devLocale} devDir={devDir}>
         <DsLinkProvider link={RouterDsLink}>
           <Shell devRtl={devDir === 'rtl'} devLocale={devLocale} />

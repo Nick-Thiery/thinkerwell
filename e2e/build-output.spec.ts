@@ -56,8 +56,13 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * Raised to 795 kB for Bahasa Melayu, a third language translated in full: 790.5 kB with it (649.8 kB before). Every ready
  * language is in every device's offline copy, as Indonesian is: its messages, 24 lessons, 4 checks and course text in
  * one chunk (`assets/locales/ms/`, 428 kB, about 85 kB Brotli) and its 24 pictures (about 46 kB). See docs/notes/slow-internet.md.
+ * Raised to 802 kB with pilot measurement (off by default): 799.8 kB with it (about 791 kB before). The collector (a chunk
+ * of its own, 4.2 kB Brotli, loaded only once a device is set to share results), the Settings card, the small tracking
+ * calls in the lesson pages and the card's words in all three ready languages, which must be in the offline copy so an
+ * educator can switch it on offline. Nothing of it reaches a first visit but a 1 kB stub (docs/notes/pilot-measurement.md,
+ * docs/notes/slow-internet.md "Later budget changes").
  */
-const PRECACHE_BUDGET = 795_000;
+const PRECACHE_BUDGET = 802_000;
 /**
  * Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before),
  * 210.5 kB after the language and pilot-day merges, 212.7 kB with the header's language switch and the one language
@@ -234,4 +239,31 @@ test('no Digital World content or code is precached or reaches a first visit', {
   let previewText = '';
   for (const url of previewFiles) previewText += (await sentSize(request, url)).body.toString('utf8');
   for (const marker of DIGITAL_WORLD) expect(previewText, marker).toContain(marker);
+});
+
+// Pilot measurement (docs/notes/pilot-measurement.md) is off by default: the collector, the queue and the sender
+// are one chunk that loads only on a device set to share results, so a first visit (and a lesson, with sharing
+// off) never downloads it, and nothing in what it does download knows the endpoint.
+test('the pilot measurement collector is not in a first visit, nor in a lesson with sharing off', { tag: '@own-size' }, async ({ page, request, baseURL }) => {
+  const origin = new URL(baseURL ?? 'http://localhost').origin;
+  const visited = new Set<string>();
+  page.on('request', (r) => {
+    if (new URL(r.url()).origin === origin) visited.add(new URL(r.url()).pathname);
+  });
+  for (const path of ['/', '/course', '/lesson/towns-near-rivers/read']) {
+    await page.goto(path);
+    await expect(page.locator('h1')).toBeVisible();
+    await page.waitForLoadState('networkidle');
+  }
+  expect([...visited].filter((url) => /measurementCollector|\/api\//.test(url))).toEqual([]);
+  for (const url of [...visited].filter((u) => TEXT.test(u) || u === '/')) {
+    const text = (await sentSize(request, url)).body.toString('utf8');
+    expect(text.includes('/api/events'), `${url} knows the endpoint`).toBe(false);
+  }
+
+  // The collector is a file of its own in the offline copy, so an educator can switch sharing on offline.
+  const urls = await precacheList(request);
+  const collector = urls.filter((url) => /measurementCollector-/.test(url));
+  expect(collector).toHaveLength(1);
+  expect((await sentSize(request, collector[0]!)).body.toString('utf8')).toContain('/api/events');
 });

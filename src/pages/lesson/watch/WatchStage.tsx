@@ -2,6 +2,7 @@ import { useEffect, useId, useRef, useState, type FocusEvent } from 'react';
 import { Button, Icon, StatusBanner, TaskCard, VideoCard } from '../../../components/ds';
 import { En, useI18n } from '../../../i18n';
 import { formatDuration, hasText, splitParagraphs, useLessonPlayer } from '../../../lesson';
+import { track } from '../../../measurement/track';
 import { isSaveDataOn } from '../../../offline';
 import { SayItBox, useSayIt } from '../sayIt';
 import { StageActionBar } from '../StageActionBar';
@@ -11,6 +12,8 @@ import {
   PLAYER_LISTENING_MESSAGE,
   PLAYER_REFERRER_POLICY,
   PLAYER_TIMEOUT_MS,
+  createVideoTracker,
+  playerInfo,
   playerSignal,
   youtubeEmbedUrl,
 } from './youtube';
@@ -86,6 +89,8 @@ export function WatchStage() {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const writtenHeadingRef = useRef<HTMLHeadingElement>(null);
   const focusNext = useRef<FocusTarget | null>(null);
+  // Pilot measurement only (nothing happens unless this learner is being measured): when the video plays, and how far.
+  const videoMoments = useRef(createVideoTracker());
 
   const sayIt = useSayIt();
   const ids = useId();
@@ -120,12 +125,20 @@ export function WatchStage() {
       setAnnouncement('');
       setReason(why);
       setView('written');
+      track('video_fail', { lessonId: lesson.id, value: { reason: why } });
     };
 
     const onMessage = (event: MessageEvent) => {
       const signal = playerSignal(event, iframeRef.current?.contentWindow);
       if (signal === 'ready') setLoaded(true);
       else if (signal === 'error') fallBack('unavailable');
+      const info = playerInfo(event, iframeRef.current?.contentWindow);
+      if (info) {
+        for (const moment of videoMoments.current(info)) {
+          if (moment === 'play') track('video_play', { lessonId: lesson.id });
+          else track('video_progress', { lessonId: lesson.id, value: { percent: moment } });
+        }
+      }
     };
     window.addEventListener('message', onMessage);
 
@@ -153,16 +166,19 @@ export function WatchStage() {
       clearTimeout(timer);
       clearInterval(listen);
     };
-  }, [shownView, loaded, attempt]);
+  }, [shownView, loaded, attempt, lesson.id]);
 
   const watchVideo = () => {
     if (saveData) return;
+    track('video_choice', { lessonId: lesson.id, value: { choice: 'video' } });
     if (deviceIsOffline()) {
       focusNext.current = 'written';
       setReason('offline');
       setView('written');
+      track('video_fail', { lessonId: lesson.id, value: { reason: 'offline' } });
       return;
     }
+    videoMoments.current = createVideoTracker();
     focusNext.current = 'player';
     setLoaded(false);
     setReason(null);
@@ -172,6 +188,7 @@ export function WatchStage() {
   };
 
   const readInstead = () => {
+    track('video_choice', { lessonId: lesson.id, value: { choice: 'read' } });
     focusNext.current = 'written';
     setAnnouncement('');
     setReason('choice');

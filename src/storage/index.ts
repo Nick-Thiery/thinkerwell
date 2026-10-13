@@ -1,4 +1,5 @@
-// On-device storage: IndexedDB through idb. Nothing here leaves the device.
+// On-device storage: IndexedDB through idb. Nothing here leaves the device
+// (pilot measurement, src/measurement, is a separate, off-by-default queue).
 // Use getStore() for the app-wide store; see ./types.ts for the data.
 export * from './types';
 export {
@@ -24,6 +25,7 @@ export {
   requestPersistentStorage,
   type ThinkerwellStore,
 } from './store';
+export { onSettingsSaved } from './settingsEvents';
 export { forgetUnsavedProgress, keepUnsavedProgress } from './unsavedProgress';
 export {
   buildWorkFile,

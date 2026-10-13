@@ -557,9 +557,16 @@ function seoFiles(): Plugin {
     configurePreviewServer(server) {
       const dist = path.resolve(server.config.root, server.config.build.outDir);
       server.middlewares.use((req, res, next) => {
-        if (req.method !== 'GET' && req.method !== 'HEAD') return next();
         const url = new URL(req.url ?? '/', 'http://preview');
         const pathname = decodeURIComponent(url.pathname);
+        // /api/ belongs to the Vercel Functions (api/), never to the app: a preview has none, so 404 (vercel.json keeps /api/ out of the app rewrite).
+        if (pathname.startsWith('/api/')) {
+          res.statusCode = 404;
+          res.setHeader('Cache-Control', 'no-store');
+          res.end();
+          return;
+        }
+        if (req.method !== 'GET' && req.method !== 'HEAD') return next();
         // The home page, files (anything with an extension) and anything odd go on as before.
         if (pathname === '/' || /\.[^/]+$/.test(pathname) || pathname.includes('..')) return next();
         if (pathname.endsWith('/')) {
@@ -686,9 +693,13 @@ function siteHeaders(): Record<string, string> {
   return Object.fromEntries((everywhere?.headers ?? []).map(({ key, value }) => [key, value]));
 }
 
+const packageJson = JSON.parse(readFileSync(path.join(import.meta.dirname, 'package.json'), 'utf8')) as { version: string };
+
 // VITE_CACHE_DIR lets several dev servers run at once, each with its own
 // dependency cache (for example .build-review/vite-cache-5301).
 export default defineConfig({
+  // The app's version, sent with pilot measurement events (src/measurement/appVersion.ts).
+  define: { __APP_VERSION__: JSON.stringify(packageJson.version) },
   plugins: [
     react(),
     checkContent(),
@@ -774,7 +785,7 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: ['./src/test/setup.ts'],
-    include: ['src/**/*.test.{ts,tsx}', 'tools/**/*.test.ts'],
+    include: ['src/**/*.test.{ts,tsx}', 'tools/**/*.test.ts', 'api/**/*.test.ts'],
     css: false,
     restoreMocks: true,
     // Component tests drive the real lesson player over fake-indexeddb with

@@ -4159,8 +4159,10 @@
     "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed."
   },
   "pages.organisations.privacy2": {
-    "back": "No accounts, no email addresses, and no ads. Learners' work stays on the device they use, and voice recordings never leave that device.",
-    "source": "No accounts, no email addresses and no ads. Learners' work stays on the device they use, and voice recordings never leave it."
+    "source": "No accounts, no email addresses and no ads. Learners' writing stays on the device they use, and voice recordings never leave it.",
+    "back": "No accounts, no email addresses and no ads. Learners' writing stays on the device they use, and voice recordings never leave that device.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults. Changed in October 2026 to describe the pilot exception."
   },
   "pages.organisations.privacy3": {
     "back": "Parental consent. Before any learning data is shared to Thinkerwell, the parent or guardian signs a consent form, and the learner also agrees. This research will only use data that is connected with a code, never with a name: short questions and some sentences in the first and last sessions, and, in each session, the way the learner uses Thinkerwell: time, lessons and steps, answers, help that is used, videos, and number of words, but never the content of their writing.",
@@ -4169,10 +4171,10 @@
     "note": "Changed in October 2026 so the promise covers everything the pilot's measurement logs in every session (docs/research/MEASUREMENT_PLAN.md, section 4): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. Second AI's doubt: \"beberapa kalimat\" (a few sentences) doesn't say what they are; the English is as short on purpose (the consent form and information sheet explain the writing task)."
   },
   "pages.organisations.privacyNow": {
-    "back": "Right now, learners' work and progress are not sent to Thinkerwell. The online speech-to-text feature is off unless your staff turn it on; if it is on, learners' speech is sent to the browser maker's service. We will tell you before anything else changes.",
-    "source": "Today, learners' work and progress are not sent to Thinkerwell. Online speech-to-text is off unless your staff turn it on; when it is on, what learners say goes to the browser maker's service. We will tell you before anything else changes.",
+    "source": "Learners' work and progress are not sent to Thinkerwell. The one exception is a pilot run with you: once families have signed the consent form, and only when your staff turn on “Share pilot results” in Settings, the site sends how learners use it, linked to a code and never a name. Online speech-to-text is off unless your staff turn it on; when it is on, what learners say goes to the browser maker's service. We will tell you before anything else changes.",
+    "back": "Learners' work and progress are not sent to Thinkerwell. The only exception is a pilot run together with you: after families sign the consent form, and only if your staff turn on “Share pilot results” in Settings, the site sends how learners use it, connected to a code and never to a name. The online speech-to-text feature is off unless your staff turn it on; if it is on, what learners say is sent to the browser maker's service. We will tell you before anything else changes.",
     "flag": true,
-    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed."
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults. Changed in October 2026 to describe the pilot exception."
   },
   "pages.organisations.privacy4": {
     "back": "Videos are optional. Videos play from YouTube, only after a learner taps the play button, and every video has a written version.",
@@ -6022,5 +6024,125 @@
     "flag": true,
     "note": "Added with Bahasa Melayu (October 2026), drafted by the session that added Malay; not back-translated.",
     "source": "Bahasa Melayu lessons: {model} by Meta, part of Massively Multilingual Speech, under the {licence}. This licence allows only non-commercial use. Thinkerwell is free, and uses it only that way."
+  },
+  "pilotResults.title": {
+    "source": "Share pilot results",
+    "back": "Share pilot results",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
+  },
+  "pilotResults.intro": {
+    "source": "Use this only for a pilot your organisation runs with Thinkerwell, after every family has signed the consent form. It is off until you turn it on.",
+    "back": "Use this only for a pilot that your organisation runs together with Thinkerwell, after every family has signed the consent form. This feature is off until you turn it on.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
+  },
+  "pilotResults.codeLabel": {
+    "source": "Organisation code",
+    "back": "Organisation code",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
+  },
+  "pilotResults.codeHelp": {
+    "source": "Thinkerwell gives you this code, like help-jakarta.",
+    "back": "Thinkerwell gives you this code, like help-jakarta.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
+  },
+  "pilotResults.codeInvalid": {
+    "source": "Use letters, numbers and hyphens, 2 to 32 in all, like help-jakarta.",
+    "back": "Use letters, numbers and hyphens, 2 to 32 characters, like help-jakarta.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
+  },
+  "pilotResults.codeSave": {
+    "source": "Save code",
+    "back": "Save code",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
+  },
+  "pilotResults.codeSaved": {
+    "source": "Code saved.",
+    "back": "Code saved.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
+  },
+  "pilotResults.shareLabel": {
+    "source": "Share pilot results from this device",
+    "back": "Share pilot results from this device",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
+  },
+  "pilotResults.shareNeedsCode": {
+    "source": "Save an organisation code first.",
+    "back": "Save the organisation code first.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
+  },
+  "pilotResults.shareHelp": {
+    "source": "When this is on, a learner who types a pilot code like HLP-01 as their name sends how they use Thinkerwell to the Thinkerwell team: how long, which lessons and steps they open and finish, their answers to quick checks and quizzes, whether they use the simpler reading or Listen, whether they watch videos or read instead, and how many words they write. It goes with their code and your organisation code. It never includes names, writing or recordings. Learners who look around, or who use any other name, send nothing.",
+    "back": "When it is on, learners who type a pilot code like HLP-01 as their name send how they use Thinkerwell to the Thinkerwell team: how long, which lessons and steps they open and finish, their answers to quick checks and quizzes, whether they use the easier reading or Listen, whether they watch videos or just read, and how many words they write. All of it is sent together with their code and your organisation code. There are never names, writing or recordings. Learners who are only looking around, or who use another name, send nothing.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
+  },
+  "pilotResults.shareOffHelp": {
+    "source": "Turning this off also deletes any results still waiting to be sent from this device.",
+    "back": "If it is turned off, results still waiting to be sent from this device are also deleted.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
+  },
+  "pilotResults.statusOff": {
+    "source": "Sharing is off. Nothing is sent.",
+    "back": "Sharing is off. Nothing is sent.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
+  },
+  "pilotResults.statusOn": {
+    "source": "Sharing with {org}.",
+    "back": "Sharing with {org}.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
+  },
+  "pilotResults.waiting": {
+    "source": "Results waiting to be sent: {count}",
+    "back": "Results waiting to be sent: {count}",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
+  },
+  "pilotResults.paused": {
+    "source": "Sending is paused because Thinkerwell can't take results yet. It tries again later.",
+    "back": "Sending is paused because Thinkerwell can't receive results yet. Sending is tried again later.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
+  },
+  "pilotResults.delete": {
+    "source": "Delete waiting results",
+    "back": "Delete waiting results",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
+  },
+  "pilotResults.deleteHelp": {
+    "source": "Deletes results that haven't been sent yet. Results already sent are deleted within 6 months after the pilot ends.",
+    "back": "Deletes results that haven't been sent. Results already sent are deleted at the latest 6 months after the trial ends.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
+  },
+  "pilotResults.deleted": {
+    "source": "Waiting results deleted.",
+    "back": "The waiting results have been deleted.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
+  },
+  "pages.home.newLearner.privacyNotePilot": {
+    "source": "Your writing and recordings stay on this device. If you use a pilot code, Thinkerwell also counts how you use it. It never gets your name.",
+    "back": "Your writing and recordings stay on this device. If you use a pilot code, Thinkerwell also counts how you use it. Thinkerwell never gets your name.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
+  },
+  "pages.sectionCheck.factPrivatePilot": {
+    "source": "Your score is saved here. Your pilot also counts it, by code and not by name.",
+    "back": "Your score is saved here. The pilot also counts it, with a code and not a name.",
+    "flag": true,
+    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
   }
 }
