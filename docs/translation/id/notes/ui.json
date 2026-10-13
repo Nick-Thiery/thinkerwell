@@ -2327,8 +2327,10 @@
     "note": "Changed from \"kamu\" to \"Anda\" (September 2026): pages for adults (educators, partners, parents) use \"Anda\"; pages for learners keep \"kamu\". Drafted by AI, not yet reviewed."
   },
   "pages.setup.later.body": {
-    "source": "Save everyone's work to a file, then load the file on the next device. Recordings aren't in the file. Keep the file safe: anyone with it can read the work.",
-    "back": "Save all learners' work to a file, then load that file on the next device. Recordings don't go into the file. Keep that file carefully: anyone who holds it can read the work inside."
+    "source": "In Settings, choose All learners on this device, save the work to a file, then load the file on the next device. Recordings aren't in the file. Keep the file safe: anyone with it can read the work.",
+    "back": "In Settings, choose All learners on this device, save the work to a file, then load it on the next device. Recordings are not included. Keep the file carefully: anyone who holds it can read it.",
+    "flag": true,
+    "note": "Changed October 2026 (pilot dry run): the checklist now says which Settings choice saves everyone's work, because Settings opens on the learner using the device. AI-drafted from the new English; the Settings label quoted is the one in this language's file. Needs a native reviewer."
   },
   "pages.setup.later.open": {
     "source": "Save work to a file in Settings",

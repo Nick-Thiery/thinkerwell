@@ -3176,10 +3176,10 @@
     "back": "Before resetting or returning this device"
   },
   "pages.setup.later.body": {
-    "source": "Save everyone's work to a file, then load the file on the next device. Recordings aren't in the file. Keep the file safe: anyone with it can read the work.",
-    "back": "Save everyone's work to a file, then upload that file onto the next device. Recordings are not in the file. Keep the file carefully: anyone who has the file can read the work.",
+    "source": "In Settings, choose All learners on this device, save the work to a file, then load the file on the next device. Recordings aren't in the file. Keep the file safe: anyone with it can read the work.",
+    "back": "In Settings, choose All learners on this device, save the work to a file, then load the work from that file on the next device. Recordings are not in the file. Keep the file carefully: anyone who has the file can read the work.",
     "flag": true,
-    "note": "Review: MEANING ERROR: 'tải ... lên' reads as 'upload', which contradicts the privacy rule that nothing is uploaded. Now matches Settings' 'Tải bài làm từ một tệp'. The same 'tải tệp lên' wording appears in other slices (Settings move-work intro 'Sau đó tải tệp lên thiết bị kia'; setup-guide p6 'tải tệp đó lên thiết bị tiếp theo') and should be fixed there. [Reviewer changed: rồi tải tệp đó lên thiết bị tiếp theo → rồi tải bài làm từ tệp đó trên thiết bị tiếp theo]"
+    "note": "Changed October 2026 (pilot dry run): the checklist now says which Settings choice saves everyone's work, because Settings opens on the learner using the device. AI-drafted from the new English; the Settings label quoted is the one in this language's file. Needs a native reviewer."
   },
   "pages.setup.later.open": {
     "source": "Save work to a file in Settings",

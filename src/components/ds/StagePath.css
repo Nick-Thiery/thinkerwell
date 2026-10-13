@@ -147,16 +147,18 @@
 }
 
 .tw-stages-compact li + li::before {
-  width: 12px;
+  width: 8px;
 }
 
 /*
- * Below 360px (a small phone, or a laptop zoomed to 400%) five steps and the
- * current step's name don't fit on one line, so the current step shows its
- * icon only, like the others (its name stays for screen readers), and the
- * joins get shorter.
+ * Below 380px (a small phone, a 360px Android, an iPhone SE or a laptop zoomed
+ * to 400%) five steps and the current step's name don't fit on one line (the
+ * last step, Reflect, was cut off), so the current step shows its icon only,
+ * like the others (its name stays for screen readers), and the joins get
+ * shorter. From 380px the joins are 8px, which is what lets "Refleksi" fit
+ * at 390px.
  */
-@media (max-width: 359px) {
+@media (max-width: 379px) {
   .tw-stages-compact .tw-step[aria-current='step'] {
     padding-inline-end: 6px;
   }
