@@ -48,7 +48,7 @@ function storageLog(page: Page): Promise<{ persisted: number; persist: number }>
   return page.evaluate(() => (window as unknown as { __storageLog: { persisted: number; persist: number } }).__storageLog);
 }
 
-test('a staff member works through the setup checklist, which asks the browser nothing risky as it opens', async ({ page }) => {
+test('a staff member works through the setup checklist, which asks the browser nothing risky as it opens', { tag: '@chromium-only' }, async ({ page }) => {
   await fakeSpeechRecognition(page, 'available');
   await fakePersistentStorage(page);
 
@@ -127,7 +127,7 @@ test('a staff member works through the setup checklist, which asks the browser n
   await expect(page.getByRole('button', { name: 'Save my work to a file' })).toBeInViewport();
 });
 
-test('the class view shows each learner by name without scores, and every certificate prints on its own landscape page', async ({ page }) => {
+test('the class view shows each learner by name without scores, and every certificate prints on its own landscape page', { tag: '@chromium-only' }, async ({ page }) => {
   // Yusuf is added first; the class view still lists Amina first.
   await addLearnerViaUi(page, 'Yusuf');
   for (const lesson of sectionLessons('culture')) await finishLessonViaReflect(page, lesson);

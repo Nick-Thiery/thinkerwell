@@ -17,7 +17,7 @@ interface FakeSpeech {
   finish: () => void;
 }
 
-test('with no device voice, on-device speech or microphone, only Listen (its recordings) shows, and nothing breaks', async ({
+test('with no device voice, on-device speech or microphone, only Listen (its recordings) shows, and nothing breaks', { tag: '@chromium-only' }, async ({
   page,
   baseURL,
 }) => {

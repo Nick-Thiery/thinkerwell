@@ -108,7 +108,7 @@ test('an organisation finds the kit from the first page, in the footer and on th
 });
 
 for (const locale of ['en', 'id'] as const) {
-  test.describe(`on paper (${locale})`, () => {
+  test.describe(`on paper (${locale})`, { tag: '@chromium-only' }, () => {
     test.beforeEach(async ({ page }) => {
       if (locale === 'id') await useIndonesian(page);
     });

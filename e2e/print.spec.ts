@@ -69,7 +69,7 @@ async function a4Pages(page: Page): Promise<number> {
   return pdf.toString('latin1').match(/\/Type\s*\/Page(?!s)/g)?.length ?? 0;
 }
 
-test('a teacher guide prints on a few A4 pages, in black on white, without the header or its buttons', async ({ page }) => {
+test('a teacher guide prints on a few A4 pages, in black on white, without the header or its buttons', { tag: '@chromium-only' }, async ({ page }) => {
   await page.goto('/educators/lesson/towns-near-rivers');
   await expect(page.locator('h1')).toHaveText(L10.title);
   await expect(page.getByRole('button', { name: 'Print' })).toBeVisible();
@@ -96,7 +96,7 @@ test('a teacher guide prints on a few A4 pages, in black on white, without the h
   expect(await a4Pages(page)).toBeLessThanOrEqual(6);
 });
 
-test("a section check's answer key prints on a few A4 pages, in black on white, with every answer marked in words", async ({ page }) => {
+test("a section check's answer key prints on a few A4 pages, in black on white, with every answer marked in words", { tag: '@chromium-only' }, async ({ page }) => {
   await page.goto('/educators/section/history/answers');
   await expect(page.locator('h1')).toHaveText('Answer key: History & Human Stories');
 

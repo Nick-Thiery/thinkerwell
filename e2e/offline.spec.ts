@@ -49,7 +49,7 @@ test('the service worker keeps only this site\'s own files, the whole course amo
   expect(paths).toContain('/images/thinkerwell-mascot-transparent.png');
 });
 
-test('after the first visit, lessons open offline, with their pictures, and the banners say so', async ({
+test('after the first visit, lessons open offline, with their pictures, and the banners say so', { tag: '@chromium-only' }, async ({
   page,
   context,
 }) => {
@@ -106,7 +106,7 @@ test('after the first visit, lessons open offline, with their pictures, and the 
   await expect(offline).toHaveCount(0);
 });
 
-test('a learner keeps working offline: the dashboard says so, Watch opens on Read instead, and writing is kept', async ({
+test('a learner keeps working offline: the dashboard says so, Watch opens on Read instead, and writing is kept', { tag: '@chromium-only' }, async ({
   page,
   context,
 }) => {
@@ -135,7 +135,7 @@ test('a learner keeps working offline: the dashboard says so, Watch opens on Rea
   await expect(page.getByRole('textbox').first()).toHaveValue('Rivers give towns water and a way to trade.');
 });
 
-test('a section finished offline gets its certificate offline, with the mascot and the wordmark font', async ({ page, context }) => {
+test('a section finished offline gets its certificate offline, with the mascot and the wordmark font', { tag: '@chromium-only' }, async ({ page, context }) => {
   test.setTimeout(90_000);
   await addLearnerViaUi(page, 'Amina');
   await waitUntilOfflineReady(page);
@@ -159,7 +159,7 @@ test('a section finished offline gets its certificate offline, with the mascot a
   expect(fontsLoaded).toEqual(expect.arrayContaining(['Eczar', 'Funnel Display', 'Atkinson Hyperlegible Next']));
 });
 
-test('the setup checklist, the class view, all certificates and the partner kit open offline, and the checklist says the course is saved', async ({
+test('the setup checklist, the class view, all certificates and the partner kit open offline, and the checklist says the course is saved', { tag: '@chromium-only' }, async ({
   page,
   context,
 }) => {

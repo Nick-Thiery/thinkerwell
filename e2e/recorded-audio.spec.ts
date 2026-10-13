@@ -118,7 +118,7 @@ test.describe('offline', () => {
     });
   }
 
-  test('a part played once plays again offline, from the recordings’ own cache', async ({ page, context }) => {
+  test('a part played once plays again offline, from the recordings’ own cache', { tag: '@chromium-only' }, async ({ page, context }) => {
     test.setTimeout(60_000);
     await page.goto(L10.path('read'));
     await waitUntilOfflineReady(page);

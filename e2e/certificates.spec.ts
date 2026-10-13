@@ -41,7 +41,7 @@ async function printedInk(page: Page): Promise<{ text: string[]; fills: string[]
   });
 }
 
-test('finishing a section offers a certificate that prints on one landscape page, A4 or Letter', async ({ page }) => {
+test('finishing a section offers a certificate that prints on one landscape page, A4 or Letter', { tag: '@chromium-only' }, async ({ page }) => {
   await addLearnerViaUi(page, 'Amina');
 
   // The first four lessons: no offer yet.

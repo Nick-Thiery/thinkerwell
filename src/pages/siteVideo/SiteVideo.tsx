@@ -1,4 +1,4 @@
-import { useEffect, useId, useMemo, useRef, useState } from 'react';
+import { useEffect, useId, useMemo, useRef, useState, type SyntheticEvent } from 'react';
 import words from 'virtual:thinkerwell/messages/siteVideo';
 import { Badge, Button, Icon, StatusBanner, VideoCard } from '../../components/ds';
 import { ENGLISH, findLocale, useI18n, withWords } from '../../i18n';
@@ -199,6 +199,16 @@ export function SiteVideo({ video: id, watchVariant = 'primary', wide = false, h
     setView('written');
   };
 
+  // Safari ignores a track's `default` flag, so the captions would stay
+  // off. Turn on the one that matches the page's language once the
+  // video's details are known (a learner can still switch them off).
+  const showDefaultTrack = (event: SyntheticEvent<HTMLVideoElement>) => {
+    const wanted = locale in video.subtitles ? locale : 'en';
+    for (const track of Array.from(event.currentTarget.textTracks)) {
+      if (track.language === wanted && track.mode !== 'showing') track.mode = 'showing';
+    }
+  };
+
   const player =
     shownView === 'player' ? (
       <video
@@ -213,6 +223,7 @@ export function SiteVideo({ video: id, watchVariant = 'primary', wide = false, h
         tabIndex={0}
         preload="auto"
         aria-label={title}
+        onLoadedMetadata={showDefaultTrack}
         onLoadedData={() => setLoaded(true)}
         onError={onVideoError}
       >
