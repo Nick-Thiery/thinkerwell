@@ -257,7 +257,14 @@ export const watchSchema = z.strictObject({
   /** For the team: a possible better video. Not shown to learners. */
   replacementSuggestion: replacementSuggestionSchema.nullable(),
 });
-export type Watch = z.infer<typeof watchSchema>;
+/**
+ * A lesson's Watch step. `localVideo` is never written in a lesson file (the
+ * schema above is strict): src/content/localVideos.ts sets it when, for a
+ * language with its own videos, a lesson's video is an approved local one
+ * (content/<code>/videos.json), so the pages know the video, its title and
+ * its channel are in the language on screen and not in English.
+ */
+export type Watch = z.infer<typeof watchSchema> & { localVideo?: true };
 
 export const reflectPromptSchema = z.strictObject({
   text,
@@ -335,7 +342,7 @@ export const lessonSchema = z.strictObject({
   /** For reviewers: what changed from Base44. Not shown to learners. */
   changes: z.array(text),
 });
-export type Lesson = z.infer<typeof lessonSchema>;
+export type Lesson = Omit<z.infer<typeof lessonSchema>, 'watch'> & { watch: Watch };
 
 // ------------------------------------------------------------------ any course
 //
@@ -629,6 +636,71 @@ export const COURSE_SCHEMAS = {
   'digital-world': { course: digitalWorldCourseFileSchema, lesson: digitalWorldLessonSchema },
 } as const;
 export type CourseSchemaId = keyof typeof COURSE_SCHEMAS;
+
+// --------------------------------------------------- local-language videos
+//
+// content/<code>/videos.json (docs/notes/local-language-videos.md): for a
+// language whose lessons are translated, a lesson's own Watch video, in that
+// language, instead of the English one. An entry changes nothing until a
+// person has watched the video and set `approved: true` with their name and
+// the date (`npm run videos:apply`); an entry with `approved: false` is only
+// a note that a video was considered, and never reaches the browser.
+
+const isoDate = z
+  .string()
+  .regex(/^\d{4}-\d{2}-\d{2}$/, 'must be a date like 2026-10-14')
+  .refine(
+    (value) => {
+      const date = new Date(`${value}T00:00:00Z`);
+      return !Number.isNaN(date.getTime()) && date.toISOString().startsWith(value);
+    },
+    { message: 'must be a real date' },
+  );
+
+/** Where an approved summary came from. Only a person who watched, or a transcript, make a summary reliable. */
+export const SUMMARY_BASES = ['watched', 'transcript', 'description', 'title-and-description'] as const;
+
+export const approvedLocalVideoSchema = z.strictObject({
+  approved: z.literal(true),
+  /** Who watched the video and approved it for learners (a name). */
+  approvedBy: text,
+  approvedOn: isoDate,
+  youtubeId: watchSchema.shape.youtubeId,
+  /** In the language of the file. */
+  title: text,
+  channel: text,
+  durationSeconds: z.number().int().positive().nullable(),
+  why: text,
+  beforeQuestion: text,
+  afterQuestion: text,
+  /** The written version ("Read instead"), in the language of the file. */
+  summary: text,
+  summaryBasis: z.enum(SUMMARY_BASES),
+  keyPoints: z.array(text).min(1),
+  contentNote: text.nullable(),
+});
+export type ApprovedLocalVideo = z.infer<typeof approvedLocalVideoSchema>;
+
+export const pendingLocalVideoSchema = z.strictObject({
+  approved: z.literal(false),
+  youtubeId: watchSchema.shape.youtubeId,
+  title: text,
+  channel: text,
+  /** Why it is not approved (for the team). */
+  note: text.optional(),
+});
+export type PendingLocalVideo = z.infer<typeof pendingLocalVideoSchema>;
+
+export const localVideoEntrySchema = z.discriminatedUnion('approved', [approvedLocalVideoSchema, pendingLocalVideoSchema]);
+export type LocalVideoEntry = z.infer<typeof localVideoEntrySchema>;
+
+export const localVideosFileSchema = z.strictObject({
+  /** The language's code: the folder the file is in (src/i18n/locales.ts). */
+  language: z.string().regex(/^[a-z]{2,3}(?:-[A-Za-z0-9]+)*$/, 'must be a language code like "id"'),
+  /** By lesson file name ("L05"). */
+  lessons: z.record(z.string().regex(/^L\d\d$/, 'must be a lesson file name like "L05"'), localVideoEntrySchema),
+});
+export type LocalVideosFile = z.infer<typeof localVideosFileSchema>;
 
 // ------------------------------------------------------- quizzes (section checks)
 

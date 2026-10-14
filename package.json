@@ -30,6 +30,8 @@
     "review:export": "sh scripts/py.sh scripts/i18n/export_review.py",
     "review:import": "sh scripts/py.sh scripts/i18n/import_review.py",
     "test:review": "sh scripts/py.sh -m unittest discover -s scripts/i18n -p \"test_*.py\"",
+    "videos:apply": "node --experimental-strip-types --no-warnings tools/videos/apply.ts",
+    "videos:report": "node --experimental-strip-types --no-warnings tools/videos/report.ts",
     "audio:export": "node --experimental-strip-types --no-warnings tools/audio/export.ts",
     "audio:generate": "node --experimental-strip-types --no-warnings tools/audio/export.ts .audio-cache/export.json && sh scripts/audio/python.sh scripts/audio/generate.py .audio-cache/export.json",
     "size": "node tools/report-sizes.mjs",

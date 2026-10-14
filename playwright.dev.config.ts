@@ -4,7 +4,10 @@ import { defineConfig, devices } from '@playwright/test';
 // only when Vite runs in dev mode (import.meta.env.DEV) — unlike
 // playwright.config.ts, this runs against `vite` itself, not a production
 // build + preview. Kept separate so the production e2e run (npm run
-// test:e2e) never depends on dev-only pages, and vice versa.
+// test:e2e) never depends on dev-only pages, and vice versa. It also
+// serves test-only local-language videos (TW_TEST_LOCAL_VIDEOS below,
+// e2e-dev/local-videos.spec.ts): the dev server alone can do that, so no
+// production build can contain them.
 const PORT = 4318;
 const externalBaseURL = process.env.E2E_BASE_URL;
 
@@ -36,6 +39,8 @@ export default defineConfig({
     : {
         webServer: {
           command: `npx vite --port ${PORT} --strictPort`,
+          // Serves e2e-dev/fixtures/local-videos/<code>.json as content/<code>/videos.json (vite.config.ts, testLocalVideos).
+          env: { TW_TEST_LOCAL_VIDEOS: 'e2e-dev/fixtures/local-videos' },
           port: PORT,
           reuseExistingServer: false,
           timeout: 60_000,

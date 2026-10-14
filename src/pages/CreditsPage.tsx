@@ -4,8 +4,11 @@
  *
  * - Lesson sources: every lesson's `sources`, lesson by lesson (the lessons
  *   are in Thinkerwell's own words; these are where the facts come from).
- * - Videos: each lesson's video, its channel and a link to it on YouTube.
- *   Only links: nothing is embedded or fetched here.
+ * - Videos: each lesson's video, its channel and a link to it on YouTube,
+ *   and, for a language with approved videos of its own (content/<code>/videos.json,
+ *   docs/notes/local-language-videos.md), that language's video for the lesson
+ *   too: every video a learner can be shown. Only links: nothing is embedded
+ *   or fetched from YouTube here.
  * - Pictures and design, the UN goal icons (with the UN's own statement),
  *   the fonts, the open-source software the site ships, Listen's recorded
  *   voices with their licences (docs/notes/recorded-audio.md), and how the
@@ -14,10 +17,15 @@
  * It reads the lessons (useContent), so it lives in the teacher pages'
  * chunk with the teacher guides, which read them too.
  */
-import type { ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { useFullPageTitle } from '../app/usePageTitle';
+import { getLesson } from '../content';
+import { loadLocalVideosFile } from '../content/localVideoFiles';
+import { approvedLocalVideos } from '../content/localVideos';
+import type { ApprovedLocalVideo } from '../content/schema';
 import { useContent } from '../content/useContent';
 import { useI18n, type MessageKey } from '../i18n';
+import { LOCALES, readyLocales } from '../i18n/locales';
 import './CreditsPage.css';
 
 const UN_SDG_URL = 'https://www.un.org/sustainabledevelopment';
@@ -83,9 +91,49 @@ function ExternalLink({ href, children }: { href: string; children: ReactNode })
   );
 }
 
+/** A language's approved videos by lesson ("L05"), with the language's code and its own name. */
+interface LocalVideoList {
+  code: string;
+  endonym: string;
+  videos: ReadonlyMap<string, ApprovedLocalVideo>;
+}
+
+/**
+ * The approved videos of every language that has some, whichever language is on
+ * screen. Each language's list is its own small file (src/content/localVideoFiles.ts),
+ * loaded here without that language's lessons; a file that can't be loaded is
+ * left out, and the English videos are listed as always.
+ */
+function useLocalVideoLists(): readonly LocalVideoList[] {
+  const [lists, setLists] = useState<readonly LocalVideoList[]>([]);
+  useEffect(() => {
+    let current = true;
+    void Promise.all(
+      readyLocales(LOCALES)
+        .filter((locale) => locale.content)
+        .map(async (locale): Promise<LocalVideoList | null> => {
+          try {
+            const videos = approvedLocalVideos(await loadLocalVideosFile(locale.code));
+            return videos.size > 0 ? { code: locale.code, endonym: locale.endonym, videos } : null;
+          } catch {
+            return null;
+          }
+        }),
+    ).then((found) => {
+      const some = found.filter((list): list is LocalVideoList => list !== null);
+      if (current && some.length > 0) setLists(some);
+    });
+    return () => {
+      current = false;
+    };
+  }, []);
+  return lists;
+}
+
 export function CreditsPage() {
   const { t, tx, contentLang, englishLang } = useI18n();
   const content = useContent();
+  const localVideoLists = useLocalVideoLists();
   const title = t('pages.credits.title');
   useFullPageTitle(t('seo.credits.title'));
   const lessons = content.getLessons();
@@ -144,19 +192,40 @@ export function CreditsPage() {
         </h2>
         <p>{t('pages.credits.videosBody')}</p>
         <ul className="tw-credits-videos">
-          {lessons.map((lesson) => (
-            <li key={lesson.id}>
-              <span className="tw-credits-video-lesson">
-                {tx('pages.credits.lessonHeading', { number: lesson.number, title: <span {...contentLang}>{lesson.title}</span> })}
-              </span>
-              <ExternalLink href={`https://www.youtube.com/watch?v=${encodeURIComponent(lesson.watch.youtubeId)}`}>
-                <span {...englishLang}>{lesson.watch.title}</span>
-              </ExternalLink>
-              <span className="small tw-credits-muted">
-                {tx('pages.credits.videoBy', { channel: <span {...englishLang}>{lesson.watch.channel}</span> })}
-              </span>
-            </li>
-          ))}
+          {lessons.map((lesson) => {
+            // The English video of every lesson (the one a lesson shows unless its language has an approved video of its own).
+            const video = (getLesson(lesson.id) ?? lesson).watch;
+            const key = `L${String(lesson.number).padStart(2, '0')}`;
+            return (
+              <li key={lesson.id}>
+                <span className="tw-credits-video-lesson">
+                  {tx('pages.credits.lessonHeading', { number: lesson.number, title: <span {...contentLang}>{lesson.title}</span> })}
+                </span>
+                <ExternalLink href={`https://www.youtube.com/watch?v=${encodeURIComponent(video.youtubeId)}`}>
+                  <span {...englishLang}>{video.title}</span>
+                </ExternalLink>
+                <span className="small tw-credits-muted">
+                  {tx('pages.credits.videoBy', { channel: <span {...englishLang}>{video.channel}</span> })}
+                </span>
+                {localVideoLists.map((list) => {
+                  const local = list.videos.get(key);
+                  return local ? (
+                    <span className="tw-credits-local-video" key={list.code}>
+                      <span className="small tw-credits-muted" lang={list.code}>
+                        {list.endonym}
+                      </span>
+                      <ExternalLink href={`https://www.youtube.com/watch?v=${encodeURIComponent(local.youtubeId)}`}>
+                        <span lang={list.code}>{local.title}</span>
+                      </ExternalLink>
+                      <span className="small tw-credits-muted">
+                        {tx('pages.credits.videoBy', { channel: <span lang={list.code}>{local.channel}</span> })}
+                      </span>
+                    </span>
+                  ) : null;
+                })}
+              </li>
+            );
+          })}
         </ul>
       </section>
 

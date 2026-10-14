@@ -12,6 +12,7 @@
  *
  * Nothing here downloads anything for an English-only visit.
  */
+import { loadLocalVideosFile } from '../content/localVideoFiles';
 import { ENGLISH, type ContentTranslation, type LoadedLocale, type MessageTree } from './core';
 import { findLocale, SOURCE_LOCALE } from './locales';
 
@@ -45,17 +46,19 @@ async function fetchContent(code: string): Promise<ContentTranslation> {
       ),
     ) as Record<string, T>;
   const course = contentFiles[`${prefix}course.json`];
-  const [courseTranslation, lessons, quizzes, visuals] = await Promise.all([
+  const [courseTranslation, lessons, quizzes, visuals, videos] = await Promise.all([
     course ? course() : Promise.resolve({}),
     load(contentFiles, 'lessons'),
     load(contentFiles, 'quizzes'),
     load(visualFiles, 'visuals'),
+    loadLocalVideosFile(code),
   ]);
   return {
     course: courseTranslation,
     lessons,
     quizzes,
     visuals: Object.fromEntries(Object.entries(visuals).map(([name, url]) => [`visuals/${name}`, url])),
+    videos,
   };
 }
 
