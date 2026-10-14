@@ -164,3 +164,11 @@
     padding-block-end: 0;
   }
 }
+
+/* A language's own video for a lesson, under the lesson's English one. */
+.tw-credits-local-video {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-block-start: var(--space-2);
+}

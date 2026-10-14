@@ -67,6 +67,12 @@ export interface ContentTranslation {
   quizzes: Record<string, unknown>;
   /** Built URLs of the translated pictures (content/<code>/visuals/), keyed like a lesson's visual.src ("visuals/L01.svg"). */
   visuals: Record<string, string>;
+  /**
+   * content/<code>/videos.json: this language's own Watch videos, by lesson
+   * ("L05"), laid over the English lessons' video (src/content/localVideos.ts).
+   * Only approved entries; none until a person has watched and approved one.
+   */
+  videos?: unknown;
 }
 
 export interface LoadedLocale {

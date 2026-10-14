@@ -20,9 +20,12 @@ import { LOCALES, readyLocales, type LocaleDefinition } from './locales.ts';
  * Matches a language's message file, its translated content (content/<code>/:
  * course, lessons, section checks and pictures' URLs), a pseudo-language,
  * the pseudo-language code and the fonts' stylesheets in the module graph.
+ * A language's videos.json (src/content/localVideos.ts) is one: its own small
+ * chunk, `locale-<code>-videos`, so the Credits page can list the approved
+ * videos of every language without that language's lessons.
  */
 export const LANGUAGE_MODULE =
-  /(?:[\\/]src[\\/]i18n[\\/](?:messages[\\/][^\\/]+\.json|pseudo\.ts|fonts[\\/](?:arabic|vietnamese)\.css)|[\\/]content[\\/][a-z]{2,3}(?:-[A-Za-z0-9]+)*[\\/](?:course\.json|(?:lessons|quizzes)[\\/][^\\/]+\.json|visuals[\\/][^\\/]+\.svg\?url)|tw-pseudo-locale:[^\\/]+)$/;
+  /(?:[\\/]src[\\/]i18n[\\/](?:messages[\\/][^\\/]+\.json|pseudo\.ts|fonts[\\/](?:arabic|vietnamese)\.css)|[\\/]content[\\/][a-z]{2,3}(?:-[A-Za-z0-9]+)*[\\/](?:course\.json|videos\.json|(?:lessons|quizzes)[\\/][^\\/]+\.json|visuals[\\/][^\\/]+\.svg\?url)|tw-pseudo-locale:[^\\/]+)$/;
 
 /** A language's translated content file (content/<code>/...), by its code, or null. */
 function contentLanguage(id: string): string | null {
@@ -39,6 +42,8 @@ export function languageChunkName(moduleId: string): string | null {
   const id = moduleId.replace(/\\/g, '/');
   const messages = /\/src\/i18n\/messages\/([^/]+)\.json$/.exec(id);
   if (messages) return messages[1] === 'en' || messages[1] === 'en.notes' ? null : `locale-${messages[1]}`;
+  const videos = /\/content\/([a-z]{2,3}(?:-[A-Za-z0-9]+)*)\/videos\.json$/.exec(id);
+  if (videos) return `locale-${videos[1]}-videos`;
   const content = contentLanguage(id);
   if (content) return `locale-${content}`;
   const pseudo = /tw-pseudo-locale:([^/]+)$/.exec(id);
@@ -51,6 +56,7 @@ export function languageChunkName(moduleId: string): string | null {
 
 /** The file name pattern for a chunk (output.chunkFileNames), by its name. */
 export function languageChunkFileName(chunkName: string): string {
+  if (chunkName.startsWith('locale-') && chunkName.endsWith('-videos')) return `assets/locales/${chunkName.slice('locale-'.length, -'-videos'.length)}/videos-[hash].js`;
   if (chunkName.startsWith('locale-')) return `assets/locales/${chunkName.slice('locale-'.length)}/[hash].js`;
   if (chunkName === 'pseudo' || chunkName.startsWith('pseudo-')) return 'assets/pseudo/[name]-[hash].js';
   if (chunkName === 'font-arabic') return 'assets/fonts-arabic/[name]-[hash].js';

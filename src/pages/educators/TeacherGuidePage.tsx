@@ -42,6 +42,8 @@ export function TeacherGuidePage({ lesson }: { lesson: CourseLesson }) {
   const section = content.getLessonSection(lesson);
   const [min, max] = lesson.estimatedMinutes;
   const { read, write, speak, watch, reflect } = lesson;
+  // A video's title and channel are English, unless this lesson has an approved video in the language on screen.
+  const videoLang = watch.localVideo ? en : alwaysEn;
   const thinkChecks = read.checks.filter((check): check is ThinkCheck => check.type === 'think');
 
   return (
@@ -237,11 +239,11 @@ export function TeacherGuidePage({ lesson }: { lesson: CourseLesson }) {
           <dl className="tw-guide-facts">
             <div>
               <dt>{t('pages.teacherGuide.videoName')}</dt>
-              <dd {...alwaysEn}>{watch.title}</dd>
+              <dd {...videoLang}>{watch.title}</dd>
             </div>
             <div>
               <dt>{t('pages.teacherGuide.videoChannel')}</dt>
-              <dd {...alwaysEn}>{watch.channel}</dd>
+              <dd {...videoLang}>{watch.channel}</dd>
             </div>
             <div>
               <dt>{t('pages.teacherGuide.videoLength')}</dt>

@@ -78,6 +78,8 @@ export function LessonPrintSheet({ lesson, titleId = 'print-title', newPage = fa
   const section = content.getLessonSection(lesson);
   const [min, max] = lesson.estimatedMinutes;
   const { read, write, speak, watch, reflect } = lesson;
+  // A video's title and channel are English, unless this lesson has an approved video in the language on screen.
+  const videoWord = (word: string) => (watch.localVideo ? word : <AlwaysEn>{word}</AlwaysEn>);
 
   return (
     <article className={newPage ? 'tw-print-sheet tw-print-new-page' : 'tw-print-sheet'} aria-labelledby={titleId}>
@@ -212,13 +214,13 @@ export function LessonPrintSheet({ lesson, titleId = 'print-title', newPage = fa
 
       <section className="tw-print-part">
         <h2>{t('print.watchTitle')}</h2>
-        <p className="tw-print-muted">{tx('print.videoNote', { title: <AlwaysEn>{watch.title}</AlwaysEn>, channel: <AlwaysEn>{watch.channel}</AlwaysEn> })}</p>
+        <p className="tw-print-muted">{tx('print.videoNote', { title: videoWord(watch.title), channel: videoWord(watch.channel) })}</p>
         <div className="tw-print-keep">
           <h3>{t('lessonPlayer.watch.thinkFirst')}</h3>
           <p {...en}>{watch.beforeQuestion}</p>
           <AnswerLines count={2} />
         </div>
-        <h3>{tx('print.writtenVersion', { title: <AlwaysEn>{watch.title}</AlwaysEn> })}</h3>
+        <h3>{tx('print.writtenVersion', { title: videoWord(watch.title) })}</h3>
         {splitParagraphs(watch.summary).map((paragraph, index) => (
           <p key={index} className="tw-print-reading-text" {...en}>
             {paragraph}
