@@ -157,6 +157,8 @@ export function pdfPageOrientations(pdf: Buffer): Array<'landscape' | 'portrait'
  * (docs/notes/simpler-lessons.md), which this opens first.
  */
 export async function lessonSteps(page: Page, ui: UiText = uiText('en')): Promise<Locator> {
+  // The page has drawn its head (or the completion screen) before asking whether "All steps" is there.
+  await expect(page.locator('h1')).toBeVisible();
   const all = page.getByRole('button', { name: ui('lessonPlayer.shell.allSteps') });
   if ((await all.isVisible()) && (await all.getAttribute('aria-expanded')) !== 'true') await all.click();
   return page.getByRole('navigation', { name: ui('ds.chrome.stagePath.navLabel') });

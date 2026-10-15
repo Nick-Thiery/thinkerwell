@@ -1,5 +1,5 @@
 import { expect, test, type Page } from '@playwright/test';
-import { addLearnerViaUi, L10 } from './lessonHelpers';
+import { addLearnerViaUi, L10, lessonSteps } from './lessonHelpers';
 
 // Pilot measurement (docs/notes/pilot-measurement.md). It is OFF by default: with it off the app must make
 // no request to /api/ and must not even create the queue's database. ON takes three things together (a
@@ -125,7 +125,7 @@ test.describe('pilot measurement: off by default, and gated by all three', () =>
     await page.goto('/');
     await page.getByRole('button', { name: 'Just look around' }).click();
     await page.goto('/lesson/towns-near-rivers/read');
-    await page.getByRole('link', { name: /^Write/ }).first().click();
+    await (await lessonSteps(page)).getByRole('link', { name: /^Write/ }).click();
     await page.waitForTimeout(8_000);
     expect(seen.requests).toEqual([]);
     expect(await queuedCount(page)).toBe(0);
@@ -228,7 +228,7 @@ test.describe('pilot measurement: on', () => {
 
     await context.setOffline(true);
     // Client-side moves between lessons need no network.
-    await page.getByRole('link', { name: /^Write/ }).first().click();
+    await (await lessonSteps(page)).getByRole('link', { name: /^Write/ }).click();
     await expect(page).toHaveURL(/\/write$/);
     await page.waitForTimeout(8_000);
     expect(allEvents(seen).length).toBe(before);
