@@ -82,6 +82,10 @@ describe('WatchStage with an approved local video', () => {
     expect(frame.getAttribute('src')).toContain(`/embed/${FIXTURE_VIDEO_ID}`);
     expect(frame.getAttribute('src')).toContain('youtube-nocookie.com');
     expect(frame.getAttribute('src')).not.toContain(englishContent.getLessonByNumber(5)!.watch.youtubeId);
+    // Only the part of the video that fits the lesson, with the player and captions in the language.
+    const params = new URL(frame.getAttribute('src')!).searchParams;
+    expect([params.get('start'), params.get('end'), params.get('hl'), params.get('cc_lang_pref')]).toEqual(['30', '215', 'id', 'id']);
+    expect(params.get('autoplay')).toBeNull();
     expect(frame).toHaveAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
     expect(frame).not.toHaveAttribute('lang');
     expect(frame.getAttribute('title')).toBe(localEntry.title);
@@ -111,5 +115,8 @@ describe('WatchStage with an entry that is not approved', () => {
     expect(container.innerHTML).not.toContain(FIXTURE_UNAPPROVED_ID);
     await userEvent.click(screen.getByRole('button', { name: 'Watch the video' }));
     expect(container.querySelector('iframe')!.getAttribute('src')).toContain(`/embed/${english.youtubeId}`);
+    // The English video plays whole, with YouTube's own choice of player language.
+    const params = new URL(container.querySelector('iframe')!.getAttribute('src')!).searchParams;
+    expect([params.get('start'), params.get('end'), params.get('hl')]).toEqual([null, null, null]);
   });
 });

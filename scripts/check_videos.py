@@ -10,8 +10,10 @@ src/content/load.ts checkLocalVideos), plus checks on the words:
 - an entry with "approved": true says who approved it (approvedBy) and when
   (approvedOn), has a well-formed YouTube id (11 characters), a title, a
   channel, the questions, the written version (summary) and at least one key
-  point; an entry with "approved": false has only an id, title, channel and an
-  optional note. Unknown fields are errors;
+  point; optionally the part of a longer video it plays (startSeconds and
+  endSeconds, with durationSeconds the part's length) and the publisher's
+  channel (channelUrl); an entry with "approved": false has only an id, title,
+  channel and an optional note. Unknown fields are errors;
 - an approved video is not the lesson's English video;
 - the words an approved entry's teachers and learners read (why, the two
   questions, summary, key points, content note) are in the language: not
@@ -39,7 +41,9 @@ SUMMARY_BASES = {"watched", "transcript", "description", "title-and-description"
 APPROVED_FIELDS = {
     "approved", "approvedBy", "approvedOn", "youtubeId", "title", "channel", "durationSeconds", "why",
     "beforeQuestion", "afterQuestion", "summary", "summaryBasis", "keyPoints", "contentNote",
+    "startSeconds", "endSeconds", "channelUrl",
 }
+CHANNEL_URL = re.compile(r"^https://www\.youtube\.com/[@\w./-]+$")
 PENDING_FIELDS = {"approved", "youtubeId", "title", "channel", "note"}
 # The words learners and teachers read. (title and channel are YouTube's own words and may be in any language.)
 TEXT_FIELDS = ["why", "beforeQuestion", "afterQuestion", "summary", "contentNote"]
@@ -111,6 +115,18 @@ def check_entry(lang, key, entry, english_ids):
     duration = entry.get("durationSeconds", "missing")
     if duration == "missing" or not (duration is None or (isinstance(duration, int) and not isinstance(duration, bool) and duration > 0)):
         errs.append(f"{where}.durationSeconds: a whole number of seconds, or null")
+    # The part of a longer video the lesson plays: both ends or neither, in order, and the length is the part's.
+    start, end = entry.get("startSeconds"), entry.get("endSeconds")
+    if start is not None or end is not None:
+        whole = lambda v: isinstance(v, int) and not isinstance(v, bool) and v >= 0  # noqa: E731
+        if not whole(start) or not whole(end):
+            errs.append(f"{where}.startSeconds/endSeconds: both, as whole seconds, or neither")
+        elif end <= start:
+            errs.append(f"{where}.endSeconds: must be after startSeconds")
+        elif duration != end - start:
+            errs.append(f"{where}.durationSeconds: must be the part's length, {end - start}")
+    if "channelUrl" in entry and not (isinstance(entry["channelUrl"], str) and CHANNEL_URL.match(entry["channelUrl"])):
+        errs.append(f"{where}.channelUrl: a YouTube channel address like https://www.youtube.com/@name")
     for field in ["why", "beforeQuestion", "afterQuestion", "summary"]:
         if not is_text(entry.get(field)):
             errs.append(f"{where}.{field}: required")

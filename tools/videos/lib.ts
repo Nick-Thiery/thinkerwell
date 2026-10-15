@@ -10,26 +10,75 @@ import { LOCALES } from '../../src/i18n/locales.ts';
 
 export const ROOT = path.resolve(import.meta.dirname, '..', '..');
 
-/** A researched candidate, as docs/notes/local-videos/<lang>.json has it (only what apply reads). */
-export interface Candidate {
+/**
+ * Where a candidate stands (docs/notes/local-language-videos.md):
+ * - 'prescreened': its captions were read (by Claude, overnight) and it fits; it has draft questions and a draft
+ *   written version, and is recommended to a reviewer. Only a prescreened candidate can be approved.
+ * - 'unverified': it couldn't be checked (no captions, or YouTube wouldn't play it): a person must watch it first.
+ * - 'rejected': not suitable, with the reason in `screening.notes`.
+ * A candidate without a status (the older research notes) counts as prescreened.
+ */
+export type ReviewStatus = 'prescreened' | 'unverified' | 'rejected';
+
+/** How a candidate was checked, by whom and when, and what they found (for the team, in English). */
+export interface Screening {
+  by: string;
+  on: string;
+  notes: string;
+}
+
+/** A video that was looked at for a lesson but isn't the one recommended. */
+export interface ScreenedVideo {
   youtubeId: string;
   title: string;
   channel: string;
-  durationSeconds: number | null;
+  channelUrl?: string;
+  fullDurationSeconds?: number | null;
+  /** 'manual', 'auto' (YouTube's automatic captions), 'none', 'broken' or 'unknown'. */
+  captions?: string;
+  /** YouTube has made an AI-dubbed soundtrack of it, which it may play instead of the original. */
+  autoDubbed?: boolean;
   verifiedByOembed?: boolean;
+  reviewStatus?: ReviewStatus;
+  screening?: Screening;
+}
+
+/** The recommended candidate for a lesson, as docs/notes/local-videos/<lang>.json has it. */
+export interface Candidate extends ScreenedVideo {
+  /** For the part of a longer video, the part's length; otherwise the video's. */
+  durationSeconds: number | null;
+  startSeconds?: number;
+  endSeconds?: number;
+  spokenLanguage?: string;
   why: string;
   beforeQuestion: string;
   afterQuestion: string;
+  /** Which of the two questions differ from the lesson's translated ones (adapted to this video). */
+  questionsChanged?: string[];
   summary: string;
   summaryBasis: string;
   keyPoints: string[];
   contentNote: string | null;
+  /** Fits only in part: the screening suggests keeping the English video unless the reviewer likes it. */
+  weakFit?: boolean;
+}
+
+export interface CandidateSlot {
+  primary?: Candidate | null;
+  backup?: Candidate | null;
+  noGoodMatch?: boolean;
+  /** Every other video looked at for the lesson, with its status. */
+  screened?: ScreenedVideo[];
 }
 
 export interface CandidatesFile {
   language: string;
-  lessons: Record<string, { primary?: Candidate | null; backup?: Candidate | null; noGoodMatch?: boolean }>;
+  about?: string;
+  lessons: Record<string, CandidateSlot>;
 }
+
+/** A candidate's status; one without a status (the older research notes) counts as prescreened. */
+export const statusOf = (video: ScreenedVideo): ReviewStatus => video.reviewStatus ?? 'prescreened';
 
 /** The languages whose lessons are translated (src/i18n/locales.ts): the ones that can have videos of their own. */
 export const VIDEO_LANGUAGES = LOCALES.filter((locale) => locale.content).map((locale) => locale.code);

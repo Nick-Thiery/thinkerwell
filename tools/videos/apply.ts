@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // npm run videos:apply -- <lang> <L05,L09,...> --approved-by "Name"
-//     [--accept-unverified-summary] [--date 2026-10-14] [--dry-run]
+//     [--accept-unverified-summary] [--checked-audio] [--date 2026-10-14] [--dry-run]
 //
 // Approves local-language Watch videos (docs/notes/local-language-videos.md).
 // Copies each listed lesson's PRIMARY candidate from the research notes
@@ -12,7 +12,11 @@
 // person's statement that they did.
 //
 // Refuses (and writes nothing) when:
-// - a lesson has no primary candidate, or YouTube's check didn't accept it;
+// - a lesson has no primary candidate, it isn't "prescreened" (an unverified or
+//   rejected one can't be approved), or YouTube's check didn't accept it;
+// - YouTube has an AI-dubbed soundtrack of it (`autoDubbed`), unless
+//   `--checked-audio` says the reviewer played it on the learners' devices and
+//   heard the original language;
 // - the candidate's summary isn't based on a transcript (`summaryBasis` is
 //   "description" or "title-and-description": it says what the title and the
 //   description say, not what the video says), unless `--accept-unverified-summary`
@@ -30,6 +34,7 @@ import {
   videosPath,
   videosProblems,
   lessonKey,
+  statusOf,
   type Candidate,
   type CandidatesFile,
 } from './lib.ts';
@@ -42,6 +47,11 @@ export interface ApplyOptions {
   /** YYYY-MM-DD. */
   approvedOn: string;
   acceptUnverifiedSummary?: boolean;
+  /**
+   * The reviewer has played the video on the devices learners use and heard its own soundtrack, not YouTube's
+   * AI-dubbed one. Needed for a candidate YouTube has dubbed (`autoDubbed`).
+   */
+  checkedAudio?: boolean;
 }
 
 export interface Change {
@@ -82,6 +92,10 @@ function approvedEntry(candidate: Candidate, options: ApplyOptions): ApprovedLoc
     summaryBasis: candidate.summaryBasis as ApprovedLocalVideo['summaryBasis'],
     keyPoints: candidate.keyPoints,
     contentNote: candidate.contentNote ?? null,
+    ...(candidate.startSeconds !== undefined && candidate.endSeconds !== undefined
+      ? { startSeconds: candidate.startSeconds, endSeconds: candidate.endSeconds }
+      : {}),
+    ...(candidate.channelUrl ? { channelUrl: candidate.channelUrl } : {}),
   };
 }
 
@@ -108,6 +122,18 @@ export function planApproval(
     const candidate = found?.primary;
     if (!candidate) {
       refusals.push(`${lesson}: there is no primary candidate${found?.noGoodMatch ? ' (the research found no good match)' : ''} in docs/notes/local-videos/${options.language}.json.`);
+      continue;
+    }
+    const status = statusOf(candidate);
+    if (status !== 'prescreened') {
+      refusals.push(`${lesson}: its candidate is ${status}${candidate.screening ? ` (${candidate.screening.notes})` : ''}. Only a prescreened candidate can be approved.`);
+      continue;
+    }
+    if (candidate.autoDubbed && !options.checkedAudio) {
+      refusals.push(
+        `${lesson}: YouTube has an AI-dubbed soundtrack of ${candidate.youtubeId}, which it may play instead of the original. ` +
+          'Play it on the devices learners use; if you hear the original language, add --checked-audio to say you did.',
+      );
       continue;
     }
     if (candidate.verifiedByOembed === false) {
@@ -151,7 +177,7 @@ export function serialiseVideos(file: LocalVideosFile): string {
   return `${JSON.stringify(file, null, 2)}\n`;
 }
 
-const USAGE = `Usage: npm run videos:apply -- <lang> <L05,L09,...> --approved-by "Name" [--accept-unverified-summary] [--date YYYY-MM-DD] [--dry-run]
+const USAGE = `Usage: npm run videos:apply -- <lang> <L05,L09,...> --approved-by "Name" [--accept-unverified-summary] [--checked-audio] [--date YYYY-MM-DD] [--dry-run]
 Languages: ${VIDEO_LANGUAGES.join(', ')}`;
 
 /** Reads the command line. Returns an error message instead of options when it can't. */
@@ -160,6 +186,7 @@ export function parseArgs(argv: string[], today = new Date().toISOString().slice
   let approvedBy = '';
   let approvedOn = today;
   let acceptUnverifiedSummary = false;
+  let checkedAudio = false;
   let dryRun = false;
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i]!;
@@ -172,6 +199,7 @@ export function parseArgs(argv: string[], today = new Date().toISOString().slice
     if (by !== null) approvedBy = by;
     else if (on !== null) approvedOn = on;
     else if (arg === '--accept-unverified-summary') acceptUnverifiedSummary = true;
+    else if (arg === '--checked-audio') checkedAudio = true;
     else if (arg === '--dry-run') dryRun = true;
     else if (arg.startsWith('--')) return `Unknown option ${arg}.\n${USAGE}`;
     else positional.push(arg);
@@ -185,7 +213,7 @@ export function parseArgs(argv: string[], today = new Date().toISOString().slice
     if (!key) return `"${piece}" is not a lesson. Write lessons like L05,L09.\n${USAGE}`;
     if (!lessons.includes(key)) lessons.push(key);
   }
-  return { language, lessons, approvedBy: approvedBy.trim(), approvedOn, acceptUnverifiedSummary, dryRun };
+  return { language, lessons, approvedBy: approvedBy.trim(), approvedOn, acceptUnverifiedSummary, checkedAudio, dryRun };
 }
 
 function main(): void {

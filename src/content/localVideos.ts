@@ -37,6 +37,14 @@ export function approvedLocalVideo(entry: unknown): ApprovedLocalVideo | null {
     if (!isText(entry[field])) return null;
   }
   if (entry.contentNote !== null && !isText(entry.contentNote)) return null;
+  // A part of a longer video: both ends, in order, and the length is the part's.
+  const { startSeconds, endSeconds } = entry;
+  if (startSeconds !== undefined || endSeconds !== undefined) {
+    const whole = (value: unknown): value is number => typeof value === 'number' && Number.isInteger(value) && value >= 0;
+    if (!whole(startSeconds) || !whole(endSeconds) || endSeconds <= startSeconds) return null;
+    if (durationSeconds !== endSeconds - startSeconds) return null;
+  }
+  if (entry.channelUrl !== undefined && !(typeof entry.channelUrl === 'string' && entry.channelUrl.startsWith('https://www.youtube.com/'))) return null;
   return entry as unknown as ApprovedLocalVideo;
 }
 
@@ -69,6 +77,10 @@ export function withLocalVideo<L extends { watch: Watch }>(lesson: L, video: App
     // The team's note about a better English video says nothing about this one.
     replacementSuggestion: null,
     localVideo: true,
+    ...(video.startSeconds !== undefined && video.endSeconds !== undefined
+      ? { startSeconds: video.startSeconds, endSeconds: video.endSeconds }
+      : {}),
+    ...(video.channelUrl ? { channelUrl: video.channelUrl } : {}),
   };
   return { ...lesson, watch };
 }

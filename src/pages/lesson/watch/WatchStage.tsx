@@ -70,7 +70,7 @@ type FocusTarget = 'player' | 'written' | 'watch';
  * - A learner who chose "Read instead" comes back to the written version.
  */
 export function WatchStage() {
-  const { t, formatNumber, contentLang, englishLang, content } = useI18n();
+  const { t, formatNumber, contentLang, englishLang, content, contentLocale } = useI18n();
   const { lesson, progress, update, stageEvent, settings } = useLessonPlayer();
   const { watch } = lesson;
   // The video's title and channel are its own words: English, unless this lesson has an approved video in the
@@ -318,7 +318,7 @@ export function WatchStage() {
                 <iframe
                   key={attempt}
                   ref={iframeRef}
-                  src={youtubeEmbedUrl(watch.youtubeId, window.location.origin)}
+                  src={youtubeEmbedUrl(watch.youtubeId, window.location.origin, watch, watch.localVideo ? contentLocale.code : undefined)}
                   title={watch.title}
                   {...videoLang}
                   allow={PLAYER_ALLOW}

@@ -264,7 +264,14 @@ export const watchSchema = z.strictObject({
  * (content/<code>/videos.json), so the pages know the video, its title and
  * its channel are in the language on screen and not in English.
  */
-export type Watch = z.infer<typeof watchSchema> & { localVideo?: true };
+export type Watch = z.infer<typeof watchSchema> & {
+  localVideo?: true;
+  /** For an approved local video that is part of a longer one: where the part starts and ends, in seconds. */
+  startSeconds?: number;
+  endSeconds?: number;
+  /** For an approved local video: its publisher's channel on YouTube, for the credit. */
+  channelUrl?: string;
+};
 
 export const reflectPromptSchema = z.strictObject({
   text,
@@ -678,6 +685,18 @@ export const approvedLocalVideoSchema = z.strictObject({
   summaryBasis: z.enum(SUMMARY_BASES),
   keyPoints: z.array(text).min(1),
   contentNote: text.nullable(),
+  /**
+   * The part of a longer video that the lesson plays, in whole seconds from its
+   * start: both or neither. `durationSeconds` is then the part's length
+   * (src/content/load.ts checks they agree).
+   */
+  startSeconds: z.number().int().nonnegative().optional(),
+  endSeconds: z.number().int().positive().optional(),
+  /** The publisher's channel on YouTube, for the credit (https://www.youtube.com/@…). */
+  channelUrl: z
+    .string()
+    .regex(/^https:\/\/www\.youtube\.com\/[@\w./-]+$/, 'must be a YouTube channel address like https://www.youtube.com/@name')
+    .optional(),
 });
 export type ApprovedLocalVideo = z.infer<typeof approvedLocalVideoSchema>;
 

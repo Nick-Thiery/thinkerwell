@@ -27,6 +27,7 @@ import { useContent } from '../content/useContent';
 import { useI18n, type MessageKey } from '../i18n';
 import { LOCALES, readyLocales } from '../i18n/locales';
 import './CreditsPage.css';
+import { youtubeWatchUrl } from './educators/TeacherGuidePage';
 
 const UN_SDG_URL = 'https://www.un.org/sustainabledevelopment';
 const OFL_URL = 'https://openfontlicense.org';
@@ -214,11 +215,20 @@ export function CreditsPage() {
                       <span className="small tw-credits-muted" lang={list.code}>
                         {list.endonym}
                       </span>
-                      <ExternalLink href={`https://www.youtube.com/watch?v=${encodeURIComponent(local.youtubeId)}`}>
+                      <ExternalLink href={youtubeWatchUrl(local.youtubeId, local.startSeconds)}>
                         <span lang={list.code}>{local.title}</span>
                       </ExternalLink>
                       <span className="small tw-credits-muted">
-                        {tx('pages.credits.videoBy', { channel: <span lang={list.code}>{local.channel}</span> })}
+                        {tx('pages.credits.videoBy', {
+                          // The publisher, linked to its channel when the entry gives it (docs/notes/local-language-videos.md).
+                          channel: local.channelUrl ? (
+                            <ExternalLink href={local.channelUrl}>
+                              <span lang={list.code}>{local.channel}</span>
+                            </ExternalLink>
+                          ) : (
+                            <span lang={list.code}>{local.channel}</span>
+                          ),
+                        })}
                       </span>
                     </span>
                   ) : null;

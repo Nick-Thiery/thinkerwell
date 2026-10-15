@@ -4,6 +4,7 @@ import { createMemoryRouter, RouterProvider } from 'react-router';
 import { describe, expect, it, vi } from 'vitest';
 import { contentFor, englishContent, type Lesson } from '../content';
 import { I18nProvider } from '../i18n';
+import { LearnerSessionProvider } from '../session';
 import { FIXTURE_UNAPPROVED_ID, FIXTURE_VIDEO_ID, ID_VIDEOS_FIXTURE, indonesianLocale, translationWithVideos } from '../test/localVideoFixtures';
 import { CreditsPage } from './CreditsPage';
 import { TeacherGuidePage } from './educators/TeacherGuidePage';
@@ -29,13 +30,20 @@ function inIndonesian(children: ReactNode) {
   return <RouterProvider router={router} />;
 }
 
+/** The print view reads the chosen learner's reading level, so it needs a session (nobody chosen here). */
+function printInIndonesian(children: ReactNode) {
+  return inIndonesian(<LearnerSessionProvider>{children}</LearnerSessionProvider>);
+}
+
 describe('TeacherGuidePage', () => {
   it("lists the local video with its title and channel unmarked, and its link on YouTube", () => {
     render(inIndonesian(<TeacherGuidePage lesson={local} />));
     const video = screen.getByRole('heading', { level: 2, name: 'Watch or read instead' }).closest('section') as HTMLElement;
     expect(within(video).getByText(entry.title)).not.toHaveAttribute('lang');
     expect(within(video).getByText(entry.channel)).not.toHaveAttribute('lang');
-    expect(within(video).getByRole('link', { name: /Open on YouTube/ })).toHaveAttribute('href', `https://www.youtube.com/watch?v=${FIXTURE_VIDEO_ID}`);
+    // The part the lesson plays: named, and the link opens the video there.
+    expect(within(video).getByText('Part to watch').nextElementSibling).toHaveTextContent('0:30 to 3:35');
+    expect(within(video).getByRole('link', { name: /Open on YouTube/ })).toHaveAttribute('href', `https://www.youtube.com/watch?v=${FIXTURE_VIDEO_ID}&t=30s`);
   });
 
   it('keeps the English video marked English when the lesson has no approved local video', () => {
@@ -49,14 +57,15 @@ describe('TeacherGuidePage', () => {
 
 describe('LessonPrintPage', () => {
   it("prints the local video's written version, with its title unmarked", () => {
-    render(inIndonesian(<LessonPrintPage lesson={local} />));
+    render(printInIndonesian(<LessonPrintPage lesson={local} />));
     const sheet = screen.getByRole('article');
     for (const mention of within(sheet).getAllByText(entry.title, { exact: false })) expect(mention.closest('[lang="en"]')).toBeNull();
     expect(sheet.textContent).toContain(entry.summary.split('\n\n')[0]);
+    expect(sheet.textContent).toContain('The lesson plays the part from 0:30 to 3:35.');
   });
 
   it('keeps the English video marked English otherwise', () => {
-    render(inIndonesian(<LessonPrintPage lesson={notApproved} />));
+    render(printInIndonesian(<LessonPrintPage lesson={notApproved} />));
     const english = englishContent.getLessonByNumber(9)!.watch;
     expect(within(screen.getByRole('article')).getAllByText(english.title, { exact: false })[0]!.closest('[lang="en"]')).not.toBeNull();
   });
@@ -68,7 +77,6 @@ describe('CreditsPage', () => {
     const videos = screen.getByRole('region', { name: 'Videos' });
     // The Indonesian video is listed under Lesson 5 (after the files load), the English one stays.
     const link = await within(videos).findByRole('link', { name: new RegExp(entry.title) });
-    expect(link).toHaveAttribute('href', `https://www.youtube.com/watch?v=${FIXTURE_VIDEO_ID}`);
     expect(link).toHaveAttribute('target', '_blank');
     expect(within(link).getByText(entry.title)).toHaveAttribute('lang', 'id');
     const english = englishContent.getLessonByNumber(5)!.watch;
@@ -79,6 +87,9 @@ describe('CreditsPage', () => {
     );
     expect(within(item).getByText('Bahasa Indonesia')).toHaveAttribute('lang', 'id');
     expect(within(item).getByText(entry.channel)).toHaveAttribute('lang', 'id');
+    // The publisher is credited with a link to its channel, and the video opens at the part the lesson plays.
+    expect(within(item).getByRole('link', { name: new RegExp(entry.channel) })).toHaveAttribute('href', 'https://www.youtube.com/@SaluranUjiLokal');
+    expect(link.getAttribute('href')).toBe(`https://www.youtube.com/watch?v=${FIXTURE_VIDEO_ID}&t=30s`);
     // A video that isn't approved is not credited.
     expect(videos.innerHTML).not.toContain(FIXTURE_UNAPPROVED_ID);
     expect(videos.querySelector('iframe, img')).toBeNull();

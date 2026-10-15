@@ -6,6 +6,7 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { parseArgs, planApproval, serialiseVideos, type ApplyOptions } from './apply';
 import { lessonKey, readVideosFile, type Candidate, type CandidatesFile } from './lib';
 import { formatReport, videoReport } from './report';
+import { reviewSheet } from './sheet';
 
 // `npm run videos:apply` and `npm run videos:report` (docs/notes/local-language-videos.md),
 // run on a small repository made for each test: three English lessons, the research
@@ -68,6 +69,7 @@ describe('parseArgs', () => {
       approvedBy: 'Dewi R',
       approvedOn: '2026-10-14',
       acceptUnverifiedSummary: true,
+      checkedAudio: false,
       dryRun: true,
     });
     expect(parseArgs(['ms', 'L01', '--approved-by=Aiman', '--date=2026-11-02'], '2026-10-14')).toMatchObject({
@@ -134,6 +136,58 @@ describe('videos:apply', () => {
     const entry = result.file.lessons.L05 as unknown as Record<string, unknown>;
     expect(entry.youtubeId).toBe('AAAAAAAAAAA');
     for (const research of ['needsWatching', 'fitScore', 'fitNotes', 'channelCountry', 'verifiedByOembed']) expect(entry).not.toHaveProperty(research);
+  });
+
+  it('copies the part of a longer video and the publisher\'s channel, and none of the screening record', () => {
+    const screenedCandidate = candidate({
+      startSeconds: 60,
+      endSeconds: 260,
+      channelUrl: 'https://www.youtube.com/@Saluran',
+      fullDurationSeconds: 900,
+      captions: 'auto',
+      autoDubbed: false,
+      reviewStatus: 'prescreened',
+      questionsChanged: ['afterQuestion'],
+      screening: { by: 'Claude', on: '2026-10-15', notes: 'Cocok.' },
+      weakFit: true,
+    });
+    const result = planApproval(options(), candidates({ L05: { primary: screenedCandidate } }), readVideosFile('id', root), root);
+    expect(result.refusals).toEqual([]);
+    const entry = result.file.lessons.L05 as unknown as Record<string, unknown>;
+    expect(entry).toMatchObject({ startSeconds: 60, endSeconds: 260, durationSeconds: 200, channelUrl: 'https://www.youtube.com/@Saluran' });
+    for (const research of ['fullDurationSeconds', 'captions', 'autoDubbed', 'reviewStatus', 'questionsChanged', 'screening', 'weakFit']) {
+      expect(entry).not.toHaveProperty(research);
+    }
+  });
+
+  it('refuses a part whose length is not the duration given (the build would turn it down)', () => {
+    const result = planApproval(options(), candidates({ L05: { primary: candidate({ startSeconds: 60, endSeconds: 100 }) } }), readVideosFile('id', root), root);
+    expect(result.refusals.join('\n')).toMatch(/durationSeconds must be the part's length, 40/);
+    expect(result.file.lessons).toEqual({});
+  });
+
+  it('refuses an unverified or rejected candidate: only a prescreened one can be approved', () => {
+    for (const reviewStatus of ['unverified', 'rejected'] as const) {
+      const result = planApproval(
+        options(),
+        candidates({ L05: { primary: candidate({ reviewStatus, screening: { by: 'Claude', on: '2026-10-15', notes: 'No captions.' } }) } }),
+        readVideosFile('id', root),
+        root,
+      );
+      expect(result.refusals).toEqual([`L05: its candidate is ${reviewStatus} (No captions.). Only a prescreened candidate can be approved.`]);
+      expect(result.file.lessons).toEqual({});
+    }
+  });
+
+  it("refuses a video YouTube has dubbed with AI until the reviewer says they heard the original on the learners' devices", () => {
+    const dubbed = candidates({ L05: { primary: candidate({ autoDubbed: true }) } });
+    const refused = planApproval(options(), dubbed, readVideosFile('id', root), root);
+    expect(refused.refusals.join('\n')).toMatch(/AI-dubbed soundtrack/);
+    expect(refused.file.lessons).toEqual({});
+    const approved = planApproval(options({ checkedAudio: true }), dubbed, readVideosFile('id', root), root);
+    expect(approved.refusals).toEqual([]);
+    expect(approved.file.lessons.L05).toMatchObject({ approved: true });
+    expect(parseArgs(['id', 'L05', '--approved-by', 'Dewi', '--checked-audio'])).toMatchObject({ checkedAudio: true });
   });
 
   it("refuses a summary that isn't based on a transcript, and changes nothing", () => {
@@ -234,12 +288,70 @@ describe('videos:report', () => {
     expect(text).toContain('approved by Dewi Reviewer on 2026-10-20');
   });
 
+  it('says where each lesson still on the English video stands: its candidate prescreened, unverified, rejected, or none', () => {
+    write('docs/notes/local-videos/id.json', {
+      language: 'id',
+      lessons: {
+        L05: { primary: candidate({ reviewStatus: 'prescreened' }) },
+        L06: { primary: null, noGoodMatch: true, screened: [{ youtubeId: 'GGGGGGGGGGG', title: 'Tanpa teks', channel: 'C', reviewStatus: 'unverified' }] },
+        L09: { primary: null, noGoodMatch: true, screened: [] },
+      },
+    });
+    const [id] = videoReport(root);
+    expect(id!.lessons.map((l) => l.slot)).toEqual(['prescreened', 'unverified', 'none']);
+    const text = formatReport([id!]);
+    expect(text).toContain('candidate prescreened, waiting for a reviewer: Judul video (Saluran) [AAAAAAAAAAA]');
+    expect(text).toContain('candidate unverified, a person must watch it: Tanpa teks (C) [GGGGGGGGGGG]');
+    expect(text).toContain('no candidate yet');
+  });
+
   it('reports a videos file the build would turn down', () => {
     write('content/ms/videos.json', { language: 'ms', lessons: { L05: { approved: true, youtubeId: 'AAAAAAAAAAA', title: 'T', channel: 'C' } } });
     const [, ms] = videoReport(root);
     expect(ms!.problems.join('\n')).toMatch(/approvedBy/);
     // And such an entry is not counted as a local video.
     expect(ms!.lessons[0]!.source).toBe('english');
+  });
+});
+
+describe('videos:sheet', () => {
+  it("lists each recommended video for the reviewer, with the part, both questions beside the lesson's, the draft and the command", () => {
+    write('content/id/lessons/L05.json', { watch: { beforeQuestion: 'Pertanyaan pelajaran sebelum?', afterQuestion: 'Pertanyaan pelajaran sesudah?' } });
+    write('docs/notes/local-videos/id.json', {
+      language: 'id',
+      lessons: {
+        L05: {
+          primary: candidate({
+            startSeconds: 60,
+            endSeconds: 260,
+            fullDurationSeconds: 900,
+            channelUrl: 'https://www.youtube.com/@Saluran',
+            questionsChanged: ['afterQuestion'],
+            autoDubbed: true,
+            summaryBasis: 'description',
+            screening: { by: 'Claude', on: '2026-10-15', notes: 'Cocok untuk bagian ini.' },
+          }),
+        },
+        L06: { primary: null, screened: [{ youtubeId: 'GGGGGGGGGGG', title: 'Tanpa teks', channel: 'C', reviewStatus: 'unverified', screening: { by: 'Claude', on: '2026-10-15', notes: 'No captions.' } }] },
+        L09: { primary: null, screened: [{ youtubeId: 'HHHHHHHHHHH', title: 'Tidak cocok', channel: 'C', reviewStatus: 'rejected', screening: { by: 'Claude', on: '2026-10-15', notes: 'Too long.' } }] },
+      },
+    });
+    const sheet = reviewSheet('id', root)!;
+    expect(sheet).toContain('# Watch videos in Bahasa Indonesia: review sheet');
+    expect(sheet).toContain('**Nothing here is approved.**');
+    expect(sheet).toContain('[Judul video](https://www.youtube.com/watch?v=AAAAAAAAAAA&t=60s), by [Saluran](https://www.youtube.com/@Saluran)');
+    expect(sheet).toContain('**Part to watch:** 1:00 to 4:20 (3:20 of 15:00)');
+    expect(sheet).toContain("**Think first (the lesson's own, kept):** Apa yang kamu tahu?");
+    expect(sheet).toContain('**After you watch (adapted to this video):** Apa yang baru kamu pelajari?');
+    expect(sheet).toContain("The lesson's question now: Pertanyaan pelajaran sesudah?");
+    expect(sheet).toContain('AI-dubbed English soundtrack');
+    expect(sheet).toContain('`npm run videos:apply -- id L05 --approved-by "Your name" --accept-unverified-summary --checked-audio`');
+    expect(sheet).toMatch(/## Videos nobody could check yet\n\n.*\n\n- \*\*Lesson 6\*\* \(Lesson 6\): \[Tanpa teks\]/);
+    expect(sheet).toMatch(/## Videos turned down\n\n- \*\*Lesson 9\*\* \(Lesson 9\): \[Tidak cocok\].*Too long\./);
+  });
+
+  it('has nothing to write for a language without candidates', () => {
+    expect(reviewSheet('ms', root)).toBeNull();
   });
 });
 

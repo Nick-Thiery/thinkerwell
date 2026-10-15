@@ -12,7 +12,17 @@
 import { existsSync } from 'node:fs';
 import { approvedLocalVideos } from '../../src/content/localVideos.ts';
 import { LOCALES } from '../../src/i18n/locales.ts';
-import { readCandidates, readEnglishLessons, readVideosFile, ROOT, VIDEO_LANGUAGES, videosPath, videosProblems } from './lib.ts';
+import {
+  readCandidates,
+  readEnglishLessons,
+  readVideosFile,
+  ROOT,
+  statusOf,
+  VIDEO_LANGUAGES,
+  videosPath,
+  videosProblems,
+  type ReviewStatus,
+} from './lib.ts';
 
 export interface LessonLine {
   lesson: string;
@@ -25,6 +35,13 @@ export interface LessonLine {
   /** For a local video: who approved it, and when. */
   approvedBy?: string;
   approvedOn?: string;
+  /**
+   * For a lesson still on the English video, where its slot stands in the candidates
+   * (docs/notes/local-videos/<lang>.json): its recommended candidate's status, or 'none'.
+   */
+  slot?: ReviewStatus | 'none';
+  /** That candidate, when there is one. */
+  candidate?: { youtubeId: string; title: string; channel: string };
 }
 
 export interface LanguageReport {
@@ -60,7 +77,15 @@ export function videoReport(root = ROOT): LanguageReport[] {
             approvedBy: local.approvedBy,
             approvedOn: local.approvedOn,
           }
-        : { lesson: key, number: lesson.number, source: 'english', title: lesson.watch.title, channel: lesson.watch.channel, youtubeId: lesson.watch.youtubeId };
+        : {
+            lesson: key,
+            number: lesson.number,
+            source: 'english',
+            title: lesson.watch.title,
+            channel: lesson.watch.channel,
+            youtubeId: lesson.watch.youtubeId,
+            ...slotOf(candidates?.lessons[key]),
+          };
     });
     const candidatesWaiting = candidates
       ? Object.entries(candidates.lessons).filter(([key, entry]) => entry.primary && !approved.has(key)).length
@@ -76,6 +101,24 @@ export function videoReport(root = ROOT): LanguageReport[] {
   });
 }
 
+/** Where a lesson's slot stands: the recommended candidate's status, else the best status among the videos looked at. */
+function slotOf(slot: import('./lib.ts').CandidateSlot | undefined): Pick<LessonLine, 'slot' | 'candidate'> {
+  const primary = slot?.primary;
+  if (primary) return { slot: statusOf(primary), candidate: { youtubeId: primary.youtubeId, title: primary.title, channel: primary.channel } };
+  const others = slot?.screened ?? [];
+  const unverified = others.find((video) => statusOf(video) === 'unverified');
+  const shown = unverified ?? others[0];
+  if (!shown) return { slot: 'none' };
+  return { slot: statusOf(shown), candidate: { youtubeId: shown.youtubeId, title: shown.title, channel: shown.channel } };
+}
+
+const SLOT_WORDS: Record<ReviewStatus | 'none', string> = {
+  prescreened: 'prescreened, waiting for a reviewer',
+  unverified: 'unverified, a person must watch it',
+  rejected: 'rejected',
+  none: 'no candidate',
+};
+
 export function formatReport(reports: LanguageReport[]): string {
   const lines: string[] = [];
   for (const report of reports) {
@@ -84,6 +127,10 @@ export function formatReport(reports: LanguageReport[]): string {
     for (const line of report.lessons) {
       const how = line.source === 'local' ? `local    approved by ${line.approvedBy} on ${line.approvedOn}` : 'English';
       lines.push(`  ${line.lesson}  ${how.padEnd(10)}  ${line.title} (${line.channel}) [${line.youtubeId}]`);
+      if (line.source === 'english' && line.slot) {
+        const candidate = line.candidate ? `: ${line.candidate.title} (${line.candidate.channel}) [${line.candidate.youtubeId}]` : '';
+        lines.push(line.slot === 'none' ? '         no candidate yet' : `         candidate ${SLOT_WORDS[line.slot]}${candidate}`);
+      }
     }
     if (report.pending > 0) lines.push(`  ${report.pending} entr${report.pending === 1 ? 'y is' : 'ies are'} in the file but not approved (never shown).`);
     if (report.candidatesWaiting > 0) lines.push(`  ${report.candidatesWaiting} researched candidate${report.candidatesWaiting === 1 ? '' : 's'} in docs/notes/local-videos/${report.language}.json still need watching.`);

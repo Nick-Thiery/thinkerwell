@@ -74,14 +74,35 @@ describe('withLocalVideo', () => {
       keyPoints: approved().keyPoints,
       localVideo: true,
       replacementSuggestion: null,
+      startSeconds: 30,
+      endSeconds: 215,
+      channelUrl: 'https://www.youtube.com/@SaluranUjiLokal',
     });
     expect(local.title).toBe(lesson.title);
     expect(lesson.watch.youtubeId).not.toBe(FIXTURE_VIDEO_ID);
     expect(lesson.watch.localVideo).toBeUndefined();
   });
 
+  it('plays the whole video when the entry names no part', () => {
+    const { startSeconds: _start, endSeconds: _end, ...whole } = approved();
+    const local = withLocalVideo(lesson, { ...whole, durationSeconds: 400 });
+    expect(local.watch.startSeconds).toBeUndefined();
+    expect(local.watch.endSeconds).toBeUndefined();
+  });
+
   it('returns the lesson itself when there is no video', () => {
     expect(withLocalVideo(lesson, undefined)).toBe(lesson);
+  });
+});
+
+describe('the part of a longer video', () => {
+  it('turns down a part that is half given, backwards, or whose length is not the part\'s', () => {
+    const entry = { ...approved() } as Record<string, unknown>;
+    expect(approvedLocalVideo(entry)).not.toBeNull();
+    expect(approvedLocalVideo({ ...entry, endSeconds: undefined })).toBeNull();
+    expect(approvedLocalVideo({ ...entry, startSeconds: 300, endSeconds: 200 })).toBeNull();
+    expect(approvedLocalVideo({ ...entry, durationSeconds: 999 })).toBeNull();
+    expect(approvedLocalVideo({ ...entry, channelUrl: 'https://example.com/channel' })).toBeNull();
   });
 });
 

@@ -35,16 +35,36 @@ export const PLAYER_REFERRER_POLICY = 'strict-origin-when-cross-origin';
  * - playsinline=1: plays in the page on iPhones and iPads, not fullscreen.
  * - modestbranding=1: less YouTube branding (ignored by newer players; harmless).
  * - cc_load_policy=1: captions on by default, for learners of English.
+ * - start and end: for a local video, the part of it that fits the lesson.
+ * - hl and cc_lang_pref: for a local video, the player and captions in its language.
  * - enablejsapi=1 and origin: let the player tell this page, by
  *   postMessage, that it really is ready (see isPlayerMessage). No YouTube
  *   script is loaded on the page for this. `origin` is this site's own
  *   origin, which the frame's referrer already sends.
  */
-export function youtubeEmbedUrl(youtubeId: string, origin?: string): string {
+export function youtubeEmbedUrl(
+  youtubeId: string,
+  origin?: string,
+  part?: { startSeconds?: number; endSeconds?: number },
+  videoLanguage?: string,
+): string {
   const params = new URLSearchParams({ rel: '0', playsinline: '1', modestbranding: '1', cc_load_policy: '1' });
   if (origin) {
     params.set('enablejsapi', '1');
     params.set('origin', origin);
+  }
+  // A local video can be the part of a longer one that fits the lesson (docs/notes/local-language-videos.md):
+  // the player starts there and stops at its end.
+  if (part?.startSeconds !== undefined && part.endSeconds !== undefined) {
+    params.set('start', String(part.startSeconds));
+    params.set('end', String(part.endSeconds));
+  }
+  // A video in the language on screen: the player's own words and its captions in that language too. (YouTube may
+  // also offer an AI-dubbed English soundtrack of such a video; `hl` asks for the player in the video's language,
+  // which is meant to keep the original sound, but that is YouTube's choice: a reviewer checks it on the devices.)
+  if (videoLanguage) {
+    params.set('hl', videoLanguage);
+    params.set('cc_lang_pref', videoLanguage);
   }
   return `${YOUTUBE_EMBED_ORIGIN}/embed/${encodeURIComponent(youtubeId)}?${params.toString()}`;
 }

@@ -319,6 +319,16 @@ export function checkTranslation(code: string, english: EnglishFiles, translatio
  *   video).
  * Throws a ContentError listing every problem.
  */
+/** What is wrong with an approved video's part (startSeconds, endSeconds), if anything. */
+export function segmentProblems(entry: { startSeconds?: number; endSeconds?: number; durationSeconds: number | null }): string[] {
+  const { startSeconds: start, endSeconds: end } = entry;
+  if (start === undefined && end === undefined) return [];
+  if (start === undefined || end === undefined) return ['give both startSeconds and endSeconds, or neither.'];
+  if (end <= start) return ['endSeconds must be after startSeconds.'];
+  if (entry.durationSeconds !== end - start) return [`durationSeconds must be the part's length, ${end - start} (endSeconds - startSeconds).`];
+  return [];
+}
+
 export function checkLocalVideos(code: string, raw: unknown, englishLessons: Record<string, unknown>): LocalVideosFile {
   const file = `content/${code}/videos.json`;
   const result = localVideosFileSchema.safeParse(raw);
@@ -340,6 +350,7 @@ export function checkLocalVideos(code: string, raw: unknown, englishLessons: Rec
     if (entry.approved && entry.youtubeId === englishVideoIds.get(key)) {
       problems.push(`${file}: lessons.${key}: this is the lesson's English video, not a video in the language. Remove the entry.`);
     }
+    if (entry.approved) problems.push(...segmentProblems(entry).map((problem) => `${file}: lessons.${key}: ${problem}`));
   }
   if (problems.length > 0) throw new ContentError(problems.join('\n'));
   return videos;
