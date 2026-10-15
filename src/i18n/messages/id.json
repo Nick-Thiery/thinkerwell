@@ -34,22 +34,17 @@
   "lessonPlayer": {
     "shell": {
       "aboutLesson": "Tentang pelajaran ini",
+      "stepOf": "Langkah {number} dari {total} · {stage}",
+      "allSteps": "Semua langkah",
       "learningGoal": "Tujuan belajar",
       "time": "Sekitar {min}–{max} menit. Kamu bisa berhenti dan kembali kapan saja.",
-      "sublabelDone": "Selesai",
-      "sublabelRead": "Pemanasan, bacaan, dan cek cepat",
-      "sublabelWrite": "Tugas menulismu",
-      "sublabelSpeak": "Dengan teman atau sendiri",
-      "sublabelWatch": "Tidak wajib · {minutes} menit",
-      "sublabelWatchNoTime": "Tidak wajib",
-      "sublabelReflect": {
-        "other": "{count} pertanyaan singkat"
-      },
       "continueTo": "Lanjut ke {stage}",
       "finishLesson": "Selesaikan pelajaran",
-      "noLearnerTitle": "Belum ada yang tersimpan.",
-      "noLearnerBody": "Pilih siapa yang belajar supaya hasil kerjamu tersimpan di perangkat ini.",
       "noLearnerAction": "Pilih siapa yang belajar",
+      "saveMyWork": "Simpan pekerjaanku",
+      "statusSaved": "Tersimpan di perangkat ini",
+      "statusNotSaved": "Belum ada yang tersimpan",
+      "statusLookAround": "Kamu sedang lihat-lihat: tidak ada yang disimpan",
       "saveError": "Perubahan terakhirmu belum tersimpan di perangkat ini. Lanjut saja: akan dicoba lagi saat kamu membuat perubahan berikutnya."
     },
     "read": {
@@ -115,31 +110,21 @@
       "touchHintWide": "Cubit untuk memperbesar."
     },
     "write": {
-      "helpLabel": "Bantuan menulis",
-      "modeWrite": "Tulis",
       "modeStarters": "Awal kalimat",
       "modePlan": "Rencanakan dulu",
-      "modeWriteShort": "Tulis",
-      "modeStartersShort": "Pembuka",
-      "modePlanShort": "Rencana",
       "evidenceToggle": "Lihat buktinya lagi",
       "mapToggle": "Lihat petanya lagi",
+      "needHelp": "Perlu bantuan menulis?",
       "startersTitle": "Ketuk awal kalimat untuk menambahkannya ke tulisanmu",
-      "startersTitleShort": "Ketuk satu untuk memakainya",
-      "planTitle": "Rencanakan idemu di sini, lalu tulis jawabanmu di bawah",
+      "planIntro": "Rencanakan idemu di sini, lalu tulis jawabanmu di kotak di atas.",
       "answerLabel": "Jawabanmu",
-      "helperSaving": "4 sampai 6 kalimat sudah cukup. Ejaan tidak penting di sini. Tulisanmu tersimpan di perangkat ini sambil kamu mengetik.",
-      "helperLookAround": "4 sampai 6 kalimat sudah cukup. Ejaan tidak penting di sini. Tidak ada yang tersimpan selama kamu lihat-lihat.",
-      "helperNoLearner": "4 sampai 6 kalimat sudah cukup. Ejaan tidak penting di sini. Belum ada yang tersimpan sampai kamu memilih siapa yang belajar.",
-      "helperSavingSayIt": "4 sampai 6 kalimat sudah cukup. Ejaan tidak penting di sini. Ketuk Ucapkan untuk bicara, tanpa perlu mengetik. Tulisanmu tersimpan di perangkat ini sambil kamu mengetik.",
-      "helperLookAroundSayIt": "4 sampai 6 kalimat sudah cukup. Ejaan tidak penting di sini. Ketuk Ucapkan untuk bicara, tanpa perlu mengetik. Tidak ada yang tersimpan selama kamu lihat-lihat.",
-      "helperNoLearnerSayIt": "4 sampai 6 kalimat sudah cukup. Ejaan tidak penting di sini. Ketuk Ucapkan untuk bicara, tanpa perlu mengetik. Belum ada yang tersimpan sampai kamu memilih siapa yang belajar.",
+      "helper": "4 sampai 6 kalimat sudah cukup. Ejaan tidak penting di sini.",
+      "helperSayIt": "4 sampai 6 kalimat sudah cukup. Ejaan tidak penting di sini. Ketuk Ucapkan untuk bicara, tanpa perlu mengetik.",
       "selfCheckTitle": "Periksa jawabanmu",
       "seeExample": "Lihat contoh jawaban",
       "compareExample": "Bandingkan dengan contoh jawaban",
       "exampleEyebrow": "Contoh jawaban",
-      "exampleNote": "Ini salah satu cara menjawab. Jawabanmu boleh berbeda.",
-      "tip": "Bingung? Ketuk salah satu awal kalimat, lalu isi bagian yang kosong."
+      "exampleNote": "Ini salah satu cara menjawab. Jawabanmu boleh berbeda."
     },
     "sayIt": {
       "listening": "Mendengarkan. Bicaralah pelan-pelan. Kata-katamu muncul di kotak, dan kamu bisa memperbaikinya nanti.",
@@ -155,8 +140,6 @@
       "taskWithRecorder": "Ceritakan ide-idemu dari pelajaran ini. Kamu bisa melakukannya dengan teman atau sendiri. Kalau mau, kamu bisa merekam suaramu. Rekaman tetap di perangkat ini.",
       "partnerTitle": "Dengan teman",
       "soloTitle": "Sendiri",
-      "practisedLegend": "Bagaimana kamu berlatih?",
-      "practisedHelp": "Pilih satu. Cara apa pun tetap dihitung.",
       "recorder": {
         "title": "Rekam suaramu (tidak wajib)",
         "task": "Ucapkan jawabanmu, lalu dengarkan lagi. Coba sebanyak yang kamu mau.",
@@ -174,18 +157,19 @@
       }
     },
     "watch": {
-      "eyebrow": "Tonton · tidak wajib",
-      "task": "Tonton video pendek, atau baca saja ide yang sama. Keduanya sama-sama dihitung.",
-      "slowTitle": "Internet lambat?",
-      "slowBody": "Pilih \"Baca saja\". Isinya sama dan hampir tidak memakai data.",
+      "eyebrow": "Tonton",
+      "task": "Tidak wajib: tonton video pendek, atau baca saja ide yang sama. Keduanya sama-sama dihitung.",
       "saveDataTitle": "Video dimatikan untuk menghemat data.",
       "timeoutTitle": "Videonya butuh waktu lama untuk dimuat.",
       "offlineTitle": "Kamu sedang tidak tersambung ke internet, jadi videonya belum bisa dimuat.",
       "unavailableTitle": "Video ini tidak bisa diputar di sini sekarang.",
       "sameIdeas": "Ini ide yang sama untuk dibaca.",
       "thinkFirst": "Pikirkan dulu",
+      "writeIdea": "Tulis ideku",
+      "ideaLabel": "Idemu",
       "beforePlaceholder": "Tulis ide singkat, atau pikirkan saja…",
       "readInstead": "Baca saja",
+      "lowDataNote": "Internet lambat? \"Baca saja\" isinya sama dan hampir tidak memakai data.",
       "closeVideo": "Tutup video",
       "playerOpened": "Pemutar video sudah terbuka. Tekan tombol putarnya untuk mulai.",
       "writtenPart": "Versi tulisan",
@@ -194,7 +178,6 @@
       "tryAgain": "Coba putar video lagi",
       "afterEyebrow": "Setelah menonton atau membaca",
       "afterPlaceholder": "Tulis satu atau dua kalimat…",
-      "helper": "Menonton tidak wajib. Kamu boleh melewati langkah ini.",
       "forTeachers": "Untuk guru",
       "videoInEnglish": "Video ini berbahasa Inggris. Pilih \"Baca saja\" untuk ide yang sama dalam bahasa Indonesia."
     },
@@ -205,9 +188,8 @@
     "reflect": {
       "eyebrow": "Refleksi",
       "task": "Luangkan waktu sebentar untuk memikirkan apa yang kamu pelajari hari ini. Hanya pertanyaan pertama yang wajib.",
+      "addAnother": "Tambah pemikiran lain",
       "journalNote": "Jawabanmu masuk ke jurnalmu di perangkat ini. Hanya orang yang memakai perangkat ini yang bisa melihatnya.",
-      "lookAroundNote": "Kamu sedang lihat-lihat, jadi jawabanmu tidak disimpan.",
-      "noLearnerNote": "Jawabanmu belum disimpan. Pilih siapa yang belajar supaya jawabanmu tersimpan di jurnal.",
       "finishHelper": "Jawab pertanyaan pertama untuk menyelesaikan pelajaran."
     },
     "complete": {
@@ -274,6 +256,7 @@
         "classCodePlaceholder": "Contohnya ABC-07",
         "classCodeInvalid": "Pakai huruf, angka, dan tanda hubung saja, seperti ABC-07.",
         "submit": "Mulai Pelajaran 1",
+        "submitSaving": "Simpan dan kembali ke Pelajaran {number}",
         "submitError": "Belum tersimpan. Coba lagi.",
         "startsWith": "Kamu akan mulai dengan",
         "startsWithLesson": "Pelajaran {number}: {title}",
@@ -334,6 +317,10 @@
         "languageTitle": "Bahasamu",
         "languageHelp": "Tombol dan petunjuk tampil dalam bahasa ini. Dalam bahasa Indonesia dan bahasa Melayu, pelajaran juga. Dalam bahasa lain, pelajaran tetap dalam bahasa Inggris supaya kamu bisa berlatih.",
         "languageSaveFailed": "Belum tersimpan. Coba lagi."
+      },
+      "saveWork": {
+        "body": "Ketuk namamu, atau Aku baru di sini, untuk menyimpan pekerjaanmu dari Pelajaran {number}.",
+        "drop": "Jangan disimpan"
       }
     },
     "course": {
@@ -480,7 +467,6 @@
       "toolsIntro": "Untuk hari pertama Anda mulai, dan setiap hari sesudahnya. Semua yang ada di sini tetap di perangkat ini.",
       "followTitle": "Pantau kelompok Anda",
       "setupTitle": "Siapkan perangkat ini",
-      "setupBody": "Daftar periksa untuk setiap laptop atau tablet. Cetak untuk dicentang di kertas.",
       "setupCta": "Buka daftar periksa",
       "classTitle": "Kelas di perangkat ini",
       "classBody": "Pelajaran yang sudah selesai dan posisi setiap pelajar sekarang. Tanpa nilai.",
@@ -1439,7 +1425,7 @@
     "lessonPageTitle": "Pelajaran {number}: cetak",
     "backToLesson": "Kembali ke pelajaran",
     "learningGoal": "Tujuan belajar:",
-    "lessonIntro": "Ini pelajaran dalam bentuk kertas: kedua tingkat bacaan, kata kunci, dan semua tugas, dengan garis untuk menulis. Teksnya dicetak hitam di atas putih, tanpa menu.",
+    "lessonIntro": "Ini pelajaran dalam bentuk kertas: bacaan pada tingkat yang kamu pilih, kata kunci, dan semua tugas, dengan garis untuk menulis. Teksnya dicetak hitam di atas putih, tanpa menu.",
     "readingStandard": "Bacaan: versi standar",
     "readingSimpler": "Bacaan: versi lebih mudah",
     "levelLabel": "Bacaan yang dicetak",

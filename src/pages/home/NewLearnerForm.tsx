@@ -10,6 +10,8 @@ import { useMeasurementState } from '../../measurement/track';
 import type { LearnerColour, NewLearner } from '../../storage';
 import { ColourPicker } from './ColourPicker';
 import { HomeHero } from './HomeHero';
+// The folded options' look, shared with the lessons' LessonDisclosure.
+import '../lesson/LessonDisclosure.css';
 
 /** Id of the name field, so a caller can move focus to it when this form appears. */
 export const NEW_LEARNER_NAME_FIELD_ID = 'home-new-learner-name';
@@ -33,7 +35,10 @@ export interface NewLearnerFormProps {
   /** LessonSummary 1, shown in the hero pane and used to label the submit button's target. */
   lesson1: LessonSummary;
   onBack: () => void;
-  onSubmit: (input: NewLearner) => Promise<void>;
+  /** Resolves with where to go next, when it isn't Lesson 1 (back to a guest's work). */
+  onSubmit: (input: NewLearner) => Promise<string | null | void>;
+  /** The lesson a guest's work is being saved from ("Save my work"), which Start goes back to. */
+  savingFrom?: number | null;
 }
 
 /** One optional part of the form, folded until wanted: a native details element (keyboard and screen readers need nothing more). */
@@ -41,15 +46,15 @@ function FormOption({ summary, forceOpen = false, children }: { summary: string;
   const [open, setOpen] = useState(false);
   return (
     <details
-      className="tw-home-option"
+      className="tw-fold tw-home-option"
       open={open || forceOpen}
       onToggle={(event) => setOpen(event.currentTarget.open)}
     >
-      <summary className="tw-home-option-summary">
-        <Icon name="ChevronDown" size={20} className="tw-home-option-chevron" />
+      <summary className="tw-fold-summary">
+        <Icon name="ChevronDown" size={20} className="tw-fold-chevron" />
         <span>{summary}</span>
       </summary>
-      <div className="tw-home-option-body">{children}</div>
+      <div className="tw-fold-body">{children}</div>
     </details>
   );
 }
@@ -63,7 +68,7 @@ function FormOption({ summary, forceOpen = false, children }: { summary: string;
  * chosen yet), and the new learner keeps the language on screen; it starts
  * as the language already on screen.
  */
-export function NewLearnerForm({ lesson1, onBack, onSubmit }: NewLearnerFormProps) {
+export function NewLearnerForm({ lesson1, onBack, onSubmit, savingFrom = null }: NewLearnerFormProps) {
   const { t, tx } = useI18n();
   const hasLanguageChoice = useHasLanguageChoice();
   const languageHelpId = useId();
@@ -95,7 +100,8 @@ export function NewLearnerForm({ lesson1, onBack, onSubmit }: NewLearnerFormProp
     const trimmedCode = classCode.trim();
     if (trimmedCode && !CLASS_CODE_PATTERN.test(trimmedCode)) {
       setClassCodeError(t('pages.home.newLearner.classCodeInvalid'));
-      document.getElementById(CLASS_CODE_FIELD_ID)?.focus();
+      // Once "Have a class code?" has opened for the error (it may have been folded away).
+      requestAnimationFrame(() => document.getElementById(CLASS_CODE_FIELD_ID)?.focus());
       return;
     }
     setNameError(undefined);
@@ -107,10 +113,11 @@ export function NewLearnerForm({ lesson1, onBack, onSubmit }: NewLearnerFormProp
     // Theirs from now on: the language on screen as they join.
     input.language = language;
     void onSubmit(input)
-      .then(() => {
-        // "Start LessonSummary N": actually takes the new learner straight there,
-        // rather than leaving them on a dashboard the button never mentioned.
-        void navigate(lessonPath(lesson1.id, 'read'));
+      .then((next) => {
+        // "Start Lesson 1": actually takes the new learner straight there,
+        // rather than leaving them on a dashboard the button never mentioned;
+        // or back to the work they asked to save, on the same step.
+        void navigate(next ?? lessonPath(lesson1.id, 'read'));
       })
       .catch(() => {
         setSubmitting(false);
@@ -165,7 +172,9 @@ export function NewLearnerForm({ lesson1, onBack, onSubmit }: NewLearnerFormProp
             </p>
           ) : null}
           <Button type="submit" variant="primary" size="lg" block iconRight="ArrowRight" disabled={submitting}>
-            {t('pages.home.newLearner.submit')}
+            {savingFrom === null
+              ? t('pages.home.newLearner.submit')
+              : t('pages.home.newLearner.submitSaving', { number: savingFrom })}
           </Button>
           {/* The rest is optional, so it waits folded under Start (docs/notes/simpler-lessons.md). */}
           <div className="tw-home-more">

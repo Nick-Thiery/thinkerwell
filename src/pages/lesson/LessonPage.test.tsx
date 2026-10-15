@@ -170,3 +170,51 @@ describe('every lesson, every step', () => {
     20_000,
   );
 });
+
+describe("the lesson's head", () => {
+  const lesson = lessons[9]!;
+
+  async function open(path: string) {
+    const router = createMemoryRouter(routes, { initialEntries: [path] });
+    await firstPageReady(router);
+    render(<RouterProvider router={router} />);
+    await waitFor(() => expect(document.querySelector('.tw-actionbar')).not.toBeNull());
+    return router;
+  }
+
+  it('says once, and only in the head, that nothing is saved for someone not chosen', async () => {
+    const router = await open(`/lesson/${lesson.id}/read`);
+    for (const stage of ['read', 'write', 'speak', 'watch', 'reflect'] as const) {
+      if (stage !== 'read') await act(() => router.navigate(`/lesson/${lesson.id}/${stage}`));
+      await waitFor(() => expect(document.querySelector('.tw-actionbar')).not.toBeNull());
+      const head = document.querySelector('.tw-lesson-head') as HTMLElement;
+      expect(within(head).getByText(t('lessonPlayer.shell.statusNotSaved'))).toBeInTheDocument();
+      expect(within(head).getByRole('button', { name: t('lessonPlayer.shell.noLearnerAction') })).toBeInTheDocument();
+      // Never again further down the step, and never as a banner.
+      expect(screen.getAllByText(/saved/i)).toHaveLength(1);
+      expect(document.querySelector('.tw-status')).toBeNull();
+    }
+  });
+
+  it('has the five steps as links, any of them open, the current one marked', async () => {
+    await open(`/lesson/${lesson.id}/speak`);
+    const steps = screen.getByRole('navigation', { name: t('ds.chrome.stagePath.navLabel') });
+    const links = within(steps).getAllByRole('link');
+    expect(links.map((link) => link.getAttribute('href'))).toEqual(
+      ['read', 'write', 'speak', 'watch', 'reflect'].map((stage) => `/lesson/${lesson.id}/${stage}`),
+    );
+    expect(within(steps).getByRole('link', { current: 'step' })).toHaveTextContent(t('stages.speak'));
+  });
+
+  it('opens "About this lesson" at the start of the lesson only, with the goal, the time and the print view', async () => {
+    const router = await open(`/lesson/${lesson.id}/read`);
+    const about = () => screen.getByText(t('lessonPlayer.shell.aboutLesson'), { selector: 'summary span' }).closest('details') as HTMLDetailsElement;
+    await waitFor(() => expect(about().open).toBe(true));
+    expect(within(about()).getByText(lesson.learningGoal)).toBeInTheDocument();
+    expect(within(about()).getByText(lesson.essentialQuestion)).toBeInTheDocument();
+    expect(within(about()).getByRole('link', { name: t('print.printLesson') })).toHaveAttribute('href', `/lesson/${lesson.id}/print`);
+    await act(() => router.navigate(`/lesson/${lesson.id}/write`));
+    await waitFor(() => expect(document.querySelector('.tw-actionbar')).not.toBeNull());
+    expect(about().open).toBe(false);
+  });
+});

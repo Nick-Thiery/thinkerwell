@@ -2,8 +2,11 @@
  * Write: the lesson's writing task (docs/screens/LessonWrite.dc.html at 1280,
  * PhoneLesson.dc.html at 390). Every lesson string comes from `lesson.write`.
  *
- * - Three writing-help modes (Write, Sentence starters, Plan first), kept in
- *   local state for this visit only; Sentence starters is the default.
+ * The task, then the writing box, then Continue: the help is there when it is
+ * wanted, folded away until then (docs/notes/simpler-lessons.md).
+ * - "Look at the evidence again" (or the map) opens the evidence above the box.
+ * - "Need help writing?" holds the sentence starters and the planning boxes;
+ *   it starts open when the learner has planned before.
  * - Sentence starters go in at the caret and never replace what the learner
  *   wrote (./insertStarter.ts). Focus goes back to the writing box.
  * - Planning boxes, the writing box and the self-check save to
@@ -14,24 +17,23 @@
  *   starter, and are saved like typing.
  * - The example answer shows only after the learner has written something or
  *   asks to see one (CLAUDE.md), and stays open once shown (exampleShown).
+ * - "Check your answer" (the self-check) is folded away too, open once
+ *   anything in it is ticked. None of the help is ever needed to continue.
  * - Continue marks Write done only when the writing box has text
  *   (src/lesson/progressRules.ts); it never blocks.
  */
 import { useCallback, useLayoutEffect, useRef, useState, type SyntheticEvent } from 'react';
-import { Button, Chip, Icon, MascotTip, SegmentedControl, TaskCard, WritingBox } from '../../../components/ds';
+import { Button, Chip, Icon, TaskCard, WritingBox } from '../../../components/ds';
 import { En, useI18n } from '../../../i18n';
-import { hasText, LESSON_PHONE_QUERY, useLessonPlayer, useMediaQuery } from '../../../lesson';
+import { hasText, useLessonPlayer } from '../../../lesson';
 import { LessonSlot } from '../../../lesson/extras';
 import type { LessonProgress, WritingProgress } from '../../../storage';
 import { LessonEvidence } from '../evidence/LessonEvidence';
+import { LessonDisclosure } from '../LessonDisclosure';
 import { SayItBox, useSayIt } from '../sayIt';
 import { StageActionBar } from '../StageActionBar';
 import { insertStarter } from './insertStarter';
 import './WriteStage.css';
-
-export type WriteMode = 'write' | 'starters' | 'plan';
-
-const MASCOT_SRC = '/images/thinkerwell-mascot-transparent.png';
 
 function withWriting(change: (writing: WritingProgress) => WritingProgress) {
   return (progress: LessonProgress): LessonProgress => ({ ...progress, writing: change(progress.writing) });
@@ -39,12 +41,10 @@ function withWriting(change: (writing: WritingProgress) => WritingProgress) {
 
 export function WriteStage() {
   const { t, contentLang } = useI18n();
-  const { lesson, progress, update, stageEvent, mode: playerMode } = useLessonPlayer();
-  const phone = useMediaQuery(LESSON_PHONE_QUERY);
+  const { lesson, progress, update, stageEvent } = useLessonPlayer();
   const write = lesson.write;
   const writing = progress.writing;
 
-  const [mode, setMode] = useState<WriteMode>('starters');
   const [evidenceOpen, setEvidenceOpen] = useState(false);
   const sayIt = useSayIt();
 
@@ -52,7 +52,6 @@ export function WriteStage() {
   const evidenceId = `write-evidence-${lesson.id}`;
   const startersTitleId = `write-starters-${lesson.id}`;
   const planTitleId = `write-plan-${lesson.id}`;
-  const selfCheckTitleId = `write-self-check-${lesson.id}`;
 
   // The learner's last caret (the end of their selection) in the writing box.
   // null until they have been in the box: a starter then goes at the end.
@@ -97,31 +96,12 @@ export function WriteStage() {
     if (!writing.exampleShown) update(withWriting((w) => ({ ...w, exampleShown: true })), { immediate: true });
   };
 
-  const helper = sayIt.available
-    ? playerMode === 'learner'
-      ? t('lessonPlayer.write.helperSavingSayIt')
-      : playerMode === 'look-around'
-        ? t('lessonPlayer.write.helperLookAroundSayIt')
-        : t('lessonPlayer.write.helperNoLearnerSayIt')
-    : playerMode === 'learner'
-      ? t('lessonPlayer.write.helperSaving')
-      : playerMode === 'look-around'
-        ? t('lessonPlayer.write.helperLookAround')
-        : t('lessonPlayer.write.helperNoLearner');
+  // Whether work is saved is said once, in the lesson's head (LessonPage), not here.
+  const helper = t(sayIt.available ? 'lessonPlayer.write.helperSayIt' : 'lessonPlayer.write.helper');
 
   const onlyMaps = lesson.evidence.cards.every((card) => card.type === 'map');
-
-  const modeOptions = phone
-    ? [
-        { label: t('lessonPlayer.write.modeWriteShort'), value: 'write' },
-        { label: t('lessonPlayer.write.modeStartersShort'), value: 'starters' },
-        { label: t('lessonPlayer.write.modePlanShort'), value: 'plan' },
-      ]
-    : [
-        { label: t('lessonPlayer.write.modeWrite'), value: 'write', icon: 'Pencil' as const },
-        { label: t('lessonPlayer.write.modeStarters'), value: 'starters', icon: 'Plus' as const },
-        { label: t('lessonPlayer.write.modePlan'), value: 'plan', icon: 'NotebookPen' as const },
-      ];
+  const planned = Object.values(writing.planning).some((text) => hasText(text));
+  const ticked = Object.values(writing.selfCheck).some(Boolean);
 
   return (
     <>
@@ -132,12 +112,6 @@ export function WriteStage() {
       </TaskCard>
 
       <div className="tw-write-tools">
-        <SegmentedControl
-          label={t('lessonPlayer.write.helpLabel')}
-          options={modeOptions}
-          value={mode}
-          onChange={(value) => setMode(value as WriteMode)}
-        />
         <Button
           variant="ghost"
           icon={onlyMaps ? 'Map' : 'FileText'}
@@ -155,11 +129,27 @@ export function WriteStage() {
         </div>
       ) : null}
 
-      {mode === 'starters' ? (
+      <SayItBox
+        sayIt={sayIt}
+        id={answerId}
+        label={t('lessonPlayer.write.answerLabel')}
+        rows={6}
+        value={writing.text}
+        helper={helper}
+        onValueChange={(value) => update(withWriting((w) => ({ ...w, text: value })))}
+        onDictatedCaret={rememberDictatedCaret}
+        onSelect={rememberCaret}
+        onKeyUp={rememberCaret}
+        onClick={rememberCaret}
+        onBlur={rememberCaret}
+      />
+
+      <LessonDisclosure className="tw-write-help" icon="Lightbulb" summary={t('lessonPlayer.write.needHelp')} defaultOpen={planned}>
         <section className="tw-write-starters" aria-labelledby={startersTitleId}>
-          <span id={startersTitleId} className="tw-write-help-title">
-            {phone ? t('lessonPlayer.write.startersTitleShort') : t('lessonPlayer.write.startersTitle')}
-          </span>
+          <h3 id={startersTitleId} className="tw-write-help-title">
+            {t('lessonPlayer.write.modeStarters')}
+          </h3>
+          <p className="tw-write-help-intro">{t('lessonPlayer.write.startersTitle')}</p>
           <div className="tw-write-chips">
             {write.sentenceStarters.map((starter, index) => (
               <Chip key={index} variant="starter" icon="Plus" onClick={() => addStarter(starter)} {...contentLang}>
@@ -168,13 +158,12 @@ export function WriteStage() {
             ))}
           </div>
         </section>
-      ) : null}
 
-      {mode === 'plan' ? (
         <section className="tw-write-plan" aria-labelledby={planTitleId}>
-          <span id={planTitleId} className="tw-write-help-title">
-            {t('lessonPlayer.write.planTitle')}
-          </span>
+          <h3 id={planTitleId} className="tw-write-help-title">
+            {t('lessonPlayer.write.modePlan')}
+          </h3>
+          <p className="tw-write-help-intro">{t('lessonPlayer.write.planIntro')}</p>
           <div className="tw-write-plan-boxes">
             {write.planningBoxes.map((title, index) => (
               <WritingBox
@@ -191,22 +180,7 @@ export function WriteStage() {
             ))}
           </div>
         </section>
-      ) : null}
-
-      <SayItBox
-        sayIt={sayIt}
-        id={answerId}
-        label={t('lessonPlayer.write.answerLabel')}
-        rows={6}
-        value={writing.text}
-        helper={helper}
-        onValueChange={(value) => update(withWriting((w) => ({ ...w, text: value })))}
-        onDictatedCaret={rememberDictatedCaret}
-        onSelect={rememberCaret}
-        onKeyUp={rememberCaret}
-        onClick={rememberCaret}
-        onBlur={rememberCaret}
-      />
+      </LessonDisclosure>
 
       <ExampleAnswer
         example={write.example}
@@ -215,42 +189,36 @@ export function WriteStage() {
         onShow={showExample}
       />
 
-      <section className="tw-write-self-check" aria-labelledby={selfCheckTitleId}>
-        <h3 id={selfCheckTitleId} className="tw-write-self-check-title">
-          {t('lessonPlayer.write.selfCheckTitle')}
-        </h3>
-        {write.selfCheck.map((item, index) => {
-          const id = `write-check-${lesson.id}-${index}`;
-          return (
-            <label key={index} className="tw-write-check" htmlFor={id}>
-              {/* A real checkbox covering the whole row (the tap target, at least 44px tall);
-                  the 24px box beside the words is drawn by the span after it. */}
-              <input
-                id={id}
-                type="checkbox"
-                className="tw-write-check-input"
-                checked={Boolean(writing.selfCheck[index])}
-                onChange={(event) => {
-                  const checked = event.currentTarget.checked;
-                  update(withWriting((w) => ({ ...w, selfCheck: { ...w.selfCheck, [index]: checked } })), {
-                    immediate: true,
-                  });
-                }}
-              />
-              <span className="tw-write-check-box" aria-hidden="true">
-                <Icon name="Check" size={18} strokeWidth={3} />
-              </span>
-              <span {...contentLang}>{item}</span>
-            </label>
-          );
-        })}
-      </section>
-
-      {mode === 'starters' ? (
-        <MascotTip src={MASCOT_SRC} size={80}>
-          {t('lessonPlayer.write.tip')}
-        </MascotTip>
-      ) : null}
+      <LessonDisclosure className="tw-write-self-check" icon="ListChecks" summary={t('lessonPlayer.write.selfCheckTitle')} defaultOpen={ticked}>
+        <fieldset className="tw-write-self-check-list">
+          <legend className="tw-visually-hidden">{t('lessonPlayer.write.selfCheckTitle')}</legend>
+          {write.selfCheck.map((item, index) => {
+            const id = `write-check-${lesson.id}-${index}`;
+            return (
+              <label key={index} className="tw-write-check" htmlFor={id}>
+                {/* A real checkbox covering the whole row (the tap target, at least 44px tall);
+                    the 24px box beside the words is drawn by the span after it. */}
+                <input
+                  id={id}
+                  type="checkbox"
+                  className="tw-write-check-input"
+                  checked={Boolean(writing.selfCheck[index])}
+                  onChange={(event) => {
+                    const checked = event.currentTarget.checked;
+                    update(withWriting((w) => ({ ...w, selfCheck: { ...w.selfCheck, [index]: checked } })), {
+                      immediate: true,
+                    });
+                  }}
+                />
+                <span className="tw-write-check-box" aria-hidden="true">
+                  <Icon name="Check" size={18} strokeWidth={3} />
+                </span>
+                <span {...contentLang}>{item}</span>
+              </label>
+            );
+          })}
+        </fieldset>
+      </LessonDisclosure>
 
       {sayIt.announcer}
 

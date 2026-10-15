@@ -147,8 +147,15 @@ function learnerChip(page: Page): Locator {
  */
 async function fillNewLearnerForm(page: Page, name: string, options: { classCode?: string; colour?: string } = {}): Promise<void> {
   await page.getByLabel('First name or nickname').fill(name);
-  if (options.colour) await page.getByRole('radio', { name: options.colour }).click();
-  if (options.classCode) await page.getByLabel('Class code').fill(options.classCode);
+  // The colour and the class code are folded under Start (docs/notes/simpler-lessons.md).
+  if (options.colour) {
+    await page.locator('summary', { hasText: 'Pick your colour' }).click();
+    await page.getByRole('radio', { name: options.colour }).click();
+  }
+  if (options.classCode) {
+    await page.locator('summary', { hasText: 'Have a class code?' }).click();
+    await page.getByLabel('Class code').fill(options.classCode);
+  }
   await page.getByRole('button', { name: 'Start Lesson 1' }).click();
   await expect(page).toHaveURL(/\/lesson\/.+\/read$/);
   await page.goto('/');
@@ -170,7 +177,7 @@ async function tabUntilFocused(page: Page, target: Locator, maxTabs = 50): Promi
 }
 
 test.describe('new learner flow', () => {
-  test('adding a learner asks only for a name, a colour and an optional class code', async ({ page }) => {
+  test('adding a learner asks for a name, with a colour and a class code folded under Start', async ({ page }) => {
     await page.goto('/');
     await expect(page.getByRole('heading', { level: 1, name: "Who's learning today?" })).toBeVisible();
 
@@ -181,10 +188,18 @@ test.describe('new learner flow', () => {
     await page.getByRole('button', { name: 'Start Lesson 1' }).click();
     await expect(page.getByText('Type your name or a nickname.')).toBeVisible();
 
+    // Start comes straight after the name; the rest is optional and folded away.
+    const start = page.getByRole('button', { name: 'Start Lesson 1' });
+    await expect(start).toBeInViewport();
+    await expect(page.getByRole('radio', { name: 'Green' })).toBeHidden();
+    await expect(page.getByLabel('Class code')).toBeHidden();
+
     await page.getByLabel('First name or nickname').fill('Amina');
+    await page.locator('summary', { hasText: 'Pick your colour' }).click();
     await page.getByRole('radio', { name: 'Green' }).click();
+    await page.locator('summary', { hasText: 'Have a class code?' }).click();
     await page.getByLabel('Class code').fill('abc-07');
-    await page.getByRole('button', { name: 'Start Lesson 1' }).click();
+    await start.click();
 
     // "Start Lesson 1" does exactly that.
     await expect(page).toHaveURL(/\/lesson\/.+\/read$/);
@@ -213,7 +228,10 @@ test.describe('new learner flow', () => {
     await page.goto('/');
     await page.getByRole('button', { name: "I'm new here" }).click();
     await page.getByLabel('First name or nickname').fill('Yusuf');
+    await page.locator('summary', { hasText: 'Have a class code?' }).click();
     await page.getByLabel('Class code').fill('not a code!');
+    // Folded away again, the problem still opens it, so it is never hidden.
+    await page.locator('summary', { hasText: 'Have a class code?' }).click();
     await page.getByRole('button', { name: 'Start Lesson 1' }).click();
     await expect(page.getByText('Use letters, numbers and hyphens only, like ABC-07.')).toBeVisible();
     expect((await dumpDb(page)).learners).toHaveLength(0);
@@ -535,13 +553,23 @@ test.describe('keyboard only', () => {
     const nameField = page.getByLabel('First name or nickname');
     await tabUntilFocused(page, nameField);
     await page.keyboard.type('Zara');
+    // Start comes straight after the name; the colour is folded under it ("Pick your colour").
+    const submit = page.getByRole('button', { name: 'Start Lesson 1' });
+    await page.keyboard.press('Tab');
+    await expect(submit).toBeFocused();
+    const colour = page.locator('summary', { hasText: 'Pick your colour' });
+    await tabUntilFocused(page, colour);
+    await page.keyboard.press('Enter');
     // Into the colour radio group (lands on the checked swatch, White, the
     // default), then two steps along it, wrapping round to Sand (History).
     await page.keyboard.press('Tab');
     await page.keyboard.press('ArrowRight');
     await page.keyboard.press('ArrowRight');
-    const submit = page.getByRole('button', { name: 'Start Lesson 1' });
-    await tabUntilFocused(page, submit);
+    // Back up to Start.
+    for (let i = 0; i < 5 && !(await submit.evaluate((el) => el === document.activeElement)); i++) {
+      await page.keyboard.press('Shift+Tab');
+    }
+    await expect(submit).toBeFocused();
     await page.keyboard.press('Enter');
 
     // "Start Lesson 1" does exactly that.

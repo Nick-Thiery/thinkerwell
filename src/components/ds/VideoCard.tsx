@@ -50,6 +50,8 @@ export interface VideoCardProps {
    * hidden from screen readers. Not in the reference.
    */
   posterArt?: ReactNode;
+  /** The "Optional" tag on the poster. Pass false where the page already says so once (a lesson's Watch step). Not in the reference. */
+  optionalTag?: boolean;
   /** The title's heading level: 3 (the reference, under a stage's heading) or 2 where the card follows the page's h1. Not in the reference. */
   headingLevel?: 2 | 3;
 }
@@ -77,6 +79,7 @@ export function VideoCard({
   titleInEnglish = true,
   posterArt,
   headingLevel = 3,
+  optionalTag = true,
 }: VideoCardProps) {
   const Heading = headingLevel === 2 ? 'h2' : 'h3';
   const { t, englishLang: english } = useI18n();
@@ -97,9 +100,11 @@ export function VideoCard({
               {posterArt}
             </span>
           ) : null}
-          <span className="tw-video-tag">
-            <Badge tone="lemon">{t('ds.content.video.optional')}</Badge>
-          </span>
+          {optionalTag ? (
+            <span className="tw-video-tag">
+              <Badge tone="lemon">{t('ds.content.video.optional')}</Badge>
+            </span>
+          ) : null}
           <span className="tw-video-play" aria-hidden="true">
             <Icon name="Play" size={34} />
           </span>

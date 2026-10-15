@@ -66,6 +66,7 @@ import {
 } from '../storage';
 import {
   clearGuestMemory,
+  takeClaimedWork,
   getGuestProgress,
   getGuestReadingLevel,
   setGuestProgress,
@@ -73,6 +74,7 @@ import {
   VISIT_SEED,
 } from './guestMemory';
 import { applyStageEvent, type StageEvent } from './progressRules';
+import { saveGuestWork } from './saveGuestWork';
 import { newlyFinished, writingWordCounts } from '../measurement/progressEvents';
 import { getMeasurementState, leaveLesson, track, useMeasurementState } from '../measurement/track';
 
@@ -249,6 +251,9 @@ function PlayerForOwner({
       try {
         const store = await getStore();
         storeRef.current = store;
+        // A guest who chose "Save my work" and then this learner: their work is saved first, so it loads below.
+        const claimed = learnerId ? takeClaimedWork(learnerId) : null;
+        if (learnerId && claimed) await saveGuestWork(store, learnerId, claimed);
         const [saved, deviceSettings] = await Promise.all([
           learnerId ? store.getProgress(learnerId, lesson.id) : Promise.resolve(undefined),
           store.getSettings(),

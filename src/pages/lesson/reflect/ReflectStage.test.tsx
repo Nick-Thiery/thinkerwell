@@ -140,14 +140,34 @@ describe('ReflectStage', { timeout: 30_000 }, () => {
     });
   });
 
-  it('tells a learner where answers go, and a guest that nothing is saved', async () => {
+  it("tells a learner where answers go, and leaves a guest's to the lesson's head", async () => {
     await addCurrentLearner();
     const { unmount } = renderReflect();
     expect(await screen.findByText(/Your answers go into your journal on this device/)).toBeInTheDocument();
     unmount();
     await deleteAllData();
     renderReflect();
-    expect(await screen.findByText(/Your answers aren't saved yet/)).toBeInTheDocument();
+    expect(await screen.findByRole('textbox', { name: lesson.reflect.prompts[0]?.text })).toBeInTheDocument();
+    // Said once, in the head (LessonPage), not again under the answers.
+    expect(screen.queryByText(/journal|saved/i)).not.toBeInTheDocument();
+  });
+
+  it('keeps the optional prompts behind "Add another thought", open once one has an answer', async () => {
+    const optional = lesson.reflect.prompts.findIndex((prompt) => !prompt.required);
+    expect(optional).toBeGreaterThan(-1);
+    const { unmount } = renderReflect();
+    const summary = await screen.findByText('Add another thought');
+    const details = summary.closest('details') as HTMLDetailsElement;
+    expect(details.open).toBe(false);
+    expect(details).toContainElement(screen.getByRole('textbox', { name: new RegExp(escape(lesson.reflect.prompts[optional]!.text)) }));
+    expect(details).not.toContainElement(screen.getByRole('textbox', { name: lesson.reflect.prompts[0]?.text }));
+    unmount();
+
+    const learnerId = await addCurrentLearner();
+    const store = await getStore();
+    await store.updateProgress(learnerId, lesson.id, (p) => ({ ...p, reflections: { [optional]: 'A question I still have.' } }));
+    renderReflect();
+    await waitFor(() => expect((screen.getByText('Add another thought').closest('details') as HTMLDetailsElement).open).toBe(true));
   });
 
   it('renders every lesson without console errors', { timeout: 120_000 }, async () => {

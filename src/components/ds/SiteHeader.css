@@ -199,3 +199,34 @@
     font-size: 19px;
   }
 }
+
+/* Inside a lesson: the menu button says "Menu" beside its icon (SiteHeader's
+   menuLabel), except on phones, where the icon is left alone so the header
+   (the wordmark, the language, the learner and the menu) fits in one row;
+   it keeps its accessible name there. */
+.tw-menu-btn.tw-menu-btn-labelled {
+  width: auto;
+  gap: 6px;
+  padding-inline: var(--space-2) var(--space-3);
+  border: 2px solid var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.tw-menu-btn-labelled .tw-icon {
+  width: 22px;
+  height: 22px;
+}
+
+@media (max-width: 479px) {
+  .tw-menu-btn.tw-menu-btn-labelled {
+    width: 44px;
+    padding: 0;
+    border: 0;
+  }
+
+  .tw-menu-btn-labelled .tw-menu-btn-text {
+    display: none;
+  }
+}

@@ -59,42 +59,6 @@
   overflow-wrap: anywhere;
 }
 
-.tw-speak-practised {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-  margin: 0;
-  padding: 0;
-  border: 0;
-  min-inline-size: 0;
-}
-
-.tw-speak-legend {
-  padding: 0;
-  margin-block-end: var(--space-2);
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: 700;
-}
-
-.tw-speak-help {
-  margin: 0;
-  font-size: 16px;
-  line-height: 24px;
-  color: var(--ink-muted);
-}
-
-.tw-speak-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-/* Long options wrap inside the chip rather than pushing the page wider. */
-.tw-speak-chips .tw-chip {
-  max-inline-size: 100%;
-}
-
 @media (max-width: 599px) {
   .tw-speak-tasks {
     grid-template-columns: minmax(0, 1fr);

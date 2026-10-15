@@ -15,14 +15,24 @@ function renderAt(path = '/educators') {
 }
 
 describe('EducatorsPage', () => {
-  it('shows the hero, what you need, and how a session works, with a link to Settings', () => {
+  it('shows the hero, what you need with the one way in to setting up a device, and how a session works', () => {
     renderAt();
     expect(screen.getByRole('heading', { level: 1, name: 'For educators' })).toBeInTheDocument();
     expect(screen.getByText('Run a Thinkerwell lesson with your group')).toBeInTheDocument();
     expect(screen.getByText('One device for every 1 to 3 learners, or one big screen')).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 2, name: 'How a session works' })).toBeInTheDocument();
     expect(screen.getByText('Pick a lesson')).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Settings for this device' })).toHaveAttribute('href', '/settings');
+    expect(screen.getByRole('link', { name: 'Set up this device' })).toHaveAttribute('href', '/educators/setup');
+  });
+
+  it('puts teaching first: how a session works and the lessons, then the group, then starting a pilot', () => {
+    renderAt();
+    const order = screen.getAllByRole('heading', { level: 2 }).map((heading) => heading.textContent);
+    const at = (name: string) => order.indexOf(name);
+    expect(at('How a session works')).toBeGreaterThan(-1);
+    expect(at('How a session works')).toBeLessThan(at('Preview any lesson'));
+    expect(at('Preview any lesson')).toBeLessThan(at('Follow your group'));
+    expect(at('Follow your group')).toBeLessThan(at('Starting a pilot'));
   });
 
   it('links everything for starting a pilot, then the tools for following the group', () => {
@@ -33,14 +43,12 @@ describe('EducatorsPage', () => {
       'Information sheet',
       'Consent form',
       'Code cards',
-      'Set up this device',
       'Pilot day guide',
     ]);
     expect(within(pilot).getByRole('link', { name: 'Read about pilots' })).toHaveAttribute('href', '/organisations');
     expect(within(pilot).getByRole('link', { name: 'Print information sheets' })).toHaveAttribute('href', '/educators/information-sheet');
     expect(within(pilot).getByRole('link', { name: 'Print consent forms' })).toHaveAttribute('href', '/educators/consent-form');
     expect(within(pilot).getByRole('link', { name: 'Make code cards' })).toHaveAttribute('href', '/educators/code-cards');
-    expect(within(pilot).getByRole('link', { name: 'Open the checklist' })).toHaveAttribute('href', '/educators/setup');
     expect(within(pilot).getByRole('link', { name: 'Print the guide' })).toHaveAttribute('href', '/educators/pilot-day');
 
     const tools = screen.getByRole('region', { name: 'Follow your group' });

@@ -139,6 +139,8 @@ test.describe('one language setting, changed anywhere, followed at once', () => 
     await page.goto('/');
     await page.getByRole('button', { name: msg(en, 'pages.home.newLearnerTile') }).click();
     await page.getByLabel(msg(en, 'pages.home.newLearner.nameLabel')).fill('Dewi');
+    // Folded under Start, as "Change language" (docs/notes/simpler-lessons.md).
+    await page.locator('summary', { hasText: msg(en, 'pages.home.newLearner.languageSummary') }).click();
     await page.getByRole('radiogroup', { name: msg(en, 'pages.home.newLearner.languageLabel') }).getByRole('radio', { name: INDONESIAN }).click();
     // The form itself is Indonesian now, and what was typed stays.
     await expect(page.locator('html')).toHaveAttribute('lang', 'id');
@@ -292,6 +294,8 @@ test.describe('the header keeps its links on laptops @own-size', () => {
     test(`at ${width}px wide, with a learner chosen, in Indonesian and English`, async ({ page }) => {
       await page.setViewportSize({ width, height: 900 });
       await addLearner(page, 'Dewi', en);
+      // Not in a lesson: there the header steps back to a labelled Menu at every width (docs/notes/simpler-lessons.md).
+      await page.goto('/course');
       for (const [language, messages] of [[INDONESIAN, id], [ENGLISH, en]] as const) {
         if (language === INDONESIAN) await headerSwitch(page, INDONESIAN);
         else await headerSwitch(page, ENGLISH);
@@ -526,14 +530,13 @@ test.describe('with Indonesian on, every page is Indonesian and fits', () => {
       await page.goto(`/lesson/${lesson.id}/read?part=check`);
       await page.getByRole('radio').first().click();
       await expectAllIndonesian(page, 'quick check answered');
-      await page.goto(`/lesson/${lesson.id}/write`);
-      for (const [full, short] of [
-        ['modeStarters', 'modeStartersShort'],
-        ['modePlan', 'modePlanShort'],
-      ] as const) {
-        const label = new RegExp(`^(${msg(id, `lessonPlayer.write.${full}`)}|${msg(id, `lessonPlayer.write.${short}`)})$`);
-        await page.getByRole('button', { name: label }).click();
-        await expectAllIndonesian(page, `write: ${full}`);
+      // Every folded help, opened: Read's key words, Write's help and self-check, Watch's idea box, Reflect's other prompt.
+      for (const step of ['read?part=1', 'watch', 'reflect', 'write']) {
+        await page.goto(`/lesson/${lesson.id}/${step}`);
+        await expect(page.locator('h1')).toHaveText(lesson.title);
+        const closed = page.locator('.tw-lesson-stage details:not([open]) > summary');
+        for (let i = 0; i < 6 && (await closed.count()) > 0; i++) await closed.first().click();
+        await expectAllIndonesian(page, `${step}: help opened`);
       }
       await page.getByRole('button', { name: msg(id, 'lessonPlayer.write.seeExample') }).click();
       await expectAllIndonesian(page, 'write: example');

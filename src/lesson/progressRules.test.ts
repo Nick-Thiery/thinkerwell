@@ -89,11 +89,14 @@ describe('Write', () => {
 });
 
 describe('Speak', () => {
-  it('is done when the learner chooses how they practised', () => {
+  it('is done when the learner continues: every way of practising counts', () => {
+    expect(applyStageEvent(lesson, fresh(), { stage: 'speak', kind: 'continue' }, NOW).stagesDone).toEqual(['speak']);
+  });
+
+  it('still counts a "how did you practise" choice saved before that question was taken out', () => {
     expect(applyStageEvent(lesson, fresh(), { stage: 'speak', kind: 'practised' }, NOW).stagesDone).toEqual([]);
     const chosen = { ...fresh(), speak: { practisedHow: 2 } };
     expect(applyStageEvent(lesson, chosen, { stage: 'speak', kind: 'practised' }, NOW).stagesDone).toEqual(['speak']);
-    expect(applyStageEvent(lesson, fresh(), { stage: 'speak', kind: 'continue' }, NOW).stagesDone).toEqual([]);
   });
 });
 

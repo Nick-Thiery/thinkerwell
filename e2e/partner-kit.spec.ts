@@ -114,10 +114,14 @@ test('an organisation finds the kit from the first page, in the footer and on th
     ['Print information sheets', '/educators/information-sheet'],
     ['Print consent forms', '/educators/consent-form'],
     ['Make code cards', '/educators/code-cards'],
-    ['Open the checklist', '/educators/setup'],
   ] as const) {
     await expect(pilot.getByRole('link', { name: cta })).toHaveAttribute('href', url);
   }
+  // Setting up a device has one way in, in "What you need" at the top (docs/notes/simpler-lessons.md).
+  await expect(page.getByRole('complementary', { name: 'What you need' }).getByRole('link', { name: 'Set up this device' })).toHaveAttribute(
+    'href',
+    '/educators/setup',
+  );
 });
 
 for (const locale of ['en', 'id', 'ms'] as const) {

@@ -8,6 +8,7 @@ import { GuestHome } from './home/GuestHome';
 import { LearnerDashboard } from './home/LearnerDashboard';
 import { NoStoragePanel } from './home/NoStoragePanel';
 import { WhoIsLearningPicker } from './home/WhoIsLearningPicker';
+import { claimWorkToSave, dropWorkToSave, peekWorkToSave } from '../lesson/guestMemory';
 import './HomePage.css';
 import { useLearnerProgress, useLearnerSession } from '../session';
 
@@ -38,6 +39,12 @@ export function HomePage() {
   const location = useLocation();
   const navigate = useNavigate();
   const wantsNewLearnerForm = new URLSearchParams(location.search).get('new') === '1';
+  // A guest's work waiting for "Save my work" (src/lesson/guestMemory.ts), until someone is chosen or it is dropped.
+  const [workToSave, setWorkToSave] = useState(peekWorkToSave);
+  const dropWork = () => {
+    dropWorkToSave();
+    setWorkToSave(null);
+  };
 
   // The session already treats "no storage" as look-around (session.lookAround
   // is forced true the moment storageAvailable is false), so it can guard
@@ -138,13 +145,22 @@ export function HomePage() {
           learners={session.learners}
           lesson1={lesson1}
           initialView={wantsNewLearnerForm ? 'new' : undefined}
+          saving={workToSave ? { lessonNumber: workToSave.lessonNumber, onDrop: dropWork } : null}
           onChoose={(id) => {
-            void session.chooseLearner(id).catch((error: unknown) => {
-              if (import.meta.env.DEV) console.error(error);
-            });
+            // A guest's "Save my work": this learner gets it, back on the step they left.
+            const back = workToSave ? claimWorkToSave(id) : null;
+            void session
+              .chooseLearner(id)
+              .then(() => {
+                if (back) void navigate(back);
+              })
+              .catch((error: unknown) => {
+                if (import.meta.env.DEV) console.error(error);
+              });
           }}
           onAdd={async (input) => {
-            await session.addLearner(input);
+            const learner = await session.addLearner(input);
+            return workToSave ? claimWorkToSave(learner.id) : null;
           }}
           onRemove={(id) => session.removeLearner(id)}
           onLookAround={session.startLookAround}

@@ -35,25 +35,12 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
-  padding: var(--space-6);
-  border-radius: var(--radius-xl);
-  background: var(--paper);
-  border: 1px solid var(--line);
 }
 
 .tw-read-keywords-head {
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
-}
-
-.tw-read-keywords-title {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: 24px;
-  line-height: 30px;
-  font-weight: 500;
-  letter-spacing: -0.01em;
 }
 
 .tw-read-keywords-intro {
@@ -109,8 +96,13 @@
 
 /* --------------------------------------------------------------- reading */
 
+/* The reading with its tools above and the key words below. */
 .tw-read-part {
-  /* Room above the card when it is scrolled into view on a new part. */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-inline-size: 0;
+  /* Room above the tools when the part is scrolled into view on a new part. */
   scroll-margin-block-start: var(--space-4);
 }
 
@@ -197,7 +189,6 @@
     gap: var(--space-5);
   }
 
-  .tw-read-keywords,
   .tw-read-think {
     padding: var(--space-5);
   }

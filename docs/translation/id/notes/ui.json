@@ -98,36 +98,6 @@
     "back": "About {min}–{max} minutes. You can stop and come back any time.",
     "source": "About {min}–{max} min. Stop and come back any time."
   },
-  "lessonPlayer.shell.sublabelDone": {
-    "back": "Done",
-    "source": "Done"
-  },
-  "lessonPlayer.shell.sublabelRead": {
-    "back": "Warm-up, reading and quick check",
-    "source": "Warm-up, reading and quick check"
-  },
-  "lessonPlayer.shell.sublabelWrite": {
-    "back": "Your writing task",
-    "source": "Your writing task"
-  },
-  "lessonPlayer.shell.sublabelSpeak": {
-    "back": "With a friend or alone",
-    "source": "With a partner or on your own"
-  },
-  "lessonPlayer.shell.sublabelWatch": {
-    "flag": true,
-    "note": "\"Optional\" → \"Tidak wajib\" (not required) everywhere, clearer for children than \"Opsional\" or \"Pilihan\". Same in watch.eyebrow, ds.content.video.optional and the \"(tidak wajib)\" field labels.",
-    "back": "Not required · {minutes} minutes",
-    "source": "Optional · {minutes} min"
-  },
-  "lessonPlayer.shell.sublabelWatchNoTime": {
-    "back": "Not required",
-    "source": "Optional"
-  },
-  "lessonPlayer.shell.sublabelReflect": {
-    "back": "{count} short questions",
-    "source": "{count} short prompts"
-  },
   "lessonPlayer.shell.continueTo": {
     "back": "Continue to {stage}",
     "source": "Continue to {stage}"
@@ -135,14 +105,6 @@
   "lessonPlayer.shell.finishLesson": {
     "back": "Finish the lesson",
     "source": "Finish lesson"
-  },
-  "lessonPlayer.shell.noLearnerTitle": {
-    "back": "Nothing is saved yet.",
-    "source": "Nothing is saved yet."
-  },
-  "lessonPlayer.shell.noLearnerBody": {
-    "back": "Choose who is learning so that your work is saved on this device.",
-    "source": "Choose who's learning to keep your work on this device."
   },
   "lessonPlayer.shell.noLearnerAction": {
     "back": "Choose who is learning",
@@ -382,14 +344,6 @@
     "source": "Pinch to zoom in.",
     "back": "Pinch to enlarge."
   },
-  "lessonPlayer.write.helpLabel": {
-    "back": "Writing help",
-    "source": "Writing help"
-  },
-  "lessonPlayer.write.modeWrite": {
-    "back": "Write",
-    "source": "Write"
-  },
   "lessonPlayer.write.modeStarters": {
     "back": "Sentence beginnings",
     "source": "Sentence starters"
@@ -397,20 +351,6 @@
   "lessonPlayer.write.modePlan": {
     "back": "Plan first",
     "source": "Plan first"
-  },
-  "lessonPlayer.write.modeWriteShort": {
-    "back": "Write",
-    "source": "Write"
-  },
-  "lessonPlayer.write.modeStartersShort": {
-    "flag": true,
-    "note": "Phone tab label for \"Sentence starters\". \"Awal kalimat\" felt too long for a 3-way tab, so \"Pembuka\" (opener). It differs from \"awal kalimat\" used elsewhere; if the team picks \"pembuka kalimat\" as the key term, everything lines up.",
-    "back": "Openers",
-    "source": "Starters"
-  },
-  "lessonPlayer.write.modePlanShort": {
-    "back": "Plan",
-    "source": "Plan"
   },
   "lessonPlayer.write.evidenceToggle": {
     "back": "See the evidence again",
@@ -424,43 +364,9 @@
     "back": "Tap a sentence beginning to add it to your writing",
     "source": "Tap a sentence starter to add it to your writing"
   },
-  "lessonPlayer.write.startersTitleShort": {
-    "flag": true,
-    "note": "\"Tap a starter to add it\" → \"Ketuk satu untuk memakainya\" (tap one to use it), to stay short on phones.",
-    "back": "Tap one to use it",
-    "source": "Tap a starter to add it"
-  },
-  "lessonPlayer.write.planTitle": {
-    "back": "Plan your ideas here, then write your answer below",
-    "source": "Plan your ideas here, then write your answer below"
-  },
   "lessonPlayer.write.answerLabel": {
     "back": "Your answer",
     "source": "Your answer"
-  },
-  "lessonPlayer.write.helperSaving": {
-    "back": "4 to 6 sentences is enough. Spelling doesn't matter here. Your writing is saved on this device as you type.",
-    "source": "4 to 6 sentences is plenty. Spelling does not matter here. Saved on this device as you type."
-  },
-  "lessonPlayer.write.helperLookAround": {
-    "back": "4 to 6 sentences is enough. Spelling doesn't matter here. Nothing is saved while you are looking around.",
-    "source": "4 to 6 sentences is plenty. Spelling does not matter here. Nothing is saved while you look around."
-  },
-  "lessonPlayer.write.helperNoLearner": {
-    "back": "4 to 6 sentences is enough. Spelling doesn't matter here. Nothing is saved until you choose who is learning.",
-    "source": "4 to 6 sentences is plenty. Spelling does not matter here. Nothing is saved until you choose who's learning."
-  },
-  "lessonPlayer.write.helperSavingSayIt": {
-    "source": "4 to 6 sentences is plenty. Spelling does not matter here. Tap Say it to talk instead of typing. Saved on this device as you type.",
-    "back": "4 to 6 sentences is enough. Spelling doesn't matter here. Tap Say it to speak, with no need to type. Your writing is saved on this device as you type."
-  },
-  "lessonPlayer.write.helperLookAroundSayIt": {
-    "source": "4 to 6 sentences is plenty. Spelling does not matter here. Tap Say it to talk instead of typing. Nothing is saved while you look around.",
-    "back": "4 to 6 sentences is enough. Spelling doesn't matter here. Tap Say it to speak, with no need to type. Nothing is saved while you are looking around."
-  },
-  "lessonPlayer.write.helperNoLearnerSayIt": {
-    "source": "4 to 6 sentences is plenty. Spelling does not matter here. Tap Say it to talk instead of typing. Nothing is saved until you choose who's learning.",
-    "back": "4 to 6 sentences is enough. Spelling doesn't matter here. Tap Say it to speak, with no need to type. Nothing is saved yet until you choose who is learning."
   },
   "lessonPlayer.write.selfCheckTitle": {
     "back": "Check your answer",
@@ -481,10 +387,6 @@
   "lessonPlayer.write.exampleNote": {
     "back": "This is one way of answering. Your answer may be different.",
     "source": "This is one way to answer. Yours can be different."
-  },
-  "lessonPlayer.write.tip": {
-    "back": "Confused? Tap one of the sentence beginnings, then fill in the empty part.",
-    "source": "Stuck? Tap a sentence starter, then fill in the blanks."
   },
   "lessonPlayer.sayIt.listening": {
     "source": "Listening. Speak slowly. Your words appear in the box, and you can fix them after.",
@@ -529,16 +431,6 @@
   "lessonPlayer.speak.soloTitle": {
     "back": "Alone",
     "source": "On your own"
-  },
-  "lessonPlayer.speak.practisedLegend": {
-    "back": "How did you practise?",
-    "source": "How did you practise?"
-  },
-  "lessonPlayer.speak.practisedHelp": {
-    "flag": true,
-    "note": "\"Every way of practising counts\" → \"Cara apa pun tetap dihitung\". \"Dihitung\" is literal; check it doesn't sound like scoring. Same idea in watch.task (\"Keduanya sama-sama dihitung\").",
-    "back": "Choose one. Any way still counts.",
-    "source": "Choose one. Every way of practising counts."
   },
   "lessonPlayer.speak.recorder.title": {
     "source": "Record yourself (optional)",
@@ -595,22 +487,16 @@
     "back": "This recording can't be saved on the device. You can still listen to it now."
   },
   "lessonPlayer.watch.eyebrow": {
-    "back": "Watch · not required",
-    "source": "Watch · optional"
+    "source": "Watch",
+    "back": "Watch",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler lesson pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
   },
   "lessonPlayer.watch.task": {
-    "back": "Watch a short video, or just read the same ideas. Both count equally.",
-    "source": "Watch a short video, or read the same ideas instead. Both count."
-  },
-  "lessonPlayer.watch.slowTitle": {
-    "back": "Slow internet?",
-    "source": "Slow internet?"
-  },
-  "lessonPlayer.watch.slowBody": {
-    "back": "Choose \"Just read\". It has the same content and uses almost no data.",
+    "source": "Optional: watch a short video, or read the same ideas instead. Both count.",
+    "back": "Not required: watch a short video, or just read the same ideas. Both count equally.",
     "flag": true,
-    "note": "\"Pilih Baca saja\" names the button \"Baca saja\", but can be parsed as \"just choose Read\". Same in videoInEnglish. Consider quoting the button name: Pilih \"Baca saja\". | Fixed after review: the button name is now in quotes, so \"Baca saja\" reads as the button, not \"just read\".",
-    "source": "Choose Read instead. It has the same ideas and uses almost no data."
+    "note": "New or changed in October 2026: simpler lesson pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
   },
   "lessonPlayer.watch.saveDataTitle": {
     "back": "Video is turned off to save data.",
@@ -678,10 +564,6 @@
     "back": "Write one or two sentences…",
     "source": "Write one or two sentences…"
   },
-  "lessonPlayer.watch.helper": {
-    "back": "Watching is not required. You may skip this step.",
-    "source": "Watching is optional. You can skip this step."
-  },
   "lessonPlayer.watch.forTeachers": {
     "back": "For teachers",
     "source": "For teachers"
@@ -703,14 +585,6 @@
   "lessonPlayer.reflect.journalNote": {
     "back": "Your answers go into your journal on this device. Only people who use this device can see it.",
     "source": "Your answers go into your journal on this device. Only people who use this device can see them."
-  },
-  "lessonPlayer.reflect.lookAroundNote": {
-    "back": "You are looking around, so your answers are not saved.",
-    "source": "You're looking around, so your answers aren't saved."
-  },
-  "lessonPlayer.reflect.noLearnerNote": {
-    "back": "Your answers are not saved yet. Choose who is learning so that your answers are saved in the journal.",
-    "source": "Your answers aren't saved yet. Choose who's learning to keep them in a journal."
   },
   "lessonPlayer.reflect.finishHelper": {
     "back": "Answer the first question to finish the lesson.",
@@ -1577,10 +1451,6 @@
   "pages.educators.setupTitle": {
     "source": "Set up this device",
     "back": "Set up this device"
-  },
-  "pages.educators.setupBody": {
-    "source": "A checklist for each laptop or tablet. Print it to tick on paper.",
-    "back": "A checklist for every laptop or tablet. Print it to tick off on paper."
   },
   "pages.educators.setupCta": {
     "source": "Open the checklist",
@@ -3777,8 +3647,10 @@
     "back": "Learning goal:"
   },
   "print.lessonIntro": {
-    "source": "This is the lesson on paper: both reading levels, the key words and every task, with lines to write on. The text prints black on white, without the menus.",
-    "back": "This is the lesson in paper form: both reading levels, the key words and all the tasks, with lines for writing. The text is printed black on white, with no menus."
+    "source": "This is the lesson on paper: the reading at the level you choose, the key words and every task, with lines to write on. The text prints black on white, without the menus.",
+    "back": "This is the lesson on paper: the reading at the level you choose, the key words, and all the tasks, with lines to write on. The text is printed black on white, without the menu.",
+    "flag": true,
+    "note": "Changed in October 2026: the print view prints one reading level unless both are chosen (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
   },
   "print.readingStandard": {
     "flag": true,
@@ -6458,5 +6330,107 @@
     "back": "Moving work to another device, the Listen voice, lesson audio to use without the internet, speech-to-text, and pilot results.",
     "flag": true,
     "note": "New or changed in October 2026: simpler pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "lessonPlayer.shell.stepOf": {
+    "source": "Step {number} of {total} · {stage}",
+    "back": "Step {number} of {total} · {stage}",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler lesson pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "lessonPlayer.shell.allSteps": {
+    "source": "All steps",
+    "back": "All steps",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler lesson pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "lessonPlayer.shell.statusSaved": {
+    "source": "Saved on this device",
+    "back": "Saved on this device",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler lesson pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "lessonPlayer.shell.statusNotSaved": {
+    "source": "Nothing is saved yet",
+    "back": "Nothing is saved yet",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler lesson pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "lessonPlayer.shell.statusLookAround": {
+    "source": "You're looking around: nothing is saved",
+    "back": "You're looking around: nothing is saved",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler lesson pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "lessonPlayer.write.needHelp": {
+    "source": "Need help writing?",
+    "back": "Need help writing?",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler lesson pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "lessonPlayer.write.planIntro": {
+    "source": "Plan your ideas here, then write your answer in the box above.",
+    "back": "Plan your ideas here, then write your answer in the box above.",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler lesson pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "lessonPlayer.write.helper": {
+    "source": "4 to 6 sentences is plenty. Spelling does not matter here.",
+    "back": "4 to 6 sentences is enough. Spelling doesn't matter here.",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler lesson pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "lessonPlayer.write.helperSayIt": {
+    "source": "4 to 6 sentences is plenty. Spelling does not matter here. Tap Say it to talk instead of typing.",
+    "back": "4 to 6 sentences is enough. Spelling doesn't matter here. Tap Say it to talk, without needing to type.",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler lesson pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "lessonPlayer.reflect.addAnother": {
+    "source": "Add another thought",
+    "back": "Add another thought",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler lesson pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "lessonPlayer.watch.writeIdea": {
+    "source": "Write my idea",
+    "back": "Write my idea",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler lesson pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "lessonPlayer.watch.ideaLabel": {
+    "source": "Your idea",
+    "back": "Your idea",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler lesson pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "lessonPlayer.watch.lowDataNote": {
+    "source": "Slow internet? Read instead has the same ideas and uses almost no data.",
+    "back": "Slow internet? \"Just read\" has the same content and uses almost no data.",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler lesson pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "lessonPlayer.shell.saveMyWork": {
+    "source": "Save my work",
+    "back": "Save my work",
+    "flag": true,
+    "note": "New in October 2026: keeping a guest's work with \"Save my work\" (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "pages.home.saveWork.body": {
+    "source": "Tap your name, or I'm new here, to keep your work from Lesson {number}.",
+    "back": "Tap your name, or I'm new here, to save your work from Lesson {number}.",
+    "flag": true,
+    "note": "New in October 2026: keeping a guest's work with \"Save my work\" (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "pages.home.saveWork.drop": {
+    "source": "Don't keep it",
+    "back": "Don't save it",
+    "flag": true,
+    "note": "New in October 2026: keeping a guest's work with \"Save my work\" (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "pages.home.newLearner.submitSaving": {
+    "source": "Save and go back to Lesson {number}",
+    "back": "Save and go back to Lesson {number}",
+    "flag": true,
+    "note": "New in October 2026: keeping a guest's work with \"Save my work\" (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
   }
 }

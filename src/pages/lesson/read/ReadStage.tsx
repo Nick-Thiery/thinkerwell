@@ -1,8 +1,10 @@
 /**
  * Read (docs/screens/LessonRead.dc.html, TabletLesson.dc.html,
- * LessonCheck.dc.html): the reading tools, the warm-up, the evidence, then
- * the reading one part at a time, then the quick check. One template for
- * every lesson; all lesson text comes from `lesson` (content/lessons/*.json).
+ * LessonCheck.dc.html): the evidence, the warm-up about it right under it,
+ * then the reading one part at a time with its tools (Listen, Standard or
+ * Simpler) just above it and the key words folded away just below it, then
+ * the quick check (docs/notes/simpler-lessons.md). One template for every
+ * lesson; all lesson text comes from `lesson` (content/lessons/*.json).
  *
  * - The current part is in the URL (?part=1..n, ?part=check), see useReadPart.
  * - Standard / Simpler follows the player's readingLevel (remembered per
@@ -23,7 +25,7 @@
  * - When Read counts as done is decided in src/lesson/progressRules.ts: every
  *   choice question answered, or Continue from the quick check.
  */
-import { useEffect, useId, useMemo, useRef, useState } from 'react';
+import { useEffect, useId, useMemo, useRef } from 'react';
 import { recordingRef, sectionKey } from '../../../audio/recordings';
 import { ListenBar, ReadingCard, SegmentedControl, ToolToggle } from '../../../components/ds';
 import { useI18n } from '../../../i18n';
@@ -34,6 +36,7 @@ import { isSaveDataOn } from '../../../offline';
 import { LISTEN_RATES, listenVoiceFor, speechLangFor, useListenVoiceState } from '../../../speech';
 import type { ReadingLevel } from '../../../storage';
 import { LessonEvidence } from '../evidence/LessonEvidence';
+import { LessonDisclosure } from '../LessonDisclosure';
 import { StageActionBar } from '../StageActionBar';
 import { KeyWordsPanel } from './KeyWordsPanel';
 import { QuickCheck } from './QuickCheck';
@@ -66,8 +69,6 @@ export function ReadStage() {
   const glossary = lesson.read.glossary;
   const total = sections.length;
   const [view, setView] = useReadPart(total);
-  const [keyWordsOpen, setKeyWordsOpen] = useState(false);
-  const keyWordsId = useId();
   const listenToolId = useId();
   const listenBarId = useId();
 
@@ -172,82 +173,72 @@ export function ReadStage() {
 
   return (
     <div className="tw-read">
-      <div role="toolbar" aria-label={t('lessonPlayer.read.toolsLabel')} className="tw-read-tools">
-        {voice || recording ? (
-          <ToolToggle
-            id={listenToolId}
-            icon="Volume2"
-            pressed={listening}
-            aria-controls={listening ? listenBarId : undefined}
-            onClick={() => {
-              if (listening) {
-                listen.stop();
-              } else {
-                listen.start();
-                track('listen_play', { lessonId: lesson.id });
-              }
-            }}
-          >
-            {t('lessonPlayer.read.listen')}
-          </ToolToggle>
-        ) : null}
-        <SegmentedControl
-          label={t('lessonPlayer.read.levelLabel')}
-          options={[
-            { label: t('lessonPlayer.read.levelStandard'), value: 'standard' },
-            { label: t('lessonPlayer.read.levelSimpler'), value: 'simpler' },
-          ]}
-          value={readingLevel}
-          onChange={(value) => setReadingLevel(value as ReadingLevel)}
-        />
-        <ToolToggle
-          icon="Search"
-          tone="support"
-          pressed={keyWordsOpen}
-          aria-controls={keyWordsOpen ? keyWordsId : undefined}
-          onClick={() => setKeyWordsOpen((open) => !open)}
-        >
-          {t('lessonPlayer.read.keyWords')}
-        </ToolToggle>
-      </div>
-      {/* English lessons simply hide Listen without a voice or recordings; a translated lesson says why it isn't there. */}
-      {!voice && !recording && voicesListed && contentLocale.content ? (
-        <p className="tw-read-listen-note">{t('lessonPlayer.read.listenNoVoice')}</p>
-      ) : null}
-      {listen.unavailable ? (
-        <p className="tw-read-listen-note" role="status">
-          {t('lessonPlayer.read.listenUnavailable')}
-        </p>
-      ) : null}
       {/* Plays the recordings; never shown (the ListenBar is the controls). Its captions are the
           reading itself: the part on screen, with the sentence being played marked. */}
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <audio ref={audioRef} preload="auto" hidden className="tw-read-audio" />
 
-      {keyWordsOpen ? <KeyWordsPanel id={keyWordsId} glossary={glossary} /> : null}
-
-      <WarmUp />
       <LessonEvidence evidence={lesson.evidence} visual={lesson.visual} />
       {/* A course's own activity, where its lesson file puts it (src/lesson/extras.tsx); nothing in Our World. */}
       <LessonSlot name="read:after-evidence" />
-
-      {listening ? (
-        <div ref={listenBarRef} id={listenBarId}>
-          <ListenBar
-            state={listen.state === 'paused' ? 'paused' : 'playing'}
-            speed={settings.listeningSpeed}
-            label={t(listen.loading ? 'lessonPlayer.read.listenLoading' : 'lessonPlayer.read.listenLabel', { n: part, total })}
-            onPlayPause={() => (listen.state === 'playing' ? listen.pause() : listen.play())}
-            onSpeedChange={setListeningSpeed}
-            onStop={() => {
-              listen.stop();
-              focusListenTool();
-            }}
-          />
-        </div>
-      ) : null}
+      <WarmUp />
 
       <div ref={readingRef} className="tw-read-part">
+        <div role="toolbar" aria-label={t('lessonPlayer.read.toolsLabel')} className="tw-read-tools">
+          {voice || recording ? (
+            <ToolToggle
+              id={listenToolId}
+              icon="Volume2"
+              pressed={listening}
+              aria-controls={listening ? listenBarId : undefined}
+              onClick={() => {
+                if (listening) {
+                  listen.stop();
+                } else {
+                  listen.start();
+                  track('listen_play', { lessonId: lesson.id });
+                }
+              }}
+            >
+              {t('lessonPlayer.read.listen')}
+            </ToolToggle>
+          ) : null}
+          <SegmentedControl
+            label={t('lessonPlayer.read.levelLabel')}
+            options={[
+              { label: t('lessonPlayer.read.levelStandard'), value: 'standard' },
+              { label: t('lessonPlayer.read.levelSimpler'), value: 'simpler' },
+            ]}
+            value={readingLevel}
+            onChange={(value) => setReadingLevel(value as ReadingLevel)}
+          />
+        </div>
+        {/* English lessons simply hide Listen without a voice or recordings; a translated lesson says why it isn't there. */}
+        {!voice && !recording && voicesListed && contentLocale.content ? (
+          <p className="tw-read-listen-note">{t('lessonPlayer.read.listenNoVoice')}</p>
+        ) : null}
+        {listen.unavailable ? (
+          <p className="tw-read-listen-note" role="status">
+            {t('lessonPlayer.read.listenUnavailable')}
+          </p>
+        ) : null}
+
+        {listening ? (
+          <div ref={listenBarRef} id={listenBarId}>
+            <ListenBar
+              state={listen.state === 'paused' ? 'paused' : 'playing'}
+              speed={settings.listeningSpeed}
+              label={t(listen.loading ? 'lessonPlayer.read.listenLoading' : 'lessonPlayer.read.listenLabel', { n: part, total })}
+              onPlayPause={() => (listen.state === 'playing' ? listen.pause() : listen.play())}
+              onSpeedChange={setListeningSpeed}
+              onStop={() => {
+                listen.stop();
+                focusListenTool();
+              }}
+            />
+          </div>
+        ) : null}
+
         <ReadingCard
           part={t(simpler ? 'lessonPlayer.read.partSimpler' : 'lessonPlayer.read.partLabel', { n: part, total })}
           heading={section.heading}
@@ -255,6 +246,12 @@ export function ReadStage() {
           {/* Keyed by part and version so open definitions close when either changes. */}
           <ReadingPassage key={`${part}-${readingLevel}`} text={text} glossary={glossary} highlight={highlight} />
         </ReadingCard>
+
+        {glossary.length > 0 ? (
+          <LessonDisclosure className="tw-read-keywords-disclosure" icon="Search" summary={t('lessonPlayer.read.keyWords')}>
+            <KeyWordsPanel glossary={glossary} />
+          </LessonDisclosure>
+        ) : null}
       </div>
 
       <StageActionBar

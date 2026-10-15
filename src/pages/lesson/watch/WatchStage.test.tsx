@@ -342,11 +342,14 @@ describe('WatchStage written version', () => {
 });
 
 describe('WatchStage answers', () => {
-  it('saves the before answer', () => {
+  it('shows the before question as a prompt, with the box for an idea folded under "Write my idea"', () => {
     renderWatch();
-    fireEvent.change(screen.getByLabelText(new RegExp(escape(L10.watch.beforeQuestion))), {
-      target: { value: 'Water and food' },
-    });
+    expect(screen.getByText(L10.watch.beforeQuestion)).toBeInTheDocument();
+    const box = screen.getByLabelText(/Your idea/);
+    const details = box.closest('details') as HTMLDetailsElement;
+    expect(details).toHaveTextContent('Write my idea');
+    expect(details.open).toBe(false);
+    fireEvent.change(box, { target: { value: 'Water and food' } });
     expect(savedProgress().watch.beforeAnswer).toBe('Water and food');
   });
 
@@ -390,8 +393,8 @@ describe('WatchStage content note', () => {
   });
 
   it('is left out when the lesson has none', () => {
-    const { container } = renderWatch(L10);
-    expect(container.querySelector('details')).toBeNull();
+    renderWatch(L10);
+    expect(screen.queryByText('For teachers')).not.toBeInTheDocument();
   });
 
   it('never shows the replacement suggestion', () => {

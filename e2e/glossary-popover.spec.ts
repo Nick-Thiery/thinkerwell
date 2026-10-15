@@ -113,12 +113,17 @@ test('turning a tablet round keeps an open glossary popover open', async ({ page
   const dialog = page.getByRole('dialog');
   await expect(dialog).toBeVisible();
 
-  // 1180 wide: the side column with the vertical StagePath appears.
+  // Turned round, 1180 wide: the same one column, the steps in one row.
   await page.setViewportSize({ width: 1180, height: 820 });
-  await expect(page.locator('.tw-lesson-path-vertical')).toBeVisible();
+  await expect(page.locator('.tw-lesson-path-horizontal')).toBeVisible();
   await expect(dialog).toBeVisible();
   await page.setViewportSize({ width: 820, height: 1180 });
   await expect(page.locator('.tw-lesson-path-horizontal')).toBeVisible();
   await expect(dialog).toBeVisible();
+  // Narrower than 600px the steps become "Step 1 of 5" and "All steps"; the reading stays as it was.
+  await page.setViewportSize({ width: 560, height: 1180 });
+  await expect(page.getByText('Step 1 of 5 · Read')).toBeVisible();
+  await expect(dialog).toBeVisible();
+  await page.setViewportSize({ width: 820, height: 1180 });
   expect(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)).toBeLessThanOrEqual(0);
 });

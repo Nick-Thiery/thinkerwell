@@ -34,22 +34,17 @@
   "lessonPlayer": {
     "shell": {
       "aboutLesson": "Về bài học này",
+      "stepOf": "Bước {number}/{total} · {stage}",
+      "allSteps": "Tất cả các bước",
       "learningGoal": "Mục tiêu học tập",
       "time": "Khoảng {min}–{max} phút. Bạn có thể dừng lại và quay lại bất cứ lúc nào.",
-      "sublabelDone": "Đã xong",
-      "sublabelRead": "Khởi động, đọc và câu hỏi nhanh",
-      "sublabelWrite": "Nhiệm vụ viết của bạn",
-      "sublabelSpeak": "Với bạn học hoặc một mình",
-      "sublabelWatch": "Không bắt buộc · {minutes} phút",
-      "sublabelWatchNoTime": "Không bắt buộc",
-      "sublabelReflect": {
-        "other": "{count} câu hỏi ngắn"
-      },
       "continueTo": "Tiếp tục với {stage}",
       "finishLesson": "Hoàn thành bài học",
-      "noLearnerTitle": "Chưa có gì được lưu.",
-      "noLearnerBody": "Chọn người đang học để giữ bài làm của bạn trên thiết bị này.",
       "noLearnerAction": "Chọn người đang học",
+      "saveMyWork": "Lưu bài làm của tôi",
+      "statusSaved": "Đã lưu trên thiết bị này",
+      "statusNotSaved": "Chưa có gì được lưu",
+      "statusLookAround": "Bạn đang xem qua: không có gì được lưu",
       "saveError": "Thay đổi gần nhất của bạn chưa được lưu trên thiết bị này. Cứ tiếp tục: thiết bị sẽ thử lưu lại cùng với thay đổi tiếp theo của bạn."
     },
     "read": {
@@ -115,31 +110,21 @@
       "touchHintWide": "Chụm hai ngón tay để phóng to."
     },
     "write": {
-      "helpLabel": "Trợ giúp khi viết",
-      "modeWrite": "Viết",
       "modeStarters": "Câu mở đầu gợi ý",
       "modePlan": "Lập kế hoạch trước",
-      "modeWriteShort": "Viết",
-      "modeStartersShort": "Gợi ý",
-      "modePlanShort": "Kế hoạch",
       "evidenceToggle": "Xem lại bằng chứng",
       "mapToggle": "Xem lại bản đồ",
+      "needHelp": "Cần giúp khi viết?",
       "startersTitle": "Chạm vào một câu mở đầu để thêm nó vào bài viết của bạn",
-      "startersTitleShort": "Chạm vào một gợi ý để thêm",
-      "planTitle": "Lập kế hoạch cho các ý của bạn ở đây, rồi viết câu trả lời bên dưới",
+      "planIntro": "Lập kế hoạch cho các ý của bạn ở đây, rồi viết câu trả lời vào ô phía trên.",
       "answerLabel": "Câu trả lời của bạn",
-      "helperSaving": "Viết 4 đến 6 câu là đủ. Chính tả không quan trọng ở đây. Bài viết được lưu trên thiết bị này khi bạn gõ.",
-      "helperLookAround": "Viết 4 đến 6 câu là đủ. Chính tả không quan trọng ở đây. Không có gì được lưu khi bạn xem qua.",
-      "helperNoLearner": "Viết 4 đến 6 câu là đủ. Chính tả không quan trọng ở đây. Chưa có gì được lưu cho đến khi bạn chọn người đang học.",
-      "helperSavingSayIt": "Viết 4 đến 6 câu là đủ. Chính tả không quan trọng ở đây. Chạm vào “Nói để gõ” nếu bạn muốn nói thay vì gõ. Bài viết được lưu trên thiết bị này khi bạn gõ.",
-      "helperLookAroundSayIt": "Viết 4 đến 6 câu là đủ. Chính tả không quan trọng ở đây. Chạm vào “Nói để gõ” nếu bạn muốn nói thay vì gõ. Không có gì được lưu khi bạn xem qua.",
-      "helperNoLearnerSayIt": "Viết 4 đến 6 câu là đủ. Chính tả không quan trọng ở đây. Chạm vào “Nói để gõ” nếu bạn muốn nói thay vì gõ. Chưa có gì được lưu cho đến khi bạn chọn người đang học.",
+      "helper": "Viết 4 đến 6 câu là đủ. Chính tả không quan trọng ở đây.",
+      "helperSayIt": "Viết 4 đến 6 câu là đủ. Chính tả không quan trọng ở đây. Chạm vào “Nói để gõ” nếu bạn muốn nói thay vì gõ.",
       "selfCheckTitle": "Kiểm tra bài của bạn",
       "seeExample": "Xem câu trả lời mẫu",
       "compareExample": "So sánh với câu trả lời mẫu",
       "exampleEyebrow": "Câu trả lời mẫu",
-      "exampleNote": "Đây chỉ là một cách trả lời. Câu trả lời của bạn có thể khác.",
-      "tip": "Bị kẹt? Chạm vào một câu mở đầu gợi ý, rồi điền vào chỗ trống."
+      "exampleNote": "Đây chỉ là một cách trả lời. Câu trả lời của bạn có thể khác."
     },
     "sayIt": {
       "listening": "Đang nghe. Bạn nói chậm thôi. Lời bạn nói sẽ hiện trong ô, và sau đó bạn có thể sửa.",
@@ -155,8 +140,6 @@
       "taskWithRecorder": "Hãy nói về những ý bạn rút ra từ bài học này. Bạn có thể nói với bạn học hoặc tự nói một mình. Nếu muốn, bạn có thể ghi âm giọng của mình. Bản ghi âm chỉ nằm trên thiết bị này.",
       "partnerTitle": "Với bạn học",
       "soloTitle": "Một mình",
-      "practisedLegend": "Bạn đã luyện tập bằng cách nào?",
-      "practisedHelp": "Chọn một cách. Cách luyện tập nào cũng được tính.",
       "recorder": {
         "title": "Ghi âm giọng của bạn (không bắt buộc)",
         "task": "Nói câu trả lời của bạn, rồi nghe lại. Bạn thử lại bao nhiêu lần cũng được.",
@@ -174,18 +157,19 @@
       }
     },
     "watch": {
-      "eyebrow": "Xem · không bắt buộc",
-      "task": "Xem một video ngắn, hoặc đọc những ý tương tự. Cách nào cũng được tính.",
-      "slowTitle": "Mạng chậm?",
-      "slowBody": "Chọn Đọc thay thế. Có cùng những ý ấy và gần như không tốn dữ liệu.",
+      "eyebrow": "Xem",
+      "task": "Không bắt buộc: xem một video ngắn, hoặc đọc những ý tương tự. Cách nào cũng được tính.",
       "saveDataTitle": "Video đang tắt để tiết kiệm dữ liệu.",
       "timeoutTitle": "Video tải lâu quá.",
       "offlineTitle": "Bạn đang không có mạng nên chưa tải được video.",
       "unavailableTitle": "Video này hiện không phát được ở đây.",
       "sameIdeas": "Đây là những ý tương tự để bạn đọc.",
       "thinkFirst": "Nghĩ trước đã",
+      "writeIdea": "Viết ý của tôi",
+      "ideaLabel": "Ý của bạn",
       "beforePlaceholder": "Viết nhanh một ý, hoặc chỉ cần nghĩ về nó…",
       "readInstead": "Đọc thay thế",
+      "lowDataNote": "Mạng chậm? Đọc thay thế có cùng những ý ấy và gần như không tốn dữ liệu.",
       "closeVideo": "Đóng video",
       "playerOpened": "Trình phát video đã mở. Dùng nút phát của nó để bắt đầu.",
       "writtenPart": "Bản viết",
@@ -194,7 +178,6 @@
       "tryAgain": "Thử xem lại video",
       "afterEyebrow": "Sau khi xem hoặc đọc",
       "afterPlaceholder": "Viết một hoặc hai câu…",
-      "helper": "Xem video là không bắt buộc. Bạn có thể bỏ qua bước này.",
       "forTeachers": "Dành cho giáo viên",
       "videoInEnglish": "Video này bằng tiếng Anh. Đọc thay thế có cùng những ý ấy bằng tiếng Việt."
     },
@@ -205,9 +188,8 @@
     "reflect": {
       "eyebrow": "Suy ngẫm",
       "task": "Hãy dành một chút thời gian nghĩ về những gì bạn đã học hôm nay. Chỉ cần trả lời câu hỏi đầu tiên.",
+      "addAnother": "Thêm một suy nghĩ khác",
       "journalNote": "Câu trả lời của bạn được lưu vào nhật ký trên thiết bị này. Chỉ những người dùng thiết bị này mới xem được.",
-      "lookAroundNote": "Bạn đang xem qua, nên câu trả lời của bạn không được lưu.",
-      "noLearnerNote": "Câu trả lời của bạn chưa được lưu. Chọn người đang học để giữ chúng trong nhật ký.",
       "finishHelper": "Trả lời câu hỏi đầu tiên để hoàn thành bài."
     },
     "complete": {
@@ -274,6 +256,7 @@
         "classCodePlaceholder": "Ví dụ ABC-07",
         "classCodeInvalid": "Chỉ dùng chữ cái, số và dấu gạch nối, như ABC-07.",
         "submit": "Bắt đầu Bài 1",
+        "submitSaving": "Lưu và quay lại Bài {number}",
         "submitError": "Chưa lưu được. Thử lại.",
         "startsWith": "Bạn sẽ bắt đầu với",
         "startsWithLesson": "Bài {number}: {title}",
@@ -334,6 +317,10 @@
         "languageTitle": "Ngôn ngữ của bạn",
         "languageHelp": "Nút và hướng dẫn hiện bằng ngôn ngữ này. Với tiếng Việt và tiếng Indonesia, bài học cũng hiện bằng ngôn ngữ đó. Với các ngôn ngữ khác, bài học vẫn bằng tiếng Anh để bạn luyện tập.",
         "languageSaveFailed": "Chưa lưu được. Thử lại."
+      },
+      "saveWork": {
+        "body": "Chạm vào tên của bạn, hoặc Mình mới đến đây, để giữ bài làm của bạn từ Bài {number}.",
+        "drop": "Không giữ lại"
       }
     },
     "course": {
@@ -477,7 +464,6 @@
       "toolsIntro": "Dành cho ngày bạn bắt đầu và mọi ngày sau đó. Mọi thứ ở đây đều chỉ nằm trên thiết bị này.",
       "followTitle": "Theo dõi nhóm của bạn",
       "setupTitle": "Thiết lập thiết bị này",
-      "setupBody": "Một danh sách kiểm tra cho từng máy tính xách tay hoặc máy tính bảng. In ra để đánh dấu trên giấy.",
       "setupCta": "Mở danh sách kiểm tra",
       "classTitle": "Lớp học trên thiết bị này",
       "classBody": "Các bài đã hoàn thành và mỗi người học đang ở đâu. Không có điểm.",
@@ -1396,7 +1382,7 @@
     "lessonPageTitle": "Bài {number}: bản in",
     "backToLesson": "Quay lại bài học",
     "learningGoal": "Mục tiêu học tập:",
-    "lessonIntro": "Đây là bài học trên giấy: cả hai mức đọc, các từ khóa và mọi nhiệm vụ, có dòng kẻ để viết. Chữ in màu đen trên nền trắng, không có menu.",
+    "lessonIntro": "Đây là bài học trên giấy: bài đọc ở mức bạn chọn, các từ khóa và mọi nhiệm vụ, có dòng kẻ để viết. Chữ in màu đen trên nền trắng, không có menu.",
     "readingStandard": "Bài đọc: bản chuẩn",
     "readingSimpler": "Bài đọc: bản dễ hơn",
     "levelLabel": "Bài đọc cần in",

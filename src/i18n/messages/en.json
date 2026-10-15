@@ -34,23 +34,17 @@
   "lessonPlayer": {
     "shell": {
       "aboutLesson": "About this lesson",
+      "stepOf": "Step {number} of {total} · {stage}",
+      "allSteps": "All steps",
       "learningGoal": "Learning goal",
       "time": "About {min}–{max} min. Stop and come back any time.",
-      "sublabelDone": "Done",
-      "sublabelRead": "Warm-up, reading and quick check",
-      "sublabelWrite": "Your writing task",
-      "sublabelSpeak": "With a partner or on your own",
-      "sublabelWatch": "Optional · {minutes} min",
-      "sublabelWatchNoTime": "Optional",
-      "sublabelReflect": {
-        "one": "{count} short prompt",
-        "other": "{count} short prompts"
-      },
       "continueTo": "Continue to {stage}",
       "finishLesson": "Finish lesson",
-      "noLearnerTitle": "Nothing is saved yet.",
-      "noLearnerBody": "Choose who's learning to keep your work on this device.",
       "noLearnerAction": "Choose who's learning",
+      "saveMyWork": "Save my work",
+      "statusSaved": "Saved on this device",
+      "statusNotSaved": "Nothing is saved yet",
+      "statusLookAround": "You're looking around: nothing is saved",
       "saveError": "Your last change didn't save on this device. Keep going: it tries again with your next change."
     },
     "read": {
@@ -116,31 +110,21 @@
       "touchHintWide": "Pinch to zoom in."
     },
     "write": {
-      "helpLabel": "Writing help",
-      "modeWrite": "Write",
       "modeStarters": "Sentence starters",
       "modePlan": "Plan first",
-      "modeWriteShort": "Write",
-      "modeStartersShort": "Starters",
-      "modePlanShort": "Plan",
       "evidenceToggle": "Look at the evidence again",
       "mapToggle": "Look at the map again",
+      "needHelp": "Need help writing?",
       "startersTitle": "Tap a sentence starter to add it to your writing",
-      "startersTitleShort": "Tap a starter to add it",
-      "planTitle": "Plan your ideas here, then write your answer below",
+      "planIntro": "Plan your ideas here, then write your answer in the box above.",
       "answerLabel": "Your answer",
-      "helperSaving": "4 to 6 sentences is plenty. Spelling does not matter here. Saved on this device as you type.",
-      "helperLookAround": "4 to 6 sentences is plenty. Spelling does not matter here. Nothing is saved while you look around.",
-      "helperNoLearner": "4 to 6 sentences is plenty. Spelling does not matter here. Nothing is saved until you choose who's learning.",
-      "helperSavingSayIt": "4 to 6 sentences is plenty. Spelling does not matter here. Tap Say it to talk instead of typing. Saved on this device as you type.",
-      "helperLookAroundSayIt": "4 to 6 sentences is plenty. Spelling does not matter here. Tap Say it to talk instead of typing. Nothing is saved while you look around.",
-      "helperNoLearnerSayIt": "4 to 6 sentences is plenty. Spelling does not matter here. Tap Say it to talk instead of typing. Nothing is saved until you choose who's learning.",
+      "helper": "4 to 6 sentences is plenty. Spelling does not matter here.",
+      "helperSayIt": "4 to 6 sentences is plenty. Spelling does not matter here. Tap Say it to talk instead of typing.",
       "selfCheckTitle": "Check your answer",
       "seeExample": "See an example answer",
       "compareExample": "Compare with an example answer",
       "exampleEyebrow": "Example answer",
-      "exampleNote": "This is one way to answer. Yours can be different.",
-      "tip": "Stuck? Tap a sentence starter, then fill in the blanks."
+      "exampleNote": "This is one way to answer. Yours can be different."
     },
     "sayIt": {
       "listening": "Listening. Speak slowly. Your words appear in the box, and you can fix them after.",
@@ -156,8 +140,6 @@
       "taskWithRecorder": "Talk about your ideas from this lesson. You can do it with a partner or on your own. You can record yourself if you like. Recordings stay on this device.",
       "partnerTitle": "With a partner",
       "soloTitle": "On your own",
-      "practisedLegend": "How did you practise?",
-      "practisedHelp": "Choose one. Every way of practising counts.",
       "recorder": {
         "title": "Record yourself (optional)",
         "task": "Say your answer, then listen back. Try again as many times as you like.",
@@ -175,18 +157,19 @@
       }
     },
     "watch": {
-      "eyebrow": "Watch · optional",
-      "task": "Watch a short video, or read the same ideas instead. Both count.",
-      "slowTitle": "Slow internet?",
-      "slowBody": "Choose Read instead. It has the same ideas and uses almost no data.",
+      "eyebrow": "Watch",
+      "task": "Optional: watch a short video, or read the same ideas instead. Both count.",
       "saveDataTitle": "Videos are off to save data.",
       "timeoutTitle": "The video is taking a long time to load.",
       "offlineTitle": "You're offline, so the video can't load now.",
       "unavailableTitle": "This video can't play here right now.",
       "sameIdeas": "Here are the same ideas to read.",
       "thinkFirst": "Think first",
+      "writeIdea": "Write my idea",
+      "ideaLabel": "Your idea",
       "beforePlaceholder": "Write a quick idea, or just think about it…",
       "readInstead": "Read instead",
+      "lowDataNote": "Slow internet? Read instead has the same ideas and uses almost no data.",
       "closeVideo": "Close the video",
       "playerOpened": "The video player is open. Use its play button to start.",
       "writtenPart": "Written version",
@@ -195,7 +178,6 @@
       "tryAgain": "Try the video again",
       "afterEyebrow": "After you watch or read",
       "afterPlaceholder": "Write one or two sentences…",
-      "helper": "Watching is optional. You can skip this step.",
       "forTeachers": "For teachers",
       "videoInEnglish": "This video is in English. Read instead has the same ideas in your language."
     },
@@ -206,9 +188,8 @@
     "reflect": {
       "eyebrow": "Reflect",
       "task": "Take a moment to think about what you learned today. Only the first question is needed.",
+      "addAnother": "Add another thought",
       "journalNote": "Your answers go into your journal on this device. Only people who use this device can see them.",
-      "lookAroundNote": "You're looking around, so your answers aren't saved.",
-      "noLearnerNote": "Your answers aren't saved yet. Choose who's learning to keep them in a journal.",
       "finishHelper": "Answer the first question to finish."
     },
     "complete": {
@@ -239,6 +220,10 @@
     "home": {
       "title": "Who's learning today?",
       "subtitle": "Tap your name to carry on where you stopped.",
+      "saveWork": {
+        "body": "Tap your name, or I'm new here, to keep your work from Lesson {number}.",
+        "drop": "Don't keep it"
+      },
       "onThisDevice": "On this device",
       "hero": {
         "tagline": "Explore your world.",
@@ -276,6 +261,7 @@
         "classCodePlaceholder": "For example ABC-07",
         "classCodeInvalid": "Use letters, numbers and hyphens only, like ABC-07.",
         "submit": "Start Lesson 1",
+        "submitSaving": "Save and go back to Lesson {number}",
         "submitError": "That didn't save. Try again.",
         "startsWith": "You will start with",
         "startsWithLesson": "Lesson {number}: {title}",
@@ -488,7 +474,6 @@
       "toolsIntro": "For the day you start, and every day after. Everything here stays on this device.",
       "followTitle": "Follow your group",
       "setupTitle": "Set up this device",
-      "setupBody": "A checklist for each laptop or tablet. Print it to tick on paper.",
       "setupCta": "Open the checklist",
       "classTitle": "The class on this device",
       "classBody": "Lessons finished and where each learner is now. No scores.",
@@ -1456,7 +1441,7 @@
     "lessonPageTitle": "Lesson {number}: print",
     "backToLesson": "Back to the lesson",
     "learningGoal": "Learning goal:",
-    "lessonIntro": "This is the lesson on paper: both reading levels, the key words and every task, with lines to write on. The text prints black on white, without the menus.",
+    "lessonIntro": "This is the lesson on paper: the reading at the level you choose, the key words and every task, with lines to write on. The text prints black on white, without the menus.",
     "readingStandard": "Reading: Standard English",
     "readingSimpler": "Reading: Simpler English",
     "levelLabel": "Reading to print",

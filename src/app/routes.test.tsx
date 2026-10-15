@@ -91,8 +91,13 @@ describe('top-level routes', () => {
     expect(current[0]).toHaveAttribute('href', path);
   });
 
-  it('marks Course as the current page on a lesson page, as the lesson screens do', async () => {
+  it('marks Course as the current page in the menu on a lesson page, where the header steps back', async () => {
+    const user = userEvent.setup();
     await renderAt('/lesson/towns-near-rivers/read');
+    // Inside a lesson the header is compact at every width: the links are behind a labelled Menu.
+    const menu = screen.getByRole('button', { name: t('ds.chrome.siteHeader.openMenu') });
+    expect(menu).toHaveTextContent(t('header.menuTitle'));
+    await user.click(menu);
     const nav = screen.getByRole('navigation', { name: t('nav.label') });
     const current = nav.querySelectorAll('[aria-current="page"]');
     expect(current).toHaveLength(1);

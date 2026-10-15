@@ -16,9 +16,10 @@
  *   Write    Done when the learner taps continue having written something
  *            in the writing box. Continuing with an empty box moves on
  *            without a tick.
- *   Speak    Done as soon as the learner chooses how they practised
- *            (course.json practiceOptions). The recorder is optional and
- *            never counts.
+ *   Speak    Done when the learner taps continue: every way of practising
+ *            counts, so nothing is asked about how. (A "how did you
+ *            practise" choice saved before that question was taken out
+ *            still counts.) The recorder is optional and never counts.
  *   Watch    Optional. Done when the learner answers the after question, or
  *            taps continue (watching, reading instead, or skipping all
  *            count: the video is optional).
@@ -93,7 +94,7 @@ export function eventMarksStageDone(lesson: Lesson, progress: LessonProgress, ev
     case 'write':
       return hasText(progress.writing.text);
     case 'speak':
-      return progress.speak.practisedHow !== null;
+      return event.kind === 'continue' || progress.speak.practisedHow !== null;
     case 'watch':
       return event.kind === 'continue' || hasText(progress.watch.afterAnswer);
     case 'reflect':

@@ -71,6 +71,13 @@ export async function settle(page: Page): Promise<void> {
   });
 }
 
+/** Opens a lesson's folded help by its summary's words, if it isn't open yet. */
+async function openFolded(page: Page, summary: string): Promise<void> {
+  const details = page.locator('details', { has: page.locator('summary', { hasText: summary }) }).first();
+  if (!(await details.evaluate((element: HTMLDetailsElement) => element.open))) await details.locator('summary').first().click();
+  await expect(details).toHaveAttribute('open', '');
+}
+
 /** Below about 1100px the five nav links sit behind a menu button; true when that button is showing. */
 async function hasMenuButton(page: Page, { ui }: TourText): Promise<boolean> {
   return page.getByRole('button', { name: ui('ds.chrome.siteHeader.openMenu') }).isVisible();
@@ -124,8 +131,30 @@ export const pageTour: TourStop[] = [
     },
   },
   {
+    name: 'lesson: every step listed, About this lesson and the key words open',
+    go: async (page, { ui }) => {
+      // On a phone the five steps wait behind "All steps".
+      const all = page.getByRole('button', { name: ui('lessonPlayer.shell.allSteps') });
+      if (await all.isVisible()) await all.click();
+      await expect(page.getByRole('navigation', { name: ui('ds.chrome.stagePath.navLabel') })).toBeVisible();
+      await openFolded(page, ui('lessonPlayer.shell.aboutLesson'));
+      await openFolded(page, ui('lessonPlayer.read.keyWords'));
+      await expect(page.getByRole('region', { name: ui('lessonPlayer.read.keyWordsTitle') })).toBeVisible();
+    },
+  },
+  {
+    name: "lesson: the header's Menu, inside a lesson",
+    go: async (page, { ui }) => {
+      // Compact at every width inside a lesson: the other pages are behind a labelled Menu.
+      await page.getByRole('button', { name: ui('ds.chrome.siteHeader.openMenu') }).click();
+      await expect(page.getByRole('navigation', { name: ui('nav.label') })).toBeVisible();
+    },
+  },
+  {
     name: 'lesson: the picture, bigger',
     go: async (page, { ui }) => {
+      await page.keyboard.press('Escape');
+      await expect(page.getByRole('navigation', { name: ui('nav.label') })).toBeHidden();
       await page.getByRole('button', { name: ui('lessonPlayer.visual.seeBigger') }).click();
       await expect(page.getByRole('dialog', { name: ui('lessonPlayer.visual.title.map') })).toBeVisible();
     },
@@ -173,6 +202,13 @@ export const pageTour: TourStop[] = [
     },
   },
   {
+    name: 'lesson: Write, with its help and self-check open',
+    go: async (page, { ui }) => {
+      await openFolded(page, ui('lessonPlayer.write.needHelp'));
+      await openFolded(page, ui('lessonPlayer.write.selfCheckTitle'));
+    },
+  },
+  {
     name: 'lesson: Speak',
     go: async (page, { ui }) => {
       await nextButton(page, continueTo(ui, 'speak')).click();
@@ -187,6 +223,13 @@ export const pageTour: TourStop[] = [
     },
   },
   {
+    name: 'lesson: Watch, with the box for an idea open',
+    go: async (page, { ui }) => {
+      await openFolded(page, ui('lessonPlayer.watch.writeIdea'));
+      await expect(page.getByRole('textbox', { name: new RegExp(ui('lessonPlayer.watch.ideaLabel')) })).toBeVisible();
+    },
+  },
+  {
     name: 'lesson: Watch, read instead',
     go: async (page, { ui }) => {
       await page.getByRole('button', { name: ui('lessonPlayer.watch.readInstead') }).click();
@@ -198,6 +241,7 @@ export const pageTour: TourStop[] = [
     go: async (page, { ui }) => {
       await nextButton(page, continueTo(ui, 'reflect')).click();
       await page.getByRole('textbox', { name: /good for a town/ }).fill(TOUR_REFLECTION);
+      await openFolded(page, ui('lessonPlayer.reflect.addAnother'));
     },
   },
   {
@@ -284,7 +328,7 @@ export const pageTour: TourStop[] = [
     name: 'educators: set up this device',
     go: async (page, { ui }) => {
       await openPath(page, '/educators', ui('pages.educators.title'));
-      await page.getByRole('link', { name: ui('pages.educators.setupCta') }).click();
+      await page.getByRole('link', { name: ui('pages.educators.setupTitle') }).click();
       await expect(page.locator('h1')).toHaveText(ui('pages.setup.title'));
       await page.getByText(ui('pages.setup.homeScreen.otherDevices')).click();
       await expect(page.getByRole('heading', { level: 3, name: ui('pages.setup.homeScreen.android.name') })).toBeVisible();
