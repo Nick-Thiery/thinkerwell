@@ -64,6 +64,9 @@ test.describe('a lesson with an approved Indonesian video', () => {
     expect(src).toContain('youtube-nocookie.com');
     expect(src).toContain(`/embed/${local.youtubeId}`);
     expect(src).not.toContain(lesson5.watch.youtubeId);
+    // Only the part of the video that fits the lesson, with the player and its captions in Indonesian.
+    const params = new URL(src!).searchParams;
+    expect([params.get('start'), params.get('end'), params.get('hl'), params.get('cc_lang_pref')]).toEqual(['30', '215', 'id', 'id']);
   });
 
   test("keeps Read instead: the written version is the local video's", async ({ page }) => {
@@ -87,7 +90,7 @@ test.describe('a lesson with an approved Indonesian video', () => {
     await page.goto('/credits');
     const videos = page.getByRole('region', { name: msg(en, 'pages.credits.videosTitle') });
     const link = videos.getByRole('link', { name: new RegExp(local.title) });
-    await expect(link).toHaveAttribute('href', `https://www.youtube.com/watch?v=${local.youtubeId}`);
+    await expect(link).toHaveAttribute('href', `https://www.youtube.com/watch?v=${local.youtubeId}&t=30s`);
     await expect(videos.getByRole('link', { name: new RegExp(lesson5.watch.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) }).first()).toBeVisible();
     // The entry that is not approved is not credited, and was never downloaded.
     await expect(videos).not.toContainText('Video uji yang belum disetujui');
