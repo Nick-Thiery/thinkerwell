@@ -151,3 +151,24 @@ export function pdfPageOrientations(pdf: Buffer): Array<'landscape' | 'portrait'
     return x1! - x0! > y1! - y0! ? 'landscape' : 'portrait';
   });
 }
+
+/**
+ * The lesson's five steps. On a phone they wait behind "All steps"
+ * (docs/notes/simpler-lessons.md), which this opens first.
+ */
+export async function lessonSteps(page: Page, ui: UiText = uiText('en')): Promise<Locator> {
+  // The page has drawn its head (or the completion screen) before asking whether "All steps" is there.
+  await expect(page.locator('h1')).toBeVisible();
+  const all = page.getByRole('button', { name: ui('lessonPlayer.shell.allSteps') });
+  if ((await all.isVisible()) && (await all.getAttribute('aria-expanded')) !== 'true') await all.click();
+  return page.getByRole('navigation', { name: ui('ds.chrome.stagePath.navLabel') });
+}
+
+/** Opens a lesson's folded help ("Need help writing?", "Check your answer", "Key words"...) if it isn't open yet. */
+export async function openHelp(page: Page, summary: string): Promise<void> {
+  const details = page.locator('details', { has: page.locator('summary', { hasText: summary }) }).first();
+  if (!(await details.evaluate((element: HTMLDetailsElement) => element.open))) {
+    await details.locator('summary').first().click();
+  }
+  await expect(details).toHaveAttribute('open', '');
+}

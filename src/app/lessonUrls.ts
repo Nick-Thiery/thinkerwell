@@ -5,6 +5,15 @@ export function lessonPath(lessonId: string, step: LessonStep = 'read'): string 
   return `/lesson/${encodeURIComponent(lessonId)}/${step}`;
 }
 
+/**
+ * Whether an address is a lesson's own page (a step or the completion
+ * screen), where the lesson says itself whether work is saved and the
+ * header steps back (docs/notes/simpler-lessons.md). Not its print view.
+ */
+export function isLessonPlayerPath(pathname: string): boolean {
+  return /^\/lesson\/[^/]+\/(read|write|speak|watch|reflect|complete)\/?$/i.test(pathname);
+}
+
 /** The print view of a lesson: /lesson/:id/print. */
 export function lessonPrintPath(lessonId: string): string {
   return `/lesson/${encodeURIComponent(lessonId)}/print`;

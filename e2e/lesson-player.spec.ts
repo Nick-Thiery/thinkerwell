@@ -2,6 +2,8 @@ import { expect, test, type Page } from '@playwright/test';
 import {
   addLearnerViaUi,
   dumpEverything,
+  lessonSteps,
+  openHelp,
   horizontalOverflow,
   L10,
   nextButton,
@@ -49,7 +51,7 @@ test('Lesson 10 end to end as a new learner', async ({ page }) => {
   // Just opening a lesson saves nothing.
   expect(await storedProgress(page, L10.id)).toBeUndefined();
 
-  // Read: the warm-up, then the map picture right under it, loaded from the site itself.
+  // Read: the map picture first, loaded from the site itself, then the warm-up about it.
   await page.getByRole('radio', { name: 'On the hill' }).click();
   const map = page.getByRole('img', { name: MAP_ALT });
   await expect(map).toBeVisible();
@@ -74,18 +76,21 @@ test('Lesson 10 end to end as a new learner', async ({ page }) => {
   // Write: the example stays hidden until there is writing; a starter goes in at the caret.
   await nextButton(page, 'Continue to Write').click();
   await expect(page).toHaveURL(/\/write$/);
-  await expect(page.getByRole('navigation', { name: 'Lesson steps' }).getByRole('link', { name: /^Read.*done/i })).toBeVisible();
+  await expect((await lessonSteps(page)).getByRole('link', { name: /^Read.*done/i })).toBeVisible();
   await expect(page.getByText('building houses on tall legs', { exact: false })).toHaveCount(0);
   const answer = page.getByRole('textbox', { name: 'Your answer' });
   await answer.fill('Rivers matter.');
   await answer.evaluate((el: HTMLTextAreaElement) => el.setSelectionRange(0, 0));
   await answer.press('ArrowLeft');
+  // The starters wait under "Need help writing?".
+  await openHelp(page, 'Need help writing?');
   await page.getByRole('button', { name: 'One reason is...' }).click();
   await expect(answer).toBeFocused();
   await page.keyboard.type('boats can carry goods. ');
   await expect(answer).toHaveValue('One reason is boats can carry goods. Rivers matter.');
   await page.getByText('Compare with an example answer').click();
   await expect(page.getByText('This is one way to answer. Yours can be different.')).toBeVisible();
+  await openHelp(page, 'Check your answer');
   await page.getByRole('checkbox', { name: 'I named one place.' }).check();
   await expect.poll(async () => (await storedProgress(page, L10.id))?.writing.selfCheck[0]).toBe(true);
 
@@ -97,13 +102,14 @@ test('Lesson 10 end to end as a new learner', async ({ page }) => {
   await expect(page.getByRole('checkbox', { name: 'I named one place.' })).toBeChecked();
   await expect(page.getByText('This is one way to answer. Yours can be different.')).toBeVisible();
 
-  // Speak.
+  // Speak: Continue marks it done.
   await nextButton(page, 'Continue to Speak').click();
-  await page.getByRole('radio', { name: 'I practised with a partner' }).click();
+  await expect(page.getByRole('heading', { name: 'With a partner' })).toBeVisible();
+  await nextButton(page, 'Continue to Watch').click();
   await expect.poll(async () => (await storedProgress(page, L10.id))?.stagesDone).toContain('speak');
 
   // Watch: the written version, and nothing from YouTube or Google.
-  await nextButton(page, 'Continue to Watch').click();
+  await expect(page).toHaveURL(/\/watch$/);
   await expect(page.locator('iframe')).toHaveCount(0);
   await page.getByRole('button', { name: 'Read instead' }).click();
   await expect(page.getByRole('heading', { name: 'Key points' })).toBeVisible();
@@ -124,7 +130,7 @@ test('Lesson 10 end to end as a new learner', async ({ page }) => {
   expect(done?.completedAt).toBeTruthy();
   expect(done).toMatchObject({
     warmUpAnswer: 'On the hill',
-    speak: { practisedHow: 0 },
+    speak: { practisedHow: null },
     watch: { readInstead: true, afterAnswer: 'The rivers gave water for farms.' },
   });
   // Answers are stored by their index in the content file, not the shuffled position.
@@ -134,7 +140,7 @@ test('Lesson 10 end to end as a new learner', async ({ page }) => {
   // The course map shows it complete.
   await page.goto('/course');
   const row = page.getByRole('link', { name: /^Lesson 10:.*Completed\./ });
-  await expect(row.locator('.tw-dots')).toHaveAttribute('aria-label', '5 of 5 steps done');
+  await expect(row.locator('.tw-row-status')).toHaveText('Done');
 
   expect(requests.filter((url) => VIDEO_HOSTS.test(new URL(url).hostname))).toEqual([]);
   expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
@@ -203,17 +209,18 @@ test('look-around saves nothing', async ({ page }) => {
   await nextButton(page, 'Next: Quick check').click();
   await question(page, 0).getByRole('radio', { name: Q1.right }).click();
   await nextButton(page, 'Continue to Write').click();
-  await expect(page.getByText('Nothing is saved while you look around.', { exact: false })).toBeVisible();
+  // Said once, in the lesson's head.
+  await expect(page.getByText("You're looking around: nothing is saved")).toBeVisible();
   await page.getByRole('textbox', { name: 'Your answer' }).fill('Near the river.');
+  await openHelp(page, 'Check your answer');
   await page.getByRole('checkbox', { name: 'I named one place.' }).check();
-  const steps = page.getByRole('navigation', { name: 'Lesson steps' });
-  await steps.getByRole('link', { name: /^Reflect/ }).click();
+  await (await lessonSteps(page)).getByRole('link', { name: /^Reflect/ }).click();
   await page.getByRole('textbox', { name: /good for a town/ }).fill('Water.');
   await nextButton(page, 'Finish lesson').click();
   await expect(page.locator('h1')).toHaveText('You finished Lesson 10.');
 
   // The answers are kept for the visit...
-  await steps.getByRole('link', { name: /^Write/ }).click();
+  await (await lessonSteps(page)).getByRole('link', { name: /^Write/ }).click();
   await expect(page.getByRole('textbox', { name: 'Your answer' })).toHaveValue('Near the river.');
 
   // ...but nothing is written to the device.
@@ -222,4 +229,23 @@ test('look-around saves nothing', async ({ page }) => {
     expect(dump.stores[store] ?? [], store).toEqual([]);
   }
   expect(dump.localStorageLength).toBe(0);
+});
+
+test("a guest's writing is kept, on the same step, when they choose to save it", async ({ page }) => {
+  await page.goto(L10.path('write'));
+  await expect(page.getByText('Nothing is saved yet')).toBeVisible();
+  // Nothing done yet: the head offers to choose who's learning.
+  await expect(page.getByRole('button', { name: "Choose who's learning" })).toBeVisible();
+  await page.getByRole('textbox', { name: 'Your answer' }).fill('Near the river, for water.');
+  await page.getByRole('button', { name: 'Save my work' }).click();
+
+  await expect(page.getByText("Tap your name, or I'm new here, to keep your work from Lesson 10.")).toBeVisible();
+  await page.getByRole('button', { name: "I'm new here" }).click();
+  await page.getByLabel('First name or nickname').fill('Amina');
+  await page.getByRole('button', { name: 'Save and go back to Lesson 10' }).click();
+
+  await expect(page).toHaveURL(/\/lesson\/towns-near-rivers\/write$/);
+  await expect(page.getByRole('textbox', { name: 'Your answer' })).toHaveValue('Near the river, for water.');
+  await expect(page.getByText('Saved on this device')).toBeVisible();
+  await expect.poll(async () => (await storedProgress(page, L10.id))?.writing.text).toBe('Near the river, for water.');
 });

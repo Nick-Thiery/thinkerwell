@@ -53,7 +53,7 @@ test('a staff member works through the setup checklist, which asks the browser n
   await fakePersistentStorage(page);
 
   await page.goto('/educators');
-  await page.getByRole('link', { name: 'Open the checklist' }).click();
+  await page.getByRole('link', { name: 'Set up this device' }).click();
   await expect(page).toHaveURL(/\/educators\/setup$/);
   await expect(page.locator('h1')).toHaveText('Set up this device');
   await expect(page).toHaveTitle('Set up this device | Thinkerwell');

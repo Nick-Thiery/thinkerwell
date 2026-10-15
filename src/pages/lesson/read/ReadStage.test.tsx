@@ -203,37 +203,43 @@ describe('ReadStage: reading parts', () => {
     expect(screen.getByRole('heading', { name: L10.read.sections[0]!.heading })).toBeInTheDocument();
   });
 
-  it("shows the lesson's picture after the warm-up, next to the evidence and before the reading", () => {
+  it("shows the evidence with the lesson's picture first, the warm-up about it right after, then the reading", () => {
     renderRead();
     const img = screen.getByRole('img', { name: L10.visual!.alt });
     expect(img).toHaveAttribute('src', getVisualUrl(L10.visual!.src));
     const warmUp = screen.getByText(L10.warmUp.question, { exact: false });
     const evidence = screen.getByRole('region', { name: 'Evidence' });
+    const tools = screen.getByRole('toolbar', { name: 'Reading tools' });
     const reading = document.querySelector('.tw-reading')!;
     expect(evidence).toContainElement(img);
-    expect(warmUp.compareDocumentPosition(img) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
     expect(img.compareDocumentPosition(within(evidence).getByText(L10.evidence.question)) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-    expect(img.compareDocumentPosition(reading) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    // So a learner sees what the warm-up asks about before choosing (docs/notes/simpler-lessons.md).
+    expect(evidence.compareDocumentPosition(warmUp) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    // Listen and Standard or Simpler sit just above the reading they work on.
+    expect(warmUp.compareDocumentPosition(tools) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(tools.compareDocumentPosition(reading) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
     // The team-only description never reaches learners.
     expect(document.body.textContent).not.toContain(L10.visual!.description);
   });
 
-  it('shows the key words panel with every glossary word', async () => {
+  it('keeps every glossary word under "Key words", folded away below the reading', async () => {
     const user = userEvent.setup();
     renderRead();
-    const toggle = screen.getByRole('button', { name: 'Key words' });
-    expect(toggle).toHaveAttribute('aria-pressed', 'false');
-    await user.click(toggle);
-    expect(toggle).toHaveAttribute('aria-pressed', 'true');
+    const summary = screen.getByText('Key words', { selector: 'summary span' });
+    const details = summary.closest('details') as HTMLDetailsElement;
+    expect(details.open).toBe(false);
+    // Not one of the reading tools any more: one tap away, under the reading.
+    expect(within(screen.getByRole('toolbar', { name: 'Reading tools' })).queryByText('Key words')).toBeNull();
+    const reading = document.querySelector('.tw-reading')!;
+    expect(reading.compareDocumentPosition(details) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    await user.click(summary);
+    await waitFor(() => expect(details.open).toBe(true));
     const panel = screen.getByRole('region', { name: 'Key words in this lesson' });
-    expect(toggle).toHaveAttribute('aria-controls', panel.id);
     const items = within(panel).getAllByRole('listitem');
     expect(items).toHaveLength(L10.read.glossary.length);
     for (const entry of L10.read.glossary) {
       expect(within(panel).getByText(entry.definition)).toBeInTheDocument();
     }
-    await user.click(toggle);
-    expect(screen.queryByRole('region', { name: 'Key words in this lesson' })).not.toBeInTheDocument();
   });
 
   it('shows the glossary helper on parts with glossary words', () => {

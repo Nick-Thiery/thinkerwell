@@ -5,22 +5,21 @@ import { useI18n } from '../../../i18n';
 import { glossaryMeaning } from '../../../lesson/glossaryMeaning';
 
 export interface KeyWordsPanelProps {
-  id: string;
   glossary: readonly GlossaryEntry[];
 }
 
 /**
  * Every glossary word in the lesson, with its meaning and example, so
- * nothing marked in the reading is missed (GlossaryTerm.md). Opened by the
- * "Key words" tool.
+ * nothing marked in the reading is missed (GlossaryTerm.md). Inside the
+ * "Key words" disclosure under the reading, whose summary shows its title.
  */
-export function KeyWordsPanel({ id, glossary }: KeyWordsPanelProps) {
+export function KeyWordsPanel({ glossary }: KeyWordsPanelProps) {
   const { t, definition: locale } = useI18n();
   const headingId = useId();
   return (
-    <section id={id} className="tw-read-keywords" aria-labelledby={headingId}>
+    <section className="tw-read-keywords" aria-labelledby={headingId}>
       <div className="tw-read-keywords-head">
-        <h2 id={headingId} className="tw-read-keywords-title">
+        <h2 id={headingId} className="tw-visually-hidden">
           {t('lessonPlayer.read.keyWordsTitle')}
         </h2>
         <p className="tw-read-keywords-intro">{t('lessonPlayer.read.keyWordsIntro')}</p>

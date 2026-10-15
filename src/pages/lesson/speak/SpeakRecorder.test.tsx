@@ -52,7 +52,7 @@ async function settle() {
 describe('Record yourself', { timeout: 30_000 }, () => {
   it("is hidden where the browser can't record", async () => {
     renderSpeak();
-    await screen.findByRole('radiogroup', { name: 'How did you practise?' });
+    await screen.findByRole('button', { name: 'Continue to Watch' });
     await settle();
     expect(screen.queryByRole('region', { name: /Record yourself/ })).not.toBeInTheDocument();
     expect(screen.queryByText(/record/i)).not.toBeInTheDocument();
@@ -61,7 +61,7 @@ describe('Record yourself', { timeout: 30_000 }, () => {
   it('is hidden when the device lists no microphone', async () => {
     mockMediaRecorder({ devices: [{ kind: 'audiooutput' }] });
     renderSpeak();
-    await screen.findByRole('radiogroup', { name: 'How did you practise?' });
+    await screen.findByRole('button', { name: 'Continue to Watch' });
     await settle();
     expect(screen.queryByRole('region', { name: /Record yourself/ })).not.toBeInTheDocument();
   });

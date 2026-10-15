@@ -8,6 +8,14 @@
  * learner, and the lesson player clears it when a real learner opens a
  * lesson, so the next person on a shared device never sees a guest's
  * answers (CLAUDE.md rule 4).
+ *
+ * One way out of memory, and only by the guest's own choice: "Save my work"
+ * in a lesson's head holds a copy of what they did (`holdWorkToSave`), Home
+ * asks who they are, and the learner they choose or add claims it
+ * (`claimWorkToSave`); the lesson player then saves it to that learner as it
+ * opens (`takeClaimedWork`, ./saveGuestWork.ts) and goes back to where the
+ * guest was. Anyone starting to look around or going back to "Who's learning
+ * today?" drops it, and Home offers "Don't keep it" (docs/notes/simpler-lessons.md).
  */
 import { emptyProgress, type LessonProgress, type ReadingLevel } from '../storage';
 
@@ -43,4 +51,52 @@ export function setGuestReadingLevel(level: ReadingLevel): void {
 export function clearGuestMemory(): void {
   progressByLesson.clear();
   readingLevel = null;
+}
+
+/** A guest's work waiting to be saved, and where they were. */
+export interface WorkToSave {
+  records: LessonProgress[];
+  /** The address to go back to once it is saved (a lesson step). */
+  returnTo: string;
+  /** The lesson it was saved from, to say so on Home. */
+  lessonNumber: number;
+  /** The learner who claimed it, once chosen or added. */
+  claimedBy: string | null;
+}
+
+let workToSave: WorkToSave | null = null;
+
+/** What the guest has done on this visit, as copies, lessons with nothing in them left out. */
+export function guestWork(): LessonProgress[] {
+  return [...progressByLesson.values()].map((record) => structuredClone(record));
+}
+
+/** Holds a copy of the guest's work until someone is chosen (or it is dropped). */
+export function holdWorkToSave(records: LessonProgress[], returnTo: string, lessonNumber: number): void {
+  workToSave = records.length > 0 ? { records, returnTo, lessonNumber, claimedBy: null } : null;
+}
+
+/** The work waiting to be saved, if any, and not yet claimed. */
+export function peekWorkToSave(): WorkToSave | null {
+  return workToSave && workToSave.claimedBy === null ? workToSave : null;
+}
+
+/** The chosen learner claims the waiting work; returns where to go back to, or null when nothing was waiting. */
+export function claimWorkToSave(learnerId: string): string | null {
+  if (!workToSave || workToSave.claimedBy !== null) return null;
+  workToSave = { ...workToSave, claimedBy: learnerId };
+  return workToSave.returnTo;
+}
+
+/** The work this learner claimed, handed over once (the lesson player saves it). */
+export function takeClaimedWork(learnerId: string): LessonProgress[] | null {
+  if (!workToSave || workToSave.claimedBy !== learnerId) return null;
+  const { records } = workToSave;
+  workToSave = null;
+  return records;
+}
+
+/** Forgets the waiting work: "Don't keep it", or someone else starting. */
+export function dropWorkToSave(): void {
+  workToSave = null;
 }

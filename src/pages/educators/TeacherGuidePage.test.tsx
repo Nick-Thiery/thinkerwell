@@ -189,14 +189,14 @@ describe('TeacherGuidePage', () => {
     expect(plan).toHaveTextContent(/Only 30 minutes\?/);
   });
 
-  it('offers Print, a way back to the section on the Educators page, a preview and the learners\' printout', () => {
+  it('offers "Print teacher guide", a way back to the section on the Educators page, a preview and the learners\' printout', () => {
     const print = vi.spyOn(window, 'print').mockImplementation(() => undefined);
     renderGuide(L10);
-    screen.getByRole('button', { name: 'Print' }).click();
+    screen.getByRole('button', { name: 'Print teacher guide' }).click();
     expect(print).toHaveBeenCalledTimes(1);
     expect(screen.getByRole('link', { name: 'Back to the educators page' })).toHaveAttribute('href', '/educators?section=geography');
-    expect(screen.getByRole('link', { name: 'Preview the lesson' })).toHaveAttribute('href', '/lesson/towns-near-rivers/read?preview=true');
-    expect(screen.getByRole('link', { name: 'Print the lesson for learners' })).toHaveAttribute('href', '/lesson/towns-near-rivers/print');
+    expect(screen.getByRole('link', { name: 'Preview learner lesson' })).toHaveAttribute('href', '/lesson/towns-near-rivers/read?preview=true');
+    expect(screen.getByRole('link', { name: 'Print learner lesson' })).toHaveAttribute('href', '/lesson/towns-near-rivers/print');
   });
 
   it('opens other sites in a new tab and says so', () => {

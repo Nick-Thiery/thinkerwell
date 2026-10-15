@@ -1,6 +1,5 @@
 import { useId } from 'react';
-import { Chip, Icon, TaskCard } from '../../../components/ds';
-import { useLessonContent } from '../../../content/useContent';
+import { Icon, TaskCard } from '../../../components/ds';
 import { useI18n } from '../../../i18n';
 import { useLessonPlayer } from '../../../lesson';
 import { StageActionBar } from '../StageActionBar';
@@ -10,15 +9,16 @@ import './SpeakStage.css';
 
 /**
  * Speak (docs/screens/LessonSpeak.dc.html): the partner task and the
- * on-your-own task from the lesson, then "How did you practise?".
+ * on-your-own task from the lesson, then Continue.
  *
- * Done rule (src/lesson/progressRules.ts): choosing how you practised marks
- * Speak done. It is never required: Next is never disabled, and every way
- * of practising counts.
+ * Done rule (src/lesson/progressRules.ts): Continue marks Speak done. Every
+ * way of practising counts, so nothing is asked about how
+ * (docs/notes/simpler-lessons.md: "How did you practise?" was taken out; a
+ * choice saved before then still counts and is kept).
  *
- * "Record yourself" (./useSpeakRecorder.ts) sits between the tasks and the
- * choice, where the device can record. It is optional and private: clips
- * stay on the device and recording never counts towards Speak being done.
+ * "Record yourself" (./useSpeakRecorder.ts) sits after the tasks, where the
+ * device can record. It is optional and private: clips stay on the device
+ * and recording never counts towards Speak being done.
  *
  * Not shown on purpose: the screen's "Say it in three sentences" frames:
  * the lesson content has no field for them (speak has only partnerTask and
@@ -26,22 +26,10 @@ import './SpeakStage.css';
  */
 export function SpeakStage() {
   const { t, contentLang } = useI18n();
-  const content = useLessonContent();
-  const { lesson, progress, update, stageEvent } = useLessonPlayer();
-  const { practiceOptions } = content.getCourse();
+  const { lesson, stageEvent } = useLessonPlayer();
   const partnerId = useId();
   const soloId = useId();
-  const legendId = useId();
-  const helpId = useId();
-  const chosen = progress.speak.practisedHow;
   const recorder = useSpeakRecorder();
-
-  const choose = (index: number) => {
-    update((p) => (p.speak.practisedHow === index ? p : { ...p, speak: { ...p.speak, practisedHow: index } }), {
-      immediate: true,
-    });
-    stageEvent({ stage: 'speak', kind: 'practised' });
-  };
 
   return (
     <>
@@ -76,24 +64,8 @@ export function SpeakStage() {
 
       <SpeakRecorder recorder={recorder} />
 
-      <fieldset className="tw-speak-practised" aria-describedby={helpId}>
-        <legend id={legendId} className="tw-speak-legend">
-          {t('lessonPlayer.speak.practisedLegend')}
-        </legend>
-        <p id={helpId} className="tw-speak-help">
-          {t('lessonPlayer.speak.practisedHelp')}
-        </p>
-        <div role="radiogroup" aria-labelledby={legendId} className="tw-speak-chips">
-          {practiceOptions.map((option, index) => (
-            // From content/course.json, so English like the lessons.
-            <Chip key={option} role="radio" selected={chosen === index} onClick={() => choose(index)} {...contentLang}>
-              {option}
-            </Chip>
-          ))}
-        </div>
-      </fieldset>
 
-      <StageActionBar />
+      <StageActionBar onNext={() => stageEvent({ stage: 'speak', kind: 'continue' })} />
     </>
   );
 }

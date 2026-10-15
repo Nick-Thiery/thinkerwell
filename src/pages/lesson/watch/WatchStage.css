@@ -12,10 +12,24 @@
   min-width: 0;
 }
 
+/* Think first: the question as a short prompt, the box for an idea folded under it. */
 .tw-watch-think {
-  padding-block: var(--space-4) var(--space-5);
-  padding-inline: var(--space-5);
-  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.tw-watch-think-question {
+  margin: 0;
+  font-size: 19px;
+  line-height: 28px;
+  font-weight: 700;
+  max-inline-size: 68ch;
+}
+
+.tw-watch-idea {
+  margin-block-start: var(--space-1);
 }
 
 /* A quick optional idea: two lines, not the full writing box height. */
@@ -42,6 +56,22 @@
 }
 
 /* "This video is in English": shown when the lesson is in another language. */
+/* "Slow internet? Read instead…": a quiet line beside the two choices. */
+.tw-watch-lowdata {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--ink-muted);
+}
+
+.tw-watch-lowdata .tw-icon {
+  flex: none;
+  margin-block-start: 2px;
+}
+
 .tw-watch-language {
   display: flex;
   align-items: flex-start;
@@ -173,11 +203,6 @@
   .tw-watch-panel,
   .tw-watch-written {
     padding: var(--space-5);
-  }
-
-  .tw-watch-think {
-    padding-block: var(--space-4);
-    padding-inline: var(--space-4);
   }
 
   .tw-watch-written-h {

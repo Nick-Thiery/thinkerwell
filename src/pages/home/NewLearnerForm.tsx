@@ -1,4 +1,4 @@
-import { useId, useState, type FormEvent } from 'react';
+import { useId, useState, type FormEvent, type ReactNode } from 'react';
 import { useNavigate } from 'react-router';
 import { LanguageChoice, useHasLanguageChoice } from '../../app/LanguageChoice';
 import { useLearnerSession } from '../../session';
@@ -10,6 +10,8 @@ import { useMeasurementState } from '../../measurement/track';
 import type { LearnerColour, NewLearner } from '../../storage';
 import { ColourPicker } from './ColourPicker';
 import { HomeHero } from './HomeHero';
+// The folded options' look, shared with the lessons' LessonDisclosure.
+import '../lesson/LessonDisclosure.css';
 
 /** Id of the name field, so a caller can move focus to it when this form appears. */
 export const NEW_LEARNER_NAME_FIELD_ID = 'home-new-learner-name';
@@ -33,17 +35,40 @@ export interface NewLearnerFormProps {
   /** LessonSummary 1, shown in the hero pane and used to label the submit button's target. */
   lesson1: LessonSummary;
   onBack: () => void;
-  onSubmit: (input: NewLearner) => Promise<void>;
+  /** Resolves with where to go next, when it isn't Lesson 1 (back to a guest's work). */
+  onSubmit: (input: NewLearner) => Promise<string | null | void>;
+  /** The lesson a guest's work is being saved from ("Save my work"), which Start goes back to. */
+  savingFrom?: number | null;
+}
+
+/** One optional part of the form, folded until wanted: a native details element (keyboard and screen readers need nothing more). */
+function FormOption({ summary, forceOpen = false, children }: { summary: string; forceOpen?: boolean; children: ReactNode }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <details
+      className="tw-fold tw-home-option"
+      open={open || forceOpen}
+      onToggle={(event) => setOpen(event.currentTarget.open)}
+    >
+      <summary className="tw-fold-summary">
+        <Icon name="ChevronDown" size={20} className="tw-fold-chevron" />
+        <span>{summary}</span>
+      </summary>
+      <div className="tw-fold-body">{children}</div>
+    </details>
+  );
 }
 
 /**
  * The "who's learning" panel swapped for a form (NewLearner.dc.html): first
- * name or nickname, a colour, and an optional class code. Once a second
- * language is ready, also their language: the app's one language setting,
- * so choosing one changes the page at once (saved for the device, as nobody
- * is chosen yet), and the new learner keeps the language on screen.
+ * name or nickname and Start, then, folded under Start because none of them
+ * is needed (docs/notes/simpler-lessons.md), a colour, the language and an
+ * optional class code. The language is the app's one language setting, so
+ * choosing one changes the page at once (saved for the device, as nobody is
+ * chosen yet), and the new learner keeps the language on screen; it starts
+ * as the language already on screen.
  */
-export function NewLearnerForm({ lesson1, onBack, onSubmit }: NewLearnerFormProps) {
+export function NewLearnerForm({ lesson1, onBack, onSubmit, savingFrom = null }: NewLearnerFormProps) {
   const { t, tx } = useI18n();
   const hasLanguageChoice = useHasLanguageChoice();
   const languageHelpId = useId();
@@ -75,7 +100,8 @@ export function NewLearnerForm({ lesson1, onBack, onSubmit }: NewLearnerFormProp
     const trimmedCode = classCode.trim();
     if (trimmedCode && !CLASS_CODE_PATTERN.test(trimmedCode)) {
       setClassCodeError(t('pages.home.newLearner.classCodeInvalid'));
-      document.getElementById(CLASS_CODE_FIELD_ID)?.focus();
+      // Once "Have a class code?" has opened for the error (it may have been folded away).
+      requestAnimationFrame(() => document.getElementById(CLASS_CODE_FIELD_ID)?.focus());
       return;
     }
     setNameError(undefined);
@@ -87,10 +113,11 @@ export function NewLearnerForm({ lesson1, onBack, onSubmit }: NewLearnerFormProp
     // Theirs from now on: the language on screen as they join.
     input.language = language;
     void onSubmit(input)
-      .then(() => {
-        // "Start LessonSummary N": actually takes the new learner straight there,
-        // rather than leaving them on a dashboard the button never mentioned.
-        void navigate(lessonPath(lesson1.id, 'read'));
+      .then((next) => {
+        // "Start Lesson 1": actually takes the new learner straight there,
+        // rather than leaving them on a dashboard the button never mentioned;
+        // or back to the work they asked to save, on the same step.
+        void navigate(next ?? lessonPath(lesson1.id, 'read'));
       })
       .catch(() => {
         setSubmitting(false);
@@ -134,38 +161,6 @@ export function NewLearnerForm({ lesson1, onBack, onSubmit }: NewLearnerFormProp
             }}
             maxLength={200}
           />
-          <ColourPicker value={colour} onChange={setColour} legend={t('pages.home.newLearner.colourLabel')} />
-          {hasLanguageChoice ? (
-            <fieldset className="tw-colour-fieldset">
-              <legend className="label">{t('pages.home.newLearner.languageLabel')}</legend>
-              <LanguageChoice
-                label={t('pages.home.newLearner.languageLabel')}
-                describedBy={languageHelpId}
-                value={language}
-                onChange={(code) => {
-                  setLanguage(code).catch((error: unknown) => {
-                    if (import.meta.env.DEV) console.error(error);
-                  });
-                }}
-              />
-              <p id={languageHelpId} className="small tw-home-language-help">
-                {t('pages.home.newLearner.languageHelper')}
-              </p>
-            </fieldset>
-          ) : null}
-          <TextField
-            id={CLASS_CODE_FIELD_ID}
-            label={t('pages.home.newLearner.classCodeLabel')}
-            optional
-            placeholder={t('pages.home.newLearner.classCodePlaceholder')}
-            helper={classCodeError ?? t('pages.home.newLearner.classCodeHelper')}
-            invalid={Boolean(classCodeError)}
-            value={classCode}
-            onValueChange={(value) => {
-              setClassCode(value);
-              if (classCodeError) setClassCodeError(undefined);
-            }}
-          />
           {submitError ? (
             <p className="body tw-home-form-error" role="alert">
               {/* Ink text, not burnt orange: this sits straight on the
@@ -177,8 +172,52 @@ export function NewLearnerForm({ lesson1, onBack, onSubmit }: NewLearnerFormProp
             </p>
           ) : null}
           <Button type="submit" variant="primary" size="lg" block iconRight="ArrowRight" disabled={submitting}>
-            {t('pages.home.newLearner.submit')}
+            {savingFrom === null
+              ? t('pages.home.newLearner.submit')
+              : t('pages.home.newLearner.submitSaving', { number: savingFrom })}
           </Button>
+          {/* The rest is optional, so it waits folded under Start (docs/notes/simpler-lessons.md). */}
+          <div className="tw-home-more">
+            <FormOption summary={t('pages.home.newLearner.colourSummary')}>
+              <ColourPicker value={colour} onChange={setColour} legend={t('pages.home.newLearner.colourLabel')} />
+            </FormOption>
+            {hasLanguageChoice ? (
+              <FormOption summary={t('pages.home.newLearner.languageSummary')}>
+                <fieldset className="tw-colour-fieldset">
+                  <legend className="label">{t('pages.home.newLearner.languageLabel')}</legend>
+                  <LanguageChoice
+                    label={t('pages.home.newLearner.languageLabel')}
+                    describedBy={languageHelpId}
+                    value={language}
+                    onChange={(code) => {
+                      setLanguage(code).catch((error: unknown) => {
+                        if (import.meta.env.DEV) console.error(error);
+                      });
+                    }}
+                  />
+                  <p id={languageHelpId} className="small tw-home-language-help">
+                    {t('pages.home.newLearner.languageHelper')}
+                  </p>
+                </fieldset>
+              </FormOption>
+            ) : null}
+            {/* Open whenever the code has something to say (an error), so a learner always sees why Start didn't go. */}
+            <FormOption summary={t('pages.home.newLearner.classCodeSummary')} forceOpen={Boolean(classCodeError)}>
+              <TextField
+                id={CLASS_CODE_FIELD_ID}
+                label={t('pages.home.newLearner.classCodeLabel')}
+                optional
+                placeholder={t('pages.home.newLearner.classCodePlaceholder')}
+                helper={classCodeError ?? t('pages.home.newLearner.classCodeHelper')}
+                invalid={Boolean(classCodeError)}
+                value={classCode}
+                onValueChange={(value) => {
+                  setClassCode(value);
+                  if (classCodeError) setClassCodeError(undefined);
+                }}
+              />
+            </FormOption>
+          </div>
         </form>
         <span className="tw-home-lock-note small">
           <Icon name="Lock" size={16} />{' '}

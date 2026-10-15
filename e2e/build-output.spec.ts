@@ -101,8 +101,12 @@ const PRECACHE_BUDGET = 806_000;
  * Raised to 225.5 kB with the layout polish: 225.1 kB with it (224.9 kB before). Only styles in the one stylesheet:
  * the page column's two wide-screen steps, the home cards filling the window, and the bigger course section list
  * and lesson step list (docs/notes/slow-internet.md).
+ * Raised to 227 kB with the simpler interface: 227.2 kB with it against 226.3 kB before, both measured on the same
+ * machine (CI measures less: main passed at 225.5 kB there). The new-learner form's folded options and "Save my work"
+ * on Home, the header's labelled Menu in lessons and the course list's status words are first-page code, and the
+ * lessons' new styles are in the one stylesheet; the English words shrank (docs/notes/slow-internet.md).
  */
-const FIRST_VISIT_HOME_BUDGET = 225_500;
+const FIRST_VISIT_HOME_BUDGET = 227_000;
 
 const TEXT = /\.(html|js|css|svg|json|webmanifest)$/;
 

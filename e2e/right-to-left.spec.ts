@@ -74,19 +74,21 @@ for (const size of SIZES) {
 test.describe('right to left: the lesson page reads from the right', () => {
   test.use({ viewport: { width: 1280, height: 800 } });
 
-  test('the logo, the lesson steps and the next button are on the mirrored side', { tag: '@own-size' }, async ({ page }) => {
+  test('the logo, the lesson head, the steps and the next button are on the mirrored side', { tag: '@own-size' }, async ({ page }) => {
     await forceRightToLeft(page);
     await page.goto(L10.path('read'));
     await expect(page.locator('h1')).toHaveText(L10.title);
 
     const box = async (selector: string) => (await page.locator(selector).first().boundingBox())!;
-    // The logo starts the header on the right; the navigation follows to its left.
-    expect((await box('.tw-header .tw-logo, .tw-header a[aria-label="Thinkerwell home"]')).x).toBeGreaterThan((await box('.tw-nav')).x);
-    // The lesson steps (the side column) are on the right of the reading column.
-    expect((await box('.tw-stages-vertical')).x).toBeGreaterThan((await box('.tw-reading')).x);
-    // Read, the first step, is above Write in the vertical path (not reordered).
+    // The logo starts the header on the right; the labelled Menu (a lesson's header steps back) is at the left end.
+    expect((await box('.tw-header .tw-logo, .tw-header a[aria-label="Thinkerwell home"]')).x).toBeGreaterThan(
+      (await box('.tw-menu-btn-labelled')).x,
+    );
+    // The way back to the course starts the lesson's head on the right; whether work is saved is at its left end.
+    expect((await box('.tw-lesson-back')).x).toBeGreaterThan((await box('.tw-lesson-status')).x);
+    // The steps run from the right: Read, the first, is to the right of Write (not reordered).
     const steps = page.getByRole('navigation', { name: 'Lesson steps' }).getByRole('link');
-    expect((await steps.nth(0).boundingBox())!.y).toBeLessThan((await steps.nth(1).boundingBox())!.y);
+    expect((await steps.nth(0).boundingBox())!.x).toBeGreaterThan((await steps.nth(1).boundingBox())!.x);
     // Reading text starts at the right edge of its column.
     const align = await page.locator('.tw-reading-text').first().evaluate((el) => getComputedStyle(el).textAlign);
     expect(['start', 'right']).toContain(align);

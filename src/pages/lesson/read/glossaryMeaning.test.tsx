@@ -19,7 +19,7 @@ function renderReading(loaded?: LoadedLocale) {
       <div className="tw-reading-text" lang={loaded ? 'en' : undefined}>
         <ReadingPassage text="People live by the river." glossary={glossary} />
       </div>
-      <KeyWordsPanel id="keywords" glossary={glossary} />
+      <KeyWordsPanel glossary={glossary} />
     </I18nProvider>,
   );
 }

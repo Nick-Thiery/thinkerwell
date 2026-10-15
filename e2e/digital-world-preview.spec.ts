@@ -126,7 +126,6 @@ test.describe('with the preview on', () => {
 
     await page.getByRole('textbox', { name: 'Your answer' }).fill('The calculator follows fixed steps, so it is not AI.');
     await page.getByRole('button', { name: 'Continue to Speak' }).click();
-    await page.getByText('I practised on my own').click();
     await page.getByRole('button', { name: 'Continue to Watch' }).click();
     await page.getByRole('button', { name: 'Continue to Reflect' }).click();
     // Wait for Reflect: until it renders, the first text box is still Watch's "Think first".

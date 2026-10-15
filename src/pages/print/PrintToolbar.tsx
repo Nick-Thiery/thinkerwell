@@ -7,6 +7,8 @@ export interface PrintToolbarProps {
   backLabel: string;
   /** False when there is nothing to print (the journal with nobody chosen). */
   canPrint?: boolean;
+  /** What Print says, where "Print" alone could be read two ways (the teacher guide: "Print teacher guide"). */
+  printLabel?: string;
 }
 
 /**
@@ -14,7 +16,7 @@ export interface PrintToolbarProps {
  * Print (the browser's own print dialog, which can also save a PDF). It
  * never prints (print.css hides .tw-no-print).
  */
-export function PrintToolbar({ backHref, backLabel, canPrint = true }: PrintToolbarProps) {
+export function PrintToolbar({ backHref, backLabel, canPrint = true, printLabel }: PrintToolbarProps) {
   const { t } = useI18n();
   return (
     <div className="tw-print-toolbar tw-no-print">
@@ -23,7 +25,7 @@ export function PrintToolbar({ backHref, backLabel, canPrint = true }: PrintTool
       </Button>
       {canPrint ? (
         <Button variant="primary" icon="Printer" onClick={() => window.print()}>
-          {t('print.print')}
+          {printLabel ?? t('print.print')}
         </Button>
       ) : null}
     </div>

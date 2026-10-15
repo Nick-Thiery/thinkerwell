@@ -1,71 +1,37 @@
 /*
- * The lesson player's page layout (docs/screens/Lesson*.dc.html at 1280,
- * TabletLesson at 820, PhoneLesson at 390). Stage content styles live next
- * to each stage (read/, write/, speak/, watch/, reflect/, complete/,
- * evidence/, visual/).
+ * The lesson player's page layout: one calm column at every width
+ * (docs/notes/simpler-lessons.md). Stage content styles live next to each
+ * stage (read/, write/, speak/, watch/, reflect/, complete/, evidence/,
+ * visual/).
  */
 
 .tw-lesson {
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
+  gap: var(--space-6);
   min-inline-size: 0;
 }
 
-/*
- * The player is one element tree at every width (LessonPage.tsx), so a
- * tablet turning round never remounts the stage. Narrow: banners, the
- * "about this lesson" column (intro, horizontal StagePath, goal) and the
- * stage stack. Laptop (1100px and wider, LESSON_WIDE_QUERY): the same column
- * sits beside the stage.
- */
-.tw-lesson-aside {
+.tw-lesson-player {
+  inline-size: 100%;
+  max-inline-size: 880px;
+  margin-inline: auto;
+}
+
+.tw-lesson-head {
   display: flex;
   flex-direction: column;
-  gap: inherit;
+  gap: var(--space-4);
   min-inline-size: 0;
 }
 
-.tw-lesson-main {
+/* The way back on one side, whether work is saved on the other; wraps under on a phone. */
+.tw-lesson-toprow {
   display: flex;
-  flex-direction: column;
-  gap: inherit;
-  min-inline-size: 0;
-}
-
-@media (min-width: 1100px) {
-  .tw-lesson-player {
-    display: grid;
-    grid-template-columns: 300px minmax(0, 1fr);
-    gap: var(--space-12);
-    align-items: start;
-  }
-
-  .tw-lesson-player > .tw-lesson-aside {
-    gap: var(--space-5);
-  }
-
-  .tw-lesson-player > .tw-lesson-main {
-    gap: var(--space-6);
-  }
-}
-
-@media (min-width: 1280px) {
-  .tw-lesson-player {
-    grid-template-columns: 340px minmax(0, 1fr);
-  }
-}
-
-@media (min-width: 1700px) {
-  .tw-lesson-player {
-    grid-template-columns: 380px minmax(0, 1fr);
-  }
-}
-
-.tw-lesson-intro {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-5);
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
 }
 
 .tw-lesson-back {
@@ -86,10 +52,54 @@
   text-decoration: underline;
 }
 
+/* Save status: one quiet line, never a banner. */
+.tw-lesson-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-2);
+  margin: 0;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--ink-muted);
+}
+
+.tw-lesson-status .tw-icon {
+  flex: none;
+}
+
+.tw-lesson-status-saved {
+  min-block-size: var(--target-min);
+  gap: 6px;
+}
+
+.tw-lesson-status-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.tw-lesson-status-action.tw-btn {
+  padding-inline: var(--space-2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* On the completion screen there is no head: the status sits on its own. */
+.tw-lesson-status-standalone {
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+}
+
 .tw-lesson-titles {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: var(--space-1);
 }
 
 .tw-lesson-number-history { color: var(--sec-history-ink); }
@@ -108,10 +118,61 @@
   overflow-wrap: anywhere;
 }
 
-.tw-lesson-question {
+/* The five labelled steps can be wider than a small tablet: they scroll inside themselves, never the page. */
+.tw-lesson-path-horizontal {
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  overflow-x: auto;
+  padding-block: 4px;
+  padding-inline: 4px;
+  margin-inline: -4px;
+}
+
+/* Phone: "Step 2 of 5 · Write" and "All steps". */
+.tw-lesson-steps-phone {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tw-lesson-steps-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding-block: 4px;
+  padding-inline: var(--space-4) 4px;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-pill);
+  background: var(--paper);
+}
+
+.tw-lesson-step-count {
   margin: 0;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 22px;
+  font-weight: 700;
+}
+
+.tw-lesson-steps-toggle .tw-icon {
+  transition: transform 150ms ease;
+}
+
+.tw-lesson-steps-toggle[aria-expanded='true'] .tw-icon {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tw-lesson-steps-toggle .tw-icon {
+    transition: none;
+  }
+}
+
+.tw-lesson-question {
+  margin: 0;
+  font-size: 17px;
+  line-height: 26px;
   color: var(--ink-muted);
 }
 
@@ -119,7 +180,7 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding: 18px var(--space-5);
+  padding: var(--space-4) var(--space-5);
   border-radius: var(--radius-lg);
   background: var(--lavender-wash);
 }
@@ -142,16 +203,6 @@
   flex: none;
 }
 
-/* The horizontal StagePath can be wider than a phone: let it scroll inside itself, never the page. */
-.tw-lesson-path-horizontal {
-  min-inline-size: 0;
-  max-inline-size: 100%;
-  overflow-x: auto;
-  padding-block: 4px;
-  padding-inline: 4px;
-  margin-inline: -4px;
-}
-
 .tw-lesson-stage {
   display: flex;
   flex-direction: column;
@@ -159,23 +210,22 @@
   min-inline-size: 0;
 }
 
-/* Tablet (820): slightly larger title, as TabletLesson.dc.html. */
-@media (min-width: 600px) and (max-width: 1099px) {
+/* Tablet and up: a slightly larger title. */
+@media (min-width: 600px) {
   .tw-lesson-title {
     font-size: 34px;
     line-height: 38px;
   }
-
-  .tw-lesson-question {
-    font-size: 17px;
-    line-height: 26px;
-  }
 }
 
-/* Phone (390): PhoneLesson.dc.html. */
+/* Phone (390). */
 @media (max-width: 599px) {
   .tw-lesson {
-    gap: 18px;
+    gap: var(--space-5);
+  }
+
+  .tw-lesson-head {
+    gap: var(--space-3);
   }
 
   .tw-lesson-title {

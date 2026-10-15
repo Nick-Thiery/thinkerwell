@@ -69,9 +69,6 @@ test('Lesson 10 from start to finish with the keyboard only', async ({ page }) =
   await page.goto(L10.path('read'));
   await expect(page.locator('h1')).toHaveText(L10.title);
 
-  // Warm-up.
-  await chooseRadio(page, page.getByRole('radiogroup').first(), 'On the hill');
-
   // The picture, bigger, and back.
   await pressButton(page, 'See it bigger');
   const dialog = page.getByRole('dialog', { name: 'The map' });
@@ -80,6 +77,9 @@ test('Lesson 10 from start to finish with the keyboard only', async ({ page }) =
   await page.keyboard.press('Escape');
   await expect(dialog).toBeHidden();
   await expect(page.getByRole('button', { name: 'See it bigger' })).toBeFocused();
+
+  // Warm-up, right under the picture it asks about.
+  await chooseRadio(page, page.getByRole('radiogroup').first(), 'On the hill');
 
   // A glossary word opens with Enter and closes with Escape, keeping focus on the word.
   const term = page.locator('.tw-reading .tw-term').first();
@@ -110,11 +110,15 @@ test('Lesson 10 from start to finish with the keyboard only', async ({ page }) =
   await expect(page).toHaveURL(/\/write$/);
   await tabTo(page, page.getByRole('textbox', { name: 'Your answer' }));
   await page.keyboard.type('I would build the town by the river, for water and trade.');
+  // The help, folded under the box, opens from the keyboard.
+  const help = page.locator('summary', { hasText: 'Need help writing?' });
+  await tabTo(page, help);
+  await page.keyboard.press('Enter');
+  await expect(page.getByRole('button', { name: 'One reason is...' })).toBeVisible();
 
-  // Speak.
+  // Speak: Continue is all it asks.
   await pressButton(page, 'Continue to Speak');
   await expect(page).toHaveURL(/\/speak$/);
-  await chooseRadio(page, page.getByRole('radiogroup').first(), 'I practised with a partner');
 
   // Watch: the written version, and its question.
   await pressButton(page, 'Continue to Watch');

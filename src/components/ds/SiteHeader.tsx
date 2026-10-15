@@ -46,6 +46,12 @@ export interface SiteHeaderProps {
   learnerMenuOpen?: boolean;
   /** Not in the design-system docs; opens the phone navigation menu. */
   onMenuClick?: () => void;
+  /**
+   * Not in the design-system docs: a visible word beside the compact
+   * layout's menu icon (inside a lesson, where the header is compact at
+   * every width, so the other pages are never behind an icon alone).
+   */
+  menuLabel?: string;
 }
 
 /** A small tinted initial, shared with LearnerTile's own copy (kept separate; see CLAUDE.md notes). */
@@ -77,6 +83,7 @@ export function SiteHeader({
   onLearnerClick,
   learnerMenuOpen,
   onMenuClick,
+  menuLabel,
   language,
 }: SiteHeaderProps) {
   const { t } = useI18n();
@@ -102,11 +109,16 @@ export function SiteHeader({
             ) : null}
             <button
               type="button"
-              className="tw-menu-btn"
+              className={cx('tw-menu-btn', menuLabel && 'tw-menu-btn-labelled')}
               aria-label={t('ds.chrome.siteHeader.openMenu')}
               onClick={onMenuClick}
             >
               <Icon name="Menu" size={26} />
+              {menuLabel ? (
+                <span className="tw-menu-btn-text" aria-hidden="true">
+                  {menuLabel}
+                </span>
+              ) : null}
             </button>
           </div>
         ) : (

@@ -399,3 +399,16 @@
   block-size: 12px;
   accent-color: var(--ink);
 }
+
+/* Where the settings an educator sets up once begin. */
+.tw-settings-more {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-block-start: var(--space-4);
+  border-block-start: 2px solid var(--line);
+}
+
+.tw-settings-more .eyebrow {
+  margin: 0;
+}

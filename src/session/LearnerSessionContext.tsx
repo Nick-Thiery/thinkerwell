@@ -9,7 +9,7 @@ import {
 } from '../storage';
 // Imported directly (not through src/lesson/index.ts) to keep this module
 // free of the lesson player's React code.
-import { clearGuestMemory } from '../lesson/guestMemory';
+import { clearGuestMemory, dropWorkToSave } from '../lesson/guestMemory';
 import { forgetLearner } from '../measurement/track';
 import { readyLocales, resolveLocale, SOURCE_LOCALE } from '../i18n/locales';
 import { forgetPendingLanguage, readPendingLanguage, rememberPendingLanguage } from '../storage/pendingLanguage';
@@ -291,8 +291,9 @@ export function LearnerSessionProvider({ forceLookAround = false, children }: Le
     // Every "Just look around" is a new guest on a shared device: nothing a
     // previous guest did on this visit may show (CLAUDE.md rule 4). Cleared
     // before the state change, so a lesson player that mounts for the new
-    // guest reads empty memory.
+    // guest reads empty memory. Work a guest was about to save is dropped too.
     clearGuestMemory();
+    dropWorkToSave();
     setLookAround(true);
     // Only clears anything when there was a learner to clear: a brand-new
     // guest with nobody current touches storage not at all (CLAUDE.md: not
@@ -318,8 +319,10 @@ export function LearnerSessionProvider({ forceLookAround = false, children }: Le
   const returnToPicker = useCallback(async () => {
     // Back to "Who's learning today?": the next person starts clean. (Even
     // with no storage, where the guest stays in look-around, this is where
-    // someone hands the device on.)
+    // someone hands the device on.) Work a guest was about to save is
+    // dropped too: "Save my work" holds it again just after calling this.
     clearGuestMemory();
+    dropWorkToSave();
     // With no storage there is no picker to return to (Home stays on its own
     // no-storage explanation): leave look-around exactly as it is rather
     // than turning it off with nothing behind it.

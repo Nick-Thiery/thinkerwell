@@ -1,8 +1,10 @@
 import { render, screen, waitFor, within } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 import { describe, expect, it, vi } from 'vitest';
 import { routes } from '../../app/routes';
 import { getLesson, getLessons, getVisualUrl, type Lesson } from '../../content';
+import { LearnerSessionProvider } from '../../session';
 import { LessonPrintPage } from './LessonPrintPage';
 
 const L10 = getLesson('towns-near-rivers') as Lesson;
@@ -10,7 +12,7 @@ const L10 = getLesson('towns-near-rivers') as Lesson;
 function renderPrint(lesson: Lesson) {
   return render(<LessonPrintPage lesson={lesson} />, {
     wrapper: ({ children }) => {
-      const router = createMemoryRouter([{ path: '*', element: children }]);
+      const router = createMemoryRouter([{ path: '*', element: <LearnerSessionProvider>{children}</LearnerSessionProvider> }]);
       return <RouterProvider router={router} />;
     },
   });
@@ -20,8 +22,26 @@ function renderPrint(lesson: Lesson) {
 const opening = (text: string) => text.split(/(?<=[.?!])\s/)[0]!.replace(/\s+/g, ' ').trim();
 
 describe('LessonPrintPage', () => {
-  it('has the lesson, both reading levels, the key words, the picture and every task', () => {
+  it('prints one reading level, Standard for nobody chosen, and Simpler or both on purpose', async () => {
+    const user = userEvent.setup();
     renderPrint(L10);
+    const levels = screen.getByRole('group', { name: 'Reading to print' });
+    expect(within(levels).getByRole('button', { name: 'Standard' })).toHaveAttribute('aria-pressed', 'true');
+    expect(screen.getByRole('heading', { level: 2, name: 'Reading: Standard English' })).toBeInTheDocument();
+    expect(screen.queryByRole('heading', { level: 2, name: 'Reading: Simpler English' })).not.toBeInTheDocument();
+    expect(screen.getAllByRole('heading', { level: 3, name: L10.read.sections[0]!.heading })).toHaveLength(1);
+
+    await user.click(within(levels).getByRole('button', { name: 'Simpler' }));
+    expect(screen.queryByRole('heading', { level: 2, name: 'Reading: Standard English' })).not.toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 2, name: 'Reading: Simpler English' })).toBeInTheDocument();
+    // The choice is for the screen: it never goes on paper.
+    expect(levels.closest('.tw-no-print')).not.toBeNull();
+  });
+
+  it('has the lesson, both reading levels when asked, the key words, the picture and every task', async () => {
+    const user = userEvent.setup();
+    renderPrint(L10);
+    await user.click(within(screen.getByRole('group', { name: 'Reading to print' })).getByRole('button', { name: 'Both' }));
     const sheet = screen.getByRole('article', { name: L10.title });
     const text = sheet.textContent?.replace(/\s+/g, ' ') ?? '';
 
@@ -75,7 +95,7 @@ describe('LessonPrintPage', () => {
     for (const lesson of getLessons()) {
       const { unmount } = renderPrint(lesson);
       expect(screen.getByRole('heading', { level: 1, name: lesson.title })).toBeInTheDocument();
-      expect(screen.getAllByRole('heading', { level: 3, name: lesson.read.sections[0]!.heading })).toHaveLength(2);
+      expect(screen.getAllByRole('heading', { level: 3, name: lesson.read.sections[0]!.heading })).toHaveLength(1);
       unmount();
     }
   });

@@ -51,19 +51,30 @@ async function saved(learnerId: string, target: Lesson = lesson): Promise<Lesson
   return store.getProgress(learnerId, target.id);
 }
 
+const escapeRegExp = (text: string) => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 describe('WriteStage', () => {
-  it('shows the task, the three help modes and the sentence starters by default', async () => {
+  it('shows the task, then the writing box, with the starters and planning folded under "Need help writing?"', async () => {
     renderWrite();
-    await answerBox();
-    expect(screen.getByText(lesson.write.prompt)).toBeInTheDocument();
-    const modes = screen.getByRole('group', { name: 'Writing help' });
-    expect(within(modes).getByRole('button', { name: 'Sentence starters' })).toHaveAttribute('aria-pressed', 'true');
+    const box = await answerBox();
+    const task = screen.getByText(lesson.write.prompt);
+    const help = screen.getByText('Need help writing?', { selector: 'summary span' }).closest('details') as HTMLDetailsElement;
+    // In that order on the page: the task, the answer, then the help.
+    expect(task.compareDocumentPosition(box) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(box.compareDocumentPosition(help) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(help.open).toBe(false);
     for (const starter of lesson.write.sentenceStarters) {
-      expect(screen.getByRole('button', { name: starter })).toBeInTheDocument();
+      expect(within(help).getByRole('button', { name: starter })).toBeInTheDocument();
     }
-    expect(screen.getByText('Stuck? Tap a sentence starter, then fill in the blanks.')).toBeInTheDocument();
+    for (const title of lesson.write.planningBoxes) {
+      expect(within(help).getByLabelText(new RegExp(`^${escapeRegExp(title)}`))).toBeInTheDocument();
+    }
+    // The self-check is folded away too, and none of it is needed to continue.
+    const check = screen.getByText('Check your answer', { selector: 'summary span' }).closest('details') as HTMLDetailsElement;
+    expect(check.open).toBe(false);
+    expect(screen.getByRole('button', { name: 'Continue to Speak' })).toBeEnabled();
   });
 
   it('adds a starter at the caret and keeps focus in the writing box', async () => {
@@ -148,22 +159,11 @@ describe('WriteStage', () => {
     const learnerId = await addCurrentLearner();
     renderWrite();
     await answerBox();
-    await user.click(screen.getByRole('button', { name: 'Plan first' }));
-    expect(screen.queryByRole('button', { name: lesson.write.sentenceStarters[0] })).toBeNull();
+    await user.click(screen.getByText('Need help writing?'));
     const second = screen.getByLabelText(new RegExp(`^${lesson.write.planningBoxes[1]}`));
     await user.type(second, 'The map');
     await act(() => sleep(SAVE_DEBOUNCE_MS + 150));
     await waitFor(async () => expect((await saved(learnerId))?.writing.planning).toEqual({ 1: 'The map' }));
-  });
-
-  it('shows only the writing box in Write mode', async () => {
-    const user = userEvent.setup();
-    renderWrite();
-    await answerBox();
-    await user.click(screen.getByRole('button', { name: 'Write' }));
-    expect(screen.queryByRole('button', { name: lesson.write.sentenceStarters[0] })).toBeNull();
-    expect(screen.queryByLabelText(new RegExp(`^${lesson.write.planningBoxes[0]}`))).toBeNull();
-    expect(screen.getByLabelText('Your answer')).toBeInTheDocument();
   });
 
   it('marks Write done when continuing with writing', async () => {
@@ -199,15 +199,17 @@ describe('WriteStage', () => {
       ...p,
       writing: { text: 'Saved before', planning: { 0: 'Big idea' }, selfCheck: { 2: true }, exampleShown: false },
     }));
-    const user = userEvent.setup();
     renderWrite();
     await waitFor(async () => expect((await answerBox()).value).toBe('Saved before'));
     expect(screen.getByRole('checkbox', { name: lesson.write.selfCheck[2] })).toBeChecked();
     expect(screen.getByRole('checkbox', { name: lesson.write.selfCheck[0] })).not.toBeChecked();
     expect(screen.getByText('Compare with an example answer')).toBeInTheDocument();
-    await user.click(screen.getByRole('button', { name: 'Plan first' }));
     expect(screen.getByLabelText(new RegExp(`^${lesson.write.planningBoxes[0]}`))).toHaveValue('Big idea');
-    expect(screen.getByText(/Saved on this device as you type\./)).toBeInTheDocument();
+    // A plan and a tick open their help, so nothing saved is hidden away.
+    expect((screen.getByText('Need help writing?', { selector: 'summary span' }).closest('details') as HTMLDetailsElement).open).toBe(true);
+    expect((screen.getByText('Check your answer', { selector: 'summary span' }).closest('details') as HTMLDetailsElement).open).toBe(true);
+    // Whether work is saved is said once, in the lesson's head, not under the box.
+    expect(screen.getByText(/^4 to 6 sentences is plenty\. Spelling does not matter here\.$/)).toBeInTheDocument();
   });
 
   it('toggles the evidence inline, with the lesson picture', async () => {
@@ -231,7 +233,7 @@ describe('WriteStage', () => {
     const user = userEvent.setup();
     renderWrite();
     const box = await answerBox();
-    expect(screen.getByText(/Nothing is saved until you choose who's learning\./)).toBeInTheDocument();
+    expect(screen.queryByText(/saved/i)).not.toBeInTheDocument();
     await user.type(box, 'Hello');
     await user.click(screen.getByRole('checkbox', { name: lesson.write.selfCheck[0] }));
     await act(() => sleep(SAVE_DEBOUNCE_MS + 150));

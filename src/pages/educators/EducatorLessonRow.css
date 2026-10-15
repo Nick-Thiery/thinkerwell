@@ -52,3 +52,8 @@
 .tw-edu-check-meta {
   color: var(--ink-muted);
 }
+
+/* A preview has no learner, so no "Not started": the row's time and its Preview are what matter here. */
+.tw-edu-lesson .tw-row-status {
+  display: none;
+}

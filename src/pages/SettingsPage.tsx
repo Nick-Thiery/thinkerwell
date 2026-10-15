@@ -16,10 +16,11 @@ import './settings/SettingsPage.css';
 
 /**
  * Settings for this device (/settings), for teachers and volunteers, linked
- * from the header menu: the interface language (once a second one is
- * ready), offline use and Save data, moving learners' work to another
- * device through a file, the reading level and Listen speed, Listen's
- * voice, the lesson audio for Listen without the internet, Say it (phase 5) and, for a pilot only, "Share pilot results" (off unless an educator turns it on). Everything else here is a device setting (settings
+ * from the header menu. What anyone might change comes first: the interface
+ * language (once a second one is ready), the reading level and Listen
+ * speed, offline use and Save data. Then, under "For educators setting up
+ * this device": moving learners' work to another device through a file,
+ * Listen's voice, the lesson audio for Listen without the internet, Say it (phase 5) and, for a pilot only, "Share pilot results" (off unless an educator turns it on). Everything else here is a device setting (settings
  * store), shared by everyone who uses the device, and saved even while
  * looking around.
  *
@@ -41,10 +42,15 @@ export function SettingsPage() {
         </h1>
         <p className="body-lg">{t('pages.settings.intro')}</p>
       </header>
+      {/* What anyone might change first; then what an educator sets up once (docs/notes/simpler-lessons.md). */}
       <LanguageSetting />
-      <OfflineSetting deviceSettings={deviceSettings} />
-      <WorkFileSetting />
       <ReadingSetting deviceSettings={deviceSettings} />
+      <OfflineSetting deviceSettings={deviceSettings} />
+      <div className="tw-settings-more">
+        <p className="eyebrow">{t('pages.settings.moreTitle')}</p>
+        <p className="tw-settings-help">{t('pages.settings.moreIntro')}</p>
+      </div>
+      <WorkFileSetting />
       <ListenVoiceSetting deviceSettings={deviceSettings} />
       <LessonAudioSetting deviceSettings={deviceSettings} />
       <SpeechToTextSetting deviceSettings={deviceSettings} />

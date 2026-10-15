@@ -1,35 +1,59 @@
 /**
  * A lesson on paper (/lesson/:id/print; design-system README: "every lesson
  * has a print view (plain black text on white, no header)"): the warm-up,
- * the picture and evidence, the reading in both levels with the key words
- * in bold, the key words, the quick check and every task, with lines to
- * write on. On screen it looks like a sheet of paper under a small toolbar;
+ * the picture and evidence, the reading with the key words in bold, the key
+ * words, the quick check and every task, with lines to write on. The reading
+ * prints at one level, chosen on screen above the sheet (the learner's own,
+ * else Standard), or both on purpose (docs/notes/simpler-lessons.md). On screen it looks like a sheet of paper under a small toolbar;
  * printed (src/styles/print.css, ./print.css), there is no header,
  * navigation or colour, and the reading levels and tasks start on new
- * pages. Nothing here is saved or read from storage.
+ * pages. Nothing here is saved or read from storage (the chosen learner's
+ * reading level comes from the session already on screen).
  */
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { lessonPath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
 import { type CourseLesson, type GlossaryEntry, type ReadSection } from '../../content';
+import { SegmentedControl } from '../../components/ds';
 import { useLessonContent } from '../../content/useContent';
 import { AlwaysEn, En, useI18n } from '../../i18n';
 import { splitParagraphs } from '../../lesson';
 import { LessonSlot } from '../../lesson/extras';
+import { useLearnerSession } from '../../session';
 import type { ReadingLevel } from '../../storage';
 import { LessonEvidence } from '../lesson/evidence/LessonEvidence';
 import { buildReading } from '../lesson/read/readingPieces';
 import { AnswerLines, PrintToolbar } from './PrintToolbar';
 import './print.css';
 
+type PrintLevels = ReadingLevel | 'both';
+
 export function LessonPrintPage({ lesson }: { lesson: CourseLesson }) {
   const { t } = useI18n();
   usePageTitle(t('print.lessonPageTitle', { number: lesson.number }));
+  const { activeLearner } = useLearnerSession();
+  const [chosen, setChosen] = useState<PrintLevels | null>(null);
+  const shown: PrintLevels = chosen ?? activeLearner?.readingLevel ?? 'standard';
   return (
     <div className="tw-print-page">
       <PrintToolbar backHref={lessonPath(lesson.id, 'read')} backLabel={t('print.backToLesson')} />
       <p className="tw-print-intro tw-no-print">{t('print.lessonIntro')}</p>
-      <LessonPrintSheet lesson={lesson} />
+      <div className="tw-print-levels tw-no-print">
+        <span className="label" aria-hidden="true">
+          {t('print.levelLabel')}
+        </span>
+        <SegmentedControl
+          label={t('print.levelLabel')}
+          options={[
+            { label: t('lessonPlayer.read.levelStandard'), value: 'standard' },
+            { label: t('lessonPlayer.read.levelSimpler'), value: 'simpler' },
+            { label: t('print.levelBoth'), value: 'both' },
+          ]}
+          value={shown}
+          onChange={(value) => setChosen(value as PrintLevels)}
+        />
+      </div>
+      <LessonPrintSheet lesson={lesson} levels={shown === 'both' ? ['standard', 'simpler'] : [shown]} />
     </div>
   );
 }
@@ -40,10 +64,14 @@ export interface LessonPrintSheetProps {
   titleId?: string;
   /** Starts the sheet on a new page of paper (every lesson after the first, when several are printed together). */
   newPage?: boolean;
+  /** Which reading levels to print, in order. Both unless a page says otherwise. */
+  levels?: readonly ReadingLevel[];
 }
 
 /** One lesson's sheet: the print view without its toolbar, so a page can print several lessons together. */
-export function LessonPrintSheet({ lesson, titleId = 'print-title', newPage = false }: LessonPrintSheetProps) {
+const BOTH_LEVELS: readonly ReadingLevel[] = ['standard', 'simpler'];
+
+export function LessonPrintSheet({ lesson, titleId = 'print-title', newPage = false, levels = BOTH_LEVELS }: LessonPrintSheetProps) {
   // Everything from the lesson file is course text, marked as English (`en`).
   const { t, tx, contentLang: en } = useI18n();
   const content = useLessonContent();
@@ -89,18 +117,15 @@ export function LessonPrintSheet({ lesson, titleId = 'print-title', newPage = fa
       </section>
       <LessonSlot name="print:after-evidence" />
 
-      <Reading
-        title={t('print.readingStandard')}
-        sections={read.sections}
-        level="standard"
-        glossary={read.glossary}
-      />
-      <Reading
-        title={t('print.readingSimpler')}
-        sections={read.sections}
-        level="simpler"
-        glossary={read.glossary}
-      />
+      {levels.map((level) => (
+        <Reading
+          key={level}
+          title={t(level === 'simpler' ? 'print.readingSimpler' : 'print.readingStandard')}
+          sections={read.sections}
+          level={level}
+          glossary={read.glossary}
+        />
+      ))}
 
       <section className="tw-print-part">
         <h2>{t('lessonPlayer.read.keyWordsTitle')}</h2>

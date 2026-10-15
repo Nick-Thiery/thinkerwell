@@ -14,11 +14,14 @@ export interface WhoIsLearningPickerProps {
   learners: Learner[];
   lesson1: LessonSummary;
   onChoose: (id: string) => void;
-  onAdd: (input: NewLearner) => Promise<void>;
+  /** Resolves with where to go next, when it isn't Lesson 1 (back to a guest's work, "Save my work"). */
+  onAdd: (input: NewLearner) => Promise<string | null | void>;
   onRemove: (id: string) => Promise<void>;
   onLookAround: () => void;
   /** 'new' opens straight on the new-learner form (an old Base44 educator link, or the header switcher's "I'm new here"). */
   initialView?: 'new';
+  /** A guest chose "Save my work" in this lesson: say so, with "Don't keep it" (docs/notes/simpler-lessons.md). */
+  saving?: { lessonNumber: number; onDrop: () => void } | null;
 }
 
 /**
@@ -26,7 +29,16 @@ export interface WhoIsLearningPickerProps {
  * pane, and the lavender "who's learning" panel, which swaps in place for
  * adding a learner or confirming a removal — never a new page.
  */
-export function WhoIsLearningPicker({ learners, lesson1, onChoose, onAdd, onRemove, onLookAround, initialView }: WhoIsLearningPickerProps) {
+export function WhoIsLearningPicker({
+  learners,
+  lesson1,
+  onChoose,
+  onAdd,
+  onRemove,
+  onLookAround,
+  initialView,
+  saving = null,
+}: WhoIsLearningPickerProps) {
   const { t, formatDate } = useI18n();
   const catalog = useCatalog();
   const [view, setView] = useState<PickerView>(initialView === 'new' ? { kind: 'new' } : { kind: 'grid' });
@@ -105,10 +117,9 @@ export function WhoIsLearningPicker({ learners, lesson1, onChoose, onAdd, onRemo
     return (
       <NewLearnerForm
         lesson1={lesson1}
+        savingFrom={saving?.lessonNumber ?? null}
         onBack={() => setView({ kind: 'grid' })}
-        onSubmit={async (input) => {
-          await onAdd(input);
-        }}
+        onSubmit={(input) => onAdd(input)}
       />
     );
   }
@@ -138,6 +149,14 @@ export function WhoIsLearningPicker({ learners, lesson1, onChoose, onAdd, onRemo
           </h1>
           <p className="body">{t('pages.home.subtitle')}</p>
         </div>
+        {saving ? (
+          <div className="tw-home-saving" role="status">
+            <p className="body">{t('pages.home.saveWork.body', { number: saving.lessonNumber })}</p>
+            <Button variant="ghost" onClick={saving.onDrop}>
+              {t('pages.home.saveWork.drop')}
+            </Button>
+          </div>
+        ) : null}
         {removingLearner ? (
           <div className="tw-home-confirm" ref={confirmRootRef}>
             <h2 className="h3" tabIndex={-1} ref={confirmHeadingRef}>

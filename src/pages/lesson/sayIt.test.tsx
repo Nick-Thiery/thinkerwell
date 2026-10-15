@@ -79,7 +79,7 @@ describe('Say it in the lesson', { timeout: 30_000 }, () => {
       view.unmount();
     }
     const view = renderStage('write');
-    expect(await screen.findByText(/Spelling does not matter here\. Nothing is saved/)).toBeInTheDocument();
+    expect(await screen.findByText(/Spelling does not matter here\.$/)).toBeInTheDocument();
     expect(screen.queryByText(/Tap Say it/)).not.toBeInTheDocument();
     view.unmount();
   });

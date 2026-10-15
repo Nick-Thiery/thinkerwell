@@ -11,6 +11,7 @@ import { MeasurementGate } from './MeasurementGate';
 import { SiteFooter } from './SiteFooter';
 import { LearnerSwitcher } from './LearnerSwitcher';
 import { isNavLinkActive } from './internal/navActive';
+import { isLessonPlayerPath } from './lessonUrls';
 import { MobileNav } from './MobileNav';
 import { RouterDsLink } from './RouterDsLink';
 import { useHeaderLevel } from './useHeaderFits';
@@ -77,13 +78,18 @@ function Shell({ devRtl, devLocale }: { devRtl: boolean; devLocale: string | nul
   const navigationType = useNavigationType();
   const session = useLearnerSession();
   const narrow = useIsCompactHeader();
+  // Inside a lesson the header steps back at every width: the logo, the
+  // language, the learner and a labelled Menu with every other link, so the
+  // lesson's own way back and its one Continue are what stand out
+  // (docs/notes/simpler-lessons.md).
+  const inLesson = isLessonPlayerPath(pathname);
   const headerAreaRef = useRef<HTMLDivElement>(null);
   // Below 1100px always the compact header. Above, the full one if it fits,
   // else a tighter one that keeps every link (the language as its code, the
   // learner as their avatar), and compact only if even that doesn't fit
   // (longer words in Indonesian, a long name).
-  const level = useHeaderLevel(headerAreaRef, `${locale}|${session.activeLearner?.name ?? ''}`, !narrow);
-  const compact = narrow || level === 'compact';
+  const level = useHeaderLevel(headerAreaRef, `${locale}|${session.activeLearner?.name ?? ''}`, !narrow && !inLesson);
+  const compact = narrow || inLesson || level === 'compact';
   const tight = !compact && level === 'tight';
   const mainRef = useRef<HTMLElement>(null);
   const lastPathname = useRef(pathname);
@@ -208,6 +214,7 @@ function Shell({ devRtl, devLocale }: { devRtl: boolean; devLocale: string | nul
           learner={learnerForHeader}
           compact={compact}
           tight={tight}
+          menuLabel={inLesson ? t('header.menuTitle') : undefined}
           learnerMenuOpen={switcherOpen}
           onLearnerClick={
             learnerForHeader
@@ -245,7 +252,8 @@ function Shell({ devRtl, devLocale }: { devRtl: boolean; devLocale: string | nul
       <div className="tw-shell-banners">
         <ConnectionBanner learner={activeLearner !== null} inLesson={pathname.startsWith('/lesson/')} />
         <UpdateBanner learner={activeLearner !== null} />
-        {session.lookAround ? (
+        {/* A lesson says this itself, once, in its own head. */}
+        {session.lookAround && !inLesson ? (
           <StatusBanner
             tone="info"
             icon="Eye"

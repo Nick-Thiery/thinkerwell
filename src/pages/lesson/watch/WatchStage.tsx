@@ -4,6 +4,7 @@ import { En, useI18n } from '../../../i18n';
 import { formatDuration, hasText, splitParagraphs, useLessonPlayer } from '../../../lesson';
 import { track } from '../../../measurement/track';
 import { isSaveDataOn } from '../../../offline';
+import { LessonDisclosure } from '../LessonDisclosure';
 import { SayItBox, useSayIt } from '../sayIt';
 import { StageActionBar } from '../StageActionBar';
 import {
@@ -231,31 +232,37 @@ export function WatchStage() {
         <StatusBanner className="tw-watch-banner" tone="info" icon="WifiOff" title={t('lessonPlayer.watch.saveDataTitle')}>
           {t('lessonPlayer.watch.sameIdeas')}
         </StatusBanner>
-      ) : shownView !== 'written' ? (
-        <StatusBanner className="tw-watch-banner" tone="info" icon="WifiOff" title={t('lessonPlayer.watch.slowTitle')}>
-          {t('lessonPlayer.watch.slowBody')}
-        </StatusBanner>
       ) : null}
 
       {/*
-        The before question with a short optional answer box (saved to
-        progress.watch.beforeAnswer). The screen shows the question as text
-        only; the box is optional and never needed to continue.
+        The before question as a short prompt; a box for an idea (saved to
+        progress.watch.beforeAnswer) only when the learner wants one, so it
+        never stands between them and the video. Never needed to continue.
       */}
-      <section className="tw-watch-panel tw-watch-think" aria-labelledby={thinkId}>
+      <section className="tw-watch-think" aria-labelledby={thinkId}>
         <h3 id={thinkId} className="eyebrow tw-watch-eyebrow">
           {t('lessonPlayer.watch.thinkFirst')}
         </h3>
-        <SayItBox
-          sayIt={sayIt}
-          id={beforeBoxId}
-          label={<En>{watch.beforeQuestion}</En>}
-          optional
-          rows={2}
-          placeholder={t('lessonPlayer.watch.beforePlaceholder')}
-          value={progress.watch.beforeAnswer}
-          onValueChange={(text) => update((p) => ({ ...p, watch: { ...p.watch, beforeAnswer: text } }))}
-        />
+        <p className="tw-watch-think-question" {...contentLang}>
+          {watch.beforeQuestion}
+        </p>
+        <LessonDisclosure
+          className="tw-watch-idea"
+          icon="Pencil"
+          summary={t('lessonPlayer.watch.writeIdea')}
+          defaultOpen={hasText(progress.watch.beforeAnswer)}
+        >
+          <SayItBox
+            sayIt={sayIt}
+            id={beforeBoxId}
+            label={t('lessonPlayer.watch.ideaLabel')}
+            optional
+            rows={2}
+            placeholder={t('lessonPlayer.watch.beforePlaceholder')}
+            value={progress.watch.beforeAnswer}
+            onValueChange={(text) => update((p) => ({ ...p, watch: { ...p.watch, beforeAnswer: text } }))}
+          />
+        </LessonDisclosure>
       </section>
 
       <div ref={mediaRef} className="tw-watch-media">
@@ -298,6 +305,7 @@ export function WatchStage() {
             duration={duration}
             readLabel={t('lessonPlayer.watch.readInstead')}
             watchVariant="secondary"
+            optionalTag={false}
             onWatch={watchVideo}
             onReadInstead={readInstead}
             watching={shownView === 'player'}
@@ -326,6 +334,11 @@ export function WatchStage() {
           >
             <p className="tw-watch-why" {...contentLang}>
               {watch.why}
+            </p>
+            {/* Read instead, for a slow connection: said once, beside the choice itself. */}
+            <p className="tw-watch-lowdata">
+              <Icon name="Wifi" size={20} />
+              <span>{t('lessonPlayer.watch.lowDataNote')}</span>
             </p>
             {/* The videos stay in English; say so when the lesson is in another language. */}
             {content ? (
@@ -377,10 +390,7 @@ export function WatchStage() {
 
       {sayIt.announcer}
 
-      <StageActionBar
-        onNext={() => stageEvent({ stage: 'watch', kind: 'continue' })}
-        helper={t('lessonPlayer.watch.helper')}
-      />
+      <StageActionBar onNext={() => stageEvent({ stage: 'watch', kind: 'continue' })} />
     </>
   );
 }

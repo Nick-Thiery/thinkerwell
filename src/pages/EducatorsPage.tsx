@@ -24,13 +24,14 @@ import { SiteVideo } from './siteVideo/SiteVideo';
 
 /**
  * For educators (docs/screens/Educators.dc.html): what a teacher or
- * volunteer needs to run a session, the tools for setting up this device and
- * following the group on it (under "Starting a pilot": For organisations,
- * the information sheet, the consent form, code cards, the setup
- * checklist and the pilot day guide for staff; then the class view and every certificate to print), how a
- * session works (with the video "Run a session", ./siteVideo/), and every
- * lesson to preview,
- * each with its teacher guide, and each section's check with its answer key. Collects nothing: "Tell us what to fix" keeps the "[FEEDBACK
+ * volunteer needs to run a session, with the one way in to setting up this
+ * device (the setup checklist); then teaching first (docs/notes/simpler-lessons.md):
+ * how a session works (with the video "Run a session", ./siteVideo/) and
+ * every lesson to preview, each with its teacher guide, and each section's
+ * check with its answer key; then following the group on this device (the
+ * class view and every certificate to print); and last, for an
+ * organisation, "Starting a pilot" (For organisations, the information
+ * sheet, the consent form, code cards and the pilot day guide for staff). Collects nothing: "Tell us what to fix" keeps the "[FEEDBACK
  * EMAIL]" placeholder visible rather than a form (CLAUDE.md's
  * no-accounts-no-collection rule).
  *
@@ -87,13 +88,6 @@ export function EducatorsPage() {
       body: t('pages.educators.pilotCodesBody'),
       cta: t('pages.educators.pilotCodesCta'),
       href: codeCardsPath(),
-    },
-    {
-      icon: 'ListChecks',
-      title: t('pages.educators.setupTitle'),
-      body: t('pages.educators.setupBody'),
-      cta: t('pages.educators.setupCta'),
-      href: setupPath(),
     },
     {
       icon: 'GraduationCap',
@@ -165,26 +159,11 @@ export function EducatorsPage() {
             <Icon name="WifiOff" size={22} />
             {t('pages.educators.need4')}
           </span>
-          <Button variant="ghost" icon="Settings" href="/settings" className="tw-edu-need-settings">
-            {t('pages.educators.settingsLink')}
+          {/* The one way in to setting up a device: the checklist, which links to each part of Settings it needs. */}
+          <Button variant="ghost" icon="ListChecks" href={setupPath()} className="tw-edu-need-settings">
+            {t('pages.educators.setupTitle')}
           </Button>
         </aside>
-      </section>
-
-      <section aria-labelledby="pilot-title" className="tw-edu-section">
-        <h2 id="pilot-title" className="h2">
-          {t('pages.educators.pilotTitle')}
-        </h2>
-        <p className="tw-edu-preview-intro">{t('pages.educators.pilotIntro')}</p>
-        <ToolList tools={pilot} />
-      </section>
-
-      <section aria-labelledby="tools-title" className="tw-edu-section">
-        <h2 id="tools-title" className="h2">
-          {t('pages.educators.followTitle')}
-        </h2>
-        <p className="tw-edu-preview-intro">{t('pages.educators.toolsIntro')}</p>
-        <ToolList tools={tools} />
       </section>
 
       <section aria-labelledby="how-title" className="tw-edu-section">
@@ -260,6 +239,22 @@ export function EducatorsPage() {
             </div>
           ) : null}
         </div>
+      </section>
+
+      <section aria-labelledby="tools-title" className="tw-edu-section">
+        <h2 id="tools-title" className="h2">
+          {t('pages.educators.followTitle')}
+        </h2>
+        <p className="tw-edu-preview-intro">{t('pages.educators.toolsIntro')}</p>
+        <ToolList tools={tools} />
+      </section>
+
+      <section aria-labelledby="pilot-title" className="tw-edu-section">
+        <h2 id="pilot-title" className="h2">
+          {t('pages.educators.pilotTitle')}
+        </h2>
+        <p className="tw-edu-preview-intro">{t('pages.educators.pilotIntro')}</p>
+        <ToolList tools={pilot} />
       </section>
 
       <div className="tw-edu-cards">

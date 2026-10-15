@@ -40,12 +40,15 @@ test('with no device voice, on-device speech or microphone, only Listen (its rec
   await expect(page.getByRole('button', { name: 'Say it' })).toHaveCount(0);
 
   await page.goto(L10.path('speak'));
-  await expect(page.getByRole('radiogroup', { name: 'How did you practise?' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Continue to Watch' })).toBeVisible();
   await expect(page.getByRole('region', { name: /Record yourself/ })).toHaveCount(0);
   await expect(page.getByText(/record yourself/i)).toHaveCount(0);
   expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
 
   await page.goto(L10.path('watch'));
+  // The after question; "Think first" keeps its box folded under "Write my idea" until wanted.
+  await expect(page.getByRole('textbox')).toHaveCount(1);
+  await page.locator('summary', { hasText: 'Write my idea' }).click();
   await expect(page.getByRole('textbox')).toHaveCount(2);
   await expect(page.getByRole('button', { name: 'Say it' })).toHaveCount(0);
 
@@ -202,6 +205,7 @@ test('Say it shows in Write, Watch and Reflect once this device was checked, and
   expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
 
   await page.goto(L10.path('watch'));
+  await page.locator('summary', { hasText: 'Write my idea' }).click();
   await expect(page.getByRole('button', { name: 'Say it' })).toHaveCount(2);
   expect(await recognitionLog(page)).toEqual(none);
 
