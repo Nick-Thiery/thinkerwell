@@ -195,8 +195,8 @@ describe('TeacherGuidePage', () => {
     screen.getByRole('button', { name: 'Print' }).click();
     expect(print).toHaveBeenCalledTimes(1);
     expect(screen.getByRole('link', { name: 'Back to the educators page' })).toHaveAttribute('href', '/educators?section=geography');
-    expect(screen.getByRole('link', { name: 'Preview the lesson' })).toHaveAttribute('href', '/lesson/towns-near-rivers/read?preview=true');
-    expect(screen.getByRole('link', { name: 'Print the lesson for learners' })).toHaveAttribute('href', '/lesson/towns-near-rivers/print');
+    expect(screen.getByRole('link', { name: 'Preview learner lesson' })).toHaveAttribute('href', '/lesson/towns-near-rivers/read?preview=true');
+    expect(screen.getByRole('link', { name: 'Print learner lesson' })).toHaveAttribute('href', '/lesson/towns-near-rivers/print');
   });
 
   it('opens other sites in a new tab and says so', () => {

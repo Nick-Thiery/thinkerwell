@@ -1476,10 +1476,6 @@
     "source": "Internet for the first visit, and for videos",
     "back": "Internet for the first visit and for videos"
   },
-  "pages.educators.settingsLink": {
-    "source": "Settings for this device",
-    "back": "Settings of this device"
-  },
   "pages.educators.howTitle": {
     "source": "How a session works",
     "back": "How one session goes"
@@ -1651,12 +1647,16 @@
     "note": "Changed from \"kamu\" to \"Anda\" (September 2026): pages for adults (educators, partners, parents) use \"Anda\"; pages for learners keep \"kamu\". Drafted by AI, not yet reviewed."
   },
   "pages.teacherGuide.previewLesson": {
-    "source": "Preview the lesson",
-    "back": "Lesson preview"
+    "source": "Preview learner lesson",
+    "back": "Preview the lesson for learners",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
   },
   "pages.teacherGuide.learnerPrint": {
-    "source": "Print the lesson for learners",
-    "back": "Print the lesson for learners"
+    "source": "Print learner lesson",
+    "back": "Print the lesson for learners",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
   },
   "pages.teacherGuide.section": {
     "source": "Section",
@@ -6392,5 +6392,71 @@
     "back": "Your score is saved here. The pilot also counts it, with a code and not a name.",
     "flag": true,
     "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
+  },
+  "ds.course.lessonRow.badge.notStarted": {
+    "source": "Not started",
+    "back": "Not started yet",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "ds.course.lessonRow.badge.inProgress": {
+    "source": "In progress · {count} of {total} steps",
+    "back": "Being worked on · {count} of {total} steps",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "ds.course.lessonRow.badge.completed": {
+    "source": "Done",
+    "back": "Finished",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "pages.home.newLearner.colourSummary": {
+    "source": "Pick your colour (optional)",
+    "back": "Choose your colour (not required)",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "pages.home.newLearner.languageSummary": {
+    "source": "Change language",
+    "back": "Change language",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "pages.home.newLearner.classCodeSummary": {
+    "source": "Have a class code?",
+    "back": "Have a class code?",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "pages.teacherGuide.printGuide": {
+    "source": "Print teacher guide",
+    "back": "Print the teacher's guide",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "print.levelLabel": {
+    "source": "Reading to print",
+    "back": "The reading that is printed",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "print.levelBoth": {
+    "source": "Both",
+    "back": "Both",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "pages.settings.moreTitle": {
+    "source": "For educators setting up this device",
+    "back": "For educators who set up this device",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "pages.settings.moreIntro": {
+    "source": "Moving work to another device, the Listen voice, lesson audio for offline use, speech-to-text and pilot results.",
+    "back": "Moving work to another device, the Listen voice, lesson audio to use without the internet, speech-to-text, and pilot results.",
+    "flag": true,
+    "note": "New or changed in October 2026: simpler pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
   }
 }

@@ -323,3 +323,15 @@
     max-block-size: 120mm;
   }
 }
+
+/* Which reading to print, on screen above the sheet. */
+.tw-print-levels {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+}
+
+.tw-print-levels .tw-seg {
+  max-inline-size: 100%;
+}

@@ -260,6 +260,7 @@
         "nameRequired": "Taip nama atau nama panggilan kamu.",
         "nameTooLong": "Hadkan kepada lebih kurang 30 huruf.",
         "colourLabel": "Pilih warna kamu",
+        "colourSummary": "Pilih warna kamu (tidak wajib)",
         "colour": {
           "lemon": "Kuning",
           "history": "Pasir",
@@ -268,6 +269,7 @@
           "paper": "Putih"
         },
         "classCodeLabel": "Kod kelas",
+        "classCodeSummary": "Ada kod kelas?",
         "classCodeHelper": "Guru kamu mungkin akan memberikannya.",
         "classCodePlaceholder": "Contohnya ABC-07",
         "classCodeInvalid": "Guna huruf, nombor dan tanda sempang sahaja, seperti ABC-07.",
@@ -278,6 +280,7 @@
         "startsWithNote": "Kamu boleh membuka mana-mana pelajaran kemudian dari halaman kursus.",
         "privacyNote": "Hasil kerja kamu kekal pada peranti ini.",
         "languageLabel": "Bahasa kamu",
+        "languageSummary": "Tukar bahasa",
         "languageHelper": "Butang dan arahan dipaparkan dalam bahasa ini. Dalam bahasa Indonesia dan bahasa Melayu, pelajaran juga begitu. Dalam bahasa lain, pelajaran kekal dalam bahasa Inggeris, supaya kamu boleh berlatih bahasa Inggeris.",
         "privacyNotePilot": "Tulisan dan rakaman kamu kekal pada peranti ini. Jika kamu menggunakan kod rintis, Thinkerwell juga mengira cara kamu menggunakannya. Thinkerwell tidak sekali-kali mendapat nama kamu."
       },
@@ -453,7 +456,6 @@
       "need2": "Kertas dan pensel untuk merancang",
       "need3": "Kira-kira {min}–{max} minit setiap pelajaran",
       "need4": "Internet untuk kali pertama membuka laman web, dan untuk video",
-      "settingsLink": "Tetapan untuk peranti ini",
       "howTitle": "Cara sesi berjalan",
       "step1Title": "Pilih pelajaran",
       "step1Body": "Pelajaran boleh diikuti mengikut apa-apa susunan. Pilih satu yang sesuai dengan kumpulan anda, atau ikut nombornya.",
@@ -635,8 +637,9 @@
       "pageTitle": "Pelajaran {number}: panduan guru",
       "eyebrow": "Panduan guru · Pelajaran {number}",
       "intro": "Semua yang anda perlukan untuk mengajar pelajaran ini, bersama jawapannya. Halaman ini boleh dicetak pada kertas A4, hitam di atas putih, tanpa menu.",
-      "previewLesson": "Pratonton pelajaran",
+      "previewLesson": "Pratonton pelajaran pelajar",
       "learnerPrint": "Cetak pelajaran untuk pelajar",
+      "printGuide": "Cetak panduan guru",
       "section": "Bahagian",
       "sectionValue": "Bahagian {number}: {title}",
       "essentialQuestion": "Soalan utama",
@@ -870,6 +873,8 @@
     "settings": {
       "title": "Tetapan untuk peranti ini",
       "intro": "Tetapan ini untuk guru dan sukarelawan. Ia terpakai kepada semua orang yang menggunakan peranti ini, dan kekal pada peranti ini.",
+      "moreTitle": "Untuk pendidik yang menyediakan peranti ini",
+      "moreIntro": "Memindahkan kerja ke peranti lain, suara Dengar, audio pelajaran untuk digunakan tanpa internet, pertuturan ke teks dan hasil rintis.",
       "noStorage": "Tetingkap pelayar ini tidak dapat menyimpan tetapan.",
       "saveFailed": "Perubahan itu tidak dapat disimpan. Cuba lagi.",
       "language": {
@@ -1327,7 +1332,12 @@
         },
         "ariaLabelLesson": "Pelajaran {number}: {title}. {status} {cta}",
         "ariaLabelLessonQuestion": "Pelajaran {number}: {title}. {status} {cta} {question}",
-        "ariaLabelQuiz": "{title}. {status} {cta}"
+        "ariaLabelQuiz": "{title}. {status} {cta}",
+        "badge": {
+          "notStarted": "Belum dimulakan",
+          "inProgress": "Sedang berjalan · {count} daripada {total} langkah",
+          "completed": "Selesai"
+        }
       },
       "continueCard": {
         "label": "Teruskan belajar",
@@ -1432,6 +1442,8 @@
     "lessonIntro": "Ini ialah pelajaran dalam bentuk kertas: kedua-dua tahap bacaan, kata kunci dan setiap tugasan, dengan garisan untuk menulis. Teks dicetak hitam di atas putih, tanpa menu.",
     "readingStandard": "Bacaan: versi biasa",
     "readingSimpler": "Bacaan: versi lebih mudah",
+    "levelLabel": "Bacaan untuk dicetak",
+    "levelBoth": "Kedua-duanya",
     "keyWordsNote": "Kata kunci ditulis dalam huruf tebal.",
     "optional": "(tidak wajib)",
     "watchTitle": "Tonton atau baca",

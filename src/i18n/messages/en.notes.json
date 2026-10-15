@@ -306,5 +306,9 @@
   "pilotResults.waiting": "{count} is a number of results (measurements) kept on this device until the device is online.",
   "pilotResults.paused": "Shown when Thinkerwell's server is not set up to take results yet. Thinkerwell is the site's name.",
   "pages.home.newLearner.privacyNotePilot": "Shown instead of pages.home.newLearner.privacyNote when the device is set to share pilot results. A pilot code is a code like HLP-01 on a learner's code card.",
-  "pages.sectionCheck.factPrivatePilot": "Shown instead of pages.sectionCheck.factPrivate, for a learner whose results are shared with the pilot. By code means HLP-01, not by name."
+  "pages.sectionCheck.factPrivatePilot": "Shown instead of pages.sectionCheck.factPrivate, for a learner whose results are shared with the pilot. By code means HLP-01, not by name.",
+  "ds.course.lessonRow.badge.inProgress": "On a lesson in the course list, once the learner has started it. {count} is how many of its steps are done (0 to 5), {total} is 5. Short: it sits beside the time.",
+  "ds.course.lessonRow.badge.completed": "On a finished lesson in the course list. One short word if you can.",
+  "print.levelLabel": "Above a lesson's print view, on screen only: which reading level goes on paper (Standard, Simpler or both).",
+  "pages.settings.moreTitle": "A small heading over the rest of Settings: what a teacher or volunteer sets up once."
 }

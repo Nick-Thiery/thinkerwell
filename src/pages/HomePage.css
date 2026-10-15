@@ -257,6 +257,60 @@
   gap: var(--space-5);
 }
 
+/* The optional parts under Start: quiet rows, each opening on a tap. */
+.tw-home-more {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-home-option {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+}
+
+.tw-home-option-summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: var(--target-min);
+  padding-block: var(--space-1);
+  padding-inline: var(--space-4);
+  border-radius: var(--radius-lg);
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.tw-home-option-summary::-webkit-details-marker {
+  display: none;
+}
+
+.tw-home-option-chevron {
+  flex: none;
+  transform: rotate(-90deg);
+  transition: transform 150ms ease;
+}
+
+[dir='rtl'] .tw-home-option-chevron {
+  transform: rotate(90deg);
+}
+
+.tw-home-option[open] .tw-home-option-chevron {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tw-home-option-chevron {
+    transition: none;
+  }
+}
+
+.tw-home-option-body {
+  padding: var(--space-2) var(--space-4) var(--space-4);
+}
+
 .tw-colour-fieldset {
   margin: 0;
   padding: 0;

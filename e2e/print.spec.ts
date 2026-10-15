@@ -1,5 +1,5 @@
 import { expect, test, type Page } from '@playwright/test';
-import { addLearnerViaUi, L10 } from './lessonHelpers';
+import { addLearnerViaUi, L10, openHelp } from './lessonHelpers';
 
 // Print views (phase 6): a lesson in both reading levels with every task,
 // and the journal, printed as black text on white with no header or menus.
@@ -20,16 +20,29 @@ async function printedColours(page: Page): Promise<{ text: string[]; backgrounds
   });
 }
 
-test('a lesson prints in both reading levels with every task, in black on white, without the header', async ({ page }) => {
+test('a lesson prints one reading level, or both on purpose, with every task, in black on white, without the header', async ({ page }) => {
   await page.goto(L10.path('read'));
+  // "Print this lesson" is under "About this lesson" (open at the lesson's start, except on a phone).
+  await openHelp(page, 'About this lesson');
   await page.getByRole('link', { name: 'Print this lesson' }).click();
   await expect(page).toHaveURL(/\/lesson\/towns-near-rivers\/print$/);
   await expect(page.locator('h1')).toHaveText(L10.title);
   await expect(page.getByRole('button', { name: 'Print' })).toBeVisible();
 
+  // One level by default (nobody chosen: Standard); Simpler, or both, on purpose.
+  const levels = page.getByRole('group', { name: 'Reading to print' });
+  await expect(levels.getByRole('button', { name: 'Standard' })).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.getByRole('heading', { level: 2, name: 'Reading: Standard English' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 2, name: 'Reading: Simpler English' })).toHaveCount(0);
+  await levels.getByRole('button', { name: 'Simpler' }).click();
+  await expect(page.getByRole('heading', { level: 2, name: 'Reading: Standard English' })).toHaveCount(0);
+  await expect(page.getByRole('heading', { level: 2, name: 'Reading: Simpler English' })).toBeVisible();
+  await levels.getByRole('button', { name: 'Both' }).click();
+
   await page.emulateMedia({ media: 'print' });
   await expect(page.getByRole('banner')).toBeHidden();
   await expect(page.getByRole('button', { name: 'Print' })).toBeHidden();
+  await expect(levels).toBeHidden();
   await expect(page.getByRole('link', { name: 'Back to the lesson' })).toBeHidden();
   for (const heading of ['Reading: Standard English', 'Reading: Simpler English', 'Key words in this lesson', 'Quick check', 'Write', 'Speak', 'Watch or read', 'Reflect']) {
     await expect(page.getByRole('heading', { level: 2, name: heading })).toBeVisible();
@@ -72,12 +85,12 @@ async function a4Pages(page: Page): Promise<number> {
 test('a teacher guide prints on a few A4 pages, in black on white, without the header or its buttons', { tag: '@chromium-only' }, async ({ page }) => {
   await page.goto('/educators/lesson/towns-near-rivers');
   await expect(page.locator('h1')).toHaveText(L10.title);
-  await expect(page.getByRole('button', { name: 'Print' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Print teacher guide' })).toBeVisible();
 
   await page.emulateMedia({ media: 'print' });
   await expect(page.getByRole('banner')).toBeHidden();
-  for (const name of ['Print', 'See it bigger']) await expect(page.getByRole('button', { name })).toBeHidden();
-  for (const name of ['Back to the educators page', 'Preview the lesson', 'Print the lesson for learners']) {
+  for (const name of ['Print teacher guide', 'See it bigger']) await expect(page.getByRole('button', { name })).toBeHidden();
+  for (const name of ['Back to the educators page', 'Preview learner lesson', 'Print learner lesson']) {
     await expect(page.getByRole('link', { name })).toBeHidden();
   }
   for (const heading of ['Before you teach', 'Session plan', 'Key words', 'The evidence and the picture', 'Quick check', 'Write', 'Speak', 'Discussion prompts', 'Watch or read instead', 'Sources']) {

@@ -4,7 +4,6 @@ import { useI18n } from '../../i18n';
 import { useDsLinkComponent } from './DsLinkProvider';
 import { Icon } from './Icon';
 import { cx } from './internal/cx';
-import { StageDots } from './StageDots';
 import type { StageId } from './types';
 import './LessonRow.css';
 
@@ -19,6 +18,7 @@ export interface LessonRowProps {
   time?: string;
   status?: 'not-started' | 'in-progress' | 'completed';
   done?: StageId[];
+  /** The reference's: which step the stage dots marked as current. Kept for the same props; the row now says where the learner is in words. */
   current?: StageId;
   highlight?: boolean;
   kind?: 'lesson' | 'quiz';
@@ -30,9 +30,11 @@ export interface LessonRowProps {
 
 /**
  * One lesson (or the section check) on the course page: number, title,
- * guiding question, time, stage dots and a Start / Continue / Review action
- * (docs/design-system/components/LessonRow.md). Always a link; nothing is
- * locked.
+ * guiding question, time, where the learner is in words ("Not started",
+ * "In progress · 2 of 5 steps", "Done"; the five unlabelled stage dots
+ * were too small to read, docs/notes/simpler-lessons.md) and a Start /
+ * Continue / Review action (docs/design-system/components/LessonRow.md).
+ * Always a link; nothing is locked.
  */
 export function LessonRow({
   number,
@@ -42,7 +44,6 @@ export function LessonRow({
   time,
   status = 'not-started',
   done,
-  current,
   highlight,
   kind,
   cta,
@@ -110,7 +111,15 @@ export function LessonRow({
               {time}
             </span>
           ) : null}
-          {isQuiz ? null : <StageDots done={doneStages} current={current} />}
+          {isQuiz ? null : (
+            <span className={cx('tw-row-status', `tw-row-status-${status}`)}>
+              {status === 'completed'
+                ? t('ds.course.lessonRow.badge.completed')
+                : status === 'in-progress'
+                  ? t('ds.course.lessonRow.badge.inProgress', { count: doneStages.length, total: STAGES.length })
+                  : t('ds.course.lessonRow.badge.notStarted')}
+            </span>
+          )}
           {meta ? <span>{meta}</span> : null}
         </span>
       </span>

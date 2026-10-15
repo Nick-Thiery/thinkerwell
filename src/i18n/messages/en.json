@@ -262,6 +262,7 @@
         "nameRequired": "Type your name or a nickname.",
         "nameTooLong": "Keep it to about 30 letters.",
         "colourLabel": "Pick your colour",
+        "colourSummary": "Pick your colour (optional)",
         "colour": {
           "lemon": "Yellow",
           "history": "Sand",
@@ -270,6 +271,7 @@
           "paper": "White"
         },
         "classCodeLabel": "Class code",
+        "classCodeSummary": "Have a class code?",
         "classCodeHelper": "Your teacher may give you one.",
         "classCodePlaceholder": "For example ABC-07",
         "classCodeInvalid": "Use letters, numbers and hyphens only, like ABC-07.",
@@ -280,6 +282,7 @@
         "startsWithNote": "You can open any lesson later from the course page.",
         "privacyNote": "Your work stays on this device.",
         "languageLabel": "Your language",
+        "languageSummary": "Change language",
         "languageHelper": "Buttons and instructions show in this language. In Indonesian and Malay, the lessons do too. In other languages they stay in English, so you can practise it.",
         "privacyNotePilot": "Your writing and recordings stay on this device. If you use a pilot code, Thinkerwell also counts how you use it. It never gets your name."
       },
@@ -461,7 +464,6 @@
       "need2": "Paper and pencils for planning",
       "need3": "About {min}–{max} minutes a lesson",
       "need4": "Internet for the first visit, and for videos",
-      "settingsLink": "Settings for this device",
       "howTitle": "How a session works",
       "step1Title": "Pick a lesson",
       "step1Body": "Lessons can go in any order. Choose one that fits your group, or follow the numbers.",
@@ -643,8 +645,9 @@
       "pageTitle": "Lesson {number}: teacher guide",
       "eyebrow": "Teacher guide · Lesson {number}",
       "intro": "Everything you need to teach this lesson, with the answers. It prints on A4, black on white, without the menus.",
-      "previewLesson": "Preview the lesson",
-      "learnerPrint": "Print the lesson for learners",
+      "previewLesson": "Preview learner lesson",
+      "learnerPrint": "Print learner lesson",
+      "printGuide": "Print teacher guide",
       "section": "Section",
       "sectionValue": "Section {number}: {title}",
       "essentialQuestion": "Essential question",
@@ -883,6 +886,8 @@
     "settings": {
       "title": "Settings for this device",
       "intro": "These settings are for teachers and volunteers. They apply to everyone who uses this device, and they stay on it.",
+      "moreTitle": "For educators setting up this device",
+      "moreIntro": "Moving work to another device, the Listen voice, lesson audio for offline use, speech-to-text and pilot results.",
       "noStorage": "This browser window can't save settings.",
       "saveFailed": "That change couldn't be saved. Try again.",
       "language": {
@@ -1342,6 +1347,11 @@
           "inProgress": "In progress.",
           "completed": "Completed."
         },
+        "badge": {
+          "notStarted": "Not started",
+          "inProgress": "In progress · {count} of {total} steps",
+          "completed": "Done"
+        },
         "ariaLabelLesson": "Lesson {number}: {title}. {status} {cta}",
         "ariaLabelLessonQuestion": "Lesson {number}: {title}. {status} {cta} {question}",
         "ariaLabelQuiz": "{title}. {status} {cta}"
@@ -1449,6 +1459,8 @@
     "lessonIntro": "This is the lesson on paper: both reading levels, the key words and every task, with lines to write on. The text prints black on white, without the menus.",
     "readingStandard": "Reading: Standard English",
     "readingSimpler": "Reading: Simpler English",
+    "levelLabel": "Reading to print",
+    "levelBoth": "Both",
     "keyWordsNote": "Key words are in bold.",
     "optional": "(optional)",
     "watchTitle": "Watch or read",

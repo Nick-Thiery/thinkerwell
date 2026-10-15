@@ -260,6 +260,7 @@
         "nameRequired": "Tulis namamu atau nama panggilanmu.",
         "nameTooLong": "Cukup sekitar 30 huruf saja.",
         "colourLabel": "Pilih warnamu",
+        "colourSummary": "Pilih warnamu (tidak wajib)",
         "colour": {
           "lemon": "Kuning",
           "history": "Krem",
@@ -268,6 +269,7 @@
           "paper": "Putih"
         },
         "classCodeLabel": "Kode kelas",
+        "classCodeSummary": "Punya kode kelas?",
         "classCodeHelper": "Gurumu mungkin akan memberimu kode.",
         "classCodePlaceholder": "Contohnya ABC-07",
         "classCodeInvalid": "Pakai huruf, angka, dan tanda hubung saja, seperti ABC-07.",
@@ -278,6 +280,7 @@
         "startsWithNote": "Nanti kamu bisa membuka pelajaran mana saja dari halaman kursus.",
         "privacyNote": "Hasil kerjamu tetap ada di perangkat ini.",
         "languageLabel": "Bahasamu",
+        "languageSummary": "Ganti bahasa",
         "languageHelper": "Tombol dan petunjuk tampil dalam bahasa ini. Dalam bahasa Indonesia dan bahasa Melayu, pelajaran juga. Dalam bahasa lain, pelajaran tetap dalam bahasa Inggris supaya kamu bisa berlatih.",
         "privacyNotePilot": "Tulisan dan rekamanmu tetap di perangkat ini. Jika kamu memakai kode pilot, Thinkerwell juga menghitung cara kamu memakainya. Thinkerwell tidak pernah mendapat namamu."
       },
@@ -453,7 +456,6 @@
       "need2": "Kertas dan pensil untuk membuat rencana",
       "need3": "Sekitar {min}–{max} menit per pelajaran",
       "need4": "Internet untuk kunjungan pertama dan untuk video",
-      "settingsLink": "Pengaturan perangkat ini",
       "howTitle": "Jalannya satu sesi",
       "step1Title": "Pilih pelajaran",
       "step1Body": "Pelajaran bisa diambil dengan urutan apa saja. Pilih yang cocok untuk kelompok Anda, atau ikuti nomornya.",
@@ -635,8 +637,9 @@
       "pageTitle": "Pelajaran {number}: panduan guru",
       "eyebrow": "Panduan guru · Pelajaran {number}",
       "intro": "Semua yang Anda butuhkan untuk mengajarkan pelajaran ini, lengkap dengan jawabannya. Bisa dicetak di kertas A4, hitam di atas putih, tanpa menu.",
-      "previewLesson": "Pratinjau pelajaran",
+      "previewLesson": "Pratinjau pelajaran untuk pelajar",
       "learnerPrint": "Cetak pelajaran untuk pelajar",
+      "printGuide": "Cetak panduan guru",
       "section": "Bagian",
       "sectionValue": "Bagian {number}: {title}",
       "essentialQuestion": "Pertanyaan utama",
@@ -870,6 +873,8 @@
     "settings": {
       "title": "Pengaturan perangkat ini",
       "intro": "Pengaturan ini untuk guru dan relawan. Pengaturan ini berlaku untuk semua orang yang memakai perangkat ini, dan tetap tersimpan di perangkat ini.",
+      "moreTitle": "Untuk pendidik yang menyiapkan perangkat ini",
+      "moreIntro": "Memindahkan pekerjaan ke perangkat lain, suara Dengarkan, audio pelajaran untuk dipakai tanpa internet, suara ke teks, dan hasil pilot.",
       "noStorage": "Jendela browser ini tidak bisa menyimpan pengaturan.",
       "saveFailed": "Perubahan itu belum tersimpan. Coba lagi.",
       "language": {
@@ -1327,7 +1332,12 @@
         },
         "ariaLabelLesson": "Pelajaran {number}: {title}. {status} {cta}",
         "ariaLabelLessonQuestion": "Pelajaran {number}: {title}. {status} {cta} {question}",
-        "ariaLabelQuiz": "{title}. {status} {cta}"
+        "ariaLabelQuiz": "{title}. {status} {cta}",
+        "badge": {
+          "notStarted": "Belum dimulai",
+          "inProgress": "Sedang dikerjakan · {count} dari {total} langkah",
+          "completed": "Selesai"
+        }
       },
       "continueCard": {
         "label": "Lanjutkan belajar",
@@ -1432,6 +1442,8 @@
     "lessonIntro": "Ini pelajaran dalam bentuk kertas: kedua tingkat bacaan, kata kunci, dan semua tugas, dengan garis untuk menulis. Teksnya dicetak hitam di atas putih, tanpa menu.",
     "readingStandard": "Bacaan: versi standar",
     "readingSimpler": "Bacaan: versi lebih mudah",
+    "levelLabel": "Bacaan yang dicetak",
+    "levelBoth": "Keduanya",
     "keyWordsNote": "Kata kunci dicetak tebal.",
     "optional": "(tidak wajib)",
     "watchTitle": "Tonton atau baca",
