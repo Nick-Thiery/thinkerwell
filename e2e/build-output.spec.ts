@@ -64,8 +64,11 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * calls in the lesson pages and the card's words in all three ready languages, which must be in the offline copy so an
  * educator can switch it on offline. Nothing of it reaches a first visit but a 1 kB stub (docs/notes/pilot-measurement.md,
  * docs/notes/slow-internet.md "Later budget changes").
+ * Raised to 808 kB for local-language Watch videos: 807.0 kB with them. The two languages' videos chunks and their loader,
+ * the Credits list, the part of a longer video and its publisher's link in the Watch step, teacher guide and print view,
+ * and three messages in four languages (docs/notes/local-language-videos.md). Approving videos will grow it again.
  */
-const PRECACHE_BUDGET = 806_000;
+const PRECACHE_BUDGET = 808_000;
 /**
  * Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before),
  * 210.5 kB after the language and pilot-day merges, 212.7 kB with the header's language switch and the one language
