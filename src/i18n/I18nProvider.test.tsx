@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { ENGLISH, type LoadedLocale } from './core';
 import { En, I18nProvider, useI18n } from './I18nProvider';
@@ -83,7 +83,8 @@ describe('I18nProvider', () => {
     expect(screen.getByTestId('ui')).toHaveAttribute('dir', 'rtl');
     expect(screen.getByTestId('ui')).toHaveAttribute('lang', 'ar-XB');
     expect(screen.getByTestId('rich').querySelector('span[lang="en"]')).toHaveAttribute('dir', 'ltr');
-    expect(loadFont).toHaveBeenCalledWith('arabic');
+    // The font loads in an effect after the render, which a busy machine can run a moment after the text appears.
+    await waitFor(() => expect(loadFont).toHaveBeenCalledWith('arabic'));
   });
 
   it('uses a language it is given as it is, with its digits, falling back to English for missing keys', () => {
