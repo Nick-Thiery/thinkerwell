@@ -126,6 +126,9 @@ export const routes: RouteObject[] = [
       { path: 'course/:courseId', ...page(previewPages, (m) => m.PreviewCourseRoute) },
       { path: 'course/:courseId/print', ...page(previewPages, (m) => m.PreviewCoursePrintRoute) },
       { path: 'preview/:courseId', ...page(previewPages, (m) => m.PreviewSwitchRoute) },
+      // For the people who review the local-language Watch videos (src/courses/video-review/): never linked,
+      // and like a preview course never stored offline or downloaded by anyone else.
+      { path: 'review/videos', ...page(previewPages, (m) => m.VideoReviewRoute) },
       // Old Base44 paths.
       { path: 'onboarding', element: <Navigate replace to="/" /> },
       { path: 'courses', element: <Navigate replace to="/course" /> },

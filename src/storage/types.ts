@@ -282,6 +282,17 @@ export interface DeviceSettings {
    * migration.
    */
   previewCourses?: string[];
+  /**
+   * What a reviewer of local-language Watch videos has said on this device
+   * (/review/videos, src/courses/video-review/): their name, and for each
+   * "<lang>/<lesson>" ("id/L05") their answer and comment. Only on a device
+   * someone reviewed on; never sent anywhere (they copy it and send it
+   * themselves), not in the work file. Missing everywhere else; no migration.
+   */
+  videoReview?: {
+    reviewer?: string;
+    answers: Record<string, { decision?: 'use' | 'change' | 'no'; comment?: string }>;
+  };
 }
 
 /** A change to the settings: any of them, and for the partner options only the ones that change. */

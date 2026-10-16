@@ -8,9 +8,13 @@
  *                               its lessons share Our World's addresses: their ids start with
  *                               the course's prefix ("dw-"), and the Our World routes hand them here
  *
+ *   /review/videos              for the people who review the local-language Watch videos
+ *                               (src/courses/video-review/; never linked, noindex)
+ *
  * None of them is a public page (src/seo/), so each address gets app.html
  * with noindex and is in no sitemap.
  */
+import { lazy, Suspense } from 'react';
 import { useParams } from 'react-router';
 import { useCatalog } from '../content/useCatalog';
 import { previewCourseOfLesson, PREVIEW_COURSES } from '../content/courses';
@@ -72,5 +76,24 @@ export function PreviewCourseChoice({ current }: { current?: string }) {
     <PreviewCourse courseId={course.id} quiet>
       {(module) => <module.CourseChoice ourWorld={{ title, lang: contentLang }} current={current} />}
     </PreviewCourse>
+  );
+}
+
+// The reviewers' page for local-language Watch videos: a chunk of its own in assets/preview/video-review/
+// (src/courses/build.ts), loaded only when someone opens /review/videos.
+// With the lessons' chunk, for the Watch step's player (src/courses/video-review/types.ts, LessonCode).
+const VideoReviewPage = lazy(() =>
+  Promise.all([import('./video-review/VideoReviewPage'), import('../app/lazy/lessonPages')]).then(([page, lessons]) => {
+    const Page = page.VideoReviewPage;
+    return { default: () => <Page lessonCode={lessons} /> };
+  }),
+);
+
+/** /review/videos (src/courses/video-review/VideoReviewPage.tsx). */
+export function VideoReviewRoute() {
+  return (
+    <Suspense fallback={null}>
+      <VideoReviewPage />
+    </Suspense>
   );
 }

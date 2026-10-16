@@ -1,0 +1,235 @@
+/*
+ * The reviewers' page for local-language Watch videos (/review/videos). A
+ * stylesheet of its own, added with a <link> by ./stylesheet.ts, so it never
+ * reaches the site's one stylesheet or a learner's device. Every class starts
+ * "tw-vr-" (the build stops if one reaches the site's stylesheet).
+ */
+
+.tw-vr-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-inline-size: 860px;
+}
+
+.tw-vr-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tw-vr-head h1,
+.tw-vr-head p {
+  margin: 0;
+}
+
+.tw-vr-card {
+  padding: var(--space-6);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.tw-vr-card h2,
+.tw-vr-card h3,
+.tw-vr-card p,
+.tw-vr-card ol,
+.tw-vr-card ul {
+  margin: 0;
+}
+
+.tw-vr-how {
+  padding-inline-start: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-vr-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-4);
+}
+
+.tw-vr-select {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1 1 260px;
+  min-inline-size: 0;
+}
+
+.tw-vr-select label {
+  font-weight: 700;
+}
+
+.tw-vr-select select {
+  min-block-size: var(--target-min);
+  inline-size: 100%;
+  padding-inline: var(--space-3);
+  border: 2px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+}
+
+.tw-vr-progress {
+  color: var(--ink-muted);
+}
+
+.tw-vr-flag {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--lavender-wash);
+}
+
+.tw-vr-flag .tw-icon {
+  flex: none;
+  margin-block-start: 3px;
+}
+
+.tw-vr-label {
+  font-weight: 700;
+}
+
+.tw-vr-question {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.tw-vr-question .tw-vr-muted {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.tw-vr-muted {
+  color: var(--ink-muted);
+}
+
+.tw-vr-written p + p {
+  margin-block-start: var(--space-3);
+}
+
+.tw-vr-written {
+  max-inline-size: var(--reading-measure);
+}
+
+.tw-vr-keypoints {
+  padding-inline-start: var(--space-6);
+}
+
+.tw-vr-answer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-vr-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.tw-vr-choice {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: var(--target-min);
+  padding-block: var(--space-2);
+  padding-inline: var(--space-4);
+  border: 2px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tw-vr-choice:hover {
+  border-color: var(--ink);
+}
+
+/* The chosen answer: ink, with the tick or cross still beside the words, so it never relies on colour. */
+.tw-vr-choice[aria-pressed='true'] {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+@media (max-width: 700px) {
+  .tw-vr-choices {
+    flex-direction: column;
+  }
+}
+
+.tw-vr-comment {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-vr-comment label {
+  font-weight: 700;
+}
+
+.tw-vr-comment textarea,
+.tw-vr-summary textarea {
+  inline-size: 100%;
+  min-block-size: 120px;
+  padding: var(--space-3);
+  border: 2px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 17px;
+  line-height: 26px;
+  resize: vertical;
+}
+
+.tw-vr-summary textarea {
+  min-block-size: 200px;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.tw-vr-others {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tw-vr-others li {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.tw-vr-others a {
+  overflow-wrap: anywhere;
+}
+
+.tw-vr-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: space-between;
+}
+
+@media (max-width: 700px) {
+  .tw-vr-card {
+    padding: var(--space-5);
+  }
+}

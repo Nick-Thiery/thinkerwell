@@ -32,3 +32,12 @@ declare module 'virtual:thinkerwell/messages/*' {
   const words: Record<string, LazyMessageTree>;
   export default words;
 }
+
+// The candidates the reviewers' page shows (src/courses/video-review/), made
+// by the video review plugin in vite.config.ts from docs/notes/local-videos/.
+declare module 'virtual:thinkerwell/video-review' {
+  // An ambient module can't import from a relative path, so the type is named inline.
+  // eslint-disable-next-line @typescript-eslint/consistent-type-imports
+  const data: import('../courses/video-review/types').VideoReviewData;
+  export default data;
+}
