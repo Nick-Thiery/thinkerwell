@@ -71,10 +71,15 @@ export interface UpdateBannerProps {
   className?: string;
 }
 
-/** "A new version is ready", with "Update now". The new version never starts by itself while the page is open. */
+/**
+ * "A new version is ready", with "Update now". The new version never starts
+ * by itself while the page is open. After a tap the button says
+ * "Updating…" until the page reloads (serviceWorker.ts); tapping it again
+ * asks again.
+ */
 export function UpdateBanner({ learner, className }: UpdateBannerProps) {
   const { t } = useI18n();
-  const { updateReady } = useServiceWorker();
+  const { updateReady, updating } = useServiceWorker();
   if (!updateReady) return null;
   return (
     <StatusBanner
@@ -82,7 +87,7 @@ export function UpdateBanner({ learner, className }: UpdateBannerProps) {
       tone="info"
       icon="RefreshCw"
       title={t('offline.updateTitle')}
-      action={t('offline.updateAction')}
+      action={t(updating ? 'offline.updatingAction' : 'offline.updateAction')}
       onAction={applyServiceWorkerUpdate}
     >
       {t(learner ? 'offline.updateBodyLearner' : 'offline.updateBody')}

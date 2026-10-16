@@ -10,6 +10,11 @@
  *   Thinkerwell opens with no tab still on the old version.
  * - Only the tab where "Update now" was tapped reloads. If another tab
  *   takes the update, this one keeps running and keeps offering it.
+ * - After the tap, the page reloads only once the new version has taken
+ *   over, never onto the old one. The browser starts the new version only
+ *   when the old one has nothing in hand (a recording still downloading
+ *   through it, for example), which can take a while: the button says
+ *   "Updating…" for up to UPDATE_WAIT_MS, then offers "Update now" again.
  *
  * Registered in production only (main.tsx), after the page has loaded, so
  * the precache download never competes with the first page's own files.
@@ -35,6 +40,8 @@ export interface ServiceWorkerSnapshot {
   offline: OfflineStatus;
   /** A new version is installed and waiting for someone to tap "Update now". */
   updateReady: boolean;
+  /** "Update now" was tapped and the page reloads as soon as the new version takes over. */
+  updating: boolean;
 }
 
 type LifecycleType = 'waiting' | 'activated' | 'controlling' | 'redundant';
@@ -44,7 +51,6 @@ export interface WorkboxLike {
   addEventListener(type: LifecycleType, listener: (event: { isExternal?: boolean }) => void): void;
   register(): Promise<ServiceWorkerRegistration | undefined>;
   update(): Promise<void>;
-  messageSkipWaiting(): void;
 }
 
 export interface ServiceWorkerEnvironment {
@@ -58,10 +64,19 @@ export interface ServiceWorkerEnvironment {
 
 /** How often an open page asks whether there is a new version (when online and on screen). */
 export const UPDATE_CHECK_MS = 60 * 60 * 1000;
-/** After "Update now", reload anyway if the new version hasn't taken over by then. */
-export const RELOAD_FALLBACK_MS = 4000;
+/**
+ * After "Update now", how long the page waits for the new version to take
+ * over before it offers the button again (it never reloads onto the old
+ * version: that only brought the banner back).
+ */
+export const UPDATE_WAIT_MS = 15_000;
+/** While waiting, how often the page looks again at which version is waiting and which is active. */
+export const UPDATE_POLL_MS = 250;
 
-const UNSUPPORTED: ServiceWorkerSnapshot = { offline: 'unsupported', updateReady: false };
+/** What the new version's worker (sw.ts) waits for before it takes over. */
+const SKIP_WAITING = { type: 'SKIP_WAITING' } as const;
+
+const UNSUPPORTED: ServiceWorkerSnapshot = { offline: 'unsupported', updateReady: false, updating: false };
 
 let snapshot: ServiceWorkerSnapshot = UNSUPPORTED;
 const listeners = new Set<() => void>();
@@ -69,7 +84,9 @@ let applyUpdate: () => void = () => undefined;
 
 function setSnapshot(patch: Partial<ServiceWorkerSnapshot>): void {
   const next = { ...snapshot, ...patch };
-  if (next.offline === snapshot.offline && next.updateReady === snapshot.updateReady) return;
+  if (next.offline === snapshot.offline && next.updateReady === snapshot.updateReady && next.updating === snapshot.updating) {
+    return;
+  }
   snapshot = next;
   listeners.forEach((listener) => listener());
 }
@@ -90,7 +107,8 @@ export function useServiceWorker(): ServiceWorkerSnapshot {
 
 /**
  * "Update now": lets the waiting version take over and reloads this tab
- * once it has (or at once, if another tab already switched to it).
+ * once it has (or at once, if another tab already switched to it). Tapping
+ * again while it waits asks again.
  */
 export function applyServiceWorkerUpdate(): void {
   applyUpdate();
@@ -105,14 +123,55 @@ export function connectServiceWorker(env: ServiceWorkerEnvironment): () => void 
   const { workbox } = env;
   let registration: ServiceWorkerRegistration | undefined;
   let updateRequested = false;
+  let reloading = false;
   let controlled = env.isControlled();
-  let fallback: ReturnType<typeof setTimeout> | undefined;
+  /** While waiting after a tap: the worker that was active at the tap, and the waiting ones already asked. */
+  let activeAtTap: ServiceWorker | null = null;
+  const asked = new Set<ServiceWorker>();
+  let poll: ReturnType<typeof setInterval> | undefined;
+  let giveUp: ReturnType<typeof setTimeout> | undefined;
 
   // A page a worker already controls has the whole course: the worker only
   // became active once everything was stored.
-  setSnapshot({ offline: controlled ? 'ready' : 'checking', updateReady: false });
+  setSnapshot({ offline: controlled ? 'ready' : 'checking', updateReady: false, updating: false });
 
-  workbox.addEventListener('waiting', () => setSnapshot({ updateReady: true }));
+  const stopWaiting = () => {
+    if (poll) clearInterval(poll);
+    if (giveUp) clearTimeout(giveUp);
+    poll = undefined;
+    giveUp = undefined;
+  };
+
+  const reload = () => {
+    if (reloading) return;
+    reloading = true;
+    stopWaiting();
+    env.reload();
+  };
+
+  /**
+   * After a tap: reload once the new version is active, and ask whichever
+   * worker is waiting now (a newer one may have replaced the one asked).
+   * The registration is read each time, never kept from when the banner
+   * appeared.
+   */
+  const checkUpdate = () => {
+    if (!registration) return;
+    if (registration.active && registration.active !== activeAtTap) {
+      reload();
+      return;
+    }
+    const waiting = registration.waiting;
+    if (waiting && !asked.has(waiting)) {
+      asked.add(waiting);
+      waiting.postMessage(SKIP_WAITING);
+    }
+  };
+
+  workbox.addEventListener('waiting', () => {
+    setSnapshot({ updateReady: true });
+    if (updateRequested) checkUpdate();
+  });
   workbox.addEventListener('activated', () => setSnapshot({ offline: 'ready' }));
   workbox.addEventListener('redundant', (event) => {
     // Our own worker failed to install (the precache download broke off).
@@ -122,24 +181,44 @@ export function connectServiceWorker(env: ServiceWorkerEnvironment): () => void 
     const wasControlled = controlled;
     controlled = true;
     if (updateRequested) {
-      env.reload();
+      reload();
     } else if (wasControlled) {
-      // Another tab took the update. This page still runs the old version
-      // under the new worker: keep offering the reload, never force it.
+      // Another tab took the update (or one asked here took longer than
+      // UPDATE_WAIT_MS). This page still runs the old version under the
+      // new worker: keep offering the reload, never force it.
       setSnapshot({ updateReady: true });
     }
     // Otherwise it is the first install taking charge of this page: nothing to do.
   });
 
   applyUpdate = () => {
-    if (updateRequested) return;
-    updateRequested = true;
-    if (registration?.waiting) {
-      workbox.messageSkipWaiting();
-      fallback = setTimeout(env.reload, RELOAD_FALLBACK_MS);
-    } else {
-      env.reload();
+    if (reloading) return;
+    if (!registration?.waiting) {
+      // Nothing waiting: the new version already runs this site (another
+      // tab took it), so loading the page again starts it.
+      reload();
+      return;
     }
+    if (!updateRequested) {
+      updateRequested = true;
+      activeAtTap = registration.active;
+      asked.clear();
+      setSnapshot({ updating: true });
+    } else {
+      // Tapped again while waiting: ask again, and wait the full time again.
+      asked.clear();
+    }
+    checkUpdate();
+    if (!poll) poll = setInterval(checkUpdate, UPDATE_POLL_MS);
+    if (giveUp) clearTimeout(giveUp);
+    giveUp = setTimeout(() => {
+      // The old version is still busy. Never reload onto it: offer the
+      // button again. The new version still starts as soon as it can, and
+      // the next tap (or the next time Thinkerwell opens) loads it.
+      stopWaiting();
+      updateRequested = false;
+      setSnapshot({ updating: false });
+    }, UPDATE_WAIT_MS);
   };
 
   workbox.register().then(
@@ -163,7 +242,7 @@ export function connectServiceWorker(env: ServiceWorkerEnvironment): () => void 
 
   return () => {
     clearInterval(timer);
-    if (fallback) clearTimeout(fallback);
+    stopWaiting();
   };
 }
 

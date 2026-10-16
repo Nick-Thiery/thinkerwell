@@ -36,12 +36,10 @@ afterEach(() => {
 /** Connects a fake service worker whose registration looks like `registration`. */
 async function connect(registration: Partial<ServiceWorkerRegistration>, controlled = true) {
   const listeners = new Map<string, Array<() => void>>();
-  const messageSkipWaiting = vi.fn();
   const workbox: WorkboxLike = {
     addEventListener: (type, listener) => listeners.set(type, [...(listeners.get(type) ?? []), () => listener({})]),
     register: () => Promise.resolve(registration as ServiceWorkerRegistration),
     update: () => Promise.resolve(),
-    messageSkipWaiting,
   };
   const reload = vi.fn();
   await act(async () => {
@@ -54,7 +52,7 @@ async function connect(registration: Partial<ServiceWorkerRegistration>, control
     });
     await Promise.resolve();
   });
-  return { messageSkipWaiting, reload, fire: (type: string) => act(() => listeners.get(type)?.forEach((l) => l())) };
+  return { reload, fire: (type: string) => act(() => listeners.get(type)?.forEach((l) => l())) };
 }
 
 describe('ConnectionBanner', () => {
@@ -126,16 +124,29 @@ describe('UpdateBanner', () => {
 
   it('offers the new version; only "Update now" switches to it', async () => {
     const user = userEvent.setup();
-    const { messageSkipWaiting, reload, fire } = await connect({ active: {} as ServiceWorker, waiting: {} as ServiceWorker });
+    const postMessage = vi.fn();
+    const { reload, fire } = await connect({ active: {} as ServiceWorker, waiting: { postMessage } as unknown as ServiceWorker });
     render(<UpdateBanner learner />);
     expect(screen.getByRole('status')).toHaveTextContent(
       'A new version is ready. It starts the next time Thinkerwell opens. Your work is saved.',
     );
     expect(reload).not.toHaveBeenCalled();
     await user.click(screen.getByRole('button', { name: 'Update now' }));
-    expect(messageSkipWaiting).toHaveBeenCalledTimes(1);
+    expect(postMessage).toHaveBeenCalledWith({ type: 'SKIP_WAITING' });
+    // Until the new version takes over, the button says so.
+    expect(screen.getByRole('button', { name: 'Updating…' })).toBeVisible();
+    expect(reload).not.toHaveBeenCalled();
     fire('controlling');
     expect(reload).toHaveBeenCalledTimes(1);
+  });
+
+  it('a click on the words inside the button works too', async () => {
+    const user = userEvent.setup();
+    const postMessage = vi.fn();
+    await connect({ active: {} as ServiceWorker, waiting: { postMessage } as unknown as ServiceWorker });
+    render(<UpdateBanner learner />);
+    await user.click(screen.getByText('Update now'));
+    expect(postMessage).toHaveBeenCalledTimes(1);
   });
 
   it("doesn't promise a guest their work is saved", async () => {

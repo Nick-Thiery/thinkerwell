@@ -116,7 +116,6 @@ describe('SetupPage', { timeout: 20_000 }, () => {
           addEventListener: vi.fn(),
           register: () => Promise.resolve({ active: {} } as ServiceWorkerRegistration),
           update: () => Promise.resolve(),
-          messageSkipWaiting: vi.fn(),
         },
         isControlled: () => true,
         reload: vi.fn(),
