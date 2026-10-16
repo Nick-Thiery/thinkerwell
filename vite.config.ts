@@ -12,6 +12,8 @@ import {
   COURSE_MESSAGES_PREFIX,
   PREVIEW_ASSET_DIR,
   PREVIEW_PRECACHE_IGNORES,
+  VIDEO_REVIEW_ID,
+  VIDEO_REVIEW_MODULE,
   isPreviewModule,
   previewAssetFileName,
   previewChunkFileName,
@@ -31,6 +33,7 @@ import { LOCALES, PSEUDO_LOCALES, readyLocales } from './src/i18n/locales.ts';
 import { PSEUDO_TRANSFORMS, pseudoMessages } from './src/i18n/pseudo.ts';
 import { pageHead, seoPages, shellHead, sitemapXml, withHead, type SeoInput, type SeoLesson } from './src/seo/build.ts';
 import { SHELL_FILE } from './src/seo/site.ts';
+import { videoReviewData } from './tools/videos/reviewData.ts';
 
 /**
  * Which kind of content file a module is, and which course's
@@ -307,7 +310,7 @@ function keepFirstVisitLight(): Plugin {
             `The Vietnamese font is in the site's stylesheet (${output.fileName}). Import src/i18n/fonts/vietnamese.css only with ?url (src/i18n/fonts/index.ts).`,
           );
         }
-        if (!output.fileName.startsWith(PREVIEW_ASSET_DIR) && /\.tw-dw-/.test(String(output.source))) {
+        if (!output.fileName.startsWith(PREVIEW_ASSET_DIR) && /\.tw-(dw|vr)-/.test(String(output.source))) {
           this.error(
             `A preview course's styles are in the site's stylesheet (${output.fileName}). Import its CSS only with ?url (src/courses/digital-world/stylesheet.ts).`,
           );
@@ -437,6 +440,35 @@ function stripBuildOnlyMessages(): Plugin {
  * a first visit to the home page. In the dev server and in tests the app's
  * messages still have them too.
  */
+/**
+ * The candidates the reviewers' page shows (/review/videos,
+ * src/courses/video-review/; docs/notes/local-language-videos.md): each
+ * translated language's recommended Watch videos with their drafts, made from
+ * docs/notes/local-videos/<lang>.json. Only that page imports it, so it is built
+ * into assets/preview/video-review/ with the page (src/courses/build.ts), never
+ * precached and never part of a learner's download; the build stops if it lands
+ * anywhere else (keepFirstVisitLight). It changes nothing a learner sees: a video
+ * reaches a lesson only once a person approves it (npm run videos:apply).
+ */
+function videoReview(): Plugin {
+  let root = process.cwd();
+  return {
+    name: 'thinkerwell:video-review',
+    configResolved(config) {
+      root = config.root;
+    },
+    resolveId(id) {
+      return id === VIDEO_REVIEW_MODULE ? VIDEO_REVIEW_ID : null;
+    },
+    load(id) {
+      if (id !== VIDEO_REVIEW_ID) return null;
+      const languages = LOCALES.filter((locale) => locale.content).map((locale) => locale.code);
+      const data = videoReviewData(root, languages, (file) => this.addWatchFile(file));
+      return `export default ${JSON.stringify(data)};`;
+    },
+  };
+}
+
 function lazyMessages(): Plugin {
   let root = process.cwd();
   let building = false;
@@ -744,6 +776,7 @@ export default defineConfig({
     stripTeamOnlyLessonFields(),
     stripBuildOnlyMessages(),
     lazyMessages(),
+    videoReview(),
     keepZodOutOfTheBrowser(),
     pseudoLocales(),
     keepFirstVisitLight(),

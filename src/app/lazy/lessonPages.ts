@@ -3,3 +3,8 @@
 // themselves (src/content/index.ts brings the `content` chunk).
 export { LessonRoute } from '../LessonRoute';
 export { SectionCheckRoute } from '../SectionCheckRoute';
+// For the reviewers' page (/review/videos, src/courses/routes.tsx): the Watch
+// step's player and the duration format, so that page plays videos exactly as a
+// lesson does without pulling these out of this chunk into files of their own.
+export { PLAYER_ALLOW, PLAYER_REFERRER_POLICY, youtubeEmbedUrl } from '../../pages/lesson/watch/youtube';
+export { formatDuration } from '../../lesson/format';

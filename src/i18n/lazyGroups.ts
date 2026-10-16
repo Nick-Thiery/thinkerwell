@@ -21,6 +21,8 @@ export const LAZY_MESSAGE_GROUPS = [
   'pilotDay',
   // About's "How our lessons work" card, its research and the video's heading (src/pages/AboutPage.tsx), in the Settings and About chunk.
   'aboutPage',
+  // The reviewers' page for local-language Watch videos (src/courses/video-review/, /review/videos): built into assets/preview/, never precached.
+  'videoReview',
   // Settings' "Share pilot results" (src/pages/settings/PilotResultsSetting.tsx): educators only.
   'pilotResults',
 ] as const;
