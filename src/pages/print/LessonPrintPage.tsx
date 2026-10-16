@@ -17,7 +17,7 @@ import { type CourseLesson, type GlossaryEntry, type ReadSection } from '../../c
 import { SegmentedControl } from '../../components/ds';
 import { useLessonContent } from '../../content/useContent';
 import { AlwaysEn, En, useI18n } from '../../i18n';
-import { splitParagraphs } from '../../lesson';
+import { formatDuration, splitParagraphs } from '../../lesson';
 import { LessonSlot } from '../../lesson/extras';
 import { useLearnerSession } from '../../session';
 import type { ReadingLevel } from '../../storage';
@@ -73,11 +73,13 @@ const BOTH_LEVELS: readonly ReadingLevel[] = ['standard', 'simpler'];
 
 export function LessonPrintSheet({ lesson, titleId = 'print-title', newPage = false, levels = BOTH_LEVELS }: LessonPrintSheetProps) {
   // Everything from the lesson file is course text, marked as English (`en`).
-  const { t, tx, contentLang: en } = useI18n();
+  const { t, tx, formatNumber, contentLang: en } = useI18n();
   const content = useLessonContent();
   const section = content.getLessonSection(lesson);
   const [min, max] = lesson.estimatedMinutes;
   const { read, write, speak, watch, reflect } = lesson;
+  // A video's title and channel are English, unless this lesson has an approved video in the language on screen.
+  const videoWord = (word: string) => (watch.localVideo ? word : <AlwaysEn>{word}</AlwaysEn>);
 
   return (
     <article className={newPage ? 'tw-print-sheet tw-print-new-page' : 'tw-print-sheet'} aria-labelledby={titleId}>
@@ -212,13 +214,21 @@ export function LessonPrintSheet({ lesson, titleId = 'print-title', newPage = fa
 
       <section className="tw-print-part">
         <h2>{t('print.watchTitle')}</h2>
-        <p className="tw-print-muted">{tx('print.videoNote', { title: <AlwaysEn>{watch.title}</AlwaysEn>, channel: <AlwaysEn>{watch.channel}</AlwaysEn> })}</p>
+        <p className="tw-print-muted">{tx('print.videoNote', { title: videoWord(watch.title), channel: videoWord(watch.channel) })}</p>
+        {watch.startSeconds !== undefined && watch.endSeconds !== undefined ? (
+          <p className="tw-print-muted">
+            {t('print.videoPart', {
+              start: formatDuration(watch.startSeconds, formatNumber),
+              end: formatDuration(watch.endSeconds, formatNumber),
+            })}
+          </p>
+        ) : null}
         <div className="tw-print-keep">
           <h3>{t('lessonPlayer.watch.thinkFirst')}</h3>
           <p {...en}>{watch.beforeQuestion}</p>
           <AnswerLines count={2} />
         </div>
-        <h3>{tx('print.writtenVersion', { title: <AlwaysEn>{watch.title}</AlwaysEn> })}</h3>
+        <h3>{tx('print.writtenVersion', { title: videoWord(watch.title) })}</h3>
         {splitParagraphs(watch.summary).map((paragraph, index) => (
           <p key={index} className="tw-print-reading-text" {...en}>
             {paragraph}

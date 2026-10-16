@@ -14,16 +14,18 @@ import { COURSES, DEFAULT_COURSE_ID, type CourseDefinition } from './courses.ts'
 import { ContentError } from './errors.ts';
 import {
   COURSE_SCHEMAS,
+  localVideosFileSchema,
   quizFileSchema,
   type AnyCourseFile,
   type CourseLesson,
   type CourseSchemaId,
   type Lesson,
+  type LocalVideosFile,
   type QuizFile,
 } from './schema.ts';
 import { applyTranslation, missingTranslations, translationProblems } from './translation.ts';
 
-export type ContentFileKind = 'course' | 'lesson' | 'quiz';
+export type ContentFileKind = 'course' | 'lesson' | 'quiz' | 'videos';
 
 /** A course's schemas (./schema.ts COURSE_SCHEMAS), or a ContentError for a course with none. */
 function schemasFor(courseId: string, file: string) {
@@ -41,7 +43,8 @@ function schemasFor(courseId: string, file: string) {
  */
 export function parseContentFile(kind: ContentFileKind, raw: unknown, file: string, courseId: string = DEFAULT_COURSE_ID): unknown {
   const schemas = schemasFor(courseId, file);
-  const schema = kind === 'course' ? schemas.course : kind === 'lesson' ? schemas.lesson : quizFileSchema;
+  const schema =
+    kind === 'course' ? schemas.course : kind === 'lesson' ? schemas.lesson : kind === 'videos' ? localVideosFileSchema : quizFileSchema;
   const result = schema.safeParse(raw);
   if (!result.success) throw new ContentError(describeIssues(file, result.error));
   return result.data;
@@ -303,4 +306,52 @@ export function checkTranslation(code: string, english: EnglishFiles, translatio
   } catch (error) {
     throw new ContentError(`The ${code} translation, laid over the English:\n${error instanceof Error ? error.message : String(error)}`);
   }
+}
+
+/**
+ * Checks one language's local-language videos file (content/<code>/videos.json,
+ * src/content/localVideos.ts) against the English lessons and returns it
+ * parsed. On top of the schema (an approved entry needs who approved it, when,
+ * the written version and a well-formed YouTube id):
+ * - the file is for the language of its folder;
+ * - every key is a lesson that exists;
+ * - an approved video is not the lesson's English one (then it isn't a local
+ *   video).
+ * Throws a ContentError listing every problem.
+ */
+/** What is wrong with an approved video's part (startSeconds, endSeconds), if anything. */
+export function segmentProblems(entry: { startSeconds?: number; endSeconds?: number; durationSeconds: number | null }): string[] {
+  const { startSeconds: start, endSeconds: end } = entry;
+  if (start === undefined && end === undefined) return [];
+  if (start === undefined || end === undefined) return ['give both startSeconds and endSeconds, or neither.'];
+  if (end <= start) return ['endSeconds must be after startSeconds.'];
+  if (entry.durationSeconds !== end - start) return [`durationSeconds must be the part's length, ${end - start} (endSeconds - startSeconds).`];
+  return [];
+}
+
+export function checkLocalVideos(code: string, raw: unknown, englishLessons: Record<string, unknown>): LocalVideosFile {
+  const file = `content/${code}/videos.json`;
+  const result = localVideosFileSchema.safeParse(raw);
+  if (!result.success) throw new ContentError(describeIssues(file, result.error));
+  const videos = result.data;
+  const problems: string[] = [];
+  if (videos.language !== code) problems.push(`${file}: language is "${videos.language}", but the file is in the folder for "${code}".`);
+
+  const englishVideoIds = new Map<string, string>();
+  for (const [path, lesson] of Object.entries(englishLessons)) {
+    const key = baseName(path).replace(/\.json$/, '');
+    englishVideoIds.set(key, (lesson as { watch?: { youtubeId?: string } }).watch?.youtubeId ?? '');
+  }
+  for (const [key, entry] of Object.entries(videos.lessons)) {
+    if (!englishVideoIds.has(key)) {
+      problems.push(`${file}: lessons.${key}: there is no lesson ${key}.`);
+      continue;
+    }
+    if (entry.approved && entry.youtubeId === englishVideoIds.get(key)) {
+      problems.push(`${file}: lessons.${key}: this is the lesson's English video, not a video in the language. Remove the entry.`);
+    }
+    if (entry.approved) problems.push(...segmentProblems(entry).map((problem) => `${file}: lessons.${key}: ${problem}`));
+  }
+  if (problems.length > 0) throw new ContentError(problems.join('\n'));
+  return videos;
 }

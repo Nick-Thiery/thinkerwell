@@ -29,8 +29,9 @@ import { planTotal, SESSION_MINUTES, SESSION_PLAN, SHORT_SESSION_MINUTES } from 
 import './teacherTools.css';
 
 /** Where a teacher can watch a lesson's video: YouTube itself, opened by the teacher (never embedded or fetched here). */
-export function youtubeWatchUrl(youtubeId: string): string {
-  return `https://www.youtube.com/watch?v=${encodeURIComponent(youtubeId)}`;
+export function youtubeWatchUrl(youtubeId: string, startSeconds?: number): string {
+  const start = startSeconds ? `&t=${startSeconds}s` : '';
+  return `https://www.youtube.com/watch?v=${encodeURIComponent(youtubeId)}${start}`;
 }
 
 export function TeacherGuidePage({ lesson }: { lesson: CourseLesson }) {
@@ -42,6 +43,8 @@ export function TeacherGuidePage({ lesson }: { lesson: CourseLesson }) {
   const section = content.getLessonSection(lesson);
   const [min, max] = lesson.estimatedMinutes;
   const { read, write, speak, watch, reflect } = lesson;
+  // A video's title and channel are English, unless this lesson has an approved video in the language on screen.
+  const videoLang = watch.localVideo ? en : alwaysEn;
   const thinkChecks = read.checks.filter((check): check is ThinkCheck => check.type === 'think');
 
   return (
@@ -237,11 +240,11 @@ export function TeacherGuidePage({ lesson }: { lesson: CourseLesson }) {
           <dl className="tw-guide-facts">
             <div>
               <dt>{t('pages.teacherGuide.videoName')}</dt>
-              <dd {...alwaysEn}>{watch.title}</dd>
+              <dd {...videoLang}>{watch.title}</dd>
             </div>
             <div>
               <dt>{t('pages.teacherGuide.videoChannel')}</dt>
-              <dd {...alwaysEn}>{watch.channel}</dd>
+              <dd {...videoLang}>{watch.channel}</dd>
             </div>
             <div>
               <dt>{t('pages.teacherGuide.videoLength')}</dt>
@@ -251,10 +254,21 @@ export function TeacherGuidePage({ lesson }: { lesson: CourseLesson }) {
                   : formatDuration(watch.durationSeconds, formatNumber)}
               </dd>
             </div>
+            {watch.startSeconds !== undefined && watch.endSeconds !== undefined ? (
+              <div>
+                <dt>{t('pages.teacherGuide.videoPart')}</dt>
+                <dd>
+                  {t('pages.teacherGuide.videoPartRange', {
+                    start: formatDuration(watch.startSeconds, formatNumber),
+                    end: formatDuration(watch.endSeconds, formatNumber),
+                  })}
+                </dd>
+              </div>
+            ) : null}
             <div>
               <dt>{t('pages.teacherGuide.videoLink')}</dt>
               <dd>
-                <ExternalLink href={youtubeWatchUrl(watch.youtubeId)}>{t('pages.teacherGuide.videoOpen')}</ExternalLink>
+                <ExternalLink href={youtubeWatchUrl(watch.youtubeId, watch.startSeconds)}>{t('pages.teacherGuide.videoOpen')}</ExternalLink>
               </dd>
             </div>
             <div>

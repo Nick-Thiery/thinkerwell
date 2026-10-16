@@ -70,9 +70,12 @@ type FocusTarget = 'player' | 'written' | 'watch';
  * - A learner who chose "Read instead" comes back to the written version.
  */
 export function WatchStage() {
-  const { t, formatNumber, contentLang, englishLang, content } = useI18n();
+  const { t, formatNumber, contentLang, englishLang, content, contentLocale } = useI18n();
   const { lesson, progress, update, stageEvent, settings } = useLessonPlayer();
   const { watch } = lesson;
+  // The video's title and channel are its own words: English, unless this lesson has an approved video in the
+  // language on screen (src/content/localVideos.ts), whose title and channel are in that language.
+  const videoLang = watch.localVideo ? contentLang : englishLang;
   const saveData = isSaveDataOn(settings.saveData);
 
   const [view, setView] = useState<View>(() =>
@@ -275,7 +278,7 @@ export function WatchStage() {
             ) : null}
             <article className="tw-watch-written" aria-labelledby={writtenId}>
               <span className="eyebrow tw-watch-written-part">{t('lessonPlayer.watch.writtenPart')}</span>
-              <h3 id={writtenId} ref={writtenHeadingRef} className="tw-watch-written-h" tabIndex={-1} {...englishLang}>
+              <h3 id={writtenId} ref={writtenHeadingRef} className="tw-watch-written-h" tabIndex={-1} {...videoLang}>
                 {watch.title}
               </h3>
               <div className="tw-watch-written-text" {...contentLang}>
@@ -302,6 +305,7 @@ export function WatchStage() {
           <VideoCard
             title={watch.title}
             channel={watch.channel}
+            titleInEnglish={!watch.localVideo}
             duration={duration}
             readLabel={t('lessonPlayer.watch.readInstead')}
             watchVariant="secondary"
@@ -314,9 +318,9 @@ export function WatchStage() {
                 <iframe
                   key={attempt}
                   ref={iframeRef}
-                  src={youtubeEmbedUrl(watch.youtubeId, window.location.origin)}
+                  src={youtubeEmbedUrl(watch.youtubeId, window.location.origin, watch, watch.localVideo ? contentLocale.code : undefined)}
                   title={watch.title}
-                  {...englishLang}
+                  {...videoLang}
                   allow={PLAYER_ALLOW}
                   allowFullScreen
                   loading="eager"
@@ -340,8 +344,8 @@ export function WatchStage() {
               <Icon name="Wifi" size={20} />
               <span>{t('lessonPlayer.watch.lowDataNote')}</span>
             </p>
-            {/* The videos stay in English; say so when the lesson is in another language. */}
-            {content ? (
+            {/* A lesson's video is in English unless it has an approved one in the language: say so when the lesson is translated. */}
+            {content && !watch.localVideo ? (
               <p className="tw-watch-language">
                 <Icon name="Globe" size={20} />
                 <span>{t('lessonPlayer.watch.videoInEnglish')}</span>

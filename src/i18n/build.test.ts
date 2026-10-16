@@ -59,6 +59,22 @@ describe('language chunks', () => {
   });
 });
 
+describe('a language\'s own videos', () => {
+  it('are a small chunk of their own beside the language\'s lessons, in the language\'s folder', () => {
+    expect(LANGUAGE_MODULE.test('/repo/content/id/videos.json')).toBe(true);
+    expect(languageChunkName('/repo/content/id/videos.json')).toBe('locale-id-videos');
+    expect(languageChunkName('C:\\repo\\content\\ms\\videos.json')).toBe('locale-ms-videos');
+    expect(languageChunkName('/repo/content/id/lessons/L01.json')).toBe('locale-id');
+    expect(languageChunkFileName('locale-id-videos')).toBe('assets/locales/id/videos-[hash].js');
+    expect(languageChunkFileName('locale-id')).toBe('assets/locales/id/[hash].js');
+  });
+
+  it('are precached only once the language is ready, like its lessons', () => {
+    expect(languagePrecacheIgnores([])).toContain('assets/locales/vi/**');
+    expect(languagePrecacheIgnores([])).not.toContain('assets/locales/id/**');
+  });
+});
+
 describe('what the service worker precaches', () => {
   it('today keeps Indonesian and leaves out every other language, the test languages and the Arabic and Vietnamese fonts', () => {
     expect(languagePrecacheIgnores([])).toEqual([

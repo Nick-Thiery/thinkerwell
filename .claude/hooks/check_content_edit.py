@@ -8,6 +8,7 @@ the same checker as `npm run check:content` on just that file:
   content/lessons/*.json   scripts/check_lesson.py <file>
   content/courses/*/lessons/*.json   the same (another course: its own sections, its activity)
   content/quizzes/*.json   scripts/check_quiz.py <file>
+  content/<code>/videos.json   scripts/check_videos.py <code> (a language's own Watch videos)
   content/id/**            scripts/check_translation.py id
   content/ms/**            scripts/check_translation.py ms
 
@@ -27,6 +28,7 @@ scripts/py.sh, so the wordfreq checks run too.
 """
 import json
 import os
+import re
 import subprocess
 import sys
 
@@ -50,6 +52,8 @@ def main() -> int:
         cmd = ["scripts/check_lesson.py", rel]
     elif rel.startswith("content/quizzes/") and rel.endswith(".json"):
         cmd = ["scripts/check_quiz.py", rel]
+    elif re.fullmatch(r"content/[a-z]{2,3}(?:-[A-Za-z0-9]+)*/videos\.json", rel):
+        cmd = ["scripts/check_videos.py", rel.split("/")[1]]
     elif rel.startswith("content/id/"):
         cmd = ["scripts/check_translation.py", "id"]
     elif rel.startswith("content/ms/"):
@@ -60,7 +64,11 @@ def main() -> int:
     venv = os.path.join(root, ".venv", "bin", "python")
     python = venv if os.access(venv, os.X_OK) else "python3"
     # Only Our World has recordings: another course's lessons are skipped by check:audio.
-    reminder = audio_reminder(root) if not rel.startswith("content/quizzes/") and not preview_course else ""
+    reminder = (
+        audio_reminder(root)
+        if not rel.startswith("content/quizzes/") and not preview_course and not rel.endswith("/videos.json")
+        else ""
+    )
     try:
         done = subprocess.run(
             [python, *cmd], cwd=root, capture_output=True, text=True, timeout=60

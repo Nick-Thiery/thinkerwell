@@ -16,8 +16,9 @@ import {
   previewAssetFileName,
   previewChunkFileName,
 } from './src/courses/build.ts';
-import { checkTranslation, loadContent, loadCourse, loadQuizzes, parseContentFile, type ContentFileKind } from './src/content/load.ts';
-import type { Lesson, QuizFile } from './src/content/schema.ts';
+import { checkLocalVideos, checkTranslation, loadContent, loadCourse, loadQuizzes, parseContentFile, type ContentFileKind } from './src/content/load.ts';
+import { onlyApprovedVideos } from './src/content/localVideos.ts';
+import type { Lesson, LocalVideosFile, QuizFile } from './src/content/schema.ts';
 import {
   LANGUAGE_MODULE,
   languageAssetFileName,
@@ -40,6 +41,8 @@ function contentKind(id: string): { kind: ContentFileKind; course: string } | nu
   // An id with a query (?raw, ?url) isn't the JSON module itself.
   if (id.includes('?')) return null;
   const file = id.replace(/\\/g, '/');
+  // A language's own videos (content/<code>/videos.json): its own kind, so only approved entries reach the browser.
+  if (/\/content\/[a-z]{2,3}(?:-[A-Za-z0-9]+)*\/videos\.json$/.test(file)) return { kind: 'videos', course: DEFAULT_COURSE_ID };
   if (/\/content\/course\.json$/.test(file)) return { kind: 'course', course: DEFAULT_COURSE_ID };
   if (/\/content\/lessons\/[^/]+\.json$/.test(file)) return { kind: 'lesson', course: DEFAULT_COURSE_ID };
   if (/\/content\/quizzes\/[^/]+\.json$/.test(file)) return { kind: 'quiz', course: DEFAULT_COURSE_ID };
@@ -100,6 +103,11 @@ function checkContent(): Plugin {
             },
           );
         }
+        // Each language's own Watch videos (content/<code>/videos.json), if it has any: against the English lessons.
+        for (const locale of LOCALES.filter((l) => l.content)) {
+          const videosPath = path.join(dir(locale.code), 'videos.json');
+          if (existsSync(videosPath)) checkLocalVideos(locale.code, JSON.parse(readFileSync(videosPath, 'utf8')) as unknown, lessonFiles);
+        }
         // Every other course (content/courses/<id>/): its own schemas, the
         // same checks, and each lesson's activity. A preview course's
         // pictures may not be drawn yet (src/content/load.ts, loadCourse).
@@ -119,10 +127,38 @@ function checkContent(): Plugin {
       if (!found) return null;
       const file = path.relative(root, id).replace(/\\/g, '/');
       try {
-        return { code: JSON.stringify(parseContentFile(found.kind, JSON.parse(code), file, found.course)), map: null };
+        const parsed = parseContentFile(found.kind, JSON.parse(code), file, found.course);
+        // A video that nobody has approved is never shipped, not even as data.
+        return { code: JSON.stringify(found.kind === 'videos' ? onlyApprovedVideos(parsed as LocalVideosFile) : parsed), map: null };
       } catch (error) {
         this.error(error instanceof Error ? error.message : String(error));
       }
+    },
+  };
+}
+
+/**
+ * FOR TESTS ONLY. With TW_TEST_LOCAL_VIDEOS=<folder> set, the dev server (never
+ * a build, never Vitest unless asked) serves <folder>/<code>.json in place of
+ * content/<code>/videos.json, so the end-to-end test in e2e-dev/ can show an
+ * approved local video without one being in content/. `apply` is 'serve' only
+ * and needs the variable, so this plugin does not exist in a production build
+ * (e2e/build-output.spec.ts checks the built files for the fixtures' video id).
+ * The file still goes through the content plugin's checks and filter.
+ */
+function testLocalVideos(): Plugin {
+  const folder = process.env.TW_TEST_LOCAL_VIDEOS;
+  return {
+    name: 'thinkerwell:test-local-videos',
+    apply: (_config, env) => env.command === 'serve' && Boolean(folder),
+    enforce: 'pre',
+    load(id) {
+      const match = /\/content\/([a-z]{2,3}(?:-[A-Za-z0-9]+)*)\/videos\.json$/.exec(id.replace(/\\/g, '/'));
+      if (!match || !folder) return null;
+      const fixture = path.resolve(folder, `${match[1]}.json`);
+      if (!existsSync(fixture)) return null;
+      this.addWatchFile(fixture);
+      return readFileSync(fixture, 'utf8');
     },
   };
 }
@@ -702,6 +738,7 @@ export default defineConfig({
   define: { __APP_VERSION__: JSON.stringify(packageJson.version) },
   plugins: [
     react(),
+    testLocalVideos(),
     checkContent(),
     lessonCatalog(),
     stripTeamOnlyLessonFields(),

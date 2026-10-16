@@ -4,8 +4,9 @@
 # scripts/check_lesson.py, and every section check against
 # docs/content/QUIZ_SPEC.md with scripts/check_quiz.py (which imports
 # check_lesson.py from the same folder), then each translation
-# (content/<code>/) with scripts/check_translation.py. Exits non-zero if
-# any checker reports errors.
+# (content/<code>/) with scripts/check_translation.py, and each language's own
+# Watch videos (content/<code>/videos.json) with scripts/check_videos.py.
+# Exits non-zero if any checker reports errors.
 #
 # Uses .venv/bin/python (made by scripts/setup-python.sh, which installs
 # wordfreq) when it exists, otherwise python3.
@@ -39,5 +40,7 @@ for course in content/*/course.json; do
   echo
   echo "Translation: $lang"
   "$PY" scripts/check_translation.py "$lang" || status=1
+  # The language's own videos, if it has a file (docs/notes/local-language-videos.md).
+  [ -f "content/$lang/videos.json" ] && { "$PY" scripts/check_videos.py "$lang" || status=1; }
 done
 exit $status

@@ -22,6 +22,7 @@ import { educatorsPath } from '../app/lessonUrls';
 import { SECTION_ICONS } from '../pages/course/sectionIcons';
 import { createCourseContent, type OurWorldContent } from './courseContent';
 import { DEFAULT_COURSE_ID } from './courses';
+import { approvedLocalVideos, lessonKeyFromPath, withLocalVideo } from './localVideos';
 import type { CourseFile, Lesson, QuizFile, SectionId } from './schema';
 import { applyTranslation } from './translation';
 import type { ContentTranslation } from '../i18n/core';
@@ -113,12 +114,19 @@ const translated = new WeakMap<ContentTranslation, Content>();
  * checks and course.json laid over the English (./translation.ts), and its
  * own pictures. The build has checked them (vite.config.ts, checkContent).
  * A file or picture a translation lacks stays English. English without one.
+ * A lesson with an approved video of the language's own (content/<code>/videos.json)
+ * has that video instead of the English one.
  */
 export function contentFor(translation: ContentTranslation | undefined): Content {
   if (!translation) return englishContent;
   let found = translated.get(translation);
   if (!found) {
-    const lessons = Object.entries(lessonModules).map(([path, lesson]) => applyTranslation(lesson, translation.lessons[fileName(path)]));
+    // A lesson whose language has an approved video of its own shows it in place of the English one
+    // (src/content/localVideos.ts); every other lesson keeps the English video.
+    const videos = approvedLocalVideos(translation.videos);
+    const lessons = Object.entries(lessonModules).map(([path, lesson]) =>
+      withLocalVideo(applyTranslation(lesson, translation.lessons[fileName(path)]), videos.get(lessonKeyFromPath(path))),
+    );
     const quizzes = Object.entries(quizModules).map(([path, quiz]) => applyTranslation(quiz, translation.quizzes[fileName(path)]));
     const pictures = new Map([...visualUrls, ...Object.entries(translation.visuals)]);
     found = createContent(applyTranslation(courseJson as unknown as CourseFile, translation.course), lessons, quizzes, pictures);

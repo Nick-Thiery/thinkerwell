@@ -64,8 +64,11 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * calls in the lesson pages and the card's words in all three ready languages, which must be in the offline copy so an
  * educator can switch it on offline. Nothing of it reaches a first visit but a 1 kB stub (docs/notes/pilot-measurement.md,
  * docs/notes/slow-internet.md "Later budget changes").
+ * Raised to 808 kB for local-language Watch videos: 807.0 kB with them. The two languages' videos chunks and their loader,
+ * the Credits list, the part of a longer video and its publisher's link in the Watch step, teacher guide and print view,
+ * and three messages in four languages (docs/notes/local-language-videos.md). Approving videos will grow it again.
  */
-const PRECACHE_BUDGET = 806_000;
+const PRECACHE_BUDGET = 808_000;
 /**
  * Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before),
  * 210.5 kB after the language and pilot-day merges, 212.7 kB with the header's language switch and the one language
@@ -273,4 +276,33 @@ test('the pilot measurement collector is not in a first visit, nor in a lesson w
   const collector = urls.filter((url) => /measurementCollector-/.test(url));
   expect(collector).toHaveLength(1);
   expect((await sentSize(request, collector[0]!)).body.toString('utf8')).toContain('/api/events');
+});
+
+// Local-language videos (docs/notes/local-language-videos.md): a language's own videos file is a small chunk of its own
+// in the language's folder, precached with the language and never part of a first visit. The test-only videos that
+// e2e-dev/local-videos.spec.ts serves from the dev server (Indonesian, with ids and names that appear nowhere else) must
+// not exist in a production build, and nothing that is not approved is shipped.
+const TEST_ONLY_VIDEOS = ['tw_test_vid', 'tw_test_nop', 'Penguji Uji', 'Video uji lokal', 'Saluran Uji Lokal'];
+
+test('local-language videos are their own precached chunk, outside a first visit, with no test video and nothing unapproved', { tag: '@own-size' }, async ({ page, request, baseURL }) => {
+  const urls = await precacheList(request);
+  for (const code of ['id', 'ms']) expect(urls.filter((url) => new RegExp(`/assets/locales/${code}/videos-[\\w-]+\\.js$`).test(url)), code).toHaveLength(1);
+  for (const url of urls.filter((u) => TEXT.test(u))) {
+    const text = (await sentSize(request, url)).body.toString('utf8');
+    for (const marker of TEST_ONLY_VIDEOS) expect(text.includes(marker), `${url} has "${marker}"`).toBe(false);
+    // Only approved entries are ever built in.
+    if (/\/locales\/\w+\/videos-/.test(url)) expect(text, url).not.toMatch(/approved:\s*(!1|false)/);
+  }
+
+  const origin = new URL(baseURL ?? 'http://localhost').origin;
+  const firstVisit = new Set<string>();
+  page.on('request', (r) => {
+    if (new URL(r.url()).origin === origin) firstVisit.add(new URL(r.url()).pathname);
+  });
+  for (const path of ['/', '/course', '/lesson/towns-near-rivers/watch']) {
+    await page.goto(path);
+    await expect(page.locator('h1')).toBeVisible();
+    await page.waitForLoadState('networkidle');
+  }
+  expect([...firstVisit].filter((url) => /\/videos-[\w-]+\.js$/.test(url))).toEqual([]);
 });

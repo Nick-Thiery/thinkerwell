@@ -1,0 +1,733 @@
+{
+  "language": "id",
+  "about": "Candidates for this language's own Watch videos, one slot per lesson, pre-screened overnight on 15 October 2026 by Claude from YouTube's captions (or, without captions, from the title and description), in a signed-out browser. Nothing here is approved and nothing reaches learners until a person who speaks the language has watched the video and run npm run videos:apply (docs/notes/local-language-videos.md). reviewStatus: prescreened (recommended to a reviewer, with draft questions and written version), unverified (could not be checked, a person must watch it), rejected (not suitable, with the reason).",
+  "lessons": {
+    "L01": {
+      "primary": null,
+      "noGoodMatch": true,
+      "screened": [
+        {
+          "youtubeId": "uvQZNwHQN9s",
+          "title": "Pengertian sumber, bukti dan fakta sejarah (Sejarah - SBMPTN, UN, SMA)",
+          "channel": "Unacademy - Indonesia",
+          "channelUrl": "https://www.youtube.com/@UnacademyIndonesia",
+          "fullDurationSeconds": 487,
+          "spokenLanguage": "id",
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-15",
+            "notes": "No captions, so the words could not be checked. University-entrance exam framing (SBMPTN, UN, SMA); 8 minutes. Not recommended without a person watching it."
+          }
+        }
+      ]
+    },
+    "L02": {
+      "primary": {
+        "youtubeId": "CQa4UvUzoeE",
+        "title": "TourTawa! Kawasan Indonesia Timur bersama Arie Kriting",
+        "channel": "Museum Nasional Indonesia",
+        "channelUrl": "https://www.youtube.com/@museumnasionalindonesia",
+        "fullDurationSeconds": 576,
+        "spokenLanguage": "id",
+        "captions": "auto",
+        "autoDubbed": false,
+        "verifiedByOembed": true,
+        "startSeconds": 59,
+        "endSeconds": 147,
+        "durationSeconds": 88,
+        "reviewStatus": "prescreened",
+        "why": "Bagian pendek dari tur Museum Nasional Indonesia ini menunjukkan perahu lesung suku Asmat dan apa yang harus diketahui pembuatnya.",
+        "beforeQuestion": "Sebagai sumber, apa bedanya benda dengan tulisan?",
+        "afterQuestion": "Sumber lain apa yang bisa membantumu memahami kaleng itu?",
+        "questionsChanged": [],
+        "summary": "Dalam bagian video ini, pembawa acara berkeliling Museum Nasional Indonesia dan berhenti di depan perahu lesung dari suku Asmat di Papua.\n\nPemandu museum menjelaskan bahwa untuk membuat perahu seperti ini, pembuatnya harus tahu banyak hal: kayu mana yang cocok, bagaimana air bergerak, bagaimana perahu tetap seimbang, dan bagaimana mencari arah di sungai dan laut.\n\nJadi sebuah benda bisa memberi tahu kita tentang pengetahuan orang yang membuat dan memakainya, walaupun mereka tidak menulis apa pun tentangnya.",
+        "summaryBasis": "transcript",
+        "keyPoints": [
+          "Perahu lesung Asmat dibuat dan dipakai oleh orang yang sangat mengenal sungai dan laut.",
+          "Untuk membuatnya, orang harus tahu tentang kayu, air, keseimbangan, dan arah.",
+          "Sebuah benda bisa menunjukkan pengetahuan pembuatnya, walaupun tidak ada tulisan."
+        ],
+        "contentNote": "Video lengkapnya adalah tur yang lucu. Aplikasi hanya memutar bagian 0:59 sampai 2:27 (perahu). Bagian lain (perisai perang, tangga upacara, tiang kubur dan roh) tidak diputar.",
+        "screening": {
+          "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+          "on": "2026-10-15",
+          "notes": "Comedic virtual tour (Arie Kriting) of five objects from eastern Indonesia; the canoe part shows what an object reveals about its makers. Both current questions still fit (object vs writing; the tin is from the Read step). Avoid the war, ritual and grave parts."
+        }
+      },
+      "screened": []
+    },
+    "L03": {
+      "primary": {
+        "youtubeId": "NEkpbAy0GR0",
+        "title": "Seberapa Tua Alam Semesta? (Dan Gimana Cara Taunya?)",
+        "channel": "Kok Bisa?",
+        "channelUrl": "https://www.youtube.com/@KokBisa",
+        "fullDurationSeconds": 261,
+        "spokenLanguage": "id",
+        "captions": "manual",
+        "autoDubbed": false,
+        "verifiedByOembed": true,
+        "durationSeconds": 261,
+        "reviewStatus": "prescreened",
+        "why": "Video pendek ini memperkirakan umur alam semesta dan menggambarnya di garis waktu yang sangat panjang.",
+        "beforeQuestion": "Tanda apa yang menunjukkan bahwa video ini memakai skala yang sangat luas?",
+        "afterQuestion": "Apa yang ditunjukkan skala luas ini? Detail tentang manusia apa yang dilewatkannya?",
+        "questionsChanged": [],
+        "summary": "Video ini bertanya: berapa umur alam semesta, dan bagaimana ilmuwan bisa tahu? Ilmuwan memakai dua petunjuk. Pertama, mereka mempelajari bintang-bintang tertua, dari massa dan terangnya. Kedua, mereka mengukur seberapa cepat alam semesta mengembang. Dari petunjuk itu, mereka memperkirakan umurnya sekitar 13,8 miliar tahun.\n\nLalu video ini menggambar garis waktu. Setiap titik di garis itu sama dengan 10 juta tahun. Manusia modern baru muncul di bagian paling akhir dari titik terakhir.\n\nPada skala yang sangat luas ini, seluruh sejarah manusia hampir tidak terlihat. Video ini juga mengingatkan bahwa ilmu pengetahuan bisa salah, dan terus menjadi lebih tepat.",
+        "summaryBasis": "transcript",
+        "keyPoints": [
+          "Ilmuwan memperkirakan umur alam semesta sekitar 13,8 miliar tahun.",
+          "Pada garis waktu yang sangat panjang, setiap titik sama dengan 10 juta tahun.",
+          "Pada skala seluas itu, sejarah manusia hanya bagian yang sangat kecil di akhir."
+        ],
+        "contentNote": null,
+        "screening": {
+          "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+          "on": "2026-10-15",
+          "notes": "Kok Bisa?, manual Indonesian captions. Both current questions are answerable as they stand (signs of a very wide scale; what it shows and which human details it leaves out). Casual Jakarta register (gak, ngitung): reviewer to judge."
+        }
+      },
+      "screened": []
+    },
+    "L04": {
+      "primary": {
+        "youtubeId": "NEkpbAy0GR0",
+        "title": "Seberapa Tua Alam Semesta? (Dan Gimana Cara Taunya?)",
+        "channel": "Kok Bisa?",
+        "channelUrl": "https://www.youtube.com/@KokBisa",
+        "fullDurationSeconds": 261,
+        "spokenLanguage": "id",
+        "captions": "manual",
+        "autoDubbed": false,
+        "verifiedByOembed": true,
+        "durationSeconds": 261,
+        "reviewStatus": "prescreened",
+        "why": "Video pendek ini menjelaskan bukti yang dipakai ilmuwan untuk memperkirakan umur alam semesta.",
+        "beforeQuestion": "Menurutmu, bukti seperti apa yang dipakai para ilmuwan untuk mempelajari alam semesta pada masa awalnya?",
+        "afterQuestion": "Apa satu hal yang dijelaskan para ilmuwan dalam video ini, dan bukti apa yang mereka pakai?",
+        "questionsChanged": [],
+        "summary": "Video ini bertanya: berapa umur alam semesta, dan bagaimana ilmuwan bisa tahu? Ilmuwan memakai dua petunjuk. Pertama, mereka mempelajari bintang-bintang tertua, dari massa dan terangnya. Kedua, mereka mengukur seberapa cepat alam semesta mengembang. Dari petunjuk itu, mereka memperkirakan umurnya sekitar 13,8 miliar tahun.\n\nLalu video ini menggambar garis waktu. Setiap titik di garis itu sama dengan 10 juta tahun. Manusia modern baru muncul di bagian paling akhir dari titik terakhir.\n\nPada skala yang sangat luas ini, seluruh sejarah manusia hampir tidak terlihat. Video ini juga mengingatkan bahwa ilmu pengetahuan bisa salah, dan terus menjadi lebih tepat.",
+        "summaryBasis": "transcript",
+        "keyPoints": [
+          "Ilmuwan mempelajari bintang-bintang tertua, dari massa dan terangnya.",
+          "Ilmuwan juga mengukur seberapa cepat alam semesta mengembang.",
+          "Dari bukti itu, umur alam semesta diperkirakan sekitar 13,8 miliar tahun, dan ilmu pengetahuan terus memperbaiki perkiraannya."
+        ],
+        "contentNote": "Pelajaran 4 membahas berbagai cerita tentang asal-usul dunia. Video ini hanya menjelaskan cara ilmu pengetahuan menjawab satu jenis pertanyaan. Tontonlah dulu sebelum kelas.",
+        "screening": {
+          "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+          "on": "2026-10-15",
+          "notes": "Same video as L03 id; it answers \"what evidence do scientists use\" (oldest stars, expansion) better than the audit lead. Lesson 4 is sensitive (origin accounts): a local educator reviews it first."
+        }
+      },
+      "screened": [
+        {
+          "youtubeId": "aJw4MxDKR3A",
+          "title": "Bagaiman Ilmuwan Tahu Big Bang adalah Awal Alam Semesta 13,8 Miliar Tahun Lalu",
+          "channel": "Fajrul Fx",
+          "channelUrl": "https://www.youtube.com/@FajrulFx",
+          "fullDurationSeconds": 709,
+          "spokenLanguage": "id",
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-15",
+            "notes": "Fajrul Fx, 11:49. Clear, but says Hubble saw galaxies moving faster than light (he did not) and dates the background-radiation discovery to 1960 (1964-65). Small individual channel; too long."
+          }
+        }
+      ]
+    },
+    "L05": {
+      "primary": {
+        "youtubeId": "gLQZT46_ojA",
+        "title": "Jalan Panjang Manusia Purba Menemukan Indonesia",
+        "channel": "Kok Bisa?",
+        "channelUrl": "https://www.youtube.com/@KokBisa",
+        "fullDurationSeconds": 175,
+        "spokenLanguage": "id",
+        "captions": "auto",
+        "autoDubbed": false,
+        "verifiedByOembed": true,
+        "startSeconds": 0,
+        "endSeconds": 125,
+        "durationSeconds": 125,
+        "reviewStatus": "prescreened",
+        "why": "Video pendek ini menceritakan bagaimana manusia purba sampai ke Pulau Jawa dan apa yang mereka tinggalkan di Sangiran.",
+        "beforeQuestion": "Perhatikan: mengapa manusia purba berpindah sampai ke Pulau Jawa?",
+        "afterQuestion": "Apa yang bisa kita pelajari dari fosil dan alat batu yang ditemukan di Sangiran?",
+        "questionsChanged": [
+          "beforeQuestion",
+          "afterQuestion"
+        ],
+        "summary": "Video ini menceritakan perjalanan manusia purba yang disebut Homo erectus, atau Manusia Jawa. Saat itu, Pulau Jawa masih tersambung dengan daratan Asia.\n\nLingkungan tempat mereka hidup berubah. Mereka berpindah menyusuri pantai, dan akhirnya sampai di Jawa.\n\nDi Sangiran, Jawa Tengah, ilmuwan menemukan banyak fosil dan alat batu. Temuan itu menunjukkan bahwa manusia purba membuat dan memakai alat. Sangiran menjadi Warisan Dunia UNESCO pada tahun 1996.",
+        "summaryBasis": "transcript",
+        "keyPoints": [
+          "Manusia purba sampai ke Jawa ketika pulau itu masih tersambung dengan daratan Asia.",
+          "Mereka berpindah menyusuri pantai karena lingkungan mereka berubah.",
+          "Fosil dan alat batu di Sangiran menunjukkan bahwa mereka membuat alat."
+        ],
+        "contentNote": "Video ini memakai kata \"evolusi\" manusia. Bagian akhir (mulai 2:05, promosi desa wisata) tidak diputar.",
+        "screening": {
+          "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+          "on": "2026-10-15",
+          "notes": "Covers moving and making tools, not collective learning, so both questions change; the Read step keeps collective learning. Partial fit."
+        }
+      },
+      "screened": []
+    },
+    "L06": {
+      "primary": null,
+      "noGoodMatch": true,
+      "screened": [
+        {
+          "youtubeId": "RenvKnk_rGo",
+          "title": "Sejarah Revolusi Terbesar di Dunia | Revolusi Pertanian Neolitik -- Berburu-Meramu ke Bertani/ternak",
+          "channel": "PhilGram",
+          "channelUrl": "https://www.youtube.com/@PhilGram",
+          "fullDurationSeconds": 750,
+          "spokenLanguage": "id",
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-15",
+            "notes": "PhilGram, 12:30. Covers the benefits and costs of farming, but jokes twice about sexual relations to explain population growth: unsuitable for 10-17. Also too long; student channel."
+          }
+        }
+      ]
+    },
+    "L07": {
+      "primary": null,
+      "noGoodMatch": true,
+      "screened": []
+    },
+    "L08": {
+      "primary": {
+        "youtubeId": "fj2xxbx_OHQ",
+        "title": "Perjalanan Jalur Rempah Nusantara",
+        "channel": "Jalur Rempah RI",
+        "channelUrl": "https://www.youtube.com/@jalurrempahri",
+        "fullDurationSeconds": 344,
+        "spokenLanguage": "id",
+        "captions": "auto",
+        "autoDubbed": false,
+        "verifiedByOembed": true,
+        "durationSeconds": 344,
+        "reviewStatus": "prescreened",
+        "why": "Video ini mengikuti jalur rempah: bagaimana cengkih, pala, dan lada dari Nusantara diperdagangkan ke banyak negeri.",
+        "beforeQuestion": "Rempah bisa sampai ke negeri yang sangat jauh. Perhatikan: di mana para pedagang bertemu dan bertukar barang?",
+        "afterQuestion": "Mengapa jalur rempah lebih tepat disebut jaringan pelabuhan daripada satu jalan?",
+        "questionsChanged": [
+          "beforeQuestion",
+          "afterQuestion"
+        ],
+        "summary": "Video ini menceritakan jalur rempah Nusantara. Cengkih dan pala tumbuh di Maluku dan Banda. Lada datang dari Sumatra, Jawa, dan Kalimantan.\n\nMalaka menjadi pelabuhan besar. Di sana pedagang dari Arab, India, Tiongkok, dan Eropa bertemu dan bertukar barang, lalu membawanya ke tempat lain.\n\nKemudian bangsa Eropa ingin menguasai rempah. Portugis menguasai Malaka pada tahun 1511. Belanda melalui VOC ingin memegang perdagangan sendiri dan berperang melawan kerajaan seperti Banten dan Makassar. Jalur rempah juga mempertemukan banyak bangsa dan budaya.",
+        "summaryBasis": "transcript",
+        "keyPoints": [
+          "Rempah dari Maluku, Banda, Sumatra, Jawa, dan Kalimantan dijual ke banyak negeri.",
+          "Pelabuhan seperti Malaka menjadi tempat pedagang dari berbagai negeri bertemu.",
+          "Bangsa Eropa kemudian ingin menguasai perdagangan rempah, dan itu membawa perang."
+        ],
+        "contentNote": "Video ini menyebut perang dan monopoli VOC secara singkat, tanpa gambar kekerasan.",
+        "screening": {
+          "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+          "on": "2026-10-15",
+          "notes": "Jalur Rempah RI (the Ministry of Culture spice-route programme), 5:44. A regional example of a trade network; the Silk Road question does not fit, so both change."
+        }
+      },
+      "screened": []
+    },
+    "L09": {
+      "primary": null,
+      "noGoodMatch": true,
+      "screened": []
+    },
+    "L10": {
+      "primary": {
+        "youtubeId": "dAZ1Y_7sTHg",
+        "title": "AIRKU KEMBALI JERNIH",
+        "channel": "BP Kebudayaan Banten",
+        "channelUrl": "https://www.youtube.com/@balaipelestariankebudayaan9932",
+        "fullDurationSeconds": 721,
+        "spokenLanguage": "id",
+        "captions": "auto",
+        "autoDubbed": true,
+        "verifiedByOembed": true,
+        "startSeconds": 97,
+        "endSeconds": 480,
+        "durationSeconds": 383,
+        "reviewStatus": "prescreened",
+        "why": "Video ini mengunjungi Banten Lama dan menunjukkan bagaimana sebuah kota pelabuhan memakai dan mengelola air sungai.",
+        "beforeQuestion": "Apa saja yang bisa diberikan sungai kepada sebuah kota? Perhatikan Sungai Cibanten di video.",
+        "afterQuestion": "Masalah apa yang dibawa Sungai Cibanten bagi warga Banten, dan bagaimana Sultan mengatasinya?",
+        "questionsChanged": [
+          "beforeQuestion",
+          "afterQuestion"
+        ],
+        "summary": "Pembawa acara mengunjungi Banten Lama, di Provinsi Banten. Dulu di sini berdiri Keraton Surosowan, pusat Kesultanan Banten. Banten adalah kota pelabuhan yang dekat dengan laut dan menjadi tempat perdagangan.\n\nWarga dan Sultan memakai air Sungai Cibanten untuk kebutuhan sehari-hari. Tetapi air sungai itu keruh, kotor, dan berbau. Banyak warga jatuh sakit, bahkan ada yang meninggal.\n\nSultan lalu memutuskan berhenti memakai air sungai secara langsung. Ia membangun danau buatan bernama Tasikardi untuk menampung air dari Sungai Cibanten. Air danau dipakai untuk mengairi sawah, dan dialirkan ke keraton melalui pipa tanah liat di bawah tanah.",
+        "summaryBasis": "transcript",
+        "keyPoints": [
+          "Kota Banten tumbuh sebagai kota pelabuhan dekat sungai dan laut.",
+          "Air Sungai Cibanten kotor dan membuat warga sakit.",
+          "Sultan membangun Danau Tasikardi untuk menampung air, mengairi sawah, dan mengalirkan air bersih."
+        ],
+        "contentNote": "Video ini menyebut warga yang sakit dan meninggal karena air kotor. YouTube membuat suara bahasa Inggris otomatis untuk video ini: periksa di perangkat kelas bahwa yang terdengar adalah suara asli dalam bahasa Indonesia.",
+        "screening": {
+          "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+          "on": "2026-10-15",
+          "notes": "BP Kebudayaan Banten (a Ministry of Culture heritage office), 12:01. Fits the lesson goal (how rivers help and what problems they bring). Not the Tigris and Euphrates, so both questions change. HAS A YOUTUBE AUTO-DUBBED ENGLISH AUDIO TRACK, which was the default in an English-language browser: must be checked on the pilot devices before approval."
+        }
+      },
+      "screened": [
+        {
+          "youtubeId": "XXdScJPkbK8",
+          "title": "Brantas, Pembentuk Peradaban Kuno Malang Raya",
+          "channel": "BRIN Indonesia",
+          "channelUrl": "https://www.youtube.com/@brinindonesia1",
+          "fullDurationSeconds": 1594,
+          "spokenLanguage": "id",
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-15",
+            "notes": "BRIN Indonesia, 26:34. Archaeology of Hindu-Buddhist sites along the Brantas; mostly temple cosmology and ancestor worship, partly in Javanese. Too long and specialist."
+          }
+        }
+      ]
+    },
+    "L11": {
+      "primary": {
+        "youtubeId": "03c_sp_I2bA",
+        "title": "Pemahaman Lokasi Melalui Peta",
+        "channel": "Zona Ilmu Pengetahuan Sosial",
+        "channelUrl": "https://www.youtube.com/@zonailmupengetahuansosial",
+        "fullDurationSeconds": 611,
+        "spokenLanguage": "id",
+        "captions": "auto",
+        "autoDubbed": false,
+        "verifiedByOembed": true,
+        "startSeconds": 289,
+        "endSeconds": 420,
+        "durationSeconds": 131,
+        "reviewStatus": "prescreened",
+        "why": "Bagian video ini menjelaskan simbol, warna, dan legenda pada peta.",
+        "beforeQuestion": "Mengapa peta butuh legenda? Apa yang terjadi kalau kamu harus menebak arti setiap simbol?",
+        "afterQuestion": "Simbol peta mana yang paling membantu pengunjung? Mengapa?",
+        "questionsChanged": [],
+        "summary": "Simbol peta mewakili benda yang sebenarnya ada di lapangan. Ada tiga jenis simbol. Simbol titik menunjukkan tempat, misalnya ibu kota kabupaten. Simbol garis menunjukkan hal yang memanjang, seperti rel kereta api, sungai, dan jalan. Simbol area menunjukkan tempat yang punya luas, seperti rawa dan danau.\n\nWarna juga punya arti. Biru biasanya untuk perairan. Hijau untuk dataran rendah. Kuning untuk daerah yang lebih tinggi, dan cokelat untuk perbukitan atau pegunungan.\n\nLegenda adalah keterangan dari semua simbol itu. Biasanya legenda ada di bagian bawah peta, di sisi kanan atau kiri. Dengan legenda, kita tidak perlu menebak arti setiap simbol.",
+        "summaryBasis": "transcript",
+        "keyPoints": [
+          "Simbol titik, garis, dan area mewakili benda yang sebenarnya.",
+          "Warna pada peta punya arti, misalnya biru untuk air.",
+          "Legenda menjelaskan arti setiap simbol."
+        ],
+        "contentNote": null,
+        "screening": {
+          "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+          "on": "2026-10-15",
+          "notes": "Zona Ilmu Pengetahuan Sosial, a junior-secondary teacher narrating slides, 10:11. Accurate at that level. Both current questions fit and are kept."
+        }
+      },
+      "screened": []
+    },
+    "L12": {
+      "primary": null,
+      "noGoodMatch": true,
+      "screened": [
+        {
+          "youtubeId": "IS1xr3YzNxQ",
+          "title": "Apa Sih Pengertian Urbanisasi? Ini Cara Mudah Memahaminya",
+          "channel": "Halo Edukasi",
+          "channelUrl": "https://www.youtube.com/@HaloEdukasi",
+          "fullDurationSeconds": 817,
+          "spokenLanguage": "id",
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-15",
+            "notes": "Halo Edukasi, 13:37, no captions. \"What is urbanisation\": meaning, effects and \"pencegahan\" (preventing it). Framing moving to a city as something to prevent sits badly with this audience and with the lesson. Leaning reject."
+          }
+        }
+      ]
+    },
+    "L13": {
+      "primary": {
+        "youtubeId": "b2wc09cbexE",
+        "title": "Berbeda tapi Saling Berkaitan, Apa Perbedaan Cuaca dan Iklim?",
+        "channel": "KOMPASTV",
+        "channelUrl": "https://www.youtube.com/@kompastv",
+        "fullDurationSeconds": 147,
+        "spokenLanguage": "id",
+        "captions": "none",
+        "autoDubbed": false,
+        "verifiedByOembed": true,
+        "durationSeconds": 147,
+        "reviewStatus": "prescreened",
+        "why": "Video pendek dari KompasTV ini menjelaskan perbedaan cuaca dan iklim.",
+        "beforeQuestion": "Apakah satu hari yang sangat panas bisa membuktikan bahwa iklim sedang berubah? Kenapa bisa, atau kenapa tidak?",
+        "afterQuestion": "Kenapa para ilmuwan butuh catatan cuaca dari banyak tahun untuk memahami iklim?",
+        "questionsChanged": [],
+        "summary": "Cuaca dan iklim saling berkaitan, tetapi berbeda. Cuaca adalah keadaan udara dalam waktu yang singkat dan di wilayah yang sempit. Cuaca bisa berubah dengan cepat, bahkan dalam hitungan jam.\n\nIklim adalah rata-rata keadaan cuaca dalam waktu yang lama dan di wilayah yang luas. Iklim butuh waktu bertahun-tahun untuk berubah. Karena itu, meramal cuaca lebih mudah daripada meramal iklim.\n\nIlmu yang mempelajari cuaca disebut meteorologi, dan ilmu yang mempelajari iklim disebut klimatologi. Unsur cuaca dan iklim antara lain suhu udara, kelembapan udara, dan curah hujan.",
+        "summaryBasis": "description",
+        "keyPoints": [
+          "Cuaca adalah keadaan udara dalam waktu singkat di wilayah yang sempit.",
+          "Iklim adalah rata-rata cuaca selama bertahun-tahun di wilayah yang luas.",
+          "Satu hari panas adalah cuaca; untuk melihat iklim, kita butuh catatan selama bertahun-tahun."
+        ],
+        "contentNote": null,
+        "screening": {
+          "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+          "on": "2026-10-15",
+          "notes": "KOMPASTV (national broadcaster), 2:27, NO CAPTIONS: the written version is drafted from the video description, which reads like its script. A person must listen once before approving. Both current questions fit and are kept."
+        }
+      },
+      "screened": []
+    },
+    "L14": {
+      "primary": {
+        "youtubeId": "KIc9Rt9GKkU",
+        "title": "Perubahan Iklim Kian Nyata, Ini Fakta yang Perlu Kamu Ketahui!",
+        "channel": "UNICEF Indonesia",
+        "channelUrl": "https://www.youtube.com/@unicefindonesia",
+        "fullDurationSeconds": 285,
+        "spokenLanguage": "id",
+        "captions": "auto",
+        "autoDubbed": false,
+        "verifiedByOembed": true,
+        "startSeconds": 105,
+        "endSeconds": 252,
+        "durationSeconds": 147,
+        "reviewStatus": "prescreened",
+        "why": "Video UNICEF ini menjelaskan siapa yang paling berisiko karena perubahan iklim dan apa yang bisa kita lakukan.",
+        "beforeQuestion": "Siapa yang paling berisiko ketika terjadi bencana karena perubahan iklim? Perhatikan di video.",
+        "afterQuestion": "Apa satu hal yang bisa membuat peringatan atau jalur aman sulit dipakai oleh sebagian orang?",
+        "questionsChanged": [
+          "beforeQuestion"
+        ],
+        "summary": "Perubahan iklim membuat cuaca makin sulit ditebak. Ada daerah yang dilanda banjir besar, sementara daerah lain kekeringan. Beberapa hari panas terik, lalu tiba-tiba hujan deras.\n\nAnak-anak dan remaja lebih berisiko. Risikonya lebih besar lagi bagi anak perempuan, anak dengan disabilitas, dan anak dari keluarga yang kurang mampu. Mereka sering mendapat lebih sedikit informasi, lebih sulit berkomunikasi, dan lebih sulit bergerak. Karena itu, saat bencana terjadi, mereka butuh waktu lebih lama untuk menyelamatkan diri.\n\nPerubahan iklim juga bisa menambah penyakit, mengurangi makanan bergizi, dan mengganggu sekolah. Kita bisa ikut bertindak: menjaga lingkungan, tidak membuang atau membakar sampah sembarangan, menghemat listrik dan air, berjalan kaki atau bersepeda, dan mengajak sekolah ikut beraksi.",
+        "summaryBasis": "transcript",
+        "keyPoints": [
+          "Perubahan iklim membawa banjir, kekeringan, dan cuaca yang sulit ditebak.",
+          "Sebagian anak lebih sulit menyelamatkan diri karena kurang informasi, sulit berkomunikasi, atau sulit bergerak.",
+          "Setiap orang dan sekolah bisa ikut menjaga lingkungan."
+        ],
+        "contentNote": "Video berhenti sebelum ajakan memakai chatbot U-Report dari UNICEF.",
+        "screening": {
+          "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+          "on": "2026-10-15",
+          "notes": "UNICEF Indonesia, 4:45, 2025. The current After question is answerable almost word for word; Think first adapted. Also a good second choice for L13 id (0-105)."
+        }
+      },
+      "screened": []
+    },
+    "L15": {
+      "primary": {
+        "youtubeId": "lZKGmAGX-RU",
+        "title": "Batik merupakan warisan budaya yang menjadi identitas dan kebanggaan bangsa Indonesia",
+        "channel": "Kementerian Perdagangan",
+        "channelUrl": "https://www.youtube.com/@KementerianPerdaganganRI",
+        "fullDurationSeconds": 265,
+        "spokenLanguage": "id",
+        "captions": "auto",
+        "autoDubbed": false,
+        "verifiedByOembed": true,
+        "startSeconds": 27,
+        "endSeconds": 265,
+        "durationSeconds": 238,
+        "reviewStatus": "prescreened",
+        "why": "Seorang pembatik di Bantul, Yogyakarta, bercerita tentang batik nitik: cara membuatnya, motifnya, dan sejarahnya.",
+        "beforeQuestion": "Apakah benda yang berguna juga bisa bercerita?",
+        "afterQuestion": "Kalau kamu menulis label untuk selembar batik nitik, sudut pandang siapa yang perlu kamu tanyakan dulu? Mengapa?",
+        "questionsChanged": [
+          "afterQuestion"
+        ],
+        "summary": "Pak Rusli dari kelompok Batik Sekar Nitik di Kampung Kembang Songo, Bantul, menjelaskan batik nitik. Batik ini dibuat dengan canting yang ujungnya dibelah, sehingga lilinnya jatuh seperti titik-titik kecil berbentuk segi empat. Motifnya terinspirasi dari bunga dan buah di sekitar kampung.\n\nSejak abad ke-17, orang di Kembang Songo membatik nitik untuk kebutuhan keraton. Keterampilan ini diturunkan dari ibu ke anak. Kelompok mereka berdiri setelah gempa Yogyakarta tahun 2006.\n\nSekitar 73 motif batik nitik sudah didaftarkan sebagai Indikasi Geografis, supaya tidak ditiru atau diakui daerah lain. Para pembatik berharap batik nitik makin dikenal dan makin banyak orang yang meneruskannya.",
+        "summaryBasis": "transcript",
+        "keyPoints": [
+          "Batik nitik dibuat dari titik-titik kecil dengan canting khusus.",
+          "Motifnya berasal dari bunga dan buah di sekitar kampung.",
+          "Batik nitik punya arti bagi keraton, bagi keluarga pembatik, dan bagi kampung yang menjualnya."
+        ],
+        "contentNote": null,
+        "screening": {
+          "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+          "on": "2026-10-15",
+          "notes": "Kementerian Perdagangan (Ministry of Trade), 4:25. A maker explains one object with several meanings (craft, palace, family, a protected product). Think first kept; After adapted to the batik."
+        }
+      },
+      "screened": []
+    },
+    "L16": {
+      "primary": null,
+      "noGoodMatch": true,
+      "screened": [
+        {
+          "youtubeId": "wxoQmIjNXxU",
+          "title": "Gelora Bahasa Indonesia dari Jawa Timur",
+          "channel": "Badan Pengembangan dan Pembinaan Bahasa",
+          "channelUrl": "https://www.youtube.com/@BadanBahasa",
+          "fullDurationSeconds": 299,
+          "spokenLanguage": "id",
+          "captions": "auto",
+          "autoDubbed": true,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-15",
+            "notes": "Badan Bahasa, 4:59. Institutional promo for a provincial language office with music and officials; one usable idea (many languages are a strength) at 1:30-2:15; nothing on language families. Also has a YouTube auto-dubbed English audio track set as the default in an English browser."
+          }
+        }
+      ]
+    },
+    "L17": {
+      "primary": {
+        "youtubeId": "fRO8ctPDdNw",
+        "title": "Idenesia: Tradisi Budaya Sang Pendahulu",
+        "channel": "IndonesiaKaya",
+        "channelUrl": "https://www.youtube.com/@IndonesiaKaya",
+        "fullDurationSeconds": 1682,
+        "spokenLanguage": "id",
+        "captions": "auto",
+        "autoDubbed": false,
+        "verifiedByOembed": true,
+        "startSeconds": 281,
+        "endSeconds": 418,
+        "durationSeconds": 137,
+        "reviewStatus": "prescreened",
+        "why": "Bagian video ini menunjukkan upacara Erau suku Kutai di Kalimantan Timur, dulu dan sekarang.",
+        "beforeQuestion": "Mengapa orang mungkin ingin membagikan tradisi mereka kepada orang lain?",
+        "afterQuestion": "Bagaimana upacara Erau berubah dari dulu sampai sekarang? Siapa saja yang sekarang ikut?",
+        "questionsChanged": [
+          "afterQuestion"
+        ],
+        "summary": "Bagian video ini membawa kita ke Desa Kedang Ipil di Kutai Kartanegara, Kalimantan Timur. Di sana ada upacara adat Erau. Dulu, Erau adalah upacara penting untuk menobatkan raja-raja Kutai.\n\nWarga desa adat ikut menjalankan bagian upacara yang sakral. Menurut mereka, upacara di Tenggarong tidak bisa dibuka tanpa kehadiran mereka.\n\nSekarang Erau juga menjadi festival budaya yang diadakan setiap tahun oleh pemerintah kabupaten untuk memperingati hari jadi kota Tenggarong. Dalam festival ini, raja dan rakyat bergembira bersama. Ada tarian dan banyak kegiatan, dan tamu dari negara lain juga diundang untuk saling mengenal budaya.",
+        "summaryBasis": "transcript",
+        "keyPoints": [
+          "Erau dulu adalah upacara penobatan raja-raja Kutai.",
+          "Sekarang Erau juga menjadi festival budaya setiap tahun.",
+          "Festival ini mempertemukan raja, rakyat, dan tamu dari negara lain."
+        ],
+        "contentNote": "Video lengkapnya berisi iklan TV dan upacara kematian Toraja; aplikasi hanya memutar bagian 4:41 sampai 6:58. Ucapan warga di bagian ini sulit dibaca dari teks otomatis, jadi dengarkan dulu.",
+        "screening": {
+          "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+          "on": "2026-10-15",
+          "notes": "IndonesiaKaya TV-magazine compilation, 28:02. Only the Erau part fits; the rest has a funeral rite and TV adverts left in the upload. The local speaker at 5:04-5:57 is hard to follow in the auto-captions. Partial fit."
+        }
+      },
+      "screened": []
+    },
+    "L18": {
+      "primary": {
+        "youtubeId": "lZKGmAGX-RU",
+        "title": "Batik merupakan warisan budaya yang menjadi identitas dan kebanggaan bangsa Indonesia",
+        "channel": "Kementerian Perdagangan",
+        "channelUrl": "https://www.youtube.com/@KementerianPerdaganganRI",
+        "fullDurationSeconds": 265,
+        "spokenLanguage": "id",
+        "captions": "auto",
+        "autoDubbed": false,
+        "verifiedByOembed": true,
+        "startSeconds": 27,
+        "endSeconds": 265,
+        "durationSeconds": 238,
+        "reviewStatus": "prescreened",
+        "why": "Seorang pembatik menjelaskan dari mana motif batik nitik berasal. Kita belajar dari pembuatnya, bukan dari tebakan.",
+        "beforeQuestion": "Apa bedanya menggambarkan sebuah benda dengan mengatakan artinya?",
+        "afterQuestion": "Dari mana motif batik nitik berasal, menurut pembuatnya? Mengapa lebih baik bertanya kepada pembuat daripada menebak?",
+        "questionsChanged": [
+          "afterQuestion"
+        ],
+        "summary": "Pak Rusli dari kelompok Batik Sekar Nitik di Kampung Kembang Songo, Bantul, menjelaskan batik nitik. Batik ini dibuat dengan canting yang ujungnya dibelah, sehingga lilinnya jatuh seperti titik-titik kecil berbentuk segi empat. Motifnya terinspirasi dari bunga dan buah di sekitar kampung.\n\nSejak abad ke-17, orang di Kembang Songo membatik nitik untuk kebutuhan keraton. Keterampilan ini diturunkan dari ibu ke anak. Kelompok mereka berdiri setelah gempa Yogyakarta tahun 2006.\n\nSekitar 73 motif batik nitik sudah didaftarkan sebagai Indikasi Geografis, supaya tidak ditiru atau diakui daerah lain. Para pembatik berharap batik nitik makin dikenal dan makin banyak orang yang meneruskannya.",
+        "summaryBasis": "transcript",
+        "keyPoints": [
+          "Kita bisa melihat titik-titik kecil pada batik nitik: itu deskripsi.",
+          "Pembuatnya mengatakan motifnya terinspirasi dari bunga dan buah di sekitar kampung: itu arti dari sudut pandangnya.",
+          "Bertanya kepada pembuat membantu kita tidak mengarang arti sebuah benda."
+        ],
+        "contentNote": null,
+        "screening": {
+          "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+          "on": "2026-10-15",
+          "notes": "Same video as L15 id. Partial fit: the maker says where the motifs come from, which models asking rather than inventing a meaning. Think first kept; After adapted."
+        }
+      },
+      "screened": []
+    },
+    "L19": {
+      "primary": null,
+      "noGoodMatch": true,
+      "screened": []
+    },
+    "L20": {
+      "primary": null,
+      "noGoodMatch": true,
+      "screened": [
+        {
+          "youtubeId": "hfan75z15Bg",
+          "title": "Quipper Video - Ekonomi Kelas 10 - Konsep Ilmu Ekonomi Bagian 1 - Kurikulum 2013",
+          "channel": "Quipper Indonesia",
+          "channelUrl": "https://www.youtube.com/@QuipperVideoID",
+          "fullDurationSeconds": 896,
+          "spokenLanguage": "id",
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-15",
+            "notes": "Quipper Indonesia (commercial tutoring), 14:56, no captions. Grade 10 economics concepts; the description pushes sign-ups for the paid service. Leaning reject."
+          }
+        }
+      ]
+    },
+    "L21": {
+      "primary": {
+        "youtubeId": "U6peWODz9Oo",
+        "title": "Sejarah Uang dan Sejarah Bank Sentral",
+        "channel": "Bank Indonesia Channel",
+        "channelUrl": "https://www.youtube.com/@KanalBankIndonesia",
+        "fullDurationSeconds": 994,
+        "spokenLanguage": "id",
+        "captions": "auto",
+        "autoDubbed": false,
+        "verifiedByOembed": true,
+        "startSeconds": 130,
+        "endSeconds": 368,
+        "durationSeconds": 238,
+        "reviewStatus": "prescreened",
+        "why": "Bagian film kartun Bank Indonesia ini menjelaskan barter dan mengapa orang mulai memakai uang.",
+        "beforeQuestion": "Bagaimana orang mendapatkan barang yang mereka butuhkan sebelum ada uang? Perhatikan di video.",
+        "afterQuestion": "Masalah apa yang muncul ketika orang barter, dan bagaimana uang membantu mengatasinya?",
+        "questionsChanged": [
+          "beforeQuestion",
+          "afterQuestion"
+        ],
+        "summary": "Dalam film kartun ini, empat anak bercerita tentang uang. Dulu belum ada toko. Orang membuat atau mencari sendiri barang yang mereka butuhkan. Kalau butuh barang yang tidak bisa dibuat sendiri, mereka menukar barang miliknya dengan barang orang lain. Cara ini disebut barter.\n\nBarter punya masalah. Misalnya Pak Demang ingin seekor sapi dan menawarkan sekarung bawang putih. Kalau pemilik sapi tidak butuh bawang putih, pertukaran tidak terjadi. Lalu orang memakai benda yang dianggap berharga, seperti perhiasan atau garam. Tetapi nilainya sering tidak sama: kalung emas tidak bisa ditukar dengan semangkuk bakso.\n\nKarena itu orang mulai memakai uang logam dari emas dan perak, yang bernilai tinggi dan tidak mudah rusak. Uang logam berat kalau dibawa banyak, jadi kemudian dibuat uang kertas yang ringan dan mudah dibawa ke mana-mana.",
+        "summaryBasis": "transcript",
+        "keyPoints": [
+          "Barter adalah menukar barang dengan barang.",
+          "Barter sulit kalau orang menginginkan barang yang berbeda atau nilai barangnya tidak sama.",
+          "Uang logam, lalu uang kertas, membuat pertukaran lebih mudah."
+        ],
+        "contentNote": null,
+        "screening": {
+          "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+          "on": "2026-10-15",
+          "notes": "Bank Indonesia Channel (the central bank), 16:34 cartoon for younger children (a running joke about one boy always thinking of food). Covers barter, money and trust, not goods vs services, so both questions change."
+        }
+      },
+      "screened": []
+    },
+    "L22": {
+      "primary": {
+        "youtubeId": "bCbJjiglFXU",
+        "title": "Musim Cha-Ching 2: Kembali ke Anggaran (Bahasa Indonesia)",
+        "channel": "Cha-Ching Videos",
+        "channelUrl": "https://www.youtube.com/@ChaChingVideos",
+        "fullDurationSeconds": 180,
+        "spokenLanguage": "id",
+        "captions": "auto",
+        "autoDubbed": false,
+        "verifiedByOembed": true,
+        "durationSeconds": 180,
+        "reviewStatus": "prescreened",
+        "why": "Dalam kartun lagu ini, sebuah band belajar membuat anggaran dan menaatinya.",
+        "beforeQuestion": "Apa itu anggaran? Perhatikan bagaimana band Cha-Ching membuat rencana untuk uang mereka.",
+        "afterQuestion": "Apa yang terjadi ketika band itu tidak mengikuti anggarannya? Bagaimana mereka memperbaikinya?",
+        "questionsChanged": [
+          "beforeQuestion",
+          "afterQuestion"
+        ],
+        "summary": "Dalam kartun lagu ini, band Cha-Ching akan tur dan bermain di empat kota. Sebelum berangkat, mereka membuat anggaran: rencana tentang uang yang masuk dan uang yang akan dipakai. Mereka mencari hotel dengan harga yang cocok dan memeriksa harganya lagi supaya bisa berhemat.\n\nLalu mereka lupa pada rencananya. Mereka memilih hotel mahal dan naik mobil mewah. Satu konser dibatalkan, sehingga uang yang masuk berkurang. Pengeluaran jadi lebih besar daripada pendapatan, dan uang mereka hampir habis.\n\nMereka kembali ke anggaran: mengurangi pengeluaran dan menyimpan sedikit demi sedikit. Di akhir tur, mereka masih untung. Kalau mereka mengikuti anggaran dari awal, untungnya bisa lebih besar.",
+        "summaryBasis": "transcript",
+        "keyPoints": [
+          "Anggaran adalah rencana untuk uang yang masuk dan uang yang dipakai.",
+          "Kalau pengeluaran lebih besar daripada pendapatan, uang cepat habis.",
+          "Mengurangi pengeluaran dan menyimpan sedikit demi sedikit membantu kita kembali ke rencana."
+        ],
+        "contentNote": "Seri Cha-Ching dibuat oleh yayasan sebuah perusahaan asuransi bersama Cartoon Network. Tidak ada produk yang ditunjukkan.",
+        "screening": {
+          "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+          "on": "2026-10-15",
+          "notes": "The creator's own Indonesian version (sung and voiced by the publisher, not an AI dub), 3:00. Fits budgeting and trade-offs; less on saving vs spending, so both questions change. Song lyrics go fast."
+        }
+      },
+      "screened": []
+    },
+    "L23": {
+      "primary": {
+        "youtubeId": "36uj3gwhGx4",
+        "title": "Mengapa Orang Mudah Percaya Hoax?",
+        "channel": "Kok Bisa?",
+        "channelUrl": "https://www.youtube.com/@KokBisa",
+        "fullDurationSeconds": 166,
+        "spokenLanguage": "id",
+        "captions": "manual",
+        "autoDubbed": false,
+        "verifiedByOembed": true,
+        "durationSeconds": 166,
+        "reviewStatus": "prescreened",
+        "why": "Video pendek ini menjelaskan mengapa orang mudah percaya hoaks dan cara memeriksa kabar sebelum menyebarkannya.",
+        "beforeQuestion": "Apa yang membuatmu percaya pada sebuah berita?",
+        "afterQuestion": "Menurut video, tanda apa saja yang membuat sebuah kabar perlu dicurigai sebelum kamu menyebarkannya?",
+        "questionsChanged": [
+          "afterQuestion"
+        ],
+        "summary": "Kabar palsu, atau hoaks, menyebar cepat seperti virus flu. Mengapa orang mudah percaya? Salah satu sebabnya adalah bias konfirmasi: kita sering menerima informasi tanpa bertanya karena isinya sesuai dengan pendapat kita. Hoaks juga sering berisi hal yang heboh, sehingga orang ingin cepat-cepat menyebarkannya.\n\nHoaks harus dicegah karena bisa dipakai untuk menjatuhkan orang lain, menyebar ketakutan, dan menyebar kebencian. Kebohongan yang diulang-ulang bisa dipercaya sebagai kenyataan.\n\nUntuk mencegahnya, kita butuh literasi digital: kemampuan mencari, menilai, dan memakai informasi dengan baik. Sebelum percaya atau menyebarkan sebuah kabar, periksa dulu kebenarannya. Curigai informasi yang tidak menyebut penulisnya, sumbernya hanya dari grup lain, isinya heboh, atau berisi dugaan yang tidak terbukti.",
+        "summaryBasis": "transcript",
+        "keyPoints": [
+          "Kita mudah percaya kabar yang sesuai dengan pendapat kita.",
+          "Kabar yang heboh membuat orang ingin cepat menyebarkannya.",
+          "Periksa penulis, sumber, dan buktinya sebelum percaya atau menyebarkan."
+        ],
+        "contentNote": "Video ini menyebut sekilas bahwa hoaks dipakai oleh politikus dan teroris, dan memberi contoh kabar tentang ledakan. Pertimbangkan apakah ini cocok untuk kelompokmu.",
+        "screening": {
+          "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+          "on": "2026-10-15",
+          "notes": "Kok Bisa?, 2:46, manual captions. Fits checking a source before sharing; does not cover a true photo or fact that misleads, so After changes. Mentions terrorists and an explosion in passing."
+        }
+      },
+      "screened": []
+    },
+    "L24": {
+      "primary": null,
+      "noGoodMatch": true,
+      "screened": [
+        {
+          "youtubeId": "-k3igxia4Ho",
+          "title": "Aksi Iklim Anak Muda Pembuat Perubahan",
+          "channel": "UNICEF Indonesia",
+          "channelUrl": "https://www.youtube.com/@unicefindonesia",
+          "fullDurationSeconds": null,
+          "spokenLanguage": "id",
+          "captions": "unknown",
+          "autoDubbed": false,
+          "verifiedByOembed": false,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-15",
+            "notes": "UNICEF Indonesia, \"Aksi Iklim Anak Muda Pembuat Perubahan\". YouTube twice refused to play it in a signed-out browser (\"Please sign in - This helps protect our community\") while every other video played. Learners are never signed in: check it plays for them before anything else. Narrower than L24 (climate action only)."
+          }
+        }
+      ]
+    }
+  }
+}
