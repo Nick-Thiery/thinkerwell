@@ -80,11 +80,14 @@ describe('the lesson player and pilot measurement', () => {
     await addCurrentLearner();
     const view = renderPlayer('read');
     await waitFor(() => expect(screen.getByTestId('status')).toHaveTextContent('ready'));
-    expect(tracked()).toEqual(
-      expect.arrayContaining([
-        { type: 'lesson_open', lessonId: lesson.id },
-        { type: 'stage_enter', lessonId: lesson.id, stage: 'read' },
-      ]),
+    // Reported from effects after the render, which a busy machine can run a moment after the status shows.
+    await waitFor(() =>
+      expect(tracked()).toEqual(
+        expect.arrayContaining([
+          { type: 'lesson_open', lessonId: lesson.id },
+          { type: 'stage_enter', lessonId: lesson.id, stage: 'read' },
+        ]),
+      ),
     );
     view.unmount();
     expect(mocks.leaveLesson).toHaveBeenCalled();
