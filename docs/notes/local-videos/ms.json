@@ -144,8 +144,38 @@
       ]
     },
     "L03": {
-      "primary": null,
-      "noGoodMatch": true,
+      "primary": {
+        "youtubeId": "KegrH8NJNFk",
+        "title": "Misi Cikgu Turbo: Jelajah Galaksi! | Sains Tahun 6 Unit 11: Galaksi",
+        "channel": "COCOGENDUT",
+        "channelUrl": "https://www.youtube.com/@COCO-GENDUT",
+        "fullDurationSeconds": 424,
+        "spokenLanguage": "ms",
+        "captions": "auto",
+        "autoDubbed": false,
+        "verifiedByOembed": true,
+        "startSeconds": 0,
+        "endSeconds": 266,
+        "durationSeconds": 266,
+        "reviewStatus": "prescreened",
+        "why": "Video animasi ini membawa kamu dari Malaysia ke Bumi, ke Sistem Suria, ke galaksi Bima Sakti dan akhirnya ke seluruh alam semesta.",
+        "beforeQuestion": "Apakah tanda yang memberitahu kamu bahawa video ini menggunakan skala yang sangat luas?",
+        "afterQuestion": "Apakah yang ditunjukkan oleh skala luas ini? Butiran manusia apakah yang ditinggalkannya?",
+        "questionsChanged": [],
+        "summary": "Cikgu Turbo dan murid-muridnya mahu menyiasat galaksi. Galaksi ialah satu kumpulan yang sangat besar yang mengandungi bintang, gas dan debu. Sebuah galaksi boleh mengandungi berbilion-bilion bintang.\n\nKemudian mereka melihat \"alamat\" kita, dari dekat hingga sangat jauh. Malaysia berada di Bumi. Bumi ialah sebuah planet dalam Sistem Suria. Sistem Suria pula berada dalam galaksi Bima Sakti. Apabila dilihat dari atas, Sistem Suria kita hanyalah sebahagian kecil daripada Bima Sakti.\n\nGalaksi ada pelbagai bentuk: berpilin, elips dan tidak sekata. Matahari bukan galaksi, tetapi sebuah bintang. Bima Sakti juga bukan satu-satunya galaksi. Alam semesta mempunyai sangat banyak galaksi.",
+        "summaryBasis": "transcript",
+        "keyPoints": [
+          "Video ini menyusun tempat dari kecil kepada besar: Malaysia, Bumi, Sistem Suria, Bima Sakti dan alam semesta.",
+          "Sebuah galaksi boleh mengandungi berbilion-bilion bintang.",
+          "Dilihat dari atas, Sistem Suria kita hanyalah sebahagian kecil daripada Bima Sakti."
+        ],
+        "contentNote": "Video ini ialah kartun untuk murid Tahun 6, dengan watak haiwan dan gurauan ringan, jadi murid yang lebih tua mungkin rasa ia terlalu mudah. Bahagian yang dipilih berhenti sebelum lagu di hujung video.",
+        "screening": {
+          "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+          "on": "2026-10-16",
+          "notes": "COCOGENDUT, 7:04, Aug 2026, embeddable, asr:ms (clean, correctly labelled), no dubbing. Animated Sains Tahun 6 Unit 11 (Galaksi) with \"Cikgu Turbo\" and three animal pupils (Malaysian Malay throughout: murid, makmal, Sains Tahun 6). 0:00 Kiki is ready to \"go to the galaxy\"; \"we're already in a galaxy: our house, our school, the Earth\"; 0:20 a galaxy is a huge group of stars, gas and dust, with billions of stars; 1:01 \"where are we? let's look at our address from near to very far\": Malaysia, Earth, solar system, Milky Way (\"the postman would get dizzy\"); 2:04 the Milky Way is a spiral; seen from above our solar system is only a small part of it; \"how small we are\", \"the more we know, the more we see how wide the universe is\"; 2:25 spiral, elliptical and irregular galaxies; 3:09 quiz: the Sun is a star, not a galaxy; 3:30 the universe has very many galaxies; 4:10 sorting game, Earth, solar system, Milky Way, universe (ends 4:26); 4:26 \"Lagu Galaksi Turbo\" song; 5:11 recap; 6:15 \"Cikgu Turbo's message\": the universe is vast but we can still ask and explore. A new channel (first videos 2026); animal sidekicks and slapstick jokes (\"like my hair when I wake up\"). PRESCREEN (recommend) for L03 ms, 0–266 (everything before the song). The zoom from Malaysia out to the universe answers the Before question directly (\"our address from near to very far\"); the After question works by inference (from above, the solar system is a small dot: houses and people disappear). Both of the lesson's questions kept. Aimed at 11-12-year-olds: older learners may find it childish (teachers' note). Reviewer should also judge the animation and the channel (new, possibly AI-assisted production). Drafts written."
+        }
+      },
       "screened": [
         {
           "youtubeId": "4stLvVMpAPU",
@@ -173,11 +203,11 @@
           "captions": "auto",
           "autoDubbed": false,
           "verifiedByOembed": true,
-          "reviewStatus": "unverified",
+          "reviewStatus": "rejected",
           "screening": {
             "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
-            "notes": "Planetarium Negara, 4:35, 2021, embeddable, asr labelled id (garbled: an echoing gallery with music). A walk through the National Planetarium's universe gallery (solar system, meteors, the Sun). The captions are unreadable, and a gallery tour isn't about zooming between scales or what a wide scale leaves out. UNVERIFIED for L03 ms, leaning REJECT on fit."
+            "notes": "Planetarium Negara, 4:35, Apr 2021, embeddable, asr:id (new since round 4; nonsense), no dubbing. Re-checked: it now has an automatic track, but the captions are noise over music (\"Kurosaki Valentine berdarah job\", \"cursors-4u\"). The description says it is a walk through the gallery's \"Alam Semesta\" exhibits (formation of the solar system, meteors, floating planets, the Sun, \"made of stars\"). REJECT for L03 ms: a gallery walkthrough of exhibits, not about seeing one place at different scales, and the captions are unusable (one reads \"berdarah\")."
           }
         },
         {
@@ -226,6 +256,54 @@
             "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
             "notes": "Cikgu Teo (a teacher's own channel), 10:08, Sep 2021, embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. Form 2 Science 12.1: astronomical units and light years, converting km to AU and ly with worked examples. REJECT for L03 ms: unit conversion arithmetic; nothing on what a wide scale shows or hides."
+          }
+        },
+        {
+          "youtubeId": "D1R21rUKS3E",
+          "title": "Saiz SEBENAR Alam Semesta?",
+          "channel": "Spacedollah",
+          "channelUrl": "https://www.youtube.com/@spacedollah",
+          "fullDurationSeconds": 465,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Spacedollah, 7:45, Jul 2025, embeddable, NO captions, no dubbing. \"Saiz SEBENAR Alam Semesta?\": the description promises a cosmic journey that starts on Earth, steps out to the Moon (384,400 km; \"only 12 people have walked there\") and on outwards, \"to see our existence from a wider perspective\". UNVERIFIED: no captions. The best lead for L03 ms on paper (a step-by-step zoom out, in Malaysian Malay). A one-person personality channel (Syed Abdullah) whose other videos include \"10 cruellest prisons\" and death rituals, so only this video, and a person must watch it."
+          }
+        },
+        {
+          "youtubeId": "vYltM3IWMS0",
+          "title": "Skala Saiz Planet Sistem Suria dan Alam Semesta I Planet Size Comparison",
+          "channel": "Astro Lab",
+          "channelUrl": "https://www.youtube.com/@AstrolabMalaysia",
+          "fullDurationSeconds": 496,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Astro Lab, 8:16, Feb 2021, embeddable, only an asr:ja track (music tags), no dubbing. \"Skala Saiz Planet Sistem Suria dan Alam Semesta\": planets, dwarf planets and comets compared by size, set to music. REJECT for L03 ms: no narration."
+          }
+        },
+        {
+          "youtubeId": "ih_rkrXDTZ4",
+          "title": "SAINS TINGKATAN 2 BAB 11 BINTANG DAN GALAKSI DALAM ALAM SEMESTA",
+          "channel": "Suriati Salim",
+          "channelUrl": "https://www.youtube.com/@SuriatiSalim",
+          "fullDurationSeconds": 553,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Suriati Salim, 9:13, Jul 2026, embeddable, asr:ms, no dubbing. A Form 2 pupil's own presentation of Sains bab 11 (he names himself, his class and his school in Melaka): galaxy types, the Milky Way, life cycle of stars, \"open your textbook at page 242\"; a short relative-size comparison of Earth, solar system, Milky Way and universe at 6:23. REJECT for L03 ms: a child's personal school video with his name and school; the scale part is brief; KegrH8NJNFk covers it better."
           }
         }
       ]
@@ -281,6 +359,70 @@
             "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
             "notes": "Cikgu Dess2020 (a teacher's own channel), 10:15, Oct 2020, embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. Form 2 Science bab 11: types of galaxy, the Milky Way, how stars form in nebulae, red giants, supernovae, neutron stars, black holes, classifying stars. REJECT for L04 ms (and L03 ms): nothing on the Big Bang or the evidence for it, nothing on scale; the auto-captions show a rude mis-hearing (\"porno\", 4:41)."
+          }
+        },
+        {
+          "youtubeId": "ckAVsdkL2lM",
+          "title": "Bagaimana Sains Menjelaskan Teori Multiverse & Big Bang?",
+          "channel": "Astro Lab",
+          "channelUrl": "https://www.youtube.com/@AstrolabMalaysia",
+          "fullDurationSeconds": 925,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Astro Lab, 15:25, Mar 2023, embeddable, asr:id (garbled), no dubbing. \"Bagaimana Sains Menjelaskan Teori Multiverse & Big Bang?\": singularity, Planck era, symmetry breaking, inflation, the shape of the universe (Omega), the CMB, then quantum superposition and Schrödinger's cat towards the multiverse. Reads like a machine translation of an English script; \"subscribe\" plug at 0:22. REJECT for L04 ms: far too technical and long, captions badly garbled, and the second half is about the multiverse."
+          }
+        },
+        {
+          "youtubeId": "2Tr0sV9h7m8",
+          "title": "BIGBANG THEORY | Teori Bigbang",
+          "channel": "guru cakap",
+          "channelUrl": "https://www.youtube.com/@gurucakap9177",
+          "fullDurationSeconds": 227,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "guru cakap, 3:47, Apr 2022, embeddable, asr:id, no dubbing. \"Teori Bigbang\": a list of origin theories, then the Big Bang told as a giant spinning cloud of gas that exploded, with the Earth forming \"over tens of billions of years\". REJECT for L04 ms: Indonesian (siswa, jagat raya), and wrong: it mixes the nebular theory of the solar system into the Big Bang."
+          }
+        },
+        {
+          "youtubeId": "Cj__qZ_8D30",
+          "title": "KEMUNCULAN & PENGAKHIRAN ALAM SEMESTA",
+          "channel": "fadhlilwafi",
+          "channelUrl": "https://www.youtube.com/@fadhlilwafi6753",
+          "fullDurationSeconds": 649,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "fadhlilwafi, 10:49, Jan 2021, embeddable, asr:id (not read), no dubbing. \"Kemunculan & Pengakhiran Alam Semesta\": the description says it is a student's assignment on the Big Bang, star birth and the end of the universe (Big Rip, Big Freeze, \"big slurp\"). REJECT for L04 ms: an individual's coursework upload, half on the end of the universe. Captions not fetched."
+          }
+        },
+        {
+          "youtubeId": "ZR4dwRubfc0",
+          "title": "SAINS [TINGKATAN : 2] [BAB 11 : BINTANG, GALAKSI]",
+          "channel": "CIKGU FAIROSE",
+          "channelUrl": "https://www.youtube.com/@cikgufairose",
+          "fullDurationSeconds": 840,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "CIKGU FAIROSE (a teacher's own channel), 14:00, Nov 2021, embeddable, asr:id, no dubbing. Form 2 Sains bab 11: classifying stars by colour, size and brightness, star birth in nebulae, red giants, supernovae (\"letupan besar\" here means a supernova), neutron stars and black holes. REJECT for L04 ms: nothing on the beginning of the universe. Malaysia's Form 2 chapter 11 is stars and galaxies, so teacher channels don't cover the Big Bang."
           }
         }
       ]
@@ -1133,6 +1275,118 @@
             "on": "2026-10-16",
             "notes": "Berita RTM, 1:35, Oct 2015, embeddable, NO captions, no dubbing. Civil Defence's community emergency response teams (CDERT) let communities take part directly in disaster management (description). UNVERIFIED: no captions; old; probably an official announcement. Weak."
           }
+        },
+        {
+          "youtubeId": "KKYYnjTiOIs",
+          "title": "MERCY Malaysia Documentary: Hulu Langat Living Lab",
+          "channel": "MERCY Malaysia",
+          "channelUrl": "https://www.youtube.com/@MERCYMalaysiaHQ",
+          "fullDurationSeconds": 640,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "MERCY Malaysia, 10:40, May 2023, embeddable, asr:en, no dubbing. \"Hulu Langat Living Lab\": the December 2021 floods, MERCY's mobile clinic by motorcycle, mental-health support, then community preparedness and \"living labs\" with local leaders; ends with an appeal to donors. REJECT for L14 ms: spoken in English, and mostly about the organisation and its funding."
+          }
+        },
+        {
+          "youtubeId": "S5Dv9fSYn4A",
+          "title": "Siren amaran banjir dianggap ganggu tidur penduduk",
+          "channel": "Myra Lamb",
+          "channelUrl": "https://www.youtube.com/@MyraLamb-d5w",
+          "fullDurationSeconds": 295,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Myra Lamb, 4:55, Dec 2020, embeddable, NO captions, no dubbing. \"Siren amaran banjir dianggap ganggu tidur penduduk\": the description says only about five per cent of residents near rivers understand the national flood forecasting and warning programme (PRAB), and some see the sirens as disturbing their sleep. UNVERIFIED: no captions. Exactly the L14 After question (why a warning can be hard to use), but it is an aggregator channel re-posting news, not the publisher; leaning reject unless the original report can be found."
+          }
+        },
+        {
+          "youtubeId": "YHBF58kIA7o",
+          "title": "Bunyi siren amaran awal banjir bantu penduduk segera berpindah",
+          "channel": "Bernama Official",
+          "channelUrl": "https://www.youtube.com/@LifestyleYouthBernama",
+          "fullDurationSeconds": 94,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Bernama Official, 1:34, Dec 2020, embeddable, NO captions, no dubbing. \"Bunyi siren amaran awal banjir bantu penduduk segera berpindah\": a siren at 12.30 am helped villagers of Kampung Ulu Sungai, Raub, leave before the Lipis river reached danger level (description). UNVERIFIED: no captions. A short lead for L14 ms (a warning that worked, at night); a person must watch it."
+          }
+        },
+        {
+          "youtubeId": "bKYFtWr8AGY",
+          "title": "Simulasi banjir Kuala Krai",
+          "channel": "Astro AWANI",
+          "channelUrl": "https://www.youtube.com/@astroawani",
+          "fullDurationSeconds": 263,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Astro AWANI, 4:23, Dec 2015, embeddable, NO captions, no dubbing. \"Simulasi banjir Kuala Krai\": after the 2014 Kelantan floods, a village flood drill to give the community the knowledge to face a flood; how villagers respond matters to save lives (description). UNVERIFIED: no captions. The strongest new lead for L14 ms (a community practising its own response); a person must watch it."
+          }
+        },
+        {
+          "youtubeId": "yA-4nWqhWx8",
+          "title": "BANJIR | Sistem Amaran Awal Di Kawasan Berisiko Ditambah Baik",
+          "channel": "Buletin TV3",
+          "channelUrl": "https://www.youtube.com/@BuletinTV3",
+          "fullDurationSeconds": 92,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Buletin TV3, 1:32, Sep 2022, embeddable, asr:id, no dubbing. A minister: early-warning systems in high-risk areas to be repaired and improved before the monsoon; a new state dam with three uses; states asked to gazette relief centres. REJECT for L14 ms: an official statement; nothing on communities or on who finds warnings hard to use."
+          }
+        },
+        {
+          "youtubeId": "Xq3QWeqvQnc",
+          "title": "PRAB dapat ramal banjir seminggu lebih awal",
+          "channel": "Astro AWANI",
+          "channelUrl": "https://www.youtube.com/@astroawani",
+          "fullDurationSeconds": 93,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Astro AWANI, 1:33, Oct 2017, embeddable, NO captions, no dubbing. \"PRAB dapat ramal banjir seminggu lebih awal\": river and rain-catchment sensors forecast floods a week ahead (description). UNVERIFIED: no captions; technology only, weak."
+          }
+        },
+        {
+          "youtubeId": "DjEIZqsefzk",
+          "title": "Banjir | Perbaiki, selaraskan kesiapsiagaan bencana",
+          "channel": "Astro AWANI",
+          "channelUrl": "https://www.youtube.com/@astroawani",
+          "fullDurationSeconds": 126,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Astro AWANI, 2:06, Dec 2021, embeddable, asr:id (badly garbled), no dubbing. Lee Lam Thye (Ikatan Komuniti Selamat) on the government's post-flood task force: aid without red tape and better preparedness, which was \"unsatisfactory\" in the recent floods. REJECT for L14 ms: one adult's policy comment, captions largely unreadable."
+          }
         }
       ]
     },
@@ -1207,8 +1461,39 @@
       ]
     },
     "L16": {
-      "primary": null,
-      "noGoodMatch": true,
+      "primary": {
+        "youtubeId": "qu9FEnHI5uw",
+        "title": "22 APRIL 2025 BERITA WILAYAH - KEPELBAGAIAN BAHASA: KEPERLUAN DAN PEMANGKIN PERPADUAN RAKYAT",
+        "channel": "Berita RTM",
+        "channelUrl": "https://www.youtube.com/@BeritaRTMBES",
+        "fullDurationSeconds": 205,
+        "spokenLanguage": "ms",
+        "captions": "auto",
+        "autoDubbed": false,
+        "verifiedByOembed": true,
+        "durationSeconds": 205,
+        "reviewStatus": "prescreened",
+        "why": "Laporan berita ini menunjukkan bagaimana orang di Pulau Pinang menggunakan beberapa bahasa untuk berbual, bekerja dan saling memahami.",
+        "beforeQuestion": "Perhatikan orang dalam video ini. Bagaimanakah mereka menggunakan lebih daripada satu bahasa dalam kehidupan seharian?",
+        "afterQuestion": "Apakah satu kelebihan yang diperoleh oleh seseorang dalam video ini kerana boleh bertutur dalam lebih daripada satu bahasa?",
+        "questionsChanged": [
+          "beforeQuestion",
+          "afterQuestion"
+        ],
+        "summary": "Di Pulau Pinang, orang daripada pelbagai kaum dan budaya tinggal dan bekerja bersama. Ramai yang boleh bertutur dalam lebih daripada satu bahasa. Seorang penduduk berkata orang yang duduk di depannya boleh bercakap dalam bahasa lain, dan mereka tetap boleh berbual tentang macam-macam perkara.\n\nLaporan ini berkata perpaduan boleh dicapai walaupun ada perbezaan, jika orang menghormati perbezaan dan berlapang dada. Seorang wanita boleh bertutur dalam empat bahasa. Dia menggunakan kemahiran ini dalam kerjanya sebagai penulis petisyen. Menurutnya, bahasa memudahkan urusan, merapatkan orang dan mengelakkan salah faham.\n\nSeorang lelaki berkata dia mahir berbahasa Tamil dan Melayu, dan boleh bercakap sedikit bahasa Cina. Laporan ini berakhir dengan pesanan bahawa kepelbagaian bahasa bukan sekadar sesuatu yang unik. Ia membuka peluang untuk berkomunikasi dan mengukuhkan perpaduan.",
+        "summaryBasis": "transcript",
+        "keyPoints": [
+          "Ramai orang di Pulau Pinang boleh bertutur dalam lebih daripada satu bahasa.",
+          "Seorang wanita yang boleh bertutur dalam empat bahasa menggunakan kemahiran itu dalam kerjanya.",
+          "Menurut video ini, bercakap dalam bahasa orang lain merapatkan orang dan mengelakkan salah faham."
+        ],
+        "contentNote": "Video ini menyebut kaum di Malaysia (Melayu, Cina, India) dan perpaduan rakyat Malaysia. Jangan minta murid memberitahu kaum atau bahasa keluarga mereka; tanya tentang bahasa yang mereka gunakan atau sedang belajar, jika mereka sendiri mahu berkongsi. Sari kata automatik ada beberapa kesalahan kecil, dan ada beberapa perkataan bahasa Inggeris dalam temu bual.",
+        "screening": {
+          "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+          "on": "2026-10-16",
+          "notes": "Berita RTM, 3:25, Apr 2025, embeddable, asr:ms (clean apart from a few mis-hearings), no dubbing. Berita Wilayah report from Penang. 0:00 people who look different by race and culture share a strength that unites them; 0:20 residents: the person sitting in front of you may be of another group but can speak another language with you, everyone comes to eat; 0:41 life in Tanjung shown through talking in many languages, a symbol of unity; 1:01 an academic: unity is possible with differences if people respect them and are open; 1:36 a woman in her 30s speaks four languages and uses this as a petition writer: language makes business easier, \"when you break the barrier\" people get closer and there are no misunderstandings; 2:02 in a multiracial society this skill lets people mix without language borders; 2:22 a man whose parents and grandparents speak Tamil is fluent in Malay and speaks some Chinese, \"language is good\"; 2:43 \"we must understand Malaysia is multicultural and respect that\"; 3:03 closing: language diversity is not just unique but a need and a catalyst for unity, opening chances to communicate. PRESCREEN (recommend) for L16 ms, whole video. Several people show, in their own words, that speaking more than one language connects people and helps at work. Both questions changed (the lesson's are about language families, which this doesn't cover). It names ethnic groups as Malaysians usually do and ends on national unity, not on anyone's identity, and treats every language as a strength; teachers' note not to ask learners about their own ethnic group or family language. Captions: \"mortulturism\" for multiculturalism, some English code-switching. Drafts written."
+        }
+      },
       "screened": [
         {
           "youtubeId": "gUSpD51vTHY",
@@ -1289,6 +1574,38 @@
             "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
             "notes": "DBPMalaysia, 10:00, Jan 2021, embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. A teacher on how he fell in love with Malay, then a complaint that young people and even Malays look down on Malay, English loanwords (\"aktual\", \"konklusi\") should not be used, foreigners learn Malay faster than Malaysian pupils. REJECT for L16 ms: treats other languages as a threat and talks about ethnic groups; the opposite of \"speaking more than one language is a strength\"."
+          }
+        },
+        {
+          "youtubeId": "vZ0TYo44CtM",
+          "title": "Kepelbagaian bahasa di Malaysia",
+          "channel": "Harian Metro",
+          "channelUrl": "https://www.youtube.com/@hmetromy",
+          "fullDurationSeconds": 61,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Harian Metro, 1:01, Aug 2018, embeddable, NO captions, no description, no dubbing. \"Kepelbagaian bahasa di Malaysia\": title only. UNVERIFIED: nothing to go on; qu9FEnHI5uw covers the topic."
+          }
+        },
+        {
+          "youtubeId": "_0-26Ay5yP8",
+          "title": "21 FEB 2022 – SPM - RAIKAN KEPELBAGAIAN BAHASA",
+          "channel": "Saluran Berita RTM #123",
+          "channelUrl": "https://www.youtube.com/@SaluranBeritaRTM123",
+          "fullDurationSeconds": 1004,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Saluran Berita RTM #123, 16:44, Feb 2022, embeddable, asr:id (badly garbled), no dubbing. Mother Language Day studio talk: a Malay teacher who went to Chinese schools and now teaches in Mandarin, English and Malay; phone-in callers; learning others' languages helps you understand their cultures (pupils respecting the fasting month); \"don't be shy of mistakes, leave your comfort zone\". REJECT for L16 ms: long phone-in talk show with captions largely unreadable; the good ideas are scattered; a caller recites a religious verse."
           }
         }
       ]
@@ -1464,6 +1781,86 @@
             "on": "2026-10-16",
             "notes": "Mimi (a primary teacher's channel), 3:51, Jul 2021, embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. A teacher shows Year 5 pupils how to present their own artwork: name, title, tools and materials, technique, elements and principles; then homework (record yourself, play a Wordwall game). REJECT for L18 ms: describing how you made your own work, not interpreting someone else's from its details."
           }
+        },
+        {
+          "youtubeId": "nLZY619E-oo",
+          "title": "B a b 1   Tengku Tsabri Ibrahim",
+          "channel": "National Art Gallery Malaysia",
+          "channelUrl": "https://www.youtube.com/@NationalArtGalleryMalaysia",
+          "fullDurationSeconds": 239,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "National Art Gallery Malaysia, 3:59, Jan 2023, embeddable, asr:id (badly garbled), no dubbing. Tengku Sabri Ibrahim making \"Wokaf Awang Sulong\", a work inspired by the oral tale Hikayat Awang Sulong Merah Muda (description); in the captions he talks about growing up with his mother's and grandmother's stories and wooden toys, and how his sculptures and paintings always carry a story. REJECT for L18 ms: about the artist's own inspiration, not reading meaning from details; captions mostly unreadable."
+          }
+        },
+        {
+          "youtubeId": "iqpONheEeWY",
+          "title": "BAKAT MUDA SEZAMAN 2021 | (ZON SELATAN) CERITA KUCING - IKMAL MUSTAFA",
+          "channel": "National Art Gallery Malaysia",
+          "channelUrl": "https://www.youtube.com/@NationalArtGalleryMalaysia",
+          "fullDurationSeconds": 211,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "National Art Gallery Malaysia, 3:31, Jan 2022, embeddable, asr:id (badly garbled), no dubbing. Young-artist award entry \"Cerita Kucing\" (Ikmal Mustafa) explaining his cat sculptures. REJECT for L18 ms: the captions are nonsense, with mis-hearings learners shouldn't see (\"pocong\", toilet words); the artist describes materials, not meaning."
+          }
+        },
+        {
+          "youtubeId": "BVM87pddMXs",
+          "title": "'Penglipurlara: Alkesah Yang Empunya Cherita' @ National Visual Art Gallery, Kuala Lumpur (2013)",
+          "channel": "Faizal Sidik",
+          "channelUrl": "https://www.youtube.com/@seniartinfo2",
+          "fullDurationSeconds": 511,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Faizal Sidik, 8:31, Feb 2014, embeddable, NO captions, no dubbing. \"Penglipurlara: Alkesah Yang Empunya Cherita\" at the National Visual Art Gallery (2013), an exhibition of contemporary works that carry on the Malay world's storytelling traditions (description, by its curator). UNVERIFIED: no captions; probably exhibition footage. A person would have to watch it."
+          }
+        },
+        {
+          "youtubeId": "yzeXQmHnhxE",
+          "title": "Cerita Sebalik Berita: Penemuan rangka manusia dan lukisan pra sejarah",
+          "channel": "Astro AWANI",
+          "channelUrl": "https://www.youtube.com/@astroawani",
+          "fullDurationSeconds": 579,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Astro AWANI, 9:39, Oct 2021, embeddable, asr:id (badly garbled), no dubbing. Live news segment from Perlis: a prehistoric skeleton and cave paintings found by a climbing club; the heritage department dates them; the state government talks about tourism. REJECT for L18 ms: about the find and tourism, not about what the paintings show; captions unreadable."
+          }
+        },
+        {
+          "youtubeId": "MBUHUq_7TL0",
+          "title": "Monuments merupakan kritikan social Ahmad Shukri Mohamed",
+          "channel": "Astro AWANI",
+          "channelUrl": "https://www.youtube.com/@astroawani",
+          "fullDurationSeconds": 113,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Astro AWANI, 1:53, Oct 2019, embeddable, NO captions, no dubbing. \"Monuments merupakan kritikan sosial Ahmad Shukri Mohamed\": 15 works in a solo exhibition that \"show different realities pointing to one meaning\" (description). UNVERIFIED: no captions. A possible L18 lead (an artist's works read as social comment); a person must watch it."
+          }
         }
       ]
     },
@@ -1502,6 +1899,70 @@
             "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
             "notes": "KRYSS Network, 8:24, Nov 2023, embeddable, manual English captions (spoken Malay with burned-in English), no dubbing. \"Suara Pelajar, Suara Utama\": young adults on unsafe schools: bullying, period spot checks and period poverty, sexual harassment at age 9, a queer speaker singled out at school. REJECT for L19 ms: sexual harassment and sexuality are outside what this course shows 10-17-year-olds, and Lesson 19 is already a sensitive lesson."
+          }
+        },
+        {
+          "youtubeId": "CygYnqHgZRI",
+          "title": "Kisah Inspirasi PPPM - Pendidikan Insklusif Menjana Modal Insan Berkualiti",
+          "channel": "PADU Unit Pelaksanaan dan Prestasi Pendidikan",
+          "channelUrl": "https://www.youtube.com/@paduunitpelaksanaandanpres8380",
+          "fullDurationSeconds": 279,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "PADU (the Education Ministry's delivery unit), 4:39, Aug 2017, embeddable, NO captions, no dubbing. \"Kisah Inspirasi PPPM - Pendidikan Inklusif\": pupils with special needs learning in ordinary classes with the same curriculum, ordinary teachers and a special-education teacher's help (description). UNVERIFIED: no captions. The best L19 ms lead (a class changing how it works so more pupils belong, with nothing about nationality, religion or ethnicity). The title's \"modal insan berkualiti\" (quality human capital) framing should be checked."
+          }
+        },
+        {
+          "youtubeId": "f5cu8KRKSJY",
+          "title": "Suara kanak-kanak perlu diketengah",
+          "channel": "Astro AWANI",
+          "channelUrl": "https://www.youtube.com/@astroawani",
+          "fullDurationSeconds": 109,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Astro AWANI, 1:49, Nov 2019, embeddable, NO captions, no dubbing. \"Suara kanak-kanak perlu diketengah\": UNICEF Malaysia ambassador Lisa Surihani says children's views should be heard and they should take part in decisions (description). UNVERIFIED: no captions. A second L19 lead (having a real say); a person must watch it."
+          }
+        },
+        {
+          "youtubeId": "zGkESsB5P5s",
+          "title": "TV3 Buletin Utama - UNICEF Memberi Remaja Peluang Bersuara",
+          "channel": "UNICEF Malaysia",
+          "channelUrl": "https://www.youtube.com/@unicefmalaysia",
+          "fullDurationSeconds": 146,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "UNICEF Malaysia, 2:26, Sep 2011, embeddable, NO captions, no dubbing. TV3 Buletin Utama: two teenage panellists and UNICEF's representative on young people's right to be heard, at the launch of the State of the World's Children 2011 report (description). UNVERIFIED: no captions; old studio interview."
+          }
+        },
+        {
+          "youtubeId": "gTkFdqAgxxk",
+          "title": "Program Program Pendidikan Khas Integrasi dan Pendidikan Inklusif",
+          "channel": "Astro AWANI",
+          "channelUrl": "https://www.youtube.com/@astroawani",
+          "fullDurationSeconds": 301,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Astro AWANI, 5:01, Mar 2019, embeddable, NO captions, no dubbing. The Deputy Prime Minister visits a Putrajaya school's integrated special-education and inclusive programme (description). UNVERIFIED: no captions; a minister's visit, weak."
           }
         }
       ]
