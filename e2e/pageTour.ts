@@ -413,6 +413,17 @@ export const pageTour: TourStop[] = [
     },
   },
   {
+    // The before-and-after check's paper sheets: its words load with the page (the lazily loaded `pilotCheck` group),
+    // its questions with it too (content/pilot-check/), in the language on screen or else English, marked as English.
+    name: 'educators: before-and-after check',
+    go: async (page, { ui }) => {
+      await openPath(page, '/educators', ui('pages.educators.title'));
+      await page.locator('.tw-edu-tools').getByRole('link', { name: ui('pages.educators.pilotCheckCta') }).click();
+      await expect(page.locator('h1')).toHaveText(ui('pilotCheck.title'));
+      await expect(page.locator('.tw-check-question')).toHaveCount(16);
+    },
+  },
+  {
     name: 'educators: code cards',
     go: async (page, { ui }) => {
       await openPath(page, '/educators', ui('pages.educators.title'));

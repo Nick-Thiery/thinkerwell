@@ -10,6 +10,7 @@ import {
   informationSheetPath,
   lessonPrintPath,
   organisationsPath,
+  pilotCheckPath,
   pilotDayPath,
   setupPath,
 } from '../app/lessonUrls';
@@ -95,6 +96,13 @@ export function EducatorsPage() {
       body: t('pages.educators.pilotDayBody'),
       cta: t('pages.educators.pilotDayCta'),
       href: pilotDayPath(),
+    },
+    {
+      icon: 'ClipboardCheck',
+      title: t('pages.educators.pilotCheckTitle'),
+      body: t('pages.educators.pilotCheckBody'),
+      cta: t('pages.educators.pilotCheckCta'),
+      href: pilotCheckPath(),
     },
   ];
   // Pilot-day tools for following the group on this device (docs/notes/pilot-day-tools.md).

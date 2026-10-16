@@ -1,0 +1,278 @@
+/*
+ * The before-and-after check (/educators/pilot-check): the learners' sheets
+ * (questions, writing, faces) and the team's answer key, built on the print
+ * views' sheet (../../print/print.css). Black on white, nothing under 14px
+ * (10.5pt) on paper; each part of the learners' sheets starts a new page.
+ */
+
+.tw-check-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.tw-check-setup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-inline-size: var(--reading-measure);
+}
+
+.tw-check-setup h1,
+.tw-check-setup p {
+  margin: 0;
+}
+
+.tw-check-howto {
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--lavender-wash);
+}
+
+.tw-check-howto h2 {
+  margin: 0 0 var(--space-2);
+}
+
+.tw-check-howto ul {
+  margin: 0;
+  padding-inline-start: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-check-sheet {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.tw-check-sheet p,
+.tw-check-sheet h2,
+.tw-check-sheet h3 {
+  margin: 0;
+}
+
+.tw-check-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-6);
+  align-items: center;
+}
+
+.tw-check-fields p {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.tw-check-blank {
+  display: inline-block;
+  inline-size: 9em;
+  border-block-end: 1.5px solid currentColor;
+  block-size: 1.2em;
+}
+
+.tw-check-box {
+  display: inline-block;
+  inline-size: 1em;
+  block-size: 1em;
+  border: 1.5px solid currentColor;
+  border-radius: 2px;
+}
+
+.tw-check-box + .tw-check-box,
+.tw-check-fields p .tw-check-box:not(:first-child) {
+  margin-inline-start: var(--space-4);
+}
+
+.tw-check-noname {
+  font-weight: 700;
+}
+
+.tw-check-part-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.tw-check-help {
+  max-inline-size: var(--reading-measure);
+}
+
+.tw-check-questions,
+.tw-check-confidence {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.tw-check-question,
+.tw-check-confidence > li {
+  display: grid;
+  grid-template-columns: 2em minmax(0, 1fr);
+  gap: var(--space-2);
+  break-inside: avoid;
+}
+
+.tw-check-confidence > li {
+  grid-template-columns: 2em minmax(0, 1fr);
+  row-gap: var(--space-2);
+}
+
+.tw-check-confidence > li > .tw-check-faces {
+  grid-column: 2;
+}
+
+.tw-check-number {
+  font-weight: 700;
+}
+
+.tw-check-stimulus {
+  padding: var(--space-2) var(--space-3);
+  border-inline-start: 3px solid currentColor;
+  margin-block-end: var(--space-2);
+}
+
+.tw-check-ask {
+  font-weight: 700;
+}
+
+.tw-check-options {
+  list-style: none;
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-check-options li {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+/* The letter in a circle a learner rings with a pencil. */
+.tw-check-letter {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 1.8em;
+  block-size: 1.8em;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.tw-check-clues {
+  margin: var(--space-2) 0;
+  padding-inline-start: var(--space-5);
+}
+
+.tw-check-faces {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.tw-check-faces li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  min-inline-size: 5em;
+  text-align: center;
+}
+
+.tw-check-face {
+  color: var(--ink);
+}
+
+.tw-check-thanks {
+  font-weight: 700;
+}
+
+.tw-check-key {
+  inline-size: 100%;
+  border-collapse: collapse;
+}
+
+.tw-check-key th,
+.tw-check-key td {
+  padding: var(--space-2);
+  border: 1px solid var(--line-strong);
+  text-align: start;
+  vertical-align: top;
+}
+
+.tw-check-rubric-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 26px;
+}
+
+@media (max-width: 600px) {
+  .tw-check-rubric {
+    font-size: 15px;
+  }
+}
+
+@media print {
+  .tw-check-page {
+    max-inline-size: none;
+  }
+
+  .tw-check-sheet {
+    font-size: 11.5pt;
+    line-height: 1.35;
+    gap: 4mm;
+  }
+
+  .tw-check-new-page {
+    break-before: page;
+  }
+
+  .tw-check-questions {
+    gap: 4mm;
+  }
+
+  .tw-check-options {
+    gap: 1mm;
+    margin-block-start: 1mm;
+  }
+
+  .tw-check-stimulus {
+    padding-block: 0.5mm;
+    margin-block-end: 1mm;
+  }
+
+  .tw-check-letter {
+    inline-size: 1.6em;
+    block-size: 1.6em;
+  }
+
+  .tw-check-confidence {
+    gap: 7mm;
+  }
+
+  .tw-check-part-title {
+    font-size: 15pt;
+    line-height: 1.2;
+  }
+
+  .tw-check-key th,
+  .tw-check-key td {
+    padding: 1.5mm 2mm;
+    border-color: #000;
+  }
+}

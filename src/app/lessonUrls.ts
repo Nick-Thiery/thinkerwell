@@ -61,6 +61,11 @@ export function pilotDayPath(): string {
   return '/educators/pilot-day';
 }
 
+/** The before-and-after check's paper sheets and answer key, to print: /educators/pilot-check. */
+export function pilotCheckPath(): string {
+  return '/educators/pilot-check';
+}
+
 /** Every learner on this device and what each has done: /educators/class. */
 export function classPath(): string {
   return '/educators/class';
