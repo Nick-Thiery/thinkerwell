@@ -22,7 +22,8 @@ export interface StagePathProps {
 
 const STAGE_ORDER: StageId[] = ['read', 'write', 'speak', 'watch', 'reflect'];
 
-const STAGE_ICON: Record<StageId, IconName> = {
+/** Each step's icon, wherever the five steps are shown (the lesson's path, About's "How our lessons work"). */
+export const STAGE_ICON: Record<StageId, IconName> = {
   read: 'BookOpen',
   write: 'Pencil',
   speak: 'MessageCircle',

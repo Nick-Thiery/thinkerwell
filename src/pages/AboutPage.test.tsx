@@ -1,7 +1,8 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 import { describe, expect, it } from 'vitest';
-import { AboutPage as AboutPageOnly } from './AboutPage';
+import { AboutPage as AboutPageOnly, STUDIES } from './AboutPage';
 
 /** About has a link (to Credits), so it needs a router. */
 function AboutPage() {
@@ -37,19 +38,23 @@ describe('AboutPage', () => {
     expect(screen.queryByRole('heading', { name: 'What Thinkerwell is' })).not.toBeInTheDocument();
     expect(screen.queryByText(/student-led project/)).not.toBeInTheDocument();
     expect(screen.queryByText(/registered charity/)).not.toBeInTheDocument();
-    expect(screen.queryByText(/first pilot/)).not.toBeInTheDocument();
+    expect(within(mission).queryByText(/pilot/)).not.toBeInTheDocument();
     expect(screen.queryByText(/Read with curiosity/)).not.toBeInTheDocument();
   });
 
-  it('shows the mission, the UN goals and then the video "Explore your world" as a picture only, not yet loaded', () => {
+  it('shows the mission, how a lesson works, then the video "Explore your world" under its heading and the UN goals', () => {
     const { container } = render(<AboutPage />);
     const mission = screen.getByRole('region', { name: 'Our mission' });
+    const lessons = screen.getByRole('region', { name: 'How our lessons work' });
+    const video = screen.getByRole('region', { name: 'See Thinkerwell in action' });
     const goals = screen.getByRole('region', { name: 'How Thinkerwell connects to the UN goals' });
     const play = screen.getByRole('button', { name: 'Play the video: Explore your world' });
     expect(mission.parentElement).toHaveClass('tw-about-cards');
-    expect(mission.nextElementSibling).toBe(goals);
-    expect(goals.nextElementSibling).toContainElement(play);
-    // The picture is the card: no "Optional" tag, title, blurb or "Watch the video" button.
+    expect(mission.nextElementSibling).toBe(lessons);
+    expect(lessons.nextElementSibling).toBe(video);
+    expect(video.nextElementSibling).toBe(goals);
+    expect(video).toContainElement(play);
+    // Under its heading, the picture is the card: no "Optional" tag, title, blurb or "Watch the video" button.
     expect(screen.queryByText('Optional')).not.toBeInTheDocument();
     expect(screen.queryByRole('heading', { name: 'Explore your world' })).not.toBeInTheDocument();
     expect(screen.queryByText(/Two minutes on why we built Thinkerwell/)).not.toBeInTheDocument();
@@ -58,6 +63,44 @@ describe('AboutPage', () => {
     expect(screen.getByRole('button', { name: 'Read instead' })).toBeVisible();
     expect(screen.getByText('Uses about 9 MB of data.')).toBeInTheDocument();
     expect(container.querySelector('video')).toBeNull();
+  });
+
+  it('explains the five steps in order, each with its name and one sentence', () => {
+    render(<AboutPage />);
+    const lessons = screen.getByRole('region', { name: 'How our lessons work' });
+    expect(
+      within(lessons).getByText(
+        'Every lesson begins with a question and gives learners five ways to explore it. Each step asks them to work with an idea in a different way.',
+      ),
+    ).toBeInTheDocument();
+    const steps = within(lessons).getAllByRole('listitem').filter((item) => item.closest('ol'));
+    expect(steps.map((step) => within(step).getByRole('heading', { level: 3 }).textContent)).toEqual(['Read', 'Write', 'Speak', 'Watch', 'Reflect']);
+    expect(steps.map((step) => step.querySelector('p')?.textContent)).toEqual([
+      'Explore a short source, story, or explanation.',
+      'Put an idea into your own words and use evidence.',
+      'Explain your thinking with a partner or aloud.',
+      'See a relevant example, or choose Read instead.',
+      'Revisit what you learned and what you still wonder.',
+    ]);
+    expect(within(lessons).getByText(/informs this design\. Our first pilot will help us learn how the full sequence works/)).toBeInTheDocument();
+  });
+
+  it('keeps the research folded away until opened, and says the studies did not test Thinkerwell', async () => {
+    const user = userEvent.setup();
+    const { container } = render(<AboutPage />);
+    const details = container.querySelector('details.tw-about-research') as HTMLDetailsElement;
+    expect(details.open).toBe(false);
+    await user.click(screen.getByText('Research behind our approach'));
+    expect(details.open).toBe(true);
+    expect(within(details).getByText(/they have not evaluated Thinkerwell or established that our exact five-step sequence improves outcomes/)).toBeInTheDocument();
+    for (const study of Object.values(STUDIES)) {
+      const link = within(details).getByRole('link', { name: (name) => name.startsWith(study.title) && name.endsWith('(opens in a new tab)') });
+      expect(link).toHaveAttribute('href', study.url);
+      expect(link).toHaveAttribute('target', '_blank');
+      expect(link).toHaveAttribute('rel', 'noreferrer');
+    }
+    // No claim the research can't support.
+    expect(container.textContent).not.toMatch(/\b(proven|proves|proof)\b|times more effective/i);
   });
 
   it("links to each team member's LinkedIn under their name, in a new tab", () => {

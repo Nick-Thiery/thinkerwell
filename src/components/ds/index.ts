@@ -45,7 +45,7 @@ export { MascotTip } from './MascotTip';
 export type { MascotTipProps } from './MascotTip';
 export { SiteHeader } from './SiteHeader';
 export type { SiteHeaderProps } from './SiteHeader';
-export { StagePath } from './StagePath';
+export { STAGE_ICON, StagePath } from './StagePath';
 export type { StagePathProps } from './StagePath';
 export { StageDots } from './StageDots';
 export type { StageDotsProps } from './StageDots';

@@ -26,6 +26,15 @@
   - Public copy calls Thinkerwell a "platform", never a "project" ("a
     student-led platform"). Where this guide below says "project" about
     Thinkerwell, read "platform".
+
+  Changed on 16 October 2026 (the team's "five steps" brief for About):
+  - Under the mission, a card "How our lessons work" names the five steps
+    with one sentence each (aboutPage in en.json), a line saying research
+    informs the design and the first pilot will show how the sequence works,
+    and, folded away, one study a step with what it did not show. Never say
+    the research proves Thinkerwell works, or cite a university's name in
+    place of what a study tested.
+  - The video has a heading, "See Thinkerwell in action", beside the UN goals.
 -->
 
 # Thinkerwell public copy: consistency and simplification handoff

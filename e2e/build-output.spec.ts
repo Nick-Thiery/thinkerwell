@@ -67,8 +67,10 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * Raised to 808 kB for local-language Watch videos: 807.0 kB with them. The two languages' videos chunks and their loader,
  * the Credits list, the part of a longer video and its publisher's link in the Watch step, teacher guide and print view,
  * and three messages in four languages (docs/notes/local-language-videos.md). Approving videos will grow it again.
+ * Raised to 812 kB for About's "How our lessons work": 810.3 kB with it (+3.3 kB: the card, its research list and
+ * its words in English, Indonesian and Malay, which the offline copy must have).
  */
-const PRECACHE_BUDGET = 808_000;
+const PRECACHE_BUDGET = 812_000;
 /**
  * Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before),
  * 210.5 kB after the language and pilot-day merges, 212.7 kB with the header's language switch and the one language

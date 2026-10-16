@@ -19,6 +19,8 @@ export const LAZY_MESSAGE_GROUPS = [
   'siteVideo',
   // The pilot day guide for staff (src/pages/educators/PilotDayPage.tsx): one printable page, in the Educators chunk.
   'pilotDay',
+  // About's "How our lessons work" card, its research and the video's heading (src/pages/AboutPage.tsx), in the Settings and About chunk.
+  'aboutPage',
   // Settings' "Share pilot results" (src/pages/settings/PilotResultsSetting.tsx): educators only.
   'pilotResults',
 ] as const;

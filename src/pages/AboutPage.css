@@ -28,10 +28,9 @@
 }
 
 /*
- * The mission, the UN goals and the video. Phone and tablet: stacked in that
- * order. Laptop: the mission with the video under it, beside the goals (the
- * second row takes any spare height, so nothing opens a gap between the
- * mission and the video). Wide screen: all three in a row, tops aligned. Each
+ * The mission, "How our lessons work", the video and the UN goals. Phone and
+ * tablet: stacked in that order. Laptop: the mission and the lessons across
+ * the page, then the video beside the goals with their tops aligned. Each
  * card is as tall as its own content, never stretched with an empty area.
  */
 .tw-about-cards {
@@ -44,9 +43,10 @@
   .tw-about-cards {
     display: grid;
     grid-template:
-      'mission goals' auto
-      'video goals' 1fr
-      / minmax(0, 1fr) minmax(0, 1fr);
+      'mission mission' auto
+      'lessons lessons' auto
+      'video goals' auto
+      / minmax(0, 5fr) minmax(0, 7fr);
     align-items: start;
   }
 
@@ -54,23 +54,31 @@
     grid-area: mission;
   }
 
-  .tw-about-goals {
-    grid-area: goals;
+  .tw-about-lessons {
+    grid-area: lessons;
   }
 
   .tw-about-video {
     grid-area: video;
   }
-}
 
-@media (min-width: 1400px) {
-  .tw-about-cards {
-    grid-template: 'mission goals video' auto / minmax(0, 1fr) minmax(0, 1.15fr) minmax(0, 1fr);
+  .tw-about-goals {
+    grid-area: goals;
   }
 }
 
 .tw-about-video {
   min-inline-size: 0;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  gap: var(--space-4);
+}
+
+/* The mission and the lessons' introduction keep a comfortable line length
+   across the whole page. */
+.tw-about-mission p,
+.tw-about-lessons-intro {
+  max-inline-size: var(--reading-measure);
 }
 
 .tw-about-hero {
@@ -125,6 +133,12 @@
   gap: var(--space-5);
 }
 
+.tw-about-goal-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: var(--space-5);
+}
+
 .tw-about-goal {
   display: grid;
   grid-template-columns: 72px minmax(0, 1fr);
@@ -151,6 +165,132 @@
 .tw-about-goal span {
   font-size: 16px;
   line-height: 24px;
+}
+
+/* How our lessons work: the five steps as a list on a phone and a tablet,
+   five even columns inside the one card on a laptop. The icons are the
+   lesson path's; no colour of their own, so the step is named in words. */
+.tw-about-lessons {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  gap: var(--space-5);
+}
+
+.tw-about-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-4);
+}
+
+.tw-about-step {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: var(--space-4);
+  align-items: start;
+}
+
+.tw-about-step-icon {
+  inline-size: 44px;
+  block-size: 44px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line-strong);
+  background: var(--canvas);
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tw-about-step-name {
+  margin: 0 0 var(--space-1);
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.tw-about-step p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@media (min-width: 1100px) {
+  .tw-about-steps {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: var(--space-5);
+  }
+
+  .tw-about-step {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-3);
+  }
+}
+
+.tw-about-research-note {
+  color: var(--ink-muted);
+  max-inline-size: var(--reading-measure);
+}
+
+/* "Research behind our approach": closed until opened, a full tap target
+   with the site's focus ring (global.css). */
+.tw-about-research summary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: var(--target-min);
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.tw-about-research summary::-webkit-details-marker {
+  display: none;
+}
+
+.tw-about-research-chevron {
+  transition: transform 150ms ease;
+}
+
+.tw-about-research[open] .tw-about-research-chevron {
+  transform: rotate(90deg);
+}
+
+[dir='rtl'] .tw-about-research[open] .tw-about-research-chevron {
+  transform: scaleX(-1) rotate(90deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tw-about-research-chevron {
+    transition: none;
+  }
+}
+
+.tw-about-research-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding-block-start: var(--space-3);
+  max-inline-size: var(--reading-measure);
+}
+
+.tw-about-studies {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.tw-about-studies li {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.tw-about-study-cite {
+  overflow-wrap: anywhere;
 }
 
 .tw-about-team {
