@@ -1,6 +1,6 @@
 # Local-language Watch videos
 
-A lesson's Watch step has one YouTube video, in English. For a language whose lessons are translated (Bahasa Indonesia, Bahasa Melayu), a lesson can instead show **its own video, in that language, by local creators**. This note says how that works, why it is built so that nothing switches on by itself, and how a reviewer approves a video. It is in the app and tested, and **no local video is approved yet**: every lesson still shows the English video, with the note that it is in English, exactly as before. On 15 October 2026 every candidate was pre-screened from its captions (below, "The candidates"); 26 of the 48 lesson slots have a recommended video waiting for a reviewer.
+A lesson's Watch step has one YouTube video, in English. For a language whose lessons are translated (Bahasa Indonesia, Bahasa Melayu), a lesson can instead show **its own video, in that language, by local creators**. This note says how that works, why it is built so that nothing switches on by itself, and how a reviewer approves a video. It is in the app and tested, and **no local video is approved yet**: every lesson still shows the English video, with the note that it is in English, exactly as before. On 15 October 2026 every candidate was pre-screened from its captions (below, "The candidates"); on 16 October the rest were screened and more were looked for, and 42 of the 48 lesson slots now have a recommended video waiting for a reviewer.
 
 ## Why it works this way
 
@@ -72,27 +72,29 @@ Nothing in this file reaches the app or the browser. The pre-screen was done by 
 
 ### The pre-screens of 15 and 16 October 2026
 
-On 15 October, the 44 videos for the 48 slots (24 lessons in each language) from the audit in `docs/research/`; on 16 October, 59 of the 82 videos in the research notes of #42 (Malay) and #43 (Indonesian). Each was played and its captions read. The other 23 from #43 weren't reached because the laptop's browser went offline; they are all for Indonesian lessons that already have a recommendation, and are in `id.json` as `unverified`, marked "Not screened yet". Where the slots stand now:
+On 15 October, the 44 videos for the 48 slots (24 lessons in each language) from the audit in `docs/research/`; on 16 October, all 82 videos in the research notes of #42 (Malay) and #43 (Indonesian): 59 in the morning and, once the laptop's browser was back, the last 23 (all for Indonesian lessons that already had a recommendation); then 37 more, found for the slots still open and to check three alternatives against their recommendations. Each was played and its captions read. Where the slots stand now:
 
 | | Bahasa Indonesia | Bahasa Melayu |
 | --- | --- | --- |
-| Recommended (prescreened) | 23: every lesson but L07 | 13: L01, L02, L05, L06, L07, L08, L10, L13, L15, L17, L20, L21, L22 |
-| Of those, weak or partial fits | L05, L16, L17, L18 | L15, L22 |
-| Other videos that also fit ("Also suitable") | 4: L02, L14, L20, L24 | 7: L01, L07, L08, L13, L17, L20, L21 |
-| No recommendation; a person must watch one first | L07 | L03, L04, L11, L12, L14, L16, L18, L23 |
-| Rejected, nothing else yet | none | L09, L19, L24 |
+| Recommended (prescreened) | 24: every lesson | 18: L01, L02, L05, L06, L07, L08, L09, L10, L11, L12, L13, L15, L17, L20, L21, L22, L23, L24 |
+| Of those, weak or partial fits | L05, L16, L17, L18 | L15, L22, L23 |
+| Other videos that also fit ("Also suitable") | 15: L02, L03, L04, L05, L07, L08, L10, L11, L13, L14, L15, L17, L20, L21, L24 | 7: L01, L07, L08, L13, L17, L20, L21 |
+| No recommendation; a person must watch one first | none | L03, L04, L14 (best lead: Astro AWANI's sign-language flood warnings, `ghm-3Vky1Us`), L16, L18 |
+| Rejected, nothing else yet | none | L19 |
 
 New on 16 October: Indonesian L01, L06, L09, L12, L16, L19, L20 and L24, and Malay L05 and L15; Malay L13's recommendation changed to a better fit (Astro Lab's video on hotter dry seasons), and the earlier one is now an alternative.
 
-Questions: 12 of the 36 recommendations keep both of the lesson's questions, 9 adapt one and 15 adapt both to the video, because a video with another example (Banten's river instead of the Tigris, Melaka instead of the Silk Road) would leave the lesson's question unanswerable. `npm run videos:sheet` lists each one beside the lesson's own. The alternatives have no drafts yet (except Malay L13's earlier recommendation): if a reviewer prefers one, its drafts are written then.
+Later on 16 October: Indonesian L07 (Lumensia, on how surplus, irrigation and the temple's store made the first states; AI-dubbed, an anonymous new channel, and nothing outside 1:27–4:16 may be shown) and Malay L09, L11, L12, L23 and L24. Three Indonesian recommendations changed to the alternative that fits the lesson better: L03 (Kok Bisa?'s zoom out from people to the edge of the solar system), L15 (TVRI on noken) and L21 (Kompas on a market in NTT that still barters). The earlier ones are alternatives now and keep their drafts.
+
+Questions: 14 of the 42 recommendations keep both of the lesson's questions, 10 adapt one and 18 adapt both to the video, because a video with another example (Banten's river instead of the Tigris, Melaka instead of the Silk Road) would leave the lesson's question unanswerable. `npm run videos:sheet` lists each one beside the lesson's own. The alternatives have no drafts yet (except the earlier recommendations: Malay L13, Indonesian L03, L15 and L21): if a reviewer prefers one, its drafts are written then.
 
 ### What the pre-screen found that matters beyond one video
 
-- **YouTube's AI dubbing.** It is common: four of the recommendations (Indonesian L01, L06 and L10, Malay L05) and several other candidates have an AI-dubbed English soundtrack, and in a browser set to English YouTube played that one, not the original. The embed asks for the player in the video's language (`hl`), which is meant to keep the original, but that is YouTube's choice and couldn't be tested from here (YouTube's player refuses to run outside a real page). So `videos:apply` refuses a candidate with `autoDubbed: true` until the reviewer has played it **on the devices learners use** and heard the original language (`--checked-audio`). None of the English videos had a dubbed track when checked.
+- **YouTube's AI dubbing.** It is common: five of the recommendations (Indonesian L01, L06, L07 and L10, Malay L05) and several other candidates have an AI-dubbed English soundtrack, and in a browser set to English YouTube played that one, not the original. The embed asks for the player in the video's language (`hl`), which is meant to keep the original, but that is YouTube's choice and couldn't be tested from here (YouTube's player refuses to run outside a real page). So `videos:apply` refuses a candidate with `autoDubbed: true` until the reviewer has played it **on the devices learners use** and heard the original language (`--checked-audio`). None of the English videos had a dubbed track when checked.
 - **Automatic captions.** Most local videos have only YouTube's automatic captions, which the player shows by default. They mis-hear: in two videos outside the chosen parts they produce a rude word, and one Malay video's captions are Hindi gibberish (YouTube took the Malay for Hindi). YouTube also labels most Malaysian Malay captions as Indonesian. The reviewer watches with captions on.
 - **Small channels, re-uploads and machine-made narration.** Several promising videos come from one-person channels whose narration may be synthetic (the sheet says which); a reviewer decides whether that matters. Videos that looked like re-uploads of someone else's work were turned down, since the brief is the original creators' own uploads, and so was one whose machine-made script got a basic date wrong (Europeans trading at Melaka in the 15th century).
 - **A video that asks for a sign-in.** UNICEF Indonesia's `-k3igxia4Ho` (L24) wouldn't play signed out ("Please sign in. This helps protect our community") while every other video did. Learners are never signed in, so it may not play for them.
-- **Unsuitable things a title doesn't show.** Rejected for content: a farming video with jokes about sex, a TV lesson where the host remarks on a schoolgirl's looks, a savings video that says money belongs in a bank (many refugee learners can't open one), and a commercial tutoring upsell.
+- **Unsuitable things a title doesn't show.** Rejected for content: a farming video with jokes about sex, a TV lesson where the host remarks on a schoolgirl's looks, a savings video that says money belongs in a bank (many refugee learners can't open one), a commercial tutoring upsell, a savings video with an investment app's referral code, a video about going home to the family village for Lebaran (many refugee learners can't), one asking "where do we Indonesians come from?", and videos that get the facts wrong (seasons explained by the Earth's tilt, map scales the wrong way round).
 
 ## How a reviewer approves a video
 
@@ -125,7 +127,7 @@ To take a video back: delete its entry (or set `"approved": false`). The lesson 
 ## Open points
 
 - Nothing is approved. The reviewers are the HELP teacher for Bahasa Indonesia and the Malaysian partner for Bahasa Melayu; the founders choose them.
-- Lessons 7, 9 and 19 have no Indonesian candidate, and seven Malay slots need someone to watch a video that has no captions. Lessons 4 and 19 are sensitive: a local educator reviews any video for them first.
+- Six Malay slots have no recommendation: L03, L04, L14, L16 and L18 have only videos without captions for a person to watch, and L19 nothing. Malaysian YouTube has few short, captioned social-studies explainers, and YouTube labels most Malaysian Malay captions as Indonesian and mis-hears them badly, so most Malay teachers' notes suggest captions off. Lessons 4 and 19 are sensitive: a local educator reviews any video for them first.
 - Whether `hl` keeps YouTube's original soundtrack for a dubbed video is untested (see above).
 - The written versions of local videos are not in the review spreadsheet (`npm run review:export`): they are written for the video and approved by the person who watched it, not translated from English.
 - Listen reads the Read stage only, so local videos need no recordings.

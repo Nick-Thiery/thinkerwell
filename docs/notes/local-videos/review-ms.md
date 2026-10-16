@@ -4,7 +4,7 @@ Made by `npm run videos:sheet` from `docs/notes/local-videos/ms.json`. Don't edi
 
 Every lesson shows its English video, with a note that it is in English and the written version in Bahasa Melayu, until a person who speaks Bahasa Melayu watches a video below and approves it. **Nothing here is approved.** The candidates were pre-screened by an AI from YouTube's captions (in a browser that was not signed in); that is a first filter, not a review. Read docs/notes/local-language-videos.md first.
 
-13 lessons have a recommended video, 7 other videos also fit, 17 videos still need someone to watch them, and 3 lessons have nothing yet.
+18 lessons have a recommended video, 7 other videos also fit, 23 videos still need someone to watch them, and 1 lesson has nothing yet.
 
 ## Lesson 1: How can we find out about the past?
 
@@ -249,6 +249,47 @@ To approve it: `npm run videos:apply -- ms L07 --approved-by "Your name"`
 
 To approve it: `npm run videos:apply -- ms L08 --approved-by "Your name"`
 
+## Lesson 9: How do inventions change everyday life?
+
+**Recommended:** [PdPR | Pelajar luar bandar bimbang tercicir](https://www.youtube.com/watch?v=2zr9aP8U_GU), by [Astro AWANI](https://www.youtube.com/@astroawani)
+
+- **Part to watch:** the whole video (3:31)
+- **Captions on YouTube:** auto
+
+**Why this video** (shown to learners): Video berita ini menunjukkan bahawa belajar dalam talian membantu ramai murid, tetapi tidak semua murid dapat menggunakannya.
+
+- **Think first (adapted to this video):** Apakah yang boleh menghalang seseorang daripada menggunakan sesuatu teknologi baharu? Perhatikan contoh dalam video.
+  - The lesson's question now: Bolehkah sesuatu ciptaan membawa kemudaratan walaupun ciptaan itu menjadikan sesuatu kerja lebih cepat? Perhatikan satu contoh.
+- **After you watch (adapted to this video):** Mengapakah teknologi yang sama tidak membantu semua orang dengan cara yang sama?
+  - The lesson's question now: Mengapakah kita perlu melihat cara orang menggunakan mesin itu, bukan hanya apa yang boleh dilakukannya?
+
+**Written version** ("Read instead", draft by AI: correct anything that is wrong or unclear):
+
+> Video berita ini melaporkan tentang pengajaran dan pembelajaran di rumah (PdPR). Cara belajar dalam talian ini membantu murid terus belajar ketika mereka tidak dapat ke sekolah. Tetapi ia juga menunjukkan jurang digital antara komuniti bandar dengan luar bandar. Murid yang tiada peranti atau sambungan internet boleh tercicir.
+> 
+> Seorang murid di kawasan luar bandar bercerita tentang cabarannya dengan telefon bimbitnya. Bapanya tidak mampu menyediakan peranti dan internet berkelajuan tinggi. Dia hilang pekerjaan sebagai pekerja kilang selepas kilang itu ditutup.
+> 
+> Seorang bapa lain berkata masalah ini biasa bagi sesetengah ibu bapa. Walaupun sudah ada peranti, sambungan internet pula menjadi masalah. Dia berharap pihak sekolah boleh menyediakan pilihan lain, seperti nota ulang kaji tambahan, untuk murid luar bandar.
+
+**Key points:**
+
+- Belajar dalam talian membantu murid terus belajar ketika mereka tidak dapat ke sekolah.
+- Murid yang tiada peranti atau internet yang baik boleh tercicir.
+- Kos dan liputan internet menyebabkan teknologi ini tidak membantu semua orang dengan sama rata.
+
+**Note for teachers:** Video ini menyebut ibu bapa yang hilang pekerjaan dan tidak mampu membeli peranti, jadi sesetengah murid mungkin mengalami perkara yang sama. Sari kata automatik untuk temu bual dalam video ini sangat banyak salah.
+
+**What the pre-screen found:** Astro AWANI, 3:31, Jan 2021, embeddable, asr labelled id (narration readable, interviews in a regional dialect badly garbled), no dubbing. News, PdPR (home-based learning in the pandemic): online learning lets pupils keep learning but shows the digital divide between urban and rural communities; pupils without a device or internet fall behind (0:00); a rural secondary pupil on her phone problems; her father can't afford a device and fast internet after losing his factory job when the factory closed (1:04); another parent: even with a device, the connection is the problem; he hopes schools give alternatives such as extra revision notes (2:07-3:31). PRESCREEN (recommend) for L09 ms, whole video: what can stop people using a technology, and why it doesn't help everyone equally. Both questions changed (the lesson's are about harm from a faster machine, which this video doesn't cover). The "invention" is online learning, not a machine. A family losing income is mentioned: teachers' note. Interviews' captions very garbled; the written version is based on the narration. Drafts written.
+
+**Before you approve, check:**
+
+- [ ] I watched the part above with the sound on, in the language, from start to end.
+- [ ] It is accurate, and right for learners aged 10 to 17, some of them refugees.
+- [ ] Both questions can be answered from the video and from the written version.
+- [ ] The written version and key points say what the video says (I corrected them in the candidates file if not).
+
+To approve it: `npm run videos:apply -- ms L09 --approved-by "Your name"`
+
 ## Lesson 10: Why do people build towns near rivers?
 
 **Recommended:** [Tingkatan 1 | Sejarah | Tamadun Awal Dunia Serta Empat Lokasi Awal Tamadun Dunia | R296](https://www.youtube.com/watch?v=uZXZc3HgApU&t=189s), by [EduwebTV KPM](https://www.youtube.com/@EduwebTVkpm)
@@ -287,6 +328,84 @@ To approve it: `npm run videos:apply -- ms L08 --approved-by "Your name"`
 - [ ] The written version and key points say what the video says (I corrected them in the candidates file if not).
 
 To approve it: `npm run videos:apply -- ms L10 --approved-by "Your name"`
+
+## Lesson 11: How do maps help us understand a place?
+
+**Recommended:** [Peta Lakar Siri 1 - Geografi Tingkatan 1](https://www.youtube.com/watch?v=T3mx2MF5sjc&t=37s), by [Julaiha Ali](https://www.youtube.com/@julaihaali)
+
+- **Part to watch:** 0:37 to 4:42 (4:05 of 7:42)
+- **Captions on YouTube:** auto
+
+**Why this video** (shown to learners): Dalam video ini, seorang cikgu Geografi menerangkan apa yang mesti ada pada peta lakar dan maksud simbol-simbolnya.
+
+- **Think first (the lesson's own, kept):** Mengapakah peta memerlukan petunjuk? Apakah yang akan berlaku jika kamu terpaksa meneka maksud setiap simbol?
+- **After you watch (the lesson's own, kept):** Simbol peta yang manakah paling membantu pelawat? Mengapa?
+
+**Written version** ("Read instead", draft by AI: correct anything that is wrong or unclear):
+
+> Cikgu Julaiha menerangkan peta lakar. Peta lakar ialah gambaran permukaan bumi yang dilukis dari pandangan atas. Peta ini menunjukkan kawasan sekitar kita dengan skala besar. Ia dilukis dengan simbol atau singkatan perkataan untuk menggantikan benda yang sebenar.
+> 
+> Sebuah peta lakar mesti ada tajuk, bingkai (pemidang), arah mata angin, simbol dan senarai petunjuk. Petunjuk memberitahu maksud setiap simbol.
+> 
+> Ada empat jenis simbol. Simbol kawasan menunjukkan kawasan seperti hutan, sawah padi dan ladang getah. Simbol garisan menunjukkan benda yang panjang, seperti sungai, jalan raya, jambatan dan jalan kereta api. Simbol titik menunjukkan tempat tertentu, seperti masjid, kuil, gereja dan stesen trigonometri. Jenis keempat ialah singkatan perkataan.
+
+**Key points:**
+
+- Peta lakar ialah gambaran sesuatu kawasan yang dilukis dari pandangan atas.
+- Peta lakar mesti ada tajuk, bingkai, arah mata angin, simbol dan petunjuk.
+- Petunjuk menerangkan maksud setiap simbol, seperti simbol kawasan, garisan dan titik.
+
+**Note for teachers:** Sari kata automatik YouTube untuk video ini banyak salah, contohnya "peta lakar" menjadi "kecelakaan" atau "peternakan": lebih baik tutup sari kata ketika menonton.
+
+**What the pre-screen found:** Julaiha Ali (Cikgu Julaiha, SMK Undang Rembau, Negeri Sembilan; a teacher's own channel), 7:42, Feb 2021, embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. Form 1 Geografi bab 3: 0:38 a sketch map is a picture of the earth's surface drawn from above, of the local area at a large scale, using symbols or abbreviations in place of real features; must have a title, frame (pemidang), compass direction, symbols and a key (petunjuk); four kinds of symbol: area (forest, rice, rubber, mangrove), line (rivers, roads, bridges, railways), point (mosque, temple, church, trig station), abbreviations (from 4:43, with the textbook page); 5:24 physical and cultural landscape; 7:31 "ajukan kepada guru Anda". PRESCREEN (recommend) for L11 ms, 37–282 (definition, the parts of a map, the symbol types; before the abbreviation list that sends learners to the textbook page). Both of the lesson's questions kept. Auto-captions garble "peta lakar" ("kecelakaan", "peternakan", "pecel akar") but nothing rude: watch with captions off. Covers title, key and compass direction; scale only in passing, and nothing on what a map leaves out beyond "symbols replace the real thing". Drafts written.
+
+**Before you approve, check:**
+
+- [ ] I watched the part above with the sound on, in the language, from start to end.
+- [ ] It is accurate, and right for learners aged 10 to 17, some of them refugees.
+- [ ] Both questions can be answered from the video and from the written version.
+- [ ] The written version and key points say what the video says (I corrected them in the candidates file if not).
+
+To approve it: `npm run videos:apply -- ms L11 --approved-by "Your name"`
+
+## Lesson 12: What makes a city grow?
+
+**Recommended:** [URBANISASI (KONSEP DAN FAKTOR MEMPENGARUHI URBANISASI) KSSM SPM GEOGRAFI EPISOD 41](https://www.youtube.com/watch?v=djlUNMcY81o&t=30s), by [MD NAFI AKMAL](https://www.youtube.com/@mdnafiakmal6511)
+
+- **Part to watch:** 0:30 to 2:01 (1:31 of 2:10)
+- **Captions on YouTube:** auto
+
+**Why this video** (shown to learners): Dalam video pendek ini, seorang cikgu Geografi menerangkan apa itu pembandaran dan sebab bandar berkembang.
+
+- **Think first (the lesson's own, kept):** Apakah yang mungkin membuat orang berpindah dari kawasan luar bandar ke bandar yang sedang berkembang?
+- **After you watch (the lesson's own, kept):** Apakah yang diperlukan oleh bandar yang sedang berkembang selain lebih banyak rumah?
+
+**Written version** ("Read instead", draft by AI: correct anything that is wrong or unclear):
+
+> Cikgu Md Nafi Akmal menerangkan pembandaran, atau urbanisasi. Pembandaran ialah proses apabila sesuatu kawasan luar bandar berubah menjadi bandar.
+> 
+> Beliau menyenaraikan beberapa faktor. Orang berhijrah ke bandar kerana ada banyak peluang pekerjaan dalam pelbagai sektor. Penduduk juga bertambah kerana kadar kelahiran yang tinggi. Kegiatan perlombongan, seperti petroleum, boleh mewujudkan bandar baharu, contohnya Kerteh di Terengganu. Kilang-kilang menarik penduduk kerana ada peluang pekerjaan. Universiti dan kolej juga menarik orang ke bandar. Bandar juga ada kemudahan yang lengkap, seperti jalan raya, air, elektrik dan telekomunikasi.
+> 
+> Faktor terakhir ialah sejarah. Kuala Lumpur bermula sebagai pekan kecil. Kerana ada bijih timah dan kegiatan melombong, ia berubah menjadi bandar yang lebih besar. Ia terus berkembang hingga hari ini, walaupun bijih timah sudah habis.
+
+**Key points:**
+
+- Pembandaran ialah proses kawasan luar bandar berubah menjadi bandar.
+- Orang berpindah ke bandar kerana peluang pekerjaan, pendidikan dan kemudahan seperti jalan raya, air dan elektrik.
+- Kuala Lumpur bermula sebagai pekan kecil dan berkembang kerana perlombongan bijih timah.
+
+**Note for teachers:** Sari kata automatik YouTube untuk video ini banyak salah, contohnya "pembayaran" untuk "pembandaran": lebih baik tutup sari kata ketika menonton.
+
+**What the pre-screen found:** MD NAFI AKMAL (Cikgu Md Nafi Akmal, SMK St Mary Sandakan; a teacher's own channel), 2:10, Sep 2021, embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. Form 4 Geografi bab 15: 0:30 urbanisation is a rural area becoming urban; factors: 0:46 in-migration for jobs in many sectors, natural increase, mining such as petroleum creating new towns (Kerteh, Terengganu), industry with jobs, higher education (universities and colleges), complete facilities (roads, water, electricity, telecommunications), history: Kuala Lumpur grew from a small town because of tin mining and still grows though the tin is gone (ends 2:01). Slides read aloud. PRESCREEN (recommend) for L12 ms, 30–121 (skips the "halo guys" intro and the sign-off). Both of the lesson's questions kept (jobs; roads, water, electricity, telecommunications, education). Lists the factors rather than showing how they feed each other. Auto-captions garbled ("pembayaran selesai" for "pembandaran", "keriting" for Kerteh, "laptop"): watch with captions off. Drafts written.
+
+**Before you approve, check:**
+
+- [ ] I watched the part above with the sound on, in the language, from start to end.
+- [ ] It is accurate, and right for learners aged 10 to 17, some of them refugees.
+- [ ] Both questions can be answered from the video and from the written version.
+- [ ] The written version and key points say what the video says (I corrected them in the candidates file if not).
+
+To approve it: `npm run videos:apply -- ms L12 --approved-by "Your name"`
 
 ## Lesson 13: How do climate and seasons affect daily life?
 
@@ -531,6 +650,88 @@ To approve it: `npm run videos:apply -- ms L21 --approved-by "Your name"`
 
 To approve it: `npm run videos:apply -- ms L22 --approved-by "Your name"`
 
+## Lesson 23: What makes information trustworthy?
+
+**Recommended:** [Ini cara netizen buat tapisan kendiri elak terjebak berita palsu.](https://www.youtube.com/watch?v=OldfXUIxbdI), by [Astro AWANI](https://www.youtube.com/@astroawani)
+
+- **Part to watch:** 0:00 to 1:39 (1:39 of 1:46)
+- **Captions on YouTube:** auto
+- **Weak fit:** the pre-screen suggests keeping the English video unless you like this one.
+
+**Why this video** (shown to learners): Video berita pendek ini berkongsi beberapa cara mudah untuk menyemak sesuatu berita sebelum kamu berkongsi.
+
+- **Think first (the lesson's own, kept):** Apakah yang membuatkan kamu mempercayai sesuatu berita?
+- **After you watch (adapted to this video):** Apakah dua perkara yang boleh kamu lakukan sebelum berkongsi sesuatu berita? Mengapa?
+  - The lesson's question now: Mengapakah gambar yang benar atau fakta yang benar masih boleh mengelirukan orang?
+
+**Written version** ("Read instead", draft by AI: correct anything that is wrong or unclear):
+
+> Berita palsu bukan perkara baharu. Tetapi dengan teknologi dan media sosial, berita palsu kini tersebar dengan lebih cepat. Astro AWANI bertanya kepada pengikutnya di Facebook dan YouTube bagaimana mereka mengelak daripada terpedaya.
+> 
+> Pertama, gunakan akal sebelum berkongsi sesuatu berita. Kedua, berhati-hati dengan tajuk berita yang terlalu hebat atau mengejutkan. Cari tajuk itu dengan enjin carian untuk melihat sama ada media lain yang dipercayai juga melaporkannya.
+> 
+> Jika kamu terus membaca berita itu, tahan diri daripada menyebarkannya sehingga ia disahkan benar. Kamu juga boleh menyemak fakta di laman web seperti sebenarnya.my dan laman web media lain yang dipercayai. Ingat: jika tidak pasti, jangan kongsi.
+
+**Key points:**
+
+- Berita palsu tersebar lebih cepat melalui media sosial.
+- Tajuk yang terlalu mengejutkan perlu disemak dengan sumber lain yang dipercayai.
+- Jika tidak pasti sesuatu berita itu benar, jangan kongsi.
+
+**Note for teachers:** Video ini menamakan laman semakan fakta kerajaan, sebenarnya.my, sebagai satu tempat untuk menyemak; bincangkan juga sumber lain. Sari kata automatik YouTube untuk video ini banyak salah: lebih baik tutup sari kata ketika menonton.
+
+**What the pre-screen found:** Astro AWANI, 1:46, Aug 2020, embeddable, asr labelled id (garbled but readable), no dubbing. Five tips AWANI's followers gave for "self-filtering" fake news: fake news is old but spreads faster with social media; use common sense before sharing; be wary of sensational headlines and search the headline to see whether trusted media report it; hold back from sharing until it is confirmed; check facts on sebenarnya.my and other trusted media sites; "if you're not sure, don't share" (ends 1:39, then "bye bye"). PRESCREEN (recommend, weak) for L23 ms, 0–99. Before kept; After changed (nothing on how a true picture or fact can mislead, nor on dates and context). Narration uses "anda"; it names one government fact-check site among others: teachers' note. Drafts written.
+
+**Before you approve, check:**
+
+- [ ] I watched the part above with the sound on, in the language, from start to end.
+- [ ] It is accurate, and right for learners aged 10 to 17, some of them refugees.
+- [ ] Both questions can be answered from the video and from the written version.
+- [ ] The written version and key points say what the video says (I corrected them in the candidates file if not).
+
+To approve it: `npm run videos:apply -- ms L23 --approved-by "Your name"`
+
+## Lesson 24: How can young people contribute to their communities?
+
+**Recommended:** [Ini Cerita Kita: Sukarelawan Belia, Bila Anak Muda Peduli](https://www.youtube.com/watch?v=Fpa9vPnQzFM&t=364s), by [Astro AWANI](https://www.youtube.com/@astroawani)
+
+- **Part to watch:** 6:04 to 9:10 (3:06 of 26:42)
+- **Captions on YouTube:** auto
+
+**Why this video** (shown to learners): Dalam bahagian video ini, seorang sukarelawan muda bercerita tentang projek kecil yang dibuat oleh pelajar di sebuah kampung pedalaman di Sarawak.
+
+- **Think first (adapted to this video):** Bagaimanakah sukarelawan muda dalam video ini tahu apa yang diperlukan oleh kampung itu?
+  - The lesson's question now: Apakah yang menjadikan mesej kepada orang yang bertanggungjawab berguna?
+- **After you watch (adapted to this video):** Pilih satu projek dalam video. Apakah masalah yang dilihat oleh sukarelawan, dan bagaimanakah projek itu membantu?
+  - The lesson's question now: Apakah bantuan yang diperlukan oleh belia supaya orang dewasa mendengar idea mereka?
+
+**Written version** ("Read instead", draft by AI: correct anything that is wrong or unclear):
+
+> Dalam program bual bicara ini, Nurul Iz Aina bercerita tentang misi sukarelawan pelajar di Baklalan, Lawas, Sarawak, pada tahun 2023. Baklalan ialah kawasan pedalaman. Untuk sampai ke sana, mereka melalui jalan offroad selama kira-kira empat jam dari Lawas.
+> 
+> Setiap sukarelawan bekerja dalam satu bidang, seperti pendidikan, kesihatan atau perpaduan. Aina sedang belajar untuk menjadi guru, jadi dia memilih pendidikan. Dia membuat program membaca, menulis dan mengira untuk murid sekolah kebangsaan di situ. Dia juga membantu murid melihat peluang yang ada selepas mereka tamat sekolah. Para sukarelawan juga mencantikkan kawasan sekolah.
+> 
+> Laluan dari rumah keluarga angkat ke sekolah sangat gelap kerana tiada lampu. Pernah ada orang kampung yang terjatuh ke dalam sawah padi. Rakan-rakan Aina mendapat idea untuk memasang pemantul cahaya di sepanjang laluan itu, supaya orang tidak terjatuh. Kata Aina, para sukarelawan sendiri melihat apa yang diperlukan di kawasan itu, kemudian memilih cara untuk menyumbang.
+
+**Key points:**
+
+- Sukarelawan muda melihat dahulu apa yang diperlukan oleh kampung itu.
+- Mereka membuat projek kecil, seperti program membaca dan pemantul cahaya di laluan yang gelap.
+- Projek yang kecil boleh menjadikan kampung lebih selamat dan membantu murid belajar.
+
+**Note for teachers:** Bahagian ini datang daripada program bual bicara terbitan sebuah kementerian. Bahagian lain video ini bercakap tentang biasiswa dan yayasan yang mungkin tidak terbuka kepada semua murid, jadi tunjukkan bahagian ini sahaja.
+
+**What the pre-screen found:** Astro AWANI (a programme by the Ministry of National Unity), 26:42, Nov 2025, embeddable, asr:ms (clean, correctly labelled), no dubbing. Talk show "Ini Cerita Kita: Sukarelawan Belia". 1:07 two young guests (a student-volunteer foundation alumna, a scholarship programme executive); 2:08-6:10 the two organisations, scholarships and B40 targeting; 6:04-9:10 Nurul Iz Aina on a 2023 student mission to Baklalan, Lawas (rural Sarawak, four hours off-road): six pillars, her education work (reading, writing and counting; showing pupils what they can do after school; brightening the school), and the reflective markers her friends put on the dark path to school after villagers fell into the rice field: "the volunteers looked for what the area needed"; 9:12 dropout-prevention mentoring, mushroom farming with an Orang Asli school, a farming project; 12:14 small projects as a start; 18:17 challenges: time, support and funding, and the need for support from government, NGOs and companies. PRESCREEN (recommend) for L24 ms, 364–550 (the host's question and Aina's Baklalan story). Both questions changed (the lesson's are about messages to people in charge). Avoids the scholarship parts, which many refugee learners can't apply for. Drafts written.
+
+**Before you approve, check:**
+
+- [ ] I watched the part above with the sound on, in the language, from start to end.
+- [ ] It is accurate, and right for learners aged 10 to 17, some of them refugees.
+- [ ] Both questions can be answered from the video and from the written version.
+- [ ] The written version and key points say what the video says (I corrected them in the candidates file if not).
+
+To approve it: `npm run videos:apply -- ms L24 --approved-by "Your name"`
+
 ## Also suitable
 
 These fit too, but aren't recommended: another video covers the lesson better, or as well. Most have no draft questions or written version yet. If you prefer one, say so, and it can be made the lesson's recommendation with its drafts.
@@ -550,12 +751,18 @@ These have no captions (or YouTube would not play them), so the pre-screen could
 - **Lesson 3** (How does changing scale change the story?): [Jom Jelajah Planetarium Negara : Alam Semesta](https://www.youtube.com/watch?v=OAo_uFyuoY8): Planetarium Negara, 4:35, 2021, embeddable, asr labelled id (garbled: an echoing gallery with music). A walk through the National Planetarium's universe gallery (solar system, meteors, the Sun). The captions are unreadable, and a gallery tour isn't about zooming between scales or what a wide scale leaves out. UNVERIFIED for L03 ms, leaning REJECT on fit.
 - **Lesson 4** (How do people explain where the world comes from?): [Apa itu Teori Big Bang?](https://www.youtube.com/watch?v=oOXB64a1IPI): Mudahnya Fizik!, 7:43, no captions. Big Bang with ESA background-radiation images; the description also asks what exists beyond the universe, which may move into belief. Lesson 4 is sensitive: a Malay speaker must watch all of it.
 - **Lesson 6** (How did farming change human societies?): [Zaman Neolitik](https://www.youtube.com/watch?v=EdOQsXSk1Pw): Atika Ahmad (one teacher), 2:20, Feb 2021, embeddable, only a Thai auto-track of nonsense (music, or speech YouTube couldn't recognise), no dubbing. Form 1 Sejarah, "Zaman Neolitik". UNVERIFIED: nothing to read; a person must watch it. The current recommendation for L06 already covers the Neolithic in Malaysia.
+- **Lesson 9** (How do inventions change everyday life?): [Masyarakat Britain Era Revolusi Industri - Sejarah Eropah](https://www.youtube.com/watch?v=hZVJkdwTviw): Muhamad Hanif Hamizan, 6:16, Sep 2022, embeddable, NO captions, no dubbing. "Masyarakat Britain era Revolusi Industri - Sejarah Eropah" (no description; likely a student assignment). UNVERIFIED: no captions or description. Leaning reject (individual upload, probably a university assignment).
+- **Lesson 9** (How do inventions change everyday life?): [Revolusi Industri](https://www.youtube.com/watch?v=x-4jd4K4Ejs): HISTORIAN, 3:52, Aug 2021, embeddable, NO captions, no dubbing. "Revolusi Industri": changes in farming, manufacturing and transport in late 18th-century Britain and their social impact (description). UNVERIFIED: no captions; a small anonymous channel. A person would have to watch it.
 - **Lesson 10** (Why do people build towns near rivers?): [7.3 KEPENTINGAN SUNGAI DAN TASIK DI MALAYSIA](https://www.youtube.com/watch?v=_sV2T_KyD-Y): Suziyana (one teacher, "Cikgu Suzy"), 3:00, Mar 2021, embeddable, no usable captions (an English auto-track with one word), no dubbing. Form 1 Geografi 7.3, the importance of rivers and lakes in Malaysia; probably slides with music and no voice. UNVERIFIED: nothing to read; a person must watch it.
 - **Lesson 11** (How do maps help us understand a place?): [Geografi Tingkatan 1 Bab 3 : Peta Lakar](https://www.youtube.com/watch?v=R2ZzdgiigbE): Sherene Tan (a teacher channel), Form 1 Geografi sketch maps, 23:53, no captions. A person would have to watch it and pick a segment on symbols and the key.
 - **Lesson 11** (How do maps help us understand a place?): [GEOGRAFI TINGKATAN 1 : BAB 3 PETA LAKAR (CIRI-CIRI DAN SIMBOL)](https://www.youtube.com/watch?v=OPsFE3Ho0BQ): Nurhabibah M A. (a teacher's channel), 6:10, 2021, embeddable; only a broken auto-caption track (YouTube took the Malay for Spanish). Form 1 Geografi: features and symbols of a sketch map, a short home-learning lesson (description). Can't check the words; captions show nonsense if turned on. UNVERIFIED for L11 ms (short and on-topic; a person watches it).
 - **Lesson 12** (What makes a city grow?): [Asal Usul Kuala Lumpur](https://www.youtube.com/watch?v=mXNe7HsuejE): Warkah TV, 6:55, Nov 2024, embeddable, NO captions, no dubbing. "The origins of Kuala Lumpur": from a small village where two muddy rivers meet to the capital, through tin mining (description). Promising for L12 ms (what makes a city grow), but the words can't be checked. UNVERIFIED for L12 ms, promising: a Malay speaker watches it.
+- **Lesson 12** (What makes a city grow?): [RETROSPEKTIF : BAKAL BANDARAYA (1972)](https://www.youtube.com/watch?v=1LLvCdV9AYE): FINAS Malaysia, 10:32, Feb 2025, embeddable, NO captions, no dubbing. FINAS (the national film agency) re-releasing Filem Negara's 1972 documentary "Bakal Bandaraya" on Kuala Lumpur's growth from a village (description). UNVERIFIED: no captions; a 1972 government film, likely formal narration. A person would have to watch it for a part on how KL grew.
 - **Lesson 13** (How do climate and seasons affect daily life?): [Kenapa Malaysia Tak Ada 4 Musim Tapi Ada Monsun? | Penjelasan Sains Cuaca Tropika](https://www.youtube.com/watch?v=WtbwO7P46AE): Lati Ash Rex, 6:15, Nov 2025, embeddable, asr labelled ms, no dubbing. Why Malaysia has monsoons, not four seasons: near the equator so temperature hardly changes; "monsun" from Arabic mausim; winds reverse every six months because land and sea heat differently; the north-east monsoon (Nov–Mar, heavy rain and floods on the east coast) and south-west monsoon (May–Sep, drier), the inter-monsoon in April and October, El Niño and La Niña, urban heat. The captions read like Indonesian ("musim semi", "musim gugur", "Kami tidak mengalami…"), so the narration may be Indonesian or a synthetic voice reading a translation; a small new channel. UNVERIFIED: the content looks accurate and fits L13, but a person must listen and say whether it is Malaysian Malay.
 - **Lesson 14** (How can communities respond to environmental change?): [Kempen Penanaman Pokok Bakau](https://www.youtube.com/watch?v=-yxDv_vXMzM): DBPMalaysia, mangrove-planting campaign at Lumut, 5:48, no captions. One community response, but probably nothing on who plans it or whether warnings and safe routes work for everyone. Weak fit expected.
+- **Lesson 14** (How can communities respond to environmental change?): [Banjir: UTM bangunkan sistem amaran bahasa isyarat](https://www.youtube.com/watch?v=ghm-3Vky1Us): Astro AWANI, 3:58, Jan 2021, embeddable, only an empty asr:en track, no dubbing. "Banjir: UTM bangunkan sistem amaran bahasa isyarat": UTM's Disaster Preparedness and Prevention Centre (with a Japanese partner) develops a flood-warning system in sign language so deaf people can understand early safety information (title and description). UNVERIFIED: no usable captions. Strong lead for L14 ms: it answers the lesson's After question (what makes warnings hard for some people to use) directly. A person must watch it.
+- **Lesson 14** (How can communities respond to environmental change?): [Banjir | Golongan OKU diberi keutamaan dipindahkan](https://www.youtube.com/watch?v=7RZ5IzrUEpA): Astro AWANI, 1:24, Dec 2021, embeddable, only an empty asr:en track, no dubbing. More than 1,000 disabled people in flood-risk areas of Terengganu get priority evacuation to relief centres because of their limited mobility, says the state fire and rescue director (description). UNVERIFIED: no usable captions. A second lead for L14 ms (fairness in a response). A person must watch it.
+- **Lesson 14** (How can communities respond to environmental change?): [CDERT – PELUANG KOMUNITI TERLIBAT PENGURUSAN BENCANA  [6 OKT 2015]](https://www.youtube.com/watch?v=zrN8L4rZjpA): Berita RTM, 1:35, Oct 2015, embeddable, NO captions, no dubbing. Civil Defence's community emergency response teams (CDERT) let communities take part directly in disaster management (description). UNVERIFIED: no captions; old; probably an official announcement. Weak.
 - **Lesson 15** (How can objects express culture and identity?): [Sulaman Benang Emas](https://www.youtube.com/watch?v=USiq12rl0OU): DBPMalaysia, gold-thread embroidery with a maker in Kuala Kangsar, 13:16, no captions. Promising: a person must watch it and choose a 3-5 minute segment where the maker says what the pieces mean and who uses them.
 - **Lesson 15** (How can objects express culture and identity?): [SENI KRAFTANGAN TRADISIONAL : WARISAN & BUDAYA MALAYSIA](https://www.youtube.com/watch?v=kT16bByRF3c): ZuRa aZRa, 5:09, Oct 2021, embeddable, no captions, no dubbing. A teacher's pre-school video on Malaysia's traditional crafts (hashtags #seronokbelajarprasekolah). UNVERIFIED: no captions; made for pre-school children, so probably too young for 10–17. A person must watch it.
 - **Lesson 16** (How do languages connect people?): [Kod Isyarat Huruf dan Nombor](https://www.youtube.com/watch?v=gUSpD51vTHY): DBPMalaysia, fingerspelled letters and numbers in sign language for Year 1 deaf pupils, 4:29, no captions. Touches "other ways of communicating" but is a drill for 7-year-olds. Leaning reject; better as an extra in the teacher guide.
@@ -572,30 +779,46 @@ These have no captions (or YouTube would not play them), so the pre-screen could
 - **Lesson 2** (What can an object reveal about a person in the past?): [Pesara kerajaan abadikan koleksi barangan artifak purba di Muzium Kuala Krai](https://www.youtube.com/watch?v=qdGduMh2ZnA): Berita Harian Online, 1:22, Jul 2023, embeddable, asr labelled id, no dubbing. News: a retired civil servant shows the Neolithic objects he collected (stone tools, bark beaters, spearheads, pottery) at the Kuala Krai museum. REJECT for L02 ms: a human-interest news item about a collector; nothing on reading an object as a source.
 - **Lesson 3** (How does changing scale change the story?): [SEJARAH TAHUN 4 | UNIT 1 | RUANG DAN MASA](https://www.youtube.com/watch?v=4stLvVMpAPU): Cikgu Jumrah, 9:50. Decades, centuries, chronology and the teacher's own timeline; no zooming between scales, nothing on what a wide scale hides.
 - **Lesson 3** (How does changing scale change the story?): [Sejarah Tahun 4 Zaman Prasejarah : Kenali Zaman Prasejarah &  Garis Masa Zaman Prasejarah](https://www.youtube.com/watch?v=uC_PiGsZj4I): Fiz channel (a teacher's channel), 11:04, 2021, embeddable, asr labelled id (spoken Malaysian Malay). Year 4 prehistory: four periods on a timeline, with dates that contradict each other (Palaeolithic "200,000 BCE" then "20,000 years ago"); life in each period. REJECT for L03 ms: inconsistent dates; a timeline of periods, not changing scale.
+- **Lesson 3** (How does changing scale change the story?): [Alam semesta - Perbandingan Planet , Bintang dan Galaksi](https://www.youtube.com/watch?v=XU_jgh5Mij0): Al-Ikhlas, 3:19, Jun 2017, embeddable, only a garbage asr:kn track (music), no dubbing. Planets, stars and galaxies compared by size, set to music; description "Lihatlah kebesaran Sang Maha Pencipta". No narration. REJECT for L03 ms: no spoken explanation, framed religiously, not a Malaysian educational source.
+- **Lesson 3** (How does changing scale change the story?): [[Sains T2] Bab 12.1 (A) Perbandingan Jarak Planet dalam Sistem Suria dari Matahari #T2 #KSSM #PT3](https://www.youtube.com/watch?v=vY-Rpj4oAsI): Cikgu Teo (a teacher's own channel), 10:08, Sep 2021, embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. Form 2 Science 12.1: astronomical units and light years, converting km to AU and ly with worked examples. REJECT for L03 ms: unit conversion arithmetic; nothing on what a wide scale shows or hides.
+- **Lesson 4** (How do people explain where the world comes from?): [Teori Big Bang](https://www.youtube.com/watch?v=j51chCz9Nac): ML Studios, 3:28, Mar 2019, embeddable, only a garbage asr:en track. "Teori Big Bang" by a personality channel; description "Make sense atau teori kapir ni guys?" with a Shopee link for a galaxy lamp. REJECT for L04 ms: frames science against religion ("kafir theory"), sells a product, captions unusable.
+- **Lesson 4** (How do people explain where the world comes from?): [BINTANG DAN GALAKSI DLM ALAM SEMESTA](https://www.youtube.com/watch?v=4XVc55E-Ybs): Cikgu Dess2020 (a teacher's own channel), 10:15, Oct 2020, embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. Form 2 Science bab 11: types of galaxy, the Milky Way, how stars form in nebulae, red giants, supernovae, neutron stars, black holes, classifying stars. REJECT for L04 ms (and L03 ms): nothing on the Big Bang or the evidence for it, nothing on scale; the auto-captions show a rude mis-hearing ("porno", 4:41).
 - **Lesson 5** (How did early humans learn, create, and move?): [SEJARAH TAHUN 4 | UNIT 6 | ZAMAN PRASEJARAH | SUMBANGAN TEKNOLOGI](https://www.youtube.com/watch?v=TAy5VZxgOPQ): Cikgu Jumrah, 9:05. Prehistoric technology then and now; not how early humans learned, created and moved, nor collective learning. A partial segment 4:32-7:40 exists if a reviewer disagrees.
 - **Lesson 5** (How did early humans learn, create, and move?): [Tingkatan 1 | Sejarah | Zaman Prasejarahserta Ciri-ciri Kehidupan Manusia Zaman Pra Sejarah | R298](https://www.youtube.com/watch?v=-XFsgSEkXDE): EduwebTV KPM, 25:17, 2022, embeddable, asr labelled id (spoken Malaysian Malay). Form 1 TV lesson on life in the four prehistoric periods: homes, tools, food, economy, society, belief, art. 4:49-8:28 tools getting finer from period to period. Weak for L05 (no collective learning; a long lesson). Keep as a fallback: REJECT in favour of xo4u3eLTLJI.
 - **Lesson 8** (How did trade connect distant communities?): [Sejarah Perdagangan di Pelabuhan Melaka - Kurun ke-15](https://www.youtube.com/watch?v=cbB_sfETjl8): wan azm, 1:44, Dec 2025, embeddable, asr labelled id, no dubbing. Short narrated piece on 15th-century Melaka: traders from east and west, spices, silk, gold; goods and new ideas exchanged; a cosmopolitan city; the Sultan kept the strait safe. REJECT for L08 ms: says traders came "from Arabia, India, China to Europe" in the 15th century (Europeans reached Melaka only in 1509); a new one-person channel whose narration and pictures look machine-made; too thin to check.
 - **Lesson 9** (How do inventions change everyday life?): [SEJARAH TAHUN 4 | UNIT 6 | ZAMAN PRASEJARAH | SUMBANGAN TEKNOLOGI](https://www.youtube.com/watch?v=TAy5VZxgOPQ): Cikgu Jumrah, 9:05. Only the benefits of tools; nothing on harm, on who could use them, or on how a machine was used.
+- **Lesson 9** (How do inventions change everyday life?): [INTERNET | Tiada Liputan Sukarkan Kelas Online](https://www.youtube.com/watch?v=uw0vThNshLQ): Buletin TV3, 2:37, Dec 2020, embeddable, asr labelled id (garbled), no dubbing. Rural pupil can't join online classes for lack of coverage and the cost of data after her mother lost income; the rest is a state assemblyman handing out cash aid. REJECT for L09 ms: half the clip is a politician's donation; 2zr9aP8U_GU covers the same issue without it.
 - **Lesson 10** (Why do people build towns near rivers?): [Tingkatan 1 | Geografi | Sungai Dan Tasik Utama Di Malaysia Dan Kepentingannya | R318](https://www.youtube.com/watch?v=HcB8dHKOw-E): EduwebTV KPM, 25:13, Mar 2022, embeddable, asr labelled id (garbled), no dubbing. Ministry of Education TV, Form 1 Geografi: names and locations of Malaysia's main rivers and lakes (Pahang, Bernam, Endau, Rajang, Kinabatangan; Kenyir, Chini, Bera, Loagan Bunut), map exercises and a quiz; the importance of rivers and lakes (hydro power, borders, water for homes, irrigation, transport) only as a list at 23:36; "don't throw rubbish in rivers". REJECT for L10 ms: almost all of it is memorising names and places; nothing on why towns grew by rivers or the problems rivers bring.
+- **Lesson 11** (How do maps help us understand a place?): [Simbol pada Peta](https://www.youtube.com/watch?v=-5ggUmwzf74): Maestro Digital Education, 3:39, Jul 2022, embeddable, asr:id, no dubbing. "Kak Frieska" explains line, point and area symbols on maps (rivers, roads, borders, mountains, Kecamatan, provincial capitals, lakes, swamps, rice fields). REJECT for L11 ms: Indonesian (Indonesian publisher's textbook series, "adik-adik", Kecamatan, provinsi), not Malaysian Malay.
+- **Lesson 11** (How do maps help us understand a place?): [SAINS SOSIAL & ALAM SEKITAR TINGKATAN 3 KSSM PENDIDIKAN KHAS - MENGHASILKAN PETA LAKAR](https://www.youtube.com/watch?v=XhjrOJKImfo): Cikgu Hafez J. Malim (a teacher's own channel), 13:55, Jun 2021, embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. Form 3 special-education lesson: drawing a sketch map of a school with a colour key (petunjuk) and a north arrow (4:41), then an exercise. REJECT for L11 ms: the auto-captions repeatedly show a rude mis-hearing ("porno", at least six times, for the teacher's filler word), which learners would see with captions on; long, and mostly one worked example.
+- **Lesson 11** (How do maps help us understand a place?): [Geografi Tingkatan 1 Bab 3 | PETA LAKAR](https://www.youtube.com/watch?v=dPb48XNH_xs): Khalil Aha (a teacher's own channel), 9:46, Feb 2021, embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. Form 1 Geografi bab 3: what a sketch map is, its five parts, four kinds of symbols, physical and cultural landscape, steps to draw one; ends with "subscribe, like and share". REJECT for L11 ms: auto-captions turn "bab ini" into "babi" (an offensive word for many Malaysian learners) and "peta lakar" into "kecelakaan"; T3mx2MF5sjc covers the same more cleanly.
 - **Lesson 12** (What makes a city grow?): [GEOGRAFI TINGKATAN 1 BAB 9 PETEMPATAN DI MALAYSIA](https://www.youtube.com/watch?v=lx8BRJzspfE): Sherene Tan, 36:29. Settlement types and patterns as exam revision; nothing on how jobs, transport, services and population drive each other as a city grows.
 - **Lesson 12** (What makes a city grow?): [SEJARAH KUALA LUMPUR. DULU RUMAH2 MASYARAKAT PAKAI DAUN NIPAH. SEKARANG GEDUNG PENCAKAR LANGIT ](https://www.youtube.com/watch?v=yjLwiTGmTgY): Salwin Channel, 11:35, Jan 2026, embeddable, asr labelled id; AUTO-DUBBED English default. An Indonesian vlogger's night drive around Kuala Lumpur with a Malay documentary-style narration: from a tin-mining town (1857) to capital; jobs drew investors and migrants; highways, low-cost housing replacing squatter areas, LRT and KLIA Express; British administration, 1880 and 1896, independence. The growth story fits L12, but the narration sounds taken from someone else's documentary (the brief is original creators' uploads only), and it is a vlog. REJECT for L12 ms (possible re-upload; vlog).
+- **Lesson 12** (What makes a city grow?): [RETROSPEKTIF : KUALA LUMPUR WILAYAH PERSEKUTUAN (1974)](https://www.youtube.com/watch?v=GP6uAUN4x0A): FINAS Malaysia, 19:02, Jan 2022, embeddable, asr labelled id (garbled), no dubbing. Filem Negara's 1974 "Kuala Lumpur Wilayah Persekutuan": traffic and people coming by train, car and motorcycle (0:46), commerce and banks, KL's origin as a tin-collecting village where the Gombak meets the Klang (2:53), then administration, independence, Parliament and the Federal Territory. REJECT for L12 ms: mostly about government and administration; the growth part is a few sentences; old film with garbled captions.
 - **Lesson 14** (How can communities respond to environmental change?): [KPM siap sedia hadapi banjir, impak Monsun Timur Laut](https://www.youtube.com/watch?v=XvIRzkT-nOk): Astro AWANI, 2:54, Oct 2023, embeddable, asr labelled id. News: the education ministry is ready for monsoon floods (operations rooms, reminder letters, flood kits, counselling teams, schools as relief centres). REJECT for L14 ms: an officials' news item; nothing on who plans a response or whether warnings work for everyone.
 - **Lesson 14** (How can communities respond to environmental change?): [Nadma bersiap sedia hadapi banjir di Lembah Klang](https://www.youtube.com/watch?v=laTEg7IDrVE): Harian Metro, 1:01, Nov 2022, embeddable, asr labelled id. An election candidate says the disaster agency is ready for flash floods in the Klang Valley. REJECT for L14 ms: a campaign quote in a news clip.
 - **Lesson 16** (How do languages connect people?): [Jom Belajar Bahasa Isyarat Malaysia](https://www.youtube.com/watch?v=VDK-d7yeWpM): Unit PBIM MFD (Malaysian Federation of the Deaf), 1:23, 2024, embeddable, NO captions. Five signs in Malaysian Sign Language around "know" / "don't know". A sign drill, no explanation. REJECT for L16 ms: a vocabulary drill, nothing on how languages connect people; better as an extra in the teacher guide.
 - **Lesson 16** (How do languages connect people?): [Perkataan Pinjaman Bahasa Inggeris](https://www.youtube.com/watch?v=jd98LRb2_FY): Nurul Sakinah (a teacher's channel), 6:58, 2020, embeddable, asr labelled id (spoken Malaysian Malay). Revision for Year 3 KAFA (religious-school) Jawi: how to spell English loanwords (jus, klinik, feri, filem) in Jawi script. REJECT for L16 ms: a Jawi spelling drill for a religious-school class; loanwords are touched only to spell them.
+- **Lesson 16** (How do languages connect people?): [Malaysia dan Indonesia Serumpun! Austronesia ni apa pulak?](https://www.youtube.com/watch?v=sgOFWYZINN8): Avenda FV, 15:27, Jun 2022, embeddable, asr labelled id (badly garbled), no dubbing. A personal vlog reading out an article on the Austronesian language family (Taiwan to Madagascar and New Zealand, 1,200 languages, branches), word lists compared across Pacific languages, then "we're all Malay" musings. REJECT for L16 ms: captions largely unreadable, read from an article, ends on ethnic identity.
+- **Lesson 16** (How do languages connect people?): [Cikgu Alex Jatuh Cinta dengan Bahasa Melayu](https://www.youtube.com/watch?v=1r73vvOWD28): DBPMalaysia, 10:00, Jan 2021, embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. A teacher on how he fell in love with Malay, then a complaint that young people and even Malays look down on Malay, English loanwords ("aktual", "konklusi") should not be used, foreigners learn Malay faster than Malaysian pupils. REJECT for L16 ms: treats other languages as a threat and talks about ethnic groups; the opposite of "speaking more than one language is a strength".
 - **Lesson 17** (Why do communities have traditions?): [SEJARAH TAHUN 6 | UNIT 6 | PERAYAAN DI MALAYSIA@madamshahmahadami1776](https://www.youtube.com/watch?v=3tyRJcnRJss): Madam Shah Mahadami (one teacher's channel), 5:56, Jul 2021, embeddable, asr labelled id, no dubbing. Year 6 Sejarah lesson: Malaysia's six main festivals, then a list of religious observances (Hari Raya Haji, Easter and Good Friday, Thaipusam, Wesak, Vaisakhi) and cultural ones (Chap Goh Mei, Ponggal, Loy Krathong, the Portuguese community's San Pedro). REJECT for L17 ms: a catalogue of festivals, mostly religious observances described one by one; nothing on why people share traditions, how they pass on knowledge or change, or sharing them respectfully. Captions badly garbled.
 - **Lesson 18** (How can art tell a story?): [Wayang Kulit (Kelantan)](https://www.youtube.com/watch?v=zK1uW_rbQPI): PentasPusaka, 1:00, 2018, embeddable, NO captions. One minute of Kelantan wayang kulit performance with an English description. No spoken explanation to learn from, and the description is English. REJECT for L18 ms: a performance clip with no words in Malay about meaning.
+- **Lesson 18** (How can art tell a story?): [Tahap II (2022) - Klip | Pendidikan Seni Visual - Apresiasi Karya](https://www.youtube.com/watch?v=4jZwig8vOUI): ntv7malaysia (DidikTV), 4:26, Jul 2022, embeddable, asr labelled id, no dubbing. Year 4 Pendidikan Seni Visual clip: recognising and naming the visual-art language in a wet-on-wet painting, then appreciation (description). The captions are badly garbled, with alarming mis-hearings ("kita akan bunuh mereka", "Palestina"). REJECT for L18 ms: about painting technique and tidying up, not about reading meaning from details; captions learners must not see.
+- **Lesson 18** (How can art tell a story?): [(YouTube gives no title: it does not allow embedding)](https://www.youtube.com/watch?v=dufZ6xGKdLg): CIKGU MJ (a teacher's own channel), 6:44, Sep 2020, NOT embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. STPM (pre-university) Seni Visual: appreciation as understanding and judging a work through subject (theme, subject matter), formal aspects (elements and principles) and content and context. REJECT for L18 ms: YouTube does not allow it to be embedded (playableInEmbed false); also pre-university jargon.
+- **Lesson 18** (How can art tell a story?): [CARA MELAKUKAN APRESIASI SENI | PENDIDIKAN SENI VISUAL](https://www.youtube.com/watch?v=CX43cMuEPvc): Mimi (a primary teacher's channel), 3:51, Jul 2021, embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. A teacher shows Year 5 pupils how to present their own artwork: name, title, tools and materials, technique, elements and principles; then homework (record yourself, play a Wordwall game). REJECT for L18 ms: describing how you made your own work, not interpreting someone else's from its details.
 - **Lesson 19** (What does belonging mean?): [UNIT 8  WARGA PRIHATIN  SEKOLAH SEJAHTERA](https://www.youtube.com/watch?v=Css9pYi-sPI): Ling Ling (a teacher channel), 5:42. A list of traits of a caring school community, rule-following and better exam results; nothing on being invited vs having a real say. Lesson 19 is also one a local educator reviews first.
+- **Lesson 19** (What does belonging mean?): [Suara Pelajar, Suara Utama: Apakah Ruang Pembelajaran yang Selamat dan Inkusif?](https://www.youtube.com/watch?v=3KLBFYvmeQs): KRYSS Network, 8:24, Nov 2023, embeddable, manual English captions (spoken Malay with burned-in English), no dubbing. "Suara Pelajar, Suara Utama": young adults on unsafe schools: bullying, period spot checks and period poverty, sexual harassment at age 9, a queer speaker singled out at school. REJECT for L19 ms: sexual harassment and sexuality are outside what this course shows 10-17-year-olds, and Lesson 19 is already a sensitive lesson.
 - **Lesson 20** (Why do people have to make choices?): [(Ekonomi Tingkatan 4) BAB 1 - KEKURANGAN PILIHAN KOS LEPAS](https://www.youtube.com/watch?v=SXZYJ4_LuYg): Cikgu Ashari Saat (one teacher's channel), 13:43, Sep 2021, embeddable, asr labelled id, no dubbing. Form 4 Ekonomi: a recorded interactive slideshow ("click the button"); scarcity, choice, opportunity cost for households, firms (bread or cake with RM10,000) and government (a school or a hospital). REJECT for L20 ms: accurate, but a slideshow read aloud with garbled captions, and two better videos already cover it (the current primary and AZLIN's).
 - **Lesson 21** (How do people trade and exchange?): [(Ekonomi Tingkatan 4) BAB 3 - FUNGSI WANG](https://www.youtube.com/watch?v=h-4z7_6h6H4): Cikgu Ashari Saat, 2:56, Sep 2021, embeddable, asr labelled id, no dubbing. Form 4 Ekonomi slideshow: four functions of money (medium of exchange, unit of value, store of value with bank interest, deferred payment: a TV on hire purchase). REJECT for L21 ms: a definitions slideshow; its examples are bank deposits and buying on instalments; nothing on barter, goods and services, or trust.
 - **Lesson 22** (How do people plan for the future?): [Bijak Menyimpan Bijak Merancang](https://www.youtube.com/watch?v=ZmMKrLuUJH0): DBPMalaysia, 4:00. Says the right place for money is a bank, with simple and compound interest on RM1,000 of festival money. Many refugee learners in Malaysia cannot open a bank account; nothing on planning for a small goal or trade-offs.
 - **Lesson 23** (What makes information trustworthy?): [Langkah-Langkah Mengekang Penyebaran Berita Palsu](https://www.youtube.com/watch?v=nzwRbmxlpLM): Pejabat Penerangan Daerah Johor Bahru, 1:26, 2023, embeddable, asr labelled id. A clip from RTM news (the description credits Berita RTM, so it's a re-upload): the communications regulator tells anyone harmed by false content to make a police report with screenshots and links, post a correction, and report it to the platform. REJECT for L23 ms: a re-upload, and "make a police report" is advice many refugee learners can't safely follow; nothing on checking a claim.
+- **Lesson 23** (What makes information trustworthy?): [Semak kesahihan maklumat sebelum kongsi](https://www.youtube.com/watch?v=qXbrDWd_O7o): BERNAMA TV, 2:47, Apr 2020, embeddable, asr:en, no dubbing. The communications minister, mostly in English, asks people to check COVID-19 information before sharing and to use sebenarnya.my. REJECT for L23 ms: a minister's statement, mostly English, one government site as the answer.
+- **Lesson 23** (What makes information trustworthy?): [Lindungi Diri Daripada Kepalsuan: Pengenalan kepada Perikatan JomCheck](https://www.youtube.com/watch?v=1i8D0vypdNk): Media Education For All, 4:36, Mar 2023, embeddable, asr:en, no dubbing. Introduction to the JomCheck fact-checking alliance (staff describe their tip line and roles), mostly in English, set up ahead of an election. REJECT for L23 ms: spoken mostly in English; about the organisation, not how to check a claim.
+- **Lesson 23** (What makes information trustworthy?): [Pendidikan literasi media depani era pasca kebenaran](https://www.youtube.com/watch?v=PzYaYxv1BR4): Astro AWANI, 1:37, Jun 2023, embeddable, asr labelled id, no dubbing. A professor: laws are not the best answer to fake news (freedom), media-literacy education is; "post-truth" where ideology and religion decide what people believe; ends on a report naming AWANI the most trusted news. REJECT for L23 ms: adult policy comment; no how-to for learners; ends in self-promotion.
 - **Lesson 24** (How can young people contribute to their communities?): [Menengah Atas (2022) | Pendidikan Moral (Tingkatan 5): Penglibatan Diri Peneraju Komuniti](https://www.youtube.com/watch?v=6biK4dfIanQ): ntv7malaysia (DidikTV), Form 5 Moral Education, 46:02. Adult-led volunteering with government and NGOs; the host remarks on a schoolgirl guest's looks; nothing on young people's messages to people in charge.
 - **Lesson 24** (How can young people contribute to their communities?): [PROGRAM GOTONG ROYONG DI SEKOLAH KPM](https://www.youtube.com/watch?v=QeG4tb-Fvl8): PUSAT SUMBER SERI KEMALA (a school resource centre), 1:49, 2024, embeddable; only English auto-captions of an English pop song. A school environment club's recycling clean-up set to a pop love song ("I would die for you"); no speech. REJECT for L24 ms: no explanation, commercial song with lyrics unsuited to a lesson.
 - **Lesson 24** (How can young people contribute to their communities?): [VIDEO PENDEK HARI KESUKARELAWANAN BELIA MALAYSIA (2020) - HAIKAL ADNIN](https://www.youtube.com/watch?v=ewPl6apgTCs): Haikal Adnin, 1:00, 2020, embeddable; no speech in the captions. A one-minute entry to the youth ministry's volunteering-day video contest by an individual; images and music. REJECT for L24 ms: an individual's contest entry with no words to learn from.
 
 ## Lessons with no candidate yet
 
-- Lesson 9: How do inventions change everyday life?
 - Lesson 19: What does belonging mean?
-- Lesson 24: How can young people contribute to their communities?

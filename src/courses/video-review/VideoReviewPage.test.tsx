@@ -76,8 +76,8 @@ describe('/review/videos', () => {
     expect(summary.value).toContain('Belum ditinjau');
   });
 
-  it('in Malay, a lesson with no suggested video says learners keep the English one', async () => {
-    await openIn('ms', 'L09');
+  it('in Malay, a lesson with no suggested video (L19) says learners keep the English one', async () => {
+    await openIn('ms', 'L19');
     expect(await screen.findByRole('heading', { level: 1, name: 'Video Tonton dalam Bahasa Melayu' })).toBeInTheDocument();
     expect(screen.getByText(/Kami belum menjumpai video yang baik dalam Bahasa Melayu untuk pelajaran ini/)).toBeInTheDocument();
     expect(screen.queryByRole('group', { name: 'Jawapan kamu' })).toBeNull();
