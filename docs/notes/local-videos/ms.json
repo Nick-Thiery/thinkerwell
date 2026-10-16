@@ -195,6 +195,38 @@
             "on": "2026-10-16",
             "notes": "Fiz channel (a teacher's channel), 11:04, 2021, embeddable, asr labelled id (spoken Malaysian Malay). Year 4 prehistory: four periods on a timeline, with dates that contradict each other (Palaeolithic \"200,000 BCE\" then \"20,000 years ago\"); life in each period. REJECT for L03 ms: inconsistent dates; a timeline of periods, not changing scale."
           }
+        },
+        {
+          "youtubeId": "XU_jgh5Mij0",
+          "title": "Alam semesta - Perbandingan Planet , Bintang dan Galaksi",
+          "channel": "Al-Ikhlas",
+          "channelUrl": "https://www.youtube.com/@alikhlas1124",
+          "fullDurationSeconds": 199,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Al-Ikhlas, 3:19, Jun 2017, embeddable, only a garbage asr:kn track (music), no dubbing. Planets, stars and galaxies compared by size, set to music; description \"Lihatlah kebesaran Sang Maha Pencipta\". No narration. REJECT for L03 ms: no spoken explanation, framed religiously, not a Malaysian educational source."
+          }
+        },
+        {
+          "youtubeId": "vY-Rpj4oAsI",
+          "title": "[Sains T2] Bab 12.1 (A) Perbandingan Jarak Planet dalam Sistem Suria dari Matahari #T2 #KSSM #PT3",
+          "channel": "Cikgu Teo",
+          "channelUrl": "https://www.youtube.com/@CikguTeo",
+          "fullDurationSeconds": 608,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Cikgu Teo (a teacher's own channel), 10:08, Sep 2021, embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. Form 2 Science 12.1: astronomical units and light years, converting km to AU and ly with worked examples. REJECT for L03 ms: unit conversion arithmetic; nothing on what a wide scale shows or hides."
+          }
         }
       ]
     },
@@ -217,6 +249,38 @@
             "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-15",
             "notes": "Mudahnya Fizik!, 7:43, no captions. Big Bang with ESA background-radiation images; the description also asks what exists beyond the universe, which may move into belief. Lesson 4 is sensitive: a Malay speaker must watch all of it."
+          }
+        },
+        {
+          "youtubeId": "j51chCz9Nac",
+          "title": "Teori Big Bang",
+          "channel": "ML Studios",
+          "channelUrl": "https://www.youtube.com/@mlstudiosmy",
+          "fullDurationSeconds": 208,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "ML Studios, 3:28, Mar 2019, embeddable, only a garbage asr:en track. \"Teori Big Bang\" by a personality channel; description \"Make sense atau teori kapir ni guys?\" with a Shopee link for a galaxy lamp. REJECT for L04 ms: frames science against religion (\"kafir theory\"), sells a product, captions unusable."
+          }
+        },
+        {
+          "youtubeId": "4XVc55E-Ybs",
+          "title": "BINTANG DAN GALAKSI DLM ALAM SEMESTA",
+          "channel": "Cikgu Dess2020",
+          "channelUrl": "https://www.youtube.com/@CikguDess2020",
+          "fullDurationSeconds": 615,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Cikgu Dess2020 (a teacher's own channel), 10:15, Oct 2020, embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. Form 2 Science bab 11: types of galaxy, the Milky Way, how stars form in nebulae, red giants, supernovae, neutron stars, black holes, classifying stars. REJECT for L04 ms (and L03 ms): nothing on the Big Bang or the evidence for it, nothing on scale; the auto-captions show a rude mis-hearing (\"porno\", 4:41)."
           }
         }
       ]
@@ -476,8 +540,39 @@
       ]
     },
     "L09": {
-      "primary": null,
-      "noGoodMatch": true,
+      "primary": {
+        "youtubeId": "2zr9aP8U_GU",
+        "title": "PdPR | Pelajar luar bandar bimbang tercicir",
+        "channel": "Astro AWANI",
+        "channelUrl": "https://www.youtube.com/@astroawani",
+        "fullDurationSeconds": 211,
+        "spokenLanguage": "ms",
+        "captions": "auto",
+        "autoDubbed": false,
+        "verifiedByOembed": true,
+        "durationSeconds": 211,
+        "reviewStatus": "prescreened",
+        "why": "Video berita ini menunjukkan bahawa belajar dalam talian membantu ramai murid, tetapi tidak semua murid dapat menggunakannya.",
+        "beforeQuestion": "Apakah yang boleh menghalang seseorang daripada menggunakan sesuatu teknologi baharu? Perhatikan contoh dalam video.",
+        "afterQuestion": "Mengapakah teknologi yang sama tidak membantu semua orang dengan cara yang sama?",
+        "questionsChanged": [
+          "beforeQuestion",
+          "afterQuestion"
+        ],
+        "summary": "Video berita ini melaporkan tentang pengajaran dan pembelajaran di rumah (PdPR). Cara belajar dalam talian ini membantu murid terus belajar ketika mereka tidak dapat ke sekolah. Tetapi ia juga menunjukkan jurang digital antara komuniti bandar dengan luar bandar. Murid yang tiada peranti atau sambungan internet boleh tercicir.\n\nSeorang murid di kawasan luar bandar bercerita tentang cabarannya dengan telefon bimbitnya. Bapanya tidak mampu menyediakan peranti dan internet berkelajuan tinggi. Dia hilang pekerjaan sebagai pekerja kilang selepas kilang itu ditutup.\n\nSeorang bapa lain berkata masalah ini biasa bagi sesetengah ibu bapa. Walaupun sudah ada peranti, sambungan internet pula menjadi masalah. Dia berharap pihak sekolah boleh menyediakan pilihan lain, seperti nota ulang kaji tambahan, untuk murid luar bandar.",
+        "summaryBasis": "transcript",
+        "keyPoints": [
+          "Belajar dalam talian membantu murid terus belajar ketika mereka tidak dapat ke sekolah.",
+          "Murid yang tiada peranti atau internet yang baik boleh tercicir.",
+          "Kos dan liputan internet menyebabkan teknologi ini tidak membantu semua orang dengan sama rata."
+        ],
+        "contentNote": "Video ini menyebut ibu bapa yang hilang pekerjaan dan tidak mampu membeli peranti, jadi sesetengah murid mungkin mengalami perkara yang sama. Sari kata automatik untuk temu bual dalam video ini sangat banyak salah.",
+        "screening": {
+          "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+          "on": "2026-10-16",
+          "notes": "Astro AWANI, 3:31, Jan 2021, embeddable, asr labelled id (narration readable, interviews in a regional dialect badly garbled), no dubbing. News, PdPR (home-based learning in the pandemic): online learning lets pupils keep learning but shows the digital divide between urban and rural communities; pupils without a device or internet fall behind (0:00); a rural secondary pupil on her phone problems; her father can't afford a device and fast internet after losing his factory job when the factory closed (1:04); another parent: even with a device, the connection is the problem; he hopes schools give alternatives such as extra revision notes (2:07-3:31). PRESCREEN (recommend) for L09 ms, whole video: what can stop people using a technology, and why it doesn't help everyone equally. Both questions changed (the lesson's are about harm from a faster machine, which this video doesn't cover). The \"invention\" is online learning, not a machine. A family losing income is mentioned: teachers' note. Interviews' captions very garbled; the written version is based on the narration. Drafts written."
+        }
+      },
       "screened": [
         {
           "youtubeId": "TAy5VZxgOPQ",
@@ -494,6 +589,54 @@
             "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-15",
             "notes": "Cikgu Jumrah, 9:05. Only the benefits of tools; nothing on harm, on who could use them, or on how a machine was used."
+          }
+        },
+        {
+          "youtubeId": "hZVJkdwTviw",
+          "title": "Masyarakat Britain Era Revolusi Industri - Sejarah Eropah",
+          "channel": "Muhamad Hanif Hamizan",
+          "channelUrl": "https://www.youtube.com/@muhamadhanifhamizan4972",
+          "fullDurationSeconds": 376,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Muhamad Hanif Hamizan, 6:16, Sep 2022, embeddable, NO captions, no dubbing. \"Masyarakat Britain era Revolusi Industri - Sejarah Eropah\" (no description; likely a student assignment). UNVERIFIED: no captions or description. Leaning reject (individual upload, probably a university assignment)."
+          }
+        },
+        {
+          "youtubeId": "x-4jd4K4Ejs",
+          "title": "Revolusi Industri",
+          "channel": "HISTORIAN",
+          "channelUrl": "https://www.youtube.com/@historian4196",
+          "fullDurationSeconds": 232,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "HISTORIAN, 3:52, Aug 2021, embeddable, NO captions, no dubbing. \"Revolusi Industri\": changes in farming, manufacturing and transport in late 18th-century Britain and their social impact (description). UNVERIFIED: no captions; a small anonymous channel. A person would have to watch it."
+          }
+        },
+        {
+          "youtubeId": "uw0vThNshLQ",
+          "title": "INTERNET | Tiada Liputan Sukarkan Kelas Online",
+          "channel": "Buletin TV3",
+          "channelUrl": "https://www.youtube.com/@BuletinTV3",
+          "fullDurationSeconds": 157,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Buletin TV3, 2:37, Dec 2020, embeddable, asr labelled id (garbled), no dubbing. Rural pupil can't join online classes for lack of coverage and the cost of data after her mother lost income; the rest is a state assemblyman handing out cash aid. REJECT for L09 ms: half the clip is a politician's donation; 2zr9aP8U_GU covers the same issue without it."
           }
         }
       ]
@@ -567,8 +710,38 @@
       ]
     },
     "L11": {
-      "primary": null,
-      "noGoodMatch": true,
+      "primary": {
+        "youtubeId": "T3mx2MF5sjc",
+        "title": "Peta Lakar Siri 1 - Geografi Tingkatan 1",
+        "channel": "Julaiha Ali",
+        "channelUrl": "https://www.youtube.com/@julaihaali",
+        "fullDurationSeconds": 462,
+        "spokenLanguage": "ms",
+        "captions": "auto",
+        "autoDubbed": false,
+        "verifiedByOembed": true,
+        "startSeconds": 37,
+        "endSeconds": 282,
+        "durationSeconds": 245,
+        "reviewStatus": "prescreened",
+        "why": "Dalam video ini, seorang cikgu Geografi menerangkan apa yang mesti ada pada peta lakar dan maksud simbol-simbolnya.",
+        "beforeQuestion": "Mengapakah peta memerlukan petunjuk? Apakah yang akan berlaku jika kamu terpaksa meneka maksud setiap simbol?",
+        "afterQuestion": "Simbol peta yang manakah paling membantu pelawat? Mengapa?",
+        "questionsChanged": [],
+        "summary": "Cikgu Julaiha menerangkan peta lakar. Peta lakar ialah gambaran permukaan bumi yang dilukis dari pandangan atas. Peta ini menunjukkan kawasan sekitar kita dengan skala besar. Ia dilukis dengan simbol atau singkatan perkataan untuk menggantikan benda yang sebenar.\n\nSebuah peta lakar mesti ada tajuk, bingkai (pemidang), arah mata angin, simbol dan senarai petunjuk. Petunjuk memberitahu maksud setiap simbol.\n\nAda empat jenis simbol. Simbol kawasan menunjukkan kawasan seperti hutan, sawah padi dan ladang getah. Simbol garisan menunjukkan benda yang panjang, seperti sungai, jalan raya, jambatan dan jalan kereta api. Simbol titik menunjukkan tempat tertentu, seperti masjid, kuil, gereja dan stesen trigonometri. Jenis keempat ialah singkatan perkataan.",
+        "summaryBasis": "transcript",
+        "keyPoints": [
+          "Peta lakar ialah gambaran sesuatu kawasan yang dilukis dari pandangan atas.",
+          "Peta lakar mesti ada tajuk, bingkai, arah mata angin, simbol dan petunjuk.",
+          "Petunjuk menerangkan maksud setiap simbol, seperti simbol kawasan, garisan dan titik."
+        ],
+        "contentNote": "Sari kata automatik YouTube untuk video ini banyak salah, contohnya \"peta lakar\" menjadi \"kecelakaan\" atau \"peternakan\": lebih baik tutup sari kata ketika menonton.",
+        "screening": {
+          "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+          "on": "2026-10-16",
+          "notes": "Julaiha Ali (Cikgu Julaiha, SMK Undang Rembau, Negeri Sembilan; a teacher's own channel), 7:42, Feb 2021, embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. Form 1 Geografi bab 3: 0:38 a sketch map is a picture of the earth's surface drawn from above, of the local area at a large scale, using symbols or abbreviations in place of real features; must have a title, frame (pemidang), compass direction, symbols and a key (petunjuk); four kinds of symbol: area (forest, rice, rubber, mangrove), line (rivers, roads, bridges, railways), point (mosque, temple, church, trig station), abbreviations (from 4:43, with the textbook page); 5:24 physical and cultural landscape; 7:31 \"ajukan kepada guru Anda\". PRESCREEN (recommend) for L11 ms, 37–282 (definition, the parts of a map, the symbol types; before the abbreviation list that sends learners to the textbook page). Both of the lesson's questions kept. Auto-captions garble \"peta lakar\" (\"kecelakaan\", \"peternakan\", \"pecel akar\") but nothing rude: watch with captions off. Covers title, key and compass direction; scale only in passing, and nothing on what a map leaves out beyond \"symbols replace the real thing\". Drafts written."
+        }
+      },
       "screened": [
         {
           "youtubeId": "R2ZzdgiigbE",
@@ -602,12 +775,90 @@
             "on": "2026-10-16",
             "notes": "Nurhabibah M A. (a teacher's channel), 6:10, 2021, embeddable; only a broken auto-caption track (YouTube took the Malay for Spanish). Form 1 Geografi: features and symbols of a sketch map, a short home-learning lesson (description). Can't check the words; captions show nonsense if turned on. UNVERIFIED for L11 ms (short and on-topic; a person watches it)."
           }
+        },
+        {
+          "youtubeId": "-5ggUmwzf74",
+          "title": "Simbol pada Peta",
+          "channel": "Maestro Digital Education",
+          "channelUrl": "https://www.youtube.com/@MaestroDigitalEducation",
+          "fullDurationSeconds": 219,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Maestro Digital Education, 3:39, Jul 2022, embeddable, asr:id, no dubbing. \"Kak Frieska\" explains line, point and area symbols on maps (rivers, roads, borders, mountains, Kecamatan, provincial capitals, lakes, swamps, rice fields). REJECT for L11 ms: Indonesian (Indonesian publisher's textbook series, \"adik-adik\", Kecamatan, provinsi), not Malaysian Malay."
+          }
+        },
+        {
+          "youtubeId": "XhjrOJKImfo",
+          "title": "SAINS SOSIAL & ALAM SEKITAR TINGKATAN 3 KSSM PENDIDIKAN KHAS - MENGHASILKAN PETA LAKAR",
+          "channel": "Cikgu Hafez J. Malim",
+          "channelUrl": "https://www.youtube.com/@CikguHafezJMalim",
+          "fullDurationSeconds": 835,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Cikgu Hafez J. Malim (a teacher's own channel), 13:55, Jun 2021, embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. Form 3 special-education lesson: drawing a sketch map of a school with a colour key (petunjuk) and a north arrow (4:41), then an exercise. REJECT for L11 ms: the auto-captions repeatedly show a rude mis-hearing (\"porno\", at least six times, for the teacher's filler word), which learners would see with captions on; long, and mostly one worked example."
+          }
+        },
+        {
+          "youtubeId": "dPb48XNH_xs",
+          "title": "Geografi Tingkatan 1 Bab 3 | PETA LAKAR",
+          "channel": "Khalil Aha",
+          "channelUrl": "https://www.youtube.com/@KhalilAha",
+          "fullDurationSeconds": 586,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Khalil Aha (a teacher's own channel), 9:46, Feb 2021, embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. Form 1 Geografi bab 3: what a sketch map is, its five parts, four kinds of symbols, physical and cultural landscape, steps to draw one; ends with \"subscribe, like and share\". REJECT for L11 ms: auto-captions turn \"bab ini\" into \"babi\" (an offensive word for many Malaysian learners) and \"peta lakar\" into \"kecelakaan\"; T3mx2MF5sjc covers the same more cleanly."
+          }
         }
       ]
     },
     "L12": {
-      "primary": null,
-      "noGoodMatch": true,
+      "primary": {
+        "youtubeId": "djlUNMcY81o",
+        "title": "URBANISASI (KONSEP DAN FAKTOR MEMPENGARUHI URBANISASI) KSSM SPM GEOGRAFI EPISOD 41",
+        "channel": "MD NAFI AKMAL",
+        "channelUrl": "https://www.youtube.com/@mdnafiakmal6511",
+        "fullDurationSeconds": 130,
+        "spokenLanguage": "ms",
+        "captions": "auto",
+        "autoDubbed": false,
+        "verifiedByOembed": true,
+        "startSeconds": 30,
+        "endSeconds": 121,
+        "durationSeconds": 91,
+        "reviewStatus": "prescreened",
+        "why": "Dalam video pendek ini, seorang cikgu Geografi menerangkan apa itu pembandaran dan sebab bandar berkembang.",
+        "beforeQuestion": "Apakah yang mungkin membuat orang berpindah dari kawasan luar bandar ke bandar yang sedang berkembang?",
+        "afterQuestion": "Apakah yang diperlukan oleh bandar yang sedang berkembang selain lebih banyak rumah?",
+        "questionsChanged": [],
+        "summary": "Cikgu Md Nafi Akmal menerangkan pembandaran, atau urbanisasi. Pembandaran ialah proses apabila sesuatu kawasan luar bandar berubah menjadi bandar.\n\nBeliau menyenaraikan beberapa faktor. Orang berhijrah ke bandar kerana ada banyak peluang pekerjaan dalam pelbagai sektor. Penduduk juga bertambah kerana kadar kelahiran yang tinggi. Kegiatan perlombongan, seperti petroleum, boleh mewujudkan bandar baharu, contohnya Kerteh di Terengganu. Kilang-kilang menarik penduduk kerana ada peluang pekerjaan. Universiti dan kolej juga menarik orang ke bandar. Bandar juga ada kemudahan yang lengkap, seperti jalan raya, air, elektrik dan telekomunikasi.\n\nFaktor terakhir ialah sejarah. Kuala Lumpur bermula sebagai pekan kecil. Kerana ada bijih timah dan kegiatan melombong, ia berubah menjadi bandar yang lebih besar. Ia terus berkembang hingga hari ini, walaupun bijih timah sudah habis.",
+        "summaryBasis": "transcript",
+        "keyPoints": [
+          "Pembandaran ialah proses kawasan luar bandar berubah menjadi bandar.",
+          "Orang berpindah ke bandar kerana peluang pekerjaan, pendidikan dan kemudahan seperti jalan raya, air dan elektrik.",
+          "Kuala Lumpur bermula sebagai pekan kecil dan berkembang kerana perlombongan bijih timah."
+        ],
+        "contentNote": "Sari kata automatik YouTube untuk video ini banyak salah, contohnya \"pembayaran\" untuk \"pembandaran\": lebih baik tutup sari kata ketika menonton.",
+        "screening": {
+          "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+          "on": "2026-10-16",
+          "notes": "MD NAFI AKMAL (Cikgu Md Nafi Akmal, SMK St Mary Sandakan; a teacher's own channel), 2:10, Sep 2021, embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. Form 4 Geografi bab 15: 0:30 urbanisation is a rural area becoming urban; factors: 0:46 in-migration for jobs in many sectors, natural increase, mining such as petroleum creating new towns (Kerteh, Terengganu), industry with jobs, higher education (universities and colleges), complete facilities (roads, water, electricity, telecommunications), history: Kuala Lumpur grew from a small town because of tin mining and still grows though the tin is gone (ends 2:01). Slides read aloud. PRESCREEN (recommend) for L12 ms, 30–121 (skips the \"halo guys\" intro and the sign-off). Both of the lesson's questions kept (jobs; roads, water, electricity, telecommunications, education). Lists the factors rather than showing how they feed each other. Auto-captions garbled (\"pembayaran selesai\" for \"pembandaran\", \"keriting\" for Kerteh, \"laptop\"): watch with captions off. Drafts written."
+        }
+      },
       "screened": [
         {
           "youtubeId": "lx8BRJzspfE",
@@ -656,6 +907,38 @@
             "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
             "notes": "Salwin Channel, 11:35, Jan 2026, embeddable, asr labelled id; AUTO-DUBBED English default. An Indonesian vlogger's night drive around Kuala Lumpur with a Malay documentary-style narration: from a tin-mining town (1857) to capital; jobs drew investors and migrants; highways, low-cost housing replacing squatter areas, LRT and KLIA Express; British administration, 1880 and 1896, independence. The growth story fits L12, but the narration sounds taken from someone else's documentary (the brief is original creators' uploads only), and it is a vlog. REJECT for L12 ms (possible re-upload; vlog)."
+          }
+        },
+        {
+          "youtubeId": "1LLvCdV9AYE",
+          "title": "RETROSPEKTIF : BAKAL BANDARAYA (1972)",
+          "channel": "FINAS Malaysia",
+          "channelUrl": "https://www.youtube.com/@FinasMalaysiaMY",
+          "fullDurationSeconds": 632,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "FINAS Malaysia, 10:32, Feb 2025, embeddable, NO captions, no dubbing. FINAS (the national film agency) re-releasing Filem Negara's 1972 documentary \"Bakal Bandaraya\" on Kuala Lumpur's growth from a village (description). UNVERIFIED: no captions; a 1972 government film, likely formal narration. A person would have to watch it for a part on how KL grew."
+          }
+        },
+        {
+          "youtubeId": "GP6uAUN4x0A",
+          "title": "RETROSPEKTIF : KUALA LUMPUR WILAYAH PERSEKUTUAN (1974)",
+          "channel": "FINAS Malaysia",
+          "channelUrl": "https://www.youtube.com/@FinasMalaysiaMY",
+          "fullDurationSeconds": 1142,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "FINAS Malaysia, 19:02, Jan 2022, embeddable, asr labelled id (garbled), no dubbing. Filem Negara's 1974 \"Kuala Lumpur Wilayah Persekutuan\": traffic and people coming by train, car and motorcycle (0:46), commerce and banks, KL's origin as a tin-collecting village where the Gombak meets the Klang (2:53), then administration, independence, Parliament and the Federal Territory. REJECT for L12 ms: mostly about government and administration; the growth part is a few sentences; old film with garbled captions."
           }
         }
       ]
@@ -802,6 +1085,54 @@
             "on": "2026-10-16",
             "notes": "Harian Metro, 1:01, Nov 2022, embeddable, asr labelled id. An election candidate says the disaster agency is ready for flash floods in the Klang Valley. REJECT for L14 ms: a campaign quote in a news clip."
           }
+        },
+        {
+          "youtubeId": "ghm-3Vky1Us",
+          "title": "Banjir: UTM bangunkan sistem amaran bahasa isyarat",
+          "channel": "Astro AWANI",
+          "channelUrl": "https://www.youtube.com/@astroawani",
+          "fullDurationSeconds": 238,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Astro AWANI, 3:58, Jan 2021, embeddable, only an empty asr:en track, no dubbing. \"Banjir: UTM bangunkan sistem amaran bahasa isyarat\": UTM's Disaster Preparedness and Prevention Centre (with a Japanese partner) develops a flood-warning system in sign language so deaf people can understand early safety information (title and description). UNVERIFIED: no usable captions. Strong lead for L14 ms: it answers the lesson's After question (what makes warnings hard for some people to use) directly. A person must watch it."
+          }
+        },
+        {
+          "youtubeId": "7RZ5IzrUEpA",
+          "title": "Banjir | Golongan OKU diberi keutamaan dipindahkan",
+          "channel": "Astro AWANI",
+          "channelUrl": "https://www.youtube.com/@astroawani",
+          "fullDurationSeconds": 84,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Astro AWANI, 1:24, Dec 2021, embeddable, only an empty asr:en track, no dubbing. More than 1,000 disabled people in flood-risk areas of Terengganu get priority evacuation to relief centres because of their limited mobility, says the state fire and rescue director (description). UNVERIFIED: no usable captions. A second lead for L14 ms (fairness in a response). A person must watch it."
+          }
+        },
+        {
+          "youtubeId": "zrN8L4rZjpA",
+          "title": "CDERT – PELUANG KOMUNITI TERLIBAT PENGURUSAN BENCANA  [6 OKT 2015]",
+          "channel": "Berita RTM",
+          "channelUrl": "https://www.youtube.com/@BeritaRTMBES",
+          "fullDurationSeconds": 95,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Berita RTM, 1:35, Oct 2015, embeddable, NO captions, no dubbing. Civil Defence's community emergency response teams (CDERT) let communities take part directly in disaster management (description). UNVERIFIED: no captions; old; probably an official announcement. Weak."
+          }
         }
       ]
     },
@@ -926,6 +1257,38 @@
             "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
             "notes": "Nurul Sakinah (a teacher's channel), 6:58, 2020, embeddable, asr labelled id (spoken Malaysian Malay). Revision for Year 3 KAFA (religious-school) Jawi: how to spell English loanwords (jus, klinik, feri, filem) in Jawi script. REJECT for L16 ms: a Jawi spelling drill for a religious-school class; loanwords are touched only to spell them."
+          }
+        },
+        {
+          "youtubeId": "sgOFWYZINN8",
+          "title": "Malaysia dan Indonesia Serumpun! Austronesia ni apa pulak?",
+          "channel": "Avenda FV",
+          "channelUrl": "https://www.youtube.com/@AvendaFV",
+          "fullDurationSeconds": 927,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Avenda FV, 15:27, Jun 2022, embeddable, asr labelled id (badly garbled), no dubbing. A personal vlog reading out an article on the Austronesian language family (Taiwan to Madagascar and New Zealand, 1,200 languages, branches), word lists compared across Pacific languages, then \"we're all Malay\" musings. REJECT for L16 ms: captions largely unreadable, read from an article, ends on ethnic identity."
+          }
+        },
+        {
+          "youtubeId": "1r73vvOWD28",
+          "title": "Cikgu Alex Jatuh Cinta dengan Bahasa Melayu",
+          "channel": "DBPMalaysia",
+          "channelUrl": "https://www.youtube.com/@DBPMalaysia",
+          "fullDurationSeconds": 600,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "DBPMalaysia, 10:00, Jan 2021, embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. A teacher on how he fell in love with Malay, then a complaint that young people and even Malays look down on Malay, English loanwords (\"aktual\", \"konklusi\") should not be used, foreigners learn Malay faster than Malaysian pupils. REJECT for L16 ms: treats other languages as a threat and talks about ethnic groups; the opposite of \"speaking more than one language is a strength\"."
           }
         }
       ]
@@ -1054,6 +1417,53 @@
             "on": "2026-10-16",
             "notes": "PentasPusaka, 1:00, 2018, embeddable, NO captions. One minute of Kelantan wayang kulit performance with an English description. No spoken explanation to learn from, and the description is English. REJECT for L18 ms: a performance clip with no words in Malay about meaning."
           }
+        },
+        {
+          "youtubeId": "4jZwig8vOUI",
+          "title": "Tahap II (2022) - Klip | Pendidikan Seni Visual - Apresiasi Karya",
+          "channel": "ntv7malaysia",
+          "channelUrl": "https://www.youtube.com/@ntv7MALAYSIAOfficial",
+          "fullDurationSeconds": 266,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "ntv7malaysia (DidikTV), 4:26, Jul 2022, embeddable, asr labelled id, no dubbing. Year 4 Pendidikan Seni Visual clip: recognising and naming the visual-art language in a wet-on-wet painting, then appreciation (description). The captions are badly garbled, with alarming mis-hearings (\"kita akan bunuh mereka\", \"Palestina\"). REJECT for L18 ms: about painting technique and tidying up, not about reading meaning from details; captions learners must not see."
+          }
+        },
+        {
+          "youtubeId": "dufZ6xGKdLg",
+          "title": "(YouTube gives no title: it does not allow embedding)",
+          "channel": "CIKGU MJ",
+          "fullDurationSeconds": 404,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": false,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "CIKGU MJ (a teacher's own channel), 6:44, Sep 2020, NOT embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. STPM (pre-university) Seni Visual: appreciation as understanding and judging a work through subject (theme, subject matter), formal aspects (elements and principles) and content and context. REJECT for L18 ms: YouTube does not allow it to be embedded (playableInEmbed false); also pre-university jargon."
+          }
+        },
+        {
+          "youtubeId": "CX43cMuEPvc",
+          "title": "CARA MELAKUKAN APRESIASI SENI | PENDIDIKAN SENI VISUAL",
+          "channel": "Mimi",
+          "channelUrl": "https://www.youtube.com/@mimi7527",
+          "fullDurationSeconds": 231,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Mimi (a primary teacher's channel), 3:51, Jul 2021, embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. A teacher shows Year 5 pupils how to present their own artwork: name, title, tools and materials, technique, elements and principles; then homework (record yourself, play a Wordwall game). REJECT for L18 ms: describing how you made your own work, not interpreting someone else's from its details."
+          }
         }
       ]
     },
@@ -1076,6 +1486,22 @@
             "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-15",
             "notes": "Ling Ling (a teacher channel), 5:42. A list of traits of a caring school community, rule-following and better exam results; nothing on being invited vs having a real say. Lesson 19 is also one a local educator reviews first."
+          }
+        },
+        {
+          "youtubeId": "3KLBFYvmeQs",
+          "title": "Suara Pelajar, Suara Utama: Apakah Ruang Pembelajaran yang Selamat dan Inkusif?",
+          "channel": "KRYSS Network",
+          "channelUrl": "https://www.youtube.com/@KRYSSNetwork",
+          "fullDurationSeconds": 504,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "KRYSS Network, 8:24, Nov 2023, embeddable, manual English captions (spoken Malay with burned-in English), no dubbing. \"Suara Pelajar, Suara Utama\": young adults on unsafe schools: bullying, period spot checks and period poverty, sexual harassment at age 9, a queer speaker singled out at school. REJECT for L19 ms: sexual harassment and sexuality are outside what this course shows 10-17-year-olds, and Lesson 19 is already a sensitive lesson."
           }
         }
       ]
@@ -1298,8 +1724,41 @@
       ]
     },
     "L23": {
-      "primary": null,
-      "noGoodMatch": true,
+      "primary": {
+        "youtubeId": "OldfXUIxbdI",
+        "title": "Ini cara netizen buat tapisan kendiri elak terjebak berita palsu.",
+        "channel": "Astro AWANI",
+        "channelUrl": "https://www.youtube.com/@astroawani",
+        "fullDurationSeconds": 106,
+        "spokenLanguage": "ms",
+        "captions": "auto",
+        "autoDubbed": false,
+        "verifiedByOembed": true,
+        "startSeconds": 0,
+        "endSeconds": 99,
+        "durationSeconds": 99,
+        "reviewStatus": "prescreened",
+        "why": "Video berita pendek ini berkongsi beberapa cara mudah untuk menyemak sesuatu berita sebelum kamu berkongsi.",
+        "beforeQuestion": "Apakah yang membuatkan kamu mempercayai sesuatu berita?",
+        "afterQuestion": "Apakah dua perkara yang boleh kamu lakukan sebelum berkongsi sesuatu berita? Mengapa?",
+        "questionsChanged": [
+          "afterQuestion"
+        ],
+        "summary": "Berita palsu bukan perkara baharu. Tetapi dengan teknologi dan media sosial, berita palsu kini tersebar dengan lebih cepat. Astro AWANI bertanya kepada pengikutnya di Facebook dan YouTube bagaimana mereka mengelak daripada terpedaya.\n\nPertama, gunakan akal sebelum berkongsi sesuatu berita. Kedua, berhati-hati dengan tajuk berita yang terlalu hebat atau mengejutkan. Cari tajuk itu dengan enjin carian untuk melihat sama ada media lain yang dipercayai juga melaporkannya.\n\nJika kamu terus membaca berita itu, tahan diri daripada menyebarkannya sehingga ia disahkan benar. Kamu juga boleh menyemak fakta di laman web seperti sebenarnya.my dan laman web media lain yang dipercayai. Ingat: jika tidak pasti, jangan kongsi.",
+        "summaryBasis": "transcript",
+        "keyPoints": [
+          "Berita palsu tersebar lebih cepat melalui media sosial.",
+          "Tajuk yang terlalu mengejutkan perlu disemak dengan sumber lain yang dipercayai.",
+          "Jika tidak pasti sesuatu berita itu benar, jangan kongsi."
+        ],
+        "contentNote": "Video ini menamakan laman semakan fakta kerajaan, sebenarnya.my, sebagai satu tempat untuk menyemak; bincangkan juga sumber lain. Sari kata automatik YouTube untuk video ini banyak salah: lebih baik tutup sari kata ketika menonton.",
+        "weakFit": true,
+        "screening": {
+          "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+          "on": "2026-10-16",
+          "notes": "Astro AWANI, 1:46, Aug 2020, embeddable, asr labelled id (garbled but readable), no dubbing. Five tips AWANI's followers gave for \"self-filtering\" fake news: fake news is old but spreads faster with social media; use common sense before sharing; be wary of sensational headlines and search the headline to see whether trusted media report it; hold back from sharing until it is confirmed; check facts on sebenarnya.my and other trusted media sites; \"if you're not sure, don't share\" (ends 1:39, then \"bye bye\"). PRESCREEN (recommend, weak) for L23 ms, 0–99. Before kept; After changed (nothing on how a true picture or fact can mislead, nor on dates and context). Narration uses \"anda\"; it names one government fact-check site among others: teachers' note. Drafts written."
+        }
+      },
       "screened": [
         {
           "youtubeId": "2dqi1iyPJVo",
@@ -1349,12 +1808,93 @@
             "on": "2026-10-16",
             "notes": "Pejabat Penerangan Daerah Johor Bahru, 1:26, 2023, embeddable, asr labelled id. A clip from RTM news (the description credits Berita RTM, so it's a re-upload): the communications regulator tells anyone harmed by false content to make a police report with screenshots and links, post a correction, and report it to the platform. REJECT for L23 ms: a re-upload, and \"make a police report\" is advice many refugee learners can't safely follow; nothing on checking a claim."
           }
+        },
+        {
+          "youtubeId": "qXbrDWd_O7o",
+          "title": "Semak kesahihan maklumat sebelum kongsi",
+          "channel": "BERNAMA TV",
+          "channelUrl": "https://www.youtube.com/@bernamatv502",
+          "fullDurationSeconds": 167,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "BERNAMA TV, 2:47, Apr 2020, embeddable, asr:en, no dubbing. The communications minister, mostly in English, asks people to check COVID-19 information before sharing and to use sebenarnya.my. REJECT for L23 ms: a minister's statement, mostly English, one government site as the answer."
+          }
+        },
+        {
+          "youtubeId": "1i8D0vypdNk",
+          "title": "Lindungi Diri Daripada Kepalsuan: Pengenalan kepada Perikatan JomCheck",
+          "channel": "Media Education For All",
+          "channelUrl": "https://www.youtube.com/@mediaeducationforall",
+          "fullDurationSeconds": 276,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Media Education For All, 4:36, Mar 2023, embeddable, asr:en, no dubbing. Introduction to the JomCheck fact-checking alliance (staff describe their tip line and roles), mostly in English, set up ahead of an election. REJECT for L23 ms: spoken mostly in English; about the organisation, not how to check a claim."
+          }
+        },
+        {
+          "youtubeId": "PzYaYxv1BR4",
+          "title": "Pendidikan literasi media depani era pasca kebenaran",
+          "channel": "Astro AWANI",
+          "channelUrl": "https://www.youtube.com/@astroawani",
+          "fullDurationSeconds": 97,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Astro AWANI, 1:37, Jun 2023, embeddable, asr labelled id, no dubbing. A professor: laws are not the best answer to fake news (freedom), media-literacy education is; \"post-truth\" where ideology and religion decide what people believe; ends on a report naming AWANI the most trusted news. REJECT for L23 ms: adult policy comment; no how-to for learners; ends in self-promotion."
+          }
         }
       ]
     },
     "L24": {
-      "primary": null,
-      "noGoodMatch": true,
+      "primary": {
+        "youtubeId": "Fpa9vPnQzFM",
+        "title": "Ini Cerita Kita: Sukarelawan Belia, Bila Anak Muda Peduli",
+        "channel": "Astro AWANI",
+        "channelUrl": "https://www.youtube.com/@astroawani",
+        "fullDurationSeconds": 1602,
+        "spokenLanguage": "ms",
+        "captions": "auto",
+        "autoDubbed": false,
+        "verifiedByOembed": true,
+        "startSeconds": 364,
+        "endSeconds": 550,
+        "durationSeconds": 186,
+        "reviewStatus": "prescreened",
+        "why": "Dalam bahagian video ini, seorang sukarelawan muda bercerita tentang projek kecil yang dibuat oleh pelajar di sebuah kampung pedalaman di Sarawak.",
+        "beforeQuestion": "Bagaimanakah sukarelawan muda dalam video ini tahu apa yang diperlukan oleh kampung itu?",
+        "afterQuestion": "Pilih satu projek dalam video. Apakah masalah yang dilihat oleh sukarelawan, dan bagaimanakah projek itu membantu?",
+        "questionsChanged": [
+          "beforeQuestion",
+          "afterQuestion"
+        ],
+        "summary": "Dalam program bual bicara ini, Nurul Iz Aina bercerita tentang misi sukarelawan pelajar di Baklalan, Lawas, Sarawak, pada tahun 2023. Baklalan ialah kawasan pedalaman. Untuk sampai ke sana, mereka melalui jalan offroad selama kira-kira empat jam dari Lawas.\n\nSetiap sukarelawan bekerja dalam satu bidang, seperti pendidikan, kesihatan atau perpaduan. Aina sedang belajar untuk menjadi guru, jadi dia memilih pendidikan. Dia membuat program membaca, menulis dan mengira untuk murid sekolah kebangsaan di situ. Dia juga membantu murid melihat peluang yang ada selepas mereka tamat sekolah. Para sukarelawan juga mencantikkan kawasan sekolah.\n\nLaluan dari rumah keluarga angkat ke sekolah sangat gelap kerana tiada lampu. Pernah ada orang kampung yang terjatuh ke dalam sawah padi. Rakan-rakan Aina mendapat idea untuk memasang pemantul cahaya di sepanjang laluan itu, supaya orang tidak terjatuh. Kata Aina, para sukarelawan sendiri melihat apa yang diperlukan di kawasan itu, kemudian memilih cara untuk menyumbang.",
+        "summaryBasis": "transcript",
+        "keyPoints": [
+          "Sukarelawan muda melihat dahulu apa yang diperlukan oleh kampung itu.",
+          "Mereka membuat projek kecil, seperti program membaca dan pemantul cahaya di laluan yang gelap.",
+          "Projek yang kecil boleh menjadikan kampung lebih selamat dan membantu murid belajar."
+        ],
+        "contentNote": "Bahagian ini datang daripada program bual bicara terbitan sebuah kementerian. Bahagian lain video ini bercakap tentang biasiswa dan yayasan yang mungkin tidak terbuka kepada semua murid, jadi tunjukkan bahagian ini sahaja.",
+        "screening": {
+          "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+          "on": "2026-10-16",
+          "notes": "Astro AWANI (a programme by the Ministry of National Unity), 26:42, Nov 2025, embeddable, asr:ms (clean, correctly labelled), no dubbing. Talk show \"Ini Cerita Kita: Sukarelawan Belia\". 1:07 two young guests (a student-volunteer foundation alumna, a scholarship programme executive); 2:08-6:10 the two organisations, scholarships and B40 targeting; 6:04-9:10 Nurul Iz Aina on a 2023 student mission to Baklalan, Lawas (rural Sarawak, four hours off-road): six pillars, her education work (reading, writing and counting; showing pupils what they can do after school; brightening the school), and the reflective markers her friends put on the dark path to school after villagers fell into the rice field: \"the volunteers looked for what the area needed\"; 9:12 dropout-prevention mentoring, mushroom farming with an Orang Asli school, a farming project; 12:14 small projects as a start; 18:17 challenges: time, support and funding, and the need for support from government, NGOs and companies. PRESCREEN (recommend) for L24 ms, 364–550 (the host's question and Aina's Baklalan story). Both questions changed (the lesson's are about messages to people in charge). Avoids the scholarship parts, which many refugee learners can't apply for. Drafts written."
+        }
+      },
       "screened": [
         {
           "youtubeId": "6biK4dfIanQ",

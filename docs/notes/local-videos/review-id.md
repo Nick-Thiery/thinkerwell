@@ -4,7 +4,7 @@ Made by `npm run videos:sheet` from `docs/notes/local-videos/id.json`. Don't edi
 
 Every lesson shows its English video, with a note that it is in English and the written version in Bahasa Indonesia, until a person who speaks Bahasa Indonesia watches a video below and approves it. **Nothing here is approved.** The candidates were pre-screened by an AI from YouTube's captions (in a browser that was not signed in); that is a first filter, not a review. Read docs/notes/local-language-videos.md first.
 
-23 lessons have a recommended video, 14 other videos also fit, 8 videos still need someone to watch them, and 0 lessons have nothing yet.
+24 lessons have a recommended video, 15 other videos also fit, 8 videos still need someone to watch them, and 0 lessons have nothing yet.
 
 ## Lesson 1: How can we find out about the past?
 
@@ -89,33 +89,33 @@ To approve it: `npm run videos:apply -- id L02 --approved-by "Your name"`
 
 ## Lesson 3: How does changing scale change the story?
 
-**Recommended:** [Seberapa Tua Alam Semesta? (Dan Gimana Cara Taunya?)](https://www.youtube.com/watch?v=NEkpbAy0GR0), by [Kok Bisa?](https://www.youtube.com/@KokBisa)
+**Recommended:** [Apakah Ada Ujung Alam Semesta?](https://www.youtube.com/watch?v=QK01ROEqJ1A&t=2s), by [Kok Bisa?](https://www.youtube.com/@KokBisa)
 
-- **Part to watch:** the whole video (4:21)
+- **Part to watch:** 0:02 to 3:22 (3:20 of 10:03)
 - **Captions on YouTube:** manual
 
-**Why this video** (shown to learners): Video pendek ini memperkirakan umur alam semesta dan menggambarnya di garis waktu yang sangat panjang.
+**Why this video** (shown to learners): Video Kok Bisa? ini mengajak kamu keluar dari Bumi, langkah demi langkah, untuk melihat seberapa besar alam semesta.
 
 - **Think first (the lesson's own, kept):** Tanda apa yang menunjukkan bahwa video ini memakai skala yang sangat luas?
 - **After you watch (the lesson's own, kept):** Apa yang ditunjukkan skala luas ini? Detail tentang manusia apa yang dilewatkannya?
 
 **Written version** ("Read instead", draft by AI: correct anything that is wrong or unclear):
 
-> Video ini bertanya: berapa umur alam semesta, dan bagaimana ilmuwan bisa tahu? Ilmuwan memakai dua petunjuk. Pertama, mereka mempelajari bintang-bintang tertua, dari massa dan terangnya. Kedua, mereka mengukur seberapa cepat alam semesta mengembang. Dari petunjuk itu, mereka memperkirakan umurnya sekitar 13,8 miliar tahun.
+> Video ini mulai dari manusia. Kalau manusia sekecil semut, panjang Bumi lebih dari 127.000 lapangan sepak bola. Jarak ke Bulan sama dengan 3,8 juta lapangan sepak bola. Kalau kita naik mobil lewat jalan tol, kita baru sampai di Bulan hampir setengah tahun kemudian.
 > 
-> Lalu video ini menggambar garis waktu. Setiap titik di garis itu sama dengan 10 juta tahun. Manusia modern baru muncul di bagian paling akhir dari titik terakhir.
+> Lalu skalanya makin luas. Naik mobil ke Mars butuh lebih dari dua setengah abad, atau sekitar delapan generasi. Ke Neptunus, di ujung tata surya, butuh lebih dari 5.000 tahun.
 > 
-> Pada skala yang sangat luas ini, seluruh sejarah manusia hampir tidak terlihat. Video ini juga mengingatkan bahwa ilmu pengetahuan bisa salah, dan terus menjadi lebih tepat.
+> Di luar tata surya ada pesawat antariksa Voyager, benda buatan manusia yang paling jauh. Dari sana, Matahari hanya terlihat seperti satu titik bintang. Voyager butuh 35 tahun untuk keluar dari tata surya, dan sekitar 30.000 tahun untuk keluar dari Awan Oort. Awan Oort pun hanya satu bagian dari wilayah yang lebih luas lagi.
 
 **Key points:**
 
-- Ilmuwan memperkirakan umur alam semesta sekitar 13,8 miliar tahun.
-- Pada garis waktu yang sangat panjang, setiap titik sama dengan 10 juta tahun.
-- Pada skala seluas itu, sejarah manusia hanya bagian yang sangat kecil di akhir.
+- Video ini memakai ukuran yang kita kenal, seperti lapangan sepak bola dan perjalanan naik mobil.
+- Makin jauh dari Bumi, jaraknya makin sulit dibayangkan: naik mobil ke Neptunus butuh lebih dari 5.000 tahun.
+- Dari tempat Voyager, Matahari hanya terlihat seperti satu titik bintang.
 
 **Note for teachers:** none
 
-**What the pre-screen found:** Kok Bisa?, manual Indonesian captions. Both current questions are answerable as they stand (signs of a very wide scale; what it shows and which human details it leaves out). Casual Jakarta register (gak, ngitung): reviewer to judge.
+**What the pre-screen found:** Kok Bisa?, 10:03, Sep 2019, embeddable, manual Indonesian, English and Malay captions, no dubbing. Re-read the manual Indonesian captions for the part: 0:02 "at school we learn about the solar system, but not how big the universe is"; 0:12 the Moon is about 30 Earths away; 0:40 if people were ants, the Earth would be 127,000 football pitches long; 1:03 the Moon 3.8 million pitches, about half a year by car on a toll road; 1:15 Mars, 2.2 billion pitches, two and a half centuries by car (8 generations); 1:47 Neptune, over 5,000 years by car ("like driving from when the pyramids were built"); 2:19 Voyager, the farthest human-made object, 23,000 years by car, 61,500 km/h; 2:47 from Voyager the Sun is a dot; 2:58 the Oort Cloud; 3:04 Voyager left the solar system in 35 years, needs about 30,000 years to leave the Oort Cloud; 3:16-3:22 the Oort Cloud is part of the Local Interstellar Cloud. At 3:22 a new idea starts (light years), so the part now ends there. Casual Jakarta register ("nggak", "gede banget") throughout. PRESCREEN (recommend) for L03 id, 2–202 (was 2–219; 219 cut mid-way into the light-year explanation). Both of the lesson's questions kept. Drafts written. It could replace NEkpbAy0GR0 as primary or stay an alternative; it is the better "zoom out" for the lesson's scale question.
 
 **Before you approve, check:**
 
@@ -245,6 +245,48 @@ To approve it: `npm run videos:apply -- id L05 --approved-by "Your name"`
 - [ ] The written version and key points say what the video says (I corrected them in the candidates file if not).
 
 To approve it: `npm run videos:apply -- id L06 --approved-by "Your name" --checked-audio`
+
+## Lesson 7: Why did the first cities and states begin?
+
+**Recommended:** [Bagaimana Negara Pertama Kali Diciptakan?](https://www.youtube.com/watch?v=0-yhwooLuV8&t=87s), by [Lumensia](https://www.youtube.com/@Lumensia21)
+
+- **Part to watch:** 1:27 to 4:16 (2:49 of 8:13)
+- **Captions on YouTube:** auto
+- **YouTube has an AI-dubbed English soundtrack of this video.** Play it on the learners' devices: if you hear English, it can't be used.
+
+**Why this video** (shown to learners): Bagian video ini menjelaskan bagaimana pertanian, makanan yang berlebih, dan aturan membantu kota dan negara pertama muncul di Mesopotamia.
+
+- **Think first (adapted to this video):** Perhatikan apa yang terjadi setelah manusia mulai bertani dan punya makanan berlebih.
+  - The lesson's question now: Perhatikan bagaimana Sungai Nil membantu pertanian, pekerjaan, dan kekuasaan para penguasa.
+- **After you watch (adapted to this video):** Siapa yang mendapat lebih banyak kekuasaan di kota-kota pertama? Bagaimana mereka mendapatkannya?
+  - The lesson's question now: Apa yang dilakukan orang Mesir bersama-sama? Siapa yang punya lebih banyak kekuasaan?
+
+**Written version** ("Read instead", draft by AI: correct anything that is wrong or unclear):
+
+> Video ini menjelaskan bahwa sekitar 10.000 tahun lalu, manusia mulai menanam tanaman, beternak, dan menetap di satu tempat. Pertanian menghasilkan surplus, yaitu makanan yang lebih banyak dari yang dibutuhkan hari itu. Surplus perlu disimpan dan dijaga, dan itu membutuhkan kerja sama yang jauh lebih rumit. Desa tumbuh menjadi kota. Kota membutuhkan aturan, dan aturan membutuhkan orang yang menegakkannya.
+> 
+> Selama ribuan tahun, banyak komunitas dipimpin oleh kepala suku. Kepala suku bisa diganti, dan kekuasaannya bergantung pada persetujuan komunitasnya. Lalu, sekitar 3.500 sampai 3.000 tahun sebelum Masehi, di kota-kota Mesopotamia seperti Uruk, Ur, dan Eridu, muncul hal baru: pejabat yang digaji, tentara yang dibayar, hukum tertulis, dan seorang penguasa yang mengaku mendapat kekuasaan dari para dewa.
+> 
+> Video ini menyebut satu sebab penting. Pertanian di Mesopotamia bergantung pada kanal irigasi yang harus dibangun dan diatur. Orang yang mengatur irigasi punya kekuasaan atas siapa yang mendapat air. Di Uruk, kuil-kuil awal menerima surplus dari petani, menyimpannya, lalu membagikannya kembali. Menurut video ini, itulah cara paling awal mengatur sebuah negara yang pernah ditemukan.
+
+**Key points:**
+
+- Pertanian menghasilkan surplus makanan yang perlu disimpan, dijaga, dan diatur.
+- Di kota-kota pertama Mesopotamia muncul pejabat, tentara, hukum tertulis, dan penguasa.
+- Orang yang mengatur air dan surplus makanan mendapat lebih banyak kekuasaan.
+
+**Note for teachers:** YouTube membuat suara bahasa Inggris otomatis untuk video ini: periksa di perangkat kelas bahwa yang terdengar adalah suara asli dalam bahasa Indonesia.
+
+**What the pre-screen found:** Lumensia, 8:13, Aug 2026, embeddable, asr:id (clean), AUTO-DUBBED English default, Indonesian original. "How was the first state created?" 0:00-1:27 opens by telling the viewer "you never chose to be born in a country, never signed its contract; it can tax you, jail you, send you to war" (adult, and exactly the citizenship framing to keep from refugee learners); 1:27 about 10,000 years ago farming, settling, the Neolithic revolution; surplus must be stored and guarded, which needs coordination; villages become cities, cities need rules and someone to enforce them; 2:01 chiefdoms where the chief could be replaced; 2:32 states: territory, monopoly of force; 2:58 Mesopotamia (Uruk, Ur, Eridu, 3500-3000 BCE): paid officials, professional soldiers, written law, a ruler claiming authority from the gods; 3:33 three causes: (1) managing resources: irrigation canals; whoever coordinates irrigation has power over who gets water; Uruk's early temples took in farmers' surplus, stored and redistributed it, "the earliest form of state administration we have found" (ends 4:15); 4:15 (2) war: the defeated "choose between being wiped out or submitting"; (3) legitimacy: kings as go-betweens with the gods, taxes as offerings; 6:07 Akkad; 6:37 egalitarian towns in Ukraine without kings; 7:40 "it still rules your life; you still haven't signed the contract". A new faceless channel; the script reads as machine-written (and ends "Yeah."). PRESCREEN (recommend) for L07 id, 87–256 (surplus to the temple redistribution, before war and before the closing citizenship lines). Both questions changed (the lesson's are about the Nile). Drafts written. AI-dubbed: the reviewer must hear the original on the learners' devices. Reviewer must also judge the channel: anonymous, probably AI-written narration, though the part's content is mainstream (Uruk temple redistribution, irrigation and power). Never show anything outside 1:27-4:16.
+
+**Before you approve, check:**
+
+- [ ] I watched the part above with the sound on, in the language, from start to end.
+- [ ] It is accurate, and right for learners aged 10 to 17, some of them refugees.
+- [ ] Both questions can be answered from the video and from the written version.
+- [ ] The written version and key points say what the video says (I corrected them in the candidates file if not).
+
+To approve it: `npm run videos:apply -- id L07 --approved-by "Your name" --checked-audio`
 
 ## Lesson 8: How did trade connect distant communities?
 
@@ -530,34 +572,34 @@ To approve it: `npm run videos:apply -- id L14 --approved-by "Your name"`
 
 ## Lesson 15: How can objects express culture and identity?
 
-**Recommended:** [Batik merupakan warisan budaya yang menjadi identitas dan kebanggaan bangsa Indonesia](https://www.youtube.com/watch?v=lZKGmAGX-RU&t=27s), by [Kementerian Perdagangan](https://www.youtube.com/@KementerianPerdaganganRI)
+**Recommended:** [Noken Papua, Warisan Lokal yang Mendunia](https://www.youtube.com/watch?v=UNjaqqTMph4&t=11s), by [TVRI Nasional](https://www.youtube.com/@TVRINasional)
 
-- **Part to watch:** 0:27 to 4:25 (3:58 of 4:25)
+- **Part to watch:** 0:11 to 3:26 (3:15 of 6:56)
 - **Captions on YouTube:** auto
 
-**Why this video** (shown to learners): Seorang pembatik di Bantul, Yogyakarta, bercerita tentang batik nitik: cara membuatnya, motifnya, dan sejarahnya.
+**Why this video** (shown to learners): Video TVRI ini bercerita tentang noken, tas khas Papua, dan para mama yang membuatnya di Jayapura.
 
 - **Think first (the lesson's own, kept):** Apakah benda yang berguna juga bisa bercerita?
-- **After you watch (adapted to this video):** Kalau kamu menulis label untuk selembar batik nitik, sudut pandang siapa yang perlu kamu tanyakan dulu? Mengapa?
+- **After you watch (adapted to this video):** Kalau kamu menulis label untuk sebuah noken, sudut pandang siapa yang perlu kamu tanyakan dulu? Mengapa?
   - The lesson's question now: Sudut pandang siapa yang akan kamu tanyakan sebelum menulis label untuk salah satu benda ini?
 
 **Written version** ("Read instead", draft by AI: correct anything that is wrong or unclear):
 
-> Pak Rusli dari kelompok Batik Sekar Nitik di Kampung Kembang Songo, Bantul, menjelaskan batik nitik. Batik ini dibuat dengan canting yang ujungnya dibelah, sehingga lilinnya jatuh seperti titik-titik kecil berbentuk segi empat. Motifnya terinspirasi dari bunga dan buah di sekitar kampung.
+> Video ini dimulai di Jayapura, ibu kota Provinsi Papua. Di sana ada noken, tas khas Papua yang diakui sebagai warisan budaya tak benda dunia. Video ini mengatakan noken lebih dari sekadar tas. Noken adalah simbol kehidupan, persatuan, dan identitas masyarakat Papua.
 > 
-> Sejak abad ke-17, orang di Kembang Songo membatik nitik untuk kebutuhan keraton. Keterampilan ini diturunkan dari ibu ke anak. Kelompok mereka berdiri setelah gempa Yogyakarta tahun 2006.
+> Di Jayapura, sebuah usaha kecil dikelola oleh mama-mama Papua. Mereka membuat noken dengan berbagai desain, warna, dan ukuran. Bahannya alami, seperti kulit kayu dan serat pandan. Bahan itu diproses dengan cara tradisional, lalu dirajut dengan teknik yang diwariskan turun-temurun.
 > 
-> Sekitar 73 motif batik nitik sudah didaftarkan sebagai Indikasi Geografis, supaya tidak ditiru atau diakui daerah lain. Para pembatik berharap batik nitik makin dikenal dan makin banyak orang yang meneruskannya.
+> Seorang pembuat noken bercerita bahwa ia sudah belajar membuat noken sejak kecil dari orang tuanya. Ia mulai membuka usaha noken pada tahun 2012. Bahan utamanya kulit kayu, dan warnanya berasal dari bahan alami, termasuk kulit anggrek hutan.
 
 **Key points:**
 
-- Batik nitik dibuat dari titik-titik kecil dengan canting khusus.
-- Motifnya berasal dari bunga dan buah di sekitar kampung.
-- Batik nitik punya arti bagi keraton, bagi keluarga pembatik, dan bagi kampung yang menjualnya.
+- Noken adalah tas khas Papua yang diakui sebagai warisan budaya dunia.
+- Bagi masyarakat Papua, noken adalah simbol kehidupan, persatuan, dan identitas.
+- Cara membuat noken dari kulit kayu dan serat pandan diwariskan dari orang tua kepada anak.
 
 **Note for teachers:** none
 
-**What the pre-screen found:** Kementerian Perdagangan (Ministry of Trade), 4:25. A maker explains one object with several meanings (craft, palace, family, a protected product). Think first kept; After adapted to the batik.
+**What the pre-screen found:** TVRI Nasional, 6:56, Dec 2024, embeddable, asr:id, no dubbing. Re-read the captions for the part: 0:11 Jayapura, capital of Papua, rich in culture; 0:29 recognised (garbled: "dan UN", almost certainly "diakui UNESCO") as world intangible heritage, "more than a bag": a symbol of life, unity and identity of Papuans; 1:01-1:13 casual presenter ("gak cuma keren"), "let's explore"; 1:41 a small business run by Papuan mamas makes noken in many designs, colours and sizes, from bark and pandan fibre, processed traditionally and knotted with a technique passed down the generations; 2:30 the maker: learned as a child from her parents, started the business in 2012; bark is the main material; natural dyes including forest-orchid skin (ends 3:26). From 3:26 how long one takes (garbled), then supply problems, her group and sales. PRESCREEN (recommend) for L15 id, 11–206 (was 11–200; 200 was mid-sentence, the sentence on natural dyes ends at 3:26). Think first kept; After adapted to noken. Drafts written. The UNESCO word is garbled in the captions; the draft says "diakui sebagai warisan budaya tak benda dunia" without naming the body.
 
 **Before you approve, check:**
 
@@ -772,35 +814,35 @@ To approve it: `npm run videos:apply -- id L20 --approved-by "Your name"`
 
 ## Lesson 21: How do people trade and exchange?
 
-**Recommended:** [Sejarah Uang dan Sejarah Bank Sentral](https://www.youtube.com/watch?v=U6peWODz9Oo&t=130s), by [Bank Indonesia Channel](https://www.youtube.com/@KanalBankIndonesia)
+**Recommended:** [Pasar di NTT ini Masih Pakai Sistem Barter](https://www.youtube.com/watch?v=bdTU0EWV-ZU&t=3s), by [Harian Kompas](https://www.youtube.com/@HarianKompasCetak)
 
-- **Part to watch:** 2:10 to 6:08 (3:58 of 16:34)
+- **Part to watch:** 0:03 to 1:06 (1:03 of 2:07)
 - **Captions on YouTube:** auto
 
-**Why this video** (shown to learners): Bagian film kartun Bank Indonesia ini menjelaskan barter dan mengapa orang mulai memakai uang.
+**Why this video** (shown to learners): Video berita pendek ini menunjukkan pasar di Lembata, NTT, tempat orang masih menukar barang tanpa uang.
 
-- **Think first (adapted to this video):** Bagaimana orang mendapatkan barang yang mereka butuhkan sebelum ada uang? Perhatikan di video.
+- **Think first (adapted to this video):** Bagaimana orang di pasar ini mendapatkan barang yang mereka butuhkan tanpa uang? Perhatikan di video.
   - The lesson's question now: Apa satu barang dan satu jasa yang kamu lihat dipakai orang hari ini?
-- **After you watch (adapted to this video):** Masalah apa yang muncul ketika orang barter, dan bagaimana uang membantu mengatasinya?
+- **After you watch (adapted to this video):** Apa yang membuat pertukaran di pasar ini terasa adil? Mengapa saling percaya itu penting?
   - The lesson's question now: Apa bedanya barang dan jasa? Mengapa sebuah komunitas membutuhkan keduanya?
 
 **Written version** ("Read instead", draft by AI: correct anything that is wrong or unclear):
 
-> Dalam film kartun ini, empat anak bercerita tentang uang. Dulu belum ada toko. Orang membuat atau mencari sendiri barang yang mereka butuhkan. Kalau butuh barang yang tidak bisa dibuat sendiri, mereka menukar barang miliknya dengan barang orang lain. Cara ini disebut barter.
+> Video ini menunjukkan pasar barter di Desa Wulandoni, Kabupaten Lembata, Nusa Tenggara Timur. Pada hari Sabtu, 28 Januari 2023, sebuah peluit panjang berbunyi. Itu tanda tukar-menukar barang dimulai. Pagi itu, lebih dari 200 orang menukar barang.
 > 
-> Barter punya masalah. Misalnya Pak Demang ingin seekor sapi dan menawarkan sekarung bawang putih. Kalau pemilik sapi tidak butuh bawang putih, pertukaran tidak terjadi. Lalu orang memakai benda yang dianggap berharga, seperti perhiasan atau garam. Tetapi nilainya sering tidak sama: kalung emas tidak bisa ditukar dengan semangkuk bakso.
+> Barang yang ditukar adalah hasil alam dari kebun dan laut. Barang buatan pabrik tidak boleh dibawa masuk. Pasar ini sudah ada sejak tahun 1837. Warga dari pegunungan membawa hasil kebun, dan warga dari pesisir membawa hasil laut. Mereka punya takaran sendiri untuk setiap barang.
 > 
-> Karena itu orang mulai memakai uang logam dari emas dan perak, yang bernilai tinggi dan tidak mudah rusak. Uang logam berat kalau dibawa banyak, jadi kemudian dibuat uang kertas yang ringan dan mudah dibawa ke mana-mana.
+> Hampir semua orang di pasar sudah saling mengenal. Tidak ada yang menguasai pasar sendirian, dan tidak ada yang merasa dirugikan. Yang ada adalah semangat saling memberi. Pasar dibuka setiap hari Sabtu, dan tukar-menukar hanya berlangsung sekitar satu jam. Biaya pasar juga dibayar dengan barang, bukan uang, dan setiap orang memberi seikhlasnya.
 
 **Key points:**
 
-- Barter adalah menukar barang dengan barang.
-- Barter sulit kalau orang menginginkan barang yang berbeda atau nilai barangnya tidak sama.
-- Uang logam, lalu uang kertas, membuat pertukaran lebih mudah.
+- Di pasar Wulandoni, orang menukar hasil kebun dengan hasil laut tanpa uang.
+- Setiap barang punya takaran sendiri yang dipakai bersama.
+- Orang saling mengenal dan saling percaya, jadi tidak ada yang merasa dirugikan.
 
 **Note for teachers:** none
 
-**What the pre-screen found:** Bank Indonesia Channel (the central bank), 16:34 cartoon for younger children (a running joke about one boy always thinking of food). Covers barter, money and trust, not goods vs services, so both questions change.
+**What the pre-screen found:** Harian Kompas, 2:07, Feb 2023, embeddable, asr:id, no dubbing. Re-read: 0:03 applause and a whistle; 0:08 narration: the whistle starts the barter at Wulandoni market, Lembata, NTT, Saturday 28 January 2023, more than 200 people; goods are crops and sea produce, factory goods not allowed; the market has existed since 1837; hill people bring crops, coast people fish; their own measures; almost everyone knows each other, no monopoly, nobody feels cheated, a spirit of giving; every Saturday, about an hour; the market fee is paid in goods, as much as each wishes (ends 1:06). 1:06 onwards: interviews with garbled captions. PRESCREEN (recommend) for L21 id, 3–66 (was 3–75; the narration ends at 1:06 and 1:06-1:17 is an interview fragment). Both questions changed to barter and trust (the video shows no services and no money). Drafts written.
 
 **Before you approve, check:**
 
@@ -937,18 +979,19 @@ To approve it: `npm run videos:apply -- id L24 --approved-by "Your name"`
 These fit too, but aren't recommended: another video covers the lesson better, or as well. Most have no draft questions or written version yet. If you prefer one, say so, and it can be made the lesson's recommendation with its drafts.
 
 - **Lesson 2** (What can an object reveal about a person in the past?): [Apa Itu Arkeologi?](https://www.youtube.com/watch?v=CtvFYT6bPx0&t=2s), by [BRIN Indonesia](https://www.youtube.com/@brinindonesia1), part to watch 0:02 to 1:33: BRIN Indonesia (national research agency), 3:08, Jan 2025, embeddable, asr:id (clean), no dubbing. What archaeology is: studying past people through what they left (artefacts, ecofacts, buildings, food remains); how archaeologists find a site, dig carefully and study the finds; famous finds (Maros cave art, Borobudur, Sangiran, Liang Bua); carbon dating up to 50,000 years; BRIN's research centres; "every find is part of our story". Partial fit for L02 (objects as evidence about people; testing a find with another method), but nothing on telling what you see from what you guess. Ends with a short piece about BRIN itself. PRESCREEN (alternative) for L02 id, 2–93 (what archaeology is, how archaeologists work, famous finds, carbon dating). Think first kept (answerable: objects left behind, not words); After would need adapting (the lesson's tin isn't in it). Drafts not written. Also suitable, as an alternative to the recommendation.
-- **Lesson 3** (How does changing scale change the story?): [Apakah Ada Ujung Alam Semesta?](https://www.youtube.com/watch?v=QK01ROEqJ1A&t=2s), by [Kok Bisa?](https://www.youtube.com/@KokBisa), part to watch 0:02 to 3:39: Kok Bisa?, 10:03, Sep 2019, embeddable, manual Indonesian, English and Malay captions, no dubbing. How big the universe is, step by step: if a person were an ant, the Earth would be 127,000 football pitches long; driving to the Moon would take about half a year, to Mars two and a half centuries, to Neptune 5,000 years; Voyager, the farthest human-made object; the Sun as a dot; the Oort Cloud; the Local Interstellar Cloud; then galaxies. Playful, casual Jakarta register. Fits L03 closely (zooming out from people to the universe; at each step people disappear from view), maybe better than the current recommendation. PRESCREEN (alternative) for L03 id, 2–219 (from people to the edge of the solar system and Voyager). Think first kept (answerable: distances measured in football pitches and years of driving, the Sun as a dot). Drafts not written. Also suitable, as an alternative to the recommendation.
+- **Lesson 3** (How does changing scale change the story?): [Seberapa Tua Alam Semesta? (Dan Gimana Cara Taunya?)](https://www.youtube.com/watch?v=NEkpbAy0GR0), by [Kok Bisa?](https://www.youtube.com/@KokBisa), the whole video: Kok Bisa?, manual Indonesian captions. Both current questions are answerable as they stand (signs of a very wide scale; what it shows and which human details it leaves out). Casual Jakarta register (gak, ngitung): reviewer to judge. Was the recommendation until 2026-10-16; QK01ROEqJ1A is recommended instead (see its notes). Its drafts are kept in case the reviewer prefers it. Also suitable, as an alternative to the recommendation.
 - **Lesson 4** (How do people explain where the world comes from?): [Apa yang Ada Sebelum Big Bang?](https://www.youtube.com/watch?v=kGTDRup5PbY), by [Kok Bisa?](https://www.youtube.com/@KokBisa), part to watch 0:00 to 2:00: Kok Bisa?, 5:07, Nov 2020, embeddable, asr:id, no dubbing. What came before the Big Bang: the evidence (galaxies moving apart, leftover radiation spread evenly), the particle accelerator under Geneva, space-time as one fabric formed at the Big Bang (so "before" may not exist), and other hypotheses (a universe that collapsed and began again); "physicists still disagree". PRESCREEN (alternative) for L04 id, 0–120 (the evidence and what is still unknown). Both of the lesson's questions answerable (galaxies moving apart and leftover radiation are the evidence). Science only; the lesson's point about other kinds of accounts stays with the lesson text. Drafts not written. Also suitable, as an alternative to the recommendation.
 - **Lesson 5** (How did early humans learn, create, and move?): [Petualangan Misteri Atambua Mengungkap Kehidupan Masa Lalu di Pulau Timor](https://www.youtube.com/watch?v=6KupDuyOGFw&t=10s), by [BRIN Indonesia](https://www.youtube.com/@brinindonesia1), part to watch 0:10 to 3:15: BRIN Indonesia, 4:27, Jan 2024, embeddable, asr:id, no dubbing. An animated "adventure" to Atambua (Timor): ancient elephant (stegodon) fossils found since 1964, local people finding ivory and bones in the rainy season; researchers study the rocks, rivers, fossils and pollen and date them; the basin was a swamp and river mouth where stegodon, giant tortoises and early humans lived; stones there could have been used for tools; it may show the route people and animals took towards Australia and New Guinea (Sahul); research continues. Partial fit for L05 (clues archaeologists find and what they tell us about movement), nothing on shared knowledge. PRESCREEN (alternative, weak) for L05 id, 10–195. Drafts not written. Also suitable, as an alternative to the recommendation.
+- **Lesson 7** (Why did the first cities and states begin?): [200.000+ Tahun Perjalanan Manusia, dalam 13 Menit](https://www.youtube.com/watch?v=Nu16eO1Qu88&t=388s), by [Kok Bisa?](https://www.youtube.com/@KokBisa), part to watch 6:28 to 8:17: Kok Bisa?, 13:30, Dec 2023, embeddable, asr:id, no dubbing. "200,000+ years of humans in 13 minutes". 6:28-8:17: hunting, the climate warms, people learn to grow food, settle, record on stone (writing), money from barter to coins, neighbours, rules, rulers rising and falling, maps and "a fair way to run a state", trade between civilisations. After 8:19 wars, refugees carrying knowledge to Europe, the printing press. PRESCREEN (alternative, weak) for L07 id, 388–497: from farming to rules and rulers in under two minutes; nothing on surplus, special jobs or who gained power. Drafts not written. Also suitable, as an alternative to the recommendation.
 - **Lesson 8** (How did trade connect distant communities?): [Kenapa Banyak Negara Iri sama Rempah Indonesia? (ft. LPEI)](https://www.youtube.com/watch?v=m0iEEv-XlOM&t=32s), by [Kok Bisa?](https://www.youtube.com/@KokBisa), part to watch 0:32 to 2:35: Kok Bisa? (sponsored by LPEI, Indonesia's export bank), 3:40, Sep 2024, embeddable, asr:id, no dubbing. Why the world wanted Indonesia's spices: worth more than gold, traded to the Middle East and Europe since before the common era, a status symbol for Europe's elites, nutmeg thought to protect against the plague, a route closed when power changed hands, so Europeans sailed to Maluku, the only place they grew; the Dutch forbade Maluku from trading with anyone else. From 2:04 it turns into export figures and the sponsor's programmes. PRESCREEN (alternative) for L08 id, 32–155 (the history only, before the sponsor's part). Overlaps the current recommendation (the spice route). Drafts not written. Also suitable, as an alternative to the recommendation.
 - **Lesson 10** (Why do people build towns near rivers?): [Kenapa Peradaban Besar Selalu Mulai di Area Ini?](https://www.youtube.com/watch?v=kqOtfYVPcew), by [Kok Bisa?](https://www.youtube.com/@KokBisa), part to watch 0:00 to 1:32: Kok Bisa?, 4:19, Jul 2026, embeddable, asr:id; AUTO-DUBBED English default, Indonesian original. Why great civilisations began by rivers: water, fish and fertile soil, so people aren't hungry and can build; the land between two great rivers named for being fertile (Mesopotamia) with giant temples; the Nile's surplus sold, paying for the pyramids; Srivijaya's power from the Musi; the Kapuas in West Kalimantan as a road and a defence, stilt houses of ironwood, sharing a river's fish fairly (a Dayak story). Jokes about a pest fish, and a passing remark about Iran closing its strait (1:32). Fits L10 well, including the lesson's own questions about two rivers. PRESCREEN (alternative) for L10 id, 0–92 (rivers, Mesopotamia and Egypt), both of the lesson's questions kept. AI-dubbed: the reviewer must hear the original on the learners' devices. Drafts not written. Also suitable, as an alternative to the recommendation.
 - **Lesson 11** (How do maps help us understand a place?): [Mana Gambar Peta yang Benar?](https://www.youtube.com/watch?v=pTukWOkDlbg), by [Kok Bisa?](https://www.youtube.com/@KokBisa), part to watch 0:00 to 2:33: Kok Bisa?, 3:28, Jul 2022, embeddable, asr:id (garbled), no dubbing. Which world map is right? None: the Earth is round and paper is flat, so every map is a projection; Mercator keeps shapes and angles for sailing but makes Greenland look as big as Africa; an equal-area map keeps sizes but squashes shapes; only a globe is accurate. Fits L11's "notice what a map leaves out", not its questions about the legend. The automatic captions mis-hear the outro (3:10) as a rude word: outside the part. PRESCREEN (alternative, weak) for L11 id, 0–153; both questions would need adapting. Drafts not written. Also suitable, as an alternative to the recommendation.
 - **Lesson 13** (How do climate and seasons affect daily life?): [Cuaca dan Iklim Kita](https://www.youtube.com/watch?v=o_nrMTjcJbo), by [Info Iklim Kalbar BMKG](https://www.youtube.com/@InfoIklimKalbarBMKG), part to watch 0:00 to 0:58: Info Iklim Kalbar BMKG (West Kalimantan office of the weather agency), 3:37, Oct 2021, embeddable, asr:id; AUTO-DUBBED English default, Indonesian original. For children: weather is the atmosphere over a short time and small area, climate the average over a long time and wide area; Köppen's four climate zones; Indonesia's monsoon, tropical and sea climates. Auto-captions mis-hear several phrases. PRESCREEN (alternative, weak) for L13 id, 0–58 (weather and climate defined). The current recommendation covers the same with more. AI-dubbed. Drafts not written. Also suitable, as an alternative to the recommendation.
 - **Lesson 14** (How can communities respond to environmental change?): [VIDEO EDUKASI PENGURANGAN RISIKO BENCANA BANJIR AKSESIBEL BAGI DISABILITAS DAN KELOMPOK RENTAN](https://www.youtube.com/watch?v=Ci9NmUuJ4BE), by [FPRB GUNUNGKIDUL](https://www.youtube.com/@fprbgunungkidul3866), the whole video: FPRB Gunungkidul, 4:14, Apr 2022, embeddable, asr:id, no dubbing. Local disaster-risk forum: what a flood is, which parts of Gunungkidul flood, then what a family does before (roles, a go-bag for 3×24 h, keep the way out clear, look after family members who are sick, elderly or have special needs, follow warnings, a painted flood-height board green/yellow/red, mark dangerous spots, practise with neighbours), during (yellow/red: cut the power, take the bag, move the elderly and people with special needs first) and after (listen to the RT/RW or officials, don't go home until it's declared safe, throw away soaked food, clean). Captions mis-hear some words ("teleportasi" for the way out, "info ganjil"); the "113" casualties figure for 2015–2021 is likely a mis-hearing too; check it. Answers the After question partly (people who are sick, elderly or have special needs need help with warnings and evacuation); nothing on people helping plan the response. Better than the current primary? No: keep as an alternative. PRESCREEN (alternative, weak) for L14 id, whole video. Also suitable, as an alternative to the recommendation.
-- **Lesson 15** (How can objects express culture and identity?): [Noken Papua, Warisan Lokal yang Mendunia](https://www.youtube.com/watch?v=UNjaqqTMph4&t=11s), by [TVRI Nasional](https://www.youtube.com/@TVRINasional), part to watch 0:11 to 3:20: TVRI Nasional (the public broadcaster), 6:56, Dec 2024, embeddable, asr:id, no dubbing. Noken, the Papuan bag recognised by UNESCO: "more than a bag", a symbol of life, unity and identity for Papuans; made from bark and pandan fibre, coloured with natural dyes, knotted by hand; the maker learned as a child from her parents and started a business in 2012; 20 women in her group; where they sell; support from Bank Indonesia. Fits L15 well (one object: everyday bag, identity, world heritage, a living). PRESCREEN (alternative) for L15 id, 11–200 (what noken means and how it is made and passed down). Think first kept (answerable). Drafts not written. Also suitable, as an alternative to the recommendation.
+- **Lesson 15** (How can objects express culture and identity?): [Batik merupakan warisan budaya yang menjadi identitas dan kebanggaan bangsa Indonesia](https://www.youtube.com/watch?v=lZKGmAGX-RU&t=27s), by [Kementerian Perdagangan](https://www.youtube.com/@KementerianPerdaganganRI), part to watch 0:27 to 4:25: Kementerian Perdagangan (Ministry of Trade), 4:25. A maker explains one object with several meanings (craft, palace, family, a protected product). Think first kept; After adapted to the batik. Was the recommendation until 2026-10-16; UNjaqqTMph4 is recommended instead (see its notes). Its drafts are kept in case the reviewer prefers it. Also suitable, as an alternative to the recommendation.
 - **Lesson 17** (Why do communities have traditions?): [Kenapa Masakan Indonesia Beragam Banget? - Nusantarasa Eps. 1](https://www.youtube.com/watch?v=zNq-rD5FFjM&t=60s), by [Kok Bisa?](https://www.youtube.com/@KokBisa), part to watch 1:00 to 3:10: Kok Bisa?, 6:13, May 2020, embeddable, manual Indonesian captions, no dubbing. "Nusantarasa" episode 1: why Indonesian food is so varied: spices drew traders to Maluku; Arab traders on Java's north coast; forced cultivation under the Dutch; Chinese traders and chilli in North Sumatra; Aceh as a port; West Sumatrans who travel need food that keeps; Dayak cooking with forest ingredients; "these stories risk becoming legends because we don't write them down". Proud "this is us, INDONESIA" framing. Partial fit for L17 (food traditions carry history and change through contact; passing them on). PRESCREEN (alternative, weak) for L17 id, 60–190. Drafts not written. Also suitable, as an alternative to the recommendation.
 - **Lesson 20** (Why do people have to make choices?): [Apa itu Kelangkaan? (versi 1) | Ekonomi Kelas 10 - KHATULISTIWA STUDIO](https://www.youtube.com/watch?v=9ftzwzUjvzw&t=16s), by [Khatulistiwa Studio](https://www.youtube.com/@khatulistiwastudio), part to watch 0:16 to 4:48: Khatulistiwa Studio, 4:56, 2023, embeddable, manual id captions, no dubbing. Scarcity: a sold-out concert, not enough money at the canteen; scarce people, capital, natural resources and entrepreneurs; supply and demand; prices rise; when it can't be solved, people choose what matters most. Also suitable (scarcity half of L20), as an alternative; vxXW8xLjXTw covers opportunity cost too. PRESCREEN as an alternative, segment 16-288. Also suitable, as an alternative to the recommendation.
-- **Lesson 21** (How do people trade and exchange?): [Pasar di NTT ini Masih Pakai Sistem Barter](https://www.youtube.com/watch?v=bdTU0EWV-ZU&t=3s), by [Harian Kompas](https://www.youtube.com/@HarianKompasCetak), part to watch 0:03 to 1:15: Harian Kompas, 2:07, Feb 2023, embeddable, asr:id, no dubbing. News: the barter market at Wulandoni, Lembata (East Nusa Tenggara), held every Saturday since 1837: a whistle starts an hour of exchange; people from the hills bring crops, people from the coast bring fish; factory goods are not allowed; they have their own measures; nearly everyone knows each other, "no monopoly, nobody feels cheated, a spirit of giving"; the market fee is paid in goods, as much as each person wishes. Fits L21 closely (barter, trust, goods between two communities), short and concrete; arguably better than the current recommendation. PRESCREEN (alternative) for L21 id, 3–75 (before the interviews, whose captions are garbled). Think first kept; After would need adapting to barter. Drafts not written. Also suitable, as an alternative to the recommendation.
+- **Lesson 21** (How do people trade and exchange?): [Sejarah Uang dan Sejarah Bank Sentral](https://www.youtube.com/watch?v=U6peWODz9Oo&t=130s), by [Bank Indonesia Channel](https://www.youtube.com/@KanalBankIndonesia), part to watch 2:10 to 6:08: Bank Indonesia Channel (the central bank), 16:34 cartoon for younger children (a running joke about one boy always thinking of food). Covers barter, money and trust, not goods vs services, so both questions change. Was the recommendation until 2026-10-16; bdTU0EWV-ZU is recommended instead (see its notes). Its drafts are kept in case the reviewer prefers it. Also suitable, as an alternative to the recommendation.
 - **Lesson 24** (How can young people contribute to their communities?): [Aksi Iklim Erwin Mahendra Eka Saputra](https://www.youtube.com/watch?v=vtIjKY1QfTA), by [UNICEF Indonesia](https://www.youtube.com/@unicefindonesia), the whole video: UNICEF Indonesia, 2:21, 2024, embeddable, asr:id, no dubbing. Erwin, 24, a youth volunteer, teaches disaster preparedness in schools around Bandung so schools know what to do when floods, landslides or earthquakes come (one school sits on the Lembang fault); students learn to stay calm and pass it on to friends and neighbours. A small, realistic way young people help a community: a good alternative for L24 id. PRESCREEN as an alternative, whole video. Mentions earthquake risk calmly. Also suitable, as an alternative to the recommendation.
 
 ## Videos nobody could check yet
@@ -974,6 +1017,9 @@ These have no captions (or YouTube would not play them), so the pre-screen could
 - **Lesson 6** (How did farming change human societies?): [Sejarah Revolusi Terbesar di Dunia | Revolusi Pertanian Neolitik -- Berburu-Meramu ke Bertani/ternak](https://www.youtube.com/watch?v=RenvKnk_rGo): PhilGram, 12:30. Covers the benefits and costs of farming, but jokes twice about sexual relations to explain population growth: unsuitable for 10-17. Also too long; student channel.
 - **Lesson 6** (How did farming change human societies?): [KEHIDUPAN MANUSIA PRAAKSARA: Berburu, Bercocok Tanam, hingga Zaman Logam - Sesuai BSE](https://www.youtube.com/watch?v=BJOos4uCXbI): Dunia IPS, 7:32, Sep 2026, embeddable, asr:id; AUTO-DUBBED English default. Junior-secondary textbook summary of prehistoric life: fire, Palaeolithic tools (Pacitan, Ngandong), Mesolithic shell middens, Neolithic farming and villages, megaliths, the metal age and specialised work. REJECT for L06 id (not needed): a list of periods and tools, nothing on what farming cost; nrdbEDISZVY answers the lesson's questions.
 - **Lesson 7** (Why did the first cities and states begin?): [Sumeria Mungkinkah Peradaban Manusia Tertua Sepanjang Sejarah - National Geographic Indonesia](https://www.youtube.com/watch?v=dnY2xqWZ6Qo): Nat Geo Indonesia, 4:48, 2022, embeddable, asr:id. Sumer as the oldest civilisation: cities, irrigation, writing; Babylonian maths; then mostly religion: ziggurats, priestly castes, gods (Anu, Inanna), Gilgamesh flood compared with Noah in Abrahamic religions; Egypt and Indus as rivals for "oldest"; Indian Ocean trade. REJECT for L07 id: half of it is religion and the Noah comparison; little on surplus, jobs, rulers or who had power.
+- **Lesson 7** (Why did the first cities and states begin?): [Mesopotamia Membentuk Peradaban Umat Manusia Penjuru Dunia - National Geographic Indonesia](https://www.youtube.com/watch?v=HukllZqVipI): Nat Geo Indonesia, 7:27, Feb 2024, embeddable, asr:id (partly garbled); AUTO-DUBBED English default, Indonesian original. Mesopotamia as the oldest civilisation: farming from 8000 BCE, Sumerians on the Tigris-Euphrates floodplain about 4000 BCE; 1:00 first writing (cuneiform), first used to record crops and taxes, later emotions; 2:30 the first law codes and a social structure with priests at the top who "claimed to talk to the gods"; 3:01 Hammurabi's code preceded by Lipit-Ishtar's. Mentions the poem of Inanna and Enki dedicated by a god. REJECT for L07 id: much of it is about priests and gods, captions garbled from 1:50 on, and the one usable minute (writing for taxes) is thin; 0-yhwooLuV8 explains surplus, rulers and power far better.
+- **Lesson 7** (Why did the first cities and states begin?): [Sejarah Kelas 10 l Peradaban Awal Dunia](https://www.youtube.com/watch?v=mOBMePCzXtE): Jelita Silalahi (a teacher's own channel), 9:57, Jan 2021, embeddable, asr:id, no dubbing. Grade 10 overview of early civilisations: "civilisation" from Latin civitas, a list (Mesopotamia, Egypt, Greece, India, China, Rome, America), Mesopotamia's fertile crescent and first writing, Egypt "gift of the Nile" with the legend that the Nile is Isis's tears. REJECT for L07 id: a list of names and dates, nothing on how surplus, jobs, rulers, laws or taxes made cities work.
+- **Lesson 7** (Why did the first cities and states begin?): [Why Did Ancient Humans Invent Kings To Rule Them?](https://www.youtube.com/watch?v=MRNANX6dHlw): History Doodles, 13:24, Aug 2026, embeddable, English original with YouTube's Indonesian AI dub (and 19 other dubs). "Why did ancient humans invent kings?": hunter-gatherer bands that stop anyone becoming boss, then hierarchy. The Indonesian audio is YouTube's AI dub; the original is English. REJECT for L07 id: not an Indonesian video (an English video with an AI-dubbed Indonesian track), and long.
 - **Lesson 9** (How do inventions change everyday life?): [Kehidupan Pekerja di Revolusi Industri yang Jarang Diceritakan](https://www.youtube.com/watch?v=IZCwA83dbLg): Dunia History, 9:59, Apr 2026, embeddable, asr:id. Dramatised first-person story of a Manchester mill worker (1868): 16-hour days, enclosure, child labour, a father dying of lung damage, chimney "climbing boys" beaten and burned, cancer. Slangy (gua/lo). REJECT for L09 id: graphic cruelty to children, too heavy for this group without framing; long.
 - **Lesson 10** (Why do people build towns near rivers?): [Brantas, Pembentuk Peradaban Kuno Malang Raya](https://www.youtube.com/watch?v=XXdScJPkbK8): BRIN Indonesia, 26:34. Archaeology of Hindu-Buddhist sites along the Brantas; mostly temple cosmology and ancestor worship, partly in Javanese. Too long and specialist.
 - **Lesson 10** (Why do people build towns near rivers?): [Mesopotamia hingga Mesir Kuno: 5 Peradaban Tertua Di Dunia - National Geographic Indonesia](https://www.youtube.com/watch?v=t0G8Y5e3esA): Nat Geo Indonesia, 7:20, Nov 2023, embeddable, asr:id (partly garbled); AUTO-DUBBED English default. Five of the oldest civilisations (Aboriginal Australians and their persecution after Europeans arrived, Jiahu in China, Mesopotamia, and more), read from an article. REJECT for L10 id: a list of civilisations, not about why towns grow by rivers; long; garbled captions.
