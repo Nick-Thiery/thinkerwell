@@ -76,11 +76,12 @@ describe('/review/videos', () => {
     expect(summary.value).toContain('Belum ditinjau');
   });
 
-  it('in Malay, a lesson with no suggested video (L19) says learners keep the English one', async () => {
+  it('in Malay, shows the suggested video and the answer buttons in Malay', async () => {
     await openIn('ms', 'L19');
     expect(await screen.findByRole('heading', { level: 1, name: 'Video Tonton dalam Bahasa Melayu' })).toBeInTheDocument();
-    expect(screen.getByText(/Kami belum menjumpai video yang baik dalam Bahasa Melayu untuk pelajaran ini/)).toBeInTheDocument();
-    expect(screen.queryByRole('group', { name: 'Jawapan kamu' })).toBeNull();
+    const video = data.ms!.find((l) => l.key === 'L19')!.recommended!;
+    expect(screen.getByRole('heading', { name: video.title })).toBeInTheDocument();
+    expect(within(screen.getByRole('group', { name: 'Jawapan kamu' })).getByRole('button', { name: 'Jangan guna' })).toBeInTheDocument();
   });
 
   it('moves between lessons with Next, and the address keeps the lesson', async () => {
