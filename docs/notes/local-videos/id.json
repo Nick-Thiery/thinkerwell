@@ -181,14 +181,17 @@
           "title": "Apakah Ada Ujung Alam Semesta?",
           "channel": "Kok Bisa?",
           "channelUrl": "https://www.youtube.com/@KokBisa",
-          "fullDurationSeconds": 604,
-          "captions": "unknown",
+          "fullDurationSeconds": 603,
+          "captions": "manual",
           "verifiedByOembed": true,
-          "reviewStatus": "unverified",
+          "reviewStatus": "prescreened",
+          "autoDubbed": false,
+          "startSeconds": 2,
+          "endSeconds": 219,
           "screening": {
-            "by": "Claude (research notes from the title, channel and description; not screened)",
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
-            "notes": "Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Kok Bisa?; zoom-out in space, ties to 'wide view'. It is about space, not about history or place, so the lesson's time/place scale is only implied. Slightly over the 10 min target."
+            "notes": "Kok Bisa?, 10:03, Sep 2019, embeddable, manual Indonesian, English and Malay captions, no dubbing. How big the universe is, step by step: if a person were an ant, the Earth would be 127,000 football pitches long; driving to the Moon would take about half a year, to Mars two and a half centuries, to Neptune 5,000 years; Voyager, the farthest human-made object; the Sun as a dot; the Oort Cloud; the Local Interstellar Cloud; then galaxies. Playful, casual Jakarta register. Fits L03 closely (zooming out from people to the universe; at each step people disappear from view), maybe better than the current recommendation. PRESCREEN (alternative) for L03 id, 2–219 (from people to the edge of the solar system and Voyager). Think first kept (answerable: distances measured in football pitches and years of driving, the Sun as a dot). Drafts not written. Also suitable, as an alternative to the recommendation."
           }
         },
         {
@@ -196,14 +199,15 @@
           "title": "Seberapa KECIL Kita Sebenarnya? Perjalanan Visual Skala Alam Semesta",
           "channel": "Jejak Sejarah",
           "channelUrl": "https://www.youtube.com/@jejaksejarahhh",
-          "fullDurationSeconds": 394,
-          "captions": "unknown",
+          "fullDurationSeconds": 393,
+          "captions": "auto",
           "verifiedByOembed": true,
-          "reviewStatus": "unverified",
+          "reviewStatus": "rejected",
+          "autoDubbed": false,
           "screening": {
-            "by": "Claude (research notes from the title, channel and description; not screened)",
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
-            "notes": "Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Jejak Sejarah (small channel). Visual scale journey fits the zoom idea, but it is astronomy and the framing is existential. Accuracy unchecked."
+            "notes": "Jejak Sejarah, 6:33, Dec 2025, embeddable, asr:id, no dubbing. A \"visual journey\" out from Earth (Jupiter, the Sun, light years, Proxima Centauri, giant stars), opening with traffic jams, work deadlines and social-media drama, and \"all the wars\" seen from space; a new channel, narration that sounds machine-written. REJECT for L03 id: written for adults with everyday worries, and QK01ROEqJ1A does the same journey better from a known educational channel."
           }
         }
       ]
@@ -262,14 +266,17 @@
           "title": "Apa yang Ada Sebelum Big Bang?",
           "channel": "Kok Bisa?",
           "channelUrl": "https://www.youtube.com/@KokBisa",
-          "fullDurationSeconds": 308,
-          "captions": "unknown",
+          "fullDurationSeconds": 307,
+          "captions": "auto",
           "verifiedByOembed": true,
-          "reviewStatus": "unverified",
+          "reviewStatus": "prescreened",
+          "autoDubbed": false,
+          "startSeconds": 0,
+          "endSeconds": 120,
           "screening": {
-            "by": "Claude (research notes from the title, channel and description; not screened)",
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
-            "notes": "Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Kok Bisa?; speculative question, weaker as a model of evidence-based accounts. Included as a backup only."
+            "notes": "Kok Bisa?, 5:07, Nov 2020, embeddable, asr:id, no dubbing. What came before the Big Bang: the evidence (galaxies moving apart, leftover radiation spread evenly), the particle accelerator under Geneva, space-time as one fabric formed at the Big Bang (so \"before\" may not exist), and other hypotheses (a universe that collapsed and began again); \"physicists still disagree\". PRESCREEN (alternative) for L04 id, 0–120 (the evidence and what is still unknown). Both of the lesson's questions answerable (galaxies moving apart and leftover radiation are the evidence). Science only; the lesson's point about other kinds of accounts stays with the lesson text. Drafts not written. Also suitable, as an alternative to the recommendation."
           }
         }
       ]
@@ -317,13 +324,16 @@
           "channel": "BRIN Indonesia",
           "channelUrl": "https://www.youtube.com/@brinindonesia1",
           "fullDurationSeconds": 267,
-          "captions": "unknown",
+          "captions": "auto",
           "verifiedByOembed": true,
-          "reviewStatus": "unverified",
+          "reviewStatus": "prescreened",
+          "autoDubbed": false,
+          "startSeconds": 10,
+          "endSeconds": 195,
           "screening": {
-            "by": "Claude (research notes from the title, channel and description; not screened)",
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
-            "notes": "Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): BRIN; real archaeological clues about movement in Indonesia. It does not obviously mention collective learning or shared knowledge, which is the lesson's main idea, so the fit is partial."
+            "notes": "BRIN Indonesia, 4:27, Jan 2024, embeddable, asr:id, no dubbing. An animated \"adventure\" to Atambua (Timor): ancient elephant (stegodon) fossils found since 1964, local people finding ivory and bones in the rainy season; researchers study the rocks, rivers, fossils and pollen and date them; the basin was a swamp and river mouth where stegodon, giant tortoises and early humans lived; stones there could have been used for tools; it may show the route people and animals took towards Australia and New Guinea (Sahul); research continues. Partial fit for L05 (clues archaeologists find and what they tell us about movement), nothing on shared knowledge. PRESCREEN (alternative, weak) for L05 id, 10–195. Drafts not written. Also suitable, as an alternative to the recommendation."
           }
         },
         {
@@ -331,14 +341,15 @@
           "title": "Dari Afrika ke Nusantara: Kisah Migrasi Manusia yang Mengubah Dunia",
           "channel": "Sejarah Is Fun",
           "channelUrl": "https://www.youtube.com/@SejarahisFun",
-          "fullDurationSeconds": 371,
-          "captions": "unknown",
+          "fullDurationSeconds": 370,
+          "captions": "auto",
           "verifiedByOembed": true,
-          "reviewStatus": "unverified",
+          "reviewStatus": "rejected",
+          "autoDubbed": false,
           "screening": {
-            "by": "Claude (research notes from the title, channel and description; not screened)",
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
-            "notes": "Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Sejarah Is Fun (small channel). On topic for migration and adaptation; not an authoritative source, accuracy unchecked."
+            "notes": "Sejarah Is Fun, 6:10, Mar 2026, embeddable, asr:id, no dubbing. \"Where do we Indonesians come from?\": the Out of Africa theory, Darwin's guess, the oldest fossils (Lucy, the oldest Homo sapiens in Ethiopia), then DNA. Casual; a new channel, narration that sounds machine-written. REJECT for L05 id: built on \"where do we Indonesians come from\", which leaves out learners who aren't Indonesian and edges towards asking about origins; nothing on shared knowledge or learning together."
           }
         }
       ]
@@ -489,13 +500,16 @@
           "channel": "Kok Bisa?",
           "channelUrl": "https://www.youtube.com/@KokBisa",
           "fullDurationSeconds": 220,
-          "captions": "unknown",
+          "captions": "auto",
           "verifiedByOembed": true,
-          "reviewStatus": "unverified",
+          "reviewStatus": "prescreened",
+          "autoDubbed": false,
+          "startSeconds": 32,
+          "endSeconds": 155,
           "screening": {
-            "by": "Claude (research notes from the title, channel and description; not screened)",
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
-            "notes": "Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Kok Bisa? in partnership with LPEI (government export-financing agency), so partly promotional. About spices and export value more than networks or ideas."
+            "notes": "Kok Bisa? (sponsored by LPEI, Indonesia's export bank), 3:40, Sep 2024, embeddable, asr:id, no dubbing. Why the world wanted Indonesia's spices: worth more than gold, traded to the Middle East and Europe since before the common era, a status symbol for Europe's elites, nutmeg thought to protect against the plague, a route closed when power changed hands, so Europeans sailed to Maluku, the only place they grew; the Dutch forbade Maluku from trading with anyone else. From 2:04 it turns into export figures and the sponsor's programmes. PRESCREEN (alternative) for L08 id, 32–155 (the history only, before the sponsor's part). Overlaps the current recommendation (the spice route). Drafts not written. Also suitable, as an alternative to the recommendation."
           }
         }
       ]
@@ -615,13 +629,16 @@
           "channel": "Kok Bisa?",
           "channelUrl": "https://www.youtube.com/@KokBisa",
           "fullDurationSeconds": 259,
-          "captions": "unknown",
+          "captions": "auto",
           "verifiedByOembed": true,
-          "reviewStatus": "unverified",
+          "reviewStatus": "prescreened",
+          "autoDubbed": true,
+          "startSeconds": 0,
+          "endSeconds": 92,
           "screening": {
-            "by": "Claude (research notes from the title, channel and description; not screened)",
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
-            "notes": "Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Kok Bisa?; strong match if the answer is river valleys (very likely, unconfirmed). Does not cover problems rivers bring (floods) as far as can be told."
+            "notes": "Kok Bisa?, 4:19, Jul 2026, embeddable, asr:id; AUTO-DUBBED English default, Indonesian original. Why great civilisations began by rivers: water, fish and fertile soil, so people aren't hungry and can build; the land between two great rivers named for being fertile (Mesopotamia) with giant temples; the Nile's surplus sold, paying for the pyramids; Srivijaya's power from the Musi; the Kapuas in West Kalimantan as a road and a defence, stilt houses of ironwood, sharing a river's fish fairly (a Dayak story). Jokes about a pest fish, and a passing remark about Iran closing its strait (1:32). Fits L10 well, including the lesson's own questions about two rivers. PRESCREEN (alternative) for L10 id, 0–92 (rivers, Mesopotamia and Egypt), both of the lesson's questions kept. AI-dubbed: the reviewer must hear the original on the learners' devices. Drafts not written. Also suitable, as an alternative to the recommendation."
           }
         },
         {
@@ -630,13 +647,14 @@
           "channel": "Nat Geo Indonesia",
           "channelUrl": "https://www.youtube.com/@NatGeo-Indonesia",
           "fullDurationSeconds": 440,
-          "captions": "unknown",
+          "captions": "auto",
           "verifiedByOembed": true,
-          "reviewStatus": "unverified",
+          "reviewStatus": "rejected",
+          "autoDubbed": true,
           "screening": {
-            "by": "Claude (research notes from the title, channel and description; not screened)",
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
-            "notes": "Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Nat Geo Indonesia; overview of five early civilisations, relevant to Mesopotamia but less focused on rivers; 7:20."
+            "notes": "Nat Geo Indonesia, 7:20, Nov 2023, embeddable, asr:id (partly garbled); AUTO-DUBBED English default. Five of the oldest civilisations (Aboriginal Australians and their persecution after Europeans arrived, Jiahu in China, Mesopotamia, and more), read from an article. REJECT for L10 id: a list of civilisations, not about why towns grow by rivers; long; garbled captions."
           }
         }
       ]
@@ -680,14 +698,15 @@
           "title": "Mengenal Fungsi, Jenis, dan Unsur-unsur Peta | IPS | SayaBisa",
           "channel": "SayaBisa",
           "channelUrl": "https://www.youtube.com/@GenioraSayaBisa",
-          "fullDurationSeconds": 524,
-          "captions": "unknown",
+          "fullDurationSeconds": 523,
+          "captions": "auto",
           "verifiedByOembed": true,
-          "reviewStatus": "unverified",
+          "reviewStatus": "rejected",
+          "autoDubbed": false,
           "screening": {
-            "by": "Claude (research notes from the title, channel and description; not screened)",
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
-            "notes": "Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): SayaBisa (Indonesian edtech for primary school). Covers map elements, matching the lesson's four tools. Aimed at grade 4; 8:44 is longer than the English 56 s video; does not obviously discuss what maps leave out."
+            "notes": "SayaBisa, 8:43, Apr 2018, embeddable, asr:id + English captions, no dubbing. Cartoon lesson on what maps are for, kinds of maps, scale and the parts of a map (title, border, legend, scale). REJECT for L11 id: factual errors (al-Idrisi placed in the 7th century; large and small scale explained the wrong way round), and the current recommendation covers the parts of a map."
           }
         },
         {
@@ -695,14 +714,17 @@
           "title": "Mana Gambar Peta yang Benar?",
           "channel": "Kok Bisa?",
           "channelUrl": "https://www.youtube.com/@KokBisa",
-          "fullDurationSeconds": 209,
-          "captions": "unknown",
+          "fullDurationSeconds": 208,
+          "captions": "auto",
           "verifiedByOembed": true,
-          "reviewStatus": "unverified",
+          "reviewStatus": "prescreened",
+          "autoDubbed": false,
+          "startSeconds": 0,
+          "endSeconds": 153,
           "screening": {
-            "by": "Claude (research notes from the title, channel and description; not screened)",
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
-            "notes": "Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Kok Bisa?; fits 'maps leave things out' (distortion of flat maps) but not the four map tools. Best used as a second video."
+            "notes": "Kok Bisa?, 3:28, Jul 2022, embeddable, asr:id (garbled), no dubbing. Which world map is right? None: the Earth is round and paper is flat, so every map is a projection; Mercator keeps shapes and angles for sailing but makes Greenland look as big as Africa; an equal-area map keeps sizes but squashes shapes; only a globe is accurate. Fits L11's \"notice what a map leaves out\", not its questions about the legend. The automatic captions mis-hear the outro (3:10) as a rude word: outside the part. PRESCREEN (alternative, weak) for L11 id, 0–153; both questions would need adapting. Drafts not written. Also suitable, as an alternative to the recommendation."
           }
         }
       ]
@@ -814,13 +836,16 @@
           "channel": "Info Iklim Kalbar BMKG",
           "channelUrl": "https://www.youtube.com/@InfoIklimKalbarBMKG",
           "fullDurationSeconds": 217,
-          "captions": "unknown",
+          "captions": "auto",
           "verifiedByOembed": true,
-          "reviewStatus": "unverified",
+          "reviewStatus": "prescreened",
+          "autoDubbed": true,
+          "startSeconds": 0,
+          "endSeconds": 58,
           "screening": {
-            "by": "Claude (research notes from the title, channel and description; not screened)",
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
-            "notes": "Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Info Iklim Kalbar BMKG (regional office of the national weather agency, so authoritative). Directly the weather versus climate distinction; seasons and adaptation likely not covered."
+            "notes": "Info Iklim Kalbar BMKG (West Kalimantan office of the weather agency), 3:37, Oct 2021, embeddable, asr:id; AUTO-DUBBED English default, Indonesian original. For children: weather is the atmosphere over a short time and small area, climate the average over a long time and wide area; Köppen's four climate zones; Indonesia's monsoon, tropical and sea climates. Auto-captions mis-hear several phrases. PRESCREEN (alternative, weak) for L13 id, 0–58 (weather and climate defined). The current recommendation covers the same with more. AI-dubbed. Drafts not written. Also suitable, as an alternative to the recommendation."
           }
         },
         {
@@ -828,14 +853,15 @@
           "title": "🌦️ Kenapa Sih Ada Musim Hujan dan Musim Kemarau?",
           "channel": "One Geografi",
           "channelUrl": "https://www.youtube.com/@OneGeografi",
-          "fullDurationSeconds": 210,
-          "captions": "unknown",
+          "fullDurationSeconds": 209,
+          "captions": "auto",
           "verifiedByOembed": true,
-          "reviewStatus": "unverified",
+          "reviewStatus": "rejected",
+          "autoDubbed": false,
           "screening": {
-            "by": "Claude (research notes from the title, channel and description; not screened)",
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
-            "notes": "Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): One Geografi (small channel). Seasons pattern for Indonesia; weather versus climate and adaptation may be missing."
+            "notes": "One Geografi, 3:29, Apr 2025, embeddable, asr:id, no dubbing. Why there are rainy and dry seasons: says the Earth's tilt makes the part facing the Sun hot and dry and the part turned away cool and rainy; then monsoons, farming and festivals. REJECT for L13 id: explains Indonesia's rainy and dry seasons wrongly (they come from the monsoon winds, not from tilting towards or away from the Sun)."
           }
         }
       ]
@@ -951,14 +977,17 @@
           "title": "Noken Papua, Warisan Lokal yang Mendunia",
           "channel": "TVRI Nasional",
           "channelUrl": "https://www.youtube.com/@TVRINasional",
-          "fullDurationSeconds": 417,
-          "captions": "unknown",
+          "fullDurationSeconds": 416,
+          "captions": "auto",
           "verifiedByOembed": true,
-          "reviewStatus": "unverified",
+          "reviewStatus": "prescreened",
+          "autoDubbed": false,
+          "startSeconds": 11,
+          "endSeconds": 200,
           "screening": {
-            "by": "Claude (research notes from the title, channel and description; not screened)",
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
-            "notes": "Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): TVRI Nasional (public broadcaster). Everyday object with cultural meaning, told by its makers; partly about small business so meaning may share space with commerce."
+            "notes": "TVRI Nasional (the public broadcaster), 6:56, Dec 2024, embeddable, asr:id, no dubbing. Noken, the Papuan bag recognised by UNESCO: \"more than a bag\", a symbol of life, unity and identity for Papuans; made from bark and pandan fibre, coloured with natural dyes, knotted by hand; the maker learned as a child from her parents and started a business in 2012; 20 women in her group; where they sell; support from Bank Indonesia. Fits L15 well (one object: everyday bag, identity, world heritage, a living). PRESCREEN (alternative) for L15 id, 11–200 (what noken means and how it is made and passed down). Think first kept (answerable). Drafts not written. Also suitable, as an alternative to the recommendation."
           }
         },
         {
@@ -967,13 +996,14 @@
           "channel": "Museum Nasional Indonesia",
           "channelUrl": "https://www.youtube.com/@museumnasionalindonesia",
           "fullDurationSeconds": 307,
-          "captions": "unknown",
+          "captions": "auto",
           "verifiedByOembed": true,
-          "reviewStatus": "unverified",
+          "reviewStatus": "rejected",
+          "autoDubbed": false,
           "screening": {
-            "by": "Claude (research notes from the title, channel and description; not screened)",
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
-            "notes": "Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Museum Nasional Indonesia (official). General museum promotion rather than a close look at an everyday object; 5 years old."
+            "notes": "Museum Nasional Indonesia, 5:07, Jan 2021, embeddable, asr:id, no dubbing. A promotional film for the National Museum: music and a few poetic lines about the nation's heritage. REJECT for L15 id: an advert for the museum, with nothing about what one object means to different people."
           }
         }
       ]
@@ -1093,13 +1123,14 @@
           "channel": "Kok Bisa?",
           "channelUrl": "https://www.youtube.com/@KokBisa",
           "fullDurationSeconds": 193,
-          "captions": "unknown",
+          "captions": "manual",
           "verifiedByOembed": true,
-          "reviewStatus": "unverified",
+          "reviewStatus": "rejected",
+          "autoDubbed": false,
           "screening": {
-            "by": "Claude (research notes from the title, channel and description; not screened)",
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
-            "notes": "Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Kok Bisa?; a clear Indonesian example of a tradition with a history, 3:13. Tied to Lebaran (a religious holiday), so teachers should invite learners to share their own traditions rather than treat Lebaran as the norm. Published about 9 years ago."
+            "notes": "Kok Bisa?, 3:13, Jun 2017, embeddable, manual Indonesian and English captions, no dubbing. Why going home for Lebaran (mudik) is a tradition: perhaps since Majapahit, before the harvest; where the word comes from; city jobs and urbanisation; colonial and New Order transmigration; trains. REJECT for L17 id: a tradition about going back to one's home village for the holidays, which many refugee learners can't do; better not to make it the example. (Accurate and suitable otherwise; a joke about bakso sellers.)"
           }
         },
         {
@@ -1108,13 +1139,16 @@
           "channel": "Kok Bisa?",
           "channelUrl": "https://www.youtube.com/@KokBisa",
           "fullDurationSeconds": 373,
-          "captions": "unknown",
+          "captions": "manual",
           "verifiedByOembed": true,
-          "reviewStatus": "unverified",
+          "reviewStatus": "prescreened",
+          "autoDubbed": false,
+          "startSeconds": 60,
+          "endSeconds": 190,
           "screening": {
-            "by": "Claude (research notes from the title, channel and description; not screened)",
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
-            "notes": "Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Kok Bisa? (Nusantarasa ep. 1); culture through food, 6:13. Less direct on 'tradition' than the mudik video, but food is a safe, shared topic."
+            "notes": "Kok Bisa?, 6:13, May 2020, embeddable, manual Indonesian captions, no dubbing. \"Nusantarasa\" episode 1: why Indonesian food is so varied: spices drew traders to Maluku; Arab traders on Java's north coast; forced cultivation under the Dutch; Chinese traders and chilli in North Sumatra; Aceh as a port; West Sumatrans who travel need food that keeps; Dayak cooking with forest ingredients; \"these stories risk becoming legends because we don't write them down\". Proud \"this is us, INDONESIA\" framing. Partial fit for L17 (food traditions carry history and change through contact; passing them on). PRESCREEN (alternative, weak) for L17 id, 60–190. Drafts not written. Also suitable, as an alternative to the recommendation."
           }
         }
       ]
@@ -1160,14 +1194,15 @@
           "title": "Cerita di Relief Candi Borobudur",
           "channel": "Perpustakaan Nasional Republik Indonesia",
           "channelUrl": "https://www.youtube.com/@PerpustakaanNasionalRI",
-          "fullDurationSeconds": 190,
-          "captions": "unknown",
+          "fullDurationSeconds": 189,
+          "captions": "auto",
           "verifiedByOembed": true,
-          "reviewStatus": "unverified",
+          "reviewStatus": "rejected",
+          "autoDubbed": true,
           "screening": {
-            "by": "Claude (research notes from the title, channel and description; not screened)",
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
-            "notes": "Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Perpustakaan Nasional RI; relevant subject (art that tells a story), 3:10, from an institution. No description could be read, so the content is unknown; religious art, so frame as history and art."
+            "notes": "Perpustakaan Nasional (the National Library), 3:09, Sep 2020, embeddable, asr:id (mis-hears the opening); AUTO-DUBBED English default, Indonesian original. The stories carved on Borobudur's 1,460 relief panels: karma, the Buddha's life, his earlier lives as animals, holy people, a young man's journey to find wisdom. REJECT for L18 id: mostly explains the Buddhist teachings the panels show, rather than how to read a picture from what you can see; could work only with a teacher framing it."
           }
         },
         {
@@ -1175,14 +1210,15 @@
           "title": "Lukisan gua tertua di dunia ada di Sulawesi, apa arti temuan ini?",
           "channel": "BBC News Indonesia",
           "channelUrl": "https://www.youtube.com/@BBCNewsIndonesia",
-          "fullDurationSeconds": 285,
-          "captions": "unknown",
+          "fullDurationSeconds": 284,
+          "captions": "none",
           "verifiedByOembed": true,
           "reviewStatus": "unverified",
+          "autoDubbed": false,
           "screening": {
-            "by": "Claude (research notes from the title, channel and description; not screened)",
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
-            "notes": "Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): BBC News Indonesia (Indonesian-language service of a UK broadcaster, not an Indonesian creator); cave painting found in Sulawesi, 4:45. About art as evidence more than art as story. News register is harder for learners."
+            "notes": "BBC News Indonesia, 4:44, Jan 2026, embeddable, NO captions, no dubbing. The world's oldest known cave painting, about 67,800 years old, found on Muna, South-East Sulawesi, by Indonesian and Australian researchers (description). UNVERIFIED, promising for L18 (what a picture can and can't tell us): a person must watch it."
           }
         }
       ]
@@ -1355,14 +1391,17 @@
           "title": "Pasar di NTT ini Masih Pakai Sistem Barter",
           "channel": "Harian Kompas",
           "channelUrl": "https://www.youtube.com/@HarianKompasCetak",
-          "fullDurationSeconds": 128,
-          "captions": "unknown",
+          "fullDurationSeconds": 127,
+          "captions": "auto",
           "verifiedByOembed": true,
-          "reviewStatus": "unverified",
+          "reviewStatus": "prescreened",
+          "autoDubbed": false,
+          "startSeconds": 3,
+          "endSeconds": 75,
           "screening": {
-            "by": "Claude (research notes from the title, channel and description; not screened)",
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
-            "notes": "Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Harian Kompas (national newspaper); a real barter market in Lembata, NTT, 2:08. Concrete and visual, a good fit for 'trade and exchange'. Not about goods versus services. News-report style."
+            "notes": "Harian Kompas, 2:07, Feb 2023, embeddable, asr:id, no dubbing. News: the barter market at Wulandoni, Lembata (East Nusa Tenggara), held every Saturday since 1837: a whistle starts an hour of exchange; people from the hills bring crops, people from the coast bring fish; factory goods are not allowed; they have their own measures; nearly everyone knows each other, \"no monopoly, nobody feels cheated, a spirit of giving\"; the market fee is paid in goods, as much as each person wishes. Fits L21 closely (barter, trust, goods between two communities), short and concrete; arguably better than the current recommendation. PRESCREEN (alternative) for L21 id, 3–75 (before the interviews, whose captions are garbled). Think first kept; After would need adapting to barter. Drafts not written. Also suitable, as an alternative to the recommendation."
           }
         },
         {
@@ -1371,13 +1410,14 @@
           "channel": "Zenius",
           "channelUrl": "https://www.youtube.com/@ZeniusEducation",
           "fullDurationSeconds": 278,
-          "captions": "unknown",
+          "captions": "auto",
           "verifiedByOembed": true,
-          "reviewStatus": "unverified",
+          "reviewStatus": "rejected",
+          "autoDubbed": false,
           "screening": {
-            "by": "Claude (research notes from the title, channel and description; not screened)",
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
-            "notes": "Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Zenius (commercial edtech brand, so possible promotion; informal register); money as the thing that lets people exchange, 4:38. Less concrete than the barter market."
+            "notes": "Zenius, 4:38, Mar 2022, embeddable, asr:id, no dubbing. Money as a shared fiction (after Harari's Sapiens): compares money to the Greek gods, says beliefs in gods grow stronger the more people believe, and that religion and country divide people while money unites them. REJECT for L21 id: abstract and adult, and its comparisons of money with gods and religion are not for this group."
           }
         }
       ]
@@ -1423,13 +1463,14 @@
           "channel": "Sikapiuangmu OJK",
           "channelUrl": "https://www.youtube.com/@sikapiuangmu",
           "fullDurationSeconds": 320,
-          "captions": "unknown",
+          "captions": "auto",
           "verifiedByOembed": true,
-          "reviewStatus": "unverified",
+          "reviewStatus": "rejected",
+          "autoDubbed": false,
           "screening": {
-            "by": "Claude (research notes from the title, channel and description; not screened)",
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
-            "notes": "Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): OJK (Indonesia's financial services regulator), animated family series, 5:20. Good tone and format. Possible mention of bank products; learners may have no bank access, so keep the discussion general. Published about 6 years ago."
+            "notes": "Sikapiuangmu OJK (the financial services authority), 5:20, Oct 2020, embeddable, asr:id, no dubbing. Animated family: a boy carries his piggy bank everywhere; his parents set aside profit and take it to the bank; banks are safe, pay interest and \"build the nation\". REJECT for L22 id: its answer is \"save in a bank\", which many refugee learners can't do."
           }
         },
         {
@@ -1438,13 +1479,14 @@
           "channel": "Ayo Nabung",
           "channelUrl": "https://www.youtube.com/@AyoNabung-10",
           "fullDurationSeconds": 199,
-          "captions": "unknown",
+          "captions": "auto",
           "verifiedByOembed": true,
-          "reviewStatus": "unverified",
+          "reviewStatus": "rejected",
+          "autoDubbed": true,
           "screening": {
-            "by": "Claude (research notes from the title, channel and description; not screened)",
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
-            "notes": "Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Ayo Nabung (small channel; possible product promotion); five saving tips aimed at students with pocket money, 3:19. Assumes spending money many learners lack."
+            "notes": "Ayo Nabung, 3:19, Aug 2023, embeddable, asr:id; AUTO-DUBBED English default, Indonesian original. Five saving tips for students: set a goal, put aside part of your pocket money (25,000 a day, save 5,000), write down spending, bring food from home, limit hanging out; and an investment app with the channel's referral code and cashback, for anyone with an ID card. REJECT for L22 id: promotes an investment app with a referral code, and assumes an ID card and regular pocket money."
           }
         }
       ]
@@ -1489,13 +1531,14 @@
           "channel": "Mafindo",
           "channelUrl": "https://www.youtube.com/@Mafindo",
           "fullDurationSeconds": 356,
-          "captions": "unknown",
+          "captions": "auto",
           "verifiedByOembed": true,
-          "reviewStatus": "unverified",
+          "reviewStatus": "rejected",
+          "autoDubbed": false,
           "screening": {
-            "by": "Claude (research notes from the title, channel and description; not screened)",
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-16",
-            "notes": "Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Mafindo (Masyarakat Anti Fitnah Indonesia, a hoax-fighting civil society group); practical signs of hoaxes, 5:56, closer to 'how to check' than the Kok Bisa video. Examples may touch politics or religion."
+            "notes": "Mafindo (the fact-checking network), 5:56, Nov 2023, embeddable, asr:id, no dubbing. A sketch about hoaxes that use religion (a religious teacher sharing a false story, hate, pride, pity, donations), explained through a boyfriend inviting someone to Cappadocia and boys who \"flirt\"; then: think critically whoever is speaking, check several sources, filter before you share. REJECT for L23 id: built on religious hoaxes and dating jokes; the closing advice is good but the current recommendation covers it."
           }
         }
       ]

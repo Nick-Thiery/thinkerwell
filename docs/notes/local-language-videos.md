@@ -72,13 +72,13 @@ Nothing in this file reaches the app or the browser. The pre-screen was done by 
 
 ### The pre-screens of 15 and 16 October 2026
 
-On 15 October, the 44 videos for the 48 slots (24 lessons in each language) from the audit in `docs/research/`; on 16 October, 59 of the 82 videos in the research notes of #42 (Malay) and #43 (Indonesian). Each was played and its captions read. The other 23 from #43 weren't reached because the laptop's browser went offline; they are all for Indonesian lessons that already have a recommendation, and are in `id.json` as `unverified`, marked "Not screened yet". Where the slots stand now:
+On 15 October, the 44 videos for the 48 slots (24 lessons in each language) from the audit in `docs/research/`; on 16 October, all 82 videos in the research notes of #42 (Malay) and #43 (Indonesian): 59 in the morning and, once the laptop's browser was back, the last 23 (all for Indonesian lessons that already had a recommendation). Each was played and its captions read. Where the slots stand now:
 
 | | Bahasa Indonesia | Bahasa Melayu |
 | --- | --- | --- |
 | Recommended (prescreened) | 23: every lesson but L07 | 13: L01, L02, L05, L06, L07, L08, L10, L13, L15, L17, L20, L21, L22 |
 | Of those, weak or partial fits | L05, L16, L17, L18 | L15, L22 |
-| Other videos that also fit ("Also suitable") | 4: L02, L14, L20, L24 | 7: L01, L07, L08, L13, L17, L20, L21 |
+| Other videos that also fit ("Also suitable") | 14: L02, L03, L04, L05, L08, L10, L11, L13, L14, L15, L17, L20, L21, L24 | 7: L01, L07, L08, L13, L17, L20, L21 |
 | No recommendation; a person must watch one first | L07 | L03, L04, L11, L12, L14, L16, L18, L23 |
 | Rejected, nothing else yet | none | L09, L19, L24 |
 
@@ -92,7 +92,7 @@ Questions: 12 of the 36 recommendations keep both of the lesson's questions, 9 a
 - **Automatic captions.** Most local videos have only YouTube's automatic captions, which the player shows by default. They mis-hear: in two videos outside the chosen parts they produce a rude word, and one Malay video's captions are Hindi gibberish (YouTube took the Malay for Hindi). YouTube also labels most Malaysian Malay captions as Indonesian. The reviewer watches with captions on.
 - **Small channels, re-uploads and machine-made narration.** Several promising videos come from one-person channels whose narration may be synthetic (the sheet says which); a reviewer decides whether that matters. Videos that looked like re-uploads of someone else's work were turned down, since the brief is the original creators' own uploads, and so was one whose machine-made script got a basic date wrong (Europeans trading at Melaka in the 15th century).
 - **A video that asks for a sign-in.** UNICEF Indonesia's `-k3igxia4Ho` (L24) wouldn't play signed out ("Please sign in. This helps protect our community") while every other video did. Learners are never signed in, so it may not play for them.
-- **Unsuitable things a title doesn't show.** Rejected for content: a farming video with jokes about sex, a TV lesson where the host remarks on a schoolgirl's looks, a savings video that says money belongs in a bank (many refugee learners can't open one), and a commercial tutoring upsell.
+- **Unsuitable things a title doesn't show.** Rejected for content: a farming video with jokes about sex, a TV lesson where the host remarks on a schoolgirl's looks, a savings video that says money belongs in a bank (many refugee learners can't open one), a commercial tutoring upsell, a savings video with an investment app's referral code, a video about going home to the family village for Lebaran (many refugee learners can't), one asking "where do we Indonesians come from?", and videos that get the facts wrong (seasons explained by the Earth's tilt, map scales the wrong way round).
 
 ## How a reviewer approves a video
 
