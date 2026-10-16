@@ -46,7 +46,7 @@ One Indonesian sentence lives in code rather than in these files: the sample "Pl
 ## Reviewing (for Justin and the reviewers)
 
 1. One person decides the key terms in `id/KEY_TERMS.md`. A change there is applied across the course at once (tell Nick).
-2. Reviewers work in `id/review/thinkerwell-id-review.xlsx` (Excel, LibreOffice or Google Sheets). The first tab (the interface) starts with the brief; then one tab per lesson, Lessons 1, 2, 11, 12, 16 and 23 first, each ending with the words in its picture; then one tab per section check. Start with flagged rows. Lesson 4 needs someone from each faith it names.
+2. Reviewers work in `id/review/thinkerwell-id-review.xlsx` (Excel, LibreOffice or Google Sheets). The first tab (the interface) starts with the brief; then one tab per lesson, Lessons 1, 2, 11, 12, 16 and 23 first, each ending with the words in its picture; then one tab per section check. Start with flagged rows. Lesson 4 needs someone from each faith it names. For the six pilot lessons, `id/pilot-lessons-review.md` (an AI second pass, not a native-speaker review) lists what to check first.
 3. Nick applies their changes:
 
    ```sh
