@@ -13,7 +13,11 @@ The learners' shared tablets are often iPads, so the end-to-end tests also run i
 - In right-to-left, WebKit's `scrollWidth` grows while the glossary popover is open although the popover is inside the window. The right-to-left popover test is `@chromium-only`. Look again when a right-to-left language is offered.
 
 - Playwright's WebKit cannot go offline and reload with a service worker ("WebKit encountered an internal error"), so the offline specs (`offline.spec.ts`, `page-not-downloaded.spec.ts`, the offline recorded-audio test) are `@chromium-only`. Offline behaviour on an iPad must be tried by hand.
-- Every test that prints to PDF is `@chromium-only` (certificates, pilot-day, partner-kit).
+- Every test that prints to PDF is `@chromium-only` (certificates, pilot-day, the pilot day guide, partner-kit).
 - `speech.spec.ts` shows a different Settings state in WebKit (it has its own speech-recognition object); it is `@chromium-only` until someone looks at what Safari shows there.
+
+## Last run
+
+16 October 2026, on main before the pilot: 196 passed, 4 skipped, 5 failed. Three were the pilot day guide's PDF tests, which were not yet tagged `@chromium-only` (they are now). The other two (Listen's recorded audio, and the `/courses` redirect) passed when they were run again on their own: they timed out under the load of the full run.
 
 A run in WebKit is not a real iPad: try the pilot's devices before the pilot.
