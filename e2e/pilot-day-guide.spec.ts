@@ -77,7 +77,8 @@ test('staff find the guide under "Starting a pilot" on the Educators page, and c
 });
 
 for (const locale of ['en', 'id', 'ms'] as const) {
-  test(`the guide is one page on A4 and on Letter, black on white, with nothing under 14px (${locale})`, async ({ page }) => {
+  // Prints to PDF, which only Chromium can (docs/notes/safari-testing.md).
+  test(`the guide is one page on A4 and on Letter, black on white, with nothing under 14px (${locale})`, { tag: '@chromium-only' }, async ({ page }) => {
     await useLanguage(page, locale);
     await page.goto('/educators/pilot-day');
     await expect(page.locator('h1')).toHaveText(msg(locale, 'pilotDay.title'));
