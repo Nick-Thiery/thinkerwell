@@ -331,6 +331,18 @@ describe('videos:sheet', () => {
             summaryBasis: 'description',
             screening: { by: 'Claude', on: '2026-10-15', notes: 'Cocok untuk bagian ini.' },
           }),
+          screened: [
+            {
+              youtubeId: 'KKKKKKKKKKK',
+              title: 'Juga cocok',
+              channel: 'Saluran Lain',
+              channelUrl: 'https://www.youtube.com/@SaluranLain',
+              reviewStatus: 'prescreened',
+              startSeconds: 30,
+              endSeconds: 150,
+              screening: { by: 'Claude', on: '2026-10-16', notes: 'Covers the same, less clearly.' },
+            },
+          ],
         },
         L06: { primary: null, screened: [{ youtubeId: 'GGGGGGGGGGG', title: 'Tanpa teks', channel: 'C', reviewStatus: 'unverified', screening: { by: 'Claude', on: '2026-10-15', notes: 'No captions.' } }] },
         L09: { primary: null, screened: [{ youtubeId: 'HHHHHHHHHHH', title: 'Tidak cocok', channel: 'C', reviewStatus: 'rejected', screening: { by: 'Claude', on: '2026-10-15', notes: 'Too long.' } }] },
@@ -346,6 +358,12 @@ describe('videos:sheet', () => {
     expect(sheet).toContain("The lesson's question now: Pertanyaan pelajaran sesudah?");
     expect(sheet).toContain('AI-dubbed English soundtrack');
     expect(sheet).toContain('`npm run videos:apply -- id L05 --approved-by "Your name" --accept-unverified-summary --checked-audio`');
+    expect(sheet).toContain('1 lesson has a recommended video, 1 other video also fits, 1 video still needs someone to watch it, and 1 lesson has nothing yet.');
+    expect(sheet).toContain(
+      '## Also suitable\n\n' +
+        "These fit too, but aren't recommended: another video covers the lesson better, or as well. Most have no draft questions or written version yet. If you prefer one, say so, and it can be made the lesson's recommendation with its drafts.\n\n" +
+        '- **Lesson 5** (Lesson 5): [Juga cocok](https://www.youtube.com/watch?v=KKKKKKKKKKK&t=30s), by [Saluran Lain](https://www.youtube.com/@SaluranLain), part to watch 0:30 to 2:30: Covers the same, less clearly.',
+    );
     expect(sheet).toMatch(/## Videos nobody could check yet\n\n.*\n\n- \*\*Lesson 6\*\* \(Lesson 6\): \[Tanpa teks\]/);
     expect(sheet).toMatch(/## Videos turned down\n\n- \*\*Lesson 9\*\* \(Lesson 9\): \[Tidak cocok\].*Too long\./);
   });

@@ -70,24 +70,27 @@ The candidates (`docs/notes/local-videos/id.json` and `ms.json`) have been **pre
 
 Nothing in this file reaches the app or the browser. The pre-screen was done by Claude in the built-in browser of a team laptop, signed out of YouTube (YouTube refuses these requests from the cloud); `.claude/agents/watch-video-screener.md` is the procedure, with the two scripts it runs, for screening more.
 
-### The pre-screen of 15 October 2026
+### The pre-screens of 15 and 16 October 2026
 
-44 videos for the 48 slots (24 lessons in each language) from the audit in `docs/research/`, each played and its captions read; Indonesian then Malay:
+On 15 October, the 44 videos for the 48 slots (24 lessons in each language) from the audit in `docs/research/`; on 16 October, 59 of the 82 videos in the research notes of #42 (Malay) and #43 (Indonesian). Each was played and its captions read. The other 23 from #43 weren't reached because the laptop's browser went offline; they are all for Indonesian lessons that already have a recommendation, and are in `id.json` as `unverified`, marked "Not screened yet". Where the slots stand now:
 
 | | Bahasa Indonesia | Bahasa Melayu |
 | --- | --- | --- |
-| Recommended (prescreened) | 15: L02, L03, L04, L05, L08, L10, L11, L13, L14, L15, L17, L18, L21, L22, L23 | 11: L01, L02, L06, L07, L08, L10, L13, L17, L20, L21, L22 |
-| Of those, weak or partial fits | L05, L17, L18 | L13, L22 |
-| Need a person to watch first | L01, L12, L20, L24 | L04, L11, L14, L15, L16, L18, L23 |
-| Rejected, nothing else yet | L06, L16 | L03, L05, L09, L12, L19, L24 |
-| No candidate at all | L07, L09, L19 | none |
+| Recommended (prescreened) | 23: every lesson but L07 | 13: L01, L02, L05, L06, L07, L08, L10, L13, L15, L17, L20, L21, L22 |
+| Of those, weak or partial fits | L05, L16, L17, L18 | L15, L22 |
+| Other videos that also fit ("Also suitable") | 4: L02, L14, L20, L24 | 7: L01, L07, L08, L13, L17, L20, L21 |
+| No recommendation; a person must watch one first | L07 | L03, L04, L11, L12, L14, L16, L18, L23 |
+| Rejected, nothing else yet | none | L09, L19, L24 |
 
-Questions: 9 of the 26 recommendations keep both of the lesson's questions, 6 adapt one and 11 adapt both to the video, because a video with another example (Banten's river instead of the Tigris, Melaka instead of the Silk Road) would leave the lesson's question unanswerable. `npm run videos:sheet` lists each one beside the lesson's own.
+New on 16 October: Indonesian L01, L06, L09, L12, L16, L19, L20 and L24, and Malay L05 and L15; Malay L13's recommendation changed to a better fit (Astro Lab's video on hotter dry seasons), and the earlier one is now an alternative.
+
+Questions: 12 of the 36 recommendations keep both of the lesson's questions, 9 adapt one and 15 adapt both to the video, because a video with another example (Banten's river instead of the Tigris, Melaka instead of the Silk Road) would leave the lesson's question unanswerable. `npm run videos:sheet` lists each one beside the lesson's own. The alternatives have no drafts yet (except Malay L13's earlier recommendation): if a reviewer prefers one, its drafts are written then.
 
 ### What the pre-screen found that matters beyond one video
 
-- **YouTube's AI dubbing.** Two Indonesian videos (L10 `dAZ1Y_7sTHg`, L16 `wxoQmIjNXxU`) have an AI-dubbed English soundtrack, and in a browser set to English YouTube played that one, not the Indonesian. The embed asks for the player in the video's language (`hl`), which is meant to keep the original, but that is YouTube's choice and couldn't be tested from here (YouTube's player refuses to run outside a real page). So `videos:apply` refuses a candidate with `autoDubbed: true` until the reviewer has played it **on the devices learners use** and heard the original language (`--checked-audio`). None of the English videos had a dubbed track when checked.
+- **YouTube's AI dubbing.** It is common: four of the recommendations (Indonesian L01, L06 and L10, Malay L05) and several other candidates have an AI-dubbed English soundtrack, and in a browser set to English YouTube played that one, not the original. The embed asks for the player in the video's language (`hl`), which is meant to keep the original, but that is YouTube's choice and couldn't be tested from here (YouTube's player refuses to run outside a real page). So `videos:apply` refuses a candidate with `autoDubbed: true` until the reviewer has played it **on the devices learners use** and heard the original language (`--checked-audio`). None of the English videos had a dubbed track when checked.
 - **Automatic captions.** Most local videos have only YouTube's automatic captions, which the player shows by default. They mis-hear: in two videos outside the chosen parts they produce a rude word, and one Malay video's captions are Hindi gibberish (YouTube took the Malay for Hindi). YouTube also labels most Malaysian Malay captions as Indonesian. The reviewer watches with captions on.
+- **Small channels, re-uploads and machine-made narration.** Several promising videos come from one-person channels whose narration may be synthetic (the sheet says which); a reviewer decides whether that matters. Videos that looked like re-uploads of someone else's work were turned down, since the brief is the original creators' own uploads, and so was one whose machine-made script got a basic date wrong (Europeans trading at Melaka in the 15th century).
 - **A video that asks for a sign-in.** UNICEF Indonesia's `-k3igxia4Ho` (L24) wouldn't play signed out ("Please sign in. This helps protect our community") while every other video did. Learners are never signed in, so it may not play for them.
 - **Unsuitable things a title doesn't show.** Rejected for content: a farming video with jokes about sex, a TV lesson where the host remarks on a schoolgirl's looks, a savings video that says money belongs in a bank (many refugee learners can't open one), and a commercial tutoring upsell.
 

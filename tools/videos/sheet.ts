@@ -7,8 +7,9 @@
 // For each recommended (prescreened) candidate: the link at the right minute,
 // the part to watch, the questions beside the lesson's current ones, the draft
 // written version and key points, what the pre-screen found, a checklist and
-// the command that approves it. Then the videos nobody could check (a person
-// must watch them) and the ones turned down, with the reason.
+// the command that approves it. Then the other videos that fit too (prescreened
+// alternatives, without drafts), the videos nobody could check (a person must
+// watch them) and the ones turned down, with the reason.
 //
 // It reads docs/notes/local-videos/<lang>.json and the translated lessons; it
 // changes nothing that learners see. Run it again after editing the candidates.
@@ -98,6 +99,16 @@ function otherLine(video: ScreenedVideo): string {
   return `- [${video.title}](${watchUrl(video.youtubeId)}): ${video.screening?.notes ?? ''}`;
 }
 
+/** A prescreened alternative: its link at the part that fits, its channel, the part, and what was found. */
+function alternativeLine(video: ScreenedVideo): string {
+  const part =
+    video.startSeconds !== undefined && video.endSeconds !== undefined
+      ? `part to watch ${clock(video.startSeconds)} to ${clock(video.endSeconds)}`
+      : 'the whole video';
+  const channel = video.channelUrl ? `[${video.channel}](${video.channelUrl})` : video.channel;
+  return `- [${video.title}](${watchUrl(video.youtubeId, video.startSeconds)}), by ${channel}, ${part}: ${video.screening?.notes ?? ''}`;
+}
+
 /** The sheet for one language, as Markdown. */
 export function reviewSheet(code: string, root = ROOT): string | null {
   const candidates = readCandidates(code, root);
@@ -105,6 +116,7 @@ export function reviewSheet(code: string, root = ROOT): string | null {
   const english = readEnglishLessons(root);
   const endonym = LOCALES.find((locale) => locale.code === code)?.endonym ?? code;
   const recommended: string[] = [];
+  const alsoSuitable: string[] = [];
   const toWatch: string[] = [];
   const turnedDown: string[] = [];
   const nothing: string[] = [];
@@ -119,10 +131,11 @@ export function reviewSheet(code: string, root = ROOT): string | null {
     const others = slot?.screened ?? [];
     for (const video of others) {
       const line = `- **Lesson ${lesson.number}** (${lesson.title}): ${otherLine(video).slice(2)}`;
-      if (statusOf(video) === 'unverified') toWatch.push(line);
+      if (statusOf(video) === 'prescreened') alsoSuitable.push(`- **Lesson ${lesson.number}** (${lesson.title}): ${alternativeLine(video).slice(2)}`);
+      else if (statusOf(video) === 'unverified') toWatch.push(line);
       else if (statusOf(video) === 'rejected') turnedDown.push(line);
     }
-    if (!primary && !others.some((video) => statusOf(video) === 'unverified')) nothing.push(`- ${label}`);
+    if (!primary && others.every((video) => statusOf(video) === 'rejected')) nothing.push(`- ${label}`);
   }
   const count = recommended.filter((line) => line.startsWith('## ')).length;
   return [
@@ -132,9 +145,15 @@ export function reviewSheet(code: string, root = ROOT): string | null {
     '',
     `Every lesson shows its English video, with a note that it is in English and the written version in ${endonym}, until a person who speaks ${endonym} watches a video below and approves it. **Nothing here is approved.** The candidates were pre-screened by an AI from YouTube's captions (in a browser that was not signed in); that is a first filter, not a review. Read docs/notes/local-language-videos.md first.`,
     '',
-    `${count} lesson${count === 1 ? '' : 's'} have a recommended video, ${toWatch.length} video${toWatch.length === 1 ? '' : 's'} still need someone to watch them, and ${nothing.length} lesson${nothing.length === 1 ? '' : 's'} have nothing yet.`,
+    `${count} lesson${count === 1 ? ' has' : 's have'} a recommended video, ${alsoSuitable.length} other video${alsoSuitable.length === 1 ? ' also fits' : 's also fit'}, ${toWatch.length} video${toWatch.length === 1 ? ' still needs' : 's still need'} someone to watch ${toWatch.length === 1 ? 'it' : 'them'}, and ${nothing.length} lesson${nothing.length === 1 ? ' has' : 's have'} nothing yet.`,
     '',
     ...recommended,
+    '## Also suitable',
+    '',
+    "These fit too, but aren't recommended: another video covers the lesson better, or as well. Most have no draft questions or written version yet. If you prefer one, say so, and it can be made the lesson's recommendation with its drafts.",
+    '',
+    ...(alsoSuitable.length ? alsoSuitable : ['- None.']),
+    '',
     '## Videos nobody could check yet',
     '',
     'These have no captions (or YouTube would not play them), so the pre-screen could not read what they say. Watch one, and if it fits, ask for its questions and written version to be drafted.',

@@ -12,8 +12,10 @@ export const ROOT = path.resolve(import.meta.dirname, '..', '..');
 
 /**
  * Where a candidate stands (docs/notes/local-language-videos.md):
- * - 'prescreened': its captions were read (by Claude, overnight) and it fits; it has draft questions and a draft
- *   written version, and is recommended to a reviewer. Only a prescreened candidate can be approved.
+ * - 'prescreened': its captions were read (by Claude) and it fits. As a lesson's `primary` it has draft questions
+ *   and a draft written version and is recommended to a reviewer; in `screened` it is an alternative that also fits
+ *   (the sheet's "Also suitable"), with no drafts unless it was recommended before. Only a prescreened primary can
+ *   be approved.
  * - 'unverified': it couldn't be checked (no captions, or YouTube wouldn't play it): a person must watch it first.
  * - 'rejected': not suitable, with the reason in `screening.notes`.
  * A candidate without a status (the older research notes) counts as prescreened.
@@ -40,6 +42,9 @@ export interface ScreenedVideo {
   autoDubbed?: boolean;
   verifiedByOembed?: boolean;
   reviewStatus?: ReviewStatus;
+  /** For the part of a longer video that fits (a recommendation, or a prescreened alternative). */
+  startSeconds?: number;
+  endSeconds?: number;
   screening?: Screening;
 }
 
@@ -47,8 +52,6 @@ export interface ScreenedVideo {
 export interface Candidate extends ScreenedVideo {
   /** For the part of a longer video, the part's length; otherwise the video's. */
   durationSeconds: number | null;
-  startSeconds?: number;
-  endSeconds?: number;
   spokenLanguage?: string;
   why: string;
   beforeQuestion: string;
