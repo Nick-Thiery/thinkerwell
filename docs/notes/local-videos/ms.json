@@ -1,6 +1,6 @@
 {
   "language": "ms",
-  "about": "Candidates for this language's own Watch videos, one slot per lesson, pre-screened overnight on 15 October 2026 by Claude from YouTube's captions (or, without captions, from the title and description), in a signed-out browser. Nothing here is approved and nothing reaches learners until a person who speaks the language has watched the video and run npm run videos:apply (docs/notes/local-language-videos.md). reviewStatus: prescreened (recommended to a reviewer, with draft questions and written version), unverified (could not be checked, a person must watch it), rejected (not suitable, with the reason).",
+  "about": "Candidates for this language's own Watch videos, one slot per lesson, pre-screened on 15 and 16 October 2026 by Claude from YouTube's captions (or, without captions, from the title and description), in a signed-out browser. Nothing here is approved and nothing reaches learners until a person who speaks the language has watched the video and run npm run videos:apply (docs/notes/local-language-videos.md). reviewStatus: prescreened (recommended to a reviewer, with draft questions and written version), unverified (could not be checked, a person must watch it), rejected (not suitable, with the reason).",
   "lessons": {
     "L01": {
       "primary": {
@@ -38,7 +38,42 @@
           "notes": "Cikgu Jumrah (a teacher channel), Year 4 lesson, 10:20; Malaysian Malay (YouTube labels the auto-captions Indonesian). Segment 5:49-8:15 on primary and secondary sources; does not discuss what a source cannot tell us, so both questions change."
         }
       },
-      "screened": []
+      "screened": [
+        {
+          "youtubeId": "k1xPmV16_Vg",
+          "title": "DSKP 1.1.2 & 1.1.3 || SEJARAH TAHUN 4 UNIT 1 : SUMBER SEJARAH & KAEDAH PENYELIDIKAN",
+          "channel": "Cikgu Yuhanisah",
+          "channelUrl": "https://www.youtube.com/@CikguYuhanisah",
+          "fullDurationSeconds": 703,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "prescreened",
+          "startSeconds": 96,
+          "endSeconds": 254,
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Cikgu Yuhanisah (one teacher), 11:43, Feb 2021, embeddable, asr labelled id (garbled), no dubbing. Year 4 Sejarah Unit 1: what history is; primary sources (fossils, artefacts, official documents, manuscripts) and secondary ones (books, magazines, newspapers); research methods (archaeology at Sungai Batu, oral history, cave paintings at Gua Tambun). PRESCREEN (alternative) for L01 ms, 96–254 (primary and secondary sources): the same lesson in the same syllabus as the current recommendation; a fallback. Drafts not written. Also suitable, as an alternative to the recommendation."
+          }
+        },
+        {
+          "youtubeId": "mP3vBmAddfk",
+          "title": "KSSM SEJARAH TINGKATAN 1 SUMBER SEJARAH",
+          "channel": "CgMatdhi",
+          "channelUrl": "https://www.youtube.com/@cgmatdhi",
+          "fullDurationSeconds": 522,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "CgMatdhi (one teacher), 8:42, Feb 2021, embeddable, asr labelled id (garbled), no dubbing. Form 1 Sejarah 1.4: primary sources (fossils, artefacts, official documents, manuscripts, letters, diaries, inscribed stones, oral accounts) and secondary ones (textbooks, magazines, journals, encyclopaedias), slides read aloud. REJECT for L01 ms: accurate but only definitions and lists; the current recommendation and Cikgu Yuhanisah's video cover the same, more clearly."
+          }
+        }
+      ]
     },
     "L02": {
       "primary": {
@@ -73,7 +108,40 @@
           "notes": "Same segment as L01 ms. The current Think first (object vs writing) fits; After is about the tin from the Read step and is kept."
         }
       },
-      "screened": []
+      "screened": [
+        {
+          "youtubeId": "vmzCfqPX-UA",
+          "title": "ARTIFAK PILIHAN MUZIUM NEGARA (CELEPA)",
+          "channel": "MUZIUM NEGARA RASMI",
+          "channelUrl": "https://www.youtube.com/@muziumnegararasmi",
+          "fullDurationSeconds": 114,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Muzium Negara (official), 1:54, Jul 2021, embeddable, asr labelled id, no dubbing. A museum assistant presents one object: a gold, star-shaped celepa set with stones, once owned by the family of Sultan Zainal Abidin I of Terengganu (1725–1733); then a sign-off. REJECT for L02 ms: about 40 seconds on one object; nothing on telling what you see from what you guess, or checking with a second source."
+          }
+        },
+        {
+          "youtubeId": "qdGduMh2ZnA",
+          "title": "Pesara kerajaan abadikan koleksi barangan artifak purba di Muzium Kuala Krai",
+          "channel": "Berita Harian Online",
+          "channelUrl": "https://www.youtube.com/@BHOnlineTV",
+          "fullDurationSeconds": 82,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Berita Harian Online, 1:22, Jul 2023, embeddable, asr labelled id, no dubbing. News: a retired civil servant shows the Neolithic objects he collected (stone tools, bark beaters, spearheads, pottery) at the Kuala Krai museum. REJECT for L02 ms: a human-interest news item about a collector; nothing on reading an object as a source."
+          }
+        }
+      ]
     },
     "L03": {
       "primary": null,
@@ -94,6 +162,38 @@
             "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-15",
             "notes": "Cikgu Jumrah, 9:50. Decades, centuries, chronology and the teacher's own timeline; no zooming between scales, nothing on what a wide scale hides."
+          }
+        },
+        {
+          "youtubeId": "OAo_uFyuoY8",
+          "title": "Jom Jelajah Planetarium Negara : Alam Semesta",
+          "channel": "Planetarium Negara",
+          "channelUrl": "https://www.youtube.com/@PlanetariumNegaraMY",
+          "fullDurationSeconds": 275,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Planetarium Negara, 4:35, 2021, embeddable, asr labelled id (garbled: an echoing gallery with music). A walk through the National Planetarium's universe gallery (solar system, meteors, the Sun). The captions are unreadable, and a gallery tour isn't about zooming between scales or what a wide scale leaves out. UNVERIFIED for L03 ms, leaning REJECT on fit."
+          }
+        },
+        {
+          "youtubeId": "uC_PiGsZj4I",
+          "title": "Sejarah Tahun 4 Zaman Prasejarah : Kenali Zaman Prasejarah &  Garis Masa Zaman Prasejarah",
+          "channel": "Fiz channel",
+          "channelUrl": "https://www.youtube.com/@fizchannel5960",
+          "fullDurationSeconds": 664,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Fiz channel (a teacher's channel), 11:04, 2021, embeddable, asr labelled id (spoken Malaysian Malay). Year 4 prehistory: four periods on a timeline, with dates that contradict each other (Palaeolithic \"200,000 BCE\" then \"20,000 years ago\"); life in each period. REJECT for L03 ms: inconsistent dates; a timeline of periods, not changing scale."
           }
         }
       ]
@@ -122,8 +222,41 @@
       ]
     },
     "L05": {
-      "primary": null,
-      "noGoodMatch": true,
+      "primary": {
+        "youtubeId": "xo4u3eLTLJI",
+        "title": "PERAK MAN – Misteri Manusia Pertama Asia Tenggara | Rahsia Silam #2",
+        "channel": "Rahsia Silam",
+        "channelUrl": "https://www.youtube.com/@RahsiaSilam",
+        "fullDurationSeconds": 305,
+        "captions": "auto",
+        "autoDubbed": true,
+        "verifiedByOembed": true,
+        "spokenLanguage": "ms",
+        "startSeconds": 0,
+        "endSeconds": 182,
+        "durationSeconds": 182,
+        "reviewStatus": "prescreened",
+        "why": "Video ini menceritakan penemuan Perak Man dan petunjuk yang dijumpai oleh ahli arkeologi bersamanya.",
+        "beforeQuestion": "Petunjuk apakah yang dijumpai oleh ahli arkeologi bersama rangka Perak Man? Perhatikan dalam video.",
+        "afterQuestion": "Apakah yang diberitahu oleh petunjuk-petunjuk itu tentang cara masyarakat Perak Man hidup dan menjaga satu sama lain?",
+        "questionsChanged": [
+          "beforeQuestion",
+          "afterQuestion"
+        ],
+        "summary": "Pada tahun 1991, satu pasukan dari Universiti Sains Malaysia yang diketuai oleh Profesor Zuraina Majid menjumpai rangka manusia yang hampir lengkap di Gua Gunung Runtuh, Lenggong, Perak. Rangka itu berusia lebih 11,000 tahun. Lembah Lenggong kini tapak warisan dunia UNESCO.\n\nRangka itu dikebumikan dalam keadaan melengkung, bersama alat batu dan sisa makanan. Dia seorang lelaki berusia 40 hingga 50 tahun. Tangannya berbeza sejak lahir, tetapi dia hidup lama. Ini menunjukkan bahawa masyarakatnya menjaga satu sama lain.\n\nMasyarakat Perak Man memburu dan mengumpul makanan. Mereka makan siput sungai, ikan, ubi hutan dan buah-buahan, dan menggunakan batu yang tajam sebagai alat.",
+        "summaryBasis": "transcript",
+        "keyPoints": [
+          "Perak Man dijumpai pada tahun 1991 di Gua Gunung Runtuh, Lenggong, dan berusia lebih 11,000 tahun.",
+          "Alat batu dan sisa makanan memberitahu kita cara masyarakatnya hidup dan mencari makanan.",
+          "Tangannya berbeza sejak lahir, tetapi dia hidup lama: masyarakatnya menjaga satu sama lain."
+        ],
+        "contentNote": "YouTube membuat suara bahasa Inggeris secara automatik untuk video ini: semak pada peranti kelas bahawa yang kedengaran ialah suara asal dalam bahasa Melayu.",
+        "screening": {
+          "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+          "on": "2026-10-16",
+          "notes": "Rahsia Silam, 5:05, Jun 2025, embeddable, asr labelled id (spoken Malay); AUTO-DUBBED English default. Perak Man: in 1991 a USM team led by Prof. Zuraina Majid found an almost complete skeleton over 11,000 years old in Gua Gunung Runtuh, Lenggong (a UNESCO site), buried curled up with stone tools and food remains; a man of 40-50 with a hand condition (brachymesophalangia) who was cared for all his life, so his people looked after one another; hunter-gatherers eating river snails, fish, wild tubers and fruit, using sharp stones; 3:06 on, speculation (chief? healer?) and \"the origins of the Malay race\", then a subscribe request. Possibly AI-narrated; small channel. Fits L05 (clues archaeologists find, and how a group lived and cared for each other). Segment stops before the speculation. PRESCREEN for L05 ms, segment 0-182, adapted questions; autoDubbed: Think first: \"Petunjuk apakah yang dijumpai oleh ahli arkeologi bersama rangka Perak Man? Perhatikan dalam video.\" After: \"Apakah yang diberitahu oleh petunjuk-petunjuk itu tentang cara masyarakat Perak Man hidup dan menjaga satu sama lain?\""
+        }
+      },
       "screened": [
         {
           "youtubeId": "TAy5VZxgOPQ",
@@ -140,6 +273,22 @@
             "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-15",
             "notes": "Cikgu Jumrah, 9:05. Prehistoric technology then and now; not how early humans learned, created and moved, nor collective learning. A partial segment 4:32-7:40 exists if a reviewer disagrees."
+          }
+        },
+        {
+          "youtubeId": "-XFsgSEkXDE",
+          "title": "Tingkatan 1 | Sejarah | Zaman Prasejarahserta Ciri-ciri Kehidupan Manusia Zaman Pra Sejarah | R298",
+          "channel": "EduwebTV KPM",
+          "channelUrl": "https://www.youtube.com/@EduwebTVkpm",
+          "fullDurationSeconds": 1517,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "EduwebTV KPM, 25:17, 2022, embeddable, asr labelled id (spoken Malaysian Malay). Form 1 TV lesson on life in the four prehistoric periods: homes, tools, food, economy, society, belief, art. 4:49-8:28 tools getting finer from period to period. Weak for L05 (no collective learning; a long lesson). Keep as a fallback: REJECT in favour of xo4u3eLTLJI."
           }
         }
       ]
@@ -180,7 +329,24 @@
           "notes": "DBPMalaysia, 5:02, January 2026, official and at the right level. Shows the gains of farming but not its costs, which both current questions ask for, so both change. The Read step keeps the costs."
         }
       },
-      "screened": []
+      "screened": [
+        {
+          "youtubeId": "EdOQsXSk1Pw",
+          "title": "Zaman Neolitik",
+          "channel": "Atika Ahmad",
+          "channelUrl": "https://www.youtube.com/@atikaahmad8265",
+          "fullDurationSeconds": 140,
+          "captions": "broken",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Atika Ahmad (one teacher), 2:20, Feb 2021, embeddable, only a Thai auto-track of nonsense (music, or speech YouTube couldn't recognise), no dubbing. Form 1 Sejarah, \"Zaman Neolitik\". UNVERIFIED: nothing to read; a person must watch it. The current recommendation for L06 already covers the Neolithic in Malaysia."
+          }
+        }
+      ]
     },
     "L07": {
       "primary": {
@@ -215,7 +381,26 @@
           "notes": "EduwebTV KPM (Ministry of Education), Form 1 Sejarah, 28:35. Segment 9:05-12:59 (Nile, farming, kings, trade, army). Stops before the Ramses II part (wrong dates; repeats a pseudo-scientific drowning claim). Both current questions fit and are kept."
         }
       },
-      "screened": []
+      "screened": [
+        {
+          "youtubeId": "doCTie5-J4M",
+          "title": "Tingkatan 1 | Sejarah | Ciri-ciri Tamadun Awal Dunia | R297",
+          "channel": "EduwebTV KPM",
+          "channelUrl": "https://www.youtube.com/@EduwebTVkpm",
+          "fullDurationSeconds": 1547,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "prescreened",
+          "startSeconds": 162,
+          "endSeconds": 413,
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "EduwebTV KPM, 25:47, Mar 2022, embeddable, asr labelled id (garbled), no dubbing. Ministry of Education TV, Form 1 Sejarah, nine features of early civilisations. 2:42–6:53: farming and its tools (irrigation, terraces) lead to trade (barter; local and long-distance, Sumer with Egypt and Mohenjo-daro); governments form to run big cities, first priests then kings, helped by nobles and priests, kings claiming to rule for the gods, laws to keep order. Then towns (4000 BCE, Ur, Memphis, Mohenjo-daro, Anyang), specialised jobs, technology. PRESCREEN (alternative) for L07 ms, 162–413: the same programme series as the current recommendation, a different episode; a fallback. Drafts not written. Also suitable, as an alternative to the recommendation."
+          }
+        }
+      ]
     },
     "L08": {
       "primary": {
@@ -253,7 +438,42 @@
           "notes": "EduwebTV KPM, Form 2 Sejarah, 27:49. Segment 15:54-20:47 (Melaka as a trade centre) only; leaves out a music video at the start (whose auto-captions have a rude mis-hearing) and the part on the spread of Islam. Both questions change (the Silk Road question does not fit)."
         }
       },
-      "screened": []
+      "screened": [
+        {
+          "youtubeId": "p5NZeSNYgG4",
+          "title": "Bab 5 : Aspek Kegemilangan Melaka ( Pusat Perdagangan & Pengurusan Perdagangan )",
+          "channel": "Sejarah Dept STTSS PT3 KSSM J1-J3",
+          "channelUrl": "https://www.youtube.com/@sejarahdeptsttsspt3kssmj1-69",
+          "fullDurationSeconds": 615,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "prescreened",
+          "startSeconds": 32,
+          "endSeconds": 262,
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Sejarah Dept STTSS (one teacher, Cikgu Dedona Singgoi), 10:15, Apr 2020, embeddable, asr labelled id (the player returned an English auto-translation), no dubbing. Form 2 Sejarah, slides read aloud: Melaka as an entrepôt between China and India; goods collected from the Malay world (gold, camphor, forest products, spices) and brought in (cloth, pottery, food); traders from Arabia, China, Gujarat, Pasai, Java, Brunei, Persia, Turkey, Egypt, Luzon, Ceylon; the ships; then how trade was run (the shahbandar, weights, currency). PRESCREEN (alternative) for L08 ms, 32–262: covers the same ground as the current recommendation (EduwebTV's Melaka lesson), as a teacher reading slides; a fallback if the reviewer doesn't like that one. Drafts not written. Also suitable, as an alternative to the recommendation."
+          }
+        },
+        {
+          "youtubeId": "cbB_sfETjl8",
+          "title": "Sejarah Perdagangan di Pelabuhan Melaka - Kurun ke-15",
+          "channel": "wan azm",
+          "channelUrl": "https://www.youtube.com/@wanazm1335",
+          "fullDurationSeconds": 104,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "wan azm, 1:44, Dec 2025, embeddable, asr labelled id, no dubbing. Short narrated piece on 15th-century Melaka: traders from east and west, spices, silk, gold; goods and new ideas exchanged; a cosmopolitan city; the Sultan kept the strait safe. REJECT for L08 ms: says traders came \"from Arabia, India, China to Europe\" in the 15th century (Europeans reached Melaka only in 1509); a new one-person channel whose narration and pictures look machine-made; too thin to check."
+          }
+        }
+      ]
     },
     "L09": {
       "primary": null,
@@ -311,7 +531,40 @@
           "notes": "EduwebTV KPM, Form 1 Sejarah, 28:35. Segment 3:09-9:05 (why rivers, then Mesopotamia). Both current questions fit almost word for word and are kept."
         }
       },
-      "screened": []
+      "screened": [
+        {
+          "youtubeId": "HcB8dHKOw-E",
+          "title": "Tingkatan 1 | Geografi | Sungai Dan Tasik Utama Di Malaysia Dan Kepentingannya | R318",
+          "channel": "EduwebTV KPM",
+          "channelUrl": "https://www.youtube.com/@EduwebTVkpm",
+          "fullDurationSeconds": 1513,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "EduwebTV KPM, 25:13, Mar 2022, embeddable, asr labelled id (garbled), no dubbing. Ministry of Education TV, Form 1 Geografi: names and locations of Malaysia's main rivers and lakes (Pahang, Bernam, Endau, Rajang, Kinabatangan; Kenyir, Chini, Bera, Loagan Bunut), map exercises and a quiz; the importance of rivers and lakes (hydro power, borders, water for homes, irrigation, transport) only as a list at 23:36; \"don't throw rubbish in rivers\". REJECT for L10 ms: almost all of it is memorising names and places; nothing on why towns grew by rivers or the problems rivers bring."
+          }
+        },
+        {
+          "youtubeId": "_sV2T_KyD-Y",
+          "title": "7.3 KEPENTINGAN SUNGAI DAN TASIK DI MALAYSIA",
+          "channel": "Suziyana",
+          "channelUrl": "https://www.youtube.com/@Suziyanacikgusuzy",
+          "fullDurationSeconds": 180,
+          "captions": "broken",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Suziyana (one teacher, \"Cikgu Suzy\"), 3:00, Mar 2021, embeddable, no usable captions (an English auto-track with one word), no dubbing. Form 1 Geografi 7.3, the importance of rivers and lakes in Malaysia; probably slides with music and no voice. UNVERIFIED: nothing to read; a person must watch it."
+          }
+        }
+      ]
     },
     "L11": {
       "primary": null,
@@ -332,6 +585,22 @@
             "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-15",
             "notes": "Sherene Tan (a teacher channel), Form 1 Geografi sketch maps, 23:53, no captions. A person would have to watch it and pick a segment on symbols and the key."
+          }
+        },
+        {
+          "youtubeId": "OPsFE3Ho0BQ",
+          "title": "GEOGRAFI TINGKATAN 1 : BAB 3 PETA LAKAR (CIRI-CIRI DAN SIMBOL)",
+          "channel": "Nurhabibah M A.",
+          "channelUrl": "https://www.youtube.com/@habibaa.nuha29",
+          "fullDurationSeconds": 370,
+          "captions": "broken",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Nurhabibah M A. (a teacher's channel), 6:10, 2021, embeddable; only a broken auto-caption track (YouTube took the Malay for Spanish). Form 1 Geografi: features and symbols of a sketch map, a short home-learning lesson (description). Can't check the words; captions show nonsense if turned on. UNVERIFIED for L11 ms (short and on-topic; a person watches it)."
           }
         }
       ]
@@ -356,47 +625,130 @@
             "on": "2026-10-15",
             "notes": "Sherene Tan, 36:29. Settlement types and patterns as exam revision; nothing on how jobs, transport, services and population drive each other as a city grows."
           }
+        },
+        {
+          "youtubeId": "mXNe7HsuejE",
+          "title": "Asal Usul Kuala Lumpur",
+          "channel": "Warkah TV",
+          "channelUrl": "https://www.youtube.com/@WarkahTV",
+          "fullDurationSeconds": 415,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Warkah TV, 6:55, Nov 2024, embeddable, NO captions, no dubbing. \"The origins of Kuala Lumpur\": from a small village where two muddy rivers meet to the capital, through tin mining (description). Promising for L12 ms (what makes a city grow), but the words can't be checked. UNVERIFIED for L12 ms, promising: a Malay speaker watches it."
+          }
+        },
+        {
+          "youtubeId": "yjLwiTGmTgY",
+          "title": "SEJARAH KUALA LUMPUR. DULU RUMAH2 MASYARAKAT PAKAI DAUN NIPAH. SEKARANG GEDUNG PENCAKAR LANGIT ",
+          "channel": "Salwin Channel",
+          "channelUrl": "https://www.youtube.com/@salwinchannel8453",
+          "fullDurationSeconds": 695,
+          "captions": "auto",
+          "autoDubbed": true,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Salwin Channel, 11:35, Jan 2026, embeddable, asr labelled id; AUTO-DUBBED English default. An Indonesian vlogger's night drive around Kuala Lumpur with a Malay documentary-style narration: from a tin-mining town (1857) to capital; jobs drew investors and migrants; highways, low-cost housing replacing squatter areas, LRT and KLIA Express; British administration, 1880 and 1896, independence. The growth story fits L12, but the narration sounds taken from someone else's documentary (the brief is original creators' uploads only), and it is a vlog. REJECT for L12 ms (possible re-upload; vlog)."
+          }
         }
       ]
     },
     "L13": {
       "primary": {
-        "youtubeId": "qzDZtZgqEmk",
-        "title": "CUACA DAN IKLIM DI MALAYSIA",
-        "channel": "Mr.Adie",
-        "channelUrl": "https://www.youtube.com/@MrAdie83",
-        "fullDurationSeconds": 585,
-        "spokenLanguage": "ms",
+        "youtubeId": "6XIbVatjZXc",
+        "title": "Kenapa Cuaca Panas Dan Kemarau Semakin Dahsyat Di Malaysia?",
+        "channel": "Astro Lab",
+        "channelUrl": "https://www.youtube.com/@AstrolabMalaysia",
+        "fullDurationSeconds": 489,
         "captions": "auto",
         "autoDubbed": false,
         "verifiedByOembed": true,
-        "startSeconds": 470,
-        "endSeconds": 560,
-        "durationSeconds": 90,
+        "spokenLanguage": "ms",
+        "startSeconds": 320,
+        "endSeconds": 462,
+        "durationSeconds": 142,
         "reviewStatus": "prescreened",
-        "why": "Bahagian video ini menerangkan angin monsun di Malaysia dan bagaimana musim mengubah kerja nelayan.",
-        "beforeQuestion": "Bagaimanakah musim boleh mengubah kerja harian seseorang?",
-        "afterQuestion": "Apakah yang dilakukan oleh nelayan di pantai timur semasa Monsun Timur Laut? Mengapa?",
+        "why": "Video ini menerangkan mengapa musim kering di Malaysia terasa semakin panas, dan bagaimana orang boleh bersedia.",
+        "beforeQuestion": "Bolehkah satu hari yang sangat panas membuktikan bahawa iklim sedang berubah? Mengapa atau mengapa tidak?",
+        "afterQuestion": "Apakah satu cara orang di Malaysia boleh bersedia untuk musim kering yang lebih panas?",
         "questionsChanged": [
-          "beforeQuestion",
           "afterQuestion"
         ],
-        "summary": "Malaysia menerima dua angin monsun. Angin Monsun Timur Laut bertiup dari bulan November hingga Mac. Angin Monsun Barat Daya bertiup dari bulan Mei hingga September.\n\nSemasa Monsun Timur Laut, laut di pantai timur, terutamanya di Kelantan, Terengganu dan Pahang, sangat bergelora dan berbahaya. Oleh itu, nelayan di sana tidak turun ke laut pada musim itu.\n\nMalaysia juga menerima angin tempatan, iaitu bayu laut pada waktu siang dan bayu darat pada waktu malam.",
+        "summary": "Suhu purata dunia telah meningkat kerana gas rumah hijau di udara bertambah. Apabila suhu lebih tinggi, air di tanah, sungai dan empangan hilang ke udara dengan lebih cepat. Jadi kemarau lebih mudah berlaku dan lebih sukar dipulihkan.\n\nCuaca panas dan kemarau memberi kesan kepada kehidupan harian. Bekalan air boleh terjejas. Tanaman seperti padi memerlukan banyak air, jadi hasilnya boleh berkurang dan harga makanan boleh naik. Orang yang bekerja di luar lebih mudah mendapat strok haba. Kebakaran hutan dan tanah gambut boleh menyebabkan jerebu.\n\nMalaysia perlu bersedia: menguruskan air dengan lebih cekap, menjaga kawasan tadahan air, menanam lebih banyak pokok di bandar, dan menjimatkan air. Video ini menyatakan bahawa cuaca panas ini bukan disebabkan oleh satu faktor sahaja, tetapi gabungan beberapa faktor.",
         "summaryBasis": "transcript",
         "keyPoints": [
-          "Monsun Timur Laut bertiup dari November hingga Mac, dan Monsun Barat Daya dari Mei hingga September.",
-          "Semasa Monsun Timur Laut, nelayan di pantai timur tidak turun ke laut kerana laut bergelora.",
-          "Musim boleh mengubah kerja dan kehidupan harian orang."
+          "Pemanasan global membuat air hilang dengan lebih cepat, jadi kemarau lebih mudah berlaku.",
+          "Kemarau memberi kesan kepada bekalan air, tanaman padi, harga makanan dan orang yang bekerja di luar.",
+          "Orang boleh bersedia dengan menjimatkan air, menjaga kawasan tadahan air dan menanam pokok."
         ],
-        "contentNote": null,
+        "contentNote": "Video ini dibuat pada tahun 2026 dan menerangkan cuaca tahun itu.",
         "screening": {
           "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
-          "on": "2026-10-15",
-          "notes": "Mr.Adie (a teacher channel), Form 2 Geografi, 9:45. Defines weather vs climate only by scale (leaves out time, the key idea in L13); only 8:10-8:37 shows people adapting to a season. Both questions change. Weak fit: keep English unless the reviewer likes it."
-        },
-        "weakFit": true
+          "on": "2026-10-16",
+          "notes": "Astro Lab, 8:09, Apr 2026, embeddable, asr:ms (clear Malaysian Malay), no dubbing. Why hot, dry weather feels worse in Malaysia: rain, temperature and dam data for 2026; the two monsoons; El Niño/La Niña; the MJO; urban heat islands; cutting forests; dams used for rice; global warming (warmer air dries water faster); effects on daily life (water supply, rice and food prices, heat stroke for people working outside, peat fires and haze); getting ready (water management, protecting catchments, trees in towns, saving water); \"not one cause but several together\". Who runs \"Astro Lab\" isn't clear (ends \"signing off from space\"; may not be Astro's official channel; check the narration isn't synthetic). It describes 2026, so it will date. Better fit for L13 than the current weak primary (qzDZtZgqEmk). PRESCREEN, make it the primary, 316–462 (global warming, effects on daily life, getting ready, many causes). Think first kept (answerable: the hot spell has several causes, not one); After adapted: After: \"Apakah satu cara orang di Malaysia boleh bersedia untuk musim kering yang lebih panas?\" Times come from 30-second caption chunks: the reviewer sets the exact start and end."
+        }
       },
-      "screened": []
+      "screened": [
+        {
+          "youtubeId": "qzDZtZgqEmk",
+          "title": "CUACA DAN IKLIM DI MALAYSIA",
+          "channel": "Mr.Adie",
+          "channelUrl": "https://www.youtube.com/@MrAdie83",
+          "fullDurationSeconds": 585,
+          "spokenLanguage": "ms",
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "startSeconds": 470,
+          "endSeconds": 560,
+          "durationSeconds": 90,
+          "reviewStatus": "prescreened",
+          "why": "Bahagian video ini menerangkan angin monsun di Malaysia dan bagaimana musim mengubah kerja nelayan.",
+          "beforeQuestion": "Bagaimanakah musim boleh mengubah kerja harian seseorang?",
+          "afterQuestion": "Apakah yang dilakukan oleh nelayan di pantai timur semasa Monsun Timur Laut? Mengapa?",
+          "questionsChanged": [
+            "beforeQuestion",
+            "afterQuestion"
+          ],
+          "summary": "Malaysia menerima dua angin monsun. Angin Monsun Timur Laut bertiup dari bulan November hingga Mac. Angin Monsun Barat Daya bertiup dari bulan Mei hingga September.\n\nSemasa Monsun Timur Laut, laut di pantai timur, terutamanya di Kelantan, Terengganu dan Pahang, sangat bergelora dan berbahaya. Oleh itu, nelayan di sana tidak turun ke laut pada musim itu.\n\nMalaysia juga menerima angin tempatan, iaitu bayu laut pada waktu siang dan bayu darat pada waktu malam.",
+          "summaryBasis": "transcript",
+          "keyPoints": [
+            "Monsun Timur Laut bertiup dari November hingga Mac, dan Monsun Barat Daya dari Mei hingga September.",
+            "Semasa Monsun Timur Laut, nelayan di pantai timur tidak turun ke laut kerana laut bergelora.",
+            "Musim boleh mengubah kerja dan kehidupan harian orang."
+          ],
+          "contentNote": null,
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-15",
+            "notes": "Mr.Adie (a teacher channel), Form 2 Geografi, 9:45. Defines weather vs climate only by scale (leaves out time, the key idea in L13); only 8:10-8:37 shows people adapting to a season. Both questions change. Weak fit: keep English unless the reviewer likes it. Recommended in the first pre-screen as a weak fit; 6XIbVatjZXc (16 October) fits better, so this is now an alternative."
+          },
+          "weakFit": true
+        },
+        {
+          "youtubeId": "WtbwO7P46AE",
+          "title": "Kenapa Malaysia Tak Ada 4 Musim Tapi Ada Monsun? | Penjelasan Sains Cuaca Tropika",
+          "channel": "Lati Ash Rex",
+          "channelUrl": "https://www.youtube.com/@LatiAshRex",
+          "fullDurationSeconds": 375,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Lati Ash Rex, 6:15, Nov 2025, embeddable, asr labelled ms, no dubbing. Why Malaysia has monsoons, not four seasons: near the equator so temperature hardly changes; \"monsun\" from Arabic mausim; winds reverse every six months because land and sea heat differently; the north-east monsoon (Nov–Mar, heavy rain and floods on the east coast) and south-west monsoon (May–Sep, drier), the inter-monsoon in April and October, El Niño and La Niña, urban heat. The captions read like Indonesian (\"musim semi\", \"musim gugur\", \"Kami tidak mengalami…\"), so the narration may be Indonesian or a synthetic voice reading a translation; a small new channel. UNVERIFIED: the content looks accurate and fits L13, but a person must listen and say whether it is Malaysian Malay."
+          }
+        }
+      ]
     },
     "L14": {
       "primary": null,
@@ -418,12 +770,75 @@
             "on": "2026-10-15",
             "notes": "DBPMalaysia, mangrove-planting campaign at Lumut, 5:48, no captions. One community response, but probably nothing on who plans it or whether warnings and safe routes work for everyone. Weak fit expected."
           }
+        },
+        {
+          "youtubeId": "XvIRzkT-nOk",
+          "title": "KPM siap sedia hadapi banjir, impak Monsun Timur Laut",
+          "channel": "Astro AWANI",
+          "channelUrl": "https://www.youtube.com/@astroawani",
+          "fullDurationSeconds": 174,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Astro AWANI, 2:54, Oct 2023, embeddable, asr labelled id. News: the education ministry is ready for monsoon floods (operations rooms, reminder letters, flood kits, counselling teams, schools as relief centres). REJECT for L14 ms: an officials' news item; nothing on who plans a response or whether warnings work for everyone."
+          }
+        },
+        {
+          "youtubeId": "laTEg7IDrVE",
+          "title": "Nadma bersiap sedia hadapi banjir di Lembah Klang",
+          "channel": "Harian Metro",
+          "channelUrl": "https://www.youtube.com/@hmetromy",
+          "fullDurationSeconds": 61,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Harian Metro, 1:01, Nov 2022, embeddable, asr labelled id. An election candidate says the disaster agency is ready for flash floods in the Klang Valley. REJECT for L14 ms: a campaign quote in a news clip."
+          }
         }
       ]
     },
     "L15": {
-      "primary": null,
-      "noGoodMatch": true,
+      "primary": {
+        "youtubeId": "ZBt_9BpMyEI",
+        "title": "PEMAKAIAN BATIK MALAYSIA | Penjawat Awam Jadi Duta Kecil Promosi Identiti Negara",
+        "channel": "Buletin TV3",
+        "channelUrl": "https://www.youtube.com/@BuletinTV3",
+        "fullDurationSeconds": 103,
+        "captions": "auto",
+        "autoDubbed": false,
+        "verifiedByOembed": true,
+        "spokenLanguage": "ms",
+        "durationSeconds": 103,
+        "reviewStatus": "prescreened",
+        "why": "Berita ini menunjukkan maksud batik bagi penjawat awam di Putrajaya.",
+        "beforeQuestion": "Bolehkah objek yang berguna juga menceritakan sebuah kisah?",
+        "afterQuestion": "Apakah maksud batik bagi penjawat awam dalam video ini? Siapakah lagi yang mungkin melihat batik dengan cara yang berbeza?",
+        "questionsChanged": [
+          "afterQuestion"
+        ],
+        "summary": "Mulai hari itu, penjawat awam di Putrajaya perlu memakai batik Malaysia setiap hari Khamis.\n\nPara pekerja berkata batik menjaga warisan negara dan imej Malaysia di luar negara. Ada yang berkata penjawat awam ialah \"duta kecil\" bagi satu simbol identiti negara. Batik juga sesuai dengan cuaca yang panas.\n\nSeorang pekerja berkata kadang-kadang orang memakai batik Indonesia, bukan batik Malaysia.",
+        "summaryBasis": "transcript",
+        "keyPoints": [
+          "Bagi penjawat awam, batik ialah pakaian kerja yang sesuai dengan cuaca panas.",
+          "Batik juga dilihat sebagai warisan dan simbol identiti negara.",
+          "Ada pekerja yang menyebut perbezaan antara batik Malaysia dengan batik Indonesia."
+        ],
+        "contentNote": "Malaysia dan Indonesia sama-sama menganggap batik sebagai warisan mereka. Jika murid membincangkannya, ingatkan mereka bahawa satu objek boleh penting bagi lebih daripada satu negara.",
+        "weakFit": true,
+        "screening": {
+          "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+          "on": "2026-10-16",
+          "notes": "Buletin TV3, 1:43, Aug 2023, embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. News: from today civil servants in Putrajaya must wear Malaysian batik every Thursday; staff say it keeps the nation's heritage and its image abroad, that civil servants are \"small ambassadors\" for a symbol of national identity, and that it suits the hot climate; one remarks that people sometimes wear Indonesian batik instead. Partial fit for L15 (one object, several meanings: heritage, national symbol, workwear for a hot climate, a rule). Short news. PRESCREEN (partial) for L15 ms, whole video, Think first kept, After adapted: After: \"Apakah maksud batik bagi penjawat awam dalam video ini? Siapakah lagi yang mungkin melihat batik dengan cara yang berbeza?\""
+        }
+      },
       "screened": [
         {
           "youtubeId": "USiq12rl0OU",
@@ -440,6 +855,22 @@
             "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-15",
             "notes": "DBPMalaysia, gold-thread embroidery with a maker in Kuala Kangsar, 13:16, no captions. Promising: a person must watch it and choose a 3-5 minute segment where the maker says what the pieces mean and who uses them."
+          }
+        },
+        {
+          "youtubeId": "kT16bByRF3c",
+          "title": "SENI KRAFTANGAN TRADISIONAL : WARISAN & BUDAYA MALAYSIA",
+          "channel": "ZuRa aZRa",
+          "channelUrl": "https://www.youtube.com/@zuraazra9222",
+          "fullDurationSeconds": 309,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "ZuRa aZRa, 5:09, Oct 2021, embeddable, no captions, no dubbing. A teacher's pre-school video on Malaysia's traditional crafts (hashtags #seronokbelajarprasekolah). UNVERIFIED: no captions; made for pre-school children, so probably too young for 10–17. A person must watch it."
           }
         }
       ]
@@ -463,6 +894,38 @@
             "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-15",
             "notes": "DBPMalaysia, fingerspelled letters and numbers in sign language for Year 1 deaf pupils, 4:29, no captions. Touches \"other ways of communicating\" but is a drill for 7-year-olds. Leaning reject; better as an extra in the teacher guide."
+          }
+        },
+        {
+          "youtubeId": "VDK-d7yeWpM",
+          "title": "Jom Belajar Bahasa Isyarat Malaysia",
+          "channel": "Unit PBIM MFD",
+          "channelUrl": "https://www.youtube.com/@unitpbimmfd4041",
+          "fullDurationSeconds": 83,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Unit PBIM MFD (Malaysian Federation of the Deaf), 1:23, 2024, embeddable, NO captions. Five signs in Malaysian Sign Language around \"know\" / \"don't know\". A sign drill, no explanation. REJECT for L16 ms: a vocabulary drill, nothing on how languages connect people; better as an extra in the teacher guide."
+          }
+        },
+        {
+          "youtubeId": "jd98LRb2_FY",
+          "title": "Perkataan Pinjaman Bahasa Inggeris",
+          "channel": "Nurul Sakinah",
+          "channelUrl": "https://www.youtube.com/@nurulsakinah5699",
+          "fullDurationSeconds": 418,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Nurul Sakinah (a teacher's channel), 6:58, 2020, embeddable, asr labelled id (spoken Malaysian Malay). Revision for Year 3 KAFA (religious-school) Jawi: how to spell English loanwords (jus, klinik, feri, filem) in Jawi script. REJECT for L16 ms: a Jawi spelling drill for a religious-school class; loanwords are touched only to spell them."
           }
         }
       ]
@@ -502,7 +965,42 @@
           "notes": "DBPMalaysia, 10:00, 2023. A tradition that connects people and passes on knowledge across generations, shared beyond one community. Segment stops before the festival-morning prayers. Think first kept; After adapted. Names of the family left out of the written version (the auto-captions garble them)."
         }
       },
-      "screened": []
+      "screened": [
+        {
+          "youtubeId": "3tyRJcnRJss",
+          "title": "SEJARAH TAHUN 6 | UNIT 6 | PERAYAAN DI MALAYSIA@madamshahmahadami1776",
+          "channel": "MADAM SHAH MAHADAMI",
+          "channelUrl": "https://www.youtube.com/@madamshahmahadami1776",
+          "fullDurationSeconds": 356,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Madam Shah Mahadami (one teacher's channel), 5:56, Jul 2021, embeddable, asr labelled id, no dubbing. Year 6 Sejarah lesson: Malaysia's six main festivals, then a list of religious observances (Hari Raya Haji, Easter and Good Friday, Thaipusam, Wesak, Vaisakhi) and cultural ones (Chap Goh Mei, Ponggal, Loy Krathong, the Portuguese community's San Pedro). REJECT for L17 ms: a catalogue of festivals, mostly religious observances described one by one; nothing on why people share traditions, how they pass on knowledge or change, or sharing them respectfully. Captions badly garbled."
+          }
+        },
+        {
+          "youtubeId": "jmOFXmQE_dg",
+          "title": "Gawai Dayak & Tradisi Iban",
+          "channel": "Tri-poli",
+          "channelUrl": "https://www.youtube.com/@tri-poli1496",
+          "fullDurationSeconds": 881,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "prescreened",
+          "startSeconds": 20,
+          "endSeconds": 176,
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Tri-poli, 14:41, Jun 2025, embeddable, asr labelled id (spoken Malaysian Malay), manual Arabic track, no dubbing. 0:20–2:56: what Gawai Dayak is; before the 1960s each Dayak group had its own local gawai rituals but no shared festival; leaders pushed for one, Sarawak declared 1 June a public holiday in 1964, first celebrated 1965; it grew from a harvest festival into a way of keeping Dayak identity, celebrated in longhouses and by people who moved to towns and abroad; it stays alive through education, recording culture and teaching young people; \"not to be forgotten, but to be proud of and shared with the world\". After 2:57 it moves to spiritual rituals (offerings to gods and spirits, tuak): leave that out. Small channel (looks like a student or hobby documentary; the narration may be synthetic): say so to the reviewer. Strong fit for L17's \"connect people, pass on knowledge, change over time\". PRESCREEN (alternative) for L17 ms, 20–176. Think first kept (answerable: shared with the world, proud of it); After adapted: After: \"Bagaimanakah Gawai Dayak berubah sejak tahun 1965? Apakah yang kekal sama?\" Also suitable, as an alternative to the recommendation."
+          }
+        }
+      ]
     },
     "L18": {
       "primary": null,
@@ -523,6 +1021,38 @@
             "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-15",
             "notes": "DBPMalaysia, pantun over pictures of Kuala Lumpur landmarks, 7:46, no captions. Nothing suggests it models describing details before interpreting. Leaning reject."
+          }
+        },
+        {
+          "youtubeId": "RRtmRXmQX9o",
+          "title": "EYO HOCK SENG : Teruskan Legasi Seni Wayang Kulit Kelantan",
+          "channel": "Radio Televisyen Malaysia",
+          "channelUrl": "https://www.youtube.com/@RadioTelevisyenMalaysia",
+          "fullDurationSeconds": 300,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Radio Televisyen Malaysia (RTM), 5:00, 2022, embeddable, NO captions. Eyo Hock Seng (Pak Cu), a Kelantanese wayang kulit puppet master and dikir barat singer, a living National Heritage figure since 2012, active since age 9 (description). UNVERIFIED for L18 ms, promising (an artist explaining his own art fits \"asking the maker\"): a Malay speaker watches it."
+          }
+        },
+        {
+          "youtubeId": "zK1uW_rbQPI",
+          "title": "Wayang Kulit (Kelantan)",
+          "channel": "PentasPusaka",
+          "channelUrl": "https://www.youtube.com/@PentasPusaka",
+          "fullDurationSeconds": 60,
+          "captions": "none",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "PentasPusaka, 1:00, 2018, embeddable, NO captions. One minute of Kelantan wayang kulit performance with an English description. No spoken explanation to learn from, and the description is English. REJECT for L18 ms: a performance clip with no words in Malay about meaning."
           }
         }
       ]
@@ -600,6 +1130,40 @@
             "on": "2026-10-15",
             "notes": "Cikgu Athirah (a teacher channel), Form 4 opportunity cost, 17:19. Its only caption track is broken (YouTube took the Malay for Hindi: nonsense, some of it rude, if a learner turns captions on). Leaning reject."
           }
+        },
+        {
+          "youtubeId": "4WJBD1R1w0Q",
+          "title": "Konsep Kekurangan, Pilihan & Kos Lepas",
+          "channel": "AZLIN",
+          "channelUrl": "https://www.youtube.com/@CikguAzlin",
+          "fullDurationSeconds": 935,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "prescreened",
+          "startSeconds": 268,
+          "endSeconds": 364,
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "AZLIN (one teacher's channel), 15:35, Dec 2020, embeddable, asr:ms, no dubbing. Form 4 Ekonomi lesson read clearly: scarcity, choice, opportunity cost; households, firms, government. 4:28–6:04 is the household case: limited money, choose what gives most satisfaction, the second-best thing given up is the opportunity cost; example RM50, a shirt RM45 and shoes RM40, you can't buy both, choose the shirt and the shoes are the opportunity cost. PRESCREEN (alternative) for L20 ms, 268–364. Both questions kept (answerable: the other thing becomes the opportunity cost; you compare what you give up and choose what you need most). Also suitable, as an alternative to the recommendation."
+          }
+        },
+        {
+          "youtubeId": "SXZYJ4_LuYg",
+          "title": "(Ekonomi Tingkatan 4) BAB 1 - KEKURANGAN PILIHAN KOS LEPAS",
+          "channel": "Cikgu Ashari Saat",
+          "channelUrl": "https://www.youtube.com/@cikguasharisaat4387",
+          "fullDurationSeconds": 823,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Cikgu Ashari Saat (one teacher's channel), 13:43, Sep 2021, embeddable, asr labelled id, no dubbing. Form 4 Ekonomi: a recorded interactive slideshow (\"click the button\"); scarcity, choice, opportunity cost for households, firms (bread or cake with RM10,000) and government (a school or a hospital). REJECT for L20 ms: accurate, but a slideshow read aloud with garbled captions, and two better videos already cover it (the current primary and AZLIN's)."
+          }
         }
       ]
     },
@@ -639,7 +1203,42 @@
           "notes": "DBPMalaysia, 6:38, June 2026, financial-literacy clip pitched young (\"adik-adik\"). Covers barter, money and trust, not goods vs services, so both questions change."
         }
       },
-      "screened": []
+      "screened": [
+        {
+          "youtubeId": "rIj3sNElOAo",
+          "title": "Evolusi WANG (Barter, Emas & Fiat)",
+          "channel": "Palataology",
+          "channelUrl": "https://www.youtube.com/@Palataology",
+          "fullDurationSeconds": 591,
+          "captions": "manual",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "prescreened",
+          "startSeconds": 31,
+          "endSeconds": 191,
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Palataology, 9:51, Dec 2020, embeddable, manual Malay captions + asr, no dubbing. Animated history of money: barter (and that some economists doubt it was ever widespread), commodity money (shells, salt, silk, arrowheads), the first coins in Lydia, paper money in Tang China, banknotes and banks, the gold standard, the Depression, Bretton Woods, fiat money that rests on \"trust and confidence\", the ringgit floating since 2005. Small slips: says the First World War was in 1913; a \"like the video\" request at 4:05; casual \"korang\". PRESCREEN (alternative) for L21 ms, 31–191 (barter to the first paper money). Both questions adapted, because goods and services aren't discussed: Think first: \"Apakah masalah yang mungkin berlaku jika orang hanya boleh menukar barang dengan barang?\" After: \"Mengapakah orang mula menggunakan wang komoditi dan syiling selepas sistem barter?\" Also suitable, as an alternative to the recommendation."
+          }
+        },
+        {
+          "youtubeId": "h-4z7_6h6H4",
+          "title": "(Ekonomi Tingkatan 4) BAB 3 - FUNGSI WANG",
+          "channel": "Cikgu Ashari Saat",
+          "channelUrl": "https://www.youtube.com/@cikguasharisaat4387",
+          "fullDurationSeconds": 176,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Cikgu Ashari Saat, 2:56, Sep 2021, embeddable, asr labelled id, no dubbing. Form 4 Ekonomi slideshow: four functions of money (medium of exchange, unit of value, store of value with bank interest, deferred payment: a TV on hire purchase). REJECT for L21 ms: a definitions slideshow; its examples are bank deposits and buying on instalments; nothing on barter, goods and services, or trust."
+          }
+        }
+      ]
     },
     "L22": {
       "primary": {
@@ -718,6 +1317,38 @@
             "on": "2026-10-15",
             "notes": "Jabatan Penerangan Malaysia, \"If you are not sure, don't share\", 4:00, no captions. Short and on-topic; may present one government fact-check site as the place to decide what is true, which is narrower than L23. A person watches it."
           }
+        },
+        {
+          "youtubeId": "4B2Xced5ZqQ",
+          "title": "Maklumat Palsu di Internet",
+          "channel": "NADI Sibuti",
+          "channelUrl": "https://www.youtube.com/@NADISibuti",
+          "fullDurationSeconds": 118,
+          "captions": "broken",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "unverified",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "NADI Sibuti (a community internet centre), 1:58, 2022, embeddable; no speech in the captions (music and on-screen text). An awareness clip on false information online (description: not everything on the internet is accurate; some is made to look convincing). Probably text on screen; can't check. UNVERIFIED for L23 ms (a person reads the on-screen text)."
+          }
+        },
+        {
+          "youtubeId": "nzwRbmxlpLM",
+          "title": "Langkah-Langkah Mengekang Penyebaran Berita Palsu",
+          "channel": "Pejabat Penerangan Daerah Johor Bahru",
+          "channelUrl": "https://www.youtube.com/@peneranganjohorbahru",
+          "fullDurationSeconds": 86,
+          "captions": "auto",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Pejabat Penerangan Daerah Johor Bahru, 1:26, 2023, embeddable, asr labelled id. A clip from RTM news (the description credits Berita RTM, so it's a re-upload): the communications regulator tells anyone harmed by false content to make a police report with screenshots and links, post a correction, and report it to the platform. REJECT for L23 ms: a re-upload, and \"make a police report\" is advice many refugee learners can't safely follow; nothing on checking a claim."
+          }
         }
       ]
     },
@@ -740,6 +1371,38 @@
             "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
             "on": "2026-10-15",
             "notes": "ntv7malaysia (DidikTV), Form 5 Moral Education, 46:02. Adult-led volunteering with government and NGOs; the host remarks on a schoolgirl guest's looks; nothing on young people's messages to people in charge."
+          }
+        },
+        {
+          "youtubeId": "QeG4tb-Fvl8",
+          "title": "PROGRAM GOTONG ROYONG DI SEKOLAH KPM",
+          "channel": "PUSAT SUMBER SERI KEMALA",
+          "channelUrl": "https://www.youtube.com/@pusatsumberserikemala",
+          "fullDurationSeconds": 109,
+          "captions": "broken",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "PUSAT SUMBER SERI KEMALA (a school resource centre), 1:49, 2024, embeddable; only English auto-captions of an English pop song. A school environment club's recycling clean-up set to a pop love song (\"I would die for you\"); no speech. REJECT for L24 ms: no explanation, commercial song with lyrics unsuited to a lesson."
+          }
+        },
+        {
+          "youtubeId": "ewPl6apgTCs",
+          "title": "VIDEO PENDEK HARI KESUKARELAWANAN BELIA MALAYSIA (2020) - HAIKAL ADNIN",
+          "channel": "Haikal Adnin",
+          "channelUrl": "https://www.youtube.com/@adninhaikal",
+          "fullDurationSeconds": 60,
+          "captions": "broken",
+          "autoDubbed": false,
+          "verifiedByOembed": true,
+          "reviewStatus": "rejected",
+          "screening": {
+            "by": "Claude (AI pre-screen from YouTube captions; not a human review)",
+            "on": "2026-10-16",
+            "notes": "Haikal Adnin, 1:00, 2020, embeddable; no speech in the captions. A one-minute entry to the youth ministry's volunteering-day video contest by an individual; images and music. REJECT for L24 ms: an individual's contest entry with no words to learn from."
           }
         }
       ]

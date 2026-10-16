@@ -4,7 +4,49 @@ Made by `npm run videos:sheet` from `docs/notes/local-videos/id.json`. Don't edi
 
 Every lesson shows its English video, with a note that it is in English and the written version in Bahasa Indonesia, until a person who speaks Bahasa Indonesia watches a video below and approves it. **Nothing here is approved.** The candidates were pre-screened by an AI from YouTube's captions (in a browser that was not signed in); that is a first filter, not a review. Read docs/notes/local-language-videos.md first.
 
-15 lessons have a recommended video, 4 videos still need someone to watch them, and 5 lessons have nothing yet.
+23 lessons have a recommended video, 4 other videos also fit, 30 videos still need someone to watch them, and 0 lessons have nothing yet.
+
+## Lesson 1: How can we find out about the past?
+
+**Recommended:** [Penelitian Sejarah: Sumber Sejarah Primer dan Sekunder | IPS SMA Kelas 10 Tema 01](https://www.youtube.com/watch?v=2vnbcL9bDDI&t=95s), by [Rolla Fardila](https://www.youtube.com/@RollaFardila)
+
+- **Part to watch:** 1:35 to 3:33 (1:58 of 4:05)
+- **Captions on YouTube:** auto
+- **YouTube has an AI-dubbed English soundtrack of this video.** Play it on the learners' devices: if you hear English, it can't be used.
+
+**Why this video** (shown to learners): Seorang guru menjelaskan sumber sejarah primer dan sekunder, dengan contoh dari Indonesia.
+
+- **Think first (adapted to this video):** Apa bedanya sumber sejarah primer dengan sumber sejarah sekunder? Dengarkan contohnya di video.
+  - The lesson's question now: Apakah nota belanja sehari-hari bisa membantu seseorang belajar tentang masa lalu?
+- **After you watch (adapted to this video):** Pilih satu sumber primer dari video. Apa yang bisa diceritakannya tentang masa lalu? Apa yang tidak bisa diceritakannya?
+  - The lesson's question now: Pertanyaan apa yang bisa dijawab oleh nota dari Riverstone? Pertanyaan apa yang tidak bisa dijawabnya?
+
+**Written version** ("Read instead", draft by AI: correct anything that is wrong or unclear):
+
+> Video ini membagi sumber sejarah menjadi dua: sumber primer dan sumber sekunder.
+> 
+> Sumber primer berasal dari masa peristiwa itu terjadi. Contohnya arsip, fosil, artefak, dan wawancara dengan saksi. Video ini menyebut tengkorak Sangiran 17, fosil Homo erectus yang ditemukan pada tahun 1969, dan Prasasti Ciaruteun dari Kerajaan Tarumanegara, yang ditemukan pada tahun 1863.
+> 
+> Sumber sekunder dibuat kemudian oleh orang yang tidak mengalami peristiwanya. Contohnya hasil penelitian sejarawan, biografi, dan berita yang ditulis belakangan, misalnya biografi Soekarno. Sumber bisa berupa tulisan, benda, atau cerita lisan.
+
+**Key points:**
+
+- Sumber primer berasal dari masa peristiwa itu terjadi, misalnya fosil, prasasti, arsip, atau wawancara dengan saksi.
+- Sumber sekunder dibuat kemudian, misalnya buku sejarawan atau biografi.
+- Sumber bisa berupa tulisan, benda, atau cerita lisan.
+
+**Note for teachers:** YouTube membuat suara bahasa Inggris otomatis untuk video ini: periksa di perangkat kelas bahwa yang terdengar adalah suara asli dalam bahasa Indonesia.
+
+**What the pre-screen found:** Rolla Fardila (a teacher's channel), 4:05, 2021, embeddable, asr:id; AUTO-DUBBED English default, Indonesian original. Grade 10 IPS: historical research (gathering sources, checking them, interpreting, writing up); 1:35-3:35 primary sources (archives, fossils, artefacts, interviews with witnesses; examples Sangiran 17, the Homo erectus skull found in 1969, and the Ciaruteun inscription of Tarumanegara, found 1863) and secondary sources (historians' research, biographies, later newspapers; a biography of Soekarno); written, object and oral sources. Fits L01 (sources and what they can tell us). Segment avoids the intro and outro. PRESCREEN for L01 id, segment 95-213, adapted questions; autoDubbed: Think first: "Apa bedanya sumber sejarah primer dengan sumber sejarah sekunder? Dengarkan contohnya di video." After: "Pilih satu sumber primer dari video. Apa yang bisa diceritakannya tentang masa lalu? Apa yang tidak bisa diceritakannya?" Times come from 30-second caption chunks: the reviewer sets the exact start and end.
+
+**Before you approve, check:**
+
+- [ ] I watched the part above with the sound on, in the language, from start to end.
+- [ ] It is accurate, and right for learners aged 10 to 17, some of them refugees.
+- [ ] Both questions can be answered from the video and from the written version.
+- [ ] The written version and key points say what the video says (I corrected them in the candidates file if not).
+
+To approve it: `npm run videos:apply -- id L01 --approved-by "Your name" --checked-audio`
 
 ## Lesson 2: What can an object reveal about a person in the past?
 
@@ -164,6 +206,46 @@ To approve it: `npm run videos:apply -- id L04 --approved-by "Your name"`
 
 To approve it: `npm run videos:apply -- id L05 --approved-by "Your name"`
 
+## Lesson 6: How did farming change human societies?
+
+**Recommended:** [KENAPA MANUSIA BERHENTI MENJADI PEMBURU DAN MULAI BERTANI?](https://www.youtube.com/watch?v=nrdbEDISZVY), by [Azmi Farm](https://www.youtube.com/@azmifarmofficial)
+
+- **Part to watch:** the whole video (5:29)
+- **Captions on YouTube:** auto
+- **YouTube has an AI-dubbed English soundtrack of this video.** Play it on the learners' devices: if you hear English, it can't be used.
+
+**Why this video** (shown to learners): Video ini menjelaskan bagaimana orang mulai bertani, apa untungnya, dan apa harga yang harus dibayar.
+
+- **Think first (the lesson's own, kept):** Perhatikan satu perubahan baik dan satu masalah yang dibawa pertanian.
+- **After you watch (the lesson's own, kept):** Apakah video itu mengatakan pertanian baik untuk semua orang? Sebutkan satu detail.
+
+**Written version** ("Read instead", draft by AI: correct anything that is wrong or unclear):
+
+> Sekitar 10.000 tahun lalu, setelah zaman es berakhir, orang mulai menanam tanaman dan memelihara hewan. Mereka menyimpan benih, tinggal menetap, dan jumlah mereka bertambah.
+> 
+> Pertanian juga membawa masalah. Kekeringan, banjir, atau hama bisa merusak panen dan mengancam seluruh kampung. Orang bekerja lebih lama, makanan mereka kurang beragam, dan mereka sulit berpindah.
+> 
+> Orang tetap bertani karena makanan menjadi lebih banyak dan lebih teratur, dan sisa panen bisa disimpan. Tidak semua orang harus mencari makan, jadi ada pembuat alat, pedagang, tukang bangunan, dan pemimpin. Desa tumbuh menjadi kota. Video ini menyebut pertanian sebagai pertukaran besar: ada untung dan ada ruginya.
+
+**Key points:**
+
+- Pertanian membuat makanan lebih banyak, dan sisa panen bisa disimpan.
+- Pertanian juga membawa masalah: panen bisa gagal, kerja lebih lama, dan makanan kurang beragam.
+- Karena ada sisa makanan, sebagian orang bisa melakukan pekerjaan lain, dan desa tumbuh menjadi kota.
+
+**Note for teachers:** YouTube membuat suara bahasa Inggris otomatis untuk video ini: periksa di perangkat kelas bahwa yang terdengar adalah suara asli dalam bahasa Indonesia.
+
+**What the pre-screen found:** Azmi Farm, 5:29, Aug 2026, embeddable, asr:id; AUTO-DUBBED English default, Indonesian original. Clear narration (it may be AI-voiced: reviewer to judge): ~10,000 years ago people began to plant and herd after the ice age; seeds saved, settlements, more people; the price: crop failure from drought, floods and pests could threaten a whole community, longer work, a narrower diet, less flexibility; why they kept going: more and steadier food, stored surplus, division of labour (tool makers, traders, builders, leaders), villages to cities; "a great trade-off". Small farming channel. Best L06 fit found: both of the lesson's own questions are answerable as they stand (one good change and one problem; was it good for everyone). PRESCREEN for L06 id, whole video, lesson's questions kept. autoDubbed: check the original plays on the pilot devices.
+
+**Before you approve, check:**
+
+- [ ] I watched the part above with the sound on, in the language, from start to end.
+- [ ] It is accurate, and right for learners aged 10 to 17, some of them refugees.
+- [ ] Both questions can be answered from the video and from the written version.
+- [ ] The written version and key points say what the video says (I corrected them in the candidates file if not).
+
+To approve it: `npm run videos:apply -- id L06 --approved-by "Your name" --checked-audio`
+
 ## Lesson 8: How did trade connect distant communities?
 
 **Recommended:** [Perjalanan Jalur Rempah Nusantara](https://www.youtube.com/watch?v=fj2xxbx_OHQ), by [Jalur Rempah RI](https://www.youtube.com/@jalurrempahri)
@@ -204,6 +286,47 @@ To approve it: `npm run videos:apply -- id L05 --approved-by "Your name"`
 - [ ] The written version and key points say what the video says (I corrected them in the candidates file if not).
 
 To approve it: `npm run videos:apply -- id L08 --approved-by "Your name"`
+
+## Lesson 9: How do inventions change everyday life?
+
+**Recommended:** [Teknologi Makin Canggih, Kenapa Lingkungan Makin Parah?](https://www.youtube.com/watch?v=2xWpbjWp1Qc), by [Kok Bisa?](https://www.youtube.com/@KokBisa)
+
+- **Part to watch:** 0:00 to 2:06 (2:06 of 8:11)
+- **Captions on YouTube:** auto
+
+**Why this video** (shown to learners): Video ini menunjukkan bahwa teknologi yang dianggap ramah lingkungan pun bisa merugikan sebagian orang.
+
+- **Think first (adapted to this video):** Bisakah teknologi yang ramah lingkungan tetap merugikan sebagian orang? Perhatikan contohnya di video.
+  - The lesson's question now: Bisakah sebuah penemuan merugikan orang, walaupun penemuan itu membuat pekerjaan lebih cepat? Perhatikan contohnya.
+- **After you watch (adapted to this video):** Siapa yang mendapat untung dari baterai mobil listrik, dan siapa yang menanggung kerugiannya menurut video?
+  - The lesson's question now: Mengapa kita perlu melihat bagaimana orang memakai mesin itu, bukan hanya apa yang bisa dilakukan mesin itu?
+
+**Written version** ("Read instead", draft by AI: correct anything that is wrong or unclear):
+
+> Sekarang ada banyak teknologi yang lebih bersih, seperti panel surya, mobil listrik, baju dari bahan daur ulang, dan drone. Tetapi menurut video ini, lingkungan tetap makin rusak, karena kita merusak lebih banyak daripada yang kita perbaiki.
+> 
+> Baterai mobil listrik membutuhkan nikel. Untuk menambang nikel, hutan ditebang. Pekerja dan warga di dekat tambang nikel terkena infeksi saluran napas, rumah mereka kebanjiran lumpur merah, dan sebuah ledakan menewaskan beberapa orang.
+> 
+> Sebagian besar keuntungan dari nikel ini pergi ke negara lain. Jadi, sebuah teknologi bisa membantu sebagian orang dan merugikan orang lain.
+
+**Key points:**
+
+- Teknologi yang lebih bersih tetap membutuhkan bahan dari alam, misalnya nikel untuk baterai.
+- Warga dan pekerja di dekat tambang nikel menanggung kerugian: penyakit, banjir lumpur, dan kecelakaan.
+- Keuntungan dan kerugian sebuah teknologi tidak selalu dirasakan oleh orang yang sama.
+
+**Note for teachers:** Video ini menyebut sebuah ledakan di tambang yang menewaskan pekerja. Bahasanya santai, gaya Jakarta.
+
+**What the pre-screen found:** Kok Bisa?, 8:11, May 2025, embeddable, asr:id, no dubbing. 0:00-2:06: technology is cleaner (solar, electric cars, recycled clothes, drones) yet the environment gets worse, because we damage more than we repair; making batteries needs nickel, so forests are cleared; workers and residents near nickel mines get respiratory infections, homes flood with red mud, an explosion killed people; much of the profit goes to other countries. 2:06 on: greener, fairer economy, Indigenous Papuan forest use, then a long Soekarno / Gedung Pola segment with the Yayasan Bung Karno chairman (off-topic, nationalist). Fits L09 well: an invention can help and harm, and doesn't help everyone equally. Casual Jakarta register; mentions deaths in a mine explosion in one sentence. PRESCREEN for L09 id, segment 0-126, adapted questions: Think first: "Bisakah teknologi yang ramah lingkungan tetap merugikan sebagian orang? Perhatikan contohnya di video." After: "Siapa yang mendapat untung dari baterai mobil listrik, dan siapa yang menanggung kerugiannya menurut video?"
+
+**Before you approve, check:**
+
+- [ ] I watched the part above with the sound on, in the language, from start to end.
+- [ ] It is accurate, and right for learners aged 10 to 17, some of them refugees.
+- [ ] Both questions can be answered from the video and from the written version.
+- [ ] The written version and key points say what the video says (I corrected them in the candidates file if not).
+
+To approve it: `npm run videos:apply -- id L09 --approved-by "Your name"`
 
 ## Lesson 10: Why do people build towns near rivers?
 
@@ -285,6 +408,45 @@ To approve it: `npm run videos:apply -- id L10 --approved-by "Your name" --check
 - [ ] The written version and key points say what the video says (I corrected them in the candidates file if not).
 
 To approve it: `npm run videos:apply -- id L11 --approved-by "Your name"`
+
+## Lesson 12: What makes a city grow?
+
+**Recommended:** [Fakta Menarik - Urbanisasi Artinya Perpindahan Penduduk, Cari Tahu Juga Faktor Pendorongnya!](https://www.youtube.com/watch?v=p66PgUlEFoQ&t=62s), by [Majalah Bobo](https://www.youtube.com/@MajalahBobo)
+
+- **Part to watch:** 1:02 to 3:37 (2:35 of 4:27)
+- **Captions on YouTube:** auto
+
+**Why this video** (shown to learners): Video dari Majalah Bobo ini menjelaskan mengapa orang pindah dari desa ke kota, dan apa akibatnya.
+
+- **Think first (the lesson's own, kept):** Apa yang mungkin membuat orang pindah dari desa ke kota yang sedang tumbuh?
+- **After you watch (the lesson's own, kept):** Selain lebih banyak rumah, apa lagi yang dibutuhkan kota yang sedang tumbuh?
+
+**Written version** ("Read instead", draft by AI: correct anything that is wrong or unclear):
+
+> Urbanisasi adalah perpindahan orang dari desa ke kota. Ini terjadi karena pembangunan di desa dan di kota tidak merata.
+> 
+> Ada hal yang mendorong orang meninggalkan desa: lahan pertanian makin sedikit, upah lebih rendah, lapangan kerja sedikit, dan sekolah, rumah sakit, serta layanan lain kurang. Ada juga hal yang menarik orang ke kota: pekerjaan lebih beragam, sekolah, layanan kesehatan, dan transportasi.
+> 
+> Urbanisasi membawa akibat baik dan buruk. Kota mendapat tenaga kerja, dan hidup sebagian orang membaik. Tetapi desa kehilangan anak muda, pertanian bisa macet, dan di kota muncul permukiman kumuh, kejahatan, dan polusi.
+
+**Key points:**
+
+- Orang pindah ke kota karena di desa lahan, pekerjaan, dan layanan makin sedikit.
+- Kota menarik orang dengan pekerjaan, sekolah, layanan kesehatan, dan transportasi.
+- Urbanisasi membawa akibat baik dan buruk, untuk desa dan juga untuk kota.
+
+**Note for teachers:** none
+
+**What the pre-screen found:** Majalah Bobo (the children's magazine), 4:27, 2022, embeddable, asr:id, no dubbing. Urbanisation: moving from villages to cities because development is uneven; push factors (less farmland, lower pay, few jobs, few schools, hospitals and other services) and pull factors (more kinds of work, schools, health care, transport); good effects (cities get workers, people's lives improve) and bad ones (villages lose young workers, farming stalls, slums, crime and pollution in cities). Asks viewers to subscribe at 0:40 and at the end. Fits L12 (jobs, services, transport and population drive each other) at a children's level, neutral about moving. PRESCREEN for L12 id, segment 62-217. Times come from 30-second caption chunks: the reviewer sets the exact start and end.
+
+**Before you approve, check:**
+
+- [ ] I watched the part above with the sound on, in the language, from start to end.
+- [ ] It is accurate, and right for learners aged 10 to 17, some of them refugees.
+- [ ] Both questions can be answered from the video and from the written version.
+- [ ] The written version and key points say what the video says (I corrected them in the candidates file if not).
+
+To approve it: `npm run videos:apply -- id L12 --approved-by "Your name"`
 
 ## Lesson 13: How do climate and seasons affect daily life?
 
@@ -406,6 +568,48 @@ To approve it: `npm run videos:apply -- id L14 --approved-by "Your name"`
 
 To approve it: `npm run videos:apply -- id L15 --approved-by "Your name"`
 
+## Lesson 16: How do languages connect people?
+
+**Recommended:** [Gimana Orang Zaman Dulu Ngobrol Beda Bahasa?](https://www.youtube.com/watch?v=VuOGtU0mWFs&t=151s), by [Kok Bisa?](https://www.youtube.com/@KokBisa)
+
+- **Part to watch:** 2:31 to 3:52 (1:21 of 3:59)
+- **Captions on YouTube:** auto
+- **Weak fit:** the pre-screen suggests keeping the English video unless you like this one.
+
+**Why this video** (shown to learners): Video ini menjelaskan bagaimana orang yang bahasanya berbeda bisa saling berbicara lewat bahasa penghubung.
+
+- **Think first (adapted to this video):** Bagaimana pedagang dari tempat yang berbeda bisa saling berbicara? Perhatikan di video.
+  - The lesson's question now: Bagaimana dua bahasa bisa berkerabat, seperti anggota sebuah keluarga?
+- **After you watch (adapted to this video):** Apa itu bahasa penghubung? Berikan satu contoh dari video, dan jelaskan bagaimana bahasa itu menghubungkan orang.
+  - The lesson's question now: Apa yang bisa kita ketahui dari rumpun bahasa yang sama, dan apa yang tidak bisa?
+
+**Written version** ("Read instead", draft by AI: correct anything that is wrong or unclear):
+
+> Sejak dulu, pedagang dari tempat yang berbeda membutuhkan bahasa bersama supaya bisa berdagang. Bahasa seperti ini disebut bahasa penghubung.
+> 
+> Bahasa penghubung bisa tumbuh dengan sendirinya, seperti yang terjadi di Indonesia. Bahasa penghubung juga bisa menyebar karena penaklukan, seperti bahasa Yunani setelah Aleksander Agung, atau bahasa Inggris sekarang.
+> 
+> Kadang orang membuat bahasa baru yang campuran, misalnya para penambang emas di Amerika, atau bahasa Inggris Nigeria yang dipakai untuk berdagang.
+
+**Key points:**
+
+- Bahasa penghubung membantu orang yang bahasanya berbeda untuk berdagang dan berbicara.
+- Bahasa penghubung bisa tumbuh sendiri atau menyebar karena penaklukan.
+- Orang juga bisa membuat bahasa campuran yang baru.
+
+**Note for teachers:** Di bagian awal video, di luar bagian yang ditonton, ada istilah lama "suku Indian".
+
+**What the pre-screen found:** Kok Bisa?, 3:59, Aug 2025, embeddable, asr:id, no dubbing. 0:00-2:30 language and colonial power (a kidnapped interpreter and the Inca; Dutch schools teaching Dutch only to elites; British India; VOC mistranslations). 2:31-3:52 traders long used a shared bridge language, which can form naturally (as in Indonesia) or through conquest (Greek after Alexander, English today), or people make a new mixed language (gold miners in America; Nigerian English for trade); ends "who controls language controls which truth is told". PRESCREEN (partial) for L16 id, segment 151-232 (bridge and mixed languages connecting people), adapted questions. Uses the dated term "suku Indian". Think first: "Bagaimana pedagang dari tempat yang berbeda bisa saling berbicara? Perhatikan di video." After: "Apa itu bahasa penghubung? Berikan satu contoh dari video, dan jelaskan bagaimana bahasa itu menghubungkan orang." Times come from 30-second caption chunks: the reviewer sets the exact start and end.
+
+**Before you approve, check:**
+
+- [ ] I watched the part above with the sound on, in the language, from start to end.
+- [ ] It is accurate, and right for learners aged 10 to 17, some of them refugees.
+- [ ] Both questions can be answered from the video and from the written version.
+- [ ] The written version and key points say what the video says (I corrected them in the candidates file if not).
+
+To approve it: `npm run videos:apply -- id L16 --approved-by "Your name"`
+
 ## Lesson 17: Why do communities have traditions?
 
 **Recommended:** [Idenesia: Tradisi Budaya Sang Pendahulu](https://www.youtube.com/watch?v=fRO8ctPDdNw&t=281s), by [IndonesiaKaya](https://www.youtube.com/@IndonesiaKaya)
@@ -485,6 +689,86 @@ To approve it: `npm run videos:apply -- id L17 --approved-by "Your name"`
 - [ ] The written version and key points say what the video says (I corrected them in the candidates file if not).
 
 To approve it: `npm run videos:apply -- id L18 --approved-by "Your name"`
+
+## Lesson 19: What does belonging mean?
+
+**Recommended:** [Terus Semangat: Cerita Mariatin](https://www.youtube.com/watch?v=3gjnDEy97uI&t=32s), by [UNICEF Indonesia](https://www.youtube.com/@unicefindonesia)
+
+- **Part to watch:** 0:32 to 2:38 (2:06 of 3:21)
+- **Captions on YouTube:** auto
+
+**Why this video** (shown to learners): Video dari UNICEF Indonesia ini menunjukkan bagaimana sebuah sekolah berubah supaya Mariatin, seorang anak tuli, bisa ikut belajar.
+
+- **Think first (adapted to this video):** Perhatikan: apa yang diubah oleh guru dan teman-teman supaya Mariatin bisa ikut belajar?
+  - The lesson's question now: Apa bedanya diajak masuk ke sebuah kelompok dengan benar-benar ikut menentukan di dalamnya?
+- **After you watch (adapted to this video):** Apa satu hal yang bisa diubah sebuah kelompok supaya semua orang bisa ikut, tanpa ada yang harus menceritakan hal pribadinya?
+  - The lesson's question now: Apa satu hal yang bisa dilakukan orang dewasa atau anak muda lain untuk membantu seseorang benar-benar ikut menentukan?
+
+**Written version** ("Read instead", draft by AI: correct anything that is wrong or unclear):
+
+> Mariatin adalah anak tuli yang belajar di sekolah biasa. Ia pintar dan suka membantu.
+> 
+> Gurunya menulis semua pelajaran di papan tulis supaya Mariatin bisa mengikuti. Guru juga menyediakan waktu khusus untuk mendampinginya, tanpa mengganggu kelas. Teman-temannya belajar berempati dan membantunya.
+> 
+> Para pejabat dalam video berkata bahwa setiap sekolah harus menerima anak berkebutuhan khusus, tanpa diskriminasi.
+
+**Key points:**
+
+- Guru Mariatin menulis pelajaran di papan supaya ia bisa mengikuti.
+- Teman-teman sekelas belajar berempati dan saling membantu.
+- Setiap sekolah harus menerima semua anak, tanpa diskriminasi.
+
+**Note for teachers:** Teks otomatis YouTube salah di beberapa bagian, mungkin karena ada bahasa daerah. Jangan minta murid menceritakan disabilitas atau hal pribadi mereka.
+
+**What the pre-screen found:** UNICEF Indonesia, 3:21, 2020, embeddable, asr:id (some speech garbled, maybe regional language), no dubbing. Mariatin, a deaf girl in an ordinary school: bright and helpful; her teacher writes everything on the board so she can follow; some time is set aside for personal support without disrupting the class; classmates learn empathy and help her; officials say every school must accept children with special needs, with no discrimination. Fits L19's goal: a group changes how it works so someone belongs, and nobody has to share anything private. L19 is reviewed by a local educator first. PRESCREEN for L19 id, segment 32-158, adapted questions: Think first: "Perhatikan: apa yang diubah oleh guru dan teman-teman supaya Mariatin bisa ikut belajar?" After: "Apa satu hal yang bisa diubah sebuah kelompok supaya semua orang bisa ikut, tanpa ada yang harus menceritakan hal pribadinya?" Times come from 30-second caption chunks: the reviewer sets the exact start and end.
+
+**Before you approve, check:**
+
+- [ ] I watched the part above with the sound on, in the language, from start to end.
+- [ ] It is accurate, and right for learners aged 10 to 17, some of them refugees.
+- [ ] Both questions can be answered from the video and from the written version.
+- [ ] The written version and key points say what the video says (I corrected them in the candidates file if not).
+
+To approve it: `npm run videos:apply -- id L19 --approved-by "Your name"`
+
+## Lesson 20: Why do people have to make choices?
+
+**Recommended:** [Skala Prioritas dan Biaya Peluang (versi 1) | Ekonomi Kelas 10 - KHATULISTIWA STUDIO](https://www.youtube.com/watch?v=vxXW8xLjXTw&t=14s), by [Khatulistiwa Studio](https://www.youtube.com/@khatulistiwastudio)
+
+- **Part to watch:** 0:14 to 5:45 (5:31 of 6:34)
+- **Captions on YouTube:** manual
+
+**Why this video** (shown to learners): Video animasi ini menunjukkan bagaimana Clara memilih apa yang paling ia butuhkan, dan apa yang ia lepaskan.
+
+- **Think first (the lesson's own, kept):** Saat kamu memilih satu hal, apa yang terjadi pada hal-hal lain yang sebenarnya bisa kamu pilih?
+- **After you watch (the lesson's own, kept):** Bagaimana memikirkan biaya peluang bisa membantu seseorang memilih dengan lebih hati-hati?
+
+**Written version** ("Read instead", draft by AI: correct anything that is wrong or unclear):
+
+> Clara punya Rp600.000 untuk acara wisudanya, tetapi ia butuh Rp800.000 untuk toga, kebaya, sepatu, dan tas. Uangnya tidak cukup.
+> 
+> Clara membuat tabel prioritas. Toga paling penting, sepatu paling akhir. Ia bisa meminjam tas, dan menunggu untuk membeli yang lain sambil menabung.
+> 
+> Kemudian Clara mendapat dua tawaran kerja. Ia hanya bisa memilih satu. Pekerjaan yang tidak ia pilih adalah biaya peluangnya: kesempatan yang hilang karena ia memilih yang lain.
+
+**Key points:**
+
+- Uang dan barang terbatas, jadi kita harus memilih.
+- Membuat urutan prioritas membantu kita memilih yang paling dibutuhkan.
+- Biaya peluang adalah pilihan terbaik berikutnya yang kita lepaskan.
+
+**Note for teachers:** none
+
+**What the pre-screen found:** Khatulistiwa Studio (Teknoreka educational animation), 6:34, 2023, embeddable, manual id captions, no dubbing. Animated story: Clara has Rp600,000 for graduation but needs Rp800,000 (gown, kebaya, shoes, bag), so she ranks needs with a priority table (the gown first, shoes last; she can borrow a bag and wait for the rest, saving up); later two job offers: choosing one, the other is the opportunity cost ("the chance you lose"). Fits L20 (scarcity, needs and wants, opportunity cost). Both of the lesson's questions answerable. The graduation-day scene (3:28-4:37) is filler. PRESCREEN for L20 id, segment 14-345, lesson's questions kept. Times come from 30-second caption chunks: the reviewer sets the exact start and end.
+
+**Before you approve, check:**
+
+- [ ] I watched the part above with the sound on, in the language, from start to end.
+- [ ] It is accurate, and right for learners aged 10 to 17, some of them refugees.
+- [ ] Both questions can be answered from the video and from the written version.
+- [ ] The written version and key points say what the video says (I corrected them in the candidates file if not).
+
+To approve it: `npm run videos:apply -- id L20 --approved-by "Your name"`
 
 ## Lesson 21: How do people trade and exchange?
 
@@ -608,26 +892,104 @@ To approve it: `npm run videos:apply -- id L22 --approved-by "Your name"`
 
 To approve it: `npm run videos:apply -- id L23 --approved-by "Your name"`
 
+## Lesson 24: How can young people contribute to their communities?
+
+**Recommended:** [Waktunya Aksi Iklim Sekarang!](https://www.youtube.com/watch?v=SoWChX6nTcE), by [UNICEF Indonesia](https://www.youtube.com/@unicefindonesia)
+
+- **Part to watch:** the whole video (4:06)
+- **Captions on YouTube:** auto
+
+**Why this video** (shown to learners): Dalam video UNICEF Indonesia ini, dua anak muda meminta orang dewasa mendengarkan suara mereka tentang perubahan iklim.
+
+- **Think first (adapted to this video):** Perhatikan: apa yang diminta anak muda dalam video ini kepada orang dewasa dan para pengambil keputusan?
+  - The lesson's question now: Apa yang membuat sebuah pesan untuk orang yang berwenang menjadi berguna?
+- **After you watch (the lesson's own, kept):** Bantuan apa yang dibutuhkan anak muda supaya orang dewasa mau mendengarkan ide mereka?
+
+**Written version** ("Read instead", draft by AI: correct anything that is wrong or unclear):
+
+> Perubahan iklim adalah salah satu ancaman terbesar bagi anak-anak di Indonesia. Banjir, naiknya air laut, kekeringan, dan polusi mengganggu kesehatan, makanan, air bersih, dan sekolah. Anak dari keluarga miskin, anak perempuan, dan anak dengan disabilitas paling terdampak.
+> 
+> Video ini mengatakan bahwa emisi harus dikurangi dan layanan untuk anak harus dibuat lebih tangguh. Anak-anak perlu belajar tentang krisis iklim dan diberi kesempatan untuk membuat perubahan.
+> 
+> Dua anak muda, Dafa dan Amalia, berkata bahwa suara mereka harus didengar. Mereka bekerja bersama anak muda lain untuk advokasi iklim dan energi berkelanjutan. Pemerintah, dunia usaha, dan para pengambil keputusan diminta menempatkan anak-anak di pusat janji mereka.
+
+**Key points:**
+
+- Perubahan iklim mengancam kesehatan, makanan, air, dan sekolah anak-anak.
+- Anak muda meminta suara mereka didengar oleh para pengambil keputusan.
+- Anak-anak perlu belajar tentang iklim dan diberi kesempatan untuk membuat perubahan.
+
+**Note for teachers:** none
+
+**What the pre-screen found:** UNICEF Indonesia, 4:06, 2022, embeddable, asr:id, no dubbing. Climate change is one of the biggest threats to children in Indonesia (floods, sea-level rise, drought, pollution; health, food, water, schooling; poorer children, girls and children with disabilities hit hardest); cut emissions and make services resilient; teach children about the crisis and give them the chance to make change; two young advocates, Dafa and Amalia: "our voices must be heard", working with young people on climate advocacy and sustainable energy; government, business and decision-makers must put children at the heart of their commitments. Fits L24 (young people's messages to people in charge, and what they need so adults listen). PRESCREEN for L24 id, whole video, Think first adapted, After kept: Think first: "Perhatikan: apa yang diminta anak muda dalam video ini kepada orang dewasa dan para pengambil keputusan?"
+
+**Before you approve, check:**
+
+- [ ] I watched the part above with the sound on, in the language, from start to end.
+- [ ] It is accurate, and right for learners aged 10 to 17, some of them refugees.
+- [ ] Both questions can be answered from the video and from the written version.
+- [ ] The written version and key points say what the video says (I corrected them in the candidates file if not).
+
+To approve it: `npm run videos:apply -- id L24 --approved-by "Your name"`
+
+## Also suitable
+
+These fit too, but aren't recommended: another video covers the lesson better, or as well. Most have no draft questions or written version yet. If you prefer one, say so, and it can be made the lesson's recommendation with its drafts.
+
+- **Lesson 2** (What can an object reveal about a person in the past?): [Apa Itu Arkeologi?](https://www.youtube.com/watch?v=CtvFYT6bPx0&t=2s), by [BRIN Indonesia](https://www.youtube.com/@brinindonesia1), part to watch 0:02 to 1:33: BRIN Indonesia (national research agency), 3:08, Jan 2025, embeddable, asr:id (clean), no dubbing. What archaeology is: studying past people through what they left (artefacts, ecofacts, buildings, food remains); how archaeologists find a site, dig carefully and study the finds; famous finds (Maros cave art, Borobudur, Sangiran, Liang Bua); carbon dating up to 50,000 years; BRIN's research centres; "every find is part of our story". Partial fit for L02 (objects as evidence about people; testing a find with another method), but nothing on telling what you see from what you guess. Ends with a short piece about BRIN itself. PRESCREEN (alternative) for L02 id, 2–93 (what archaeology is, how archaeologists work, famous finds, carbon dating). Think first kept (answerable: objects left behind, not words); After would need adapting (the lesson's tin isn't in it). Drafts not written. Also suitable, as an alternative to the recommendation.
+- **Lesson 14** (How can communities respond to environmental change?): [VIDEO EDUKASI PENGURANGAN RISIKO BENCANA BANJIR AKSESIBEL BAGI DISABILITAS DAN KELOMPOK RENTAN](https://www.youtube.com/watch?v=Ci9NmUuJ4BE), by [FPRB GUNUNGKIDUL](https://www.youtube.com/@fprbgunungkidul3866), the whole video: FPRB Gunungkidul, 4:14, Apr 2022, embeddable, asr:id, no dubbing. Local disaster-risk forum: what a flood is, which parts of Gunungkidul flood, then what a family does before (roles, a go-bag for 3×24 h, keep the way out clear, look after family members who are sick, elderly or have special needs, follow warnings, a painted flood-height board green/yellow/red, mark dangerous spots, practise with neighbours), during (yellow/red: cut the power, take the bag, move the elderly and people with special needs first) and after (listen to the RT/RW or officials, don't go home until it's declared safe, throw away soaked food, clean). Captions mis-hear some words ("teleportasi" for the way out, "info ganjil"); the "113" casualties figure for 2015–2021 is likely a mis-hearing too; check it. Answers the After question partly (people who are sick, elderly or have special needs need help with warnings and evacuation); nothing on people helping plan the response. Better than the current primary? No: keep as an alternative. PRESCREEN (alternative, weak) for L14 id, whole video. Also suitable, as an alternative to the recommendation.
+- **Lesson 20** (Why do people have to make choices?): [Apa itu Kelangkaan? (versi 1) | Ekonomi Kelas 10 - KHATULISTIWA STUDIO](https://www.youtube.com/watch?v=9ftzwzUjvzw&t=16s), by [Khatulistiwa Studio](https://www.youtube.com/@khatulistiwastudio), part to watch 0:16 to 4:48: Khatulistiwa Studio, 4:56, 2023, embeddable, manual id captions, no dubbing. Scarcity: a sold-out concert, not enough money at the canteen; scarce people, capital, natural resources and entrepreneurs; supply and demand; prices rise; when it can't be solved, people choose what matters most. Also suitable (scarcity half of L20), as an alternative; vxXW8xLjXTw covers opportunity cost too. PRESCREEN as an alternative, segment 16-288. Also suitable, as an alternative to the recommendation.
+- **Lesson 24** (How can young people contribute to their communities?): [Aksi Iklim Erwin Mahendra Eka Saputra](https://www.youtube.com/watch?v=vtIjKY1QfTA), by [UNICEF Indonesia](https://www.youtube.com/@unicefindonesia), the whole video: UNICEF Indonesia, 2:21, 2024, embeddable, asr:id, no dubbing. Erwin, 24, a youth volunteer, teaches disaster preparedness in schools around Bandung so schools know what to do when floods, landslides or earthquakes come (one school sits on the Lembang fault); students learn to stay calm and pass it on to friends and neighbours. A small, realistic way young people help a community: a good alternative for L24 id. PRESCREEN as an alternative, whole video. Mentions earthquake risk calmly. Also suitable, as an alternative to the recommendation.
+
 ## Videos nobody could check yet
 
 These have no captions (or YouTube would not play them), so the pre-screen could not read what they say. Watch one, and if it fits, ask for its questions and written version to be drafted.
 
 - **Lesson 1** (How can we find out about the past?): [Pengertian sumber, bukti dan fakta sejarah (Sejarah - SBMPTN, UN, SMA)](https://www.youtube.com/watch?v=uvQZNwHQN9s): No captions, so the words could not be checked. University-entrance exam framing (SBMPTN, UN, SMA); 8 minutes. Not recommended without a person watching it.
+- **Lesson 3** (How does changing scale change the story?): [Apakah Ada Ujung Alam Semesta?](https://www.youtube.com/watch?v=QK01ROEqJ1A): Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Kok Bisa?; zoom-out in space, ties to 'wide view'. It is about space, not about history or place, so the lesson's time/place scale is only implied. Slightly over the 10 min target.
+- **Lesson 3** (How does changing scale change the story?): [Seberapa KECIL Kita Sebenarnya? Perjalanan Visual Skala Alam Semesta](https://www.youtube.com/watch?v=D0f53qfCJeE): Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Jejak Sejarah (small channel). Visual scale journey fits the zoom idea, but it is astronomy and the framing is existential. Accuracy unchecked.
+- **Lesson 4** (How do people explain where the world comes from?): [Apa yang Ada Sebelum Big Bang?](https://www.youtube.com/watch?v=kGTDRup5PbY): Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Kok Bisa?; speculative question, weaker as a model of evidence-based accounts. Included as a backup only.
+- **Lesson 5** (How did early humans learn, create, and move?): [Petualangan Misteri Atambua Mengungkap Kehidupan Masa Lalu di Pulau Timor](https://www.youtube.com/watch?v=6KupDuyOGFw): Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): BRIN; real archaeological clues about movement in Indonesia. It does not obviously mention collective learning or shared knowledge, which is the lesson's main idea, so the fit is partial.
+- **Lesson 5** (How did early humans learn, create, and move?): [Dari Afrika ke Nusantara: Kisah Migrasi Manusia yang Mengubah Dunia](https://www.youtube.com/watch?v=xiXlazrkssc): Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Sejarah Is Fun (small channel). On topic for migration and adaptation; not an authoritative source, accuracy unchecked.
+- **Lesson 7** (Why did the first cities and states begin?): [Kenapa Sungai Nil Bernilai Sangat Penting bagi Peradaban Mesir Kuno?](https://www.youtube.com/watch?v=oMEjJPgJbcQ): Nat Geo Indonesia, 3:07, 2023, embeddable; AUTO-DUBBED English default, Indonesian original; only caption track is English ASR of the dub ("[foreign]"). Description: Herodotus' "given by the river"; the Nile gave fertile land, water for irrigation, transport for building materials; cities grew in the desert. Fits L07's Nile question closely. Words can't be checked (no Indonesian captions). UNVERIFIED, promising: a person listens to the Indonesian original on a pilot device; captions would show English nonsense, so turn them off or check.
+- **Lesson 8** (How did trade connect distant communities?): [Kenapa Banyak Negara Iri sama Rempah Indonesia? (ft. LPEI)](https://www.youtube.com/watch?v=m0iEEv-XlOM): Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Kok Bisa? in partnership with LPEI (government export-financing agency), so partly promotional. About spices and export value more than networks or ideas.
+- **Lesson 10** (Why do people build towns near rivers?): [Kenapa Peradaban Besar Selalu Mulai di Area Ini?](https://www.youtube.com/watch?v=kqOtfYVPcew): Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Kok Bisa?; strong match if the answer is river valleys (very likely, unconfirmed). Does not cover problems rivers bring (floods) as far as can be told.
+- **Lesson 10** (Why do people build towns near rivers?): [Mesopotamia hingga Mesir Kuno: 5 Peradaban Tertua Di Dunia - National Geographic Indonesia](https://www.youtube.com/watch?v=t0G8Y5e3esA): Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Nat Geo Indonesia; overview of five early civilisations, relevant to Mesopotamia but less focused on rivers; 7:20.
+- **Lesson 11** (How do maps help us understand a place?): [Mengenal Fungsi, Jenis, dan Unsur-unsur Peta | IPS | SayaBisa](https://www.youtube.com/watch?v=v5tYjyf6ya4): Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): SayaBisa (Indonesian edtech for primary school). Covers map elements, matching the lesson's four tools. Aimed at grade 4; 8:44 is longer than the English 56 s video; does not obviously discuss what maps leave out.
+- **Lesson 11** (How do maps help us understand a place?): [Mana Gambar Peta yang Benar?](https://www.youtube.com/watch?v=pTukWOkDlbg): Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Kok Bisa?; fits 'maps leave things out' (distortion of flat maps) but not the four map tools. Best used as a second video.
 - **Lesson 12** (What makes a city grow?): [Apa Sih Pengertian Urbanisasi? Ini Cara Mudah Memahaminya](https://www.youtube.com/watch?v=IS1xr3YzNxQ): Halo Edukasi, 13:37, no captions. "What is urbanisation": meaning, effects and "pencegahan" (preventing it). Framing moving to a city as something to prevent sits badly with this audience and with the lesson. Leaning reject.
+- **Lesson 13** (How do climate and seasons affect daily life?): [Cuaca dan Iklim Kita](https://www.youtube.com/watch?v=o_nrMTjcJbo): Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Info Iklim Kalbar BMKG (regional office of the national weather agency, so authoritative). Directly the weather versus climate distinction; seasons and adaptation likely not covered.
+- **Lesson 13** (How do climate and seasons affect daily life?): [🌦️ Kenapa Sih Ada Musim Hujan dan Musim Kemarau?](https://www.youtube.com/watch?v=lYf96dWeHxk): Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): One Geografi (small channel). Seasons pattern for Indonesia; weather versus climate and adaptation may be missing.
+- **Lesson 14** (How can communities respond to environmental change?): [Edukasi Bencana -  Banjir](https://www.youtube.com/watch?v=sJsC6zQCfNI): BNPB Indonesia, 2:02, Apr 2019, embeddable, no captions, no dubbing. National disaster agency's short animation on floods: causes and what to do; the description says it is made for Deaf viewers too (so probably text and sign language on screen). UNVERIFIED: no captions to read; a person must watch it. Generic flood safety, nothing on inclusion according to the description.
+- **Lesson 15** (How can objects express culture and identity?): [Noken Papua, Warisan Lokal yang Mendunia](https://www.youtube.com/watch?v=UNjaqqTMph4): Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): TVRI Nasional (public broadcaster). Everyday object with cultural meaning, told by its makers; partly about small business so meaning may share space with commerce.
+- **Lesson 15** (How can objects express culture and identity?): [BERBAGI KISAH DARI SELURUH PENJURU NEGERI - Museum Nasional Indonesia](https://www.youtube.com/watch?v=kBYL2ZOQIlE): Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Museum Nasional Indonesia (official). General museum promotion rather than a close look at an everyday object; 5 years old.
+- **Lesson 17** (Why do communities have traditions?): [Kenapa Mudik Jadi Tradisi di Indonesia?](https://www.youtube.com/watch?v=7XMbjFr-KAk): Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Kok Bisa?; a clear Indonesian example of a tradition with a history, 3:13. Tied to Lebaran (a religious holiday), so teachers should invite learners to share their own traditions rather than treat Lebaran as the norm. Published about 9 years ago.
+- **Lesson 17** (Why do communities have traditions?): [Kenapa Masakan Indonesia Beragam Banget? - Nusantarasa Eps. 1](https://www.youtube.com/watch?v=zNq-rD5FFjM): Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Kok Bisa? (Nusantarasa ep. 1); culture through food, 6:13. Less direct on 'tradition' than the mudik video, but food is a safe, shared topic.
+- **Lesson 18** (How can art tell a story?): [Cerita di Relief Candi Borobudur](https://www.youtube.com/watch?v=vHMQj8izJeA): Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Perpustakaan Nasional RI; relevant subject (art that tells a story), 3:10, from an institution. No description could be read, so the content is unknown; religious art, so frame as history and art.
+- **Lesson 18** (How can art tell a story?): [Lukisan gua tertua di dunia ada di Sulawesi, apa arti temuan ini?](https://www.youtube.com/watch?v=qJxLhX7pbdM): Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): BBC News Indonesia (Indonesian-language service of a UK broadcaster, not an Indonesian creator); cave painting found in Sulawesi, 4:45. About art as evidence more than art as story. News register is harder for learners.
+- **Lesson 19** (What does belonging mean?): [Sekolah Inklusif](https://www.youtube.com/watch?v=lNV1wsVhNnM): UNICEF Indonesia, 1:00, 2020, embeddable, NO captions. "An inclusive school is a school for every child": adapting the environment, finding and removing barriers to learning (description). Probably on-screen text and music. UNVERIFIED for L19 id (too short to stand alone; could pair with the one above).
 - **Lesson 20** (Why do people have to make choices?): [Quipper Video - Ekonomi Kelas 10 - Konsep Ilmu Ekonomi Bagian 1 - Kurikulum 2013](https://www.youtube.com/watch?v=hfan75z15Bg): Quipper Indonesia (commercial tutoring), 14:56, no captions. Grade 10 economics concepts; the description pushes sign-ups for the paid service. Leaning reject.
+- **Lesson 21** (How do people trade and exchange?): [Pasar di NTT ini Masih Pakai Sistem Barter](https://www.youtube.com/watch?v=bdTU0EWV-ZU): Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Harian Kompas (national newspaper); a real barter market in Lembata, NTT, 2:08. Concrete and visual, a good fit for 'trade and exchange'. Not about goods versus services. News-report style.
+- **Lesson 21** (How do people trade and exchange?): [Uang Menyatukan Kita. Tetapi, Apakah Uang Berharga?](https://www.youtube.com/watch?v=PPCY2QwpDIo): Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Zenius (commercial edtech brand, so possible promotion; informal register); money as the thing that lets people exchange, 4:38. Less concrete than the barter market.
+- **Lesson 22** (How do people plan for the future?): [Keluarga Sikapi Eps 01: Tamasya Menabung](https://www.youtube.com/watch?v=bRlv8mf6olo): Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): OJK (Indonesia's financial services regulator), animated family series, 5:20. Good tone and format. Possible mention of bank products; learners may have no bank access, so keep the discussion general. Published about 6 years ago.
+- **Lesson 22** (How do people plan for the future?): [5 Tips Cara Menabung Untuk Pelajar | Mahasiswa](https://www.youtube.com/watch?v=i1Ly15c3Npo): Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Ayo Nabung (small channel; possible product promotion); five saving tips aimed at students with pocket money, 3:19. Assumes spending money many learners lack.
+- **Lesson 23** (What makes information trustworthy?): [KENALI CIRI-CIRI HOAKS](https://www.youtube.com/watch?v=05_pIqZKmgg): Not screened yet: the laptop's browser went offline during the second pre-screen on 16 October. From the research notes (#43): Mafindo (Masyarakat Anti Fitnah Indonesia, a hoax-fighting civil society group); practical signs of hoaxes, 5:56, closer to 'how to check' than the Kok Bisa video. Examples may touch politics or religion.
 - **Lesson 24** (How can young people contribute to their communities?): [Aksi Iklim Anak Muda Pembuat Perubahan](https://www.youtube.com/watch?v=-k3igxia4Ho): UNICEF Indonesia, "Aksi Iklim Anak Muda Pembuat Perubahan". YouTube twice refused to play it in a signed-out browser ("Please sign in - This helps protect our community") while every other video played. Learners are never signed in: check it plays for them before anything else. Narrower than L24 (climate action only).
 
 ## Videos turned down
 
+- **Lesson 1** (How can we find out about the past?): [📜 Apa Itu 'Sejarah' Sebenarnya? Kenapa Penting Untuk Dipelajari? #BelajardiRumah](https://www.youtube.com/watch?v=TTeRijrtDhg): Kok Bisa?, 6:40, 2019, embeddable, manual id captions. What history is and why study it: history is like a phone camera (dates, places, an album like a museum); learn the history of what you're interested in; history as an academic field (18th-century Germany); many kinds of history; an interview with the culture ministry's director-general. REJECT for L01 id: about why history matters, not how sources show us the past or what they can't tell us.
+- **Lesson 2** (What can an object reveal about a person in the past?): [Bagaimana Cara Mengetahui Umur Benda Purba?](https://www.youtube.com/watch?v=bsJzdpwnCmk): Kok Bisa?, 4:58, Nov 2016, embeddable, manual Indonesian and English captions, no dubbing. How researchers know the age of ancient objects: relative dating (layers of soil) and absolute dating (carbon-14, half-life 5,730 years, up to about 50,000 years), then other atoms for older fossils. Playful ("dating, not that kind of dating", "chemistry"). REJECT for L02 id: it is chemistry more than history; nothing on what an object tells us about a person. (Accurate and suitable; could suit a science lesson.)
 - **Lesson 4** (How do people explain where the world comes from?): [Bagaiman Ilmuwan Tahu Big Bang adalah Awal Alam Semesta 13,8 Miliar Tahun Lalu](https://www.youtube.com/watch?v=aJw4MxDKR3A): Fajrul Fx, 11:49. Clear, but says Hubble saw galaxies moving faster than light (he did not) and dates the background-radiation discovery to 1960 (1964-65). Small individual channel; too long.
 - **Lesson 6** (How did farming change human societies?): [Sejarah Revolusi Terbesar di Dunia | Revolusi Pertanian Neolitik -- Berburu-Meramu ke Bertani/ternak](https://www.youtube.com/watch?v=RenvKnk_rGo): PhilGram, 12:30. Covers the benefits and costs of farming, but jokes twice about sexual relations to explain population growth: unsuitable for 10-17. Also too long; student channel.
+- **Lesson 6** (How did farming change human societies?): [KEHIDUPAN MANUSIA PRAAKSARA: Berburu, Bercocok Tanam, hingga Zaman Logam - Sesuai BSE](https://www.youtube.com/watch?v=BJOos4uCXbI): Dunia IPS, 7:32, Sep 2026, embeddable, asr:id; AUTO-DUBBED English default. Junior-secondary textbook summary of prehistoric life: fire, Palaeolithic tools (Pacitan, Ngandong), Mesolithic shell middens, Neolithic farming and villages, megaliths, the metal age and specialised work. REJECT for L06 id (not needed): a list of periods and tools, nothing on what farming cost; nrdbEDISZVY answers the lesson's questions.
+- **Lesson 7** (Why did the first cities and states begin?): [Sumeria Mungkinkah Peradaban Manusia Tertua Sepanjang Sejarah - National Geographic Indonesia](https://www.youtube.com/watch?v=dnY2xqWZ6Qo): Nat Geo Indonesia, 4:48, 2022, embeddable, asr:id. Sumer as the oldest civilisation: cities, irrigation, writing; Babylonian maths; then mostly religion: ziggurats, priestly castes, gods (Anu, Inanna), Gilgamesh flood compared with Noah in Abrahamic religions; Egypt and Indus as rivals for "oldest"; Indian Ocean trade. REJECT for L07 id: half of it is religion and the Noah comparison; little on surplus, jobs, rulers or who had power.
+- **Lesson 9** (How do inventions change everyday life?): [Kehidupan Pekerja di Revolusi Industri yang Jarang Diceritakan](https://www.youtube.com/watch?v=IZCwA83dbLg): Dunia History, 9:59, Apr 2026, embeddable, asr:id. Dramatised first-person story of a Manchester mill worker (1868): 16-hour days, enclosure, child labour, a father dying of lung damage, chimney "climbing boys" beaten and burned, cancer. Slangy (gua/lo). REJECT for L09 id: graphic cruelty to children, too heavy for this group without framing; long.
 - **Lesson 10** (Why do people build towns near rivers?): [Brantas, Pembentuk Peradaban Kuno Malang Raya](https://www.youtube.com/watch?v=XXdScJPkbK8): BRIN Indonesia, 26:34. Archaeology of Hindu-Buddhist sites along the Brantas; mostly temple cosmology and ancestor worship, partly in Javanese. Too long and specialist.
+- **Lesson 12** (What makes a city grow?): [Kenapa Jakarta Macet Banget?](https://www.youtube.com/watch?v=JnDAaGTbJTE): Kok Bisa?, 3:22, 2015, embeddable, manual id captions. Why Jakarta's traffic is so bad: weak public transport, private vehicles up 12-13% a year vs roads 0.01%, 2.4 million commuters, everything built in Jakarta; jokes about bribery and "mafia berdasi", a politician's quote. REJECT for L12 id: dated figures, political jabs; p66PgUlEFoQ covers the lesson better.
 - **Lesson 16** (How do languages connect people?): [Gelora Bahasa Indonesia dari Jawa Timur](https://www.youtube.com/watch?v=wxoQmIjNXxU): Badan Bahasa, 4:59. Institutional promo for a provincial language office with music and officials; one usable idea (many languages are a strength) at 1:30-2:15; nothing on language families. Also has a YouTube auto-dubbed English audio track set as the default in an English browser.
+- **Lesson 16** (How do languages connect people?): [Bagaimana Bahasa Bisa Terbentuk? (Ft. Google Translate)](https://www.youtube.com/watch?v=SrYrjrw1xVg): Kok Bisa?, 3:57, 2015, embeddable, manual id and en captions, no dubbing. 7,000 languages; an origin claim pinned loosely on Chomsky; the Psammetichus legend (babies shut away) told as fact; languages differ because groups were cut off from each other, especially on islands; when groups meet, languages mix, which it calls a "Super Language" (not a real term); neighbouring countries share words. REJECT for L16 id: shaky facts (the made-up term, the legend told as an experiment), an early Kok Bisa? episode. The isolation idea (2:18-2:48) is right but only 30 seconds.
 
 ## Lessons with no candidate yet
 
-- Lesson 6: How did farming change human societies?
-- Lesson 7: Why did the first cities and states begin?
-- Lesson 9: How do inventions change everyday life?
-- Lesson 16: How do languages connect people?
-- Lesson 19: What does belonging mean?
+- None.
