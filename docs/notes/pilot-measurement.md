@@ -157,14 +157,14 @@ For a person, in this order. **None of it is done by the code change.**
 
 - [ ] Founders approve this design (the "Decisions" in the pull request).
 - [ ] Confirm HELP's consent process; the consent form is signed for every learner whose device will share (and the form is checked against the law where the organisation works).
-- [ ] Create a Postgres database (Neon, Supabase or Vercel Postgres). Choose a region near the learners, and one that fits the organisation's data rules.
-- [ ] Run `db/schema.sql` once (`psql "$DATABASE_URL" -f db/schema.sql`), and `TEST_DATABASE_URL=… npx vitest run api/_lib/db.integration.test.ts` against a scratch database.
-- [ ] In Vercel, set `DATABASE_URL`, `EXPORT_TOKEN` (store it in the team's password manager) and `MEASUREMENT_ORGS`; redeploy.
-- [ ] Add a Vercel firewall rate-limit rule for `/api/events` and `/api/export` (for example 60 requests a minute per IP; a classroom behind one address sends far less).
-- [ ] With a test code on a test device: turn on sharing, use a lesson, run the export, check the rows, then delete them with `db/delete-pilot-data.sql`.
+- [x] Create a Postgres database (Neon, Supabase or Vercel Postgres). Choose a region near the learners, and one that fits the organisation's data rules. *16 October 2026: Neon through Vercel Storage, `thinkerwell-pilot`, Singapore (AWS ap-southeast-1), the free plan, without Neon's Auth or Realtime; connected to the thinkerwell project (its variables are in Production and Preview, but only Production has `MEASUREMENT_ORGS`, so a preview answers 503).*
+- [ ] Run `db/schema.sql` once (`psql "$DATABASE_URL" -f db/schema.sql`), and `TEST_DATABASE_URL=… npx vitest run api/_lib/db.integration.test.ts` against a scratch database. *16 October 2026: the schema is in (run a statement at a time in Vercel's Query box with read-only turned off, then on again: it takes one command at a time); the integration test against a scratch Neon database is still to do.*
+- [ ] In Vercel, set `DATABASE_URL`, `EXPORT_TOKEN` (store it in the team's password manager) and `MEASUREMENT_ORGS`; redeploy. *16 October 2026: `DATABASE_URL` (from the Neon connection) and `MEASUREMENT_ORGS=help-jakarta` (Production only) are set and Production was redeployed. `EXPORT_TOKEN` is still to set, by a founder: make it with `openssl rand -hex 32`, add it as a Secret for Production, keep it in the password manager, redeploy.*
+- [x] Add a Vercel firewall rate-limit rule for `/api/events` and `/api/export` (for example 60 requests a minute per IP; a classroom behind one address sends far less). *16 October 2026: "Rate limit API requests": path starts with `/api/`, fixed window, 60 requests in 60 seconds per IP address, then **Too Many Requests (429)**. Not Deny (403), which Vercel's rule generator suggested: the app drops a batch for good on a 403 and waits and tries again on a 429 (`src/measurement/sender.ts`).*
+- [ ] With a test code on a test device: turn on sharing, use a lesson, run the export, check the rows, then delete them with `db/delete-pilot-data.sql`. *16 October 2026, partly: three events for the made-up code TST-99 were posted to the live `/api/events` from the site (202, stored), one for another organisation (403) and one carrying typed text (400); the three rows were checked in the database and deleted. Still to do once `EXPORT_TOKEN` is set: a real device with sharing on, and the export.*
 - [ ] Try a video on a real tablet and check `video_play` and `video_progress` arrive.
 - [ ] Add the retention date to the pilot plan; tell the organisation how to switch sharing off.
-- [ ] Update `docs/LAUNCH_CHECKLIST.md` with the date it was switched on.
+- [x] Update `docs/LAUNCH_CHECKLIST.md` with the date it was switched on. *16 October 2026: the server takes results from `help-jakarta`; no device shares yet.*
 
 ## Tests
 
