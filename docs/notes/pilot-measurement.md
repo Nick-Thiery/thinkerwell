@@ -141,6 +141,38 @@ curl -H "Authorization: Bearer $EXPORT_TOKEN" \
 
 **Group results go to the organisation, never one learner's** (consent form): when sharing an export, give only counts and averages for the group, as the plan's "numbers you'll report" lists.
 
+## Reading the results
+
+```
+npm run pilot:report -- help-jakarta.csv --time-zone Asia/Jakarta
+npm run pilot:report -- help-jakarta.csv --from 2026-10-19 --to 2026-11-30 --time-zone Asia/Jakarta --csv-out results/
+npm run pilot:report -- tools/measurement/fixtures/sample-export.csv     # a made-up export to try it on
+```
+
+`tools/measurement/report.ts` (the workings in `lib.ts`, tests in `lib.test.ts` on the made-up export in `fixtures.ts`) reads one or more exports, CSV or JSON, and prints the in-app numbers from `docs/research/MEASUREMENT_PLAN.md` ("The numbers you'll report") for each organisation, and for all of them together when the files hold more than one. `--json` prints the same numbers for a program; `--csv-out <folder>` also writes `pilot-learners.csv`, `pilot-lessons.csv` and `pilot-section-checks.csv` for a spreadsheet. `--from` and `--to` are dates (both included) in `--time-zone` (default UTC; use `Asia/Jakarta` for HELP, so a day is a Jakarta day); without them the range is the first to the last day in the file. It prints **only codes and numbers**: organisation, pilot code, lesson, section and stage codes, counts, times and dates, never a device or session id. The per-learner tables are for the team; the organisation gets the group lines.
+
+How it reads the file:
+
+- **Every row is checked again**, field by field, against the same rules as `src/measurement/events.ts` (the tool keeps its own copy, `REPORT_EVENTS`, because Node can't load that file's `.js` import; a test fails if they differ). A row that isn't a valid event (a name for a code, an unknown field) is left out and counted as "not understood".
+- **Repeats**: a row whose `id` was already seen counts once ("repeats dropped").
+- **Time**: `ts` is the tablet's clock, `received_at` the server's. Within a session the tablet's order is kept. A session's clock is trusted when its earliest-sent event arrived between 5 minutes "before" it happened (a clock a little fast) and 14 days after (a tablet offline for a while: its events still count on the day they happened, not the day they arrived). Otherwise (a clock reset to January, or far ahead) the whole session is moved so that event lands when the server got it; the report says how many sessions were moved.
+
+What each number means:
+
+| Number | How it is worked out |
+| --- | --- |
+| Learners | Pilot codes with any event in the range. The same code in two organisations is two learners. |
+| Sessions, active days | Distinct `session_id`s (a new one after 30 minutes away, or a learner change); distinct days with any event. |
+| Active learning time | Heartbeats × 0.5 min. A heartbeat comes every 30 s while the page is visible and there was input in the last 60 s, so a tablet left open adds nothing, and each stretch of use is undercounted by up to 30 s (it starts before its first heartbeat). "In a lesson" counts heartbeats that name a lesson. Total, and per learner median, mean, min and max. |
+| Lessons opened, completed | Distinct lessons with `lesson_open`; with `lesson_complete` (the Reflect prompt, which is the plan's "required reflections saved"). |
+| Steps completed | Distinct (learner, lesson, stage) with `stage_complete`, by stage. |
+| Quick checks, first try | Each `quick_check_answer` carries `correct` (the chosen option's own flag in the lesson file, recorded when it was chosen) and `attempt`; the first try at a question is its `attempt` 1 event, so no content file is needed. **Early vs late**: each learner's lessons in the order they first answered a quick check in them; the first half against the second half (the middle one left out when the number is odd), pooled over learners with two or more. "By each learner's nth lesson" shows the same per position. |
+| Section checks | From `quiz_submit`: the first submitted try (by time) and the best, as a percent of the questions; per section the median and mean over learners, and how many started (`quiz_start`) and finished. |
+| Support use | Per lesson, switches to the simpler reading (and learners who switched), switches back, and Listen plays (and learners). |
+| Video | Per lesson, `video_choice` for the video and for "Read instead", plays, learners whose video reached 25, 50, 75 and 100% (their furthest point), and failures by reason. |
+| Writing | Word counts only (there is no text). The latest count of each piece (learner, lesson, stage); pieces with at least one word, median words, total. |
+| Retention | Learners with any event in the last 7 days of the range (or the whole range, if it is shorter), out of all learners in it. |
+
 ## Deleting a pilot's data
 
 The consent form promises deletion **within 6 months of the pilot ending**, and sooner when a family asks. `db/delete-pilot-data.sql` has both, run with `psql "$DATABASE_URL"`:
@@ -170,6 +202,7 @@ For a person, in this order. **None of it is done by the code change.**
 
 - `src/measurement/*.test.ts`: the checker (every event type, unknown keys, free text, limits), the gate's truth table, the queue (persistence, cap, migrations, deleted from outside), the sender (batching, offline, 503 pause, 4xx drop, 413, backoff), the collector (off queues nothing and creates no database; heartbeats need input; sessions; word counts; purge), `track.ts` (never loads the collector when off).
 - `api/_lib/*.test.ts`: the handlers with a fake database (every status above, no echo of content), the export (token, filters, CSV and JSON, formula guarding).
+- `tools/measurement/lib.test.ts`: the results report on a made-up export (every number above, repeats, rows left out, a wrong clock and a late send, ranges, empty files, only codes and numbers in the output, the command line).
 - `src/pages/settings/PilotResultsSetting.test.tsx`, `src/lesson/measurementEvents.test.tsx`, `src/storage/storage.test.ts`, `src/offline/deploy.test.ts`.
 - `e2e/measurement.spec.ts`: off by default (no `/api` request, no queue, even for a learner with a pilot code), gated by all three, on with a stand-in endpoint (the payload has the codes and no name or writing), offline then online, turning off deletes, a 503 stops quietly, and the CSP check. `e2e/privacy.spec.ts` also asserts no `/api/` request on any page with sharing off; `e2e/build-output.spec.ts` checks the collector is not in a first visit.
 - `api/_lib/db.integration.test.ts` runs the real SQL (`db/schema.sql`, `api/_lib/db.ts`: insert once, the rate-limit count, the export's filters and cursor, and the table's own constraints as a second wall) against a real Postgres, **only when `TEST_DATABASE_URL` is set**, so `npm test` skips it. It was run once while building this, against PGlite (Postgres compiled to WebAssembly, served over the Postgres wire protocol), which found that the size check on `value` must use `length(value::text)` (`pg_column_size` counts compressed bytes, so a long repetitive string passed). It has **not** been run against Neon, Supabase or Vercel Postgres: do that once with a scratch database before the pilot (the checklist above). Its tests are written so each constraint is checked on its own; PGlite's single-process socket server swallowed the error of a third failing insert in a row, which real Postgres does not.
