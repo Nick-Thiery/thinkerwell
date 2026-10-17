@@ -32,7 +32,6 @@ async function connect(active: boolean): Promise<() => void> {
         addEventListener: vi.fn(),
         register: () => Promise.resolve({ active: active ? {} : null } as ServiceWorkerRegistration),
         update: () => Promise.resolve(),
-        messageSkipWaiting: vi.fn(),
       },
       isControlled: () => active,
       reload: vi.fn(),
