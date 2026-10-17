@@ -69,8 +69,12 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * and three messages in four languages (docs/notes/local-language-videos.md). Approving videos will grow it again.
  * Raised to 812 kB for About's "How our lessons work": 810.3 kB with it (+3.3 kB: the card, its research list and
  * its words in English, Indonesian and Malay, which the offline copy must have).
+ * Raised to 823 kB for the before-and-after check (/educators/pilot-check): 821.1 kB with it (+10.8 kB: its 16 questions,
+ * writing task and statements in English, Indonesian and Malay, 6.7 kB as three chunks loaded only with the page; the
+ * page's code and its words in three languages, 3.7 kB in the Educators chunk; its styles, 0.4 kB). The offline copy
+ * keeps it so a centre can print the sheets without the internet (docs/notes/pilot-check.md).
  */
-const PRECACHE_BUDGET = 812_000;
+const PRECACHE_BUDGET = 823_000;
 /**
  * Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before),
  * 210.5 kB after the language and pilot-day merges, 212.7 kB with the header's language switch and the one language

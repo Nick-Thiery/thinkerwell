@@ -44,12 +44,14 @@ describe('EducatorsPage', () => {
       'Consent form',
       'Code cards',
       'Pilot day guide',
+      'Before-and-after check',
     ]);
     expect(within(pilot).getByRole('link', { name: 'Read about pilots' })).toHaveAttribute('href', '/organisations');
     expect(within(pilot).getByRole('link', { name: 'Print information sheets' })).toHaveAttribute('href', '/educators/information-sheet');
     expect(within(pilot).getByRole('link', { name: 'Print consent forms' })).toHaveAttribute('href', '/educators/consent-form');
     expect(within(pilot).getByRole('link', { name: 'Make code cards' })).toHaveAttribute('href', '/educators/code-cards');
     expect(within(pilot).getByRole('link', { name: 'Print the guide' })).toHaveAttribute('href', '/educators/pilot-day');
+    expect(within(pilot).getByRole('link', { name: 'Print the check' })).toHaveAttribute('href', '/educators/pilot-check');
 
     const tools = screen.getByRole('region', { name: 'Follow your group' });
     expect(within(tools).getAllByRole('listitem').map((item) => item.querySelector('.tw-edu-check-title')?.textContent)).toEqual([
