@@ -237,7 +237,7 @@ To approve it: `npm run videos:apply -- ms L05 --approved-by "Your name" --check
 
 **Note for teachers:** Video ini tidak menyebut masalah yang dibawa oleh pertanian. Langkah Baca masih menerangkannya.
 
-**What the pre-screen found:** DBPMalaysia, 5:02, January 2026, official and at the right level. Shows the gains of farming but not its costs, which both current questions ask for, so both change. The Read step keeps the costs.
+**What the pre-screen found:** DBPMalaysia, 5:02, January 2026, official and at the right level. Shows the gains of farming but not its costs, which both current questions ask for, so both change. The Read step keeps the costs. Held back for the pilot by Justin Park on 22 October 2026: the video explains farming, settlement and tools but not farming's problems, which the lesson asks about.
 
 **Before you approve, check:**
 
@@ -276,7 +276,7 @@ To approve it: `npm run videos:apply -- ms L06 --approved-by "Your name"`
 
 **Note for teachers:** Bahagian ini berhenti sebelum kisah Ramses II, yang dalam video ini mempunyai tarikh yang salah dan satu dakwaan yang tidak diterima oleh sains.
 
-**What the pre-screen found:** EduwebTV KPM (Ministry of Education), Form 1 Sejarah, 28:35. Segment 9:05-12:59 (Nile, farming, kings, trade, army). Stops before the Ramses II part (wrong dates; repeats a pseudo-scientific drowning claim). Both current questions fit and are kept.
+**What the pre-screen found:** EduwebTV KPM (Ministry of Education), Form 1 Sejarah, 28:35. Segment 9:05-12:59 (Nile, farming, kings, trade, army). Stops before the Ramses II part (wrong dates; repeats a pseudo-scientific drowning claim). Both current questions fit and are kept. Held back for the pilot by Justin Park on 22 October 2026: the Nile part shows little cooperation.
 
 **Before you approve, check:**
 
@@ -294,11 +294,11 @@ To approve it: `npm run videos:apply -- ms L07 --approved-by "Your name"`
 - **Part to watch:** 15:54 to 20:47 (4:53 of 27:49)
 - **Captions on YouTube:** auto
 
-**Why this video** (shown to learners): Bahagian rancangan EduwebTV ini menerangkan bagaimana Melaka menjadi tempat pertemuan pedagang dari banyak tempat.
+**Why this video** (shown to learners): Bahagian rancangan EduwebTV ini menerangkan bagaimana Melaka menjadi tempat pertemuan pedagang dari banyak tempat. Bacaan menggunakan Jalan Sutera untuk idea yang sama.
 
-- **Think first (adapted to this video):** Bagaimanakah barang dari tempat yang jauh boleh sampai ke Melaka? Perhatikan dalam video.
+- **Think first (adapted to this video):** Bolehkah satu barang bergerak lebih jauh daripada perjalanan seorang pedagang? Perhatikan tempat dan orang yang saling berhubung.
   - The lesson's question now: Bolehkah sesuatu benda bergerak lebih jauh daripada mana-mana seorang pedagang? Perhatikan caranya.
-- **After you watch (adapted to this video):** Mengapakah Melaka menjadi tempat pertemuan pedagang dari banyak tempat? Berikan satu sebab daripada video.
+- **After you watch (adapted to this video):** Seperti Jalan Sutera dalam bacaan, bagaimanakah Melaka menghubungkan pedagang dari pelbagai tempat? Namakan dua tempat yang dihubungkannya.
   - The lesson's question now: Mengapakah 'rangkaian' perkataan yang lebih baik daripada 'satu jalan' untuk Jalan Sutera?
 
 **Written version** ("Read instead", draft by AI: correct anything that is wrong or unclear):
@@ -317,7 +317,7 @@ To approve it: `npm run videos:apply -- ms L07 --approved-by "Your name"`
 
 **Note for teachers:** none
 
-**What the pre-screen found:** EduwebTV KPM, Form 2 Sejarah, 27:49. Segment 15:54-20:47 (Melaka as a trade centre) only; leaves out a music video at the start (whose auto-captions have a rude mis-hearing) and the part on the spread of Islam. Both questions change (the Silk Road question does not fit).
+**What the pre-screen found:** EduwebTV KPM, Form 2 Sejarah, 27:49. Segment 15:54-20:47 (Melaka as a trade centre) only; leaves out a music video at the start (whose auto-captions have a rude mis-hearing) and the part on the spread of Islam. Both questions change (the Silk Road question does not fit). Justin Park (content) chose this video for the pilot on 22 October 2026, from its captions; nobody has watched it yet. His questions replace the drafts (his "Jalur Sutra" and "Sebutkan … terhubung" are Indonesian, put into Malay as "Jalan Sutera", as the Malay lesson says, and "Namakan … dihubungkannya").
 
 **Before you approve, check:**
 
@@ -436,7 +436,7 @@ To approve it: `npm run videos:apply -- ms L10 --approved-by "Your name"`
 
 **Note for teachers:** Sari kata automatik YouTube untuk video ini banyak salah, contohnya "peta lakar" menjadi "kecelakaan" atau "peternakan": lebih baik tutup sari kata ketika menonton.
 
-**What the pre-screen found:** Julaiha Ali (Cikgu Julaiha, SMK Undang Rembau, Negeri Sembilan; a teacher's own channel), 7:42, Feb 2021, embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. Form 1 Geografi bab 3: 0:38 a sketch map is a picture of the earth's surface drawn from above, of the local area at a large scale, using symbols or abbreviations in place of real features; must have a title, frame (pemidang), compass direction, symbols and a key (petunjuk); four kinds of symbol: area (forest, rice, rubber, mangrove), line (rivers, roads, bridges, railways), point (mosque, temple, church, trig station), abbreviations (from 4:43, with the textbook page); 5:24 physical and cultural landscape; 7:31 "ajukan kepada guru Anda". PRESCREEN (recommend) for L11 ms, 37–282 (definition, the parts of a map, the symbol types; before the abbreviation list that sends learners to the textbook page). Both of the lesson's questions kept. Auto-captions garble "peta lakar" ("kecelakaan", "peternakan", "pecel akar") but nothing rude: watch with captions off. Covers title, key and compass direction; scale only in passing, and nothing on what a map leaves out beyond "symbols replace the real thing". Drafts written.
+**What the pre-screen found:** Julaiha Ali (Cikgu Julaiha, SMK Undang Rembau, Negeri Sembilan; a teacher's own channel), 7:42, Feb 2021, embeddable, asr labelled id (spoken Malaysian Malay), no dubbing. Form 1 Geografi bab 3: 0:38 a sketch map is a picture of the earth's surface drawn from above, of the local area at a large scale, using symbols or abbreviations in place of real features; must have a title, frame (pemidang), compass direction, symbols and a key (petunjuk); four kinds of symbol: area (forest, rice, rubber, mangrove), line (rivers, roads, bridges, railways), point (mosque, temple, church, trig station), abbreviations (from 4:43, with the textbook page); 5:24 physical and cultural landscape; 7:31 "ajukan kepada guru Anda". PRESCREEN (recommend) for L11 ms, 37–282 (definition, the parts of a map, the symbol types; before the abbreviation list that sends learners to the textbook page). Both of the lesson's questions kept. Auto-captions garble "peta lakar" ("kecelakaan", "peternakan", "pecel akar") but nothing rude: watch with captions off. Covers title, key and compass direction; scale only in passing, and nothing on what a map leaves out beyond "symbols replace the real thing". Drafts written. Justin Park (content) chose this video for the pilot on 22 October 2026, from its captions; nobody has watched it yet. He suggested 1:03–3:26 to save data; the part stays 0:37–4:42, because the written version follows it and it covers every kind of symbol, where 3:26 would stop part-way through them. The reviewer can shorten it if the end drags.
 
 **Before you approve, check:**
 
@@ -678,7 +678,7 @@ To approve it: `npm run videos:apply -- ms L16 --approved-by "Your name"`
 
 **Note for teachers:** none
 
-**What the pre-screen found:** DBPMalaysia, 10:00, 2023. A tradition that connects people and passes on knowledge across generations, shared beyond one community. Segment stops before the festival-morning prayers. Think first kept; After adapted. Names of the family left out of the written version (the auto-captions garble them).
+**What the pre-screen found:** DBPMalaysia, 10:00, 2023. A tradition that connects people and passes on knowledge across generations, shared beyond one community. Segment stops before the festival-morning prayers. Think first kept; After adapted. Names of the family left out of the written version (the auto-captions garble them). Held back for the pilot by Justin Park on 22 October 2026: the passage is about a recipe and family heritage, and a claim about preserving food at about 3:11 needs a fact check.
 
 **Before you approve, check:**
 
@@ -698,8 +698,10 @@ To approve it: `npm run videos:apply -- ms L17 --approved-by "Your name"`
 
 **Why this video** (shown to learners): Dalam video Balai Seni Negara ini, seorang pakar seni melihat butiran sebuah karya dengan teliti. Kemudian, beliau menerangkan cerita yang mungkin disampaikan oleh karya itu.
 
-- **Think first (the lesson's own, kept):** Apakah perbezaan antara menerangkan sesuatu objek dengan menyatakan maksudnya?
-- **After you watch (the lesson's own, kept):** Soalan apakah yang membantu kamu belajar daripada sesuatu objek tanpa mereka-reka maksudnya?
+- **Think first (adapted to this video):** Apakah perbezaan antara menerangkan apa yang dilihat dalam karya seni dengan mentafsir maksudnya?
+  - The lesson's question now: Apakah perbezaan antara menerangkan sesuatu objek dengan menyatakan maksudnya?
+- **After you watch (adapted to this video):** Apakah satu perkara yang benar-benar kamu lihat dalam karya Din Omar? Apakah satu tafsiran tentang maksudnya? Apakah yang perlu ditanya sebelum membuat kesimpulan?
+  - The lesson's question now: Soalan apakah yang membantu kamu belajar daripada sesuatu objek tanpa mereka-reka maksudnya?
 
 **Written version** ("Read instead", draft by AI: correct anything that is wrong or unclear):
 
@@ -717,7 +719,7 @@ To approve it: `npm run videos:apply -- ms L17 --approved-by "Your name"`
 
 **Note for teachers:** Sari kata automatik YouTube dilabel Bahasa Indonesia dan ada perkataan yang berulang-ulang, contohnya "petak petak petak". Pakar ini menyebut nasi lemak sebagai makanan yang dikenali oleh semua orang Malaysia; sesetengah murid mungkin belum mengenalinya. Jangan minta murid bercerita tentang makanan dari negara asal mereka.
 
-**What the pre-screen found:** National Art Gallery Malaysia (Balai Seni Negara), 3:49, Dec 2023, embeddable, asr:id (spoken Malaysian Malay; readable, with stutters), no dubbing. "Pendidikan Seni Visual (PSV) - Edu@Nag | Karya Din Omar": the gallery's own PSV series, in which art historian Prof. Dr. Zakaria Ali reads one work from the national collection. 0:00 these works fit the Visual Arts subject and are useful to teachers and pupils; 0:50 the NUSA exhibition (2023–2025); Din Omar's "Antara Dua Hidangan" is a story about our food culture; 1:33 he stuck a real nasi lemak on the canvas surface so it is real nasi lemak, not painted like the other food pictures: "is this a deliberate choice or not? that is open to us"; 1:56 the composition is a grid of squares, tilted this way and that; it reminds us of rote learning: repeat and we remember, so the food pictures are repeated to leave a deep impression; 3:00 some things are real (the wrapped nasi lemak), others painted (forks, a hand-washing place): a mixed-media installation, materials combined to tell our story, our favourite food, nasi lemak, which every Malaysian knows. PRESCREEN (recommend) for L18 ms, whole video. An expert first describes what is there (real food on the canvas, repeated squares, forks, a hand-washing place), then asks an open question (deliberate or not?) and only then offers an interpretation, which is exactly what both of the lesson's questions ask; both kept. The national gallery is about as formal a source as exists. Nothing sensitive (the subject is nasi lemak). Reviewer should check the first 50 seconds (an intro aimed at teachers, then possibly a title card) and that the expert really says the question is "open to us" (1:56). Teachers' note: some learners may not know nasi lemak; don't ask them about food from their home country. Drafts written (summaryBasis: transcript).
+**What the pre-screen found:** National Art Gallery Malaysia (Balai Seni Negara), 3:49, Dec 2023, embeddable, asr:id (spoken Malaysian Malay; readable, with stutters), no dubbing. "Pendidikan Seni Visual (PSV) - Edu@Nag | Karya Din Omar": the gallery's own PSV series, in which art historian Prof. Dr. Zakaria Ali reads one work from the national collection. 0:00 these works fit the Visual Arts subject and are useful to teachers and pupils; 0:50 the NUSA exhibition (2023–2025); Din Omar's "Antara Dua Hidangan" is a story about our food culture; 1:33 he stuck a real nasi lemak on the canvas surface so it is real nasi lemak, not painted like the other food pictures: "is this a deliberate choice or not? that is open to us"; 1:56 the composition is a grid of squares, tilted this way and that; it reminds us of rote learning: repeat and we remember, so the food pictures are repeated to leave a deep impression; 3:00 some things are real (the wrapped nasi lemak), others painted (forks, a hand-washing place): a mixed-media installation, materials combined to tell our story, our favourite food, nasi lemak, which every Malaysian knows. PRESCREEN (recommend) for L18 ms, whole video. An expert first describes what is there (real food on the canvas, repeated squares, forks, a hand-washing place), then asks an open question (deliberate or not?) and only then offers an interpretation, which is exactly what both of the lesson's questions ask; both kept. The national gallery is about as formal a source as exists. Nothing sensitive (the subject is nasi lemak). Reviewer should check the first 50 seconds (an intro aimed at teachers, then possibly a title card) and that the expert really says the question is "open to us" (1:56). Teachers' note: some learners may not know nasi lemak; don't ask them about food from their home country. Drafts written (summaryBasis: transcript). Justin Park (content) chose this video for the pilot on 22 October 2026, from its captions; nobody has watched it yet. His questions replace the drafts. The reviewer checks on a phone that the artwork can be seen clearly in the small player.
 
 **Before you approve, check:**
 
@@ -797,7 +799,7 @@ To approve it: `npm run videos:apply -- ms L19 --approved-by "Your name"`
 
 **Note for teachers:** none
 
-**What the pre-screen found:** ntv7malaysia (DidikTV, the Ministry of Education's TV lessons), Form 4 Ekonomi, 48:46. Segment 13:38-15:45 (bicycle or football boots). Both current questions fit and are kept. The canteen skit (586-670) is an alternative segment.
+**What the pre-screen found:** ntv7malaysia (DidikTV, the Ministry of Education's TV lessons), Form 4 Ekonomi, 48:46. Segment 13:38-15:45 (bicycle or football boots). Both current questions fit and are kept. The canteen skit (586-670) is an alternative segment. Held back for the pilot by Justin Park on 22 October 2026: it comes from a Form 4 class whose words may be too hard for younger learners.
 
 **Before you approve, check:**
 
