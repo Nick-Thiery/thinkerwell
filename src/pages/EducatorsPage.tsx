@@ -284,7 +284,7 @@ export function EducatorsPage() {
             <p>
               {tx('pages.educators.feedbackBody', {
                 email: (
-                  <a href={`mailto:${CONTACT_EMAIL}`} className="tw-edu-feedback-email">
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="tw-edu-feedback-email" translate="no">
                     {CONTACT_EMAIL}
                   </a>
                 ),

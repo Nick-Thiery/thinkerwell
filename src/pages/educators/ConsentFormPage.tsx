@@ -157,7 +157,7 @@ export function ConsentFormPage() {
         <div className="tw-consent-about">
           <p>
             {CONTACT_EMAIL
-              ? tx('pages.consentForm.questionsEmail', { organisation: org, email: CONTACT_EMAIL })
+              ? tx('pages.consentForm.questionsEmail', { organisation: org, email: <span translate="no">{CONTACT_EMAIL}</span> })
               : tx('pages.consentForm.questions', { organisation: org })}
           </p>
           <p>{t('pages.consentForm.honesty')}</p>

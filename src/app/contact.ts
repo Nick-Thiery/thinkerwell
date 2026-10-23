@@ -7,6 +7,7 @@
  * organisations, the email half of the consent form's "Questions?" line,
  * and "or write to Thinkerwell at …" on the information sheet. Never show a
  * placeholder such as "[CONTACT EMAIL]" in their place. Setting the address
- * here turns all four on.
+ * here turns all four on. Wherever it is shown, it is marked translate="no":
+ * an address is the same in every language.
  */
 export const CONTACT_EMAIL: string | null = 'hello@thinkerwell.app';
