@@ -55,10 +55,12 @@ To approve it: `npm run videos:apply -- id L01 --approved-by "Your name" --check
 - **Part to watch:** 0:59 to 2:27 (1:28 of 9:36)
 - **Captions on YouTube:** auto
 
-**Why this video** (shown to learners): Bagian pendek dari tur Museum Nasional Indonesia ini menunjukkan perahu lesung suku Asmat dan apa yang harus diketahui pembuatnya.
+**Why this video** (shown to learners): Bagian pendek dari tur Museum Nasional Indonesia ini menunjukkan perahu lesung suku Asmat. Ini contoh benda nyata yang lain: bacaan memakai sebuah kaleng.
 
-- **Think first (the lesson's own, kept):** Sebagai sumber, apa bedanya benda dengan tulisan?
-- **After you watch (the lesson's own, kept):** Sumber lain apa yang bisa membantumu memahami kaleng itu?
+- **Think first (adapted to this video):** Apa bedanya benda dengan tulisan sebagai sumber tentang masa lalu?
+  - The lesson's question now: Sebagai sumber, apa bedanya benda dengan tulisan?
+- **After you watch (adapted to this video):** Seperti kaleng dalam bacaan, apa yang dapat perahu lesung Asmat ini ceritakan tentang kehidupan orang yang menggunakannya? Sumber lain apa yang masih perlu kamu cari?
+  - The lesson's question now: Sumber lain apa yang bisa membantumu memahami kaleng itu?
 
 **Written version** ("Read instead", draft by AI: correct anything that is wrong or unclear):
 
@@ -76,7 +78,7 @@ To approve it: `npm run videos:apply -- id L01 --approved-by "Your name" --check
 
 **Note for teachers:** Video lengkapnya adalah tur yang lucu. Aplikasi hanya memutar bagian 0:59 sampai 2:27 (perahu). Bagian lain (perisai perang, tangga upacara, tiang kubur dan roh) tidak diputar.
 
-**What the pre-screen found:** Comedic virtual tour (Arie Kriting) of five objects from eastern Indonesia; the canoe part shows what an object reveals about its makers. Both current questions still fit (object vs writing; the tin is from the Read step). Avoid the war, ritual and grave parts.
+**What the pre-screen found:** Comedic virtual tour (Arie Kriting) of five objects from eastern Indonesia; the canoe part shows what an object reveals about its makers. Both current questions still fit (object vs writing; the tin is from the Read step). Avoid the war, ritual and grave parts. Justin Park (content) chose this video for the pilot on 22 October 2026, from its captions; nobody has watched it yet. His questions replace the drafts: the after question links the canoe to the tin in the Read step and asks what other source is still needed.
 
 **Before you approve, check:**
 
@@ -290,35 +292,33 @@ To approve it: `npm run videos:apply -- id L07 --approved-by "Your name" --check
 
 ## Lesson 8: How did trade connect distant communities?
 
-**Recommended:** [Perjalanan Jalur Rempah Nusantara](https://www.youtube.com/watch?v=fj2xxbx_OHQ), by [Jalur Rempah RI](https://www.youtube.com/@jalurrempahri)
+**Recommended:** [Perjalanan Jalur Rempah Nusantara](https://www.youtube.com/watch?v=fj2xxbx_OHQ&t=17s), by [Jalur Rempah RI](https://www.youtube.com/@jalurrempahri)
 
-- **Part to watch:** the whole video (5:44)
+- **Part to watch:** 0:17 to 1:33 (1:16 of 5:44)
 - **Captions on YouTube:** auto
 
-**Why this video** (shown to learners): Video ini mengikuti jalur rempah: bagaimana cengkih, pala, dan lada dari Nusantara diperdagangkan ke banyak negeri.
+**Why this video** (shown to learners): Contoh jaringan perdagangan dari Asia Tenggara: jalur rempah Nusantara. Bacaan memakai Jalur Sutra untuk ide yang sama.
 
-- **Think first (adapted to this video):** Rempah bisa sampai ke negeri yang sangat jauh. Perhatikan: di mana para pedagang bertemu dan bertukar barang?
+- **Think first (adapted to this video):** Bisakah satu barang berpindah lebih jauh daripada perjalanan satu pedagang? Perhatikan tempat dan orang yang terhubung.
   - The lesson's question now: Bisakah satu benda berpindah lebih jauh daripada perjalanan pedagang mana pun? Perhatikan caranya.
-- **After you watch (adapted to this video):** Mengapa jalur rempah lebih tepat disebut jaringan pelabuhan daripada satu jalan?
+- **After you watch (adapted to this video):** Seperti Jalur Sutra dalam bacaan, mengapa jalur rempah lebih tepat disebut jaringan perdagangan daripada satu jalan? Sebutkan dua tempat yang terhubung.
   - The lesson's question now: Mengapa kata 'jaringan' lebih tepat daripada 'satu jalan' untuk Jalur Sutra?
 
 **Written version** ("Read instead", draft by AI: correct anything that is wrong or unclear):
 
-> Video ini menceritakan jalur rempah Nusantara. Cengkih dan pala tumbuh di Maluku dan Banda. Lada datang dari Sumatra, Jawa, dan Kalimantan.
+> Video ini menceritakan jalur rempah Nusantara. Cengkih dan pala tumbuh di Maluku dan Banda. Lada datang dari pulau-pulau lain, seperti Sumatra, Jawa, dan Kalimantan.
 > 
-> Malaka menjadi pelabuhan besar. Di sana pedagang dari Arab, India, Tiongkok, dan Eropa bertemu dan bertukar barang, lalu membawanya ke tempat lain.
-> 
-> Kemudian bangsa Eropa ingin menguasai rempah. Portugis menguasai Malaka pada tahun 1511. Belanda melalui VOC ingin memegang perdagangan sendiri dan berperang melawan kerajaan seperti Banten dan Makassar. Jalur rempah juga mempertemukan banyak bangsa dan budaya.
+> Malaka menjadi pelabuhan besar. Di sana pedagang dari banyak tempat bertemu dan bertukar barang. Rempah lalu dibawa lebih jauh lagi, sampai ke Tiongkok, India, dan negeri-negeri Arab.
 
 **Key points:**
 
-- Rempah dari Maluku, Banda, Sumatra, Jawa, dan Kalimantan dijual ke banyak negeri.
-- Pelabuhan seperti Malaka menjadi tempat pedagang dari berbagai negeri bertemu.
-- Bangsa Eropa kemudian ingin menguasai perdagangan rempah, dan itu membawa perang.
+- Rempah tumbuh di Maluku, Banda, dan pulau-pulau lain.
+- Pelabuhan seperti Malaka menjadi tempat pedagang dari banyak tempat bertemu.
+- Rempah berpindah dari tangan ke tangan sampai ke negeri yang jauh. Itulah jaringan perdagangan.
 
-**Note for teachers:** Video ini menyebut perang dan monopoli VOC secara singkat, tanpa gambar kekerasan.
+**Note for teachers:** none
 
-**What the pre-screen found:** Jalur Rempah RI (the Ministry of Culture spice-route programme), 5:44. A regional example of a trade network; the Silk Road question does not fit, so both change.
+**What the pre-screen found:** Jalur Rempah RI (the Ministry of Culture spice-route programme), 5:44. A regional example of a trade network; the Silk Road question does not fit, so both change. Justin Park (content) chose this video for the pilot on 22 October 2026, from its captions; nobody has watched it yet. He cut it to 0:17–1:33 (spice islands, Malaka as a hub, links to China, India and Arab lands), which leaves out the later part on the Portuguese, the VOC and wars; the written version and key points were cut to match, and the teachers' note on war dropped. The reviewer checks that the part starts and ends cleanly and that the written version says only what this part says.
 
 **Before you approve, check:**
 
@@ -359,7 +359,7 @@ To approve it: `npm run videos:apply -- id L08 --approved-by "Your name"`
 
 **Note for teachers:** Video ini menyebut sebuah ledakan di tambang yang menewaskan pekerja. Bahasanya santai, gaya Jakarta.
 
-**What the pre-screen found:** Kok Bisa?, 8:11, May 2025, embeddable, asr:id, no dubbing. 0:00-2:06: technology is cleaner (solar, electric cars, recycled clothes, drones) yet the environment gets worse, because we damage more than we repair; making batteries needs nickel, so forests are cleared; workers and residents near nickel mines get respiratory infections, homes flood with red mud, an explosion killed people; much of the profit goes to other countries. 2:06 on: greener, fairer economy, Indigenous Papuan forest use, then a long Soekarno / Gedung Pola segment with the Yayasan Bung Karno chairman (off-topic, nationalist). Fits L09 well: an invention can help and harm, and doesn't help everyone equally. Casual Jakarta register; mentions deaths in a mine explosion in one sentence. PRESCREEN for L09 id, segment 0-126, adapted questions: Think first: "Bisakah teknologi yang ramah lingkungan tetap merugikan sebagian orang? Perhatikan contohnya di video." After: "Siapa yang mendapat untung dari baterai mobil listrik, dan siapa yang menanggung kerugiannya menurut video?"
+**What the pre-screen found:** Kok Bisa?, 8:11, May 2025, embeddable, asr:id, no dubbing. 0:00-2:06: technology is cleaner (solar, electric cars, recycled clothes, drones) yet the environment gets worse, because we damage more than we repair; making batteries needs nickel, so forests are cleared; workers and residents near nickel mines get respiratory infections, homes flood with red mud, an explosion killed people; much of the profit goes to other countries. 2:06 on: greener, fairer economy, Indigenous Papuan forest use, then a long Soekarno / Gedung Pola segment with the Yayasan Bung Karno chairman (off-topic, nationalist). Fits L09 well: an invention can help and harm, and doesn't help everyone equally. Casual Jakarta register; mentions deaths in a mine explosion in one sentence. PRESCREEN for L09 id, segment 0-126, adapted questions: Think first: "Bisakah teknologi yang ramah lingkungan tetap merugikan sebagian orang? Perhatikan contohnya di video." After: "Siapa yang mendapat untung dari baterai mobil listrik, dan siapa yang menanggung kerugiannya menurut video?" Held back for the pilot by Justin Park on 22 October 2026: it is a modern green-technology case that doesn't answer the lesson's question, and it mentions workers' deaths at about 1:46.
 
 **Before you approve, check:**
 
@@ -579,8 +579,9 @@ To approve it: `npm run videos:apply -- id L14 --approved-by "Your name"`
 
 **Why this video** (shown to learners): Video TVRI ini bercerita tentang noken, tas khas Papua, dan para mama yang membuatnya di Jayapura.
 
-- **Think first (the lesson's own, kept):** Apakah benda yang berguna juga bisa bercerita?
-- **After you watch (adapted to this video):** Kalau kamu menulis label untuk sebuah noken, sudut pandang siapa yang perlu kamu tanyakan dulu? Mengapa?
+- **Think first (adapted to this video):** Bisakah benda yang berguna juga menceritakan kisah?
+  - The lesson's question now: Apakah benda yang berguna juga bisa bercerita?
+- **After you watch (adapted to this video):** Sebelum menulis label museum untuk noken, sudut pandang siapa yang perlu kamu dengar? Apa yang bisa mereka jelaskan?
   - The lesson's question now: Sudut pandang siapa yang akan kamu tanyakan sebelum menulis label untuk salah satu benda ini?
 
 **Written version** ("Read instead", draft by AI: correct anything that is wrong or unclear):
@@ -593,13 +594,13 @@ To approve it: `npm run videos:apply -- id L14 --approved-by "Your name"`
 
 **Key points:**
 
-- Noken adalah tas khas Papua yang diakui sebagai warisan budaya dunia.
+- Noken adalah tas khas Papua yang diakui sebagai warisan budaya tak benda dunia.
 - Bagi masyarakat Papua, noken adalah simbol kehidupan, persatuan, dan identitas.
 - Cara membuat noken dari kulit kayu dan serat pandan diwariskan dari orang tua kepada anak.
 
 **Note for teachers:** none
 
-**What the pre-screen found:** TVRI Nasional, 6:56, Dec 2024, embeddable, asr:id, no dubbing. Re-read the captions for the part: 0:11 Jayapura, capital of Papua, rich in culture; 0:29 recognised (garbled: "dan UN", almost certainly "diakui UNESCO") as world intangible heritage, "more than a bag": a symbol of life, unity and identity of Papuans; 1:01-1:13 casual presenter ("gak cuma keren"), "let's explore"; 1:41 a small business run by Papuan mamas makes noken in many designs, colours and sizes, from bark and pandan fibre, processed traditionally and knotted with a technique passed down the generations; 2:30 the maker: learned as a child from her parents, started the business in 2012; bark is the main material; natural dyes including forest-orchid skin (ends 3:26). From 3:26 how long one takes (garbled), then supply problems, her group and sales. PRESCREEN (recommend) for L15 id, 11–206 (was 11–200; 200 was mid-sentence, the sentence on natural dyes ends at 3:26). Think first kept; After adapted to noken. Drafts written. The UNESCO word is garbled in the captions; the draft says "diakui sebagai warisan budaya tak benda dunia" without naming the body.
+**What the pre-screen found:** TVRI Nasional, 6:56, Dec 2024, embeddable, asr:id, no dubbing. Re-read the captions for the part: 0:11 Jayapura, capital of Papua, rich in culture; 0:29 recognised (garbled: "dan UN", almost certainly "diakui UNESCO") as world intangible heritage, "more than a bag": a symbol of life, unity and identity of Papuans; 1:01-1:13 casual presenter ("gak cuma keren"), "let's explore"; 1:41 a small business run by Papuan mamas makes noken in many designs, colours and sizes, from bark and pandan fibre, processed traditionally and knotted with a technique passed down the generations; 2:30 the maker: learned as a child from her parents, started the business in 2012; bark is the main material; natural dyes including forest-orchid skin (ends 3:26). From 3:26 how long one takes (garbled), then supply problems, her group and sales. PRESCREEN (recommend) for L15 id, 11–206 (was 11–200; 200 was mid-sentence, the sentence on natural dyes ends at 3:26). Think first kept; After adapted to noken. Drafts written. The UNESCO word is garbled in the captions; the draft says "diakui sebagai warisan budaya tak benda dunia" without naming the body. Justin Park (content) chose this video for the pilot on 22 October 2026, from its captions; nobody has watched it yet. His questions replace the drafts. He suggested 1:41–3:26; the part stays 0:11–3:26, because the first 90 seconds say what noken means to Papuans (a symbol of life, unity and identity), which is the perspective the question asks about, and the written version follows that part. UNESCO inscribed noken on its list of intangible heritage in need of urgent safeguarding (2012): never call it World Heritage.
 
 **Before you approve, check:**
 
@@ -681,7 +682,7 @@ To approve it: `npm run videos:apply -- id L16 --approved-by "Your name"`
 
 **Note for teachers:** none
 
-**What the pre-screen found:** REPUBLIKA Official, 7:36, Jul 2025, embeddable, asr:id (clean), no dubbing. "Kaluppini: Desa Adat Penjaga Kearifan Lokal": 0:36 a customary village in South Sulawesi keeping its values under modernisation; 0:56 mostly farmers, still holding to ancestors' teachings; their rituals can't be done by a few people, they have to be done together, which keeps gotong royong alive; 1:16 the threat of large-scale corn monoculture (loss of biodiversity, soil damage, but good money); 1:58 the worry that traditions fade because people no longer understand their meaning, "and we won't even feel the loss"; 2:40 young people and customary women form a business group making palm sugar ("living in a village doesn't mean being left behind"), 3:00 a young man: we collaborate, we're proud to have a business (ends 3:23); 3:21 a village regulation protecting women, children and disabled people; 4:22 medicinal plants from the forest (a herb for headaches, a bark "antibiotic" for toothache); 5:44 a shared meal; 6:04 an elder: rituals teach gotong royong and self-reliance, keeping people's bond with God, with each other and with nature. PRESCREEN (recommend) for L17 id, 36–203. A single clean report covering how a tradition connects people (done together), how traditions are lost (meanings not passed on) and how a community changes (young people's new business). Clearly better than the current pick (fRO8ctPDdNw 281–418, the Erau part of a TV compilation that has adverts in the upload). Both questions changed (the lesson's are about sharing a tradition with others). Stops before the herbal-remedy part, which shouldn't be shown to children as medical advice. fRO8ctPDdNw stays as an alternative. Drafts written.
+**What the pre-screen found:** REPUBLIKA Official, 7:36, Jul 2025, embeddable, asr:id (clean), no dubbing. "Kaluppini: Desa Adat Penjaga Kearifan Lokal": 0:36 a customary village in South Sulawesi keeping its values under modernisation; 0:56 mostly farmers, still holding to ancestors' teachings; their rituals can't be done by a few people, they have to be done together, which keeps gotong royong alive; 1:16 the threat of large-scale corn monoculture (loss of biodiversity, soil damage, but good money); 1:58 the worry that traditions fade because people no longer understand their meaning, "and we won't even feel the loss"; 2:40 young people and customary women form a business group making palm sugar ("living in a village doesn't mean being left behind"), 3:00 a young man: we collaborate, we're proud to have a business (ends 3:23); 3:21 a village regulation protecting women, children and disabled people; 4:22 medicinal plants from the forest (a herb for headaches, a bark "antibiotic" for toothache); 5:44 a shared meal; 6:04 an elder: rituals teach gotong royong and self-reliance, keeping people's bond with God, with each other and with nature. PRESCREEN (recommend) for L17 id, 36–203. A single clean report covering how a tradition connects people (done together), how traditions are lost (meanings not passed on) and how a community changes (young people's new business). Clearly better than the current pick (fRO8ctPDdNw 281–418, the Erau part of a TV compilation that has adverts in the upload). Both questions changed (the lesson's are about sharing a tradition with others). Stops before the herbal-remedy part, which shouldn't be shown to children as medical advice. fRO8ctPDdNw stays as an alternative. Drafts written. Held back for the pilot by Justin Park on 22 October 2026: it shows community voices, but not the respectful sharing with outsiders that the Watch question asks about.
 
 **Before you approve, check:**
 
