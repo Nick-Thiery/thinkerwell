@@ -136,7 +136,7 @@
   color: var(--correct);
 }
 
-/* The bots' field: off screen, never shown or announced. */
+/* The bots' field: never shown, announced or reached by the keyboard (bots read the HTML, not the styles). */
 .tw-contact-trap {
   position: absolute;
   inline-size: 1px;
@@ -144,4 +144,5 @@
   overflow: hidden;
   clip-path: inset(50%);
   white-space: nowrap;
+  visibility: hidden;
 }
