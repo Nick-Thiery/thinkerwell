@@ -370,14 +370,16 @@ test.describe('Listen follows the language', () => {
 });
 
 test.describe('lessons, videos and downloads', () => {
-  test('the video stays English and says so; its written version, section checks and pictures are Indonesian', async ({ page }) => {
+  test('the video stays English, so Watch opens on its written version; section checks and pictures are Indonesian', async ({ page }) => {
     const requests = recordRequests(page);
     await page.goto(`/lesson/${L10.id}/watch`);
     await headerSwitch(page, INDONESIAN);
-    await expect(page.getByText(msg(id, 'lessonPlayer.watch.videoInEnglish'))).toBeVisible();
-    await expect(page.locator('.tw-video-title')).toHaveAttribute('lang', 'en');
-    await page.getByRole('button', { name: msg(id, 'lessonPlayer.watch.readInstead') }).click();
+    // The video is English, so Watch opens on its written version in Indonesian, with the English video one tap away
+    // (not tapped here: nothing is asked of YouTube before the tap).
     await expect(page.locator('.tw-watch-written-text')).toContainText(L10.summary.split('\n')[0]!.slice(0, 40));
+    await expect(page.locator('.tw-watch-written-h')).toHaveAttribute('lang', 'en');
+    await expect(page.getByRole('button', { name: msg(id, 'lessonPlayer.watch.watchInEnglish') })).toBeVisible();
+    await expect(page.locator('iframe')).toHaveCount(0);
 
     await page.goto(`/lesson/${L10.id}/read`);
     await expect(page.locator('figure img').first()).toHaveAttribute('src', /\/assets\/locales\/id\/visuals\//);
@@ -542,7 +544,7 @@ test.describe('with Indonesian on, every page is Indonesian and fits', () => {
       await page.getByRole('button', { name: msg(id, 'lessonPlayer.write.seeExample') }).click();
       await expectAllIndonesian(page, 'write: example');
       await page.goto(`/lesson/${lesson.id}/watch`);
-      await page.getByRole('button', { name: msg(id, 'lessonPlayer.watch.readInstead') }).click();
+      await expect(page.locator('.tw-watch-written-text')).toBeVisible();
       await expectAllIndonesian(page, 'watch: written version');
       // The lesson's sources, at the bottom of every step.
       await page.locator('.tw-lesson-sources summary').click();

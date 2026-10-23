@@ -33,9 +33,12 @@ type View = 'poster' | 'player' | 'written';
  * - 'choice': the learner chose Read instead (remembered);
  * - 'save-data': "Save data" is on (src/offline/saveData.ts): no video at all;
  * - 'timeout', 'offline', 'unavailable': the video couldn't play ('offline'
- *   also when Watch opens with the device offline).
+ *   also when Watch opens with the device offline);
+ * - 'english': the lessons are in the learner's language and this lesson has
+ *   no approved video in it, so Watch opens on the written version in their
+ *   language, with the English video one tap away.
  */
-type WrittenReason = 'choice' | 'save-data' | 'timeout' | 'offline' | 'unavailable';
+type WrittenReason = 'choice' | 'save-data' | 'timeout' | 'offline' | 'unavailable' | 'english';
 
 function deviceIsOffline(): boolean {
   return typeof navigator !== 'undefined' && navigator.onLine === false;
@@ -68,6 +71,10 @@ type FocusTarget = 'player' | 'written' | 'watch';
  *   version and says why; the video is offered again ("Try the video
  *   again") for when the connection is back.
  * - A learner who chose "Read instead" comes back to the written version.
+ * - When the lessons are translated (Indonesian, Malay) and this lesson has no
+ *   approved video in that language, Watch opens on the written version, in
+ *   the learner's language, and offers the English video as "Watch the video
+ *   in English". Opening there isn't a choice, so it sends no event.
  */
 export function WatchStage() {
   const { t, formatNumber, contentLang, englishLang, content, contentLocale } = useI18n();
@@ -77,13 +84,36 @@ export function WatchStage() {
   // language on screen (src/content/localVideos.ts), whose title and channel are in that language.
   const videoLang = watch.localVideo ? contentLang : englishLang;
   const saveData = isSaveDataOn(settings.saveData);
+  // The lessons are in the learner's language, but this lesson's video is English.
+  const englishOnly = Boolean(content) && !watch.localVideo;
 
   const [view, setView] = useState<View>(() =>
-    saveData || progress.watch.readInstead || deviceIsOffline() ? 'written' : 'poster',
+    saveData || progress.watch.readInstead || deviceIsOffline() || englishOnly ? 'written' : 'poster',
   );
   const [reason, setReason] = useState<WrittenReason | null>(() =>
-    saveData ? 'save-data' : progress.watch.readInstead ? 'choice' : deviceIsOffline() ? 'offline' : null,
+    saveData
+      ? 'save-data'
+      : progress.watch.readInstead
+        ? 'choice'
+        : deviceIsOffline()
+          ? 'offline'
+          : englishOnly
+            ? 'english'
+            : null,
   );
+  // The language changed under an open Watch step: follow it, unless the learner has already chosen or played
+  // (adjusting state while rendering, as React advises, rather than in an effect).
+  const [shownFor, setShownFor] = useState(englishOnly);
+  if (shownFor !== englishOnly) {
+    setShownFor(englishOnly);
+    if (englishOnly && view === 'poster' && reason === null) {
+      setReason('english');
+      setView('written');
+    } else if (!englishOnly && view === 'written' && reason === 'english') {
+      setReason(null);
+      setView('poster');
+    }
+  }
   /** Bumped on every tap of Watch, so a retry creates a fresh player and a fresh timer. */
   const [attempt, setAttempt] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -295,7 +325,13 @@ export function WatchStage() {
               {saveData ? null : (
                 <div className="tw-watch-written-actions">
                   <Button variant="secondary" icon={videoFailed ? 'RotateCcw' : 'Play'} onClick={watchVideo}>
-                    {t(videoFailed ? 'lessonPlayer.watch.tryAgain' : 'lessonPlayer.watch.watchInstead')}
+                    {t(
+                      videoFailed
+                        ? 'lessonPlayer.watch.tryAgain'
+                        : englishOnly
+                          ? 'lessonPlayer.watch.watchInEnglish'
+                          : 'lessonPlayer.watch.watchInstead',
+                    )}
                   </Button>
                 </div>
               )}
