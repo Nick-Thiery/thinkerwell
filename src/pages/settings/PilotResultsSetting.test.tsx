@@ -21,14 +21,14 @@ function renderSettings() {
 }
 
 const codeField = () => screen.getByLabelText('Organisation code');
-const share = () => screen.getByRole('checkbox', { name: 'Share pilot results from this device' });
+const share = () => screen.getByRole('checkbox', { name: 'Share optional study data from this device' });
 const saveCode = () => screen.getByRole('button', { name: 'Save code' });
 const settings = async () => (await getStore()).getSettings();
 
 describe('Settings: Share pilot results', () => {
   it('is off by default, explained, and cannot be turned on without a code', async () => {
     renderSettings();
-    expect(await screen.findByRole('heading', { level: 2, name: 'Share pilot results' })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { level: 2, name: 'Share optional study data' })).toBeInTheDocument();
     await waitFor(() => expect(codeField()).toBeEnabled());
     expect(share()).not.toBeChecked();
     expect(share()).toBeDisabled();

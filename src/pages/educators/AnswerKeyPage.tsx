@@ -6,7 +6,7 @@
  * Like the teacher guide, the same page on screen and on paper.
  */
 import { Link } from 'react-router';
-import { educatorsPath, teacherGuidePath } from '../../app/lessonUrls';
+import { guidesPath, teacherGuidePath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
 import { EvidenceCard, Icon } from '../../components/ds';
 import { type QuizFile, type QuizStimulus, type Section } from '../../content';
@@ -33,7 +33,7 @@ export function AnswerKeyPage({ section, quiz }: AnswerKeyPageProps) {
 
   return (
     <div className="tw-print-page tw-key-page">
-      <PrintToolbar backHref={educatorsPath(section.id)} backLabel={t('pages.teacherTools.back')} />
+      <PrintToolbar backHref={guidesPath(section.id)} backLabel={t('pages.teacherTools.backToGuides')} />
       <p className="tw-print-intro tw-no-print">{t('pages.answerKey.intro')}</p>
 
       <article className="tw-print-sheet tw-key" aria-labelledby="key-title">

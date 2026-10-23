@@ -12,7 +12,9 @@
   },
   "redirects": [
     { "source": "/:path(.*)", "has": [{ "type": "host", "value": "thinkerwell.vercel.app" }], "destination": "https://thinkerwell.app/:path", "permanent": true },
-    { "source": "/:path(.*)", "has": [{ "type": "host", "value": "www.thinkerwell.app" }], "destination": "https://thinkerwell.app/:path", "permanent": true }
+    { "source": "/:path(.*)", "has": [{ "type": "host", "value": "www.thinkerwell.app" }], "destination": "https://thinkerwell.app/:path", "permanent": true },
+    { "source": "/educators/pilot-day", "destination": "/educators/session-guide", "permanent": true },
+    { "source": "/educators/pilot-check", "destination": "/educators/learning-check", "permanent": true }
   ],
   "rewrites": [
     { "source": "/about", "destination": "/about.html" },

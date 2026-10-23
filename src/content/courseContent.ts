@@ -52,8 +52,8 @@ export interface CourseContent<L extends CourseLesson, S extends CourseSection, 
   readonly sectionLook: (sectionId: string) => SectionLook;
   /** The course map, open at a section: /course#history, /course/digital-world#how-ai-works. */
   readonly coursePath: (sectionId?: string) => string;
-  /** The Educators page, at a section (Our World). A preview course has none: its teacher guides go back to its map. */
-  readonly educatorsPath?: (sectionId?: string) => string;
+  /** The list of teacher guides, at a section (Our World: /educators/guides?section=…). A preview course has none: its teacher guides go back to its map. */
+  readonly guidesPath?: (sectionId?: string) => string;
 }
 
 /** Any course, as the lesson pages read it. Our World's content is one too. */
@@ -74,7 +74,7 @@ export interface CourseOptions {
   hasSectionChecks: boolean;
   sectionLook: (sectionId: string) => SectionLook;
   coursePath: (sectionId?: string) => string;
-  educatorsPath?: (sectionId?: string) => string;
+  guidesPath?: (sectionId?: string) => string;
 }
 
 /**
@@ -128,6 +128,6 @@ export function createCourseContent<L extends CourseLesson, C extends AnyCourseF
     hasSectionChecks: options.hasSectionChecks,
     sectionLook: options.sectionLook,
     coursePath: options.coursePath,
-    educatorsPath: options.educatorsPath,
+    guidesPath: options.guidesPath,
   };
 }

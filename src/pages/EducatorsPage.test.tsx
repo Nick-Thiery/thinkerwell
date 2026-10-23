@@ -1,14 +1,10 @@
 import { render, screen, within } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 import { describe, expect, it, vi } from 'vitest';
-import { getLesson, getSectionLessons, getSections, type Lesson } from '../content';
 import { EducatorsPage } from './EducatorsPage';
 
 // These tests cover the pages without an address (src/app/contact.ts); contactEmail.test.tsx covers them with the real one.
 vi.mock('../app/contact', () => ({ CONTACT_EMAIL: null }));
-
-const L10 = getLesson('towns-near-rivers') as Lesson;
 
 function renderAt(path = '/educators') {
   vi.spyOn(window, 'scrollTo').mockImplementation(() => undefined);
@@ -18,122 +14,86 @@ function renderAt(path = '/educators') {
 }
 
 describe('EducatorsPage', () => {
-  it('shows the hero, what you need with the one way in to setting up a device, and how a session works', () => {
+  it('starts with the hero: browse the course, set up a device, a lesson on paper, and what you need', () => {
     renderAt();
     expect(screen.getByRole('heading', { level: 1, name: 'For educators' })).toBeInTheDocument();
     expect(screen.getByText('Run a Thinkerwell lesson with your group')).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Browse the course' })).toHaveAttribute('href', '/course');
+    expect(screen.getByRole('link', { name: 'Set up a device' })).toHaveAttribute('href', '/educators/setup');
+    expect(screen.getByRole('link', { name: 'See a lesson on paper' })).toHaveAttribute('href', '/lesson/finding-out-about-the-past/print');
     expect(screen.getByText('One device for every 1 to 3 learners, or one big screen')).toBeInTheDocument();
-    expect(screen.getByRole('heading', { level: 2, name: 'How a session works' })).toBeInTheDocument();
-    expect(screen.getByText('Pick a lesson')).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Set up this device' })).toHaveAttribute('href', '/educators/setup');
+    // No link points at the old lesson list.
+    expect(document.querySelector('a[href^="#"]')).toBeNull();
   });
 
-  it('puts teaching first: how a session works and the lessons, then the group, then starting a pilot', () => {
+  it('is a short start page: running a session, materials, this device, resources for a group, then questions', () => {
     renderAt();
     const order = screen.getAllByRole('heading', { level: 2 }).map((heading) => heading.textContent);
-    const at = (name: string) => order.indexOf(name);
-    expect(at('How a session works')).toBeGreaterThan(-1);
-    expect(at('How a session works')).toBeLessThan(at('Preview any lesson'));
-    expect(at('Preview any lesson')).toBeLessThan(at('Follow your group'));
-    expect(at('Follow your group')).toBeLessThan(at('Starting a pilot'));
-  });
-
-  it('links everything for starting a pilot, then the tools for following the group', () => {
-    renderAt();
-    const pilot = screen.getByRole('region', { name: 'Starting a pilot' });
-    expect(within(pilot).getAllByRole('listitem').map((item) => item.querySelector('.tw-edu-check-title')?.textContent)).toEqual([
-      'For organisations',
-      'Information sheet',
-      'Consent form',
-      'Code cards',
-      'Pilot day guide',
-      'Before-and-after check',
+    expect(order).toEqual([
+      'What you need',
+      'Run a session',
+      'Teaching materials',
+      'On this device',
+      'Resources for your group',
+      'Questions, or something to fix?',
     ]);
-    expect(within(pilot).getByRole('link', { name: 'Read about pilots' })).toHaveAttribute('href', '/organisations');
-    expect(within(pilot).getByRole('link', { name: 'Print information sheets' })).toHaveAttribute('href', '/educators/information-sheet');
-    expect(within(pilot).getByRole('link', { name: 'Print consent forms' })).toHaveAttribute('href', '/educators/consent-form');
-    expect(within(pilot).getByRole('link', { name: 'Make code cards' })).toHaveAttribute('href', '/educators/code-cards');
-    expect(within(pilot).getByRole('link', { name: 'Print the guide' })).toHaveAttribute('href', '/educators/pilot-day');
-    expect(within(pilot).getByRole('link', { name: 'Print the check' })).toHaveAttribute('href', '/educators/pilot-check');
+    // The lesson list is gone from this page: it lives at /educators/guides.
+    expect(screen.queryByText('Preview any lesson')).toBeNull();
+    expect(screen.queryByRole('radiogroup')).toBeNull();
+    expect(screen.queryAllByRole('link', { name: /^Teacher guide for Lesson/ })).toHaveLength(0);
+  });
 
-    const tools = screen.getByRole('region', { name: 'Follow your group' });
-    expect(within(tools).getAllByRole('listitem').map((item) => item.querySelector('.tw-edu-check-title')?.textContent)).toEqual([
-      'The class on this device',
-      'Certificates',
+  it('says how to run a session in three short steps, with the overview video folded away', () => {
+    renderAt();
+    const how = screen.getByRole('region', { name: 'Run a session' });
+    expect(within(how).getAllByRole('listitem').map((item) => item.querySelector('.h3')?.textContent)).toEqual([
+      'Choose a lesson',
+      'Read, respond and discuss',
+      'Reflect together',
     ]);
-    expect(within(tools).getByRole('link', { name: 'See the class' })).toHaveAttribute('href', '/educators/class');
-    expect(within(tools).getByRole('link', { name: 'Print all certificates' })).toHaveAttribute('href', '/educators/class/certificates');
+    const fold = within(how).getByText('Watch a one-minute overview (optional)').closest('details')!;
+    expect(fold).not.toHaveAttribute('open');
   });
 
-  it('previews a lesson with ?preview=true, so nothing it does is ever saved', async () => {
-    const user = userEvent.setup();
+  it('links the teaching materials and the tools for this device', () => {
     renderAt();
-
-    await user.click(screen.getByRole('radio', { name: /Geography/ }));
-    const row = screen.getByRole('link', { name: new RegExp(`^Lesson 10\\b`) });
-    expect(row).toHaveAttribute('href', `/lesson/${L10.id}/read?preview=true`);
+    const materials = screen.getByRole('region', { name: 'Teaching materials' });
+    expect(within(materials).getByText('Teacher guides and answer keys')).toBeInTheDocument();
+    expect(within(materials).getByRole('link', { name: 'Open the list' })).toHaveAttribute('href', '/educators/guides');
+    const device = screen.getByRole('region', { name: 'On this device' });
+    expect(within(device).getByText('Progress stays on the device it was made on.')).toBeInTheDocument();
+    expect(within(device).getByRole('link', { name: 'See the class' })).toHaveAttribute('href', '/educators/class');
+    expect(within(device).getByRole('link', { name: 'Print all certificates' })).toHaveAttribute('href', '/educators/class/certificates');
   });
 
-  it("switches the lesson list when a different section chip is chosen, and keeps the choice in the address", async () => {
-    const user = userEvent.setup();
-    const router = renderAt();
-
-    // History is chosen at first; Geography's Lesson 10 isn't shown until it is.
-    expect(screen.getByRole('radio', { name: /History/ })).toHaveAttribute('aria-checked', 'true');
-    expect(screen.queryByText(L10.essentialQuestion)).not.toBeInTheDocument();
-    await user.click(screen.getByRole('radio', { name: /Geography/ }));
-    expect(screen.getByText(L10.essentialQuestion)).toBeInTheDocument();
-    expect(router.state.location.search).toBe('?section=geography');
-    // Replaced, not pushed, so Back leaves the page rather than stepping through chips.
-    expect(router.state.historyAction).toBe('REPLACE');
-  });
-
-  it('opens on the section in the address', () => {
-    renderAt('/educators?section=civics');
-    expect(screen.getByRole('radio', { name: /Civics/ })).toHaveAttribute('aria-checked', 'true');
-    expect(screen.getByRole('link', { name: /^Lesson 20\b/ })).toBeInTheDocument();
-  });
-
-  it('falls back to the first section for an unknown one', () => {
-    renderAt('/educators?section=nope');
-    expect(screen.getByRole('radio', { name: /History/ })).toHaveAttribute('aria-checked', 'true');
-  });
-
-  it.each(getSections().map((section) => [section.id, section] as const))(
-    '%s: each lesson has its teacher guide, and the section its answer key',
-    (id, section) => {
-      renderAt(`/educators?section=${id}`);
-      for (const lesson of getSectionLessons(id)) {
-        const guide = screen.getByRole('link', { name: `Teacher guide for Lesson ${lesson.number}` });
-        expect(guide).toHaveAttribute('href', `/educators/lesson/${lesson.id}`);
-        expect(guide).toHaveTextContent('Teacher guide');
-      }
-      expect(screen.getAllByRole('link', { name: /^Teacher guide for Lesson/ })).toHaveLength(section.lessons.length);
-      const key = screen.getByRole('link', { name: `Answer key for the ${section.title} section check` });
-      expect(key).toHaveAttribute('href', `/educators/section/${id}/answers`);
-      expect(key).toHaveTextContent('Answer key');
-      expect(screen.getByText(`Section check: ${section.title}`)).toBeInTheDocument();
-    },
-  );
-
-  it('no longer repeats the notes on the page: they are in each teacher guide', () => {
-    renderAt('/educators?section=geography');
-    expect(screen.queryByText(L10.sensitiveNotes[0]!)).not.toBeInTheDocument();
-    expect(screen.queryByRole('button', { name: /teaching notes/ })).not.toBeInTheDocument();
-  });
-
-  it('leaves out "Tell us what to fix" while there is no email address, and never shows a placeholder or a form', () => {
+  it('puts the resources for a group first, and the optional learning study in one closed fold', () => {
     renderAt();
-    expect(screen.queryByRole('heading', { name: 'Tell us what to fix' })).not.toBeInTheDocument();
+    const group = screen.getByRole('region', { name: 'Resources for your group' });
+    const titles = [...group.querySelectorAll('.tw-edu-check-title')].map((title) => title.textContent);
+    expect(titles).toEqual(['Using Thinkerwell with a group', 'Session guide', 'Learner code cards', 'Information sheet', 'Consent form', 'Learning check']);
+    expect(within(group).getByRole('link', { name: 'Read more' })).toHaveAttribute('href', '/organisations');
+    expect(within(group).getByRole('link', { name: 'Print the guide' })).toHaveAttribute('href', '/educators/session-guide');
+    expect(within(group).getByRole('link', { name: 'Make code cards' })).toHaveAttribute('href', '/educators/code-cards');
+
+    const study = within(group).getByText('Optional learning study').closest('details')!;
+    expect(study).not.toHaveAttribute('open');
+    expect(study).toHaveTextContent("You don't need any of this to teach a lesson.");
+    expect(within(study).getByRole('link', { name: 'Print information sheets' })).toHaveAttribute('href', '/educators/information-sheet');
+    expect(within(study).getByRole('link', { name: 'Print consent forms' })).toHaveAttribute('href', '/educators/consent-form');
+    expect(within(study).getByRole('link', { name: 'Print the check' })).toHaveAttribute('href', '/educators/learning-check');
+  });
+
+  it('says nothing about pilots, or what codes will do later', () => {
+    renderAt();
+    expect(document.body.textContent).not.toMatch(/pilot|Later, codes/i);
+  });
+
+  it('sends questions to the contact form, and shows no placeholder or form of its own while there is no address', () => {
+    renderAt();
+    const card = screen.getByRole('region', { name: 'Questions, or something to fix?' });
+    expect(within(card).getByRole('link', { name: 'Send an enquiry' })).toHaveAttribute('href', '/contact');
     expect(screen.queryByText(/\[FEEDBACK EMAIL\]|\[CONTACT EMAIL\]/)).not.toBeInTheDocument();
     expect(screen.queryByRole('textbox')).not.toBeInTheDocument();
     expect(screen.queryByRole('form')).not.toBeInTheDocument();
-  });
-
-  it('lists every lesson row within its section', () => {
-    renderAt('/educators?section=culture');
-    const rows = document.querySelectorAll('.tw-edu-lesson');
-    expect(rows).toHaveLength(5);
-    expect(within(rows[0] as HTMLElement).getByRole('link', { name: /^Lesson 15\b/ })).toBeInTheDocument();
   });
 });

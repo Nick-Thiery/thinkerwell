@@ -13,8 +13,8 @@
   max-inline-size: var(--reading-measure);
 }
 
-/* On a laptop the page uses the whole column: privacy and getting ready side
-   by side, everything else across both. */
+/* On a laptop the page uses the whole column: using the course and getting
+   ready side by side, everything else across both. */
 @media (min-width: 1100px) {
   .tw-org-page {
     display: grid;
@@ -25,6 +25,8 @@
   .tw-org-page > .tw-org-hero,
   .tw-org-page > .tw-org-pair,
   .tw-org-page > .tw-org-contact,
+  .tw-org-page > .tw-org-study,
+  .tw-org-page > .tw-org-who,
   .tw-org-page > .tw-sitevideo,
   .tw-org-page > [aria-labelledby='org-what'] {
     grid-column: 1 / -1;
@@ -34,10 +36,6 @@
 .tw-org-hero h1,
 .tw-org-hero p {
   margin: 0;
-}
-
-.tw-org-honesty {
-  color: var(--ink-muted);
 }
 
 .tw-org-hero-actions {

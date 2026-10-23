@@ -60,7 +60,7 @@ describe('Our World’s course details', () => {
     expect(englishContent.hasSectionChecks).toBe(true);
     expect(englishContent.coursePath()).toBe('/course');
     expect(englishContent.coursePath('history')).toBe('/course#history');
-    expect(englishContent.educatorsPath?.('civics')).toBe('/educators?section=civics');
+    expect(englishContent.guidesPath?.('civics')).toBe('/educators/guides?section=civics');
     expect(englishContent.sectionLook('geography')).toEqual({ tone: 'geography', icon: 'Map' });
   });
 });

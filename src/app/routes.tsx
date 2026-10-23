@@ -6,6 +6,7 @@ import { NotFoundPage } from '../pages/NotFoundPage';
 import { RouteErrorPage } from '../pages/RouteErrorPage';
 import { AppLayout } from './AppLayout';
 import { lazyPage as page } from './lazyPage';
+import { OLD_EDUCATOR_PATHS } from './lessonUrls';
 import { loadPreviewDoor } from './previewDoor';
 
 // Three chunks rather than one per page: fewer files to fetch and keep,
@@ -109,8 +110,11 @@ export const routes: RouteObject[] = [
       // (For organisations, the information sheet, the consent form and code
       // cards), with the other Educators pages.
       { path: 'educators/setup', ...page(teacherPages, (m) => m.SetupPage) },
-      { path: 'educators/pilot-day', ...page(teacherPages, (m) => m.PilotDayPage) },
-      { path: 'educators/pilot-check', ...page(teacherPages, (m) => m.PilotCheckPage) },
+      { path: 'educators/session-guide', ...page(teacherPages, (m) => m.PilotDayPage) },
+      { path: 'educators/learning-check', ...page(teacherPages, (m) => m.PilotCheckPage) },
+      // Their addresses until October 2026 (vercel.json redirects them too, for links from outside).
+      ...OLD_EDUCATOR_PATHS.map(([old, now]) => ({ path: old.slice(1), element: <Navigate to={now} replace /> })),
+      { path: 'educators/guides', ...page(teacherPages, (m) => m.GuidesPage) },
       { path: 'educators/information-sheet', ...page(teacherPages, (m) => m.InformationSheetPage) },
       { path: 'educators/consent-form', ...page(teacherPages, (m) => m.ConsentFormPage) },
       { path: 'educators/code-cards', ...page(teacherPages, (m) => m.CodeCardsPage) },
