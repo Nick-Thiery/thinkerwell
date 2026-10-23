@@ -124,7 +124,7 @@ export function InformationSheetPage() {
             <h3 id="sheet-questions">{t('pages.infoSheet.questionsTitle')}</h3>
             <p>
               {CONTACT_EMAIL
-                ? tx('pages.infoSheet.questionsEmail', { contact: filled.contact, organisation: org, email: CONTACT_EMAIL })
+                ? tx('pages.infoSheet.questionsEmail', { contact: filled.contact, organisation: org, email: <span translate="no">{CONTACT_EMAIL}</span> })
                 : tx('pages.infoSheet.questions', { contact: filled.contact, organisation: org })}
             </p>
             <p>{t('pages.infoSheet.runBy')}</p>

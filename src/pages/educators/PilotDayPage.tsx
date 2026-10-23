@@ -182,7 +182,11 @@ export function PilotDayPage() {
               <h3 id="pilotday-contact">{parent.t('pages.educators.feedbackTitle')}</h3>
               <p>
                 {parent.tx('pages.educators.feedbackBody', {
-                  email: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>,
+                  email: (
+                    <a href={`mailto:${CONTACT_EMAIL}`} translate="no">
+                      {CONTACT_EMAIL}
+                    </a>
+                  ),
                 })}
               </p>
             </section>

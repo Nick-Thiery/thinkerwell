@@ -409,7 +409,8 @@ export const pageTour: TourStop[] = [
       await page.locator('.tw-edu-tools').getByRole('link', { name: ui('pages.educators.pilotDayCta') }).click();
       await expect(page.locator('h1')).toHaveText(ui('pilotDay.title'));
       await expect(page.getByRole('heading', { level: 3, name: ui('pilotDay.wrongTitle') })).toBeVisible();
-      await expect(page.getByRole('heading', { level: 3 })).toHaveCount(6);
+      // The six parts, and who to contact (src/app/contact.ts).
+      await expect(page.getByRole('heading', { level: 3 })).toHaveCount(7);
     },
   },
   {

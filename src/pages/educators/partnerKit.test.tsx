@@ -1,11 +1,14 @@
 import { cleanup, render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { createMemoryRouter, RouterProvider } from 'react-router';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { OrganisationsPage } from '../OrganisationsPage';
 import { CodeCardsPage } from './CodeCardsPage';
 import { ConsentFormPage } from './ConsentFormPage';
 import { InformationSheetPage } from './InformationSheetPage';
+
+// These tests cover the pages without an address (src/app/contact.ts); contactEmail.test.tsx covers them with the real one.
+vi.mock('../../app/contact', () => ({ CONTACT_EMAIL: null }));
 
 /** The partner kit: For organisations, the information sheet, the consent form and code cards. */
 
