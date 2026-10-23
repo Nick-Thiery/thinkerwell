@@ -1,22 +1,31 @@
 /**
- * For organisations (/organisations): what a partner organisation needs to
- * decide on a pilot. What Thinkerwell is, a short video of a session (the
- * site's own file, played only when tapped: ./siteVideo/), what partners get, what we ask,
- * how learners' privacy is kept, the tools to get ready, and how to
- * contact us. Linked from the Educators page ("Starting a pilot") and the
- * footer of every page.
+ * For organisations (/organisations): for a learning organisation thinking
+ * of using Thinkerwell with its learners, now (October 2026, Justin's brief
+ * "remove pilot framing": the page no longer presents the platform as a
+ * pilot). What Thinkerwell offers, a short video of a session (the site's
+ * own file, played only when tapped: ./siteVideo/), what you get and what
+ * you need to run a group, using the course and its privacy, the optional
+ * learning study and its data sharing (only for an organisation taking
+ * part, with the consent form's promise kept word for word), getting ready,
+ * who runs Thinkerwell, and getting in touch (the contact form, /contact,
+ * and the team's address). Linked from the Educators page and the footer.
  *
  * Honest about scope (CLAUDE.md rule 8): a student-led platform, not a
- * registered charity. Honest about data too: today learners' work and
- * progress aren't sent to Thinkerwell, YouTube and online speech-to-text are
- * the outside services a learner can reach, and the anonymous pilot data the
- * consent form describes comes later (docs/research/MEASUREMENT_PLAN.md).
- * "Get in touch" at the top and in the contact card goes to the contact form
- * (/contact); the card also gives the team's address (CONTACT_EMAIL). The wording follows
- * docs/content/PUBLIC_COPY.md.
+ * registered charity. Honest about data too: learners' work and progress
+ * stay on the device; the study's coded data is not called anonymous. The
+ * wording follows docs/content/PUBLIC_COPY.md.
  */
 import { CONTACT_EMAIL } from '../app/contact';
-import { codeCardsPath, consentFormPath, contactPath, informationSheetPath, setupPath } from '../app/lessonUrls';
+import {
+  codeCardsPath,
+  consentFormPath,
+  contactPath,
+  coursePath,
+  informationSheetPath,
+  learningCheckPath,
+  sessionGuidePath,
+  setupPath,
+} from '../app/lessonUrls';
 import { useFullPageTitle } from '../app/usePageTitle';
 import { Button, Icon, type IconName } from '../components/ds';
 import { useContent } from '../content/useContent';
@@ -31,10 +40,10 @@ const GET: readonly MessageKey[] = [
   'pages.organisations.get4',
 ];
 
+/** Using the course: what stays on the device, codes instead of names, and the optional videos. */
 const PRIVACY: ReadonlyArray<{ icon: IconName; key: MessageKey }> = [
   { icon: 'User', key: 'pages.organisations.privacy1' },
   { icon: 'Lock', key: 'pages.organisations.privacy2' },
-  { icon: 'FileText', key: 'pages.organisations.privacy3' },
   { icon: 'Play', key: 'pages.organisations.privacy4' },
 ];
 
@@ -62,10 +71,12 @@ export function OrganisationsPage() {
           {title}
         </h1>
         <p className="body-lg">{t('pages.organisations.intro')}</p>
-        <p className="tw-org-honesty">{t('pages.organisations.honesty')}</p>
         <div className="tw-org-hero-actions">
           <Button variant="primary" icon="Mail" href={contactPath()}>
             {t('pages.organisations.getInTouch')}
+          </Button>
+          <Button variant="secondary" icon="BookOpen" href={coursePath()}>
+            {t('pages.educators.browseCourse')}
           </Button>
         </div>
       </header>
@@ -130,37 +141,70 @@ export function OrganisationsPage() {
         </h2>
         <p>{t('pages.organisations.startBody')}</p>
         <div className="tw-org-actions">
+          <Button variant="secondary" icon="ListChecks" href={setupPath()}>
+            {t('pages.educators.setupCta')}
+          </Button>
+          <Button variant="secondary" icon="User" href={codeCardsPath()}>
+            {t('pages.educators.pilotCodesCta')}
+          </Button>
+          <Button variant="secondary" icon="GraduationCap" href={sessionGuidePath()}>
+            {t('pages.educators.pilotDayCta')}
+          </Button>
+        </div>
+      </section>
+
+      {/* The optional learning study: only for an organisation taking part. The consent form's promise, kept as it is. */}
+      <section aria-labelledby="org-study" className="tw-org-card tw-org-study">
+        <h2 id="org-study" className="h2">
+          {t('pages.organisations.studyTitle')}
+        </h2>
+        <p>{t('pages.organisations.studyIntro')}</p>
+        <ul className="tw-org-list" role="list">
+          <li>
+            <Icon name="FileText" size={22} />
+            <span>{t('pages.organisations.privacy3')}</span>
+          </li>
+          <li>
+            <Icon name="Lock" size={22} />
+            <span>{t('pages.organisations.studyShare')}</span>
+          </li>
+        </ul>
+        <div className="tw-org-actions">
           <Button variant="secondary" icon="BookOpen" href={informationSheetPath()}>
             {t('pages.educators.pilotSheetCta')}
           </Button>
           <Button variant="secondary" icon="FileText" href={consentFormPath()}>
             {t('pages.educators.pilotConsentCta')}
           </Button>
-          <Button variant="secondary" icon="User" href={codeCardsPath()}>
-            {t('pages.educators.pilotCodesCta')}
-          </Button>
-          <Button variant="secondary" icon="ListChecks" href={setupPath()}>
-            {t('pages.educators.setupCta')}
+          <Button variant="secondary" icon="ClipboardCheck" href={learningCheckPath()}>
+            {t('pages.educators.pilotCheckCta')}
           </Button>
         </div>
       </section>
 
-      {CONTACT_EMAIL ? (
-        <section aria-labelledby="org-contact" className="tw-org-card tw-org-contact">
-          <h2 id="org-contact" className="h2">
-            {t('pages.organisations.contactTitle')}
-          </h2>
-          <p>{t('pages.organisations.contactBody')}</p>
-          <div className="tw-org-actions">
-            <Button variant="secondary" icon="Mail" href={contactPath()}>
-              {t('pages.organisations.getInTouch')}
-            </Button>
+      <section aria-labelledby="org-who" className="tw-org-card tw-org-who">
+        <h2 id="org-who" className="h2">
+          {t('pages.organisations.whoTitle')}
+        </h2>
+        <p>{t('pages.organisations.honesty')}</p>
+      </section>
+
+      <section aria-labelledby="org-contact" className="tw-org-card tw-org-contact">
+        <h2 id="org-contact" className="h2">
+          {t('pages.organisations.contactTitle')}
+        </h2>
+        <p>{t('pages.organisations.contactBody')}</p>
+        <div className="tw-org-actions">
+          <Button variant="secondary" icon="Mail" href={contactPath()}>
+            {t('pages.organisations.getInTouch')}
+          </Button>
+          {CONTACT_EMAIL ? (
             <a href={`mailto:${CONTACT_EMAIL}`} className="tw-org-email" translate="no">
               {CONTACT_EMAIL}
             </a>
-          </div>
-        </section>
-      ) : null}
+          ) : null}
+        </div>
+      </section>
     </div>
   );
 }

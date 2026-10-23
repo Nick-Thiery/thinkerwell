@@ -17,7 +17,7 @@ Branch `teacher-tools`. Built on 28 September 2026.
   - the video (title, channel, length, a YouTube link and its content note);
   - the sources.
 - **An answer key for every section check** at `/educators/section/:id/answers` (`AnswerKeyPage.tsx`). Every question has its skill, its made-up example, the options in the file's order with the correct one marked, the feedback for each option, and the lesson it comes from, linked to that lesson's guide. A line at the top says the check is for practice and never blocks learners.
-- **The Educators page** links both. Each lesson row has "Teacher guide" under it, and each section's list ends with its check and "Answer key". The chosen section is kept in the address (`?section=geography`), so "Back to the educators page" returns to the same list.
+- **The list of teacher guides** (`/educators/guides`, `GuidesPage.tsx`, since October 2026) links both: four folded sections, each lesson with "Teacher guide" and "Print", and each section's list ending with its check and "Answer key". `?section=` opens one, and "Back to teacher guides" on a guide or an answer key comes back to it. The Educators page links the list once, under "Teaching materials"; it used to list every lesson itself, with section chips (`?section=` on `/educators`).
 - **Screen and paper are the same page.** Both pages use the print views' sheet (`src/pages/print/print.css`) plus `src/pages/educators/teacherTools.css`. Printed, they are black on white, with no header, menus or buttons, and a link's address is printed after it. On A4, a guide takes 5 to 7 pages and an answer key 5 or 6.
 - **Checks.** The page tour (`e2e/pageTour.ts`) stops at a guide and an answer key, so the sideways-scroll, axe and focus-ring, right-to-left, tap-size and privacy specs cover them. The 360px pass opens all 24 guides and all 4 answer keys. The offline spec opens both offline, and the print spec prints both on A4. Vitest renders every guide and every answer key and checks that their content comes from the files, with the right answers marked (`TeacherGuidePage.test.tsx`, `AnswerKeyPage.test.tsx`).
 
@@ -44,4 +44,4 @@ Branch `teacher-tools`. Built on 28 September 2026.
 - **Check the sorting of `sensitiveNotes`** (the content team).
 - **Try printing on HELP's own printer and paper.** The page counts above come from Chromium's A4 PDF. US Letter should work too, but it hasn't been checked.
 - The guide doesn't repeat the lesson's reading text, sentence starters or the video's written version. The learners' print view, linked from the guide, has them.
-- `[FEEDBACK EMAIL]` on the Educators page is still a placeholder.
+- ~~`[FEEDBACK EMAIL]` on the Educators page is still a placeholder.~~ The address is hello@thinkerwell.app, and questions go to the contact form (`docs/notes/contact-form.md`).

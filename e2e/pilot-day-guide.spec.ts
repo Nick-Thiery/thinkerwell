@@ -5,7 +5,7 @@ import { pdfPageOrientations } from './lessonHelpers';
 import { settle } from './pageTour';
 
 // The pilot day guide for staff (docs/notes/pilot-day-tools.md): one page for
-// screen and paper, linked from the Educators page's "Starting a pilot". On
+// screen and paper, linked from the Educators page's "Resources for your group". On
 // paper, in English, Bahasa Indonesia and Bahasa Melayu, it is one page on A4
 // and on Letter, black on white, with nothing smaller than the site's
 // smallest text (14px, 10.5pt). The page on screen (layout, tap sizes, axe,
@@ -62,14 +62,14 @@ async function printed(page: Page): Promise<{ A4: string[]; Letter: string[]; co
   return { A4, Letter, colours, small };
 }
 
-test('staff find the guide under "Starting a pilot" on the Educators page, and come back from it', async ({ page }) => {
+test('staff find the guide under "Resources for your group" on the Educators page, and come back from it', async ({ page }) => {
   await page.goto('/educators');
-  const pilot = page.getByRole('region', { name: 'Starting a pilot' });
-  await expect(pilot.getByText('Pilot day guide')).toBeVisible();
-  await pilot.getByRole('link', { name: 'Print the guide' }).click();
-  await expect(page).toHaveURL(/\/educators\/pilot-day$/);
-  await expect(page.locator('h1')).toHaveText('Pilot day guide');
-  await expect(page.getByRole('article', { name: 'Pilot day: a one-page guide for staff' })).toBeVisible();
+  const group = page.getByRole('region', { name: 'Resources for your group' });
+  await expect(group.getByText('Session guide')).toBeVisible();
+  await group.getByRole('link', { name: 'Print the guide' }).click();
+  await expect(page).toHaveURL(/\/educators\/session-guide$/);
+  await expect(page.locator('h1')).toHaveText('Session guide');
+  await expect(page.getByRole('article', { name: 'A one-page guide for staff' })).toBeVisible();
   // No contact line and no placeholder until the team has an address (src/app/contact.ts).
   await expect(page.getByText(/\[|CONTACT EMAIL/)).toHaveCount(0);
   await page.getByRole('link', { name: 'Back to the educators page' }).click();
@@ -80,7 +80,7 @@ for (const locale of ['en', 'id', 'ms'] as const) {
   // Prints to PDF, which only Chromium can (docs/notes/safari-testing.md).
   test(`the guide is one page on A4 and on Letter, black on white, with nothing under 14px (${locale})`, { tag: '@chromium-only' }, async ({ page }) => {
     await useLanguage(page, locale);
-    await page.goto('/educators/pilot-day');
+    await page.goto('/educators/session-guide');
     await expect(page.locator('h1')).toHaveText(msg(locale, 'pilotDay.title'));
     // The six parts, and who to contact (src/app/contact.ts).
     await expect(page.getByRole('heading', { level: 3 })).toHaveCount(7);

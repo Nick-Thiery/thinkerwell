@@ -56,14 +56,30 @@ export function setupPath(): string {
   return '/educators/setup';
 }
 
-/** The staff's one-page guide for a pilot day, to print: /educators/pilot-day. */
-export function pilotDayPath(): string {
-  return '/educators/pilot-day';
+/** The staff's one-page guide for a session, to print: /educators/session-guide (it was /educators/pilot-day). */
+export function sessionGuidePath(): string {
+  return '/educators/session-guide';
 }
 
-/** The before-and-after check's paper sheets and answer key, to print: /educators/pilot-check. */
-export function pilotCheckPath(): string {
-  return '/educators/pilot-check';
+/** The learning check's paper sheets and answer key, for the optional study, to print: /educators/learning-check (it was /educators/pilot-check). */
+export function learningCheckPath(): string {
+  return '/educators/learning-check';
+}
+
+/** The addresses those two had until October 2026; they still open the new ones. */
+export const OLD_EDUCATOR_PATHS: ReadonlyArray<readonly [old: string, now: string]> = [
+  ['/educators/pilot-day', '/educators/session-guide'],
+  ['/educators/pilot-check', '/educators/learning-check'],
+];
+
+/** Every lesson's teacher guide and print view, and every section check's answer key: /educators/guides, a section open with `?section=`. */
+export function guidesPath(sectionId?: string): string {
+  return sectionId ? `/educators/guides?section=${encodeURIComponent(sectionId)}` : '/educators/guides';
+}
+
+/** The course page: /course. */
+export function coursePath(): string {
+  return '/course';
 }
 
 /** Every learner on this device and what each has done: /educators/class. */
@@ -76,9 +92,9 @@ export function allCertificatesPath(): string {
   return '/educators/class/certificates';
 }
 
-/** The Educators page, with a section's lessons listed (its `?section=`). */
-export function educatorsPath(sectionId?: string): string {
-  return sectionId ? `/educators?section=${encodeURIComponent(sectionId)}` : '/educators';
+/** The Educators page: /educators. */
+export function educatorsPath(): string {
+  return '/educators';
 }
 
 /** Everyone whose work Thinkerwell is built on: /credits. */

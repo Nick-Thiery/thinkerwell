@@ -71,12 +71,12 @@ describe('AnswerKeyPage', () => {
     },
   );
 
-  it('offers Print and a way back to the section on the Educators page', () => {
+  it('offers Print and a way back to its section in the list of teacher guides', () => {
     const print = vi.spyOn(window, 'print').mockImplementation(() => undefined);
     renderKey(getSection('culture')!, getQuiz('culture')!);
     screen.getByRole('button', { name: 'Print' }).click();
     expect(print).toHaveBeenCalledTimes(1);
-    expect(screen.getByRole('link', { name: 'Back to the educators page' })).toHaveAttribute('href', '/educators?section=culture');
+    expect(screen.getByRole('link', { name: 'Back to teacher guides' })).toHaveAttribute('href', '/educators/guides?section=culture');
   });
 });
 

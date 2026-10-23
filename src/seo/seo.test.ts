@@ -57,7 +57,7 @@ describe('the indexable pages', () => {
     });
     expect(byPath['/organisations']).toMatchObject({
       title: 'For Organisations | Thinkerwell',
-      description: 'Learn how a pilot with Thinkerwell could support social studies learning for youth facing barriers to education.',
+      description: "Use Thinkerwell's free social studies course and educator resources with your learners, on shared devices or in print.",
     });
     expect(byPath['/credits']).toMatchObject({
       title: 'Credits and Sources | Thinkerwell',

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { getLesson, getLessons, STAGES, type LessonStep } from '../content';
 import { resolveLessonPrintRoute, resolveLessonRoute, resolveTeacherGuideRoute } from './lessonRoutes';
-import { answerKeyPath, educatorsPath, lessonPath, sectionCheckPath, teacherGuidePath } from './lessonUrls';
+import { answerKeyPath, educatorsPath, guidesPath, learningCheckPath, lessonPath, sectionCheckPath, sessionGuidePath, teacherGuidePath } from './lessonUrls';
 
 const STEPS: LessonStep[] = [...STAGES, 'complete'];
 const lessons = getLessons();
@@ -141,7 +141,10 @@ describe('teacher tools', () => {
     expect(answerKeyPath('history')).toBe('/educators/section/history/answers');
     expect(answerKeyPath('a b/c')).toBe('/educators/section/a%20b%2Fc/answers');
     expect(educatorsPath()).toBe('/educators');
-    expect(educatorsPath('geography')).toBe('/educators?section=geography');
+    expect(guidesPath('geography')).toBe('/educators/guides?section=geography');
+    expect(guidesPath()).toBe('/educators/guides');
+    expect(sessionGuidePath()).toBe('/educators/session-guide');
+    expect(learningCheckPath()).toBe('/educators/learning-check');
   });
 
   it('shows every lesson\'s teacher guide, and redirects old and differently cased ids', () => {

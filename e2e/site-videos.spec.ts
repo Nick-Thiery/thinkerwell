@@ -30,17 +30,24 @@ function videoRequests(page: Page): string[] {
   return paths;
 }
 
+/** The Educators page folds its video away under "Watch a one-minute overview (optional)" (October 2026). */
 const PAGES = [
-  { path: '/educators', heading: 'For educators', title: 'Run a session' },
-  { path: '/organisations', heading: 'For organisations', title: 'Run a session' },
-  { path: '/educators/setup', heading: 'Set up this device', title: 'Set up a device' },
+  { path: '/educators', heading: 'For educators', title: 'Run a session', fold: 'Watch a one-minute overview (optional)' },
+  { path: '/organisations', heading: 'Use Thinkerwell with your learners', title: 'Run a session', fold: null },
+  { path: '/educators/setup', heading: 'Set up this device', title: 'Set up a device', fold: null },
 ];
 
-for (const { path, heading, title } of PAGES) {
+async function openEducatorsVideo(page: Page): Promise<void> {
+  await page.goto('/educators');
+  await page.getByText('Watch a one-minute overview (optional)').click();
+}
+
+for (const { path, heading, title, fold } of PAGES) {
   test(`${path} offers "${title}", and downloads nothing of it before the tap`, async ({ page }) => {
     const requested = videoRequests(page);
     await page.goto(path);
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(heading);
+    if (fold) await page.getByText(fold).click();
     const card = page.locator('.tw-sitevideo');
     // Under the checklist's h1 the title is an h2; elsewhere it sits under a section's h2.
     await expect(card.getByRole('heading', { level: path === '/educators/setup' ? 2 : 3, name: title })).toBeVisible();
@@ -166,7 +173,7 @@ test('with Save data on, only the written version shows and no video is offered'
 });
 
 test('offline, the written version shows with a way to try the video again', async ({ page, context }) => {
-  await page.goto('/educators');
+  await openEducatorsVideo(page);
   await expect(page.locator('.tw-sitevideo').getByRole('button', { name: 'Watch the video' })).toBeVisible();
   await context.setOffline(true);
   await page.locator('.tw-sitevideo').getByRole('button', { name: 'Watch the video' }).click();
@@ -180,7 +187,7 @@ test('offline, the written version shows with a way to try the video again', asy
 test('a file that can’t play here gives way to the written version, with a way to try again', async ({ page }) => {
   // The file comes back broken (some Chromium builds can decode the real H.264 file and some can't, so the test makes the failure itself).
   await page.route(/\/video\/.*\.mp4$/, (route) => route.fulfill({ status: 200, contentType: 'video/mp4', body: Buffer.from('not a video') }));
-  await page.goto('/educators');
+  await openEducatorsVideo(page);
   const card = page.locator('.tw-sitevideo');
   await card.getByRole('button', { name: 'Watch the video' }).click();
   await expect(card.getByText("This video can't play here right now.")).toBeVisible();

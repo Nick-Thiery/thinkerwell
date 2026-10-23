@@ -20,7 +20,7 @@ An in-app version (the plan's `mode: "assessment"`) can come later, if the paper
 
 ## Where it is
 
-- **`/educators/pilot-check`** (`src/pages/educators/pilotCheck/`), under "Starting a pilot" on the Educators page. Two printouts, chosen above the sheets:
+- **`/educators/learning-check`** (`src/pages/educators/pilotCheck/`; `/educators/pilot-check` until October 2026, which still opens it), in the Educators page's folded "Optional learning study". The page calls it the **learning check** and says the sheets alone don't prove what learners learned. Two printouts, chosen above the sheets:
   - **Sheets for learners**: the code, "First session" or "Last session" and the date at the top of each page, never a name; Part 1, the 16 questions (a letter in a circle to ring, A, B or C); Part 2, the writing task with lines; Part 3, the five statements with four drawn faces ("Not yet", "A little", "Mostly", "Yes"). Each part starts a new page.
   - **Answer key for the team**: each question's right letter and option, its lesson and whether the pilot teaches it, and the writing rubric.
 - **The questions** are content: `content/pilot-check/en.json` (the source: each question's lesson, whether it is taught, its area, which option is right), with the Indonesian and Malay words in `id.json` and `ms.json`, in the same order (`pilotCheckContent.test.ts` checks they match). The page shows the language on screen when it has its own words, else English, marked `lang="en"`. Each language is a chunk of its own that loads with the page; all three are in the offline copy, so a centre can print without the internet.

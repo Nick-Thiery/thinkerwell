@@ -19,42 +19,62 @@ function renderAt(path: string, element: React.ReactElement) {
 }
 
 describe('For organisations', () => {
-  it('says what Thinkerwell is, and plainly that it is not a registered charity', () => {
+  it('is about using Thinkerwell now, and says plainly who runs it and that it is not a registered charity', () => {
     renderAt('/organisations', <OrganisationsPage />);
-    expect(screen.getByRole('heading', { level: 1, name: 'For organisations' })).toBeInTheDocument();
-    expect(screen.getByText(/Thinkerwell is a student-led platform working to expand access to free digital social studies learning/)).toBeInTheDocument();
-    expect(screen.getByText(/It is not a registered charity or nonprofit/)).toBeInTheDocument();
+    expect(screen.getByText('For learning organisations')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1, name: 'Use Thinkerwell with your learners' })).toBeInTheDocument();
+    expect(screen.getByText(/Thinkerwell offers a free social studies course and educator resources for youth across Southeast Asia/)).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Browse the course' })).toHaveAttribute('href', '/course');
+    const who = screen.getByRole('region', { name: 'Who runs Thinkerwell?' });
+    expect(within(who).getByText(/It is not a registered charity or nonprofit/)).toBeInTheDocument();
     expect(screen.getByText(/One course, Exploring Our World: 24 lessons .* for learners aged about 10 to 17/)).toBeInTheDocument();
+    // The platform isn't presented as a pilot anywhere on the page.
+    expect(document.body.textContent).not.toMatch(/pilot/i);
   });
 
-  it('covers what partners get, what we ask, privacy and getting ready', () => {
+  it('covers what you get, what you need to run a group, using the course and getting ready', () => {
     renderAt('/organisations', <OrganisationsPage />);
-    for (const name of ['What you get', 'What we ask', 'Privacy', 'Get ready']) {
+    for (const name of ['What Thinkerwell offers', 'What you get', 'What you need to run a group', 'Using the course', 'Get ready']) {
       expect(screen.getByRole('heading', { level: 2, name })).toBeInTheDocument();
     }
-    const ask = screen.getByRole('region', { name: 'What we ask' });
-    expect(within(ask).getByText('One contact person at your organisation.')).toBeInTheDocument();
-    expect(within(ask).getByText(/A few sessions a week for 4 to 6 weeks/)).toBeInTheDocument();
-    expect(within(ask).getByText(/Honest feedback/)).toBeInTheDocument();
-    const privacy = screen.getByRole('region', { name: 'Privacy' });
-    expect(within(privacy).getByText(/Pilot groups can use codes instead of names\. Each learner gets a code card/)).toBeInTheDocument();
-    expect(within(privacy).getByText(/Parental consent\./)).toBeInTheDocument();
+    const need = screen.getByRole('region', { name: 'What you need to run a group' });
+    expect(within(need).getByText('An educator or volunteer to lead each session.')).toBeInTheDocument();
+    // No weeks-long commitment, and no study tasks, to use the course.
+    expect(need.textContent).not.toMatch(/weeks|feedback|study/i);
+    const using = screen.getByRole('region', { name: 'Using the course' });
+    expect(within(using).getByText(/Learners can use codes instead of names\. Each learner gets a code card/)).toBeInTheDocument();
     // Honest about the outside services a learner can reach: never "nothing leaves the device".
+    expect(within(using).getByText(/Learners' work and progress stay on the device they use, and are not sent to Thinkerwell\. Online speech-to-text is off/)).toBeInTheDocument();
+    expect(within(using).getByText(/They play from YouTube/)).toBeInTheDocument();
+    expect(screen.queryByText(/nothing at all leaves the device/)).not.toBeInTheDocument();
+    const ready = screen.getByRole('region', { name: 'Get ready' });
+    expect(within(ready).getByRole('link', { name: 'Open the checklist' })).toHaveAttribute('href', '/educators/setup');
+    expect(within(ready).getByRole('link', { name: 'Make code cards' })).toHaveAttribute('href', '/educators/code-cards');
+    expect(within(ready).getByRole('link', { name: 'Print the guide' })).toHaveAttribute('href', '/educators/session-guide');
+  });
+
+  it('keeps the optional learning study apart, with its consent and data sharing said in full', () => {
+    renderAt('/organisations', <OrganisationsPage />);
+    const study = screen.getByRole('region', { name: 'Optional learning study and data sharing' });
+    expect(within(study).getByText(/Only for organisations that choose to take part in a learning study with Thinkerwell\. It isn't needed to use the course\./)).toBeInTheDocument();
+    expect(within(study).getByText(/a parent or guardian signs a consent form, and the learner says yes too/)).toBeInTheDocument();
     expect(
-      within(privacy).getByText(
-        /Learners' work and progress are not sent to Thinkerwell\. The one exception is a pilot run with you: once families have signed the consent form, and only when your staff turn on “Share pilot results” in Settings, the site sends how learners use it, linked to a code and never a name\. Online speech-to-text is off/,
+      within(study).getByText(
+        /Once families have signed the consent form, and only when your staff turn on “Share optional study data” in Settings, the site sends how learners use it, linked to a learner code and never a name\. Coded data is not anonymous/,
       ),
     ).toBeInTheDocument();
-    expect(within(privacy).getByText(/They play from YouTube/)).toBeInTheDocument();
-    expect(screen.queryByText(/nothing at all leaves the device/)).not.toBeInTheDocument();
-    // No contact card, and no placeholder, until there is a real address (src/app/contact.ts).
-    expect(screen.queryByRole('heading', { name: 'Contact us' })).not.toBeInTheDocument();
+    expect(within(study).getByRole('link', { name: 'Print information sheets' })).toHaveAttribute('href', '/educators/information-sheet');
+    expect(within(study).getByRole('link', { name: 'Print consent forms' })).toHaveAttribute('href', '/educators/consent-form');
+    expect(within(study).getByRole('link', { name: 'Print the check' })).toHaveAttribute('href', '/educators/learning-check');
+    expect(study.textContent).not.toMatch(/anonymous data|is anonymous/);
+  });
+
+  it('gets in touch through the contact form, with no placeholder address', () => {
+    renderAt('/organisations', <OrganisationsPage />);
+    const links = screen.getAllByRole('link', { name: 'Get in touch' });
+    expect(links).toHaveLength(2);
+    for (const link of links) expect(link).toHaveAttribute('href', '/contact');
     expect(screen.queryByText(/\[CONTACT EMAIL\]/)).not.toBeInTheDocument();
-    expect(within(privacy).getByText(/a parent or guardian signs a consent form, and the learner says yes too/)).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Print information sheets' })).toHaveAttribute('href', '/educators/information-sheet');
-    expect(screen.getByRole('link', { name: 'Print consent forms' })).toHaveAttribute('href', '/educators/consent-form');
-    expect(screen.getByRole('link', { name: 'Make code cards' })).toHaveAttribute('href', '/educators/code-cards');
-    expect(screen.getByRole('link', { name: 'Open the checklist' })).toHaveAttribute('href', '/educators/setup');
   });
 });
 

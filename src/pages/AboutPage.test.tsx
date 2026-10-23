@@ -82,7 +82,8 @@ describe('AboutPage', () => {
       'See a relevant example, or choose Read instead.',
       'Revisit what you learned and what you still wonder.',
     ]);
-    expect(within(lessons).getByText(/informs this design\. Our first pilot will help us learn how the full sequence works/)).toBeInTheDocument();
+    expect(within(lessons).getByText(/informs this design\.$/)).toBeInTheDocument();
+    expect(lessons.textContent).not.toMatch(/pilot/i);
   });
 
   it('keeps the research folded away until opened, and says the studies did not test Thinkerwell', async () => {

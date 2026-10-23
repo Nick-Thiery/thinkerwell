@@ -1318,12 +1318,6 @@
     "flag": true,
     "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed."
   },
-  "pages.educators.previewLesson": {
-    "flag": true,
-    "note": "Used 'Pratinjau' (standard software term) for preview throughout the teacher pages. Simpler alternative: 'Coba lihat pelajaran'.",
-    "source": "Preview a lesson",
-    "back": "Lesson preview"
-  },
   "pages.educators.printLesson": {
     "source": "See a lesson on paper",
     "back": "See the print version of the lesson"
@@ -1351,12 +1345,14 @@
     "back": "Internet for the first visit and for videos"
   },
   "pages.educators.howTitle": {
-    "source": "How a session works",
-    "back": "How one session goes"
+    "source": "Run a session",
+    "back": "Run a session",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.educators.step1Title": {
-    "source": "Pick a lesson",
-    "back": "Choose a lesson"
+    "source": "Choose a lesson",
+    "back": "Choose a lesson",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.educators.step1Body": {
     "source": "Lessons can go in any order. Choose one that fits your group, or follow the numbers.",
@@ -1365,40 +1361,23 @@
     "note": "Changed from \"kamu\" to \"Anda\" (September 2026): pages for adults (educators, partners, parents) use \"Anda\"; pages for learners keep \"kamu\". Drafted by AI, not yet reviewed."
   },
   "pages.educators.step2Title": {
-    "source": "Work through five steps",
-    "back": "Do the five steps"
+    "source": "Read, respond and discuss",
+    "back": "Read, respond and discuss",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.educators.step2Body": {
-    "source": "Read, Write, Speak, Watch, Reflect. Pair learners for Speak. Watch can be skipped.",
-    "back": "Read, Write, Speak, Watch, Reflect. Pair learners up for Speak. Watch may be skipped."
+    "source": "Learners read, write about what they read and talk it through in pairs. Watch is optional.",
+    "back": "Learners read, write about what they read and talk it through in pairs. Watch is optional.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.educators.step3Title": {
-    "source": "Share and reflect",
-    "back": "Share and reflect"
+    "source": "Reflect together",
+    "back": "Reflect together",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.educators.step3Body": {
     "source": "Ask two or three learners to share their answer. Everyone writes one reflection.",
     "back": "Ask two or three learners to share their answer. Everyone writes one reflection."
-  },
-  "pages.educators.previewTitle": {
-    "source": "Preview any lesson",
-    "back": "Preview any lesson"
-  },
-  "pages.educators.previewNote": {
-    "source": "Previews never save anything",
-    "back": "Preview never saves anything"
-  },
-  "pages.educators.previewIntro": {
-    "source": "Every lesson has a teacher guide with a session plan and the answers, and every section check has an answer key.",
-    "back": "Every lesson has a teacher guide containing a session plan and its answers, and every section check has an answer key."
-  },
-  "pages.educators.sectionLabel": {
-    "source": "Section",
-    "back": "Section"
-  },
-  "pages.educators.previewCta": {
-    "source": "Preview",
-    "back": "Preview"
   },
   "pages.educators.teacherGuide": {
     "source": "Teacher guide",
@@ -1416,25 +1395,10 @@
     "source": "Answer key for the {section} section check",
     "back": "Answer key for section check {section}"
   },
-  "pages.educators.codesTag": {
-    "flag": true,
-    "note": "'Pilot' translated as 'uji coba' (here and in codesBody). Alternative: 'program percontohan'.",
-    "source": "Pilot partners",
-    "back": "Pilot partner"
-  },
-  "pages.educators.codesTitle": {
-    "source": "Class codes instead of names",
-    "back": "Class codes instead of names"
-  },
-  "pages.educators.codesBody": {
-    "source": "In the pilot, each learner can get a code like ABC-07. Later, codes will let us see how the whole group is doing, without any names. You keep the list that matches names to codes.",
-    "back": "During the pilot, each learner can get a code like ABC-07. Later, these codes will help us see the whole group's progress without anyone's name. You keep the list pairing names and codes.",
-    "flag": true,
-    "note": "Changed from \"kamu\" to \"Anda\" (September 2026): pages for adults (educators, partners, parents) use \"Anda\"; pages for learners keep \"kamu\". Drafted by AI, not yet reviewed."
-  },
   "pages.educators.feedbackTitle": {
-    "source": "Tell us what to fix",
-    "back": "Tell us what needs fixing"
+    "source": "Questions, or something to fix?",
+    "back": "Questions, or something to fix?",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.educators.feedbackBody": {
     "source": "Something confusing, too difficult or broken? Tell us at {email}. Don't send learners' names or written answers.",
@@ -1443,9 +1407,9 @@
     "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed."
   },
   "pages.educators.toolsIntro": {
-    "source": "For the day you start, and every day after. Everything here stays on this device.",
-    "back": "For the first day you start, and every day after. Everything here stays on this device.",
-    "flag": true,
+    "source": "Progress stays on the device it was made on.",
+    "back": "Progress stays on the device it was made on.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
     "note": "Changed from \"kamu\" to \"Anda\" (September 2026): pages for adults (educators, partners, parents) use \"Anda\"; pages for learners keep \"kamu\". Drafted by AI, not yet reviewed."
   },
   "pages.educators.setupTitle": {
@@ -3880,25 +3844,20 @@
     "back": "This lesson is written in Thinkerwell's own words, based on these sources. Use these sources to check facts or find out more (their content is in English).",
     "source": "The lesson is written in Thinkerwell's own words, drawing on these sources. Use them to check a fact or to find out more (they are in English)."
   },
-  "pages.educators.pilotTitle": {
-    "back": "Starting a pilot",
-    "source": "Starting a pilot"
-  },
-  "pages.educators.pilotIntro": {
-    "back": "For organisations trying Thinkerwell with a group of learners. Everything here can be printed on A4 paper, in black and white.",
-    "source": "For an organisation trying Thinkerwell with a group of learners. Everything here prints on A4, in black and white."
-  },
   "pages.educators.pilotAboutTitle": {
-    "back": "For organisations",
-    "source": "For organisations"
+    "back": "Using Thinkerwell with a group",
+    "source": "Using Thinkerwell with a group",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.educators.pilotAboutBody": {
-    "back": "What the pilot involves, what we ask of you, and how learners' privacy is protected.",
-    "source": "What a pilot involves, what we ask, and how learners' privacy is kept."
+    "back": "What Thinkerwell offers, what you need to run a group, and how learners' privacy is kept.",
+    "source": "What Thinkerwell offers, what you need to run a group, and how learners' privacy is kept.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.educators.pilotAboutCta": {
-    "back": "Read about the pilot",
-    "source": "Read about pilots"
+    "back": "Read more",
+    "source": "Read more",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.educators.pilotConsentTitle": {
     "back": "Consent form",
@@ -3921,9 +3880,9 @@
     "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
   },
   "pages.educators.pilotSheetBody": {
-    "back": "Everything that happens in the trial and its research, to be kept by each family, with your organization's name in it.",
-    "source": "What the pilot and its study involve, for each family to keep, with your organisation's name on it.",
-    "flag": true,
+    "back": "What the study involves, for each family to keep, with your organisation's name on it.",
+    "source": "What the study involves, for each family to keep, with your organisation's name on it.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
     "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
   },
   "pages.educators.pilotSheetCta": {
@@ -3933,8 +3892,9 @@
     "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
   },
   "pages.educators.pilotCodesTitle": {
-    "back": "Code cards",
-    "source": "Code cards"
+    "back": "Learner code cards",
+    "source": "Learner code cards",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.educators.pilotCodesBody": {
     "back": "Cards with a code for each learner, used instead of their names, and a list for you to keep.",
@@ -3946,25 +3906,21 @@
     "back": "Make code cards",
     "source": "Make code cards"
   },
-  "pages.educators.followTitle": {
-    "back": "Follow your group",
-    "source": "Follow your group",
-    "flag": true,
-    "note": "Changed from \"kamu\" to \"Anda\" (September 2026): pages for adults (educators, partners, parents) use \"Anda\"; pages for learners keep \"kamu\". Drafted by AI, not yet reviewed."
-  },
   "pages.organisations.title": {
-    "back": "For organisations",
-    "source": "For organisations"
+    "back": "Use Thinkerwell with your learners",
+    "source": "Use Thinkerwell with your learners",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.organisations.eyebrow": {
-    "back": "Starting a pilot",
-    "source": "Starting a pilot"
+    "back": "For learning organisations",
+    "source": "For learning organisations",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.organisations.intro": {
-    "flag": true,
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
     "note": "About page mission and \"platform\" wording (7 October 2026): drafted by AI, not yet reviewed by a native speaker.",
-    "back": "Thinkerwell is a platform led by students to widen access to free digital social studies learning for underserved teenagers in Southeast Asia. We are preparing a pilot of our course with education organisations. This page explains what a pilot includes.",
-    "source": "Thinkerwell is a student-led platform working to expand access to free digital social studies learning for underserved youth across Southeast Asia. We are preparing a pilot of our course with learning organisations. This page explains what a pilot involves."
+    "back": "Thinkerwell offers a free social studies course and educator resources for youth across Southeast Asia. Use it with a group on shared devices or in print. Explore the course and teaching materials, or get in touch about using Thinkerwell in your learning space.",
+    "source": "Thinkerwell offers a free social studies course and educator resources for youth across Southeast Asia. Use it with a group on shared devices or in print. Explore the course and teaching materials, or get in touch about using Thinkerwell in your learning space."
   },
   "pages.organisations.honesty": {
     "back": "Thinkerwell is a platform led by students. Thinkerwell is not a registered charity or nonprofit organisation.",
@@ -3973,8 +3929,9 @@
     "note": "About page mission and \"platform\" wording (7 October 2026): drafted by AI, not yet reviewed by a native speaker."
   },
   "pages.organisations.whatTitle": {
-    "back": "What Thinkerwell is",
-    "source": "What Thinkerwell is"
+    "back": "What Thinkerwell offers",
+    "source": "What Thinkerwell offers",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.organisations.whatBody": {
     "back": "One course, Exploring Our World: {lessons} lessons about history, geography, culture and community life, for learners aged about 10 to 17. Each lesson has five steps: read, write, speak, watch and reflect. The course runs in a web browser on shared laptops and tablets, in English or Bahasa Indonesia. Lessons can be used without internet after the first visit; the optional videos need internet.",
@@ -3997,43 +3954,49 @@
     "source": "A teacher guide for every lesson, answer keys for the section checks, and every lesson ready to print."
   },
   "pages.organisations.get3": {
-    "back": "What you need to start: information sheet and consent form for families, code cards for learners, and a checklist for each device.",
-    "source": "What you need to start: an information sheet and a consent form for families, code cards for learners and a checklist for each device.",
-    "flag": true,
+    "back": "A checklist for setting up each device, learner code cards and a one-page session guide for staff.",
+    "source": "A checklist for setting up each device, learner code cards and a one-page session guide for staff.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
     "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
   },
   "pages.organisations.get4": {
-    "back": "Answers to your questions by email, and changes to the course based on your feedback.",
-    "source": "Answers to your questions by email, and changes to the course based on what you tell us."
+    "back": "Answers to your questions, and changes to the course based on what you tell us.",
+    "source": "Answers to your questions, and changes to the course based on what you tell us.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.organisations.askTitle": {
-    "back": "What we ask",
-    "source": "What we ask"
+    "back": "What you need to run a group",
+    "source": "What you need to run a group",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.organisations.ask1": {
-    "back": "One person we can contact at your organisation.",
-    "source": "One contact person at your organisation."
+    "back": "An educator or volunteer to lead each session.",
+    "source": "An educator or volunteer to lead each session.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.organisations.ask2": {
     "back": "A few laptops or tablets with a web browser. Learners may take turns using them.",
     "source": "Some laptops or tablets with a web browser. Learners can share them."
   },
   "pages.organisations.ask3": {
-    "back": "A few sessions a week for 4 to 6 weeks. One lesson takes about {min}–{max} minutes.",
-    "source": "A few sessions a week for 4 to 6 weeks. A lesson takes about {min}–{max} minutes."
+    "back": "About {min}–{max} minutes for each lesson.",
+    "source": "About {min}–{max} minutes for each lesson.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.organisations.ask4": {
-    "back": "Honest feedback: what worked, what didn't, and what confused learners.",
-    "source": "Honest feedback: what worked, what didn't, and what confused learners."
+    "back": "The internet for the first visit on each device, and for the optional videos.",
+    "source": "The internet for the first visit on each device, and for the optional videos.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.organisations.privacyTitle": {
-    "back": "Privacy",
-    "source": "Privacy"
+    "back": "Using the course",
+    "source": "Using the course",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.organisations.privacy1": {
-    "back": "Pilot groups can use codes, not names. Each learner gets a code card, like ABC-01, and types that code as their name. Only you keep the list pairing codes and names.",
-    "source": "Pilot groups can use codes instead of names. Each learner gets a code card, like ABC-01, and types the code as their name. Only you keep the list that matches codes to names.",
-    "flag": true,
+    "back": "Learners can use codes instead of names. Each learner gets a code card, like ABC-01, and types the code as their name. Only you keep the list that matches codes to names.",
+    "source": "Learners can use codes instead of names. Each learner gets a code card, like ABC-01, and types the code as their name. Only you keep the list that matches codes to names.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
     "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed."
   },
   "pages.organisations.privacy2": {
@@ -4049,9 +4012,9 @@
     "note": "Changed in October 2026 so the promise covers everything the pilot's measurement logs in every session (docs/research/MEASUREMENT_PLAN.md, section 4): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. Second AI's doubt: \"beberapa kalimat\" (a few sentences) doesn't say what they are; the English is as short on purpose (the consent form and information sheet explain the writing task)."
   },
   "pages.organisations.privacyNow": {
-    "source": "Learners' work and progress are not sent to Thinkerwell. The one exception is a pilot run with you: once families have signed the consent form, and only when your staff turn on “Share pilot results” in Settings, the site sends how learners use it, linked to a code and never a name. Online speech-to-text is off unless your staff turn it on; when it is on, what learners say goes to the browser maker's service. We will tell you before anything else changes.",
-    "back": "Learners' work and progress are not sent to Thinkerwell. The only exception is a pilot run together with you: after families sign the consent form, and only if your staff turn on “Share pilot results” in Settings, the site sends how learners use it, connected to a code and never to a name. The online speech-to-text feature is off unless your staff turn it on; if it is on, what learners say is sent to the browser maker's service. We will tell you before anything else changes.",
-    "flag": true,
+    "source": "Learners' work and progress stay on the device they use, and are not sent to Thinkerwell. Online speech-to-text is off unless your staff turn it on; when it is on, what learners say goes to the browser maker's service. We will tell you before anything else changes.",
+    "back": "Learners' work and progress stay on the device they use, and are not sent to Thinkerwell. Online speech-to-text is off unless your staff turn it on; when it is on, what learners say goes to the browser maker's service. We will tell you before anything else changes.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
     "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults. Changed in October 2026 to describe the pilot exception."
   },
   "pages.organisations.privacy4": {
@@ -4063,16 +4026,19 @@
     "source": "Get ready"
   },
   "pages.organisations.startBody": {
-    "back": "Print what you need, and set up each device before the first session.",
-    "source": "Print what you need, and set up each device before the first session."
+    "back": "Set up each device before the first session, and print what you need.",
+    "source": "Set up each device before the first session, and print what you need.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.organisations.contactTitle": {
-    "back": "Contact us",
-    "source": "Contact us"
+    "back": "Get in touch",
+    "source": "Get in touch",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.organisations.contactBody": {
-    "back": "Email us to start a pilot or to ask a question. Tell us your organisation's name, your location, and roughly how many learners will take part.",
-    "source": "Email us to start a pilot or to ask a question. Tell us your organisation's name, where you are, and about how many learners would take part."
+    "back": "Ask a question, or tell us about your organisation: where you are, and about how many learners would use Thinkerwell.",
+    "source": "Ask a question, or tell us about your organisation: where you are, and about how many learners would use Thinkerwell.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.consentForm.title": {
     "back": "Consent form",
@@ -4827,9 +4793,9 @@
     "note": "Search titles and descriptions (October 2026, Google SEO brief): drafted by AI, not yet reviewed by a native speaker. Used in browser tab titles now, and ready for Indonesian search pages later (docs/notes/seo.md)."
   },
   "seo.organisations.description": {
-    "source": "Learn how a pilot with Thinkerwell could support social studies learning for youth facing barriers to education.",
-    "back": "Learn how a pilot with Thinkerwell can support social studies learning for teenagers who face obstacles in education.",
-    "flag": true,
+    "source": "Use Thinkerwell's free social studies course and educator resources with your learners, on shared devices or in print.",
+    "back": "Use Thinkerwell's free social studies course and educator resources with your learners, on shared devices or in print.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
     "note": "Search titles and descriptions (October 2026, Google SEO brief): drafted by AI, not yet reviewed by a native speaker. Used in browser tab titles now, and ready for Indonesian search pages later (docs/notes/seo.md)."
   },
   "seo.credits.title": {
@@ -5904,10 +5870,10 @@
     "source": "Bahasa Melayu lessons: {model} by Meta, part of Massively Multilingual Speech, under the {licence}. This licence allows only non-commercial use. Thinkerwell is free, and uses it only that way."
   },
   "pilotDay.title": {
-    "flag": true,
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
     "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
-    "source": "Pilot day guide",
-    "back": "Guide for pilot day"
+    "source": "Session guide",
+    "back": "Session guide"
   },
   "pilotDay.intro": {
     "flag": true,
@@ -5916,10 +5882,10 @@
     "back": "One page for the adults who run a session. Print it and keep it together with the devices."
   },
   "pilotDay.sheetTitle": {
-    "flag": true,
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
     "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
-    "source": "Pilot day: a one-page guide for staff",
-    "back": "Pilot day: a one-page guide for staff"
+    "source": "A one-page guide for staff",
+    "back": "A one-page guide for staff"
   },
   "pilotDay.sheetFor": {
     "flag": true,
@@ -6132,10 +6098,10 @@
     "back": "See where all the learners are: open {educators}, then {class}. No scores are displayed."
   },
   "pages.educators.pilotDayTitle": {
-    "flag": true,
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
     "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
-    "source": "Pilot day guide",
-    "back": "Guide for pilot day"
+    "source": "Session guide",
+    "back": "Session guide"
   },
   "pages.educators.pilotDayBody": {
     "flag": true,
@@ -6150,15 +6116,15 @@
     "back": "Print the guide"
   },
   "pilotResults.title": {
-    "source": "Share pilot results",
-    "back": "Share pilot results",
-    "flag": true,
+    "source": "Share optional study data",
+    "back": "Share optional study data",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
     "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
   },
   "pilotResults.intro": {
-    "source": "Use this only for a pilot your organisation runs with Thinkerwell, after every family has signed the consent form. It is off until you turn it on.",
-    "back": "Use this only for a pilot that your organisation runs together with Thinkerwell, after every family has signed the consent form. This feature is off until you turn it on.",
-    "flag": true,
+    "source": "Use this only for a learning study your organisation takes part in with Thinkerwell, after every family has signed the consent form. It is off until you turn it on.",
+    "back": "Use this only for a learning study your organisation takes part in with Thinkerwell, after every family has signed the consent form. It is off until you turn it on.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
     "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
   },
   "pilotResults.codeLabel": {
@@ -6192,9 +6158,9 @@
     "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
   },
   "pilotResults.shareLabel": {
-    "source": "Share pilot results from this device",
-    "back": "Share pilot results from this device",
-    "flag": true,
+    "source": "Share optional study data from this device",
+    "back": "Share optional study data from this device",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
     "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
   },
   "pilotResults.shareNeedsCode": {
@@ -6204,9 +6170,9 @@
     "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
   },
   "pilotResults.shareHelp": {
-    "source": "When this is on, a learner who types a pilot code like HLP-01 as their name sends how they use Thinkerwell to the Thinkerwell team: how long, which lessons and steps they open and finish, their answers to quick checks and quizzes, whether they use the simpler reading or Listen, whether they watch videos or read instead, and how many words they write. It goes with their code and your organisation code. It never includes names, writing or recordings. Learners who look around, or who use any other name, send nothing.",
-    "back": "When it is on, learners who type a pilot code like HLP-01 as their name send how they use Thinkerwell to the Thinkerwell team: how long, which lessons and steps they open and finish, their answers to quick checks and quizzes, whether they use the easier reading or Listen, whether they watch videos or just read, and how many words they write. All of it is sent together with their code and your organisation code. There are never names, writing or recordings. Learners who are only looking around, or who use another name, send nothing.",
-    "flag": true,
+    "source": "When this is on, a learner who types a learner code like HLP-01 as their name sends how they use Thinkerwell to the Thinkerwell team: how long, which lessons and steps they open and finish, their answers to quick checks and quizzes, whether they use the simpler reading or Listen, whether they watch videos or read instead, and how many words they write. It goes with their code and your organisation code. It never includes names, writing or recordings. Learners who look around, or who use any other name, send nothing.",
+    "back": "When this is on, a learner who types a learner code like HLP-01 as their name sends how they use Thinkerwell to the Thinkerwell team: how long, which lessons and steps they open and finish, their answers to quick checks and quizzes, whether they use the simpler reading or Listen, whether they watch videos or read instead, and how many words they write. It goes with their code and your organisation code. It never includes names, writing or recordings. Learners who look around, or who use any other name, send nothing.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
     "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
   },
   "pilotResults.shareOffHelp": {
@@ -6246,9 +6212,9 @@
     "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
   },
   "pilotResults.deleteHelp": {
-    "source": "Deletes results that haven't been sent yet. Results already sent are deleted within 6 months after the pilot ends.",
-    "back": "Deletes results that haven't been sent. Results already sent are deleted at the latest 6 months after the trial ends.",
-    "flag": true,
+    "source": "Deletes results that haven't been sent yet. Results already sent are deleted within 6 months after the study ends.",
+    "back": "Deletes results that haven't been sent yet. Results already sent are deleted within 6 months after the study ends.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
     "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
   },
   "pilotResults.deleted": {
@@ -6258,15 +6224,15 @@
     "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
   },
   "pages.home.newLearner.privacyNotePilot": {
-    "source": "Your writing and recordings stay on this device. If you use a pilot code, Thinkerwell also counts how you use it. It never gets your name.",
-    "back": "Your writing and recordings stay on this device. If you use a pilot code, Thinkerwell also counts how you use it. Thinkerwell never gets your name.",
-    "flag": true,
+    "source": "Your writing and recordings stay on this device. If you use a learner code for a study, Thinkerwell also counts how you use it. It never gets your name.",
+    "back": "Your writing and recordings stay on this device. If you use a learner code for a study, Thinkerwell also counts how you use it. It never gets your name.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
     "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
   },
   "pages.sectionCheck.factPrivatePilot": {
-    "source": "Your score is saved here. Your pilot also counts it, by code and not by name.",
-    "back": "Your score is saved here. The pilot also counts it, with a code and not a name.",
-    "flag": true,
+    "source": "Your score is saved here. The study also counts it, by code and not by name.",
+    "back": "Your score is saved here. The study also counts it, by code and not by name.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
     "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
   },
   "ds.course.lessonRow.badge.notStarted": {
@@ -6330,9 +6296,9 @@
     "note": "New or changed in October 2026: simpler pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
   },
   "pages.settings.moreIntro": {
-    "source": "Moving work to another device, the Listen voice, lesson audio for offline use, speech-to-text and pilot results.",
-    "back": "Moving work to another device, the Listen voice, lesson audio to use without the internet, speech-to-text, and pilot results.",
-    "flag": true,
+    "source": "Moving work to another device, the Listen voice, lesson audio for offline use, speech-to-text and optional study data.",
+    "back": "Moving work to another device, the Listen voice, lesson audio for offline use, speech-to-text and optional study data.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
     "note": "New or changed in October 2026: simpler pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
   },
   "lessonPlayer.shell.stepOf": {
@@ -6436,5 +6402,335 @@
     "back": "Save and go back to Lesson {number}",
     "flag": true,
     "note": "New in October 2026: keeping a guest's work with \"Save my work\" (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+  },
+  "pages.educators.pilotCheckTitle": {
+    "back": "Learning check",
+    "source": "Learning check",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.educators.pilotCheckBody": {
+    "back": "Paper sheets for the first and last sessions of a study: 16 questions, a short piece of writing and 5 faces, by learner code. With the answer key for the team.",
+    "source": "Paper sheets for the first and last sessions of a study: 16 questions, a short piece of writing and 5 faces, by learner code. With the answer key for the team.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.educators.pilotCheckCta": {
+    "back": "Print the check",
+    "source": "Print the check",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.educators.sendEnquiry": {
+    "back": "Send an enquiry",
+    "source": "Send an enquiry",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.educators.browseCourse": {
+    "back": "Browse the course",
+    "source": "Browse the course",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.educators.setupDevice": {
+    "back": "Set up a device",
+    "source": "Set up a device",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.educators.overview": {
+    "back": "Watch a one-minute overview (optional)",
+    "source": "Watch a one-minute overview (optional)",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.educators.materialsTitle": {
+    "back": "Teaching materials",
+    "source": "Teaching materials",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.educators.guidesTitle": {
+    "back": "Teacher guides and answer keys",
+    "source": "Teacher guides and answer keys",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.educators.guidesBody": {
+    "back": "A teacher guide for every lesson, with a session plan and the answers; every lesson ready to print; and an answer key for each section check.",
+    "source": "A teacher guide for every lesson, with a session plan and the answers; every lesson ready to print; and an answer key for each section check.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.educators.guidesCta": {
+    "back": "Open the list",
+    "source": "Open the list",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.educators.deviceTitle": {
+    "back": "On this device",
+    "source": "On this device",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.educators.groupTitle": {
+    "back": "Resources for your group",
+    "source": "Resources for your group",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.educators.groupIntro": {
+    "back": "Everything here prints on A4, in black and white.",
+    "source": "Everything here prints on A4, in black and white.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.educators.studyTitle": {
+    "back": "Optional learning study",
+    "source": "Optional learning study",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.educators.studyIntro": {
+    "back": "Only for an organisation taking part in a learning study with Thinkerwell. You don't need any of this to teach a lesson.",
+    "source": "Only for an organisation taking part in a learning study with Thinkerwell. You don't need any of this to teach a lesson.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.organisations.getInTouch": {
+    "back": "Get in touch",
+    "source": "Get in touch",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.organisations.whoTitle": {
+    "back": "Who runs Thinkerwell?",
+    "source": "Who runs Thinkerwell?",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.organisations.studyTitle": {
+    "back": "Optional learning study and data sharing",
+    "source": "Optional learning study and data sharing",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.organisations.studyIntro": {
+    "back": "Only for organisations that choose to take part in a learning study with Thinkerwell. It isn't needed to use the course.",
+    "source": "Only for organisations that choose to take part in a learning study with Thinkerwell. It isn't needed to use the course.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.organisations.studyShare": {
+    "back": "Once families have signed the consent form, and only when your staff turn on “Share optional study data” in Settings, the site sends how learners use it, linked to a learner code and never a name. Coded data is not anonymous: your organisation keeps the list that matches codes to names.",
+    "source": "Once families have signed the consent form, and only when your staff turn on “Share optional study data” in Settings, the site sends how learners use it, linked to a learner code and never a name. Coded data is not anonymous: your organisation keeps the list that matches codes to names.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.teacherTools.backToGuides": {
+    "back": "Back to teacher guides",
+    "source": "Back to teacher guides",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.guides.title": {
+    "back": "Teacher guides and answer keys",
+    "source": "Teacher guides and answer keys",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.guides.intro": {
+    "back": "Each lesson's teacher guide has a session plan, the answers and teaching notes, and each lesson prints. Open a section to see its lessons.",
+    "source": "Each lesson's teacher guide has a session plan, the answers and teaching notes, and each lesson prints. Open a section to see its lessons.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.guides.lessons": {
+    "back": "Lessons {range}",
+    "source": "Lessons {range}",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.guides.lesson": {
+    "back": "Lesson {number}: {title}",
+    "source": "Lesson {number}: {title}",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.guides.print": {
+    "back": "Print",
+    "source": "Print",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.guides.printLabel": {
+    "back": "Print Lesson {number}",
+    "source": "Print Lesson {number}",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "footer.contact": {
+    "back": "Contact",
+    "source": "Contact",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "seo.contact.title": {
+    "back": "Contact Us | Thinkerwell",
+    "source": "Contact Us | Thinkerwell",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "seo.contact.description": {
+    "back": "Ask a question or get in touch about using Thinkerwell, a free social studies platform for youth facing barriers to education.",
+    "source": "Ask a question or get in touch about using Thinkerwell, a free social studies platform for youth facing barriers to education.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.eyebrow": {
+    "back": "Get in touch",
+    "source": "Get in touch",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.title": {
+    "back": "Contact Thinkerwell",
+    "source": "Contact Thinkerwell",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.intro": {
+    "back": "Have a question or want to work with us? Send us a message, and we'll use the contact details you give to reply.",
+    "source": "Have a question or want to work with us? Send us a message, and we'll use the contact details you give to reply.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.topicLabel": {
+    "back": "What is it about?",
+    "source": "What is it about?",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.topicPlaceholder": {
+    "back": "Choose a topic",
+    "source": "Choose a topic",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.topicGeneral": {
+    "back": "General question",
+    "source": "General question",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.topicEducator": {
+    "back": "Educator or classroom use",
+    "source": "Educator or classroom use",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.topicOrganisation": {
+    "back": "Learning organisation or NGO",
+    "source": "Learning organisation or NGO",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.topicPartnership": {
+    "back": "Company or partnership",
+    "source": "Company or partnership",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.topicFeedback": {
+    "back": "Feedback or technical issue",
+    "source": "Feedback or technical issue",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.topicOther": {
+    "back": "Other",
+    "source": "Other",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.nameLabel": {
+    "back": "Your name",
+    "source": "Your name",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.contactLabel": {
+    "back": "Email or WhatsApp number",
+    "source": "Email or WhatsApp number",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.contactHelp": {
+    "back": "For WhatsApp, start with your country code, such as +65.",
+    "source": "For WhatsApp, start with your country code, such as +65.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.messageLabel": {
+    "back": "Your message",
+    "source": "Your message",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.messagePlaceholder": {
+    "back": "Tell us what you'd like to ask or discuss.",
+    "source": "Tell us what you'd like to ask or discuss.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.send": {
+    "back": "Send enquiry",
+    "source": "Send enquiry",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.sending": {
+    "back": "Sending…",
+    "source": "Sending…",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.note": {
+    "back": "Your message and contact details are emailed to the Thinkerwell team so we can reply. Don't include a learner's personal information.",
+    "source": "Your message and contact details are emailed to the Thinkerwell team so we can reply. Don't include a learner's personal information.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.orEmail": {
+    "back": "You can also write to us at {email}.",
+    "source": "You can also write to us at {email}.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.sent": {
+    "back": "Thanks. Your message has been sent. We'll reply using the contact details you gave.",
+    "source": "Thanks. Your message has been sent. We'll reply using the contact details you gave.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.sendAnother": {
+    "back": "Send another message",
+    "source": "Send another message",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.failed": {
+    "back": "We couldn't send your message. Try again, or write to us at {email}.",
+    "source": "We couldn't send your message. Try again, or write to us at {email}.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.busy": {
+    "back": "Too many messages have been sent from here for now. Try again in a few minutes, or write to us at {email}.",
+    "source": "Too many messages have been sent from here for now. Try again in a few minutes, or write to us at {email}.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.error.topic": {
+    "back": "Choose a topic.",
+    "source": "Choose a topic.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.error.nameMissing": {
+    "back": "Write your name.",
+    "source": "Write your name.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.error.nameShort": {
+    "back": "Write at least 2 letters.",
+    "source": "Write at least 2 letters.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.error.nameLong": {
+    "back": "Keep your name under 100 characters.",
+    "source": "Keep your name under 100 characters.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.error.contactMissing": {
+    "back": "Write an email address or a WhatsApp number.",
+    "source": "Write an email address or a WhatsApp number.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.error.contactInvalid": {
+    "back": "Enter a valid email, or a WhatsApp number that starts with a country code, such as +65.",
+    "source": "Enter a valid email, or a WhatsApp number that starts with a country code, such as +65.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.error.messageMissing": {
+    "back": "Write your message.",
+    "source": "Write your message.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.error.messageShort": {
+    "back": "Write a little more: at least 10 characters.",
+    "source": "Write a little more: at least 10 characters.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.error.messageLong": {
+    "back": "Keep your message under 3,000 characters.",
+    "source": "Keep your message under 3,000 characters.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.error.summary": {
+    "back": "Check the fields marked below.",
+    "source": "Check the fields marked below.",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "contact.honeypot": {
+    "back": "Leave this empty",
+    "source": "Leave this empty",
+    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   }
 }

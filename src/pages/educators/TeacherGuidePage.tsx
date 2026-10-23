@@ -49,10 +49,10 @@ export function TeacherGuidePage({ lesson }: { lesson: CourseLesson }) {
 
   return (
     <div className="tw-print-page tw-guide-page">
-      {content.educatorsPath ? (
+      {content.guidesPath ? (
         <PrintToolbar
-          backHref={content.educatorsPath(section.id)}
-          backLabel={t('pages.teacherTools.back')}
+          backHref={content.guidesPath(section.id)}
+          backLabel={t('pages.teacherTools.backToGuides')}
           printLabel={t('pages.teacherGuide.printGuide')}
         />
       ) : (
