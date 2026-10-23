@@ -476,7 +476,8 @@
       "classCta": "Lihat kelas",
       "certificatesTitle": "Sijil",
       "certificatesBody": "Setiap sijil yang diperoleh pada peranti ini, satu bagi setiap halaman.",
-      "certificatesCta": "Cetak semua sijil"
+      "certificatesCta": "Cetak semua sijil",
+      "sendEnquiry": "Hantar mesej"
     },
     "organisations": {
       "title": "Untuk organisasi",
@@ -504,7 +505,8 @@
       "startTitle": "Bersedia",
       "startBody": "Cetak apa yang anda perlukan, dan sediakan setiap peranti sebelum sesi pertama.",
       "contactTitle": "Hubungi kami",
-      "contactBody": "Hantar e-mel kepada kami untuk memulakan program rintis atau bertanya soalan. Beritahu kami nama organisasi anda, lokasi anda, dan kira-kira berapa ramai pelajar yang akan menyertai."
+      "contactBody": "Hantar e-mel kepada kami untuk memulakan program rintis atau bertanya soalan. Beritahu kami nama organisasi anda, lokasi anda, dan kira-kira berapa ramai pelajar yang akan menyertai.",
+      "getInTouch": "Hubungi kami"
     },
     "consentForm": {
       "title": "Borang persetujuan",
@@ -1284,7 +1286,8 @@
     "label": "Lebih lanjut tentang Thinkerwell",
     "organisations": "Untuk organisasi",
     "credits": "Penghargaan",
-    "linkedin": "Thinkerwell di LinkedIn"
+    "linkedin": "Thinkerwell di LinkedIn",
+    "contact": "Hubungi"
   },
   "seo": {
     "home": {
@@ -1313,7 +1316,11 @@
     },
     "lessonTitle": "Pelajaran {number}: {title} | Thinkerwell",
     "lessonDescription": "Pelajaran {number} dalam {course}, kursus kajian sosial percuma Thinkerwell. Matlamat pembelajaran: {goal}",
-    "imageAlt": "Maskot Thinkerwell, seorang pembaca berwarna ungu yang memegang buku, di atas perkataan Thinkerwell: Exploring Our World."
+    "imageAlt": "Maskot Thinkerwell, seorang pembaca berwarna ungu yang memegang buku, di atas perkataan Thinkerwell: Exploring Our World.",
+    "contact": {
+      "title": "Hubungi Kami | Thinkerwell",
+      "description": "Tanya soalan atau hubungi kami tentang penggunaan Thinkerwell, platform kajian sosial percuma untuk belia yang menghadapi halangan pendidikan."
+    }
   },
   "dev": {
     "rtlOn": "Mod ujian kanan ke kiri dihidupkan. Tambah ?dir=ltr pada alamat untuk mematikannya.",
@@ -1808,5 +1815,44 @@
     "summaryComment": "Komen: {comment}",
     "summaryNotYet": "Belum disemak",
     "summaryNoVideo": "tiada video untuk disemak"
+  },
+  "contact": {
+    "eyebrow": "Hubungi kami",
+    "title": "Hubungi Thinkerwell",
+    "intro": "Ada soalan atau mahu bekerjasama dengan kami? Hantar mesej, dan kami akan membalas melalui butiran hubungan yang kamu berikan.",
+    "topicLabel": "Tentang apa?",
+    "topicPlaceholder": "Pilih topik",
+    "topicGeneral": "Soalan umum",
+    "topicEducator": "Pendidik atau penggunaan di kelas",
+    "topicOrganisation": "Organisasi pembelajaran atau NGO",
+    "topicPartnership": "Syarikat atau perkongsian",
+    "topicFeedback": "Maklum balas atau masalah teknikal",
+    "topicOther": "Lain-lain",
+    "nameLabel": "Nama kamu",
+    "contactLabel": "E-mel atau nombor WhatsApp",
+    "contactHelp": "Untuk WhatsApp, mulakan dengan kod negara, contohnya +60.",
+    "messageLabel": "Mesej kamu",
+    "messagePlaceholder": "Beritahu kami perkara yang ingin kamu tanya atau bincangkan.",
+    "send": "Hantar mesej",
+    "sending": "Menghantar…",
+    "note": "Mesej dan butiran hubungan kamu dihantar melalui e-mel kepada pasukan Thinkerwell supaya kami boleh membalas. Jangan masukkan maklumat peribadi murid.",
+    "orEmail": "Kamu juga boleh menulis kepada kami di {email}.",
+    "sent": "Terima kasih. Mesej kamu telah dihantar. Kami akan membalas melalui butiran hubungan yang kamu berikan.",
+    "sendAnother": "Hantar mesej lain",
+    "failed": "Mesej kamu tidak dapat dihantar. Cuba lagi, atau tulis kepada kami di {email}.",
+    "busy": "Terlalu banyak mesej dihantar dari sini buat masa ini. Cuba lagi dalam beberapa minit, atau tulis kepada kami di {email}.",
+    "error": {
+      "topic": "Pilih topik.",
+      "nameMissing": "Tulis nama kamu.",
+      "nameShort": "Tulis sekurang-kurangnya 2 huruf.",
+      "nameLong": "Nama mestilah kurang daripada 100 aksara.",
+      "contactMissing": "Tulis alamat e-mel atau nombor WhatsApp.",
+      "contactInvalid": "Masukkan e-mel yang sah, atau nombor WhatsApp yang bermula dengan kod negara, contohnya +60.",
+      "messageMissing": "Tulis mesej kamu.",
+      "messageShort": "Tulis sedikit lagi: sekurang-kurangnya 10 aksara.",
+      "messageLong": "Mesej mestilah kurang daripada 3,000 aksara.",
+      "summary": "Semak ruangan yang ditanda di bawah."
+    },
+    "honeypot": "Biarkan kosong"
   }
 }

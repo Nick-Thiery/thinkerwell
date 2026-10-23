@@ -7,7 +7,8 @@
   "trailingSlash": false,
   "functions": {
     "api/events.ts": { "maxDuration": 10 },
-    "api/export.ts": { "maxDuration": 60 }
+    "api/export.ts": { "maxDuration": 60 },
+    "api/contact.ts": { "maxDuration": 10 }
   },
   "redirects": [
     { "source": "/:path(.*)", "has": [{ "type": "host", "value": "thinkerwell.vercel.app" }], "destination": "https://thinkerwell.app/:path", "permanent": true },
@@ -19,6 +20,7 @@
     { "source": "/educators", "destination": "/educators.html" },
     { "source": "/organisations", "destination": "/organisations.html" },
     { "source": "/credits", "destination": "/credits.html" },
+    { "source": "/contact", "destination": "/contact.html" },
     { "source": "/lesson/:id(finding-out-about-the-past|objects-and-people|changing-scale|origin-accounts|early-humans|farming-changes-societies|cities-and-states|trade-connects-communities|inventions-and-daily-life|towns-near-rivers|maps-and-places|how-cities-grow|climate-and-seasons|responding-to-environmental-change|objects-and-identity|languages-connect-people|why-traditions-matter|art-tells-stories|what-belonging-means|making-choices|trade-and-exchange|planning-for-the-future|trustworthy-information|young-people-contribute)/read", "destination": "/lesson/:id/read.html" },
     { "source": "/((?!api/)(?!.*\\.[^/]+$).*)", "destination": "/app.html" }
   ],

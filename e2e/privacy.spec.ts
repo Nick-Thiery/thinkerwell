@@ -12,6 +12,7 @@ const routes = [
   '/educators/section/history/answers',
   '/about',
   '/credits',
+  '/contact',
   '/settings',
   '/lesson/l6',
   '/lesson/towns-near-rivers/watch',

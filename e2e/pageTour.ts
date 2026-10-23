@@ -365,6 +365,16 @@ export const pageTour: TourStop[] = [
     },
   },
   {
+    // The contact form, from the footer, with every field's problem showing, so it is tested at its widest.
+    name: 'contact',
+    go: async (page, { ui }) => {
+      await page.locator('.tw-site-footer').getByRole('link', { name: ui('footer.contact') }).click();
+      await expect(page.locator('h1')).toHaveText(ui('contact.title'));
+      await page.getByRole('button', { name: ui('contact.send') }).click();
+      await expect(page.getByText(ui('contact.error.summary'))).toBeVisible();
+    },
+  },
+  {
     // The partner kit, from the footer and the Educators page's "Starting a pilot".
     name: 'for organisations',
     go: async (page, { ui }) => {
