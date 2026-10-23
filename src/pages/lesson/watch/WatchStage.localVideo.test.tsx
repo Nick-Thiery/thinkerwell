@@ -13,7 +13,8 @@ import { WatchStage } from './WatchStage';
 // A lesson whose language has an approved video of its own (src/content/localVideos.ts)
 // shows it as the lesson's video: its title and channel are in the language and not
 // marked English, there is no "This video is in English" note, and the written version
-// is the local video's. A lesson whose entry is not approved is exactly as before.
+// is the local video's. A lesson whose entry is not approved opens on the written
+// version in the language, with the English video one tap away.
 
 const NOTE = /This video is in English/;
 
@@ -105,18 +106,29 @@ describe('WatchStage with an approved local video', () => {
 });
 
 describe('WatchStage with an entry that is not approved', () => {
-  it('is exactly as before: the English video, marked English, with the note that it is in English', async () => {
+  it('opens on the written version in the language, with the English video, marked English, one tap away', async () => {
     const { container } = renderIndonesian(notApproved);
     const english = englishContent.getLessonByNumber(9)!.watch;
     expect(notApproved.watch).toEqual(english);
-    expect(screen.getByRole('heading', { name: english.title })).toHaveAttribute('lang', 'en');
-    expect(screen.getByText(english.channel)).toHaveAttribute('lang', 'en');
-    expect(screen.getByText(NOTE)).toBeInTheDocument();
+    // The written version first: no poster and nothing from YouTube.
+    const written = screen.getByRole('article');
+    expect(within(written).getByRole('heading', { name: english.title })).toHaveAttribute('lang', 'en');
+    expect(container.querySelector('iframe')).toBeNull();
+    expect(container.innerHTML).not.toMatch(/youtube|ytimg|googlevideo/i);
     expect(container.innerHTML).not.toContain(FIXTURE_UNAPPROVED_ID);
-    await userEvent.click(screen.getByRole('button', { name: 'Watch the video' }));
+    // Opening there isn't the learner's choice, so it isn't remembered as one, and no banner explains a failure.
+    expect(screen.queryByRole('status')).toBeNull();
+
+    await userEvent.click(within(written).getByRole('button', { name: 'Watch the video in English' }));
     expect(container.querySelector('iframe')!.getAttribute('src')).toContain(`/embed/${english.youtubeId}`);
     // The English video plays whole, with YouTube's own choice of player language.
     const params = new URL(container.querySelector('iframe')!.getAttribute('src')!).searchParams;
     expect([params.get('start'), params.get('end'), params.get('hl')]).toEqual([null, null, null]);
+
+    // Closed, it is the English video's card: title and channel marked English, and the note that it is in English.
+    await userEvent.click(screen.getByRole('button', { name: 'Close the video' }));
+    expect(screen.getByRole('heading', { name: english.title })).toHaveAttribute('lang', 'en');
+    expect(screen.getByText(english.channel)).toHaveAttribute('lang', 'en');
+    expect(screen.getByText(NOTE)).toBeInTheDocument();
   });
 });
