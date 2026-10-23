@@ -1,5 +1,6 @@
 /**
- * The team's public email address, or null while there isn't one.
+ * The team's public email address (Justin set it up in October 2026), or null
+ * while there isn't one.
  *
  * With null, the pages that would show it leave the email out: the
  * Educators page's "Tell us what to fix", the contact card on For
@@ -8,4 +9,4 @@
  * placeholder such as "[CONTACT EMAIL]" in their place. Setting the address
  * here turns all four on.
  */
-export const CONTACT_EMAIL = null as string | null;
+export const CONTACT_EMAIL: string | null = 'hello@thinkerwell.app';

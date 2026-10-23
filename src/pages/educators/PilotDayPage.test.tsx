@@ -1,9 +1,12 @@
 import { render, screen, within } from '@testing-library/react';
 import { createMemoryRouter, RouterProvider } from 'react-router';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { getLessons } from '../../content';
 import { PilotDayPage, REVIEW_FIRST_LESSONS } from './PilotDayPage';
 import { planTotal, SESSION_MINUTES, SHORT_SESSION_MINUTES } from './sessionPlan';
+
+// These tests cover the pages without an address (src/app/contact.ts); contactEmail.test.tsx covers them with the real one.
+vi.mock('../../app/contact', () => ({ CONTACT_EMAIL: null }));
 
 /** The pilot day guide for staff (/educators/pilot-day). */
 

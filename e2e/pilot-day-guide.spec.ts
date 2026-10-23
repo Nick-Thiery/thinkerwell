@@ -82,7 +82,8 @@ for (const locale of ['en', 'id', 'ms'] as const) {
     await useLanguage(page, locale);
     await page.goto('/educators/pilot-day');
     await expect(page.locator('h1')).toHaveText(msg(locale, 'pilotDay.title'));
-    await expect(page.getByRole('heading', { level: 3 })).toHaveCount(6);
+    // The six parts, and who to contact (src/app/contact.ts).
+    await expect(page.getByRole('heading', { level: 3 })).toHaveCount(7);
 
     const result = await printed(page);
     expect(result.A4).toEqual(['portrait']);
