@@ -5,10 +5,12 @@ import { horizontalOverflow, recordRequests, storedProgress, VIDEO_HOSTS } from 
 
 // The Watch step of every lesson in every language learners can choose
 // (docs/notes/local-language-videos.md): English, Bahasa Indonesia and Bahasa
-// Melayu, on a phone. With no local video approved, every lesson shows its
-// English video, marked English, with the note that it is in English when
-// the lesson is translated; the questions, the written version ("Read
-// instead") and its key points are in the language; Read instead works;
+// Melayu, on a phone. In English every lesson shows its video's poster, and
+// Read instead works. In a translated language a lesson with no approved local
+// video opens on the written version, in the language, with "Watch the video
+// in English" under it (its title marked English); one with an approved video
+// shows that video's poster, with no note. The questions, the written version
+// and its key points are in the language;
 // answering the question after counts Watch as done for the learner; nothing
 // is requested from YouTube; nothing is wider than the screen. When a video is
 // approved, the same walk shows it: the note goes, and the lesson's watch
@@ -98,24 +100,31 @@ for (const language of LANGUAGES) {
       await page.goto(`/lesson/${lesson.id}/watch`);
       await expect(page.locator('h1'), where).toHaveText(lesson.title);
 
-      // The poster: the video's own title, English unless it is an approved local one; and the note when it is English in a translated lesson.
-      const title = page.locator('.tw-video-title');
-      await expect(title, where).toHaveText(lesson.watch.title);
-      if (lesson.local || language.code === 'en') await expect(title, where).not.toHaveAttribute('lang', 'en');
-      else await expect(title, where).toHaveAttribute('lang', 'en');
-      const note = page.getByText(msg(messages, 'lessonPlayer.watch.videoInEnglish'));
-      await expect(note, where).toHaveCount(language.code !== 'en' && !lesson.local ? 1 : 0);
-      await expect(page.getByRole('button', { name: msg(messages, 'ds.content.video.watchLabel') }), where).toBeVisible();
-
+      const englishFirst = language.code !== 'en' && !lesson.local;
       // The questions in the language.
       await expect(page.getByText(lesson.watch.beforeQuestion, { exact: true }), where).toBeVisible();
       const after = page.getByLabel(lesson.watch.afterQuestion);
       await expect(after, where).toBeVisible();
 
-      // Read instead: the written version and its key points, in the language.
-      await page.getByRole('button', { name: msg(messages, 'lessonPlayer.watch.readInstead') }).click();
+      if (englishFirst) {
+        // The written version first, in the language, under the English video's title (marked English), with the English video one tap away.
+        await expect(page.locator('.tw-watch-written-h'), where).toHaveText(lesson.watch.title);
+        await expect(page.locator('.tw-watch-written-h'), where).toHaveAttribute('lang', 'en');
+        await expect(page.getByRole('button', { name: msg(messages, 'lessonPlayer.watch.watchInEnglish') }), where).toBeVisible();
+        await expect(page.locator('.tw-video-title'), where).toHaveCount(0);
+      } else {
+        // The poster: the video's own title, not marked English (English, or an approved local video), and no note.
+        const title = page.locator('.tw-video-title');
+        await expect(title, where).toHaveText(lesson.watch.title);
+        await expect(title, where).not.toHaveAttribute('lang', 'en');
+        await expect(page.getByText(msg(messages, 'lessonPlayer.watch.videoInEnglish')), where).toHaveCount(0);
+        await expect(page.getByRole('button', { name: msg(messages, 'ds.content.video.watchLabel') }), where).toBeVisible();
+        // Read instead opens the written version.
+        await page.getByRole('button', { name: msg(messages, 'lessonPlayer.watch.readInstead') }).click();
+      }
       await expect(page.locator('.tw-watch-written-text'), where).toContainText(firstWords(lesson.watch.summary));
       await expect(page.locator('.tw-watch-keypoints li'), where).toHaveCount(lesson.watch.keyPoints.length);
+      expect(await horizontalOverflow(page), `${where}: wider than the screen`).toBeLessThanOrEqual(0);
 
       // Answering after counts Watch as done, for this learner.
       await after.fill('Satu ide.');
