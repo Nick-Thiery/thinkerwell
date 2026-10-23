@@ -448,6 +448,7 @@ test.describe('with Indonesian on, every page is Indonesian and fits', () => {
       '/settings',
       '/about',
       '/credits',
+      '/contact',
       '/organisations',
       '/educators',
       '/educators/setup',

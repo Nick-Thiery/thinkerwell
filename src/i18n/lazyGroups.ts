@@ -27,6 +27,8 @@ export const LAZY_MESSAGE_GROUPS = [
   'videoReview',
   // Settings' "Share pilot results" (src/pages/settings/PilotResultsSetting.tsx): educators only.
   'pilotResults',
+  // The contact form (src/pages/contact/ContactPage.tsx, /contact), in the Educators chunk.
+  'contact',
 ] as const;
 
 export type LazyMessageGroup = (typeof LAZY_MESSAGE_GROUPS)[number];

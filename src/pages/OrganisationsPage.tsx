@@ -11,12 +11,12 @@
  * progress aren't sent to Thinkerwell, YouTube and online speech-to-text are
  * the outside services a learner can reach, and the anonymous pilot data the
  * consent form describes comes later (docs/research/MEASUREMENT_PLAN.md).
- * The contact card shows only once there is a real address (CONTACT_EMAIL);
- * there is no form, so nothing is collected here. The wording follows
+ * "Get in touch" at the top and in the contact card goes to the contact form
+ * (/contact); the card also gives the team's address (CONTACT_EMAIL). The wording follows
  * docs/content/PUBLIC_COPY.md.
  */
 import { CONTACT_EMAIL } from '../app/contact';
-import { codeCardsPath, consentFormPath, informationSheetPath, setupPath } from '../app/lessonUrls';
+import { codeCardsPath, consentFormPath, contactPath, informationSheetPath, setupPath } from '../app/lessonUrls';
 import { useFullPageTitle } from '../app/usePageTitle';
 import { Button, Icon, type IconName } from '../components/ds';
 import { useContent } from '../content/useContent';
@@ -63,6 +63,11 @@ export function OrganisationsPage() {
         </h1>
         <p className="body-lg">{t('pages.organisations.intro')}</p>
         <p className="tw-org-honesty">{t('pages.organisations.honesty')}</p>
+        <div className="tw-org-hero-actions">
+          <Button variant="primary" icon="Mail" href={contactPath()}>
+            {t('pages.organisations.getInTouch')}
+          </Button>
+        </div>
       </header>
 
       <section aria-labelledby="org-what" className="tw-org-card">
@@ -146,9 +151,14 @@ export function OrganisationsPage() {
             {t('pages.organisations.contactTitle')}
           </h2>
           <p>{t('pages.organisations.contactBody')}</p>
-          <a href={`mailto:${CONTACT_EMAIL}`} className="tw-org-email" translate="no">
-            {CONTACT_EMAIL}
-          </a>
+          <div className="tw-org-actions">
+            <Button variant="secondary" icon="Mail" href={contactPath()}>
+              {t('pages.organisations.getInTouch')}
+            </Button>
+            <a href={`mailto:${CONTACT_EMAIL}`} className="tw-org-email" translate="no">
+              {CONTACT_EMAIL}
+            </a>
+          </div>
         </section>
       ) : null}
     </div>

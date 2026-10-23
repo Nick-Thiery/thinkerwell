@@ -330,5 +330,19 @@
   "lessonPlayer.write.helperSayIt": "\"Say it\" is the name of the speech-to-text button (ds.actions.voiceButton.sayIt): use the same words.",
   "lessonPlayer.write.needHelp": "Opens the sentence starters and the planning boxes. A question a learner would ask, in plain words.",
   "lessonPlayer.shell.saveMyWork": "In a lesson, for someone not chosen who has done something: takes them to \"Who's learning today?\" so their work can be kept for the learner they choose.",
-  "pages.home.saveWork.body": "\"I'm new here\" is the name of the tile that adds a learner (pages.home.newLearnerTile): use the same words. {number} is the lesson's number."
+  "pages.home.saveWork.body": "\"I'm new here\" is the name of the tile that adds a learner (pages.home.newLearnerTile): use the same words. {number} is the lesson's number.",
+  "contact.intro": "The contact page (/contact) is for adults: educators, organisations and companies. Use the polite but plain register of the site's other public pages.",
+  "contact.contactLabel": "One field for either an email address or a WhatsApp number. It is only how we reply, never a login.",
+  "contact.contactHelp": "Use a country code people in that language would recognise (+62 for Indonesia, +60 for Malaysia).",
+  "contact.note": "Shown under the Send button. It says plainly that the message is emailed to the team. Keep \"Don't include a learner's personal information\" as clear as it is in English.",
+  "contact.orEmail": "{email} is hello@thinkerwell.app, shown as a link.",
+  "contact.failed": "{email} is hello@thinkerwell.app, shown as a link. Shown when the message couldn't be sent; what the person typed stays in the form.",
+  "contact.busy": "Shown when the server says too many messages came from this connection (a school may share one). {email} is hello@thinkerwell.app.",
+  "seo.contact.title": "This page's title in search results and the browser tab. Keep \"Thinkerwell\" and the \"|\". Page titles use capital letters on the main words, as approved.",
+  "seo.contact.description": "Shown under the title in search results and in link previews. One or two plain sentences; promise nothing the site doesn't do.",
+  "pages.organisations.getInTouch": "A button to the contact page (/contact), at the top and bottom of For organisations.",
+  "pages.educators.sendEnquiry": "A button to the contact page (/contact) on the Educators page.",
+  "footer.contact": "The footer's link to the contact page (/contact).",
+  "contact.honeypot": "The label of a hidden field that only automated spam fills in. People never see it.",
+  "contact.topicOrganisation": "An organisation that runs learning for youth, such as a learning centre, a school or an NGO."
 }

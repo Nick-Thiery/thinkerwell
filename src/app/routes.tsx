@@ -120,6 +120,8 @@ export const routes: RouteObject[] = [
       { path: 'about', ...page(morePages, (m) => m.AboutPage) },
       // Credits read the lessons (sources, videos), so they load with the teacher guides.
       { path: 'credits', ...page(teacherPages, (m) => m.CreditsPage) },
+      // The contact form (docs/notes/contact-form.md), linked from the footer, For organisations and the Educators page.
+      { path: 'contact', ...page(teacherPages, (m) => m.ContactPage) },
       { path: 'settings', ...page(morePages, (m) => m.SettingsPage) },
       // A preview course (src/courses/): its map, its lessons on paper, and
       // the hidden address that turns it on for this device. "This page

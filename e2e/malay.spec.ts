@@ -452,6 +452,7 @@ test.describe('with Malay on, every page is Malay and fits', () => {
       '/settings',
       '/about',
       '/credits',
+      '/contact',
       '/organisations',
       '/educators',
       '/educators/setup',

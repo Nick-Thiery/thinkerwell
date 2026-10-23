@@ -13,6 +13,7 @@ import {
   pilotCheckPath,
   pilotDayPath,
   setupPath,
+  contactPath,
 } from '../app/lessonUrls';
 import { Badge, Button, Chip, Icon, type IconName } from '../components/ds';
 import { type SectionId } from '../content';
@@ -290,6 +291,9 @@ export function EducatorsPage() {
                 ),
               })}
             </p>
+            <Button variant="secondary" icon="Mail" href={contactPath()} className="tw-edu-card-action">
+              {t('pages.educators.sendEnquiry')}
+            </Button>
           </section>
         ) : null}
       </div>
