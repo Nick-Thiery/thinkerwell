@@ -48,14 +48,20 @@ export interface LearnerSummary {
   checksTried: Section[];
 }
 
-export function summariseLearner(work: LearnerWork, lessons: readonly Lesson[], sections: readonly Section[]): LearnerSummary {
+export function summariseLearner(
+  work: LearnerWork,
+  lessons: readonly Lesson[],
+  sections: readonly Section[],
+  /** A lesson's stages in the language on screen (CourseContent.stagesFor), so "where they are" is never a step it hasn't got. */
+  stagesFor?: (lesson: Lesson) => readonly StageId[],
+): LearnerSummary {
   const progress = progressByLessonId(work.progress);
 
   let onNow: OnNow;
   if (work.progress.length === 0) {
     onNow = { kind: 'not-started' };
   } else {
-    const target = findContinueTarget(lessons, progress);
+    const target = findContinueTarget(lessons, progress, stagesFor);
     if (!target) onNow = { kind: 'finished' };
     else {
       const record = progress.get(target.lesson.id);

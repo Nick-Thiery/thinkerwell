@@ -5,7 +5,8 @@ import words from 'virtual:thinkerwell/messages/aboutPage';
 import { creditsPath } from '../app/lessonUrls';
 import { useFullPageTitle } from '../app/usePageTitle';
 import { Icon, Mascot, STAGE_ICON } from '../components/ds';
-import { STAGES, type StageId } from '../content/stages';
+import { commonStages, type StageId } from '../content/stages';
+import { useCatalog } from '../content/useCatalog';
 import { useI18n, withWords } from '../i18n';
 import type { I18nContextValue } from '../i18n/I18nProvider';
 import './AboutPage.css';
@@ -94,20 +95,24 @@ function ExternalLink({ href, children }: { href: string; children: ReactNode })
 }
 
 /**
- * "How our lessons work": the five steps, each with its icon, its name and
+ * "How our lessons work": the steps (five, or four without Watch), each with its icon, its name and
  * one sentence, then one quiet line on the research and, folded away, the
  * studies themselves (a native <details>, closed until opened).
  */
 function LessonSteps({ t }: { t: I18nContextValue['t'] }) {
   const { englishLang } = useI18n();
+  // Every lesson's steps: four without Watch in a translated language with no videos of its own.
+  const catalog = useCatalog();
+  const stages = commonStages(catalog.getLessons(), catalog.stagesFor);
+  const withWatch = stages.includes('watch');
   return (
     <section aria-labelledby="about-lessons" className="tw-about-card tw-about-lessons">
       <h2 id="about-lessons" className="h2">
         {t('aboutPage.lessonsTitle')}
       </h2>
-      <p className="body-lg tw-about-lessons-intro">{t('aboutPage.lessonsIntro')}</p>
+      <p className="body-lg tw-about-lessons-intro">{t(withWatch ? 'aboutPage.lessonsIntro' : 'aboutPage.lessonsIntroNoWatch')}</p>
       <ol className="tw-about-steps">
-        {STAGES.map((stage) => (
+        {stages.map((stage) => (
           <li key={stage} className="tw-about-step">
             <span className="tw-about-step-icon" aria-hidden="true">
               <Icon name={STAGE_ICON[stage]} size={22} />
@@ -128,7 +133,7 @@ function LessonSteps({ t }: { t: I18nContextValue['t'] }) {
         <div className="tw-about-research-body">
           <p>{t('aboutPage.researchIntro')}</p>
           <ul className="tw-about-studies">
-            {STAGES.map((stage) => {
+            {stages.map((stage) => {
               const study = STUDIES[stage];
               return (
                 <li key={stage}>

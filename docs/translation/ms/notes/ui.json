@@ -1397,9 +1397,9 @@
     "source": "About {min}–{max} minutes a lesson"
   },
   "pages.educators.need4": {
-    "flag": true,
+    "flag": "October 2026: lessons in Indonesian and Malay have no Watch step unless the language has an approved video of its own for the lesson, so these words say four steps or drop the video. Drafted by AI with no second AI review: check.",
     "note": "Translator: 'First visit' is rendered as 'kali pertama membuka laman web'. Check that this is natural and not too long for the list item. Back-translation check: Translator flag stands. Check whether 'kali pertama membuka laman web' is too long for a list item. A shorter option is 'lawatan pertama'.",
-    "back": "Internet for the first time opening the website, and for videos",
+    "back": "Internet for the first time the website is opened",
     "source": "Internet for the first visit, and for videos"
   },
   "pages.educators.howTitle": {
@@ -1422,9 +1422,9 @@
     "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.educators.step2Body": {
-    "back": "Learners read, write about what they read and talk it through in pairs. Watch is optional.",
+    "back": "Learners read, write about the reading and discuss it in pairs.",
     "source": "Learners read, write about what they read and talk it through in pairs. Watch is optional.",
-    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+    "flag": "October 2026: lessons in Indonesian and Malay have no Watch step unless the language has an approved video of its own for the lesson, so these words say four steps or drop the video. Drafted by AI with no second AI review: check."
   },
   "pages.educators.step3Title": {
     "back": "Reflect together",
@@ -1528,10 +1528,10 @@
     "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.organisations.whatBody": {
-    "flag": true,
+    "flag": "October 2026: lessons in Indonesian and Malay have no Watch step unless the language has an approved video of its own for the lesson, so these words say four steps or drop the video. Drafted by AI with no second AI review: check.",
     "note": "Back-translation check: Changed 'berjalan' (a calque of 'runs') to 'berfungsi' and lower-cased the language names. Check that the lower-case step names (baca, tulis, cakap, tonton, refleksi) are fine in running text.",
-    "back": "One course, Exploring Our World: {lessons} lessons about history, geography, culture and civic life, for learners aged about 10 to 17. Each lesson has five steps: read, write, speak, watch and reflect. The course runs in a web browser on shared laptops and tablets, in English, Indonesian or Malay. Lessons can be used offline after the first visit, but the videos, which are not compulsory, need the internet.",
-    "source": "One course, Exploring Our World: {lessons} lessons about history, geography, culture and civic life, for learners aged about 10 to 17. Each lesson has five steps: read, write, speak, watch and reflect. It runs in a web browser on shared laptops and tablets, in English, Bahasa Indonesia or Bahasa Melayu. Lessons work offline after the first visit; the optional videos need the internet."
+    "back": "One course, Exploring Our World: {lessons} lessons about history, geography, culture and civic life, for learners aged about 10 to 17. Each lesson has four steps: read, write, speak and reflect. The course runs in a web browser on shared laptops and tablets, in English, Indonesian or Malay. Lessons can be used offline after the first visit.",
+    "source": "One course, Exploring Our World: {lessons} lessons about history, geography, culture and civic life, for learners aged about 10 to 17. Each lesson has five steps: read, write, speak, watch and reflect (four in Bahasa Indonesia and Bahasa Melayu, without watch). It runs in a web browser on shared laptops and tablets, in English, Bahasa Indonesia or Bahasa Melayu. Lessons work offline after the first visit; the optional videos need the internet."
   },
   "pages.organisations.getTitle": {
     "back": "What you get",
@@ -1575,9 +1575,9 @@
     "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.organisations.ask4": {
-    "back": "The internet for the first visit on each device, and for the optional videos.",
+    "back": "Internet for the first visit on each device.",
     "source": "The internet for the first visit on each device, and for the optional videos.",
-    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+    "flag": "October 2026: lessons in Indonesian and Malay have no Watch step unless the language has an approved video of its own for the lesson, so these words say four steps or drop the video. Drafted by AI with no second AI review: check."
   },
   "pages.organisations.privacyTitle": {
     "back": "Using the course",
@@ -2953,8 +2953,9 @@
     "source": "Save data"
   },
   "pages.settings.offline.saveDataHelp": {
-    "back": "Turns off videos, so Watch opens on the written version, which has the same ideas. Everything else can already be used without the internet.",
-    "source": "Turns the videos off, so Watch opens on the written version, which has the same ideas. Everything else already works without the internet."
+    "back": "Turns off videos, so the written version opens, which has the same ideas. Everything else can already be used without the internet.",
+    "source": "Turns the videos off, so Watch opens on the written version, which has the same ideas. Everything else already works without the internet.",
+    "flag": "October 2026: lessons in Indonesian and Malay have no Watch step unless the language has an approved video of its own for the lesson, so these words say four steps or drop the video. Drafted by AI with no second AI review: check."
   },
   "pages.settings.offline.saveDataFromBrowser": {
     "back": "This setting is switched on because this device is set to save data.",
@@ -4109,8 +4110,9 @@
     "source": "{stage}, done"
   },
   "ds.chrome.stageDots.progressLabel": {
-    "back": "{count} of 5 steps finished",
-    "source": "{count} of 5 steps done"
+    "back": "{count} of {total} steps done",
+    "source": "{count} of {total} steps done",
+    "flag": "October 2026: lessons in Indonesian and Malay have no Watch step unless the language has an approved video of its own for the lesson, so these words say four steps or drop the video. Drafted by AI with no second AI review: check."
   },
   "ds.chrome.progressRing.ariaLabel": {
     "back": "{value} of {max} finished",
@@ -6055,5 +6057,30 @@
     "back": "Leave this empty",
     "source": "Leave this empty",
     "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+  },
+  "pages.home.hero.stagesLabelNoWatch": {
+    "back": "Every lesson has four steps",
+    "source": "Every lesson has four steps",
+    "flag": "October 2026: lessons in Indonesian and Malay have no Watch step unless the language has an approved video of its own for the lesson, so these words say four steps or drop the video. Drafted by AI with no second AI review: check."
+  },
+  "lessonPlayer.read.learnMore": {
+    "back": "Find out more",
+    "source": "Learn more",
+    "flag": "October 2026: lessons in Indonesian and Malay have no Watch step unless the language has an approved video of its own for the lesson, so these words say four steps or drop the video. Drafted by AI with no second AI review: check."
+  },
+  "pages.teacherGuide.planShorterNoWatch": {
+    "back": "Only have 30 minutes? Use the 30 min column: reduce the time a little for each step.",
+    "source": "Only 30 minutes? Use the 30 min column: take a little time off each step.",
+    "flag": "October 2026: lessons in Indonesian and Malay have no Watch step unless the language has an approved video of its own for the lesson, so these words say four steps or drop the video. Drafted by AI with no second AI review: check."
+  },
+  "aboutPage.lessonsIntroNoWatch": {
+    "back": "Every lesson starts with a question and gives learners four ways to explore it. Each step invites them to work with an idea in a different way.",
+    "source": "Every lesson begins with a question and gives learners four ways to explore it. Each step asks them to work with an idea in a different way.",
+    "flag": "October 2026: lessons in Indonesian and Malay have no Watch step unless the language has an approved video of its own for the lesson, so these words say four steps or drop the video. Drafted by AI with no second AI review: check."
+  },
+  "pilotDay.learnStagesNoWatch": {
+    "back": "Every lesson has four steps: {stages}. Answering the {reflect} question finishes the lesson.",
+    "source": "Every lesson has four stages: {stages}. Answering the {reflect} question finishes the lesson.",
+    "flag": "October 2026: lessons in Indonesian and Malay have no Watch step unless the language has an approved video of its own for the lesson, so these words say four steps or drop the video. Drafted by AI with no second AI review: check."
   }
 }

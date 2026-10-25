@@ -1,5 +1,6 @@
 import { lessonPath, sectionCertificatePath, sectionCheckPath } from '../../app/lessonUrls';
 import type { LessonSummary, Section } from '../../content/catalog';
+import { useCatalog } from '../../content/useCatalog';
 import { Button, LessonRow, SectionHeader } from '../../components/ds';
 import { En, useI18n } from '../../i18n';
 import { isLessonComplete, nextStageForLesson, sectionProgress, stagesDoneForLesson, type ProgressByLessonId } from '../../storage';
@@ -38,6 +39,7 @@ export interface SectionCardProps {
  * while collapsed.
  */
 export function SectionCard({ section, lessons, progress, highlightLessonId, hideProgress, expanded, onToggle }: SectionCardProps) {
+  const catalog = useCatalog();
   const { t, tx } = useI18n();
   const { completed, total } = sectionProgress(section, lessons, progress);
   const firstLesson = section.lessons[0] ?? 0;
@@ -95,6 +97,7 @@ export function SectionCard({ section, lessons, progress, highlightLessonId, hid
           // opened) or that's already finished has no "current" step to
           // show — only an in-progress lesson does.
           const inProgress = Boolean(record) && !done;
+          const stages = catalog.stagesFor(lesson);
           return (
             <LessonRow
               key={lesson.id}
@@ -104,9 +107,10 @@ export function SectionCard({ section, lessons, progress, highlightLessonId, hid
               time={t('lesson.minutes', { min, max })}
               status={done ? 'completed' : record ? 'in-progress' : 'not-started'}
               done={stagesDoneForLesson(record)}
-              current={inProgress ? nextStageForLesson(record) : undefined}
+              stages={stages}
+              current={inProgress ? nextStageForLesson(record, stages) : undefined}
               highlight={lesson.id === highlightLessonId}
-              href={lessonPath(lesson.id, done ? 'read' : nextStageForLesson(record))}
+              href={lessonPath(lesson.id, done ? 'read' : nextStageForLesson(record, stages))}
             />
           );
         })}

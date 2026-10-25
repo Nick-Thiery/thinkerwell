@@ -80,6 +80,8 @@ export function LessonPrintSheet({ lesson, titleId = 'print-title', newPage = fa
   const { read, write, speak, watch, reflect } = lesson;
   // A video's title and channel are English, unless this lesson has an approved video in the language on screen.
   const videoWord = (word: string) => (watch.localVideo ? word : <AlwaysEn>{word}</AlwaysEn>);
+  // No Watch step in a translated language without a video of its own for this lesson (CourseContent.stagesFor).
+  const withWatch = content.stagesFor(lesson).includes('watch');
 
   return (
     <article className={newPage ? 'tw-print-sheet tw-print-new-page' : 'tw-print-sheet'} aria-labelledby={titleId}>
@@ -212,42 +214,44 @@ export function LessonPrintSheet({ lesson, titleId = 'print-title', newPage = fa
         </div>
       </section>
 
-      <section className="tw-print-part">
-        <h2>{t('print.watchTitle')}</h2>
-        <p className="tw-print-muted">{tx('print.videoNote', { title: videoWord(watch.title), channel: videoWord(watch.channel) })}</p>
-        {watch.startSeconds !== undefined && watch.endSeconds !== undefined ? (
-          <p className="tw-print-muted">
-            {t('print.videoPart', {
-              start: formatDuration(watch.startSeconds, formatNumber),
-              end: formatDuration(watch.endSeconds, formatNumber),
-            })}
-          </p>
-        ) : null}
-        <div className="tw-print-keep">
-          <h3>{t('lessonPlayer.watch.thinkFirst')}</h3>
-          <p {...en}>{watch.beforeQuestion}</p>
-          <AnswerLines count={2} />
-        </div>
-        <h3>{tx('print.writtenVersion', { title: videoWord(watch.title) })}</h3>
-        {splitParagraphs(watch.summary).map((paragraph, index) => (
-          <p key={index} className="tw-print-reading-text" {...en}>
-            {paragraph}
-          </p>
-        ))}
-        <div className="tw-print-keep">
-          <h4>{t('lessonPlayer.watch.keyPoints')}</h4>
-          <ul {...en}>
-            {watch.keyPoints.map((point, index) => (
-              <li key={index}>{point}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="tw-print-keep">
-          <h3>{t('lessonPlayer.watch.afterEyebrow')}</h3>
-          <p {...en}>{watch.afterQuestion}</p>
-          <AnswerLines count={3} />
-        </div>
-      </section>
+      {withWatch ? (
+        <section className="tw-print-part">
+          <h2>{t('print.watchTitle')}</h2>
+          <p className="tw-print-muted">{tx('print.videoNote', { title: videoWord(watch.title), channel: videoWord(watch.channel) })}</p>
+          {watch.startSeconds !== undefined && watch.endSeconds !== undefined ? (
+            <p className="tw-print-muted">
+              {t('print.videoPart', {
+                start: formatDuration(watch.startSeconds, formatNumber),
+                end: formatDuration(watch.endSeconds, formatNumber),
+              })}
+            </p>
+          ) : null}
+          <div className="tw-print-keep">
+            <h3>{t('lessonPlayer.watch.thinkFirst')}</h3>
+            <p {...en}>{watch.beforeQuestion}</p>
+            <AnswerLines count={2} />
+          </div>
+          <h3>{tx('print.writtenVersion', { title: videoWord(watch.title) })}</h3>
+          {splitParagraphs(watch.summary).map((paragraph, index) => (
+            <p key={index} className="tw-print-reading-text" {...en}>
+              {paragraph}
+            </p>
+          ))}
+          <div className="tw-print-keep">
+            <h4>{t('lessonPlayer.watch.keyPoints')}</h4>
+            <ul {...en}>
+              {watch.keyPoints.map((point, index) => (
+                <li key={index}>{point}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="tw-print-keep">
+            <h3>{t('lessonPlayer.watch.afterEyebrow')}</h3>
+            <p {...en}>{watch.afterQuestion}</p>
+            <AnswerLines count={3} />
+          </div>
+        </section>
+      ) : null}
 
       <section className="tw-print-part">
         <h2>{t('stages.reflect')}</h2>

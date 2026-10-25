@@ -29,7 +29,7 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
   const catalog = useCatalog();
   const lessons = catalog.getLessons();
   const sections = catalog.getSections();
-  const target = findContinueTarget(lessons, progress);
+  const target = findContinueTarget(lessons, progress, catalog.stagesFor);
   const completedCount = totalLessonsCompleted(lessons, progress);
   const currentSectionId = target ? catalog.getLessonSection(target.lesson).id : undefined;
   const journalEntry = latestJournalEntry(lessons, progress);
@@ -93,6 +93,7 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
           )}
           lessonLabel={tx('pages.course.lessonLabel', { number: target.lesson.number, section: <En>{catalog.getLessonSection(target.lesson).title}</En> })}
           done={stagesDoneForLesson(progress.get(target.lesson.id))}
+          stages={catalog.stagesFor(target.lesson)}
           current={target.stage}
           stageLabel={t('lesson.nextStep', { stage: t(`stages.${target.stage}`) })}
           cta={isNewLearner || !targetStarted ? t('pages.home.dashboard.startCta') : undefined}

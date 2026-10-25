@@ -22,12 +22,17 @@
  *   Slow / Normal is the device's listening speed.
  * - The lesson's picture is part of the evidence (LessonEvidence), right
  *   after the warm-up.
+ * - A lesson without a Watch step (a translated language with no video of
+ *   its own for it: CourseContent.stagesFor) keeps the video's key points,
+ *   already in the lessons' language, folded under the last part's key
+ *   words ("Learn more"): optional, closed, never needed.
  * - When Read counts as done is decided in src/lesson/progressRules.ts: every
  *   choice question answered, or Continue from the quick check.
  */
 import { useEffect, useId, useMemo, useRef } from 'react';
 import { recordingRef, sectionKey } from '../../../audio/recordings';
 import { ListenBar, ReadingCard, SegmentedControl, ToolToggle } from '../../../components/ds';
+import { useLessonContent } from '../../../content/useContent';
 import { useI18n } from '../../../i18n';
 import { useLessonPlayer } from '../../../lesson';
 import { track } from '../../../measurement/track';
@@ -63,8 +68,10 @@ function bringIntoView(element: Element) {
 
 /** The Read stage, as LessonPage renders it. */
 export function ReadStage() {
-  const { t, contentLocale } = useI18n();
+  const { t, contentLocale, contentLang } = useI18n();
   const { lesson, readingLevel, setReadingLevel, settings, setListeningSpeed } = useLessonPlayer();
+  // Without a Watch step the video's key points stay with the reading (folded, at the last part).
+  const keyPointsHere = !useLessonContent().stagesFor(lesson).includes('watch');
   const sections = lesson.read.sections;
   const glossary = lesson.read.glossary;
   const total = sections.length;
@@ -250,6 +257,15 @@ export function ReadStage() {
         {glossary.length > 0 ? (
           <LessonDisclosure className="tw-read-keywords-disclosure" icon="Search" summary={t('lessonPlayer.read.keyWords')}>
             <KeyWordsPanel glossary={glossary} />
+          </LessonDisclosure>
+        ) : null}
+        {isLast && keyPointsHere && lesson.watch.keyPoints.length > 0 ? (
+          <LessonDisclosure className="tw-read-learn-more" icon="Lightbulb" summary={t('lessonPlayer.read.learnMore')}>
+            <ul className="tw-read-key-points" {...contentLang}>
+              {lesson.watch.keyPoints.map((point, index) => (
+                <li key={index}>{point}</li>
+              ))}
+            </ul>
           </LessonDisclosure>
         ) : null}
       </div>

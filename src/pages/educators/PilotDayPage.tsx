@@ -23,6 +23,7 @@ import words from 'virtual:thinkerwell/messages/pilotDay';
 import { CONTACT_EMAIL } from '../../app/contact';
 import { educatorsPath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
+import { commonStages } from '../../content/stages';
 import { useContent } from '../../content/useContent';
 import { useI18n, withWords } from '../../i18n';
 import { PrintToolbar } from '../print/PrintToolbar';
@@ -53,8 +54,10 @@ export function PilotDayPage() {
   const lessons = content.getLessons();
   const minMinutes = Math.min(...lessons.map((lesson) => lesson.estimatedMinutes[0]));
   const maxMinutes = Math.max(...lessons.map((lesson) => lesson.estimatedMinutes[1]));
+  // Every lesson's steps in the language on screen: four without Watch where the lessons are translated.
+  const lessonStages = commonStages(lessons, content.stagesFor);
   const stages = parent.formatList(
-    (['read', 'write', 'speak', 'watch', 'reflect'] as const).map((stage) => parent.t(`stages.${stage}`)),
+    lessonStages.map((stage) => parent.t(`stages.${stage}`)),
     { type: 'conjunction' },
   );
 
@@ -104,7 +107,7 @@ export function PilotDayPage() {
           <section className="tw-consent-part" aria-labelledby="pilotday-learn">
             <h3 id="pilotday-learn">{t('pilotDay.learnTitle')}</h3>
             <ul className="tw-consent-list">
-              <li>{tx('pilotDay.learnStages', { stages: ui(stages), reflect: ui(parent.t('stages.reflect')) })}</li>
+              <li>{tx(lessonStages.includes('watch') ? 'pilotDay.learnStages' : 'pilotDay.learnStagesNoWatch', { stages: ui(stages), reflect: ui(parent.t('stages.reflect')) })}</li>
               <li>{t('pilotDay.learnOrder')}</li>
               <li>
                 {t('pilotDay.learnTime', {

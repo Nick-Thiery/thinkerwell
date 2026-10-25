@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import { EVENT_SPECS } from '../measurement/events';
 import { FIXTURE_UNAPPROVED_ID, FIXTURE_VIDEO_ID, ID_VIDEOS_FIXTURE, translationWithVideos } from '../test/localVideoFixtures';
+import { catalogFor, englishCatalog } from './catalog';
 import { contentFor, englishContent } from './index';
+import { STAGES, STAGES_WITHOUT_WATCH } from './stages';
 import { checkLocalVideos, parseContentFile } from './load';
 import { approvedLocalVideo, approvedLocalVideos, lessonKeyFromPath, onlyApprovedVideos, withLocalVideo } from './localVideos';
 import type { ApprovedLocalVideo } from './schema';
@@ -147,6 +149,36 @@ describe('the content in a language with videos of its own', () => {
   it('never changes the English content', () => {
     contentFor(translationWithVideos(ID_VIDEOS_FIXTURE));
     expect(englishContent.getLessonByNumber(5)!.watch.youtubeId).not.toBe(FIXTURE_VIDEO_ID);
+  });
+});
+
+describe('which lessons have a Watch step (stagesFor)', () => {
+  it('gives every English lesson all five steps', () => {
+    for (const lesson of englishContent.getLessons()) {
+      expect(englishContent.stagesFor(lesson)).toEqual(STAGES);
+      expect(englishCatalog.stagesFor(lesson)).toEqual(STAGES);
+    }
+  });
+
+  it('gives a translated lesson Watch only with an approved video in that language, in the content and the catalog alike', () => {
+    const translation = translationWithVideos(ID_VIDEOS_FIXTURE);
+    const content = contentFor(translation);
+    const catalog = catalogFor(translation);
+    for (const lesson of content.getLessons()) {
+      const expected = lesson.number === 5 ? STAGES : STAGES_WITHOUT_WATCH;
+      expect(content.stagesFor(lesson), `lesson ${lesson.number}`).toEqual(expected);
+      expect(catalog.stagesFor(lesson), `lesson ${lesson.number}`).toEqual(expected);
+    }
+  });
+
+  it('gives no translated lesson Watch without a videos file, or with an empty one', () => {
+    for (const videos of [undefined, { language: 'id', lessons: {} }]) {
+      const translation = translationWithVideos(videos);
+      for (const lesson of contentFor(translation).getLessons()) {
+        expect(contentFor(translation).stagesFor(lesson)).toEqual(STAGES_WITHOUT_WATCH);
+        expect(catalogFor(translation).stagesFor(lesson)).toEqual(STAGES_WITHOUT_WATCH);
+      }
+    }
   });
 });
 

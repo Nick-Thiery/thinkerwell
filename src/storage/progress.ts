@@ -7,6 +7,7 @@
  * already has the data loaded.
  */
 import type { Lesson, Section } from '../content';
+import { STAGES, stageAmong } from '../content/stages';
 
 /** What these helpers need of a lesson: a catalog entry (src/content/catalog.ts) or a whole lesson. */
 type LessonRef = Pick<Lesson, 'id' | 'number'>;
@@ -29,9 +30,19 @@ export function stagesDoneForLesson(progress: LessonProgress | undefined): Stage
   return progress?.stagesDone ?? [];
 }
 
-/** Where "Continue" should go for this one lesson: the saved stage, or Read if never started. */
-export function nextStageForLesson(progress: LessonProgress | undefined): StageId {
-  return progress?.currentStage ?? 'read';
+/**
+ * Where "Continue" should go for this one lesson: the saved stage, or Read if
+ * never started. Among the lesson's `stages` (CourseContent.stagesFor): a
+ * saved Watch the lesson hasn't got in the language on screen gives the next
+ * step it has.
+ */
+export function nextStageForLesson(progress: LessonProgress | undefined, stages: readonly StageId[] = STAGES): StageId {
+  return stageAmong(stages, progress?.currentStage ?? 'read');
+}
+
+/** The stages done that are among the lesson's `stages` (a Watch done in English doesn't count in a lesson without one). */
+export function stagesDoneAmong(progress: LessonProgress | undefined, stages: readonly StageId[] = STAGES): StageId[] {
+  return stagesDoneForLesson(progress).filter((stage) => stages.includes(stage));
 }
 
 export interface ContinueTarget<L extends LessonRef = Lesson> {
@@ -53,6 +64,7 @@ export interface ContinueTarget<L extends LessonRef = Lesson> {
 export function findContinueTarget<L extends LessonRef>(
   lessons: readonly L[],
   progress: ProgressByLessonId,
+  stagesFor: (lesson: L) => readonly StageId[] = () => STAGES,
 ): ContinueTarget<L> | undefined {
   let mostRecent: { lesson: L; record: LessonProgress } | undefined;
   for (const lesson of lessons) {
@@ -60,7 +72,7 @@ export function findContinueTarget<L extends LessonRef>(
     if (!record || isLessonComplete(record)) continue;
     if (!mostRecent || record.updatedAt > mostRecent.record.updatedAt) mostRecent = { lesson, record };
   }
-  if (mostRecent) return { lesson: mostRecent.lesson, stage: nextStageForLesson(mostRecent.record) };
+  if (mostRecent) return { lesson: mostRecent.lesson, stage: nextStageForLesson(mostRecent.record, stagesFor(mostRecent.lesson)) };
 
   // Nothing in progress: go on from the lesson finished most recently, to
   // the first unfinished lesson after it in course order (wrapping round to

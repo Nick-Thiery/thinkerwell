@@ -242,6 +242,12 @@ describe('ReadStage: reading parts', () => {
     }
   });
 
+  it('has no "Learn more" in English, where the lesson keeps its Watch step', () => {
+    renderRead({ search: `?part=${L10.read.sections.length}` });
+    expect(screen.queryByText('Learn more')).toBeNull();
+    expect(document.querySelector('.tw-read-learn-more')).toBeNull();
+  });
+
   it('shows the glossary helper on parts with glossary words', () => {
     renderRead();
     expect(screen.getByText('Tap a coloured word to see what it means.')).toBeInTheDocument();

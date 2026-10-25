@@ -24,6 +24,7 @@ import { createCourseContent, type OurWorldContent } from './courseContent';
 import { DEFAULT_COURSE_ID } from './courses';
 import { approvedLocalVideos, lessonKeyFromPath, withLocalVideo } from './localVideos';
 import type { CourseFile, Lesson, QuizFile, SectionId } from './schema';
+import { lessonStages } from './stages';
 import { applyTranslation } from './translation';
 import type { ContentTranslation } from '../i18n/core';
 
@@ -62,8 +63,12 @@ function createContent(
   lessonList: readonly Lesson[],
   quizzes: readonly QuizFile[],
   pictureUrls: ReadonlyMap<string, string>,
+  translatedLessons: boolean,
 ): Content {
   const quizzesBySection = new Map(quizzes.map((q) => [q.section, q]));
+  // In a language whose lessons are translated, a lesson has a Watch step only
+  // with an approved video in that language (./stages.ts); English keeps all five.
+  const watchByNumber = new Map(lessonList.map((lesson) => [lesson.number, !translatedLessons || lesson.watch.localVideo === true]));
   return {
     ...createCourseContent(course, lessonList, {
       courseId: DEFAULT_COURSE_ID,
@@ -73,6 +78,7 @@ function createContent(
       sectionLook: (sectionId) => ({ tone: sectionId as SectionId, icon: SECTION_ICONS[sectionId as SectionId] }),
       coursePath: (sectionId) => (sectionId ? `/course#${sectionId}` : '/course'),
       guidesPath,
+      stagesFor: (lesson) => lessonStages(watchByNumber.get(lesson.number) ?? true),
     }),
     getQuizzes: () => quizzes,
     getQuiz: (sectionId) => quizzesBySection.get(sectionId as SectionId),
@@ -87,6 +93,7 @@ export const englishContent = createContent(
   Object.values(lessonModules),
   Object.values(quizModules),
   visualUrls,
+  false,
 );
 
 export const {
@@ -115,7 +122,8 @@ const translated = new WeakMap<ContentTranslation, Content>();
  * own pictures. The build has checked them (vite.config.ts, checkContent).
  * A file or picture a translation lacks stays English. English without one.
  * A lesson with an approved video of the language's own (content/<code>/videos.json)
- * has that video instead of the English one.
+ * has that video instead of the English one; every other lesson has no Watch
+ * step in this language (`stagesFor`).
  */
 export function contentFor(translation: ContentTranslation | undefined): Content {
   if (!translation) return englishContent;
@@ -129,7 +137,7 @@ export function contentFor(translation: ContentTranslation | undefined): Content
     );
     const quizzes = Object.entries(quizModules).map(([path, quiz]) => applyTranslation(quiz, translation.quizzes[fileName(path)]));
     const pictures = new Map([...visualUrls, ...Object.entries(translation.visuals)]);
-    found = createContent(applyTranslation(courseJson as unknown as CourseFile, translation.course), lessons, quizzes, pictures);
+    found = createContent(applyTranslation(courseJson as unknown as CourseFile, translation.course), lessons, quizzes, pictures, true);
     translated.set(translation, found);
   }
   return found;

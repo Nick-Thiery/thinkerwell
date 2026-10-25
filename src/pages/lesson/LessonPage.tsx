@@ -2,7 +2,7 @@ import { useState, type ComponentType } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { useFullPageTitle } from '../../app/usePageTitle';
 import { Button, Icon, StagePath, StatusBanner } from '../../components/ds';
-import { isStageId, STAGES, type CourseLesson, type StageId } from '../../content';
+import { isStageId, type CourseLesson, type StageId } from '../../content';
 import { useLessonContent } from '../../content/useContent';
 import { En, useI18n } from '../../i18n';
 import { LESSON_PHONE_QUERY, useLessonPlayer, useMediaQuery } from '../../lesson';
@@ -185,13 +185,16 @@ function LessonTitle({ lesson }: { lesson: CourseLesson }) {
 }
 
 /**
- * The five steps. From 600px: the labelled StagePath in one row. On a phone:
- * "Step 2 of 5 · Write" and "All steps", which opens the same five links
+ * The lesson's steps (five, or four without Watch). From 600px: the labelled
+ * StagePath in one row. On a phone: "Step 2 of 5 · Write" ("of 4" without
+ * Watch) and "All steps", which opens the same links
  * (closed again by moving to another step: the parent keys it by step).
  */
 function LessonSteps({ current }: { current: StageId }) {
   const { t } = useI18n();
   const { lesson, progress } = useLessonPlayer();
+  // Five steps, or four without Watch (a translated language with no video of its own for this lesson).
+  const stages = useLessonContent().stagesFor(lesson);
   const phone = useMediaQuery(LESSON_PHONE_QUERY);
   const [openAt, setOpenAt] = useState<StageId | null>(null);
   const open = openAt === current;
@@ -200,6 +203,7 @@ function LessonSteps({ current }: { current: StageId }) {
     <StagePath
       orientation={orientation}
       current={current}
+      stages={stages}
       done={progress.stagesDone}
       hrefFor={(stage) => lessonPath(lesson.id, stage)}
     />
@@ -212,8 +216,8 @@ function LessonSteps({ current }: { current: StageId }) {
       <div className="tw-lesson-steps-row">
         <p className="tw-lesson-step-count">
           {t('lessonPlayer.shell.stepOf', {
-            number: STAGES.indexOf(current) + 1,
-            total: STAGES.length,
+            number: stages.indexOf(current) + 1,
+            total: stages.length,
             stage: t(`stages.${current}`),
           })}
         </p>

@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { useCatalog } from '../../content/useCatalog';
-import { Badge, Mascot } from '../../components/ds';
+import { Badge, Mascot, STAGE_ICON } from '../../components/ds';
+import { commonStages } from '../../content/stages';
 import { useI18n } from '../../i18n';
 import { LESSON_PHONE_QUERY, useMediaQuery } from '../../lesson/useMediaQuery';
 
@@ -29,31 +30,22 @@ export function HomeHero({ size = 184, children }: { size?: number; children: Re
   );
 }
 
-/** The five stage badges and footnote shown on the plain picker view. */
+/** The stage badges (five, or four without Watch in a translated language) and footnote shown on the plain picker view. */
 export function HomeHeroStages() {
   const { t } = useI18n();
   const catalog = useCatalog();
   const totalLessons = catalog.getCourse().course.totalLessons;
   const totalSections = catalog.getSections().length;
+  const stages = commonStages(catalog.getLessons(), catalog.stagesFor);
   return (
     <div className="tw-home-stages">
-      <span className="eyebrow">{t('pages.home.hero.stagesLabel')}</span>
+      <span className="eyebrow">{t(stages.includes('watch') ? 'pages.home.hero.stagesLabel' : 'pages.home.hero.stagesLabelNoWatch')}</span>
       <div className="tw-home-stages-row">
-        <Badge tone="outline" icon="BookOpen">
-          {t('stages.read')}
-        </Badge>
-        <Badge tone="outline" icon="Pencil">
-          {t('stages.write')}
-        </Badge>
-        <Badge tone="outline" icon="MessageCircle">
-          {t('stages.speak')}
-        </Badge>
-        <Badge tone="outline" icon="Play">
-          {t('stages.watch')}
-        </Badge>
-        <Badge tone="outline" icon="RefreshCw">
-          {t('stages.reflect')}
-        </Badge>
+        {stages.map((stage) => (
+          <Badge key={stage} tone="outline" icon={STAGE_ICON[stage]}>
+            {t(`stages.${stage}`)}
+          </Badge>
+        ))}
       </div>
       <p className="small">{t('pages.home.hero.footnote', { lessons: totalLessons, sections: totalSections })}</p>
     </div>

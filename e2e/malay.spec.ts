@@ -44,14 +44,14 @@ interface LessonText {
   section: string;
   title: string;
   read: { sections: unknown[] };
-  watch: { summary: string };
+  watch: { summary: string; keyPoints: string[] };
   sources: unknown[];
 }
 const names = readdirSync(path.join(root, 'content', 'lessons')).filter((name) => /^L\d\d\.json$/.test(name)).sort();
 const lessons = names.map((name) => {
   const english = readJson<LessonText>('content', 'lessons', name);
   const malay = readJson<Partial<LessonText>>('content', 'ms', 'lessons', name);
-  return { ...english, englishTitle: english.title, title: malay.title!, summary: malay.watch!.summary };
+  return { ...english, englishTitle: english.title, title: malay.title!, summary: malay.watch!.summary, keyPoints: malay.watch!.keyPoints! };
 });
 const L1 = lessons[0]!;
 const L10 = lessons[9]!;
@@ -374,15 +374,23 @@ test.describe('Listen follows the language', () => {
 });
 
 test.describe('lessons, videos and downloads', () => {
-  test('the video stays English, so Watch opens on its written version; section checks and pictures are Malay', async ({ page }) => {
+  test('lessons have no Watch step: /watch goes on to Reflect, four steps, the key points kept in Read; section checks and pictures are Malay', async ({ page }) => {
     const requests = recordRequests(page);
     await page.goto(`/lesson/${L10.id}/watch`);
     await headerSwitch(page, MALAY);
-    // The video is English, so Watch opens on its written version in Malay, with the English video one tap away
-    // (not tapped here: nothing is asked of YouTube before the tap).
-    await expect(page.locator('.tw-watch-written-text')).toContainText(L10.summary.split('\n')[0]!.slice(0, 40));
-    await expect(page.locator('.tw-watch-written-h')).toHaveAttribute('lang', 'en');
-    await expect(page.getByRole('button', { name: msg(ms, 'lessonPlayer.watch.watchInEnglish') })).toBeVisible();
+    // No video in this language for the lesson, so no Watch: the address moves on to Reflect, the next step.
+    await expect(page).toHaveURL(new RegExp(`/lesson/${L10.id}/reflect$`));
+    await expect(page.locator('h1')).toHaveText(L10.title);
+    // Four steps: the labelled path from 600px, "Step 4 of 4" on a phone.
+    const path = page.locator('.tw-lesson-path-horizontal .tw-step');
+    if ((await path.count()) > 0) await expect(path).toHaveCount(4);
+    else await expect(page.locator('.tw-lesson-step-count')).toHaveText(msg(ms, 'lessonPlayer.shell.stepOf', { number: 4, total: 4, stage: msg(ms, 'stages.reflect') }));
+    await expect(page.getByRole('link', { name: new RegExp(`^${msg(ms, 'stages.watch')}`) })).toHaveCount(0);
+    // The video's key points, in the lessons' language, folded at the end of the reading.
+    await page.goto(`/lesson/${L10.id}/read?part=${L10.read.sections.length}`);
+    const learnMore = page.locator('.tw-read-learn-more');
+    await learnMore.locator('summary').click();
+    await expect(learnMore).toContainText(L10.keyPoints[0]!);
     await expect(page.locator('iframe')).toHaveCount(0);
 
     await page.goto(`/lesson/${L10.id}/read`);
@@ -399,6 +407,8 @@ test.describe('lessons, videos and downloads', () => {
     await expect(page.locator('html')).toHaveAttribute('lang', 'en');
     await expect(page.locator('h1')).toHaveText(L10.englishTitle);
     await expect(page.getByText(msg(en, 'lessonPlayer.watch.videoInEnglish'))).toHaveCount(0);
+    // English keeps all five steps: Watch is there.
+    await expect(page.locator('.tw-lesson-stage h2.tw-visually-hidden')).toHaveText(msg(en, 'stages.watch'));
     expect(requests.filter((url) => /\/assets\/locales\/ms\//.test(url))).toEqual([]);
   });
 });
@@ -525,7 +535,6 @@ test.describe('with Malay on, every page is Malay and fits', () => {
         'read?part=check',
         'write',
         'speak',
-        'watch',
         'reflect',
         'complete',
       ];
@@ -535,12 +544,15 @@ test.describe('with Malay on, every page is Malay and fits', () => {
         if (step !== 'complete') await expect(page.locator('h1')).toHaveText(lesson.title);
         await expectAllMalay(page, step);
       }
-      // What opens on Read's quick check (an answer's feedback), Write (starters, planning, the example), Watch (the written version) and the sources.
+      // No Watch step in this language: its address goes on to Reflect.
+      await page.goto(`/lesson/${lesson.id}/watch`);
+      await expect(page).toHaveURL(new RegExp(`/lesson/${lesson.id}/reflect$`));
+      // What opens on Read's quick check (an answer's feedback), Write (starters, planning, the example) and the sources.
       await page.goto(`/lesson/${lesson.id}/read?part=check`);
       await page.getByRole('radio').first().click();
       await expectAllMalay(page, 'quick check answered');
-      // Every folded help, opened: Read's key words, Write's help and self-check, Watch's idea box, Reflect's other prompt.
-      for (const step of ['read?part=1', 'watch', 'reflect', 'write']) {
+      // Every folded help, opened: Read's key words (and, at the last part, the key points), Write's help and self-check, Reflect's other prompt.
+      for (const step of ['read?part=1', `read?part=${lesson.read.sections.length}`, 'reflect', 'write']) {
         await page.goto(`/lesson/${lesson.id}/${step}`);
         await expect(page.locator('h1')).toHaveText(lesson.title);
         const closed = page.locator('.tw-lesson-stage details:not([open]) > summary');
@@ -549,9 +561,6 @@ test.describe('with Malay on, every page is Malay and fits', () => {
       }
       await page.getByRole('button', { name: msg(ms, 'lessonPlayer.write.seeExample') }).click();
       await expectAllMalay(page, 'write: example');
-      await page.goto(`/lesson/${lesson.id}/watch`);
-      await expect(page.locator('.tw-watch-written-text')).toBeVisible();
-      await expectAllMalay(page, 'watch: written version');
       // The lesson's sources, at the bottom of every step.
       await page.locator('.tw-lesson-sources summary').click();
       await expect(page.locator('.tw-lesson-sources a')).toHaveCount(lesson.sources.length);

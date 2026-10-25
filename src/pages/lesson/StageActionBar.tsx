@@ -1,5 +1,6 @@
 import { ActionBar } from '../../components/ds';
-import { STAGES, isStageId, type LessonStep, type StageId } from '../../content';
+import { isStageId, stageAfter, stageBefore, type LessonStep } from '../../content';
+import { useLessonContent } from '../../content/useContent';
 import { useI18n } from '../../i18n';
 import { useLessonPlayer } from '../../lesson';
 
@@ -23,14 +24,6 @@ export interface StageActionBarProps {
   disabled?: boolean;
 }
 
-function previousStage(stage: StageId): StageId | undefined {
-  return STAGES[STAGES.indexOf(stage) - 1];
-}
-
-function followingStep(stage: StageId): LessonStep {
-  return STAGES[STAGES.indexOf(stage) + 1] ?? 'complete';
-}
-
 /**
  * The ActionBar at the bottom of every stage, wired to the lesson's own
  * navigation. Its Next button is the one ink primary button on each stage
@@ -39,10 +32,12 @@ function followingStep(stage: StageId): LessonStep {
  */
 export function StageActionBar({ next, onNext, nextStep, back, onBack, helper, disabled }: StageActionBarProps) {
   const { t } = useI18n();
-  const { step, goTo } = useLessonPlayer();
+  const { step, goTo, lesson } = useLessonPlayer();
   const stage = isStageId(step) ? step : undefined;
+  // The lesson's own steps: Speak goes on to Reflect where the lesson has no Watch.
+  const stages = useLessonContent().stagesFor(lesson);
 
-  const defaultNextStep = stage ? followingStep(stage) : undefined;
+  const defaultNextStep = stage ? (stageAfter(stages, stage) ?? 'complete') : undefined;
   const target = nextStep === undefined ? defaultNextStep : nextStep;
   const defaultNextLabel =
     stage === 'reflect'
@@ -51,7 +46,7 @@ export function StageActionBar({ next, onNext, nextStep, back, onBack, helper, d
         ? t('lessonPlayer.shell.continueTo', { stage: t(`stages.${target}`) })
         : undefined;
 
-  const prev = stage ? previousStage(stage) : undefined;
+  const prev = stage ? stageBefore(stages, stage) : undefined;
   const backLabel = back === undefined ? (prev ? t(`stages.${prev}`) : undefined) : (back ?? undefined);
 
   return (

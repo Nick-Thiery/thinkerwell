@@ -5,7 +5,7 @@ import { routes } from '../../app/routes';
 import { getLesson, getLessons, getLessonSection, getVisualUrl, type Lesson } from '../../content';
 import { t } from '../../i18n';
 import { formatDuration } from '../../lesson/format';
-import { planTotal, SESSION_PLAN } from './sessionPlan';
+import { planTotal, SESSION_PLAN, SESSION_PLAN_WITHOUT_WATCH } from './sessionPlan';
 import { TeacherGuidePage, youtubeWatchUrl } from './TeacherGuidePage';
 
 const L10 = getLesson('towns-near-rivers') as Lesson;
@@ -32,6 +32,13 @@ describe('SESSION_PLAN', () => {
     expect(planTotal('minutes')).toBe(45);
     expect(planTotal('short')).toBe(30);
     expect(SESSION_PLAN.map((row) => row.step)).toEqual(['warmUp', 'read', 'check', 'write', 'speak', 'watch', 'reflect']);
+  });
+
+  it('has a plan for a lesson without Watch that still adds up to 45 and 30, skipping nothing', () => {
+    expect(planTotal('minutes', SESSION_PLAN_WITHOUT_WATCH)).toBe(45);
+    expect(planTotal('short', SESSION_PLAN_WITHOUT_WATCH)).toBe(30);
+    expect(SESSION_PLAN_WITHOUT_WATCH.map((row) => row.step)).toEqual(['warmUp', 'read', 'check', 'write', 'speak', 'reflect']);
+    expect(SESSION_PLAN_WITHOUT_WATCH.every((row) => row.short !== null)).toBe(true);
   });
 });
 

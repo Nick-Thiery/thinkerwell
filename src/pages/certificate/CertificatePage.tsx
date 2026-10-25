@@ -126,6 +126,7 @@ function LessonsLeft({
           {left.map((lesson) => {
             const record = progress.get(lesson.id);
             const started = Boolean(record) && !isLessonComplete(record);
+            const stages = catalog.stagesFor(lesson);
             return (
               <LessonRow
                 key={lesson.id}
@@ -134,7 +135,8 @@ function LessonsLeft({
                 time={t('lesson.minutes', { min: lesson.estimatedMinutes[0], max: lesson.estimatedMinutes[1] })}
                 status={started ? 'in-progress' : 'not-started'}
                 done={stagesDoneForLesson(record)}
-                href={lessonPath(lesson.id, started ? nextStageForLesson(record) : 'read')}
+                stages={stages}
+                href={lessonPath(lesson.id, started ? nextStageForLesson(record, stages) : 'read')}
               />
             );
           })}
