@@ -25,7 +25,6 @@ import { assembleContent } from './assemble';
 import type { LessonSummary } from './catalogFields';
 import { ContentError } from './errors';
 import type { CourseFile, Section, SectionId } from './schema';
-import { approvedLocalVideos } from './localVideos';
 import { lessonStages, type StageId } from './stages';
 import { applyTranslation } from './translation';
 import type { ContentTranslation } from '../i18n/core';
@@ -130,8 +129,10 @@ export function catalogFor(translation: ContentTranslation | undefined): Catalog
       return applyTranslation(lesson, byFile.get(file));
     });
     // The same rule as contentFor(): Watch only for a lesson with an approved video in this language.
-    const videos = approvedLocalVideos(translation.videos);
-    const withWatch = (number: number) => videos.has(`L${String(number).padStart(2, '0')}`);
+    // Only the approval is read here, not the whole entry (./localVideos.ts, kept out of the first
+    // chunk): the build refuses an approved entry that isn't complete and drops every other one.
+    const lessons = (translation.videos as { lessons?: Record<string, { approved?: unknown } | undefined> } | undefined)?.lessons ?? {};
+    const withWatch = (number: number) => lessons[`L${String(number).padStart(2, '0')}`]?.approved === true;
     found = createCatalog(applyTranslation(courseJson as unknown as CourseFile, translation.course), summaries, withWatch);
     translated.set(translation, found);
   }
