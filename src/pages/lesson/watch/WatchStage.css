@@ -155,6 +155,14 @@
   margin-block-start: var(--space-2);
 }
 
+/* A long label ("Tonton videonya dalam bahasa Inggris") wraps inside the card on a phone rather than overflowing it. */
+.tw-watch-written-actions .tw-btn {
+  max-inline-size: 100%;
+  min-inline-size: 0;
+  white-space: normal;
+  text-align: center;
+}
+
 /* "For teachers": closed by default, a quiet note under the stage. */
 .tw-watch-teachers {
   border-radius: var(--radius-lg);
