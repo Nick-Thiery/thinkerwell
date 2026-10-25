@@ -21,7 +21,7 @@ const courseTitle = readJson<{ course: { title: string } }>('content', 'course.j
 const pages = seoPages({ messages, courseTitle, lessons });
 
 describe('the indexable pages', () => {
-  it('are the six public pages and every lesson’s Read step, nothing else', () => {
+  it('are the seven public pages and every lesson’s Read step, nothing else', () => {
     expect(pages.map((page) => page.path)).toEqual([
       '/',
       '/about',
@@ -29,9 +29,10 @@ describe('the indexable pages', () => {
       '/educators',
       '/organisations',
       '/credits',
+      '/contact',
       ...[...lessons].sort((a, b) => a.number - b.number).map((lesson) => `/lesson/${lesson.id}/read`),
     ]);
-    expect(pages).toHaveLength(6 + 24);
+    expect(pages).toHaveLength(7 + 24);
   });
 
   it('use the approved titles and descriptions (Thinkerwell_Google_SEO_and_LinkedIn_Handoff.md)', () => {

@@ -194,6 +194,16 @@ Inside that frame, YouTube's player then loads its own scripts, images, captions
 
 The same-origin POST is covered by the existing `connect-src 'self'`: **no host was added to the Content-Security-Policy**. `e2e/measurement.spec.ts` and `e2e/privacy.spec.ts` check there is no `/api/` request with sharing off.
 
+**The contact form, only when someone presses Send on `/contact`** (`docs/notes/contact-form.md`):
+
+| Request | When |
+| --- | --- |
+| `POST /api/contact` (this site only, `application/json`) | Once per press of "Send enquiry", after the page has checked the fields: the topic, the name, one reply address (email or WhatsApp number), the message, and the empty hidden field. The function emails them to the team through Resend (`api.resend.com`, server to server: the browser never talks to Resend). Answers 503 until `RESEND_API_KEY` and `CONTACT_FROM_EMAIL` are set |
+
+Same origin again: **no host was added to the Content-Security-Policy**.
+
+- [ ] **Set up the contact form's email** (`docs/notes/contact-form.md`, "Setting it up"): a Resend account, `send.thinkerwell.app` verified in DNS, `RESEND_API_KEY` (Sensitive) and `CONTACT_FROM_EMAIL` in Vercel, a redeploy, and two live test enquiries.
+
 **Nothing else.** There are no cookies (tested), no analytics, no fonts or scripts from other servers, and, **with pilot measurement off (the default), no API calls**. Pilot measurement is built but off (see the next table). Two browser features can reach other servers, but only when someone chooses them. Neither is a request from the site:
 
 - **Say it with "Allow online speech-to-text"**, which is off unless an educator turns it on in Settings. It sends what learners say to the browser maker's service.

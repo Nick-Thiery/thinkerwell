@@ -4,6 +4,7 @@
 // (For organisations, the information sheet, the consent form, code cards,
 // the pilot day guide for staff, the before-and-after check),
 // the print views and the journal, and Credits. They use the lessons too.
+export { ContactPage } from '../../pages/contact/ContactPage';
 export { CreditsPage } from '../../pages/CreditsPage';
 export { EducatorsPage } from '../../pages/EducatorsPage';
 export { OrganisationsPage } from '../../pages/OrganisationsPage';

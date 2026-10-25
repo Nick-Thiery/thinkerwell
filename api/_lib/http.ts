@@ -10,6 +10,12 @@ export interface Env {
   MEASUREMENT_ORGS?: string | undefined;
   /** The bearer token for /api/export. Without it, /api/export answers 503. */
   EXPORT_TOKEN?: string | undefined;
+  /** Resend's API key, for /api/contact (docs/notes/contact-form.md). Without it, /api/contact answers 503. */
+  RESEND_API_KEY?: string | undefined;
+  /** The address the contact form's emails come from, on a domain verified with Resend (Thinkerwell <contact@send.thinkerwell.app>). Without it, /api/contact answers 503. */
+  CONTACT_FROM_EMAIL?: string | undefined;
+  /** Where the contact form's emails go; hello@thinkerwell.app when unset. Never taken from the request. */
+  CONTACT_TO_EMAIL?: string | undefined;
 }
 
 export function json(status: number, body: unknown, headers: Record<string, string> = {}): Response {

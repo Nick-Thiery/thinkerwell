@@ -74,7 +74,7 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * page's code and its words in three languages, 3.7 kB in the Educators chunk; its styles, 0.4 kB). The offline copy
  * keeps it so a centre can print the sheets without the internet (docs/notes/pilot-check.md).
  */
-const PRECACHE_BUDGET = 823_000;
+const PRECACHE_BUDGET = 828_000;
 /**
  * Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before),
  * 210.5 kB after the language and pilot-day merges, 212.7 kB with the header's language switch and the one language

@@ -1,0 +1,148 @@
+/* Contact Thinkerwell (/contact): one paper card on the lavender page, one column, labels above fields. */
+
+.tw-contact-page {
+  display: flex;
+  justify-content: center;
+}
+
+.tw-contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  inline-size: 100%;
+  max-inline-size: 680px;
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  box-sizing: border-box;
+  min-inline-size: 0;
+}
+
+@media (max-width: 600px) {
+  .tw-contact-card {
+    padding: var(--space-5);
+  }
+}
+
+.tw-contact-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tw-contact-head h1,
+.tw-contact-head p {
+  margin: 0;
+}
+
+.tw-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.tw-contact-select,
+.tw-contact-message {
+  inline-size: 100%;
+  max-inline-size: 100%;
+  box-sizing: border-box;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--line-strong);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.tw-contact-select {
+  min-block-size: 52px;
+  padding-inline: var(--space-4);
+  cursor: pointer;
+}
+
+.tw-contact-message {
+  padding: var(--space-3) var(--space-4);
+  resize: vertical;
+  min-block-size: 168px;
+}
+
+.tw-contact-message::placeholder {
+  color: var(--ink-soft);
+}
+
+.tw-field-invalid .tw-contact-select,
+.tw-field-invalid .tw-contact-message {
+  border-color: var(--retry);
+}
+
+.tw-contact-summary {
+  margin: 0;
+  font-weight: 700;
+}
+
+.tw-contact-send {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.tw-contact-note {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--ink-muted);
+}
+
+.tw-contact-email {
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .tw-contact-submit {
+    inline-size: 100%;
+    justify-content: center;
+  }
+}
+
+.tw-contact-failed,
+.tw-contact-done {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+}
+
+.tw-contact-failed {
+  background: var(--retry-soft);
+}
+
+.tw-contact-failed p,
+.tw-contact-done p {
+  margin: 0;
+}
+
+.tw-contact-done {
+  flex-direction: column;
+  background: var(--correct-soft);
+}
+
+.tw-contact-done-icon {
+  color: var(--correct);
+}
+
+/* The bots' field: never shown, announced or reached by the keyboard (bots read the HTML, not the styles). */
+.tw-contact-trap {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  visibility: hidden;
+}

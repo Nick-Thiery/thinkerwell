@@ -484,7 +484,8 @@
       "classCta": "See the class",
       "certificatesTitle": "Certificates",
       "certificatesBody": "Every certificate earned on this device, one to a page.",
-      "certificatesCta": "Print all certificates"
+      "certificatesCta": "Print all certificates",
+      "sendEnquiry": "Send an enquiry"
     },
     "organisations": {
       "title": "For organisations",
@@ -512,7 +513,8 @@
       "startTitle": "Get ready",
       "startBody": "Print what you need, and set up each device before the first session.",
       "contactTitle": "Contact us",
-      "contactBody": "Email us to start a pilot or to ask a question. Tell us your organisation's name, where you are, and about how many learners would take part."
+      "contactBody": "Email us to start a pilot or to ask a question. Tell us your organisation's name, where you are, and about how many learners would take part.",
+      "getInTouch": "Get in touch"
     },
     "consentForm": {
       "title": "Consent form",
@@ -1301,7 +1303,8 @@
     "label": "More about Thinkerwell",
     "organisations": "For organisations",
     "credits": "Credits",
-    "linkedin": "Thinkerwell on LinkedIn"
+    "linkedin": "Thinkerwell on LinkedIn",
+    "contact": "Contact"
   },
   "seo": {
     "home": {
@@ -1330,7 +1333,11 @@
     },
     "lessonTitle": "Lesson {number}: {title} | Thinkerwell",
     "lessonDescription": "Lesson {number} of {course}, Thinkerwell's free social studies course. Learning goal: {goal}",
-    "imageAlt": "The Thinkerwell mascot, a purple reader holding a book, above the words Thinkerwell: Exploring Our World."
+    "imageAlt": "The Thinkerwell mascot, a purple reader holding a book, above the words Thinkerwell: Exploring Our World.",
+    "contact": {
+      "title": "Contact Us | Thinkerwell",
+      "description": "Ask a question or get in touch about using Thinkerwell, a free social studies platform for youth facing barriers to education."
+    }
   },
   "dev": {
     "rtlOn": "Right-to-left test mode is on. Add ?dir=ltr to the address to turn it off.",
@@ -1833,5 +1840,44 @@
     "summaryComment": "Comment: {comment}",
     "summaryNotYet": "Not reviewed yet",
     "summaryNoVideo": "no video to review"
+  },
+  "contact": {
+    "eyebrow": "Get in touch",
+    "title": "Contact Thinkerwell",
+    "intro": "Have a question or want to work with us? Send us a message, and we'll use the contact details you give to reply.",
+    "topicLabel": "What is it about?",
+    "topicPlaceholder": "Choose a topic",
+    "topicGeneral": "General question",
+    "topicEducator": "Educator or classroom use",
+    "topicOrganisation": "Learning organisation or NGO",
+    "topicPartnership": "Company or partnership",
+    "topicFeedback": "Feedback or technical issue",
+    "topicOther": "Other",
+    "nameLabel": "Your name",
+    "contactLabel": "Email or WhatsApp number",
+    "contactHelp": "For WhatsApp, start with your country code, such as +65.",
+    "messageLabel": "Your message",
+    "messagePlaceholder": "Tell us what you'd like to ask or discuss.",
+    "send": "Send enquiry",
+    "sending": "Sending…",
+    "note": "Your message and contact details are emailed to the Thinkerwell team so we can reply. Don't include a learner's personal information.",
+    "orEmail": "You can also write to us at {email}.",
+    "sent": "Thanks. Your message has been sent. We'll reply using the contact details you gave.",
+    "sendAnother": "Send another message",
+    "failed": "We couldn't send your message. Try again, or write to us at {email}.",
+    "busy": "Too many messages have been sent from here for now. Try again in a few minutes, or write to us at {email}.",
+    "error": {
+      "topic": "Choose a topic.",
+      "nameMissing": "Write your name.",
+      "nameShort": "Write at least 2 letters.",
+      "nameLong": "Keep your name under 100 characters.",
+      "contactMissing": "Write an email address or a WhatsApp number.",
+      "contactInvalid": "Enter a valid email, or a WhatsApp number that starts with a country code, such as +65.",
+      "messageMissing": "Write your message.",
+      "messageShort": "Write a little more: at least 10 characters.",
+      "messageLong": "Keep your message under 3,000 characters.",
+      "summary": "Check the fields marked below."
+    },
+    "honeypot": "Leave this empty"
   }
 }

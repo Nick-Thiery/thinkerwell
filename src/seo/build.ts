@@ -62,7 +62,7 @@ function message(messages: unknown, key: string, params: Record<string, string |
   });
 }
 
-/** Every page search engines should index, in sitemap order: the six public pages, then the lessons by number. */
+/** Every page search engines should index, in sitemap order: the seven public pages, then the lessons by number. */
 export function seoPages({ messages, courseTitle, lessons }: SeoInput): SeoPage[] {
   const pages: SeoPage[] = PUBLIC_PAGES.map(({ key, path, file }) => ({
     path,

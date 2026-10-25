@@ -477,7 +477,8 @@
       "classCta": "Lihat kelas",
       "certificatesTitle": "Sertifikat",
       "certificatesBody": "Semua sertifikat yang diraih di perangkat ini, satu per halaman.",
-      "certificatesCta": "Cetak semua sertifikat"
+      "certificatesCta": "Cetak semua sertifikat",
+      "sendEnquiry": "Kirim pesan"
     },
     "organisations": {
       "title": "Untuk organisasi",
@@ -505,7 +506,8 @@
       "startTitle": "Bersiap",
       "startBody": "Cetak yang Anda perlukan, dan siapkan setiap perangkat sebelum sesi pertama.",
       "contactTitle": "Hubungi kami",
-      "contactBody": "Kirim email kepada kami untuk memulai uji coba atau untuk bertanya. Sebutkan nama organisasi Anda, lokasi Anda, dan kira-kira berapa pelajar yang akan ikut."
+      "contactBody": "Kirim email kepada kami untuk memulai uji coba atau untuk bertanya. Sebutkan nama organisasi Anda, lokasi Anda, dan kira-kira berapa pelajar yang akan ikut.",
+      "getInTouch": "Hubungi kami"
     },
     "consentForm": {
       "title": "Formulir persetujuan",
@@ -1285,7 +1287,8 @@
     "label": "Tentang Thinkerwell",
     "organisations": "Untuk organisasi",
     "credits": "Ucapan terima kasih",
-    "linkedin": "Thinkerwell di LinkedIn"
+    "linkedin": "Thinkerwell di LinkedIn",
+    "contact": "Kontak"
   },
   "seo": {
     "home": {
@@ -1314,7 +1317,11 @@
     },
     "lessonTitle": "Pelajaran {number}: {title} | Thinkerwell",
     "lessonDescription": "Pelajaran {number} dari {course}, kursus IPS gratis dari Thinkerwell. Tujuan belajar: {goal}",
-    "imageAlt": "Maskot Thinkerwell, pembaca berwarna ungu yang memegang buku, di atas tulisan Thinkerwell: Exploring Our World."
+    "imageAlt": "Maskot Thinkerwell, pembaca berwarna ungu yang memegang buku, di atas tulisan Thinkerwell: Exploring Our World.",
+    "contact": {
+      "title": "Hubungi Kami | Thinkerwell",
+      "description": "Ajukan pertanyaan atau hubungi kami tentang penggunaan Thinkerwell, platform IPS gratis untuk remaja yang menghadapi hambatan pendidikan."
+    }
   },
   "dev": {
     "rtlOn": "Mode uji kanan-ke-kiri sedang aktif. Tambahkan ?dir=ltr ke alamat untuk mematikannya.",
@@ -1809,5 +1816,44 @@
     "summaryComment": "Komentar: {comment}",
     "summaryNotYet": "Belum ditinjau",
     "summaryNoVideo": "tidak ada video untuk ditinjau"
+  },
+  "contact": {
+    "eyebrow": "Hubungi kami",
+    "title": "Hubungi Thinkerwell",
+    "intro": "Punya pertanyaan atau ingin bekerja sama dengan kami? Kirim pesan, dan kami akan membalas lewat kontak yang kamu berikan.",
+    "topicLabel": "Tentang apa?",
+    "topicPlaceholder": "Pilih topik",
+    "topicGeneral": "Pertanyaan umum",
+    "topicEducator": "Pendidik atau penggunaan di kelas",
+    "topicOrganisation": "Lembaga belajar atau LSM",
+    "topicPartnership": "Perusahaan atau kemitraan",
+    "topicFeedback": "Masukan atau masalah teknis",
+    "topicOther": "Lainnya",
+    "nameLabel": "Namamu",
+    "contactLabel": "Email atau nomor WhatsApp",
+    "contactHelp": "Untuk WhatsApp, awali dengan kode negara, misalnya +62.",
+    "messageLabel": "Pesanmu",
+    "messagePlaceholder": "Ceritakan apa yang ingin kamu tanyakan atau bicarakan.",
+    "send": "Kirim pesan",
+    "sending": "Mengirim…",
+    "note": "Pesan dan kontakmu dikirim lewat email ke tim Thinkerwell agar kami bisa membalas. Jangan menulis data pribadi pelajar.",
+    "orEmail": "Kamu juga bisa menulis ke {email}.",
+    "sent": "Terima kasih. Pesanmu sudah terkirim. Kami akan membalas lewat kontak yang kamu berikan.",
+    "sendAnother": "Kirim pesan lain",
+    "failed": "Pesanmu tidak bisa dikirim. Coba lagi, atau tulis ke {email}.",
+    "busy": "Terlalu banyak pesan dikirim dari sini untuk saat ini. Coba lagi beberapa menit lagi, atau tulis ke {email}.",
+    "error": {
+      "topic": "Pilih topik.",
+      "nameMissing": "Tulis namamu.",
+      "nameShort": "Tulis paling sedikit 2 huruf.",
+      "nameLong": "Tulis nama kurang dari 100 karakter.",
+      "contactMissing": "Tulis alamat email atau nomor WhatsApp.",
+      "contactInvalid": "Tulis email yang benar, atau nomor WhatsApp yang diawali kode negara, misalnya +62.",
+      "messageMissing": "Tulis pesanmu.",
+      "messageShort": "Tulis sedikit lagi: paling sedikit 10 karakter.",
+      "messageLong": "Tulis pesan kurang dari 3.000 karakter.",
+      "summary": "Periksa kolom yang ditandai di bawah."
+    },
+    "honeypot": "Biarkan kosong"
   }
 }

@@ -125,7 +125,7 @@ test.describe('raw HTML @own-size', () => {
 
 test.describe('once the app has drawn the page', () => {
   test('a public page keeps the title, description and canonical link its HTML gave crawlers', async ({ page, request }) => {
-    for (const expected of pages.filter((p) => ['/', '/about', '/course', '/educators', '/organisations', '/credits', '/lesson/finding-out-about-the-past/read'].includes(p.path))) {
+    for (const expected of pages.filter((p) => ['/', '/about', '/course', '/educators', '/organisations', '/credits', '/contact', '/lesson/finding-out-about-the-past/read'].includes(p.path))) {
       const raw = await (await request.get(expected.path)).text();
       await page.goto(expected.path);
       await expect(page.locator('h1')).toHaveCount(1);

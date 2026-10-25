@@ -58,14 +58,15 @@ describe('vercel.json', () => {
     }
   });
 
-  it('leaves /api to the functions: never the page, and no page Cache-Control (pilot measurement, docs/notes/pilot-measurement.md)', () => {
-    for (const path of ['/api/events', '/api/export']) {
+  it('leaves /api to the functions: never the page, and no page Cache-Control (pilot measurement and the contact form)', () => {
+    for (const path of ['/api/events', '/api/export', '/api/contact']) {
       expect(rewritten(path), path).toBe(false);
       expect(cacheControl(path), path).toEqual([]);
     }
-    // The two functions exist, with short limits.
-    expect(Object.keys(vercel.functions ?? {}).sort()).toEqual(['api/events.ts', 'api/export.ts']);
+    // The three functions exist, with short limits.
+    expect(Object.keys(vercel.functions ?? {}).sort()).toEqual(['api/contact.ts', 'api/events.ts', 'api/export.ts']);
     expect(vercel.functions?.['api/events.ts']?.maxDuration).toBeLessThanOrEqual(10);
+    expect(vercel.functions?.['api/contact.ts']?.maxDuration).toBeLessThanOrEqual(10);
     // Every page address is still answered with the app.
     expect(rewritten('/api-not-a-function')).toBe(true);
     expect(rewritten('/course')).toBe(true);

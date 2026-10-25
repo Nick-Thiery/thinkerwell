@@ -86,6 +86,11 @@ export function creditsPath(): string {
   return '/credits';
 }
 
+/** The contact form, for anyone with a question: /contact. */
+export function contactPath(): string {
+  return '/contact';
+}
+
 /** What a pilot involves, for organisations thinking of one: /organisations. */
 export function organisationsPath(): string {
   return '/organisations';
