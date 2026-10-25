@@ -146,7 +146,7 @@ export function OrganisationsPage() {
             {t('pages.organisations.contactTitle')}
           </h2>
           <p>{t('pages.organisations.contactBody')}</p>
-          <a href={`mailto:${CONTACT_EMAIL}`} className="tw-org-email">
+          <a href={`mailto:${CONTACT_EMAIL}`} className="tw-org-email" translate="no">
             {CONTACT_EMAIL}
           </a>
         </section>

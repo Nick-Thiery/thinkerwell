@@ -5,6 +5,9 @@ import { describe, expect, it, vi } from 'vitest';
 import { getLesson, getSectionLessons, getSections, type Lesson } from '../content';
 import { EducatorsPage } from './EducatorsPage';
 
+// These tests cover the pages without an address (src/app/contact.ts); contactEmail.test.tsx covers them with the real one.
+vi.mock('../app/contact', () => ({ CONTACT_EMAIL: null }));
+
 const L10 = getLesson('towns-near-rivers') as Lesson;
 
 function renderAt(path = '/educators') {
