@@ -46,12 +46,14 @@ describe('TeacherGuidePage', () => {
     expect(within(video).getByRole('link', { name: /Open on YouTube/ })).toHaveAttribute('href', `https://www.youtube.com/watch?v=${FIXTURE_VIDEO_ID}&t=30s`);
   });
 
-  it('keeps the English video marked English when the lesson has no approved local video', () => {
+  it('has no video part and no Watch in its plan when the lesson has no approved local video', () => {
     render(inIndonesian(<TeacherGuidePage lesson={notApproved} />));
     const english = englishContent.getLessonByNumber(9)!.watch;
-    const video = screen.getByRole('heading', { level: 2, name: 'Watch or read instead' }).closest('section') as HTMLElement;
-    expect(within(video).getByText(english.title)).toHaveAttribute('lang', 'en');
-    expect(within(video).getByRole('link', { name: /Open on YouTube/ })).toHaveAttribute('href', `https://www.youtube.com/watch?v=${english.youtubeId}`);
+    expect(screen.queryByRole('heading', { level: 2, name: 'Watch or read instead' })).toBeNull();
+    expect(screen.queryByText(english.title)).toBeNull();
+    expect(screen.queryByRole('link', { name: /Open on YouTube/ })).toBeNull();
+    expect(screen.queryByRole('rowheader', { name: 'Watch or read instead' })).toBeNull();
+    expect(screen.getByText('Only 30 minutes? Use the 30 min column: take a little time off each step.')).toBeInTheDocument();
   });
 });
 
@@ -64,10 +66,12 @@ describe('LessonPrintPage', () => {
     expect(sheet.textContent).toContain('The lesson plays the part from 0:30 to 3:35.');
   });
 
-  it('keeps the English video marked English otherwise', () => {
+  it('prints no Watch part otherwise', () => {
     render(printInIndonesian(<LessonPrintPage lesson={notApproved} />));
     const english = englishContent.getLessonByNumber(9)!.watch;
-    expect(within(screen.getByRole('article')).getAllByText(english.title, { exact: false })[0]!.closest('[lang="en"]')).not.toBeNull();
+    const sheet = within(screen.getByRole('article'));
+    expect(sheet.queryByRole('heading', { level: 2, name: 'Watch or read' })).toBeNull();
+    expect(sheet.queryByText(english.title, { exact: false })).toBeNull();
   });
 });
 

@@ -14,6 +14,8 @@ export interface ContinueCardProps {
   lessonLabel?: ReactNode;
   done?: StageId[];
   current?: StageId;
+  /** The lesson's steps (StageDots' `stages`). */
+  stages?: readonly StageId[];
   stageLabel?: string;
   cta?: string;
   href?: string;
@@ -31,6 +33,7 @@ export function ContinueCard({
   lessonLabel,
   done,
   current,
+  stages,
   stageLabel,
   cta,
   href,
@@ -46,7 +49,7 @@ export function ContinueCard({
         </h2>
         <div className="tw-continue-meta">
           {lessonLabel ? <span>{lessonLabel}</span> : null}
-          <StageDots done={done || []} current={current} />
+          <StageDots done={done || []} current={current} stages={stages} />
           {stageLabel ? <span>{stageLabel}</span> : null}
         </div>
       </div>

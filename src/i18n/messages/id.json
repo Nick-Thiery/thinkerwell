@@ -58,6 +58,7 @@
       "levelStandard": "Standar",
       "levelSimpler": "Lebih mudah",
       "keyWords": "Kata kunci",
+      "learnMore": "Pelajari lebih lanjut",
       "keyWordsTitle": "Kata kunci di pelajaran ini",
       "keyWordsIntro": "Semua kata kunci di bacaan ini, beserta artinya.",
       "warmUpEyebrow": "Sebelum membaca",
@@ -225,6 +226,7 @@
         "tagline": "Jelajahi duniamu.",
         "description": "Belajar IPS gratis untuk remaja di Asia Tenggara, terutama mereka yang menghadapi hambatan dalam pendidikan. Jelajahi sejarah, geografi, budaya, dan kehidupan bermasyarakat sesuai kecepatanmu sendiri.",
         "stagesLabel": "Setiap pelajaran punya lima langkah",
+        "stagesLabelNoWatch": "Setiap pelajaran punya empat langkah",
         "footnote": "{lessons} pelajaran · {sections} bagian · tidak perlu akun"
       },
       "lookAround": "Lihat-lihat saja (tanpa menyimpan)",
@@ -443,12 +445,12 @@
       "need1": "Satu perangkat untuk setiap 1 sampai 3 pelajar, atau satu layar besar",
       "need2": "Kertas dan pensil untuk membuat rencana",
       "need3": "Sekitar {min}–{max} menit per pelajaran",
-      "need4": "Internet untuk kunjungan pertama dan untuk video",
+      "need4": "Internet untuk kunjungan pertama",
       "howTitle": "Menjalankan sesi",
       "step1Title": "Pilih pelajaran",
       "step1Body": "Pelajaran bisa diambil dengan urutan apa saja. Pilih yang cocok untuk kelompok Anda, atau ikuti nomornya.",
       "step2Title": "Baca, tanggapi, dan diskusikan",
-      "step2Body": "Pelajar membaca, menulis tentang bacaannya, dan membicarakannya berpasangan. Tonton tidak wajib.",
+      "step2Body": "Pelajar membaca, menulis tentang bacaannya, dan membicarakannya berpasangan.",
       "step3Title": "Refleksi bersama",
       "step3Body": "Minta dua atau tiga pelajar membagikan jawabannya. Semua orang menulis satu refleksi.",
       "teacherGuide": "Panduan guru",
@@ -486,7 +488,7 @@
       "intro": "Thinkerwell menyediakan kursus IPS gratis dan bahan untuk pendidik, bagi remaja di seluruh Asia Tenggara. Pakai bersama kelompok di perangkat yang dipakai bergantian, atau dalam bentuk cetak. Lihat kursus dan bahan mengajarnya, atau hubungi kami tentang memakai Thinkerwell di tempat belajar Anda.",
       "honesty": "Thinkerwell adalah platform yang dipimpin oleh pelajar. Thinkerwell bukan lembaga amal atau organisasi nirlaba yang terdaftar.",
       "whatTitle": "Yang ditawarkan Thinkerwell",
-      "whatBody": "Satu kursus, Menjelajahi Dunia Kita: {lessons} pelajaran tentang sejarah, geografi, budaya, dan kehidupan bermasyarakat, untuk pelajar berusia sekitar 10 sampai 17 tahun. Setiap pelajaran punya lima langkah: baca, tulis, bicara, tonton, dan refleksi. Kursus ini berjalan di browser web pada laptop dan tablet yang dipakai bersama, dalam bahasa Inggris, Bahasa Indonesia, atau Bahasa Melayu. Pelajaran bisa dipakai tanpa internet setelah kunjungan pertama; video pilihan membutuhkan internet.",
+      "whatBody": "Satu kursus, Menjelajahi Dunia Kita: {lessons} pelajaran tentang sejarah, geografi, budaya, dan kehidupan bermasyarakat, untuk pelajar berusia sekitar 10 sampai 17 tahun. Setiap pelajaran punya empat langkah: baca, tulis, bicara, dan refleksi. Kursus ini berjalan di browser web pada laptop dan tablet yang dipakai bersama, dalam bahasa Inggris, Bahasa Indonesia, atau Bahasa Melayu. Pelajaran bisa dipakai tanpa internet setelah kunjungan pertama.",
       "getTitle": "Yang Anda dapatkan",
       "get1": "Seluruh kursus, gratis. Tanpa akun, tanpa iklan, dan tidak ada yang dikunci.",
       "get2": "Panduan guru untuk setiap pelajaran, kunci jawaban untuk cek bagian, dan setiap pelajaran siap dicetak.",
@@ -496,7 +498,7 @@
       "ask1": "Seorang pendidik atau relawan untuk memimpin setiap sesi.",
       "ask2": "Beberapa laptop atau tablet dengan browser web. Pelajar boleh memakainya bergantian.",
       "ask3": "Sekitar {min}–{max} menit untuk setiap pelajaran.",
-      "ask4": "Internet untuk kunjungan pertama di setiap perangkat, dan untuk video yang tidak wajib.",
+      "ask4": "Internet untuk kunjungan pertama di setiap perangkat.",
       "privacyTitle": "Memakai kursus",
       "privacy1": "Pelajar bisa memakai kode, bukan nama. Setiap pelajar mendapat kartu kode, seperti ABC-01, dan mengetik kode itu sebagai namanya. Hanya Anda yang menyimpan daftar pasangan kode dan nama.",
       "privacy2": "Tanpa akun, tanpa alamat email, dan tanpa iklan. Tulisan pelajar tetap di perangkat yang mereka pakai, dan rekaman suara tidak pernah keluar dari perangkat itu.",
@@ -654,6 +656,7 @@
       "planTotal": "Total",
       "planSkip": "Lewati",
       "planShorter": "Hanya punya 30 menit? Pakai kolom 30 mnt: lewati Tonton atau pakai Baca saja, dan kurangi sedikit waktu langkah lainnya. Pelajar bisa membuka Tonton nanti, karena tidak ada yang dikunci.",
+      "planShorterNoWatch": "Hanya punya 30 menit? Pakai kolom 30 mnt: kurangi sedikit waktu setiap langkah.",
       "planSteps": {
         "warmUp": "Pemanasan",
         "read": "Baca per bagian",
@@ -891,7 +894,7 @@
         "failed": "Pelajaran belum selesai disimpan untuk dipakai tanpa internet. Buka Thinkerwell lagi dengan internet menyala, dan Thinkerwell akan mencoba lagi.",
         "unsupported": "Browser ini tidak bisa menyimpan pelajaran untuk dipakai tanpa internet, jadi di sini Thinkerwell butuh internet. Ini bisa terjadi di jendela pribadi (penyamaran).",
         "saveData": "Hemat data",
-        "saveDataHelp": "Mematikan video, jadi Tonton langsung membuka versi tulisan, yang isinya sama. Semua bagian lain sudah bisa dipakai tanpa internet.",
+        "saveDataHelp": "Mematikan video, jadi yang terbuka adalah versi tulisannya, yang isinya sama. Semua bagian lain sudah bisa dipakai tanpa internet.",
         "saveDataFromBrowser": "Pengaturan ini menyala karena perangkat ini diatur untuk menghemat data."
       },
       "reading": {
@@ -1201,6 +1204,7 @@
     "startLook": "Pilihan {look} untuk pengunjung. Tidak ada yang tersimpan saat seseorang melihat-lihat, jadi pelajar sebaiknya tidak memakainya untuk hasil kerja mereka sendiri.",
     "learnTitle": "Yang dilakukan pelajar",
     "learnStages": "Setiap pelajaran punya lima langkah: {stages}. Menjawab pertanyaan {reflect} menyelesaikan pelajaran.",
+    "learnStagesNoWatch": "Setiap pelajaran punya empat langkah: {stages}. Menjawab pertanyaan {reflect} menyelesaikan pelajaran.",
     "learnOrder": "Tidak ada yang dikunci. Pelajar bisa membuka pelajaran dan langkah mana saja, dengan urutan apa saja, dan mencoba cek cepat lagi.",
     "learnTime": "Satu pelajaran memakan waktu sekitar {min}–{max} menit. Setiap panduan guru punya rencana untuk {full} menit dan rencana yang lebih singkat untuk {short} menit.",
     "wrongTitle": "Kalau ada yang tidak beres",
@@ -1355,7 +1359,7 @@
         "stageDone": "{stage}, selesai"
       },
       "stageDots": {
-        "progressLabel": "{count} dari 5 langkah selesai"
+        "progressLabel": "{count} dari {total} langkah selesai"
       },
       "progressRing": {
         "ariaLabel": "{value} dari {max} selesai",
@@ -1751,6 +1755,7 @@
   "aboutPage": {
     "lessonsTitle": "Cara kerja pelajaran kami",
     "lessonsIntro": "Setiap pelajaran dimulai dengan sebuah pertanyaan dan memberi pelajar lima cara untuk menjelajahinya. Setiap langkah mengajak mereka mengolah sebuah gagasan dengan cara yang berbeda.",
+    "lessonsIntroNoWatch": "Setiap pelajaran dimulai dengan sebuah pertanyaan dan memberi pelajar empat cara untuk menjelajahinya. Setiap langkah mengajak mereka mengolah sebuah gagasan dengan cara yang berbeda.",
     "steps": {
       "read": "Jelajahi sebuah sumber, cerita, atau penjelasan singkat.",
       "write": "Tuliskan sebuah gagasan dengan kata-katamu sendiri dan gunakan bukti.",

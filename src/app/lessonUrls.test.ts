@@ -1,10 +1,30 @@
 import { describe, expect, it } from 'vitest';
-import { getLesson, getLessons, STAGES, type LessonStep } from '../content';
+import { contentFor, getLesson, getLessons, STAGES, type LessonStep } from '../content';
+import { ID_VIDEOS_FIXTURE, translationWithVideos } from '../test/localVideoFixtures';
 import { resolveLessonPrintRoute, resolveLessonRoute, resolveTeacherGuideRoute } from './lessonRoutes';
 import { answerKeyPath, educatorsPath, guidesPath, learningCheckPath, lessonPath, sectionCheckPath, sessionGuidePath, teacherGuidePath } from './lessonUrls';
 
 const STEPS: LessonStep[] = [...STAGES, 'complete'];
 const lessons = getLessons();
+
+describe('resolveLessonRoute in a language whose lessons have no Watch step', () => {
+  // Lesson 5 has an approved video in the fixture; the others have none, so no Watch.
+  const content = contentFor(translationWithVideos(ID_VIDEOS_FIXTURE));
+  const l1 = content.getLessonByNumber(1)!;
+  const l5 = content.getLessonByNumber(5)!;
+
+  it('sends /watch on to Reflect, the next step the lesson has', () => {
+    expect(resolveLessonRoute(l1.id, 'watch', content)).toEqual({ kind: 'redirect', to: `/lesson/${l1.id}/reflect` });
+    expect(resolveLessonRoute(l1.oldId, 'watch', content)).toEqual({ kind: 'redirect', to: `/lesson/${l1.id}/reflect` });
+  });
+
+  it('shows every other step, and Watch where the lesson has a video in the language', () => {
+    for (const step of ['read', 'write', 'speak', 'reflect', 'complete'] as const) {
+      expect(resolveLessonRoute(l1.id, step, content).kind).toBe('show');
+    }
+    expect(resolveLessonRoute(l5.id, 'watch', content).kind).toBe('show');
+  });
+});
 
 describe('resolveLessonRoute', () => {
   it('knows all 24 lessons', () => {

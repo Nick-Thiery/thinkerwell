@@ -26,7 +26,7 @@
   "ds.chrome.progressRing.ariaLabel": "Screen readers only. {value} done out of {max}.",
   "ds.chrome.progressRing.valueLabel": "Inside a small ring: {value} out of {max}, as numbers with a slash. Very short.",
   "ds.chrome.siteHeader.switchLearner": "Screen readers only. {name} is the current learner's name.",
-  "ds.chrome.stageDots.progressLabel": "Screen readers only. {count} steps done out of 5.",
+  "ds.chrome.stageDots.progressLabel": "Screen-reader name of a lesson's step dots. {count} steps done of {total}: five, or four in a lesson without Watch.",
   "ds.chrome.stagePath.doneSuffix": "Screen readers only: read straight after a step's name (and its short description). Start with your language's separator, as the English starts with a comma.",
   "ds.chrome.stagePath.stageDone": "Screen readers only. {stage} is a step's name.",
   "ds.content.definition.hearIt": "A small button that says the English word aloud. Short.",
@@ -349,5 +349,10 @@
   "pages.educators.overview": "A folded link that opens the one-minute video \"Run a session\" on the Educators page.",
   "pages.guides.lesson": "{title} is the lesson's title, from the course (English unless the lessons are translated).",
   "pages.guides.lessons": "{range} is a range of lesson numbers, like 1–6.",
-  "pages.organisations.studyShare": "“Share optional study data” is the name of the switch in Settings (pilotResults.title): use the same words."
+  "pages.organisations.studyShare": "“Share optional study data” is the name of the switch in Settings (pilotResults.title): use the same words.",
+  "pages.home.hero.stagesLabelNoWatch": "Above the step badges on the home page where the lessons have no Watch step (Indonesian and Malay, until a lesson has an approved video in that language).",
+  "lessonPlayer.read.learnMore": "A folded part at the end of a lesson's reading, in a lesson with no Watch step: the video's key points, kept with the reading. Optional.",
+  "pages.teacherGuide.planShorterNoWatch": "Under the session plan of a lesson with no Watch step: nothing is skipped in 30 minutes, every step is a little shorter.",
+  "aboutPage.lessonsIntroNoWatch": "About's \"How our lessons work\" where the lessons have no Watch step (Indonesian and Malay): four steps.",
+  "pilotDay.learnStagesNoWatch": "The session guide where the lessons have no Watch step: {stages} is the four stages' names, already joined as a list. {reflect} is the last stage's name."
 }

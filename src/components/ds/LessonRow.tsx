@@ -18,6 +18,8 @@ export interface LessonRowProps {
   time?: string;
   status?: 'not-started' | 'in-progress' | 'completed';
   done?: StageId[];
+  /** The lesson's steps: all five unless it has none of one (StagePath's `stages`). Counts "2 of 4 steps". */
+  stages?: readonly StageId[];
   /** The reference's: which step the stage dots marked as current. Kept for the same props; the row now says where the learner is in words. */
   current?: StageId;
   highlight?: boolean;
@@ -44,6 +46,7 @@ export function LessonRow({
   time,
   status = 'not-started',
   done,
+  stages = STAGES,
   highlight,
   kind,
   cta,
@@ -81,7 +84,7 @@ export function LessonRow({
     : question
       ? t('ds.course.lessonRow.ariaLabelLessonQuestion', { number: number ?? '', title, status: statusText, cta: ctaText, question })
       : t('ds.course.lessonRow.ariaLabelLesson', { number: number ?? '', title, status: statusText, cta: ctaText });
-  const doneStages = done || (status === 'completed' ? [...STAGES] : []);
+  const doneStages = (done || (status === 'completed' ? [...stages] : [])).filter((stage) => stages.includes(stage));
   const LinkTag = useDsLinkComponent();
 
   const rowContent = (
@@ -116,7 +119,7 @@ export function LessonRow({
               {status === 'completed'
                 ? t('ds.course.lessonRow.badge.completed')
                 : status === 'in-progress'
-                  ? t('ds.course.lessonRow.badge.inProgress', { count: doneStages.length, total: STAGES.length })
+                  ? t('ds.course.lessonRow.badge.inProgress', { count: doneStages.length, total: stages.length })
                   : t('ds.course.lessonRow.badge.notStarted')}
             </span>
           )}

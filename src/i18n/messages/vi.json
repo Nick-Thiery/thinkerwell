@@ -58,6 +58,7 @@
       "levelStandard": "Chuẩn",
       "levelSimpler": "Dễ hơn",
       "keyWords": "Từ khóa",
+      "learnMore": "Tìm hiểu thêm",
       "keyWordsTitle": "Từ khóa trong bài học này",
       "keyWordsIntro": "Mọi từ khóa trong bài đọc, kèm nghĩa của chúng.",
       "warmUpEyebrow": "Trước khi đọc",
@@ -224,6 +225,7 @@
         "tagline": "Khám phá thế giới của bạn.",
         "description": "Học khoa học xã hội miễn phí cho thanh thiếu niên khắp Đông Nam Á, nhất là các bạn gặp rào cản trong việc học. Khám phá lịch sử, địa lí, văn hóa và đời sống công dân theo nhịp của riêng bạn.",
         "stagesLabel": "Bài học nào cũng có năm bước",
+        "stagesLabelNoWatch": "Bài học nào cũng có bốn bước",
         "footnote": "{lessons} bài học · {sections} phần · không cần tài khoản"
       },
       "lookAround": "Chỉ xem qua (không lưu gì cả)",
@@ -1229,7 +1231,7 @@
         "stageDone": "{stage}, đã xong"
       },
       "stageDots": {
-        "progressLabel": "Đã xong {count} trên 5 bước"
+        "progressLabel": "Đã xong {count} trên {total} bước"
       },
       "progressRing": {
         "ariaLabel": "Đã xong {value} trên {max}",

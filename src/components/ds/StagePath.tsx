@@ -18,9 +18,11 @@ export interface StagePathProps {
   hrefFor?: (stage: StageId) => string;
   /** Fires when a step is activated, in addition to (or instead of) `hrefFor`. */
   onSelect?: (stage: StageId) => void;
+  /** The lesson's steps, in order: all five unless the lesson has none of one (no Watch in a translated language without its own video: CourseContent.stagesFor). */
+  stages?: readonly StageId[];
 }
 
-const STAGE_ORDER: StageId[] = ['read', 'write', 'speak', 'watch', 'reflect'];
+const STAGE_ORDER: readonly StageId[] = ['read', 'write', 'speak', 'watch', 'reflect'];
 
 /** Each step's icon, wherever the five steps are shown (the lesson's path, About's "How our lessons work"). */
 export const STAGE_ICON: Record<StageId, IconName> = {
@@ -32,7 +34,8 @@ export const STAGE_ICON: Record<StageId, IconName> = {
 };
 
 /**
- * The Read, Write, Speak, Watch, Reflect path inside a lesson. Every step
+ * The Read, Write, Speak, Watch, Reflect path inside a lesson (without Watch
+ * where the lesson has none). Every step
  * stays clickable: no stage is ever locked (CLAUDE.md rule 3).
  */
 export function StagePath({
@@ -43,6 +46,7 @@ export function StagePath({
   compact,
   hrefFor,
   onSelect,
+  stages = STAGE_ORDER,
 }: StagePathProps) {
   const { t } = useI18n();
   const LinkTag = useDsLinkComponent();
@@ -55,7 +59,7 @@ export function StagePath({
           compact && 'tw-stages-compact',
         )}
       >
-        {STAGE_ORDER.map((id) => {
+        {stages.map((id) => {
           const label = t(`stages.${id}`);
           const isDone = done.includes(id);
           const isNow = id === current;

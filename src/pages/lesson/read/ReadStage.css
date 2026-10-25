@@ -203,3 +203,16 @@
     line-height: 27px;
   }
 }
+
+/* "Learn more": a lesson without a Watch step keeps the video's key points here, folded (ReadStage). */
+.tw-read-key-points {
+  margin: 0;
+  padding-inline-start: var(--space-6);
+  max-width: var(--reading-measure);
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.tw-read-key-points li + li {
+  margin-block-start: var(--space-2);
+}

@@ -58,6 +58,7 @@
       "levelStandard": "Standard",
       "levelSimpler": "Simpler",
       "keyWords": "Key words",
+      "learnMore": "Learn more",
       "keyWordsTitle": "Key words in this lesson",
       "keyWordsIntro": "Every key word in the reading, with what it means.",
       "warmUpEyebrow": "Before you read",
@@ -230,6 +231,7 @@
         "tagline": "Explore your world.",
         "description": "Free social studies learning for youth across Southeast Asia, especially those facing barriers to education. Explore history, geography, culture and civic life at your own pace.",
         "stagesLabel": "Every lesson has five steps",
+        "stagesLabelNoWatch": "Every lesson has four steps",
         "footnote": "{lessons} lessons · {sections} sections · no account needed"
       },
       "lookAround": "Just look around (nothing is saved)",
@@ -493,7 +495,7 @@
       "intro": "Thinkerwell offers a free social studies course and educator resources for youth across Southeast Asia. Use it with a group on shared devices or in print. Explore the course and teaching materials, or get in touch about using Thinkerwell in your learning space.",
       "honesty": "Thinkerwell is a student-led platform. It is not a registered charity or nonprofit.",
       "whatTitle": "What Thinkerwell offers",
-      "whatBody": "One course, Exploring Our World: {lessons} lessons about history, geography, culture and civic life, for learners aged about 10 to 17. Each lesson has five steps: read, write, speak, watch and reflect. It runs in a web browser on shared laptops and tablets, in English, Bahasa Indonesia or Bahasa Melayu. Lessons work offline after the first visit; the optional videos need the internet.",
+      "whatBody": "One course, Exploring Our World: {lessons} lessons about history, geography, culture and civic life, for learners aged about 10 to 17. Each lesson has five steps: read, write, speak, watch and reflect (four in Bahasa Indonesia and Bahasa Melayu, without watch). It runs in a web browser on shared laptops and tablets, in English, Bahasa Indonesia or Bahasa Melayu. Lessons work offline after the first visit; the optional videos need the internet.",
       "getTitle": "What you get",
       "get1": "The whole course, free. No accounts, no ads, and nothing locked.",
       "get2": "A teacher guide for every lesson, answer keys for the section checks, and every lesson ready to print.",
@@ -661,6 +663,7 @@
       "planTotal": "Total",
       "planSkip": "Skip",
       "planShorter": "Only 30 minutes? Use the 30 min column: skip Watch or read instead, and take a little time off the other steps. Learners can open Watch later, because nothing is locked.",
+      "planShorterNoWatch": "Only 30 minutes? Use the 30 min column: take a little time off each step.",
       "planSteps": {
         "warmUp": "Warm-up",
         "read": "Read in parts",
@@ -1216,6 +1219,7 @@
     "startLook": "{look} is for visitors. Nothing is saved while someone looks around, so learners should not use it for their own work.",
     "learnTitle": "What learners do",
     "learnStages": "Every lesson has five stages: {stages}. Answering the {reflect} question finishes the lesson.",
+    "learnStagesNoWatch": "Every lesson has four stages: {stages}. Answering the {reflect} question finishes the lesson.",
     "learnOrder": "Nothing is locked. Learners can open any lesson and any stage, in any order, and try the quick checks again.",
     "learnTime": "A lesson takes about {min}–{max} minutes. Each teacher guide has a plan for {full} minutes and a shorter one for {short}.",
     "wrongTitle": "If something goes wrong",
@@ -1371,7 +1375,7 @@
         "stageDone": "{stage}, done"
       },
       "stageDots": {
-        "progressLabel": "{count} of 5 steps done"
+        "progressLabel": "{count} of {total} steps done"
       },
       "progressRing": {
         "ariaLabel": "{value} of {max} done",
@@ -1775,6 +1779,7 @@
   "aboutPage": {
     "lessonsTitle": "How our lessons work",
     "lessonsIntro": "Every lesson begins with a question and gives learners five ways to explore it. Each step asks them to work with an idea in a different way.",
+    "lessonsIntroNoWatch": "Every lesson begins with a question and gives learners four ways to explore it. Each step asks them to work with an idea in a different way.",
     "steps": {
       "read": "Explore a short source, story, or explanation.",
       "write": "Put an idea into your own words and use evidence.",

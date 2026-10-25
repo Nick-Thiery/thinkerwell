@@ -11,6 +11,7 @@
  */
 import type { IconName } from '../components/ds/icons';
 import { ContentError } from './errors';
+import { STAGES, type StageId } from './stages';
 import type { AnyCourseFile, CourseFile, CourseLesson, CourseSection, Lesson, QuizFile, Section, SectionId } from './schema';
 
 /** How a section looks: one of the design system's four section tints, and its icon (always beside its name). */
@@ -54,6 +55,13 @@ export interface CourseContent<L extends CourseLesson, S extends CourseSection, 
   readonly coursePath: (sectionId?: string) => string;
   /** The list of teacher guides, at a section (Our World: /educators/guides?section=…). A preview course has none: its teacher guides go back to its map. */
   readonly guidesPath?: (sectionId?: string) => string;
+  /**
+   * A lesson's stages, in order: all five, or, in a language whose lessons
+   * are translated, the four without Watch unless that language has an
+   * approved video of its own for the lesson (./stages.ts). The one place
+   * that decides; every page that shows or walks a lesson's steps asks it.
+   */
+  readonly stagesFor: (lesson: Pick<CourseLesson, 'number'>) => readonly StageId[];
 }
 
 /** Any course, as the lesson pages read it. Our World's content is one too. */
@@ -75,6 +83,8 @@ export interface CourseOptions {
   sectionLook: (sectionId: string) => SectionLook;
   coursePath: (sectionId?: string) => string;
   guidesPath?: (sectionId?: string) => string;
+  /** A lesson's stages (CourseContent.stagesFor); all five when not given. */
+  stagesFor?: (lesson: Pick<CourseLesson, 'number'>) => readonly StageId[];
 }
 
 /**
@@ -129,5 +139,6 @@ export function createCourseContent<L extends CourseLesson, C extends AnyCourseF
     sectionLook: options.sectionLook,
     coursePath: options.coursePath,
     guidesPath: options.guidesPath,
+    stagesFor: options.stagesFor ?? (() => STAGES),
   };
 }

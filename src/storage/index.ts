@@ -53,6 +53,7 @@ export {
   nextStageForLesson,
   progressByLessonId,
   sectionProgress,
+  stagesDoneAmong,
   stagesDoneForLesson,
   totalLessonsCompleted,
   type ContinueTarget,

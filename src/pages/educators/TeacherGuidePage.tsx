@@ -25,7 +25,7 @@ import { feedbackWithoutVerdict } from '../lesson/read/feedbackText';
 import { PrintToolbar } from '../print/PrintToolbar';
 import '../print/print.css';
 import { AnswerOptions } from './AnswerOptions';
-import { planTotal, SESSION_MINUTES, SESSION_PLAN, SHORT_SESSION_MINUTES } from './sessionPlan';
+import { planTotal, SESSION_MINUTES, sessionPlan, SHORT_SESSION_MINUTES, type SessionStep } from './sessionPlan';
 import './teacherTools.css';
 
 /** Where a teacher can watch a lesson's video: YouTube itself, opened by the teacher (never embedded or fetched here). */
@@ -46,6 +46,8 @@ export function TeacherGuidePage({ lesson }: { lesson: CourseLesson }) {
   // A video's title and channel are English, unless this lesson has an approved video in the language on screen.
   const videoLang = watch.localVideo ? en : alwaysEn;
   const thinkChecks = read.checks.filter((check): check is ThinkCheck => check.type === 'think');
+  // No Watch step in a translated language without a video of its own for this lesson: no video part, no video plan row.
+  const withWatch = content.stagesFor(lesson).includes('watch');
 
   return (
     <div className="tw-print-page tw-guide-page">
@@ -100,8 +102,8 @@ export function TeacherGuidePage({ lesson }: { lesson: CourseLesson }) {
           </dl>
         </header>
 
-        <BeforeYouTeach lesson={lesson} />
-        <SessionPlan lesson={lesson} />
+        <BeforeYouTeach lesson={lesson} withWatch={withWatch} />
+        <SessionPlan lesson={lesson} withWatch={withWatch} />
 
         <section className="tw-print-part">
           <h2>{t('pages.teacherGuide.keyWordsTitle')}</h2>
@@ -235,66 +237,68 @@ export function TeacherGuidePage({ lesson }: { lesson: CourseLesson }) {
           </div>
         </section>
 
-        <section className="tw-print-part" id="guide-video">
-          <h2>{t('pages.teacherGuide.videoTitle')}</h2>
-          <dl className="tw-guide-facts">
-            <div>
-              <dt>{t('pages.teacherGuide.videoName')}</dt>
-              <dd {...videoLang}>{watch.title}</dd>
-            </div>
-            <div>
-              <dt>{t('pages.teacherGuide.videoChannel')}</dt>
-              <dd {...videoLang}>{watch.channel}</dd>
-            </div>
-            <div>
-              <dt>{t('pages.teacherGuide.videoLength')}</dt>
-              <dd>
-                {watch.durationSeconds === null
-                  ? t('pages.teacherGuide.videoLengthUnknown')
-                  : formatDuration(watch.durationSeconds, formatNumber)}
-              </dd>
-            </div>
-            {watch.startSeconds !== undefined && watch.endSeconds !== undefined ? (
+        {withWatch ? (
+          <section className="tw-print-part" id="guide-video">
+            <h2>{t('pages.teacherGuide.videoTitle')}</h2>
+            <dl className="tw-guide-facts">
               <div>
-                <dt>{t('pages.teacherGuide.videoPart')}</dt>
+                <dt>{t('pages.teacherGuide.videoName')}</dt>
+                <dd {...videoLang}>{watch.title}</dd>
+              </div>
+              <div>
+                <dt>{t('pages.teacherGuide.videoChannel')}</dt>
+                <dd {...videoLang}>{watch.channel}</dd>
+              </div>
+              <div>
+                <dt>{t('pages.teacherGuide.videoLength')}</dt>
                 <dd>
-                  {t('pages.teacherGuide.videoPartRange', {
-                    start: formatDuration(watch.startSeconds, formatNumber),
-                    end: formatDuration(watch.endSeconds, formatNumber),
-                  })}
+                  {watch.durationSeconds === null
+                    ? t('pages.teacherGuide.videoLengthUnknown')
+                    : formatDuration(watch.durationSeconds, formatNumber)}
                 </dd>
               </div>
+              {watch.startSeconds !== undefined && watch.endSeconds !== undefined ? (
+                <div>
+                  <dt>{t('pages.teacherGuide.videoPart')}</dt>
+                  <dd>
+                    {t('pages.teacherGuide.videoPartRange', {
+                      start: formatDuration(watch.startSeconds, formatNumber),
+                      end: formatDuration(watch.endSeconds, formatNumber),
+                    })}
+                  </dd>
+                </div>
+              ) : null}
+              <div>
+                <dt>{t('pages.teacherGuide.videoLink')}</dt>
+                <dd>
+                  <ExternalLink href={youtubeWatchUrl(watch.youtubeId, watch.startSeconds)}>{t('pages.teacherGuide.videoOpen')}</ExternalLink>
+                </dd>
+              </div>
+              <div>
+                <dt>{t('pages.teacherGuide.videoWhy')}</dt>
+                <dd {...en}>{watch.why}</dd>
+              </div>
+            </dl>
+            {watch.contentNote ? (
+              <div className="tw-guide-callout tw-print-keep">
+                <h3>
+                  <Icon name="Hand" size={20} />
+                  {t('pages.teacherGuide.contentNote')}
+                </h3>
+                <p {...en}>{watch.contentNote}</p>
+              </div>
             ) : null}
-            <div>
-              <dt>{t('pages.teacherGuide.videoLink')}</dt>
-              <dd>
-                <ExternalLink href={youtubeWatchUrl(watch.youtubeId, watch.startSeconds)}>{t('pages.teacherGuide.videoOpen')}</ExternalLink>
-              </dd>
+            <p className="tw-print-muted">{t('pages.teacherGuide.videoOffline')}</p>
+            <div className="tw-print-keep">
+              <h3>{t('pages.teacherGuide.beforeVideo')}</h3>
+              <p {...en}>{watch.beforeQuestion}</p>
             </div>
-            <div>
-              <dt>{t('pages.teacherGuide.videoWhy')}</dt>
-              <dd {...en}>{watch.why}</dd>
+            <div className="tw-print-keep">
+              <h3>{t('pages.teacherGuide.afterVideo')}</h3>
+              <p {...en}>{watch.afterQuestion}</p>
             </div>
-          </dl>
-          {watch.contentNote ? (
-            <div className="tw-guide-callout tw-print-keep">
-              <h3>
-                <Icon name="Hand" size={20} />
-                {t('pages.teacherGuide.contentNote')}
-              </h3>
-              <p {...en}>{watch.contentNote}</p>
-            </div>
-          ) : null}
-          <p className="tw-print-muted">{t('pages.teacherGuide.videoOffline')}</p>
-          <div className="tw-print-keep">
-            <h3>{t('pages.teacherGuide.beforeVideo')}</h3>
-            <p {...en}>{watch.beforeQuestion}</p>
-          </div>
-          <div className="tw-print-keep">
-            <h3>{t('pages.teacherGuide.afterVideo')}</h3>
-            <p {...en}>{watch.afterQuestion}</p>
-          </div>
-        </section>
+          </section>
+        ) : null}
 
         {lesson.sources.length > 0 ? (
           <section className="tw-print-part">
@@ -318,11 +322,12 @@ export function TeacherGuidePage({ lesson }: { lesson: CourseLesson }) {
 }
 
 /** The notes for teachers: sensitive topics first, in a marked box, then the rest. */
-function BeforeYouTeach({ lesson }: { lesson: CourseLesson }) {
+function BeforeYouTeach({ lesson, withWatch }: { lesson: CourseLesson; withWatch: boolean }) {
   // Course text: translated with the lessons (Indonesian), else English.
   const { t, contentLang } = useI18n();
   const { sensitiveNotes, educatorNotes } = lesson;
-  const contentNote = lesson.watch.contentNote;
+  // The video's content note only where the lesson shows the video.
+  const contentNote = withWatch ? lesson.watch.contentNote : null;
   const hasSensitive = sensitiveNotes.length > 0 || contentNote !== null;
   if (!hasSensitive && educatorNotes.length === 0) return null;
 
@@ -360,9 +365,10 @@ function BeforeYouTeach({ lesson }: { lesson: CourseLesson }) {
 }
 
 /** The suggested plan for about 45 minutes (./sessionPlan.ts), with a 30-minute column and a note on shortening it. */
-function SessionPlan({ lesson }: { lesson: CourseLesson }) {
+function SessionPlan({ lesson, withWatch }: { lesson: CourseLesson; withWatch: boolean }) {
   const { t, formatNumber } = useI18n();
-  const doText = (step: (typeof SESSION_PLAN)[number]['step']): string => {
+  const plan = sessionPlan(withWatch);
+  const doText = (step: SessionStep): string => {
     switch (step) {
       case 'read':
         return t('pages.teacherGuide.planDo.read', { count: lesson.read.sections.length });
@@ -396,7 +402,7 @@ function SessionPlan({ lesson }: { lesson: CourseLesson }) {
           </tr>
         </thead>
         <tbody role="rowgroup">
-          {SESSION_PLAN.map((row) => (
+          {plan.map((row) => (
             <tr key={row.step} role="row">
               <th scope="row" role="rowheader">
                 {t(`pages.teacherGuide.planSteps.${row.step}`)}
@@ -418,15 +424,15 @@ function SessionPlan({ lesson }: { lesson: CourseLesson }) {
             </th>
             <td role="cell" />
             <td role="cell" className="tw-guide-plan-min">
-              {formatNumber(planTotal('minutes'))}
+              {formatNumber(planTotal('minutes', plan))}
             </td>
             <td role="cell" className="tw-guide-plan-min">
-              {formatNumber(planTotal('short'))}
+              {formatNumber(planTotal('short', plan))}
             </td>
           </tr>
         </tfoot>
       </table>
-      <p className="tw-print-muted">{t('pages.teacherGuide.planShorter')}</p>
+      <p className="tw-print-muted">{t(withWatch ? 'pages.teacherGuide.planShorter' : 'pages.teacherGuide.planShorterNoWatch')}</p>
     </section>
   );
 }

@@ -37,9 +37,12 @@ export function completionSummary(message: string, heading: string): string {
   return trimmed.startsWith(heading) ? trimmed.slice(heading.length).trim() : trimmed;
 }
 
-/** The first stage not done yet, for the "partway" view. Reflect if every stage has a tick but the lesson has no completion date. */
-export function firstUnfinishedStage(done: readonly StageId[]): StageId {
-  return STAGES.find((stage) => !done.includes(stage)) ?? 'reflect';
+/**
+ * The first of the lesson's stages not done yet, for the "partway" view.
+ * Reflect if every stage has a tick but the lesson has no completion date.
+ */
+export function firstUnfinishedStage(done: readonly StageId[], stages: readonly StageId[] = STAGES): StageId {
+  return stages.find((stage) => !done.includes(stage)) ?? 'reflect';
 }
 
 /**
@@ -103,11 +106,14 @@ export function CompleteStage() {
 
   const look = content.sectionLook(section.id);
   const titleNode = <strong {...contentLang}>{lesson.title}</strong>;
-  const nextStage = firstUnfinishedStage(progress.stagesDone);
+  // The lesson's own steps: without Watch in a translated language that has no video of its own for it.
+  const stages = content.stagesFor(lesson);
+  const doneHere = progress.stagesDone.filter((stage) => stages.includes(stage));
+  const nextStage = firstUnfinishedStage(doneHere, stages);
   const summaryMessage = finished ? (
     <En>{completionSummary(lesson.reflect.completionMessage, translated ? t('lessonPlayer.complete.title', { number: lesson.number }) : translate('en', 'lessonPlayer.complete.title', { number: lesson.number }))}</En>
   ) : (
-    t('lessonPlayer.complete.partwayBody', { done: progress.stagesDone.length, total: STAGES.length })
+    t('lessonPlayer.complete.partwayBody', { done: doneHere.length, total: stages.length })
   );
 
   const wroteSomething = hasText(progress.writing.text);
@@ -152,7 +158,7 @@ export function CompleteStage() {
 
         <div className="tw-complete-path">
           {/* Icons only on phones, as in the lesson itself; each step keeps its name as its label. */}
-          <StagePath compact={phone} done={progress.stagesDone} hrefFor={(stage) => lessonPath(lesson.id, stage)} />
+          <StagePath compact={phone} stages={stages} done={progress.stagesDone} hrefFor={(stage) => lessonPath(lesson.id, stage)} />
         </div>
 
         {finished ? null : (
@@ -261,6 +267,7 @@ function UpNext({
   const record = next ? progress?.get(next.id) : undefined;
   const nextDone = isLessonComplete(record);
   const nextInProgress = Boolean(record) && !nextDone;
+  const nextStages = next ? content.stagesFor(next) : undefined;
   const first = section.lessons[0];
   const last = section.lessons[section.lessons.length - 1];
 
@@ -285,8 +292,9 @@ function UpNext({
           time={t('lesson.minutes', { min: next.estimatedMinutes[0], max: next.estimatedMinutes[1] })}
           status={nextDone ? 'completed' : nextInProgress ? 'in-progress' : 'not-started'}
           done={stagesDoneForLesson(record)}
+          stages={nextStages}
           highlight={highlightFirst && !showCheck}
-          href={lessonPath(next.id, nextInProgress ? nextStageForLesson(record) : 'read')}
+          href={lessonPath(next.id, nextInProgress ? nextStageForLesson(record, nextStages) : 'read')}
         />
       ) : null}
     </div>

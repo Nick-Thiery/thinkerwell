@@ -38,7 +38,7 @@ export function ClassPage() {
   const lessons = content.getLessons();
   const sections = content.getSections();
   const summaries = byName(
-    work.map((each) => summariseLearner(each, lessons, sections)),
+    work.map((each) => summariseLearner(each, lessons, sections, content.stagesFor)),
     lang,
   );
   const sameName = learnersWithSameName(work.map((each) => each.learner));

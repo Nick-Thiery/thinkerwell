@@ -1,4 +1,4 @@
-import { englishContent, isLessonStep, type CourseLesson, type LessonContent, type LessonStep } from '../content';
+import { englishContent, isLessonStep, isStageId, stageAmong, type CourseLesson, type LessonContent, type LessonStep } from '../content';
 import { lessonPath, lessonPrintPath, teacherGuidePath } from './lessonUrls';
 
 // What the lesson pages' addresses resolve to. These need the lessons
@@ -15,6 +15,9 @@ export type LessonRouteResult =
  * - A new id with a known stage shows it.
  * - No stage redirects to Read.
  * - An old Base44 id (l6, history-scale, ...) redirects to the new id with the same stage (or Read).
+ * - A stage the lesson hasn't got in this language (Watch, in a translated
+ *   language without a video of its own: content.stagesFor) redirects to the
+ *   next one it has (Reflect), so an old /watch link still lands somewhere.
  * - An unknown lesson or stage is not found.
  * Stage names are matched case-insensitively (old links were typed by hand).
  */
@@ -27,14 +30,18 @@ export function resolveLessonRoute(
   const step = stage?.toLowerCase();
   if (step !== undefined && !isLessonStep(step)) return { kind: 'not-found' };
 
+  // A step this lesson has: itself, or (for a Watch it hasn't got) the next one it has.
+  const shown = (of: CourseLesson): LessonStep => (step && isStageId(step) ? stageAmong(content.stagesFor(of), step) : (step ?? 'read'));
+
   const lesson = content.getLesson(id);
   if (lesson) {
-    if (step === undefined || step !== stage) return { kind: 'redirect', to: lessonPath(lesson.id, step ?? 'read') };
+    const to = shown(lesson);
+    if (step === undefined || step !== stage || to !== step) return { kind: 'redirect', to: lessonPath(lesson.id, to) };
     return { kind: 'show', lesson, step };
   }
 
   const moved = content.getLessonByOldId(id) ?? content.getLessonByOldId(id.toLowerCase()) ?? content.getLesson(id.toLowerCase());
-  if (moved) return { kind: 'redirect', to: lessonPath(moved.id, step ?? 'read') };
+  if (moved) return { kind: 'redirect', to: lessonPath(moved.id, shown(moved)) };
 
   return { kind: 'not-found' };
 }

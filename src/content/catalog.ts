@@ -25,6 +25,7 @@ import { assembleContent } from './assemble';
 import type { LessonSummary } from './catalogFields';
 import { ContentError } from './errors';
 import type { CourseFile, Section, SectionId } from './schema';
+import { lessonStages, type StageId } from './stages';
 import { applyTranslation } from './translation';
 import type { ContentTranslation } from '../i18n/core';
 
@@ -58,9 +59,15 @@ export interface Catalog {
   readonly getLessonSection: (lesson: Pick<LessonSummary, 'number' | 'section'>) => Section;
   /** How many questions a section's check has (0 for an unknown section). */
   readonly getQuizQuestionCount: (sectionId: string) => number;
+  /** A lesson's stages, the same as the content's `stagesFor` (./courseContent.ts): no Watch in a translated language without an approved video of its own. */
+  readonly stagesFor: (lesson: Pick<LessonSummary, 'number'>) => readonly StageId[];
 }
 
-function createCatalog(course: CourseFile, lessonSummaries: readonly LessonSummary[]): Catalog {
+function createCatalog(
+  course: CourseFile,
+  lessonSummaries: readonly LessonSummary[],
+  withWatch: (lessonNumber: number) => boolean = () => true,
+): Catalog {
   const content = assembleContent(course, lessonSummaries);
   const lessonsById = new Map(content.lessons.map((l) => [l.id, l]));
   const lessonsByOldId = new Map(content.lessons.map((l) => [l.oldId, l]));
@@ -82,6 +89,7 @@ function createCatalog(course: CourseFile, lessonSummaries: readonly LessonSumma
       return section;
     },
     getQuizQuestionCount: (sectionId) => catalog.quizQuestions[sectionId as SectionId] ?? 0,
+    stagesFor: (lesson) => lessonStages(withWatch(lesson.number)),
   };
 }
 
@@ -99,6 +107,7 @@ export const {
   getLessonByNumber,
   getLessonSection,
   getQuizQuestionCount,
+  stagesFor,
 } = englishCatalog;
 
 const translated = new WeakMap<ContentTranslation, Catalog>();
@@ -107,6 +116,8 @@ const translated = new WeakMap<ContentTranslation, Catalog>();
  * The catalog in a language with translated content: its course.json and
  * each lesson's title, question and the rest laid over the English (./translation.ts).
  * A lesson with no translation file stays English. English without one.
+ * A lesson has no Watch step in it unless it has an approved video of the
+ * language's own (`stagesFor`, the same rule as ./index.ts's contentFor()).
  */
 export function catalogFor(translation: ContentTranslation | undefined): Catalog {
   if (!translation) return englishCatalog;
@@ -117,7 +128,12 @@ export function catalogFor(translation: ContentTranslation | undefined): Catalog
       const file = `L${String(lesson.number).padStart(2, '0')}.json`;
       return applyTranslation(lesson, byFile.get(file));
     });
-    found = createCatalog(applyTranslation(courseJson as unknown as CourseFile, translation.course), summaries);
+    // The same rule as contentFor(): Watch only for a lesson with an approved video in this language.
+    // Only the approval is read here, not the whole entry (./localVideos.ts, kept out of the first
+    // chunk): the build refuses an approved entry that isn't complete and drops every other one.
+    const lessons = (translation.videos as { lessons?: Record<string, { approved?: unknown } | undefined> } | undefined)?.lessons ?? {};
+    const withWatch = (number: number) => lessons[`L${String(number).padStart(2, '0')}`]?.approved === true;
+    found = createCatalog(applyTranslation(courseJson as unknown as CourseFile, translation.course), summaries, withWatch);
     translated.set(translation, found);
   }
   return found;
