@@ -47,7 +47,7 @@ const names = readdirSync(path.join(root, 'content', 'lessons')).filter((name) =
 const lessons = names.map((name) => {
   const english = readJson<LessonText>('content', 'lessons', name);
   const indonesian = readJson<Partial<LessonText>>('content', 'id', 'lessons', name);
-  return { ...english, englishTitle: english.title, title: indonesian.title!, summary: indonesian.watch!.summary, keyPoints: indonesian.watch!.keyPoints! };
+  return { ...english, englishTitle: english.title, title: indonesian.title!, summary: indonesian.watch!.summary, keyPoints: indonesian.watch!.keyPoints };
 });
 const L1 = lessons[0]!;
 const L10 = lessons[9]!;
