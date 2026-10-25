@@ -18,7 +18,7 @@
  * screen.
  */
 import courseJson from '../../content/course.json';
-import { educatorsPath } from '../app/lessonUrls';
+import { guidesPath } from '../app/lessonUrls';
 import { SECTION_ICONS } from '../pages/course/sectionIcons';
 import { createCourseContent, type OurWorldContent } from './courseContent';
 import { DEFAULT_COURSE_ID } from './courses';
@@ -72,7 +72,7 @@ function createContent(
       // Each section's own tint and icon (docs/design-system/README.md).
       sectionLook: (sectionId) => ({ tone: sectionId as SectionId, icon: SECTION_ICONS[sectionId as SectionId] }),
       coursePath: (sectionId) => (sectionId ? `/course#${sectionId}` : '/course'),
-      educatorsPath,
+      guidesPath,
     }),
     getQuizzes: () => quizzes,
     getQuiz: (sectionId) => quizzesBySection.get(sectionId as SectionId),

@@ -57,11 +57,6 @@
   line-height: 24px;
 }
 
-.tw-edu-need-settings {
-  align-self: flex-start;
-  margin-block-start: var(--space-2);
-}
-
 .tw-edu-section {
   display: flex;
   flex-direction: column;
@@ -70,18 +65,6 @@
 
 .tw-edu-section h2 {
   margin: 0;
-}
-
-.tw-edu-section-head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--space-4);
-  flex-wrap: wrap;
-}
-
-.tw-edu-preview-note {
-  color: var(--ink-muted);
 }
 
 .tw-edu-section .tw-edu-preview-intro {
@@ -137,18 +120,6 @@
   font-family: var(--font-display);
   font-size: 20px;
   font-weight: 600;
-}
-
-.tw-edu-chips {
-  display: flex;
-  gap: var(--space-2);
-  flex-wrap: wrap;
-}
-
-.tw-edu-lessons {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
 }
 
 .tw-edu-cards {
@@ -210,4 +181,76 @@
 /* "Make code cards" keeps its own width under the class codes card's text. */
 .tw-edu-card > .tw-edu-card-action {
   align-self: flex-start;
+}
+
+/* A tool row: an icon, what it is for, and a button. The Educators page's tools and the guides list's answer keys. */
+.tw-edu-check {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.tw-edu-check-icon {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 44px;
+  block-size: 44px;
+  border-radius: 50%;
+  background: var(--canvas);
+}
+
+.tw-edu-check-text {
+  flex: 1 1 16rem;
+  min-inline-size: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tw-edu-check-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.tw-edu-check-meta {
+  color: var(--ink-muted);
+}
+
+/* Inside a card, the rows sit closer and without their own border. */
+.tw-edu-tools-compact {
+  gap: var(--space-2);
+}
+
+.tw-edu-tools-compact .tw-edu-check {
+  padding: var(--space-3) 0;
+  border: 0;
+  border-block-start: 1px solid var(--line);
+  border-radius: 0;
+}
+
+/* "See a lesson on paper": a quiet link under the hero's two buttons. */
+.tw-edu-paper-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  align-self: flex-start;
+  min-block-size: var(--target-min);
+  font-weight: 700;
+}
+
+.tw-edu-card-lead {
+  font-weight: 700;
+}
+
+/* The folded overview video and the optional study, under their sections. */
+.tw-edu-fold {
+  margin-block-start: var(--space-2);
 }

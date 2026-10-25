@@ -77,7 +77,7 @@ These are the approved titles and descriptions from the brief, in `en.json` unde
 | `/about` | Thinkerwell | About Thinkerwell \| Our Mission | Learn why Thinkerwell began and how its free digital platform makes social studies learning more accessible to youth facing barriers to education. |
 | `/course` | Thinkerwell | Exploring Our World \| Free Social Studies Course | Explore Thinkerwell's 24 free lessons in history, geography, culture and civic life. Learn independently or with an educator. |
 | `/educators` | Thinkerwell | For Educators \| Thinkerwell | Teach Thinkerwell's free social studies lessons with teacher guides, printable materials and flexible activities for shared devices. |
-| `/organisations` | Thinkerwell | For Organisations \| Thinkerwell | Learn how a pilot with Thinkerwell could support social studies learning for youth facing barriers to education. |
+| `/organisations` | Thinkerwell | For Organisations \| Thinkerwell | Use Thinkerwell's free social studies course and educator resources with your learners, on shared devices or in print. (October 2026; was "Learn how a pilot with Thinkerwell could…") |
 | `/credits` | Thinkerwell | Credits and Sources \| Thinkerwell | Explore the sources, videos, images and software behind Thinkerwell's free social studies lessons. |
 | `/contact` | (new, October 2026) | Contact Us \| Thinkerwell | Ask a question or get in touch about using Thinkerwell, a free social studies platform for youth facing barriers to education. |
 | `/lesson/<id>/read` | Thinkerwell | Lesson N: *the lesson's title* \| Thinkerwell | Lesson N of Exploring Our World, Thinkerwell's free social studies course. Learning goal: *the lesson's `learningGoal`* |

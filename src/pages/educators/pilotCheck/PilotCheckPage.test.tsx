@@ -6,11 +6,11 @@ import en from '../../../../content/pilot-check/en.json';
 import { I18nProvider } from '../../../i18n';
 import { PilotCheckPage } from './PilotCheckPage';
 
-/** The before-and-after check (/educators/pilot-check). */
+/** The before-and-after check (/educators/learning-check). */
 
 function renderPage(locale?: string) {
-  const router = createMemoryRouter([{ path: '/educators/pilot-check', element: <PilotCheckPage /> }], {
-    initialEntries: ['/educators/pilot-check'],
+  const router = createMemoryRouter([{ path: '/educators/learning-check', element: <PilotCheckPage /> }], {
+    initialEntries: ['/educators/learning-check'],
   });
   const page = <RouterProvider router={router} />;
   render(locale ? <I18nProvider locale={locale}>{page}</I18nProvider> : page);
@@ -19,7 +19,7 @@ function renderPage(locale?: string) {
 describe('the before-and-after check', () => {
   it('prints the learners’ sheets by default: code and session at the top, 16 questions, the writing and the faces', async () => {
     renderPage();
-    expect(screen.getByRole('heading', { level: 1, name: 'Before-and-after check' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1, name: 'Learning check' })).toBeInTheDocument();
     const questions = await screen.findByRole('article', { name: 'Part 1: Questions' });
     expect(within(questions).getByText('My code:')).toBeInTheDocument();
     expect(within(questions).getByText('Write your code, not your name.')).toBeInTheDocument();
@@ -56,7 +56,7 @@ describe('the before-and-after check', () => {
 
   it('is in Indonesian on an Indonesian page, questions too', async () => {
     renderPage('id');
-    expect(await screen.findByRole('heading', { level: 1, name: 'Cek sebelum dan sesudah' })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { level: 1, name: 'Cek pembelajaran' })).toBeInTheDocument();
     const questions = await screen.findByRole('article', { name: 'Bagian 1: Pertanyaan' });
     expect(await within(questions).findByText('Bagian peta mana yang menjelaskan arti setiap simbol?')).toBeInTheDocument();
     expect(within(questions).getByText('Legenda')).toBeInTheDocument();

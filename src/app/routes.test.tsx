@@ -215,10 +215,32 @@ describe('pilot-day tools for educators', () => {
     ['/educators/setup', 'Set up this device'],
     ['/educators/class', 'The class on this device'],
     ['/educators/class/certificates', 'All certificates'],
+    ['/educators/session-guide', 'Session guide'],
+    ['/educators/learning-check', 'Learning check'],
+    ['/educators/guides', 'Teacher guides and answer keys'],
   ])('%s shows one h1 with its title', async (path, title) => {
     await renderAt(path);
     await waitFor(() => expect(heading()).toHaveTextContent(title));
     expect(document.title).toBe(`${title} | Thinkerwell`);
+  });
+});
+
+describe('the contact form', () => {
+  it('shows one h1, and its own search title in the tab', async () => {
+    await renderAt('/contact');
+    await waitFor(() => expect(heading()).toHaveTextContent('Contact Thinkerwell'));
+    expect(document.title).toBe('Contact Us | Thinkerwell');
+  });
+});
+
+describe('the educators pages renamed in October 2026', () => {
+  it.each([
+    ['/educators/pilot-day', '/educators/session-guide', 'Session guide'],
+    ['/educators/pilot-check', '/educators/learning-check', 'Learning check'],
+  ])('%s opens %s', async (old, now, title) => {
+    const router = await renderAt(old);
+    await waitFor(() => expect(heading()).toHaveTextContent(title));
+    expect(router.state.location.pathname).toBe(now);
   });
 });
 

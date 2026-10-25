@@ -71,7 +71,7 @@ async function turnSharingOn(page: Page, org = 'help-jakarta'): Promise<void> {
   await expect(code).toBeEnabled();
   await code.fill(org);
   await page.getByRole('button', { name: 'Save code' }).click();
-  const share = page.getByRole('checkbox', { name: 'Share pilot results from this device' });
+  const share = page.getByRole('checkbox', { name: 'Share optional study data from this device' });
   await expect(share).toBeEnabled();
   await share.check();
   await expect(page.getByText(`Sharing with ${org}.`)).toBeVisible();
@@ -98,9 +98,9 @@ test.describe('pilot measurement: off by default, and gated by all three', () =>
     expect(await databaseNames(page)).not.toContain(QUEUE_DB);
   });
 
-  test('"Share pilot results" is off and cannot be turned on without an organisation code', async ({ page }) => {
+  test('"Share optional study data" is off and cannot be turned on without an organisation code', async ({ page }) => {
     await page.goto('/settings');
-    const share = page.getByRole('checkbox', { name: 'Share pilot results from this device' });
+    const share = page.getByRole('checkbox', { name: 'Share optional study data from this device' });
     await expect(share).toBeDisabled();
     await expect(share).not.toBeChecked();
     await expect(page.getByText('Sharing is off. Nothing is sent.')).toBeVisible();
@@ -203,7 +203,7 @@ test.describe('pilot measurement: on', () => {
     await addLearnerViaUi(page, 'HLP-02');
     await expect.poll(() => seen.requests.length, { timeout: 20_000 }).toBe(1);
     await page.goto('/settings');
-    const share = page.getByRole('checkbox', { name: 'Share pilot results from this device' });
+    const share = page.getByRole('checkbox', { name: 'Share optional study data from this device' });
     await expect(share).toBeChecked();
     await expect(page.getByText(/Results waiting to be sent: [1-9]/)).toBeVisible();
     await share.uncheck();

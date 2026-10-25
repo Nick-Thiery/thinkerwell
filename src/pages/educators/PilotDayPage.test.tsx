@@ -8,14 +8,14 @@ import { planTotal, SESSION_MINUTES, SHORT_SESSION_MINUTES } from './sessionPlan
 // These tests cover the pages without an address (src/app/contact.ts); contactEmail.test.tsx covers them with the real one.
 vi.mock('../../app/contact', () => ({ CONTACT_EMAIL: null }));
 
-/** The pilot day guide for staff (/educators/pilot-day). */
+/** The pilot day guide for staff (/educators/session-guide). */
 
 function renderPage() {
-  const router = createMemoryRouter([{ path: '/educators/pilot-day', element: <PilotDayPage /> }], {
-    initialEntries: ['/educators/pilot-day'],
+  const router = createMemoryRouter([{ path: '/educators/session-guide', element: <PilotDayPage /> }], {
+    initialEntries: ['/educators/session-guide'],
   });
   render(<RouterProvider router={router} />);
-  return screen.getByRole('article', { name: 'Pilot day: a one-page guide for staff' });
+  return screen.getByRole('article', { name: 'A one-page guide for staff' });
 }
 
 function part(sheet: HTMLElement, name: string): HTMLElement {
@@ -33,7 +33,7 @@ describe('the pilot day guide', () => {
       'Sensitive topics',
       'End of the session',
     ]);
-    expect(screen.getByRole('heading', { level: 1, name: 'Pilot day guide' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1, name: 'Session guide' })).toBeInTheDocument();
   });
 
   it('says how to get ready, using the pages and buttons the app has', () => {
@@ -123,7 +123,7 @@ describe('the pilot day guide', () => {
 
   it('leaves out who to contact while there is no address, and shows no placeholder', () => {
     const sheet = renderPage();
-    expect(within(sheet).queryByRole('region', { name: 'Tell us what to fix' })).not.toBeInTheDocument();
+    expect(within(sheet).queryByRole('region', { name: 'Questions, or something to fix?' })).not.toBeInTheDocument();
     expect(within(sheet).queryByRole('link')).not.toBeInTheDocument();
     expect(sheet.textContent).not.toMatch(/@|CONTACT/);
   });

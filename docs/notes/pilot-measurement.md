@@ -5,7 +5,7 @@ Built October 2026 from `docs/research/MEASUREMENT_PLAN.md` (section 4, "In-app 
 This is the one exception to "learner data stays on the device" (CLAUDE.md rule 1). It is allowed only when **all four** are true:
 
 1. the learner using the device has a **pilot code** (their name is a code card's code, like `HLP-01`; a real name never qualifies);
-2. an educator turned on **"Share pilot results"** in Settings on that device;
+2. an educator turned on **"Share optional study data"** (called "Share pilot results" until October 2026) in Settings on that device;
 3. an **organisation code** (like `help-jakarta`) is saved there;
 4. the family has **signed the consent form** (`/educators/consent-form`). The app cannot check this; it is the organisation's job, and the switch-on checklist says so.
 
@@ -123,7 +123,7 @@ Set in the Vercel project (Settings, Environment Variables). **None is set after
 1. Agree the organisation code (lower case letters, numbers and hyphens, 2 to 32 characters: `help-jakarta`). One code per organisation; it is how results are separated and exported.
 2. Add it to `MEASUREMENT_ORGS` in Vercel and redeploy.
 3. Make sure every family has signed the consent form (`docs/notes/partner-kit.md`) **before** any learner uses a pilot code on a device that shares.
-4. On each device, an educator opens **Settings → Share pilot results**, types the organisation code, taps **Save code**, then turns on **Share pilot results from this device**. The page says "Sharing with help-jakarta."
+4. On each device, an educator opens **Settings → Share optional study data**, types the organisation code, taps **Save code**, then turns on **Share pilot results from this device**. The page says "Sharing with help-jakarta."
 5. Learners type their code card code (like `HLP-01`) as their name. Learners with any other name, and anyone looking around, send nothing.
 
 To end it: the educator turns the setting off (this deletes what the device still holds), and the organisation is removed from `MEASUREMENT_ORGS`.

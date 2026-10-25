@@ -92,36 +92,40 @@ async function printed(page: Page): Promise<{ pages: string[]; colours: string[]
   return { pages, colours };
 }
 
-test('an organisation finds the kit from the first page, in the footer and on the Educators page', async ({ page }) => {
+test('an organisation finds what it needs from the first page, in the footer and on the Educators page', async ({ page }) => {
   await page.goto('/');
   const footer = page.locator('footer.tw-site-footer');
   await expect(footer.getByRole('link', { name: 'Credits' })).toHaveAttribute('href', '/credits');
   await footer.getByRole('link', { name: 'For organisations' }).click();
-  await expect(page.locator('h1')).toHaveText('For organisations');
+  await expect(page.locator('h1')).toHaveText('Use Thinkerwell with your learners');
   await expect(page.getByText('Thinkerwell is a student-led platform. It is not a registered charity or nonprofit.')).toBeVisible();
-  // No placeholder address anywhere until the team has a real one (src/app/contact.ts).
   await expect(page.getByText(/\[CONTACT EMAIL\]/)).toHaveCount(0);
+  await expect(page.getByText(/pilot/i)).toHaveCount(0);
 
-  // For organisations' "Get ready": the information sheet beside the consent form.
+  // Getting ready is for everyone; the study's papers are in their own part.
   const ready = page.getByRole('region', { name: 'Get ready' });
-  await expect(ready.getByRole('link', { name: 'Print information sheets' })).toHaveAttribute('href', '/educators/information-sheet');
-  await expect(ready.getByRole('link', { name: 'Print consent forms' })).toHaveAttribute('href', '/educators/consent-form');
+  await expect(ready.getByRole('link', { name: 'Open the checklist' })).toHaveAttribute('href', '/educators/setup');
+  await expect(ready.getByRole('link', { name: 'Print the guide' })).toHaveAttribute('href', '/educators/session-guide');
+  const study = page.getByRole('region', { name: 'Optional learning study and data sharing' });
+  await expect(study.getByRole('link', { name: 'Print information sheets' })).toHaveAttribute('href', '/educators/information-sheet');
+  await expect(study.getByRole('link', { name: 'Print consent forms' })).toHaveAttribute('href', '/educators/consent-form');
 
   await page.goto('/educators');
-  const pilot = page.getByRole('region', { name: 'Starting a pilot' });
+  const group = page.getByRole('region', { name: 'Resources for your group' });
   for (const [cta, url] of [
-    ['Read about pilots', '/organisations'],
-    ['Print information sheets', '/educators/information-sheet'],
-    ['Print consent forms', '/educators/consent-form'],
+    ['Read more', '/organisations'],
+    ['Print the guide', '/educators/session-guide'],
     ['Make code cards', '/educators/code-cards'],
   ] as const) {
-    await expect(pilot.getByRole('link', { name: cta })).toHaveAttribute('href', url);
+    await expect(group.getByRole('link', { name: cta })).toHaveAttribute('href', url);
   }
-  // Setting up a device has one way in, in "What you need" at the top (docs/notes/simpler-lessons.md).
-  await expect(page.getByRole('complementary', { name: 'What you need' }).getByRole('link', { name: 'Set up this device' })).toHaveAttribute(
-    'href',
-    '/educators/setup',
-  );
+  // The study's papers are folded away, in one clearly named place.
+  await expect(group.getByRole('link', { name: 'Print consent forms' })).toBeHidden();
+  await group.getByText('Optional learning study').click();
+  await expect(group.getByRole('link', { name: 'Print information sheets' })).toHaveAttribute('href', '/educators/information-sheet');
+  await expect(group.getByRole('link', { name: 'Print consent forms' })).toHaveAttribute('href', '/educators/consent-form');
+  // Setting up a device is the hero's second button.
+  await expect(page.getByRole('link', { name: 'Set up a device' })).toHaveAttribute('href', '/educators/setup');
 });
 
 for (const locale of ['en', 'id', 'ms'] as const) {

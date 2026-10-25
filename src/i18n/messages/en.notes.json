@@ -125,7 +125,6 @@
   "pages.credits.softwareItem": "{name} is a program's name and {licence} its licence's name; both stay in English. Keep the brackets or use your language's usual way of adding a note.",
   "pages.credits.videoBy": "{channel} is the name of a YouTube channel, which stays in English.",
   "pages.educators.answerKeyLabel": "Screen readers only. {section} is the section's name, in English.",
-  "pages.educators.codesBody": "ABC-07 is an example code: keep it as it is.",
   "pages.educators.feedbackBody": "{email} is the team's email address, shown as a link. Keep it as it is.",
   "pages.educators.teacherGuideLabel": "Screen readers only. {number} is a lesson number.",
   "pages.home.dashboard.greeting": "{name} is the learner's name or nickname.",
@@ -307,7 +306,7 @@
   "siteVideo.setup.p3": "\"Keep work safe\" is the checklist's button (pages.setup.storage.button).",
   "siteVideo.setup.p5": "\"Say it\" and \"Check this device\" are Settings' own names (pages.settings.sayIt.title, pages.settings.sayIt.checkDevice).",
   "siteVideo.setup.p6": "\"Social studies and beyond\" is Thinkerwell's motto; translate it as in siteVideo.explore.p4.",
-  "pilotResults.title": "The heading of a part of Settings, and the name of a switch in it. It means sending the pilot study's measurements (how learners use Thinkerwell) to the Thinkerwell team. Only an educator sees this page.",
+  "pilotResults.title": "The Settings switch for the optional learning study. For Organisations names it (pages.organisations.studyShare): use the same words there.",
   "pilotResults.codeLabel": "The label of a text box. An organisation is a school or centre running a pilot. Thinkerwell gives each one a short code.",
   "pilotResults.codeHelp": "help-jakarta is an example code: keep it exactly as it is.",
   "pilotResults.codeInvalid": "Keep help-jakarta as it is. 2 to 32 is the number of characters allowed.",
@@ -345,5 +344,10 @@
   "pages.educators.sendEnquiry": "A button to the contact page (/contact) on the Educators page.",
   "footer.contact": "The footer's link to the contact page (/contact).",
   "contact.honeypot": "The label of a hidden field that only automated spam fills in. People never see it.",
-  "contact.topicOrganisation": "An organisation that runs learning for youth, such as a learning centre, a school or an NGO."
+  "contact.topicOrganisation": "An organisation that runs learning for youth, such as a learning centre, a school or an NGO.",
+  "pages.educators.studyTitle": "A folded section of the Educators page holding the information sheet, consent form and learning check, for an organisation that takes part in a study. Say plainly that it is optional.",
+  "pages.educators.overview": "A folded link that opens the one-minute video \"Run a session\" on the Educators page.",
+  "pages.guides.lesson": "{title} is the lesson's title, from the course (English unless the lessons are translated).",
+  "pages.guides.lessons": "{range} is a range of lesson numbers, like 1–6.",
+  "pages.organisations.studyShare": "“Share optional study data” is the name of the switch in Settings (pilotResults.title): use the same words."
 }

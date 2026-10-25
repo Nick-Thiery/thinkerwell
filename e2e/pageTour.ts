@@ -310,9 +310,18 @@ export const pageTour: TourStop[] = [
     go: (page, { ui }) => openPath(page, '/educators', ui('pages.educators.title')),
   },
   {
+    // Every teacher guide, print view and answer key, from "Teaching materials"; Geography open.
+    name: 'educators: teacher guides',
+    go: async (page, { ui }) => {
+      await page.getByRole('link', { name: ui('pages.educators.guidesCta') }).click();
+      await expect(page.locator('h1')).toHaveText(ui('pages.guides.title'));
+      await page.locator('details.tw-guides-geography > summary').click();
+      await expect(page.getByRole('link', { name: ui('pages.educators.teacherGuideLabel', { number: 10 }) })).toBeVisible();
+    },
+  },
+  {
     name: 'educators: teacher guide',
     go: async (page, { ui }) => {
-      await page.getByRole('radio', { name: /Geography/ }).click();
       await page.getByRole('link', { name: ui('pages.educators.teacherGuideLabel', { number: 10 }) }).click();
       await expect(page.locator('h1')).toHaveText(L10.title);
       await expect(page.getByRole('table')).toBeVisible();
@@ -328,7 +337,7 @@ export const pageTour: TourStop[] = [
     name: 'educators: set up this device',
     go: async (page, { ui }) => {
       await openPath(page, '/educators', ui('pages.educators.title'));
-      await page.getByRole('link', { name: ui('pages.educators.setupTitle') }).click();
+      await page.getByRole('link', { name: ui('pages.educators.setupDevice') }).click();
       await expect(page.locator('h1')).toHaveText(ui('pages.setup.title'));
       await page.getByText(ui('pages.setup.homeScreen.otherDevices')).click();
       await expect(page.getByRole('heading', { level: 3, name: ui('pages.setup.homeScreen.android.name') })).toBeVisible();
@@ -375,7 +384,7 @@ export const pageTour: TourStop[] = [
     },
   },
   {
-    // The partner kit, from the footer and the Educators page's "Starting a pilot".
+    // For organisations, from the footer: using Thinkerwell with a group, and the optional study's papers.
     name: 'for organisations',
     go: async (page, { ui }) => {
       await page.locator('.tw-site-footer').getByRole('link', { name: ui('footer.organisations') }).click();
@@ -397,7 +406,8 @@ export const pageTour: TourStop[] = [
     name: 'educators: information sheet',
     go: async (page, { ui }) => {
       await openPath(page, '/educators', ui('pages.educators.title'));
-      await page.locator('.tw-edu-tools').getByRole('link', { name: ui('pages.educators.pilotSheetCta') }).click();
+      await page.locator('details.tw-edu-study > summary').click();
+      await page.locator('.tw-edu-study').getByRole('link', { name: ui('pages.educators.pilotSheetCta') }).click();
       await expect(page.locator('h1')).toHaveText(ui('pages.infoSheet.title'));
       for (const [label, value] of [
         ['pages.consentForm.orgLabel', TOUR_ORGANISATION],
@@ -413,7 +423,7 @@ export const pageTour: TourStop[] = [
   },
   {
     // The staff's one-page guide: its words load with the page (the lazily loaded `pilotDay` group).
-    name: 'educators: pilot day guide',
+    name: 'educators: session guide',
     go: async (page, { ui }) => {
       await openPath(page, '/educators', ui('pages.educators.title'));
       await page.locator('.tw-edu-tools').getByRole('link', { name: ui('pages.educators.pilotDayCta') }).click();
@@ -424,12 +434,14 @@ export const pageTour: TourStop[] = [
     },
   },
   {
-    // The before-and-after check's paper sheets: its words load with the page (the lazily loaded `pilotCheck` group),
-    // its questions with it too (content/pilot-check/), in the language on screen or else English, marked as English.
-    name: 'educators: before-and-after check',
+    // The learning check's paper sheets, from the optional study's fold: its words load with the page (the lazily
+    // loaded `pilotCheck` group), its questions with it too (content/pilot-check/), in the language on screen or else
+    // English, marked as English.
+    name: 'educators: learning check',
     go: async (page, { ui }) => {
       await openPath(page, '/educators', ui('pages.educators.title'));
-      await page.locator('.tw-edu-tools').getByRole('link', { name: ui('pages.educators.pilotCheckCta') }).click();
+      await page.locator('details.tw-edu-study > summary').click();
+      await page.locator('.tw-edu-study').getByRole('link', { name: ui('pages.educators.pilotCheckCta') }).click();
       await expect(page.locator('h1')).toHaveText(ui('pilotCheck.title'));
       await expect(page.locator('.tw-check-question')).toHaveCount(16);
     },

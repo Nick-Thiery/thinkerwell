@@ -1410,16 +1410,6 @@
     "note": "Sentence 'Dạy trên một màn hình chung, theo cặp hoặc trên từng thiết bị riêng' reworded for flow; check naturalness.",
     "back": "Use Thinkerwell's free social science lessons with your group. You can teach on one shared screen, in pairs, or on each person's own device, or print the lessons on paper. Learners do not need to create an account."
   },
-  "pages.educators.pilotTitle": {
-    "source": "Starting a pilot",
-    "flag": true,
-    "note": "'thí điểm' per KEY_TERMS; check 'đợt thí điểm' reads naturally for adults.",
-    "back": "Start a pilot"
-  },
-  "pages.educators.pilotIntro": {
-    "source": "For an organisation trying Thinkerwell with a group of learners. Everything here prints on A4, in black and white.",
-    "back": "For organisations that want to try Thinkerwell with a group of learners. Everything here can be printed on A4 paper, in black and white."
-  },
   "pages.educators.pilotAboutTitle": {
     "source": "For organisations",
     "back": "For organisations"
@@ -1473,12 +1463,6 @@
   "pages.educators.pilotCodesCta": {
     "source": "Make code cards",
     "back": "Make code cards"
-  },
-  "pages.educators.previewLesson": {
-    "source": "Preview a lesson",
-    "flag": true,
-    "note": "'Xem trước' per KEY_TERMS; check it is clear this means preview not preview-and-print.",
-    "back": "Preview a lesson"
   },
   "pages.educators.printLesson": {
     "source": "See a lesson on paper",
@@ -1536,28 +1520,6 @@
     "source": "Ask two or three learners to share their answer. Everyone writes one reflection.",
     "back": "Invite two or three learners to share their answers. Everyone writes a reflection."
   },
-  "pages.educators.previewTitle": {
-    "source": "Preview any lesson",
-    "back": "Preview any lesson"
-  },
-  "pages.educators.previewNote": {
-    "source": "Previews never save anything",
-    "back": "Previewing does not save anything"
-  },
-  "pages.educators.previewIntro": {
-    "source": "Every lesson has a teacher guide with a session plan and the answers, and every section check has an answer key.",
-    "flag": true,
-    "note": "'Section check' rendered 'phần ôn tập phần' (ôn tập phần = section check) which is a repetitive-sounding phrase; native should check. Also 'bộ đáp án' for answer key. | Review: 'phần ôn tập phần' read as 'section section-check'; now matches 'bài ôn tập phần' used elsewhere. [Reviewer changed: mỗi phần ôn tập phần → mỗi bài ôn tập phần]",
-    "back": "Each lesson has a teacher guide with a session plan and answers, and each section review has an answer set."
-  },
-  "pages.educators.sectionLabel": {
-    "source": "Section",
-    "back": "Section"
-  },
-  "pages.educators.previewCta": {
-    "source": "Preview",
-    "back": "Preview"
-  },
   "pages.educators.teacherGuide": {
     "source": "Teacher guide",
     "back": "Teacher guide"
@@ -1576,20 +1538,6 @@
     "note": "'ôn tập phần' = section check per KEY_TERMS; {section} is a name that may be shown in English; check the sentence still reads well. | Review: Same repetition fix. {section} is an English name per notes; native to check it reads well. [Reviewer changed: phần ôn tập phần {section} → bài ôn tập phần {section}]",
     "back": "Answers for section review {section}"
   },
-  "pages.educators.codesTag": {
-    "source": "Pilot partners",
-    "back": "Pilot partner"
-  },
-  "pages.educators.codesTitle": {
-    "source": "Class codes instead of names",
-    "back": "Class codes instead of names"
-  },
-  "pages.educators.codesBody": {
-    "source": "In the pilot, each learner can get a code like ABC-07. Later, codes will let us see how the whole group is doing, without any names. You keep the list that matches names to codes.",
-    "flag": true,
-    "note": "'không cần tên nào' is a little awkward; check. ABC-07 kept.",
-    "back": "In the pilot, each learner can receive a code such as ABC-07. Later, the codes will help us see how the whole group is learning without needing any names. You keep the list matching names to codes."
-  },
   "pages.educators.feedbackTitle": {
     "source": "Tell us what to fix",
     "back": "Tell us what to fix"
@@ -1605,10 +1553,6 @@
     "flag": true,
     "note": "'chỉ nằm trên thiết bị này' (stays on this device); check wording.",
     "back": "For the day you start and every day after. Everything here stays only on this device."
-  },
-  "pages.educators.followTitle": {
-    "source": "Follow your group",
-    "back": "Follow your group"
   },
   "pages.educators.setupTitle": {
     "source": "Set up this device",
