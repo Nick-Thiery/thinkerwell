@@ -16,6 +16,7 @@ import { lessonPath, lessonPrintPath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
 import { Button, Icon } from '../../components/ds';
 import { type CourseLesson, type ThinkCheck } from '../../content';
+import { DEFAULT_COURSE_ID } from '../../content/courses';
 import { useLessonContent } from '../../content/useContent';
 import { En, useI18n } from '../../i18n';
 import { LessonSlot } from '../../lesson/extras';
@@ -367,6 +368,7 @@ function BeforeYouTeach({ lesson, withWatch }: { lesson: CourseLesson; withWatch
 /** The suggested plan for about 45 minutes (./sessionPlan.ts), with a 30-minute column and a note on shortening it. */
 function SessionPlan({ lesson, withWatch }: { lesson: CourseLesson; withWatch: boolean }) {
   const { t, formatNumber } = useI18n();
+  const { courseId } = useLessonContent();
   const plan = sessionPlan(withWatch);
   const doText = (step: SessionStep): string => {
     switch (step) {
@@ -433,6 +435,8 @@ function SessionPlan({ lesson, withWatch }: { lesson: CourseLesson; withWatch: b
         </tfoot>
       </table>
       <p className="tw-print-muted">{t(withWatch ? 'pages.teacherGuide.planShorter' : 'pages.teacherGuide.planShorterNoWatch')}</p>
+      {/* A teacher reading in English whose learners use Indonesian or Malay: their lessons have no Watch step. */}
+      {withWatch && courseId === DEFAULT_COURSE_ID ? <p className="tw-print-muted">{t('pages.teacherGuide.planOtherLanguages')}</p> : null}
     </section>
   );
 }
