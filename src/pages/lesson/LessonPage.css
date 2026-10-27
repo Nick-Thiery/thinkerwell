@@ -137,22 +137,30 @@
 
 .tw-lesson-steps-row {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-2);
   padding-block: 4px;
   padding-inline: var(--space-4) 4px;
   border: 2px solid var(--ink);
-  border-radius: var(--radius-pill);
+  /* A pill on one line; a longer translation ("Langkah 1 dari 4 · Baca") wraps the count
+     inside it, beside the toggle, and the row stays one rounded box. */
+  border-radius: 26px;
   background: var(--paper);
 }
 
 .tw-lesson-step-count {
+  flex: 1 1 auto;
+  min-width: 0;
   margin: 0;
   font-size: 16px;
   line-height: 22px;
   font-weight: 700;
+}
+
+.tw-lesson-steps-row .tw-lesson-steps-toggle {
+  flex: none;
+  padding-inline: var(--space-3);
 }
 
 .tw-lesson-steps-toggle .tw-icon {

@@ -40,7 +40,7 @@ describe('the pilot day guide', () => {
     const before = part(renderPage(), 'Before the session');
     expect(before).toHaveTextContent('Set up each device once: open For educators, then Set up this device.');
     expect(before).toHaveTextContent('Print the code cards from For educators. Each learner types their code as their name.');
-    expect(before).toHaveTextContent(/information sheet.*consent form\. A learner's own no wins\./);
+    expect(before).toHaveTextContent(/information sheet.*consent form\. If a learner says no, that is the answer, even if the family said yes\./);
     expect(within(before).getByText('Set up this device').tagName).toBe('STRONG');
   });
 

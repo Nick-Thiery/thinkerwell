@@ -40,9 +40,24 @@
 }
 
 @media (max-width: 600px) {
+  /* On a phone the icon and the ring share the first row and the words get the whole width
+     below them, so a long translated name ("Kewarganegaraan") isn't broken mid-word. */
   .tw-sechead {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
     padding: var(--space-5);
     gap: var(--space-4);
+  }
+
+  .tw-sechead-text {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .tw-sechead > .tw-ring {
+    grid-column: 3;
+    grid-row: 1;
   }
 
   .tw-sechead-title {

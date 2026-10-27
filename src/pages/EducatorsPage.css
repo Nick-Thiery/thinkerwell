@@ -154,8 +154,10 @@
 }
 
 .tw-edu-feedback-email {
-  align-self: flex-start;
-  padding: 10px var(--space-4);
+  /* Inside a sentence: inline-block so its padding takes room on the line instead of covering the line above. */
+  display: inline-block;
+  margin-block: 2px;
+  padding: 4px var(--space-3);
   border-radius: var(--radius-md);
   background: var(--paper);
   font-size: 17px;

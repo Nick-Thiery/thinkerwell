@@ -84,6 +84,20 @@ export function WhoIsLearningPicker({
     };
   }, [learners, view.kind, t, catalog]);
 
+  // A guest who tapped "Save my work" comes here to choose who keeps it. On a phone the
+  // panel is under the hero, so bring its heading and the note about the work into view,
+  // or they would see only the hero and think nothing happened.
+  const savingFrom = saving?.lessonNumber ?? null;
+  useEffect(() => {
+    if (savingFrom === null) return;
+    const heading = headingRef.current;
+    if (!heading) return;
+    const top = heading.getBoundingClientRect().top;
+    if (top >= 0 && top < window.innerHeight / 2) return;
+    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+    window.scrollTo({ top: window.scrollY + top - 96, behavior: reduce ? 'auto' : 'smooth' });
+  }, [savingFrom]);
+
   // Moves focus to match each in-page view change (not the very first render:
   // AppLayout already lands focus on the h1 once it first appears).
   useEffect(() => {
