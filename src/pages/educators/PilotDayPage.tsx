@@ -141,10 +141,13 @@ export function PilotDayPage() {
                   file: <strong translate="no">thinkerwell</strong>,
                 })}
               </li>
-              <li>
-                <strong>{t('pilotDay.wrongVideoLead')}</strong>{' '}
-                {tx('pilotDay.wrongVideo', { readInstead: ui(parent.t('lessonPlayer.watch.readInstead')) })}
-              </li>
+              {/* Lessons without a Watch step (Indonesian, Malay) have no videos to go wrong. */}
+              {lessonStages.includes('watch') ? (
+                <li>
+                  <strong>{t('pilotDay.wrongVideoLead')}</strong>{' '}
+                  {tx('pilotDay.wrongVideo', { readInstead: ui(parent.t('lessonPlayer.watch.readInstead')) })}
+                </li>
+              ) : null}
               <li>
                 <strong>{t('pilotDay.wrongSoundLead', { sayIt: parent.t('ds.actions.voiceButton.sayIt') })}</strong>{' '}
                 {tx('pilotDay.wrongSound', {
@@ -159,7 +162,7 @@ export function PilotDayPage() {
             <h3 id="pilotday-topics">{t('pilotDay.topicsTitle')}</h3>
             <ul className="tw-consent-list">
               <li>{t('pilotDay.topicsNever')}</li>
-              <li>{tx('pilotDay.topicsGuide', { sensitive: ui(parent.t('pages.teacherGuide.sensitiveTitle')) })}</li>
+              <li>{tx(lessonStages.includes('watch') ? 'pilotDay.topicsGuide' : 'pilotDay.topicsGuideNoWatch', { sensitive: ui(parent.t('pages.teacherGuide.sensitiveTitle')) })}</li>
               <li>{t('pilotDay.topicsReview', { first: REVIEW_FIRST_LESSONS[0], second: REVIEW_FIRST_LESSONS[1] })}</li>
               <li>{t('pilotDay.topicsShare')}</li>
             </ul>

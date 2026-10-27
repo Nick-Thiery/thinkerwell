@@ -5237,10 +5237,10 @@
     "back": "Print the code cards from {educators}. Each learner types their code as a name."
   },
   "pilotDay.beforeConsent": {
-    "flag": true,
+    "flag": "October 2026, from a check of the pilot pages: clearer wording, or no mention of videos now that Indonesian and Malay lessons have no Watch step. Drafted by AI with no second AI review: check.",
     "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker. 'keputusan pelajar itu yang diikut' follows pages.consentForm.learnerWins (the learner's no wins).",
-    "source": "Check that every family has the information sheet and has answered the consent form. A learner's own no wins.",
-    "back": "Make sure every family has received the information sheet and has answered the consent form. If the learner themselves answers no, the learner's decision is the one followed."
+    "source": "Check that every family has the information sheet and has answered the consent form. If a learner says no, that is the answer, even if the family said yes.",
+    "back": "Make sure every family has received the information sheet and answered the consent form. If the learner answers no, that is the answer, even if the family answered yes."
   },
   "pilotDay.startTitle": {
     "flag": true,
@@ -6082,6 +6082,11 @@
     "back": "Every lesson has four steps: {stages}. Answering the {reflect} question finishes the lesson.",
     "source": "Every lesson has four stages: {stages}. Answering the {reflect} question finishes the lesson.",
     "flag": "October 2026: lessons in Indonesian and Malay have no Watch step unless the language has an approved video of its own for the lesson, so these words say four steps or drop the video. Drafted by AI with no second AI review: check."
+  },
+  "pilotDay.topicsGuideNoWatch": {
+    "back": "Before you teach a lesson, read its teacher guide. The guide starts with {sensitive}.",
+    "source": "Before you teach a lesson, read its teacher guide. It starts with {sensitive}.",
+    "flag": "October 2026, from a check of the pilot pages: clearer wording, or no mention of videos now that Indonesian and Malay lessons have no Watch step. Drafted by AI with no second AI review: check."
   },
   "pages.teacherGuide.planOtherLanguages": {
     "back": "In Indonesian and Malay, a lesson has no Watch step unless there is a video in that language. Open this guide in that language to see its plan.",

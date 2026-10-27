@@ -289,7 +289,7 @@
 
   .tw-print-brand,
   .tw-print-eyebrow {
-    font-size: 9pt;
+    font-size: 10.5pt; /* 14px: nothing smaller, on paper too */
   }
 
   .tw-print-reading-text {
