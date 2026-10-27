@@ -114,8 +114,11 @@ const PRECACHE_BUDGET = 828_000;
  * machine (CI measures less: main passed at 225.5 kB there). The new-learner form's folded options and "Save my work"
  * on Home, the header's labelled Menu in lessons and the course list's status words are first-page code, and the
  * lessons' new styles are in the one stylesheet; the English words shrank (docs/notes/slow-internet.md).
+ * Raised to 228 kB with the pilot polish: 227.02 kB with it against 226.8 kB before, on the same machine. The
+ * phone fixes' styles (the lesson step row, the section headers, the Educators address) are in the one stylesheet,
+ * and en.json (in the first chunk) gained the teacher guide's note on translated lessons' steps; no page code.
  */
-const FIRST_VISIT_HOME_BUDGET = 227_000;
+const FIRST_VISIT_HOME_BUDGET = 228_000;
 
 const TEXT = /\.(html|js|css|svg|json|webmanifest)$/;
 
