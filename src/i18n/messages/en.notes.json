@@ -204,7 +204,7 @@
   "pilotDay.startWho": "{who} is the home page's question (pages.home.title), in bold and with its question mark. The next sentence follows it directly.",
   "pilotDay.startNew": "{new} is the new learner's tile on the home page (pages.home.newLearnerTile), in bold.",
   "pilotDay.startLook": "{look} is a choice on the home page (header.lookAroundTile), in bold. It starts the sentence, so word it so that it can.",
-  "pilotDay.learnStages": "{stages} is the five stages' names, already joined as a list (stages.read, write, speak, watch, reflect). {reflect} is the last stage's name (stages.reflect).",
+  "pilotDay.learnStages": "The session guide where lessons have all five stages (English). {stages} is the five stages' names, already joined as a list. {watch} is the Watch stage's name and {reflect} the last stage's name (stages.watch, stages.reflect).",
   "pilotDay.learnTime": "{min} and {max} are numbers of minutes (the shortest and longest lesson); {full} and {short} are also minutes (the teacher guides' two session plans).",
   "pilotDay.wrongDownloadLead": "The start of a list item, in bold. It describes the page that says \"This page hasn't downloaded yet\" (pageNotDownloaded.title).",
   "pilotDay.wrongDownload": "{retry} is that page's button (pageNotDownloaded.retry), in bold.",
@@ -355,5 +355,6 @@
   "pages.teacherGuide.planShorterNoWatch": "Under the session plan of a lesson with no Watch step: nothing is skipped in 30 minutes, every step is a little shorter.",
   "aboutPage.lessonsIntroNoWatch": "About's \"How our lessons work\" where the lessons have no Watch step (Indonesian and Malay): four steps.",
   "pilotDay.learnStagesNoWatch": "The session guide where the lessons have no Watch step: {stages} is the four stages' names, already joined as a list. {reflect} is the last stage's name.",
-  "pilotDay.topicsGuideNoWatch": "The session guide where the lessons have no Watch step (Indonesian, Malay): the same as pilotDay.topicsGuide without the videos. {sensitive} is the teacher guide's heading pages.teacherGuide.sensitiveTitle."
+  "pilotDay.topicsGuideNoWatch": "The session guide where the lessons have no Watch step (Indonesian, Malay): the same as pilotDay.topicsGuide without the videos. {sensitive} is the teacher guide's heading pages.teacherGuide.sensitiveTitle.",
+  "pages.teacherGuide.planOtherLanguages": "Under the session plan of a lesson with a Watch step (Our World only): for a teacher reading in English whose learners use Indonesian or Malay, where the lesson has four steps."
 }

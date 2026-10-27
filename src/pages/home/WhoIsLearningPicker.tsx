@@ -89,13 +89,8 @@ export function WhoIsLearningPicker({
   // or they would see only the hero and think nothing happened.
   const savingFrom = saving?.lessonNumber ?? null;
   useEffect(() => {
-    if (savingFrom === null) return;
     const heading = headingRef.current;
-    if (!heading) return;
-    const top = heading.getBoundingClientRect().top;
-    if (top >= 0 && top < window.innerHeight / 2) return;
-    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
-    window.scrollTo({ top: window.scrollY + top - 96, behavior: reduce ? 'auto' : 'smooth' });
+    if (savingFrom !== null && heading && heading.getBoundingClientRect().top > window.innerHeight / 2) heading.scrollIntoView({ block: 'center' });
   }, [savingFrom]);
 
   // Moves focus to match each in-page view change (not the very first render:

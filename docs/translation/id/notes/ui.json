@@ -5951,10 +5951,10 @@
     "back": "What learners do"
   },
   "pilotDay.learnStages": {
-    "flag": true,
+    "flag": "October 2026: says that lessons in Indonesian and Malay have four steps, without Watch, for a teacher reading in one language whose learners use another. Drafted by AI with no second AI review: check.",
     "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
-    "source": "Every lesson has five stages: {stages}. Answering the {reflect} question finishes the lesson.",
-    "back": "Each lesson has five steps: {stages}. Answering the {reflect} question completes the lesson."
+    "source": "Every lesson has five stages: {stages}. In a language with translated lessons there are four, without {watch}. Answering the {reflect} question finishes the lesson.",
+    "back": "Every lesson has five steps: {stages}. In a language with translated lessons there are four, without {watch}. Answering the {reflect} question finishes the lesson."
   },
   "pilotDay.learnOrder": {
     "flag": true,
@@ -6765,5 +6765,10 @@
     "back": "Before teaching a lesson, read its teacher guide. The guide starts with {sensitive}.",
     "source": "Before you teach a lesson, read its teacher guide. It starts with {sensitive}.",
     "flag": "October 2026, from a check of the pilot pages: clearer wording, or no mention of videos now that Indonesian and Malay lessons have no Watch step. Drafted by AI with no second AI review: check."
+  },
+  "pages.teacherGuide.planOtherLanguages": {
+    "back": "In Bahasa Indonesia and Bahasa Melayu, a lesson has no Watch step unless there is a video in that language. Open this guide in that language to see its plan.",
+    "source": "In Bahasa Indonesia and Bahasa Melayu, a lesson has no Watch step unless it has a video in that language. Open this guide in that language to see its plan.",
+    "flag": "October 2026: says that lessons in Indonesian and Malay have four steps, without Watch, for a teacher reading in one language whose learners use another. Drafted by AI with no second AI review: check."
   }
 }

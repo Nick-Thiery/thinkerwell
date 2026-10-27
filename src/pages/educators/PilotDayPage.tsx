@@ -107,7 +107,7 @@ export function PilotDayPage() {
           <section className="tw-consent-part" aria-labelledby="pilotday-learn">
             <h3 id="pilotday-learn">{t('pilotDay.learnTitle')}</h3>
             <ul className="tw-consent-list">
-              <li>{tx(lessonStages.includes('watch') ? 'pilotDay.learnStages' : 'pilotDay.learnStagesNoWatch', { stages: ui(stages), reflect: ui(parent.t('stages.reflect')) })}</li>
+              <li>{tx(lessonStages.includes('watch') ? 'pilotDay.learnStages' : 'pilotDay.learnStagesNoWatch', { stages: ui(stages), watch: ui(parent.t('stages.watch')), reflect: ui(parent.t('stages.reflect')) })}</li>
               <li>{t('pilotDay.learnOrder')}</li>
               <li>
                 {t('pilotDay.learnTime', {
