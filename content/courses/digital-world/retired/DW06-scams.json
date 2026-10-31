@@ -1,0 +1,381 @@
+{
+  "id": "dw-scams",
+  "oldId": null,
+  "number": 6,
+  "section": "check-what-you-see",
+  "title": "Scams: fake prizes, loans and job offers",
+  "essentialQuestion": "How can you tell when a message is trying to trick people?",
+  "learningGoal": "Identify the warning signs of a scam in made-up messages, and explain what to do instead of replying.",
+  "estimatedMinutes": [
+    30,
+    50
+  ],
+  "warmUp": {
+    "question": "A message says someone won a prize, but they never entered a competition. What do you think?",
+    "options": [
+      "Great news",
+      "It could be a trick",
+      "Not sure"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "Which messages ask for money or private information? Which one does not?",
+    "cards": [
+      {
+        "type": "cases",
+        "title": "Four messages people in Stonebridge got",
+        "cases": [
+          {
+            "name": "Message A, from “Super Lucky Prize Team”",
+            "body": "“You won a new tablet. To get it, pay a small delivery fee. Reply with your full name and home address. This offer ends in one hour.”"
+          },
+          {
+            "name": "Message B, from “Easy Money Now”",
+            "body": "“Need money fast? Easy loans for everyone, approved in five minutes. Our app needs to see all your contacts and photos. Reply now, before this offer is gone.”"
+          },
+          {
+            "name": "Message C, from “Dream Work Team”",
+            "body": "“Work from home for one hour a day and earn a lot of money. No experience needed. Pay a joining fee to start. Places are limited, so decide today.”"
+          },
+          {
+            "name": "Message D, on the Stonebridge Learning Centre notice board",
+            "body": "“The art club meets on Friday at 3. It is free. Ask Ms Ada at the front desk if you have questions.”"
+          }
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "type": "spot-signs",
+    "stage": "read",
+    "placement": "after-evidence",
+    "title": "Spot the warning signs",
+    "instructions": "Tap any part of a message that you think is a warning sign. You will see what most people would say and why. There is no score, and you can tap “Show all signs” at any time.",
+    "signs": [
+      {
+        "id": "pay",
+        "label": "Asks you to pay first"
+      },
+      {
+        "id": "hurry",
+        "label": "Tells you to hurry"
+      },
+      {
+        "id": "too-good",
+        "label": "Too good to be true"
+      },
+      {
+        "id": "private",
+        "label": "Asks for private information"
+      }
+    ],
+    "notASign": "Most people would not call this part a warning sign on its own.",
+    "messages": [
+      {
+        "id": "a",
+        "from": "Message A, from “Super Lucky Prize Team”",
+        "parts": [
+          {
+            "text": "You won a new tablet.",
+            "sign": "too-good",
+            "feedback": "Nobody entered a competition. A prize you never tried to win is a warning sign."
+          },
+          {
+            "text": "To get it, pay a small delivery fee.",
+            "sign": "pay",
+            "feedback": "Real prizes are free. If you must pay to get a prize, it is a scam."
+          },
+          {
+            "text": "Reply with your full name and home address.",
+            "sign": "private",
+            "feedback": "This is private information. Keep it private."
+          },
+          {
+            "text": "This offer ends in one hour.",
+            "sign": "hurry",
+            "feedback": "Scammers rush you, so you don't stop to think or ask someone."
+          }
+        ]
+      },
+      {
+        "id": "b",
+        "from": "Message B, from “Easy Money Now”",
+        "parts": [
+          {
+            "text": "Need money fast?",
+            "sign": null
+          },
+          {
+            "text": "Easy loans for everyone, approved in five minutes.",
+            "sign": "too-good",
+            "feedback": "A loan for anyone, with no questions, is too good to be true."
+          },
+          {
+            "text": "Our app needs to see all your contacts and photos.",
+            "sign": "private",
+            "feedback": "Honest lenders don't need to see all of a phone. Illegal ones often ask to."
+          },
+          {
+            "text": "Reply now, before this offer is gone.",
+            "sign": "hurry",
+            "feedback": "Scammers rush you, so you don't stop to think or ask someone."
+          }
+        ]
+      },
+      {
+        "id": "c",
+        "from": "Message C, from “Dream Work Team”",
+        "parts": [
+          {
+            "text": "Work from home for one hour a day and earn a lot of money.",
+            "sign": "too-good",
+            "feedback": "Lots of money for little work is almost always a scam."
+          },
+          {
+            "text": "No experience needed.",
+            "sign": null
+          },
+          {
+            "text": "Pay a joining fee to start.",
+            "sign": "pay",
+            "feedback": "Honest employers do not ask people to pay for work."
+          },
+          {
+            "text": "Places are limited, so decide today.",
+            "sign": "hurry",
+            "feedback": "Scammers rush you, so you don't stop to think or ask someone."
+          }
+        ]
+      },
+      {
+        "id": "d",
+        "from": "Message D, on the Stonebridge Learning Centre notice board",
+        "parts": [
+          {
+            "text": "The art club meets on Friday at 3.",
+            "sign": null
+          },
+          {
+            "text": "It is free.",
+            "sign": null
+          },
+          {
+            "text": "Ask Ms Ada at the front desk if you have questions.",
+            "sign": null
+          }
+        ]
+      }
+    ],
+    "saves": "Which parts the learner tapped, with the lesson's other answers.",
+    "offline": "Everything is in the lesson file. The messages are made up and contain no links, phone numbers, bank names or payment details; nothing is sent anywhere."
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Scams pretend to be good news",
+        "text": "A scam is a trick to get someone's money or private information. Scam messages can reach anyone, including people you know, so it helps everyone when you can spot them. Many scams pretend to bring good news, such as a prize, an easy loan or a job that pays very well. Scammers sometimes pretend to be from an organisation that people know and trust. In Stonebridge, Message A says that someone has won a new tablet. But nobody entered a competition. A prize that you never tried to win is the first warning sign.",
+        "simpler": "A scam is a trick. It tries to get money or private information. Scam messages can come to anyone. Many scams look like good news. They offer a prize, an easy loan or a great job. Some scammers pretend to be a group you trust. In Stonebridge, Message A says someone won a new tablet. But nobody tried to win one. That is the first warning sign."
+      },
+      {
+        "heading": "Look for warning signs",
+        "text": "Most scam messages share a few warning signs. First, they ask you to pay before you get anything. Real prizes are free, and honest employers do not ask people to pay for work. Second, they push you to hurry, with words like “today only” or “ends in one hour”, so you don't stop to think. Third, they sound too good to be true, like lots of money for very little work. Fourth, they ask for private information, such as a home address or everything on a phone. Message B offers easy loans to everyone and wants to see all the contacts and photos on a phone. Illegal lenders often ask for this.",
+        "simpler": "Scam messages often have warning signs. One: they ask you to pay first. Real prizes are free. Honest jobs do not cost money to get. Two: they tell you to hurry. Then you don't stop and think. Three: they sound too good to be true. Four: they ask for private information. Message B offers easy loans to everyone. It wants to see all the photos on a phone. Illegal lenders often ask for this."
+      },
+      {
+        "heading": "What to do instead",
+        "text": "If a message shows warning signs, don't reply, don't pay and don't send any information. Instead, talk to someone you trust, such as a teacher, and show them the message. If a message says it comes from an organisation you know, contact that organisation in a way you already know, not through the message. Then you can warn other people, so they don't get tricked too. Message D, from the notice board at the Stonebridge Learning Centre, shows no warning signs. The art club is free, nobody needs to hurry, and you can ask Ms Ada in person. If you are not sure, it is always fine to ask.",
+        "simpler": "See warning signs? Don't reply. Don't pay. Don't send information. Show the message to someone you trust, like a teacher. Does it say it comes from a group you know? Then contact that group yourself. Don't use the message. Then warn other people. Message D has no warning signs. The art club is free. Nobody has to hurry. You can ask Ms Ada in person."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "scam",
+        "forms": [
+          "scams",
+          "scammer",
+          "scammers"
+        ],
+        "definition": "A trick to get people's money or private information.",
+        "example": "Message A, the prize message, is a scam."
+      },
+      {
+        "word": "private information",
+        "definition": "Facts about a person that can show exactly who or where they are.",
+        "example": "A full name and a home address are private information."
+      },
+      {
+        "word": "loan",
+        "forms": [
+          "loans"
+        ],
+        "definition": "Money you borrow and must pay back later.",
+        "example": "Message B offers easy loans to everyone."
+      },
+      {
+        "word": "warning sign",
+        "forms": [
+          "warning signs"
+        ],
+        "definition": "Something that tells you there may be danger or a trick.",
+        "example": "“Pay a joining fee to start” is a warning sign."
+      },
+      {
+        "word": "illegal",
+        "definition": "Not allowed by the law.",
+        "example": "Illegal lenders often ask to see everything on a phone."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "question": "What is the biggest warning sign in Message A?",
+        "options": [
+          {
+            "text": "It was sent in the morning",
+            "correct": false,
+            "feedback": "Not quite. The time is not a warning sign. Look at what the message asks you to do."
+          },
+          {
+            "text": "It is about a new tablet",
+            "correct": false,
+            "feedback": "Not quite. A tablet is not the problem. Look at what you must do to get it."
+          },
+          {
+            "text": "You must pay for a prize",
+            "correct": true,
+            "feedback": "Yes. Real prizes are free. If you must pay to get a prize, it is a scam."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "question": "You think a message might be a scam. What is a good next step?",
+        "options": [
+          {
+            "text": "Reply and ask if it is real",
+            "correct": false,
+            "feedback": "Not quite. Don't reply to the message. Read the third section about what to do instead."
+          },
+          {
+            "text": "Ask someone you trust",
+            "correct": true,
+            "feedback": "Yes. Showing the message to a teacher or another person you trust is a safe next step."
+          },
+          {
+            "text": "Pay a little to find out",
+            "correct": false,
+            "feedback": "Not quite. Never pay to check. Read the third section about what to do instead."
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "Which warning sign do you think is the easiest to miss? Why?",
+        "placeholder": "I think ___ is the easiest to miss because ...",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Choose one message from Stonebridge. Name its warning signs, and explain what someone should do instead of replying.",
+    "sentenceStarters": [
+      "I chose Message ...",
+      "One warning sign is ...",
+      "Another warning sign is ...",
+      "Instead of replying, they should ...",
+      "This matters because ..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I named one message.",
+      "I named at least two warning signs.",
+      "I said what to do instead of replying."
+    ],
+    "example": "I chose Message C, the job offer. One warning sign is that it promises a lot of money for one hour of work a day. That sounds too good to be true. Another warning sign is that you must pay a joining fee to start. Honest employers do not ask people to pay for a job. It also says to decide today, so you hurry. Instead of replying, they should show the message to someone they trust and warn other people."
+  },
+  "speak": {
+    "partnerTask": "Your partner reads a Stonebridge message aloud. Say “stop” at each warning sign and name it. Then switch.",
+    "independentTask": "Say out loud four warning signs of a scam, and what to do if you see one."
+  },
+  "watch": {
+    "youtubeId": "qFXZUSB5cGE",
+    "title": "Is this a scam? Investment episode",
+    "channel": "Consumer Affairs Victoria",
+    "durationSeconds": null,
+    "why": "It is a short cartoon quiz show from a government office. It shows a message that is too good to be true.",
+    "beforeQuestion": "What would make you think a message is too good to be true?",
+    "afterQuestion": "What did the host say to do with the email?",
+    "summary": "This short cartoon looks like a quiz show on television. The host shows an email from a company. It offers a way to make money that is “risk-free”, with “guaranteed” returns in one month. It also asks to invest money for you. The host asks what you should do. Should you send your money? Should you write back and ask for more information? Or should you delete the email and warn your friends? You have three seconds to decide. The answer is to delete the email and warn other people. The host says the email was too good to be true. She says never let anyone pressure you into a decision about money. Always get advice from someone who is not part of the offer.",
+    "keyPoints": [
+      "An offer that sounds too good to be true is a warning sign.",
+      "Don't let anyone push you into a quick decision about money.",
+      "Delete the message and warn other people."
+    ],
+    "contentNote": "A cartoon quiz show from Consumer Affairs Victoria, a government office in Australia. It is about an investment email, which learners may not have met, but the warning signs are the same as in the lesson. The summary was checked against the office's own written transcript; the length is not confirmed. Preview it first; learners can read the written summary instead.",
+    "replacementSuggestion": null
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "If a message shows a warning sign, I will ...",
+        "required": true
+      },
+      {
+        "text": "One warning sign I want to tell other people about is ...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 6. You spotted the warning signs in scam messages and said what to do instead."
+  },
+  "visual": {
+    "type": "diagram",
+    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW06.svg is only a planned path. Message A drawn as a message bubble, with four parts underlined and numbered: “You won a new tablet” (1, Too good to be true), “pay a small delivery fee” (2, Asks you to pay first), “Reply with your full name and home address” (3, Asks for private information) and “ends in one hour” (4, Tells you to hurry). Each number has its label in words beside the bubble. Clearly made up: no phone number, link, logo or bank name.",
+    "alt": "A made-up prize message with four warning signs labelled: too good to be true, asks you to pay first, asks for private information, and tells you to hurry.",
+    "src": "visuals/DW06.svg"
+  },
+  "sources": [
+    {
+      "label": "US Federal Trade Commission: Fake prize, sweepstakes and lottery scams",
+      "url": "https://consumer.ftc.gov/articles/fake-prize-sweepstakes-and-lottery-scams"
+    },
+    {
+      "label": "US Federal Trade Commission: Job scams",
+      "url": "https://consumer.ftc.gov/articles/job-scams"
+    },
+    {
+      "label": "Antara (2021): OJK Southeast Sulawesi on the signs of illegal online loans (Indonesian)",
+      "url": "https://sultra.antaranews.com/berita/397865/ojk-sulawesi-tenggara-ajak-masyarakat-cerdas-kenali-ciri-ciri-pinjol-ilegal"
+    },
+    {
+      "label": "UN News (2023): Hundreds of thousands trafficked into online criminality across Southeast Asia (OHCHR report)",
+      "url": "https://news.un.org/en/node/1140187"
+    },
+    {
+      "label": "Consumer Affairs Victoria: Scam Savvy (videos and transcripts)",
+      "url": "https://www.consumer.vic.gov.au/ScamSavvy"
+    }
+  ],
+  "sensitiveNotes": [
+    "Learners may know someone who lost money or was tricked. Don't ask about it. If a learner describes a real message or loss, don't debate the details in class; follow the partner's own safeguarding process. Being tricked is never something to be ashamed of.",
+    "Fake job offers are linked to serious exploitation: a UN human rights report (2023) found that hundreds of thousands of people in Southeast Asia had been trafficked into scam operations, many through false job offers. The lesson keeps the job example to a simple “pay to start” message on purpose. Never use examples about work in another place, papers, resettlement, visas, legal status, aid or official services. A partner educator must review this lesson before use."
+  ],
+  "educatorNotes": [
+    "For reviewers (spec section 8, item 5): learners aged 10–17 may not be allowed to work or borrow, so the loan and job messages are framed as messages anyone might get. Swap them if the partner prefers. In Indonesia, OJK warns that illegal online lenders send messages people didn't ask for and ask to see far more of a phone than they need (Antara, 2021); a partner could localise Message B.",
+    "All four messages are made up and can't work as real scams: no links, numbers, bank names or payment details. Paper version of the activity: print the messages and underline the warning signs."
+  ],
+  "changes": [
+    "New lesson (Digital World draft). There is no Base44 original, so oldId is null.",
+    "section is a proposed Digital World section id (check-what-you-see), which the Our World checker and schema don't accept yet.",
+    "Adds a new activity type, spot-signs (tap the parts of a message that are warning signs), documented in docs/content/DIGITAL_WORLD_SPEC.md.",
+    "Keeps “loans and job offers” in the title, framed as messages anyone might get; this is an open question for reviewers.",
+    "visual.src points to a picture that doesn't exist yet.",
+    "Needs review by a partner educator (required: fake job offers and exploitation), and by Justin for level and tone."
+  ]
+}

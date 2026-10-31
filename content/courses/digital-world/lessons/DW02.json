@@ -1,496 +1,258 @@
 {
-  "id": "dw-how-ai-learns",
+  "id": "dw-history-of-ai",
   "oldId": null,
   "number": 2,
-  "section": "how-ai-works",
-  "title": "How AI learns from examples",
-  "essentialQuestion": "How can a computer learn from examples, and why do the examples matter?",
-  "learningGoal": "Train a tiny model with examples and explain why more, and more varied, examples make its guesses better.",
+  "section": "thinking-machines",
+  "title": "Dreams of thinking machines",
+  "essentialQuestion": "How did people try to build machines that think, and why did it take so long?",
+  "learningGoal": "Describe how AI grew in waves from 1950 to the 2010s, and explain how promises, money and data shaped it.",
   "estimatedMinutes": [
-    35,
-    55
+    30,
+    50
   ],
   "warmUp": {
-    "question": "You want to teach a young child to tell a healthy leaf from a sick leaf. What would you do?",
+    "question": "When do you think people first started working on AI?",
     "options": [
-      "Show many leaves",
-      "Write a list of rules",
-      "Show one leaf",
-      "Something else"
+      "In the 1950s",
+      "In the 1990s",
+      "In the 2020s",
+      "Not sure"
     ]
   },
   "evidence": {
     "fictional": true,
     "label": "Fictional example created for this lesson.",
-    "question": "What changed each time the model got more leaves right?",
+    "question": "Which headlines promise a lot, very soon? Which ones are more careful?",
     "cards": [
       {
-        "type": "table",
-        "title": "The Sunrise Garden leaf model",
-        "columns": [
-          "Round",
-          "Examples it learned from",
-          "New leaves it got right"
-        ],
-        "rows": [
-          [
-            "Round 1",
-            "2 examples: a big dark green leaf (healthy) and a brown leaf with spots (sick)",
-            "4 of 6"
-          ],
-          [
-            "Round 2",
-            "6 examples: the 2 from Round 1, plus a small new leaf and a green leaf with tiny marks (healthy), and a yellow leaf with no spots and a small spotted leaf (sick)",
-            "6 of 6"
-          ],
-          [
-            "Round 2, a new plant",
-            "The same 6 examples",
-            "0 of 2 long, striped leaves"
-          ],
-          [
-            "Round 3",
-            "8 examples: the 6 from Round 2, plus a long striped leaf (healthy) and a long brown leaf with spots (sick)",
-            "8 of 8"
-          ]
+        "type": "timeline",
+        "title": "Headlines from Tomorrow Today, a made-up science magazine",
+        "events": [
+          {
+            "year": "1957",
+            "text": "Within ten years, a machine will be the best chess player in the world."
+          },
+          {
+            "year": "1960",
+            "text": "Scientists hope machines may one day help people translate languages."
+          },
+          {
+            "year": "1967",
+            "text": "By 1980, machines will think just like people."
+          },
+          {
+            "year": "1975",
+            "text": "Thinking machines are harder to build than people expected."
+          },
+          {
+            "year": "1986",
+            "text": "Soon, rule-following computers will do most office work."
+          },
+          {
+            "year": "2005",
+            "text": "Computers still make many mistakes when they name things in photos."
+          },
+          {
+            "year": "2013",
+            "text": "A new program names things in photos much better than before."
+          },
+          {
+            "year": "2015",
+            "text": "Smart machines will change everything."
+          }
         ]
       }
     ]
   },
   "activity": {
-    "type": "train-model",
+    "type": "sort",
     "stage": "read",
     "placement": "after-evidence",
-    "title": "Train the leaf model",
-    "instructions": "Teach the model by giving each example leaf a label: healthy or sick. Then test it on new leaves and see how many it gets right. Nothing you do here is sent anywhere.",
-    "labels": [
+    "title": "Big promise or careful claim?",
+    "instructions": "Put each headline from Tomorrow Today into a group. There is no score. After you place one, you can see what most people would say and why.",
+    "groups": [
       {
-        "id": "healthy",
-        "label": "Healthy"
+        "id": "big-promise",
+        "label": "A big promise"
       },
       {
-        "id": "sick",
-        "label": "Sick"
+        "id": "careful",
+        "label": "A careful claim"
+      },
+      {
+        "id": "hard",
+        "label": "Hard to say"
       }
     ],
-    "method": "nearest-neighbour",
-    "k": 1,
-    "features": [
+    "items": [
       {
-        "id": "green",
-        "label": "How green",
-        "scale": "0 brown or yellow, 10 dark green"
+        "id": "chess-1957",
+        "text": "1957: Within ten years, a machine will be the best chess player in the world.",
+        "suggested": "big-promise",
+        "feedback": "Most people would say a big promise. It gives a short time. In real life, a computer beat the world champion in 1997, 40 years later."
       },
       {
-        "id": "spots",
-        "label": "Spots",
-        "scale": "0 none, 10 covered"
+        "id": "translate-1960",
+        "text": "1960: Scientists hope machines may one day help people translate languages.",
+        "suggested": "careful",
+        "feedback": "Most people would say a careful claim. The words “hope”, “may” and “one day” show that the writer is not sure."
       },
       {
-        "id": "size",
-        "label": "Size",
-        "scale": "0 very small, 10 very big"
+        "id": "think-1967",
+        "text": "1967: By 1980, machines will think just like people.",
+        "suggested": "big-promise",
+        "feedback": "Most people would say a big promise. It did not happen by 1980. Even today, AI does not think like a person."
       },
       {
-        "id": "long",
-        "label": "Shape",
-        "scale": "0 round, 10 long and thin"
+        "id": "harder-1975",
+        "text": "1975: Thinking machines are harder to build than people expected.",
+        "suggested": "careful",
+        "feedback": "Most people would say a careful claim. It matches what happened. The problems were hard, and the money was cut."
+      },
+      {
+        "id": "office-1986",
+        "text": "1986: Soon, rule-following computers will do most office work.",
+        "suggested": "big-promise",
+        "feedback": "Most people would say a big promise. “Soon” and “most” are big words. A second AI winter came a few years later."
+      },
+      {
+        "id": "photos-2005",
+        "text": "2005: Computers still make many mistakes when they name things in photos.",
+        "suggested": "careful",
+        "feedback": "Most people would say a careful claim. It says what computers could not do well yet, without a promise."
+      },
+      {
+        "id": "photos-2013",
+        "text": "2013: A new program names things in photos much better than before.",
+        "suggested": "careful",
+        "feedback": "Most people would say a careful claim. It reports what a program already did. It does not promise what comes next."
+      },
+      {
+        "id": "everything-2015",
+        "text": "2015: Smart machines will change everything.",
+        "suggested": "hard",
+        "feedback": "Any group can be right here. It is a big claim, but it gives no time and no details. That makes it hard to check."
       }
     ],
-    "examples": [
-      {
-        "id": "e1",
-        "description": "Big dark green leaf",
-        "gardenerSays": "healthy",
-        "features": [
-          10,
-          0,
-          9,
-          2
-        ]
-      },
-      {
-        "id": "e2",
-        "description": "Brown leaf with spots",
-        "gardenerSays": "sick",
-        "features": [
-          1,
-          7,
-          5,
-          3
-        ]
-      },
-      {
-        "id": "e3",
-        "description": "Small new leaf, light green",
-        "gardenerSays": "healthy",
-        "features": [
-          4,
-          0,
-          1,
-          2
-        ]
-      },
-      {
-        "id": "e4",
-        "description": "Yellow leaf with no spots",
-        "gardenerSays": "sick",
-        "features": [
-          4,
-          0,
-          8,
-          1
-        ]
-      },
-      {
-        "id": "e5",
-        "description": "Green leaf with a few tiny marks",
-        "gardenerSays": "healthy",
-        "features": [
-          8,
-          3,
-          6,
-          1
-        ]
-      },
-      {
-        "id": "e6",
-        "description": "Small leaf with many spots",
-        "gardenerSays": "sick",
-        "features": [
-          4,
-          7,
-          2,
-          2
-        ]
-      },
-      {
-        "id": "e7",
-        "description": "Long thin leaf with pale stripes",
-        "gardenerSays": "healthy",
-        "features": [
-          6,
-          4,
-          4,
-          10
-        ]
-      },
-      {
-        "id": "e8",
-        "description": "Long thin brown leaf with spots",
-        "gardenerSays": "sick",
-        "features": [
-          2,
-          7,
-          4,
-          10
-        ]
-      }
-    ],
-    "tests": [
-      {
-        "id": "t1",
-        "description": "Green leaf",
-        "gardenerSays": "healthy",
-        "features": [
-          8,
-          0,
-          8,
-          2
-        ]
-      },
-      {
-        "id": "t2",
-        "description": "Brown leaf with spots",
-        "gardenerSays": "sick",
-        "features": [
-          3,
-          7,
-          6,
-          2
-        ]
-      },
-      {
-        "id": "t3",
-        "description": "Small new leaf, light green",
-        "gardenerSays": "healthy",
-        "features": [
-          4,
-          1,
-          3,
-          3
-        ]
-      },
-      {
-        "id": "t4",
-        "description": "Yellow leaf with no spots",
-        "gardenerSays": "sick",
-        "features": [
-          5,
-          0,
-          6,
-          3
-        ]
-      },
-      {
-        "id": "t5",
-        "description": "Green leaf with a few tiny marks",
-        "gardenerSays": "healthy",
-        "features": [
-          7,
-          3,
-          6,
-          1
-        ]
-      },
-      {
-        "id": "t6",
-        "description": "Small leaf with many spots",
-        "gardenerSays": "sick",
-        "features": [
-          3,
-          7,
-          3,
-          1
-        ]
-      },
-      {
-        "id": "t7",
-        "description": "Long thin leaf with pale stripes",
-        "gardenerSays": "healthy",
-        "features": [
-          5,
-          5,
-          5,
-          10
-        ]
-      },
-      {
-        "id": "t8",
-        "description": "Long thin leaf with pale stripes",
-        "gardenerSays": "healthy",
-        "features": [
-          5,
-          5,
-          4,
-          9
-        ]
-      }
-    ],
-    "rounds": [
-      {
-        "id": "round-1",
-        "title": "Round 1: two examples",
-        "addExamples": [
-          "e1",
-          "e2"
-        ],
-        "test": [
-          "t1",
-          "t2",
-          "t3",
-          "t4",
-          "t5",
-          "t6"
-        ],
-        "expectedIfLabelledLikeTheGardener": {
-          "right": 4,
-          "of": 6,
-          "wrong": [
-            "t3",
-            "t4"
-          ]
-        },
-        "debrief": "The model got 4 of 6 right. It had only two leaves to compare with, so it mixed up the small new leaf and the yellow leaf."
-      },
-      {
-        "id": "round-2",
-        "title": "Round 2: more, different examples",
-        "addExamples": [
-          "e3",
-          "e4",
-          "e5",
-          "e6"
-        ],
-        "test": [
-          "t1",
-          "t2",
-          "t3",
-          "t4",
-          "t5",
-          "t6"
-        ],
-        "expectedIfLabelledLikeTheGardener": {
-          "right": 6,
-          "of": 6,
-          "wrong": []
-        },
-        "debrief": "Now the model got all 6 right. The new examples showed it leaves that looked different."
-      },
-      {
-        "id": "round-2-new-plant",
-        "title": "A new plant",
-        "addExamples": [],
-        "test": [
-          "t7",
-          "t8"
-        ],
-        "expectedIfLabelledLikeTheGardener": {
-          "right": 0,
-          "of": 2,
-          "wrong": [
-            "t7",
-            "t8"
-          ]
-        },
-        "debrief": "Both striped leaves are healthy, but the model said “sick”. None of its examples looked like them."
-      },
-      {
-        "id": "round-3",
-        "title": "Round 3: add the new plant",
-        "addExamples": [
-          "e7",
-          "e8"
-        ],
-        "test": [
-          "t1",
-          "t2",
-          "t3",
-          "t4",
-          "t5",
-          "t6",
-          "t7",
-          "t8"
-        ],
-        "expectedIfLabelledLikeTheGardener": {
-          "right": 8,
-          "of": 8,
-          "wrong": []
-        },
-        "debrief": "With examples of the new plant, the model got all 8 right. A model can only learn from the examples it is given."
-      }
-    ],
-    "freePlay": "After Round 3, the learner can take examples out, or change a label, and test again. The model follows the learner's labels, even when they differ from the gardener's.",
-    "explainGuess": "After each guess, show the example the model thought was most like the new leaf: “It looked most like this example, so the model said sick.”",
-    "saves": "Which rounds the learner finished, with the lesson's other answers. The labels are not needed again and can stay in memory.",
-    "offline": "Everything is in the lesson file and runs on the device. No camera, no upload, no network, no machine learning library."
+    "saves": "The group the learner chose for each headline, with the lesson's other answers.",
+    "offline": "Everything is in the lesson file. Nothing is sent anywhere."
   },
   "read": {
     "sections": [
       {
-        "heading": "A model learns from labelled examples",
-        "text": "Some AI learns in a way that is a bit like studying with flashcards. First, people collect training data: examples that already have the correct answer, called a label. At Sunrise Garden, every picture of a leaf has a label, either “healthy” or “sick”. The computer uses these examples to build a model. A model is what the computer has learned from the examples, and the computer uses it to predict the label of a leaf it has never seen. This way of making AI is called machine learning. Nobody writes the rule “spots mean sick”; the computer discovers patterns like that in the examples.",
-        "simpler": "Some AI learns from examples. First, people collect training data. Each example has the right answer. This answer is a label. At Sunrise Garden, each leaf picture has a label: “healthy” or “sick”. The computer uses the examples to make a model. The model is what it learned. It uses the model to guess about new leaves. This is machine learning. Nobody tells it “spots mean sick”. It finds that in the examples."
+        "heading": "It started with a question",
+        "text": "In 1950, a British scientist called Alan Turing wrote a famous paper. It began with a question: “Can machines think?” He suggested a test. A person chats in writing with a hidden player. If the person cannot tell a machine from a human, perhaps the machine is intelligent. In 1956, a small group of scientists met for a summer at Dartmouth College in the United States. Their research got a new name: artificial intelligence. They hoped that a machine could one day copy every part of learning.",
+        "simpler": "In 1950, a British scientist called Alan Turing asked a big question. Can machines think? He planned a test. A person chats in writing with someone hidden. Is it a person or a machine? If they cannot tell, maybe the machine is clever. In 1956, some scientists met at Dartmouth College in the United States. They called their research artificial intelligence."
       },
       {
-        "heading": "Test the model with new examples",
-        "text": "To find out whether a model works, you test it with new leaves that it did not learn from. The garden's first model learned from only two examples, a big dark green leaf and a brown leaf with spots. It makes its guess in a simple way: it finds the example that is most similar to the new leaf and gives the same label. It correctly labelled four of six new leaves. However, it called a small, light green new leaf “sick”, and it called a yellow leaf with no spots “healthy”. The model was not broken. It simply had too few examples to compare with.",
-        "simpler": "Then you test the model. You show it leaves it has not seen. The first model had only two examples. One was dark green. One was brown with spots. The model finds the example most like the new leaf. It gives the same label. It got four of six right. It said a small new leaf was “sick”. It said a yellow leaf was “healthy”. It had too few examples."
+        "heading": "Big promises, then AI winters",
+        "text": "For about 20 years, many people were excited about AI. Much of the money came from governments, such as the United States and the United Kingdom. Some researchers made big promises. In 1957, the made-up magazine in this lesson says a machine will be the best chess player within ten years. But real problems were much harder than people expected. Computers were slow, and there was little data to learn from. When the promises did not come true, governments cut their funding. In 1973, a British report was very critical, and Britain stopped most of its spending on AI. Quiet times like this are called AI winters. The first lasted from about 1974 to 1980, and another came in the late 1980s.",
+        "simpler": "Many people were excited about AI. Governments gave much of the money. Some researchers made big promises. The made-up magazine says a machine will win at chess within ten years. But real problems were very hard. Computers were slow. There was little data. So governments cut their funding. In 1973, a British report said AI had not kept its promises. Slow times like this are called AI winters. One was from about 1974 to 1980. Another came in the late 1980s."
       },
       {
-        "heading": "More, and different, examples help",
-        "text": "Next, the team added four more examples, including a small new leaf and a yellow leaf with no spots. This time, the model correctly labelled all six new leaves. Then the team tested two leaves from a different plant. They were long and thin with pale stripes, and both were healthy. The model called them both “sick”, because none of its examples looked similar. After the team added two striped leaves as examples, the model got them right. A model can only learn from the examples it is given, so good training data includes many examples, of many different kinds.",
-        "simpler": "Next, the team added four more examples. Now the model got all six right. Then the team tried a new plant. Its leaves are long and striped. They are healthy. But the model said “sick”. No example looked like them. The team added two striped leaves. Then the model got them right. A model only learns from its examples. Good training data has many kinds of examples."
+        "heading": "Chess, data and fast computers",
+        "text": "In 1997, a chess computer called Deep Blue, built by the company IBM, beat the world champion, Garry Kasparov. It checked about 200 million moves every second, but it could only play chess. The next big jump came in the 2010s, with machine learning. The internet gave researchers huge sets of labelled photos and other data. Chips made for computer graphics made the work much faster. In 2012, researchers in Canada built a program that was much better at naming things in photos. Experts called it a turning point. So AI grew in waves, shaped by money, hope and data.",
+        "simpler": "In 1997, a chess computer beat the world champion. It was called Deep Blue. The company IBM built it. But it could only play chess. The next big jump came after 2010, with machine learning. The internet gave lots of data, like labelled photos. New chips made computers much faster. In 2012, a team in Canada made a program. It was much better at naming things in photos. So AI grew in waves. Money, hope and data shaped it."
       }
     ],
     "glossary": [
       {
-        "word": "training data",
-        "definition": "The examples a computer learns from, each with the right answer.",
-        "example": "The leaf pictures and their labels are the training data."
+        "word": "research",
+        "forms": [
+          "researcher",
+          "researchers"
+        ],
+        "definition": "Careful study to find out new facts.",
+        "example": "Turing's research started with one question: can machines think?"
       },
       {
-        "word": "label",
+        "word": "promise",
         "forms": [
-          "labels",
-          "labelled"
+          "promises"
         ],
-        "definition": "The answer given to an example, like “healthy” or “sick”.",
-        "example": "The big dark green leaf has the label “healthy”."
+        "definition": "Words that say something will surely happen.",
+        "example": "The 1957 headline made a promise about chess."
       },
       {
-        "word": "model",
+        "word": "funding",
+        "definition": "Money given to pay for a project or for study.",
+        "example": "Governments cut their funding when the promises did not come true."
+      },
+      {
+        "word": "AI winter",
         "forms": [
-          "models"
+          "AI winters"
         ],
-        "definition": "What a computer has learned from examples. It uses it to guess.",
-        "example": "The garden's model guessed that the yellow leaf was healthy."
+        "definition": "A time when people stopped giving much money or interest to AI.",
+        "example": "The first AI winter lasted from about 1974 to 1980."
       },
       {
         "word": "machine learning",
-        "definition": "A way for computers to learn patterns from examples, not from written rules.",
-        "example": "The leaf model is an example of machine learning."
-      },
-      {
-        "word": "test",
-        "forms": [
-          "tests",
-          "tested",
-          "testing"
-        ],
-        "definition": "To try something with new examples to see if it works.",
-        "example": "The team tested the model with six new leaves."
+        "definition": "When computers learn patterns from many examples, not from fixed steps.",
+        "example": "Machine learning helped programs name things in photos after 2010."
       }
     ],
     "checks": [
       {
         "type": "choice",
-        "question": "Why did the model call the small new leaf “sick” in Round 1?",
+        "skill": "vocabulary",
+        "question": "What is an AI winter?",
         "options": [
           {
-            "text": "It had only two examples to compare with",
+            "text": "A time when computers only worked in the cold",
+            "correct": false,
+            "feedback": "Not quite. Here, winter means a slow, quiet time. Read the second section again."
+          },
+          {
+            "text": "A time when money and interest in AI fell",
             "correct": true,
-            "feedback": "Yes. With only two examples, the new leaf was closer to the brown one. More examples fixed this."
+            "feedback": "Yes. When the promises did not come true, governments cut their funding, and progress slowed."
           },
           {
-            "text": "Small leaves are nearly always sick",
+            "text": "A time when computers learned the fastest",
             "correct": false,
-            "feedback": "Not quite. The gardener says the small new leaf is healthy. Read about Round 1 in the second section."
-          },
-          {
-            "text": "The model was broken and needed fixing",
-            "correct": false,
-            "feedback": "Not quite. The lesson says the model was not broken. Read the end of the second section."
+            "feedback": "Not quite. In an AI winter, progress slowed down. Read the second section again."
           }
         ]
       },
       {
         "type": "choice",
-        "question": "What made the model better in Round 2?",
+        "skill": "understand",
+        "question": "What helped AI make a big jump after 2010?",
         "options": [
           {
-            "text": "The team made all the leaf pictures brighter",
+            "text": "A new name for the research at Dartmouth",
             "correct": false,
-            "feedback": "Not quite. The pictures did not change. Look at what the team added in the third section."
+            "feedback": "Not quite. The name came in 1956, long before the jump. Read the third section."
           },
           {
-            "text": "The team added more, different examples",
+            "text": "Researchers making even bigger promises",
+            "correct": false,
+            "feedback": "Not quite. Big promises came before the AI winters. Read the third section."
+          },
+          {
+            "text": "Lots of data and much faster computers",
             "correct": true,
-            "feedback": "Yes. The new examples showed the model leaves that looked different, so it got all six right."
-          },
-          {
-            "text": "The team wrote a rule about spots",
-            "correct": false,
-            "feedback": "Not quite. In machine learning, nobody writes that rule. Look at what the team added in the third section."
+            "feedback": "Yes. The internet gave lots of data, and new chips made computers much faster."
           }
         ]
       },
       {
         "type": "think",
-        "question": "The garden grows a new plant with red leaves. What should the team do before they trust the model with it?",
-        "placeholder": "First they should ... Then they should ...",
+        "question": "Why do you think some researchers made such big promises? Who might believe them?",
+        "placeholder": "I think they made big promises because ... People who might believe them are ...",
         "optional": true
       }
     ]
   },
   "write": {
-    "prompt": "Explain how the garden's model got better from Round 1 to Round 3. Use numbers from the lesson.",
+    "prompt": "Explain why AI grew in waves. Use one big promise, one AI winter and one jump forward from the lesson.",
     "sentenceStarters": [
-      "In Round 1, the model learned from ...",
-      "It got ... right, because ...",
-      "In Round 2, the team added ...",
-      "The striped leaves show that ...",
-      "Good training data needs ..."
+      "In 1956, researchers hoped ...",
+      "One big promise was ...",
+      "An AI winter came when ...",
+      "AI jumped forward again because ...",
+      "I think AI grew in waves because ..."
     ],
     "planningBoxes": [
       "My main idea",
@@ -499,77 +261,87 @@
       "A question I still have"
     ],
     "selfCheck": [
-      "I described Round 1 and one of its mistakes.",
-      "I explained what changed in Round 2 and Round 3.",
-      "I said what good training data needs."
+      "I named one big promise.",
+      "I explained why an AI winter happened.",
+      "I gave one reason AI jumped forward later."
     ],
-    "example": "In Round 1, the model learned from only two examples. It got four of six new leaves right, because it had too few examples to compare with. It called a small new leaf “sick”. In Round 2, the team added four different examples, and the model got all six right. The striped leaves show that a model makes mistakes when its examples leave something out. Good training data needs many examples and many different kinds."
+    "example": "In 1956, researchers hoped a machine could copy every part of learning. One big promise was that a machine would win at chess within ten years. It took 40 years. An AI winter came when the promises did not come true. Then governments cut their funding. AI jumped forward again because the internet gave lots of data. Computers also got much faster. I think AI grew in waves because hope brought money, and broken promises took it away."
   },
   "speak": {
-    "partnerTask": "Tell your partner how you would train a model to sort two kinds of things, like ripe and unripe fruit. Your partner asks, “How will you test it?” Then switch.",
-    "independentTask": "Say out loud three steps: collect examples, train the model, test it. Give one example for each step."
+    "partnerTask": "Your partner reads a headline from Tomorrow Today. You say if it is a big promise or a careful claim, and why. Then switch.",
+    "independentTask": "Tell the story of AI out loud in four sentences: a question, a hope, a winter and a jump."
   },
   "watch": {
-    "youtubeId": "2hXG8v8p0KM",
-    "title": "How Computer Vision Works",
-    "channel": "Code.org",
-    "durationSeconds": 384,
-    "why": "It shows a computer learning to tell shapes apart from labelled examples, the same idea as the leaf model.",
-    "beforeQuestion": "How could a computer learn to tell two shapes apart?",
-    "afterQuestion": "Why is it hard to write exact rules for a shape, like the letter X?",
-    "summary": "This video explains computer vision. Computer vision is how a computer finds meaning in pictures. A computer does not see a picture like you do. It sees a number for each tiny dot of colour. Writing exact rules for a shape, like the letter X, does not work well, because people draw an X in many ways. With machine learning, the computer learns from many labelled examples instead. It is like learning with flashcards. The computer guesses, checks the answer and slowly gets better. Harder pictures, like faces, need bigger models. The video shows farm robots that tell crops from weeds. It also warns about a problem. If the training data leaves some people out, the tool can fail for them. So training data must be large and varied.",
+    "youtubeId": "a0_lo_GDcFw",
+    "title": "What Is Artificial Intelligence? Crash Course AI #1",
+    "channel": "CrashCourse",
+    "durationSeconds": null,
+    "why": "It explains where the name AI came from, why early hopes were too big, and why data and fast computers brought AI back.",
+    "beforeQuestion": "Why do you think it took so long to build machines that seem clever?",
+    "afterQuestion": "What two things did early AI researchers not have enough of?",
+    "summary": "In this video, a host called Jabril and a robot called John Green Bot talk about AI. AI is already part of daily life. It suggests videos, finishes words as you type, and helps decide some things about money and jobs. People have hopes and fears about it. The video says the name artificial intelligence was first used in 1956, for a summer project at Dartmouth College. The scientists there were very hopeful. Some said machines would soon be as clever as people. But they did not know how much data and computer power AI needs. So for a long time, progress was slow. This is called an AI winter. Then computers became much faster, and the internet made huge amounts of data. That is a big reason AI has grown so fast.",
     "keyPoints": [
-      "A computer sees a picture as numbers, one for each tiny dot.",
-      "With machine learning, a computer learns from many labelled examples, like flashcards.",
-      "If the training data leaves some people out, the tool can fail for them."
+      "The name artificial intelligence was first used in 1956, at Dartmouth College.",
+      "Early researchers made big promises, but they did not have enough data or computer power.",
+      "Faster computers and lots of data from the internet helped AI grow again."
     ],
-    "contentNote": "About six minutes, longer than most Thinkerwell videos. The speakers work for a farm-robot company and a car company and name them. Near the end, it says face recognition can fail for groups of people left out of the training data; Lesson 3 comes back to this. Preview it first; learners can read the written summary instead.",
+    "contentNote": "About 11 to 12 minutes (PBS lists its copy as 11 min 25 s; the captions run to 11:42), so durationSeconds is left null. Title and channel confirmed with YouTube's oEmbed on 31 October 2026. The summary was written from a copy of the video's English captions (amara.org) and PBS's description, not from watching it. It is fast, native-speaker English. It says AI was “frozen” in one AI winter until about 2010, which is simpler than the lesson's two winters with a boom between them. It mentions AI used to decide loans, insurance and job applications. Someone on the team must watch it before use; learners can read the written summary instead.",
     "replacementSuggestion": null
   },
   "reflect": {
     "prompts": [
       {
-        "text": "One thing I learned about training data is ...",
+        "text": "One reason AI took so long to grow is ...",
         "required": true
       },
       {
-        "text": "Something I would like to teach a model to sort is ...",
+        "text": "A promise about new tools that I would check is ...",
         "required": false
       }
     ],
-    "completionMessage": "You finished Lesson 2. You trained a model with examples and saw why the examples matter."
+    "completionMessage": "You finished Lesson 2. You told the story of AI in waves, from Turing's question to machine learning."
   },
   "visual": {
-    "type": "illustration",
-    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW02.svg is only a planned path. The eight example leaves and eight test leaves drawn as simple flat cards, in the same style the activity will use, so learners recognise them: dark green, light green new leaf, green with tiny marks, brown with spots, yellow with no spots, small spotted, and two long thin leaves with pale stripes. Healthy and sick are shown by a word under each card, never by colour alone. The same drawings are reused by the activity; there are no photos.",
-    "alt": "Leaf cards from Sunrise Garden: green, light green, yellow, brown and spotted leaves, and two long leaves with pale stripes, each labelled healthy or sick.",
+    "type": "timeline",
+    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW02.svg is only a planned path. A simple left-to-right timeline from 1950 to 2015, drawn as a wavy line that rises and falls. High points, each with a small drawing and words: 1950 “Turing asks: Can machines think?” (a question mark); 1956 “The name artificial intelligence” (a group of simple figures at a table); 1997 “A chess computer beats the world champion” (a chess piece); 2012 “Big jump in naming things in photos” (a photo frame with a tick). Low points, shaded and labelled: “AI winter, about 1974 to 1980” and “AI winter, late 1980s” (a snowflake and an empty money bag). Under the line, three small labels show what helped: “Money”, “Data”, “Fast computers”. Words carry every meaning; colour is never the only clue. No real faces.",
+    "alt": "A wavy timeline of AI from 1950 to 2015. It rises with Turing's question in 1950, the name AI in 1956, the chess computer in 1997 and better photo programs in 2012, and falls during two AI winters, about 1974 to 1980 and in the late 1980s.",
     "src": "visuals/DW02.svg"
   },
   "sources": [
     {
-      "label": "Experience AI (Raspberry Pi Foundation): Lesson 3, Bias in, bias out (training data, test data, accuracy)",
-      "url": "https://experience-ai.org/en/units/foundations-of-ai/lessons/3"
+      "label": "Wikipedia: Turing test (Turing's 1950 paper “Computing Machinery and Intelligence”)",
+      "url": "https://en.wikipedia.org/wiki/Turing_test"
     },
     {
-      "label": "The Royal Society: Machine learning, the power and promise of computers that learn by example (introduction)",
-      "url": "https://royalsociety.org/-/media/policy/projects/machine-learning/publications/machine-learning-introduction.pdf"
+      "label": "Dartmouth College: Artificial Intelligence (AI) coined at Dartmouth",
+      "url": "https://home.dartmouth.edu/about/artificial-intelligence-ai-coined-dartmouth"
     },
     {
-      "label": "DCMP: How Computer Vision Works (Code.org video, description)",
-      "url": "https://dcmp.org/media/25568-how-computer-vision-works"
+      "label": "TechTarget: AI winter (the Lighthill Report, funding cuts, the two winters)",
+      "url": "https://www.techtarget.com/searchenterpriseai/definition/AI-winter"
+    },
+    {
+      "label": "The Centre for Computing History: IBM's Deep Blue beats Garry Kasparov at chess (1997)",
+      "url": "https://www.computinghistory.org.uk/det/6153/IBM-s-Deep-Blue-beats-Gary-Kasparov-at-chess/"
+    },
+    {
+      "label": "Computer History Museum (2025): CHM releases AlexNet source code",
+      "url": "https://computerhistory.org/blog/chm-releases-alexnet-source-code/"
     }
   ],
-  "sensitiveNotes": [],
+  "sensitiveNotes": [
+    "Turing's life outside this paper (his wartime work and how he was treated later) is told in films and books, and some learners may know of it. This lesson leaves it out. If it comes up, keep it brief and factual, and don't ask learners about anyone's personal life."
+  ],
   "educatorNotes": [
-    "If the activity can't run (a printout, or a device without it), use the evidence table: it shows exactly what the activity does. Learners can also play it on paper: one learner is the model and may only copy the label of the most similar example card.",
-    "The model in the activity is deliberately simple (it copies the label of the most similar example). Real AI is far bigger, but the lesson about examples is the same.",
-    "If a learner labels an example differently from the gardener, the model follows the learner. That is a good moment to ask: who decides the right label?"
+    "For teachers who want more: much early US funding came through DARPA, a military research agency, and the 1973 Lighthill Report led the UK to stop most AI funding (TechTarget source). The Tomorrow Today headlines are made up, but each one matches a real period in the lesson.",
+    "Paper version of the activity: write the eight headlines on cards and sort them into “A big promise”, “A careful claim” and “Hard to say”. There is no score; reward reasons, especially pointing to words like “soon”, “every” and “may”.",
+    "The video is long (about 11 to 12 minutes). A shorter option the team could consider is TED-Ed's “The Turing test: Can a computer pass for a human?” (youtube.com/watch?v=3wLqsRLvV-c, about 4.5 minutes, title and channel confirmed with oEmbed), which covers only Turing's test and early chatbots. Neither has been watched yet."
   ],
   "changes": [
-    "New lesson (Digital World draft 1). There is no Base44 original, so oldId is null.",
-    "section is a Digital World section id (how-ai-works), which the Our World checker and schema don't accept yet.",
-    "Adds a train-model activity with a tested set of leaf cards; the results in the evidence table and the reading are what the activity gives when the learner labels like the gardener (checked with a small script; see the spec).",
+    "New lesson (Digital World, October 2026, social studies rebuild). There is no Base44 original, so oldId is null.",
+    "Tells the history of AI from 1950 to the 2010s as social studies: hopes, promises, who paid, and why progress came in waves.",
+    "Adds a sort activity (big promise, careful claim or hard to say) on made-up headlines from an invented magazine, Tomorrow Today. Real people and events (Turing, Dartmouth, Deep Blue, the 2012 photo program) appear only in the Read text, the video and teacher notes.",
     "visual.src points to a picture that doesn't exist yet.",
-    "Needs review by an AI researcher for accuracy, and by Justin for level and tone."
+    "Needs review by an AI researcher for accuracy (especially the simplified dates of the AI winters and the 2012 result), and by Justin for level and tone."
   ]
 }

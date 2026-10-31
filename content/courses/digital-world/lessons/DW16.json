@@ -1,0 +1,349 @@
+{
+  "id": "dw-rules-for-ai",
+  "oldId": null,
+  "number": 16,
+  "section": "truth-and-power",
+  "title": "Who makes the rules for AI?",
+  "essentialQuestion": "Who should decide how AI is used, and what rules make it fair?",
+  "learningGoal": "Compare how different groups make rules for AI, and sort uses of AI by how much harm they could do.",
+  "estimatedMinutes": [
+    30,
+    50
+  ],
+  "warmUp": {
+    "question": "Who do you think should make rules for AI?",
+    "options": [
+      "Governments",
+      "The companies that make it",
+      "The people who use it",
+      "Not sure"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "What does each person want? Whose voice might be missing?",
+    "cards": [
+      {
+        "type": "table",
+        "title": "A town meeting in Hillford about AI",
+        "columns": [
+          "Who spoke",
+          "What they said"
+        ],
+        "rows": [
+          [
+            "A shop owner",
+            "“A camera that knows every face in the market could catch thieves.”"
+          ],
+          [
+            "The student council",
+            "“If an AI tool marks our tests, we want a person to check it. We want a say in the rules.”"
+          ],
+          [
+            "A nurse at the clinic",
+            "“A tool could help us see who needs help first. But a nurse must always check it.”"
+          ],
+          [
+            "An older neighbour",
+            "“Some of us don't use phones. Don't make AI the only way to get help from the council.”"
+          ],
+          [
+            "A council worker",
+            "“A chatbot could answer questions at night. It should say clearly that it is a machine.”"
+          ]
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "type": "sort",
+    "stage": "read",
+    "placement": "after-evidence",
+    "title": "Help the Hillford council",
+    "instructions": "The Hillford council has ideas for using AI. Put each idea in a group. There is no score. After you place one, you can see what most people would say, and what the European Union's AI law says.",
+    "groups": [
+      {
+        "id": "ban",
+        "label": "Should be banned"
+      },
+      {
+        "id": "strict",
+        "label": "Allowed with strict rules"
+      },
+      {
+        "id": "allowed",
+        "label": "Allowed"
+      }
+    ],
+    "items": [
+      {
+        "id": "citizen-score",
+        "text": "A tool gives every person a “good citizen” score. The score decides who gets help.",
+        "suggested": "ban",
+        "feedback": "Most people would say banned. Scores like this can be unfair to whole groups. The European Union's AI law bans social scoring."
+      },
+      {
+        "id": "feelings",
+        "text": "A camera in class reads students' faces to guess how they feel.",
+        "suggested": "ban",
+        "feedback": "Most people would say banned. Feelings are private, and the guesses can be wrong. The European Union's law bans this in schools."
+      },
+      {
+        "id": "market-faces",
+        "text": "Cameras in the market look at every face, all day.",
+        "suggested": "ban",
+        "feedback": "Many people would say banned, because it watches everyone. Others say it keeps people safe. The European Union's law bans most uses like this by police."
+      },
+      {
+        "id": "exams",
+        "text": "A tool marks students' exams.",
+        "suggested": "strict",
+        "feedback": "Most people would say strict rules. A wrong mark could change a student's future. The European Union calls this high risk, so it needs checks."
+      },
+      {
+        "id": "clinic",
+        "text": "A tool helps the clinic see which patients need help first.",
+        "suggested": "strict",
+        "feedback": "Most people would say strict rules. A mistake could harm someone's health, so a nurse or doctor must check it."
+      },
+      {
+        "id": "chatbot",
+        "text": "A chatbot on the council's website answers questions about bus times.",
+        "suggested": "allowed",
+        "feedback": "Most people would say allowed, with one rule. The European Union's law says people must know they are talking to a machine."
+      },
+      {
+        "id": "spam",
+        "text": "A filter stops junk messages from reaching the council.",
+        "suggested": "allowed",
+        "feedback": "Most people would say allowed. The European Union's law has no special rules for low-risk tools like spam filters."
+      },
+      {
+        "id": "game",
+        "text": "A game at the library uses AI to move its characters.",
+        "suggested": "allowed",
+        "feedback": "Most people would say allowed. AI in video games is low risk, so the European Union's law sets no special rules."
+      }
+    ],
+    "saves": "The group the learner chose for each idea, with the lesson's other answers.",
+    "offline": "Everything is in the lesson file. Nothing is sent anywhere."
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Many groups make rules for AI",
+        "text": "New technology brings questions about who it helps, who it might harm and who decides. In the made-up town of Hillford, the council wants to use AI, so it holds a meeting first. A shop owner, students, a nurse and an older neighbour all give their views. In the real world, many groups make rules for AI. Governments make laws, which everyone must follow. Companies write their own rules for their tools. Groups of countries agree on a guideline, which is advice that countries can choose to use. Citizens can share their ideas too, for example when a government asks the public what it thinks.",
+        "simpler": "New tools bring big questions. Who does the tool help? Who could it harm? Who decides? In the made-up town of Hillford, the council wants to use AI. First, it holds a meeting. Many people share their views. In real life, many groups make AI rules. Governments make laws. Everyone must follow a law. Companies make their own rules. Groups of countries agree on a guideline. A guideline is advice. Citizens can share ideas too."
+      },
+      {
+        "heading": "Different groups, different approaches",
+        "text": "Some rules for AI are agreements between many countries. In 2021, all 193 member states of UNESCO adopted the first global agreement on the ethics of AI. It says AI should protect human rights and dignity, be fair and open, and stay under human control. In 2024, the countries of ASEAN in Southeast Asia shared a guide for AI. Its ideas include fairness, privacy, safety and putting people at the centre. Both are guidelines, so each country decides how to use them. The European Union went further and made a law. Its AI law came into force in August 2024. Before writing it, the European Union asked citizens, companies and other groups for their views.",
+        "simpler": "Some rules are agreements between many countries. In 2021, 193 countries agreed on ideas for AI at UNESCO. AI should protect human rights. It should be fair. People should stay in control. In 2024, countries in Southeast Asia shared a guide for AI. It talks about fairness and privacy. These are guidelines. Each country decides how to use them. The European Union made a law. First, it asked citizens for their views."
+      },
+      {
+        "heading": "Sorting uses of AI by risk",
+        "text": "The European Union's AI law sorts uses of AI by risk, which means how much harm they could do. Some uses are banned, such as giving people a score for how they behave, or guessing students' feelings at school. Some uses are high risk, such as marking exams, so they must follow strict rules and checks. A chatbot must tell people that it is a machine. Most uses, such as spam filters and video games, have no special rules. People still disagree about where each line should go. Rules for AI are about rights, such as privacy and being treated fairly.",
+        "simpler": "The European Union's law sorts AI by risk. Risk means how much harm it could do. Some uses are banned. One is giving people a score for how they behave. Some uses are high risk, like marking exams. They need strict rules. A chat tool must say it is a machine. Most uses, like games, have no special rules. People still disagree about these lines. Rules for AI protect our rights, like privacy."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "law",
+        "forms": [
+          "laws"
+        ],
+        "definition": "A rule made by a government that everyone must follow.",
+        "example": "The European Union's AI law bans some uses of AI."
+      },
+      {
+        "word": "guideline",
+        "forms": [
+          "guidelines"
+        ],
+        "definition": "Advice about how to do something. People can choose to follow it.",
+        "example": "The guide from countries in Southeast Asia is a guideline, not a law."
+      },
+      {
+        "word": "citizen",
+        "forms": [
+          "citizens"
+        ],
+        "definition": "A person who belongs to a town or country and takes part in it.",
+        "example": "The citizens of Hillford shared their views at a meeting."
+      },
+      {
+        "word": "risk",
+        "forms": [
+          "risks"
+        ],
+        "definition": "The chance that something bad could happen.",
+        "example": "A tool that marks exams is high risk."
+      },
+      {
+        "word": "rights",
+        "forms": [
+          "right"
+        ],
+        "definition": "Things every person should have or be free to do.",
+        "example": "Privacy is one of the rights that rules for AI protect."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "skill": "understand",
+        "question": "How does the European Union's AI law sort uses of AI?",
+        "options": [
+          {
+            "text": "By how new the tool is",
+            "correct": false,
+            "feedback": "Not quite. The age of a tool is not what counts. Read the third section."
+          },
+          {
+            "text": "By which company made it",
+            "correct": false,
+            "feedback": "Not quite. The same rules apply to every company. Read the third section."
+          },
+          {
+            "text": "By how much harm it could do",
+            "correct": true,
+            "feedback": "Yes. The law sorts AI by risk. Uses that could do the most harm are banned."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "skill": "apply",
+        "question": "A tool gives each person a score that decides who gets help. What does the European Union's law say?",
+        "options": [
+          {
+            "text": "It is allowed with no rules",
+            "correct": false,
+            "feedback": "Not quite. Tools with no special rules are low risk, like games. Read the third section."
+          },
+          {
+            "text": "It is banned",
+            "correct": true,
+            "feedback": "Yes. The law bans giving people a score for how they behave."
+          },
+          {
+            "text": "It only needs a label",
+            "correct": false,
+            "feedback": "Not quite. A label is the rule for chatbots. Read the third section again."
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "Who should have a say in rules for AI in a community? Why?",
+        "placeholder": "I think ___ should have a say, because ...",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Choose one Hillford idea for AI. Should it be banned, allowed with strict rules, or allowed? Explain your choice, and say whose views the council should hear.",
+    "sentenceStarters": [
+      "I chose ...",
+      "I think it should be ...",
+      "This is because ...",
+      "The European Union's law says ...",
+      "The council should listen to ___, because ..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I named one idea from Hillford.",
+      "I said which group it belongs in, and why.",
+      "I said whose views the council should hear."
+    ],
+    "example": "I chose the tool that marks students' exams. I think it should be allowed with strict rules. This is because a wrong mark could change a student's future. The European Union's law says marking exams is high risk, so it needs checks. A teacher should look at every mark the tool gives. The council should listen to the student council, because students are the people the tool affects most."
+  },
+  "speak": {
+    "partnerTask": "Your partner is a member of the Hillford council. Choose one idea for AI and give one reason to ban it or allow it. Then switch.",
+    "independentTask": "Say out loud the difference between a law and a guideline, with one example of each from the lesson."
+  },
+  "watch": {
+    "youtubeId": "VqFqWIqOB1g",
+    "title": "Ethics of AI: Challenges and Governance",
+    "channel": "UNESCO",
+    "durationSeconds": 412,
+    "why": "UNESCO, which made the global agreement in this lesson, looks at how different parts of the world are making rules for AI.",
+    "beforeQuestion": "What do you think a fair rule for AI would protect?",
+    "afterQuestion": "Why is it hard to turn good ideas about AI into real rules?",
+    "summary": "This video is from UNESCO. UNESCO is a world group that works on schools, science and culture. The video is part of a series about the ethics of AI. Ethics means what is right and wrong. The video asks a big question. How can people get the good things from AI without making gaps between people bigger? AI could also bring new kinds of unfair results. The video says people around the world seem to agree on some ideas. These include privacy, equal treatment and leaving no one out. The hard part is turning these ideas into real rules. The video looks at how different parts of the world are making rules for AI. It also asks what would make rules fair for everyone, everywhere.",
+    "keyPoints": [
+      "Many people agree on some ideas for AI, such as privacy, equal treatment and leaving no one out.",
+      "The hard part is turning these ideas into real rules.",
+      "Different parts of the world are making different rules for AI."
+    ],
+    "contentNote": "About 7 minutes (412 seconds, from YouTube's listing), adult level, from February 2023, before the European Union's AI law was agreed, so it may describe that law as a plan. UNESCO's description says subtitles are available in English, French, Japanese and other languages. The title and channel were confirmed with YouTube's oEmbed on 31 October 2026. The summary was written from UNESCO's own description of the video, not from watching it. Someone on the team must watch it before learners use it; learners can read the written summary instead.",
+    "replacementSuggestion": null
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "A rule for AI that I think is fair is ... because ...",
+        "required": true
+      },
+      {
+        "text": "When people make rules for AI, I think they should also listen to ...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 16. You compared how different groups make rules for AI, and sorted uses of AI by risk."
+  },
+  "visual": {
+    "type": "diagram",
+    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW16.svg is only a planned path. A pyramid in four layers, with a word label and a simple symbol on each. Top (smallest): “Banned” with a crossed-out circle, and two small examples: “Scores for how people behave” and “Guessing students' feelings”. Second: “Strict rules” with a magnifying glass, example “Marking exams”. Third: “Must say it is AI” with a speech bubble, example “Chatbots”. Bottom (widest): “No special rules” with a tick, examples “Spam filters” and “Games”. Beside the pyramid, a small group of simple drawn people labelled “Who decides? Governments, companies, groups of countries, citizens”. Words carry every meaning, so colour is never the only clue.",
+    "alt": "A pyramid of risk levels for AI: banned uses at the top, then uses with strict rules, then uses that must say they are AI, and most uses with no special rules at the bottom.",
+    "src": "visuals/DW16.svg"
+  },
+  "sources": [
+    {
+      "label": "European Commission: AI Act, a risk-based regulatory framework for AI (entered into force 1 August 2024)",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+    },
+    {
+      "label": "European Commission (2020): White Paper on Artificial Intelligence, public consultation (19 February to 14 June 2020)",
+      "url": "https://digital-strategy.ec.europa.eu/en/library/white-paper-artificial-intelligence-public-consultation-towards-european-approach-excellence-and"
+    },
+    {
+      "label": "New Zealand National Commission for UNESCO: Ethics of Artificial Intelligence Recommendation (adopted by all 193 Member States, 2021)",
+      "url": "https://unesco.org.nz/knowledge-hub/ethics-of-artificial-intelligence-recommendation"
+    },
+    {
+      "label": "ASEAN (2024): ASEAN Guide on AI Governance and Ethics",
+      "url": "https://asean.org/wp-content/uploads/2024/02/ASEAN-Guide-on-AI-Governance-and-Ethics_beautified_201223_v2.pdf"
+    },
+    {
+      "label": "Kementerian Komunikasi dan Digital (Indonesia): Surat Edaran Menteri Kominfo Nomor 9 Tahun 2023 tentang Etika Kecerdasan Artifisial",
+      "url": "https://jdih.komdigi.go.id/produk_hukum/view/id/883/t/surat+edaran+menteri+komunikasi+dan+informatika+nomor+9+tahun+2023"
+    },
+    {
+      "label": "MyGOV Malaysia: National Guidelines on Artificial Intelligence Governance and Ethics (AIGE), MOSTI, 2024",
+      "url": "https://www.malaysia.gov.my/en/my-initiative/whole-government-digital-services/tadbir-urus/national-guidelines-on-artificial-intelligence-governance-and-ethics-aige"
+    }
+  ],
+  "sensitiveNotes": [
+    "Rules about cameras, scores and surveillance can be close to home for learners who have lived under heavy policing, in camps or at borders. Keep the discussion on made-up Hillford. Never ask learners about the laws, police or government of any country they have lived in, or how they were checked or recorded; let them speak only if they choose to."
+  ],
+  "educatorNotes": [
+    "The European Union's AI Act (in force 1 August 2024) sorts uses into unacceptable risk (banned, for example social scoring and emotion recognition in workplaces and schools; the bans applied from 2 February 2025), high risk (for example scoring exams), transparency rules (chatbots, labelled AI content) and minimal risk (spam filters, games). Later dates for high-risk rules have been changed since; check the Commission's page before quoting them. The lesson simplifies the market-camera item: the law bans real-time face recognition by police in public places except in a few narrow cases.",
+    "To localise for Indonesia or Malaysia: Indonesia's Minister of Communication and Informatics issued a circular on AI ethics (Surat Edaran No. 9 of 2023, 19 December 2023), and Malaysia's Ministry of Science, Technology and Innovation launched voluntary National Guidelines on AI Governance and Ethics with seven principles in September 2024. Both, like the UNESCO and ASEAN texts, are guidelines rather than laws. Present every approach neutrally; the lesson compares, it doesn't rank countries.",
+    "Paper version of the activity: write the eight Hillford ideas on cards and sort them under three headings. There is no score; the market cameras are meant to start a discussion, and reasons matter more than the group."
+  ],
+  "changes": [
+    "New lesson (Digital World, October 2026, social studies rebuild). There is no Base44 original, so oldId is null. Lesson 16 in “Truth, power and choices” (truth-and-power).",
+    "Uses a sort activity into three groups (banned, allowed with strict rules, allowed), with feedback that says what most people would say and what the European Union's AI law says. All learner examples are made up (the town of Hillford).",
+    "Real rules named in learner text: UNESCO's 2021 Recommendation on the Ethics of AI, the ASEAN Guide on AI Governance and Ethics (2024) and the European Union's AI Act (2024). Indonesia's and Malaysia's guidelines are in educatorNotes only.",
+    "Six sources, one over the spec's aim of 2–4, so that teachers have official pages for the Indonesian and Malaysian guidelines.",
+    "visual.src points to a picture that doesn't exist yet. The video's summary was written from its published description; someone must watch it before use.",
+    "Needs review by Justin for level and tone, by someone who knows AI policy for the simplifications (risk levels, dates), and by a partner educator for the surveillance note."
+  ]
+}

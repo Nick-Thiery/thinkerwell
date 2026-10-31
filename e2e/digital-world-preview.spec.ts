@@ -54,7 +54,7 @@ test.describe('with the preview off', () => {
       await expect(page.getByRole('navigation', { name: 'Courses on this device' })).toHaveCount(0);
       await expect(page.locator('body')).not.toContainText('Digital World');
     }
-    for (const path of ['/course/digital-world', '/course/digital-world/print', '/lesson/dw-what-ai-is/read', '/lesson/dw-how-ai-learns/print', '/educators/lesson/dw-scams']) {
+    for (const path of ['/course/digital-world', '/course/digital-world/print', '/lesson/dw-what-ai-is/read', '/lesson/dw-how-ai-learns/print', '/educators/lesson/dw-rules-for-ai']) {
       await page.goto(path);
       await expect(page.getByRole('heading', { level: 1, name: "This page isn't here" })).toBeVisible();
       await expect(banner(page)).toHaveCount(0);
@@ -85,7 +85,7 @@ test.describe('with the preview on', () => {
     await expect(page).toHaveURL(/\/course\/digital-world$/);
     await expect(page.getByRole('heading', { level: 1, name: 'Digital World' })).toBeVisible();
     await expect(banner(page)).toBeVisible();
-    await expect(page.getByRole('heading', { level: 2 })).toHaveText(['How AI works', 'Check what you see', 'Use tools wisely', 'AI where you live', 'For teachers and reviewers']);
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(['Thinking machines', 'Who builds AI, and at what cost', 'AI in daily life', 'Truth, power and choices', 'For teachers and reviewers']);
     await expect(page.getByText(/Section check:/)).toHaveCount(0);
 
     await page.getByRole('button', { name: 'Turn preview off' }).click();
@@ -138,9 +138,9 @@ test.describe('with the preview on', () => {
     await expect(page.getByRole('heading', { level: 1, name: 'You finished Lesson 1.' })).toBeVisible();
     // No section check or certificate in the draft; the next lesson is up next.
     await expect(page.getByText(/Section check/)).toHaveCount(0);
-    await expect(page.getByRole('link', { name: /How AI learns from examples/ })).toBeVisible();
+    await expect(page.getByRole('link', { name: /Dreams of thinking machines/ })).toBeVisible();
     await page.getByRole('link', { name: 'Back to the course' }).click();
-    await expect(page).toHaveURL(/\/course\/digital-world#how-ai-works$/);
+    await expect(page).toHaveURL(/\/course\/digital-world#thinking-machines$/);
     await expect(page.getByRole('link', { name: /^Lesson 1:.*Completed\./ })).toBeVisible();
 
     // Saved with the lesson's work, on this device, under the lesson's own id.
@@ -210,8 +210,8 @@ test.describe('with the preview on', () => {
     await expect(page.getByRole('table')).toHaveCount(3);
 
     await page.goto('/course/digital-world/print');
-    await expect(page.getByRole('heading', { level: 1 })).toHaveCount(11);
-    await expect(page.getByRole('heading', { level: 2, name: 'Activity' })).toHaveCount(11);
+    await expect(page.getByRole('heading', { level: 1 })).toHaveCount(17);
+    await expect(page.getByRole('heading', { level: 2, name: 'Activity' })).toHaveCount(17);
     expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
     // On paper: no banner, toolbar or header; each lesson after the first starts a new page.
     await page.emulateMedia({ media: 'print' });
@@ -219,19 +219,19 @@ test.describe('with the preview on', () => {
     await expect(page.locator('.tw-print-sheet').nth(1)).toHaveCSS('break-before', 'page');
 
     await page.emulateMedia({ media: 'screen' });
-    await page.goto('/educators/lesson/dw-asking-good-questions');
+    await page.goto('/educators/lesson/dw-ai-at-school');
     await expect(page.getByRole('heading', { level: 2, name: 'The activity' })).toBeVisible();
     await expect(page.getByRole('heading', { level: 2, name: 'For reviewers' })).toBeVisible();
   });
 
   test('in Indonesian, the interface is translated and the lessons are marked as English', async ({ page }) => {
     await turnOn(page);
-    await page.goto('/lesson/dw-scams/read');
+    await page.goto('/lesson/dw-what-ai-is/read');
     await page.getByRole('button', { name: /Language|Bahasa/ }).first().click();
     await page.getByRole('menuitemradio', { name: /Bahasa Indonesia/ }).or(page.getByRole('radio', { name: /Bahasa Indonesia/ })).first().click();
     await expect(page.getByText('Kursus draf: belum ditinjau')).toBeVisible();
     await expect(page.getByText(/Untuk saat ini, pelajarannya masih dalam bahasa Inggris\./)).toBeVisible();
-    await expect(page.getByRole('heading', { level: 1, name: 'Scams: fake prizes, loans and job offers' })).toHaveAttribute('lang', 'en');
+    await expect(page.getByRole('heading', { level: 1, name: "What AI is, and what it isn't" })).toHaveAttribute('lang', 'en');
     await expect(page.locator('html')).toHaveAttribute('lang', 'id');
   });
 });
@@ -240,15 +240,21 @@ test.describe('every page and activity', { tag: '@own-size' }, () => {
   const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22a', 'wcag22aa', 'best-practice'];
   const lessons = [
     'dw-what-ai-is',
+    'dw-history-of-ai',
     'dw-how-ai-learns',
+    'dw-language-models',
+    'dw-hidden-work',
+    'dw-cost-of-computing',
+    'dw-ai-and-languages',
     'dw-when-ai-gets-it-wrong',
+    'dw-ai-and-work',
+    'dw-ai-in-your-community',
+    'dw-ai-at-school',
+    'dw-faces-and-cameras',
     'dw-spotting-fakes',
     'dw-checking-a-claim',
-    'dw-scams',
-    'dw-your-privacy',
-    'dw-asking-good-questions',
-    'dw-numbers-that-persuade',
-    'dw-ai-in-your-community',
+    'dw-feeds-and-elections',
+    'dw-rules-for-ai',
     'dw-design-an-ai-helper',
   ];
 
@@ -259,8 +265,8 @@ test.describe('every page and activity', { tag: '@own-size' }, () => {
       '/preview/digital-world',
       '/course/digital-world',
       ...lessons.map((id) => `/lesson/${id}/${id === 'dw-design-an-ai-helper' ? 'write' : 'read'}`),
-      '/lesson/dw-scams/print',
-      '/educators/lesson/dw-numbers-that-persuade',
+      '/lesson/dw-rules-for-ai/print',
+      '/educators/lesson/dw-ai-at-school',
     ];
     for (const width of [320, 1280]) {
       await page.setViewportSize({ width, height: 900 });

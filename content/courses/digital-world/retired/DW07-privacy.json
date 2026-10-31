@@ -1,0 +1,317 @@
+{
+  "id": "dw-your-privacy",
+  "oldId": null,
+  "number": 7,
+  "section": "use-tools-wisely",
+  "title": "Your privacy",
+  "essentialQuestion": "What is safe to share, and who is it safe to share with?",
+  "learningGoal": "Explain the difference between personal and private information, and decide what made-up characters should share and with whom.",
+  "estimatedMinutes": [
+    30,
+    50
+  ],
+  "warmUp": {
+    "question": "Which of these is safest to share with a stranger online?",
+    "options": [
+      "A favourite food",
+      "A home address",
+      "A full name",
+      "Not sure"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "What does each person want to share? Who would see it?",
+    "cards": [
+      {
+        "type": "cases",
+        "title": "Four learners at the Maple Street Learning Centre",
+        "cases": [
+          {
+            "name": "Leo",
+            "body": "Leo wants to post a photo of his new drawing. On the table behind it, there is a letter with his home address on it."
+          },
+          {
+            "name": "Mira",
+            "body": "Mira plays a word game online. Another player, who she has never met, asks which learning centre she goes to and when she leaves."
+          },
+          {
+            "name": "Sam",
+            "body": "A quiz says, “Find out which animal you are.” First, it asks Sam to type his full name and his birthday."
+          },
+          {
+            "name": "Ada",
+            "body": "Ada tells her class that her favourite sport is football and that she loves drawing."
+          }
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "type": "sort",
+    "stage": "read",
+    "placement": "after-evidence",
+    "title": "Share it or keep it?",
+    "instructions": "Put each example into a group. The examples are about the Maple Street learners, not about you. There is no score. After you place one, you can see what most people would say and why.",
+    "groups": [
+      {
+        "id": "fine",
+        "label": "Fine to share"
+      },
+      {
+        "id": "trusted",
+        "label": "Only with people you trust"
+      },
+      {
+        "id": "dont",
+        "label": "Don't share it"
+      }
+    ],
+    "items": [
+      {
+        "id": "ada-sport",
+        "text": "Ada tells her class her favourite sport.",
+        "suggested": "fine",
+        "feedback": "Most people would say fine to share. Many people like football, so it can't show who Ada is."
+      },
+      {
+        "id": "leo-photo",
+        "text": "Leo's drawing photo, with his address showing",
+        "suggested": "dont",
+        "feedback": "Most people would say don't share it like this. Leo can take a new photo without the letter. Then it is fine."
+      },
+      {
+        "id": "leo-form",
+        "text": "Leo's home address, on a form for his teacher",
+        "suggested": "trusted",
+        "feedback": "Most people would say only with people you trust. His teacher needs it for the form, so this is fine."
+      },
+      {
+        "id": "mira-player",
+        "text": "Mira tells a player she has never met where she learns",
+        "suggested": "dont",
+        "feedback": "Most people would say don't share it. Where someone is should stay private. Mira can tell an adult she trusts."
+      },
+      {
+        "id": "sam-quiz",
+        "text": "Sam's full name and birthday, typed into the animal quiz",
+        "suggested": "dont",
+        "feedback": "Most people would say don't share it. The quiz doesn't need this, and apps collect what people type. Sam can skip it."
+      },
+      {
+        "id": "mira-name",
+        "text": "Mira's full name, with her friends at the centre",
+        "suggested": "trusted",
+        "feedback": "Most people would say only with people you trust. Her friends at the centre already know her."
+      },
+      {
+        "id": "ada-film",
+        "text": "Ada's opinion of a film",
+        "suggested": "fine",
+        "feedback": "Most people would say fine to share. An opinion is personal, not private. She can still think about who will see it."
+      }
+    ],
+    "saves": "The group the learner chose for each example, with the lesson's other answers. Nothing about the learner themselves is asked or saved.",
+    "offline": "Everything is in the lesson file. Nothing is sent anywhere."
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Personal and private information",
+        "text": "Information about a person comes in two kinds. Personal information is true for many people, so it cannot show exactly who someone is. A favourite sport, a favourite food or an opinion about a film are all personal. Private information is different, because it can identify one person. A full name, a home address, a phone number and a birthday are all private. At the Maple Street Learning Centre, Ada tells her class that her favourite sport is football. That is personal, and it is usually fine to share. Leo's home address is private, so he gives it only to people who need it, such as a teacher filling in a form.",
+        "simpler": "There are two kinds of information about a person. Personal information is true for many people. It does not show who someone is. A favourite sport is personal. Private information can identify one person. A full name is private. So is a home address or a birthday. Ada says her favourite sport is football. That is fine to share. Leo's home address is private. He gives it only to people who need it, like a teacher."
+      },
+      {
+        "heading": "Sharing is hard to take back",
+        "text": "Once something is shared online, it can be copied and passed on, and it is very difficult to remove. Photos can also show more than you meant to share. For example, Leo's photo of his drawing shows a letter with his address, so he should take a new photo first. Apps and websites collect information too. They collect what people post, what they like and share, and where they are. Companies look for patterns in this information, for example to choose which adverts to show. Some AI tools are also trained on information collected from the internet, which can include things people posted about themselves.",
+        "simpler": "Things shared online can be copied. They are very hard to remove. A photo can show more than you want. Leo's photo shows his drawing. It also shows a letter with his address. So he takes a new photo. Apps collect information too. They collect what people post and like. They collect where people are. Companies use it to choose adverts. Some AI tools learn from things on the internet. This can include posts."
+      },
+      {
+        "heading": "Think before you share",
+        "text": "Before sharing, ask three questions. Who will see this? Does that person really need it? Could it help a stranger find out exactly who or where someone is? Mira plays a word game online, and another player she has never met asks where she learns and when she leaves. Mira should keep that private and tell an adult she trusts. Sam's quiz asks for his full name and birthday just to say which animal he is. The quiz does not need them, so Sam can skip it. Many apps also have privacy settings, which let people choose who sees what they share.",
+        "simpler": "Before you share, ask three questions. Who will see it? Do they need it? Could it show who or where someone is? A player Mira has never met asks where she learns. Mira keeps that private. She tells an adult she trusts. Sam's quiz asks for his full name and birthday. The quiz does not need them. So Sam does not do the quiz. Many apps have privacy settings."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "personal information",
+        "definition": "Facts about a person that are true for many other people too.",
+        "example": "Ada's favourite sport is personal information."
+      },
+      {
+        "word": "private information",
+        "definition": "Facts that can show exactly who or where one person is.",
+        "example": "Leo's home address is private information."
+      },
+      {
+        "word": "identify",
+        "definition": "To show or find out exactly who someone is.",
+        "example": "A full name and birthday can identify one person."
+      },
+      {
+        "word": "collect",
+        "definition": "To gather things and keep them.",
+        "example": "Some apps collect what people post and where they are."
+      },
+      {
+        "word": "advert",
+        "forms": [
+          "adverts"
+        ],
+        "definition": "A message or picture that tries to make you buy something.",
+        "example": "Apps use what people like to choose which adverts to show."
+      },
+      {
+        "word": "privacy",
+        "definition": "Keeping your own information away from people who should not have it.",
+        "example": "Privacy settings let people choose who sees their posts."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "question": "Which of these is private information?",
+        "options": [
+          {
+            "text": "Leo's home address",
+            "correct": true,
+            "feedback": "Yes. A home address can show exactly where one person lives."
+          },
+          {
+            "text": "Ada's favourite sport",
+            "correct": false,
+            "feedback": "Not quite. Many people like football, so it is personal information. Read the first section."
+          },
+          {
+            "text": "Ada's opinion of a film",
+            "correct": false,
+            "feedback": "Not quite. An opinion is personal information. Read the first section."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "question": "A player Mira has never met asks where she learns. What should she do?",
+        "options": [
+          {
+            "text": "Tell them, since they seem friendly",
+            "correct": false,
+            "feedback": "Not quite. Mira has never met this player. Read the third section."
+          },
+          {
+            "text": "Keep it private and tell an adult",
+            "correct": true,
+            "feedback": "Yes. Where someone is should stay private, and an adult she trusts can help."
+          },
+          {
+            "text": "Send a photo of the centre instead",
+            "correct": false,
+            "feedback": "Not quite. A photo can show the same thing. Read the second and third sections."
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "Sam's quiz asks for his full name and birthday. Why might a quiz want them?",
+        "placeholder": "A quiz might want them because ...",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Choose one learner from the Maple Street examples. Explain what they can share, what they should keep private, and why.",
+    "sentenceStarters": [
+      "I chose ...",
+      "It is fine for them to share ... because ...",
+      "They should keep ___ private because ...",
+      "They could share ___ only with ...",
+      "Before they share, they should ask ..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I named one learner from the lesson.",
+      "I said one thing to share and one thing to keep private.",
+      "I said who they could share with, and why."
+    ],
+    "example": "I chose Leo. It is fine for him to share a photo of his drawing, because a drawing is personal, not private. But he should keep his home address private, because it shows exactly where he lives. The letter in his photo shows his address, so he should take a new photo without it. He could share his address only with people who need it, like a teacher filling in a form. Before he shares, he should ask who will see the photo."
+  },
+  "speak": {
+    "partnerTask": "Your partner names a Maple Street learner. You say one thing they can share and one thing they should keep private. Then switch.",
+    "independentTask": "Say out loud the difference between personal and private information, with one example of each from the lesson."
+  },
+  "watch": {
+    "youtubeId": "MjPpG2e71Ec",
+    "title": "Private and Personal Information",
+    "channel": "Common Sense Education",
+    "durationSeconds": 80,
+    "why": "This short cartoon explains the difference between personal and private information.",
+    "beforeQuestion": "What kind of information is fine to share online?",
+    "afterQuestion": "What is one example of private information?",
+    "summary": "This short cartoon is about sharing online. Sharing things about yourself can be fun. It can help you make friends. But some things are not safe to share. The video talks about two kinds of facts about you. Personal information is true for many other people too, like your favourite music. It is usually safe to share. Private information is true only for you, so it can show who you are. Your full name, your home address and your birthday are private. Don't share them online, except with people you know and trust. So before you share, stop and think. Is it personal or private?",
+    "keyPoints": [
+      "Personal information is true for many people, like a favourite song.",
+      "Private information can show who one person is, like a full name or home address.",
+      "Share private information only with people you know and trust."
+    ],
+    "contentNote": "A short American cartoon for younger children, about 1 minute 20 seconds. It talks to the viewer about “your” information; the lesson itself uses made-up learners. The summary was written from Common Sense Education's description and the lesson plan that uses the video, not from watching it. Preview it first; learners can read the written summary instead.",
+    "replacementSuggestion": null
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Before anyone shares information online, they should ask ...",
+        "required": true
+      },
+      {
+        "text": "One thing I learned about privacy is ...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 7. You decided what is safe to share, and who to share it with."
+  },
+  "visual": {
+    "type": "illustration",
+    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW07.svg is only a planned path. Leo's photo of his drawing, shown twice. In the first, a letter on the table behind the drawing has an address drawn as wavy lines (no real words), circled, with the words “Shows his address”. In the second, the letter is gone, with the words “Better: nothing private”. Simple drawn figures; no real faces, names or addresses.",
+    "alt": "Two photos of Leo's drawing. In the first, a letter with his address can be seen. In the second, the letter is gone.",
+    "src": "visuals/DW07.svg"
+  },
+  "sources": [
+    {
+      "label": "Code.org and Common Sense Education: Private and Personal Information (lesson plan)",
+      "url": "https://curriculum.code.org/csf-20/coursee/8/"
+    },
+    {
+      "label": "UNICEF Australia: Protecting your privacy online",
+      "url": "https://www.unicef.org.au/unicef-youth/staying-safe-online/protecting-your-privacy-online"
+    },
+    {
+      "label": "UKAuthority (2024): ICO launches consultation series on generative AI (training on personal data from the web)",
+      "url": "https://ukauthority.com/articles/ico-launches-consultation-series-on-generative-ai"
+    },
+    {
+      "label": "Common Sense Education: Private and Personal Information (video page)",
+      "url": "https://www.commonsense.org/education/videos/private-and-personal-information"
+    }
+  ],
+  "sensitiveNotes": [
+    "Never ask learners what they share, which apps or accounts they use, or anything about themselves to practise. The lesson uses made-up learners only. Some learners have strong reasons to keep where they live or learn private; never ask why.",
+    "Mira's example (a stranger asks where she learns) touches online safety. If a learner says something like this has happened to them, don't discuss the details in class; follow the partner's own safeguarding process."
+  ],
+  "educatorNotes": [
+    "Where the line falls depends on the situation: an address is fine for a teacher's form but not for a stranger. The activity has no score; reward reasons. The original Code.org lesson asks students about themselves; this lesson deliberately does not.",
+    "Learners may not own a phone or have accounts. The examples work for shared devices and paper forms too. The video talks to the viewer directly; if that feels too personal for a group, use the written summary."
+  ],
+  "changes": [
+    "New lesson (Digital World draft). There is no Base44 original, so oldId is null.",
+    "section is a proposed Digital World section id (use-tools-wisely), which the Our World checker and schema don't accept yet.",
+    "Adds a sort activity about made-up learners: fine to share, only with people you trust, or don't share it.",
+    "visual.src points to a picture that doesn't exist yet.",
+    "Needs review by a partner educator for the sensitive notes, and by Justin for level and tone."
+  ]
+}

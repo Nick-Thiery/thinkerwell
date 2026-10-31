@@ -1,9 +1,15 @@
 import { screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
-import { dwActivity, renderInLesson } from '../testHarness';
+import { dwActivity, renderInLesson, retiredLesson } from '../testHarness';
 import { ActivityOnPaper } from './ActivityOnPaper';
 import { ActivityPlayer } from './ActivityPlayer';
+
+// Lessons by their numbers since the social studies rebuild (October 2026); the
+// three activity types only retired drafts use are played from those drafts.
+const SCAMS = retiredLesson('DW06-scams');
+const ASK = retiredLesson('DW08-asking-good-questions');
+const NUMBERS = retiredLesson('DW09-numbers');
 
 // Every activity type the Digital World drafts use
 // (docs/content/DIGITAL_WORLD_SPEC.md 5.2), played as a learner would, with
@@ -16,7 +22,7 @@ function noNetwork() {
   return () => expect(fetch).not.toHaveBeenCalled();
 }
 
-describe('sort (Lessons 1, 4, 7, 10)', () => {
+describe('sort (Lessons 1 and 13, and others)', () => {
   it('puts each item in a group with real radio buttons, and says what most people would say without marking anything wrong', async () => {
     const user = userEvent.setup();
     const checkNetwork = noNetwork();
@@ -48,17 +54,17 @@ describe('sort (Lessons 1, 4, 7, 10)', () => {
   });
 
   it('on paper, gives learners a box per group and teachers the group most people choose', () => {
-    const activity = dwActivity(4, 'sort');
-    const { view } = renderInLesson(4, <ActivityOnPaper activity={activity} forTeachers={false} />);
+    const activity = dwActivity(13, 'sort');
+    const { view } = renderInLesson(13, <ActivityOnPaper activity={activity} forTeachers={false} />);
     expect(screen.queryByText(/Most people would say:/)).not.toBeInTheDocument();
     expect(screen.getAllByText('Probably real').length).toBe(activity.items.length);
     view.unmount();
-    renderInLesson(4, <ActivityOnPaper activity={activity} forTeachers />);
+    renderInLesson(13, <ActivityOnPaper activity={activity} forTeachers />);
     expect(screen.getAllByText(/Most people would say:/)).toHaveLength(activity.items.length);
   });
 });
 
-describe('train-model (Lesson 2)', () => {
+describe('train-model (Lesson 3)', () => {
   const label = async (user: ReturnType<typeof userEvent.setup>, description: string, choice: 'Healthy' | 'Sick') =>
     user.click(within(screen.getByRole('group', { name: `Label for: ${description}` })).getByRole('button', { name: choice }));
   const score = () => screen.getByTestId('tw-dw-tm-score');
@@ -66,7 +72,7 @@ describe('train-model (Lesson 2)', () => {
   it('trains on the device and gets 4 of 6, 6 of 6, 0 of 2 and 8 of 8 when labelled like the gardener', async () => {
     const user = userEvent.setup();
     const checkNetwork = noNetwork();
-    const { saved } = renderInLesson(2, <ActivityPlayer activity={dwActivity(2, 'train-model')} />);
+    const { saved } = renderInLesson(3, <ActivityPlayer activity={dwActivity(3, 'train-model')} />);
 
     const train = () => screen.getByRole('button', { name: 'Train the model' });
     expect(train()).toBeDisabled();
@@ -103,7 +109,7 @@ describe('train-model (Lesson 2)', () => {
 
   it('opens any round at any time, and follows the learner’s labels in free play', async () => {
     const user = userEvent.setup();
-    renderInLesson(2, <ActivityPlayer activity={dwActivity(2, 'train-model')} />);
+    renderInLesson(3, <ActivityPlayer activity={dwActivity(3, 'train-model')} />);
     const rounds = screen.getByRole('navigation', { name: 'Rounds' });
     await user.click(within(rounds).getByRole('button', { name: /Try it yourself/ }));
     expect(within(rounds).getByRole('button', { name: /Try it yourself/ })).toHaveAttribute('aria-current', 'step');
@@ -116,18 +122,18 @@ describe('train-model (Lesson 2)', () => {
   });
 
   it('on paper, lists the cards with their numbers, and for teachers the gardener’s labels and each round’s result', () => {
-    const activity = dwActivity(2, 'train-model');
-    renderInLesson(2, <ActivityOnPaper activity={activity} forTeachers />);
+    const activity = dwActivity(3, 'train-model');
+    renderInLesson(3, <ActivityOnPaper activity={activity} forTeachers />);
     expect(screen.getAllByRole('table')).toHaveLength(2);
     expect(screen.getByText('Labelled like the gardener, the model gets 4 of 6 right.')).toBeInTheDocument();
     expect(screen.getByText('Labelled like the gardener, the model gets 8 of 8 right.')).toBeInTheDocument();
   });
 });
 
-describe('compare-results (Lesson 3)', () => {
+describe('compare-results (Lesson 8)', () => {
   it('shows each group’s numbers, says "Not quite" or "Correct" for the tap, then asks whose examples were missing', async () => {
     const user = userEvent.setup();
-    const { saved } = renderInLesson(3, <ActivityPlayer activity={dwActivity(3, 'compare-results')} />);
+    const { saved } = renderInLesson(8, <ActivityPlayer activity={dwActivity(8, 'compare-results')} />);
     expect(screen.getByText('19 of 20 right')).toBeInTheDocument();
     expect(screen.queryByRole('radiogroup', { name: /Whose examples/ })).not.toBeInTheDocument();
 
@@ -146,10 +152,10 @@ describe('compare-results (Lesson 3)', () => {
   });
 });
 
-describe('check-claim (Lesson 5)', () => {
+describe('check-claim (Lesson 14)', () => {
   it('opens the sources in any order with a tap, and never locks the question behind them', async () => {
     const user = userEvent.setup();
-    const { saved } = renderInLesson(5, <ActivityPlayer activity={dwActivity(5, 'check-claim')} />);
+    const { saved } = renderInLesson(14, <ActivityPlayer activity={dwActivity(14, 'check-claim')} />);
     // The question is there before any source is opened.
     expect(screen.getByRole('radiogroup', { name: 'What do the other sources say about the bridge?' })).toBeInTheDocument();
     expect(screen.getByText('Sources opened: 0 of 4')).toBeInTheDocument();
@@ -170,10 +176,10 @@ describe('check-claim (Lesson 5)', () => {
   });
 });
 
-describe('spot-signs (Lesson 6)', () => {
+describe('spot-signs (the retired scams draft)', () => {
   it('makes every part of every message a button that shows what it is, with no score and "Show all signs" always there', async () => {
     const user = userEvent.setup();
-    const { saved } = renderInLesson(6, <ActivityPlayer activity={dwActivity(6, 'spot-signs')} />);
+    const { saved } = renderInLesson(SCAMS, <ActivityPlayer activity={dwActivity(SCAMS, 'spot-signs')} />);
     const fee = screen.getByRole('button', { name: 'To get it, pay a small delivery fee.' });
     expect(fee).toHaveAttribute('aria-pressed', 'false');
     await user.click(fee);
@@ -196,11 +202,11 @@ describe('spot-signs (Lesson 6)', () => {
   });
 });
 
-describe('ask-tool (Lesson 8)', () => {
+describe('ask-tool (the retired prompting draft)', () => {
   it('is always labelled as a pretend tool with pre-written answers, and never reaches the network', async () => {
     const user = userEvent.setup();
     const checkNetwork = noNetwork();
-    const { saved } = renderInLesson(8, <ActivityPlayer activity={dwActivity(8, 'ask-tool')} />);
+    const { saved } = renderInLesson(ASK, <ActivityPlayer activity={dwActivity(ASK, 'ask-tool')} />);
     expect(screen.getByText('Pretend tool')).toBeInTheDocument();
     expect(screen.getByText(/It is not a real AI, and nothing you choose is sent anywhere/)).toBeInTheDocument();
     expect(screen.queryByRole('textbox')).not.toBeInTheDocument();
@@ -219,10 +225,10 @@ describe('ask-tool (Lesson 8)', () => {
   });
 });
 
-describe('chart-check (Lesson 9)', () => {
+describe('chart-check (the retired numbers draft)', () => {
   it('draws each scale with every bar’s number on it, named for screen readers, and keeps the question open', async () => {
     const user = userEvent.setup();
-    const { saved } = renderInLesson(9, <ActivityPlayer activity={dwActivity(9, 'chart-check')} />);
+    const { saved } = renderInLesson(NUMBERS, <ActivityPlayer activity={dwActivity(NUMBERS, 'chart-check')} />);
     const chart = screen.getByRole('img', { name: /Bananas sold each day/ });
     expect(chart).toHaveAccessibleName('Bar chart. Bananas sold each day. Stall A: 52 and Stall B: 50. The scale goes from 49 to 53.');
     expect(within(chart).getByText('52')).toBeInTheDocument();
@@ -235,10 +241,10 @@ describe('chart-check (Lesson 9)', () => {
   });
 });
 
-describe('design-plan (Lesson 11)', () => {
+describe('design-plan (Lesson 17)', () => {
   it('plans in steps the learner can go back to, saves the writing like other writing, and treats every design choice as fine', async () => {
     const user = userEvent.setup();
-    const { saved } = renderInLesson(11, <ActivityPlayer activity={dwActivity(11, 'design-plan')} />);
+    const { saved } = renderInLesson(17, <ActivityPlayer activity={dwActivity(17, 'design-plan')} />);
 
     await user.click(screen.getByRole('radio', { name: 'A problem many people share in a community I know' }));
     await user.type(screen.getByRole('textbox', { name: 'Your problem' }), 'Rubbish by the river');
@@ -268,18 +274,18 @@ describe('design-plan (Lesson 11)', () => {
   });
 
   it('says nothing is saved while looking around', () => {
-    renderInLesson(11, <ActivityPlayer activity={dwActivity(11, 'design-plan')} />, 'look-around');
+    renderInLesson(17, <ActivityPlayer activity={dwActivity(17, 'design-plan')} />, 'look-around');
     expect(screen.getByText("You're looking around, so your plan isn't saved.")).toBeInTheDocument();
   });
 });
 
 describe('on paper', () => {
   it.each([
-    [3, 'compare-results'],
-    [5, 'check-claim'],
-    [8, 'ask-tool'],
-    [9, 'chart-check'],
-  ] as const)('Lesson %i (%s) marks the right answers only for teachers, with a tick and words', (number, type) => {
+    ['Lesson 8', 8, 'compare-results'],
+    ['Lesson 14', 14, 'check-claim'],
+    ['Lesson 11', 11, 'ask-tool'],
+    ['the retired numbers draft', NUMBERS, 'chart-check'],
+  ] as const)('%s (%s) marks the right answers only for teachers, with a tick and words', (_name, number, type) => {
     const activity = dwActivity(number, type);
     const { view } = renderInLesson(number, <ActivityOnPaper activity={activity} forTeachers={false} />);
     expect(screen.queryByText('Correct answer')).not.toBeInTheDocument();
@@ -288,10 +294,10 @@ describe('on paper', () => {
     expect(screen.getAllByText('Correct answer').length).toBeGreaterThan(0);
   });
 
-  it('gives Lessons 6 and 11 a paper version too', () => {
-    renderInLesson(6, <ActivityOnPaper activity={dwActivity(6, 'spot-signs')} forTeachers />);
+  it('gives spot-signs and design-plan a paper version too', () => {
+    renderInLesson(SCAMS, <ActivityOnPaper activity={dwActivity(SCAMS, 'spot-signs')} forTeachers />);
     expect(screen.getByText('Message D, on the Stonebridge Learning Centre notice board')).toBeInTheDocument();
-    renderInLesson(11, <ActivityOnPaper activity={dwActivity(11, 'design-plan')} forTeachers={false} />);
+    renderInLesson(17, <ActivityOnPaper activity={dwActivity(17, 'design-plan')} forTeachers={false} />);
     expect(screen.getByText('3. What it learns from')).toBeInTheDocument();
   });
 });

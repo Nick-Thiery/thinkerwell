@@ -36,10 +36,10 @@ const pictureUrls = new Map(
  * name, as the brand book asks. Icons come from the design system's set.
  */
 export const SECTION_LOOKS: Readonly<Record<DigitalWorldSectionId, SectionLook>> = {
-  'how-ai-works': { tone: 'history', icon: 'Lightbulb' },
-  'check-what-you-see': { tone: 'geography', icon: 'Eye' },
-  'use-tools-wisely': { tone: 'culture', icon: 'Hand' },
-  'ai-where-you-live': { tone: 'civics', icon: 'Users' },
+  'thinking-machines': { tone: 'history', icon: 'Lightbulb' },
+  'who-builds-ai': { tone: 'geography', icon: 'Globe' },
+  'ai-in-daily-life': { tone: 'culture', icon: 'Users' },
+  'truth-and-power': { tone: 'civics', icon: 'Scale' },
 };
 
 const coursePath = (sectionId?: string) => (sectionId ? `${COURSE_PATH}#${sectionId}` : COURSE_PATH);
@@ -49,7 +49,7 @@ export const digitalWorld = createCourseContent(courseJson as unknown as Digital
   pictureUrls,
   // No section checks or certificates are drafted yet.
   hasSectionChecks: false,
-  sectionLook: (sectionId) => SECTION_LOOKS[sectionId as DigitalWorldSectionId] ?? SECTION_LOOKS['how-ai-works'],
+  sectionLook: (sectionId) => SECTION_LOOKS[sectionId as DigitalWorldSectionId] ?? SECTION_LOOKS['thinking-machines'],
   // No Educators page for a preview course: a teacher guide goes back to the course map.
   coursePath,
 });
