@@ -1,0 +1,321 @@
+{
+  "id": "dw-ai-at-school",
+  "oldId": null,
+  "number": 11,
+  "section": "ai-in-daily-life",
+  "title": "AI at school: help or shortcut?",
+  "essentialQuestion": "When does an AI tool help you learn, and when does it get in the way?",
+  "learningGoal": "Explain how AI chat tools can help or harm learning, and suggest fair rules for a school.",
+  "estimatedMinutes": [
+    30,
+    50
+  ],
+  "warmUp": {
+    "question": "Which use of an AI tool helps a student learn more?",
+    "options": [
+      "It explains a hard idea",
+      "It writes the whole answer",
+      "Not sure"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "Which student used the helper to learn? Which student used it as a shortcut?",
+    "cards": [
+      {
+        "type": "cases",
+        "title": "Three students and the Brightwater homework helper (a pretend tool)",
+        "cases": [
+          {
+            "name": "Mira",
+            "body": "Mira does not understand fractions. She asks the helper to explain them in a different way, with an example about sharing bread. Then she does the practice questions herself."
+          },
+          {
+            "name": "Jonah",
+            "body": "Jonah asks the helper to write his whole essay about rivers. He hands it in as his own work. The next day, he can't answer his teacher's questions about it."
+          },
+          {
+            "name": "Ayla",
+            "body": "Ayla asks the helper to translate a science page into a language she reads well. One word looks strange, so she checks it with her teacher."
+          }
+        ]
+      },
+      {
+        "type": "items",
+        "title": "Brightwater School's draft rules for the homework helper",
+        "items": [
+          "Ask for a hint before you ask for an answer.",
+          "Say when you used the helper, and what for.",
+          "Check facts in a book or with a teacher.",
+          "Never type your name, address or other private information.",
+          "Everyone can use the helper on the school's laptops, not only students with their own phone."
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "type": "ask-tool",
+    "stage": "read",
+    "placement": "after-evidence",
+    "title": "Try the pretend helper",
+    "toolLabel": "Pretend tool. Its answers were written in advance for this lesson. It is not a real AI, and nothing you choose is sent anywhere.",
+    "instructions": "First, choose the request that would help Jonah learn. Then check an answer from the tool.",
+    "improve": {
+      "start": {
+        "prompt": "Write my answer: why do many towns grow near rivers?",
+        "answer": "Many towns grow near rivers because rivers give people water, food and a way to travel. Here is your finished answer. You can hand it in."
+      },
+      "question": "Which request would help Jonah learn the most?",
+      "options": [
+        {
+          "prompt": "Write a longer answer for me.",
+          "answer": "Many towns grow near rivers. Rivers give water for drinking and farming. They give fish to eat. Boats can carry people and goods. Here is your longer answer.",
+          "correct": false,
+          "feedback": "Not quite. A longer answer is still the tool's work. Jonah does not have to think."
+        },
+        {
+          "prompt": "Give me a hint. Then let me try first.",
+          "answer": "Hint: think about what people need every day. What can a river give them? Write your idea. Then I will ask you a question about it.",
+          "correct": true,
+          "feedback": "Yes. A hint helps Jonah think. He still does the learning himself."
+        },
+        {
+          "prompt": "Change the words so it looks like mine.",
+          "answer": "Here is the same answer in new words. Towns often start beside rivers, because rivers bring water, food and travel.",
+          "correct": false,
+          "feedback": "Not quite. This hides who did the work. That is not honest, and Jonah learns nothing new."
+        }
+      ]
+    },
+    "check": {
+      "prompt": "When was the old bridge in Brightwater built?",
+      "answer": "The old bridge in Brightwater was built in 1850. I am completely sure about this.",
+      "trustedSource": {
+        "name": "The Brightwater town history book",
+        "says": "The old bridge was built in 1920. Before that, people crossed the river by boat."
+      },
+      "question": "The tool sounds very sure. What should you do?",
+      "options": [
+        {
+          "text": "Trust it, because it sounds sure",
+          "correct": false,
+          "feedback": "Not quite. A tool can sound sure and still be wrong. Check a trusted source."
+        },
+        {
+          "text": "Ask the tool to say it again",
+          "correct": false,
+          "feedback": "Not quite. The tool may give the same wrong answer. Check a different source."
+        },
+        {
+          "text": "Check the town history book",
+          "correct": true,
+          "feedback": "Yes. The book says 1920. The tool made up a date, even though it sounded sure."
+        }
+      ]
+    },
+    "saves": "The learner's choices, with the lesson's other answers. Nothing is typed into a real tool.",
+    "offline": "Every request and answer is written in the lesson file. No AI model runs, and nothing is sent anywhere."
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Schools are deciding how to use AI",
+        "text": "AI chat tools can answer questions, explain ideas and even write whole essays. Hundreds of millions of people use them, including many students. So schools and families face a new question: how should students use these tools? In 2023, UNESCO, the United Nations organisation for education, asked more than 450 schools and universities. Fewer than 1 in 10 had rules or formal guidance about AI tools. Later that year, UNESCO wrote guidance for countries. It said they should protect students' privacy, and think about a minimum age of 13 for using these tools in class.",
+        "simpler": "AI chat tools can answer questions. They can even write a whole essay. Many students use them. So schools must decide how students should use them. In 2023, UNESCO asked over 450 schools and universities. UNESCO is the United Nations group for education. Fewer than 1 in 10 had guidance about AI. Then UNESCO wrote guidance for countries. Protect students' privacy, it said. Think about 13 as the youngest age to use AI in class."
+      },
+      {
+        "heading": "A tool can help you learn",
+        "text": "Used well, an AI tool can work a bit like a tutor. It can explain a hard idea in simpler words, give you extra practice or translate a page into a language you know. This could help students who have no tutor. At the made-up Brightwater School, Mira asks the homework helper to explain fractions in a new way. Then she does the practice herself. In 2024, researchers tested an AI tutor for English with school students in Nigeria. The students used it for six weeks, and teachers guided them. Their English improved much more than other students' did.",
+        "simpler": "An AI tool can be a bit like a tutor. It can explain a hard idea in easy words. It can give you more practice. It can translate a page. This can help students with no tutor. At Brightwater School, Mira asks the helper about fractions. Then she does the practice herself. In 2024, students in Nigeria tried an AI tutor for six weeks. Teachers helped them. Their English got much better."
+      },
+      {
+        "heading": "A tool can also be a shortcut",
+        "text": "An AI tool can also become a shortcut that gets in the way. In a study in Türkiye, nearly 1,000 high school students practised maths. Some used a chat tool that gave full answers. They did better in practice, but worse on a test without the tool. Students whose tool gave hints did about as well as students with no tool. There are other risks too. A tool can be wrong and still sound sure. Not every student has a device. So Brightwater's draft rules ask for hints first, honest work and checks with a teacher.",
+        "simpler": "A tool can also be a shortcut. Then you learn less. In one study, nearly 1,000 students practised maths. Some had a tool that gave full answers. Later they did a test with no tool. They did worse. Other students had a tool that gave hints. They did fine. A tool can also be wrong but sound sure. And not everyone has a device. So Brightwater's rules say: hints first, honest work, and check with a teacher."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "guidance",
+        "definition": "Advice from a group about how something should be done.",
+        "example": "UNESCO wrote guidance about AI tools in schools."
+      },
+      {
+        "word": "privacy",
+        "definition": "Keeping your own information safe from people who should not see it.",
+        "example": "Brightwater's rules protect privacy: never type your address into the helper."
+      },
+      {
+        "word": "tutor",
+        "definition": "A person who helps one student, or a few, learn something.",
+        "example": "The helper explained fractions to Mira, a bit like a tutor."
+      },
+      {
+        "word": "shortcut",
+        "definition": "A quicker way that skips some of the steps.",
+        "example": "Jonah used the helper as a shortcut, so he learned nothing about rivers."
+      },
+      {
+        "word": "honest",
+        "forms": [
+          "honesty"
+        ],
+        "definition": "Telling the truth, including about who did the work.",
+        "example": "An honest student says when they used the helper."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "skill": "evidence",
+        "question": "In the maths study, what happened when the tool gave full answers?",
+        "options": [
+          {
+            "text": "They did best of all on the test",
+            "correct": false,
+            "feedback": "Not quite. They did well in practice, but not on the test. Read the third section."
+          },
+          {
+            "text": "They did worse on the test",
+            "correct": true,
+            "feedback": "Yes. The tool did the work in practice. On a test without it, they did worse."
+          },
+          {
+            "text": "They never used the tool",
+            "correct": false,
+            "feedback": "Not quite. They used it a lot in practice. Read the third section again."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "skill": "apply",
+        "question": "Which rule would help students learn the most?",
+        "options": [
+          {
+            "text": "Hand in the tool's answers",
+            "correct": false,
+            "feedback": "Not quite. Then the tool does the thinking. Look at Brightwater's draft rules."
+          },
+          {
+            "text": "Only the fastest students may use it",
+            "correct": false,
+            "feedback": "Not quite. That is not fair, and it does not help anyone learn. Look at the rules again."
+          },
+          {
+            "text": "Ask for a hint before an answer",
+            "correct": true,
+            "feedback": "Yes. A hint helps you think, so you still do the learning yourself."
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "Which Brightwater rule do you think matters most? Why?",
+        "placeholder": "The rule that matters most is ... because ...",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Brightwater School wants help with its rules for the homework helper. Write two rules, and explain how each one helps students learn or keeps things fair.",
+    "sentenceStarters": [
+      "My first rule is ...",
+      "This rule helps because ...",
+      "My second rule is ...",
+      "This is fair because ...",
+      "In the lesson, ___ shows that ..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I wrote two rules for Brightwater School.",
+      "I explained how each rule helps students learn or keeps things fair.",
+      "I used evidence from the lesson."
+    ],
+    "example": "My first rule is: ask for a hint before you ask for an answer. This rule helps because students still do the thinking. In the lesson, the study in Türkiye shows that students who got full answers did worse on a test without the tool. My second rule is: everyone can use the helper on the school laptops. This is fair because not every student has a phone at home. Ayla used it to translate a page, and then she checked a word with her teacher."
+  },
+  "speak": {
+    "partnerTask": "Your partner names one way a student could use the homework helper. You say “help” or “shortcut” and give one reason. Then switch.",
+    "independentTask": "Say out loud one way an AI tool can help learning, one way it can get in the way, and one rule you would make."
+  },
+  "watch": {
+    "youtubeId": "gmUHEvrpYoU",
+    "title": "What are AI Chatbots?",
+    "channel": "Common Sense Education",
+    "durationSeconds": 200,
+    "why": "This short cartoon explains why AI chat tools are made to sound like people, which can make their answers feel more true than they are.",
+    "beforeQuestion": "Why do you think an AI chat tool can sound like a real person?",
+    "afterQuestion": "Why should a student check what a chat tool says, even when it sounds sure?",
+    "summary": "This short cartoon is about AI chatbots. A chatbot is a computer program you can chat with in writing. It is a bit like sending messages to a person. The video explains what chatbots are and how they work. It also asks why many of them are made to sound like people. A chatbot can sound friendly and human. This can make it feel like a friend. It can also make its answers feel more true than they are. But a chatbot is not a person. It does not really know you, and it can be wrong. So notice how a chatbot makes you feel. And check what it says before you trust it.",
+    "keyPoints": [
+      "Many AI chatbots are made to sound like people.",
+      "Sounding human and sure does not make an answer true.",
+      "Notice how a chatbot makes you feel, and check what it says."
+    ],
+    "contentNote": "An American cartoon, 3 minutes 20 seconds (as listed on Common Sense Education's video page). The title and channel were checked with YouTube's oEmbed on 31 October 2026. The summary was written from Common Sense Education's description of the video (why chatbots are designed to sound so human-like, and how that might affect us) and the aims of the lesson that uses it, not from watching it. Someone on the team must watch it and check the summary before use. Learners can read the written summary instead.",
+    "replacementSuggestion": null
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "An AI tool helps learning when ... It gets in the way when ...",
+        "required": true
+      },
+      {
+        "text": "One rule about AI tools that every school should have is ...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 11. You weighed how AI tools can help or get in the way at school, and wrote fair rules for one."
+  },
+  "visual": {
+    "type": "diagram",
+    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW11.svg is only a planned path. Two paths start from the same homework card, side by side. The left path is labelled “Help”: a speech bubble “Give me a hint”, then a drawn student writing, then a small test sheet with a tick, labelled “You learn”. The right path is labelled “Shortcut”: a speech bubble “Write my answer”, then a finished page being handed in, then a test sheet with a question mark, labelled “Hard without the tool”. A small tag on each bubble says “Pretend tool”. Words carry every meaning; simple drawn figures only, no real faces.",
+    "alt": "Two paths from the same homework. Asking for a hint leads to the student learning; asking for the whole answer leads to a test that is hard without the tool.",
+    "src": "visuals/DW11.svg"
+  },
+  "sources": [
+    {
+      "label": "UN News (2023): UNESCO calls for regulations on AI use in schools (data privacy, an age limit of 13 in the classroom)",
+      "url": "https://news.un.org/en/story/2023/09/1140477"
+    },
+    {
+      "label": "UNESCO (2023): Governments must quickly regulate generative AI in schools (press release on the Guidance for generative AI in education and research; GCED Clearinghouse copy)",
+      "url": "https://gcedclearinghouse.org/en/node/129359"
+    },
+    {
+      "label": "UNESCO (2023): Survey, less than 10% of schools and universities have formal guidance on AI (GCED Clearinghouse copy)",
+      "url": "https://gcedclearinghouse.org/en/node/130058"
+    },
+    {
+      "label": "Knowledge at Wharton (2024): Without guardrails, generative AI can harm education (Bastani and others, high school maths in Türkiye)",
+      "url": "https://knowledge.wharton.upenn.edu/article/without-guardrails-generative-ai-can-harm-education"
+    },
+    {
+      "label": "World Bank Blogs (2025): From chalkboards to chatbots, transforming learning in Nigeria, one prompt at a time",
+      "url": "https://blogs.worldbank.org/en/education/From-chalkboards-to-chatbots-Transforming-learning-in-Nigeria"
+    }
+  ],
+  "sensitiveNotes": [
+    "Don't ask learners whether or how they have used AI tools for schoolwork, and don't ask them to type questions into a real AI tool in class. UNESCO's 2023 guidance suggests countries consider an age limit of 13 for these tools in the classroom, and many learners are younger. The pretend tool keeps everyone offline.",
+    "Some learners have no device or internet where they live. Talk about access as a fairness question for schools, never as something to compare between learners."
+  ],
+  "educatorNotes": [
+    "The Brightwater students, the pretend tool's answers and the 1850 bridge date are made up; the wrong date is written on purpose so learners practise checking. The two studies are real and simplified (see sources): nearly 1,000 high school maths students in Türkiye (the hint-giving tool had teacher input), and a six-week pilot in Benin City, Nigeria, in June and July 2024 with teacher support (gains of about 0.3 standard deviations). Paper version of the activity: read the requests and answers aloud and let learners choose.",
+    "UNESCO's wording differs between sources: UN News says the guidance suggests “considering an age limit of 13” for classroom use; UNESCO's press release says it “sets an age limit of 13”. The lesson says “think about” 13 as the youngest age. Check against the guidance itself before teaching."
+  ],
+  "changes": [
+    "Replaces the draft “Asking an AI tool good questions” (October 2026, social studies rebuild), now retired/DW08-asking-good-questions.json. The lesson moves from prompting skills to a social studies question: how schools and families decide about AI tools, who benefits, and what the risks are.",
+    "Keeps the ask-tool activity (a labelled pretend tool with pre-written answers, including a sure-but-wrong answer to check against a book), reframed around learning rather than better prompts, and reuses its video, Common Sense Education's “What are AI Chatbots?”.",
+    "New real evidence: UNESCO's 2023 survey and guidance, a study in Türkiye and a 2024 pilot in Nigeria. Learner text names UNESCO and the two countries but no researchers or companies; check this fits spec section 5.3 for the social studies rebuild.",
+    "The Write task asks for rules for a made-up school, not about learners' own use of AI.",
+    "visual.src points to a picture that doesn't exist yet.",
+    "Needs review by an AI researcher (the studies' simplifications), by Justin for level and tone, and by a partner educator for the sensitive notes."
+  ]
+}
