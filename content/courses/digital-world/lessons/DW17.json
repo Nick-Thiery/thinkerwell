@@ -1,8 +1,8 @@
 {
   "id": "dw-design-an-ai-helper",
   "oldId": null,
-  "number": 11,
-  "section": "ai-where-you-live",
+  "number": 17,
+  "section": "truth-and-power",
   "title": "Project: design an AI helper",
   "essentialQuestion": "How would you design an AI helper that is useful, fair and safe?",
   "learningGoal": "Plan an AI helper for a problem many people share: decide if AI should be used, what it learns from, what could go wrong, and how to improve it after feedback.",
@@ -136,7 +136,7 @@
       },
       {
         "heading": "Plan what it learns and what could go wrong",
-        "text": "Next, a designer plans what the helper will learn from. The club's bin helper would learn from photos of rubbish that club members label “plastic” or “paper”. This is its training data. As you learned in Lesson 3, a tool can fail for anything missing from its examples, so the club adds photos of crushed and dirty items too. Then the designer lists the risks. A camera near the bins must never film people's faces, because that would break their privacy. Finally, the designer decides who checks the helper. The club will look inside the bins every Friday to see if the helper is working.",
+        "text": "Next, a designer plans what the helper will learn from. The club's bin helper would learn from photos of rubbish that club members label “plastic” or “paper”. This is its training data. As you learned in Lesson 8, a tool can fail for anything missing from its examples, so the club adds photos of crushed and dirty items too. Then the designer lists the risks. A camera near the bins must never film people's faces, because that would break their privacy. Finally, the designer decides who checks the helper. The club will look inside the bins every Friday to see if the helper is working.",
         "simpler": "Next, plan what the helper learns from. The bin helper learns from photos of rubbish. Club members label each photo. This is its training data. A tool can fail when examples are missing. So the club adds photos of crushed rubbish too. Then list the risks. The camera must never film faces. That would break people's privacy. Last, decide who checks it. The club looks in the bins every Friday."
       },
       {
@@ -283,7 +283,7 @@
         "required": false
       }
     ],
-    "completionMessage": "You finished Lesson 11. You planned an AI helper, decided if AI should be used, and improved your plan after feedback."
+    "completionMessage": "You finished Lesson 17. You planned an AI helper, decided if AI should be used, and improved your plan after feedback."
   },
   "visual": {
     "type": "diagram",
