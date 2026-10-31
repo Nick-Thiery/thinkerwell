@@ -214,7 +214,7 @@ From two briefs of Justin's. **Decision: public pages describe Thinkerwell as a 
 
 ### The contact form (October 2026; `docs/notes/contact-form.md`)
 
-**Decision: one contact form, `/contact`, for everyone**, linked from the footer, For organisations and the Educators page: a topic, a name, one way to reply (an email address or a WhatsApp number with its country code) and a message. It posts to this site's own `/api/contact`, which emails the team at hello@thinkerwell.app through Resend; nothing is stored. It asks nothing about learners and says not to include their personal information. It is the one place the site sends what someone typed, and only what an adult chose to send to the team, so it sits outside rule 1's learner data. Until Resend is set up it says it couldn't send and gives the email address.
+**Decision: one contact form, `/contact`, for everyone**, linked from the footer, For organisations and the Educators page: a topic, a name, one way to reply (an email address or a WhatsApp number with its country code) and a message. It posts to this site's own `/api/contact`, which emails the team at thinkerwell.hello@gmail.com through Resend; nothing is stored. It asks nothing about learners and says not to include their personal information. It is the one place the site sends what someone typed, and only what an adult chose to send to the team, so it sits outside rule 1's learner data. Until Resend is set up it says it couldn't send and gives the email address.
 
 ### The before-and-after check (October 2026; `docs/notes/pilot-check.md`)
 

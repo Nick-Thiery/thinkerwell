@@ -15,7 +15,7 @@
  *   502  Resend didn't take it
  *   503  not set up: no RESEND_API_KEY or no CONTACT_FROM_EMAIL
  *
- * The destination is fixed (CONTACT_TO_EMAIL, else hello@thinkerwell.app) and
+ * The destination is fixed (CONTACT_TO_EMAIL, else thinkerwell.hello@gmail.com) and
  * never comes from the request. The enquiry is sent and not kept: nothing is
  * written to a database or a log, and Resend's error text never reaches the
  * browser. A connection's address is held in memory, only to count its
@@ -141,7 +141,7 @@ export async function handleContact(request: Request, deps: ContactDeps): Promis
 
   const email: Email = {
     from: env.CONTACT_FROM_EMAIL,
-    to: env.CONTACT_TO_EMAIL || CONTACT_EMAIL || 'hello@thinkerwell.app',
+    to: env.CONTACT_TO_EMAIL || CONTACT_EMAIL || 'thinkerwell.hello@gmail.com',
     ...enquiryEmail(checked.value, checked.kind, now),
   };
   try {
