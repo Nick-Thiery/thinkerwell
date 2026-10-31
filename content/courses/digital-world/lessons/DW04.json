@@ -1,0 +1,361 @@
+{
+  "id": "dw-language-models",
+  "oldId": null,
+  "number": 4,
+  "section": "thinking-machines",
+  "title": "What a large language model is",
+  "essentialQuestion": "How do chatbots write answers, and why can they sound sure and still be wrong?",
+  "learningGoal": "Explain how a large language model writes by predicting the next word, and why its answers need checking.",
+  "estimatedMinutes": [
+    30,
+    50
+  ],
+  "warmUp": {
+    "question": "What word comes next? “Every morning, I drink a cup of ___.”",
+    "options": [
+      "Tea",
+      "Water",
+      "Something else",
+      "Not sure"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "Which word would the model most likely pick? Which of the helper's answers needs checking most?",
+    "cards": [
+      {
+        "type": "table",
+        "title": "The Lakeside word game: what came after “a cup of”",
+        "columns": [
+          "Next word",
+          "Times in the practice sentences"
+        ],
+        "rows": [
+          [
+            "tea",
+            "6"
+          ],
+          [
+            "water",
+            "3"
+          ],
+          [
+            "rice",
+            "1"
+          ]
+        ]
+      },
+      {
+        "type": "cases",
+        "title": "Three answers from the Lakeside helper, a pretend chatbot",
+        "cases": [
+          {
+            "name": "Explain an idea",
+            "body": "A learner asked, “What is a map scale?” The helper gave a short, clear explanation. A teacher checked it, and it was right."
+          },
+          {
+            "name": "Translate a notice",
+            "body": "The helper turned a short notice into another language. A volunteer who speaks that language fixed two words."
+          },
+          {
+            "name": "Name a book",
+            "body": "A learner asked for a book about the history of rivers. The helper named “The Long Blue Road” by Pella Raskin, from 2009. It sounded very sure. The librarian could not find this book anywhere."
+          }
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "type": "sort",
+    "stage": "read",
+    "placement": "after-evidence",
+    "title": "Can an LLM do this?",
+    "instructions": "Put each sentence into a group. There is no score. After you place one, you can see what most people would say and why.",
+    "groups": [
+      {
+        "id": "can",
+        "label": "An LLM can do this"
+      },
+      {
+        "id": "cannot",
+        "label": "An LLM can't do this"
+      },
+      {
+        "id": "hard",
+        "label": "Hard to say"
+      }
+    ],
+    "items": [
+      {
+        "id": "next-word",
+        "text": "Write the next word, again and again",
+        "suggested": "can",
+        "feedback": "Most people would say it can. This is how an LLM writes every answer."
+      },
+      {
+        "id": "explain",
+        "text": "Explain an idea in simpler words",
+        "suggested": "can",
+        "feedback": "Most people would say it can. But a person should still check that the explanation is right."
+      },
+      {
+        "id": "translate",
+        "text": "Translate a sentence into another language",
+        "suggested": "can",
+        "feedback": "Most people would say it can. It is better in languages with lots of writing online."
+      },
+      {
+        "id": "always-true",
+        "text": "Promise that every fact it writes is true",
+        "suggested": "cannot",
+        "feedback": "Most people would say it can't. It picks words that sound right, so it can make things up."
+      },
+      {
+        "id": "feelings",
+        "text": "Feel happy or sad about your question",
+        "suggested": "cannot",
+        "feedback": "Most people would say it can't. It finds patterns in words. It does not have feelings like a person."
+      },
+      {
+        "id": "same-answer",
+        "text": "Give the same answer every time",
+        "suggested": "cannot",
+        "feedback": "Most people would say it can't promise this. It picks words partly by chance, so its answers can change."
+      },
+      {
+        "id": "sure-but-wrong",
+        "text": "Sound very sure about a wrong answer",
+        "suggested": "can",
+        "feedback": "Most people would say it can. Think of the book at Lakeside that does not exist."
+      },
+      {
+        "id": "poem",
+        "text": "Write a poem that people enjoy",
+        "suggested": "hard",
+        "feedback": "Any group can be right here. It can write a poem. Whether people enjoy it is up to each reader."
+      }
+    ],
+    "saves": "The group the learner chose for each sentence, with the lesson's other answers.",
+    "offline": "Everything is in the lesson file. There is no real chatbot, and nothing is sent anywhere."
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "It learns patterns from people's writing",
+        "text": "A chatbot is a computer program that you can chat with in writing. Many chatbots today are built on a large language model, or LLM. An LLM learns from a huge amount of text, such as books, articles and web pages. All of this text was written by people. From it, the model learns patterns, for example which words often come after other words. Look at the made-up word game at Lakeside Learning Centre. In its practice sentences, the words “a cup of” were followed by “tea” six times, “water” three times and “rice” once.",
+        "simpler": "A chatbot is a program you can chat with. You type, and it writes back. Many chatbots use a large language model, or LLM. An LLM learns from lots and lots of text, like books and web pages. People wrote all of it. The LLM finds patterns in the words. Look at the Lakeside word game. After “a cup of”, the word “tea” came most often."
+      },
+      {
+        "heading": "It writes one word at a time",
+        "text": "When you ask an LLM a question, it tries to predict the next word of its answer. Then it adds that word and predicts the one after it, again and again, very fast. Each word is picked partly by chance from the likely ones. So the Lakeside model would often say “tea”, but sometimes “water”. Chatbots like this became famous when the company OpenAI released ChatGPT on 30 November 2022. About two months later, one estimate said that 100 million people a month were using it, which made it the fastest-growing app ever. People use LLMs to explain ideas, translate and help with writing.",
+        "simpler": "You ask an LLM a question. It tries to predict the next word. Then it predicts the next one, again and again. It picks each word partly by chance. So the Lakeside model often says “tea”. Sometimes it says “water”. In November 2022, a company shared a chatbot called ChatGPT. Two months later, maybe 100 million people used it each month. No app had grown so fast before. People use LLMs to explain, translate and write."
+      },
+      {
+        "heading": "Sounding sure is not the same as being right",
+        "text": "An LLM predicts words that sound right. It does not check facts the way a careful person does. So it can make things up, and it can sound very confident even when it is wrong. At Lakeside, the pretend helper named a book that does not exist, and it sounded completely sure. It is also worth asking whose writing an LLM learned from. Most big LLMs learned mainly from English text. Researchers have found that they work much worse in languages with little writing online. Swahili, for example, has about 200 million speakers but little digital text. So check important answers with a trusted source, such as a library or a teacher.",
+        "simpler": "An LLM picks words that sound right. It does not check facts like a careful person. So it can make things up. It can sound confident and still be wrong. The Lakeside helper named a book that does not exist. Also ask: whose writing did it learn from? Most big LLMs learned mostly from English. They work worse in languages with little writing online. So check important answers. Use a trusted source, like a library or a teacher."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "chatbot",
+        "forms": [
+          "chatbots"
+        ],
+        "definition": "A computer program you can talk to by typing.",
+        "example": "The Lakeside helper is a pretend chatbot."
+      },
+      {
+        "word": "large language model",
+        "forms": [
+          "LLM",
+          "LLMs"
+        ],
+        "definition": "A program that learns word patterns from a huge amount of text.",
+        "example": "Many chatbots are built on a large language model."
+      },
+      {
+        "word": "pattern",
+        "forms": [
+          "patterns"
+        ],
+        "definition": "Something that happens again and again in a similar way.",
+        "example": "One pattern is that “tea” often comes after “a cup of”."
+      },
+      {
+        "word": "predict",
+        "forms": [
+          "predicts",
+          "prediction"
+        ],
+        "definition": "To guess what will come next.",
+        "example": "The model predicts that the next word is “tea”."
+      },
+      {
+        "word": "confident",
+        "definition": "Sounding or feeling very sure.",
+        "example": "The helper sounded confident, but the book did not exist."
+      },
+      {
+        "word": "source",
+        "forms": [
+          "sources"
+        ],
+        "definition": "A place where information comes from, like a book or a person.",
+        "example": "The library is a trusted source for checking a book's name."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "skill": "understand",
+        "question": "How does a large language model write an answer?",
+        "options": [
+          {
+            "text": "It predicts the next word, again and again",
+            "correct": true,
+            "feedback": "Yes. It adds one likely word at a time, using patterns from the text it learned from."
+          },
+          {
+            "text": "It copies the whole answer from one big book",
+            "correct": false,
+            "feedback": "Not quite. It learns patterns from lots of text. Read the second section again."
+          },
+          {
+            "text": "A person types each answer very fast",
+            "correct": false,
+            "feedback": "Not quite. The program writes the answer itself. Read the second section again."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "skill": "apply",
+        "question": "The Lakeside helper names a book, but the librarian can't find it. What should you do?",
+        "options": [
+          {
+            "text": "Trust it, because the helper sounded sure",
+            "correct": false,
+            "feedback": "Not quite. An LLM can sound confident and still be wrong. Read the third section."
+          },
+          {
+            "text": "Check a trusted source, like a library",
+            "correct": true,
+            "feedback": "Yes. An LLM can make things up, so a trusted source helps you find out what is true."
+          },
+          {
+            "text": "Use the book's name in your work anyway",
+            "correct": false,
+            "feedback": "Not quite. The book may not exist. Read the third section about checking."
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "LLMs learn from writing by many people. Should writers be asked before their writing is used? Why?",
+        "placeholder": "I think writers should / should not be asked because ...",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Explain how a chatbot writes an answer, and why you should check what it says. Use one example from Lakeside.",
+    "sentenceStarters": [
+      "A large language model learns from ...",
+      "It writes an answer by ...",
+      "It can be useful for ...",
+      "But it can be wrong because ...",
+      "Before I trust an answer, I ..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I explained how an LLM writes, one word at a time.",
+      "I gave one way it can be useful.",
+      "I gave one reason to check its answers."
+    ],
+    "example": "A large language model learns from a huge amount of text that people wrote. It writes an answer by predicting the next word, again and again. It can be useful for explaining ideas or translating short notices. But it can be wrong because it picks words that sound right. It does not check facts. At Lakeside, the helper named a book that does not exist, and it sounded sure. Before I trust an answer, I check a trusted source, like a library or a teacher."
+  },
+  "speak": {
+    "partnerTask": "Say the start of a sentence, like “Every morning, I drink a cup of ...”. Your partner predicts the next word. Then talk about why you each chose your word.",
+    "independentTask": "Explain out loud, in three sentences, how a chatbot writes an answer and why it can be wrong."
+  },
+  "watch": {
+    "youtubeId": "X-AWdfSFCHQ",
+    "title": "How Chatbots and Large Language Models Work",
+    "channel": "Code.org",
+    "durationSeconds": 440,
+    "why": "Two people who build AI tools show, with a simple example, how a language model writes by guessing what comes next.",
+    "beforeQuestion": "How do you think a chatbot knows what to write?",
+    "afterQuestion": "Why can a chatbot's answer be wrong, even when it sounds good?",
+    "summary": "In this video, two people who build AI tools explain how chatbots work. One works at the company that made ChatGPT. A large language model learns from a huge amount of text from the internet. The main idea is simple. It uses numbers about what is likely, worked out very fast. The video shows a small example. A program reads plays by the writer Shakespeare. It counts which letter often comes after each letter. When it writes this way, the words look strange. When it looks at longer pieces, like whole words, its guesses get much better. Big models use neural networks, which are loosely based on the brain. People also helped to make ChatGPT's answers better. But its answers still come from what is likely, so it can make mistakes.",
+    "keyPoints": [
+      "A large language model learns from a huge amount of text from the internet.",
+      "It writes by guessing what is likely to come next, again and again.",
+      "Its answers come from what is likely, so they can be wrong."
+    ],
+    "contentNote": "About 7 minutes 20 seconds (DCMP). Title and channel confirmed with YouTube's oEmbed on 31 October 2026; the channel is Code.org's, named “CodeAI” on YouTube. The summary was written from DCMP's description and a third-party, AI-made outline of the video (videohighlight.com), not from watching it, so check the Shakespeare example and the last minute before use. The speakers are introduced as OpenAI's chief technology officer and the chief executive of Runway, an AI video company, so the video names ChatGPT and these companies, and it opens with their hopes for AI. Someone on the team must watch it before use; learners can read the written summary instead.",
+    "replacementSuggestion": null
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Before I trust a chatbot's answer, I would ...",
+        "required": true
+      },
+      {
+        "text": "A question I have about whose writing LLMs learn from is ...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 4. You explained how a large language model writes, and why its answers need checking."
+  },
+  "visual": {
+    "type": "diagram",
+    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW04.svg is only a planned path. A diagram of next-word prediction. On the left, a sentence on a card: “Every morning, I drink a cup of ___”. An arrow points to three bars, each labelled with its word and its number from the Lakeside word game: “tea” (6, the longest bar), “water” (3) and “rice” (1). An arrow from “tea” goes back to the sentence, now ending “... a cup of tea”, with a small loop arrow labelled “Then it predicts the next word, again and again”. Below, a small speech bubble that says “The Long Blue Road, 2009” beside a library shelf with a question mark, labelled “Sounds sure, but check it”. Words and numbers carry every meaning; colour is never the only clue.",
+    "alt": "A diagram: after “a cup of”, the model weighs “tea” (6), “water” (3) and “rice” (1), picks a word, then predicts the next one again. Below, a sure-sounding answer names a book, with a reminder to check it.",
+    "src": "visuals/DW04.svg"
+  },
+  "sources": [
+    {
+      "label": "University of Guelph Library, Digital Learning Commons: What is an LLM?",
+      "url": "https://learningcommons.lib.uoguelph.ca/item/what-llm"
+    },
+    {
+      "label": "The Centre for Computing History: OpenAI launches ChatGPT (30 November 2022)",
+      "url": "https://computinghistory.org.uk/det/71180/OpenAI%20launches%20ChatGPT"
+    },
+    {
+      "label": "Reuters, republished by The Star (February 2023): ChatGPT sets record for fastest-growing user base, analyst note",
+      "url": "https://www.thestar.com.my/tech/tech-news/2023/02/02/chatgpt-sets-record-for-fastest-growing-user-base---analyst-note"
+    },
+    {
+      "label": "Stanford Report (2025): How AI is leaving non-English speakers behind",
+      "url": "https://news.stanford.edu/stories/2025/05/digital-divide-ai-llms-exclusion-non-english-speakers-research"
+    },
+    {
+      "label": "DCMP: How Chatbots and Language Models Work (Code.org video, description)",
+      "url": "https://dcmp.org/media/25569-how-chatbots-and-language-models-work"
+    }
+  ],
+  "sensitiveNotes": [
+    "Never ask learners whether they use chatbots, which ones, or what they have typed into one. Some have never used one; others may have shared private things. Use the Lakeside examples.",
+    "Don't ask which languages learners speak at home, or which language a tool got wrong for them. Let them say so if they want to."
+  ],
+  "educatorNotes": [
+    "There is no real chatbot in the app (docs/content/DIGITAL_WORLD_SPEC.md 5.6). The Lakeside word game, the helper's answers and the book “The Long Blue Road” are made up. Real LLMs work on pieces of words (tokens) and far more text; “one word at a time” is the lesson's simplification.",
+    "The 100 million figure is an estimate by analysts at UBS, using Similarweb data, reported by Reuters in February 2023; it is not an official count. Paper version of the activity: write the eight sentences on cards and sort them into “Can”, “Can't” and “Hard to say”; reward reasons."
+  ],
+  "changes": [
+    "New lesson (Digital World, October 2026, social studies rebuild). There is no Base44 original, so oldId is null.",
+    "Explains large language models at this age: patterns learned from people's writing, next-word prediction, useful but able to make things up, whose writing and which languages, and how fast ChatGPT spread.",
+    "Adds a sort activity (can, can't or hard to say). The Lakeside word game and pretend helper are made up; real names (OpenAI, ChatGPT) appear only in the Read text, the video and teacher notes.",
+    "visual.src points to a picture that doesn't exist yet.",
+    "Needs review by an AI researcher for accuracy (especially the next-word simplification and “picked partly by chance”), and by Justin for level and tone."
+  ]
+}
