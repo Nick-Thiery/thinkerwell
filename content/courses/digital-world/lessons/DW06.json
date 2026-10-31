@@ -1,0 +1,333 @@
+{
+  "id": "dw-cost-of-computing",
+  "oldId": null,
+  "number": 6,
+  "section": "who-builds-ai",
+  "title": "Chips, power and water",
+  "essentialQuestion": "What does AI need from the planet, and who pays for it?",
+  "learningGoal": "Explain what AI data centres need from the planet, and weigh their benefits and costs for the places where they are built.",
+  "estimatedMinutes": [
+    30,
+    50
+  ],
+  "warmUp": {
+    "question": "When you ask an AI tool a question, where do you think the answer is made?",
+    "options": [
+      "Inside the phone or laptop",
+      "In a big building far away",
+      "Somewhere in the sky",
+      "Not sure"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "What does each person hope for? What does each person worry about?",
+    "cards": [
+      {
+        "type": "cases",
+        "title": "A data centre is coming to Coralton",
+        "cases": [
+          {
+            "name": "The data centre company",
+            "body": "“We will build a huge building full of computers that run AI tools. About 1,000 people will help to build it over two years. About 50 people will work there after it opens. We will put solar panels on the roof.”"
+          },
+          {
+            "name": "Hana, who runs a small fish farm",
+            "body": "“My fish need clean water and power all day and all night. I worry that the data centre will use the town's water in the dry season, and that power cuts will get longer.”"
+          },
+          {
+            "name": "Leo, a young electrician",
+            "body": "“I hope to get work on the building site and learn new skills. Two years of work would help me a lot.”"
+          },
+          {
+            "name": "The town's water office",
+            "body": "“In the dry season, the river is low. The data centre needs water to cool its computers. It could use cleaned waste water instead of river water.”"
+          },
+          {
+            "name": "A member of the town council",
+            "body": "“The company will bring money to Coralton. But most people who use its AI tools live in other countries.”"
+          }
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "type": "sort",
+    "stage": "read",
+    "placement": "after-evidence",
+    "title": "Benefit or cost?",
+    "instructions": "Put each sentence about the Coralton data centre into a group. There is no score. After you place one, you can see what most people would say and why.",
+    "groups": [
+      {
+        "id": "benefit",
+        "label": "A benefit for the town"
+      },
+      {
+        "id": "cost",
+        "label": "A cost for the town"
+      },
+      {
+        "id": "both",
+        "label": "Both"
+      }
+    ],
+    "items": [
+      {
+        "id": "building-work",
+        "text": "About 1,000 people get building work for two years.",
+        "suggested": "benefit",
+        "feedback": "Most people would say a benefit. People earn money and learn skills, but the work ends when the building is finished."
+      },
+      {
+        "id": "long-jobs",
+        "text": "About 50 people get long-term jobs inside.",
+        "suggested": "both",
+        "feedback": "Any group can be right here. Long-term jobs help, but 50 is a small number for such a huge building."
+      },
+      {
+        "id": "electricity",
+        "text": "The data centre uses as much power as a small city.",
+        "suggested": "cost",
+        "feedback": "Most people would say a cost. The town must share its power, and more power may mean more pollution."
+      },
+      {
+        "id": "river-water",
+        "text": "It takes river water to cool its computers.",
+        "suggested": "cost",
+        "feedback": "Most people would say a cost. In the dry season, there may be less water for farms and homes."
+      },
+      {
+        "id": "solar",
+        "text": "The company puts solar panels on the roof.",
+        "suggested": "benefit",
+        "feedback": "Most people would say a benefit. Power from the sun is clean, and the data centre takes less power from the town."
+      },
+      {
+        "id": "waste-water",
+        "text": "It cleans waste water and uses it for cooling.",
+        "suggested": "benefit",
+        "feedback": "Most people would say a benefit. The river water stays for farms and homes."
+      },
+      {
+        "id": "money",
+        "text": "A big company from abroad brings money to the town.",
+        "suggested": "both",
+        "feedback": "Any group can be right here. New money can help the town grow. But much of what the company earns may go to other countries."
+      },
+      {
+        "id": "power-cuts",
+        "text": "Hana worries that power cuts will get longer.",
+        "suggested": "cost",
+        "feedback": "Most people would say a cost. Small businesses like Hana's fish farm need power all the time."
+      }
+    ],
+    "saves": "The group the learner chose for each sentence, with the lesson's other answers.",
+    "offline": "Everything is in the lesson file. Nothing is sent anywhere."
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "AI runs in big buildings full of chips",
+        "text": "When you ask an AI tool a question, your device usually doesn't make the answer itself. The question travels to a data centre, a large building full of computers. Inside are thousands of chips that do trillions of sums every second. These chips use a lot of electricity, and they get very hot. Many data centres use water to cool them. In 2024, data centres used about 1.5% of all the world's electricity. Experts at an international energy agency expect this to more than double by 2030, mostly because of AI. That would be a little more than the whole of Japan uses in a year today.",
+        "simpler": "You ask an AI tool a question. The answer is not made in your device. The question goes to a data centre. This is a big building full of computers. Inside, thousands of chips do huge amounts of maths. They use a lot of power. They get very hot. Water often helps to cool them. By 2030, data centres may use twice as much power. AI is the main reason."
+      },
+      {
+        "heading": "Chips need minerals and a few factories",
+        "text": "Chips are made from many materials that are dug out of the ground. Some need rare minerals, which are often mined in ways that harm nature. Making one small computer of 2 kilograms takes about 800 kilograms of raw materials. Very few factories can make the most powerful chips. In 2021, a study found that most of the world's most advanced chips were made in one place, Taiwan. So a problem in one place could cause chip shortages around the world. Old chips and computers also become electronic waste. This waste can contain harmful metals, such as mercury and lead.",
+        "simpler": "Chips are made from things dug out of the ground. Some need rare minerals. Digging them up can harm nature. A small computer needs a huge pile of materials. Only a few factories make the best chips. Most are in one place, Taiwan. A problem there could slow chips everywhere. Old computers become waste. Some of it is harmful."
+      },
+      {
+        "heading": "Who gains, and who pays?",
+        "text": "Data centres are being built fast in Southeast Asia. In 2019, they used about 7% of Singapore's electricity, so the country paused new ones until 2022. Many companies then built in Johor, in Malaysia, and on Batam, in Indonesia. Johor became the fastest-growing data centre market in Southeast Asia. Data centres bring investment and building work. But a report found that most give only 30 to 50 long-term jobs. Many of the people who use them live in other countries. Some people who live nearby worry about water shortages and power cuts. Companies can lower these costs. They can make AI more efficient, use clean power from the sun and wind, and clean and reuse water.",
+        "simpler": "Southeast Asia has many new data centres. In 2019, Singapore paused new ones. They used too much of its power. So companies built in Johor, in Malaysia, and Batam, in Indonesia. They bring investment and work for builders. But most give only 30 to 50 long-term jobs. Many users live in other countries. People nearby worry about water and power cuts. Companies can help. They can make AI more efficient. They can use power from the sun and wind. They can clean water and use it again."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "data centre",
+        "forms": [
+          "data centres"
+        ],
+        "definition": "A large building full of computers that store and process information.",
+        "example": "The new data centre in Coralton will run AI tools."
+      },
+      {
+        "word": "chip",
+        "forms": [
+          "chips"
+        ],
+        "definition": "A tiny part inside a computer that does its sums.",
+        "example": "The data centre has thousands of chips, and they get very hot."
+      },
+      {
+        "word": "mineral",
+        "forms": [
+          "minerals"
+        ],
+        "definition": "A natural material that people dig out of the ground.",
+        "example": "Some chips need rare minerals."
+      },
+      {
+        "word": "investment",
+        "definition": "Money a company spends in a place, hoping to earn more later.",
+        "example": "The data centre is a big investment in Coralton."
+      },
+      {
+        "word": "efficient",
+        "definition": "Doing a job well while using less power, water or time.",
+        "example": "A more efficient data centre uses less electricity for the same work."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "question": "Why do many data centres use water?",
+        "options": [
+          {
+            "text": "To make electricity for the town",
+            "correct": false,
+            "feedback": "Not quite. Data centres use electricity. Read about the hot chips in the first section."
+          },
+          {
+            "text": "To wash the computers each day",
+            "correct": false,
+            "feedback": "Not quite. The water is not for washing. Read about the hot chips in the first section."
+          },
+          {
+            "text": "To cool chips that get very hot",
+            "correct": true,
+            "feedback": "Yes. The chips do so much work that they get very hot, so water helps to cool them."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "question": "What did a report find about jobs at data centres?",
+        "options": [
+          {
+            "text": "Each one gives jobs to thousands",
+            "correct": false,
+            "feedback": "Not quite. Many people help to build one, but few work there later. Read the third section."
+          },
+          {
+            "text": "Most give only 30 to 50 jobs",
+            "correct": true,
+            "feedback": "Yes. Building one takes many people, but most give only 30 to 50 long-term jobs."
+          },
+          {
+            "text": "They need no workers at all",
+            "correct": false,
+            "feedback": "Not quite. Some people do work there. Read the third section for the number."
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "What promise would you ask the data centre company to make?",
+        "placeholder": "I would ask the company to promise ... because ...",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Should Coralton say yes to the data centre? Give your answer, one benefit, one cost, and one promise you would ask the company to make.",
+    "sentenceStarters": [
+      "I think Coralton should ...",
+      "One benefit is ...",
+      "One cost is ...",
+      "I would ask the company to promise ...",
+      "This matters because ..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I said yes, no or yes with a promise.",
+      "I gave one benefit and one cost.",
+      "I gave one promise the company should make."
+    ],
+    "example": "I think Coralton should say yes, but only with a promise. One benefit is that about 1,000 people get building work for two years, and people like Leo can learn new skills. One cost is that the data centre needs a lot of water to cool its chips. In the dry season, Hana's fish farm and the town's homes could get less. I would ask the company to promise to use cleaned waste water, not river water. This matters because the town needs water more than the AI tools do."
+  },
+  "speak": {
+    "partnerTask": "Your partner says one benefit of the Coralton data centre. You say one cost. Then switch.",
+    "independentTask": "Say out loud three things a data centre needs to work. Then say who might pay for them."
+  },
+  "watch": {
+    "youtubeId": "z3Y-gsBKChc",
+    "title": "Why are AI data centers using so much electricity? - Sajan Saini",
+    "channel": "TED-Ed",
+    "durationSeconds": 376,
+    "why": "A short animated lesson shows what is inside an AI data centre, why it gets so hot, and asks how much of the planet's resources AI should use.",
+    "beforeQuestion": "What do you think is inside an AI data centre?",
+    "afterQuestion": "What two ways does the video give to make AI use less energy?",
+    "summary": "Since 2019, more than a thousand huge AI data centres have been built around the world. Each one can use as much water as a small town. It can use as much electricity as a small city. Inside, there are thousands of racks of computers with special chips. These chips do trillions of sums every second, to answer questions and to train AI. All this work makes the chips very hot. Engineers cool them with water towers, cold water in pipes, or special liquids. They also send data with light instead of copper wires, which wastes less power. But AI tools keep getting bigger, so they need more and more electricity. The video asks if we could build smaller tools for smaller jobs. It ends with a question: how much of the planet's resources should we use for smarter machines?",
+    "keyPoints": [
+      "AI data centres use huge amounts of electricity and water.",
+      "Chips get very hot, so engineers look for new ways to cool them and save power.",
+      "People must decide how much of the planet's resources AI should use."
+    ],
+    "contentNote": "About 6 minutes (6:16), an animated TED-Ed lesson by Sajan Saini, released in September 2026, with fast American English. The title and channel were confirmed with YouTube's oEmbed on 31 October 2026, and the length is from TED's page for the lesson. The summary was written from the transcript on TED's website (https://www.ted.com/talks/sajan_saini_why_are_ai_data_centers_using_so_much_electricity), not from watching it. It names two AI tools (Claude and ChatGPT), uses US examples (New York City), and mentions companies planning their own nuclear power plants. Its numbers (for example, enough energy for 300,000 homes) are the video's own and are not repeated in the lesson. Someone on the team must watch it before use; learners can read the written summary instead.",
+    "replacementSuggestion": null
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "One thing AI needs from the planet is ... The people who pay for it are ...",
+        "required": true
+      },
+      {
+        "text": "Before a town says yes to a data centre, people should ask ...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 6. You found out what AI needs from the planet and weighed who gains and who pays."
+  },
+  "visual": {
+    "type": "diagram",
+    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW06.svg is only a planned path. A left-to-right chain of four simple drawings joined by arrows: a mine with a pile of rocks (“Minerals from the ground”), a factory (“Chip factory”), a large windowless building (“Data centre”), and a tablet showing an answer (“Your answer”). Into the data centre run a power line labelled “Electricity” and a water pipe labelled “Water for cooling”; out of its roof rise wavy lines labelled “Heat”. Under the data centre, two small labels: “Benefit: jobs and investment” and “Cost: power and water for the town”. Words carry every meaning; no real logos or company names.",
+    "alt": "A chain from a mine to a chip factory, a data centre and a tablet. Electricity and water flow into the data centre, and heat comes out.",
+    "src": "visuals/DW06.svg"
+  },
+  "sources": [
+    {
+      "label": "Scientific American, from Nature (2025): Data centers will use twice as much energy by 2030, driven by AI (reporting the International Energy Agency's Energy and AI report)",
+      "url": "https://scientificamerican.com/article/ai-will-drive-doubling-of-data-center-energy-demand-by-2030"
+    },
+    {
+      "label": "UN Environment Programme (2024): AI has an environmental problem. Here's what the world can do about that.",
+      "url": "https://unep.org/news-and-stories/story/ai-has-environmental-problem-heres-what-world-can-do-about"
+    },
+    {
+      "label": "Reuters, via Malay Mail (2021): Global chip supply chain increasingly vulnerable to massive disruption, study finds",
+      "url": "https://www.malaymail.com/news/money/2021/04/01/global-chip-supply-chain-increasingly-vulnerable-to-massive-disruption-stud/1963095"
+    },
+    {
+      "label": "Associated Press, via The Star (2025): Malaysia is betting on data centers to boost its economy. But experts warn they come at a price.",
+      "url": "https://www.thestar.com.my/tech/tech-news/2025/02/19/malaysia-is-betting-on-data-centers-to-boost-its-economy-but-experts-warn-they-come-at-a-price"
+    },
+    {
+      "label": "Kontinentalist (2026): Thirsty, tired, wired: Singapore, Johor, Batam and the data centre boom",
+      "url": "https://kontinentalist.com/stories/data-centres-in-johor-singapore-batam"
+    }
+  ],
+  "sensitiveNotes": [
+    "Power cuts, water shortages and the cost of electricity may be part of learners' daily lives. Don't ask about their homes, bills or access to water and power; keep the discussion on Coralton and the reported facts. Some learners may live in or near the places named (Johor, Batam, Singapore): keep it neutral, about choices every town faces, not blame for any country or its people."
+  ],
+  "educatorNotes": [
+    "The numbers are dated and come from the sources: data centres used about 415 TWh in 2024, about 1.5% of the world's electricity, and the International Energy Agency expects about 945 TWh by 2030, slightly more than Japan uses today (IEA's Energy and AI report, April 2025, as reported by Scientific American and Nature; the IEA's own pages could not be opened while writing, so check them if you can). Taiwan's share of the most advanced chips (92%) is from a 2021 industry study. The jobs figure (30 to 50 long-term jobs for most data centres, 200 at most for big ones) is from Good Jobs First, as reported by AP.",
+    "Rules for data centres in Johor and Batam change quickly (for example, Johor has tightened approvals for data centres that use a lot of water). Check the latest news before teaching the third section. Data centres also run websites, videos and messages, not only AI.",
+    "Paper version of the activity: write the eight sentences on cards and sort them into Benefit, Cost and Both. There is no score; reward reasons. A partner could swap Coralton for a short, neutral local example, such as a new factory or mine."
+  ],
+  "changes": [
+    "New lesson (Digital World, October 2026, social studies rebuild). There is no Base44 original or earlier draft, so oldId is null.",
+    "Adds a sort activity (A benefit for the town, A cost for the town, Both). Coralton and everyone in it are made up; real places (Singapore, Johor, Batam, Taiwan, Japan) appear in the Read text as reported facts, with no company names.",
+    "Numbers come only from the sources and carry their year: the IEA's 2024 and 2030 figures, UNEP's 800 kilograms for a 2 kilogram computer, the 2021 chip study, Singapore's 2019 pause and the jobs figure reported by AP.",
+    "Video: TED-Ed's animated lesson (September 2026), confirmed with YouTube's oEmbed; the summary was written from TED's transcript and the video still needs watching.",
+    "visual.src points to a picture that doesn't exist yet.",
+    "Needs review by an AI researcher for accuracy, by Justin for level and tone, and by a partner educator for the sensitive note."
+  ]
+}

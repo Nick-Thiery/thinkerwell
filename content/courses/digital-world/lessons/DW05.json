@@ -1,0 +1,342 @@
+{
+  "id": "dw-hidden-work",
+  "oldId": null,
+  "number": 5,
+  "section": "who-builds-ai",
+  "title": "The hidden work behind AI",
+  "essentialQuestion": "Who are the people who make AI work, and are they treated fairly?",
+  "learningGoal": "Describe the hidden jobs that AI tools depend on, and explain who benefits and who carries the costs.",
+  "estimatedMinutes": [
+    30,
+    50
+  ],
+  "warmUp": {
+    "question": "When you use a tool that answers questions, who do you think helped to make it?",
+    "options": [
+      "Only computers",
+      "A few experts at one company",
+      "Many people around the world",
+      "Not sure"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "Which of these people do users of the Ask Me tool see? Which ones do they never see?",
+    "cards": [
+      {
+        "type": "cases",
+        "title": "Five people behind the Ask Me tool",
+        "cases": [
+          {
+            "name": "Amara, photo labeller",
+            "body": "She works online from a city far from the company. All day, she tags photos as “bus”, “tree” or “person”. She is paid a few cents for each task, and sometimes her pay comes late."
+          },
+          {
+            "name": "Tomas, moderator",
+            "body": "He checks posts that break the rules, so the tool learns what it must never show. The work is hard, and he would like more time to rest."
+          },
+          {
+            "name": "Lin, writer",
+            "body": "Years ago, she put her stories on the internet. They were copied into the tool's training data. Nobody asked her, and her name is not shown."
+          },
+          {
+            "name": "Sami, engineer",
+            "body": "He works at the company's head office and designs how the tool learns. He is paid well, and his team is often in the news."
+          },
+          {
+            "name": "Rosa, company leader",
+            "body": "She shows the new tool to the world on a big stage. Many people know her name and her face."
+          }
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "type": "sort",
+    "stage": "read",
+    "placement": "after-evidence",
+    "title": "Seen or hidden?",
+    "instructions": "Put each job behind the Ask Me tool into a group. There is no score. After you place one, you can see what most people would say and why.",
+    "groups": [
+      {
+        "id": "seen",
+        "label": "Seen by users"
+      },
+      {
+        "id": "hidden",
+        "label": "Hidden from users"
+      },
+      {
+        "id": "hard",
+        "label": "Hard to say"
+      }
+    ],
+    "items": [
+      {
+        "id": "leader",
+        "text": "The leader who shows the tool on a big stage",
+        "suggested": "seen",
+        "feedback": "Most people would say seen. Her name and face are in the news, so people link her to the tool."
+      },
+      {
+        "id": "labeller",
+        "text": "A worker who tags thousands of photos",
+        "suggested": "hidden",
+        "feedback": "Most people would say hidden. The tool learned from her labels, but users never see her or know her name."
+      },
+      {
+        "id": "moderator",
+        "text": "A worker who checks posts that break the rules",
+        "suggested": "hidden",
+        "feedback": "Most people would say hidden. His work keeps harmful things away from users, so they never see it happen."
+      },
+      {
+        "id": "writer",
+        "text": "A writer whose stories were in the training data",
+        "suggested": "hidden",
+        "feedback": "Most people would say hidden. Her words helped the tool learn, but her name is not shown anywhere."
+      },
+      {
+        "id": "engineer",
+        "text": "An engineer at the company's head office",
+        "suggested": "hard",
+        "feedback": "Any group can be right here. His team is sometimes in the news, but most users don't know who he is."
+      },
+      {
+        "id": "rater",
+        "text": "A worker who marks the tool's answers as good or bad",
+        "suggested": "hidden",
+        "feedback": "Most people would say hidden. These marks help the tool give better answers, but the worker is never named."
+      },
+      {
+        "id": "users",
+        "text": "Users who tap “thumbs up” on an answer",
+        "suggested": "hard",
+        "feedback": "Any group can be right here. Users can see themselves. But many don't know that their taps may help to train the tool."
+      },
+      {
+        "id": "builders",
+        "text": "The people who build the computer buildings the tool runs in",
+        "suggested": "hidden",
+        "feedback": "Most people would say hidden. Users never see these buildings. You will learn more about them in the next lesson."
+      }
+    ],
+    "saves": "The group the learner chose for each job, with the lesson's other answers.",
+    "offline": "Everything is in the lesson file. Nothing is sent anywhere."
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "AI needs a lot of human work",
+        "text": "AI tools seem to work by themselves, but many people help to make them. Before a tool can learn, people add a label to each example in its training data. A worker might tag thousands of photos as “bus”, “tree” or “person”. Other workers are moderators. They check harmful posts, so the tool learns what it must not show. Writers, artists and other people helped too, often without knowing it. Their words and pictures from the internet became training data. In the made-up Ask Me tool, Amara adds labels, Tomas is a moderator, and Lin's stories are in the data.",
+        "simpler": "Many people help to make AI tools. People add a label to each example in the training data. A worker may tag many photos “bus” or “tree”. Other workers are moderators. They check posts that could hurt people. Then the tool learns what not to show. Writers and artists helped too. Their words became training data. Nobody asked them. In the Ask Me tool, Amara adds labels. Tomas is a moderator."
+      },
+      {
+        "heading": "Much of this work is far away and low paid",
+        "text": "Much of this work is done online by people in countries such as Kenya, India and the Philippines. Many of the companies that pay for it are in richer countries. In 2023, reporters found that workers in Kenya who labelled text for a well-known AI tool took home less than 2 US dollars an hour. The AI company paid about 12 dollars an hour for each worker to the company in the middle. In the Philippines, many online workers said their wages came late, were cut, or never came. Some writers and artists say their work was used without asking or paying them. AI companies say the law allows this.",
+        "simpler": "A lot of this work is done in Kenya, India and the Philippines. Many companies that pay for it are in richer countries. In 2023, reporters met workers in Kenya. They labelled text. They got less than 2 US dollars an hour. The AI company paid about 12 dollars an hour for each one. That money went to the company in the middle. In the Philippines, many workers said their wages were late or cut."
+      },
+      {
+        "heading": "An old question about fair work",
+        "text": "Unfair work is not new. In the 1800s, people in England began to call some workplaces a sweatshop: a place with very low wages and unhealthy conditions. Today, some people call online labelling a “digital sweatshop”. Like clothes, AI has a long supply chain. Users see the finished tool, but they rarely see the people behind it. The companies at the top can earn a lot, while workers at the bottom may earn little. In 2023, university researchers checked 15 online work companies. None met their basic rules for fair work: fair wages paid on time, safe conditions, and a voice for workers.",
+        "simpler": "Unfair work is not new. In the 1800s, people in England began to say “sweatshop”. It meant a place with low wages and bad, unsafe work. Today, some people say “digital sweatshop” for AI work. AI has a long supply chain, like clothes. Users see the tool, not the workers. In 2023, researchers checked 15 online work companies. None was fair enough. Fair work means fair wages, paid on time. It means safe work and a voice for workers."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "label",
+        "forms": [
+          "labels",
+          "labelled",
+          "labeller",
+          "labelling"
+        ],
+        "definition": "A word that says what a picture or a piece of text shows.",
+        "example": "Amara adds the label “bus” to each photo of a bus."
+      },
+      {
+        "word": "moderator",
+        "forms": [
+          "moderators"
+        ],
+        "definition": "A person who checks posts and removes ones that break the rules.",
+        "example": "Tomas is a moderator for the Ask Me tool."
+      },
+      {
+        "word": "wage",
+        "forms": [
+          "wages"
+        ],
+        "definition": "The money a person is paid for their work.",
+        "example": "Some workers in the Philippines said their wages came late."
+      },
+      {
+        "word": "sweatshop",
+        "forms": [
+          "sweatshops"
+        ],
+        "definition": "A workplace with very low pay and unhealthy or unfair conditions.",
+        "example": "Some people call online labelling work a “digital sweatshop”."
+      },
+      {
+        "word": "supply chain",
+        "forms": [
+          "supply chains"
+        ],
+        "definition": "All the people and places that help to make a product, step by step.",
+        "example": "Amara, Tomas and Sami are all part of the Ask Me tool's supply chain."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "question": "What does a moderator like Tomas do?",
+        "options": [
+          {
+            "text": "Shows the new tool to the whole world",
+            "correct": false,
+            "feedback": "Not quite. That is Rosa, the company leader. Read about moderators in the first section."
+          },
+          {
+            "text": "Checks posts that break the rules",
+            "correct": true,
+            "feedback": "Yes. Moderators check harmful posts, so the tool learns what it must not show."
+          },
+          {
+            "text": "Designs how the tool learns",
+            "correct": false,
+            "feedback": "Not quite. That is Sami, the engineer. Read about moderators in the first section."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "question": "In the 2023 report from Kenya, what does the pay show?",
+        "options": [
+          {
+            "text": "Workers got far less than the company in the middle",
+            "correct": true,
+            "feedback": "Yes. The workers took home less than 2 dollars an hour. The company in the middle got about 12 dollars an hour for each worker."
+          },
+          {
+            "text": "Workers got more money than the AI company paid for them",
+            "correct": false,
+            "feedback": "Not quite. The workers got much less than the AI company paid. Look at the numbers in the second section."
+          },
+          {
+            "text": "Everyone in the chain got the same pay",
+            "correct": false,
+            "feedback": "Not quite. The pay was very different at each step. Look at the numbers in the second section."
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "Pick one hidden worker from the Ask Me tool. What would you like to ask them?",
+        "placeholder": "I would ask ___ ... because ...",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Choose one hidden worker behind the Ask Me tool. Explain how they help the tool, why users don't see them, and one thing that would make their work fairer.",
+    "sentenceStarters": [
+      "I chose ...",
+      "They help the tool by ...",
+      "Users don't see them because ...",
+      "Their work may not be fair because ...",
+      "One thing that would make it fairer is ..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I named one hidden worker and how they help the tool.",
+      "I said why users don't see them.",
+      "I gave one thing that would make their work fairer."
+    ],
+    "example": "I chose Amara, the photo labeller. She helps the tool by adding a label to thousands of photos. Then it learns what a bus or a tree looks like. Users don't see her because she works online, far from the company. Her name is never shown. Her work may not be fair because she gets a few cents for each task. Sometimes her pay comes late. One thing that would make it fairer is a fair wage, paid on time, every time."
+  },
+  "speak": {
+    "partnerTask": "Your partner names one person behind the Ask Me tool. You say if users see them, and one thing that would make their work fair. Then switch.",
+    "independentTask": "Say out loud what a supply chain is. Then name two hidden jobs behind an AI tool."
+  },
+  "watch": {
+    "youtubeId": "hbxvccjQ-NI",
+    "title": "Concerns rise over treatment of human workers behind AI technology",
+    "channel": "PBS NewsHour",
+    "durationSeconds": 356,
+    "why": "In a calm six-minute news interview, an expert explains what data workers do, where they work and why their pay and treatment matter.",
+    "beforeQuestion": "What jobs do you think people do to help an AI tool learn?",
+    "afterQuestion": "Why does the expert say AI is really built on human work?",
+    "summary": "In this news interview, a reporter talks with an expert. The expert works for a group that wants AI to be used in a fair way. She explains that AI tools need lots of data. A computer does not know by itself if a picture shows a cat or a dog. People must look at the pictures and label them, again and again. Then the tool can learn. A lot of this work is done online, in poorer parts of the world, because the pay there is lower. Some workers must look at harmful posts, so other people don't have to see them. The pay is often very low. Workers are not always sure they will be paid. The expert says AI is really built on human work and human thinking. She hopes for clear rules to protect these workers.",
+    "keyPoints": [
+      "AI tools learn from data that people label by hand.",
+      "Much of this work is done online in poorer countries, often for very low pay.",
+      "AI is built on human work, so these workers need fair rules."
+    ],
+    "contentNote": "About 6 minutes (5:56), a US news interview from February 2023 (PBS News Weekend, with Sonam Jindal of the Partnership on AI). The title and channel were confirmed with YouTube's oEmbed on 31 October 2026, and the length is from YouTube's listing. The summary was written from PBS's published transcript of the segment (https://www.pbs.org/newshour/show/concerns-rise-over-treatment-of-human-workers-behind-ai-technology), not from watching it. The opening names US companies and products and mentions a chatbot that told a reporter to leave his wife; the interview says some workers see “toxic content” and medical images, without showing or describing any. Someone on the team must watch it before use; learners can read the written summary instead.",
+    "replacementSuggestion": null
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "One hidden job behind AI is ... It matters because ...",
+        "required": true
+      },
+      {
+        "text": "A question I would ask an AI company is ...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 5. You found the hidden people behind an AI tool and asked whether their work is fair."
+  },
+  "visual": {
+    "type": "diagram",
+    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW05.svg is only a planned path. A supply chain drawn left to right as a row of simple figures joined by arrows: a labeller at a laptop tagging a photo (“Labels photos”), a moderator at a screen with a stop sign (“Checks posts”), a pile of books and drawings (“Writers' and artists' work”), then the company office (“Builds the tool”), then a learner holding a tablet with an answer on it (“Uses the tool”). A curtain hangs over the first three, with the words “Hidden from users” above it; the last two are under the words “Seen by users”. Words carry every meaning; simple drawn figures only, no real faces or logos.",
+    "alt": "A supply chain from labellers, moderators and writers to the company and the user. A curtain hides the first three from the user.",
+    "src": "visuals/DW05.svg"
+  },
+  "sources": [
+    {
+      "label": "TIME (2023): OpenAI used Kenyan workers on less than $2 per hour to make ChatGPT less toxic",
+      "url": "https://time.com/6247678/openai-chatgpt-kenya-workers/"
+    },
+    {
+      "label": "The Washington Post (2023): Behind the AI boom, an army of overseas workers in “digital sweatshops”",
+      "url": "https://www.washingtonpost.com/world/2023/08/28/scale-ai-remotasks-philippines-artificial-intelligence/"
+    },
+    {
+      "label": "Oxford Internet Institute (2023): Fairwork Cloudwork Ratings, new Oxford report sheds light on labour malpractices in the remote work and AI booms",
+      "url": "https://www.oii.ox.ac.uk/new-oxford-report-sheds-light-on-labour-malpractices-in-the-remote-work-and-ai-booms/"
+    },
+    {
+      "label": "The Washington Post, via Anchorage Daily News (2023): AI learned from their work. Now they want compensation.",
+      "url": "https://www.adn.com/nation-world/2023/07/16/ai-learned-from-their-work-now-they-want-compensation/"
+    },
+    {
+      "label": "Britannica: Sweatshop",
+      "url": "https://www.britannica.com/topic/sweatshop"
+    }
+  ],
+  "sensitiveNotes": [
+    "Moderators: in real life, moderators and some labellers have had to look at violent and abusive material, and many report lasting harm to their mental health (see the TIME source). The lesson says only that they check “harmful posts”. Don't describe what they see and don't let the discussion go there; if a learner asks, say it is hard work that can hurt people, which is why fair conditions and support matter.",
+    "Work and money: many learners can't work legally, and people close to them may do low-paid, informal or online work. Never ask about learners' or their families' jobs, pay or money. Keep the discussion on the made-up Ask Me workers and the reported facts. Words like “sweatshop” and “unfair pay” may feel close to home; let learners speak if they want to, without pressing."
+  ],
+  "educatorNotes": [
+    "The facts are dated and come from reporting: TIME (January 2023, Kenya: workers took home about $1.32 to $2 an hour, and the AI company's contract paid the outsourcing firm $12.50 an hour per worker), The Washington Post (August 2023, the Philippines) and Oxford's Fairwork Cloudwork Ratings (July 2023: 15 platforms, none met its minimum standards). The companies (OpenAI, Sama, Scale AI and its Remotasks platform) are named only in sources and here, as the Digital World spec asks; Scale AI told the Post that it pays a living wage and that late payments are rare. Court cases about using writers' and artists' work as training data have moved on since 2023; check the latest before teaching that part.",
+    "Paper version of the activity: write the eight jobs on cards and sort them into Seen by users, Hidden from users and Hard to say. There is no score; reward reasons. A partner could add a local example of a product whose makers are far from its buyers, such as clothes."
+  ],
+  "changes": [
+    "New lesson (Digital World, October 2026, social studies rebuild). There is no Base44 original or earlier draft, so oldId is null.",
+    "Adds a sort activity (Seen by users, Hidden from users, Hard to say). Everything in the evidence and activity is made up (the Ask Me tool); real facts in the Read text (Kenya 2023, the Philippines 2023, Oxford's 2023 ratings, the 1800s word “sweatshop”) are described without naming companies.",
+    "Pay is given in US dollars, as reported, with the year. Distressing details of moderation work are kept out of learner text and are only in sensitiveNotes.",
+    "Video: PBS NewsHour interview (February 2023), confirmed with YouTube's oEmbed; the summary was written from PBS's transcript and the video still needs watching.",
+    "visual.src points to a picture that doesn't exist yet.",
+    "Needs review by an AI researcher for accuracy, by Justin for level and tone, and by a partner educator for the sensitive notes."
+  ]
+}
