@@ -64,7 +64,7 @@ describe('Digital World’s files', () => {
     expect(loaded.lessons.every((lesson) => lesson.id.startsWith('dw-') && lesson.oldId === null)).toBe(true);
   });
 
-  it('give every lesson an activity, with the kept drafts' activities where they were', () => {
+  it('give every lesson an activity, with the kept drafts’ activities where they were', () => {
     const loaded = loadCourse('digital-world', dwCourse, dwLessons);
     expect(loaded.lessons.every((lesson) => lesson.activity)).toBe(true);
     const at = (n: number) => loaded.lessons.find((lesson) => lesson.number === n)!.activity!;

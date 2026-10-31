@@ -85,7 +85,7 @@ test.describe('with the preview on', () => {
     await expect(page).toHaveURL(/\/course\/digital-world$/);
     await expect(page.getByRole('heading', { level: 1, name: 'Digital World' })).toBeVisible();
     await expect(banner(page)).toBeVisible();
-    await expect(page.getByRole('heading', { level: 2 })).toHaveText(['How AI works', 'Check what you see', 'Use tools wisely', 'AI where you live', 'For teachers and reviewers']);
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(['Thinking machines', 'Who builds AI, and at what cost', 'AI in daily life', 'Truth, power and choices', 'For teachers and reviewers']);
     await expect(page.getByText(/Section check:/)).toHaveCount(0);
 
     await page.getByRole('button', { name: 'Turn preview off' }).click();
