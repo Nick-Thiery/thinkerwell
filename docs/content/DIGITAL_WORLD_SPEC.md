@@ -15,6 +15,8 @@ The learners are the same as Our World's (`docs/content/SPEC.md` section 1): abo
 - **A project at the end.** Lesson 11 is a design project, not a normal lesson.
 - **A new subject.** Our World is social studies. Digital World is AI and media literacy, so its facts go out of date faster and need an AI-accuracy review (section 5.4).
 
+> **31 October 2026: the course was rebuilt through a social studies lens** (Justin: "not pure coding, or learning about digital tools"; at most 20 lessons). Sections 3 and 4 below describe the first 11 drafts. The current outline is 17 lessons in four sections (`thinking-machines`, `who-builds-ai`, `ai-in-daily-life`, `truth-and-power`): see `content/courses/digital-world/course.json`, its README and `docs/PRODUCT.md`. The rules in section 5 still apply to every lesson.
+
 ## 3. The 11 lessons and the UNESCO framework
 
 The course follows UNESCO's *AI competency framework for students* (2024): four aspects (Human-centred mindset; Ethics of AI; AI techniques and applications; AI system design), each at three levels (Understand, Apply, Create), which gives 12 competency blocks. Digital World aims mainly at Understand, with some Apply and one Create project.

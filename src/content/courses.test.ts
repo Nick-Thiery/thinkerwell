@@ -26,6 +26,8 @@ const dwLessons = readLessons(`${DW}/lessons`);
 const owCourse = read('content', 'course.json');
 const owLessons = readLessons('content/lessons');
 const lessonFile = (name: string) => structuredClone(dwLessons[`${DW}/lessons/${name}`]) as DigitalWorldLesson;
+// Drafts taken out of the course in the social studies rebuild (October 2026): their activities still test the players' checks.
+const retiredFile = (name: string) => structuredClone(read(DW, 'retired', name)) as DigitalWorldLesson;
 
 describe('the course list', () => {
   it('has Our World first, as the default, and Digital World as a preview course', () => {
@@ -55,28 +57,19 @@ describe('the course list', () => {
 });
 
 describe('Digital World’s files', () => {
-  it('pass the build’s checks: 11 lessons in 4 sections, every id starting "dw-"', () => {
+  it('pass the build’s checks: 17 lessons in 4 sections, every id starting "dw-"', () => {
     const loaded = loadCourse('digital-world', dwCourse, dwLessons, { pictures: new Set(), picturesRequired: false });
-    expect(loaded.lessons.map((lesson) => lesson.number)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
-    expect(loaded.sections.map((section) => section.id)).toEqual(['how-ai-works', 'check-what-you-see', 'use-tools-wisely', 'ai-where-you-live']);
+    expect(loaded.lessons.map((lesson) => lesson.number)).toEqual(Array.from({ length: 17 }, (_, i) => i + 1));
+    expect(loaded.sections.map((section) => section.id)).toEqual(['thinking-machines', 'who-builds-ai', 'ai-in-daily-life', 'truth-and-power']);
     expect(loaded.lessons.every((lesson) => lesson.id.startsWith('dw-') && lesson.oldId === null)).toBe(true);
   });
 
-  it('use every activity type the spec names, one per lesson, where the drafts put them', () => {
+  it('give every lesson an activity, with the kept drafts' activities where they were', () => {
     const loaded = loadCourse('digital-world', dwCourse, dwLessons);
-    expect(loaded.lessons.map((lesson) => `${lesson.number} ${lesson.activity?.type} ${lesson.activity?.stage}/${lesson.activity?.placement}`)).toEqual([
-      '1 sort read/after-evidence',
-      '2 train-model read/after-evidence',
-      '3 compare-results read/after-evidence',
-      '4 sort read/after-evidence',
-      '5 check-claim read/after-evidence',
-      '6 spot-signs read/after-evidence',
-      '7 sort read/after-evidence',
-      '8 ask-tool read/after-evidence',
-      '9 chart-check read/after-evidence',
-      '10 sort read/after-evidence',
-      '11 design-plan write/before-prompt',
-    ]);
+    expect(loaded.lessons.every((lesson) => lesson.activity)).toBe(true);
+    const at = (n: number) => loaded.lessons.find((lesson) => lesson.number === n)!.activity!;
+    expect([at(1).type, at(3).type, at(8).type, at(14).type, at(17).type]).toEqual(['sort', 'train-model', 'compare-results', 'check-claim', 'design-plan']);
+    expect(`${at(17).stage}/${at(17).placement}`).toBe('write/before-prompt');
   });
 
   it('are pictures planned but not drawn yet: only a required picture is a problem', () => {
@@ -91,9 +84,9 @@ describe('Digital World’s files', () => {
   });
 
   it('name the file and the field for a problem', () => {
-    const lesson = lessonFile('DW03.json') as unknown as { activity: { measure: string } };
+    const lesson = lessonFile('DW08.json') as unknown as { activity: { measure: string } };
     lesson.activity.measure = '';
-    expect(() => parseContentFile('lesson', lesson, `${DW}/lessons/DW03.json`, 'digital-world')).toThrow(/DW03\.json: activity\.measure/);
+    expect(() => parseContentFile('lesson', lesson, `${DW}/lessons/DW08.json`, 'digital-world')).toThrow(/DW08\.json: activity\.measure/);
   });
 
   it('refuse a lesson id without the course’s prefix, or a section it doesn’t have', () => {
@@ -113,6 +106,7 @@ describe('Digital World’s files', () => {
 
 describe('activityProblems', () => {
   const activityOf = (name: string): Activity => lessonFile(name).activity!;
+  const retiredActivity = (name: string): Activity => retiredFile(name).activity!;
   const problems = (activity: Activity) => activityProblems(activity, 'here');
 
   it('finds nothing wrong with the drafts', () => {
@@ -123,15 +117,15 @@ describe('activityProblems', () => {
   });
 
   it('checks a train-model round’s expected result against the model itself', () => {
-    const activity = activityOf('DW02.json');
-    if (activity.type !== 'train-model') throw new Error('DW02 trains a model');
+    const activity = activityOf('DW03.json');
+    if (activity.type !== 'train-model') throw new Error('DW03 trains a model');
     activity.rounds[0]!.expectedIfLabelledLikeTheGardener = { right: 5, of: 6, wrong: ['t3'] };
     expect(problems(activity)).toEqual([expect.stringMatching(/round "round-1" expects 5 of 6 .* but the model gets 4 of 6 \(wrong: t3, t4\)/)]);
   });
 
   it('checks a round’s cards exist and a card has one number per feature', () => {
-    const activity = activityOf('DW02.json');
-    if (activity.type !== 'train-model') throw new Error('DW02 trains a model');
+    const activity = activityOf('DW03.json');
+    if (activity.type !== 'train-model') throw new Error('DW03 trains a model');
     activity.rounds[1]!.addExamples.push('e99');
     activity.tests[0]!.features = [1, 2, 3];
     expect(problems(activity).join('\n')).toMatch(/card "t1" has 3 numbers/);
@@ -145,20 +139,20 @@ describe('activityProblems', () => {
   });
 
   it('checks a placement goes with its stage', () => {
-    const activity = activityOf('DW11.json');
+    const activity = activityOf('DW17.json');
     activity.stage = 'read';
     expect(problems(activity)).toEqual(['here: placement "before-prompt" belongs in the write stage, not read']);
   });
 
   it('checks compare-results names the group with the fewest right', () => {
-    const activity = activityOf('DW03.json');
-    if (activity.type !== 'compare-results') throw new Error('DW03 compares');
+    const activity = activityOf('DW08.json');
+    if (activity.type !== 'compare-results') throw new Error('DW08 compares');
     activity.mostMistakes = 'teachers';
     expect(problems(activity)).toEqual(['here: mostMistakes "teachers" isn\'t the one group with the fewest right']);
   });
 
   it('checks every warning sign has its feedback and is a real sign', () => {
-    const activity = activityOf('DW06.json');
+    const activity = retiredActivity('DW06-scams.json');
     if (activity.type !== 'spot-signs') throw new Error('DW06 spots signs');
     delete activity.messages[0]!.parts[0]!.feedback;
     activity.messages[0]!.parts[1]!.sign = 'nope';
@@ -169,12 +163,12 @@ describe('activityProblems', () => {
   });
 
   it('checks a chart view can show every bar, and a design step has what its kind needs', () => {
-    const chart = activityOf('DW09.json');
+    const chart = retiredActivity('DW09-numbers.json');
     if (chart.type !== 'chart-check') throw new Error('DW09 checks a chart');
     chart.views[0]!.axisStart = 51;
     expect(problems(chart)).toEqual(['here: view "poster" can\'t show Stall B (50)']);
-    const plan = activityOf('DW11.json');
-    if (plan.type !== 'design-plan') throw new Error('DW11 plans');
+    const plan = activityOf('DW17.json');
+    if (plan.type !== 'design-plan') throw new Error('DW17 plans');
     delete plan.steps[1]!.options;
     expect(problems(plan)).toEqual(['here: step "should-ai" is a choice with no options']);
   });

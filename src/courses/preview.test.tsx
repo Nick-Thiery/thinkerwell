@@ -72,15 +72,15 @@ describe('with the preview on', () => {
     expect(await screen.findByRole('heading', { level: 1, name: 'Digital World' })).toBeInTheDocument();
     expect(screen.getByText('Draft course: not yet reviewed')).toBeInTheDocument();
     expect(screen.getAllByRole('heading', { level: 2 }).map((h) => h.textContent)).toEqual([
-      'How AI works',
-      'Check what you see',
-      'Use tools wisely',
-      'AI where you live',
+      'Thinking machines',
+      'Who builds AI, and at what cost',
+      'AI in daily life',
+      'Truth, power and choices',
       'For teachers and reviewers',
     ]);
     expect(screen.queryByText(/Section check:/)).not.toBeInTheDocument();
     expect(screen.getByText('There are no section checks or certificates in this draft yet.')).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /Teacher guide, Lesson 2: How AI learns from examples/ })).toHaveAttribute('href', '/educators/lesson/dw-how-ai-learns');
+    expect(screen.getByRole('link', { name: /Teacher guide, Lesson 3: How AI learns from examples/ })).toHaveAttribute('href', '/educators/lesson/dw-how-ai-learns');
   });
 
   it('opens a lesson with its activity after the evidence, and a different case of its id redirects', async () => {
@@ -90,7 +90,7 @@ describe('with the preview on', () => {
     expect(router.state.location.pathname).toBe('/lesson/dw-how-ai-learns/read');
     expect(await screen.findByRole('heading', { level: 3, name: 'Train the leaf model' })).toBeInTheDocument();
     // Back to the course goes to Digital World's map, at the lesson's section.
-    expect(screen.getByRole('link', { name: 'How AI works' })).toHaveAttribute('href', '/course/digital-world#how-ai-works');
+    expect(screen.getByRole('link', { name: 'Thinking machines' })).toHaveAttribute('href', '/course/digital-world#thinking-machines');
   });
 
   it('turns off from the banner, back to Our World, and the course is gone again', async () => {
@@ -109,9 +109,9 @@ describe('with the preview on', () => {
   it('prints every lesson, each with its activity on paper', async () => {
     await turnOn();
     renderAt('/course/digital-world/print');
-    expect(await screen.findAllByRole('heading', { level: 1 })).toHaveLength(11);
-    expect(screen.getAllByText("Digital World, draft course: not yet reviewed. Don't use it with learners yet.")).toHaveLength(11);
-    expect(screen.getAllByRole('heading', { level: 2, name: 'Activity' })).toHaveLength(11);
+    expect(await screen.findAllByRole('heading', { level: 1 })).toHaveLength(17);
+    expect(screen.getAllByText("Digital World, draft course: not yet reviewed. Don't use it with learners yet.")).toHaveLength(17);
+    expect(screen.getAllByRole('heading', { level: 2, name: 'Activity' })).toHaveLength(17);
   });
 
   it('gives each lesson a teacher guide with the activity, its answers and the notes for reviewers', async () => {
@@ -121,7 +121,7 @@ describe('with the preview on', () => {
     expect(screen.getByRole('heading', { level: 2, name: 'The activity' })).toBeInTheDocument();
     expect(screen.getAllByText('Correct answer').length).toBeGreaterThan(1);
     expect(screen.getByRole('heading', { level: 2, name: 'For reviewers' })).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Back to the course' })).toHaveAttribute('href', '/course/digital-world#check-what-you-see');
+    expect(screen.getByRole('link', { name: 'Back to the course' })).toHaveAttribute('href', '/course/digital-world#truth-and-power');
   });
 });
 
