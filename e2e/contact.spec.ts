@@ -63,7 +63,7 @@ test('when the message can’t be sent, everything typed stays and the email add
   await page.getByRole('button', { name: 'Send enquiry' }).click();
   const alert = page.getByRole('alert');
   await expect(alert).toContainText("We couldn't send your message.");
-  await expect(alert.getByRole('link', { name: 'hello@thinkerwell.app' })).toHaveAttribute('href', 'mailto:hello@thinkerwell.app');
+  await expect(alert.getByRole('link', { name: 'thinkerwell.hello@gmail.com' })).toHaveAttribute('href', 'mailto:thinkerwell.hello@gmail.com');
   await expect(page.getByLabel('Your name')).toHaveValue('Ana Lim');
   await expect(page.getByLabel('Your message')).toHaveValue('Can we use the lessons with a class of twenty on four tablets?');
 });

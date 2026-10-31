@@ -36,7 +36,7 @@ describe('POST /api/contact', () => {
     expect(sent).toEqual([
       {
         from: ENV.CONTACT_FROM_EMAIL,
-        to: 'hello@thinkerwell.app',
+        to: 'thinkerwell.hello@gmail.com',
         subject: '[Thinkerwell enquiry] Learning organisation or NGO',
         text: expect.stringContaining('Name: Siti Rahma\nEmail: siti@example.org\nSent: 2026-10-23T05:00:00.000Z\n\nMessage:\nWe would like to use Thinkerwell with our learners.') as string,
         replyTo: 'siti@example.org',
