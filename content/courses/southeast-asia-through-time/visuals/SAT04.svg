@@ -2,42 +2,43 @@
 <title>Trade and exclusive control</title>
 <desc>A schematic of trade connections in two panels. Left: the Banda Islands linked to English, Portuguese, Dutch and other buyers, so sellers can choose. Right: the VOC demands exclusive control, so only one link to the VOC remains and other buyers are shut out.</desc>
 <rect x="0" y="0" width="960" height="540" rx="24" fill="#DCEFD5"/>
-<rect x="24" y="24" width="444" height="446" rx="16" fill="#FFFFFF" stroke="#D5D1DC" stroke-width="3"/>
-<text x="246" y="68" font-size="24" font-weight="700" fill="#2D6326" text-anchor="middle">Several buyers</text>
-<path d="M186,226 L147,161" stroke="#4E32B5" stroke-width="4"/><path d="M142,152 L142,171 L158,161 Z" fill="#4E32B5"/>
-<path d="M306,226 L345,161" stroke="#4E32B5" stroke-width="4"/><path d="M350,152 L334,161 L350,171 Z" fill="#4E32B5"/>
-<path d="M186,290 L147,352" stroke="#4E32B5" stroke-width="4"/><path d="M142,360 L159,352 L142,341 Z" fill="#4E32B5"/>
-<path d="M306,290 L345,352" stroke="#4E32B5" stroke-width="4"/><path d="M350,360 L350,341 L333,352 Z" fill="#4E32B5"/>
-<rect x="146" y="226" width="200" height="64" rx="32" fill="#F3E3C3" stroke="#0F0E0E" stroke-width="4"/>
-<g transform="translate(180,258)"><ellipse cx="0" cy="0" rx="14" ry="17" fill="#A07850" stroke="#0F0E0E" stroke-width="3"/><path d="M-6,-10 Q2,0 -4,11 M5,-11 Q-1,-1 6,9" fill="none" stroke="#F3E3C3" stroke-width="2.5" stroke-linecap="round"/></g>
-<text x="260" y="266" font-size="22" font-weight="700" fill="#0F0E0E" text-anchor="middle">Banda Islands</text>
-<rect x="44" y="100" width="196" height="52" rx="12" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="3"/>
-<text x="142" y="134" font-size="22" fill="#0F0E0E" text-anchor="middle">English traders</text>
-<rect x="252" y="100" width="196" height="52" rx="12" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="3"/>
-<text x="350" y="134" font-size="22" fill="#0F0E0E" text-anchor="middle">Portuguese traders</text>
-<rect x="44" y="360" width="196" height="52" rx="12" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="3"/>
-<text x="142" y="394" font-size="22" fill="#0F0E0E" text-anchor="middle">Dutch traders</text>
-<rect x="252" y="360" width="196" height="52" rx="12" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="3"/>
-<text x="350" y="394" font-size="22" fill="#0F0E0E" text-anchor="middle">Other visitors</text>
-<text x="246" y="448" font-size="22" fill="#4B4654" text-anchor="middle">Sellers can choose</text>
-<rect x="492" y="24" width="444" height="446" rx="16" fill="#FFFFFF" stroke="#D5D1DC" stroke-width="3"/>
-<text x="714" y="68" font-size="24" font-weight="700" fill="#2D6326" text-anchor="middle">VOC demands exclusive control</text>
-<path d="M654,226 L634,193" stroke="#4B4654" stroke-width="4" stroke-dasharray="6 6"/><path d="M619,202 L650,184" stroke="#0F0E0E" stroke-width="7" stroke-linecap="round"/>
-<path d="M774,226 L794,193" stroke="#4B4654" stroke-width="4" stroke-dasharray="6 6"/><path d="M778,184 L809,202" stroke="#0F0E0E" stroke-width="7" stroke-linecap="round"/>
-<path d="M654,290 L619,346" stroke="#4E32B5" stroke-width="9"/><path d="M610,360 L637,346 L611,330 Z" fill="#4E32B5"/>
-<path d="M774,290 L794,322" stroke="#4B4654" stroke-width="4" stroke-dasharray="6 6"/><path d="M809,312 L779,331" stroke="#0F0E0E" stroke-width="7" stroke-linecap="round"/>
-<rect x="614" y="226" width="200" height="64" rx="32" fill="#F3E3C3" stroke="#0F0E0E" stroke-width="4"/>
-<g transform="translate(648,258)"><ellipse cx="0" cy="0" rx="14" ry="17" fill="#A07850" stroke="#0F0E0E" stroke-width="3"/><path d="M-6,-10 Q2,0 -4,11 M5,-11 Q-1,-1 6,9" fill="none" stroke="#F3E3C3" stroke-width="2.5" stroke-linecap="round"/></g>
-<text x="728" y="266" font-size="22" font-weight="700" fill="#0F0E0E" text-anchor="middle">Banda Islands</text>
-<rect x="512" y="100" width="196" height="52" rx="12" fill="#FFFFFF" stroke="#4B4654" stroke-width="3" stroke-dasharray="8 6"/>
-<text x="610" y="134" font-size="22" fill="#4B4654" text-anchor="middle">English traders</text>
-<rect x="720" y="100" width="196" height="52" rx="12" fill="#FFFFFF" stroke="#4B4654" stroke-width="3" stroke-dasharray="8 6"/>
-<text x="818" y="134" font-size="22" fill="#4B4654" text-anchor="middle">Portuguese traders</text>
-<rect x="512" y="360" width="196" height="52" rx="12" fill="#ECE4FD" stroke="#4E32B5" stroke-width="5"/>
-<text x="610" y="394" font-size="22" font-weight="700" fill="#0F0E0E" text-anchor="middle">VOC</text>
-<rect x="720" y="360" width="196" height="52" rx="12" fill="#FFFFFF" stroke="#4B4654" stroke-width="3" stroke-dasharray="8 6"/>
-<text x="818" y="394" font-size="22" fill="#4B4654" text-anchor="middle">Other visitors</text>
-<text x="714" y="448" font-size="22" fill="#4B4654" text-anchor="middle">Other buyers shut out</text>
-<path d="M472,247 H484" stroke="#2D6326" stroke-width="0"/>
-<text x="480" y="506" font-size="22" fill="#4B4654" text-anchor="middle">Trade connections, schematic</text>
+<rect x="24" y="24" width="444" height="450" rx="16" fill="#FFFFFF" stroke="#D5D1DC" stroke-width="3"/>
+<text x="246" y="62" font-size="24" font-weight="700" fill="#2D6326" text-anchor="middle">Trade with</text>
+<text x="246" y="92" font-size="24" font-weight="700" fill="#2D6326" text-anchor="middle">several buyers</text>
+<path d="M166,238 L147,180" stroke="#4E32B5" stroke-width="4"/><path d="M142,166 L138,184 L156,178 Z" fill="#4E32B5"/>
+<path d="M326,238 L345,180" stroke="#4E32B5" stroke-width="4"/><path d="M350,166 L336,178 L354,184 Z" fill="#4E32B5"/>
+<path d="M166,302 L147,360" stroke="#4E32B5" stroke-width="4"/><path d="M142,374 L156,362 L138,356 Z" fill="#4E32B5"/>
+<path d="M326,302 L345,360" stroke="#4E32B5" stroke-width="4"/><path d="M350,374 L354,356 L336,362 Z" fill="#4E32B5"/>
+<rect x="126" y="238" width="240" height="64" rx="32" fill="#F3E3C3" stroke="#0F0E0E" stroke-width="4"/>
+<g transform="translate(246,236)"><circle cx="0" cy="0" r="22" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="3"/><ellipse cx="0" cy="0" rx="11" ry="14" fill="#A07850" stroke="#0F0E0E" stroke-width="2.5"/><path d="M-4,-8 Q2,0 -3,9 M4,-9 Q-1,-1 5,7" fill="none" stroke="#F3E3C3" stroke-width="2.5" stroke-linecap="round"/></g>
+<text x="246" y="286" font-size="22" font-weight="700" fill="#0F0E0E" text-anchor="middle">Banda Islands</text>
+<rect x="44" y="114" width="196" height="52" rx="12" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="3"/>
+<text x="142" y="148" font-size="22" fill="#0F0E0E" text-anchor="middle">English</text>
+<rect x="252" y="114" width="196" height="52" rx="12" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="3"/>
+<text x="350" y="148" font-size="22" fill="#0F0E0E" text-anchor="middle">Portuguese</text>
+<rect x="44" y="374" width="196" height="52" rx="12" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="3"/>
+<text x="142" y="408" font-size="22" fill="#0F0E0E" text-anchor="middle">Dutch</text>
+<rect x="252" y="374" width="196" height="52" rx="12" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="3"/>
+<text x="350" y="408" font-size="22" fill="#0F0E0E" text-anchor="middle">Others</text>
+<text x="246" y="456" font-size="22" fill="#4B4654" text-anchor="middle">Sellers can choose</text>
+<rect x="492" y="24" width="444" height="450" rx="16" fill="#FFFFFF" stroke="#D5D1DC" stroke-width="3"/>
+<text x="714" y="62" font-size="24" font-weight="700" fill="#2D6326" text-anchor="middle">VOC demands</text>
+<text x="714" y="92" font-size="24" font-weight="700" fill="#2D6326" text-anchor="middle">exclusive control</text>
+<path d="M634,238 L622,202" stroke="#4B4654" stroke-width="4" stroke-dasharray="6 6"/><path d="M605,208 L639,196" stroke="#0F0E0E" stroke-width="7" stroke-linecap="round"/>
+<path d="M794,238 L806,202" stroke="#4B4654" stroke-width="4" stroke-dasharray="6 6"/><path d="M789,196 L823,208" stroke="#0F0E0E" stroke-width="7" stroke-linecap="round"/>
+<path d="M634,302 L617,352" stroke="#4E32B5" stroke-width="9"/><path d="M610,374 L633,354 L603,344 Z" fill="#4E32B5"/>
+<path d="M794,302 L806,338" stroke="#4B4654" stroke-width="4" stroke-dasharray="6 6"/><path d="M823,332 L789,344" stroke="#0F0E0E" stroke-width="7" stroke-linecap="round"/>
+<rect x="594" y="238" width="240" height="64" rx="32" fill="#F3E3C3" stroke="#0F0E0E" stroke-width="4"/>
+<g transform="translate(714,236)"><circle cx="0" cy="0" r="22" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="3"/><ellipse cx="0" cy="0" rx="11" ry="14" fill="#A07850" stroke="#0F0E0E" stroke-width="2.5"/><path d="M-4,-8 Q2,0 -3,9 M4,-9 Q-1,-1 5,7" fill="none" stroke="#F3E3C3" stroke-width="2.5" stroke-linecap="round"/></g>
+<text x="714" y="286" font-size="22" font-weight="700" fill="#0F0E0E" text-anchor="middle">Banda Islands</text>
+<rect x="512" y="114" width="196" height="52" rx="12" fill="#FFFFFF" stroke="#4B4654" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="610" y="148" font-size="22" fill="#4B4654" text-anchor="middle">English</text>
+<rect x="720" y="114" width="196" height="52" rx="12" fill="#FFFFFF" stroke="#4B4654" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="818" y="148" font-size="22" fill="#4B4654" text-anchor="middle">Portuguese</text>
+<rect x="512" y="374" width="196" height="52" rx="12" fill="#ECE4FD" stroke="#4E32B5" stroke-width="5"/>
+<text x="610" y="408" font-size="22" font-weight="700" fill="#0F0E0E" text-anchor="middle">VOC</text>
+<rect x="720" y="374" width="196" height="52" rx="12" fill="#FFFFFF" stroke="#4B4654" stroke-width="3" stroke-dasharray="8 6"/>
+<text x="818" y="408" font-size="22" fill="#4B4654" text-anchor="middle">Others</text>
+<text x="714" y="456" font-size="22" fill="#4B4654" text-anchor="middle">Other buyers shut out</text>
+<text x="480" y="508" font-size="22" fill="#4B4654" text-anchor="middle">Trade connections, schematic</text>
 </svg>
