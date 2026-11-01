@@ -5,7 +5,7 @@
   "section": "who-builds-ai",
   "title": "When AI gets it wrong",
   "essentialQuestion": "Why does AI sometimes work well for some people and badly for others?",
-  "learningGoal": "Explain how missing examples in training data can make an AI tool unfair, and suggest one way to fix it.",
+  "learningGoal": "Explain how missing examples and other causes can make an AI tool work worse for some groups, and suggest how to find and fix the cause.",
   "estimatedMinutes": [
     30,
     50
@@ -273,11 +273,15 @@
   },
   "sources": [
     {
-      "label": "Attia and others (AIES 2024): Kid-Whisper, the gap in speech recognition between children and adults",
+      "label": "Attia and others (AIES 2024): Kid-Whisper, towards bridging the gap in speech recognition between children and adults",
       "url": "https://ojs.aaai.org/index.php/AIES/article/view/31618"
     },
     {
-      "label": "Stanford Report (2025): How AI is leaving non-English speakers behind",
+      "label": "Suresh and Guttag (EAAMO 2021): A framework for understanding sources of harm throughout the machine learning life cycle",
+      "url": "https://arxiv.org/abs/1901.10002"
+    },
+    {
+      "label": "Stanford Report, from Stanford HAI (2025): How AI is leaving non-English speakers behind",
       "url": "https://news.stanford.edu/stories/2025/05/digital-divide-ai-llms-exclusion-non-english-speakers-research"
     },
     {
@@ -294,8 +298,8 @@
     "Bias in real tools can touch race, gender and other identities (the Lesson 3 video mentions face recognition). Keep the discussion on how training data causes it and how to fix it; don't ask learners to share times they were treated unfairly."
   ],
   "educatorNotes": [
-    "The numbers in the activity (19, 16 and 9 of 20) are made up to show the idea. Real research also found big gaps for children's voices; see the sources.",
-    "Lesson 3's leaf model is reused on purpose: learners can see the same cause (missing examples) in a small model they trained and in real tools."
+    "The numbers in the activity (19, 16 and 9 of 20) are made up to show the idea; the Riverbend table tells learners what each tool learned from, so the cause is given, not worked out from the scores. Real research: Kid-Whisper (AIES 2024) found that a widely used speech tool, without extra training, made 3 to 10 times as many errors on children's speech as on adults' in the tests it used, and names two causes: few recordings of children, and children's speech varying more as they grow. Training it on more children's speech narrowed the gap but did not close it.",
+    "Missing examples are one cause of bias, not the only one. Suresh and Guttag (2021) list seven sources of harm across the machine-learning life cycle, including who is in the data (representation), how labels are chosen or measured, the goal a model is trained for, how it is tested, and how and where it is used. Their example: a heart-attack model improved when more data from women was added, but a hiring model trained on human ratings did not, because the problem was in the labels. A gap in results shows something is wrong, not why. Don't tell learners that bias is always an accident: the lesson says only that it can be unfair even when nobody meant it. The claim record is in content/courses/digital-world/claims/DW08.md. Lesson 3's leaf model is reused on purpose: learners can see one cause (missing examples) in a small model they trained and in real tools. The activity's extension (a wrong label copied by the model) shows a second cause, labels."
   ],
   "changes": [
     "New lesson (Digital World draft 1). There is no Base44 original, so oldId is null.",
@@ -303,6 +307,7 @@
     "Adds a compare-results activity, documented in docs/content/DIGITAL_WORLD_SPEC.md.",
     "visual.src points to a picture that doesn't exist yet.",
     "Needs review by an AI researcher for accuracy, by Justin for level and tone, and by a partner educator for the sensitive notes.",
-    "October 2026, social studies rebuild (Justin's brief: AI and the digital world through a social studies lens, at most 20 lessons): kept as Lesson 8 in \"Who builds AI, and at what cost\" (who-builds-ai). The notes above about the old section ids are out of date."
+    "October 2026, social studies rebuild (Justin's brief: AI and the digital world through a social studies lens, at most 20 lessons): kept as Lesson 8 in \"Who builds AI, and at what cost\" (who-builds-ai). The notes above about the old section ids are out of date.",
+    "Revised on 1 November 2026 from Justin's review: both readings now give missing examples as one possible cause of bias, alongside wrong or unfair labels, the tool's goal, its design and where it is used (Suresh and Guttag, 2021, added as a source); “Nobody planned to leave those speakers out” became “Even when nobody meant to leave people out, the result can still be unfair”, so it no longer says no real system was built that way; the third section, the second quick check and the activity's feedback now say a gap in results shows something is wrong but not why; the glossary's training data is qualified (“Here, each example comes with its answer”) and bias no longer says “often by accident”; the learning goal was widened to match; the Write starter “This is unfair because …” became “This matters to ___ because …”. Evidence stays fictional (Riverbend); real research stays in the reading and notes. Code.org's and Experience AI's pages could not be reopened on 1 November 2026. Claim record: claims/DW08.md."
   ]
 }
