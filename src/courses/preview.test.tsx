@@ -66,6 +66,22 @@ describe('with the preview on', () => {
     expect(links[1]).toHaveAttribute('href', '/course/digital-world');
   });
 
+  it('lists every preview course this device has turned on, in course order', async () => {
+    const store = await getStore();
+    await store.updateSettings({ previewCourses: ['southeast-asia-through-time', 'digital-world'] });
+    renderAt('/course/southeast-asia-through-time');
+    const choice = await screen.findByRole('navigation', { name: 'Courses on this device' });
+    const links = await waitFor(() => {
+      const found = choice.querySelectorAll('a');
+      expect(found).toHaveLength(3);
+      return found;
+    });
+    expect([...links].map((link) => link.getAttribute('href'))).toEqual(['/course', '/course/digital-world', '/course/southeast-asia-through-time']);
+    expect(links[2]).toHaveTextContent('Southeast Asia Through TimeDraft');
+    expect(links[2]).toHaveAttribute('aria-current', 'page');
+    expect(screen.getByRole('heading', { level: 1, name: 'Southeast Asia Through Time' })).toBeInTheDocument();
+  });
+
   it('shows Digital World’s map with the draft banner, its four sections and no section checks', async () => {
     await turnOn();
     renderAt('/course/digital-world');
@@ -182,6 +198,15 @@ describe('the build', () => {
     expect(previewChunkFileName({ facadeModuleId: '/repo/src/courses/routes.tsx' })).toBe('assets/preview/[name]-[hash].js');
     expect(previewChunkFileName({ facadeModuleId: '/repo/src/app/lazy/lessonPages.ts' })).toBeNull();
     expect(previewChunkFileName({ facadeModuleId: null })).toBeNull();
+    // What two courses share (the kit and its words) has no entry of its own.
+    expect(previewChunkFileName({ facadeModuleId: null, moduleIds: ['/repo/src/courses/kit/Frame.tsx', '\0tw-messages:previewCourse'] })).toBe(
+      'assets/preview/[name]-[hash].js',
+    );
+    expect(previewChunkFileName({ facadeModuleId: null, moduleIds: ['/repo/src/courses/kit/Frame.tsx', '/repo/src/pages/lesson/LessonPage.tsx'] })).toBeNull();
+    expect(previewAssetFileName({ originalFileNames: ['src/courses/kit/previewCourse.css'] })).toBe('assets/preview/[name]-[hash][extname]');
+    expect(previewAssetFileName({ originalFileNames: ['content/courses/southeast-asia-through-time/visuals/SAT01-photo.jpg'] })).toBe(
+      'assets/preview/southeast-asia-through-time/[name]-[hash][extname]',
+    );
     expect(previewAssetFileName({ originalFileNames: ['src/courses/digital-world/digitalWorld.css'] })).toBe('assets/preview/digital-world/[name]-[hash][extname]');
     expect(previewAssetFileName({ originalFileNames: ['content/visuals/L01.svg'] })).toBeNull();
     expect(PREVIEW_PRECACHE_IGNORES).toEqual(['assets/preview/**']);

@@ -181,8 +181,9 @@ test('the production build has no source maps and no dev-only pages', { tag: '@o
   await expect(page.locator('h1')).toHaveText("This page isn't here");
 });
 
-// Digital World is a preview course (docs/notes/digital-world-preview.md):
-// its lessons, activities, words and styles are built into assets/preview/,
+// Digital World and Southeast Asia Through Time are preview courses
+// (docs/notes/digital-world-preview.md): their lessons, activities, pictures,
+// words and styles, and the kit they share, are built into assets/preview/,
 // which the service worker never precaches, and load only on a device that
 // turned the preview on. These words and names appear nowhere else.
 const DIGITAL_WORLD = [
@@ -193,7 +194,10 @@ const DIGITAL_WORLD = [
   'Plan your AI helper',
   'dw-what-ai-is',
   'tw-dw-',
+  'tw-pc-',
 ];
+// Southeast Asia Through Time, the second preview course: the same rule.
+const SOUTHEAST_ASIA = ['Southeast Asia Through Time is a draft', 'sat-01-ban-chiang-pot', 'SAT01-photo'];
 
 // Vietnamese is a hidden preview language (ready: false, docs/notes/languages.md):
 // its messages, lessons and pictures are built into assets/locales/vi/, its font
@@ -223,12 +227,12 @@ test('no Vietnamese preview content is precached or reaches a first visit', { ta
   expect([...firstVisit].filter((url) => url.includes('/locales/vi/') || url.includes('/fonts-vietnamese/'))).toEqual([]);
 });
 
-test('no Digital World content or code is precached or reaches a first visit', { tag: '@own-size' }, async ({ page, request, baseURL }) => {
+test('no preview course content or code is precached or reaches a first visit', { tag: '@own-size' }, async ({ page, request, baseURL }) => {
   const urls = await precacheList(request);
   expect(urls.filter((url) => url.includes('/preview/'))).toEqual([]);
   for (const url of urls.filter((u) => TEXT.test(u))) {
     const text = (await sentSize(request, url)).body.toString('utf8');
-    for (const marker of DIGITAL_WORLD) expect(text.includes(marker), `${url} has "${marker}"`).toBe(false);
+    for (const marker of [...DIGITAL_WORLD, ...SOUTHEAST_ASIA]) expect(text.includes(marker), `${url} has "${marker}"`).toBe(false);
   }
 
   const origin = new URL(baseURL ?? 'http://localhost').origin;
@@ -244,7 +248,7 @@ test('no Digital World content or code is precached or reaches a first visit', {
   expect([...firstVisit].filter((url) => url.includes('/preview/'))).toEqual([]);
   for (const url of [...firstVisit].filter((u) => TEXT.test(u) || u === '/')) {
     const text = (await sentSize(request, url)).body.toString('utf8');
-    for (const marker of DIGITAL_WORLD) expect(text.includes(marker), `${url} has "${marker}"`).toBe(false);
+    for (const marker of [...DIGITAL_WORLD, ...SOUTHEAST_ASIA]) expect(text.includes(marker), `${url} has "${marker}"`).toBe(false);
   }
 
   // The words are real: with the preview on, they arrive from assets/preview/.
