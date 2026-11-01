@@ -223,7 +223,12 @@
         "question": "Two pages say the bridge closes for a year, but one copied the other. Does that make it more likely to be true?",
         "options": [
           {
-            "text": "Yes, because two pages say it",
+            "text": "No, because copying adds no evidence",
+            "correct": true,
+            "feedback": "Yes. Agreement helps only when each source has its own evidence, like the council."
+          },
+          {
+            "text": "Yes, because two different pages say it",
             "correct": false,
             "feedback": "Not quite. The chat page only copied the post, so it adds no evidence. Read the third section."
           },
@@ -231,11 +236,6 @@
             "text": "Yes, because it was shared a lot",
             "correct": false,
             "feedback": "Not quite. Sharing does not make a claim true. Read the third section."
-          },
-          {
-            "text": "No, because copying adds no evidence",
-            "correct": true,
-            "feedback": "Yes. Agreement helps only when each source has its own evidence, like the council."
           }
         ]
       },
