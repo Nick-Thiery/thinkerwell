@@ -1,7 +1,8 @@
 /*
  * What every preview course's pages share (src/courses/kit/): the draft
  * banner and sheet note, the course choice, the course map's parts for
- * teachers and reviewers, the switch page and the notes for reviewers.
+ * teachers and reviewers, the switch page, the notes for reviewers, and
+ * the captions and credits under a lesson's pictures.
  * Loaded with a <link> only when a preview course's code loads
  * (./stylesheet.ts), never in the site's stylesheet or the offline copy.
  * Every class starts "tw-pc-"; the build stops if one reaches the site's
@@ -146,4 +147,26 @@
 
 .tw-pc-review-notes {
   border-block-start: 2px solid #000;
+}
+
+/* ------------------------------------------- a lesson's pictures (./Pictures.tsx) */
+
+.tw-pc-picture-caption {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-block-start: var(--space-3);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.tw-pc-picture-caption p {
+  margin: 0;
+}
+
+.tw-pc-picture-credit {
+  color: var(--ink-muted);
+  font-size: 14px;
+  line-height: 20px;
+  overflow-wrap: anywhere;
 }

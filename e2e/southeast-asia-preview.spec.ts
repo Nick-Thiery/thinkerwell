@@ -47,14 +47,14 @@ test.describe('with the preview on', () => {
     const errors = watchErrors(page);
     await turnOn(page);
     await page.goto(`/lesson/${LESSON}/read`);
-    await expect(page.locator('.tw-lx .tw-lesson-visual img')).toBeVisible();
-    await expect(page.locator('.tw-lx .tw-lesson-visual-caption')).toBeVisible();
+    await expect(page.locator('.tw-lx > .tw-lesson-visual > img')).toBeVisible();
+    await expect(page.locator('.tw-lx .tw-pc-picture-caption')).toBeVisible();
 
     await page.goto(`/lesson/${LESSON}/print`);
     const pictures = page.locator('.tw-lesson-visual img');
     await expect(pictures).toHaveCount(2);
-    await expect(page.locator('.tw-lesson-visual-credit')).toContainText('CC BY-SA 3.0');
-    await expect(page.locator('.tw-lesson-visual-credit').getByRole('link', { name: /See the original/ })).toHaveAttribute(
+    await expect(page.locator('.tw-pc-picture-credit')).toContainText('CC BY-SA 3.0');
+    await expect(page.locator('.tw-pc-picture-credit').getByRole('link', { name: /See the original/ })).toHaveAttribute(
       'href',
       /commons\.wikimedia\.org/,
     );

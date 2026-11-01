@@ -303,8 +303,12 @@ export const visualSchema = z.strictObject({
   src: z.string().regex(/^visuals\/[A-Za-z0-9_-]+\.svg$/, 'must be a path like "visuals/L10.svg" (an SVG in content/visuals/)'),
 });
 export type Visual = z.infer<typeof visualSchema>;
-/** A picture of any course: Southeast Asia Through Time's carry a caption and a "Look closely" question (captionedVisualSchema). */
-export type CourseVisual = Visual & { caption?: string; lookClosely?: string };
+/**
+ * A picture of any course: Southeast Asia Through Time's carry a caption and
+ * a "Look closely" question (captionedVisualSchema), and its second picture
+ * can be a photo.
+ */
+export type CourseVisual = Omit<Visual, 'type'> & { type: Visual['type'] | 'photo'; caption?: string; lookClosely?: string };
 
 export const sourceLinkSchema = z.strictObject({
   label: text,

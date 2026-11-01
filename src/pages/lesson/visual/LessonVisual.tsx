@@ -1,12 +1,15 @@
 import { useId, useRef } from 'react';
 import { Button } from '../../../components/ds';
-import { type CourseVisual, type SecondVisual } from '../../../content';
+import { type CourseVisual } from '../../../content';
 import { useLessonContent } from '../../../content/useContent';
 import { useI18n } from '../../../i18n';
+import { useLessonExtras } from '../../../lesson/extras';
 import './LessonVisual.css';
 
 export interface LessonVisualProps {
-  visual: CourseVisual | SecondVisual | null | undefined;
+  visual: CourseVisual | null | undefined;
+  /** The dialog's heading, when the picture's type has no word of its own (a preview course's photo). */
+  title?: string;
   /**
    * Offers "See it bigger" (default true). The print view turns it off:
    * paper has no buttons, and there the picture already fills the page.
@@ -15,18 +18,11 @@ export interface LessonVisualProps {
 }
 
 /**
- * A lesson's picture (content/lessons/*.json `visual`): an SVG from
+ * The lesson's one picture (content/lessons/*.json `visual`): an SVG from
  * content/visuals/, as wide as the reading column, with the lesson's alt
  * text. The team-only `description` is never shown. The file is part of the
  * build (served from the site itself, never another server). Renders
  * nothing if a lesson has no picture. LessonEvidence places it.
- *
- * A preview course's pictures (Southeast Asia Through Time) can carry more:
- * a caption under the picture, a "Look closely" question, and for a real
- * photo or map (its `secondVisual`, which Read shows after the last part)
- * where it came from and its licence, as CC BY and CC BY-SA ask. Their
- * words are the preview courses' (`previewCourse.picture`), which only
- * those pages load.
  *
  * "See it bigger" (phase 8) opens the same picture in a modal <dialog>. On a
  * phone the picture is about 330px wide, so its labels (22 units of 960) are
@@ -35,16 +31,17 @@ export interface LessonVisualProps {
  * (nothing turns it off). The native dialog keeps focus inside, closes with
  * Escape or "Close", and focus goes back to the button.
  */
-export function LessonVisual({ visual, enlargeable = true }: LessonVisualProps) {
+export function LessonVisual({ visual, enlargeable = true, title: ownTitle }: LessonVisualProps) {
   const { t, contentLang } = useI18n();
   const content = useLessonContent();
+  const { caption } = useLessonExtras();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const toolsRef = useRef<HTMLDivElement>(null);
   const titleId = useId();
   const url = visual ? content.getVisualUrl(visual.src) : undefined;
   if (!visual || !url) return null;
-  const title = visual.type === 'photo' ? t('previewCourse.picture.photoTitle') : t(`lessonPlayer.visual.title.${visual.type}`);
-  const credit = 'credit' in visual ? visual.credit : null;
+  // A photo (a preview course's) always comes with its own title.
+  const title = ownTitle ?? t(`lessonPlayer.visual.title.${visual.type as Exclude<CourseVisual['type'], 'photo'>}`);
 
   const opener = () => toolsRef.current?.querySelector('button') ?? null;
 
@@ -72,22 +69,8 @@ export function LessonVisual({ visual, enlargeable = true }: LessonVisualProps) 
     <figure className="tw-lesson-visual">
       {/* Not lazy: it sits near the top of Read, and the warm-up often asks learners to look at it. */}
       <img src={url} alt={visual.alt} decoding="async" {...contentLang} />
-      {visual.caption ? (
-        <figcaption className="tw-lesson-visual-caption">
-          <p {...contentLang}>{visual.caption}</p>
-          {visual.lookClosely ? (
-            <p className="tw-lesson-visual-look">
-              <strong>{t('previewCourse.picture.lookClosely')}</strong> <span {...contentLang}>{visual.lookClosely}</span>
-            </p>
-          ) : null}
-          {credit ? (
-            <>
-              <p className="tw-lesson-visual-look">{t('previewCourse.picture.limits')}</p>
-              <PictureCredit credit={credit} />
-            </>
-          ) : null}
-        </figcaption>
-      ) : null}
+      {/* A preview course's caption and credit (src/lesson/extras.tsx); nothing in Our World. */}
+      {caption?.(visual)}
       {enlargeable ? (
         <>
           <div ref={toolsRef} className="tw-lesson-visual-tools tw-no-print">
@@ -127,36 +110,5 @@ export function LessonVisual({ visual, enlargeable = true }: LessonVisualProps) 
         </>
       ) : null}
     </figure>
-  );
-}
-
-/**
- * Where a real picture came from: its title, maker and date, the licence
- * (linked, as CC BY and CC BY-SA ask) and the file's page, and what
- * Thinkerwell changed. Plain links, opened in a new tab only on a tap.
- */
-function PictureCredit({ credit }: { credit: NonNullable<SecondVisual['credit']> }) {
-  const { t, tx, englishLang } = useI18n();
-  const newTab = <span className="tw-visually-hidden">{t('pages.teacherTools.newTab')}</span>;
-  const licence = credit.licenceUrl ? (
-    <a href={credit.licenceUrl} target="_blank" rel="noreferrer">
-      <span {...englishLang}>{credit.licence}</span> {newTab}
-    </a>
-  ) : (
-    <span {...englishLang}>{credit.licence}</span>
-  );
-  return (
-    <p className="tw-lesson-visual-credit">
-      {tx('previewCourse.picture.credit', {
-        title: <span {...englishLang}>{credit.title}</span>,
-        creator: <span {...englishLang}>{credit.creator}</span>,
-        created: <span {...englishLang}>{credit.created}</span>,
-        licence,
-      })}{' '}
-      <a href={credit.sourceUrl} target="_blank" rel="noreferrer">
-        {t('previewCourse.picture.source')} {newTab}
-      </a>{' '}
-      {tx('previewCourse.picture.changes', { changes: <span {...englishLang}>{credit.changes}</span> })}
-    </p>
   );
 }

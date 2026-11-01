@@ -126,7 +126,9 @@ describe('with the preview on', () => {
     await turnOn();
     renderAt('/course/digital-world/print');
     expect(await screen.findAllByRole('heading', { level: 1 })).toHaveLength(17);
-    expect(screen.getAllByText("Digital World, draft course: not yet reviewed. Don't use it with learners yet.")).toHaveLength(17);
+    // The course's name is marked as English inside the note, so match the whole note.
+    const notes = [...document.querySelectorAll('.tw-pc-sheet-note')].map((note) => note.textContent);
+    expect(notes).toEqual(Array(17).fill("Digital World, draft course: not yet reviewed. Don't use it with learners yet."));
     expect(screen.getAllByRole('heading', { level: 2, name: 'Activity' })).toHaveLength(17);
   });
 

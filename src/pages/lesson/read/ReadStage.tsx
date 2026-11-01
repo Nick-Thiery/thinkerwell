@@ -41,7 +41,6 @@ import { isSaveDataOn } from '../../../offline';
 import { LISTEN_RATES, listenVoiceFor, speechLangFor, useListenVoiceState } from '../../../speech';
 import type { ReadingLevel } from '../../../storage';
 import { LessonEvidence } from '../evidence/LessonEvidence';
-import { LessonVisual } from '../visual/LessonVisual';
 import { LessonDisclosure } from '../LessonDisclosure';
 import { StageActionBar } from '../StageActionBar';
 import { KeyWordsPanel } from './KeyWordsPanel';
@@ -255,8 +254,8 @@ export function ReadStage() {
           <ReadingPassage key={`${part}-${readingLevel}`} text={text} glossary={glossary} highlight={highlight} />
         </ReadingCard>
 
-        {/* A preview course's second picture (a real photo or map), after the last part, which talks about it. */}
-        {isLast && lesson.secondVisual ? <LessonVisual visual={lesson.secondVisual} /> : null}
+        {/* A course's second picture, after the last part, which talks about it; nothing in Our World. */}
+        {isLast ? <LessonSlot name="read:after-reading" /> : null}
 
         {glossary.length > 0 ? (
           <LessonDisclosure className="tw-read-keywords-disclosure" icon="Search" summary={t('lessonPlayer.read.keyWords')}>

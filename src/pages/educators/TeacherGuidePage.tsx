@@ -22,7 +22,6 @@ import { En, useI18n } from '../../i18n';
 import { LessonSlot } from '../../lesson/extras';
 import { formatDuration } from '../../lesson/format';
 import { LessonEvidence } from '../lesson/evidence/LessonEvidence';
-import { LessonVisual } from '../lesson/visual/LessonVisual';
 import { feedbackWithoutVerdict } from '../lesson/read/feedbackText';
 import { PrintToolbar } from '../print/PrintToolbar';
 import '../print/print.css';
@@ -128,8 +127,6 @@ export function TeacherGuidePage({ lesson }: { lesson: CourseLesson }) {
         <section className="tw-print-part tw-print-evidence">
           <h2>{t('pages.teacherGuide.evidenceTitle')}</h2>
           <LessonEvidence evidence={lesson.evidence} visual={lesson.visual} />
-          {/* A preview course's second picture (a real photo or map), with its caption and credit. */}
-          {lesson.secondVisual ? <LessonVisual visual={lesson.secondVisual} /> : null}
         </section>
         <LessonSlot name="guide:after-evidence" />
 

@@ -22,7 +22,6 @@ import { LessonSlot } from '../../lesson/extras';
 import { useLearnerSession } from '../../session';
 import type { ReadingLevel } from '../../storage';
 import { LessonEvidence } from '../lesson/evidence/LessonEvidence';
-import { LessonVisual } from '../lesson/visual/LessonVisual';
 import { buildReading } from '../lesson/read/readingPieces';
 import { AnswerLines, PrintToolbar } from './PrintToolbar';
 import './print.css';
@@ -132,12 +131,7 @@ export function LessonPrintSheet({ lesson, titleId = 'print-title', newPage = fa
           glossary={read.glossary}
         />
       ))}
-      {/* A preview course's second picture (a real photo or map), with its caption and credit. */}
-      {lesson.secondVisual ? (
-        <section className="tw-print-part tw-print-evidence">
-          <LessonVisual visual={lesson.secondVisual} enlargeable={false} />
-        </section>
-      ) : null}
+      <LessonSlot name="print:after-reading" />
 
       <section className="tw-print-part">
         <h2>{t('lessonPlayer.read.keyWordsTitle')}</h2>

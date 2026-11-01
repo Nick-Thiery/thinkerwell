@@ -13,13 +13,15 @@ import { LessonPrintPage, LessonPrintSheet } from '../../pages/print/LessonPrint
 import { PrintToolbar } from '../../pages/print/PrintToolbar';
 import { usePreviewCourse } from './course';
 import { DraftSheetNote, PreviewCourseFrame, useCourseTitle } from './Frame';
+import { PictureCaption, SecondPicture } from './Pictures';
 import { ReviewerNotes } from './ReviewerNotes';
 
 /**
  * What a preview course's lesson adds to the shared lesson pages
  * (src/lesson/extras.tsx): the draft note on every sheet, the notes for
- * reviewers at the end of the teacher guide, and whatever the course adds
- * itself (Digital World's activities: PreviewCourseConfig.lessonSlot).
+ * reviewers at the end of the teacher guide, a lesson's second picture and
+ * the captions under its pictures (./Pictures.tsx), and whatever the course
+ * adds itself (Digital World's activities: PreviewCourseConfig.lessonSlot).
  */
 export function useLessonExtras(lesson: CourseLesson): LessonExtras {
   const course = usePreviewCourse();
@@ -28,8 +30,21 @@ export function useLessonExtras(lesson: CourseLesson): LessonExtras {
       slot: (name) => {
         if (name === 'sheet:top') return <DraftSheetNote />;
         if (name === 'guide:end') return <ReviewerNotes lesson={lesson} />;
-        return course.lessonSlot?.(lesson, name) ?? null;
+        const second = lesson.secondVisual;
+        if (second && name === 'read:after-reading') return <SecondPicture visual={second} />;
+        if (second && name === 'print:after-reading') return <SecondPicture visual={second} onPaper />;
+        const own = course.lessonSlot?.(lesson, name) ?? null;
+        if (second && name === 'guide:after-evidence') {
+          return (
+            <>
+              <SecondPicture visual={second} onPaper />
+              {own}
+            </>
+          );
+        }
+        return own;
       },
+      caption: (visual) => <PictureCaption visual={visual} />,
     }),
     [lesson, course],
   );
