@@ -23,7 +23,7 @@ function noNetwork() {
 }
 
 describe('sort (Lessons 1 and 13, and others)', () => {
-  it('puts each item in a group with real radio buttons, and says what most people would say without marking anything wrong', async () => {
+  it('puts each item in a group with real radio buttons, and gives one possible answer and its reason without marking anything wrong', async () => {
     const user = userEvent.setup();
     const checkNetwork = noNetwork();
     const activity = dwActivity(1, 'sort');
@@ -33,11 +33,13 @@ describe('sort (Lessons 1 and 13, and others)', () => {
     const calculator = screen.getByRole('group', { name: 'Calculator' });
     expect(within(calculator).getAllByRole('radio')).toHaveLength(3);
     // Nothing is said until an item is placed.
-    expect(screen.queryByText(/Most people would say not AI/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/One possible answer/)).not.toBeInTheDocument();
 
-    // Placed "against" most people: still no "Not quite", just what most people say and why.
+    // Placed somewhere else: still no "Not quite", just one possible answer and its reason.
     await user.click(within(calculator).getByRole('radio', { name: 'Uses AI' }));
-    expect(screen.getByText(/Most people would say not AI\. It follows fixed steps/)).toBeInTheDocument();
+    // The group's name is marked as English inside the line, so match the whole line.
+    expect(screen.getByText((_, element) => element?.tagName === 'STRONG' && element.textContent === 'One possible answer: Not AI.')).toBeInTheDocument();
+    expect(screen.getByText(/It follows fixed steps/)).toBeInTheDocument();
     expect(screen.queryByText(/Not quite|Correct/)).not.toBeInTheDocument();
     expect(saved.progress.activity?.answers.calculator).toBe('ai');
 
@@ -53,14 +55,14 @@ describe('sort (Lessons 1 and 13, and others)', () => {
     checkNetwork();
   });
 
-  it('on paper, gives learners a box per group and teachers the group most people choose', () => {
+  it('on paper, gives learners a box per group and teachers one possible answer for each', () => {
     const activity = dwActivity(13, 'sort');
     const { view } = renderInLesson(13, <ActivityOnPaper activity={activity} forTeachers={false} />);
-    expect(screen.queryByText(/Most people would say:/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/One possible answer:/)).not.toBeInTheDocument();
     expect(screen.getAllByText('Probably real').length).toBe(activity.items.length);
     view.unmount();
     renderInLesson(13, <ActivityOnPaper activity={activity} forTeachers />);
-    expect(screen.getAllByText(/Most people would say:/)).toHaveLength(activity.items.length);
+    expect(screen.getAllByText(/One possible answer:/)).toHaveLength(activity.items.length);
   });
 });
 
@@ -158,14 +160,14 @@ describe('check-claim (Lesson 14)', () => {
     const { saved } = renderInLesson(14, <ActivityPlayer activity={dwActivity(14, 'check-claim')} />);
     // The question is there before any source is opened.
     expect(screen.getByRole('radiogroup', { name: 'What do the other sources say about the bridge?' })).toBeInTheDocument();
-    expect(screen.getByText('Sources opened: 0 of 4')).toBeInTheDocument();
+    expect(screen.getByText('Sources opened: 0 of 5')).toBeInTheDocument();
 
     const council = screen.getByRole('button', { name: /Town council notice/ });
     expect(council).toHaveAttribute('aria-expanded', 'false');
     await user.click(council);
     expect(council).toHaveAttribute('aria-expanded', 'true');
     expect(screen.getByText('The bridge closes for repairs on 3 and 4 May. It opens again on 5 May.')).toBeVisible();
-    expect(screen.getByText('Sources opened: 1 of 4')).toBeInTheDocument();
+    expect(screen.getByText('Sources opened: 1 of 5')).toBeInTheDocument();
     await user.click(screen.getByRole('button', { name: /Brightwater Fact Check/ }));
     expect(saved.progress.activity?.seen).toEqual(['council', 'fact-check']);
 

@@ -112,9 +112,9 @@ test.describe('with the preview on', () => {
     await calculator.getByRole('radio', { name: 'Uses AI' }).focus();
     await page.keyboard.press('ArrowDown');
     await expect(calculator.getByRole('radio', { name: 'Not AI' })).toBeChecked();
-    await expect(activity.getByText(/Most people would say not AI/)).toBeVisible();
+    await expect(activity.getByText('One possible answer: Not AI.')).toBeVisible();
     await activity.getByRole('group', { name: '“Smart” fan' }).getByText('Hard to say').click();
-    await expect(activity.getByText(/Any group can be right here/)).toBeVisible();
+    await expect(activity.getByText(/Any group can be justified here/)).toBeVisible();
     expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
 
     // The rest of Read, as in Our World.

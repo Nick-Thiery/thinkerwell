@@ -22,7 +22,7 @@ Digital World is the second course: **AI and the digital world through a social 
 | 10 | AI in your community (`dw-ai-in-your-community`) | AI in daily life | `sort` | First draft, kept |
 | 11 | AI at school: help or shortcut? (`dw-ai-at-school`) | AI in daily life | `ask-tool`: a labelled pretend tool | Reworked from "Asking an AI tool good questions" |
 | 12 | Cameras that know faces (`dw-faces-and-cameras`) | AI in daily life | `sort`: helps, could harm, or depends on the rules | New |
-| 13 | Spotting fake photos, videos and voices (`dw-spotting-fakes`) | Truth, power and choices | `sort` | First draft, kept |
+| 13 | Checking photos, videos and voices (`dw-spotting-fakes`) | Truth, power and choices | `sort` | First draft, kept |
 | 14 | Checking a claim before you share it (`dw-checking-a-claim`) | Truth, power and choices | `check-claim` | First draft, kept |
 | 15 | What your feed shows you (`dw-feeds-and-elections`) | Truth, power and choices | `sort`: likely to spread fast, or less likely | New |
 | 16 | Who makes the rules for AI? (`dw-rules-for-ai`) | Truth, power and choices | `sort`: banned, strict rules, or allowed | New |
@@ -31,6 +31,20 @@ Digital World is the second course: **AI and the digital world through a social 
 Taken out in the rebuild, because they teach tool skills rather than social studies: "Scams: fake prizes, loans and job offers", "Your privacy", "Numbers that persuade" and "Asking an AI tool good questions". They are in `retired/`, which the app and the checkers don't load; the unit tests still play their activities (`spot-signs`, `chart-check`, the first `ask-tool`) so those players stay working.
 
 The new lessons were drafted on 31 October 2026 by AI writers working from the spec, each fact from a source they opened (listed in each lesson's `sources`), every learner-facing example made up and carrying the fiction label. Every lesson passes `scripts/check_lesson.py` (wordfreq) and the build's zod and activity checks with no errors. Each lesson's `changes` says where it came from.
+
+## Revised from Justin's review (1 November 2026)
+
+Justin's review ("Digital World: focused review and curriculum revision guidelines") asked for targeted edits, not a rewrite: the 17 lessons, their ids, sections, activities and reading levels stay. What changed:
+
+- **Section 1 is historical as well as explanatory.** Lesson 2 is the history lesson: its evidence is now real and dated (the Dartmouth proposal of 31 August 1955 for the 1956 summer project, and a timeline from 1950 to 2012), rules and learning from examples are shown side by side, the "AI winters" are dated and sourced, and the made-up magazine headlines are a labelled claims exercise in the activity. Lessons 1, 3 and 4 each have a short, sourced history note. The section's description says it traces how AI developed; its title ("Thinking machines") is unchanged (the review offers "How AI developed and how it works" as an option).
+- **Real Southeast Asian work:** SELENA+ (Singapore, eye screening, Lesson 10), Traffy Fondue (Thailand, residents' reports, Lessons 16 and 17) and Eco Pulse (Malaysia, a recycling prototype by three 15-year-olds, Lesson 17), each described only as far as its sources go (a prototype, a tested system or an operating service), next to the made-up examples, which stay labelled. Lesson 17's evidence is now these real cases; its made-up starter plans are in the reading and the activity.
+- **Facts qualified in both reading levels**, in the quick checks and their feedback, the activities, the written Watch versions and the teacher notes: what AI is (some follows rules), tokens, training data, data centres "usually", all data centres versus AI, jobs "exposure" (ILO 2025) not job loss, low-resource languages, causes of bias, the studies in Lessons 11, 14 and 15 named with their dates and scope, the EU AI Act's actual limits and dates, "no special AI rules" not meaning no laws.
+- **Answers grounded in reasons:** activities no longer say "what most people would say"; they give one possible answer and its reason, accept other justified answers on questions of judgment, and keep one right answer on factual ones. Recommendations are kept separate from what a law says (Lesson 16).
+- **Lesson 13** is now "Checking photos, videos and voices": checking the source is the skill, and odd details are a reason to check, never proof.
+- **Sources:** every changed fact comes from a source the writers opened, listed in each lesson's `sources` (up to six), and each lesson has a claim record in `claims/DW01.md`…`DW17.md`: claim, source, date and what the source actually establishes, with what couldn't be confirmed.
+- **Printed sheets** say "Thinkerwell · Digital World", not "Exploring Our World".
+
+Still open from the review: a genuinely new test set for Lesson 3's last round (needs new leaf cards in code; a paper extension in the teacher notes for now); the optional Section 1 title; real names in learner text, which spec 5.3 kept to teacher notes and the review now asks for; several older sources kept from the first drafts without being reopened (each claim record lists them); some sources the writers couldn't open (the Computer History Museum timeline, the IEA's own pages, sea-lion.ai, SNEC's SELENA+ page, NECTEC's Traffy page), for which they used other reputable sources.
 
 ## Videos
 
