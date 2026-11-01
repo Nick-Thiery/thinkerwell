@@ -618,7 +618,7 @@ export type LeafCardData = z.infer<typeof leafCardSchema>;
 // Our World lesson has, with no Base44 id, its own four sections and an
 // optional activity.
 
-export const DIGITAL_WORLD_SECTION_IDS = ['how-ai-works', 'check-what-you-see', 'use-tools-wisely', 'ai-where-you-live'] as const;
+export const DIGITAL_WORLD_SECTION_IDS = ['thinking-machines', 'who-builds-ai', 'ai-in-daily-life', 'truth-and-power'] as const;
 export type DigitalWorldSectionId = (typeof DIGITAL_WORLD_SECTION_IDS)[number];
 
 export const digitalWorldSectionSchema = sectionSchema.extend({ id: z.enum(DIGITAL_WORLD_SECTION_IDS) });

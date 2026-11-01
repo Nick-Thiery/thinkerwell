@@ -1,0 +1,335 @@
+{
+  "id": "dw-feeds-and-elections",
+  "oldId": null,
+  "number": 15,
+  "section": "truth-and-power",
+  "title": "What your feed shows you",
+  "essentialQuestion": "How do apps choose what we see, and why does that matter for a community?",
+  "learningGoal": "Explain how a feed chooses posts, why a rumour can spread fast before a vote, and what people and rules can do about it.",
+  "estimatedMinutes": [
+    30,
+    50
+  ],
+  "warmUp": {
+    "question": "Why do you think some posts get shared much more than others?",
+    "options": [
+      "They are true",
+      "They are surprising",
+      "They are funny",
+      "Not sure"
+    ]
+  },
+  "evidence": {
+    "fictional": true,
+    "label": "Fictional example created for this lesson.",
+    "question": "Which posts got shared most? How are Ravi's and Lena's feeds different?",
+    "cards": [
+      {
+        "type": "table",
+        "title": "Posts in Maplebrook in the week of the town vote",
+        "columns": [
+          "Post",
+          "Shares in one day"
+        ],
+        "rows": [
+          [
+            "“SHOCKING. The vote has moved to Friday. Share this now.” No name and no link.",
+            "900"
+          ],
+          [
+            "Town election office: “The vote is on Saturday, from 9 to 5, at the town hall.”",
+            "60"
+          ],
+          [
+            "Maplebrook Fact Check: “False. The vote has not moved. It is still on Saturday.”",
+            "40"
+          ],
+          [
+            "A funny video of a goat walking into the library",
+            "700"
+          ]
+        ]
+      },
+      {
+        "type": "cases",
+        "title": "Two friends, two feeds",
+        "cases": [
+          {
+            "name": "Ravi",
+            "body": "Ravi watched a lot of football videos last month. This week, his feed showed him eight posts about the new sports field and one post about the new library."
+          },
+          {
+            "name": "Lena",
+            "body": "Lena liked many posts about books. This week, her feed showed her seven posts about the new library and two posts about the sports field."
+          }
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "type": "sort",
+    "stage": "read",
+    "placement": "after-evidence",
+    "title": "Fast or slow?",
+    "instructions": "Here are posts from Maplebrook in the week of the town vote. Put each one where you think it goes. There is no score. After you place one, you can see what most people would say and why.",
+    "groups": [
+      {
+        "id": "fast",
+        "label": "Likely to spread fast"
+      },
+      {
+        "id": "slow",
+        "label": "Less likely to spread fast"
+      }
+    ],
+    "items": [
+      {
+        "id": "rumour",
+        "text": "SHOCKING. The vote has moved to Friday. Share this now.",
+        "suggested": "fast",
+        "feedback": "Most people would say fast. It is surprising, and it tells you to hurry. But spreading fast does not make it true. It is false."
+      },
+      {
+        "id": "office",
+        "text": "Town election office: Vote on Saturday at the town hall. It is open from 9 to 5.",
+        "suggested": "slow",
+        "feedback": "Most people would say slower. Calm facts are less surprising, so fewer people share them. You can help by sharing it."
+      },
+      {
+        "id": "goat",
+        "text": "A funny video of a goat walking into the library.",
+        "suggested": "fast",
+        "feedback": "Most people would say fast. Funny and surprising posts keep people watching, so feeds show them to more people."
+      },
+      {
+        "id": "flood",
+        "text": "A scary post with no proof: The new field will flood every street.",
+        "suggested": "fast",
+        "feedback": "Most people would say fast. Posts that scare people often spread fast. With no evidence, check it before you share it."
+      },
+      {
+        "id": "costs",
+        "text": "A long post that compares what the library and the field will cost.",
+        "suggested": "slow",
+        "feedback": "Most people would say slower. It is useful, but long and calm. It can still help voters make up their minds."
+      },
+      {
+        "id": "fact-check",
+        "text": "Fact check: False. The vote has not moved. It is still on Saturday.",
+        "suggested": "slow",
+        "feedback": "Most people would say slower. A correction often spreads more slowly than the rumour it corrects. That is why it helps to share it."
+      }
+    ],
+    "saves": "The group the learner chose for each post, with the lesson's other answers.",
+    "offline": "Everything is in the lesson file. The posts are made up; nothing is opened, searched or sent."
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Your feed is chosen for you",
+        "text": "People post far more than anyone could ever see, so many apps use an algorithm to choose what goes in your feed. An algorithm is a set of steps a computer follows. Here, it guesses which posts will keep you watching, liking and sharing. It learns from what you watched before. This can be useful, because you see things you care about. In the made-up town of Maplebrook, Ravi watched many football videos. So in the week of a town vote, his feed showed him eight posts about the new sports field and only one about the new library.",
+        "simpler": "People post more than you could ever see. So many apps use an algorithm. An algorithm is a set of steps for a computer. It picks the posts in your feed. It tries to pick what will keep you watching. It learns from what you watched before. This can help you see things you like. In the made-up town of Maplebrook, Ravi watches football videos. So his feed shows him many posts about the new sports field."
+      },
+      {
+        "heading": "A rumour can spread faster than the truth",
+        "text": "Posts that surprise or scare people often get shared the most. Researchers studied about 126,000 stories shared on a large social media site from 2006 to 2017. False stories spread further and faster than true ones. True stories took about six times as long to reach 1,500 people. The false stories were often more new and surprising, and people shared them, not only robot accounts. This matters before an election, when people need correct facts to vote. In Maplebrook, a rumour said the vote had moved to Friday. It was shared 900 times in one day. The election office's correct notice was shared only 60 times.",
+        "simpler": "Surprising or scary posts get shared a lot. Researchers studied many stories on a big social media site. False stories spread faster than true ones. They often seemed new and surprising. People shared them, not only robots. This matters in an election. People need true facts to vote. In Maplebrook, a rumour said the vote moved to Friday. It was shared 900 times. The true notice got 60 shares."
+      },
+      {
+        "heading": "Seeing more than one side",
+        "text": "Some people worry that feeds put each of us in a filter bubble, where we only see one side. Ravi saw mostly posts for the sports field, and his friend Lena saw mostly posts for the library. But when researchers looked at many studies, they found that real filter bubbles are less common than many people think. Most people still see some different views. Fact-checkers test claims and label false ones. Some places make rules for apps. A European Union law says very large apps must explain how their feeds choose posts and offer a feed that isn't based on what they know about you. You can help too: follow different sources, and check before you share.",
+        "simpler": "Some people worry about a filter bubble. In a bubble, you only see one side. Ravi sees posts for the field. Lena sees posts for the library. But researchers found that real bubbles are less common than people think. Most people see some other views. Some groups check claims. Some places make rules. In the European Union, big apps must explain their feeds. You can help too. Follow different sources. Check before you share."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "algorithm",
+        "forms": [
+          "algorithms"
+        ],
+        "definition": "A set of steps a computer follows to do a job.",
+        "example": "An algorithm chose the posts in Ravi's feed."
+      },
+      {
+        "word": "feed",
+        "forms": [
+          "feeds"
+        ],
+        "definition": "The list of posts and videos an app shows you.",
+        "example": "Lena's feed showed her many posts about the library."
+      },
+      {
+        "word": "rumour",
+        "forms": [
+          "rumours"
+        ],
+        "definition": "A story that people pass on without knowing if it is true.",
+        "example": "The rumour said the vote had moved to Friday."
+      },
+      {
+        "word": "election",
+        "forms": [
+          "elections"
+        ],
+        "definition": "A time when people vote to choose something together.",
+        "example": "Maplebrook held an election to choose a library or a sports field."
+      },
+      {
+        "word": "filter bubble",
+        "forms": [
+          "bubble",
+          "bubbles"
+        ],
+        "definition": "When a feed shows you only one side of things.",
+        "example": "If Ravi only saw sports field posts, he would be in a filter bubble."
+      }
+    ],
+    "checks": [
+      {
+        "type": "choice",
+        "skill": "understand",
+        "question": "How does an algorithm choose the posts in a feed?",
+        "options": [
+          {
+            "text": "It picks posts at random",
+            "correct": false,
+            "feedback": "Not quite. It does not pick at random. Read the first section again."
+          },
+          {
+            "text": "It guesses what keeps you watching",
+            "correct": true,
+            "feedback": "Yes. It learns from what you watched before and guesses what you will watch next."
+          },
+          {
+            "text": "A person checks every post first",
+            "correct": false,
+            "feedback": "Not quite. There are too many posts for that. Read the first section."
+          }
+        ]
+      },
+      {
+        "type": "choice",
+        "skill": "evidence",
+        "question": "What did researchers find about false stories?",
+        "options": [
+          {
+            "text": "They spread faster than true ones",
+            "correct": true,
+            "feedback": "Yes. True stories took about six times as long to reach the same number of people."
+          },
+          {
+            "text": "They spread more slowly than true ones",
+            "correct": false,
+            "feedback": "Not quite. Look at the Maplebrook rumour and the notice. Read the second section."
+          },
+          {
+            "text": "Only robot accounts shared them",
+            "correct": false,
+            "feedback": "Not quite. People shared them too. Read the second section again."
+          }
+        ]
+      },
+      {
+        "type": "think",
+        "question": "Think of a post from the lesson. What would you check before you share it?",
+        "placeholder": "Before I share ___, I would check ...",
+        "optional": true
+      }
+    ]
+  },
+  "write": {
+    "prompt": "A rumour says the Maplebrook vote has moved to Friday. Explain why it spread fast, and what people in Maplebrook could do about it.",
+    "sentenceStarters": [
+      "The rumour spread fast because ...",
+      "The feed showed it to many people because ...",
+      "The true notice was shared ...",
+      "People could ...",
+      "This matters in an election because ..."
+    ],
+    "planningBoxes": [
+      "My main idea",
+      "Evidence from the lesson",
+      "Why it matters",
+      "A question I still have"
+    ],
+    "selfCheck": [
+      "I gave one reason the rumour spread fast.",
+      "I used a fact from the lesson.",
+      "I said what people could do."
+    ],
+    "example": "The rumour spread fast because it was surprising and told people to share it now. The feed showed it to many people because surprising posts keep people watching. The true notice was shared only 60 times, but the rumour was shared 900 times. People could check the election office's notice before they share. They could also share the fact check. This matters in an election because people need the correct day to vote."
+  },
+  "speak": {
+    "partnerTask": "Your partner reads the Maplebrook rumour aloud. You explain why it might spread fast, and what you would share instead. Then switch.",
+    "independentTask": "Say out loud what an algorithm does in a feed, in two or three sentences."
+  },
+  "watch": {
+    "youtubeId": "F5tz887wXCY",
+    "title": "Social media algorithms explained | CBC Kids News",
+    "channel": "CBC Kids News",
+    "durationSeconds": 182,
+    "why": "A short news video made for young people that explains how an algorithm chooses what you see.",
+    "beforeQuestion": "Who do you think chooses what you see when you scroll?",
+    "afterQuestion": "Why does a feed want to keep you watching?",
+    "summary": "This short news video for young people explains social media algorithms. An algorithm is a set of instructions that tells a computer program what to do. On many apps, the algorithm decides which posts you see and in what order. It also decides which posts you don't see. So when you scroll, you might think you are seeing everything. In fact, someone built a system that chooses for you. How does it choose? It tries to show you posts that will keep you interested, so you keep scrolling. Experts in the video say this isn't always a good thing. Your feed is carefully chosen. It is not a full view of the world. Knowing how your feed is chosen can help you think about what you see.",
+    "keyPoints": [
+      "An algorithm is a set of instructions for a computer.",
+      "On many apps, an algorithm chooses which posts you see, and which you don't.",
+      "It tries to keep you watching, which isn't always good for you."
+    ],
+    "contentNote": "About 3 minutes (182 seconds, from YouTube's listing), Canadian English, from 2021. It names real apps (TikTok, YouTube and Instagram). The title and channel were confirmed with YouTube's oEmbed on 31 October 2026. The summary was written from CBC Kids News' own description of the video and its web page, not from watching it. Someone on the team must watch it before learners use it; learners can read the written summary instead.",
+    "replacementSuggestion": null
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Before I share a surprising post, I will ...",
+        "required": true
+      },
+      {
+        "text": "One way to see more than one side is ...",
+        "required": false
+      }
+    ],
+    "completionMessage": "You finished Lesson 15. You explained how a feed chooses posts, and why that matters before a vote."
+  },
+  "visual": {
+    "type": "diagram",
+    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW15.svg is only a planned path. A simple flow from left to right. On the left, a big pile of many small post cards, labelled “All the posts”. In the middle, a box labelled “The algorithm guesses what keeps you watching”. On the right, two phone screens side by side: “Ravi's feed” shows mostly cards with a ball and one card with a book; “Lena's feed” shows mostly cards with a book and two cards with a ball. Under them, a short line: “Same town, different feeds”. Words and simple symbols carry every meaning, so colour is never the only clue; no real app logos.",
+    "alt": "Many posts go into an algorithm, which guesses what keeps each person watching. Ravi's feed shows mostly sports field posts, and Lena's feed shows mostly library posts.",
+    "src": "visuals/DW15.svg"
+  },
+  "sources": [
+    {
+      "label": "CBC Kids News (2021): How do social media algorithms work?",
+      "url": "https://www.cbc.ca/kidsnews/post/watch-how-do-social-media-algorithms-work"
+    },
+    {
+      "label": "MIT Sloan (2018): Study: False news spreads faster than the truth (Vosoughi, Roy and Aral, Science)",
+      "url": "https://mitsloan.mit.edu/ideas-made-to-matter/study-false-news-spreads-faster-truth"
+    },
+    {
+      "label": "Reuters Institute (2022): Echo chambers, filter bubbles, and polarisation: a literature review (Ross Arguedas, Robertson, Fletcher and Nielsen)",
+      "url": "https://ora.ox.ac.uk/objects/uuid:6e357e97-7b16-450a-a827-a92c93729a08"
+    },
+    {
+      "label": "European Parliament Legislative Observatory: summary of the Digital Services Act, Regulation (EU) 2022/2065",
+      "url": "https://oeil.europarl.europa.eu/oeil/en/document-summary?id=1724451"
+    }
+  ],
+  "sensitiveNotes": [
+    "Elections and politics can be painful or dangerous topics for some learners. Keep the discussion on made-up Maplebrook. Never ask learners about elections, politics or votes in any country they have lived in, or how anyone in their family votes, and don't let a debate about real candidates or parties start; steer back to how feeds and rumours work."
+  ],
+  "educatorNotes": [
+    "The research in section 2 is Vosoughi, Roy and Aral (Science, 2018): about 126,000 rumour cascades on Twitter, 2006 to 2017, checked by six independent fact-checking organisations. False news was 70% more likely to be retweeted, and true news took about six times as long to reach 1,500 people. It still spread faster when bots were removed. It was one site in those years, so present it as one strong study, not a law of nature.",
+    "Filter bubbles: the Reuters Institute's 2022 review found echo chambers much less widespread than commonly assumed and no support for the filter bubble idea, so the lesson presents it as a worry that research has tested. The European rule is the Digital Services Act (Regulation (EU) 2022/2065): very large platforms must explain the main settings of their recommender systems, offer one not based on profiling, and assess risks such as the manipulation of elections.",
+    "Paper version of the activity: write the six posts on cards and sort them into two piles, “Likely to spread fast” and “Less likely”. There is no score; ask for reasons. Ask why the correct notice spreads more slowly, and who could help it spread."
+  ],
+  "changes": [
+    "New lesson (Digital World, October 2026, social studies rebuild). There is no Base44 original, so oldId is null. Lesson 15 in “Truth, power and choices” (truth-and-power).",
+    "Uses a sort activity (likely to spread fast, or less likely). All learner examples are made up: the town of Maplebrook and its vote on a library or a sports field. No real politicians, parties, countries' elections or disputed events.",
+    "Real research is described without naming the site in learner text; the details (Twitter, the numbers) are in educatorNotes and sources.",
+    "visual.src points to a picture that doesn't exist yet. The video's summary was written from its published description; someone must watch it before use.",
+    "Needs review by Justin for level and tone, by an AI or media researcher for the simplifications (how feeds rank posts, the filter bubble evidence), and by a partner educator for the election note."
+  ]
+}

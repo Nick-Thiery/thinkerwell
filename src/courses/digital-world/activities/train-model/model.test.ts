@@ -1,11 +1,11 @@
-import dw02 from '../../../../../content/courses/digital-world/lessons/DW02.json';
+import dw03 from '../../../../../content/courses/digital-world/lessons/DW03.json';
 import { parseContentFile } from '../../../../content/load';
 import type { DigitalWorldLesson, TrainModelActivity } from '../../../../content/schema';
 import { distance, predict, test as runTest, train, type LabelledExample } from './model';
 
 // The lesson as the build checks it (zod is fine in tests; never in the browser).
-const lesson = parseContentFile('lesson', dw02, 'content/courses/digital-world/lessons/DW02.json', 'digital-world') as DigitalWorldLesson;
-if (lesson.activity?.type !== 'train-model') throw new Error('DW02 has no train-model activity');
+const lesson = parseContentFile('lesson', dw03, 'content/courses/digital-world/lessons/DW03.json', 'digital-world') as DigitalWorldLesson;
+if (lesson.activity?.type !== 'train-model') throw new Error('DW03 has no train-model activity');
 const ACTIVITY: TrainModelActivity = lesson.activity;
 const exampleById = (id: string) => ACTIVITY.examples.find((e) => e.id === id)!;
 const testById = (id: string) => ACTIVITY.tests.find((t) => t.id === id)!;
@@ -52,7 +52,7 @@ describe('predict', () => {
   });
 });
 
-describe('DW02 rounds, labelled like the gardener', () => {
+describe('DW03 rounds, labelled like the gardener', () => {
   // docs/content/DIGITAL_WORLD_SPEC.md section 6: 4 of 6, 6 of 6, 0 of 2, then 8 of 8.
   it.each(ACTIVITY.rounds.map((round, index) => [round.id, index] as const))('%s gives its expected result', (_id, index) => {
     const round = ACTIVITY.rounds[index]!;

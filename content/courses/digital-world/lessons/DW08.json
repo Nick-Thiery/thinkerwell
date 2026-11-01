@@ -1,247 +1,222 @@
 {
-  "id": "dw-asking-good-questions",
+  "id": "dw-when-ai-gets-it-wrong",
   "oldId": null,
   "number": 8,
-  "section": "use-tools-wisely",
-  "title": "Asking an AI tool good questions",
-  "essentialQuestion": "How can you get a useful answer from an AI tool, and how do you know if it is right?",
-  "learningGoal": "Improve a prompt for an AI tool by making it specific, and check the tool's answer against a trusted source.",
+  "section": "who-builds-ai",
+  "title": "When AI gets it wrong",
+  "essentialQuestion": "Why does AI sometimes work well for some people and badly for others?",
+  "learningGoal": "Explain how missing examples in training data can make an AI tool unfair, and suggest one way to fix it.",
   "estimatedMinutes": [
     30,
     50
   ],
   "warmUp": {
-    "question": "Which question would get a more useful answer?",
+    "question": "A tool works well for adults but makes many mistakes for children. Why could that be?",
     "options": [
-      "Tell me about plants.",
-      "How often should a tomato plant get water in hot weather?",
+      "It is too hard to build",
+      "It learned mostly from adults",
+      "Something else",
       "Not sure"
     ]
   },
   "evidence": {
     "fictional": true,
     "label": "Fictional example created for this lesson.",
-    "question": "Which answer is most useful? Which answer is wrong?",
+    "question": "For each tool, whose examples were missing?",
     "cards": [
       {
         "type": "table",
-        "title": "The Hillview homework helper (a pretend tool)",
+        "title": "Three tools tested at Riverbend Learning Centre",
         "columns": [
-          "Prompt",
-          "The pretend tool's answer"
+          "Tool",
+          "What it learned from",
+          "What happened"
         ],
         "rows": [
           [
-            "Tell me about AI.",
-            "AI is a kind of technology. It is used in many places. Some people like it and some people do not."
+            "Voice typing tool",
+            "Mostly recordings of adults reading aloud",
+            "It worked well for the teachers. It typed many words wrongly for the youngest learners."
           ],
           [
-            "In two short sentences, explain what training data is, for a 12-year-old.",
-            "Training data is the examples a computer learns from. A tool that spots sick leaves learns from leaf photos. People labelled each photo healthy or sick."
+            "Translation tool",
+            "Lots of writing in a few languages, and very little in some others",
+            "It was good in languages with lots of writing online. It made many mistakes in languages with little writing online."
           ],
           [
-            "How many legs does a spider have?",
-            "Every spider has six legs, like all insects. I am very sure about this."
+            "Leaf model from Lesson 3 (Round 2)",
+            "Leaves from one kind of plant",
+            "It called healthy striped leaves from a new plant “sick”."
           ]
-        ]
-      },
-      {
-        "type": "sources",
-        "title": "The Hillview science book",
-        "sources": [
-          {
-            "caption": "Page 12: Spiders and insects",
-            "details": [
-              "Spiders have eight legs.",
-              "Insects, like ants, have six legs.",
-              "Spiders are not insects."
-            ]
-          }
         ]
       }
     ]
   },
   "activity": {
-    "type": "ask-tool",
+    "type": "compare-results",
     "stage": "read",
     "placement": "after-evidence",
-    "title": "Try the pretend tool",
-    "toolLabel": "Pretend tool. Its answers were written in advance for this lesson. It is not a real AI, and nothing you choose is sent anywhere.",
-    "instructions": "First, pick a better prompt and see the answer. Then check an answer from the tool.",
-    "improve": {
-      "start": {
-        "prompt": "Tell me about AI.",
-        "answer": "AI is a kind of technology. It is used in many places. Some people like it and some people do not."
+    "title": "Test the voice typing tool",
+    "instructions": "The Riverbend team read the same 20 words to the voice typing tool. Each group took a turn. Tap the group the tool got wrong most often.",
+    "measure": "Words typed correctly",
+    "groups": [
+      {
+        "id": "teachers",
+        "label": "Teachers",
+        "right": 19,
+        "of": 20
       },
-      "question": "Which prompt would get a more useful answer?",
+      {
+        "id": "older",
+        "label": "Older learners",
+        "right": 16,
+        "of": 20
+      },
+      {
+        "id": "youngest",
+        "label": "Youngest learners",
+        "right": 9,
+        "of": 20
+      }
+    ],
+    "mostMistakes": "youngest",
+    "afterTap": {
+      "question": "Whose examples were probably missing from the training data?",
       "options": [
         {
-          "prompt": "Tell me everything about AI.",
-          "answer": "AI is a very big topic. There are many kinds of AI. Many people use it for many different things.",
-          "correct": false,
-          "feedback": "Not quite. This is still vague. The answer is longer, but not more useful."
-        },
-        {
-          "prompt": "In two short sentences, explain what training data is, for a 12-year-old.",
-          "answer": "Training data is the examples a computer learns from. A tool that spots sick leaves learns from leaf photos. People labelled each photo healthy or sick.",
+          "text": "Recordings of children's voices",
           "correct": true,
-          "feedback": "Yes. It says what you want to know, who it is for and how long the answer should be."
+          "feedback": "Yes. The tool learned mostly from adults, so children's voices were new to it."
         },
         {
-          "prompt": "AI?",
-          "answer": "AI stands for artificial intelligence.",
+          "text": "Recordings of teachers' voices",
           "correct": false,
-          "feedback": "Not quite. A very short prompt gets a very short answer. Add what you want to know and who it is for."
+          "feedback": "Not quite. The tool did well for the teachers. Look for the group with the most mistakes."
+        },
+        {
+          "text": "More of the same 20 words",
+          "correct": false,
+          "feedback": "Not quite. Every group read the same words. The difference is who was speaking."
         }
       ]
     },
-    "check": {
-      "prompt": "How many legs does a spider have?",
-      "answer": "Every spider has six legs, like all insects. I am very sure about this.",
-      "trustedSource": {
-        "name": "The Hillview science book",
-        "says": "Spiders have eight legs. Insects, like ants, have six legs. Spiders are not insects."
-      },
-      "question": "The tool sounds very sure. How can you check its answer?",
-      "options": [
-        {
-          "text": "Ask the tool the same question again",
-          "correct": false,
-          "feedback": "Not quite. The tool may give the same wrong answer. Check a different source."
-        },
-        {
-          "text": "Look in the Hillview science book",
-          "correct": true,
-          "feedback": "Yes. The book says spiders have eight legs, and they are not insects. The tool was wrong, even though it sounded sure."
-        },
-        {
-          "text": "Trust it, because it sounds sure",
-          "correct": false,
-          "feedback": "Not quite. A tool can sound sure and still be wrong. Check a trusted source."
-        }
-      ]
-    },
-    "saves": "The learner's choices, with the lesson's other answers. Nothing is typed into a real tool.",
-    "offline": "Every prompt and answer is written in the lesson file. No AI model runs, and nothing is sent anywhere."
+    "extension": "Optional, reusing Lesson 3's trainer: give one example leaf the wrong label and test again. The model copies the mistake, which shows how a person's wrong or unfair labels get into a model.",
+    "saves": "The learner's answer, with the lesson's other answers.",
+    "offline": "Everything is in the lesson file. Nothing is recorded or sent anywhere; no microphone is used."
   },
   "read": {
     "sections": [
       {
-        "heading": "An AI chat tool guesses its answers",
-        "text": "Some AI tools answer questions in writing, almost like a person in a chat. These tools are called chatbots. A chatbot learned from enormous amounts of writing, and it answers by guessing which words are likely to come next. Its answers can sound friendly, clever and completely certain. But a chatbot does not understand the world the way you do, so its guesses can be wrong. This lesson uses a pretend tool called the Hillview homework helper. Its answers were written in advance, so you can practise safely without the internet.",
-        "simpler": "Some AI tools answer questions in writing. They are called chatbots. A chatbot learned from lots and lots of writing. It tries to guess which words come next. Its answers can sound friendly and very sure. But it does not understand things like you do. So its guess can be wrong. This lesson uses a pretend tool. It is called the Hillview homework helper. Its answers are written already. So you can practise with no internet."
+        "heading": "Mistakes can come from missing examples",
+        "text": "In Lesson 3, the leaf model made mistakes when its training data left something out. Real AI tools can go wrong in the same way. At Riverbend Learning Centre, a voice typing tool worked well for the adult teachers, but it typed many words wrongly for the youngest learners. The tool had learned mostly from recordings of adults, so children's voices were new to it. Researchers have found this problem in real life too. Many speech tools are much less accurate with children's voices. One reason is that there are far fewer recordings of children for the tools to learn from.",
+        "simpler": "In Lesson 3, the leaf model made mistakes. Its examples left something out. Real AI tools can do this too. At Riverbend, a voice typing tool worked well for teachers. It made many mistakes for young learners. It learned mostly from adult voices. So children's voices were new to it. Researchers found this in real life too. Many speech tools are less accurate for children. One reason is that there are fewer recordings of children."
       },
       {
-        "heading": "Clear prompts get better answers",
-        "text": "The question or instruction you give a chatbot is called a prompt. A vague prompt, like “Tell me about AI”, usually gets a vague answer. A specific prompt gets a more useful one. To make a prompt specific, say exactly what you want to know, who the answer is for and how long it should be. Compare “Tell me about AI” with “In two short sentences, explain what training data is, for a 12-year-old”. The second prompt gives the tool much more to work with. If the first answer isn't quite right, you can add another instruction, such as “Use an example about plants.”",
-        "simpler": "The question you give a chatbot is called a prompt. A vague prompt gets a vague answer. A specific prompt gets a better answer. Say what you want to know. Say who the answer is for. Say how long it should be. “Tell me about AI” is vague. “Explain training data for a 12-year-old” is specific. Not happy with the answer? Add more, like “Use an example about plants.”"
+        "heading": "When a group is left out, AI can be unfair",
+        "text": "When a tool works well for some groups of people and badly for others, we say that it has a bias. Bias in AI often starts in the training data. The Riverbend translation tool is good at translating between languages that have lots of writing online. It makes many more mistakes in languages with only a little writing online. Researchers have found the same pattern in real AI language tools. Nobody planned to leave those speakers out, but the result is still not fair. Some people get a helpful tool, while other people get a tool that often makes mistakes.",
+        "simpler": "Some tools work well for some people and badly for others. This is called bias. Bias often starts in the training data. The Riverbend translation tool is good for some languages. These languages have lots of writing online. It makes more mistakes in languages with little writing online. Researchers found this with real tools too. Nobody meant to leave people out. But it is still not fair."
       },
       {
-        "heading": "Always check the answer",
-        "text": "Chatbots sometimes give answers that are wrong or completely made up. This is often called a hallucination. The difficult part is that a wrong answer can sound just as certain as a right one. When asked how many legs a spider has, the Hillview helper said six, “just like all insects”. The Hillview science book says spiders have eight legs and are not insects. So check important answers with a trusted source, such as a book, a teacher or an expert. Never type private information into a chatbot. For anything about health or safety, ask a person who knows.",
-        "simpler": "Chatbots sometimes give wrong answers. Some answers are made up. This is called a hallucination. A wrong answer can sound very sure. The Hillview helper said a spider has six legs. The science book says eight. Spiders are not insects. So check answers with a trusted source. A book, a teacher or an expert can help. Never type private information into a chatbot. For health or safety, ask a person."
+        "heading": "Finding and fixing the problem",
+        "text": "To find bias, people test a tool with many different groups, not only with the people who built it. Then they compare the results for each group. If one group gets more mistakes, they ask whose examples are missing. They can collect more examples from that group, but only with people's permission. However, collecting more data does not fix everything. People also check the labels, because a person's unfair ideas can end up in the labels too. For important decisions, a person should always check what the AI says.",
+        "simpler": "To find bias, test the tool with many groups of people. Then compare the results. Does one group get more mistakes? Then ask whose examples are missing. Add examples from that group. Ask people first. But more data does not fix everything. People must also check the labels. Unfair ideas can get into labels. For big decisions, a person should check the AI."
       }
     ],
     "glossary": [
       {
-        "word": "chatbot",
+        "word": "training data",
+        "definition": "The examples a computer learns from, each with the right answer.",
+        "example": "The voice tool's training data was mostly adults reading aloud."
+      },
+      {
+        "word": "accurate",
         "forms": [
-          "chatbots"
+          "accuracy"
         ],
-        "definition": "A computer program you can chat with in writing.",
-        "example": "The Hillview homework helper is a pretend chatbot."
+        "definition": "Correct, with few or no mistakes.",
+        "example": "The voice tool was accurate for teachers, but not for young learners."
       },
       {
-        "word": "prompt",
+        "word": "researcher",
         "forms": [
-          "prompts"
+          "researchers"
         ],
-        "definition": "The question or instruction you give an AI tool.",
-        "example": "“Tell me about AI” is a vague prompt."
+        "definition": "A person whose job is to study something carefully to find new facts.",
+        "example": "Researchers tested speech tools with children's voices."
       },
       {
-        "word": "vague",
-        "definition": "Not clear, without enough detail.",
-        "example": "A vague prompt gets a vague answer."
+        "word": "bias",
+        "definition": "When a tool treats some groups better than others, often by accident.",
+        "example": "The translation tool has a bias towards languages with lots of writing online."
       },
       {
-        "word": "specific",
-        "definition": "Clear and exact, with the details that matter.",
-        "example": "A specific prompt says what you want, who it is for and how long."
-      },
-      {
-        "word": "hallucination",
+        "word": "fair",
         "forms": [
-          "hallucinations"
+          "unfair"
         ],
-        "definition": "A wrong or made-up answer from an AI tool that sounds real.",
-        "example": "“Every spider has six legs” is a hallucination."
-      },
-      {
-        "word": "trusted source",
-        "definition": "A person, book or place that is known to give correct information.",
-        "example": "The Hillview science book is a trusted source."
+        "definition": "Treating everyone in the right way, so no group is left out.",
+        "example": "A fair voice tool works well for children and adults."
       }
     ],
     "checks": [
       {
         "type": "choice",
-        "question": "Which prompt is the most specific?",
+        "question": "Why did the voice typing tool make more mistakes for the youngest learners?",
         "options": [
           {
-            "text": "Tell me all about rivers and water",
+            "text": "The young learners used the wrong words",
             "correct": false,
-            "feedback": "Not quite. “All about” is very wide. A specific prompt asks one clear thing."
+            "feedback": "Not quite. The problem was in the tool, not the learners. Look at what the tool learned from."
           },
           {
-            "text": "What are rivers and lakes?",
+            "text": "The tool was turned off for part of the time",
             "correct": false,
-            "feedback": "Not quite. This asks about two big topics at once. Look for one clear question."
+            "feedback": "Not quite. The tool worked. Look at what it learned from in the first section."
           },
           {
-            "text": "How do rivers help farmers?",
+            "text": "It learned mostly from recordings of adults",
             "correct": true,
-            "feedback": "Yes. It asks one clear thing, so the answer can be more useful. You could also say who it is for."
+            "feedback": "Yes. Children's voices were new to the tool, because its training data was mostly adults."
           }
         ]
       },
       {
         "type": "choice",
-        "question": "The tool says spiders have six legs. What should you do?",
+        "question": "A tool makes more mistakes for one group. What is a good first step?",
         "options": [
           {
-            "text": "Check it in a trusted source",
+            "text": "Find out whose examples are missing",
             "correct": true,
-            "feedback": "Yes. The science book says eight legs. A trusted source showed the tool was wrong."
+            "feedback": "Yes. Then the team can add examples from that group, with their permission, and test again."
           },
           {
-            "text": "Believe it, because it sounds sure",
+            "text": "Stop testing it with that group",
             "correct": false,
-            "feedback": "Not quite. A wrong answer can sound sure too. Read the third section."
+            "feedback": "Not quite. That hides the problem. Read the third section about finding bias."
           },
           {
-            "text": "Ask the same question again",
+            "text": "Tell that group to talk like adults",
             "correct": false,
-            "feedback": "Not quite. The tool may give the same wrong answer. Read the third section."
+            "feedback": "Not quite. The tool should change, not the people. Read the third section about fixing bias."
           }
         ]
       },
       {
         "type": "think",
-        "question": "Make this prompt more specific: “Tell me about food.”",
-        "placeholder": "In ___ short sentences, explain ... for ...",
+        "question": "Pick a tool from this lesson. Who else should test it before people trust it?",
+        "placeholder": "The ___ should also be tested by ... because ...",
         "optional": true
       }
     ]
   },
   "write": {
-    "prompt": "Write a specific prompt for the Hillview helper about a topic from this course. Then explain how you would check its answer.",
+    "prompt": "Choose one tool from the Riverbend table. Explain whose examples were missing, what went wrong, and one way to fix it.",
     "sentenceStarters": [
-      "My first prompt was ...",
-      "To make it specific, I added ...",
-      "My new prompt is ...",
-      "To check the answer, I would ...",
-      "I would not type ___ into a chatbot because ..."
+      "I chose ...",
+      "It learned mostly from ...",
+      "The examples of ___ were missing, so ...",
+      "This is unfair because ...",
+      "One way to fix it is ..."
     ],
     "planningBoxes": [
       "My main idea",
@@ -250,86 +225,84 @@
       "A question I still have"
     ],
     "selfCheck": [
-      "I wrote a prompt that says what, who it is for and how long.",
-      "I explained what I added to make it specific.",
-      "I said how I would check the answer."
+      "I named one tool and what it learned from.",
+      "I said whose examples were missing and what went wrong.",
+      "I gave one way to fix it."
     ],
-    "example": "My first prompt was “Tell me about scams”. It was vague. To make it specific, I added what I want to know, who it is for and how long the answer should be. My new prompt is “In three short sentences, explain the warning signs of a scam, for a 12-year-old”. To check the answer, I would compare it with Lesson 6. I would also ask a teacher. I would not type a full name or address into a chatbot. That is private information."
+    "example": "I chose the voice typing tool. It learned mostly from recordings of adults reading aloud. The examples of children's voices were missing, so it typed many words wrongly for the youngest learners. It got 9 of 20 words right for them, and 19 for the teachers. This is unfair because the children get a tool that makes lots of mistakes. One way to fix it is to add recordings of children, if they and their families agree. Then the team can test it again."
   },
   "speak": {
-    "partnerTask": "Say a vague prompt. Your partner makes it specific by adding what, who it is for, or how long. Then switch.",
-    "independentTask": "Say out loud two ways to make a prompt better, and one way to check an answer."
+    "partnerTask": "Your partner names a tool from the Riverbend table. You say whose examples were missing and one way to fix it. Then switch.",
+    "independentTask": "Say out loud what bias means. Give one example from the lesson and one way to fix it."
   },
   "watch": {
-    "youtubeId": "gmUHEvrpYoU",
-    "title": "What are AI Chatbots?",
-    "channel": "Common Sense Education",
-    "durationSeconds": 200,
-    "why": "This short cartoon explains why many chatbots are made to sound like people.",
-    "beforeQuestion": "Why do you think a chatbot can sound like a real person?",
-    "afterQuestion": "Why should you check what a chatbot says, even when it sounds sure?",
-    "summary": "This short cartoon is about AI chatbots. A chatbot is a computer program that you can chat with in writing, a bit like sending messages to a person. The video explains that many chatbots are made to sound human. They can sound friendly and very sure of themselves. They may agree with you, ask you questions as if they care, or act as if they know you. These things can make a chatbot feel like a friend. They can also make its answers feel more true than they are. But a chatbot is not a person, and it can be wrong. So think about how a chatbot makes you feel, and stay in charge when you use one.",
+    "youtubeId": "x2mRoFNm22g",
+    "title": "AI: Training Data & Bias",
+    "channel": "Code.org",
+    "durationSeconds": 161,
+    "why": "In under three minutes, it explains how missing or one-sided training data can make AI work worse for some people.",
+    "beforeQuestion": "Where do you think the examples for an AI tool come from?",
+    "afterQuestion": "What two questions should you ask about any training data?",
+    "summary": "This video explains why training data matters so much. A machine learning tool is only as good as the data it learns from. Data can come from many places. For example, a video site keeps track of what people watch, sometimes without them knowing. Then it uses that data to suggest more videos. In health care, experts label thousands of medical pictures, so a computer can learn to spot illness. But there is a problem. Suppose most of the X-ray pictures come from men. Then the tool may make more mistakes for women. People can put their own bias into training data without meaning to. So the video asks two questions about any training data. Is there enough of it? Does it include many kinds of people and situations?",
     "keyPoints": [
-      "Many chatbots are made to sound like a person.",
-      "Sounding friendly and sure does not make an answer true.",
-      "Stay in charge: notice how a chatbot makes you feel, and check its answers."
+      "An AI tool is only as good as its training data.",
+      "If some people are missing from the data, the tool can work worse for them.",
+      "Ask: is there enough data, and does it include many kinds of people?"
     ],
-    "contentNote": "An American cartoon for secondary school, about 3 minutes 20 seconds. The summary was written from Common Sense Education's description of the video and the lessons that use it, not from watching it, so check the summary before use. Preview it first; learners can read the written summary instead.",
+    "contentNote": "The video mentions that companies collect data about what people watch, sometimes without them knowing, and uses a medical example (X-rays mostly from men). Preview it first; learners can read the written summary instead.",
     "replacementSuggestion": null
   },
   "reflect": {
     "prompts": [
       {
-        "text": "Before I trust an answer from a chatbot, I will ...",
+        "text": "One way to make an AI tool fairer is ...",
         "required": true
       },
       {
-        "text": "A good prompt has ...",
+        "text": "A question I would ask the people who build AI tools is ...",
         "required": false
       }
     ],
-    "completionMessage": "You finished Lesson 8. You wrote a specific prompt and checked an answer that sounded sure but was wrong."
+    "completionMessage": "You finished Lesson 8. You found whose examples were missing and explained how to make a tool fairer."
   },
   "visual": {
     "type": "diagram",
-    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW08.svg is only a planned path. Top row: a prompt card “Tell me about AI” with an arrow to a cloudy answer bubble labelled “Vague answer”. Second row: a prompt card “In two short sentences, explain what training data is, for a 12-year-old” with three parts labelled “How long”, “What” and “Who for”, and an arrow to a clear answer bubble labelled “Useful answer”. Bottom row: the tool's bubble “Six legs” next to an open book that says “Eight legs”, with the words “Check a trusted source”. A small tag on every bubble says “Pretend tool”.",
-    "alt": "A vague prompt gets a vague answer; a prompt that says what, who it is for and how long gets a useful one. Below, a science book corrects the tool: spiders have eight legs.",
-    "src": "visuals/DW08.svg"
+    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW03.svg is only a planned path. A simple bar chart of the voice typing test: three bars for Teachers (19 of 20 words right), Older learners (16 of 20) and Youngest learners (9 of 20), each bar labelled with its number in words and digits, so colour is never the only clue. Beside it, a small box of training-data cards shows mostly adult figures and only one child, with the words “Mostly adult voices”. No real faces; simple figures only.",
+    "alt": "A bar chart: the voice typing tool got 19 of 20 words right for teachers, 16 for older learners and 9 for the youngest learners. Its training data had mostly adult voices.",
+    "src": "visuals/DW03.svg"
   },
   "sources": [
     {
-      "label": "MIT Sloan Teaching and Learning Technologies: Effective prompts for AI, the essentials",
-      "url": "https://mitsloanedtech.mit.edu/ai/basics/effective-prompts/"
+      "label": "Attia and others (AIES 2024): Kid-Whisper, the gap in speech recognition between children and adults",
+      "url": "https://ojs.aaai.org/index.php/AIES/article/view/31618"
     },
     {
-      "label": "Common Sense Education: Designed to feel human (lesson on chatbot design, including sounding confident)",
-      "url": "https://www.commonsense.org/education/digital-literacy/designed-to-feel-human"
+      "label": "Stanford Report (2025): How AI is leaving non-English speakers behind",
+      "url": "https://news.stanford.edu/stories/2025/05/digital-divide-ai-llms-exclusion-non-english-speakers-research"
     },
     {
-      "label": "UN News (2023): UNESCO guidance on generative AI in education (data privacy, age limit of 13)",
-      "url": "https://news.un.org/en/story/2023/09/1140477"
+      "label": "Code.org: Machine learning and bias (lesson plan)",
+      "url": "https://curriculum.code.org/csp-20/unit9/6/"
     },
     {
-      "label": "CK-12 Life Science for Middle School: Arachnids (spiders have eight legs, insects six)",
-      "url": "https://k12.libretexts.org/Bookshelves/Science_and_Technology/Life_Science_for_Middle_School_(CK-12)/09:_Invertebrates/9.13:_Arachnids"
-    },
-    {
-      "label": "DCMP: How Chatbots and Language Models Work (Code.org video, description)",
-      "url": "https://dcmp.org/media/25569-how-chatbots-and-language-models-work"
+      "label": "Experience AI (Raspberry Pi Foundation): Lesson 3, Bias in, bias out",
+      "url": "https://experience-ai.org/en/units/foundations-of-ai/lessons/3"
     }
   ],
   "sensitiveNotes": [
-    "Don't ask learners to type questions into a real AI tool in class, or to say what they have asked one. UNESCO's 2023 guidance recommends a minimum age of 13 for generative AI tools in the classroom, and many learners are younger. The pretend tool keeps everyone offline and safe."
+    "Some learners may have found that tools work badly in their own language or for their accent. Let them say so if they want to, but never ask which language they speak at home, where they come from or about their family. The lesson works with the fictional Riverbend tools alone.",
+    "Bias in real tools can touch race, gender and other identities (the Lesson 3 video mentions face recognition). Keep the discussion on how training data causes it and how to fix it; don't ask learners to share times they were treated unfairly."
   ],
   "educatorNotes": [
-    "The tool's wrong answer about spiders is written on purpose, so learners practise checking (spiders have eight legs; insects have six). The explanation of chatbots (“guesses which words are likely to come next”) is a simplification; the AI-accuracy reviewer should check it.",
-    "Open question for reviewers (spec section 8, item 6): is a pretend tool with pre-written answers enough, or should a later version use an on-device model? Paper version of the activity: read the prompts and answers aloud and let learners choose."
+    "The numbers in the activity (19, 16 and 9 of 20) are made up to show the idea. Real research also found big gaps for children's voices; see the sources.",
+    "Lesson 3's leaf model is reused on purpose: learners can see the same cause (missing examples) in a small model they trained and in real tools."
   ],
   "changes": [
-    "New lesson (Digital World draft). There is no Base44 original, so oldId is null.",
-    "section is a proposed Digital World section id (use-tools-wisely), which the Our World checker and schema don't accept yet.",
-    "Adds a new activity type, ask-tool: a clearly labelled pretend tool with pre-written answers, including one that sounds sure but is wrong (spec section 5.6). Documented in docs/content/DIGITAL_WORLD_SPEC.md.",
+    "New lesson (Digital World draft 1). There is no Base44 original, so oldId is null.",
+    "section is a Digital World section id (how-ai-works), which the Our World checker and schema don't accept yet.",
+    "Adds a compare-results activity, documented in docs/content/DIGITAL_WORLD_SPEC.md.",
     "visual.src points to a picture that doesn't exist yet.",
-    "Needs review by an AI researcher (the chatbot explanation), and by Justin for level and tone."
+    "Needs review by an AI researcher for accuracy, by Justin for level and tone, and by a partner educator for the sensitive notes.",
+    "October 2026, social studies rebuild (Justin's brief: AI and the digital world through a social studies lens, at most 20 lessons): kept as Lesson 8 in \"Who builds AI, and at what cost\" (who-builds-ai). The notes above about the old section ids are out of date."
   ]
 }

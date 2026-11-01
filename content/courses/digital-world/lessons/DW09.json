@@ -1,235 +1,233 @@
 {
-  "id": "dw-numbers-that-persuade",
+  "id": "dw-ai-and-work",
   "oldId": null,
   "number": 9,
-  "section": "use-tools-wisely",
-  "title": "Numbers that persuade",
-  "essentialQuestion": "How can a chart or a number be true and still mislead you?",
-  "learningGoal": "Explain how a chart's scale, a small survey and missing information can mislead, and use the real numbers to judge a claim.",
+  "section": "ai-in-daily-life",
+  "title": "AI at work: jobs that change",
+  "essentialQuestion": "How might AI change people's jobs, and who gains or loses?",
+  "learningGoal": "Use examples from history to explain how new machines change work, and describe who might gain or lose as AI changes jobs.",
   "estimatedMinutes": [
     30,
     50
   ],
   "warmUp": {
-    "question": "A poster says “9 out of 10 people love Sunny Juice”. What would you want to know?",
+    "question": "A new machine can do part of a worker's job. What do you think happens to the worker?",
     "options": [
-      "How many people were asked",
-      "Who asked them",
-      "Nothing, it sounds true",
+      "They lose their work",
+      "Their work changes",
+      "They do something new",
       "Not sure"
     ]
   },
   "evidence": {
     "fictional": true,
     "label": "Fictional example created for this lesson.",
-    "question": "What does the poster want you to think? What do the real numbers say?",
+    "question": "For each worker, which tasks changed? Who gained, and who lost?",
     "cards": [
       {
         "type": "cases",
-        "title": "Stall A's poster at the Riverbend Sunday market",
+        "title": "Three workers in the town of Millbrook",
         "cases": [
           {
-            "name": "The chart",
-            "body": "A bar chart of bananas sold each day. Stall A's bar is three times as tall as Stall B's. Big letters say: “We sell 3 times more than Stall B.” The numbers on the side start at 49, not 0."
+            "name": "Clerks at the water office",
+            "body": "Ines and two other clerks typed up customer forms. Now an AI tool reads most forms and fills in the details. The office needs fewer clerks. After some training, Ines and one other clerk moved to the help desk, where they help people with hard problems. The third clerk lost her work."
           },
           {
-            "name": "The survey",
-            "body": "Big letters say: “8 out of 10 shoppers prefer our bananas.” Small letters say: “We asked 10 of our regular shoppers.”"
+            "name": "Teacher at the learning centre",
+            "body": "Ms Rana uses an AI tool to make practice questions. She checks every question, because the tool sometimes makes mistakes. She now has more time to help learners one by one."
+          },
+          {
+            "name": "Tailor at the market",
+            "body": "Sami makes and mends clothes. A translation tool helps him talk with customers who speak other languages, so he has more customers. The tool can't sew, and it can't measure a person."
           }
-        ]
-      },
-      {
-        "type": "table",
-        "title": "The real numbers",
-        "columns": [
-          "What",
-          "Stall A",
-          "Stall B"
-        ],
-        "rows": [
-          [
-            "Bananas sold each day, on average",
-            "52",
-            "50"
-          ],
-          [
-            "People asked in the survey",
-            "10, all regular Stall A shoppers",
-            "None"
-          ]
         ]
       }
     ]
   },
   "activity": {
-    "type": "chart-check",
+    "type": "sort",
     "stage": "read",
     "placement": "after-evidence",
-    "title": "Fix the chart",
-    "instructions": "Here is Stall A's chart. Tap “Start at zero” to see the same numbers drawn in a fair way. Then answer the question.",
-    "measure": "Bananas sold each day",
-    "bars": [
+    "title": "AI or a person?",
+    "instructions": "Put each task into a group. There is no score. After you place one, you can see what most people would say and why.",
+    "groups": [
       {
-        "label": "Stall A",
-        "value": 52
+        "id": "ai",
+        "label": "AI could help with this"
       },
       {
-        "label": "Stall B",
-        "value": 50
-      }
-    ],
-    "views": [
-      {
-        "id": "poster",
-        "label": "Stall A's poster",
-        "axisStart": 49,
-        "axisEnd": 53,
-        "note": "The scale starts at 49. Stall A's bar looks three times as tall."
+        "id": "person",
+        "label": "A person is still needed"
       },
       {
-        "id": "zero",
-        "label": "Start at zero",
-        "axisStart": 0,
-        "axisEnd": 60,
-        "note": "The scale starts at 0. The two bars look almost the same."
+        "id": "both",
+        "label": "Both"
       }
     ],
-    "question": {
-      "question": "How many more bananas does Stall A really sell each day?",
-      "options": [
-        {
-          "text": "About three times as many",
-          "correct": false,
-          "feedback": "Not quite. That is how the poster makes it look. Check the numbers: 52 and 50."
-        },
-        {
-          "text": "2 more bananas a day",
-          "correct": true,
-          "feedback": "Yes. 52 take away 50 is 2. That is a small difference, not three times as many."
-        },
-        {
-          "text": "2 fewer bananas a day",
-          "correct": false,
-          "feedback": "Not quite. Stall A sells a little more. 52 is 2 more than 50."
-        }
-      ]
-    },
-    "saves": "Which views the learner opened, and their answer, with the lesson's other answers.",
-    "offline": "Both charts are drawn on the device from the two numbers in the lesson file, with each bar's number written on it so colour and height are never the only clue. Nothing is sent anywhere."
+    "items": [
+      {
+        "id": "sort-forms",
+        "text": "Sorting 1,000 forms by date",
+        "suggested": "ai",
+        "feedback": "Most people would say AI could help. It is the same simple step again and again, which machines do well."
+      },
+      {
+        "id": "comfort-child",
+        "text": "Comforting a child who is upset",
+        "suggested": "person",
+        "feedback": "Most people would say a person is still needed. Care and kindness come from people."
+      },
+      {
+        "id": "fix-pipe",
+        "text": "Fixing a broken water pipe in a house",
+        "suggested": "person",
+        "feedback": "Most people would say a person is still needed. Every house is different, and the work needs skilled hands."
+      },
+      {
+        "id": "translate-sign",
+        "text": "Translating a shop sign into another language",
+        "suggested": "both",
+        "feedback": "Most people would say both. A tool can translate fast, but a speaker should check it. Tools make more mistakes in some languages."
+      },
+      {
+        "id": "find-photos",
+        "text": "Finding the photos that show a tree among 5,000 photos",
+        "suggested": "ai",
+        "feedback": "Most people would say AI could help. Tools that find patterns in photos can do this quickly."
+      },
+      {
+        "id": "choose-player",
+        "text": "Choosing which new player joins the football team",
+        "suggested": "person",
+        "feedback": "Most people would say a person is still needed. Choices about people should be made by people who can explain them. AI can be unfair, as Lesson 8 showed."
+      },
+      {
+        "id": "practice-questions",
+        "text": "Making practice questions for a class",
+        "suggested": "both",
+        "feedback": "Most people would say both. A tool can make questions quickly, but the teacher checks them, like Ms Rana in Millbrook."
+      },
+      {
+        "id": "letter-draft",
+        "text": "Writing the first draft of a letter",
+        "suggested": "both",
+        "feedback": "Any group can be right here. A tool can write a first draft. A person decides what the letter should say, and checks it."
+      }
+    ],
+    "saves": "The group the learner chose for each task, with the lesson's other answers.",
+    "offline": "Everything is in the lesson file. Nothing is sent anywhere."
   },
   "read": {
     "sections": [
       {
-        "heading": "A chart can stretch a small difference",
-        "text": "Charts help people understand numbers quickly and easily, so posters and news reports use them a lot. But a chart can also mislead you, even when every number on it is correct. At the Riverbend Sunday market, Stall A sells 52 bananas a day on average, and Stall B sells 50. On Stall A's poster, Stall A's bar looks three times as tall as Stall B's. How is that possible? The scale on the side of the chart begins at 49, not at zero. So Stall A's bar shows only the 3 bananas above 49, and Stall B's shows only 1. In a bar chart, people compare the heights of the bars, so the scale should start at zero.",
-        "simpler": "Charts help us see numbers fast. But a chart can mislead you. Even its numbers can all be right. Stall A sells 52 bananas a day. Stall B sells 50. On Stall A's poster, its bar looks three times as tall. Why? The scale starts at 49, not at zero. So the bars show only a small part. Stall A's bar shows 3. Stall B's bar shows 1. In a bar chart, the scale should start at zero."
+        "heading": "New machines have changed work before",
+        "text": "AI is not the first technology to change people's work. In England in the early 1800s, new machines in factories began to do work that skilled cloth workers had done by hand. Between 1811 and 1816, some of these workers, called Luddites, broke machines in protest. The machines were taking their work. Much later, from about 1970, cash machines slowly spread to banks. Many people expected bank tellers, who handle money at the counter, to disappear. But in the United States, the number of tellers stayed about the same and even grew a little. Banks opened more branches, and tellers spent more time helping customers with problems.",
+        "simpler": "AI is not the first technology to change work. In England in the 1800s, factories got new machines. They did work that skilled cloth workers did by hand. Workers called Luddites broke some machines. Much later, banks got cash machines. Many thought bank workers at the counter would disappear. But in the United States, there were still as many. Banks opened more branches, and the workers helped customers with problems."
       },
       {
-        "heading": "Ask who was asked, and how many",
-        "text": "Stall A's poster also says, “8 out of 10 shoppers prefer our bananas”. That sounds impressive, as if 80 per cent of all shoppers agree. But the small print says the stall asked only 10 people, and all of them were its own regular shoppers. A survey of a few people who already like one stall can't tell you what most shoppers think. When you see a number from a survey, ask two questions. Who was asked? How many people were asked? A bigger group, chosen fairly, usually gives a more trustworthy answer than a small group chosen by the seller.",
-        "simpler": "The poster also says, “8 out of 10 shoppers like our bananas best”. That sounds like a lot. But Stall A asked only 10 people. All 10 already shop at Stall A. So the survey does not show what most shoppers think. Ask two questions about a survey. Who was asked? How many were asked? A big group, chosen fairly, is better."
+        "heading": "AI changes tasks inside jobs",
+        "text": "Most jobs are made of many tasks. A new technology may automate some tasks, but not the whole job. When spreadsheets came to office computers in the United States, many bookkeepers lost their work. Yet the number of accountants grew, and they spent more time thinking about plans. In 2025, the ILO, the United Nations agency for work, found that about one in four jobs in the world could be affected by AI tools that write and make things. Office jobs are the most affected. The study says most of these jobs are more likely to change than to disappear. People are still needed for many tasks.",
+        "simpler": "A job is made of many tasks. A new technology may automate some tasks, not the whole job. Spreadsheets did sums for office workers. Some people who added up numbers lost their work. But there were more accountants. In 2025, a United Nations group studied AI and work. About one in four jobs could be changed by AI. Office jobs are changed the most. Most jobs will likely change, not disappear. People are still needed."
       },
       {
-        "heading": "Look for what is missing",
-        "text": "Charts and numbers can also mislead by leaving things out. A poster might show only the one day when Stall B ran out of bananas early, and hide all the other days. Choosing only the numbers that help your side is called cherry-picking. So whenever a chart or a number tries to persuade you, slow down and check four things. Read the labels, look at the actual numbers, check where the scale starts, and ask what might be missing. Then do the maths yourself, because a quick calculation often tells the real story. For Stall A, 52 take away 50 is just 2 bananas a day, not three times as many.",
-        "simpler": "Numbers can also mislead by leaving things out. A poster could show only one day. Maybe Stall B ran out of bananas that day. Picking only the numbers that help you is called cherry-picking. So check four things. Read the labels. Look at the numbers. Check where the scale starts. Ask what is missing. Then do the maths. 52 take away 50 is 2. That is a small difference."
+        "heading": "Some people gain, and some people lose",
+        "text": "Change at work is often uneven. In 2024, the International Monetary Fund said that almost 40% of jobs in the world are exposed to AI, and about 60% in rich countries. In rich countries, about half of these workers might gain, because AI helps them do more. For the other half, AI might take over important tasks. The Fund also warned that AI will probably make inequality worse. In Millbrook, two clerks moved to the help desk after training, but one lost her work. Training and fair rules can help. Workers, employers and governments can decide together how new tools are used.",
+        "simpler": "Change is not the same for everyone: some gain, and some lose. In 2024, money experts studied AI and jobs. In rich countries, about half of these workers may gain. For others, AI may take over big tasks. AI may also make inequality worse. Two Millbrook clerks had training and moved to the help desk. One clerk lost her work. Training and fair rules can help. Workers and leaders can decide together how to use new tools."
       }
     ],
     "glossary": [
       {
-        "word": "chart",
+        "word": "technology",
+        "definition": "Tools and machines that people make to solve problems.",
+        "example": "Cash machines were a new technology in banks."
+      },
+      {
+        "word": "automate",
         "forms": [
-          "charts"
+          "automated",
+          "automation"
         ],
-        "definition": "A picture that shows numbers, for example with bars or lines.",
-        "example": "Stall A's poster has a bar chart of bananas sold."
+        "definition": "To make a machine do work that people used to do.",
+        "example": "The water office used AI to automate reading forms."
       },
       {
-        "word": "scale",
-        "definition": "The numbers along the side of a chart.",
-        "example": "The scale on Stall A's chart starts at 49."
-      },
-      {
-        "word": "mislead",
+        "word": "task",
         "forms": [
-          "misleading"
+          "tasks"
         ],
-        "definition": "To make someone believe something that is not true.",
-        "example": "The tall bar can mislead shoppers."
+        "definition": "One piece of work that is part of a job.",
+        "example": "Making practice questions is one task for Ms Rana."
       },
       {
-        "word": "survey",
-        "forms": [
-          "surveys"
-        ],
-        "definition": "Asking a group of people the same questions to learn what they think.",
-        "example": "Stall A's survey asked only 10 people."
+        "word": "inequality",
+        "definition": "When some people have much more than others.",
+        "example": "If only a few people gain from AI, inequality grows."
       },
       {
-        "word": "cherry-picking",
-        "definition": "Choosing only the facts that help your side and hiding the rest.",
-        "example": "Showing only the day Stall B ran out of bananas is cherry-picking."
+        "word": "training",
+        "definition": "Lessons that teach people the skills for new work.",
+        "example": "After training, two Millbrook clerks moved to the help desk."
       }
     ],
     "checks": [
       {
         "type": "choice",
-        "question": "Why does Stall A's bar look so much taller on the poster?",
+        "question": "What happened to bank tellers in the United States when cash machines came?",
         "options": [
           {
-            "text": "Stall A sells far more bananas each day",
-            "correct": false,
-            "feedback": "Not quite. Stall A sells 52 and Stall B sells 50. Read the first section again."
-          },
-          {
-            "text": "The scale starts at 49, not 0",
+            "text": "Their work changed to helping customers",
             "correct": true,
-            "feedback": "Yes. Starting the scale at 49 makes a difference of 2 bananas look huge."
+            "feedback": "Yes. There were still about as many tellers, and they spent more time helping customers with problems."
           },
           {
-            "text": "The bars use different colours",
+            "text": "All of the tellers lost their work",
             "correct": false,
-            "feedback": "Not quite. The colour is not the trick. Look at where the scale starts."
+            "feedback": "Not quite. Many people expected this, but it didn't happen. Read the end of the first section."
+          },
+          {
+            "text": "Tellers began to build cash machines",
+            "correct": false,
+            "feedback": "Not quite. Tellers still worked in banks. Read what they spent more time doing."
           }
         ]
       },
       {
         "type": "choice",
-        "question": "What is the problem with the “8 out of 10 shoppers” claim?",
+        "question": "The 2025 study says most jobs that AI affects are more likely to ...",
         "options": [
           {
-            "text": "The survey asked far too many people at once",
+            "text": "disappear in a year or two",
             "correct": false,
-            "feedback": "Not quite. It asked only 10 people. Read the second section."
+            "feedback": "Not quite. The study says something else. Read the end of the second section."
           },
           {
-            "text": "Most of the shoppers said no",
-            "correct": false,
-            "feedback": "Not quite. 8 of the 10 said yes. Look at who was asked."
-          },
-          {
-            "text": "Only 10 of its own shoppers were asked",
+            "text": "change, because people are still needed",
             "correct": true,
-            "feedback": "Yes. Ten people who already shop at Stall A can't show what most shoppers think."
+            "feedback": "Yes. AI may do some tasks, but people are still needed for many others."
+          },
+          {
+            "text": "stay exactly the same as before",
+            "correct": false,
+            "feedback": "Not quite. Many jobs will change. Read what the study says in the second section."
           }
         ]
       },
       {
         "type": "think",
-        "question": "If you made an honest poster for Stall A, what would it say?",
-        "placeholder": "An honest poster would say ... It would show ...",
+        "question": "Pick a machine from the lesson, or one you have seen. Who gained when it came, and who lost?",
+        "placeholder": "When ___ came, ... gained because ... and ... lost because ...",
         "optional": true
       }
     ]
   },
   "write": {
-    "prompt": "Explain how Stall A's poster could mislead shoppers. Use the real numbers, and say what an honest poster would show.",
+    "prompt": "Choose one Millbrook worker. Explain how AI changed their work, who gained or lost, and one thing that would make the change fairer.",
     "sentenceStarters": [
-      "Stall A's poster says ...",
-      "The chart looks ___ because ...",
-      "The real numbers are ...",
-      "The survey only ...",
-      "An honest poster would ..."
+      "I chose ...",
+      "AI changed their work because ...",
+      "___ gained, because ...",
+      "___ lost, because ...",
+      "One thing that would make it fairer is ..."
     ],
     "planningBoxes": [
       "My main idea",
@@ -238,81 +236,88 @@
       "A question I still have"
     ],
     "selfCheck": [
-      "I explained one trick on the poster.",
-      "I used the real numbers from the lesson.",
-      "I said what an honest poster would show."
+      "I named one worker and how AI changed their work.",
+      "I said who gained or who lost.",
+      "I gave one way to make the change fairer."
     ],
-    "example": "Stall A's poster says it sells three times more bananas than Stall B. The chart looks that way because the scale starts at 49, not at zero. The real numbers are 52 bananas a day for Stall A and 50 for Stall B, so the difference is only 2. The survey only asked 10 of Stall A's own shoppers. An honest poster would start the scale at zero and say how many people were asked, and who."
+    "example": "I chose the clerks at the Millbrook water office. AI changed their work because a new tool now reads most forms. The office gained, because the work is faster. Ines gained too, because after training she moved to the help desk. The third clerk lost out, because she has no work there now. This is like the cloth workers in the 1800s. One thing that would make it fairer is training for every clerk, so nobody is left without work."
   },
   "speak": {
-    "partnerTask": "Your partner points to one trick on Stall A's poster. You explain how it misleads, using the real numbers. Then switch.",
-    "independentTask": "Say out loud four things to check when a chart tries to persuade you."
+    "partnerTask": "Your partner names a task from the activity. You say if AI could help, a person is still needed, or both, and why. Then switch.",
+    "independentTask": "Say out loud what happened to bank tellers when cash machines came. Then say what this shows about AI and work."
   },
   "watch": {
-    "youtubeId": "E91bGT9BjYk",
-    "title": "How to spot a misleading graph - Lea Gaslowitz",
-    "channel": "TED-Ed",
-    "durationSeconds": 229,
-    "why": "This animated lesson uses real examples to show how a graph can mislead.",
-    "beforeQuestion": "Can a chart mislead you if every number on it is true?",
-    "afterQuestion": "What four things does the video say to look at in a graph?",
-    "summary": "This animated lesson explains how graphs can mislead. Many people trust a graph because it shows numbers, not opinions. But graphs can still trick us. The most common trick is changing the scale. One advert used a scale that went only from 95 to 100 per cent. A tiny difference between two kinds of truck looked huge. This trick is worst in bar graphs, because we expect the size of the bars to match the numbers. A graph can also choose a time range, or a few points, that hide what really happened. This is called cherry-picking. A graph can also leave out facts that matter, like a growing population. At the end, the video says to look at the labels, the numbers, the scale and the context before you trust a graph.",
+    "youtubeId": "TUmyygCMMGA",
+    "title": "The big debate about the future of work, explained",
+    "channel": "Vox",
+    "durationSeconds": 542,
+    "why": "It looks back at a hundred years of worry about machines taking jobs, and asks who gains from new technology.",
+    "beforeQuestion": "Do you think new machines make more jobs or fewer jobs? Why?",
+    "afterQuestion": "Why does the video say that who gains from technology depends on people's choices?",
+    "summary": "This video asks if machines and AI will take away people's jobs. People have worried about this many times before. In the United States, machines replaced many workers in the 1920s and 1930s. It happened again around 1960. Machines took work on farms, in factories and on telephone lines. But most people still found work. Technology makes some new jobs, such as building and fixing machines. It also makes things cheaper. Then people spend money on other things, like haircuts or eating out, and those need workers too. Some experts say AI is different, because it can do many kinds of work. The video says the bigger question may be who gains. The gains from technology have not been shared fairly. The rules people choose can change that.",
     "keyPoints": [
-      "A scale that does not start at zero can make a tiny difference look huge.",
-      "Cherry-picking a time range or a few points can hide what really happened.",
-      "Look at the labels, the numbers, the scale and the context."
+      "People have worried about machines taking jobs many times before.",
+      "New technology removes some jobs but also helps create new ones.",
+      "Who gains from technology depends on the rules and choices people make."
     ],
-    "contentNote": "TED-Ed animation, 3 minutes 49 seconds, in fast English. Its examples name real companies (a 1992 truck advert from Chevy, compared with Toyota), US unemployment figures, the Super Bowl and ocean temperatures, and it mentions advertising and politicians. The summary was checked against TED's published transcript. Learners can read the written summary instead.",
+    "contentNote": "Vox, 2017: made before today's AI chat tools, and about the United States. Title and channel confirmed with YouTube's oEmbed (October 2026); the length, about 9 minutes, comes from Rosetta's transcript archive and is not confirmed on YouTube. It mentions IBM's Watson, a 2013 Oxford study and US income figures. The summary was written from that archive's transcript summary, not from watching it. Someone on the team must watch it before use; learners can read the written summary instead.",
     "replacementSuggestion": null
   },
   "reflect": {
     "prompts": [
       {
-        "text": "When a chart tries to persuade me, I will check ...",
+        "text": "When AI changes people's work, one thing that would make it fairer is ...",
         "required": true
       },
       {
-        "text": "A kind of number that could mislead people is ...",
+        "text": "A task I think will always need a person is ... because ...",
         "required": false
       }
     ],
-    "completionMessage": "You finished Lesson 9. You found what a misleading chart hides, and did the maths yourself."
+    "completionMessage": "You finished Lesson 9. You used history to explain how AI can change jobs, and who gains or loses."
   },
   "visual": {
-    "type": "diagram",
-    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW09.svg is only a planned path. Two bar charts of the same numbers, side by side, each with two bars labelled “Stall A: 52” and “Stall B: 50”. Left, titled “Stall A's poster”: the scale runs from 49 to 53, so Stall A's bar is three times as tall as Stall B's. Right, titled “Starting at zero”: the scale runs from 0 to 60, and the two bars are almost the same height. Every bar has its number written on it, so colour and height are never the only clue.",
-    "alt": "Two bar charts of the same numbers. Starting at 49, Stall A's bar looks three times as tall. Starting at zero, 52 and 50 look almost the same.",
+    "type": "timeline",
+    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW09.svg is only a planned path. A left-to-right timeline with three stops, each a simple drawing in a box with words under it: “1811–1816: machines in cloth factories” (a loom), “From about 1970: cash machines in banks” (a cash machine and a teller at a counter), and “2020s: AI tools in offices” (a computer screen with a form). Under each box, two short labels in words, never colour alone: “Some work lost” and “Work that changed or new work”. Simple drawn figures only; no real people or brands.",
+    "alt": "A timeline of three changes at work: machines in cloth factories in the 1810s, cash machines in banks from about 1970, and AI tools in offices in the 2020s. Each one took away some work and changed or created other work.",
     "src": "visuals/DW09.svg"
   },
   "sources": [
     {
-      "label": "TED-Ed: How to spot a misleading graph, Lea Gaslowitz (transcript)",
-      "url": "https://www.ted.com/talks/lea_gaslowitz_how_to_spot_a_misleading_graph/transcript"
+      "label": "Britannica: Luddite",
+      "url": "https://www.britannica.com/event/Luddite"
     },
     {
-      "label": "Calling Bullshit (Bergstrom and West): Misleading axes on graphs",
-      "url": "https://www.callingbullshit.org/tools/tools_misleading_axes.html"
+      "label": "The Conversable Economist (2015): ATMs and a rising number of bank tellers? (on James Bessen's research in the IMF's Finance & Development)",
+      "url": "https://conversableeconomist.com/2015/03/03/atms-and-a-rising-number-of-bank-tellers/"
     },
     {
-      "label": "Full Fact: How to spot misleading poll figures",
-      "url": "https://fullfact.org/toolkit/how-spot-misleading-poll-figures/"
+      "label": "NPR (2015): How the electronic spreadsheet revolutionized business",
+      "url": "https://www.npr.org/transcripts/389585340"
     },
     {
-      "label": "Full Fact (2013): New Year's resolution 5, I will not make bad graphs",
-      "url": "https://fullfact.org/news/new-years-resolution-5-i-will-not-make-bad-graphs/"
+      "label": "International Labour Organization (May 2025): One in four jobs at risk of being transformed by GenAI, new ILO–NASK Global Index shows",
+      "url": "https://www.ilo.org/resource/news/one-four-jobs-risk-being-transformed-genai-new-ilo%E2%80%93nask-global-index-shows"
+    },
+    {
+      "label": "IMF Blog (January 2024): AI will transform the global economy. Let's make sure it benefits humanity",
+      "url": "https://www.imf.org/en/blogs/articles/2024/01/14/ai-will-transform-the-global-economy-lets-make-sure-it-benefits-humanity"
     }
   ],
-  "sensitiveNotes": [],
+  "sensitiveNotes": [
+    "Many learners may not be allowed to work where they live, and work and money can be painful topics for families. Never ask learners about their own or their family's jobs, income or plans for work. The lesson uses made-up Millbrook workers, and the think question lets learners pick a machine from the lesson.",
+    "Britannica notes that the government punished the Luddites harshly, including hangings. The lesson leaves this out; if learners ask, keep it short and factual."
+  ],
   "educatorNotes": [
-    "Maths as reasoning, not drills: 52 take away 50 is 2. On the poster the bars show only the part above 49 (3 and 1), so one looks three times as tall. Paper version of the activity: draw both charts on squared paper, one starting at 49 and one at zero.",
-    "The “start at zero” rule is for bar charts. Line charts that show change over time don't always need to start at zero (Calling Bullshit). A bigger survey is better only when the people are chosen fairly (Full Fact).",
-    "Some learners have had little maths at school. Nothing here is a test: let partners work out the difference together, and use the words “take away”."
+    "The ILO and IMF figures measure exposure: how many jobs AI could affect, not jobs lost. They are estimates from 2024 and 2025 and will change, so present them as what these organisations found, not as predictions. The ILO also found that in rich countries a bigger share of women's jobs than men's is in the group most at risk (9.6% against 3.5%). The bank teller and spreadsheet examples are from the United States (James Bessen's research, and NPR, both 2015).",
+    "Paper version of the activity: write the eight tasks on cards and sort them under the three headings. There is no score; reward reasons. A teacher could add a local example of a tool that changed work, without asking about anyone's own job."
   ],
   "changes": [
-    "New lesson (Digital World draft). There is no Base44 original, so oldId is null.",
-    "section is a proposed Digital World section id (use-tools-wisely), which the Our World checker and schema don't accept yet.",
-    "Adds a new activity type, chart-check (switch between the poster's chart and one that starts at zero), documented in docs/content/DIGITAL_WORLD_SPEC.md.",
+    "New lesson (Digital World, October 2026, social studies rebuild). There is no Base44 original, so oldId is null. Lesson 9 in “AI in daily life” (ai-in-daily-life).",
+    "Social studies angle with history: cloth machines and the Luddites (1811–1816), cash machines and bank tellers, spreadsheets and bookkeepers, then the ILO's 2025 and the IMF's 2024 findings on AI and jobs, and who gains or loses.",
+    "Adds a sort activity: tasks into “AI could help with this”, “A person is still needed” and “Both”. All workers and tasks learners work with are made up (Millbrook).",
     "visual.src points to a picture that doesn't exist yet.",
-    "Needs review by Justin for level and tone. “Sunny Juice” in the warm-up is a made-up brand."
+    "The video is from 2017 and about the United States; its summary was written from a transcript archive, so someone must watch it before use. A newer video about generative AI and work would be better if a good one is found.",
+    "Needs review by Justin for level and tone, by someone who knows labour economics for the ILO and IMF wording, and by a partner educator for the notes on work and money."
   ]
 }

@@ -2,42 +2,63 @@
   "schemaVersion": 2,
   "course": {
     "title": "Digital World",
-    "description": "A free course with 11 lessons about AI and online information: how AI learns, how to check what you see, and how to stay safe.",
-    "totalLessons": 11,
-    "estimatedHours": 7
+    "description": "A free course with 17 lessons about AI and the digital world through social studies: where AI came from, who builds it and at what cost, how it changes daily life, and who decides how it is used.",
+    "totalLessons": 17,
+    "estimatedHours": 11
   },
   "sections": [
     {
-      "id": "how-ai-works",
+      "id": "thinking-machines",
       "number": 1,
-      "title": "How AI works",
-      "question": "How does AI learn, and why does it make mistakes?",
-      "description": "Find out what AI is, how it learns from examples, and why missing examples lead to mistakes.",
-      "lessons": [1, 2, 3]
+      "title": "Thinking machines",
+      "question": "What is AI, and where did it come from?",
+      "description": "Find out what AI is, how people have tried to build thinking machines since the 1950s, how AI learns from examples, and what a large language model is.",
+      "lessons": [
+        1,
+        2,
+        3,
+        4
+      ]
     },
     {
-      "id": "check-what-you-see",
+      "id": "who-builds-ai",
       "number": 2,
-      "title": "Check what you see",
-      "question": "How can I tell if something online is true?",
-      "description": "Look for clues in fake pictures and voices, check a story before you share it, and spot the signs of a scam.",
-      "lessons": [4, 5, 6]
+      "title": "Who builds AI, and at what cost",
+      "question": "Who makes AI work, and who pays for it?",
+      "description": "Meet the people behind AI, weigh the power and water it uses, ask which languages it speaks, and see why it works better for some people than others.",
+      "lessons": [
+        5,
+        6,
+        7,
+        8
+      ]
     },
     {
-      "id": "use-tools-wisely",
+      "id": "ai-in-daily-life",
       "number": 3,
-      "title": "Use tools wisely",
-      "question": "How can I use online tools safely and well?",
-      "description": "Keep private things private, ask an AI tool good questions and check its answers, and read numbers with care.",
-      "lessons": [7, 8, 9]
+      "title": "AI in daily life",
+      "question": "How is AI changing work, school and community life?",
+      "description": "Look at how AI changes jobs, health, farming and school, and weigh safety against privacy when cameras can recognise faces.",
+      "lessons": [
+        9,
+        10,
+        11,
+        12
+      ]
     },
     {
-      "id": "ai-where-you-live",
+      "id": "truth-and-power",
       "number": 4,
-      "title": "AI where you live",
-      "question": "How could AI help, or harm, a community?",
-      "description": "Weigh the helps and risks of AI tools in a community, then plan an AI helper of your own.",
-      "lessons": [10, 11]
+      "title": "Truth, power and choices",
+      "question": "Who decides what we see, and how AI is used?",
+      "description": "Check fake pictures and claims, see how feeds choose what we see, compare the rules people are making for AI, and plan an AI helper for a community.",
+      "lessons": [
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
     }
   ],
   "practiceOptions": [

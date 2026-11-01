@@ -1,222 +1,496 @@
 {
-  "id": "dw-when-ai-gets-it-wrong",
+  "id": "dw-how-ai-learns",
   "oldId": null,
   "number": 3,
-  "section": "how-ai-works",
-  "title": "When AI gets it wrong",
-  "essentialQuestion": "Why does AI sometimes work well for some people and badly for others?",
-  "learningGoal": "Explain how missing examples in training data can make an AI tool unfair, and suggest one way to fix it.",
+  "section": "thinking-machines",
+  "title": "How AI learns from examples",
+  "essentialQuestion": "How can a computer learn from examples, and why do the examples matter?",
+  "learningGoal": "Train a tiny model with examples and explain why more, and more varied, examples make its guesses better.",
   "estimatedMinutes": [
-    30,
-    50
+    35,
+    55
   ],
   "warmUp": {
-    "question": "A tool works well for adults but makes many mistakes for children. Why could that be?",
+    "question": "You want to teach a young child to tell a healthy leaf from a sick leaf. What would you do?",
     "options": [
-      "It is too hard to build",
-      "It learned mostly from adults",
-      "Something else",
-      "Not sure"
+      "Show many leaves",
+      "Write a list of rules",
+      "Show one leaf",
+      "Something else"
     ]
   },
   "evidence": {
     "fictional": true,
     "label": "Fictional example created for this lesson.",
-    "question": "For each tool, whose examples were missing?",
+    "question": "What changed each time the model got more leaves right?",
     "cards": [
       {
         "type": "table",
-        "title": "Three tools tested at Riverbend Learning Centre",
+        "title": "The Sunrise Garden leaf model",
         "columns": [
-          "Tool",
-          "What it learned from",
-          "What happened"
+          "Round",
+          "Examples it learned from",
+          "New leaves it got right"
         ],
         "rows": [
           [
-            "Voice typing tool",
-            "Mostly recordings of adults reading aloud",
-            "It worked well for the teachers. It typed many words wrongly for the youngest learners."
+            "Round 1",
+            "2 examples: a big dark green leaf (healthy) and a brown leaf with spots (sick)",
+            "4 of 6"
           ],
           [
-            "Translation tool",
-            "Lots of writing in a few languages, and very little in some others",
-            "It was good in languages with lots of writing online. It made many mistakes in languages with little writing online."
+            "Round 2",
+            "6 examples: the 2 from Round 1, plus a small new leaf and a green leaf with tiny marks (healthy), and a yellow leaf with no spots and a small spotted leaf (sick)",
+            "6 of 6"
           ],
           [
-            "Leaf model from Lesson 2 (Round 2)",
-            "Leaves from one kind of plant",
-            "It called healthy striped leaves from a new plant “sick”."
+            "Round 2, a new plant",
+            "The same 6 examples",
+            "0 of 2 long, striped leaves"
+          ],
+          [
+            "Round 3",
+            "8 examples: the 6 from Round 2, plus a long striped leaf (healthy) and a long brown leaf with spots (sick)",
+            "8 of 8"
           ]
         ]
       }
     ]
   },
   "activity": {
-    "type": "compare-results",
+    "type": "train-model",
     "stage": "read",
     "placement": "after-evidence",
-    "title": "Test the voice typing tool",
-    "instructions": "The Riverbend team read the same 20 words to the voice typing tool. Each group took a turn. Tap the group the tool got wrong most often.",
-    "measure": "Words typed correctly",
-    "groups": [
+    "title": "Train the leaf model",
+    "instructions": "Teach the model by giving each example leaf a label: healthy or sick. Then test it on new leaves and see how many it gets right. Nothing you do here is sent anywhere.",
+    "labels": [
       {
-        "id": "teachers",
-        "label": "Teachers",
-        "right": 19,
-        "of": 20
+        "id": "healthy",
+        "label": "Healthy"
       },
       {
-        "id": "older",
-        "label": "Older learners",
-        "right": 16,
-        "of": 20
-      },
-      {
-        "id": "youngest",
-        "label": "Youngest learners",
-        "right": 9,
-        "of": 20
+        "id": "sick",
+        "label": "Sick"
       }
     ],
-    "mostMistakes": "youngest",
-    "afterTap": {
-      "question": "Whose examples were probably missing from the training data?",
-      "options": [
-        {
-          "text": "Recordings of children's voices",
-          "correct": true,
-          "feedback": "Yes. The tool learned mostly from adults, so children's voices were new to it."
+    "method": "nearest-neighbour",
+    "k": 1,
+    "features": [
+      {
+        "id": "green",
+        "label": "How green",
+        "scale": "0 brown or yellow, 10 dark green"
+      },
+      {
+        "id": "spots",
+        "label": "Spots",
+        "scale": "0 none, 10 covered"
+      },
+      {
+        "id": "size",
+        "label": "Size",
+        "scale": "0 very small, 10 very big"
+      },
+      {
+        "id": "long",
+        "label": "Shape",
+        "scale": "0 round, 10 long and thin"
+      }
+    ],
+    "examples": [
+      {
+        "id": "e1",
+        "description": "Big dark green leaf",
+        "gardenerSays": "healthy",
+        "features": [
+          10,
+          0,
+          9,
+          2
+        ]
+      },
+      {
+        "id": "e2",
+        "description": "Brown leaf with spots",
+        "gardenerSays": "sick",
+        "features": [
+          1,
+          7,
+          5,
+          3
+        ]
+      },
+      {
+        "id": "e3",
+        "description": "Small new leaf, light green",
+        "gardenerSays": "healthy",
+        "features": [
+          4,
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "id": "e4",
+        "description": "Yellow leaf with no spots",
+        "gardenerSays": "sick",
+        "features": [
+          4,
+          0,
+          8,
+          1
+        ]
+      },
+      {
+        "id": "e5",
+        "description": "Green leaf with a few tiny marks",
+        "gardenerSays": "healthy",
+        "features": [
+          8,
+          3,
+          6,
+          1
+        ]
+      },
+      {
+        "id": "e6",
+        "description": "Small leaf with many spots",
+        "gardenerSays": "sick",
+        "features": [
+          4,
+          7,
+          2,
+          2
+        ]
+      },
+      {
+        "id": "e7",
+        "description": "Long thin leaf with pale stripes",
+        "gardenerSays": "healthy",
+        "features": [
+          6,
+          4,
+          4,
+          10
+        ]
+      },
+      {
+        "id": "e8",
+        "description": "Long thin brown leaf with spots",
+        "gardenerSays": "sick",
+        "features": [
+          2,
+          7,
+          4,
+          10
+        ]
+      }
+    ],
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Green leaf",
+        "gardenerSays": "healthy",
+        "features": [
+          8,
+          0,
+          8,
+          2
+        ]
+      },
+      {
+        "id": "t2",
+        "description": "Brown leaf with spots",
+        "gardenerSays": "sick",
+        "features": [
+          3,
+          7,
+          6,
+          2
+        ]
+      },
+      {
+        "id": "t3",
+        "description": "Small new leaf, light green",
+        "gardenerSays": "healthy",
+        "features": [
+          4,
+          1,
+          3,
+          3
+        ]
+      },
+      {
+        "id": "t4",
+        "description": "Yellow leaf with no spots",
+        "gardenerSays": "sick",
+        "features": [
+          5,
+          0,
+          6,
+          3
+        ]
+      },
+      {
+        "id": "t5",
+        "description": "Green leaf with a few tiny marks",
+        "gardenerSays": "healthy",
+        "features": [
+          7,
+          3,
+          6,
+          1
+        ]
+      },
+      {
+        "id": "t6",
+        "description": "Small leaf with many spots",
+        "gardenerSays": "sick",
+        "features": [
+          3,
+          7,
+          3,
+          1
+        ]
+      },
+      {
+        "id": "t7",
+        "description": "Long thin leaf with pale stripes",
+        "gardenerSays": "healthy",
+        "features": [
+          5,
+          5,
+          5,
+          10
+        ]
+      },
+      {
+        "id": "t8",
+        "description": "Long thin leaf with pale stripes",
+        "gardenerSays": "healthy",
+        "features": [
+          5,
+          5,
+          4,
+          9
+        ]
+      }
+    ],
+    "rounds": [
+      {
+        "id": "round-1",
+        "title": "Round 1: two examples",
+        "addExamples": [
+          "e1",
+          "e2"
+        ],
+        "test": [
+          "t1",
+          "t2",
+          "t3",
+          "t4",
+          "t5",
+          "t6"
+        ],
+        "expectedIfLabelledLikeTheGardener": {
+          "right": 4,
+          "of": 6,
+          "wrong": [
+            "t3",
+            "t4"
+          ]
         },
-        {
-          "text": "Recordings of teachers' voices",
-          "correct": false,
-          "feedback": "Not quite. The tool did well for the teachers. Look for the group with the most mistakes."
+        "debrief": "The model got 4 of 6 right. It had only two leaves to compare with, so it mixed up the small new leaf and the yellow leaf."
+      },
+      {
+        "id": "round-2",
+        "title": "Round 2: more, different examples",
+        "addExamples": [
+          "e3",
+          "e4",
+          "e5",
+          "e6"
+        ],
+        "test": [
+          "t1",
+          "t2",
+          "t3",
+          "t4",
+          "t5",
+          "t6"
+        ],
+        "expectedIfLabelledLikeTheGardener": {
+          "right": 6,
+          "of": 6,
+          "wrong": []
         },
-        {
-          "text": "More of the same 20 words",
-          "correct": false,
-          "feedback": "Not quite. Every group read the same words. The difference is who was speaking."
-        }
-      ]
-    },
-    "extension": "Optional, reusing Lesson 2's trainer: give one example leaf the wrong label and test again. The model copies the mistake, which shows how a person's wrong or unfair labels get into a model.",
-    "saves": "The learner's answer, with the lesson's other answers.",
-    "offline": "Everything is in the lesson file. Nothing is recorded or sent anywhere; no microphone is used."
+        "debrief": "Now the model got all 6 right. The new examples showed it leaves that looked different."
+      },
+      {
+        "id": "round-2-new-plant",
+        "title": "A new plant",
+        "addExamples": [],
+        "test": [
+          "t7",
+          "t8"
+        ],
+        "expectedIfLabelledLikeTheGardener": {
+          "right": 0,
+          "of": 2,
+          "wrong": [
+            "t7",
+            "t8"
+          ]
+        },
+        "debrief": "Both striped leaves are healthy, but the model said “sick”. None of its examples looked like them."
+      },
+      {
+        "id": "round-3",
+        "title": "Round 3: add the new plant",
+        "addExamples": [
+          "e7",
+          "e8"
+        ],
+        "test": [
+          "t1",
+          "t2",
+          "t3",
+          "t4",
+          "t5",
+          "t6",
+          "t7",
+          "t8"
+        ],
+        "expectedIfLabelledLikeTheGardener": {
+          "right": 8,
+          "of": 8,
+          "wrong": []
+        },
+        "debrief": "With examples of the new plant, the model got all 8 right. A model can only learn from the examples it is given."
+      }
+    ],
+    "freePlay": "After Round 3, the learner can take examples out, or change a label, and test again. The model follows the learner's labels, even when they differ from the gardener's.",
+    "explainGuess": "After each guess, show the example the model thought was most like the new leaf: “It looked most like this example, so the model said sick.”",
+    "saves": "Which rounds the learner finished, with the lesson's other answers. The labels are not needed again and can stay in memory.",
+    "offline": "Everything is in the lesson file and runs on the device. No camera, no upload, no network, no machine learning library."
   },
   "read": {
     "sections": [
       {
-        "heading": "Mistakes can come from missing examples",
-        "text": "In Lesson 2, the leaf model made mistakes when its training data left something out. Real AI tools can go wrong in the same way. At Riverbend Learning Centre, a voice typing tool worked well for the adult teachers, but it typed many words wrongly for the youngest learners. The tool had learned mostly from recordings of adults, so children's voices were new to it. Researchers have found this problem in real life too. Many speech tools are much less accurate with children's voices. One reason is that there are far fewer recordings of children for the tools to learn from.",
-        "simpler": "In Lesson 2, the leaf model made mistakes. Its examples left something out. Real AI tools can do this too. At Riverbend, a voice typing tool worked well for teachers. It made many mistakes for young learners. It learned mostly from adult voices. So children's voices were new to it. Researchers found this in real life too. Many speech tools are less accurate for children. One reason is that there are fewer recordings of children."
+        "heading": "A model learns from labelled examples",
+        "text": "Some AI learns in a way that is a bit like studying with flashcards. First, people collect training data: examples that already have the correct answer, called a label. At Sunrise Garden, every picture of a leaf has a label, either “healthy” or “sick”. The computer uses these examples to build a model. A model is what the computer has learned from the examples, and the computer uses it to predict the label of a leaf it has never seen. This way of making AI is called machine learning. Nobody writes the rule “spots mean sick”; the computer discovers patterns like that in the examples.",
+        "simpler": "Some AI learns from examples. First, people collect training data. Each example has the right answer. This answer is a label. At Sunrise Garden, each leaf picture has a label: “healthy” or “sick”. The computer uses the examples to make a model. The model is what it learned. It uses the model to guess about new leaves. This is machine learning. Nobody tells it “spots mean sick”. It finds that in the examples."
       },
       {
-        "heading": "When a group is left out, AI can be unfair",
-        "text": "When a tool works well for some groups of people and badly for others, we say that it has a bias. Bias in AI often starts in the training data. The Riverbend translation tool is good at translating between languages that have lots of writing online. It makes many more mistakes in languages with only a little writing online. Researchers have found the same pattern in real AI language tools. Nobody planned to leave those speakers out, but the result is still not fair. Some people get a helpful tool, while other people get a tool that often makes mistakes.",
-        "simpler": "Some tools work well for some people and badly for others. This is called bias. Bias often starts in the training data. The Riverbend translation tool is good for some languages. These languages have lots of writing online. It makes more mistakes in languages with little writing online. Researchers found this with real tools too. Nobody meant to leave people out. But it is still not fair."
+        "heading": "Test the model with new examples",
+        "text": "To find out whether a model works, you test it with new leaves that it did not learn from. The garden's first model learned from only two examples, a big dark green leaf and a brown leaf with spots. It makes its guess in a simple way: it finds the example that is most similar to the new leaf and gives the same label. It correctly labelled four of six new leaves. However, it called a small, light green new leaf “sick”, and it called a yellow leaf with no spots “healthy”. The model was not broken. It simply had too few examples to compare with.",
+        "simpler": "Then you test the model. You show it leaves it has not seen. The first model had only two examples. One was dark green. One was brown with spots. The model finds the example most like the new leaf. It gives the same label. It got four of six right. It said a small new leaf was “sick”. It said a yellow leaf was “healthy”. It had too few examples."
       },
       {
-        "heading": "Finding and fixing the problem",
-        "text": "To find bias, people test a tool with many different groups, not only with the people who built it. Then they compare the results for each group. If one group gets more mistakes, they ask whose examples are missing. They can collect more examples from that group, but only with people's permission. However, collecting more data does not fix everything. People also check the labels, because a person's unfair ideas can end up in the labels too. For important decisions, a person should always check what the AI says.",
-        "simpler": "To find bias, test the tool with many groups of people. Then compare the results. Does one group get more mistakes? Then ask whose examples are missing. Add examples from that group. Ask people first. But more data does not fix everything. People must also check the labels. Unfair ideas can get into labels. For big decisions, a person should check the AI."
+        "heading": "More, and different, examples help",
+        "text": "Next, the team added four more examples, including a small new leaf and a yellow leaf with no spots. This time, the model correctly labelled all six new leaves. Then the team tested two leaves from a different plant. They were long and thin with pale stripes, and both were healthy. The model called them both “sick”, because none of its examples looked similar. After the team added two striped leaves as examples, the model got them right. A model can only learn from the examples it is given, so good training data includes many examples, of many different kinds.",
+        "simpler": "Next, the team added four more examples. Now the model got all six right. Then the team tried a new plant. Its leaves are long and striped. They are healthy. But the model said “sick”. No example looked like them. The team added two striped leaves. Then the model got them right. A model only learns from its examples. Good training data has many kinds of examples."
       }
     ],
     "glossary": [
       {
         "word": "training data",
         "definition": "The examples a computer learns from, each with the right answer.",
-        "example": "The voice tool's training data was mostly adults reading aloud."
+        "example": "The leaf pictures and their labels are the training data."
       },
       {
-        "word": "accurate",
+        "word": "label",
         "forms": [
-          "accuracy"
+          "labels",
+          "labelled"
         ],
-        "definition": "Correct, with few or no mistakes.",
-        "example": "The voice tool was accurate for teachers, but not for young learners."
+        "definition": "The answer given to an example, like “healthy” or “sick”.",
+        "example": "The big dark green leaf has the label “healthy”."
       },
       {
-        "word": "researcher",
+        "word": "model",
         "forms": [
-          "researchers"
+          "models"
         ],
-        "definition": "A person whose job is to study something carefully to find new facts.",
-        "example": "Researchers tested speech tools with children's voices."
+        "definition": "What a computer has learned from examples. It uses it to guess.",
+        "example": "The garden's model guessed that the yellow leaf was healthy."
       },
       {
-        "word": "bias",
-        "definition": "When a tool treats some groups better than others, often by accident.",
-        "example": "The translation tool has a bias towards languages with lots of writing online."
+        "word": "machine learning",
+        "definition": "A way for computers to learn patterns from examples, not from written rules.",
+        "example": "The leaf model is an example of machine learning."
       },
       {
-        "word": "fair",
+        "word": "test",
         "forms": [
-          "unfair"
+          "tests",
+          "tested",
+          "testing"
         ],
-        "definition": "Treating everyone in the right way, so no group is left out.",
-        "example": "A fair voice tool works well for children and adults."
+        "definition": "To try something with new examples to see if it works.",
+        "example": "The team tested the model with six new leaves."
       }
     ],
     "checks": [
       {
         "type": "choice",
-        "question": "Why did the voice typing tool make more mistakes for the youngest learners?",
+        "question": "Why did the model call the small new leaf “sick” in Round 1?",
         "options": [
           {
-            "text": "The young learners used the wrong words",
-            "correct": false,
-            "feedback": "Not quite. The problem was in the tool, not the learners. Look at what the tool learned from."
-          },
-          {
-            "text": "The tool was turned off for part of the time",
-            "correct": false,
-            "feedback": "Not quite. The tool worked. Look at what it learned from in the first section."
-          },
-          {
-            "text": "It learned mostly from recordings of adults",
+            "text": "It had only two examples to compare with",
             "correct": true,
-            "feedback": "Yes. Children's voices were new to the tool, because its training data was mostly adults."
+            "feedback": "Yes. With only two examples, the new leaf was closer to the brown one. More examples fixed this."
+          },
+          {
+            "text": "Small leaves are nearly always sick",
+            "correct": false,
+            "feedback": "Not quite. The gardener says the small new leaf is healthy. Read about Round 1 in the second section."
+          },
+          {
+            "text": "The model was broken and needed fixing",
+            "correct": false,
+            "feedback": "Not quite. The lesson says the model was not broken. Read the end of the second section."
           }
         ]
       },
       {
         "type": "choice",
-        "question": "A tool makes more mistakes for one group. What is a good first step?",
+        "question": "What made the model better in Round 2?",
         "options": [
           {
-            "text": "Find out whose examples are missing",
+            "text": "The team made all the leaf pictures brighter",
+            "correct": false,
+            "feedback": "Not quite. The pictures did not change. Look at what the team added in the third section."
+          },
+          {
+            "text": "The team added more, different examples",
             "correct": true,
-            "feedback": "Yes. Then the team can add examples from that group, with their permission, and test again."
+            "feedback": "Yes. The new examples showed the model leaves that looked different, so it got all six right."
           },
           {
-            "text": "Stop testing it with that group",
+            "text": "The team wrote a rule about spots",
             "correct": false,
-            "feedback": "Not quite. That hides the problem. Read the third section about finding bias."
-          },
-          {
-            "text": "Tell that group to talk like adults",
-            "correct": false,
-            "feedback": "Not quite. The tool should change, not the people. Read the third section about fixing bias."
+            "feedback": "Not quite. In machine learning, nobody writes that rule. Look at what the team added in the third section."
           }
         ]
       },
       {
         "type": "think",
-        "question": "Pick a tool from this lesson. Who else should test it before people trust it?",
-        "placeholder": "The ___ should also be tested by ... because ...",
+        "question": "The garden grows a new plant with red leaves. What should the team do before they trust the model with it?",
+        "placeholder": "First they should ... Then they should ...",
         "optional": true
       }
     ]
   },
   "write": {
-    "prompt": "Choose one tool from the Riverbend table. Explain whose examples were missing, what went wrong, and one way to fix it.",
+    "prompt": "Explain how the garden's model got better from Round 1 to Round 3. Use numbers from the lesson.",
     "sentenceStarters": [
-      "I chose ...",
-      "It learned mostly from ...",
-      "The examples of ___ were missing, so ...",
-      "This is unfair because ...",
-      "One way to fix it is ..."
+      "In Round 1, the model learned from ...",
+      "It got ... right, because ...",
+      "In Round 2, the team added ...",
+      "The striped leaves show that ...",
+      "Good training data needs ..."
     ],
     "planningBoxes": [
       "My main idea",
@@ -225,83 +499,78 @@
       "A question I still have"
     ],
     "selfCheck": [
-      "I named one tool and what it learned from.",
-      "I said whose examples were missing and what went wrong.",
-      "I gave one way to fix it."
+      "I described Round 1 and one of its mistakes.",
+      "I explained what changed in Round 2 and Round 3.",
+      "I said what good training data needs."
     ],
-    "example": "I chose the voice typing tool. It learned mostly from recordings of adults reading aloud. The examples of children's voices were missing, so it typed many words wrongly for the youngest learners. It got 9 of 20 words right for them, and 19 for the teachers. This is unfair because the children get a tool that makes lots of mistakes. One way to fix it is to add recordings of children, if they and their families agree. Then the team can test it again."
+    "example": "In Round 1, the model learned from only two examples. It got four of six new leaves right, because it had too few examples to compare with. It called a small new leaf “sick”. In Round 2, the team added four different examples, and the model got all six right. The striped leaves show that a model makes mistakes when its examples leave something out. Good training data needs many examples and many different kinds."
   },
   "speak": {
-    "partnerTask": "Your partner names a tool from the Riverbend table. You say whose examples were missing and one way to fix it. Then switch.",
-    "independentTask": "Say out loud what bias means. Give one example from the lesson and one way to fix it."
+    "partnerTask": "Tell your partner how you would train a model to sort two kinds of things, like ripe and unripe fruit. Your partner asks, “How will you test it?” Then switch.",
+    "independentTask": "Say out loud three steps: collect examples, train the model, test it. Give one example for each step."
   },
   "watch": {
-    "youtubeId": "x2mRoFNm22g",
-    "title": "AI: Training Data & Bias",
+    "youtubeId": "2hXG8v8p0KM",
+    "title": "How Computer Vision Works",
     "channel": "Code.org",
-    "durationSeconds": 161,
-    "why": "In under three minutes, it explains how missing or one-sided training data can make AI work worse for some people.",
-    "beforeQuestion": "Where do you think the examples for an AI tool come from?",
-    "afterQuestion": "What two questions should you ask about any training data?",
-    "summary": "This video explains why training data matters so much. A machine learning tool is only as good as the data it learns from. Data can come from many places. For example, a video site keeps track of what people watch, sometimes without them knowing. Then it uses that data to suggest more videos. In health care, experts label thousands of medical pictures, so a computer can learn to spot illness. But there is a problem. Suppose most of the X-ray pictures come from men. Then the tool may make more mistakes for women. People can put their own bias into training data without meaning to. So the video asks two questions about any training data. Is there enough of it? Does it include many kinds of people and situations?",
+    "durationSeconds": 384,
+    "why": "It shows a computer learning to tell shapes apart from labelled examples, the same idea as the leaf model.",
+    "beforeQuestion": "How could a computer learn to tell two shapes apart?",
+    "afterQuestion": "Why is it hard to write exact rules for a shape, like the letter X?",
+    "summary": "This video explains computer vision. Computer vision is how a computer finds meaning in pictures. A computer does not see a picture like you do. It sees a number for each tiny dot of colour. Writing exact rules for a shape, like the letter X, does not work well, because people draw an X in many ways. With machine learning, the computer learns from many labelled examples instead. It is like learning with flashcards. The computer guesses, checks the answer and slowly gets better. Harder pictures, like faces, need bigger models. The video shows farm robots that tell crops from weeds. It also warns about a problem. If the training data leaves some people out, the tool can fail for them. So training data must be large and varied.",
     "keyPoints": [
-      "An AI tool is only as good as its training data.",
-      "If some people are missing from the data, the tool can work worse for them.",
-      "Ask: is there enough data, and does it include many kinds of people?"
+      "A computer sees a picture as numbers, one for each tiny dot.",
+      "With machine learning, a computer learns from many labelled examples, like flashcards.",
+      "If the training data leaves some people out, the tool can fail for them."
     ],
-    "contentNote": "The video mentions that companies collect data about what people watch, sometimes without them knowing, and uses a medical example (X-rays mostly from men). Preview it first; learners can read the written summary instead.",
+    "contentNote": "About six minutes, longer than most Thinkerwell videos. The speakers work for a farm-robot company and a car company and name them. Near the end, it says face recognition can fail for groups of people left out of the training data; Lesson 3 comes back to this. Preview it first; learners can read the written summary instead.",
     "replacementSuggestion": null
   },
   "reflect": {
     "prompts": [
       {
-        "text": "One way to make an AI tool fairer is ...",
+        "text": "One thing I learned about training data is ...",
         "required": true
       },
       {
-        "text": "A question I would ask the people who build AI tools is ...",
+        "text": "Something I would like to teach a model to sort is ...",
         "required": false
       }
     ],
-    "completionMessage": "You finished Lesson 3. You found whose examples were missing and explained how to make a tool fairer."
+    "completionMessage": "You finished Lesson 3. You trained a model with examples and saw why the examples matter."
   },
   "visual": {
-    "type": "diagram",
-    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW03.svg is only a planned path. A simple bar chart of the voice typing test: three bars for Teachers (19 of 20 words right), Older learners (16 of 20) and Youngest learners (9 of 20), each bar labelled with its number in words and digits, so colour is never the only clue. Beside it, a small box of training-data cards shows mostly adult figures and only one child, with the words “Mostly adult voices”. No real faces; simple figures only.",
-    "alt": "A bar chart: the voice typing tool got 19 of 20 words right for teachers, 16 for older learners and 9 for the youngest learners. Its training data had mostly adult voices.",
-    "src": "visuals/DW03.svg"
+    "type": "illustration",
+    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW02.svg is only a planned path. The eight example leaves and eight test leaves drawn as simple flat cards, in the same style the activity will use, so learners recognise them: dark green, light green new leaf, green with tiny marks, brown with spots, yellow with no spots, small spotted, and two long thin leaves with pale stripes. Healthy and sick are shown by a word under each card, never by colour alone. The same drawings are reused by the activity; there are no photos.",
+    "alt": "Leaf cards from Sunrise Garden: green, light green, yellow, brown and spotted leaves, and two long leaves with pale stripes, each labelled healthy or sick.",
+    "src": "visuals/DW02.svg"
   },
   "sources": [
     {
-      "label": "Attia and others (AIES 2024): Kid-Whisper, the gap in speech recognition between children and adults",
-      "url": "https://ojs.aaai.org/index.php/AIES/article/view/31618"
-    },
-    {
-      "label": "Stanford Report (2025): How AI is leaving non-English speakers behind",
-      "url": "https://news.stanford.edu/stories/2025/05/digital-divide-ai-llms-exclusion-non-english-speakers-research"
-    },
-    {
-      "label": "Code.org: Machine learning and bias (lesson plan)",
-      "url": "https://curriculum.code.org/csp-20/unit9/6/"
-    },
-    {
-      "label": "Experience AI (Raspberry Pi Foundation): Lesson 3, Bias in, bias out",
+      "label": "Experience AI (Raspberry Pi Foundation): Lesson 3, Bias in, bias out (training data, test data, accuracy)",
       "url": "https://experience-ai.org/en/units/foundations-of-ai/lessons/3"
+    },
+    {
+      "label": "The Royal Society: Machine learning, the power and promise of computers that learn by example (introduction)",
+      "url": "https://royalsociety.org/-/media/policy/projects/machine-learning/publications/machine-learning-introduction.pdf"
+    },
+    {
+      "label": "DCMP: How Computer Vision Works (Code.org video, description)",
+      "url": "https://dcmp.org/media/25568-how-computer-vision-works"
     }
   ],
-  "sensitiveNotes": [
-    "Some learners may have found that tools work badly in their own language or for their accent. Let them say so if they want to, but never ask which language they speak at home, where they come from or about their family. The lesson works with the fictional Riverbend tools alone.",
-    "Bias in real tools can touch race, gender and other identities (the Lesson 2 video mentions face recognition). Keep the discussion on how training data causes it and how to fix it; don't ask learners to share times they were treated unfairly."
-  ],
+  "sensitiveNotes": [],
   "educatorNotes": [
-    "The numbers in the activity (19, 16 and 9 of 20) are made up to show the idea. Real research also found big gaps for children's voices; see the sources.",
-    "Lesson 2's leaf model is reused on purpose: learners can see the same cause (missing examples) in a small model they trained and in real tools."
+    "If the activity can't run (a printout, or a device without it), use the evidence table: it shows exactly what the activity does. Learners can also play it on paper: one learner is the model and may only copy the label of the most similar example card.",
+    "The model in the activity is deliberately simple (it copies the label of the most similar example). Real AI is far bigger, but the lesson about examples is the same.",
+    "If a learner labels an example differently from the gardener, the model follows the learner. That is a good moment to ask: who decides the right label?"
   ],
   "changes": [
     "New lesson (Digital World draft 1). There is no Base44 original, so oldId is null.",
     "section is a Digital World section id (how-ai-works), which the Our World checker and schema don't accept yet.",
-    "Adds a compare-results activity, documented in docs/content/DIGITAL_WORLD_SPEC.md.",
+    "Adds a train-model activity with a tested set of leaf cards; the results in the evidence table and the reading are what the activity gives when the learner labels like the gardener (checked with a small script; see the spec).",
     "visual.src points to a picture that doesn't exist yet.",
-    "Needs review by an AI researcher for accuracy, by Justin for level and tone, and by a partner educator for the sensitive notes."
+    "Needs review by an AI researcher for accuracy, and by Justin for level and tone.",
+    "October 2026, social studies rebuild (Justin's brief: AI and the digital world through a social studies lens, at most 20 lessons): kept as Lesson 3 in \"Thinking machines\" (thinking-machines). The notes above about the old section ids are out of date."
   ]
 }
