@@ -1518,6 +1518,7 @@
   "print": {
     "print": "Print",
     "brand": "Thinkerwell · Exploring Our World",
+    "brandCourse": "Thinkerwell · {course}",
     "printLesson": "Print this lesson",
     "lessonPageTitle": "Lesson {number}: print",
     "backToLesson": "Back to the lesson",
@@ -1638,7 +1639,7 @@
     "activity": {
       "eyebrow": "Activity",
       "guideTitle": "The activity",
-      "guideIntro": "What learners do on the device, with what most people would say and the answers. A class can also do it on paper from the print view."
+      "guideIntro": "What learners do on the device, with one possible answer and its reason. A class can also do it on paper from the print view."
     },
     "banner": {
       "body": "Digital World is a draft. An AI researcher and a partner organisation still need to check it. Only this device shows it.",
@@ -1696,7 +1697,7 @@
     },
     "sort": {
       "empty": "Nothing here yet.",
-      "mostPeople": "Most people would say: {group}.",
+      "oneAnswer": "One possible answer: {group}.",
       "notPlaced": "Still to place: {count}",
       "yourGroups": "Your groups"
     },

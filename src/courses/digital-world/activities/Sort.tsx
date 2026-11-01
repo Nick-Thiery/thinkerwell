@@ -7,7 +7,7 @@ import { useActivityState } from './state';
 /**
  * `sort` (Lessons 1, 4, 7 and 10): put each item in a group. There is no
  * score and nothing is marked wrong: once an item is placed, its feedback
- * says what most people would say and why. Each item is a group of real
+ * gives one possible answer and its reason. Each item is a group of real
  * radio buttons (arrow keys move between groups, as everywhere), named by
  * the item. Any choice can be changed at any time. "Your groups" lists
  * what is in each group so far. Saves the group chosen for each item.
@@ -92,7 +92,7 @@ export function SortOnPaper({ activity, forTeachers }: { activity: SortActivity;
           <p {...en}>{item.text}</p>
           {forTeachers ? (
             <p>
-              <strong>{tx('digitalWorld.sort.mostPeople', { group: <En>{label.get(item.suggested) ?? item.suggested}</En> })}</strong> <span {...en}>{item.feedback}</span>
+              <strong>{tx('digitalWorld.sort.oneAnswer', { group: <En>{label.get(item.suggested) ?? item.suggested}</En> })}</strong> <span {...en}>{item.feedback}</span>
             </p>
           ) : (
             <ul className="tw-print-boxes" {...en}>

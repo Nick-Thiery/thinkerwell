@@ -12,7 +12,7 @@ import { TrainModelOnPaper } from './train-model/TrainModel';
 /**
  * The activity on paper: in the lesson's print view a version a class can
  * do without a device (boxes to tick, lines to write on); in the teacher
- * guide (`forTeachers`) the same with what most people say, the right
+ * guide (`forTeachers`) the same with one possible answer and its reason, the right
  * answers marked with a tick and words, and every hint. So the same result
  * is always there without the activity (spec 5.2).
  */
