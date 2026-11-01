@@ -310,7 +310,7 @@ function keepFirstVisitLight(): Plugin {
             `The Vietnamese font is in the site's stylesheet (${output.fileName}). Import src/i18n/fonts/vietnamese.css only with ?url (src/i18n/fonts/index.ts).`,
           );
         }
-        if (!output.fileName.startsWith(PREVIEW_ASSET_DIR) && /\.tw-(dw|vr)-/.test(String(output.source))) {
+        if (!output.fileName.startsWith(PREVIEW_ASSET_DIR) && /\.tw-(dw|vr|pc)-/.test(String(output.source))) {
           this.error(
             `A preview course's styles are in the site's stylesheet (${output.fileName}). Import its CSS only with ?url (src/courses/digital-world/stylesheet.ts).`,
           );

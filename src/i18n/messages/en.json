@@ -1584,6 +1584,56 @@
       "getSectionCertificate": "Get your section certificate"
     }
   },
+  "previewCourse": {
+    "banner": {
+      "title": "Draft course: not yet reviewed",
+      "turnOff": "Turn preview off"
+    },
+    "sheet": {
+      "draft": "{title}, draft course: not yet reviewed. Don’t use it with learners yet."
+    },
+    "choice": {
+      "label": "Courses on this device",
+      "draft": "Draft"
+    },
+    "map": {
+      "noChecks": "There are no section checks or certificates in this draft yet.",
+      "forTeachersTitle": "For teachers and reviewers",
+      "printAll": "Print all lessons",
+      "guideLink": "Teacher guide, Lesson {number}: {title}"
+    },
+    "printAll": {
+      "back": "Back to {title}",
+      "intro": "Every lesson of {title}, one after another. Each one starts on a new page. Print them, or save them as a PDF.",
+      "pageTitle": "{title}: every lesson"
+    },
+    "reviewer": {
+      "title": "For reviewers",
+      "intro": "Notes from the people who wrote this draft: what is new and what needs checking. Learners never see them.",
+      "pictureTitle": "Picture still to draw"
+    },
+    "switch": {
+      "pageTitle": "{title} preview",
+      "onTitle": "{title} preview is on",
+      "noStorage": "This browser can't save settings here, so the preview stays on only until you close this page.",
+      "open": "Open {title}",
+      "printAll": "Print all lessons",
+      "turnOff": "Turn preview off",
+      "offTitle": "{title} preview is off",
+      "offBody": "This device doesn’t show {title} any more.",
+      "turnOn": "Turn it on again",
+      "goTo": "Go to {title}",
+      "saveFailed": "This device couldn't save that. It applies until you close this page."
+    },
+    "picture": {
+      "photoTitle": "Photo",
+      "lookClosely": "Look closely:",
+      "limits": "What can this source show? What can it not show?",
+      "credit": "“{title}”, {creator}, {created}. Licence: {licence}.",
+      "source": "See the original",
+      "changes": "Changes: {changes}"
+    }
+  },
   "digitalWorld": {
     "activity": {
       "eyebrow": "Activity",
@@ -1591,17 +1641,8 @@
       "guideIntro": "What learners do on the device, with what most people would say and the answers. A class can also do it on paper from the print view."
     },
     "banner": {
-      "title": "Draft course: not yet reviewed",
       "body": "Digital World is a draft. An AI researcher and a partner organisation still need to check it. Only this device shows it.",
-      "bodyEnglishLessons": "Digital World is a draft. An AI researcher and a partner organisation still need to check it. Only this device shows it. Its lessons are in English for now.",
-      "turnOff": "Turn preview off"
-    },
-    "sheet": {
-      "draft": "Digital World, draft course: not yet reviewed. Don't use it with learners yet."
-    },
-    "choice": {
-      "label": "Courses on this device",
-      "draft": "Draft"
+      "bodyEnglishLessons": "Digital World is a draft. An AI researcher and a partner organisation still need to check it. Only this device shows it. Its lessons are in English for now."
     },
     "chart": {
       "viewsLabel": "Which chart",
@@ -1624,11 +1665,7 @@
       "paperAnswer": "The group with the most mistakes:"
     },
     "map": {
-      "noChecks": "There are no section checks or certificates in this draft yet.",
-      "forTeachersTitle": "For teachers and reviewers",
-      "forTeachersBody": "Each lesson has a teacher guide with its notes, the answers, the activity on paper and notes for reviewers. You can also print the whole course.",
-      "printAll": "Print all lessons",
-      "guideLink": "Teacher guide, Lesson {number}: {title}"
+      "forTeachersBody": "Each lesson has a teacher guide with its notes, the answers, the activity on paper and notes for reviewers. You can also print the whole course."
     },
     "plan": {
       "answerLabel": "Your answer",
@@ -1648,15 +1685,7 @@
       "useStarter": "Use the sentence starter",
       "yourPlan": "Your plan"
     },
-    "printAll": {
-      "back": "Back to Digital World",
-      "intro": "Every Digital World lesson, one after another. Each one starts on a new page. Print them, or save them as a PDF.",
-      "pageTitle": "Digital World: every lesson"
-    },
     "reviewer": {
-      "title": "For reviewers",
-      "intro": "Notes from the people who wrote this draft: what is new and what needs checking. Learners never see them.",
-      "pictureTitle": "Picture still to draw",
       "activityTitle": "About the activity",
       "saves": "What it saves",
       "offline": "How it works offline"
@@ -1672,19 +1701,8 @@
       "yourGroups": "Your groups"
     },
     "switch": {
-      "pageTitle": "Digital World preview",
-      "onTitle": "Digital World preview is on",
       "onBody": "This device now shows Digital World, a draft course about AI and online information. Nobody else sees it, and nothing about it is sent anywhere. It stays on until you turn it off.",
-      "reviewNote": "It hasn't been reviewed yet. An AI researcher still needs to check its facts, and a partner organisation its sensitive topics. Don't use it with learners yet.",
-      "noStorage": "This browser can't save settings here, so the preview stays on only until you close this page.",
-      "open": "Open Digital World",
-      "printAll": "Print all lessons",
-      "turnOff": "Turn preview off",
-      "offTitle": "Digital World preview is off",
-      "offBody": "This device doesn't show Digital World any more.",
-      "turnOn": "Turn it on again",
-      "goTo": "Go to {title}",
-      "saveFailed": "This device couldn't save that. It applies until you close this page."
+      "reviewNote": "It hasn't been reviewed yet. An AI researcher still needs to check its facts, and a partner organisation its sensitive topics. Don't use it with learners yet."
     },
     "tool": {
       "badge": "Pretend tool",
@@ -1899,5 +1917,18 @@
       "summary": "Check the fields marked below."
     },
     "honeypot": "Leave this empty"
+  },
+  "southeastAsia": {
+    "banner": {
+      "body": "Southeast Asia Through Time is a draft. A historian and a partner organisation still need to check it. Only this device shows it.",
+      "bodyEnglishLessons": "Southeast Asia Through Time is a draft. A historian and a partner organisation still need to check it. Only this device shows it. Its lessons are in English for now."
+    },
+    "map": {
+      "forTeachersBody": "Each lesson has a teacher guide with its notes, the answers, both pictures with their credits, and notes for reviewers. You can also print the whole course."
+    },
+    "switch": {
+      "onBody": "This device now shows Southeast Asia Through Time, a draft course about the history of Southeast Asia through real objects, maps, photos and letters. Nobody else sees it, and nothing about it is sent anywhere. It stays on until you turn it off.",
+      "reviewNote": "It hasn’t been reviewed yet. A historian still needs to check its facts, and a partner organisation its sensitive topics. Don’t use it with learners yet."
+    }
   }
 }

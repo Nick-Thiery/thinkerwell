@@ -4638,9 +4638,10 @@
     "back": "What the learners do on the device, together with what most people will say and the answer. The class can also do it on paper through the print view.",
     "source": "What learners do on the device, with what most people would say and the answers. A class can also do it on paper from the print view."
   },
-  "digitalWorld.banner.title": {
+  "previewCourse.banner.title": {
     "back": "Draft course: not yet reviewed",
-    "source": "Draft course: not yet reviewed"
+    "source": "Draft course: not yet reviewed",
+    "flag": true
   },
   "digitalWorld.banner.body": {
     "back": "Digital World is a draft. An AI researcher and a partner organisation still need to review it. Only this device displays it.",
@@ -4650,21 +4651,25 @@
     "back": "Digital World is a draft. An AI researcher and a partner organisation still need to review it. Only this device displays it. Its lessons are in English for now.",
     "source": "Digital World is a draft. An AI researcher and a partner organisation still need to check it. Only this device shows it. Its lessons are in English for now."
   },
-  "digitalWorld.banner.turnOff": {
+  "previewCourse.banner.turnOff": {
     "back": "Turn off preview",
-    "source": "Turn preview off"
+    "source": "Turn preview off",
+    "flag": true
   },
-  "digitalWorld.sheet.draft": {
-    "back": "Digital World, draft course: not yet reviewed. Do not use with learners yet.",
-    "source": "Digital World, draft course: not yet reviewed. Don't use it with learners yet."
+  "previewCourse.sheet.draft": {
+    "back": "{title}, draft course: not yet reviewed. Do not use with learners yet.",
+    "source": "{title}, draft course: not yet reviewed. Don’t use it with learners yet.",
+    "flag": true
   },
-  "digitalWorld.choice.label": {
+  "previewCourse.choice.label": {
     "back": "Courses on this device",
-    "source": "Courses on this device"
+    "source": "Courses on this device",
+    "flag": true
   },
-  "digitalWorld.choice.draft": {
+  "previewCourse.choice.draft": {
     "back": "Draft",
-    "source": "Draft"
+    "source": "Draft",
+    "flag": true
   },
   "digitalWorld.chart.viewsLabel": {
     "back": "Which chart",
@@ -4728,13 +4733,15 @@
     "back": "Group with the most mistakes:",
     "source": "The group with the most mistakes:"
   },
-  "digitalWorld.map.noChecks": {
+  "previewCourse.map.noChecks": {
     "back": "There are no section checks or certificates in this draft yet.",
-    "source": "There are no section checks or certificates in this draft yet."
+    "source": "There are no section checks or certificates in this draft yet.",
+    "flag": true
   },
-  "digitalWorld.map.forTeachersTitle": {
+  "previewCourse.map.forTeachersTitle": {
     "back": "For teachers and reviewers",
-    "source": "For teachers and reviewers"
+    "source": "For teachers and reviewers",
+    "flag": true
   },
   "digitalWorld.map.forTeachersBody": {
     "flag": true,
@@ -4742,13 +4749,15 @@
     "back": "Every lesson has a teacher's guide with notes, answers, paper activities and notes for reviewers. The whole course can also be printed.",
     "source": "Each lesson has a teacher guide with its notes, the answers, the activity on paper and notes for reviewers. You can also print the whole course."
   },
-  "digitalWorld.map.printAll": {
+  "previewCourse.map.printAll": {
     "back": "Print all lessons",
-    "source": "Print all lessons"
+    "source": "Print all lessons",
+    "flag": true
   },
-  "digitalWorld.map.guideLink": {
+  "previewCourse.map.guideLink": {
     "back": "Teacher's guide, Lesson {number}: {title}",
-    "source": "Teacher guide, Lesson {number}: {title}"
+    "source": "Teacher guide, Lesson {number}: {title}",
+    "flag": true
   },
   "digitalWorld.plan.answerLabel": {
     "back": "Your answer",
@@ -4814,29 +4823,35 @@
     "back": "Your plan",
     "source": "Your plan"
   },
-  "digitalWorld.printAll.back": {
-    "back": "Back to Digital World",
-    "source": "Back to Digital World"
+  "previewCourse.printAll.back": {
+    "back": "Back to {title}",
+    "source": "Back to {title}",
+    "flag": true
   },
-  "digitalWorld.printAll.intro": {
-    "back": "Every Digital World lesson, one after another. Each lesson starts on a new page. Print them all, or save as a PDF.",
-    "source": "Every Digital World lesson, one after another. Each one starts on a new page. Print them, or save them as a PDF."
+  "previewCourse.printAll.intro": {
+    "back": "Every {title} lesson, one after another. Each lesson starts on a new page. Print them all, or save as a PDF.",
+    "source": "Every lesson of {title}, one after another. Each one starts on a new page. Print them, or save them as a PDF.",
+    "flag": true
   },
-  "digitalWorld.printAll.pageTitle": {
-    "back": "Digital World: all lessons",
-    "source": "Digital World: every lesson"
+  "previewCourse.printAll.pageTitle": {
+    "back": "{title}: all lessons",
+    "source": "{title}: every lesson",
+    "flag": true
   },
-  "digitalWorld.reviewer.title": {
+  "previewCourse.reviewer.title": {
     "back": "For reviewers",
-    "source": "For reviewers"
+    "source": "For reviewers",
+    "flag": true
   },
-  "digitalWorld.reviewer.intro": {
+  "previewCourse.reviewer.intro": {
     "back": "Notes from the writer of this draft: what is new and what needs to be checked. Learners will not see it.",
-    "source": "Notes from the people who wrote this draft: what is new and what needs checking. Learners never see them."
+    "source": "Notes from the people who wrote this draft: what is new and what needs checking. Learners never see them.",
+    "flag": true
   },
-  "digitalWorld.reviewer.pictureTitle": {
+  "previewCourse.reviewer.pictureTitle": {
     "back": "Pictures not yet drawn",
-    "source": "Picture still to draw"
+    "source": "Picture still to draw",
+    "flag": true
   },
   "digitalWorld.reviewer.activityTitle": {
     "back": "About this activity",
@@ -4874,15 +4889,16 @@
     "back": "Your groups",
     "source": "Your groups"
   },
-  "digitalWorld.switch.pageTitle": {
+  "previewCourse.switch.pageTitle": {
     "flag": true,
     "note": "Translator: I kept the course name \"Digital World\" in English because the draft course content is still in English. If the course gets translated, use \"Dunia Digital\" everywhere. Back-translation check: The course name \"Digital World\" is left in English in every switch string because the draft course is still in English. If the course is translated, change it to \"Dunia Digital\" everywhere.",
-    "back": "Digital World preview",
-    "source": "Digital World preview"
+    "back": "{title} preview",
+    "source": "{title} preview"
   },
-  "digitalWorld.switch.onTitle": {
-    "back": "Digital World preview turned on",
-    "source": "Digital World preview is on"
+  "previewCourse.switch.onTitle": {
+    "back": "{title} preview turned on",
+    "source": "{title} preview is on",
+    "flag": true
   },
   "digitalWorld.switch.onBody": {
     "back": "This device now shows Digital World, a draft course about AI and online information. Other people do not see it, and nothing about it is sent anywhere. It stays on until you turn it off.",
@@ -4892,43 +4908,81 @@
     "back": "It has not been checked yet. An AI researcher still needs to check its facts, and a partner organisation needs to check its sensitive topics. Do not use it with students yet.",
     "source": "It hasn't been reviewed yet. An AI researcher still needs to check its facts, and a partner organisation its sensitive topics. Don't use it with learners yet."
   },
-  "digitalWorld.switch.noStorage": {
+  "previewCourse.switch.noStorage": {
     "back": "This browser cannot save settings here, so the preview stays on only until you close this page.",
-    "source": "This browser can't save settings here, so the preview stays on only until you close this page."
+    "source": "This browser can't save settings here, so the preview stays on only until you close this page.",
+    "flag": true
   },
-  "digitalWorld.switch.open": {
-    "back": "Open Digital World",
-    "source": "Open Digital World"
+  "previewCourse.switch.open": {
+    "back": "Open {title}",
+    "source": "Open {title}",
+    "flag": true
   },
-  "digitalWorld.switch.printAll": {
+  "previewCourse.switch.printAll": {
     "back": "Print all lessons",
-    "source": "Print all lessons"
+    "source": "Print all lessons",
+    "flag": true
   },
-  "digitalWorld.switch.turnOff": {
+  "previewCourse.switch.turnOff": {
     "back": "Turn off preview",
-    "source": "Turn preview off"
+    "source": "Turn preview off",
+    "flag": true
   },
-  "digitalWorld.switch.offTitle": {
-    "back": "Digital World preview turned off",
-    "source": "Digital World preview is off"
+  "previewCourse.switch.offTitle": {
+    "back": "{title} preview turned off",
+    "source": "{title} preview is off",
+    "flag": true
   },
-  "digitalWorld.switch.offBody": {
-    "back": "This device no longer shows Digital World.",
-    "source": "This device doesn't show Digital World any more."
+  "previewCourse.switch.offBody": {
+    "back": "This device no longer shows {title}.",
+    "source": "This device doesn’t show {title} any more.",
+    "flag": true
   },
-  "digitalWorld.switch.turnOn": {
+  "previewCourse.switch.turnOn": {
     "back": "Turn on again",
-    "source": "Turn it on again"
+    "source": "Turn it on again",
+    "flag": true
   },
-  "digitalWorld.switch.goTo": {
+  "previewCourse.switch.goTo": {
     "back": "Go to {title}",
-    "source": "Go to {title}"
+    "source": "Go to {title}",
+    "flag": true
   },
-  "digitalWorld.switch.saveFailed": {
+  "previewCourse.switch.saveFailed": {
     "flag": true,
     "note": "Back-translation check: \"berkuat kuasa\" is correct but sounds legal and stiff. A native speaker could consider \"Ia hanya kekal sehingga anda menutup halaman ini.\" Also check that adding \"tetapan\" (setting) for \"that\" is fine.",
     "back": "This device could not save that setting. It only takes effect until you close this page.",
     "source": "This device couldn't save that. It applies until you close this page."
+  },
+  "previewCourse.picture.photoTitle": {
+    "source": "Photo",
+    "flag": true,
+    "note": "Southeast Asia Through Time (November 2026): drafted by AI, not yet reviewed by a native speaker."
+  },
+  "previewCourse.picture.lookClosely": {
+    "source": "Look closely:",
+    "flag": true,
+    "note": "Southeast Asia Through Time (November 2026): drafted by AI, not yet reviewed by a native speaker."
+  },
+  "previewCourse.picture.limits": {
+    "source": "What can this source show? What can it not show?",
+    "flag": true,
+    "note": "Southeast Asia Through Time (November 2026): drafted by AI, not yet reviewed by a native speaker."
+  },
+  "previewCourse.picture.credit": {
+    "source": "“{title}”, {creator}, {created}. Licence: {licence}.",
+    "flag": true,
+    "note": "Southeast Asia Through Time (November 2026): drafted by AI, not yet reviewed by a native speaker."
+  },
+  "previewCourse.picture.source": {
+    "source": "See the original",
+    "flag": true,
+    "note": "Southeast Asia Through Time (November 2026): drafted by AI, not yet reviewed by a native speaker."
+  },
+  "previewCourse.picture.changes": {
+    "source": "Changes: {changes}",
+    "flag": true,
+    "note": "Southeast Asia Through Time (November 2026): drafted by AI, not yet reviewed by a native speaker."
   },
   "digitalWorld.tool.badge": {
     "flag": true,
@@ -6092,5 +6146,30 @@
     "back": "In Indonesian and Malay, a lesson has no Watch step unless there is a video in that language. Open this guide in that language to see its plan.",
     "source": "In Bahasa Indonesia and Bahasa Melayu, a lesson has no Watch step unless it has a video in that language. Open this guide in that language to see its plan.",
     "flag": "October 2026: says that lessons in Indonesian and Malay have four steps, without Watch, for a teacher reading in one language whose learners use another. Drafted by AI with no second AI review: check."
+  },
+  "southeastAsia.banner.body": {
+    "source": "Southeast Asia Through Time is a draft. A historian and a partner organisation still need to check it. Only this device shows it.",
+    "flag": true,
+    "note": "Southeast Asia Through Time preview (November 2026): drafted by AI, not yet reviewed by a native speaker. The course name stays in English while its lessons are English."
+  },
+  "southeastAsia.banner.bodyEnglishLessons": {
+    "source": "Southeast Asia Through Time is a draft. A historian and a partner organisation still need to check it. Only this device shows it. Its lessons are in English for now.",
+    "flag": true,
+    "note": "Southeast Asia Through Time preview (November 2026): drafted by AI, not yet reviewed by a native speaker. The course name stays in English while its lessons are English."
+  },
+  "southeastAsia.map.forTeachersBody": {
+    "source": "Each lesson has a teacher guide with its notes, the answers, both pictures with their credits, and notes for reviewers. You can also print the whole course.",
+    "flag": true,
+    "note": "Southeast Asia Through Time preview (November 2026): drafted by AI, not yet reviewed by a native speaker. The course name stays in English while its lessons are English."
+  },
+  "southeastAsia.switch.onBody": {
+    "source": "This device now shows Southeast Asia Through Time, a draft course about the history of Southeast Asia through real objects, maps, photos and letters. Nobody else sees it, and nothing about it is sent anywhere. It stays on until you turn it off.",
+    "flag": true,
+    "note": "Southeast Asia Through Time preview (November 2026): drafted by AI, not yet reviewed by a native speaker. The course name stays in English while its lessons are English."
+  },
+  "southeastAsia.switch.reviewNote": {
+    "source": "It hasn’t been reviewed yet. A historian still needs to check its facts, and a partner organisation its sensitive topics. Don’t use it with learners yet.",
+    "flag": true,
+    "note": "Southeast Asia Through Time preview (November 2026): drafted by AI, not yet reviewed by a native speaker. The course name stays in English while its lessons are English."
   }
 }

@@ -22,6 +22,7 @@ import { LessonSlot } from '../../lesson/extras';
 import { useLearnerSession } from '../../session';
 import type { ReadingLevel } from '../../storage';
 import { LessonEvidence } from '../lesson/evidence/LessonEvidence';
+import { LessonVisual } from '../lesson/visual/LessonVisual';
 import { buildReading } from '../lesson/read/readingPieces';
 import { AnswerLines, PrintToolbar } from './PrintToolbar';
 import './print.css';
@@ -77,11 +78,12 @@ export function LessonPrintSheet({ lesson, titleId = 'print-title', newPage = fa
   const content = useLessonContent();
   const section = content.getLessonSection(lesson);
   const [min, max] = lesson.estimatedMinutes;
-  const { read, write, speak, watch, reflect } = lesson;
+  const { read, write, speak, reflect } = lesson;
+  // No Watch step in a translated language without a video of its own for this lesson, or for a lesson with no
+  // approved video at all (CourseContent.stagesFor).
+  const watch = content.stagesFor(lesson).includes('watch') ? lesson.watch : null;
   // A video's title and channel are English, unless this lesson has an approved video in the language on screen.
-  const videoWord = (word: string) => (watch.localVideo ? word : <AlwaysEn>{word}</AlwaysEn>);
-  // No Watch step in a translated language without a video of its own for this lesson (CourseContent.stagesFor).
-  const withWatch = content.stagesFor(lesson).includes('watch');
+  const videoWord = (word: string) => (watch?.localVideo ? word : <AlwaysEn>{word}</AlwaysEn>);
 
   return (
     <article className={newPage ? 'tw-print-sheet tw-print-new-page' : 'tw-print-sheet'} aria-labelledby={titleId}>
@@ -130,6 +132,12 @@ export function LessonPrintSheet({ lesson, titleId = 'print-title', newPage = fa
           glossary={read.glossary}
         />
       ))}
+      {/* A preview course's second picture (a real photo or map), with its caption and credit. */}
+      {lesson.secondVisual ? (
+        <section className="tw-print-part tw-print-evidence">
+          <LessonVisual visual={lesson.secondVisual} enlargeable={false} />
+        </section>
+      ) : null}
 
       <section className="tw-print-part">
         <h2>{t('lessonPlayer.read.keyWordsTitle')}</h2>
@@ -214,7 +222,7 @@ export function LessonPrintSheet({ lesson, titleId = 'print-title', newPage = fa
         </div>
       </section>
 
-      {withWatch ? (
+      {watch ? (
         <section className="tw-print-part">
           <h2>{t('print.watchTitle')}</h2>
           <p className="tw-print-muted">{tx('print.videoNote', { title: videoWord(watch.title), channel: videoWord(watch.channel) })}</p>

@@ -2,12 +2,13 @@ import { renderHook, waitFor } from '@testing-library/react';
 import type { ReactNode } from 'react';
 import { describe, expect, it } from 'vitest';
 import { I18nProvider, useI18n, type I18nContextValue, type MessageKey } from '../../i18n';
+import words from 'virtual:thinkerwell/course-messages/digital-world';
 import { CourseWords, withCourseWords } from './i18n';
 
-// Digital World's own words load with its code (the build leaves them out of
-// the app's messages), and under its pages the lessons are English in every
-// language: marked lang="en" and read as English, with the interface in the
-// learner's language.
+// A preview course's words (the shared preview words and its own) load with
+// its code (the build leaves them out of the app's messages), and under its
+// pages the lessons are English in every language: marked lang="en" and
+// read as English, with the interface in the learner's language.
 
 async function i18nIn(locale: string): Promise<I18nContextValue> {
   const wrapper = ({ children }: { children: ReactNode }) => <I18nProvider locale={locale}>{children}</I18nProvider>;
@@ -45,15 +46,16 @@ describe('withCourseWords', () => {
     expect(english.contentLang).toEqual({});
   });
 
-  it('is what CourseWords gives every Digital World page, with the real words', async () => {
+  it('is what CourseWords gives every Digital World page, with the real words, its own and the shared ones', async () => {
     const wrapper = ({ children }: { children: ReactNode }) => (
       <I18nProvider locale="id">
-        <CourseWords>{children}</CourseWords>
+        <CourseWords words={words}>{children}</CourseWords>
       </I18nProvider>
     );
     const { result } = renderHook(() => useI18n(), { wrapper });
     await waitFor(() => expect(result.current.locale).toBe('id'));
-    expect(result.current.t('digitalWorld.banner.title')).toBe('Kursus draf: belum ditinjau');
+    expect(result.current.t('previewCourse.banner.title')).toBe('Kursus draf: belum ditinjau');
+    expect(result.current.t('previewCourse.switch.open', { title: 'Digital World' })).toBe('Buka Digital World');
     expect(result.current.t('digitalWorld.trainModel.score', { right: 4, of: 6 })).toBe('Model benar 4 dari 6.');
   });
 });

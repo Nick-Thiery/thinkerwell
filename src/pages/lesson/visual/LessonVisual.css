@@ -130,3 +130,28 @@
     border-radius: 0;
   }
 }
+
+/*
+ * A preview course's picture (Southeast Asia Through Time) can have a
+ * caption, a "Look closely" question and, for a real photo or map, its
+ * credit under it.
+ */
+.tw-lesson-visual-caption {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-block-start: var(--space-3);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.tw-lesson-visual-caption p {
+  margin: 0;
+}
+
+.tw-lesson-visual-credit {
+  color: var(--ink-muted);
+  font-size: 14px;
+  line-height: 20px;
+  overflow-wrap: anywhere;
+}

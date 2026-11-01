@@ -1565,6 +1565,56 @@
       "getSectionCertificate": "Ambil sertifikat bagianmu"
     }
   },
+  "previewCourse": {
+    "banner": {
+      "title": "Kursus draf: belum ditinjau",
+      "turnOff": "Matikan pratinjau"
+    },
+    "sheet": {
+      "draft": "{title}, kursus draf: belum ditinjau. Jangan dipakai dengan pelajar dulu."
+    },
+    "choice": {
+      "label": "Kursus di perangkat ini",
+      "draft": "Draf"
+    },
+    "map": {
+      "noChecks": "Draf ini belum punya cek bagian atau sertifikat.",
+      "forTeachersTitle": "Untuk guru dan peninjau",
+      "printAll": "Cetak semua pelajaran",
+      "guideLink": "Panduan guru, Pelajaran {number}: {title}"
+    },
+    "printAll": {
+      "back": "Kembali ke {title}",
+      "intro": "Semua pelajaran {title}, satu per satu. Setiap pelajaran mulai di halaman baru. Cetak, atau simpan sebagai PDF.",
+      "pageTitle": "{title}: semua pelajaran"
+    },
+    "reviewer": {
+      "title": "Untuk peninjau",
+      "intro": "Catatan dari penulis draf ini: apa yang baru dan apa yang perlu diperiksa. Pelajar tidak pernah melihatnya.",
+      "pictureTitle": "Gambar yang masih perlu dibuat"
+    },
+    "switch": {
+      "pageTitle": "Pratinjau {title}",
+      "onTitle": "Pratinjau {title} menyala",
+      "noStorage": "Browser ini tidak bisa menyimpan pengaturan di sini, jadi pratinjau hanya menyala sampai Anda menutup halaman ini.",
+      "open": "Buka {title}",
+      "printAll": "Cetak semua pelajaran",
+      "turnOff": "Matikan pratinjau",
+      "offTitle": "Pratinjau {title} mati",
+      "offBody": "Perangkat ini tidak lagi menampilkan {title}.",
+      "turnOn": "Nyalakan lagi",
+      "goTo": "Buka {title}",
+      "saveFailed": "Perangkat ini tidak bisa menyimpannya. Pengaturan ini berlaku sampai Anda menutup halaman ini."
+    },
+    "picture": {
+      "photoTitle": "Foto",
+      "lookClosely": "Lihat baik-baik:",
+      "limits": "Apa yang bisa ditunjukkan sumber ini? Apa yang tidak bisa?",
+      "credit": "“{title}”, {creator}, {created}. Lisensi: {licence}.",
+      "source": "Lihat aslinya",
+      "changes": "Perubahan: {changes}"
+    }
+  },
   "digitalWorld": {
     "activity": {
       "eyebrow": "Kegiatan",
@@ -1572,17 +1622,8 @@
       "guideIntro": "Yang dikerjakan pelajar di perangkat, dengan apa yang akan dikatakan kebanyakan orang dan jawabannya. Kelas juga bisa mengerjakannya di kertas dari tampilan cetak."
     },
     "banner": {
-      "title": "Kursus draf: belum ditinjau",
       "body": "Digital World masih berupa draf. Seorang peneliti AI dan sebuah organisasi mitra masih perlu memeriksanya. Hanya perangkat ini yang menampilkannya.",
-      "bodyEnglishLessons": "Digital World masih berupa draf. Seorang peneliti AI dan sebuah organisasi mitra masih perlu memeriksanya. Hanya perangkat ini yang menampilkannya. Untuk saat ini, pelajarannya masih dalam bahasa Inggris.",
-      "turnOff": "Matikan pratinjau"
-    },
-    "sheet": {
-      "draft": "Digital World, kursus draf: belum ditinjau. Jangan dipakai dengan pelajar dulu."
-    },
-    "choice": {
-      "label": "Kursus di perangkat ini",
-      "draft": "Draf"
+      "bodyEnglishLessons": "Digital World masih berupa draf. Seorang peneliti AI dan sebuah organisasi mitra masih perlu memeriksanya. Hanya perangkat ini yang menampilkannya. Untuk saat ini, pelajarannya masih dalam bahasa Inggris."
     },
     "chart": {
       "viewsLabel": "Grafik yang mana",
@@ -1605,11 +1646,7 @@
       "paperAnswer": "Kelompok dengan kesalahan paling banyak:"
     },
     "map": {
-      "noChecks": "Draf ini belum punya cek bagian atau sertifikat.",
-      "forTeachersTitle": "Untuk guru dan peninjau",
-      "forTeachersBody": "Setiap pelajaran punya panduan guru berisi catatan, jawaban, kegiatan versi kertas, dan catatan untuk peninjau. Anda juga bisa mencetak seluruh kursus.",
-      "printAll": "Cetak semua pelajaran",
-      "guideLink": "Panduan guru, Pelajaran {number}: {title}"
+      "forTeachersBody": "Setiap pelajaran punya panduan guru berisi catatan, jawaban, kegiatan versi kertas, dan catatan untuk peninjau. Anda juga bisa mencetak seluruh kursus."
     },
     "plan": {
       "answerLabel": "Jawabanmu",
@@ -1629,15 +1666,7 @@
       "useStarter": "Pakai awal kalimat",
       "yourPlan": "Rencanamu"
     },
-    "printAll": {
-      "back": "Kembali ke Digital World",
-      "intro": "Semua pelajaran Digital World, satu per satu. Setiap pelajaran mulai di halaman baru. Cetak, atau simpan sebagai PDF.",
-      "pageTitle": "Digital World: semua pelajaran"
-    },
     "reviewer": {
-      "title": "Untuk peninjau",
-      "intro": "Catatan dari penulis draf ini: apa yang baru dan apa yang perlu diperiksa. Pelajar tidak pernah melihatnya.",
-      "pictureTitle": "Gambar yang masih perlu dibuat",
       "activityTitle": "Tentang kegiatannya",
       "saves": "Apa yang disimpan",
       "offline": "Cara kerjanya tanpa internet"
@@ -1653,19 +1682,8 @@
       "yourGroups": "Kelompokmu"
     },
     "switch": {
-      "pageTitle": "Pratinjau Digital World",
-      "onTitle": "Pratinjau Digital World menyala",
       "onBody": "Perangkat ini sekarang menampilkan Digital World, kursus draf tentang AI dan informasi online. Tidak ada orang lain yang melihatnya, dan tidak ada apa pun tentangnya yang dikirim ke mana pun. Pratinjau tetap menyala sampai Anda mematikannya.",
-      "reviewNote": "Kursus ini belum ditinjau. Seorang peneliti AI masih perlu memeriksa faktanya, dan sebuah organisasi mitra memeriksa topik-topik sensitifnya. Jangan dipakai dengan pelajar dulu.",
-      "noStorage": "Browser ini tidak bisa menyimpan pengaturan di sini, jadi pratinjau hanya menyala sampai Anda menutup halaman ini.",
-      "open": "Buka Digital World",
-      "printAll": "Cetak semua pelajaran",
-      "turnOff": "Matikan pratinjau",
-      "offTitle": "Pratinjau Digital World mati",
-      "offBody": "Perangkat ini tidak lagi menampilkan Digital World.",
-      "turnOn": "Nyalakan lagi",
-      "goTo": "Buka {title}",
-      "saveFailed": "Perangkat ini tidak bisa menyimpannya. Pengaturan ini berlaku sampai Anda menutup halaman ini."
+      "reviewNote": "Kursus ini belum ditinjau. Seorang peneliti AI masih perlu memeriksa faktanya, dan sebuah organisasi mitra memeriksa topik-topik sensitifnya. Jangan dipakai dengan pelajar dulu."
     },
     "tool": {
       "badge": "Alat pura-pura",
@@ -1875,5 +1893,18 @@
       "summary": "Periksa kolom yang ditandai di bawah."
     },
     "honeypot": "Biarkan kosong"
+  },
+  "southeastAsia": {
+    "banner": {
+      "body": "Southeast Asia Through Time masih berupa draf. Seorang sejarawan dan sebuah organisasi mitra masih perlu memeriksanya. Hanya perangkat ini yang menampilkannya.",
+      "bodyEnglishLessons": "Southeast Asia Through Time masih berupa draf. Seorang sejarawan dan sebuah organisasi mitra masih perlu memeriksanya. Hanya perangkat ini yang menampilkannya. Untuk saat ini, pelajarannya masih dalam bahasa Inggris."
+    },
+    "map": {
+      "forTeachersBody": "Setiap pelajaran punya panduan guru berisi catatan, jawaban, kedua gambar beserta keterangan sumbernya, dan catatan untuk peninjau. Anda juga bisa mencetak seluruh kursus."
+    },
+    "switch": {
+      "onBody": "Perangkat ini sekarang menampilkan Southeast Asia Through Time, kursus draf tentang sejarah Asia Tenggara melalui benda, peta, foto, dan surat yang nyata. Tidak ada orang lain yang melihatnya, dan tidak ada apa pun tentangnya yang dikirim ke mana pun. Pratinjau tetap menyala sampai Anda mematikannya.",
+      "reviewNote": "Kursus ini belum ditinjau. Seorang sejarawan masih perlu memeriksa faktanya, dan sebuah organisasi mitra memeriksa topik-topik sensitifnya. Jangan dipakai dengan pelajar dulu."
+    }
   }
 }

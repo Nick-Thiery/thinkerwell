@@ -11,7 +11,7 @@
  */
 import type { IconName } from '../components/ds/icons';
 import { ContentError } from './errors';
-import { STAGES, type StageId } from './stages';
+import { lessonStages, type StageId } from './stages';
 import type { AnyCourseFile, CourseFile, CourseLesson, CourseSection, Lesson, QuizFile, Section, SectionId } from './schema';
 
 /** How a section looks: one of the design system's four section tints, and its icon (always beside its name). */
@@ -56,8 +56,9 @@ export interface CourseContent<L extends CourseLesson, S extends CourseSection, 
   /** The list of teacher guides, at a section (Our World: /educators/guides?section=…). A preview course has none: its teacher guides go back to its map. */
   readonly guidesPath?: (sectionId?: string) => string;
   /**
-   * A lesson's stages, in order: all five, or, in a language whose lessons
-   * are translated, the four without Watch unless that language has an
+   * A lesson's stages, in order: all five, or the four without Watch for a
+   * lesson with no approved video (a preview course's `watch: null`) and, in
+   * a language whose lessons are translated, unless that language has an
    * approved video of its own for the lesson (./stages.ts). The one place
    * that decides; every page that shows or walks a lesson's steps asks it.
    */
@@ -83,7 +84,7 @@ export interface CourseOptions {
   sectionLook: (sectionId: string) => SectionLook;
   coursePath: (sectionId?: string) => string;
   guidesPath?: (sectionId?: string) => string;
-  /** A lesson's stages (CourseContent.stagesFor); all five when not given. */
+  /** A lesson's stages (CourseContent.stagesFor); when not given, all five, or four for a lesson with no video (watch: null). */
   stagesFor?: (lesson: Pick<CourseLesson, 'number'>) => readonly StageId[];
 }
 
@@ -139,6 +140,7 @@ export function createCourseContent<L extends CourseLesson, C extends AnyCourseF
     sectionLook: options.sectionLook,
     coursePath: options.coursePath,
     guidesPath: options.guidesPath,
-    stagesFor: options.stagesFor ?? (() => STAGES),
+    // Without its own rule (Our World's languages: ./index.ts), a lesson has a Watch step when it has a video.
+    stagesFor: options.stagesFor ?? ((lesson) => lessonStages(byNumber.get(lesson.number)?.watch !== null)),
   };
 }

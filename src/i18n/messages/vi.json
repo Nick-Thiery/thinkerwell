@@ -1435,6 +1435,56 @@
       "getSectionCertificate": "Nhận giấy chứng nhận phần học"
     }
   },
+  "previewCourse": {
+    "banner": {
+      "title": "Khóa học nháp: chưa được xem xét",
+      "turnOff": "Tắt chế độ xem trước"
+    },
+    "sheet": {
+      "draft": "{title}, khóa học nháp: chưa được xem xét. Chưa nên dùng với người học."
+    },
+    "choice": {
+      "label": "Các khóa học trên thiết bị này",
+      "draft": "Bản nháp"
+    },
+    "map": {
+      "noChecks": "Bản nháp này chưa có bài ôn tập phần hay giấy chứng nhận.",
+      "forTeachersTitle": "Dành cho giáo viên và người xem xét",
+      "printAll": "In tất cả bài học",
+      "guideLink": "Hướng dẫn giáo viên, Bài {number}: {title}"
+    },
+    "printAll": {
+      "back": "Quay lại {title}",
+      "intro": "Mọi bài học {title}, lần lượt từng bài. Mỗi bài bắt đầu trên một trang mới. Bạn có thể in chúng, hoặc lưu thành tệp PDF.",
+      "pageTitle": "{title}: mọi bài học"
+    },
+    "reviewer": {
+      "title": "Dành cho người xem xét",
+      "intro": "Ghi chú từ những người viết bản nháp này: điều gì mới và điều gì cần kiểm tra. Người học không bao giờ thấy chúng.",
+      "pictureTitle": "Hình còn phải vẽ"
+    },
+    "switch": {
+      "pageTitle": "Xem trước {title}",
+      "onTitle": "Chế độ xem trước {title} đang bật",
+      "noStorage": "Trình duyệt này không lưu được cài đặt ở đây, nên chế độ xem trước chỉ bật cho đến khi bạn đóng trang này.",
+      "open": "Mở {title}",
+      "printAll": "In tất cả bài học",
+      "turnOff": "Tắt chế độ xem trước",
+      "offTitle": "Chế độ xem trước {title} đang tắt",
+      "offBody": "Thiết bị này không còn hiển thị {title} nữa.",
+      "turnOn": "Bật lại",
+      "goTo": "Đến {title}",
+      "saveFailed": "Thiết bị này không lưu được thay đổi đó. Thay đổi chỉ có hiệu lực cho đến khi bạn đóng trang này."
+    },
+    "picture": {
+      "photoTitle": "Ảnh",
+      "lookClosely": "Nhìn kỹ:",
+      "limits": "Nguồn này cho thấy được gì? Nó không cho thấy được gì?",
+      "credit": "“{title}”, {creator}, {created}. Giấy phép: {licence}.",
+      "source": "Xem bản gốc",
+      "changes": "Thay đổi: {changes}"
+    }
+  },
   "digitalWorld": {
     "activity": {
       "eyebrow": "Hoạt động",
@@ -1442,17 +1492,8 @@
       "guideIntro": "Những việc người học làm trên thiết bị, cùng điều đa số mọi người sẽ nói và các đáp án. Lớp học cũng có thể làm trên giấy từ bản in."
     },
     "banner": {
-      "title": "Khóa học nháp: chưa được xem xét",
       "body": "Digital World là bản nháp. Một nhà nghiên cứu AI và một tổ chức đối tác vẫn cần kiểm tra nó. Chỉ thiết bị này hiển thị nó.",
-      "bodyEnglishLessons": "Digital World là bản nháp. Một nhà nghiên cứu AI và một tổ chức đối tác vẫn cần kiểm tra nó. Chỉ thiết bị này hiển thị nó. Hiện các bài học vẫn bằng tiếng Anh.",
-      "turnOff": "Tắt chế độ xem trước"
-    },
-    "sheet": {
-      "draft": "Digital World, khóa học nháp: chưa được xem xét. Chưa nên dùng với người học."
-    },
-    "choice": {
-      "label": "Các khóa học trên thiết bị này",
-      "draft": "Bản nháp"
+      "bodyEnglishLessons": "Digital World là bản nháp. Một nhà nghiên cứu AI và một tổ chức đối tác vẫn cần kiểm tra nó. Chỉ thiết bị này hiển thị nó. Hiện các bài học vẫn bằng tiếng Anh."
     },
     "chart": {
       "viewsLabel": "Biểu đồ nào",
@@ -1475,11 +1516,7 @@
       "paperAnswer": "Nhóm có nhiều lỗi nhất:"
     },
     "map": {
-      "noChecks": "Bản nháp này chưa có bài ôn tập phần hay giấy chứng nhận.",
-      "forTeachersTitle": "Dành cho giáo viên và người xem xét",
-      "forTeachersBody": "Mỗi bài học có một hướng dẫn giáo viên, gồm ghi chú, đáp án, hoạt động trên giấy và ghi chú cho người xem xét. Bạn cũng có thể in cả khóa học.",
-      "printAll": "In tất cả bài học",
-      "guideLink": "Hướng dẫn giáo viên, Bài {number}: {title}"
+      "forTeachersBody": "Mỗi bài học có một hướng dẫn giáo viên, gồm ghi chú, đáp án, hoạt động trên giấy và ghi chú cho người xem xét. Bạn cũng có thể in cả khóa học."
     },
     "plan": {
       "answerLabel": "Câu trả lời của bạn",
@@ -1499,15 +1536,7 @@
       "useStarter": "Dùng câu mở đầu gợi ý",
       "yourPlan": "Kế hoạch của bạn"
     },
-    "printAll": {
-      "back": "Quay lại Digital World",
-      "intro": "Mọi bài học Digital World, lần lượt từng bài. Mỗi bài bắt đầu trên một trang mới. Bạn có thể in chúng, hoặc lưu thành tệp PDF.",
-      "pageTitle": "Digital World: mọi bài học"
-    },
     "reviewer": {
-      "title": "Dành cho người xem xét",
-      "intro": "Ghi chú từ những người viết bản nháp này: điều gì mới và điều gì cần kiểm tra. Người học không bao giờ thấy chúng.",
-      "pictureTitle": "Hình còn phải vẽ",
       "activityTitle": "Về hoạt động",
       "saves": "Hoạt động lưu gì",
       "offline": "Cách hoạt động khi không có mạng"
@@ -1523,19 +1552,8 @@
       "yourGroups": "Các nhóm của bạn"
     },
     "switch": {
-      "pageTitle": "Xem trước Digital World",
-      "onTitle": "Chế độ xem trước Digital World đang bật",
       "onBody": "Thiết bị này hiện đang hiển thị Digital World, một khóa học nháp về AI và thông tin trên mạng. Không ai khác thấy nó, và không có gì về nó được gửi đi đâu cả. Chế độ này vẫn bật cho đến khi bạn tắt.",
-      "reviewNote": "Khóa học chưa được xem xét. Một nhà nghiên cứu AI vẫn cần kiểm tra các dữ kiện của nó, và một tổ chức đối tác vẫn cần kiểm tra các chủ đề nhạy cảm. Chưa nên dùng với người học.",
-      "noStorage": "Trình duyệt này không lưu được cài đặt ở đây, nên chế độ xem trước chỉ bật cho đến khi bạn đóng trang này.",
-      "open": "Mở Digital World",
-      "printAll": "In tất cả bài học",
-      "turnOff": "Tắt chế độ xem trước",
-      "offTitle": "Chế độ xem trước Digital World đang tắt",
-      "offBody": "Thiết bị này không còn hiển thị Digital World nữa.",
-      "turnOn": "Bật lại",
-      "goTo": "Đến {title}",
-      "saveFailed": "Thiết bị này không lưu được thay đổi đó. Thay đổi chỉ có hiệu lực cho đến khi bạn đóng trang này."
+      "reviewNote": "Khóa học chưa được xem xét. Một nhà nghiên cứu AI vẫn cần kiểm tra các dữ kiện của nó, và một tổ chức đối tác vẫn cần kiểm tra các chủ đề nhạy cảm. Chưa nên dùng với người học."
     },
     "tool": {
       "badge": "Công cụ giả lập",
@@ -1645,5 +1663,18 @@
       "reflect": "Trong một chủ đề khoa học ở trung học cơ sở, loại câu hỏi suy ngẫm mà học sinh nhận được có liên quan đến mức độ các em hiểu chủ đề đó. Nghiên cứu so sánh các loại câu hỏi; nghiên cứu không thử nghiệm câu hỏi suy ngẫm của Thinkerwell."
     },
     "videoTitle": "Xem Thinkerwell trong thực tế"
+  },
+  "southeastAsia": {
+    "banner": {
+      "body": "Southeast Asia Through Time là bản nháp. Một nhà sử học và một tổ chức đối tác vẫn cần kiểm tra nó. Chỉ thiết bị này hiển thị nó.",
+      "bodyEnglishLessons": "Southeast Asia Through Time là bản nháp. Một nhà sử học và một tổ chức đối tác vẫn cần kiểm tra nó. Chỉ thiết bị này hiển thị nó. Hiện các bài học vẫn bằng tiếng Anh."
+    },
+    "map": {
+      "forTeachersBody": "Mỗi bài học có một hướng dẫn giáo viên, gồm ghi chú, đáp án, cả hai hình kèm nguồn, và ghi chú cho người xem xét. Bạn cũng có thể in cả khóa học."
+    },
+    "switch": {
+      "onBody": "Thiết bị này hiện đang hiển thị Southeast Asia Through Time, một khóa học nháp về lịch sử Đông Nam Á qua đồ vật, bản đồ, ảnh và thư thật. Không ai khác thấy nó, và không có gì về nó được gửi đi đâu cả. Chế độ này vẫn bật cho đến khi bạn tắt.",
+      "reviewNote": "Khóa học chưa được xem xét. Một nhà sử học vẫn cần kiểm tra các dữ kiện của nó, và một tổ chức đối tác vẫn cần kiểm tra các chủ đề nhạy cảm. Chưa nên dùng với người học."
+    }
   }
 }

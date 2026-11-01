@@ -17,9 +17,9 @@
 import { lazy, Suspense } from 'react';
 import { useParams } from 'react-router';
 import { useCatalog } from '../content/useCatalog';
-import { previewCourseOfLesson, PREVIEW_COURSES } from '../content/courses';
+import { previewCourseOfLesson } from '../content/courses';
 import { useI18n } from '../i18n';
-import { useLearnerSession } from '../session';
+import { CourseChoice } from './kit/CourseChoice';
 import { PreviewCourse } from './preview';
 
 export function PreviewSwitchRoute() {
@@ -62,21 +62,14 @@ export function PreviewTeacherGuideRoute({ lessonId }: { lessonId: string }) {
 
 /**
  * The course choice on Our World's home and course map (src/app/PreviewCourses.tsx
- * loads this only where a preview course is on): Our World first, then the
- * preview course. Nothing while its code loads, or if it can't.
+ * loads this only where a preview course is on): Our World first, then every
+ * preview course this device has turned on. Nothing while their code loads,
+ * or if it can't.
  */
 export function PreviewCourseChoice({ current }: { current?: string }) {
-  const { previewCourses } = useLearnerSession();
   const { contentLang } = useI18n();
   const title = useCatalog().getCourse().course.title;
-  // One preview course today; a second would need the choice to list both.
-  const course = PREVIEW_COURSES.find((c) => previewCourses.includes(c.id));
-  if (!course) return null;
-  return (
-    <PreviewCourse courseId={course.id} quiet>
-      {(module) => <module.CourseChoice ourWorld={{ title, lang: contentLang }} current={current} />}
-    </PreviewCourse>
-  );
+  return <CourseChoice ourWorld={{ title, lang: contentLang }} current={current} />;
 }
 
 // The reviewers' page for local-language Watch videos: a chunk of its own in assets/preview/video-review/
