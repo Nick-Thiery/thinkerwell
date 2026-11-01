@@ -49,7 +49,7 @@
     "stage": "read",
     "placement": "after-evidence",
     "title": "AI or a person?",
-    "instructions": "Put each task into a group. There is no score. After you place one, you can see what most people would say and why.",
+    "instructions": "Put each task into a group. There is no score. After you place one, you can see one possible answer and the reason.",
     "groups": [
       {
         "id": "ai",
@@ -69,43 +69,43 @@
         "id": "sort-forms",
         "text": "Sorting 1,000 forms by date",
         "suggested": "ai",
-        "feedback": "Most people would say AI could help. It is the same simple step again and again, which machines do well."
+        "feedback": "It is the same simple step again and again, which machines do well."
       },
       {
         "id": "comfort-child",
         "text": "Comforting a child who is upset",
         "suggested": "person",
-        "feedback": "Most people would say a person is still needed. Care and kindness come from people."
+        "feedback": "Care and kindness come from people. A child needs someone who knows them and can stay with them."
       },
       {
         "id": "fix-pipe",
         "text": "Fixing a broken water pipe in a house",
         "suggested": "person",
-        "feedback": "Most people would say a person is still needed. Every house is different, and the work needs skilled hands."
+        "feedback": "Every house is different, and the work needs skilled hands."
       },
       {
         "id": "translate-sign",
         "text": "Translating a shop sign into another language",
         "suggested": "both",
-        "feedback": "Most people would say both. A tool can translate fast, but a speaker should check it. Tools make more mistakes in some languages."
+        "feedback": "A tool can translate fast, but a speaker should check it. Tools make more mistakes in some languages."
       },
       {
         "id": "find-photos",
         "text": "Finding the photos that show a tree among 5,000 photos",
         "suggested": "ai",
-        "feedback": "Most people would say AI could help. Tools that find patterns in photos can do this quickly."
+        "feedback": "Tools that find patterns in photos can do this quickly. A person might still check the ones the tool was not sure about."
       },
       {
         "id": "choose-player",
         "text": "Choosing which new player joins the football team",
         "suggested": "person",
-        "feedback": "Most people would say a person is still needed. Choices about people should be made by people who can explain them. AI can be unfair, as Lesson 8 showed."
+        "feedback": "Choices about people should be made by people who can explain them. AI can be unfair, as Lesson 8 showed. You could say both, if a tool only helps to collect facts."
       },
       {
         "id": "practice-questions",
         "text": "Making practice questions for a class",
         "suggested": "both",
-        "feedback": "Most people would say both. A tool can make questions quickly, but the teacher checks them, like Ms Rana in Millbrook."
+        "feedback": "A tool can make questions fast. The teacher checks them, like Ms Rana in Millbrook."
       },
       {
         "id": "letter-draft",
@@ -121,18 +121,18 @@
     "sections": [
       {
         "heading": "New machines have changed work before",
-        "text": "AI is not the first technology to change people's work. In England in the early 1800s, new machines in factories began to do work that skilled cloth workers had done by hand. Between 1811 and 1816, some of these workers, called Luddites, broke machines in protest. The machines were taking their work. Much later, from about 1970, cash machines slowly spread to banks. Many people expected bank tellers, who handle money at the counter, to disappear. But in the United States, the number of tellers stayed about the same and even grew a little. Banks opened more branches, and tellers spent more time helping customers with problems.",
-        "simpler": "AI is not the first technology to change work. In England in the 1800s, factories got new machines. They did work that skilled cloth workers did by hand. Workers called Luddites broke some machines. Much later, banks got cash machines. Many thought bank workers at the counter would disappear. But in the United States, there were still as many. Banks opened more branches, and the workers helped customers with problems."
+        "text": "AI is not the first technology to change people's work. In England in the early 1800s, new machines in factories began to do work that skilled cloth workers had done by hand. Between 1811 and 1816, some of these workers, called Luddites, broke machines in protest. The machines were taking their work. Much later, from the 1970s, cash machines slowly spread to banks in the United States. Many people expected bank tellers, who handle money at the counter, to disappear. But a study from 2015 found that the number of tellers stayed about the same and even grew a little. Banks opened more branches, and tellers spent more time helping customers. That was one machine, long ago, so it can't tell us what AI will do.",
+        "simpler": "AI is not the first technology to change work. In the 1800s, new machines in England did the work of skilled cloth workers. Workers called Luddites broke some machines. From the 1970s, banks in the United States got cash machines. Many thought bank workers at the counter would disappear. A 2015 study found there were still about as many. Banks opened more branches, and workers helped customers more. That was long ago. It can't tell us what AI will do."
       },
       {
         "heading": "AI changes tasks inside jobs",
-        "text": "Most jobs are made of many tasks. A new technology may automate some tasks, but not the whole job. When spreadsheets came to office computers in the United States, many bookkeepers lost their work. Yet the number of accountants grew, and they spent more time thinking about plans. In 2025, the ILO, the United Nations agency for work, found that about one in four jobs in the world could be affected by AI tools that write and make things. Office jobs are the most affected. The study says most of these jobs are more likely to change than to disappear. People are still needed for many tasks.",
-        "simpler": "A job is made of many tasks. A new technology may automate some tasks, not the whole job. Spreadsheets did sums for office workers. Some people who added up numbers lost their work. But there were more accountants. In 2025, a United Nations group studied AI and work. About one in four jobs could be changed by AI. Office jobs are changed the most. Most jobs will likely change, not disappear. People are still needed."
+        "text": "Most jobs are made of many tasks. A new technology may automate some tasks, but not the whole job. When spreadsheets came to office computers in the United States, many bookkeepers lost their work. Yet the number of accountants grew. In 2025, the ILO, the United Nations agency for work, found that about one in four jobs in the world has some exposure to AI tools that write and make things. This means these tools could do some of the tasks in those jobs. It is not a count of jobs lost. Office jobs, such as clerks, have the most exposure. The ILO says most of these jobs are more likely to change than to disappear.",
+        "simpler": "A job is made of many tasks. A new technology may automate some tasks, not the whole job. Spreadsheets did sums for office workers. Some people who added up numbers lost their work. But there were more accountants. In 2025, a United Nations group studied AI that writes and makes things. About one in four jobs has some exposure to it. It could do some of their tasks. This is not a count of lost jobs. Office jobs have the most exposure. Most will likely change, not disappear."
       },
       {
         "heading": "Some people gain, and some people lose",
-        "text": "Change at work is often uneven. In 2024, the International Monetary Fund said that almost 40% of jobs in the world are exposed to AI, and about 60% in rich countries. In rich countries, about half of these workers might gain, because AI helps them do more. For the other half, AI might take over important tasks. The Fund also warned that AI will probably make inequality worse. In Millbrook, two clerks moved to the help desk after training, but one lost her work. Training and fair rules can help. Workers, employers and governments can decide together how new tools are used.",
-        "simpler": "Change is not the same for everyone: some gain, and some lose. In 2024, money experts studied AI and jobs. In rich countries, about half of these workers may gain. For others, AI may take over big tasks. AI may also make inequality worse. Two Millbrook clerks had training and moved to the help desk. One clerk lost her work. Training and fair rules can help. Workers and leaders can decide together how to use new tools."
+        "text": "Change at work is often uneven. In 2024, the International Monetary Fund warned that AI could help some workers do more, and take important tasks from others. It also said AI will probably make inequality worse unless governments act. In Millbrook, the water office works faster. Two clerks moved to the help desk after training, but one lost her work. Training and fair rules can help. Workers, employers and governments can decide together how new tools are used.",
+        "simpler": "In 2024, money experts said AI may help some workers. It may take big tasks from others. It may make inequality worse, unless leaders act. After training, two Millbrook clerks moved to the help desk. One lost her work. Training and fair rules can help. Workers and leaders can decide together how to use AI."
       }
     ],
     "glossary": [
@@ -159,6 +159,11 @@
         "example": "Making practice questions is one task for Ms Rana."
       },
       {
+        "word": "exposure",
+        "definition": "When a new tool could do some of the tasks in a job.",
+        "example": "Office jobs have the most exposure to AI tools that write."
+      },
+      {
         "word": "inequality",
         "definition": "When some people have much more than others.",
         "example": "If only a few people gain from AI, inequality grows."
@@ -172,12 +177,12 @@
     "checks": [
       {
         "type": "choice",
-        "question": "What happened to bank tellers in the United States when cash machines came?",
+        "question": "What happened to bank tellers in the United States as cash machines spread?",
         "options": [
           {
             "text": "Their work changed to helping customers",
             "correct": true,
-            "feedback": "Yes. There were still about as many tellers, and they spent more time helping customers with problems."
+            "feedback": "Yes. A 2015 study found about as many tellers, and they spent more time helping customers."
           },
           {
             "text": "All of the tellers lost their work",
@@ -193,7 +198,7 @@
       },
       {
         "type": "choice",
-        "question": "The 2025 study says most jobs that AI affects are more likely to ...",
+        "question": "The ILO says most jobs with some exposure to these tools are more likely to ...",
         "options": [
           {
             "text": "disappear in a year or two",
@@ -203,12 +208,12 @@
           {
             "text": "change, because people are still needed",
             "correct": true,
-            "feedback": "Yes. AI may do some tasks, but people are still needed for many others."
+            "feedback": "Yes. The tools could do some tasks, but people are still needed for many others."
           },
           {
             "text": "stay exactly the same as before",
             "correct": false,
-            "feedback": "Not quite. Many jobs will change. Read what the study says in the second section."
+            "feedback": "Not quite. Many of these jobs will change. Read what the study says in the second section."
           }
         ]
       },
@@ -244,7 +249,7 @@
   },
   "speak": {
     "partnerTask": "Your partner names a task from the activity. You say if AI could help, a person is still needed, or both, and why. Then switch.",
-    "independentTask": "Say out loud what happened to bank tellers when cash machines came. Then say what this shows about AI and work."
+    "independentTask": "Say out loud what happened to bank tellers when cash machines came. Then say why that old example can't tell us for sure what AI will do."
   },
   "watch": {
     "youtubeId": "TUmyygCMMGA",
@@ -300,6 +305,10 @@
       "url": "https://www.ilo.org/resource/news/one-four-jobs-risk-being-transformed-genai-new-ilo%E2%80%93nask-global-index-shows"
     },
     {
+      "label": "ILO (20 May 2025): Generative AI and jobs, a refined global index of occupational exposure (Gmyrek and others; potential exposure, not job losses)",
+      "url": "https://www.ilo.org/publications/generative-ai-and-jobs-2025-update"
+    },
+    {
       "label": "IMF Blog (January 2024): AI will transform the global economy. Let's make sure it benefits humanity",
       "url": "https://www.imf.org/en/blogs/articles/2024/01/14/ai-will-transform-the-global-economy-lets-make-sure-it-benefits-humanity"
     }
@@ -309,7 +318,7 @@
     "Britannica notes that the government punished the Luddites harshly, including hangings. The lesson leaves this out; if learners ask, keep it short and factual."
   ],
   "educatorNotes": [
-    "The ILO and IMF figures measure exposure: how many jobs AI could affect, not jobs lost. They are estimates from 2024 and 2025 and will change, so present them as what these organisations found, not as predictions. The ILO also found that in rich countries a bigger share of women's jobs than men's is in the group most at risk (9.6% against 3.5%). The bank teller and spreadsheet examples are from the United States (James Bessen's research, and NPR, both 2015).",
+    "One exposure figure in learner text, on purpose. The ILO's (May 2025, with Poland's NASK) is potential exposure to generative AI: 25% of the world's jobs are in occupations where these tools could do some tasks. It is not a count of jobs lost, and the ILO expects most to be transformed rather than replaced; clerical jobs are the most exposed, and in rich countries the jobs most at risk of automation are 9.6% of women's jobs against 3.5% of men's. The IMF's figure (January 2024) has a wider scope: almost 40% of the world's jobs, and about 60% in advanced economies, are exposed to AI in general, with roughly half of those likely to gain and half to see lower demand. Learner text keeps only the IMF's warning about inequality, without its numbers, so the two estimates aren't mixed up. The bank teller example is US data from the 1970s to the 2000s (James Bessen, 2015); it shows one past case, not a forecast for AI. The spreadsheet example is from NPR (2015).",
     "Paper version of the activity: write the eight tasks on cards and sort them under the three headings. There is no score; reward reasons. A teacher could add a local example of a tool that changed work, without asking about anyone's own job."
   ],
   "changes": [
@@ -318,6 +327,7 @@
     "Adds a sort activity: tasks into “AI could help with this”, “A person is still needed” and “Both”. All workers and tasks learners work with are made up (Millbrook).",
     "visual.src points to a picture that doesn't exist yet.",
     "The video is from 2017 and about the United States; its summary was written from a transcript archive, so someone must watch it before use. A newer video about generative AI and work would be better if a good one is found.",
-    "Needs review by Justin for level and tone, by someone who knows labour economics for the ILO and IMF wording, and by a partner educator for the notes on work and money."
+    "Needs review by Justin for level and tone, by someone who knows labour economics for the ILO and IMF wording, and by a partner educator for the notes on work and money.",
+    "Revised on 1 November 2026 from Justin's review: one exposure estimate (the ILO's 2025 figure, explained as potential exposure of tasks to generative AI, not job losses, with a new glossary word, exposure), the IMF's broader 2024 figures moved to teacher notes and only its inequality warning kept; the ATM example dated (from the 1970s, a 2015 study) and marked as a past case that can't predict AI, in both readings, the quick check and Speak; sort feedback gives the reason, not \"what most people would say\". Added the ILO publication page; claim record in claims/DW09.md."
   ]
 }

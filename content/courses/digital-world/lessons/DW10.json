@@ -38,7 +38,7 @@
           },
           {
             "name": "Eye photo helper at the clinic",
-            "body": "It looks at photos of the eye and marks the ones that may show a problem, so busy health workers know who to see first. It learned mostly from photos of people in other places, so it may miss some problems in Sunvale. A health worker always checks it and talks to each patient."
+            "body": "It looks at photos of the eye and marks the ones that may show a problem, so busy health workers know who to see first. It learned mostly from photos of people in other places, and nobody has tested it in Sunvale yet. It might miss some problems there. A health worker always checks it and talks to each patient."
           }
         ]
       }
@@ -49,7 +49,7 @@
     "stage": "read",
     "placement": "after-evidence",
     "title": "Help or risk?",
-    "instructions": "Put each sentence about the Sunvale tools into a group. There is no score. After you place one, you can see what most people would say and why.",
+    "instructions": "Put each sentence about the Sunvale tools into a group. There is no score. After you place one, you can see one possible answer and the reason.",
     "groups": [
       {
         "id": "help",
@@ -69,49 +69,49 @@
         "id": "translate-read",
         "text": "The translation tool lets more neighbours read notices.",
         "suggested": "help",
-        "feedback": "Most people would say a help. More people can read important news in a language they know."
+        "feedback": "More people can read important news in a language they know."
       },
       {
         "id": "translate-mistakes",
         "text": "The translation tool makes more mistakes in some languages.",
         "suggested": "risk",
-        "feedback": "Most people would say a risk. A wrong notice could tell people the wrong thing."
+        "feedback": "A wrong notice could tell people the wrong thing."
       },
       {
         "id": "leaf-offline",
         "text": "The leaf tool works with no internet.",
         "suggested": "help",
-        "feedback": "Most people would say a help. Farmers can use it in fields far from any signal."
+        "feedback": "Farmers can use it in fields far from any signal."
       },
       {
         "id": "leaf-wrong",
         "text": "A farmer trusts a wrong guess and pulls out healthy plants.",
         "suggested": "risk",
-        "feedback": "Most people would say a risk. The tool guesses, and a guess can be wrong."
+        "feedback": "The tool guesses, and a guess can be wrong."
       },
       {
         "id": "eye-first",
         "text": "The eye helper shows busy health workers who to see first.",
         "suggested": "help",
-        "feedback": "Most people would say a help. Health workers can reach the people who need them most sooner."
+        "feedback": "Health workers can reach the people who need them most sooner."
       },
       {
         "id": "eye-data",
-        "text": "The eye helper learned from photos of people in other places.",
+        "text": "The eye helper learned from people in other places. It is not tested in Sunvale yet.",
         "suggested": "risk",
-        "feedback": "Most people would say a risk. It may miss problems for people who were not in its training data."
+        "feedback": "Until it is tested with people in Sunvale, nobody knows how well it works there. It might miss problems for people unlike the ones it learned from."
       },
       {
         "id": "clinic-photos",
         "text": "The clinic collects eye photos to make the helper better.",
         "suggested": "both",
-        "feedback": "Any group can be right here. Local photos could make the tool fairer. But health photos are private, so people must agree first, and the photos must be kept safe."
+        "feedback": "Any group can be right here. Local photos could help test the tool and make it fairer. But health photos are private, so people must agree first, and the photos must be kept safe."
       },
       {
         "id": "volunteer",
         "text": "A volunteer checks important translated notices.",
         "suggested": "help",
-        "feedback": "Most people would say a help. A person who knows the language catches the tool's mistakes."
+        "feedback": "A person who knows the language catches the tool's mistakes."
       }
     ],
     "saves": "The group the learner chose for each sentence, with the lesson's other answers.",
@@ -121,18 +121,18 @@
     "sections": [
       {
         "heading": "AI can help where helpers are few",
-        "text": "In many places, there are not enough health workers or other experts for everyone who needs them. AI tools can sometimes help to fill these gaps. In the made-up town of Sunvale, a translation tool turns notices into several languages, so more neighbours can read them. Farmers can take a photo of a leaf with the leaf tool, and it guesses whether the plant is sick. At the clinic, an eye photo helper shows busy health workers which patients to see first. Researchers have built real tools like these. Some of them work on a phone with no internet.",
-        "simpler": "Many places do not have enough health workers or other experts. AI tools can sometimes help. In the made-up town of Sunvale, a tool translates notices. Then more people can read them. The leaf tool looks at a photo of a leaf. It says if it thinks the plant is sick. At the clinic, an eye photo helper shows health workers who to see first. Real tools like these exist. Some work on a phone with no internet."
+        "text": "In many places, there are not enough health workers or other experts for everyone who needs them. AI tools can sometimes help, as in the made-up town of Sunvale, where three tools help with notices, crops and eye checks. Here is a real example from Singapore. People with diabetes need regular eye checks, because the illness can harm their eyes. Researchers there built a tool called SELENA+, which looks at photos of the back of the eye and marks the ones an eye specialist should see. In 2017, they reported tests with photos from Singapore's eye checks and from people in other countries. It found most of the problems that trained checkers found, but the researchers said it still needed testing in real clinics.",
+        "simpler": "Many places do not have enough health workers or other experts. AI tools can sometimes help. In made-up Sunvale, three tools help with notices, plants and eyes. In Singapore, researchers built a real tool called SELENA+. People with diabetes need eye checks, because the illness can harm their eyes. SELENA+ marks eye photos that an eye doctor should see. In 2017, it was tested on photos from Singapore and elsewhere. It found most problems that people found. It still needed tests in real clinics."
       },
       {
         "heading": "Every tool has risks",
-        "text": "A tool that helps can also cause problems, so it is important to weigh the benefits against the risks. An AI tool can work badly for people who were missing from its training data. The Sunvale eye helper learned mostly from photos of people in other places, so it may miss some problems in Sunvale. Researchers have found that health tools trained mostly on data from rich countries may not work as well elsewhere. Translation tools make more mistakes in languages with little writing online. A farmer who trusts a wrong guess might pull out healthy plants. Health photos are also private, so they must be kept safe.",
-        "simpler": "A tool that helps can also cause problems. So weigh the benefits and the risks. A tool can work badly for people missing from its training data. The eye helper learned from photos of people in other places. So it may miss problems in Sunvale. Translation tools make more mistakes in some languages. A farmer could trust a wrong guess. Health photos are private. They must be kept safe."
+        "text": "A tool that helps can also cause problems, so it is important to weigh the benefits against the risks. The Sunvale eye helper learned mostly from photos of people in other places. That does not make it a poor tool. But nobody has tested it in Sunvale, so it might miss some problems there. A tool must be tested with the people it will serve. Translation tools make more mistakes in languages with little writing online. A farmer who trusts a wrong guess might pull out healthy plants. Health photos are also private, so they must be kept safe.",
+        "simpler": "A tool that helps can also cause problems. So weigh the benefits and the risks. The eye helper learned from people in other places. That does not make it bad. But nobody has tested it in Sunvale. It might miss problems there. Tools must be tested with the people they help. Translation tools make more mistakes in some languages. A farmer could trust a wrong guess. Health photos are private and must be kept safe."
       },
       {
         "heading": "People must stay in charge",
-        "text": "Because AI tools can be wrong, people need to stay in charge of important decisions. In Sunvale, a volunteer who speaks the language checks important translated notices. When the leaf tool isn't sure, the farmers' group asks a plant expert. At the clinic, a health worker always checks the eye helper and talks to each patient. The people of a community should also help to shape the tools they use, so the tools fit their needs. Before trusting any AI tool, ask three questions. Who does it help? Who might it leave out? Who checks its answers? For any health question, always ask a health worker, not a tool.",
-        "simpler": "AI tools can be wrong. So people must stay in charge of big decisions. In Sunvale, a volunteer checks important notices. A plant expert helps when the leaf tool is not sure. A health worker always checks the eye helper. The people in a community should help shape their tools. Ask three questions. Who does it help? Who might it leave out? Who checks it? For health questions, ask a health worker."
+        "text": "Because AI tools can be wrong, people need to stay in charge of important decisions. In Sunvale, a volunteer who speaks the language checks important translated notices. A plant expert helps when the leaf tool isn't sure, and a health worker always checks the eye helper. The people of a community should also help to shape the tools they use. Before trusting any AI tool, ask three questions. Who does it help? Who might it leave out? Who checks its answers? For any health question, always ask a health worker, not a tool.",
+        "simpler": "AI tools can be wrong. So people must stay in charge of big decisions. In Sunvale, a volunteer checks notices. An expert and a health worker check the other tools. People in a community should help shape their tools. Ask three questions. Who does it help? Who might it leave out? Who checks it? For health questions, ask a health worker."
       }
     ],
     "glossary": [
@@ -185,9 +185,9 @@
         "question": "Why might the eye helper miss problems in Sunvale?",
         "options": [
           {
-            "text": "It learned from other people",
+            "text": "It was not tested with people there",
             "correct": true,
-            "feedback": "Yes. It learned mostly from photos of people in other places. People in Sunvale were missing."
+            "feedback": "Yes. It learned mostly from photos of people in other places. That might be fine, but only a test in Sunvale can show it."
           },
           {
             "text": "Sunvale has no eye problems at all",
@@ -197,7 +197,7 @@
           {
             "text": "The health workers forget to use it",
             "correct": false,
-            "feedback": "Not quite. They use it and check it. Read the second section about its training data."
+            "feedback": "Not quite. They use it and check it. Read the second section about testing."
           }
         ]
       },
@@ -306,20 +306,20 @@
       "url": "https://news.stanford.edu/stories/2025/05/digital-divide-ai-llms-exclusion-non-english-speakers-research"
     },
     {
-      "label": "CLEAR Global: Voices that matter, skills that save (human checking of language technology)",
-      "url": "https://clearglobal.org/?p=75617"
+      "label": "Singapore National Eye Centre: AI and digital health research group (SELENA+, developed with about 500,000 eye photos and tested on 10 outside sets of photos)",
+      "url": "https://www.snec.com.sg/research-innovation/research-groups-platforms/research-groups/AI-digital-health"
     },
     {
-      "label": "DCMP: Ethics & AI, Equal Access and Algorithmic Bias (Code.org video, description)",
-      "url": "https://dcmp.org/media/25571-ethics-ai-equal-access-and-algorithmic-bias"
+      "label": "Ting and others (JAMA, December 2017): Development and validation of a deep learning system for diabetic retinopathy and related eye diseases (abstract, Duke Scholars record)",
+      "url": "https://scholars.duke.edu/publication/1293398"
     }
   ],
   "sensitiveNotes": [
-    "Health: the eye helper is made up. Never give or discuss medical advice or diagnoses; learners with health questions should ask a health worker. Don't ask learners about their own health or anyone else's.",
+    "Health: the Sunvale eye helper is made up; SELENA+ is real, and the lesson describes only how it was built and tested. Never give or discuss medical advice or diagnoses; learners with health questions should ask a health worker. Don't ask learners about their own health or anyone else's, including diabetes in their family.",
     "Don't ask which languages learners speak at home, or which language a tool got wrong for them. Let them say so if they want to."
   ],
   "educatorNotes": [
-    "Real projects, for teachers only (spec section 8, item 7 asks whether these may ever be named to learners): an offline phone app that spots cassava diseases from leaf photos, built by IITA and Penn State (2018); WHO's 2021 report on AI for health and its six principles; CLEAR Global's work on language technology with human checking. The Sunvale tools are made up and simplified from ideas like these.",
+    "The Sunvale tools are made up and stay labelled; SELENA+ is real and appears only in the reading, never in the made-up evidence or activity. What the sources establish: SNEC's page says SELENA+ was developed with about 500,000 retina photos and checked on 10 outside sets of photos (different cameras, ethnic groups and ages), and is approved by Singapore's health products regulator and CE-marked. The 2017 JAMA study tested it on 14,880 patients' photos from Singapore's national diabetic eye screening programme and on 10 other groups; it found referable eye disease with high sensitivity and specificity compared with trained graders, and said more research was needed for use in health care. The developers' own 2024 case study (Gunasekeran and others, NEJM AI) describes putting it into that programme; the lesson does not claim rollout or patient results, because no independent evaluation was checked. Other real projects, for teachers only: an offline cassava-disease phone app by IITA and Penn State (2018); WHO's 2021 report on AI for health; CLEAR Global's human checking of language technology.",
     "Paper version of the activity: write the eight sentences on cards and sort them into Help, Risk and Both. The activity has no score; reward reasons."
   ],
   "changes": [
@@ -328,6 +328,7 @@
     "Adds a sort activity: help, risk or both. All examples in learner text are made up; real projects appear only in educatorNotes and sources.",
     "visual.src points to a picture that doesn't exist yet.",
     "Needs review by an AI researcher, by Justin for level and tone, and by a partner educator for the health and language notes.",
-    "October 2026, social studies rebuild (Justin's brief: AI and the digital world through a social studies lens, at most 20 lessons): kept as Lesson 10 in \"AI in daily life\" (ai-in-daily-life). The notes above about the old section ids are out of date."
+    "October 2026, social studies rebuild (Justin's brief: AI and the digital world through a social studies lens, at most 20 lessons): kept as Lesson 10 in \"AI in daily life\" (ai-in-daily-life). The notes above about the old section ids are out of date.",
+    "Revised on 1 November 2026 from Justin's review: added one real Southeast Asian example, SELENA+ (Singapore's diabetic eye-screening AI, from SERI/SNEC), in the reading and teacher notes only, because the evidence is made up and one fiction flag covers all its cards; it is described only as developed and tested (2017), with no claim of rollout or patient results. Changed the Sunvale eye helper so that data from another place is not a fault in itself: the point is that it hasn't been tested with the people it serves (both readings, the evidence card, the sort item and the quick check). Sort feedback gives the reason, not \"what most people would say\". Sunvale's summary in the first section shortened to make room. Sources: added SNEC's page and the 2017 JAMA abstract; dropped CLEAR Global and DCMP from the list (CLEAR Global stays in the teacher notes; the video's note still names DCMP's description). Claim record in claims/DW10.md."
   ]
 }
