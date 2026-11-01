@@ -10,4 +10,4 @@
  * here turns all four on. Wherever it is shown, it is marked translate="no":
  * an address is the same in every language.
  */
-export const CONTACT_EMAIL: string | null = 'hello@thinkerwell.app';
+export const CONTACT_EMAIL: string | null = 'thinkerwell.hello@gmail.com';

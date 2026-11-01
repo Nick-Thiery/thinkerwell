@@ -19,28 +19,28 @@ function renderAt(path: string, element: ReactNode) {
 
 describe('the contact address', () => {
   it('is the team’s real address', () => {
-    expect(CONTACT_EMAIL).toBe('hello@thinkerwell.app');
+    expect(CONTACT_EMAIL).toBe('thinkerwell.hello@gmail.com');
   });
 
   it('is on the Educators page, as a mail link', () => {
     renderAt('/educators', <EducatorsPage />);
-    expect(screen.getByRole('link', { name: 'hello@thinkerwell.app' })).toHaveAttribute('href', 'mailto:hello@thinkerwell.app');
+    expect(screen.getByRole('link', { name: 'thinkerwell.hello@gmail.com' })).toHaveAttribute('href', 'mailto:thinkerwell.hello@gmail.com');
   });
 
   it('is on For organisations, as a mail link', () => {
     renderAt('/organisations', <OrganisationsPage />);
-    expect(screen.getByRole('link', { name: 'hello@thinkerwell.app' })).toHaveAttribute('href', 'mailto:hello@thinkerwell.app');
+    expect(screen.getByRole('link', { name: 'thinkerwell.hello@gmail.com' })).toHaveAttribute('href', 'mailto:thinkerwell.hello@gmail.com');
   });
 
   it('is printed on the consent form', () => {
     renderAt('/educators/consent-form', <ConsentFormPage />);
-    expect(screen.getAllByRole('article')[0]).toHaveTextContent('hello@thinkerwell.app');
+    expect(screen.getAllByRole('article')[0]).toHaveTextContent('thinkerwell.hello@gmail.com');
   });
 
   it('is printed on the information sheet', () => {
     renderAt('/educators/information-sheet', <InformationSheetPage />);
     const sheet = screen.getByRole('article');
-    expect(sheet).toHaveTextContent('hello@thinkerwell.app');
+    expect(sheet).toHaveTextContent('thinkerwell.hello@gmail.com');
     expect(within(sheet).queryByText(/\[CONTACT EMAIL\]/)).toBeNull();
   });
 });

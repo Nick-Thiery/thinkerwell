@@ -1,6 +1,6 @@
 # The contact form
 
-`/contact` is one form for everyone: educators, learning organisations, companies, people with feedback. Built in October 2026 from Justin's brief ("Thinkerwell: simplify For Educators and add a contact form"), with the team's address, **hello@thinkerwell.app**, instead of the school inbox the brief named.
+`/contact` is one form for everyone: educators, learning organisations, companies, people with feedback. Built in October 2026 from Justin's brief ("Thinkerwell: simplify For Educators and add a contact form"), with the team's address instead of the school inbox the brief named. That address is **thinkerwell.hello@gmail.com** since 31 October 2026 (it was hello@thinkerwell.app, which had no mailbox: thinkerwell.app has no MX records, so mail to it bounced).
 
 Linked from the footer of every page ("Contact"), the top and bottom of For organisations ("Get in touch") and the Educators page ("Send an enquiry"). It is a public page, indexed like the others (`PUBLIC_PAGES` in `src/seo/site.ts`, `seo.contact` in en.json, a rewrite in `vercel.json`).
 
@@ -31,13 +31,13 @@ The page posts the four fields (and the empty hidden one) as JSON to this site's
 4. Emails the team through **Resend** (`https://api.resend.com/emails`, server to server): plain text, subject `[Thinkerwell enquiry] <topic>`, with the topic, name, reply address, the time and the message. For an email address, the email's Reply-To is that address, so replying in Gmail goes to them; for a WhatsApp number there is no Reply-To, and the number is written out to reply to on WhatsApp by hand (this is not a WhatsApp integration).
 5. Answers 200 only when Resend accepted the email; 400 with the fields that need a change; 429 when the limit is reached; 502 when Resend didn't take it; 503 until it is set up. Resend's own error text never reaches the browser, and nothing is stored or logged by Thinkerwell.
 
-The destination is `CONTACT_TO_EMAIL`, else hello@thinkerwell.app; it never comes from the request.
+The destination is `CONTACT_TO_EMAIL`, else thinkerwell.hello@gmail.com; it never comes from the request.
 
 **Privacy.** This is the one place the site sends what someone typed: an adult's own name, reply address and message, which they chose to send, to the team. It goes through Resend (which keeps sent emails for a time, by its own policy) to the team's mailbox. It has nothing to do with learners' work or pilot measurement, and the form asks for nothing about a learner.
 
 ## Setting it up (a person does this, once)
 
-Until these are done the form answers "couldn't send" and points to hello@thinkerwell.app, so it is safe to publish first.
+Until these are done the form answers "couldn't send" and points to thinkerwell.hello@gmail.com, so it is safe to publish first.
 
 1. **Make a Resend account** at resend.com (the free plan sends 3,000 emails a month, 100 a day). A person makes it; Claude doesn't make accounts or handle keys.
 2. **Add a sending domain**: Domains → Add domain → `send.thinkerwell.app`. A subdomain keeps it apart from the Google mail on `thinkerwell.app`, whose records stay as they are.
@@ -46,9 +46,9 @@ Until these are done the form answers "couldn't send" and points to hello@thinke
 5. **In Vercel**, project → Settings → Environment Variables, for Production (and Preview if wanted):
    - `RESEND_API_KEY`: the key, marked **Sensitive**. Never with a `VITE_` name: that would put it in the browser.
    - `CONTACT_FROM_EMAIL`: `Thinkerwell <contact@send.thinkerwell.app>`
-   - `CONTACT_TO_EMAIL` (optional): only to send somewhere other than hello@thinkerwell.app.
+   - `CONTACT_TO_EMAIL` (optional): only to send somewhere other than thinkerwell.hello@gmail.com.
 6. **Redeploy** (environment variables apply to new deployments only).
-7. **Test on the live site**: one enquiry with an email address (it arrives at hello@thinkerwell.app, check Spam too; reply, and the reply goes to that address), and one with a WhatsApp number (the number is in the email; there is no Reply-To). Then a wrong key or a paused domain should show "couldn't send", never "sent".
+7. **Test on the live site**: one enquiry with an email address (it arrives at thinkerwell.hello@gmail.com, check Spam too; reply, and the reply goes to that address), and one with a WhatsApp number (the number is in the email; there is no Reply-To). Then a wrong key or a paused domain should show "couldn't send", never "sent".
 
 ## Tests
 

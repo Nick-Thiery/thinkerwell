@@ -44,4 +44,4 @@ Branch `teacher-tools`. Built on 28 September 2026.
 - **Check the sorting of `sensitiveNotes`** (the content team).
 - **Try printing on HELP's own printer and paper.** The page counts above come from Chromium's A4 PDF. US Letter should work too, but it hasn't been checked.
 - The guide doesn't repeat the lesson's reading text, sentence starters or the video's written version. The learners' print view, linked from the guide, has them.
-- ~~`[FEEDBACK EMAIL]` on the Educators page is still a placeholder.~~ The address is hello@thinkerwell.app, and questions go to the contact form (`docs/notes/contact-form.md`).
+- ~~`[FEEDBACK EMAIL]` on the Educators page is still a placeholder.~~ The address is thinkerwell.hello@gmail.com, and questions go to the contact form (`docs/notes/contact-form.md`).

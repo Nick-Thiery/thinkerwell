@@ -14,7 +14,7 @@ export interface Env {
   RESEND_API_KEY?: string | undefined;
   /** The address the contact form's emails come from, on a domain verified with Resend (Thinkerwell <contact@send.thinkerwell.app>). Without it, /api/contact answers 503. */
   CONTACT_FROM_EMAIL?: string | undefined;
-  /** Where the contact form's emails go; hello@thinkerwell.app when unset. Never taken from the request. */
+  /** Where the contact form's emails go; thinkerwell.hello@gmail.com when unset. Never taken from the request. */
   CONTACT_TO_EMAIL?: string | undefined;
 }
 

@@ -260,7 +260,7 @@ export function ContactPage() {
             {status === 'failed' || status === 'busy' ? (
               <div className="tw-contact-failed" role="alert" tabIndex={-1} ref={statusRef}>
                 <Icon name="RotateCcw" size={20} strokeWidth={3} className="tw-help-invalid-icon" />
-                <p>{tx(status === 'busy' ? 'contact.busy' : 'contact.failed', { email: email ?? 'hello@thinkerwell.app' })}</p>
+                <p>{tx(status === 'busy' ? 'contact.busy' : 'contact.failed', { email: email ?? 'thinkerwell.hello@gmail.com' })}</p>
               </div>
             ) : null}
             <p className="tw-visually-hidden" aria-live="polite">

@@ -282,15 +282,17 @@
   }
 
   /* Margins of 10mm, so more fits a page: Malay is longer than English or Indonesian, and with a 60-character
-     organisation's name page 1 spilled onto a third page on Letter paper at 12mm. */
+     organisation's name page 1 spilled onto a third page on Letter paper at 12mm. 9mm top and bottom since the
+     longer contact address (October 2026), which made it spill again on Letter at 10mm. */
   @page tw-consent {
-    margin: 10mm;
+    margin: 9mm 10mm;
   }
 
   /* 10.5pt is 14px, the site's smallest text: nothing here goes below it. */
+  /* The parts 1.5mm apart (2mm until the longer contact address, October 2026). */
   .tw-print-sheet.tw-consent {
     page: tw-consent;
-    gap: 2mm;
+    gap: 1.5mm;
     font-size: 10.5pt;
     line-height: 1.2;
   }

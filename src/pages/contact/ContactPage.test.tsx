@@ -50,7 +50,7 @@ describe('the contact form', () => {
     expect(trap).toHaveAttribute('tabindex', '-1');
     expect(trap.closest('[aria-hidden="true"]')).not.toBeNull();
     expect(screen.getByText(/Don't include a learner's personal information/)).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'hello@thinkerwell.app' })).toHaveAttribute('href', 'mailto:hello@thinkerwell.app');
+    expect(screen.getByRole('link', { name: 'thinkerwell.hello@gmail.com' })).toHaveAttribute('href', 'mailto:thinkerwell.hello@gmail.com');
   });
 
   it('says what each empty field needs, focuses the first, and sends nothing', async () => {
@@ -112,7 +112,7 @@ describe('the contact form', () => {
     await fillIn(user);
     await user.click(screen.getByRole('button', { name: 'Send enquiry' }));
     const alert = await screen.findByRole('alert');
-    expect(alert).toHaveTextContent("We couldn't send your message. Try again, or write to us at hello@thinkerwell.app.");
+    expect(alert).toHaveTextContent("We couldn't send your message. Try again, or write to us at thinkerwell.hello@gmail.com.");
     expect(screen.getByLabelText('Your name')).toHaveValue('Siti Rahma');
     expect(screen.getByLabelText('Your message')).toHaveValue('We would like to use Thinkerwell with our learners.');
     expect(screen.getByRole('button', { name: 'Send enquiry' })).toBeEnabled();
