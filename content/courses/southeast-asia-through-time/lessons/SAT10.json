@@ -197,7 +197,23 @@
     "partnerTask": "With a partner, write two questions to investigate: one about a person who lived in Hội An long ago, and one about a visiting trader. Say which source could help answer each one.",
     "independentTask": "Name two groups of people who used the port. For each group, say one source you would need to learn about their lives."
   },
-  "watch": null,
+  "watch": {
+    "youtubeId": "N0BIcOTSD9k",
+    "title": "Hoi An Ancient Town (UNESCO/NHK)",
+    "channel": "UNESCO",
+    "durationSeconds": null,
+    "why": "A short UNESCO and NHK film about Hội An's old town and its covered bridge, the place this lesson's sources describe.",
+    "beforeQuestion": "What do you expect a short film about an old port town to show?",
+    "afterQuestion": "Name one building or street you saw in the film. Was it filmed in the trading-port years or in modern times?",
+    "summary": "This is a short film of a few minutes. NHK, a broadcaster from Japan, made it with UNESCO. It is part of a series of films about World Heritage sites. UNESCO's record of the film says it is about the old town and its covered bridge, often called the Japanese Bridge. The record describes Hội An in a few words. Hội An is an old trading port that has been well looked after. It was a port from the 1400s to the 1800s. Its buildings and its street plan show a mix of local ways and ideas from other places. Remember that a camera films a place on one day. The film shows Hội An in modern times, not the busy port of long ago.",
+    "keyPoints": [
+      "Hội An was a trading port from the 1400s to the 1800s.",
+      "Its buildings and street plan mix local ways with ideas from other places.",
+      "The film shows the town in modern times, not the port long ago."
+    ],
+    "contentNote": "Not yet watched by a person. Title and channel confirmed with YouTube's oEmbed on 1 November 2026; the YouTube page itself could not be opened (a bot check), so its length, captions and description were not seen and durationSeconds is null. The summary is based only on UNESCO's video archive record of an NHK World Heritage 100 film, \"Japanese Bridge in Vietnam: Hoi An Ancient Town\" (169 seconds, 1999), which is probably the same film, and that record's four-line description of the town; it does not describe the narration. Check the narration against the summary and rewrite the summary from it before use, and check for ads. UNESCO's video record says the film is © NHK, all rights reserved, and re-users must ask NHK's permission: embed the original YouTube player only.",
+    "replacementSuggestion": null
+  },
   "reflect": {
     "prompts": [
       {
@@ -240,7 +256,11 @@
   "sources": [
     {
       "label": "UNESCO World Heritage Centre: Hội An Ancient Town",
-      "url": "https://whc.unesco.org/en/list/948/"
+      "url": "https://whc.unesco.org/en/list/948"
+    },
+    {
+      "label": "UNESCO World Heritage Committee, 1999: decision to inscribe Hội An Ancient Town (23 COM VIII.C.1)",
+      "url": "https://whc.unesco.org/en/decisions/2637"
     },
     {
       "label": "UNESCO World Heritage Centre: Hoi An Ancient Town (UNESCO/NHK) video record",
@@ -256,15 +276,15 @@
   ],
   "educatorNotes": [
     "Aim: learners explain one way the port connected people, using a source detail, and name one resident's view a building-centred account leaves out. Evidence move: trace the street-to-river loading idea in UNESCO's description (buildings face the street, backs open to the river), then point to the photo's date, 2018, before learners say what it shows. A sound answer gives one supported connection and one missing resident source.",
-    "Misconception to address: that a later photo is a picture of the port's earlier daily life. Also, \"Chinese and Japanese influences\" in buildings do not tell us every resident's ancestry, and local people were not passive; the bridge's popular name does not tell us who built or used it. Source caveats: UNESCO's account is a modern interpretation of surviving buildings; the photo shows a lower modern footbridge in front and crowds of visitors in 2018. For an optional comparison with another port that records local voices, see George Town World Heritage Incorporated's oral history work, but do not make it a second case."
+    "Misconception to address: that a later photo is a picture of the port's earlier daily life. Also, \"Chinese and Japanese influences\" in buildings do not tell us every resident's ancestry, and local people were not passive; the bridge's popular name does not tell us who built or used it. UNESCO's listing dates the wooden bridge, with a pagoda on it, to the 18th century, while other accounts give an earlier first bridge, so the lesson does not date it. Source caveats: UNESCO's account is a modern interpretation of surviving buildings; the photo shows a lower modern footbridge in front and crowds of visitors in 2018. For an optional comparison with another port that records local voices, see George Town World Heritage Incorporated's oral history work, but do not make it a second case."
   ],
   "changes": [
     "Written on 1 November 2026 from Justin's course brief (28 October 2026), sections 3 and 3A.",
     "Followed the brief's checks: the first asks how long Hội An was a port (several centuries); the second asks what a 2018 photo can show. The 3A check about UNESCO's account being modern is taught in Read part 2 and in the evidence card instead.",
     "Wrote \"from the 1400s to the 1800s\" for UNESCO's \"15th to the 19th century\", which is easier to read. Said \"about 400 years\" in the simpler text and the check feedback.",
+    "Checked UNESCO's listing on 1 November 2026 for the location (north bank, near the mouth of the Thu Bồn River), the dates (15th to 19th century), the buildings, the street-to-river layout and the influences. The 1999 inscription is now confirmed from UNESCO's own decision page (23 COM VIII.C.1, 1999), added to sources.",
     "Softened 3A's \"cared for and repaired over time\" to \"value and look after today\": I could not confirm repair dates from a source I opened.",
-    "Checked UNESCO's listing for the location, dates, buildings, street layout and influences. The page text I could read did not show the inscription year; I confirmed 1999 only from a secondary reference (Wikipedia), so a reviewer should recheck it on the UNESCO listing page.",
     "Commons file checked through the Commons API on 1 November 2026: Christophe95, taken 27 July 2018, own work, CC BY-SA 4.0, as the brief says. Its description names the bridge \"The Japanese bridge (Chùa Cầu)\". Alt text written from the image itself: it also shows a modern wooden footbridge in front and many visitors.",
-    "Watch candidate to review (not approved): Hoi An Ancient Town (UNESCO/NHK), https://www.youtube.com/watch?v=N0BIcOTSD9k, from the brief, section 5. Its UNESCO record says re-users must ask NHK's permission; embedding the original player only, after review."
+    "Added an English Watch step (the team now allows English videos): Hoi An Ancient Town (UNESCO/NHK), https://www.youtube.com/watch?v=N0BIcOTSD9k, the brief's section 5 candidate, from UNESCO's own channel; title and channel confirmed with oEmbed. The summary rests only on UNESCO's archive record, as the captions could not be read. Someone must watch it before learners see it."
   ]
 }
