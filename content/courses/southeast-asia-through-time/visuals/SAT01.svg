@@ -1,40 +1,52 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" font-family="Atkinson Hyperlegible Next, Atkinson Hyperlegible, Verdana, sans-serif">
 <title>How context helps</title>
-<desc>A schematic side view of soil layers at a dig. A painted pot lies in a middle layer with other small finds nearby, and an arrow shows its depth below the surface. Three tags sort the clues: found (a painted pot), measured (its depth and layer) and inferred (an idea to test).</desc>
+<desc>A simple drawing of layers of earth with a pot in the middle layer. Labels show what was found (the pot), what was measured (its depth and position) and what is only inferred (an idea about its use, with a question mark).</desc>
 <rect x="0" y="0" width="960" height="540" rx="24" fill="#FFE9C7"/>
-<text x="48" y="70" font-size="28" font-weight="700" fill="#7A4300">How context helps</text>
-<text x="608" y="70" font-size="22" fill="#4B4654" text-anchor="end">Schematic</text>
-<defs><clipPath id="sec"><rect x="48" y="96" width="560" height="412" rx="16"/></clipPath></defs>
+<text x="48" y="66" font-size="28" font-weight="700" fill="#7A4300">How context helps</text>
+<text x="912" y="66" font-size="22" fill="#4B4654" text-anchor="end">Schematic, not a real trench</text>
+<defs><clipPath id="sec"><rect x="48" y="92" width="560" height="340" rx="16"/></clipPath></defs>
 <g clip-path="url(#sec)">
-<rect x="48" y="96" width="560" height="412" fill="#FFFFFF"/>
-<path d="M40,172 H620 V520 H40 Z" fill="#F3E3C3"/>
-<path d="M40,262 C140,250 230,280 330,266 C430,252 520,276 620,262 V520 H40 Z" fill="#A07850"/>
-<path d="M40,402 C150,414 250,390 350,404 C450,418 540,396 620,408 V520 H40 Z" fill="#F3E3C3"/>
-<g fill="#A07850"><circle cx="90" cy="440" r="3"/><circle cx="150" cy="470" r="3"/><circle cx="210" cy="436" r="3"/><circle cx="270" cy="482" r="3"/><circle cx="330" cy="450" r="3"/><circle cx="400" cy="472" r="3"/><circle cx="460" cy="440" r="3"/><circle cx="520" cy="478" r="3"/><circle cx="570" cy="446" r="3"/><circle cx="120" cy="494" r="3"/><circle cx="380" cy="494" r="3"/></g>
-<g fill="none" stroke="#0F0E0E" stroke-width="3"><path d="M40,262 C140,250 230,280 330,266 C430,252 520,276 620,262"/><path d="M40,402 C150,414 250,390 350,404 C450,418 540,396 620,408"/></g>
-<rect x="40" y="164" width="580" height="10" fill="#7A9B4E"/>
-<path d="M40,172 H620" stroke="#0F0E0E" stroke-width="4"/>
+<rect x="40" y="88" width="580" height="350" fill="#FFFFFF"/>
+<path d="M40,152 H620 V440 H40 Z" fill="#F3E3C3"/>
+<path d="M40,226 C140,214 230,240 330,228 C430,216 520,238 620,226 V440 H40 Z" fill="#C9D9A8"/>
+<path d="M40,234 C140,222 230,248 330,236 C430,224 520,246 620,234 V440 H40 Z" fill="#A07850"/>
+<path d="M40,346 C150,356 250,336 350,348 C450,360 540,340 620,350 V440 H40 Z" fill="#C9D9A8"/>
+<path d="M40,354 C150,364 250,344 350,356 C450,368 540,348 620,358 V440 H40 Z" fill="#F3E3C3"/>
+<g fill="#A07850"><circle cx="90" cy="392" r="3"/><circle cx="150" cy="416" r="3"/><circle cx="330" cy="380" r="3"/><circle cx="392" cy="414" r="3"/><circle cx="250" cy="420" r="3"/><circle cx="560" cy="404" r="3"/></g>
+<rect x="40" y="146" width="580" height="8" fill="#7A9B4E"/>
+<path d="M40,153 H620" stroke="#0F0E0E" stroke-width="4"/>
 </g>
-<rect x="48" y="96" width="560" height="412" rx="16" fill="none" stroke="#0F0E0E" stroke-width="3"/>
-<text x="72" y="150" font-size="22" font-weight="700" fill="#0F0E0E">Ground surface</text>
-<g stroke="#0F0E0E" stroke-width="4" stroke-linejoin="round"><path d="M318,290 H362 L358,302 C404,310 410,368 376,382 H304 C270,368 276,310 322,302 Z" fill="#F3E3C3"/></g>
-<g fill="none" stroke="#7A4300" stroke-width="4" stroke-linecap="round"><path d="M296,334 C306,318 318,350 330,334 C342,318 354,350 366,334 C376,320 384,342 390,334"/><path d="M298,356 C310,346 318,366 330,356 C342,346 350,366 362,356 C372,348 380,362 386,356"/></g>
-<g fill="#F3E3C3" stroke="#0F0E0E" stroke-width="3" stroke-linejoin="round"><path d="M128,332 L156,324 L162,342 L134,350 Z"/><path d="M188,348 L210,336 L222,352 L198,362 Z"/><path d="M232,318 L254,322 L250,340 L230,336 Z"/></g>
-<text x="110" y="304" font-size="22" font-weight="700" fill="#0F0E0E" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">Other finds</text>
-<path d="M408,336 H530" stroke="#4E32B5" stroke-width="3" stroke-dasharray="8 6"/>
-<path d="M520,190 V320" stroke="#4E32B5" stroke-width="4"/>
-<path d="M520,176 L510,192 L530,192 Z" fill="#4E32B5"/>
-<path d="M520,334 L530,318 L510,318 Z" fill="#4E32B5"/>
-<path d="M636,140 H352 V296" fill="none" stroke="#0F0E0E" stroke-width="3"/><circle cx="352" cy="296" r="6" fill="#0F0E0E"/>
-<path d="M636,288 H526" stroke="#0F0E0E" stroke-width="3"/><circle cx="526" cy="288" r="6" fill="#0F0E0E"/>
-<path d="M636,424 L392,368" stroke="#4E32B5" stroke-width="3" stroke-dasharray="8 6"/><circle cx="392" cy="368" r="6" fill="#4E32B5"/>
-<path d="M660,102 H908 Q916,102 916,110 V194 Q916,202 908,202 H660 L636,178 V126 Z" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="3" stroke-linejoin="round"/><circle cx="656" cy="152" r="7" fill="#FFE9C7" stroke="#0F0E0E" stroke-width="3"/>
-<text x="680" y="144" font-size="26" font-weight="700" fill="#0F0E0E">Found</text>
-<text x="680" y="178" font-size="22" fill="#0F0E0E">a painted pot</text>
-<path d="M660,238 H908 Q916,238 916,246 V330 Q916,338 908,338 H660 L636,314 V262 Z" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="3" stroke-linejoin="round"/><circle cx="656" cy="288" r="7" fill="#FFE9C7" stroke="#0F0E0E" stroke-width="3"/>
-<text x="680" y="280" font-size="26" font-weight="700" fill="#0F0E0E">Measured</text>
-<text x="680" y="314" font-size="22" fill="#0F0E0E">its depth and layer</text>
-<path d="M660,374 H908 Q916,374 916,382 V466 Q916,474 908,474 H660 L636,450 V398 Z" fill="#ECE4FD" stroke="#0F0E0E" stroke-width="3" stroke-linejoin="round" stroke-dasharray="10 7"/><circle cx="656" cy="424" r="7" fill="#FFE9C7" stroke="#0F0E0E" stroke-width="3"/>
-<text x="680" y="416" font-size="26" font-weight="700" fill="#0F0E0E">Inferred</text>
-<text x="680" y="450" font-size="22" fill="#0F0E0E">an idea to test</text>
+<rect x="48" y="92" width="560" height="340" rx="16" fill="none" stroke="#0F0E0E" stroke-width="3"/>
+<text x="64" y="134" font-size="22" font-weight="700" fill="#0F0E0E">Ground today</text>
+<text x="64" y="196" font-size="22" fill="#4B4654" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">Layer 1</text>
+<text x="64" y="270" font-size="22" fill="#0F0E0E" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">Layer 2</text>
+<text x="64" y="384" font-size="22" fill="#4B4654" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">Layer 3</text>
+<path d="M280,248 H320 L316,258 C356,266 362,316 332,330 H268 C238,316 244,266 284,258 Z" fill="#F3E3C3" stroke="#0F0E0E" stroke-width="4" stroke-linejoin="round"/>
+<g fill="#F3E3C3" stroke="#0F0E0E" stroke-width="3" stroke-linejoin="round"><path d="M152,300 L176,292 L182,308 L158,316 Z"/><path d="M196,318 L216,306 L226,322 L204,330 Z"/><path d="M206,280 L226,284 L222,300 L204,296 Z"/></g>
+<path d="M470,158 V328" stroke="#4E32B5" stroke-width="3" stroke-dasharray="8 6"/>
+<path d="M336,328 H470" stroke="#4E32B5" stroke-width="3" stroke-dasharray="8 6"/>
+<rect x="480" y="158" width="22" height="170" fill="#FDE68A" stroke="#0F0E0E" stroke-width="3"/>
+<path d="M480,178 h7 M480,198 h12 M480,218 h7 M480,238 h12 M480,258 h7 M480,278 h12 M480,298 h7 M480,318 h12" stroke="#0F0E0E" stroke-width="2"/>
+<circle cx="346" cy="346" r="5" fill="#FFFFFF" stroke="#4E32B5" stroke-width="2" stroke-dasharray="3 3"/>
+<circle cx="362" cy="358" r="7" fill="#FFFFFF" stroke="#4E32B5" stroke-width="2" stroke-dasharray="3 3"/>
+<rect x="374" y="352" width="176" height="70" rx="30" fill="#FFFFFF" stroke="#4E32B5" stroke-width="3" stroke-dasharray="4 5"/>
+<text x="462" y="380" font-size="20" fill="#0F0E0E" text-anchor="middle">Used for</text>
+<text x="462" y="406" font-size="20" fill="#0F0E0E" text-anchor="middle">storing food?</text>
+<path d="M628,118 H300 V246" fill="none" stroke="#0F0E0E" stroke-width="3"/><circle cx="300" cy="246" r="6" fill="#0F0E0E"/>
+<path d="M628,244 H506" stroke="#0F0E0E" stroke-width="3"/><circle cx="506" cy="244" r="6" fill="#0F0E0E"/>
+<path d="M628,384 H552" stroke="#4E32B5" stroke-width="3" stroke-dasharray="8 6"/><circle cx="552" cy="384" r="6" fill="#4E32B5"/>
+<path d="M652,96 H908 Q916,96 916,104 V184 Q916,192 908,192 H652 L628,168 V120 Z" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="3" stroke-linejoin="round"/><circle cx="648" cy="144" r="7" fill="#FFE9C7" stroke="#0F0E0E" stroke-width="3"/>
+<text x="668" y="136" font-size="24" font-weight="700" fill="#0F0E0E">Found</text>
+<text x="668" y="170" font-size="22" fill="#0F0E0E">a pot in layer 2</text>
+<path d="M862,118 l10,10 l18,-20" fill="none" stroke="#0F0E0E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M652,214 H908 Q916,214 916,222 V302 Q916,310 908,310 H652 L628,286 V238 Z" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="3" stroke-linejoin="round"/><circle cx="648" cy="262" r="7" fill="#FFE9C7" stroke="#0F0E0E" stroke-width="3"/>
+<text x="668" y="254" font-size="24" font-weight="700" fill="#0F0E0E">Measured</text>
+<text x="668" y="288" font-size="22" fill="#0F0E0E">depth and position</text>
+<path d="M652,336 H908 Q916,336 916,344 V424 Q916,432 908,432 H652 L628,408 V360 Z" fill="#ECE4FD" stroke="#0F0E0E" stroke-width="3" stroke-linejoin="round" stroke-dasharray="10 7"/><circle cx="648" cy="384" r="7" fill="#FFE9C7" stroke="#0F0E0E" stroke-width="3"/>
+<text x="668" y="376" font-size="24" font-weight="700" fill="#0F0E0E">Inferred</text>
+<text x="668" y="410" font-size="22" fill="#0F0E0E">an idea to test</text>
+<circle cx="878" cy="362" r="16" fill="#FFFFFF" stroke="#4E32B5" stroke-width="3"/><text x="878" y="370" font-size="22" font-weight="700" fill="#4E32B5" text-anchor="middle">?</text>
+<rect x="48" y="452" width="868" height="60" rx="16" fill="#FFFFFF" stroke="#D5D1DC" stroke-width="3"/>
+<rect x="64" y="468" width="36" height="28" rx="6" fill="#FFFFFF" stroke="#0F0E0E" stroke-width="3"/><text x="110" y="490" font-size="22" fill="#0F0E0E">Found and measured = recorded</text>
+<rect x="500" y="468" width="36" height="28" rx="6" fill="#ECE4FD" stroke="#0F0E0E" stroke-width="3" stroke-dasharray="7 5"/><text x="546" y="490" font-size="22" fill="#0F0E0E">Inferred = still a question</text>
 </svg>
