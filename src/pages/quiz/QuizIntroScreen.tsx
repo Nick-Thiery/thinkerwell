@@ -1,5 +1,7 @@
 import { Button, Icon, MascotTip, SectionHeader } from '../../components/ds';
-import type { QuizFile, Section } from '../../content';
+import type { AnyQuizFile, CourseSection } from '../../content';
+import { DEFAULT_COURSE_ID } from '../../content/courses';
+import { useLessonContent } from '../../content/useContent';
 import { En, useI18n } from '../../i18n';
 import { useMeasurementState } from '../../measurement/track';
 
@@ -11,8 +13,8 @@ function estimatedMinutes(questionCount: number): number {
 }
 
 export interface QuizIntroScreenProps {
-  section: Section;
-  quiz: QuizFile;
+  section: CourseSection;
+  quiz: AnyQuizFile;
   /** True while looking around or with nobody chosen: nothing will be saved. */
   isGuest: boolean;
   /**
@@ -31,6 +33,8 @@ export interface QuizIntroScreenProps {
  */
 export function QuizIntroScreen({ section, quiz, isGuest, lessonsDone, onStart }: QuizIntroScreenProps) {
   const { t, tx } = useI18n();
+  const content = useLessonContent();
+  const look = content.sectionLook(section.id);
   // A learner whose results the pilot counts is told so (src/measurement/gate.ts).
   const counted = useMeasurementState().gate !== null;
   const first = section.lessons[0] ?? 0;
@@ -40,8 +44,11 @@ export function QuizIntroScreen({ section, quiz, isGuest, lessonsDone, onStart }
   return (
     <div className="tw-quiz-page">
       <SectionHeader
-        section={section.id}
+        section={look.tone}
+        icon={look.icon}
         number={section.number}
+        // Another course's sections have their own names (course text); Our World's are the interface's.
+        title={content.courseId === DEFAULT_COURSE_ID ? undefined : section.title}
         total={lessonsDone === undefined ? undefined : section.lessons.length}
         completed={lessonsDone}
         question={section.question}
@@ -85,7 +92,7 @@ export function QuizIntroScreen({ section, quiz, isGuest, lessonsDone, onStart }
           <Button variant="primary" size="lg" iconRight="ArrowRight" onClick={onStart}>
             {t('pages.sectionCheck.start')}
           </Button>
-          <Button variant="secondary" size="lg" href={`/course#${section.id}`}>
+          <Button variant="secondary" size="lg" href={content.coursePath(section.id)}>
             {t('pages.sectionCheck.lookAtLessons')}
           </Button>
         </div>

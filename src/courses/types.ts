@@ -30,6 +30,10 @@ export interface PreviewCourseModule {
   readonly LessonPrintRoute: ComponentType<{ lessonId: string }>;
   /** /educators/lesson/:id for one of its lessons. */
   readonly TeacherGuideRoute: ComponentType<{ lessonId: string }>;
+  /** /section/:id/check for one of its sections ("This page isn't here" for a course without checks). */
+  readonly SectionCheckRoute: ComponentType<{ sectionId: string }>;
+  /** /educators/section/:id/answers for one of its sections. */
+  readonly AnswerKeyRoute: ComponentType<{ sectionId: string }>;
   /** Its link in the course choice (src/courses/kit/CourseChoice.tsx; `current`: the course map shown). */
   readonly ChoiceLink: ComponentType<{ current?: string }>;
 }

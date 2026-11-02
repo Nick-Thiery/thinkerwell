@@ -37,19 +37,32 @@ export interface CourseDefinition {
    * preview never downloads them. Our World's words are the app's.
    */
   readonly messages?: string;
+  /**
+   * A preview course's section ids (the same as its schema's, which a test
+   * checks), so /section/:id/check finds the course without loading it.
+   */
+  readonly sectionIds?: readonly string[];
 }
 
 export const DEFAULT_COURSE_ID = 'our-world';
 
 export const COURSES: readonly CourseDefinition[] = [
   { id: DEFAULT_COURSE_ID, dir: '', preview: false, lessonIdPrefix: '' },
-  { id: 'digital-world', dir: 'courses/digital-world', preview: true, lessonIdPrefix: 'dw-', messages: 'digitalWorld' },
+  {
+    id: 'digital-world',
+    dir: 'courses/digital-world',
+    preview: true,
+    lessonIdPrefix: 'dw-',
+    messages: 'digitalWorld',
+    sectionIds: ['thinking-machines', 'who-builds-ai', 'ai-in-daily-life', 'truth-and-power'],
+  },
   {
     id: 'southeast-asia-through-time',
     dir: 'courses/southeast-asia-through-time',
     preview: true,
     lessonIdPrefix: 'sat-',
     messages: 'southeastAsia',
+    sectionIds: ['evidence-and-connections', 'trade-and-power', 'war-and-independence', 'memory-and-shared-histories'],
   },
 ];
 
@@ -66,4 +79,11 @@ export function previewCourseOfLesson(lessonId: string | undefined): CourseDefin
   if (!lessonId) return undefined;
   const id = lessonId.toLowerCase();
   return PREVIEW_COURSES.find((course) => id.startsWith(course.lessonIdPrefix));
+}
+
+/** The preview course a section id belongs to, or undefined for Our World's (and unknown ids). */
+export function previewCourseOfSection(sectionId: string | undefined): CourseDefinition | undefined {
+  if (!sectionId) return undefined;
+  const id = sectionId.toLowerCase();
+  return PREVIEW_COURSES.find((course) => course.sectionIds?.includes(id));
 }

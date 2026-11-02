@@ -13,10 +13,11 @@ import { assembleContent, type LoadedContent } from './assemble.ts';
 import { COURSES, DEFAULT_COURSE_ID, type CourseDefinition } from './courses.ts';
 import { ContentError } from './errors.ts';
 import {
+  COURSE_QUIZ_SCHEMAS,
   COURSE_SCHEMAS,
   localVideosFileSchema,
-  quizFileSchema,
   type AnyCourseFile,
+  type AnyQuizFile,
   type CourseLesson,
   type CourseSchemaId,
   type Lesson,
@@ -44,7 +45,13 @@ function schemasFor(courseId: string, file: string) {
 export function parseContentFile(kind: ContentFileKind, raw: unknown, file: string, courseId: string = DEFAULT_COURSE_ID): unknown {
   const schemas = schemasFor(courseId, file);
   const schema =
-    kind === 'course' ? schemas.course : kind === 'lesson' ? schemas.lesson : kind === 'videos' ? localVideosFileSchema : quizFileSchema;
+    kind === 'course'
+      ? schemas.course
+      : kind === 'lesson'
+        ? schemas.lesson
+        : kind === 'videos'
+          ? localVideosFileSchema
+          : COURSE_QUIZ_SCHEMAS[courseId as CourseSchemaId];
   const result = schema.safeParse(raw);
   if (!result.success) throw new ContentError(describeIssues(file, result.error));
   return result.data;
@@ -198,15 +205,23 @@ function loadCourseFiles(
  * section) and returns one QuizFile per section. Throws a ContentError
  * listing every problem. Exported for tests.
  */
-export function loadQuizzes(rawQuizzes: Record<string, unknown>, lessons: readonly Lesson[]): QuizFile[] {
+export function loadQuizzes(rawQuizzes: Record<string, unknown>, lessons: readonly Lesson[]): QuizFile[];
+export function loadQuizzes(rawQuizzes: Record<string, unknown>, lessons: readonly Pick<CourseLesson, 'number' | 'section'>[], courseId: string): AnyQuizFile[];
+export function loadQuizzes(
+  rawQuizzes: Record<string, unknown>,
+  lessons: readonly Pick<CourseLesson, 'number' | 'section'>[],
+  courseId: string = DEFAULT_COURSE_ID,
+): AnyQuizFile[] {
   const problems: string[] = [];
   const sectionOfLesson = new Map(lessons.map((l) => [l.number, l.section]));
+  const quizSchema = COURSE_QUIZ_SCHEMAS[courseId as CourseSchemaId] as (typeof COURSE_QUIZ_SCHEMAS)[CourseSchemaId] | undefined;
+  if (!quizSchema) throw new ContentError(`There are no section-check schemas for the course "${courseId}" (src/content/schema.ts, COURSE_QUIZ_SCHEMAS).`);
 
-  const parsed: QuizFile[] = [];
+  const parsed: AnyQuizFile[] = [];
   const seenSections = new Set<string>();
   for (const [path, raw] of Object.entries(rawQuizzes).sort(([a], [b]) => a.localeCompare(b))) {
     const file = path.replace(/^.*content\//, 'content/');
-    const result = quizFileSchema.safeParse(raw);
+    const result = quizSchema.safeParse(raw);
     if (!result.success) {
       problems.push(describeIssues(file, result.error));
       continue;

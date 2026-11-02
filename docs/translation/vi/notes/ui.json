@@ -5203,6 +5203,11 @@
     "note": "'Phần ôn tập' used for section checks (KEY_TERMS 'ôn tập phần'); reworded to 'phần ôn tập' for fluency. | Review: \"phần ôn tập\" was ambiguous; key term is \"bài ôn tập phần\". [Reviewer changed: Bản nháp này chưa có phần ôn tập hay giấy chứng nhận. → Bản nháp này chưa có bài ôn tập phần hay giấy chứng nhận.]",
     "back": "This draft has no review sections or certificates yet."
   },
+  "previewCourse.map.noCertificates": {
+    "source": "There are no certificates in this draft yet.",
+    "flag": true,
+    "note": "Preview courses (November 2026): drafted by AI, not yet reviewed by a native speaker."
+  },
   "previewCourse.map.forTeachersTitle": {
     "source": "For teachers and reviewers",
     "back": "For teachers and reviewers",
@@ -5221,6 +5226,11 @@
     "source": "Teacher guide, Lesson {number}: {title}",
     "back": "Teacher guide, Lesson {number}: {title}",
     "flag": true
+  },
+  "previewCourse.map.answerKeyLink": {
+    "source": "Answer key: {title}",
+    "flag": true,
+    "note": "Preview courses (November 2026): drafted by AI, not yet reviewed by a native speaker. {title} is the section's name, in English."
   },
   "digitalWorld.plan.answerLabel": {
     "source": "Your answer",

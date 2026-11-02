@@ -24,7 +24,6 @@ import {
   type NewLearner,
   type QuizAttempt,
   type Recording,
-  type SectionId,
   type SectionQuizRecord,
   type SettingsPatch,
   type StageId,
@@ -73,10 +72,10 @@ export interface ThinkerwellStore {
   setCurrentStage(learnerId: string, lessonId: string, stage: StageId): Promise<LessonProgress>;
 
   // Section checks
-  getQuizRecord(learnerId: string, sectionId: SectionId): Promise<SectionQuizRecord | undefined>;
+  getQuizRecord(learnerId: string, sectionId: string): Promise<SectionQuizRecord | undefined>;
   listQuizRecords(learnerId: string): Promise<SectionQuizRecord[]>;
   /** Keeps this attempt as the latest, and as the best if it scores at least as well. */
-  recordQuizAttempt(learnerId: string, sectionId: SectionId, attempt: QuizAttempt): Promise<SectionQuizRecord>;
+  recordQuizAttempt(learnerId: string, sectionId: string, attempt: QuizAttempt): Promise<SectionQuizRecord>;
 
   // Recordings (latest clip only, never uploaded)
   getRecording(learnerId: string, lessonId: string): Promise<Recording | undefined>;

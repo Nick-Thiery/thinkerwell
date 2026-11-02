@@ -17,6 +17,7 @@ import { PreviewCourseContext, type PreviewCourseConfig } from './course';
 import { ChoiceLink } from './CourseChoice';
 import { CourseMap } from './CourseMapPage';
 import { PreviewCourseFrame } from './Frame';
+import { PreviewAnswerKeyRoute, PreviewSectionCheckRoute } from './checkPages';
 import { AllLessons, PreviewLessonPrintRoute, PreviewLessonRoute, PreviewTeacherGuideRoute } from './lessonPages';
 import { PreviewSwitch } from './PreviewSwitchPage';
 
@@ -51,6 +52,8 @@ export function createPreviewCourse(course: PreviewCourseConfig, ready: Promise<
     LessonRoute: withCourse(PreviewLessonRoute),
     LessonPrintRoute: withCourse(PreviewLessonPrintRoute),
     TeacherGuideRoute: withCourse(PreviewTeacherGuideRoute),
+    SectionCheckRoute: withCourse(PreviewSectionCheckRoute),
+    AnswerKeyRoute: withCourse(PreviewAnswerKeyRoute),
     ChoiceLink: ({ current }) => framed(<ChoiceLink current={current} />, false),
   };
 }

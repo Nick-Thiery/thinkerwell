@@ -34,6 +34,10 @@ Each lesson has two, as the brief asks:
 
 Every caption is honest about dates: a 2025 photo of the Former Ford Factory is not a picture of 1942. Under each real picture the lesson asks "What can this source show? What can it not show?" and gives its credit with the licence linked, as CC BY and CC BY-SA ask.
 
+## Section checks
+
+`quizzes/<section>.json`, one per section, written to `docs/content/QUIZ_SPEC.md` from the brief's section 4: six questions each, two per lesson, one or two of each skill, every one answerable from the reading, the evidence or a caption. Where the brief's question repeated a lesson's own quick check, it is reworded or turned into a made-up example (labelled). On the course map after each section, with an answer key for teachers (`/educators/section/<id>/answers`). `python3 scripts/check_quiz.py content/courses/southeast-asia-through-time/quizzes/*.json` checks them (two questions per lesson for another course). For a reviewer: Section III tests the 1945-before-1949 order only in a feedback line (a direct ordering question could replace the "proclamation" vocabulary one); Lesson 8's questions say "became free" to keep the reading level, as the simpler text does.
+
 ## Videos
 
 **English videos are in, against the brief's "no Watch without approval"** (Nick, 1 November 2026); Indonesian and Malay get none unless a video in that language is approved. None has been watched by a person, and YouTube blocked the writers from reading captions, so every summary is written from the publisher's description or a published transcript, and each `contentNote` says which. **Someone must watch every one before learners see it.** Watch out for:
@@ -58,6 +62,6 @@ Lessons 2, 4, 5 and 12 have no video (`watch: null`), so four steps: Read, Write
 
 - **Review by Justin and a historian**, and a partner's review of the sensitive notes (Lessons 4, 5, 7, 8, 9).
 - **Watch all eight videos** (and Lesson 4's) and keep, replace or remove each.
-- **Section checks:** the brief's section 4 has six questions per section; preview courses can't show section checks yet (app work), and there are no certificates.
+- **Certificates:** none yet (Our World's only).
 - **Indonesian and Malay:** the lessons, the diagrams' labels and the captions, by the same process as Our World. Until then the lessons are English under a translated interface, marked `lang="en"`.
 - **Credits:** each real picture's credit is under it, in the print view and in the teacher guide; `/credits` doesn't list the preview courses yet, and its line that every lesson picture was made for Thinkerwell is true only of Our World.

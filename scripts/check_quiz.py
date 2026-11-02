@@ -13,6 +13,22 @@ SECTION_LESSONS = {"history": range(1, 10), "geography": range(10, 15), "culture
 COUNTS = {"history": 12, "geography": 10, "culture": 10, "civics": 10}
 SKILLS = {"vocabulary", "understand", "evidence", "apply"}
 
+# Another course's section checks (content/courses/<id>/quizzes/): its
+# sections and their lessons come from its course.json, with two questions
+# per lesson (Southeast Asia Through Time: 3 lessons, so 6 per check).
+PER_LESSON_OTHER = 2
+
+
+def course_sections(path):
+    """(lessons by section, question counts by section) for a quiz file: Our World's, or another course's."""
+    full = os.path.abspath(path).replace(os.sep, "/")
+    m = re.search(r"/content/courses/([^/]+)/quizzes/[^/]+$", full)
+    if not m:
+        return SECTION_LESSONS, COUNTS
+    course = json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(path))), "course.json")))
+    lessons = {s["id"]: list(s["lessons"]) for s in course["sections"]}
+    return lessons, {sec: PER_LESSON_OTHER * len(ns) for sec, ns in lessons.items()}
+
 
 def check(path):
     errs, warns = [], []
@@ -21,23 +37,25 @@ def check(path):
     except Exception as e:
         return [f"invalid JSON: {e}"], [], {}
     sec = Q.get("section")
-    if sec not in SECTION_LESSONS:
-        return [f"section must be one of {list(SECTION_LESSONS)}"], [], {}
+    section_lessons, counts = course_sections(path)
+    if sec not in section_lessons:
+        return [f"section must be one of {list(section_lessons)}"], [], {}
     for k in ("title", "intro", "questions", "results"):
         if not Q.get(k):
             errs.append(f"missing {k}")
     qs = Q.get("questions") or []
-    if len(qs) != COUNTS[sec]:
-        errs.append(f"need {COUNTS[sec]} questions, found {len(qs)}")
+    if len(qs) != counts[sec]:
+        errs.append(f"need {counts[sec]} questions, found {len(qs)}")
     lessons = Counter(q.get("lesson") for q in qs)
-    for n in SECTION_LESSONS[sec]:
+    for n in section_lessons[sec]:
         if lessons[n] == 0:
             errs.append(f"no question on Lesson {n}")
     for n in lessons:
-        if n not in SECTION_LESSONS[sec]:
+        if n not in section_lessons[sec]:
             errs.append(f"question on Lesson {n}, which is not in this section")
     skills = Counter(q.get("skill") for q in qs)
-    for s, need in (("vocabulary", 2), ("understand", 3), ("evidence", 2), ("apply", 2)):
+    small = counts[sec] < 10
+    for s, need in (("vocabulary", 1 if small else 2), ("understand", 2 if small else 3), ("evidence", 1 if small else 2), ("apply", 1 if small else 2)):
         if skills[s] < need:
             warns.append(f"only {skills[s]} {s} questions (aim for at least {need})")
     ids = [q.get("id") for q in qs]

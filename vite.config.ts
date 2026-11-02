@@ -49,8 +49,8 @@ function contentKind(id: string): { kind: ContentFileKind; course: string } | nu
   if (/\/content\/course\.json$/.test(file)) return { kind: 'course', course: DEFAULT_COURSE_ID };
   if (/\/content\/lessons\/[^/]+\.json$/.test(file)) return { kind: 'lesson', course: DEFAULT_COURSE_ID };
   if (/\/content\/quizzes\/[^/]+\.json$/.test(file)) return { kind: 'quiz', course: DEFAULT_COURSE_ID };
-  const other = /\/content\/courses\/([^/]+)\/(course\.json|lessons\/[^/]+\.json)$/.exec(file);
-  if (other) return { kind: other[2] === 'course.json' ? 'course' : 'lesson', course: other[1]! };
+  const other = /\/content\/courses\/([^/]+)\/(course\.json|lessons\/[^/]+\.json|quizzes\/[^/]+\.json)$/.exec(file);
+  if (other) return { kind: other[2] === 'course.json' ? 'course' : other[2]!.startsWith('quizzes/') ? 'quiz' : 'lesson', course: other[1]! };
   return null;
 }
 
@@ -119,7 +119,9 @@ function checkContent(): Plugin {
           const raw = JSON.parse(readFileSync(path.join(dir(course.dir), 'course.json'), 'utf8')) as unknown;
           const pictureDir = dir(`${course.dir}/visuals`);
           const pictures = existsSync(pictureDir) ? readdirSync(pictureDir).filter((name) => /\.(svg|jpg)$/.test(name)).map((name) => `visuals/${name}`) : [];
-          loadCourse(course.id, raw, lessons, { pictures: new Set(pictures), picturesRequired: !course.preview });
+          const loaded = loadCourse(course.id, raw, lessons, { pictures: new Set(pictures), picturesRequired: !course.preview });
+          // Its section checks, if it has any (content/courses/<id>/quizzes/).
+          if (existsSync(dir(`${course.dir}/quizzes`))) loadQuizzes(readAll(`${course.dir}/quizzes`), loaded.lessons, course.id);
         }
       } catch (error) {
         this.error(`The content has problems:\n${error instanceof Error ? error.message : String(error)}`);

@@ -19,6 +19,7 @@ import type { SettingsPart } from '../../app/lessonUrls';
 import { Button, Icon } from '../../components/ds';
 import { englishCatalog, type Catalog } from '../../content/catalog';
 import { useCatalog } from '../../content/useCatalog';
+import { PREVIEW_COURSES } from '../../content/courses';
 import { useI18n, type MessageKey } from '../../i18n';
 import { addedOn, learnersWithSameName, useLearnerSession } from '../../session';
 import {
@@ -75,11 +76,16 @@ const PROBLEM_KEYS: Record<LoadProblem, MessageKey> = {
   failed: 'pages.settings.transfer.load.problems.failed',
 };
 
-/** The lessons and section checks this version has; work for any other is left out of a file. */
+/**
+ * The lessons and section checks this version has, Our World's and the
+ * preview courses' (src/content/courses.ts); work for any other is left out
+ * of a file.
+ */
 function knownContent(catalog: Catalog = englishCatalog): KnownContent {
   return {
     lessonIds: new Set(catalog.getLessons().map((lesson) => lesson.id)),
-    sectionIds: new Set(catalog.getSections().map((section) => section.id)),
+    sectionIds: new Set([...catalog.getSections().map((section) => section.id), ...PREVIEW_COURSES.flatMap((course) => course.sectionIds ?? [])]),
+    lessonIdPrefixes: PREVIEW_COURSES.map((course) => course.lessonIdPrefix),
   };
 }
 
