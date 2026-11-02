@@ -133,3 +133,34 @@ Teachers' notes in L7–12 use no pronoun at all (imperatives, "pendidik" where 
 | credit (of a source) | kredit | keterangan sumber | As in "kredit foto"; flagged, because "kredit" is also a loan | L7–12 |
 | Card A … F (L12) | Kartu A … F | | | L7–12 |
 | Shared Histories (UNESCO) | Shared Histories (Sejarah Bersama) | | Title kept, glossed | L7–12 |
+
+### More from Lessons 1–6, course.json and section checks 1–2 (appended by the L1–6 translator)
+
+Corrections to the L1–6 conventions above: teachers' notes in L1–6 also use **no "Anda"** (imperatives only), because `scripts/check_translation.py id` rejects it in lesson files, as the L7–12 note says. L1–6 now follow the L7–12 choices for "Not sure yet" (*Belum yakin*), "Evidence move" (*Langkah membaca bukti*), "Misconceptions to address" (*Salah paham yang perlu diluruskan*; "… to catch" → *… yang perlu diperhatikan*), "Source caveats" (*Catatan tentang sumber*) and captions (*teks terjemahan*). Feedback in section checks ends "Lihat lagi Pelajaran N." as in L7–12.
+
+| English | Indonesian | Other options | Notes | Added by |
+|---|---|---|---|---|
+| Chinese (people, culture, merchants) | Tionghoa | | "Tiongkok" stays for the country (KEY_TERMS) | L1–6 |
+| Aim (teachers' notes) | Tujuan | | | L1–6 |
+| A sound answer … | Jawaban yang baik … | | | L1–6 |
+| editor (of letters) / edited | penyunting / disunting | editor | | L1–6 |
+| the sisters (Kartini and Roekmini) / her (younger) sister | kakak-beradik itu / adiknya | | Roekmini was younger | L1–6 |
+| her sisters (Kartini's) | saudara-saudara perempuannya | | | L1–6 |
+| rubber boom | masa jaya karet | ledakan karet, booming karet | | L1–6 |
+| acres | ekar | | Malaysian/Singaporean unit word; number kept | L1–6 |
+| wages / pay record | upah / catatan upah | gaji | | L1–6 |
+| processing / shipping (diagram steps) | pengolahan / pengiriman | pengapalan | | L1–6 |
+| profit | keuntungan; "untung" in the SAT05 diagram | laba | | L1–6 |
+| lashed-lug (boat technique) | lashed-lug (papan diikat lewat tonjolan kayu) | | Name kept, glossed once | L1–6 |
+| painted swirls | lukisan (berbentuk) pusaran | | | L1–6 |
+| trench (excavation) | parit galian | | | L1–6 |
+| compass rose | mawar angin | penunjuk arah mata angin | | L1–6 |
+| workshop (of a painter) | bengkel pelukis | sanggar, studio | Flagged | L1–6 |
+| commissioned (a painting) | dipesan | | | L1–6 |
+| genocide | genosida | | Only in the gloss of the Dutch archive's title | L1–6 |
+| harmed / hurt (people) | dicelakai / disakiti (simpler) | dirugikan | | L1–6 |
+| forced removal / displacement | pengusiran paksa / pengungsian | | | L1–6 |
+| key (legend of a diagram) | Keterangan | | As KEY_TERMS's "Keterangan peta" | L1–6 |
+| Memory of the World | Memory of the World (Ingatan Dunia) | | As L7–12 | L1–6 |
+| made-up (examples in section checks) | rekaan | | "Ini contoh rekaan." | L1–6 |
+| temple (Borobudur, section 4 description) | candi | | course.json | L1–6 |

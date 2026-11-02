@@ -159,3 +159,10 @@ Shared by the translators of Lessons 1 to 8 and 9 to 17, so the whole course use
 | one-sided | berat sebelah |  | 8 |
 | permission | izin |  | 8 |
 | Riverbend Learning Centre | Pusat Pembelajaran Riverbend |  | 8 |
+| wrong (a guess, match, mark or notice) / get it wrong | tidak betul / silap / tersilap (wrongly matched = tersilap dipadankan) | never "salah" for a mistake, as in Lessons 1 to 8; "salah satu" (one of) and "salah guna" (misuse) are fine | 9 to 17 |
+| fail (a tool) | tidak berfungsi dengan baik | not "gagal" | 17 |
+| Ms (a teacher) / Coach | Cikgu / Jurulatih | Cikgu Rana, Jurulatih Ana; names kept | 9, 13 |
+| students (at school) | pelajar | KEY_TERMS.md: "murid" is a primary-school pupil | 11 |
+| chat tool (AI) | alat sembang AI |  | 11 |
+| often / not always | selalunya / tidak sentiasa | "selalu" means often in Malaysia; "always" = sentiasa | everywhere |
+| Our World (course, in teachers' notes) | kursus Meneroka Dunia Kita | KEY_TERMS.md course title | 14 |

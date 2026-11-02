@@ -34,7 +34,7 @@
     "instructions": "Rancang pembantu dalam lima langkah. Pilih satu masalah rekaan Maple Street, atau masalah yang dihadapi ramai orang dalam komuniti yang kamu kenali. Jangan tulis nama sebenar atau maklumat peribadi sesiapa. Kamu boleh kembali dan mengubah mana-mana langkah.",
     "problems": [
       {
-        "text": "Maple Street (rekaan): plastik selalunya dibuang ke dalam tong yang salah di pusat itu."
+        "text": "Maple Street (rekaan): plastik selalunya dibuang ke dalam tong yang tidak sepatutnya di pusat itu."
       },
       {
         "text": "Maple Street (rekaan): bas selalunya lewat, dan orang menunggu dalam hujan."
@@ -54,7 +54,7 @@
       },
       {
         "title": "2. Patutkah AI digunakan?",
-        "prompt": "Fikirkan tiga soalan. Adakah pembantu itu perlu mengecam atau meneka berdasarkan banyak contoh? Bolehkah peraturan mudah atau seseorang melakukannya dengan lebih baik? Bolehkah ia menyakiti seseorang jika ia salah? Kemudian buat keputusan.",
+        "prompt": "Fikirkan tiga soalan. Adakah pembantu itu perlu mengecam atau meneka berdasarkan banyak contoh? Bolehkah peraturan mudah atau seseorang melakukannya dengan lebih baik? Bolehkah ia menyakiti seseorang jika ia silap? Kemudian buat keputusan.",
         "options": [
           {
             "text": "Ya, AI boleh membantu",
@@ -102,8 +102,8 @@
       },
       {
         "heading": "Rancang apa yang dipelajarinya dan apa yang boleh menjadi tidak kena",
-        "text": "Seterusnya, pereka merancang daripada apa pembantu itu akan belajar. Pembantu tong sampah kelab itu akan belajar daripada foto sampah yang dilabel oleh ahli kelab sebagai “plastik” atau “kertas”. Contoh berlabel ini ialah data latihannya. Seperti yang kamu pelajari dalam Pelajaran 8, sesuatu alat boleh gagal bagi apa-apa yang tiada dalam contohnya, jadi kelab itu juga menambah foto barang yang remuk dan kotor. Kemudian pereka menyenaraikan risiko: kamera berhampiran tong sampah tidak boleh sekali-kali merakam wajah orang. Akhir sekali, pereka menentukan siapa yang menyemak pembantu itu. Kelab itu akan melihat ke dalam tong sampah setiap hari Jumaat.",
-        "simpler": "Pembantu tong sampah belajar daripada foto sampah yang dilabel oleh ahli kelab. Ini ialah data latihannya. Alat boleh gagal apabila ada contoh yang tiada. Jadi, kelab itu menambah sampah yang remuk juga. Satu risiko: kamera tidak boleh sekali-kali merakam wajah. Akhir sekali, tentukan siapa yang menyemaknya: kelab itu melihat ke dalam tong setiap hari Jumaat."
+        "text": "Seterusnya, pereka merancang daripada apa pembantu itu akan belajar. Pembantu tong sampah kelab itu akan belajar daripada foto sampah yang dilabel oleh ahli kelab sebagai “plastik” atau “kertas”. Contoh berlabel ini ialah data latihannya. Seperti yang kamu pelajari dalam Pelajaran 8, sesuatu alat boleh tidak berfungsi dengan baik bagi apa-apa yang tiada dalam contohnya, jadi kelab itu juga menambah foto barang yang remuk dan kotor. Kemudian pereka menyenaraikan risiko: kamera berhampiran tong sampah tidak boleh sekali-kali merakam wajah orang. Akhir sekali, pereka menentukan siapa yang menyemak pembantu itu. Kelab itu akan melihat ke dalam tong sampah setiap hari Jumaat.",
+        "simpler": "Pembantu tong sampah belajar daripada foto sampah yang dilabel oleh ahli kelab. Ini ialah data latihannya. Alat boleh tidak berfungsi dengan baik apabila ada contoh yang tiada. Jadi, kelab itu menambah sampah yang remuk juga. Satu risiko: kamera tidak boleh sekali-kali merakam wajah. Akhir sekali, tentukan siapa yang menyemaknya: kelab itu melihat ke dalam tong setiap hari Jumaat."
       },
       {
         "heading": "Uji, dengar dan perbaiki",
@@ -241,7 +241,7 @@
   },
   "sources": [
     {
-      "label": "UNESCO: AI competency framework for students (rangka kerja kecekapan AI untuk pelajar; 2024)"
+      "label": "UNESCO: AI competency framework for students (rangka kerja kecekapan AI untuk pelajar, 2024)"
     },
     {
       "label": "UNICEF Innocenti (2025): Guidance on AI and children (panduan tentang AI dan kanak-kanak), versi 3.0"
