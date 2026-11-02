@@ -331,10 +331,48 @@ def check_consistency(lang, only):
     return warns
 
 
+# Another course (content/courses/<id>/, src/content/courses.ts), when the
+# checker runs with --course <id>: its English files, its translation in
+# content/courses/<id>/<lang>/ and its notes in docs/translation/<lang>/notes/courses/<id>/.
+COURSE = None
+
+
+def content_dir():
+    return os.path.join(T.ROOT, "content", "courses", COURSE) if COURSE else os.path.join(T.ROOT, "content")
+
+
+def notes_dir(lang):
+    base = os.path.join(T.ROOT, "docs", "translation", lang, "notes")
+    return os.path.join(base, "courses", COURSE) if COURSE else base
+
+
+def use_course(course):
+    """Points the file helpers at another course's files."""
+    global COURSE
+    COURSE = course
+    root = content_dir()
+
+    def lesson_files(lang):
+        eng_dir = os.path.join(root, "lessons")
+        return [(os.path.join(eng_dir, n), os.path.join(root, lang, "lessons", n))
+                for n in sorted(os.listdir(eng_dir)) if n.endswith(".json")]
+
+    def quiz_files(lang):
+        eng_dir = os.path.join(root, "quizzes")
+        if not os.path.isdir(eng_dir):
+            return []
+        return [(os.path.join(eng_dir, n), os.path.join(root, lang, "quizzes", n))
+                for n in sorted(os.listdir(eng_dir)) if n.endswith(".json")]
+
+    T.lesson_files = lesson_files
+    T.quiz_files = quiz_files
+    T.course_files = lambda lang: (os.path.join(root, "course.json"), os.path.join(root, lang, "course.json"))
+
+
 def stale(lang, name, english_strings):
     """Strings whose English changed after they were translated: the notes
     file keeps the English each translation was made from ("source")."""
-    path = os.path.join(T.ROOT, "docs", "translation", lang, "notes", f"{name}.json")
+    path = os.path.join(notes_dir(lang), f"{name}.json")
     if not os.path.exists(path):
         return []
     notes = T.load(path)
@@ -343,7 +381,7 @@ def stale(lang, name, english_strings):
         source = notes.get(key, {}).get("source")
         if source is not None and source != english:
             out.append(f"{key}: the English changed after this was translated; update the translation, "
-                       f"then its \"source\" in docs/translation/{lang}/notes/{name}.json")
+                       f"then its \"source\" in {os.path.relpath(path, T.ROOT)}")
     return out
 
 
@@ -361,6 +399,10 @@ def main(argv):
     if not argv:
         print(__doc__)
         return 2
+    if "--course" in argv:
+        i = argv.index("--course")
+        use_course(argv[i + 1])
+        argv = argv[:i] + argv[i + 2:]
     lang, only = argv[0], set(argv[1:])
     if lang not in STYLE:
         print(f"No house style for {lang!r} yet; add it to STYLE.")
@@ -373,13 +415,14 @@ def main(argv):
         print("   ERROR", e)
     for w in warns:
         print("   WARN ", w)
-    ui_en, _ = T.messages_files(lang)
-    sys.path.insert(0, os.path.join(os.path.dirname(__file__), "i18n"))
-    import review_sheet as S
-    ui_stale = stale(lang, "ui", S.ui_messages(T.load(ui_en)))
-    print(f"== {lang}: interface messages: {len(ui_stale)} warnings")
-    for w in ui_stale:
-        print("   WARN ", w)
+    if not COURSE:
+        ui_en, _ = T.messages_files(lang)
+        sys.path.insert(0, os.path.join(os.path.dirname(__file__), "i18n"))
+        import review_sheet as S
+        ui_stale = stale(lang, "ui", S.ui_messages(T.load(ui_en)))
+        print(f"== {lang}: interface messages: {len(ui_stale)} warnings")
+        for w in ui_stale:
+            print("   WARN ", w)
     for eng_path, tr_path in T.lesson_files(lang):
         name = os.path.basename(eng_path)[:-5]
         if only and name not in only:
@@ -413,7 +456,9 @@ def main(argv):
         if not src:
             continue
         lesson_tr = T.load(tr_path) if os.path.exists(tr_path) else None
-        errs, warns = check_visual(lang, os.path.join(T.ROOT, "content", src), os.path.join(T.ROOT, "content", lang, src), lesson_tr)
+        if not os.path.exists(os.path.join(content_dir(), src)):
+            continue  # a preview course's picture not drawn yet
+        errs, warns = check_visual(lang, os.path.join(content_dir(), src), os.path.join(content_dir(), lang, src), lesson_tr)
         total += len(errs)
         if errs or warns:
             print(f"== {lang}/{src}: {len(errs)} errors, {len(warns)} warnings")

@@ -121,7 +121,26 @@ function checkContent(): Plugin {
           const pictures = existsSync(pictureDir) ? readdirSync(pictureDir).filter((name) => /\.(svg|jpg)$/.test(name)).map((name) => `visuals/${name}`) : [];
           const loaded = loadCourse(course.id, raw, lessons, { pictures: new Set(pictures), picturesRequired: !course.preview });
           // Its section checks, if it has any (content/courses/<id>/quizzes/).
-          if (existsSync(dir(`${course.dir}/quizzes`))) loadQuizzes(readAll(`${course.dir}/quizzes`), loaded.lessons, course.id);
+          const quizzes = existsSync(dir(`${course.dir}/quizzes`)) ? readAll(`${course.dir}/quizzes`) : {};
+          if (Object.keys(quizzes).length > 0) loadQuizzes(quizzes, loaded.lessons, course.id);
+          // Its translations, if it has any (content/courses/<id>/<code>/): the same checks as Our World's.
+          for (const locale of LOCALES.filter((l) => l.content)) {
+            const own = (sub: string) => (existsSync(dir(`${course.dir}/${locale.code}/${sub}`)) ? readAll(`${course.dir}/${locale.code}/${sub}`) : {});
+            const coursePath = path.join(dir(`${course.dir}/${locale.code}`), 'course.json');
+            if (!existsSync(coursePath)) continue;
+            const translatedPictures = existsSync(dir(`${course.dir}/${locale.code}/visuals`)) ? readdirSync(dir(`${course.dir}/${locale.code}/visuals`)) : [];
+            checkTranslation(
+              locale.code,
+              { course: raw, lessons, quizzes, visuals: new Set(pictures) },
+              {
+                course: JSON.parse(readFileSync(coursePath, 'utf8')) as unknown,
+                lessons: own('lessons'),
+                quizzes: own('quizzes'),
+                visuals: new Set(translatedPictures.filter((name) => name.endsWith('.svg')).map((name) => `visuals/${name}`)),
+              },
+              course.id,
+            );
+          }
         }
       } catch (error) {
         this.error(`The content has problems:\n${error instanceof Error ? error.message : String(error)}`);

@@ -23,14 +23,24 @@ status=0
 "$PY" scripts/check_lesson.py content/lessons/*.json || status=1
 "$PY" scripts/check_quiz.py content/quizzes/*.json || status=1
 # Every other course (content/courses/<id>/, src/content/courses.ts): its
-# lessons against the same spec, with its own sections and its activities.
-# Digital World has no section checks or translations yet, so nothing else
-# of it is checked here.
+# lessons against the same spec, with its own sections and its activities,
+# its section checks if it has any, and its translations
+# (content/courses/<id>/<code>/) like Our World's.
 for lessons in content/courses/*/lessons; do
   [ -d "$lessons" ] || continue
+  dir=$(dirname "$lessons")
+  id=$(basename "$dir")
   echo
-  echo "Course: $(basename "$(dirname "$lessons")")"
+  echo "Course: $id"
   "$PY" scripts/check_lesson.py "$lessons"/*.json || status=1
+  if [ -d "$dir/quizzes" ]; then "$PY" scripts/check_quiz.py "$dir"/quizzes/*.json || status=1; fi
+  for course in "$dir"/*/course.json; do
+    [ -f "$course" ] || continue
+    lang=$(basename "$(dirname "$course")")
+    echo
+    echo "Course $id, translation: $lang"
+    "$PY" scripts/check_translation.py --course "$id" "$lang" || status=1
+  done
 done
 # Each language whose lessons are translated (content/<code>/, src/i18n/locales.ts)
 # against the English, with scripts/check_translation.py.

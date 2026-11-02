@@ -33,7 +33,10 @@ FIXED_KEYS = {"id", "oldId", "type", "color", "correct", "optional", "required",
               # Section checks: which lesson a question is from, and the skill it tests.
               "skill", "lesson",
               # A glossary word's one-line meanings in learners' languages (for English lessons).
-              "translations"}
+              "translations",
+              # Digital World's activities: where an activity goes, and the ids its parts point to.
+              "stage", "placement", "suggested", "gardenerSays", "addExamples", "test", "wrong",
+              "method", "mostMistakes", "sign", "kind"}
 
 # Whole branches that stay in English: notes for the team or the video's own
 # title and channel (the video itself stays in English).
@@ -41,6 +44,9 @@ FIXED_PATHS = {
     ("section",), ("changes",),
     ("watch", "title"), ("watch", "channel"), ("watch", "replacementSuggestion"),
     ("visual", "description"),
+    # A preview course's: its second picture's plan and credit, and an activity's notes for the team.
+    ("secondVisual", "description"), ("secondVisual", "credit"),
+    ("activity", "saves"), ("activity", "offline"),
 }
 
 # Arrays replaced whole rather than item by item.
