@@ -48,7 +48,7 @@ All eight types the drafts use have a player (`src/courses/digital-world/activit
 | Type | Lessons | What the learner does |
 |---|---|---|
 | `sort` | 1, 4, 7, 10 | Puts each item in a group (radio buttons per item); each placement says what most people would say and why. "Your groups" shows the groups so far. |
-| `train-model` | 2 | Ported from the dev prototype (`/dev/tiny-model`, now gone): labels leaves healthy or sick, trains a nearest-neighbour model (k = 1, `train-model/model.ts`), and sees its guesses beside the gardener's, round by round (4 of 6, 6 of 6, 0 of 2, 8 of 8), then free play. |
+| `train-model` | 2 | Ported from the dev prototype (`/dev/tiny-model`, now gone): labels leaves healthy or sick, trains a nearest-neighbour model (k = 1, `train-model/model.ts`), and sees its guesses beside the gardener's, round by round (4 of 6, 6 of 6, 0 of 2, 8 of 8, then 3 of 4 on leaves nobody has used), then free play. |
 | `compare-results` | 3 | Taps the group the made-up tool got wrong most often (bars with their numbers written on them), then answers the follow-up. |
 | `check-claim` | 5 | Reads a made-up post, the three questions to ask, then opens made-up sources in any order, and answers. |
 | `spot-signs` | 6 | Taps parts of four made-up messages; each tap says which warning sign it is, or that it isn't one. "Show all signs" is always there. |

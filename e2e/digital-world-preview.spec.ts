@@ -161,7 +161,7 @@ test.describe('with the preview on', () => {
     expect(errors).toEqual([]);
   });
 
-  test('trains the leaf model: 4 of 6, 6 of 6, 0 of 2, then 8 of 8', async ({ page }) => {
+  test('trains the leaf model: 4 of 6, 6 of 6, 0 of 2, 8 of 8, then 3 of 4 on leaves nobody has used', async ({ page }) => {
     await turnOn(page);
     await page.goto('/lesson/dw-how-ai-learns/read');
     const label = (description: string, choice: 'Healthy' | 'Sick') =>
@@ -198,6 +198,11 @@ test.describe('with the preview on', () => {
     await label('Long thin brown leaf with spots', 'Sick');
     await train.click();
     await expect(score).toHaveText('The model got 8 of 8 right.');
+
+    await page.getByRole('button', { name: 'Go on to “Round 4: leaves nobody has used”' }).click();
+    await page.getByRole('button', { name: 'Test the new leaves' }).click();
+    await expect(score).toHaveText('The model got 3 of 4 right.');
+    expect(await cutOff(page)).toEqual([]);
     expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
   });
 

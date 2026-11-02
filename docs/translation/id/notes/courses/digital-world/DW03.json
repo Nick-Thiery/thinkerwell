@@ -315,10 +315,10 @@
     "flag": true
   },
   "activity.freePlay": {
-    "source": "After Round 3, the learner can take examples out, or change a label, and test again. The model follows the learner's labels, even when they differ from the gardener's.",
-    "back": "After Round 3, the learner can take out examples or change a label, then test again. The model follows the learner's labels, even when they differ from the gardener's labels.",
+    "source": "After Round 4, the learner can take examples out, or change a label, and test again. The model follows the learner's labels, even when they differ from the gardener's.",
+    "back": "After Round 4, the learner can take examples out, or change a label, and test again. The model follows the learner's labels, even when they differ from the gardener's.",
     "flag": true,
-    "note": "\"Gardener\" as \"tukang kebun\", as the activity's interface (\"Kata tukang kebun\")."
+    "note": "Added or changed on 2 November 2026 with Round 4 (a new test set, from Justin's review); translated by Claude, not by the original translator. No separate back-translation was written: 'back' repeats the English source, which the translation follows closely."
   },
   "activity.explainGuess": {
     "source": "After each guess, show the example the model thought was most like the new leaf: “It looked most like this example, so the model said sick.”",
@@ -363,14 +363,16 @@
     "flag": true
   },
   "read.sections.2.text": {
-    "source": "Next, the team added four more examples, including a small new leaf and a yellow leaf with no spots. Now the model got all six new leaves right. Then the team tested two long, thin, striped leaves from a different plant. Both were healthy, but the model called them “sick”, because none of its examples looked similar. After the team added two striped examples, it got them right. Relevant examples with correct labels help. More examples alone do not always help, because a wrong label can make guesses worse. And a small test cannot prove the model will work on every new plant.",
-    "back": "Next, the team added four more examples, including a small newly grown leaf and a yellow leaf without spots. Now the model guessed all six new leaves correctly. Then the team tested two long, slim, striped leaves from another plant. Both were healthy, but the model called them “sick”, because none of its examples looked similar. After the team added two striped leaf examples, the model guessed them correctly. Suitable examples with correct labels help. More examples alone do not always help, because one wrong label can make guesses worse. And a small test cannot prove that the model will work for every new plant.",
-    "flag": true
+    "source": "Next, the team added four examples, such as a small new leaf and a yellow leaf. Now it got all six right. Then it was tested on two long, striped leaves from another plant. Both were healthy, but the model said “sick”: no example looked like them. With two striped examples, it got them right. On four leaves nobody had used, it got three right but called a long leaf turning yellow “healthy”. Relevant examples with correct labels help. More examples alone do not always help: a wrong label can make guesses worse. A small test cannot prove it works on every new plant.",
+    "back": "Next, the team added four examples, such as a small new leaf and a yellow leaf. Now it got all six right. Then it was tested on two long, striped leaves from another plant. Both were healthy, but the model said “sick”: no example looked like them. With two striped examples, it got them right. On four leaves nobody had used, it got three right but called a long leaf turning yellow “healthy”. Relevant examples with correct labels help. More examples alone do not always help: a wrong label can make guesses worse. A small test cannot prove it works on every new plant.",
+    "flag": true,
+    "note": "Added or changed on 2 November 2026 with Round 4 (a new test set, from Justin's review); translated by Claude, not by the original translator. No separate back-translation was written: 'back' repeats the English source, which the translation follows closely."
   },
   "read.sections.2.simpler": {
-    "source": "Next, the team added four more examples. Now it got all six right. Then the team tried a new plant with long, striped leaves. They are healthy, but the model said “sick”. No example looked like them. The team added two striped leaves. Then it got them right. Good examples with the right labels help. More examples alone do not always help. A wrong label can make it worse. A small test cannot prove it works on every new plant.",
-    "back": "Next, the team added four more examples. Now the model was right on all six. Then the team tried a new plant with long striped leaves. Those leaves are healthy, but the model said “sick”. No example was like them. The team added two striped leaves. Then the model guessed them correctly. Good examples with correct labels help. More examples alone do not always help. A wrong label can make it worse. A small test cannot prove the model works for every new plant.",
-    "flag": true
+    "source": "Next, the team added four examples. Now it got all six right. Then came a plant with long, striped leaves. They are healthy, but the model said “sick”. No example looked like them. With two striped examples, it got them right. On four leaves nobody had used, it got three right. Good examples with the right labels help. More examples alone do not always help. A wrong label can make it worse. A small test cannot prove it always works.",
+    "back": "Next, the team added four examples. Now it got all six right. Then came a plant with long, striped leaves. They are healthy, but the model said “sick”. No example looked like them. With two striped examples, it got them right. On four leaves nobody had used, it got three right. Good examples with the right labels help. More examples alone do not always help. A wrong label can make it worse. A small test cannot prove it always works.",
+    "flag": true,
+    "note": "Added or changed on 2 November 2026 with Round 4 (a new test set, from Justin's review); translated by Claude, not by the original translator. No separate back-translation was written: 'back' repeats the English source, which the translation follows closely."
   },
   "read.glossary.0.word": {
     "source": "training data",
@@ -739,9 +741,10 @@
     "flag": true
   },
   "educatorNotes.0": {
-    "source": "If the activity can't run (a printout, or a device without it), use the evidence table: it shows exactly what the activity does. Learners can also play it on paper: one learner is the model and may only copy the label of the most similar example card. Round 3 re-tests the same leaves the team had already seen. For a fairer check, draw two new leaves nobody has tested (for example a long striped leaf with a few brown spots) and let learners predict with the eight example cards.",
-    "back": "If this activity can't be run (a printout, or a device that doesn't have it), use the evidence table: it shows exactly what this activity does. Learners can also play it on paper: one learner is the model and may only copy the label from the most similar example card. Round 3 re-tests the same leaves the team had already seen. For a fairer check, draw two new leaves nobody has tested (for example a long striped leaf with a few brown spots) and let learners predict with the eight example cards.",
-    "flag": true
+    "source": "If the activity can't run (a printout, or a device without it), use the evidence table: it shows exactly what the activity does. Learners can also play it on paper: one learner is the model and may only copy the label of the most similar example card. Round 3 re-tests the same leaves the team had already seen; Round 4 is the fair check, on four leaves nobody has used. On paper, keep those four cards face down until Round 4.",
+    "back": "If the activity can't run (a printout, or a device without it), use the evidence table: it shows exactly what the activity does. Learners can also play it on paper: one learner is the model and may only copy the label of the most similar example card. Round 3 re-tests the same leaves the team had already seen; Round 4 is the fair check, on four leaves nobody has used. On paper, keep those four cards face down until Round 4.",
+    "flag": true,
+    "note": "Added or changed on 2 November 2026 with Round 4 (a new test set, from Justin's review); translated by Claude, not by the original translator. No separate back-translation was written: 'back' repeats the English source, which the translation follows closely."
   },
   "educatorNotes.1": {
     "source": "The model in the activity is deliberately simple: a nearest-neighbour model (k = 1) that copies the label of the most similar example. It is one supervised method; Cover and Hart's 1967 paper studied this rule, and Rosenblatt's perceptron, shown in July 1958, also learned from labelled examples. Real AI is far bigger, and other kinds of machine learning don't need a label on every example, but the points about examples and testing are the same.",
@@ -753,5 +756,59 @@
     "source": "If a learner labels an example differently from the gardener, the model follows the learner. That is a good moment to ask: who decides the right label?",
     "back": "If a learner labels an example differently from the gardener, the model follows that learner. That is a good moment to ask: who decides the right label?",
     "flag": true
+  },
+  "activity.tests.8.description": {
+    "source": "Big green leaf with one tiny mark",
+    "back": "Big green leaf with one tiny mark",
+    "flag": true,
+    "note": "Added or changed on 2 November 2026 with Round 4 (a new test set, from Justin's review); translated by Claude, not by the original translator. No separate back-translation was written: 'back' repeats the English source, which the translation follows closely."
+  },
+  "activity.tests.9.description": {
+    "source": "Leaf with brown edges and spots",
+    "back": "Leaf with brown edges and spots",
+    "flag": true,
+    "note": "Added or changed on 2 November 2026 with Round 4 (a new test set, from Justin's review); translated by Claude, not by the original translator. No separate back-translation was written: 'back' repeats the English source, which the translation follows closely."
+  },
+  "activity.tests.10.description": {
+    "source": "Long striped leaf with a few marks",
+    "back": "Long striped leaf with a few marks",
+    "flag": true,
+    "note": "Added or changed on 2 November 2026 with Round 4 (a new test set, from Justin's review); translated by Claude, not by the original translator. No separate back-translation was written: 'back' repeats the English source, which the translation follows closely."
+  },
+  "activity.tests.11.description": {
+    "source": "Long thin leaf turning yellow",
+    "back": "Long thin leaf turning yellow",
+    "flag": true,
+    "note": "Added or changed on 2 November 2026 with Round 4 (a new test set, from Justin's review); translated by Claude, not by the original translator. No separate back-translation was written: 'back' repeats the English source, which the translation follows closely."
+  },
+  "activity.rounds.4.title": {
+    "source": "Round 4: leaves nobody has used",
+    "back": "Round 4: leaves nobody has used",
+    "flag": true,
+    "note": "Added or changed on 2 November 2026 with Round 4 (a new test set, from Justin's review); translated by Claude, not by the original translator. No separate back-translation was written: 'back' repeats the English source, which the translation follows closely."
+  },
+  "activity.rounds.4.debrief": {
+    "source": "On four leaves nobody had used, the model got 3 of 4 right. It called a long, thin leaf that was turning yellow “healthy”, because it looked most like the striped healthy example. A fresh test shows what a model still gets wrong, and four leaves are still a small test.",
+    "back": "On four leaves nobody had used, the model got 3 of 4 right. It called a long, thin leaf that was turning yellow “healthy”, because it looked most like the striped healthy example. A fresh test shows what a model still gets wrong, and four leaves are still a small test.",
+    "flag": true,
+    "note": "Added or changed on 2 November 2026 with Round 4 (a new test set, from Justin's review); translated by Claude, not by the original translator. No separate back-translation was written: 'back' repeats the English source, which the translation follows closely."
+  },
+  "evidence.cards.0.rows.4.0": {
+    "source": "Round 4",
+    "back": "Round 4",
+    "flag": true,
+    "note": "Added or changed on 2 November 2026 with Round 4 (a new test set, from Justin's review); translated by Claude, not by the original translator. No separate back-translation was written: 'back' repeats the English source, which the translation follows closely."
+  },
+  "evidence.cards.0.rows.4.1": {
+    "source": "The same 8 examples",
+    "back": "The same 8 examples",
+    "flag": true,
+    "note": "Added or changed on 2 November 2026 with Round 4 (a new test set, from Justin's review); translated by Claude, not by the original translator. No separate back-translation was written: 'back' repeats the English source, which the translation follows closely."
+  },
+  "evidence.cards.0.rows.4.2": {
+    "source": "3 of 4 leaves nobody had used",
+    "back": "3 of 4 leaves nobody had used",
+    "flag": true,
+    "note": "Added or changed on 2 November 2026 with Round 4 (a new test set, from Justin's review); translated by Claude, not by the original translator. No separate back-translation was written: 'back' repeats the English source, which the translation follows closely."
   }
 }

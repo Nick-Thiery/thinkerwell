@@ -42,6 +42,11 @@
             "Putaran 3",
             "8 contoh: 6 contoh dari Putaran 2, ditambah daun panjang bergaris (sehat) dan daun panjang cokelat berbintik (sakit)",
             "8 dari 8"
+          ],
+          [
+            "Putaran 4",
+            "8 contoh yang sama",
+            "3 dari 4 daun yang belum pernah dipakai siapa pun"
           ]
         ]
       }
@@ -126,6 +131,18 @@
       },
       {
         "description": "Daun panjang dan ramping dengan garis-garis pucat"
+      },
+      {
+        "description": "Daun hijau besar dengan satu bekas kecil"
+      },
+      {
+        "description": "Daun dengan tepi cokelat dan bintik-bintik"
+      },
+      {
+        "description": "Daun panjang bergaris dengan beberapa bekas"
+      },
+      {
+        "description": "Daun panjang dan ramping yang mulai menguning"
       }
     ],
     "rounds": [
@@ -144,9 +161,13 @@
       {
         "title": "Putaran 3: tambahkan tanaman baru",
         "debrief": "Dengan contoh dari tanaman baru, model menebak semua 8 daun dengan benar. Tetapi tim sudah pernah melihat daun-daun uji ini, dan ujinya kecil. Untuk memeriksa dengan adil, uji model dengan daun yang belum pernah dipakai siapa pun."
+      },
+      {
+        "title": "Putaran 4: daun yang belum pernah dipakai siapa pun",
+        "debrief": "Pada empat daun yang belum pernah dipakai siapa pun, model menebak 3 dari 4 dengan benar. Model menyebut daun panjang dan ramping yang mulai menguning “sehat”, karena daun itu paling mirip dengan contoh daun bergaris yang sehat. Uji yang baru memperlihatkan apa yang masih keliru ditebak model, dan empat daun tetap merupakan uji yang kecil."
       }
     ],
-    "freePlay": "Setelah Putaran 3, pelajar bisa mengeluarkan contoh atau mengubah label, lalu menguji lagi. Model mengikuti label dari pelajar, walaupun berbeda dengan label tukang kebun.",
+    "freePlay": "Setelah Putaran 4, pelajar bisa mengeluarkan contoh atau mengubah label, lalu menguji lagi. Model mengikuti label dari pelajar, walaupun berbeda dengan label tukang kebun.",
     "explainGuess": "Setelah setiap tebakan, tampilkan contoh yang menurut model paling mirip dengan daun baru itu: “Daun itu paling mirip dengan contoh ini, jadi model bilang sakit.”"
   },
   "read": {
@@ -163,8 +184,8 @@
       },
       {
         "heading": "Contoh yang lebih baik membantu, tetapi pengujian ada batasnya",
-        "text": "Berikutnya, tim menambahkan empat contoh lagi, termasuk daun kecil yang baru tumbuh dan daun kuning tanpa bintik. Sekarang model menebak keenam daun baru dengan benar. Lalu tim menguji dua daun panjang, ramping, dan bergaris dari tanaman lain. Keduanya sehat, tetapi model menyebutnya “sakit”, karena tidak ada contohnya yang terlihat mirip. Setelah tim menambahkan dua contoh daun bergaris, model menebaknya dengan benar. Contoh yang sesuai dengan label yang benar itu membantu. Contoh yang lebih banyak saja tidak selalu membantu, karena satu label yang salah bisa membuat tebakan lebih buruk. Dan pengujian yang kecil tidak bisa membuktikan bahwa model itu akan bekerja untuk setiap tanaman baru.",
-        "simpler": "Berikutnya, tim menambahkan empat contoh lagi. Sekarang model benar untuk semua enam daun. Lalu tim mencoba tanaman baru dengan daun panjang bergaris. Daun-daun itu sehat, tetapi model bilang “sakit”. Tidak ada contoh yang mirip dengannya. Tim menambahkan dua daun bergaris. Lalu model menebaknya dengan benar. Contoh yang baik dengan label yang benar itu membantu. Contoh yang lebih banyak saja tidak selalu membantu. Label yang salah bisa membuatnya lebih buruk. Uji yang kecil tidak bisa membuktikan model bekerja untuk setiap tanaman baru."
+        "text": "Berikutnya, tim menambahkan empat contoh, seperti daun kecil yang baru tumbuh dan daun kuning. Sekarang model menebak keenamnya dengan benar. Lalu model diuji dengan dua daun panjang bergaris dari tanaman lain. Keduanya sehat, tetapi model bilang “sakit”: tidak ada contoh yang mirip dengannya. Dengan dua contoh daun bergaris, model menebaknya dengan benar. Pada empat daun yang belum pernah dipakai siapa pun, model benar tiga, tetapi menyebut daun panjang yang mulai menguning “sehat”. Contoh yang sesuai dengan label yang benar itu membantu. Contoh yang lebih banyak saja tidak selalu membantu: satu label yang salah bisa membuat tebakan lebih buruk. Pengujian yang kecil tidak bisa membuktikan bahwa model bekerja untuk setiap tanaman baru.",
+        "simpler": "Berikutnya, tim menambahkan empat contoh. Sekarang model benar untuk semua enam daun. Lalu datang tanaman dengan daun panjang bergaris. Daun-daun itu sehat, tetapi model bilang “sakit”. Tidak ada contoh yang mirip dengannya. Dengan dua contoh daun bergaris, model menebaknya dengan benar. Pada empat daun yang belum pernah dipakai, model benar tiga. Contoh yang baik dengan label yang benar itu membantu. Contoh yang lebih banyak saja tidak selalu membantu. Label yang salah bisa membuatnya lebih buruk. Uji yang kecil tidak bisa membuktikan model selalu bekerja."
       }
     ],
     "glossary": [
@@ -326,7 +347,7 @@
     }
   ],
   "educatorNotes": [
-    "Jika kegiatan ini tidak bisa dijalankan (lembar cetak, atau perangkat yang tidak memilikinya), pakai tabel bukti: tabel itu memperlihatkan persis apa yang dilakukan kegiatan ini. Pelajar juga bisa memainkannya di kertas: satu pelajar menjadi model dan hanya boleh menyalin label dari kartu contoh yang paling mirip. Putaran 3 menguji ulang daun-daun yang sama yang sudah pernah dilihat tim. Untuk pemeriksaan yang lebih adil, gambar dua daun baru yang belum pernah diuji siapa pun (misalnya daun panjang bergaris dengan beberapa bintik cokelat) dan biarkan pelajar memprediksi dengan delapan kartu contoh.",
+    "Jika kegiatan ini tidak bisa dijalankan (lembar cetak, atau perangkat yang tidak memilikinya), pakai tabel bukti: tabel itu memperlihatkan persis apa yang dilakukan kegiatan ini. Pelajar juga bisa memainkannya di kertas: satu pelajar menjadi model dan hanya boleh menyalin label dari kartu contoh yang paling mirip. Putaran 3 menguji ulang daun-daun yang sama yang sudah pernah dilihat tim; Putaran 4 adalah pemeriksaan yang adil, dengan empat daun yang belum pernah dipakai siapa pun. Di kertas, simpan keempat kartu itu tertutup sampai Putaran 4.",
     "Model dalam kegiatan ini sengaja dibuat sederhana: model tetangga terdekat (k = 1) yang menyalin label dari contoh yang paling mirip. Ini salah satu metode pembelajaran terawasi; makalah Cover dan Hart tahun 1967 meneliti aturan ini, dan perceptron buatan Rosenblatt, yang diperlihatkan pada Juli 1958, juga belajar dari contoh berlabel. AI yang sebenarnya jauh lebih besar, dan jenis pembelajaran mesin lain tidak membutuhkan label pada setiap contoh, tetapi hal-hal tentang contoh dan pengujian tetap sama.",
     "Jika seorang pelajar memberi label pada sebuah contoh secara berbeda dari tukang kebun, model mengikuti pelajar itu. Itu saat yang baik untuk bertanya: siapa yang menentukan label yang benar?"
   ]

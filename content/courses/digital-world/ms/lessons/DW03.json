@@ -42,6 +42,11 @@
             "Pusingan 3",
             "8 contoh: 6 contoh daripada Pusingan 2, serta sehelai daun panjang berjalur (sihat) dan sehelai daun panjang berwarna perang dan bertompok (sakit)",
             "8 daripada 8"
+          ],
+          [
+            "Pusingan 4",
+            "8 contoh yang sama",
+            "3 daripada 4 helai daun yang belum pernah digunakan"
           ]
         ]
       }
@@ -126,6 +131,18 @@
       },
       {
         "description": "Daun panjang dan nipis dengan jalur pucat"
+      },
+      {
+        "description": "Daun hijau besar dengan satu tanda halus"
+      },
+      {
+        "description": "Daun dengan tepi perang dan bertompok"
+      },
+      {
+        "description": "Daun panjang berjalur dengan beberapa tanda"
+      },
+      {
+        "description": "Daun panjang dan nipis yang mula menguning"
       }
     ],
     "rounds": [
@@ -144,9 +161,13 @@
       {
         "title": "Pusingan 3: tambah tumbuhan baharu",
         "debrief": "Dengan contoh daripada tumbuhan baharu itu, model itu meneka kesemua 8 dengan betul. Tetapi pasukan itu sudah pun melihat daun ujian ini, dan ujiannya kecil. Untuk menyemak dengan adil, uji model itu dengan daun yang belum pernah digunakan oleh sesiapa."
+      },
+      {
+        "title": "Pusingan 4: daun yang belum pernah digunakan oleh sesiapa",
+        "debrief": "Pada empat helai daun yang belum pernah digunakan oleh sesiapa, model itu meneka 3 daripada 4 dengan betul. Ia menyebut sehelai daun panjang dan nipis yang mula menguning “sihat”, kerana daun itu paling serupa dengan contoh daun berjalur yang sihat. Ujian baharu menunjukkan tekaan yang masih tidak betul, dan empat helai daun masih merupakan ujian yang kecil."
       }
     ],
-    "freePlay": "Selepas Pusingan 3, pelajar boleh mengeluarkan contoh, atau menukar label, dan menguji sekali lagi. Model itu mengikut label pelajar, walaupun label itu berbeza daripada label tukang kebun.",
+    "freePlay": "Selepas Pusingan 4, pelajar boleh mengeluarkan contoh, atau menukar label, dan menguji sekali lagi. Model itu mengikut label pelajar, walaupun label itu berbeza daripada label tukang kebun.",
     "explainGuess": "Selepas setiap tekaan, tunjukkan contoh yang paling serupa dengan daun baharu itu menurut model: “Daun ini paling serupa dengan contoh ini, jadi model itu berkata sakit.”"
   },
   "read": {
@@ -163,8 +184,8 @@
       },
       {
         "heading": "Contoh yang lebih baik membantu, tetapi ujian ada hadnya",
-        "text": "Seterusnya, pasukan itu menambah empat lagi contoh, termasuk sehelai daun muda yang kecil dan sehelai daun kuning tanpa tompok. Kini model itu meneka kesemua enam helai daun baharu dengan betul. Kemudian pasukan itu menguji dua helai daun yang panjang, nipis dan berjalur daripada tumbuhan lain. Kedua-duanya sihat, tetapi model itu menyebutnya “sakit”, kerana tiada contohnya yang kelihatan serupa. Selepas pasukan itu menambah dua contoh berjalur, model itu meneka dengan betul. Contoh yang berkaitan dengan label yang betul membantu. Lebih banyak contoh sahaja tidak sentiasa membantu, kerana label yang tidak betul boleh menjadikan tekaan lebih teruk. Dan ujian yang kecil tidak dapat membuktikan model itu akan berfungsi untuk setiap tumbuhan baharu.",
-        "simpler": "Seterusnya, pasukan itu menambah empat lagi contoh. Kini model itu meneka kesemua enam dengan betul. Kemudian pasukan itu mencuba tumbuhan baharu dengan daun yang panjang dan berjalur. Daun itu sihat, tetapi model itu kata “sakit”. Tiada contoh yang serupa dengannya. Pasukan itu menambah dua daun berjalur. Kemudian model itu meneka dengan betul. Contoh yang baik dengan label yang betul membantu. Lebih banyak contoh sahaja tidak sentiasa membantu. Label yang tidak betul boleh menjadikannya lebih teruk. Ujian yang kecil tidak dapat membuktikan ia berfungsi untuk setiap tumbuhan baharu."
+        "text": "Seterusnya, pasukan itu menambah empat contoh, seperti sehelai daun muda yang kecil dan sehelai daun kuning. Kini model itu meneka kesemua enam dengan betul. Kemudian model itu diuji dengan dua helai daun panjang berjalur daripada tumbuhan lain. Kedua-duanya sihat, tetapi model itu kata “sakit”: tiada contoh yang serupa dengannya. Dengan dua contoh berjalur, model itu meneka dengan betul. Pada empat helai daun yang belum pernah digunakan oleh sesiapa, model itu meneka tiga dengan betul, tetapi menyebut sehelai daun panjang yang mula menguning “sihat”. Contoh yang berkaitan dengan label yang betul membantu. Lebih banyak contoh sahaja tidak sentiasa membantu: label yang tidak betul boleh menjadikan tekaan lebih teruk. Ujian yang kecil tidak dapat membuktikan model itu berfungsi untuk setiap tumbuhan baharu.",
+        "simpler": "Seterusnya, pasukan itu menambah empat contoh. Kini model itu meneka kesemua enam dengan betul. Kemudian datang tumbuhan dengan daun yang panjang dan berjalur. Daun itu sihat, tetapi model itu kata “sakit”. Tiada contoh yang serupa dengannya. Dengan dua contoh berjalur, model itu meneka dengan betul. Pada empat helai daun yang belum pernah digunakan, ia meneka tiga dengan betul. Contoh yang baik dengan label yang betul membantu. Lebih banyak contoh sahaja tidak sentiasa membantu. Label yang tidak betul boleh menjadikannya lebih teruk. Ujian yang kecil tidak dapat membuktikan ia sentiasa berfungsi."
       }
     ],
     "glossary": [
@@ -323,7 +344,7 @@
     }
   ],
   "educatorNotes": [
-    "Jika aktiviti ini tidak dapat dijalankan (cetakan, atau peranti yang tidak mempunyainya), gunakan jadual bukti: jadual itu menunjukkan dengan tepat apa yang dilakukan oleh aktiviti ini. Pelajar juga boleh memainkannya di atas kertas: seorang pelajar menjadi model dan hanya boleh menyalin label kad contoh yang paling serupa. Pusingan 3 menguji semula daun yang sama yang sudah dilihat oleh pasukan itu. Untuk semakan yang lebih adil, lukis dua helai daun baharu yang belum diuji oleh sesiapa (contohnya sehelai daun panjang berjalur dengan beberapa tompok perang) dan biarkan pelajar meramal dengan lapan kad contoh itu.",
+    "Jika aktiviti ini tidak dapat dijalankan (cetakan, atau peranti yang tidak mempunyainya), gunakan jadual bukti: jadual itu menunjukkan dengan tepat apa yang dilakukan oleh aktiviti ini. Pelajar juga boleh memainkannya di atas kertas: seorang pelajar menjadi model dan hanya boleh menyalin label kad contoh yang paling serupa. Pusingan 3 menguji semula daun yang sama yang sudah dilihat oleh pasukan itu; Pusingan 4 ialah semakan yang adil, dengan empat helai daun yang belum pernah digunakan oleh sesiapa. Di atas kertas, letakkan empat kad itu terlungkup sehingga Pusingan 4.",
     "Model dalam aktiviti ini sengaja dibuat mudah: model jiran terdekat (k = 1) yang menyalin label contoh yang paling serupa. Ia satu kaedah berselia; kertas kerja Cover dan Hart pada tahun 1967 mengkaji peraturan ini, dan perceptron Rosenblatt, yang ditunjukkan pada Julai 1958, juga belajar daripada contoh berlabel. AI sebenar jauh lebih besar, dan jenis pembelajaran mesin yang lain tidak memerlukan label pada setiap contoh, tetapi perkara tentang contoh dan ujian tetap sama.",
     "Jika seorang pelajar melabel sesuatu contoh secara berbeza daripada tukang kebun, model itu mengikut pelajar. Itu masa yang baik untuk bertanya: siapa yang menentukan label yang betul?"
   ]

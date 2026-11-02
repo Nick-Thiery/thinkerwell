@@ -133,7 +133,7 @@ English first, following `docs/content/SPEC.md` (British spelling, reading level
 5. **Fix it.** Two examples of the new plant are added. Test again: all right.
 6. **Free play.** The learner can take examples out or change a label and test again. The model follows the learner's labels, even when they differ from the gardener's.
 
-With the gardener's labels, the rounds give 4 of 6, 6 of 6, 0 of 2 for the new plant, then 8 of 8. The card set in `DW02.json` was checked with a small script to give exactly these results, and each round stores what to expect (`expectedIfLabelledLikeTheGardener`). The app's unit tests should check the same.
+With the gardener's labels, the rounds give 4 of 6, 6 of 6, 0 of 2 for the new plant, then 8 of 8, and (added November 2026, from Justin's review) 3 of 4 on four leaves no earlier round used: a long leaf turning yellow looks most like the striped healthy example. The card set in `DW02.json` was checked with a small script to give exactly these results, and each round stores what to expect (`expectedIfLabelledLikeTheGardener`). The app's unit tests should check the same.
 
 ### How it works on the device
 
