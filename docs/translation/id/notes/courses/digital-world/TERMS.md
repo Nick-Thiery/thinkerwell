@@ -115,3 +115,9 @@ Two translators work on the course at the same time (Lessons 1–8 and course.js
 | colonialism | penjajahan (kolonialisme) | | | L1–8 |
 | fish farm | tambak ikan | kolam ikan | | L1–8 |
 | power cut | pemadaman listrik | | | L1–8 |
+| community centre, "the centre" | balai warga | pusat komunitas | Lessons 10, 13 and 17 | L9–17 |
+| students (at a school in a story) / learners (Thinkerwell's) | murid / pelajar | siswa | "pelajar" stays KEY_TERMS's word for the course's learners | L9–17 |
+| student council | OSIS | dewan siswa | Lesson 16; refugee learners may not know the abbreviation | L9–17 |
+| Ms / Coach (titles with a name) | Bu / Pelatih | | "Bu Rana", "Pelatih Ana"; names kept | L9–17 |
+| the fair (fun fair) | pasar malam | | Lesson 12 | L9–17 |
+| spam filter | penyaring pesan sampah | filter spam | Lesson 16 | L9–17 |
