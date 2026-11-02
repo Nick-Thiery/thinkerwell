@@ -1501,6 +1501,7 @@
   "print": {
     "print": "Cetak",
     "brand": "Thinkerwell · Meneroka Dunia Kita",
+    "brandCourse": "Thinkerwell · {course}",
     "printLesson": "Cetak pelajaran ini",
     "lessonPageTitle": "Pelajaran {number}: cetak",
     "backToLesson": "Kembali ke pelajaran",
@@ -1619,7 +1620,7 @@
     "activity": {
       "eyebrow": "Aktiviti",
       "guideTitle": "Aktiviti ini",
-      "guideIntro": "Apa yang pelajar lakukan pada peranti, beserta apa yang mungkin dikatakan oleh kebanyakan orang, dan jawapannya. Kelas juga boleh melakukannya di atas kertas melalui paparan cetak."
+      "guideIntro": "Apa yang pelajar lakukan pada peranti, berserta satu jawapan yang mungkin dan sebabnya. Kelas juga boleh melakukannya di atas kertas daripada paparan cetak."
     },
     "banner": {
       "body": "Digital World ialah draf. Seorang penyelidik AI dan sebuah organisasi rakan kongsi masih perlu menyemaknya. Hanya peranti ini yang memaparkannya.",
@@ -1677,7 +1678,7 @@
     },
     "sort": {
       "empty": "Belum ada apa-apa di sini.",
-      "mostPeople": "Kebanyakan orang akan berkata: {group}.",
+      "oneAnswer": "Satu jawapan yang mungkin: {group}.",
       "notPlaced": "Belum diletakkan: {count}",
       "yourGroups": "Kumpulan kamu"
     },

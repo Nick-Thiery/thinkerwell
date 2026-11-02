@@ -5,7 +5,7 @@
   "section": "truth-and-power",
   "title": "Project: design an AI helper",
   "essentialQuestion": "How would you design an AI helper that is useful, fair and safe?",
-  "learningGoal": "Plan an AI helper for a problem many people share: decide if AI should be used, what it learns from, what could go wrong, and how to improve it after feedback.",
+  "learningGoal": "Plan a helper for a problem many people share: say who it helps, whether AI fits, how to check that it works, and how to improve it after feedback.",
   "estimatedMinutes": [
     40,
     60
@@ -20,25 +20,21 @@
     ]
   },
   "evidence": {
-    "fictional": true,
-    "label": "Fictional example created for this lesson.",
-    "question": "For each plan, should AI be used? What could go wrong, and who checks it?",
+    "fictional": false,
+    "label": null,
+    "question": "For each project, what problem does it start from, what does the AI do, and what do people still do? What evidence is there that it works?",
     "cards": [
       {
         "type": "cases",
-        "title": "Three plans from the Maple Street design club",
+        "title": "Two real projects in Southeast Asia",
         "cases": [
           {
-            "name": "Plan 1: the bin helper",
-            "body": "Problem: people often put plastic in the paper bin. Idea: a camera above the bins looks at each item and lights up the right bin. It learns from photos of rubbish that the club labels “plastic” or “paper”. Risk: crushed or dirty items look different, and the camera must never film faces. Who checks: the club looks in the bins every Friday."
+            "name": "Eco Pulse, Malaysia: a student prototype",
+            "body": "The problem: the students wanted to make recycling quicker and easier for the people who do it. Who built it: three 15-year-old students at SMK Sultan Ismail, a secondary school in Johor. What the AI does: an app looks at a photo of a recyclable item and estimates its weight and value. The evidence: it won an award in a 2024 student competition run by Samsung in Malaysia. The organiser says it is precise, but no test results have been published. A question: how well does it work with dirty or crushed items?"
           },
           {
-            "name": "Plan 2: the bus helper",
-            "body": "Problem: the bus is often late, and people wait in the rain. Idea: a tool says when the bus will probably come, from notes of when it came over two months. Risk: new roadworks can change the times. Who checks: the club compares its answers with the real times each week."
-          },
-          {
-            "name": "Plan 3: the friend chooser",
-            "body": "Problem: new learners can feel alone. Idea: a tool that chooses who should be friends. The club decided this is not a job for AI, because people should choose their own friends. Instead, they planned a buddy group run by people."
+            "name": "Traffy Fondue, Thailand: a public service in use",
+            "body": "The problem: residents see broken roads, floods and broken street lights, and need the right office to fix them. Who built and uses it: a national science agency built it. Residents send a report with a photo and a place, and city and local offices answer. What the AI does: it sorts each report by type and sends it to the right office. People there decide what to do and do the repairs. The evidence: its makers say it received over 940,000 reports from 2022 to 2024. That shows it is used, not how well each problem was fixed. A question: how can people without a smartphone or the internet report a problem?"
           }
         ]
       }
@@ -49,19 +45,19 @@
     "stage": "write",
     "placement": "before-prompt",
     "title": "Plan your AI helper",
-    "instructions": "Plan a helper in five steps. Pick a problem from the lesson, or a problem that many people share in a community you know. Don't write anyone's real name or private information. You can go back and change any step.",
+    "instructions": "Plan a helper in five steps. Pick one of the made-up Maple Street problems, or a problem that many people share in a community you know. Don't write anyone's real name or private information. You can go back and change any step.",
     "problems": [
       {
         "id": "bins",
-        "text": "Plastic often goes in the wrong bin at the centre."
+        "text": "Maple Street (made up): plastic often goes in the wrong bin at the centre."
       },
       {
         "id": "bus",
-        "text": "The bus is often late, and people wait in the rain."
+        "text": "Maple Street (made up): the bus is often late, and people wait in the rain."
       },
       {
         "id": "tap",
-        "text": "The garden tap at the centre is often left running."
+        "text": "Maple Street (made up): the garden tap at the centre is often left running."
       },
       {
         "id": "own",
@@ -74,26 +70,26 @@
         "id": "problem",
         "title": "1. The problem",
         "kind": "text",
-        "prompt": "What is the problem, and who does it affect?",
+        "prompt": "What is the problem, and who does it affect? How would a helper make things better for them?",
         "starter": "The problem is ... It affects ..."
       },
       {
         "id": "should-ai",
         "title": "2. Should AI be used?",
         "kind": "choice",
-        "prompt": "Think about three questions. Does the helper need to guess from many examples? Could a simple rule or a person do it better? Could it hurt someone if it is wrong? Then decide.",
+        "prompt": "Think about three questions. Does the helper need to recognise or guess from many examples? Could a simple rule or a person do it better? Could it hurt someone if it is wrong? Then decide.",
         "options": [
           {
             "text": "Yes, AI could help",
-            "feedback": "Go on to step 3. Keep the risks in mind."
+            "feedback": "Go on to step 3. In your plan, say why AI fits: what must it recognise or guess?"
           },
           {
             "text": "No, another way is better",
-            "feedback": "That is a good design choice too. Write the other way in your plan, like the club's buddy group."
+            "feedback": "That is a good design choice too. Write the other way, and why it fits better, like the club's buddy group."
           },
           {
             "text": "Not sure yet",
-            "feedback": "That is fine. Go on, and decide again after step 4."
+            "feedback": "That is fine. Write what you still need to find out, and decide again after step 4."
           }
         ]
       },
@@ -101,15 +97,15 @@
         "id": "learns",
         "title": "3. What it learns from",
         "kind": "text",
-        "prompt": "What examples would it learn from? Who would label them? Whose examples might be missing?",
+        "prompt": "What examples would it learn from? Who would label them? Whose examples might be missing? If you chose another way, say what it needs instead.",
         "starter": "It would learn from ... Examples of ___ might be missing."
       },
       {
         "id": "risks",
-        "title": "4. Risks and checks",
+        "title": "4. Risks, tests and checks",
         "kind": "text",
-        "prompt": "What could go wrong? Who would check it, and how?",
-        "starter": "One risk is ... ___ would check it by ..."
+        "prompt": "What could go wrong? How would you test that it works? Who would check it, and how often?",
+        "starter": "One risk is ... To test it, ... ___ would check it by ..."
       },
       {
         "id": "feedback",
@@ -119,7 +115,8 @@
         "questions": [
           "Who might this helper leave out?",
           "What happens if it makes a mistake?",
-          "Is there a simpler way without AI?"
+          "Is there a simpler way without AI?",
+          "What evidence would show that it helps?"
         ],
         "starter": "After feedback, I changed ... because ..."
       }
@@ -131,18 +128,18 @@
     "sections": [
       {
         "heading": "Start with the problem, not the tool",
-        "text": "In this project, you will plan an AI helper for a problem that many people share in a community. Good designers don't start with the tool. They start with the problem and the people it affects. Then they ask a difficult question: should AI be used here at all? AI is useful when a helper must guess from many examples, like telling plastic from paper. But sometimes a simple rule or a person does the job better. The Maple Street design club wanted a tool to choose who should be friends. They decided this is not a job for AI, because people should choose their own friends.",
-        "simpler": "In this project, you plan an AI helper. It is for a problem many people share. Good designers start with the problem. They think about the people it affects. Then they ask: should AI be used here? AI is good when a helper must guess from many examples. It can tell plastic from paper. But sometimes a simple rule is better. The club did not want AI to choose friends. People should choose their own friends."
+        "text": "In this project, you will plan a helper for a problem that many people share in a community. Good designers start with the problem and the people it affects, not the tool. In Malaysia, three 15-year-old students wanted to make recycling easier, so they built a prototype app, Eco Pulse, that estimates the weight and value of items from a photo. Then designers ask: should AI be used here at all? AI can help when a helper must recognise or guess from many examples. But sometimes a simple rule or a person does the job better. The made-up Maple Street design club decided a tool should not choose friends, because people should choose their own.",
+        "simpler": "You will plan a helper for a shared problem. Good designers start with the problem and the people it affects. In Malaysia, three 15-year-old students wanted easier recycling. They built a prototype app, Eco Pulse. From a photo of rubbish, it tries to tell the weight and value. Should AI be used here? AI can help when a helper must learn from many examples. Sometimes a simple rule or a person is better. The made-up Maple Street club said no to a tool that chooses friends. People should choose their own."
       },
       {
         "heading": "Plan what it learns and what could go wrong",
-        "text": "Next, a designer plans what the helper will learn from. The club's bin helper would learn from photos of rubbish that club members label “plastic” or “paper”. This is its training data. As you learned in Lesson 8, a tool can fail for anything missing from its examples, so the club adds photos of crushed and dirty items too. Then the designer lists the risks. A camera near the bins must never film people's faces, because that would break their privacy. Finally, the designer decides who checks the helper. The club will look inside the bins every Friday to see if the helper is working.",
-        "simpler": "Next, plan what the helper learns from. The bin helper learns from photos of rubbish. Club members label each photo. This is its training data. A tool can fail when examples are missing. So the club adds photos of crushed rubbish too. Then list the risks. The camera must never film faces. That would break people's privacy. Last, decide who checks it. The club looks in the bins every Friday."
+        "text": "Next, a designer plans what the helper will learn from. The club's bin helper would learn from photos of rubbish that club members label “plastic” or “paper”. These labelled examples are its training data. As you learned in Lesson 8, a tool can fail for anything missing from its examples, so the club adds photos of crushed and dirty items too. Then the designer lists the risks: a camera near the bins must never film people's faces. Finally, the designer decides who checks the helper. The club will look inside the bins every Friday.",
+        "simpler": "The bin helper learns from photos of rubbish that club members label. These are its training data. A tool can fail when examples are missing. So the club adds crushed rubbish too. One risk: the camera must never film faces. Last, decide who checks it: the club looks in the bins every Friday."
       },
       {
         "heading": "Test, listen and improve",
-        "text": "No design is perfect the first time. Designers test their plan with the people who will use it, listen to feedback, change the plan and test it again. This is called iteration, and it never really stops, because the world keeps changing. The club's bus helper learned from two months of notes about when the bus came. Then new roadworks started, and its answers were often wrong. So the club added new examples and compared its answers with the real times each week. When you share your plan, ask a partner for feedback, and change at least one thing. Your new plan is called version 2.",
-        "simpler": "No plan is perfect the first time. Designers test it with users. They listen to feedback. They change the plan. Then they test again. This is called iteration. The bus helper learned from notes about the bus. Then workers started fixing the road. Its answers were often wrong. So the club added new examples. Share your plan with a partner. Ask for feedback. Change one thing. Now you have version 2."
+        "text": "Designers also ask what evidence shows that a helper works. Eco Pulse won a student award, but no test results have been published yet. In Thailand, Traffy Fondue's AI sorts residents' reports about problems such as floods and sends each to the right office, where people fix them. Its makers count over 940,000 reports, but a count shows use, not how well problems were fixed. Designers test their plan with users, listen to feedback, change it and test again. This is called iteration. When the club's bus-timing helper went wrong after new roadworks, they added new examples. Share your plan, change one thing, and you have version 2.",
+        "simpler": "What shows that it works? Eco Pulse won an award, but no test results are published yet. In Thailand, Traffy Fondue's AI sorts reports about problems like floods. It sends each to the right office, where people fix them. Its makers count over 940,000 reports. That shows use, not how well problems were fixed. Designers test with users, listen to feedback and change the plan. This is called iteration. Change one thing for version 2."
       }
     ],
     "glossary": [
@@ -155,8 +152,16 @@
         "example": "The Maple Street club are designers. They plan helpers."
       },
       {
+        "word": "prototype",
+        "forms": [
+          "prototypes"
+        ],
+        "definition": "A first test version of something, made to try out an idea.",
+        "example": "Eco Pulse is a prototype. It still needs testing."
+      },
+      {
         "word": "training data",
-        "definition": "The examples a computer learns from, each with the right answer.",
+        "definition": "Examples used to build an AI tool, like labelled photos.",
         "example": "The bin helper's training data is labelled photos of rubbish."
       },
       {
@@ -202,40 +207,40 @@
       },
       {
         "type": "choice",
-        "question": "The bus helper is often wrong after new roadworks. What should the club do?",
+        "question": "What does the evidence show about Eco Pulse so far?",
         "options": [
           {
-            "text": "Stop asking people what they think",
-            "correct": false,
-            "feedback": "Not quite. Feedback helps a plan improve. Read the third section."
-          },
-          {
-            "text": "Keep the plan exactly as it is",
-            "correct": false,
-            "feedback": "Not quite. The world changed, so the plan must change too. Read the third section."
-          },
-          {
-            "text": "Add new examples and test again",
+            "text": "It is a prototype that won an award",
             "correct": true,
-            "feedback": "Yes. This is iteration: change the plan, then test it again."
+            "feedback": "Yes. An award is a good start. It is not proof that the app works well for everyone."
+          },
+          {
+            "text": "It works well everywhere in Malaysia",
+            "correct": false,
+            "feedback": "Not quite. It is a student prototype, and no test results are published yet. Read the third section."
+          },
+          {
+            "text": "It was never built or tried",
+            "correct": false,
+            "feedback": "Not quite. The students built a prototype app. Read the first section."
           }
         ]
       },
       {
         "type": "think",
-        "question": "What problem that many people share could an AI helper help with? You can pick one from the lesson.",
-        "placeholder": "A problem many people share is ... An AI helper could ...",
+        "question": "What problem that many people share could a helper help with? You can pick one from the lesson.",
+        "placeholder": "A problem many people share is ... A helper could ...",
         "optional": true
       }
     ]
   },
   "write": {
-    "prompt": "Write your plan for an AI helper. Say the problem, whether AI should be used, what it learns from, one risk, and one change you made after feedback.",
+    "prompt": "Write your plan for a helper. Say the problem and who it helps, whether AI fits or what you still need to find out, how you would check it works, and one change after feedback.",
     "sentenceStarters": [
       "The problem is ... It affects ...",
-      "I think AI should / should not be used because ...",
-      "It would learn from ...",
-      "One risk is ..., so ___ would check it.",
+      "A helper would make things better by ...",
+      "I think AI fits / another way fits / I still need to find out ..., because ...",
+      "To check it works, ___ would ...",
       "After feedback, I changed ..."
     ],
     "planningBoxes": [
@@ -245,15 +250,15 @@
       "A question I still have"
     ],
     "selfCheck": [
-      "I said the problem and whether AI should be used.",
-      "I said what it learns from and one risk.",
-      "I said one change I made after feedback."
+      "I said the problem, who it affects and how a helper would help.",
+      "I said if AI fits, or what I still need to find out, and why.",
+      "I said how to check it works, and one change after feedback."
     ],
-    "example": "The problem is that plastic often goes in the paper bin at the centre. It affects everyone, because the bins get mixed up. I think AI could help, because it must guess from lots of examples. It would learn from photos of rubbish that we label “plastic” or “paper”. One risk is that the camera films people, so it must point only at the bins. After feedback, I changed my plan to add photos of crushed bottles, because they were missing."
+    "example": "The problem is that plastic often goes in the paper bin at the centre. It affects the people who sort the bins by hand. A helper would make sorting faster. I think AI fits, because it must recognise many kinds of rubbish from photos. It would learn from photos we label “plastic” or “paper”. To check it works, the club would test it on new photos and look in the bins every Friday. After feedback, I changed my plan to add photos of crushed bottles."
   },
   "speak": {
-    "partnerTask": "Explain your plan to a partner in one minute. Your partner asks one question from step 5. Change one thing, and say your version 2.",
-    "independentTask": "Say your plan out loud. Then ask yourself who it might leave out, and answer."
+    "partnerTask": "Explain your plan to a partner in one minute: the problem, who it helps, and why AI fits or not. Your partner asks one question from step 5. Change one thing, and say your version 2.",
+    "independentTask": "Say your plan out loud. Then ask yourself who it might leave out and how you would know it works, and answer."
   },
   "watch": {
     "youtubeId": "b0KaGBOU4Ys",
@@ -275,7 +280,7 @@
   "reflect": {
     "prompts": [
       {
-        "text": "If I could build one AI helper for a community, it would ... because ...",
+        "text": "If I could build one helper for a community, it would ... because ...",
         "required": true
       },
       {
@@ -283,12 +288,12 @@
         "required": false
       }
     ],
-    "completionMessage": "You finished Lesson 17. You planned an AI helper, decided if AI should be used, and improved your plan after feedback."
+    "completionMessage": "You finished Lesson 17. You planned a helper, decided whether AI fits, and improved your plan after feedback."
   },
   "visual": {
     "type": "diagram",
-    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW11.svg is only a planned path. A loop of five numbered boxes joined by arrows: “1. The problem”, “2. Should AI be used?”, “3. What it learns from”, “4. Risks and checks”, “5. Feedback”. From box 2, a side arrow leads to a small box “No: find another way”. From box 5, a curved arrow goes back to box 1 with the words “Version 2”. Words carry every meaning, so colour is never the only clue.",
-    "alt": "A five-step design loop: the problem, should AI be used, what it learns from, risks and checks, and feedback, then back to the start for version 2.",
+    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW11.svg is only a planned path. A loop of five numbered boxes joined by arrows: “1. The problem”, “2. Should AI be used?”, “3. What it learns from”, “4. Risks, tests and checks”, “5. Feedback”. From box 2, a side arrow leads to a small box “No: find another way”. From box 5, a curved arrow goes back to box 1 with the words “Version 2”. Words carry every meaning, so colour is never the only clue.",
+    "alt": "A five-step design loop: the problem, should AI be used, what it learns from, risks, tests and checks, and feedback, then back to the start for version 2.",
     "src": "visuals/DW11.svg"
   },
   "sources": [
@@ -297,12 +302,20 @@
       "url": "https://www.unesco.org/en/articles/ai-competency-framework-students"
     },
     {
-      "label": "Human-Centred AI lab, Igor Sikorsky Kyiv Polytechnic Institute: Reflections on UNESCO's AI competency framework for students (AI system design)",
-      "url": "https://hcai.kpi.ua/?p=82"
-    },
-    {
       "label": "UNICEF Innocenti (2025): Guidance on AI and children, version 3.0",
       "url": "https://www.unicef.org/innocenti/reports/policy-guidance-ai-children"
+    },
+    {
+      "label": "Samsung Malaysia newsroom (11 December 2024): 15-year-old students from Johor win at Samsung Solve for Tomorrow 2024 (Eco Pulse; the organiser's account)",
+      "url": "https://news.samsung.com/my/15-years-old-students-from-johor-bags-most-innovative-award-in-samsung-solve-for-tomorrow-2024"
+    },
+    {
+      "label": "NSTDA via ThaiPR.net (17 July 2024): Traffy Fondue's new AI features and use figures (Thai)",
+      "url": "https://www.thaipr.net/?p=3497519"
+    },
+    {
+      "label": "Hansen and Dahiya (2025): Traffy Fondue, a smart city citizen engagement, Frontiers in Sustainable Cities",
+      "url": "https://www.frontiersin.org/articles/10.3389/frsc.2025.1491621/full"
     },
     {
       "label": "Common Sense Education: What is AI? (video page)",
@@ -314,8 +327,8 @@
     "Plans are saved with the learner's work on this device. Learners must not write real people's names or private information in them."
   ],
   "educatorNotes": [
-    "This is a design on paper: nothing is built. It covers UNESCO's AI system design aspect at the Understand level (problem scoping, including when AI should not be used, and a simple plan) and touches Create through one round of feedback. Accept “No, another way is better” as a strong design decision. Paper version: the five steps as a worksheet.",
-    "For older learners (spec section 8, item 8), a later version could add a test plan: which examples to test with, and how to tell if the helper works."
+    "This is a design on paper: nothing is built, and coding is optional. Assess five things, not how impressive or how wary the plan sounds: the need (a real problem and who it affects), the intended benefit, technical fit (why AI helps, why another way fits better, or what the learner still needs to find out: all three are strong answers), evidence and checks (how they would test it, and who checks), and one improvement after feedback. It covers UNESCO's AI system design aspect at the Understand level and touches Create. Paper version: the five steps as a worksheet. Older or more confident learners can add a test plan (which new examples, and what result would count as working) or, optionally, build a tiny sorter with Lesson 3's nearest-neighbour idea.",
+    "The two real projects. Eco Pulse is known only from its organiser's account (Samsung Malaysia, 11 December 2024; also The Star, 26 January 2025): team TerraInnovators, three 15-year-olds at SMK Sultan Ismail, Johor, with an AI image-recognition app that estimates the weight and value of recyclable items, shown as a prototype at the Solve for Tomorrow 2024 final (run with Universiti Malaya). “With precision” is the organiser's claim; no test results are published, and it is not a working national service. Traffy Fondue (NECTEC, NSTDA) is an operating service: NSTDA reports over 940,000 reports from June 2022 to July 2024 and 77% “completed”, its own figures; a study of Bangkok's use (Hansen and Dahiya, 2025) notes it is digital-only, so people without smartphones or internet can be left out. Use each card's question for discussion, not as criticism of the people who built them."
   ],
   "changes": [
     "New lesson (Digital World draft). There is no Base44 original, so oldId is null.",
@@ -324,6 +337,7 @@
     "estimatedMinutes is 40–60, longer than other lessons, because it is a project.",
     "visual.src points to a picture that doesn't exist yet.",
     "Needs review by Justin for level and tone, and by an AI researcher for the design steps.",
-    "October 2026, social studies rebuild (Justin's brief: AI and the digital world through a social studies lens, at most 20 lessons): kept as Lesson 17 in \"Truth, power and choices\" (truth-and-power). The notes above about the old section ids are out of date."
+    "October 2026, social studies rebuild (Justin's brief: AI and the digital world through a social studies lens, at most 20 lessons): kept as Lesson 17 in \"Truth, power and choices\" (truth-and-power). The notes above about the old section ids are out of date.",
+    "Revised on 1 November 2026 from Justin's review: the evidence is now two real Southeast Asian projects, each with the problem and the people affected, who built or used it and what the AI does, what evidence exists, and one realistic question: Eco Pulse (Malaysia; three 15-year-old students; a prototype with an award, accuracy claimed but not published) and Traffy Fondue (Thailand; an operating public service where AI sorts and routes residents' reports and people do the repairs; report counts are not problems fixed). So the evidence is fictional: false, and the made-up Maple Street plans stay in the reading (labelled made up) and as the activity's starter problems (now marked “made up”). The design steps, Write task, starters, self-check, example and teacher notes now assess need, benefit, technical fit, evidence and checks, and improvement, and accept “AI helps”, “another way fits better” or “I still need to find out” with reasons; coding stays optional. Training data is defined as examples used to build a tool, not as always having the right answer; “prototype” added to the glossary. The second quick check now asks what the evidence shows about Eco Pulse. The Kyiv Polytechnic commentary was dropped from the sources to make room."
   ]
 }

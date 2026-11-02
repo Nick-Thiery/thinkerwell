@@ -21,6 +21,7 @@ import { formatDuration, splitParagraphs } from '../../lesson';
 import { LessonSlot } from '../../lesson/extras';
 import { useLearnerSession } from '../../session';
 import type { ReadingLevel } from '../../storage';
+import { DEFAULT_COURSE_ID } from '../../content/courses';
 import { LessonEvidence } from '../lesson/evidence/LessonEvidence';
 import { buildReading } from '../lesson/read/readingPieces';
 import { AnswerLines, PrintToolbar } from './PrintToolbar';
@@ -87,7 +88,10 @@ export function LessonPrintSheet({ lesson, titleId = 'print-title', newPage = fa
   return (
     <article className={newPage ? 'tw-print-sheet tw-print-new-page' : 'tw-print-sheet'} aria-labelledby={titleId}>
       <header className="tw-print-head">
-        <p className="tw-print-brand">{t('print.brand')}</p>
+        <p className="tw-print-brand">
+          {/* Another course's sheet names that course, not Exploring Our World. */}
+          {content.courseId === DEFAULT_COURSE_ID ? t('print.brand') : tx('print.brandCourse', { course: <En>{content.getCourse().course.title}</En> })}
+        </p>
         <LessonSlot name="sheet:top" />
         <p className="tw-print-eyebrow">{tx('pages.course.lessonLabel', { number: lesson.number, section: <En>{section.title}</En> })}</p>
         <h1 id={titleId} className="tw-print-title" tabIndex={-1} {...en}>

@@ -4870,6 +4870,11 @@
     "note": "Course name translated, Thinkerwell kept.",
     "back": "Thinkerwell · Explore our world"
   },
+  "print.brandCourse": {
+    "source": "Thinkerwell · {course}",
+    "flag": true,
+    "note": "The print sheet's top line for a course other than Exploring Our World (November 2026). {course} is the course's name, in English."
+  },
   "print.printLesson": {
     "source": "Print this lesson",
     "back": "Print this lesson"
@@ -5089,8 +5094,8 @@
     "back": "Activity"
   },
   "digitalWorld.activity.guideIntro": {
-    "source": "What learners do on the device, with what most people would say and the answers. A class can also do it on paper from the print view.",
-    "back": "What learners do on the device, along with what most people would say, and the answers. The class can also do it on paper from the printout."
+    "source": "What learners do on the device, with one possible answer and its reason. A class can also do it on paper from the print view.",
+    "flag": true
   },
   "previewCourse.banner.title": {
     "source": "Draft course: not yet reviewed",
@@ -5336,9 +5341,10 @@
     "source": "Nothing here yet.",
     "back": "Nothing here yet."
   },
-  "digitalWorld.sort.mostPeople": {
-    "source": "Most people would say: {group}.",
-    "back": "Most people would say: {group}."
+  "digitalWorld.sort.oneAnswer": {
+    "source": "One possible answer: {group}.",
+    "flag": true,
+    "note": ""
   },
   "digitalWorld.sort.notPlaced": {
     "source": "Still to place: {count}",

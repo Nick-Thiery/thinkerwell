@@ -4422,6 +4422,11 @@
     "back": "Thinkerwell · Exploring Our World",
     "source": "Thinkerwell · Exploring Our World"
   },
+  "print.brandCourse": {
+    "source": "Thinkerwell · {course}",
+    "flag": true,
+    "note": "The print sheet's top line for a course other than Exploring Our World (November 2026). {course} is the course's name, in English."
+  },
   "print.printLesson": {
     "back": "Print this lesson",
     "source": "Print this lesson"
@@ -4635,8 +4640,7 @@
   "digitalWorld.activity.guideIntro": {
     "flag": true,
     "note": "Translator: This item is marked for learners, but the text speaks to teachers. It has no pronoun, so it works for both. Check that 'apa yang kebanyakan orang akan katakan' clearly means the answers most people would give. Back-translation check: The old wording was ambiguous ('what most people will say and its answer'). The fix is still close to the English. Check that it reads as 'the answers most people would give, and the answers'. This text speaks to teachers and has no pronoun.",
-    "back": "What the learners do on the device, together with what most people will say and the answer. The class can also do it on paper through the print view.",
-    "source": "What learners do on the device, with what most people would say and the answers. A class can also do it on paper from the print view."
+    "source": "What learners do on the device, with one possible answer and its reason. A class can also do it on paper from the print view."
   },
   "previewCourse.banner.title": {
     "back": "Draft course: not yet reviewed",
@@ -4877,9 +4881,10 @@
     "back": "There is nothing here yet.",
     "source": "Nothing here yet."
   },
-  "digitalWorld.sort.mostPeople": {
-    "back": "Most people would say: {group}.",
-    "source": "Most people would say: {group}."
+  "digitalWorld.sort.oneAnswer": {
+    "source": "One possible answer: {group}.",
+    "flag": true,
+    "note": ""
   },
   "digitalWorld.sort.notPlaced": {
     "back": "Not yet placed: {count}",

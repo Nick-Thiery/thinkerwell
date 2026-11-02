@@ -7,15 +7,16 @@ import { useActivityState } from './state';
 /**
  * `sort` (Lessons 1, 4, 7 and 10): put each item in a group. There is no
  * score and nothing is marked wrong: once an item is placed, its feedback
- * says what most people would say and why. Each item is a group of real
+ * gives one possible answer and its reason. Each item is a group of real
  * radio buttons (arrow keys move between groups, as everywhere), named by
  * the item. Any choice can be changed at any time. "Your groups" lists
  * what is in each group so far. Saves the group chosen for each item.
  */
 export function SortPlayer({ activity }: { activity: SortActivity }) {
-  const { t, contentLang } = useI18n();
+  const { t, tx, contentLang } = useI18n();
   const { answers, choose } = useActivityState();
   const summaryId = useId();
+  const label = new Map(activity.groups.map((group) => [group.id, group.label]));
   const groupIds = new Set(activity.groups.map((group) => group.id));
   const placedIn = (groupId: string) => activity.items.filter((item) => answers[item.id] === groupId);
   const notPlaced = activity.items.filter((item) => !groupIds.has(answers[item.id] ?? '')).length;
@@ -43,7 +44,10 @@ export function SortPlayer({ activity }: { activity: SortActivity }) {
                   {chosen ? (
                     <p className="tw-dw-note">
                       <Icon name="Info" size={18} />
-                      <span {...contentLang}>{item.feedback}</span>
+                      <span>
+                        <strong>{tx('digitalWorld.sort.oneAnswer', { group: <En>{label.get(item.suggested) ?? item.suggested}</En> })}</strong>{' '}
+                        <span {...contentLang}>{item.feedback}</span>
+                      </span>
                     </p>
                   ) : null}
                 </div>
@@ -81,7 +85,7 @@ export function SortPlayer({ activity }: { activity: SortActivity }) {
   );
 }
 
-/** On paper: each item with a box for each group; for teachers, the group most people choose and why. */
+/** On paper: each item with a box for each group; for teachers, one possible answer and its reason. */
 export function SortOnPaper({ activity, forTeachers }: { activity: SortActivity; forTeachers: boolean }) {
   const { tx, contentLang: en } = useI18n();
   const label = new Map(activity.groups.map((group) => [group.id, group.label]));
@@ -92,7 +96,7 @@ export function SortOnPaper({ activity, forTeachers }: { activity: SortActivity;
           <p {...en}>{item.text}</p>
           {forTeachers ? (
             <p>
-              <strong>{tx('digitalWorld.sort.mostPeople', { group: <En>{label.get(item.suggested) ?? item.suggested}</En> })}</strong> <span {...en}>{item.feedback}</span>
+              <strong>{tx('digitalWorld.sort.oneAnswer', { group: <En>{label.get(item.suggested) ?? item.suggested}</En> })}</strong> <span {...en}>{item.feedback}</span>
             </p>
           ) : (
             <ul className="tw-print-boxes" {...en}>

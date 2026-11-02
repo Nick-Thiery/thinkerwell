@@ -3601,6 +3601,11 @@
     "source": "Thinkerwell · Exploring Our World",
     "back": "Thinkerwell · Exploring Our World"
   },
+  "print.brandCourse": {
+    "source": "Thinkerwell · {course}",
+    "flag": true,
+    "note": "The print sheet's top line for a course other than Exploring Our World (November 2026). {course} is the course's name, in English."
+  },
   "print.printLesson": {
     "source": "Print this lesson",
     "back": "Print this lesson"
@@ -4856,8 +4861,7 @@
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
   "digitalWorld.activity.guideIntro": {
-    "source": "What learners do on the device, with what most people would say and the answers. A class can also do it on paper from the print view.",
-    "back": "What learners do on the device, with what most people would say and the answers. The class can also do it on paper from the print view.",
+    "source": "What learners do on the device, with one possible answer and its reason. A class can also do it on paper from the print view.",
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
@@ -5185,9 +5189,8 @@
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.sort.mostPeople": {
-    "source": "Most people would say: {group}.",
-    "back": "Most people would say: {group}.",
+  "digitalWorld.sort.oneAnswer": {
+    "source": "One possible answer: {group}.",
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },

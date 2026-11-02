@@ -30,7 +30,7 @@
         "cases": [
           {
             "name": "Rosa's phone",
-            "body": "Rosa's phone opens when it sees her face. It compares her face with one photo she saved. The photo stays on the phone."
+            "body": "Rosa's phone opens when it sees her face. When she set it up, the phone turned her face into numbers and saved those, not a photo. It checks her face against them. The numbers stay on the phone."
           },
           {
             "name": "The lost child at the fair",
@@ -53,7 +53,7 @@
     "stage": "read",
     "placement": "after-evidence",
     "title": "Help or harm?",
-    "instructions": "Put each sentence about face cameras into a group. There is no score. After you place one, you can see what many people would say and why.",
+    "instructions": "Put each sentence about face cameras into a group. There is no score. After you place one, you can see one possible answer and the reason. Another answer can be right if you can give a reason for it.",
     "groups": [
       {
         "id": "helps",
@@ -73,49 +73,49 @@
         "id": "phone",
         "text": "A phone opens only for its owner's face.",
         "suggested": "helps",
-        "feedback": "Most people would say it helps. It checks one face against one saved photo, and the owner chose to use it."
+        "feedback": "It checks one face against the owner's saved face numbers. They stay on the phone, and the owner chose to use it."
       },
       {
         "id": "street-cameras",
         "text": "Street cameras check every face, and nobody is asked.",
         "suggested": "harms",
-        "feedback": "Most people would say it could harm people. People are watched without knowing, so they lose their privacy."
+        "feedback": "People are watched without knowing, so they lose their privacy. Some people would accept it with strict rules, which is the third group."
       },
       {
         "id": "stadium-gate",
         "text": "Cameras check faces at a stadium gate, so the line moves faster.",
         "suggested": "depends",
-        "feedback": "Any group can be right here. It saves time. But people should be able to say no, and the photos should be deleted soon."
+        "feedback": "It saves time. But people should be able to say no, and the face data should be deleted soon."
       },
       {
         "id": "lost-child",
         "text": "Cameras at the fair help find a lost child.",
         "suggested": "helps",
-        "feedback": "Most people would say it helps. The family agreed, and the search was for one child for a short time."
+        "feedback": "The family agreed, and the search was for one child for a short time."
       },
       {
         "id": "wrong-match",
         "text": "A shopper is wrongly matched with someone the police want.",
         "suggested": "harms",
-        "feedback": "Most people would say it could harm people. A wrong match could get someone blamed by mistake."
+        "feedback": "A wrong match could get someone blamed by mistake."
       },
       {
         "id": "judge",
         "text": "The police can look for a lost person, but only if a judge says yes.",
         "suggested": "depends",
-        "feedback": "Any group can be right here. It could find someone fast. A judge's permission tries to stop misuse, but people disagree about where to draw the line."
+        "feedback": "It could find someone fast. A judge's permission tries to stop misuse, but people disagree about where to draw the line."
       },
       {
         "id": "company",
         "text": "A company keeps everyone's face photos for years and sells them.",
         "suggested": "harms",
-        "feedback": "Most people would say it could harm people. Nobody agreed, and the photos could be used to track them."
+        "feedback": "Nobody agreed, and the photos could be used to track them."
       },
       {
         "id": "more-mistakes",
         "text": "The tool makes more mistakes for older people.",
         "suggested": "harms",
-        "feedback": "Most people would say it could harm people. One group would be wrongly matched more often, and that is not fair."
+        "feedback": "One group would be wrongly matched more often, and that is not fair to them."
       }
     ],
     "saves": "The group the learner chose for each sentence, with the lesson's other answers.",
@@ -125,18 +125,18 @@
     "sections": [
       {
         "heading": "How a camera matches a face",
-        "text": "Facial recognition is a kind of AI that tries to tell who a person is from their face. First, the software finds a face in a photo or a video. Then it measures details, such as the distance between the eyes, and turns them into a set of numbers. Next, it compares those numbers with faces stored in a database and gives a score for how alike they are. A phone that opens for your face compares you with one saved photo. A search compares one face with many photos at once. Either way, a match is a guess, not a fact.",
-        "simpler": "Facial recognition is AI that tries to name a person from their face. First, it finds a face in a photo. Then it measures the face, like how far apart the eyes are. It turns this into numbers. Next, it compares the numbers with faces in a database. It gives a score for how alike they are. A phone checks your face against one photo. A search checks one face against many. A match is a guess, not a fact."
+        "text": "Facial recognition is a kind of AI that tries to tell who a person is from their face. First, the software finds a face in a photo or a video. Then it measures details, such as the distance between the eyes, and turns them into a set of numbers. Next, it compares those numbers with faces stored in a database and gives a score for how alike they are. A phone that opens for your face usually keeps only numbers from your face, not a photo. A search compares one face with many. Either way, a match is a best guess, not proof of who someone is.",
+        "simpler": "Facial recognition is AI that tries to name a person from their face. First, it finds a face in a photo. Then it measures the face, like how far apart the eyes are. It turns this into numbers. Next, it compares the numbers with faces in a database. It scores how alike they are. A phone often keeps only numbers from your face, not a photo. A search checks one face against many. A match is a guess, not proof."
       },
       {
         "heading": "Helpful uses and real risks",
-        "text": "Facial recognition has helpful uses. It can open a phone, help people board planes faster at some airports and help search for a missing person. But it also brings risks. In 2019, a United States government science agency tested nearly 200 face recognition tools. Many of them wrongly matched two different people far more often for some groups. These included women, older people, children and people of some backgrounds. The best tools made far fewer mistakes. A wrong match in a search could get someone blamed for something they did not do. Cameras can also recognise people from far away, without them knowing, and track where they go. That is a risk to privacy.",
-        "simpler": "Face cameras can help. It can open a phone or help find a missing person. But there are risks too. In 2019, a science agency in the United States tested nearly 200 tools. Many made more mistakes for some groups, like women, children and older people. The best tools made fewer mistakes. A wrong match could get someone blamed. Cameras can also track people. They may not know it. This is a risk to privacy."
+        "text": "Facial recognition has helpful uses. It can open a phone, speed up boarding at some airports and help search for a missing person. But it also brings risks. In 2019, a United States government science agency tested nearly 200 face recognition tools. Many of them wrongly matched two different people far more often for some groups. These included women, older people, children and people of some backgrounds. The best tools made far fewer mistakes. A wrong match could get someone blamed for something they did not do. Cameras can also recognise people from far away, without them knowing, and track where they go. That is a risk to privacy.",
+        "simpler": "Face cameras can open a phone or help find a missing person. But there are risks too. In 2019, a science group in the United States tested nearly 200 tools. Many made more mistakes for some groups, like women, children and older people. The best tools made fewer mistakes. A wrong match could get someone blamed. Cameras can also track people. They may not know it. This is a risk to privacy."
       },
       {
         "heading": "Places make different rules",
-        "text": "Because of these risks, places make different choices. In 2019, San Francisco became the first city in the United States to make a ban. Its police and other city offices may not use facial recognition. In the European Union, a law about AI now bans police from using live facial recognition in public places, with a few exceptions. One is a search for a missing person. Even then, a judge or another official must agree first. The same law bans collecting face photos from the internet or security cameras to build a database. Other places allow much wider use.",
-        "simpler": "Places make different rules. In 2019, San Francisco made a ban. Its police may not use facial recognition. The European Union has a law about AI. It bans police from using live face cameras in public places. Some searches are allowed, like for a missing child. A judge or an official must say yes first. The law also bans taking face photos from the internet for a database."
+        "text": "Because of these risks, places make different choices. In 2019, San Francisco became the first city in the United States to ban facial recognition by its police and other city offices. Since 2025, a European Union law has banned some uses. Police may not use live facial recognition in public places, except in a few serious cases, such as a search for a missing person. A judge or an independent official must agree first. The law also bans copying face photos in bulk from the internet or security cameras to build a face recognition database. Ordinary cameras are not banned, and other places allow much wider use.",
+        "simpler": "In 2019, San Francisco made a ban. Its police may not use facial recognition. The European Union has an AI law. Police there may not use live face cameras in public. A few serious cases are allowed, like a search for a lost person. A judge or an official must say yes. The law also bans copying lots of face photos online for a face database. Normal cameras are not banned."
       }
     ],
     "glossary": [
@@ -162,7 +162,7 @@
           "matches",
           "matched"
         ],
-        "definition": "When a tool decides two faces belong to the same person.",
+        "definition": "When a tool estimates that two faces belong to the same person.",
         "example": "The Greenport cameras made 12 wrong matches in the test."
       },
       {
@@ -196,9 +196,9 @@
         "question": "How does a phone decide to open for its owner's face?",
         "options": [
           {
-            "text": "It compares the face with one saved photo",
+            "text": "It checks the face against numbers it saved",
             "correct": true,
-            "feedback": "Yes. A phone checks one face against one photo. A search checks one face against many."
+            "feedback": "Yes. A phone checks one face against numbers saved from its owner's face. A search checks one face against many."
           },
           {
             "text": "It asks the police who the person is",
@@ -208,7 +208,7 @@
           {
             "text": "It searches all the faces in a big database",
             "correct": false,
-            "feedback": "Not quite. That is a search. A phone uses one saved photo. Read the first section."
+            "feedback": "Not quite. That is a search. A phone checks only its owner's saved face numbers. Read the first section."
           }
         ]
       },
@@ -243,12 +243,12 @@
     ]
   },
   "write": {
-    "prompt": "Greenport's council must decide about its street cameras. Write the council a short message. Say what you think, give one benefit and one risk, and suggest one rule.",
+    "prompt": "Greenport's council must decide about its street cameras. Write the council a short message. Say yes, no, or yes with rules, give one benefit and one risk, and suggest one rule.",
     "sentenceStarters": [
       "I think the council should ...",
       "One benefit is ...",
       "One risk is ...",
-      "This matters because ...",
+      "This matters to ___ because ...",
       "One rule I suggest is ..."
     ],
     "planningBoxes": [
@@ -258,11 +258,11 @@
       "A question I still have"
     ],
     "selfCheck": [
-      "I said what I think about the street camera plan.",
+      "I said what I think about the street camera plan, and why.",
       "I gave one benefit and one risk from the lesson.",
       "I suggested one rule and said why it helps."
     ],
-    "example": "I think the council should not put cameras on every street yet. One benefit is that cameras could help find a lost child quickly, like at the fair. One risk is that they make mistakes. In the test, they wrongly matched 12 people, and most were older people. This matters because a wrong match could get someone blamed by mistake. One rule I suggest is that police may only search if a judge agrees. The photos should also be deleted soon."
+    "example": "I think the council should use the cameras only in a few serious cases, with strict rules. One benefit is that they could help find a lost child fast, like at the fair. One risk is that they make mistakes. In the test, they wrongly matched 12 people, and most were older people. This matters to everyone walking past, because a wrong match could get someone blamed. One rule I suggest is that police may only search if a judge agrees."
   },
   "speak": {
     "partnerTask": "One partner gives a reason for the Greenport street cameras. The other gives a reason against. Then swap sides.",
@@ -300,8 +300,8 @@
   },
   "visual": {
     "type": "diagram",
-    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW12.svg is only a planned path. A left-to-right diagram in four steps: a simple drawn face labelled “1. Find the face”; the same face with dots and lines between the eyes, nose and mouth, labelled “2. Measure it”; a short row of numbers labelled “3. Turn it into numbers”; and a stack of photo cards with a score bar beside it labelled “4. Compare and score: a guess, not a fact”. Below, two small panels: “Phone: one face, one saved photo” (one card) and “Search: one face, many photos” (a large stack). Words carry every meaning; simple drawn figures only, no real faces and no police or uniforms.",
-    "alt": "A diagram: the software finds a face, measures it, turns it into numbers and compares them with stored photos to give a score. A phone compares one face with one photo; a search compares one face with many.",
+    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW12.svg is only a planned path. A left-to-right diagram in four steps: a simple drawn face labelled “1. Find the face”; the same face with dots and lines between the eyes, nose and mouth, labelled “2. Measure it”; a short row of numbers labelled “3. Turn it into numbers”; and a stack of photo cards with a score bar beside it labelled “4. Compare and score: a guess, not a fact”. Below, two small panels: “Phone: one face, its owner's saved numbers” (one short row of numbers) and “Search: one face, many photos” (a large stack). Words carry every meaning; simple drawn figures only, no real faces and no police or uniforms.",
+    "alt": "A diagram: the software finds a face, measures it, turns it into numbers and compares them with stored faces to give a score. A phone compares one face with its owner's saved numbers; a search compares one face with many.",
     "src": "visuals/DW12.svg"
   },
   "sources": [
@@ -310,16 +310,20 @@
       "url": "https://nvlpubs.nist.gov/nistpubs/ir/2019/NIST.IR.8280.pdf"
     },
     {
+      "label": "Apple Platform Security: Facial matching security (Face ID stores mathematical representations of the face, not images, on the device)",
+      "url": "https://support.apple.com/guide/security/sece151358d1/web"
+    },
+    {
+      "label": "European Commission, AI Act Service Desk: Article 5, prohibited AI practices (Regulation (EU) 2024/1689; scraping, real-time biometric identification, authorisation)",
+      "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-5"
+    },
+    {
+      "label": "European Commission: AI Act, regulatory framework (prohibitions apply from February 2025; other remote biometric identification is high-risk)",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+    },
+    {
       "label": "Electronic Frontier Foundation, Street Level Surveillance: Face recognition (how it works, tracking)",
       "url": "https://sls.eff.org/technologies/face-recognition"
-    },
-    {
-      "label": "European Parliament (2024): Artificial Intelligence Act, MEPs adopt landmark law (limits on biometric identification by police)",
-      "url": "https://www.europarl.europa.eu/news/en/press-room/20240308IPR19015/artificial-intelligence-act-meps-adopt-landmark-law"
-    },
-    {
-      "label": "Bundesnetzagentur (Germany): Prohibited AI practices under the EU AI Act (in force since 2 February 2025)",
-      "url": "https://bundesnetzagentur.de/EN/Areas/Digitalisation/AI/08_ProhibitedPractices/start.html"
     },
     {
       "label": "Al Jazeera (2019): San Francisco first US city to ban facial recognition by police",
@@ -331,7 +335,7 @@
     "Preview the lesson and the video first; the video is for adults and mentions police, borders and fear of being tracked (see the video's note). Learners can read the written version instead. The Speak debate is optional: skip it if the topic is too close, or have learners argue for made-up Greenport characters rather than for themselves."
   ],
   "educatorNotes": [
-    "The Greenport cases, the test numbers (12 wrong matches in 1,000) and the activity sentences are made up. The real facts, simplified: NIST tested 189 mostly commercial algorithms from 99 developers in 2019 and found false matches often 10 to over 100 times more frequent for some groups, varying by algorithm, with the most accurate algorithms showing smaller differences. The EU's ban on police use of live (real-time) remote biometric identification in public places has narrow exceptions under strict safeguards and has applied since 2 February 2025. Rules change: check them before teaching. Lesson 8 (bias from missing training data) is a good link. Paper version of the activity: write the eight sentences on cards and sort them into the three groups; reward reasons, not the group."
+    "The Greenport cases, the test numbers (12 wrong matches in 1,000) and the activity sentences are made up. The real facts, simplified: NIST tested 189 mostly commercial algorithms from 99 developers in 2019 and found false matches often 10 to over 100 times more frequent for some groups, varying by algorithm, with the most accurate showing smaller differences. Phones: Apple's security guide says Face ID saves mathematical representations of the face, not images, and they never leave the device; other phones differ. EU AI Act, Article 5, applying since 2 February 2025: police use of real-time remote biometric identification in publicly accessible spaces is banned except where strictly necessary to search for victims of abduction or trafficking or missing persons, to prevent a specific and imminent threat to life or a terrorist attack, or to find suspects of listed serious crimes (at least four years in prison); each use needs prior authorisation by a judicial or independent administrative authority (in an emergency, within 24 hours), and only where national law allows it. Identifying people later from recordings is not banned but is high-risk, with stricter duties due to apply later (the Commission's page gives 2 December 2027 as of November 2026). The scraping ban covers AI systems that build or expand facial recognition databases by untargeted scraping of facial images from the internet or CCTV; it does not ban every use of a face photo found online. Rules change: check them before teaching. Lesson 8 (bias from missing training data) is a good link. Paper version of the activity: write the eight sentences on cards and sort them into the three groups; reward reasons, not the group, and accept \"yes with rules\" when the learner explains the rules."
   ],
   "changes": [
     "New lesson (Digital World, October 2026, social studies rebuild). There is no Base44 original, so oldId is null.",
@@ -339,6 +343,7 @@
     "Learner text names San Francisco, the European Union and a United States government science agency (not NIST by name); check this fits spec section 5.3 for the social studies rebuild.",
     "Written for learners who may have lived through surveillance or border checks: no learner prompt asks about their own experiences, and the sensitive notes say what never to ask.",
     "visual.src points to a picture that doesn't exist yet.",
-    "Needs review by an AI researcher (how matching works, the NIST simplification), by Justin for level and tone, and by a partner educator for the sensitive notes and the video."
+    "Needs review by an AI researcher (how matching works, the NIST simplification), by Justin for level and tone, and by a partner educator for the sensitive notes and the video.",
+    "Revised on 1 November 2026 from Justin's review: a phone usually keeps numbers from the owner's face (a template), not a photo (evidence, reading, quick check, sort feedback, visual); a match is the tool's best guess, not proof. The EU part now says which uses are banned (police use of live face recognition in public places, with a few serious exceptions and an independent official's approval; building face recognition databases by copying face photos in bulk), and that ordinary cameras are not banned, in both readings; full scope and dates in teacher notes. Write accepts yes, no or yes with rules, with a starter that supports a view (\"This matters to ___ because\") and an example that chooses conditional use; sort feedback gives reasons and accepts other justified answers. Sources: the AI Act's Article 5 and the Commission's overview replace the European Parliament release and Germany's Bundesnetzagentur page (both still in the claim record); Apple's security guide added. Claim record in claims/DW12.md."
   ]
 }

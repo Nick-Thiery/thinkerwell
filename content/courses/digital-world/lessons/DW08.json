@@ -5,7 +5,7 @@
   "section": "who-builds-ai",
   "title": "When AI gets it wrong",
   "essentialQuestion": "Why does AI sometimes work well for some people and badly for others?",
-  "learningGoal": "Explain how missing examples in training data can make an AI tool unfair, and suggest one way to fix it.",
+  "learningGoal": "Explain how missing examples and other causes can make an AI tool work worse for some groups, and suggest how to find and fix the cause.",
   "estimatedMinutes": [
     30,
     50
@@ -86,7 +86,7 @@
         {
           "text": "Recordings of children's voices",
           "correct": true,
-          "feedback": "Yes. The tool learned mostly from adults, so children's voices were new to it."
+          "feedback": "Yes. The table says the tool learned mostly from adults, so children's voices were new to it. The results alone could not tell you that."
         },
         {
           "text": "Recordings of teachers' voices",
@@ -109,23 +109,23 @@
       {
         "heading": "Mistakes can come from missing examples",
         "text": "In Lesson 3, the leaf model made mistakes when its training data left something out. Real AI tools can go wrong in the same way. At Riverbend Learning Centre, a voice typing tool worked well for the adult teachers, but it typed many words wrongly for the youngest learners. The tool had learned mostly from recordings of adults, so children's voices were new to it. Researchers have found this problem in real life too. Many speech tools are much less accurate with children's voices. One reason is that there are far fewer recordings of children for the tools to learn from.",
-        "simpler": "In Lesson 3, the leaf model made mistakes. Its examples left something out. Real AI tools can do this too. At Riverbend, a voice typing tool worked well for teachers. It made many mistakes for young learners. It learned mostly from adult voices. So children's voices were new to it. Researchers found this in real life too. Many speech tools are less accurate for children. One reason is that there are fewer recordings of children."
+        "simpler": "In Lesson 3, some leaves were left out of the training data. At Riverbend, a voice typing tool worked well for teachers. It made many mistakes for young learners. It learned mostly from adult voices. So children's voices were new to it. Researchers found this in real life too. Many speech tools are less accurate for children. One reason is that there are fewer recordings of children."
       },
       {
         "heading": "When a group is left out, AI can be unfair",
-        "text": "When a tool works well for some groups of people and badly for others, we say that it has a bias. Bias in AI often starts in the training data. The Riverbend translation tool is good at translating between languages that have lots of writing online. It makes many more mistakes in languages with only a little writing online. Researchers have found the same pattern in real AI language tools. Nobody planned to leave those speakers out, but the result is still not fair. Some people get a helpful tool, while other people get a tool that often makes mistakes.",
-        "simpler": "Some tools work well for some people and badly for others. This is called bias. Bias often starts in the training data. The Riverbend translation tool is good for some languages. These languages have lots of writing online. It makes more mistakes in languages with little writing online. Researchers found this with real tools too. Nobody meant to leave people out. But it is still not fair."
+        "text": "When a tool works well for some groups of people and badly for others, we say that it has a bias. Missing examples are one possible cause. Others are wrong or unfair labels, a goal that suits some people more than others, a design choice, or using a tool in a place it wasn't made for. The Riverbend translation tool makes many more mistakes in languages with little writing online. Researchers have found the same pattern in real AI language tools. Even when nobody meant to leave people out, the result can still be unfair.",
+        "simpler": "Some tools work well for some people and badly for others. This is called bias. Missing examples are one cause. Wrong labels are another. So is a goal or design that suits some people more. Using a tool in the wrong place can cause it too. The Riverbend translation tool makes more mistakes in some languages. They have little writing online. Researchers found this with real tools too. Even if nobody meant to leave people out, it can be unfair."
       },
       {
         "heading": "Finding and fixing the problem",
-        "text": "To find bias, people test a tool with many different groups, not only with the people who built it. Then they compare the results for each group. If one group gets more mistakes, they ask whose examples are missing. They can collect more examples from that group, but only with people's permission. However, collecting more data does not fix everything. People also check the labels, because a person's unfair ideas can end up in the labels too. For important decisions, a person should always check what the AI says.",
-        "simpler": "To find bias, test the tool with many groups of people. Then compare the results. Does one group get more mistakes? Then ask whose examples are missing. Add examples from that group. Ask people first. But more data does not fix everything. People must also check the labels. Unfair ideas can get into labels. For big decisions, a person should check the AI."
+        "text": "To find bias, people test a tool with many different groups, not only with the people who built it. Then they compare the results. A gap in the results shows that something is wrong, but not why. So they look for the cause. Are some people's examples missing? Are the labels wrong? Was the tool made for a different goal or place? If examples are missing, they can collect more, but only with people's permission. More data does not fix every cause. If the labels are unfair, more examples with the same labels won't help. For important decisions, a person should always check what the AI says.",
+        "simpler": "To find bias, test the tool with many groups and compare the results. A gap shows that something is wrong, but not why. So look for the cause. Are examples missing? Are labels wrong? Was the tool made for another goal or place? Missing examples can be added, if people agree. But more data does not fix everything. Unfair labels stay unfair. For big decisions, a person should check the AI."
       }
     ],
     "glossary": [
       {
         "word": "training data",
-        "definition": "The examples a computer learns from, each with the right answer.",
+        "definition": "Examples used to build a model. Here, each example comes with its answer.",
         "example": "The voice tool's training data was mostly adults reading aloud."
       },
       {
@@ -146,7 +146,7 @@
       },
       {
         "word": "bias",
-        "definition": "When a tool treats some groups better than others, often by accident.",
+        "definition": "When a tool works better for some groups than for others.",
         "example": "The translation tool has a bias towards languages with lots of writing online."
       },
       {
@@ -185,9 +185,9 @@
         "question": "A tool makes more mistakes for one group. What is a good first step?",
         "options": [
           {
-            "text": "Find out whose examples are missing",
+            "text": "Look for the cause, such as missing examples",
             "correct": true,
-            "feedback": "Yes. Then the team can add examples from that group, with their permission, and test again."
+            "feedback": "Yes. A gap shows something is wrong, but not why. Check the examples, the labels and the tool's goal, then fix the cause and test again."
           },
           {
             "text": "Stop testing it with that group",
@@ -215,7 +215,7 @@
       "I chose ...",
       "It learned mostly from ...",
       "The examples of ___ were missing, so ...",
-      "This is unfair because ...",
+      "This matters to ___ because ...",
       "One way to fix it is ..."
     ],
     "planningBoxes": [
@@ -229,7 +229,7 @@
       "I said whose examples were missing and what went wrong.",
       "I gave one way to fix it."
     ],
-    "example": "I chose the voice typing tool. It learned mostly from recordings of adults reading aloud. The examples of children's voices were missing, so it typed many words wrongly for the youngest learners. It got 9 of 20 words right for them, and 19 for the teachers. This is unfair because the children get a tool that makes lots of mistakes. One way to fix it is to add recordings of children, if they and their families agree. Then the team can test it again."
+    "example": "I chose the voice typing tool. It learned mostly from recordings of adults reading aloud. The examples of children's voices were missing, so it typed many words wrongly for the youngest learners. It got 9 of 20 words right for them, and 19 for the teachers. This matters to the youngest learners because they get a tool that makes lots of mistakes. One way to fix it is to add recordings of children, if they and their families agree. Then the team can test it again."
   },
   "speak": {
     "partnerTask": "Your partner names a tool from the Riverbend table. You say whose examples were missing and one way to fix it. Then switch.",
@@ -273,11 +273,15 @@
   },
   "sources": [
     {
-      "label": "Attia and others (AIES 2024): Kid-Whisper, the gap in speech recognition between children and adults",
+      "label": "Attia and others (AIES 2024): Kid-Whisper, towards bridging the gap in speech recognition between children and adults",
       "url": "https://ojs.aaai.org/index.php/AIES/article/view/31618"
     },
     {
-      "label": "Stanford Report (2025): How AI is leaving non-English speakers behind",
+      "label": "Suresh and Guttag (EAAMO 2021): A framework for understanding sources of harm throughout the machine learning life cycle",
+      "url": "https://arxiv.org/abs/1901.10002"
+    },
+    {
+      "label": "Stanford Report, from Stanford HAI (2025): How AI is leaving non-English speakers behind",
       "url": "https://news.stanford.edu/stories/2025/05/digital-divide-ai-llms-exclusion-non-english-speakers-research"
     },
     {
@@ -294,8 +298,8 @@
     "Bias in real tools can touch race, gender and other identities (the Lesson 3 video mentions face recognition). Keep the discussion on how training data causes it and how to fix it; don't ask learners to share times they were treated unfairly."
   ],
   "educatorNotes": [
-    "The numbers in the activity (19, 16 and 9 of 20) are made up to show the idea. Real research also found big gaps for children's voices; see the sources.",
-    "Lesson 3's leaf model is reused on purpose: learners can see the same cause (missing examples) in a small model they trained and in real tools."
+    "The numbers in the activity (19, 16 and 9 of 20) are made up to show the idea; the Riverbend table tells learners what each tool learned from, so the cause is given, not worked out from the scores. Real research: Kid-Whisper (AIES 2024) found that a widely used speech tool, without extra training, made 3 to 10 times as many errors on children's speech as on adults' in the tests it used, and names two causes: few recordings of children, and children's speech varying more as they grow. Training it on more children's speech narrowed the gap but did not close it.",
+    "Missing examples are one cause of bias, not the only one. Suresh and Guttag (2021) list seven sources of harm across the machine-learning life cycle, including who is in the data (representation), how labels are chosen or measured, the goal a model is trained for, how it is tested, and how and where it is used. Their example: a heart-attack model improved when more data from women was added, but a hiring model trained on human ratings did not, because the problem was in the labels. A gap in results shows something is wrong, not why. Don't tell learners that bias is always an accident: the lesson says only that it can be unfair even when nobody meant it. The claim record is in content/courses/digital-world/claims/DW08.md. Lesson 3's leaf model is reused on purpose: learners can see one cause (missing examples) in a small model they trained and in real tools. The activity's extension (a wrong label copied by the model) shows a second cause, labels."
   ],
   "changes": [
     "New lesson (Digital World draft 1). There is no Base44 original, so oldId is null.",
@@ -303,6 +307,7 @@
     "Adds a compare-results activity, documented in docs/content/DIGITAL_WORLD_SPEC.md.",
     "visual.src points to a picture that doesn't exist yet.",
     "Needs review by an AI researcher for accuracy, by Justin for level and tone, and by a partner educator for the sensitive notes.",
-    "October 2026, social studies rebuild (Justin's brief: AI and the digital world through a social studies lens, at most 20 lessons): kept as Lesson 8 in \"Who builds AI, and at what cost\" (who-builds-ai). The notes above about the old section ids are out of date."
+    "October 2026, social studies rebuild (Justin's brief: AI and the digital world through a social studies lens, at most 20 lessons): kept as Lesson 8 in \"Who builds AI, and at what cost\" (who-builds-ai). The notes above about the old section ids are out of date.",
+    "Revised on 1 November 2026 from Justin's review: both readings now give missing examples as one possible cause of bias, alongside wrong or unfair labels, the tool's goal, its design and where it is used (Suresh and Guttag, 2021, added as a source); “Nobody planned to leave those speakers out” became “Even when nobody meant to leave people out, the result can still be unfair”, so it no longer says no real system was built that way; the third section, the second quick check and the activity's feedback now say a gap in results shows something is wrong but not why; the glossary's training data is qualified (“Here, each example comes with its answer”) and bias no longer says “often by accident”; the learning goal was widened to match; the Write starter “This is unfair because …” became “This matters to ___ because …”. Evidence stays fictional (Riverbend); real research stays in the reading and notes. Code.org's and Experience AI's pages could not be reopened on 1 November 2026. Claim record: claims/DW08.md."
   ]
 }

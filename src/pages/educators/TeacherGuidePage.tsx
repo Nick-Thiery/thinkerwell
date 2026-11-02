@@ -79,7 +79,10 @@ export function TeacherGuidePage({ lesson }: { lesson: CourseLesson }) {
 
       <article className="tw-print-sheet tw-guide" aria-labelledby="guide-title">
         <header className="tw-print-head">
-          <p className="tw-print-brand">{t('print.brand')}</p>
+          <p className="tw-print-brand">
+            {/* Another course's sheet names that course, not Exploring Our World. */}
+            {content.courseId === DEFAULT_COURSE_ID ? t('print.brand') : tx('print.brandCourse', { course: <En>{content.getCourse().course.title}</En> })}
+          </p>
           <LessonSlot name="sheet:top" />
           <p className="tw-print-eyebrow">{t('pages.teacherGuide.eyebrow', { number: lesson.number })}</p>
           <h1 id="guide-title" className="tw-print-title" tabIndex={-1} {...en}>

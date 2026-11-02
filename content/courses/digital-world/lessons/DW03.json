@@ -5,7 +5,7 @@
   "section": "thinking-machines",
   "title": "How AI learns from examples",
   "essentialQuestion": "How can a computer learn from examples, and why do the examples matter?",
-  "learningGoal": "Train a tiny model with examples and explain why more, and more varied, examples make its guesses better.",
+  "learningGoal": "Train a tiny model with labelled examples, and explain why relevant, correctly labelled examples and fair tests matter.",
   "estimatedMinutes": [
     35,
     55
@@ -367,7 +367,7 @@
           "of": 8,
           "wrong": []
         },
-        "debrief": "With examples of the new plant, the model got all 8 right. A model can only learn from the examples it is given."
+        "debrief": "With examples of the new plant, the model got all 8 right. But the team had already seen these test leaves, and the test is small. To check fairly, test it on leaves nobody has used yet."
       }
     ],
     "freePlay": "After Round 3, the learner can take examples out, or change a label, and test again. The model follows the learner's labels, even when they differ from the gardener's.",
@@ -379,24 +379,24 @@
     "sections": [
       {
         "heading": "A model learns from labelled examples",
-        "text": "Some AI learns in a way that is a bit like studying with flashcards. First, people collect training data: examples that already have the correct answer, called a label. At Sunrise Garden, every picture of a leaf has a label, either “healthy” or “sick”. The computer uses these examples to build a model. A model is what the computer has learned from the examples, and the computer uses it to predict the label of a leaf it has never seen. This way of making AI is called machine learning. Nobody writes the rule “spots mean sick”; the computer discovers patterns like that in the examples.",
-        "simpler": "Some AI learns from examples. First, people collect training data. Each example has the right answer. This answer is a label. At Sunrise Garden, each leaf picture has a label: “healthy” or “sick”. The computer uses the examples to make a model. The model is what it learned. It uses the model to guess about new leaves. This is machine learning. Nobody tells it “spots mean sick”. It finds that in the examples."
+        "text": "Some AI learns a bit like studying with flashcards. At Sunrise Garden, people collected training data: pictures of leaves, each with the correct answer, called a label, either “healthy” or “sick”. The computer uses these examples to build a model. It uses the model to predict the label of a leaf it has never seen. This is machine learning. Nobody writes the rule “spots mean sick”; the computer finds patterns like that in the examples. Learning from labelled examples is called supervised learning, one kind of machine learning. It is an old idea. A machine called the perceptron learned from marked cards in 1958, and researchers studied this lesson's method in 1967. It became far more useful after 2010, with more data and faster computers.",
+        "simpler": "At Sunrise Garden, people collected training data. Each leaf picture has the right answer, called a label: “healthy” or “sick”. The computer uses them to make a model. It uses the model to guess. This is machine learning. Nobody tells it “spots mean sick”. It finds that in the examples. Learning from labels is called supervised learning. It is an old idea. A machine did it in 1958. This method was studied in 1967. It grew more useful after 2010."
       },
       {
         "heading": "Test the model with new examples",
-        "text": "To find out whether a model works, you test it with new leaves that it did not learn from. The garden's first model learned from only two examples, a big dark green leaf and a brown leaf with spots. It makes its guess in a simple way: it finds the example that is most similar to the new leaf and gives the same label. It correctly labelled four of six new leaves. However, it called a small, light green new leaf “sick”, and it called a yellow leaf with no spots “healthy”. The model was not broken. It simply had too few examples to compare with.",
-        "simpler": "Then you test the model. You show it leaves it has not seen. The first model had only two examples. One was dark green. One was brown with spots. The model finds the example most like the new leaf. It gives the same label. It got four of six right. It said a small new leaf was “sick”. It said a yellow leaf was “healthy”. It had too few examples."
+        "text": "To find out whether a model works, you test it with new leaves it did not learn from. The first model learned from only two examples, a big dark green leaf and a brown leaf with spots. It guesses in a simple way: it finds the example most similar to the new leaf and copies its label. It got four of six new leaves right. It called a small, light green leaf “sick” and a yellow leaf with no spots “healthy”. The model was not broken. It had too few examples to compare with.",
+        "simpler": "Then you test the model on leaves it has not seen. The first model had only two examples. One was dark green. One was brown with spots. It finds the example most like the new leaf. It copies its label. It got four of six right. It called a small new leaf “sick” and a yellow leaf “healthy”. It had too few examples."
       },
       {
-        "heading": "More, and different, examples help",
-        "text": "Next, the team added four more examples, including a small new leaf and a yellow leaf with no spots. This time, the model correctly labelled all six new leaves. Then the team tested two leaves from a different plant. They were long and thin with pale stripes, and both were healthy. The model called them both “sick”, because none of its examples looked similar. After the team added two striped leaves as examples, the model got them right. A model can only learn from the examples it is given, so good training data includes many examples, of many different kinds.",
-        "simpler": "Next, the team added four more examples. Now the model got all six right. Then the team tried a new plant. Its leaves are long and striped. They are healthy. But the model said “sick”. No example looked like them. The team added two striped leaves. Then the model got them right. A model only learns from its examples. Good training data has many kinds of examples."
+        "heading": "Better examples help, but tests have limits",
+        "text": "Next, the team added four more examples, including a small new leaf and a yellow leaf with no spots. Now the model got all six new leaves right. Then the team tested two long, thin, striped leaves from a different plant. Both were healthy, but the model called them “sick”, because none of its examples looked similar. After the team added two striped examples, it got them right. Relevant examples with correct labels help. More examples alone do not always help, because a wrong label can make guesses worse. And a small test cannot prove the model will work on every new plant.",
+        "simpler": "Next, the team added four more examples. Now it got all six right. Then the team tried a new plant with long, striped leaves. They are healthy, but the model said “sick”. No example looked like them. The team added two striped leaves. Then it got them right. Good examples with the right labels help. More examples alone do not always help. A wrong label can make it worse. A small test cannot prove it works on every new plant."
       }
     ],
     "glossary": [
       {
         "word": "training data",
-        "definition": "The examples a computer learns from, each with the right answer.",
+        "definition": "Examples used to build a model. Here, each one has a label.",
         "example": "The leaf pictures and their labels are the training data."
       },
       {
@@ -420,6 +420,11 @@
         "word": "machine learning",
         "definition": "A way for computers to learn patterns from examples, not from written rules.",
         "example": "The leaf model is an example of machine learning."
+      },
+      {
+        "word": "supervised learning",
+        "definition": "Machine learning from examples that each have a label.",
+        "example": "The leaf model uses supervised learning: every example is labelled healthy or sick."
       },
       {
         "word": "test",
@@ -490,7 +495,7 @@
       "It got ... right, because ...",
       "In Round 2, the team added ...",
       "The striped leaves show that ...",
-      "Good training data needs ..."
+      "Good training data needs ... / A small test cannot show ..."
     ],
     "planningBoxes": [
       "My main idea",
@@ -501,9 +506,9 @@
     "selfCheck": [
       "I described Round 1 and one of its mistakes.",
       "I explained what changed in Round 2 and Round 3.",
-      "I said what good training data needs."
+      "I said what good training data needs, or what a small test cannot show."
     ],
-    "example": "In Round 1, the model learned from only two examples. It got four of six new leaves right, because it had too few examples to compare with. It called a small new leaf “sick”. In Round 2, the team added four different examples, and the model got all six right. The striped leaves show that a model makes mistakes when its examples leave something out. Good training data needs many examples and many different kinds."
+    "example": "In Round 1, the model learned from only two examples. It got four of six new leaves right, because it had too few examples to compare with. It called a small new leaf “sick”. In Round 2, the team added four different examples, and the model got all six right. The striped leaves show that a model makes mistakes when its examples leave something out. Good training data needs relevant examples of each kind, with correct labels. Even 8 of 8 on a small test does not prove it will work on every new plant."
   },
   "speak": {
     "partnerTask": "Tell your partner how you would train a model to sort two kinds of things, like ripe and unripe fruit. Your partner asks, “How will you test it?” Then switch.",
@@ -555,14 +560,26 @@
       "url": "https://royalsociety.org/-/media/policy/projects/machine-learning/publications/machine-learning-introduction.pdf"
     },
     {
+      "label": "Google for Developers, Machine Learning Crash Course: Datasets, generalization and overfitting (data quality and labels; updated July 2025)",
+      "url": "https://developers.google.com/machine-learning/crash-course/overfitting"
+    },
+    {
+      "label": "T. M. Cover and P. E. Hart, IEEE Transactions on Information Theory, January 1967: Nearest neighbor pattern classification (listed on Thomas Cover's publications page, Stanford)",
+      "url": "https://isl.stanford.edu/~cover/cover-papers.html"
+    },
+    {
+      "label": "Cornell University (2019): Professor's perceptron paved the way for AI, 60 years too soon (the perceptron, shown in July 1958)",
+      "url": "https://nbb.cornell.edu/news/professors-perceptron-paved-way-ai-60-years-too-soon"
+    },
+    {
       "label": "DCMP: How Computer Vision Works (Code.org video, description)",
       "url": "https://dcmp.org/media/25568-how-computer-vision-works"
     }
   ],
   "sensitiveNotes": [],
   "educatorNotes": [
-    "If the activity can't run (a printout, or a device without it), use the evidence table: it shows exactly what the activity does. Learners can also play it on paper: one learner is the model and may only copy the label of the most similar example card.",
-    "The model in the activity is deliberately simple (it copies the label of the most similar example). Real AI is far bigger, but the lesson about examples is the same.",
+    "If the activity can't run (a printout, or a device without it), use the evidence table: it shows exactly what the activity does. Learners can also play it on paper: one learner is the model and may only copy the label of the most similar example card. Round 3 re-tests the same leaves the team had already seen. For a fairer check, draw two new leaves nobody has tested (for example a long striped leaf with a few brown spots) and let learners predict with the eight example cards.",
+    "The model in the activity is deliberately simple: a nearest-neighbour model (k = 1) that copies the label of the most similar example. It is one supervised method; Cover and Hart's 1967 paper studied this rule, and Rosenblatt's perceptron, shown in July 1958, also learned from labelled examples. Real AI is far bigger, and other kinds of machine learning don't need a label on every example, but the points about examples and testing are the same.",
     "If a learner labels an example differently from the gardener, the model follows the learner. That is a good moment to ask: who decides the right label?"
   ],
   "changes": [
@@ -571,6 +588,7 @@
     "Adds a train-model activity with a tested set of leaf cards; the results in the evidence table and the reading are what the activity gives when the learner labels like the gardener (checked with a small script; see the spec).",
     "visual.src points to a picture that doesn't exist yet.",
     "Needs review by an AI researcher for accuracy, and by Justin for level and tone.",
-    "October 2026, social studies rebuild (Justin's brief: AI and the digital world through a social studies lens, at most 20 lessons): kept as Lesson 3 in \"Thinking machines\" (thinking-machines). The notes above about the old section ids are out of date."
+    "October 2026, social studies rebuild (Justin's brief: AI and the digital world through a social studies lens, at most 20 lessons): kept as Lesson 3 in \"Thinking machines\" (thinking-machines). The notes above about the old section ids are out of date.",
+    "Revised on 1 November 2026 from Justin's review: a short, sourced bridge to Lesson 2 (learning from labelled examples is an old idea: the 1958 perceptron, Cover and Hart's 1967 study of the nearest-neighbour rule, far more useful after 2010); the reading and a new glossary word say this is supervised learning, one kind of machine learning; training data is now “examples used to build a model” (labels belong to this kind); the third section says relevant, correctly labelled examples help but more examples alone don't always, and that 8 of 8 on a small test can't prove the model works on every new plant (Round 3's debrief, the Write example and a teacher note on a fair new test say the same). The activity's cards and rounds are unchanged (still 4 of 6, 6 of 6, 0 of 2, 8 of 8, checked against the model); a genuinely new test set for Round 3 needs new leaf pictures and test changes in code, so it is a paper extension for now. Claim record: content/courses/digital-world/claims/DW03.md."
   ]
 }
