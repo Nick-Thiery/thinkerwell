@@ -165,6 +165,7 @@ Nick's call (2 November 2026): Digital World and Southeast Asia Through Time get
 - **Downloading.** Nothing of a course downloads on a device without its preview: Listen fetches a course's timings and files only inside its lessons, and Settings' "Lesson audio" adds a course's tracks only where `settings.previewCourses` has it.
 - **Offline.** The service worker keeps them in the same cache and prunes each track against its own current timings (`audioLang` in `src/offline/sw.ts` reads `/audio/id/digital-world/x.mp3` as `id/digital-world`).
 - **Checks.** `npm run check:audio` checks every course track like a language (`courseAudioProblems` in `tools/audio/check.ts`). Tests: `tools/audio/check.test.ts`, `src/audio/recordings.test.ts`.
+- **What was recorded** (3 November 2026, no `CHECK:` warnings): Digital World 102 files per language (English 14.9 MB, 62 min; Indonesian 21.9 MB, 91 min; Malay 19.6 MB, 82 min) and Southeast Asia Through Time 72 (English 10.2 MB, 43 min; Indonesian 15.1 MB, 63 min; Malay 13.6 MB, 57 min): 95 MB in the repository and the deployment, none of it precached. On a CPU with one thread, English took about 2 h 10 min (Kokoro), Indonesian about 2 h and Malay about 2 h (MMS-TTS). The precache gained only `courseRecordings.json`'s few lines (the build test still passes under 829 kB, with little to spare).
 
 ## Vietnamese (hidden preview)
 
