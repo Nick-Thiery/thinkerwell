@@ -59,6 +59,7 @@ Two AI translators (Lessons 1–6 and Lessons 7–12) share this list so the cou
 | kangany system / overseer | sistem kangani / mandur | Textbook spelling "kangani" |
 | souvenir (book) | (buku) cenderamata | |
 | archive / National Archives | arkib / Arkib Negara (Belanda, Indonesia) | |
+| photo / National Museum (of the Philippines) | foto / Muzium Negara (Filipina) | Lessons 1–6 switched from "gambar foto" to "foto" to match |
 | letter / translation / editor / portrait | surat / terjemahan / penyunting / potret | |
 | scholarship | biasiswa | |
 | noble family | keluarga bangsawan | |
@@ -67,6 +68,17 @@ Two AI translators (Lessons 1–6 and Lessons 7–12) share this list so the cou
 | claim | dakwaan | (KEY_TERMS) |
 | painting / painters' workshop | lukisan / bengkel pelukis | |
 | a made-up example (section checks) | contoh rekaan | |
+| pot (Ban Chiang) / bowl | tembikar / mangkuk | "tembikar" for one pot and for pottery; reviewer to confirm |
+| boat (balangay) / plank | perahu / papan | |
+| lashed-lug (boatbuilding method) | lashed-lug | Kept in English |
+| Balangay Shrine Museum | Muzium Kuil Balangay | |
+| treasure hunters | pemburu harta karun | |
+| part of the reading ("Look at the third part of the reading") | petikan ("Lihat petikan ketiga bacaan") | KEY_TERMS |
+| Look back at Lesson N (section checks) | Lihat semula Pelajaran N | |
+| temple (Borobudur) | candi | course.json |
+| a student (in a made-up example) | seorang pelajar | KEY_TERMS "learner"; not "murid" |
+| Evidence move / Aim / Misconception / Source caveats (teachers' notes) | Langkah bukti / Matlamat / Salah faham / Kaveat sumber | |
+| the brief (Justin's course brief) | taklimat (kursus) | "taklimat 3B" |
 
 ## Words used in Lessons 7–12 and the checks for sections 3 and 4 (Lessons 7–12 translator)
 
@@ -121,3 +133,16 @@ Two AI translators (Lessons 1–6 and Lessons 7–12) share this list so the cou
 | museum / National Museum of Cambodia | muzium / Muzium Negara Kemboja | |
 | photo / photographer | foto / jurugambar | |
 | caption | kapsyen | |
+| article (NLB, BiblioAsia) | artikel | Matches Lessons 1–6 (not "rencana") |
+| captions (of a YouTube video) | sari kata | "kapsyen" only for a picture's caption |
+| school students / pupils (real schools, Lesson 9) | murid | To keep them apart from "pelajar", the learner using Thinkerwell; "pelajar" for a student in a made-up example |
+| ramp (school building) | tanjakan | As Our World's Malay |
+| UNESCO Ancient Town (Hội An) | Pekan Lama Hội An | Title in sources kept in English with this gloss |
+| Shared Histories (UNESCO teaching package) | Shared Histories (Sejarah Bersama) | Name kept, glossed |
+| public domain | domain awam | |
+| footbridge | titi | |
+| school vegetable plots / school gardens | petak sayur sekolah / kebun sekolah | |
+| shot list (of a newsreel) | senarai babak | |
+| salute (a flag) | memberi tabik hormat | |
+| popular vote, 1999 (Timor-Leste's "popular consultation") | undian / pungutan suara | |
+| Former Ford Factory (diagram label "15 Feb 1942") | dates in diagrams: 15 Feb 1942, 17 Ogos 1945, 27 Dis 1949, 31 Ogos 1957, 16 Sep 1963 | Malay month abbreviations in diagrams; reading text spells months out |

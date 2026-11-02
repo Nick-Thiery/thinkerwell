@@ -1,0 +1,263 @@
+{
+  "title": "Cip, listrik, dan air",
+  "essentialQuestion": "Apa yang dibutuhkan AI dari bumi, dan siapa yang menanggung biayanya?",
+  "learningGoal": "Menjelaskan apa yang dibutuhkan pusat data AI dari bumi, dan menimbang manfaat dan biayanya bagi tempat-tempat di mana pusat data itu dibangun.",
+  "warmUp": {
+    "question": "Saat kamu mengajukan pertanyaan kepada alat AI, menurutmu di mana jawabannya dibuat?",
+    "options": [
+      "Di dalam ponsel atau laptop",
+      "Di sebuah gedung besar yang jauh",
+      "Di suatu tempat di langit",
+      "Tidak yakin"
+    ]
+  },
+  "evidence": {
+    "label": "Contoh fiksi yang dibuat untuk pelajaran ini.",
+    "question": "Apa yang diharapkan setiap orang? Apa yang dikhawatirkan setiap orang?",
+    "cards": [
+      {
+        "title": "Sebuah pusat data akan dibangun di Coralton",
+        "cases": [
+          {
+            "name": "Perusahaan pusat data",
+            "body": "“Kami akan membangun gedung yang sangat besar, penuh dengan komputer yang menjalankan alat-alat AI. Sekitar 1.000 orang akan membantu membangunnya selama dua tahun. Sekitar 50 orang akan bekerja di sana setelah gedung itu dibuka, dan kami akan melatih anak-anak muda setempat untuk sebagian pekerjaan itu. Kami akan memasang panel surya di atapnya.”"
+          },
+          {
+            "name": "Hana, yang mengelola tambak ikan kecil",
+            "body": "“Ikan-ikanku butuh air bersih dan listrik sepanjang siang dan malam. Aku khawatir pusat data itu akan memakai air kota pada musim kemarau, dan pemadaman listrik akan menjadi lebih lama.”"
+          },
+          {
+            "name": "Leo, seorang tukang listrik muda",
+            "body": "“Aku berharap bisa bekerja di lokasi pembangunan dan mempelajari keterampilan baru. Pekerjaan selama dua tahun akan sangat membantuku.”"
+          },
+          {
+            "name": "Kantor air kota",
+            "body": "“Pada musim kemarau, air sungai surut. Pusat data membutuhkan air untuk mendinginkan komputer-komputernya. Pusat data itu bisa memakai air limbah yang sudah dibersihkan sebagai pengganti air sungai.”"
+          },
+          {
+            "name": "Seorang anggota dewan kota",
+            "body": "“Perusahaan itu akan membawa uang ke Coralton. Tetapi sebagian besar orang yang memakai alat-alat AI-nya tinggal di negara lain.”"
+          }
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "title": "Manfaat atau biaya?",
+    "instructions": "Masukkan setiap kalimat tentang pusat data Coralton ke dalam satu kelompok. Tidak ada nilai. Setelah kamu menaruh satu kalimat, kamu bisa melihat satu jawaban yang mungkin dan alasannya.",
+    "groups": [
+      {
+        "label": "Manfaat bagi kota"
+      },
+      {
+        "label": "Biaya bagi kota"
+      },
+      {
+        "label": "Keduanya"
+      }
+    ],
+    "items": [
+      {
+        "text": "Sekitar 1.000 orang mendapat pekerjaan membangun selama dua tahun.",
+        "feedback": "Orang-orang mendapat uang dan mempelajari keterampilan, tetapi pekerjaan itu berakhir saat gedungnya selesai. Jadi kamu juga bisa bilang keduanya."
+      },
+      {
+        "text": "Sekitar 50 orang mendapat pekerjaan jangka panjang di dalamnya.",
+        "feedback": "Setiap kelompok bisa benar di sini. Pekerjaan jangka panjang itu membantu, tetapi 50 adalah jumlah yang kecil untuk gedung yang sangat besar."
+      },
+      {
+        "text": "Pusat data itu memakai listrik sebanyak sebuah kota kecil.",
+        "feedback": "Kota itu harus berbagi listriknya. Menghasilkan lebih banyak listrik mungkin berarti lebih banyak polusi."
+      },
+      {
+        "text": "Pusat data itu mengambil air sungai untuk mendinginkan komputer-komputernya.",
+        "feedback": "Pada musim kemarau, air untuk pertanian dan rumah-rumah mungkin berkurang."
+      },
+      {
+        "text": "Perusahaan itu memasang panel surya di atapnya.",
+        "feedback": "Listrik dari matahari itu bersih, jadi pusat data mengambil lebih sedikit listrik dari kota."
+      },
+      {
+        "text": "Pusat data itu membersihkan air limbah dan memakainya untuk pendinginan.",
+        "feedback": "Air sungai tetap tersedia untuk pertanian dan rumah-rumah."
+      },
+      {
+        "text": "Sebuah perusahaan besar dari luar negeri membawa uang ke kota itu.",
+        "feedback": "Setiap kelompok bisa benar di sini. Uang baru bisa membantu kota itu berkembang. Tetapi banyak dari penghasilan perusahaan itu mungkin pergi ke negara lain."
+      },
+      {
+        "text": "Perusahaan itu melatih anak-anak muda setempat untuk bekerja di dalamnya.",
+        "feedback": "Orang-orang mempelajari keterampilan yang juga bisa mereka pakai di pekerjaan lain. Jika hanya sedikit yang mendapat tempat, kamu juga bisa bilang keduanya."
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "AI berjalan di gedung-gedung besar yang penuh cip",
+        "text": "Saat kamu mengajukan pertanyaan kepada alat AI, biasanya perangkatmu tidak membuat jawabannya sendiri. Ada alat kecil yang bisa. Tetapi hampir selalu, pertanyaan itu dikirim ke pusat data, yaitu gedung besar yang penuh komputer. Di dalamnya ada ribuan cip yang melakukan triliunan hitungan setiap detik. Cip-cip itu memakai banyak listrik dan menjadi sangat panas, jadi banyak pusat data memakai air untuk mendinginkannya. Sebuah badan energi internasional memperkirakan bahwa pada tahun 2024, semua pusat data di dunia memakai sekitar 1,5% dari listrik dunia. Hanya sebagian dari jumlah itu yang untuk AI. Pusat data juga menjalankan situs web, video, dan pesan. Badan itu memperkirakan pusat data akan memakai sekitar dua kali lipat pada tahun 2030, terutama karena AI. Itu sebuah perkiraan, bukan hasil pengukuran.",
+        "simpler": "Biasanya, jawaban AI tidak dibuat di ponsel atau laptopmu. Ada alat kecil yang memang bekerja di ponsel. Tetapi sebagian besar pertanyaan dikirim ke pusat data, yaitu gedung besar yang penuh komputer. Cip-cipnya melakukan hitungan yang sangat banyak. Cip itu memakai banyak listrik dan menjadi sangat panas. Air sering dipakai supaya cip itu tetap dingin. Pada tahun 2024, semua pusat data memakai sekitar 1,5% dari listrik dunia. Hanya sebagian yang untuk AI. Para ahli memperkirakan jumlah ini mungkin menjadi dua kali lipat pada tahun 2030, terutama karena AI. Itu sebuah perkiraan."
+      },
+      {
+        "heading": "Cip membutuhkan mineral dan segelintir pabrik",
+        "text": "Cip dibuat dari bahan-bahan yang digali dari dalam tanah. Sebagian membutuhkan mineral langka, yang sering ditambang dengan cara yang merusak alam. Sangat sedikit pabrik yang bisa membuat cip yang paling canggih. Pada tahun 2021, sebuah penelitian industri cip menemukan bahwa sebagian besar cip tercanggih di dunia dibuat di satu tempat, yaitu Taiwan. Jadi masalah di satu tempat bisa menyebabkan kekurangan cip di seluruh dunia. Cip dan komputer lama juga menjadi sampah elektronik. Sampah ini bisa mengandung logam berbahaya, seperti merkuri dan timbal.",
+        "simpler": "Cip dibuat dari benda-benda yang digali dari dalam tanah. Sebagian membutuhkan mineral langka. Menggalinya bisa merusak alam. Hanya sedikit pabrik yang membuat cip terbaik. Pada tahun 2021, sebuah penelitian menemukan bahwa sebagian besar cip itu dibuat di Taiwan. Masalah di sana bisa memperlambat cip di mana-mana. Komputer lama menjadi sampah. Sebagian sampah itu berbahaya."
+      },
+      {
+        "heading": "Siapa yang untung, dan siapa yang membayar?",
+        "text": "Pusat data sedang dibangun dengan cepat di Asia Tenggara. Singapura menghentikan sementara pembangunan pusat data baru pada tahun 2019, dan pada tahun 2021 pusat data memakai sekitar 7% dari listrik Singapura. Setelah itu, banyak perusahaan membangun di Johor, Malaysia, dan di Pulau Batam, Indonesia. Pusat data membawa investasi, pekerjaan membangun yang berakhir saat gedungnya selesai, dan beberapa pekerjaan jangka panjang. Pemerintah Malaysia berharap pusat data akan membantu memodernkan ekonominya. Tetapi para pengkritik mengatakan pusat data menciptakan jauh lebih sedikit pekerjaan daripada yang dijanjikan. Banyak penggunanya tinggal di negara lain. Sebagian orang yang tinggal di dekatnya khawatir tentang kekurangan air dan pemadaman listrik. Perusahaan bisa menurunkan biaya-biaya ini dengan AI yang lebih efisien, listrik dari matahari dan angin, serta air yang dibersihkan dan dipakai ulang.",
+        "simpler": "Singapura menghentikan sementara pembangunan pusat data baru pada tahun 2019. Jadi perusahaan-perusahaan membangun di Johor, Malaysia, dan Batam, Indonesia. Pusat data membawa investasi. Pusat data membawa pekerjaan membangun selama beberapa tahun, dan beberapa pekerjaan jangka panjang. Malaysia berharap pusat data akan membantunya menjadi lebih kaya. Tetapi ada yang bilang pusat data membawa lebih sedikit pekerjaan daripada yang dijanjikan. Banyak penggunanya tinggal di negara lain. Orang-orang di dekatnya khawatir tentang air dan pemadaman listrik. Perusahaan bisa membuat AI lebih efisien. Mereka bisa memakai listrik dari matahari dan angin, dan membersihkan lalu memakai ulang air."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "pusat data",
+        "definition": "Gedung besar yang penuh komputer yang menyimpan dan mengolah informasi.",
+        "example": "Pusat data baru di Coralton akan menjalankan alat-alat AI."
+      },
+      {
+        "word": "cip",
+        "forms": [
+          "chip"
+        ],
+        "definition": "Bagian yang sangat kecil di dalam komputer yang melakukan hitungan-hitungannya.",
+        "example": "Pusat data itu punya ribuan cip, dan cip-cip itu menjadi sangat panas."
+      },
+      {
+        "word": "mineral",
+        "definition": "Bahan alami yang digali orang dari dalam tanah.",
+        "example": "Sebagian cip membutuhkan mineral langka."
+      },
+      {
+        "word": "investasi",
+        "definition": "Uang yang dibelanjakan sebuah perusahaan di suatu tempat, dengan harapan mendapat lebih banyak uang nanti.",
+        "example": "Pusat data itu adalah investasi besar di Coralton."
+      },
+      {
+        "word": "efisien",
+        "definition": "Melakukan pekerjaan dengan baik sambil memakai lebih sedikit listrik, air, atau waktu.",
+        "example": "Pusat data yang lebih efisien memakai lebih sedikit listrik untuk pekerjaan yang sama."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Mengapa banyak pusat data memakai air?",
+        "options": [
+          {
+            "text": "Untuk membuat listrik bagi kota",
+            "feedback": "Belum tepat. Pusat data memakai listrik. Baca tentang cip yang panas di bagian pertama."
+          },
+          {
+            "text": "Untuk mencuci komputer setiap hari",
+            "feedback": "Belum tepat. Air itu bukan untuk mencuci. Baca tentang cip yang panas di bagian pertama."
+          },
+          {
+            "text": "Untuk mendinginkan cip yang menjadi sangat panas",
+            "feedback": "Benar. Cip-cip itu bekerja begitu banyak sehingga menjadi sangat panas, jadi air membantu mendinginkannya."
+          }
+        ]
+      },
+      {
+        "question": "Apa yang terjadi dengan pekerjaan membangun di sebuah pusat data?",
+        "options": [
+          {
+            "text": "Pekerjaan itu berlangsung selama pusat data berjalan",
+            "feedback": "Belum tepat. Pekerjaan membangun itu untuk membangun gedungnya. Baca bagian ketiga."
+          },
+          {
+            "text": "Pekerjaan itu berakhir saat gedungnya selesai",
+            "feedback": "Benar. Banyak orang membangunnya selama beberapa tahun. Di Coralton, sekitar 50 orang akan bekerja di sana setelah gedung itu dibuka."
+          },
+          {
+            "text": "Pekerjaan itu dilakukan oleh komputer, bukan manusia",
+            "feedback": "Belum tepat. Manusia yang membangun pusat data. Baca bagian ketiga."
+          }
+        ]
+      },
+      {
+        "question": "Janji apa yang akan kamu minta dari perusahaan pusat data itu?",
+        "placeholder": "Aku akan meminta perusahaan itu berjanji ... karena ..."
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Apakah Coralton sebaiknya menerima pusat data itu? Berikan jawabanmu, satu manfaat, satu biaya, dan satu janji yang akan kamu minta dari perusahaan itu.",
+    "sentenceStarters": [
+      "Menurutku Coralton sebaiknya ...",
+      "Satu manfaatnya adalah ...",
+      "Satu biayanya adalah ...",
+      "Aku akan meminta perusahaan itu berjanji ...",
+      "Ini penting karena ..."
+    ],
+    "planningBoxes": [
+      "Ide utamaku",
+      "Bukti dari pelajaran",
+      "Mengapa ini penting",
+      "Pertanyaan yang masih aku punya"
+    ],
+    "selfCheck": [
+      "Aku menjawab ya, tidak, atau ya dengan sebuah janji.",
+      "Aku memberi satu manfaat dan satu biaya.",
+      "Aku memberi satu janji yang sebaiknya dibuat perusahaan itu."
+    ],
+    "example": "Menurutku Coralton sebaiknya menerimanya, tetapi hanya dengan sebuah janji. Satu manfaatnya adalah sekitar 1.000 orang mendapat pekerjaan membangun selama dua tahun, dan orang-orang seperti Leo bisa mempelajari keterampilan baru. Satu biayanya adalah pusat data itu membutuhkan banyak air untuk mendinginkan cip-cipnya. Pada musim kemarau, tambak ikan Hana dan rumah-rumah di kota itu bisa mendapat lebih sedikit air. Aku akan meminta perusahaan itu berjanji memakai air limbah yang sudah dibersihkan, bukan air sungai. Ini penting karena kota itu lebih membutuhkan air daripada alat-alat AI."
+  },
+  "speak": {
+    "partnerTask": "Temanmu menyebutkan satu manfaat pusat data Coralton. Kamu menyebutkan satu biayanya. Lalu bertukar.",
+    "independentTask": "Ucapkan dengan lantang tiga hal yang dibutuhkan pusat data supaya bisa bekerja. Lalu katakan siapa yang mungkin menanggung biayanya."
+  },
+  "watch": {
+    "why": "Sebuah pelajaran animasi pendek memperlihatkan apa yang ada di dalam pusat data AI, mengapa pusat data menjadi begitu panas, dan bertanya berapa banyak sumber daya bumi yang sebaiknya dipakai AI.",
+    "beforeQuestion": "Menurutmu, apa yang ada di dalam pusat data AI?",
+    "afterQuestion": "Dua cara apa yang diberikan video ini untuk membuat AI memakai lebih sedikit energi?",
+    "summary": "Sejak tahun 2019, lebih dari seribu pusat data AI yang sangat besar telah dibangun di seluruh dunia. Setiap pusat data bisa memakai air sebanyak sebuah kota kecil. Pusat data itu bisa memakai listrik sebanyak sebuah kota kecil. Di dalamnya, ada ribuan rak komputer dengan cip khusus. Cip-cip ini melakukan triliunan hitungan setiap detik, untuk menjawab pertanyaan dan melatih AI. Semua pekerjaan ini membuat cip menjadi sangat panas. Para insinyur mendinginkannya dengan menara air, air dingin di dalam pipa, atau cairan khusus. Mereka juga mengirim data dengan cahaya, bukan dengan kabel tembaga, sehingga lebih sedikit listrik yang terbuang. Tetapi alat-alat AI terus menjadi lebih besar, jadi alat-alat itu membutuhkan listrik yang makin banyak. Video ini bertanya apakah kita bisa membuat alat yang lebih kecil untuk pekerjaan yang lebih kecil. Video ini diakhiri dengan sebuah pertanyaan: berapa banyak sumber daya bumi yang sebaiknya kita pakai untuk mesin yang lebih pintar?",
+    "keyPoints": [
+      "Pusat data AI memakai listrik dan air dalam jumlah yang sangat besar.",
+      "Cip menjadi sangat panas, jadi para insinyur mencari cara-cara baru untuk mendinginkannya dan menghemat listrik.",
+      "Manusia harus memutuskan berapa banyak sumber daya bumi yang sebaiknya dipakai AI."
+    ],
+    "contentNote": "Sekitar 6 menit (6:16), sebuah pelajaran animasi TED-Ed oleh Sajan Saini, dirilis pada September 2026, dengan bahasa Inggris Amerika yang cepat. Judul dan kanal dipastikan dengan oEmbed YouTube pada 31 Oktober 2026, dan durasinya dari halaman TED untuk pelajaran ini. Ringkasannya ditulis dari transkrip di situs web TED (https://www.ted.com/talks/sajan_saini_why_are_ai_data_centers_using_so_much_electricity), bukan dari menontonnya. Video ini menyebut dua alat AI (Claude dan ChatGPT), memakai contoh-contoh dari Amerika Serikat (New York City), dan menyebut perusahaan-perusahaan yang berencana membangun pembangkit listrik tenaga nuklir sendiri. Angka-angkanya (misalnya, energi yang cukup untuk 300.000 rumah) adalah angka dari video itu sendiri dan tidak diulang dalam pelajaran ini. Seseorang dari tim harus menontonnya sebelum dipakai; pelajar bisa membaca ringkasan tertulisnya sebagai gantinya."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Satu hal yang dibutuhkan AI dari bumi adalah ... Orang-orang yang menanggung biayanya adalah ..."
+      },
+      {
+        "text": "Sebelum sebuah kota menerima pusat data, orang-orang sebaiknya bertanya ..."
+      }
+    ],
+    "completionMessage": "Kamu sudah menyelesaikan Pelajaran 6. Kamu mencari tahu apa yang dibutuhkan AI dari bumi dan menimbang siapa yang untung dan siapa yang membayar."
+  },
+  "visual": {
+    "alt": "Sebuah rantai dari tambang ke pabrik cip, pusat data, dan tablet. Listrik dan air mengalir masuk ke pusat data, dan panas keluar."
+  },
+  "sources": [
+    {
+      "label": "Scientific American, dari Nature (10 April 2025): Data centers will use twice as much energy by 2030, driven by AI (melaporkan laporan Energy and AI dari International Energy Agency: semua pusat data, perkiraan 2024 dan proyeksi 2030)"
+    },
+    {
+      "label": "Apple (2024): Apple Intelligence Foundation Language Models (model kecil yang berjalan di perangkat, dan model yang lebih besar di server)"
+    },
+    {
+      "label": "UN Environment Programme (21 September 2024): AI has an environmental problem. Here's what the world can do about that. (AI punya masalah lingkungan, dan apa yang bisa dilakukan dunia)"
+    },
+    {
+      "label": "Reuters, lewat Malay Mail (1 April 2021): Global chip supply chain increasingly vulnerable to massive disruption, study finds (Semiconductor Industry Association; rantai pasok cip dunia makin rentan)"
+    },
+    {
+      "label": "Associated Press, lewat The Star (19 Februari 2025): Malaysia is betting on data centers to boost its economy. But experts warn they come at a price. (Malaysia bertaruh pada pusat data)"
+    },
+    {
+      "label": "Kontinentalist (2026): Thirsty, tired, wired: Singapore, Johor, Batam and the data centre boom (Singapura, Johor, Batam, dan ledakan pusat data)"
+    }
+  ],
+  "sensitiveNotes": [
+    "Pemadaman listrik, kekurangan air, dan biaya listrik mungkin bagian dari kehidupan sehari-hari pelajar. Jangan bertanya tentang rumah mereka, tagihan mereka, atau akses mereka ke air dan listrik; jaga diskusi tetap pada Coralton dan fakta-fakta yang dilaporkan. Sebagian pelajar mungkin tinggal di atau dekat tempat-tempat yang disebut (Johor, Batam, Singapura): jaga agar tetap netral, tentang pilihan yang dihadapi setiap kota, bukan menyalahkan negara mana pun atau penduduknya."
+  ],
+  "educatorNotes": [
+    "Angka-angkanya bertanggal dan punya cakupan tertentu. Listrik: laporan Energy and AI dari International Energy Agency (IEA, April 2025), seperti dilaporkan oleh Scientific American dan Nature, memperkirakan bahwa semua pusat data memakai sekitar 415 TWh pada tahun 2024, sekitar 1,5% dari listrik dunia, dan memproyeksikan sekitar 945 TWh pada tahun 2030, kira-kira sebanyak yang dipakai Jepang dalam setahun sekarang. Angka 1,5% itu untuk semua pusat data, bukan AI saja: IEA memperkirakan bahwa server AI memakai sekitar 15% dari energi pusat data pada tahun 2024, dan seorang peneliti dari luar menganggap angka itu terlalu rendah. Angka tahun 2030 adalah proyeksi dengan ketidakpastian yang dinyatakan, bukan hasil pengukuran. (Halaman-halaman IEA sendiri tidak bisa dibuka pada 1 November 2026; periksa halaman-halaman itu, dan Key questions on energy and AI yang terbit kemudian, jika memungkinkan.) Di perangkat: ada model kecil yang berjalan di ponsel dan laptop (misalnya model Apple dengan sekitar 3 miliar parameter, 2024), sementara sebagian besar alat yang besar berjalan di pusat data. Bagian Taiwan dalam pembuatan cip tercanggih (92%) berasal dari penelitian Semiconductor Industry Association tahun 2021. Singapura menghentikan sementara pusat data baru pada tahun 2019; pada tahun 2021 pusat data memakai sekitar 7% dari listriknya (Kontinentalist). Angka “30 sampai 50 pekerjaan jangka panjang” dalam draf sebelumnya (Good Jobs First, lewat AP, cakupannya tidak disebutkan) dan angka UNEP “800 kg bahan untuk komputer seberat 2 kg” (tanpa sumber) sudah dihapus. Petambak ikan dalam berita AP khawatir tentang pemadaman listrik yang lebih lama, seperti Hana.",
+    "Aturan untuk pusat data di Johor dan Batam berubah dengan cepat (pada awal 2026, setelah warga memprotes soal air, Malaysia berhenti menerima permohonan baru untuk pusat data non-AI di Johor dan memperketat izin air, menurut laporan Kontinentalist). Periksa berita terbaru sebelum mengajarkan bagian ketiga. Pusat data juga menjalankan situs web, video, dan pesan, bukan hanya AI. Manfaatnya juga nyata: investasi (AP melaporkan lebih dari 31 miliar dolar AS untuk Malaysia dalam 10 bulan pertama tahun 2024, dari Knight Frank), pekerjaan membangun, dan beberapa pekerjaan jangka panjang; UNEP juga mencatat bahwa AI bisa membantu memantau lingkungan. Beberapa tempat memberi pusat data keringanan pajak yang besar, jadi tanyakan siapa yang diuntungkan oleh sebuah kesepakatan.",
+    "Versi kertas untuk kegiatan ini: tulis kedelapan kalimat di kartu, lalu pilah ke dalam Manfaat, Biaya, dan Keduanya. Tidak ada nilai; hargai alasannya, dan terima kelompok yang berbeda jika alasannya baik. Seorang mitra bisa mengganti Coralton dengan contoh setempat yang pendek dan netral, seperti pabrik atau tambang baru. Catatan klaimnya ada di content/courses/digital-world/claims/DW06.md."
+  ]
+}

@@ -1,0 +1,282 @@
+{
+  "title": "Apa itu AI, dan apa yang bukan AI",
+  "essentialQuestion": "Bagaimana kamu bisa tahu kalau sebuah mesin memakai AI?",
+  "learningGoal": "Menjelaskan bahwa banyak alat AI membuat prediksi dari pola dalam contoh-contoh, dan memilah alat sehari-hari menjadi AI dan bukan AI.",
+  "warmUp": {
+    "question": "Menurutmu, mana dari alat-alat ini yang memakai AI?",
+    "options": [
+      "Kalkulator",
+      "Alat yang mengubah ucapan menjadi tulisan",
+      "Bel kelas",
+      "Tidak yakin"
+    ]
+  },
+  "evidence": {
+    "label": "Contoh fiksi yang dibuat untuk pelajaran ini.",
+    "question": "Alat mana yang selalu melakukan hal yang sama? Alat mana yang harus menebak?",
+    "cards": [
+      {
+        "title": "Alat-alat di Pusat Belajar Hillview",
+        "columns": [
+          "Alat",
+          "Apa yang dilakukannya"
+        ],
+        "rows": [
+          [
+            "Kalkulator",
+            "Menjumlah, mengurangi, mengalikan, dan membagi angka."
+          ],
+          [
+            "Alat ketik suara",
+            "Mengubah kata-kata yang diucapkan menjadi tulisan."
+          ],
+          [
+            "Alat penerjemah",
+            "Mengubah kalimat dalam satu bahasa ke bahasa lain."
+          ],
+          [
+            "Bel kelas",
+            "Berbunyi pukul sembilan setiap pagi."
+          ],
+          [
+            "Saran video",
+            "Situs video menyarankan apa yang ditonton berikutnya, berdasarkan apa yang ditonton orang sebelumnya."
+          ],
+          [
+            "Lampu di dekat pintu",
+            "Menyala saat ada orang lewat."
+          ],
+          [
+            "Pemilah foto",
+            "Menemukan semua foto yang memperlihatkan pohon."
+          ],
+          [
+            "Kipas “pintar”",
+            "Di kotaknya tertulis “pintar”. Kipas ini menyala saat ruangan menjadi panas."
+          ]
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "title": "AI atau bukan AI?",
+    "instructions": "Masukkan setiap alat dari Hillview ke dalam satu kelompok. Tidak ada nilai. Setelah kamu menaruh sebuah alat, kamu bisa melihat satu jawaban yang mungkin dan alasannya.",
+    "groups": [
+      {
+        "label": "Memakai AI"
+      },
+      {
+        "label": "Bukan AI"
+      },
+      {
+        "label": "Sulit dipastikan"
+      }
+    ],
+    "items": [
+      {
+        "text": "Kalkulator",
+        "feedback": "Kalkulator mengikuti langkah-langkah tetap yang ditulis manusia, untuk hitungan yang hanya punya satu jawaban benar. Kalkulator tidak belajar dari contoh."
+      },
+      {
+        "text": "Alat ketik suara",
+        "feedback": "Setiap suara berbeda. Alat ini belajar dari banyak rekaman suara, jadi alat ini bisa membuat tebakan yang cermat tentang kata-katanya."
+      },
+      {
+        "text": "Alat penerjemah",
+        "feedback": "Alat ini belajar dari banyak kalimat. Jadi alat ini bisa membuat tebakan yang cermat untuk kalimat baru."
+      },
+      {
+        "text": "Bel kelas",
+        "feedback": "Seseorang memasang pengatur waktu. Bel berbunyi pada jam yang sama setiap hari, dan bel tidak belajar atau memperkirakan apa pun."
+      },
+      {
+        "text": "Saran video",
+        "feedback": "Alat ini mencari pola dalam apa yang ditonton orang, lalu memperkirakan apa yang mungkin mereka sukai berikutnya."
+      },
+      {
+        "text": "Lampu di dekat pintu",
+        "feedback": "Lampu ini mengikuti satu aturan sederhana: kalau ada yang bergerak, lampu menyala. Lampu ini tidak belajar atau memperkirakan."
+      },
+      {
+        "text": "Pemilah foto",
+        "feedback": "Setiap pohon terlihat berbeda. Alat ini belajar dari banyak foto, lalu membuat tebakan yang cermat tentang foto mana yang memperlihatkan pohon."
+      },
+      {
+        "text": "Kipas “pintar”",
+        "feedback": "Setiap kelompok bisa dibenarkan di sini. Kipas ini mungkin mengikuti satu aturan tentang panas, atau mungkin belajar. Kata “pintar” tidak memberi tahu kamu."
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Banyak alat AI belajar dari contoh",
+        "text": "AI adalah singkatan dari artificial intelligence, atau kecerdasan artifisial. Artifisial berarti buatan manusia. AI adalah bidang yang luas dengan banyak metode. Banyak sistem AI yang dipakai sekarang mempelajari pola dari data, dan pelajaran ini membahas sistem seperti itu. Orang memberi program itu banyak data, seperti foto, kalimat, atau rekaman suara. Program itu mencari pola dalam data. Lalu program itu memakai pola tersebut untuk membuat prediksi. Prediksi adalah tebakan yang cermat tentang sesuatu yang baru, berdasarkan pola, bukan tebakan asal-asalan. Di Pusat Belajar Hillview, alat penerjemah belajar dari banyak kalimat dalam dua bahasa. Saat kamu mengetik kalimat yang belum pernah dilihatnya, alat itu memprediksi terjemahan yang baik.",
+        "simpler": "AI adalah singkatan dari artificial intelligence, atau kecerdasan artifisial. Manusia yang membuatnya. Ada banyak jenis AI. Banyak program AI sekarang belajar dari contoh. Pelajaran ini membahas program seperti itu. Orang memberi program banyak data, seperti foto atau suara. Program itu menemukan pola dalam data. Lalu program itu membuat prediksi. Prediksi adalah tebakan yang cermat tentang sesuatu yang baru. Tebakan ini tidak asal. Alat penerjemah di Hillview belajar dari banyak kalimat. Alat itu bisa menebak cara menerjemahkan kalimat baru."
+      },
+      {
+        "heading": "Tidak semua mesin memakai AI",
+        "text": "Banyak mesin bukan AI. Kalkulator mengikuti langkah-langkah tetap yang ditulis manusia, untuk hitungan yang hanya punya satu jawaban benar. Kalkulator selalu memberi 12 untuk 7 + 5, dan kalkulator tidak pernah mempelajarinya dari contoh. Bel di Hillview berbunyi pukul sembilan karena seseorang memasang pengatur waktu. Alat-alat AI dalam pelajaran ini berbeda, karena alat-alat itu harus memperkirakan. Suara atau foto yang baru tidak pernah persis sama dengan contoh-contohnya. Meski begitu, mengikuti aturan tidak membuktikan bahwa sebuah alat bukan AI. Ada AI yang mengikuti aturan yang ditulis manusia, dan ada yang menggabungkan aturan dan belajar. Kipas yang disebut “pintar” mungkin mengikuti satu aturan sederhana, atau mungkin belajar. Kadang jawaban yang jujur adalah “sulit dipastikan”.",
+        "simpler": "Banyak mesin bukan AI. Kalkulator mengikuti langkah-langkah yang ditulis manusia. Kalkulator selalu bilang 7 + 5 sama dengan 12. Kalkulator tidak mempelajari ini. Bel di Hillview berbunyi pukul sembilan. Seseorang memasang pengatur waktu. Alat-alat AI di sini harus membuat tebakan yang cermat. Foto yang baru tidak pernah sama dengan contoh-contohnya. Tetapi ada AI yang mengikuti aturan yang ditulis manusia. Ada juga yang memakai aturan dan contoh. Jadi bisa sulit untuk tahu. Kipas “pintar” mungkin mengikuti satu aturan, atau mungkin belajar."
+      },
+      {
+        "heading": "AI adalah alat, bukan manusia",
+        "text": "AI bisa terlihat cerdas, tetapi AI tidak berpikir atau merasa seperti manusia. AI tidak memahami foto atau kalimat seperti caramu memahaminya. AI menemukan pola dalam data lalu membuat tebakan. Tebakan itu bisa salah, terutama saat sesuatu masih baru atau sangat berbeda dari contoh-contohnya. Manusialah yang menentukan untuk apa sebuah alat AI dipakai, dari data apa alat itu belajar, dan kapan jawabannya bisa dipercaya. Jadi kamu bisa mengajukan tiga pertanyaan tentang alat AI apa pun. Apa yang ditebaknya? Dari contoh apa alat itu belajar? Siapa yang memeriksa apakah jawabannya benar?",
+        "simpler": "AI bisa terlihat cerdas. Tetapi AI tidak berpikir atau merasa seperti manusia. AI menemukan pola lalu membuat tebakan. Tebakannya bisa salah, lebih sering saat sesuatu masih baru. Manusia yang memilih untuk apa AI dipakai, data yang dipakainya, dan kapan AI bisa dipercaya. Ajukan tiga pertanyaan. AI itu menebak apa? Dari apa AI itu belajar? Siapa yang memeriksanya?"
+      }
+    ],
+    "glossary": [
+      {
+        "word": "kecerdasan artifisial",
+        "forms": [
+          "AI"
+        ],
+        "definition": "Sistem komputer yang melakukan tugas seperti melihat, berbicara, atau memutuskan. Banyak yang belajar dari contoh.",
+        "example": "Alat penerjemah di Hillview memakai kecerdasan artifisial."
+      },
+      {
+        "word": "program",
+        "definition": "Serangkaian langkah yang memberi tahu komputer apa yang harus dilakukan.",
+        "example": "Program kalkulator mengikuti langkah yang sama setiap kali."
+      },
+      {
+        "word": "data",
+        "definition": "Fakta, kata, gambar, atau suara yang bisa dipakai komputer.",
+        "example": "Alat penerjemah belajar dari data: banyak kalimat dalam dua bahasa."
+      },
+      {
+        "word": "pola",
+        "forms": [
+          "polanya"
+        ],
+        "definition": "Sesuatu yang terjadi berulang-ulang dengan cara yang mirip.",
+        "example": "Situs video menemukan pola dalam apa yang ditonton orang."
+      },
+      {
+        "word": "prediksi",
+        "forms": [
+          "memprediksi"
+        ],
+        "definition": "Tebakan yang cermat, berdasarkan pola, tentang sesuatu yang belum kamu ketahui.",
+        "example": "Terjemahan itu adalah sebuah prediksi. Terjemahan itu belum tentu benar."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Mengapa alat penerjemah di Hillview termasuk AI?",
+        "options": [
+          {
+            "text": "Alat itu berjalan di laptop bersama milik pusat belajar",
+            "feedback": "Belum tepat. Banyak program di laptop bukan AI. Lihat bagaimana alat penerjemah itu belajar."
+          },
+          {
+            "text": "Alat itu mempelajari pola dari banyak contoh",
+            "feedback": "Benar. Alat itu belajar dari banyak kalimat. Lalu alat itu memakai polanya untuk menebak terjemahan kalimat baru."
+          },
+          {
+            "text": "Alat itu memberi jawaban yang sama setiap kali",
+            "feedback": "Belum tepat. Memberi jawaban yang sama tidak membuat sebuah alat menjadi AI, dan juga tidak membuatnya bukan AI. Lihat bagaimana alat penerjemah itu belajar."
+          }
+        ]
+      },
+      {
+        "question": "Bel di Hillview berbunyi pukul sembilan setiap hari. Apa cara terbaik untuk menggambarkannya?",
+        "options": [
+          {
+            "text": "Bel itu mempelajari jam dari contoh",
+            "feedback": "Belum tepat. Tidak ada yang memberi bel itu contoh. Baca tentang bel di bagian kedua."
+          },
+          {
+            "text": "Bel itu menebak kapan pelajar akan datang",
+            "feedback": "Belum tepat. Bel itu tidak menebak. Baca tentang bel di bagian kedua."
+          },
+          {
+            "text": "Bel itu mengikuti langkah tetap yang dipasang seseorang",
+            "feedback": "Benar. Seseorang memasang pengatur waktu. Bel itu tidak belajar dari contoh dan tidak memperkirakan apa pun, jadi bel itu bukan AI."
+          }
+        ]
+      },
+      {
+        "question": "Pilih satu alat dari pelajaran ini, atau alat yang pernah kamu lihat. Menurutmu, apakah alat itu memakai AI? Mengapa?",
+        "placeholder": "Menurutku ___ memakai AI karena ... / Menurutku ___ bukan AI karena ..."
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Pilih satu alat dari daftar Hillview. Jelaskan apakah alat itu memakai AI, dan berikan satu alasan dari pelajaran ini.",
+    "sentenceStarters": [
+      "Aku memilih ...",
+      "Menurutku alat ini memakai AI karena ... / Menurutku alat ini bukan AI karena ... / Sulit dipastikan karena ...",
+      "Alat ini belajar dari ... / Alat ini mengikuti ...",
+      "Satu kesalahan yang bisa dibuatnya adalah ...",
+      "Seseorang perlu memeriksa ..."
+    ],
+    "planningBoxes": [
+      "Ide utamaku",
+      "Bukti dari pelajaran",
+      "Mengapa ini penting",
+      "Pertanyaan yang masih aku punya"
+    ],
+    "selfCheck": [
+      "Aku menyebutkan satu alat.",
+      "Aku mengatakan apakah alat itu memakai AI dan memberi alasannya.",
+      "Aku menyebutkan satu kesalahan yang bisa dibuatnya atau satu hal yang perlu diperiksa seseorang."
+    ],
+    "example": "Aku memilih alat ketik suara. Menurutku alat ini memakai AI karena alat ini harus membuat tebakan yang cermat tentang kata-kata dari setiap suara yang baru. Alat ini belajar dari banyak rekaman suara dan menemukan pola di dalamnya. Satu kesalahan yang bisa dibuatnya adalah mengetik kata yang salah saat seseorang berbicara cepat atau pelan. Seseorang perlu memeriksa kata-kata yang diketik sebelum memakainya. Kalkulator berbeda. Kalkulator mengikuti langkah-langkah yang ditulis manusia, dan tidak belajar dari contoh."
+  },
+  "speak": {
+    "partnerTask": "Bergantian menyebutkan satu alat dari daftar Hillview. Temanmu menjawab “AI”, “bukan AI”, atau “sulit dipastikan”, lalu memberi satu alasan.",
+    "independentTask": "Ucapkan dengan lantang apa itu AI dalam dua kalimat. Lalu sebutkan satu hal yang tidak bisa dilakukan AI."
+  },
+  "watch": {
+    "why": "Dua orang yang bekerja dengan AI menjelaskan, dalam waktu kurang dari tiga menit, bahwa sebagian besar AI sekarang mempelajari pola dari contoh.",
+    "beforeQuestion": "Menurutmu, di mana AI dipakai setiap hari?",
+    "afterQuestion": "Apa bedanya pembelajaran mesin dengan program yang mengikuti langkah-langkah tetap?",
+    "summary": "Dalam video pendek ini, dua orang yang bekerja dengan AI berbicara tentang pembelajaran mesin. AI sudah menjadi bagian dari kehidupan sehari-hari. AI membantu memilih apa yang dilihat orang di internet, misalnya saat mereka mencari sesuatu. Banyak orang membayangkan AI sebagai robot yang berpikir seperti manusia. Para pembicara mengatakan AI seperti itu masih bertahun-tahun lagi. Sebagian besar AI sekarang adalah pembelajaran mesin. Dulu, orang harus menulis setiap langkah untuk komputer. Dengan pembelajaran mesin, orang memberi komputer banyak contoh. Komputer menemukan pola dalam contoh-contoh itu sendiri. Ini agak mirip dengan caramu belajar dari latihan. Ini cara baru untuk membuat komputer melakukan pekerjaan yang berguna.",
+    "keyPoints": [
+      "AI sudah menjadi bagian dari alat sehari-hari, seperti pencarian di internet.",
+      "Para pembicara mengatakan sebagian besar AI sekarang adalah pembelajaran mesin: AI menemukan pola dalam contoh-contoh.",
+      "Orang tidak menulis setiap langkah. Mereka memberi komputer contoh-contoh."
+    ],
+    "contentNote": "Para pembicara menyebut nama perusahaan tempat mereka bekerja, dan mengatakan bahwa AI yang berpikir seperti manusia masih puluhan tahun lagi. Itu pendapat mereka, bukan fakta yang sudah pasti. Tonton dulu sebelum dipakai; pelajar bisa membaca ringkasan tertulisnya sebagai gantinya."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Satu hal yang bisa dilakukan AI adalah ... Satu hal yang tidak bisa dilakukannya adalah ..."
+      },
+      {
+        "text": "Satu pertanyaanku tentang AI adalah ..."
+      }
+    ],
+    "completionMessage": "Kamu sudah menyelesaikan Pelajaran 1. Kamu menjelaskan apa itu AI dan memilah alat-alat menjadi AI dan bukan AI."
+  },
+  "visual": {
+    "alt": "Sebuah diagram: contoh-contoh masuk, komputer menemukan pola, lalu membuat tebakan yang cermat. Di bawahnya, kalkulator dan bel mengikuti langkah-langkah tetap yang ditulis manusia."
+  },
+  "sources": [
+    {
+      "label": "Stanford HAI: What is artificial intelligence (AI)? (bidang yang luas, dan AI modern yang mencari pola dalam data)"
+    },
+    {
+      "label": "UNESCO: AI competency framework for students (2024; kerangka kompetensi AI untuk pelajar)"
+    },
+    {
+      "label": "OECD.AI: What is AI? Can you make a clear distinction between AI and non-AI systems? (apa itu AI, dan bisakah AI dibedakan dengan jelas dari sistem yang bukan AI?)"
+    },
+    {
+      "label": "The Royal Society: Machine learning, the power and promise of computers that learn by example (pengantar; tentang komputer yang belajar dari contoh)"
+    },
+    {
+      "label": "UNICEF: AI guide for teens (2021; panduan AI untuk remaja)"
+    },
+    {
+      "label": "Thomas Haigh, Communications of the ACM 67(2), Februari 2024: How the AI boom went bust (sistem pakar tahun 1980-an, AI yang dibangun dari aturan)"
+    }
+  ],
+  "educatorNotes": [
+    "Tidak ada satu garis batas yang disepakati antara AI dan program lain (lihat sumber OECD). AI adalah bidang yang luas: Stanford HAI menyebutnya sistem komputer yang melakukan tugas dengan kecerdasan seperti manusia, dan mengatakan bahwa AI modern sering bekerja dengan mencari pola dalam data. Pelajaran ini memperkenalkan jenis AI modern yang umum itu (pembelajaran mesin); AI berbasis aturan, seperti sistem pakar di Pelajaran 2, juga termasuk AI. Terima jawaban “sulit dipastikan”, dan hargai alasannya, bukan kelompok yang dipilih pelajar. Kegiatan ini tidak memberi nilai.",
+    "Pelajar mungkin tidak punya ponsel. Setiap alat dalam daftar adalah alat yang mungkin mereka lihat di pusat belajar atau di toko, dan pertanyaan untuk dipikirkan membolehkan mereka memilih alat dari pelajaran.",
+    "Videonya cepat, dalam bahasa Inggris penutur asli, dan menyebut nama perusahaan nyata. Ringkasan tertulisnya mencakup gagasan utamanya. Seseorang dari tim tetap harus menontonnya sebelum dipakai (lihat content/courses/digital-world/README.md)."
+  ]
+}
