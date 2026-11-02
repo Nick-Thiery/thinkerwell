@@ -3,42 +3,36 @@ import { usePageTitle } from '../../app/usePageTitle';
 import { Button } from '../../components/ds';
 import { useI18n } from '../../i18n';
 import { useLearnerSession } from '../../session';
-import { COURSE_ID, COURSE_PATH, COURSE_PRINT_PATH } from './content';
-import { DigitalWorldFrame, useOurWorldName } from './Frame';
+import { usePreviewCourse } from './course';
+import { useCourseTitle, useOurWorldName } from './Frame';
 
 /**
- * /preview/digital-world: the hidden address (never linked from anywhere,
- * noindex) that turns the Digital World preview on for this device, a
- * device setting (settings.previewCourses). Visiting it turns it on; the
- * page says what that means and how to turn it off again, here or from the
- * banner on any Digital World page.
+ * /preview/<id>: the hidden address (never linked from anywhere, noindex)
+ * that turns a preview course on for this device, a device setting
+ * (settings.previewCourses). Visiting it turns it on; the page says what
+ * that means and how to turn it off again, here or from the banner on any
+ * of the course's pages. Inside its PreviewCourseFrame (with the banner only
+ * while it is on: ./index.tsx).
  */
-export function PreviewSwitchPage() {
-  const { previewCourses } = useLearnerSession();
-  const on = previewCourses.includes(COURSE_ID);
-  return (
-    <DigitalWorldFrame banner={on}>
-      <PreviewSwitch />
-    </DigitalWorldFrame>
-  );
-}
-
-function PreviewSwitch() {
-  const { t, tx } = useI18n();
-  usePageTitle(t('digitalWorld.switch.pageTitle'));
+export function PreviewSwitch() {
+  const { t, tx, contentLang } = useI18n();
+  const preview = usePreviewCourse();
+  const courseTitle = useCourseTitle();
+  const named = { title: <span {...contentLang}>{courseTitle}</span> };
+  usePageTitle(t('previewCourse.switch.pageTitle', { title: courseTitle }));
   const { previewCourses, setPreviewCourse, storageAvailable } = useLearnerSession();
   const ourWorld = useOurWorldName();
   // Shown as on from the first frame (this address turns it on as it opens),
   // until someone turns it off here.
   const [offHere, setOffHere] = useState(false);
-  const on = previewCourses.includes(COURSE_ID) || !offHere;
+  const on = previewCourses.includes(preview.id) || !offHere;
   const [failed, setFailed] = useState(false);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const changed = useRef(false);
 
   const turn = (next: boolean) => {
     setFailed(false);
-    setPreviewCourse(COURSE_ID, next).catch(() => setFailed(true));
+    setPreviewCourse(preview.id, next).catch(() => setFailed(true));
   };
 
   // Visiting this address turns the preview on, once, as the page opens.
@@ -47,7 +41,7 @@ function PreviewSwitch() {
   useEffect(() => {
     if (opened.current) return;
     opened.current = true;
-    if (!previewCourses.includes(COURSE_ID)) setPreviewCourse(COURSE_ID, true).catch(() => setFailed(true));
+    if (!previewCourses.includes(preview.id)) setPreviewCourse(preview.id, true).catch(() => setFailed(true));
     // Only as the page opens.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -66,42 +60,42 @@ function PreviewSwitch() {
   };
 
   return (
-    <div className="tw-placeholder tw-dw-switch">
+    <div className="tw-placeholder tw-pc-switch">
       <h1 ref={headingRef} className="h1" tabIndex={-1}>
-        {t(on ? 'digitalWorld.switch.onTitle' : 'digitalWorld.switch.offTitle')}
+        {tx(on ? 'previewCourse.switch.onTitle' : 'previewCourse.switch.offTitle', named)}
       </h1>
       {on ? (
         <>
-          <p className="body-lg">{t('digitalWorld.switch.onBody')}</p>
-          <p className="body-lg">{t('digitalWorld.switch.reviewNote')}</p>
-          {storageAvailable ? null : <p className="body">{t('digitalWorld.switch.noStorage')}</p>}
+          <p className="body-lg">{t(preview.wordKeys.switchOnBody)}</p>
+          <p className="body-lg">{t(preview.wordKeys.switchReviewNote)}</p>
+          {storageAvailable ? null : <p className="body">{t('previewCourse.switch.noStorage')}</p>}
           <div className="tw-placeholder-actions">
-            <Button variant="primary" size="lg" icon="ArrowRight" href={COURSE_PATH}>
-              {t('digitalWorld.switch.open')}
+            <Button variant="primary" size="lg" icon="ArrowRight" href={preview.path}>
+              {tx('previewCourse.switch.open', named)}
             </Button>
-            <Button variant="secondary" size="lg" icon="Printer" href={COURSE_PRINT_PATH}>
-              {t('digitalWorld.switch.printAll')}
+            <Button variant="secondary" size="lg" icon="Printer" href={preview.printPath}>
+              {t('previewCourse.switch.printAll')}
             </Button>
             <Button variant="ghost" size="lg" onClick={() => press(false)}>
-              {t('digitalWorld.switch.turnOff')}
+              {t('previewCourse.switch.turnOff')}
             </Button>
           </div>
         </>
       ) : (
         <>
-          <p className="body-lg">{t('digitalWorld.switch.offBody')}</p>
+          <p className="body-lg">{tx('previewCourse.switch.offBody', named)}</p>
           <div className="tw-placeholder-actions">
             <Button variant="primary" size="lg" onClick={() => press(true)}>
-              {t('digitalWorld.switch.turnOn')}
+              {t('previewCourse.switch.turnOn')}
             </Button>
             <Button variant="secondary" size="lg" icon="Map" href="/course">
-              {tx('digitalWorld.switch.goTo', { title: <span {...ourWorld.lang}>{ourWorld.title}</span> })}
+              {tx('previewCourse.switch.goTo', { title: <span {...ourWorld.lang}>{ourWorld.title}</span> })}
             </Button>
           </div>
         </>
       )}
       <p className="body" role="status">
-        {failed ? t('digitalWorld.switch.saveFailed') : ''}
+        {failed ? t('previewCourse.switch.saveFailed') : ''}
       </p>
     </div>
   );

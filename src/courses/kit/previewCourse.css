@@ -1,0 +1,172 @@
+/*
+ * What every preview course's pages share (src/courses/kit/): the draft
+ * banner and sheet note, the course choice, the course map's parts for
+ * teachers and reviewers, the switch page, the notes for reviewers, and
+ * the captions and credits under a lesson's pictures.
+ * Loaded with a <link> only when a preview course's code loads
+ * (./stylesheet.ts), never in the site's stylesheet or the offline copy.
+ * Every class starts "tw-pc-"; the build stops if one reaches the site's
+ * stylesheet (vite.config.ts).
+ */
+
+/* ------------------------------------------------------------ the frame */
+
+.tw-pc-banner {
+  margin-block-end: var(--space-6);
+}
+
+@media (max-width: 599px) {
+  .tw-pc-banner .tw-status {
+    flex-wrap: wrap;
+  }
+
+  .tw-pc-banner .tw-status-text {
+    flex: 1 1 calc(100% - 40px);
+  }
+}
+
+.tw-pc-sheet-note {
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-md);
+}
+
+/* The course choice: Our World first, then each preview course. */
+.tw-pc-choice {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* On the home page it sits above the greeting. */
+.tw-home-root > .tw-pc-choice {
+  margin-block-end: var(--space-6);
+}
+
+.tw-pc-choice-label {
+  color: var(--ink-muted);
+}
+
+.tw-pc-choice-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tw-pc-choice-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: var(--target-min);
+  padding-block: var(--space-2);
+  padding-inline: var(--space-3) var(--space-4);
+  border: 2px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  text-decoration: none;
+}
+
+.tw-pc-choice-link:hover {
+  border-color: var(--ink);
+}
+
+.tw-pc-choice-link[aria-current='page'] {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--on-ink);
+}
+
+.tw-pc-choice-link[aria-current='page'] .tw-badge {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* --------------------------------------------------------- course pages */
+
+.tw-pc-map .tw-course-sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.tw-pc-reviewers {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: var(--lavender-wash);
+}
+
+.tw-pc-reviewers h2,
+.tw-pc-reviewers p {
+  margin: 0;
+}
+
+.tw-pc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.tw-pc-guides {
+  display: grid;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tw-pc-guide-link {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: var(--target-min);
+  color: var(--violet);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.tw-pc-switch .h1 {
+  margin: 0;
+}
+
+/* --------------------------------------------------- the teacher guide */
+
+.tw-pc-review-notes {
+  border-block-start: 2px solid #000;
+}
+
+/* ------------------------------------------- a lesson's pictures (./Pictures.tsx) */
+
+.tw-pc-picture-caption {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-block-start: var(--space-3);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.tw-pc-picture-caption p {
+  margin: 0;
+}
+
+.tw-pc-picture-credit {
+  color: var(--ink-muted);
+  font-size: 14px;
+  line-height: 20px;
+  overflow-wrap: anywhere;
+}

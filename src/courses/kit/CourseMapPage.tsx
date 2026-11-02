@@ -14,27 +14,22 @@ import {
   type ProgressByLessonId,
 } from '../../storage';
 import type { CourseLesson, CourseSection } from '../../content';
-import { COURSE_ID, COURSE_PRINT_PATH, digitalWorld } from './content';
-import { CourseChoice, DigitalWorldFrame, useOurWorldName } from './Frame';
+import { usePreviewCourse } from './course';
+import { CourseChoice } from './CourseChoice';
+import { useOurWorldName } from './Frame';
 
 /**
- * /course/digital-world: the course map, as Our World's but simpler: the
- * course choice, the four sections with every lesson (nothing is locked,
- * so each row is a link), and for teachers and reviewers every lesson's
- * teacher guide and the whole course on paper. There are no section checks
- * or certificates yet, and the page says so.
+ * /course/<id>: a preview course's map (inside its PreviewCourseFrame), as
+ * Our World's but simpler: the course choice, the four sections with every
+ * lesson (nothing is locked, so each row is a link), and for teachers and
+ * reviewers every lesson's teacher guide and the whole course on paper.
+ * There are no section checks or certificates yet, and the page says so.
  */
-export function CourseMapPage() {
-  return (
-    <DigitalWorldFrame>
-      <CourseMap />
-    </DigitalWorldFrame>
-  );
-}
-
-function CourseMap() {
+export function CourseMap() {
   const { t, tx, contentLang } = useI18n();
-  const course = digitalWorld.getCourse();
+  const preview = usePreviewCourse();
+  const content = preview.content;
+  const course = content.getCourse();
   usePageTitle(course.course.title);
   const session = useLearnerSession();
   const learnerId = session.activeLearner?.id ?? null;
@@ -43,8 +38,8 @@ function CourseMap() {
   const ourWorld = useOurWorldName();
   const loading = session.status === 'loading' || (learnerId !== null && progressResult.status === 'loading');
 
-  const sections = digitalWorld.getSections();
-  const lessons = digitalWorld.getLessons();
+  const sections = content.getSections();
+  const lessons = content.getLessons();
   const lookingAround = session.lookAround;
   const isGuest = lookingAround || !session.activeLearner;
   const progress = progressResult.progress;
@@ -57,7 +52,7 @@ function CourseMap() {
     maxMinutes = Math.max(maxMinutes, lesson.estimatedMinutes[1]);
   }
 
-  // A link to one section (/course/digital-world#check-what-you-see) scrolls to it once the page is there.
+  // A link to one section (/course/digital-world#thinking-machines) scrolls to it once the page is there.
   useEffect(() => {
     if (loading) return undefined;
     const id = hash.slice(1);
@@ -69,8 +64,8 @@ function CourseMap() {
   if (loading) return null;
 
   return (
-    <div className="tw-course-page tw-dw-map">
-      <CourseChoice ourWorld={ourWorld} current={COURSE_ID} />
+    <div className="tw-course-page tw-pc-map">
+      <CourseChoice ourWorld={ourWorld} current={preview.id} />
       <header className="tw-course-intro">
         <span className="eyebrow">{t('pages.course.eyebrow')}</span>
         <h1 className="h1" tabIndex={-1} {...contentLang}>
@@ -88,7 +83,7 @@ function CourseMap() {
           </Badge>
         </div>
         {isGuest ? <p className="small tw-course-guest-note">{t(lookingAround ? 'pages.course.guestNote' : 'pages.course.noLearnerNote')}</p> : null}
-        <p className="small tw-course-guest-note">{t('digitalWorld.map.noChecks')}</p>
+        <p className="small tw-course-guest-note">{t('previewCourse.map.noChecks')}</p>
       </header>
 
       <div className="tw-course-sections">
@@ -96,7 +91,7 @@ function CourseMap() {
           <MapSection
             key={section.id}
             section={section}
-            lessons={digitalWorld.getSectionLessons(section.id)}
+            lessons={content.getSectionLessons(section.id)}
             progress={lookingAround ? new Map() : progress}
             hideProgress={lookingAround}
             highlight={highlight}
@@ -104,21 +99,21 @@ function CourseMap() {
         ))}
       </div>
 
-      <section className="tw-dw-reviewers" aria-labelledby="tw-dw-reviewers-title">
-        <h2 id="tw-dw-reviewers-title" className="h2">
-          {t('digitalWorld.map.forTeachersTitle')}
+      <section className="tw-pc-reviewers" aria-labelledby="tw-pc-reviewers-title">
+        <h2 id="tw-pc-reviewers-title" className="h2">
+          {t('previewCourse.map.forTeachersTitle')}
         </h2>
-        <p className="body">{t('digitalWorld.map.forTeachersBody')}</p>
-        <div className="tw-dw-actions">
-          <Button variant="secondary" icon="Printer" href={COURSE_PRINT_PATH}>
-            {t('digitalWorld.map.printAll')}
+        <p className="body">{t(preview.wordKeys.forTeachersBody)}</p>
+        <div className="tw-pc-actions">
+          <Button variant="secondary" icon="Printer" href={preview.printPath}>
+            {t('previewCourse.map.printAll')}
           </Button>
         </div>
-        <ul className="tw-dw-guides" role="list">
+        <ul className="tw-pc-guides" role="list">
           {lessons.map((lesson) => (
             <li key={lesson.id}>
-              <Link to={teacherGuidePath(lesson.id)} className="tw-dw-guide-link">
-                {tx('digitalWorld.map.guideLink', { number: lesson.number, title: <En>{lesson.title}</En> })}
+              <Link to={teacherGuidePath(lesson.id)} className="tw-pc-guide-link">
+                {tx('previewCourse.map.guideLink', { number: lesson.number, title: <En>{lesson.title}</En> })}
               </Link>
             </li>
           ))}
@@ -139,7 +134,7 @@ interface MapSectionProps {
 /** One section: its header in its tint and icon, then every lesson. No section check row: none is drafted yet. */
 function MapSection({ section, lessons, progress, hideProgress, highlight }: MapSectionProps) {
   const { t } = useI18n();
-  const look = digitalWorld.sectionLook(section.id);
+  const look = usePreviewCourse().content.sectionLook(section.id);
   const { completed, total } = sectionProgress(section, lessons, progress);
   return (
     <section id={section.id} aria-labelledby={`${section.id}-title`} className="tw-course-section">

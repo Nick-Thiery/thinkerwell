@@ -152,11 +152,11 @@ describe('a language that is not ready (Vietnamese, a hidden preview)', () => {
 });
 
 describe('preview courses', () => {
-  it('are skipped on purpose: nothing of Digital World is recorded or checked', async () => {
+  it('are skipped on purpose: nothing of Digital World or Southeast Asia Through Time is recorded or checked', async () => {
     const { listenUtterances, SKIPPED_COURSES } = await import('./utterances.ts');
-    expect(SKIPPED_COURSES).toEqual(['digital-world']);
+    expect(SKIPPED_COURSES).toEqual(['digital-world', 'southeast-asia-through-time']);
     for (const language of listenUtterances()) {
-      expect(language.sections.filter((section) => section.key.startsWith('dw-'))).toEqual([]);
+      expect(language.sections.filter((section) => /^(dw|sat)-/.test(section.key))).toEqual([]);
     }
   });
 });

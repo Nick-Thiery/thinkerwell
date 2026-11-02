@@ -1,12 +1,15 @@
 import { useId, useRef } from 'react';
 import { Button } from '../../../components/ds';
-import { type Visual } from '../../../content';
+import { type CourseVisual } from '../../../content';
 import { useLessonContent } from '../../../content/useContent';
 import { useI18n } from '../../../i18n';
+import { useLessonExtras } from '../../../lesson/extras';
 import './LessonVisual.css';
 
 export interface LessonVisualProps {
-  visual: Visual | null;
+  visual: CourseVisual | null | undefined;
+  /** The dialog's heading, when the picture's type has no word of its own (a preview course's photo). */
+  title?: string;
   /**
    * Offers "See it bigger" (default true). The print view turns it off:
    * paper has no buttons, and there the picture already fills the page.
@@ -28,15 +31,17 @@ export interface LessonVisualProps {
  * (nothing turns it off). The native dialog keeps focus inside, closes with
  * Escape or "Close", and focus goes back to the button.
  */
-export function LessonVisual({ visual, enlargeable = true }: LessonVisualProps) {
+export function LessonVisual({ visual, enlargeable = true, title: ownTitle }: LessonVisualProps) {
   const { t, contentLang } = useI18n();
   const content = useLessonContent();
+  const { caption } = useLessonExtras();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const toolsRef = useRef<HTMLDivElement>(null);
   const titleId = useId();
   const url = visual ? content.getVisualUrl(visual.src) : undefined;
   if (!visual || !url) return null;
-  const title = t(`lessonPlayer.visual.title.${visual.type}`);
+  // A photo (a preview course's) always comes with its own title.
+  const title = ownTitle ?? t(`lessonPlayer.visual.title.${visual.type as Exclude<CourseVisual['type'], 'photo'>}`);
 
   const opener = () => toolsRef.current?.querySelector('button') ?? null;
 
@@ -64,6 +69,8 @@ export function LessonVisual({ visual, enlargeable = true }: LessonVisualProps) 
     <figure className="tw-lesson-visual">
       {/* Not lazy: it sits near the top of Read, and the warm-up often asks learners to look at it. */}
       <img src={url} alt={visual.alt} decoding="async" {...contentLang} />
+      {/* A preview course's caption and credit (src/lesson/extras.tsx); nothing in Our World. */}
+      {caption?.(visual)}
       {enlargeable ? (
         <>
           <div ref={toolsRef} className="tw-lesson-visual-tools tw-no-print">

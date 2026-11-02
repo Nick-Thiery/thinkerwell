@@ -254,12 +254,15 @@ export function ReadStage() {
           <ReadingPassage key={`${part}-${readingLevel}`} text={text} glossary={glossary} highlight={highlight} />
         </ReadingCard>
 
+        {/* A course's second picture, after the last part, which talks about it; nothing in Our World. */}
+        {isLast ? <LessonSlot name="read:after-reading" /> : null}
+
         {glossary.length > 0 ? (
           <LessonDisclosure className="tw-read-keywords-disclosure" icon="Search" summary={t('lessonPlayer.read.keyWords')}>
             <KeyWordsPanel glossary={glossary} />
           </LessonDisclosure>
         ) : null}
-        {isLast && keyPointsHere && lesson.watch.keyPoints.length > 0 ? (
+        {isLast && keyPointsHere && lesson.watch && lesson.watch.keyPoints.length > 0 ? (
           <LessonDisclosure className="tw-read-learn-more" icon="Lightbulb" summary={t('lessonPlayer.read.learnMore')}>
             <ul className="tw-read-key-points" {...contentLang}>
               {lesson.watch.keyPoints.map((point, index) => (

@@ -1,6 +1,6 @@
 import { useId } from 'react';
 import { Badge, Icon } from '../../../components/ds';
-import { type Evidence, type EvidenceCard, type Visual } from '../../../content';
+import { type CourseVisual, type Evidence, type EvidenceCard } from '../../../content';
 import { useLessonContent } from '../../../content/useContent';
 import { useI18n } from '../../../i18n';
 import { LessonVisual } from '../visual/LessonVisual';
@@ -10,7 +10,7 @@ import './LessonEvidence.css';
 export interface LessonEvidenceProps {
   evidence: Evidence;
   /** The lesson's picture (lesson.visual), shown first, above the observation question. */
-  visual?: Visual | null;
+  visual?: CourseVisual | null;
   /** Offers "See it bigger" on the picture (LessonVisual); the print view turns it off. */
   enlargeablePicture?: boolean;
 }

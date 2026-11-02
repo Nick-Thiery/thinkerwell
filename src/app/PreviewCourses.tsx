@@ -1,18 +1,19 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, type ComponentType } from 'react';
 import { useLearnerSession } from '../session';
 
 // Loaded only on a device that has turned a preview course on (src/courses/):
 // nothing is downloaded for it anywhere else, and a failed download shows nothing.
-const PreviewCourseChoice = lazy(() =>
-  import('../courses/routes').then(
-    (routes) => ({ default: routes.PreviewCourseChoice }),
-    () => ({ default: (_: { current?: string }) => null }),
-  ),
+const PreviewCourseChoice = lazy(
+  (): Promise<{ default: ComponentType<{ current?: string }> }> =>
+    import('../courses/routes').then(
+      (routes) => ({ default: routes.PreviewCourseChoice }),
+      () => ({ default: () => null }),
+    ),
 );
 
 /**
  * The course choice on the home page and the course map (Our World first,
- * then the preview course), only on a device that has turned a preview
+ * then each preview course turned on), only on a device that has turned a preview
  * course on at its hidden address. Everywhere else, nothing.
  */
 export function PreviewCourses({ current }: { current?: string }) {

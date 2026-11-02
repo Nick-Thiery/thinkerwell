@@ -44,6 +44,13 @@ export const DEFAULT_COURSE_ID = 'our-world';
 export const COURSES: readonly CourseDefinition[] = [
   { id: DEFAULT_COURSE_ID, dir: '', preview: false, lessonIdPrefix: '' },
   { id: 'digital-world', dir: 'courses/digital-world', preview: true, lessonIdPrefix: 'dw-', messages: 'digitalWorld' },
+  {
+    id: 'southeast-asia-through-time',
+    dir: 'courses/southeast-asia-through-time',
+    preview: true,
+    lessonIdPrefix: 'sat-',
+    messages: 'southeastAsia',
+  },
 ];
 
 /** The preview courses, in order. */

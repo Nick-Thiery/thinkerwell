@@ -4861,7 +4861,7 @@
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.banner.title": {
+  "previewCourse.banner.title": {
     "source": "Draft course: not yet reviewed",
     "back": "Draft course: not yet reviewed",
     "flag": true,
@@ -4879,25 +4879,25 @@
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.banner.turnOff": {
+  "previewCourse.banner.turnOff": {
     "source": "Turn preview off",
     "back": "Turn off the preview",
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.sheet.draft": {
-    "source": "Digital World, draft course: not yet reviewed. Don't use it with learners yet.",
-    "back": "Digital World, draft course: not yet reviewed. Don't use it with learners yet.",
+  "previewCourse.sheet.draft": {
+    "source": "{title}, draft course: not yet reviewed. Don't use it with learners yet.",
+    "back": "{title}, draft course: not yet reviewed. Don't use it with learners yet.",
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.choice.label": {
+  "previewCourse.choice.label": {
     "source": "Courses on this device",
     "back": "Courses on this device",
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.choice.draft": {
+  "previewCourse.choice.draft": {
     "source": "Draft",
     "back": "Draft",
     "flag": true,
@@ -4987,13 +4987,13 @@
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.map.noChecks": {
+  "previewCourse.map.noChecks": {
     "source": "There are no section checks or certificates in this draft yet.",
     "back": "This draft doesn't have section checks or certificates yet.",
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.map.forTeachersTitle": {
+  "previewCourse.map.forTeachersTitle": {
     "source": "For teachers and reviewers",
     "back": "For teachers and reviewers",
     "flag": true,
@@ -5005,13 +5005,13 @@
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.map.printAll": {
+  "previewCourse.map.printAll": {
     "source": "Print all lessons",
     "back": "Print all lessons",
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.map.guideLink": {
+  "previewCourse.map.guideLink": {
     "source": "Teacher guide, Lesson {number}: {title}",
     "back": "Teacher guide, Lesson {number}: {title}",
     "flag": true,
@@ -5113,37 +5113,37 @@
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.printAll.back": {
-    "source": "Back to Digital World",
-    "back": "Back to Digital World",
+  "previewCourse.printAll.back": {
+    "source": "Back to {title}",
+    "back": "Back to {title}",
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.printAll.intro": {
-    "source": "Every Digital World lesson, one after another. Each one starts on a new page. Print them, or save them as a PDF.",
-    "back": "All Digital World lessons, one by one. Each lesson starts on a new page. Print, or save as a PDF.",
+  "previewCourse.printAll.intro": {
+    "source": "Every lesson of {title}, one after another. Each one starts on a new page. Print them, or save them as a PDF.",
+    "back": "All {title} lessons, one by one. Each lesson starts on a new page. Print, or save as a PDF.",
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.printAll.pageTitle": {
-    "source": "Digital World: every lesson",
-    "back": "Digital World: all lessons",
+  "previewCourse.printAll.pageTitle": {
+    "source": "{title}: every lesson",
+    "back": "{title}: all lessons",
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.reviewer.title": {
+  "previewCourse.reviewer.title": {
     "source": "For reviewers",
     "back": "For reviewers",
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.reviewer.intro": {
+  "previewCourse.reviewer.intro": {
     "source": "Notes from the people who wrote this draft: what is new and what needs checking. Learners never see them.",
     "back": "Notes from the writers of this draft: what is new and what needs to be checked. Learners never see them.",
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.reviewer.pictureTitle": {
+  "previewCourse.reviewer.pictureTitle": {
     "source": "Picture still to draw",
     "back": "Picture that still needs to be made",
     "flag": true,
@@ -5203,15 +5203,15 @@
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.switch.pageTitle": {
-    "source": "Digital World preview",
-    "back": "Digital World preview",
+  "previewCourse.switch.pageTitle": {
+    "source": "{title} preview",
+    "back": "{title} preview",
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.switch.onTitle": {
-    "source": "Digital World preview is on",
-    "back": "Digital World preview is on",
+  "previewCourse.switch.onTitle": {
+    "source": "{title} preview is on",
+    "back": "{title} preview is on",
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
@@ -5227,59 +5227,89 @@
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.switch.noStorage": {
+  "previewCourse.switch.noStorage": {
     "source": "This browser can't save settings here, so the preview stays on only until you close this page.",
     "back": "This browser can't save settings here, so the preview is only on until you close this page.",
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.switch.open": {
-    "source": "Open Digital World",
-    "back": "Open Digital World",
+  "previewCourse.switch.open": {
+    "source": "Open {title}",
+    "back": "Open {title}",
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.switch.printAll": {
+  "previewCourse.switch.printAll": {
     "source": "Print all lessons",
     "back": "Print all lessons",
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.switch.turnOff": {
+  "previewCourse.switch.turnOff": {
     "source": "Turn preview off",
     "back": "Turn off the preview",
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.switch.offTitle": {
-    "source": "Digital World preview is off",
-    "back": "Digital World preview is off",
+  "previewCourse.switch.offTitle": {
+    "source": "{title} preview is off",
+    "back": "{title} preview is off",
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.switch.offBody": {
-    "source": "This device doesn't show Digital World any more.",
-    "back": "This device no longer shows Digital World.",
+  "previewCourse.switch.offBody": {
+    "source": "This device doesn't show {title} any more.",
+    "back": "This device no longer shows {title}.",
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.switch.turnOn": {
+  "previewCourse.switch.turnOn": {
     "source": "Turn it on again",
     "back": "Turn on again",
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.switch.goTo": {
+  "previewCourse.switch.goTo": {
     "source": "Go to {title}",
     "back": "Open {title}",
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
   },
-  "digitalWorld.switch.saveFailed": {
+  "previewCourse.switch.saveFailed": {
     "source": "This device couldn't save that. It applies until you close this page.",
     "back": "This device couldn't save it. This setting applies until you close this page.",
     "flag": true,
     "note": "Digital World preview (October 2026): drafted by AI, not yet reviewed by a native speaker. Only devices that turn the preview on see it; its lessons stay English for now. Learner-facing words use \"kamu\"; the preview, reviewer and teacher lines use \"Anda\"."
+  },
+  "previewCourse.picture.photoTitle": {
+    "source": "Photo",
+    "flag": true,
+    "note": "Southeast Asia Through Time (November 2026): drafted by AI, not yet reviewed by a native speaker."
+  },
+  "previewCourse.picture.lookClosely": {
+    "source": "Look closely:",
+    "flag": true,
+    "note": "Southeast Asia Through Time (November 2026): drafted by AI, not yet reviewed by a native speaker."
+  },
+  "previewCourse.picture.limits": {
+    "source": "What can this source show? What can it not show?",
+    "flag": true,
+    "note": "Southeast Asia Through Time (November 2026): drafted by AI, not yet reviewed by a native speaker."
+  },
+  "previewCourse.picture.credit": {
+    "source": "“{title}”, {creator}, {created}. Licence: {licence}.",
+    "flag": true,
+    "note": "Southeast Asia Through Time (November 2026): drafted by AI, not yet reviewed by a native speaker."
+  },
+  "previewCourse.picture.source": {
+    "source": "See the original",
+    "flag": true,
+    "note": "Southeast Asia Through Time (November 2026): drafted by AI, not yet reviewed by a native speaker."
+  },
+  "previewCourse.picture.changes": {
+    "source": "Changes: {changes}",
+    "flag": true,
+    "note": "Southeast Asia Through Time (November 2026): drafted by AI, not yet reviewed by a native speaker."
   },
   "digitalWorld.tool.badge": {
     "source": "Pretend tool",
@@ -6770,5 +6800,30 @@
     "back": "In Bahasa Indonesia and Bahasa Melayu, a lesson has no Watch step unless there is a video in that language. Open this guide in that language to see its plan.",
     "source": "In Bahasa Indonesia and Bahasa Melayu, a lesson has no Watch step unless it has a video in that language. Open this guide in that language to see its plan.",
     "flag": "October 2026: says that lessons in Indonesian and Malay have four steps, without Watch, for a teacher reading in one language whose learners use another. Drafted by AI with no second AI review: check."
+  },
+  "southeastAsia.banner.body": {
+    "source": "Southeast Asia Through Time is a draft. A historian and a partner organisation still need to check it. Only this device shows it.",
+    "flag": true,
+    "note": "Southeast Asia Through Time preview (November 2026): drafted by AI, not yet reviewed by a native speaker. The course name stays in English while its lessons are English."
+  },
+  "southeastAsia.banner.bodyEnglishLessons": {
+    "source": "Southeast Asia Through Time is a draft. A historian and a partner organisation still need to check it. Only this device shows it. Its lessons are in English for now.",
+    "flag": true,
+    "note": "Southeast Asia Through Time preview (November 2026): drafted by AI, not yet reviewed by a native speaker. The course name stays in English while its lessons are English."
+  },
+  "southeastAsia.map.forTeachersBody": {
+    "source": "Each lesson has a teacher guide with its notes, the answers, both pictures with their credits, and notes for reviewers. You can also print the whole course.",
+    "flag": true,
+    "note": "Southeast Asia Through Time preview (November 2026): drafted by AI, not yet reviewed by a native speaker. The course name stays in English while its lessons are English."
+  },
+  "southeastAsia.switch.onBody": {
+    "source": "This device now shows Southeast Asia Through Time, a draft course about the history of Southeast Asia through real objects, maps, photos and letters. Nobody else sees it, and nothing about it is sent anywhere. It stays on until you turn it off.",
+    "flag": true,
+    "note": "Southeast Asia Through Time preview (November 2026): drafted by AI, not yet reviewed by a native speaker. The course name stays in English while its lessons are English."
+  },
+  "southeastAsia.switch.reviewNote": {
+    "source": "It hasn’t been reviewed yet. A historian still needs to check its facts, and a partner organisation its sensitive topics. Don’t use it with learners yet.",
+    "flag": true,
+    "note": "Southeast Asia Through Time preview (November 2026): drafted by AI, not yet reviewed by a native speaker. The course name stays in English while its lessons are English."
   }
 }

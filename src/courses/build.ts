@@ -7,7 +7,9 @@
  *                                           one chunk, the dynamic entry src/courses/<id>/index.tsx
  *   assets/preview/<id>/<name>-<hash>.css   its stylesheet (imported with ?url, added with a <link>)
  *   assets/preview/<name>-<hash>.js         the door to every preview course (src/courses/routes.tsx
- *                                           and preview.tsx): its pages' routes and the loader
+ *                                           and preview.tsx): its pages' routes and the loader, and the
+ *                                           kit the courses share (src/courses/kit/) with its words
+ *   assets/preview/<name>-<hash>.css        the kit's stylesheet
  *
  * The service worker never precaches assets/preview/, and a first visit
  * never downloads it: only a device that has turned the preview on loads
@@ -46,10 +48,17 @@ export const COURSE_MESSAGES_PREFIX = 'virtual:thinkerwell/course-messages/';
 /** The resolved id of that module (rolldown's convention for a virtual module). */
 export const COURSE_MESSAGES_ID = '\0tw-course-messages:';
 
-/** True for the door to the preview courses (src/courses/routes.tsx, preview.tsx) and anything in a preview course. */
+/** The resolved id of the words every preview course shares (the `previewCourse` group, src/i18n/lazyGroups.ts). */
+export const PREVIEW_KIT_MESSAGES_ID = '\0tw-messages:previewCourse';
+
+/**
+ * True for the door to the preview courses (src/courses/routes.tsx,
+ * preview.tsx), the kit they share (src/courses/kit/) and its words, and
+ * anything in a preview course.
+ */
 export function isPreviewModule(moduleId: string): boolean {
   const id = moduleId.replace(/\\/g, '/');
-  return /\/src\/courses\/(?!build\.ts$|types\.ts$)/.test(id) || previewCourseOfModule(moduleId) !== null;
+  return /\/src\/courses\/(?!build\.ts$|types\.ts$)/.test(id) || id === PREVIEW_KIT_MESSAGES_ID || previewCourseOfModule(moduleId) !== null;
 }
 
 /**
@@ -68,10 +77,18 @@ export function previewCourseOfModule(moduleId: string): string | null {
   return null;
 }
 
-/** The file name pattern for a chunk whose entry is a preview course's or the door's (output.chunkFileNames), or null for any other. */
-export function previewChunkFileName(chunk: { facadeModuleId?: string | null }): string | null {
+/**
+ * The file name pattern for a chunk whose entry is a preview course's or the
+ * door's (output.chunkFileNames), or for a chunk with no entry made only of
+ * preview modules (what two preview courses share: the kit,
+ * src/courses/kit/), or null for any other.
+ */
+export function previewChunkFileName(chunk: { facadeModuleId?: string | null; moduleIds?: readonly string[] }): string | null {
   const facade = chunk.facadeModuleId;
-  if (!facade) return null;
+  if (!facade) {
+    const ids = chunk.moduleIds ?? [];
+    return ids.length > 0 && ids.every(isPreviewModule) ? `${PREVIEW_ASSET_DIR}[name]-[hash].js` : null;
+  }
   const course = previewCourseOfModule(facade);
   if (course) return `${PREVIEW_ASSET_DIR}${course}/[name]-[hash].js`;
   return isPreviewModule(facade) ? `${PREVIEW_ASSET_DIR}[name]-[hash].js` : null;
@@ -81,5 +98,7 @@ export function previewChunkFileName(chunk: { facadeModuleId?: string | null }):
 export function previewAssetFileName(asset: { names?: readonly string[]; originalFileNames?: readonly string[] }): string | null {
   const sources = [...(asset.originalFileNames ?? []), ...(asset.names ?? [])].map((name) => `/${name.replace(/\\/g, '/').replace(/^\/+/, '')}`);
   const course = sources.map(previewCourseOfModule).find(Boolean);
-  return course ? `${PREVIEW_ASSET_DIR}${course}/[name]-[hash][extname]` : null;
+  if (course) return `${PREVIEW_ASSET_DIR}${course}/[name]-[hash][extname]`;
+  // The kit's stylesheet (src/courses/kit/previewCourse.css), which every preview course shares.
+  return sources.some(isPreviewModule) ? `${PREVIEW_ASSET_DIR}[name]-[hash][extname]` : null;
 }

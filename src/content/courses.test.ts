@@ -2,10 +2,12 @@ import { readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { activityProblems } from './activityChecks';
+import { createCourseContent } from './courseContent';
 import { COURSES, DEFAULT_COURSE_ID, findPreviewCourse, PREVIEW_COURSES, previewCourseOfLesson } from './courses';
 import { ContentError } from './errors';
 import { loadContent, loadCourse, parseContentFile } from './load';
-import { digitalWorldLessonSchema, lessonSchema, type Activity, type DigitalWorldLesson } from './schema';
+import { digitalWorldLessonSchema, lessonSchema, type Activity, type AnyCourseFile, type CourseLesson, type DigitalWorldLesson } from './schema';
+import { STAGES, STAGES_WITHOUT_WATCH } from './stages';
 
 // The course model (src/content/courses.ts) and the files of every course
 // other than Our World (content/courses/<id>/), checked as the build checks
@@ -30,10 +32,11 @@ const lessonFile = (name: string) => structuredClone(dwLessons[`${DW}/lessons/${
 const retiredFile = (name: string) => structuredClone(read(DW, 'retired', name)) as DigitalWorldLesson;
 
 describe('the course list', () => {
-  it('has Our World first, as the default, and Digital World as a preview course', () => {
+  it('has Our World first, as the default, then Digital World and Southeast Asia Through Time as preview courses', () => {
     expect(COURSES[0]).toMatchObject({ id: DEFAULT_COURSE_ID, dir: '', preview: false });
-    expect(PREVIEW_COURSES.map((course) => course.id)).toEqual(['digital-world']);
+    expect(PREVIEW_COURSES.map((course) => course.id)).toEqual(['digital-world', 'southeast-asia-through-time']);
     expect(findPreviewCourse('digital-world')?.lessonIdPrefix).toBe('dw-');
+    expect(findPreviewCourse('southeast-asia-through-time')?.lessonIdPrefix).toBe('sat-');
   });
 
   it('never treats Our World, or an unknown id, as a preview course', () => {
@@ -101,6 +104,54 @@ describe('Digital World’s files', () => {
   it('refuse an unknown course', () => {
     expect(() => loadCourse('nope', dwCourse, dwLessons)).toThrow(/no course "nope"/);
     expect(() => parseContentFile('lesson', {}, 'x.json', 'nope')).toThrow(/no schemas for the course "nope"/);
+  });
+});
+
+const SAT = 'content/courses/southeast-asia-through-time';
+
+describe('Southeast Asia Through Time’s files', () => {
+  const satCourse = read(SAT, 'course.json');
+  const satLessons = readLessons(`${SAT}/lessons`);
+
+  it('pass the build’s checks: 12 lessons in 4 sections of 3, every id starting "sat-"', () => {
+    const loaded = loadCourse('southeast-asia-through-time', satCourse, satLessons, { pictures: new Set(), picturesRequired: false });
+    expect(loaded.lessons.map((lesson) => lesson.number)).toEqual(Array.from({ length: 12 }, (_, i) => i + 1));
+    expect(loaded.sections.map((section) => section.lessons)).toEqual([
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9],
+      [10, 11, 12],
+    ]);
+    expect(loaded.lessons.every((lesson) => lesson.id.startsWith('sat-') && lesson.oldId === null)).toBe(true);
+  });
+
+  it('give every lesson two pictures that exist: a diagram and a credited real picture (or a second diagram)', () => {
+    const files = new Set(readdirSync(path.join(ROOT, SAT, 'visuals')).map((name) => `visuals/${name}`));
+    for (const raw of Object.values(satLessons)) {
+      const lesson = raw as { number: number; visual: { src: string }; secondVisual: { src: string; type: string; credit: unknown } };
+      expect(files.has(lesson.visual.src), `lesson ${lesson.number}: ${lesson.visual.src}`).toBe(true);
+      expect(files.has(lesson.secondVisual.src), `lesson ${lesson.number}: ${lesson.secondVisual.src}`).toBe(true);
+      if (lesson.secondVisual.type === 'photo') expect(lesson.secondVisual.credit, `lesson ${lesson.number}`).not.toBeNull();
+    }
+  });
+});
+
+describe('a lesson with no video', () => {
+  it('has four steps, without Watch, and a lesson with a video has five (createCourseContent’s stagesFor)', () => {
+    const lessons = [
+      { number: 1, id: 'sat-a', section: 's', watch: null },
+      { number: 2, id: 'sat-b', section: 's', watch: { youtubeId: 'abcdefghijk' } },
+    ] as unknown as CourseLesson[];
+    const course = { sections: [{ id: 's', number: 1, lessons: [1, 2] }] } as unknown as AnyCourseFile;
+    const content = createCourseContent(course, lessons, {
+      courseId: 'test',
+      pictureUrls: new Map(),
+      hasSectionChecks: false,
+      sectionLook: () => ({ tone: 'history', icon: 'Map' }),
+      coursePath: () => '/course/test',
+    });
+    expect(content.stagesFor({ number: 1 })).toEqual(STAGES_WITHOUT_WATCH);
+    expect(content.stagesFor({ number: 2 })).toEqual(STAGES);
   });
 });
 

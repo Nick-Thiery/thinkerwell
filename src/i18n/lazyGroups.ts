@@ -29,6 +29,9 @@ export const LAZY_MESSAGE_GROUPS = [
   'pilotResults',
   // The contact form (src/pages/contact/ContactPage.tsx, /contact), in the Educators chunk.
   'contact',
+  // What every preview course's pages share (src/courses/kit/): the draft banner, the course choice, the switch page.
+  // Built into assets/preview/ with that code, never precached.
+  'previewCourse',
 ] as const;
 
 export type LazyMessageGroup = (typeof LAZY_MESSAGE_GROUPS)[number];

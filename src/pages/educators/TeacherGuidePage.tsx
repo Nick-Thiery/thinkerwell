@@ -43,12 +43,14 @@ export function TeacherGuidePage({ lesson }: { lesson: CourseLesson }) {
   usePageTitle(t('pages.teacherGuide.pageTitle', { number: lesson.number }));
   const section = content.getLessonSection(lesson);
   const [min, max] = lesson.estimatedMinutes;
-  const { read, write, speak, watch, reflect } = lesson;
-  // A video's title and channel are English, unless this lesson has an approved video in the language on screen.
-  const videoLang = watch.localVideo ? en : alwaysEn;
+  const { read, write, speak, reflect } = lesson;
   const thinkChecks = read.checks.filter((check): check is ThinkCheck => check.type === 'think');
-  // No Watch step in a translated language without a video of its own for this lesson: no video part, no video plan row.
-  const withWatch = content.stagesFor(lesson).includes('watch');
+  // No Watch step in a translated language without a video of its own for this lesson, or for a lesson with no
+  // approved video at all (watch: null): no video part, no video plan row.
+  const withWatch = content.stagesFor(lesson).includes('watch') && lesson.watch !== null;
+  const watch = withWatch ? lesson.watch : null;
+  // A video's title and channel are English, unless this lesson has an approved video in the language on screen.
+  const videoLang = watch?.localVideo ? en : alwaysEn;
 
   return (
     <div className="tw-print-page tw-guide-page">
@@ -238,7 +240,7 @@ export function TeacherGuidePage({ lesson }: { lesson: CourseLesson }) {
           </div>
         </section>
 
-        {withWatch ? (
+        {watch ? (
           <section className="tw-print-part" id="guide-video">
             <h2>{t('pages.teacherGuide.videoTitle')}</h2>
             <dl className="tw-guide-facts">
@@ -328,7 +330,7 @@ function BeforeYouTeach({ lesson, withWatch }: { lesson: CourseLesson; withWatch
   const { t, contentLang } = useI18n();
   const { sensitiveNotes, educatorNotes } = lesson;
   // The video's content note only where the lesson shows the video.
-  const contentNote = withWatch ? lesson.watch.contentNote : null;
+  const contentNote = withWatch ? (lesson.watch?.contentNote ?? null) : null;
   const hasSensitive = sensitiveNotes.length > 0 || contentNote !== null;
   if (!hasSensitive && educatorNotes.length === 0) return null;
 

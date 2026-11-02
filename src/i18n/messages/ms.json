@@ -1565,6 +1565,56 @@
       "getSectionCertificate": "Dapatkan sijil bahagian kamu"
     }
   },
+  "previewCourse": {
+    "banner": {
+      "title": "Kursus draf: belum disemak",
+      "turnOff": "Matikan pratonton"
+    },
+    "sheet": {
+      "draft": "{title}, kursus draf: belum disemak. Jangan gunakan dengan pelajar dahulu."
+    },
+    "choice": {
+      "label": "Kursus pada peranti ini",
+      "draft": "Draf"
+    },
+    "map": {
+      "noChecks": "Belum ada semakan bahagian atau sijil dalam draf ini.",
+      "forTeachersTitle": "Untuk guru dan penyemak",
+      "printAll": "Cetak semua pelajaran",
+      "guideLink": "Panduan guru, Pelajaran {number}: {title}"
+    },
+    "printAll": {
+      "back": "Kembali ke {title}",
+      "intro": "Setiap pelajaran {title}, satu demi satu. Setiap pelajaran bermula pada halaman baharu. Cetak semuanya, atau simpan sebagai PDF.",
+      "pageTitle": "{title}: semua pelajaran"
+    },
+    "reviewer": {
+      "title": "Untuk penyemak",
+      "intro": "Nota daripada penulis draf ini: apa yang baharu dan apa yang perlu disemak. Pelajar tidak akan melihatnya.",
+      "pictureTitle": "Gambar yang belum dilukis"
+    },
+    "switch": {
+      "pageTitle": "Pratonton {title}",
+      "onTitle": "Pratonton {title} dihidupkan",
+      "noStorage": "Pelayar ini tidak dapat menyimpan tetapan di sini, jadi pratonton kekal hidup hanya sehingga anda menutup halaman ini.",
+      "open": "Buka {title}",
+      "printAll": "Cetak semua pelajaran",
+      "turnOff": "Matikan pratonton",
+      "offTitle": "Pratonton {title} dimatikan",
+      "offBody": "Peranti ini tidak lagi memaparkan {title}.",
+      "turnOn": "Hidupkan semula",
+      "goTo": "Pergi ke {title}",
+      "saveFailed": "Peranti ini tidak dapat menyimpan tetapan itu. Ia hanya berkuat kuasa sehingga anda menutup halaman ini."
+    },
+    "picture": {
+      "photoTitle": "Foto",
+      "lookClosely": "Lihat dengan teliti:",
+      "limits": "Apakah yang boleh ditunjukkan oleh sumber ini? Apakah yang tidak boleh?",
+      "credit": "“{title}”, {creator}, {created}. Lesen: {licence}.",
+      "source": "Lihat yang asal",
+      "changes": "Perubahan: {changes}"
+    }
+  },
   "digitalWorld": {
     "activity": {
       "eyebrow": "Aktiviti",
@@ -1572,17 +1622,8 @@
       "guideIntro": "Apa yang pelajar lakukan pada peranti, beserta apa yang mungkin dikatakan oleh kebanyakan orang, dan jawapannya. Kelas juga boleh melakukannya di atas kertas melalui paparan cetak."
     },
     "banner": {
-      "title": "Kursus draf: belum disemak",
       "body": "Digital World ialah draf. Seorang penyelidik AI dan sebuah organisasi rakan kongsi masih perlu menyemaknya. Hanya peranti ini yang memaparkannya.",
-      "bodyEnglishLessons": "Digital World ialah draf. Seorang penyelidik AI dan sebuah organisasi rakan kongsi masih perlu menyemaknya. Hanya peranti ini yang memaparkannya. Pelajarannya dalam bahasa Inggeris buat masa ini.",
-      "turnOff": "Matikan pratonton"
-    },
-    "sheet": {
-      "draft": "Digital World, kursus draf: belum disemak. Jangan gunakan dengan pelajar dahulu."
-    },
-    "choice": {
-      "label": "Kursus pada peranti ini",
-      "draft": "Draf"
+      "bodyEnglishLessons": "Digital World ialah draf. Seorang penyelidik AI dan sebuah organisasi rakan kongsi masih perlu menyemaknya. Hanya peranti ini yang memaparkannya. Pelajarannya dalam bahasa Inggeris buat masa ini."
     },
     "chart": {
       "viewsLabel": "Carta yang mana",
@@ -1605,11 +1646,7 @@
       "paperAnswer": "Kumpulan dengan kesilapan paling banyak:"
     },
     "map": {
-      "noChecks": "Belum ada semakan bahagian atau sijil dalam draf ini.",
-      "forTeachersTitle": "Untuk guru dan penyemak",
-      "forTeachersBody": "Setiap pelajaran ada panduan guru dengan nota, jawapan, aktiviti di atas kertas dan nota untuk penyemak. Seluruh kursus juga boleh dicetak.",
-      "printAll": "Cetak semua pelajaran",
-      "guideLink": "Panduan guru, Pelajaran {number}: {title}"
+      "forTeachersBody": "Setiap pelajaran ada panduan guru dengan nota, jawapan, aktiviti di atas kertas dan nota untuk penyemak. Seluruh kursus juga boleh dicetak."
     },
     "plan": {
       "answerLabel": "Jawapan kamu",
@@ -1629,15 +1666,7 @@
       "useStarter": "Guna permulaan ayat",
       "yourPlan": "Rancangan kamu"
     },
-    "printAll": {
-      "back": "Kembali ke Digital World",
-      "intro": "Setiap pelajaran Digital World, satu demi satu. Setiap pelajaran bermula pada halaman baharu. Cetak semuanya, atau simpan sebagai PDF.",
-      "pageTitle": "Digital World: semua pelajaran"
-    },
     "reviewer": {
-      "title": "Untuk penyemak",
-      "intro": "Nota daripada penulis draf ini: apa yang baharu dan apa yang perlu disemak. Pelajar tidak akan melihatnya.",
-      "pictureTitle": "Gambar yang belum dilukis",
       "activityTitle": "Tentang aktiviti ini",
       "saves": "Apa yang disimpan",
       "offline": "Cara ia berfungsi secara luar talian"
@@ -1653,19 +1682,8 @@
       "yourGroups": "Kumpulan kamu"
     },
     "switch": {
-      "pageTitle": "Pratonton Digital World",
-      "onTitle": "Pratonton Digital World dihidupkan",
       "onBody": "Peranti ini kini memaparkan Digital World, kursus draf tentang AI dan maklumat dalam talian. Orang lain tidak melihatnya, dan tiada apa-apa tentangnya dihantar ke mana-mana. Ia kekal hidup sehingga anda mematikannya.",
-      "reviewNote": "Ia belum disemak lagi. Seorang penyelidik AI masih perlu menyemak faktanya, dan sebuah organisasi rakan kongsi perlu menyemak topik sensitifnya. Jangan gunakannya dengan pelajar dahulu.",
-      "noStorage": "Pelayar ini tidak dapat menyimpan tetapan di sini, jadi pratonton kekal hidup hanya sehingga anda menutup halaman ini.",
-      "open": "Buka Digital World",
-      "printAll": "Cetak semua pelajaran",
-      "turnOff": "Matikan pratonton",
-      "offTitle": "Pratonton Digital World dimatikan",
-      "offBody": "Peranti ini tidak lagi memaparkan Digital World.",
-      "turnOn": "Hidupkan semula",
-      "goTo": "Pergi ke {title}",
-      "saveFailed": "Peranti ini tidak dapat menyimpan tetapan itu. Ia hanya berkuat kuasa sehingga anda menutup halaman ini."
+      "reviewNote": "Ia belum disemak lagi. Seorang penyelidik AI masih perlu menyemak faktanya, dan sebuah organisasi rakan kongsi perlu menyemak topik sensitifnya. Jangan gunakannya dengan pelajar dahulu."
     },
     "tool": {
       "badge": "Alat rekaan",
@@ -1875,5 +1893,18 @@
       "summary": "Semak ruangan yang ditanda di bawah."
     },
     "honeypot": "Biarkan kosong"
+  },
+  "southeastAsia": {
+    "banner": {
+      "body": "Southeast Asia Through Time ialah draf. Seorang ahli sejarah dan sebuah organisasi rakan kongsi masih perlu menyemaknya. Hanya peranti ini yang memaparkannya.",
+      "bodyEnglishLessons": "Southeast Asia Through Time ialah draf. Seorang ahli sejarah dan sebuah organisasi rakan kongsi masih perlu menyemaknya. Hanya peranti ini yang memaparkannya. Pelajarannya dalam bahasa Inggeris buat masa ini."
+    },
+    "map": {
+      "forTeachersBody": "Setiap pelajaran ada panduan guru dengan nota, jawapan, kedua-dua gambar berserta kreditnya, dan nota untuk penyemak. Seluruh kursus juga boleh dicetak."
+    },
+    "switch": {
+      "onBody": "Peranti ini kini memaparkan Southeast Asia Through Time, kursus draf tentang sejarah Asia Tenggara melalui objek, peta, foto dan surat yang sebenar. Orang lain tidak melihatnya, dan tiada apa-apa tentangnya dihantar ke mana-mana. Ia kekal hidup sehingga anda mematikannya.",
+      "reviewNote": "Ia belum disemak lagi. Seorang ahli sejarah masih perlu menyemak faktanya, dan sebuah organisasi rakan kongsi perlu menyemak topik sensitifnya. Jangan gunakannya dengan pelajar dahulu."
+    }
   }
 }

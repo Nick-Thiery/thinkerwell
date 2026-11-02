@@ -303,6 +303,12 @@ export const visualSchema = z.strictObject({
   src: z.string().regex(/^visuals\/[A-Za-z0-9_-]+\.svg$/, 'must be a path like "visuals/L10.svg" (an SVG in content/visuals/)'),
 });
 export type Visual = z.infer<typeof visualSchema>;
+/**
+ * A picture of any course: Southeast Asia Through Time's carry a caption and
+ * a "Look closely" question (captionedVisualSchema), and its second picture
+ * can be a photo.
+ */
+export type CourseVisual = Omit<Visual, 'type'> & { type: Visual['type'] | 'photo'; caption?: string; lookClosely?: string };
 
 export const sourceLinkSchema = z.strictObject({
   label: text,
@@ -360,8 +366,20 @@ export type Lesson = Omit<z.infer<typeof lessonSchema>, 'watch'> & { watch: Watc
 
 /** A section of any course. */
 export type CourseSection = Omit<Section, 'id'> & { id: string };
-/** A lesson of any course: Digital World's have no Base44 id, sections of their own and may have an activity. */
-export type CourseLesson = Omit<Lesson, 'oldId' | 'section'> & { oldId: string | null; section: string; activity?: Activity };
+/**
+ * A lesson of any course: a preview course's have no Base44 id and sections
+ * of their own. Digital World's may have an activity. Southeast Asia Through
+ * Time's have a second picture, captions under both, and no Watch step
+ * (`watch: null`) until a video is approved.
+ */
+export type CourseLesson = Omit<Lesson, 'oldId' | 'section' | 'watch' | 'visual'> & {
+  oldId: string | null;
+  section: string;
+  watch: Watch | null;
+  visual: CourseVisual | null;
+  secondVisual?: SecondVisual;
+  activity?: Activity;
+};
 /** Any course's course.json. */
 export type AnyCourseFile = Omit<CourseFile, 'sections'> & { sections: CourseSection[] };
 
@@ -637,10 +655,83 @@ export const digitalWorldLessonSchema = lessonSchema.extend({
 });
 export type DigitalWorldLesson = z.infer<typeof digitalWorldLessonSchema>;
 
+// ------------------------------------------------ Southeast Asia Through Time
+//
+// content/courses/southeast-asia-through-time/: a preview course
+// (src/content/courses.ts), Justin's brief of 28 October 2026. Twelve
+// case studies in four sections of three. Each lesson has two pictures in
+// Read: an original diagram (`visual`) and, after the second reading part,
+// a real, credited photo or map from Wikimedia Commons (`secondVisual`; a
+// second original diagram if the real one fails review), each with a
+// caption and a "Look closely" question. A lesson has no Watch step
+// (`watch: null`) until a person has watched and approved a video for it.
+
+export const SOUTHEAST_ASIA_SECTION_IDS = ['evidence-and-connections', 'trade-and-power', 'war-and-independence', 'memory-and-shared-histories'] as const;
+export type SoutheastAsiaSectionId = (typeof SOUTHEAST_ASIA_SECTION_IDS)[number];
+
+export const southeastAsiaSectionSchema = sectionSchema.extend({ id: z.enum(SOUTHEAST_ASIA_SECTION_IDS) });
+
+export const southeastAsiaCourseFileSchema = courseFileSchema.extend({
+  sections: z.array(southeastAsiaSectionSchema).length(4),
+});
+export type SoutheastAsiaCourseFile = z.infer<typeof southeastAsiaCourseFileSchema>;
+
+/** Where a real picture came from, shown under it and on Credits (CC BY and CC BY-SA need all of it). */
+export const pictureCreditSchema = z.strictObject({
+  /** The work's own title, or a short description of it. */
+  title: text,
+  /** Who made it (the photographer, the mapmaker), as the file page gives it. */
+  creator: text,
+  /** When it was made ("2013", "1604"), as the file page gives it. */
+  created: text,
+  /** The museum or archive that holds the original, or null. */
+  institution: text.nullable(),
+  /** The file's page on Wikimedia Commons (or another source). */
+  sourceUrl: z.url(),
+  /** The licence's short name ("CC BY-SA 3.0", "Public domain"). */
+  licence: text,
+  /** The licence's text, or null for the public domain. */
+  licenceUrl: z.url().nullable(),
+  /** What Thinkerwell changed: resized, cropped, converted. */
+  changes: text,
+});
+export type PictureCredit = z.infer<typeof pictureCreditSchema>;
+
+/** A picture with its caption and a question to look closely with. */
+export const captionedVisualSchema = visualSchema.extend({
+  /** Under the picture: what it is, when it was made, and what it can't show. */
+  caption: text,
+  /** A question that sends the learner back into the picture. */
+  lookClosely: text,
+});
+
+/** The second picture: a photo (a JPEG in visuals/) with its credit, or a second original diagram (an SVG). */
+export const secondVisualSchema = captionedVisualSchema.extend({
+  type: z.enum(['map', 'timeline', 'diagram', 'illustration', 'photo']),
+  src: z
+    .string()
+    .regex(/^visuals\/[A-Za-z0-9_-]+\.(svg|jpg)$/, 'must be a path like "visuals/SAT01-photo.jpg" (a picture in the course\'s visuals/)'),
+  /** For a real picture, where it came from and its licence; null for a Thinkerwell diagram. */
+  credit: pictureCreditSchema.nullable(),
+});
+export type SecondVisual = z.infer<typeof secondVisualSchema>;
+
+export const southeastAsiaLessonSchema = lessonSchema.extend({
+  /** No Base44 original. */
+  oldId: z.null(),
+  section: z.enum(SOUTHEAST_ASIA_SECTION_IDS),
+  /** No Watch step until a person has watched and approved a video. */
+  watch: watchSchema.nullable(),
+  visual: captionedVisualSchema,
+  secondVisual: secondVisualSchema,
+});
+export type SoutheastAsiaLesson = z.infer<typeof southeastAsiaLessonSchema>;
+
 /** Each course's course.json and lesson schemas, by course id (src/content/courses.ts). */
 export const COURSE_SCHEMAS = {
   'our-world': { course: courseFileSchema, lesson: lessonSchema },
   'digital-world': { course: digitalWorldCourseFileSchema, lesson: digitalWorldLessonSchema },
+  'southeast-asia-through-time': { course: southeastAsiaCourseFileSchema, lesson: southeastAsiaLessonSchema },
 } as const;
 export type CourseSchemaId = keyof typeof COURSE_SCHEMAS;
 

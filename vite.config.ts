@@ -118,7 +118,7 @@ function checkContent(): Plugin {
           const lessons = readAll(`${course.dir}/lessons`);
           const raw = JSON.parse(readFileSync(path.join(dir(course.dir), 'course.json'), 'utf8')) as unknown;
           const pictureDir = dir(`${course.dir}/visuals`);
-          const pictures = existsSync(pictureDir) ? readdirSync(pictureDir).filter((name) => name.endsWith('.svg')).map((name) => `visuals/${name}`) : [];
+          const pictures = existsSync(pictureDir) ? readdirSync(pictureDir).filter((name) => /\.(svg|jpg)$/.test(name)).map((name) => `visuals/${name}`) : [];
           loadCourse(course.id, raw, lessons, { pictures: new Set(pictures), picturesRequired: !course.preview });
         }
       } catch (error) {
@@ -310,7 +310,7 @@ function keepFirstVisitLight(): Plugin {
             `The Vietnamese font is in the site's stylesheet (${output.fileName}). Import src/i18n/fonts/vietnamese.css only with ?url (src/i18n/fonts/index.ts).`,
           );
         }
-        if (!output.fileName.startsWith(PREVIEW_ASSET_DIR) && /\.tw-(dw|vr)-/.test(String(output.source))) {
+        if (!output.fileName.startsWith(PREVIEW_ASSET_DIR) && /\.tw-(dw|vr|pc)-/.test(String(output.source))) {
           this.error(
             `A preview course's styles are in the site's stylesheet (${output.fileName}). Import its CSS only with ?url (src/courses/digital-world/stylesheet.ts).`,
           );

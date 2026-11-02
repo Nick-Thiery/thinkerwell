@@ -84,7 +84,11 @@ def learner_strings(L):
     w = L.get("write", {})
     out.append(("write prompt", w.get("prompt", "")))
     out.append(("write example", w.get("example", "")))
-    out.append(("watch summary", L.get("watch", {}).get("summary", "")))
+    out.append(("watch summary", (L.get("watch") or {}).get("summary", "")))
+    for key in ("visual", "secondVisual"):
+        v = L.get(key) or {}
+        out.append((key + " caption", v.get("caption", "")))
+        out.append((key + " look closely", v.get("lookClosely", "")))
     for p in L.get("reflect", {}).get("prompts", []):
         out.append(("reflect", p.get("text", "")))
     return out
@@ -217,9 +221,13 @@ def check(path):
         return True
 
     for k in ["id", "number", "section", "title", "essentialQuestion", "learningGoal",
-              "warmUp", "evidence", "read", "write", "speak", "watch", "reflect", "sources",
+              "warmUp", "evidence", "read", "write", "speak", "reflect", "sources",
               "changes"]:
         need(L, k, "")
+    # Another course's lesson has no Watch step until a person has watched and
+    # approved a video for it (watch: null; Southeast Asia Through Time).
+    if course is None or "watch" not in L:
+        need(L, "watch", "")
     if course is None:
         need(L, "oldId", "")
     elif "oldId" not in L or L["oldId"] is not None:
@@ -394,22 +402,23 @@ def check(path):
     need(sp, "partnerTask", "speak.")
     need(sp, "independentTask", "speak.")
 
-    # watch
+    # watch (null for another course's lesson with no approved video yet)
     wa = L.get("watch") or {}
-    for k in ("youtubeId", "title", "channel", "why", "beforeQuestion", "afterQuestion", "summary", "keyPoints"):
-        need(wa, k, "watch.")
-    if "durationSeconds" not in wa:
-        errs.append("watch.durationSeconds missing (use null if unknown)")
-    if "contentNote" not in wa or "replacementSuggestion" not in wa:
-        errs.append("watch.contentNote and watch.replacementSuggestion must be present (null allowed)")
-    n_sum = len(words(wa.get("summary", "")))
-    if not 90 <= n_sum <= 140:
-        (errs if not 75 <= n_sum <= 160 else warns).append(f"watch.summary is {n_sum} words (need 90–140)")
-    if len(wa.get("keyPoints") or []) != 3:
-        errs.append("watch.keyPoints: need exactly 3")
-    yid = wa.get("youtubeId", "")
-    if yid and not re.fullmatch(r"[A-Za-z0-9_-]{11}", yid):
-        errs.append(f'watch.youtubeId "{yid}" is not an 11-character YouTube id')
+    if L.get("watch") is not None or course is None:
+        for k in ("youtubeId", "title", "channel", "why", "beforeQuestion", "afterQuestion", "summary", "keyPoints"):
+            need(wa, k, "watch.")
+        if "durationSeconds" not in wa:
+            errs.append("watch.durationSeconds missing (use null if unknown)")
+        if "contentNote" not in wa or "replacementSuggestion" not in wa:
+            errs.append("watch.contentNote and watch.replacementSuggestion must be present (null allowed)")
+        n_sum = len(words(wa.get("summary", "")))
+        if not 90 <= n_sum <= 140:
+            (errs if not 75 <= n_sum <= 160 else warns).append(f"watch.summary is {n_sum} words (need 90–140)")
+        if len(wa.get("keyPoints") or []) != 3:
+            errs.append("watch.keyPoints: need exactly 3")
+        yid = wa.get("youtubeId", "")
+        if yid and not re.fullmatch(r"[A-Za-z0-9_-]{11}", yid):
+            errs.append(f'watch.youtubeId "{yid}" is not an 11-character YouTube id')
 
     # reflect
     rf = L.get("reflect") or {}
@@ -427,6 +436,21 @@ def check(path):
             errs.append(f"visual.type must be one of {sorted(VISUAL_TYPES)}")
         if not vi.get("description") or not vi.get("alt"):
             errs.append("visual needs description and alt")
+
+    # second visual (Southeast Asia Through Time: a real photo or map, or a second diagram)
+    sv = L.get("secondVisual")
+    for key, v in (("visual", vi), ("secondVisual", sv)):
+        if v is not None and course is not None and ("caption" in v or key == "secondVisual"):
+            for k in ("caption", "lookClosely"):
+                if not v.get(k):
+                    errs.append(f"{key} needs {k}")
+    if sv is not None:
+        if course is None:
+            errs.append("secondVisual: Our World lessons have one picture")
+        if not sv.get("description") or not sv.get("alt"):
+            errs.append("secondVisual needs description and alt")
+        if sv.get("type") == "photo" and not isinstance(sv.get("credit"), dict):
+            errs.append("secondVisual: a photo needs its credit (creator, licence, source)")
 
     # sources
     for s in L.get("sources") or []:

@@ -1,4 +1,5 @@
 import { useEffect, useId, useRef, useState, type FocusEvent } from 'react';
+import type { Watch } from '../../../content';
 import { Button, Icon, StatusBanner, TaskCard, VideoCard } from '../../../components/ds';
 import { En, useI18n } from '../../../i18n';
 import { formatDuration, hasText, splitParagraphs, useLessonPlayer } from '../../../lesson';
@@ -77,9 +78,14 @@ type FocusTarget = 'player' | 'written' | 'watch';
  *   in English". Opening there isn't a choice, so it sends no event.
  */
 export function WatchStage() {
+  const { watch } = useLessonPlayer().lesson;
+  // A lesson with no approved video (watch: null) has no Watch step (stagesFor), and its /watch address goes to Reflect.
+  return watch ? <WatchWith watch={watch} /> : null;
+}
+
+function WatchWith({ watch }: { watch: Watch }) {
   const { t, formatNumber, contentLang, englishLang, content, contentLocale } = useI18n();
   const { lesson, progress, update, stageEvent, settings } = useLessonPlayer();
-  const { watch } = lesson;
   // The video's title and channel are its own words: English, unless this lesson has an approved video in the
   // language on screen (src/content/localVideos.ts), whose title and channel are in that language.
   const videoLang = watch.localVideo ? contentLang : englishLang;
