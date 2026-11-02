@@ -46,7 +46,7 @@ export async function isStored(url: string): Promise<boolean> {
   }
 }
 
-/** The timings of one language's recordings, or null when it has none. Fetched once per page. */
+/** The timings of one track's recordings (a language, or "<lang>/<course>"), or null when it has none. Fetched once per page. */
 export function loadTimings(lang: string, signal?: AbortSignal): Promise<LanguageTimings | null> {
   const url = recordingsOf(lang)?.timings;
   if (!url) return Promise.resolve(null);

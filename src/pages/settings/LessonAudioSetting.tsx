@@ -7,6 +7,9 @@
  * - The device's languages: the lessons' language of the device's own
  *   language and of every learner on the device (English, Bahasa Indonesia,
  *   Bahasa Melayu, or more than one), so a device used only in Indonesian doesn't download English.
+ * - With a preview course turned on here (settings.previewCourses), its
+ *   recordings in those languages too (src/audio/recordings.ts, "tracks");
+ *   never a course this device doesn't show.
  * - Says how big it is, how much is on the device, and the progress while
  *   downloading, which can be stopped (what has arrived stays).
  * - Offered only once the course itself is kept on the device (the service
@@ -15,7 +18,7 @@
  */
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { audioTotal, canKeepAudio, downloadAudio, storedAudio, type DownloadResult } from '../../audio/download';
-import { recordingLang, recordingsOf } from '../../audio/recordings';
+import { recordingLang, recordingsOf, recordingTrack } from '../../audio/recordings';
 import type { SettingsPart } from '../../app/lessonUrls';
 import { Button } from '../../components/ds';
 import { useI18n, type MessageKey } from '../../i18n';
@@ -51,7 +54,7 @@ const RESULT_TEXT: Record<Exclude<DownloadResult, 'done'>, MessageKey> = {
 export function LessonAudioSetting({ deviceSettings }: { deviceSettings: DeviceSettingsState }) {
   const { t } = useI18n();
   const { settings } = deviceSettings;
-  const { learners, deviceLanguage } = useLearnerSession();
+  const { learners, deviceLanguage, previewCourses } = useLearnerSession();
   const { offline } = useServiceWorker();
   const headingId = useId();
   const progressId = useId();
@@ -62,7 +65,13 @@ export function LessonAudioSetting({ deviceSettings }: { deviceSettings: DeviceS
     return ['en', ...[...wanted].filter((lang) => lang !== 'en').sort()].filter((lang) => wanted.has(lang) && recordingsOf(lang));
   }, [learners, deviceLanguage]);
   const langsKey = langs.join(' ');
-  const total = audioTotal(langs);
+  // What to download: Our World's recordings in those languages, then each preview course's turned on here.
+  const tracks = useMemo(
+    () => [...langs, ...previewCourses.flatMap((course) => langs.map((lang) => recordingTrack(lang, course)).filter((track) => recordingsOf(track)))],
+    [langs, previewCourses],
+  );
+  const tracksKey = tracks.join(' ');
+  const total = audioTotal(tracks);
 
   const [stored, setStored] = useState<number | null>(null);
   const [progress, setProgress] = useState<number | null>(null);
@@ -71,13 +80,13 @@ export function LessonAudioSetting({ deviceSettings }: { deviceSettings: DeviceS
 
   useEffect(() => {
     let current = true;
-    void storedAudio(langsKey ? langsKey.split(' ') : []).then((bytes) => {
+    void storedAudio(tracksKey ? tracksKey.split(' ') : []).then((bytes) => {
       if (current) setStored(bytes);
     });
     return () => {
       current = false;
     };
-  }, [langsKey, result]);
+  }, [tracksKey, result]);
 
   // Leaving the page stops a download (what has arrived stays).
   useEffect(() => () => stopper.current?.abort(), []);
@@ -97,7 +106,7 @@ export function LessonAudioSetting({ deviceSettings }: { deviceSettings: DeviceS
     stopper.current = controller;
     setResult(null);
     setProgress(stored ?? 0);
-    void downloadAudio(langs, { signal: controller.signal, onProgress: ({ done }) => setProgress(done) }).then((outcome) => {
+    void downloadAudio(tracks, { signal: controller.signal, onProgress: ({ done }) => setProgress(done) }).then((outcome) => {
       if (stopper.current === controller) stopper.current = null;
       setProgress(null);
       setResult(outcome);

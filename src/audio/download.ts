@@ -72,7 +72,9 @@ export async function storedAudio(langs: readonly string[]): Promise<number> {
     for (const lang of langs) {
       const index = recordingsOf(lang);
       if (!index) continue;
-      const mine = keys.filter((path) => path.startsWith(audioUrl(lang, '')) && path.endsWith('.mp3'));
+      // Only this track's own files: a course's are in a folder below its language's (/audio/id/digital-world/).
+      const folder = audioUrl(lang, '');
+      const mine = keys.filter((path) => path.startsWith(folder) && !path.slice(folder.length).includes('/') && path.endsWith('.mp3'));
       if (mine.length === 0) continue;
       const timingsResponse = await cache.match(index.timings);
       if (timingsResponse) {

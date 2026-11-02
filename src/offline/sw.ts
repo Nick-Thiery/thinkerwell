@@ -37,6 +37,7 @@ import { clientsClaim } from 'workbox-core';
 import { cleanupOutdatedCaches, PrecacheController, PrecacheRoute, type PrecacheEntry } from 'workbox-precaching';
 import { NavigationRoute, registerRoute } from 'workbox-routing';
 import { AUDIO_CACHE, AUDIO_PREFIX } from '../audio/cache';
+import courseRecordings from '../audio/courseRecordings.json';
 import recordings from '../audio/recordings.json';
 
 declare const self: ServiceWorkerGlobalScope & { __WB_MANIFEST: Array<PrecacheEntry | string> };
@@ -74,13 +75,22 @@ async function installPrecache(event: ExtendableEvent): Promise<void> {
   await Promise.all(Array.from({ length: CONCURRENCY }, next));
 }
 
-/** Each recorded language's current timings file (src/audio/recordings.json): it lists the recordings in use. */
+/**
+ * Each set of recordings' current timings file: Our World's by language
+ * (src/audio/recordings.json), and each preview course's by "<lang>/<course>"
+ * (src/audio/courseRecordings.json). Each lists the recordings in use.
+ */
 const recorded: Readonly<Record<string, { timings: string }>> = recordings;
-const currentTimings = new Map(Object.entries(recorded).map(([lang, entry]) => [lang, entry.timings]));
+const recordedCourses: Readonly<Record<string, Readonly<Record<string, { timings: string }>>>> = courseRecordings;
+const currentTimings = new Map([
+  ...Object.entries(recorded).map(([lang, entry]): [string, string] => [lang, entry.timings]),
+  ...Object.entries(recordedCourses).flatMap(([course, langs]) => Object.entries(langs).map(([lang, entry]): [string, string] => [`${lang}/${course}`, entry.timings])),
+]);
 
-/** The language of a path under /audio/ ("/audio/id/x.mp3" → "id"). */
+/** The set of recordings a path under /audio/ belongs to: "/audio/id/x.mp3" → "id", "/audio/id/digital-world/x.mp3" → "id/digital-world". */
 function audioLang(path: string): string {
-  return path.slice(AUDIO_PREFIX.length).split('/')[0] ?? '';
+  const parts = path.slice(AUDIO_PREFIX.length).split('/');
+  return parts.length > 2 ? `${parts[0]}/${parts[1]}` : (parts[0] ?? '');
 }
 
 /**
@@ -114,6 +124,7 @@ async function pruneAudio(fetchMissing: boolean): Promise<void> {
     }
     if (current && !timings) continue;
     const sections = timings ? ((await timings.json()) as { sections: Record<string, { f: string }> }).sections : {};
+    // `lang` is a set of recordings: "id", or "id/digital-world" for a course's (its own folder).
     const keep = new Set([current, ...Object.values(sections).map((section) => `${AUDIO_PREFIX}${lang}/${section.f}`)]);
     await Promise.all(paths.filter((path) => !keep.has(path)).map((path) => cache.delete(path)));
   }

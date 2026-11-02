@@ -155,6 +155,17 @@ A device used in Malay only downloads 24.3 MB to have every recording offline; i
 
 **For a Malaysian reviewer, with the translation:** listen to a few parts (Lessons 1, 9 and 17 first), and say whether the voice is clear enough for 10 to 17-year-olds, and which words it gets wrong. A better free voice, or a commercial one once there is money, replaces it by changing `VOICES["ms"]` in `scripts/audio/generate.py` and running `npm run audio:generate -- --lang ms`.
 
+## Preview courses (November 2026)
+
+Nick's call (2 November 2026): Digital World and Southeast Asia Through Time get recordings now, with Our World's voices (Kokoro `af_heart` at 0.92 for English, MMS-TTS `mms-tts-ind` and `mms-tts-zlm` for Indonesian and Malay), so Listen works in Indonesian and Malay on devices that have no voice for them (most Windows laptops have no Malay voice, many no Indonesian one). They were recorded before the courses' review, so a reviewed sentence is recorded again (seconds per section: only changed pieces are spoken).
+
+- **Kept apart.** Each course and language is a "track" of its own (`id/digital-world`): files in `public/audio/<lang>/<course>/`, its own timings file, its entry under `courses` in `tools/audio/manifest.json`, and `src/audio/courseRecordings.json` for the app. Recording a course never touches Our World's files, and recording Our World never touches a course's (`generate.py` prunes only files, never a course's folder).
+- **Recording.** `npm run audio:generate -- --all-courses` (or `--course digital-world`, with `--lang` as usual). `tools/audio/export.ts` writes the courses under `courses` (`courseUtterances` in `tools/audio/utterances.ts`): every reading section, both levels, in English and each ready language the course is translated into, laid over the English as the app does.
+- **Playing.** The Read stage asks for a recording in its course's track (`recordingRef(…, courseId)`), so a course lesson never plays an Our World file. A course without recordings in a language uses the device's voice, as before.
+- **Downloading.** Nothing of a course downloads on a device without its preview: Listen fetches a course's timings and files only inside its lessons, and Settings' "Lesson audio" adds a course's tracks only where `settings.previewCourses` has it.
+- **Offline.** The service worker keeps them in the same cache and prunes each track against its own current timings (`audioLang` in `src/offline/sw.ts` reads `/audio/id/digital-world/x.mp3` as `id/digital-world`).
+- **Checks.** `npm run check:audio` checks every course track like a language (`courseAudioProblems` in `tools/audio/check.ts`). Tests: `tools/audio/check.test.ts`, `src/audio/recordings.test.ts`.
+
 ## Vietnamese (hidden preview)
 
 Branch `vietnamese-preview`, October 2026. Vietnamese is a hidden preview language: its interface and lessons are AI drafts that no native speaker has reviewed (`ready: false` in `src/i18n/locales.ts`; CLAUDE.md rule 7), so nobody can choose it yet. The pipeline can record it, so the team can hear it, but the recordings are not on `main`.

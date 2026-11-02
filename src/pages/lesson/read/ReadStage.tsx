@@ -71,7 +71,10 @@ export function ReadStage() {
   const { t, contentLocale, contentLang } = useI18n();
   const { lesson, readingLevel, setReadingLevel, settings, setListeningSpeed } = useLessonPlayer();
   // Without a Watch step the video's key points stay with the reading (folded, at the last part).
-  const keyPointsHere = !useLessonContent().stagesFor(lesson).includes('watch');
+  const content = useLessonContent();
+  const keyPointsHere = !content.stagesFor(lesson).includes('watch');
+  // A preview course's lessons have recordings of their own (src/audio/recordings.ts).
+  const { courseId } = content;
   const sections = lesson.read.sections;
   const glossary = lesson.read.glossary;
   const total = sections.length;
@@ -99,16 +102,16 @@ export function ReadStage() {
   // The part's recording (null for a language without recordings), and the next part's, to download ahead.
   const partNumber = typeof view === 'number' ? view : 0;
   const recording = useMemo(
-    () => (section ? recordingRef(speechLang, sectionKey(lesson.id, readingLevel, partNumber), listenItems) : null),
-    [section, speechLang, lesson.id, readingLevel, partNumber, listenItems],
+    () => (section ? recordingRef(speechLang, sectionKey(lesson.id, readingLevel, partNumber), listenItems, courseId) : null),
+    [section, speechLang, lesson.id, readingLevel, partNumber, listenItems, courseId],
   );
   const nextSection = typeof view === 'number' ? sections[view] : undefined;
   const nextRecording = useMemo(() => {
     if (!nextSection) return null;
     const nextText = visibleSectionText(nextSection, readingLevel);
     const nextItems = listenPieces(nextSection.heading, nextText, sentenceRanges(nextText));
-    return recordingRef(speechLang, sectionKey(lesson.id, readingLevel, partNumber + 1), nextItems);
-  }, [nextSection, readingLevel, speechLang, lesson.id, partNumber]);
+    return recordingRef(speechLang, sectionKey(lesson.id, readingLevel, partNumber + 1), nextItems, courseId);
+  }, [nextSection, readingLevel, speechLang, lesson.id, partNumber, courseId]);
   const focusListenTool = () => document.getElementById(listenToolId)?.focus();
   const listen = useListen({
     voice,
