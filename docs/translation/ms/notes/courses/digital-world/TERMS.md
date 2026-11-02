@@ -18,7 +18,7 @@ Shared by the translators of Lessons 1 to 8 and 9 to 17, so the whole course use
 | label (noun) / to label | label / melabel | contoh berlabel = labelled examples | 3, 5 |
 | supervised learning | pembelajaran berselia | DBP term | 3 |
 | test (a model) | menguji / ujian | ujian here is a model's test, not a school test | 3 |
-| chatbot | chatbot | Malaysians say chatbot; DBP's "bot sembang" given in the glossary definition | 4 |
+| chatbot | chatbot | Malaysians say chatbot; DBP's "bot sembang" is noted for reviewers, not added to the text | 4 |
 | large language model (LLM) | model bahasa besar (LLM) |  | 4 |
 | token | token |  | 4 |
 | source (where information comes from) | sumber | KEY_TERMS.md | 4 |
@@ -101,3 +101,61 @@ Shared by the translators of Lessons 1 to 8 and 9 to 17, so the whole course use
 | section 3: AI in daily life | AI dalam kehidupan harian | course.json | course |
 | section 4: Truth, power and choices | Kebenaran, kuasa dan pilihan | course.json | course |
 | setback | kemunduran | not kegagalan | course, 2 |
+| proposal (research) | cadangan | also kertas cadangan | 2 |
+| promise | janji |  | 2 |
+| expert system | sistem pakar |  | 1, 2 |
+| perceptron | perceptron | name of the machine, kept | 2 |
+| captions / subtitles | sari kata |  |  |
+| headline | tajuk berita |  | 2 |
+| made-up / invented | rekaan | pretend = olok-olok |  |
+| hard to say (sort group) | Sukar dikatakan | same words in reading, Speak and starters | 1, 2 |
+| careful guess | tekaan yang teliti |  | 1 |
+| 1980s (decades) | 1980-an; pertengahan tahun 1970-an = mid-1970s |  | 2 |
+| flashcards | kad imbas |  | 3 |
+| round (of training/testing) | pusingan |  | 3 |
+| healthy / sick (leaf) | sihat / sakit |  | 3 |
+| test data | data ujian |  | 3 |
+| computer vision | penglihatan komputer |  | 3 |
+| nearest-neighbour model | model jiran terdekat |  | 3 |
+| labelled examples | contoh berlabel |  | 3 |
+| Sunrise Garden | Kebun Sunrise | name kept, "garden" translated | 3 |
+| Hillview Learning Centre | Pusat Pembelajaran Hillview |  | 1 |
+| small piece of text (token) | cebisan teks |  | 4 |
+| confident | yakin | sure = pasti | 4 |
+| chat (with a chatbot) | bersembang |  | 4 |
+| at random / by chance | secara rawak |  | 4 |
+| neural network | rangkaian neural |  | 4 |
+| web page / link | halaman web / pautan |  | 4 |
+| lateral reading (in sources) | pembacaan lateral |  | 4, 14 |
+| setting (of a tool) | tetapan | KEY_TERMS Settings | 4 |
+| Lakeside Learning Centre | Pusat Pembelajaran Lakeside |  | 4 |
+| tag (a photo) | menanda | label = label / melabel | 5 |
+| labeller | pelabel |  | 5 |
+| wage / salary / payment / minimum wage | upah / gaji / bayaran / gaji minimum |  | 5 |
+| middleman company (outsourcing firm) | syarikat perantara / firma penyumberan luar |  | 5 |
+| head office / engineer | ibu pejabat / jurutera |  | 5 |
+| harmful (posts, text) | berbahaya |  | 5 |
+| platform (work platform) | platform |  | 5 |
+| consent / compensation | persetujuan / pampasan | consent = persetujuan as in KEY_TERMS consent form | 5 |
+| US dollars | dolar AS; $ kept in teachers notes |  | 5 |
+| electricity / power supply / power cut | tenaga elektrik / bekalan elektrik / gangguan bekalan elektrik | kuasa only for power over decisions | 6 |
+| forecast / projection / estimate | unjuran / anggaran |  | 6 |
+| solar panel / energy from the sun and wind | panel solar / tenaga matahari dan angin |  | 6 |
+| cool / cooling | menyejukkan / penyejukan |  | 6 |
+| waste water / electronic waste | air sisa / sisa elektronik |  | 6 |
+| rare minerals | mineral yang jarang ditemui |  | 6 |
+| benefit / cost / both (sort groups) | Manfaat / Kos / Kedua-duanya |  | 6 |
+| dry season | musim kemarau |  | 6 |
+| server | pelayan |  | 6 |
+| colonialism | penjajahan |  | 7 |
+| help screen | skrin bantuan |  | 7 |
+| region | rantau |  | 7 |
+| language names | bahasa Inggeris, Cina, Melayu, Indonesia, Vietnam, Thai, Myanmar (Burmese), Khmer, Tamil, Jawa, Sunda, Swahili |  | 7 |
+| pilot (Jakarta) | program rintis | as the Malay interface says; never projek rintis | 7 |
+| press release | kenyataan akhbar |  | 7 |
+| missing examples / left out | contoh yang tertinggal / tertinggal |  | 8 |
+| something is wrong | ada sesuatu yang tidak kena | avoid "salah" in learner text; wrong label = label yang tidak betul | 8 |
+| speech tool / speech recognition | alat pertuturan / pengecaman pertuturan |  | 8 |
+| one-sided | berat sebelah |  | 8 |
+| permission | izin |  | 8 |
+| Riverbend Learning Centre | Pusat Pembelajaran Riverbend |  | 8 |

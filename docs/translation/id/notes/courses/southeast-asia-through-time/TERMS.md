@@ -70,3 +70,66 @@ Two translators work on the course at the same time (course.json, Lessons 1–6,
 | the Philippines / Thailand / Singapore / Java | Filipina / Thailand / Singapura / Jawa | | | L1–6 |
 | National Archives of Indonesia / Dutch National Archives | Arsip Nasional Indonesia / Arsip Nasional Belanda | ANRI | | L1–6 |
 | titles of real works and organisations | kept as they are, with a short Indonesian gloss in brackets the first time | | e.g. *Letters of a Javanese Princess* (Surat-Surat Seorang Putri Jawa) | L1–6 |
+
+### Lessons 7–12 and section checks 3–4 (added by the L7–12 translator; this section was lost once when the file was rewritten: please append, never rewrite the file)
+
+Teachers' notes in L7–12 use no pronoun at all (imperatives, "pendidik" where needed), as Our World's Indonesian lesson notes do, because `scripts/check_translation.py id` rejects "Anda" anywhere in a lesson file. That keeps both rules.
+
+| English | Indonesian | Other options | Notes | Added by |
+|---|---|---|---|---|
+| Not sure yet (warm-up) | Belum yakin | | | L7–12 |
+| Look at the first part of the reading. | Lihat bagian pertama bacaan. | | "Lihat lagi Pelajaran 7." in section checks, as Our World | L7–12 |
+| primary school | sekolah dasar | | | L7–12 |
+| Evidence move (teachers' notes) | Langkah membaca bukti | | | L7–12 |
+| Misconceptions to address | Salah paham yang perlu diluruskan | | | L7–12 |
+| Source caveats | Catatan tentang sumber | | | L7–12 |
+| Not yet watched by a person (contentNote) | Belum ditonton oleh seorang pun | | | L7–12 |
+| captions (of a video) | teks terjemahan | subtitel | | L7–12 |
+| occupation (Japanese occupation) | pendudukan (pendudukan Jepang) | | Glossary word, L7 | L7–12 |
+| oral history | sejarah lisan | | Glossary word, L7 | L7–12 |
+| compulsory | wajib | | form: mewajibkan | L7–12 |
+| shortage | kekurangan | | | L7–12 |
+| ration / ration card / rice ration | jatah / kartu jatah / jatah beras | | | L7–12 |
+| tapioca (the root) | singkong | ubi kayu | Indonesian "tapioka" is the flour; Singapore English "tapioca" is the cassava root | L7–12 |
+| sweet potato | ubi jalar | | | L7–12 |
+| rice (eaten) / rice (grain, shipped, rationed) | nasi / beras | | | L7–12 |
+| surrender | menyerah | | | L7–12 |
+| Former Ford Factory / Ford Factory | Former Ford Factory (bekas pabrik Ford) / Pabrik Ford | | Name kept, glossed | L7–12 |
+| proclamation | proklamasi | | form: memproklamasikan; "membacakan proklamasi" for "made a proclamation" | L7–12 |
+| sovereignty / transfer of sovereignty | kedaulatan / penyerahan kedaulatan | | | L7–12 |
+| draft (Sukarno's handwritten text) | rancangan (naskah) | klad, konsep | | L7–12 |
+| talks (1945–1949) / armed struggle | perundingan / perjuangan bersenjata | | | L7–12 |
+| agreement / London Agreement | perjanjian / Perjanjian London | | | L7–12 |
+| federation / Federation of Malaya | federasi / Federasi Malaya | Persekutuan Tanah Melayu | So the glossary word "federasi" is in the name | L7–12 |
+| Malayan Emergency | Darurat Malaya | | | L7–12 |
+| The Hague | Den Haag | | | L7–12 |
+| newsreel | film berita | | | L7–12 |
+| East Timor / East Timorese | Timor Timur / (warga, pemilih, pemimpin) Timor Timur | | Only where the English says East Timor | L7–12 |
+| transition / UN transitional administration | (masa) transisi / pemerintahan transisi PBB | masa peralihan | Glossary word "transisi", L9 | L7–12 |
+| restored (independence) | dipulihkan | | forms: memulihkan, pemulihan | L7–12 |
+| restoration / restored (a building) | pemugaran / dipugar | restorasi | Borobudur's 1973–1983 project is "pemugaran" in Indonesian | L7–12 |
+| curriculum | kurikulum | | | L7–12 |
+| official language | bahasa resmi | | | L7–12 |
+| access | akses | | | L7–12 |
+| Tetum | Tetum | Tetun | Kept as in English; reviewers decide | L7–12 |
+| vote (1999) / popular consultation | pemungutan suara / jajak pendapat | | | L7–12 |
+| trade-off | pengorbanan | | KEY_TERMS | L7–12 |
+| Viet Nam | Vietnam | | Usual Indonesian spelling | L7–12 |
+| Hội An Ancient Town | Kota Tua Hội An | | | L7–12 |
+| quay / ferry quay | dermaga / dermaga feri | | | L7–12 |
+| World Heritage site / List | Situs Warisan Dunia / Daftar Warisan Dunia | | | L7–12 |
+| covered bridge / Japanese Bridge | jembatan beratap / Jembatan Jepang | | | L7–12 |
+| route (on the Hội An map) | rute | | Matches L1–6 | L7–12 |
+| Borobudur Temple Compounds | Kompleks Candi Borobudur | | "candi" for the monument/temple | L7–12 |
+| conservation / conservator | konservasi / konservator | pelestarian | Glossary word "konservasi" (forms dikonservasi, mengonservasi); matches Balai Konservasi Borobudur | L7–12 |
+| Borobudur Conservation Office / Archives | Balai Konservasi Borobudur / Arsip Konservasi Borobudur | | | L7–12 |
+| as-built drawing | gambar as-built | gambar terbangun | Technical term kept, explained; flagged | L7–12 |
+| recognition | pengakuan | penghargaan | forms: diakui, mengakui | L7–12 |
+| stupa / the Buddha / Buddhist | stupa / Buddha / (candi) Buddha, ajaran Buddha | | "umat Buddha" for Buddhists | L7–12 |
+| scaffolding | perancah | | | L7–12 |
+| Memory of the World | Memory of the World (Ingatan Dunia) | Memori Dunia | Programme name kept, glossed once | L7–12 |
+| exhibition / exhibit panel | pameran / panel pameran | | | L7–12 |
+| curator | kurator | | | L7–12 |
+| credit (of a source) | kredit | keterangan sumber | As in "kredit foto"; flagged, because "kredit" is also a loan | L7–12 |
+| Card A … F (L12) | Kartu A … F | | | L7–12 |
+| Shared Histories (UNESCO) | Shared Histories (Sejarah Bersama) | | Title kept, glossed | L7–12 |
