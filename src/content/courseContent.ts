@@ -12,7 +12,7 @@
 import type { IconName } from '../components/ds/icons';
 import { ContentError } from './errors';
 import { lessonStages, type StageId } from './stages';
-import type { AnyCourseFile, CourseFile, CourseLesson, CourseSection, Lesson, QuizFile, Section, SectionId } from './schema';
+import type { AnyCourseFile, AnyQuizFile, CourseFile, CourseLesson, CourseSection, Lesson, QuizFile, Section, SectionId } from './schema';
 
 /** How a section looks: one of the design system's four section tints, and its icon (always beside its name). */
 export interface SectionLook {
@@ -47,8 +47,12 @@ export interface CourseContent<L extends CourseLesson, S extends CourseSection, 
   readonly isLastLessonInSection: (lesson: Pick<CourseLesson, 'number' | 'section'>) => boolean;
   /** The built URL of a lesson picture (`visual.src`), or undefined if the file doesn't exist (yet). */
   readonly getVisualUrl: (src: string) => string | undefined;
-  /** True when the course has section checks and certificates (Our World); a preview course has none yet. */
+  /** True when the course has section checks (Our World, Southeast Asia Through Time); Digital World has none yet. */
   readonly hasSectionChecks: boolean;
+  /** True when finishing a section or the course earns a certificate (Our World only, for now). */
+  readonly hasCertificates: boolean;
+  /** A section's check, or undefined (a course without checks). Our World's are typed more narrowly (OurWorldContent). */
+  readonly getQuiz?: (sectionId: string) => AnyQuizFile | undefined;
   /** A section's tint and icon. */
   readonly sectionLook: (sectionId: string) => SectionLook;
   /** The course map, open at a section: /course#history, /course/digital-world#how-ai-works. */
@@ -81,6 +85,10 @@ export interface CourseOptions {
   /** Built URL of every picture, keyed as a lesson's `visual.src`. */
   pictureUrls: ReadonlyMap<string, string>;
   hasSectionChecks: boolean;
+  /** Certificates for a finished section or course (Our World's); none when not given. */
+  hasCertificates?: boolean;
+  /** Its section checks (content/courses/<id>/quizzes/), one per section, when it has them. */
+  quizzes?: readonly AnyQuizFile[];
   sectionLook: (sectionId: string) => SectionLook;
   coursePath: (sectionId?: string) => string;
   guidesPath?: (sectionId?: string) => string;
@@ -137,10 +145,18 @@ export function createCourseContent<L extends CourseLesson, C extends AnyCourseF
     },
     getVisualUrl: (src) => options.pictureUrls.get(src),
     hasSectionChecks: options.hasSectionChecks,
+    hasCertificates: options.hasCertificates ?? false,
+    ...(options.quizzes ? { getQuiz: quizGetter(options.quizzes) } : {}),
     sectionLook: options.sectionLook,
     coursePath: options.coursePath,
     guidesPath: options.guidesPath,
     // Without its own rule (Our World's languages: ./index.ts), a lesson has a Watch step when it has a video.
     stagesFor: options.stagesFor ?? ((lesson) => lessonStages(byNumber.get(lesson.number)?.watch !== null)),
   };
+}
+
+/** Looks up a course's section check by its section id. */
+function quizGetter(quizzes: readonly AnyQuizFile[]): (sectionId: string) => AnyQuizFile | undefined {
+  const bySection = new Map(quizzes.map((quiz) => [quiz.section, quiz]));
+  return (sectionId) => bySection.get(sectionId);
 }

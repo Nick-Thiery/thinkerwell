@@ -91,10 +91,16 @@ export type WorkFileCheck =
     }
   | { ok: false; problem: WorkFileProblem };
 
-/** The lessons and sections this version of the course has. */
+/** The lessons and sections this version of the courses has. */
 export interface KnownContent {
   lessonIds: ReadonlySet<string>;
   sectionIds: ReadonlySet<string>;
+  /**
+   * Lesson ids starting with one of these (a preview course's prefix, "dw-")
+   * are known too: their content isn't loaded on every device, but their
+   * work belongs to a course this version has.
+   */
+  lessonIdPrefixes?: readonly string[];
 }
 
 // --------------------------------------------------------------- making one
@@ -409,7 +415,7 @@ export function checkWorkFile(textContent: string, known: KnownContent): WorkFil
         const checked = checkProgress(record, learner.id);
         if (lessonIds.has(checked.lessonId)) fail();
         lessonIds.add(checked.lessonId);
-        if (known.lessonIds.has(checked.lessonId)) progress.push(checked);
+        if (known.lessonIds.has(checked.lessonId) || known.lessonIdPrefixes?.some((prefix) => checked.lessonId.startsWith(prefix))) progress.push(checked);
         else skipped += 1;
       }
 

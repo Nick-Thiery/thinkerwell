@@ -87,8 +87,8 @@ export function CompleteStage() {
   const heading = t('lessonPlayer.complete.title', { number: lesson.number });
 
   // Only a learner's saved work earns a certificate, and only once it is all read.
-  // A course without section checks has no certificates yet (a preview course).
-  const canOffer = finished && learnerId !== null && loaded.status === 'ready' && content.hasSectionChecks;
+  // Only Our World has certificates yet (a preview course has none).
+  const canOffer = finished && learnerId !== null && loaded.status === 'ready' && content.hasCertificates;
   const finishedSection = canOffer && finishedSetWith(lesson, content.getSectionLessons(section.id), allProgress);
   const finishedCourse = canOffer && finishedSetWith(lesson, content.getLessons(), allProgress);
 
@@ -259,7 +259,7 @@ function UpNext({
   const { t, tx } = useI18n();
   const { section } = useLessonPlayer();
   const content = useLessonContent();
-  // A course without section checks (a preview course) offers the next lesson only.
+  // A course without section checks (Digital World) offers the next lesson only.
   const showCheck = content.hasSectionChecks && content.isLastLessonInSection(lesson);
   const next = content.getNextLesson(lesson.id);
   if (!showCheck && !next) return null;

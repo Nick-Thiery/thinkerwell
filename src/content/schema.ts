@@ -869,3 +869,12 @@ export const quizFileSchema = z.strictObject({
   results: quizResultsSchema,
 });
 export type QuizFile = z.infer<typeof quizFileSchema>;
+/** A section check of any course: Our World's, or a preview course's with its own section ids. */
+export type AnyQuizFile = Omit<QuizFile, 'section'> & { section: string };
+
+/** Each course's section-check schema, by course id: the same file, with that course's section ids. */
+export const COURSE_QUIZ_SCHEMAS = {
+  'our-world': quizFileSchema,
+  'digital-world': quizFileSchema.extend({ section: z.enum(DIGITAL_WORLD_SECTION_IDS) }),
+  'southeast-asia-through-time': quizFileSchema.extend({ section: z.enum(SOUTHEAST_ASIA_SECTION_IDS) }),
+} as const;

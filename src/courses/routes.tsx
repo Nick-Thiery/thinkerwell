@@ -7,6 +7,9 @@
  *   /lesson/:id/:stage, /lesson/:id/print, /educators/lesson/:id
  *                               its lessons share Our World's addresses: their ids start with
  *                               the course's prefix ("dw-"), and the Our World routes hand them here
+ *   /section/:id/check, /educators/section/:id/answers
+ *                               its section checks, the same way (its section ids are in
+ *                               src/content/courses.ts)
  *
  *   /review/videos              for the people who review the local-language Watch videos
  *                               (src/courses/video-review/; never linked, noindex)
@@ -17,7 +20,7 @@
 import { lazy, Suspense } from 'react';
 import { useParams } from 'react-router';
 import { useCatalog } from '../content/useCatalog';
-import { previewCourseOfLesson } from '../content/courses';
+import { previewCourseOfLesson, previewCourseOfSection } from '../content/courses';
 import { useI18n } from '../i18n';
 import { CourseChoice } from './kit/CourseChoice';
 import { PreviewCourse } from './preview';
@@ -53,6 +56,16 @@ export function PreviewLessonRoute({ lessonId, stage }: { lessonId: string; stag
 /** A preview course's lesson on paper, /lesson/:id/print. */
 export function PreviewLessonPrintRoute({ lessonId }: { lessonId: string }) {
   return <PreviewCourse courseId={previewCourseOfLesson(lessonId)?.id}>{(course) => <course.LessonPrintRoute lessonId={lessonId} />}</PreviewCourse>;
+}
+
+/** A preview course's section check, /section/:id/check (src/app/SectionCheckRoute.tsx hands it over). */
+export function PreviewSectionCheckRoute({ sectionId }: { sectionId: string }) {
+  return <PreviewCourse courseId={previewCourseOfSection(sectionId)?.id}>{(course) => <course.SectionCheckRoute sectionId={sectionId} />}</PreviewCourse>;
+}
+
+/** A preview course's answer key, /educators/section/:id/answers. */
+export function PreviewAnswerKeyRoute({ sectionId }: { sectionId: string }) {
+  return <PreviewCourse courseId={previewCourseOfSection(sectionId)?.id}>{(course) => <course.AnswerKeyRoute sectionId={sectionId} />}</PreviewCourse>;
 }
 
 /** A preview course's teacher guide, /educators/lesson/:id. */

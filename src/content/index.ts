@@ -74,6 +74,7 @@ function createContent(
       courseId: DEFAULT_COURSE_ID,
       pictureUrls,
       hasSectionChecks: true,
+      hasCertificates: true,
       // Each section's own tint and icon (docs/design-system/README.md).
       sectionLook: (sectionId) => ({ tone: sectionId as SectionId, icon: SECTION_ICONS[sectionId as SectionId] }),
       coursePath: (sectionId) => (sectionId ? `/course#${sectionId}` : '/course'),

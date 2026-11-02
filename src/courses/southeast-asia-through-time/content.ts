@@ -7,7 +7,7 @@
  */
 import courseJson from '../../../content/courses/southeast-asia-through-time/course.json';
 import { createCourseContent, type SectionLook } from '../../content/courseContent';
-import type { SoutheastAsiaCourseFile, SoutheastAsiaLesson, SoutheastAsiaSectionId } from '../../content/schema';
+import type { AnyQuizFile, SoutheastAsiaCourseFile, SoutheastAsiaLesson, SoutheastAsiaSectionId } from '../../content/schema';
 
 export const COURSE_ID = 'southeast-asia-through-time';
 /** The course map. */
@@ -16,6 +16,12 @@ export const COURSE_PATH = `/course/${COURSE_ID}`;
 export const COURSE_PRINT_PATH = `${COURSE_PATH}/print`;
 
 const lessonModules = import.meta.glob<SoutheastAsiaLesson>('../../../content/courses/southeast-asia-through-time/lessons/*.json', {
+  eager: true,
+  import: 'default',
+});
+
+/** Its four section checks (content/courses/southeast-asia-through-time/quizzes/), from Justin's brief, section 4. */
+const quizModules = import.meta.glob<AnyQuizFile>('../../../content/courses/southeast-asia-through-time/quizzes/*.json', {
   eager: true,
   import: 'default',
 });
@@ -53,8 +59,9 @@ const coursePath = (sectionId?: string) => (sectionId ? `${COURSE_PATH}#${sectio
 export const southeastAsia = createCourseContent(courseJson as unknown as SoutheastAsiaCourseFile, Object.values(lessonModules), {
   courseId: COURSE_ID,
   pictureUrls,
-  // The section checks are written (Justin's brief, section 4) but preview courses can't show them yet.
-  hasSectionChecks: false,
+  // Its section checks (no certificates yet).
+  hasSectionChecks: true,
+  quizzes: Object.values(quizModules),
   sectionLook: (sectionId) => SECTION_LOOKS[sectionId as SoutheastAsiaSectionId] ?? SECTION_LOOKS['evidence-and-connections'],
   // No Educators page for a preview course: a teacher guide goes back to the course map.
   coursePath,

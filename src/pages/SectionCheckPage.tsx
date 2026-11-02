@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { usePageTitle } from '../app/usePageTitle';
-import type { Section } from '../content';
-import { useContent } from '../content/useContent';
+import type { CourseSection } from '../content';
+import { useLessonContent } from '../content/useContent';
 import { useI18n } from '../i18n';
 import { VISIT_SEED } from '../lesson';
 import { getMeasurementState, track } from '../measurement/track';
@@ -14,7 +14,7 @@ import { useLearnerProgress, useLearnerSession } from '../session';
 import { getStore, sectionProgress } from '../storage';
 
 interface SectionCheckPageProps {
-  section: Section;
+  section: CourseSection;
 }
 
 type Screen = 'intro' | 'question' | 'results';
@@ -39,11 +39,11 @@ type Screen = 'intro' | 'question' | 'results';
  */
 export function SectionCheckPage({ section }: SectionCheckPageProps) {
   const { t } = useI18n();
-  const content = useContent();
+  const content = useLessonContent();
   usePageTitle(t('pages.sectionCheck.title', { section: section.title }));
   const session = useLearnerSession();
   const learnerId = session.activeLearner?.id ?? null;
-  const quiz = content.getQuiz(section.id);
+  const quiz = content.getQuiz?.(section.id);
   const learnerProgress = useLearnerProgress(learnerId);
   const lessonsDone =
     learnerId && learnerProgress.status === 'ready'
@@ -71,8 +71,8 @@ export function SectionCheckPage({ section }: SectionCheckPageProps) {
   }, [screen, index]);
 
   if (!quiz) {
-    // Content always has one quiz per section (content.test.ts checks this);
-    // this is just a safe fallback, never expected in practice.
+    // Our World has one quiz per section (content.test.ts checks this), and
+    // a course without checks never links here; this is just a safe fallback.
     return (
       <div className="tw-quiz-page">
         <p className="body-lg">{t('pages.sectionCheck.noQuiz')}</p>

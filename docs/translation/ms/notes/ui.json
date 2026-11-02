@@ -4742,6 +4742,11 @@
     "source": "There are no section checks or certificates in this draft yet.",
     "flag": true
   },
+  "previewCourse.map.noCertificates": {
+    "source": "There are no certificates in this draft yet.",
+    "flag": true,
+    "note": "Preview courses (November 2026): drafted by AI, not yet reviewed by a native speaker."
+  },
   "previewCourse.map.forTeachersTitle": {
     "back": "For teachers and reviewers",
     "source": "For teachers and reviewers",
@@ -4762,6 +4767,11 @@
     "back": "Teacher's guide, Lesson {number}: {title}",
     "source": "Teacher guide, Lesson {number}: {title}",
     "flag": true
+  },
+  "previewCourse.map.answerKeyLink": {
+    "source": "Answer key: {title}",
+    "flag": true,
+    "note": "Preview courses (November 2026): drafted by AI, not yet reviewed by a native speaker. {title} is the section's name, in English."
   },
   "digitalWorld.plan.answerLabel": {
     "back": "Your answer",

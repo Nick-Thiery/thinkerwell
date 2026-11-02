@@ -174,7 +174,8 @@ export interface QuizAttempt {
 /** Section-check results for one learner and section: the best and the latest attempt. */
 export interface SectionQuizRecord {
   learnerId: string;
-  sectionId: SectionId;
+  /** Our World's (history, …) or a preview course's (evidence-and-connections, …). */
+  sectionId: string;
   best: QuizAttempt;
   latest: QuizAttempt;
   attempts: number;

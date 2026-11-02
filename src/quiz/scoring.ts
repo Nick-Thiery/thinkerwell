@@ -5,7 +5,7 @@
  * plain numbers and lists back, the same shape src/lesson/progress.ts keeps
  * for the lesson player.
  */
-import { QUIZ_SKILLS, type QuizFile, type QuizQuestion, type QuizSkill } from '../content';
+import { QUIZ_SKILLS, type AnyQuizFile, type QuizQuestion, type QuizSkill } from '../content';
 
 /** One answered question: the option's index in the content file's order (not the shuffled order). */
 export interface QuizAnswer {
@@ -22,7 +22,7 @@ export interface QuizScore {
 }
 
 /** How many of the quiz's questions have a correct saved answer, out of how many there are. */
-export function scoreQuiz(quiz: QuizFile, answers: QuizAnswers): QuizScore {
+export function scoreQuiz(quiz: AnyQuizFile, answers: QuizAnswers): QuizScore {
   const total = quiz.questions.length;
   const score = quiz.questions.reduce((count, question) => count + (answers[question.id]?.correct ? 1 : 0), 0);
   return { score, total };
@@ -54,7 +54,7 @@ export interface SkillScore {
  * ScoreSummary. In the fixed QUIZ_SKILLS order, and only for skills this
  * quiz actually has a question for.
  */
-export function skillBreakdown(quiz: QuizFile, answers: QuizAnswers): SkillScore[] {
+export function skillBreakdown(quiz: AnyQuizFile, answers: QuizAnswers): SkillScore[] {
   const bySkill = new Map<QuizSkill, SkillScore>();
   for (const question of quiz.questions) {
     const entry = bySkill.get(question.skill) ?? { skill: question.skill, got: 0, of: 0 };
@@ -66,6 +66,6 @@ export function skillBreakdown(quiz: QuizFile, answers: QuizAnswers): SkillScore
 }
 
 /** Every question the learner answered wrong, in the quiz's own order, for "worth another look". */
-export function missedQuestions(quiz: QuizFile, answers: QuizAnswers): QuizQuestion[] {
+export function missedQuestions(quiz: AnyQuizFile, answers: QuizAnswers): QuizQuestion[] {
   return quiz.questions.filter((question) => !answers[question.id]?.correct);
 }

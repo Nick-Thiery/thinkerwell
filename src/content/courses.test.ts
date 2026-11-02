@@ -3,10 +3,10 @@ import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { activityProblems } from './activityChecks';
 import { createCourseContent } from './courseContent';
-import { COURSES, DEFAULT_COURSE_ID, findPreviewCourse, PREVIEW_COURSES, previewCourseOfLesson } from './courses';
+import { COURSES, DEFAULT_COURSE_ID, findPreviewCourse, PREVIEW_COURSES, previewCourseOfLesson, previewCourseOfSection } from './courses';
 import { ContentError } from './errors';
-import { loadContent, loadCourse, parseContentFile } from './load';
-import { digitalWorldLessonSchema, lessonSchema, type Activity, type AnyCourseFile, type CourseLesson, type DigitalWorldLesson } from './schema';
+import { loadContent, loadCourse, loadQuizzes, parseContentFile } from './load';
+import { DIGITAL_WORLD_SECTION_IDS, digitalWorldLessonSchema, lessonSchema, SOUTHEAST_ASIA_SECTION_IDS, type Activity, type AnyCourseFile, type CourseLesson, type DigitalWorldLesson } from './schema';
 import { STAGES, STAGES_WITHOUT_WATCH } from './stages';
 
 // The course model (src/content/courses.ts) and the files of every course
@@ -51,6 +51,15 @@ describe('the course list', () => {
     expect(previewCourseOfLesson('towns-near-rivers')).toBeUndefined();
     expect(previewCourseOfLesson('l6')).toBeUndefined();
     expect(previewCourseOfLesson(undefined)).toBeUndefined();
+  });
+
+  it('lists each preview course’s section ids as its schema has them, so a check’s address finds its course', () => {
+    expect(findPreviewCourse('digital-world')?.sectionIds).toEqual([...DIGITAL_WORLD_SECTION_IDS]);
+    expect(findPreviewCourse('southeast-asia-through-time')?.sectionIds).toEqual([...SOUTHEAST_ASIA_SECTION_IDS]);
+    expect(previewCourseOfSection('trade-and-power')?.id).toBe('southeast-asia-through-time');
+    expect(previewCourseOfSection('Thinking-Machines')?.id).toBe('digital-world');
+    expect(previewCourseOfSection('history')).toBeUndefined();
+    expect(previewCourseOfSection(undefined)).toBeUndefined();
   });
 
   it('keeps every Our World lesson id clear of other courses’ prefixes', () => {
@@ -123,6 +132,17 @@ describe('Southeast Asia Through Time’s files', () => {
       [10, 11, 12],
     ]);
     expect(loaded.lessons.every((lesson) => lesson.id.startsWith('sat-') && lesson.oldId === null)).toBe(true);
+  });
+
+  it('have a section check for each section, two questions per lesson, each about a lesson in its section', () => {
+    const loaded = loadCourse('southeast-asia-through-time', satCourse, satLessons, { pictures: new Set(), picturesRequired: false });
+    const quizzes = loadQuizzes(readLessons(`${SAT}/quizzes`), loaded.lessons, 'southeast-asia-through-time');
+    expect(quizzes.map((quiz) => quiz.section).sort()).toEqual([...SOUTHEAST_ASIA_SECTION_IDS].sort());
+    for (const quiz of quizzes) expect(quiz.questions, quiz.section).toHaveLength(6);
+    // Our World's section ids aren't this course's.
+    expect(() => loadQuizzes({ 'content/courses/x/quizzes/history.json': { ...quizzes[0], section: 'history' } }, loaded.lessons, 'southeast-asia-through-time')).toThrow(
+      /section/,
+    );
   });
 
   it('give every lesson two pictures that exist: a diagram and a credited real picture (or a second diagram)', () => {

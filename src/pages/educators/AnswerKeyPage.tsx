@@ -6,11 +6,11 @@
  * Like the teacher guide, the same page on screen and on paper.
  */
 import { Link } from 'react-router';
-import { guidesPath, teacherGuidePath } from '../../app/lessonUrls';
+import { teacherGuidePath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
 import { EvidenceCard, Icon } from '../../components/ds';
-import { type QuizFile, type QuizStimulus, type Section } from '../../content';
-import { useContent } from '../../content/useContent';
+import { type AnyQuizFile, type CourseSection, type QuizStimulus } from '../../content';
+import { useLessonContent } from '../../content/useContent';
 import { En, useI18n } from '../../i18n';
 import { PrintToolbar } from '../print/PrintToolbar';
 import '../print/print.css';
@@ -18,13 +18,13 @@ import { AnswerOptions } from './AnswerOptions';
 import './teacherTools.css';
 
 export interface AnswerKeyPageProps {
-  section: Section;
-  quiz: QuizFile;
+  section: CourseSection;
+  quiz: AnyQuizFile;
 }
 
 export function AnswerKeyPage({ section, quiz }: AnswerKeyPageProps) {
   const { t, tx, contentLang } = useI18n();
-  const content = useContent();
+  const content = useLessonContent();
   const title = t('pages.answerKey.title', { section: section.title });
   usePageTitle(title);
   const first = section.lessons[0] ?? 0;
@@ -33,7 +33,10 @@ export function AnswerKeyPage({ section, quiz }: AnswerKeyPageProps) {
 
   return (
     <div className="tw-print-page tw-key-page">
-      <PrintToolbar backHref={guidesPath(section.id)} backLabel={t('pages.teacherTools.backToGuides')} />
+      <PrintToolbar
+        backHref={content.guidesPath?.(section.id) ?? content.coursePath(section.id)}
+        backLabel={t(content.guidesPath ? 'pages.teacherTools.backToGuides' : 'pages.sectionCheck.backToCourse')}
+      />
       <p className="tw-print-intro tw-no-print">{t('pages.answerKey.intro')}</p>
 
       <article className="tw-print-sheet tw-key" aria-labelledby="key-title">

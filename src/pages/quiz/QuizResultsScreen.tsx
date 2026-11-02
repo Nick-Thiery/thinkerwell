@@ -1,7 +1,7 @@
 import { Link } from 'react-router';
 import { Button, Icon, Mascot, ScoreSummary, SectionBadge } from '../../components/ds';
-import { type QuizFile, type Section } from '../../content';
-import { useContent } from '../../content/useContent';
+import { type AnyQuizFile, type CourseSection } from '../../content';
+import { useLessonContent } from '../../content/useContent';
 import { En, useI18n } from '../../i18n';
 import { lessonPath } from '../../app/lessonUrls';
 import { missedQuestions, resultTier, skillBreakdown, type QuizAnswers } from '../../quiz';
@@ -9,8 +9,8 @@ import { missedQuestions, resultTier, skillBreakdown, type QuizAnswers } from '.
 const MASCOT_SRC = '/images/thinkerwell-mascot-transparent.png';
 
 export interface QuizResultsScreenProps {
-  section: Section;
-  quiz: QuizFile;
+  section: CourseSection;
+  quiz: AnyQuizFile;
   answers: QuizAnswers;
   score: number;
   total: number;
@@ -26,7 +26,8 @@ export interface QuizResultsScreenProps {
  */
 export function QuizResultsScreen({ section, quiz, answers, score, total, isGuest, onRetry }: QuizResultsScreenProps) {
   const { t, tx, contentLang } = useI18n();
-  const content = useContent();
+  const content = useLessonContent();
+  const look = content.sectionLook(section.id);
   const tier = resultTier(score, total);
   const skills = skillBreakdown(quiz, answers).map((s) => ({
     name: t(`pages.sectionCheck.skill.${s.skill}`),
@@ -55,7 +56,7 @@ export function QuizResultsScreen({ section, quiz, answers, score, total, isGues
             <Button variant="primary" size="lg" block icon="RotateCcw" onClick={onRetry}>
               {t('pages.sectionCheck.retry')}
             </Button>
-            <Button variant="secondary" size="lg" block href={`/course#${section.id}`}>
+            <Button variant="secondary" size="lg" block href={content.coursePath(section.id)}>
               {t('pages.sectionCheck.backToCourse')}
             </Button>
           </div>
@@ -79,8 +80,8 @@ export function QuizResultsScreen({ section, quiz, answers, score, total, isGues
                 {t('pages.sectionCheck.reviewTitle')}
               </h2>
               {missed.map(({ question, position, lesson }) => (
-                <Link key={question.id} className="tw-quiz-review-row" to={lesson ? lessonPath(lesson.id) : `/course#${section.id}`}>
-                  <SectionBadge section={section.id} showName={false} size={44} />
+                <Link key={question.id} className="tw-quiz-review-row" to={lesson ? lessonPath(lesson.id) : content.coursePath(section.id)}>
+                  <SectionBadge section={look.tone} icon={look.icon} showName={false} size={44} />
                   <span className="tw-quiz-review-text">
                     <span className="tw-quiz-review-question">
                       {tx('pages.sectionCheck.reviewQuestion', { n: position, question: <En>{question.question}</En> })}

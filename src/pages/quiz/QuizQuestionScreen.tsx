@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 import { Link } from 'react-router';
 import { ActionBar, Button, EvidenceCard, Icon, ProgressBar, QuestionCard, SectionBadge } from '../../components/ds';
-import { type QuizFile, type QuizQuestion, type QuizStimulus, type Section } from '../../content';
-import { useContent } from '../../content/useContent';
+import { type AnyQuizFile, type CourseSection, type QuizQuestion, type QuizStimulus } from '../../content';
+import { useLessonContent } from '../../content/useContent';
 import { En, useI18n } from '../../i18n';
 import { checkSeed, seededShuffle } from '../../lesson';
 import { lessonPath } from '../../app/lessonUrls';
@@ -19,8 +19,8 @@ function StimulusCard({ stimulus }: { stimulus: QuizStimulus }) {
 }
 
 export interface QuizQuestionScreenProps {
-  section: Section;
-  quiz: QuizFile;
+  section: CourseSection;
+  quiz: AnyQuizFile;
   question: QuizQuestion;
   /** The question's position in quiz.questions (0-based) — also its seed and its progress-bar count. */
   index: number;
@@ -51,7 +51,8 @@ export function QuizQuestionScreen({
   onNext,
 }: QuizQuestionScreenProps) {
   const { t, tx, contentLocale } = useI18n();
-  const content = useContent();
+  const content = useLessonContent();
+  const look = content.sectionLook(section.id);
   const total = quiz.questions.length;
   const isLast = index === total - 1;
   const lesson = content.getLessonByNumber(question.lesson);
@@ -73,14 +74,14 @@ export function QuizQuestionScreen({
   return (
     <div className="tw-quiz-page">
       <div className="tw-quiz-bar">
-        <SectionBadge section={section.id} number={section.number} name={tx('pages.sectionCheck.title', { section: <En>{section.title}</En> })} />
+        <SectionBadge section={look.tone} icon={look.icon} number={section.number} name={tx('pages.sectionCheck.title', { section: <En>{section.title}</En> })} />
         <ProgressBar
           value={answeredCount}
           max={total}
           label={t('pages.sectionCheck.questionOf', { n: index + 1, total })}
           valueLabel={t('pages.sectionCheck.answeredCount', { count: answeredCount })}
         />
-        <Button variant="ghost" icon="LogOut" href={`/course#${section.id}`}>
+        <Button variant="ghost" icon="LogOut" href={content.coursePath(section.id)}>
           {t('pages.sectionCheck.stopCheck')}
         </Button>
       </div>

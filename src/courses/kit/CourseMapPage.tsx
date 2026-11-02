@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router';
-import { lessonPath, teacherGuidePath } from '../../app/lessonUrls';
+import { answerKeyPath, lessonPath, sectionCheckPath, teacherGuidePath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
 import { Badge, Button, LessonRow, SectionHeader } from '../../components/ds';
 import { En, useI18n } from '../../i18n';
@@ -83,7 +83,7 @@ export function CourseMap() {
           </Badge>
         </div>
         {isGuest ? <p className="small tw-course-guest-note">{t(lookingAround ? 'pages.course.guestNote' : 'pages.course.noLearnerNote')}</p> : null}
-        <p className="small tw-course-guest-note">{t('previewCourse.map.noChecks')}</p>
+        <p className="small tw-course-guest-note">{t(content.hasSectionChecks ? 'previewCourse.map.noCertificates' : 'previewCourse.map.noChecks')}</p>
       </header>
 
       <div className="tw-course-sections">
@@ -117,6 +117,18 @@ export function CourseMap() {
               </Link>
             </li>
           ))}
+          {/* Each section check's answer key, when the course has checks. */}
+          {sections.flatMap((section) =>
+            content.getQuiz?.(section.id)
+              ? [
+                  <li key={section.id}>
+                    <Link to={answerKeyPath(section.id)} className="tw-pc-guide-link">
+                      {tx('previewCourse.map.answerKeyLink', { title: <En>{section.title}</En> })}
+                    </Link>
+                  </li>,
+                ]
+              : [],
+          )}
         </ul>
       </section>
     </div>
@@ -131,10 +143,14 @@ interface MapSectionProps {
   highlight: string | undefined;
 }
 
-/** One section: its header in its tint and icon, then every lesson. No section check row: none is drafted yet. */
+/** One section: its header in its tint and icon, then every lesson, and its section check when the course has one. */
 function MapSection({ section, lessons, progress, hideProgress, highlight }: MapSectionProps) {
-  const { t } = useI18n();
-  const look = usePreviewCourse().content.sectionLook(section.id);
+  const { t, tx } = useI18n();
+  const content = usePreviewCourse().content;
+  const look = content.sectionLook(section.id);
+  const first = section.lessons[0];
+  const last = section.lessons[section.lessons.length - 1];
+  const range = first === last ? String(first) : t('pages.course.numberRange', { first: first ?? '', last: last ?? '' });
   const { completed, total } = sectionProgress(section, lessons, progress);
   return (
     <section id={section.id} aria-labelledby={`${section.id}-title`} className="tw-course-section">
@@ -169,6 +185,15 @@ function MapSection({ section, lessons, progress, hideProgress, highlight }: Map
             />
           );
         })}
+        {content.getQuiz?.(section.id) ? (
+          <LessonRow
+            kind="quiz"
+            title={t('pages.course.sectionCheckRowTitle', { title: section.title })}
+            displayTitle={tx('pages.course.sectionCheckRowTitle', { title: <En>{section.title}</En> })}
+            question={t('pages.course.sectionCheckQuestion', { range })}
+            href={sectionCheckPath(section.id)}
+          />
+        ) : null}
       </div>
     </section>
   );

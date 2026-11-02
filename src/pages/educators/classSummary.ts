@@ -8,7 +8,7 @@
  * open to anyone on a shared device, and the course has no leaderboards
  * (CLAUDE.md). Learners are listed by name.
  */
-import type { Lesson, Section, SectionId, StageId } from '../../content';
+import type { Lesson, Section, StageId } from '../../content';
 import {
   findContinueTarget,
   isLessonComplete,
@@ -82,7 +82,7 @@ export function summariseLearner(
     later(record.best.finishedAt);
   }
 
-  const tried = new Set<SectionId>(work.quizAttempts.filter((record) => record.attempts > 0).map((record) => record.sectionId));
+  const tried = new Set<string>(work.quizAttempts.filter((record) => record.attempts > 0).map((record) => record.sectionId));
 
   return {
     learner: work.learner,
