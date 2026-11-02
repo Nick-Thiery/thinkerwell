@@ -8,14 +8,16 @@ import { createContext, useContext, type ReactNode } from 'react';
 import type { IconName } from '../../components/ds/icons';
 import type { LessonContent } from '../../content/courseContent';
 import type { CourseLesson } from '../../content';
-import type { MessageKey, MessageTree } from '../../i18n';
+import { useI18n, type MessageKey, type MessageTree } from '../../i18n';
 import type { LessonSlotName } from '../../lesson/extras';
 
 export interface PreviewCourseConfig {
   /** Its id in src/content/courses.ts ('digital-world'). */
   readonly id: string;
-  /** Its lessons and sections (createCourseContent). */
+  /** Its lessons and sections in English (createCourseContent). */
   readonly content: LessonContent;
+  /** Its lessons and sections in a language they are translated into (Indonesian, Malay), or undefined: English (./translatedContent.ts). */
+  readonly contentFor?: (code: string) => LessonContent | undefined;
   /** Its own words (virtual:thinkerwell/course-messages/<id>), by language. */
   readonly words: Readonly<Record<string, MessageTree>>;
   /**
@@ -47,6 +49,12 @@ export interface PreviewCourseConfig {
 }
 
 export const PreviewCourseContext = createContext<PreviewCourseConfig | null>(null);
+
+/** The course's content in the language on screen: translated where it is, else English. */
+export function useCourseContent(course: PreviewCourseConfig): LessonContent {
+  const { locale } = useI18n();
+  return course.contentFor?.(locale) ?? course.content;
+}
 
 /** The preview course whose page this is (inside PreviewCourseFrame). */
 export function usePreviewCourse(): PreviewCourseConfig {

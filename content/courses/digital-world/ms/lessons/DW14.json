@@ -1,0 +1,290 @@
+{
+  "title": "Menyemak dakwaan sebelum kamu mengongsikannya",
+  "essentialQuestion": "Bagaimanakah kamu boleh mengetahui sama ada sesuatu cerita itu benar sebelum kamu mengongsikannya?",
+  "learningGoal": "Gunakan pembacaan lateral untuk menyemak satu berita rekaan dengan sumber lain, dan putuskan sama ada patut mengongsikannya.",
+  "warmUp": {
+    "question": "Seorang kawan menghantar cerita yang mengejutkan kepada kamu. Apakah yang kamu lakukan dahulu?",
+    "options": [
+      "Kongsikannya",
+      "Semak cerita itu",
+      "Abaikan cerita itu",
+      "Tidak pasti"
+    ]
+  },
+  "evidence": {
+    "label": "Contoh rekaan yang dibuat untuk pelajaran ini.",
+    "question": "Apakah yang dikatakan oleh siaran itu? Apakah yang dikatakan oleh sumber lain?",
+    "cards": [
+      {
+        "title": "Satu siaran yang dikongsi di Brightwater",
+        "cases": [
+          {
+            "name": "Brightwater Daily Truth",
+            "body": "“BERITA BESAR. Jambatan Brightwater ditutup selama SETAHUN PENUH mulai esok. Kongsikan ini sebelum mereka memadamnya.” Tiada nama, dan tiada pautan kepada majlis bandar."
+          }
+        ]
+      },
+      {
+        "title": "Apa yang dikatakan oleh sumber lain",
+        "columns": [
+          "Sumber",
+          "Siapa di belakangnya",
+          "Apa yang dikatakan"
+        ],
+        "rows": [
+          [
+            "Tentang Brightwater Daily Truth",
+            "Halaman itu tidak menyatakan siapa yang mengendalikannya.",
+            "Ia menyiarkan cerita yang mengejutkan setiap hari. Banyak daripadanya palsu."
+          ],
+          [
+            "Notis majlis bandar",
+            "Kumpulan yang mentadbir bandar dan menjaga jambatan itu.",
+            "Jambatan ditutup untuk kerja pembaikan pada 3 dan 4 Mei. Ia dibuka semula pada 5 Mei."
+          ],
+          [
+            "Berita Radio Brightwater",
+            "Pasukan berita tempatan. Ia menamakan wartawannya.",
+            "Majlis memberitahu kami: pekerja akan membaiki jambatan pada 3 dan 4 Mei. Naiklah feri pada dua hari itu."
+          ],
+          [
+            "Semak Fakta Brightwater",
+            "Kumpulan yang menyemak cerita yang dikongsi orang.",
+            "Palsu. Kami bertanya kepada majlis bandar. Jambatan ditutup selama dua hari, bukan setahun."
+          ],
+          [
+            "Halaman sembang bandar",
+            "Halaman tempat sesiapa sahaja boleh menyiarkan apa-apa.",
+            "Perkataan yang sama seperti siaran Daily Truth, disalin satu demi satu. Tiada nama, tiada pautan."
+          ]
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "title": "Baca ke tepi",
+    "instructions": "Ini satu siaran tentang jambatan Brightwater. Sebelum kamu membuat keputusan, buka sumber lain satu demi satu, seperti penyemak fakta yang membuka halaman baharu. Kemudian jawab soalan itu. Kamu boleh membukanya dalam apa-apa urutan.",
+    "claim": {
+      "from": "Brightwater Daily Truth",
+      "text": "BERITA BESAR. Jambatan Brightwater ditutup selama SETAHUN PENUH mulai esok. Kongsikan ini sebelum mereka memadamnya."
+    },
+    "askFirst": [
+      "Siapakah di belakangnya?",
+      "Apakah buktinya?",
+      "Apakah yang dikatakan oleh sumber lain?"
+    ],
+    "sources": [
+      {
+        "name": "Tentang Brightwater Daily Truth",
+        "who": "Halaman itu tidak menyatakan siapa yang mengendalikannya.",
+        "says": "Ia menyiarkan cerita yang mengejutkan setiap hari. Banyak daripadanya palsu."
+      },
+      {
+        "name": "Notis majlis bandar",
+        "who": "Kumpulan yang mentadbir bandar dan menjaga jambatan itu.",
+        "says": "Jambatan ditutup untuk kerja pembaikan pada 3 dan 4 Mei. Ia dibuka semula pada 5 Mei."
+      },
+      {
+        "name": "Berita Radio Brightwater",
+        "who": "Pasukan berita tempatan. Ia menamakan wartawannya.",
+        "says": "Majlis memberitahu kami: pekerja akan membaiki jambatan pada 3 dan 4 Mei. Naiklah feri pada dua hari itu."
+      },
+      {
+        "name": "Semak Fakta Brightwater",
+        "who": "Kumpulan yang menyemak cerita yang dikongsi orang.",
+        "says": "Palsu. Kami bertanya kepada majlis bandar. Jambatan ditutup selama dua hari, bukan setahun."
+      },
+      {
+        "name": "Halaman sembang bandar",
+        "who": "Halaman tempat sesiapa sahaja boleh menyiarkan apa-apa.",
+        "says": "Perkataan yang sama seperti siaran Daily Truth, disalin satu demi satu. Tiada nama, tiada pautan."
+      }
+    ],
+    "question": {
+      "question": "Apakah yang dikatakan oleh sumber lain tentang jambatan itu?",
+      "options": [
+        {
+          "text": "Ia ditutup selama setahun penuh",
+          "feedback": "Belum tepat. Hanya siaran pertama yang berkata begitu, dan halaman sembang itu hanya menyalinnya. Buka notis majlis dan lihat apa yang dikatakannya."
+        },
+        {
+          "text": "Ia ditutup selama dua hari, bukan setahun",
+          "feedback": "Betul. Majlis menjaga jambatan itu, jadi majlis tahu tarikhnya. Radio dan penyemak fakta bertanya kepada majlis. Halaman sembang itu hanya menyalin siaran itu."
+        },
+        {
+          "text": "Belum ada sesiapa yang tahu",
+          "feedback": "Belum tepat. Majlis menjaga jambatan itu, dan majlis memberi tarikhnya. Radio dan penyemak fakta memberi tarikh yang sama."
+        }
+      ]
+    }
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Tanya tiga soalan sebelum kamu berkongsi",
+        "text": "Mesej boleh tersebar dengan sangat cepat, dan cerita yang mengejutkan selalunya tersebar paling cepat. Di Brightwater, sebuah halaman bernama Brightwater Daily Truth menyiarkan bahawa jambatan bandar akan ditutup selama setahun penuh. Siaran itu berkata, “Kongsikan ini sebelum mereka memadamnya.” Kata-kata seperti ini mendesak orang supaya tergesa-gesa, dan apabila tergesa-gesa, kita mudah mengongsikan sesuatu yang palsu. Sebelum kamu berkongsi, tanya tiga soalan. Siapakah di belakang maklumat itu? Apakah bukti yang ada? Apakah yang dikatakan oleh sumber lain? Siaran Brightwater itu tidak memberi nama, tiada bukti dan tiada pautan kepada majlis bandar, iaitu pihak yang menjaga jambatan itu.",
+        "simpler": "Mesej tersebar dengan cepat. Cerita yang mengejutkan tersebar paling cepat. Sebuah halaman di Brightwater berkata jambatan akan ditutup selama setahun. Ia berkata, “Kongsikan ini sebelum mereka memadamnya.” Kata-kata seperti ini membuatkan kamu tergesa-gesa. Kemudian kamu boleh terkongsi sesuatu yang palsu. Mula-mula, tanya tiga soalan. Siapakah di belakangnya? Apakah bukti yang ada? Apakah yang dikatakan oleh sumber lain? Siaran Brightwater itu tiada nama dan tiada bukti."
+      },
+      {
+        "heading": "Baca ke tepi, seperti penyemak fakta",
+        "text": "Pada tahun 2017, penyelidik di Universiti Stanford di Amerika Syarikat memerhati 45 orang menilai laman web sebenar tentang isu sosial: 10 ahli sejarah yang mengajar di universiti, 10 penyemak fakta profesional dan 25 pelajar universiti. Kebanyakan ahli sejarah dan pelajar kekal pada satu halaman dan membacanya dari atas ke bawah. Halaman yang kelihatan rasmi selalunya memperdaya mereka. Penyemak fakta pula cepat meninggalkan halaman itu dan membuka sumber lain untuk mengetahui siapa di belakangnya. Ini dipanggil pembacaan lateral, yang bermaksud membaca ke tepi merentasi banyak sumber, bukan membaca ke bawah pada satu halaman. Penyemak fakta mendapat jawapan yang lebih baik dalam masa yang jauh lebih singkat.",
+        "simpler": "Pada tahun 2017, penyelidik di Universiti Stanford di Amerika Syarikat memerhati 45 orang menyemak laman web sebenar. Ada 10 ahli sejarah yang mengajar di universiti. Ada 10 penyemak fakta dan 25 pelajar. Kebanyakan ahli sejarah dan pelajar membaca satu halaman, dari atas ke bawah. Halaman yang kelihatan rasmi selalunya memperdaya mereka. Penyemak fakta cepat meninggalkan halaman itu. Mereka membuka sumber lain untuk mengetahui siapa yang membuatnya. Ini dipanggil pembacaan lateral. Maksudnya membaca ke tepi. Penyemak fakta mendapat jawapan yang lebih baik, dengan lebih cepat."
+      },
+      {
+        "heading": "Putuskan apa yang hendak dikongsi",
+        "text": "Persetujuan hanya membantu apabila setiap sumber ada buktinya sendiri. Majlis bandar menjaga jambatan itu, jadi majlis tahu tarikhnya: dua hari kerja pembaikan, bukan setahun penuh. Radio dan penyemak fakta bertanya kepada majlis dan menyatakan perkara yang sama. Halaman sembang yang menyalin siaran pertama perkataan demi perkataan langsung tidak menambah bukti. Jadi, siaran pertama itu palsu. Jangan kongsikannya; kongsikan notis majlis sebagai ganti. Kadangkala kamu tidak dapat menyemak sesuatu dakwaan, contohnya apabila tiada internet. Jika begitu, tanya guru atau tunggu. Berita boleh berubah, jadi semak lagi kemudian, contohnya jika kerja pembaikan mengambil masa lebih lama.",
+        "simpler": "Adakah sumber-sumber itu bersetuju? Itu hanya membantu jika setiap sumber ada buktinya sendiri. Majlis menjaga jambatan itu. Majlis kata dua hari. Radio dan penyemak fakta bertanya kepada majlis. Satu halaman sembang menyalin siaran itu. Menyalin tidak menambah bukti. Jadi, siaran pertama itu palsu. Jangan kongsikannya. Kongsikan notis majlis sebagai ganti. Kadangkala kamu tidak dapat menyemak sesuatu dakwaan, contohnya tanpa internet. Tanya guru, atau tunggu. Berita boleh berubah. Jadi, semak lagi kemudian."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "dakwaan",
+        "definition": "Sesuatu yang dikatakan benar oleh seseorang. Ia mungkin benar atau palsu.",
+        "example": "“Jambatan ditutup selama setahun penuh” ialah satu dakwaan."
+      },
+      {
+        "word": "bukti",
+        "forms": [
+          "buktinya"
+        ],
+        "definition": "Fakta atau pembuktian yang menunjukkan sama ada sesuatu itu benar.",
+        "example": "Notis majlis memberi tarikh kerja pembaikan. Itu ialah bukti."
+      },
+      {
+        "word": "sumber",
+        "forms": [
+          "sumber-sumber"
+        ],
+        "definition": "Orang atau tempat asal sesuatu maklumat.",
+        "example": "Majlis ialah sumber terbaik tentang jambatan itu, kerana majlis yang menjaganya."
+      },
+      {
+        "word": "penyemak fakta",
+        "definition": "Orang yang kerjanya mengetahui sama ada sesuatu dakwaan itu benar.",
+        "example": "Penyemak fakta berkata siaran tentang jambatan itu palsu."
+      },
+      {
+        "word": "pembacaan lateral",
+        "definition": "Menyemak sesuatu halaman dengan melihat apa yang dikatakan oleh sumber lain tentangnya.",
+        "example": "Pembacaan lateral menunjukkan bahawa jambatan itu ditutup selama dua hari."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Apakah yang dilakukan oleh penyemak fakta secara berbeza?",
+        "options": [
+          {
+            "text": "Membaca setiap perkataan pada halaman itu dengan perlahan",
+            "feedback": "Belum tepat. Itulah yang dilakukan oleh kebanyakan ahli sejarah dan pelajar. Baca petikan kedua sekali lagi."
+          },
+          {
+            "text": "Membuka sumber lain untuk menyemak",
+            "feedback": "Betul. Mereka meninggalkan halaman itu dan membaca ke tepi merentasi sumber lain. Ini ialah pembacaan lateral."
+          },
+          {
+            "text": "Melihat gambar dengan teliti",
+            "feedback": "Belum tepat. Halaman palsu boleh ada gambar yang bagus. Baca tentang apa yang dilakukan oleh penyemak fakta."
+          }
+        ]
+      },
+      {
+        "question": "Dua halaman berkata jambatan ditutup selama setahun, tetapi satu menyalin yang satu lagi. Adakah itu menjadikannya lebih mungkin benar?",
+        "options": [
+          {
+            "text": "Tidak, kerana menyalin tidak menambah bukti",
+            "feedback": "Betul. Persetujuan hanya membantu apabila setiap sumber ada buktinya sendiri, seperti majlis."
+          },
+          {
+            "text": "Ya, kerana dua halaman yang berbeza berkata begitu",
+            "feedback": "Belum tepat. Halaman sembang itu hanya menyalin siaran itu, jadi ia tidak menambah bukti. Baca petikan ketiga."
+          },
+          {
+            "text": "Ya, kerana ia banyak dikongsi",
+            "feedback": "Belum tepat. Dikongsi tidak menjadikan sesuatu dakwaan itu benar. Baca petikan ketiga."
+          }
+        ]
+      },
+      {
+        "question": "Fikirkan satu mesej yang mengejutkan daripada pelajaran ini, atau mesej yang pernah kamu dengar. Siapakah yang boleh kamu tanya untuk menyemaknya?",
+        "placeholder": "Saya boleh bertanya kepada ___. Saya juga boleh melihat ___."
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Seorang kawan mahu mengongsikan siaran tentang jambatan Brightwater. Terangkan cara kamu menyemaknya, dan apa yang akan kamu beritahu kawan kamu.",
+    "sentenceStarters": [
+      "Mula-mula, saya bertanya ...",
+      "Siaran itu tiada ...",
+      "Kemudian saya membaca ke tepi. ___ berkata ...",
+      "Bukti terbaik datang daripada ___ kerana ...",
+      "Saya akan memberitahu kawan saya ..."
+    ],
+    "planningBoxes": [
+      "Idea utama saya",
+      "Bukti daripada pelajaran",
+      "Mengapa ini penting",
+      "Soalan yang masih saya ada"
+    ],
+    "selfCheck": [
+      "Saya menggunakan sekurang-kurangnya satu daripada tiga soalan itu.",
+      "Saya menyatakan sumber yang ada bukti terbaik, dan sebabnya.",
+      "Saya menyatakan apa yang patut dilakukan oleh kawan saya."
+    ],
+    "example": "Mula-mula, saya bertanya siapa di belakang siaran itu. Siaran itu tiada nama, tiada bukti dan tiada pautan kepada majlis. Kemudian saya membaca ke tepi. Notis majlis berkata jambatan ditutup pada 3 dan 4 Mei untuk kerja pembaikan. Bukti terbaik datang daripada majlis kerana majlis yang menjaga jambatan itu. Radio dan penyemak fakta bertanya kepada majlis. Halaman sembang itu hanya menyalin siaran itu. Saya akan memberitahu kawan saya supaya tidak mengongsikannya, dan mengongsikan notis majlis sebagai ganti."
+  },
+  "speak": {
+    "partnerTask": "Rakan kamu membaca siaran Brightwater itu dengan kuat. Kamu bertanya tiga soalan itu, dan rakan kamu menjawab berdasarkan pelajaran. Kemudian bertukar giliran.",
+    "independentTask": "Sebut dengan kuat maksud pembacaan lateral, dan mengapa sepuluh halaman yang saling menyalin bukan sepuluh bukti."
+  },
+  "watch": {
+    "why": "Video ini datang daripada kumpulan yang mengkaji penyemak fakta dalam pelajaran ini. Video ini menerangkan pembacaan lateral.",
+    "beforeQuestion": "Bagaimanakah kamu memutuskan sama ada sesebuah laman web boleh dipercayai?",
+    "afterQuestion": "Apakah perbezaan antara membaca ke tepi dengan membaca ke bawah pada satu halaman?",
+    "summary": "Video pendek ini menerangkan pembacaan lateral. Ini ialah satu cara menyemak maklumat yang digunakan oleh penyemak fakta profesional. Ramai orang menyemak laman web dengan membaca ke bawah halaman itu. Mereka melihat rupanya dan apa yang dikatakannya tentang dirinya sendiri. Tetapi sesebuah halaman boleh kelihatan serius tetapi masih memberi maklumat yang palsu atau berat sebelah. Penyemak fakta melakukan sesuatu yang berbeza. Selepas melihat sekali imbas, mereka meninggalkan halaman itu. Mereka membuka halaman baharu dan mencari apa yang dikatakan oleh sumber lain tentang halaman itu dan tentang siapa di belakangnya. Dengan membaca kurang daripada halaman itu dan lebih banyak tentangnya, mereka belajar lebih banyak, dan lebih cepat. Kamu juga boleh melakukan perkara yang sama. Sebelum kamu mempercayai sesebuah halaman, ketahui siapa yang membuatnya dan apa yang dikatakan oleh orang lain tentangnya.",
+    "keyPoints": [
+      "Satu halaman boleh memperdaya kamu, walaupun ia kelihatan serius.",
+      "Penyemak fakta meninggalkan halaman itu dan membaca apa yang dikatakan oleh sumber lain tentangnya.",
+      "Ketahui siapa di belakang maklumat itu sebelum kamu mempercayainya."
+    ],
+    "contentNote": "Bahasa Inggeris Amerika yang laju, dibuat untuk sekolah menengah. Video ini menunjukkan carian dalam talian, yang tidak dapat dilakukan oleh pelajar pada peranti luar talian; kad sumber dalam aktiviti menggantikan halaman baharu. Ringkasan ditulis daripada penerangan Digital Inquiry Group sendiri dan penyelidikan yang menjadi asasnya, bukan dengan menonton video, dan panjangnya belum disahkan. Pratonton dahulu; pelajar boleh membaca ringkasan bertulis sebagai ganti."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Sebelum saya mengongsikan sesuatu cerita, saya akan bertanya ..."
+      },
+      {
+        "text": "Satu jenis sumber yang saya akan percaya ialah ... kerana ..."
+      }
+    ],
+    "completionMessage": "Kamu telah menamatkan Pelajaran 14. Kamu membaca ke tepi untuk menyemak sesuatu cerita sebelum mengongsikannya."
+  },
+  "visual": {
+    "alt": "Membaca ke bawah pada satu halaman berbanding membaca ke tepi: majlis, yang menjaga jambatan itu, berkata jambatan ditutup selama dua hari; radio dan penyemak fakta bertanya kepada majlis; sebuah halaman sembang hanya menyalin siaran palsu itu."
+  },
+  "sources": [
+    {
+      "label": "Digital Inquiry Group: Civic Online Reasoning (penaakulan sivik dalam talian; tiga soalan itu)"
+    },
+    {
+      "label": "Wineburg dan McGrew (2017): Lateral reading, reading less and learning more when evaluating digital information (pembacaan lateral: membaca kurang dan belajar lebih banyak semasa menilai maklumat digital), kertas kerja Stanford History Education Group 2017-A1 (salinan dihoskan oleh Hendrix College)"
+    },
+    {
+      "label": "SSRC MediaWell: ringkasan Wineburg dan McGrew, dengan versi pendek dalam Teachers College Record (2019)"
+    },
+    {
+      "label": "Digital Inquiry Group: video Lateral reading (pembacaan lateral)"
+    },
+    {
+      "label": "Liputan6 Cek Fakta (2026): Mafindo tentang cara menyemak berita palsu (dalam bahasa Indonesia)"
+    }
+  ],
+  "sensitiveNotes": [
+    "Gunakan cerita rekaan yang tidak membahayakan sahaja. Jangan gunakan khabar angin sebenar tentang topik sensitif seperti proses undang-undang, bantuan, penempatan semula atau perkhidmatan rasmi, yang mungkin terlalu dekat dengan kehidupan pelajar. Jika pelajar menimbulkan satu, jangan bahaskan butirannya; tunjukkan mereka kepada organisasi rasmi yang mengendalikan perkhidmatan itu."
+  ],
+  "educatorNotes": [
+    "Pelajaran ini dibina berdasarkan Pelajaran 23 kursus Meneroka Dunia Kita (Apakah yang menjadikan maklumat boleh dipercayai?), yang mengajar sumber, tarikh dan konteks. Pelajaran ini menambah pembacaan lateral, dan bahawa persetujuan hanya dikira apabila setiap sumber ada buktinya sendiri: radio dan penyemak fakta kedua-duanya bertanya kepada majlis, dan halaman sembang hanya menyalin siaran itu. Jika sesebuah kelas menggunakan kedua-dua kursus, mulakan dengan mengingat semula semakan dalam Pelajaran 23.",
+    "Penyelidikan dalam petikan 2 ialah Wineburg dan McGrew (kertas kerja Stanford History Education Group, 2017; versi pendek dalam Teachers College Record, 2019). 45 peserta itu ialah 10 ahli sejarah berijazah PhD yang mengajar di kolej atau universiti empat tahun, 10 penyemak fakta profesional dan 25 pelajar tahun pertama ijazah sarjana muda di Stanford. Mereka menilai laman web sebenar dan membuat carian di web tentang isu sosial dan politik, contohnya membandingkan halaman dua kumpulan doktor tentang buli dan mencari siapa di belakang sebuah laman tentang gaji minimum. Penulisnya mencatatkan bahawa sampelnya kecil dan tugasnya bermasa. Kumpulan itu menjadi Digital Inquiry Group yang bebas pada Januari 2024.",
+    "Pembacaan lateral biasanya memerlukan internet. Pada peranti luar talian, kad sumber dalam aktiviti menggantikan halaman baharu; di dalam kelas, guru boleh memainkan peranan “sumber lain” di atas kertas. Di Indonesia, Mafindo mengesyorkan laman semakan fakta seperti TurnBackHoax dan CekFakta (Liputan6, 2026)."
+  ]
+}

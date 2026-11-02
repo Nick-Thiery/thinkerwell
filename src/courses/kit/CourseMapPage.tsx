@@ -14,6 +14,7 @@ import {
   type ProgressByLessonId,
 } from '../../storage';
 import type { CourseLesson, CourseSection } from '../../content';
+import { useLessonContent } from '../../content/useContent';
 import { usePreviewCourse } from './course';
 import { CourseChoice } from './CourseChoice';
 import { useOurWorldName } from './Frame';
@@ -28,7 +29,7 @@ import { useOurWorldName } from './Frame';
 export function CourseMap() {
   const { t, tx, contentLang } = useI18n();
   const preview = usePreviewCourse();
-  const content = preview.content;
+  const content = useLessonContent();
   const course = content.getCourse();
   usePageTitle(course.course.title);
   const session = useLearnerSession();
@@ -146,7 +147,7 @@ interface MapSectionProps {
 /** One section: its header in its tint and icon, then every lesson, and its section check when the course has one. */
 function MapSection({ section, lessons, progress, hideProgress, highlight }: MapSectionProps) {
   const { t, tx } = useI18n();
-  const content = usePreviewCourse().content;
+  const content = useLessonContent();
   const look = content.sectionLook(section.id);
   const first = section.lessons[0];
   const last = section.lessons[section.lessons.length - 1];

@@ -63,5 +63,5 @@ Lessons 2, 4, 5 and 12 have no video (`watch: null`), so four steps: Read, Write
 - **Review by Justin and a historian**, and a partner's review of the sensitive notes (Lessons 4, 5, 7, 8, 9).
 - **Watch all eight videos** (and Lesson 4's) and keep, replace or remove each.
 - **Certificates:** none yet (Our World's only).
-- **Indonesian and Malay:** the lessons, the diagrams' labels and the captions, by the same process as Our World. Until then the lessons are English under a translated interface, marked `lang="en"`.
+- **Indonesian and Malay: native-speaker review.** Lessons, section checks, course text and diagrams were drafted by AI in November 2026 (`id/`, `ms/`; notes, diagram notes and `TERMS.md` in `docs/translation/<code>/notes/courses/southeast-asia-through-time/`), every string flagged. Look first at: Lesson 4 (Banda, 1621: "diperbudak"/"diperhambakan", "pemukim"/"peneroka"), Lesson 5's indenture words ("kontrak terikat", "sistem kontrak"), Lesson 9 (Timor-Leste, for Jakarta), Lesson 11's "pemuliharaan"/"pemulihan" (Malay), and the diagrams' tight labels on a phone.
 - **Credits:** each real picture's credit is under it, in the print view and in the teacher guide; `/credits` doesn't list the preview courses yet, and its line that every lesson picture was made for Thinkerwell is true only of Our World.

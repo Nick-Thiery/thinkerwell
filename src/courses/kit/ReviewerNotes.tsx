@@ -1,5 +1,6 @@
 import type { CourseLesson } from '../../content';
 import { useI18n } from '../../i18n';
+import { useLessonContent } from '../../content/useContent';
 import { usePreviewCourse } from './course';
 
 /**
@@ -13,8 +14,9 @@ import { usePreviewCourse } from './course';
 export function ReviewerNotes({ lesson }: { lesson: CourseLesson }) {
   const { t, englishLang } = useI18n();
   const course = usePreviewCourse();
+  const content = useLessonContent();
   const { changes } = lesson;
-  const toDraw = [lesson.visual, lesson.secondVisual].flatMap((visual) => (visual && !course.content.getVisualUrl(visual.src) ? [visual] : []));
+  const toDraw = [lesson.visual, lesson.secondVisual].flatMap((visual) => (visual && !content.getVisualUrl(visual.src) ? [visual] : []));
   return (
     <section className="tw-print-part tw-pc-review-notes">
       <h2>{t('previewCourse.reviewer.title')}</h2>

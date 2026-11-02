@@ -6,9 +6,10 @@ import words from 'virtual:thinkerwell/course-messages/digital-world';
 import { CourseWords, withCourseWords } from './i18n';
 
 // A preview course's words (the shared preview words and its own) load with
-// its code (the build leaves them out of the app's messages), and under its
-// pages the lessons are English in every language: marked lang="en" and
-// read as English, with the interface in the learner's language.
+// its code (the build leaves them out of the app's messages). Under its pages
+// the lessons are English unless they are translated into the language on
+// screen (Indonesian, Malay): English lessons are marked lang="en" and read as
+// English, with the interface in the learner's language.
 
 async function i18nIn(locale: string): Promise<I18nContextValue> {
   const wrapper = ({ children }: { children: ReactNode }) => <I18nProvider locale={locale}>{children}</I18nProvider>;
@@ -39,6 +40,13 @@ describe('withCourseWords', () => {
     expect(indonesian.contentLocale.code).toBe('en');
     // The interface itself stays Indonesian.
     expect(indonesian.locale).toBe('id');
+  });
+
+  it('marks translated lessons as the page is, so Listen and Say it use the language on screen', async () => {
+    const parent = await i18nIn('id');
+    const indonesian = withCourseWords(parent, own, true);
+    expect(indonesian.contentLang).toEqual(parent.contentLang);
+    expect(indonesian.contentLocale.code).toBe('id');
   });
 
   it('changes nothing about how English pages mark text', async () => {

@@ -1,0 +1,266 @@
+{
+  "title": "Apa yang ditunjukkan linimasamu",
+  "essentialQuestion": "Bagaimana aplikasi memilih apa yang kita lihat, dan mengapa hal itu penting bagi sebuah komunitas?",
+  "learningGoal": "Menjelaskan bagaimana linimasa memilih unggahan, bagaimana hal itu bisa membantu atau menimbulkan masalah, mengapa rumor bisa menyebar cepat menjelang pemungutan suara, dan apa yang bisa dilakukan orang dan aturan.",
+  "warmUp": {
+    "question": "Menurutmu, mengapa sebagian unggahan jauh lebih banyak dibagikan daripada yang lain?",
+    "options": [
+      "Unggahan itu benar",
+      "Unggahan itu mengejutkan",
+      "Unggahan itu lucu",
+      "Tidak yakin"
+    ]
+  },
+  "evidence": {
+    "label": "Contoh fiksi yang dibuat untuk pelajaran ini.",
+    "question": "Unggahan mana yang paling banyak dibagikan? Apa bedanya linimasa Ravi dan Lena, dan bagaimana linimasa Lena membantunya?",
+    "cards": [
+      {
+        "title": "Unggahan di Maplebrook pada minggu pemungutan suara kota",
+        "columns": [
+          "Unggahan",
+          "Dibagikan dalam satu hari"
+        ],
+        "rows": [
+          [
+            "“MENGEJUTKAN. Pemungutan suara dipindah ke hari Jumat. Bagikan ini sekarang.” Tanpa nama dan tanpa tautan.",
+            "900"
+          ],
+          [
+            "Kantor pemilihan kota: “Pemungutan suara diadakan hari Sabtu, jam 9 sampai 5, di balai kota.”",
+            "60"
+          ],
+          [
+            "Cek Fakta Maplebrook: “Salah. Pemungutan suara tidak dipindah. Tetap hari Sabtu.”",
+            "40"
+          ],
+          [
+            "Video lucu seekor kambing yang masuk ke perpustakaan",
+            "700"
+          ]
+        ]
+      },
+      {
+        "title": "Dua teman, dua linimasa",
+        "cases": [
+          {
+            "name": "Ravi",
+            "body": "Bulan lalu Ravi menonton banyak video sepak bola. Minggu ini, linimasanya menunjukkan delapan unggahan tentang lapangan olahraga yang baru dan satu unggahan tentang perpustakaan yang baru."
+          },
+          {
+            "name": "Lena",
+            "body": "Lena menyukai banyak unggahan tentang buku. Minggu ini, linimasanya menunjukkan tujuh unggahan tentang perpustakaan yang baru dan dua unggahan tentang lapangan olahraga. Linimasanya juga menyarankan sebuah pelajaran video gratis tentang cara menulis cerita, yang memang sedang dicarinya."
+          }
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "title": "Cepat atau lambat?",
+    "instructions": "Ini unggahan-unggahan dari Maplebrook pada minggu pemungutan suara kota. Taruh setiap unggahan di tempat yang menurutmu cocok. Tidak ada nilai. Setelah kamu menempatkan satu unggahan, kamu bisa melihat satu jawaban yang mungkin dan alasannya.",
+    "groups": [
+      {
+        "label": "Besar kemungkinan menyebar cepat"
+      },
+      {
+        "label": "Lebih kecil kemungkinan menyebar cepat"
+      }
+    ],
+    "items": [
+      {
+        "text": "MENGEJUTKAN. Pemungutan suara dipindah ke hari Jumat. Bagikan ini sekarang.",
+        "feedback": "Unggahan ini mengejutkan, dan menyuruhmu terburu-buru. Unggahan seperti ini sering menyebar cepat. Tetapi menyebar cepat tidak membuatnya benar. Unggahan ini salah."
+      },
+      {
+        "text": "Kantor pemilihan kota: Berikan suaramu hari Sabtu di balai kota. Buka jam 9 sampai 5.",
+        "feedback": "Fakta yang tenang kurang mengejutkan, jadi mungkin lebih sedikit orang yang membagikannya. Kamu bisa membantu dengan membagikannya."
+      },
+      {
+        "text": "Video lucu seekor kambing yang masuk ke perpustakaan.",
+        "feedback": "Unggahan lucu sering ditonton dan dibagikan banyak orang. Linimasa sering menunjukkan unggahan seperti ini kepada lebih banyak orang."
+      },
+      {
+        "text": "Unggahan menakutkan tanpa bukti: Lapangan yang baru akan membuat banjir di setiap jalan.",
+        "feedback": "Unggahan yang menakut-nakuti orang sering menyebar cepat. Unggahan ini tidak punya bukti, jadi periksa dulu sebelum kamu membagikannya."
+      },
+      {
+        "text": "Unggahan panjang yang membandingkan biaya perpustakaan dan lapangan.",
+        "feedback": "Unggahan ini berguna, tetapi panjang dan tenang, jadi mungkin lebih sedikit orang yang membagikannya. Unggahan ini tetap bisa membantu para pemilih menentukan pilihan."
+      },
+      {
+        "text": "Cek fakta: Salah. Pemungutan suara tidak dipindah. Tetap hari Sabtu.",
+        "feedback": "Ralat yang tenang kurang mengejutkan dibandingkan rumornya, jadi mungkin menyebar lebih lambat. Karena itulah membagikannya bisa membantu."
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Linimasamu dipilihkan untukmu",
+        "text": "Orang mengunggah jauh lebih banyak daripada yang bisa dilihat siapa pun, jadi banyak aplikasi memakai algoritma untuk memilih apa yang masuk ke linimasamu. Algoritma adalah serangkaian langkah yang diikuti komputer. Algoritma belajar dari apa yang sebelumnya kamu tonton, sukai atau lewati, lalu menebak apa yang ingin kamu lihat. Setiap aplikasi punya tujuan yang berbeda. Ada yang menghitung berapa lama kamu menonton, dan ada juga yang bertanya kepada orang apakah mereka puas dengan apa yang mereka lihat. Linimasa bisa berguna. Di kota rekaan Maplebrook, linimasa Lena menemukan pelajaran video gratis tentang menulis cerita untuknya. Ravi menonton banyak video sepak bola, jadi linimasanya kebanyakan menunjukkan unggahan tentang lapangan olahraga yang baru.",
+        "simpler": "Orang mengunggah lebih banyak daripada yang bisa kamu lihat. Jadi, banyak aplikasi memakai algoritma. Algoritma adalah serangkaian langkah untuk komputer. Algoritma memilih unggahan dari apa yang kamu tonton sebelumnya. Setiap aplikasi punya tujuan yang berbeda. Ada yang menghitung berapa lama kamu menonton. Ada yang bertanya apakah kamu suka. Linimasa bisa membantu. Di kota rekaan Maplebrook, linimasa Lena menemukan pelajaran gratis tentang cerita untuknya. Linimasa Ravi menunjukkan unggahan tentang lapangan olahraga yang baru."
+      },
+      {
+        "heading": "Rumor bisa menyebar lebih cepat daripada kebenaran",
+        "text": "Pada tahun 2018, para peneliti di MIT di Amerika Serikat menerbitkan sebuah penelitian tentang Twitter. Mereka melihat sekitar 126.000 berita yang dibagikan dari tahun 2006 sampai 2017, yang masing-masing sudah diperiksa oleh kelompok-kelompok pemeriksa fakta. Di Twitter pada tahun-tahun itu, berita yang salah menyebar lebih jauh dan lebih cepat daripada berita yang benar. Berita yang salah sering lebih mengejutkan, dan manusia yang membagikannya, bukan hanya akun robot. Penelitian itu melihat apa yang dipilih orang untuk dibagikan di satu situs, bukan bagaimana linimasa memilih unggahan. Hal ini penting menjelang pemilihan, ketika orang butuh fakta yang benar untuk memberikan suara. Di Maplebrook, sebuah rumor mengatakan pemungutan suara dipindah ke hari Jumat. Rumor itu dibagikan 900 kali dalam satu hari, sedangkan pengumuman yang benar hanya 60 kali.",
+        "simpler": "Pada tahun 2018, para peneliti MIT di Amerika Serikat meneliti berita di Twitter. Berita-berita itu dari tahun 2006 sampai 2017. Berita yang salah menyebar lebih cepat daripada berita yang benar. Berita yang salah sering terasa mengejutkan. Manusia yang membagikan berita itu, bukan hanya robot. Penelitian itu melihat apa yang dibagikan orang di satu situs. Penelitian itu tidak meneliti cara linimasa memilih unggahan. Hal ini penting dalam pemilihan. Di Maplebrook, sebuah rumor mengatakan pemungutan suara dipindah ke hari Jumat. Rumor itu dibagikan 900 kali. Pengumuman yang benar dibagikan 60 kali."
+      },
+      {
+        "heading": "Melihat lebih dari satu sisi",
+        "text": "Sebagian orang khawatir linimasa menempatkan kita masing-masing dalam gelembung filter, tempat kita hanya melihat satu sisi. Ravi kebanyakan melihat unggahan yang mendukung lapangan olahraga, dan Lena kebanyakan melihat unggahan yang mendukung perpustakaan. Tetapi sebuah tinjauan atas banyak penelitian menemukan bahwa gelembung filter yang sungguhan lebih jarang daripada yang dikira banyak orang. Sejak tahun 2024, sebuah undang-undang Uni Eropa mengatakan bahwa aplikasi yang sangat besar harus menjelaskan bagaimana linimasa mereka memilih unggahan. Aplikasi itu juga harus menyediakan linimasa yang tidak berdasarkan apa yang mereka ketahui tentang dirimu. Kamu juga bisa membantu: ikuti sumber-sumber yang berbeda, dan periksa dulu sebelum membagikan.",
+        "simpler": "Sebagian orang khawatir tentang gelembung filter. Di dalam gelembung, kamu hanya melihat satu sisi. Ravi melihat unggahan yang mendukung lapangan. Lena melihat unggahan yang mendukung perpustakaan. Tetapi para peneliti menemukan bahwa gelembung yang sungguhan lebih jarang daripada yang dikira orang. Sejak tahun 2024, aplikasi yang sangat besar di Uni Eropa harus menjelaskan linimasa mereka. Aplikasi itu juga harus menyediakan jenis linimasa yang lain. Kamu juga bisa membantu. Ikuti sumber yang berbeda-beda. Periksa dulu sebelum membagikan."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "algoritma",
+        "definition": "Serangkaian langkah yang diikuti komputer untuk melakukan sebuah pekerjaan.",
+        "example": "Sebuah algoritma memilih unggahan di linimasa Ravi."
+      },
+      {
+        "word": "linimasa",
+        "forms": [
+          "linimasanya",
+          "linimasamu"
+        ],
+        "definition": "Daftar unggahan dan video yang ditunjukkan sebuah aplikasi kepadamu.",
+        "example": "Linimasa Lena menunjukkan banyak unggahan tentang perpustakaan."
+      },
+      {
+        "word": "rumor",
+        "definition": "Cerita yang diteruskan orang tanpa tahu apakah cerita itu benar.",
+        "example": "Rumor itu mengatakan pemungutan suara dipindah ke hari Jumat."
+      },
+      {
+        "word": "pemilihan",
+        "definition": "Waktu ketika orang memberikan suara untuk memilih sesuatu bersama-sama.",
+        "example": "Maplebrook mengadakan pemilihan untuk memilih perpustakaan atau lapangan olahraga."
+      },
+      {
+        "word": "gelembung filter",
+        "forms": [
+          "gelembung"
+        ],
+        "definition": "Keadaan ketika linimasa hanya menunjukkan satu sisi dari berbagai hal kepadamu.",
+        "example": "Kalau Ravi hanya melihat unggahan tentang lapangan olahraga, dia berada dalam gelembung filter."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Bagaimana algoritma memilih unggahan di sebuah linimasa?",
+        "options": [
+          {
+            "text": "Algoritma memilih unggahan secara acak",
+            "feedback": "Belum tepat. Algoritma tidak memilih secara acak. Baca lagi bagian pertama."
+          },
+          {
+            "text": "Algoritma menebak dari apa yang kamu lakukan sebelumnya",
+            "feedback": "Benar. Algoritma belajar dari apa yang kamu tonton, sukai atau lewati, lalu menebak apa yang ingin kamu lihat berikutnya."
+          },
+          {
+            "text": "Seseorang memeriksa setiap unggahan lebih dulu",
+            "feedback": "Belum tepat. Unggahannya terlalu banyak untuk itu. Baca lagi bagian pertama."
+          }
+        ]
+      },
+      {
+        "question": "Apa yang ditemukan penelitian tahun 2018 tentang Twitter?",
+        "options": [
+          {
+            "text": "Berita yang salah menyebar lebih cepat daripada berita yang benar",
+            "feedback": "Benar. Di Twitter dari tahun 2006 sampai 2017, berita yang salah menyebar lebih jauh dan lebih cepat. Itu di satu situs pada tahun-tahun itu."
+          },
+          {
+            "text": "Berita yang salah menyebar lebih lambat daripada berita yang benar",
+            "feedback": "Belum tepat. Lihat rumor dan pengumuman di Maplebrook. Baca lagi bagian kedua."
+          },
+          {
+            "text": "Hanya akun robot yang membagikan berita yang salah",
+            "feedback": "Belum tepat. Manusia juga membagikannya. Baca lagi bagian kedua."
+          }
+        ]
+      },
+      {
+        "question": "Pikirkan satu unggahan dari pelajaran ini. Apa yang akan kamu periksa sebelum membagikannya?",
+        "placeholder": "Sebelum aku membagikan ___, aku akan memeriksa ..."
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Sebuah rumor mengatakan pemungutan suara di Maplebrook dipindah ke hari Jumat. Jelaskan mengapa rumor itu menyebar cepat, dan apa yang bisa dilakukan orang-orang di Maplebrook untuk mengatasinya.",
+    "sentenceStarters": [
+      "Rumor itu menyebar cepat karena ...",
+      "Banyak orang melihatnya karena ...",
+      "Pengumuman yang benar dibagikan ...",
+      "Orang-orang bisa ...",
+      "Ini penting dalam pemilihan karena ..."
+    ],
+    "planningBoxes": [
+      "Ide utamaku",
+      "Bukti dari pelajaran",
+      "Mengapa ini penting",
+      "Pertanyaan yang masih aku punya"
+    ],
+    "selfCheck": [
+      "Aku memberi satu alasan mengapa rumor itu menyebar cepat.",
+      "Aku memakai satu fakta dari pelajaran.",
+      "Aku mengatakan apa yang bisa dilakukan orang-orang."
+    ],
+    "example": "Rumor itu menyebar cepat karena mengejutkan dan menyuruh orang membagikannya sekarang juga. Banyak orang melihatnya karena rumor itu dibagikan sangat banyak. Linimasa bisa menunjukkan unggahan seperti itu kepada lebih banyak orang. Pengumuman yang benar hanya dibagikan 60 kali, sedangkan rumor itu dibagikan 900 kali. Orang-orang bisa memeriksa pengumuman kantor pemilihan sebelum membagikan. Mereka juga bisa membagikan cek faktanya. Ini penting dalam pemilihan karena orang perlu tahu hari yang benar untuk memberikan suara."
+  },
+  "speak": {
+    "partnerTask": "Temanmu membacakan rumor dari Maplebrook dengan lantang. Kamu menjelaskan mengapa rumor itu mungkin menyebar cepat, dan apa yang akan kamu bagikan sebagai gantinya. Lalu bergantian.",
+    "independentTask": "Ucapkan dengan lantang apa yang dilakukan algoritma di sebuah linimasa, dengan satu cara algoritma bisa membantumu dan satu cara algoritma bisa menimbulkan masalah."
+  },
+  "watch": {
+    "why": "Video berita pendek yang dibuat untuk anak muda, yang menjelaskan bagaimana algoritma memilih apa yang kamu lihat.",
+    "beforeQuestion": "Menurutmu, siapa yang memilih apa yang kamu lihat ketika kamu menggulir layar?",
+    "afterQuestion": "Mengapa sebuah linimasa mungkin berusaha membuatmu terus menonton?",
+    "summary": "Video berita pendek untuk anak muda ini menjelaskan algoritma media sosial. Algoritma adalah serangkaian perintah yang memberi tahu sebuah program komputer apa yang harus dilakukan. Di banyak aplikasi, algoritma memutuskan unggahan mana yang kamu lihat dan dalam urutan apa. Algoritma juga memutuskan unggahan mana yang tidak kamu lihat. Jadi, ketika kamu menggulir layar, kamu mungkin mengira kamu melihat semuanya. Padahal, ada orang yang membuat sistem yang memilihkan untukmu. Bagaimana cara memilihnya? Sistem itu berusaha menunjukkan unggahan yang membuatmu tetap tertarik, supaya kamu terus menggulir. Para ahli dalam video ini mengatakan hal ini tidak selalu baik. Linimasamu dipilih dengan cermat. Linimasa itu bukan gambaran lengkap tentang dunia. Mengetahui bagaimana linimasamu dipilih bisa membantumu memikirkan apa yang kamu lihat.",
+    "keyPoints": [
+      "Algoritma adalah serangkaian perintah untuk komputer.",
+      "Di banyak aplikasi, algoritma memilih unggahan mana yang kamu lihat, dan mana yang tidak.",
+      "Algoritma berusaha membuatmu terus menonton, dan itu tidak selalu baik untukmu."
+    ],
+    "contentNote": "Sekitar 3 menit (182 detik, menurut daftar di YouTube), bahasa Inggris Kanada, dari tahun 2021. Video ini menyebut aplikasi sungguhan (TikTok, YouTube dan Instagram). Judul dan kanalnya sudah dipastikan dengan oEmbed YouTube pada 31 Oktober 2026. Ringkasannya ditulis dari deskripsi video oleh CBC Kids News sendiri dan dari halaman webnya, bukan dari menontonnya. Seseorang dalam tim harus menontonnya sebelum pelajar memakainya; pelajar bisa membaca ringkasan tertulisnya saja."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Sebelum aku membagikan unggahan yang mengejutkan, aku akan ..."
+      },
+      {
+        "text": "Satu cara untuk melihat lebih dari satu sisi adalah ..."
+      }
+    ],
+    "completionMessage": "Kamu sudah menyelesaikan Pelajaran 15. Kamu menjelaskan bagaimana linimasa memilih unggahan, dan mengapa hal itu penting menjelang pemungutan suara."
+  },
+  "visual": {
+    "alt": "Banyak unggahan masuk ke sebuah algoritma, yang menebak apa yang ingin dilihat setiap orang. Linimasa Ravi kebanyakan menunjukkan unggahan tentang lapangan olahraga. Linimasa Lena kebanyakan menunjukkan unggahan tentang perpustakaan dan sebuah pelajaran gratis tentang menulis cerita."
+  },
+  "sources": [
+    {
+      "label": "CBC Kids News (2021): How do social media algorithms work? (bagaimana algoritma media sosial bekerja?)"
+    },
+    {
+      "label": "MIT News (8 Maret 2018): Study, on Twitter, false news travels faster than true stories (penelitian: di Twitter, berita palsu menyebar lebih cepat daripada berita yang benar; Vosoughi, Roy dan Aral, Science)"
+    },
+    {
+      "label": "Reuters Institute (2022): Echo chambers, filter bubbles, and polarisation: a literature review (ruang gema, gelembung filter dan polarisasi: tinjauan pustaka; Ross Arguedas, Robertson, Fletcher dan Nielsen)"
+    },
+    {
+      "label": "European Parliament Legislative Observatory: ringkasan Digital Services Act (Undang-Undang Layanan Digital Uni Eropa), Regulation (EU) 2022/2065"
+    },
+    {
+      "label": "YouTube Help: How YouTube recommendations work (cara kerja rekomendasi YouTube; contoh sinyal yang disebutkan oleh satu platform)"
+    }
+  ],
+  "sensitiveNotes": [
+    "Pemilu dan politik bisa menjadi topik yang menyakitkan atau berbahaya bagi sebagian pelajar. Jaga diskusi tetap pada Maplebrook yang rekaan. Jangan pernah bertanya kepada pelajar tentang pemilu, politik atau pemungutan suara di negara mana pun yang pernah mereka tinggali, atau bagaimana anggota keluarga mereka memilih, dan jangan biarkan muncul perdebatan tentang calon atau partai yang nyata; arahkan kembali ke cara kerja linimasa dan rumor."
+  ],
+  "educatorNotes": [
+    "Penelitian di bagian 2 adalah karya Vosoughi, Roy dan Aral (Science, Maret 2018; MIT News, 8 Maret 2018): sekitar 126.000 rangkaian penyebaran berita di Twitter, 2006 sampai 2017, yang di-tweet lebih dari 4,5 juta kali oleh sekitar 3 juta orang, dan setiap berita dinilai benar atau salah oleh enam organisasi pemeriksa fakta yang independen. Berita palsu 70% lebih mungkin di-retweet, dan berita yang benar butuh waktu sekitar enam kali lebih lama untuk menjangkau 1.500 orang; perbedaan ini tetap ada walaupun bot dikeluarkan. Cakupannya: satu platform, tahun-tahun itu, dan berita yang sudah diselidiki pemeriksa fakta (berita yang diperdebatkan, bukan semua unggahan). Penelitian itu mengukur apa yang di-retweet orang, bukan bagaimana algoritma pemeringkat memilih unggahan, jadi penelitian itu tidak menunjukkan bahwa AI menyebabkan penyebarannya; para penulis mengatakan platform lain perlu diteliti tersendiri.",
+    "Aplikasi memeringkat unggahan dengan sinyal dan tujuan yang berbeda-beda; jangan menyederhanakannya menjadi satu motif saja. Misalnya, halaman bantuan YouTube menyebut riwayat tontonan dan pencarian, langganan, suka, tidak suka, “tidak tertarik” dan survei kepuasan (untuk memahami kepuasan, “not just watch time”, bukan hanya waktu menonton). Gelembung filter: tinjauan Reuters Institute tahun 2022 menemukan bahwa ruang gema jauh lebih jarang daripada yang biasa diduga, dan tidak menemukan dukungan untuk gagasan gelembung filter. Aturan Eropa itu adalah Digital Services Act (Regulation (EU) 2022/2065): mulai berlaku 16 November 2022, berlaku penuh sejak 17 Februari 2024, dan lebih awal bagi platform yang sangat besar (lebih dari 45 juta pengguna per bulan di Uni Eropa), empat bulan setelah Komisi Eropa menetapkannya; platform itu harus menjelaskan pengaturan utama sistem rekomendasinya, menyediakan satu sistem yang tidak berdasarkan profil pengguna, dan menilai risiko seperti manipulasi pemilu.",
+    "Versi kertas kegiatan ini: tulis enam unggahan itu di kartu dan kelompokkan menjadi dua tumpukan, “Besar kemungkinan menyebar cepat” dan “Lebih kecil kemungkinannya”. Tidak ada nilai; minta alasannya. Tanyakan mengapa pengumuman yang benar menyebar lebih lambat, dan siapa yang bisa membantu menyebarkannya."
+  ]
+}

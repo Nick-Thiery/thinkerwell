@@ -1,0 +1,330 @@
+{
+  "title": "Bagaimana AI belajar daripada contoh",
+  "essentialQuestion": "Bagaimanakah komputer boleh belajar daripada contoh, dan mengapa contoh itu penting?",
+  "learningGoal": "Latih sebuah model kecil dengan contoh berlabel, dan terangkan mengapa contoh yang berkaitan dan dilabel dengan betul, serta ujian yang adil, adalah penting.",
+  "warmUp": {
+    "question": "Kamu mahu mengajar seorang kanak-kanak kecil membezakan daun yang sihat daripada daun yang sakit. Apakah yang akan kamu lakukan?",
+    "options": [
+      "Tunjukkan banyak daun",
+      "Tulis senarai peraturan",
+      "Tunjukkan satu daun",
+      "Sesuatu yang lain"
+    ]
+  },
+  "evidence": {
+    "label": "Contoh rekaan yang dibuat untuk pelajaran ini.",
+    "question": "Apakah yang berubah setiap kali model itu meneka lebih banyak daun dengan betul?",
+    "cards": [
+      {
+        "title": "Model daun Kebun Sunrise",
+        "columns": [
+          "Pusingan",
+          "Contoh yang dipelajarinya",
+          "Daun baharu yang diteka dengan betul"
+        ],
+        "rows": [
+          [
+            "Pusingan 1",
+            "2 contoh: sehelai daun besar berwarna hijau tua (sihat) dan sehelai daun perang bertompok (sakit)",
+            "4 daripada 6"
+          ],
+          [
+            "Pusingan 2",
+            "6 contoh: 2 contoh daripada Pusingan 1, serta sehelai daun muda yang kecil dan sehelai daun hijau dengan tanda-tanda halus (sihat), dan sehelai daun kuning tanpa tompok dan sehelai daun kecil bertompok (sakit)",
+            "6 daripada 6"
+          ],
+          [
+            "Pusingan 2, tumbuhan baharu",
+            "6 contoh yang sama",
+            "0 daripada 2 helai daun panjang berjalur"
+          ],
+          [
+            "Pusingan 3",
+            "8 contoh: 6 contoh daripada Pusingan 2, serta sehelai daun panjang berjalur (sihat) dan sehelai daun panjang berwarna perang dan bertompok (sakit)",
+            "8 daripada 8"
+          ]
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "title": "Latih model daun",
+    "instructions": "Ajar model itu dengan memberi setiap contoh daun satu label: sihat atau sakit. Kemudian uji model itu dengan daun baharu dan lihat berapa banyak yang diteka dengan betul. Apa-apa yang kamu lakukan di sini tidak dihantar ke mana-mana.",
+    "labels": [
+      {
+        "label": "Sihat"
+      },
+      {
+        "label": "Sakit"
+      }
+    ],
+    "features": [
+      {
+        "label": "Tahap hijau",
+        "scale": "0 perang atau kuning, 10 hijau tua"
+      },
+      {
+        "label": "Tompok",
+        "scale": "0 tiada, 10 penuh"
+      },
+      {
+        "label": "Saiz",
+        "scale": "0 sangat kecil, 10 sangat besar"
+      },
+      {
+        "label": "Bentuk",
+        "scale": "0 bulat, 10 panjang dan nipis"
+      }
+    ],
+    "examples": [
+      {
+        "description": "Daun besar berwarna hijau tua"
+      },
+      {
+        "description": "Daun perang bertompok"
+      },
+      {
+        "description": "Daun muda yang kecil, hijau muda"
+      },
+      {
+        "description": "Daun kuning tanpa tompok"
+      },
+      {
+        "description": "Daun hijau dengan beberapa tanda halus"
+      },
+      {
+        "description": "Daun kecil dengan banyak tompok"
+      },
+      {
+        "description": "Daun panjang dan nipis dengan jalur pucat"
+      },
+      {
+        "description": "Daun panjang dan nipis berwarna perang dan bertompok"
+      }
+    ],
+    "tests": [
+      {
+        "description": "Daun hijau"
+      },
+      {
+        "description": "Daun perang bertompok"
+      },
+      {
+        "description": "Daun muda yang kecil, hijau muda"
+      },
+      {
+        "description": "Daun kuning tanpa tompok"
+      },
+      {
+        "description": "Daun hijau dengan beberapa tanda halus"
+      },
+      {
+        "description": "Daun kecil dengan banyak tompok"
+      },
+      {
+        "description": "Daun panjang dan nipis dengan jalur pucat"
+      },
+      {
+        "description": "Daun panjang dan nipis dengan jalur pucat"
+      }
+    ],
+    "rounds": [
+      {
+        "title": "Pusingan 1: dua contoh",
+        "debrief": "Model itu meneka 4 daripada 6 dengan betul. Ia hanya ada dua helai daun untuk dibandingkan, jadi ia tersilap tentang daun muda yang kecil dan daun kuning."
+      },
+      {
+        "title": "Pusingan 2: lebih banyak contoh yang berbeza",
+        "debrief": "Kini model itu meneka kesemua 6 dengan betul. Contoh baharu menunjukkan kepadanya daun yang kelihatan berbeza."
+      },
+      {
+        "title": "Tumbuhan baharu",
+        "debrief": "Kedua-dua daun berjalur itu sihat, tetapi model itu berkata “sakit”. Tiada contohnya yang kelihatan seperti daun itu."
+      },
+      {
+        "title": "Pusingan 3: tambah tumbuhan baharu",
+        "debrief": "Dengan contoh daripada tumbuhan baharu itu, model itu meneka kesemua 8 dengan betul. Tetapi pasukan itu sudah pun melihat daun ujian ini, dan ujiannya kecil. Untuk menyemak dengan adil, uji model itu dengan daun yang belum pernah digunakan oleh sesiapa."
+      }
+    ],
+    "freePlay": "Selepas Pusingan 3, pelajar boleh mengeluarkan contoh, atau menukar label, dan menguji sekali lagi. Model itu mengikut label pelajar, walaupun label itu berbeza daripada label tukang kebun.",
+    "explainGuess": "Selepas setiap tekaan, tunjukkan contoh yang paling serupa dengan daun baharu itu menurut model: “Daun ini paling serupa dengan contoh ini, jadi model itu berkata sakit.”"
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Model belajar daripada contoh berlabel",
+        "text": "Sesetengah AI belajar sedikit seperti belajar dengan kad imbas. Di Kebun Sunrise, orang mengumpul data latihan: gambar daun, setiap satu dengan jawapan yang betul, yang dipanggil label, sama ada “sihat” atau “sakit”. Komputer menggunakan contoh ini untuk membina sebuah model. Ia menggunakan model itu untuk meramal label sehelai daun yang belum pernah dilihatnya. Inilah pembelajaran mesin. Tiada sesiapa yang menulis peraturan “tompok bermaksud sakit”; komputer itu sendiri yang mencari corak seperti itu dalam contoh. Belajar daripada contoh berlabel dipanggil pembelajaran berselia, satu jenis pembelajaran mesin. Ia idea yang lama. Sebuah mesin yang dipanggil perceptron belajar daripada kad bertanda pada tahun 1958, dan penyelidik mengkaji kaedah dalam pelajaran ini pada tahun 1967. Ia menjadi jauh lebih berguna selepas tahun 2010, dengan lebih banyak data dan komputer yang lebih laju.",
+        "simpler": "Di Kebun Sunrise, orang mengumpul data latihan. Setiap gambar daun ada jawapan yang betul, yang dipanggil label: “sihat” atau “sakit”. Komputer menggunakannya untuk membuat model. Ia menggunakan model itu untuk meneka. Inilah pembelajaran mesin. Tiada sesiapa memberitahunya “tompok bermaksud sakit”. Ia menemui perkara itu dalam contoh. Belajar daripada label dipanggil pembelajaran berselia. Ia idea yang lama. Sebuah mesin melakukannya pada tahun 1958. Kaedah ini dikaji pada tahun 1967. Ia menjadi lebih berguna selepas tahun 2010."
+      },
+      {
+        "heading": "Uji model dengan contoh baharu",
+        "text": "Untuk mengetahui sama ada sesebuah model berfungsi, kamu menguji model itu dengan daun baharu yang tidak dipelajarinya. Model pertama belajar daripada dua contoh sahaja, iaitu sehelai daun besar berwarna hijau tua dan sehelai daun perang bertompok. Ia meneka dengan cara yang mudah: ia mencari contoh yang paling serupa dengan daun baharu itu dan menyalin labelnya. Ia meneka empat daripada enam helai daun baharu dengan betul. Ia menyebut sehelai daun kecil berwarna hijau muda sebagai “sakit” dan sehelai daun kuning tanpa tompok sebagai “sihat”. Model itu tidak rosak. Ia hanya ada terlalu sedikit contoh untuk dibandingkan.",
+        "simpler": "Kemudian kamu menguji model itu dengan daun yang belum dilihatnya. Model pertama hanya ada dua contoh. Satu berwarna hijau tua. Satu lagi perang dan bertompok. Ia mencari contoh yang paling serupa dengan daun baharu. Ia menyalin labelnya. Ia meneka empat daripada enam dengan betul. Ia kata daun muda yang kecil “sakit” dan daun kuning “sihat”. Contohnya terlalu sedikit."
+      },
+      {
+        "heading": "Contoh yang lebih baik membantu, tetapi ujian ada hadnya",
+        "text": "Seterusnya, pasukan itu menambah empat lagi contoh, termasuk sehelai daun muda yang kecil dan sehelai daun kuning tanpa tompok. Kini model itu meneka kesemua enam helai daun baharu dengan betul. Kemudian pasukan itu menguji dua helai daun yang panjang, nipis dan berjalur daripada tumbuhan lain. Kedua-duanya sihat, tetapi model itu menyebutnya “sakit”, kerana tiada contohnya yang kelihatan serupa. Selepas pasukan itu menambah dua contoh berjalur, model itu meneka dengan betul. Contoh yang berkaitan dengan label yang betul membantu. Lebih banyak contoh sahaja tidak sentiasa membantu, kerana label yang tidak betul boleh menjadikan tekaan lebih teruk. Dan ujian yang kecil tidak dapat membuktikan model itu akan berfungsi untuk setiap tumbuhan baharu.",
+        "simpler": "Seterusnya, pasukan itu menambah empat lagi contoh. Kini model itu meneka kesemua enam dengan betul. Kemudian pasukan itu mencuba tumbuhan baharu dengan daun yang panjang dan berjalur. Daun itu sihat, tetapi model itu kata “sakit”. Tiada contoh yang serupa dengannya. Pasukan itu menambah dua daun berjalur. Kemudian model itu meneka dengan betul. Contoh yang baik dengan label yang betul membantu. Lebih banyak contoh sahaja tidak sentiasa membantu. Label yang tidak betul boleh menjadikannya lebih teruk. Ujian yang kecil tidak dapat membuktikan ia berfungsi untuk setiap tumbuhan baharu."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "data latihan",
+        "definition": "Contoh yang digunakan untuk membina sebuah model. Di sini, setiap contoh ada label.",
+        "example": "Gambar daun dan labelnya ialah data latihan."
+      },
+      {
+        "word": "label",
+        "forms": [
+          "berlabel",
+          "labelnya",
+          "dilabel"
+        ],
+        "definition": "Jawapan yang diberi kepada sesuatu contoh, seperti “sihat” atau “sakit”.",
+        "example": "Daun besar berwarna hijau tua itu ada label “sihat”."
+      },
+      {
+        "word": "model",
+        "definition": "Apa yang telah dipelajari oleh komputer daripada contoh. Komputer menggunakannya untuk meneka.",
+        "example": "Model kebun itu meneka bahawa daun kuning itu sihat."
+      },
+      {
+        "word": "pembelajaran mesin",
+        "definition": "Cara komputer belajar corak daripada contoh, bukan daripada peraturan bertulis.",
+        "example": "Model daun ialah satu contoh pembelajaran mesin."
+      },
+      {
+        "word": "pembelajaran berselia",
+        "definition": "Pembelajaran mesin daripada contoh yang setiap satunya ada label.",
+        "example": "Model daun menggunakan pembelajaran berselia: setiap contoh dilabel sihat atau sakit."
+      },
+      {
+        "word": "menguji",
+        "forms": [
+          "uji",
+          "ujian",
+          "diuji"
+        ],
+        "definition": "Mencuba sesuatu dengan contoh baharu untuk melihat sama ada ia berfungsi.",
+        "example": "Pasukan itu menguji model dengan enam helai daun baharu."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Mengapakah model itu menyebut daun muda yang kecil sebagai “sakit” dalam Pusingan 1?",
+        "options": [
+          {
+            "text": "Ia hanya ada dua contoh untuk dibandingkan",
+            "feedback": "Betul. Dengan dua contoh sahaja, daun baharu itu lebih dekat dengan daun perang. Lebih banyak contoh membetulkan perkara ini."
+          },
+          {
+            "text": "Daun kecil hampir sentiasa sakit",
+            "feedback": "Belum tepat. Tukang kebun berkata daun muda yang kecil itu sihat. Baca tentang Pusingan 1 dalam petikan kedua."
+          },
+          {
+            "text": "Model itu rosak dan perlu dibaiki",
+            "feedback": "Belum tepat. Pelajaran ini berkata model itu tidak rosak. Baca hujung petikan kedua."
+          }
+        ]
+      },
+      {
+        "question": "Apakah yang menjadikan model itu lebih baik dalam Pusingan 2?",
+        "options": [
+          {
+            "text": "Pasukan itu menjadikan semua gambar daun lebih terang",
+            "feedback": "Belum tepat. Gambar itu tidak berubah. Lihat apa yang ditambah oleh pasukan itu dalam petikan ketiga."
+          },
+          {
+            "text": "Pasukan itu menambah lebih banyak contoh yang berbeza",
+            "feedback": "Betul. Contoh baharu menunjukkan kepada model itu daun yang kelihatan berbeza, jadi ia meneka kesemua enam dengan betul."
+          },
+          {
+            "text": "Pasukan itu menulis satu peraturan tentang tompok",
+            "feedback": "Belum tepat. Dalam pembelajaran mesin, tiada sesiapa yang menulis peraturan itu. Lihat apa yang ditambah oleh pasukan itu dalam petikan ketiga."
+          }
+        ]
+      },
+      {
+        "question": "Kebun itu menanam tumbuhan baharu yang berdaun merah. Apakah yang patut dilakukan oleh pasukan itu sebelum mereka mempercayai model itu untuk tumbuhan ini?",
+        "placeholder": "Mula-mula mereka patut ... Kemudian mereka patut ..."
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Terangkan bagaimana model kebun itu menjadi lebih baik dari Pusingan 1 hingga Pusingan 3. Gunakan nombor daripada pelajaran ini.",
+    "sentenceStarters": [
+      "Dalam Pusingan 1, model itu belajar daripada ...",
+      "Ia meneka ... dengan betul, kerana ...",
+      "Dalam Pusingan 2, pasukan itu menambah ...",
+      "Daun berjalur menunjukkan bahawa ...",
+      "Data latihan yang baik memerlukan ... / Ujian yang kecil tidak dapat menunjukkan ..."
+    ],
+    "planningBoxes": [
+      "Idea utama saya",
+      "Bukti daripada pelajaran",
+      "Mengapa ini penting",
+      "Soalan yang masih saya ada"
+    ],
+    "selfCheck": [
+      "Saya menerangkan Pusingan 1 dan satu kesilapannya.",
+      "Saya menerangkan apa yang berubah dalam Pusingan 2 dan Pusingan 3.",
+      "Saya menyatakan apa yang diperlukan oleh data latihan yang baik, atau apa yang tidak dapat ditunjukkan oleh ujian yang kecil."
+    ],
+    "example": "Dalam Pusingan 1, model itu belajar daripada dua contoh sahaja. Ia meneka empat daripada enam helai daun baharu dengan betul, kerana contohnya terlalu sedikit untuk dibandingkan. Ia menyebut sehelai daun muda yang kecil sebagai “sakit”. Dalam Pusingan 2, pasukan itu menambah empat contoh yang berbeza, dan model itu meneka kesemua enam dengan betul. Daun berjalur menunjukkan bahawa model membuat kesilapan apabila contohnya tertinggal sesuatu. Data latihan yang baik memerlukan contoh yang berkaitan bagi setiap jenis, dengan label yang betul. Walaupun 8 daripada 8 dalam ujian yang kecil, itu tidak membuktikan ia akan berfungsi untuk setiap tumbuhan baharu."
+  },
+  "speak": {
+    "partnerTask": "Beritahu rakan kamu bagaimana kamu akan melatih sebuah model untuk menyusun dua jenis benda, seperti buah yang masak dan buah yang belum masak. Rakan kamu bertanya, “Bagaimana kamu akan mengujinya?” Kemudian bertukar giliran.",
+    "independentTask": "Sebut dengan kuat tiga langkah: kumpul contoh, latih model, uji model. Berikan satu contoh bagi setiap langkah."
+  },
+  "watch": {
+    "why": "Video ini menunjukkan komputer belajar membezakan bentuk daripada contoh berlabel, idea yang sama dengan model daun.",
+    "beforeQuestion": "Bagaimanakah komputer boleh belajar membezakan dua bentuk?",
+    "afterQuestion": "Mengapakah sukar untuk menulis peraturan yang tepat bagi sesuatu bentuk, seperti huruf X?",
+    "summary": "Video ini menerangkan penglihatan komputer. Penglihatan komputer ialah cara komputer mencari makna dalam gambar. Komputer tidak melihat gambar seperti kamu. Ia melihat satu nombor bagi setiap titik warna yang sangat kecil. Menulis peraturan yang tepat bagi sesuatu bentuk, seperti huruf X, tidak berkesan, kerana orang melukis X dengan pelbagai cara. Dengan pembelajaran mesin, komputer belajar daripada banyak contoh berlabel. Ia seperti belajar dengan kad imbas. Komputer meneka, menyemak jawapan dan perlahan-lahan menjadi lebih baik. Gambar yang lebih sukar, seperti wajah, memerlukan model yang lebih besar. Video ini menunjukkan robot ladang yang membezakan tanaman daripada rumpai. Ia juga memberi amaran tentang satu masalah. Jika data latihan tertinggal sesetengah orang, alat itu boleh gagal berfungsi untuk mereka. Jadi data latihan mesti banyak dan pelbagai.",
+    "keyPoints": [
+      "Komputer melihat gambar sebagai nombor, satu bagi setiap titik yang sangat kecil.",
+      "Dengan pembelajaran mesin, komputer belajar daripada banyak contoh berlabel, seperti kad imbas.",
+      "Jika data latihan tertinggal sesetengah orang, alat itu boleh gagal berfungsi untuk mereka."
+    ],
+    "contentNote": "Kira-kira enam minit, lebih panjang daripada kebanyakan video Thinkerwell. Penutur bekerja untuk sebuah syarikat robot ladang dan sebuah syarikat kereta dan menamakan syarikat itu. Menjelang akhir video, ia mengatakan pengecaman wajah boleh gagal berfungsi untuk kumpulan orang yang tertinggal daripada data latihan; Pelajaran 8 dan 12 kembali kepada perkara ini. Tonton video ini dahulu; pelajar boleh membaca ringkasan bertulis sebagai ganti."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Satu perkara yang saya pelajari tentang data latihan ialah ..."
+      },
+      {
+        "text": "Sesuatu yang saya mahu ajar sebuah model untuk menyusunnya ialah ..."
+      }
+    ],
+    "completionMessage": "Kamu telah menamatkan Pelajaran 3. Kamu telah melatih sebuah model dengan contoh dan melihat mengapa contoh itu penting."
+  },
+  "visual": {
+    "alt": "Kad daun dari Kebun Sunrise: daun hijau, hijau muda, kuning, perang dan bertompok, dan dua helai daun panjang dengan jalur pucat, setiap satu dilabel sihat atau sakit."
+  },
+  "sources": [
+    {
+      "label": "Experience AI (Raspberry Pi Foundation): Lesson 3, Bias in, bias out (data latihan, data ujian, ketepatan)"
+    },
+    {
+      "label": "The Royal Society: Machine learning, the power and promise of computers that learn by example (pengenalan)"
+    },
+    {
+      "label": "Google for Developers, Machine Learning Crash Course: Datasets, generalization and overfitting (kualiti data dan label; dikemas kini Julai 2025)"
+    },
+    {
+      "label": "T. M. Cover dan P. E. Hart, IEEE Transactions on Information Theory, Januari 1967: Nearest neighbor pattern classification (disenaraikan dalam halaman penerbitan Thomas Cover, Stanford)"
+    },
+    {
+      "label": "Cornell University (2019): Professor's perceptron paved the way for AI, 60 years too soon (perceptron, yang ditunjukkan pada Julai 1958)"
+    },
+    {
+      "label": "DCMP: How Computer Vision Works (video Code.org, penerangan)"
+    }
+  ],
+  "educatorNotes": [
+    "Jika aktiviti ini tidak dapat dijalankan (cetakan, atau peranti yang tidak mempunyainya), gunakan jadual bukti: jadual itu menunjukkan dengan tepat apa yang dilakukan oleh aktiviti ini. Pelajar juga boleh memainkannya di atas kertas: seorang pelajar menjadi model dan hanya boleh menyalin label kad contoh yang paling serupa. Pusingan 3 menguji semula daun yang sama yang sudah dilihat oleh pasukan itu. Untuk semakan yang lebih adil, lukis dua helai daun baharu yang belum diuji oleh sesiapa (contohnya sehelai daun panjang berjalur dengan beberapa tompok perang) dan biarkan pelajar meramal dengan lapan kad contoh itu.",
+    "Model dalam aktiviti ini sengaja dibuat mudah: model jiran terdekat (k = 1) yang menyalin label contoh yang paling serupa. Ia satu kaedah berselia; kertas kerja Cover dan Hart pada tahun 1967 mengkaji peraturan ini, dan perceptron Rosenblatt, yang ditunjukkan pada Julai 1958, juga belajar daripada contoh berlabel. AI sebenar jauh lebih besar, dan jenis pembelajaran mesin yang lain tidak memerlukan label pada setiap contoh, tetapi perkara tentang contoh dan ujian tetap sama.",
+    "Jika seorang pelajar melabel sesuatu contoh secara berbeza daripada tukang kebun, model itu mengikut pelajar. Itu masa yang baik untuk bertanya: siapa yang menentukan label yang betul?"
+  ]
+}

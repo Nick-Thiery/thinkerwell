@@ -1,0 +1,257 @@
+{
+  "title": "AI dalam komuniti kamu",
+  "essentialQuestion": "Bagaimanakah AI boleh membantu sesebuah komuniti, dan apakah yang boleh menjadi tidak kena?",
+  "learningGoal": "Timbang manfaat dan risiko alat AI untuk terjemahan, pertanian dan kesihatan, dan terangkan mengapa manusia mesti terus memegang kawalan.",
+  "warmUp": {
+    "question": "Pada pendapat kamu, di manakah AI boleh membantu orang dalam sesebuah komuniti?",
+    "options": [
+      "Menanam makanan",
+      "Membaca bahasa lain",
+      "Kekal sihat",
+      "Tidak pasti"
+    ]
+  },
+  "evidence": {
+    "label": "Contoh rekaan yang dibuat untuk pelajaran ini.",
+    "question": "Bagaimanakah setiap alat membantu? Apakah yang boleh menjadi tidak kena? Siapakah yang menyemaknya?",
+    "cards": [
+      {
+        "title": "Tiga alat AI di bandar Sunvale",
+        "cases": [
+          {
+            "name": "Alat terjemahan di pusat komuniti",
+            "body": "Alat ini menukar notis ke dalam beberapa bahasa, jadi lebih ramai jiran boleh membacanya. Ia sangat bagus dalam bahasa yang banyak tulisannya dalam talian. Ia membuat lebih banyak kesilapan dalam bahasa yang sedikit tulisannya dalam talian. Seorang sukarelawan yang bertutur dalam bahasa itu menyemak notis yang penting."
+          },
+          {
+            "name": "Alat daun untuk petani",
+            "body": "Petani mengambil foto sehelai daun, dan alat ini meneka sama ada tumbuhan itu sakit. Ia berfungsi tanpa internet. Ia belajar daripada daun tiga jenis tanaman, jadi ia selalunya silap meneka bagi tanaman yang belum pernah dilihatnya. Apabila ia tidak pasti, kumpulan petani bertanya kepada pakar tumbuhan."
+          },
+          {
+            "name": "Pembantu foto mata di klinik",
+            "body": "Alat ini melihat foto mata dan menandakan foto yang mungkin menunjukkan masalah, supaya pekerja kesihatan yang sibuk tahu siapa yang perlu dilihat dahulu. Ia kebanyakannya belajar daripada foto orang di tempat lain, dan belum ada sesiapa yang mengujinya di Sunvale. Ia mungkin terlepas beberapa masalah di sana. Seorang pekerja kesihatan sentiasa menyemaknya dan bercakap dengan setiap pesakit."
+          }
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "title": "Membantu atau berisiko?",
+    "instructions": "Letakkan setiap ayat tentang alat Sunvale dalam satu kumpulan. Tiada markah. Selepas kamu meletakkan satu ayat, kamu boleh melihat satu jawapan yang mungkin dan sebabnya.",
+    "groups": [
+      {
+        "label": "Satu bantuan"
+      },
+      {
+        "label": "Satu risiko"
+      },
+      {
+        "label": "Kedua-duanya"
+      }
+    ],
+    "items": [
+      {
+        "text": "Alat terjemahan membolehkan lebih ramai jiran membaca notis.",
+        "feedback": "Lebih ramai orang boleh membaca berita penting dalam bahasa yang mereka tahu."
+      },
+      {
+        "text": "Alat terjemahan membuat lebih banyak kesilapan dalam sesetengah bahasa.",
+        "feedback": "Notis yang tidak betul boleh memberitahu orang perkara yang tidak betul."
+      },
+      {
+        "text": "Alat daun berfungsi tanpa internet.",
+        "feedback": "Petani boleh menggunakannya di ladang yang jauh daripada sebarang isyarat."
+      },
+      {
+        "text": "Seorang petani mempercayai tekaan yang tidak betul dan mencabut tumbuhan yang sihat.",
+        "feedback": "Alat itu meneka, dan tekaan boleh silap."
+      },
+      {
+        "text": "Pembantu mata menunjukkan kepada pekerja kesihatan yang sibuk siapa yang perlu dilihat dahulu.",
+        "feedback": "Pekerja kesihatan boleh sampai lebih cepat kepada orang yang paling memerlukan mereka."
+      },
+      {
+        "text": "Pembantu mata belajar daripada orang di tempat lain. Ia belum diuji di Sunvale.",
+        "feedback": "Selagi ia belum diuji dengan orang di Sunvale, tiada sesiapa tahu sejauh mana ia berfungsi di sana. Ia mungkin terlepas masalah bagi orang yang tidak serupa dengan orang yang menjadi sumber pembelajarannya."
+      },
+      {
+        "text": "Klinik mengumpul foto mata untuk menjadikan pembantu itu lebih baik.",
+        "feedback": "Mana-mana kumpulan boleh betul di sini. Foto tempatan boleh membantu menguji alat itu dan menjadikannya lebih adil. Tetapi foto kesihatan ialah maklumat peribadi, jadi orang mesti bersetuju dahulu, dan foto itu mesti disimpan dengan selamat."
+      },
+      {
+        "text": "Seorang sukarelawan menyemak notis penting yang telah diterjemahkan.",
+        "feedback": "Orang yang tahu bahasa itu dapat mengesan kesilapan alat itu."
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "AI boleh membantu apabila pembantu tidak ramai",
+        "text": "Di banyak tempat, tidak cukup pekerja kesihatan atau pakar lain untuk semua orang yang memerlukan mereka. Alat AI kadangkala boleh membantu, seperti di bandar rekaan Sunvale, tempat tiga alat membantu dengan notis, tanaman dan pemeriksaan mata. Ini pula satu contoh sebenar dari Singapura. Orang yang menghidap diabetes (kencing manis) perlu memeriksa mata dengan kerap, kerana penyakit itu boleh merosakkan mata mereka. Penyelidik di sana membina alat yang dipanggil SELENA+, yang melihat foto bahagian belakang mata dan menandakan foto yang patut dilihat oleh pakar mata. Pada tahun 2017, mereka melaporkan ujian dengan foto daripada pemeriksaan mata di Singapura dan daripada orang di negara lain. Alat itu menemui kebanyakan masalah yang ditemui oleh pemeriksa terlatih, tetapi penyelidik itu berkata ia masih perlu diuji di klinik sebenar.",
+        "simpler": "Banyak tempat tidak cukup pekerja kesihatan atau pakar lain. Alat AI kadangkala boleh membantu. Di Sunvale, bandar rekaan, tiga alat membantu dengan notis, tumbuhan dan mata. Di Singapura, penyelidik membina alat sebenar yang dipanggil SELENA+. Orang yang menghidap diabetes (kencing manis) perlu memeriksa mata. Penyakit itu boleh merosakkan mata mereka. SELENA+ menandakan foto mata yang patut dilihat oleh doktor mata. Pada tahun 2017, ia diuji dengan foto dari Singapura dan tempat lain. Ia menemui kebanyakan masalah yang ditemui oleh manusia. Ia masih perlu diuji di klinik sebenar."
+      },
+      {
+        "heading": "Setiap alat ada risikonya",
+        "text": "Alat yang membantu juga boleh menimbulkan masalah, jadi kita perlu menimbang manfaat dengan risikonya. Pembantu mata Sunvale kebanyakannya belajar daripada foto orang di tempat lain. Itu tidak menjadikannya alat yang lemah. Tetapi belum ada sesiapa yang mengujinya di Sunvale, jadi ia mungkin terlepas beberapa masalah di sana. Sesebuah alat mesti diuji dengan orang yang akan menggunakannya. Alat terjemahan membuat lebih banyak kesilapan dalam bahasa yang sedikit tulisannya dalam talian. Petani yang mempercayai tekaan yang tidak betul mungkin mencabut tumbuhan yang sihat. Foto kesihatan juga ialah maklumat peribadi, jadi foto itu mesti disimpan dengan selamat.",
+        "simpler": "Alat yang membantu juga boleh menimbulkan masalah. Jadi, timbang manfaat dan risikonya. Pembantu mata belajar daripada orang di tempat lain. Itu tidak menjadikannya buruk. Tetapi belum ada sesiapa yang mengujinya di Sunvale. Ia mungkin terlepas masalah di sana. Alat mesti diuji dengan orang yang dibantunya. Alat terjemahan membuat lebih banyak kesilapan dalam sesetengah bahasa. Petani mungkin percaya tekaan yang tidak betul. Foto kesihatan ialah maklumat peribadi dan mesti disimpan dengan selamat."
+      },
+      {
+        "heading": "Manusia mesti terus memegang kawalan",
+        "text": "Oleh sebab alat AI boleh silap, manusia perlu terus memegang kawalan atas keputusan penting. Di Sunvale, seorang sukarelawan yang bertutur dalam bahasa itu menyemak notis penting yang telah diterjemahkan. Seorang pakar tumbuhan membantu apabila alat daun tidak pasti, dan seorang pekerja kesihatan sentiasa menyemak pembantu mata. Penduduk sesebuah komuniti juga patut membantu membentuk alat yang mereka gunakan. Sebelum mempercayai mana-mana alat AI, tanya tiga soalan. Siapakah yang dibantunya? Siapakah yang mungkin tertinggal? Siapakah yang menyemak jawapannya? Untuk apa-apa soalan tentang kesihatan, sentiasa tanya pekerja kesihatan, bukan alat.",
+        "simpler": "Alat AI boleh silap. Jadi, manusia mesti terus memegang kawalan atas keputusan besar. Di Sunvale, seorang sukarelawan menyemak notis. Seorang pakar dan seorang pekerja kesihatan menyemak alat lain. Orang dalam sesebuah komuniti patut membantu membentuk alat mereka. Tanya tiga soalan. Siapakah yang dibantunya? Siapakah yang mungkin tertinggal? Siapakah yang menyemaknya? Untuk soalan kesihatan, tanya pekerja kesihatan."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "pakar",
+        "definition": "Orang yang tahu banyak tentang satu perkara.",
+        "example": "Seorang pakar tumbuhan membantu petani di Sunvale."
+      },
+      {
+        "word": "menterjemah",
+        "forms": [
+          "terjemahan",
+          "diterjemahkan",
+          "menterjemahkan"
+        ],
+        "definition": "Menukar perkataan daripada satu bahasa kepada bahasa lain.",
+        "example": "Alat itu menterjemah notis di pusat komuniti."
+      },
+      {
+        "word": "manfaat",
+        "definition": "Perkara baik yang membantu seseorang.",
+        "example": "Satu manfaat alat daun ialah ia berfungsi tanpa internet."
+      },
+      {
+        "word": "risiko",
+        "forms": [
+          "risikonya"
+        ],
+        "definition": "Kemungkinan sesuatu yang buruk boleh berlaku.",
+        "example": "Satu risikonya ialah petani mempercayai tekaan yang tidak betul."
+      },
+      {
+        "word": "komuniti",
+        "definition": "Sekumpulan orang yang tinggal di tempat yang sama atau berkongsi sesuatu.",
+        "example": "Penduduk Sunvale ialah satu komuniti."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Mengapakah pembantu mata mungkin terlepas masalah di Sunvale?",
+        "options": [
+          {
+            "text": "Ia belum diuji dengan orang di sana",
+            "feedback": "Betul. Ia kebanyakannya belajar daripada foto orang di tempat lain. Itu mungkin tidak mengapa, tetapi hanya ujian di Sunvale yang dapat menunjukkannya."
+          },
+          {
+            "text": "Sunvale langsung tiada masalah mata",
+            "feedback": "Belum tepat. Masalah mata berlaku di mana-mana. Lihat apa yang menjadi sumber pembelajaran alat itu."
+          },
+          {
+            "text": "Pekerja kesihatan terlupa menggunakannya",
+            "feedback": "Belum tepat. Mereka menggunakannya dan menyemaknya. Baca petikan kedua tentang ujian."
+          }
+        ]
+      },
+      {
+        "question": "Apakah yang menjadikan alat terjemahan lebih selamat untuk digunakan?",
+        "options": [
+          {
+            "text": "Menggunakannya untuk setiap notis",
+            "feedback": "Belum tepat. Lebih kerap menggunakannya tidak membetulkan kesilapannya. Baca petikan ketiga."
+          },
+          {
+            "text": "Menghalang orang daripada membaca notis",
+            "feedback": "Belum tepat. Alat itu ada untuk membantu orang membaca. Baca petikan ketiga."
+          },
+          {
+            "text": "Seorang sukarelawan menyemak notis itu",
+            "feedback": "Betul. Orang yang bertutur dalam bahasa itu dapat mengesan kesilapan alat itu."
+          }
+        ]
+      },
+      {
+        "question": "Alat Sunvale yang manakah akan membantu komuniti yang kamu kenali? Apakah yang membimbangkan kamu tentangnya?",
+        "placeholder": "___ akan membantu kerana ... Saya bimbang bahawa ..."
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Pilih satu alat Sunvale. Terangkan satu cara ia membantu, satu risiko, dan siapa yang patut menyemaknya.",
+    "sentenceStarters": [
+      "Saya memilih ...",
+      "Ia membantu kerana ...",
+      "Satu risikonya ialah ...",
+      "Perkara ini boleh berlaku kerana ...",
+      "___ patut menyemaknya, kerana ..."
+    ],
+    "planningBoxes": [
+      "Idea utama saya",
+      "Bukti daripada pelajaran",
+      "Mengapa ini penting",
+      "Soalan yang masih saya ada"
+    ],
+    "selfCheck": [
+      "Saya menamakan satu alat dari Sunvale.",
+      "Saya memberi satu manfaat dan satu risiko.",
+      "Saya menyatakan siapa yang patut menyemaknya."
+    ],
+    "example": "Saya memilih alat daun. Ia membantu kerana petani boleh tahu dengan cepat sama ada tumbuhan mungkin sakit, walaupun tanpa internet. Satu risikonya ialah ia memberi tekaan yang tidak betul bagi tanaman yang belum pernah dilihatnya. Perkara ini boleh berlaku kerana data latihannya hanya ada daun daripada tiga jenis tanaman. Petani yang mempercayai tekaan yang tidak betul mungkin mencabut tumbuhan yang sihat. Seorang pakar tumbuhan patut menyemaknya apabila alat itu tidak pasti, kerana manusia perlu terus memegang kawalan."
+  },
+  "speak": {
+    "partnerTask": "Rakan kamu menamakan satu alat Sunvale. Kamu sebut satu cara ia membantu dan satu risiko. Kemudian bertukar giliran.",
+    "independentTask": "Sebut dengan kuat mengapa manusia patut sentiasa menyemak alat AI yang membantu dalam hal kesihatan."
+  },
+  "watch": {
+    "why": "Orang yang membina dan mengkaji AI bercakap tentang cara AI boleh membantu semua orang, atau meninggalkan sesetengah orang.",
+    "beforeQuestion": "Pada pendapat kamu, siapakah yang patut menentukan cara sesebuah alat AI digunakan dalam sesebuah komuniti?",
+    "afterQuestion": "Mengapakah penting siapa yang membina sesebuah alat AI?",
+    "summary": "Dalam video ini, orang yang membina dan mengkaji AI bercakap tentang keadilan. Alat AI belajar daripada data, dan alat ini sudah digunakan dalam banyak bahagian kehidupan. Penceramah berkata AI boleh membantu lebih ramai orang mendapat apa yang mereka perlukan. Tetapi AI juga boleh menjadi tidak adil. Jika data, atau orang yang membina sesebuah alat, meninggalkan sesetengah kumpulan, alat itu boleh berfungsi lebih teruk bagi kumpulan itu atau melayan mereka secara tidak adil. Ini dipanggil bias algoritma. Penceramah berkata orang daripada pelbagai latar belakang patut membantu membina AI. Mereka juga berkata manusia mesti terus menyemak alat AI, supaya alat itu membantu semua orang dan tidak membahayakan orang yang ditinggalkannya.",
+    "keyPoints": [
+      "AI boleh membantu lebih ramai orang, atau boleh melayan sesetengah orang secara tidak adil.",
+      "Hasil yang tidak adil selalunya datang daripada data atau pasukan yang meninggalkan sesetengah orang.",
+      "Orang daripada pelbagai latar belakang patut membantu membina dan menyemak AI."
+    ],
+    "contentNote": "Kira-kira 3 minit 20 saat. Penceramah menyebut nama syarikat AI, syarikat kereta, universiti dan kumpulan tempat mereka bekerja. Ringkasan ditulis daripada penerangan DCMP tentang video ini dan senarai penceramahnya, bukan dengan menonton video. Pratonton dahulu; pelajar boleh membaca ringkasan bertulis sebagai ganti."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Sebelum sesebuah komuniti menggunakan alat AI, orang patut bertanya ..."
+      },
+      {
+        "text": "Satu alat AI yang boleh membantu komuniti yang saya kenali ialah ..."
+      }
+    ],
+    "completionMessage": "Kamu telah menamatkan Pelajaran 10. Kamu menimbang manfaat dan risiko alat AI dalam sesebuah komuniti."
+  },
+  "visual": {
+    "alt": "Sebuah neraca yang menimbang manfaat dan risiko tiga alat AI, dipegang seimbang oleh seseorang yang berlabel “Manusia terus memegang kawalan”."
+  },
+  "sources": [
+    {
+      "label": "Pertubuhan Kesihatan Sedunia (WHO, 2021): WHO issues first global report on AI in health and six guiding principles (WHO mengeluarkan laporan global pertama tentang AI dalam kesihatan dan enam prinsip panduan)"
+    },
+    {
+      "label": "IITA (2018): African farmers get new help against cassava diseases, Nuru their artificially intelligent assistant (petani Afrika mendapat bantuan baharu melawan penyakit ubi kayu: Nuru, pembantu kecerdasan buatan mereka)"
+    },
+    {
+      "label": "Stanford Report (2025): How AI is leaving non-English speakers behind (cara AI meninggalkan penutur bukan bahasa Inggeris)"
+    },
+    {
+      "label": "Pusat Mata Kebangsaan Singapura (SNEC): kumpulan penyelidikan AI dan kesihatan digital (SELENA+, dibangunkan dengan kira-kira 500,000 foto mata dan diuji dengan 10 set foto dari luar)"
+    },
+    {
+      "label": "Ting dan rakan-rakan (JAMA, Disember 2017): Development and validation of a deep learning system for diabetic retinopathy and related eye diseases (pembangunan dan pengesahan sistem pembelajaran mendalam untuk retinopati diabetik dan penyakit mata berkaitan; abstrak, rekod Duke Scholars)"
+    }
+  ],
+  "sensitiveNotes": [
+    "Kesihatan: pembantu mata Sunvale ialah rekaan; SELENA+ adalah sebenar, dan pelajaran ini hanya menerangkan cara ia dibina dan diuji. Jangan sekali-kali memberi atau membincangkan nasihat perubatan atau diagnosis; pelajar yang ada soalan kesihatan patut bertanya kepada pekerja kesihatan. Jangan tanya pelajar tentang kesihatan mereka sendiri atau kesihatan orang lain, termasuk diabetes dalam keluarga mereka.",
+    "Jangan tanya bahasa yang dituturkan oleh pelajar di rumah, atau bahasa yang diterjemahkan dengan tidak betul oleh sesuatu alat untuk mereka. Biarkan mereka menyebutnya jika mereka mahu."
+  ],
+  "educatorNotes": [
+    "Alat-alat Sunvale ialah rekaan dan kekal dilabel; SELENA+ adalah sebenar dan hanya muncul dalam bacaan, tidak sekali-kali dalam bukti atau aktiviti rekaan. Apa yang dibuktikan oleh sumber: halaman SNEC menyatakan bahawa SELENA+ dibangunkan dengan kira-kira 500,000 foto retina dan disemak dengan 10 set foto dari luar (kamera, kumpulan etnik dan umur yang berbeza), serta diluluskan oleh pengawal selia produk kesihatan Singapura dan mempunyai tanda CE. Kajian JAMA pada tahun 2017 mengujinya dengan foto 14,880 pesakit daripada program saringan mata diabetik kebangsaan Singapura dan dengan 10 kumpulan lain; ia mengesan penyakit mata yang perlu dirujuk dengan sensitiviti dan spesifisiti yang tinggi berbanding pemeriksa terlatih, dan menyatakan bahawa lebih banyak penyelidikan diperlukan untuk penggunaan dalam penjagaan kesihatan. Kajian kes pembangunnya sendiri pada tahun 2024 (Gunasekeran dan rakan-rakan, NEJM AI) menerangkan cara ia dimasukkan ke dalam program itu; pelajaran ini tidak mendakwa tentang pelaksanaan atau hasil pesakit, kerana tiada penilaian bebas yang disemak. Projek sebenar lain, untuk guru sahaja: aplikasi telefon luar talian untuk penyakit ubi kayu oleh IITA dan Penn State (2018); laporan WHO pada tahun 2021 tentang AI untuk kesihatan; semakan manusia oleh CLEAR Global terhadap teknologi bahasa.",
+    "Versi aktiviti di atas kertas: tulis lapan ayat itu pada kad dan isih ke dalam Bantuan, Risiko dan Kedua-duanya. Aktiviti ini tiada markah; hargai sebab yang diberikan."
+  ]
+}

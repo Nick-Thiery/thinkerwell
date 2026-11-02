@@ -15,12 +15,13 @@ import '../../app/lazy/teacherPages';
 import words from 'virtual:thinkerwell/course-messages/southeast-asia-through-time';
 import { createPreviewCourse } from '../kit';
 import { courseStylesheetsReady } from '../kit/stylesheet';
-import { COURSE_ID, COURSE_PATH, COURSE_PRINT_PATH, southeastAsia } from './content';
+import { COURSE_ID, COURSE_PATH, COURSE_PRINT_PATH, southeastAsia, southeastAsiaIn } from './content';
 
 export const course = createPreviewCourse(
   {
     id: COURSE_ID,
     content: southeastAsia,
+    contentFor: southeastAsiaIn,
     words,
     wordKeys: {
       bannerBody: 'southeastAsia.banner.body',

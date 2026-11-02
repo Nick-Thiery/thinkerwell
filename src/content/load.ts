@@ -270,6 +270,8 @@ export interface EnglishFiles {
   course: unknown;
   lessons: Record<string, unknown>;
   quizzes: Record<string, unknown>;
+  /** The English pictures that exist (a preview course's may not be drawn yet); every one needs its translated copy. All of them when not given. */
+  visuals?: ReadonlySet<string>;
 }
 
 const baseName = (path: string) => path.slice(path.lastIndexOf('/') + 1);
@@ -282,9 +284,11 @@ const baseName = (path: string) => path.slice(path.lastIndexOf('/') + 1);
  * English lesson picture has its translated copy. Throws a ContentError
  * listing every problem. Runs at build time (vite.config.ts) and in tests.
  */
-export function checkTranslation(code: string, english: EnglishFiles, translation: TranslationFiles): void {
+export function checkTranslation(code: string, english: EnglishFiles, translation: TranslationFiles, courseId: string = DEFAULT_COURSE_ID): void {
   const problems: string[] = [];
-  const where = (kind: string, name: string) => `content/${code}/${kind}${name}`;
+  const course = COURSES.find((c) => c.id === courseId);
+  const base = course?.dir ? `content/${course.dir}/${code}/` : `content/${code}/`;
+  const where = (kind: string, name: string) => `${base}${kind}${name}`;
   const compare = (label: string, en: unknown, tr: unknown) => {
     for (const problem of translationProblems(en, tr)) problems.push(`${label}: ${problem}`);
     for (const path of missingTranslations(en, tr)) problems.push(`${label}: ${path}: not translated`);
@@ -301,7 +305,9 @@ export function checkTranslation(code: string, english: EnglishFiles, translatio
     else compare(where('lessons/', name), raw, lessons.get(name));
     mergedLessons[path] = applyTranslation(raw, lessons.get(name));
     const src = (raw as { visual?: { src?: string } | null }).visual?.src;
-    if (src && !translation.visuals.has(src)) problems.push(`content/${code}/${src} is missing (a copy of content/${src} with its words translated).`);
+    if (src && (english.visuals?.has(src) ?? true) && !translation.visuals.has(src)) {
+      problems.push(`${base}${src} is missing (a copy of the English picture with its words translated).`);
+    }
   }
   const mergedQuizzes: Record<string, unknown> = {};
   for (const [path, raw] of Object.entries(english.quizzes)) {
@@ -316,8 +322,14 @@ export function checkTranslation(code: string, english: EnglishFiles, translatio
   if (problems.length > 0) throw new ContentError(problems.join('\n'));
 
   try {
-    const { lessons: loaded } = loadContent(applyTranslation(english.course, translation.course), mergedLessons);
-    loadQuizzes(mergedQuizzes, loaded);
+    const mergedCourse = applyTranslation(english.course, translation.course);
+    if (courseId === DEFAULT_COURSE_ID) {
+      const { lessons: loaded } = loadContent(mergedCourse, mergedLessons);
+      loadQuizzes(mergedQuizzes, loaded);
+    } else {
+      const { lessons: loaded } = loadCourse(courseId, mergedCourse, mergedLessons, { picturesRequired: false });
+      if (Object.keys(mergedQuizzes).length > 0) loadQuizzes(mergedQuizzes, loaded, courseId);
+    }
   } catch (error) {
     throw new ContentError(`The ${code} translation, laid over the English:\n${error instanceof Error ? error.message : String(error)}`);
   }

@@ -5,8 +5,9 @@
  * lessons load only on a device that has turned the preview on.
  */
 import courseJson from '../../../content/courses/digital-world/course.json';
-import { createCourseContent, type SectionLook } from '../../content/courseContent';
+import { createCourseContent, type LessonContent, type SectionLook } from '../../content/courseContent';
 import type { DigitalWorldCourseFile, DigitalWorldLesson, DigitalWorldSectionId } from '../../content/schema';
+import { translatedContents } from '../kit/translatedContent';
 
 export const COURSE_ID = 'digital-world';
 /** The course map. */
@@ -44,12 +45,36 @@ export const SECTION_LOOKS: Readonly<Record<DigitalWorldSectionId, SectionLook>>
 
 const coursePath = (sectionId?: string) => (sectionId ? `${COURSE_PATH}#${sectionId}` : COURSE_PATH);
 
-export const digitalWorld = createCourseContent(courseJson as unknown as DigitalWorldCourseFile, Object.values(lessonModules), {
+const options = {
   courseId: COURSE_ID,
-  pictureUrls,
   // No section checks or certificates are drafted yet.
   hasSectionChecks: false,
-  sectionLook: (sectionId) => SECTION_LOOKS[sectionId as DigitalWorldSectionId] ?? SECTION_LOOKS['thinking-machines'],
+  sectionLook: (sectionId: string) => SECTION_LOOKS[sectionId as DigitalWorldSectionId] ?? SECTION_LOOKS['thinking-machines'],
   // No Educators page for a preview course: a teacher guide goes back to the course map.
   coursePath,
+};
+
+export const digitalWorld = createCourseContent(courseJson as unknown as DigitalWorldCourseFile, Object.values(lessonModules), {
+  ...options,
+  pictureUrls,
 });
+
+/**
+ * The course in Indonesian and Malay (content/courses/digital-world/<code>/:
+ * every lesson and its activity, drafted by AI and flagged for native-speaker
+ * review, as Our World's are).
+ */
+const byLanguage = translatedContents(
+  {
+    course: courseJson as unknown as DigitalWorldCourseFile,
+    lessons: lessonModules,
+    pictureUrls,
+    translations: import.meta.glob('../../../content/courses/digital-world/*/{course.json,lessons/*.json}', { eager: true, import: 'default' }),
+    translatedPictures: {},
+  },
+  ['id', 'ms'],
+  options,
+);
+
+/** The course in a language its lessons are translated into, or undefined (English). */
+export const digitalWorldIn = (code: string): LessonContent | undefined => byLanguage.get(code);

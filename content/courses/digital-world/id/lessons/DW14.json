@@ -1,0 +1,290 @@
+{
+  "title": "Memeriksa klaim sebelum membagikannya",
+  "essentialQuestion": "Bagaimana kamu bisa tahu apakah sebuah cerita itu benar sebelum kamu membagikannya?",
+  "learningGoal": "Memakai cara membaca lateral untuk memeriksa sebuah berita rekaan dengan sumber-sumber lain, dan memutuskan apakah berita itu perlu dibagikan.",
+  "warmUp": {
+    "question": "Seorang teman mengirimimu cerita yang mengejutkan. Apa yang pertama kali kamu lakukan?",
+    "options": [
+      "Membagikannya",
+      "Memeriksanya",
+      "Mengabaikannya",
+      "Tidak yakin"
+    ]
+  },
+  "evidence": {
+    "label": "Contoh fiksi yang dibuat untuk pelajaran ini.",
+    "question": "Apa kata unggahan itu? Apa kata sumber-sumber lain?",
+    "cards": [
+      {
+        "title": "Sebuah unggahan yang dibagikan di Brightwater",
+        "cases": [
+          {
+            "name": "Brightwater Daily Truth",
+            "body": "“BERITA BESAR. Jembatan Brightwater ditutup SELAMA SETAHUN PENUH mulai besok. Bagikan ini sebelum mereka menghapusnya.” Tidak ada nama, dan tidak ada tautan ke dewan kota."
+          }
+        ]
+      },
+      {
+        "title": "Apa kata sumber-sumber lain",
+        "columns": [
+          "Sumber",
+          "Siapa di baliknya",
+          "Apa katanya"
+        ],
+        "rows": [
+          [
+            "Tentang Brightwater Daily Truth",
+            "Halaman itu tidak mengatakan siapa yang mengelolanya.",
+            "Halaman itu mengunggah cerita yang mengejutkan setiap hari. Banyak di antaranya ternyata salah."
+          ],
+          [
+            "Pengumuman dewan kota",
+            "Lembaga yang mengurus kota dan merawat jembatan.",
+            "Jembatan ditutup untuk perbaikan pada tanggal 3 dan 4 Mei. Jembatan dibuka lagi pada tanggal 5 Mei."
+          ],
+          [
+            "Berita Radio Brightwater",
+            "Tim berita setempat. Tim ini menyebutkan nama para wartawannya.",
+            "Dewan kota memberi tahu kami: para pekerja akan memperbaiki jembatan pada tanggal 3 dan 4 Mei. Naiklah kapal penyeberangan pada dua hari itu."
+          ],
+          [
+            "Cek Fakta Brightwater",
+            "Kelompok yang memeriksa cerita-cerita yang dibagikan orang.",
+            "Salah. Kami bertanya kepada dewan kota. Jembatan ditutup selama dua hari, bukan setahun."
+          ],
+          [
+            "Halaman obrolan warga",
+            "Halaman tempat siapa saja bisa mengunggah.",
+            "Kata-katanya sama dengan unggahan Daily Truth, disalin kata demi kata. Tidak ada nama, tidak ada tautan."
+          ]
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "title": "Membaca ke samping",
+    "instructions": "Ini sebuah unggahan tentang jembatan Brightwater. Sebelum kamu memutuskan, buka sumber-sumber lain satu per satu, seperti pemeriksa fakta yang membuka halaman-halaman baru. Lalu jawab pertanyaannya. Kamu bisa membukanya dengan urutan apa saja.",
+    "claim": {
+      "from": "Brightwater Daily Truth",
+      "text": "BERITA BESAR. Jembatan Brightwater ditutup SELAMA SETAHUN PENUH mulai besok. Bagikan ini sebelum mereka menghapusnya."
+    },
+    "askFirst": [
+      "Siapa di balik informasi ini?",
+      "Apa buktinya?",
+      "Apa kata sumber-sumber lain?"
+    ],
+    "sources": [
+      {
+        "name": "Tentang Brightwater Daily Truth",
+        "who": "Halaman itu tidak mengatakan siapa yang mengelolanya.",
+        "says": "Halaman itu mengunggah cerita yang mengejutkan setiap hari. Banyak di antaranya ternyata salah."
+      },
+      {
+        "name": "Pengumuman dewan kota",
+        "who": "Lembaga yang mengurus kota dan merawat jembatan.",
+        "says": "Jembatan ditutup untuk perbaikan pada tanggal 3 dan 4 Mei. Jembatan dibuka lagi pada tanggal 5 Mei."
+      },
+      {
+        "name": "Berita Radio Brightwater",
+        "who": "Tim berita setempat. Tim ini menyebutkan nama para wartawannya.",
+        "says": "Dewan kota memberi tahu kami: para pekerja akan memperbaiki jembatan pada tanggal 3 dan 4 Mei. Naiklah kapal penyeberangan pada dua hari itu."
+      },
+      {
+        "name": "Cek Fakta Brightwater",
+        "who": "Kelompok yang memeriksa cerita-cerita yang dibagikan orang.",
+        "says": "Salah. Kami bertanya kepada dewan kota. Jembatan ditutup selama dua hari, bukan setahun."
+      },
+      {
+        "name": "Halaman obrolan warga",
+        "who": "Halaman tempat siapa saja bisa mengunggah.",
+        "says": "Kata-katanya sama dengan unggahan Daily Truth, disalin kata demi kata. Tidak ada nama, tidak ada tautan."
+      }
+    ],
+    "question": {
+      "question": "Apa kata sumber-sumber lain tentang jembatan itu?",
+      "options": [
+        {
+          "text": "Jembatan ditutup selama setahun penuh",
+          "feedback": "Belum tepat. Hanya unggahan pertama yang mengatakan begitu, dan halaman obrolan hanya menyalinnya. Buka pengumuman dewan kota dan lihat apa katanya."
+        },
+        {
+          "text": "Jembatan ditutup dua hari, bukan setahun",
+          "feedback": "Benar. Dewan kota merawat jembatan itu, jadi dewan kota tahu tanggalnya. Radio dan para pemeriksa fakta bertanya kepada dewan kota. Halaman obrolan hanya menyalin unggahan itu."
+        },
+        {
+          "text": "Belum ada yang tahu",
+          "feedback": "Belum tepat. Dewan kota merawat jembatan itu, dan dewan kota memberi tanggalnya. Radio dan para pemeriksa fakta memberi tanggal yang sama."
+        }
+      ]
+    }
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Ajukan tiga pertanyaan sebelum membagikan",
+        "text": "Pesan bisa menyebar dengan sangat cepat, dan cerita yang mengejutkan sering menyebar paling cepat. Di Brightwater, sebuah halaman bernama Brightwater Daily Truth mengunggah bahwa jembatan kota akan ditutup selama setahun penuh. Halaman itu menulis, “Bagikan ini sebelum mereka menghapusnya.” Kata-kata seperti ini mendorong orang untuk terburu-buru, dan terburu-buru membuat kita mudah membagikan sesuatu yang salah. Sebelum membagikan, ajukan tiga pertanyaan. Siapa di balik informasi ini? Apa buktinya? Apa kata sumber-sumber lain? Unggahan Brightwater itu tidak memberi nama, tidak memberi bukti, dan tidak memberi tautan ke dewan kota, yang merawat jembatan itu.",
+        "simpler": "Pesan menyebar dengan cepat. Cerita yang mengejutkan menyebar paling cepat. Sebuah halaman di Brightwater mengatakan jembatan akan ditutup selama setahun. Halaman itu menulis, “Bagikan ini sebelum mereka menghapusnya.” Kata-kata seperti ini membuatmu terburu-buru. Lalu kamu bisa membagikan sesuatu yang salah. Pertama, ajukan tiga pertanyaan. Siapa di baliknya? Apa buktinya? Apa kata sumber lain? Unggahan Brightwater itu tidak punya nama dan tidak punya bukti."
+      },
+      {
+        "heading": "Membaca ke samping, seperti pemeriksa fakta",
+        "text": "Pada tahun 2017, para peneliti di Universitas Stanford di Amerika Serikat mengamati 45 orang menilai situs web sungguhan tentang masalah sosial: 10 sejarawan yang mengajar di universitas, 10 pemeriksa fakta profesional dan 25 mahasiswa. Sebagian besar sejarawan dan mahasiswa tetap berada di satu halaman dan membacanya dari atas ke bawah. Halaman yang tampak resmi sering membuat mereka tertipu. Para pemeriksa fakta cepat meninggalkan halaman itu dan membuka sumber-sumber lain untuk mencari tahu siapa di baliknya. Cara ini disebut membaca lateral, artinya membaca ke samping di banyak sumber, bukan membaca ke bawah di satu halaman. Para pemeriksa fakta mendapat jawaban yang lebih baik dalam waktu yang jauh lebih singkat.",
+        "simpler": "Pada tahun 2017, para peneliti di Universitas Stanford, Amerika Serikat, mengadakan penelitian. Mereka mengamati 45 orang memeriksa situs web sungguhan. Ada 10 sejarawan yang mengajar di universitas. Ada 10 pemeriksa fakta dan 25 mahasiswa. Sebagian besar sejarawan dan mahasiswa membaca satu halaman, dari atas ke bawah. Halaman yang tampak resmi sering menipu mereka. Para pemeriksa fakta cepat meninggalkan halaman itu. Mereka membuka sumber lain untuk mencari tahu siapa pembuatnya. Ini disebut membaca lateral. Artinya membaca ke samping. Para pemeriksa fakta mendapat jawaban yang lebih baik, lebih cepat."
+      },
+      {
+        "heading": "Putuskan apa yang perlu dibagikan",
+        "text": "Kesamaan antarsumber hanya membantu kalau setiap sumber punya buktinya sendiri. Dewan kota merawat jembatan itu, jadi dewan kota tahu tanggalnya: dua hari perbaikan, bukan setahun penuh. Radio dan para pemeriksa fakta bertanya kepada dewan kota dan mengatakan hal yang sama. Halaman obrolan yang menyalin unggahan pertama kata demi kata sama sekali tidak menambah bukti. Jadi, unggahan pertama itu salah. Jangan bagikan unggahan itu; bagikan pengumuman dewan kota saja. Kadang kamu tidak bisa memeriksa sebuah klaim, misalnya karena tidak ada internet. Kalau begitu, tanyakan kepada guru atau tunggu dulu. Berita bisa berubah, jadi periksa lagi nanti, misalnya kalau perbaikannya ternyata lebih lama.",
+        "simpler": "Apakah sumber-sumber setuju? Itu hanya membantu kalau mereka punya bukti sendiri. Dewan kota merawat jembatan itu. Dewan kota bilang dua hari. Radio dan para pemeriksa fakta bertanya kepada dewan kota. Sebuah halaman obrolan menyalin unggahan itu. Menyalin tidak menambah bukti. Jadi, unggahan pertama itu salah. Jangan bagikan. Bagikan pengumuman dewan kota saja. Kadang kamu tidak bisa memeriksa sebuah klaim, misalnya tanpa internet. Tanyakan kepada guru, atau tunggu. Berita bisa berubah. Jadi, periksa lagi nanti."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "klaim",
+        "definition": "Sesuatu yang dikatakan seseorang sebagai kebenaran. Hal itu bisa benar atau salah.",
+        "example": "“Jembatan ditutup selama setahun penuh” adalah sebuah klaim."
+      },
+      {
+        "word": "bukti",
+        "forms": [
+          "buktinya"
+        ],
+        "definition": "Fakta atau tanda yang menunjukkan apakah sesuatu itu benar.",
+        "example": "Pengumuman dewan kota memberi tanggal perbaikannya. Itu adalah bukti."
+      },
+      {
+        "word": "sumber",
+        "forms": [
+          "sumber-sumber"
+        ],
+        "definition": "Orang atau tempat asal sebuah informasi.",
+        "example": "Dewan kota adalah sumber terbaik tentang jembatan itu, karena dewan kota yang merawatnya."
+      },
+      {
+        "word": "pemeriksa fakta",
+        "definition": "Orang yang pekerjaannya mencari tahu apakah klaim-klaim itu benar.",
+        "example": "Para pemeriksa fakta mengatakan unggahan tentang jembatan itu salah."
+      },
+      {
+        "word": "membaca lateral",
+        "definition": "Memeriksa sebuah halaman dengan melihat apa kata sumber-sumber lain tentang halaman itu.",
+        "example": "Membaca lateral menunjukkan bahwa jembatan itu ditutup selama dua hari."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Apa yang dilakukan para pemeriksa fakta dengan cara yang berbeda?",
+        "options": [
+          {
+            "text": "Membaca setiap kata di halaman itu pelan-pelan",
+            "feedback": "Belum tepat. Itu yang dilakukan sebagian besar sejarawan dan mahasiswa. Baca lagi bagian kedua."
+          },
+          {
+            "text": "Membuka sumber-sumber lain untuk memeriksa",
+            "feedback": "Benar. Mereka meninggalkan halaman itu dan membaca ke samping di sumber-sumber lain. Ini namanya membaca lateral."
+          },
+          {
+            "text": "Melihat gambar-gambarnya dengan teliti",
+            "feedback": "Belum tepat. Halaman yang salah bisa punya gambar yang bagus. Baca tentang apa yang dilakukan para pemeriksa fakta."
+          }
+        ]
+      },
+      {
+        "question": "Dua halaman mengatakan jembatan ditutup selama setahun, tetapi yang satu menyalin yang lain. Apakah itu membuatnya lebih mungkin benar?",
+        "options": [
+          {
+            "text": "Tidak, karena menyalin tidak menambah bukti",
+            "feedback": "Benar. Kesamaan hanya membantu kalau setiap sumber punya buktinya sendiri, seperti dewan kota."
+          },
+          {
+            "text": "Ya, karena dua halaman yang berbeda mengatakannya",
+            "feedback": "Belum tepat. Halaman obrolan hanya menyalin unggahan itu, jadi tidak menambah bukti. Baca lagi bagian ketiga."
+          },
+          {
+            "text": "Ya, karena unggahan itu banyak dibagikan",
+            "feedback": "Belum tepat. Banyak dibagikan tidak membuat sebuah klaim menjadi benar. Baca lagi bagian ketiga."
+          }
+        ]
+      },
+      {
+        "question": "Pikirkan sebuah pesan yang mengejutkan dari pelajaran ini, atau pesan yang pernah kamu dengar. Kepada siapa kamu bisa bertanya untuk memeriksanya?",
+        "placeholder": "Aku bisa bertanya kepada ___. Aku juga bisa melihat ___."
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Seorang teman ingin membagikan unggahan tentang jembatan Brightwater. Jelaskan bagaimana kamu memeriksanya, dan apa yang akan kamu katakan kepada temanmu.",
+    "sentenceStarters": [
+      "Pertama, aku bertanya ...",
+      "Unggahan itu tidak punya ...",
+      "Lalu aku membaca ke samping. ___ mengatakan ...",
+      "Bukti terbaik berasal dari ___ karena ...",
+      "Aku akan mengatakan kepada temanku ..."
+    ],
+    "planningBoxes": [
+      "Ide utamaku",
+      "Bukti dari pelajaran",
+      "Mengapa ini penting",
+      "Pertanyaan yang masih aku punya"
+    ],
+    "selfCheck": [
+      "Aku memakai setidaknya satu dari tiga pertanyaan itu.",
+      "Aku mengatakan sumber mana yang punya bukti terbaik, dan mengapa.",
+      "Aku mengatakan apa yang sebaiknya dilakukan temanku."
+    ],
+    "example": "Pertama, aku bertanya siapa di balik unggahan itu. Unggahan itu tidak punya nama, tidak punya bukti dan tidak punya tautan ke dewan kota. Lalu aku membaca ke samping. Pengumuman dewan kota mengatakan jembatan ditutup pada tanggal 3 dan 4 Mei untuk perbaikan. Bukti terbaik berasal dari dewan kota karena dewan kota yang merawat jembatan itu. Radio dan para pemeriksa fakta bertanya kepada dewan kota. Halaman obrolan hanya menyalin unggahan itu. Aku akan mengatakan kepada temanku untuk tidak membagikannya, dan membagikan pengumuman dewan kota saja."
+  },
+  "speak": {
+    "partnerTask": "Temanmu membacakan unggahan Brightwater dengan lantang. Kamu mengajukan tiga pertanyaan itu, dan temanmu menjawab dari pelajaran. Lalu bergantian.",
+    "independentTask": "Ucapkan dengan lantang apa arti membaca lateral, dan mengapa sepuluh halaman yang saling menyalin bukanlah sepuluh bukti."
+  },
+  "watch": {
+    "why": "Video ini berasal dari kelompok yang meneliti para pemeriksa fakta dalam pelajaran ini. Video ini menjelaskan membaca lateral.",
+    "beforeQuestion": "Bagaimana kamu memutuskan apakah sebuah situs web bisa dipercaya?",
+    "afterQuestion": "Apa bedanya membaca ke samping dengan membaca ke bawah di satu halaman?",
+    "summary": "Video pendek ini menjelaskan membaca lateral. Ini adalah cara memeriksa informasi yang dipakai oleh pemeriksa fakta profesional. Banyak orang memeriksa sebuah situs web dengan membaca halamannya ke bawah. Mereka melihat tampilannya dan apa yang dikatakan halaman itu tentang dirinya sendiri. Tetapi sebuah halaman bisa terlihat serius dan tetap memberi informasi yang salah atau berat sebelah. Pemeriksa fakta melakukan hal yang berbeda. Setelah melihat sekilas, mereka meninggalkan halaman itu. Mereka membuka halaman-halaman baru dan mencari apa kata sumber-sumber lain tentang halaman itu dan tentang siapa di baliknya. Dengan membaca lebih sedikit dari halaman itu dan lebih banyak tentang halaman itu, mereka tahu lebih banyak, dan lebih cepat. Kamu bisa melakukan hal yang sama. Sebelum memercayai sebuah halaman, cari tahu siapa yang membuatnya dan apa kata orang lain tentangnya.",
+    "keyPoints": [
+      "Satu halaman bisa menipumu, walaupun terlihat serius.",
+      "Pemeriksa fakta meninggalkan halaman itu dan membaca apa kata sumber-sumber lain tentangnya.",
+      "Cari tahu siapa di balik sebuah informasi sebelum kamu memercayainya."
+    ],
+    "contentNote": "Bahasa Inggris Amerika yang cepat, dibuat untuk sekolah menengah. Video ini menunjukkan pencarian di internet, yang tidak bisa dilakukan pelajar di perangkat tanpa internet; kartu-kartu sumber dalam kegiatan ini menggantikan halaman-halaman baru. Ringkasannya ditulis dari deskripsi Digital Inquiry Group sendiri dan dari penelitian yang menjadi dasarnya, bukan dari menontonnya, dan panjangnya belum dipastikan. Tonton dulu; pelajar bisa membaca ringkasan tertulisnya saja."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Sebelum aku membagikan sebuah cerita, aku akan bertanya ..."
+      },
+      {
+        "text": "Satu jenis sumber yang akan aku percayai adalah ... karena ..."
+      }
+    ],
+    "completionMessage": "Kamu sudah menyelesaikan Pelajaran 14. Kamu membaca ke samping untuk memeriksa sebuah cerita sebelum membagikannya."
+  },
+  "visual": {
+    "alt": "Membaca ke bawah di satu halaman dibandingkan dengan membaca ke samping: dewan kota, yang merawat jembatan itu, mengatakan jembatan ditutup dua hari; radio dan para pemeriksa fakta bertanya kepada dewan kota; sebuah halaman obrolan hanya menyalin unggahan yang salah."
+  },
+  "sources": [
+    {
+      "label": "Digital Inquiry Group: Civic Online Reasoning (penalaran kewargaan online; tiga pertanyaan itu)"
+    },
+    {
+      "label": "Wineburg dan McGrew (2017): Lateral reading, reading less and learning more when evaluating digital information (membaca lateral: membaca lebih sedikit dan belajar lebih banyak saat menilai informasi digital), makalah kerja Stanford History Education Group 2017-A1 (salinan di situs Hendrix College)"
+    },
+    {
+      "label": "SSRC MediaWell: ringkasan penelitian Wineburg dan McGrew, dengan versi singkatnya di Teachers College Record (2019)"
+    },
+    {
+      "label": "Digital Inquiry Group: Lateral reading video (video tentang membaca lateral)"
+    },
+    {
+      "label": "Liputan6 Cek Fakta (2026): Mafindo tentang cara memeriksa hoaks (dalam bahasa Indonesia)"
+    }
+  ],
+  "sensitiveNotes": [
+    "Pakai hanya cerita rekaan yang tidak berbahaya. Jangan memakai rumor nyata tentang topik yang sensitif seperti proses hukum, bantuan, penempatan ke negara ketiga atau layanan resmi, yang bisa terlalu dekat dengan pengalaman pelajar. Kalau seorang pelajar mengangkat salah satunya, jangan memperdebatkan detailnya; arahkan dia ke lembaga resmi yang menjalankan layanan itu."
+  ],
+  "educatorNotes": [
+    "Pelajaran ini melanjutkan Pelajaran 23 di kursus Menjelajahi Dunia Kita (Apa yang membuat informasi bisa dipercaya?), yang mengajarkan sumber, tanggal dan konteks. Pelajaran ini menambahkan membaca lateral, dan bahwa kesamaan antarsumber hanya berarti kalau setiap sumber punya buktinya sendiri: radio dan para pemeriksa fakta sama-sama bertanya kepada dewan kota, dan halaman obrolan hanya menyalin unggahan itu. Kalau sebuah kelas memakai kedua kursus, mulailah dengan mengingat kembali cara memeriksa di Pelajaran 23.",
+    "Penelitian di bagian 2 adalah karya Wineburg dan McGrew (makalah kerja Stanford History Education Group, 2017; versi singkatnya di Teachers College Record, 2019). Ke-45 peserta adalah 10 sejarawan bergelar doktor yang mengajar di perguruan tinggi atau universitas empat tahun, 10 pemeriksa fakta profesional dan 25 mahasiswa tahun pertama Stanford. Mereka menilai situs web yang sedang aktif dan mencari di internet tentang masalah sosial dan politik, misalnya membandingkan halaman dua perkumpulan dokter tentang perundungan dan mencari tahu siapa di balik sebuah situs tentang upah minimum. Para penulis mencatat bahwa sampelnya kecil dan tugasnya diberi batas waktu. Kelompok itu menjadi Digital Inquiry Group yang independen pada Januari 2024.",
+    "Membaca lateral biasanya butuh internet. Di perangkat tanpa internet, kartu-kartu sumber dalam kegiatan ini menggantikan halaman-halaman baru; di kelas, guru bisa memerankan “sumber-sumber lain” di atas kertas. Di Indonesia, Mafindo menyarankan situs cek fakta seperti TurnBackHoax dan CekFakta (Liputan6, 2026)."
+  ]
+}

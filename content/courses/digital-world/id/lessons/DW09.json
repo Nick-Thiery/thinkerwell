@@ -1,0 +1,268 @@
+{
+  "title": "AI di tempat kerja: pekerjaan yang berubah",
+  "essentialQuestion": "Bagaimana AI bisa mengubah pekerjaan orang, dan siapa yang untung atau rugi?",
+  "learningGoal": "Memakai contoh dari sejarah untuk menjelaskan bagaimana mesin baru mengubah pekerjaan, dan menjelaskan siapa yang mungkin untung atau rugi ketika AI mengubah pekerjaan.",
+  "warmUp": {
+    "question": "Sebuah mesin baru bisa mengerjakan sebagian pekerjaan seorang pekerja. Menurutmu, apa yang terjadi pada pekerja itu?",
+    "options": [
+      "Dia kehilangan pekerjaannya",
+      "Pekerjaannya berubah",
+      "Dia mengerjakan sesuatu yang baru",
+      "Tidak yakin"
+    ]
+  },
+  "evidence": {
+    "label": "Contoh fiksi yang dibuat untuk pelajaran ini.",
+    "question": "Untuk setiap pekerja, tugas apa yang berubah? Siapa yang untung, dan siapa yang rugi?",
+    "cards": [
+      {
+        "title": "Tiga pekerja di kota Millbrook",
+        "cases": [
+          {
+            "name": "Petugas administrasi di kantor air",
+            "body": "Ines dan dua petugas lain mengetik formulir pelanggan. Sekarang sebuah alat AI membaca sebagian besar formulir dan mengisi datanya. Kantor itu butuh lebih sedikit petugas. Setelah mengikuti pelatihan, Ines dan satu petugas lain pindah ke loket bantuan. Di sana mereka membantu orang yang punya masalah sulit. Petugas yang ketiga kehilangan pekerjaannya."
+          },
+          {
+            "name": "Guru di pusat belajar",
+            "body": "Bu Rana memakai alat AI untuk membuat soal latihan. Dia memeriksa setiap soal, karena alat itu kadang membuat kesalahan. Sekarang dia punya lebih banyak waktu untuk membantu pelajar satu per satu."
+          },
+          {
+            "name": "Penjahit di pasar",
+            "body": "Sami membuat dan memperbaiki pakaian. Sebuah alat penerjemah membantunya berbicara dengan pelanggan yang memakai bahasa lain, jadi pelanggannya bertambah. Alat itu tidak bisa menjahit, dan tidak bisa mengukur badan orang."
+          }
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "title": "AI atau manusia?",
+    "instructions": "Masukkan setiap tugas ke dalam satu kelompok. Tidak ada nilai. Setelah kamu menempatkan satu tugas, kamu bisa melihat satu jawaban yang mungkin dan alasannya.",
+    "groups": [
+      {
+        "label": "AI bisa membantu di sini"
+      },
+      {
+        "label": "Masih perlu manusia"
+      },
+      {
+        "label": "Keduanya"
+      }
+    ],
+    "items": [
+      {
+        "text": "Mengurutkan 1.000 formulir menurut tanggal",
+        "feedback": "Ini langkah sederhana yang sama, diulang terus-menerus. Mesin pandai mengerjakan hal seperti ini."
+      },
+      {
+        "text": "Menghibur anak yang sedang sedih",
+        "feedback": "Perhatian dan kebaikan datang dari manusia. Seorang anak butuh orang yang mengenalnya dan bisa menemaninya."
+      },
+      {
+        "text": "Memperbaiki pipa air yang bocor di sebuah rumah",
+        "feedback": "Setiap rumah berbeda, dan pekerjaan ini butuh tangan yang terampil."
+      },
+      {
+        "text": "Menerjemahkan papan nama toko ke bahasa lain",
+        "feedback": "Alat bisa menerjemahkan dengan cepat, tetapi orang yang menguasai bahasa itu sebaiknya memeriksanya. Alat lebih sering salah dalam beberapa bahasa."
+      },
+      {
+        "text": "Mencari foto-foto yang menunjukkan pohon di antara 5.000 foto",
+        "feedback": "Alat yang mencari pola dalam foto bisa melakukannya dengan cepat. Seseorang mungkin tetap memeriksa foto-foto yang membuat alat itu tidak yakin."
+      },
+      {
+        "text": "Memilih pemain baru yang masuk tim sepak bola",
+        "feedback": "Keputusan tentang orang sebaiknya dibuat oleh orang yang bisa menjelaskannya. AI bisa tidak adil, seperti yang ditunjukkan Pelajaran 8. Kamu bisa memilih keduanya, kalau alat itu hanya membantu mengumpulkan fakta."
+      },
+      {
+        "text": "Membuat soal latihan untuk sebuah kelas",
+        "feedback": "Alat bisa membuat soal dengan cepat. Gurunya memeriksa soal-soal itu, seperti Bu Rana di Millbrook."
+      },
+      {
+        "text": "Menulis draf pertama sebuah surat",
+        "feedback": "Kelompok mana pun bisa benar di sini. Alat bisa menulis draf pertama. Manusia yang memutuskan apa isi surat itu, lalu memeriksanya."
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Mesin baru sudah pernah mengubah pekerjaan",
+        "text": "AI bukan teknologi pertama yang mengubah pekerjaan orang. Di Inggris pada awal tahun 1800-an, mesin-mesin baru di pabrik mulai mengerjakan pekerjaan yang dulu dikerjakan dengan tangan oleh para pekerja kain yang terampil. Antara tahun 1811 dan 1816, sebagian pekerja ini, yang disebut kaum Luddite, merusak mesin sebagai bentuk protes. Mesin-mesin itu mengambil pekerjaan mereka. Jauh setelah itu, sejak tahun 1970-an, mesin ATM perlahan-lahan menyebar ke bank-bank di Amerika Serikat. Banyak orang mengira teller bank, yaitu petugas yang melayani uang di loket, akan hilang. Tetapi sebuah penelitian dari tahun 2015 menemukan bahwa jumlah teller kurang lebih tetap sama, bahkan sedikit bertambah. Bank membuka lebih banyak cabang, dan teller memakai lebih banyak waktu untuk membantu nasabah. Itu hanya satu mesin, dan sudah lama sekali, jadi contoh itu tidak bisa memberi tahu kita apa yang akan dilakukan AI.",
+        "simpler": "AI bukan teknologi pertama yang mengubah pekerjaan. Pada tahun 1800-an, mesin baru di Inggris mengerjakan pekerjaan para pekerja kain yang terampil. Pekerja yang disebut kaum Luddite merusak beberapa mesin. Sejak tahun 1970-an, bank di Amerika Serikat punya mesin ATM. Banyak orang mengira petugas bank di loket akan hilang. Penelitian tahun 2015 menemukan jumlah mereka kurang lebih tetap. Bank membuka lebih banyak cabang, dan petugas lebih banyak membantu nasabah. Itu sudah lama. Contoh itu tidak bisa memberi tahu kita apa yang akan dilakukan AI."
+      },
+      {
+        "heading": "AI mengubah tugas-tugas di dalam pekerjaan",
+        "text": "Kebanyakan pekerjaan terdiri dari banyak tugas. Teknologi baru bisa mengotomatiskan sebagian tugas, tetapi tidak seluruh pekerjaan. Ketika spreadsheet mulai dipakai di komputer kantor di Amerika Serikat, banyak pemegang buku kehilangan pekerjaan. Namun, jumlah akuntan justru bertambah. Pada tahun 2025, ILO, badan PBB yang mengurus soal pekerjaan, menemukan bahwa sekitar satu dari empat pekerjaan di dunia sedikit banyak terpapar alat AI yang bisa menulis dan membuat sesuatu. Artinya, alat-alat ini bisa mengerjakan sebagian tugas dalam pekerjaan itu. Ini bukan hitungan pekerjaan yang hilang. Pekerjaan kantor, seperti petugas administrasi, paling banyak terpapar. Menurut ILO, sebagian besar pekerjaan ini lebih mungkin berubah daripada hilang.",
+        "simpler": "Satu pekerjaan terdiri dari banyak tugas. Teknologi baru bisa mengotomatiskan sebagian tugas, bukan seluruh pekerjaan. Spreadsheet menghitung angka untuk pekerja kantor. Sebagian orang yang tugasnya menghitung angka kehilangan pekerjaan. Tetapi jumlah akuntan bertambah. Pada tahun 2025, sebuah badan PBB meneliti AI yang bisa menulis dan membuat sesuatu. Sekitar satu dari empat pekerjaan sedikit banyak terpapar AI ini. AI ini bisa mengerjakan sebagian tugasnya. Ini bukan hitungan pekerjaan yang hilang. Pekerjaan kantor paling banyak terpapar. Kebanyakan mungkin akan berubah, bukan hilang."
+      },
+      {
+        "heading": "Sebagian orang untung, sebagian rugi",
+        "text": "Perubahan di tempat kerja sering tidak merata. Pada tahun 2024, IMF (Dana Moneter Internasional) memperingatkan bahwa AI bisa membantu sebagian pekerja menghasilkan lebih banyak, dan mengambil tugas-tugas penting dari pekerja lain. IMF juga mengatakan bahwa AI kemungkinan besar akan memperburuk ketimpangan, kecuali pemerintah bertindak. Di Millbrook, kantor air sekarang bekerja lebih cepat. Dua petugas administrasi pindah ke loket bantuan setelah mengikuti pelatihan, tetapi satu orang kehilangan pekerjaannya. Pelatihan dan aturan yang adil bisa membantu. Pekerja, pemberi kerja dan pemerintah bisa bersama-sama memutuskan bagaimana alat-alat baru dipakai.",
+        "simpler": "Pada tahun 2024, para ahli keuangan mengatakan AI mungkin membantu sebagian pekerja. AI mungkin mengambil tugas penting dari pekerja lain. AI mungkin memperburuk ketimpangan, kecuali para pemimpin bertindak. Setelah pelatihan, dua petugas di Millbrook pindah ke loket bantuan. Satu orang kehilangan pekerjaannya. Pelatihan dan aturan yang adil bisa membantu. Pekerja dan para pemimpin bisa bersama-sama memutuskan cara memakai AI."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "teknologi",
+        "definition": "Alat dan mesin yang dibuat orang untuk memecahkan masalah.",
+        "example": "Mesin ATM dulu adalah teknologi baru di bank."
+      },
+      {
+        "word": "mengotomatiskan",
+        "forms": [
+          "otomatisasi",
+          "diotomatiskan"
+        ],
+        "definition": "Membuat mesin mengerjakan pekerjaan yang dulu dikerjakan orang.",
+        "example": "Kantor air memakai AI untuk mengotomatiskan pembacaan formulir."
+      },
+      {
+        "word": "tugas",
+        "forms": [
+          "tugas-tugas",
+          "tugasnya"
+        ],
+        "definition": "Satu bagian kerja yang termasuk dalam sebuah pekerjaan.",
+        "example": "Membuat soal latihan adalah salah satu tugas Bu Rana."
+      },
+      {
+        "word": "keterpaparan",
+        "forms": [
+          "terpapar"
+        ],
+        "definition": "Keadaan ketika sebuah alat baru bisa mengerjakan sebagian tugas dalam suatu pekerjaan.",
+        "example": "Pekerjaan kantor paling banyak terpapar alat AI yang bisa menulis."
+      },
+      {
+        "word": "ketimpangan",
+        "definition": "Keadaan ketika sebagian orang punya jauh lebih banyak daripada orang lain.",
+        "example": "Kalau hanya sedikit orang yang untung dari AI, ketimpangan bertambah."
+      },
+      {
+        "word": "pelatihan",
+        "definition": "Pelajaran yang mengajarkan keterampilan untuk pekerjaan baru.",
+        "example": "Setelah pelatihan, dua petugas di Millbrook pindah ke loket bantuan."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Apa yang terjadi pada teller bank di Amerika Serikat ketika mesin ATM menyebar?",
+        "options": [
+          {
+            "text": "Pekerjaan mereka berubah menjadi membantu nasabah",
+            "feedback": "Benar. Sebuah penelitian tahun 2015 menemukan jumlah teller kurang lebih tetap, dan mereka memakai lebih banyak waktu untuk membantu nasabah."
+          },
+          {
+            "text": "Semua teller kehilangan pekerjaannya",
+            "feedback": "Belum tepat. Banyak orang mengira begitu, tetapi itu tidak terjadi. Baca lagi akhir bagian pertama."
+          },
+          {
+            "text": "Para teller mulai membuat mesin ATM",
+            "feedback": "Belum tepat. Para teller tetap bekerja di bank. Baca apa yang lebih banyak mereka kerjakan."
+          }
+        ]
+      },
+      {
+        "question": "Menurut ILO, sebagian besar pekerjaan yang sedikit banyak terpapar alat-alat ini lebih mungkin ...",
+        "options": [
+          {
+            "text": "hilang dalam satu atau dua tahun",
+            "feedback": "Belum tepat. Penelitian itu mengatakan hal lain. Baca lagi akhir bagian kedua."
+          },
+          {
+            "text": "berubah, karena manusia masih dibutuhkan",
+            "feedback": "Benar. Alat-alat itu bisa mengerjakan sebagian tugas, tetapi manusia masih dibutuhkan untuk banyak tugas lain."
+          },
+          {
+            "text": "tetap persis sama seperti sebelumnya",
+            "feedback": "Belum tepat. Banyak dari pekerjaan ini akan berubah. Baca lagi apa kata penelitian itu di bagian kedua."
+          }
+        ]
+      },
+      {
+        "question": "Pilih satu mesin dari pelajaran ini, atau mesin yang pernah kamu lihat. Siapa yang untung ketika mesin itu datang, dan siapa yang rugi?",
+        "placeholder": "Ketika ___ datang, ... untung karena ... dan ... rugi karena ..."
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Pilih satu pekerja di Millbrook. Jelaskan bagaimana AI mengubah pekerjaannya, siapa yang untung atau rugi, dan satu hal yang akan membuat perubahan itu lebih adil.",
+    "sentenceStarters": [
+      "Aku memilih ...",
+      "AI mengubah pekerjaan mereka karena ...",
+      "___ untung, karena ...",
+      "___ rugi, karena ...",
+      "Satu hal yang akan membuatnya lebih adil adalah ..."
+    ],
+    "planningBoxes": [
+      "Ide utamaku",
+      "Bukti dari pelajaran",
+      "Mengapa ini penting",
+      "Pertanyaan yang masih aku punya"
+    ],
+    "selfCheck": [
+      "Aku menyebutkan satu pekerja dan bagaimana AI mengubah pekerjaannya.",
+      "Aku mengatakan siapa yang untung atau siapa yang rugi.",
+      "Aku memberi satu cara untuk membuat perubahan itu lebih adil."
+    ],
+    "example": "Aku memilih petugas administrasi di kantor air Millbrook. AI mengubah pekerjaan mereka karena sekarang ada alat baru yang membaca sebagian besar formulir. Kantor itu untung, karena pekerjaannya jadi lebih cepat. Ines juga untung, karena setelah pelatihan dia pindah ke loket bantuan. Petugas yang ketiga rugi, karena sekarang dia tidak punya pekerjaan di sana. Ini mirip dengan para pekerja kain pada tahun 1800-an. Satu hal yang akan membuatnya lebih adil adalah pelatihan untuk setiap petugas, supaya tidak ada yang kehilangan pekerjaan."
+  },
+  "speak": {
+    "partnerTask": "Temanmu menyebutkan satu tugas dari kegiatan tadi. Kamu mengatakan apakah AI bisa membantu, masih perlu manusia, atau keduanya, dan mengapa. Lalu bergantian.",
+    "independentTask": "Ucapkan dengan lantang apa yang terjadi pada teller bank ketika mesin ATM datang. Lalu katakan mengapa contoh lama itu tidak bisa memberi tahu kita dengan pasti apa yang akan dilakukan AI."
+  },
+  "watch": {
+    "why": "Video ini melihat kembali seratus tahun kekhawatiran tentang mesin yang mengambil pekerjaan, dan bertanya siapa yang untung dari teknologi baru.",
+    "beforeQuestion": "Menurutmu, apakah mesin baru membuat pekerjaan jadi lebih banyak atau lebih sedikit? Mengapa?",
+    "afterQuestion": "Mengapa video itu mengatakan bahwa siapa yang untung dari teknologi bergantung pada pilihan manusia?",
+    "summary": "Video ini bertanya apakah mesin dan AI akan mengambil pekerjaan orang. Orang sudah sering khawatir tentang hal ini sebelumnya. Di Amerika Serikat, mesin menggantikan banyak pekerja pada tahun 1920-an dan 1930-an. Hal itu terjadi lagi sekitar tahun 1960. Mesin mengambil pekerjaan di pertanian, di pabrik dan di jaringan telepon. Tetapi kebanyakan orang tetap mendapat pekerjaan. Teknologi menciptakan beberapa pekerjaan baru, seperti membuat dan memperbaiki mesin. Teknologi juga membuat barang jadi lebih murah. Lalu orang membelanjakan uangnya untuk hal lain, seperti potong rambut atau makan di luar, dan semua itu juga butuh pekerja. Sebagian ahli mengatakan AI berbeda, karena AI bisa mengerjakan banyak jenis pekerjaan. Video ini mengatakan pertanyaan yang lebih besar mungkin adalah siapa yang untung. Keuntungan dari teknologi belum dibagi dengan adil. Aturan yang dipilih manusia bisa mengubah hal itu.",
+    "keyPoints": [
+      "Orang sudah sering khawatir mesin akan mengambil pekerjaan.",
+      "Teknologi baru menghilangkan sebagian pekerjaan, tetapi juga membantu menciptakan pekerjaan baru.",
+      "Siapa yang untung dari teknologi bergantung pada aturan dan pilihan yang dibuat manusia."
+    ],
+    "contentNote": "Vox, 2017: dibuat sebelum ada alat chat AI seperti sekarang, dan tentang Amerika Serikat. Judul dan kanalnya sudah dipastikan dengan oEmbed YouTube (Oktober 2026); panjangnya, sekitar 9 menit, berasal dari arsip transkrip Rosetta dan belum dipastikan di YouTube. Video ini menyebut Watson dari IBM, sebuah penelitian Oxford tahun 2013 dan angka pendapatan di Amerika Serikat. Ringkasannya ditulis dari ringkasan transkrip di arsip itu, bukan dari menontonnya. Seseorang dalam tim harus menontonnya sebelum dipakai; pelajar bisa membaca ringkasan tertulisnya saja."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Ketika AI mengubah pekerjaan orang, satu hal yang akan membuatnya lebih adil adalah ..."
+      },
+      {
+        "text": "Satu tugas yang menurutku akan selalu butuh manusia adalah ... karena ..."
+      }
+    ],
+    "completionMessage": "Kamu sudah menyelesaikan Pelajaran 9. Kamu memakai sejarah untuk menjelaskan bagaimana AI bisa mengubah pekerjaan, dan siapa yang untung atau rugi."
+  },
+  "visual": {
+    "alt": "Garis waktu tiga perubahan di tempat kerja: mesin di pabrik kain pada tahun 1810-an, mesin ATM di bank sejak sekitar tahun 1970, dan alat AI di kantor pada tahun 2020-an. Masing-masing menghilangkan sebagian pekerjaan dan mengubah atau menciptakan pekerjaan lain."
+  },
+  "sources": [
+    {
+      "label": "Britannica: Luddite (tentang kaum Luddite)"
+    },
+    {
+      "label": "The Conversable Economist (2015): ATMs and a rising number of bank tellers? (mesin ATM dan jumlah teller bank yang bertambah; tentang penelitian James Bessen di Finance & Development terbitan IMF)"
+    },
+    {
+      "label": "NPR (2015): How the electronic spreadsheet revolutionized business (bagaimana spreadsheet elektronik mengubah dunia usaha)"
+    },
+    {
+      "label": "International Labour Organization (Mei 2025): One in four jobs at risk of being transformed by GenAI, new ILO–NASK Global Index shows (satu dari empat pekerjaan berisiko diubah oleh AI generatif)"
+    },
+    {
+      "label": "ILO (20 Mei 2025): Generative AI and jobs, a refined global index of occupational exposure (Gmyrek dan kawan-kawan; keterpaparan yang mungkin, bukan pekerjaan yang hilang)"
+    },
+    {
+      "label": "IMF Blog (Januari 2024): AI will transform the global economy. Let's make sure it benefits humanity (AI akan mengubah ekonomi dunia; pastikan AI bermanfaat bagi umat manusia)"
+    }
+  ],
+  "sensitiveNotes": [
+    "Banyak pelajar mungkin tidak diizinkan bekerja di tempat mereka tinggal, dan pekerjaan serta uang bisa menjadi topik yang menyakitkan bagi keluarga. Jangan pernah bertanya kepada pelajar tentang pekerjaan, penghasilan atau rencana kerja mereka sendiri atau keluarga mereka. Pelajaran ini memakai pekerja rekaan dari Millbrook, dan pertanyaan untuk dipikirkan membiarkan pelajar memilih mesin dari pelajaran.",
+    "Britannica mencatat bahwa pemerintah menghukum kaum Luddite dengan keras, termasuk dengan hukuman gantung. Pelajaran ini tidak memuat hal itu; kalau pelajar bertanya, jawab dengan singkat dan sesuai fakta."
+  ],
+  "educatorNotes": [
+    "Teks untuk pelajar sengaja hanya memuat satu angka keterpaparan. Angka ILO (Mei 2025, bersama NASK dari Polandia) adalah keterpaparan yang mungkin terhadap AI generatif: 25% pekerjaan di dunia ada dalam jenis pekerjaan yang sebagian tugasnya bisa dikerjakan alat-alat ini. Itu bukan hitungan pekerjaan yang hilang, dan ILO memperkirakan sebagian besar akan berubah, bukan digantikan; pekerjaan administrasi paling terpapar, dan di negara kaya pekerjaan yang paling berisiko diotomatiskan adalah 9,6% dari pekerjaan perempuan dibandingkan 3,5% dari pekerjaan laki-laki. Angka IMF (Januari 2024) cakupannya lebih luas: hampir 40% pekerjaan di dunia, dan sekitar 60% di negara maju, terpapar AI secara umum; kira-kira separuhnya mungkin diuntungkan dan separuhnya mungkin kurang dibutuhkan. Teks untuk pelajar hanya memuat peringatan IMF tentang ketimpangan, tanpa angkanya, supaya kedua perkiraan tidak tercampur. Contoh teller bank adalah data Amerika Serikat dari tahun 1970-an sampai 2000-an (James Bessen, 2015); contoh ini menunjukkan satu kasus masa lalu, bukan ramalan tentang AI. Contoh spreadsheet berasal dari NPR (2015).",
+    "Versi kertas kegiatan ini: tulis delapan tugas itu di kartu, lalu kelompokkan di bawah tiga judul. Tidak ada nilai; hargai alasannya. Guru bisa menambahkan contoh setempat tentang alat yang mengubah pekerjaan, tanpa bertanya tentang pekerjaan siapa pun."
+  ]
+}

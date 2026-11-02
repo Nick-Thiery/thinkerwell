@@ -11,7 +11,8 @@ import { LessonPage } from '../../pages/lesson/LessonPage';
 import { NotFoundPage } from '../../pages/NotFoundPage';
 import { LessonPrintPage, LessonPrintSheet } from '../../pages/print/LessonPrintPage';
 import { PrintToolbar } from '../../pages/print/PrintToolbar';
-import { usePreviewCourse } from './course';
+import { useLessonContent } from '../../content/useContent';
+import { useCourseContent, usePreviewCourse } from './course';
 import { DraftSheetNote, PreviewCourseFrame, useCourseTitle } from './Frame';
 import { PictureCaption, SecondPicture } from './Pictures';
 import { ReviewerNotes } from './ReviewerNotes';
@@ -58,7 +59,8 @@ function WithExtras({ lesson, children }: { lesson: CourseLesson; children: Reac
 export function PreviewLessonRoute({ lessonId, stage }: { lessonId: string; stage: string | undefined }) {
   const { search, hash } = useLocation();
   const course = usePreviewCourse();
-  const result = resolveLessonRoute(lessonId, stage, course.content);
+  const content = useCourseContent(course);
+  const result = resolveLessonRoute(lessonId, stage, content);
   switch (result.kind) {
     case 'redirect':
       return <Navigate replace to={`${result.to}${search}${hash}`} />;
@@ -81,7 +83,8 @@ export function PreviewLessonRoute({ lessonId, stage }: { lessonId: string; stag
 export function PreviewLessonPrintRoute({ lessonId }: { lessonId: string }) {
   const { search, hash } = useLocation();
   const course = usePreviewCourse();
-  const result = resolveLessonPrintRoute(lessonId, course.content);
+  const content = useCourseContent(course);
+  const result = resolveLessonPrintRoute(lessonId, content);
   switch (result.kind) {
     case 'redirect':
       return <Navigate replace to={`${result.to}${search}${hash}`} />;
@@ -102,7 +105,8 @@ export function PreviewLessonPrintRoute({ lessonId }: { lessonId: string }) {
 export function PreviewTeacherGuideRoute({ lessonId }: { lessonId: string }) {
   const { search, hash } = useLocation();
   const course = usePreviewCourse();
-  const result = resolveTeacherGuideRoute(lessonId, course.content);
+  const content = useCourseContent(course);
+  const result = resolveTeacherGuideRoute(lessonId, content);
   switch (result.kind) {
     case 'redirect':
       return <Navigate replace to={`${result.to}${search}${hash}`} />;
@@ -135,7 +139,7 @@ export function AllLessons() {
     <div className="tw-print-page tw-pc-print-all">
       <PrintToolbar backHref={course.path} backLabel={t('previewCourse.printAll.back', { title })} />
       <p className="tw-print-intro tw-no-print">{tx('previewCourse.printAll.intro', named)}</p>
-      {course.content.getLessons().map((lesson, index) => (
+      {useLessonContent().getLessons().map((lesson, index) => (
         <WithExtras key={lesson.id} lesson={lesson}>
           <LessonPrintSheet lesson={lesson} titleId={`print-title-${lesson.id}`} newPage={index > 0} />
         </WithExtras>

@@ -1,0 +1,750 @@
+{
+  "title": {
+    "source": "How AI learns from examples",
+    "back": "How AI learns from examples",
+    "flag": true
+  },
+  "essentialQuestion": {
+    "source": "How can a computer learn from examples, and why do the examples matter?",
+    "back": "How can a computer learn from examples, and why do those examples matter?",
+    "flag": true
+  },
+  "learningGoal": {
+    "source": "Train a tiny model with labelled examples, and explain why relevant, correctly labelled examples and fair tests matter.",
+    "back": "Train a small model with labelled examples, and explain why examples that are relevant and correctly labelled, and fair tests, are important.",
+    "flag": true
+  },
+  "warmUp.question": {
+    "source": "You want to teach a young child to tell a healthy leaf from a sick leaf. What would you do?",
+    "back": "You want to teach a young child to tell a healthy leaf from a sick leaf. What would you do?",
+    "flag": true
+  },
+  "warmUp.options.0": {
+    "source": "Show many leaves",
+    "back": "Show many leaves",
+    "flag": true
+  },
+  "warmUp.options.1": {
+    "source": "Write a list of rules",
+    "back": "Write a list of rules",
+    "flag": true
+  },
+  "warmUp.options.2": {
+    "source": "Show one leaf",
+    "back": "Show one leaf",
+    "flag": true
+  },
+  "warmUp.options.3": {
+    "source": "Something else",
+    "back": "Something else",
+    "flag": true
+  },
+  "evidence.label": {
+    "source": "Fictional example created for this lesson.",
+    "back": "An invented example made for this lesson.",
+    "flag": true
+  },
+  "evidence.question": {
+    "source": "What changed each time the model got more leaves right?",
+    "back": "What changed each time the model guessed more leaves correctly?",
+    "flag": true
+  },
+  "evidence.cards.0.title": {
+    "source": "The Sunrise Garden leaf model",
+    "back": "The Sunrise Garden leaf model",
+    "flag": true,
+    "note": "Sunrise Garden is \"Kebun Sunrise\": the name stays, \"garden\" is translated, as Our World's \"Pasar Riverstone\" does."
+  },
+  "evidence.cards.0.columns.0": {
+    "source": "Round",
+    "back": "Round",
+    "flag": true,
+    "note": "\"Round\" is \"Pusingan\" throughout the lesson and the activity."
+  },
+  "evidence.cards.0.columns.1": {
+    "source": "Examples it learned from",
+    "back": "Examples it learned from",
+    "flag": true
+  },
+  "evidence.cards.0.columns.2": {
+    "source": "New leaves it got right",
+    "back": "New leaves guessed correctly",
+    "flag": true
+  },
+  "evidence.cards.0.rows.0.0": {
+    "source": "Round 1",
+    "back": "Round 1",
+    "flag": true
+  },
+  "evidence.cards.0.rows.0.1": {
+    "source": "2 examples: a big dark green leaf (healthy) and a brown leaf with spots (sick)",
+    "back": "2 examples: a big dark green leaf (healthy) and a brown spotted leaf (sick)",
+    "flag": true,
+    "note": "\"Healthy\"/\"sick\" for leaves are \"sihat\"/\"sakit\". A reviewer may prefer \"berpenyakit\" (diseased) for a plant; \"sakit\" was kept because it is the simplest word and matches the activity's two buttons."
+  },
+  "evidence.cards.0.rows.0.2": {
+    "source": "4 of 6",
+    "back": "4 out of 6",
+    "flag": true
+  },
+  "evidence.cards.0.rows.1.0": {
+    "source": "Round 2",
+    "back": "Round 2",
+    "flag": true
+  },
+  "evidence.cards.0.rows.1.1": {
+    "source": "6 examples: the 2 from Round 1, plus a small new leaf and a green leaf with tiny marks (healthy), and a yellow leaf with no spots and a small spotted leaf (sick)",
+    "back": "6 examples: the 2 examples from Round 1, plus a small young leaf and a green leaf with fine marks (healthy), and a yellow leaf without spots and a small spotted leaf (sick)",
+    "flag": true
+  },
+  "evidence.cards.0.rows.1.2": {
+    "source": "6 of 6",
+    "back": "6 out of 6",
+    "flag": true
+  },
+  "evidence.cards.0.rows.2.0": {
+    "source": "Round 2, a new plant",
+    "back": "Round 2, a new plant",
+    "flag": true
+  },
+  "evidence.cards.0.rows.2.1": {
+    "source": "The same 6 examples",
+    "back": "The same 6 examples",
+    "flag": true
+  },
+  "evidence.cards.0.rows.2.2": {
+    "source": "0 of 2 long, striped leaves",
+    "back": "0 out of 2 long striped leaves",
+    "flag": true
+  },
+  "evidence.cards.0.rows.3.0": {
+    "source": "Round 3",
+    "back": "Round 3",
+    "flag": true
+  },
+  "evidence.cards.0.rows.3.1": {
+    "source": "8 examples: the 6 from Round 2, plus a long striped leaf (healthy) and a long brown leaf with spots (sick)",
+    "back": "8 examples: the 6 examples from Round 2, plus a long striped leaf (healthy) and a long brown spotted leaf (sick)",
+    "flag": true
+  },
+  "evidence.cards.0.rows.3.2": {
+    "source": "8 of 8",
+    "back": "8 out of 8",
+    "flag": true
+  },
+  "activity.title": {
+    "source": "Train the leaf model",
+    "back": "Train the leaf model",
+    "flag": true
+  },
+  "activity.instructions": {
+    "source": "Teach the model by giving each example leaf a label: healthy or sick. Then test it on new leaves and see how many it gets right. Nothing you do here is sent anywhere.",
+    "back": "Teach the model by giving each example leaf a label: healthy or sick. Then test the model with new leaves and see how many are guessed correctly. Anything you do here is not sent anywhere.",
+    "flag": true
+  },
+  "activity.labels.0.label": {
+    "source": "Healthy",
+    "back": "Healthy",
+    "flag": true
+  },
+  "activity.labels.1.label": {
+    "source": "Sick",
+    "back": "Sick",
+    "flag": true
+  },
+  "activity.features.0.label": {
+    "source": "How green",
+    "back": "How green",
+    "flag": true
+  },
+  "activity.features.0.scale": {
+    "source": "0 brown or yellow, 10 dark green",
+    "back": "0 brown or yellow, 10 dark green",
+    "flag": true
+  },
+  "activity.features.1.label": {
+    "source": "Spots",
+    "back": "Spots",
+    "flag": true
+  },
+  "activity.features.1.scale": {
+    "source": "0 none, 10 covered",
+    "back": "0 none, 10 full",
+    "flag": true
+  },
+  "activity.features.2.label": {
+    "source": "Size",
+    "back": "Size",
+    "flag": true
+  },
+  "activity.features.2.scale": {
+    "source": "0 very small, 10 very big",
+    "back": "0 very small, 10 very big",
+    "flag": true
+  },
+  "activity.features.3.label": {
+    "source": "Shape",
+    "back": "Shape",
+    "flag": true
+  },
+  "activity.features.3.scale": {
+    "source": "0 round, 10 long and thin",
+    "back": "0 round, 10 long and thin",
+    "flag": true
+  },
+  "activity.examples.0.description": {
+    "source": "Big dark green leaf",
+    "back": "Big dark green leaf",
+    "flag": true
+  },
+  "activity.examples.1.description": {
+    "source": "Brown leaf with spots",
+    "back": "Brown spotted leaf",
+    "flag": true
+  },
+  "activity.examples.2.description": {
+    "source": "Small new leaf, light green",
+    "back": "Small young leaf, light green",
+    "flag": true
+  },
+  "activity.examples.3.description": {
+    "source": "Yellow leaf with no spots",
+    "back": "Yellow leaf without spots",
+    "flag": true
+  },
+  "activity.examples.4.description": {
+    "source": "Green leaf with a few tiny marks",
+    "back": "Green leaf with a few fine marks",
+    "flag": true
+  },
+  "activity.examples.5.description": {
+    "source": "Small leaf with many spots",
+    "back": "Small leaf with many spots",
+    "flag": true
+  },
+  "activity.examples.6.description": {
+    "source": "Long thin leaf with pale stripes",
+    "back": "Long thin leaf with pale stripes",
+    "flag": true
+  },
+  "activity.examples.7.description": {
+    "source": "Long thin brown leaf with spots",
+    "back": "Long thin brown spotted leaf",
+    "flag": true
+  },
+  "activity.tests.0.description": {
+    "source": "Green leaf",
+    "back": "Green leaf",
+    "flag": true
+  },
+  "activity.tests.1.description": {
+    "source": "Brown leaf with spots",
+    "back": "Brown spotted leaf",
+    "flag": true
+  },
+  "activity.tests.2.description": {
+    "source": "Small new leaf, light green",
+    "back": "Small young leaf, light green",
+    "flag": true
+  },
+  "activity.tests.3.description": {
+    "source": "Yellow leaf with no spots",
+    "back": "Yellow leaf without spots",
+    "flag": true
+  },
+  "activity.tests.4.description": {
+    "source": "Green leaf with a few tiny marks",
+    "back": "Green leaf with a few fine marks",
+    "flag": true
+  },
+  "activity.tests.5.description": {
+    "source": "Small leaf with many spots",
+    "back": "Small leaf with many spots",
+    "flag": true
+  },
+  "activity.tests.6.description": {
+    "source": "Long thin leaf with pale stripes",
+    "back": "Long thin leaf with pale stripes",
+    "flag": true
+  },
+  "activity.tests.7.description": {
+    "source": "Long thin leaf with pale stripes",
+    "back": "Long thin leaf with pale stripes",
+    "flag": true
+  },
+  "activity.rounds.0.title": {
+    "source": "Round 1: two examples",
+    "back": "Round 1: two examples",
+    "flag": true
+  },
+  "activity.rounds.0.debrief": {
+    "source": "The model got 4 of 6 right. It had only two leaves to compare with, so it mixed up the small new leaf and the yellow leaf.",
+    "back": "The model guessed 4 out of 6 correctly. It had only two leaves to compare with, so it was mistaken about the small young leaf and the yellow leaf.",
+    "flag": true
+  },
+  "activity.rounds.1.title": {
+    "source": "Round 2: more, different examples",
+    "back": "Round 2: more different examples",
+    "flag": true
+  },
+  "activity.rounds.1.debrief": {
+    "source": "Now the model got all 6 right. The new examples showed it leaves that looked different.",
+    "back": "Now the model guessed all 6 correctly. The new examples showed it leaves that looked different.",
+    "flag": true
+  },
+  "activity.rounds.2.title": {
+    "source": "A new plant",
+    "back": "A new plant",
+    "flag": true
+  },
+  "activity.rounds.2.debrief": {
+    "source": "Both striped leaves are healthy, but the model said “sick”. None of its examples looked like them.",
+    "back": "Both striped leaves are healthy, but the model said “sick”. None of its examples looked like those leaves.",
+    "flag": true
+  },
+  "activity.rounds.3.title": {
+    "source": "Round 3: add the new plant",
+    "back": "Round 3: add the new plant",
+    "flag": true
+  },
+  "activity.rounds.3.debrief": {
+    "source": "With examples of the new plant, the model got all 8 right. But the team had already seen these test leaves, and the test is small. To check fairly, test it on leaves nobody has used yet.",
+    "back": "With examples from that new plant, the model guessed all 8 correctly. But the team had already seen these test leaves, and the test is small. To check fairly, test the model with leaves nobody has used yet.",
+    "flag": true
+  },
+  "activity.freePlay": {
+    "source": "After Round 3, the learner can take examples out, or change a label, and test again. The model follows the learner's labels, even when they differ from the gardener's.",
+    "back": "After Round 3, the learner can take out examples, or change a label, and test again. The model follows the learner's labels, even when those labels differ from the gardener's labels.",
+    "flag": true,
+    "note": "This and explainGuess read like notes for the team, but the overlay treats them as text, so they are translated. Check whether the app shows them to learners."
+  },
+  "activity.explainGuess": {
+    "source": "After each guess, show the example the model thought was most like the new leaf: “It looked most like this example, so the model said sick.”",
+    "back": "After each guess, show the example most similar to the new leaf according to the model: “This leaf is most similar to this example, so the model said sick.”",
+    "flag": true
+  },
+  "read.sections.0.heading": {
+    "source": "A model learns from labelled examples",
+    "back": "A model learns from labelled examples",
+    "flag": true
+  },
+  "read.sections.0.text": {
+    "source": "Some AI learns a bit like studying with flashcards. At Sunrise Garden, people collected training data: pictures of leaves, each with the correct answer, called a label, either “healthy” or “sick”. The computer uses these examples to build a model. It uses the model to predict the label of a leaf it has never seen. This is machine learning. Nobody writes the rule “spots mean sick”; the computer finds patterns like that in the examples. Learning from labelled examples is called supervised learning, one kind of machine learning. It is an old idea. A machine called the perceptron learned from marked cards in 1958, and researchers studied this lesson's method in 1967. It became far more useful after 2010, with more data and faster computers.",
+    "back": "Some AI learns a little like studying with flashcards. At Sunrise Garden, people collected training data: pictures of leaves, each with the right answer, called a label, either “healthy” or “sick”. The computer uses these examples to build a model. It uses the model to predict the label of a leaf it has never seen. This is machine learning. Nobody writes the rule “spots mean sick”; the computer itself finds patterns like that in the examples. Learning from labelled examples is called supervised learning, one kind of machine learning. It is an old idea. A machine called the perceptron learned from marked cards in 1958, and researchers studied the method in this lesson in 1967. It became far more useful after 2010, with more data and faster computers.",
+    "flag": true,
+    "note": "\"Flashcards\" is \"kad imbas\", the Malaysian school word. \"Supervised learning\" is \"pembelajaran berselia\" (DBP)."
+  },
+  "read.sections.0.simpler": {
+    "source": "At Sunrise Garden, people collected training data. Each leaf picture has the right answer, called a label: “healthy” or “sick”. The computer uses them to make a model. It uses the model to guess. This is machine learning. Nobody tells it “spots mean sick”. It finds that in the examples. Learning from labels is called supervised learning. It is an old idea. A machine did it in 1958. This method was studied in 1967. It grew more useful after 2010.",
+    "back": "At Sunrise Garden, people collected training data. Each leaf picture has the right answer, called a label: “healthy” or “sick”. The computer uses them to make a model. It uses the model to guess. This is machine learning. Nobody tells it “spots mean sick”. It found that in the examples. Learning from labels is called supervised learning. It is an old idea. A machine did it in 1958. This method was studied in 1967. It became more useful after 2010.",
+    "flag": true
+  },
+  "read.sections.1.heading": {
+    "source": "Test the model with new examples",
+    "back": "Test the model with new examples",
+    "flag": true
+  },
+  "read.sections.1.text": {
+    "source": "To find out whether a model works, you test it with new leaves it did not learn from. The first model learned from only two examples, a big dark green leaf and a brown leaf with spots. It guesses in a simple way: it finds the example most similar to the new leaf and copies its label. It got four of six new leaves right. It called a small, light green leaf “sick” and a yellow leaf with no spots “healthy”. The model was not broken. It had too few examples to compare with.",
+    "back": "To find out whether a model works, you test the model with new leaves it did not learn from. The first model learned from only two examples, that is, a big dark green leaf and a brown spotted leaf. It guesses in a simple way: it looks for the example most similar to the new leaf and copies its label. It guessed four out of six new leaves correctly. It called a small light green leaf “sick” and a yellow leaf without spots “healthy”. The model was not broken. It just had too few examples to compare with.",
+    "flag": true,
+    "note": "\"You test it\" is \"kamu menguji model itu\" so the glossary word \"menguji\" is marked (\"mengujinya\" would not be)."
+  },
+  "read.sections.1.simpler": {
+    "source": "Then you test the model on leaves it has not seen. The first model had only two examples. One was dark green. One was brown with spots. It finds the example most like the new leaf. It copies its label. It got four of six right. It called a small new leaf “sick” and a yellow leaf “healthy”. It had too few examples.",
+    "back": "Then you test the model with leaves it has not seen. The first model had only two examples. One was dark green. The other was brown and spotted. It looks for the example most similar to the new leaf. It copies its label. It guessed four out of six correctly. It said the small young leaf was “sick” and the yellow leaf “healthy”. Its examples were too few.",
+    "flag": true
+  },
+  "read.sections.2.heading": {
+    "source": "Better examples help, but tests have limits",
+    "back": "Better examples help, but tests have limits",
+    "flag": true
+  },
+  "read.sections.2.text": {
+    "source": "Next, the team added four more examples, including a small new leaf and a yellow leaf with no spots. Now the model got all six new leaves right. Then the team tested two long, thin, striped leaves from a different plant. Both were healthy, but the model called them “sick”, because none of its examples looked similar. After the team added two striped examples, it got them right. Relevant examples with correct labels help. More examples alone do not always help, because a wrong label can make guesses worse. And a small test cannot prove the model will work on every new plant.",
+    "back": "Next, the team added four more examples, including a small young leaf and a yellow leaf without spots. Now the model guessed all six new leaves correctly. Then the team tested two long, thin, striped leaves from another plant. Both were healthy, but the model called them “sick”, because none of its examples looked similar. After the team added two striped examples, the model guessed correctly. Relevant examples with correct labels help. More examples alone do not always help, because a label that is not right can make guesses worse. And a small test cannot prove the model will work for every new plant.",
+    "flag": true
+  },
+  "read.sections.2.simpler": {
+    "source": "Next, the team added four more examples. Now it got all six right. Then the team tried a new plant with long, striped leaves. They are healthy, but the model said “sick”. No example looked like them. The team added two striped leaves. Then it got them right. Good examples with the right labels help. More examples alone do not always help. A wrong label can make it worse. A small test cannot prove it works on every new plant.",
+    "back": "Next, the team added four more examples. Now the model guessed all six correctly. Then the team tried a new plant with long, striped leaves. The leaves were healthy, but the model said “sick”. No example was similar to them. The team added two striped leaves. Then the model guessed correctly. Good examples with correct labels help. More examples alone do not always help. A label that is not right can make it worse. A small test cannot prove it works for every new plant.",
+    "flag": true
+  },
+  "read.glossary.0.word": {
+    "source": "training data",
+    "back": "training data",
+    "flag": true
+  },
+  "read.glossary.0.definition": {
+    "source": "Examples used to build a model. Here, each one has a label.",
+    "back": "Examples used to build a model. Here, each example has a label.",
+    "flag": true
+  },
+  "read.glossary.0.example": {
+    "source": "The leaf pictures and their labels are the training data.",
+    "back": "The leaf pictures and their labels are training data.",
+    "flag": true
+  },
+  "read.glossary.1.word": {
+    "source": "label",
+    "back": "label",
+    "flag": true
+  },
+  "read.glossary.1.forms": {
+    "source": [
+      "labels",
+      "labelled"
+    ]
+  },
+  "read.glossary.1.definition": {
+    "source": "The answer given to an example, like “healthy” or “sick”.",
+    "back": "The answer given to an example, like “healthy” or “sick”.",
+    "flag": true
+  },
+  "read.glossary.1.example": {
+    "source": "The big dark green leaf has the label “healthy”.",
+    "back": "The big dark green leaf has the label “healthy”.",
+    "flag": true
+  },
+  "read.glossary.2.word": {
+    "source": "model",
+    "back": "model",
+    "flag": true
+  },
+  "read.glossary.2.forms": {
+    "source": [
+      "models"
+    ]
+  },
+  "read.glossary.2.definition": {
+    "source": "What a computer has learned from examples. It uses it to guess.",
+    "back": "What a computer has learned from examples. The computer uses it to guess.",
+    "flag": true
+  },
+  "read.glossary.2.example": {
+    "source": "The garden's model guessed that the yellow leaf was healthy.",
+    "back": "The garden's model guessed that the yellow leaf was healthy.",
+    "flag": true
+  },
+  "read.glossary.3.word": {
+    "source": "machine learning",
+    "back": "machine learning",
+    "flag": true
+  },
+  "read.glossary.3.definition": {
+    "source": "A way for computers to learn patterns from examples, not from written rules.",
+    "back": "A way computers learn patterns from examples, not from written rules.",
+    "flag": true
+  },
+  "read.glossary.3.example": {
+    "source": "The leaf model is an example of machine learning.",
+    "back": "The leaf model is one example of machine learning.",
+    "flag": true
+  },
+  "read.glossary.4.word": {
+    "source": "supervised learning",
+    "back": "supervised learning",
+    "flag": true
+  },
+  "read.glossary.4.definition": {
+    "source": "Machine learning from examples that each have a label.",
+    "back": "Machine learning from examples that each have a label.",
+    "flag": true
+  },
+  "read.glossary.4.example": {
+    "source": "The leaf model uses supervised learning: every example is labelled healthy or sick.",
+    "back": "The leaf model uses supervised learning: every example is labelled healthy or sick.",
+    "flag": true
+  },
+  "read.glossary.5.word": {
+    "source": "test",
+    "back": "to test",
+    "flag": true,
+    "note": "The English entry is the verb \"test\"; the Malay is \"menguji\", with \"uji\", \"ujian\" and \"diuji\" as forms. \"Ujian\" here is a model's test, not a school test."
+  },
+  "read.glossary.5.forms": {
+    "source": [
+      "tests",
+      "tested",
+      "testing"
+    ]
+  },
+  "read.glossary.5.definition": {
+    "source": "To try something with new examples to see if it works.",
+    "back": "To try something with new examples to see whether it works.",
+    "flag": true
+  },
+  "read.glossary.5.example": {
+    "source": "The team tested the model with six new leaves.",
+    "back": "The team tested the model with six new leaves.",
+    "flag": true
+  },
+  "read.checks.0.question": {
+    "source": "Why did the model call the small new leaf “sick” in Round 1?",
+    "back": "Why did the model call the small young leaf “sick” in Round 1?",
+    "flag": true
+  },
+  "read.checks.0.options.0.text": {
+    "source": "It had only two examples to compare with",
+    "back": "It had only two examples to compare with",
+    "flag": true
+  },
+  "read.checks.0.options.0.feedback": {
+    "source": "Yes. With only two examples, the new leaf was closer to the brown one. More examples fixed this.",
+    "back": "Correct. With only two examples, the new leaf was closer to the brown leaf. More examples fixed this.",
+    "flag": true
+  },
+  "read.checks.0.options.1.text": {
+    "source": "Small leaves are nearly always sick",
+    "back": "Small leaves are almost always sick",
+    "flag": true,
+    "note": "\"Nearly always\" is \"hampir sentiasa\"; \"selalu\" means \"often\" in Malaysia."
+  },
+  "read.checks.0.options.1.feedback": {
+    "source": "Not quite. The gardener says the small new leaf is healthy. Read about Round 1 in the second section.",
+    "back": "Not quite. The gardener says the small young leaf is healthy. Read about Round 1 in the second part.",
+    "flag": true
+  },
+  "read.checks.0.options.2.text": {
+    "source": "The model was broken and needed fixing",
+    "back": "The model was broken and needed repairing",
+    "flag": true
+  },
+  "read.checks.0.options.2.feedback": {
+    "source": "Not quite. The lesson says the model was not broken. Read the end of the second section.",
+    "back": "Not quite. This lesson says the model was not broken. Read the end of the second part.",
+    "flag": true
+  },
+  "read.checks.1.question": {
+    "source": "What made the model better in Round 2?",
+    "back": "What made the model better in Round 2?",
+    "flag": true
+  },
+  "read.checks.1.options.0.text": {
+    "source": "The team made all the leaf pictures brighter",
+    "back": "The team made all the leaf pictures brighter",
+    "flag": true
+  },
+  "read.checks.1.options.0.feedback": {
+    "source": "Not quite. The pictures did not change. Look at what the team added in the third section.",
+    "back": "Not quite. The pictures did not change. Look at what the team added in the third part.",
+    "flag": true
+  },
+  "read.checks.1.options.1.text": {
+    "source": "The team added more, different examples",
+    "back": "The team added more different examples",
+    "flag": true
+  },
+  "read.checks.1.options.1.feedback": {
+    "source": "Yes. The new examples showed the model leaves that looked different, so it got all six right.",
+    "back": "Correct. The new examples showed the model leaves that looked different, so it guessed all six correctly.",
+    "flag": true
+  },
+  "read.checks.1.options.2.text": {
+    "source": "The team wrote a rule about spots",
+    "back": "The team wrote a rule about spots",
+    "flag": true
+  },
+  "read.checks.1.options.2.feedback": {
+    "source": "Not quite. In machine learning, nobody writes that rule. Look at what the team added in the third section.",
+    "back": "Not quite. In machine learning, nobody writes that rule. Look at what the team added in the third part.",
+    "flag": true
+  },
+  "read.checks.2.question": {
+    "source": "The garden grows a new plant with red leaves. What should the team do before they trust the model with it?",
+    "back": "The garden plants a new plant with red leaves. What should the team do before they trust the model for this plant?",
+    "flag": true
+  },
+  "read.checks.2.placeholder": {
+    "source": "First they should ... Then they should ...",
+    "back": "First they should ... Then they should ...",
+    "flag": true
+  },
+  "write.prompt": {
+    "source": "Explain how the garden's model got better from Round 1 to Round 3. Use numbers from the lesson.",
+    "back": "Explain how the garden's model became better from Round 1 to Round 3. Use numbers from this lesson.",
+    "flag": true
+  },
+  "write.sentenceStarters.0": {
+    "source": "In Round 1, the model learned from ...",
+    "back": "In Round 1, the model learned from ...",
+    "flag": true
+  },
+  "write.sentenceStarters.1": {
+    "source": "It got ... right, because ...",
+    "back": "It guessed ... correctly, because ...",
+    "flag": true
+  },
+  "write.sentenceStarters.2": {
+    "source": "In Round 2, the team added ...",
+    "back": "In Round 2, the team added ...",
+    "flag": true
+  },
+  "write.sentenceStarters.3": {
+    "source": "The striped leaves show that ...",
+    "back": "The striped leaves show that ...",
+    "flag": true
+  },
+  "write.sentenceStarters.4": {
+    "source": "Good training data needs ... / A small test cannot show ...",
+    "back": "Good training data needs ... / A small test cannot show ...",
+    "flag": true
+  },
+  "write.planningBoxes.0": {
+    "source": "My main idea",
+    "back": "My main idea",
+    "flag": true
+  },
+  "write.planningBoxes.1": {
+    "source": "Evidence from the lesson",
+    "back": "Evidence from the lesson",
+    "flag": true
+  },
+  "write.planningBoxes.2": {
+    "source": "Why it matters",
+    "back": "Why this matters",
+    "flag": true
+  },
+  "write.planningBoxes.3": {
+    "source": "A question I still have",
+    "back": "A question I still have",
+    "flag": true
+  },
+  "write.selfCheck.0": {
+    "source": "I described Round 1 and one of its mistakes.",
+    "back": "I described Round 1 and one of its mistakes.",
+    "flag": true
+  },
+  "write.selfCheck.1": {
+    "source": "I explained what changed in Round 2 and Round 3.",
+    "back": "I explained what changed in Round 2 and Round 3.",
+    "flag": true
+  },
+  "write.selfCheck.2": {
+    "source": "I said what good training data needs, or what a small test cannot show.",
+    "back": "I said what good training data needs, or what a small test cannot show.",
+    "flag": true
+  },
+  "write.example": {
+    "source": "In Round 1, the model learned from only two examples. It got four of six new leaves right, because it had too few examples to compare with. It called a small new leaf “sick”. In Round 2, the team added four different examples, and the model got all six right. The striped leaves show that a model makes mistakes when its examples leave something out. Good training data needs relevant examples of each kind, with correct labels. Even 8 of 8 on a small test does not prove it will work on every new plant.",
+    "back": "In Round 1, the model learned from only two examples. It guessed four out of six new leaves correctly, because its examples were too few to compare with. It called a small young leaf “sick”. In Round 2, the team added four different examples, and the model guessed all six correctly. The striped leaves show that a model makes mistakes when its examples leave something out. Good training data needs relevant examples of each kind, with correct labels. Even 8 out of 8 in a small test does not prove it will work for every new plant.",
+    "flag": true
+  },
+  "speak.partnerTask": {
+    "source": "Tell your partner how you would train a model to sort two kinds of things, like ripe and unripe fruit. Your partner asks, “How will you test it?” Then switch.",
+    "back": "Tell your partner how you would train a model to sort two kinds of things, like ripe fruit and unripe fruit. Your partner asks, “How will you test it?” Then switch turns.",
+    "flag": true
+  },
+  "speak.independentTask": {
+    "source": "Say out loud three steps: collect examples, train the model, test it. Give one example for each step.",
+    "back": "Say out loud three steps: collect examples, train the model, test the model. Give one example for each step.",
+    "flag": true
+  },
+  "watch.why": {
+    "source": "It shows a computer learning to tell shapes apart from labelled examples, the same idea as the leaf model.",
+    "back": "This video shows a computer learning to tell shapes apart from labelled examples, the same idea as the leaf model.",
+    "flag": true
+  },
+  "watch.beforeQuestion": {
+    "source": "How could a computer learn to tell two shapes apart?",
+    "back": "How can a computer learn to tell two shapes apart?",
+    "flag": true
+  },
+  "watch.afterQuestion": {
+    "source": "Why is it hard to write exact rules for a shape, like the letter X?",
+    "back": "Why is it hard to write exact rules for a shape, like the letter X?",
+    "flag": true
+  },
+  "watch.summary": {
+    "source": "This video explains computer vision. Computer vision is how a computer finds meaning in pictures. A computer does not see a picture like you do. It sees a number for each tiny dot of colour. Writing exact rules for a shape, like the letter X, does not work well, because people draw an X in many ways. With machine learning, the computer learns from many labelled examples instead. It is like learning with flashcards. The computer guesses, checks the answer and slowly gets better. Harder pictures, like faces, need bigger models. The video shows farm robots that tell crops from weeds. It also warns about a problem. If the training data leaves some people out, the tool can fail for them. So training data must be large and varied.",
+    "back": "This video explains computer vision. Computer vision is how a computer finds meaning in pictures. A computer does not see a picture like you. It sees one number for each very small dot of colour. Writing exact rules for a shape, like the letter X, does not work well, because people draw X in many ways. With machine learning, the computer learns from many labelled examples. It is like learning with flashcards. The computer guesses, checks the answer and slowly gets better. Harder pictures, like faces, need bigger models. This video shows farm robots that tell crops from weeds. It also warns about one problem. If the training data leaves out some people, the tool can fail to work for them. So training data must be large and varied.",
+    "flag": true,
+    "note": "\"Fail for them\" is \"gagal berfungsi untuk mereka\" (fail to work for them): it is about a tool, not a learner, so \"gagal\" was kept."
+  },
+  "watch.keyPoints.0": {
+    "source": "A computer sees a picture as numbers, one for each tiny dot.",
+    "back": "A computer sees a picture as numbers, one for each very small dot.",
+    "flag": true
+  },
+  "watch.keyPoints.1": {
+    "source": "With machine learning, a computer learns from many labelled examples, like flashcards.",
+    "back": "With machine learning, a computer learns from many labelled examples, like flashcards.",
+    "flag": true
+  },
+  "watch.keyPoints.2": {
+    "source": "If the training data leaves some people out, the tool can fail for them.",
+    "back": "If the training data leaves out some people, the tool can fail to work for them.",
+    "flag": true
+  },
+  "watch.contentNote": {
+    "source": "About six minutes, longer than most Thinkerwell videos. The speakers work for a farm-robot company and a car company and name them. Near the end, it says face recognition can fail for groups of people left out of the training data; Lessons 8 and 12 come back to this. Preview it first; learners can read the written summary instead.",
+    "back": "About six minutes, longer than most Thinkerwell videos. The speakers work for a farm-robot company and a car company and name those companies. Towards the end of the video, it says face recognition can fail to work for groups of people left out of the training data; Lessons 8 and 12 come back to this. Watch this video first; learners can read the written summary instead.",
+    "flag": true,
+    "note": "The English said \"Lesson 3 comes back to this\" inside Lesson 3; corrected to Lessons 8 and 12 (November 2026), which cover face recognition and AI that fails some groups."
+  },
+  "reflect.prompts.0.text": {
+    "source": "One thing I learned about training data is ...",
+    "back": "One thing I learned about training data is ...",
+    "flag": true
+  },
+  "reflect.prompts.1.text": {
+    "source": "Something I would like to teach a model to sort is ...",
+    "back": "Something I would like to teach a model to sort is ...",
+    "flag": true
+  },
+  "reflect.completionMessage": {
+    "source": "You finished Lesson 3. You trained a model with examples and saw why the examples matter.",
+    "back": "You have finished Lesson 3. You trained a model with examples and saw why the examples matter.",
+    "flag": true
+  },
+  "visual.alt": {
+    "source": "Leaf cards from Sunrise Garden: green, light green, yellow, brown and spotted leaves, and two long leaves with pale stripes, each labelled healthy or sick.",
+    "back": "Leaf cards from Sunrise Garden: green, light green, yellow, brown and spotted leaves, and two long leaves with pale stripes, each labelled healthy or sick.",
+    "flag": true
+  },
+  "sources.0.label": {
+    "source": "Experience AI (Raspberry Pi Foundation): Lesson 3, Bias in, bias out (training data, test data, accuracy)",
+    "back": "Experience AI (Raspberry Pi Foundation): Lesson 3, Bias in, bias out (training data, test data, accuracy)",
+    "flag": true
+  },
+  "sources.1.label": {
+    "source": "The Royal Society: Machine learning, the power and promise of computers that learn by example (introduction)",
+    "back": "The Royal Society: Machine learning, the power and promise of computers that learn by example (introduction)",
+    "flag": true
+  },
+  "sources.2.label": {
+    "source": "Google for Developers, Machine Learning Crash Course: Datasets, generalization and overfitting (data quality and labels; updated July 2025)",
+    "back": "Google for Developers, Machine Learning Crash Course: Datasets, generalization and overfitting (data quality and labels; updated July 2025)",
+    "flag": true
+  },
+  "sources.3.label": {
+    "source": "T. M. Cover and P. E. Hart, IEEE Transactions on Information Theory, January 1967: Nearest neighbor pattern classification (listed on Thomas Cover's publications page, Stanford)",
+    "back": "T. M. Cover and P. E. Hart, IEEE Transactions on Information Theory, January 1967: Nearest neighbor pattern classification (listed on Thomas Cover's publications page, Stanford)",
+    "flag": true
+  },
+  "sources.4.label": {
+    "source": "Cornell University (2019): Professor's perceptron paved the way for AI, 60 years too soon (the perceptron, shown in July 1958)",
+    "back": "Cornell University (2019): Professor's perceptron paved the way for AI, 60 years too soon (the perceptron, shown in July 1958)",
+    "flag": true
+  },
+  "sources.5.label": {
+    "source": "DCMP: How Computer Vision Works (Code.org video, description)",
+    "back": "DCMP: How Computer Vision Works (Code.org video, description)",
+    "flag": true
+  },
+  "educatorNotes.0": {
+    "source": "If the activity can't run (a printout, or a device without it), use the evidence table: it shows exactly what the activity does. Learners can also play it on paper: one learner is the model and may only copy the label of the most similar example card. Round 3 re-tests the same leaves the team had already seen. For a fairer check, draw two new leaves nobody has tested (for example a long striped leaf with a few brown spots) and let learners predict with the eight example cards.",
+    "back": "If this activity cannot be run (a printout, or a device that does not have it), use the evidence table: the table shows exactly what this activity does. Learners can also play it on paper: one learner becomes the model and may only copy the label of the most similar example card. Round 3 re-tests the same leaves the team had already seen. For a fairer check, draw two new leaves nobody has tested (for example a long striped leaf with a few brown spots) and let learners predict with those eight example cards.",
+    "flag": true
+  },
+  "educatorNotes.1": {
+    "source": "The model in the activity is deliberately simple: a nearest-neighbour model (k = 1) that copies the label of the most similar example. It is one supervised method; Cover and Hart's 1967 paper studied this rule, and Rosenblatt's perceptron, shown in July 1958, also learned from labelled examples. Real AI is far bigger, and other kinds of machine learning don't need a label on every example, but the points about examples and testing are the same.",
+    "back": "The model in this activity is made simple on purpose: a nearest-neighbour model (k = 1) that copies the label of the most similar example. It is one supervised method; Cover and Hart's 1967 paper studied this rule, and Rosenblatt's perceptron, shown in July 1958, also learned from labelled examples. Real AI is far bigger, and other kinds of machine learning do not need a label on every example, but the points about examples and testing stay the same.",
+    "flag": true
+  },
+  "educatorNotes.2": {
+    "source": "If a learner labels an example differently from the gardener, the model follows the learner. That is a good moment to ask: who decides the right label?",
+    "back": "If a learner labels an example differently from the gardener, the model follows the learner. That is a good time to ask: who decides the right label?",
+    "flag": true
+  }
+}

@@ -1,0 +1,624 @@
+{
+  "title": {
+    "source": "AI at work: jobs that change",
+    "back": "AI at work: jobs that change",
+    "flag": true,
+    "note": "\"Untung atau rugi\" (profit or loss, gain or lose) is used for gain/lose throughout the lesson; it is everyday Indonesian, but it can sound like money only. Alternative: \"diuntungkan atau dirugikan\"."
+  },
+  "essentialQuestion": {
+    "source": "How might AI change people's jobs, and who gains or loses?",
+    "back": "How can AI change people's jobs, and who gains or loses?",
+    "flag": true
+  },
+  "learningGoal": {
+    "source": "Use examples from history to explain how new machines change work, and describe who might gain or lose as AI changes jobs.",
+    "back": "Use examples from history to explain how new machines change work, and explain who might gain or lose when AI changes jobs.",
+    "flag": true
+  },
+  "warmUp.question": {
+    "source": "A new machine can do part of a worker's job. What do you think happens to the worker?",
+    "back": "A new machine can do part of a worker's job. What do you think happens to that worker?",
+    "flag": true
+  },
+  "warmUp.options.0": {
+    "source": "They lose their work",
+    "back": "They lose their job",
+    "flag": true
+  },
+  "warmUp.options.1": {
+    "source": "Their work changes",
+    "back": "Their work changes",
+    "flag": true
+  },
+  "warmUp.options.2": {
+    "source": "They do something new",
+    "back": "They do something new",
+    "flag": true
+  },
+  "warmUp.options.3": {
+    "source": "Not sure",
+    "back": "Not sure",
+    "flag": true
+  },
+  "evidence.label": {
+    "source": "Fictional example created for this lesson.",
+    "back": "Fictional example made for this lesson.",
+    "flag": true
+  },
+  "evidence.question": {
+    "source": "For each worker, which tasks changed? Who gained, and who lost?",
+    "back": "For each worker, what tasks changed? Who gained, and who lost?",
+    "flag": true
+  },
+  "evidence.cards.0.title": {
+    "source": "Three workers in the town of Millbrook",
+    "back": "Three workers in the town of Millbrook",
+    "flag": true
+  },
+  "evidence.cards.0.cases.0.name": {
+    "source": "Clerks at the water office",
+    "back": "Administrative staff at the water office",
+    "flag": true,
+    "note": "\"Clerks\" became \"petugas administrasi\" (administrative staff) throughout; \"water office\" is \"kantor air\", like a local water company office (PDAM). \"Help desk\" became \"loket bantuan\" (help counter), a word learners know from offices and banks."
+  },
+  "evidence.cards.0.cases.0.body": {
+    "source": "Ines and two other clerks typed up customer forms. Now an AI tool reads most forms and fills in the details. The office needs fewer clerks. After some training, Ines and one other clerk moved to the help desk, where they help people with hard problems. The third clerk lost her work.",
+    "back": "Ines and two other staff typed customer forms. Now an AI tool reads most of the forms and fills in the data. The office needs fewer staff. After taking training, Ines and one other staff member moved to the help counter. There they help people who have hard problems. The third staff member lost her job.",
+    "flag": true
+  },
+  "evidence.cards.0.cases.1.name": {
+    "source": "Teacher at the learning centre",
+    "back": "Teacher at the learning centre",
+    "flag": true
+  },
+  "evidence.cards.0.cases.1.body": {
+    "source": "Ms Rana uses an AI tool to make practice questions. She checks every question, because the tool sometimes makes mistakes. She now has more time to help learners one by one.",
+    "back": "Bu Rana uses an AI tool to make practice questions. She checks every question, because the tool sometimes makes mistakes. Now she has more time to help learners one by one.",
+    "flag": true,
+    "note": "\"Ms Rana\" became \"Bu Rana\", the usual Indonesian title for a female teacher; the name is kept."
+  },
+  "evidence.cards.0.cases.2.name": {
+    "source": "Tailor at the market",
+    "back": "Tailor at the market",
+    "flag": true
+  },
+  "evidence.cards.0.cases.2.body": {
+    "source": "Sami makes and mends clothes. A translation tool helps him talk with customers who speak other languages, so he has more customers. The tool can't sew, and it can't measure a person.",
+    "back": "Sami makes and repairs clothes. A translator tool helps him talk with customers who use other languages, so his customers have increased. The tool can't sew, and can't measure people's bodies.",
+    "flag": true
+  },
+  "activity.title": {
+    "source": "AI or a person?",
+    "back": "AI or a human?",
+    "flag": true
+  },
+  "activity.instructions": {
+    "source": "Put each task into a group. There is no score. After you place one, you can see one possible answer and the reason.",
+    "back": "Put each task into one group. There is no score. After you place one task, you can see one possible answer and its reason.",
+    "flag": true
+  },
+  "activity.groups.0.label": {
+    "source": "AI could help with this",
+    "back": "AI can help here",
+    "flag": true
+  },
+  "activity.groups.1.label": {
+    "source": "A person is still needed",
+    "back": "Still needs a human",
+    "flag": true
+  },
+  "activity.groups.2.label": {
+    "source": "Both",
+    "back": "Both",
+    "flag": true
+  },
+  "activity.items.0.text": {
+    "source": "Sorting 1,000 forms by date",
+    "back": "Ordering 1,000 forms by date",
+    "flag": true
+  },
+  "activity.items.0.feedback": {
+    "source": "It is the same simple step again and again, which machines do well.",
+    "back": "This is the same simple step, repeated over and over. Machines are good at doing things like this.",
+    "flag": true
+  },
+  "activity.items.1.text": {
+    "source": "Comforting a child who is upset",
+    "back": "Comforting a child who is sad",
+    "flag": true
+  },
+  "activity.items.1.feedback": {
+    "source": "Care and kindness come from people. A child needs someone who knows them and can stay with them.",
+    "back": "Care and kindness come from humans. A child needs someone who knows them and can stay with them.",
+    "flag": true
+  },
+  "activity.items.2.text": {
+    "source": "Fixing a broken water pipe in a house",
+    "back": "Fixing a leaking water pipe in a house",
+    "flag": true
+  },
+  "activity.items.2.feedback": {
+    "source": "Every house is different, and the work needs skilled hands.",
+    "back": "Every house is different, and this work needs skilled hands.",
+    "flag": true
+  },
+  "activity.items.3.text": {
+    "source": "Translating a shop sign into another language",
+    "back": "Translating a shop sign into another language",
+    "flag": true
+  },
+  "activity.items.3.feedback": {
+    "source": "A tool can translate fast, but a speaker should check it. Tools make more mistakes in some languages.",
+    "back": "A tool can translate quickly, but someone who knows that language should check it. Tools are wrong more often in some languages.",
+    "flag": true
+  },
+  "activity.items.4.text": {
+    "source": "Finding the photos that show a tree among 5,000 photos",
+    "back": "Finding the photos that show a tree among 5,000 photos",
+    "flag": true
+  },
+  "activity.items.4.feedback": {
+    "source": "Tools that find patterns in photos can do this quickly. A person might still check the ones the tool was not sure about.",
+    "back": "A tool that looks for patterns in photos can do this quickly. Someone might still check the photos the tool was not sure about.",
+    "flag": true
+  },
+  "activity.items.5.text": {
+    "source": "Choosing which new player joins the football team",
+    "back": "Choosing a new player who joins the football team",
+    "flag": true
+  },
+  "activity.items.5.feedback": {
+    "source": "Choices about people should be made by people who can explain them. AI can be unfair, as Lesson 8 showed. You could say both, if a tool only helps to collect facts.",
+    "back": "Decisions about people should be made by people who can explain them. AI can be unfair, as Lesson 8 showed. You could choose both, if the tool only helps to collect facts.",
+    "flag": true
+  },
+  "activity.items.6.text": {
+    "source": "Making practice questions for a class",
+    "back": "Making practice questions for a class",
+    "flag": true
+  },
+  "activity.items.6.feedback": {
+    "source": "A tool can make questions fast. The teacher checks them, like Ms Rana in Millbrook.",
+    "back": "A tool can make questions quickly. The teacher checks those questions, like Bu Rana in Millbrook.",
+    "flag": true
+  },
+  "activity.items.7.text": {
+    "source": "Writing the first draft of a letter",
+    "back": "Writing the first draft of a letter",
+    "flag": true
+  },
+  "activity.items.7.feedback": {
+    "source": "Any group can be right here. A tool can write a first draft. A person decides what the letter should say, and checks it.",
+    "back": "Any group can be right here. A tool can write a first draft. A human decides what the letter says, then checks it.",
+    "flag": true
+  },
+  "read.sections.0.heading": {
+    "source": "New machines have changed work before",
+    "back": "New machines have changed work before",
+    "flag": true
+  },
+  "read.sections.0.text": {
+    "source": "AI is not the first technology to change people's work. In England in the early 1800s, new machines in factories began to do work that skilled cloth workers had done by hand. Between 1811 and 1816, some of these workers, called Luddites, broke machines in protest. The machines were taking their work. Much later, from the 1970s, cash machines slowly spread to banks in the United States. Many people expected bank tellers, who handle money at the counter, to disappear. But a study from 2015 found that the number of tellers stayed about the same and even grew a little. Banks opened more branches, and tellers spent more time helping customers. That was one machine, long ago, so it can't tell us what AI will do.",
+    "back": "AI is not the first technology that changed people's work. In England in the early 1800s, new machines in factories began to do the work that skilled cloth workers used to do by hand. Between 1811 and 1816, some of these workers, called the Luddites, broke machines as a form of protest. The machines took their work. Long after that, from the 1970s, ATMs slowly spread to banks in the United States. Many people thought bank tellers, the staff who handle money at the counter, would disappear. But a study from 2015 found that the number of tellers stayed more or less the same, and even grew a little. Banks opened more branches, and tellers used more time to help customers. That was only one machine, and very long ago, so that example can't tell us what AI will do.",
+    "flag": true,
+    "note": "\"Cash machines\" became \"mesin ATM\", the everyday word. \"Bank tellers\" kept as \"teller bank\" (common in Indonesia), explained in the same sentence. \"Luddites\" became \"kaum Luddite\" (the Luddites as a group), the usual Indonesian form; the checker warns that the English plural \"Luddites\" does not appear."
+  },
+  "read.sections.0.simpler": {
+    "source": "AI is not the first technology to change work. In the 1800s, new machines in England did the work of skilled cloth workers. Workers called Luddites broke some machines. From the 1970s, banks in the United States got cash machines. Many thought bank workers at the counter would disappear. A 2015 study found there were still about as many. Banks opened more branches, and workers helped customers more. That was long ago. It can't tell us what AI will do.",
+    "back": "AI is not the first technology that changed work. In the 1800s, new machines in England did the work of skilled cloth workers. Workers called the Luddites broke some machines. From the 1970s, banks in the United States had ATMs. Many people thought bank staff at the counter would disappear. A 2015 study found their number stayed more or less the same. Banks opened more branches, and staff helped customers more. That was long ago. That example can't tell us what AI will do.",
+    "flag": true
+  },
+  "read.sections.1.heading": {
+    "source": "AI changes tasks inside jobs",
+    "back": "AI changes the tasks inside jobs",
+    "flag": true
+  },
+  "read.sections.1.text": {
+    "source": "Most jobs are made of many tasks. A new technology may automate some tasks, but not the whole job. When spreadsheets came to office computers in the United States, many bookkeepers lost their work. Yet the number of accountants grew. In 2025, the ILO, the United Nations agency for work, found that about one in four jobs in the world has some exposure to AI tools that write and make things. This means these tools could do some of the tasks in those jobs. It is not a count of jobs lost. Office jobs, such as clerks, have the most exposure. The ILO says most of these jobs are more likely to change than to disappear.",
+    "back": "Most jobs are made of many tasks. A new technology can automate some tasks, but not the whole job. When spreadsheets began to be used on office computers in the United States, many bookkeepers lost their jobs. However, the number of accountants actually grew. In 2025, the ILO, the UN body that deals with work, found that about one in four jobs in the world is exposed to some degree to AI tools that can write and make things. This means these tools could do some of the tasks in those jobs. This is not a count of jobs lost. Office jobs, such as administrative staff, are the most exposed. According to the ILO, most of these jobs are more likely to change than to disappear.",
+    "flag": true,
+    "note": "\"Has some exposure to\" became \"sedikit banyak terpapar\" (is exposed to some degree). \"Spreadsheet\" kept, as Indonesian offices say it; \"bookkeepers\" is \"pemegang buku\". \"AI tools that write and make things\" kept as a description rather than \"AI generatif\", as the English does."
+  },
+  "read.sections.1.simpler": {
+    "source": "A job is made of many tasks. A new technology may automate some tasks, not the whole job. Spreadsheets did sums for office workers. Some people who added up numbers lost their work. But there were more accountants. In 2025, a United Nations group studied AI that writes and makes things. About one in four jobs has some exposure to it. It could do some of their tasks. This is not a count of lost jobs. Office jobs have the most exposure. Most will likely change, not disappear.",
+    "back": "One job is made of many tasks. A new technology can automate some tasks, not the whole job. Spreadsheets counted numbers for office workers. Some people whose task was counting numbers lost their jobs. But the number of accountants grew. In 2025, a UN body studied AI that can write and make things. About one in four jobs is exposed to some degree to this AI. This AI could do some of their tasks. This is not a count of jobs lost. Office jobs are the most exposed. Most will probably change, not disappear.",
+    "flag": true
+  },
+  "read.sections.2.heading": {
+    "source": "Some people gain, and some people lose",
+    "back": "Some people gain, some lose",
+    "flag": true
+  },
+  "read.sections.2.text": {
+    "source": "Change at work is often uneven. In 2024, the International Monetary Fund warned that AI could help some workers do more, and take important tasks from others. It also said AI will probably make inequality worse unless governments act. In Millbrook, the water office works faster. Two clerks moved to the help desk after training, but one lost her work. Training and fair rules can help. Workers, employers and governments can decide together how new tools are used.",
+    "back": "Change at work is often uneven. In 2024, the IMF (International Monetary Fund) warned that AI could help some workers produce more, and take important tasks from other workers. The IMF also said that AI will most likely make inequality worse, unless governments act. In Millbrook, the water office now works faster. Two administrative staff moved to the help counter after taking training, but one person lost her job. Training and fair rules can help. Workers, employers and governments can decide together how new tools are used.",
+    "flag": true
+  },
+  "read.sections.2.simpler": {
+    "source": "In 2024, money experts said AI may help some workers. It may take big tasks from others. It may make inequality worse, unless leaders act. After training, two Millbrook clerks moved to the help desk. One lost her work. Training and fair rules can help. Workers and leaders can decide together how to use AI.",
+    "back": "In 2024, finance experts said AI might help some workers. AI might take important tasks from other workers. AI might make inequality worse, unless leaders act. After training, two staff in Millbrook moved to the help counter. One person lost her job. Training and fair rules can help. Workers and leaders can decide together how to use AI.",
+    "flag": true,
+    "note": "\"Money experts\" (the IMF) became \"para ahli keuangan\" (finance experts)."
+  },
+  "read.glossary.0.word": {
+    "source": "technology",
+    "back": "technology",
+    "flag": true
+  },
+  "read.glossary.0.definition": {
+    "source": "Tools and machines that people make to solve problems.",
+    "back": "Tools and machines that people make to solve problems.",
+    "flag": true
+  },
+  "read.glossary.0.example": {
+    "source": "Cash machines were a new technology in banks.",
+    "back": "ATMs were once a new technology in banks.",
+    "flag": true
+  },
+  "read.glossary.1.word": {
+    "source": "automate",
+    "back": "automate",
+    "flag": true
+  },
+  "read.glossary.1.forms": {
+    "source": [
+      "automated",
+      "automation"
+    ],
+    "back": "",
+    "flag": true,
+    "note": "Indonesian forms marked: otomatisasi, diotomatiskan."
+  },
+  "read.glossary.1.definition": {
+    "source": "To make a machine do work that people used to do.",
+    "back": "To make a machine do work that people used to do.",
+    "flag": true
+  },
+  "read.glossary.1.example": {
+    "source": "The water office used AI to automate reading forms.",
+    "back": "The water office uses AI to automate the reading of forms.",
+    "flag": true
+  },
+  "read.glossary.2.word": {
+    "source": "task",
+    "back": "task",
+    "flag": true
+  },
+  "read.glossary.2.forms": {
+    "source": [
+      "tasks"
+    ],
+    "back": "",
+    "flag": true,
+    "note": "Indonesian forms marked: tugas-tugas, tugasnya."
+  },
+  "read.glossary.2.definition": {
+    "source": "One piece of work that is part of a job.",
+    "back": "One part of the work that belongs to a job.",
+    "flag": true
+  },
+  "read.glossary.2.example": {
+    "source": "Making practice questions is one task for Ms Rana.",
+    "back": "Making practice questions is one of Bu Rana's tasks.",
+    "flag": true
+  },
+  "read.glossary.3.word": {
+    "source": "exposure",
+    "back": "exposure",
+    "flag": true,
+    "note": "\"Keterpaparan\" (exposure) is a long, formal word; the reading uses the verb form \"terpapar\". Both are marked. A reviewer may prefer \"paparan\"."
+  },
+  "read.glossary.3.definition": {
+    "source": "When a new tool could do some of the tasks in a job.",
+    "back": "When a new tool can do some of the tasks in a job.",
+    "flag": true
+  },
+  "read.glossary.3.example": {
+    "source": "Office jobs have the most exposure to AI tools that write.",
+    "back": "Office jobs are the most exposed to AI tools that can write.",
+    "flag": true
+  },
+  "read.glossary.4.word": {
+    "source": "inequality",
+    "back": "inequality",
+    "flag": true
+  },
+  "read.glossary.4.definition": {
+    "source": "When some people have much more than others.",
+    "back": "When some people have much more than other people.",
+    "flag": true
+  },
+  "read.glossary.4.example": {
+    "source": "If only a few people gain from AI, inequality grows.",
+    "back": "If only a few people gain from AI, inequality grows.",
+    "flag": true
+  },
+  "read.glossary.5.word": {
+    "source": "training",
+    "back": "training",
+    "flag": true,
+    "note": "\"Pelatihan\" (job training) is also the word Lessons 1–8 use for training a model; this lesson only has the job sense."
+  },
+  "read.glossary.5.definition": {
+    "source": "Lessons that teach people the skills for new work.",
+    "back": "Lessons that teach the skills for a new job.",
+    "flag": true
+  },
+  "read.glossary.5.example": {
+    "source": "After training, two Millbrook clerks moved to the help desk.",
+    "back": "After training, two staff in Millbrook moved to the help counter.",
+    "flag": true
+  },
+  "read.checks.0.question": {
+    "source": "What happened to bank tellers in the United States as cash machines spread?",
+    "back": "What happened to bank tellers in the United States when ATMs spread?",
+    "flag": true
+  },
+  "read.checks.0.options.0.text": {
+    "source": "Their work changed to helping customers",
+    "back": "Their work changed to helping customers",
+    "flag": true
+  },
+  "read.checks.0.options.0.feedback": {
+    "source": "Yes. A 2015 study found about as many tellers, and they spent more time helping customers.",
+    "back": "Yes. A 2015 study found the number of tellers stayed more or less the same, and they used more time to help customers.",
+    "flag": true
+  },
+  "read.checks.0.options.1.text": {
+    "source": "All of the tellers lost their work",
+    "back": "All the tellers lost their jobs",
+    "flag": true
+  },
+  "read.checks.0.options.1.feedback": {
+    "source": "Not quite. Many people expected this, but it didn't happen. Read the end of the first section.",
+    "back": "Not quite. Many people thought so, but it didn't happen. Read the end of the first section again.",
+    "flag": true
+  },
+  "read.checks.0.options.2.text": {
+    "source": "Tellers began to build cash machines",
+    "back": "The tellers began to make ATMs",
+    "flag": true
+  },
+  "read.checks.0.options.2.feedback": {
+    "source": "Not quite. Tellers still worked in banks. Read what they spent more time doing.",
+    "back": "Not quite. The tellers kept working at banks. Read what they did more of.",
+    "flag": true
+  },
+  "read.checks.1.question": {
+    "source": "The ILO says most jobs with some exposure to these tools are more likely to ...",
+    "back": "According to the ILO, most jobs that are exposed to some degree to these tools are more likely to ...",
+    "flag": true
+  },
+  "read.checks.1.options.0.text": {
+    "source": "disappear in a year or two",
+    "back": "disappear within one or two years",
+    "flag": true
+  },
+  "read.checks.1.options.0.feedback": {
+    "source": "Not quite. The study says something else. Read the end of the second section.",
+    "back": "Not quite. The study says something else. Read the end of the second section again.",
+    "flag": true
+  },
+  "read.checks.1.options.1.text": {
+    "source": "change, because people are still needed",
+    "back": "change, because humans are still needed",
+    "flag": true
+  },
+  "read.checks.1.options.1.feedback": {
+    "source": "Yes. The tools could do some tasks, but people are still needed for many others.",
+    "back": "Yes. The tools can do some tasks, but humans are still needed for many other tasks.",
+    "flag": true
+  },
+  "read.checks.1.options.2.text": {
+    "source": "stay exactly the same as before",
+    "back": "stay exactly the same as before",
+    "flag": true
+  },
+  "read.checks.1.options.2.feedback": {
+    "source": "Not quite. Many of these jobs will change. Read what the study says in the second section.",
+    "back": "Not quite. Many of these jobs will change. Read again what the study says in the second section.",
+    "flag": true
+  },
+  "read.checks.2.question": {
+    "source": "Pick a machine from the lesson, or one you have seen. Who gained when it came, and who lost?",
+    "back": "Choose one machine from this lesson, or a machine you have seen. Who gained when the machine came, and who lost?",
+    "flag": true
+  },
+  "read.checks.2.placeholder": {
+    "source": "When ___ came, ... gained because ... and ... lost because ...",
+    "back": "When ___ came, ... gained because ... and ... lost because ...",
+    "flag": true
+  },
+  "write.prompt": {
+    "source": "Choose one Millbrook worker. Explain how AI changed their work, who gained or lost, and one thing that would make the change fairer.",
+    "back": "Choose one worker in Millbrook. Explain how AI changed their work, who gained or lost, and one thing that would make the change fairer.",
+    "flag": true
+  },
+  "write.sentenceStarters.0": {
+    "source": "I chose ...",
+    "back": "I chose ...",
+    "flag": true
+  },
+  "write.sentenceStarters.1": {
+    "source": "AI changed their work because ...",
+    "back": "AI changed their work because ...",
+    "flag": true
+  },
+  "write.sentenceStarters.2": {
+    "source": "___ gained, because ...",
+    "back": "___ gained, because ...",
+    "flag": true
+  },
+  "write.sentenceStarters.3": {
+    "source": "___ lost, because ...",
+    "back": "___ lost, because ...",
+    "flag": true
+  },
+  "write.sentenceStarters.4": {
+    "source": "One thing that would make it fairer is ...",
+    "back": "One thing that would make it fairer is ...",
+    "flag": true
+  },
+  "write.planningBoxes.0": {
+    "source": "My main idea",
+    "back": "My main idea",
+    "flag": true
+  },
+  "write.planningBoxes.1": {
+    "source": "Evidence from the lesson",
+    "back": "Evidence from the lesson",
+    "flag": true
+  },
+  "write.planningBoxes.2": {
+    "source": "Why it matters",
+    "back": "Why this matters",
+    "flag": true
+  },
+  "write.planningBoxes.3": {
+    "source": "A question I still have",
+    "back": "A question I still have",
+    "flag": true
+  },
+  "write.selfCheck.0": {
+    "source": "I named one worker and how AI changed their work.",
+    "back": "I named one worker and how AI changed their work.",
+    "flag": true
+  },
+  "write.selfCheck.1": {
+    "source": "I said who gained or who lost.",
+    "back": "I said who gained or who lost.",
+    "flag": true
+  },
+  "write.selfCheck.2": {
+    "source": "I gave one way to make the change fairer.",
+    "back": "I gave one way to make the change fairer.",
+    "flag": true
+  },
+  "write.example": {
+    "source": "I chose the clerks at the Millbrook water office. AI changed their work because a new tool now reads most forms. The office gained, because the work is faster. Ines gained too, because after training she moved to the help desk. The third clerk lost out, because she has no work there now. This is like the cloth workers in the 1800s. One thing that would make it fairer is training for every clerk, so nobody is left without work.",
+    "back": "I chose the administrative staff at the Millbrook water office. AI changed their work because now there is a new tool that reads most forms. The office gained, because the work got faster. Ines gained too, because after training she moved to the help counter. The third staff member lost, because now she has no work there. This is like the cloth workers in the 1800s. One thing that would make it fairer is training for every staff member, so that nobody loses their work.",
+    "flag": true
+  },
+  "speak.partnerTask": {
+    "source": "Your partner names a task from the activity. You say if AI could help, a person is still needed, or both, and why. Then switch.",
+    "back": "Your partner names one task from the activity. You say whether AI can help, a human is still needed, or both, and why. Then take turns.",
+    "flag": true
+  },
+  "speak.independentTask": {
+    "source": "Say out loud what happened to bank tellers when cash machines came. Then say why that old example can't tell us for sure what AI will do.",
+    "back": "Say out loud what happened to bank tellers when ATMs came. Then say why that old example can't tell us for sure what AI will do.",
+    "flag": true
+  },
+  "watch.why": {
+    "source": "It looks back at a hundred years of worry about machines taking jobs, and asks who gains from new technology.",
+    "back": "This video looks back on a hundred years of worry about machines taking jobs, and asks who gains from new technology.",
+    "flag": true
+  },
+  "watch.beforeQuestion": {
+    "source": "Do you think new machines make more jobs or fewer jobs? Why?",
+    "back": "Do you think new machines make jobs more or fewer? Why?",
+    "flag": true
+  },
+  "watch.afterQuestion": {
+    "source": "Why does the video say that who gains from technology depends on people's choices?",
+    "back": "Why does the video say that who gains from technology depends on human choices?",
+    "flag": true
+  },
+  "watch.summary": {
+    "source": "This video asks if machines and AI will take away people's jobs. People have worried about this many times before. In the United States, machines replaced many workers in the 1920s and 1930s. It happened again around 1960. Machines took work on farms, in factories and on telephone lines. But most people still found work. Technology makes some new jobs, such as building and fixing machines. It also makes things cheaper. Then people spend money on other things, like haircuts or eating out, and those need workers too. Some experts say AI is different, because it can do many kinds of work. The video says the bigger question may be who gains. The gains from technology have not been shared fairly. The rules people choose can change that.",
+    "back": "This video asks whether machines and AI will take people's jobs. People have often worried about this before. In the United States, machines replaced many workers in the 1920s and 1930s. It happened again around 1960. Machines took work in farming, in factories and in telephone networks. But most people still got work. Technology creates some new jobs, like making and fixing machines. Technology also makes goods cheaper. Then people spend their money on other things, like haircuts or eating out, and all of those need workers too. Some experts say AI is different, because AI can do many kinds of work. The video says the bigger question may be who gains. The gains from technology have not been shared fairly. The rules humans choose can change that.",
+    "flag": true
+  },
+  "watch.keyPoints.0": {
+    "source": "People have worried about machines taking jobs many times before.",
+    "back": "People have often worried that machines will take jobs.",
+    "flag": true
+  },
+  "watch.keyPoints.1": {
+    "source": "New technology removes some jobs but also helps create new ones.",
+    "back": "New technology removes some jobs, but also helps create new jobs.",
+    "flag": true
+  },
+  "watch.keyPoints.2": {
+    "source": "Who gains from technology depends on the rules and choices people make.",
+    "back": "Who gains from technology depends on the rules and choices humans make.",
+    "flag": true
+  },
+  "watch.contentNote": {
+    "source": "Vox, 2017: made before today's AI chat tools, and about the United States. Title and channel confirmed with YouTube's oEmbed (October 2026); the length, about 9 minutes, comes from Rosetta's transcript archive and is not confirmed on YouTube. It mentions IBM's Watson, a 2013 Oxford study and US income figures. The summary was written from that archive's transcript summary, not from watching it. Someone on the team must watch it before use; learners can read the written summary instead.",
+    "back": "Vox, 2017: made before there were AI chat tools like today's, and about the United States. Its title and channel were confirmed with YouTube's oEmbed (October 2026); its length, about 9 minutes, comes from the Rosetta transcript archive and has not been confirmed on YouTube. The video mentions IBM's Watson, an Oxford study from 2013 and income figures in the United States. The summary was written from that archive's transcript summary, not from watching it. Someone on the team must watch it before it is used; learners can just read the written summary.",
+    "flag": true
+  },
+  "reflect.prompts.0.text": {
+    "source": "When AI changes people's work, one thing that would make it fairer is ...",
+    "back": "When AI changes people's work, one thing that would make it fairer is ...",
+    "flag": true
+  },
+  "reflect.prompts.1.text": {
+    "source": "A task I think will always need a person is ... because ...",
+    "back": "One task I think will always need a human is ... because ...",
+    "flag": true
+  },
+  "reflect.completionMessage": {
+    "source": "You finished Lesson 9. You used history to explain how AI can change jobs, and who gains or loses.",
+    "back": "You have finished Lesson 9. You used history to explain how AI can change jobs, and who gains or loses.",
+    "flag": true
+  },
+  "visual.alt": {
+    "source": "A timeline of three changes at work: machines in cloth factories in the 1810s, cash machines in banks from about 1970, and AI tools in offices in the 2020s. Each one took away some work and changed or created other work.",
+    "back": "A timeline of three changes at work: machines in cloth factories in the 1810s, ATMs in banks from about 1970, and AI tools in offices in the 2020s. Each one removed some work and changed or created other work.",
+    "flag": true
+  },
+  "sources.0.label": {
+    "source": "Britannica: Luddite",
+    "back": "Britannica: Luddite (about the Luddites)",
+    "flag": true,
+    "note": "Sources' titles are kept in English (the pages are in English) with a short Indonesian gloss in brackets, as the course brief asks; dates translated."
+  },
+  "sources.1.label": {
+    "source": "The Conversable Economist (2015): ATMs and a rising number of bank tellers? (on James Bessen's research in the IMF's Finance & Development)",
+    "back": "The Conversable Economist (2015): ATMs and a rising number of bank tellers? (ATMs and the growing number of bank tellers; about James Bessen's research in the IMF's Finance & Development)",
+    "flag": true
+  },
+  "sources.2.label": {
+    "source": "NPR (2015): How the electronic spreadsheet revolutionized business",
+    "back": "NPR (2015): How the electronic spreadsheet revolutionized business (how the electronic spreadsheet changed business)",
+    "flag": true
+  },
+  "sources.3.label": {
+    "source": "International Labour Organization (May 2025): One in four jobs at risk of being transformed by GenAI, new ILO–NASK Global Index shows",
+    "back": "International Labour Organization (May 2025): One in four jobs at risk of being transformed by GenAI, new ILO–NASK Global Index shows (one in four jobs at risk of being changed by generative AI)",
+    "flag": true
+  },
+  "sources.4.label": {
+    "source": "ILO (20 May 2025): Generative AI and jobs, a refined global index of occupational exposure (Gmyrek and others; potential exposure, not job losses)",
+    "back": "ILO (20 May 2025): Generative AI and jobs, a refined global index of occupational exposure (Gmyrek and colleagues; possible exposure, not jobs lost)",
+    "flag": true
+  },
+  "sources.5.label": {
+    "source": "IMF Blog (January 2024): AI will transform the global economy. Let's make sure it benefits humanity",
+    "back": "IMF Blog (January 2024): AI will transform the global economy. Let's make sure it benefits humanity (AI will change the world economy; make sure AI benefits humanity)",
+    "flag": true
+  },
+  "sensitiveNotes.0": {
+    "source": "Many learners may not be allowed to work where they live, and work and money can be painful topics for families. Never ask learners about their own or their family's jobs, income or plans for work. The lesson uses made-up Millbrook workers, and the think question lets learners pick a machine from the lesson.",
+    "back": "Many learners may not be allowed to work where they live, and work and money can be painful topics for families. Never ask learners about their own or their families' work, income or work plans. This lesson uses made-up workers from Millbrook, and the question to think about lets learners choose a machine from the lesson.",
+    "flag": true,
+    "note": "\"The think question\" became \"pertanyaan untuk dipikirkan\" (the question to think about), as the interface calls it \"pikirkan baik-baik\"."
+  },
+  "sensitiveNotes.1": {
+    "source": "Britannica notes that the government punished the Luddites harshly, including hangings. The lesson leaves this out; if learners ask, keep it short and factual.",
+    "back": "Britannica notes that the government punished the Luddites harshly, including by hanging. This lesson does not include that; if learners ask, answer briefly and factually.",
+    "flag": true
+  },
+  "educatorNotes.0": {
+    "source": "One exposure figure in learner text, on purpose. The ILO's (May 2025, with Poland's NASK) is potential exposure to generative AI: 25% of the world's jobs are in occupations where these tools could do some tasks. It is not a count of jobs lost, and the ILO expects most to be transformed rather than replaced; clerical jobs are the most exposed, and in rich countries the jobs most at risk of automation are 9.6% of women's jobs against 3.5% of men's. The IMF's figure (January 2024) has a wider scope: almost 40% of the world's jobs, and about 60% in advanced economies, are exposed to AI in general, with roughly half of those likely to gain and half to see lower demand. Learner text keeps only the IMF's warning about inequality, without its numbers, so the two estimates aren't mixed up. The bank teller example is US data from the 1970s to the 2000s (James Bessen, 2015); it shows one past case, not a forecast for AI. The spreadsheet example is from NPR (2015).",
+    "back": "Learner text deliberately has only one exposure figure. The ILO's figure (May 2025, with NASK of Poland) is possible exposure to generative AI: 25% of the world's jobs are in kinds of work where some tasks could be done by these tools. It is not a count of jobs lost, and the ILO expects most to change, not be replaced; administrative work is the most exposed, and in rich countries the jobs most at risk of being automated are 9.6% of women's jobs compared with 3.5% of men's. The IMF's figure (January 2024) has a wider scope: almost 40% of the world's jobs, and about 60% in advanced countries, are exposed to AI in general; roughly half may benefit and half may be less needed. Learner text has only the IMF's warning about inequality, without its numbers, so the two estimates are not mixed. The bank teller example is United States data from the 1970s to the 2000s (James Bessen, 2015); it shows one past case, not a forecast about AI. The spreadsheet example comes from NPR (2015).",
+    "flag": true
+  },
+  "educatorNotes.1": {
+    "source": "Paper version of the activity: write the eight tasks on cards and sort them under the three headings. There is no score; reward reasons. A teacher could add a local example of a tool that changed work, without asking about anyone's own job.",
+    "back": "Paper version of this activity: write the eight tasks on cards, then group them under three headings. There is no score; value the reasons. A teacher can add a local example of a tool that changed work, without asking about anyone's job.",
+    "flag": true
+  }
+}
