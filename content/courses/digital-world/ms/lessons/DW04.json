@@ -1,0 +1,289 @@
+{
+  "title": "Apa itu model bahasa besar",
+  "essentialQuestion": "Bagaimanakah chatbot menulis jawapan, dan mengapakah ia boleh kedengaran yakin tetapi masih tersilap?",
+  "learningGoal": "Terangkan bagaimana model bahasa besar menulis dengan meramalkan cebisan teks kecil yang seterusnya, dan mengapa jawapannya perlu disemak.",
+  "warmUp": {
+    "question": "Apakah perkataan yang seterusnya? “Setiap pagi, saya minum secawan ___.”",
+    "options": [
+      "Teh",
+      "Air",
+      "Sesuatu yang lain",
+      "Tidak pasti"
+    ]
+  },
+  "evidence": {
+    "label": "Contoh rekaan yang dibuat untuk pelajaran ini.",
+    "question": "Perkataan manakah yang paling mungkin dipilih oleh model itu? Jawapan pembantu yang manakah paling perlu disemak?",
+    "cards": [
+      {
+        "title": "Permainan perkataan Lakeside, satu contoh mudah: apa yang datang selepas “secawan”",
+        "columns": [
+          "Perkataan seterusnya",
+          "Bilangan kali dalam ayat latihan"
+        ],
+        "rows": [
+          [
+            "teh",
+            "6"
+          ],
+          [
+            "air",
+            "3"
+          ],
+          [
+            "beras",
+            "1"
+          ]
+        ]
+      },
+      {
+        "title": "Tiga jawapan daripada pembantu Lakeside, sebuah chatbot rekaan",
+        "cases": [
+          {
+            "name": "Terangkan satu idea",
+            "body": "Seorang pelajar bertanya, “Apakah skala peta?” Pembantu itu memberi penerangan yang pendek dan jelas. Seorang guru menyemaknya, dan penerangan itu betul."
+          },
+          {
+            "name": "Terjemahkan satu notis",
+            "body": "Pembantu itu menukar satu notis pendek kepada bahasa lain. Seorang sukarelawan yang bertutur dalam bahasa itu membetulkan dua perkataan."
+          },
+          {
+            "name": "Namakan sebuah buku",
+            "body": "Seorang pelajar meminta sebuah buku tentang sejarah sungai. Pembantu itu menamakan “The Long Blue Road” oleh Pella Raskin, dari tahun 2009. Ia kedengaran sangat yakin. Pustakawan tidak dapat menjumpai buku ini di mana-mana."
+          }
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "title": "Bolehkah LLM melakukan ini?",
+    "instructions": "Letakkan setiap ayat dalam satu kumpulan. Tiada markah. Selepas kamu meletakkan satu ayat, kamu boleh melihat satu jawapan yang mungkin dan sebabnya.",
+    "groups": [
+      {
+        "label": "LLM boleh melakukan ini"
+      },
+      {
+        "label": "LLM tidak boleh melakukan ini"
+      },
+      {
+        "label": "Sukar dikatakan"
+      }
+    ],
+    "items": [
+      {
+        "text": "Menulis cebisan teks kecil yang seterusnya, berulang kali",
+        "feedback": "Beginilah cara LLM menulis setiap jawapan. Ia menambah satu cebisan kecil, iaitu satu token, pada satu masa."
+      },
+      {
+        "text": "Menerangkan satu idea dengan perkataan yang lebih mudah",
+        "feedback": "Ia boleh menulis penerangan yang jelas berdasarkan corak dalam teks. Seseorang masih perlu menyemak sama ada penerangan itu betul."
+      },
+      {
+        "text": "Menterjemah satu ayat ke dalam bahasa lain",
+        "feedback": "Ia belajar daripada teks dalam banyak bahasa. Ia biasanya lebih baik dalam bahasa yang banyak tulisannya dalam talian."
+      },
+      {
+        "text": "Berjanji bahawa setiap fakta yang ditulisnya adalah benar",
+        "feedback": "Ia memilih perkataan yang mungkin, bukan fakta yang telah disemaknya, jadi ia boleh mereka-reka sesuatu."
+      },
+      {
+        "text": "Berasa gembira atau sedih tentang soalan kamu",
+        "feedback": "Ia mencari corak dalam perkataan. Ia tidak mempunyai perasaan seperti manusia."
+      },
+      {
+        "text": "Memberi jawapan yang berbeza apabila kamu bertanya soalan yang sama sekali lagi",
+        "feedback": "Banyak alat memilih setiap cebisan sebahagiannya secara rawak, jadi jawapan boleh berubah. Dengan tetapan lain, sesebuah model boleh memberi jawapan yang sama setiap kali."
+      },
+      {
+        "text": "Mencari berita hari ini di internet",
+        "feedback": "Ini bergantung pada alat itu. Model asas hanya menggunakan apa yang dipelajarinya sebelum ini. Sesetengah alat juga membuat carian di web, tetapi kamu masih perlu menyemak halaman yang ditunjukkannya."
+      },
+      {
+        "text": "Kedengaran sangat yakin tentang jawapan yang tidak betul",
+        "feedback": "Ia memilih perkataan yang kedengaran mungkin, bukan fakta yang telah disemaknya. Fikirkan tentang buku Lakeside yang tidak wujud itu."
+      },
+      {
+        "text": "Menulis puisi yang disukai orang",
+        "feedback": "Mana-mana kumpulan boleh diberi alasan di sini. Ia boleh menulis puisi. Sama ada orang menyukainya bergantung pada setiap pembaca."
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Ia belajar corak daripada teks yang sangat banyak",
+        "text": "Chatbot ialah atur cara komputer yang boleh kamu ajak bersembang secara bertulis. Banyak chatbot hari ini dibina di atas model bahasa besar, atau LLM. LLM belajar daripada teks yang sangat banyak, seperti buku, artikel dan halaman web. Sebahagian besarnya ditulis oleh manusia. Daripada teks itu, model belajar corak, contohnya perkataan yang sering datang selepas perkataan lain. Ia berfungsi dengan cebisan teks yang kecil, yang dipanggil token. Satu token mungkin satu perkataan atau sebahagian daripada perkataan. Lihat permainan perkataan rekaan di Pusat Pembelajaran Lakeside. Selepas “secawan”, ayat latihannya ada “teh” enam kali, “air” tiga kali dan “beras” sekali.",
+        "simpler": "Chatbot ialah atur cara yang boleh kamu ajak bersembang. Banyak chatbot menggunakan model bahasa besar, atau LLM. LLM belajar daripada banyak teks, seperti buku dan halaman web. Manusia menulis sebahagian besarnya. LLM mencari corak dalam perkataan. Ia berfungsi dengan token. Token ialah satu perkataan atau sebahagian perkataan. Dalam permainan perkataan Lakeside, “teh” paling kerap datang selepas “secawan”."
+      },
+      {
+        "heading": "Ia menulis satu cebisan pada satu masa",
+        "text": "Apabila kamu bertanya satu soalan kepada LLM, ia meramalkan token seterusnya dalam jawapannya, menambahkannya, dan meramalkan token selepas itu, berulang kali. Selalunya setiap token dipilih sebahagiannya secara rawak daripada token yang mungkin, jadi model Lakeside biasanya akan berkata “teh”, tetapi kadang-kadang “air”. Dengan tetapan lain, sesebuah model boleh memberi jawapan yang sama setiap kali. Chatbot bukan perkara baharu: pada tahun 1966, sebuah atur cara bernama ELIZA bersembang dengan mengikut peraturan yang ditulis oleh manusia. LLM pula menggunakan pembelajaran mesin. Pada tahun 2017, penyelidik menerbitkan reka bentuk baharu untuk tugas bahasa. ChatGPT, yang dilancarkan pada 30 November 2022, menjadikan LLM terkenal.",
+        "simpler": "Kamu bertanya satu soalan kepada LLM. Ia meramalkan token seterusnya, berulang kali. Selalunya ia memilih sebahagiannya secara rawak. Jadi model Lakeside biasanya kata “teh”, tetapi kadang-kadang “air”. Dengan tetapan lain, ia memberi jawapan yang sama setiap kali. Chatbot bukan perkara baharu. Pada tahun 1966, ada satu yang mengikut peraturan yang ditulis manusia. LLM pula belajar daripada contoh. Penyelidik membuat reka bentuk baharu pada tahun 2017. Pada November 2022, ChatGPT menjadikannya terkenal."
+      },
+      {
+        "heading": "Kedengaran yakin tidak sama dengan betul",
+        "text": "LLM asas meramalkan perkataan yang kedengaran betul. Ia tidak menyemak fakta seperti yang dilakukan oleh orang yang teliti. Jadi ia boleh mereka-reka sesuatu, dan ia boleh kedengaran sangat yakin walaupun ia tersilap. Di Lakeside, pembantu rekaan itu menamakan sebuah buku yang tidak wujud. Sesetengah alat juga membuat carian di web dan menunjukkan pautan, tetapi halaman itu boleh mengandungi kesilapan atau disalah baca, jadi kamu masih perlu menyemaknya. Kebanyakan LLM yang besar belajar terutamanya daripada teks bahasa Inggeris, dan penyelidik mendapati LLM berfungsi kurang baik dalam bahasa yang sedikit tulisannya dalam talian. Jadi semak jawapan yang penting dengan sumber yang dipercayai, seperti perpustakaan atau guru.",
+        "simpler": "LLM asas memilih perkataan yang kedengaran betul. Ia tidak menyemak fakta seperti orang yang teliti. Jadi ia boleh mereka-reka sesuatu tetapi masih kedengaran yakin. Pembantu Lakeside menamakan sebuah buku yang tidak wujud. Sesetengah alat juga mencari di web dan menunjukkan pautan. Kamu masih perlu menyemak halaman itu. Kebanyakan LLM yang besar belajar kebanyakannya daripada bahasa Inggeris. LLM kurang baik dalam bahasa yang sedikit tulisannya dalam talian. Jadi semak jawapan yang penting dengan sumber yang dipercayai, seperti perpustakaan atau guru."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "chatbot",
+        "definition": "Atur cara komputer yang boleh kamu ajak bercakap dengan menaip.",
+        "example": "Pembantu Lakeside ialah chatbot rekaan."
+      },
+      {
+        "word": "model bahasa besar",
+        "forms": [
+          "LLM"
+        ],
+        "definition": "Atur cara yang belajar corak daripada teks yang sangat banyak.",
+        "example": "Banyak chatbot dibina di atas model bahasa besar."
+      },
+      {
+        "word": "token",
+        "definition": "Cebisan teks yang kecil: satu perkataan atau sebahagian daripada perkataan.",
+        "example": "Model itu menambah satu token pada satu masa, seperti “teh”."
+      },
+      {
+        "word": "meramal",
+        "forms": [
+          "meramalkan",
+          "ramalan"
+        ],
+        "definition": "Meneka apa yang akan datang seterusnya.",
+        "example": "Model itu meramalkan bahawa perkataan seterusnya ialah “teh”."
+      },
+      {
+        "word": "yakin",
+        "definition": "Kedengaran atau berasa sangat pasti.",
+        "example": "Pembantu itu kedengaran yakin, tetapi buku itu tidak wujud."
+      },
+      {
+        "word": "sumber",
+        "definition": "Tempat datangnya maklumat, seperti buku atau seseorang.",
+        "example": "Perpustakaan ialah sumber yang dipercayai untuk menyemak nama sebuah buku."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Bagaimanakah model bahasa besar menulis jawapan?",
+        "options": [
+          {
+            "text": "Ia meramalkan token seterusnya, berulang kali",
+            "feedback": "Betul. Ia menambah satu token yang mungkin, iaitu satu perkataan atau sebahagian perkataan, pada satu masa, menggunakan corak daripada teksnya."
+          },
+          {
+            "text": "Ia menyalin seluruh jawapan daripada sebuah buku besar",
+            "feedback": "Belum tepat. Ia belajar corak daripada banyak teks. Baca petikan kedua sekali lagi."
+          },
+          {
+            "text": "Seseorang menaip setiap jawapan dengan sangat laju",
+            "feedback": "Belum tepat. Atur cara itu sendiri yang menulis jawapannya. Baca petikan kedua sekali lagi."
+          }
+        ]
+      },
+      {
+        "question": "Pembantu Lakeside menamakan sebuah buku, tetapi pustakawan tidak dapat menjumpainya. Apakah yang patut kamu lakukan?",
+        "options": [
+          {
+            "text": "Percayai jawapan itu, kerana pembantu itu kedengaran pasti",
+            "feedback": "Belum tepat. LLM boleh kedengaran yakin tetapi masih tersilap. Baca petikan ketiga."
+          },
+          {
+            "text": "Semak sumber yang dipercayai, seperti perpustakaan",
+            "feedback": "Betul. LLM boleh mereka-reka sesuatu, jadi sumber yang dipercayai membantu kamu mengetahui apa yang benar."
+          },
+          {
+            "text": "Gunakan juga nama buku itu dalam kerja kamu",
+            "feedback": "Belum tepat. Buku itu mungkin tidak wujud. Baca petikan ketiga tentang menyemak."
+          }
+        ]
+      },
+      {
+        "question": "Sebahagian besar teks yang dipelajari oleh LLM ditulis oleh manusia. Patutkah penulis ditanya dahulu sebelum tulisan mereka digunakan? Mengapa?",
+        "placeholder": "Saya fikir penulis patut / tidak patut ditanya kerana ..."
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Terangkan bagaimana chatbot menulis jawapan, dan mengapa kamu patut menyemak apa yang dikatakannya. Gunakan satu contoh daripada Lakeside.",
+    "sentenceStarters": [
+      "Model bahasa besar belajar daripada ...",
+      "Ia menulis jawapan dengan ...",
+      "Ia boleh berguna untuk ...",
+      "Tetapi ia boleh tersilap kerana ...",
+      "Sebelum saya mempercayai sesuatu jawapan, saya ..."
+    ],
+    "planningBoxes": [
+      "Idea utama saya",
+      "Bukti daripada pelajaran",
+      "Mengapa ini penting",
+      "Soalan yang masih saya ada"
+    ],
+    "selfCheck": [
+      "Saya menerangkan bagaimana LLM menulis, satu cebisan kecil pada satu masa.",
+      "Saya memberi satu cara ia boleh berguna.",
+      "Saya memberi satu sebab untuk menyemak jawapannya."
+    ],
+    "example": "Model bahasa besar belajar daripada teks yang sangat banyak, dan sebahagian besarnya ditulis oleh manusia. Ia menulis jawapan dengan meramalkan token seterusnya, iaitu satu perkataan atau sebahagian perkataan, berulang kali. Ia boleh berguna untuk menerangkan idea atau menterjemah notis pendek. Tetapi ia boleh tersilap kerana ia memilih perkataan yang kedengaran betul. Ia tidak menyemak fakta. Di Lakeside, pembantu itu menamakan sebuah buku yang tidak wujud, dan ia kedengaran pasti. Sebelum saya mempercayai sesuatu jawapan, saya menyemak sumber yang dipercayai, seperti perpustakaan atau guru."
+  },
+  "speak": {
+    "partnerTask": "Sebut permulaan satu ayat, seperti “Setiap pagi, saya minum secawan ...”. Rakan kamu meramalkan perkataan seterusnya. Kemudian bincangkan mengapa setiap seorang daripada kamu memilih perkataan itu.",
+    "independentTask": "Terangkan dengan kuat, dalam tiga ayat, bagaimana chatbot menulis jawapan dan mengapa ia boleh tersilap."
+  },
+  "watch": {
+    "why": "Dua orang yang membina alat AI menunjukkan, dengan satu contoh mudah, bagaimana model bahasa menulis dengan meneka apa yang datang seterusnya.",
+    "beforeQuestion": "Pada pendapat kamu, bagaimanakah chatbot tahu apa yang hendak ditulis?",
+    "afterQuestion": "Mengapakah jawapan chatbot boleh tersilap, walaupun ia kedengaran bagus?",
+    "summary": "Dalam video ini, dua orang yang membina alat AI menerangkan cara chatbot berfungsi. Seorang daripadanya bekerja di syarikat yang membuat ChatGPT. Model bahasa besar belajar daripada teks yang sangat banyak dari internet. Idea utamanya mudah. Ia menggunakan nombor tentang apa yang mungkin, yang dikira dengan sangat pantas. Video ini menunjukkan satu contoh kecil. Sebuah atur cara membaca drama oleh penulis Shakespeare. Ia mengira huruf yang sering datang selepas setiap huruf. Apabila ia menulis dengan cara ini, perkataannya kelihatan pelik. Apabila ia melihat cebisan yang lebih panjang, seperti perkataan penuh, tekaannya menjadi jauh lebih baik. Model besar menggunakan rangkaian neural, yang secara longgar berasaskan otak. Manusia juga membantu menjadikan jawapan ChatGPT lebih baik. Tetapi jawapannya masih datang daripada apa yang mungkin, jadi ia boleh membuat kesilapan.",
+    "keyPoints": [
+      "Model bahasa besar belajar daripada teks yang sangat banyak dari internet.",
+      "Ia menulis dengan meneka apa yang mungkin datang seterusnya, berulang kali.",
+      "Jawapannya datang daripada apa yang mungkin, jadi jawapan itu boleh tersilap."
+    ],
+    "contentNote": "Kira-kira 7 minit 20 saat (DCMP). Tajuk dan saluran disahkan dengan oEmbed YouTube pada 31 Oktober 2026; saluran itu milik Code.org, yang dinamakan “CodeAI” di YouTube. Ringkasan ini ditulis daripada penerangan DCMP dan rangka video yang dibuat oleh AI pihak ketiga (videohighlight.com), bukan dengan menontonnya, jadi semak contoh Shakespeare dan minit terakhir sebelum digunakan. Penutur diperkenalkan sebagai ketua pegawai teknologi OpenAI dan ketua pegawai eksekutif Runway, sebuah syarikat video AI, jadi video ini menamakan ChatGPT dan syarikat-syarikat ini, dan ia dibuka dengan harapan mereka tentang AI. Seorang ahli pasukan mesti menontonnya sebelum digunakan; pelajar boleh membaca ringkasan bertulis sebagai ganti."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Sebelum saya mempercayai jawapan chatbot, saya akan ..."
+      },
+      {
+        "text": "Satu soalan yang saya ada tentang tulisan siapa yang dipelajari oleh LLM ialah ..."
+      }
+    ],
+    "completionMessage": "Kamu telah menamatkan Pelajaran 4. Kamu telah menerangkan bagaimana model bahasa besar menulis, dan mengapa jawapannya perlu disemak."
+  },
+  "visual": {
+    "alt": "Rajah: selepas “secawan”, model itu menimbang “teh” (6), “air” (3) dan “beras” (1), memilih satu perkataan, kemudian meramalkan perkataan seterusnya sekali lagi. Di bawah, satu jawapan yang kedengaran pasti menamakan sebuah buku, dengan peringatan untuk menyemaknya."
+  },
+  "sources": [
+    {
+      "label": "Google for Developers, Machine Learning Crash Course: Introduction to large language models (token, meramalkan token seterusnya, memilih yang paling mungkin atau satu yang mungkin secara rawak; dikemas kini Januari 2026)"
+    },
+    {
+      "label": "Joseph Weizenbaum, Communications of the ACM 9(1), Januari 1966: ELIZA, a computer program for the study of natural language communication between man and machine (salinan di UMBC)"
+    },
+    {
+      "label": "Vaswani dan rakan-rakan (arXiv, 12 Jun 2017): Attention is all you need (reka bentuk transformer)"
+    },
+    {
+      "label": "The Centre for Computing History: OpenAI launches ChatGPT (30 November 2022)"
+    },
+    {
+      "label": "Stanford Report (Mei 2025): How AI is leaving non-English speakers behind (bagaimana AI meninggalkan penutur bukan bahasa Inggeris)"
+    },
+    {
+      "label": "Stanford CRAFT (Januari 2025): How do I fact-check AI search results? (pembacaan lateral untuk chatbot AI dan alat carian)"
+    }
+  ],
+  "sensitiveNotes": [
+    "Jangan sekali-kali tanya pelajar sama ada mereka menggunakan chatbot, yang mana satu, atau apa yang telah mereka taip ke dalamnya. Ada yang tidak pernah menggunakannya; ada pula yang mungkin telah berkongsi perkara peribadi. Gunakan contoh Lakeside.",
+    "Jangan tanya bahasa apa yang dituturkan oleh pelajar di rumah, atau bahasa mana yang tersilap diterjemah oleh sesuatu alat untuk mereka. Biarkan mereka menyatakannya jika mereka mahu."
+  ],
+  "educatorNotes": [
+    "Tiada chatbot sebenar dalam aplikasi ini (docs/content/DIGITAL_WORLD_SPEC.md 5.6). Permainan perkataan Lakeside, jawapan pembantu itu dan buku “The Long Blue Road” ialah rekaan. Permainan secawan teh ialah analogi mudah, bukan penerangan yang lengkap: LLM sebenar berfungsi dengan token dan teks yang jauh lebih banyak, dan “perkataan” dalam pelajaran ini ialah satu permudahan. Bukan semua teks latihan ditulis oleh manusia (sesetengah model juga belajar daripada teks yang dibuat oleh komputer), jadi pelajaran ini berkata “sebahagian besarnya”. Sesebuah model boleh mengulang jawapan: aplikasi boleh memilih token yang paling mungkin setiap kali, atau memilih secara rawak antara token yang mungkin (kursus Google).",
+    "Model asas menulis daripada apa yang telah dipelajarinya; sesetengah alat juga membuat carian di web dan menunjukkan pautan. Pautan bukan bukti: buka dan semak pautan itu, seperti dalam Pelajaran 14 (pelajaran Stanford CRAFT tentang menyemak fakta hasil carian AI). Reka bentuk tahun 2017 itu ialah transformer (Vaswani dan rakan-rakan). Versi kertas aktiviti ini: tulis sembilan ayat itu pada kad dan susun ke dalam “Boleh”, “Tidak boleh” dan “Sukar dikatakan”; hargai sebab yang diberi."
+  ]
+}

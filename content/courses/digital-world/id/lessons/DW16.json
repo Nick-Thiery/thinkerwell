@@ -1,0 +1,278 @@
+{
+  "title": "Siapa yang membuat aturan untuk AI?",
+  "essentialQuestion": "Siapa yang sebaiknya memutuskan bagaimana AI dipakai, dan aturan apa yang membuatnya adil?",
+  "learningGoal": "Membandingkan bagaimana berbagai kelompok membuat aturan untuk AI, dan mengusulkan bagaimana sebuah pemakaian AI sebaiknya diatur, terpisah dari apa kata satu undang-undang.",
+  "warmUp": {
+    "question": "Menurutmu, siapa yang sebaiknya membuat aturan untuk AI?",
+    "options": [
+      "Pemerintah",
+      "Perusahaan yang membuatnya",
+      "Orang-orang yang terkena dampaknya",
+      "Tidak yakin"
+    ]
+  },
+  "evidence": {
+    "label": "Contoh fiksi yang dibuat untuk pelajaran ini.",
+    "question": "Apa yang diinginkan setiap orang? Suara siapa yang mungkin belum terdengar?",
+    "cards": [
+      {
+        "title": "Pertemuan warga di Hillford tentang AI",
+        "columns": [
+          "Siapa yang berbicara",
+          "Apa yang mereka katakan"
+        ],
+        "rows": [
+          [
+            "Seorang pemilik toko",
+            "“Kamera yang mengenali setiap wajah di pasar bisa menangkap pencuri.”"
+          ],
+          [
+            "OSIS",
+            "“Kalau alat AI menilai ujian kami, kami ingin ada orang yang memeriksanya. Kami ingin ikut menentukan aturannya.”"
+          ],
+          [
+            "Seorang perawat di klinik",
+            "“Sebuah alat bisa membantu kami melihat siapa yang perlu dibantu lebih dulu. Tetapi perawat harus selalu memeriksanya.”"
+          ],
+          [
+            "Seorang tetangga yang sudah tua",
+            "“Sebagian dari kami tidak memakai ponsel. Jangan jadikan AI satu-satunya cara untuk mendapat bantuan dari dewan kota.”"
+          ],
+          [
+            "Seorang pegawai dewan kota",
+            "“Chatbot bisa menjawab pertanyaan pada malam hari. Chatbot itu harus mengatakan dengan jelas bahwa ia adalah mesin.”"
+          ],
+          [
+            "Seorang warga yang pindah ke Hillford tahun lalu",
+            "“Aku belum bisa memilih di sini, tetapi aku juga memakai layanan dewan kota. Tanyakan juga kepada orang-orang seperti aku.”"
+          ]
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "title": "Bantu dewan kota Hillford",
+    "instructions": "Dewan kota Hillford punya beberapa ide untuk memakai AI. Masukkan setiap ide ke kelompok yang kamu usulkan. Tidak ada nilai, dan lebih dari satu jawaban bisa masuk akal. Setelah kamu menempatkan satu ide, kamu melihat satu jawaban yang mungkin dan alasannya. Lalu, sebagai hal yang terpisah, kamu melihat apa kata undang-undang AI Uni Eropa (UE).",
+    "groups": [
+      {
+        "label": "Sebaiknya dilarang"
+      },
+      {
+        "label": "Boleh dengan aturan ketat"
+      },
+      {
+        "label": "Boleh"
+      }
+    ],
+    "items": [
+      {
+        "text": "Sebuah alat memberi setiap orang skor “warga yang baik”. Skor itu menentukan siapa yang mendapat bantuan.",
+        "feedback": "Skor seperti ini bisa tidak adil bagi seluruh kelompok. Di UE, undang-undang melarang skor seperti ini."
+      },
+      {
+        "text": "Sebuah kamera di kelas membaca wajah murid untuk menebak perasaan mereka.",
+        "feedback": "Perasaan itu pribadi, dan tebakan bisa salah. Ada yang bilang kamera itu bisa menemukan murid yang butuh bantuan. Di UE, undang-undang melarang ini di sekolah, kecuali untuk alasan kesehatan atau keselamatan."
+      },
+      {
+        "text": "Kamera polisi di pasar mengenali setiap wajah, secara langsung, sepanjang hari.",
+        "feedback": "Kamera itu mengawasi semua orang, sepanjang hari. Orang lain bilang kamera itu bisa menangkap pencuri, jadi orang berbeda pendapat. Di UE, undang-undang melarang ini bagi polisi, kecuali dalam beberapa kasus yang serius, seperti mencari orang yang hilang."
+      },
+      {
+        "text": "Sebuah alat menilai ujian murid.",
+        "feedback": "Nilai yang salah bisa mengubah masa depan seorang murid, jadi sebaiknya ada orang yang memeriksa. Di UE, undang-undang menyebut ini berisiko tinggi. Aturan ketatnya untuk hal ini mulai berlaku pada Desember 2027."
+      },
+      {
+        "text": "Sebuah alat membantu klinik melihat pasien mana yang perlu dibantu lebih dulu.",
+        "feedback": "Kesalahan bisa membahayakan kesehatan seseorang, jadi sebaiknya perawat atau dokter yang memeriksa. Di UE, undang-undang menganggap banyak alat kesehatan berisiko tinggi."
+      },
+      {
+        "text": "Sebuah alat memilah laporan tentang lampu jalan yang rusak. Alat itu mengirim setiap laporan ke tim yang tepat.",
+        "feedback": "Alat ini bisa membantu laporan sampai ke tim yang tepat lebih cepat, dan manusia tetap yang memperbaiki lampunya. Alat sungguhan seperti ini dipakai di Thailand. Aturan ketat juga bisa masuk akal, kalau alat itu memutuskan masalah siapa yang didahulukan."
+      },
+      {
+        "text": "Chatbot di situs web dewan kota menjawab pertanyaan tentang jadwal bus.",
+        "feedback": "Chatbot ini membantu orang pada malam hari, asalkan mereka tahu itu mesin. Di UE, undang-undang mengatakan orang harus diberi tahu bahwa itu mesin."
+      },
+      {
+        "text": "Sebuah penyaring menghentikan pesan sampah supaya tidak sampai ke dewan kota.",
+        "feedback": "Risikonya rendah dan menghemat waktu. Di UE, undang-undang AI tidak punya aturan khusus untuk ini. Tetapi undang-undang lain, seperti undang-undang tentang privasi, tetap berlaku."
+      },
+      {
+        "text": "Sebuah permainan di perpustakaan memakai AI untuk menggerakkan tokoh-tokohnya.",
+        "feedback": "Risikonya rendah dan hanya untuk bersenang-senang. Di UE, undang-undang AI tidak punya aturan khusus untuk permainan seperti ini."
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Banyak kelompok membuat aturan untuk AI",
+        "text": "Teknologi baru membawa pertanyaan tentang siapa yang dibantunya, siapa yang mungkin dirugikannya, dan siapa yang memutuskan. Di kota rekaan Hillford, dewan kota ingin memakai AI, jadi dewan kota mengadakan pertemuan lebih dulu. Seorang pemilik toko, para murid, seorang perawat, seorang tetangga yang sudah tua dan seorang warga baru yang belum bisa memilih, semuanya menyampaikan pendapat mereka. Di dunia nyata, banyak kelompok membuat aturan untuk AI. Pemerintah membuat undang-undang, yang harus diikuti semua orang. Perusahaan menulis aturan untuk alat-alat mereka sendiri. Kelompok-kelompok negara menyepakati pedoman, yaitu saran yang boleh dipilih untuk dipakai oleh negara-negara. Warga, termasuk anak muda, juga bisa menyampaikan ide mereka.",
+        "simpler": "Siapa yang dibantu atau dirugikan oleh alat baru? Siapa yang memutuskan? Di kota rekaan Hillford, dewan kota mengadakan pertemuan tentang AI. Banyak warga menyampaikan pendapat, bahkan ada yang belum bisa memilih. Pemerintah membuat undang-undang. Semua orang harus mengikuti undang-undang. Perusahaan membuat aturan untuk alat mereka. Kelompok-kelompok negara menyepakati pedoman. Pedoman adalah saran. Anak muda juga bisa menyampaikan ide."
+      },
+      {
+        "heading": "Pedoman, undang-undang dan tingkat risiko",
+        "text": "Pada tahun 2021, ke-193 negara anggota UNESCO menyetujui kesepakatan global pertama tentang etika AI, yang mengatakan AI harus melindungi hak asasi manusia dan tetap berada di bawah kendali manusia. Pada tahun 2024, negara-negara ASEAN di Asia Tenggara membagikan sebuah panduan untuk AI, dengan gagasan seperti keadilan, privasi dan keselamatan. Keduanya adalah pedoman. Uni Eropa (UE) membuat undang-undang yang mulai berlaku pada Agustus 2024, dengan bagian-bagian yang mulai berlaku pada tanggal yang berbeda. Undang-undang itu mengelompokkan pemakaian AI menurut risikonya, artinya seberapa besar bahaya yang bisa ditimbulkannya. Sebagian pemakaian dilarang, seperti skor yang memperlakukan orang dengan tidak adil. Sebagian berisiko tinggi, seperti menilai ujian, jadi butuh pemeriksaan yang ketat. Sebagian besar pemakaian, seperti penyaring pesan sampah, tidak punya aturan AI khusus, tetapi undang-undang lain, seperti undang-undang tentang privasi, tetap berlaku.",
+        "simpler": "Pada tahun 2021, 193 negara menyepakati gagasan-gagasan tentang AI di UNESCO. AI harus melindungi hak asasi manusia. Manusia harus tetap memegang kendali. Pada tahun 2024, negara-negara di Asia Tenggara membagikan panduan untuk AI. Ini adalah pedoman. Uni Eropa (UE) membuat undang-undang pada tahun 2024. Bagian-bagiannya mulai berlaku pada waktu yang berbeda. Undang-undang itu mengelompokkan AI menurut risiko. Risiko artinya seberapa besar bahaya yang bisa ditimbulkannya. Sebagian pemakaian dilarang, seperti skor yang tidak adil. Sebagian berisiko tinggi, seperti menilai ujian. Sebagian besar pemakaian tidak punya aturan AI khusus. Tetapi undang-undang lain, seperti undang-undang tentang privasi, tetap berlaku."
+      },
+      {
+        "heading": "Layanan nyata, dan pendapatmu sendiri",
+        "text": "Di Thailand, orang melaporkan masalah seperti jalan rusak, banjir atau lampu jalan di Traffy Fondue, sebuah platform publik yang dibuat oleh sebuah badan sains nasional. AI-nya memilah setiap laporan dan mengirimkannya ke kantor yang tepat, tempat manusia tetap memutuskan apa yang harus dilakukan dan memperbaikinya. Pembuatnya mengatakan platform itu menerima lebih dari 940.000 laporan dalam dua tahun. Angka itu menunjukkan bahwa banyak orang memakainya, bukan seberapa baik setiap masalah diselesaikan. Apa kata sebuah undang-undang adalah satu jawaban. Usulanmu sendiri bisa berbeda, asalkan kamu memberi alasan.",
+        "simpler": "Di Thailand, orang melaporkan masalah seperti jalan rusak di Traffy Fondue, sebuah alat publik. AI-nya memilah setiap laporan dan mengirimkannya ke kantor yang tepat. Manusia di sana tetap yang memperbaiki masalahnya. Pembuatnya mengatakan alat itu menerima lebih dari 940.000 laporan dalam dua tahun. Itu menunjukkan bahwa orang memakainya, bukan seberapa baik masalahnya diselesaikan. Apa kata undang-undang adalah satu jawaban. Pendapatmu bisa berbeda, asalkan ada alasannya."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "undang-undang",
+        "definition": "Aturan yang dibuat oleh pemerintah dan harus diikuti semua orang.",
+        "example": "Undang-undang AI Uni Eropa melarang beberapa pemakaian AI."
+      },
+      {
+        "word": "pedoman",
+        "definition": "Saran tentang cara melakukan sesuatu. Orang boleh memilih untuk mengikutinya.",
+        "example": "Panduan dari negara-negara di Asia Tenggara adalah pedoman, bukan undang-undang."
+      },
+      {
+        "word": "warga",
+        "definition": "Orang yang tinggal di suatu tempat.",
+        "example": "Setiap warga Hillford diundang ke pertemuan itu, bahkan yang belum bisa memilih."
+      },
+      {
+        "word": "risiko",
+        "forms": [
+          "risikonya"
+        ],
+        "definition": "Kemungkinan terjadinya sesuatu yang buruk.",
+        "example": "Alat yang menilai ujian berisiko tinggi."
+      },
+      {
+        "word": "hak",
+        "forms": [
+          "hak-hak"
+        ],
+        "definition": "Hal-hal yang seharusnya dimiliki setiap orang, atau yang bebas dilakukan setiap orang.",
+        "example": "Privasi adalah salah satu hak yang dilindungi oleh aturan-aturan untuk AI."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Bagaimana undang-undang AI Uni Eropa mengelompokkan pemakaian AI?",
+        "options": [
+          {
+            "text": "Menurut seberapa baru alat itu",
+            "feedback": "Belum tepat. Umur sebuah alat bukanlah yang penting. Baca lagi bagian kedua."
+          },
+          {
+            "text": "Menurut perusahaan yang membuatnya",
+            "feedback": "Belum tepat. Aturan yang sama berlaku untuk setiap perusahaan. Baca lagi bagian kedua."
+          },
+          {
+            "text": "Menurut seberapa besar bahaya yang bisa ditimbulkannya",
+            "feedback": "Benar. Undang-undang itu mengelompokkan AI menurut risiko. Pemakaian yang bisa menimbulkan bahaya paling besar dilarang."
+          }
+        ]
+      },
+      {
+        "question": "Penyaring pesan sampah tidak punya aturan khusus dalam undang-undang AI Uni Eropa. Apa artinya?",
+        "options": [
+          {
+            "text": "Sama sekali tidak ada undang-undang yang berlaku untuknya",
+            "feedback": "Belum tepat. Undang-undang lain, seperti undang-undang tentang privasi, tetap berlaku. Baca lagi bagian kedua."
+          },
+          {
+            "text": "Undang-undang lain, seperti undang-undang tentang privasi, tetap berlaku",
+            "feedback": "Benar. Tidak ada aturan AI khusus bukan berarti tidak ada aturan sama sekali."
+          },
+          {
+            "text": "Penyaring itu dilarang di seluruh Uni Eropa",
+            "feedback": "Belum tepat. Pemakaian yang dilarang adalah hal-hal seperti skor yang tidak adil. Baca lagi bagian kedua."
+          }
+        ]
+      },
+      {
+        "question": "Siapa yang sebaiknya ikut menentukan aturan untuk AI di sebuah komunitas? Mengapa?",
+        "placeholder": "Menurutku, ___ sebaiknya ikut menentukan, karena ..."
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Pilih satu ide Hillford tentang AI. Katakan apa usulanmu, dan mengapa. Lalu, sebagai hal yang terpisah, katakan apa kata undang-undang UE dan pendapat siapa yang sebaiknya didengar dewan kota.",
+    "sentenceStarters": [
+      "Aku memilih ...",
+      "Aku mengusulkan ... karena ...",
+      "Seseorang bisa tidak setuju, karena ...",
+      "Sebagai hal yang terpisah, undang-undang UE mengatakan ...",
+      "Dewan kota sebaiknya mendengarkan ___, karena ..."
+    ],
+    "planningBoxes": [
+      "Ide utamaku",
+      "Bukti dari pelajaran",
+      "Mengapa ini penting",
+      "Pertanyaan yang masih aku punya"
+    ],
+    "selfCheck": [
+      "Aku memberi usulanku dan satu alasan.",
+      "Aku mengatakan apa kata undang-undang, sebagai hal yang terpisah.",
+      "Aku mengatakan pendapat siapa yang sebaiknya didengar dewan kota."
+    ],
+    "example": "Aku memilih alat yang menilai ujian. Aku mengusulkan alat itu boleh dipakai dengan aturan ketat, karena nilai yang salah bisa mengubah masa depan seorang murid. Seorang guru sebaiknya memeriksa setiap nilai. Seseorang bisa tidak setuju, karena alat itu menghemat waktu. Sebagai hal yang terpisah, undang-undang UE mengatakan bahwa menilai ujian itu berisiko tinggi, jadi butuh pemeriksaan yang ketat. Dewan kota sebaiknya mendengarkan para murid, karena alat itu paling berdampak pada mereka."
+  },
+  "speak": {
+    "partnerTask": "Temanmu berperan sebagai anggota dewan kota Hillford. Pilih satu ide tentang AI dan katakan apa usulanmu, dengan satu alasan. Temanmu memberi alasan untuk pilihan yang berbeda. Lalu bergantian.",
+    "independentTask": "Ucapkan dengan lantang perbedaan antara undang-undang dan pedoman, dengan satu contoh dari masing-masing dalam pelajaran."
+  },
+  "watch": {
+    "why": "UNESCO, yang membuat kesepakatan global dalam pelajaran ini, melihat bagaimana berbagai bagian dunia membuat aturan untuk AI.",
+    "beforeQuestion": "Menurutmu, apa yang akan dilindungi oleh aturan yang adil untuk AI?",
+    "afterQuestion": "Mengapa sulit mengubah gagasan yang baik tentang AI menjadi aturan yang nyata?",
+    "summary": "Video ini dari UNESCO. UNESCO adalah sebuah kelompok dunia yang mengurus sekolah, sains dan budaya. Video ini bagian dari sebuah seri tentang etika AI. Etika artinya apa yang benar dan apa yang salah. Video ini mengajukan sebuah pertanyaan besar. Bagaimana orang bisa mendapat hal-hal baik dari AI tanpa membuat jurang antarmanusia semakin lebar? AI juga bisa membawa jenis-jenis hasil yang tidak adil yang baru. Video ini mengatakan orang-orang di seluruh dunia tampaknya setuju tentang beberapa gagasan. Gagasan itu termasuk privasi, perlakuan yang setara, dan tidak meninggalkan siapa pun. Bagian yang sulit adalah mengubah gagasan-gagasan ini menjadi aturan yang nyata. Video ini melihat bagaimana berbagai bagian dunia membuat aturan untuk AI. Video ini juga bertanya apa yang akan membuat aturan itu adil bagi semua orang, di mana saja.",
+    "keyPoints": [
+      "Banyak orang setuju tentang beberapa gagasan untuk AI, seperti privasi, perlakuan yang setara, dan tidak meninggalkan siapa pun.",
+      "Bagian yang sulit adalah mengubah gagasan-gagasan ini menjadi aturan yang nyata.",
+      "Berbagai bagian dunia membuat aturan yang berbeda-beda untuk AI."
+    ],
+    "contentNote": "Sekitar 7 menit (412 detik, menurut daftar di YouTube), untuk tingkat dewasa, dari Februari 2023, sebelum undang-undang AI Uni Eropa disepakati, jadi video ini mungkin menyebut undang-undang itu sebagai rencana. Deskripsi UNESCO mengatakan teks terjemahan tersedia dalam bahasa Inggris, Prancis, Jepang dan bahasa lain. Judul dan kanalnya sudah dipastikan dengan oEmbed YouTube pada 31 Oktober 2026. Ringkasannya ditulis dari deskripsi video oleh UNESCO sendiri, bukan dari menontonnya. Seseorang dalam tim harus menontonnya sebelum pelajar memakainya; pelajar bisa membaca ringkasan tertulisnya saja."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Satu aturan untuk AI yang menurutku adil adalah ... karena ..."
+      },
+      {
+        "text": "Ketika orang membuat aturan untuk AI, menurutku mereka juga sebaiknya mendengarkan ..."
+      }
+    ],
+    "completionMessage": "Kamu sudah menyelesaikan Pelajaran 16. Kamu membandingkan bagaimana berbagai kelompok membuat aturan untuk AI, dan memberi pendapatmu sendiri, terpisah dari apa kata satu undang-undang."
+  },
+  "visual": {
+    "alt": "Satu contoh, undang-undang AI Uni Eropa, sebagai piramida tingkat risiko: pemakaian yang dilarang di puncak, lalu pemakaian dengan aturan ketat, lalu pemakaian yang harus mengatakan bahwa itu AI, dan sebagian besar pemakaian tanpa aturan AI khusus di bagian bawah, tempat undang-undang lain tetap berlaku."
+  },
+  "sources": [
+    {
+      "label": "European Commission: AI Act, a risk-based regulatory framework for AI (Komisi Eropa: AI Act, kerangka aturan AI berdasarkan risiko; berlaku sejak 1 Agustus 2024; tanggal-tanggalnya sesuai perubahan oleh AI Omnibus, yang berlaku sejak 27 Juli 2026)"
+    },
+    {
+      "label": "European Commission AI Act Service Desk: Article 2, scope (Pasal 2, cakupan; hukum UE lainnya, seperti pelindungan data dan pelindungan konsumen, tetap berlaku)"
+    },
+    {
+      "label": "New Zealand National Commission for UNESCO: Ethics of Artificial Intelligence Recommendation (Rekomendasi tentang Etika Kecerdasan Artifisial; disetujui oleh ke-193 negara anggota, 2021)"
+    },
+    {
+      "label": "ASEAN (2024): ASEAN Guide on AI Governance and Ethics (Panduan ASEAN tentang Tata Kelola dan Etika AI)"
+    },
+    {
+      "label": "NSTDA melalui ThaiPR.net (17 Juli 2024): fitur AI baru Traffy Fondue dan angka pemakaiannya (dalam bahasa Thai)"
+    },
+    {
+      "label": "Kementerian Komunikasi dan Digital (Komdigi): Surat Edaran Menteri Kominfo Nomor 9 Tahun 2023 tentang Etika Kecerdasan Artifisial"
+    }
+  ],
+  "sensitiveNotes": [
+    "Aturan tentang kamera, skor dan pengawasan bisa terasa dekat bagi pelajar yang pernah hidup di bawah pengawasan polisi yang ketat, di kamp atau di perbatasan. Jaga diskusi tetap pada Hillford yang rekaan. Jangan pernah bertanya kepada pelajar tentang undang-undang, polisi atau pemerintah di negara mana pun yang pernah mereka tinggali, atau bagaimana mereka diperiksa atau didata; biarkan mereka berbicara hanya kalau mereka sendiri mau."
+  ],
+  "educatorNotes": [
+    "Pisahkan dua pertanyaan: “Apa usulanmu untuk Hillford?” (pendapat pelajar, dinilai dari alasannya) dan “Apa kata undang-undang Uni Eropa?” (fakta tentang satu wilayah hukum). Jangan pernah menyalahkan sebuah usulan karena berbeda dari undang-undang UE. AI Act (berlaku sejak 1 Agustus 2024) melarang, mulai 2 Februari 2025, pemberian skor sosial yang berujung pada perlakuan merugikan yang tidak dapat dibenarkan atau tidak berkaitan, pengenalan emosi di tempat kerja dan sekolah kecuali untuk alasan medis atau keselamatan, dan identifikasi wajah secara langsung oleh polisi di tempat umum kecuali untuk tiga tujuan yang sempit (mencari korban atau orang hilang, mencegah ancaman yang segera terjadi, dan menemukan tersangka kejahatan serius). Aturan keterbukaan (chatbot, deepfake yang diberi label) berlaku sejak Agustus 2026. Setelah AI Omnibus (berlaku sejak 27 Juli 2026), aturan berisiko tinggi untuk pemakaian seperti penilaian ujian berlaku sejak 2 Desember 2027, dan untuk AI dalam produk yang diatur sejak 2 Agustus 2028; periksa halaman Komisi Eropa sebelum mengutip tanggal. Pemakaian berisiko minimal (penyaring pesan sampah, permainan) tidak punya aturan dalam AI Act, tetapi hukum pelindungan data, pelindungan konsumen dan keamanan produk tetap berlaku (Pasal 2). Ide kamera pasar adalah tentang polisi; kamera wajah milik dewan kota atau toko akan diatur oleh aturan lain. Versi kertas: sembilan ide itu di kartu, di bawah tiga judul.",
+    "Traffy Fondue (Thailand) dikembangkan oleh NECTEC, bagian dari Badan Pengembangan Sains dan Teknologi Nasional Thailand (NSTDA). Warga melapor lewat chatbot LINE dengan lokasi dan foto; sejak 2024, AI-nya juga meringkas laporan, mengurutkannya menurut tingkat kedaruratan, menyarankan perbaikan dan menyaring kata-kata kasar, selain mengelompokkan laporan dan mengirimkan masing-masing ke instansi yang bertanggung jawab. NSTDA melaporkan lebih dari 940.000 laporan dari Juni 2022 sampai Juli 2024, lebih dari 733.000 di antaranya berstatus “selesai” (77%), di 77 provinsi dan lebih dari 15.000 instansi. Ini angka dari pengelolanya sendiri: “selesai” adalah status dalam sistem, bukan pemeriksaan independen atas perbaikannya. Ini layanan yang sedang berjalan, bukan dampak yang sudah diukur.",
+    "Untuk konteks setempat: Menteri Komunikasi dan Informatika Indonesia mengeluarkan surat edaran tentang etika AI (Surat Edaran No. 9 Tahun 2023), dan Malaysia meluncurkan pedoman nasional sukarela pada tahun 2024 (tautannya ada di catatan klaim, content/courses/digital-world/claims/DW16.md). Seperti teks UNESCO dan ASEAN, keduanya adalah panduan, bukan undang-undang. Sajikan setiap pendekatan secara netral; pelajaran ini membandingkan, tidak memeringkat negara."
+  ]
+}

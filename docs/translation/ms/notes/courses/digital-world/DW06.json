@@ -1,0 +1,627 @@
+{
+  "title": {
+    "source": "Chips, power and water",
+    "back": "Chips, electrical power and water",
+    "flag": true,
+    "note": "\"Power\" here means electricity, so \"tenaga elektrik\" (and \"bekalan elektrik\" for the supply); \"kuasa\" is kept for power over decisions (Lesson 7)."
+  },
+  "essentialQuestion": {
+    "source": "What does AI need from the planet, and who pays for it?",
+    "back": "What does AI need from this planet, and who bears its cost?",
+    "flag": true
+  },
+  "learningGoal": {
+    "source": "Explain what AI data centres need from the planet, and weigh their benefits and costs for the places where they are built.",
+    "back": "Explain what AI data centres need from this planet, and weigh their benefits and costs for the places where they are built.",
+    "flag": true
+  },
+  "warmUp.question": {
+    "source": "When you ask an AI tool a question, where do you think the answer is made?",
+    "back": "When you ask an AI tool a question, in your opinion, where is the answer made?",
+    "flag": true
+  },
+  "warmUp.options.0": {
+    "source": "Inside the phone or laptop",
+    "back": "Inside the phone or laptop",
+    "flag": true
+  },
+  "warmUp.options.1": {
+    "source": "In a big building far away",
+    "back": "Inside a big building far away",
+    "flag": true
+  },
+  "warmUp.options.2": {
+    "source": "Somewhere in the sky",
+    "back": "Somewhere in the sky",
+    "flag": true
+  },
+  "warmUp.options.3": {
+    "source": "Not sure",
+    "back": "Not sure",
+    "flag": true
+  },
+  "evidence.label": {
+    "source": "Fictional example created for this lesson.",
+    "back": "An invented example made for this lesson.",
+    "flag": true
+  },
+  "evidence.question": {
+    "source": "What does each person hope for? What does each person worry about?",
+    "back": "What does each person hope for? What does each person worry about?",
+    "flag": true
+  },
+  "evidence.cards.0.title": {
+    "source": "A data centre is coming to Coralton",
+    "back": "A data centre will be built in Coralton",
+    "flag": true
+  },
+  "evidence.cards.0.cases.0.name": {
+    "source": "The data centre company",
+    "back": "The data centre company",
+    "flag": true
+  },
+  "evidence.cards.0.cases.0.body": {
+    "source": "“We will build a huge building full of computers that run AI tools. About 1,000 people will help to build it over two years. About 50 people will work there after it opens, and we will train local young people for some of those jobs. We will put solar panels on the roof.”",
+    "back": "“We will build a very big building, full of computers that run AI tools. About 1,000 people will help build it over two years. About 50 people will work there after it opens, and we will train local youth for some of those jobs. We will put solar panels on the roof.”",
+    "flag": true,
+    "note": "\"Local young people\" is \"belia tempatan\" (youth), as KEY_TERMS.md asks."
+  },
+  "evidence.cards.0.cases.1.name": {
+    "source": "Hana, who runs a small fish farm",
+    "back": "Hana, who runs a small fish farm",
+    "flag": true
+  },
+  "evidence.cards.0.cases.1.body": {
+    "source": "“My fish need clean water and power all day and all night. I worry that the data centre will use the town's water in the dry season, and that power cuts will get longer.”",
+    "back": "“My fish need clean water and electricity supply all day and night. I worry the data centre will use this town's water in the dry season, and that power cuts will become longer.”",
+    "flag": true,
+    "note": "\"Power cuts\" is \"gangguan bekalan elektrik\", the usual Malaysian phrase (TNB notices say it). \"Fish farm\" is \"ternakan ikan\"."
+  },
+  "evidence.cards.0.cases.2.name": {
+    "source": "Leo, a young electrician",
+    "back": "Leo, a young electrician",
+    "flag": true
+  },
+  "evidence.cards.0.cases.2.body": {
+    "source": "“I hope to get work on the building site and learn new skills. Two years of work would help me a lot.”",
+    "back": "“I hope to get work at the building site and learn new skills. Two years of work would help me a lot.”",
+    "flag": true
+  },
+  "evidence.cards.0.cases.3.name": {
+    "source": "The town's water office",
+    "back": "The town's water office",
+    "flag": true
+  },
+  "evidence.cards.0.cases.3.body": {
+    "source": "“In the dry season, the river is low. The data centre needs water to cool its computers. It could use cleaned waste water instead of river water.”",
+    "back": "“In the dry season, the river level is low. The data centre needs water to cool its computers. It could use waste water that has been cleaned instead of river water.”",
+    "flag": true
+  },
+  "evidence.cards.0.cases.4.name": {
+    "source": "A member of the town council",
+    "back": "A town council member",
+    "flag": true,
+    "note": "\"Town council\" is \"majlis bandar\"; in Malaysia a real one would be \"majlis perbandaran\". Kept simple because Coralton is invented."
+  },
+  "evidence.cards.0.cases.4.body": {
+    "source": "“The company will bring money to Coralton. But most people who use its AI tools live in other countries.”",
+    "back": "“The company will bring money to Coralton. But most people who use its AI tools live in other countries.”",
+    "flag": true
+  },
+  "activity.title": {
+    "source": "Benefit or cost?",
+    "back": "Benefit or cost?",
+    "flag": true
+  },
+  "activity.instructions": {
+    "source": "Put each sentence about the Coralton data centre into a group. There is no score. After you place one, you can see one possible answer and the reason.",
+    "back": "Put each sentence about the Coralton data centre in one group. There are no marks. After you place one sentence, you can see one possible answer and its reason.",
+    "flag": true
+  },
+  "activity.groups.0.label": {
+    "source": "A benefit for the town",
+    "back": "A benefit for the town",
+    "flag": true
+  },
+  "activity.groups.1.label": {
+    "source": "A cost for the town",
+    "back": "A cost for the town",
+    "flag": true
+  },
+  "activity.groups.2.label": {
+    "source": "Both",
+    "back": "Both",
+    "flag": true,
+    "note": "\"Both\" is \"Kedua-duanya\"; the paper version's group names are \"Manfaat\", \"Kos\" and \"Kedua-duanya\"."
+  },
+  "activity.items.0.text": {
+    "source": "About 1,000 people get building work for two years.",
+    "back": "About 1,000 people get building work for two years.",
+    "flag": true
+  },
+  "activity.items.0.feedback": {
+    "source": "People earn money and learn skills, but the work ends when the building is finished. So you could also say both.",
+    "back": "People get money and learn skills, but the work ends when the building is finished. So you could also say both.",
+    "flag": true
+  },
+  "activity.items.1.text": {
+    "source": "About 50 people get long-term jobs inside.",
+    "back": "About 50 people get long-term jobs inside it.",
+    "flag": true
+  },
+  "activity.items.1.feedback": {
+    "source": "Any group can be right here. Long-term jobs help, but 50 is a small number for such a huge building.",
+    "back": "Any group can be right here. Long-term jobs help, but 50 is a small number for such a big building.",
+    "flag": true
+  },
+  "activity.items.2.text": {
+    "source": "The data centre uses as much power as a small city.",
+    "back": "The data centre uses as much electricity as a small city.",
+    "flag": true
+  },
+  "activity.items.2.feedback": {
+    "source": "The town must share its power. Making more power may mean more pollution.",
+    "back": "The town has to share its electricity supply. Generating more electricity may mean more pollution.",
+    "flag": true
+  },
+  "activity.items.3.text": {
+    "source": "It takes river water to cool its computers.",
+    "back": "It takes river water to cool its computers.",
+    "flag": true
+  },
+  "activity.items.3.feedback": {
+    "source": "In the dry season, there may be less water for farms and homes.",
+    "back": "In the dry season, there may be less water for farms and homes.",
+    "flag": true
+  },
+  "activity.items.4.text": {
+    "source": "The company puts solar panels on the roof.",
+    "back": "The company puts solar panels on the roof.",
+    "flag": true
+  },
+  "activity.items.4.feedback": {
+    "source": "Power from the sun is clean, so the data centre takes less power from the town.",
+    "back": "Energy from the sun is clean, so the data centre takes less electricity from the town.",
+    "flag": true
+  },
+  "activity.items.5.text": {
+    "source": "It cleans waste water and uses it for cooling.",
+    "back": "It cleans waste water and uses it for cooling.",
+    "flag": true
+  },
+  "activity.items.5.feedback": {
+    "source": "The river water stays for farms and homes.",
+    "back": "The river water stays for farms and homes.",
+    "flag": true
+  },
+  "activity.items.6.text": {
+    "source": "A big company from abroad brings money to the town.",
+    "back": "A big company from abroad brings money to the town.",
+    "flag": true
+  },
+  "activity.items.6.feedback": {
+    "source": "Any group can be right here. New money can help the town grow. But much of what the company earns may go to other countries.",
+    "back": "Any group can be right here. New money can help the town grow. But much of the company's income may go to other countries.",
+    "flag": true
+  },
+  "activity.items.7.text": {
+    "source": "The company trains local young people to work inside.",
+    "back": "The company trains local youth to work inside it.",
+    "flag": true
+  },
+  "activity.items.7.feedback": {
+    "source": "People learn skills they can use in other jobs too. If only a few get places, you could also say both.",
+    "back": "People learn skills they can use in other jobs too. If only a few people get places, you could also say both.",
+    "flag": true
+  },
+  "read.sections.0.heading": {
+    "source": "AI runs in big buildings full of chips",
+    "back": "AI runs inside big buildings full of chips",
+    "flag": true
+  },
+  "read.sections.0.text": {
+    "source": "When you ask an AI tool a question, your device usually doesn't make the answer itself. Some small tools can. But most of the time, the question travels to a data centre, a large building full of computers. Inside are thousands of chips that do trillions of sums every second. They use a lot of electricity and get very hot, so many data centres use water to cool them. An international energy agency estimated that in 2024, all the world's data centres used about 1.5% of its electricity. Only part of that was for AI. Data centres also run websites, videos and messages. The agency expects data centres to use about twice as much by 2030, mostly because of AI. That is a forecast, not a measurement.",
+    "back": "When you ask an AI tool a question, your device usually does not make the answer itself. Some small tools can. But most of the time, the question travels to a data centre, that is, a big building full of computers. Inside are thousands of chips that do trillions of calculations every second. The chips use a lot of electricity and become very hot, so many data centres use water to cool them. An international energy agency estimated that in 2024, all the data centres in the world used about 1.5% of the world's electricity. Only part of it was for AI. Data centres also run websites, videos and messages. The agency expects data centres to use about twice as much by 2030, mostly because of AI. That is a projection, not a measurement.",
+    "flag": true,
+    "note": "\"Sums\" is \"kiraan\" (calculations). \"Forecast\" is \"unjuran\" (projection), the word the teachers' notes use too."
+  },
+  "read.sections.0.simpler": {
+    "source": "Usually, an AI answer is not made in your device. Some small tools do work on a phone. But most questions go to a data centre, a big building full of computers. Its chips do huge amounts of maths. They use a lot of power and get very hot. Water often helps to cool them. In 2024, all data centres used about 1.5% of the world's power. Only part was for AI. Experts think this may double by 2030, mostly because of AI. That is a forecast.",
+    "back": "Usually, an AI answer is not made inside your device. Some small tools do work on a phone. But most questions go to a data centre, that is, a big building full of computers. Its chips do a very large number of calculations. The chips use a lot of electricity and become very hot. Water usually helps cool them. In 2024, all data centres used about 1.5% of the world's electricity. Only part was for AI. Experts think this amount may double by 2030, mostly because of AI. That is a projection.",
+    "flag": true
+  },
+  "read.sections.1.heading": {
+    "source": "Chips need minerals and a few factories",
+    "back": "Chips need minerals and a few factories",
+    "flag": true
+  },
+  "read.sections.1.text": {
+    "source": "Chips are made from materials dug out of the ground. Some need rare minerals, which are often mined in ways that harm nature. Very few factories can make the most powerful chips. In 2021, a chip industry study found that most of the world's most advanced chips were made in one place, Taiwan. So a problem in one place could cause chip shortages around the world. Old chips and computers also become electronic waste. This waste can contain harmful metals, such as mercury and lead.",
+    "back": "Chips are made from materials dug from the ground. Some of them need rare minerals, which are often mined in ways that damage nature. Very few factories can make the most powerful chips. In 2021, a chip industry study found that most of the world's most advanced chips were made in one place, that is, Taiwan. So a problem in one place could cause chip shortages all over the world. Old chips and computers also become electronic waste. This waste can contain harmful metals, like mercury and lead.",
+    "flag": true,
+    "note": "\"Lead\" (the metal) is \"plumbum\", the DBP and school science word."
+  },
+  "read.sections.1.simpler": {
+    "source": "Chips are made from things dug out of the ground. Some need rare minerals. Digging them up can harm nature. Only a few factories make the best chips. In 2021, a study found most are made in Taiwan. A problem there could slow chips everywhere. Old computers become waste. Some of it is harmful.",
+    "back": "Chips are made from things dug from the ground. Some of them need rare minerals. Digging them up can damage nature. Only a few factories make the best chips. In 2021, a study found most of them are made in Taiwan. A problem there could slow the supply of chips everywhere. Old computers become waste. Some of it is harmful.",
+    "flag": true
+  },
+  "read.sections.2.heading": {
+    "source": "Who gains, and who pays?",
+    "back": "Who gains, and who pays?",
+    "flag": true
+  },
+  "read.sections.2.text": {
+    "source": "Data centres are being built fast in Southeast Asia. Singapore paused new ones in 2019, and in 2021 they used about 7% of its electricity. Many companies then built in Johor, in Malaysia, and on Batam, in Indonesia. Data centres bring investment, building work that ends when the building is finished, and some long-term jobs. Malaysia's government hopes they will help to modernise its economy. But critics say they create far fewer jobs than they promise. Many of their users live in other countries. Some people nearby worry about water shortages and power cuts. Companies can lower these costs with more efficient AI, power from the sun and wind, and cleaned, reused water.",
+    "back": "Data centres are being built quickly in Southeast Asia. Singapore temporarily stopped building new data centres in 2019, and in 2021 data centres used about 7% of its electricity. Many companies then built in Johor, in Malaysia, and in Batam, in Indonesia. Data centres bring investment, building work that ends when the building is finished, and some long-term jobs. The Malaysian government hopes data centres will help modernise its economy. But critics say data centres create far fewer jobs than promised. Many of their users live in other countries. Some people who live nearby worry about water shortages and power cuts. Companies can reduce these costs with more efficient AI, energy from the sun and wind, and water that is cleaned and reused.",
+    "flag": true,
+    "note": "This part is about Malaysia and a Malaysian partner will read it. \"Paused\" is \"menghentikan seketika\". \"Critics\" is \"pengkritik\". Check the tone stays neutral, as the sensitive note asks."
+  },
+  "read.sections.2.simpler": {
+    "source": "Singapore paused new data centres in 2019. So companies built in Johor, Malaysia, and Batam, Indonesia. Data centres bring investment. They bring building work for a few years, and some long-term jobs. Malaysia hopes they will help it grow richer. But some people say they bring fewer jobs than promised. Many users live in other countries. People nearby worry about water and power cuts. Companies can make AI more efficient. They can use sun and wind power, and clean and reuse water.",
+    "back": "Singapore temporarily stopped new data centres in 2019. So companies built in Johor, Malaysia, and Batam, Indonesia. Data centres bring investment. They bring building work for a few years, and some long-term jobs. Malaysia hopes data centres help it become richer. But some say data centres bring fewer jobs than promised. Many users live in other countries. People nearby worry about water and power cuts. Companies can make AI more efficient. They can use solar and wind energy, and clean and reuse water.",
+    "flag": true
+  },
+  "read.glossary.0.word": {
+    "source": "data centre",
+    "back": "data centre",
+    "flag": true
+  },
+  "read.glossary.0.forms": {
+    "source": [
+      "data centres"
+    ]
+  },
+  "read.glossary.0.definition": {
+    "source": "A large building full of computers that store and process information.",
+    "back": "A big building full of computers that store and process information.",
+    "flag": true
+  },
+  "read.glossary.0.example": {
+    "source": "The new data centre in Coralton will run AI tools.",
+    "back": "The new data centre in Coralton will run AI tools.",
+    "flag": true
+  },
+  "read.glossary.1.word": {
+    "source": "chip",
+    "back": "chip",
+    "flag": true
+  },
+  "read.glossary.1.forms": {
+    "source": [
+      "chips"
+    ]
+  },
+  "read.glossary.1.definition": {
+    "source": "A tiny part inside a computer that does its sums.",
+    "back": "A very small part inside a computer that does its calculations.",
+    "flag": true
+  },
+  "read.glossary.1.example": {
+    "source": "The data centre has thousands of chips, and they get very hot.",
+    "back": "That data centre has thousands of chips, and the chips become very hot.",
+    "flag": true
+  },
+  "read.glossary.2.word": {
+    "source": "mineral",
+    "back": "mineral",
+    "flag": true
+  },
+  "read.glossary.2.forms": {
+    "source": [
+      "minerals"
+    ]
+  },
+  "read.glossary.2.definition": {
+    "source": "A natural material that people dig out of the ground.",
+    "back": "A natural material that people dig from the ground.",
+    "flag": true
+  },
+  "read.glossary.2.example": {
+    "source": "Some chips need rare minerals.",
+    "back": "Some chips need rare minerals.",
+    "flag": true
+  },
+  "read.glossary.3.word": {
+    "source": "investment",
+    "back": "investment",
+    "flag": true
+  },
+  "read.glossary.3.definition": {
+    "source": "Money a company spends in a place, hoping to earn more later.",
+    "back": "Money a company spends in a place, hoping to get more later.",
+    "flag": true
+  },
+  "read.glossary.3.example": {
+    "source": "The data centre is a big investment in Coralton.",
+    "back": "The data centre is a big investment in Coralton.",
+    "flag": true
+  },
+  "read.glossary.4.word": {
+    "source": "efficient",
+    "back": "efficient",
+    "flag": true,
+    "note": "\"Efficient\" is \"cekap\" (the usual word in \"cekap tenaga\", energy-efficient)."
+  },
+  "read.glossary.4.definition": {
+    "source": "Doing a job well while using less power, water or time.",
+    "back": "Doing work well while using less electricity, water or time.",
+    "flag": true
+  },
+  "read.glossary.4.example": {
+    "source": "A more efficient data centre uses less electricity for the same work.",
+    "back": "A more efficient data centre uses less electricity for the same work.",
+    "flag": true
+  },
+  "read.checks.0.question": {
+    "source": "Why do many data centres use water?",
+    "back": "Why do many data centres use water?",
+    "flag": true
+  },
+  "read.checks.0.options.0.text": {
+    "source": "To make electricity for the town",
+    "back": "To generate electricity for the town",
+    "flag": true
+  },
+  "read.checks.0.options.0.feedback": {
+    "source": "Not quite. Data centres use electricity. Read about the hot chips in the first section.",
+    "back": "Not quite. Data centres use electricity. Read about the hot chips in the first part.",
+    "flag": true
+  },
+  "read.checks.0.options.1.text": {
+    "source": "To wash the computers each day",
+    "back": "To wash the computers every day",
+    "flag": true
+  },
+  "read.checks.0.options.1.feedback": {
+    "source": "Not quite. The water is not for washing. Read about the hot chips in the first section.",
+    "back": "Not quite. The water is not for washing. Read about the hot chips in the first part.",
+    "flag": true
+  },
+  "read.checks.0.options.2.text": {
+    "source": "To cool chips that get very hot",
+    "back": "To cool chips that become very hot",
+    "flag": true
+  },
+  "read.checks.0.options.2.feedback": {
+    "source": "Yes. The chips do so much work that they get very hot, so water helps to cool them.",
+    "back": "Correct. The chips do so much work that they become very hot, so water helps cool them.",
+    "flag": true
+  },
+  "read.checks.1.question": {
+    "source": "What happens to the building work at a data centre?",
+    "back": "What happens to the building work at a data centre?",
+    "flag": true
+  },
+  "read.checks.1.options.0.text": {
+    "source": "It lasts as long as the data centre runs",
+    "back": "It continues as long as the data centre operates",
+    "flag": true
+  },
+  "read.checks.1.options.0.feedback": {
+    "source": "Not quite. Building work is for building it. Read the third section.",
+    "back": "Not quite. Building work is for building it. Read the third part.",
+    "flag": true
+  },
+  "read.checks.1.options.1.text": {
+    "source": "It ends when the building is finished",
+    "back": "It ends when the building is finished",
+    "flag": true
+  },
+  "read.checks.1.options.1.feedback": {
+    "source": "Yes. Many people build it for a few years. In Coralton, about 50 people will work there after it opens.",
+    "back": "Correct. Many people build it for a few years. In Coralton, about 50 people will work there after it opens.",
+    "flag": true
+  },
+  "read.checks.1.options.2.text": {
+    "source": "It is done by computers, not people",
+    "back": "It is done by computers, not people",
+    "flag": true
+  },
+  "read.checks.1.options.2.feedback": {
+    "source": "Not quite. People build data centres. Read the third section.",
+    "back": "Not quite. People build data centres. Read the third part.",
+    "flag": true
+  },
+  "read.checks.2.question": {
+    "source": "What promise would you ask the data centre company to make?",
+    "back": "What promise would you ask the data centre company to make?",
+    "flag": true
+  },
+  "read.checks.2.placeholder": {
+    "source": "I would ask the company to promise ... because ...",
+    "back": "I would ask the company to promise ... because ...",
+    "flag": true
+  },
+  "write.prompt": {
+    "source": "Should Coralton say yes to the data centre? Give your answer, one benefit, one cost, and one promise you would ask the company to make.",
+    "back": "Should Coralton agree to the data centre? Give your answer, one benefit, one cost, and one promise you would ask the company to make.",
+    "flag": true
+  },
+  "write.sentenceStarters.0": {
+    "source": "I think Coralton should ...",
+    "back": "I think Coralton should ...",
+    "flag": true
+  },
+  "write.sentenceStarters.1": {
+    "source": "One benefit is ...",
+    "back": "One benefit is ...",
+    "flag": true
+  },
+  "write.sentenceStarters.2": {
+    "source": "One cost is ...",
+    "back": "One cost is ...",
+    "flag": true
+  },
+  "write.sentenceStarters.3": {
+    "source": "I would ask the company to promise ...",
+    "back": "I would ask the company to promise ...",
+    "flag": true
+  },
+  "write.sentenceStarters.4": {
+    "source": "This matters because ...",
+    "back": "This matters because ...",
+    "flag": true
+  },
+  "write.planningBoxes.0": {
+    "source": "My main idea",
+    "back": "My main idea",
+    "flag": true
+  },
+  "write.planningBoxes.1": {
+    "source": "Evidence from the lesson",
+    "back": "Evidence from the lesson",
+    "flag": true
+  },
+  "write.planningBoxes.2": {
+    "source": "Why it matters",
+    "back": "Why this matters",
+    "flag": true
+  },
+  "write.planningBoxes.3": {
+    "source": "A question I still have",
+    "back": "A question I still have",
+    "flag": true
+  },
+  "write.selfCheck.0": {
+    "source": "I said yes, no or yes with a promise.",
+    "back": "I said yes, no, or yes with one promise.",
+    "flag": true
+  },
+  "write.selfCheck.1": {
+    "source": "I gave one benefit and one cost.",
+    "back": "I gave one benefit and one cost.",
+    "flag": true
+  },
+  "write.selfCheck.2": {
+    "source": "I gave one promise the company should make.",
+    "back": "I gave one promise the company should make.",
+    "flag": true
+  },
+  "write.example": {
+    "source": "I think Coralton should say yes, but only with a promise. One benefit is that about 1,000 people get building work for two years, and people like Leo can learn new skills. One cost is that the data centre needs a lot of water to cool its chips. In the dry season, Hana's fish farm and the town's homes could get less. I would ask the company to promise to use cleaned waste water, not river water. This matters because the town needs water more than the AI tools do.",
+    "back": "I think Coralton should agree, but only with one promise. One benefit is that about 1,000 people get building work for two years, and people like Leo can learn new skills. One cost is that the data centre needs a lot of water to cool its chips. In the dry season, Hana's fish farm and the homes in the town might get less water. I would ask the company to promise to use waste water that has been cleaned, not river water. This matters because the town needs water more than AI tools do.",
+    "flag": true
+  },
+  "speak.partnerTask": {
+    "source": "Your partner says one benefit of the Coralton data centre. You say one cost. Then switch.",
+    "back": "Your partner says one benefit of the Coralton data centre. You say one cost. Then switch turns.",
+    "flag": true
+  },
+  "speak.independentTask": {
+    "source": "Say out loud three things a data centre needs to work. Then say who might pay for them.",
+    "back": "Say out loud three things a data centre needs to work. Then say who might pay for them.",
+    "flag": true
+  },
+  "watch.why": {
+    "source": "A short animated lesson shows what is inside an AI data centre, why it gets so hot, and asks how much of the planet's resources AI should use.",
+    "back": "A short animated lesson shows what is inside an AI data centre, why it becomes so hot, and asks how much of this planet's resources AI should use.",
+    "flag": true
+  },
+  "watch.beforeQuestion": {
+    "source": "What do you think is inside an AI data centre?",
+    "back": "In your opinion, what is inside an AI data centre?",
+    "flag": true
+  },
+  "watch.afterQuestion": {
+    "source": "What two ways does the video give to make AI use less energy?",
+    "back": "What two ways are given in this video to make AI use less energy?",
+    "flag": true
+  },
+  "watch.summary": {
+    "source": "Since 2019, more than a thousand huge AI data centres have been built around the world. Each one can use as much water as a small town. It can use as much electricity as a small city. Inside, there are thousands of racks of computers with special chips. These chips do trillions of sums every second, to answer questions and to train AI. All this work makes the chips very hot. Engineers cool them with water towers, cold water in pipes, or special liquids. They also send data with light instead of copper wires, which wastes less power. But AI tools keep getting bigger, so they need more and more electricity. The video asks if we could build smaller tools for smaller jobs. It ends with a question: how much of the planet's resources should we use for smarter machines?",
+    "back": "Since 2019, more than a thousand very big AI data centres have been built around the world. Each one can use as much water as a small town. It can use as much electricity as a small city. Inside, there are thousands of racks of computers with special chips. These chips do trillions of calculations every second, to answer questions and to train AI. All this work makes the chips very hot. Engineers cool them with water towers, cold water in pipes, or special liquids. They also send data with light instead of copper wires, which wastes less energy. But AI tools keep getting bigger, so the tools need more and more electricity. This video asks whether we could build smaller tools for smaller jobs. It ends with one question: how much of this planet's resources should we use for smarter machines?",
+    "flag": true
+  },
+  "watch.keyPoints.0": {
+    "source": "AI data centres use huge amounts of electricity and water.",
+    "back": "AI data centres use very large amounts of electricity and water.",
+    "flag": true
+  },
+  "watch.keyPoints.1": {
+    "source": "Chips get very hot, so engineers look for new ways to cool them and save power.",
+    "back": "Chips become very hot, so engineers look for new ways to cool them and save energy.",
+    "flag": true
+  },
+  "watch.keyPoints.2": {
+    "source": "People must decide how much of the planet's resources AI should use.",
+    "back": "People must decide how much of this planet's resources AI should use.",
+    "flag": true
+  },
+  "watch.contentNote": {
+    "source": "About 6 minutes (6:16), an animated TED-Ed lesson by Sajan Saini, released in September 2026, with fast American English. The title and channel were confirmed with YouTube's oEmbed on 31 October 2026, and the length is from TED's page for the lesson. The summary was written from the transcript on TED's website (https://www.ted.com/talks/sajan_saini_why_are_ai_data_centers_using_so_much_electricity), not from watching it. It names two AI tools (Claude and ChatGPT), uses US examples (New York City), and mentions companies planning their own nuclear power plants. Its numbers (for example, enough energy for 300,000 homes) are the video's own and are not repeated in the lesson. Someone on the team must watch it before use; learners can read the written summary instead.",
+    "back": "About 6 minutes (6:16), an animated TED-Ed lesson by Sajan Saini, released in September 2026, in fast American English. Title and channel confirmed with YouTube's oEmbed on 31 October 2026, and the length was taken from TED's page for the lesson. This summary was written from the transcript on TED's website (https://www.ted.com/talks/sajan_saini_why_are_ai_data_centers_using_so_much_electricity), not by watching it. It names two AI tools (Claude and ChatGPT), uses examples from the United States (New York City), and mentions companies planning their own nuclear power plants. Its numbers (for example, enough energy for 300,000 homes) are the video's own numbers and are not repeated in this lesson. A team member must watch it before it is used; learners can read the written summary instead.",
+    "flag": true
+  },
+  "reflect.prompts.0.text": {
+    "source": "One thing AI needs from the planet is ... The people who pay for it are ...",
+    "back": "One thing AI needs from this planet is ... The people who pay for it are ...",
+    "flag": true
+  },
+  "reflect.prompts.1.text": {
+    "source": "Before a town says yes to a data centre, people should ask ...",
+    "back": "Before a town agrees to a data centre, people should ask ...",
+    "flag": true
+  },
+  "reflect.completionMessage": {
+    "source": "You finished Lesson 6. You found out what AI needs from the planet and weighed who gains and who pays.",
+    "back": "You have finished Lesson 6. You found out what AI needs from this planet and weighed who gains and who pays.",
+    "flag": true
+  },
+  "visual.alt": {
+    "source": "A chain from a mine to a chip factory, a data centre and a tablet. Electricity and water flow into the data centre, and heat comes out.",
+    "back": "A chain from a mine to a chip factory, a data centre and a tablet. Electricity and water flow into the data centre, and heat comes out.",
+    "flag": true
+  },
+  "sources.0.label": {
+    "source": "Scientific American, from Nature (10 April 2025): Data centers will use twice as much energy by 2030, driven by AI (reporting the International Energy Agency's Energy and AI report: all data centres, 2024 estimate and 2030 projection)",
+    "back": "Scientific American, from Nature (10 April 2025): Data centers will use twice as much energy by 2030, driven by AI (reporting the International Energy Agency's Energy and AI report: all data centres, 2024 estimate and 2030 projection)",
+    "flag": true
+  },
+  "sources.1.label": {
+    "source": "Apple (2024): Apple Intelligence Foundation Language Models (a small model that runs on the device, and a larger one on servers)",
+    "back": "Apple (2024): Apple Intelligence Foundation Language Models (a small model that runs on the device, and a larger model on servers)",
+    "flag": true
+  },
+  "sources.2.label": {
+    "source": "UN Environment Programme (21 September 2024): AI has an environmental problem. Here's what the world can do about that.",
+    "back": "UN Environment Programme (21 September 2024): AI has an environmental problem. Here's what the world can do about that. (AI's environmental problem and what can be done)",
+    "flag": true,
+    "note": "\"UN Environment Programme\" is \"Program Alam Sekitar PBB\", as Malaysian news writes it (TERMS.md: United Nations = PBB)."
+  },
+  "sources.3.label": {
+    "source": "Reuters, via Malay Mail (1 April 2021): Global chip supply chain increasingly vulnerable to massive disruption, study finds (Semiconductor Industry Association)",
+    "back": "Reuters, via Malay Mail (1 April 2021): Global chip supply chain increasingly vulnerable to massive disruption, study finds (Semiconductor Industry Association)",
+    "flag": true
+  },
+  "sources.4.label": {
+    "source": "Associated Press, via The Star (19 February 2025): Malaysia is betting on data centers to boost its economy. But experts warn they come at a price.",
+    "back": "Associated Press, via The Star (19 February 2025): Malaysia is betting on data centers to boost its economy. But experts warn they come at a price. (Malaysia relies on data centres for its economy, but there is a price)",
+    "flag": true
+  },
+  "sources.5.label": {
+    "source": "Kontinentalist (2026): Thirsty, tired, wired: Singapore, Johor, Batam and the data centre boom",
+    "back": "Kontinentalist (2026): Thirsty, tired, wired: Singapore, Johor, Batam and the data centre boom (the data centre boom in Singapore, Johor and Batam)",
+    "flag": true
+  },
+  "sensitiveNotes.0": {
+    "source": "Power cuts, water shortages and the cost of electricity may be part of learners' daily lives. Don't ask about their homes, bills or access to water and power; keep the discussion on Coralton and the reported facts. Some learners may live in or near the places named (Johor, Batam, Singapore): keep it neutral, about choices every town faces, not blame for any country or its people.",
+    "back": "Power cuts, water shortages and the cost of electricity may be part of learners' daily lives. Do not ask about their homes, bills or their access to water and electricity; keep the discussion on Coralton and the reported facts. Some learners may live in or near the places named (Johor, Batam, Singapore): keep a neutral tone, about choices every town faces, not blaming any country or its people.",
+    "flag": true
+  },
+  "educatorNotes.0": {
+    "source": "The numbers are dated and scoped. Electricity: the International Energy Agency's Energy and AI report (April 2025), as reported by Scientific American and Nature, estimated that all data centres used about 415 TWh in 2024, about 1.5% of the world's electricity, and projected about 945 TWh by 2030, roughly what Japan uses in a year now. The 1.5% is for all data centres, not AI alone: the IEA estimated that AI servers were about 15% of data-centre energy use in 2024, and one outside researcher thinks that is an underestimate. The 2030 figure is a projection with stated uncertainty, not a measurement. (The IEA's own pages could not be opened on 1 November 2026; check them, and its later Key questions on energy and AI, if you can.) On the device: some small models run on phones and laptops (for example Apple's roughly 3-billion-parameter model, 2024), while most large tools run in data centres. Taiwan's share of the most advanced chip-making (92%) is from a 2021 Semiconductor Industry Association study. Singapore paused new data centres in 2019; in 2021 they used about 7% of its electricity (Kontinentalist). The earlier draft's “30 to 50 long-term jobs” (Good Jobs First, via AP, scope not stated) and UNEP's “800 kg of materials for a 2 kg computer” (no source given) were removed. The fish farmer in the AP story worried about longer power cuts, like Hana.",
+    "back": "These numbers are dated and scoped. Electricity: the International Energy Agency's Energy and AI report (April 2025), as reported by Scientific American and Nature, estimated that all data centres used about 415 TWh in 2024, about 1.5% of the world's electricity, and projected about 945 TWh by 2030, roughly the amount Japan uses in a year now. The 1.5% figure is for all data centres, not AI alone: the IEA estimated that AI servers were about 15% of data-centre energy use in 2024, and one outside researcher thinks that is too low an estimate. The 2030 figure is a projection with stated uncertainty, not a measurement. (The IEA's own pages could not be opened on 1 November 2026; check those pages, and the later Key questions on energy and AI, if you can.) On the device: some small models run on phones and laptops (for example Apple's model with about 3 billion parameters, 2024), while most large tools run in data centres. Taiwan's share of the most advanced chip-making (92%) is taken from a 2021 Semiconductor Industry Association study. Singapore temporarily stopped new data centres in 2019; in 2021 data centres used about 7% of its electricity (Kontinentalist). The earlier draft's figure of “30 to 50 long-term jobs” (Good Jobs First, via AP, scope not stated) and UNEP's figure of “800 kg of materials for a 2 kg computer” (no source given) were removed. The fish farmer in the AP report worried about longer power cuts, like Hana.",
+    "flag": true
+  },
+  "educatorNotes.1": {
+    "source": "Rules for data centres in Johor and Batam change quickly (in early 2026, after residents protested about water, Malaysia stopped new applications for non-AI data centres in Johor and tightened water approvals, Kontinentalist reports). Check the latest news before teaching the third section. Data centres also run websites, videos and messages, not only AI. Benefits are real too: investment (AP reports over US$31 billion for Malaysia in the first 10 months of 2024, from Knight Frank), building work and some long-term jobs; UNEP also notes that AI can help to monitor the environment. Some places give data centres large tax breaks, so ask who gains from a deal.",
+    "back": "Rules for data centres in Johor and Batam change quickly (in early 2026, after residents protested about water, Malaysia stopped accepting new applications for non-AI data centres in Johor and tightened water approvals, according to Kontinentalist's report). Check the latest news before teaching the third part. Data centres also run websites, videos and messages, not only AI. The benefits are real too: investment (AP reports more than US$31 billion for Malaysia in the first 10 months of 2024, from Knight Frank), building work and some long-term jobs; UNEP also states that AI can help monitor the environment. Some places give data centres large tax breaks, so ask who gains from a deal.",
+    "flag": true
+  },
+  "educatorNotes.2": {
+    "source": "Paper version of the activity: write the eight sentences on cards and sort them into Benefit, Cost and Both. There is no score; reward reasons, and accept a different group with a good reason. A partner could swap Coralton for a short, neutral local example, such as a new factory or mine. The claim record is in content/courses/digital-world/claims/DW06.md.",
+    "back": "Paper version of this activity: write the eight sentences on cards and sort them into Benefit, Cost and Both. There are no marks; value the reasons given, and accept a different group if the reason is good. A partner could replace Coralton with a short, neutral local example, like a new factory or mine. The claim record is in content/courses/digital-world/claims/DW06.md.",
+    "flag": true
+  }
+}

@@ -1,0 +1,276 @@
+{
+  "title": "Kamera yang mengenali wajah",
+  "essentialQuestion": "Apabila kamera boleh mengecam wajah, bagaimanakah kita mengimbangi keselamatan dan privasi?",
+  "learningGoal": "Terangkan cara pengecaman wajah memadankan wajah, dan timbang manfaatnya dengan risikonya terhadap keselamatan dan privasi.",
+  "warmUp": {
+    "question": "Penggunaan kamera yang mengenali wajah yang manakah kedengaran adil bagi kamu?",
+    "options": [
+      "Membuka telefon",
+      "Mencari kanak-kanak yang hilang",
+      "Memerhati setiap jalan",
+      "Tidak pasti"
+    ]
+  },
+  "evidence": {
+    "label": "Contoh rekaan yang dibuat untuk pelajaran ini.",
+    "question": "Siapakah yang dibantu oleh setiap penggunaan? Siapakah yang mungkin dirugikan?",
+    "cards": [
+      {
+        "title": "Kamera yang mengenali wajah di bandar Greenport",
+        "cases": [
+          {
+            "name": "Telefon Rosa",
+            "body": "Telefon Rosa terbuka apabila ia melihat wajahnya. Semasa Rosa menetapkannya, telefon itu menukar wajahnya kepada nombor dan menyimpan nombor itu, bukan foto. Telefon itu menyemak wajahnya dengan nombor itu. Nombor itu kekal di dalam telefon."
+          },
+          {
+            "name": "Kanak-kanak yang hilang di pesta",
+            "body": "Seorang budak berumur lima tahun sesat di pesta Greenport yang sesak. Bapanya bersetuju, jadi kamera di pintu masuk mencari wajah budak itu. Seorang pengawal menemuinya dalam masa sepuluh minit."
+          },
+          {
+            "name": "Rancangan kamera jalan",
+            "body": "Majlis bandar mahu memasang kamera di setiap jalan utama. Kamera itu akan menyemak setiap wajah dengan senarai orang yang sedang dicari oleh polis. Orang yang lalu-lalang tidak akan ditanya."
+          },
+          {
+            "name": "Ujian kamera jalan",
+            "body": "Dalam satu ujian dengan 1,000 sukarelawan, kamera itu tersalah memadankan 12 orang dengan seseorang dalam senarai itu. Kebanyakan padanan yang salah ialah orang yang lebih tua."
+          }
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "title": "Membantu atau membahayakan?",
+    "instructions": "Letakkan setiap ayat tentang kamera wajah dalam satu kumpulan. Tiada markah. Selepas kamu meletakkan satu ayat, kamu boleh melihat satu jawapan yang mungkin dan sebabnya. Jawapan lain juga boleh betul jika kamu dapat memberi sebab untuknya.",
+    "groups": [
+      {
+        "label": "Membantu orang"
+      },
+      {
+        "label": "Boleh membahayakan orang"
+      },
+      {
+        "label": "Kedua-duanya, bergantung pada peraturan"
+      }
+    ],
+    "items": [
+      {
+        "text": "Telefon hanya terbuka untuk wajah pemiliknya.",
+        "feedback": "Ia menyemak satu wajah dengan nombor wajah pemilik yang telah disimpan. Nombor itu kekal di dalam telefon, dan pemiliknya memilih untuk menggunakannya."
+      },
+      {
+        "text": "Kamera jalan menyemak setiap wajah, dan tiada sesiapa yang ditanya.",
+        "feedback": "Orang diperhati tanpa mengetahuinya, jadi mereka kehilangan privasi. Sesetengah orang akan menerimanya dengan peraturan yang ketat, iaitu kumpulan ketiga."
+      },
+      {
+        "text": "Kamera menyemak wajah di pintu masuk stadium, jadi barisan bergerak lebih cepat.",
+        "feedback": "Ia menjimatkan masa. Tetapi orang patut boleh menolak, dan data wajah patut dipadam dengan segera."
+      },
+      {
+        "text": "Kamera di pesta membantu mencari kanak-kanak yang hilang.",
+        "feedback": "Keluarganya bersetuju, dan carian itu untuk seorang kanak-kanak bagi masa yang singkat."
+      },
+      {
+        "text": "Seorang pembeli tersalah dipadankan dengan seseorang yang dikehendaki polis.",
+        "feedback": "Padanan yang salah boleh menyebabkan seseorang dipersalahkan secara tidak sengaja."
+      },
+      {
+        "text": "Polis boleh mencari orang yang hilang, tetapi hanya jika hakim bersetuju.",
+        "feedback": "Ia boleh menemui seseorang dengan cepat. Kebenaran hakim cuba menghalang salah guna, tetapi orang tidak bersetuju tentang di mana hadnya patut ditetapkan."
+      },
+      {
+        "text": "Sebuah syarikat menyimpan foto wajah semua orang selama bertahun-tahun dan menjualnya.",
+        "feedback": "Tiada sesiapa yang bersetuju, dan foto itu boleh digunakan untuk menjejak mereka."
+      },
+      {
+        "text": "Alat itu membuat lebih banyak kesilapan bagi orang yang lebih tua.",
+        "feedback": "Satu kumpulan akan lebih kerap tersalah dipadankan, dan itu tidak adil kepada mereka."
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Cara kamera memadankan wajah",
+        "text": "Pengecaman wajah ialah sejenis AI yang cuba mengenal pasti siapa seseorang daripada wajahnya. Mula-mula, perisian itu mencari wajah dalam foto atau video. Kemudian ia mengukur butiran, seperti jarak antara dua mata, dan menukarnya kepada satu set nombor. Seterusnya, ia membandingkan nombor itu dengan wajah yang disimpan dalam pangkalan data dan memberi skor tentang sejauh mana wajah itu serupa. Telefon yang terbuka untuk wajah kamu biasanya hanya menyimpan nombor daripada wajah kamu, bukan foto. Carian pula membandingkan satu wajah dengan banyak wajah. Walau apa pun caranya, padanan ialah tekaan terbaik, bukan bukti tentang siapa seseorang itu.",
+        "simpler": "Pengecaman wajah ialah AI yang cuba menamakan seseorang daripada wajahnya. Mula-mula, ia mencari wajah dalam foto. Kemudian ia mengukur wajah itu, seperti jarak antara dua mata. Ia menukarnya kepada nombor. Seterusnya, ia membandingkan nombor itu dengan wajah dalam pangkalan data. Ia memberi skor tentang betapa serupanya wajah itu. Telefon selalunya hanya menyimpan nombor daripada wajah kamu, bukan foto. Carian menyemak satu wajah dengan banyak wajah. Padanan ialah tekaan, bukan bukti."
+      },
+      {
+        "heading": "Kegunaan yang membantu dan risiko yang sebenar",
+        "text": "Pengecaman wajah ada kegunaan yang membantu. Ia boleh membuka telefon, mempercepat proses menaiki kapal terbang di sesetengah lapangan terbang dan membantu mencari orang yang hilang. Tetapi ia juga membawa risiko. Pada tahun 2019, sebuah agensi sains kerajaan Amerika Syarikat menguji hampir 200 alat pengecaman wajah. Banyak alat itu tersalah memadankan dua orang yang berbeza jauh lebih kerap bagi sesetengah kumpulan. Kumpulan ini termasuk wanita, orang yang lebih tua, kanak-kanak dan orang daripada sesetengah latar belakang. Alat yang terbaik membuat jauh lebih sedikit kesilapan. Padanan yang salah boleh menyebabkan seseorang dipersalahkan atas sesuatu yang tidak dilakukannya. Kamera juga boleh mengecam orang dari jauh, tanpa mereka sedari, dan menjejak ke mana mereka pergi. Itu satu risiko kepada privasi.",
+        "simpler": "Kamera wajah boleh membuka telefon atau membantu mencari orang yang hilang. Tetapi ada juga risikonya. Pada tahun 2019, satu kumpulan sains di Amerika Syarikat menguji hampir 200 alat. Banyak alat membuat lebih banyak kesilapan bagi sesetengah kumpulan, seperti wanita, kanak-kanak dan orang yang lebih tua. Alat yang terbaik membuat lebih sedikit kesilapan. Padanan yang salah boleh menyebabkan seseorang dipersalahkan. Kamera juga boleh menjejak orang. Mereka mungkin tidak tahu. Ini satu risiko kepada privasi."
+      },
+      {
+        "heading": "Setiap tempat membuat peraturan yang berbeza",
+        "text": "Oleh sebab risiko ini, setiap tempat membuat pilihan yang berbeza. Pada tahun 2019, San Francisco menjadi bandar pertama di Amerika Syarikat yang mengharamkan pengecaman wajah oleh polis dan pejabat bandar yang lain. Sejak tahun 2025, satu undang-undang Kesatuan Eropah telah mengharamkan sesetengah kegunaan. Polis tidak boleh menggunakan pengecaman wajah secara langsung di tempat awam, kecuali dalam beberapa kes yang serius, seperti mencari orang yang hilang. Seorang hakim atau pegawai bebas mesti bersetuju dahulu. Undang-undang itu juga mengharamkan penyalinan foto wajah secara besar-besaran daripada internet atau kamera keselamatan untuk membina pangkalan data pengecaman wajah. Kamera biasa tidak diharamkan, dan tempat lain membenarkan penggunaan yang jauh lebih luas.",
+        "simpler": "Pada tahun 2019, San Francisco membuat larangan. Polisnya tidak boleh menggunakan pengecaman wajah. Kesatuan Eropah ada undang-undang AI. Polis di sana tidak boleh menggunakan kamera wajah secara langsung di tempat awam. Beberapa kes yang serius dibenarkan, seperti mencari orang yang hilang. Seorang hakim atau pegawai mesti bersetuju. Undang-undang itu juga mengharamkan penyalinan banyak foto wajah dalam talian untuk pangkalan data wajah. Kamera biasa tidak diharamkan."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "pengecaman wajah",
+        "forms": [
+          "pengecaman muka"
+        ],
+        "definition": "AI yang cuba mengenal pasti siapa seseorang daripada wajahnya.",
+        "example": "Telefon Rosa menggunakan pengecaman wajah untuk terbuka."
+      },
+      {
+        "word": "pangkalan data",
+        "definition": "Simpanan maklumat yang besar dan tersusun di dalam komputer.",
+        "example": "Kamera jalan akan membandingkan wajah dengan pangkalan data foto."
+      },
+      {
+        "word": "padanan",
+        "forms": [
+          "memadankan",
+          "dipadankan",
+          "sepadan"
+        ],
+        "definition": "Apabila alat menganggarkan bahawa dua wajah ialah wajah orang yang sama.",
+        "example": "Kamera Greenport membuat 12 padanan yang salah dalam ujian itu."
+      },
+      {
+        "word": "menjejak",
+        "forms": [
+          "dijejak",
+          "menjejaki"
+        ],
+        "definition": "Mengikut ke mana seseorang pergi, selalunya tanpa dia sedari.",
+        "example": "Kamera jalan boleh menjejak orang semasa mereka berjalan di sekitar Greenport."
+      },
+      {
+        "word": "privasi",
+        "definition": "Menjaga maklumat dan kehidupan kamu sendiri supaya selamat daripada orang yang tidak patut melihatnya.",
+        "example": "Orang yang lalu-lalang di depan kamera jalan kehilangan sebahagian privasi mereka."
+      },
+      {
+        "word": "larangan",
+        "forms": [
+          "mengharamkan",
+          "diharamkan"
+        ],
+        "definition": "Peraturan yang menyatakan bahawa sesuatu tidak dibenarkan.",
+        "example": "Greenport boleh membuat larangan supaya polis tidak menggunakan kamera jalan."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Bagaimanakah telefon memutuskan untuk terbuka bagi wajah pemiliknya?",
+        "options": [
+          {
+            "text": "Ia menyemak wajah itu dengan nombor yang disimpannya",
+            "feedback": "Betul. Telefon menyemak satu wajah dengan nombor yang disimpan daripada wajah pemiliknya. Carian menyemak satu wajah dengan banyak wajah."
+          },
+          {
+            "text": "Ia bertanya kepada polis siapa orang itu",
+            "feedback": "Belum tepat. Telefon itu membuat semakan sendiri. Baca petikan pertama sekali lagi."
+          },
+          {
+            "text": "Ia mencari semua wajah dalam pangkalan data yang besar",
+            "feedback": "Belum tepat. Itu ialah carian. Telefon hanya menyemak nombor wajah pemiliknya yang telah disimpan. Baca petikan pertama."
+          }
+        ]
+      },
+      {
+        "question": "Apakah yang ditemui oleh ujian pada tahun 2019 terhadap hampir 200 alat?",
+        "options": [
+          {
+            "text": "Semua alat berfungsi sama baik untuk semua orang",
+            "feedback": "Belum tepat. Banyak alat membuat lebih banyak kesilapan bagi sesetengah kumpulan. Baca petikan kedua."
+          },
+          {
+            "text": "Banyak alat membuat lebih banyak kesilapan bagi sesetengah kumpulan",
+            "feedback": "Betul. Banyak alat lebih kerap tersalah memadankan orang dalam sesetengah kumpulan. Alat yang terbaik membuat lebih sedikit kesilapan."
+          },
+          {
+            "text": "Alat itu hanya boleh berfungsi pada telefon",
+            "feedback": "Belum tepat. Ujian itu tentang kesilapan, bukan telefon. Baca petikan kedua."
+          }
+        ]
+      },
+      {
+        "question": "Patutkah Greenport memasang kamera wajah di setiap jalan? Peraturan apakah yang akan kamu tambah?",
+        "placeholder": "Saya fikir Greenport patut ... Satu peraturan yang akan saya tambah ialah ..."
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Majlis Greenport mesti membuat keputusan tentang kamera jalannya. Tulis mesej pendek kepada majlis itu. Katakan ya, tidak, atau ya dengan peraturan, beri satu manfaat dan satu risiko, dan cadangkan satu peraturan.",
+    "sentenceStarters": [
+      "Saya fikir majlis itu patut ...",
+      "Satu manfaatnya ialah ...",
+      "Satu risikonya ialah ...",
+      "Ini penting bagi ___ kerana ...",
+      "Satu peraturan yang saya cadangkan ialah ..."
+    ],
+    "planningBoxes": [
+      "Idea utama saya",
+      "Bukti daripada pelajaran",
+      "Mengapa ini penting",
+      "Soalan yang masih saya ada"
+    ],
+    "selfCheck": [
+      "Saya menyatakan pendapat saya tentang rancangan kamera jalan, dan sebabnya.",
+      "Saya memberi satu manfaat dan satu risiko daripada pelajaran.",
+      "Saya mencadangkan satu peraturan dan menyatakan mengapa ia membantu."
+    ],
+    "example": "Saya fikir majlis itu patut menggunakan kamera itu hanya dalam beberapa kes yang serius, dengan peraturan yang ketat. Satu manfaatnya ialah kamera itu boleh membantu mencari kanak-kanak yang hilang dengan cepat, seperti di pesta. Satu risikonya ialah kamera itu membuat kesilapan. Dalam ujian, kamera itu tersalah memadankan 12 orang, dan kebanyakannya orang yang lebih tua. Ini penting bagi semua orang yang lalu-lalang, kerana padanan yang salah boleh menyebabkan seseorang dipersalahkan. Satu peraturan yang saya cadangkan ialah polis hanya boleh membuat carian jika hakim bersetuju."
+  },
+  "speak": {
+    "partnerTask": "Seorang rakan memberi satu sebab untuk menyokong kamera jalan Greenport. Seorang lagi memberi satu sebab untuk menentangnya. Kemudian bertukar pihak.",
+    "independentTask": "Sebut dengan kuat cara pengecaman wajah memadankan wajah. Kemudian sebut satu peraturan yang akan melindungi privasi orang."
+  },
+  "watch": {
+    "why": "Seorang pakar penglihatan komputer yang juga seorang peguam menerangkan cara pengecaman wajah berfungsi, cara ia digunakan, dan mengapa sesetengah bandar di Amerika Syarikat mengharamkan penggunaannya oleh kerajaan.",
+    "beforeQuestion": "Pada pendapat kamu, siapakah yang patut dibenarkan menggunakan kamera yang mengenali wajah?",
+    "afterQuestion": "Apakah dua jenis kebimbangan yang disebut oleh pakar itu?",
+    "summary": "Dalam video ini, seorang wartawan bercakap dengan seorang pakar penglihatan komputer yang juga seorang peguam. Pengecaman wajah digunakan untuk membuka telefon, menamakan kawan dalam foto dan membantu orang menaiki kapal terbang. Ia berfungsi dengan mencari corak pada wajah. Untuk mempelajarinya, ia memerlukan banyak foto, kadangkala berjuta-juta, dengan label yang menyatakan siapa dalam foto itu. Polis melihat manfaatnya. Mereka boleh mencari dalam banyak foto dengan cepat, dan itu penting dalam kes yang serius. Tetapi pakar itu menyebut dua jenis kebimbangan. Jika alat itu salah, ia mungkin menamakan orang yang salah. Penyelidikan mendapati ia berfungsi lebih teruk bagi sesetengah kumpulan. Jika alat itu betul, orang boleh diperhati dan dijejak tanpa mereka sedari. Sesetengah bandar di Amerika Syarikat, seperti San Francisco, mengharamkan penggunaannya oleh kerajaan. Pakar itu berkata orang patut memutuskan bersama cara ia digunakan.",
+    "keyPoints": [
+      "Pengecaman wajah mencari corak pada wajah dan belajar daripada banyak foto berlabel.",
+      "Ia boleh membantu, contohnya dalam kes yang serius, tetapi ia boleh menamakan orang yang salah.",
+      "Sesetengah tempat mengharamkan sesetengah kegunaan, dan orang mesti memutuskan bersama cara ia digunakan."
+    ],
+    "contentNote": "Kira-kira 10 minit bahasa Inggeris Amerika yang laju untuk orang dewasa, lebih panjang dan lebih sukar daripada kebanyakan video Thinkerwell (WIRED, Ogos 2019). Tajuk dan saluran disemak dengan oEmbed YouTube pada 31 Oktober 2026, dan panjang serta tarikhnya di halaman video WIRED sendiri. Ringkasan ditulis daripada transkrip di halaman WIRED, bukan dengan menonton video; seseorang dalam pasukan mesti menontonnya sebelum digunakan. Video ini menyebut polis, sempadan, satu tangkapan di sebuah konsert di China, satu rompakan kedai dan penculikan, serta orang yang takut pergi ke rumah ibadat, pusat komuniti atau pusat LGBTQ di tempat yang kerajaannya memusuhi agama atau etnik mereka. Pratonton dahulu; pelajar boleh membaca versi bertulis sebagai ganti."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Satu peraturan yang menjaga keselamatan orang dan melindungi privasi mereka ialah ..."
+      },
+      {
+        "text": "Satu soalan yang masih saya ada tentang kamera yang mengenali wajah ialah ..."
+      }
+    ],
+    "completionMessage": "Kamu telah menamatkan Pelajaran 12. Kamu menerangkan cara pengecaman wajah memadankan wajah dan menimbang keselamatan dengan privasi."
+  },
+  "visual": {
+    "alt": "Rajah: perisian mencari wajah, mengukurnya, menukarnya kepada nombor dan membandingkan nombor itu dengan wajah yang disimpan untuk memberi skor. Telefon membandingkan satu wajah dengan nombor pemiliknya yang telah disimpan; carian membandingkan satu wajah dengan banyak wajah."
+  },
+  "sources": [
+    {
+      "label": "NIST (2019): Face Recognition Vendor Test, Part 3: Demographic effects (ujian vendor pengecaman wajah, bahagian 3: kesan demografi; NISTIR 8280; 189 algoritma, satu dengan satu dan satu dengan banyak)"
+    },
+    {
+      "label": "Apple Platform Security: Facial matching security (keselamatan padanan wajah; Face ID menyimpan gambaran matematik wajah, bukan imej, di dalam peranti)"
+    },
+    {
+      "label": "Suruhanjaya Eropah, AI Act Service Desk: Article 5, prohibited AI practices (Perkara 5, amalan AI yang dilarang; Peraturan (EU) 2024/1689; pengikisan, pengenalan biometrik masa nyata, kebenaran)"
+    },
+    {
+      "label": "Suruhanjaya Eropah: AI Act, regulatory framework (Akta AI, rangka kerja kawal selia; larangan terpakai mulai Februari 2025; pengenalan biometrik jarak jauh yang lain berisiko tinggi)"
+    },
+    {
+      "label": "Electronic Frontier Foundation, Street Level Surveillance: Face recognition (pengecaman wajah: cara ia berfungsi, penjejakan)"
+    },
+    {
+      "label": "Al Jazeera (2019): San Francisco first US city to ban facial recognition by police (San Francisco bandar pertama di Amerika Syarikat yang mengharamkan pengecaman wajah oleh polis)"
+    }
+  ],
+  "sensitiveNotes": [
+    "Sesetengah pelajar mungkin pernah melalui pengawasan, pemeriksaan polis, pemeriksaan sempadan atau pemeriksaan dokumen pengenalan. Pastikan pelajaran ini umum dan tertumpu pada Greenport yang direka. Jangan sekali-kali bertanya kepada pelajar tentang pengalaman mereka sendiri dengan polis, sempadan, dokumen pengenalan atau kamera, atau tentang status mereka. Jika pelajar berkongsi sesuatu, dengar dengan tenang, jangan minta butiran atau membincangkannya di dalam kelas, dan ikut proses perlindungan kanak-kanak organisasi rakan kongsi sendiri.",
+    "Pratonton pelajaran dan video ini dahulu; video ini untuk orang dewasa dan menyebut polis, sempadan dan rasa takut dijejak (lihat nota video). Pelajar boleh membaca versi bertulis sebagai ganti. Perbahasan dalam langkah Cakap tidak wajib: langkau jika topik ini terlalu dekat dengan pengalaman mereka, atau minta pelajar berhujah bagi pihak watak Greenport yang direka, bukan bagi diri mereka sendiri."
+  ],
+  "educatorNotes": [
+    "Kes-kes Greenport, angka ujian (12 padanan yang salah daripada 1,000) dan ayat-ayat aktiviti ialah rekaan. Fakta sebenar, secara ringkas: NIST menguji 189 algoritma, kebanyakannya komersial, daripada 99 pembangun pada tahun 2019 dan mendapati padanan palsu selalunya 10 hingga lebih 100 kali lebih kerap bagi sesetengah kumpulan, berbeza mengikut algoritma, dan yang paling tepat menunjukkan perbezaan yang lebih kecil. Telefon: panduan keselamatan Apple menyatakan bahawa Face ID menyimpan gambaran matematik wajah, bukan imej, dan gambaran itu tidak pernah keluar dari peranti; telefon lain berbeza. Akta AI EU, Perkara 5, terpakai sejak 2 Februari 2025: penggunaan oleh polis bagi pengenalan biometrik jarak jauh masa nyata di ruang yang boleh diakses orang ramai diharamkan kecuali jika benar-benar perlu untuk mencari mangsa penculikan atau pemerdagangan orang atau orang hilang, untuk mencegah ancaman khusus dan segera terhadap nyawa atau serangan pengganas, atau untuk mencari suspek jenayah serius yang disenaraikan (sekurang-kurangnya empat tahun penjara); setiap penggunaan memerlukan kebenaran awal daripada pihak berkuasa kehakiman atau pentadbiran yang bebas (dalam kecemasan, dalam masa 24 jam), dan hanya jika undang-undang negara membenarkannya. Mengenal pasti orang kemudian daripada rakaman tidak diharamkan tetapi berisiko tinggi, dengan tanggungjawab yang lebih ketat yang akan terpakai kemudian (halaman Suruhanjaya memberi tarikh 2 Disember 2027 setakat November 2026). Larangan pengikisan meliputi sistem AI yang membina atau meluaskan pangkalan data pengecaman wajah dengan mengikis imej wajah secara tidak bersasar daripada internet atau CCTV; ia tidak mengharamkan setiap penggunaan foto wajah yang ditemui dalam talian. Peraturan berubah: semak sebelum mengajar. Pelajaran 8 (bias akibat data latihan yang tertinggal) ialah kaitan yang baik. Versi aktiviti di atas kertas: tulis lapan ayat itu pada kad dan isih ke dalam tiga kumpulan; hargai sebab, bukan kumpulan, dan terima \"ya dengan peraturan\" apabila pelajar menerangkan peraturannya."
+  ]
+}

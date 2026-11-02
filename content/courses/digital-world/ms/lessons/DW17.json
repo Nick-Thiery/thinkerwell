@@ -1,0 +1,270 @@
+{
+  "title": "Projek: reka bentuk pembantu AI",
+  "essentialQuestion": "Bagaimanakah kamu akan mereka bentuk pembantu AI yang berguna, adil dan selamat?",
+  "learningGoal": "Rancang pembantu untuk masalah yang dihadapi ramai orang: nyatakan siapa yang dibantunya, sama ada AI sesuai, cara menyemak bahawa ia berfungsi, dan cara memperbaikinya selepas maklum balas.",
+  "warmUp": {
+    "question": "Kerja yang manakah boleh dilakukan dengan baik oleh pembantu AI?",
+    "options": [
+      "Mengasingkan sampah ke dalam tong yang betul",
+      "Memilih siapa yang patut berkawan",
+      "Meneka bila bas akan tiba",
+      "Tidak pasti"
+    ]
+  },
+  "evidence": {
+    "question": "Bagi setiap projek, apakah masalah yang menjadi titik permulaannya, apakah yang dilakukan oleh AI, dan apakah yang masih dilakukan oleh manusia? Apakah bukti bahawa ia berfungsi?",
+    "cards": [
+      {
+        "title": "Dua projek sebenar di Asia Tenggara",
+        "cases": [
+          {
+            "name": "Eco Pulse, Malaysia: prototaip pelajar",
+            "body": "Masalahnya: pelajar-pelajar itu mahu menjadikan kitar semula lebih cepat dan lebih mudah bagi orang yang melakukannya. Siapa yang membinanya: tiga pelajar berumur 15 tahun di SMK Sultan Ismail, sebuah sekolah menengah di Johor. Apa yang dilakukan oleh AI: sebuah aplikasi melihat foto barang yang boleh dikitar semula dan menganggarkan berat dan nilainya. Buktinya: ia memenangi anugerah dalam satu pertandingan pelajar pada tahun 2024 yang dianjurkan oleh Samsung di Malaysia. Penganjurnya berkata ia tepat, tetapi tiada keputusan ujian yang diterbitkan. Satu soalan: sejauh manakah ia berfungsi dengan barang yang kotor atau remuk?"
+          },
+          {
+            "name": "Traffy Fondue, Thailand: perkhidmatan awam yang sedang digunakan",
+            "body": "Masalahnya: penduduk melihat jalan rosak, banjir dan lampu jalan yang rosak, dan memerlukan pejabat yang betul untuk membaikinya. Siapa yang membina dan menggunakannya: sebuah agensi sains kebangsaan membinanya. Penduduk menghantar laporan dengan foto dan lokasi, dan pejabat bandar serta pejabat tempatan menjawabnya. Apa yang dilakukan oleh AI: ia mengisih setiap laporan mengikut jenis dan menghantarnya ke pejabat yang betul. Orang di sana memutuskan tindakan dan membuat pembaikan. Buktinya: pembuatnya berkata ia menerima lebih daripada 940,000 laporan dari tahun 2022 hingga 2024. Itu menunjukkan ia digunakan, bukan sejauh mana setiap masalah dibaiki dengan baik. Satu soalan: bagaimanakah orang yang tiada telefon pintar atau internet boleh melaporkan masalah?"
+          }
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "title": "Rancang pembantu AI kamu",
+    "instructions": "Rancang pembantu dalam lima langkah. Pilih satu masalah rekaan Maple Street, atau masalah yang dihadapi ramai orang dalam komuniti yang kamu kenali. Jangan tulis nama sebenar atau maklumat peribadi sesiapa. Kamu boleh kembali dan mengubah mana-mana langkah.",
+    "problems": [
+      {
+        "text": "Maple Street (rekaan): plastik selalunya dibuang ke dalam tong yang salah di pusat itu."
+      },
+      {
+        "text": "Maple Street (rekaan): bas selalunya lewat, dan orang menunggu dalam hujan."
+      },
+      {
+        "text": "Maple Street (rekaan): paip taman di pusat itu selalunya dibiarkan terbuka."
+      },
+      {
+        "text": "Masalah yang dihadapi ramai orang dalam komuniti yang saya kenali"
+      }
+    ],
+    "steps": [
+      {
+        "title": "1. Masalahnya",
+        "prompt": "Apakah masalahnya, dan siapakah yang terkesan olehnya? Bagaimanakah pembantu boleh memperbaiki keadaan bagi mereka?",
+        "starter": "Masalahnya ialah ... Masalah ini memberi kesan kepada ..."
+      },
+      {
+        "title": "2. Patutkah AI digunakan?",
+        "prompt": "Fikirkan tiga soalan. Adakah pembantu itu perlu mengecam atau meneka berdasarkan banyak contoh? Bolehkah peraturan mudah atau seseorang melakukannya dengan lebih baik? Bolehkah ia menyakiti seseorang jika ia salah? Kemudian buat keputusan.",
+        "options": [
+          {
+            "text": "Ya, AI boleh membantu",
+            "feedback": "Teruskan ke langkah 3. Dalam rancangan kamu, nyatakan mengapa AI sesuai: apakah yang mesti dikecam atau diteka olehnya?"
+          },
+          {
+            "text": "Tidak, cara lain lebih baik",
+            "feedback": "Itu juga pilihan reka bentuk yang baik. Tulis cara lain itu, dan mengapa ia lebih sesuai, seperti kumpulan rakan sebaya kelab itu."
+          },
+          {
+            "text": "Belum pasti lagi",
+            "feedback": "Tidak mengapa. Tulis apa yang masih perlu kamu ketahui, dan buat keputusan semula selepas langkah 4."
+          }
+        ]
+      },
+      {
+        "title": "3. Apa yang dipelajarinya",
+        "prompt": "Daripada contoh apakah ia akan belajar? Siapakah yang akan melabelnya? Contoh siapakah yang mungkin tertinggal? Jika kamu memilih cara lain, nyatakan apa yang diperlukannya sebagai ganti.",
+        "starter": "Ia akan belajar daripada ... Contoh ___ mungkin tertinggal."
+      },
+      {
+        "title": "4. Risiko, ujian dan semakan",
+        "prompt": "Apakah yang boleh menjadi tidak kena? Bagaimanakah kamu akan menguji bahawa ia berfungsi? Siapakah yang akan menyemaknya, dan berapa kerap?",
+        "starter": "Satu risikonya ialah ... Untuk mengujinya, ... ___ akan menyemaknya dengan ..."
+      },
+      {
+        "title": "5. Maklum balas dan versi 2",
+        "prompt": "Bacakan rancangan kamu kepada rakan, atau baca sekali lagi sendiri. Jawab satu daripada soalan ini. Kemudian ubah satu perkara.",
+        "questions": [
+          "Siapakah yang mungkin tertinggal oleh pembantu ini?",
+          "Apakah yang berlaku jika ia membuat kesilapan?",
+          "Adakah cara yang lebih mudah tanpa AI?",
+          "Apakah bukti yang akan menunjukkan bahawa ia membantu?"
+        ],
+        "starter": "Selepas maklum balas, saya mengubah ... kerana ..."
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Mulakan dengan masalah, bukan alat",
+        "text": "Dalam projek ini, kamu akan merancang pembantu untuk masalah yang dihadapi ramai orang dalam sesebuah komuniti. Pereka yang baik bermula dengan masalah dan orang yang terkesan olehnya, bukan dengan alat. Di Malaysia, tiga pelajar berumur 15 tahun mahu menjadikan kitar semula lebih mudah, jadi mereka membina prototaip aplikasi, Eco Pulse, yang menganggarkan berat dan nilai barang daripada foto. Kemudian pereka bertanya: patutkah AI digunakan di sini? AI boleh membantu apabila pembantu itu mesti mengecam atau meneka berdasarkan banyak contoh. Tetapi kadangkala peraturan mudah atau seseorang dapat melakukan kerja itu dengan lebih baik. Kelab reka bentuk Maple Street, kelab rekaan, memutuskan bahawa alat tidak patut memilih kawan, kerana orang patut memilih kawan mereka sendiri.",
+        "simpler": "Kamu akan merancang pembantu untuk masalah bersama. Pereka yang baik bermula dengan masalah dan orang yang terkesan olehnya. Di Malaysia, tiga pelajar berumur 15 tahun mahu kitar semula menjadi lebih mudah. Mereka membina prototaip aplikasi, Eco Pulse. Daripada foto sampah, ia cuba mengetahui berat dan nilainya. Patutkah AI digunakan di sini? AI boleh membantu apabila pembantu mesti belajar daripada banyak contoh. Kadangkala peraturan mudah atau seseorang lebih baik. Kelab Maple Street, kelab rekaan, menolak alat yang memilih kawan. Orang patut memilih kawan mereka sendiri."
+      },
+      {
+        "heading": "Rancang apa yang dipelajarinya dan apa yang boleh menjadi tidak kena",
+        "text": "Seterusnya, pereka merancang daripada apa pembantu itu akan belajar. Pembantu tong sampah kelab itu akan belajar daripada foto sampah yang dilabel oleh ahli kelab sebagai “plastik” atau “kertas”. Contoh berlabel ini ialah data latihannya. Seperti yang kamu pelajari dalam Pelajaran 8, sesuatu alat boleh gagal bagi apa-apa yang tiada dalam contohnya, jadi kelab itu juga menambah foto barang yang remuk dan kotor. Kemudian pereka menyenaraikan risiko: kamera berhampiran tong sampah tidak boleh sekali-kali merakam wajah orang. Akhir sekali, pereka menentukan siapa yang menyemak pembantu itu. Kelab itu akan melihat ke dalam tong sampah setiap hari Jumaat.",
+        "simpler": "Pembantu tong sampah belajar daripada foto sampah yang dilabel oleh ahli kelab. Ini ialah data latihannya. Alat boleh gagal apabila ada contoh yang tiada. Jadi, kelab itu menambah sampah yang remuk juga. Satu risiko: kamera tidak boleh sekali-kali merakam wajah. Akhir sekali, tentukan siapa yang menyemaknya: kelab itu melihat ke dalam tong setiap hari Jumaat."
+      },
+      {
+        "heading": "Uji, dengar dan perbaiki",
+        "text": "Pereka juga bertanya apakah bukti yang menunjukkan bahawa pembantu itu berfungsi. Eco Pulse memenangi anugerah pelajar, tetapi belum ada keputusan ujian yang diterbitkan. Di Thailand, AI Traffy Fondue mengisih laporan penduduk tentang masalah seperti banjir dan menghantar setiap laporan ke pejabat yang betul, tempat manusia membaiki masalah itu. Pembuatnya mengira lebih daripada 940,000 laporan, tetapi kiraan menunjukkan penggunaan, bukan sejauh mana masalah dibaiki dengan baik. Pereka menguji rancangan mereka dengan pengguna, mendengar maklum balas, mengubahnya dan mengujinya semula. Ini dipanggil lelaran. Apabila pembantu masa bas kelab itu tersilap selepas kerja jalan raya yang baharu, mereka menambah contoh baharu. Kongsikan rancangan kamu, ubah satu perkara, dan kamu ada versi 2.",
+        "simpler": "Apakah yang menunjukkan bahawa ia berfungsi? Eco Pulse memenangi anugerah, tetapi belum ada keputusan ujian yang diterbitkan. Di Thailand, AI Traffy Fondue mengisih laporan tentang masalah seperti banjir. Ia menghantar setiap laporan ke pejabat yang betul, tempat manusia membaikinya. Pembuatnya mengira lebih daripada 940,000 laporan. Itu menunjukkan penggunaan, bukan sejauh mana masalah dibaiki. Pereka menguji dengan pengguna, mendengar maklum balas dan mengubah rancangan. Ini dipanggil lelaran. Ubah satu perkara untuk versi 2."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "pereka",
+        "definition": "Orang yang merancang rupa dan cara sesuatu benda berfungsi.",
+        "example": "Kelab Maple Street ialah pereka. Mereka merancang pembantu."
+      },
+      {
+        "word": "prototaip",
+        "definition": "Versi ujian pertama sesuatu benda, dibuat untuk mencuba satu idea.",
+        "example": "Eco Pulse ialah prototaip. Ia masih perlu diuji."
+      },
+      {
+        "word": "data latihan",
+        "forms": [
+          "data latihannya"
+        ],
+        "definition": "Contoh yang digunakan untuk membina alat AI, seperti foto berlabel.",
+        "example": "Data latihan pembantu tong sampah ialah foto sampah yang berlabel."
+      },
+      {
+        "word": "risiko",
+        "definition": "Kemungkinan sesuatu yang buruk boleh berlaku.",
+        "example": "Satu risikonya ialah kamera merakam wajah orang."
+      },
+      {
+        "word": "maklum balas",
+        "definition": "Apa yang dikatakan oleh orang lain tentang kerja kamu, untuk membantu kamu memperbaikinya.",
+        "example": "Maklum balas daripada rakan membantu kelab itu mengubah rancangannya."
+      },
+      {
+        "word": "lelaran",
+        "definition": "Menguji rancangan, mengubahnya, dan mengujinya semula, berkali-kali.",
+        "example": "Selepas kerja jalan raya, lelaran menjadikan pembantu bas lebih baik."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Mengapakah kelab itu menolak alat pemilih kawan?",
+        "options": [
+          {
+            "text": "Kamera di pusat itu rosak pada hari itu",
+            "feedback": "Belum tepat. Alat pemilih kawan tiada kamera. Baca petikan pertama."
+          },
+          {
+            "text": "Orang patut memilih kawan mereka sendiri",
+            "feedback": "Betul. Sesetengah pilihan ialah hak manusia. Kelab itu merancang kumpulan rakan sebaya yang dikendalikan oleh manusia sebagai ganti."
+          },
+          {
+            "text": "Komputer terlalu perlahan untuk memilih kawan",
+            "feedback": "Belum tepat. Kelajuan bukan sebabnya. Baca petikan pertama tentang bila AI tidak patut digunakan."
+          }
+        ]
+      },
+      {
+        "question": "Apakah yang ditunjukkan oleh bukti tentang Eco Pulse setakat ini?",
+        "options": [
+          {
+            "text": "Ia prototaip yang memenangi anugerah",
+            "feedback": "Betul. Anugerah ialah permulaan yang baik. Ia bukan bukti bahawa aplikasi itu berfungsi dengan baik untuk semua orang."
+          },
+          {
+            "text": "Ia berfungsi dengan baik di seluruh Malaysia",
+            "feedback": "Belum tepat. Ia prototaip pelajar, dan belum ada keputusan ujian yang diterbitkan. Baca petikan ketiga."
+          },
+          {
+            "text": "Ia tidak pernah dibina atau dicuba",
+            "feedback": "Belum tepat. Pelajar-pelajar itu membina prototaip aplikasi. Baca petikan pertama."
+          }
+        ]
+      },
+      {
+        "question": "Masalah apakah yang dihadapi ramai orang yang boleh dibantu oleh sebuah pembantu? Kamu boleh memilih satu daripada pelajaran ini.",
+        "placeholder": "Satu masalah yang dihadapi ramai orang ialah ... Pembantu boleh ..."
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Tulis rancangan kamu untuk sebuah pembantu. Nyatakan masalahnya dan siapa yang dibantunya, sama ada AI sesuai atau apa yang masih perlu kamu ketahui, cara kamu akan menyemak bahawa ia berfungsi, dan satu perubahan selepas maklum balas.",
+    "sentenceStarters": [
+      "Masalahnya ialah ... Masalah ini memberi kesan kepada ...",
+      "Pembantu akan memperbaiki keadaan dengan ...",
+      "Saya fikir AI sesuai / cara lain sesuai / saya masih perlu mengetahui ..., kerana ...",
+      "Untuk menyemak bahawa ia berfungsi, ___ akan ...",
+      "Selepas maklum balas, saya mengubah ..."
+    ],
+    "planningBoxes": [
+      "Idea utama saya",
+      "Bukti daripada pelajaran",
+      "Mengapa ini penting",
+      "Soalan yang masih saya ada"
+    ],
+    "selfCheck": [
+      "Saya menyatakan masalahnya, siapa yang terkesan dan cara pembantu akan membantu.",
+      "Saya menyatakan sama ada AI sesuai, atau apa yang masih perlu saya ketahui, dan sebabnya.",
+      "Saya menyatakan cara menyemak bahawa ia berfungsi, dan satu perubahan selepas maklum balas."
+    ],
+    "example": "Masalahnya ialah plastik selalunya dibuang ke dalam tong kertas di pusat itu. Masalah ini memberi kesan kepada orang yang mengasingkan sampah dalam tong dengan tangan. Pembantu akan menjadikan kerja mengasingkan sampah lebih cepat. Saya fikir AI sesuai, kerana ia mesti mengecam banyak jenis sampah daripada foto. Ia akan belajar daripada foto yang kami labelkan sebagai “plastik” atau “kertas”. Untuk menyemak bahawa ia berfungsi, kelab itu akan mengujinya dengan foto baharu dan melihat ke dalam tong setiap hari Jumaat. Selepas maklum balas, saya mengubah rancangan saya untuk menambah foto botol yang remuk."
+  },
+  "speak": {
+    "partnerTask": "Terangkan rancangan kamu kepada rakan dalam masa satu minit: masalahnya, siapa yang dibantunya, dan mengapa AI sesuai atau tidak. Rakan kamu bertanya satu soalan daripada langkah 5. Ubah satu perkara, dan sebut versi 2 kamu.",
+    "independentTask": "Sebut rancangan kamu dengan kuat. Kemudian tanya diri kamu siapa yang mungkin tertinggal olehnya dan bagaimana kamu akan tahu bahawa ia berfungsi, dan jawab."
+  },
+  "watch": {
+    "why": "Kartun pendek ini mengulang kaji data latihan, dan mengapa manusia mesti menggunakan AI dengan berhati-hati.",
+    "beforeQuestion": "Apakah yang kamu ingat tentang cara AI belajar?",
+    "afterQuestion": "Mengapakah manusia perlu berhati-hati apabila mereka membuat atau menggunakan AI?",
+    "summary": "Kartun pendek ini mengulang kaji asas AI. Alat AI belajar daripada data latihan. Data latihan ialah set contoh yang besar yang membantu alat itu mencari corak dan membuat tekaan. Sesetengah alat AI mengisih benda atau membuat tekaan tentangnya. Alat lain, yang dipanggil AI generatif, menghasilkan benda baharu, seperti tulisan atau gambar. Video ini menerangkan bahawa AI boleh sangat berguna, tetapi ia tidak sempurna. Ia belajar daripada apa yang diberikan oleh manusia kepadanya, jadi ia boleh mengulang kesilapan manusia. Itulah sebabnya orang yang membuat dan menggunakan AI perlu bertanggungjawab. Mereka perlu menyemak jawapannya dan memikirkan siapa yang mungkin terkesan olehnya. Ini ulang kaji yang baik sebelum kamu mereka bentuk pembantu AI kamu sendiri.",
+    "keyPoints": [
+      "AI mempelajari corak daripada data latihan.",
+      "AI generatif menghasilkan benda baharu, seperti tulisan atau gambar.",
+      "Orang yang membuat dan menggunakan AI mesti bertanggungjawab dan menyemaknya."
+    ],
+    "contentNote": "Kartun Amerika untuk sekolah menengah rendah, 2 minit 37 saat. Video ini mengulang kaji idea daripada Pelajaran 1 hingga 3 dan menyebut AI generatif. Ringkasan ditulis daripada penerangan Common Sense Education, bukan dengan menonton video. Pratonton dahulu; pelajar boleh membaca ringkasan bertulis sebagai ganti."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Jika saya boleh membina satu pembantu untuk sesebuah komuniti, pembantu itu akan ... kerana ..."
+      },
+      {
+        "text": "Perkara paling penting yang saya pelajari dalam Dunia Digital ialah ..."
+      }
+    ],
+    "completionMessage": "Kamu telah menamatkan Pelajaran 17. Kamu merancang sebuah pembantu, memutuskan sama ada AI sesuai, dan memperbaiki rancangan kamu selepas maklum balas."
+  },
+  "visual": {
+    "alt": "Kitaran reka bentuk lima langkah: masalahnya, patutkah AI digunakan, apa yang dipelajarinya, risiko, ujian dan semakan, dan maklum balas, kemudian kembali ke permulaan untuk versi 2."
+  },
+  "sources": [
+    {
+      "label": "UNESCO: AI competency framework for students (rangka kerja kecekapan AI untuk pelajar; 2024)"
+    },
+    {
+      "label": "UNICEF Innocenti (2025): Guidance on AI and children (panduan tentang AI dan kanak-kanak), versi 3.0"
+    },
+    {
+      "label": "Bilik berita Samsung Malaysia (11 Disember 2024): 15-year-old students from Johor win at Samsung Solve for Tomorrow 2024 (pelajar berumur 15 tahun dari Johor menang dalam Samsung Solve for Tomorrow 2024; Eco Pulse; laporan penganjur)"
+    },
+    {
+      "label": "NSTDA melalui ThaiPR.net (17 Julai 2024): ciri AI baharu Traffy Fondue dan angka penggunaannya (dalam bahasa Thai)"
+    },
+    {
+      "label": "Hansen dan Dahiya (2025): Traffy Fondue, a smart city citizen engagement (Traffy Fondue: penglibatan warga bandar pintar), Frontiers in Sustainable Cities"
+    },
+    {
+      "label": "Common Sense Education: What is AI? (apakah AI?; halaman video)"
+    }
+  ],
+  "sensitiveNotes": [
+    "Masalah yang dipilih mesti masalah yang dihadapi ramai orang dalam sesebuah komuniti, bukan masalah peribadi. Jangan tanya pelajar tentang masalah dalam kehidupan, rumah atau keluarga mereka sendiri. Jika pelajar memilih masalah tentang kesihatan, keselamatan, hal undang-undang atau seseorang yang tertentu, bimbing mereka dengan lembut kepada salah satu masalah dalam pelajaran.",
+    "Rancangan disimpan bersama hasil kerja pelajar pada peranti ini. Pelajar tidak boleh menulis nama sebenar atau maklumat peribadi sesiapa di dalamnya."
+  ],
+  "educatorNotes": [
+    "Ini reka bentuk di atas kertas: tiada apa-apa yang dibina, dan pengekodan tidak wajib. Nilai lima perkara, bukan betapa hebat atau betapa berhati-hati rancangan itu kedengaran: keperluan (masalah sebenar dan siapa yang terkesan), manfaat yang diharapkan, kesesuaian teknikal (mengapa AI membantu, mengapa cara lain lebih sesuai, atau apa yang masih perlu diketahui oleh pelajar: ketiga-tiganya jawapan yang kukuh), bukti dan semakan (cara mereka akan mengujinya, dan siapa yang menyemak), dan satu penambahbaikan selepas maklum balas. Pelajaran ini merangkumi aspek reka bentuk sistem AI dalam rangka kerja UNESCO pada tahap Memahami (Understand) dan menyentuh tahap Mencipta (Create). Versi di atas kertas: lima langkah itu sebagai lembaran kerja. Pelajar yang lebih tua atau lebih yakin boleh menambah rancangan ujian (contoh baharu yang mana, dan hasil apa yang dikira sebagai berfungsi) atau, jika mahu, membina pengisih kecil dengan idea jiran terdekat daripada Pelajaran 3.",
+    "Dua projek sebenar itu. Eco Pulse hanya diketahui melalui laporan penganjurnya (Samsung Malaysia, 11 Disember 2024; juga The Star, 26 Januari 2025): pasukan TerraInnovators, tiga pelajar berumur 15 tahun di SMK Sultan Ismail, Johor, dengan aplikasi pengecaman imej AI yang menganggarkan berat dan nilai barang yang boleh dikitar semula, yang ditunjukkan sebagai prototaip di peringkat akhir Solve for Tomorrow 2024 (dianjurkan bersama Universiti Malaya). “Dengan tepat” ialah dakwaan penganjur; tiada keputusan ujian yang diterbitkan, dan ia bukan perkhidmatan kebangsaan yang sedang beroperasi. Traffy Fondue (NECTEC, NSTDA) ialah perkhidmatan yang sedang beroperasi: NSTDA melaporkan lebih daripada 940,000 laporan dari Jun 2022 hingga Julai 2024 dan 77% “selesai”, iaitu angkanya sendiri; satu kajian tentang penggunaannya di Bangkok (Hansen dan Dahiya, 2025) mencatatkan bahawa ia hanya digital, jadi orang yang tiada telefon pintar atau internet boleh tertinggal. Gunakan soalan pada setiap kad untuk perbincangan, bukan sebagai kritikan terhadap orang yang membinanya."
+  ]
+}

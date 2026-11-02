@@ -1,0 +1,265 @@
+{
+  "title": "Apa yang ditunjukkan oleh suapan kamu",
+  "essentialQuestion": "Bagaimanakah aplikasi memilih apa yang kita lihat, dan mengapakah hal itu penting bagi sesebuah komuniti?",
+  "learningGoal": "Terangkan cara suapan memilih siaran, cara hal itu boleh membantu atau menimbulkan masalah, mengapa khabar angin boleh tersebar dengan cepat sebelum pengundian, dan apa yang boleh dilakukan oleh orang ramai dan peraturan.",
+  "warmUp": {
+    "question": "Pada pendapat kamu, mengapakah sesetengah siaran dikongsi jauh lebih banyak daripada siaran lain?",
+    "options": [
+      "Siaran itu benar",
+      "Siaran itu mengejutkan",
+      "Siaran itu lucu",
+      "Tidak pasti"
+    ]
+  },
+  "evidence": {
+    "label": "Contoh rekaan yang dibuat untuk pelajaran ini.",
+    "question": "Siaran manakah yang paling banyak dikongsi? Apakah perbezaan antara suapan Ravi dengan suapan Lena, dan bagaimanakah suapan Lena membantunya?",
+    "cards": [
+      {
+        "title": "Siaran di Maplebrook pada minggu pengundian bandar",
+        "columns": [
+          "Siaran",
+          "Perkongsian dalam satu hari"
+        ],
+        "rows": [
+          [
+            "“MENGEJUTKAN. Pengundian dipindahkan ke hari Jumaat. Kongsikan ini sekarang.” Tiada nama dan tiada pautan.",
+            "900"
+          ],
+          [
+            "Pejabat pilihan raya bandar: “Pengundian diadakan pada hari Sabtu, dari pukul 9 hingga 5, di dewan bandar.”",
+            "60"
+          ],
+          [
+            "Semak Fakta Maplebrook: “Palsu. Pengundian tidak dipindahkan. Ia masih pada hari Sabtu.”",
+            "40"
+          ],
+          [
+            "Video lucu seekor kambing berjalan masuk ke perpustakaan",
+            "700"
+          ]
+        ]
+      },
+      {
+        "title": "Dua kawan, dua suapan",
+        "cases": [
+          {
+            "name": "Ravi",
+            "body": "Ravi menonton banyak video bola sepak bulan lalu. Minggu ini, suapannya menunjukkan lapan siaran tentang padang sukan baharu dan satu siaran tentang perpustakaan baharu."
+          },
+          {
+            "name": "Lena",
+            "body": "Lena menyukai banyak siaran tentang buku. Minggu ini, suapannya menunjukkan tujuh siaran tentang perpustakaan baharu dan dua siaran tentang padang sukan. Suapannya juga mencadangkan satu pelajaran video percuma tentang cara menulis cerita, yang memang sedang dicarinya."
+          }
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "title": "Cepat atau perlahan?",
+    "instructions": "Ini siaran dari Maplebrook pada minggu pengundian bandar. Letakkan setiap siaran di tempat yang kamu fikir sesuai. Tiada markah. Selepas kamu meletakkan satu siaran, kamu boleh melihat satu jawapan yang mungkin dan sebabnya.",
+    "groups": [
+      {
+        "label": "Mungkin tersebar dengan cepat"
+      },
+      {
+        "label": "Kurang mungkin tersebar dengan cepat"
+      }
+    ],
+    "items": [
+      {
+        "text": "MENGEJUTKAN. Pengundian dipindahkan ke hari Jumaat. Kongsikan ini sekarang.",
+        "feedback": "Siaran ini mengejutkan, dan ia menyuruh kamu tergesa-gesa. Siaran seperti ini selalunya tersebar dengan cepat. Tetapi tersebar dengan cepat tidak menjadikannya benar. Siaran ini palsu."
+      },
+      {
+        "text": "Pejabat pilihan raya bandar: Mengundi pada hari Sabtu di dewan bandar. Dibuka dari pukul 9 hingga 5.",
+        "feedback": "Fakta yang tenang kurang mengejutkan, jadi lebih sedikit orang mungkin mengongsikannya. Kamu boleh membantu dengan mengongsikannya."
+      },
+      {
+        "text": "Video lucu seekor kambing berjalan masuk ke perpustakaan.",
+        "feedback": "Siaran lucu selalunya mendapat banyak tontonan dan perkongsian. Suapan selalunya menunjukkan siaran seperti ini kepada lebih ramai orang."
+      },
+      {
+        "text": "Siaran menakutkan tanpa bukti: Padang baharu itu akan membanjiri setiap jalan.",
+        "feedback": "Siaran yang menakutkan orang selalunya tersebar dengan cepat. Siaran ini tiada bukti, jadi semak dahulu sebelum kamu mengongsikannya."
+      },
+      {
+        "text": "Siaran panjang yang membandingkan kos perpustakaan dengan kos padang itu.",
+        "feedback": "Siaran ini berguna, tetapi panjang dan tenang, jadi lebih sedikit orang mungkin mengongsikannya. Siaran ini masih boleh membantu pengundi membuat keputusan."
+      },
+      {
+        "text": "Semakan fakta: Palsu. Pengundian tidak dipindahkan. Ia masih pada hari Sabtu.",
+        "feedback": "Pembetulan yang tenang kurang mengejutkan berbanding khabar angin itu, jadi ia mungkin tersebar dengan lebih perlahan. Itulah sebabnya mengongsikannya membantu."
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Suapan kamu dipilih untuk kamu",
+        "text": "Orang menyiarkan jauh lebih banyak daripada apa yang dapat dilihat oleh sesiapa, jadi banyak aplikasi menggunakan algoritma untuk memilih apa yang masuk ke dalam suapan kamu. Algoritma ialah satu set langkah yang diikuti oleh komputer. Ia belajar daripada apa yang pernah kamu tonton, sukai atau langkau, dan meneka apa yang kamu mahu lihat. Setiap aplikasi ada matlamat yang berbeza. Sesetengahnya mengira berapa lama kamu menonton, dan sesetengahnya juga bertanya kepada orang sama ada mereka berpuas hati dengan apa yang mereka lihat. Suapan boleh berguna. Di Maplebrook, bandar rekaan, suapan Lena menemukannya dengan satu pelajaran video percuma tentang menulis cerita. Ravi menonton banyak video bola sepak, jadi suapannya kebanyakannya menunjukkan siaran tentang padang sukan baharu.",
+        "simpler": "Orang menyiarkan lebih banyak daripada apa yang dapat kamu lihat. Jadi, banyak aplikasi menggunakan algoritma. Algoritma ialah satu set langkah untuk komputer. Ia memilih siaran berdasarkan apa yang pernah kamu tonton. Setiap aplikasi ada matlamat yang berbeza. Sesetengahnya mengira berapa lama kamu menonton. Sesetengahnya bertanya sama ada kamu suka. Suapan boleh membantu. Di Maplebrook, bandar rekaan, suapan Lena menemukannya dengan pelajaran percuma tentang cerita. Suapan Ravi menunjukkan siaran tentang padang sukan baharu."
+      },
+      {
+        "heading": "Khabar angin boleh tersebar lebih cepat daripada kebenaran",
+        "text": "Pada tahun 2018, penyelidik di MIT di Amerika Syarikat menerbitkan satu kajian tentang Twitter. Mereka melihat kira-kira 126,000 berita yang dikongsi dari tahun 2006 hingga 2017, setiap satunya disemak oleh kumpulan penyemak fakta. Di Twitter pada tahun-tahun itu, berita palsu tersebar lebih jauh dan lebih cepat daripada berita benar. Berita palsu selalunya lebih mengejutkan, dan manusia yang mengongsikannya, bukan hanya akaun robot. Kajian itu melihat apa yang dipilih oleh orang untuk dikongsi di satu laman, bukan cara suapan memilih siaran. Hal ini penting sebelum pilihan raya, apabila orang memerlukan fakta yang betul untuk mengundi. Di Maplebrook, satu khabar angin berkata pengundian dipindahkan ke hari Jumaat. Khabar angin itu dikongsi 900 kali dalam satu hari, dan notis yang betul hanya 60 kali.",
+        "simpler": "Pada tahun 2018, penyelidik MIT di Amerika Syarikat mengkaji berita di Twitter. Berita itu dari tahun 2006 hingga 2017. Berita palsu tersebar lebih cepat daripada berita benar. Berita palsu selalunya kelihatan mengejutkan. Manusia yang mengongsikannya, bukan hanya robot. Kajian itu melihat apa yang dikongsi orang di satu laman. Ia tidak mengkaji cara suapan memilih siaran. Hal ini penting dalam pilihan raya. Di Maplebrook, satu khabar angin berkata pengundian dipindahkan ke hari Jumaat. Ia dikongsi 900 kali. Notis yang benar dikongsi 60 kali."
+      },
+      {
+        "heading": "Melihat lebih daripada satu pihak",
+        "text": "Sesetengah orang bimbang suapan meletakkan setiap daripada kita dalam gelembung penapis, tempat kita hanya melihat satu pihak. Ravi kebanyakannya melihat siaran yang menyokong padang sukan, dan Lena kebanyakannya melihat siaran yang menyokong perpustakaan. Tetapi satu kajian semula terhadap banyak kajian mendapati bahawa gelembung penapis yang sebenar kurang biasa daripada sangkaan ramai orang. Sejak tahun 2024, satu undang-undang Kesatuan Eropah menetapkan bahawa aplikasi yang sangat besar mesti menerangkan cara suapannya memilih siaran. Aplikasi itu juga mesti menawarkan suapan yang tidak berdasarkan apa yang diketahuinya tentang kamu. Kamu juga boleh membantu: ikuti sumber yang berbeza, dan semak sebelum kamu berkongsi.",
+        "simpler": "Sesetengah orang bimbang tentang gelembung penapis. Dalam gelembung itu, kamu hanya melihat satu pihak. Ravi melihat siaran yang menyokong padang. Lena melihat siaran yang menyokong perpustakaan. Tetapi penyelidik mendapati gelembung yang sebenar kurang biasa daripada sangkaan orang. Sejak tahun 2024, aplikasi yang sangat besar di Kesatuan Eropah mesti menerangkan suapannya. Aplikasi itu mesti menawarkan jenis suapan yang lain juga. Kamu juga boleh membantu. Ikuti sumber yang berbeza. Semak sebelum kamu berkongsi."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "algoritma",
+        "definition": "Satu set langkah yang diikuti oleh komputer untuk melakukan sesuatu kerja.",
+        "example": "Satu algoritma memilih siaran dalam suapan Ravi."
+      },
+      {
+        "word": "suapan",
+        "forms": [
+          "suapannya"
+        ],
+        "definition": "Senarai siaran dan video yang ditunjukkan oleh aplikasi kepada kamu.",
+        "example": "Suapan Lena menunjukkan banyak siaran tentang perpustakaan."
+      },
+      {
+        "word": "khabar angin",
+        "definition": "Cerita yang disampaikan oleh orang tanpa mengetahui sama ada ia benar.",
+        "example": "Khabar angin itu berkata pengundian dipindahkan ke hari Jumaat."
+      },
+      {
+        "word": "pilihan raya",
+        "definition": "Masa apabila orang mengundi untuk memilih sesuatu bersama-sama.",
+        "example": "Maplebrook mengadakan pilihan raya untuk memilih perpustakaan atau padang sukan."
+      },
+      {
+        "word": "gelembung penapis",
+        "forms": [
+          "gelembung"
+        ],
+        "definition": "Apabila suapan hanya menunjukkan satu pihak sahaja kepada kamu.",
+        "example": "Jika Ravi hanya melihat siaran tentang padang sukan, dia berada dalam gelembung penapis."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Bagaimanakah algoritma memilih siaran dalam suapan?",
+        "options": [
+          {
+            "text": "Ia memilih siaran secara rawak",
+            "feedback": "Belum tepat. Ia tidak memilih secara rawak. Baca petikan pertama sekali lagi."
+          },
+          {
+            "text": "Ia meneka berdasarkan apa yang pernah kamu lakukan",
+            "feedback": "Betul. Ia belajar daripada apa yang pernah kamu tonton, sukai atau langkau, dan meneka apa yang kamu mahu seterusnya."
+          },
+          {
+            "text": "Seseorang menyemak setiap siaran dahulu",
+            "feedback": "Belum tepat. Siarannya terlalu banyak untuk itu. Baca petikan pertama."
+          }
+        ]
+      },
+      {
+        "question": "Apakah yang ditemui oleh kajian pada tahun 2018 tentang Twitter?",
+        "options": [
+          {
+            "text": "Berita palsu tersebar lebih cepat daripada berita benar",
+            "feedback": "Betul. Di Twitter dari tahun 2006 hingga 2017, berita palsu tersebar lebih jauh dan lebih cepat. Itu satu laman pada tahun-tahun itu."
+          },
+          {
+            "text": "Berita palsu tersebar lebih perlahan daripada berita benar",
+            "feedback": "Belum tepat. Lihat khabar angin dan notis di Maplebrook. Baca petikan kedua."
+          },
+          {
+            "text": "Hanya akaun robot yang mengongsikan berita palsu",
+            "feedback": "Belum tepat. Manusia juga mengongsikannya. Baca petikan kedua sekali lagi."
+          }
+        ]
+      },
+      {
+        "question": "Fikirkan satu siaran daripada pelajaran ini. Apakah yang akan kamu semak sebelum kamu mengongsikannya?",
+        "placeholder": "Sebelum saya mengongsikan ___, saya akan menyemak ..."
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Satu khabar angin berkata pengundian di Maplebrook dipindahkan ke hari Jumaat. Terangkan mengapa ia tersebar dengan cepat, dan apa yang boleh dilakukan oleh penduduk Maplebrook tentangnya.",
+    "sentenceStarters": [
+      "Khabar angin itu tersebar dengan cepat kerana ...",
+      "Ramai orang melihatnya kerana ...",
+      "Notis yang benar dikongsi ...",
+      "Orang boleh ...",
+      "Hal ini penting dalam pilihan raya kerana ..."
+    ],
+    "planningBoxes": [
+      "Idea utama saya",
+      "Bukti daripada pelajaran",
+      "Mengapa ini penting",
+      "Soalan yang masih saya ada"
+    ],
+    "selfCheck": [
+      "Saya memberi satu sebab khabar angin itu tersebar dengan cepat.",
+      "Saya menggunakan satu fakta daripada pelajaran.",
+      "Saya menyatakan apa yang boleh dilakukan oleh orang."
+    ],
+    "example": "Khabar angin itu tersebar dengan cepat kerana ia mengejutkan dan menyuruh orang mengongsikannya sekarang. Ramai orang melihatnya kerana ia mendapat begitu banyak perkongsian. Suapan boleh menunjukkan siaran seperti itu kepada lebih ramai orang. Notis yang benar dikongsi hanya 60 kali, tetapi khabar angin itu dikongsi 900 kali. Orang boleh menyemak notis pejabat pilihan raya sebelum mereka berkongsi. Mereka juga boleh mengongsikan semakan fakta itu. Hal ini penting dalam pilihan raya kerana orang memerlukan hari yang betul untuk mengundi."
+  },
+  "speak": {
+    "partnerTask": "Rakan kamu membaca khabar angin Maplebrook itu dengan kuat. Kamu terangkan mengapa ia mungkin tersebar dengan cepat, dan apa yang akan kamu kongsikan sebagai ganti. Kemudian bertukar giliran.",
+    "independentTask": "Sebut dengan kuat apa yang dilakukan oleh algoritma dalam suapan, dengan satu cara ia boleh membantu kamu dan satu cara ia boleh menimbulkan masalah."
+  },
+  "watch": {
+    "why": "Video berita pendek yang dibuat untuk anak muda, yang menerangkan cara algoritma memilih apa yang kamu lihat.",
+    "beforeQuestion": "Pada pendapat kamu, siapakah yang memilih apa yang kamu lihat apabila kamu menatal?",
+    "afterQuestion": "Mengapakah suapan mungkin cuba membuatkan kamu terus menonton?",
+    "summary": "Video berita pendek untuk anak muda ini menerangkan algoritma media sosial. Algoritma ialah satu set arahan yang memberitahu atur cara komputer apa yang perlu dilakukan. Dalam banyak aplikasi, algoritma menentukan siaran yang kamu lihat dan dalam urutan apa. Ia juga menentukan siaran yang tidak kamu lihat. Jadi, apabila kamu menatal, kamu mungkin fikir kamu melihat semuanya. Sebenarnya, seseorang telah membina sistem yang memilih untuk kamu. Bagaimanakah ia memilih? Ia cuba menunjukkan siaran yang akan membuatkan kamu terus berminat, supaya kamu terus menatal. Pakar dalam video ini berkata hal ini tidak sentiasa baik. Suapan kamu dipilih dengan teliti. Ia bukan gambaran penuh tentang dunia. Mengetahui cara suapan kamu dipilih boleh membantu kamu berfikir tentang apa yang kamu lihat.",
+    "keyPoints": [
+      "Algoritma ialah satu set arahan untuk komputer.",
+      "Dalam banyak aplikasi, algoritma memilih siaran yang kamu lihat, dan yang tidak kamu lihat.",
+      "Ia cuba membuatkan kamu terus menonton, dan hal ini tidak sentiasa baik untuk kamu."
+    ],
+    "contentNote": "Kira-kira 3 minit (182 saat, menurut senarai YouTube), bahasa Inggeris Kanada, dari tahun 2021. Video ini menamakan aplikasi sebenar (TikTok, YouTube dan Instagram). Tajuk dan saluran disahkan dengan oEmbed YouTube pada 31 Oktober 2026. Ringkasan ditulis daripada penerangan CBC Kids News sendiri tentang video ini dan halaman webnya, bukan dengan menonton video. Seseorang dalam pasukan mesti menontonnya sebelum pelajar menggunakannya; pelajar boleh membaca ringkasan bertulis sebagai ganti."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Sebelum saya mengongsikan siaran yang mengejutkan, saya akan ..."
+      },
+      {
+        "text": "Satu cara untuk melihat lebih daripada satu pihak ialah ..."
+      }
+    ],
+    "completionMessage": "Kamu telah menamatkan Pelajaran 15. Kamu menerangkan cara suapan memilih siaran, dan mengapa hal itu penting sebelum pengundian."
+  },
+  "visual": {
+    "alt": "Banyak siaran masuk ke dalam algoritma, yang meneka apa yang setiap orang mahu lihat. Suapan Ravi kebanyakannya menunjukkan siaran tentang padang sukan. Suapan Lena kebanyakannya menunjukkan siaran tentang perpustakaan dan satu pelajaran percuma tentang menulis cerita."
+  },
+  "sources": [
+    {
+      "label": "CBC Kids News (2021): How do social media algorithms work? (bagaimanakah algoritma media sosial berfungsi?)"
+    },
+    {
+      "label": "MIT News (8 Mac 2018): Study, on Twitter, false news travels faster than true stories (kajian: di Twitter, berita palsu tersebar lebih cepat daripada berita benar; Vosoughi, Roy dan Aral, Science)"
+    },
+    {
+      "label": "Reuters Institute (2022): Echo chambers, filter bubbles, and polarisation: a literature review (kebuk gema, gelembung penapis dan polarisasi: satu kajian literatur; Ross Arguedas, Robertson, Fletcher dan Nielsen)"
+    },
+    {
+      "label": "Balai Cerap Perundangan Parlimen Eropah: ringkasan Akta Perkhidmatan Digital (Digital Services Act), Peraturan (EU) 2022/2065"
+    },
+    {
+      "label": "Bantuan YouTube: How YouTube recommendations work (cara cadangan YouTube berfungsi; contoh isyarat yang dinyatakan oleh satu platform)"
+    }
+  ],
+  "sensitiveNotes": [
+    "Pilihan raya dan politik boleh menjadi topik yang menyakitkan atau berbahaya bagi sesetengah pelajar. Pastikan perbincangan tertumpu pada Maplebrook yang direka. Jangan sekali-kali bertanya kepada pelajar tentang pilihan raya, politik atau pengundian di mana-mana negara yang pernah mereka diami, atau cara sesiapa dalam keluarga mereka mengundi, dan jangan biarkan perbahasan tentang calon atau parti sebenar bermula; kembalikan perbincangan kepada cara suapan dan khabar angin berfungsi."
+  ],
+  "educatorNotes": [
+    "Penyelidikan dalam petikan 2 ialah Vosoughi, Roy dan Aral (Science, Mac 2018; MIT News, 8 Mac 2018): kira-kira 126,000 rantaian perkongsian berita di Twitter, 2006 hingga 2017, yang ditweet lebih 4.5 juta kali oleh kira-kira 3 juta orang, setiap berita dinilai benar atau palsu oleh enam organisasi penyemak fakta yang bebas. Berita palsu 70% lebih mungkin ditweet semula, dan berita benar mengambil masa kira-kira enam kali lebih lama untuk sampai kepada 1,500 orang; jurang itu kekal walaupun bot dikeluarkan. Skopnya: satu platform, tahun-tahun itu, dan berita yang telah disiasat oleh penyemak fakta (berita yang dipertikaikan, bukan semua siaran). Kajian itu mengukur apa yang ditweet semula oleh orang, bukan cara algoritma penyusunan memilih siaran, jadi ia tidak menunjukkan bahawa AI menyebabkan penyebaran itu; penulisnya berkata platform lain perlu dikaji secara berasingan.",
+    "Aplikasi menyusun siaran dengan isyarat dan matlamat yang berbeza; jangan ringkaskannya kepada satu motif sahaja. Contohnya, halaman bantuan YouTube menyenaraikan sejarah tontonan dan carian, langganan, suka, tidak suka, “tidak berminat” dan tinjauan kepuasan (untuk memahami kepuasan, “bukan hanya masa tontonan”). Gelembung penapis: kajian semula Reuters Institute pada tahun 2022 mendapati bahawa kebuk gema jauh kurang meluas daripada yang biasa disangka dan tiada sokongan bagi idea gelembung penapis. Peraturan Eropah itu ialah Akta Perkhidmatan Digital (Peraturan (EU) 2022/2065): berkuat kuasa 16 November 2022, terpakai sepenuhnya mulai 17 Februari 2024, dan lebih awal bagi platform yang sangat besar (lebih 45 juta pengguna sebulan di EU), empat bulan selepas Suruhanjaya menetapkan status mereka; platform itu mesti menerangkan tetapan utama sistem pencadangnya, menawarkan satu sistem yang tidak berdasarkan pemprofilan, dan menilai risiko seperti manipulasi pilihan raya.",
+    "Versi aktiviti di atas kertas: tulis enam siaran itu pada kad dan isih ke dalam dua longgok, “Mungkin tersebar dengan cepat” dan “Kurang mungkin”. Tiada markah; minta sebab. Tanya mengapa notis yang betul tersebar dengan lebih perlahan, dan siapa yang boleh membantu menyebarkannya."
+  ]
+}

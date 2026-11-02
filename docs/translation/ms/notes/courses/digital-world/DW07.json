@@ -1,0 +1,619 @@
+{
+  "title": {
+    "source": "Does AI speak your language?",
+    "back": "Does AI speak your language?",
+    "flag": true
+  },
+  "essentialQuestion": {
+    "source": "Why does AI work better in some languages than others, and what are people doing about it?",
+    "back": "Why does AI work better in some languages compared with other languages, and what are people doing about it?",
+    "flag": true
+  },
+  "learningGoal": {
+    "source": "Explain why AI tools work better in some languages than others, and describe how communities are building tools for their own languages.",
+    "back": "Explain why AI tools work better in some languages compared with other languages, and describe how communities build tools for their own languages.",
+    "flag": true
+  },
+  "warmUp.question": {
+    "source": "A tool learns from lots of writing, and most of it is in one language. What do you think happens?",
+    "back": "A tool learns from a lot of writing, and most of it is in one language. In your opinion, what happens?",
+    "flag": true
+  },
+  "warmUp.options.0": {
+    "source": "It works best in that language",
+    "back": "It works best in that language",
+    "flag": true
+  },
+  "warmUp.options.1": {
+    "source": "It works the same in every language",
+    "back": "It works the same in every language",
+    "flag": true
+  },
+  "warmUp.options.2": {
+    "source": "Something else",
+    "back": "Something else",
+    "flag": true
+  },
+  "warmUp.options.3": {
+    "source": "Not sure",
+    "back": "Not sure",
+    "flag": true
+  },
+  "evidence.label": {
+    "source": "Fictional example created for this lesson.",
+    "back": "An invented example made for this lesson.",
+    "flag": true
+  },
+  "evidence.question": {
+    "source": "Which language has the most speakers? Which language has the most writing online?",
+    "back": "Which language has the most speakers? Which language has the most writing online?",
+    "flag": true
+  },
+  "evidence.cards.0.title": {
+    "source": "Three languages at the Harbourside bus station",
+    "back": "Three languages at the Harbourside bus station",
+    "flag": true
+  },
+  "evidence.cards.0.columns.0": {
+    "source": "Language",
+    "back": "Language",
+    "flag": true
+  },
+  "evidence.cards.0.columns.1": {
+    "source": "Who speaks it",
+    "back": "Who speaks it",
+    "flag": true
+  },
+  "evidence.cards.0.columns.2": {
+    "source": "Writing online",
+    "back": "Writing online",
+    "flag": true
+  },
+  "evidence.cards.0.rows.0.0": {
+    "source": "Language A",
+    "back": "Language A",
+    "flag": true
+  },
+  "evidence.cards.0.rows.0.1": {
+    "source": "Many people in Harbourside and around the world",
+    "back": "Many people in Harbourside and around the world",
+    "flag": true
+  },
+  "evidence.cards.0.rows.0.2": {
+    "source": "Lots: news, books and many websites.",
+    "back": "A lot: news, books and many websites.",
+    "flag": true
+  },
+  "evidence.cards.0.rows.1.0": {
+    "source": "Language B",
+    "back": "Language B",
+    "flag": true
+  },
+  "evidence.cards.0.rows.1.1": {
+    "source": "Many people in the region",
+    "back": "Many people in this region",
+    "flag": true
+  },
+  "evidence.cards.0.rows.1.2": {
+    "source": "Some: news and a few websites.",
+    "back": "A little: news and a few websites.",
+    "flag": true
+  },
+  "evidence.cards.0.rows.2.0": {
+    "source": "Language C",
+    "back": "Language C",
+    "flag": true
+  },
+  "evidence.cards.0.rows.2.1": {
+    "source": "The most people in the region",
+    "back": "The most people in this region",
+    "flag": true
+  },
+  "evidence.cards.0.rows.2.2": {
+    "source": "Very little. People mostly speak it. Schools and offices use Languages A and B.",
+    "back": "Very little. It is mostly spoken. Schools and offices use Languages A and B.",
+    "flag": true,
+    "note": "\"People mostly speak it\" is \"Ia kebanyakannya dituturkan\" (it is mostly spoken), so it does not say most people only speak it."
+  },
+  "evidence.cards.1.title": {
+    "source": "The bus station's help screen",
+    "back": "The bus station's help screen",
+    "flag": true
+  },
+  "evidence.cards.1.items.0": {
+    "source": "You type a question, such as “When is the next bus to the market?”",
+    "back": "You type a question, like “When is the next bus to the market?”",
+    "flag": true
+  },
+  "evidence.cards.1.items.1": {
+    "source": "An AI tool reads the question and writes an answer.",
+    "back": "An AI tool reads the question and writes an answer.",
+    "flag": true
+  },
+  "evidence.cards.1.items.2": {
+    "source": "It learned from writing taken from the internet.",
+    "back": "It learned from writing taken from the internet.",
+    "flag": true
+  },
+  "activity.title": {
+    "source": "Test the Harbourside help screen",
+    "back": "Test the Harbourside help screen",
+    "flag": true
+  },
+  "activity.instructions": {
+    "source": "The Harbourside team asked the help screen the same 20 questions in each language. Tap the language it got wrong most often.",
+    "back": "The Harbourside team asked the help screen the same 20 questions in each language. Press the language with the most mistakes.",
+    "flag": true,
+    "note": "\"Tap\" is \"Tekan\" (KEY_TERMS.md: tekan or sentuh). \"The language it got wrong most often\" is \"the language with the most mistakes\"."
+  },
+  "activity.measure": {
+    "source": "Questions answered well",
+    "back": "Questions answered well",
+    "flag": true,
+    "note": "A short label shown with the results bars; check it fits."
+  },
+  "activity.groups.0.label": {
+    "source": "Language A",
+    "back": "Language A",
+    "flag": true
+  },
+  "activity.groups.1.label": {
+    "source": "Language B",
+    "back": "Language B",
+    "flag": true
+  },
+  "activity.groups.2.label": {
+    "source": "Language C",
+    "back": "Language C",
+    "flag": true
+  },
+  "activity.afterTap.question": {
+    "source": "Why did the help screen make the most mistakes in Language C?",
+    "back": "Why did the help screen make the most mistakes in Language C?",
+    "flag": true
+  },
+  "activity.afterTap.options.0.text": {
+    "source": "Very few people speak Language C",
+    "back": "Very few people speak Language C",
+    "flag": true
+  },
+  "activity.afterTap.options.0.feedback": {
+    "source": "Not quite. Language C has the most speakers in the region. Look at how much writing it has online.",
+    "back": "Not quite. Language C has the most speakers in this region. Look at how much writing it has online.",
+    "flag": true
+  },
+  "activity.afterTap.options.1.text": {
+    "source": "Language C is a harder language",
+    "back": "Language C is a harder language",
+    "flag": true
+  },
+  "activity.afterTap.options.1.feedback": {
+    "source": "Not quite. The table shows how much writing each language has online. It doesn't say any language is harder.",
+    "back": "Not quite. The table shows how much writing each language has online. It does not say any language is harder.",
+    "flag": true
+  },
+  "activity.afterTap.options.2.text": {
+    "source": "It learned from very little writing in Language C",
+    "back": "It learned from very little writing in Language C",
+    "flag": true
+  },
+  "activity.afterTap.options.2.feedback": {
+    "source": "Yes. Language C has very little writing online, so the tool had few examples to learn from.",
+    "back": "Correct. Language C has very little writing online, so the tool had only a few examples to learn from.",
+    "flag": true
+  },
+  "activity.extension": {
+    "source": "Paper version: read out the three results, ask which language had the most mistakes, then ask the question above. Point back to the evidence table: Language C has the most speakers but the least writing online.",
+    "back": "Paper version: read out the three results, ask which language had the most mistakes, then ask the question above. Point back to the evidence table: Language C has the most speakers but the least writing online.",
+    "flag": true
+  },
+  "read.sections.0.heading": {
+    "source": "AI learns languages from writing",
+    "back": "AI learns languages from writing",
+    "flag": true
+  },
+  "read.sections.0.text": {
+    "source": "AI tools that write, answer questions or translate learn from training data. For them, it is a huge amount of writing, much of it from the internet. People speak thousands of languages, but most big AI tools learned mainly from English. A low-resource language has little digital material that computers can use for a task. This might be writing, recordings or word lists. The name is about data, not about the language or its speakers. About 200 million people speak Swahili, but there is not enough Swahili writing online for AI to learn well. In Harbourside, Language C is like this.",
+    "back": "AI tools that write, answer questions or translate learn from training data. For these tools, training data is a very large amount of writing, mostly from the internet. People speak thousands of languages, but most big AI tools learned mainly from English. A low-resource language is a language that has little digital material a computer can use for a task. This material might be writing, recordings or word lists. The name is about data, not about the language or its speakers. About 200 million people speak Swahili, but there is not enough Swahili writing online for AI to learn well. In Harbourside, Language C is like this.",
+    "flag": true,
+    "note": "\"Low-resource language\" is \"bahasa kurang sumber\" (a language lacking resources). Malaysian NLP papers also say \"bahasa sumber rendah\"; a reviewer should pick one. The text says straight after that the name is about data, not the language or its speakers, so keep that sentence whatever term is chosen."
+  },
+  "read.sections.0.simpler": {
+    "source": "Tools that write, answer or translate learn from training data. This is lots of writing from the web. Most big AI tools learned from English. Some languages have little writing or speech for computers. We call this a low-resource language. The name is about data. It is not about the language or the people. About 200 million people speak Swahili. But there is not much written in it online.",
+    "back": "Tools that write, answer or translate learn from training data. This data is a lot of writing from the web. Most big AI tools learned from English. Some languages have little writing or recordings for computers. We call it a low-resource language. The name is about data. It is not about the language or its people. About 200 million people speak Swahili. But there is not much Swahili writing online.",
+    "flag": true
+  },
+  "read.sections.1.heading": {
+    "source": "Who gets left out, and why",
+    "back": "Who gets left behind, and why",
+    "flag": true
+  },
+  "read.sections.1.text": {
+    "source": "When a tool works badly in a language, its speakers get worse help. How much writing a language has online is linked to history and power. In Harbourside, schools and offices mostly use Languages A and B. So little is written in Language C. Masakhane is a group of African researchers. It says African languages have a small place in tech partly because of colonialism. That was when other countries ruled much of Africa. The people who build AI tools also choose which languages to include.",
+    "back": "When a tool works badly in a language, its speakers get worse help. How much writing a language has online is linked to history and power. In Harbourside, schools and offices mostly use Languages A and B. So only a little is written in Language C. Masakhane is a group of African researchers. The group says African languages have a small place in technology partly because of colonialism. That was the time when other countries ruled much of Africa. The people who build AI tools also choose which languages to include.",
+    "flag": true,
+    "note": "\"Colonialism\" is \"penjajahan\", the word Malaysian history books use. The sensitive note asks teachers to keep this short."
+  },
+  "read.sections.1.simpler": {
+    "source": "A tool can work badly in a language. Then its speakers get worse help. This is linked to history and power. In Harbourside, schools use Languages A and B. Some African experts say the past matters too. Other countries once ruled much of Africa. That is one reason their languages are left out. AI builders choose which languages to use.",
+    "back": "A tool can work badly in a language. So its speakers get worse help. This is linked to history and power. In Harbourside, schools use Languages A and B. Some African experts say the past matters too. Other countries once ruled much of Africa. That is one reason their languages are left behind. AI builders choose which languages to use.",
+    "flag": true
+  },
+  "read.sections.2.heading": {
+    "source": "People build tools for their own languages",
+    "back": "People build tools for their own languages",
+    "flag": true
+  },
+  "read.sections.2.text": {
+    "source": "Now many people are building tools for their own languages. In Singapore, a programme paid for by the government, AI Singapore, builds models called SEA-LION. A 2025 paper by its team says they support 11 languages used in the region, including Burmese, Khmer, Tamil and Vietnamese. But learning from a language is not the same as working well in it. The team's main tests covered only four of those languages. In Jakarta in November 2024, two companies launched Sahabat-AI for Bahasa Indonesia, Javanese and Sundanese. Its makers said it beat similar models, but was at an early stage. Masakhane's name means “We build together” in isiZulu. Its members build tools for African languages, with the people who speak them. Speakers can help a tool fit their community, but people still need to test it.",
+    "back": "Now many people are building tools for their own languages. In Singapore, a government-funded programme, AI Singapore, builds models called SEA-LION. A 2025 paper by its team states that the models support 11 languages used in this region, including Burmese, Khmer, Tamil and Vietnamese. But learning from a language is not the same as working well in that language. The team's main tests covered only four of those languages. In Jakarta in November 2024, two companies launched Sahabat-AI for Indonesian, Javanese and Sundanese. Its makers said it beat similar models, but was still at an early stage. The name Masakhane means “Let us build together” in isiZulu. Its members build tools for African languages, together with the people who speak them. Speakers can help a tool suit their community, but people still need to test it.",
+    "flag": true,
+    "note": "Language names follow Malaysian usage: bahasa Myanmar (Burmese), Khmer, Tamil, Vietnam, Jawa, Sunda. \"Bahasa Indonesia\" in the English is \"bahasa Indonesia\". Masakhane's meaning is given in Malay, \"Kita bina bersama\" (inclusive \"we\"), not in isiZulu."
+  },
+  "read.sections.2.simpler": {
+    "source": "A team in Singapore makes models called SEA-LION. A 2025 report says they cover 11 languages of the region. But learning a language does not mean working well in it. The team's main tests used only four of them. In 2024, Sahabat-AI started in Jakarta. It is for Indonesian and two more languages. Its makers say it is still new. Masakhane means “We build together”. It makes tools for African languages. Speakers can help a tool fit their community. But people must still test it.",
+    "back": "A team in Singapore makes models called SEA-LION. A 2025 report states the models cover 11 languages of this region. But learning a language does not mean working well in that language. The team's main tests used only four of them. In 2024, Sahabat-AI started in Jakarta. It is for Indonesian and two other languages. Its makers say it is still new. Masakhane means “Let us build together”. It makes tools for African languages. Speakers can help a tool suit their community. But people still need to test it.",
+    "flag": true
+  },
+  "read.glossary.0.word": {
+    "source": "training data",
+    "back": "training data",
+    "flag": true
+  },
+  "read.glossary.0.definition": {
+    "source": "The examples used to build an AI tool, such as writing or pictures.",
+    "back": "Examples used to build an AI tool, like writing or pictures.",
+    "flag": true
+  },
+  "read.glossary.0.example": {
+    "source": "The help screen's training data had very little writing in Language C.",
+    "back": "The help screen's training data had very little writing in Language C.",
+    "flag": true
+  },
+  "read.glossary.1.word": {
+    "source": "low-resource language",
+    "back": "low-resource language (\"language lacking resources\")",
+    "flag": true,
+    "note": "See read.sections.0.text."
+  },
+  "read.glossary.1.forms": {
+    "source": [
+      "low-resource languages"
+    ]
+  },
+  "read.glossary.1.definition": {
+    "source": "A language with little digital writing or speech for computers to learn from.",
+    "back": "A language with little digital writing or recordings for a computer to learn from.",
+    "flag": true
+  },
+  "read.glossary.1.example": {
+    "source": "Language C is a low-resource language, but many people speak it.",
+    "back": "Language C is a low-resource language, but many people speak it.",
+    "flag": true
+  },
+  "read.glossary.2.word": {
+    "source": "translate",
+    "back": "translate",
+    "flag": true,
+    "note": "\"Translate\" is \"menterjemah\" (DBP spelling), with \"menterjemahkan\", \"terjemahan\" and \"diterjemah\" as forms."
+  },
+  "read.glossary.2.forms": {
+    "source": [
+      "translates",
+      "translated",
+      "translation"
+    ]
+  },
+  "read.glossary.2.definition": {
+    "source": "To change words from one language into another.",
+    "back": "To change words from one language into another language.",
+    "flag": true
+  },
+  "read.glossary.2.example": {
+    "source": "A tool that translates well in one language may make mistakes in another.",
+    "back": "A tool that translates well in one language may make mistakes in another language.",
+    "flag": true
+  },
+  "read.glossary.3.word": {
+    "source": "power",
+    "back": "power",
+    "flag": true
+  },
+  "read.glossary.3.definition": {
+    "source": "The ability to decide what happens or to control things.",
+    "back": "The ability to decide what happens or to control something.",
+    "flag": true
+  },
+  "read.glossary.3.example": {
+    "source": "The people who build AI tools have the power to choose which languages they include.",
+    "back": "The people who build AI tools have the power to choose which languages are included.",
+    "flag": true
+  },
+  "read.glossary.4.word": {
+    "source": "community",
+    "back": "community",
+    "flag": true
+  },
+  "read.glossary.4.forms": {
+    "source": [
+      "communities"
+    ]
+  },
+  "read.glossary.4.definition": {
+    "source": "A group of people who live in the same place or share something.",
+    "back": "A group of people who live in the same place or share something.",
+    "flag": true
+  },
+  "read.glossary.4.example": {
+    "source": "When a community helps to build a tool, it fits their needs better.",
+    "back": "When a community helps build a tool, the tool suits their needs better.",
+    "flag": true
+  },
+  "read.checks.0.question": {
+    "source": "What is a low-resource language?",
+    "back": "What is a low-resource language?",
+    "flag": true
+  },
+  "read.checks.0.options.0.text": {
+    "source": "A language that very few people speak",
+    "back": "A language spoken by very few people",
+    "flag": true
+  },
+  "read.checks.0.options.0.feedback": {
+    "source": "Not quite. About 200 million people speak Swahili, and it is still low-resource. Read the first section again.",
+    "back": "Not quite. About 200 million people speak Swahili, and it is still a low-resource language. Read the first part again.",
+    "flag": true
+  },
+  "read.checks.0.options.1.text": {
+    "source": "A language with little digital material for computers",
+    "back": "A language with little digital material for computers",
+    "flag": true
+  },
+  "read.checks.0.options.1.feedback": {
+    "source": "Yes. It is about how much usable data exists, not about the language or its speakers.",
+    "back": "Correct. It is about how much usable data there is, not about the language or its speakers.",
+    "flag": true
+  },
+  "read.checks.0.options.2.text": {
+    "source": "A language that is very hard to learn",
+    "back": "A language that is very hard to learn",
+    "flag": true
+  },
+  "read.checks.0.options.2.feedback": {
+    "source": "Not quite. It is not about how hard a language is. Look at what AI tools learn from.",
+    "back": "Not quite. It is not about how hard a language is. Look at what AI tools learn from.",
+    "flag": true
+  },
+  "read.checks.1.question": {
+    "source": "How are some people making AI work better in more languages?",
+    "back": "How are some people making AI work better in more languages?",
+    "flag": true
+  },
+  "read.checks.1.options.0.text": {
+    "source": "They ask everyone to use only English",
+    "back": "They ask everyone to use only English",
+    "flag": true
+  },
+  "read.checks.1.options.0.feedback": {
+    "source": "Not quite. The lesson shows people changing the tools, not their languages. Read the third section.",
+    "back": "Not quite. This lesson shows people changing the tools, not their languages. Read the third part.",
+    "flag": true
+  },
+  "read.checks.1.options.1.text": {
+    "source": "They stop using AI tools for any language",
+    "back": "They stop using AI tools for any language",
+    "flag": true
+  },
+  "read.checks.1.options.1.feedback": {
+    "source": "Not quite. People keep using the tools and make them better. Read the third section.",
+    "back": "Not quite. People keep using the tools and make them better. Read the third part.",
+    "flag": true
+  },
+  "read.checks.1.options.2.text": {
+    "source": "They build tools for their own languages",
+    "back": "They build tools for their own languages",
+    "flag": true
+  },
+  "read.checks.1.options.2.feedback": {
+    "source": "Yes. Groups like AI Singapore and Masakhane build tools for languages of their own regions. They still need testing.",
+    "back": "Correct. Groups like AI Singapore and Masakhane build tools for languages in their own regions. The tools still need to be tested.",
+    "flag": true
+  },
+  "read.checks.2.question": {
+    "source": "Why do you think it matters who builds an AI tool for a language?",
+    "back": "In your opinion, why does it matter who builds an AI tool for a language?",
+    "flag": true
+  },
+  "read.checks.2.placeholder": {
+    "source": "It matters who builds it because ...",
+    "back": "It matters who builds it because ...",
+    "flag": true
+  },
+  "write.prompt": {
+    "source": "Use the Harbourside test to explain why an AI tool can work better in some languages than others. Then say whose needs matter here, and who should help to fix it.",
+    "back": "Use the Harbourside test to explain why an AI tool can work better in some languages compared with other languages. Then say whose needs matter here, and who should help fix it.",
+    "flag": true
+  },
+  "write.sentenceStarters.0": {
+    "source": "The help screen worked best in ...",
+    "back": "The help screen worked best in ...",
+    "flag": true
+  },
+  "write.sentenceStarters.1": {
+    "source": "It made the most mistakes in ___, because ...",
+    "back": "It made the most mistakes in ___, because ...",
+    "flag": true
+  },
+  "write.sentenceStarters.2": {
+    "source": "This matters to ___ because ...",
+    "back": "This matters to ___ because ...",
+    "flag": true
+  },
+  "write.sentenceStarters.3": {
+    "source": "To fix it, ___ should help, because ...",
+    "back": "To fix it, ___ should help, because ...",
+    "flag": true
+  },
+  "write.sentenceStarters.4": {
+    "source": "This is like ...",
+    "back": "This is like ...",
+    "flag": true
+  },
+  "write.planningBoxes.0": {
+    "source": "My main idea",
+    "back": "My main idea",
+    "flag": true
+  },
+  "write.planningBoxes.1": {
+    "source": "Evidence from the lesson",
+    "back": "Evidence from the lesson",
+    "flag": true
+  },
+  "write.planningBoxes.2": {
+    "source": "Why it matters",
+    "back": "Why this matters",
+    "flag": true
+  },
+  "write.planningBoxes.3": {
+    "source": "A question I still have",
+    "back": "A question I still have",
+    "flag": true
+  },
+  "write.selfCheck.0": {
+    "source": "I explained why the tool worked better in one language.",
+    "back": "I explained why the tool worked better in one language.",
+    "flag": true
+  },
+  "write.selfCheck.1": {
+    "source": "I said why this matters for the people who speak Language C.",
+    "back": "I said why this matters to the people who speak Language C.",
+    "flag": true
+  },
+  "write.selfCheck.2": {
+    "source": "I said who should help to fix it, and why.",
+    "back": "I said who should help fix it, and why.",
+    "flag": true
+  },
+  "write.example": {
+    "source": "The help screen worked best in Language A. It answered 19 of 20 questions well. It made the most mistakes in Language C, because its training data had very little writing in that language. This matters to the people who speak Language C, because they are the biggest group in the region but get the worst help at the bus station. To fix it, people who speak Language C should help, because they know it best. They could share writing and test the answers. This is like the Masakhane group.",
+    "back": "The help screen worked best in Language A. It answered 19 of 20 questions well. It made the most mistakes in Language C, because its training data had very little writing in that language. This matters to the people who speak Language C, because they are the biggest group in this region but get the worst help at the bus station. To fix it, people who speak Language C should help, because they know the language best. They can share writing and test the answers. This is like the Masakhane group.",
+    "flag": true
+  },
+  "speak.partnerTask": {
+    "source": "Your partner asks why an AI tool works worse in some languages. You answer with one reason from the lesson. Then switch.",
+    "back": "Your partner asks why AI tools work less well in some languages. You answer with one reason from this lesson. Then switch turns.",
+    "flag": true
+  },
+  "speak.independentTask": {
+    "source": "Say out loud what a low-resource language is. Then name one group from the lesson that builds tools for its own languages.",
+    "back": "Say out loud what a low-resource language is. Then name one group from this lesson that builds tools for its own language.",
+    "flag": true
+  },
+  "watch.why": {
+    "source": "It shows, with real examples, why AI tools learn much more about a few big languages than about most others, and what some people are doing about it.",
+    "back": "This video shows, with real examples, why AI tools learn far more about a few big languages than about most other languages, and what some people are doing about it.",
+    "flag": true
+  },
+  "watch.beforeQuestion": {
+    "source": "Why do you think an AI tool might know more about some languages than others?",
+    "back": "In your opinion, why might an AI tool know more about some languages than others?",
+    "flag": true
+  },
+  "watch.afterQuestion": {
+    "source": "Who decides which languages an AI tool learns from, according to the video?",
+    "back": "According to this video, who decides which languages an AI tool learns?",
+    "flag": true
+  },
+  "watch.summary": {
+    "source": "This video asks why AI tools work better in some languages than in others. A tool like a chatbot learns by reading lots of writing. The video says it is like a giant bookshop. But the bookshop has a problem. Most of its books are in English and a few other big languages. Languages with little writing online are called low-resource languages. The tools know much less about them. The video looks at two of these, Jamaican Patois and Catalan. It also shows researchers who built an open model in many languages, with help from local communities. The presenter says a few big companies decide what goes into these tools. He says it matters to everyone that AI tools include many languages.",
+    "back": "This video asks why AI tools work better in some languages compared with other languages. A tool like a chatbot learns by reading a lot of writing. The video says it is like a giant bookshop. But that bookshop has a problem. Most of its books are in English and a few other big languages. Languages with little writing online are called low-resource languages. AI tools know far less about these languages. The video looks at two of them, that is, Jamaican Patois and Catalan. It also shows researchers who built an open model in many languages, with help from local communities. The presenter says a few big companies decide what goes into these tools. He says it matters to everyone that AI tools include many languages.",
+    "flag": true
+  },
+  "watch.keyPoints.0": {
+    "source": "AI tools learn mostly from writing in a few big languages, especially English.",
+    "back": "AI tools learn mostly from writing in a few big languages, especially English.",
+    "flag": true
+  },
+  "watch.keyPoints.1": {
+    "source": "Languages with little writing online get worse results.",
+    "back": "Languages with little writing online get worse results.",
+    "flag": true
+  },
+  "watch.keyPoints.2": {
+    "source": "Some researchers work with communities to include more languages.",
+    "back": "Some researchers work with communities to include more languages.",
+    "flag": true
+  },
+  "watch.contentNote": {
+    "source": "Vox, 2023. Title and channel confirmed with YouTube's oEmbed (October 2026); the length is not confirmed (a transcript archive suggests about 11 to 12 minutes, longer than most Thinkerwell videos). It names large technology companies, mentions a complaint about a search engine and Catalan, and the presenter talks about a voice assistant not understanding his accent. The summary was written from Rosetta's transcript archive of the video, not from watching it. Someone on the team must watch it before use; learners can read the written summary instead.",
+    "back": "Vox, 2023. Title and channel confirmed with YouTube's oEmbed (October 2026); its length is not yet confirmed (a transcript archive suggests about 11 to 12 minutes, longer than most Thinkerwell videos). It names big technology companies, mentions a complaint about a search engine and the Catalan language, and the presenter talks about a voice assistant that did not understand his accent. This summary was written from Rosetta's transcript archive of the video, not by watching it. A team member must watch it before it is used; learners can read the written summary instead.",
+    "flag": true
+  },
+  "reflect.prompts.0.text": {
+    "source": "It matters which languages AI tools speak because ...",
+    "back": "The languages AI tools speak matter because ...",
+    "flag": true
+  },
+  "reflect.prompts.1.text": {
+    "source": "A question I would ask the people who build AI language tools is ...",
+    "back": "One question I would ask the people who build AI language tools is ...",
+    "flag": true
+  },
+  "reflect.completionMessage": {
+    "source": "You finished Lesson 7. You explained why AI works better in some languages, and how communities are changing that.",
+    "back": "You have finished Lesson 7. You explained why AI works better in some languages, and how communities are changing that.",
+    "flag": true
+  },
+  "visual.alt": {
+    "source": "A diagram of three languages. Language A has lots of writing online and the help screen gets 19 of 20 right. Language C has the most speakers but very little writing, and gets only 6 of 20 right.",
+    "back": "A diagram of three languages. Language A has a lot of writing online and the help screen answers 19 of 20 correctly. Language C has the most speakers but very little writing, and only 6 of 20 are answered correctly.",
+    "flag": true
+  },
+  "sources.0.label": {
+    "source": "Stanford Report, from Stanford HAI (2025): How AI is leaving non-English speakers behind",
+    "back": "Stanford Report, from Stanford HAI (2025): How AI is leaving non-English speakers behind (how AI leaves speakers of languages other than English behind)",
+    "flag": true
+  },
+  "sources.1.label": {
+    "source": "AI Singapore and others (arXiv, version 4, 30 October 2025): SEA-LION, Southeast Asian Languages in One Network (11 languages; tests and limits)",
+    "back": "AI Singapore and colleagues (arXiv, version 4, 30 October 2025): SEA-LION, Southeast Asian Languages in One Network (11 languages; tests and limitations)",
+    "flag": true
+  },
+  "sources.2.label": {
+    "source": "Context (updated 8 February 2024): Biased GPT? Singapore builds AI model to “represent” Southeast Asians (the first SEA-LION model)",
+    "back": "Context (updated 8 February 2024): Biased GPT? Singapore builds AI model to “represent” Southeast Asians (the first SEA-LION model)",
+    "flag": true
+  },
+  "sources.3.label": {
+    "source": "GoTo (15 November 2024): GoTo launches Sahabat-AI (press release)",
+    "back": "GoTo (15 November 2024): GoTo launches Sahabat-AI (press statement)",
+    "flag": true
+  },
+  "sources.4.label": {
+    "source": "Civic Tech Guide: Masakhane, a grassroots NLP community for Africa, by Africans",
+    "back": "Civic Tech Guide: Masakhane, a grassroots NLP community for Africa, by Africans (a grassroots community for African languages)",
+    "flag": true
+  },
+  "sensitiveNotes.0": {
+    "source": "Many learners speak several languages, and some speak a low-resource language. Never ask which languages learners or their families speak, or where they come from; let them share only if they choose. Make clear that no language is worse or simpler: the gap is about how much writing computers had to learn from, and who chose it.",
+    "back": "Many learners speak several languages, and some of them speak a low-resource language. Never ask what languages learners or their families speak, or where they come from; let them share only if they want to. Make clear that no language is lower or simpler: this gap is about how much writing there is for computers to learn from, and who chose it.",
+    "flag": true
+  },
+  "sensitiveNotes.1": {
+    "source": "The second section mentions colonialism briefly, as Masakhane does. Keep any discussion short and factual, and don't ask learners about their own history or any country's politics.",
+    "back": "The second part mentions colonialism briefly, as Masakhane does. Keep any discussion short and based on facts, and do not ask learners about their own history or any country's politics.",
+    "flag": true
+  },
+  "educatorNotes.0": {
+    "source": "The Harbourside results (19, 15 and 6 of 20) are made up. The real facts, with their scope: Stanford HAI (2025) defines low-resource languages as those with limited computer-readable data, and gives Swahili (about 200 million speakers) as an example; “low-resource” is about the data for a task (writing, recordings, labelled examples), never about a language's worth or its speakers' skill, and a language can be low-resource for one task and not another. SEA-LION: the 2025 paper (arXiv 2504.05747, version 4, October 2025) describes Llama-SEA-LION-8B-IT and Gemma-SEA-LION-9B-IT, built by AI Singapore with NUS and funded by Singapore's National Research Foundation; the family supports 11 languages (English, Chinese, Indonesian, Vietnamese, Malay, Thai, Burmese, Lao, Filipino, Tamil and Khmer). Supporting a language in training is not proof that it works well: the paper's main benchmark (SEA-HELM) tested only Indonesian, Vietnamese, Thai and Tamil, and a wider test (SEACrowd) covered 31 regional languages but only classic language tasks, not chat; the authors list this as a limitation. The first SEA-LION model (Context, February 2024) was trained on text that was about 63% English, and critics warned that regional models can repeat the views of powerful groups. Sahabat-AI: GoTo's press release (15 November 2024) says it was co-developed with Indosat Ooredoo Hutchison, launched with 8- and 9-billion-parameter models for Bahasa Indonesia, Javanese and Sundanese (Batak and Balinese planned), is open source, and “demonstrated leading performance” against similar open models; that is the makers' claim, with no published scores in the release, and it calls the project early. Masakhane's own description links the small place of African languages in technology partly to colonialism. Older learners could discuss who owns these tools and who tests them.",
+    "back": "The Harbourside results (19, 15 and 6 of 20) are invented. The real facts, with their scope: Stanford HAI (2025) defines low-resource languages as languages with limited computer-readable data, and gives Swahili (about 200 million speakers) as an example; “low-resource” is about the data for a task (writing, recordings, labelled examples), never about a language's value or its speakers' skill, and a language can be low-resource for one task but not for another task. SEA-LION: the 2025 paper (arXiv 2504.05747, version 4, October 2025) describes Llama-SEA-LION-8B-IT and Gemma-SEA-LION-9B-IT, built by AI Singapore with NUS and funded by Singapore's National Research Foundation; this family of models supports 11 languages (English, Chinese, Indonesian, Vietnamese, Malay, Thai, Burmese, Lao, Filipino, Tamil and Khmer). Supporting a language in training is not proof that it works well: the paper's main benchmark (SEA-HELM) tested only Indonesian, Vietnamese, Thai and Tamil, and a wider test (SEACrowd) covered 31 regional languages but only classic language tasks, not chat; its authors list this as a limitation. The first SEA-LION model (Context, February 2024) was trained on text that was about 63% English, and critics warned that regional models can repeat the views of powerful groups. Sahabat-AI: GoTo's press statement (15 November 2024) states that it was co-developed with Indosat Ooredoo Hutchison, launched with 8- and 9-billion-parameter models for Indonesian, Javanese and Sundanese (Batak and Balinese planned), is open source, and “demonstrated leading performance” (showed leading performance) against similar open models; that is its makers' claim, with no published scores in the statement, and it calls the project still at an early stage. Masakhane's own description links the small place of African languages in technology partly to colonialism. Older learners can discuss who owns these tools and who tests them.",
+    "flag": true,
+    "note": "The Sahabat-AI press release's own words are kept in English in quotes, with a Malay gloss in brackets."
+  },
+  "educatorNotes.1": {
+    "source": "For the Jakarta pilot, Sahabat-AI's languages are a local link, but learners never need to name a language they speak. In the Write task, accept any justified view of whose needs matter (the starter is “This matters to ___ because …”, not “This is unfair because …”). Lesson 8 comes back to missing examples as one possible cause of bias, among others. The claim record is in content/courses/digital-world/claims/DW07.md.",
+    "back": "For the pilot programme in Jakarta, Sahabat-AI's languages are a local link, but learners never need to name a language they speak. In the Write task, accept any reasoned view about whose needs matter (the sentence starter is “This matters to ___ because …”, not “This is unfair because …”). Lesson 8 comes back to missing examples as one possible cause of bias, among other causes. The claim record is in content/courses/digital-world/claims/DW07.md.",
+    "flag": true,
+    "note": "\"The Jakarta pilot\" is \"program rintis di Jakarta\", as the Malay interface says (never \"projek rintis\")."
+  }
+}

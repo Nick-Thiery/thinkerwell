@@ -1,0 +1,624 @@
+{
+  "title": {
+    "source": "AI in your community",
+    "back": "AI in your community",
+    "flag": true
+  },
+  "essentialQuestion": {
+    "source": "How can AI help a community, and what could go wrong?",
+    "back": "How can AI help a community, and what can go wrong?",
+    "flag": true
+  },
+  "learningGoal": {
+    "source": "Weigh the benefits and risks of AI tools for translation, farming and health, and explain why people must stay in charge.",
+    "back": "Weigh the benefits and risks of AI tools for translation, farming and health, and explain why humans must keep control.",
+    "flag": true
+  },
+  "warmUp.question": {
+    "source": "Where do you think AI could help people in a community?",
+    "back": "Where do you think AI could help the people in a community?",
+    "flag": true
+  },
+  "warmUp.options.0": {
+    "source": "Growing food",
+    "back": "Growing food crops",
+    "flag": true
+  },
+  "warmUp.options.1": {
+    "source": "Reading other languages",
+    "back": "Reading other languages",
+    "flag": true
+  },
+  "warmUp.options.2": {
+    "source": "Staying healthy",
+    "back": "Staying healthy",
+    "flag": true
+  },
+  "warmUp.options.3": {
+    "source": "Not sure",
+    "back": "Not sure",
+    "flag": true
+  },
+  "evidence.label": {
+    "source": "Fictional example created for this lesson.",
+    "back": "Fictional example made for this lesson.",
+    "flag": true
+  },
+  "evidence.question": {
+    "source": "How does each tool help? What could go wrong? Who checks it?",
+    "back": "How does each tool help? What can go wrong? Who checks it?",
+    "flag": true
+  },
+  "evidence.cards.0.title": {
+    "source": "Three AI tools in the town of Sunvale",
+    "back": "Three AI tools in the town of Sunvale",
+    "flag": true
+  },
+  "evidence.cards.0.cases.0.name": {
+    "source": "Translation tool at the community centre",
+    "back": "Translator tool at the residents' hall",
+    "flag": true,
+    "note": "\"Community centre\" became \"balai warga\" (residents' hall), the usual Indonesian community building."
+  },
+  "evidence.cards.0.cases.0.body": {
+    "source": "It turns notices into several languages, so more neighbours can read them. It is very good in languages with lots of writing online. It makes more mistakes in a language with little writing online. A volunteer who speaks that language checks important notices.",
+    "back": "This tool changes notices into several languages, so more neighbours can read them. It is very good for languages that have lots of writing on the internet. It is wrong more often for languages that have little writing on the internet. A volunteer who knows that language checks important notices.",
+    "flag": true
+  },
+  "evidence.cards.0.cases.1.name": {
+    "source": "Leaf tool for farmers",
+    "back": "Leaf tool for farmers",
+    "flag": true
+  },
+  "evidence.cards.0.cases.1.body": {
+    "source": "A farmer takes a photo of a leaf, and the tool guesses if the plant is sick. It works with no internet. It learned from the leaves of three crops, so it often guesses wrong for a crop it has never seen. When it is not sure, the farmers' group asks a plant expert.",
+    "back": "A farmer photographs a leaf, then this tool guesses whether the plant is sick. It can be used without internet. It learned from the leaves of three kinds of plant, so it often guesses wrong for a plant it has never seen. If the tool is not sure, the farmers' group asks a plant expert.",
+    "flag": true
+  },
+  "evidence.cards.0.cases.2.name": {
+    "source": "Eye photo helper at the clinic",
+    "back": "Eye photo aid tool at the clinic",
+    "flag": true,
+    "note": "\"Eye photo helper\" / \"eye helper\" became \"alat bantu foto mata\" (eye photo aid tool) everywhere: \"pembantu\" usually means a domestic worker, and \"alat bantu mata\" alone could read as glasses."
+  },
+  "evidence.cards.0.cases.2.body": {
+    "source": "It looks at photos of the eye and marks the ones that may show a problem, so busy health workers know who to see first. It learned mostly from photos of people in other places, and nobody has tested it in Sunvale yet. It might miss some problems there. A health worker always checks it and talks to each patient.",
+    "back": "This tool looks at eye photos and marks the ones that may show a problem, so busy health workers know who needs to be checked first. It learned mostly from photos of people in other places, and nobody has tested it in Sunvale yet. It may miss some problems there. A health worker always checks its results and talks with each patient.",
+    "flag": true
+  },
+  "activity.title": {
+    "source": "Help or risk?",
+    "back": "Helps or risky?",
+    "flag": true,
+    "note": "\"Help or risk?\" became \"Membantu atau berisiko?\" (Helps or risky?) so the groups read as short adjectives."
+  },
+  "activity.instructions": {
+    "source": "Put each sentence about the Sunvale tools into a group. There is no score. After you place one, you can see one possible answer and the reason.",
+    "back": "Put each sentence about the Sunvale tools into one group. There is no score. After you place one sentence, you can see one possible answer and its reason.",
+    "flag": true
+  },
+  "activity.groups.0.label": {
+    "source": "A help",
+    "back": "Helps",
+    "flag": true
+  },
+  "activity.groups.1.label": {
+    "source": "A risk",
+    "back": "Risky",
+    "flag": true
+  },
+  "activity.groups.2.label": {
+    "source": "Both",
+    "back": "Both",
+    "flag": true
+  },
+  "activity.items.0.text": {
+    "source": "The translation tool lets more neighbours read notices.",
+    "back": "The translator tool lets more neighbours read notices.",
+    "flag": true
+  },
+  "activity.items.0.feedback": {
+    "source": "More people can read important news in a language they know.",
+    "back": "More people can read important news in a language they know.",
+    "flag": true
+  },
+  "activity.items.1.text": {
+    "source": "The translation tool makes more mistakes in some languages.",
+    "back": "The translator tool is wrong more often in some languages.",
+    "flag": true
+  },
+  "activity.items.1.feedback": {
+    "source": "A wrong notice could tell people the wrong thing.",
+    "back": "A wrong notice could tell people the wrong thing.",
+    "flag": true
+  },
+  "activity.items.2.text": {
+    "source": "The leaf tool works with no internet.",
+    "back": "The leaf tool can be used without internet.",
+    "flag": true
+  },
+  "activity.items.2.feedback": {
+    "source": "Farmers can use it in fields far from any signal.",
+    "back": "Farmers can use it in fields far from any signal.",
+    "flag": true
+  },
+  "activity.items.3.text": {
+    "source": "A farmer trusts a wrong guess and pulls out healthy plants.",
+    "back": "A farmer believes a wrong guess and pulls out healthy plants.",
+    "flag": true
+  },
+  "activity.items.3.feedback": {
+    "source": "The tool guesses, and a guess can be wrong.",
+    "back": "The tool guesses, and a guess can be wrong.",
+    "flag": true
+  },
+  "activity.items.4.text": {
+    "source": "The eye helper shows busy health workers who to see first.",
+    "back": "The eye photo aid shows busy health workers who needs to be checked first.",
+    "flag": true
+  },
+  "activity.items.4.feedback": {
+    "source": "Health workers can reach the people who need them most sooner.",
+    "back": "Health workers can reach the people who need them most sooner.",
+    "flag": true
+  },
+  "activity.items.5.text": {
+    "source": "The eye helper learned from people in other places. It is not tested in Sunvale yet.",
+    "back": "The eye photo aid learned from people in other places. It has not been tested in Sunvale yet.",
+    "flag": true
+  },
+  "activity.items.5.feedback": {
+    "source": "Until it is tested with people in Sunvale, nobody knows how well it works there. It might miss problems for people unlike the ones it learned from.",
+    "back": "Until this tool is tested with people in Sunvale, nobody knows how well it works there. It may miss problems in people who are different from the people it learned from.",
+    "flag": true
+  },
+  "activity.items.6.text": {
+    "source": "The clinic collects eye photos to make the helper better.",
+    "back": "The clinic collects eye photos to make the aid tool better.",
+    "flag": true
+  },
+  "activity.items.6.feedback": {
+    "source": "Any group can be right here. Local photos could help test the tool and make it fairer. But health photos are private, so people must agree first, and the photos must be kept safe.",
+    "back": "Any group can be right here. Photos from the local area could help test the tool and make it fairer. But health photos are private, so people must agree first, and the photos must be kept safe.",
+    "flag": true
+  },
+  "activity.items.7.text": {
+    "source": "A volunteer checks important translated notices.",
+    "back": "A volunteer checks important notices that have been translated.",
+    "flag": true
+  },
+  "activity.items.7.feedback": {
+    "source": "A person who knows the language catches the tool's mistakes.",
+    "back": "A person who knows that language can find the tool's mistakes.",
+    "flag": true
+  },
+  "read.sections.0.heading": {
+    "source": "AI can help where helpers are few",
+    "back": "AI can help in places short of workers",
+    "flag": true
+  },
+  "read.sections.0.text": {
+    "source": "In many places, there are not enough health workers or other experts for everyone who needs them. AI tools can sometimes help, as in the made-up town of Sunvale, where three tools help with notices, crops and eye checks. Here is a real example from Singapore. People with diabetes need regular eye checks, because the illness can harm their eyes. Researchers there built a tool called SELENA+, which looks at photos of the back of the eye and marks the ones an eye specialist should see. In 2017, they reported tests with photos from Singapore's eye checks and from people in other countries. It found most of the problems that trained checkers found, but the researchers said it still needed testing in real clinics.",
+    "back": "In many places, there are not enough health workers or other experts for everyone who needs them. AI tools can sometimes help, as in the made-up town of Sunvale, where three tools help with notices, plants and eye checks. Here is a real example from Singapore. People with diabetes need to have their eyes checked regularly, because the illness can damage the eyes. Researchers there made a tool called SELENA+, which looks at photos of the back of the eye and marks the photos an eye specialist doctor needs to see. In 2017, they reported test results with photos from eye checks in Singapore and from people in other countries. The tool found most of the problems that trained checkers found, but the researchers said it still needed to be tested in real clinics.",
+    "flag": true,
+    "note": "\"Made-up town\" is \"kota rekaan\". \"Eye specialist\" is \"dokter spesialis mata\"; \"trained checkers\" is \"pemeriksa terlatih\"."
+  },
+  "read.sections.0.simpler": {
+    "source": "Many places do not have enough health workers or other experts. AI tools can sometimes help. In made-up Sunvale, three tools help with notices, plants and eyes. In Singapore, researchers built a real tool called SELENA+. People with diabetes need eye checks, because the illness can harm their eyes. SELENA+ marks eye photos that an eye doctor should see. In 2017, it was tested on photos from Singapore and elsewhere. It found most problems that people found. It still needed tests in real clinics.",
+    "back": "Many places don't have enough health workers or other experts. AI tools can sometimes help. In the made-up town of Sunvale, three tools help with notices, plants and eyes. In Singapore, researchers made a real tool called SELENA+. People with diabetes need eye checks, because the illness can damage the eyes. SELENA+ marks eye photos that an eye doctor needs to see. In 2017, it was tested with photos from Singapore and other places. It found most of the problems that humans found. It still needed to be tested in real clinics.",
+    "flag": true
+  },
+  "read.sections.1.heading": {
+    "source": "Every tool has risks",
+    "back": "Every tool has risks",
+    "flag": true
+  },
+  "read.sections.1.text": {
+    "source": "A tool that helps can also cause problems, so it is important to weigh the benefits against the risks. The Sunvale eye helper learned mostly from photos of people in other places. That does not make it a poor tool. But nobody has tested it in Sunvale, so it might miss some problems there. A tool must be tested with the people it will serve. Translation tools make more mistakes in languages with little writing online. A farmer who trusts a wrong guess might pull out healthy plants. Health photos are also private, so they must be kept safe.",
+    "back": "A tool that helps can also cause problems, so it is important to weigh its benefits and risks. The eye photo aid in Sunvale learned mostly from photos of people in other places. That does not make it a bad tool. But nobody has tested it in Sunvale, so it may miss some problems there. A tool must be tested with the people it will serve. Translator tools are wrong more often in languages with little writing on the internet. A farmer who believes a wrong guess might pull out healthy plants. Health photos are also private, so they must be kept safe.",
+    "flag": true
+  },
+  "read.sections.1.simpler": {
+    "source": "A tool that helps can also cause problems. So weigh the benefits and the risks. The eye helper learned from people in other places. That does not make it bad. But nobody has tested it in Sunvale. It might miss problems there. Tools must be tested with the people they help. Translation tools make more mistakes in some languages. A farmer could trust a wrong guess. Health photos are private and must be kept safe.",
+    "back": "A tool that helps can also cause problems. So weigh its benefits and risks. The eye photo aid learned from people in other places. That doesn't make it bad. But nobody has tested it in Sunvale. It may miss problems there. Tools must be tested with the people they will help. Translator tools are wrong more often in some languages. A farmer could believe a wrong guess. Health photos are private and must be kept safe.",
+    "flag": true
+  },
+  "read.sections.2.heading": {
+    "source": "People must stay in charge",
+    "back": "Humans must keep control",
+    "flag": true,
+    "note": "\"Stay in charge\" became \"tetap memegang kendali\" (keep holding control), used the same way everywhere, including the picture's label in visual.alt."
+  },
+  "read.sections.2.text": {
+    "source": "Because AI tools can be wrong, people need to stay in charge of important decisions. In Sunvale, a volunteer who speaks the language checks important translated notices. A plant expert helps when the leaf tool isn't sure, and a health worker always checks the eye helper. The people of a community should also help to shape the tools they use. Before trusting any AI tool, ask three questions. Who does it help? Who might it leave out? Who checks its answers? For any health question, always ask a health worker, not a tool.",
+    "back": "Because AI tools can be wrong, humans need to keep control of important decisions. In Sunvale, a volunteer who knows the language checks important translated notices. A plant expert helps when the leaf tool is not sure, and a health worker always checks the eye photo aid. The people in a community should also help shape the tools they use. Before trusting any AI tool, ask three questions. Who does it help? Who might be left behind? Who checks its answers? For any question about health, always ask a health worker, not a tool.",
+    "flag": true
+  },
+  "read.sections.2.simpler": {
+    "source": "AI tools can be wrong. So people must stay in charge of big decisions. In Sunvale, a volunteer checks notices. An expert and a health worker check the other tools. People in a community should help shape their tools. Ask three questions. Who does it help? Who might it leave out? Who checks it? For health questions, ask a health worker.",
+    "back": "AI tools can be wrong. So humans must keep control of big decisions. In Sunvale, a volunteer checks notices. An expert and a health worker check the other tools. People in a community should help shape their tools. Ask three questions. Who does it help? Who might be left behind? Who checks it? For questions about health, ask a health worker.",
+    "flag": true
+  },
+  "read.glossary.0.word": {
+    "source": "expert",
+    "back": "expert",
+    "flag": true
+  },
+  "read.glossary.0.forms": {
+    "source": [
+      "experts"
+    ],
+    "back": "",
+    "flag": true
+  },
+  "read.glossary.0.definition": {
+    "source": "A person who knows a lot about one subject.",
+    "back": "A person who knows a lot about one field.",
+    "flag": true
+  },
+  "read.glossary.0.example": {
+    "source": "A plant expert helps the farmers in Sunvale.",
+    "back": "A plant expert helps the farmers in Sunvale.",
+    "flag": true
+  },
+  "read.glossary.1.word": {
+    "source": "translate",
+    "back": "translate",
+    "flag": true,
+    "note": "Forms cover the verb, the passive, the noun \"terjemahan\" (a translation) and \"penerjemah\" (\"alat penerjemah\", translation tool), which is the form both readings of section 2 use."
+  },
+  "read.glossary.1.forms": {
+    "source": [
+      "translates",
+      "translated",
+      "translation"
+    ],
+    "back": "",
+    "flag": true,
+    "note": "Indonesian forms marked: diterjemahkan, terjemahan, penerjemah."
+  },
+  "read.glossary.1.definition": {
+    "source": "To change words from one language into another.",
+    "back": "To change words from one language into another language.",
+    "flag": true
+  },
+  "read.glossary.1.example": {
+    "source": "The tool translates notices at the community centre.",
+    "back": "The tool translates notices at the residents' hall.",
+    "flag": true
+  },
+  "read.glossary.2.word": {
+    "source": "benefit",
+    "back": "benefit",
+    "flag": true
+  },
+  "read.glossary.2.forms": {
+    "source": [
+      "benefits"
+    ],
+    "back": "",
+    "flag": true,
+    "note": "Indonesian forms marked: manfaatnya."
+  },
+  "read.glossary.2.definition": {
+    "source": "A good thing that helps someone.",
+    "back": "A good thing that helps someone.",
+    "flag": true
+  },
+  "read.glossary.2.example": {
+    "source": "One benefit of the leaf tool is that it works with no internet.",
+    "back": "One benefit of the leaf tool is that it can be used without internet.",
+    "flag": true
+  },
+  "read.glossary.3.word": {
+    "source": "risk",
+    "back": "risk",
+    "flag": true
+  },
+  "read.glossary.3.forms": {
+    "source": [
+      "risks"
+    ],
+    "back": "",
+    "flag": true,
+    "note": "Indonesian forms marked: risikonya."
+  },
+  "read.glossary.3.definition": {
+    "source": "The chance that something bad could happen.",
+    "back": "The chance that something bad happens.",
+    "flag": true
+  },
+  "read.glossary.3.example": {
+    "source": "One risk is that a farmer trusts a wrong guess.",
+    "back": "One risk is that a farmer believes a wrong guess.",
+    "flag": true
+  },
+  "read.glossary.4.word": {
+    "source": "community",
+    "back": "community",
+    "flag": true
+  },
+  "read.glossary.4.forms": {
+    "source": [
+      "communities"
+    ],
+    "back": "",
+    "flag": true
+  },
+  "read.glossary.4.definition": {
+    "source": "A group of people who live in the same place or share something.",
+    "back": "A group of people who live in the same place or have something in common.",
+    "flag": true
+  },
+  "read.glossary.4.example": {
+    "source": "The people of Sunvale are a community.",
+    "back": "The people in Sunvale are a community.",
+    "flag": true
+  },
+  "read.checks.0.question": {
+    "source": "Why might the eye helper miss problems in Sunvale?",
+    "back": "Why might the eye photo aid miss problems in Sunvale?",
+    "flag": true
+  },
+  "read.checks.0.options.0.text": {
+    "source": "It was not tested with people there",
+    "back": "The tool hasn't been tested with the people there",
+    "flag": true
+  },
+  "read.checks.0.options.0.feedback": {
+    "source": "Yes. It learned mostly from photos of people in other places. That might be fine, but only a test in Sunvale can show it.",
+    "back": "Yes. The tool learned mostly from photos of people in other places. There may be no problem, but only a test in Sunvale can show it.",
+    "flag": true
+  },
+  "read.checks.0.options.1.text": {
+    "source": "Sunvale has no eye problems at all",
+    "back": "There are no eye problems at all in Sunvale",
+    "flag": true
+  },
+  "read.checks.0.options.1.feedback": {
+    "source": "Not quite. Eye problems happen everywhere. Look at what the tool learned from.",
+    "back": "Not quite. Eye problems happen everywhere. Look at what the tool learned from.",
+    "flag": true
+  },
+  "read.checks.0.options.2.text": {
+    "source": "The health workers forget to use it",
+    "back": "Health workers forget to use it",
+    "flag": true
+  },
+  "read.checks.0.options.2.feedback": {
+    "source": "Not quite. They use it and check it. Read the second section about testing.",
+    "back": "Not quite. They use it and check it. Read the second section about testing again.",
+    "flag": true
+  },
+  "read.checks.1.question": {
+    "source": "What makes the translation tool safer to use?",
+    "back": "What makes the translator tool safer to use?",
+    "flag": true
+  },
+  "read.checks.1.options.0.text": {
+    "source": "Using it for every single notice",
+    "back": "Using it for every notice",
+    "flag": true
+  },
+  "read.checks.1.options.0.feedback": {
+    "source": "Not quite. Using it more doesn't fix its mistakes. Read the third section.",
+    "back": "Not quite. Using it more often doesn't fix its mistakes. Read the third section again.",
+    "flag": true
+  },
+  "read.checks.1.options.1.text": {
+    "source": "Stopping people from reading notices",
+    "back": "Forbidding people to read notices",
+    "flag": true
+  },
+  "read.checks.1.options.1.feedback": {
+    "source": "Not quite. The tool is there to help people read. Read the third section.",
+    "back": "Not quite. The tool is there to help people read. Read the third section again.",
+    "flag": true
+  },
+  "read.checks.1.options.2.text": {
+    "source": "A volunteer checks the notices",
+    "back": "A volunteer checks the notices",
+    "flag": true
+  },
+  "read.checks.1.options.2.feedback": {
+    "source": "Yes. A person who speaks the language can catch the tool's mistakes.",
+    "back": "Yes. A person who knows that language can find the tool's mistakes.",
+    "flag": true
+  },
+  "read.checks.2.question": {
+    "source": "Which Sunvale tool would help a community you know? What would worry you about it?",
+    "back": "Which tool in Sunvale would help a community you know? What makes you worried about that tool?",
+    "flag": true
+  },
+  "read.checks.2.placeholder": {
+    "source": "The ___ would help because ... I would worry that ...",
+    "back": "___ would help because ... I'm worried that ...",
+    "flag": true
+  },
+  "write.prompt": {
+    "source": "Choose one Sunvale tool. Explain one way it helps, one risk, and who should check it.",
+    "back": "Choose one tool in Sunvale. Explain one way the tool helps, one of its risks, and who should check it.",
+    "flag": true
+  },
+  "write.sentenceStarters.0": {
+    "source": "I chose ...",
+    "back": "I chose ...",
+    "flag": true
+  },
+  "write.sentenceStarters.1": {
+    "source": "It helps because ...",
+    "back": "The tool helps because ...",
+    "flag": true
+  },
+  "write.sentenceStarters.2": {
+    "source": "One risk is ...",
+    "back": "One of its risks is ...",
+    "flag": true
+  },
+  "write.sentenceStarters.3": {
+    "source": "This could happen because ...",
+    "back": "This could happen because ...",
+    "flag": true
+  },
+  "write.sentenceStarters.4": {
+    "source": "___ should check it, because ...",
+    "back": "___ should check it, because ...",
+    "flag": true
+  },
+  "write.planningBoxes.0": {
+    "source": "My main idea",
+    "back": "My main idea",
+    "flag": true
+  },
+  "write.planningBoxes.1": {
+    "source": "Evidence from the lesson",
+    "back": "Evidence from the lesson",
+    "flag": true
+  },
+  "write.planningBoxes.2": {
+    "source": "Why it matters",
+    "back": "Why this matters",
+    "flag": true
+  },
+  "write.planningBoxes.3": {
+    "source": "A question I still have",
+    "back": "A question I still have",
+    "flag": true
+  },
+  "write.selfCheck.0": {
+    "source": "I named one tool from Sunvale.",
+    "back": "I named one tool from Sunvale.",
+    "flag": true
+  },
+  "write.selfCheck.1": {
+    "source": "I gave one benefit and one risk.",
+    "back": "I gave one benefit and one risk.",
+    "flag": true
+  },
+  "write.selfCheck.2": {
+    "source": "I said who should check it.",
+    "back": "I said who should check it.",
+    "flag": true
+  },
+  "write.example": {
+    "source": "I chose the leaf tool. It helps because farmers can find out quickly if a plant may be sick, even with no internet. One risk is that it gives a wrong guess for a crop it has never seen. This could happen because its training data only had leaves from three crops. A farmer who trusts a wrong guess might pull out healthy plants. A plant expert should check it when the tool is not sure, because people need to stay in charge.",
+    "back": "I chose the leaf tool. The tool helps because farmers can quickly know whether a plant may be sick, even without internet. One of its risks is that it gives a wrong guess for a plant it has never seen. This could happen because its training data only had leaves from three kinds of plant. A farmer who believes a wrong guess might pull out healthy plants. A plant expert should check it when the tool is not sure, because humans need to keep control.",
+    "flag": true
+  },
+  "speak.partnerTask": {
+    "source": "Your partner names a Sunvale tool. You say one way it helps and one risk. Then switch.",
+    "back": "Your partner names one tool in Sunvale. You say one way the tool helps and one of its risks. Then take turns.",
+    "flag": true
+  },
+  "speak.independentTask": {
+    "source": "Say out loud why a person should always check an AI tool that helps with health.",
+    "back": "Say out loud why someone must always check an AI tool that helps with health matters.",
+    "flag": true
+  },
+  "watch.why": {
+    "source": "People who build and study AI talk about how AI can help everyone, or leave some people out.",
+    "back": "People who make and study AI talk about how AI can help everyone, or instead leave some people behind.",
+    "flag": true
+  },
+  "watch.beforeQuestion": {
+    "source": "Who do you think should decide how an AI tool is used in a community?",
+    "back": "Who do you think should decide how an AI tool is used in a community?",
+    "flag": true
+  },
+  "watch.afterQuestion": {
+    "source": "Why does it matter who builds an AI tool?",
+    "back": "Why does it matter who makes an AI tool?",
+    "flag": true
+  },
+  "watch.summary": {
+    "source": "In this video, people who build and study AI talk about fairness. AI tools learn from data, and they are already used in many parts of life. The speakers say AI could help more people get what they need. But AI can also be unfair. If the data, or the people who build a tool, leave some groups out, the tool can work worse for those groups or treat them unfairly. This is called algorithmic bias. The speakers say that people from many different backgrounds should help to build AI. They also say that people must keep checking AI tools, so that the tools help everyone and don't harm the people they leave out.",
+    "back": "In this video, people who make and study AI talk about fairness. AI tools learn from data, and they are already used in many parts of life. The speakers say AI could help more people get what they need. But AI can also be unfair. If the data, or the people who make the tool, leave out certain groups, the tool can work worse for those groups or treat them unfairly. This is called algorithmic bias. The speakers say people from many backgrounds should help make AI. They also say humans must keep checking AI tools, so that the tools help everyone and don't harm the people left behind.",
+    "flag": true,
+    "note": "\"Algorithmic bias\" is \"bias algoritma\"."
+  },
+  "watch.keyPoints.0": {
+    "source": "AI can help more people, or it can treat some people unfairly.",
+    "back": "AI can help more people, or it can treat some people unfairly.",
+    "flag": true
+  },
+  "watch.keyPoints.1": {
+    "source": "Unfair results often come from data or teams that leave some people out.",
+    "back": "Unfair results often come from data or teams that leave some people out.",
+    "flag": true
+  },
+  "watch.keyPoints.2": {
+    "source": "People from many backgrounds should help to build and check AI.",
+    "back": "People from many backgrounds should help make and check AI.",
+    "flag": true
+  },
+  "watch.contentNote": {
+    "source": "About 3 minutes 20 seconds. The speakers name the AI companies, car company, universities and groups they work for. The summary was written from DCMP's description of the video and its list of speakers, not from watching it. Preview it first; learners can read the written summary instead.",
+    "back": "About 3 minutes 20 seconds. The speakers name the AI companies, car company, universities and groups they work for. The summary was written from DCMP's description of the video and its list of speakers, not from watching it. Watch it first before using it; learners can just read the written summary.",
+    "flag": true
+  },
+  "reflect.prompts.0.text": {
+    "source": "Before a community uses an AI tool, people should ask ...",
+    "back": "Before a community uses an AI tool, people should ask ...",
+    "flag": true
+  },
+  "reflect.prompts.1.text": {
+    "source": "An AI tool that could help a community I know is ...",
+    "back": "One AI tool that could help a community I know is ...",
+    "flag": true
+  },
+  "reflect.completionMessage": {
+    "source": "You finished Lesson 10. You weighed the benefits and risks of AI tools in a community.",
+    "back": "You have finished Lesson 10. You weighed the benefits and risks of AI tools in a community.",
+    "flag": true
+  },
+  "visual.alt": {
+    "source": "A balance scale weighing the benefits and risks of three AI tools, held level by a person labelled “People stay in charge”.",
+    "back": "A scale weighing the benefits and risks of three AI tools, kept balanced by a person labelled “Humans keep control”.",
+    "flag": true
+  },
+  "sources.0.label": {
+    "source": "World Health Organization (2021): WHO issues first global report on AI in health and six guiding principles",
+    "back": "World Health Organization (2021): WHO issues first global report on AI in health and six guiding principles (WHO, the World Health Organization, publishes the first global report on AI in health and six guiding principles)",
+    "flag": true
+  },
+  "sources.1.label": {
+    "source": "IITA (2018): African farmers get new help against cassava diseases, Nuru their artificially intelligent assistant",
+    "back": "IITA (2018): African farmers get new help against cassava diseases, Nuru their artificially intelligent assistant (African farmers get new help against cassava disease: Nuru, their AI assistant)",
+    "flag": true
+  },
+  "sources.2.label": {
+    "source": "Stanford Report (2025): How AI is leaving non-English speakers behind",
+    "back": "Stanford Report (2025): How AI is leaving non-English speakers behind (how AI leaves people who don't speak English behind)",
+    "flag": true
+  },
+  "sources.3.label": {
+    "source": "Singapore National Eye Centre: AI and digital health research group (SELENA+, developed with about 500,000 eye photos and tested on 10 outside sets of photos)",
+    "back": "Singapore National Eye Centre: AI and digital health research group (AI and digital health research group; SELENA+, developed with about 500,000 eye photos and tested with 10 outside sets of photos)",
+    "flag": true
+  },
+  "sources.4.label": {
+    "source": "Ting and others (JAMA, December 2017): Development and validation of a deep learning system for diabetic retinopathy and related eye diseases (abstract, Duke Scholars record)",
+    "back": "Ting and colleagues (JAMA, December 2017): Development and validation of a deep learning system for diabetic retinopathy and related eye diseases (abstract, Duke Scholars record)",
+    "flag": true
+  },
+  "sensitiveNotes.0": {
+    "source": "Health: the Sunvale eye helper is made up; SELENA+ is real, and the lesson describes only how it was built and tested. Never give or discuss medical advice or diagnoses; learners with health questions should ask a health worker. Don't ask learners about their own health or anyone else's, including diabetes in their family.",
+    "back": "Health: the eye photo aid in Sunvale is made up; SELENA+ is real, and this lesson only explains how it was made and tested. Never give or discuss medical advice or diagnoses; learners with questions about health should ask a health worker. Don't ask learners about their own health or other people's health, including diabetes in their family.",
+    "flag": true
+  },
+  "sensitiveNotes.1": {
+    "source": "Don't ask which languages learners speak at home, or which language a tool got wrong for them. Let them say so if they want to.",
+    "back": "Don't ask which language learners use at home, or which language a tool translated wrongly for them. Let them tell it themselves if they want to.",
+    "flag": true
+  },
+  "educatorNotes.0": {
+    "source": "The Sunvale tools are made up and stay labelled; SELENA+ is real and appears only in the reading, never in the made-up evidence or activity. What the sources establish: SNEC's page says SELENA+ was developed with about 500,000 retina photos and checked on 10 outside sets of photos (different cameras, ethnic groups and ages), and is approved by Singapore's health products regulator and CE-marked. The 2017 JAMA study tested it on 14,880 patients' photos from Singapore's national diabetic eye screening programme and on 10 other groups; it found referable eye disease with high sensitivity and specificity compared with trained graders, and said more research was needed for use in health care. The developers' own 2024 case study (Gunasekeran and others, NEJM AI) describes putting it into that programme; the lesson does not claim rollout or patient results, because no independent evaluation was checked. Other real projects, for teachers only: an offline cassava-disease phone app by IITA and Penn State (2018); WHO's 2021 report on AI for health; CLEAR Global's human checking of language technology.",
+    "back": "The Sunvale tools are made up and keep their fiction label; SELENA+ is real and appears only in the reading, never in the made-up evidence or its activity. What the sources show: SNEC's page says SELENA+ was developed with about 500,000 retina photos and checked with 10 outside sets of photos (different cameras, ethnic groups and ages), and has been approved by Singapore's health product regulator and has a CE mark. The 2017 JAMA study tested it with photos of 14,880 patients from Singapore's national diabetic eye check programme and with 10 other groups; it found eye disease needing referral with high sensitivity and specificity compared with trained checkers, and the study said more research was still needed for use in health services. The developers' own 2024 case study (Gunasekeran and colleagues, NEJM AI) describes putting it into that programme; this lesson does not claim rollout or results for patients, because no independent evaluation has been checked. Other real projects, for teachers only: an offline phone app for cassava disease by IITA and Penn State (2018); WHO's 2021 report on AI for health; human checking of language technology at CLEAR Global.",
+    "flag": true
+  },
+  "educatorNotes.1": {
+    "source": "Paper version of the activity: write the eight sentences on cards and sort them into Help, Risk and Both. The activity has no score; reward reasons.",
+    "back": "Paper version of this activity: write the eight sentences on cards, then group them into Helps, Risky and Both. The activity has no score; value the reasons.",
+    "flag": true
+  }
+}

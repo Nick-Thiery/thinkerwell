@@ -1,0 +1,657 @@
+{
+  "title": {
+    "source": "Project: design an AI helper",
+    "back": "Project: design an AI helper",
+    "note": "\"Projek\" is right here (a class project); the rule against \"projek\" is about calling Thinkerwell itself a project.",
+    "flag": true
+  },
+  "essentialQuestion": {
+    "source": "How would you design an AI helper that is useful, fair and safe?",
+    "back": "How would you design an AI helper that is useful, fair and safe?",
+    "flag": true
+  },
+  "learningGoal": {
+    "source": "Plan a helper for a problem many people share: say who it helps, whether AI fits, how to check that it works, and how to improve it after feedback.",
+    "back": "Plan a helper for a problem many people face: state whom it helps, whether AI fits, how to check that it works, and how to improve it after feedback.",
+    "flag": true
+  },
+  "warmUp.question": {
+    "source": "Which of these jobs could an AI helper do well?",
+    "back": "Which job could an AI helper do well?",
+    "flag": true
+  },
+  "warmUp.options.0": {
+    "source": "Sorting rubbish into the right bin",
+    "back": "Separating rubbish into the right bin",
+    "flag": true
+  },
+  "warmUp.options.1": {
+    "source": "Choosing who should be friends",
+    "back": "Choosing who should be friends",
+    "flag": true
+  },
+  "warmUp.options.2": {
+    "source": "Guessing when a bus will come",
+    "back": "Guessing when the bus will arrive",
+    "flag": true
+  },
+  "warmUp.options.3": {
+    "source": "Not sure",
+    "back": "Not sure",
+    "flag": true
+  },
+  "evidence.question": {
+    "source": "For each project, what problem does it start from, what does the AI do, and what do people still do? What evidence is there that it works?",
+    "back": "For each project, what problem is its starting point, what does the AI do, and what do humans still do? What evidence is there that it works?",
+    "flag": true
+  },
+  "evidence.cards.0.title": {
+    "source": "Two real projects in Southeast Asia",
+    "back": "Two real projects in Southeast Asia",
+    "flag": true
+  },
+  "evidence.cards.0.cases.0.name": {
+    "source": "Eco Pulse, Malaysia: a student prototype",
+    "back": "Eco Pulse, Malaysia: a student prototype",
+    "flag": true
+  },
+  "evidence.cards.0.cases.0.body": {
+    "source": "The problem: the students wanted to make recycling quicker and easier for the people who do it. Who built it: three 15-year-old students at SMK Sultan Ismail, a secondary school in Johor. What the AI does: an app looks at a photo of a recyclable item and estimates its weight and value. The evidence: it won an award in a 2024 student competition run by Samsung in Malaysia. The organiser says it is precise, but no test results have been published. A question: how well does it work with dirty or crushed items?",
+    "back": "The problem: the students wanted to make recycling quicker and easier for the people who do it. Who built it: three 15-year-old students at SMK Sultan Ismail, a secondary school in Johor. What the AI does: an app looks at a photo of a recyclable item and estimates its weight and value. The evidence: it won an award in a 2024 student competition organised by Samsung in Malaysia. The organiser says it is accurate, but no test results have been published. A question: how well does it work with dirty or crushed items?",
+    "flag": true
+  },
+  "evidence.cards.0.cases.1.name": {
+    "source": "Traffy Fondue, Thailand: a public service in use",
+    "back": "Traffy Fondue, Thailand: a public service in use",
+    "flag": true
+  },
+  "evidence.cards.0.cases.1.body": {
+    "source": "The problem: residents see broken roads, floods and broken street lights, and need the right office to fix them. Who built and uses it: a national science agency built it. Residents send a report with a photo and a place, and city and local offices answer. What the AI does: it sorts each report by type and sends it to the right office. People there decide what to do and do the repairs. The evidence: its makers say it received over 940,000 reports from 2022 to 2024. That shows it is used, not how well each problem was fixed. A question: how can people without a smartphone or the internet report a problem?",
+    "back": "The problem: residents see damaged roads, floods and broken street lights, and need the right office to fix them. Who built and uses it: a national science agency built it. Residents send a report with a photo and a location, and city offices and local offices answer it. What the AI does: it sorts each report by type and sends it to the right office. People there decide on action and do the repairs. The evidence: its makers say it received more than 940,000 reports from 2022 to 2024. That shows it is used, not how well each problem was fixed. A question: how can people who have no smartphone or internet report a problem?",
+    "flag": true
+  },
+  "activity.title": {
+    "source": "Plan your AI helper",
+    "back": "Plan your AI helper",
+    "flag": true
+  },
+  "activity.instructions": {
+    "source": "Plan a helper in five steps. Pick one of the made-up Maple Street problems, or a problem that many people share in a community you know. Don't write anyone's real name or private information. You can go back and change any step.",
+    "back": "Plan a helper in five steps. Choose one made-up Maple Street problem, or a problem many people face in a community you know. Do not write anyone's real name or private information. You can go back and change any step.",
+    "flag": true
+  },
+  "activity.problems.0.text": {
+    "source": "Maple Street (made up): plastic often goes in the wrong bin at the centre.",
+    "back": "Maple Street (made up): plastic often goes into the wrong bin at the centre.",
+    "flag": true
+  },
+  "activity.problems.1.text": {
+    "source": "Maple Street (made up): the bus is often late, and people wait in the rain.",
+    "back": "Maple Street (made up): the bus is often late, and people wait in the rain.",
+    "flag": true
+  },
+  "activity.problems.2.text": {
+    "source": "Maple Street (made up): the garden tap at the centre is often left running.",
+    "back": "Maple Street (made up): the garden tap at the centre is often left running.",
+    "flag": true
+  },
+  "activity.problems.3.text": {
+    "source": "A problem many people share in a community I know",
+    "back": "A problem many people face in a community I know",
+    "flag": true
+  },
+  "activity.steps.0.title": {
+    "source": "1. The problem",
+    "back": "1. The problem",
+    "flag": true
+  },
+  "activity.steps.0.prompt": {
+    "source": "What is the problem, and who does it affect? How would a helper make things better for them?",
+    "back": "What is the problem, and who is affected by it? How could a helper make things better for them?",
+    "flag": true
+  },
+  "activity.steps.0.starter": {
+    "source": "The problem is ... It affects ...",
+    "back": "The problem is ... This problem affects ...",
+    "flag": true
+  },
+  "activity.steps.1.title": {
+    "source": "2. Should AI be used?",
+    "back": "2. Should AI be used?",
+    "flag": true
+  },
+  "activity.steps.1.prompt": {
+    "source": "Think about three questions. Does the helper need to recognise or guess from many examples? Could a simple rule or a person do it better? Could it hurt someone if it is wrong? Then decide.",
+    "back": "Think about three questions. Does the helper need to recognise or guess based on many examples? Could a simple rule or a person do it better? Could it hurt someone if it is wrong? Then make a decision.",
+    "flag": true
+  },
+  "activity.steps.1.options.0.text": {
+    "source": "Yes, AI could help",
+    "back": "Yes, AI can help",
+    "flag": true
+  },
+  "activity.steps.1.options.0.feedback": {
+    "source": "Go on to step 3. In your plan, say why AI fits: what must it recognise or guess?",
+    "back": "Go on to step 3. In your plan, state why AI fits: what must it recognise or guess?",
+    "flag": true
+  },
+  "activity.steps.1.options.1.text": {
+    "source": "No, another way is better",
+    "back": "No, another way is better",
+    "flag": true
+  },
+  "activity.steps.1.options.1.feedback": {
+    "source": "That is a good design choice too. Write the other way, and why it fits better, like the club's buddy group.",
+    "back": "That is also a good design choice. Write that other way, and why it fits better, like the club's peer group.",
+    "note": "\"Buddy group\" is \"kumpulan rakan sebaya\" (peer group); check it suggests friends helping each other.",
+    "flag": true
+  },
+  "activity.steps.1.options.2.text": {
+    "source": "Not sure yet",
+    "back": "Not sure yet",
+    "flag": true
+  },
+  "activity.steps.1.options.2.feedback": {
+    "source": "That is fine. Write what you still need to find out, and decide again after step 4.",
+    "back": "That is fine. Write what you still need to find out, and decide again after step 4.",
+    "flag": true
+  },
+  "activity.steps.2.title": {
+    "source": "3. What it learns from",
+    "back": "3. What it learns",
+    "flag": true
+  },
+  "activity.steps.2.prompt": {
+    "source": "What examples would it learn from? Who would label them? Whose examples might be missing? If you chose another way, say what it needs instead.",
+    "back": "What examples would it learn from? Who would label them? Whose examples might be left out? If you chose another way, state what it needs instead.",
+    "flag": true
+  },
+  "activity.steps.2.starter": {
+    "source": "It would learn from ... Examples of ___ might be missing.",
+    "back": "It would learn from ... Examples of ___ might be left out.",
+    "flag": true
+  },
+  "activity.steps.3.title": {
+    "source": "4. Risks, tests and checks",
+    "back": "4. Risks, tests and checks",
+    "flag": true
+  },
+  "activity.steps.3.prompt": {
+    "source": "What could go wrong? How would you test that it works? Who would check it, and how often?",
+    "back": "What can go wrong? How would you test that it works? Who would check it, and how often?",
+    "flag": true
+  },
+  "activity.steps.3.starter": {
+    "source": "One risk is ... To test it, ... ___ would check it by ...",
+    "back": "One of its risks is ... To test it, ... ___ would check it by ...",
+    "flag": true
+  },
+  "activity.steps.4.title": {
+    "source": "5. Feedback and version 2",
+    "back": "5. Feedback and version 2",
+    "flag": true
+  },
+  "activity.steps.4.prompt": {
+    "source": "Read your plan to a partner, or read it again yourself. Answer one of these questions. Then change one thing.",
+    "back": "Read your plan aloud to a partner, or read it again yourself. Answer one of these questions. Then change one thing.",
+    "flag": true
+  },
+  "activity.steps.4.questions.0": {
+    "source": "Who might this helper leave out?",
+    "back": "Who might be left out by this helper?",
+    "flag": true
+  },
+  "activity.steps.4.questions.1": {
+    "source": "What happens if it makes a mistake?",
+    "back": "What happens if it makes a mistake?",
+    "flag": true
+  },
+  "activity.steps.4.questions.2": {
+    "source": "Is there a simpler way without AI?",
+    "back": "Is there a simpler way without AI?",
+    "flag": true
+  },
+  "activity.steps.4.questions.3": {
+    "source": "What evidence would show that it helps?",
+    "back": "What evidence would show that it helps?",
+    "flag": true
+  },
+  "activity.steps.4.starter": {
+    "source": "After feedback, I changed ... because ...",
+    "back": "After feedback, I changed ... because ...",
+    "flag": true
+  },
+  "read.sections.0.heading": {
+    "source": "Start with the problem, not the tool",
+    "back": "Start with the problem, not the tool",
+    "flag": true
+  },
+  "read.sections.0.text": {
+    "source": "In this project, you will plan a helper for a problem that many people share in a community. Good designers start with the problem and the people it affects, not the tool. In Malaysia, three 15-year-old students wanted to make recycling easier, so they built a prototype app, Eco Pulse, that estimates the weight and value of items from a photo. Then designers ask: should AI be used here at all? AI can help when a helper must recognise or guess from many examples. But sometimes a simple rule or a person does the job better. The made-up Maple Street design club decided a tool should not choose friends, because people should choose their own.",
+    "back": "In this project, you will plan a helper for a problem many people face in a community. Good designers start with the problem and the people affected by it, not with the tool. In Malaysia, three 15-year-old students wanted to make recycling easier, so they built a prototype app, Eco Pulse, that estimates the weight and value of items from a photo. Then designers ask: should AI be used here? AI can help when the helper must recognise or guess based on many examples. But sometimes a simple rule or a person can do the job better. The Maple Street design club, a made-up club, decided that a tool should not choose friends, because people should choose their own friends.",
+    "flag": true
+  },
+  "read.sections.0.simpler": {
+    "source": "You will plan a helper for a shared problem. Good designers start with the problem and the people it affects. In Malaysia, three 15-year-old students wanted easier recycling. They built a prototype app, Eco Pulse. From a photo of rubbish, it tries to tell the weight and value. Should AI be used here? AI can help when a helper must learn from many examples. Sometimes a simple rule or a person is better. The made-up Maple Street club said no to a tool that chooses friends. People should choose their own.",
+    "back": "You will plan a helper for a shared problem. Good designers start with the problem and the people affected by it. In Malaysia, three 15-year-old students wanted recycling to become easier. They built a prototype app, Eco Pulse. From a photo of rubbish, it tries to find out the weight and value. Should AI be used here? AI can help when a helper must learn from many examples. Sometimes a simple rule or a person is better. The Maple Street club, a made-up club, rejected a tool that chooses friends. People should choose their own friends.",
+    "flag": true
+  },
+  "read.sections.1.heading": {
+    "source": "Plan what it learns and what could go wrong",
+    "back": "Plan what it learns and what can go wrong",
+    "flag": true
+  },
+  "read.sections.1.text": {
+    "source": "Next, a designer plans what the helper will learn from. The club's bin helper would learn from photos of rubbish that club members label “plastic” or “paper”. These labelled examples are its training data. As you learned in Lesson 8, a tool can fail for anything missing from its examples, so the club adds photos of crushed and dirty items too. Then the designer lists the risks: a camera near the bins must never film people's faces. Finally, the designer decides who checks the helper. The club will look inside the bins every Friday.",
+    "back": "Next, the designer plans what the helper will learn from. The club's bin helper would learn from photos of rubbish that club members label as “plastic” or “paper”. These labelled examples are its training data. As you learned in Lesson 8, a tool can fail for anything that is not in its examples, so the club also adds photos of crushed and dirty items. Then the designer lists the risks: a camera near the bins must never film people's faces. Finally, the designer decides who checks the helper. The club will look inside the bins every Friday.",
+    "flag": true
+  },
+  "read.sections.1.simpler": {
+    "source": "The bin helper learns from photos of rubbish that club members label. These are its training data. A tool can fail when examples are missing. So the club adds crushed rubbish too. One risk: the camera must never film faces. Last, decide who checks it: the club looks in the bins every Friday.",
+    "back": "The bin helper learns from photos of rubbish labelled by club members. This is its training data. A tool can fail when some examples are missing. So the club adds crushed rubbish too. One risk: the camera must never film faces. Finally, decide who checks it: the club looks into the bins every Friday.",
+    "flag": true
+  },
+  "read.sections.2.heading": {
+    "source": "Test, listen and improve",
+    "back": "Test, listen and improve",
+    "flag": true
+  },
+  "read.sections.2.text": {
+    "source": "Designers also ask what evidence shows that a helper works. Eco Pulse won a student award, but no test results have been published yet. In Thailand, Traffy Fondue's AI sorts residents' reports about problems such as floods and sends each to the right office, where people fix them. Its makers count over 940,000 reports, but a count shows use, not how well problems were fixed. Designers test their plan with users, listen to feedback, change it and test again. This is called iteration. When the club's bus-timing helper went wrong after new roadworks, they added new examples. Share your plan, change one thing, and you have version 2.",
+    "back": "Designers also ask what evidence shows that a helper works. Eco Pulse won a student award, but no test results have been published yet. In Thailand, Traffy Fondue's AI sorts residents' reports about problems such as floods and sends each report to the right office, where humans fix the problem. Its makers count more than 940,000 reports, but a count shows use, not how well problems were fixed. Designers test their plan with users, listen to feedback, change it and test it again. This is called iteration. When the club's bus-time helper went wrong after new road works, they added new examples. Share your plan, change one thing, and you have version 2.",
+    "flag": true
+  },
+  "read.sections.2.simpler": {
+    "source": "What shows that it works? Eco Pulse won an award, but no test results are published yet. In Thailand, Traffy Fondue's AI sorts reports about problems like floods. It sends each to the right office, where people fix them. Its makers count over 940,000 reports. That shows use, not how well problems were fixed. Designers test with users, listen to feedback and change the plan. This is called iteration. Change one thing for version 2.",
+    "back": "What shows that it works? Eco Pulse won an award, but no test results have been published yet. In Thailand, Traffy Fondue's AI sorts reports about problems such as floods. It sends each report to the right office, where humans fix it. Its makers count more than 940,000 reports. That shows use, not how well problems were fixed. Designers test with users, listen to feedback and change the plan. This is called iteration. Change one thing for version 2.",
+    "note": "\"Lelaran\" (iteration) is DBP's computing term; it is uncommon for young readers, but it is the glossary word and is defined in the next sentence's context. A reviewer may prefer \"pengulangan reka bentuk\".",
+    "flag": true
+  },
+  "read.glossary.0.word": {
+    "source": "designer",
+    "back": "designer",
+    "flag": true
+  },
+  "read.glossary.0.definition": {
+    "source": "A person who plans how something will look and work.",
+    "back": "A person who plans how a thing looks and how it works.",
+    "flag": true
+  },
+  "read.glossary.0.example": {
+    "source": "The Maple Street club are designers. They plan helpers.",
+    "back": "The Maple Street club are designers. They plan helpers.",
+    "flag": true
+  },
+  "read.glossary.1.word": {
+    "source": "prototype",
+    "back": "prototype",
+    "flag": true
+  },
+  "read.glossary.1.definition": {
+    "source": "A first test version of something, made to try out an idea.",
+    "back": "A first test version of something, made to try out an idea.",
+    "flag": true
+  },
+  "read.glossary.1.example": {
+    "source": "Eco Pulse is a prototype. It still needs testing.",
+    "back": "Eco Pulse is a prototype. It still needs to be tested.",
+    "flag": true
+  },
+  "read.glossary.2.word": {
+    "source": "training data",
+    "back": "training data",
+    "flag": true
+  },
+  "read.glossary.2.definition": {
+    "source": "Examples used to build an AI tool, like labelled photos.",
+    "back": "Examples used to build an AI tool, such as labelled photos.",
+    "flag": true
+  },
+  "read.glossary.2.example": {
+    "source": "The bin helper's training data is labelled photos of rubbish.",
+    "back": "The bin helper's training data is labelled photos of rubbish.",
+    "flag": true
+  },
+  "read.glossary.3.word": {
+    "source": "risk",
+    "back": "risk",
+    "flag": true
+  },
+  "read.glossary.3.definition": {
+    "source": "The chance that something bad could happen.",
+    "back": "The possibility that something bad can happen.",
+    "flag": true
+  },
+  "read.glossary.3.example": {
+    "source": "One risk is that the camera films people's faces.",
+    "back": "One of its risks is that the camera films people's faces.",
+    "flag": true
+  },
+  "read.glossary.4.word": {
+    "source": "feedback",
+    "back": "feedback",
+    "flag": true
+  },
+  "read.glossary.4.definition": {
+    "source": "What other people tell you about your work, to help you improve it.",
+    "back": "What other people say about your work, to help you improve it.",
+    "flag": true
+  },
+  "read.glossary.4.example": {
+    "source": "A partner's feedback helped the club change its plan.",
+    "back": "Feedback from a partner helped the club change its plan.",
+    "flag": true
+  },
+  "read.glossary.5.word": {
+    "source": "iteration",
+    "back": "iteration",
+    "flag": true
+  },
+  "read.glossary.5.definition": {
+    "source": "Testing a plan, changing it, and testing it again, many times.",
+    "back": "Testing a plan, changing it, and testing it again, many times.",
+    "flag": true
+  },
+  "read.glossary.5.example": {
+    "source": "After the roadworks, iteration made the bus helper better.",
+    "back": "After the road works, iteration made the bus helper better.",
+    "flag": true
+  },
+  "read.checks.0.question": {
+    "source": "Why did the club drop the friend chooser?",
+    "back": "Why did the club reject the friend chooser tool?",
+    "flag": true
+  },
+  "read.checks.0.options.0.text": {
+    "source": "The camera at the centre was broken that day",
+    "back": "The camera at the centre was broken that day",
+    "flag": true
+  },
+  "read.checks.0.options.0.feedback": {
+    "source": "Not quite. The friend chooser had no camera. Read the first section.",
+    "back": "Not quite. The friend chooser had no camera. Read the first passage.",
+    "flag": true
+  },
+  "read.checks.0.options.1.text": {
+    "source": "People should choose their own friends",
+    "back": "People should choose their own friends",
+    "flag": true
+  },
+  "read.checks.0.options.1.feedback": {
+    "source": "Yes. Some choices belong to people. The club planned a buddy group run by people instead.",
+    "back": "Right. Some choices are people's right. The club planned a peer group run by people instead.",
+    "flag": true
+  },
+  "read.checks.0.options.2.text": {
+    "source": "Computers are too slow to choose friends",
+    "back": "Computers are too slow to choose friends",
+    "flag": true
+  },
+  "read.checks.0.options.2.feedback": {
+    "source": "Not quite. Speed was not the reason. Read the first section about when AI should not be used.",
+    "back": "Not quite. Speed was not the reason. Read the first passage about when AI should not be used.",
+    "flag": true
+  },
+  "read.checks.1.question": {
+    "source": "What does the evidence show about Eco Pulse so far?",
+    "back": "What does the evidence about Eco Pulse show so far?",
+    "flag": true
+  },
+  "read.checks.1.options.0.text": {
+    "source": "It is a prototype that won an award",
+    "back": "It is a prototype that won an award",
+    "flag": true
+  },
+  "read.checks.1.options.0.feedback": {
+    "source": "Yes. An award is a good start. It is not proof that the app works well for everyone.",
+    "back": "Right. An award is a good start. It is not proof that the app works well for everyone.",
+    "flag": true
+  },
+  "read.checks.1.options.1.text": {
+    "source": "It works well everywhere in Malaysia",
+    "back": "It works well throughout Malaysia",
+    "flag": true
+  },
+  "read.checks.1.options.1.feedback": {
+    "source": "Not quite. It is a student prototype, and no test results are published yet. Read the third section.",
+    "back": "Not quite. It is a student prototype, and no test results have been published yet. Read the third passage.",
+    "flag": true
+  },
+  "read.checks.1.options.2.text": {
+    "source": "It was never built or tried",
+    "back": "It was never built or tried",
+    "flag": true
+  },
+  "read.checks.1.options.2.feedback": {
+    "source": "Not quite. The students built a prototype app. Read the first section.",
+    "back": "Not quite. The students built a prototype app. Read the first passage.",
+    "flag": true
+  },
+  "read.checks.2.question": {
+    "source": "What problem that many people share could a helper help with? You can pick one from the lesson.",
+    "back": "What problem that many people face could a helper help with? You can choose one from this lesson.",
+    "flag": true
+  },
+  "read.checks.2.placeholder": {
+    "source": "A problem many people share is ... A helper could ...",
+    "back": "One problem many people face is ... A helper could ...",
+    "flag": true
+  },
+  "write.prompt": {
+    "source": "Write your plan for a helper. Say the problem and who it helps, whether AI fits or what you still need to find out, how you would check it works, and one change after feedback.",
+    "back": "Write your plan for a helper. State the problem and whom it helps, whether AI fits or what you still need to find out, how you would check that it works, and one change after feedback.",
+    "flag": true
+  },
+  "write.sentenceStarters.0": {
+    "source": "The problem is ... It affects ...",
+    "back": "The problem is ... This problem affects ...",
+    "flag": true
+  },
+  "write.sentenceStarters.1": {
+    "source": "A helper would make things better by ...",
+    "back": "A helper would make things better by ...",
+    "flag": true
+  },
+  "write.sentenceStarters.2": {
+    "source": "I think AI fits / another way fits / I still need to find out ..., because ...",
+    "back": "I think AI fits / another way fits / I still need to find out ..., because ...",
+    "flag": true
+  },
+  "write.sentenceStarters.3": {
+    "source": "To check it works, ___ would ...",
+    "back": "To check that it works, ___ would ...",
+    "flag": true
+  },
+  "write.sentenceStarters.4": {
+    "source": "After feedback, I changed ...",
+    "back": "After feedback, I changed ...",
+    "flag": true
+  },
+  "write.planningBoxes.0": {
+    "source": "My main idea",
+    "back": "My main idea",
+    "flag": true
+  },
+  "write.planningBoxes.1": {
+    "source": "Evidence from the lesson",
+    "back": "Evidence from the lesson",
+    "flag": true
+  },
+  "write.planningBoxes.2": {
+    "source": "Why it matters",
+    "back": "Why this matters",
+    "flag": true
+  },
+  "write.planningBoxes.3": {
+    "source": "A question I still have",
+    "back": "A question I still have",
+    "flag": true
+  },
+  "write.selfCheck.0": {
+    "source": "I said the problem, who it affects and how a helper would help.",
+    "back": "I stated the problem, who is affected and how a helper would help.",
+    "flag": true
+  },
+  "write.selfCheck.1": {
+    "source": "I said if AI fits, or what I still need to find out, and why.",
+    "back": "I stated whether AI fits, or what I still need to find out, and why.",
+    "flag": true
+  },
+  "write.selfCheck.2": {
+    "source": "I said how to check it works, and one change after feedback.",
+    "back": "I stated how to check that it works, and one change after feedback.",
+    "flag": true
+  },
+  "write.example": {
+    "source": "The problem is that plastic often goes in the paper bin at the centre. It affects the people who sort the bins by hand. A helper would make sorting faster. I think AI fits, because it must recognise many kinds of rubbish from photos. It would learn from photos we label “plastic” or “paper”. To check it works, the club would test it on new photos and look in the bins every Friday. After feedback, I changed my plan to add photos of crushed bottles.",
+    "back": "The problem is that plastic often goes into the paper bin at the centre. This problem affects the people who sort the rubbish in the bins by hand. A helper would make sorting rubbish faster. I think AI fits, because it must recognise many kinds of rubbish from photos. It would learn from photos we label as “plastic” or “paper”. To check that it works, the club would test it with new photos and look into the bins every Friday. After feedback, I changed my plan to add photos of crushed bottles.",
+    "flag": true
+  },
+  "speak.partnerTask": {
+    "source": "Explain your plan to a partner in one minute: the problem, who it helps, and why AI fits or not. Your partner asks one question from step 5. Change one thing, and say your version 2.",
+    "back": "Explain your plan to a partner in one minute: the problem, whom it helps, and why AI fits or not. Your partner asks one question from step 5. Change one thing, and say your version 2.",
+    "flag": true
+  },
+  "speak.independentTask": {
+    "source": "Say your plan out loud. Then ask yourself who it might leave out and how you would know it works, and answer.",
+    "back": "Say your plan aloud. Then ask yourself who might be left out by it and how you would know that it works, and answer.",
+    "flag": true
+  },
+  "watch.why": {
+    "source": "This short cartoon goes over training data, and why people must use AI with care.",
+    "back": "This short cartoon reviews training data, and why people must use AI carefully.",
+    "flag": true
+  },
+  "watch.beforeQuestion": {
+    "source": "What do you remember about how AI learns?",
+    "back": "What do you remember about how AI learns?",
+    "flag": true
+  },
+  "watch.afterQuestion": {
+    "source": "Why do people need to be careful when they make or use AI?",
+    "back": "Why do people need to be careful when they make or use AI?",
+    "flag": true
+  },
+  "watch.summary": {
+    "source": "This short cartoon goes over the basics of AI. AI tools learn from training data. This is a large set of examples that helps them find patterns and make guesses. Some AI tools sort things or make guesses about them. Other tools, called generative AI, make new things, like writing or pictures. The video explains that AI can be very useful, but it is not perfect. It learns from what people give it, so it can repeat their mistakes. That is why the people who make and use AI need to be responsible. They need to check its answers and think about who it might affect. This is a good review before you design your own AI helper.",
+    "back": "This short cartoon reviews the basics of AI. AI tools learn from training data. Training data is a large set of examples that helps the tool find patterns and make guesses. Some AI tools sort things or make guesses about them. Other tools, called generative AI, produce new things, such as writing or pictures. This video explains that AI can be very useful, but it is not perfect. It learns from what people give it, so it can repeat people's mistakes. That is why the people who make and use AI need to be responsible. They need to check its answers and think about who might be affected by it. This is a good review before you design your own AI helper.",
+    "flag": true
+  },
+  "watch.keyPoints.0": {
+    "source": "AI learns patterns from training data.",
+    "back": "AI learns patterns from training data.",
+    "flag": true
+  },
+  "watch.keyPoints.1": {
+    "source": "Generative AI makes new things, like writing or pictures.",
+    "back": "Generative AI produces new things, such as writing or pictures.",
+    "flag": true
+  },
+  "watch.keyPoints.2": {
+    "source": "People who make and use AI must be responsible and check it.",
+    "back": "People who make and use AI must be responsible and check it.",
+    "flag": true
+  },
+  "watch.contentNote": {
+    "source": "An American cartoon for middle school, 2 minutes 37 seconds. It goes over ideas from Lessons 1 to 3 and mentions generative AI. The summary was written from Common Sense Education's description, not from watching it. Preview it first; learners can read the written summary instead.",
+    "back": "An American cartoon for lower secondary school, 2 minutes 37 seconds. This video reviews ideas from Lessons 1 to 3 and mentions generative AI. The summary was written from Common Sense Education's description, not by watching the video. Preview it first; learners can read the written summary instead.",
+    "flag": true
+  },
+  "reflect.prompts.0.text": {
+    "source": "If I could build one helper for a community, it would ... because ...",
+    "back": "If I could build one helper for a community, that helper would ... because ...",
+    "flag": true
+  },
+  "reflect.prompts.1.text": {
+    "source": "The most important thing I learned in Digital World is ...",
+    "back": "The most important thing I learned in Digital World is ...",
+    "note": "The course title is \"Dunia Digital\", as in shared TERMS.md.",
+    "flag": true
+  },
+  "reflect.completionMessage": {
+    "source": "You finished Lesson 17. You planned a helper, decided whether AI fits, and improved your plan after feedback.",
+    "back": "You have finished Lesson 17. You planned a helper, decided whether AI fits, and improved your plan after feedback.",
+    "flag": true
+  },
+  "visual.alt": {
+    "source": "A five-step design loop: the problem, should AI be used, what it learns from, risks, tests and checks, and feedback, then back to the start for version 2.",
+    "back": "A five-step design cycle: the problem, should AI be used, what it learns, risks, tests and checks, and feedback, then back to the start for version 2.",
+    "flag": true
+  },
+  "sources.0.label": {
+    "source": "UNESCO: AI competency framework for students (2024)",
+    "back": "UNESCO: AI competency framework for students (AI competency framework for students; 2024)",
+    "flag": true
+  },
+  "sources.1.label": {
+    "source": "UNICEF Innocenti (2025): Guidance on AI and children, version 3.0",
+    "back": "UNICEF Innocenti (2025): Guidance on AI and children (guidance on AI and children), version 3.0",
+    "flag": true
+  },
+  "sources.2.label": {
+    "source": "Samsung Malaysia newsroom (11 December 2024): 15-year-old students from Johor win at Samsung Solve for Tomorrow 2024 (Eco Pulse; the organiser's account)",
+    "back": "Samsung Malaysia newsroom (11 December 2024): 15-year-old students from Johor win at Samsung Solve for Tomorrow 2024 (15-year-old students from Johor win in Samsung Solve for Tomorrow 2024; Eco Pulse; the organiser's report)",
+    "flag": true
+  },
+  "sources.3.label": {
+    "source": "NSTDA via ThaiPR.net (17 July 2024): Traffy Fondue's new AI features and use figures (Thai)",
+    "back": "NSTDA via ThaiPR.net (17 July 2024): Traffy Fondue's new AI features and its use figures (in Thai)",
+    "flag": true
+  },
+  "sources.4.label": {
+    "source": "Hansen and Dahiya (2025): Traffy Fondue, a smart city citizen engagement, Frontiers in Sustainable Cities",
+    "back": "Hansen and Dahiya (2025): Traffy Fondue, a smart city citizen engagement (Traffy Fondue: smart city citizen engagement), Frontiers in Sustainable Cities",
+    "flag": true
+  },
+  "sources.5.label": {
+    "source": "Common Sense Education: What is AI? (video page)",
+    "back": "Common Sense Education: What is AI? (what is AI?; video page)",
+    "flag": true
+  },
+  "sensitiveNotes.0": {
+    "source": "Problems must be ones that many people share in a community, not personal ones. Don't ask learners about problems in their own life, home or family. If a learner picks a problem about health, safety, legal matters or a particular person, gently steer them to one of the lesson's problems.",
+    "back": "The problems chosen must be problems many people face in a community, not personal problems. Do not ask learners about problems in their own life, home or family. If a learner chooses a problem about health, safety, legal matters or a particular person, gently guide them to one of the problems in the lesson.",
+    "flag": true
+  },
+  "sensitiveNotes.1": {
+    "source": "Plans are saved with the learner's work on this device. Learners must not write real people's names or private information in them.",
+    "back": "Plans are saved with the learner's work on this device. Learners must not write anyone's real name or private information in them.",
+    "flag": true
+  },
+  "educatorNotes.0": {
+    "source": "This is a design on paper: nothing is built, and coding is optional. Assess five things, not how impressive or how wary the plan sounds: the need (a real problem and who it affects), the intended benefit, technical fit (why AI helps, why another way fits better, or what the learner still needs to find out: all three are strong answers), evidence and checks (how they would test it, and who checks), and one improvement after feedback. It covers UNESCO's AI system design aspect at the Understand level and touches Create. Paper version: the five steps as a worksheet. Older or more confident learners can add a test plan (which new examples, and what result would count as working) or, optionally, build a tiny sorter with Lesson 3's nearest-neighbour idea.",
+    "back": "This is a design on paper: nothing is built, and coding is optional. Assess five things, not how impressive or how cautious the plan sounds: the need (a real problem and who is affected), the intended benefit, technical fit (why AI helps, why another way fits better, or what the learner still needs to find out: all three are strong answers), evidence and checks (how they would test it, and who checks), and one improvement after feedback. This lesson covers the AI system design aspect of UNESCO's framework at the Understand level and touches the Create level. Paper version: the five steps as a worksheet. Older or more confident learners can add a test plan (which new examples, and what result counts as working) or, if they want, build a small sorter with the nearest-neighbour idea from Lesson 3.",
+    "flag": true
+  },
+  "educatorNotes.1": {
+    "source": "The two real projects. Eco Pulse is known only from its organiser's account (Samsung Malaysia, 11 December 2024; also The Star, 26 January 2025): team TerraInnovators, three 15-year-olds at SMK Sultan Ismail, Johor, with an AI image-recognition app that estimates the weight and value of recyclable items, shown as a prototype at the Solve for Tomorrow 2024 final (run with Universiti Malaya). “With precision” is the organiser's claim; no test results are published, and it is not a working national service. Traffy Fondue (NECTEC, NSTDA) is an operating service: NSTDA reports over 940,000 reports from June 2022 to July 2024 and 77% “completed”, its own figures; a study of Bangkok's use (Hansen and Dahiya, 2025) notes it is digital-only, so people without smartphones or internet can be left out. Use each card's question for discussion, not as criticism of the people who built them.",
+    "back": "The two real projects. Eco Pulse is known only through its organiser's report (Samsung Malaysia, 11 December 2024; also The Star, 26 January 2025): team TerraInnovators, three 15-year-old students at SMK Sultan Ismail, Johor, with an AI image recognition app that estimates the weight and value of recyclable items, shown as a prototype at the Solve for Tomorrow 2024 final (organised with Universiti Malaya). “With precision” is the organiser's claim; no test results have been published, and it is not a national service in operation. Traffy Fondue (NECTEC, NSTDA) is a service in operation: NSTDA reports more than 940,000 reports from June 2022 to July 2024 and 77% “completed”, its own figures; a study of its use in Bangkok (Hansen and Dahiya, 2025) notes that it is digital-only, so people with no smartphone or internet can be left out. Use the question on each card for discussion, not as criticism of the people who built them.",
+    "flag": true
+  },
+  "read.glossary.0.forms": {
+    "source": [
+      "designers"
+    ],
+    "note": "Malay has no plural form here; \"pereka\" alone is marked.",
+    "flag": true
+  },
+  "read.glossary.1.forms": {
+    "source": [
+      "prototypes"
+    ],
+    "note": "Malay has no plural form here; \"prototaip\" alone is marked.",
+    "flag": true
+  },
+  "read.glossary.2.forms": {
+    "source": [],
+    "note": "Malay form: data latihannya (its training data).",
+    "flag": true
+  },
+  "read.glossary.3.forms": {
+    "source": [
+      "risks"
+    ],
+    "note": "Malay has no plural form here; \"risiko\" alone is marked.",
+    "flag": true
+  }
+}
