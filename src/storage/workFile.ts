@@ -33,7 +33,6 @@ import {
   type Learner,
   type LessonProgress,
   type QuizAttempt,
-  type SectionId,
   type SectionQuizRecord,
   type StageId,
 } from './types';
@@ -353,7 +352,7 @@ function checkQuizRecord(value: unknown, learnerId: string): SectionQuizRecord {
   if (source.learnerId !== learnerId) fail();
   return {
     learnerId,
-    sectionId: slug(source.sectionId) as SectionId,
+    sectionId: slug(source.sectionId),
     best: checkAttempt(source.best),
     latest: checkAttempt(source.latest),
     attempts: integer(source.attempts, 1, MAX_COUNT),

@@ -26,7 +26,7 @@ test('with the preview off, its addresses aren’t there and nothing of it is do
 });
 
 test.describe('with the preview on', () => {
-  test('the course choice lists it, and its map has four sections of three lessons', async ({ page }) => {
+  test('the course choice lists it, and its map has four sections of three lessons, each with its check', async ({ page }) => {
     const errors = watchErrors(page);
     await turnOn(page);
     await page.goto('/course');
@@ -36,7 +36,8 @@ test.describe('with the preview on', () => {
     await expect(page.getByRole('heading', { level: 1, name: 'Southeast Asia Through Time' })).toBeVisible();
     await expect(page.getByText('Draft course: not yet reviewed', { exact: true })).toBeVisible();
     await expect(page.locator('.tw-course-section')).toHaveCount(4);
-    await expect(page.locator('.tw-course-section .tw-row')).toHaveCount(12);
+    await expect(page.locator('.tw-course-section .tw-row:not(.tw-row-quiz)')).toHaveCount(12);
+    await expect(page.locator('.tw-course-section .tw-row-quiz')).toHaveCount(4);
     expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
     const axe = await new AxeBuilder({ page }).include('main').analyze();
     expect(axe.violations.map((violation) => violation.id)).toEqual([]);
@@ -63,6 +64,27 @@ test.describe('with the preview on', () => {
       expect(new URL(src).origin).toBe(new URL(page.url()).origin);
     }
     expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
+    expect(errors).toEqual([]);
+  });
+
+  test('a section check: from the map, one question at a time, results, and its answer key for teachers', async ({ page }) => {
+    const errors = watchErrors(page);
+    await turnOn(page);
+    await page.goto('/course/southeast-asia-through-time');
+    await page.getByRole('link', { name: /Section check: Evidence and early connections/ }).click();
+    await expect(page).toHaveURL(/\/section\/evidence-and-connections\/check$/);
+    await expect(page.getByText('Draft course: not yet reviewed', { exact: true })).toBeVisible();
+    await page.getByRole('button', { name: 'Start the check' }).click();
+    for (let n = 0; n < 6; n += 1) {
+      await page.getByRole('radio').first().click();
+      await expect(page.locator('.tw-feedback-title')).toBeVisible();
+      await page.getByRole('button', { name: n < 5 ? 'Next question' : 'See your results' }).click();
+    }
+    await expect(page.getByRole('heading', { level: 1, name: /^\d out of 6$/ })).toBeVisible();
+    expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
+
+    await page.goto('/educators/section/trade-and-power/answers');
+    await expect(page.getByText('Correct answer').first()).toBeVisible();
     expect(errors).toEqual([]);
   });
 });

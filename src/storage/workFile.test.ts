@@ -273,6 +273,22 @@ describe('checking a work file', () => {
     expect(result.file.learners[0]!.quizAttempts.map((q) => q.sectionId)).toEqual(['history']);
   });
 
+  it('keeps a preview course’s lessons by their prefix and its checks by their section ids', () => {
+    const file = goodFile();
+    file.learners[0]!.progress.push(lesson('sat-01-ban-chiang-pot'), lesson('xyz-unknown'));
+    file.learners[0]!.quizAttempts.push(quiz('evidence-and-connections'));
+    const result = checkWorkFile(json(file), {
+      ...known,
+      sectionIds: new Set(['history', 'evidence-and-connections']),
+      lessonIdPrefixes: ['dw-', 'sat-'],
+    });
+    expect(result.ok).toBe(true);
+    if (!result.ok) return;
+    expect(result.skipped).toBe(1);
+    expect(result.file.learners[0]!.progress.map((p) => p.lessonId)).toContain('sat-01-ban-chiang-pot');
+    expect(result.file.learners[0]!.quizAttempts.map((q) => q.sectionId)).toContain('evidence-and-connections');
+  });
+
   it('drops fields it does not know and repeated stages, and keeps a learner with no work', () => {
     const text = broken((p) => {
       p.file.extra = 'ignored';
