@@ -53,7 +53,8 @@ describe('predict', () => {
 });
 
 describe('DW03 rounds, labelled like the gardener', () => {
-  // docs/content/DIGITAL_WORLD_SPEC.md section 6: 4 of 6, 6 of 6, 0 of 2, then 8 of 8.
+  // docs/content/DIGITAL_WORLD_SPEC.md section 6: 4 of 6, 6 of 6, 0 of 2, then 8 of 8,
+  // and (Justin's review, November 2026) 3 of 4 on leaves nobody has used.
   it.each(ACTIVITY.rounds.map((round, index) => [round.id, index] as const))('%s gives its expected result', (_id, index) => {
     const round = ACTIVITY.rounds[index]!;
     const model = train(examplesUpTo(index).map((e) => ({ id: e.id, features: e.features, label: e.gardenerSays })));
@@ -75,7 +76,15 @@ describe('DW03 rounds, labelled like the gardener', () => {
       '6/6',
       '0/2',
       '8/8',
+      '3/4',
     ]);
+  });
+
+  it('tests Round 4 on leaves no earlier round used', () => {
+    const fresh = ACTIVITY.rounds.at(-1)!;
+    const used = new Set(ACTIVITY.rounds.slice(0, -1).flatMap((r) => r.test));
+    expect(fresh.addExamples).toEqual([]);
+    expect(fresh.test.filter((id) => used.has(id))).toEqual([]);
   });
 
   it('follows the learner when a label differs from the gardener', () => {
