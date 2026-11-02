@@ -15,6 +15,7 @@ Malay is the third language in which Thinkerwell is **fully** translated, after 
 | Lesson pictures | `content/visuals/L01.svg` … | `content/ms/visuals/L01.svg` … |
 | Subtitles of the site videos | `public/video/*.en.vtt` | `public/video/*.ms.vtt` (the English lines' timings, the written version's words) |
 | Recordings (Listen) | `public/audio/en/` | `public/audio/ms/` (`docs/notes/recorded-audio.md`, "Malay") |
+| Preview courses (Digital World, Southeast Asia Through Time) | `content/courses/<id>/…` | `content/courses/<id>/ms/…`, notes and `TERMS.md` in `docs/translation/ms/notes/courses/<id>/` (not in the review spreadsheet yet) |
 | Terms to decide first | | `docs/translation/ms/KEY_TERMS.md` |
 | The brief the AI translators and reviewers worked from | | `docs/translation/ms/BRIEF.md` |
 | Per-string notes: back-translation, flags, reviewer changes, the English each string was translated from | | `docs/translation/ms/notes/*.json` |

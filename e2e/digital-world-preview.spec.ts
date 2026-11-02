@@ -224,15 +224,21 @@ test.describe('with the preview on', () => {
     await expect(page.getByRole('heading', { level: 2, name: 'For reviewers' })).toBeVisible();
   });
 
-  test('in Indonesian, the interface is translated and the lessons are marked as English', async ({ page }) => {
+  test('in Indonesian, the interface and the lessons are translated, with no Watch step', async ({ page }) => {
     await turnOn(page);
     await page.goto('/lesson/dw-what-ai-is/read');
     await page.getByRole('button', { name: /Language|Bahasa/ }).first().click();
     await page.getByRole('menuitemradio', { name: /Bahasa Indonesia/ }).or(page.getByRole('radio', { name: /Bahasa Indonesia/ })).first().click();
     await expect(page.getByText('Kursus draf: belum ditinjau')).toBeVisible();
-    await expect(page.getByText(/Untuk saat ini, pelajarannya masih dalam bahasa Inggris\./)).toBeVisible();
-    await expect(page.getByRole('heading', { level: 1, name: "What AI is, and what it isn't" })).toHaveAttribute('lang', 'en');
+    await expect(page.getByText(/Dunia Digital masih berupa draf\./)).toBeVisible();
+    await expect(page.getByText(/pelajarannya masih dalam bahasa Inggris/)).toHaveCount(0);
+    const title = page.getByRole('heading', { level: 1, name: 'Apa itu AI, dan apa yang bukan AI' });
+    await expect(title).toBeVisible();
+    await expect(title).not.toHaveAttribute('lang', 'en');
     await expect(page.locator('html')).toHaveAttribute('lang', 'id');
+    // No approved Indonesian video: Watch's address goes on to Reflect.
+    await page.goto('/lesson/dw-what-ai-is/watch');
+    await expect(page).toHaveURL(/\/lesson\/dw-what-ai-is\/reflect$/);
   });
 });
 

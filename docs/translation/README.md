@@ -13,6 +13,7 @@ Indonesian is the one language, besides English, in which Thinkerwell is **fully
 | Lessons | `content/lessons/L01.json` … | `content/id/lessons/L01.json` … |
 | Section checks | `content/quizzes/history.json` … | `content/id/quizzes/history.json` … |
 | Lesson pictures | `content/visuals/L01.svg` … | `content/id/visuals/L01.svg` … |
+| Preview courses (Digital World, Southeast Asia Through Time) | `content/courses/<id>/…` | `content/courses/<id>/id/…`, notes and `TERMS.md` in `docs/translation/id/notes/courses/<id>/` (not in the review spreadsheet yet) |
 | Terms to decide first | | `docs/translation/id/KEY_TERMS.md` |
 | Per-string notes: back-translation, flags, the English each string was translated from | | `docs/translation/id/notes/*.json` |
 | Review spreadsheet | | `docs/translation/id/review/thinkerwell-id-review.xlsx` |
