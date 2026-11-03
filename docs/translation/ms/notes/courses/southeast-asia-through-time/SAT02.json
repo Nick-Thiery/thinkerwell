@@ -1,0 +1,538 @@
+{
+  "title": {
+    "source": "How do boat planks reveal connections across the sea?",
+    "back": "How do boat planks reveal connections across the sea?",
+    "flag": true
+  },
+  "essentialQuestion": {
+    "source": "How can different clues show that people were linked across the sea, and what can they not prove?",
+    "back": "How can different clues show that people were connected across the sea, and what can they not prove?",
+    "flag": true
+  },
+  "learningGoal": {
+    "source": "Combine two kinds of evidence from Butuan to make a careful claim about links across the sea, and say what the evidence cannot show.",
+    "back": "Combine two kinds of evidence from Butuan to make a careful claim about connections across the sea, and say what the evidence cannot show.",
+    "flag": true
+  },
+  "warmUp.question": {
+    "source": "What could an old boat tell you about the people who built it?",
+    "back": "What can an old boat tell about the people who built it?",
+    "flag": true
+  },
+  "warmUp.options.0": {
+    "source": "How they built things",
+    "back": "How they built things",
+    "flag": true
+  },
+  "warmUp.options.1": {
+    "source": "Where they travelled",
+    "back": "Where they travelled",
+    "flag": true
+  },
+  "warmUp.options.2": {
+    "source": "What they carried",
+    "back": "What they carried",
+    "flag": true
+  },
+  "warmUp.options.3": {
+    "source": "Not sure yet",
+    "back": "Not sure yet",
+    "flag": true
+  },
+  "evidence.question": {
+    "source": "Which source is about the boats, and which is about other objects? Do they have the same dates?",
+    "back": "Which source is about the boats, and which source is about other objects? Are the dates the same?",
+    "flag": true
+  },
+  "evidence.cards.0.title": {
+    "source": "Four real sources about Butuan",
+    "back": "Four real sources about Butuan",
+    "flag": true
+  },
+  "evidence.cards.0.sources.0.caption": {
+    "source": "Source 1: An article by the National Museum of the Philippines, 20 September 2022",
+    "back": "Source 1: An article by the National Museum of the Philippines, 20 September 2022",
+    "flag": true
+  },
+  "evidence.cards.0.sources.0.details.0": {
+    "source": "It says the Butuan boats are built from planks, joined with a method called lashed-lug.",
+    "back": "This article says that the Butuan boats were built from planks, joined with a method called lashed-lug.",
+    "flag": true,
+    "note": "\"Lashed-lug\" (the boatbuilding method) is kept in English, as the museum names it; no Malay term was found that a reviewer could confirm. A short Malay gloss could be added if one is known."
+  },
+  "evidence.cards.0.sources.0.details.1": {
+    "source": "It says they were built between the late 700s and the early 900s, and are the oldest boats found in the Philippines.",
+    "back": "This article says that the boats were built between the late 700s and the early 900s, and are the oldest boats found in the Philippines.",
+    "flag": true
+  },
+  "evidence.cards.0.sources.0.details.2": {
+    "source": "It says boats like these may have been built with methods shared across Southeast Asia.",
+    "back": "This article says that boats like these may have been built with methods shared across Southeast Asia.",
+    "flag": true
+  },
+  "evidence.cards.0.sources.0.details.3": {
+    "source": "Limit: the same article describes Chinese bowls found at two other places in the Philippines, Mulanay and Laurel. Those bowls were not found in Butuan.",
+    "back": "Limit: the same article describes Chinese bowls found at two other places in the Philippines, namely Mulanay and Laurel. Those bowls were not found in Butuan.",
+    "flag": true
+  },
+  "evidence.cards.0.sources.1.caption": {
+    "source": "Source 2: The National Museum's page about its Ginikanan/Gigikanan gallery in Butuan",
+    "back": "Source 2: The National Museum's page about its Ginikanan/Gigikanan gallery in Butuan",
+    "flag": true
+  },
+  "evidence.cards.0.sources.1.details.0": {
+    "source": "It says the gallery shows finds dug up by treasure hunters in the 1970s.",
+    "back": "This page says that the gallery displays finds dug up by treasure hunters in the 1970s.",
+    "flag": true
+  },
+  "evidence.cards.0.sources.1.details.1": {
+    "source": "It says these finds point to early trade with China and other parts of Southeast Asia.",
+    "back": "This page says that these finds point to early trade with China and other areas of Southeast Asia.",
+    "flag": true
+  },
+  "evidence.cards.0.sources.1.details.2": {
+    "source": "Limit: the page does not give a date for each object.",
+    "back": "Limit: this page does not give a date for each object.",
+    "flag": true
+  },
+  "evidence.cards.0.sources.2.caption": {
+    "source": "Source 3: A National Museum article called \"Bulawan\", 30 September 2022",
+    "back": "Source 3: A National Museum article titled \"Bulawan\", 30 September 2022",
+    "flag": true
+  },
+  "evidence.cards.0.sources.2.details.0": {
+    "source": "It says graves in the wider Butuan and Surigao area held many Chinese wares from the 900s to the 1100s.",
+    "back": "This article says that graves in the wider Butuan and Surigao area contained many Chinese pottery wares from the 900s to the 1100s.",
+    "flag": true
+  },
+  "evidence.cards.0.sources.2.details.1": {
+    "source": "It says some later Chinese blue-and-white wares, from the 1200s and 1300s, were found there too.",
+    "back": "This article says that some later blue-and-white Chinese pottery wares, from the 1200s and 1300s, were also found there.",
+    "flag": true
+  },
+  "evidence.cards.0.sources.2.details.2": {
+    "source": "Limit: these are finds from graves. They are separate from the boats.",
+    "back": "Limit: these are finds from graves. These finds are separate from the boats.",
+    "flag": true
+  },
+  "evidence.cards.0.sources.3.caption": {
+    "source": "Source 4: A photo of boat planks at the Balangay Shrine Museum in Butuan, taken on 18 May 2015 by Lee",
+    "back": "Source 4: A photo of boat planks at the Balangay Shrine Museum in Butuan, taken on 18 May 2015 by Lee",
+    "flag": true,
+    "note": "\"Balangay Shrine Museum\" is translated \"Muzium Kuil Balangay\"; \"kuil\" usually means a temple. The site is a memorial shrine; \"Muzium Balangay Shrine\" (name kept) is an alternative."
+  },
+  "evidence.cards.0.sources.3.details.0": {
+    "source": "It shows three long, dark wooden planks on display. The nearest one has round holes along it.",
+    "back": "This picture shows three long, dark wooden planks on display. The nearest plank has round holes along it.",
+    "flag": true
+  },
+  "evidence.cards.0.sources.3.details.1": {
+    "source": "Limit: it cannot show where the boat sailed, who sailed it or what it carried.",
+    "back": "Limit: this picture cannot show where the boat sailed, who sailed in it or what it carried.",
+    "flag": true
+  },
+  "evidence.cards.1.title": {
+    "source": "Different finds, different dates",
+    "back": "Different finds, different dates",
+    "flag": true
+  },
+  "evidence.cards.1.events.0.year": {
+    "source": "Late 700s to early 900s",
+    "back": "Late 700s to early 900s",
+    "flag": true
+  },
+  "evidence.cards.1.events.0.text": {
+    "source": "The Butuan boats are built, says the National Museum (2022).",
+    "back": "The Butuan boats are built, says the National Museum (2022).",
+    "flag": true
+  },
+  "evidence.cards.1.events.1.year": {
+    "source": "900s to 1100s",
+    "back": "900s to 1100s",
+    "flag": true
+  },
+  "evidence.cards.1.events.1.text": {
+    "source": "Many of the Chinese wares later found in graves in the wider area are made.",
+    "back": "Many of the Chinese pottery wares that were later found in graves in that wider area are made.",
+    "flag": true
+  },
+  "evidence.cards.1.events.2.year": {
+    "source": "1200s to 1300s",
+    "back": "1200s to 1300s",
+    "flag": true
+  },
+  "evidence.cards.1.events.2.text": {
+    "source": "Some later Chinese blue-and-white wares, also found in the area, are made.",
+    "back": "Some later blue-and-white Chinese pottery wares, also found in that area, are made.",
+    "flag": true
+  },
+  "evidence.cards.1.events.3.year": {
+    "source": "1970s and 1980s",
+    "back": "1970s and 1980s",
+    "flag": true
+  },
+  "evidence.cards.1.events.3.text": {
+    "source": "Archaeologists explore the boats. Treasure hunters also dig up many other finds.",
+    "back": "Archaeologists study the boats. Treasure hunters also dig up many other finds.",
+    "flag": true
+  },
+  "evidence.cards.1.events.4.year": {
+    "source": "2015",
+    "back": "2015",
+    "flag": true
+  },
+  "evidence.cards.1.events.4.text": {
+    "source": "Lee photographs boat planks in a museum in Butuan.",
+    "back": "Lee takes a photo of boat planks in a museum in Butuan.",
+    "flag": true
+  },
+  "read.sections.0.heading": {
+    "source": "A boatbuilding clue",
+    "back": "A clue about boatbuilding",
+    "flag": true,
+    "note": "\"Pembinaan perahu\" for boatbuilding."
+  },
+  "read.sections.0.text": {
+    "source": "Butuan is a city on the island of Mindanao in the Philippines, close to rivers and the sea. In the 1970s and 1980s, archaeologists studied old wooden boats there, called balangay. The National Museum of the Philippines says the boats were built from planks, joined using a method called lashed-lug. It says they were built between the late 700s and the early 900s. The planks are maritime evidence: people here built boats for travel by water. But they do not record who sailed, what they carried or where they went. A line on a map from Butuan to another island would show a possible link, not a proven trip.",
+    "back": "Butuan is a city on the island of Mindanao in the Philippines, close to rivers and the sea. In the 1970s and 1980s, archaeologists studied old wooden boats there, called balangay. The National Museum of the Philippines says that the boats were built from planks, joined using a method called lashed-lug. The museum says that the boats were built between the late 700s and the early 900s. The planks are maritime evidence: people here built boats to travel by water. But the planks do not record who sailed, what they carried or where they went. A line on a map from Butuan to another island would show a possible connection, not a proven journey.",
+    "flag": true,
+    "note": "\"Late 700s to early 900s\" is \"akhir tahun 700-an hingga awal tahun 900-an\", keeping the English numbers; \"akhir abad ke-8 hingga awal abad ke-10\" is the textbook way, used only in the teachers' notes, where the English says centuries."
+  },
+  "read.sections.0.simpler": {
+    "source": "Butuan is a city in the Philippines. It is near the sea. Archaeologists found old wooden boats there. These boats are called balangay. Each boat was made of long, flat pieces of wood. They were built more than 1,000 years ago. The boats are maritime evidence. They show that people built boats to travel by water. But they do not show who sailed. They do not show where the boats went.",
+    "back": "Butuan is a city in the Philippines. It is close to the sea. Archaeologists found old wooden boats there. These boats are called balangay. Each boat was made from long, flat pieces of wood. The boats were built more than 1,000 years ago. The boats are maritime evidence. The boats show that people built boats to travel by water. But the boats do not show who sailed. The boats do not show where they went.",
+    "flag": true
+  },
+  "read.sections.1.heading": {
+    "source": "A different kind of clue",
+    "back": "Another kind of clue",
+    "flag": true
+  },
+  "read.sections.1.text": {
+    "source": "The National Museum in Butuan also shows other finds from the area. Many were dug up by treasure hunters in the 1970s. The museum says they point to early trade with China and other parts of Southeast Asia. Another museum article says graves in the wider Butuan and Surigao area held many Chinese wares, or pottery. Many were made in the 900s to 1100s, and some later. These objects were imported: made in one place and brought to another. The pottery and the boats are different finds, often from a different time and context. We can use both to ask about links across the sea. But nobody found the pottery inside a boat.",
+    "back": "The National Museum in Butuan also displays other finds from the area. Many of them were dug up by treasure hunters in the 1970s. The museum says that these finds point to early trade with China and other areas of Southeast Asia. Another museum article says that graves in the wider Butuan and Surigao area contained many Chinese wares, namely pottery. Many of them were made in the 900s to 1100s, and some later. These objects were imported: made in one place and brought to another place. The pottery and the boats are different finds, often from a different time and context. We can use both to ask about connections across the sea. But nobody found the pottery inside a boat.",
+    "flag": true
+  },
+  "read.sections.1.simpler": {
+    "source": "The museum in Butuan has other old things too. Some came from China. They were imported. That means they were made in one place and brought to another. Chinese pottery was found in graves near Butuan. Much of it is from the 900s to the 1100s. Some is later. The pottery and the boats are different finds. Each has its own context and date. We can use both as clues. But nobody found the pottery inside a boat.",
+    "back": "The museum in Butuan also has other old things. Some of them came from China. Those things were imported. That means the things were made in one place and brought to another place. Chinese pottery was found in graves near Butuan. Most of it is from the 900s to the 1100s. Some of it is later. The pottery and the boats are different finds. Each one has its own context and date. We can use both as clues. But nobody found the pottery inside a boat.",
+    "flag": true
+  },
+  "read.sections.2.heading": {
+    "source": "Test a claim",
+    "back": "Test a claim",
+    "flag": true
+  },
+  "read.sections.2.text": {
+    "source": "The second picture is a photo of old balangay planks in the Balangay Shrine Museum in Butuan. It was taken in 2015, more than 1,000 years after the boats were built. Look at the shape of the wood and the round holes along it. The photo supports one claim: people in Butuan built boats from wooden planks. A bigger claim, that people in the region were linked by sea, needs more clues, such as imported objects. The photo alone cannot show the route of this boat. It also cannot tell us if trade was always fair or peaceful.",
+    "back": "The second picture is a photo of old balangay planks in the Balangay Shrine Museum in Butuan. The picture was taken in 2015, more than 1,000 years after the boats were built. Look at the shape of the wood and the round holes along it. The picture supports one claim: people in Butuan built boats from wooden planks. A bigger claim, that people in the region were connected by sea, needs more clues, such as imported objects. The picture alone cannot show the route of this boat. The picture also cannot tell us whether trade was always fair or peaceful.",
+    "flag": true
+  },
+  "read.sections.2.simpler": {
+    "source": "The second picture is a photo of old pieces of a boat. They are in a museum in Butuan. The photo is from 2015. Can you see the holes in the wood? The photo shows that people built boats from wood. We need more clues to show links by sea. Imported things are one clue. The photo does not show where this boat went. It does not show if trade was fair.",
+    "back": "The second picture is a photo of pieces of an old boat. The pieces are in a museum in Butuan. This picture is from 2015. Can you see the holes in the wood? The picture shows that people built boats from wood. We need more clues to show connections by sea. Imported things are one clue. The picture does not show where this boat went. The picture does not show whether the trade was fair.",
+    "flag": true
+  },
+  "read.glossary.0.word": {
+    "source": "maritime",
+    "back": "maritime",
+    "flag": true
+  },
+  "read.glossary.0.definition": {
+    "source": "About the sea, and travel or trade by water.",
+    "back": "Related to the sea, and travel or trade by water.",
+    "flag": true
+  },
+  "read.glossary.0.example": {
+    "source": "Butuan's old boats are maritime evidence.",
+    "back": "Butuan's old boats are maritime evidence.",
+    "flag": true
+  },
+  "read.glossary.1.word": {
+    "source": "balangay",
+    "back": "balangay",
+    "flag": true
+  },
+  "read.glossary.1.definition": {
+    "source": "A kind of wooden boat made from planks, found at Butuan.",
+    "back": "A kind of wooden boat made from planks, found at Butuan.",
+    "flag": true
+  },
+  "read.glossary.1.example": {
+    "source": "Archaeologists studied the remains of balangay boats in Butuan.",
+    "back": "Archaeologists studied the remains of balangay boats in Butuan.",
+    "flag": true
+  },
+  "read.glossary.2.word": {
+    "source": "imported",
+    "back": "imported",
+    "flag": true,
+    "note": "\"Diimport\" (imported) is the glossary word and appears in both texts. \"Diimpot\" is a spelling also seen; DBP gives \"import\"."
+  },
+  "read.glossary.2.definition": {
+    "source": "Made in one place, then brought to another place.",
+    "back": "Made in one place, then brought to another place.",
+    "flag": true
+  },
+  "read.glossary.2.example": {
+    "source": "Chinese pottery found in graves near Butuan was imported.",
+    "back": "The Chinese pottery found in graves near Butuan was imported.",
+    "flag": true
+  },
+  "read.glossary.3.word": {
+    "source": "context",
+    "back": "context",
+    "flag": true
+  },
+  "read.glossary.3.definition": {
+    "source": "Where something was found, and what was found near it.",
+    "back": "The place where something was found, and what was found near it.",
+    "flag": true
+  },
+  "read.glossary.3.example": {
+    "source": "The boats and the Chinese pottery were found in a different context.",
+    "back": "The boats and the Chinese pottery were found in different contexts.",
+    "flag": true
+  },
+  "read.checks.0.question": {
+    "source": "Can the planks in the photo prove one exact trip?",
+    "back": "Can the planks in the picture prove one exact journey?",
+    "flag": true
+  },
+  "read.checks.0.options.0.text": {
+    "source": "No, they show boatbuilding, not a route",
+    "back": "No, the planks show boatbuilding, not a route",
+    "flag": true
+  },
+  "read.checks.0.options.0.feedback": {
+    "source": "Yes. The planks show how people built boats. A route would need other records or finds, and it might stay uncertain.",
+    "back": "Yes. The planks show how people built boats. A route needs other records or finds, and the route might remain uncertain.",
+    "flag": true
+  },
+  "read.checks.0.options.1.text": {
+    "source": "Yes, the holes show exactly where it sailed",
+    "back": "Yes, the holes show exactly where it sailed",
+    "flag": true
+  },
+  "read.checks.0.options.1.feedback": {
+    "source": "Not quite. Holes in the wood can tell us about how the boat was built, not where it went. Look at the third part of the reading.",
+    "back": "Not quite. Holes in the wood can tell us about how the boat was built, not where it went. Look at the third part of the reading.",
+    "flag": true
+  },
+  "read.checks.0.options.2.text": {
+    "source": "Yes, old wood always shows a route",
+    "back": "Yes, old wood always shows a route",
+    "flag": true
+  },
+  "read.checks.0.options.2.feedback": {
+    "source": "Not quite. Wood cannot record a journey. Look at what the first part of the reading says the planks do not record.",
+    "back": "Not quite. Wood cannot record a journey. Look at what the first part of the reading says about the things the planks do not record.",
+    "flag": true
+  },
+  "read.checks.1.question": {
+    "source": "Why should the boats and the Chinese pottery have separate dates?",
+    "back": "Why should the boats and the Chinese pottery have separate dates?",
+    "flag": true
+  },
+  "read.checks.1.options.0.text": {
+    "source": "The pottery was found inside the boats",
+    "back": "The pottery was found inside the boats",
+    "flag": true
+  },
+  "read.checks.1.options.0.feedback": {
+    "source": "Not quite. Nobody found the pottery inside a boat. Look at the end of the second part of the reading.",
+    "back": "Not quite. Nobody found the pottery inside a boat. Look at the end of the second part of the reading.",
+    "flag": true
+  },
+  "read.checks.1.options.1.text": {
+    "source": "They are different finds from different times",
+    "back": "They are different finds from different times",
+    "flag": true
+  },
+  "read.checks.1.options.1.feedback": {
+    "source": "Yes. They are separate finds, often from a different time and context. Each clue needs its own date.",
+    "back": "Yes. They are separate finds, often from a different time and context. Each clue needs its own date.",
+    "flag": true
+  },
+  "read.checks.1.options.2.text": {
+    "source": "The boats were built after the pottery",
+    "back": "The boats were built after the pottery",
+    "flag": true
+  },
+  "read.checks.1.options.2.feedback": {
+    "source": "Not quite. The museum dates the boats to the late 700s to early 900s. Much of the pottery is from later. Check the dates in the reading.",
+    "back": "Not quite. The museum gives the boats a date of the late 700s to the early 900s. Most of the pottery is later. Check the dates in the reading.",
+    "flag": true
+  },
+  "read.checks.2.question": {
+    "source": "What kind of object could help show where people from Butuan travelled or traded?",
+    "back": "What kind of object could help show where people from Butuan travelled or traded?",
+    "flag": true
+  },
+  "read.checks.2.placeholder": {
+    "source": "An object like ... could help, because ...",
+    "back": "An object like ... could help, because ...",
+    "flag": true
+  },
+  "write.prompt": {
+    "source": "Use two clues from the lesson to make a careful claim about Butuan's links across the sea. Then say one thing we cannot yet say.",
+    "back": "Use two clues from this lesson to make a careful claim about Butuan's connections across the sea. Then say one thing we cannot say yet.",
+    "flag": true
+  },
+  "write.sentenceStarters.0": {
+    "source": "The boat remains show ...",
+    "back": "The remains of the boat show ...",
+    "flag": true
+  },
+  "write.sentenceStarters.1": {
+    "source": "The other objects suggest ...",
+    "back": "The other objects suggest ...",
+    "flag": true
+  },
+  "write.sentenceStarters.2": {
+    "source": "These clues are different because ...",
+    "back": "These clues are different because ...",
+    "flag": true
+  },
+  "write.sentenceStarters.3": {
+    "source": "We cannot yet say ...",
+    "back": "We cannot yet say ...",
+    "flag": true
+  },
+  "write.sentenceStarters.4": {
+    "source": "Another source that could help is ...",
+    "back": "Another source that could help is ...",
+    "flag": true
+  },
+  "write.planningBoxes.0": {
+    "source": "My main idea",
+    "back": "My main idea",
+    "flag": true
+  },
+  "write.planningBoxes.1": {
+    "source": "Evidence from the lesson",
+    "back": "Evidence from the lesson",
+    "flag": true
+  },
+  "write.planningBoxes.2": {
+    "source": "A question I still have",
+    "back": "A question I still have",
+    "flag": true
+  },
+  "write.selfCheck.0": {
+    "source": "I used the boats as one clue.",
+    "back": "I used the boats as one clue.",
+    "flag": true
+  },
+  "write.selfCheck.1": {
+    "source": "I used imported objects as a second clue.",
+    "back": "I used imported objects as a second clue.",
+    "flag": true
+  },
+  "write.selfCheck.2": {
+    "source": "I said one thing we cannot yet say.",
+    "back": "I said one thing we cannot say yet.",
+    "flag": true
+  },
+  "write.example": {
+    "source": "The boat remains show that people in Butuan built wooden boats more than 1,000 years ago. The other objects suggest that people there had contact with China. Chinese pottery was found in graves nearby. These clues are different because they are separate finds. Much of the pottery is later than the boats. We cannot yet say where the boat in the photo went. Another source that could help is a record from a port across the sea.",
+    "back": "The remains of the boat show that people in Butuan built wooden boats more than 1,000 years ago. The other objects suggest that people there were in contact with China. Chinese pottery was found in graves nearby. These clues are different because they are separate finds. Most of the pottery is later than the boats. We cannot yet say where the boat in the picture went. Another source that could help is a record from a port across the sea.",
+    "flag": true
+  },
+  "speak.partnerTask": {
+    "source": "With a partner, answer two questions. What does the boat alone show? What extra source would help you make a claim about trade?",
+    "back": "With a friend, answer two questions. What does the boat alone show? What extra source could help you make a claim about trade?",
+    "flag": true
+  },
+  "speak.independentTask": {
+    "source": "Say or write two sentences: one about what the boat shows, and one about a source that could support a claim about trade.",
+    "back": "Say or write two sentences: one about what the boat shows, and one about a source that could support a claim about trade.",
+    "flag": true
+  },
+  "reflect.prompts.0.text": {
+    "source": "A question I would ask the person who dug up the boat is ...",
+    "back": "One question I would ask the person who dug up the boat is ...",
+    "flag": true
+  },
+  "reflect.prompts.1.text": {
+    "source": "Before I draw a solid line on a map between two places, I would want ...",
+    "back": "Before I draw a solid line on a map between two places, I want ...",
+    "flag": true
+  },
+  "reflect.completionMessage": {
+    "source": "You finished Lesson 2. You used two different clues to make a careful claim, and said what the evidence cannot show.",
+    "back": "You finished Lesson 2. You used two different clues to make a careful claim, and said what the evidence cannot show.",
+    "flag": true
+  },
+  "visual.alt": {
+    "source": "A modern map of the Philippines and nearby seas. A boat symbol marks Butuan on Mindanao. Dashed lines from Butuan toward China, mainland Southeast Asia and Sumatra are labelled possible connections, not a documented voyage. Separate tags give the boats' dates and the later dates of the imported wares.",
+    "back": "A modern map of the Philippines and the seas around it. A boat symbol marks Butuan on Mindanao. Dashed lines from Butuan towards China, mainland Southeast Asia and Sumatra are labelled as possible connections, not a recorded voyage. Separate labels give the boats' dates and the later dates of the imported wares.",
+    "flag": true
+  },
+  "visual.caption": {
+    "source": "A modern map made for this lesson. The dashed lines show possible links, not the route of any real boat.",
+    "back": "A modern map made for this lesson. The dashed lines show possible connections, not the route of any real boat.",
+    "flag": true
+  },
+  "visual.lookClosely": {
+    "source": "Why is the connection drawn with a dashed line?",
+    "back": "Why is the connection drawn with a dashed line?",
+    "flag": true
+  },
+  "secondVisual.alt": {
+    "source": "Three long, dark, cracked wooden planks rest on pale blue blocks in a museum. The nearest plank has round holes along its length.",
+    "back": "Three long, dark, cracked wooden planks rest on pale blue blocks in a museum. The nearest plank has round holes along it.",
+    "flag": true
+  },
+  "secondVisual.caption": {
+    "source": "Old boat planks on display at the Balangay Shrine Museum in Butuan, photographed in 2015. A photo of planks cannot show where the boat sailed.",
+    "back": "Old boat planks on display at the Balangay Shrine Museum in Butuan, in a photo from 2015. A photo of planks cannot show where the boat sailed.",
+    "flag": true
+  },
+  "secondVisual.lookClosely": {
+    "source": "What can you see about how the boat was built? What cannot be seen?",
+    "back": "What can you see about how the boat was built? What cannot be seen?",
+    "flag": true
+  },
+  "sources.0.label": {
+    "source": "National Museum of the Philippines (2022): The 9th to 10th century archaeological evidence of maritime relations between the Philippines and the islands of Southeast Asia",
+    "back": "National Museum of the Philippines (2022): The 9th to 10th century archaeological evidence of maritime relations between the Philippines and the islands of Southeast Asia",
+    "flag": true
+  },
+  "sources.1.label": {
+    "source": "National Museum of the Philippines: Butuan Boat Site Museum",
+    "back": "National Museum of the Philippines: Butuan Boat Site Museum (Butuan Boat Site Museum)",
+    "flag": true
+  },
+  "sources.2.label": {
+    "source": "National Museum of the Philippines, Butuan: Ginikanan/Gigikanan gallery",
+    "back": "National Museum of the Philippines, Butuan: Ginikanan/Gigikanan gallery",
+    "flag": true
+  },
+  "sources.3.label": {
+    "source": "National Museum of the Philippines (2022): Bulawan, archaeological and historical accounts of the pre-colonial gold of Butuan and Surigao",
+    "back": "National Museum of the Philippines (2022): Bulawan, archaeological and historical accounts of the pre-colonial gold of Butuan and Surigao",
+    "flag": true
+  },
+  "sources.4.label": {
+    "source": "UNESCO World Heritage Centre, Tentative List (2006): Butuan Archaeological Sites",
+    "back": "UNESCO World Heritage Centre, Tentative List (2006): Butuan Archaeological Sites (Butuan Archaeological Sites)",
+    "flag": true
+  },
+  "sensitiveNotes.0": {
+    "source": "Many of the imported wares come from graves, and some finds were dug up by treasure hunters. The lesson says so plainly, without detail; keep the focus on objects and dates. Exchange across the sea was not always fair or peaceful, but the lesson makes no claim either way. Never ask learners about their own or their family's journeys by sea, home countries, religion or ethnicity.",
+    "back": "Many of the imported wares came from graves, and some finds were dug up by treasure hunters. This lesson says so plainly, without detail; keep the focus on objects and dates. Exchange across the sea was not always fair or peaceful, but this lesson makes no claim either way. Never ask learners about their own or their family's journeys by sea, home country, religion or ethnicity.",
+    "flag": true
+  },
+  "educatorNotes.0": {
+    "source": "Aim: learners make a two-clue claim about links across the sea and name what the evidence cannot show. Evidence move: put the boats' date (late 700s to early 900s) and the imported wares' dates (many 900s–1100s, some 1200s–1300s) in two separate boxes on the board before anyone links them. A sound answer uses two clues for wider contacts without claiming one voyage or one deposit.",
+    "back": "Aim: learners make a two-clue claim about connections across the sea and name what the evidence cannot show. Evidence step: put the boats' date (late 700s to early 900s) and the imported wares' dates (many from the 900s to 1100s, some from the 1200s to 1300s) in two separate boxes on the board before anyone links them. A good answer uses two clues for wider connections without claiming one voyage or one deposit.",
+    "flag": true,
+    "note": "\"Longgokan\" for a (single) deposit of objects; check it reads as an archaeological deposit."
+  },
+  "educatorNotes.1": {
+    "source": "Misconceptions to address: the planks in the photo are not dated to the same context as every other object, and the wares were not found in a boat. The National Museum's 2022 maritime article mentions Changsha ceramics from Mt Kamhantik in Mulanay (Quezon) and from Laurel (Batangas), not from Butuan; Butuan's own evidence is the Butuan gallery and the grave finds of the wider Agusan del Norte and Surigao del Sur area. Source caveat: published dates for the boats differ. The 2022 article gives the late 8th to early 10th centuries, while UNESCO's 2006 Tentative List entry (submitted by the National Museum) gives the 10th to 13th centuries; that difference is itself a good example of evidence being revised.",
+    "back": "Misconceptions to address: the planks in the picture are not dated in the same context as every other object, and the wares were not found in a boat. The National Museum's 2022 maritime article mentions Changsha ceramics from Mount Kamhantik in Mulanay (Quezon) and from Laurel (Batangas), not from Butuan; Butuan's own evidence is the Butuan gallery and the grave finds in the wider Agusan del Norte and Surigao del Sur area. Source caveat: the published dates for the boats differ. The 2022 article gives the late 8th to early 10th centuries, while UNESCO's 2006 Tentative List entry (sent in by the National Museum) gives the 10th to 13th centuries; that difference is itself a good example of evidence being revised.",
+    "flag": true
+  }
+}

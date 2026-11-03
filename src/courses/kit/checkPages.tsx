@@ -1,14 +1,15 @@
 import { AnswerKeyPage } from '../../pages/educators/AnswerKeyPage';
 import { NotFoundPage } from '../../pages/NotFoundPage';
 import { SectionCheckPage } from '../../pages/SectionCheckPage';
-import { usePreviewCourse } from './course';
+import { useCourseContent, usePreviewCourse } from './course';
 import { PreviewCourseFrame } from './Frame';
 
 /** A section of the course, with its check, or nothing (an unknown section, or a course without checks). */
 function useSectionWithCheck(sectionId: string) {
   const course = usePreviewCourse();
-  const section = course.content.getSection(sectionId.toLowerCase());
-  const quiz = section ? course.content.getQuiz?.(section.id) : undefined;
+  const content = useCourseContent(course);
+  const section = content.getSection(sectionId.toLowerCase());
+  const quiz = section ? content.getQuiz?.(section.id) : undefined;
   return { course, section, quiz };
 }
 

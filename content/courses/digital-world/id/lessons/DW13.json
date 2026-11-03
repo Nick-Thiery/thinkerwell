@@ -1,0 +1,258 @@
+{
+  "title": "Memeriksa foto, video dan suara",
+  "essentialQuestion": "Bagaimana kamu bisa tahu apakah sebuah foto, video atau suara itu asli?",
+  "learningGoal": "Menjelaskan bagaimana AI bisa membuat gambar, video dan suara yang realistis, dan memeriksa sumbernya sebelum memercayai atau membagikannya.",
+  "warmUp": {
+    "question": "Kamu melihat foto labu sebesar mobil. Apa yang pertama kali kamu pikirkan?",
+    "options": [
+      "Itu asli",
+      "Itu palsu",
+      "Aku akan memeriksanya dulu",
+      "Tidak yakin"
+    ]
+  },
+  "evidence": {
+    "label": "Contoh fiksi yang dibuat untuk pelajaran ini.",
+    "question": "Siapa yang mengunggah setiap unggahan? Apa yang bisa kamu periksa? Mana yang belum bisa kamu pastikan?",
+    "cards": [
+      {
+        "title": "Unggahan di grup berita Greenhill",
+        "cases": [
+          {
+            "name": "Unggahan A: labu raksasa",
+            "body": "Foto labu sebesar mobil, diunggah oleh sebuah halaman tanpa nama. Halaman resmi kebun Greenhill sendiri mengatakan mereka tidak menanam labu raksasa tahun ini. Tangan petani di foto itu terlihat agak aneh."
+          },
+          {
+            "name": "Unggahan B: kambing yang bicara",
+            "body": "Video seekor kambing yang mengucapkan “Selamat pagi” dengan kata-kata yang jelas. Klub komedi Greenhill yang mengunggahnya. Keterangannya berbunyi: “Dibuat dengan AI, cuma untuk lucu-lucuan.”"
+          },
+          {
+            "name": "Unggahan C: hujan di pasar",
+            "body": "Foto pasar saat hujan deras, diunggah oleh halaman resmi pasar itu sendiri pagi ini. Orang-orang lain juga mengunggah foto hujan yang sama."
+          },
+          {
+            "name": "Unggahan D: pesan suara",
+            "body": "Sebuah pesan suara yang terdengar seperti Pelatih Ana. Isinya: “Pertandingan sepak bola dipindah ke jam enam pagi.” Pesan itu datang dari nomor yang tidak dikenal siapa pun. Papan pengumuman di balai warga masih mengatakan jam empat sore."
+          },
+          {
+            "name": "Unggahan E: kucing di atap",
+            "body": "Foto seekor kucing yang tidur di atap. Tidak ada yang terlihat aneh. Tidak ada nama dan tidak ada tanggal."
+          },
+          {
+            "name": "Unggahan F: penjual buah",
+            "body": "Foto seorang penjual buah. Kulitnya terlihat sangat mulus, dan latar belakangnya buram. Klub foto Greenhill mengunggahnya dengan nama fotografernya, dan mengatakan foto itu diambil dengan ponsel pada sore hari."
+          }
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "title": "Periksa setiap unggahan",
+    "instructions": "Masukkan setiap unggahan Greenhill ke dalam satu kelompok. Tidak ada nilai. Setelah kamu menempatkan sebuah unggahan, kamu bisa melihat satu jawaban yang mungkin dan alasannya.",
+    "groups": [
+      {
+        "label": "Kemungkinan asli"
+      },
+      {
+        "label": "Kemungkinan palsu"
+      },
+      {
+        "label": "Dibuat dengan AI, dan ada keterangannya"
+      },
+      {
+        "label": "Belum bisa dipastikan: periksa dulu"
+      }
+    ],
+    "items": [
+      {
+        "text": "Unggahan A: labu raksasa",
+        "feedback": "Halaman resmi kebun itu sendiri mengatakan mereka tidak menanam labu raksasa, dan halaman yang mengunggahnya tidak punya nama. Tangan yang aneh hanya alasan untuk memeriksa. Foto asli juga bisa terlihat aneh."
+      },
+      {
+        "text": "Unggahan B: kambing yang bicara",
+        "feedback": "Klub komedi itu mengatakan dengan jelas bahwa mereka memakai AI, untuk lucu-lucuan. Itu bukan tipuan. Video itu baru menjadi tipuan kalau seseorang membagikannya tanpa keterangan itu, seolah-olah asli."
+      },
+      {
+        "text": "Unggahan C: hujan di pasar",
+        "feedback": "Foto itu berasal dari halaman resmi pasar itu sendiri, dan orang-orang lain menunjukkan hujan yang sama."
+      },
+      {
+        "text": "Unggahan D: pesan suara",
+        "feedback": "Pesan itu terdengar seperti Pelatih Ana, tetapi datang dari nomor yang tidak dikenal. Papan pengumuman mengatakan hal lain. Tanyakan langsung kepadanya, atau telepon nomornya yang biasa."
+      },
+      {
+        "text": "Unggahan E: kucing di atap",
+        "feedback": "Tidak ada yang terlihat aneh, tetapi gambar palsu yang baru bisa terlihat sempurna. Tanpa nama dan tanggal, kamu belum bisa memeriksa sumbernya. “Kemungkinan asli” juga masuk akal, kalau kamu memberi alasan."
+      },
+      {
+        "text": "Unggahan F: penjual buah",
+        "feedback": "Klub foto itu mengatakan siapa yang mengambilnya dan bagaimana caranya. Foto ponsel yang asli juga bisa terlihat mulus dan buram, apalagi pada sore hari."
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "AI bisa membuat gambar, video dan suara",
+        "text": "Beberapa alat AI bisa menciptakan gambar, video dan suara yang baru. Alat-alat ini belajar dari contoh asli dalam jumlah yang sangat besar, jadi hasilnya bisa terlihat dan terdengar realistis. Banyak orang memakai alat-alat ini secara terbuka untuk seni, film atau pendidikan, dan menjelaskan bahwa karya itu dibuat oleh AI. Konten palsu itu berbeda: konten itu berpura-pura menunjukkan sesuatu yang nyata padahal tidak pernah terjadi. Deepfake adalah konten palsu yang meniru wajah atau suara orang sungguhan, sering untuk menipu orang demi uang atau perhatian. Di Greenhill, klub komedi mengunggah video kambing yang bicara dengan keterangan “Dibuat dengan AI, cuma untuk lucu-lucuan”. Orang lain mengunggah foto labu sebesar mobil. Apakah foto itu asli?",
+        "simpler": "Beberapa alat AI membuat gambar, video dan suara yang baru. Alat-alat itu belajar dari banyak sekali contoh asli. Jadi hasilnya terlihat realistis. Ada orang yang terang-terangan mengatakan bahwa AI membuat karya seni atau pelajaran mereka. Konten palsu itu berbeda. Konten palsu menunjukkan sesuatu yang tidak pernah terjadi, seolah-olah nyata. Deepfake meniru wajah atau suara orang sungguhan untuk menipu orang. Di Greenhill, kambing bicara dari klub komedi diberi keterangan bahwa AI membuatnya. Tetapi apakah labu raksasa itu asli?"
+      },
+      {
+        "heading": "Detail yang aneh adalah petunjuk, bukan bukti",
+        "text": "Gambar buatan AI kadang punya kesalahan kecil, seperti jari tambahan, huruf yang berantakan pada papan nama, atau latar belakang yang menyatu dengan dinding. Dalam video, gerak mulut mungkin tidak cocok dengan kata-katanya. Detail-detail ini bisa menjadi petunjuk, tetapi bukan bukti. Alat-alat yang lebih baru membuat lebih sedikit kesalahan, jadi gambar palsu bisa terlihat sempurna. Foto asli juga bisa terlihat aneh, misalnya ketika buram atau diambil di tempat yang kurang terang. Dalam sebuah penelitian tahun 2025, para peserta salah menyebut sekitar satu dari empat foto asli sebagai buatan AI. Foto penjual buah itu menunjukkan kulit yang sangat mulus, tetapi klub foto mengatakan foto itu diambil dengan ponsel.",
+        "simpler": "Gambar buatan AI kadang punya kesalahan, seperti enam jari atau huruf yang berantakan. Ini adalah petunjuk. Tetapi petunjuk bukan bukti. Alat yang baru membuat lebih sedikit kesalahan. Foto asli juga bisa terlihat aneh, kalau gelap atau tidak tajam. Dalam sebuah penelitian tahun 2025, orang-orang melihat foto asli. Mereka menyebut sekitar satu dari empat foto itu buatan AI. Kulit penjual buah itu sangat mulus. Tetapi foto itu diambil dengan ponsel."
+      },
+      {
+        "heading": "Periksa sumbernya",
+        "text": "Pemeriksaan yang paling berguna adalah memeriksa sumbernya. Siapa yang mengunggahnya, dan kapan? Bisakah kamu menemukan dari mana asalnya pertama kali? Apakah sumber tepercaya lain menunjukkan hal yang sama? Halaman resmi kebun itu sendiri mengatakan mereka tidak menanam labu raksasa, jadi foto itu kemungkinan palsu. Foto hujan berasal dari halaman resmi pasar itu sendiri, dan orang-orang lain mengunggah hujan yang sama, jadi foto itu kemungkinan asli. Untuk pesan suara, hubungi orangnya dengan cara lain. Pesan Pelatih Ana datang dari nomor yang tidak dikenal, jadi tanyakan langsung kepadanya. Kalau kamu masih belum bisa memastikannya, katakan begitu, dan jangan bagikan dulu.",
+        "simpler": "Jadi, periksa sumbernya. Siapa yang mengirim unggahan itu? Kapan? Dari mana asalnya pertama kali? Apakah orang yang kamu percaya menunjukkan hal yang sama? Kebun itu bilang tidak punya labu raksasa. Jadi, foto itu kemungkinan palsu. Foto hujan berasal dari pasar itu sendiri. Orang lain mengunggah hujan yang sama. Pesan Pelatih Ana datang dari nomor yang tidak dikenal. Jadi, tanyakan langsung kepadanya. Belum yakin? Jangan bagikan dulu."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "realistis",
+        "definition": "Terlihat atau terdengar seperti aslinya.",
+        "example": "Awalnya, foto labu itu terlihat realistis."
+      },
+      {
+        "word": "palsu",
+        "definition": "Dibuat supaya terlihat asli, padahal tidak asli.",
+        "example": "Foto labu itu kemungkinan palsu."
+      },
+      {
+        "word": "deepfake",
+        "definition": "Gambar, video atau suara palsu buatan AI yang meniru orang sungguhan.",
+        "example": "Deepfake suara Pelatih Ana bisa menipu tim sepak bola."
+      },
+      {
+        "word": "petunjuk",
+        "definition": "Tanda kecil yang membantumu mengetahui sesuatu.",
+        "example": "Jari tambahan adalah petunjuk untuk memeriksa sebuah gambar. Itu bukan bukti."
+      },
+      {
+        "word": "sumber",
+        "forms": [
+          "sumbernya"
+        ],
+        "definition": "Orang atau tempat asal sebuah informasi.",
+        "example": "Halaman resmi kebun itu sendiri adalah sumber yang baik tentang labunya."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Apa alasan terbaik untuk menduga bahwa foto labu itu palsu?",
+        "options": [
+          {
+            "text": "Kebun itu mengatakan tidak menanam labu raksasa",
+            "feedback": "Benar. Kebun itu adalah sumber terbaik tentang labunya sendiri, dan halaman yang mengunggah foto itu tidak punya nama."
+          },
+          {
+            "text": "Tangan petani di foto itu terlihat agak aneh",
+            "feedback": "Belum tepat. Tangan yang aneh adalah alasan untuk memeriksa, bukan bukti. Foto asli juga bisa terlihat aneh. Baca lagi bagian kedua."
+          },
+          {
+            "text": "Labu di foto itu berwarna oranye yang sangat terang",
+            "feedback": "Belum tepat. Labu asli juga berwarna oranye. Baca tentang memeriksa sumber di bagian ketiga."
+          }
+        ]
+      },
+      {
+        "question": "Sebuah pesan suara terdengar persis seperti Pelatih Ana. Apa hal terbaik yang bisa dilakukan?",
+        "options": [
+          {
+            "text": "Bagikan ke seluruh tim sekarang",
+            "feedback": "Belum tepat. AI bisa meniru suara, jadi mungkin itu bukan dia. Baca lagi bagian ketiga."
+          },
+          {
+            "text": "Percaya saja karena suaranya mirip dia",
+            "feedback": "Belum tepat. Terdengar asli bukanlah bukti. Baca tentang pesan suara di bagian ketiga."
+          },
+          {
+            "text": "Tanyakan langsung kepada Pelatih Ana dulu",
+            "feedback": "Benar. Memastikan kepada orangnya dengan cara lain adalah cara menguji terbaik untuk pesan suara."
+          }
+        ]
+      },
+      {
+        "question": "Mengapa satu detail yang aneh dalam sebuah gambar tidak cukup untuk membuktikan bahwa gambar itu palsu?",
+        "placeholder": "Itu tidak cukup karena ... Jadi, aku juga harus ..."
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Pilih satu unggahan dari grup berita Greenhill. Katakan kamu memasukkannya ke kelompok mana, dan jelaskan bagaimana kamu memeriksanya atau akan memeriksanya.",
+    "sentenceStarters": [
+      "Aku memilih ...",
+      "Aku memasukkannya ke “___” karena ...",
+      "Sumbernya adalah ...",
+      "Untuk memeriksanya, aku akan ...",
+      "Sebelum aku membagikannya, aku ..."
+    ],
+    "planningBoxes": [
+      "Ide utamaku",
+      "Bukti dari pelajaran",
+      "Mengapa ini penting",
+      "Pertanyaan yang masih aku punya"
+    ],
+    "selfCheck": [
+      "Aku menyebutkan satu unggahan dan kelompok yang aku pilih.",
+      "Aku memberi alasan dari unggahan itu.",
+      "Aku mengatakan bagaimana aku akan memeriksa sumbernya."
+    ],
+    "example": "Aku memilih Unggahan A, labu raksasa. Aku memasukkannya ke “Kemungkinan palsu” karena halaman resmi kebun itu sendiri mengatakan mereka tidak menanam labu raksasa tahun ini. Sumbernya adalah halaman tanpa nama, jadi aku tidak bisa melihat siapa yang membuatnya. Tangan petani itu terlihat aneh, tetapi itu hanya alasan untuk memeriksa, karena foto asli juga bisa terlihat aneh. Untuk memeriksanya, aku juga akan bertanya kepada seseorang di pasar. Sebelum aku membagikannya, aku akan menunggu sampai aku tahu lebih banyak."
+  },
+  "speak": {
+    "partnerTask": "Temanmu memilih satu unggahan Greenhill. Kamu memilih kelompoknya, memberi satu alasan, dan mengatakan bagaimana kamu akan memeriksanya. Lalu bergantian.",
+    "independentTask": "Ucapkan dengan lantang tiga cara memeriksa gambar, video atau suara. Lalu katakan mengapa detail yang aneh bukanlah bukti."
+  },
+  "watch": {
+    "why": "Video ini dibuat bersama para pemeriksa fakta remaja, dan menunjukkan petunjuk-petunjuk dalam gambar, video dan suara buatan AI.",
+    "beforeQuestion": "Menurutmu, apa yang mungkin salah dalam sebuah video palsu?",
+    "afterQuestion": "Mengapa tidak cukup memercayai alat yang mengatakan apakah sesuatu itu palsu?",
+    "summary": "Video ini berasal dari sebuah seri yang dibuat bersama tim pemeriksa fakta remaja. Video ini menjelaskan bahwa sebagian orang memakai AI untuk membuat gambar, video dan suara palsu. Mereka sering melakukannya untuk mendapat uang, perhatian atau kekuasaan. Video ini menunjukkan petunjuk yang perlu dicari. Gambar buatan AI bisa punya tangan yang aneh, bayangan yang janggal dan latar belakang yang aneh. Dalam video buatan AI, cari tepi yang buram atau berkedip. Periksa bayangannya, dan periksa apakah gerak bibir cocok dengan kata-katanya. Untuk suara buatan AI, dengarkan nada suaranya dan bunyi-bunyi di latar belakang. Video ini juga menunjukkan alat-alat yang bisa membantu, seperti pencarian yang menemukan di mana lagi sebuah gambar muncul di internet. Tetapi alat-alat ini tidak selalu benar. Manusia tetap perlu berpikir dan memeriksa sebelum membagikan.",
+    "keyPoints": [
+      "Konten palsu buatan AI bisa punya petunjuk: tangan, bayangan, latar belakang, tepi atau bibir yang aneh.",
+      "Untuk suara, dengarkan nada suaranya dan bunyi di latar belakang.",
+      "Alat pendeteksi konten palsu tidak selalu benar, jadi manusia tetap perlu memeriksa."
+    ],
+    "contentNote": "Bahasa Inggris Amerika yang cepat, dengan contoh nyata konten buatan AI. Video ini menyebut alat-alat yang butuh internet (pencarian gambar terbalik dan aplikasi pendeteksi AI); di perangkat tanpa internet, pelajar bisa bertanya kepada guru. Ringkasannya ditulis dari rencana pelajaran PBS NewsHour Classroom untuk video ini, bukan dari menontonnya. Tonton dulu; pelajar bisa membaca ringkasan tertulisnya saja."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Sebelum aku membagikan gambar atau video yang mengejutkan, aku akan ..."
+      },
+      {
+        "text": "Satu hal tentang konten palsu buatan AI yang membuatku terkejut adalah ..."
+      }
+    ],
+    "completionMessage": "Kamu sudah menyelesaikan Pelajaran 13. Kamu memeriksa dari mana gambar, video dan suara berasal, dan melihat mengapa detail yang aneh adalah petunjuk, bukan bukti."
+  },
+  "visual": {
+    "alt": "Unggahan labu raksasa di samping sebuah kartu yang mengatakan untuk memeriksa sumbernya: siapa yang mengunggahnya, kapan, dari mana asalnya pertama kali, dan apakah orang lain menunjukkan hal yang sama. Sebuah catatan mengatakan bahwa detail yang aneh adalah alasan untuk memeriksa, bukan bukti."
+  },
+  "sources": [
+    {
+      "label": "Kamali, Nakamura, Kumar, Chatzimparmpas, Hullman dan Groh (2025): Characterizing photorealism and artifacts in diffusion model-generated images, CHI '25 (ciri-ciri foto realistis dan kejanggalan pada gambar buatan AI)"
+    },
+    {
+      "label": "News Literacy Project (10 Maret 2026): Scroll smarter, AI frustrations (menggulir dengan lebih cerdas: kesulitan karena AI)"
+    },
+    {
+      "label": "PBS NewsHour Classroom: Lesson plan, AI Unlocked, how to recognize AI-generated content (rencana pelajaran: cara mengenali konten buatan AI; 2025)"
+    },
+    {
+      "label": "US Federal Trade Commission: Family emergency scams (Komisi Perdagangan Federal AS: penipuan darurat keluarga; peniruan suara)"
+    },
+    {
+      "label": "Liputan6 Cek Fakta (2026): Mafindo tentang hoaks dan hoaks berbasis AI (dalam bahasa Indonesia)"
+    }
+  ],
+  "sensitiveNotes": [
+    "Deepfake dipakai untuk menyakiti orang sungguhan: gambar palsu yang mempermalukan seseorang, video palsu para pemimpin, dan suara tiruan dalam penipuan (misalnya telepon yang terdengar seperti kerabat yang meminta uang; lihat sumber FTC). Pelajaran ini sengaja memakai contoh-contoh yang konyol. Jangan menunjukkan deepfake sungguhan tentang orang sungguhan di kelas. Kalau seorang pelajar mengatakan ada konten palsu yang dibuat tentang dirinya atau orang yang dikenalnya, jangan bahas detailnya di kelas; ikuti prosedur perlindungan anak milik lembaga mitra."
+  ],
+  "educatorNotes": [
+    "Ajarkan cara memeriksa lebih dulu: siapa yang mengunggahnya, kapan, dari mana asalnya pertama kali, apakah sumber tepercaya lain menunjukkan hal yang sama, dan untuk suara, menghubungi orangnya dengan cara lain. Kejanggalan visual (jari tambahan, huruf berantakan, kulit mulus) adalah alasan untuk memeriksa, bukan bukti: alat-alat yang lebih baru makin jarang membuatnya, dan foto asli juga bisa menunjukkan detail yang aneh. Dalam sebuah penelitian tahun 2025 (Kamali dan kawan-kawan, CHI '25), orang dengan benar menyebut foto asli sebagai asli 74% dari waktu, jadi sekitar satu dari empat salah disebut buatan AI. Terima “belum bisa dipastikan” sebagai jawaban yang kuat; kegiatan ini tidak punya nilai. Versi kertas: enam unggahan itu di kartu, dikelompokkan di bawah empat judul.",
+    "Karya AI yang diberi keterangan (seni, film, pelajaran, lelucon yang jelas ditandai “Dibuat dengan AI”) tidak sama dengan konten palsu yang berpura-pura asli atau meniru orang sungguhan. Keterangan bisa hilang ketika sebuah gambar diunggah ulang (News Literacy Project, 2026), jadi unggahan yang diberi keterangan bisa menyesatkan kalau dibagikan tanpa keterangan itu. Di Indonesia, TurnBackHoax dari Mafindo dan CekFakta memeriksa gambar dan video yang viral, dan Mafindo mengatakan hoaks berbasis AI makin sulit dibedakan (Liputan6, 2026). Guru yang punya internet bisa menunjukkan satu contoh yang sudah diperiksa; pelajar tidak perlu online."
+  ]
+}

@@ -2,19 +2,20 @@ import { createContext, useContext, useMemo, type ReactNode } from 'react';
 import { useNavigate } from 'react-router';
 import { StatusBanner } from '../../components/ds';
 import { useCatalog } from '../../content/useCatalog';
-import { CourseContentProvider } from '../../content/useContent';
+import { CourseContentProvider, useLessonContent } from '../../content/useContent';
 import { SOURCE_LOCALE, useI18n } from '../../i18n';
 import { useLearnerSession } from '../../session';
 import type { OurWorldName } from '../types';
-import { PreviewCourseContext, usePreviewCourse, type PreviewCourseConfig } from './course';
+import { PreviewCourseContext, useCourseContent, usePreviewCourse, type PreviewCourseConfig } from './course';
 import { CourseWords } from './i18n';
 
 const OurWorldContext = createContext<OurWorldName>({ title: '', lang: {} });
 
 /**
  * Every page of a preview course: the course (PreviewCourseContext), the
- * shared preview words and its own, its English lessons (./i18n.tsx), its
- * content for the shared lesson pages (CourseContentProvider), and on screen
+ * shared preview words and its own (./i18n.tsx), its content in the language
+ * on screen, translated where it is (Indonesian, Malay) and English
+ * otherwise, for the shared lesson pages (CourseContentProvider), and on screen
  * the draft banner above the page. Our World's title is read here, before
  * the course's words take over, so the course choice shows it in the
  * language on screen.
@@ -23,11 +24,12 @@ export function PreviewCourseFrame({ course, children, banner = true }: { course
   const { contentLang } = useI18n();
   const title = useCatalog().getCourse().course.title;
   const ourWorld = useMemo(() => ({ title, lang: contentLang }), [title, contentLang]);
+  const content = useCourseContent(course);
   return (
     <PreviewCourseContext.Provider value={course}>
       <OurWorldContext.Provider value={ourWorld}>
-        <CourseWords words={course.words}>
-          <CourseContentProvider value={course.content}>
+        <CourseWords words={course.words} translated={content !== course.content}>
+          <CourseContentProvider value={content}>
             {banner ? <DraftBanner /> : null}
             {children}
           </CourseContentProvider>
@@ -42,9 +44,9 @@ export function useOurWorldName(): OurWorldName {
   return useContext(OurWorldContext);
 }
 
-/** The course's title, from its course file (English for now, marked with contentLang). */
+/** The course's title in the language on screen (inside PreviewCourseFrame; mark it with contentLang). */
 export function useCourseTitle(): string {
-  return usePreviewCourse().content.getCourse().course.title;
+  return useLessonContent().getCourse().course.title;
 }
 
 /**
@@ -55,6 +57,7 @@ export function useCourseTitle(): string {
 export function DraftBanner() {
   const { t, locale } = useI18n();
   const course = usePreviewCourse();
+  const translated = useLessonContent() !== course.content;
   const { setPreviewCourse } = useLearnerSession();
   const navigate = useNavigate();
   return (
@@ -71,8 +74,8 @@ export function DraftBanner() {
           });
         }}
       >
-        {/* In another language the interface is translated but the lessons are English for now: say so. */}
-        {t(locale === SOURCE_LOCALE ? course.wordKeys.bannerBody : course.wordKeys.bannerBodyEnglishLessons)}
+        {/* In another language the interface is translated; when the lessons aren't (yet), say so. */}
+        {t(locale === SOURCE_LOCALE || translated ? course.wordKeys.bannerBody : course.wordKeys.bannerBodyEnglishLessons)}
       </StatusBanner>
     </div>
   );

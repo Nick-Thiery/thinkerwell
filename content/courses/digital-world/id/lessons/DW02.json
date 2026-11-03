@@ -1,0 +1,294 @@
+{
+  "title": "Mimpi tentang mesin yang berpikir",
+  "essentialQuestion": "Bagaimana orang mencoba membuat mesin yang berpikir, dan mengapa butuh waktu begitu lama?",
+  "learningGoal": "Menggambarkan perkembangan AI dari tahun 1950-an sampai tahun 2010-an, dan menjelaskan bagaimana ide, uang, komputer, dan data membentuknya.",
+  "warmUp": {
+    "question": "Menurutmu, kapan orang pertama kali mulai mengerjakan AI?",
+    "options": [
+      "Pada tahun 1950-an",
+      "Pada tahun 1990-an",
+      "Pada tahun 2020-an",
+      "Tidak yakin"
+    ]
+  },
+  "evidence": {
+    "question": "Peristiwa mana yang merupakan keberhasilan, dan mana yang merupakan kemunduran? Ide mana yang dicoba pada waktu yang sama?",
+    "cards": [
+      {
+        "title": "Sumber nyata: proposal Dartmouth",
+        "sources": [
+          {
+            "caption": "Sebuah proposal yang ditulis pada 31 Agustus 1955",
+            "details": [
+              "Empat peneliti di Amerika Serikat menulisnya: John McCarthy, Marvin Minsky, Nathaniel Rochester, dan Claude Shannon.",
+              "Proposal itu meminta sebuah penelitian selama dua bulan oleh 10 orang di Dartmouth College pada musim panas 1956.",
+              "Judulnya memakai kata “artificial intelligence” (kecerdasan artifisial).",
+              "Topiknya antara lain bagaimana komputer bisa memakai bahasa, dan “neuron nets” (jaringan neuron), sebuah ide awal untuk mesin yang belajar.",
+              "Proposal itu sebuah rencana, bukan hasil. Proyek musim panas itu berlangsung pada tahun 1956."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Beberapa peristiwa nyata dalam sejarah AI",
+        "events": [
+          {
+            "year": "1950",
+            "text": "Alan Turing bertanya, “Bisakah mesin berpikir?”"
+          },
+          {
+            "year": "1955",
+            "text": "Proposal Dartmouth ditulis."
+          },
+          {
+            "year": "1956",
+            "text": "Proyek musim panas di Dartmouth berlangsung."
+          },
+          {
+            "year": "1958",
+            "text": "Perceptron, mesin yang belajar dari contoh, diperlihatkan di Amerika Serikat."
+          },
+          {
+            "year": "1973",
+            "text": "Sebuah laporan Inggris mengkritik banyak penelitian AI. Pendanaan untuk sebagian penelitian itu turun."
+          },
+          {
+            "year": "1980-an",
+            "text": "Perusahaan-perusahaan memakai “sistem pakar”, yang dibangun dari aturan yang diberikan para ahli. Pada akhir tahun 1980-an, pasarnya turun."
+          },
+          {
+            "year": "1997",
+            "text": "Sebuah komputer catur bernama Deep Blue mengalahkan juara dunia."
+          },
+          {
+            "year": "2012",
+            "text": "Sebuah program pembelajar mengenali benda-benda di foto jauh lebih baik daripada sebelumnya."
+          }
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "title": "Janji besar atau klaim yang hati-hati?",
+    "instructions": "Judul-judul berita ini rekaan. Semuanya dari Tomorrow Today, sebuah majalah rekaan, tetapi masing-masing cocok dengan satu masa nyata dalam sejarah AI. Masukkan setiap judul berita ke dalam satu kelompok. Tidak ada nilai. Setelah kamu menaruh satu judul, kamu bisa melihat satu jawaban yang mungkin dan alasannya.",
+    "groups": [
+      {
+        "label": "Janji besar"
+      },
+      {
+        "label": "Klaim yang hati-hati"
+      },
+      {
+        "label": "Sulit dipastikan"
+      }
+    ],
+    "items": [
+      {
+        "text": "1957: Dalam sepuluh tahun, sebuah mesin akan menjadi pemain catur terbaik di dunia.",
+        "feedback": "Judul ini memberi waktu yang singkat untuk tugas yang sangat sulit. Kenyataannya, komputer catur mengalahkan juara dunia pada tahun 1997, 40 tahun kemudian."
+      },
+      {
+        "text": "1960: Para ilmuwan berharap suatu hari nanti mesin mungkin bisa membantu orang menerjemahkan bahasa.",
+        "feedback": "Kata “berharap”, “mungkin”, dan “suatu hari nanti” menunjukkan bahwa penulisnya tidak yakin."
+      },
+      {
+        "text": "1967: Pada tahun 1980, mesin akan berpikir persis seperti manusia.",
+        "feedback": "Judul ini memberi tanggal untuk perubahan yang sangat besar. Itu tidak terjadi pada tahun 1980, dan AI sampai sekarang masih tidak berpikir seperti manusia."
+      },
+      {
+        "text": "1975: Mesin yang berpikir lebih sulit dibuat daripada yang diperkirakan orang.",
+        "feedback": "Judul ini menggambarkan sebuah masalah tanpa janji. Judul ini cocok dengan peristiwa nyata: masalahnya sulit, dan sebagian pendanaan dipotong."
+      },
+      {
+        "text": "1986: Sebentar lagi, komputer yang mengikuti aturan akan mengerjakan sebagian besar pekerjaan kantor.",
+        "feedback": "“Sebentar lagi” dan “sebagian besar” adalah kata-kata besar. Kenyataannya, sistem pakar mahal biaya perawatannya, dan pasarnya turun pada akhir tahun 1980-an."
+      },
+      {
+        "text": "2005: Komputer masih membuat banyak kesalahan saat mengenali benda-benda di foto.",
+        "feedback": "Judul ini mengatakan apa yang belum bisa dilakukan komputer dengan baik, tanpa janji."
+      },
+      {
+        "text": "2013: Sebuah program baru mengenali benda-benda di foto jauh lebih baik daripada sebelumnya.",
+        "feedback": "Judul ini melaporkan apa yang sudah dilakukan sebuah program. Judul ini tidak menjanjikan apa yang akan terjadi berikutnya."
+      },
+      {
+        "text": "2015: Mesin pintar akan mengubah segalanya.",
+        "feedback": "Setiap kelompok bisa dibenarkan di sini. Ini klaim yang besar, tetapi tidak menyebut waktu dan tidak memberi rincian. Karena itu, klaim ini sulit diperiksa."
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Sebuah pertanyaan, sebuah proposal, dan sebuah proyek",
+        "text": "Pada tahun 1950, seorang ilmuwan Inggris bernama Alan Turing bertanya, “Bisakah mesin berpikir?” Waktu itu komputer masih baru, sangat besar, dan lambat. Pada 31 Agustus 1955, empat peneliti di Amerika Serikat menulis proposal untuk sebuah penelitian musim panas tentang “kecerdasan artifisial”. Mereka percaya bahwa setiap bagian dari belajar bisa digambarkan dengan cukup baik sehingga mesin bisa menirunya. Proposal itu sebuah rencana. Proyeknya sendiri berlangsung di Dartmouth College pada tahun 1956. AI adalah salah satu bagian dari teknologi digital. AI membutuhkan komputer untuk berjalan, dan kemudian AI juga memakai jaringan dan data digital.",
+        "simpler": "Pada tahun 1950, seorang ilmuwan Inggris, Alan Turing, bertanya: bisakah mesin berpikir? Pada 31 Agustus 1955, empat peneliti menulis sebuah rencana. Proposal ini meminta penelitian musim panas tentang “kecerdasan artifisial”. Penelitian itu diadakan di Dartmouth College pada tahun 1956. AI adalah salah satu bagian dari dunia digital. AI berjalan di komputer. Kemudian, AI juga memakai jaringan dan data."
+      },
+      {
+        "heading": "Ide yang berbeda-beda, janji besar, dan musim dingin AI",
+        "text": "Para peneliti mencoba ide-ide yang berbeda pada waktu yang sama. Sebagian menulis aturan untuk diikuti komputer. Yang lain membuat mesin yang belajar dari contoh, seperti perceptron pada tahun 1958. Sebagian besar uangnya berasal dari pemerintah. Ada peneliti yang membuat janji besar, tetapi masalah nyata ternyata lebih sulit daripada yang diperkirakan. Komputer masih lambat, dan datanya sedikit. Pada tahun 1973, sebuah laporan Inggris mengkritik banyak penelitian AI, lalu Inggris memotong pendanaan untuk sebagian penelitian itu. Pada tahun 1980-an, perusahaan-perusahaan memakai sistem pakar, yang dibangun dari aturan yang diberikan para ahli. Biaya perawatannya mahal, dan pasarnya turun pada akhir tahun 1980-an. Masa seperti pertengahan tahun 1970-an dan akhir tahun 1980-an disebut musim dingin AI. Para sejarawan masih berdebat tentang tanggal dan penyebabnya yang tepat.",
+        "simpler": "Orang mencoba ide-ide yang berbeda sekaligus. Sebagian menulis aturan. Yang lain membuat mesin yang belajar dari contoh. Salah satunya diperlihatkan pada tahun 1958. Pemerintah memberi banyak uangnya. Ada yang membuat janji besar. Tetapi masalah nyata itu sulit. Komputer masih lambat, dan datanya sedikit. Pada tahun 1973, sebuah laporan Inggris mengatakan banyak penelitian AI masih lemah. Lalu Inggris memotong sebagian pendanaan untuk AI. Pada tahun 1980-an, perusahaan memakai aturan dari para ahli. Biaya perawatannya mahal. Pada akhir tahun 1980-an, pasarnya turun. Masa yang lambat ini disebut musim dingin AI. Orang masih berdebat tentang tanggal dan penyebabnya."
+      },
+      {
+        "heading": "Keberhasilan, data, dan komputer yang cepat",
+        "text": "Ada juga keberhasilan. Pada tahun 1997, sebuah komputer catur bernama Deep Blue mengalahkan juara dunia, Garry Kasparov, walaupun komputer itu hanya bisa bermain catur. Pembelajaran mesin, yang dimulai pada tahun 1950-an, menjadi jauh lebih kuat setelah tahun 2010. Internet memberi para peneliti kumpulan foto berlabel yang sangat besar, dan cip yang dibuat untuk grafis komputer membuat pekerjaannya lebih cepat. Pada tahun 2012, sebuah tim universitas membuat program yang jauh lebih baik dalam mengenali benda-benda di foto. Sekarang, tim-tim di banyak tempat membuat AI, termasuk di Asia Tenggara, seperti yang ditunjukkan Pelajaran 7. AI berkembang lewat ide-ide yang saling tumpang tindih, dibentuk oleh uang, harapan, komputer, dan data.",
+        "simpler": "Ada juga keberhasilan besar. Pada tahun 1997, sebuah komputer catur mengalahkan juara dunia. Tetapi komputer itu hanya bisa bermain catur. Pembelajaran mesin adalah ide lama. Setelah tahun 2010, ide ini menjadi jauh lebih kuat. Internet memberi banyak data, seperti foto berlabel. Cip baru membuat pekerjaannya lebih cepat. Pada tahun 2012, sebuah tim membuat program foto yang jauh lebih baik. Sekarang, banyak tim membuat AI, juga di Asia Tenggara. Uang, harapan, komputer, dan data membentuk AI."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "penelitian",
+        "forms": [
+          "peneliti"
+        ],
+        "definition": "Kegiatan mempelajari sesuatu dengan cermat untuk menemukan fakta baru.",
+        "example": "Penelitian Turing dimulai dengan satu pertanyaan: bisakah mesin berpikir?"
+      },
+      {
+        "word": "proposal",
+        "definition": "Rencana tertulis yang meminta sesuatu, seperti waktu atau uang.",
+        "example": "Proposal Dartmouth ditulis pada tahun 1955, sebelum proyeknya pada tahun 1956."
+      },
+      {
+        "word": "janji",
+        "definition": "Kata-kata yang mengatakan bahwa sesuatu pasti akan terjadi.",
+        "example": "Judul berita rekaan dari tahun 1957 membuat janji tentang catur."
+      },
+      {
+        "word": "pendanaan",
+        "definition": "Uang yang diberikan untuk membiayai sebuah proyek atau penelitian.",
+        "example": "Setelah laporan tahun 1973, Inggris memotong pendanaan untuk sebagian penelitian AI."
+      },
+      {
+        "word": "musim dingin AI",
+        "definition": "Masa ketika orang berhenti memberi banyak uang atau perhatian pada AI.",
+        "example": "Banyak sejarawan menyebut pertengahan tahun 1970-an sebagai musim dingin AI."
+      },
+      {
+        "word": "pembelajaran mesin",
+        "definition": "Ketika komputer mempelajari pola dari banyak contoh, bukan dari langkah-langkah tetap.",
+        "example": "Perceptron, yang diperlihatkan pada tahun 1958, adalah salah satu jenis awal pembelajaran mesin."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Apa itu musim dingin AI?",
+        "options": [
+          {
+            "text": "Masa ketika komputer hanya bisa bekerja di tempat dingin",
+            "feedback": "Belum tepat. Di sini, musim dingin berarti masa yang lambat dan sepi. Baca lagi bagian kedua."
+          },
+          {
+            "text": "Masa ketika uang dan perhatian untuk AI menurun",
+            "feedback": "Benar. Ketika uang dan perhatian menurun, kemajuan melambat. Para sejarawan masih berdebat tentang tanggalnya yang tepat."
+          },
+          {
+            "text": "Masa ketika komputer belajar paling cepat",
+            "feedback": "Belum tepat. Pada musim dingin AI, kemajuan melambat. Baca lagi bagian kedua."
+          }
+        ]
+      },
+      {
+        "question": "Proposal Dartmouth ditulis pada tahun 1955. Apa yang terjadi pada tahun 1956?",
+        "options": [
+          {
+            "text": "Proyek musim panas di Dartmouth berlangsung",
+            "feedback": "Benar. Proposal itu rencananya, yang ditulis pada tahun 1955. Proyeknya berlangsung pada musim panas 1956."
+          },
+          {
+            "text": "Proposal untuk proyek itu ditulis",
+            "feedback": "Belum tepat. Proposal itu datang lebih dulu, pada 31 Agustus 1955. Lihat lagi kartu sumbernya."
+          },
+          {
+            "text": "Sebuah komputer catur mengalahkan juara dunia",
+            "feedback": "Belum tepat. Itu terjadi pada tahun 1997, jauh kemudian. Lihat lagi garis waktunya."
+          }
+        ]
+      },
+      {
+        "question": "Menurutmu, mengapa ada peneliti yang membuat janji sebesar itu? Siapa yang mungkin memercayai mereka?",
+        "placeholder": "Menurutku mereka membuat janji besar karena ... Orang yang mungkin memercayai mereka adalah ..."
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Jelaskan perkembangan AI dari tahun 1950-an sampai tahun 2010-an. Pakai satu harapan atau janji, satu kemunduran, dan satu keberhasilan dari pelajaran ini.",
+    "sentenceStarters": [
+      "Pada tahun 1955, empat peneliti mengusulkan ...",
+      "Satu harapan atau janji besar adalah ...",
+      "Sebuah kemunduran terjadi ketika ...",
+      "Sebuah keberhasilan terjadi ketika ...",
+      "Menurutku AI berkembang seperti ini karena ..."
+    ],
+    "planningBoxes": [
+      "Ide utamaku",
+      "Bukti dari pelajaran",
+      "Mengapa ini penting",
+      "Pertanyaan yang masih aku punya"
+    ],
+    "selfCheck": [
+      "Aku menyebutkan satu harapan atau janji.",
+      "Aku menjelaskan satu kemunduran dan mengapa itu terjadi.",
+      "Aku memberi satu keberhasilan dan apa yang membantunya."
+    ],
+    "example": "Pada tahun 1955, empat peneliti mengusulkan sebuah penelitian musim panas tentang AI. Mereka berharap mesin bisa meniru setiap bagian dari belajar. Ada yang membuat janji besar. Tetapi komputer masih lambat, dan datanya sedikit. Sebuah kemunduran terjadi pada tahun 1973. Sebuah laporan Inggris mengatakan banyak penelitian AI masih lemah, dan Inggris memotong sebagian pendanaan. Sebuah keberhasilan terjadi pada tahun 2012. Sebuah program menjadi jauh lebih baik dalam mengenali benda-benda di foto. Program itu memakai banyak data dan cip yang cepat. Menurutku AI berkembang seperti ini karena ide membutuhkan uang, komputer, dan data."
+  },
+  "speak": {
+    "partnerTask": "Temanmu membacakan satu judul berita rekaan dari Tomorrow Today. Kamu mengatakan apakah itu janji besar atau klaim yang hati-hati, dan mengapa. Lalu bertukar.",
+    "independentTask": "Ceritakan kisah AI dengan lantang dalam empat kalimat: sebuah pertanyaan, sebuah proposal, sebuah kemunduran, dan sebuah keberhasilan."
+  },
+  "watch": {
+    "why": "Video ini menjelaskan dari mana nama AI berasal, mengapa harapan awalnya terlalu besar, dan mengapa data dan komputer yang cepat membuat AI bangkit lagi.",
+    "beforeQuestion": "Menurutmu, mengapa butuh waktu begitu lama untuk membuat mesin yang terlihat cerdas?",
+    "afterQuestion": "Dua hal apa yang belum cukup dimiliki para peneliti AI awal?",
+    "summary": "Dalam video ini, seorang pembawa acara bernama Jabril dan sebuah robot bernama John Green Bot berbicara tentang AI. AI sudah menjadi bagian dari kehidupan sehari-hari. AI menyarankan video, melengkapi kata saat kamu mengetik, dan membantu memutuskan beberapa hal tentang uang dan pekerjaan. Orang punya harapan dan ketakutan tentang AI. Video ini mengaitkan nama kecerdasan artifisial dengan sebuah proyek musim panas di Dartmouth College pada tahun 1956. Para ilmuwan di sana sangat berharap. Ada yang mengatakan mesin akan segera secerdas manusia. Tetapi mereka tidak tahu berapa banyak data dan daya komputer yang dibutuhkan AI. Jadi untuk waktu yang lama, kemajuannya lambat. Masa ini disebut musim dingin AI. Lalu komputer menjadi jauh lebih cepat, dan internet menghasilkan data dalam jumlah sangat besar. Itulah salah satu alasan besar AI tumbuh begitu cepat.",
+    "keyPoints": [
+      "Nama kecerdasan artifisial berasal dari proyek Dartmouth, yang direncanakan pada tahun 1955 dan diadakan pada tahun 1956.",
+      "Para peneliti awal membuat janji besar, tetapi mereka belum punya cukup data atau daya komputer.",
+      "Komputer yang lebih cepat dan banyak data dari internet membantu AI tumbuh lagi."
+    ],
+    "contentNote": "Sekitar 11 sampai 12 menit (PBS mencantumkan salinannya 11 menit 25 detik; teksnya berjalan sampai 11:42), jadi durationSeconds dibiarkan kosong (null). Judul dan kanal dipastikan dengan oEmbed YouTube pada 31 Oktober 2026. Ringkasannya ditulis dari salinan teks bahasa Inggris video ini (amara.org) dan deskripsi dari PBS, bukan dari menontonnya. Videonya cepat, dalam bahasa Inggris penutur asli. Video ini mengatakan AI “membeku” dalam satu musim dingin AI sampai sekitar tahun 2010, yang lebih sederhana daripada dua musim dingin dengan masa ramai di antaranya dalam pelajaran ini. Video ini menyebut AI yang dipakai untuk memutuskan pinjaman, asuransi, dan lamaran kerja. Seseorang dari tim harus menontonnya sebelum dipakai; pelajar bisa membaca ringkasan tertulisnya sebagai gantinya. Video ini menyebut nama itu muncul pada tahun 1956; proposal yang memakainya ditulis pada 31 Agustus 1955 (kartu sumber dalam pelajaran ini)."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Satu alasan AI butuh waktu lama untuk tumbuh adalah ..."
+      },
+      {
+        "text": "Satu janji tentang alat baru yang akan aku periksa adalah ..."
+      }
+    ],
+    "completionMessage": "Kamu sudah menyelesaikan Pelajaran 2. Kamu menceritakan kisah perkembangan AI, dari pertanyaan Turing sampai pembelajaran mesin."
+  },
+  "visual": {
+    "alt": "Garis waktu AI yang bergelombang dari tahun 1950 sampai 2015. Ide berbasis aturan dan belajar dari contoh berjalan berdampingan. Garisnya naik dengan pertanyaan Turing pada tahun 1950, proposal tahun 1955 dan proyek tahun 1956, perceptron pada tahun 1958, sistem pakar pada tahun 1980-an, komputer catur pada tahun 1997, dan program foto yang lebih baik pada tahun 2012, lalu turun selama musim dingin AI pada pertengahan tahun 1970-an dan akhir tahun 1980-an."
+  },
+  "sources": [
+    {
+      "label": "A. M. Turing, Mind 59, 1950: Computing machinery and intelligence (salinan di University of Oxford)"
+    },
+    {
+      "label": "AI Magazine (cetak ulang, 2006): A proposal for the Dartmouth Summer Research Project on Artificial Intelligence, 31 Agustus 1955, oleh McCarthy, Minsky, Rochester, dan Shannon"
+    },
+    {
+      "label": "Cornell University (2019): Professor's perceptron paved the way for AI, 60 years too soon (perceptron, diperlihatkan pada Juli 1958)"
+    },
+    {
+      "label": "Jon Agar, British Journal for the History of Science 53(3), 2020: What is science for? The Lighthill report on artificial intelligence reinterpreted (salinan penulis, UCL)"
+    },
+    {
+      "label": "Thomas Haigh, Communications of the ACM 67(2), Februari 2024: How the AI boom went bust (sistem pakar dan musim dingin AI pada akhir tahun 1980-an)"
+    },
+    {
+      "label": "Toosi dan lainnya (2021, diterima oleh PET Clinics): A brief history of AI, how to prevent another winter (dari Turing 1950 sampai AlexNet 2012)"
+    }
+  ],
+  "sensitiveNotes": [
+    "Kehidupan Turing di luar makalah ini (pekerjaannya pada masa perang dan bagaimana ia diperlakukan kemudian) diceritakan dalam film dan buku, dan sebagian pelajar mungkin pernah mendengarnya. Pelajaran ini tidak membahasnya. Jika topik itu muncul, jawab dengan singkat dan sesuai fakta, dan jangan bertanya kepada pelajar tentang kehidupan pribadi siapa pun."
+  ],
+  "educatorNotes": [
+    "Untuk guru yang ingin tahu lebih banyak: banyak pendanaan awal di Amerika Serikat datang lewat DARPA, sebuah badan penelitian militer (Toosi dan lainnya). Laporan Lighthill diserahkan pada Maret 1972 dan diterbitkan pada tahun 1973; laporan ini sering dikatakan menyebabkan musim dingin AI pertama di Inggris, tetapi Agar (2020) menunjukkan bahwa Science Research Council setelah itu tetap mendanai beberapa jenis AI dan tidak mendanai jenis lain. Haigh (2024) berpendapat bahwa musim dingin yang lebih dalam datang pada akhir tahun 1980-an, setelah masa ramai sistem pakar. Buktinya (kartu proposal dan garis waktu) nyata; judul-judul berita Tomorrow Today dalam kegiatan ini rekaan, walaupun masing-masing cocok dengan satu masa yang nyata.",
+    "Versi kertas untuk kegiatan ini: tulis kedelapan judul berita di kartu, lalu pilah ke dalam “Janji besar”, “Klaim yang hati-hati”, dan “Sulit dipastikan”. Tidak ada nilai; hargai alasannya, terutama saat pelajar menunjuk kata-kata seperti “sebentar lagi”, “setiap”, dan “mungkin”.",
+    "Videonya panjang (sekitar 11 sampai 12 menit). Pilihan yang lebih pendek yang bisa dipertimbangkan tim adalah video TED-Ed “The Turing test: Can a computer pass for a human?” (youtube.com/watch?v=3wLqsRLvV-c, sekitar 4,5 menit, judul dan kanal dipastikan dengan oEmbed), yang hanya membahas tes Turing dan chatbot awal. Keduanya belum ditonton."
+  ]
+}

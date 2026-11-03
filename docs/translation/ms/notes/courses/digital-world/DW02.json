@@ -1,0 +1,707 @@
+{
+  "title": {
+    "source": "Dreams of thinking machines",
+    "back": "Dreams about machines that think",
+    "flag": true
+  },
+  "essentialQuestion": {
+    "source": "How did people try to build machines that think, and why did it take so long?",
+    "back": "How did people try to build machines that think, and why did it take so long?",
+    "flag": true
+  },
+  "learningGoal": {
+    "source": "Describe how AI developed from the 1950s to the 2010s, and explain how ideas, money, computers and data shaped it.",
+    "back": "Describe how AI developed from the 1950s to the 2010s, and explain how ideas, money, computers and data shaped it.",
+    "flag": true
+  },
+  "warmUp.question": {
+    "source": "When do you think people first started working on AI?",
+    "back": "In your opinion, when did people first work on AI?",
+    "flag": true
+  },
+  "warmUp.options.0": {
+    "source": "In the 1950s",
+    "back": "In the 1950s",
+    "flag": true
+  },
+  "warmUp.options.1": {
+    "source": "In the 1990s",
+    "back": "In the 1990s",
+    "flag": true
+  },
+  "warmUp.options.2": {
+    "source": "In the 2020s",
+    "back": "In the 2020s",
+    "flag": true
+  },
+  "warmUp.options.3": {
+    "source": "Not sure",
+    "back": "Not sure",
+    "flag": true
+  },
+  "evidence.question": {
+    "source": "Which events were successes, and which were setbacks? Which ideas were tried at the same time?",
+    "back": "Which events were successes, and which were setbacks? Which ideas were tried at the same time?",
+    "flag": true
+  },
+  "evidence.cards.0.title": {
+    "source": "A real source: the Dartmouth proposal",
+    "back": "A real source: the Dartmouth proposal",
+    "flag": true
+  },
+  "evidence.cards.0.sources.0.caption": {
+    "source": "A proposal written on 31 August 1955",
+    "back": "A proposal written on 31 August 1955",
+    "flag": true
+  },
+  "evidence.cards.0.sources.0.details.0": {
+    "source": "Four researchers in the United States wrote it: John McCarthy, Marvin Minsky, Nathaniel Rochester and Claude Shannon.",
+    "back": "Four researchers in the United States wrote it: John McCarthy, Marvin Minsky, Nathaniel Rochester and Claude Shannon.",
+    "flag": true
+  },
+  "evidence.cards.0.sources.0.details.1": {
+    "source": "It asked for a two-month study by 10 people at Dartmouth College in the summer of 1956.",
+    "back": "It asked for a two-month study by 10 people at Dartmouth College in the summer of 1956.",
+    "flag": true
+  },
+  "evidence.cards.0.sources.0.details.2": {
+    "source": "Its title used the words “artificial intelligence”.",
+    "back": "Its title used the words “artificial intelligence” (kecerdasan buatan).",
+    "flag": true,
+    "note": "The proposal's own words stay in English, with the Malay in brackets, because the card quotes a real document."
+  },
+  "evidence.cards.0.sources.0.details.3": {
+    "source": "Its topics included how a computer could use a language, and “neuron nets”, an early idea for machines that learn.",
+    "back": "Its topics included how a computer could use language, and “neuron nets” (networks of neurons), an early idea for machines that learn.",
+    "flag": true,
+    "note": "\"Neuron nets\" kept in English as a quotation, glossed \"jaringan neuron\"."
+  },
+  "evidence.cards.0.sources.0.details.4": {
+    "source": "It was a plan, not a result. The summer project took place in 1956.",
+    "back": "It was a plan, not a result. That summer project took place in 1956.",
+    "flag": true
+  },
+  "evidence.cards.1.title": {
+    "source": "Some real events in the history of AI",
+    "back": "Some real events in the history of AI",
+    "flag": true
+  },
+  "evidence.cards.1.events.0.year": {
+    "source": "1950",
+    "back": "1950",
+    "flag": true
+  },
+  "evidence.cards.1.events.0.text": {
+    "source": "Alan Turing asks, “Can machines think?”",
+    "back": "Alan Turing asks, “Can machines think?”",
+    "flag": true
+  },
+  "evidence.cards.1.events.1.year": {
+    "source": "1955",
+    "back": "1955",
+    "flag": true
+  },
+  "evidence.cards.1.events.1.text": {
+    "source": "The Dartmouth proposal is written.",
+    "back": "The Dartmouth proposal is written.",
+    "flag": true
+  },
+  "evidence.cards.1.events.2.year": {
+    "source": "1956",
+    "back": "1956",
+    "flag": true
+  },
+  "evidence.cards.1.events.2.text": {
+    "source": "The summer project at Dartmouth takes place.",
+    "back": "The summer project at Dartmouth takes place.",
+    "flag": true
+  },
+  "evidence.cards.1.events.3.year": {
+    "source": "1958",
+    "back": "1958",
+    "flag": true
+  },
+  "evidence.cards.1.events.3.text": {
+    "source": "The perceptron, a machine that learns from examples, is shown in the United States.",
+    "back": "The perceptron, a machine that learns from examples, is shown in the United States.",
+    "flag": true
+  },
+  "evidence.cards.1.events.4.year": {
+    "source": "1973",
+    "back": "1973",
+    "flag": true
+  },
+  "evidence.cards.1.events.4.text": {
+    "source": "A British report criticises much AI research. Funding for some of it falls.",
+    "back": "A British report criticises much AI research. Funding for some of it goes down.",
+    "flag": true
+  },
+  "evidence.cards.1.events.5.year": {
+    "source": "1980s",
+    "back": "1980s",
+    "flag": true,
+    "note": "\"1980s\" is written \"1980-an\", the Malaysian way."
+  },
+  "evidence.cards.1.events.5.text": {
+    "source": "Companies use “expert systems”, built from rules that experts gave. In the late 1980s, their market falls.",
+    "back": "Companies use “expert systems”, built from rules given by experts. In the late 1980s, their market declines.",
+    "flag": true
+  },
+  "evidence.cards.1.events.6.year": {
+    "source": "1997",
+    "back": "1997",
+    "flag": true
+  },
+  "evidence.cards.1.events.6.text": {
+    "source": "A chess computer called Deep Blue beats the world champion.",
+    "back": "A chess computer named Deep Blue defeats the world champion.",
+    "flag": true
+  },
+  "evidence.cards.1.events.7.year": {
+    "source": "2012",
+    "back": "2012",
+    "flag": true
+  },
+  "evidence.cards.1.events.7.text": {
+    "source": "A learning program names things in photos much better than before.",
+    "back": "A program that learns names things in photos far better than before.",
+    "flag": true
+  },
+  "activity.title": {
+    "source": "Big promise or careful claim?",
+    "back": "A big promise or a careful claim?",
+    "flag": true,
+    "note": "\"Careful claim\" is \"dakwaan yang berhati-hati\" (claim = dakwaan, KEY_TERMS.md)."
+  },
+  "activity.instructions": {
+    "source": "These headlines are made up. They come from Tomorrow Today, a pretend magazine, but each one fits a real time in AI history. Put each headline into a group. There is no score. After you place one, you can see one possible answer and the reason.",
+    "back": "These headlines are invented. They come from Tomorrow Today, a pretend magazine, but each one fits a real time in AI history. Put each headline in one group. There are no marks. After you place one headline, you can see one possible answer and its reason.",
+    "flag": true,
+    "note": "Tomorrow Today is the pretend magazine's name and stays in English. \"Pretend\" is \"rekaan\", as the app calls its pretend tool (alat rekaan)."
+  },
+  "activity.groups.0.label": {
+    "source": "A big promise",
+    "back": "A big promise",
+    "flag": true
+  },
+  "activity.groups.1.label": {
+    "source": "A careful claim",
+    "back": "A careful claim",
+    "flag": true
+  },
+  "activity.groups.2.label": {
+    "source": "Hard to say",
+    "back": "Hard to say",
+    "flag": true
+  },
+  "activity.items.0.text": {
+    "source": "1957: Within ten years, a machine will be the best chess player in the world.",
+    "back": "1957: Within ten years, a machine will be the best chess player in the world.",
+    "flag": true
+  },
+  "activity.items.0.feedback": {
+    "source": "It gives a short time for a very hard task. In real life, a chess computer beat the world champion in 1997, 40 years later.",
+    "back": "It gives a short time for a very hard task. In fact, a chess computer beat the world champion in 1997, that is, 40 years later.",
+    "flag": true
+  },
+  "activity.items.1.text": {
+    "source": "1960: Scientists hope machines may one day help people translate languages.",
+    "back": "1960: Scientists hope machines may one day be able to help people translate languages.",
+    "flag": true
+  },
+  "activity.items.1.feedback": {
+    "source": "The words “hope”, “may” and “one day” show that the writer is not sure.",
+    "back": "The words “hope”, “may” and “one day” show that the writer is not sure.",
+    "flag": true
+  },
+  "activity.items.2.text": {
+    "source": "1967: By 1980, machines will think just like people.",
+    "back": "1967: By 1980, machines will think just like people.",
+    "flag": true
+  },
+  "activity.items.2.feedback": {
+    "source": "It gives a date for a huge change. It did not happen by 1980, and AI still does not think like a person.",
+    "back": "It gives a date for a very big change. That did not happen by 1980, and AI still does not think like a person.",
+    "flag": true
+  },
+  "activity.items.3.text": {
+    "source": "1975: Thinking machines are harder to build than people expected.",
+    "back": "1975: Machines that think are harder to build than people expected.",
+    "flag": true
+  },
+  "activity.items.3.feedback": {
+    "source": "It describes a problem without a promise. It fits real events: the problems were hard, and some funding was cut.",
+    "back": "It describes a problem without making a promise. It fits real events: the problems were hard, and some funding was cut.",
+    "flag": true
+  },
+  "activity.items.4.text": {
+    "source": "1986: Soon, rule-following computers will do most office work.",
+    "back": "1986: Soon, computers that follow rules will do most office work.",
+    "flag": true
+  },
+  "activity.items.4.feedback": {
+    "source": "“Soon” and “most” are big words. In real life, expert systems cost a lot to keep up, and their market fell in the late 1980s.",
+    "back": "“Soon” and “most” are big words. In fact, expert systems cost a lot to maintain, and their market declined in the late 1980s.",
+    "flag": true
+  },
+  "activity.items.5.text": {
+    "source": "2005: Computers still make many mistakes when they name things in photos.",
+    "back": "2005: Computers still make many mistakes when naming things in photos.",
+    "flag": true
+  },
+  "activity.items.5.feedback": {
+    "source": "It says what computers could not do well yet, without a promise.",
+    "back": "It states what computers could not yet do well, without making a promise.",
+    "flag": true
+  },
+  "activity.items.6.text": {
+    "source": "2013: A new program names things in photos much better than before.",
+    "back": "2013: A new program names things in photos far better than before.",
+    "flag": true
+  },
+  "activity.items.6.feedback": {
+    "source": "It reports what a program already did. It does not promise what comes next.",
+    "back": "It reports what a program has already done. It does not promise what will come.",
+    "flag": true
+  },
+  "activity.items.7.text": {
+    "source": "2015: Smart machines will change everything.",
+    "back": "2015: Smart machines will change everything.",
+    "flag": true
+  },
+  "activity.items.7.feedback": {
+    "source": "Any group can be justified here. It is a big claim, but it gives no time and no details. That makes it hard to check.",
+    "back": "Any group can be given a reason here. It is a big claim, but it gives no time or details. This makes it hard to check.",
+    "flag": true
+  },
+  "read.sections.0.heading": {
+    "source": "A question, a proposal and a project",
+    "back": "A question, a proposal and a project",
+    "flag": true
+  },
+  "read.sections.0.text": {
+    "source": "In 1950, a British scientist called Alan Turing asked, “Can machines think?” Computers were new, huge and slow. On 31 August 1955, four researchers in the United States wrote a proposal for a summer study of “artificial intelligence”. They believed every part of learning could be described well enough for a machine to copy it. The proposal was a plan. The project itself took place at Dartmouth College in 1956. AI is one part of digital technology. It needs computers to run, and later it also used networks and digital data.",
+    "back": "In 1950, a British scientist named Alan Turing asked, “Can machines think?” Computers at that time were new, very big and slow. On 31 August 1955, four researchers in the United States wrote a proposal for a summer study about “artificial intelligence” (kecerdasan buatan). They believed every part of learning could be described well enough for a machine to copy it. The proposal was a plan. The project itself took place at Dartmouth College in 1956. AI is one part of digital technology. It needs computers to run, and later it also used networks and digital data.",
+    "flag": true
+  },
+  "read.sections.0.simpler": {
+    "source": "In 1950, a British scientist, Alan Turing, asked: can machines think? On 31 August 1955, four researchers wrote a plan. This proposal asked for a summer study of “artificial intelligence”. The study was at Dartmouth College in 1956. AI is one part of the digital world. It runs on computers. Later, it also used networks and data.",
+    "back": "In 1950, a British scientist, Alan Turing, asked: can machines think? On 31 August 1955, four researchers wrote a plan. This proposal asked for a summer study about “artificial intelligence” (kecerdasan buatan). That study was held at Dartmouth College in 1956. AI is one part of the digital world. It runs on computers. Later, it also used networks and data.",
+    "flag": true
+  },
+  "read.sections.1.heading": {
+    "source": "Different ideas, big promises and AI winters",
+    "back": "Different ideas, big promises and AI winters",
+    "flag": true
+  },
+  "read.sections.1.text": {
+    "source": "Researchers tried different ideas at the same time. Some wrote rules for computers to follow. Others built machines that learn from examples, like the perceptron in 1958. Much of the money came from governments. Some researchers made big promises, but real problems were harder than expected. Computers were slow, and there was little data. In 1973, a British report criticised much AI research, and Britain then cut funding for some of it. In the 1980s, companies used expert systems, built from rules that experts gave. They cost a lot to keep up, and their market fell in the late 1980s. Times like the mid-1970s and the late 1980s are called AI winters. Historians still argue about their exact dates and causes.",
+    "back": "Researchers tried different ideas at the same time. Some wrote rules for computers to follow. Others built machines that learn from examples, like the perceptron in 1958. A lot of money came from governments. Some researchers made big promises, but real problems were harder than expected. Computers were slow, and there was very little data. In 1973, a British report criticised much AI research, and Britain then cut funding for some of it. In the 1980s, companies used expert systems, built from rules given by experts. These systems cost a lot to maintain, and their market declined in the late 1980s. Times like the mid-1970s and the late 1980s are called AI winters. Historians still debate their exact dates and causes.",
+    "flag": true,
+    "note": "\"AI winter\" is \"musim sejuk AI\", a calque; Malaysia has no winter, but the lesson explains the term and the quick check asks what it means."
+  },
+  "read.sections.1.simpler": {
+    "source": "People tried different ideas at once. Some wrote rules. Others made machines that learn from examples. One was shown in 1958. Governments gave much of the money. Some made big promises. But real problems were hard. Computers were slow, and there was little data. In 1973, a British report said much AI work was weak. Britain then cut some of its funding. In the 1980s, firms used rules from experts. These cost a lot to keep up. In the late 1980s, their market fell. These slow times are called AI winters. People still argue about their dates and causes.",
+    "back": "People tried different ideas at once. Some wrote rules. Some made machines that learn from examples. One was shown in 1958. Governments gave a lot of money. Some made big promises. But real problems were hard. Computers were slow, and there was little data. In 1973, a British report said much AI work was weak. Britain then cut some of the funding for that work. In the 1980s, companies used rules from experts. They cost a lot to maintain. In the late 1980s, their market declined. These slow times are called AI winters. People still debate their dates and causes.",
+    "flag": true
+  },
+  "read.sections.2.heading": {
+    "source": "Successes, data and fast computers",
+    "back": "Successes, data and fast computers",
+    "flag": true
+  },
+  "read.sections.2.text": {
+    "source": "There were successes too. In 1997, a chess computer called Deep Blue beat the world champion, Garry Kasparov, though it could only play chess. Machine learning, which began in the 1950s, grew much stronger after 2010. The internet gave researchers huge sets of labelled photos, and chips made for computer graphics made the work faster. In 2012, a university team built a program that was much better at naming things in photos. Today, teams in many places build AI, including in Southeast Asia, as Lesson 7 shows. AI developed through overlapping ideas, shaped by money, hope, computers and data.",
+    "back": "There were successes too. In 1997, a chess computer named Deep Blue beat the world champion, Garry Kasparov, although it could only play chess. Machine learning, which began in the 1950s, became much stronger after 2010. The internet gave researchers very large sets of labelled photos, and chips made for computer graphics made the work faster. In 2012, a university team built a program that was much better at naming things in photos. Today, teams in many places build AI, including in Southeast Asia, as shown in Lesson 7. AI developed through overlapping ideas, shaped by money, hope, computers and data.",
+    "flag": true
+  },
+  "read.sections.2.simpler": {
+    "source": "There were big wins too. In 1997, a chess computer beat the world champion. But it could only play chess. Machine learning is an old idea. After 2010, it grew much stronger. The internet gave lots of data, like labelled photos. New chips made the work faster. In 2012, a team made a much better photo program. Today, many teams build AI, also in Southeast Asia. Money, hope, computers and data shaped AI.",
+    "back": "There were big successes too. In 1997, a chess computer beat the world champion. But it could only play chess. Machine learning is an old idea. After 2010, it became much stronger. The internet gave a lot of data, like labelled photos. New chips made the work faster. In 2012, a team made a much better photo program. Today, many teams build AI, also in Southeast Asia. Money, hope, computers and data shaped AI.",
+    "flag": true
+  },
+  "read.glossary.0.word": {
+    "source": "research",
+    "back": "research",
+    "flag": true
+  },
+  "read.glossary.0.forms": {
+    "source": [
+      "researcher",
+      "researchers"
+    ]
+  },
+  "read.glossary.0.definition": {
+    "source": "Careful study to find out new facts.",
+    "back": "Careful study to find out new facts.",
+    "flag": true
+  },
+  "read.glossary.0.example": {
+    "source": "Turing's research started with one question: can machines think?",
+    "back": "Turing's research began with one question: can machines think?",
+    "flag": true
+  },
+  "read.glossary.1.word": {
+    "source": "proposal",
+    "back": "proposal",
+    "flag": true,
+    "note": "\"Proposal\" is \"cadangan\" (also \"kertas cadangan\"). In Lesson 1, \"cadangan video\" means video suggestions: the same word, a different sense."
+  },
+  "read.glossary.1.forms": {
+    "source": [
+      "proposals"
+    ]
+  },
+  "read.glossary.1.definition": {
+    "source": "A written plan that asks for something, like time or money.",
+    "back": "A written plan that asks for something, like time or money.",
+    "flag": true
+  },
+  "read.glossary.1.example": {
+    "source": "The Dartmouth proposal was written in 1955, before the project in 1956.",
+    "back": "The Dartmouth proposal was written in 1955, before the project in 1956.",
+    "flag": true
+  },
+  "read.glossary.2.word": {
+    "source": "promise",
+    "back": "promise",
+    "flag": true
+  },
+  "read.glossary.2.forms": {
+    "source": [
+      "promises"
+    ]
+  },
+  "read.glossary.2.definition": {
+    "source": "Words that say something will surely happen.",
+    "back": "Words that state something will surely happen.",
+    "flag": true
+  },
+  "read.glossary.2.example": {
+    "source": "The made-up 1957 headline makes a promise about chess.",
+    "back": "The invented 1957 headline makes a promise about chess.",
+    "flag": true
+  },
+  "read.glossary.3.word": {
+    "source": "funding",
+    "back": "funding",
+    "flag": true,
+    "note": "\"Funding\" is \"dana\" (simpler than \"pembiayaan\")."
+  },
+  "read.glossary.3.definition": {
+    "source": "Money given to pay for a project or for study.",
+    "back": "Money given to pay for a project or study.",
+    "flag": true
+  },
+  "read.glossary.3.example": {
+    "source": "After the 1973 report, Britain cut funding for some AI research.",
+    "back": "After the 1973 report, Britain cut funding for some AI research.",
+    "flag": true
+  },
+  "read.glossary.4.word": {
+    "source": "AI winter",
+    "back": "AI winter",
+    "flag": true
+  },
+  "read.glossary.4.forms": {
+    "source": [
+      "AI winters"
+    ]
+  },
+  "read.glossary.4.definition": {
+    "source": "A time when people stopped giving much money or interest to AI.",
+    "back": "A time when people stopped giving much money or attention to AI.",
+    "flag": true
+  },
+  "read.glossary.4.example": {
+    "source": "Many historians call the mid-1970s an AI winter.",
+    "back": "Many historians call the mid-1970s an AI winter.",
+    "flag": true
+  },
+  "read.glossary.5.word": {
+    "source": "machine learning",
+    "back": "machine learning",
+    "flag": true
+  },
+  "read.glossary.5.definition": {
+    "source": "When computers learn patterns from many examples, not from fixed steps.",
+    "back": "When computers learn patterns from many examples, not from fixed steps.",
+    "flag": true
+  },
+  "read.glossary.5.example": {
+    "source": "The perceptron, shown in 1958, was an early kind of machine learning.",
+    "back": "The perceptron, shown in 1958, is an early kind of machine learning.",
+    "flag": true
+  },
+  "read.checks.0.question": {
+    "source": "What is an AI winter?",
+    "back": "What is an AI winter?",
+    "flag": true
+  },
+  "read.checks.0.options.0.text": {
+    "source": "A time when computers only worked in the cold",
+    "back": "A time when computers only worked in cold conditions",
+    "flag": true
+  },
+  "read.checks.0.options.0.feedback": {
+    "source": "Not quite. Here, winter means a slow, quiet time. Read the second section again.",
+    "back": "Not quite. Here, winter means a slow and quiet time. Read the second part again.",
+    "flag": true
+  },
+  "read.checks.0.options.1.text": {
+    "source": "A time when money and interest in AI fell",
+    "back": "A time when money and interest in AI went down",
+    "flag": true
+  },
+  "read.checks.0.options.1.feedback": {
+    "source": "Yes. When money and interest fell, progress slowed. Historians still argue about the exact dates.",
+    "back": "Correct. When money and interest went down, progress became slow. Historians still debate the exact dates.",
+    "flag": true
+  },
+  "read.checks.0.options.2.text": {
+    "source": "A time when computers learned the fastest",
+    "back": "A time when computers learned fastest",
+    "flag": true
+  },
+  "read.checks.0.options.2.feedback": {
+    "source": "Not quite. In an AI winter, progress slowed down. Read the second section again.",
+    "back": "Not quite. During an AI winter, progress became slow. Read the second part again.",
+    "flag": true
+  },
+  "read.checks.1.question": {
+    "source": "The Dartmouth proposal was written in 1955. What happened in 1956?",
+    "back": "The Dartmouth proposal was written in 1955. What happened in 1956?",
+    "flag": true
+  },
+  "read.checks.1.options.0.text": {
+    "source": "The summer project at Dartmouth took place",
+    "back": "The summer project at Dartmouth took place",
+    "flag": true
+  },
+  "read.checks.1.options.0.feedback": {
+    "source": "Yes. The proposal was the plan, written in 1955. The project happened in the summer of 1956.",
+    "back": "Correct. The proposal was the plan, written in 1955. The project took place in the summer of 1956.",
+    "flag": true
+  },
+  "read.checks.1.options.1.text": {
+    "source": "The proposal for the project was written",
+    "back": "The proposal for the project was written",
+    "flag": true
+  },
+  "read.checks.1.options.1.feedback": {
+    "source": "Not quite. The proposal came first, on 31 August 1955. Look at the source card again.",
+    "back": "Not quite. The proposal came first, on 31 August 1955. Look at the source card again.",
+    "flag": true
+  },
+  "read.checks.1.options.2.text": {
+    "source": "A chess computer beat the world champion",
+    "back": "A chess computer beat the world champion",
+    "flag": true
+  },
+  "read.checks.1.options.2.feedback": {
+    "source": "Not quite. That happened in 1997, much later. Look at the timeline again.",
+    "back": "Not quite. That happened in 1997, much later. Look at the timeline again.",
+    "flag": true
+  },
+  "read.checks.2.question": {
+    "source": "Why do you think some researchers made such big promises? Who might believe them?",
+    "back": "In your opinion, why did some researchers make such big promises? Who might believe them?",
+    "flag": true
+  },
+  "read.checks.2.placeholder": {
+    "source": "I think they made big promises because ... People who might believe them are ...",
+    "back": "I think they made big promises because ... People who might believe them are ...",
+    "flag": true
+  },
+  "write.prompt": {
+    "source": "Explain how AI developed from the 1950s to the 2010s. Use one hope or promise, one setback and one success from the lesson.",
+    "back": "Explain how AI developed from the 1950s to the 2010s. Use one hope or promise, one setback and one success from this lesson.",
+    "flag": true
+  },
+  "write.sentenceStarters.0": {
+    "source": "In 1955, four researchers proposed ...",
+    "back": "In 1955, four researchers proposed ...",
+    "flag": true
+  },
+  "write.sentenceStarters.1": {
+    "source": "One big hope or promise was ...",
+    "back": "One big hope or promise was ...",
+    "flag": true
+  },
+  "write.sentenceStarters.2": {
+    "source": "A setback came when ...",
+    "back": "A setback happened when ...",
+    "flag": true
+  },
+  "write.sentenceStarters.3": {
+    "source": "A success came when ...",
+    "back": "A success happened when ...",
+    "flag": true
+  },
+  "write.sentenceStarters.4": {
+    "source": "I think AI developed this way because ...",
+    "back": "I think AI developed this way because ...",
+    "flag": true
+  },
+  "write.planningBoxes.0": {
+    "source": "My main idea",
+    "back": "My main idea",
+    "flag": true
+  },
+  "write.planningBoxes.1": {
+    "source": "Evidence from the lesson",
+    "back": "Evidence from the lesson",
+    "flag": true
+  },
+  "write.planningBoxes.2": {
+    "source": "Why it matters",
+    "back": "Why this matters",
+    "flag": true
+  },
+  "write.planningBoxes.3": {
+    "source": "A question I still have",
+    "back": "A question I still have",
+    "flag": true
+  },
+  "write.selfCheck.0": {
+    "source": "I named one hope or promise.",
+    "back": "I named one hope or promise.",
+    "flag": true
+  },
+  "write.selfCheck.1": {
+    "source": "I explained one setback and why it happened.",
+    "back": "I explained one setback and why it happened.",
+    "flag": true
+  },
+  "write.selfCheck.2": {
+    "source": "I gave one success and what helped it.",
+    "back": "I gave one success and what helped it.",
+    "flag": true
+  },
+  "write.example": {
+    "source": "In 1955, four researchers proposed a summer study of AI. They hoped a machine could copy every part of learning. Some made big promises. But computers were slow, and there was little data. A setback came in 1973. A British report said much AI work was weak, and Britain cut some funding. A success came in 2012. A program got much better at naming things in photos. It used lots of data and fast chips. I think AI developed this way because ideas need money, computers and data.",
+    "back": "In 1955, four researchers proposed a summer study about AI. They hoped a machine could copy every part of learning. Some of them made big promises. But computers were slow, and data was scarce. A setback happened in 1973. A British report said much AI work was weak, and Britain cut some funding. A success happened in 2012. A program became much better at naming things in photos. It used a lot of data and fast chips. I think AI developed this way because ideas need money, computers and data.",
+    "flag": true
+  },
+  "speak.partnerTask": {
+    "source": "Your partner reads a made-up headline from Tomorrow Today. You say if it is a big promise or a careful claim, and why. Then switch.",
+    "back": "Your partner reads one invented headline from Tomorrow Today. You say whether it is a big promise or a careful claim, and why. Then switch turns.",
+    "flag": true
+  },
+  "speak.independentTask": {
+    "source": "Tell the story of AI out loud in four sentences: a question, a proposal, a setback and a success.",
+    "back": "Tell the story of AI out loud in four sentences: a question, a proposal, a setback and a success.",
+    "flag": true
+  },
+  "watch.why": {
+    "source": "It explains where the name AI came from, why early hopes were too big, and why data and fast computers brought AI back.",
+    "back": "This video explains where the name AI comes from, why early hopes were too big, and why data and fast computers brought AI back.",
+    "flag": true
+  },
+  "watch.beforeQuestion": {
+    "source": "Why do you think it took so long to build machines that seem clever?",
+    "back": "In your opinion, why did it take so long to build machines that seem clever?",
+    "flag": true
+  },
+  "watch.afterQuestion": {
+    "source": "What two things did early AI researchers not have enough of?",
+    "back": "What two things did early AI researchers not have enough of?",
+    "flag": true
+  },
+  "watch.summary": {
+    "source": "In this video, a host called Jabril and a robot called John Green Bot talk about AI. AI is already part of daily life. It suggests videos, finishes words as you type, and helps decide some things about money and jobs. People have hopes and fears about it. The video links the name artificial intelligence to a summer project at Dartmouth College in 1956. The scientists there were very hopeful. Some said machines would soon be as clever as people. But they did not know how much data and computer power AI needs. So for a long time, progress was slow. This is called an AI winter. Then computers became much faster, and the internet made huge amounts of data. That is a big reason AI has grown so fast.",
+    "back": "In this video, a host named Jabril and a robot named John Green Bot talk about AI. AI is already part of daily life. It suggests videos, finishes words as you type, and helps make some decisions about money and jobs. People have hopes and worries about it. This video links the name artificial intelligence (kecerdasan buatan) to the summer project at Dartmouth College in 1956. The scientists there were very hopeful. Some said machines would soon be as clever as people. But they did not know how much data and computer power AI needs. So for a long time, progress was slow. This is called an AI winter. Then computers became much faster, and the internet produced very large amounts of data. That is one big reason AI has grown so quickly.",
+    "flag": true
+  },
+  "watch.keyPoints.0": {
+    "source": "The name artificial intelligence comes from the Dartmouth project, planned in 1955 and held in 1956.",
+    "back": "The name artificial intelligence (kecerdasan buatan) comes from the Dartmouth project, planned in 1955 and held in 1956.",
+    "flag": true
+  },
+  "watch.keyPoints.1": {
+    "source": "Early researchers made big promises, but they did not have enough data or computer power.",
+    "back": "Early researchers made big promises, but they did not have enough data or computer power.",
+    "flag": true
+  },
+  "watch.keyPoints.2": {
+    "source": "Faster computers and lots of data from the internet helped AI grow again.",
+    "back": "Faster computers and a lot of data from the internet helped AI grow again.",
+    "flag": true
+  },
+  "watch.contentNote": {
+    "source": "About 11 to 12 minutes (PBS lists its copy as 11 min 25 s; the captions run to 11:42), so durationSeconds is left null. Title and channel confirmed with YouTube's oEmbed on 31 October 2026. The summary was written from a copy of the video's English captions (amara.org) and PBS's description, not from watching it. It is fast, native-speaker English. It says AI was “frozen” in one AI winter until about 2010, which is simpler than the lesson's two winters with a boom between them. It mentions AI used to decide loans, insurance and job applications. Someone on the team must watch it before use; learners can read the written summary instead. The video dates the name to 1956; the proposal that used it was written on 31 August 1955 (the lesson's source card).",
+    "back": "About 11 to 12 minutes (PBS lists its copy as 11 min 25 s; the subtitles run to 11:42), so durationSeconds is left null. Title and channel confirmed with YouTube's oEmbed on 31 October 2026. This summary was written from a copy of the video's English subtitles (amara.org) and PBS's description, not by watching it. The video is fast, in native-speaker English. It says AI was “frozen” in one AI winter until about 2010, which is simpler than this lesson's two winters with a boom between them. It mentions AI used to make decisions about loans, insurance and job applications. A team member must watch it before it is used; learners can read the written summary instead. The video links the name to 1956; the proposal that used it was written on 31 August 1955 (the source card in this lesson).",
+    "flag": true,
+    "note": "\"Captions\" is \"sari kata\" (subtitles), the everyday Malaysian word."
+  },
+  "reflect.prompts.0.text": {
+    "source": "One reason AI took so long to grow is ...",
+    "back": "One reason AI took a long time to develop is ...",
+    "flag": true
+  },
+  "reflect.prompts.1.text": {
+    "source": "A promise about new tools that I would check is ...",
+    "back": "One promise about new tools that I will check is ...",
+    "flag": true
+  },
+  "reflect.completionMessage": {
+    "source": "You finished Lesson 2. You told the story of how AI developed, from Turing's question to machine learning.",
+    "back": "You have finished Lesson 2. You told the story of how AI developed, from Turing's question to machine learning.",
+    "flag": true
+  },
+  "visual.alt": {
+    "source": "A wavy timeline of AI from 1950 to 2015. Rule-based ideas and learning from examples run side by side. It rises with Turing's question in 1950, the 1955 proposal and 1956 project, the perceptron in 1958, expert systems in the 1980s, the chess computer in 1997 and better photo programs in 2012, and falls during AI winters in the mid-1970s and the late 1980s.",
+    "back": "A wavy timeline of AI from 1950 to 2015. Rule-based ideas and learning from examples run side by side. It rises with Turing's question in 1950, the 1955 proposal and the 1956 project, the perceptron in 1958, expert systems in the 1980s, the chess computer in 1997 and better photo programs in 2012, and falls during the AI winters in the mid-1970s and the late 1980s.",
+    "flag": true
+  },
+  "sources.0.label": {
+    "source": "A. M. Turing, Mind 59, 1950: Computing machinery and intelligence (copy at the University of Oxford)",
+    "back": "A. M. Turing, Mind 59, 1950: Computing machinery and intelligence (copy at the University of Oxford)",
+    "flag": true
+  },
+  "sources.1.label": {
+    "source": "AI Magazine (reprint, 2006): A proposal for the Dartmouth Summer Research Project on Artificial Intelligence, 31 August 1955, by McCarthy, Minsky, Rochester and Shannon",
+    "back": "AI Magazine (reprint, 2006): A proposal for the Dartmouth Summer Research Project on Artificial Intelligence, 31 August 1955, by McCarthy, Minsky, Rochester and Shannon",
+    "flag": true
+  },
+  "sources.2.label": {
+    "source": "Cornell University (2019): Professor's perceptron paved the way for AI, 60 years too soon (the perceptron, shown in July 1958)",
+    "back": "Cornell University (2019): Professor's perceptron paved the way for AI, 60 years too soon (the perceptron, shown in July 1958)",
+    "flag": true
+  },
+  "sources.3.label": {
+    "source": "Jon Agar, British Journal for the History of Science 53(3), 2020: What is science for? The Lighthill report on artificial intelligence reinterpreted (author's copy, UCL)",
+    "back": "Jon Agar, British Journal for the History of Science 53(3), 2020: What is science for? The Lighthill report on artificial intelligence reinterpreted (author's copy, UCL)",
+    "flag": true
+  },
+  "sources.4.label": {
+    "source": "Thomas Haigh, Communications of the ACM 67(2), February 2024: How the AI boom went bust (expert systems and the late-1980s AI winter)",
+    "back": "Thomas Haigh, Communications of the ACM 67(2), February 2024: How the AI boom went bust (expert systems and the AI winter in the late 1980s)",
+    "flag": true
+  },
+  "sources.5.label": {
+    "source": "Toosi and others (2021, accepted by PET Clinics): A brief history of AI, how to prevent another winter (Turing 1950 to AlexNet 2012)",
+    "back": "Toosi and colleagues (2021, accepted by PET Clinics): A brief history of AI, how to prevent another winter (from Turing 1950 to AlexNet 2012)",
+    "flag": true
+  },
+  "sensitiveNotes.0": {
+    "source": "Turing's life outside this paper (his wartime work and how he was treated later) is told in films and books, and some learners may know of it. This lesson leaves it out. If it comes up, keep it brief and factual, and don't ask learners about anyone's personal life.",
+    "back": "Turing's life outside this paper (his work during the war and how he was treated later) is told in films and books, and some learners may know about it. This lesson does not touch on it. If it comes up, tell it briefly and based on facts, and do not ask learners about anyone's private life.",
+    "flag": true
+  },
+  "educatorNotes.0": {
+    "source": "For teachers who want more: much early US funding came through DARPA, a military research agency (Toosi and others). The Lighthill report was submitted in March 1972 and published in 1973; it is often said to have caused Britain's first AI winter, but Agar (2020) shows the Science Research Council then funded some kinds of AI and not others. Haigh (2024) argues the deeper winter came in the late 1980s, after the expert-systems boom. The evidence (the proposal card and the timeline) is real; the Tomorrow Today headlines in the activity are made up, though each one matches a real period.",
+    "back": "For teachers who want to know more: much early funding in the United States came through DARPA, a military research agency (Toosi and colleagues). The Lighthill report was submitted in March 1972 and published in 1973; it is often said to have caused Britain's first AI winter, but Agar (2020) shows that the Science Research Council then funded some kinds of AI and not other kinds. Haigh (2024) argues that the worse winter came in the late 1980s, after the expert-systems boom. The evidence (the proposal card and the timeline) is real; the Tomorrow Today headlines in this activity are invented, though each one matches a real period.",
+    "flag": true
+  },
+  "educatorNotes.1": {
+    "source": "Paper version of the activity: write the eight headlines on cards and sort them into “A big promise”, “A careful claim” and “Hard to say”. There is no score; reward reasons, especially pointing to words like “soon”, “every” and “may”.",
+    "back": "Paper version of this activity: write the eight headlines on cards and sort them into “A big promise”, “A careful claim” and “Hard to say”. There are no marks; value the reasons given, especially when learners point to words like “soon”, “every” and “may”.",
+    "flag": true
+  },
+  "educatorNotes.2": {
+    "source": "The video is long (about 11 to 12 minutes). A shorter option the team could consider is TED-Ed's “The Turing test: Can a computer pass for a human?” (youtube.com/watch?v=3wLqsRLvV-c, about 4.5 minutes, title and channel confirmed with oEmbed), which covers only Turing's test and early chatbots. Neither has been watched yet.",
+    "back": "This video is long (about 11 to 12 minutes). A shorter option the team could consider is TED-Ed's “The Turing test: Can a computer pass for a human?” (youtube.com/watch?v=3wLqsRLvV-c, about 4.5 minutes, title and channel confirmed with oEmbed), which covers only the Turing test and early chatbots. Neither has been watched yet.",
+    "flag": true
+  }
+}

@@ -44,7 +44,7 @@ Justin's review ("Digital World: focused review and curriculum revision guidelin
 - **Sources:** every changed fact comes from a source the writers opened, listed in each lesson's `sources` (up to six), and each lesson has a claim record in `claims/DW01.md`…`DW17.md`: claim, source, date and what the source actually establishes, with what couldn't be confirmed.
 - **Printed sheets** say "Thinkerwell · Digital World", not "Exploring Our World".
 
-Still open from the review: a genuinely new test set for Lesson 3's last round (needs new leaf cards in code; a paper extension in the teacher notes for now); the optional Section 1 title; real names in learner text, which spec 5.3 kept to teacher notes and the review now asks for; several older sources kept from the first drafts without being reopened (each claim record lists them); some sources the writers couldn't open (the Computer History Museum timeline, the IEA's own pages, sea-lion.ai, SNEC's SELENA+ page, NECTEC's Traffy page), for which they used other reputable sources.
+Done since: Lesson 3's genuinely new test set, Round 4 (four leaves no earlier round used; the model gets 3 of 4). Still open from the review: the optional Section 1 title; real names in learner text, which spec 5.3 kept to teacher notes and the review now asks for; several older sources kept from the first drafts without being reopened (each claim record lists them); some sources the writers couldn't open (the Computer History Museum timeline, the IEA's own pages, sea-lion.ai, SNEC's SELENA+ page, NECTEC's Traffy page), for which they used other reputable sources.
 
 ## Videos
 
@@ -87,5 +87,5 @@ From the writers' notes (each lesson's `educatorNotes`, `sensitiveNotes` and `ch
 - **Watch all 17 videos** and replace any that don't suit (Lesson 12 first).
 - **Pictures:** 17 to draw, following `docs/content/VISUALS_SPEC.md`; each `visual.description` says what to show. Until then the lessons show none.
 - **Section checks:** none yet; one per section, written to `docs/content/QUIZ_SPEC.md`. The preview offers no certificates.
-- **Indonesian and Malay**, by the same process as Our World, once the English is reviewed. Until then the lessons are English under an Indonesian or Malay interface, marked `lang="en"`.
+- **Indonesian and Malay: native-speaker review.** Both were drafted by AI in November 2026 (`id/`, `ms/`; notes and `TERMS.md` in `docs/translation/<code>/notes/courses/digital-world/`), every string flagged. Look first at: "kecerdasan artifisial" or "kecerdasan buatan" (Indonesian); "diharamkan" for a legal ban in Lesson 12 (Malay); the Batam and Johor data-centre passages (Lesson 6) and Sahabat-AI (Lesson 7); "pendedahan"/"keterpaparan" for job exposure (Lesson 9); OSIS (Lesson 16). When the English changes, `npm run check:content` lists the stale strings.
 - **App work** before Digital World is switched on for everyone (spec section 9).

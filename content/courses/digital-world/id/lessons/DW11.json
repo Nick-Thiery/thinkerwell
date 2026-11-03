@@ -1,0 +1,264 @@
+{
+  "title": "AI di sekolah: membantu atau jalan pintas?",
+  "essentialQuestion": "Kapan alat AI membantumu belajar, dan kapan alat itu justru menghalangi?",
+  "learningGoal": "Menjelaskan bagaimana alat chat AI bisa membantu atau merugikan belajar, dan mengusulkan aturan yang adil untuk sebuah sekolah.",
+  "warmUp": {
+    "question": "Cara memakai alat AI yang mana yang membantu seorang murid belajar lebih banyak?",
+    "options": [
+      "Alat itu menjelaskan ide yang sulit",
+      "Alat itu menulis seluruh jawabannya",
+      "Tidak yakin"
+    ]
+  },
+  "evidence": {
+    "label": "Contoh fiksi yang dibuat untuk pelajaran ini.",
+    "question": "Murid mana yang memakai alat bantu itu untuk belajar? Murid mana yang memakainya sebagai jalan pintas?",
+    "cards": [
+      {
+        "title": "Tiga murid dan alat bantu PR Brightwater (alat pura-pura)",
+        "cases": [
+          {
+            "name": "Mira",
+            "body": "Mira tidak mengerti pecahan. Dia meminta alat bantu itu menjelaskannya dengan cara lain, dengan contoh tentang membagi roti. Lalu dia mengerjakan soal latihannya sendiri."
+          },
+          {
+            "name": "Jonah",
+            "body": "Jonah meminta alat bantu itu menulis seluruh karangannya tentang sungai. Dia mengumpulkannya sebagai hasil kerjanya sendiri. Keesokan harinya, dia tidak bisa menjawab pertanyaan gurunya tentang karangan itu."
+          },
+          {
+            "name": "Ayla",
+            "body": "Ayla meminta alat bantu itu menerjemahkan satu halaman IPA ke bahasa yang bisa dia baca dengan baik. Satu kata terlihat aneh, jadi dia memeriksanya dengan gurunya."
+          }
+        ]
+      },
+      {
+        "title": "Rancangan aturan Sekolah Brightwater untuk alat bantu PR",
+        "items": [
+          "Minta petunjuk dulu sebelum meminta jawaban.",
+          "Katakan kapan kamu memakai alat bantu itu, dan untuk apa.",
+          "Periksa fakta di buku atau dengan guru.",
+          "Jangan pernah mengetik nama, alamat atau informasi pribadi lainnya.",
+          "Semua murid bisa memakai alat bantu itu di laptop sekolah, bukan hanya murid yang punya ponsel sendiri."
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "title": "Coba alat bantu pura-pura",
+    "toolLabel": "Alat pura-pura. Jawabannya sudah ditulis sebelumnya untuk pelajaran ini. Ini bukan AI sungguhan, dan apa pun yang kamu pilih tidak dikirim ke mana pun.",
+    "instructions": "Pertama, pilih permintaan yang akan membantu Jonah belajar. Lalu periksa sebuah jawaban dari alat itu.",
+    "improve": {
+      "start": {
+        "prompt": "Tuliskan jawabanku: mengapa banyak kota tumbuh di dekat sungai?",
+        "answer": "Banyak kota tumbuh di dekat sungai karena sungai memberi orang air, makanan dan jalan untuk bepergian. Ini jawabanmu yang sudah jadi. Kamu bisa mengumpulkannya."
+      },
+      "question": "Permintaan mana yang paling membantu Jonah belajar?",
+      "options": [
+        {
+          "prompt": "Tuliskan jawaban yang lebih panjang untukku.",
+          "answer": "Banyak kota tumbuh di dekat sungai. Sungai memberi air untuk minum dan bertani. Sungai memberi ikan untuk dimakan. Perahu bisa mengangkut orang dan barang. Ini jawabanmu yang lebih panjang.",
+          "feedback": "Belum tepat. Jawaban yang lebih panjang tetap hasil kerja alat itu. Jonah tidak perlu berpikir."
+        },
+        {
+          "prompt": "Beri aku petunjuk. Lalu biarkan aku mencoba dulu.",
+          "answer": "Petunjuk: pikirkan apa yang dibutuhkan orang setiap hari. Apa yang bisa diberikan sungai kepada mereka? Tulis idemu. Lalu aku akan mengajukan pertanyaan tentang idemu itu.",
+          "feedback": "Benar. Petunjuk membantu Jonah berpikir. Dia tetap belajar sendiri."
+        },
+        {
+          "prompt": "Ubah kata-katanya supaya terlihat seperti tulisanku.",
+          "answer": "Ini jawaban yang sama dengan kata-kata baru. Kota sering bermula di tepi sungai, karena sungai membawa air, makanan dan jalan untuk bepergian.",
+          "feedback": "Belum tepat. Ini menyembunyikan siapa yang mengerjakannya. Itu tidak jujur, dan Jonah tidak belajar hal baru."
+        }
+      ]
+    },
+    "check": {
+      "prompt": "Kapan jembatan tua di Brightwater dibangun?",
+      "answer": "Jembatan tua di Brightwater dibangun pada tahun 1850. Aku benar-benar yakin tentang hal ini.",
+      "trustedSource": {
+        "name": "Buku sejarah kota Brightwater",
+        "says": "Jembatan tua itu dibangun pada tahun 1920. Sebelum itu, orang menyeberangi sungai dengan perahu."
+      },
+      "question": "Alat itu terdengar sangat yakin. Apa yang sebaiknya kamu lakukan?",
+      "options": [
+        {
+          "text": "Percaya saja, karena alat itu terdengar yakin",
+          "feedback": "Belum tepat. Sebuah alat bisa terdengar yakin tetapi tetap salah. Periksa sumber yang tepercaya."
+        },
+        {
+          "text": "Minta alat itu mengatakannya lagi",
+          "feedback": "Belum tepat. Alat itu mungkin memberi jawaban salah yang sama. Periksa sumber yang lain."
+        },
+        {
+          "text": "Periksa buku sejarah kota",
+          "feedback": "Benar. Buku itu mengatakan 1920. Alat itu mengarang sebuah tahun, walaupun terdengar yakin."
+        }
+      ]
+    }
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Sekolah sedang memutuskan cara memakai AI",
+        "text": "Alat chat AI bisa menjawab pertanyaan, menjelaskan ide, bahkan menulis karangan utuh. Banyak orang memakainya, termasuk banyak murid. Jadi, sekolah dan keluarga menghadapi pertanyaan baru: bagaimana murid sebaiknya memakai alat-alat ini? Pada tahun 2023, UNESCO, organisasi PBB untuk pendidikan, bertanya kepada lebih dari 450 sekolah dan universitas. Kurang dari 1 di antara 10 punya aturan atau panduan resmi tentang alat AI. Kemudian pada tahun yang sama, UNESCO menulis panduan untuk negara-negara. Panduan itu mengatakan negara-negara sebaiknya melindungi privasi murid, dan menetapkan batas usia, misalnya 13 tahun, bagi anak-anak yang memakai alat chat ini sendirian. Ini saran, bukan undang-undang, dan bukan tentang setiap alat belajar.",
+        "simpler": "Alat chat AI bisa menjawab pertanyaan, bahkan menulis karangan. Sekolah harus memutuskan cara memakainya. Pada tahun 2023, UNESCO bertanya kepada lebih dari 450 sekolah dan universitas. UNESCO adalah kelompok PBB untuk pendidikan. Kurang dari 1 di antara 10 punya panduan tentang AI. Lalu UNESCO menulis panduan untuk negara-negara. Lindungi privasi murid, kata UNESCO. Tetapkan usia, misalnya 13 tahun, bagi anak-anak yang mengobrol dengan AI sendirian. Ini saran, bukan undang-undang."
+      },
+      {
+        "heading": "Alat bisa membantumu belajar",
+        "text": "Kalau dipakai dengan baik, alat AI bisa sedikit mirip tutor. Alat itu bisa menjelaskan ide yang sulit dengan kata-kata yang lebih sederhana, memberimu latihan tambahan, atau menerjemahkan sebuah halaman ke bahasa yang kamu kuasai. Di Sekolah Brightwater yang rekaan, Mira meminta alat bantu PR menjelaskan pecahan dengan cara baru. Lalu dia mengerjakan latihannya sendiri. Pada tahun 2024, para peneliti menguji tutor AI untuk bahasa Inggris bersama murid sekolah menengah di Nigeria. Selama enam minggu, murid-murid memakainya sepulang sekolah, dan guru-guru yang sudah dilatih membimbing setiap sesi. Dalam tes bahasa Inggris di akhir, hasil mereka lebih baik daripada murid yang tidak ikut.",
+        "simpler": "Alat AI bisa sedikit mirip tutor. Alat itu bisa menjelaskan ide yang sulit dengan kata-kata mudah, atau memberimu latihan tambahan. Di Sekolah Brightwater, Mira bertanya kepada alat bantu tentang pecahan. Lalu dia mengerjakan latihannya sendiri. Pada tahun 2024, murid di Nigeria memakai tutor AI sepulang sekolah selama enam minggu. Guru membimbing mereka. Hasil tes bahasa Inggris mereka lebih baik daripada murid lain."
+      },
+      {
+        "heading": "Alat juga bisa menjadi jalan pintas",
+        "text": "Alat AI juga bisa menjadi jalan pintas yang justru menghalangi. Dalam sebuah penelitian di Türkiye, hampir 1.000 murid SMA berlatih matematika. Sebagian memakai alat chat yang memberi jawaban lengkap. Hasil latihan mereka lebih baik, tetapi hasil tes tanpa alat itu lebih buruk. Murid yang alatnya memberi petunjuk, yang ditulis dengan bantuan guru, mendapat hasil kurang lebih sama dengan murid tanpa alat. Setiap penelitian hanya tentang satu mata pelajaran di satu tempat, jadi hasil di tempat lain bisa berbeda. Alat juga bisa salah tetapi tetap terdengar yakin, dan tidak setiap murid punya perangkat. Jadi, rancangan aturan Brightwater meminta petunjuk dulu, kerja yang jujur, dan memeriksa dengan guru.",
+        "simpler": "Alat juga bisa menjadi jalan pintas. Akibatnya, kamu belajar lebih sedikit. Dalam satu penelitian, hampir 1.000 murid berlatih matematika. Sebagian punya alat yang memberi jawaban lengkap. Hasil latihan mereka bagus. Dalam tes tanpa alat, hasil mereka lebih buruk. Murid lain punya alat yang memberi petunjuk, dibuat bersama guru. Hasil mereka sama baiknya dengan murid tanpa alat. Hasil di tempat lain bisa berbeda. Alat bisa salah tetapi terdengar yakin. Tidak semua murid punya perangkat. Aturan Brightwater mengatakan: petunjuk dulu, kerja yang jujur, dan periksa dengan guru."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "panduan",
+        "definition": "Saran dari sebuah kelompok tentang cara melakukan sesuatu.",
+        "example": "UNESCO menulis panduan tentang alat AI di sekolah."
+      },
+      {
+        "word": "privasi",
+        "definition": "Menjaga informasimu sendiri tetap aman dari orang yang tidak boleh melihatnya.",
+        "example": "Aturan Brightwater melindungi privasi: jangan pernah mengetik alamatmu ke alat bantu itu."
+      },
+      {
+        "word": "tutor",
+        "definition": "Orang yang membantu satu murid, atau beberapa murid, mempelajari sesuatu.",
+        "example": "Alat bantu itu menjelaskan pecahan kepada Mira, sedikit mirip tutor."
+      },
+      {
+        "word": "jalan pintas",
+        "definition": "Cara yang lebih cepat yang melewatkan sebagian langkah.",
+        "example": "Jonah memakai alat bantu itu sebagai jalan pintas, jadi dia tidak belajar apa-apa tentang sungai."
+      },
+      {
+        "word": "jujur",
+        "forms": [
+          "kejujuran"
+        ],
+        "definition": "Mengatakan yang sebenarnya, termasuk tentang siapa yang mengerjakan sesuatu.",
+        "example": "Murid yang jujur mengatakan kapan dia memakai alat bantu itu."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Dalam penelitian matematika di Türkiye, apa yang terjadi ketika alat itu memberi jawaban lengkap?",
+        "options": [
+          {
+            "text": "Hasil tes mereka paling baik dari semuanya",
+            "feedback": "Belum tepat. Hasil latihan mereka bagus, tetapi tidak dalam tes. Baca lagi bagian ketiga."
+          },
+          {
+            "text": "Hasil tes mereka lebih buruk",
+            "feedback": "Benar. Alat itu yang mengerjakan latihannya. Dalam tes tanpa alat itu, hasil mereka lebih buruk."
+          },
+          {
+            "text": "Mereka tidak pernah memakai alat itu",
+            "feedback": "Belum tepat. Mereka sering memakainya saat latihan. Baca lagi bagian ketiga."
+          }
+        ]
+      },
+      {
+        "question": "Aturan mana yang paling membantu murid belajar?",
+        "options": [
+          {
+            "text": "Kumpulkan jawaban dari alat itu",
+            "feedback": "Belum tepat. Kalau begitu, alat itulah yang berpikir. Lihat rancangan aturan Brightwater."
+          },
+          {
+            "text": "Hanya murid yang paling cepat boleh memakainya",
+            "feedback": "Belum tepat. Itu tidak adil, dan tidak membantu siapa pun belajar. Lihat lagi aturan-aturannya."
+          },
+          {
+            "text": "Minta petunjuk sebelum meminta jawaban",
+            "feedback": "Benar. Petunjuk membantumu berpikir, jadi kamu tetap belajar sendiri."
+          }
+        ]
+      },
+      {
+        "question": "Menurutmu, aturan Brightwater mana yang paling penting? Mengapa?",
+        "placeholder": "Aturan yang paling penting adalah ... karena ..."
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Sekolah Brightwater butuh bantuan untuk aturan alat bantu PR-nya. Tulis dua aturan, lalu jelaskan bagaimana setiap aturan membantu murid belajar atau menjaga keadilan.",
+    "sentenceStarters": [
+      "Aturan pertamaku adalah ...",
+      "Aturan ini membantu karena ...",
+      "Aturan keduaku adalah ...",
+      "Ini adil karena ...",
+      "Dalam pelajaran, ___ menunjukkan bahwa ..."
+    ],
+    "planningBoxes": [
+      "Ide utamaku",
+      "Bukti dari pelajaran",
+      "Mengapa ini penting",
+      "Pertanyaan yang masih aku punya"
+    ],
+    "selfCheck": [
+      "Aku menulis dua aturan untuk Sekolah Brightwater.",
+      "Aku menjelaskan bagaimana setiap aturan membantu murid belajar atau menjaga keadilan.",
+      "Aku memakai bukti dari pelajaran."
+    ],
+    "example": "Aturan pertamaku adalah: minta petunjuk dulu sebelum meminta jawaban. Aturan ini membantu karena murid tetap berpikir sendiri. Dalam pelajaran, penelitian di Türkiye menunjukkan bahwa murid yang mendapat jawaban lengkap mendapat hasil lebih buruk dalam tes tanpa alat itu. Aturan keduaku adalah: semua murid bisa memakai alat bantu itu di laptop sekolah. Ini adil karena tidak setiap murid punya ponsel di rumah. Ayla memakainya untuk menerjemahkan sebuah halaman, lalu dia memeriksa satu kata dengan gurunya."
+  },
+  "speak": {
+    "partnerTask": "Temanmu menyebutkan satu cara seorang murid bisa memakai alat bantu PR. Kamu mengatakan “membantu” atau “jalan pintas” dan memberi satu alasan. Lalu bergantian.",
+    "independentTask": "Ucapkan dengan lantang satu cara alat AI bisa membantu belajar, satu cara alat itu bisa menghalangi, dan satu aturan yang akan kamu buat."
+  },
+  "watch": {
+    "why": "Kartun pendek ini menjelaskan mengapa alat chat AI dibuat supaya terdengar seperti manusia, yang bisa membuat jawabannya terasa lebih benar daripada kenyataannya.",
+    "beforeQuestion": "Menurutmu, mengapa alat chat AI bisa terdengar seperti manusia sungguhan?",
+    "afterQuestion": "Mengapa seorang murid sebaiknya memeriksa apa yang dikatakan alat chat, walaupun alat itu terdengar yakin?",
+    "summary": "Kartun pendek ini tentang chatbot AI. Chatbot adalah program komputer yang bisa kamu ajak mengobrol lewat tulisan. Rasanya sedikit mirip mengirim pesan kepada seseorang. Video ini menjelaskan apa itu chatbot dan cara kerjanya. Video ini juga bertanya mengapa banyak chatbot dibuat supaya terdengar seperti manusia. Chatbot bisa terdengar ramah dan seperti manusia. Hal ini bisa membuatnya terasa seperti teman. Hal ini juga bisa membuat jawabannya terasa lebih benar daripada kenyataannya. Tetapi chatbot bukan manusia. Chatbot tidak benar-benar mengenalmu, dan bisa salah. Jadi, perhatikan apa yang kamu rasakan karena chatbot. Dan periksa apa yang dikatakannya sebelum kamu memercayainya.",
+    "keyPoints": [
+      "Banyak chatbot AI dibuat supaya terdengar seperti manusia.",
+      "Terdengar seperti manusia dan yakin tidak membuat sebuah jawaban menjadi benar.",
+      "Perhatikan apa yang kamu rasakan karena chatbot, dan periksa apa yang dikatakannya."
+    ],
+    "contentNote": "Kartun dari Amerika Serikat, 3 menit 20 detik (menurut halaman video Common Sense Education). Judul dan kanalnya diperiksa dengan oEmbed YouTube pada 31 Oktober 2026. Ringkasannya ditulis dari deskripsi video oleh Common Sense Education (mengapa chatbot dirancang supaya terdengar sangat mirip manusia, dan bagaimana hal itu bisa memengaruhi kita) dan dari tujuan pelajaran yang memakainya, bukan dari menontonnya. Seseorang dalam tim harus menontonnya dan memeriksa ringkasannya sebelum dipakai. Pelajar bisa membaca ringkasan tertulisnya saja."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Alat AI membantu belajar ketika ... Alat itu menghalangi ketika ..."
+      },
+      {
+        "text": "Satu aturan tentang alat AI yang sebaiknya dimiliki setiap sekolah adalah ..."
+      }
+    ],
+    "completionMessage": "Kamu sudah menyelesaikan Pelajaran 11. Kamu menimbang bagaimana alat AI bisa membantu atau menghalangi di sekolah, dan menulis aturan yang adil untuk sebuah sekolah."
+  },
+  "visual": {
+    "alt": "Dua jalan dari PR yang sama. Meminta petunjuk membuat murid belajar; meminta seluruh jawaban berujung pada tes yang sulit tanpa alat itu."
+  },
+  "sources": [
+    {
+      "label": "UNESCO (2023): Guidance for generative AI in education and research (panduan AI generatif dalam pendidikan dan penelitian; catatan katalog: batas usia untuk percakapan mandiri dengan AI generatif; GCED Clearinghouse)"
+    },
+    {
+      "label": "UNESCO (7 September 2023): Governments must quickly regulate generative AI in schools (pemerintah harus segera mengatur AI generatif di sekolah; siaran pers, batas usia 13 tahun; salinan GCED Clearinghouse)"
+    },
+    {
+      "label": "UNESCO (2023): Survey, less than 10% of schools and universities have formal guidance on AI (survei: kurang dari 10% sekolah dan universitas punya panduan resmi tentang AI; salinan GCED Clearinghouse)"
+    },
+    {
+      "label": "World Bank (Mei 2025): From chalkboards to chatbots, evaluating the impact of generative AI on learning outcomes in Nigeria (dari papan tulis ke chatbot: dampak AI generatif pada hasil belajar di Nigeria; De Simone dan kawan-kawan, Policy Research Working Paper 11125)"
+    },
+    {
+      "label": "Bastani dan kawan-kawan (PNAS, 2025): Generative AI without guardrails can harm learning, evidence from high school mathematics (AI generatif tanpa pembatas bisa merugikan belajar; catatan publikasi; diberitakan oleh Knowledge at Wharton, Agustus 2024, untuk penelitian di Türkiye)"
+    }
+  ],
+  "sensitiveNotes": [
+    "Jangan bertanya kepada pelajar apakah atau bagaimana mereka pernah memakai alat AI untuk tugas sekolah, dan jangan minta mereka mengetik pertanyaan ke alat AI sungguhan di kelas. Panduan UNESCO tahun 2023 meminta negara-negara menetapkan batas usia untuk percakapan mandiri anak-anak dengan alat AI generatif (siaran persnya menyebut 13 tahun); itu panduan, bukan aturan untuk setiap alat belajar, dan banyak pelajar lebih muda dari itu. Alat pura-pura membuat semua orang tetap tanpa internet. Kata-kata UNESCO berbeda antarsumber: catatan katalognya mengatakan panduan itu mengusulkan \"setting an age limit for independent conversations with GenAI platforms\" (menetapkan batas usia untuk percakapan mandiri dengan platform AI generatif); siaran persnya mengatakan panduan itu \"sets an age limit of 13 for the use of AI tools in the classroom\" (menetapkan batas usia 13 tahun untuk pemakaian alat AI di kelas). Pelajaran ini mengatakan panduan itu menyarankan usia, misalnya 13 tahun, untuk memakai alat chat sendirian. Panduan lengkapnya tidak bisa dibuka dalam revisi ini: periksa dulu sebelum mengajar.",
+    "Sebagian pelajar tidak punya perangkat atau internet di tempat tinggal mereka. Bahas akses sebagai pertanyaan tentang keadilan bagi sekolah, jangan pernah sebagai sesuatu yang dibandingkan antarpelajar."
+  ],
+  "educatorNotes": [
+    "Murid-murid Brightwater, jawaban alat pura-pura dan tahun jembatan 1850 adalah rekaan; tahun yang salah itu sengaja ditulis supaya pelajar berlatih memeriksa. Versi kertas kegiatan ini: bacakan permintaan dan jawabannya dengan lantang, lalu biarkan pelajar memilih.",
+    "Dua penelitian itu, disederhanakan (lihat sumber dan claims/DW11.md). Nigeria: uji acak Bank Dunia di SMA negeri di Negara Bagian Edo (Benin City), Juni sampai Juli 2024: enam minggu sesi bahasa Inggris sepulang sekolah, dua kali seminggu, dengan model bahasa besar dan guru yang dilatih untuk membimbing setiap sesi; dalam tes tertulis bahasa Inggris, pengetahuan AI dan keterampilan digital, peningkatannya sekitar 0,3 simpangan baku (0,23 sampai 0,24 untuk bahasa Inggris), dan murid juga lebih baik dalam ujian akhir tahun. Para penulis tidak bisa memisahkan AI dari dukungan guru dan perintahnya, dan tidak tahu apakah hasilnya bertahan atau berhasil untuk mata pelajaran lain atau kelas biasa. Türkiye: Bastani dan kawan-kawan (PNAS, 2025): hampir 1.000 murid matematika SMA; dengan GPT-4 selama latihan, alat chat biasa menaikkan nilai latihan sebesar 48% tetapi menurunkan nilai ujian berikutnya tanpa AI sebesar 17%; tutor yang memberi petunjuk, dengan masukan guru, menaikkan nilai latihan sebesar 127% dan membuat nilai ujian kurang lebih sama dengan tanpa AI. Tidak ada penelitian yang menunjukkan hasil untuk setiap pelajar, mata pelajaran atau alat."
+  ]
+}

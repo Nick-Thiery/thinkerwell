@@ -51,6 +51,18 @@ const FIXED_KEYS = new Set([
   'lesson',
   // A glossary word's one-line meanings in learners' languages (for English lessons).
   'translations',
+  // Digital World's activities: where an activity goes, and the ids its parts point to.
+  'stage',
+  'placement',
+  'suggested',
+  'gardenerSays',
+  'addExamples',
+  'test',
+  'wrong',
+  'method',
+  'mostMistakes',
+  'sign',
+  'kind',
 ]);
 
 /**
@@ -64,6 +76,11 @@ const FIXED_PATHS: ReadonlyArray<Path> = [
   ['watch', 'channel'],
   ['watch', 'replacementSuggestion'],
   ['visual', 'description'],
+  // A preview course's: its second picture's plan and credit (a picture's own title and maker), and an activity's notes for the team.
+  ['secondVisual', 'description'],
+  ['secondVisual', 'credit'],
+  ['activity', 'saves'],
+  ['activity', 'offline'],
 ];
 
 /** Arrays replaced whole rather than item by item. */

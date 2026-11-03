@@ -6,6 +6,7 @@ list tools/audio/export.ts makes (the app's own sentences).
 docs/notes/recorded-audio.md.
 
   python3 scripts/audio/generate.py EXPORT.json [--lang en] [--synth-only]
+  python3 scripts/audio/generate.py EXPORT.json --course digital-world [--lang id] [--synth-only]
   python3 scripts/audio/generate.py EXPORT.json --lang vi --sample DIR [--limit 3] [--vi-voice NAME]
   python3 scripts/audio/generate.py --fetch-vieneu
   python3 scripts/audio/generate.py --list-vi-voices
@@ -25,6 +26,12 @@ docs/notes/recorded-audio.md.
    `npm run check:audio` compares with the lessons. src/audio/recordings.json
    tells the app where each language's timings are. Files no section uses
    any more are deleted.
+
+A preview course (--course, or --all-courses) is recorded the same way into
+public/audio/<lang>/<course>/, with timings of its own, its entries under
+`courses` in the manifest, and src/audio/courseRecordings.json for the app.
+Recording a course never touches Our World's files, and recording Our World
+never touches a course's.
 
 Progress goes to stdout, one line per piece, with an estimate of the time
 left. Run it in the background with nohup for a whole language.
@@ -52,6 +59,7 @@ CACHE = ROOT / ".audio-cache"
 PUBLIC = ROOT / "public" / "audio"
 MANIFEST = ROOT / "tools" / "audio" / "manifest.json"
 INDEX = ROOT / "src" / "audio" / "recordings.json"
+COURSE_INDEX = ROOT / "src" / "audio" / "courseRecordings.json"
 
 # Vietnamese: the preset voice (VieNeu-TTS v3 Turbo's own names, see
 # `--list-vi-voices`). The team chooses it after listening to samples
@@ -392,10 +400,11 @@ def slug(key: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", unicodedata.normalize("NFKD", key).lower()).strip("-")
 
 
-def assemble(lang: str, sections: list[dict], normaliser: int, out_dir: Path | None = None, prune: bool = True) -> dict:
-    """Joins each section's pieces into its MP3. `out_dir` (default public/audio/<lang>) and `prune=False` are for --sample, which writes elsewhere."""
+def assemble(lang: str, sections: list[dict], normaliser: int, out_dir: Path | None = None, prune: bool = True, course: str | None = None) -> dict:
+    """Joins each section's pieces into its MP3. `out_dir` (default public/audio/<lang>, or public/audio/<lang>/<course>) and `prune=False` are for --sample, which writes elsewhere."""
     rate = VOICES[lang]["sampleRate"]
-    out_dir = out_dir or PUBLIC / lang
+    url_dir = f"audio/{lang}/{course}" if course else f"audio/{lang}"
+    out_dir = out_dir or (PUBLIC / lang / course if course else PUBLIC / lang)
     out_dir.mkdir(parents=True, exist_ok=True)
     entries: dict[str, dict] = {}
     timings: dict[str, dict] = {}
@@ -455,7 +464,8 @@ def assemble(lang: str, sections: list[dict], normaliser: int, out_dir: Path | N
     (out_dir / timings_name).write_bytes(timings_json)
     keep = {e["file"] for e in entries.values()} | {timings_name}
     for old in out_dir.iterdir() if prune else []:
-        if old.name not in keep:
+        # Only files: a course's recordings are in a folder of their own (public/audio/<lang>/<course>/).
+        if old.is_file() and old.name not in keep:
             old.unlink()
             log(f"[{lang}] deleted {old.name} (no section uses it now)")
     for warning in warnings:
@@ -464,7 +474,7 @@ def assemble(lang: str, sections: list[dict], normaliser: int, out_dir: Path | N
         "voice": VOICES[lang],
         "normaliser": normaliser,
         "encoding": ENCODING,
-        "timings": f"audio/{lang}/{timings_name}",
+        "timings": f"{url_dir}/{timings_name}",
         "files": len(entries),
         "bytes": sum(e["bytes"] for e in entries.values()),
         "seconds": round(sum(e["seconds"] for e in entries.values()), 1),
@@ -489,6 +499,8 @@ def main() -> int:
     parser.add_argument("export", nargs="?", help="the JSON tools/audio/export.ts wrote")
     parser.add_argument("--lang", action="append", help="only this language (en, id, ms, vi); may be given more than once. Without it: the ready languages, and any already recorded")
     parser.add_argument("--synth-only", action="store_true", help="record the pieces, but don't make the files")
+    parser.add_argument("--course", action="append", help="a preview course instead of Our World (digital-world, southeast-asia-through-time); may be given more than once")
+    parser.add_argument("--all-courses", action="store_true", help="every preview course instead of Our World")
     parser.add_argument("--threads", type=int, default=int(os.environ.get("AUDIO_THREADS", "0") or 0), help="CPU threads (0: each engine's default)")
     parser.add_argument("--vi-voice", help=f"VieNeu preset voice for Vietnamese (default {VI_VOICE!r}; AUDIO_VI_VOICE does the same); --list-vi-voices lists them")
     parser.add_argument("--list-vi-voices", action="store_true", help="list VieNeu's preset voices and stop")
@@ -537,6 +549,9 @@ def main() -> int:
             log(f"[{language['lang']}] {result['files']} sample file(s) in {out / language['lang']}: {result['seconds'] / 60:.1f} min, voice {VOICES[language['lang']].get('voice', '')}")
         return 0
 
+    if args.course or args.all_courses:
+        return record_courses(export, manifest, args)
+
     for language in languages:
         if language["lang"] not in VOICES:
             log(f"No voice is set for {language['lang']} in scripts/audio/generate.py (VOICES).")
@@ -551,19 +566,67 @@ def main() -> int:
     exported = {l["lang"] for l in export["languages"]}
     for lang in [l for l in recorded if l not in exported]:
         del recorded[lang]
+    write_manifest(manifest, recorded, manifest.get("courses", {}))
+    index = {
+        lang: {"timings": f"/{entry['timings']}", "files": entry["files"], "bytes": entry["bytes"]}
+        for lang, entry in sorted(recorded.items())
+    }
+    INDEX.write_text(json.dumps(index, indent=2) + "\n", "utf-8")
+    for lang, entry in sorted(recorded.items()):
+        log(f"[{lang}] {entry['files']} files, {entry['bytes'] / 1e6:.1f} MB, {entry['seconds'] / 60:.1f} min")
+    return 0
+
+
+def write_manifest(previous: dict, languages: dict, courses: dict) -> None:
     manifest = {
         "about": "Made by npm run audio:generate (scripts/audio/generate.py). Don't edit by hand. docs/notes/recorded-audio.md",
         "gaps": GAPS,
-        "languages": dict(sorted(recorded.items())),
+        "languages": dict(sorted(languages.items())),
     }
+    if courses:
+        manifest["courses"] = {course: dict(sorted(langs.items())) for course, langs in sorted(courses.items())}
     MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=1) + "\n", "utf-8")
+
+
+def record_courses(export: dict, manifest: dict, args) -> int:
+    """--course / --all-courses: records the preview courses into public/audio/<lang>/<course>/, leaving Our World's files as they are."""
+    tracks = [
+        t for t in export.get("courses", [])
+        if (args.all_courses or t["course"] in args.course) and (not args.lang or t["lang"] in args.lang)
+    ]
+    if not tracks:
+        log("No preview course matches --course/--lang in the export.")
+        return 1
+    for track in tracks:
+        if track["lang"] not in VOICES:
+            log(f"No voice is set for {track['lang']} in scripts/audio/generate.py (VOICES).")
+            return 1
+        log(f"[{track['lang']}] {track['course']}")
+        synthesise(track["lang"], track["sections"])
+    if args.synth_only:
+        return 0
+    courses = manifest.get("courses", {})
+    for track in tracks:
+        courses.setdefault(track["course"], {})[track["lang"]] = assemble(
+            track["lang"], track["sections"], track["normaliser"], course=track["course"]
+        )
+    # A course or language no longer exported goes from the manifest (its folder is left for a person to delete).
+    exported = {(t["course"], t["lang"]) for t in export.get("courses", [])}
+    for course in list(courses):
+        for lang in list(courses[course]):
+            if (course, lang) not in exported:
+                del courses[course][lang]
+        if not courses[course]:
+            del courses[course]
+    write_manifest(manifest, manifest.get("languages", {}), courses)
     index = {
-        lang: {"timings": f"/{entry['timings']}", "files": entry["files"], "bytes": entry["bytes"]}
-        for lang, entry in manifest["languages"].items()
+        course: {lang: {"timings": f"/{e['timings']}", "files": e["files"], "bytes": e["bytes"]} for lang, e in sorted(langs.items())}
+        for course, langs in sorted(courses.items())
     }
-    INDEX.write_text(json.dumps(index, indent=2) + "\n", "utf-8")
-    for lang, entry in manifest["languages"].items():
-        log(f"[{lang}] {entry['files']} files, {entry['bytes'] / 1e6:.1f} MB, {entry['seconds'] / 60:.1f} min")
+    COURSE_INDEX.write_text(json.dumps(index, indent=2) + "\n", "utf-8")
+    for course, langs in sorted(courses.items()):
+        for lang, entry in sorted(langs.items()):
+            log(f"[{lang}] {course}: {entry['files']} files, {entry['bytes'] / 1e6:.1f} MB, {entry['seconds'] / 60:.1f} min")
     return 0
 
 

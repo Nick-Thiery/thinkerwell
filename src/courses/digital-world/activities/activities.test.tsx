@@ -71,7 +71,7 @@ describe('train-model (Lesson 3)', () => {
     user.click(within(screen.getByRole('group', { name: `Label for: ${description}` })).getByRole('button', { name: choice }));
   const score = () => screen.getByTestId('tw-dw-tm-score');
 
-  it('trains on the device and gets 4 of 6, 6 of 6, 0 of 2 and 8 of 8 when labelled like the gardener', async () => {
+  it('trains on the device and gets 4 of 6, 6 of 6, 0 of 2, 8 of 8 and 3 of 4 when labelled like the gardener', async () => {
     const user = userEvent.setup();
     const checkNetwork = noNetwork();
     const { saved } = renderInLesson(3, <ActivityPlayer activity={dwActivity(3, 'train-model')} />);
@@ -104,8 +104,13 @@ describe('train-model (Lesson 3)', () => {
     await user.click(train());
     expect(score()).toHaveTextContent('The model got 8 of 8 right.');
 
+    // Round 4: the same eight examples, four leaves nobody has used.
+    await user.click(screen.getByRole('button', { name: 'Go on to “Round 4: leaves nobody has used”' }));
+    await user.click(screen.getByRole('button', { name: 'Test the new leaves' }));
+    expect(score()).toHaveTextContent('The model got 3 of 4 right.');
+
     // Saved: only which rounds were trained; the labels stay in memory.
-    expect(saved.progress.activity).toEqual({ answers: {}, seen: ['round-1', 'round-2', 'round-2-new-plant', 'round-3'] });
+    expect(saved.progress.activity).toEqual({ answers: {}, seen: ['round-1', 'round-2', 'round-2-new-plant', 'round-3', 'round-4-fresh-test'] });
     checkNetwork();
   });
 
@@ -120,7 +125,7 @@ describe('train-model (Lesson 3)', () => {
     await user.click(screen.getByRole('button', { name: 'Train the model' }));
     expect(screen.getByText(/Some of your labels are different from the gardener's/)).toBeInTheDocument();
     // With only that one (sick) example, the model calls every leaf sick: it follows the learner.
-    expect(score()).toHaveTextContent('The model got 3 of 8 right.');
+    expect(score()).toHaveTextContent('The model got 5 of 12 right.');
   });
 
   it('on paper, lists the cards with their numbers, and for teachers the gardener’s labels and each round’s result', () => {
@@ -129,6 +134,7 @@ describe('train-model (Lesson 3)', () => {
     expect(screen.getAllByRole('table')).toHaveLength(2);
     expect(screen.getByText('Labelled like the gardener, the model gets 4 of 6 right.')).toBeInTheDocument();
     expect(screen.getByText('Labelled like the gardener, the model gets 8 of 8 right.')).toBeInTheDocument();
+    expect(screen.getByText('Labelled like the gardener, the model gets 3 of 4 right.')).toBeInTheDocument();
   });
 });
 

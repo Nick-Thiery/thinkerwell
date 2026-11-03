@@ -33,6 +33,8 @@ A computer that records only Vietnamese needs just `pip install vieneu==3.8.3 se
 npm run audio:generate                 # the ready languages (English, Indonesian, Malay), and any other that already has recordings
 npm run audio:generate -- --lang id    # only Indonesian (the other languages' files are kept)
 npm run audio:generate -- --lang ms    # only Malay
+npm run audio:generate -- --all-courses             # the preview courses (Digital World, Southeast Asia Through Time), into public/audio/<lang>/<course>/
+npm run audio:generate -- --course digital-world --lang id   # one course, one language
 npm run audio:generate -- --lang vi    # Vietnamese (a hidden preview: only when asked for, see below)
 AUDIO_THREADS=1 npm run audio:generate -- --lang en   # one CPU thread (run en and id side by side)
 ```

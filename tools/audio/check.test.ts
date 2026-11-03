@@ -152,11 +152,32 @@ describe('a language that is not ready (Vietnamese, a hidden preview)', () => {
 });
 
 describe('preview courses', () => {
-  it('are skipped on purpose: nothing of Digital World or Southeast Asia Through Time is recorded or checked', async () => {
-    const { listenUtterances, SKIPPED_COURSES } = await import('./utterances.ts');
-    expect(SKIPPED_COURSES).toEqual(['digital-world', 'southeast-asia-through-time']);
+  it('are recorded apart from Our World: in English, Indonesian and Malay, each course on its own', async () => {
+    const { courseUtterances, listenUtterances, SKIPPED_COURSES } = await import('./utterances.ts');
+    expect(SKIPPED_COURSES).toEqual([]);
     for (const language of listenUtterances()) {
       expect(language.sections.filter((section) => /^(dw|sat)-/.test(section.key))).toEqual([]);
     }
+    const tracks = courseUtterances();
+    expect(tracks.map((track) => `${track.lang}/${track.course}`).sort()).toEqual([
+      'en/digital-world',
+      'en/southeast-asia-through-time',
+      'id/digital-world',
+      'id/southeast-asia-through-time',
+      'ms/digital-world',
+      'ms/southeast-asia-through-time',
+    ]);
+    for (const track of tracks) {
+      const prefix = track.course === 'digital-world' ? 'dw-' : 'sat-';
+      expect(track.sections.every((section) => section.key.startsWith(prefix))).toBe(true);
+      expect(track.sections.some((section) => section.key === 'sample')).toBe(false);
+    }
+  });
+
+  it('say which course and language is missing its recordings', async () => {
+    const { courseAudioProblems } = await import('./check.ts');
+    const { courseUtterances } = await import('./utterances.ts');
+    const [first] = courseUtterances();
+    expect(courseAudioProblems([first!], { languages: {} }, '/nowhere')).toEqual([`${first!.lang}/${first!.course}: no recordings at all.`]);
   });
 });

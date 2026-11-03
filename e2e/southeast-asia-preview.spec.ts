@@ -67,6 +67,20 @@ test.describe('with the preview on', () => {
     expect(errors).toEqual([]);
   });
 
+  test('in Malay, its lessons, diagrams and section checks are translated, and its photos stay', async ({ page }) => {
+    await turnOn(page);
+    await page.goto(`/lesson/${LESSON}/read`);
+    await page.getByRole('button', { name: /Language|Bahasa/ }).first().click();
+    await page.getByRole('menuitemradio', { name: /Bahasa Melayu/ }).or(page.getByRole('radio', { name: /Bahasa Melayu/ })).first().click();
+    await expect(page.getByRole('heading', { level: 1, name: 'Apakah yang boleh diberitahu oleh sebuah tembikar tentang komuniti awal?' })).toBeVisible();
+    await expect(page.locator('html')).toHaveAttribute('lang', 'ms');
+    // No approved Malay video: Watch's address goes on to Reflect.
+    await page.goto(`/lesson/${LESSON}/watch`);
+    await expect(page).toHaveURL(new RegExp(`/lesson/${LESSON}/reflect$`));
+    await page.goto('/section/evidence-and-connections/check');
+    await expect(page.getByRole('heading', { level: 1, name: /Bukti dan hubungan awal/ })).toBeVisible();
+  });
+
   test('a section check: from the map, one question at a time, results, and its answer key for teachers', async ({ page }) => {
     const errors = watchErrors(page);
     await turnOn(page);

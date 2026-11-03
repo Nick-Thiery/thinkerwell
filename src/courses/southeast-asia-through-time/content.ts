@@ -6,8 +6,9 @@
  * on a device that has turned the preview on.
  */
 import courseJson from '../../../content/courses/southeast-asia-through-time/course.json';
-import { createCourseContent, type SectionLook } from '../../content/courseContent';
+import { createCourseContent, type LessonContent, type SectionLook } from '../../content/courseContent';
 import type { AnyQuizFile, SoutheastAsiaCourseFile, SoutheastAsiaLesson, SoutheastAsiaSectionId } from '../../content/schema';
+import { translatedContents } from '../kit/translatedContent';
 
 export const COURSE_ID = 'southeast-asia-through-time';
 /** The course map. */
@@ -56,13 +57,45 @@ export const SECTION_LOOKS: Readonly<Record<SoutheastAsiaSectionId, SectionLook>
 
 const coursePath = (sectionId?: string) => (sectionId ? `${COURSE_PATH}#${sectionId}` : COURSE_PATH);
 
-export const southeastAsia = createCourseContent(courseJson as unknown as SoutheastAsiaCourseFile, Object.values(lessonModules), {
+const options = {
   courseId: COURSE_ID,
-  pictureUrls,
   // Its section checks (no certificates yet).
   hasSectionChecks: true,
-  quizzes: Object.values(quizModules),
-  sectionLook: (sectionId) => SECTION_LOOKS[sectionId as SoutheastAsiaSectionId] ?? SECTION_LOOKS['evidence-and-connections'],
+  sectionLook: (sectionId: string) => SECTION_LOOKS[sectionId as SoutheastAsiaSectionId] ?? SECTION_LOOKS['evidence-and-connections'],
   // No Educators page for a preview course: a teacher guide goes back to the course map.
   coursePath,
+};
+
+export const southeastAsia = createCourseContent(courseJson as unknown as SoutheastAsiaCourseFile, Object.values(lessonModules), {
+  ...options,
+  pictureUrls,
+  quizzes: Object.values(quizModules),
 });
+
+/**
+ * The course in Indonesian and Malay (content/courses/southeast-asia-through-time/<code>/:
+ * every lesson, check and diagram, drafted by AI and flagged for native-speaker
+ * review, as Our World's are).
+ */
+const byLanguage = translatedContents(
+  {
+    course: courseJson as unknown as SoutheastAsiaCourseFile,
+    lessons: lessonModules,
+    quizzes: quizModules,
+    pictureUrls,
+    translations: import.meta.glob('../../../content/courses/southeast-asia-through-time/*/{course.json,lessons/*.json,quizzes/*.json}', {
+      eager: true,
+      import: 'default',
+    }),
+    translatedPictures: import.meta.glob<string>('../../../content/courses/southeast-asia-through-time/*/visuals/*.svg', {
+      eager: true,
+      query: '?url',
+      import: 'default',
+    }),
+  },
+  ['id', 'ms'],
+  options,
+);
+
+/** The course in a language its lessons are translated into, or undefined (English). */
+export const southeastAsiaIn = (code: string): LessonContent | undefined => byLanguage.get(code);

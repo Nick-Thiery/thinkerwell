@@ -1,0 +1,255 @@
+{
+  "title": "Adakah AI bertutur dalam bahasa kamu?",
+  "essentialQuestion": "Mengapakah AI berfungsi lebih baik dalam sesetengah bahasa berbanding bahasa lain, dan apakah yang dilakukan orang tentangnya?",
+  "learningGoal": "Terangkan mengapa alat AI berfungsi lebih baik dalam sesetengah bahasa berbanding bahasa lain, dan huraikan bagaimana komuniti membina alat untuk bahasa mereka sendiri.",
+  "warmUp": {
+    "question": "Sebuah alat belajar daripada banyak tulisan, dan kebanyakannya dalam satu bahasa. Pada pendapat kamu, apakah yang berlaku?",
+    "options": [
+      "Ia berfungsi paling baik dalam bahasa itu",
+      "Ia berfungsi sama dalam setiap bahasa",
+      "Sesuatu yang lain",
+      "Tidak pasti"
+    ]
+  },
+  "evidence": {
+    "label": "Contoh rekaan yang dibuat untuk pelajaran ini.",
+    "question": "Bahasa manakah yang paling ramai penuturnya? Bahasa manakah yang paling banyak tulisannya dalam talian?",
+    "cards": [
+      {
+        "title": "Tiga bahasa di stesen bas Harbourside",
+        "columns": [
+          "Bahasa",
+          "Siapa yang menuturkannya",
+          "Tulisan dalam talian"
+        ],
+        "rows": [
+          [
+            "Bahasa A",
+            "Ramai orang di Harbourside dan di seluruh dunia",
+            "Banyak: berita, buku dan banyak laman web."
+          ],
+          [
+            "Bahasa B",
+            "Ramai orang di rantau ini",
+            "Sedikit: berita dan beberapa laman web."
+          ],
+          [
+            "Bahasa C",
+            "Paling ramai orang di rantau ini",
+            "Sangat sedikit. Ia kebanyakannya dituturkan. Sekolah dan pejabat menggunakan Bahasa A dan B."
+          ]
+        ]
+      },
+      {
+        "title": "Skrin bantuan stesen bas",
+        "items": [
+          "Kamu menaip satu soalan, seperti “Bilakah bas seterusnya ke pasar?”",
+          "Sebuah alat AI membaca soalan itu dan menulis jawapan.",
+          "Ia belajar daripada tulisan yang diambil dari internet."
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "title": "Uji skrin bantuan Harbourside",
+    "instructions": "Pasukan Harbourside bertanya 20 soalan yang sama kepada skrin bantuan dalam setiap bahasa. Tekan bahasa yang paling banyak kesilapannya.",
+    "measure": "Soalan yang dijawab dengan baik",
+    "groups": [
+      {
+        "label": "Bahasa A"
+      },
+      {
+        "label": "Bahasa B"
+      },
+      {
+        "label": "Bahasa C"
+      }
+    ],
+    "afterTap": {
+      "question": "Mengapakah skrin bantuan membuat kesilapan paling banyak dalam Bahasa C?",
+      "options": [
+        {
+          "text": "Sangat sedikit orang yang menuturkan Bahasa C",
+          "feedback": "Belum tepat. Bahasa C mempunyai penutur paling ramai di rantau ini. Lihat berapa banyak tulisannya dalam talian."
+        },
+        {
+          "text": "Bahasa C ialah bahasa yang lebih sukar",
+          "feedback": "Belum tepat. Jadual itu menunjukkan berapa banyak tulisan setiap bahasa dalam talian. Ia tidak mengatakan mana-mana bahasa lebih sukar."
+        },
+        {
+          "text": "Ia belajar daripada sangat sedikit tulisan dalam Bahasa C",
+          "feedback": "Betul. Bahasa C mempunyai sangat sedikit tulisan dalam talian, jadi alat itu hanya ada sedikit contoh untuk dipelajari."
+        }
+      ]
+    },
+    "extension": "Versi kertas: bacakan tiga keputusan itu, tanya bahasa mana yang paling banyak kesilapan, kemudian tanya soalan di atas. Tunjuk semula kepada jadual bukti: Bahasa C mempunyai penutur paling ramai tetapi tulisan paling sedikit dalam talian."
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "AI belajar bahasa daripada tulisan",
+        "text": "Alat AI yang menulis, menjawab soalan atau menterjemah belajar daripada data latihan. Bagi alat ini, data latihan ialah tulisan yang sangat banyak, kebanyakannya dari internet. Manusia bertutur dalam beribu-ribu bahasa, tetapi kebanyakan alat AI yang besar belajar terutamanya daripada bahasa Inggeris. Bahasa kurang sumber ialah bahasa yang mempunyai sedikit bahan digital yang boleh digunakan oleh komputer untuk sesuatu tugas. Bahan ini mungkin tulisan, rakaman atau senarai perkataan. Nama ini tentang data, bukan tentang bahasa itu atau penuturnya. Kira-kira 200 juta orang bertutur dalam bahasa Swahili, tetapi tulisan bahasa Swahili dalam talian tidak cukup untuk AI belajar dengan baik. Di Harbourside, Bahasa C seperti ini.",
+        "simpler": "Alat yang menulis, menjawab atau menterjemah belajar daripada data latihan. Data ini ialah banyak tulisan dari web. Kebanyakan alat AI yang besar belajar daripada bahasa Inggeris. Sesetengah bahasa ada sedikit tulisan atau rakaman untuk komputer. Kita memanggilnya bahasa kurang sumber. Nama ini tentang data. Ia bukan tentang bahasa itu atau orangnya. Kira-kira 200 juta orang bertutur dalam bahasa Swahili. Tetapi tidak banyak tulisan Swahili dalam talian."
+      },
+      {
+        "heading": "Siapa yang tertinggal, dan mengapa",
+        "text": "Apabila sesebuah alat berfungsi dengan teruk dalam sesuatu bahasa, penuturnya mendapat bantuan yang lebih buruk. Banyaknya tulisan sesuatu bahasa dalam talian berkait dengan sejarah dan kuasa. Di Harbourside, sekolah dan pejabat kebanyakannya menggunakan Bahasa A dan B. Jadi sedikit sahaja yang ditulis dalam Bahasa C. Masakhane ialah sebuah kumpulan penyelidik Afrika. Kumpulan ini berkata bahasa-bahasa Afrika mempunyai tempat yang kecil dalam teknologi sebahagiannya kerana penjajahan. Itulah masa apabila negara lain memerintah sebahagian besar Afrika. Orang yang membina alat AI juga memilih bahasa yang hendak dimasukkan.",
+        "simpler": "Sesebuah alat boleh berfungsi dengan teruk dalam sesuatu bahasa. Jadi penuturnya mendapat bantuan yang lebih buruk. Ini berkait dengan sejarah dan kuasa. Di Harbourside, sekolah menggunakan Bahasa A dan B. Sesetengah pakar Afrika berkata masa lalu juga penting. Negara lain pernah memerintah sebahagian besar Afrika. Itulah satu sebab bahasa mereka tertinggal. Pembina AI memilih bahasa yang hendak digunakan."
+      },
+      {
+        "heading": "Orang membina alat untuk bahasa mereka sendiri",
+        "text": "Kini ramai orang membina alat untuk bahasa mereka sendiri. Di Singapura, satu program yang dibiayai oleh kerajaan, AI Singapore, membina model yang dipanggil SEA-LION. Satu kertas kerja oleh pasukannya pada tahun 2025 menyatakan bahawa model itu menyokong 11 bahasa yang digunakan di rantau ini, termasuk bahasa Myanmar, Khmer, Tamil dan Vietnam. Tetapi belajar daripada sesuatu bahasa tidak sama dengan berfungsi dengan baik dalam bahasa itu. Ujian utama pasukan itu hanya merangkumi empat daripada bahasa tersebut. Di Jakarta pada November 2024, dua syarikat melancarkan Sahabat-AI untuk bahasa Indonesia, Jawa dan Sunda. Pembuatnya berkata ia mengatasi model yang serupa, tetapi masih di peringkat awal. Nama Masakhane bermaksud “Kita bina bersama” dalam bahasa isiZulu. Ahlinya membina alat untuk bahasa-bahasa Afrika, bersama orang yang menuturkannya. Penutur boleh membantu sesebuah alat sesuai dengan komuniti mereka, tetapi orang masih perlu mengujinya.",
+        "simpler": "Satu pasukan di Singapura membuat model yang dipanggil SEA-LION. Satu laporan tahun 2025 menyatakan model itu merangkumi 11 bahasa di rantau ini. Tetapi belajar sesuatu bahasa tidak bermakna berfungsi dengan baik dalam bahasa itu. Ujian utama pasukan itu hanya menggunakan empat daripadanya. Pada tahun 2024, Sahabat-AI bermula di Jakarta. Ia untuk bahasa Indonesia dan dua bahasa lain. Pembuatnya berkata ia masih baharu. Masakhane bermaksud “Kita bina bersama”. Ia membuat alat untuk bahasa-bahasa Afrika. Penutur boleh membantu alat sesuai dengan komuniti mereka. Tetapi orang masih perlu mengujinya."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "data latihan",
+        "definition": "Contoh yang digunakan untuk membina alat AI, seperti tulisan atau gambar.",
+        "example": "Data latihan skrin bantuan itu mempunyai sangat sedikit tulisan dalam Bahasa C."
+      },
+      {
+        "word": "bahasa kurang sumber",
+        "definition": "Bahasa yang mempunyai sedikit tulisan atau rakaman digital untuk dipelajari oleh komputer.",
+        "example": "Bahasa C ialah bahasa kurang sumber, tetapi ramai orang menuturkannya."
+      },
+      {
+        "word": "menterjemah",
+        "forms": [
+          "menterjemahkan",
+          "terjemahan",
+          "diterjemah"
+        ],
+        "definition": "Menukar perkataan daripada satu bahasa kepada bahasa lain.",
+        "example": "Alat yang menterjemah dengan baik dalam satu bahasa mungkin membuat kesilapan dalam bahasa lain."
+      },
+      {
+        "word": "kuasa",
+        "definition": "Keupayaan untuk menentukan apa yang berlaku atau untuk mengawal sesuatu.",
+        "example": "Orang yang membina alat AI mempunyai kuasa untuk memilih bahasa yang dimasukkan."
+      },
+      {
+        "word": "komuniti",
+        "definition": "Sekumpulan orang yang tinggal di tempat yang sama atau berkongsi sesuatu.",
+        "example": "Apabila sesebuah komuniti membantu membina alat, alat itu lebih sesuai dengan keperluan mereka."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Apakah itu bahasa kurang sumber?",
+        "options": [
+          {
+            "text": "Bahasa yang dituturkan oleh sangat sedikit orang",
+            "feedback": "Belum tepat. Kira-kira 200 juta orang bertutur dalam bahasa Swahili, dan ia masih bahasa kurang sumber. Baca petikan pertama sekali lagi."
+          },
+          {
+            "text": "Bahasa yang mempunyai sedikit bahan digital untuk komputer",
+            "feedback": "Betul. Ia tentang berapa banyak data yang boleh digunakan, bukan tentang bahasa itu atau penuturnya."
+          },
+          {
+            "text": "Bahasa yang sangat sukar dipelajari",
+            "feedback": "Belum tepat. Ia bukan tentang betapa sukarnya sesuatu bahasa. Lihat apa yang dipelajari oleh alat AI."
+          }
+        ]
+      },
+      {
+        "question": "Bagaimanakah sesetengah orang menjadikan AI berfungsi lebih baik dalam lebih banyak bahasa?",
+        "options": [
+          {
+            "text": "Mereka meminta semua orang menggunakan bahasa Inggeris sahaja",
+            "feedback": "Belum tepat. Pelajaran ini menunjukkan orang mengubah alat, bukan bahasa mereka. Baca petikan ketiga."
+          },
+          {
+            "text": "Mereka berhenti menggunakan alat AI untuk apa-apa bahasa",
+            "feedback": "Belum tepat. Orang terus menggunakan alat itu dan menjadikannya lebih baik. Baca petikan ketiga."
+          },
+          {
+            "text": "Mereka membina alat untuk bahasa mereka sendiri",
+            "feedback": "Betul. Kumpulan seperti AI Singapore dan Masakhane membina alat untuk bahasa di rantau mereka sendiri. Alat itu masih perlu diuji."
+          }
+        ]
+      },
+      {
+        "question": "Pada pendapat kamu, mengapakah penting siapa yang membina alat AI untuk sesuatu bahasa?",
+        "placeholder": "Penting siapa yang membinanya kerana ..."
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Gunakan ujian Harbourside untuk menerangkan mengapa alat AI boleh berfungsi lebih baik dalam sesetengah bahasa berbanding bahasa lain. Kemudian nyatakan keperluan siapa yang penting di sini, dan siapa yang patut membantu membaikinya.",
+    "sentenceStarters": [
+      "Skrin bantuan itu berfungsi paling baik dalam ...",
+      "Ia membuat kesilapan paling banyak dalam ___, kerana ...",
+      "Ini penting bagi ___ kerana ...",
+      "Untuk membaikinya, ___ patut membantu, kerana ...",
+      "Ini seperti ..."
+    ],
+    "planningBoxes": [
+      "Idea utama saya",
+      "Bukti daripada pelajaran",
+      "Mengapa ini penting",
+      "Soalan yang masih saya ada"
+    ],
+    "selfCheck": [
+      "Saya menerangkan mengapa alat itu berfungsi lebih baik dalam satu bahasa.",
+      "Saya menyatakan mengapa ini penting bagi orang yang bertutur dalam Bahasa C.",
+      "Saya menyatakan siapa yang patut membantu membaikinya, dan mengapa."
+    ],
+    "example": "Skrin bantuan itu berfungsi paling baik dalam Bahasa A. Ia menjawab 19 daripada 20 soalan dengan baik. Ia membuat kesilapan paling banyak dalam Bahasa C, kerana data latihannya mempunyai sangat sedikit tulisan dalam bahasa itu. Ini penting bagi orang yang bertutur dalam Bahasa C, kerana mereka ialah kumpulan terbesar di rantau ini tetapi mendapat bantuan yang paling teruk di stesen bas. Untuk membaikinya, orang yang bertutur dalam Bahasa C patut membantu, kerana mereka paling mengenali bahasa itu. Mereka boleh berkongsi tulisan dan menguji jawapannya. Ini seperti kumpulan Masakhane."
+  },
+  "speak": {
+    "partnerTask": "Rakan kamu bertanya mengapa alat AI berfungsi kurang baik dalam sesetengah bahasa. Kamu menjawab dengan satu sebab daripada pelajaran ini. Kemudian bertukar giliran.",
+    "independentTask": "Sebut dengan kuat apa itu bahasa kurang sumber. Kemudian namakan satu kumpulan daripada pelajaran ini yang membina alat untuk bahasanya sendiri."
+  },
+  "watch": {
+    "why": "Video ini menunjukkan, dengan contoh sebenar, mengapa alat AI belajar jauh lebih banyak tentang beberapa bahasa besar berbanding kebanyakan bahasa lain, dan apa yang dilakukan oleh sesetengah orang tentangnya.",
+    "beforeQuestion": "Pada pendapat kamu, mengapakah alat AI mungkin tahu lebih banyak tentang sesetengah bahasa berbanding bahasa lain?",
+    "afterQuestion": "Menurut video ini, siapakah yang menentukan bahasa yang dipelajari oleh sesebuah alat AI?",
+    "summary": "Video ini bertanya mengapa alat AI berfungsi lebih baik dalam sesetengah bahasa berbanding bahasa lain. Alat seperti chatbot belajar dengan membaca banyak tulisan. Video ini berkata ia seperti sebuah kedai buku gergasi. Tetapi kedai buku itu ada satu masalah. Kebanyakan bukunya dalam bahasa Inggeris dan beberapa bahasa besar yang lain. Bahasa yang sedikit tulisannya dalam talian dipanggil bahasa kurang sumber. Alat AI tahu jauh lebih sedikit tentang bahasa ini. Video ini melihat dua daripadanya, iaitu Patois Jamaica dan Catalan. Ia juga menunjukkan penyelidik yang membina model terbuka dalam banyak bahasa, dengan bantuan komuniti tempatan. Pengacaranya berkata beberapa syarikat besar menentukan apa yang dimasukkan ke dalam alat ini. Dia berkata penting bagi semua orang bahawa alat AI merangkumi banyak bahasa.",
+    "keyPoints": [
+      "Alat AI belajar kebanyakannya daripada tulisan dalam beberapa bahasa besar, terutamanya bahasa Inggeris.",
+      "Bahasa yang sedikit tulisannya dalam talian mendapat hasil yang lebih buruk.",
+      "Sesetengah penyelidik bekerjasama dengan komuniti untuk memasukkan lebih banyak bahasa."
+    ],
+    "contentNote": "Vox, 2023. Tajuk dan saluran disahkan dengan oEmbed YouTube (Oktober 2026); panjangnya belum disahkan (satu arkib transkrip menunjukkan kira-kira 11 hingga 12 minit, lebih panjang daripada kebanyakan video Thinkerwell). Ia menamakan syarikat teknologi besar, menyebut satu aduan tentang enjin carian dan bahasa Catalan, dan pengacaranya bercakap tentang pembantu suara yang tidak memahami loghatnya. Ringkasan ini ditulis daripada arkib transkrip video itu oleh Rosetta, bukan dengan menontonnya. Seorang ahli pasukan mesti menontonnya sebelum digunakan; pelajar boleh membaca ringkasan bertulis sebagai ganti."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Bahasa yang dituturkan oleh alat AI penting kerana ..."
+      },
+      {
+        "text": "Satu soalan yang akan saya tanya kepada orang yang membina alat bahasa AI ialah ..."
+      }
+    ],
+    "completionMessage": "Kamu telah menamatkan Pelajaran 7. Kamu telah menerangkan mengapa AI berfungsi lebih baik dalam sesetengah bahasa, dan bagaimana komuniti sedang mengubahnya."
+  },
+  "visual": {
+    "alt": "Rajah tiga bahasa. Bahasa A mempunyai banyak tulisan dalam talian dan skrin bantuan menjawab 19 daripada 20 dengan betul. Bahasa C mempunyai penutur paling ramai tetapi sangat sedikit tulisan, dan hanya 6 daripada 20 dijawab dengan betul."
+  },
+  "sources": [
+    {
+      "label": "Stanford Report, daripada Stanford HAI (2025): How AI is leaving non-English speakers behind (bagaimana AI meninggalkan penutur bukan bahasa Inggeris)"
+    },
+    {
+      "label": "AI Singapore dan rakan-rakan (arXiv, versi 4, 30 Oktober 2025): SEA-LION, Southeast Asian Languages in One Network (11 bahasa; ujian dan batasan)"
+    },
+    {
+      "label": "Context (dikemas kini 8 Februari 2024): Biased GPT? Singapore builds AI model to “represent” Southeast Asians (model SEA-LION yang pertama)"
+    },
+    {
+      "label": "GoTo (15 November 2024): GoTo launches Sahabat-AI (kenyataan akhbar)"
+    },
+    {
+      "label": "Civic Tech Guide: Masakhane, a grassroots NLP community for Africa, by Africans (komuniti akar umbi untuk bahasa-bahasa Afrika)"
+    }
+  ],
+  "sensitiveNotes": [
+    "Ramai pelajar bertutur dalam beberapa bahasa, dan sesetengahnya bertutur dalam bahasa kurang sumber. Jangan sekali-kali tanya bahasa apa yang dituturkan oleh pelajar atau keluarga mereka, atau dari mana mereka datang; biarkan mereka berkongsi hanya jika mereka mahu. Jelaskan bahawa tiada bahasa yang lebih rendah atau lebih ringkas: jurang ini tentang berapa banyak tulisan yang ada untuk dipelajari oleh komputer, dan siapa yang memilihnya.",
+    "Petikan kedua menyebut tentang penjajahan secara ringkas, seperti yang dilakukan oleh Masakhane. Kekalkan apa-apa perbincangan secara ringkas dan berdasarkan fakta, dan jangan tanya pelajar tentang sejarah mereka sendiri atau politik mana-mana negara."
+  ],
+  "educatorNotes": [
+    "Keputusan Harbourside (19, 15 dan 6 daripada 20) ialah rekaan. Fakta sebenar, dengan skopnya: Stanford HAI (2025) mentakrifkan bahasa kurang sumber sebagai bahasa yang mempunyai data yang boleh dibaca komputer secara terhad, dan memberi bahasa Swahili (kira-kira 200 juta penutur) sebagai contoh; “kurang sumber” adalah tentang data untuk sesuatu tugas (tulisan, rakaman, contoh berlabel), bukan sekali-kali tentang nilai sesuatu bahasa atau kemahiran penuturnya, dan sesuatu bahasa boleh menjadi kurang sumber untuk satu tugas tetapi tidak untuk tugas lain. SEA-LION: kertas kerja tahun 2025 (arXiv 2504.05747, versi 4, Oktober 2025) menghuraikan Llama-SEA-LION-8B-IT dan Gemma-SEA-LION-9B-IT, yang dibina oleh AI Singapore bersama NUS dan dibiayai oleh National Research Foundation Singapura; keluarga model ini menyokong 11 bahasa (Inggeris, Cina, Indonesia, Vietnam, Melayu, Thai, Myanmar, Lao, Filipino, Tamil dan Khmer). Menyokong sesuatu bahasa dalam latihan bukan bukti bahawa ia berfungsi dengan baik: penanda aras utama kertas kerja itu (SEA-HELM) hanya menguji bahasa Indonesia, Vietnam, Thai dan Tamil, dan ujian yang lebih luas (SEACrowd) merangkumi 31 bahasa serantau tetapi hanya tugas bahasa klasik, bukan sembang; penulisnya menyenaraikan perkara ini sebagai satu batasan. Model SEA-LION yang pertama (Context, Februari 2024) dilatih dengan teks yang kira-kira 63% bahasa Inggeris, dan pengkritik memberi amaran bahawa model serantau boleh mengulangi pandangan kumpulan yang berkuasa. Sahabat-AI: kenyataan akhbar GoTo (15 November 2024) menyatakan bahawa ia dibangunkan bersama Indosat Ooredoo Hutchison, dilancarkan dengan model 8 dan 9 bilion parameter untuk bahasa Indonesia, Jawa dan Sunda (bahasa Batak dan Bali dirancang), bersifat sumber terbuka, dan “demonstrated leading performance” (menunjukkan prestasi terkemuka) berbanding model terbuka yang serupa; itu dakwaan pembuatnya, tanpa markah yang diterbitkan dalam kenyataan itu, dan ia menyebut projek itu masih di peringkat awal. Penerangan Masakhane sendiri mengaitkan tempat yang kecil bagi bahasa-bahasa Afrika dalam teknologi sebahagiannya dengan penjajahan. Pelajar yang lebih tua boleh membincangkan siapa yang memiliki alat ini dan siapa yang mengujinya.",
+    "Untuk program rintis di Jakarta, bahasa-bahasa Sahabat-AI ialah kaitan tempatan, tetapi pelajar tidak perlu sekali-kali menamakan bahasa yang mereka tuturkan. Dalam tugasan Tulis, terima apa-apa pandangan yang diberi alasan tentang keperluan siapa yang penting (permulaan ayatnya ialah “Ini penting bagi ___ kerana …”, bukan “Ini tidak adil kerana …”). Pelajaran 8 kembali kepada contoh yang tertinggal sebagai satu punca bias yang mungkin, antara punca-punca lain. Rekod dakwaan ada dalam content/courses/digital-world/claims/DW07.md."
+  ]
+}

@@ -1,0 +1,633 @@
+{
+  "title": {
+    "source": "What your feed shows you",
+    "back": "What your feed shows",
+    "flag": true
+  },
+  "essentialQuestion": {
+    "source": "How do apps choose what we see, and why does that matter for a community?",
+    "back": "How do apps choose what we see, and why does that matter for a community?",
+    "flag": true
+  },
+  "learningGoal": {
+    "source": "Explain how a feed chooses posts, how that can help or cause problems, why a rumour can spread fast before a vote, and what people and rules can do about it.",
+    "back": "Explain how a feed chooses posts, how that can help or cause problems, why a rumour can spread quickly before a vote, and what the public and rules can do.",
+    "flag": true
+  },
+  "warmUp.question": {
+    "source": "Why do you think some posts get shared much more than others?",
+    "back": "In your opinion, why are some posts shared far more than other posts?",
+    "flag": true
+  },
+  "warmUp.options.0": {
+    "source": "They are true",
+    "back": "The post is true",
+    "flag": true
+  },
+  "warmUp.options.1": {
+    "source": "They are surprising",
+    "back": "The post is surprising",
+    "flag": true
+  },
+  "warmUp.options.2": {
+    "source": "They are funny",
+    "back": "The post is funny",
+    "flag": true
+  },
+  "warmUp.options.3": {
+    "source": "Not sure",
+    "back": "Not sure",
+    "flag": true
+  },
+  "evidence.label": {
+    "source": "Fictional example created for this lesson.",
+    "back": "Fictional example made for this lesson.",
+    "flag": true
+  },
+  "evidence.question": {
+    "source": "Which posts got shared most? How are Ravi's and Lena's feeds different, and how did Lena's help her?",
+    "back": "Which posts were shared most? What is the difference between Ravi's feed and Lena's feed, and how did Lena's feed help her?",
+    "flag": true
+  },
+  "evidence.cards.0.title": {
+    "source": "Posts in Maplebrook in the week of the town vote",
+    "back": "Posts in Maplebrook in the week of the town vote",
+    "note": "\"The town vote\" is \"pengundian bandar\" (the town voting); \"election\" (the glossary word) is \"pilihan raya\".",
+    "flag": true
+  },
+  "evidence.cards.0.columns.0": {
+    "source": "Post",
+    "back": "Post",
+    "flag": true
+  },
+  "evidence.cards.0.columns.1": {
+    "source": "Shares in one day",
+    "back": "Shares in one day",
+    "flag": true
+  },
+  "evidence.cards.0.rows.0.0": {
+    "source": "“SHOCKING. The vote has moved to Friday. Share this now.” No name and no link.",
+    "back": "“SHOCKING. The vote has been moved to Friday. Share this now.” No name and no link.",
+    "flag": true
+  },
+  "evidence.cards.0.rows.0.1": {
+    "source": "900",
+    "back": "900",
+    "flag": true
+  },
+  "evidence.cards.0.rows.1.0": {
+    "source": "Town election office: “The vote is on Saturday, from 9 to 5, at the town hall.”",
+    "back": "Town election office: “The vote is held on Saturday, from 9 to 5, at the town hall.”",
+    "flag": true
+  },
+  "evidence.cards.0.rows.1.1": {
+    "source": "60",
+    "back": "60",
+    "flag": true
+  },
+  "evidence.cards.0.rows.2.0": {
+    "source": "Maplebrook Fact Check: “False. The vote has not moved. It is still on Saturday.”",
+    "back": "Maplebrook Fact Check: “False. The vote has not been moved. It is still on Saturday.”",
+    "flag": true
+  },
+  "evidence.cards.0.rows.2.1": {
+    "source": "40",
+    "back": "40",
+    "flag": true
+  },
+  "evidence.cards.0.rows.3.0": {
+    "source": "A funny video of a goat walking into the library",
+    "back": "A funny video of a goat walking into the library",
+    "flag": true
+  },
+  "evidence.cards.0.rows.3.1": {
+    "source": "700",
+    "back": "700",
+    "flag": true
+  },
+  "evidence.cards.1.title": {
+    "source": "Two friends, two feeds",
+    "back": "Two friends, two feeds",
+    "flag": true
+  },
+  "evidence.cards.1.cases.0.name": {
+    "source": "Ravi",
+    "back": "Ravi",
+    "flag": true
+  },
+  "evidence.cards.1.cases.0.body": {
+    "source": "Ravi watched a lot of football videos last month. This week, his feed showed him eight posts about the new sports field and one post about the new library.",
+    "back": "Ravi watched many football videos last month. This week, his feed showed eight posts about the new sports field and one post about the new library.",
+    "flag": true
+  },
+  "evidence.cards.1.cases.1.name": {
+    "source": "Lena",
+    "back": "Lena",
+    "flag": true
+  },
+  "evidence.cards.1.cases.1.body": {
+    "source": "Lena liked many posts about books. This week, her feed showed her seven posts about the new library and two posts about the sports field. It also suggested a free video lesson on how to write a story, which she had been looking for.",
+    "back": "Lena liked many posts about books. This week, her feed showed seven posts about the new library and two posts about the sports field. Her feed also suggested a free video lesson about how to write a story, which she had indeed been looking for.",
+    "flag": true
+  },
+  "activity.title": {
+    "source": "Fast or slow?",
+    "back": "Fast or slow?",
+    "flag": true
+  },
+  "activity.instructions": {
+    "source": "Here are posts from Maplebrook in the week of the town vote. Put each one where you think it goes. There is no score. After you place one, you can see one possible answer and the reason.",
+    "back": "Here are posts from Maplebrook in the week of the town vote. Put each post where you think it fits. There are no marks. After you place one post, you can see one possible answer and its reason.",
+    "flag": true
+  },
+  "activity.groups.0.label": {
+    "source": "Likely to spread fast",
+    "back": "Likely to spread quickly",
+    "flag": true
+  },
+  "activity.groups.1.label": {
+    "source": "Less likely to spread fast",
+    "back": "Less likely to spread quickly",
+    "flag": true
+  },
+  "activity.items.0.text": {
+    "source": "SHOCKING. The vote has moved to Friday. Share this now.",
+    "back": "SHOCKING. The vote has been moved to Friday. Share this now.",
+    "flag": true
+  },
+  "activity.items.0.feedback": {
+    "source": "It is surprising, and it tells you to hurry. Posts like this often spread fast. But spreading fast does not make it true. It is false.",
+    "back": "This post is surprising, and it tells you to hurry. Posts like this often spread quickly. But spreading quickly does not make it true. This post is false.",
+    "flag": true
+  },
+  "activity.items.1.text": {
+    "source": "Town election office: Vote on Saturday at the town hall. It is open from 9 to 5.",
+    "back": "Town election office: Vote on Saturday at the town hall. Open from 9 to 5.",
+    "flag": true
+  },
+  "activity.items.1.feedback": {
+    "source": "Calm facts are less surprising, so fewer people may share them. You can help by sharing it.",
+    "back": "Calm facts are less surprising, so fewer people may share them. You can help by sharing it.",
+    "flag": true
+  },
+  "activity.items.2.text": {
+    "source": "A funny video of a goat walking into the library.",
+    "back": "A funny video of a goat walking into the library.",
+    "flag": true
+  },
+  "activity.items.2.feedback": {
+    "source": "Funny posts often get many views and shares. Feeds often show posts like these to more people.",
+    "back": "Funny posts often get many views and shares. Feeds often show posts like this to more people.",
+    "flag": true
+  },
+  "activity.items.3.text": {
+    "source": "A scary post with no proof: The new field will flood every street.",
+    "back": "A scary post with no proof: The new field will flood every street.",
+    "flag": true
+  },
+  "activity.items.3.feedback": {
+    "source": "Posts that scare people often spread fast. It has no evidence, so check it before you share it.",
+    "back": "Posts that scare people often spread quickly. This post has no proof, so check first before you share it.",
+    "flag": true
+  },
+  "activity.items.4.text": {
+    "source": "A long post that compares what the library and the field will cost.",
+    "back": "A long post comparing the cost of the library with the cost of the field.",
+    "flag": true
+  },
+  "activity.items.4.feedback": {
+    "source": "It is useful, but long and calm, so fewer people may share it. It can still help voters make up their minds.",
+    "back": "This post is useful, but long and calm, so fewer people may share it. It can still help voters make a decision.",
+    "flag": true
+  },
+  "activity.items.5.text": {
+    "source": "Fact check: False. The vote has not moved. It is still on Saturday.",
+    "back": "Fact check: False. The vote has not been moved. It is still on Saturday.",
+    "flag": true
+  },
+  "activity.items.5.feedback": {
+    "source": "A calm correction is less surprising than the rumour, so it may spread more slowly. That is why it helps to share it.",
+    "back": "A calm correction is less surprising than the rumour, so it may spread more slowly. That is why sharing it helps.",
+    "flag": true
+  },
+  "read.sections.0.heading": {
+    "source": "Your feed is chosen for you",
+    "back": "Your feed is chosen for you",
+    "flag": true
+  },
+  "read.sections.0.text": {
+    "source": "People post far more than anyone could see, so many apps use an algorithm to choose what goes in your feed. An algorithm is a set of steps a computer follows. It learns from what you watched, liked or skipped before, and guesses what you will want to see. Apps aim for different things. Some count how long you watch, and some also ask people if they were happy with what they saw. A feed can be useful. In the made-up town of Maplebrook, Lena's feed found her a free video lesson on writing stories. Ravi watched many football videos, so his feed showed him mostly posts about the new sports field.",
+    "back": "People post far more than anyone can see, so many apps use an algorithm to choose what goes into your feed. An algorithm is a set of steps a computer follows. It learns from what you have watched, liked or skipped, and guesses what you want to see. Each app has different aims. Some count how long you watch, and some also ask people whether they were satisfied with what they saw. A feed can be useful. In Maplebrook, a made-up town, Lena's feed found her a free video lesson about writing stories. Ravi watched many football videos, so his feed mostly showed posts about the new sports field.",
+    "note": "\"Feed\" is \"suapan\" (DBP; shared TERMS.md). Malaysian young people often say \"feed\" in English; a reviewer should check \"suapan\" is understood.",
+    "flag": true
+  },
+  "read.sections.0.simpler": {
+    "source": "People post more than you could ever see. So many apps use an algorithm. An algorithm is a set of steps for a computer. It picks posts from what you watched before. Apps aim for different things. Some count how long you watch. Some ask if you liked it. A feed can help. In made-up Maplebrook, Lena's feed found her a free lesson on stories. Ravi's feed showed him posts about the new sports field.",
+    "back": "People post more than you can see. So many apps use an algorithm. An algorithm is a set of steps for a computer. It chooses posts based on what you have watched. Each app has different aims. Some count how long you watch. Some ask whether you liked it. A feed can help. In Maplebrook, a made-up town, Lena's feed found her a free lesson about stories. Ravi's feed showed posts about the new sports field.",
+    "flag": true
+  },
+  "read.sections.1.heading": {
+    "source": "A rumour can spread faster than the truth",
+    "back": "A rumour can spread faster than the truth",
+    "flag": true
+  },
+  "read.sections.1.text": {
+    "source": "In 2018, researchers at MIT in the United States published a study of Twitter. They looked at about 126,000 news stories shared from 2006 to 2017, each checked by fact-checking groups. On Twitter in those years, false stories spread further and faster than true ones. They were often more surprising, and people shared them, not only robot accounts. The study looked at what people chose to share on one site, not at how feeds pick posts. This matters before an election, when people need correct facts to vote. In Maplebrook, a rumour said the vote had moved to Friday. It was shared 900 times in one day, and the correct notice only 60 times.",
+    "back": "In 2018, researchers at MIT in the United States published a study about Twitter. They looked at about 126,000 news stories shared from 2006 to 2017, each one checked by fact-checking groups. On Twitter in those years, false news spread further and faster than true news. False news was often more surprising, and it was humans who shared it, not only robot accounts. The study looked at what people chose to share on one site, not how feeds choose posts. This matters before an election, when people need correct facts to vote. In Maplebrook, a rumour said the vote had been moved to Friday. That rumour was shared 900 times in one day, and the correct notice only 60 times.",
+    "flag": true
+  },
+  "read.sections.1.simpler": {
+    "source": "In 2018, MIT researchers in the US studied news stories on Twitter. The stories were from 2006 to 2017. False stories spread faster than true ones. They often seemed surprising. People shared them, not only robots. The study looked at what people shared on one site. It did not study how feeds pick posts. This matters in an election. In Maplebrook, a rumour said the vote moved to Friday. It got 900 shares. The true notice got 60.",
+    "back": "In 2018, MIT researchers in the United States studied news on Twitter. The news was from 2006 to 2017. False news spread faster than true news. False news often seemed surprising. It was humans who shared it, not only robots. The study looked at what people shared on one site. It did not study how feeds choose posts. This matters in an election. In Maplebrook, a rumour said the vote had been moved to Friday. It was shared 900 times. The true notice was shared 60 times.",
+    "flag": true
+  },
+  "read.sections.2.heading": {
+    "source": "Seeing more than one side",
+    "back": "Seeing more than one side",
+    "flag": true
+  },
+  "read.sections.2.text": {
+    "source": "Some people worry that feeds put each of us in a filter bubble, where we only see one side. Ravi saw mostly posts for the sports field, and Lena saw mostly posts for the library. But a review of many studies found that real filter bubbles are less common than many people think. Since 2024, a European Union law has said that very large apps must explain how their feeds choose posts. They must also offer a feed that isn't based on what they know about you. You can help too: follow different sources, and check before you share.",
+    "back": "Some people worry that feeds put each of us in a filter bubble, where we only see one side. Ravi mostly saw posts supporting the sports field, and Lena mostly saw posts supporting the library. But a review of many studies found that real filter bubbles are less common than many people assume. Since 2024, a European Union law has set out that very large apps must explain how their feeds choose posts. The apps must also offer a feed that is not based on what they know about you. You can help too: follow different sources, and check before you share.",
+    "flag": true
+  },
+  "read.sections.2.simpler": {
+    "source": "Some people worry about a filter bubble. In a bubble, you only see one side. Ravi sees posts for the field. Lena sees posts for the library. But researchers found that real bubbles are less common than people think. Since 2024, very big apps in the European Union must explain their feeds. They must offer another kind too. You can help too. Follow different sources. Check before you share.",
+    "back": "Some people worry about filter bubbles. In that bubble, you only see one side. Ravi sees posts supporting the field. Lena sees posts supporting the library. But researchers found real bubbles are less common than people assume. Since 2024, very large apps in the European Union must explain their feeds. The apps must offer another kind of feed too. You can help too. Follow different sources. Check before you share.",
+    "flag": true
+  },
+  "read.glossary.0.word": {
+    "source": "algorithm",
+    "back": "algorithm",
+    "flag": true
+  },
+  "read.glossary.0.definition": {
+    "source": "A set of steps a computer follows to do a job.",
+    "back": "A set of steps a computer follows to do a job.",
+    "flag": true
+  },
+  "read.glossary.0.example": {
+    "source": "An algorithm chose the posts in Ravi's feed.",
+    "back": "An algorithm chose the posts in Ravi's feed.",
+    "flag": true
+  },
+  "read.glossary.1.word": {
+    "source": "feed",
+    "back": "feed",
+    "flag": true
+  },
+  "read.glossary.1.definition": {
+    "source": "The list of posts and videos an app shows you.",
+    "back": "The list of posts and videos an app shows you.",
+    "flag": true
+  },
+  "read.glossary.1.example": {
+    "source": "Lena's feed showed her many posts about the library.",
+    "back": "Lena's feed showed many posts about the library.",
+    "flag": true
+  },
+  "read.glossary.2.word": {
+    "source": "rumour",
+    "back": "rumour",
+    "flag": true
+  },
+  "read.glossary.2.definition": {
+    "source": "A story that people pass on without knowing if it is true.",
+    "back": "A story people pass on without knowing whether it is true.",
+    "flag": true
+  },
+  "read.glossary.2.example": {
+    "source": "The rumour said the vote had moved to Friday.",
+    "back": "The rumour said the vote had been moved to Friday.",
+    "flag": true
+  },
+  "read.glossary.3.word": {
+    "source": "election",
+    "back": "election",
+    "flag": true
+  },
+  "read.glossary.3.definition": {
+    "source": "A time when people vote to choose something together.",
+    "back": "A time when people vote to choose something together.",
+    "flag": true
+  },
+  "read.glossary.3.example": {
+    "source": "Maplebrook held an election to choose a library or a sports field.",
+    "back": "Maplebrook held an election to choose a library or a sports field.",
+    "flag": true
+  },
+  "read.glossary.4.word": {
+    "source": "filter bubble",
+    "back": "filter bubble",
+    "flag": true
+  },
+  "read.glossary.4.definition": {
+    "source": "When a feed shows you only one side of things.",
+    "back": "When a feed shows you only one side.",
+    "flag": true
+  },
+  "read.glossary.4.example": {
+    "source": "If Ravi only saw sports field posts, he would be in a filter bubble.",
+    "back": "If Ravi only saw posts about the sports field, he would be in a filter bubble.",
+    "flag": true
+  },
+  "read.checks.0.question": {
+    "source": "How does an algorithm choose the posts in a feed?",
+    "back": "How does an algorithm choose the posts in a feed?",
+    "flag": true
+  },
+  "read.checks.0.options.0.text": {
+    "source": "It picks posts at random",
+    "back": "It chooses posts at random",
+    "flag": true
+  },
+  "read.checks.0.options.0.feedback": {
+    "source": "Not quite. It does not pick at random. Read the first section again.",
+    "back": "Not quite. It does not choose at random. Read the first passage again.",
+    "flag": true
+  },
+  "read.checks.0.options.1.text": {
+    "source": "It guesses from what you did before",
+    "back": "It guesses based on what you have done",
+    "flag": true
+  },
+  "read.checks.0.options.1.feedback": {
+    "source": "Yes. It learns from what you watched, liked or skipped, and guesses what you will want next.",
+    "back": "Right. It learns from what you have watched, liked or skipped, and guesses what you want next.",
+    "flag": true
+  },
+  "read.checks.0.options.2.text": {
+    "source": "A person checks every single post first",
+    "back": "Someone checks every post first",
+    "flag": true
+  },
+  "read.checks.0.options.2.feedback": {
+    "source": "Not quite. There are too many posts for that. Read the first section.",
+    "back": "Not quite. There are too many posts for that. Read the first passage.",
+    "flag": true
+  },
+  "read.checks.1.question": {
+    "source": "What did the 2018 study of Twitter find?",
+    "back": "What did the 2018 study about Twitter find?",
+    "flag": true
+  },
+  "read.checks.1.options.0.text": {
+    "source": "False stories spread faster than true ones",
+    "back": "False news spreads faster than true news",
+    "flag": true
+  },
+  "read.checks.1.options.0.feedback": {
+    "source": "Yes. On Twitter from 2006 to 2017, false stories spread further and faster. That was one site in those years.",
+    "back": "Right. On Twitter from 2006 to 2017, false news spread further and faster. That was one site in those years.",
+    "flag": true
+  },
+  "read.checks.1.options.1.text": {
+    "source": "False stories spread more slowly than true ones",
+    "back": "False news spreads more slowly than true news",
+    "flag": true
+  },
+  "read.checks.1.options.1.feedback": {
+    "source": "Not quite. Look at the Maplebrook rumour and the notice. Read the second section.",
+    "back": "Not quite. Look at the rumour and the notice in Maplebrook. Read the second passage.",
+    "flag": true
+  },
+  "read.checks.1.options.2.text": {
+    "source": "Only robot accounts shared the false stories",
+    "back": "Only robot accounts shared false news",
+    "flag": true
+  },
+  "read.checks.1.options.2.feedback": {
+    "source": "Not quite. People shared them too. Read the second section again.",
+    "back": "Not quite. Humans shared it too. Read the second passage again.",
+    "flag": true
+  },
+  "read.checks.2.question": {
+    "source": "Think of a post from the lesson. What would you check before you share it?",
+    "back": "Think of a post from this lesson. What would you check before you share it?",
+    "flag": true
+  },
+  "read.checks.2.placeholder": {
+    "source": "Before I share ___, I would check ...",
+    "back": "Before I share ___, I would check ...",
+    "flag": true
+  },
+  "write.prompt": {
+    "source": "A rumour says the Maplebrook vote has moved to Friday. Explain why it spread fast, and what people in Maplebrook could do about it.",
+    "back": "A rumour says the vote in Maplebrook has been moved to Friday. Explain why it spread quickly, and what the people of Maplebrook can do about it.",
+    "flag": true
+  },
+  "write.sentenceStarters.0": {
+    "source": "The rumour spread fast because ...",
+    "back": "The rumour spread quickly because ...",
+    "flag": true
+  },
+  "write.sentenceStarters.1": {
+    "source": "Many people saw it because ...",
+    "back": "Many people saw it because ...",
+    "flag": true
+  },
+  "write.sentenceStarters.2": {
+    "source": "The true notice was shared ...",
+    "back": "The true notice was shared ...",
+    "flag": true
+  },
+  "write.sentenceStarters.3": {
+    "source": "People could ...",
+    "back": "People could ...",
+    "flag": true
+  },
+  "write.sentenceStarters.4": {
+    "source": "This matters in an election because ...",
+    "back": "This matters in an election because ...",
+    "flag": true
+  },
+  "write.planningBoxes.0": {
+    "source": "My main idea",
+    "back": "My main idea",
+    "flag": true
+  },
+  "write.planningBoxes.1": {
+    "source": "Evidence from the lesson",
+    "back": "Evidence from the lesson",
+    "flag": true
+  },
+  "write.planningBoxes.2": {
+    "source": "Why it matters",
+    "back": "Why this matters",
+    "flag": true
+  },
+  "write.planningBoxes.3": {
+    "source": "A question I still have",
+    "back": "A question I still have",
+    "flag": true
+  },
+  "write.selfCheck.0": {
+    "source": "I gave one reason the rumour spread fast.",
+    "back": "I gave one reason the rumour spread quickly.",
+    "flag": true
+  },
+  "write.selfCheck.1": {
+    "source": "I used a fact from the lesson.",
+    "back": "I used one fact from the lesson.",
+    "flag": true
+  },
+  "write.selfCheck.2": {
+    "source": "I said what people could do.",
+    "back": "I stated what people could do.",
+    "flag": true
+  },
+  "write.example": {
+    "source": "The rumour spread fast because it was surprising and told people to share it now. Many people saw it because it got so many shares. Feeds can show those posts to more people. The true notice was shared only 60 times, but the rumour was shared 900 times. People could check the election office's notice before they share. They could also share the fact check. This matters in an election because people need the correct day to vote.",
+    "back": "The rumour spread quickly because it was surprising and told people to share it now. Many people saw it because it got so many shares. Feeds can show posts like that to more people. The true notice was shared only 60 times, but the rumour was shared 900 times. People could check the election office's notice before they share. They could also share the fact check. This matters in an election because people need the correct day to vote.",
+    "flag": true
+  },
+  "speak.partnerTask": {
+    "source": "Your partner reads the Maplebrook rumour aloud. You explain why it might spread fast, and what you would share instead. Then switch.",
+    "back": "Your partner reads the Maplebrook rumour aloud. You explain why it might spread quickly, and what you would share instead. Then take turns.",
+    "flag": true
+  },
+  "speak.independentTask": {
+    "source": "Say out loud what an algorithm does in a feed, with one way it can help you and one way it can cause problems.",
+    "back": "Say aloud what an algorithm does in a feed, with one way it can help you and one way it can cause problems.",
+    "flag": true
+  },
+  "watch.why": {
+    "source": "A short news video made for young people that explains how an algorithm chooses what you see.",
+    "back": "A short news video made for young people, which explains how an algorithm chooses what you see.",
+    "flag": true
+  },
+  "watch.beforeQuestion": {
+    "source": "Who do you think chooses what you see when you scroll?",
+    "back": "In your opinion, who chooses what you see when you scroll?",
+    "flag": true
+  },
+  "watch.afterQuestion": {
+    "source": "Why might a feed try to keep you watching?",
+    "back": "Why might a feed try to make you keep watching?",
+    "flag": true
+  },
+  "watch.summary": {
+    "source": "This short news video for young people explains social media algorithms. An algorithm is a set of instructions that tells a computer program what to do. On many apps, the algorithm decides which posts you see and in what order. It also decides which posts you don't see. So when you scroll, you might think you are seeing everything. In fact, someone built a system that chooses for you. How does it choose? It tries to show you posts that will keep you interested, so you keep scrolling. Experts in the video say this isn't always a good thing. Your feed is carefully chosen. It is not a full view of the world. Knowing how your feed is chosen can help you think about what you see.",
+    "back": "This short news video for young people explains social media algorithms. An algorithm is a set of instructions that tells a computer program what to do. In many apps, the algorithm decides which posts you see and in what order. It also decides which posts you do not see. So when you scroll, you might think you are seeing everything. In fact, someone has built a system that chooses for you. How does it choose? It tries to show posts that will keep you interested, so that you keep scrolling. Experts in this video say this is not always good. Your feed is carefully chosen. It is not a full picture of the world. Knowing how your feed is chosen can help you think about what you see.",
+    "flag": true
+  },
+  "watch.keyPoints.0": {
+    "source": "An algorithm is a set of instructions for a computer.",
+    "back": "An algorithm is a set of instructions for a computer.",
+    "flag": true
+  },
+  "watch.keyPoints.1": {
+    "source": "On many apps, an algorithm chooses which posts you see, and which you don't.",
+    "back": "In many apps, an algorithm chooses the posts you see, and the ones you do not see.",
+    "flag": true
+  },
+  "watch.keyPoints.2": {
+    "source": "It tries to keep you watching, which isn't always good for you.",
+    "back": "It tries to make you keep watching, and this is not always good for you.",
+    "flag": true
+  },
+  "watch.contentNote": {
+    "source": "About 3 minutes (182 seconds, from YouTube's listing), Canadian English, from 2021. It names real apps (TikTok, YouTube and Instagram). The title and channel were confirmed with YouTube's oEmbed on 31 October 2026. The summary was written from CBC Kids News' own description of the video and its web page, not from watching it. Someone on the team must watch it before learners use it; learners can read the written summary instead.",
+    "back": "About 3 minutes (182 seconds, according to YouTube's listing), Canadian English, from 2021. This video names real apps (TikTok, YouTube and Instagram). Title and channel confirmed with YouTube's oEmbed on 31 October 2026. The summary was written from CBC Kids News' own description of this video and its web page, not by watching the video. Someone on the team must watch it before learners use it; learners can read the written summary instead.",
+    "flag": true
+  },
+  "reflect.prompts.0.text": {
+    "source": "Before I share a surprising post, I will ...",
+    "back": "Before I share a surprising post, I will ...",
+    "flag": true
+  },
+  "reflect.prompts.1.text": {
+    "source": "One way to see more than one side is ...",
+    "back": "One way to see more than one side is ...",
+    "flag": true
+  },
+  "reflect.completionMessage": {
+    "source": "You finished Lesson 15. You explained how a feed chooses posts, and why that matters before a vote.",
+    "back": "You have finished Lesson 15. You explained how a feed chooses posts, and why that matters before a vote.",
+    "flag": true
+  },
+  "visual.alt": {
+    "source": "Many posts go into an algorithm, which guesses what each person will want to see. Ravi's feed shows mostly sports field posts. Lena's feed shows mostly library posts and a free lesson on writing stories.",
+    "back": "Many posts go into an algorithm, which guesses what each person wants to see. Ravi's feed mostly shows posts about the sports field. Lena's feed mostly shows posts about the library and a free lesson about writing stories.",
+    "flag": true
+  },
+  "sources.0.label": {
+    "source": "CBC Kids News (2021): How do social media algorithms work?",
+    "back": "CBC Kids News (2021): How do social media algorithms work? (how do social media algorithms work?)",
+    "flag": true
+  },
+  "sources.1.label": {
+    "source": "MIT News (8 March 2018): Study, on Twitter, false news travels faster than true stories (Vosoughi, Roy and Aral, Science)",
+    "back": "MIT News (8 March 2018): Study, on Twitter, false news travels faster than true stories (study: on Twitter, false news spreads faster than true news; Vosoughi, Roy and Aral, Science)",
+    "flag": true
+  },
+  "sources.2.label": {
+    "source": "Reuters Institute (2022): Echo chambers, filter bubbles, and polarisation: a literature review (Ross Arguedas, Robertson, Fletcher and Nielsen)",
+    "back": "Reuters Institute (2022): Echo chambers, filter bubbles, and polarisation: a literature review (echo chambers, filter bubbles and polarisation: a literature review; Ross Arguedas, Robertson, Fletcher and Nielsen)",
+    "flag": true
+  },
+  "sources.3.label": {
+    "source": "European Parliament Legislative Observatory: summary of the Digital Services Act, Regulation (EU) 2022/2065",
+    "back": "European Parliament Legislative Observatory: summary of the Digital Services Act (Digital Services Act), Regulation (EU) 2022/2065",
+    "flag": true
+  },
+  "sources.4.label": {
+    "source": "YouTube Help: How YouTube recommendations work (an example of one platform's stated signals)",
+    "back": "YouTube Help: How YouTube recommendations work (how YouTube recommendations work; an example of signals stated by one platform)",
+    "flag": true
+  },
+  "sensitiveNotes.0": {
+    "source": "Elections and politics can be painful or dangerous topics for some learners. Keep the discussion on made-up Maplebrook. Never ask learners about elections, politics or votes in any country they have lived in, or how anyone in their family votes, and don't let a debate about real candidates or parties start; steer back to how feeds and rumours work.",
+    "back": "Elections and politics can be painful or dangerous topics for some learners. Keep the discussion focused on made-up Maplebrook. Never ask learners about elections, politics or voting in any country they have lived in, or how anyone in their family votes, and do not let a debate about real candidates or parties begin; bring the discussion back to how feeds and rumours work.",
+    "flag": true
+  },
+  "educatorNotes.0": {
+    "source": "The research in section 2 is Vosoughi, Roy and Aral (Science, March 2018; MIT News, 8 March 2018): about 126,000 cascades of news stories on Twitter, 2006 to 2017, tweeted over 4.5 million times by about 3 million people, each story judged true or false by six independent fact-checking organisations. False news was 70% more likely to be retweeted, and true stories took about six times as long to reach 1,500 people; the gap held with bots removed. Its scope: one platform, those years, and stories that fact-checkers had investigated (contested stories, not all posts). It measured what people retweeted, not how a ranking algorithm chose posts, so it does not show that AI caused the spread; the authors say other platforms need separate study.",
+    "back": "The research in passage 2 is Vosoughi, Roy and Aral (Science, March 2018; MIT News, 8 March 2018): about 126,000 sharing cascades of news on Twitter, 2006 to 2017, tweeted over 4.5 million times by about 3 million people, each story judged true or false by six independent fact-checking organisations. False news was 70% more likely to be retweeted, and true news took about six times as long to reach 1,500 people; the gap remained even with bots removed. Its scope: one platform, those years, and stories investigated by fact-checkers (contested stories, not all posts). The study measured what people retweeted, not how a ranking algorithm chose posts, so it does not show that AI caused the spread; the authors say other platforms need to be studied separately.",
+    "flag": true
+  },
+  "educatorNotes.1": {
+    "source": "Apps rank posts with different signals and aims; don't reduce them to one motive. For example, YouTube's help page lists watch and search history, subscriptions, likes, dislikes, “not interested” and satisfaction surveys (to understand satisfaction, “not just watch time”). Filter bubbles: the Reuters Institute's 2022 review found echo chambers much less widespread than commonly assumed and no support for the filter bubble idea. The European rule is the Digital Services Act (Regulation (EU) 2022/2065): in force 16 November 2022, applying in full from 17 February 2024, and earlier to very large platforms (over 45 million monthly users in the EU), four months after the Commission designated them; they must explain the main settings of their recommender systems, offer one not based on profiling, and assess risks such as the manipulation of elections.",
+    "back": "Apps rank posts with different signals and aims; do not reduce them to one motive only. For example, YouTube's help page lists watch and search history, subscriptions, likes, dislikes, “not interested” and satisfaction surveys (to understand satisfaction, “not just watch time”). Filter bubbles: the Reuters Institute's 2022 review found echo chambers far less widespread than commonly assumed and no support for the filter bubble idea. That European rule is the Digital Services Act (Regulation (EU) 2022/2065): in force 16 November 2022, applying fully from 17 February 2024, and earlier for very large platforms (over 45 million users a month in the EU), four months after the Commission designated their status; those platforms must explain the main settings of their recommender systems, offer one system not based on profiling, and assess risks such as election manipulation.",
+    "flag": true
+  },
+  "educatorNotes.2": {
+    "source": "Paper version of the activity: write the six posts on cards and sort them into two piles, “Likely to spread fast” and “Less likely”. There is no score; ask for reasons. Ask why the correct notice spreads more slowly, and who could help it spread.",
+    "back": "Paper version of the activity: write the six posts on cards and sort them into two piles, “Likely to spread quickly” and “Less likely”. No marks; ask for reasons. Ask why the correct notice spreads more slowly, and who could help spread it.",
+    "flag": true
+  },
+  "read.glossary.0.forms": {
+    "source": [
+      "algorithms"
+    ],
+    "note": "Malay has no plural form here; \"algoritma\" alone is marked.",
+    "flag": true
+  },
+  "read.glossary.1.forms": {
+    "source": [
+      "feeds"
+    ],
+    "note": "Malay form: suapannya (his or her feed).",
+    "flag": true
+  },
+  "read.glossary.2.forms": {
+    "source": [
+      "rumours"
+    ],
+    "flag": true
+  },
+  "read.glossary.3.forms": {
+    "source": [
+      "elections"
+    ],
+    "flag": true
+  },
+  "read.glossary.4.forms": {
+    "source": [
+      "bubble",
+      "bubbles"
+    ],
+    "note": "Malay form: gelembung (bubble).",
+    "flag": true
+  }
+}

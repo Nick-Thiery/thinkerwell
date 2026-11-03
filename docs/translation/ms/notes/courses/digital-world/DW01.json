@@ -1,0 +1,665 @@
+{
+  "title": {
+    "source": "What AI is, and what it isn't",
+    "back": "What AI is, and what is not AI",
+    "flag": true
+  },
+  "essentialQuestion": {
+    "source": "How can you tell when a machine is using AI?",
+    "back": "How can you know when a machine uses AI?",
+    "flag": true
+  },
+  "learningGoal": {
+    "source": "Explain how many AI tools make predictions from patterns in examples, and sort everyday tools into AI and not AI.",
+    "back": "Explain how many AI tools make predictions from patterns in examples, and sort everyday tools into AI and not AI.",
+    "flag": true
+  },
+  "warmUp.question": {
+    "source": "Which of these do you think uses AI?",
+    "back": "Which of these do you think uses AI?",
+    "flag": true
+  },
+  "warmUp.options.0": {
+    "source": "A calculator",
+    "back": "A calculator",
+    "flag": true
+  },
+  "warmUp.options.1": {
+    "source": "A tool that turns speech into typed words",
+    "back": "A tool that changes speech into typed words",
+    "flag": true
+  },
+  "warmUp.options.2": {
+    "source": "A classroom bell",
+    "back": "A class bell",
+    "flag": true
+  },
+  "warmUp.options.3": {
+    "source": "Not sure",
+    "back": "Not sure",
+    "flag": true
+  },
+  "evidence.label": {
+    "source": "Fictional example created for this lesson.",
+    "back": "An invented example made for this lesson.",
+    "flag": true
+  },
+  "evidence.question": {
+    "source": "Which tools always do the same thing? Which tools have to guess?",
+    "back": "Which tools always do the same thing? Which tools have to guess?",
+    "flag": true
+  },
+  "evidence.cards.0.title": {
+    "source": "Tools at Hillview Learning Centre",
+    "back": "Tools at Hillview Learning Centre",
+    "flag": true
+  },
+  "evidence.cards.0.columns.0": {
+    "source": "Tool",
+    "back": "Tool",
+    "flag": true
+  },
+  "evidence.cards.0.columns.1": {
+    "source": "What it does",
+    "back": "What it does",
+    "flag": true
+  },
+  "evidence.cards.0.rows.0.0": {
+    "source": "Calculator",
+    "back": "Calculator",
+    "flag": true
+  },
+  "evidence.cards.0.rows.0.1": {
+    "source": "Adds, takes away, multiplies and divides numbers.",
+    "back": "Adds, subtracts, multiplies and divides numbers.",
+    "flag": true
+  },
+  "evidence.cards.0.rows.1.0": {
+    "source": "Voice typing tool",
+    "back": "Tool for typing with your voice",
+    "flag": true
+  },
+  "evidence.cards.0.rows.1.1": {
+    "source": "Turns spoken words into typed words.",
+    "back": "Changes spoken words into typed words.",
+    "flag": true
+  },
+  "evidence.cards.0.rows.2.0": {
+    "source": "Translation tool",
+    "back": "Translation tool",
+    "flag": true
+  },
+  "evidence.cards.0.rows.2.1": {
+    "source": "Turns a sentence in one language into another language.",
+    "back": "Changes a sentence in one language into another language.",
+    "flag": true
+  },
+  "evidence.cards.0.rows.3.0": {
+    "source": "Classroom bell",
+    "back": "Class bell",
+    "flag": true
+  },
+  "evidence.cards.0.rows.3.1": {
+    "source": "Rings at nine o'clock every morning.",
+    "back": "Rings at nine o'clock every morning.",
+    "flag": true
+  },
+  "evidence.cards.0.rows.4.0": {
+    "source": "Video suggestions",
+    "back": "Video suggestions",
+    "flag": true
+  },
+  "evidence.cards.0.rows.4.1": {
+    "source": "A video site suggests what to watch next, from what people watched before.",
+    "back": "A video site suggests what should be watched next, based on what people watched before.",
+    "flag": true
+  },
+  "evidence.cards.0.rows.5.0": {
+    "source": "Light by the door",
+    "back": "Light beside the door",
+    "flag": true
+  },
+  "evidence.cards.0.rows.5.1": {
+    "source": "Turns on when someone walks past.",
+    "back": "Lights up when someone passes.",
+    "flag": true
+  },
+  "evidence.cards.0.rows.6.0": {
+    "source": "Photo sorter",
+    "back": "Photo sorter",
+    "flag": true
+  },
+  "evidence.cards.0.rows.6.1": {
+    "source": "Finds all the photos that show a tree.",
+    "back": "Finds all the photos that show a tree.",
+    "flag": true
+  },
+  "evidence.cards.0.rows.7.0": {
+    "source": "“Smart” fan",
+    "back": "“Smart” fan",
+    "flag": true
+  },
+  "evidence.cards.0.rows.7.1": {
+    "source": "The box says “smart”. It turns on when the room gets hot.",
+    "back": "Its box says “smart”. It starts turning when the room becomes hot.",
+    "flag": true,
+    "note": "\"Turns on\" for a fan is \"mula berpusing\" (starts turning); \"menyala\" is used for the light."
+  },
+  "activity.title": {
+    "source": "AI or not AI?",
+    "back": "AI or not AI?",
+    "flag": true
+  },
+  "activity.instructions": {
+    "source": "Put each Hillview tool into a group. There is no score. After you place a tool, you can see one possible answer and the reason.",
+    "back": "Put each Hillview tool in one group. There are no marks. After you place a tool, you can see one possible answer and its reason.",
+    "flag": true
+  },
+  "activity.groups.0.label": {
+    "source": "Uses AI",
+    "back": "Uses AI",
+    "flag": true
+  },
+  "activity.groups.1.label": {
+    "source": "Not AI",
+    "back": "Not AI",
+    "flag": true
+  },
+  "activity.groups.2.label": {
+    "source": "Hard to say",
+    "back": "Hard to say",
+    "flag": true,
+    "note": "\"Hard to say\" is \"Sukar dikatakan\", the same words in the reading, Speak and the sentence starters."
+  },
+  "activity.items.0.text": {
+    "source": "Calculator",
+    "back": "Calculator",
+    "flag": true
+  },
+  "activity.items.0.feedback": {
+    "source": "It follows fixed steps that a person wrote, for sums with one right answer. It does not learn from examples.",
+    "back": "It follows fixed steps written by someone, for sums that have only one right answer. It does not learn from examples.",
+    "flag": true
+  },
+  "activity.items.1.text": {
+    "source": "Voice typing tool",
+    "back": "Tool for typing with your voice",
+    "flag": true
+  },
+  "activity.items.1.feedback": {
+    "source": "Every voice is different. The tool learned from many recordings, so it can make a careful guess at the words.",
+    "back": "Every voice is different. This tool learned from many recordings, so it can make a careful guess about the words spoken.",
+    "flag": true
+  },
+  "activity.items.2.text": {
+    "source": "Translation tool",
+    "back": "Translation tool",
+    "flag": true
+  },
+  "activity.items.2.feedback": {
+    "source": "It learned from many sentences. So it can make a careful guess at a new one.",
+    "back": "It learned from many sentences. So it can make a careful guess about a new sentence.",
+    "flag": true
+  },
+  "activity.items.3.text": {
+    "source": "Classroom bell",
+    "back": "Class bell",
+    "flag": true
+  },
+  "activity.items.3.feedback": {
+    "source": "Someone set a timer. It rings at the same time every day, and it does not learn or estimate anything.",
+    "back": "Someone set a timer. It rings at the same time every day, and it does not learn or estimate anything.",
+    "flag": true
+  },
+  "activity.items.4.text": {
+    "source": "Video suggestions",
+    "back": "Video suggestions",
+    "flag": true
+  },
+  "activity.items.4.feedback": {
+    "source": "It finds patterns in what people watched and estimates what they may like next.",
+    "back": "It finds patterns in what people watched and estimates what they may like next.",
+    "flag": true
+  },
+  "activity.items.5.text": {
+    "source": "Light by the door",
+    "back": "Light beside the door",
+    "flag": true
+  },
+  "activity.items.5.feedback": {
+    "source": "It follows one simple rule: if something moves, turn on. It does not learn or estimate.",
+    "back": "It follows one simple rule: if something moves, switch on the light. It does not learn or estimate.",
+    "flag": true
+  },
+  "activity.items.6.text": {
+    "source": "Photo sorter",
+    "back": "Photo sorter",
+    "flag": true
+  },
+  "activity.items.6.feedback": {
+    "source": "Every tree looks different. It learned from many photos and makes a careful guess about which ones show a tree.",
+    "back": "Every tree looks different. It learned from many photos and makes a careful guess about the photos that show a tree.",
+    "flag": true
+  },
+  "activity.items.7.text": {
+    "source": "“Smart” fan",
+    "back": "“Smart” fan",
+    "flag": true
+  },
+  "activity.items.7.feedback": {
+    "source": "Any group can be justified here. The fan may follow one rule about heat, or it may learn. The word “smart” does not tell you.",
+    "back": "Any group can be given a reason here. The fan may follow one rule about heat, or it may learn. The word “smart” does not tell you.",
+    "flag": true
+  },
+  "read.sections.0.heading": {
+    "source": "Many AI tools learn from examples",
+    "back": "Many AI tools learn from examples",
+    "flag": true
+  },
+  "read.sections.0.text": {
+    "source": "AI stands for artificial intelligence. Artificial means made by people. AI is a big field with many methods. Many AI systems used today learn patterns from data, and this lesson is about them. People give the program a lot of data, such as photos, sentences or voice recordings. The program looks for a pattern in the data. Then it uses that pattern to make a prediction. A prediction is a careful guess about something new, based on the patterns, not a random one. At Hillview Learning Centre, the translation tool learned from many sentences in two languages. When you type a sentence it has never seen, it predicts a good translation.",
+    "back": "AI is short for artificial intelligence, that is, \"kecerdasan buatan\". \"Buatan\" means made by people. AI is a big field with many methods. Many AI systems used today learn patterns from data, and this lesson is about those systems. People give the program a lot of data, such as photos, sentences or voice recordings. The program looks for patterns in the data. Then it uses the pattern to make a prediction. A prediction is a careful guess about something new, based on patterns, not a random guess. At Hillview Learning Centre, the translation tool learned from many sentences in two languages. When you type a sentence it has never seen, it predicts a good translation.",
+    "flag": true,
+    "note": "The standard text keeps the English words \"artificial intelligence\" once, so learners see where the letters AI come from; \"AI\" stays AI throughout the course. \"Careful guess\" is \"tekaan yang teliti\" everywhere in Digital World."
+  },
+  "read.sections.0.simpler": {
+    "source": "AI means artificial intelligence. People make it. There are many kinds of AI. Many AI programs today learn from examples. This lesson is about them. People give a program lots of data, like photos or voices. It finds a pattern in the data. Then it makes a prediction. This is a careful guess about something new. It is not random. The Hillview translation tool learned from many sentences. It can guess how to translate a new one.",
+    "back": "AI means artificial intelligence. People make it. There are many kinds of AI. Many AI programs today learn from examples. This lesson is about those programs. People give it a lot of data, such as photos or voices. It looks for patterns in the data. Then it makes a prediction. This is a careful guess about something new. It is not a random guess. The Hillview translation tool learned from many sentences. It can guess the translation of a new sentence.",
+    "flag": true
+  },
+  "read.sections.1.heading": {
+    "source": "Not every machine uses AI",
+    "back": "Not all machines use AI",
+    "flag": true
+  },
+  "read.sections.1.text": {
+    "source": "Many machines are not AI. A calculator follows fixed steps that a person wrote, for sums with one right answer. It always gives 12 for 7 + 5, and it never learned that from examples. The bell at Hillview rings at nine o'clock because someone set a timer. The AI tools in this lesson are different, because they must estimate. A new voice or photo is never exactly like their examples. Still, following rules does not prove a tool is not AI. Some AI follows rules that people wrote, and some mixes rules and learning. A fan called “smart” might follow one simple rule, or it might learn. Sometimes the honest answer is “hard to say”.",
+    "back": "Many machines are not AI. A calculator follows fixed steps written by someone, for sums that have only one right answer. It always gives 12 for 7 + 5, and it never learned that from examples. The bell at Hillview rings at nine o'clock because someone set a timer. The AI tools in this lesson are different, because they must estimate. A new voice or photo is never completely the same as their examples. However, following rules does not prove a tool is not AI. Some AI follows rules written by people, and some combine rules with learning. A fan called “smart” may follow one simple rule, or it may learn. Sometimes the honest answer is “hard to say”.",
+    "flag": true
+  },
+  "read.sections.1.simpler": {
+    "source": "Many machines are not AI. A calculator follows steps a person wrote. It always says 7 + 5 is 12. It did not learn this. The Hillview bell rings at nine. Someone set a timer. The AI tools here must make a careful guess. A new photo is never the same as their examples. But some AI follows rules that people wrote. Some uses rules and examples. So it can be hard to tell. A “smart” fan may follow one rule, or it may learn.",
+    "back": "Many machines are not AI. A calculator follows steps written by someone. It always says 7 + 5 is 12. It did not learn this. The Hillview bell rings at nine o'clock. Someone set a timer. The AI tools here must make a careful guess. A new photo is never the same as their examples. But some AI follows rules written by people. Some use rules and examples. So sometimes it is hard to know. A “smart” fan may follow one rule, or it may learn.",
+    "flag": true
+  },
+  "read.sections.2.heading": {
+    "source": "AI is a tool, not a person",
+    "back": "AI is a tool, not a person",
+    "flag": true
+  },
+  "read.sections.2.text": {
+    "source": "AI can seem clever, but it does not think or feel like a person. It does not understand a photo or a sentence the way you do. It finds patterns in data and makes a guess. That guess can be wrong, especially when something is new or very different from its examples. People decide what an AI tool is for, what data it learns from and when to trust its answers. So you can ask three questions about any AI tool. What does it guess? What examples did it learn from? Who checks if it is right?",
+    "back": "AI can look clever, but it does not think or feel like a person. It does not understand a photo or a sentence the way you understand it. It looks for patterns in data and makes a guess. That guess can be mistaken, especially when something is new or very different from its examples. People decide what an AI tool is for, what data it learns and when its answers can be trusted. So you can ask three questions about any AI tool. What does it guess? What examples did it learn? Who checks whether it is right?",
+    "flag": true,
+    "note": "\"Can be wrong\" is \"boleh tersilap\" (can be mistaken), softer than \"salah\", which the house style avoids."
+  },
+  "read.sections.2.simpler": {
+    "source": "AI can seem clever. But it does not think or feel like a person. It finds patterns and makes a guess. The guess can be wrong, more often when something is new. People choose what AI is for, its data and when to trust it. Ask three questions. What does it guess? What did it learn from? Who checks it?",
+    "back": "AI can look clever. But it does not think or feel like a person. It looks for patterns and makes a guess. The guess can be mistaken, especially when something is new. People choose what AI is for, its data and when to trust it. Ask three questions. What does it guess? What did it learn from? Who checks it?",
+    "flag": true
+  },
+  "read.glossary.0.word": {
+    "source": "artificial intelligence",
+    "back": "artificial intelligence",
+    "flag": true
+  },
+  "read.glossary.0.forms": {
+    "source": [
+      "AI"
+    ]
+  },
+  "read.glossary.0.definition": {
+    "source": "Computer systems that do tasks like seeing, talking or deciding. Many learn from examples.",
+    "back": "Computer systems that do tasks like seeing, talking or making decisions. Many learn from examples.",
+    "flag": true
+  },
+  "read.glossary.0.example": {
+    "source": "The Hillview translation tool uses artificial intelligence.",
+    "back": "The Hillview translation tool uses artificial intelligence.",
+    "flag": true
+  },
+  "read.glossary.1.word": {
+    "source": "program",
+    "back": "program (\"atur cara\")",
+    "flag": true,
+    "note": "\"Program\" is \"atur cara\" (the DBP and ASK school term). Many Malaysians also say \"program\"; check which learners know."
+  },
+  "read.glossary.1.forms": {
+    "source": [
+      "programs"
+    ]
+  },
+  "read.glossary.1.definition": {
+    "source": "A set of steps that tells a computer what to do.",
+    "back": "A set of steps that tells a computer what it must do.",
+    "flag": true
+  },
+  "read.glossary.1.example": {
+    "source": "The calculator program follows the same steps every time.",
+    "back": "The calculator program follows the same steps every time.",
+    "flag": true
+  },
+  "read.glossary.2.word": {
+    "source": "data",
+    "back": "data",
+    "flag": true
+  },
+  "read.glossary.2.definition": {
+    "source": "Facts, words, pictures or sounds that a computer can use.",
+    "back": "Facts, words, pictures or sounds that a computer can use.",
+    "flag": true
+  },
+  "read.glossary.2.example": {
+    "source": "The translation tool learned from data: many sentences in two languages.",
+    "back": "The translation tool learned from data: many sentences in two languages.",
+    "flag": true
+  },
+  "read.glossary.3.word": {
+    "source": "pattern",
+    "back": "pattern",
+    "flag": true
+  },
+  "read.glossary.3.forms": {
+    "source": [
+      "patterns"
+    ]
+  },
+  "read.glossary.3.definition": {
+    "source": "Something that happens again and again in a similar way.",
+    "back": "Something that happens again and again in a similar way.",
+    "flag": true
+  },
+  "read.glossary.3.example": {
+    "source": "The video site finds a pattern in what people watch.",
+    "back": "The video site looks for patterns in what people watch.",
+    "flag": true
+  },
+  "read.glossary.4.word": {
+    "source": "prediction",
+    "back": "prediction",
+    "flag": true,
+    "note": "\"Prediction\" is \"ramalan\", and \"predict\" is \"meramal\"/\"meramalkan\" (forms listed so the verb is marked too)."
+  },
+  "read.glossary.4.forms": {
+    "source": [
+      "predictions"
+    ]
+  },
+  "read.glossary.4.definition": {
+    "source": "A careful guess, based on patterns, about something you do not know yet.",
+    "back": "A careful guess, based on patterns, about something you do not know yet.",
+    "flag": true
+  },
+  "read.glossary.4.example": {
+    "source": "The translation is a prediction. It may not be right.",
+    "back": "That translation is a prediction. It may not be right.",
+    "flag": true
+  },
+  "read.checks.0.question": {
+    "source": "Why does the Hillview translation tool count as AI?",
+    "back": "Why is the Hillview translation tool counted as AI?",
+    "flag": true
+  },
+  "read.checks.0.options.0.text": {
+    "source": "It runs on the centre's shared laptop",
+    "back": "It runs on the shared laptop at the centre",
+    "flag": true
+  },
+  "read.checks.0.options.0.feedback": {
+    "source": "Not quite. Many programs on a laptop are not AI. Look at how the translation tool learned.",
+    "back": "Not quite. Many programs on a laptop are not AI. Look at how the translation tool learned.",
+    "flag": true
+  },
+  "read.checks.0.options.1.text": {
+    "source": "It learned patterns from many examples",
+    "back": "It learned patterns from many examples",
+    "flag": true
+  },
+  "read.checks.0.options.1.feedback": {
+    "source": "Yes. It learned from many sentences. Then it uses the pattern to guess a translation for a new one.",
+    "back": "Correct. It learned from many sentences. Then it uses that pattern to guess the translation of a new sentence.",
+    "flag": true
+  },
+  "read.checks.0.options.2.text": {
+    "source": "It gives the same answer every time",
+    "back": "It gives the same answer every time",
+    "flag": true
+  },
+  "read.checks.0.options.2.feedback": {
+    "source": "Not quite. Giving the same answer does not make a tool AI, or stop it being AI. Look at how the translation tool learned.",
+    "back": "Not quite. Giving the same answer does not make a tool AI, and does not make it not AI either. Look at how the translation tool learned.",
+    "flag": true
+  },
+  "read.checks.1.question": {
+    "source": "The Hillview bell rings at nine o'clock every day. What is the best way to describe it?",
+    "back": "The Hillview bell rings at nine o'clock every day. What is the best way to describe it?",
+    "flag": true
+  },
+  "read.checks.1.options.0.text": {
+    "source": "It learned the time from examples",
+    "back": "It learned the time from examples",
+    "flag": true
+  },
+  "read.checks.1.options.0.feedback": {
+    "source": "Not quite. Nobody gave the bell examples. Read about the bell in the second section.",
+    "back": "Not quite. Nobody gave the bell examples. Read about the bell in the second part.",
+    "flag": true
+  },
+  "read.checks.1.options.1.text": {
+    "source": "It guesses when learners will arrive",
+    "back": "It guesses when learners will arrive",
+    "flag": true
+  },
+  "read.checks.1.options.1.feedback": {
+    "source": "Not quite. The bell does not guess. Read about the bell in the second section.",
+    "back": "Not quite. The bell does not guess. Read about the bell in the second part.",
+    "flag": true
+  },
+  "read.checks.1.options.2.text": {
+    "source": "It follows a fixed step a person set",
+    "back": "It follows a fixed step set by someone",
+    "flag": true
+  },
+  "read.checks.1.options.2.feedback": {
+    "source": "Yes. Someone set a timer. The bell does not learn from examples or estimate anything, so it is not AI.",
+    "back": "Correct. Someone set a timer. The bell does not learn from examples or estimate anything, so it is not AI.",
+    "flag": true
+  },
+  "read.checks.2.question": {
+    "source": "Pick a tool from the lesson, or one you have seen. Do you think it uses AI? Why?",
+    "back": "Choose one tool from this lesson, or a tool you have seen. Do you think it uses AI? Why?",
+    "flag": true
+  },
+  "read.checks.2.placeholder": {
+    "source": "I think ___ uses AI because ... / I think ___ is not AI because ...",
+    "back": "I think ___ uses AI because ... / I think ___ is not AI because ...",
+    "flag": true
+  },
+  "write.prompt": {
+    "source": "Choose one tool from the Hillview list. Explain whether it uses AI, and give a reason from the lesson.",
+    "back": "Choose one tool from the Hillview list. Explain whether it uses AI, and give one reason from this lesson.",
+    "flag": true
+  },
+  "write.sentenceStarters.0": {
+    "source": "I chose ...",
+    "back": "I chose ...",
+    "flag": true
+  },
+  "write.sentenceStarters.1": {
+    "source": "I think it uses AI because ... / I think it is not AI because ... / It is hard to say because ...",
+    "back": "I think it uses AI because ... / I think it is not AI because ... / It is hard to say because ...",
+    "flag": true
+  },
+  "write.sentenceStarters.2": {
+    "source": "It learned from ... / It follows ...",
+    "back": "It learned from ... / It follows ...",
+    "flag": true
+  },
+  "write.sentenceStarters.3": {
+    "source": "One mistake it could make is ...",
+    "back": "One mistake it might make is ...",
+    "flag": true
+  },
+  "write.sentenceStarters.4": {
+    "source": "A person should check ...",
+    "back": "Someone needs to check ...",
+    "flag": true
+  },
+  "write.planningBoxes.0": {
+    "source": "My main idea",
+    "back": "My main idea",
+    "flag": true
+  },
+  "write.planningBoxes.1": {
+    "source": "Evidence from the lesson",
+    "back": "Evidence from the lesson",
+    "flag": true
+  },
+  "write.planningBoxes.2": {
+    "source": "Why it matters",
+    "back": "Why this matters",
+    "flag": true
+  },
+  "write.planningBoxes.3": {
+    "source": "A question I still have",
+    "back": "A question I still have",
+    "flag": true
+  },
+  "write.selfCheck.0": {
+    "source": "I named one tool.",
+    "back": "I named one tool.",
+    "flag": true
+  },
+  "write.selfCheck.1": {
+    "source": "I said if it uses AI and gave a reason.",
+    "back": "I said whether it uses AI and gave one reason.",
+    "flag": true
+  },
+  "write.selfCheck.2": {
+    "source": "I named one mistake it could make or one thing a person should check.",
+    "back": "I named one mistake it might make or one thing someone needs to check.",
+    "flag": true
+  },
+  "write.example": {
+    "source": "I chose the voice typing tool. I think it uses AI because it has to make a careful guess at the words from each new voice. It learned from lots of voice recordings and found patterns in them. One mistake it could make is typing the wrong word when someone speaks fast or quietly. A person should check the typed words before using them. The calculator is different. It follows steps a person wrote, and it does not learn from examples.",
+    "back": "I chose the tool for typing with your voice. I think it uses AI because it has to make a careful guess about the words from each new voice. It learned from many voice recordings and looked for patterns in them. One mistake it might make is typing a word that is not right when someone speaks fast or in a voice that is too quiet. Someone needs to check the typed words before using them. The calculator, though, is different. It follows steps written by someone, and it does not learn from examples.",
+    "flag": true,
+    "note": "\"Quietly\" is \"dengan suara yang terlalu perlahan\": \"perlahan\" alone can mean slow as well as quiet."
+  },
+  "speak.partnerTask": {
+    "source": "Take turns naming a tool from the Hillview list. Your partner says “AI”, “not AI” or “hard to say”, and gives one reason.",
+    "back": "Take turns naming one tool from the Hillview list. Your partner says “AI”, “not AI” or “hard to say”, and gives one reason.",
+    "flag": true
+  },
+  "speak.independentTask": {
+    "source": "Say out loud what AI is in two sentences. Then name one thing AI cannot do.",
+    "back": "Say out loud what AI is in two sentences. Then name one thing that AI cannot do.",
+    "flag": true
+  },
+  "watch.why": {
+    "source": "Two people who work with AI explain, in under three minutes, that most AI today learns patterns from examples.",
+    "back": "Two people who work with AI explain, in less than three minutes, that most AI today learns patterns from examples.",
+    "flag": true
+  },
+  "watch.beforeQuestion": {
+    "source": "Where do you think AI is used every day?",
+    "back": "In your opinion, where is AI used every day?",
+    "flag": true
+  },
+  "watch.afterQuestion": {
+    "source": "How is machine learning different from a program that follows fixed steps?",
+    "back": "How is machine learning different from a program that follows fixed steps?",
+    "flag": true
+  },
+  "watch.summary": {
+    "source": "In this short video, two people who work with AI talk about machine learning. AI is already part of everyday life. It helps choose what people see online, for example when they search. Many people imagine AI as a robot that thinks like a person. The speakers say that kind of AI is still many years away. Most AI today is machine learning. In the past, people had to write every step for a computer. With machine learning, people give the computer lots of examples. The computer finds patterns in the examples by itself. This is a bit like how you learn from practice. It is a new way to get computers to do useful jobs.",
+    "back": "In this short video, two people who work with AI talk about machine learning. AI is already part of daily life. It helps choose what people see online, for example when they search. Many people imagine AI as a robot that thinks like a person. Both speakers say that kind of AI is still years away. Most AI today is machine learning. In the past, people had to write every step for the computer. With machine learning, people give the computer many examples. The computer looks for patterns in those examples by itself. This is a little like how you learn through practice. This is a new way to make computers do useful work.",
+    "flag": true
+  },
+  "watch.keyPoints.0": {
+    "source": "AI is already part of everyday tools, like internet searches.",
+    "back": "AI is already part of everyday tools, like internet searches.",
+    "flag": true
+  },
+  "watch.keyPoints.1": {
+    "source": "The speakers say most AI today is machine learning: it finds patterns in examples.",
+    "back": "Both speakers say most AI today is machine learning: it looks for patterns in examples.",
+    "flag": true
+  },
+  "watch.keyPoints.2": {
+    "source": "People do not write every step. They give the computer examples.",
+    "back": "People do not write every step. They give the computer examples.",
+    "flag": true
+  },
+  "watch.contentNote": {
+    "source": "The speakers name the companies they work for, and say that AI that thinks like a person is still decades away. That is their opinion, not a settled fact. Preview it first; learners can read the written summary instead.",
+    "back": "Both speakers name the companies where they work, and say AI that thinks like a person is still decades away. That is their opinion, not a settled fact. Watch this video first; learners can read the written summary instead.",
+    "flag": true,
+    "note": "\"Preview it first\" is \"Tonton video ini dahulu\" (watch this video first), as Our World's Malay notes say it."
+  },
+  "reflect.prompts.0.text": {
+    "source": "One thing AI can do is ... One thing it cannot do is ...",
+    "back": "One thing AI can do is ... One thing it cannot do is ...",
+    "flag": true
+  },
+  "reflect.prompts.1.text": {
+    "source": "A question I have about AI is ...",
+    "back": "One question I have about AI is ...",
+    "flag": true
+  },
+  "reflect.completionMessage": {
+    "source": "You finished Lesson 1. You explained what AI is and sorted tools into AI and not AI.",
+    "back": "You have finished Lesson 1. You explained what AI is and sorted tools into AI and not AI.",
+    "flag": true
+  },
+  "visual.alt": {
+    "source": "A diagram: examples go in, the computer finds a pattern, and then it makes a careful guess. Below, a calculator and a bell follow fixed steps that a person wrote.",
+    "back": "Diagram: examples are put in, the computer looks for a pattern, and then it makes a careful guess. Below, a calculator and a bell follow fixed steps written by someone.",
+    "flag": true
+  },
+  "sources.0.label": {
+    "source": "Stanford HAI: What is artificial intelligence (AI)? (the broad field, and modern AI that finds patterns in data)",
+    "back": "Stanford HAI: What is artificial intelligence (AI)? (the broad field, and modern AI that looks for patterns in data)",
+    "flag": true
+  },
+  "sources.1.label": {
+    "source": "UNESCO: AI competency framework for students (2024)",
+    "back": "UNESCO: AI competency framework for students (an AI competency framework for students, 2024)",
+    "flag": true
+  },
+  "sources.2.label": {
+    "source": "OECD.AI: What is AI? Can you make a clear distinction between AI and non-AI systems?",
+    "back": "OECD.AI: What is AI? Can you make a clear distinction between AI and non-AI systems? (can we clearly tell AI systems from non-AI systems?)",
+    "flag": true
+  },
+  "sources.3.label": {
+    "source": "The Royal Society: Machine learning, the power and promise of computers that learn by example (introduction)",
+    "back": "The Royal Society: Machine learning, the power and promise of computers that learn by example (an introduction to machine learning)",
+    "flag": true
+  },
+  "sources.4.label": {
+    "source": "UNICEF: AI guide for teens (2021)",
+    "back": "UNICEF: AI guide for teens (an AI guide for teenagers, 2021)",
+    "flag": true
+  },
+  "sources.5.label": {
+    "source": "Thomas Haigh, Communications of the ACM 67(2), February 2024: How the AI boom went bust (1980s expert systems, AI built from rules)",
+    "back": "Thomas Haigh, Communications of the ACM 67(2), February 2024: How the AI boom went bust (1980s expert systems, AI built from rules)",
+    "flag": true
+  },
+  "educatorNotes.0": {
+    "source": "There is no single agreed line between AI and other programs (see the OECD source). AI is a broad field: Stanford HAI calls it computer systems that do tasks with human-like intelligence, and says modern AI often works by finding patterns in data. This lesson introduces that common modern kind (machine learning); rule-based AI, such as the expert systems in Lesson 2, is AI too. Accept “hard to say” and reward reasons, not the group a learner picks. The activity has no score.",
+    "back": "There is no single agreed dividing line between AI and other programs (see the OECD source). AI is a broad field: Stanford HAI calls it computer systems that do tasks with human-like intelligence, and says modern AI often works by looking for patterns in data. This lesson introduces that common modern kind (machine learning); rule-based AI, like the expert systems in Lesson 2, is also AI. Accept “hard to say” answers and value the reasons given, not the group the learner chooses. This activity has no marks.",
+    "flag": true
+  },
+  "educatorNotes.1": {
+    "source": "Learners may not own a phone. Every tool in the list is one they might see at a centre or a shop, and the think question lets them pick a tool from the lesson.",
+    "back": "Learners may not have their own phone. Every tool in this list is a tool they might see at a learning centre or in a shop, and the thinking question lets them choose a tool from this lesson.",
+    "flag": true
+  },
+  "educatorNotes.2": {
+    "source": "The video is fast, native-speaker English and names real companies. The written summary covers the main idea. Someone on the team must still watch it before use (see content/courses/digital-world/README.md).",
+    "back": "This video is fast, in native-speaker English and names real companies. The written summary covers its main idea. A team member still needs to watch this video before it is used (see content/courses/digital-world/README.md).",
+    "flag": true
+  }
+}

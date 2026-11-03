@@ -20,7 +20,7 @@ import { createPreviewCourse } from '../kit';
 import { courseStylesheetsReady } from '../kit/stylesheet';
 import { ActivityOnPaper } from './activities/ActivityOnPaper';
 import { ActivityPlayer } from './activities/ActivityPlayer';
-import { COURSE_ID, COURSE_PATH, COURSE_PRINT_PATH, digitalWorld } from './content';
+import { COURSE_ID, COURSE_PATH, COURSE_PRINT_PATH, digitalWorld, digitalWorldIn } from './content';
 import href from './digitalWorld.css?url';
 
 /** About the activity, at the end of the notes for reviewers: what it saves and how it works offline. */
@@ -49,6 +49,7 @@ export const course = createPreviewCourse(
   {
     id: COURSE_ID,
     content: digitalWorld,
+    contentFor: digitalWorldIn,
     words,
     wordKeys: {
       bannerBody: 'digitalWorld.banner.body',

@@ -161,7 +161,7 @@ test.describe('with the preview on', () => {
     expect(errors).toEqual([]);
   });
 
-  test('trains the leaf model: 4 of 6, 6 of 6, 0 of 2, then 8 of 8', async ({ page }) => {
+  test('trains the leaf model: 4 of 6, 6 of 6, 0 of 2, 8 of 8, then 3 of 4 on leaves nobody has used', async ({ page }) => {
     await turnOn(page);
     await page.goto('/lesson/dw-how-ai-learns/read');
     const label = (description: string, choice: 'Healthy' | 'Sick') =>
@@ -198,6 +198,11 @@ test.describe('with the preview on', () => {
     await label('Long thin brown leaf with spots', 'Sick');
     await train.click();
     await expect(score).toHaveText('The model got 8 of 8 right.');
+
+    await page.getByRole('button', { name: 'Go on to “Round 4: leaves nobody has used”' }).click();
+    await page.getByRole('button', { name: 'Test the new leaves' }).click();
+    await expect(score).toHaveText('The model got 3 of 4 right.');
+    expect(await cutOff(page)).toEqual([]);
     expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
   });
 
@@ -224,15 +229,21 @@ test.describe('with the preview on', () => {
     await expect(page.getByRole('heading', { level: 2, name: 'For reviewers' })).toBeVisible();
   });
 
-  test('in Indonesian, the interface is translated and the lessons are marked as English', async ({ page }) => {
+  test('in Indonesian, the interface and the lessons are translated, with no Watch step', async ({ page }) => {
     await turnOn(page);
     await page.goto('/lesson/dw-what-ai-is/read');
     await page.getByRole('button', { name: /Language|Bahasa/ }).first().click();
     await page.getByRole('menuitemradio', { name: /Bahasa Indonesia/ }).or(page.getByRole('radio', { name: /Bahasa Indonesia/ })).first().click();
     await expect(page.getByText('Kursus draf: belum ditinjau')).toBeVisible();
-    await expect(page.getByText(/Untuk saat ini, pelajarannya masih dalam bahasa Inggris\./)).toBeVisible();
-    await expect(page.getByRole('heading', { level: 1, name: "What AI is, and what it isn't" })).toHaveAttribute('lang', 'en');
+    await expect(page.getByText(/Dunia Digital masih berupa draf\./)).toBeVisible();
+    await expect(page.getByText(/pelajarannya masih dalam bahasa Inggris/)).toHaveCount(0);
+    const title = page.getByRole('heading', { level: 1, name: 'Apa itu AI, dan apa yang bukan AI' });
+    await expect(title).toBeVisible();
+    await expect(title).not.toHaveAttribute('lang', 'en');
     await expect(page.locator('html')).toHaveAttribute('lang', 'id');
+    // No approved Indonesian video: Watch's address goes on to Reflect.
+    await page.goto('/lesson/dw-what-ai-is/watch');
+    await expect(page).toHaveURL(/\/lesson\/dw-what-ai-is\/reflect$/);
   });
 });
 

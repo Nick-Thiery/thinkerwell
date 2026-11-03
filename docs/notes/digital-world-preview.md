@@ -48,7 +48,7 @@ All eight types the drafts use have a player (`src/courses/digital-world/activit
 | Type | Lessons | What the learner does |
 |---|---|---|
 | `sort` | 1, 4, 7, 10 | Puts each item in a group (radio buttons per item); each placement says what most people would say and why. "Your groups" shows the groups so far. |
-| `train-model` | 2 | Ported from the dev prototype (`/dev/tiny-model`, now gone): labels leaves healthy or sick, trains a nearest-neighbour model (k = 1, `train-model/model.ts`), and sees its guesses beside the gardener's, round by round (4 of 6, 6 of 6, 0 of 2, 8 of 8), then free play. |
+| `train-model` | 2 | Ported from the dev prototype (`/dev/tiny-model`, now gone): labels leaves healthy or sick, trains a nearest-neighbour model (k = 1, `train-model/model.ts`), and sees its guesses beside the gardener's, round by round (4 of 6, 6 of 6, 0 of 2, 8 of 8, then 3 of 4 on leaves nobody has used), then free play. |
 | `compare-results` | 3 | Taps the group the made-up tool got wrong most often (bars with their numbers written on them), then answers the follow-up. |
 | `check-claim` | 5 | Reads a made-up post, the three questions to ask, then opens made-up sources in any order, and answers. |
 | `spot-signs` | 6 | Taps parts of four made-up messages; each tap says which warning sign it is, or that it isn't one. "Show all signs" is always there. |
@@ -66,7 +66,7 @@ These are the simplest reasonable choices, for Justin and Nick to change:
 4. **Section looks** (spec 8, item 1): the brand book has colours for Our World's four sections only, so Digital World's borrow them, each with its own icon: How AI works amber with a light bulb, Check what you see sage with an eye, Use tools wisely rose with a hand, AI where you live sky with people.
 5. **The course's words**: "Digital World" is still the working name. `course.json`'s description and each section's question and description were written for the preview (the drafts had none) and need Justin's review.
 6. **No section checks or certificates** (none drafted). The map says so; the complete screen offers neither, and nothing links to one.
-7. **Indonesian:** the interface (banner, preview page, choice, activities' buttons and labels) is in Indonesian, and the lessons stay English, marked `lang="en"` (so screen readers, Listen and Say it treat them as English), and the banner adds "Its lessons are in English for now."
+7. **Indonesian and Malay** (November 2026): the interface and the lessons, with their activities, are translated (AI drafts, flagged for native-speaker review: `content/courses/digital-world/<code>/`, notes in `docs/translation/<code>/notes/courses/digital-world/`), with no Watch step. In any other language the lessons stay English, marked `lang="en"` (so screen readers, Listen and Say it treat them as English), and the banner adds "Its lessons are in English for now."
 8. **Listen** uses the device's English voice: there are no recordings. `npm run check:audio` skips preview courses on purpose and says so.
 9. **The teacher guide** has each lesson's activity with what most people say and the right answers, and a "For reviewers" part: each lesson's `changes` notes and the picture it still needs. Its back link goes to Digital World's map.
 10. **The course choice** shows on the course map, the learner home and "Just look around", not on "Who's learning today?". The preview page turns the preview on as it opens: visiting the hidden address is the choice.

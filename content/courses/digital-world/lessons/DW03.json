@@ -52,6 +52,11 @@
             "Round 3",
             "8 examples: the 6 from Round 2, plus a long striped leaf (healthy) and a long brown leaf with spots (sick)",
             "8 of 8"
+          ],
+          [
+            "Round 4",
+            "The same 8 examples",
+            "3 of 4 leaves nobody had used"
           ]
         ]
       }
@@ -275,6 +280,50 @@
           4,
           9
         ]
+      },
+      {
+        "id": "t9",
+        "description": "Big green leaf with one tiny mark",
+        "gardenerSays": "healthy",
+        "features": [
+          9,
+          1,
+          9,
+          3
+        ]
+      },
+      {
+        "id": "t10",
+        "description": "Leaf with brown edges and spots",
+        "gardenerSays": "sick",
+        "features": [
+          2,
+          6,
+          6,
+          2
+        ]
+      },
+      {
+        "id": "t11",
+        "description": "Long striped leaf with a few marks",
+        "gardenerSays": "healthy",
+        "features": [
+          6,
+          5,
+          4,
+          9
+        ]
+      },
+      {
+        "id": "t12",
+        "description": "Long thin leaf turning yellow",
+        "gardenerSays": "sick",
+        "features": [
+          4,
+          1,
+          5,
+          9
+        ]
       }
     ],
     "rounds": [
@@ -368,9 +417,28 @@
           "wrong": []
         },
         "debrief": "With examples of the new plant, the model got all 8 right. But the team had already seen these test leaves, and the test is small. To check fairly, test it on leaves nobody has used yet."
+      },
+      {
+        "id": "round-4-fresh-test",
+        "title": "Round 4: leaves nobody has used",
+        "addExamples": [],
+        "test": [
+          "t9",
+          "t10",
+          "t11",
+          "t12"
+        ],
+        "expectedIfLabelledLikeTheGardener": {
+          "right": 3,
+          "of": 4,
+          "wrong": [
+            "t12"
+          ]
+        },
+        "debrief": "On four leaves nobody had used, the model got 3 of 4 right. It called a long, thin leaf that was turning yellow “healthy”, because it looked most like the striped healthy example. A fresh test shows what a model still gets wrong, and four leaves are still a small test."
       }
     ],
-    "freePlay": "After Round 3, the learner can take examples out, or change a label, and test again. The model follows the learner's labels, even when they differ from the gardener's.",
+    "freePlay": "After Round 4, the learner can take examples out, or change a label, and test again. The model follows the learner's labels, even when they differ from the gardener's.",
     "explainGuess": "After each guess, show the example the model thought was most like the new leaf: “It looked most like this example, so the model said sick.”",
     "saves": "Which rounds the learner finished, with the lesson's other answers. The labels are not needed again and can stay in memory.",
     "offline": "Everything is in the lesson file and runs on the device. No camera, no upload, no network, no machine learning library."
@@ -389,8 +457,8 @@
       },
       {
         "heading": "Better examples help, but tests have limits",
-        "text": "Next, the team added four more examples, including a small new leaf and a yellow leaf with no spots. Now the model got all six new leaves right. Then the team tested two long, thin, striped leaves from a different plant. Both were healthy, but the model called them “sick”, because none of its examples looked similar. After the team added two striped examples, it got them right. Relevant examples with correct labels help. More examples alone do not always help, because a wrong label can make guesses worse. And a small test cannot prove the model will work on every new plant.",
-        "simpler": "Next, the team added four more examples. Now it got all six right. Then the team tried a new plant with long, striped leaves. They are healthy, but the model said “sick”. No example looked like them. The team added two striped leaves. Then it got them right. Good examples with the right labels help. More examples alone do not always help. A wrong label can make it worse. A small test cannot prove it works on every new plant."
+        "text": "Next, the team added four examples, such as a small new leaf and a yellow leaf. Now it got all six right. Then it was tested on two long, striped leaves from another plant. Both were healthy, but the model said “sick”: no example looked like them. With two striped examples, it got them right. On four leaves nobody had used, it got three right but called a long leaf turning yellow “healthy”. Relevant examples with correct labels help. More examples alone do not always help: a wrong label can make guesses worse. A small test cannot prove it works on every new plant.",
+        "simpler": "Next, the team added four examples. Now it got all six right. Then came a plant with long, striped leaves. They are healthy, but the model said “sick”. No example looked like them. With two striped examples, it got them right. On four leaves nobody had used, it got three right. Good examples with the right labels help. More examples alone do not always help. A wrong label can make it worse. A small test cannot prove it always works."
       }
     ],
     "glossary": [
@@ -528,7 +596,7 @@
       "With machine learning, a computer learns from many labelled examples, like flashcards.",
       "If the training data leaves some people out, the tool can fail for them."
     ],
-    "contentNote": "About six minutes, longer than most Thinkerwell videos. The speakers work for a farm-robot company and a car company and name them. Near the end, it says face recognition can fail for groups of people left out of the training data; Lesson 3 comes back to this. Preview it first; learners can read the written summary instead.",
+    "contentNote": "About six minutes, longer than most Thinkerwell videos. The speakers work for a farm-robot company and a car company and name them. Near the end, it says face recognition can fail for groups of people left out of the training data; Lessons 8 and 12 come back to this. Preview it first; learners can read the written summary instead.",
     "replacementSuggestion": null
   },
   "reflect": {
@@ -578,7 +646,7 @@
   ],
   "sensitiveNotes": [],
   "educatorNotes": [
-    "If the activity can't run (a printout, or a device without it), use the evidence table: it shows exactly what the activity does. Learners can also play it on paper: one learner is the model and may only copy the label of the most similar example card. Round 3 re-tests the same leaves the team had already seen. For a fairer check, draw two new leaves nobody has tested (for example a long striped leaf with a few brown spots) and let learners predict with the eight example cards.",
+    "If the activity can't run (a printout, or a device without it), use the evidence table: it shows exactly what the activity does. Learners can also play it on paper: one learner is the model and may only copy the label of the most similar example card. Round 3 re-tests the same leaves the team had already seen; Round 4 is the fair check, on four leaves nobody has used. On paper, keep those four cards face down until Round 4.",
     "The model in the activity is deliberately simple: a nearest-neighbour model (k = 1) that copies the label of the most similar example. It is one supervised method; Cover and Hart's 1967 paper studied this rule, and Rosenblatt's perceptron, shown in July 1958, also learned from labelled examples. Real AI is far bigger, and other kinds of machine learning don't need a label on every example, but the points about examples and testing are the same.",
     "If a learner labels an example differently from the gardener, the model follows the learner. That is a good moment to ask: who decides the right label?"
   ],
@@ -589,6 +657,7 @@
     "visual.src points to a picture that doesn't exist yet.",
     "Needs review by an AI researcher for accuracy, and by Justin for level and tone.",
     "October 2026, social studies rebuild (Justin's brief: AI and the digital world through a social studies lens, at most 20 lessons): kept as Lesson 3 in \"Thinking machines\" (thinking-machines). The notes above about the old section ids are out of date.",
-    "Revised on 1 November 2026 from Justin's review: a short, sourced bridge to Lesson 2 (learning from labelled examples is an old idea: the 1958 perceptron, Cover and Hart's 1967 study of the nearest-neighbour rule, far more useful after 2010); the reading and a new glossary word say this is supervised learning, one kind of machine learning; training data is now “examples used to build a model” (labels belong to this kind); the third section says relevant, correctly labelled examples help but more examples alone don't always, and that 8 of 8 on a small test can't prove the model works on every new plant (Round 3's debrief, the Write example and a teacher note on a fair new test say the same). The activity's cards and rounds are unchanged (still 4 of 6, 6 of 6, 0 of 2, 8 of 8, checked against the model); a genuinely new test set for Round 3 needs new leaf pictures and test changes in code, so it is a paper extension for now. Claim record: content/courses/digital-world/claims/DW03.md."
+    "Revised on 1 November 2026 from Justin's review: a short, sourced bridge to Lesson 2 (learning from labelled examples is an old idea: the 1958 perceptron, Cover and Hart's 1967 study of the nearest-neighbour rule, far more useful after 2010); the reading and a new glossary word say this is supervised learning, one kind of machine learning; training data is now “examples used to build a model” (labels belong to this kind); the third section says relevant, correctly labelled examples help but more examples alone don't always, and that 8 of 8 on a small test can't prove the model works on every new plant (Round 3's debrief, the Write example and a teacher note on a fair new test say the same). The activity's cards and rounds are unchanged (still 4 of 6, 6 of 6, 0 of 2, 8 of 8, checked against the model); a genuinely new test set for Round 3 needs new leaf pictures and test changes in code, so it is a paper extension for now. Claim record: content/courses/digital-world/claims/DW03.md.",
+    "Added on 2 November 2026 from Justin's review (\"keep a genuinely new test set\"): Round 4 tests the eight-example model on four leaves nobody has used (t9–t12). It gets 3 of 4: a long leaf turning yellow looks most like the striped healthy example. The reading, the evidence table and the paper note say so; the reading was tightened to stay within the word limits."
   ]
 }
