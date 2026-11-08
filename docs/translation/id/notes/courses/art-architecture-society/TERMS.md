@@ -8,7 +8,7 @@ Two translators work on the course at the same time (course.json and Lessons 1�
 |---|---|---|---|---|
 | Art, Architecture and Society (course title) | Seni, Arsitektur, dan Masyarakat | | Given by the team. Section titles keep the comma before "dan" | L1–10 |
 | Objects, making and power (section 1) | Benda, pembuatan, dan kekuasaan | | | L1–10 |
-| Buildings, belief and shared places (section 2) | Bangunan, kepercayaan, dan tempat bersama | | | L1–10 |
+| Buildings, belief and shared places (section 2) | Bangunan, keyakinan, dan tempat bersama | | "belief" is *keyakinan* everywhere (KEY_TERMS); changed from "kepercayaan" | L1–10 |
 | Stories, lives and public memory (section 3) | Kisah, kehidupan, dan ingatan publik | | | L1–10 |
 | Museums, heritage and connections (section 4) | Museum, warisan, dan hubungan | | | L1–10 |
 | artwork / work (of art) | karya seni / karya | | | L1–10 |
@@ -105,3 +105,63 @@ Follows the conventions above: credits and descriptions stay English; museum tit
 | comparison / uncertainty / significance | perbandingan / ketidakpastian / arti penting | signifikansi | Glossary, L20 | L11–20 |
 | synthesis (L20) | rangkuman | sintesis | | L11–20 |
 | International Council of Museums (ICOM) | International Council of Museums (ICOM; Dewan Museum Internasional) | | | L11–20 |
+| batik terms | batik tulis, canting, cerat (spout), malam (batik wax, named once, then *lilin*), batik cap, cap tembaga, pembatik | | L2 | L1–10 |
+| resist / wax-resist dyeing | perintang / pewarnaan rintang dengan lilin | | Glossary, L2; from *perintang warna* | L1–10 |
+| artisan | perajin | | Glossary, L2 | L1–10 |
+| motif | motif | | Glossary, L2 | L1–10 |
+| intangible (cultural) heritage | warisan budaya takbenda | | Glossary, L2; the official Indonesian name | L1–10 |
+| (Javanese) royal court / (Mughal) court | keraton / istana | | *istana* is the L5 glossary word | L1–10 |
+| lower-body wrapper / tubular skirt | kain panjang / sarung | jarik | L2 | L1–10 |
+| gold leaf (prada) / kepala (batik) | lapisan emas (prada) / kepala | | L2 | L1–10 |
+| north coast (batik) | pesisir utara | | L2 | L1–10 |
+| ceramics / glaze / stoneware | keramik / glasir / stoneware (keramik batu) | | *glasir* glossary, L3 | L1–10 |
+| cargo / shipwreck | muatan / kapal karam | | *muatan* glossary, L3 | L1–10 |
+| attribution / "probably" | atribusi / mungkin | | Glossary, L3; always keep *mungkin* | L1–10 |
+| workshop | bengkel kerja | sanggar, tempat kerja perajin | Glossary, L3 and L5; flagged | L1–10 |
+| inscription (on an object) / (carved on a temple) | inskripsi / prasasti | | *inskripsi* glossary, L3; *prasasti* in L8 | L1–10 |
+| kiln | tungku (pembakaran) | | L3 | L1–10 |
+| God (Arabic inscription, L3) | Tuhan | Allah | Keeps the museum's wording; flagged | L1–10 |
+| authority | otoritas | kewenangan | Glossary, L4; *kekuasaan* for "power" | L1–10 |
+| convention / legitimacy / mosaic | konvensi / legitimasi / mosaik | | Glossary, L4 | L1–10 |
+| adornment / ear ornament | perhiasan / hiasan telinga | | *perhiasan* glossary, L4 | L1–10 |
+| sphinx / pharaoh / regent / mortuary temple | sfinks / firaun / wali raja / kuil pemakaman | | L4; Egyptian temples are *kuil*, Javanese and Khmer ones *candi* | L1–10 |
+| Inca | Inka | | | L1–10 |
+| turquoise / sodalite / shell | pirus / sodalit / kerang | | L4 | L1–10 |
+| album / calligraphy / calligrapher | album / kaligrafi / ahli kaligrafi | | Glossary, L5 | L1–10 |
+| opaque watercolour | cat air buram | cat air opak, gouache | Flagged | L1–10 |
+| halo / pendant | lingkaran cahaya (halo) / liontin | | L5 | L1–10 |
+| epic (Mahabharata, Ramayana) | epos | wiracarita | L5 | L1–10 |
+| Bengal / Afghanistan / Timurid | Benggala / Afganistan / Timuriyah | | L5 | L1–10 |
+| credited to | dianggap karya | | Keeps the attribution | L1–10 |
+| belief | keyakinan | | KEY_TERMS (*kepercayaan* is "trust"); course.json and all lessons | L1–10 |
+| ancestral | leluhur ("rumah leluhur") | | Glossary, L6 | L1–10 |
+| architecture / ornament / structure | arsitektur / ornamen / struktur | | Glossary, L6 | L1–10 |
+| living heritage | warisan hidup | warisan yang hidup | Glossary, L6 | L1–10 |
+| traditional house | rumah adat | | L6, L10 | L1–10 |
+| customary affairs / customary | urusan adat / adat | | *adat* glossary, L10 | L1–10 |
+| family talks | musyawarah keluarga | | L6 | L1–10 |
+| granary | lumbung (padi) | alang (Toraja) | L6, L10 | L1–10 |
+| space under a raised house | kolong | | L6 | L1–10 |
+| Tentative List (UNESCO) | Daftar Sementara | | "a proposal by the state, not an inscription" = "usulan negara, bukan penetapan" | L1–10 |
+| stupa / relief / openwork stupa | stupa / relief / stupa berterawang | stupa berlubang | Glossary, L7 | L1–10 |
+| pilgrimage | ziarah | | Glossary, L7 | L1–10 |
+| galleries / terraces (Borobudur) | lorong / teras | | L7 | L1–10 |
+| Śailendra dynasty | Wangsa Syailendra | | L7 | L1–10 |
+| Kedu Valley | Lembah Kedu | | L7 | L1–10 |
+| circumambulation | pradaksina | | Teachers' note, L7 | L1–10 |
+| restoration | pemugaran | | As Southeast Asia L11 | L1–10 |
+| monument / patronage / sacred | monumen / patronase / suci | | Glossary, L8 | L1–10 |
+| landscape / cultural landscape | lanskap / lanskap budaya | bentang alam | Glossary, L8 and L10 | L1–10 |
+| conservation | konservasi | | Glossary, L8; as Southeast Asia | L1–10 |
+| Vishnu / Mount Meru / Churning of the Ocean of Milk | Wisnu / Gunung Meru / Pengadukan Lautan Susu | | L8 | L1–10 |
+| moat / reservoir | parit / waduk | | L8 | L1–10 |
+| shophouse | rumah toko (form: ruko) | | Glossary, L9 | L1–10 |
+| five-foot way | five-foot way atau kaki lima | | L9; the Indonesian *kaki lima* comes from it | L1–10 |
+| airwell | sumur udara | void, sumur cahaya | Glossary, L9; flagged | L1–10 |
+| façade / public space / gable | fasad / ruang publik / gevel | | *fasad*, *ruang publik* glossary, L9 | L1–10 |
+| migrants | pendatang | migran | L9 | L1–10 |
+| Malay Archipelago | Kepulauan Melayu | Nusantara | L9 | L1–10 |
+| (rice) terrace | terasering (form: sawah terasering) | sawah berundak | Glossary, L10; not *teras*, which is Borobudur's levels | L1–10 |
+| irrigation / livelihood | irigasi / mata pencaharian | | Glossary, L10 | L1–10 |
+| Indigenous communities | komunitas masyarakat adat | | L10 | L1–10 |
+| National Museum of the Philippines | Museum Nasional Filipina | | L10 | L1–10 |
