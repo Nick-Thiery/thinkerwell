@@ -4,25 +4,16 @@
   "number": 13,
   "section": "truth-and-power",
   "title": "Checking photos, videos and voices",
-  "essentialQuestion": "How can you tell if a photo, video or voice is real?",
-  "learningGoal": "Explain how AI can make realistic pictures, videos and voices, and check the source before you trust or share one.",
+  "essentialQuestion": "How can you check a photo, video or voice before you trust it?",
+  "learningGoal": "Explain how AI can make realistic pictures, videos and voices, tell labelled creative work from a fake, and check the source before you trust or share one.",
   "estimatedMinutes": [
-    30,
-    50
+    25,
+    40
   ],
-  "warmUp": {
-    "question": "You see a photo of a pumpkin as big as a car. What do you think first?",
-    "options": [
-      "It is real",
-      "It is fake",
-      "I would check first",
-      "Not sure"
-    ]
-  },
   "evidence": {
     "fictional": true,
     "label": "Fictional example created for this lesson.",
-    "question": "Who posted each one? What can you check? Which ones can you not tell yet?",
+    "question": "Who posted each one? What does the source tell you? Which post says openly that AI made it?",
     "cards": [
       {
         "type": "cases",
@@ -37,113 +28,40 @@
             "body": "A video of a goat that says “Good morning” in clear words. The Greenhill comedy club posted it. The caption says: “Made with AI, just for fun.”"
           },
           {
-            "name": "Post C: rain at the market",
-            "body": "A photo of the market in heavy rain, posted by the market's own page this morning. Other people posted photos of the same rain."
-          },
-          {
-            "name": "Post D: a voice message",
+            "name": "Post C: a voice message",
             "body": "A voice message that sounds like Coach Ana. It says: “The football game moves to six in the morning.” It came from a number nobody knows. The notice board at the centre still says four in the afternoon."
           },
           {
-            "name": "Post E: a cat on a roof",
-            "body": "A photo of a cat asleep on a roof. Nothing looks strange. There is no name and no date."
-          },
-          {
-            "name": "Post F: a fruit seller",
+            "name": "Post D: a fruit seller",
             "body": "A photo of a fruit seller. Her skin looks very smooth, and the background is blurry. The Greenhill photo club posted it with the photographer's name, and says it was taken with a phone in the evening."
           }
         ]
       }
     ]
   },
-  "activity": {
-    "type": "sort",
-    "stage": "read",
-    "placement": "after-evidence",
-    "title": "Check each post",
-    "instructions": "Put each Greenhill post in a group. There is no score. After you place a post, you can see one possible answer and the reason.",
-    "groups": [
-      {
-        "id": "real",
-        "label": "Probably real"
-      },
-      {
-        "id": "fake",
-        "label": "Probably fake"
-      },
-      {
-        "id": "labelled",
-        "label": "Made with AI, and it says so"
-      },
-      {
-        "id": "check",
-        "label": "Can't tell yet: check first"
-      }
-    ],
-    "items": [
-      {
-        "id": "pumpkin",
-        "text": "Post A: a giant pumpkin",
-        "suggested": "fake",
-        "feedback": "The farm's own page says it grew no giant pumpkin, and the page that posted it has no name. The odd hand is only a reason to check. Real photos can look odd too."
-      },
-      {
-        "id": "goat",
-        "text": "Post B: a talking goat",
-        "suggested": "labelled",
-        "feedback": "The comedy club says clearly that it used AI, for fun. That is not a trick. It would become one if someone shared it without the label, as if it were real."
-      },
-      {
-        "id": "rain",
-        "text": "Post C: rain at the market",
-        "suggested": "real",
-        "feedback": "It comes from the market's own page, and other people show the same rain."
-      },
-      {
-        "id": "voice",
-        "text": "Post D: a voice message",
-        "suggested": "check",
-        "feedback": "It sounds like Coach Ana, but it came from an unknown number. The notice board says something else. Ask her in person, or call her usual number."
-      },
-      {
-        "id": "cat",
-        "text": "Post E: a cat on a roof",
-        "suggested": "check",
-        "feedback": "Nothing looks strange, but a new fake can look perfect. With no name and no date, you can't check the source yet. “Probably real” can make sense too, if you give a reason."
-      },
-      {
-        "id": "seller",
-        "text": "Post F: a fruit seller",
-        "suggested": "real",
-        "feedback": "The photo club says who took it and how. Real phone photos can look smooth and blurry too, in the evening."
-      }
-    ],
-    "saves": "The group the learner chose for each post, with the lesson's other answers. Group ids real, fake and check are unchanged from the first draft; labelled is new.",
-    "offline": "Everything is in the lesson file. The posts are short descriptions (and, later, simple drawings); there are no real photos, videos or sounds, and nothing is sent anywhere."
-  },
   "read": {
     "sections": [
       {
         "heading": "AI can make pictures, videos and voices",
-        "text": "Some AI tools can create new pictures, videos and voices. These tools learned from enormous numbers of real examples, so what they make can look and sound realistic. Many people use these tools openly for art, films or education, and explain that AI made the work. A fake is different: it pretends to show something real that never happened. A deepfake is a fake that copies a real person's face or voice, often to trick people for money or attention. In Greenhill, the comedy club posted a talking goat with the label “Made with AI, just for fun”. Someone else posted a photo of a pumpkin as big as a car. Is it real?",
-        "simpler": "Some AI tools make new pictures, videos and voices. They learned from lots of real examples. So the new ones look realistic. Some people say openly that AI made their art or lessons. A fake is different. It shows something that never happened, as if it were real. A deepfake copies a real person's face or voice to trick people. In Greenhill, the comedy club's talking goat says AI made it. But is the huge pumpkin real?"
+        "text": "Some AI tools can create new pictures, videos and voices. These tools learned from enormous numbers of real examples, so what they make can look and sound realistic. Many people use these tools openly and creatively. Artists make pictures, film makers add effects and teachers make lessons, and they say that AI helped. In Greenhill, the comedy club posted a talking goat with the label “Made with AI, just for fun”, so that is not a trick. A fake is different: it pretends to show something real that never happened. A deepfake is a fake that copies a real person's face or voice, often to trick people for money or attention. Labels can get lost, too. If someone shares the goat video without its label, as if it were real, it can mislead people.",
+        "simpler": "Some AI tools make new pictures, videos and voices. They learned from lots of real examples. So the new ones look realistic. Many people use these tools openly. Artists, film makers and teachers say when AI helped. In Greenhill, the comedy club posted a talking goat. Its label says AI made it, just for fun. That is not a trick. A fake is different. It shows something that never happened, as if it were real. A deepfake copies a real person's face or voice to trick people. Labels can get lost too. Shared without its label, the goat video could fool people."
       },
       {
         "heading": "Strange details are clues, not proof",
-        "text": "AI pictures sometimes have small mistakes, such as an extra finger, messy letters on a sign or a background that melts into a wall. In a video, the mouth may not move with the words. These details can be clues, but they are not proof. Newer tools make fewer mistakes, so a fake can look perfect. Real photographs can also look strange, for example when they are blurry or taken in poor light. In a 2025 study, participants wrongly labelled about one in four real photographs as AI-made. The fruit seller's photo has very smooth skin, but the photo club says a phone took it.",
-        "simpler": "AI pictures sometimes have mistakes, like six fingers or messy letters. These are clues. But clues are not proof. New tools make fewer mistakes. Real photos can look strange too, when they are dark or not sharp. In a 2025 study, people looked at real photos. They called about one in four of them AI-made. The fruit seller has very smooth skin. But a phone took that photo."
+        "text": "AI pictures sometimes have small mistakes, such as an extra finger, messy letters on a sign or a background that melts into a wall. In a video, the mouth may not move with the words. These details can be clues, but they are not proof. Newer tools make fewer mistakes, so a fake can look perfect. Real photographs can also look strange, for example when they are blurry or taken in poor light. In a 2025 study by researchers in the United States, more than 50,000 people judged real photos and AI pictures online. They wrongly called about one in four real photos AI-made, and they also missed about one in four AI pictures. The fruit seller's photo has very smooth skin, but the photo club says who took it, with a phone.",
+        "simpler": "AI pictures sometimes have mistakes, like six fingers or messy letters. These are clues. But clues are not proof. New tools make fewer mistakes. Real photos can look strange too, when they are dark or not sharp. In a 2025 study, more than 50,000 people looked at pictures online. Some were real, and some were AI. People called about one in four real photos AI-made. They also missed about one in four AI pictures. The fruit seller has very smooth skin. But the photo club says a phone took it."
       },
       {
         "heading": "Check the source",
-        "text": "The most useful check is the source. Who posted it, and when? Can you find where it first came from? Do other trusted sources show the same thing? The farm's own page says it grew no giant pumpkin, so that photo is probably fake. The rain photo came from the market's own page, and other people posted the same rain, so it is probably real. For a voice message, contact the person in another way. Coach Ana's message came from an unknown number, so ask her in person. If you still can't tell, say so, and don't share it yet.",
-        "simpler": "So check the source. Who posted it? When? Where did it come from first? Do people you trust show the same thing? The farm says it has no giant pumpkin. So that photo is probably fake. The rain photo came from the market itself. Others posted the same rain. Coach Ana's message came from a number nobody knows. So ask her in person. Not sure? Don't share it yet."
+        "text": "So the most useful check is the source. Who posted it, and when? Can you find where it first came from, and does the maker say how it was made? Do other trusted sources show the same thing? Make sure they did not all copy one post, because ten copies are still one source. Fact-checking groups do this work for pictures that spread widely. In Greenhill, the farm's own page says it grew no giant pumpkin, and a page with no name posted the photo. So that photo is probably fake. For a voice message, contact the person in another way. Coach Ana's message came from an unknown number, so ask her in person. If you still can't tell, say so, and don't share it yet.",
+        "simpler": "So check the source. Who posted it? When? Where did it come from first? Do people you trust show the same thing? Check that they did not just copy one post. The farm says it grew no giant pumpkin. A page with no name posted the photo. So it is probably fake. Coach Ana's message came from a number nobody knows. So ask her in person. Not sure? Say so, and don't share it yet."
       }
     ],
     "glossary": [
       {
         "word": "realistic",
         "definition": "Looking or sounding like the real thing.",
-        "example": "The pumpkin photo looks realistic at first."
+        "example": "The goat video looks realistic, but its label says AI made it."
       },
       {
         "word": "fake",
@@ -181,20 +99,20 @@
     "checks": [
       {
         "type": "choice",
-        "question": "What is the best reason to think the pumpkin photo is fake?",
+        "question": "What is the strongest reason to doubt the giant pumpkin photo?",
         "options": [
-          {
-            "text": "The farm says it grew no giant pumpkin",
-            "correct": true,
-            "feedback": "Yes. The farm is the best source about its own pumpkins, and the page that posted the photo has no name."
-          },
           {
             "text": "The farmer's hand in the photo looks a bit odd",
             "correct": false,
             "feedback": "Not quite. An odd hand is a reason to check, not proof. Real photos can look odd too. Read the second section."
           },
           {
-            "text": "The pumpkin in the photo is a very bright orange",
+            "text": "The farm says it grew no giant pumpkin",
+            "correct": true,
+            "feedback": "Yes. The farm is the best source about its own pumpkins, and the page that posted the photo has no name."
+          },
+          {
+            "text": "The pumpkin is a very bright orange",
             "correct": false,
             "feedback": "Not quite. Real pumpkins are orange too. Read about checking the source in the third section."
           }
@@ -202,58 +120,41 @@
       },
       {
         "type": "choice",
-        "question": "A voice message sounds just like Coach Ana. What is the best thing to do?",
+        "question": "The comedy club's goat video says “Made with AI, just for fun”. Is it a fake?",
         "options": [
           {
-            "text": "Share it with the whole team now",
+            "text": "Yes, because AI made it",
             "correct": false,
-            "feedback": "Not quite. AI can copy a voice, so it may not be her. Read the third section."
+            "feedback": "Not quite. AI made it, but the club says so openly. A fake pretends to be real. Read the first section."
           },
           {
-            "text": "Trust it because it sounds like her",
+            "text": "Yes, because goats can't talk",
             "correct": false,
-            "feedback": "Not quite. Sounding real is not proof. Read about voice messages in the third section."
+            "feedback": "Not quite. Nobody is meant to believe it. It is a labelled joke. Read the first section."
           },
           {
-            "text": "Ask Coach Ana in person first",
+            "text": "No, because it says that AI made it",
             "correct": true,
-            "feedback": "Yes. Checking with the person in another way is the best test for a voice message."
+            "feedback": "Yes. Labelled creative work is not a trick. It could mislead people if someone shared it without the label."
           }
         ]
-      },
-      {
-        "type": "think",
-        "question": "Why is a strange detail in a picture not enough to prove it is fake?",
-        "placeholder": "It is not enough because ... So I should also ...",
-        "optional": true
       }
     ]
   },
   "write": {
-    "prompt": "Choose one post from the Greenhill news group. Say which group you put it in, and explain how you checked it or would check it.",
+    "prompt": "Explain how a labelled AI video is different from a fake. Use the Greenhill posts. Then say how you would check a surprising picture before you share it.",
     "sentenceStarters": [
-      "I chose ...",
-      "I put it in “___” because ...",
-      "The source is ...",
-      "To check it, I would ...",
-      "Before I share it, I ..."
+      "The goat video is not a fake because ...",
+      "A fake is different because ...",
+      "Before I share a surprising picture, I would check ..."
     ],
-    "planningBoxes": [
-      "My main idea",
-      "Evidence from the lesson",
-      "Why it matters",
-      "A question I still have"
-    ],
-    "selfCheck": [
-      "I named one post and the group I chose.",
-      "I gave a reason from the post.",
-      "I said how I would check the source."
-    ],
-    "example": "I chose Post A, the giant pumpkin. I put it in “Probably fake” because the farm's own page says it grew no giant pumpkin this year. The source is a page with no name, so I can't see who made it. The farmer's hand looks odd, but that is only a reason to check, because real photos can look odd too. To check it, I would also ask someone at the market. Before I share it, I would wait until I know more."
+    "planningBoxes": [],
+    "selfCheck": [],
+    "example": "The goat video is not a fake because the comedy club says openly that AI made it, just for fun. Nobody is meant to believe a goat can talk. A fake is different because it pretends to show something real. The giant pumpkin photo came from a page with no name, and the farm says it grew no giant pumpkin. Before I share a surprising picture, I would check who posted it and where it first came from. I would also look for trusted sources that show the same thing."
   },
   "speak": {
-    "partnerTask": "Your partner picks a Greenhill post. You choose a group, give one reason, and say how you would check it. Then switch.",
-    "independentTask": "Say out loud three ways to check a picture, video or voice. Then say why a strange detail is not proof."
+    "partnerTask": "Your partner plays a teammate who got the Coach Ana voice message and wants to tell everyone. Explain how to check it first. Then switch: your partner explains why the goat video is not a fake.",
+    "independentTask": "Say out loud why a strange detail in a picture is a clue, not proof. Then say two better ways to check where it came from."
   },
   "watch": {
     "youtubeId": "U3ct1Mi5njY",
@@ -269,21 +170,21 @@
       "For a voice, listen to the tone and the background sounds.",
       "Tools that spot fakes are not always right, so a person still needs to check."
     ],
-    "contentNote": "Fast American English with real examples of AI-made content. It mentions tools that need the internet (reverse image search and AI detection apps); on an offline device, learners can ask a teacher instead. The summary was written from PBS NewsHour Classroom's lesson plan for this video, not from watching it. Preview it first; learners can read the written summary instead.",
+    "contentNote": "Fast American English with real examples of AI-made content. It mentions tools that need the internet (reverse image search and AI detection apps); on an offline device, learners can ask a teacher instead. The summary was written from PBS NewsHour Classroom's lesson plan for this video, not from watching it. The video teaches visual clues; the lesson treats them as reasons to check, never proof. Preview it first; learners can read the written summary instead.",
     "replacementSuggestion": null
   },
   "reflect": {
     "prompts": [
       {
-        "text": "Before I share a surprising picture or video, I will ...",
+        "text": "Before I share a surprising post, I will ...",
         "required": true
       },
       {
-        "text": "One thing about AI fakes that surprised me is ...",
+        "text": "One thing about AI-made pictures that surprised me is ...",
         "required": false
       }
     ],
-    "completionMessage": "You finished Lesson 13. You checked where pictures, videos and voices came from, and saw why strange details are clues, not proof."
+    "completionMessage": "You finished Lesson 13. You told labelled AI work apart from a fake, and checked the source, because strange details are clues, not proof."
   },
   "visual": {
     "type": "illustration",
@@ -317,8 +218,8 @@
     "Deepfakes are used to hurt real people: fake pictures that shame someone, fake videos of leaders, and cloned voices in scams (for example a call that sounds like a relative asking for money; see the FTC source). The lesson keeps its examples silly on purpose. Don't show real deepfakes of real people in class. If a learner says a fake was made of them or someone they know, don't discuss the details in class; follow the partner's own safeguarding process."
   ],
   "educatorNotes": [
-    "Teach checking first: who posted it, when, where it first came from, whether other trusted sources show the same thing, and for a voice, contacting the person another way. Visual glitches (extra fingers, messy letters, smooth skin) are reasons to check, never proof: newer tools make fewer of them, and real photos can show odd details too. In a 2025 study (Kamali and others, CHI '25), people correctly called real photographs real 74% of the time, so about one in four were wrongly called AI-made. Accept “can't tell yet” as a strong answer; the activity has no score. Paper version: the six posts on cards, sorted under the four headings.",
-    "Labelled AI work (art, films, lessons, a joke clearly marked “Made with AI”) is not the same as a fake that pretends to be real or copies a real person. Labels can be lost when a picture is reposted (News Literacy Project, 2026), so a labelled post can become misleading when shared without it. In Indonesia, Mafindo's TurnBackHoax and CekFakta check viral pictures and videos, and Mafindo says AI-based hoaxes are getting harder to tell apart (Liputan6, 2026). A teacher with internet can show one checked example; learners don't need to go online."
+    "Teach checking first: who posted it, when, where it first came from, whether the maker says how it was made, whether other trusted sources show the same thing (and didn't all copy one post), and for a voice, contacting the person another way. Visual glitches (extra fingers, messy letters, smooth skin) are reasons to check, never proof: newer tools make fewer of them, and real photos can show odd details too. The study in section 2 is Kamali and others (CHI '25, Northwestern University): more than 50,000 online participants judged 450 AI-made and 149 real images; they called real photographs real in 74% of observations and AI-made images AI-made in 76%, so about one in four was misjudged each way. It is one online study with the authors' own image set, not a general rate. Accept “can't tell yet” as a strong answer. On paper, read the four Greenhill posts aloud and discuss what each source tells you; there is no sorting task.",
+    "Labelled AI work (art, film effects, lessons, a joke clearly marked “Made with AI”) is not the same as a fake that pretends to be real or copies a real person. Labels can be lost when a picture is reposted (News Literacy Project, 2026), so a labelled post can become misleading when shared without it. In Indonesia, Mafindo's TurnBackHoax and CekFakta check viral pictures and videos, and Mafindo says AI-based hoaxes are getting harder to tell apart (Liputan6, 2026). A teacher with internet can show one checked example; learners don't need to go online."
   ],
   "changes": [
     "New lesson (Digital World draft). There is no Base44 original, so oldId is null.",
@@ -327,6 +228,8 @@
     "visual.src points to a picture that doesn't exist yet.",
     "Needs review by an AI researcher (how fakes are made, which clues still hold), by Justin for level and tone, and by a partner educator for the sensitive notes.",
     "October 2026, social studies rebuild (Justin's brief: AI and the digital world through a social studies lens, at most 20 lessons): kept as Lesson 13 in \"Truth, power and choices\" (truth-and-power). The notes above about the old section ids are out of date.",
-    "Revised on 1 November 2026 from Justin's review: checking the source is now the core skill (who posted it, when, where it first came from, who else shows it, and asking the person another way for a voice); visual glitches are taught as clues to check, never proof, with a dated study showing people call about one in four real photos AI-made (Kamali and others, CHI '25), and the evidence, activity, quick check, Write example and Speak no longer reward spotting fingers or skin. A new group, “Made with AI, and it says so”, separates labelled creative work (the comedy club's goat) from deceptive fakes and deepfakes; Post F is now a real photo that only looks odd. Feedback gives the reason, not “what most people would say”. The evidence stays fully fictional; the real study is in the reading, the teacher notes and sources (the News Literacy Project lesson plan and MIT Detect Fakes sources were replaced by sources opened for this revision). Title unchanged; “Checking photos, videos and voices” would fit the lesson better (for Nick and Justin to decide)."
+    "Revised on 1 November 2026 from Justin's review: checking the source is now the core skill (who posted it, when, where it first came from, who else shows it, and asking the person another way for a voice); visual glitches are taught as clues to check, never proof, with a dated study showing people call about one in four real photos AI-made (Kamali and others, CHI '25), and the evidence, activity, quick check, Write example and Speak no longer reward spotting fingers or skin. A new group, “Made with AI, and it says so”, separates labelled creative work (the comedy club's goat) from deceptive fakes and deepfakes; Post F is now a real photo that only looks odd. Feedback gives the reason, not “what most people would say”. The evidence stays fully fictional; the real study is in the reading, the teacher notes and sources (the News Literacy Project lesson plan and MIT Detect Fakes sources were replaced by sources opened for this revision). Title unchanged; “Checking photos, videos and voices” would fit the lesson better (for Nick and Justin to decide).",
+    "Revised on 8 November 2026 (Justin's brief of 4 November): the sort activity, the warm-up, the think question, the planning boxes and the self-check are gone, and the evidence is down to four posts (the rain and cat posts existed only for sorting). The reading teaches more: open, creative uses of AI-made media set against deception, and how a label is lost when a post is reshared without it; the 2025 study now reports both errors (about one in four real photos called AI-made, about one in four AI pictures missed); the source check adds where a post first came from and that agreeing sources may all have copied one post.",
+    "Write is one explanation (labelled work against a fake, and how to check); the quick check keeps two questions, on the source and on labelled work; Speak is a role play about the voice message. estimatedMinutes 25–40."
   ]
 }

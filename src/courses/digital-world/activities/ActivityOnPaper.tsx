@@ -20,7 +20,17 @@ export function ActivityOnPaper({ activity, forTeachers }: { activity: Activity;
   const { t, contentLang: en } = useI18n();
   return (
     <section className="tw-print-part tw-dw-paper" data-activity={activity.type}>
-      <h2>{t(forTeachers ? 'digitalWorld.activity.guideTitle' : 'digitalWorld.activity.eyebrow')}</h2>
+      <h2>
+        {t(
+          forTeachers
+            ? activity.extension
+              ? 'digitalWorld.activity.guideTitleExtension'
+              : 'digitalWorld.activity.guideTitle'
+            : activity.extension
+              ? 'digitalWorld.activity.extensionEyebrow'
+              : 'digitalWorld.activity.eyebrow',
+        )}
+      </h2>
       <h3 {...en}>{activity.title}</h3>
       <p {...en}>{activity.instructions}</p>
       {forTeachers ? <p className="tw-print-muted">{t('digitalWorld.activity.guideIntro')}</p> : null}

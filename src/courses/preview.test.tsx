@@ -88,7 +88,7 @@ describe('with the preview on', () => {
     expect(await screen.findByRole('heading', { level: 1, name: 'Digital World' })).toBeInTheDocument();
     expect(screen.getByText('Draft course: not yet reviewed')).toBeInTheDocument();
     expect(screen.getAllByRole('heading', { level: 2 }).map((h) => h.textContent)).toEqual([
-      'Thinking machines',
+      'How AI developed and how it works',
       'Who builds AI, and at what cost',
       'AI in daily life',
       'Truth, power and choices',
@@ -106,7 +106,7 @@ describe('with the preview on', () => {
     expect(router.state.location.pathname).toBe('/lesson/dw-how-ai-learns/read');
     expect(await screen.findByRole('heading', { level: 3, name: 'Train the leaf model' })).toBeInTheDocument();
     // Back to the course goes to Digital World's map, at the lesson's section.
-    expect(screen.getByRole('link', { name: 'Thinking machines' })).toHaveAttribute('href', '/course/digital-world#thinking-machines');
+    expect(screen.getByRole('link', { name: 'How AI developed and how it works' })).toHaveAttribute('href', '/course/digital-world#thinking-machines');
   });
 
   it('turns off from the banner, back to Our World, and the course is gone again', async () => {

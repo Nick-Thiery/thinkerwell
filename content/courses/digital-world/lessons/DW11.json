@@ -5,19 +5,11 @@
   "section": "ai-in-daily-life",
   "title": "AI at school: help or shortcut?",
   "essentialQuestion": "When does an AI tool help you learn, and when does it get in the way?",
-  "learningGoal": "Explain how AI chat tools can help or harm learning, and suggest fair rules for a school.",
+  "learningGoal": "Explain what two studies of AI tutors found, in which setting, and why doing well with a tool is not the same as learning to do it yourself.",
   "estimatedMinutes": [
-    30,
-    50
+    25,
+    40
   ],
-  "warmUp": {
-    "question": "Which use of an AI tool helps a student learn more?",
-    "options": [
-      "It explains a hard idea",
-      "It writes the whole answer",
-      "Not sure"
-    ]
-  },
   "evidence": {
     "fictional": true,
     "label": "Fictional example created for this lesson.",
@@ -39,17 +31,6 @@
             "name": "Ayla",
             "body": "Ayla asks the helper to translate a science page into a language she reads well. One word looks strange, so she checks it with her teacher."
           }
-        ]
-      },
-      {
-        "type": "items",
-        "title": "Brightwater School's draft rules for the homework helper",
-        "items": [
-          "Ask for a hint before you ask for an answer.",
-          "Say when you used the helper, and what for.",
-          "Check facts in a book or with a teacher.",
-          "Never type your name, address or other private information.",
-          "Everyone can use the helper on the school's laptops, not only students with their own phone."
         ]
       }
     ]
@@ -121,18 +102,18 @@
     "sections": [
       {
         "heading": "Schools are deciding how to use AI",
-        "text": "AI chat tools can answer questions, explain ideas and even write whole essays. Many people use them, including many students. So schools and families face a new question: how should students use these tools? In 2023, UNESCO, the United Nations organisation for education, asked more than 450 schools and universities. Fewer than 1 in 10 had rules or formal guidance about AI tools. Later that year, UNESCO wrote guidance for countries. It said they should protect students' privacy, and set an age limit, such as 13, for children using these chat tools on their own. This is advice, not a law, and it is not about every learning tool.",
-        "simpler": "AI chat tools can answer questions and even write essays. Schools must decide how to use them. In 2023, UNESCO asked over 450 schools and universities. UNESCO is the United Nations group for education. Fewer than 1 in 10 had guidance about AI. Then UNESCO wrote guidance for countries. Protect students' privacy, it said. Set an age, like 13, for children to chat with AI alone. This is advice, not a law."
+        "text": "AI chat tools can answer questions, explain ideas and even write whole essays. So schools and families face a new question: how should students use them? In 2023, UNESCO, the United Nations organisation for education, asked more than 450 schools and universities. Fewer than 1 in 10 had any guidance about these tools. Later that year, UNESCO wrote guidance for governments. It asked them to protect students' privacy and to set a minimum age, such as 13, for children talking with these chat tools on their own. This is advice, not a law. Each country and school makes its own rules.",
+        "simpler": "AI chat tools can answer questions and even write essays. How should students use them? In 2023, UNESCO asked over 450 schools and universities. UNESCO is the United Nations group for education. Fewer than 1 in 10 had guidance about these tools. Then UNESCO wrote guidance for governments. Protect students' privacy, it said. Set an age, like 13, for children who chat with these tools alone. This is advice, not a law. Each country and school makes its own rules."
       },
       {
-        "heading": "A tool can help you learn",
-        "text": "Used well, an AI tool can work a bit like a tutor. It can explain a hard idea in simpler words, give you extra practice or translate a page into a language you know. At the made-up Brightwater School, Mira asks the homework helper to explain fractions in a new way. Then she does the practice herself. In 2024, researchers tested an AI tutor for English with secondary school students in Nigeria. For six weeks, students used it after school, and trained teachers guided every session. On English tests at the end, they did better than students who did not take part.",
-        "simpler": "An AI tool can be a bit like a tutor. It can explain a hard idea in easy words, or give you more practice. At Brightwater School, Mira asks the helper about fractions. Then she does the practice herself. In 2024, students in Nigeria used an AI tutor after school for six weeks. Teachers guided them. They did better on English tests than other students."
+        "heading": "Nigeria: an AI tutor with teachers in the room",
+        "text": "In 2024, World Bank researchers tested an AI tutor in nine state schools in Benin City, Nigeria. The students were in their first year of senior secondary school, usually about 15 years old. For six weeks, they came to computer rooms after school, twice a week, to practise English with an AI chat tool. Teachers trained for the project started each session with a first question to ask the tool. Then they walked around, helping students stay on task. At the end, these students did better on an English test than similar students who were not chosen. The researchers say the result came from the whole programme, the tool and the teachers together.",
+        "simpler": "In 2024, researchers tested an AI tutor in Nigeria. The students were about 15 years old. For six weeks, they came after school, twice a week. They practised English with an AI chat tool. Trained teachers started each session. They gave a first question to ask the tool. Then they helped students stay on task. At the end, they took an English test. They did better than students who did not take part. The tool and the teachers worked together, the researchers say."
       },
       {
-        "heading": "A tool can also be a shortcut",
-        "text": "An AI tool can also become a shortcut that gets in the way. In a study in Türkiye, nearly 1,000 high school students practised maths. Some used a chat tool that gave full answers. They did better in practice, but worse on a test without the tool. Students whose tool gave hints, written with teachers' help, did about as well as students with no tool. Each study was one subject in one place, so results elsewhere may differ. A tool can also be wrong and still sound sure, and not every student has a device. So Brightwater's draft rules ask for hints first, honest work and checks with a teacher.",
-        "simpler": "A tool can also be a shortcut. Then you learn less. In one study, nearly 1,000 students practised maths. Some had a tool that gave full answers. They did well in practice. On a test with no tool, they did worse. Others had a tool that gave hints, made with teachers. They did as well as students without one. Results may differ in other places. A tool can be wrong but sound sure. Not everyone has a device. Brightwater's rules say: hints first, honest work, and check with a teacher."
+        "heading": "Türkiye: practice with a tool is not the same as learning",
+        "text": "In 2023, researchers worked with nearly 1,000 students in grades 9 to 11 at a high school in Türkiye. In four maths lessons, a teacher reviewed a topic, students did practice problems, and then they took a test with no books or computers. During practice, some students had only their books. Some had a chat tool that could give full answers. Others had a tutor version that gave hints, using answers and common mistakes written by their teachers. Both AI groups did much better in practice. But on the test alone, the full-answer group did worse than the books-only group. The tool had become a shortcut. The hint group did about as well as the books-only group. Each study was one subject in one place, so results elsewhere may differ.",
+        "simpler": "Another study was in Türkiye, with nearly 1,000 high school students. In four maths lessons, students did practice problems. Then they took a test with no help. Some practised with only books. Some had a chat tool that gave full answers. Others had a tool that gave hints. Their teachers helped to make it. Both tool groups did well in practice. On the test alone, the full-answer group did worse. The tool was a shortcut. The hint group did about the same as the books group. Each study was one subject in one place."
       }
     ],
     "glossary": [
@@ -144,32 +125,32 @@
       {
         "word": "privacy",
         "definition": "Keeping your own information safe from people who should not see it.",
-        "example": "Brightwater's rules protect privacy: never type your address into the helper."
+        "example": "Protecting privacy means never typing your address into a chat tool."
       },
       {
         "word": "tutor",
-        "definition": "A person who helps one student, or a few, learn something.",
-        "example": "The helper explained fractions to Mira, a bit like a tutor."
+        "definition": "A person or tool that helps one student, or a few, learn something.",
+        "example": "In Nigeria, students used an AI tutor with their teachers' help."
+      },
+      {
+        "word": "practise",
+        "forms": [
+          "practised",
+          "practice"
+        ],
+        "definition": "To do something again and again to get better at it.",
+        "example": "Mira does the practice questions herself."
       },
       {
         "word": "shortcut",
         "definition": "A quicker way that skips some of the steps.",
         "example": "Jonah used the helper as a shortcut, so he learned nothing about rivers."
-      },
-      {
-        "word": "honest",
-        "forms": [
-          "honesty"
-        ],
-        "definition": "Telling the truth, including about who did the work.",
-        "example": "An honest student says when they used the helper."
       }
     ],
     "checks": [
       {
         "type": "choice",
-        "skill": "evidence",
-        "question": "In the maths study in Türkiye, what happened when the tool gave full answers?",
+        "question": "In the study in Türkiye, what happened when the tool gave full answers?",
         "options": [
           {
             "text": "They did best of all on the test",
@@ -177,72 +158,33 @@
             "feedback": "Not quite. They did well in practice, but not on the test. Read the third section."
           },
           {
-            "text": "They did worse on the test",
+            "text": "They did well in practice, but worse on the test alone",
             "correct": true,
-            "feedback": "Yes. The tool did the work in practice. On a test without it, they did worse."
+            "feedback": "Yes. The tool did much of the work in practice. On a test without it, they did worse than students who used only books."
           },
           {
             "text": "They never used the tool",
             "correct": false,
-            "feedback": "Not quite. They used it a lot in practice. Read the third section again."
+            "feedback": "Not quite. They used it in practice. Read the third section again."
           }
         ]
-      },
-      {
-        "type": "choice",
-        "skill": "apply",
-        "question": "Which rule would help students learn the most?",
-        "options": [
-          {
-            "text": "Hand in the tool's answers",
-            "correct": false,
-            "feedback": "Not quite. Then the tool does the thinking. Look at Brightwater's draft rules."
-          },
-          {
-            "text": "Only the fastest students may use it",
-            "correct": false,
-            "feedback": "Not quite. That is not fair, and it does not help anyone learn. Look at the rules again."
-          },
-          {
-            "text": "Ask for a hint before an answer",
-            "correct": true,
-            "feedback": "Yes. A hint helps you think, so you still do the learning yourself."
-          }
-        ]
-      },
-      {
-        "type": "think",
-        "question": "Which Brightwater rule do you think matters most? Why?",
-        "placeholder": "The rule that matters most is ... because ...",
-        "optional": true
       }
     ]
   },
   "write": {
-    "prompt": "Brightwater School wants help with its rules for the homework helper. Write two rules, and explain how each one helps students learn or keeps things fair.",
+    "prompt": "Write a short note to Jonah. Explain why the helper's essay didn't help him learn, using what one of the two studies found. Then suggest one better way for him to use the helper.",
     "sentenceStarters": [
-      "My first rule is ...",
-      "This rule helps because ...",
-      "My second rule is ...",
-      "This is fair because ...",
-      "In the lesson, ___ shows that ..."
+      "Jonah, the helper ...",
+      "In the study in ___, ...",
+      "Next time, you could ..."
     ],
-    "planningBoxes": [
-      "My main idea",
-      "Evidence from the lesson",
-      "Why it matters",
-      "A question I still have"
-    ],
-    "selfCheck": [
-      "I wrote two rules for Brightwater School.",
-      "I explained how each rule helps students learn or keeps things fair.",
-      "I used evidence from the lesson."
-    ],
-    "example": "My first rule is: ask for a hint before you ask for an answer. This rule helps because students still do the thinking. In the lesson, the study in Türkiye shows that students who got full answers did worse on a test without the tool. My second rule is: everyone can use the helper on the school laptops. This is fair because not every student has a phone at home. Ayla used it to translate a page, and then she checked a word with her teacher."
+    "planningBoxes": [],
+    "selfCheck": [],
+    "example": "Jonah, the helper wrote your essay. So the helper did the thinking, not you. That is why you couldn't answer your teacher's questions the next day. In the study in Türkiye, some students had a tool that gave full answers. They did well in practice. But they did worse on a test without the tool. Next time, you could ask the helper for a hint. Then write your own answer, and ask it to check one part."
   },
   "speak": {
-    "partnerTask": "Your partner names one way a student could use the homework helper. You say “help” or “shortcut” and give one reason. Then switch.",
-    "independentTask": "Say out loud one way an AI tool can help learning, one way it can get in the way, and one rule you would make."
+    "partnerTask": "Talk with your partner: in the Nigeria study, teachers started each session and helped students as they worked. Why might that have mattered? Each give one reason.",
+    "independentTask": "Say out loud what the teachers did in the Nigeria study, and why the researchers said the result came from the tool and the teachers together."
   },
   "watch": {
     "youtubeId": "gmUHEvrpYoU",
@@ -264,15 +206,15 @@
   "reflect": {
     "prompts": [
       {
-        "text": "An AI tool helps learning when ... It gets in the way when ...",
+        "text": "One thing I now understand about using AI tools to learn is ...",
         "required": true
       },
       {
-        "text": "One rule about AI tools that every school should have is ...",
+        "text": "A question I still have about AI at school is ...",
         "required": false
       }
     ],
-    "completionMessage": "You finished Lesson 11. You weighed how AI tools can help or get in the way at school, and wrote fair rules for one."
+    "completionMessage": "You finished Lesson 11. You explained what two studies of AI tutors found, and why doing well with a tool is not the same as learning."
   },
   "visual": {
     "type": "diagram",
@@ -282,33 +224,29 @@
   },
   "sources": [
     {
-      "label": "UNESCO (2023): Guidance for generative AI in education and research (catalogue record: an age limit for independent conversations with generative AI; GCED Clearinghouse)",
-      "url": "https://gcedclearinghouse.org/en/node/129341"
-    },
-    {
-      "label": "UNESCO (7 September 2023): Governments must quickly regulate generative AI in schools (press release, age limit of 13; GCED Clearinghouse copy)",
+      "label": "UNESCO (7 September 2023): Governments must quickly regulate generative AI in schools (press release: the survey of over 450 schools and universities, and the age limit of 13; GCED Clearinghouse copy)",
       "url": "https://gcedclearinghouse.org/en/node/129359"
     },
     {
-      "label": "UNESCO (2023): Survey, less than 10% of schools and universities have formal guidance on AI (GCED Clearinghouse copy)",
-      "url": "https://gcedclearinghouse.org/en/node/130058"
+      "label": "UNESCO (2023): Guidance for generative AI in education and research (catalogue record: protecting data privacy and an age limit for independent conversations with these tools; GCED Clearinghouse)",
+      "url": "https://gcedclearinghouse.org/en/node/129341"
     },
     {
-      "label": "World Bank (May 2025): From chalkboards to chatbots, evaluating the impact of generative AI on learning outcomes in Nigeria (De Simone and others, Policy Research Working Paper 11125)",
-      "url": "https://openknowledge.worldbank.org/entities/publication/15e1ff08-15ae-4f7a-b2a8-d146e6c113ee/full"
+      "label": "World Bank (May 2025): From chalkboards to chatbots, evaluating the impact of generative AI on learning outcomes in Nigeria (De Simone and others, Policy Research Working Paper 11125; reproducibility record)",
+      "url": "https://reproducibility.worldbank.org/index.php/catalog/419"
     },
     {
-      "label": "Bastani and others (PNAS, 2025): Generative AI without guardrails can harm learning, evidence from high school mathematics (record; reported by Knowledge at Wharton, August 2024, for the study in Türkiye)",
+      "label": "Bastani and others (PNAS, 2025): Generative AI without guardrails can harm learning, evidence from high school mathematics (record; reported by Knowledge at Wharton, August 2024)",
       "url": "https://ideas.repec.org/a/nas/journl/v122y2025pe2422633122.html"
     }
   ],
   "sensitiveNotes": [
-    "Don't ask learners whether or how they have used AI tools for schoolwork, and don't ask them to type questions into a real AI tool in class. UNESCO's 2023 guidance asks countries to set an age limit for children's independent conversations with generative AI tools (its press release names 13); it is guidance, not a rule for every learning tool, and many learners are younger. The pretend tool keeps everyone offline. UNESCO's wording differs between sources: its catalogue record says the guidance proposes \"setting an age limit for independent conversations with GenAI platforms\"; its press release says it \"sets an age limit of 13 for the use of AI tools in the classroom\". The lesson says it suggests an age such as 13 for using chat tools alone. The full guidance couldn't be opened in this revision: check it before teaching.",
+    "Don't ask learners whether or how they have used AI tools for schoolwork, and don't ask them to type questions into a real AI tool in class. UNESCO's 2023 guidance asks governments to set an age limit for children's independent conversations with generative AI tools; its press release names 13, and news reports said some argue for 16. It is advice to governments, not a law or a rule for every learning tool, and many learners are younger than 13. The pretend tool keeps everyone offline.",
     "Some learners have no device or internet where they live. Talk about access as a fairness question for schools, never as something to compare between learners."
   ],
   "educatorNotes": [
     "The Brightwater students, the pretend tool's answers and the 1850 bridge date are made up; the wrong date is written on purpose so learners practise checking. Paper version of the activity: read the requests and answers aloud and let learners choose.",
-    "The two studies, simplified (see sources and claims/DW11.md). Nigeria: a World Bank randomised trial in public senior secondary schools in Edo State (Benin City), June to July 2024: six weeks of after-school English sessions, twice a week, with a large language model and teachers trained to guide each session; on a pen-and-paper test of English, AI knowledge and digital skills, gains were about 0.3 standard deviations (0.23 to 0.24 on English), and students also did better on end-of-year exams. The authors can't separate the AI from the teacher support and prompts, and don't know if it lasts or works in other subjects or ordinary classes. Türkiye: Bastani and others (PNAS, 2025): nearly 1,000 high school maths students; with GPT-4 during practice, the plain chat tool raised practice grades by 48% but lowered grades on a later exam without AI by 17%; the hint-giving tutor, with teacher input, raised practice grades by 127% and left exam grades about the same as no AI. Neither study shows an effect for every learner, subject or tool."
+    "The two studies, simplified (claims/DW11.md). Nigeria (De Simone and others, World Bank, 2025): a randomised trial in nine public schools in Benin City, Edo State, June to July 2024, with first-year senior secondary students (typically 15). Students chosen at random could attend twelve 90-minute after-school sessions (at most two a week) using Microsoft Copilot (GPT-4). Teachers had three days' training, began each session with a prompt, guided students without teaching directly and circulated to keep them on task; monitors supervised the sessions. On a pen-and-paper test at the end, gains were 0.31 standard deviations overall and 0.23 on English, with better end-of-year exams too. The authors say the whole programme, tool and teacher guidance together, drove the result; they can't separate the AI's part from the teacher guidance, and don't know how long it lasts or whether it works in other subjects. Türkiye (Bastani and others, PNAS 2025; design from the 2024 working paper): nearly 1,000 students in grades 9 to 11 at one large high school, autumn 2023; four 90-minute sessions covering about 15% of the year's maths; the AI was available only during practice, with a teacher present. With GPT-4 in practice, grades rose 48% (plain chat tool) and 127% (hint tutor built with teachers' solutions and common mistakes); on the closed-book test afterwards, the plain-tool group scored 17% lower than the books-only group, and the tutor group about the same. Neither study shows an effect for every learner, subject or tool."
   ],
   "changes": [
     "Replaces the draft “Asking an AI tool good questions” (October 2026, social studies rebuild), now retired/DW08-asking-good-questions.json. The lesson moves from prompting skills to a social studies question: how schools and families decide about AI tools, who benefits, and what the risks are.",
@@ -317,6 +255,7 @@
     "The Write task asks for rules for a made-up school, not about learners' own use of AI.",
     "visual.src points to a picture that doesn't exist yet.",
     "Needs review by an AI researcher (the studies' simplifications), by Justin for level and tone, and by a partner educator for the sensitive notes.",
-    "Revised on 1 November 2026 from Justin's review: kept the pretend tool and activity. Cited both studies with who, what and how (Nigeria: secondary school students, English, six weeks after school with trained teachers guiding, tested at the end; Türkiye: nearly 1,000 high school maths students, full answers versus hints written with teachers, practice versus a test without the tool) and said each was one subject in one place, in both readings. UNESCO's 2023 age guidance is now described as advice about children using chat tools on their own, not a law or a rule for every learning tool (reading, sensitive note). Sources: the World Bank working paper and the PNAS paper replace the two blog and news reports (UN News, World Bank blog; the Wharton report is named in the PNAS label), and UNESCO's catalogue record is added. \"Hundreds of millions of people use them\" became \"Many people use them\" (no source checked for the number). Claim record in claims/DW11.md."
+    "Revised on 1 November 2026 from Justin's review: kept the pretend tool and activity. Cited both studies with who, what and how (Nigeria: secondary school students, English, six weeks after school with trained teachers guiding, tested at the end; Türkiye: nearly 1,000 high school maths students, full answers versus hints written with teachers, practice versus a test without the tool) and said each was one subject in one place, in both readings. UNESCO's 2023 age guidance is now described as advice about children using chat tools on their own, not a law or a rule for every learning tool (reading, sensitive note). Sources: the World Bank working paper and the PNAS paper replace the two blog and news reports (UN News, World Bank blog; the Wharton report is named in the PNAS label), and UNESCO's catalogue record is added. \"Hundreds of millions of people use them\" became \"Many people use them\" (no source checked for the number). Claim record in claims/DW11.md.",
+    "Revised on 8 November 2026 (Justin's brief of 4 November): kept the pretend helper (ask-tool) unchanged. Removed the warm-up, Brightwater's draft rules (the evidence card, the rule-writing Write task, the rule quick check and the think question), the planning boxes and the self-check. The reading now explains what each study found in its setting: Nigeria (nine schools in Benin City, students of about 15, English, twelve after-school sessions over six weeks, trained teachers starting each session and helping pairs; the researchers credit the tool and the teachers together) and Türkiye (nearly 1,000 students in grades 9 to 11, four maths lessons, practice with a tool against a test without it, hints built from teachers' work). UNESCO's 2023 age suggestion is described as advice to governments, not a law, with each country and school making its own rules. One quick check (practice versus the test alone); Write is a short note to Jonah using one study; Speak discusses the teachers' role. New glossary word: practise (honest dropped). Sources: UNESCO's own page on the guidance and the World Bank reproducibility record added; claim record updated."
   ]
 }

@@ -1,5 +1,6 @@
 import { useId } from 'react';
 import { Icon } from '../../../components/ds';
+import { LessonDisclosure } from '../../../pages/lesson/LessonDisclosure';
 import type { Activity } from '../../../content';
 import { useI18n } from '../../../i18n';
 import { AskToolPlayer } from './AskTool';
@@ -23,13 +24,27 @@ import { TrainModelPlayer } from './train-model/TrainModel';
  */
 export function ActivityPlayer({ activity }: { activity: Activity }) {
   const { t, contentLang } = useI18n();
+  // An optional extension stays folded away until wanted: the reading teaches the idea without it.
+  if (activity.extension) {
+    return (
+      <LessonDisclosure className="tw-dw-extension" icon="Hand" summary={t('digitalWorld.activity.extensionSummary')}>
+        <p className="tw-dw-measure">{t('digitalWorld.activity.extensionIntro')}</p>
+        <ActivitySection activity={activity} />
+      </LessonDisclosure>
+    );
+  }
+  return <ActivitySection activity={activity} />;
+}
+
+function ActivitySection({ activity }: { activity: Activity }) {
+  const { t, contentLang } = useI18n();
   const titleId = useId();
   return (
     <section className="tw-dw-activity" aria-labelledby={titleId} data-activity={activity.type}>
       <div className="tw-dw-activity-head">
         <span className="eyebrow tw-dw-activity-eyebrow">
           <Icon name="Hand" size={16} />
-          {t('digitalWorld.activity.eyebrow')}
+          {t(activity.extension ? 'digitalWorld.activity.extensionEyebrow' : 'digitalWorld.activity.eyebrow')}
         </span>
         <h3 id={titleId} className="h3" {...contentLang}>
           {activity.title}

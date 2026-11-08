@@ -4,257 +4,179 @@
   "number": 10,
   "section": "ai-in-daily-life",
   "title": "AI in your community",
-  "essentialQuestion": "How can AI help a community, and what could go wrong?",
-  "learningGoal": "Weigh the benefits and risks of AI tools for translation, farming and health, and explain why people must stay in charge.",
+  "essentialQuestion": "How can AI help a community get its problems fixed, and who does the fixing?",
+  "learningGoal": "Explain how Traffy Fondue in Thailand uses AI to sort and send residents' reports, why people and agencies still fix the problems, and what its numbers can and can't show.",
   "estimatedMinutes": [
-    30,
-    50
+    25,
+    40
   ],
-  "warmUp": {
-    "question": "Where do you think AI could help people in a community?",
-    "options": [
-      "Growing food",
-      "Reading other languages",
-      "Staying healthy",
-      "Not sure"
-    ]
-  },
   "evidence": {
-    "fictional": true,
-    "label": "Fictional example created for this lesson.",
-    "question": "How does each tool help? What could go wrong? Who checks it?",
+    "fictional": false,
+    "label": null,
+    "question": "Which steps does the AI do, and which steps do people do?",
     "cards": [
       {
-        "type": "cases",
-        "title": "Three AI tools in the town of Sunvale",
-        "cases": [
+        "type": "items",
+        "title": "How a report travels in Traffy Fondue, Thailand",
+        "items": [
+          "1. A resident sees a problem, such as a broken street light or a flooded road.",
+          "2. In the LINE messaging app, they send a photo and a short description. The place is added from the phone's location.",
+          "3. AI sorts the report by type and sends it to the office that is responsible.",
+          "4. People at that office check the report and decide what to do. Some jobs go to a repair team. Bigger ones need money and a plan.",
+          "5. The office posts updates. The resident can follow the report and rate the result."
+        ]
+      },
+      {
+        "type": "timeline",
+        "title": "Traffy Fondue's growth, as its makers and users report it",
+        "events": [
           {
-            "name": "Translation tool at the community centre",
-            "body": "It turns notices into several languages, so more neighbours can read them. It is very good in languages with lots of writing online. It makes more mistakes in a language with little writing online. A volunteer who speaks that language checks important notices."
+            "year": "2022",
+            "text": "Bangkok's city government starts using it for residents' reports (31 May)."
           },
           {
-            "name": "Leaf tool for farmers",
-            "body": "A farmer takes a photo of a leaf, and the tool guesses if the plant is sick. It works with no internet. It learned from the leaves of three crops, so it often guesses wrong for a crop it has never seen. When it is not sure, the farmers' group asks a plant expert."
+            "year": "2022",
+            "text": "An agreement lets local offices across Thailand use it free for three years (September)."
           },
           {
-            "name": "Eye photo helper at the clinic",
-            "body": "It looks at photos of the eye and marks the ones that may show a problem, so busy health workers know who to see first. It learned mostly from photos of people in other places, and nobody has tested it in Sunvale yet. It might miss some problems there. A health worker always checks it and talks to each patient."
+            "year": "2022",
+            "text": "It wins a Thai government award for public service innovation (September). A prize shows that officials valued it, not how many problems were fixed."
+          },
+          {
+            "year": "2024",
+            "text": "Bangkok says it received 588,842 reports in two years and resolved about 79%."
+          },
+          {
+            "year": "2025",
+            "text": "Bangkok's governor tells officials not to close cases with photos that don't show the problem fixed (July)."
+          },
+          {
+            "year": "2026",
+            "text": "NSTDA says it is used in all 77 provinces, by more than 34,000 agencies."
           }
         ]
       }
     ]
   },
-  "activity": {
-    "type": "sort",
-    "stage": "read",
-    "placement": "after-evidence",
-    "title": "Help or risk?",
-    "instructions": "Put each sentence about the Sunvale tools into a group. There is no score. After you place one, you can see one possible answer and the reason.",
-    "groups": [
-      {
-        "id": "help",
-        "label": "A help"
-      },
-      {
-        "id": "risk",
-        "label": "A risk"
-      },
-      {
-        "id": "both",
-        "label": "Both"
-      }
-    ],
-    "items": [
-      {
-        "id": "translate-read",
-        "text": "The translation tool lets more neighbours read notices.",
-        "suggested": "help",
-        "feedback": "More people can read important news in a language they know."
-      },
-      {
-        "id": "translate-mistakes",
-        "text": "The translation tool makes more mistakes in some languages.",
-        "suggested": "risk",
-        "feedback": "A wrong notice could tell people the wrong thing."
-      },
-      {
-        "id": "leaf-offline",
-        "text": "The leaf tool works with no internet.",
-        "suggested": "help",
-        "feedback": "Farmers can use it in fields far from any signal."
-      },
-      {
-        "id": "leaf-wrong",
-        "text": "A farmer trusts a wrong guess and pulls out healthy plants.",
-        "suggested": "risk",
-        "feedback": "The tool guesses, and a guess can be wrong."
-      },
-      {
-        "id": "eye-first",
-        "text": "The eye helper shows busy health workers who to see first.",
-        "suggested": "help",
-        "feedback": "Health workers can reach the people who need them most sooner."
-      },
-      {
-        "id": "eye-data",
-        "text": "The eye helper learned from people in other places. It is not tested in Sunvale yet.",
-        "suggested": "risk",
-        "feedback": "Until it is tested with people in Sunvale, nobody knows how well it works there. It might miss problems for people unlike the ones it learned from."
-      },
-      {
-        "id": "clinic-photos",
-        "text": "The clinic collects eye photos to make the helper better.",
-        "suggested": "both",
-        "feedback": "Any group can be right here. Local photos could help test the tool and make it fairer. But health photos are private, so people must agree first, and the photos must be kept safe."
-      },
-      {
-        "id": "volunteer",
-        "text": "A volunteer checks important translated notices.",
-        "suggested": "help",
-        "feedback": "A person who knows the language catches the tool's mistakes."
-      }
-    ],
-    "saves": "The group the learner chose for each sentence, with the lesson's other answers.",
-    "offline": "Everything is in the lesson file. Nothing is sent anywhere."
-  },
   "read": {
     "sections": [
       {
-        "heading": "AI can help where helpers are few",
-        "text": "In many places, there are not enough health workers or other experts for everyone who needs them. AI tools can sometimes help, as in the made-up town of Sunvale, where three tools help with notices, crops and eye checks. Here is a real example from Singapore. People with diabetes need regular eye checks, because the illness can harm their eyes. Researchers there built a tool called SELENA+, which looks at photos of the back of the eye and marks the ones an eye specialist should see. In 2017, they reported tests with photos from Singapore's eye checks and from people in other countries. It found most of the problems that trained checkers found, but the researchers said it still needed testing in real clinics.",
-        "simpler": "Many places do not have enough health workers or other experts. AI tools can sometimes help. In made-up Sunvale, three tools help with notices, plants and eyes. In Singapore, researchers built a real tool called SELENA+. People with diabetes need eye checks, because the illness can harm their eyes. SELENA+ marks eye photos that an eye doctor should see. In 2017, it was tested on photos from Singapore and elsewhere. It found most problems that people found. It still needed tests in real clinics."
+        "heading": "A problem on your street",
+        "text": "In every city, residents notice problems first: a road with a hole in it, a blocked drain, a street light that has stopped working. Fixing them is the job of the city's offices. But a report has to reach the right office, and in a big city there are many. In Thailand, researchers at NECTEC, part of the country's national science agency, NSTDA, built a platform to help. It is called Traffy Fondue. In May 2022, Bangkok's city government began to use it for reports from residents. Since then, many other towns, offices and agencies across Thailand have joined.",
+        "simpler": "In every city, residents see problems first. A road has a hole. A drain is blocked. A street light stops working. The city's offices must fix them. But a report has to reach the right office. A big city has many offices. In Thailand, researchers at a national science agency built a platform to help. It is called Traffy Fondue. In May 2022, Bangkok's city government began to use it. Many other towns and agencies in Thailand joined later."
       },
       {
-        "heading": "Every tool has risks",
-        "text": "A tool that helps can also cause problems, so it is important to weigh the benefits against the risks. The Sunvale eye helper learned mostly from photos of people in other places. That does not make it a poor tool. But nobody has tested it in Sunvale, so it might miss some problems there. A tool must be tested with the people it will serve. Translation tools make more mistakes in languages with little writing online. A farmer who trusts a wrong guess might pull out healthy plants. Health photos are also private, so they must be kept safe.",
-        "simpler": "A tool that helps can also cause problems. So weigh the benefits and the risks. The eye helper learned from people in other places. That does not make it bad. But nobody has tested it in Sunvale. It might miss problems there. Tools must be tested with the people they help. Translation tools make more mistakes in some languages. A farmer could trust a wrong guess. Health photos are private and must be kept safe."
+        "heading": "What the AI does, and what people do",
+        "text": "To make a report, a resident uses LINE, a messaging app. They send a photo, a few words and the place. Then AI reads the report and sorts it by type, such as roads, flooding or lights. The system sends it to the office that should deal with it. Sorting and sending is the AI's part of the work. After that, people take over. Officials check the report and decide what to do. Some jobs need only a repair team. A bigger job may need money, a plan and more time. The AI routes the report. People and agencies do the fixing.",
+        "simpler": "A resident makes a report in LINE, a messaging app. They send a photo, some words and where it is. Then AI reads the report. It sorts it by type, like roads or floods. It sends it to the right office. That is the AI's part. Then people take over. Officials check the report and send workers. A big job needs money and a plan too. So the AI routes the report. People and agencies fix the problem."
       },
       {
-        "heading": "People must stay in charge",
-        "text": "Because AI tools can be wrong, people need to stay in charge of important decisions. In Sunvale, a volunteer who speaks the language checks important translated notices. A plant expert helps when the leaf tool isn't sure, and a health worker always checks the eye helper. The people of a community should also help to shape the tools they use. Before trusting any AI tool, ask three questions. Who does it help? Who might it leave out? Who checks its answers? For any health question, always ask a health worker, not a tool.",
-        "simpler": "AI tools can be wrong. So people must stay in charge of big decisions. In Sunvale, a volunteer checks notices. An expert and a health worker check the other tools. People in a community should help shape their tools. Ask three questions. Who does it help? Who might it leave out? Who checks it? For health questions, ask a health worker."
+        "heading": "What the numbers can and can't show",
+        "text": "Bangkok says it received 588,842 reports in two years and resolved about 79% of them. These numbers come from the city and the platform's makers, and \"resolved\" means an official closed the case. In 2025, Bangkok's governor told officials not to close cases with photos that had nothing to do with the problem. So a closed case is not always a fixed problem. In 2025, researchers at Thammasat University in Bangkok studied 98,000 reports and talked with 12 people who knew the system. They found it helped the city see where problems were and plan repairs. They also noted that it needs a smartphone and the internet, which not everyone has.",
+        "simpler": "Bangkok says it got 588,842 reports in two years. It says about 79% were resolved. These numbers come from the city and the makers. Resolved means an official closed the case. In 2025, the city's leader warned officials about one problem. Some closed cases with photos that did not show the problem. So a closed case is not always a fixed problem. University researchers studied 98,000 reports. It helped the city plan repairs, they found. But it needs a smartphone and the internet."
       }
     ],
     "glossary": [
       {
-        "word": "expert",
+        "word": "resident",
         "forms": [
-          "experts"
+          "residents"
         ],
-        "definition": "A person who knows a lot about one subject.",
-        "example": "A plant expert helps the farmers in Sunvale."
+        "definition": "A person who lives in a place.",
+        "example": "Residents of Bangkok report broken street lights."
       },
       {
-        "word": "translate",
+        "word": "agency",
         "forms": [
-          "translates",
-          "translated",
-          "translation"
+          "agencies"
         ],
-        "definition": "To change words from one language into another.",
-        "example": "The tool translates notices at the community centre."
+        "definition": "An office or group that does one kind of public work.",
+        "example": "NSTDA is Thailand's national science agency."
       },
       {
-        "word": "benefit",
+        "word": "route",
         "forms": [
-          "benefits"
+          "routes",
+          "routed"
         ],
-        "definition": "A good thing that helps someone.",
-        "example": "One benefit of the leaf tool is that it works with no internet."
+        "definition": "To send something along the right path to the right place.",
+        "example": "The AI routes each report to the office that should fix it."
       },
       {
-        "word": "risk",
+        "word": "resolve",
         "forms": [
-          "risks"
+          "resolved",
+          "resolves"
         ],
-        "definition": "The chance that something bad could happen.",
-        "example": "One risk is that a farmer trusts a wrong guess."
+        "definition": "To deal with a problem so that it is finished.",
+        "example": "The city says about 79% of reports were resolved."
       },
       {
-        "word": "community",
-        "forms": [
-          "communities"
-        ],
-        "definition": "A group of people who live in the same place or share something.",
-        "example": "The people of Sunvale are a community."
+        "word": "platform",
+        "definition": "A website or app where many people can do the same kind of thing.",
+        "example": "Traffy Fondue is a platform for reporting problems."
       }
     ],
     "checks": [
       {
         "type": "choice",
-        "question": "Why might the eye helper miss problems in Sunvale?",
+        "question": "In Traffy Fondue, what does the AI do?",
         "options": [
           {
-            "text": "It was not tested with people there",
+            "text": "It fixes the problem by itself",
+            "correct": false,
+            "feedback": "Not quite. Workers fix the problems. Read the second section."
+          },
+          {
+            "text": "It sorts each report and sends it on",
             "correct": true,
-            "feedback": "Yes. It learned mostly from photos of people in other places. That might be fine, but only a test in Sunvale can show it."
+            "feedback": "Yes. The AI sorts the report and sends it to the right office. Then people check it and fix the problem."
           },
           {
-            "text": "Sunvale has no eye problems at all",
+            "text": "It decides how the city spends money",
             "correct": false,
-            "feedback": "Not quite. Eye problems happen everywhere. Look at what the tool learned from."
-          },
-          {
-            "text": "The health workers forget to use it",
-            "correct": false,
-            "feedback": "Not quite. They use it and check it. Read the second section about testing."
+            "feedback": "Not quite. Officials decide what to do and what it costs. Read the second section."
           }
         ]
       },
       {
         "type": "choice",
-        "question": "What makes the translation tool safer to use?",
+        "question": "Why should you be careful with the number \"79% resolved\"?",
         "options": [
           {
-            "text": "Using it for every single notice",
-            "correct": false,
-            "feedback": "Not quite. Using it more doesn't fix its mistakes. Read the third section."
-          },
-          {
-            "text": "Stopping people from reading notices",
-            "correct": false,
-            "feedback": "Not quite. The tool is there to help people read. Read the third section."
-          },
-          {
-            "text": "A volunteer checks the notices",
+            "text": "Some cases were closed but not fixed",
             "correct": true,
-            "feedback": "Yes. A person who speaks the language can catch the tool's mistakes."
+            "feedback": "Yes. Officials close the cases, and the governor warned that some were closed with photos that didn't show the problem."
+          },
+          {
+            "text": "The number was made up by an AI",
+            "correct": false,
+            "feedback": "Not quite. The city reported the number. Read who closes a case in the third section."
+          },
+          {
+            "text": "Nobody in Bangkok used the platform",
+            "correct": false,
+            "feedback": "Not quite. Hundreds of thousands of reports were sent. Read the third section."
           }
         ]
-      },
-      {
-        "type": "think",
-        "question": "Which Sunvale tool would help a community you know? What would worry you about it?",
-        "placeholder": "The ___ would help because ... I would worry that ...",
-        "optional": true
       }
     ]
   },
   "write": {
-    "prompt": "Choose one Sunvale tool. Explain one way it helps, one risk, and who should check it.",
+    "prompt": "Explain to a younger student how a report in Traffy Fondue gets from a phone to a repair. Say which steps the AI does and which steps people do.",
     "sentenceStarters": [
-      "I chose ...",
-      "It helps because ...",
-      "One risk is ...",
-      "This could happen because ...",
-      "___ should check it, because ..."
+      "First, a resident ...",
+      "Then the AI ...",
+      "After that, people at the office ...",
+      "This matters because ..."
     ],
-    "planningBoxes": [
-      "My main idea",
-      "Evidence from the lesson",
-      "Why it matters",
-      "A question I still have"
-    ],
-    "selfCheck": [
-      "I named one tool from Sunvale.",
-      "I gave one benefit and one risk.",
-      "I said who should check it."
-    ],
-    "example": "I chose the leaf tool. It helps because farmers can find out quickly if a plant may be sick, even with no internet. One risk is that it gives a wrong guess for a crop it has never seen. This could happen because its training data only had leaves from three crops. A farmer who trusts a wrong guess might pull out healthy plants. A plant expert should check it when the tool is not sure, because people need to stay in charge."
+    "planningBoxes": [],
+    "selfCheck": [],
+    "example": "First, a resident sees a problem, like a flooded road, and sends a photo and the place in LINE. Then the AI reads the report, sorts it as a flood and sends it to the office that deals with floods. After that, people at the office check it, decide what to do and send workers. If the job is big, they may need money and a plan first. This matters because the AI only gets the report to the right place. The road is fixed by people."
   },
   "speak": {
-    "partnerTask": "Your partner names a Sunvale tool. You say one way it helps and one risk. Then switch.",
-    "independentTask": "Say out loud why a person should always check an AI tool that helps with health."
+    "partnerTask": "Talk with your partner: a city says it resolved 79 out of every 100 reports. What else would you want to know before you say the platform works well? Each give one question and say why it matters.",
+    "independentTask": "Say out loud one question you would ask before you trust a number like \"79% resolved\", and why that question matters."
   },
   "watch": {
     "youtubeId": "tJQSyzBUAew",
@@ -276,51 +198,47 @@
   "reflect": {
     "prompts": [
       {
-        "text": "Before a community uses an AI tool, people should ask ...",
+        "text": "One thing I learned about who does the work when a city uses AI is ...",
         "required": true
       },
       {
-        "text": "An AI tool that could help a community I know is ...",
+        "text": "A question I still have about Traffy Fondue is ...",
         "required": false
       }
     ],
-    "completionMessage": "You finished Lesson 10. You weighed the benefits and risks of AI tools in a community."
+    "completionMessage": "You finished Lesson 10. You explained how Traffy Fondue uses AI to route residents' reports, why people still do the fixing, and what its numbers can show."
   },
   "visual": {
-    "type": "illustration",
-    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW10.svg is only a planned path. A balance scale. The left pan is labelled “Benefits” and holds three small drawings: a notice in two languages, a leaf next to a phone, and an eye. The right pan is labelled “Risks” and holds three small drawings: a notice with a crossed-out word, a healthy plant pulled out, and a padlock for private photos. Beside the scale, a drawn person holds it level, labelled “People stay in charge”. Words carry every meaning; simple drawn figures only.",
-    "alt": "A balance scale weighing the benefits and risks of three AI tools, held level by a person labelled “People stay in charge”.",
+    "type": "diagram",
+    "description": "PLACEHOLDER: no picture exists yet, and visuals/DW10.svg is only a planned path. A left-to-right flow in five boxes joined by arrows: a phone showing a photo of a broken street light, labelled “1. A resident sends a photo and the place”; a sorting tray labelled “2. AI sorts the report by type”; an arrow to one of three office doors (Roads, Floods, Lights), labelled “3. Sent to the right office”; a drawn official at a desk labelled “4. People check and decide”; a drawn worker on a ladder fixing the light, labelled “5. People fix the problem”. A bracket over boxes 2 and 3 says “The AI's part”; a bracket over boxes 4 and 5 says “People's part”. Words carry every meaning; simple drawn figures only, no logos or real people.",
+    "alt": "A flow of five steps: a resident sends a photo and the place, AI sorts the report and sends it to the right office, and then people check it and fix the problem.",
     "src": "visuals/DW10.svg"
   },
   "sources": [
     {
-      "label": "World Health Organization (2021): WHO issues first global report on AI in health and six guiding principles",
-      "url": "https://who.int/news/item/28-06-2021-who-issues-first-global-report-on-ai-in-health-and-six-guiding-principles-for-its-design-and-use"
+      "label": "NSTDA (14 September 2022): NSTDA wins Public Sector Excellence Awards (Traffy Fondue, an AI-powered complaint reporting and management system, wins a public service award)",
+      "url": "https://www.nstda.or.th/en/news/news-years-2022/nstda-wins-public-sector-excellence-awards.html"
     },
     {
-      "label": "IITA (2018): African farmers get new help against cassava diseases, Nuru their artificially intelligent assistant",
-      "url": "https://iita.org/news-item/african-farmers-get-new-help-against-cassava-diseases-nuru-their-artificially-intelligent-assistant/"
+      "label": "Hansen and Dahiya (Frontiers in Sustainable Cities, April 2025): Traffy Fondue, a smart city citizen engagement (Thammasat University; 98,000 Bangkok reports from 2022 and 12 interviews)",
+      "url": "https://www.frontiersin.org/articles/10.3389/frsc.2025.1491621/full"
     },
     {
-      "label": "Stanford Report (2025): How AI is leaving non-English speakers behind",
-      "url": "https://news.stanford.edu/stories/2025/05/digital-divide-ai-llms-exclusion-non-english-speakers-research"
+      "label": "Pattaya Mail (June 2024): Bangkok's Traffy Fondue online platform resolves 79% of complaints in two years (the city's own figures)",
+      "url": "https://www.pattayamail.com/thailandnews/bangkoks-traffy-fondue-online-platform-resolves-79-of-complaints-in-two-years-464385"
     },
     {
-      "label": "Singapore National Eye Centre: AI and digital health research group (SELENA+, developed with about 500,000 eye photos and tested on 10 outside sets of photos)",
-      "url": "https://www.snec.com.sg/research-innovation/research-groups-platforms/research-groups/AI-digital-health"
-    },
-    {
-      "label": "Ting and others (JAMA, December 2017): Development and validation of a deep learning system for diabetic retinopathy and related eye diseases (abstract, Duke Scholars record)",
-      "url": "https://scholars.duke.edu/publication/1293398"
+      "label": "The Nation (July 2025): Nearly 1 million Traffy Fondue reports reflect public trust, says Chadchart (the governor's warning about closing cases with unrelated photos)",
+      "url": "https://www.nationthailand.com/news/general/40052146"
     }
   ],
   "sensitiveNotes": [
-    "Health: the Sunvale eye helper is made up; SELENA+ is real, and the lesson describes only how it was built and tested. Never give or discuss medical advice or diagnoses; learners with health questions should ask a health worker. Don't ask learners about their own health or anyone else's, including diabetes in their family.",
-    "Don't ask which languages learners speak at home, or which language a tool got wrong for them. Let them say so if they want to."
+    "Some learners may live where public services are missing, or where contacting officials is not safe for them. Keep the lesson on Bangkok and on kinds of problems in general. Never ask learners to describe problems where they live in a way that could identify them, or to report anything to any authority.",
+    "Don't ask which apps or phones learners or their families have. The point that the platform needs a smartphone and the internet is about access in general, not something to compare between learners."
   ],
   "educatorNotes": [
-    "The Sunvale tools are made up and stay labelled; SELENA+ is real and appears only in the reading, never in the made-up evidence or activity. What the sources establish: SNEC's page says SELENA+ was developed with about 500,000 retina photos and checked on 10 outside sets of photos (different cameras, ethnic groups and ages), and is approved by Singapore's health products regulator and CE-marked. The 2017 JAMA study tested it on 14,880 patients' photos from Singapore's national diabetic eye screening programme and on 10 other groups; it found referable eye disease with high sensitivity and specificity compared with trained graders, and said more research was needed for use in health care. The developers' own 2024 case study (Gunasekeran and others, NEJM AI) describes putting it into that programme; the lesson does not claim rollout or patient results, because no independent evaluation was checked. Other real projects, for teachers only: an offline cassava-disease phone app by IITA and Penn State (2018); WHO's 2021 report on AI for health; CLEAR Global's human checking of language technology.",
-    "Paper version of the activity: write the eight sentences on cards and sort them into Help, Risk and Both. The activity has no score; reward reasons."
+    "What the sources establish (claims/DW10.md). Traffy Fondue was developed by NECTEC, part of Thailand's National Science and Technology Development Agency (NSTDA). Bangkok's city government launched it on 31 May 2022 (Hansen and Dahiya, 2025); residents report through a LINE chatbot with a photo, a description, a category and the place. The researchers describe an AI engine that sorts reports into categories and a workflow that sends each to the responsible agency; NSTDA's 2024 statement adds AI summaries, suggested priorities and filtering of rude language. Repairs are done by the agencies, their teams or contractors; bigger jobs go through evaluation, budgeting and a project. All the scale and speed figures are the city's or the makers' own: Bangkok's 588,842 reports in two years with about 79% resolved (June 2024, from the governor's report, \"resolved\" not defined); NSTDA's 2026 page (all 77 provinces, 34,786 agencies, over 2 million resolved tickets, average resolution time down from 90 to 15 days). No independent check of repair quality was found. The Thammasat study (98,000 reports, May to December 2022, 12 interviews) reports 84% satisfaction and estimated savings, and notes the platform is digital-first.",
+    "Discussion ideas for Speak, with no single right answer: how \"resolved\" is decided and by whom; how long repairs take; whether some areas or groups send fewer reports (for example people without smartphones); whether repeat reports of the same problem are counted again; what residents say about the results. Lessons 16 and 17 mention Traffy Fondue again briefly."
   ],
   "changes": [
     "New lesson (Digital World draft). There is no Base44 original, so oldId is null.",
@@ -329,6 +247,7 @@
     "visual.src points to a picture that doesn't exist yet.",
     "Needs review by an AI researcher, by Justin for level and tone, and by a partner educator for the health and language notes.",
     "October 2026, social studies rebuild (Justin's brief: AI and the digital world through a social studies lens, at most 20 lessons): kept as Lesson 10 in \"AI in daily life\" (ai-in-daily-life). The notes above about the old section ids are out of date.",
-    "Revised on 1 November 2026 from Justin's review: added one real Southeast Asian example, SELENA+ (Singapore's diabetic eye-screening AI, from SERI/SNEC), in the reading and teacher notes only, because the evidence is made up and one fiction flag covers all its cards; it is described only as developed and tested (2017), with no claim of rollout or patient results. Changed the Sunvale eye helper so that data from another place is not a fault in itself: the point is that it hasn't been tested with the people it serves (both readings, the evidence card, the sort item and the quick check). Sort feedback gives the reason, not \"what most people would say\". Sunvale's summary in the first section shortened to make room. Sources: added SNEC's page and the 2017 JAMA abstract; dropped CLEAR Global and DCMP from the list (CLEAR Global stays in the teacher notes; the video's note still names DCMP's description). Claim record in claims/DW10.md."
+    "Revised on 1 November 2026 from Justin's review: added one real Southeast Asian example, SELENA+ (Singapore's diabetic eye-screening AI, from SERI/SNEC), in the reading and teacher notes only, because the evidence is made up and one fiction flag covers all its cards; it is described only as developed and tested (2017), with no claim of rollout or patient results. Changed the Sunvale eye helper so that data from another place is not a fault in itself: the point is that it hasn't been tested with the people it serves (both readings, the evidence card, the sort item and the quick check). Sort feedback gives the reason, not \"what most people would say\". Sunvale's summary in the first section shortened to make room. Sources: added SNEC's page and the 2017 JAMA abstract; dropped CLEAR Global and DCMP from the list (CLEAR Global stays in the teacher notes; the video's note still names DCMP's description). Claim record in claims/DW10.md.",
+    "Revised on 8 November 2026 (Justin's brief of 4 November): removed the “Help or risk?” sort activity, the warm-up, the made-up town of Sunvale (its translation, leaf and eye tools, the evidence, the checks, Write, Speak and Reflect built on them) and SELENA+, so the lesson teaches one documented regional case in depth: Traffy Fondue, Thailand's public reporting platform. The reading covers the problem, the people and institutions (NECTEC and NSTDA, Bangkok's city government), how a report travels, what the AI does (sorts and routes reports) as distinct from what people and agencies do (check, decide, fix), and what the numbers can and can't show (the city's own figures; the governor's 2025 warning about cases closed with unrelated photos; a 2025 Thammasat study). The evidence is real (fictional: false): the steps of a report and a dated timeline. Two factual checks, no think question; Write explains the steps to a younger student; Speak asks what else you'd want to know about a \"79% resolved\" figure. No fictional case was kept: none added something the real case doesn't. New glossary: resident, agency, route, resolve, platform; new placeholder visual (a report's five steps); sources and claim record replaced."
   ]
 }
