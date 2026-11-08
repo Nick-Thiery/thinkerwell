@@ -190,7 +190,7 @@ const DIGITAL_WORLD = [
   'Draft course: not yet reviewed',
   'Kursus draf',
   "What AI is, and what it isn't",
-  'Train the leaf model',
+  'Try the leaf model',
   'Plan your AI helper',
   'dw-what-ai-is',
   'tw-dw-',
