@@ -75,7 +75,7 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * keeps it so a centre can print the sheets without the internet (docs/notes/pilot-check.md).
  * Raised to 830 kB on 8 November 2026: 829.2 kB with lessons that may teach through the reading alone (the Read stage,
  * print view, teacher guide and session plan handle a missing warm-up, quick check, planning boxes and self-check, in
- * the shared lesson and teacher chunks) and a third preview course's entry in the course list (docs/notes/slow-internet.md).
+ * the shared lesson and teacher chunks; docs/notes/slow-internet.md).
  */
 const PRECACHE_BUDGET = 830_000;
 /**
