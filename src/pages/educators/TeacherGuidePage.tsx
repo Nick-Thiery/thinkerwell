@@ -172,14 +172,16 @@ export function TeacherGuidePage({ lesson }: { lesson: CourseLesson }) {
               {write.prompt}
             </p>
           </div>
-          <div className="tw-print-keep">
-            <h3>{t('pages.teacherGuide.selfCheck')}</h3>
-            <ul {...en}>
-              {write.selfCheck.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-          </div>
+          {write.selfCheck.length > 0 ? (
+            <div className="tw-print-keep">
+              <h3>{t('pages.teacherGuide.selfCheck')}</h3>
+              <ul {...en}>
+                {write.selfCheck.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
           <div className="tw-print-keep">
             <h3>{t('pages.teacherGuide.example')}</h3>
             <p className="tw-guide-example" {...en}>

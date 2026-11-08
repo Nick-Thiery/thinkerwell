@@ -234,6 +234,16 @@ export const writeSchema = z.strictObject({
 });
 export type Write = z.infer<typeof writeSchema>;
 
+/**
+ * A preview course's Write: the planning boxes and the self-check may be left
+ * out (Justin's briefs of 4 and 7 November 2026: no planning form and
+ * checklist on every response). Our World's keep both.
+ */
+export const previewWriteSchema = writeSchema.extend({
+  planningBoxes: z.array(text),
+  selfCheck: z.array(text),
+});
+
 export const speakSchema = z.strictObject({
   partnerTask: text,
   independentTask: text,
@@ -669,6 +679,8 @@ export const digitalWorldLessonSchema = lessonSchema.extend({
   warmUp: warmUpSchema.optional(),
   /** The quick check may be left out. */
   read: previewReadSchema,
+  /** The planning boxes and self-check may be left out. */
+  write: previewWriteSchema,
   activity: activitySchema.optional(),
 });
 export type DigitalWorldLesson = z.infer<typeof digitalWorldLessonSchema>;
@@ -742,6 +754,8 @@ export const southeastAsiaLessonSchema = lessonSchema.extend({
   warmUp: warmUpSchema.optional(),
   /** The quick check may be left out. */
   read: previewReadSchema,
+  /** The planning boxes and self-check may be left out. */
+  write: previewWriteSchema,
   /** No Watch step until a person has watched and approved a video. */
   watch: watchSchema.nullable(),
   visual: captionedVisualSchema,

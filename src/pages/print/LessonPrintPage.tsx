@@ -195,7 +195,7 @@ export function LessonPrintSheet({ lesson, titleId = 'print-title', newPage = fa
             ))}
           </ul>
         </div>
-        <h3>{t('lessonPlayer.write.modePlan')}</h3>
+        {write.planningBoxes.length > 0 ? <h3>{t('lessonPlayer.write.modePlan')}</h3> : null}
         {write.planningBoxes.map((box, index) => (
           <div key={index} className="tw-print-keep">
             <p {...en}>{box}</p>
@@ -204,14 +204,16 @@ export function LessonPrintSheet({ lesson, titleId = 'print-title', newPage = fa
         ))}
         <h3>{t('lessonPlayer.write.answerLabel')}</h3>
         <AnswerLines count={8} />
-        <div className="tw-print-keep">
-          <h3>{t('lessonPlayer.write.selfCheckTitle')}</h3>
-          <ul className="tw-print-boxes" {...en}>
-            {write.selfCheck.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </div>
+        {write.selfCheck.length > 0 ? (
+          <div className="tw-print-keep">
+            <h3>{t('lessonPlayer.write.selfCheckTitle')}</h3>
+            <ul className="tw-print-boxes" {...en}>
+              {write.selfCheck.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
       </section>
 
       <section className="tw-print-part">

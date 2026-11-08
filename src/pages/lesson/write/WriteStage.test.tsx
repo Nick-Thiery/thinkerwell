@@ -154,6 +154,17 @@ describe('WriteStage', () => {
     await waitFor(async () => expect((await saved(learnerId))?.writing.selfCheck).toEqual({ 1: false }));
   });
 
+  it('shows no planning boxes and no self-check for a preview lesson that has none', async () => {
+    const user = userEvent.setup();
+    const bare = { ...lesson, write: { ...lesson.write, planningBoxes: [], selfCheck: [] } } as Lesson;
+    renderWrite(bare);
+    await answerBox();
+    await user.click(screen.getByText('Need help writing?'));
+    expect(screen.queryByText(lesson.write.planningBoxes[0]!)).toBeNull();
+    expect(screen.queryByRole('checkbox')).toBeNull();
+    expect(screen.getByRole('button', { name: new RegExp(escapeRegExp(lesson.write.sentenceStarters[0]!)) })).toBeInTheDocument();
+  });
+
   it('saves the planning boxes', async () => {
     const user = userEvent.setup();
     const learnerId = await addCurrentLearner();
