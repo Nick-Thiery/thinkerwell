@@ -401,9 +401,11 @@ export type CourseLesson = Omit<Lesson, 'oldId' | 'section' | 'watch' | 'visual'
   section: string;
   watch: Watch | null;
   visual: CourseVisual | null;
-  secondVisual?: SecondVisual;
+  secondVisual?: CourseSecondVisual;
   activity?: Activity;
 };
+/** A course's second picture: Southeast Asia Through Time's (with a "Look closely" question) or Art, Architecture and Society's (without). */
+export type CourseSecondVisual = Omit<SecondVisual, 'lookClosely'> & { lookClosely?: string };
 /** Any course's course.json. */
 export type AnyCourseFile = Omit<CourseFile, 'sections'> & { sections: CourseSection[] };
 
@@ -763,11 +765,60 @@ export const southeastAsiaLessonSchema = lessonSchema.extend({
 });
 export type SoutheastAsiaLesson = z.infer<typeof southeastAsiaLessonSchema>;
 
+// ------------------------------------------- Art, Architecture and Society
+//
+// content/courses/art-architecture-society/: a preview course
+// (src/content/courses.ts), Justin's brief of 4 November 2026, expanded on
+// 7 November. Twenty lessons in four sections of five, each teaching through
+// two real works: two genuine, credited images (museum photographs,
+// digitised artworks, licensed architectural photographs), the first with
+// the evidence and the second after the last reading part. Read teaches;
+// it asks nothing (no warm-up, no quick check). No Watch step until a person
+// has screened and approved a video.
+
+export const ART_SECTION_IDS = ['objects-making-power', 'buildings-belief-places', 'stories-lives-memory', 'museums-heritage-connections'] as const;
+export type ArtSectionId = (typeof ART_SECTION_IDS)[number];
+
+export const artSectionSchema = sectionSchema.extend({ id: z.enum(ART_SECTION_IDS) });
+
+export const artCourseFileSchema = courseFileSchema.extend({
+  sections: z.array(artSectionSchema).length(4),
+});
+export type ArtCourseFile = z.infer<typeof artCourseFileSchema>;
+
+/** A real image of a work: a JPEG in the course's visuals/, with its caption and credit (the work's record and the image's rights). */
+export const artPictureSchema = visualSchema.extend({
+  type: z.literal('photo'),
+  src: z.string().regex(/^visuals\/[A-Za-z0-9_-]+\.jpg$/, 'must be a path like "visuals/AAS-01-A.jpg" (a JPEG in the course\'s visuals/)'),
+  /** Under the picture: what the work is, who made it (where known), when, and where it is now. */
+  caption: text,
+  /** Read asks nothing, so there is no "Look closely" question. */
+  lookClosely: text.optional(),
+  credit: pictureCreditSchema,
+});
+export type ArtPicture = z.infer<typeof artPictureSchema>;
+
+export const artLessonSchema = lessonSchema.extend({
+  /** No Base44 original. */
+  oldId: z.null(),
+  section: z.enum(ART_SECTION_IDS),
+  /** Read teaches through the reading and the two works: no warm-up. */
+  warmUp: warmUpSchema.optional(),
+  read: previewReadSchema,
+  write: previewWriteSchema,
+  /** No Watch step until a person has screened and approved a video. */
+  watch: watchSchema.nullable(),
+  visual: artPictureSchema,
+  secondVisual: artPictureSchema,
+});
+export type ArtLesson = z.infer<typeof artLessonSchema>;
+
 /** Each course's course.json and lesson schemas, by course id (src/content/courses.ts). */
 export const COURSE_SCHEMAS = {
   'our-world': { course: courseFileSchema, lesson: lessonSchema },
   'digital-world': { course: digitalWorldCourseFileSchema, lesson: digitalWorldLessonSchema },
   'southeast-asia-through-time': { course: southeastAsiaCourseFileSchema, lesson: southeastAsiaLessonSchema },
+  'art-architecture-society': { course: artCourseFileSchema, lesson: artLessonSchema },
 } as const;
 export type CourseSchemaId = keyof typeof COURSE_SCHEMAS;
 
@@ -913,4 +964,5 @@ export const COURSE_QUIZ_SCHEMAS = {
   'our-world': quizFileSchema,
   'digital-world': quizFileSchema.extend({ section: z.enum(DIGITAL_WORLD_SECTION_IDS) }),
   'southeast-asia-through-time': quizFileSchema.extend({ section: z.enum(SOUTHEAST_ASIA_SECTION_IDS) }),
+  'art-architecture-society': quizFileSchema.extend({ section: z.enum(ART_SECTION_IDS) }),
 } as const;

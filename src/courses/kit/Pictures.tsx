@@ -1,16 +1,17 @@
-import type { CourseVisual, SecondVisual } from '../../content';
+import type { CourseSecondVisual, CourseVisual } from '../../content';
 import { useI18n } from '../../i18n';
 import { LessonVisual } from '../../pages/lesson/visual/LessonVisual';
 
 /**
- * A preview course's pictures (Southeast Asia Through Time), shown through
+ * A preview course's pictures (Southeast Asia Through Time, Art, Architecture
+ * and Society), shown through
  * the shared LessonVisual (src/lesson/extras.tsx): a caption under each,
  * with a "Look closely" question, and for a real photo or map (the lesson's
  * `secondVisual`) "What can this source show?" and where it came from, as
  * CC BY and CC BY-SA ask. Our World's pictures have none of this, so none of
  * it is in their code.
  */
-export function PictureCaption({ visual }: { visual: CourseVisual | SecondVisual }) {
+export function PictureCaption({ visual }: { visual: CourseVisual | CourseSecondVisual }) {
   const { t, contentLang } = useI18n();
   if (!visual.caption) return null;
   const credit = 'credit' in visual ? visual.credit : null;
@@ -24,7 +25,9 @@ export function PictureCaption({ visual }: { visual: CourseVisual | SecondVisual
       ) : null}
       {credit ? (
         <>
-          <p>{t('previewCourse.picture.limits')}</p>
+          {/* A course that asks a question about each source (Southeast Asia Through Time) asks this one too;
+              Art, Architecture and Society's Read asks nothing. */}
+          {visual.lookClosely ? <p>{t('previewCourse.picture.limits')}</p> : null}
           <PictureCredit credit={credit} />
         </>
       ) : null}
@@ -37,7 +40,7 @@ export function PictureCaption({ visual }: { visual: CourseVisual | SecondVisual
  * (linked) and the file's page, and what Thinkerwell changed. Plain links,
  * opened in a new tab only on a tap.
  */
-function PictureCredit({ credit }: { credit: NonNullable<SecondVisual['credit']> }) {
+function PictureCredit({ credit }: { credit: NonNullable<CourseSecondVisual['credit']> }) {
   const { t, tx, englishLang } = useI18n();
   const newTab = <span className="tw-visually-hidden">{t('pages.teacherTools.newTab')}</span>;
   const licence = credit.licenceUrl ? (
@@ -64,7 +67,7 @@ function PictureCredit({ credit }: { credit: NonNullable<SecondVisual['credit']>
 }
 
 /** A lesson's second picture: after the last reading part, in the print view and in the teacher guide. */
-export function SecondPicture({ visual, onPaper = false }: { visual: SecondVisual; onPaper?: boolean }) {
+export function SecondPicture({ visual, onPaper = false }: { visual: CourseSecondVisual; onPaper?: boolean }) {
   const { t } = useI18n();
   const picture = (
     <LessonVisual visual={visual} enlargeable={!onPaper} title={visual.type === 'photo' ? t('previewCourse.picture.photoTitle') : undefined} />

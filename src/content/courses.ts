@@ -64,6 +64,14 @@ export const COURSES: readonly CourseDefinition[] = [
     messages: 'southeastAsia',
     sectionIds: ['evidence-and-connections', 'trade-and-power', 'war-and-independence', 'memory-and-shared-histories'],
   },
+  {
+    id: 'art-architecture-society',
+    dir: 'courses/art-architecture-society',
+    preview: true,
+    lessonIdPrefix: 'aas-',
+    messages: 'artArchitecture',
+    sectionIds: ['objects-making-power', 'buildings-belief-places', 'stories-lives-memory', 'museums-heritage-connections'],
+  },
 ];
 
 /** The preview courses, in order. */

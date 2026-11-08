@@ -181,7 +181,7 @@ test('the production build has no source maps and no dev-only pages', { tag: '@o
   await expect(page.locator('h1')).toHaveText("This page isn't here");
 });
 
-// Digital World and Southeast Asia Through Time are preview courses
+// Digital World, Southeast Asia Through Time and Art, Architecture and Society are preview courses
 // (docs/notes/digital-world-preview.md): their lessons, activities, pictures,
 // words and styles, and the kit they share, are built into assets/preview/,
 // which the service worker never precaches, and load only on a device that
@@ -198,6 +198,8 @@ const DIGITAL_WORLD = [
 ];
 // Southeast Asia Through Time, the second preview course: the same rule.
 const SOUTHEAST_ASIA = ['Southeast Asia Through Time is a draft', 'sat-01-ban-chiang-pot', 'SAT01-photo'];
+// Art, Architecture and Society, the third: the same rule.
+const ART_ARCHITECTURE = ['Art, Architecture and Society is a draft', 'aas-01-art-and-context', 'AAS-01-A'];
 
 // Vietnamese is a hidden preview language (ready: false, docs/notes/languages.md):
 // its messages, lessons and pictures are built into assets/locales/vi/, its font
@@ -232,7 +234,7 @@ test('no preview course content or code is precached or reaches a first visit', 
   expect(urls.filter((url) => url.includes('/preview/'))).toEqual([]);
   for (const url of urls.filter((u) => TEXT.test(u))) {
     const text = (await sentSize(request, url)).body.toString('utf8');
-    for (const marker of [...DIGITAL_WORLD, ...SOUTHEAST_ASIA]) expect(text.includes(marker), `${url} has "${marker}"`).toBe(false);
+    for (const marker of [...DIGITAL_WORLD, ...SOUTHEAST_ASIA, ...ART_ARCHITECTURE]) expect(text.includes(marker), `${url} has "${marker}"`).toBe(false);
   }
 
   const origin = new URL(baseURL ?? 'http://localhost').origin;
@@ -248,7 +250,7 @@ test('no preview course content or code is precached or reaches a first visit', 
   expect([...firstVisit].filter((url) => url.includes('/preview/'))).toEqual([]);
   for (const url of [...firstVisit].filter((u) => TEXT.test(u) || u === '/')) {
     const text = (await sentSize(request, url)).body.toString('utf8');
-    for (const marker of [...DIGITAL_WORLD, ...SOUTHEAST_ASIA]) expect(text.includes(marker), `${url} has "${marker}"`).toBe(false);
+    for (const marker of [...DIGITAL_WORLD, ...SOUTHEAST_ASIA, ...ART_ARCHITECTURE]) expect(text.includes(marker), `${url} has "${marker}"`).toBe(false);
   }
 
   // The words are real: with the preview on, they arrive from assets/preview/.

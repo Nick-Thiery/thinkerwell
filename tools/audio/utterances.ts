@@ -29,11 +29,17 @@ import { NORMALISER_VERSION, speechInput } from './normalise.ts';
 
 export const ROOT = path.resolve(import.meta.dirname, '..', '..');
 
-/** Courses with no recordings, on purpose (none since November 2026: every course is recorded). */
-export const SKIPPED_COURSES: readonly string[] = [];
+/**
+ * Courses with no recordings yet, on purpose: Listen uses the device's voice
+ * for them. Art, Architecture and Society (8 November 2026) is recorded once
+ * its English and translations are settled; take it out of this list then.
+ */
+export const SKIPPED_COURSES: readonly string[] = ['art-architecture-society'];
 
 /** The preview courses, whose recordings are kept apart from Our World's (courseUtterances). */
-export const RECORDED_COURSES: readonly CourseDefinition[] = COURSES.filter((course) => course.id !== DEFAULT_COURSE_ID);
+export const RECORDED_COURSES: readonly CourseDefinition[] = COURSES.filter(
+  (course) => course.id !== DEFAULT_COURSE_ID && !SKIPPED_COURSES.includes(course.id),
+);
 
 /** What follows a piece in the recording: a heading's silence, a paragraph's, a sentence's, or the end. */
 export type PieceGap = 'heading' | 'paragraph' | 'sentence' | 'end';

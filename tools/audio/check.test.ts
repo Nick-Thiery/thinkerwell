@@ -154,7 +154,7 @@ describe('a language that is not ready (Vietnamese, a hidden preview)', () => {
 describe('preview courses', () => {
   it('are recorded apart from Our World: in English, Indonesian and Malay, each course on its own', async () => {
     const { courseUtterances, listenUtterances, SKIPPED_COURSES } = await import('./utterances.ts');
-    expect(SKIPPED_COURSES).toEqual([]);
+    expect(SKIPPED_COURSES).toEqual(['art-architecture-society']);
     for (const language of listenUtterances()) {
       expect(language.sections.filter((section) => /^(dw|sat)-/.test(section.key))).toEqual([]);
     }
