@@ -67,7 +67,7 @@ describe('Art, Architecture and Society in Indonesian and Malay', () => {
     for (const lesson of artArchitecture.getLessons()) {
       const other = translated?.getLesson(lesson.id);
       for (const key of ['visual', 'secondVisual'] as const) {
-        const picture = lesson[key]!;
+        const picture = lesson[key];
         expect(other?.[key]?.src, lesson.id).toBe(picture.src);
         expect(translated?.getVisualUrl(other![key]!.src), lesson.id).toBe(artArchitecture.getVisualUrl(picture.src));
         expect((other?.[key] as { credit?: unknown }).credit, lesson.id).toEqual((picture as { credit?: unknown }).credit);
