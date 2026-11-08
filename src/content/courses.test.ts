@@ -76,12 +76,22 @@ describe('Digital World’s files', () => {
     expect(loaded.lessons.every((lesson) => lesson.id.startsWith('dw-') && lesson.oldId === null)).toBe(true);
   });
 
-  it('give every lesson an activity, with the kept drafts’ activities where they were', () => {
+  it('keep an activity only where it teaches something the reading can’t (Justin’s brief of 4 November 2026)', () => {
     const loaded = loadCourse('digital-world', dwCourse, dwLessons);
-    expect(loaded.lessons.every((lesson) => lesson.activity)).toBe(true);
+    const withActivity = loaded.lessons.filter((lesson) => lesson.activity).map((lesson) => [lesson.number, lesson.activity!.type]);
+    expect(withActivity).toEqual([
+      [3, 'train-model'],
+      [11, 'ask-tool'],
+      [14, 'check-claim'],
+      [17, 'design-plan'],
+    ]);
     const at = (n: number) => loaded.lessons.find((lesson) => lesson.number === n)!.activity!;
-    expect([at(1).type, at(3).type, at(8).type, at(14).type, at(17).type]).toEqual(['sort', 'train-model', 'compare-results', 'check-claim', 'design-plan']);
+    // Lesson 3's leaf model is an optional extension, folded away; the reading teaches the fair test.
+    expect(at(3).extension).toBe(true);
     expect(`${at(17).stage}/${at(17).placement}`).toBe('write/before-prompt');
+    // Most lessons now begin with the reading and have a shorter quick check.
+    expect(loaded.lessons.filter((lesson) => !lesson.warmUp).length).toBeGreaterThanOrEqual(9);
+    expect(loaded.lessons.every((lesson) => lesson.read.checks.length <= 3)).toBe(true);
   });
 
   it('are pictures planned but not drawn yet: only a required picture is a problem', () => {
@@ -108,9 +118,9 @@ describe('Digital World’s files', () => {
   });
 
   it('name the file and the field for a problem', () => {
-    const lesson = lessonFile('DW08.json') as unknown as { activity: { measure: string } };
-    lesson.activity.measure = '';
-    expect(() => parseContentFile('lesson', lesson, `${DW}/lessons/DW08.json`, 'digital-world')).toThrow(/DW08\.json: activity\.measure/);
+    const lesson = lessonFile('DW17.json') as unknown as { activity: { title: string } };
+    lesson.activity.title = '';
+    expect(() => parseContentFile('lesson', lesson, `${DW}/lessons/DW17.json`, 'digital-world')).toThrow(/DW17\.json: activity\.title/);
   });
 
   it('refuse a lesson id without the course’s prefix, or a section it doesn’t have', () => {
@@ -215,8 +225,8 @@ describe('activityProblems', () => {
   });
 
   it('checks a sort item suggests a real group', () => {
-    const activity = activityOf('DW01.json');
-    if (activity.type !== 'sort') throw new Error('DW01 sorts');
+    const activity = retiredActivity('DW01-ai-or-not.json');
+    if (activity.type !== 'sort') throw new Error('the retired Lesson 1 sorts');
     activity.items[0]!.suggested = 'maybe';
     expect(problems(activity)).toEqual(['here: item "calculator" suggests "maybe", which isn\'t a group']);
   });
@@ -228,8 +238,8 @@ describe('activityProblems', () => {
   });
 
   it('checks compare-results names the group with the fewest right', () => {
-    const activity = activityOf('DW08.json');
-    if (activity.type !== 'compare-results') throw new Error('DW08 compares');
+    const activity = retiredActivity('DW08-comparing-results.json');
+    if (activity.type !== 'compare-results') throw new Error('the retired Lesson 8 compares');
     activity.mostMistakes = 'teachers';
     expect(problems(activity)).toEqual(['here: mostMistakes "teachers" isn\'t the one group with the fewest right']);
   });
