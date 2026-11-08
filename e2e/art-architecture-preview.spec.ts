@@ -53,11 +53,11 @@ test.describe('with the preview on', () => {
     await expect(page.locator('.tw-lx > .tw-lesson-visual > img')).toBeVisible();
     await expect(page.locator('.tw-lx .tw-pc-picture-credit').first()).toContainText('Public domain');
     await expect(page.locator('.tw-read-warmup-question')).toHaveCount(0);
-    // Four steps (no Watch until a video is approved).
-    await expect(page.getByText(/Step 1 of 4/).first()).toBeVisible();
+    // Four steps: no Watch until a video is approved.
+    await expect(page.locator(`a[href$="/lesson/${LESSON}/watch"]`)).toHaveCount(0);
     await page.goto(`/lesson/${LESSON}/read?part=3`);
     // The second work after the last part; then on to Write, never to an empty quick check.
-    await expect(page.locator('.tw-read-part .tw-lesson-visual img')).toBeVisible();
+    await expect(page.locator('.tw-read-part .tw-lesson-visual img').first()).toBeVisible();
     await page.getByRole('button', { name: 'Continue to Write' }).click();
     await expect(page).toHaveURL(new RegExp(`/lesson/${LESSON}/write`));
     await expect(page.getByRole('heading', { name: 'Quick check' })).toHaveCount(0);

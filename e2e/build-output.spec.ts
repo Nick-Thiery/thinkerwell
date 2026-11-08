@@ -73,8 +73,11 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * writing task and statements in English, Indonesian and Malay, 6.7 kB as three chunks loaded only with the page; the
  * page's code and its words in three languages, 3.7 kB in the Educators chunk; its styles, 0.4 kB). The offline copy
  * keeps it so a centre can print the sheets without the internet (docs/notes/pilot-check.md).
+ * Raised to 830 kB on 8 November 2026: 829.2 kB with lessons that may teach through the reading alone (the Read stage,
+ * print view, teacher guide and session plan handle a missing warm-up, quick check, planning boxes and self-check, in
+ * the shared lesson and teacher chunks) and a third preview course's entry in the course list (docs/notes/slow-internet.md).
  */
-const PRECACHE_BUDGET = 829_000;
+const PRECACHE_BUDGET = 830_000;
 /**
  * Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before),
  * 210.5 kB after the language and pilot-day merges, 212.7 kB with the header's language switch and the one language
