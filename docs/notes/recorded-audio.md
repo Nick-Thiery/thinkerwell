@@ -167,6 +167,8 @@ Nick's call (2 November 2026): Digital World and Southeast Asia Through Time get
 - **Checks.** `npm run check:audio` checks every course track like a language (`courseAudioProblems` in `tools/audio/check.ts`). Tests: `tools/audio/check.test.ts`, `src/audio/recordings.test.ts`.
 - **What was recorded** (3 November 2026, no `CHECK:` warnings): Digital World 102 files per language (English 14.9 MB, 62 min; Indonesian 21.9 MB, 91 min; Malay 19.6 MB, 82 min) and Southeast Asia Through Time 72 (English 10.2 MB, 43 min; Indonesian 15.1 MB, 63 min; Malay 13.6 MB, 57 min): 95 MB in the repository and the deployment, none of it precached. On a CPU with one thread, English took about 2 h 10 min (Kokoro), Indonesian about 2 h and Malay about 2 h (MMS-TTS). The precache gained only `courseRecordings.json`'s few lines (the build test still passes under 829 kB, with little to spare).
 
+- **Art, Architecture and Society** (8 November 2026, no `CHECK:` warnings): 120 files per language (English 30.5 MB, 127 min; Indonesian 43.1 MB, 179 min; Malay 38.0 MB, 158 min), another 112 MB in the repository and the deployment, none of it precached. It sat in `SKIPPED_COURSES` (`tools/audio/utterances.ts`) until its English and translations were settled; that list is empty now. With two threads on two cores, English took about 1 h 40 min, Indonesian about 1 h 30 min and Malay about 1 h.
+
 ## Vietnamese (hidden preview)
 
 Branch `vietnamese-preview`, October 2026. Vietnamese is a hidden preview language: its interface and lessons are AI drafts that no native speaker has reviewed (`ready: false` in `src/i18n/locales.ts`; CLAUDE.md rule 7), so nobody can choose it yet. The pipeline can record it, so the team can hear it, but the recordings are not on `main`.

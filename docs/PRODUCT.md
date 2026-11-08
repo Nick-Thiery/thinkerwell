@@ -218,7 +218,7 @@ Details: `docs/notes/digital-world-preview.md`.
 - **A course choice only where a preview is on**: "Courses on this device", Our World first, at the top of the course map, the learner home and "Just look around".
 - **Activities don't count towards a stage being done** (spec section 8, item 2, still open); their answers are saved with the lesson's work on the device. Lesson 2 has picture cards only, no drawing mode. Lesson 8's tool is a labelled pretend tool with pre-written answers.
 - **Sections** borrow Our World's four section colours, each with an icon of its own (How AI works amber with a light bulb, Check what you see sage with an eye, Use tools wisely rose with a hand, AI where you live sky with people), until the brand book has colours for them. "Digital World" is still the working name.
-- **No section checks or certificates** until they are drafted, and no recordings: Listen uses the device's voice.
+- **No section checks or certificates** until they are drafted. Listen plays recordings in English, Indonesian and Malay (8 November 2026), like the other preview courses.
 - **In Indonesian and Malay**, Digital World is translated in full, interface and lessons with their activities (AI-drafted and flagged, like the rest; November 2026), with no Watch step until a video in that language is approved. In any other language its lessons stay English, marked as English, with a line saying so in the banner.
 - **For reviewers**: each lesson's print view has its activity on paper, its teacher guide has the answers and the lesson's review notes, and "Print all lessons" prints the whole course.
 
