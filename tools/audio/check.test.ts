@@ -171,8 +171,10 @@ describe('preview courses', () => {
       'ms/southeast-asia-through-time',
     ]);
     for (const track of tracks) {
-      const prefix = { 'digital-world': 'dw-', 'southeast-asia-through-time': 'sat-', 'art-architecture-society': 'aas-' }[track.course];
-      expect(track.sections.every((section) => section.key.startsWith(prefix))).toBe(true);
+      const prefixes: Record<string, string> = { 'digital-world': 'dw-', 'southeast-asia-through-time': 'sat-', 'art-architecture-society': 'aas-' };
+      const prefix = prefixes[track.course];
+      expect(prefix).toBeDefined();
+      expect(track.sections.every((section) => section.key.startsWith(prefix!))).toBe(true);
       expect(track.sections.some((section) => section.key === 'sample')).toBe(false);
     }
   });
