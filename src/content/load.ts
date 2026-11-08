@@ -305,7 +305,8 @@ export function checkTranslation(code: string, english: EnglishFiles, translatio
     else compare(where('lessons/', name), raw, lessons.get(name));
     mergedLessons[path] = applyTranslation(raw, lessons.get(name));
     const src = (raw as { visual?: { src?: string } | null }).visual?.src;
-    if (src && (english.visuals?.has(src) ?? true) && !translation.visuals.has(src)) {
+    // A photograph of a real work (Art, Architecture and Society) has no words to translate: only diagrams need a copy.
+    if (src && src.endsWith('.svg') && (english.visuals?.has(src) ?? true) && !translation.visuals.has(src)) {
       problems.push(`${base}${src} is missing (a copy of the English picture with its words translated).`);
     }
   }
