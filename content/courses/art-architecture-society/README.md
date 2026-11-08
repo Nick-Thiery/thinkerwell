@@ -82,4 +82,4 @@ Every image file was downloaded from the brief's exact item record (or the recor
   
   No learner is asked to share their religion, identity or family, or to perform a practice.
 - **No video** has been watched. Any added later must be screened at the exact title and URL first.
-- **Indonesian and Malay** versions are drafted by AI and need native-speaker review, as the other courses do.
+- **Indonesian and Malay** (8 November 2026): the course text and all 20 lessons, in `id/` and `ms/`, drafted by AI and flagged for native-speaker review, as the other courses are. Notes per string and the terms chosen are in `docs/translation/<code>/notes/courses/art-architecture-society/` (`TERMS.md`). The images and their credits stay as they are. Each translator's list of what to check first is in their notes; the most important are Lesson 15 (Diponegoro) and Lesson 19 (Día de Muertos) in both languages, and Lesson 9 (George Town) in Malay.

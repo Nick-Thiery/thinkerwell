@@ -85,4 +85,21 @@ test.describe('with the preview on', () => {
     expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
     expect(errors).toEqual([]);
   });
+
+  test('in Indonesian, its lessons are translated, with the same real images and credits', async ({ page }) => {
+    await turnOn(page);
+    await page.goto(`/lesson/${LESSON}/read`);
+    await page.getByRole('button', { name: /Language|Bahasa/ }).first().click();
+    await page.getByRole('menuitemradio', { name: /Bahasa Indonesia/ }).or(page.getByRole('radio', { name: /Bahasa Indonesia/ })).first().click();
+    await expect(
+      page.getByRole('heading', { level: 1, name: 'Bagaimana sebuah karya seni bisa membantu kita memahami sebuah masyarakat?' }),
+    ).toBeVisible();
+    await expect(page.locator('html')).toHaveAttribute('lang', 'id');
+    await expect(page.locator('.tw-lx > .tw-lesson-visual > img')).toBeVisible();
+    await expect(page.locator('.tw-lx .tw-pc-picture-credit').first()).toContainText('Public domain');
+    await page.goto('/lesson/aas-08-streets-trade-and-shared-space/read');
+    await page.getByRole('button', { name: /Language|Bahasa/ }).first().click();
+    await page.getByRole('menuitemradio', { name: /Bahasa Melayu/ }).or(page.getByRole('radio', { name: /Bahasa Melayu/ })).first().click();
+    await expect(page.getByRole('heading', { level: 1, name: 'Bagaimanakah jalan perdagangan menyatukan kehidupan yang berbeza?' })).toBeVisible();
+  });
 });
