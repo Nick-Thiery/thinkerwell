@@ -121,3 +121,55 @@ Two translators work on the course at the same time (Lessons 1–8 and course.js
 | Ms / Coach (titles with a name) | Bu / Pelatih | | "Bu Rana", "Pelatih Ana"; names kept | L9–17 |
 | the fair (fun fair) | pasar malam | | Lesson 12 | L9–17 |
 | spam filter | penyaring pesan sampah | filter spam | Lesson 16 | L9–17 |
+| worked example (a lesson's step-by-step example) | contoh, langkah demi langkah | contoh yang dikerjakan | Lesson 1's heading (8 November 2026 revision) | L1–8 |
+| sound-alike slip in voice typing (English “tree”/“three”) | “Pohon itu tua” typed as “Pohon itu dua” | | Lesson 1's evidence: an Indonesian slip of the same kind replaces the English homophone; flagged for review | L1–8 |
+| grant (money from a foundation) | hibah | dana bantuan | Lesson 2, the Rockefeller grant | L1–8 |
+| charity / foundation | lembaga amal / yayasan | | “Rockefeller Foundation” kept, glossed “Yayasan Rockefeller” once | L1–8 |
+| college and university (where researchers worked) | perguruan tinggi | | Indonesian has no everyday college/university split | L1–8 |
+| boom (a time of money and interest) | masa ramai | masa jaya, ledakan | Lesson 2 heading “Masa ramai dan musim dingin AI” | L1–8 |
+| “if-then” rules | aturan “jika-maka” | | Lesson 2 (DENDRAL) | L1–8 |
+| Fifth Generation project (Japan) | proyek (komputer) Generasi Kelima (Fifth Generation) | | English name in brackets once | L1–8 |
+| graphics chip | cip grafis | | Lesson 2 | L1–8 |
+| employer | pemberi kerja | majikan | Lesson 9 key word; “pemberi kerja” is the labour-law word, and “majikan” often means the employer of a domestic worker | L9–12 |
+| talks between workers, employers and governments (social dialogue) | pembicaraan antara pekerja, pemberi kerja dan pemerintah | dialog sosial | Lesson 9 (8 November 2026 revision) | L9–12 |
+| agency (a public body) | lembaga | instansi, badan | Lesson 10 key word; “instansi” is the official word for a government agency. “badan” stays for UN bodies (“badan PBB”). Not KEY_TERMS's *agency* (“berdaya”, Our World Lesson 19), a different sense | L9–12 |
+| route (a report to the right office) | mengarahkan | meneruskan | Lesson 10 key word (Traffy Fondue) | L9–12 |
+| resolve / resolved (a report) | menyelesaikan / diselesaikan | | Lesson 10 key word; “79% diselesaikan” | L9–12 |
+| platform (a reporting website or app) | platform | | Lesson 10 key word | L9–12 |
+| report (to a city) / close a case | laporan, melaporkan / menutup laporan | aduan, pengaduan / menutup kasus | “kasus” often suggests a criminal case, so a closed case is “laporan yang ditutup” | L9–12 |
+| officials (who check and close reports) | petugas | pejabat | “pejabat” suggests senior rank; kept for officials who give an award and in teachers' notes | L9–12 |
+| sort (reports by type) | mengelompokkan | memilah | Lesson 10 | L9–12 |
+| governor (of Bangkok) | gubernur | | “Gubernur Bangkok”, as Indonesian news | L9–12 |
+| World Bank | Bank Dunia | | Lesson 11 | L9–12 |
+| senior secondary school | sekolah menengah atas (SMA) | | Lesson 11 (Nigeria, Türkiye) | L9–12 |
+| practise / practice | berlatih / latihan | | Lesson 11 key word; “melatih” is not a form, since it is TERMS's word for training a model or a person | L9–12 |
+| template (a face template) | templat | template | Lesson 12 key word; KBBI spelling | L9–12 |
+| face scan / scan (verb) | pemindaian wajah / memindai | | Lesson 12 | L9–12 |
+| live facial recognition | pengenalan wajah secara langsung | real-time (in teachers' notes, in brackets) | Lesson 12 | L9–12 |
+| traveller / passport check | pelancong / pemeriksaan paspor | penumpang | Lesson 12 (Changi Airport) | L9–12 |
+| residents (of Singapore, at the airport) | penduduk (Singapura) | warga | Citizens and permanent residents; “warga” can read as citizens only. A town's residents stay “warga” | L9–12 |
+| fresh test (on examples nobody has used) | uji baru | | Lesson 3 (November 2026 revision); “uji yang adil” for a fair test | L9–17 (DW03, DW13–17 revision) |
+| label on AI-made content (“Made with AI”) | keterangan | label | Lesson 13; “label” stays Lesson 3's word for training labels | L9–17 (DW03, DW13–17 revision) |
+| bullying | perundungan | bullying | Lesson 14; the simpler text adds “atau bullying” | L9–17 (DW03, DW13–17 revision) |
+| public life | kehidupan bersama | kehidupan publik | Lesson 15 | L9–17 (DW03, DW13–17 revision) |
+| voluntary | sukarela | | Lesson 16 key word | L9–17 (DW03, DW13–17 revision) |
+| guide (the ASEAN Guide) / guideline | panduan / pedoman | | Lesson 16: the ASEAN guide is a guideline, “Panduan ASEAN adalah pedoman” | L9–17 (DW03, DW13–17 revision) |
+| timeline (a schedule of dates) | jadwal | | Never “linimasa”, which is this course's word for a feed | L9–17 (DW03, DW13–17 revision) |
+| impact (of a project) | dampak | | Lesson 17 key word | L9–17 (DW03, DW13–17 revision) |
+| sign (a signboard, as another way than AI) | papan petunjuk | | Lesson 17; “tanda” would read as a symptom next to “tanda-tanda penyakit mata” | L9–17 (DW03, DW13–17 revision) |
+| eye specialist / regular eye checks | dokter spesialis mata / memeriksa mata secara rutin | | Lesson 17 (SELENA+) | L9–17 (DW03, DW13–17 revision) |
+| platform (online work platform) | platform | | Lesson 5 key word (revised 8 November 2026); "platform digital" is everyday Indonesian | L5–8 rev. |
+| minimum wage | upah minimum | | Lesson 5 key word; Indonesia's UMP and UMK are monthly, the glossary keeps "for an hour of work" | L5–8 rev. |
+| reformers (labour history) | para pembaru | tokoh pembaruan | Lesson 5 | L5–8 rev. |
+| British (a 1909 law) | Inggris | Britania Raya | Lesson 5; everyday Indonesian says "Inggris" for Britain | L5–8 rev. |
+| piece-rate work | kerja borongan | | Lesson 5 teachers' note | L5–8 rev. |
+| forecast | perkiraan | ramalan, proyeksi | Lesson 6 key word, as in "perkiraan cuaca"; "estimate" and "expects" are the verb "memperkirakan" | L5–8 rev. |
+| Tier 1, Tier 2 (data centres) | Tier 1, Tier 2 | | Lesson 6 teachers' note; learner text says "jenis pusat data yang paling dasar" | L5–8 rev. |
+| stop approving (permits) | berhenti memberi izin | | Lesson 6 (Johor, November 2025) | L5–8 rev. |
+| publish | menerbitkan (terbit, diterbitkan, penerbitan) | | Lesson 7 key word | L5–8 rev. |
+| rule by other countries (learner text) / colonialism (teachers' notes) | masa ketika negara-negara lain menguasai … / penjajahan | | Lesson 7: learner text avoids the word, as the English does | L5–8 rev. |
+| cover / support (a language, of a model) | mencakup / mendukung | | Lesson 7 (SEA-LION, Sahabat-AI) | L5–8 rev. |
+| represent (in the data) | mewakili (diwakili, terwakili, keterwakilan) | | Lesson 8 key word | L5–8 rev. |
+| unfair | tidak adil (form: adil) | | Lesson 8 key word; "fair / fairness" stays adil / keadilan | L5–8 rev. |
+| hiring tool | alat untuk memilih pekerja baru | alat rekrutmen | Lesson 8 (Suresh and Guttag's made-up case) | L5–8 rev. |
+| gap (in results) | kesenjangan | perbedaan | Lesson 8, both readings | L5–8 rev. |

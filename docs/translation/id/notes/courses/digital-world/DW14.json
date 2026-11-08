@@ -10,8 +10,8 @@
     "flag": true
   },
   "learningGoal": {
-    "source": "Use lateral reading to check a made-up news story against other sources, and decide whether to share it.",
-    "back": "Use lateral reading to check a made-up news story against other sources, and decide whether the story should be shared.",
+    "source": "Use lateral reading to check a made-up news story against other sources, explain why copies add no evidence, and decide whether to share it.",
+    "back": "Use lateral reading to check a made-up news story against other sources, explain why copies add no evidence, and decide whether the story should be shared.",
     "flag": true
   },
   "warmUp.question": {
@@ -45,8 +45,8 @@
     "flag": true
   },
   "evidence.question": {
-    "source": "What does the post say? What do the other sources say?",
-    "back": "What does the post say? What do the other sources say?",
+    "source": "What does the post say? What is missing from it?",
+    "back": "What does the post say? What is not in it?",
     "flag": true
   },
   "evidence.cards.0.title": {
@@ -65,102 +65,6 @@
     "back": "“BIG NEWS. The Brightwater bridge is closed FOR A WHOLE YEAR from tomorrow. Share this before they delete it.” There are no names, and no link to the town council.",
     "flag": true
   },
-  "evidence.cards.1.title": {
-    "source": "What other sources say",
-    "back": "What other sources say",
-    "flag": true
-  },
-  "evidence.cards.1.columns.0": {
-    "source": "Source",
-    "back": "Source",
-    "flag": true
-  },
-  "evidence.cards.1.columns.1": {
-    "source": "Who is behind it",
-    "back": "Who is behind it",
-    "flag": true
-  },
-  "evidence.cards.1.columns.2": {
-    "source": "What it says",
-    "back": "What it says",
-    "flag": true
-  },
-  "evidence.cards.1.rows.0.0": {
-    "source": "About Brightwater Daily Truth",
-    "back": "About Brightwater Daily Truth",
-    "flag": true
-  },
-  "evidence.cards.1.rows.0.1": {
-    "source": "The page does not say who runs it.",
-    "back": "The page does not say who runs it.",
-    "flag": true
-  },
-  "evidence.cards.1.rows.0.2": {
-    "source": "It posts a shocking story every day. Many were false.",
-    "back": "The page posts a shocking story every day. Many of them turned out to be false.",
-    "flag": true
-  },
-  "evidence.cards.1.rows.1.0": {
-    "source": "Town council notice",
-    "back": "Town council notice",
-    "flag": true
-  },
-  "evidence.cards.1.rows.1.1": {
-    "source": "The group that runs the town and looks after the bridge.",
-    "back": "The body that runs the town and looks after the bridge.",
-    "flag": true
-  },
-  "evidence.cards.1.rows.1.2": {
-    "source": "The bridge closes for repairs on 3 and 4 May. It opens again on 5 May.",
-    "back": "The bridge is closed for repairs on 3 and 4 May. The bridge opens again on 5 May.",
-    "flag": true
-  },
-  "evidence.cards.1.rows.2.0": {
-    "source": "Brightwater Radio news",
-    "back": "Brightwater Radio News",
-    "flag": true
-  },
-  "evidence.cards.1.rows.2.1": {
-    "source": "A local news team. It names its reporters.",
-    "back": "A local news team. This team names its reporters.",
-    "flag": true
-  },
-  "evidence.cards.1.rows.2.2": {
-    "source": "The council told us: workers will fix the bridge on 3 and 4 May. Take the ferry on those two days.",
-    "back": "The town council told us: workers will repair the bridge on 3 and 4 May. Take the ferry on those two days.",
-    "flag": true,
-    "note": "\"Ferry\" became \"kapal penyeberangan\" (crossing boat), the usual Indonesian word."
-  },
-  "evidence.cards.1.rows.3.0": {
-    "source": "Brightwater Fact Check",
-    "back": "Brightwater Fact Check",
-    "flag": true
-  },
-  "evidence.cards.1.rows.3.1": {
-    "source": "A group that checks stories people share.",
-    "back": "A group that checks stories people share.",
-    "flag": true
-  },
-  "evidence.cards.1.rows.3.2": {
-    "source": "False. We asked the town council. The bridge closes for two days, not a year.",
-    "back": "False. We asked the town council. The bridge is closed for two days, not a year.",
-    "flag": true
-  },
-  "evidence.cards.1.rows.4.0": {
-    "source": "Town chat page",
-    "back": "Residents' chat page",
-    "flag": true
-  },
-  "evidence.cards.1.rows.4.1": {
-    "source": "A page where anyone can post.",
-    "back": "A page where anyone can post.",
-    "flag": true
-  },
-  "evidence.cards.1.rows.4.2": {
-    "source": "The same words as the Daily Truth post, copied word for word. No names, no link.",
-    "back": "Its words are the same as the Daily Truth post, copied word for word. No names, no link.",
-    "flag": true
-  },
   "activity.title": {
     "source": "Read sideways",
     "back": "Reading sideways",
@@ -175,7 +79,8 @@
   "activity.claim.from": {
     "source": "Brightwater Daily Truth",
     "back": "Brightwater Daily Truth",
-    "flag": true
+    "flag": true,
+    "note": "The made-up page's name \"Brightwater Daily Truth\" is kept in English (a page name); the other made-up sources' names are translated (\"Berita Radio Brightwater\", \"Cek Fakta Brightwater\", \"Halaman obrolan warga\"), as Indonesian outlets would be named. They are the same in the evidence table and the activity."
   },
   "activity.claim.text": {
     "source": "BIG NEWS. The Brightwater bridge closes for a WHOLE YEAR from tomorrow. Share this before they delete it.",
@@ -240,7 +145,8 @@
   "activity.sources.2.says": {
     "source": "The council told us: workers will fix the bridge on 3 and 4 May. Take the ferry on those two days.",
     "back": "The town council told us: workers will repair the bridge on 3 and 4 May. Take the ferry on those two days.",
-    "flag": true
+    "flag": true,
+    "note": "\"Ferry\" became \"kapal penyeberangan\" (crossing boat), the usual Indonesian word."
   },
   "activity.sources.3.name": {
     "source": "Brightwater Fact Check",
@@ -328,14 +234,14 @@
     "flag": true
   },
   "read.sections.1.text": {
-    "source": "In 2017, researchers at Stanford University in the United States watched 45 people judge real websites about social issues: 10 historians who teach at universities, 10 professional fact-checkers and 25 university students. Most historians and students stayed on one page and read it from top to bottom. Official-looking pages often fooled them. The fact-checkers left the page quickly and opened other sources to find out who was behind it. This is called lateral reading, which means reading sideways across many sources instead of down one page. The fact-checkers reached better answers in much less time.",
-    "back": "In 2017, researchers at Stanford University in the United States watched 45 people judge real websites about social issues: 10 historians who teach at universities, 10 professional fact-checkers and 25 university students. Most historians and students stayed on one page and read it from top to bottom. Pages that looked official often fooled them. The fact-checkers quickly left that page and opened other sources to find out who was behind it. This is called lateral reading, which means reading sideways across many sources, not reading down one page. The fact-checkers got better answers in much less time.",
+    "source": "In 2017, researchers at Stanford University in the United States watched 45 people judge real websites about social issues. There were 10 historians who teach at universities, 10 professional fact-checkers from news organisations and 25 Stanford students. In one task, they compared the websites of two doctors' groups that gave advice about bullying. Most historians thought both sites were reliable. The fact-checkers quickly left each page and opened other sources to find out who was behind it. This is called lateral reading, which means reading sideways across many sources instead of down one page. The fact-checkers reached better answers in much less time. The researchers chose a small group on purpose, so the study shows how these experts worked, not how everyone reads.",
+    "back": "In 2017, researchers at Stanford University in the United States watched 45 people judge real websites about social issues. There were 10 historians who teach at universities, 10 professional fact-checkers from news organisations, and 25 Stanford university students. In one task, they compared the websites of two doctors' associations that gave advice about bullying. Most historians thought both sites could be trusted. The fact-checkers quickly left each page and opened other sources to find out who was behind it. This way is called lateral reading, meaning reading sideways across many sources, not reading down one page. The fact-checkers got better answers in much less time. The researchers deliberately chose a small group, so this study shows how these experts work, not how everyone reads.",
     "flag": true,
-    "note": "\"University students\" became \"mahasiswa\", the Indonesian word for university students."
+    "note": "\"Bullying\" as \"perundungan\", the word Indonesian schools use; learners may know \"bullying\" better."
   },
   "read.sections.1.simpler": {
-    "source": "In 2017, researchers at Stanford University in the United States watched 45 people check real websites. There were 10 historians who teach at universities. There were 10 fact-checkers and 25 students. Most historians and students read one page, top to bottom. A page that looked official often fooled them. The fact-checkers left the page fast. They opened other sources to find out who made it. This is called lateral reading. It means reading sideways. The fact-checkers got better answers, faster.",
-    "back": "In 2017, researchers at Stanford University, United States, did a study. They watched 45 people check real websites. There were 10 historians who teach at universities. There were 10 fact-checkers and 25 university students. Most historians and students read one page, from top to bottom. A page that looked official often fooled them. The fact-checkers quickly left that page. They opened other sources to find out who made it. This is called lateral reading. It means reading sideways. The fact-checkers got better answers, faster.",
+    "source": "In 2017, researchers at Stanford University in the United States watched 45 people check real websites. There were 10 historians who teach at universities. There were 10 fact-checkers and 25 students. In one task, they looked at two doctors' groups' websites about bullying. Most historians thought both sites were good. The fact-checkers left each page fast. They opened other sources to find out who made it. This is called lateral reading. It means reading sideways. The fact-checkers got better answers, faster. The group was small, so the study shows how these experts worked. It does not show how everyone reads.",
+    "back": "In 2017, researchers at Stanford University, United States, did a study. They watched 45 people check real websites. There were 10 historians who teach at universities. There were 10 fact-checkers and 25 university students. In one task, they looked at the websites of two groups of doctors about bullying. Most historians thought both sites were good. The fact-checkers quickly left each page. They opened other sources to find out who made it. This is called lateral reading. It means reading sideways. The fact-checkers got better answers, faster. The group was small, so this study shows how these experts work. This study does not show how everyone reads.",
     "flag": true
   },
   "read.sections.2.heading": {
@@ -344,26 +250,18 @@
     "flag": true
   },
   "read.sections.2.text": {
-    "source": "Agreement helps only when sources have their own evidence. The town council looks after the bridge, so it knows the dates: two days of repairs, not a whole year. The radio and the fact-checkers asked the council and say the same. A chat page that copies the first post word for word adds no evidence at all. So the first post is false. Don't share it; share the council's notice instead. Sometimes you can't check a claim, for example with no internet. Then ask a teacher or wait. News can change, so check again later, for example if the repairs take longer.",
-    "back": "Sameness between sources only helps if each source has its own evidence. The town council looks after the bridge, so the council knows the dates: two days of repairs, not a whole year. The radio and the fact-checkers asked the town council and say the same thing. A chat page that copies the first post word for word adds no evidence at all. So that first post is false. Don't share that post; share the town council's notice instead. Sometimes you can't check a claim, for example because there is no internet. Then ask a teacher or wait first. News can change, so check again later, for example if the repairs turn out to take longer.",
-    "flag": true,
-    "note": "\"Agreement\" (between sources) became \"kesamaan antarsumber\" (sameness between sources); check it reads naturally."
+    "source": "Agreement helps only when sources have their own evidence. Several websites can repeat the same claim because they all copied one post, and ten copies are still only one source. The town council looks after the bridge, so it knows the dates: two days of repairs, not a whole year. The radio and the fact-checkers asked the council and say the same. The chat page only copied the first post word for word, so it adds no evidence. So the first post is false. Don't share it; share the council's notice instead. Sometimes you can't check a claim, for example with no internet. Then ask a teacher or wait. News can change, so check again later, for example if the repairs take longer.",
+    "back": "Agreement between sources only helps if each source has its own evidence. Several websites can repeat the same claim because they all copied one post, and ten copies are still only one source. The town council looks after the bridge, so the town council knows the dates: two days of repairs, not a whole year. The radio and the fact-checkers asked the town council and say the same thing. The chat page only copied the first post word for word, so that page adds no evidence. So the first post is false. Don't share that post; share the town council's notice instead. Sometimes you can't check a claim, for example because there is no internet. Then ask a teacher or wait first. News can change, so check again later, for example if the repairs turn out to take longer.",
+    "flag": true
   },
   "read.sections.2.simpler": {
-    "source": "Do sources agree? That helps only if they have their own evidence. The council looks after the bridge. It says two days. The radio and the fact-checkers asked the council. A chat page copied the post. Copying adds no evidence. So the first post is false. Don't share it. Share the council's notice instead. Sometimes you can't check a claim, like with no internet. Ask a teacher, or wait. News can change. So check again later.",
-    "back": "Do the sources agree? That only helps if they have their own evidence. The town council looks after the bridge. The council says two days. The radio and the fact-checkers asked the town council. A chat page copied that post. Copying adds no evidence. So the first post is false. Don't share it. Share the town council's notice instead. Sometimes you can't check a claim, for example without internet. Ask a teacher, or wait. News can change. So check again later.",
+    "source": "Do sources agree? That helps only if they have their own evidence. Many pages can copy one post. Ten copies are still one source. The council looks after the bridge. It says two days. The radio and the fact-checkers asked the council. A chat page copied the post. Copying adds no evidence. So the first post is false. Don't share it. Share the council's notice instead. Sometimes you can't check a claim, like with no internet. Ask a teacher, or wait. News can change. So check again later.",
+    "back": "Do the sources agree? That only helps if they have their own evidence. Many pages can copy one post. Ten copies are still one source. The town council looks after the bridge. The town council says two days. The radio and the fact-checkers asked the town council. A chat page copied the post. Copying adds no evidence. So the first post is false. Don't share it. Share the town council's notice instead. Sometimes you can't check a claim, for example without internet. Ask a teacher, or wait. News can change. So check again later.",
     "flag": true
   },
   "read.glossary.0.word": {
     "source": "claim",
     "back": "claim",
-    "flag": true
-  },
-  "read.glossary.0.forms": {
-    "source": [
-      "claims"
-    ],
-    "back": "",
     "flag": true
   },
   "read.glossary.0.definition": {
@@ -417,13 +315,6 @@
   "read.glossary.3.word": {
     "source": "fact-checker",
     "back": "fact-checker",
-    "flag": true
-  },
-  "read.glossary.3.forms": {
-    "source": [
-      "fact-checkers"
-    ],
-    "back": "",
     "flag": true
   },
   "read.glossary.3.definition": {
@@ -521,94 +412,44 @@
     "back": "Not quite. Being shared a lot doesn't make a claim true. Read the third section again.",
     "flag": true
   },
-  "read.checks.2.question": {
-    "source": "Think of a surprising message from the lesson, or one you heard about. Who could you ask to check it?",
-    "back": "Think of a surprising message from this lesson, or a message you have heard. Who could you ask to check it?",
-    "flag": true
-  },
-  "read.checks.2.placeholder": {
-    "source": "I could ask ___. I could also look at ___.",
-    "back": "I could ask ___. I could also look at ___.",
-    "flag": true
-  },
   "write.prompt": {
-    "source": "A friend wants to share the Brightwater bridge post. Explain how you checked it, and what you would tell your friend.",
-    "back": "A friend wants to share the post about the Brightwater bridge. Explain how you checked it, and what you would say to your friend.",
+    "source": "Your friend wants to share the Brightwater bridge post. Write them a short message. Use what you found when you opened the other sources.",
+    "back": "Your friend wants to share the post about the Brightwater bridge. Write a short message to them. Use what you found when you opened the other sources.",
     "flag": true
   },
   "write.sentenceStarters.0": {
-    "source": "First, I asked ...",
-    "back": "First, I asked ...",
+    "source": "I checked the post, and ...",
+    "back": "I have checked the post, and ...",
     "flag": true
   },
   "write.sentenceStarters.1": {
-    "source": "The post had no ...",
-    "back": "The post had no ...",
+    "source": "The best source is ___ because ...",
+    "back": "The best source is ___ because ...",
     "flag": true
   },
   "write.sentenceStarters.2": {
-    "source": "Then I read sideways. The ___ said ...",
-    "back": "Then I read sideways. ___ said ...",
+    "source": "The chat page doesn't count because ...",
+    "back": "The chat page doesn't count because ...",
     "flag": true
   },
   "write.sentenceStarters.3": {
-    "source": "The best evidence comes from ___ because ...",
-    "back": "The best evidence comes from ___ because ...",
-    "flag": true
-  },
-  "write.sentenceStarters.4": {
-    "source": "I would tell my friend ...",
-    "back": "I would tell my friend ...",
-    "flag": true
-  },
-  "write.planningBoxes.0": {
-    "source": "My main idea",
-    "back": "My main idea",
-    "flag": true
-  },
-  "write.planningBoxes.1": {
-    "source": "Evidence from the lesson",
-    "back": "Evidence from the lesson",
-    "flag": true
-  },
-  "write.planningBoxes.2": {
-    "source": "Why it matters",
-    "back": "Why this matters",
-    "flag": true
-  },
-  "write.planningBoxes.3": {
-    "source": "A question I still have",
-    "back": "A question I still have",
-    "flag": true
-  },
-  "write.selfCheck.0": {
-    "source": "I used at least one of the three questions.",
-    "back": "I used at least one of those three questions.",
-    "flag": true
-  },
-  "write.selfCheck.1": {
-    "source": "I said which source has the best evidence, and why.",
-    "back": "I said which source has the best evidence, and why.",
-    "flag": true
-  },
-  "write.selfCheck.2": {
-    "source": "I said what my friend should do.",
-    "back": "I said what my friend should do.",
+    "source": "Instead, you could share ...",
+    "back": "Instead, you could share ...",
     "flag": true
   },
   "write.example": {
-    "source": "First, I asked who is behind the post. The post had no names, no evidence and no link to the council. Then I read sideways. The council notice said the bridge closes on 3 and 4 May for repairs. The best evidence comes from the council because it looks after the bridge. The radio and the fact-checkers asked the council. The chat page only copied the post. I would tell my friend not to share it, and to share the council's notice instead.",
-    "back": "First, I asked who was behind the post. The post had no names, no evidence and no link to the town council. Then I read sideways. The town council notice said the bridge is closed on 3 and 4 May for repairs. The best evidence comes from the town council because the council looks after the bridge. The radio and the fact-checkers asked the town council. The chat page only copied the post. I would tell my friend not to share it, and to share the town council's notice instead.",
+    "source": "I checked the post, and it isn't true. It has no names and no link to the council. The best source is the town council because it looks after the bridge. Its notice says the bridge closes on 3 and 4 May for repairs, not for a year. The radio and the fact-checkers asked the council and say the same. The chat page doesn't count because it only copied the first post. Instead, you could share the council's notice, so people know to take the ferry on those two days.",
+    "back": "I have checked the post, and what it says is not true. The post has no names and no link to the town council. The best source is the town council because the town council looks after the bridge. Its notice says the bridge closes on 3 and 4 May for repairs, not for a year. The radio and the fact-checkers asked the town council and say the same thing. The chat page doesn't count because that page only copied the first post. Instead, you could share the town council's notice, so people know to take the ferry on those two days.",
     "flag": true
   },
   "speak.partnerTask": {
-    "source": "Your partner reads the Brightwater post aloud. You ask the three questions, and your partner answers from the lesson. Then switch.",
-    "back": "Your partner reads the Brightwater post aloud. You ask the three questions, and your partner answers from the lesson. Then take turns.",
+    "source": "Your partner plays the friend and says: “But the chat page says a year too.” Explain why that is not more evidence. Then switch: your partner explains why the council is the best source.",
+    "back": "Your partner plays the friend who wants to share the post and says: “But the chat page says a year too.” Explain why that is not extra evidence. Then switch: your partner explains why the town council is the best source.",
     "flag": true
   },
   "speak.independentTask": {
-    "source": "Say out loud what lateral reading means, and why ten pages that copy each other are not ten pieces of evidence.",
-    "back": "Say out loud what lateral reading means, and why ten pages that copy each other are not ten pieces of evidence.",
+    "source": "Say out loud what lateral reading means. Then say one thing the fact-checkers in the Stanford study did that you could do too.",
+    "back": "Say out loud what lateral reading means. Then name one thing the fact-checkers in the Stanford study did that you can also do.",
     "flag": true
   },
   "watch.why": {
@@ -682,8 +523,8 @@
     "flag": true
   },
   "sources.2.label": {
-    "source": "SSRC MediaWell: summary of Wineburg and McGrew, with the shortened version in Teachers College Record (2019)",
-    "back": "SSRC MediaWell: summary of Wineburg and McGrew's research, with its shortened version in Teachers College Record (2019)",
+    "source": "Stanford Digital Repository: Wineburg and McGrew, Lateral reading and the nature of expertise (Teachers College Record version)",
+    "back": "Stanford Digital Repository: Wineburg and McGrew, [title kept in English] (lateral reading and the nature of expertise; Teachers College Record version)",
     "flag": true
   },
   "sources.3.label": {
@@ -709,13 +550,14 @@
     "note": "Our World's title and Lesson 23's title are given as they are in the Indonesian course (\"Menjelajahi Dunia Kita\", \"Apa yang membuat informasi bisa dipercaya?\")."
   },
   "educatorNotes.1": {
-    "source": "The research in section 2 is Wineburg and McGrew (Stanford History Education Group working paper, 2017; a shortened version in Teachers College Record, 2019). The 45 participants were 10 PhD historians teaching at four-year colleges or universities, 10 professional fact-checkers and 25 first-year Stanford undergraduates. They judged live websites and searched the web on social and political issues, for example comparing two doctors' groups' pages on bullying and finding who was behind a site on the minimum wage. The authors note the small samples and timed tasks. The group became the independent Digital Inquiry Group in January 2024.",
-    "back": "The research in section 2 is by Wineburg and McGrew (Stanford History Education Group working paper, 2017; its shortened version in Teachers College Record, 2019). The 45 participants were 10 historians with doctorates teaching at four-year colleges or universities, 10 professional fact-checkers and 25 first-year Stanford students. They judged live websites and searched the internet on social and political issues, for example comparing two doctors' associations' pages about bullying and finding who was behind a site about the minimum wage. The authors note the samples were small and the tasks were timed. The group became the independent Digital Inquiry Group in January 2024.",
-    "flag": true
+    "source": "The research in section 2 is Wineburg and McGrew (Stanford History Education Group working paper, 2017; a shortened version in Teachers College Record, 2018–19). The 45 participants, chosen on purpose rather than at random, were 10 PhD historians teaching at universities in California and Washington, 10 professional fact-checkers at news and fact-checking organisations and 25 Stanford undergraduates. They judged live websites and searched the web on social and political issues: for example, the American Academy of Pediatrics and the much smaller American College of Pediatricians on bullying (most historians thought both reliable; most students rated the second more reliable), and who paid for a teacher-tenure lawsuit. The authors note the small samples and timed tasks. The group became the independent Digital Inquiry Group in January 2024.",
+    "back": "The research in section 2 is the work of Wineburg and McGrew (Stanford History Education Group working paper, 2017; its shortened version in Teachers College Record, 2018–19). The 45 participants, chosen deliberately and not at random, were 10 historians with doctorates teaching at universities in California and Washington, 10 professional fact-checkers at news organisations and fact-checking organisations, and 25 Stanford undergraduates. They judged live websites and searched the internet on social and political issues: for example, the pages of the American Academy of Pediatrics and the much smaller American College of Pediatricians on bullying (most historians thought both could be trusted; most students rated the second as more trustworthy), and who paid for a lawsuit about teachers' tenure. The authors note that the samples were small and the tasks timed. The group became the independent Digital Inquiry Group in January 2024.",
+    "flag": true,
+    "note": "\"Teacher-tenure lawsuit\" as \"gugatan hukum tentang masa jabatan tetap guru\"; tenure has no exact Indonesian equivalent."
   },
   "educatorNotes.2": {
-    "source": "Lateral reading normally needs the internet. On an offline device the activity's source cards stand in for new pages; in class, a teacher can play “the other sources” on paper. In Indonesia, Mafindo recommends fact-checking sites such as TurnBackHoax and CekFakta (Liputan6, 2026).",
-    "back": "Lateral reading usually needs the internet. On a device without internet, the activity's source cards stand in for new pages; in class, the teacher can play “the other sources” on paper. In Indonesia, Mafindo recommends fact-checking sites such as TurnBackHoax and CekFakta (Liputan6, 2026).",
+    "source": "Lateral reading normally needs the internet. On an offline device the activity's source cards stand in for new pages, and the print view lists them for work on paper; a teacher can also play “the other sources”. The evidence shows only the post, so learners meet the other sources in the activity. Write and Speak use what the learner found there rather than repeat the check. In Indonesia, Mafindo recommends fact-checking sites such as TurnBackHoax and CekFakta (Liputan6, 2026).",
+    "back": "Lateral reading usually needs the internet. On a device without internet, the activity's source cards stand in for new pages, and its print version lists those cards for work on paper; a teacher can also play “the other sources”. The evidence shows only the post, so learners meet the other sources in the activity. The Write and Speak steps use what the learner found there, rather than repeating the check. In Indonesia, Mafindo recommends fact-checking sites such as TurnBackHoax and CekFakta (Liputan6, 2026).",
     "flag": true
   }
 }

@@ -23,7 +23,7 @@ import { TrainModelPlayer } from './train-model/TrainModel';
  * guide's paper version). Finishing it never marks a stage done.
  */
 export function ActivityPlayer({ activity }: { activity: Activity }) {
-  const { t, contentLang } = useI18n();
+  const { t } = useI18n();
   // An optional extension stays folded away until wanted: the reading teaches the idea without it.
   if (activity.extension) {
     return (

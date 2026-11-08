@@ -99,12 +99,14 @@ describe('with the preview on', () => {
     expect(screen.getByRole('link', { name: /Teacher guide, Lesson 3: How AI learns from examples/ })).toHaveAttribute('href', '/educators/lesson/dw-how-ai-learns');
   });
 
-  it('opens a lesson with its activity after the evidence, and a different case of its id redirects', async () => {
+  it('opens a lesson with its optional extension folded after the evidence, and a different case of its id redirects', async () => {
     await turnOn();
     const router = renderAt('/lesson/DW-How-AI-Learns');
     expect(await screen.findByRole('heading', { level: 1, name: 'How AI learns from examples' })).toBeInTheDocument();
     expect(router.state.location.pathname).toBe('/lesson/dw-how-ai-learns/read');
-    expect(await screen.findByRole('heading', { level: 3, name: 'Train the leaf model' })).toBeInTheDocument();
+    // Lesson 3's leaf model is an optional extension (Justin's brief of 4 November 2026), folded away until wanted.
+    expect(await screen.findByText('Try it yourself (optional)')).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 3, name: 'Try the leaf model', hidden: true })).toBeInTheDocument();
     // Back to the course goes to Digital World's map, at the lesson's section.
     expect(screen.getByRole('link', { name: 'How AI developed and how it works' })).toHaveAttribute('href', '/course/digital-world#thinking-machines');
   });
@@ -122,14 +124,15 @@ describe('with the preview on', () => {
     expect(await screen.findByRole('heading', { level: 1, name: "This page isn't here" })).toBeInTheDocument();
   });
 
-  it('prints every lesson, each with its activity on paper', async () => {
+  it('prints every lesson, with the four activities on paper', async () => {
     await turnOn();
     renderAt('/course/digital-world/print');
     expect(await screen.findAllByRole('heading', { level: 1 })).toHaveLength(17);
     // The course's name is marked as English inside the note, so match the whole note.
     const notes = [...document.querySelectorAll('.tw-pc-sheet-note')].map((note) => note.textContent);
     expect(notes).toEqual(Array(17).fill("Digital World, draft course: not yet reviewed. Don't use it with learners yet."));
-    expect(screen.getAllByRole('heading', { level: 2, name: 'Activity' })).toHaveLength(17);
+    expect(screen.getAllByRole('heading', { level: 2, name: 'Activity' })).toHaveLength(3);
+    expect(screen.getAllByRole('heading', { level: 2, name: 'Optional extension' })).toHaveLength(1);
   });
 
   it('gives each lesson a teacher guide with the activity, its answers and the notes for reviewers', async () => {
