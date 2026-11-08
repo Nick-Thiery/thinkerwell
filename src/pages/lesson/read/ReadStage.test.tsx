@@ -371,6 +371,28 @@ describe('ReadStage: quick check', () => {
   });
 });
 
+describe('ReadStage: a preview lesson with no warm-up and no quick check', () => {
+  // Justin's briefs of 4 and 7 November 2026: a Read section can teach through the reading alone.
+  const bare = { ...L10, warmUp: undefined, read: { ...L10.read, checks: [] } } as unknown as Lesson;
+
+  it('shows no warm-up, and the last part goes straight on to Write, marking Read done', async () => {
+    const user = userEvent.setup();
+    const { spies } = renderRead({ lesson: bare, search: `?part=${bare.read.sections.length}` });
+    expect(document.querySelector('.tw-read-warmup-question')).toBeNull();
+    expect(screen.queryByRole('button', { name: 'Next: Quick check' })).toBeNull();
+    await user.click(screen.getByRole('button', { name: 'Continue to Write' }));
+    expect(spies.stageEvent).toHaveBeenCalledWith({ stage: 'read', kind: 'continue' });
+    expect(spies.goTo).toHaveBeenCalledWith('write');
+    expect(latestProgress?.stagesDone).toEqual(['read']);
+  });
+
+  it('opens an old "?part=check" address on the last part, never on an empty quick check', () => {
+    renderRead({ lesson: bare, search: '?part=check' });
+    expect(screen.queryByRole('heading', { name: 'Quick check' })).toBeNull();
+    expect(screen.getByRole('button', { name: 'Continue to Write' })).toBeInTheDocument();
+  });
+});
+
 describe('ReadStage: every lesson', () => {
   it('has all 24 lessons', () => {
     expect(getLessons()).toHaveLength(24);

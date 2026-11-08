@@ -221,9 +221,13 @@ def check(path):
         return True
 
     for k in ["id", "number", "section", "title", "essentialQuestion", "learningGoal",
-              "warmUp", "evidence", "read", "write", "speak", "reflect", "sources",
+              "evidence", "read", "write", "speak", "reflect", "sources",
               "changes"]:
         need(L, k, "")
+    # Another course's lesson may begin straight with the reading (Justin's
+    # briefs of 4 and 7 November 2026); Our World's always has a warm-up.
+    if course is None or "warmUp" in L:
+        need(L, "warmUp", "")
     # Another course's lesson has no Watch step until a person has watched and
     # approved a video for it (watch: null; Southeast Asia Through Time).
     if course is None or "watch" not in L:
@@ -338,8 +342,13 @@ def check(path):
     positions = []
     ck = rd.get("checks") or []
     types = [c.get("type") for c in ck]
-    if types != ["choice", "choice", "think"]:
+    # Another course's quick check may be left out, or kept short: one or two
+    # choice questions, then perhaps a think question. Our World's keeps all three.
+    preview_shapes = ([], ["choice"], ["choice", "choice"], ["think"], ["choice", "think"], ["choice", "choice", "think"])
+    if course is None and types != ["choice", "choice", "think"]:
         errs.append(f"read.checks must be [choice, choice, think], found {types}")
+    elif course is not None and types not in preview_shapes:
+        errs.append(f"read.checks must be empty, or one or two choice questions then perhaps a think question, found {types}")
     longest_correct = 0
     tagged = [c.get("skill") for c in ck if c.get("type") == "choice" and "skill" in c]
     if tagged and len(tagged) != sum(1 for c in ck if c.get("type") == "choice"):

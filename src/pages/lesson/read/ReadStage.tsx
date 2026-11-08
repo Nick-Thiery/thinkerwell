@@ -69,7 +69,7 @@ function bringIntoView(element: Element) {
 /** The Read stage, as LessonPage renders it. */
 export function ReadStage() {
   const { t, contentLocale, contentLang } = useI18n();
-  const { lesson, readingLevel, setReadingLevel, settings, setListeningSpeed } = useLessonPlayer();
+  const { lesson, readingLevel, setReadingLevel, settings, setListeningSpeed, stageEvent } = useLessonPlayer();
   // Without a Watch step the video's key points stay with the reading (folded, at the last part).
   const content = useLessonContent();
   const keyPointsHere = !content.stagesFor(lesson).includes('watch');
@@ -78,7 +78,10 @@ export function ReadStage() {
   const sections = lesson.read.sections;
   const glossary = lesson.read.glossary;
   const total = sections.length;
-  const [view, setView] = useReadPart(total);
+  // A preview course's lesson may have no quick check: Read then ends with its last part.
+  const hasCheck = lesson.read.checks.length > 0;
+  const [requestedView, setView] = useReadPart(total);
+  const view = requestedView === 'check' && !hasCheck ? total : requestedView;
   const listenToolId = useId();
   const listenBarId = useId();
 
@@ -279,9 +282,14 @@ export function ReadStage() {
       <StageActionBar
         back={part > 1 ? t('lessonPlayer.read.backPart', { n: part - 1 }) : null}
         onBack={part > 1 ? () => setView(part - 1) : undefined}
-        next={isLast ? t('lessonPlayer.read.nextCheck') : t('lessonPlayer.read.nextPart', { n: part + 1 })}
-        nextStep={null}
-        onNext={() => setView(isLast ? 'check' : part + 1)}
+        {...(isLast && !hasCheck
+          ? // No quick check: the last part's Next finishes Read and goes on, like the quick check's Continue.
+            { onNext: () => stageEvent({ stage: 'read', kind: 'continue' }) }
+          : {
+              next: isLast ? t('lessonPlayer.read.nextCheck') : t('lessonPlayer.read.nextPart', { n: part + 1 }),
+              nextStep: null,
+              onNext: () => setView(isLast ? 'check' : part + 1),
+            })}
         helper={hasGlossaryTerms(text, glossary, contentLocale.code) ? t('lessonPlayer.read.glossaryHelper') : undefined}
       />
     </div>

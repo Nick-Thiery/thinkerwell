@@ -133,33 +133,36 @@ export function TeacherGuidePage({ lesson }: { lesson: CourseLesson }) {
         </section>
         <LessonSlot name="guide:after-evidence" />
 
-        <section className="tw-print-part">
-          <h2>{t('pages.teacherGuide.checkTitle')}</h2>
-          <p className="tw-print-muted">{t('pages.teacherGuide.checkIntro')}</p>
-          <ol className="tw-print-questions">
-            {read.checks.map((check, index) => (
-              <li key={index}>
-                <p className="tw-guide-question" {...en}>
-                  {check.question}
-                </p>
-                {check.type === 'choice' ? (
-                  <AnswerOptions
-                    options={check.options.map((option) =>
-                      option.correct
-                        ? { ...option, feedback: feedbackWithoutVerdict(option.feedback, true, contentLocale.code) }
-                        : option,
-                    )}
-                    feedback="why"
-                  />
-                ) : (
-                  <p className="tw-print-muted">
-                    {t(check.optional ? 'pages.teacherGuide.thinkOptional' : 'pages.teacherGuide.think')}
+        {/* A preview course's lesson may have no quick check. */}
+        {read.checks.length > 0 ? (
+          <section className="tw-print-part">
+            <h2>{t('pages.teacherGuide.checkTitle')}</h2>
+            <p className="tw-print-muted">{t('pages.teacherGuide.checkIntro')}</p>
+            <ol className="tw-print-questions">
+              {read.checks.map((check, index) => (
+                <li key={index}>
+                  <p className="tw-guide-question" {...en}>
+                    {check.question}
                   </p>
-                )}
-              </li>
-            ))}
-          </ol>
-        </section>
+                  {check.type === 'choice' ? (
+                    <AnswerOptions
+                      options={check.options.map((option) =>
+                        option.correct
+                          ? { ...option, feedback: feedbackWithoutVerdict(option.feedback, true, contentLocale.code) }
+                          : option,
+                      )}
+                      feedback="why"
+                    />
+                  ) : (
+                    <p className="tw-print-muted">
+                      {t(check.optional ? 'pages.teacherGuide.thinkOptional' : 'pages.teacherGuide.think')}
+                    </p>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </section>
+        ) : null}
 
         <section className="tw-print-part">
           <h2>{t('stages.write')}</h2>
@@ -201,20 +204,22 @@ export function TeacherGuidePage({ lesson }: { lesson: CourseLesson }) {
         <section className="tw-print-part">
           <h2>{t('pages.teacherGuide.discussTitle')}</h2>
           <p className="tw-print-muted">{t('pages.teacherGuide.discussIntro')}</p>
-          <div className="tw-print-keep">
-            <h3>{t('pages.teacherGuide.discussWarmUp')}</h3>
-            <p {...en}>{lesson.warmUp.question}</p>
-            {lesson.warmUp.options ? (
-              <>
-                <p className="tw-print-muted">{t('pages.teacherGuide.discussChoices')}</p>
-                <ul {...en}>
-                  {lesson.warmUp.options.map((option, index) => (
-                    <li key={index}>{option}</li>
-                  ))}
-                </ul>
-              </>
-            ) : null}
-          </div>
+          {lesson.warmUp ? (
+            <div className="tw-print-keep">
+              <h3>{t('pages.teacherGuide.discussWarmUp')}</h3>
+              <p {...en}>{lesson.warmUp.question}</p>
+              {lesson.warmUp.options ? (
+                <>
+                  <p className="tw-print-muted">{t('pages.teacherGuide.discussChoices')}</p>
+                  <ul {...en}>
+                    {lesson.warmUp.options.map((option, index) => (
+                      <li key={index}>{option}</li>
+                    ))}
+                  </ul>
+                </>
+              ) : null}
+            </div>
+          ) : null}
           {thinkChecks.length > 0 ? (
             <div className="tw-print-keep">
               <h3>{t('pages.teacherGuide.discussThink')}</h3>
@@ -374,7 +379,7 @@ function BeforeYouTeach({ lesson, withWatch }: { lesson: CourseLesson; withWatch
 function SessionPlan({ lesson, withWatch }: { lesson: CourseLesson; withWatch: boolean }) {
   const { t, formatNumber } = useI18n();
   const { courseId } = useLessonContent();
-  const plan = sessionPlan(withWatch);
+  const plan = sessionPlan(withWatch, { warmUp: Boolean(lesson.warmUp), check: lesson.read.checks.length > 0 });
   const doText = (step: SessionStep): string => {
     switch (step) {
       case 'read':

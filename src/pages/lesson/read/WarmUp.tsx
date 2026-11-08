@@ -11,8 +11,10 @@ import { useLessonPlayer } from '../../../lesson';
 export function WarmUp() {
   const { t, contentLang } = useI18n();
   const { lesson, progress, update } = useLessonPlayer();
-  const { question, options } = lesson.warmUp;
   const answer = progress.warmUpAnswer;
+  // A preview course's lesson may begin straight with the reading.
+  if (!lesson.warmUp) return null;
+  const { question, options } = lesson.warmUp;
 
   function choose(option: string) {
     if (answer === option) return; // tapping the chosen chip again keeps it chosen
