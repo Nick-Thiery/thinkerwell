@@ -159,27 +159,30 @@ export function WriteStage() {
           </div>
         </section>
 
-        <section className="tw-write-plan" aria-labelledby={planTitleId}>
-          <h3 id={planTitleId} className="tw-write-help-title">
-            {t('lessonPlayer.write.modePlan')}
-          </h3>
-          <p className="tw-write-help-intro">{t('lessonPlayer.write.planIntro')}</p>
-          <div className="tw-write-plan-boxes">
-            {write.planningBoxes.map((title, index) => (
-              <WritingBox
-                key={index}
-                id={`write-plan-${lesson.id}-${index}`}
-                label={<En>{title}</En>}
-                optional
-                rows={3}
-                value={writing.planning[index] ?? ''}
-                onValueChange={(value) =>
-                  update(withWriting((w) => ({ ...w, planning: { ...w.planning, [index]: value } })))
-                }
-              />
-            ))}
-          </div>
-        </section>
+        {/* A preview course's lesson may have no planning boxes. */}
+        {write.planningBoxes.length > 0 ? (
+          <section className="tw-write-plan" aria-labelledby={planTitleId}>
+            <h3 id={planTitleId} className="tw-write-help-title">
+              {t('lessonPlayer.write.modePlan')}
+            </h3>
+            <p className="tw-write-help-intro">{t('lessonPlayer.write.planIntro')}</p>
+            <div className="tw-write-plan-boxes">
+              {write.planningBoxes.map((title, index) => (
+                <WritingBox
+                  key={index}
+                  id={`write-plan-${lesson.id}-${index}`}
+                  label={<En>{title}</En>}
+                  optional
+                  rows={3}
+                  value={writing.planning[index] ?? ''}
+                  onValueChange={(value) =>
+                    update(withWriting((w) => ({ ...w, planning: { ...w.planning, [index]: value } })))
+                  }
+                />
+              ))}
+            </div>
+          </section>
+        ) : null}
       </LessonDisclosure>
 
       <ExampleAnswer
@@ -189,36 +192,39 @@ export function WriteStage() {
         onShow={showExample}
       />
 
-      <LessonDisclosure className="tw-write-self-check" icon="ListChecks" summary={t('lessonPlayer.write.selfCheckTitle')} defaultOpen={ticked}>
-        <fieldset className="tw-write-self-check-list">
-          <legend className="tw-visually-hidden">{t('lessonPlayer.write.selfCheckTitle')}</legend>
-          {write.selfCheck.map((item, index) => {
-            const id = `write-check-${lesson.id}-${index}`;
-            return (
-              <label key={index} className="tw-write-check" htmlFor={id}>
-                {/* A real checkbox covering the whole row (the tap target, at least 44px tall);
-                    the 24px box beside the words is drawn by the span after it. */}
-                <input
-                  id={id}
-                  type="checkbox"
-                  className="tw-write-check-input"
-                  checked={Boolean(writing.selfCheck[index])}
-                  onChange={(event) => {
-                    const checked = event.currentTarget.checked;
-                    update(withWriting((w) => ({ ...w, selfCheck: { ...w.selfCheck, [index]: checked } })), {
-                      immediate: true,
-                    });
-                  }}
-                />
-                <span className="tw-write-check-box" aria-hidden="true">
-                  <Icon name="Check" size={18} strokeWidth={3} />
-                </span>
-                <span {...contentLang}>{item}</span>
-              </label>
-            );
-          })}
-        </fieldset>
-      </LessonDisclosure>
+      {/* A preview course's lesson may have no self-check. */}
+      {write.selfCheck.length > 0 ? (
+        <LessonDisclosure className="tw-write-self-check" icon="ListChecks" summary={t('lessonPlayer.write.selfCheckTitle')} defaultOpen={ticked}>
+          <fieldset className="tw-write-self-check-list">
+            <legend className="tw-visually-hidden">{t('lessonPlayer.write.selfCheckTitle')}</legend>
+            {write.selfCheck.map((item, index) => {
+              const id = `write-check-${lesson.id}-${index}`;
+              return (
+                <label key={index} className="tw-write-check" htmlFor={id}>
+                  {/* A real checkbox covering the whole row (the tap target, at least 44px tall);
+                      the 24px box beside the words is drawn by the span after it. */}
+                  <input
+                    id={id}
+                    type="checkbox"
+                    className="tw-write-check-input"
+                    checked={Boolean(writing.selfCheck[index])}
+                    onChange={(event) => {
+                      const checked = event.currentTarget.checked;
+                      update(withWriting((w) => ({ ...w, selfCheck: { ...w.selfCheck, [index]: checked } })), {
+                        immediate: true,
+                      });
+                    }}
+                  />
+                  <span className="tw-write-check-box" aria-hidden="true">
+                    <Icon name="Check" size={18} strokeWidth={3} />
+                  </span>
+                  <span {...contentLang}>{item}</span>
+                </label>
+              );
+            })}
+          </fieldset>
+        </LessonDisclosure>
+      ) : null}
 
       {sayIt.announcer}
 

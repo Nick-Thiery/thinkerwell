@@ -11,8 +11,9 @@
  *
  *   Read     Done once the learner has answered every choice question in the
  *            quick check (right or wrong: checks never block), or taps the
- *            continue button at the end of Read (after the quick check).
- *            The think question is optional and never needed.
+ *            continue button at the end of Read (after the quick check, or
+ *            after the last part in a preview course's lesson that has no
+ *            quick check). The think question is optional and never needed.
  *   Write    Done when the learner taps continue having written something
  *            in the writing box. Continuing with an empty box moves on
  *            without a tick.

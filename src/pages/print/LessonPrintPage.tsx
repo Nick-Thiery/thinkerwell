@@ -106,19 +106,22 @@ export function LessonPrintSheet({ lesson, titleId = 'print-title', newPage = fa
         <p className="tw-print-muted">{t('lesson.minutes', { min, max })}</p>
       </header>
 
-      <section className="tw-print-part">
-        <h2>{t('lessonPlayer.read.warmUpEyebrow')}</h2>
-        <p {...en}>{lesson.warmUp.question}</p>
-        {lesson.warmUp.options ? (
-          <ul className="tw-print-boxes" {...en}>
-            {lesson.warmUp.options.map((option, index) => (
-              <li key={index}>{option}</li>
-            ))}
-          </ul>
-        ) : (
-          <AnswerLines count={2} />
-        )}
-      </section>
+      {/* A preview course's lesson may begin straight with the reading. */}
+      {lesson.warmUp ? (
+        <section className="tw-print-part">
+          <h2>{t('lessonPlayer.read.warmUpEyebrow')}</h2>
+          <p {...en}>{lesson.warmUp.question}</p>
+          {lesson.warmUp.options ? (
+            <ul className="tw-print-boxes" {...en}>
+              {lesson.warmUp.options.map((option, index) => (
+                <li key={index}>{option}</li>
+              ))}
+            </ul>
+          ) : (
+            <AnswerLines count={2} />
+          )}
+        </section>
+      ) : null}
 
       <section className="tw-print-part tw-print-evidence">
         <h2>{t('lessonPlayer.evidence.sectionLabel')}</h2>
@@ -153,28 +156,31 @@ export function LessonPrintSheet({ lesson, titleId = 'print-title', newPage = fa
         </dl>
       </section>
 
-      <section className="tw-print-part">
-        <h2>{t('lessonPlayer.read.checkTitle')}</h2>
-        <ol className="tw-print-questions">
-          {read.checks.map((check, index) => (
-            <li key={index} className="tw-print-keep">
-              <p>
-                <En>{check.question}</En>
-                {check.type === 'think' && check.optional ? <> {t('print.optional')}</> : null}
-              </p>
-              {check.type === 'choice' ? (
-                <ul className="tw-print-boxes" {...en}>
-                  {check.options.map((option, optionIndex) => (
-                    <li key={optionIndex}>{option.text}</li>
-                  ))}
-                </ul>
-              ) : (
-                <AnswerLines count={3} />
-              )}
-            </li>
-          ))}
-        </ol>
-      </section>
+      {/* A preview course's lesson may have no quick check. */}
+      {read.checks.length > 0 ? (
+        <section className="tw-print-part">
+          <h2>{t('lessonPlayer.read.checkTitle')}</h2>
+          <ol className="tw-print-questions">
+            {read.checks.map((check, index) => (
+              <li key={index} className="tw-print-keep">
+                <p>
+                  <En>{check.question}</En>
+                  {check.type === 'think' && check.optional ? <> {t('print.optional')}</> : null}
+                </p>
+                {check.type === 'choice' ? (
+                  <ul className="tw-print-boxes" {...en}>
+                    {check.options.map((option, optionIndex) => (
+                      <li key={optionIndex}>{option.text}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <AnswerLines count={3} />
+                )}
+              </li>
+            ))}
+          </ol>
+        </section>
+      ) : null}
 
       <section className="tw-print-part tw-print-new-page">
         <h2>{t('stages.write')}</h2>
@@ -189,7 +195,7 @@ export function LessonPrintSheet({ lesson, titleId = 'print-title', newPage = fa
             ))}
           </ul>
         </div>
-        <h3>{t('lessonPlayer.write.modePlan')}</h3>
+        {write.planningBoxes.length > 0 ? <h3>{t('lessonPlayer.write.modePlan')}</h3> : null}
         {write.planningBoxes.map((box, index) => (
           <div key={index} className="tw-print-keep">
             <p {...en}>{box}</p>
@@ -198,14 +204,16 @@ export function LessonPrintSheet({ lesson, titleId = 'print-title', newPage = fa
         ))}
         <h3>{t('lessonPlayer.write.answerLabel')}</h3>
         <AnswerLines count={8} />
-        <div className="tw-print-keep">
-          <h3>{t('lessonPlayer.write.selfCheckTitle')}</h3>
-          <ul className="tw-print-boxes" {...en}>
-            {write.selfCheck.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </div>
+        {write.selfCheck.length > 0 ? (
+          <div className="tw-print-keep">
+            <h3>{t('lessonPlayer.write.selfCheckTitle')}</h3>
+            <ul className="tw-print-boxes" {...en}>
+              {write.selfCheck.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
       </section>
 
       <section className="tw-print-part">

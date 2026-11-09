@@ -5,7 +5,7 @@ import { routes } from '../../app/routes';
 import { getLesson, getLessons, getLessonSection, getVisualUrl, type Lesson } from '../../content';
 import { t } from '../../i18n';
 import { formatDuration } from '../../lesson/format';
-import { planTotal, SESSION_PLAN, SESSION_PLAN_WITHOUT_WATCH } from './sessionPlan';
+import { planTotal, SESSION_PLAN, SESSION_PLAN_WITHOUT_WATCH, sessionPlan } from './sessionPlan';
 import { TeacherGuidePage, youtubeWatchUrl } from './TeacherGuidePage';
 
 const L10 = getLesson('towns-near-rivers') as Lesson;
@@ -39,6 +39,22 @@ describe('SESSION_PLAN', () => {
     expect(planTotal('short', SESSION_PLAN_WITHOUT_WATCH)).toBe(30);
     expect(SESSION_PLAN_WITHOUT_WATCH.map((row) => row.step)).toEqual(['warmUp', 'read', 'check', 'write', 'speak', 'reflect']);
     expect(SESSION_PLAN_WITHOUT_WATCH.every((row) => row.short !== null)).toBe(true);
+  });
+});
+
+describe('sessionPlan for a lesson without a warm-up or quick check', () => {
+  it.each([true, false])('leaves those rows out and gives their minutes to the reading (with Watch: %s)', (withWatch) => {
+    const plan = sessionPlan(withWatch, { warmUp: false, check: false });
+    expect(plan.map((row) => row.step)).not.toContain('warmUp');
+    expect(plan.map((row) => row.step)).not.toContain('check');
+    expect(planTotal('minutes', plan)).toBe(45);
+    expect(planTotal('short', plan)).toBe(30);
+  });
+
+  it('keeps the warm-up when only the quick check is left out', () => {
+    const plan = sessionPlan(true, { warmUp: true, check: false });
+    expect(plan.map((row) => row.step)).toEqual(['warmUp', 'read', 'write', 'speak', 'watch', 'reflect']);
+    expect(planTotal('minutes', plan)).toBe(45);
   });
 });
 

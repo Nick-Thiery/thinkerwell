@@ -213,6 +213,15 @@ export const readSchema = z.strictObject({
 });
 export type Read = z.infer<typeof readSchema>;
 
+/**
+ * A preview course's Read (Justin's briefs of 4 and 7 November 2026: "a Read
+ * section does not need an activity"): the quick check may be left out, so
+ * Read teaches through the reading alone. Our World's keeps at least one.
+ */
+export const previewReadSchema = readSchema.extend({
+  checks: z.array(quickCheckSchema),
+});
+
 // ------------------------------------------------------------- other stages
 
 export const writeSchema = z.strictObject({
@@ -224,6 +233,16 @@ export const writeSchema = z.strictObject({
   example: text,
 });
 export type Write = z.infer<typeof writeSchema>;
+
+/**
+ * A preview course's Write: the planning boxes and the self-check may be left
+ * out (Justin's briefs of 4 and 7 November 2026: no planning form and
+ * checklist on every response). Our World's keep both.
+ */
+export const previewWriteSchema = writeSchema.extend({
+  planningBoxes: z.array(text),
+  selfCheck: z.array(text),
+});
 
 export const speakSchema = z.strictObject({
   partnerTask: text,
@@ -318,6 +337,12 @@ export type SourceLink = z.infer<typeof sourceLinkSchema>;
 
 // ---------------------------------------------------------------------- lesson
 
+/** A short question before the reading: choices to tap, or (without options) a line to write. */
+export const warmUpSchema = z.strictObject({
+  question: text,
+  options: z.array(text).min(2).max(4).optional(),
+});
+
 export const lessonSchema = z.strictObject({
   /** Stable slug used in URLs: /lesson/:id/:stage. */
   id: slug,
@@ -332,10 +357,7 @@ export const lessonSchema = z.strictObject({
   estimatedMinutes: z
     .tuple([z.number().int().positive(), z.number().int().positive()])
     .refine(([min, max]) => min <= max, { message: 'min must not be more than max' }),
-  warmUp: z.strictObject({
-    question: text,
-    options: z.array(text).min(2).max(4).optional(),
-  }),
+  warmUp: warmUpSchema,
   evidence: evidenceSchema,
   read: readSchema,
   write: writeSchema,
@@ -372,7 +394,9 @@ export type CourseSection = Omit<Section, 'id'> & { id: string };
  * Time's have a second picture, captions under both, and no Watch step
  * (`watch: null`) until a video is approved.
  */
-export type CourseLesson = Omit<Lesson, 'oldId' | 'section' | 'watch' | 'visual'> & {
+export type CourseLesson = Omit<Lesson, 'oldId' | 'section' | 'watch' | 'visual' | 'warmUp'> & {
+  /** A preview course's lesson may begin straight with the reading (no warm-up), and have no quick check (read.checks empty). */
+  warmUp?: Lesson['warmUp'];
   oldId: string | null;
   section: string;
   watch: Watch | null;
@@ -651,6 +675,12 @@ export const digitalWorldLessonSchema = lessonSchema.extend({
   /** No Base44 original. */
   oldId: z.null(),
   section: z.enum(DIGITAL_WORLD_SECTION_IDS),
+  /** May begin straight with the reading. */
+  warmUp: warmUpSchema.optional(),
+  /** The quick check may be left out. */
+  read: previewReadSchema,
+  /** The planning boxes and self-check may be left out. */
+  write: previewWriteSchema,
   activity: activitySchema.optional(),
 });
 export type DigitalWorldLesson = z.infer<typeof digitalWorldLessonSchema>;
@@ -720,6 +750,12 @@ export const southeastAsiaLessonSchema = lessonSchema.extend({
   /** No Base44 original. */
   oldId: z.null(),
   section: z.enum(SOUTHEAST_ASIA_SECTION_IDS),
+  /** May begin straight with the reading. */
+  warmUp: warmUpSchema.optional(),
+  /** The quick check may be left out. */
+  read: previewReadSchema,
+  /** The planning boxes and self-check may be left out. */
+  write: previewWriteSchema,
   /** No Watch step until a person has watched and approved a video. */
   watch: watchSchema.nullable(),
   visual: captionedVisualSchema,

@@ -36,6 +36,20 @@ SENSITIVE = [
 AMERICAN = [r"\bcolor", r"\bcenter\b", r"\borganiz", r"\burbaniz", r"\bpracticed\b", r"\bfavorite", r"\bneighbor", r"\bbehavior", r"\brecogniz", r"\bcivilizat", r"\bspecializ", r"\bharbor\b"]
 
 
+# How long and how hard each course's reading may be (all its sections
+# together). Our World's: docs/content/SPEC.md. Digital World's Read carries
+# more of the lesson now that most activities are gone (Justin's brief of
+# 4 November 2026); Art, Architecture and Society's readings are Justin's own,
+# written for ages 11 to 15 (brief of 7 November 2026). grade is (target low,
+# target high, error above); simpler_grade is (target, error above).
+READING_LIMITS = {
+    None: {"text": (220, 320), "grade": (5.0, 6.5, 7.0), "simpler": (130, 220), "simpler_grade": (3.5, 4.0)},
+    "digital-world": {"text": (220, 400), "grade": (5.0, 6.5, 7.0), "simpler": (130, 270), "simpler_grade": (3.5, 4.0)},
+    "southeast-asia-through-time": {"text": (220, 320), "grade": (5.0, 6.5, 7.0), "simpler": (130, 220), "simpler_grade": (3.5, 4.0)},
+    "art-architecture-society": {"text": (450, 780), "grade": (6.0, 8.5, 9.5), "simpler": (250, 480), "simpler_grade": (4.0, 4.8)},
+}
+
+
 def words(t):
     return re.findall(r"[A-Za-z]+(?:'[A-Za-z]+)?", t)
 
@@ -221,9 +235,13 @@ def check(path):
         return True
 
     for k in ["id", "number", "section", "title", "essentialQuestion", "learningGoal",
-              "warmUp", "evidence", "read", "write", "speak", "reflect", "sources",
+              "evidence", "read", "write", "speak", "reflect", "sources",
               "changes"]:
         need(L, k, "")
+    # Another course's lesson may begin straight with the reading (Justin's
+    # briefs of 4 and 7 November 2026); Our World's always has a warm-up.
+    if course is None or "warmUp" in L:
+        need(L, "warmUp", "")
     # Another course's lesson has no Watch step until a person has watched and
     # approved a video for it (watch: null; Southeast Asia Through Time).
     if course is None or "watch" not in L:
@@ -284,16 +302,21 @@ def check(path):
     g_t, n_t, a_t, long_t = fk(text)
     g_s, n_s, a_s, long_s = fk(simp)
     stats.update(text_words=n_t, text_grade=g_t, text_avg=a_t, simple_words=n_s, simple_grade=g_s, simple_avg=a_s, simple_longest=long_s)
-    if not 220 <= n_t <= 320:
-        errs.append(f"text length {n_t} words (need 220–320)")
-    if not 5.0 <= g_t <= 6.5:
-        (errs if (g_t > 7.0 or g_t < 4.0) else warns).append(f"text grade {g_t} (target 5.0–6.5)")
+    lim = READING_LIMITS.get(course, READING_LIMITS[None])
+    t_lo, t_hi = lim["text"]
+    if not t_lo <= n_t <= t_hi:
+        errs.append(f"text length {n_t} words (need {t_lo}–{t_hi})")
+    g_lo, g_hi, g_err = lim["grade"]
+    if not g_lo <= g_t <= g_hi:
+        (errs if (g_t > g_err or g_t < 4.0) else warns).append(f"text grade {g_t} (target {g_lo}–{g_hi})")
     if a_t > 15:
         warns.append(f"text average sentence {a_t} words (target ≤15)")
-    if not 130 <= n_s <= 220:
-        errs.append(f"simpler length {n_s} words (need 130–220)")
-    if g_s > 3.5:
-        (errs if g_s > 4.0 else warns).append(f"simpler grade {g_s} (target ≤3.5)")
+    s_lo, s_hi = lim["simpler"]
+    if not s_lo <= n_s <= s_hi:
+        errs.append(f"simpler length {n_s} words (need {s_lo}–{s_hi})")
+    sg_hi, sg_err = lim["simpler_grade"]
+    if g_s > sg_hi:
+        (errs if g_s > sg_err else warns).append(f"simpler grade {g_s} (target ≤{sg_hi})")
     if a_s > 9:
         (errs if a_s > 10 else warns).append(f"simpler average sentence {a_s} words (target ≤9)")
     if long_s > 14:
@@ -338,8 +361,13 @@ def check(path):
     positions = []
     ck = rd.get("checks") or []
     types = [c.get("type") for c in ck]
-    if types != ["choice", "choice", "think"]:
+    # Another course's quick check may be left out, or kept short: one or two
+    # choice questions, then perhaps a think question. Our World's keeps all three.
+    preview_shapes = ([], ["choice"], ["choice", "choice"], ["think"], ["choice", "think"], ["choice", "choice", "think"])
+    if course is None and types != ["choice", "choice", "think"]:
         errs.append(f"read.checks must be [choice, choice, think], found {types}")
+    elif course is not None and types not in preview_shapes:
+        errs.append(f"read.checks must be empty, or one or two choice questions then perhaps a think question, found {types}")
     longest_correct = 0
     tagged = [c.get("skill") for c in ck if c.get("type") == "choice" and "skill" in c]
     if tagged and len(tagged) != sum(1 for c in ck if c.get("type") == "choice"):
@@ -382,15 +410,23 @@ def check(path):
 
     # write
     wr = L.get("write") or {}
-    for k in ("prompt", "sentenceStarters", "planningBoxes", "selfCheck", "example"):
+    # Another course's Write may leave out the planning boxes and the self-check,
+    # and needs fewer sentence starters (Justin's briefs of 4 and 7 November 2026).
+    for k in ("prompt", "sentenceStarters", "example") + (("planningBoxes", "selfCheck") if course is None else ()):
         need(wr, k, "write.")
-    if not 4 <= len(wr.get("sentenceStarters") or []) <= 5:
-        errs.append("write.sentenceStarters: need 4–5")
-    if not 3 <= len(wr.get("planningBoxes") or []) <= 4:
+    lo_starters = 4 if course is None else 2
+    if not lo_starters <= len(wr.get("sentenceStarters") or []) <= 5:
+        errs.append(f"write.sentenceStarters: need {lo_starters}–5")
+    boxes = wr.get("planningBoxes") or []
+    if course is None and not 3 <= len(boxes) <= 4:
         errs.append("write.planningBoxes: need 3–4")
+    elif course is not None and len(boxes) > 4:
+        errs.append("write.planningBoxes: at most 4")
     sc = wr.get("selfCheck") or []
-    if not isinstance(sc, list) or len(sc) != 3:
+    if course is None and (not isinstance(sc, list) or len(sc) != 3):
         errs.append("write.selfCheck: need a list of exactly 3")
+    elif course is not None and (not isinstance(sc, list) or len(sc) > 3):
+        errs.append("write.selfCheck: at most 3")
     elif not all(s.startswith("I ") for s in sc):
         warns.append('write.selfCheck items should start "I "')
     n_ex = len(words(wr.get("example", "")))

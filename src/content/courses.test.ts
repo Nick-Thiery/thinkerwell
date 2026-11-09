@@ -95,6 +95,18 @@ describe('Digital World’s files', () => {
     expect(() => loadContent(owCourse, { ...owLessons, 'content/lessons/DW01.json': lessonFile('DW01.json') })).toThrow(ContentError);
   });
 
+  it('may begin straight with the reading and have no quick check, which Our World’s may not', () => {
+    const bare = lessonFile('DW01.json') as unknown as Record<string, unknown> & { read: { checks: unknown[] } };
+    delete bare.warmUp;
+    delete bare.activity;
+    bare.read.checks = [];
+    expect(digitalWorldLessonSchema.safeParse(bare).success).toBe(true);
+    const ow = structuredClone(owLessons['content/lessons/L10.json']) as Record<string, unknown> & { read: { checks: unknown[] } };
+    expect(lessonSchema.safeParse({ ...ow, read: { ...ow.read, checks: [] } }).success).toBe(false);
+    const { warmUp: _warmUp, ...owWithoutWarmUp } = ow;
+    expect(lessonSchema.safeParse(owWithoutWarmUp).success).toBe(false);
+  });
+
   it('name the file and the field for a problem', () => {
     const lesson = lessonFile('DW08.json') as unknown as { activity: { measure: string } };
     lesson.activity.measure = '';
