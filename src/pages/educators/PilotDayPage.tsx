@@ -78,7 +78,7 @@ export function PilotDayPage() {
 
       <article className="tw-print-sheet tw-consent tw-pilotday" aria-labelledby="pilotday-sheet-title">
         <header className="tw-print-head">
-          <p className="tw-print-brand">{parent.t('print.brand')}</p>
+          <p className="tw-print-brand">{parent.t('print.brandPlatform')}</p>
           <h2 id="pilotday-sheet-title" className="tw-print-title">
             {t('pilotDay.sheetTitle')}
           </h2>
@@ -90,6 +90,7 @@ export function PilotDayPage() {
             <h3 id="pilotday-before">{t('pilotDay.beforeTitle')}</h3>
             <ul className="tw-consent-list">
               <li>{tx('pilotDay.beforeSetup', { educators, setup: ui(parent.t('pages.setup.title')) })}</li>
+              <li>{tx('pilotDay.beforeChoose', { educators, guides: ui(parent.t('pages.educators.guidesTitle')) })}</li>
               <li>{tx('pilotDay.beforeCodes', { educators })}</li>
               <li>{t('pilotDay.beforeConsent')}</li>
             </ul>
@@ -180,6 +181,7 @@ export function PilotDayPage() {
               </li>
               <li>{tx('pilotDay.endCertificates', { educators, certificates: ui(parent.t('pages.educators.certificatesCta')) })}</li>
               <li>{tx('pilotDay.endClass', { educators, class: ui(parent.t('pages.educators.classTitle')) })}</li>
+              <li>{tx('pilotDay.endReview', { educators, feedback: ui(parent.t('pages.educators.feedbackSheetTitle')) })}</li>
             </ul>
           </section>
 

@@ -11,30 +11,34 @@ import { horizontalOverflow, recordRequests, watchErrors } from './lessonHelpers
 const FILES = /\/assets\/preview\/southeast-asia-through-time\//;
 const LESSON = 'sat-01-ban-chiang-pot';
 
+/** The course needs no switching on: its map opens on any device. (Kept so each test reads as before.) */
 async function turnOn(page: Page) {
-  await page.goto('/preview/southeast-asia-through-time');
-  await expect(page.getByRole('heading', { level: 1, name: 'Southeast Asia Through Time preview is on' })).toBeVisible();
+  await page.goto('/course/southeast-asia-through-time');
+  await expect(page.getByRole('heading', { level: 1, name: 'Southeast Asia Through Time' })).toBeVisible();
 }
 
-test('with the preview off, its addresses aren’t there and nothing of it is downloaded', async ({ page }) => {
+test('on a device that has never visited it, none of its files are downloaded until it is opened', async ({ page }) => {
   const urls = recordRequests(page);
-  for (const path of ['/course/southeast-asia-through-time', `/lesson/${LESSON}/read`, `/lesson/${LESSON}/print`]) {
+  for (const path of ['/course']) {
     await page.goto(path);
-    await expect(page.getByRole('heading', { level: 1, name: "This page isn't here" })).toBeVisible();
+    await expect(page.locator('h1')).toBeVisible();
+    await expect(page.getByRole('navigation', { name: 'Courses' }).getByRole('link', { name: /Southeast Asia Through Time/ })).toBeVisible();
   }
   expect(urls.filter((url) => FILES.test(url))).toEqual([]);
+  await page.goto(`/lesson/${LESSON}/read`);
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+  expect(urls.filter((url) => FILES.test(url)).length).toBeGreaterThan(0);
 });
 
-test.describe('with the preview on', () => {
+test.describe('with the course open', () => {
   test('the course choice lists it, and its map has four sections of three lessons, each with its check', async ({ page }) => {
     const errors = watchErrors(page);
-    await turnOn(page);
     await page.goto('/course');
-    const choice = page.getByRole('navigation', { name: 'Courses on this device' });
+    const choice = page.getByRole('navigation', { name: 'Courses' });
     await choice.getByRole('link', { name: /Southeast Asia Through Time/ }).click();
     await expect(page).toHaveURL(/\/course\/southeast-asia-through-time$/);
     await expect(page.getByRole('heading', { level: 1, name: 'Southeast Asia Through Time' })).toBeVisible();
-    await expect(page.getByText('Draft course: not yet reviewed', { exact: true })).toBeVisible();
+    await expect(page.getByText('Draft course: not yet reviewed', { exact: true })).toHaveCount(0);
     await expect(page.locator('.tw-course-section')).toHaveCount(4);
     await expect(page.locator('.tw-course-section .tw-row:not(.tw-row-quiz)')).toHaveCount(12);
     await expect(page.locator('.tw-course-section .tw-row-quiz')).toHaveCount(4);
@@ -87,7 +91,7 @@ test.describe('with the preview on', () => {
     await page.goto('/course/southeast-asia-through-time');
     await page.getByRole('link', { name: /Section check: Evidence and early connections/ }).click();
     await expect(page).toHaveURL(/\/section\/evidence-and-connections\/check$/);
-    await expect(page.getByText('Draft course: not yet reviewed', { exact: true })).toBeVisible();
+    await expect(page.getByText('Draft course: not yet reviewed', { exact: true })).toHaveCount(0);
     await page.getByRole('button', { name: 'Start the check' }).click();
     for (let n = 0; n < 6; n += 1) {
       await page.getByRole('radio').first().click();

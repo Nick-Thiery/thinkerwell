@@ -55,7 +55,8 @@ export function CourseMap() {
   useEffect(() => {
     if (loading) return undefined;
     const id = hash.slice(1);
-    if (!id || !sections.some((section) => section.id === id)) return undefined;
+    // A section's id, or "teacher-guides" (the list of teacher guides at the end, linked from Educators' list of guides).
+    if (!id || !(sections.some((section) => section.id === id) || id === 'teacher-guides')) return undefined;
     const frame = requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({ block: 'start' }));
     return () => cancelAnimationFrame(frame);
   }, [loading, hash, sections]);
@@ -102,7 +103,7 @@ export function CourseMap() {
         ))}
       </div>
 
-      <section className="tw-pc-reviewers" aria-labelledby="tw-pc-reviewers-title">
+      <section id="teacher-guides" className="tw-pc-reviewers" aria-labelledby="tw-pc-reviewers-title">
         <h2 id="tw-pc-reviewers-title" className="h2">
           {t('previewCourse.map.forTeachersTitle')}
         </h2>

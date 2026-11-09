@@ -80,8 +80,11 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * on each course's map, the build-time course list, one honest line per course in place of the draft banner) and the
  * Settings card for saving the other courses offline (its code and its words in three languages). The courses'
  * own files (9.6 MB) are still in assets/preview/ and never precached; they are kept at run time (src/offline/courseCache.ts).
+ * Raised to 837 kB later the same day: 836.1 kB with the educator copy for four courses (For organisations, the
+ * Educators page, the session guide, the consent form and information sheet, the setup checklist) and the paper
+ * session record and feedback sheet (a page in the Educators chunk and its words), all in English, Indonesian and Malay.
  */
-const PRECACHE_BUDGET = 832_000;
+const PRECACHE_BUDGET = 837_000;
 /**
  * Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before),
  * 210.5 kB after the language and pilot-day merges, 212.7 kB with the header's language switch and the one language
@@ -126,9 +129,10 @@ const PRECACHE_BUDGET = 832_000;
  * and en.json (in the first chunk) gained the teacher guide's note on translated lessons' steps; no page code.
  * Raised to 229 kB on 9 November 2026: 228.4 kB with the course choice on Home (its code, its styles, the three courses'
  * names in the build-time catalog and the label), which Justin's brief of 9 November asked for; nothing of a course's
- * code, lessons or pictures is in a first visit.
+ * code, lessons or pictures is in a first visit. Raised to 230 kB later the same day: 229.0 kB once en.json (in the
+ * first chunk) carried the educator and organisation copy for four courses.
  */
-const FIRST_VISIT_HOME_BUDGET = 229_000;
+const FIRST_VISIT_HOME_BUDGET = 230_000;
 
 const TEXT = /\.(html|js|css|svg|json|webmanifest)$/;
 
@@ -195,10 +199,10 @@ test('the production build has no source maps and no dev-only pages', { tag: '@o
 // (docs/notes/digital-world-preview.md): their lessons, activities, pictures,
 // words and styles, and the kit they share, are built into assets/preview/,
 // which the service worker never precaches, and load only on a device that
-// turned the preview on. These words and names appear nowhere else.
+// opened the course. These words and names appear nowhere else.
 const DIGITAL_WORLD = [
-  'Draft course: not yet reviewed',
-  'Kursus draf',
+  'Digital World is new. An AI researcher',
+  'Dunia Digital adalah kursus baru',
   "What AI is, and what it isn't",
   'Try the leaf model',
   'Plan your AI helper',
@@ -207,9 +211,9 @@ const DIGITAL_WORLD = [
   'tw-pc-',
 ];
 // Southeast Asia Through Time, the second preview course: the same rule.
-const SOUTHEAST_ASIA = ['Southeast Asia Through Time is a draft', 'sat-01-ban-chiang-pot', 'SAT01-photo'];
+const SOUTHEAST_ASIA = ['Southeast Asia Through Time is new. A historian', 'sat-01-ban-chiang-pot', 'SAT01-photo'];
 // Art, Architecture and Society, the third: the same rule.
-const ART_ARCHITECTURE = ['Art, Architecture and Society is a draft', 'aas-01-art-and-context', 'AAS-01-A'];
+const ART_ARCHITECTURE = ['Art, Architecture and Society is new. An art historian', 'aas-01-art-and-context', 'AAS-01-A'];
 
 // Vietnamese is a hidden preview language (ready: false, docs/notes/languages.md):
 // its messages, lessons and pictures are built into assets/locales/vi/, its font
@@ -268,8 +272,8 @@ test('no preview course content or code is precached or reaches a first visit', 
   page.on('response', (r) => {
     if (r.url().includes('/assets/preview/')) previewFiles.push(r.url());
   });
-  await page.goto('/preview/digital-world');
-  await expect(page.locator('h1')).toHaveText('Digital World preview is on');
+  await page.goto('/course/digital-world');
+  await expect(page.locator('h1')).toHaveText('Digital World');
   await page.waitForLoadState('networkidle');
   let previewText = '';
   for (const url of previewFiles) previewText += (await sentSize(request, url)).body.toString('utf8');

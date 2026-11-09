@@ -90,7 +90,7 @@ export function InformationSheetPage() {
 
       <article className="tw-print-sheet tw-consent tw-sheet" aria-labelledby="sheet-print-title">
         <header className="tw-print-head">
-          <p className="tw-print-brand">{t('print.brand')}</p>
+          <p className="tw-print-brand">{t('print.brandPlatform')}</p>
           <h2 id="sheet-print-title" className="tw-print-title">
             {t('pages.infoSheet.sheetTitle')}
           </h2>

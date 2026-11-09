@@ -61,6 +61,11 @@ export function sessionGuidePath(): string {
   return '/educators/session-guide';
 }
 
+/** The session record and feedback sheet for educators, to print: /educators/feedback-sheet. */
+export function feedbackSheetPath(): string {
+  return '/educators/feedback-sheet';
+}
+
 /** The learning check's paper sheets and answer key, for the optional study, to print: /educators/learning-check (it was /educators/pilot-check). */
 export function learningCheckPath(): string {
   return '/educators/learning-check';

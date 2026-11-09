@@ -18,7 +18,7 @@ describe('EducatorsPage', () => {
     renderAt();
     expect(screen.getByRole('heading', { level: 1, name: 'For educators' })).toBeInTheDocument();
     expect(screen.getByText('Run a Thinkerwell lesson with your group')).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Browse the course' })).toHaveAttribute('href', '/course');
+    expect(screen.getByRole('link', { name: 'Browse the courses' })).toHaveAttribute('href', '/course');
     expect(screen.getByRole('link', { name: 'Set up a device' })).toHaveAttribute('href', '/educators/setup');
     expect(screen.getByRole('link', { name: 'See a lesson on paper' })).toHaveAttribute('href', '/lesson/finding-out-about-the-past/print');
     expect(screen.getByText('One device for every 1 to 3 learners, or one big screen')).toBeInTheDocument();
@@ -47,7 +47,7 @@ describe('EducatorsPage', () => {
     renderAt();
     const how = screen.getByRole('region', { name: 'Run a session' });
     expect(within(how).getAllByRole('listitem').map((item) => item.querySelector('.h3')?.textContent)).toEqual([
-      'Choose a lesson',
+      'Choose your lessons',
       'Read, respond and discuss',
       'Reflect together',
     ]);
@@ -70,7 +70,7 @@ describe('EducatorsPage', () => {
     renderAt();
     const group = screen.getByRole('region', { name: 'Resources for your group' });
     const titles = [...group.querySelectorAll('.tw-edu-check-title')].map((title) => title.textContent);
-    expect(titles).toEqual(['Using Thinkerwell with a group', 'Session guide', 'Learner code cards', 'Information sheet', 'Consent form', 'Learning check']);
+    expect(titles).toEqual(['Using Thinkerwell with a group', 'Session guide', 'Session record and feedback', 'Learner code cards', 'Information sheet', 'Consent form', 'Learning check']);
     expect(within(group).getByRole('link', { name: 'Read more' })).toHaveAttribute('href', '/organisations');
     expect(within(group).getByRole('link', { name: 'Print the guide' })).toHaveAttribute('href', '/educators/session-guide');
     expect(within(group).getByRole('link', { name: 'Make code cards' })).toHaveAttribute('href', '/educators/code-cards');

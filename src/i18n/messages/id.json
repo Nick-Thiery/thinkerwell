@@ -424,7 +424,7 @@
       "title": "Untuk pendidik",
       "eyebrow": "Untuk guru dan relawan",
       "heroTitle": "Jalankan pelajaran Thinkerwell bersama kelompok Anda",
-      "heroBody": "Pakai pelajaran IPS gratis dari Thinkerwell bersama kelompok Anda. Ajarkan di satu layar bersama, berpasangan, atau di perangkat masing-masing, atau cetak pelajarannya. Pelajar tidak perlu membuat akun.",
+      "heroBody": "Pakai pelajaran gratis dari Thinkerwell bersama kelompok Anda. Pilih satu kursus, beberapa kursus, atau pelajaran dari kursus yang berbeda. Ajarkan di satu layar bersama, berpasangan, atau di perangkat masing-masing, atau cetak pelajarannya. Pelajar tidak perlu membuat akun.",
       "pilotAboutTitle": "Memakai Thinkerwell bersama kelompok",
       "pilotAboutBody": "Apa yang ditawarkan Thinkerwell, apa yang Anda perlukan untuk menjalankan kelompok, dan bagaimana privasi pelajar dijaga.",
       "pilotAboutCta": "Baca selengkapnya",
@@ -441,7 +441,7 @@
       "pilotDayBody": "Satu halaman untuk orang dewasa yang menjalankan sesi: sebelum, selama, dan sesudahnya, serta apa yang dilakukan kalau ada yang tidak beres.",
       "pilotDayCta": "Cetak panduan",
       "pilotCheckTitle": "Cek pembelajaran",
-      "pilotCheckBody": "Lembar kertas untuk sesi pertama dan terakhir penelitian: 16 pertanyaan, satu tulisan pendek, dan 5 wajah, dengan kode pelajar. Ada kunci jawaban untuk tim.",
+      "pilotCheckBody": "Lembar kertas untuk sesi pertama dan terakhir penelitian tentang Menjelajahi Dunia Kita: 16 pertanyaan, satu tulisan pendek, dan 5 wajah, dengan kode pelajar. Ada kunci jawaban untuk tim. Tidak untuk kelompok yang memakai kursus lain.",
       "pilotCheckCta": "Cetak ceknya",
       "printLesson": "Lihat pelajaran versi cetak",
       "needTitle": "Yang Anda butuhkan",
@@ -451,7 +451,7 @@
       "need4": "Internet untuk kunjungan pertama",
       "howTitle": "Menjalankan sesi",
       "step1Title": "Pilih pelajaran",
-      "step1Body": "Pelajaran bisa diambil dengan urutan apa saja. Pilih yang cocok untuk kelompok Anda, atau ikuti nomornya.",
+      "step1Body": "Pilih satu kursus, beberapa kursus, atau pelajaran dari kursus yang berbeda. Pelajaran bisa diambil dengan urutan apa saja. Pilih yang cocok untuk kelompok Anda, atau ikuti nomornya.",
       "step2Title": "Baca, tanggapi, dan diskusikan",
       "step2Body": "Pelajar membaca, menulis tentang bacaannya, dan membicarakannya berpasangan.",
       "step3Title": "Refleksi bersama",
@@ -472,18 +472,21 @@
       "certificatesBody": "Semua sertifikat yang diraih di perangkat ini, satu per halaman.",
       "certificatesCta": "Cetak semua sertifikat",
       "sendEnquiry": "Kirim pesan",
-      "browseCourse": "Lihat kursusnya",
+      "browseCourse": "Lihat kursus-kursusnya",
       "setupDevice": "Siapkan perangkat",
       "overview": "Tonton gambaran satu menit (tidak wajib)",
       "materialsTitle": "Bahan mengajar",
       "guidesTitle": "Panduan guru dan kunci jawaban",
-      "guidesBody": "Panduan guru untuk setiap pelajaran, dengan rencana sesi dan jawabannya; setiap pelajaran siap dicetak; dan kunci jawaban untuk setiap cek bagian.",
+      "guidesBody": "Panduan guru untuk setiap pelajaran di setiap kursus, dengan rencana sesi dan jawabannya; setiap pelajaran siap dicetak; dan kunci jawaban untuk setiap cek bagian.",
       "guidesCta": "Buka daftarnya",
       "deviceTitle": "Di perangkat ini",
       "groupTitle": "Bahan untuk kelompok Anda",
       "groupIntro": "Semua yang ada di sini bisa dicetak di kertas A4, hitam putih.",
       "studyTitle": "Penelitian pembelajaran (tidak wajib)",
-      "studyIntro": "Hanya untuk organisasi yang ikut dalam penelitian pembelajaran bersama Thinkerwell. Anda tidak memerlukan semua ini untuk mengajarkan pelajaran."
+      "studyIntro": "Hanya untuk organisasi yang ikut dalam penelitian pembelajaran bersama Thinkerwell. Anda tidak memerlukan semua ini untuk mengajarkan pelajaran.",
+      "feedbackSheetTitle": "Catatan sesi dan masukan",
+      "feedbackSheetBody": "Satu lembar untuk setiap kelompok: kursus dan pelajaran apa yang dipakai, bagaimana jalannya, dan apa yang perlu diperbaiki. Diisi dengan tulisan tangan.",
+      "feedbackSheetCta": "Cetak lembarnya"
     },
     "organisations": {
       "title": "Pakai Thinkerwell bersama pelajar Anda",
@@ -491,9 +494,9 @@
       "intro": "Thinkerwell menyediakan kursus IPS gratis dan bahan untuk pendidik, bagi remaja di seluruh Asia Tenggara. Pakai bersama kelompok di perangkat yang dipakai bergantian, atau dalam bentuk cetak. Lihat kursus dan bahan mengajarnya, atau hubungi kami tentang memakai Thinkerwell di tempat belajar Anda.",
       "honesty": "Thinkerwell adalah platform yang dipimpin oleh pelajar. Thinkerwell bukan lembaga amal atau organisasi nirlaba yang terdaftar.",
       "whatTitle": "Yang ditawarkan Thinkerwell",
-      "whatBody": "Satu kursus, Menjelajahi Dunia Kita: {lessons} pelajaran tentang sejarah, geografi, budaya, dan kehidupan bermasyarakat, untuk pelajar berusia sekitar 10 sampai 17 tahun. Setiap pelajaran punya empat langkah: baca, tulis, bicara, dan refleksi. Kursus ini berjalan di browser web pada laptop dan tablet yang dipakai bersama, dalam bahasa Inggris, Bahasa Indonesia, atau Bahasa Melayu. Pelajaran bisa dipakai tanpa internet setelah kunjungan pertama.",
+      "whatBody": "Empat kursus untuk pelajar berusia sekitar 10 sampai 17 tahun. Menjelajahi Dunia Kita: {ourWorld} pelajaran tentang sejarah, geografi, budaya, dan kehidupan bermasyarakat. Dunia Digital: {digitalWorld} pelajaran tentang AI dan dunia digital. Asia Tenggara dari Masa ke Masa: {southeastAsia} pelajaran tentang masa lalu kawasan ini, dari benda, peta, dan surat yang nyata. Seni, Arsitektur, dan Masyarakat: {art} pelajaran tentang karya dan bangunan dari berbagai penjuru dunia. Pelajaran biasanya punya lima langkah: baca, tulis, bicara, tonton, dan refleksi (empat jika pelajaran tidak punya video, seperti semua pelajaran dalam Bahasa Indonesia dan Bahasa Melayu). Semuanya berjalan di browser web pada laptop dan tablet yang dipakai bersama, dalam bahasa Inggris, Bahasa Indonesia, atau Bahasa Melayu. Pelajaran bisa dipakai tanpa internet setelah kursusnya tersimpan di perangkat; video pilihan butuh internet.",
       "getTitle": "Yang Anda dapatkan",
-      "get1": "Seluruh kursus, gratis. Tanpa akun, tanpa iklan, dan tidak ada yang dikunci.",
+      "get1": "Keempat kursus, gratis. Tanpa akun, tanpa iklan, dan tidak ada yang dikunci.",
       "get2": "Panduan guru untuk setiap pelajaran, kunci jawaban untuk cek bagian, dan setiap pelajaran siap dicetak.",
       "get3": "Daftar periksa untuk menyiapkan setiap perangkat, kartu kode pelajar, dan panduan sesi satu halaman untuk staf.",
       "get4": "Jawaban atas pertanyaan Anda, dan perubahan pada kursus berdasarkan masukan Anda.",
@@ -502,7 +505,7 @@
       "ask2": "Beberapa laptop atau tablet dengan browser web. Pelajar boleh memakainya bergantian.",
       "ask3": "Sekitar {min}–{max} menit untuk setiap pelajaran.",
       "ask4": "Internet untuk kunjungan pertama di setiap perangkat.",
-      "privacyTitle": "Memakai kursus",
+      "privacyTitle": "Memakai Thinkerwell",
       "privacy1": "Pelajar bisa memakai kode, bukan nama. Setiap pelajar mendapat kartu kode, seperti ABC-01, dan mengetik kode itu sebagai namanya. Hanya Anda yang menyimpan daftar pasangan kode dan nama.",
       "privacy2": "Tanpa akun, tanpa alamat email, dan tanpa iklan. Tulisan pelajar tetap di perangkat yang mereka pakai, dan rekaman suara tidak pernah keluar dari perangkat itu.",
       "privacy3": "Persetujuan orang tua. Sebelum ada data belajar yang dibagikan kepada Thinkerwell, orang tua atau wali menandatangani formulir persetujuan, dan pelajar juga setuju. Penelitian ini hanya akan memakai data yang terhubung dengan kode, tidak pernah dengan nama: pertanyaan singkat dan beberapa kalimat di sesi pertama dan terakhir, dan, di setiap sesi, cara pelajar memakai Thinkerwell: waktu, pelajaran dan langkah, jawaban, bantuan yang dipakai, video, dan jumlah kata, tetapi tidak pernah isi tulisannya.",
@@ -530,7 +533,7 @@
       "pageOf": "Halaman {page} dari {count}",
       "formTitle": "Ikut serta dalam uji coba Thinkerwell",
       "formFor": "Untuk orang tua atau wali",
-      "formIntro": "{organisation} sedang mencoba Thinkerwell, kursus online gratis tentang sejarah, geografi, budaya, dan kehidupan bermasyarakat untuk remaja berusia sekitar 10 sampai 17 tahun. Kelas anak Anda akan memakainya beberapa sesi setiap minggu selama 4 sampai 6 minggu. Ada juga sebuah penelitian kecil untuk melihat seberapa bermanfaat Thinkerwell.",
+      "formIntro": "{organisation} sedang mencoba Thinkerwell, platform belajar online gratis untuk remaja berusia sekitar 10 sampai 17 tahun, dengan empat kursus IPS. Kelas anak Anda memakai pelajaran dari satu kursus atau lebih, beberapa sesi seminggu selama 4 sampai 6 minggu. Ada juga penelitian kecil tentang manfaatnya.",
       "studyTitle": "Penelitian uji coba",
       "choiceTitle": "Ini pilihan Anda",
       "choiceBody": "Menjawab tidak untuk salah satu pertanyaan di bawah tidak akan memengaruhi kegiatan lain anak Anda di {organisation}. Jika Anda menjawab tidak untuk penelitian, anak Anda tetap bisa memakai Thinkerwell di kelas, hanya jawabannya tidak dipakai. Anda bisa berubah pikiran kapan saja, bahkan setelah uji coba selesai: beri tahu {organisation}, dan jawaban anak Anda akan dihapus. Anak Anda juga boleh menolak, dan penolakannya tetap berlaku.",
@@ -563,7 +566,7 @@
       "staffSignature": "Tanda tangan staf"
     },
     "pilotStudy": {
-      "intro": "Jika Anda menjawab ya untuk penelitian, maka di sesi pertama dan terakhir anak Anda:",
+      "intro": "Jika Anda menjawab ya untuk penelitian, maka pada sesi pertama dan terakhir kelas yang mempelajari Menjelajahi Dunia Kita, anak Anda:",
       "questions": "menjawab 16 pertanyaan singkat (sekitar 15 menit setiap kali)",
       "writing": "menulis beberapa kalimat tentang sebuah kota rekaan, di atas kertas (sekitar 8 menit)",
       "faces": "memilih gambar wajah untuk masing-masing dari 5 kalimat, seperti “Aku bisa memakai peta untuk mencari informasi” (sekitar 1 menit)",
@@ -597,7 +600,7 @@
       "sheetTitle": "Tentang uji coba Thinkerwell",
       "sheetFor": "Untuk disimpan oleh orang tua atau wali",
       "whatTitle": "Apa itu Thinkerwell?",
-      "whatBody": "Thinkerwell adalah situs belajar gratis. Thinkerwell mengajarkan sejarah, peta dan tempat, budaya, dan cara masyarakat mengambil keputusan. Pelajar membaca, menulis, berbicara, menonton video pendek, dan memikirkan apa yang mereka pelajari, dalam bahasa Inggris sederhana, bahasa Indonesia, atau bahasa Melayu. Thinkerwell dibuat oleh tim kecil pelajar di Singapura.",
+      "whatBody": "Thinkerwell adalah situs belajar gratis. Kursus-kursusnya mengajarkan sejarah, peta dan tempat, budaya, cara masyarakat mengambil keputusan, masa lalu Asia Tenggara, seni dan bangunan, serta cara kerja teknologi digital dan AI. Pelajar membaca, menulis, berbicara, menonton video pendek, dan memikirkan apa yang mereka pelajari, dalam bahasa Inggris sederhana, bahasa Indonesia, atau bahasa Melayu. Thinkerwell dibuat oleh tim kecil pelajar di Singapura.",
       "happenTitle": "Apa yang akan terjadi?",
       "happenBody": "Dari {start} sampai {end}, kelas anak Anda di {organisation} akan memakai Thinkerwell di tablet dan laptop milik organisasi, sekitar {sessions} kali. Seorang guru dari {organisation} memimpin setiap sesi.",
       "studyTitle": "Penelitian uji coba: Anda yang memilih",
@@ -783,7 +786,9 @@
         "why": "Setelah itu, semua pelajaran bisa dipakai tanpa internet. Hanya video yang butuh internet.",
         "how": "Buka Thinkerwell saat internet menyala, dan biarkan terbuka sampai semua pelajaran tersimpan. Thinkerwell melakukannya sendiri.",
         "audio": "Agar Dengarkan bisa dipakai tanpa internet, unduh juga audio pelajaran: di Pengaturan, di bagian Audio pelajaran.",
-        "audioOpen": "Audio pelajaran di Pengaturan"
+        "audioOpen": "Audio pelajaran di Pengaturan",
+        "courses": "Jika kelompok Anda akan memakai kursus lain, simpan juga: di Pengaturan, di bagian Kursus untuk dipakai tanpa internet. Kursus yang hanya dibuka tersimpan sejauh yang sudah dibuka.",
+        "coursesOpen": "Kursus tanpa internet di Pengaturan"
       },
       "storage": {
         "title": "Jaga hasil kerja tetap aman",
@@ -1150,7 +1155,14 @@
       "lessons": "Pelajaran {range}",
       "lesson": "Pelajaran {number}: {title}",
       "print": "Cetak",
-      "printLabel": "Cetak Pelajaran {number}"
+      "printLabel": "Cetak Pelajaran {number}",
+      "otherTitle": "Kursus lain",
+      "otherBody": "Panduan guru, pelajaran siap cetak, dan kunci jawaban untuk kursus lain ada di halaman setiap kursus.",
+      "lessonCount": {
+        "other": "{count} pelajaran"
+      },
+      "otherOpen": "Panduan guru",
+      "otherOpenLabel": "Panduan guru untuk {course}"
     }
   },
   "siteVideo": {
@@ -1225,7 +1237,7 @@
     "startNew": "Pelajar baru mengetuk {new} lalu mengetik nama atau kode mereka.",
     "startLook": "Pilihan {look} untuk pengunjung. Tidak ada yang tersimpan saat seseorang melihat-lihat, jadi pelajar sebaiknya tidak memakainya untuk hasil kerja mereka sendiri.",
     "learnTitle": "Yang dilakukan pelajar",
-    "learnStages": "Setiap pelajaran punya lima langkah: {stages}. Dalam bahasa yang pelajarannya diterjemahkan ada empat, tanpa {watch}. Menjawab pertanyaan {reflect} menyelesaikan pelajaran.",
+    "learnStages": "Sebagian besar pelajaran punya lima langkah: {stages}. Pelajaran tanpa video punya empat, tanpa {watch}. Menjawab pertanyaan {reflect} menyelesaikan pelajaran.",
     "learnStagesNoWatch": "Setiap pelajaran punya empat langkah: {stages}. Menjawab pertanyaan {reflect} menyelesaikan pelajaran.",
     "learnOrder": "Tidak ada yang dikunci. Pelajar bisa membuka pelajaran dan langkah mana saja, dengan urutan apa saja, dan mencoba cek cepat lagi.",
     "learnTime": "Satu pelajaran memakan waktu sekitar {min}–{max} menit. Setiap panduan guru punya rencana untuk {full} menit dan rencana yang lebih singkat untuk {short} menit.",
@@ -1233,7 +1245,7 @@
     "wrongDownloadLead": "Sebuah halaman belum terunduh.",
     "wrongDownload": "Sambungkan ke internet, lalu ketuk {retry}. Hasil kerja yang tersimpan tetap ada di perangkat.",
     "wrongOfflineLead": "Tidak ada internet.",
-    "wrongOffline": "Lanjutkan saja. Setelah kursus tersimpan di perangkat, semua pelajaran bisa dibuka tanpa internet, dan hasil kerja tersimpan di perangkat. Hanya video yang butuh internet.",
+    "wrongOffline": "Lanjutkan saja. Hasil kerja tersimpan di perangkat, dan hanya video yang butuh internet. Kursus selain Menjelajahi Dunia Kita perlu disimpan dulu di Pengaturan.",
     "wrongSharedLead": "Beberapa pelajar, satu perangkat.",
     "wrongShared": "Setiap pelajar mengetuk kotaknya sendiri di halaman beranda. Hasil kerja setiap pelajar disimpan terpisah.",
     "wrongLostLead": "Hasil kerja tampak hilang.",
@@ -1246,12 +1258,14 @@
     "topicsNever": "Jangan pernah menanyakan kepada pelajar tentang perjalanan, negara asal, keluarga, agama, atau suku mereka. Thinkerwell pun tidak pernah menanyakannya.",
     "topicsGuide": "Sebelum mengajar sebuah pelajaran, baca panduan gurunya. Panduan itu dimulai dengan {sensitive} dan menyebutkan video mana yang perlu ditonton dulu.",
     "topicsGuideNoWatch": "Sebelum mengajar sebuah pelajaran, baca panduan gurunya. Panduan itu dimulai dengan {sensitive}.",
-    "topicsReview": "Pelajaran {first} dan {second} perlu ditinjau lebih dulu oleh pendidik setempat.",
+    "topicsReview": "Di Menjelajahi Dunia Kita, Pelajaran {first} dan {second} perlu ditinjau lebih dulu oleh pendidik setempat.",
     "topicsShare": "Kalau seorang pelajar menceritakan hal pribadi, ucapkan terima kasih lalu lanjutkan. Kalau Anda khawatir, ikuti langkah perlindungan anak di organisasi Anda.",
     "endTitle": "Akhir sesi",
     "endSave": "Sebelum mengatur ulang perangkat atau mengembalikannya, simpan hasil kerja ke file: buka {settings}, lalu {transfer}, lalu {save}. Muat file itu di perangkat berikutnya.",
     "endCertificates": "Cetak sertifikat untuk bagian yang sudah selesai: buka {educators}, lalu {certificates}.",
-    "endClass": "Lihat posisi semua pelajar: buka {educators}, lalu {class}. Tidak ada nilai yang ditampilkan."
+    "endClass": "Lihat posisi semua pelajar: buka {educators}, lalu {class}. Tidak ada nilai yang ditampilkan.",
+    "beforeChoose": "Pilih kursus dan pelajaran yang diajarkan ({educators}, lalu {guides}).",
+    "endReview": "Untuk kursus tanpa cek bagian, tanyakan lisan: pertanyaan besar, satu bukti, yang masih ingin diketahui. Lalu isi lembar catatan sesi ({educators}, lalu {feedback})."
   },
   "pilotCheck": {
     "title": "Cek pembelajaran",
@@ -1298,7 +1312,66 @@
     "points": {
       "other": "{count} poin"
     },
-    "scoring": "Ketik jawaban, nilai tulisan, dan wajah setiap pelajar ke spreadsheet penilaian. Spreadsheet itu menghitung skor dan perubahannya dari sesi pertama ke sesi terakhir."
+    "scoring": "Ketik jawaban, nilai tulisan, dan wajah setiap pelajar ke spreadsheet penilaian. Spreadsheet itu menghitung skor dan perubahannya dari sesi pertama ke sesi terakhir.",
+    "scope": "Lembar ini tentang Menjelajahi Dunia Kita, jadi pakai hanya untuk kelompok yang mempelajari pelajarannya. Jika kelompok Anda memakai kursus lain, jangan pakai lembar ini: panduan sesi punya cara singkat untuk meninjau. Nilai dari cek ini tidak pernah digabung atau dibandingkan dengan cek lain."
+  },
+  "feedbackSheet": {
+    "title": "Catatan sesi dan masukan",
+    "intro": "Satu lembar untuk setiap kelompok. Isi dengan tulisan tangan, setelah setiap sesi atau setelah sesi terakhir. Simpan sendiri, atau kirim kepada kami. Jangan menulis nama pelajar, atau apa pun yang mereka tulis atau katakan.",
+    "sendLink": "Kirim jawaban Anda kepada kami",
+    "sheetTitle": "Catatan sesi dan masukan",
+    "sheetFor": "Untuk pendidik",
+    "whoTitle": "Kelompok Anda",
+    "organisation": "Organisasi",
+    "group": "Kode kelompok atau kelas",
+    "dates": "Tanggal sesi",
+    "learners": "Jumlah pelajar",
+    "usedTitle": "Yang dipakai kelompok Anda",
+    "usedHelp": "Untuk setiap kursus, tulis nomor pelajaran yang dipakai kelompok Anda, dan berapa sesi.",
+    "colCourse": "Kursus",
+    "colLessons": "Nomor pelajaran yang dipakai",
+    "colSessions": "Sesi",
+    "checksTitle": "Cek",
+    "checkLearning": "Apakah kelompok mengerjakan cek belajar? Cek ini hanya untuk kelompok yang memakai Menjelajahi Dunia Kita.",
+    "checkSection": "Apakah pelajar mencoba cek bagian?",
+    "checkReview": "Untuk kursus tanpa cek bagian, apakah Anda memakai tiga pertanyaan tinjauan dari panduan sesi?",
+    "yes": "Ya",
+    "no": "Tidak",
+    "notSure": "Tidak yakin",
+    "notUsed": "Tidak dipakai",
+    "howTitle": "Bagaimana jalannya",
+    "ease": {
+      "ask": "Apakah Thinkerwell mudah dipakai? Pikirkan tentang menyiapkan perangkat, mencari pelajaran, dan memulai sesi.",
+      "easy": "Mudah",
+      "mostly": "Sebagian besar mudah",
+      "hard": "Sulit",
+      "more": "Apa yang sulit, atau apa yang akan membantu?"
+    },
+    "switch": {
+      "ask": "Apakah jelas cara berpindah antarkursus?",
+      "more": "Apa yang akan membuatnya lebih jelas?"
+    },
+    "content": {
+      "ask": "Apakah pelajarannya cocok untuk pelajar Anda?",
+      "mostly": "Sebagian besar",
+      "some": "Sebagian",
+      "few": "Sedikit",
+      "more": "Pelajaran mana yang terlalu sulit, terlalu mudah, atau perlu kehati-hatian? Tulis kursus dan nomor pelajarannya."
+    },
+    "engage": {
+      "ask": "Apakah pelajar tetap tertarik?",
+      "most": "Sebagian besar",
+      "some": "Sebagian",
+      "few": "Sedikit",
+      "more": "Pelajaran mana yang menarik perhatian mereka? Mana yang tidak?"
+    },
+    "practical": {
+      "ask": "Apa yang menghambat? Perangkat, internet, waktu, suara, ruangan, atau hal lain."
+    },
+    "anything": {
+      "ask": "Adakah hal lain yang perlu kami ketahui?"
+    },
+    "privacy": "Jangan menulis nama pelajar, atau apa pun yang mereka tulis atau katakan. Simpan lembar ini, atau kirim jawaban Anda kepada Thinkerwell lewat formulir kontak."
   },
   "pageNotDownloaded": {
     "title": "Halaman ini belum terunduh",
@@ -1545,7 +1618,8 @@
     "journalNoLearner": "Pilih siapa yang belajar untuk mencetak jurnalnya. Tidak ada yang disimpan selama kamu lihat-lihat.",
     "chooseLearner": "Pilih siapa yang belajar",
     "writing": "Tulisan",
-    "reflection": "Refleksi"
+    "reflection": "Refleksi",
+    "brandPlatform": "Thinkerwell"
   },
   "certificates": {
     "sectionPageTitle": "Sertifikat: {section}",

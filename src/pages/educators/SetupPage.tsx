@@ -131,7 +131,7 @@ export function SetupPage() {
 
       <article className="tw-print-sheet tw-setup" aria-labelledby="setup-title">
         <header className="tw-print-head">
-          <p className="tw-print-brand">{t('print.brand')}</p>
+          <p className="tw-print-brand">{t('print.brandPlatform')}</p>
           <h1 id="setup-title" className="tw-print-title" tabIndex={-1}>
             {title}
           </h1>
@@ -170,13 +170,20 @@ export function SetupPage() {
             state={offlineState}
             status={t(OFFLINE_STATUS[offline].key, { count: content.getLessons().length })}
             actions={
-              recorded ? (
-                <Button variant="secondary" icon="Download" href={settingsPath('lesson-audio')}>
-                  {t('pages.setup.offline.audioOpen')}
+              <>
+                <Button variant="secondary" icon="Download" href={settingsPath('course-files')}>
+                  {t('pages.setup.offline.coursesOpen')}
                 </Button>
-              ) : null
+                {recorded ? (
+                  <Button variant="secondary" icon="Download" href={settingsPath('lesson-audio')}>
+                    {t('pages.setup.offline.audioOpen')}
+                  </Button>
+                ) : null}
+              </>
             }
           >
+            {/* The other courses are kept as they are opened, or all at once in Settings. On screen only, for the same reason. */}
+            <p className="tw-no-print">{t('pages.setup.offline.courses')}</p>
             {/* Listen's recordings aren't in the offline copy: point to Settings' "Lesson audio". On screen
                 only: on paper the checklist must still fit one A4 page in Indonesian. */}
             {recorded ? <p className="tw-no-print">{t('pages.setup.offline.audio')}</p> : null}

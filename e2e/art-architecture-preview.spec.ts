@@ -12,30 +12,34 @@ import { horizontalOverflow, recordRequests, watchErrors } from './lessonHelpers
 const FILES = /\/assets\/preview\/art-architecture-society\//;
 const LESSON = 'aas-01-art-and-context';
 
+/** The course needs no switching on: its map opens on any device. (Kept so each test reads as before.) */
 async function turnOn(page: Page) {
-  await page.goto('/preview/art-architecture-society');
-  await expect(page.getByRole('heading', { level: 1, name: 'Art, Architecture and Society preview is on' })).toBeVisible();
+  await page.goto('/course/art-architecture-society');
+  await expect(page.getByRole('heading', { level: 1, name: 'Art, Architecture and Society' })).toBeVisible();
 }
 
-test('with the preview off, its addresses aren’t there and nothing of it is downloaded', async ({ page }) => {
+test('on a device that has never visited it, none of its files are downloaded until it is opened', async ({ page }) => {
   const urls = recordRequests(page);
-  for (const path of ['/course/art-architecture-society', `/lesson/${LESSON}/read`, `/lesson/${LESSON}/print`]) {
+  for (const path of ['/course']) {
     await page.goto(path);
-    await expect(page.getByRole('heading', { level: 1, name: "This page isn't here" })).toBeVisible();
+    await expect(page.locator('h1')).toBeVisible();
+    await expect(page.getByRole('navigation', { name: 'Courses' }).getByRole('link', { name: /Art, Architecture and Society/ })).toBeVisible();
   }
   expect(urls.filter((url) => FILES.test(url))).toEqual([]);
+  await page.goto(`/lesson/${LESSON}/read`);
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+  expect(urls.filter((url) => FILES.test(url)).length).toBeGreaterThan(0);
 });
 
-test.describe('with the preview on', () => {
+test.describe('with the course open', () => {
   test('the course choice lists it, and its map has four sections of five lessons and no section checks', async ({ page }) => {
     const errors = watchErrors(page);
-    await turnOn(page);
     await page.goto('/course');
-    const choice = page.getByRole('navigation', { name: 'Courses on this device' });
+    const choice = page.getByRole('navigation', { name: 'Courses' });
     await choice.getByRole('link', { name: /Art, Architecture and Society/ }).click();
     await expect(page).toHaveURL(/\/course\/art-architecture-society$/);
     await expect(page.getByRole('heading', { level: 1, name: 'Art, Architecture and Society' })).toBeVisible();
-    await expect(page.getByText('Draft course: not yet reviewed', { exact: true })).toBeVisible();
+    await expect(page.getByText('Draft course: not yet reviewed', { exact: true })).toHaveCount(0);
     await expect(page.locator('.tw-course-section')).toHaveCount(4);
     await expect(page.locator('.tw-course-section .tw-row:not(.tw-row-quiz)')).toHaveCount(20);
     await expect(page.locator('.tw-course-section .tw-row-quiz')).toHaveCount(0);

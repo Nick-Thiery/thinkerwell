@@ -217,6 +217,7 @@ describe('pilot-day tools for educators', () => {
     ['/educators/class/certificates', 'All certificates'],
     ['/educators/session-guide', 'Session guide'],
     ['/educators/learning-check', 'Learning check'],
+    ['/educators/feedback-sheet', 'Session record and feedback'],
     ['/educators/guides', 'Teacher guides and answer keys'],
   ])('%s shows one h1 with its title', async (path, title) => {
     await renderAt(path);

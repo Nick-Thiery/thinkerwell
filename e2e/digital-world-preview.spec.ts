@@ -2,18 +2,18 @@ import AxeBuilder from '@axe-core/playwright';
 import { expect, test, type Page } from '@playwright/test';
 import { addLearnerViaUi, horizontalOverflow, recordRequests, watchErrors } from './lessonHelpers';
 
-// Digital World, a preview course (src/content/courses.ts,
-// docs/notes/digital-world-preview.md): invisible on every device until it
-// visits /preview/digital-world, then a course choice, the course's map, its
-// lessons with their activities, and its print views, with a "Draft
-// course" banner on every page. Runs at all three sizes; the checks at
-// widths of their own are tagged @own-size.
+// Digital World (src/content/courses.ts, docs/notes/digital-world-preview.md):
+// open on every device since 9 November 2026 (the whole-platform pilot): the
+// course choice, the course's map, its lessons with their activities, and its
+// print views, with one line about what is still being checked on its map.
+// Runs at all three sizes; the checks at widths of their own are tagged @own-size.
 
 const DW_FILES = /\/assets\/preview\/digital-world\//;
 
+/** The course needs no switching on: its map opens on any device. (Kept so each test reads as before.) */
 async function turnOn(page: Page) {
-  await page.goto('/preview/digital-world');
-  await expect(page.getByRole('heading', { level: 1, name: 'Digital World preview is on' })).toBeVisible();
+  await page.goto('/course/digital-world');
+  await expect(page.getByRole('heading', { level: 1, name: 'Digital World' })).toBeVisible();
 }
 
 const banner = (page: Page) => page.getByText('Draft course: not yet reviewed', { exact: true });
@@ -45,24 +45,23 @@ async function cutOff(page: Page): Promise<string[]> {
   });
 }
 
-test.describe('with the preview off', () => {
-  test('nothing about Digital World appears, and nothing of it is downloaded', async ({ page, request }) => {
+test.describe('on a device that has never visited it', () => {
+  test('The course map lists it, and none of its files are downloaded until it is opened', async ({ page, request }) => {
     const urls = recordRequests(page);
-    for (const path of ['/', '/course']) {
+    for (const path of ['/course']) {
       await page.goto(path);
       await expect(page.locator('h1')).toBeVisible();
-      await expect(page.getByRole('navigation', { name: 'Courses on this device' })).toHaveCount(0);
-      await expect(page.locator('body')).not.toContainText('Digital World');
-    }
-    for (const path of ['/course/digital-world', '/course/digital-world/print', '/lesson/dw-what-ai-is/read', '/lesson/dw-how-ai-learns/print', '/educators/lesson/dw-rules-for-ai']) {
-      await page.goto(path);
-      await expect(page.getByRole('heading', { level: 1, name: "This page isn't here" })).toBeVisible();
-      await expect(banner(page)).toHaveCount(0);
+      await expect(page.getByRole('navigation', { name: 'Courses' }).getByRole('link', { name: /Digital World/ })).toBeVisible();
     }
     expect(urls.filter((url) => DW_FILES.test(url))).toEqual([]);
+    await page.goto('/course/digital-world');
+    await expect(page.getByRole('heading', { level: 1, name: 'Digital World' })).toBeVisible();
+    expect(urls.filter((url) => DW_FILES.test(url)).length).toBeGreaterThan(0);
 
-    // No search-engine pages: every Digital World address is app.html (noindex), and none is in the sitemap.
-    for (const path of ['/preview/digital-world', '/course/digital-world', '/lesson/dw-what-ai-is/read']) {
+    // The old hidden address goes to the map. Search engines still list only the public pages.
+    await page.goto('/preview/digital-world');
+    await expect(page).toHaveURL(/\/course\/digital-world$/);
+    for (const path of ['/course/digital-world', '/lesson/dw-what-ai-is/read']) {
       expect(await (await request.get(path)).text(), path).toContain('<meta name="robots" content="noindex"');
     }
     const sitemap = await (await request.get('/sitemap.xml')).text();
@@ -71,12 +70,11 @@ test.describe('with the preview off', () => {
   });
 });
 
-test.describe('with the preview on', () => {
-  test('shows a course choice, Our World first, and turns off again from the banner', async ({ page }) => {
-    await turnOn(page);
+test.describe('with the course open', () => {
+  test('shows a course choice, Our World first, with no draft marking', async ({ page }) => {
     await page.goto('/course');
-    const choice = page.getByRole('navigation', { name: 'Courses on this device' });
-    await expect(choice.getByRole('link')).toHaveText(['Exploring Our World', /^Digital World\s*Draft$/]);
+    const choice = page.getByRole('navigation', { name: 'Courses' });
+    await expect(choice.getByRole('link')).toHaveText(['Exploring Our World', 'Digital World', 'Southeast Asia Through Time', 'Art, Architecture and Society']);
     await expect(choice.getByRole('link', { name: 'Exploring Our World' })).toHaveAttribute('aria-current', 'page');
     // Our World's map is as it was, under the choice.
     await expect(page.getByRole('heading', { level: 1, name: 'Exploring Our World' })).toBeVisible();
@@ -84,15 +82,11 @@ test.describe('with the preview on', () => {
     await choice.getByRole('link', { name: /Digital World/ }).click();
     await expect(page).toHaveURL(/\/course\/digital-world$/);
     await expect(page.getByRole('heading', { level: 1, name: 'Digital World' })).toBeVisible();
-    await expect(banner(page)).toBeVisible();
-    await expect(page.getByRole('heading', { level: 2 })).toHaveText(['How AI developed and how it works', 'Who builds AI, and at what cost', 'AI in daily life', 'Truth, power and choices', 'For teachers and reviewers']);
+    await expect(banner(page)).toHaveCount(0);
+    await expect(page.getByText('Digital World is new. An AI researcher is still checking its facts.')).toBeVisible();
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(['How AI developed and how it works', 'Who builds AI, and at what cost', 'AI in daily life', 'Truth, power and choices', 'For teachers']);
     await expect(page.getByText(/Section check:/)).toHaveCount(0);
-
-    await page.getByRole('button', { name: 'Turn preview off' }).click();
-    await expect(page).toHaveURL(/\/course$/);
-    await expect(page.getByRole('navigation', { name: 'Courses on this device' })).toHaveCount(0);
-    await page.goto('/course/digital-world');
-    await expect(page.getByRole('heading', { level: 1, name: "This page isn't here" })).toBeVisible();
+    await expect(page.locator('.tw-course-section .tw-row:not(.tw-row-quiz)')).toHaveCount(17);
   });
 
   test('a learner does one whole lesson, saved on the device: Read teaches without a warm-up or an activity', async ({ page, baseURL }) => {
@@ -104,7 +98,7 @@ test.describe('with the preview on', () => {
     await page.getByRole('link', { name: /^Lesson 1:/ }).click();
     await expect(page).toHaveURL(/\/lesson\/dw-what-ai-is\/read$/);
     await expect(page.getByRole('heading', { level: 1, name: "What AI is, and what it isn't" })).toBeVisible();
-    await expect(banner(page)).toBeVisible();
+    await expect(banner(page)).toHaveCount(0);
 
     // Justin's brief of 4 November 2026: no warm-up and no activity here, just the evidence and the reading.
     await expect(page.locator('.tw-read-warmup-question')).toHaveCount(0);
@@ -207,7 +201,7 @@ test.describe('with the preview on', () => {
     await turnOn(page);
     await page.goto('/lesson/dw-how-ai-learns/print');
     await expect(page.getByRole('heading', { level: 1, name: 'How AI learns from examples' })).toBeVisible();
-    await expect(page.getByText("Digital World, draft course: not yet reviewed. Don't use it with learners yet.")).toBeVisible();
+    await expect(page.getByText('Digital World: a new course. Its facts are still being checked.')).toBeVisible();
     await expect(page.getByRole('heading', { level: 2, name: 'Optional extension' })).toBeVisible();
     await expect(page.getByRole('heading', { level: 3, name: 'Try the leaf model' })).toBeVisible();
 
@@ -233,8 +227,7 @@ test.describe('with the preview on', () => {
     await page.goto('/lesson/dw-what-ai-is/read');
     await page.getByRole('button', { name: /Language|Bahasa/ }).first().click();
     await page.getByRole('menuitemradio', { name: /Bahasa Indonesia/ }).or(page.getByRole('radio', { name: /Bahasa Indonesia/ })).first().click();
-    await expect(page.getByText('Kursus draf: belum ditinjau')).toBeVisible();
-    await expect(page.getByText(/Dunia Digital masih berupa draf\./)).toBeVisible();
+    await expect(page.getByText('Kursus draf: belum ditinjau')).toHaveCount(0);
     await expect(page.getByText(/pelajarannya masih dalam bahasa Inggris/)).toHaveCount(0);
     const title = page.getByRole('heading', { level: 1, name: 'Apa itu AI, dan apa yang bukan AI' });
     await expect(title).toBeVisible();

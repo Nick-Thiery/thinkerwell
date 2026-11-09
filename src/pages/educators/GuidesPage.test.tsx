@@ -44,3 +44,19 @@ describe('the list of teacher guides', () => {
     expect(screen.getByRole('link', { name: 'Kembali ke halaman pendidik' })).toBeInTheDocument();
   });
 });
+
+describe('the other courses’ teacher guides', () => {
+  it('names each other course with its lesson count and links to its own page’s list of teacher guides', () => {
+    renderAt();
+    const others = screen.getByRole('region', { name: 'Other courses' });
+    expect(others).toHaveTextContent('Digital World');
+    expect(others).toHaveTextContent('17 lessons');
+    expect(within(others).getByRole('link', { name: 'Teacher guides for Digital World' })).toHaveAttribute('href', '/course/digital-world#teacher-guides');
+    expect(within(others).getByRole('link', { name: 'Teacher guides for Southeast Asia Through Time' })).toHaveAttribute(
+      'href',
+      '/course/southeast-asia-through-time#teacher-guides',
+    );
+    expect(within(others).getByRole('link', { name: 'Teacher guides for Art, Architecture and Society' })).toHaveTextContent('Teacher guides');
+    expect(screen.getByRole('heading', { level: 2, name: 'Exploring Our World' })).toBeInTheDocument();
+  });
+});

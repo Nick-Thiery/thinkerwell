@@ -434,6 +434,17 @@ export const pageTour: TourStop[] = [
     },
   },
   {
+    // The session record and feedback sheet: paper only, its words load with the page (the lazily loaded `feedbackSheet` group).
+    name: 'educators: session record and feedback sheet',
+    go: async (page, { ui }) => {
+      await openPath(page, '/educators', ui('pages.educators.title'));
+      await page.locator('.tw-edu-tools').getByRole('link', { name: ui('pages.educators.feedbackSheetCta') }).click();
+      await expect(page.locator('h1')).toHaveText(ui('feedbackSheet.title'));
+      // A row for Our World and each other course.
+      await expect(page.locator('.tw-fb-table tbody tr')).toHaveCount(4);
+    },
+  },
+  {
     // The learning check's paper sheets, from the optional study's fold: its words load with the page (the lazily
     // loaded `pilotCheck` group), its questions with it too (content/pilot-check/), in the language on screen or else
     // English, marked as English.

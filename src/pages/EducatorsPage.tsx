@@ -4,6 +4,7 @@ import {
   allCertificatesPath,
   classPath,
   codeCardsPath,
+  feedbackSheetPath,
   consentFormPath,
   contactPath,
   coursePath,
@@ -53,6 +54,13 @@ export function EducatorsPage() {
       body: t('pages.educators.pilotDayBody'),
       cta: t('pages.educators.pilotDayCta'),
       href: sessionGuidePath(),
+    },
+    {
+      icon: 'MessageCircle',
+      title: t('pages.educators.feedbackSheetTitle'),
+      body: t('pages.educators.feedbackSheetBody'),
+      cta: t('pages.educators.feedbackSheetCta'),
+      href: feedbackSheetPath(),
     },
     {
       icon: 'User',

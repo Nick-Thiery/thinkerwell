@@ -9,6 +9,7 @@
  * (CLAUDE.md). Learners are listed by name.
  */
 import type { Lesson, Section, StageId } from '../../content';
+import { COURSES, DEFAULT_COURSE_ID } from '../../content/courses';
 import {
   findContinueTarget,
   isLessonComplete,
@@ -37,10 +38,19 @@ export interface SectionCount {
   total: number;
 }
 
+/** The lessons a learner has finished in one of the other courses (Digital World, ...), from the lesson ids' prefix. */
+export interface CourseCount {
+  courseId: string;
+  completed: number;
+  total: number;
+}
+
 export interface LearnerSummary {
   learner: Learner;
   /** Lessons finished in each section, in course order. */
   sections: SectionCount[];
+  /** Lessons finished in each other course the learner has opened a lesson of, in the course list's order. Never a score. */
+  otherCourses: CourseCount[];
   onNow: OnNow;
   /** The latest time any of their work was saved (a lesson or a section check), or null. */
   lastActive: string | null;
@@ -54,6 +64,8 @@ export function summariseLearner(
   sections: readonly Section[],
   /** A lesson's stages in the language on screen (CourseContent.stagesFor), so "where they are" is never a step it hasn't got. */
   stagesFor?: (lesson: Lesson) => readonly StageId[],
+  /** How many lessons each other course has (the build-time list, courseSummaries); a course missing here isn't counted. */
+  courseTotals: Readonly<Record<string, number>> = {},
 ): LearnerSummary {
   const progress = progressByLessonId(work.progress);
 
@@ -84,8 +96,18 @@ export function summariseLearner(
 
   const tried = new Set<string>(work.quizAttempts.filter((record) => record.attempts > 0).map((record) => record.sectionId));
 
+  const otherCourses: CourseCount[] = [];
+  for (const course of COURSES) {
+    const total = courseTotals[course.id];
+    if (course.id === DEFAULT_COURSE_ID || !total) continue;
+    const mine = work.progress.filter((record) => record.lessonId.toLowerCase().startsWith(course.lessonIdPrefix));
+    if (mine.length === 0) continue;
+    otherCourses.push({ courseId: course.id, completed: mine.filter((record) => isLessonComplete(record)).length, total });
+  }
+
   return {
     learner: work.learner,
+    otherCourses,
     sections: sections.map((section) => ({ section, ...sectionProgress(section, lessons, progress) })),
     onNow,
     lastActive,

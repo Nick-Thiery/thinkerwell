@@ -7,7 +7,7 @@ import { L10 } from './lessonHelpers';
 
 test('a teacher goes from the Educators page to a teacher guide and back to the same section', async ({ page }) => {
   await page.goto('/educators');
-  await expect(page.getByRole('link', { name: 'Browse the course' })).toHaveAttribute('href', '/course');
+  await expect(page.getByRole('link', { name: 'Browse the courses' })).toHaveAttribute('href', '/course');
   await page.getByRole('region', { name: 'Teaching materials' }).getByRole('link', { name: 'Open the list' }).click();
   await expect(page).toHaveURL(/\/educators\/guides$/);
   await expect(page.locator('h1')).toHaveText('Teacher guides and answer keys');

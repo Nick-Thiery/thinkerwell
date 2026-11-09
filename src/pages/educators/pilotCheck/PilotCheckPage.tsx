@@ -81,6 +81,7 @@ export function PilotCheckPage() {
           {title}
         </h1>
         <p className="body-lg">{t('pilotCheck.intro')}</p>
+        <p className="body">{t('pilotCheck.scope')}</p>
         <div className="tw-check-howto">
           <h2 className="h3">{t('pilotCheck.howTitle')}</h2>
           <ul>

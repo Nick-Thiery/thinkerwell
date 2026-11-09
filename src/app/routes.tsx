@@ -111,6 +111,7 @@ export const routes: RouteObject[] = [
       // cards), with the other Educators pages.
       { path: 'educators/setup', ...page(teacherPages, (m) => m.SetupPage) },
       { path: 'educators/session-guide', ...page(teacherPages, (m) => m.PilotDayPage) },
+      { path: 'educators/feedback-sheet', ...page(teacherPages, (m) => m.FeedbackSheetPage) },
       { path: 'educators/learning-check', ...page(teacherPages, (m) => m.PilotCheckPage) },
       // Their addresses until October 2026 (vercel.json redirects them too, for links from outside).
       ...OLD_EDUCATOR_PATHS.map(([old, now]) => ({ path: old.slice(1), element: <Navigate to={now} replace /> })),
