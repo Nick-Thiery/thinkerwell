@@ -85,7 +85,7 @@ test.describe('with the preview on', () => {
     await expect(page).toHaveURL(/\/course\/digital-world$/);
     await expect(page.getByRole('heading', { level: 1, name: 'Digital World' })).toBeVisible();
     await expect(banner(page)).toBeVisible();
-    await expect(page.getByRole('heading', { level: 2 })).toHaveText(['Thinking machines', 'Who builds AI, and at what cost', 'AI in daily life', 'Truth, power and choices', 'For teachers and reviewers']);
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(['How AI developed and how it works', 'Who builds AI, and at what cost', 'AI in daily life', 'Truth, power and choices', 'For teachers and reviewers']);
     await expect(page.getByText(/Section check:/)).toHaveCount(0);
 
     await page.getByRole('button', { name: 'Turn preview off' }).click();
@@ -95,7 +95,7 @@ test.describe('with the preview on', () => {
     await expect(page.getByRole('heading', { level: 1, name: "This page isn't here" })).toBeVisible();
   });
 
-  test('a learner does one whole lesson with its activity, saved on the device', async ({ page, baseURL }) => {
+  test('a learner does one whole lesson, saved on the device: Read teaches without a warm-up or an activity', async ({ page, baseURL }) => {
     const errors = watchErrors(page);
     const urls = recordRequests(page);
     await addLearnerViaUi(page, 'Amina');
@@ -106,15 +106,9 @@ test.describe('with the preview on', () => {
     await expect(page.getByRole('heading', { level: 1, name: "What AI is, and what it isn't" })).toBeVisible();
     await expect(banner(page)).toBeVisible();
 
-    // The activity, after the evidence: sort with the keyboard, then by tapping.
-    const activity = page.getByRole('region', { name: 'AI or not AI?' });
-    const calculator = activity.getByRole('group', { name: 'Calculator' });
-    await calculator.getByRole('radio', { name: 'Uses AI' }).focus();
-    await page.keyboard.press('ArrowDown');
-    await expect(calculator.getByRole('radio', { name: 'Not AI' })).toBeChecked();
-    await expect(activity.getByText('One possible answer: Not AI.')).toBeVisible();
-    await activity.getByRole('group', { name: '“Smart” fan' }).getByText('Hard to say').click();
-    await expect(activity.getByText(/Any group can be justified here/)).toBeVisible();
+    // Justin's brief of 4 November 2026: no warm-up and no activity here, just the evidence and the reading.
+    await expect(page.locator('.tw-read-warmup-question')).toHaveCount(0);
+    await expect(page.locator('.tw-dw-activity')).toHaveCount(0);
     expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
 
     // The rest of Read, as in Our World.
@@ -124,7 +118,7 @@ test.describe('with the preview on', () => {
     for (const question of await page.getByRole('radiogroup').all()) await question.getByRole('radio').first().click();
     await page.getByRole('button', { name: 'Continue to Write' }).click();
 
-    await page.getByRole('textbox', { name: 'Your answer' }).fill('The calculator follows fixed steps, so it is not AI.');
+    await page.getByRole('textbox', { name: 'Your answer' }).fill('The voice tool learned from recordings, and a person checks its mistakes.');
     await page.getByRole('button', { name: 'Continue to Speak' }).click();
     await page.getByRole('button', { name: 'Continue to Watch' }).click();
     await page.getByRole('button', { name: 'Continue to Reflect' }).click();
@@ -154,7 +148,7 @@ test.describe('with the preview on', () => {
           };
         }),
     );
-    expect(saved).toMatchObject({ completedAt: expect.any(String), activity: { answers: { calculator: 'not-ai', 'smart-fan': 'hard' } } });
+    expect(saved).toMatchObject({ completedAt: expect.any(String), stagesDone: expect.arrayContaining(['read', 'write', 'reflect']) });
 
     const origin = new URL(baseURL ?? 'http://localhost').origin;
     expect(urls.filter((url) => !url.startsWith(origin) && !url.startsWith('data:') && !url.startsWith('blob:'))).toEqual([]);
@@ -164,6 +158,9 @@ test.describe('with the preview on', () => {
   test('trains the leaf model: 4 of 6, 6 of 6, 0 of 2, 8 of 8, then 3 of 4 on leaves nobody has used', async ({ page }) => {
     await turnOn(page);
     await page.goto('/lesson/dw-how-ai-learns/read');
+    // The leaf model is an optional extension, folded away until wanted.
+    await page.getByText('Try it yourself (optional)').click();
+    await expect(page.getByRole('heading', { level: 3, name: 'Try the leaf model' })).toBeVisible();
     const label = (description: string, choice: 'Healthy' | 'Sick') =>
       page.getByRole('group', { name: `Label for: ${description}` }).getByRole('button', { name: choice }).click();
     const score = page.getByTestId('tw-dw-tm-score');
@@ -211,12 +208,14 @@ test.describe('with the preview on', () => {
     await page.goto('/lesson/dw-how-ai-learns/print');
     await expect(page.getByRole('heading', { level: 1, name: 'How AI learns from examples' })).toBeVisible();
     await expect(page.getByText("Digital World, draft course: not yet reviewed. Don't use it with learners yet.")).toBeVisible();
-    await expect(page.getByRole('heading', { level: 3, name: 'Train the leaf model' })).toBeVisible();
-    await expect(page.getByRole('table')).toHaveCount(3);
+    await expect(page.getByRole('heading', { level: 2, name: 'Optional extension' })).toBeVisible();
+    await expect(page.getByRole('heading', { level: 3, name: 'Try the leaf model' })).toBeVisible();
 
     await page.goto('/course/digital-world/print');
     await expect(page.getByRole('heading', { level: 1 })).toHaveCount(17);
-    await expect(page.getByRole('heading', { level: 2, name: 'Activity' })).toHaveCount(17);
+    // Since Justin's brief of 4 November 2026, four lessons keep an activity: three plus Lesson 3's optional extension.
+    await expect(page.getByRole('heading', { level: 2, name: 'Activity' })).toHaveCount(3);
+    await expect(page.getByRole('heading', { level: 2, name: 'Optional extension' })).toHaveCount(1);
     expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
     // On paper: no banner, toolbar or header; each lesson after the first starts a new page.
     await page.emulateMedia({ media: 'print' });
@@ -285,7 +284,9 @@ test.describe('every page and activity', { tag: '@own-size' }, () => {
         await page.goto(path);
         await expect(page.locator('h1').first()).toBeVisible();
         // Open what can be opened, so axe and the width check see it too.
-        const closed = page.locator('.tw-dw-page-button[aria-expanded="false"], .tw-dw-tm-numbers:not([open]) > summary');
+        const closed = page.locator(
+          '.tw-dw-page-button[aria-expanded="false"], .tw-dw-tm-numbers:not([open]) > summary, details.tw-dw-extension:not([open]) > summary',
+        );
         for (let opened = 0; opened < 20 && (await closed.count()) > 0; opened++) await closed.first().click();
         expect(await horizontalOverflow(page), `${path} at ${width}px`).toBeLessThanOrEqual(0);
         expect(await cutOff(page), `${path} at ${width}px`).toEqual([]);
@@ -307,8 +308,10 @@ test.describe('every page and activity', { tag: '@own-size' }, () => {
   test('every activity control is at least 44 by 44px', async ({ page }) => {
     await turnOn(page);
     await page.setViewportSize({ width: 390, height: 900 });
-    for (const id of lessons) {
+    for (const id of ['dw-how-ai-learns', 'dw-ai-at-school', 'dw-checking-a-claim', 'dw-design-an-ai-helper']) {
       await page.goto(`/lesson/${id}/${id === 'dw-design-an-ai-helper' ? 'write' : 'read'}`);
+      // Lesson 3's leaf model is folded away as an optional extension.
+      if (id === 'dw-how-ai-learns') await page.getByText('Try it yourself (optional)').click();
       await expect(page.locator('.tw-dw-activity')).toBeVisible();
       // As e2e/tap-targets.spec.ts measures them: a radio inside its label is as big as the label.
       const small = await page.locator('.tw-dw-activity').evaluate((root) =>

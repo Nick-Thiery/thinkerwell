@@ -6,10 +6,14 @@ import { ActivityOnPaper } from './ActivityOnPaper';
 import { ActivityPlayer } from './ActivityPlayer';
 
 // Lessons by their numbers since the social studies rebuild (October 2026); the
-// three activity types only retired drafts use are played from those drafts.
+// activity types only retired drafts use are played from those drafts.
 const SCAMS = retiredLesson('DW06-scams');
 const ASK = retiredLesson('DW08-asking-good-questions');
 const NUMBERS = retiredLesson('DW09-numbers');
+// Since Justin's brief of 4 November 2026 no current lesson sorts or compares results:
+// those players are played from the drafts as they were before (Lessons 1 and 8 on 2 November).
+const AI_OR_NOT = retiredLesson('DW01-ai-or-not');
+const COMPARING = retiredLesson('DW08-comparing-results');
 
 // Every activity type the Digital World drafts use
 // (docs/content/DIGITAL_WORLD_SPEC.md 5.2), played as a learner would, with
@@ -22,12 +26,12 @@ function noNetwork() {
   return () => expect(fetch).not.toHaveBeenCalled();
 }
 
-describe('sort (Lessons 1 and 13, and others)', () => {
+describe('sort (the retired Lesson 1 draft)', () => {
   it('puts each item in a group with real radio buttons, and gives one possible answer and its reason without marking anything wrong', async () => {
     const user = userEvent.setup();
     const checkNetwork = noNetwork();
-    const activity = dwActivity(1, 'sort');
-    const { saved } = renderInLesson(1, <ActivityPlayer activity={activity} />);
+    const activity = dwActivity(AI_OR_NOT, 'sort');
+    const { saved } = renderInLesson(AI_OR_NOT, <ActivityPlayer activity={activity} />);
     expect(screen.getByRole('heading', { level: 3, name: 'AI or not AI?' })).toBeInTheDocument();
 
     const calculator = screen.getByRole('group', { name: 'Calculator' });
@@ -56,12 +60,12 @@ describe('sort (Lessons 1 and 13, and others)', () => {
   });
 
   it('on paper, gives learners a box per group and teachers one possible answer for each', () => {
-    const activity = dwActivity(13, 'sort');
-    const { view } = renderInLesson(13, <ActivityOnPaper activity={activity} forTeachers={false} />);
+    const activity = dwActivity(AI_OR_NOT, 'sort');
+    const { view } = renderInLesson(AI_OR_NOT, <ActivityOnPaper activity={activity} forTeachers={false} />);
     expect(screen.queryByText(/One possible answer:/)).not.toBeInTheDocument();
-    expect(screen.getAllByText('Probably real').length).toBe(activity.items.length);
+    expect(screen.getAllByText('Not AI').length).toBe(activity.items.length);
     view.unmount();
-    renderInLesson(13, <ActivityOnPaper activity={activity} forTeachers />);
+    renderInLesson(AI_OR_NOT, <ActivityOnPaper activity={activity} forTeachers />);
     expect(screen.getAllByText(/One possible answer:/)).toHaveLength(activity.items.length);
   });
 });
@@ -138,10 +142,10 @@ describe('train-model (Lesson 3)', () => {
   });
 });
 
-describe('compare-results (Lesson 8)', () => {
+describe('compare-results (the retired Lesson 8 draft)', () => {
   it('shows each group’s numbers, says "Not quite" or "Correct" for the tap, then asks whose examples were missing', async () => {
     const user = userEvent.setup();
-    const { saved } = renderInLesson(8, <ActivityPlayer activity={dwActivity(8, 'compare-results')} />);
+    const { saved } = renderInLesson(COMPARING, <ActivityPlayer activity={dwActivity(COMPARING, 'compare-results')} />);
     expect(screen.getByText('19 of 20 right')).toBeInTheDocument();
     expect(screen.queryByRole('radiogroup', { name: /Whose examples/ })).not.toBeInTheDocument();
 
@@ -289,7 +293,7 @@ describe('design-plan (Lesson 17)', () => {
 
 describe('on paper', () => {
   it.each([
-    ['Lesson 8', 8, 'compare-results'],
+    ['the retired Lesson 8 draft', COMPARING, 'compare-results'],
     ['Lesson 14', 14, 'check-claim'],
     ['Lesson 11', 11, 'ask-tool'],
     ['the retired numbers draft', NUMBERS, 'chart-check'],

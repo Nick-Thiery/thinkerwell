@@ -1,105 +1,60 @@
 {
   "title": "Apabila AI tersilap",
   "essentialQuestion": "Mengapakah AI kadang-kadang berfungsi dengan baik untuk sesetengah orang dan dengan teruk untuk orang lain?",
-  "learningGoal": "Terangkan bagaimana contoh yang tertinggal dan punca lain boleh menjadikan alat AI berfungsi kurang baik untuk sesetengah kumpulan, dan cadangkan cara untuk mencari dan membaiki puncanya.",
-  "warmUp": {
-    "question": "Sebuah alat berfungsi dengan baik untuk orang dewasa tetapi membuat banyak kesilapan untuk kanak-kanak. Mengapakah ini boleh berlaku?",
-    "options": [
-      "Ia terlalu sukar untuk dibina",
-      "Ia belajar kebanyakannya daripada orang dewasa",
-      "Sesuatu yang lain",
-      "Tidak pasti"
-    ]
-  },
+  "learningGoal": "Terangkan bagaimana siapa yang ada dalam data, dan punca lain, boleh menyebabkan alat AI berfungsi lebih teruk untuk sesetengah kumpulan orang, dan mengapa jurang dalam keputusan menunjukkan masalah tetapi bukan puncanya.",
   "evidence": {
     "label": "Contoh rekaan yang dibuat untuk pelajaran ini.",
-    "question": "Bagi setiap alat, contoh siapakah yang tertinggal?",
+    "question": "Bagi kumpulan manakah alat itu paling kerap tersilap? Apakah yang diketahui oleh pasukan itu tentang cara alat itu belajar?",
     "cards": [
       {
-        "title": "Tiga alat yang diuji di Pusat Pembelajaran Riverbend",
+        "title": "Ujian menaip dengan suara di Pusat Pembelajaran Riverbend",
         "columns": [
-          "Alat",
-          "Apa yang dipelajarinya",
-          "Apa yang berlaku"
+          "Siapa yang membaca 20 perkataan yang sama",
+          "Perkataan yang ditaip dengan betul"
         ],
         "rows": [
           [
-            "Alat menaip dengan suara",
-            "Kebanyakannya rakaman orang dewasa membaca dengan kuat",
-            "Ia berfungsi dengan baik untuk guru. Ia menaip banyak perkataan dengan tidak betul untuk pelajar yang paling muda."
+            "Guru",
+            "19 daripada 20"
           ],
           [
-            "Alat terjemahan",
-            "Banyak tulisan dalam beberapa bahasa, dan sangat sedikit dalam beberapa bahasa lain",
-            "Ia bagus dalam bahasa yang banyak tulisannya dalam talian. Ia membuat banyak kesilapan dalam bahasa yang sedikit tulisannya dalam talian."
+            "Pelajar yang lebih tua",
+            "16 daripada 20"
           ],
           [
-            "Model daun daripada Pelajaran 3 (Pusingan 2)",
-            "Daun daripada satu jenis tumbuhan",
-            "Ia menyebut daun berjalur yang sihat daripada tumbuhan baharu sebagai “sakit”."
+            "Pelajar paling muda",
+            "9 daripada 20"
           ]
+        ]
+      },
+      {
+        "title": "Apa yang diketahui oleh pasukan itu",
+        "items": [
+          "Alat itu belajar kebanyakannya daripada rakaman orang dewasa membaca dengan kuat.",
+          "Setiap kumpulan membaca perkataan yang sama, di dalam bilik senyap yang sama."
         ]
       }
     ]
   },
-  "activity": {
-    "title": "Uji alat menaip dengan suara",
-    "instructions": "Pasukan Riverbend membacakan 20 perkataan yang sama kepada alat menaip dengan suara. Setiap kumpulan mengambil giliran. Tekan kumpulan yang paling banyak mendapat kesilapan daripada alat itu.",
-    "measure": "Perkataan yang ditaip dengan betul",
-    "groups": [
-      {
-        "label": "Guru"
-      },
-      {
-        "label": "Pelajar yang lebih tua"
-      },
-      {
-        "label": "Pelajar paling muda"
-      }
-    ],
-    "afterTap": {
-      "question": "Contoh siapakah yang mungkin tertinggal daripada data latihan?",
-      "options": [
-        {
-          "text": "Rakaman suara kanak-kanak",
-          "feedback": "Betul. Jadual itu menyatakan bahawa alat itu belajar kebanyakannya daripada orang dewasa, jadi suara kanak-kanak baharu baginya. Keputusan itu sahaja tidak dapat memberitahu kamu perkara itu."
-        },
-        {
-          "text": "Rakaman suara guru",
-          "feedback": "Belum tepat. Alat itu berfungsi dengan baik untuk guru. Cari kumpulan yang paling banyak kesilapannya."
-        },
-        {
-          "text": "Lebih banyak daripada 20 perkataan yang sama",
-          "feedback": "Belum tepat. Setiap kumpulan membaca perkataan yang sama. Perbezaannya ialah siapa yang bercakap."
-        }
-      ]
-    },
-    "extension": "Tidak wajib, menggunakan semula alat latihan Pelajaran 3: beri satu contoh daun label yang tidak betul dan uji sekali lagi. Model itu menyalin kesilapan itu, dan ini menunjukkan bagaimana label seseorang yang tidak betul atau tidak adil masuk ke dalam sesebuah model."
-  },
   "read": {
     "sections": [
       {
-        "heading": "Kesilapan boleh datang daripada contoh yang tertinggal",
-        "text": "Dalam Pelajaran 3, model daun membuat kesilapan apabila data latihan model itu tertinggal sesuatu. Alat AI sebenar boleh tersilap dengan cara yang sama. Di Pusat Pembelajaran Riverbend, sebuah alat menaip dengan suara berfungsi dengan baik untuk guru dewasa, tetapi ia menaip banyak perkataan dengan tidak betul untuk pelajar yang paling muda. Alat itu telah belajar kebanyakannya daripada rakaman orang dewasa, jadi suara kanak-kanak baharu baginya. Penyelidik juga mendapati masalah ini dalam kehidupan sebenar. Banyak alat pertuturan jauh kurang tepat dengan suara kanak-kanak. Satu sebabnya ialah rakaman kanak-kanak jauh lebih sedikit untuk dipelajari oleh alat itu.",
-        "simpler": "Dalam Pelajaran 3, sesetengah daun tertinggal daripada data latihan. Di Riverbend, sebuah alat menaip dengan suara berfungsi dengan baik untuk guru. Ia membuat banyak kesilapan untuk pelajar yang muda. Ia belajar kebanyakannya daripada suara orang dewasa. Jadi suara kanak-kanak baharu baginya. Penyelidik juga mendapati perkara ini dalam kehidupan sebenar. Banyak alat pertuturan kurang tepat untuk kanak-kanak. Satu sebabnya ialah rakaman kanak-kanak lebih sedikit."
+        "heading": "Satu ujian, tiga kumpulan",
+        "text": "Di Pusat Pembelajaran Riverbend, satu pasukan menguji sebuah alat menaip dengan suara. Guru, pelajar yang lebih tua dan pelajar yang paling muda masing-masing membaca 20 perkataan yang sama. Alat itu tepat untuk guru, dengan 19 perkataan betul. Untuk pelajar yang paling muda, ia hanya mendapat 9 perkataan betul. Jurang ini menunjukkan bahawa alat itu berfungsi lebih teruk untuk kanak-kanak kecil. Ia tidak menunjukkan sebabnya. Jadi pasukan itu mencari puncanya. Alat itu telah belajar kebanyakannya daripada rakaman orang dewasa, jadi suara kanak-kanak baharu baginya. Penyelidik juga telah mendapati perkara ini dalam alat pertuturan yang sebenar. Dalam satu kajian pada tahun 2024, sebuah alat yang digunakan secara meluas membuat beberapa kali ganda lebih banyak kesilapan dengan pertuturan kanak-kanak berbanding pertuturan orang dewasa. Penyelidik itu memberi dua sebab: rakaman kanak-kanak jauh lebih sedikit, dan pertuturan kanak-kanak banyak berubah semasa mereka membesar.",
+        "simpler": "Di Riverbend, satu pasukan menguji sebuah alat menaip dengan suara. Guru dan pelajar masing-masing membaca 20 perkataan yang sama. Alat itu tepat untuk guru. Ia mendapat 19 betul. Untuk pelajar yang paling muda, ia hanya mendapat 9 betul. Jurang ini menunjukkan masalah bagi kanak-kanak kecil. Tetapi ia tidak menunjukkan sebabnya. Jadi pasukan itu mencari sebabnya. Alat itu belajar kebanyakannya daripada suara orang dewasa. Suara kanak-kanak baharu baginya. Pada tahun 2024, penyelidik mendapati sebuah alat sebenar membuat lebih banyak kesilapan dengan kanak-kanak. Rakaman kanak-kanak lebih sedikit. Dan pertuturan kanak-kanak berubah semasa mereka membesar."
       },
       {
-        "heading": "Apabila satu kumpulan tertinggal, AI boleh menjadi tidak adil",
-        "text": "Apabila sesebuah alat berfungsi dengan baik untuk sesetengah kumpulan orang dan dengan teruk untuk kumpulan lain, kita kata alat itu mempunyai bias. Contoh yang tertinggal ialah satu punca yang mungkin. Punca lain ialah label yang tidak betul atau tidak adil, matlamat yang lebih sesuai untuk sesetengah orang berbanding orang lain, pilihan reka bentuk, atau menggunakan alat di tempat yang bukan tujuannya. Alat terjemahan Riverbend membuat jauh lebih banyak kesilapan dalam bahasa yang sedikit tulisannya dalam talian. Penyelidik telah mendapati corak yang sama dalam alat bahasa AI yang sebenar. Walaupun tiada sesiapa yang berniat untuk meninggalkan sesiapa, hasilnya masih boleh tidak adil.",
-        "simpler": "Sesetengah alat berfungsi dengan baik untuk sesetengah orang dan dengan teruk untuk orang lain. Ini dipanggil bias. Contoh yang tertinggal ialah satu punca. Label yang tidak betul ialah punca lain. Begitu juga matlamat atau reka bentuk yang lebih sesuai untuk sesetengah orang. Menggunakan alat di tempat yang tidak sesuai juga boleh menyebabkannya. Alat terjemahan Riverbend membuat lebih banyak kesilapan dalam sesetengah bahasa. Bahasa itu sedikit tulisannya dalam talian. Penyelidik juga mendapati perkara ini dengan alat sebenar. Walaupun tiada sesiapa yang berniat meninggalkan orang, ia boleh tidak adil."
+        "heading": "Siapa yang ada dalam data",
+        "text": "Apabila sesebuah alat berfungsi dengan baik untuk sesetengah kumpulan orang dan dengan teruk untuk kumpulan lain, kita kata alat itu mempunyai bias. Satu puncanya ialah data latihan. Adakah data itu mewakili semua orang yang akan menggunakan alat itu? Satu koleksi terkenal yang mengandungi lebih daripada sejuta foto telah digunakan untuk melatih banyak alat. Kira-kira 45% daripada fotonya diambil di Amerika Syarikat, dan hanya kira-kira 2% di India. Penyelidik mendapati bahawa alat yang dilatih dengannya kurang baik dalam menamakan benda dalam foto dari India atau Pakistan, seperti pengantin lelaki di majlis perkahwinan. Hasilnya boleh menjadi tidak adil walaupun tiada sesiapa yang merancangnya.",
+        "simpler": "Sesetengah alat berfungsi dengan baik untuk sesetengah orang dan dengan teruk untuk orang lain. Ini dipanggil bias. Satu puncanya ialah data latihan. Adakah data itu mewakili semua orang yang akan menggunakan alat itu? Satu set foto yang besar telah melatih banyak alat. Hampir separuh fotonya datang dari Amerika Syarikat. Sangat sedikit yang datang dari India. Alat yang dilatih dengannya kurang baik dengan foto dari India atau Pakistan. Ia boleh menjadi tidak adil walaupun tiada sesiapa yang merancangnya."
       },
       {
-        "heading": "Mencari dan membaiki masalah",
-        "text": "Untuk mencari bias, orang menguji sesebuah alat dengan banyak kumpulan yang berbeza, bukan hanya dengan orang yang membinanya. Kemudian mereka membandingkan keputusannya. Jurang dalam keputusan menunjukkan ada sesuatu yang tidak kena, tetapi tidak menunjukkan sebabnya. Jadi mereka mencari puncanya. Adakah contoh sesetengah orang tertinggal? Adakah labelnya tidak betul? Adakah alat itu dibuat untuk matlamat atau tempat yang lain? Jika contoh tertinggal, mereka boleh mengumpul lebih banyak, tetapi hanya dengan izin orang itu. Lebih banyak data tidak membaiki setiap punca. Jika labelnya tidak adil, lebih banyak contoh dengan label yang sama tidak akan membantu. Untuk keputusan yang penting, seseorang mesti sentiasa menyemak apa yang dikatakan oleh AI.",
-        "simpler": "Untuk mencari bias, uji alat itu dengan banyak kumpulan dan bandingkan keputusannya. Jurang menunjukkan ada sesuatu yang tidak kena, tetapi bukan sebabnya. Jadi cari puncanya. Adakah contoh tertinggal? Adakah label tidak betul? Adakah alat itu dibuat untuk matlamat atau tempat lain? Contoh yang tertinggal boleh ditambah, jika orang bersetuju. Tetapi lebih banyak data tidak membaiki semuanya. Label yang tidak adil kekal tidak adil. Untuk keputusan besar, seseorang patut menyemak AI itu."
+        "heading": "Jurang yang sama boleh mempunyai punca yang berbeza",
+        "text": "Dua orang saintis komputer menghuraikan dua kes rekaan untuk menerangkan perkara ini. Dalam kes pertama, sebuah alat hospital terlepas lebih banyak serangan jantung pada wanita berbanding lelaki. Penyelidik itu menambah lebih banyak rekod daripada wanita, dan alat itu menjadi lebih baik. Dalam kes kedua, sebuah alat pengambilan pekerja mengatakan wanita kurang sesuai untuk pekerjaan. Alat itu telah belajar daripada penilaian lalu yang dibuat oleh orang terhadap pekerja, dan penilaian itu tidak adil kepada wanita. Menambah lebih banyak data yang sama jenis tidak membantu. Kedua-dua alat menunjukkan jurang yang sama jenis, tetapi puncanya berbeza. Punca lain termasuk matlamat sesuatu alat, reka bentuknya, atau menggunakannya di tempat yang bukan tujuannya. Jadi orang menguji sesuatu alat dengan banyak kumpulan, mencari puncanya, dan membaiki punca itu.",
+        "simpler": "Dua orang saintis mencipta dua kes rekaan untuk menerangkan perkara ini. Dalam kes pertama, sebuah alat hospital terlepas lebih banyak serangan jantung pada wanita. Mereka menambah lebih banyak rekod daripada wanita, dan alat itu menjadi lebih baik. Dalam kes kedua, sebuah alat pengambilan pekerja mengatakan wanita kurang sesuai. Ia belajar daripada penilaian lalu oleh orang, yang tidak adil kepada wanita. Lebih banyak data yang sama tidak membantu. Kedua-dua alat ada jurang, tetapi puncanya berbeza. Matlamat atau reka bentuk juga boleh menyebabkannya. Jadi orang menguji alat dengan banyak kumpulan. Kemudian mereka mencari puncanya dan membaikinya."
       }
     ],
     "glossary": [
-      {
-        "word": "data latihan",
-        "definition": "Contoh yang digunakan untuk membina sebuah model. Di sini, setiap contoh datang dengan jawapannya.",
-        "example": "Data latihan alat suara itu kebanyakannya orang dewasa yang membaca dengan kuat."
-      },
       {
         "word": "tepat",
         "forms": [
@@ -116,80 +71,82 @@
       {
         "word": "bias",
         "definition": "Apabila sesebuah alat berfungsi lebih baik untuk sesetengah kumpulan berbanding kumpulan lain.",
-        "example": "Alat terjemahan itu mempunyai bias yang memihak kepada bahasa yang banyak tulisannya dalam talian."
+        "example": "Alat suara itu mempunyai bias yang memihak kepada suara orang dewasa."
       },
       {
-        "word": "adil",
-        "definition": "Melayan semua orang dengan cara yang betul, supaya tiada kumpulan yang tertinggal.",
-        "example": "Alat suara yang adil berfungsi dengan baik untuk kanak-kanak dan orang dewasa."
+        "word": "data latihan",
+        "definition": "Contoh yang digunakan untuk membina alat AI, seperti rakaman atau foto.",
+        "example": "Data latihan alat suara itu kebanyakannya orang dewasa yang membaca dengan kuat."
+      },
+      {
+        "word": "mewakili",
+        "forms": [
+          "diwakili",
+          "perwakilan",
+          "mewakilinya"
+        ],
+        "definition": "Memasukkan cukup contoh daripada sesuatu kumpulan, supaya kumpulan itu ditunjukkan dengan adil.",
+        "example": "Foto-foto itu tidak mewakili orang di India dengan baik."
+      },
+      {
+        "word": "tidak adil",
+        "forms": [
+          "adil"
+        ],
+        "definition": "Tidak melayan orang dengan cara yang betul atau sama rata.",
+        "example": "Alat pengambilan pekerja itu belajar daripada penilaian yang tidak adil kepada wanita."
       }
     ],
     "checks": [
       {
-        "question": "Mengapakah alat menaip dengan suara membuat lebih banyak kesilapan untuk pelajar yang paling muda?",
+        "question": "Apakah yang ditunjukkan oleh jurang dalam ujian Riverbend?",
         "options": [
           {
-            "text": "Pelajar muda itu menggunakan perkataan yang tidak betul",
-            "feedback": "Belum tepat. Masalahnya ada pada alat itu, bukan pada pelajar. Lihat apa yang dipelajari oleh alat itu."
+            "text": "Pelajar yang paling muda tidak membaca perkataan itu dengan jelas",
+            "feedback": "Belum tepat. Masalahnya ada pada alat itu, bukan pada pelajar. Baca petikan pertama."
           },
           {
-            "text": "Alat itu dimatikan untuk sebahagian masa",
-            "feedback": "Belum tepat. Alat itu berfungsi. Lihat apa yang dipelajarinya dalam petikan pertama."
+            "text": "Alat itu berfungsi lebih teruk untuk kanak-kanak kecil, tetapi bukan sebabnya",
+            "feedback": "Betul. Jurang menunjukkan bahawa ada sesuatu yang tidak kena. Pasukan itu masih perlu mencari puncanya."
           },
           {
-            "text": "Ia belajar kebanyakannya daripada rakaman orang dewasa",
-            "feedback": "Betul. Suara kanak-kanak baharu bagi alat itu, kerana data latihannya kebanyakannya orang dewasa."
+            "text": "Alat itu berhenti berfungsi untuk semua orang yang menggunakannya",
+            "feedback": "Belum tepat. Ia menaip 19 daripada 20 perkataan dengan betul untuk guru. Baca petikan pertama."
           }
         ]
       },
       {
-        "question": "Sebuah alat membuat lebih banyak kesilapan untuk satu kumpulan. Apakah langkah pertama yang baik?",
+        "question": "Dalam kes rekaan tentang pengambilan pekerja, mengapakah lebih banyak data tidak membantu?",
         "options": [
           {
-            "text": "Cari puncanya, seperti contoh yang tertinggal",
-            "feedback": "Betul. Jurang menunjukkan ada sesuatu yang tidak kena, tetapi bukan sebabnya. Semak contoh, label dan matlamat alat itu, kemudian baiki puncanya dan uji sekali lagi."
+            "text": "Alat itu belajar daripada penilaian lalu yang tidak adil",
+            "feedback": "Betul. Masalahnya ada pada penilaian yang dipelajarinya, jadi lebih banyak data yang sama jenis mengekalkan masalah yang sama."
           },
           {
-            "text": "Berhenti mengujinya dengan kumpulan itu",
-            "feedback": "Belum tepat. Itu menyembunyikan masalah. Baca petikan ketiga tentang mencari bias."
+            "text": "Ia langsung tiada contoh wanita",
+            "feedback": "Belum tepat. Itu punca yang boleh dibaiki dengan lebih banyak data. Baca petikan ketiga."
           },
           {
-            "text": "Suruh kumpulan itu bercakap seperti orang dewasa",
-            "feedback": "Belum tepat. Alat itu yang patut berubah, bukan orangnya. Baca petikan ketiga tentang membaiki bias."
+            "text": "Rekod hospital yang diperlukannya telah hilang",
+            "feedback": "Belum tepat. Hospital ialah kes yang satu lagi. Baca tentang alat pengambilan pekerja dalam petikan ketiga."
           }
         ]
-      },
-      {
-        "question": "Pilih satu alat daripada pelajaran ini. Siapa lagi yang patut mengujinya sebelum orang mempercayainya?",
-        "placeholder": "___ itu juga patut diuji oleh ... kerana ..."
       }
     ]
   },
   "write": {
-    "prompt": "Pilih satu alat daripada jadual Riverbend. Terangkan contoh siapa yang tertinggal, apa yang tidak kena, dan satu cara untuk membaikinya.",
+    "prompt": "Pilih alat suara Riverbend atau alat foto. Nyatakan untuk siapa alat itu berfungsi lebih teruk dan satu punca yang mungkin. Kemudian nyatakan bagaimana orang boleh menyemak punca itu.",
     "sentenceStarters": [
       "Saya memilih ...",
-      "Ia belajar kebanyakannya daripada ...",
-      "Contoh ___ tertinggal, jadi ...",
-      "Ini penting bagi ___ kerana ...",
-      "Satu cara untuk membaikinya ialah ..."
+      "Ia berfungsi lebih teruk untuk ...",
+      "Satu punca yang mungkin ialah ...",
+      "Untuk menyemak, orang boleh ..."
     ],
-    "planningBoxes": [
-      "Idea utama saya",
-      "Bukti daripada pelajaran",
-      "Mengapa ini penting",
-      "Soalan yang masih saya ada"
-    ],
-    "selfCheck": [
-      "Saya menamakan satu alat dan apa yang dipelajarinya.",
-      "Saya menyatakan contoh siapa yang tertinggal dan apa yang tidak kena.",
-      "Saya memberi satu cara untuk membaikinya."
-    ],
-    "example": "Saya memilih alat menaip dengan suara. Ia belajar kebanyakannya daripada rakaman orang dewasa yang membaca dengan kuat. Contoh suara kanak-kanak tertinggal, jadi ia menaip banyak perkataan dengan tidak betul untuk pelajar yang paling muda. Ia menaip 9 daripada 20 perkataan dengan betul untuk mereka, dan 19 untuk guru. Ini penting bagi pelajar yang paling muda kerana mereka mendapat alat yang membuat banyak kesilapan. Satu cara untuk membaikinya ialah dengan menambah rakaman kanak-kanak, jika mereka dan keluarga mereka bersetuju. Kemudian pasukan itu boleh mengujinya sekali lagi."
+    "example": "Saya memilih alat suara Riverbend. Ia berfungsi lebih teruk untuk pelajar yang paling muda. Ia menaip 9 daripada 20 perkataan dengan betul untuk mereka, dan 19 untuk guru. Satu punca yang mungkin ialah alat itu belajar kebanyakannya daripada suara orang dewasa, jadi suara kanak-kanak baharu baginya. Untuk menyemak, orang boleh menambah rakaman kanak-kanak, jika mereka dan keluarga mereka bersetuju, dan kemudian menguji alat itu sekali lagi. Jika alat itu masih membuat banyak kesilapan, puncanya mungkin sesuatu yang lain."
   },
   "speak": {
-    "partnerTask": "Rakan kamu menamakan satu alat daripada jadual Riverbend. Kamu menyatakan contoh siapa yang tertinggal dan satu cara untuk membaikinya. Kemudian bertukar giliran.",
-    "independentTask": "Sebut dengan kuat apa maksud bias. Berikan satu contoh daripada pelajaran ini dan satu cara untuk membaikinya."
+    "partnerTask": "Rakan kamu menghuraikan sebuah alat yang membuat lebih banyak kesilapan untuk satu kumpulan orang. Kamu memberi dua punca berbeza yang mungkin. Kemudian bertukar giliran.",
+    "independentTask": "Sebut dengan kuat apa maksud bias. Kemudian terangkan mengapa lebih banyak data membantu alat hospital tetapi tidak membantu alat pengambilan pekerja."
   },
   "watch": {
     "why": "Dalam masa kurang daripada tiga minit, video ini menerangkan bagaimana data latihan yang tertinggal atau berat sebelah boleh menjadikan AI berfungsi kurang baik untuk sesetengah orang.",
@@ -206,16 +163,16 @@
   "reflect": {
     "prompts": [
       {
-        "text": "Satu cara untuk menjadikan alat AI lebih adil ialah ..."
+        "text": "Satu perkara yang kini saya faham tentang bias dalam AI ialah ..."
       },
       {
-        "text": "Satu soalan yang akan saya tanya kepada orang yang membina alat AI ialah ..."
+        "text": "Satu kumpulan yang saya fikir patut membantu menguji alat AI ialah ... kerana ..."
       }
     ],
-    "completionMessage": "Kamu telah menamatkan Pelajaran 8. Kamu telah mencari contoh siapa yang tertinggal dan menerangkan cara untuk menjadikan sesebuah alat lebih adil."
+    "completionMessage": "Kamu telah menamatkan Pelajaran 8. Kamu telah mempelajari bagaimana siapa yang ada dalam data, dan punca lain, boleh menyebabkan sesebuah alat berfungsi lebih teruk untuk sesetengah orang, dan mengapa jurang memerlukan pencarian punca yang teliti."
   },
   "visual": {
-    "alt": "Carta bar: alat menaip dengan suara menaip 19 daripada 20 perkataan dengan betul untuk guru, 16 untuk pelajar yang lebih tua dan 9 untuk pelajar yang paling muda. Data latihannya kebanyakannya suara orang dewasa."
+    "alt": "Carta bar: alat menaip dengan suara itu mendapat 19 daripada 20 perkataan betul untuk guru, 16 untuk pelajar yang lebih tua dan 9 untuk pelajar yang paling muda. Data latihannya kebanyakannya suara orang dewasa, satu punca yang mungkin."
   },
   "sources": [
     {
@@ -225,13 +182,10 @@
       "label": "Suresh dan Guttag (EAAMO 2021): A framework for understanding sources of harm throughout the machine learning life cycle (punca kemudaratan sepanjang kitaran hayat pembelajaran mesin)"
     },
     {
-      "label": "Stanford Report, daripada Stanford HAI (2025): How AI is leaving non-English speakers behind (bagaimana AI meninggalkan penutur bukan bahasa Inggeris)"
+      "label": "Code.org: Machine learning and bias (rancangan pelajaran, dengan video pelajaran ini)"
     },
     {
-      "label": "Code.org: Machine learning and bias (rancangan pelajaran)"
-    },
-    {
-      "label": "Experience AI (Raspberry Pi Foundation): Lesson 3, Bias in, bias out (pelajaran 3)"
+      "label": "Experience AI (Raspberry Pi Foundation dan Google DeepMind): Lesson 3, Bias in, bias out (pelajaran 3)"
     }
   ],
   "sensitiveNotes": [
@@ -239,7 +193,7 @@
     "Bias dalam alat sebenar boleh menyentuh kaum, jantina dan identiti lain (video Pelajaran 3 menyebut pengecaman wajah). Kekalkan perbincangan pada bagaimana data latihan menyebabkannya dan cara membaikinya; jangan minta pelajar berkongsi pengalaman ketika mereka dilayan dengan tidak adil."
   ],
   "educatorNotes": [
-    "Nombor dalam aktiviti ini (19, 16 dan 9 daripada 20) direka untuk menunjukkan idea itu; jadual Riverbend memberitahu pelajar apa yang dipelajari oleh setiap alat, jadi puncanya diberi, bukan disimpulkan daripada markah. Penyelidikan sebenar: Kid-Whisper (AIES 2024) mendapati bahawa sebuah alat pertuturan yang digunakan secara meluas, tanpa latihan tambahan, membuat 3 hingga 10 kali lebih banyak kesilapan pada pertuturan kanak-kanak berbanding pertuturan orang dewasa dalam ujian yang digunakannya, dan menamakan dua punca: rakaman kanak-kanak yang sedikit, dan pertuturan kanak-kanak yang lebih berubah-ubah semasa mereka membesar. Melatihnya dengan lebih banyak pertuturan kanak-kanak mengecilkan jurang itu tetapi tidak menutupnya.",
-    "Contoh yang tertinggal ialah satu punca bias, bukan satu-satunya. Suresh dan Guttag (2021) menyenaraikan tujuh punca kemudaratan sepanjang kitaran hayat pembelajaran mesin, termasuk siapa yang ada dalam data (perwakilan), bagaimana label dipilih atau diukur, matlamat yang dilatihkan kepada model, cara ia diuji, dan cara serta tempat ia digunakan. Contoh mereka: model serangan jantung bertambah baik apabila lebih banyak data daripada wanita ditambah, tetapi model pengambilan pekerja yang dilatih dengan penilaian manusia tidak bertambah baik, kerana masalahnya ada pada label. Jurang dalam keputusan menunjukkan ada sesuatu yang tidak kena, bukan sebabnya. Jangan beritahu pelajar bahawa bias sentiasa berlaku secara tidak sengaja: pelajaran ini hanya mengatakan ia boleh tidak adil walaupun tiada sesiapa yang berniat begitu. Rekod dakwaan ada dalam content/courses/digital-world/claims/DW08.md. Model daun Pelajaran 3 sengaja digunakan semula: pelajar boleh melihat satu punca (contoh yang tertinggal) dalam model kecil yang mereka latih dan dalam alat sebenar. Lanjutan aktiviti ini (label yang tidak betul yang disalin oleh model) menunjukkan punca kedua, iaitu label."
+    "Ujian Riverbend dan nombornya (19, 16 dan 9 daripada 20) ialah rekaan; bukti itu memberitahu pelajar apa yang dipelajari oleh alat itu, jadi puncanya diberikan, bukan disimpulkan daripada markah. Penyelidikan sebenar: Kid-Whisper (Attia dan rakan-rakan, AIES 2024) mendapati bahawa model pertuturan Whisper, tanpa latihan tambahan, mempunyai kadar ralat perkataan 6 hingga 10 kali ganda kadar orang dewasa bagi pertuturan kanak-kanak yang berskrip dan 3 hingga 5 kali ganda bagi pertuturan perbualan kanak-kanak dalam set ujian yang digunakannya. Kajian itu menamakan dua punca: pangkalan data pertuturan kanak-kanak terhad dan sukar dikumpul, dan pertuturan kanak-kanak berbeza-beza semasa mereka membesar. Latihan dengan pertuturan kanak-kanak mengurangkan ralat, dan penulisnya menyenaraikan cabaran yang masih ada. Foto: Suresh dan Guttag (2021) melaporkan bahawa kira-kira 45% daripada 1.2 juta imej berlabel ImageNet diambil di Amerika Syarikat, 1% di China dan 2.1% di India, dan memetik satu kajian (Shankar dan rakan-rakan) yang mendapati bahawa pengelas yang dilatih dengannya berprestasi jauh lebih teruk pada imej seperti “bridegroom” (pengantin lelaki) dari negara yang kurang diwakili seperti Pakistan atau India.",
+    "Contoh yang tertinggal ialah satu punca bias, bukan satu-satunya punca. Suresh dan Guttag menyenaraikan tujuh sumber kemudaratan sepanjang kitaran hayat pembelajaran mesin: sejarah, perwakilan, pengukuran (cara label dipilih), pengagregatan, pembelajaran (matlamat model dilatih), penilaian (cara model diuji) dan penggunaan (cara dan tempat model digunakan). Contoh serangan jantung dan pengambilan pekerja mereka ialah “simplified scenario” (senario yang dipermudah) yang mereka reka untuk menunjukkan bahawa simptom yang sama boleh mempunyai punca yang berbeza: lebih banyak data daripada wanita membantu kes pertama, tetapi tidak membantu kes kedua, apabila label datang daripada penilaian manusia yang berat sebelah. Pelajaran ini menyatakannya. Jurang dalam keputusan menunjukkan ada sesuatu yang tidak kena, bukan sebabnya. Jangan beritahu pelajar bahawa bias sentiasa berlaku secara tidak sengaja: pelajaran ini hanya menyatakan bahawa sesuatu hasil boleh tidak adil walaupun tiada sesiapa yang merancangnya. Pelajaran ini tidak lagi mengulangi ujian model dalam Pelajaran 3; model daun dan alat terjemahan telah dikeluarkan. Rekod dakwaan ada dalam content/courses/digital-world/claims/DW08.md."
   ]
 }

@@ -166,3 +166,60 @@ Shared by the translators of Lessons 1 to 8 and 9 to 17, so the whole course use
 | chat tool (AI) | alat sembang AI |  | 11 |
 | often / not always | selalunya / tidak sentiasa | "selalu" means often in Malaysia; "always" = sentiasa | everywhere |
 | Our World (course, in teachers' notes) | kursus Meneroka Dunia Kita | KEY_TERMS.md course title | 14 |
+| section 1 (revised 8 November 2026): How AI developed and how it works | Bagaimana AI berkembang dan bagaimana ia berfungsi | replaces the "Thinking machines" row above; question: Dari manakah AI datang, dan bagaimanakah ia berfungsi? | course |
+| fresh test (on examples nobody has used) | ujian baharu | as in the Round 4 debrief; "kept aside" = mengasingkan | 3 |
+| cassava | ubi kayu |  | 3 |
+| agricultural extension worker | pegawai pengembangan pertanian | teachers' notes | 3 |
+| trick (n.) | helah | labelled AI work "bukan helah" | 13 |
+| a fake (n.) | kandungan palsu | glossary word stays "palsu" | 13 |
+| crushed (can, bottle) | kemek |  | 17 |
+| voluntary | sukarela | "bersifat sukarela" in running text | 16 |
+| proposal (stage of a project) | cadangan | same word as the research proposal row | 17 |
+| impact (real difference to people's lives) | impak | flagged; "kesan" is plainer but also means "effect" | 17 |
+| people with diabetes / eye screening / eye specialist | penghidap diabetes / saringan mata / pakar mata | reviewers may prefer "kencing manis" | 17 |
+| firm in the middle (between an AI company and its workers) | syarikat perantara | "the AI company" stays "syarikat AI"; in teacher notes "firma penyumberan luar" for an outsourcing firm | 5 |
+| sweating / sweatshop (1800s England) | “sweating” (memerah keringat) / “sweatshop”, atau kilang peluh | the English words kept in quotation marks with a Malay gloss | 5 |
+| reformers (labour history) | pembaharu | flagged | 5 |
+| trades (kinds of work, 1909 law) | bidang kerja; tailoring = menjahit pakaian | | 5 |
+| International Energy Agency | Agensi Tenaga Antarabangsa; IEA in teacher notes | | 6 |
+| stop approving (data centres) | berhenti meluluskan | Johor's November 2025 decision | 6 |
+| building jobs / long-term jobs | pekerjaan pembinaan / pekerjaan jangka panjang | | 6 |
+| publish / publishing | menerbitkan / penerbitan | forms: terbit, diterbitkan | 7 |
+| trained from scratch | dilatih dari awal | | 7 |
+| cover (a language) / support (a language) | merangkumi / menyokong | | 7 |
+| represent (in the data) | mewakili | forms: diwakili, perwakilan | 8 |
+| unfair / fair | tidak adil / adil | glossary word in Lesson 8 | 8 |
+| hiring tool | alat pengambilan pekerja | | 8 |
+| gap (in results) | jurang | | 8 |
+| rating (of a worker) | penilaian | | 8 |
+| worked example (step by step) | contoh langkah demi langkah | heading of Lesson 1's second part | 1 |
+| “The tree is tall” / “The three is tall” (voice-typing slip) | “Pokok itu tinggi” / “Pokok itu tiga” | a Malay sound-alike replaces the English tree/three pun; flagged | 1 |
+| private charity / foundation (Rockefeller) | badan amal swasta / yayasan | the Foundation's name stays in English | 2 |
+| grant (money) | geran |  | 2 |
+| boom (in AI, in a market) | ledakan | "Booms and AI winters" = Ledakan dan musim sejuk AI | 2 |
+| Fifth Generation computer project (Japan) | projek komputer Generasi Kelima |  | 2 |
+| “if-then” rules | peraturan “jika-maka” |  | 2 |
+| graphics chips | cip grafik |  | 2 |
+| a return / revival (of an idea) | kebangkitan semula; "the return of learning" (heading) = kembalinya pembelajaran |  | 2 |
+| toy example / toy game | contoh mudah / permainan contoh |  | 4 |
+| employer | majikan | glossary word in Lesson 9 | 9 |
+| uneven (change) | tidak sama rata | "The change is uneven" = Perubahan itu tidak sama rata | 9 |
+| exposed (most exposed group) | terdedah | glossary form of pendedahan | 9 |
+| agency (public) | agensi | NSTDA = Agensi Pembangunan Sains dan Teknologi Kebangsaan Thailand, as in Lesson 16 | 10 |
+| route (send a report on) | menyalurkan | forms: disalurkan; the noun "route" stays laluan; flagged | 10 |
+| resolve / resolved (a case) | menyelesaikan / diselesaikan | "79% resolved" = 79% diselesaikan | 10 |
+| sort (reports by type) | mengisih | as in Lessons 16 and 17 | 10 |
+| Bangkok's city government | pentadbiran bandar raya Bangkok | "kerajaan" kept for national governments; flagged | 10 |
+| governor (Bangkok) | gabenor |  | 10 |
+| repair / fix (a problem) | membaiki / pembaikan; repair team = pasukan pembaikan |  | 10 |
+| messaging app | aplikasi pesanan | LINE stays a name | 10 |
+| practise / practice | berlatih / latihan | glossary word in Lesson 11; "latihan" is training in Lesson 9 | 11 |
+| state schools / public schools | sekolah kerajaan / sekolah awam |  | 11 |
+| senior secondary school | sekolah menengah atas |  | 11 |
+| World Bank | Bank Dunia |  | 11 |
+| on the test alone (no tool) | dalam ujian tanpa bantuan |  | 11 |
+| template (face) | templat | glossary word in Lesson 12 | 12 |
+| face scan / scan | imbasan wajah / mengimbas |  | 12 |
+| live (facial recognition) | secara langsung |  | 12 |
+| passport check | pemeriksaan pasport | Changi Airport = Lapangan Terbang Changi | 12 |
+| traveller / visitor | pengembara / pelawat |  | 12 |

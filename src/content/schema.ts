@@ -427,6 +427,12 @@ const activityBase = {
   /** Learner-facing. */
   title: text,
   instructions: text,
+  /**
+   * An optional extension (Justin's brief of 4 November 2026): folded away
+   * under "Try it yourself", outside what the lesson needs, for anyone who
+   * wants more practice. The reading teaches the idea without it.
+   */
+  extension: z.boolean().optional(),
   /** For the team: what is saved with the learner's lesson work. Not shown. */
   saves: text,
   /** For the team: how it works with no network. Not shown. */

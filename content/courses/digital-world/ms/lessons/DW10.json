@@ -1,207 +1,154 @@
 {
   "title": "AI dalam komuniti kamu",
-  "essentialQuestion": "Bagaimanakah AI boleh membantu sesebuah komuniti, dan apakah yang boleh menjadi tidak kena?",
-  "learningGoal": "Timbang manfaat dan risiko alat AI untuk terjemahan, pertanian dan kesihatan, dan terangkan mengapa manusia mesti terus memegang kawalan.",
-  "warmUp": {
-    "question": "Pada pendapat kamu, di manakah AI boleh membantu orang dalam sesebuah komuniti?",
-    "options": [
-      "Menanam makanan",
-      "Membaca bahasa lain",
-      "Kekal sihat",
-      "Tidak pasti"
-    ]
-  },
+  "essentialQuestion": "Bagaimanakah AI boleh membantu sesebuah komuniti membaiki masalahnya, dan siapakah yang membaikinya?",
+  "learningGoal": "Terangkan cara Traffy Fondue di Thailand menggunakan AI untuk mengisih dan menghantar laporan penduduk, mengapa manusia dan agensi masih membaiki masalah itu, dan apa yang boleh dan tidak boleh ditunjukkan oleh angkanya.",
   "evidence": {
-    "label": "Contoh rekaan yang dibuat untuk pelajaran ini.",
-    "question": "Bagaimanakah setiap alat membantu? Apakah yang boleh menjadi tidak kena? Siapakah yang menyemaknya?",
+    "question": "Langkah manakah yang dilakukan oleh AI, dan langkah manakah yang dilakukan oleh manusia?",
     "cards": [
       {
-        "title": "Tiga alat AI di bandar Sunvale",
-        "cases": [
+        "title": "Perjalanan sesebuah laporan dalam Traffy Fondue, Thailand",
+        "items": [
+          "1. Seorang penduduk melihat masalah, seperti lampu jalan yang rosak atau jalan yang dinaiki air.",
+          "2. Dalam aplikasi pesanan LINE, dia menghantar foto dan penerangan ringkas. Tempatnya ditambah berdasarkan lokasi telefon.",
+          "3. AI mengisih laporan itu mengikut jenis dan menghantarnya ke pejabat yang bertanggungjawab.",
+          "4. Orang di pejabat itu menyemak laporan dan memutuskan apa yang perlu dilakukan. Sesetengah kerja diberikan kepada pasukan pembaikan. Kerja yang lebih besar memerlukan wang dan rancangan.",
+          "5. Pejabat itu menyiarkan maklumat terkini. Penduduk boleh mengikuti laporan itu dan menilai hasilnya."
+        ]
+      },
+      {
+        "title": "Perkembangan Traffy Fondue, seperti yang dilaporkan oleh pembina dan penggunanya",
+        "events": [
           {
-            "name": "Alat terjemahan di pusat komuniti",
-            "body": "Alat ini menukar notis ke dalam beberapa bahasa, jadi lebih ramai jiran boleh membacanya. Ia sangat bagus dalam bahasa yang banyak tulisannya dalam talian. Ia membuat lebih banyak kesilapan dalam bahasa yang sedikit tulisannya dalam talian. Seorang sukarelawan yang bertutur dalam bahasa itu menyemak notis yang penting."
+            "year": "2022",
+            "text": "Pentadbiran bandar raya Bangkok mula menggunakannya untuk laporan penduduk (31 Mei)."
           },
           {
-            "name": "Alat daun untuk petani",
-            "body": "Petani mengambil foto sehelai daun, dan alat ini meneka sama ada tumbuhan itu sakit. Ia berfungsi tanpa internet. Ia belajar daripada daun tiga jenis tanaman, jadi ia selalunya silap meneka bagi tanaman yang belum pernah dilihatnya. Apabila ia tidak pasti, kumpulan petani bertanya kepada pakar tumbuhan."
+            "year": "2022",
+            "text": "Satu perjanjian membenarkan pejabat tempatan di seluruh Thailand menggunakannya secara percuma selama tiga tahun (September)."
           },
           {
-            "name": "Pembantu foto mata di klinik",
-            "body": "Alat ini melihat foto mata dan menandakan foto yang mungkin menunjukkan masalah, supaya pekerja kesihatan yang sibuk tahu siapa yang perlu dilihat dahulu. Ia kebanyakannya belajar daripada foto orang di tempat lain, dan belum ada sesiapa yang mengujinya di Sunvale. Ia mungkin terlepas beberapa masalah di sana. Seorang pekerja kesihatan sentiasa menyemaknya dan bercakap dengan setiap pesakit."
+            "year": "2022",
+            "text": "Ia memenangi anugerah kerajaan Thailand untuk inovasi perkhidmatan awam (September). Hadiah menunjukkan bahawa pegawai menghargainya, bukan berapa banyak masalah yang dibaiki."
+          },
+          {
+            "year": "2024",
+            "text": "Bangkok mengatakan bahawa ia menerima 588,842 laporan dalam dua tahun dan menyelesaikan kira-kira 79%."
+          },
+          {
+            "year": "2025",
+            "text": "Gabenor Bangkok memberitahu pegawai supaya tidak menutup kes dengan foto yang tidak menunjukkan masalah itu sudah dibaiki (Julai)."
+          },
+          {
+            "year": "2026",
+            "text": "NSTDA mengatakan bahawa ia digunakan di kesemua 77 wilayah, oleh lebih daripada 34,000 agensi."
           }
         ]
-      }
-    ]
-  },
-  "activity": {
-    "title": "Membantu atau berisiko?",
-    "instructions": "Letakkan setiap ayat tentang alat Sunvale dalam satu kumpulan. Tiada markah. Selepas kamu meletakkan satu ayat, kamu boleh melihat satu jawapan yang mungkin dan sebabnya.",
-    "groups": [
-      {
-        "label": "Satu bantuan"
-      },
-      {
-        "label": "Satu risiko"
-      },
-      {
-        "label": "Kedua-duanya"
-      }
-    ],
-    "items": [
-      {
-        "text": "Alat terjemahan membolehkan lebih ramai jiran membaca notis.",
-        "feedback": "Lebih ramai orang boleh membaca berita penting dalam bahasa yang mereka tahu."
-      },
-      {
-        "text": "Alat terjemahan membuat lebih banyak kesilapan dalam sesetengah bahasa.",
-        "feedback": "Notis yang tidak betul boleh memberitahu orang perkara yang tidak betul."
-      },
-      {
-        "text": "Alat daun berfungsi tanpa internet.",
-        "feedback": "Petani boleh menggunakannya di ladang yang jauh daripada sebarang isyarat."
-      },
-      {
-        "text": "Seorang petani mempercayai tekaan yang tidak betul dan mencabut tumbuhan yang sihat.",
-        "feedback": "Alat itu meneka, dan tekaan boleh silap."
-      },
-      {
-        "text": "Pembantu mata menunjukkan kepada pekerja kesihatan yang sibuk siapa yang perlu dilihat dahulu.",
-        "feedback": "Pekerja kesihatan boleh sampai lebih cepat kepada orang yang paling memerlukan mereka."
-      },
-      {
-        "text": "Pembantu mata belajar daripada orang di tempat lain. Ia belum diuji di Sunvale.",
-        "feedback": "Selagi ia belum diuji dengan orang di Sunvale, tiada sesiapa tahu sejauh mana ia berfungsi di sana. Ia mungkin terlepas masalah bagi orang yang tidak serupa dengan orang yang menjadi sumber pembelajarannya."
-      },
-      {
-        "text": "Klinik mengumpul foto mata untuk menjadikan pembantu itu lebih baik.",
-        "feedback": "Mana-mana kumpulan boleh betul di sini. Foto tempatan boleh membantu menguji alat itu dan menjadikannya lebih adil. Tetapi foto kesihatan ialah maklumat peribadi, jadi orang mesti bersetuju dahulu, dan foto itu mesti disimpan dengan selamat."
-      },
-      {
-        "text": "Seorang sukarelawan menyemak notis penting yang telah diterjemahkan.",
-        "feedback": "Orang yang tahu bahasa itu dapat mengesan kesilapan alat itu."
       }
     ]
   },
   "read": {
     "sections": [
       {
-        "heading": "AI boleh membantu apabila pembantu tidak ramai",
-        "text": "Di banyak tempat, tidak cukup pekerja kesihatan atau pakar lain untuk semua orang yang memerlukan mereka. Alat AI kadangkala boleh membantu, seperti di bandar rekaan Sunvale, tempat tiga alat membantu dengan notis, tanaman dan pemeriksaan mata. Ini pula satu contoh sebenar dari Singapura. Orang yang menghidap diabetes (kencing manis) perlu memeriksa mata dengan kerap, kerana penyakit itu boleh merosakkan mata mereka. Penyelidik di sana membina alat yang dipanggil SELENA+, yang melihat foto bahagian belakang mata dan menandakan foto yang patut dilihat oleh pakar mata. Pada tahun 2017, mereka melaporkan ujian dengan foto daripada pemeriksaan mata di Singapura dan daripada orang di negara lain. Alat itu menemui kebanyakan masalah yang ditemui oleh pemeriksa terlatih, tetapi penyelidik itu berkata ia masih perlu diuji di klinik sebenar.",
-        "simpler": "Banyak tempat tidak cukup pekerja kesihatan atau pakar lain. Alat AI kadangkala boleh membantu. Di Sunvale, bandar rekaan, tiga alat membantu dengan notis, tumbuhan dan mata. Di Singapura, penyelidik membina alat sebenar yang dipanggil SELENA+. Orang yang menghidap diabetes (kencing manis) perlu memeriksa mata. Penyakit itu boleh merosakkan mata mereka. SELENA+ menandakan foto mata yang patut dilihat oleh doktor mata. Pada tahun 2017, ia diuji dengan foto dari Singapura dan tempat lain. Ia menemui kebanyakan masalah yang ditemui oleh manusia. Ia masih perlu diuji di klinik sebenar."
+        "heading": "Masalah di jalan kamu",
+        "text": "Di setiap bandar, penduduklah yang mula-mula perasan masalah: jalan yang berlubang, longkang yang tersumbat, lampu jalan yang sudah tidak berfungsi. Membaiki masalah ini ialah tugas pejabat-pejabat bandar. Tetapi laporan perlu sampai ke pejabat yang betul, dan di bandar besar, ada banyak pejabat. Di Thailand, penyelidik di NECTEC, sebahagian daripada agensi sains kebangsaan negara itu, NSTDA, membina sebuah platform untuk membantu. Platform itu dipanggil Traffy Fondue. Pada Mei 2022, pentadbiran bandar raya Bangkok mula menggunakannya untuk laporan daripada penduduk. Sejak itu, banyak bandar, pejabat dan agensi lain di seluruh Thailand telah menyertainya.",
+        "simpler": "Di setiap bandar, penduduk nampak masalah dahulu. Jalan berlubang. Longkang tersumbat. Lampu jalan tidak menyala. Pejabat bandar mesti membaiki masalah itu. Tetapi laporan perlu sampai ke pejabat yang betul. Bandar besar ada banyak pejabat. Di Thailand, penyelidik di sebuah agensi sains kebangsaan membina platform untuk membantu. Namanya Traffy Fondue. Pada Mei 2022, pentadbiran Bangkok mula menggunakannya. Banyak bandar dan agensi lain di Thailand menyertainya kemudian."
       },
       {
-        "heading": "Setiap alat ada risikonya",
-        "text": "Alat yang membantu juga boleh menimbulkan masalah, jadi kita perlu menimbang manfaat dengan risikonya. Pembantu mata Sunvale kebanyakannya belajar daripada foto orang di tempat lain. Itu tidak menjadikannya alat yang lemah. Tetapi belum ada sesiapa yang mengujinya di Sunvale, jadi ia mungkin terlepas beberapa masalah di sana. Sesebuah alat mesti diuji dengan orang yang akan menggunakannya. Alat terjemahan membuat lebih banyak kesilapan dalam bahasa yang sedikit tulisannya dalam talian. Petani yang mempercayai tekaan yang tidak betul mungkin mencabut tumbuhan yang sihat. Foto kesihatan juga ialah maklumat peribadi, jadi foto itu mesti disimpan dengan selamat.",
-        "simpler": "Alat yang membantu juga boleh menimbulkan masalah. Jadi, timbang manfaat dan risikonya. Pembantu mata belajar daripada orang di tempat lain. Itu tidak menjadikannya buruk. Tetapi belum ada sesiapa yang mengujinya di Sunvale. Ia mungkin terlepas masalah di sana. Alat mesti diuji dengan orang yang dibantunya. Alat terjemahan membuat lebih banyak kesilapan dalam sesetengah bahasa. Petani mungkin percaya tekaan yang tidak betul. Foto kesihatan ialah maklumat peribadi dan mesti disimpan dengan selamat."
+        "heading": "Apa yang dilakukan oleh AI, dan apa yang dilakukan oleh manusia",
+        "text": "Untuk membuat laporan, penduduk menggunakan LINE, sebuah aplikasi pesanan. Mereka menghantar foto, beberapa patah perkataan dan tempatnya. Kemudian AI membaca laporan itu dan mengisihnya mengikut jenis, seperti jalan, banjir atau lampu. Sistem itu menghantarnya ke pejabat yang patut menguruskannya. Mengisih dan menghantar ialah bahagian kerja AI. Selepas itu, manusia mengambil alih. Pegawai menyemak laporan itu dan memutuskan apa yang perlu dilakukan. Sesetengah kerja hanya memerlukan pasukan pembaikan. Kerja yang lebih besar mungkin memerlukan wang, rancangan dan lebih banyak masa. AI menyalurkan laporan. Manusia dan agensi yang membaiki masalah.",
+        "simpler": "Penduduk membuat laporan dalam LINE, sebuah aplikasi pesanan. Mereka menghantar foto, beberapa perkataan dan tempatnya. Kemudian AI membaca laporan itu. Ia mengisih laporan mengikut jenis, seperti jalan atau banjir. Ia menghantarnya ke pejabat yang betul. Itulah bahagian AI. Kemudian manusia mengambil alih. Pegawai menyemak laporan dan menghantar pekerja. Kerja besar juga memerlukan wang dan rancangan. Jadi, AI menyalurkan laporan. Manusia dan agensi membaiki masalah."
       },
       {
-        "heading": "Manusia mesti terus memegang kawalan",
-        "text": "Oleh sebab alat AI boleh silap, manusia perlu terus memegang kawalan atas keputusan penting. Di Sunvale, seorang sukarelawan yang bertutur dalam bahasa itu menyemak notis penting yang telah diterjemahkan. Seorang pakar tumbuhan membantu apabila alat daun tidak pasti, dan seorang pekerja kesihatan sentiasa menyemak pembantu mata. Penduduk sesebuah komuniti juga patut membantu membentuk alat yang mereka gunakan. Sebelum mempercayai mana-mana alat AI, tanya tiga soalan. Siapakah yang dibantunya? Siapakah yang mungkin tertinggal? Siapakah yang menyemak jawapannya? Untuk apa-apa soalan tentang kesihatan, sentiasa tanya pekerja kesihatan, bukan alat.",
-        "simpler": "Alat AI boleh silap. Jadi, manusia mesti terus memegang kawalan atas keputusan besar. Di Sunvale, seorang sukarelawan menyemak notis. Seorang pakar dan seorang pekerja kesihatan menyemak alat lain. Orang dalam sesebuah komuniti patut membantu membentuk alat mereka. Tanya tiga soalan. Siapakah yang dibantunya? Siapakah yang mungkin tertinggal? Siapakah yang menyemaknya? Untuk soalan kesihatan, tanya pekerja kesihatan."
+        "heading": "Apa yang boleh dan tidak boleh ditunjukkan oleh angka",
+        "text": "Bangkok mengatakan bahawa ia menerima 588,842 laporan dalam dua tahun dan menyelesaikan kira-kira 79% daripadanya. Angka ini datang daripada pihak bandar raya dan pembina platform itu, dan \"diselesaikan\" bermaksud seorang pegawai telah menutup kes itu. Pada tahun 2025, Gabenor Bangkok memberitahu pegawai supaya tidak menutup kes dengan foto yang tiada kaitan dengan masalah itu. Jadi, kes yang ditutup tidak semestinya masalah yang sudah dibaiki. Pada tahun 2025, penyelidik di Universiti Thammasat di Bangkok mengkaji 98,000 laporan dan bercakap dengan 12 orang yang mengenali sistem itu. Mereka mendapati sistem itu membantu bandar raya melihat tempat masalah berlaku dan merancang pembaikan. Mereka juga mencatatkan bahawa sistem itu memerlukan telefon pintar dan internet, yang bukan semua orang ada.",
+        "simpler": "Bangkok mengatakan ia menerima 588,842 laporan dalam dua tahun. Katanya, kira-kira 79% telah diselesaikan. Angka ini datang daripada bandar raya dan pembina platform itu. Diselesaikan bermaksud seorang pegawai telah menutup kes itu. Pada tahun 2025, pemimpin bandar raya itu memberi amaran kepada pegawai tentang satu masalah. Ada yang menutup kes dengan foto yang tidak menunjukkan masalah itu. Jadi, kes yang ditutup tidak semestinya masalah yang sudah dibaiki. Penyelidik universiti mengkaji 98,000 laporan. Sistem itu membantu bandar raya merancang pembaikan, kata mereka. Tetapi ia memerlukan telefon pintar dan internet."
       }
     ],
     "glossary": [
       {
-        "word": "pakar",
-        "definition": "Orang yang tahu banyak tentang satu perkara.",
-        "example": "Seorang pakar tumbuhan membantu petani di Sunvale."
+        "word": "penduduk",
+        "definition": "Orang yang tinggal di sesuatu tempat.",
+        "example": "Penduduk Bangkok melaporkan lampu jalan yang rosak."
       },
       {
-        "word": "menterjemah",
+        "word": "agensi",
+        "definition": "Pejabat atau kumpulan yang melakukan satu jenis kerja awam.",
+        "example": "NSTDA ialah agensi sains kebangsaan Thailand."
+      },
+      {
+        "word": "menyalurkan",
         "forms": [
-          "terjemahan",
-          "diterjemahkan",
-          "menterjemahkan"
+          "disalurkan",
+          "salurkan"
         ],
-        "definition": "Menukar perkataan daripada satu bahasa kepada bahasa lain.",
-        "example": "Alat itu menterjemah notis di pusat komuniti."
+        "definition": "Menghantar sesuatu melalui jalan yang betul ke tempat yang betul.",
+        "example": "AI menyalurkan setiap laporan ke pejabat yang patut membaiki masalah itu."
       },
       {
-        "word": "manfaat",
-        "definition": "Perkara baik yang membantu seseorang.",
-        "example": "Satu manfaat alat daun ialah ia berfungsi tanpa internet."
-      },
-      {
-        "word": "risiko",
+        "word": "menyelesaikan",
         "forms": [
-          "risikonya"
+          "diselesaikan",
+          "selesai"
         ],
-        "definition": "Kemungkinan sesuatu yang buruk boleh berlaku.",
-        "example": "Satu risikonya ialah petani mempercayai tekaan yang tidak betul."
+        "definition": "Menguruskan sesuatu masalah sehingga ia tamat.",
+        "example": "Bandar raya itu mengatakan kira-kira 79% laporan telah diselesaikan."
       },
       {
-        "word": "komuniti",
-        "definition": "Sekumpulan orang yang tinggal di tempat yang sama atau berkongsi sesuatu.",
-        "example": "Penduduk Sunvale ialah satu komuniti."
+        "word": "platform",
+        "definition": "Laman web atau aplikasi tempat ramai orang boleh melakukan perkara yang sama.",
+        "example": "Traffy Fondue ialah platform untuk melaporkan masalah."
       }
     ],
     "checks": [
       {
-        "question": "Mengapakah pembantu mata mungkin terlepas masalah di Sunvale?",
+        "question": "Dalam Traffy Fondue, apakah yang dilakukan oleh AI?",
         "options": [
           {
-            "text": "Ia belum diuji dengan orang di sana",
-            "feedback": "Betul. Ia kebanyakannya belajar daripada foto orang di tempat lain. Itu mungkin tidak mengapa, tetapi hanya ujian di Sunvale yang dapat menunjukkannya."
+            "text": "Ia membaiki masalah itu sendiri",
+            "feedback": "Belum tepat. Pekerja yang membaiki masalah. Baca petikan kedua."
           },
           {
-            "text": "Sunvale langsung tiada masalah mata",
-            "feedback": "Belum tepat. Masalah mata berlaku di mana-mana. Lihat apa yang menjadi sumber pembelajaran alat itu."
+            "text": "Ia mengisih setiap laporan dan menghantarnya",
+            "feedback": "Betul. AI mengisih laporan itu dan menghantarnya ke pejabat yang betul. Kemudian manusia menyemaknya dan membaiki masalah itu."
           },
           {
-            "text": "Pekerja kesihatan terlupa menggunakannya",
-            "feedback": "Belum tepat. Mereka menggunakannya dan menyemaknya. Baca petikan kedua tentang ujian."
+            "text": "Ia memutuskan cara bandar raya membelanjakan wang",
+            "feedback": "Belum tepat. Pegawai yang memutuskan apa yang perlu dilakukan dan kosnya. Baca petikan kedua."
           }
         ]
       },
       {
-        "question": "Apakah yang menjadikan alat terjemahan lebih selamat untuk digunakan?",
+        "question": "Mengapakah kamu perlu berhati-hati dengan angka \"79% diselesaikan\"?",
         "options": [
           {
-            "text": "Menggunakannya untuk setiap notis",
-            "feedback": "Belum tepat. Lebih kerap menggunakannya tidak membetulkan kesilapannya. Baca petikan ketiga."
+            "text": "Sesetengah kes ditutup tetapi tidak dibaiki",
+            "feedback": "Betul. Pegawai yang menutup kes, dan gabenor memberi amaran bahawa sesetengah kes ditutup dengan foto yang tidak menunjukkan masalah itu."
           },
           {
-            "text": "Menghalang orang daripada membaca notis",
-            "feedback": "Belum tepat. Alat itu ada untuk membantu orang membaca. Baca petikan ketiga."
+            "text": "Angka itu direka oleh AI",
+            "feedback": "Belum tepat. Bandar raya itu yang melaporkan angka itu. Baca siapa yang menutup kes dalam petikan ketiga."
           },
           {
-            "text": "Seorang sukarelawan menyemak notis itu",
-            "feedback": "Betul. Orang yang bertutur dalam bahasa itu dapat mengesan kesilapan alat itu."
+            "text": "Tiada sesiapa di Bangkok menggunakan platform itu",
+            "feedback": "Belum tepat. Ratusan ribu laporan telah dihantar. Baca petikan ketiga."
           }
         ]
-      },
-      {
-        "question": "Alat Sunvale yang manakah akan membantu komuniti yang kamu kenali? Apakah yang membimbangkan kamu tentangnya?",
-        "placeholder": "___ akan membantu kerana ... Saya bimbang bahawa ..."
       }
     ]
   },
   "write": {
-    "prompt": "Pilih satu alat Sunvale. Terangkan satu cara ia membantu, satu risiko, dan siapa yang patut menyemaknya.",
+    "prompt": "Terangkan kepada pelajar yang lebih muda bagaimana laporan dalam Traffy Fondue bergerak daripada telefon hingga kerja pembaikan. Sebut langkah mana yang dilakukan oleh AI dan langkah mana yang dilakukan oleh manusia.",
     "sentenceStarters": [
-      "Saya memilih ...",
-      "Ia membantu kerana ...",
-      "Satu risikonya ialah ...",
-      "Perkara ini boleh berlaku kerana ...",
-      "___ patut menyemaknya, kerana ..."
+      "Mula-mula, seorang penduduk ...",
+      "Kemudian AI ...",
+      "Selepas itu, orang di pejabat itu ...",
+      "Ini penting kerana ..."
     ],
-    "planningBoxes": [
-      "Idea utama saya",
-      "Bukti daripada pelajaran",
-      "Mengapa ini penting",
-      "Soalan yang masih saya ada"
-    ],
-    "selfCheck": [
-      "Saya menamakan satu alat dari Sunvale.",
-      "Saya memberi satu manfaat dan satu risiko.",
-      "Saya menyatakan siapa yang patut menyemaknya."
-    ],
-    "example": "Saya memilih alat daun. Ia membantu kerana petani boleh tahu dengan cepat sama ada tumbuhan mungkin sakit, walaupun tanpa internet. Satu risikonya ialah ia memberi tekaan yang tidak betul bagi tanaman yang belum pernah dilihatnya. Perkara ini boleh berlaku kerana data latihannya hanya ada daun daripada tiga jenis tanaman. Petani yang mempercayai tekaan yang tidak betul mungkin mencabut tumbuhan yang sihat. Seorang pakar tumbuhan patut menyemaknya apabila alat itu tidak pasti, kerana manusia perlu terus memegang kawalan."
+    "example": "Mula-mula, seorang penduduk melihat masalah, seperti jalan yang dinaiki air, dan menghantar foto serta tempatnya dalam LINE. Kemudian AI membaca laporan itu, mengisihnya sebagai banjir dan menghantarnya ke pejabat yang menguruskan banjir. Selepas itu, orang di pejabat itu menyemaknya, memutuskan apa yang perlu dilakukan dan menghantar pekerja. Jika kerjanya besar, mereka mungkin memerlukan wang dan rancangan dahulu. Ini penting kerana AI hanya membawa laporan itu ke tempat yang betul. Jalan itu dibaiki oleh manusia."
   },
   "speak": {
-    "partnerTask": "Rakan kamu menamakan satu alat Sunvale. Kamu sebut satu cara ia membantu dan satu risiko. Kemudian bertukar giliran.",
-    "independentTask": "Sebut dengan kuat mengapa manusia patut sentiasa menyemak alat AI yang membantu dalam hal kesihatan."
+    "partnerTask": "Berbincang dengan rakan kamu: sebuah bandar raya mengatakan ia menyelesaikan 79 daripada setiap 100 laporan. Apa lagi yang kamu mahu tahu sebelum kamu mengatakan platform itu berfungsi dengan baik? Setiap orang beri satu soalan dan sebut mengapa soalan itu penting.",
+    "independentTask": "Sebut dengan kuat satu soalan yang akan kamu tanya sebelum kamu mempercayai angka seperti \"79% diselesaikan\", dan mengapa soalan itu penting."
   },
   "watch": {
     "why": "Orang yang membina dan mengkaji AI bercakap tentang cara AI boleh membantu semua orang, atau meninggalkan sesetengah orang.",
@@ -218,40 +165,37 @@
   "reflect": {
     "prompts": [
       {
-        "text": "Sebelum sesebuah komuniti menggunakan alat AI, orang patut bertanya ..."
+        "text": "Satu perkara yang saya pelajari tentang siapa yang membuat kerja apabila sebuah bandar raya menggunakan AI ialah ..."
       },
       {
-        "text": "Satu alat AI yang boleh membantu komuniti yang saya kenali ialah ..."
+        "text": "Satu soalan yang masih saya ada tentang Traffy Fondue ialah ..."
       }
     ],
-    "completionMessage": "Kamu telah menamatkan Pelajaran 10. Kamu menimbang manfaat dan risiko alat AI dalam sesebuah komuniti."
+    "completionMessage": "Kamu telah menamatkan Pelajaran 10. Kamu menerangkan cara Traffy Fondue menggunakan AI untuk menyalurkan laporan penduduk, mengapa manusia masih membaiki masalah, dan apa yang boleh ditunjukkan oleh angkanya."
   },
   "visual": {
-    "alt": "Sebuah neraca yang menimbang manfaat dan risiko tiga alat AI, dipegang seimbang oleh seseorang yang berlabel “Manusia terus memegang kawalan”."
+    "alt": "Aliran lima langkah: seorang penduduk menghantar foto dan tempatnya, AI mengisih laporan itu dan menghantarnya ke pejabat yang betul, kemudian manusia menyemaknya dan membaiki masalah itu."
   },
   "sources": [
     {
-      "label": "Pertubuhan Kesihatan Sedunia (WHO, 2021): WHO issues first global report on AI in health and six guiding principles (WHO mengeluarkan laporan global pertama tentang AI dalam kesihatan dan enam prinsip panduan)"
+      "label": "NSTDA (14 September 2022): NSTDA wins Public Sector Excellence Awards (NSTDA memenangi Anugerah Kecemerlangan Sektor Awam; Traffy Fondue, sistem laporan dan pengurusan aduan berkuasa AI, memenangi anugerah perkhidmatan awam)"
     },
     {
-      "label": "IITA (2018): African farmers get new help against cassava diseases, Nuru their artificially intelligent assistant (petani Afrika mendapat bantuan baharu melawan penyakit ubi kayu: Nuru, pembantu kecerdasan buatan mereka)"
+      "label": "Hansen dan Dahiya (Frontiers in Sustainable Cities, April 2025): Traffy Fondue, a smart city citizen engagement (penglibatan warga bandar pintar; Universiti Thammasat; 98,000 laporan Bangkok dari tahun 2022 dan 12 temu bual)"
     },
     {
-      "label": "Stanford Report (2025): How AI is leaving non-English speakers behind (cara AI meninggalkan penutur bukan bahasa Inggeris)"
+      "label": "Pattaya Mail (Jun 2024): Bangkok's Traffy Fondue online platform resolves 79% of complaints in two years (platform dalam talian Traffy Fondue di Bangkok menyelesaikan 79% aduan dalam dua tahun; angka bandar raya itu sendiri)"
     },
     {
-      "label": "Pusat Mata Kebangsaan Singapura (SNEC): kumpulan penyelidikan AI dan kesihatan digital (SELENA+, dibangunkan dengan kira-kira 500,000 foto mata dan diuji dengan 10 set foto dari luar)"
-    },
-    {
-      "label": "Ting dan rakan-rakan (JAMA, Disember 2017): Development and validation of a deep learning system for diabetic retinopathy and related eye diseases (pembangunan dan pengesahan sistem pembelajaran mendalam untuk retinopati diabetik dan penyakit mata berkaitan; abstrak, rekod Duke Scholars)"
+      "label": "The Nation (Julai 2025): Nearly 1 million Traffy Fondue reports reflect public trust, says Chadchart (hampir 1 juta laporan Traffy Fondue mencerminkan kepercayaan orang ramai, kata Chadchart; amaran gabenor tentang menutup kes dengan foto yang tiada kaitan)"
     }
   ],
   "sensitiveNotes": [
-    "Kesihatan: pembantu mata Sunvale ialah rekaan; SELENA+ adalah sebenar, dan pelajaran ini hanya menerangkan cara ia dibina dan diuji. Jangan sekali-kali memberi atau membincangkan nasihat perubatan atau diagnosis; pelajar yang ada soalan kesihatan patut bertanya kepada pekerja kesihatan. Jangan tanya pelajar tentang kesihatan mereka sendiri atau kesihatan orang lain, termasuk diabetes dalam keluarga mereka.",
-    "Jangan tanya bahasa yang dituturkan oleh pelajar di rumah, atau bahasa yang diterjemahkan dengan tidak betul oleh sesuatu alat untuk mereka. Biarkan mereka menyebutnya jika mereka mahu."
+    "Sesetengah pelajar mungkin tinggal di tempat yang tiada perkhidmatan awam, atau di tempat yang tidak selamat bagi mereka untuk menghubungi pegawai. Pastikan pelajaran ini tertumpu pada Bangkok dan pada jenis masalah secara umum. Jangan sekali-kali meminta pelajar menerangkan masalah di tempat mereka tinggal dengan cara yang boleh mengenal pasti mereka, atau melaporkan apa-apa kepada mana-mana pihak berkuasa.",
+    "Jangan tanya aplikasi atau telefon apa yang dimiliki oleh pelajar atau keluarga mereka. Perkara bahawa platform itu memerlukan telefon pintar dan internet adalah tentang akses secara umum, bukan sesuatu untuk dibandingkan antara pelajar."
   ],
   "educatorNotes": [
-    "Alat-alat Sunvale ialah rekaan dan kekal dilabel; SELENA+ adalah sebenar dan hanya muncul dalam bacaan, tidak sekali-kali dalam bukti atau aktiviti rekaan. Apa yang dibuktikan oleh sumber: halaman SNEC menyatakan bahawa SELENA+ dibangunkan dengan kira-kira 500,000 foto retina dan disemak dengan 10 set foto dari luar (kamera, kumpulan etnik dan umur yang berbeza), serta diluluskan oleh pengawal selia produk kesihatan Singapura dan mempunyai tanda CE. Kajian JAMA pada tahun 2017 mengujinya dengan foto 14,880 pesakit daripada program saringan mata diabetik kebangsaan Singapura dan dengan 10 kumpulan lain; ia mengesan penyakit mata yang perlu dirujuk dengan sensitiviti dan spesifisiti yang tinggi berbanding pemeriksa terlatih, dan menyatakan bahawa lebih banyak penyelidikan diperlukan untuk penggunaan dalam penjagaan kesihatan. Kajian kes pembangunnya sendiri pada tahun 2024 (Gunasekeran dan rakan-rakan, NEJM AI) menerangkan cara ia dimasukkan ke dalam program itu; pelajaran ini tidak mendakwa tentang pelaksanaan atau hasil pesakit, kerana tiada penilaian bebas yang disemak. Projek sebenar lain, untuk guru sahaja: aplikasi telefon luar talian untuk penyakit ubi kayu oleh IITA dan Penn State (2018); laporan WHO pada tahun 2021 tentang AI untuk kesihatan; semakan manusia oleh CLEAR Global terhadap teknologi bahasa.",
-    "Versi aktiviti di atas kertas: tulis lapan ayat itu pada kad dan isih ke dalam Bantuan, Risiko dan Kedua-duanya. Aktiviti ini tiada markah; hargai sebab yang diberikan."
+    "Apa yang dipastikan oleh sumber (claims/DW10.md). Traffy Fondue dibangunkan oleh NECTEC, sebahagian daripada Agensi Pembangunan Sains dan Teknologi Kebangsaan Thailand (NSTDA). Pentadbiran bandar raya Bangkok melancarkannya pada 31 Mei 2022 (Hansen dan Dahiya, 2025); penduduk membuat laporan melalui chatbot LINE dengan foto, penerangan, kategori dan tempat. Penyelidik itu menerangkan enjin AI yang mengisih laporan ke dalam kategori dan aliran kerja yang menghantar setiap laporan kepada agensi yang bertanggungjawab; kenyataan NSTDA pada tahun 2024 menambah ringkasan AI, cadangan keutamaan dan penapisan bahasa kasar. Pembaikan dilakukan oleh agensi, pasukan mereka atau kontraktor; kerja yang lebih besar melalui penilaian, peruntukan bajet dan projek. Semua angka skala dan kelajuan ialah angka bandar raya atau pembina platform itu sendiri: 588,842 laporan Bangkok dalam dua tahun dengan kira-kira 79% diselesaikan (Jun 2024, daripada laporan gabenor; \"diselesaikan\" tidak ditakrifkan); halaman NSTDA pada tahun 2026 (kesemua 77 wilayah, 34,786 agensi, lebih daripada 2 juta tiket yang diselesaikan, purata masa penyelesaian turun daripada 90 kepada 15 hari). Tiada semakan bebas tentang kualiti pembaikan ditemui. Kajian Thammasat (98,000 laporan, Mei hingga Disember 2022, 12 temu bual) melaporkan 84% kepuasan dan anggaran penjimatan, dan mencatatkan bahawa platform itu mengutamakan saluran digital.",
+    "Idea perbincangan untuk langkah Cakap, tanpa satu jawapan yang betul: bagaimana \"diselesaikan\" diputuskan dan oleh siapa; berapa lama pembaikan mengambil masa; sama ada sesetengah kawasan atau kumpulan menghantar lebih sedikit laporan (contohnya orang yang tiada telefon pintar); sama ada laporan berulang tentang masalah yang sama dikira sekali lagi; apa kata penduduk tentang hasilnya. Pelajaran 16 dan 17 menyebut Traffy Fondue sekali lagi secara ringkas."
   ]
 }

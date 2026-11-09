@@ -1,19 +1,10 @@
 {
   "title": "Apa itu model bahasa besar",
   "essentialQuestion": "Bagaimana chatbot menulis jawaban, dan mengapa jawabannya bisa terdengar yakin tetapi tetap salah?",
-  "learningGoal": "Menjelaskan bagaimana model bahasa besar menulis dengan memprediksi potongan kecil teks berikutnya, dan mengapa jawabannya perlu diperiksa.",
-  "warmUp": {
-    "question": "Kata apa yang muncul berikutnya? “Setiap pagi, aku minum secangkir ___.”",
-    "options": [
-      "Teh",
-      "Air",
-      "Hal lain",
-      "Tidak yakin"
-    ]
-  },
+  "learningGoal": "Menjelaskan bagaimana model bahasa besar menulis dengan memprediksi token berikutnya, bagaimana chatbot berkembang dari aturan menjadi pembelajaran mesin, dan mengapa jawabannya perlu diperiksa.",
   "evidence": {
     "label": "Contoh fiksi yang dibuat untuk pelajaran ini.",
-    "question": "Kata mana yang paling mungkin dipilih model? Jawaban alat bantu mana yang paling perlu diperiksa?",
+    "question": "Dalam permainan sederhana itu, kata mana yang paling sering muncul? Mengapa alat bantu itu bisa menjelaskan skala peta dengan baik, tetapi menyebutkan buku yang tidak ada?",
     "cards": [
       {
         "title": "Permainan kata di Lakeside, sebuah contoh sederhana: apa yang muncul setelah “secangkir”",
@@ -55,75 +46,22 @@
       }
     ]
   },
-  "activity": {
-    "title": "Bisakah LLM melakukan ini?",
-    "instructions": "Masukkan setiap kalimat ke dalam satu kelompok. Tidak ada nilai. Setelah kamu menaruh satu kalimat, kamu bisa melihat satu jawaban yang mungkin dan alasannya.",
-    "groups": [
-      {
-        "label": "LLM bisa melakukan ini"
-      },
-      {
-        "label": "LLM tidak bisa melakukan ini"
-      },
-      {
-        "label": "Sulit dipastikan"
-      }
-    ],
-    "items": [
-      {
-        "text": "Menulis potongan kecil teks berikutnya, berulang-ulang",
-        "feedback": "Beginilah LLM menulis setiap jawaban. LLM menambahkan satu potongan kecil, yaitu satu token, setiap kali."
-      },
-      {
-        "text": "Menjelaskan sebuah ide dengan kata-kata yang lebih sederhana",
-        "feedback": "LLM bisa menulis penjelasan yang jelas dari pola dalam teks. Seseorang tetap perlu memeriksa apakah penjelasan itu benar."
-      },
-      {
-        "text": "Menerjemahkan kalimat ke bahasa lain",
-        "feedback": "LLM belajar dari teks dalam banyak bahasa. Biasanya LLM lebih baik dalam bahasa yang punya banyak tulisan di internet."
-      },
-      {
-        "text": "Berjanji bahwa setiap fakta yang ditulisnya benar",
-        "feedback": "LLM memilih kata-kata yang mungkin muncul, bukan fakta yang sudah diperiksanya, jadi LLM bisa mengarang."
-      },
-      {
-        "text": "Merasa senang atau sedih tentang pertanyaanmu",
-        "feedback": "LLM menemukan pola dalam kata-kata. LLM tidak punya perasaan seperti manusia."
-      },
-      {
-        "text": "Memberi jawaban yang berbeda saat kamu menanyakan pertanyaan yang sama lagi",
-        "feedback": "Banyak alat memilih setiap potongan sebagian secara acak, jadi jawabannya bisa berubah. Dengan pengaturan lain, sebuah model bisa memberi jawaban yang sama setiap kali."
-      },
-      {
-        "text": "Mencari berita hari ini di internet",
-        "feedback": "Itu tergantung alatnya. Model dasar hanya memakai apa yang sudah dipelajarinya sebelumnya. Ada alat yang juga mencari di internet, tetapi kamu tetap perlu memeriksa halaman-halaman yang ditampilkannya."
-      },
-      {
-        "text": "Terdengar sangat yakin tentang jawaban yang salah",
-        "feedback": "LLM memilih kata-kata yang terdengar mungkin, bukan fakta yang sudah diperiksanya. Ingat buku di Lakeside yang tidak ada."
-      },
-      {
-        "text": "Menulis puisi yang disukai orang",
-        "feedback": "Setiap kelompok bisa dibenarkan di sini. LLM bisa menulis puisi. Apakah orang menyukainya, itu tergantung setiap pembaca."
-      }
-    ]
-  },
   "read": {
     "sections": [
       {
-        "heading": "LLM mempelajari pola dari teks dalam jumlah sangat besar",
-        "text": "Chatbot adalah program komputer yang bisa kamu ajak mengobrol lewat tulisan. Banyak chatbot sekarang dibangun di atas model bahasa besar, atau LLM (dari bahasa Inggris large language model). LLM belajar dari teks dalam jumlah sangat besar, seperti buku, artikel, dan halaman web. Sebagian besar teks itu ditulis oleh manusia. Dari teks itu, model mempelajari pola, misalnya kata-kata mana yang sering muncul setelah kata-kata lain. Model ini bekerja dengan potongan-potongan kecil teks, yang disebut token. Sebuah token bisa berupa satu kata atau bagian dari kata. Lihat permainan kata rekaan di Pusat Belajar Lakeside. Setelah “secangkir”, kalimat-kalimat latihannya memuat “teh” enam kali, “air” tiga kali, dan “beras” satu kali.",
-        "simpler": "Chatbot adalah program yang bisa kamu ajak mengobrol. Banyak chatbot memakai model bahasa besar, atau LLM. LLM belajar dari banyak teks, seperti buku dan halaman web. Banyak teks itu ditulis manusia. LLM menemukan pola dalam kata-kata. LLM bekerja dengan token. Token adalah satu kata atau bagian dari kata. Dalam permainan kata di Lakeside, “teh” paling sering muncul setelah “secangkir”."
+        "heading": "Dari aturan ke belajar dari teks",
+        "text": "Chatbot adalah program komputer yang bisa kamu ajak mengobrol lewat tulisan. Chatbot bukan hal baru. Pada tahun 1966, sebuah program bernama ELIZA mengobrol dengan mengikuti aturan yang ditulis manusia. Sekarang, banyak chatbot dibangun di atas model bahasa besar, atau LLM (dari bahasa Inggris large language model), yang justru memakai pembelajaran mesin. LLM mempelajari pola dari teks dalam jumlah sangat besar, seperti buku, artikel, dan halaman web, yang banyak di antaranya ditulis oleh manusia. LLM tumbuh dari hal-hal yang sama dengan program foto di Pelajaran 2: banyak data digital dan cip yang cepat. Pada tahun 2017, para peneliti menerbitkan rancangan baru untuk tugas-tugas bahasa, dan banyak LLM sesudahnya dibangun di atas rancangan itu. Pada November 2022, perusahaan OpenAI merilis ChatGPT, sebuah chatbot yang dibangun di atas LLM.",
+        "simpler": "Chatbot adalah program yang bisa kamu ajak mengobrol. Pada tahun 1966, sebuah chatbot bernama ELIZA mengikuti aturan yang ditulis manusia. Banyak chatbot sekarang memakai model bahasa besar, atau LLM. LLM justru belajar dari banyak teks, seperti buku dan halaman web. Banyak teks itu ditulis manusia. Seperti program foto di Pelajaran 2, LLM membutuhkan banyak data dan cip yang cepat. Pada tahun 2017, para peneliti membuat rancangan baru. Banyak LLM sesudahnya memakai rancangan itu. ChatGPT, yang dibangun di atas LLM, keluar pada tahun 2022."
       },
       {
-        "heading": "LLM menulis satu potongan setiap kali",
-        "text": "Ketika kamu mengajukan pertanyaan kepada LLM, LLM memprediksi token berikutnya dari jawabannya, menambahkannya, lalu memprediksi token sesudahnya, berulang-ulang. Sering kali setiap token dipilih sebagian secara acak dari token-token yang mungkin, jadi model Lakeside akan sering bilang “teh”, tetapi kadang “air”. Dengan pengaturan lain, sebuah model bisa memberi jawaban yang sama setiap kali. Chatbot bukan hal baru: pada tahun 1966, sebuah program bernama ELIZA mengobrol dengan mengikuti aturan yang ditulis manusia. LLM memakai pembelajaran mesin. Pada tahun 2017, para peneliti menerbitkan rancangan baru untuk tugas-tugas bahasa. ChatGPT, yang dirilis pada 30 November 2022, membuat LLM terkenal.",
-        "simpler": "Kamu mengajukan pertanyaan kepada LLM. LLM memprediksi token berikutnya, berulang-ulang. Sering kali LLM memilih sebagian secara acak. Jadi model Lakeside sering bilang “teh”, tetapi kadang “air”. Dengan pengaturan lain, model memberi jawaban yang sama setiap kali. Chatbot bukan hal baru. Pada tahun 1966, ada chatbot yang mengikuti aturan yang ditulis manusia. LLM belajar dari contoh. Para peneliti membuat rancangan baru pada tahun 2017. Pada November 2022, ChatGPT membuat LLM terkenal."
+        "heading": "Cara LLM menulis, satu potongan setiap kali",
+        "text": "LLM bekerja dengan potongan-potongan kecil teks yang disebut token. Sebuah token bisa berupa satu kata atau bagian dari kata. Misalkan seorang pelajar bertanya, “Apa itu skala peta?” Model itu memprediksi token pertama yang mungkin, misalnya “Skala”. Model itu menambahkannya, lalu memprediksi token berikutnya, misalnya “peta”, dengan memakai semua yang sudah tertulis sejauh ini. Model itu terus begitu, potongan demi potongan, sampai jawabannya selesai. Sebuah contoh sederhana menunjukkan idenya. Dalam permainan kata di Lakeside, “teh” muncul setelah “secangkir” enam kali, “air” tiga kali, dan “beras” satu kali. Model sungguhan tidak sekadar menghitung kata; model itu mempelajari pola yang jauh lebih kaya dari teks yang jauh lebih banyak. Sering kali setiap token dipilih sebagian secara acak dari token-token yang mungkin, jadi pertanyaan yang sama bisa mendapat jawaban yang berbeda. Dengan pengaturan lain, sebuah model bisa memberi jawaban yang sama setiap kali.",
+        "simpler": "LLM bekerja dengan token. Token adalah satu kata atau bagian dari kata. Misalnya seorang pelajar bertanya apa itu skala peta. Model itu memprediksi token pertama yang mungkin, seperti “Skala”. Lalu model itu memprediksi token berikutnya, seperti “peta”. Model itu terus begitu, potongan demi potongan. Permainan kata di Lakeside adalah contoh sederhana. Di sana, “teh” paling sering muncul setelah “secangkir”. Model sungguhan tidak sekadar menghitung kata. Model itu belajar jauh lebih banyak dari teks yang jauh lebih banyak. Sering kali model memilih sebagian secara acak, jadi jawabannya bisa berubah. Pengaturan lain memberi jawaban yang sama setiap kali."
       },
       {
-        "heading": "Terdengar yakin tidak sama dengan benar",
-        "text": "LLM dasar memprediksi kata-kata yang terdengar benar. LLM tidak memeriksa fakta seperti yang dilakukan orang yang teliti. Jadi LLM bisa mengarang, dan bisa terdengar sangat yakin walaupun salah. Di Lakeside, alat bantu pura-pura itu menyebutkan buku yang tidak ada. Ada alat yang juga mencari di internet dan menampilkan tautan, tetapi halaman-halaman itu bisa salah atau salah dibaca, jadi kamu tetap perlu memeriksanya. Sebagian besar LLM yang besar terutama belajar dari teks bahasa Inggris, dan para peneliti menemukan bahwa LLM bekerja lebih buruk dalam bahasa yang hanya punya sedikit tulisan di internet. Jadi periksa jawaban penting dengan sumber yang tepercaya, seperti perpustakaan atau guru.",
-        "simpler": "LLM dasar memilih kata-kata yang terdengar benar. LLM tidak memeriksa fakta seperti orang yang teliti. Jadi LLM bisa mengarang dan tetap terdengar yakin. Alat bantu di Lakeside menyebutkan buku yang tidak ada. Ada alat yang juga mencari di internet dan menampilkan tautan. Kamu tetap perlu memeriksa halaman-halaman itu. Sebagian besar LLM yang besar belajar terutama dari bahasa Inggris. LLM bekerja lebih buruk dalam bahasa yang sedikit tulisannya di internet. Jadi periksa jawaban penting dengan sumber yang tepercaya, seperti perpustakaan atau guru."
+        "heading": "Mengapa ini penting untuk menulis, menerjemahkan, dan mencari informasi",
+        "text": "LLM sekarang dipakai untuk membantu orang menulis, menerjemahkan, dan mencari informasi. Chatbot bisa menjelaskan sebuah ide dengan kata-kata yang lebih sederhana, membantu membuat draf pertama, atau menerjemahkan pengumuman pendek. Di Lakeside, seorang guru memeriksa penjelasan alat bantu itu, dan penjelasan itu benar. Seorang relawan memperbaiki dua kata dalam terjemahannya. Banyak LLM terutama belajar dari bahasa Inggris, dan para peneliti menemukan bahwa LLM biasanya bekerja lebih buruk dalam bahasa yang hanya punya sedikit tulisan di internet. LLM dasar memprediksi kata-kata yang terdengar benar; tidak ada bagian dari cara itu yang memeriksa fakta. Jadi LLM bisa mengarang dan tetap terdengar yakin, seperti alat bantu Lakeside yang menyebutkan buku yang tidak ada. Ada alat yang juga mencari di internet dan menampilkan tautan, tetapi halaman-halaman itu bisa salah atau salah dibaca. Periksa jawaban penting dengan sumber yang tepercaya, seperti perpustakaan atau guru.",
+        "simpler": "LLM sekarang membantu orang menulis, menerjemahkan, dan mencari informasi. Di Lakeside, alat bantu itu menjelaskan sebuah ide dengan baik. Seorang relawan memperbaiki dua kata dalam terjemahannya. Banyak LLM belajar terutama dari bahasa Inggris. LLM biasanya bekerja lebih buruk dalam bahasa yang sedikit tulisannya di internet. LLM dasar memilih kata-kata yang terdengar benar. LLM tidak memeriksa fakta. Jadi LLM bisa mengarang dan terdengar yakin. Alat bantu Lakeside menyebutkan buku yang tidak ada. Ada alat yang mencari di internet, tetapi halamannya juga bisa salah. Periksa jawaban penting dengan sumber yang tepercaya."
       }
     ],
     "glossary": [
@@ -143,7 +81,7 @@
       {
         "word": "token",
         "definition": "Potongan kecil teks: satu kata atau bagian dari kata.",
-        "example": "Model menambahkan satu token setiap kali, seperti “teh”."
+        "example": "Model menambahkan satu token setiap kali, seperti “peta”."
       },
       {
         "word": "memprediksi",
@@ -152,7 +90,7 @@
           "diprediksi"
         ],
         "definition": "Menebak apa yang akan muncul berikutnya.",
-        "example": "Model memprediksi bahwa kata berikutnya adalah “teh”."
+        "example": "Model memprediksi bahwa token berikutnya adalah “peta”."
       },
       {
         "word": "yakin",
@@ -178,59 +116,44 @@
             "feedback": "Belum tepat. Model itu mempelajari pola dari banyak teks. Baca lagi bagian kedua."
           },
           {
-            "text": "Seseorang mengetik setiap jawaban dengan sangat cepat",
-            "feedback": "Belum tepat. Programnya sendiri yang menulis jawaban itu. Baca lagi bagian kedua."
+            "text": "Model itu mengikuti aturan yang ditulis manusia, seperti ELIZA",
+            "feedback": "Belum tepat. ELIZA pada tahun 1966 memakai aturan. LLM justru mempelajari pola dari teks. Baca lagi dua bagian pertama."
           }
         ]
       },
       {
-        "question": "Alat bantu Lakeside menyebutkan sebuah buku, tetapi pustakawan tidak bisa menemukannya. Apa yang sebaiknya kamu lakukan?",
+        "question": "Mengapa banyak LLM lebih lemah dalam bahasa yang sedikit tulisannya di internet?",
         "options": [
           {
-            "text": "Memercayainya, karena alat bantu itu terdengar yakin",
-            "feedback": "Belum tepat. LLM bisa terdengar yakin tetapi tetap salah. Baca bagian ketiga."
+            "text": "Bahasa-bahasa itu terlalu sulit untuk komputer",
+            "feedback": "Belum tepat. Tidak ada bahasa yang terlalu sulit dengan sendirinya. Pikirkan dari apa model itu belajar. Baca lagi bagian ketiga."
           },
           {
-            "text": "Memeriksa sumber yang tepercaya, seperti perpustakaan",
-            "feedback": "Benar. LLM bisa mengarang, jadi sumber yang tepercaya membantumu mengetahui apa yang benar."
+            "text": "LLM punya lebih sedikit teks dalam bahasa-bahasa itu untuk dipelajari",
+            "feedback": "Benar. Banyak LLM terutama belajar dari bahasa Inggris. Lebih sedikitnya teks dalam sebuah bahasa adalah salah satu alasan besar LLM lebih lemah dalam bahasa itu."
           },
           {
-            "text": "Tetap memakai judul buku itu dalam tugasmu",
-            "feedback": "Belum tepat. Buku itu mungkin tidak ada. Baca bagian ketiga tentang memeriksa."
+            "text": "Chatbot hanya bisa memakai satu bahasa",
+            "feedback": "Belum tepat. Banyak LLM bisa memakai banyak bahasa, tetapi tidak sama baiknya. Baca lagi bagian ketiga."
           }
         ]
-      },
-      {
-        "question": "Banyak teks yang dipelajari LLM ditulis oleh manusia. Apakah para penulis perlu dimintai izin sebelum tulisan mereka dipakai? Mengapa?",
-        "placeholder": "Menurutku penulis perlu / tidak perlu dimintai izin karena ..."
       }
     ]
   },
   "write": {
-    "prompt": "Jelaskan bagaimana chatbot menulis jawaban, dan mengapa kamu perlu memeriksa apa yang dikatakannya. Pakai satu contoh dari Lakeside.",
+    "prompt": "Jelaskan bagaimana chatbot menulis jawaban. Lalu katakan mengapa ini penting ketika orang memakai chatbot untuk menulis, menerjemahkan, atau mencari sesuatu.",
     "sentenceStarters": [
-      "Model bahasa besar belajar dari ...",
-      "Model itu menulis jawaban dengan cara ...",
-      "Model itu bisa berguna untuk ...",
-      "Tetapi model itu bisa salah karena ...",
-      "Sebelum aku memercayai sebuah jawaban, aku ..."
+      "Chatbot yang dibangun di atas LLM menulis dengan cara ...",
+      "Ini penting untuk ... karena ...",
+      "Jadi sebelum memakai jawabannya, seseorang perlu ..."
     ],
-    "planningBoxes": [
-      "Ide utamaku",
-      "Bukti dari pelajaran",
-      "Mengapa ini penting",
-      "Pertanyaan yang masih aku punya"
-    ],
-    "selfCheck": [
-      "Aku menjelaskan bagaimana LLM menulis, satu potongan kecil setiap kali.",
-      "Aku memberi satu cara LLM bisa berguna.",
-      "Aku memberi satu alasan untuk memeriksa jawabannya."
-    ],
-    "example": "Model bahasa besar belajar dari teks dalam jumlah sangat besar, yang banyak di antaranya ditulis oleh manusia. Model itu menulis jawaban dengan cara memprediksi token berikutnya, yaitu satu kata atau bagian dari kata, berulang-ulang. Model itu bisa berguna untuk menjelaskan ide atau menerjemahkan pengumuman pendek. Tetapi model itu bisa salah karena model itu memilih kata-kata yang terdengar benar. Model itu tidak memeriksa fakta. Di Lakeside, alat bantu itu menyebutkan buku yang tidak ada, dan jawabannya terdengar yakin. Sebelum aku memercayai sebuah jawaban, aku memeriksa sumber yang tepercaya, seperti perpustakaan atau guru."
+    "planningBoxes": [],
+    "selfCheck": [],
+    "example": "Chatbot yang dibangun di atas LLM menulis dengan cara memprediksi token berikutnya, berulang-ulang. Token adalah satu kata atau bagian dari kata. Chatbot itu memilih token yang mungkin, dari pola dalam banyak teks. Ini penting untuk terjemahan. Banyak LLM belajar terutama dari bahasa Inggris. Jadi terjemahan ke bahasa yang sedikit tulisannya di internet mungkin punya lebih banyak kesalahan. Di Lakeside, seorang relawan memperbaiki dua kata. Jadi sebelum kamu memakai pengumuman yang diterjemahkan, seseorang yang menguasai bahasa itu perlu memeriksanya."
   },
   "speak": {
-    "partnerTask": "Ucapkan awal sebuah kalimat, seperti “Setiap pagi, aku minum secangkir ...”. Temanmu memprediksi kata berikutnya. Lalu bicarakan mengapa kalian masing-masing memilih kata itu.",
-    "independentTask": "Jelaskan dengan lantang, dalam tiga kalimat, bagaimana chatbot menulis jawaban dan mengapa jawabannya bisa salah."
+    "partnerTask": "Bergantian. Salah satu dari kalian menjelaskan bagaimana ELIZA menulis jawabannya pada tahun 1966. Yang lain menjelaskan bagaimana LLM menulis sekarang. Lalu sebutkan satu persamaan dan satu perbedaannya.",
+    "independentTask": "Jelaskan dengan lantang, dalam tiga kalimat, bagaimana chatbot menulis jawaban dan mengapa jawabannya bisa terdengar yakin tetapi tetap salah."
   },
   "watch": {
     "why": "Dua orang yang membuat alat AI memperlihatkan, dengan contoh sederhana, bagaimana model bahasa menulis dengan menebak apa yang muncul berikutnya.",
@@ -247,13 +170,13 @@
   "reflect": {
     "prompts": [
       {
-        "text": "Sebelum aku memercayai jawaban chatbot, aku akan ..."
+        "text": "Satu hal yang sekarang aku pahami tentang cara chatbot menulis adalah ..."
       },
       {
         "text": "Satu pertanyaanku tentang tulisan siapa yang dipelajari LLM adalah ..."
       }
     ],
-    "completionMessage": "Kamu sudah menyelesaikan Pelajaran 4. Kamu menjelaskan bagaimana model bahasa besar menulis, dan mengapa jawabannya perlu diperiksa."
+    "completionMessage": "Kamu sudah menyelesaikan Pelajaran 4. Kamu menjelaskan bagaimana model bahasa besar menulis, bagaimana chatbot berkembang, dan mengapa jawabannya perlu diperiksa."
   },
   "visual": {
     "alt": "Sebuah diagram: setelah “a cup of”, model menimbang “tea” (6), “water” (3), dan “rice” (1), memilih satu kata, lalu memprediksi kata berikutnya lagi. Di bawahnya, sebuah jawaban yang terdengar yakin menyebutkan sebuah buku, dengan pengingat untuk memeriksanya."
@@ -273,9 +196,6 @@
     },
     {
       "label": "Stanford Report (Mei 2025): How AI is leaving non-English speakers behind (bagaimana AI meninggalkan penutur bahasa selain Inggris)"
-    },
-    {
-      "label": "Stanford CRAFT (Januari 2025): How do I fact-check AI search results? (membaca lateral untuk chatbot AI dan alat pencarian)"
     }
   ],
   "sensitiveNotes": [
@@ -283,7 +203,7 @@
     "Jangan bertanya bahasa apa yang dipakai pelajar di rumah, atau bahasa mana yang salah diolah oleh sebuah alat untuk mereka. Biarkan mereka sendiri yang mengatakannya jika mereka mau."
   ],
   "educatorNotes": [
-    "Tidak ada chatbot sungguhan di aplikasi ini (docs/content/DIGITAL_WORLD_SPEC.md 5.6). Permainan kata Lakeside, jawaban-jawaban alat bantu, dan buku “The Long Blue Road” semuanya rekaan. Permainan secangkir teh adalah perumpamaan sederhana, bukan penjelasan lengkap: LLM sungguhan bekerja dengan token dan teks yang jauh lebih banyak, dan “kata” dalam pelajaran ini adalah penyederhanaan. Tidak semua teks latih ditulis oleh manusia (ada model yang juga belajar dari teks buatan komputer), jadi pelajaran ini mengatakan “sebagian besar” atau “banyak”. Sebuah model bisa mengulang jawaban yang sama: aplikasi bisa memilih token yang paling mungkin setiap kali, atau memilih secara acak di antara token-token yang mungkin (kursus Google).",
-    "Model dasar menulis dari apa yang sudah dipelajarinya; ada alat yang juga mencari di internet dan menampilkan tautan. Tautan bukan bukti: buka dan periksa, seperti di Pelajaran 14 (pelajaran Stanford CRAFT tentang memeriksa fakta hasil pencarian AI). Rancangan tahun 2017 itu adalah transformer (Vaswani dan lainnya). Versi kertas untuk kegiatan ini: tulis kesembilan kalimat di kartu, lalu pilah ke dalam “Bisa”, “Tidak bisa”, dan “Sulit dipastikan”; hargai alasannya."
+    "Tidak ada chatbot sungguhan di aplikasi ini (docs/content/DIGITAL_WORLD_SPEC.md 5.6). Permainan kata Lakeside, jawaban-jawaban alat bantu, dan buku “The Long Blue Road” semuanya rekaan. Permainan secangkir teh adalah perumpamaan sederhana, bukan cara kerja model sungguhan: LLM sungguhan mempelajari pola yang jauh lebih kaya atas token dari teks yang jauh lebih banyak, dan tidak menyimpan tabel hitungan. Tidak semua teks latih ditulis oleh manusia (ada model yang juga belajar dari teks buatan komputer), jadi pelajaran ini mengatakan “banyak di antaranya”. Sebuah model bisa mengulang jawaban yang sama: aplikasi bisa memilih token yang paling mungkin setiap kali, atau memilih secara acak di antara token-token yang mungkin (kursus Google).",
+    "Model dasar menulis dari apa yang sudah dipelajarinya; ada alat yang juga mencari di internet atau di sekumpulan dokumen dan menampilkan tautan. Tautan bukan bukti: buka dan periksa, seperti di Pelajaran 14 (Stanford CRAFT, “How do I fact-check AI search results?”, 2025). Alur sejarahnya: ELIZA (1966) mengobrol dengan aturan yang ditulis manusia; LLM memakai pembelajaran mesin, yang tumbuh bersama teks digital dan cip yang cepat, seperti di Pelajaran 2; rancangan tahun 2017 itu adalah transformer (Vaswani dan lainnya), yang oleh Machine Learning Crash Course milik Google disebut “the most successful and widely used architecture for building LLMs” (arsitektur yang paling berhasil dan paling banyak dipakai untuk membangun LLM). Pelajaran 7 membahas lebih jauh bahasa mana yang dilayani dengan baik oleh alat-alat ini."
   ]
 }

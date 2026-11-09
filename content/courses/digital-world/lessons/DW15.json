@@ -5,10 +5,10 @@
   "section": "truth-and-power",
   "title": "What your feed shows you",
   "essentialQuestion": "How do apps choose what we see, and why does that matter for a community?",
-  "learningGoal": "Explain how a feed chooses posts, how that can help or cause problems, why a rumour can spread fast before a vote, and what people and rules can do about it.",
+  "learningGoal": "Explain how a feed chooses posts, how that can help people discover things, why it matters for what a community knows before a vote, and what the evidence says.",
   "estimatedMinutes": [
-    30,
-    50
+    25,
+    40
   ],
   "warmUp": {
     "question": "Why do you think some posts get shared much more than others?",
@@ -66,79 +66,22 @@
       }
     ]
   },
-  "activity": {
-    "type": "sort",
-    "stage": "read",
-    "placement": "after-evidence",
-    "title": "Fast or slow?",
-    "instructions": "Here are posts from Maplebrook in the week of the town vote. Put each one where you think it goes. There is no score. After you place one, you can see one possible answer and the reason.",
-    "groups": [
-      {
-        "id": "fast",
-        "label": "Likely to spread fast"
-      },
-      {
-        "id": "slow",
-        "label": "Less likely to spread fast"
-      }
-    ],
-    "items": [
-      {
-        "id": "rumour",
-        "text": "SHOCKING. The vote has moved to Friday. Share this now.",
-        "suggested": "fast",
-        "feedback": "It is surprising, and it tells you to hurry. Posts like this often spread fast. But spreading fast does not make it true. It is false."
-      },
-      {
-        "id": "office",
-        "text": "Town election office: Vote on Saturday at the town hall. It is open from 9 to 5.",
-        "suggested": "slow",
-        "feedback": "Calm facts are less surprising, so fewer people may share them. You can help by sharing it."
-      },
-      {
-        "id": "goat",
-        "text": "A funny video of a goat walking into the library.",
-        "suggested": "fast",
-        "feedback": "Funny posts often get many views and shares. Feeds often show posts like these to more people."
-      },
-      {
-        "id": "flood",
-        "text": "A scary post with no proof: The new field will flood every street.",
-        "suggested": "fast",
-        "feedback": "Posts that scare people often spread fast. It has no evidence, so check it before you share it."
-      },
-      {
-        "id": "costs",
-        "text": "A long post that compares what the library and the field will cost.",
-        "suggested": "slow",
-        "feedback": "It is useful, but long and calm, so fewer people may share it. It can still help voters make up their minds."
-      },
-      {
-        "id": "fact-check",
-        "text": "Fact check: False. The vote has not moved. It is still on Saturday.",
-        "suggested": "slow",
-        "feedback": "A calm correction is less surprising than the rumour, so it may spread more slowly. That is why it helps to share it."
-      }
-    ],
-    "saves": "The group the learner chose for each post, with the lesson's other answers.",
-    "offline": "Everything is in the lesson file. The posts are made up; nothing is opened, searched or sent."
-  },
   "read": {
     "sections": [
       {
         "heading": "Your feed is chosen for you",
-        "text": "People post far more than anyone could see, so many apps use an algorithm to choose what goes in your feed. An algorithm is a set of steps a computer follows. It learns from what you watched, liked or skipped before, and guesses what you will want to see. Apps aim for different things. Some count how long you watch, and some also ask people if they were happy with what they saw. A feed can be useful. In the made-up town of Maplebrook, Lena's feed found her a free video lesson on writing stories. Ravi watched many football videos, so his feed showed him mostly posts about the new sports field.",
-        "simpler": "People post more than you could ever see. So many apps use an algorithm. An algorithm is a set of steps for a computer. It picks posts from what you watched before. Apps aim for different things. Some count how long you watch. Some ask if you liked it. A feed can help. In made-up Maplebrook, Lena's feed found her a free lesson on stories. Ravi's feed showed him posts about the new sports field."
+        "text": "People post far more than anyone could see, so many apps use an algorithm to choose what goes in your feed. An algorithm is a set of steps a computer follows. It learns from what you watched, liked or skipped before. Then it guesses what you will want to see. Apps aim for different things. Some count how long you watch, and some also ask people if they were happy with what they saw. A feed can be very useful. It can help you discover a skill, a song or local news you would never have found. In the made-up town of Maplebrook, Lena liked posts about books, and her feed found her a free video lesson on writing stories. Ravi watched many football videos, so his feed showed him mostly posts about the new sports field.",
+        "simpler": "People post more than you could ever see. So many apps use an algorithm. An algorithm is a set of steps for a computer. It picks posts from what you watched before. Apps aim for different things. Some count how long you watch. Some ask if you liked it. A feed can help you find new things, like a skill or local news. In made-up Maplebrook, Lena likes books. Her feed found her a free lesson on stories. Ravi watches football. His feed shows him posts about the new sports field."
       },
       {
-        "heading": "A rumour can spread faster than the truth",
-        "text": "In 2018, researchers at MIT in the United States published a study of Twitter. They looked at about 126,000 news stories shared from 2006 to 2017, each checked by fact-checking groups. On Twitter in those years, false stories spread further and faster than true ones. They were often more surprising, and people shared them, not only robot accounts. The study looked at what people chose to share on one site, not at how feeds pick posts. This matters before an election, when people need correct facts to vote. In Maplebrook, a rumour said the vote had moved to Friday. It was shared 900 times in one day, and the correct notice only 60 times.",
-        "simpler": "In 2018, MIT researchers in the US studied news stories on Twitter. The stories were from 2006 to 2017. False stories spread faster than true ones. They often seemed surprising. People shared them, not only robots. The study looked at what people shared on one site. It did not study how feeds pick posts. This matters in an election. In Maplebrook, a rumour said the vote moved to Friday. It got 900 shares. The true notice got 60."
+        "heading": "Feeds and what a town knows",
+        "text": "Each feed is chosen for one person. So two neighbours can see very different posts about the same town, as Ravi and Lena did before Maplebrook's vote. This matters for public life. To take part in an election, people need some shared, correct facts, such as the day of the vote. A rumour can spread fast. In 2018, researchers at MIT in the United States published a study of about 126,000 news stories shared on Twitter from 2006 to 2017. False stories spread further and faster than true ones. People did most of the sharing, not robot accounts. The study looked at what people shared on one site, so it did not show that feeds or AI caused the spread.",
+        "simpler": "Each feed is chosen for one person. So two neighbours can see different posts about the same town. Ravi and Lena did before the vote. In an election, people need the same true facts. One is the day of the vote. A rumour can spread fast. In 2018, MIT researchers in the US studied news stories on Twitter. The stories were from 2006 to 2017. False stories spread faster than true ones. People shared them, not only robots. The study looked at what people shared on one site. It did not show that feeds or AI caused this."
       },
       {
-        "heading": "Seeing more than one side",
-        "text": "Some people worry that feeds put each of us in a filter bubble, where we only see one side. Ravi saw mostly posts for the sports field, and Lena saw mostly posts for the library. But a review of many studies found that real filter bubbles are less common than many people think. Since 2024, a European Union law has said that very large apps must explain how their feeds choose posts. They must also offer a feed that isn't based on what they know about you. You can help too: follow different sources, and check before you share.",
-        "simpler": "Some people worry about a filter bubble. In a bubble, you only see one side. Ravi sees posts for the field. Lena sees posts for the library. But researchers found that real bubbles are less common than people think. Since 2024, very big apps in the European Union must explain their feeds. They must offer another kind too. You can help too. Follow different sources. Check before you share."
+        "heading": "What the evidence says, and what helps",
+        "text": "Some people worry that feeds put each of us in a filter bubble, where we only see one side. But in 2022, a review of many studies by the Reuters Institute at the University of Oxford found that real filter bubbles are less common than many people think. People's own choices about what to follow also matter. A European Union law, in full use since 2024, says that very large apps must explain how their feeds choose posts. They must also offer a feed that isn't based on what they know about you. Apps change often, so a study from a few years ago may not describe them today. You can help as well: follow different sources, share the official notice and check before you share.",
+        "simpler": "Some people worry about a filter bubble. In a bubble, you only see one side. But in 2022, researchers looked at many studies. They found that real bubbles are less common than people think. What people choose to follow matters too. Since 2024, very big apps in the European Union must explain their feeds. They must offer another kind too. Apps change, so old studies may not fit them today. You can help. Follow different sources. Share the true notice. Check before you share."
       }
     ],
     "glossary": [
@@ -215,53 +158,36 @@
           {
             "text": "False stories spread faster than true ones",
             "correct": true,
-            "feedback": "Yes. On Twitter from 2006 to 2017, false stories spread further and faster. That was one site in those years."
+            "feedback": "Yes. On Twitter from 2006 to 2017, false stories spread further and faster. People did most of the sharing."
           },
           {
-            "text": "False stories spread more slowly than true ones",
+            "text": "AI feeds caused false stories to spread",
             "correct": false,
-            "feedback": "Not quite. Look at the Maplebrook rumour and the notice. Read the second section."
+            "feedback": "Not quite. The study looked at what people shared. It did not test feeds or AI. Read the second section."
           },
           {
-            "text": "Only robot accounts shared the false stories",
+            "text": "Only robot accounts shared false stories",
             "correct": false,
             "feedback": "Not quite. People shared them too. Read the second section again."
           }
         ]
-      },
-      {
-        "type": "think",
-        "question": "Think of a post from the lesson. What would you check before you share it?",
-        "placeholder": "Before I share ___, I would check ...",
-        "optional": true
       }
     ]
   },
   "write": {
-    "prompt": "A rumour says the Maplebrook vote has moved to Friday. Explain why it spread fast, and what people in Maplebrook could do about it.",
+    "prompt": "Ravi and Lena live in the same town, but they saw different posts before the vote. Explain why. Then say one thing that could help everyone in Maplebrook get the correct facts.",
     "sentenceStarters": [
-      "The rumour spread fast because ...",
-      "Many people saw it because ...",
-      "The true notice was shared ...",
-      "People could ...",
-      "This matters in an election because ..."
+      "Ravi and Lena saw different posts because ...",
+      "This matters before a vote because ...",
+      "One thing that could help is ..."
     ],
-    "planningBoxes": [
-      "My main idea",
-      "Evidence from the lesson",
-      "Why it matters",
-      "A question I still have"
-    ],
-    "selfCheck": [
-      "I gave one reason the rumour spread fast.",
-      "I used a fact from the lesson.",
-      "I said what people could do."
-    ],
-    "example": "The rumour spread fast because it was surprising and told people to share it now. Many people saw it because it got so many shares. Feeds can show those posts to more people. The true notice was shared only 60 times, but the rumour was shared 900 times. People could check the election office's notice before they share. They could also share the fact check. This matters in an election because people need the correct day to vote."
+    "planningBoxes": [],
+    "selfCheck": [],
+    "example": "Ravi and Lena saw different posts because the algorithm guesses from what each of them liked before. Ravi watched football videos. So he saw mostly posts about the sports field. Lena liked books, so she saw mostly posts about the library. This matters before a vote because everyone needs the correct facts, like the day of the vote. One thing that could help is to share the election office's notice. It is correct, but it was shared only 60 times."
   },
   "speak": {
-    "partnerTask": "Your partner reads the Maplebrook rumour aloud. You explain why it might spread fast, and what you would share instead. Then switch.",
-    "independentTask": "Say out loud what an algorithm does in a feed, with one way it can help you and one way it can cause problems."
+    "partnerTask": "Talk with your partner. How did Lena's feed help her? What might Ravi's feed not show him before the vote? Take turns, then agree on one way to see more than one side.",
+    "independentTask": "Say out loud what an algorithm does in a feed. Give one way it can help a community and one way it can cause problems before a vote."
   },
   "watch": {
     "youtubeId": "F5tz887wXCY",
@@ -283,15 +209,15 @@
   "reflect": {
     "prompts": [
       {
-        "text": "Before I share a surprising post, I will ...",
+        "text": "One thing I now understand about feeds and what a town knows is ...",
         "required": true
       },
       {
-        "text": "One way to see more than one side is ...",
+        "text": "One way I could see more than one side is ...",
         "required": false
       }
     ],
-    "completionMessage": "You finished Lesson 15. You explained how a feed chooses posts, and why that matters before a vote."
+    "completionMessage": "You finished Lesson 15. You explained how a feed chooses posts, how it can help, and why it matters for what a town knows before a vote."
   },
   "visual": {
     "type": "diagram",
@@ -325,9 +251,9 @@
     "Elections and politics can be painful or dangerous topics for some learners. Keep the discussion on made-up Maplebrook. Never ask learners about elections, politics or votes in any country they have lived in, or how anyone in their family votes, and don't let a debate about real candidates or parties start; steer back to how feeds and rumours work."
   ],
   "educatorNotes": [
-    "The research in section 2 is Vosoughi, Roy and Aral (Science, March 2018; MIT News, 8 March 2018): about 126,000 cascades of news stories on Twitter, 2006 to 2017, tweeted over 4.5 million times by about 3 million people, each story judged true or false by six independent fact-checking organisations. False news was 70% more likely to be retweeted, and true stories took about six times as long to reach 1,500 people; the gap held with bots removed. Its scope: one platform, those years, and stories that fact-checkers had investigated (contested stories, not all posts). It measured what people retweeted, not how a ranking algorithm chose posts, so it does not show that AI caused the spread; the authors say other platforms need separate study.",
-    "Apps rank posts with different signals and aims; don't reduce them to one motive. For example, YouTube's help page lists watch and search history, subscriptions, likes, dislikes, “not interested” and satisfaction surveys (to understand satisfaction, “not just watch time”). Filter bubbles: the Reuters Institute's 2022 review found echo chambers much less widespread than commonly assumed and no support for the filter bubble idea. The European rule is the Digital Services Act (Regulation (EU) 2022/2065): in force 16 November 2022, applying in full from 17 February 2024, and earlier to very large platforms (over 45 million monthly users in the EU), four months after the Commission designated them; they must explain the main settings of their recommender systems, offer one not based on profiling, and assess risks such as the manipulation of elections.",
-    "Paper version of the activity: write the six posts on cards and sort them into two piles, “Likely to spread fast” and “Less likely”. There is no score; ask for reasons. Ask why the correct notice spreads more slowly, and who could help it spread."
+    "The research in section 2 is Vosoughi, Roy and Aral (Science, March 2018; MIT News, 8 March 2018, re-read 8 November 2026): about 126,000 cascades of news stories on Twitter, 2006 to 2017, tweeted over 4.5 million times by about 3 million people, each story judged true or false by six independent fact-checking organisations that agreed over 95% of the time. False news was 70% more likely to be retweeted, and true stories took about six times as long to reach 1,500 people; the gap held with bots removed. Its scope: one platform, those years, and stories that fact-checkers had investigated (contested stories, not all posts). It measured what people retweeted, not how a ranking algorithm chose posts, so it does not show that AI caused the spread; the authors say other platforms need separate study, and that they “cannot claim that novelty causes retweets”.",
+    "Apps rank posts with different signals and aims; don't reduce them to one motive. For example, YouTube's help page lists watch and search history, subscriptions, likes, dislikes, “not interested” and satisfaction surveys (to understand satisfaction, “not just watch time”). Filter bubbles: the Reuters Institute's 2022 review (Ross Arguedas, Robertson, Fletcher and Nielsen) found echo chambers “much less widespread than is commonly assumed”, “no support for the filter bubble hypothesis”, and an important role for people's own choices (self-selection); research outside the United States is limited. The European rule is the Digital Services Act (Regulation (EU) 2022/2065): in force 16 November 2022, applying in full from 17 February 2024, and earlier to very large platforms (over 45 million monthly users in the EU), four months after the Commission designated them; they must explain the main settings of their recommender systems, offer one not based on profiling, and assess risks such as the manipulation of elections.",
+    "Section 3's point that apps change matters: the study's years (2006 to 2017) predate today's feeds, and Twitter is now called X. For discussion or on paper, put Ravi's and Lena's feeds side by side and ask what each friend sees, what each might miss, and how the election office's notice could reach both. There is no sorting task."
   ],
   "changes": [
     "New lesson (Digital World, October 2026, social studies rebuild). There is no Base44 original, so oldId is null. Lesson 15 in “Truth, power and choices” (truth-and-power).",
@@ -335,6 +261,7 @@
     "Real research is described without naming the site in learner text; the details (Twitter, the numbers) are in educatorNotes and sources.",
     "visual.src points to a picture that doesn't exist yet. The video's summary was written from its published description; someone must watch it before use.",
     "Needs review by Justin for level and tone, by an AI or media researcher for the simplifications (how feeds rank posts, the filter bubble evidence), and by a partner educator for the election note.",
-    "Revised on 1 November 2026 from Justin's review: the research is now named and dated in the reading (a 2018 MIT study of Twitter, 2006 to 2017), with its scope: one site in those years, about what people shared, not proof that a feed or AI caused the spread. A concrete useful recommendation is added (Lena's feed finds her a free lesson on writing stories, in the evidence, reading, visual and Speak). The reading, quick check and Write no longer reduce every feed to “keeping you watching”: apps aim for different things (some also ask whether people were happy with what they saw; YouTube's help page added as an example in the teacher notes). Watch keeps its video and summary; only its after-question now asks why a feed “might” try to keep you watching. The European Union rule is dated (Digital Services Act, applying in full since February 2024). Activity feedback gives the reason, not “what most people would say”. The evidence stays fully fictional; the real study is in the reading, the teacher notes and sources (MIT News replaces the MIT Sloan summary of the same study)."
+    "Revised on 1 November 2026 from Justin's review: the research is now named and dated in the reading (a 2018 MIT study of Twitter, 2006 to 2017), with its scope: one site in those years, about what people shared, not proof that a feed or AI caused the spread. A concrete useful recommendation is added (Lena's feed finds her a free lesson on writing stories, in the evidence, reading, visual and Speak). The reading, quick check and Write no longer reduce every feed to “keeping you watching”: apps aim for different things (some also ask whether people were happy with what they saw; YouTube's help page added as an example in the teacher notes). Watch keeps its video and summary; only its after-question now asks why a feed “might” try to keep you watching. The European Union rule is dated (Digital Services Act, applying in full since February 2024). Activity feedback gives the reason, not “what most people would say”. The evidence stays fully fictional; the real study is in the reading, the teacher notes and sources (MIT News replaces the MIT Sloan summary of the same study).",
+    "Revised on 8 November 2026 (Justin's brief of 4 November): the sort activity, the think question, the planning boxes and the self-check are gone; the two contrasting feeds in the evidence carry the illustration. The reading now teaches how feeds affect what a community knows: neighbours see different posts, an election needs shared correct facts, a feed can help people discover useful things, the Twitter study is dated with its scope (it did not test feeds or AI, now also a wrong option in the quick check), the 2022 Reuters Institute review is named, and studies of apps can date as apps change. Write asks why Ravi and Lena saw different posts and what would help; Speak is a discussion of the two feeds. estimatedMinutes 25–40."
   ]
 }

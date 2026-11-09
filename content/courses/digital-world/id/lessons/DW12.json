@@ -1,89 +1,38 @@
 {
   "title": "Kamera yang mengenali wajah",
   "essentialQuestion": "Ketika kamera bisa mengenali wajah, bagaimana kita menyeimbangkan keamanan dan privasi?",
-  "learningGoal": "Menjelaskan bagaimana pengenalan wajah mencocokkan wajah, dan menimbang manfaatnya dibandingkan risikonya bagi keamanan dan privasi.",
-  "warmUp": {
-    "question": "Pemakaian kamera yang mengenali wajah mana yang menurutmu adil?",
-    "options": [
-      "Membuka kunci ponsel",
-      "Mencari anak yang hilang",
-      "Mengawasi setiap jalan",
-      "Tidak yakin"
-    ]
-  },
+  "learningGoal": "Menjelaskan bagaimana pengenalan wajah mencocokkan wajah, dan menggambarkan bagaimana tempat-tempat yang berbeda memilih untuk memakai atau membatasinya, serta alasannya.",
   "evidence": {
-    "label": "Contoh fiksi yang dibuat untuk pelajaran ini.",
-    "question": "Siapa yang dibantu oleh setiap pemakaian? Siapa yang bisa dirugikan?",
+    "question": "Apa yang diputuskan setiap tempat, dan batasan apa yang ditetapkannya?",
     "cards": [
       {
-        "title": "Kamera yang mengenali wajah di kota Greenport",
-        "cases": [
-          {
-            "name": "Ponsel Rosa",
-            "body": "Ponsel Rosa terbuka ketika melihat wajahnya. Waktu Rosa mengaturnya, ponsel itu mengubah wajahnya menjadi angka-angka lalu menyimpan angka-angka itu, bukan foto. Ponsel itu mencocokkan wajahnya dengan angka-angka itu. Angka-angka itu tetap ada di ponsel."
-          },
-          {
-            "name": "Anak yang hilang di pasar malam",
-            "body": "Seorang anak berusia lima tahun hilang di pasar malam Greenport yang ramai. Ayahnya setuju, jadi kamera-kamera di gerbang mencari wajah anak laki-laki itu. Seorang penjaga menemukannya dalam sepuluh menit."
-          },
-          {
-            "name": "Rencana kamera jalan",
-            "body": "Dewan kota ingin memasang kamera di setiap jalan utama. Kamera-kamera itu akan mencocokkan setiap wajah dengan daftar orang yang sedang dicari polisi. Orang-orang yang lewat tidak akan dimintai persetujuan."
-          },
-          {
-            "name": "Uji coba kamera jalan",
-            "body": "Dalam uji coba dengan 1.000 relawan, kamera-kamera itu salah mencocokkan 12 orang dengan seseorang dalam daftar. Sebagian besar kecocokan yang salah itu terjadi pada orang yang lebih tua."
-          }
+        "title": "Tiga tempat, tiga pilihan tentang pengenalan wajah",
+        "columns": [
+          "Tempat",
+          "Kapan",
+          "Apa yang diputuskan",
+          "Batasan"
+        ],
+        "rows": [
+          [
+            "San Francisco, Amerika Serikat",
+            "2019",
+            "Kantor-kantor kota, termasuk polisi, tidak boleh membeli atau memakai pengenalan wajah.",
+            "Bandara dan tempat lain yang diatur oleh aturan nasional tidak termasuk. Kamera keamanan tetap boleh dipakai."
+          ],
+          [
+            "Uni Eropa",
+            "Sejak Februari 2025",
+            "Polisi tidak boleh memakai pengenalan wajah secara langsung di tempat umum. Membangun basis data wajah dengan menyalin foto dalam jumlah besar dilarang.",
+            "Beberapa kasus serius diizinkan, kalau seorang hakim atau pejabat independen setuju dan undang-undang negara itu sendiri mengizinkannya. Undang-undang privasi juga melindungi data wajah."
+          ],
+          [
+            "Singapura",
+            "Sejak September 2024",
+            "Di Bandara Changi, para pelancong bisa melewati pemeriksaan paspor dengan pemindaian wajah dan mata mereka.",
+            "Penduduk Singapura bisa memakainya saat datang dan pergi; pengunjung hanya saat pergi. Para pelancong tetap membawa paspor."
+          ]
         ]
-      }
-    ]
-  },
-  "activity": {
-    "title": "Membantu atau merugikan?",
-    "instructions": "Masukkan setiap kalimat tentang kamera wajah ke dalam satu kelompok. Tidak ada nilai. Setelah kamu menempatkan satu kalimat, kamu bisa melihat satu jawaban yang mungkin dan alasannya. Jawaban lain juga bisa benar kalau kamu bisa memberi alasannya.",
-    "groups": [
-      {
-        "label": "Membantu orang"
-      },
-      {
-        "label": "Bisa merugikan orang"
-      },
-      {
-        "label": "Keduanya, tergantung aturannya"
-      }
-    ],
-    "items": [
-      {
-        "text": "Sebuah ponsel hanya terbuka untuk wajah pemiliknya.",
-        "feedback": "Ponsel itu mencocokkan satu wajah dengan angka-angka wajah pemilik yang sudah disimpan. Angka-angka itu tetap di ponsel, dan pemiliknya sendiri yang memilih untuk memakainya."
-      },
-      {
-        "text": "Kamera jalan memeriksa setiap wajah, dan tidak ada yang dimintai persetujuan.",
-        "feedback": "Orang diawasi tanpa tahu, jadi mereka kehilangan privasi. Sebagian orang mau menerimanya kalau ada aturan yang ketat, dan itu kelompok ketiga."
-      },
-      {
-        "text": "Kamera memeriksa wajah di gerbang stadion, supaya antrean bergerak lebih cepat.",
-        "feedback": "Ini menghemat waktu. Tetapi orang seharusnya bisa menolak, dan data wajahnya seharusnya segera dihapus."
-      },
-      {
-        "text": "Kamera di pasar malam membantu menemukan anak yang hilang.",
-        "feedback": "Keluarganya setuju, dan pencariannya hanya untuk satu anak dalam waktu singkat."
-      },
-      {
-        "text": "Seorang pembeli salah dicocokkan dengan orang yang dicari polisi.",
-        "feedback": "Kecocokan yang salah bisa membuat seseorang disalahkan secara keliru."
-      },
-      {
-        "text": "Polisi boleh mencari orang yang hilang, tetapi hanya kalau hakim mengizinkan.",
-        "feedback": "Ini bisa menemukan seseorang dengan cepat. Izin hakim berusaha mencegah penyalahgunaan, tetapi orang berbeda pendapat tentang di mana batasnya."
-      },
-      {
-        "text": "Sebuah perusahaan menyimpan foto wajah semua orang selama bertahun-tahun lalu menjualnya.",
-        "feedback": "Tidak ada yang setuju, dan foto-foto itu bisa dipakai untuk melacak mereka."
-      },
-      {
-        "text": "Alat itu lebih sering salah untuk orang yang lebih tua.",
-        "feedback": "Satu kelompok akan lebih sering salah dicocokkan, dan itu tidak adil bagi mereka."
       }
     ]
   },
@@ -91,30 +40,39 @@
     "sections": [
       {
         "heading": "Bagaimana kamera mencocokkan wajah",
-        "text": "Pengenalan wajah adalah salah satu jenis AI yang berusaha mengetahui siapa seseorang dari wajahnya. Pertama, perangkat lunaknya menemukan wajah di sebuah foto atau video. Lalu perangkat lunak itu mengukur detail-detailnya, seperti jarak antara kedua mata, dan mengubahnya menjadi sekumpulan angka. Berikutnya, perangkat lunak itu membandingkan angka-angka tersebut dengan wajah-wajah yang disimpan dalam sebuah basis data, lalu memberi skor seberapa mirip wajah-wajah itu. Ponsel yang terbuka dengan wajahmu biasanya hanya menyimpan angka dari wajahmu, bukan foto. Sebuah pencarian membandingkan satu wajah dengan banyak wajah. Apa pun caranya, kecocokan adalah tebakan terbaik, bukan bukti tentang siapa seseorang.",
-        "simpler": "Pengenalan wajah adalah AI yang berusaha mengetahui nama seseorang dari wajahnya. Pertama, AI itu menemukan wajah di sebuah foto. Lalu AI itu mengukur wajahnya, seperti seberapa jauh jarak kedua mata. AI itu mengubahnya menjadi angka. Berikutnya, AI itu membandingkan angka-angka itu dengan wajah-wajah di sebuah basis data. AI itu memberi skor seberapa mirip wajah-wajah itu. Ponsel sering hanya menyimpan angka dari wajahmu, bukan foto. Sebuah pencarian memeriksa satu wajah dengan banyak wajah. Kecocokan adalah tebakan, bukan bukti."
+        "text": "Pengenalan wajah adalah salah satu jenis AI yang berusaha mengetahui siapa seseorang dari wajahnya. Pertama, perangkat lunaknya menemukan wajah di sebuah foto atau video. Lalu perangkat lunak itu mengukur wajah tersebut, seperti jarak antara kedua mata. Ukuran-ukuran ini diubah menjadi sekumpulan angka yang disebut templat. Berikutnya, perangkat lunak itu membandingkan templat itu dengan templat lain dan memberi skor seberapa mirip keduanya. Ponsel yang terbuka dengan wajahmu memeriksa satu wajah dengan satu templat, yaitu templat pemiliknya. Ponsel itu biasanya hanya menyimpan templatnya, bukan foto. Sebuah pencarian membandingkan satu wajah dengan banyak wajah dalam sebuah basis data. Apa pun caranya, kecocokan adalah tebakan terbaik perangkat lunak itu, bukan bukti tentang siapa seseorang.",
+        "simpler": "Pengenalan wajah adalah AI yang berusaha mengetahui nama seseorang dari wajahnya. Pertama, AI itu menemukan wajah di sebuah foto. Lalu AI itu mengukur wajahnya, seperti seberapa jauh jarak kedua mata. AI itu mengubahnya menjadi angka, yang disebut templat. Berikutnya, AI itu membandingkan templat-templat. AI itu memberi skor seberapa mirip templat itu. Ponsel memeriksa satu wajah dengan templat pemiliknya. Ponsel biasanya menyimpan templatnya, bukan foto. Sebuah pencarian memeriksa satu wajah dengan banyak wajah di sebuah basis data. Kecocokan adalah tebakan, bukan bukti."
       },
       {
-        "heading": "Pemakaian yang membantu dan risiko yang nyata",
-        "text": "Pengenalan wajah punya pemakaian yang membantu. Alat ini bisa membuka kunci ponsel, mempercepat naik pesawat di beberapa bandara, dan membantu mencari orang yang hilang. Tetapi alat ini juga membawa risiko. Pada tahun 2019, sebuah badan sains milik pemerintah Amerika Serikat menguji hampir 200 alat pengenalan wajah. Banyak di antaranya jauh lebih sering salah mencocokkan dua orang yang berbeda untuk kelompok-kelompok tertentu. Kelompok itu termasuk perempuan, orang yang lebih tua, anak-anak dan orang dari latar belakang tertentu. Alat-alat yang terbaik membuat jauh lebih sedikit kesalahan. Kecocokan yang salah bisa membuat seseorang disalahkan atas sesuatu yang tidak dilakukannya. Kamera juga bisa mengenali orang dari jauh, tanpa mereka tahu, dan melacak ke mana mereka pergi. Itu adalah risiko bagi privasi.",
-        "simpler": "Kamera wajah bisa membuka kunci ponsel atau membantu menemukan orang yang hilang. Tetapi ada risikonya juga. Pada tahun 2019, sebuah badan sains di Amerika Serikat menguji hampir 200 alat. Banyak alat lebih sering salah untuk kelompok tertentu. Contohnya perempuan, anak-anak dan orang yang lebih tua. Alat yang terbaik membuat lebih sedikit kesalahan. Kecocokan yang salah bisa membuat seseorang disalahkan. Kamera juga bisa melacak orang. Mereka mungkin tidak tahu. Ini risiko bagi privasi."
+        "heading": "Di mana alat ini dipakai, dan apa yang bisa salah",
+        "text": "Pemindaian wajah sekarang dipakai untuk membuka ponsel. Di beberapa bandara, pemindaian wajah menggantikan kegiatan menunjukkan paspor. Di Bandara Changi di Singapura, sekarang banyak pelancong melewati pemeriksaan paspor dengan memindai wajah dan mata mereka. Tetapi kesalahan bisa berakibat serius. Pada tahun 2019, sebuah badan sains milik pemerintah Amerika Serikat menguji 189 alat pengenalan wajah. Banyak di antaranya lebih sering salah mencocokkan dua orang yang berbeda untuk kelompok-kelompok tertentu. Kelompok itu termasuk perempuan, orang yang lebih tua, anak-anak dan orang dari latar belakang tertentu. Alat-alat yang terbaik membuat jauh lebih sedikit kesalahan. Kecocokan yang salah dalam pencarian polisi bisa membuat seseorang disalahkan atas sesuatu yang tidak dilakukannya. Kamera di tempat umum juga bisa mengenali orang di tengah keramaian tanpa mereka tahu. Itu adalah risiko bagi privasi.",
+        "simpler": "Pemindaian wajah membuka ponsel. Di beberapa bandara, pemindaian wajah menggantikan paspor. Di Bandara Changi di Singapura, banyak orang memindai wajah dan mata mereka. Tetapi kesalahan bisa berakibat serius. Pada tahun 2019, sebuah badan sains Amerika Serikat menguji 189 alat. Banyak alat lebih sering salah mencocokkan orang dari kelompok tertentu. Contohnya perempuan, orang yang lebih tua, anak-anak dan orang dari latar belakang tertentu. Alat yang terbaik membuat jauh lebih sedikit kesalahan. Kecocokan yang salah bisa membuat seseorang disalahkan. Kamera juga bisa mengenali orang di tengah keramaian. Mereka mungkin tidak tahu. Itu risiko bagi privasi."
       },
       {
-        "heading": "Setiap tempat membuat aturan yang berbeda",
-        "text": "Karena risiko-risiko ini, setiap tempat membuat pilihan yang berbeda. Pada tahun 2019, San Francisco menjadi kota pertama di Amerika Serikat yang melarang polisi dan kantor-kantor kotanya yang lain memakai pengenalan wajah. Sejak tahun 2025, sebuah undang-undang Uni Eropa melarang beberapa pemakaian. Polisi tidak boleh memakai pengenalan wajah secara langsung di tempat umum, kecuali dalam beberapa kasus yang serius, seperti mencari orang yang hilang. Seorang hakim atau pejabat independen harus setuju lebih dulu. Undang-undang itu juga melarang menyalin foto wajah dalam jumlah besar dari internet atau kamera keamanan untuk membangun basis data pengenalan wajah. Kamera biasa tidak dilarang, dan tempat-tempat lain mengizinkan pemakaian yang jauh lebih luas.",
-        "simpler": "Pada tahun 2019, San Francisco membuat larangan. Polisinya tidak boleh memakai pengenalan wajah. Uni Eropa punya undang-undang tentang AI. Polisi di sana tidak boleh memakai kamera wajah secara langsung di tempat umum. Beberapa kasus serius diizinkan, seperti mencari orang yang hilang. Seorang hakim atau pejabat harus setuju. Undang-undang itu juga melarang menyalin banyak foto wajah dari internet untuk basis data wajah. Kamera biasa tidak dilarang."
+        "heading": "Setiap tempat membuat pilihan yang berbeda",
+        "text": "Karena risiko-risiko ini, setiap tempat membuat pilihan yang berbeda. Pada tahun 2019, San Francisco menjadi kota pertama di Amerika Serikat yang melarang polisi dan kantor-kantor kotanya yang lain memakai pengenalan wajah. Sebuah undang-undang Uni Eropa melarang beberapa pemakaian sejak Februari 2025. Polisi di sana tidak boleh memakai pengenalan wajah secara langsung di tempat umum. Beberapa kasus serius diizinkan, seperti mencari orang yang hilang. Seorang hakim atau pejabat lain yang tidak bekerja untuk polisi harus setuju lebih dulu. Undang-undang itu juga melarang membangun basis data wajah dengan menyalin foto wajah dalam jumlah besar dari internet atau dari kamera keamanan. Pemakaian yang tidak dilarang tetap harus mengikuti undang-undang lain. Misalnya, undang-undang privasi Uni Eropa melindungi data wajah. Sebaliknya, Singapura memilih memakai pemindaian wajah di bandara.",
+        "simpler": "Setiap tempat membuat pilihan yang berbeda. Pada tahun 2019, San Francisco melarang polisinya memakai pemindaian wajah. Kantor-kantor kota lain juga harus berhenti. Sejak tahun 2025, sebuah undang-undang di Uni Eropa melarang beberapa pemakaian. Polisi di sana tidak boleh memakai pemindaian wajah secara langsung di tempat umum. Beberapa kasus serius diizinkan, seperti mencari orang yang hilang. Seorang hakim atau pejabat harus setuju lebih dulu. Undang-undang itu juga melarang menyalin banyak foto wajah untuk basis data wajah. Undang-undang privasi tetap mengatur pemakaian lain. Singapura memilih memakai pemindaian wajah di bandara."
       }
     ],
     "glossary": [
       {
         "word": "pengenalan wajah",
         "definition": "AI yang berusaha mengetahui siapa seseorang dari wajahnya.",
-        "example": "Ponsel Rosa memakai pengenalan wajah untuk membuka kunci."
+        "example": "Ponsel bisa memakai pengenalan wajah untuk membuka kunci."
+      },
+      {
+        "word": "templat",
+        "forms": [
+          "templatnya",
+          "templat-templat"
+        ],
+        "definition": "Sekumpulan angka yang disimpan dari sebuah wajah, dipakai untuk memeriksanya nanti.",
+        "example": "Ponsel menyimpan templat pemiliknya, bukan foto."
       },
       {
         "word": "basis data",
         "definition": "Tempat penyimpanan informasi yang besar dan tertata di komputer.",
-        "example": "Kamera jalan akan membandingkan wajah dengan sebuah basis data berisi foto."
+        "example": "Sebuah pencarian membandingkan satu wajah dengan basis data berisi foto."
       },
       {
         "word": "kecocokan",
@@ -124,20 +82,12 @@
           "dicocokkan"
         ],
         "definition": "Ketika sebuah alat memperkirakan bahwa dua wajah adalah milik orang yang sama.",
-        "example": "Dalam uji coba, kamera-kamera Greenport membuat 12 kecocokan yang salah."
-      },
-      {
-        "word": "melacak",
-        "forms": [
-          "dilacak"
-        ],
-        "definition": "Mengikuti ke mana seseorang pergi, sering tanpa orang itu tahu.",
-        "example": "Kamera jalan bisa melacak orang yang berjalan di sekitar Greenport."
+        "example": "Kecocokan yang salah bisa membuat seseorang disalahkan karena keliru."
       },
       {
         "word": "privasi",
         "definition": "Menjaga informasi dan kehidupanmu sendiri tetap aman dari orang yang tidak boleh melihatnya.",
-        "example": "Orang yang lewat di depan kamera jalan kehilangan sebagian privasinya."
+        "example": "Kamera yang mengenali orang di tengah keramaian adalah risiko bagi privasi."
       },
       {
         "word": "larangan",
@@ -146,7 +96,7 @@
           "dilarang"
         ],
         "definition": "Aturan yang mengatakan sesuatu tidak boleh dilakukan.",
-        "example": "Greenport bisa membuat larangan bagi polisi untuk memakai kamera jalan."
+        "example": "Uni Eropa melarang beberapa pemakaian pengenalan wajah."
       }
     ],
     "checks": [
@@ -154,8 +104,8 @@
         "question": "Bagaimana sebuah ponsel memutuskan untuk terbuka bagi wajah pemiliknya?",
         "options": [
           {
-            "text": "Ponsel itu mencocokkan wajah dengan angka-angka yang disimpannya",
-            "feedback": "Benar. Ponsel mencocokkan satu wajah dengan angka-angka yang disimpan dari wajah pemiliknya. Sebuah pencarian memeriksa satu wajah dengan banyak wajah."
+            "text": "Ponsel itu memeriksa wajah dengan templat yang disimpannya",
+            "feedback": "Benar. Ponsel memeriksa satu wajah dengan templat pemiliknya. Sebuah pencarian memeriksa satu wajah dengan banyak wajah."
           },
           {
             "text": "Ponsel itu bertanya kepada polisi siapa orang itu",
@@ -163,58 +113,41 @@
           },
           {
             "text": "Ponsel itu mencari di antara semua wajah dalam sebuah basis data besar",
-            "feedback": "Belum tepat. Itu namanya pencarian. Ponsel hanya memeriksa angka-angka wajah pemiliknya yang sudah disimpan. Baca lagi bagian pertama."
+            "feedback": "Belum tepat. Itu namanya pencarian. Ponsel hanya memeriksa templat pemiliknya. Baca lagi bagian pertama."
           }
         ]
       },
       {
-        "question": "Apa yang ditemukan dalam uji coba tahun 2019 terhadap hampir 200 alat?",
+        "question": "Menurut undang-undang Uni Eropa, kapan polisi boleh memakai pemindaian wajah secara langsung di tempat umum?",
         "options": [
           {
-            "text": "Semua alat bekerja sama baiknya untuk semua orang",
-            "feedback": "Belum tepat. Banyak alat lebih sering salah untuk kelompok tertentu. Baca lagi bagian kedua."
+            "text": "Kapan saja mereka mau",
+            "feedback": "Belum tepat. Undang-undang itu melarang sebagian besar pemakaiannya oleh polisi di tempat umum. Baca lagi bagian ketiga."
           },
           {
-            "text": "Banyak alat lebih sering salah untuk kelompok tertentu",
-            "feedback": "Benar. Banyak alat lebih sering salah mencocokkan orang dalam kelompok tertentu. Alat yang terbaik membuat lebih sedikit kesalahan."
+            "text": "Tidak pernah, dalam kasus apa pun",
+            "feedback": "Belum tepat. Undang-undang itu mengizinkan beberapa kasus serius. Baca lagi bagian ketiga."
           },
           {
-            "text": "Alat-alat itu hanya bisa bekerja di ponsel",
-            "feedback": "Belum tepat. Uji coba itu tentang kesalahan, bukan tentang ponsel. Baca lagi bagian kedua."
+            "text": "Dalam beberapa kasus serius, kalau hakim setuju",
+            "feedback": "Benar. Salah satu contohnya adalah mencari orang yang hilang. Seorang hakim atau pejabat harus setuju lebih dulu."
           }
         ]
-      },
-      {
-        "question": "Apakah Greenport sebaiknya memasang kamera wajah di setiap jalan? Aturan apa yang akan kamu tambahkan?",
-        "placeholder": "Menurutku, Greenport sebaiknya ... Satu aturan yang akan aku tambahkan adalah ..."
       }
     ]
   },
   "write": {
-    "prompt": "Dewan kota Greenport harus memutuskan soal kamera jalannya. Tulis pesan singkat untuk dewan kota. Katakan ya, tidak, atau ya dengan aturan, berikan satu manfaat dan satu risiko, dan usulkan satu aturan.",
+    "prompt": "Jelaskan apa bedanya ponsel yang terbuka dengan wajahmu dan kamera yang mencari di tengah keramaian. Lalu katakan mengapa undang-undang mungkin memperlakukan keduanya secara berbeda.",
     "sentenceStarters": [
-      "Menurutku, dewan kota sebaiknya ...",
-      "Satu manfaatnya adalah ...",
-      "Satu risikonya adalah ...",
-      "Ini penting bagi ___ karena ...",
-      "Satu aturan yang aku usulkan adalah ..."
+      "Ponsel memeriksa ...",
+      "Kamera yang mencari di tengah keramaian ...",
+      "Undang-undang mungkin memperlakukan keduanya secara berbeda karena ..."
     ],
-    "planningBoxes": [
-      "Ide utamaku",
-      "Bukti dari pelajaran",
-      "Mengapa ini penting",
-      "Pertanyaan yang masih aku punya"
-    ],
-    "selfCheck": [
-      "Aku mengatakan pendapatku tentang rencana kamera jalan, dan alasannya.",
-      "Aku memberi satu manfaat dan satu risiko dari pelajaran.",
-      "Aku mengusulkan satu aturan dan mengatakan mengapa aturan itu membantu."
-    ],
-    "example": "Menurutku, dewan kota sebaiknya memakai kamera itu hanya dalam beberapa kasus yang serius, dengan aturan yang ketat. Satu manfaatnya adalah kamera itu bisa membantu menemukan anak yang hilang dengan cepat, seperti di pasar malam. Satu risikonya adalah kamera itu membuat kesalahan. Dalam uji coba, kamera itu salah mencocokkan 12 orang, dan sebagian besar adalah orang yang lebih tua. Ini penting bagi semua orang yang lewat, karena kecocokan yang salah bisa membuat seseorang disalahkan. Satu aturan yang aku usulkan adalah polisi hanya boleh mencari kalau hakim setuju."
+    "example": "Ponsel memeriksa satu wajah dengan satu templat, yaitu templat pemiliknya. Templat itu biasanya tetap ada di ponsel, dan pemiliknya memilih untuk memakainya. Kamera yang mencari di tengah keramaian memeriksa setiap wajah dengan banyak wajah dalam sebuah basis data. Orang-orang yang lewat tidak ditanya. Kecocokan yang salah bisa membuat salah satu dari mereka disalahkan. Undang-undang mungkin memperlakukan keduanya secara berbeda karena pencarian berdampak pada banyak orang yang tidak setuju. Itu sebabnya Uni Eropa hanya mengizinkan polisi melakukannya dalam beberapa kasus serius."
   },
   "speak": {
-    "partnerTask": "Satu orang memberi alasan untuk mendukung kamera jalan di Greenport. Temannya memberi alasan untuk menolaknya. Lalu bertukar posisi.",
-    "independentTask": "Ucapkan dengan lantang bagaimana pengenalan wajah mencocokkan sebuah wajah. Lalu sebutkan satu aturan yang akan melindungi privasi orang."
+    "partnerTask": "Bicarakan dengan temanmu: apakah polisi sebaiknya pernah diizinkan memakai kamera wajah secara langsung di tempat umum? Kalau ya, dalam kasus apa, dan siapa yang harus setuju lebih dulu? Pakai pilihan San Francisco atau Uni Eropa sebagai contoh.",
+    "independentTask": "Rekam jawabanmu untuk pertanyaan yang sama: apakah polisi sebaiknya pernah memakai kamera wajah secara langsung di tempat umum? Berikan satu alasan dan satu aturan yang kamu inginkan."
   },
   "watch": {
     "why": "Seorang ahli penglihatan komputer yang juga seorang pengacara menjelaskan cara kerja pengenalan wajah, bagaimana alat ini dipakai, dan mengapa beberapa kota di Amerika Serikat melarang pemerintah memakainya.",
@@ -231,42 +164,37 @@
   "reflect": {
     "prompts": [
       {
-        "text": "Satu aturan yang menjaga keamanan orang dan melindungi privasi mereka adalah ..."
+        "text": "Satu hal yang aku pelajari tentang aturan untuk kamera wajah adalah ..."
       },
       {
         "text": "Satu pertanyaan yang masih aku punya tentang kamera yang mengenali wajah adalah ..."
       }
     ],
-    "completionMessage": "Kamu sudah menyelesaikan Pelajaran 12. Kamu menjelaskan bagaimana pengenalan wajah mencocokkan wajah, dan menimbang keamanan dibandingkan privasi."
+    "completionMessage": "Kamu sudah menyelesaikan Pelajaran 12. Kamu menjelaskan bagaimana pengenalan wajah mencocokkan wajah, dan bagaimana tempat-tempat yang berbeda memilih untuk memakai atau membatasinya."
   },
   "visual": {
-    "alt": "Sebuah diagram: perangkat lunak menemukan wajah, mengukurnya, mengubahnya menjadi angka, lalu membandingkannya dengan wajah-wajah yang tersimpan untuk memberi skor. Ponsel membandingkan satu wajah dengan angka-angka pemiliknya yang sudah disimpan; sebuah pencarian membandingkan satu wajah dengan banyak wajah."
+    "alt": "Sebuah diagram: perangkat lunak menemukan wajah, mengukurnya, mengubahnya menjadi angka yang disebut templat, lalu membandingkannya dengan wajah-wajah yang tersimpan untuk memberi skor. Ponsel membandingkan satu wajah dengan templat pemiliknya; sebuah pencarian membandingkan satu wajah dengan banyak wajah."
   },
   "sources": [
     {
-      "label": "NIST (2019): Face Recognition Vendor Test, Part 3: Demographic effects (uji alat pengenalan wajah, bagian 3: pengaruh demografis; NISTIR 8280; 189 algoritma, satu-lawan-satu dan satu-lawan-banyak)"
+      "label": "NIST (Desember 2019): Face Recognition Vendor Test, Part 3: Demographic effects (uji alat pengenalan wajah, bagian 3: pengaruh demografis; NISTIR 8280; 189 algoritma; lebih banyak kecocokan palsu untuk perempuan, orang yang lebih tua, anak-anak dan sebagian latar belakang)"
     },
     {
       "label": "Apple Platform Security: Facial matching security (keamanan pencocokan wajah; Face ID menyimpan representasi matematis wajah, bukan gambar, di perangkat)"
     },
     {
-      "label": "European Commission, AI Act Service Desk: Article 5, prohibited AI practices (Komisi Eropa: Pasal 5, praktik AI yang dilarang; Regulation (EU) 2024/1689; penyalinan massal, identifikasi biometrik secara langsung, izin)"
+      "label": "Singapore Immigration & Checkpoints Authority (24 Oktober 2024): Passport-less clearance fully rolled out at Changi Airport (pemeriksaan tanpa paspor kini berlaku penuh di Bandara Changi)"
     },
     {
-      "label": "European Commission: AI Act, regulatory framework (Komisi Eropa: kerangka aturan AI Act; larangan berlaku sejak Februari 2025; identifikasi biometrik jarak jauh lainnya termasuk berisiko tinggi)"
-    },
-    {
-      "label": "Electronic Frontier Foundation, Street Level Surveillance: Face recognition (pengenalan wajah: cara kerjanya, pelacakan)"
-    },
-    {
-      "label": "Al Jazeera (2019): San Francisco first US city to ban facial recognition by police (San Francisco, kota pertama di Amerika Serikat yang melarang polisi memakai pengenalan wajah)"
+      "label": "Bundesnetzagentur (otoritas AI Act di Jerman): Prohibited practices under the EU AI Act, in place since 2 February 2025 (praktik yang dilarang menurut AI Act Uni Eropa, berlaku sejak 2 Februari 2025; penyalinan massal untuk basis data wajah; identifikasi biometrik jarak jauh secara langsung dan pengecualiannya)"
     }
   ],
   "sensitiveNotes": [
-    "Sebagian pelajar mungkin pernah mengalami pengawasan, pemeriksaan polisi, atau pemeriksaan di perbatasan atau pemeriksaan identitas. Jaga pelajaran ini tetap umum dan berfokus pada Greenport yang rekaan. Jangan pernah bertanya kepada pelajar tentang pengalaman mereka sendiri dengan polisi, perbatasan, kartu identitas atau kamera, atau tentang status mereka. Kalau seorang pelajar menceritakan sesuatu, dengarkan dengan tenang, jangan menanyakan detailnya atau membahasnya di kelas, dan ikuti prosedur perlindungan anak milik lembaga mitra.",
-    "Lihat dulu pelajaran dan videonya; video ini untuk orang dewasa dan menyebut polisi, perbatasan dan rasa takut dilacak (lihat catatan videonya). Pelajar bisa membaca versi tulisannya saja. Debat di langkah Bicara tidak wajib: lewati kalau topiknya terlalu dekat dengan pengalaman pelajar, atau minta pelajar berdebat mewakili tokoh-tokoh rekaan di Greenport, bukan diri mereka sendiri."
+    "Sebagian pelajar mungkin pernah mengalami pengawasan, pemeriksaan polisi, atau pemeriksaan di perbatasan atau pemeriksaan identitas. Jaga pelajaran ini tetap umum dan berfokus pada tempat-tempat yang disebutkannya. Contoh Singapura adalah tentang pemeriksaan paspor di bandara: tetap bahas cara kerja sistemnya, dan jangan pernah bertanya tentang perjalanan, paspor atau dokumen pelajar sendiri. Jangan pernah bertanya kepada pelajar tentang pengalaman mereka sendiri dengan polisi, perbatasan, kartu identitas atau kamera, atau tentang status mereka. Kalau seorang pelajar menceritakan sesuatu, dengarkan dengan tenang, jangan menanyakan detailnya atau membahasnya di kelas, dan ikuti prosedur perlindungan anak milik lembaga mitra.",
+    "Lihat dulu pelajaran dan videonya; video ini untuk orang dewasa dan menyebut polisi, perbatasan dan rasa takut dilacak (lihat catatan videonya). Pelajar bisa membaca versi tulisannya saja. Diskusi di langkah Bicara tidak wajib: lewati kalau topiknya terlalu dekat dengan pengalaman pelajar, atau bahas aturan Uni Eropa bersama seluruh kelas, bukan pendapat pribadi."
   ],
   "educatorNotes": [
-    "Kasus-kasus di Greenport, angka uji cobanya (12 kecocokan salah dari 1.000) dan kalimat-kalimat kegiatannya adalah rekaan. Fakta yang sebenarnya, disederhanakan: pada tahun 2019 NIST menguji 189 algoritma, kebanyakan komersial, dari 99 pengembang, dan menemukan bahwa kecocokan palsu sering 10 sampai lebih dari 100 kali lebih sering terjadi pada kelompok tertentu, berbeda-beda menurut algoritmanya, dan algoritma yang paling akurat menunjukkan perbedaan yang lebih kecil. Ponsel: panduan keamanan Apple mengatakan Face ID menyimpan representasi matematis wajah, bukan gambar, dan data itu tidak pernah keluar dari perangkat; ponsel lain berbeda. AI Act Uni Eropa, Pasal 5, berlaku sejak 2 Februari 2025: polisi dilarang memakai identifikasi biometrik jarak jauh secara langsung (real-time) di ruang yang terbuka untuk umum, kecuali jika benar-benar diperlukan untuk mencari korban penculikan atau perdagangan orang atau orang hilang, untuk mencegah ancaman yang spesifik dan segera terhadap nyawa atau serangan teroris, atau untuk menemukan tersangka kejahatan serius yang tercantum (ancaman penjara minimal empat tahun); setiap pemakaian butuh izin lebih dulu dari otoritas peradilan atau otoritas administratif yang independen (dalam keadaan darurat, dalam 24 jam), dan hanya jika hukum nasional mengizinkannya. Mengenali orang belakangan dari rekaman tidak dilarang tetapi termasuk berisiko tinggi, dengan kewajiban yang lebih ketat yang akan berlaku kemudian (halaman Komisi Eropa menyebut 2 Desember 2027, per November 2026). Larangan penyalinan massal mencakup sistem AI yang membangun atau memperluas basis data pengenalan wajah dengan menyalin gambar wajah dari internet atau CCTV tanpa sasaran tertentu; larangan itu tidak melarang setiap pemakaian foto wajah yang ditemukan di internet. Aturan bisa berubah: periksa dulu sebelum mengajar. Pelajaran 8 (bias karena data latih yang tidak lengkap) cocok untuk dihubungkan. Versi kertas kegiatan ini: tulis delapan kalimat itu di kartu dan kelompokkan ke dalam tiga kelompok; hargai alasannya, bukan kelompoknya, dan terima \"ya dengan aturan\" kalau pelajar menjelaskan aturannya."
+    "Fakta yang sebenarnya, disederhanakan (claims/DW12.md). NIST (Desember 2019) menguji 189 algoritma, kebanyakan komersial, dari 99 pengembang: kecocokan palsu sering 10 sampai lebih dari 100 kali lebih sering terjadi pada kelompok tertentu, berbeda-beda menurut algoritmanya; lebih tinggi pada perempuan daripada laki-laki, pada lansia dan pada anak-anak, dan paling tinggi untuk wajah orang Afrika Barat, Afrika Timur dan Asia Timur dalam satu tes (sebagian algoritma yang dikembangkan di Tiongkok menunjukkan kebalikannya); algoritma yang paling akurat menunjukkan kesalahan yang jauh lebih sedikit. Ponsel: panduan keamanan Apple mengatakan Face ID menyimpan representasi matematis wajah, bukan gambar, dan data itu tidak pernah keluar dari perangkat; ponsel lain berbeda. Singapura (ICA, 24 Oktober 2024): pemeriksaan tanpa paspor dengan wajah dan iris di keempat terminal Changi sejak 30 September 2024, untuk penduduk saat datang dan pergi dan untuk pengunjung saat pergi; rata-rata waktu pemeriksaan turun dari 25 menjadi 10 detik; pelancong tetap sebaiknya membawa paspor. San Francisco (Mei 2019): pegawai kota, termasuk polisi, tidak boleh membeli atau memakai pengenalan wajah; bandara dan tempat lain yang diatur pemerintah federal tidak termasuk. AI Act Uni Eropa, Pasal 5, berlaku sejak 2 Februari 2025: polisi dilarang memakai identifikasi biometrik jarak jauh secara langsung (real-time) di ruang yang terbuka untuk umum, kecuali jika benar-benar diperlukan untuk mencari korban penculikan, perdagangan orang atau eksploitasi seksual atau orang hilang, untuk mencegah ancaman yang spesifik, besar dan segera terhadap nyawa atau serangan teroris, atau untuk menemukan tersangka kejahatan serius yang tercantum; setiap pemakaian butuh izin lebih dulu dari otoritas peradilan atau otoritas administratif yang independen (dalam keadaan darurat, diminta dalam 24 jam), dan hanya jika hukum nasional mengizinkannya. Larangan penyalinan massal mencakup membangun atau memperluas basis data pengenalan wajah dengan menyalin gambar dari internet atau CCTV tanpa sasaran tertentu. Pemakaian yang tidak dilarang AI Act tetap diatur oleh undang-undang lain: GDPR menganggap data biometrik yang dipakai untuk mengenali seseorang sebagai data sensitif, yang pada umumnya tidak boleh diproses tanpa, misalnya, persetujuan yang tegas atau undang-undang dengan perlindungan yang memadai; mengenali orang belakangan dari rekaman termasuk berisiko tinggi menurut AI Act, dengan kewajiban yang berlaku mulai 2 Desember 2027 setelah AI Omnibus tahun 2026. Aturan bisa berubah: periksa dulu sebelum mengajar.",
+    "Tips diskusi untuk langkah Bicara: terima jawaban ya, tidak, atau ya dengan aturan kalau pelajar memberi alasan; pertanyaan pancingan yang berguna adalah siapa yang memutuskan (hakim, polisi, dewan kota), berapa lama data disimpan, dan apa yang terjadi setelah kecocokan yang salah. Pelajaran 8 (mengapa alat bisa bekerja lebih buruk untuk kelompok tertentu) dan Pelajaran 16 (siapa yang membuat aturan untuk AI) cocok untuk dihubungkan."
   ]
 }
