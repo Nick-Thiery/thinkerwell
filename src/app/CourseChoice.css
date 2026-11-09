@@ -1,0 +1,52 @@
+/* The course choice (src/app/CourseChoice.tsx): one link per course, the course on screen marked. */
+.tw-course-choice {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* On the home page it sits above the greeting. */
+.tw-home-root > .tw-course-choice {
+  margin-block-end: var(--space-6);
+}
+
+.tw-course-choice-label {
+  color: var(--ink-muted);
+}
+
+.tw-course-choice-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tw-course-choice-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: var(--target-min);
+  padding-block: var(--space-2);
+  padding-inline: var(--space-3) var(--space-4);
+  border: 2px solid var(--line-strong);
+  border-radius: var(--radius-pill);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  text-decoration: none;
+}
+
+.tw-course-choice-link:hover {
+  border-color: var(--ink);
+}
+
+.tw-course-choice-link[aria-current='page'] {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--on-ink);
+}

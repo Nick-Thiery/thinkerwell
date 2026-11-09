@@ -22,14 +22,14 @@
 import courseJson from '../../content/course.json';
 import catalogData from 'virtual:thinkerwell/lesson-catalog';
 import { assembleContent } from './assemble';
-import type { LessonSummary } from './catalogFields';
+import type { CourseSummary, LessonSummary } from './catalogFields';
 import { ContentError } from './errors';
 import type { CourseFile, Section, SectionId } from './schema';
 import { lessonStages, type StageId } from './stages';
 import { applyTranslation } from './translation';
 import type { ContentTranslation } from '../i18n/core';
 
-export type { LessonSummary } from './catalogFields';
+export type { CourseSummary, LessonSummary } from './catalogFields';
 export type { CourseFile, Section, SectionId } from './schema';
 
 /** As the lesson catalog plugin in vite.config.ts makes it, from the checked content files. */
@@ -38,7 +38,12 @@ const catalog = catalogData as {
   lessons: LessonSummary[];
   /** How many questions each section check has. */
   quizQuestions: Partial<Record<SectionId, number>>;
+  /** Every other course's name and size (./catalogFields.ts), by course id. */
+  courses: Record<string, CourseSummary>;
 };
+
+/** The other courses' names and sizes, by course id: enough for the course choice, without loading a course. */
+export const courseSummaries: Readonly<Record<string, CourseSummary>> = catalog.courses;
 
 /** The catalog's getters, for one language. */
 export interface Catalog {

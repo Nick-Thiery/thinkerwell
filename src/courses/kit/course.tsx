@@ -21,13 +21,12 @@ export interface PreviewCourseConfig {
   /** Its own words (virtual:thinkerwell/course-messages/<id>), by language. */
   readonly words: Readonly<Record<string, MessageTree>>;
   /**
-   * Its words that differ from course to course: the banner's sentence (in
-   * English, and in a language whose lessons are still English), the switch
-   * page's two paragraphs, and what its teacher guides hold.
+   * Its words that differ from course to course: the line on its map about
+   * what is still being checked, the switch page's two paragraphs (a hidden
+   * preview's), and what its teacher guides hold.
    */
   readonly wordKeys: {
-    readonly bannerBody: MessageKey;
-    readonly bannerBodyEnglishLessons: MessageKey;
+    readonly reviewNote: MessageKey;
     readonly switchOnBody: MessageKey;
     readonly switchReviewNote: MessageKey;
     readonly forTeachersBody: MessageKey;

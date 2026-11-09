@@ -217,6 +217,9 @@
       "openJournal": "Buka jurnal saya"
     }
   },
+  "courseChoice": {
+    "label": "Kursus"
+  },
   "pages": {
     "home": {
       "title": "Siapa yang belajar hari ini?",
@@ -1567,24 +1570,17 @@
     }
   },
   "previewCourse": {
-    "banner": {
-      "title": "Kursus draf: belum disemak",
-      "turnOff": "Matikan pratonton"
-    },
     "sheet": {
-      "draft": "{title}, kursus draf: belum disemak. Jangan gunakan dengan pelajar dahulu."
-    },
-    "choice": {
-      "label": "Kursus pada peranti ini",
-      "draft": "Draf"
+      "draft": "{title}: kursus baharu. Faktanya masih disemak."
     },
     "map": {
-      "noChecks": "Belum ada semakan bahagian atau sijil dalam draf ini.",
-      "noCertificates": "Belum ada sijil dalam draf ini.",
-      "forTeachersTitle": "Untuk guru dan penyemak",
+      "noChecks": "Kursus ini belum mempunyai semakan bahagian atau sijil.",
+      "noCertificates": "Kursus ini belum mempunyai sijil.",
+      "forTeachersTitle": "Untuk guru",
       "printAll": "Cetak semua pelajaran",
       "guideLink": "Panduan guru, Pelajaran {number}: {title}",
-      "answerKeyLink": "Skema jawapan: {title}"
+      "answerKeyLink": "Skema jawapan: {title}",
+      "reviewAction": "Beritahu kami apa yang perlu dibetulkan"
     },
     "printAll": {
       "back": "Kembali ke {title}",
@@ -1619,6 +1615,7 @@
     }
   },
   "digitalWorld": {
+    "reviewNote": "Dunia Digital ialah kursus baharu. Seorang penyelidik AI masih menyemak faktanya.",
     "activity": {
       "eyebrow": "Aktiviti",
       "guideTitle": "Aktiviti ini",
@@ -1627,10 +1624,6 @@
       "extensionSummary": "Cuba sendiri (pilihan)",
       "extensionIntro": "Kamu tidak perlukan bahagian ini untuk menamatkan pelajaran. Bahagian ini ada jika kamu mahu mencuba idea ini sendiri.",
       "guideTitleExtension": "Lanjutan pilihan"
-    },
-    "banner": {
-      "body": "Dunia Digital ialah draf. Seorang penyelidik AI dan sebuah organisasi rakan kongsi masih perlu menyemaknya. Hanya peranti ini yang memaparkannya.",
-      "bodyEnglishLessons": "Digital World ialah draf. Seorang penyelidik AI dan sebuah organisasi rakan kongsi masih perlu menyemaknya. Hanya peranti ini yang memaparkannya. Pelajarannya dalam bahasa Inggeris buat masa ini."
     },
     "chart": {
       "viewsLabel": "Carta yang mana",
@@ -1902,10 +1895,7 @@
     "honeypot": "Biarkan kosong"
   },
   "southeastAsia": {
-    "banner": {
-      "body": "Asia Tenggara Merentasi Zaman ialah draf. Seorang ahli sejarah dan sebuah organisasi rakan kongsi masih perlu menyemaknya. Hanya peranti ini yang memaparkannya.",
-      "bodyEnglishLessons": "Southeast Asia Through Time ialah draf. Seorang ahli sejarah dan sebuah organisasi rakan kongsi masih perlu menyemaknya. Hanya peranti ini yang memaparkannya. Pelajarannya dalam bahasa Inggeris buat masa ini."
-    },
+    "reviewNote": "Asia Tenggara Merentasi Zaman ialah kursus baharu. Seorang ahli sejarah masih menyemak faktanya.",
     "map": {
       "forTeachersBody": "Setiap pelajaran ada panduan guru dengan nota, jawapan, kedua-dua gambar berserta kreditnya, dan nota untuk penyemak. Seluruh kursus juga boleh dicetak."
     },
@@ -1915,10 +1905,7 @@
     }
   },
   "artArchitecture": {
-    "banner": {
-      "body": "Seni, Seni Bina dan Masyarakat masih draf. Seorang ahli sejarah seni dan sebuah organisasi rakan kongsi masih perlu menyemaknya. Hanya peranti ini yang memaparkannya.",
-      "bodyEnglishLessons": "Seni, Seni Bina dan Masyarakat masih draf. Seorang ahli sejarah seni dan sebuah organisasi rakan kongsi masih perlu menyemaknya. Hanya peranti ini yang memaparkannya. Buat masa ini, pelajarannya masih dalam bahasa Inggeris."
-    },
+    "reviewNote": "Seni, Seni Bina dan Masyarakat ialah kursus baharu. Seorang ahli sejarah seni masih menyemak faktanya.",
     "map": {
       "forTeachersBody": "Setiap pelajaran ada panduan guru dengan nota, perkara jawapan, kedua-dua gambar berserta maklumat sumbernya, dan nota untuk penyemak. Kamu juga boleh mencetak seluruh kursus."
     },

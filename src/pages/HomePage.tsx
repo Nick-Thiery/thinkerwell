@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
-import { PreviewCourses } from '../app/PreviewCourses';
+import { CourseChoice } from '../app/CourseChoice';
 import { useFullPageTitle } from '../app/usePageTitle';
 import { useCatalog } from '../content/useCatalog';
 import { useI18n } from '../i18n';
@@ -134,8 +134,7 @@ export function HomePage() {
           }}
         />
       ) : null}
-      {/* Only on a device that has turned a preview course on (src/courses/): nothing anywhere else. */}
-      {branch === 'guest' || branch === 'dashboard' ? <PreviewCourses /> : null}
+      {branch === 'guest' || branch === 'dashboard' ? <CourseChoice /> : null}
       {branch === 'guest' ? <GuestHome lesson1={lesson1} /> : null}
       {branch === 'dashboard' && session.activeLearner ? (
         <LearnerDashboard learner={session.activeLearner} progress={progressResult.progress} />

@@ -218,6 +218,9 @@
       "openJournal": "Open my journal"
     }
   },
+  "courseChoice": {
+    "label": "Courses"
+  },
   "pages": {
     "home": {
       "title": "Who's learning today?",
@@ -1586,24 +1589,17 @@
     }
   },
   "previewCourse": {
-    "banner": {
-      "title": "Draft course: not yet reviewed",
-      "turnOff": "Turn preview off"
-    },
     "sheet": {
-      "draft": "{title}, draft course: not yet reviewed. Don't use it with learners yet."
-    },
-    "choice": {
-      "label": "Courses on this device",
-      "draft": "Draft"
+      "draft": "{title}: a new course. Its facts are still being checked."
     },
     "map": {
-      "noChecks": "There are no section checks or certificates in this draft yet.",
-      "noCertificates": "There are no certificates in this draft yet.",
-      "forTeachersTitle": "For teachers and reviewers",
+      "noChecks": "This course has no section checks or certificates yet.",
+      "noCertificates": "This course has no certificates yet.",
+      "forTeachersTitle": "For teachers",
       "printAll": "Print all lessons",
       "guideLink": "Teacher guide, Lesson {number}: {title}",
-      "answerKeyLink": "Answer key: {title}"
+      "answerKeyLink": "Answer key: {title}",
+      "reviewAction": "Tell us what to fix"
     },
     "printAll": {
       "back": "Back to {title}",
@@ -1638,6 +1634,7 @@
     }
   },
   "digitalWorld": {
+    "reviewNote": "Digital World is new. An AI researcher is still checking its facts.",
     "activity": {
       "eyebrow": "Activity",
       "guideTitle": "The activity",
@@ -1646,10 +1643,6 @@
       "extensionSummary": "Try it yourself (optional)",
       "extensionIntro": "You don't need this to finish the lesson. It's here if you want to try the idea yourself.",
       "guideTitleExtension": "The optional extension"
-    },
-    "banner": {
-      "body": "Digital World is a draft. An AI researcher and a partner organisation still need to check it. Only this device shows it.",
-      "bodyEnglishLessons": "Digital World is a draft. An AI researcher and a partner organisation still need to check it. Only this device shows it. Its lessons are in English for now."
     },
     "chart": {
       "viewsLabel": "Which chart",
@@ -1926,10 +1919,7 @@
     "honeypot": "Leave this empty"
   },
   "southeastAsia": {
-    "banner": {
-      "body": "Southeast Asia Through Time is a draft. A historian and a partner organisation still need to check it. Only this device shows it.",
-      "bodyEnglishLessons": "Southeast Asia Through Time is a draft. A historian and a partner organisation still need to check it. Only this device shows it. Its lessons are in English for now."
-    },
+    "reviewNote": "Southeast Asia Through Time is new. A historian is still checking its facts.",
     "map": {
       "forTeachersBody": "Each lesson has a teacher guide with its notes, the answers, both pictures with their credits, and notes for reviewers. You can also print the whole course."
     },
@@ -1939,10 +1929,7 @@
     }
   },
   "artArchitecture": {
-    "banner": {
-      "body": "Art, Architecture and Society is a draft. An art historian and a partner organisation still need to check it. Only this device shows it.",
-      "bodyEnglishLessons": "Art, Architecture and Society is a draft. An art historian and a partner organisation still need to check it. Only this device shows it. Its lessons are in English for now."
-    },
+    "reviewNote": "Art, Architecture and Society is new. An art historian is still checking its facts.",
     "map": {
       "forTeachersBody": "Each lesson has a teacher guide with its notes, answer points, both images with their credits, and notes for reviewers. You can also print the whole course."
     },

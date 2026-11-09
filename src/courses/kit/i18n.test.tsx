@@ -20,17 +20,17 @@ async function i18nIn(locale: string): Promise<I18nContextValue> {
 
 describe('withCourseWords', () => {
   const own = {
-    en: { digitalWorld: { banner: { title: 'Draft course: not yet reviewed', turnOff: 'Turn preview off' } } },
-    id: { digitalWorld: { banner: { title: 'Kursus draf: belum ditinjau' } } },
+    en: { digitalWorld: { reviewNote: 'Digital World is new.' } },
+    id: { digitalWorld: { reviewNote: 'Dunia Digital adalah kursus baru.' } },
   };
   const key = (k: string) => k as MessageKey;
 
   it('gives the course’s words in the language on screen, then English, and the app’s own words as they were', async () => {
     const indonesian = withCourseWords(await i18nIn('id'), own);
-    expect(indonesian.t(key('digitalWorld.banner.title'))).toBe('Kursus draf: belum ditinjau');
+    expect(indonesian.t(key('digitalWorld.reviewNote'))).toBe('Dunia Digital adalah kursus baru.');
     expect(indonesian.t('nav.course')).toBe((await i18nIn('id')).t('nav.course'));
     const english = withCourseWords(await i18nIn('en'), own);
-    expect(english.t(key('digitalWorld.banner.turnOff'))).toBe('Turn preview off');
+    expect(english.t(key('digitalWorld.reviewNote'))).toBe('Digital World is new.');
   });
 
   it('marks the lessons as English in Indonesian, so screen readers, Listen and Say it treat them as English', async () => {
@@ -62,7 +62,7 @@ describe('withCourseWords', () => {
     );
     const { result } = renderHook(() => useI18n(), { wrapper });
     await waitFor(() => expect(result.current.locale).toBe('id'));
-    expect(result.current.t('previewCourse.banner.title')).toBe('Kursus draf: belum ditinjau');
+    expect(result.current.t('previewCourse.map.reviewAction')).toBe('Beri tahu kami apa yang perlu diperbaiki');
     expect(result.current.t('previewCourse.switch.open', { title: 'Digital World' })).toBe('Buka Digital World');
     expect(result.current.t('digitalWorld.trainModel.score', { right: 4, of: 6 })).toBe('Model benar 4 dari 6.');
   });

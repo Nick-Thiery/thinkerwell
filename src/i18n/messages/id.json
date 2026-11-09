@@ -217,6 +217,9 @@
       "openJournal": "Buka jurnalku"
     }
   },
+  "courseChoice": {
+    "label": "Kursus"
+  },
   "pages": {
     "home": {
       "title": "Siapa yang belajar hari ini?",
@@ -1567,24 +1570,17 @@
     }
   },
   "previewCourse": {
-    "banner": {
-      "title": "Kursus draf: belum ditinjau",
-      "turnOff": "Matikan pratinjau"
-    },
     "sheet": {
-      "draft": "{title}, kursus draf: belum ditinjau. Jangan dipakai dengan pelajar dulu."
-    },
-    "choice": {
-      "label": "Kursus di perangkat ini",
-      "draft": "Draf"
+      "draft": "{title}: kursus baru. Faktanya masih diperiksa."
     },
     "map": {
-      "noChecks": "Draf ini belum punya cek bagian atau sertifikat.",
-      "noCertificates": "Draf ini belum punya sertifikat.",
-      "forTeachersTitle": "Untuk guru dan peninjau",
+      "noChecks": "Kursus ini belum punya cek bagian atau sertifikat.",
+      "noCertificates": "Kursus ini belum punya sertifikat.",
+      "forTeachersTitle": "Untuk guru",
       "printAll": "Cetak semua pelajaran",
       "guideLink": "Panduan guru, Pelajaran {number}: {title}",
-      "answerKeyLink": "Kunci jawaban: {title}"
+      "answerKeyLink": "Kunci jawaban: {title}",
+      "reviewAction": "Beri tahu kami apa yang perlu diperbaiki"
     },
     "printAll": {
       "back": "Kembali ke {title}",
@@ -1619,6 +1615,7 @@
     }
   },
   "digitalWorld": {
+    "reviewNote": "Dunia Digital adalah kursus baru. Seorang peneliti AI masih memeriksa faktanya.",
     "activity": {
       "eyebrow": "Kegiatan",
       "guideTitle": "Kegiatannya",
@@ -1627,10 +1624,6 @@
       "extensionSummary": "Coba sendiri (pilihan)",
       "extensionIntro": "Kamu tidak perlu bagian ini untuk menyelesaikan pelajaran. Bagian ini ada kalau kamu ingin mencoba idenya sendiri.",
       "guideTitleExtension": "Pengayaan pilihan"
-    },
-    "banner": {
-      "body": "Dunia Digital masih berupa draf. Seorang peneliti AI dan sebuah organisasi mitra masih perlu memeriksanya. Hanya perangkat ini yang menampilkannya.",
-      "bodyEnglishLessons": "Digital World masih berupa draf. Seorang peneliti AI dan sebuah organisasi mitra masih perlu memeriksanya. Hanya perangkat ini yang menampilkannya. Untuk saat ini, pelajarannya masih dalam bahasa Inggris."
     },
     "chart": {
       "viewsLabel": "Grafik yang mana",
@@ -1902,10 +1895,7 @@
     "honeypot": "Biarkan kosong"
   },
   "southeastAsia": {
-    "banner": {
-      "body": "Asia Tenggara dari Masa ke Masa masih berupa draf. Seorang sejarawan dan sebuah organisasi mitra masih perlu memeriksanya. Hanya perangkat ini yang menampilkannya.",
-      "bodyEnglishLessons": "Southeast Asia Through Time masih berupa draf. Seorang sejarawan dan sebuah organisasi mitra masih perlu memeriksanya. Hanya perangkat ini yang menampilkannya. Untuk saat ini, pelajarannya masih dalam bahasa Inggris."
-    },
+    "reviewNote": "Asia Tenggara dari Masa ke Masa adalah kursus baru. Seorang sejarawan masih memeriksa faktanya.",
     "map": {
       "forTeachersBody": "Setiap pelajaran punya panduan guru berisi catatan, jawaban, kedua gambar beserta keterangan sumbernya, dan catatan untuk peninjau. Anda juga bisa mencetak seluruh kursus."
     },
@@ -1915,10 +1905,7 @@
     }
   },
   "artArchitecture": {
-    "banner": {
-      "body": "Seni, Arsitektur, dan Masyarakat masih berupa draf. Seorang sejarawan seni dan sebuah organisasi mitra masih perlu memeriksanya. Hanya perangkat ini yang menampilkannya.",
-      "bodyEnglishLessons": "Seni, Arsitektur, dan Masyarakat masih berupa draf. Seorang sejarawan seni dan sebuah organisasi mitra masih perlu memeriksanya. Hanya perangkat ini yang menampilkannya. Untuk sementara, pelajarannya masih dalam bahasa Inggris."
-    },
+    "reviewNote": "Seni, Arsitektur, dan Masyarakat adalah kursus baru. Seorang sejarawan seni masih memeriksa faktanya.",
     "map": {
       "forTeachersBody": "Setiap pelajaran punya panduan guru berisi catatan, poin jawaban, kedua gambar beserta keterangan sumbernya, dan catatan untuk peninjau. Kamu juga bisa mencetak seluruh kursus."
     },

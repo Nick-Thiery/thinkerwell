@@ -25,8 +25,7 @@ export const course = createPreviewCourse(
     contentFor: artArchitectureIn,
     words,
     wordKeys: {
-      bannerBody: 'artArchitecture.banner.body',
-      bannerBodyEnglishLessons: 'artArchitecture.banner.bodyEnglishLessons',
+      reviewNote: 'artArchitecture.reviewNote',
       switchOnBody: 'artArchitecture.switch.onBody',
       switchReviewNote: 'artArchitecture.switch.reviewNote',
       forTeachersBody: 'artArchitecture.map.forTeachersBody',

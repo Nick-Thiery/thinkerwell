@@ -5,7 +5,7 @@ import { defineConfig, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 import { lazyChunkFor } from './src/app/lazy/firstPage.ts';
-import { LESSON_CATALOG_FIELDS } from './src/content/catalogFields.ts';
+import { LESSON_CATALOG_FIELDS, type CourseSummary } from './src/content/catalogFields.ts';
 import { COURSES, DEFAULT_COURSE_ID } from './src/content/courses.ts';
 import {
   COURSE_MESSAGES_ID,
@@ -224,7 +224,27 @@ function lessonCatalog(): Plugin {
         Object.fromEntries(LESSON_CATALOG_FIELDS.map((field) => [field, lesson[field]])),
       );
       const quizQuestions = Object.fromEntries((parsed('quizzes', 'quiz') as QuizFile[]).map((quiz) => [quiz.section, quiz.questions.length]));
-      return `export default ${JSON.stringify({ lessons, quizQuestions })};`;
+      // Each other course's name in English, Indonesian and Malay, and how many lessons and sections it has,
+      // so the course choice on the home page and the course map can list the courses without loading them.
+      const courses: Record<string, CourseSummary> = {};
+      for (const course of COURSES) {
+        if (course.id === DEFAULT_COURSE_ID) continue;
+        const dir = path.join(root, 'content', course.dir);
+        const read = (file: string): { course: { title: string }; sections?: unknown[] } => {
+          const full = path.join(dir, file);
+          this.addWatchFile(full);
+          return JSON.parse(readFileSync(full, 'utf8')) as { course: { title: string }; sections?: unknown[] };
+        };
+        const english = read('course.json');
+        const lessonFiles = readdirSync(path.join(dir, 'lessons')).filter((name) => name.endsWith('.json'));
+        const titles: Record<string, string> = { en: english.course.title };
+        for (const code of ['id', 'ms']) {
+          const translated = path.join(dir, code, 'course.json');
+          if (existsSync(translated)) titles[code] = read(`${code}/course.json`).course.title;
+        }
+        courses[course.id] = { titles, lessons: lessonFiles.length, sections: english.sections?.length ?? 0 };
+      }
+      return `export default ${JSON.stringify({ lessons, quizQuestions, courses })};`;
     },
   };
 }

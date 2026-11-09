@@ -1,14 +1,14 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 import { afterEach, describe, expect, it } from 'vitest';
 import { routes } from '../app/routes';
 import { LearnerSessionProvider, useLearnerSession } from '../session';
-import { deleteAllData, getStore } from '../storage';
+import { deleteAllData } from '../storage';
 import { isPreviewModule, previewAssetFileName, previewChunkFileName, previewCourseOfModule, PREVIEW_PRECACHE_IGNORES } from './build';
 
-// The preview switch (/preview/<id>), the course's pages behind it, and how
-// the build keeps them out of everyone else's download.
+// The courses every device shows (src/content/courses.ts, `open`), their pages,
+// and how the build keeps their code out of a first visit's download.
 
 afterEach(async () => {
   await deleteAllData();
@@ -20,93 +20,57 @@ function renderAt(path: string) {
   return router;
 }
 
-async function turnOn() {
-  const store = await getStore();
-  await store.updateSettings({ previewCourses: ['digital-world'] });
-}
-
-describe('with the preview off (every device but one that turned it on)', () => {
-  it.each(['/course/digital-world', '/course/digital-world/print', '/lesson/dw-what-ai-is/read', '/lesson/dw-what-ai-is/print', '/educators/lesson/dw-what-ai-is'])(
-    '%s is "This page isn\'t here"',
-    async (path) => {
-      renderAt(path);
-      expect(await screen.findByRole('heading', { level: 1, name: "This page isn't here" })).toBeInTheDocument();
-      expect(document.querySelector('link[data-course]')).toBeNull();
-    },
-  );
-
-  it('shows no course choice on the course map', async () => {
+describe('the courses every device shows', () => {
+  it('shows the course choice on the course map with no setting turned on, Our World first, with no "draft"', async () => {
     renderAt('/course');
-    expect(await screen.findByRole('heading', { level: 1, name: 'Exploring Our World' })).toBeInTheDocument();
-    expect(screen.queryByRole('navigation', { name: 'Courses on this device' })).not.toBeInTheDocument();
-    expect(screen.queryByText(/Digital World/)).not.toBeInTheDocument();
-  });
-
-  it('turns it on at its hidden address, saved for this device', async () => {
-    renderAt('/preview/digital-world');
-    expect(await screen.findByRole('heading', { level: 1, name: 'Digital World preview is on' })).toBeInTheDocument();
-    await waitFor(async () => expect((await (await getStore()).getSettings()).previewCourses).toEqual(['digital-world']));
-    expect(screen.getByText('Draft course: not yet reviewed')).toBeInTheDocument();
-  });
-});
-
-describe('with the preview on', () => {
-  it('shows the course choice on the course map, Our World first', async () => {
-    await turnOn();
-    renderAt('/course');
-    const choice = await screen.findByRole('navigation', { name: 'Courses on this device' });
-    const links = await waitFor(() => {
-      const found = choice.querySelectorAll('a');
-      expect(found).toHaveLength(2);
-      return found;
-    });
-    expect(links[0]).toHaveTextContent('Exploring Our World');
-    expect(links[0]).toHaveAttribute('aria-current', 'page');
-    expect(links[1]).toHaveTextContent('Digital WorldDraft');
-    expect(links[1]).toHaveAttribute('href', '/course/digital-world');
-  });
-
-  it('lists every preview course this device has turned on, in course order', async () => {
-    const store = await getStore();
-    await store.updateSettings({ previewCourses: ['art-architecture-society', 'southeast-asia-through-time', 'digital-world'] });
-    renderAt('/course/southeast-asia-through-time');
-    const choice = await screen.findByRole('navigation', { name: 'Courses on this device' });
-    const links = await waitFor(() => {
-      const found = choice.querySelectorAll('a');
-      expect(found).toHaveLength(4);
-      return found;
-    });
+    const choice = await screen.findByRole('navigation', { name: 'Courses' });
+    const links = choice.querySelectorAll('a');
     expect([...links].map((link) => link.getAttribute('href'))).toEqual([
       '/course',
       '/course/digital-world',
       '/course/southeast-asia-through-time',
       '/course/art-architecture-society',
     ]);
-    expect(links[3]).toHaveTextContent('Art, Architecture and SocietyDraft');
-    expect(links[2]).toHaveTextContent('Southeast Asia Through TimeDraft');
-    expect(links[2]).toHaveAttribute('aria-current', 'page');
+    expect(links[0]).toHaveAttribute('aria-current', 'page');
+    expect(links[1]).toHaveTextContent('Digital World');
+    expect(links[3]).toHaveTextContent('Art, Architecture and Society');
+    expect(choice).not.toHaveTextContent(/draft/i);
+  });
+
+  it('marks the course on screen in the choice on another course’s map', async () => {
+    renderAt('/course/southeast-asia-through-time');
+    const choice = await screen.findByRole('navigation', { name: 'Courses' });
+    expect(choice.querySelectorAll('a')).toHaveLength(4);
+    expect(screen.getByRole('link', { name: 'Southeast Asia Through Time' })).toHaveAttribute('aria-current', 'page');
     expect(screen.getByRole('heading', { level: 1, name: 'Southeast Asia Through Time' })).toBeInTheDocument();
   });
 
-  it('shows Digital World’s map with the draft banner, its four sections and no section checks', async () => {
-    await turnOn();
+  it('shows Digital World’s map with its note about what is still being checked, its four sections and no section checks', async () => {
     renderAt('/course/digital-world');
     expect(await screen.findByRole('heading', { level: 1, name: 'Digital World' })).toBeInTheDocument();
-    expect(screen.getByText('Draft course: not yet reviewed')).toBeInTheDocument();
+    expect(screen.queryByText(/Draft course/)).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Turn preview off' })).not.toBeInTheDocument();
+    expect(screen.getByText(/Digital World is new\. An AI researcher is still checking its facts\./)).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Tell us what to fix' })).toHaveAttribute('href', '/contact');
     expect(screen.getAllByRole('heading', { level: 2 }).map((h) => h.textContent)).toEqual([
       'How AI developed and how it works',
       'Who builds AI, and at what cost',
       'AI in daily life',
       'Truth, power and choices',
-      'For teachers and reviewers',
+      'For teachers',
     ]);
     expect(screen.queryByText(/Section check:/)).not.toBeInTheDocument();
-    expect(screen.getByText('There are no section checks or certificates in this draft yet.')).toBeInTheDocument();
+    expect(screen.getByText('This course has no section checks or certificates yet.')).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /Teacher guide, Lesson 3: How AI learns from examples/ })).toHaveAttribute('href', '/educators/lesson/dw-how-ai-learns');
   });
 
+  it('sends the old hidden address of a course to its map', async () => {
+    const router = renderAt('/preview/digital-world');
+    expect(await screen.findByRole('heading', { level: 1, name: 'Digital World' })).toBeInTheDocument();
+    expect(router.state.location.pathname).toBe('/course/digital-world');
+  });
+
   it('opens a lesson with its optional extension folded after the evidence, and a different case of its id redirects', async () => {
-    await turnOn();
     const router = renderAt('/lesson/DW-How-AI-Learns');
     expect(await screen.findByRole('heading', { level: 1, name: 'How AI learns from examples' })).toBeInTheDocument();
     expect(router.state.location.pathname).toBe('/lesson/dw-how-ai-learns/read');
@@ -115,34 +79,26 @@ describe('with the preview on', () => {
     expect(screen.getByRole('heading', { level: 3, name: 'Try the leaf model', hidden: true })).toBeInTheDocument();
     // Back to the course goes to Digital World's map, at the lesson's section.
     expect(screen.getByRole('link', { name: 'How AI developed and how it works' })).toHaveAttribute('href', '/course/digital-world#thinking-machines');
+    expect(screen.queryByText(/Draft course/)).not.toBeInTheDocument();
   });
 
-  it('turns off from the banner, back to Our World, and the course is gone again', async () => {
-    const user = userEvent.setup();
-    await turnOn();
-    const router = renderAt('/course/digital-world');
-    await screen.findByRole('heading', { level: 1, name: 'Digital World' });
-    await user.click(screen.getByRole('button', { name: 'Turn preview off' }));
-    expect(await screen.findByRole('heading', { level: 1, name: 'Exploring Our World' })).toBeInTheDocument();
-    expect(router.state.location.pathname).toBe('/course');
-    await waitFor(async () => expect((await (await getStore()).getSettings()).previewCourses).toEqual([]));
-    await router.navigate('/course/digital-world');
-    expect(await screen.findByRole('heading', { level: 1, name: "This page isn't here" })).toBeInTheDocument();
+  it('opens the other two courses’ lessons and teacher guides too', async () => {
+    renderAt('/educators/lesson/sat-01-ban-chiang-pot');
+    expect(await screen.findByRole('heading', { level: 1 })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Back to the course' })).toHaveAttribute('href', '/course/southeast-asia-through-time#evidence-and-connections');
   });
 
   it('prints every lesson, with the four activities on paper', async () => {
-    await turnOn();
     renderAt('/course/digital-world/print');
     expect(await screen.findAllByRole('heading', { level: 1 })).toHaveLength(17);
     // The course's name is marked as English inside the note, so match the whole note.
     const notes = [...document.querySelectorAll('.tw-pc-sheet-note')].map((note) => note.textContent);
-    expect(notes).toEqual(Array(17).fill("Digital World, draft course: not yet reviewed. Don't use it with learners yet."));
+    expect(notes).toEqual(Array(17).fill('Digital World: a new course. Its facts are still being checked.'));
     expect(screen.getAllByRole('heading', { level: 2, name: 'Activity' })).toHaveLength(3);
     expect(screen.getAllByRole('heading', { level: 2, name: 'Optional extension' })).toHaveLength(1);
   });
 
   it('gives each lesson a teacher guide with the activity, its answers and the notes for reviewers', async () => {
-    await turnOn();
     renderAt('/educators/lesson/dw-checking-a-claim');
     expect(await screen.findByRole('heading', { level: 1, name: 'Checking a claim before you share it' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 2, name: 'The activity' })).toBeInTheDocument();
@@ -159,9 +115,6 @@ describe('the session', () => {
     return (
       <>
         <p data-testid="courses">{previewCourses.join(',')}</p>
-        <button type="button" onClick={() => void setPreviewCourse('digital-world', true)}>
-          on
-        </button>
         <button type="button" onClick={() => void setPreviewCourse('digital-world', false)}>
           off
         </button>
@@ -169,26 +122,17 @@ describe('the session', () => {
     );
   }
 
-  it('keeps preview courses as an optional device setting, read again on the next visit', async () => {
+  it('shows every open course on a device with nothing set, and turning one “off” does not hide it', async () => {
     const user = userEvent.setup();
-    const first = render(
-      <LearnerSessionProvider>
-        <Probe />
-      </LearnerSessionProvider>,
-    );
-    expect(await screen.findByTestId('courses')).toHaveTextContent('');
-    await user.click(screen.getByRole('button', { name: 'on' }));
-    await user.click(screen.getByRole('button', { name: 'on' }));
-    expect(screen.getByTestId('courses')).toHaveTextContent('digital-world');
-    await waitFor(async () => expect((await (await getStore()).getSettings()).previewCourses).toEqual(['digital-world']));
-    first.unmount();
-
     render(
       <LearnerSessionProvider>
         <Probe />
       </LearnerSessionProvider>,
     );
-    expect(await screen.findByTestId('courses')).toHaveTextContent('digital-world');
+    const all = 'digital-world,southeast-asia-through-time,art-architecture-society';
+    expect(await screen.findByTestId('courses')).toHaveTextContent(all);
+    await user.click(screen.getByRole('button', { name: 'off' }));
+    expect(screen.getByTestId('courses')).toHaveTextContent(all);
   });
 });
 
