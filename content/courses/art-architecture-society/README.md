@@ -1,6 +1,6 @@
-# Art, Architecture and Society (preview course)
+# Art, Architecture and Society
 
-A hidden preview course, from Justin's brief of 4 November 2026, expanded on 7 November ("Art, Architecture and Society: a researched, image-led course and implementation brief"). It has 20 lessons in four sections of five, for ages 11 to 15. Each lesson teaches through two real works. A device shows it only after visiting `/preview/art-architecture-society` (`src/content/courses.ts`; `docs/notes/digital-world-preview.md` explains how preview courses work).
+An open course (since 9 November 2026, the whole-platform pilot: `/course/art-architecture-society`), from Justin's brief of 4 November 2026, expanded on 7 November ("Art, Architecture and Society: a researched, image-led course and implementation brief"). It has 20 lessons in four sections of five, for ages 11 to 15. Each lesson teaches through two real works. It is listed on every device (`open: true` in `src/content/courses.ts`; `/preview/art-architecture-society` goes to its map; `docs/notes/digital-world-preview.md` and `docs/notes/offline-courses.md` explain how the courses are built and kept offline).
 
 ## How it is built
 

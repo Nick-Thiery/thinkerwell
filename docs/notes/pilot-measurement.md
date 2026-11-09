@@ -210,3 +210,7 @@ For a person, in this order. **None of it is done by the code change.**
 ## Size
 
 The collector, queue and sender are one chunk (`measurementCollector-`, 4.2 kB Brotli) loaded only on a device that shares; the Settings card's words are a lazily loaded message group (`pilotResults`, `src/i18n/lazyGroups.ts`). A first visit grew by about 0.7 kB; the precache by about 8.5 kB, so its budget is now 802 kB (`docs/notes/slow-internet.md`, "Later budget changes").
+
+## Four courses (9 November 2026)
+
+All four courses are open for the pilot, and every event carries the `lessonId` of the lesson it happened in, so the course is known from the id's prefix (none for Our World, `dw-`, `sat-`, `aas-`). Nothing new is collected: the same event types, the same fields, linked to a code and never a name, whichever course the lesson is in, which is what the consent form already promises (`pages.pilotStudy`: "in every session ... how your child uses Thinkerwell"). `npm run pilot:report` already reads every course's lessons (`readLessons`), so its per-lesson lines cover them all; read them course by course. Scores are never combined across courses: the learning check (16 questions, a writing task, 5 faces) covers Exploring Our World only, and quick-check and section-check answers are per lesson and per section. The paper "Session record and feedback" sheet (`/educators/feedback-sheet`) records which courses and lessons a group used; it is kept by the educator or posted back through the contact form and is not collected by the site.

@@ -2,7 +2,7 @@
 
 The third course, from Justin's brief of 28 October 2026 ("Thinkerwell — Course 2: Southeast Asia Through Time"). It has twelve real-source case studies in four sections of three, for learners of about 12–15. Learners tell an observation from an inference, place a source in its time, place and maker's view, and see that exchange across the region was not always equal or peaceful. They compare different paths through war and independence, and make a short, credited account that names a source's limits and a missing view. Justin wants it in the pilot alongside Our World and Digital World (`docs/PRODUCT.md`, 1 November 2026).
 
-**A preview, not yet reviewed.** It shows only on a device that has visited `/preview/southeast-asia-through-time`, with a "Draft course: not yet reviewed" banner on every page; everyone else sees nothing of it and downloads nothing of it (`docs/notes/digital-world-preview.md`, which covers both preview courses).
+**Open on every device since 9 November 2026.** The lessons are at `/course/southeast-asia-through-time` (`/preview/southeast-asia-through-time` goes to the map). Nothing from this folder is in a first visit's download; it is kept for offline use as the other courses are (`docs/notes/offline-courses.md`). How the courses were built: `docs/notes/digital-world-preview.md`.
 
 ## The lessons
 

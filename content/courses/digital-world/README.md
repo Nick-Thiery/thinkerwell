@@ -2,7 +2,7 @@
 
 Digital World is the second course: **AI and the digital world through a social studies lens**, in 17 lessons and four sections. It was rebuilt on 31 October 2026 from the first 11 drafts, at Justin's request: "not pure coding, or learning about digital tools (how to vibe code, how to prompt, AI terms)", but where AI came from, how it has developed and been put to work in society, its benefits, trade-offs and implications, in at most 20 lessons. The rules every lesson follows are in `docs/content/DIGITAL_WORLD_SPEC.md` (section 5) and `docs/content/SPEC.md`; the decision is in `docs/PRODUCT.md`.
 
-**A preview, not yet reviewed.** The app shows these lessons only on a device that has turned on the Digital World preview (`/preview/digital-world`), with a "Draft course: not yet reviewed" banner on every page. Everyone else sees Our World as before, and nothing from this folder is in their download. How to preview it: `docs/notes/digital-world-preview.md`.
+**Open on every device since 9 November 2026, facts still being checked.** The lessons are at `/course/digital-world`, with a line on the map that the course is new and an AI researcher is still checking its facts (`/preview/digital-world` goes to the map). Nothing from this folder is in a first visit's download; it is kept for offline use as the other courses are (`docs/notes/offline-courses.md`). How it was built: `docs/notes/digital-world-preview.md`.
 
 ## The lessons
 
@@ -100,4 +100,4 @@ From the writers' notes (each lesson's `educatorNotes`, `sensitiveNotes` and `ch
 - **Pictures:** 17 to draw, following `docs/content/VISUALS_SPEC.md`; each `visual.description` says what to show. Until then the lessons show none.
 - **Section checks:** none yet; one per section, written to `docs/content/QUIZ_SPEC.md`. The preview offers no certificates.
 - **Indonesian and Malay: native-speaker review.** Both were drafted by AI in November 2026 (`id/`, `ms/`; notes and `TERMS.md` in `docs/translation/<code>/notes/courses/digital-world/`), every string flagged. Look first at: "kecerdasan artifisial" or "kecerdasan buatan" (Indonesian); "diharamkan" for a legal ban in Lesson 12 (Malay); the Batam and Johor data-centre passages (Lesson 6) and Sahabat-AI (Lesson 7); "pendedahan"/"keterpaparan" for job exposure (Lesson 9); OSIS (Lesson 16). When the English changes, `npm run check:content` lists the stale strings.
-- **App work** before Digital World is switched on for everyone (spec section 9).
+- **App work:** done for the pilot (open on every device since 9 November 2026, kept offline with the other courses); the rest of spec section 9 is the list above.
