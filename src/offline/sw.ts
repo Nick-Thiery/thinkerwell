@@ -156,10 +156,16 @@ async function audioFromCache(request: Request, event: ExtendableEvent): Promise
   return response;
 }
 
-/** A course file: from the cache, else from the site, kept for next time. Files are named by hash, so a kept one is never stale. */
+/**
+ * A course file: from the cache, else from the site, kept for next time.
+ * Files are named by hash, so a kept one is never stale. `ignoreVary`: a
+ * server that answers "Vary: Origin" (vite preview does) would otherwise not
+ * match a script the page asks for (which sends an Origin header) with the
+ * copy Settings fetched (which doesn't); the file is the same.
+ */
 async function courseFileFromCache(request: Request, event: ExtendableEvent): Promise<Response> {
   const cache = await caches.open(COURSE_CACHE);
-  const kept = await cache.match(request);
+  const kept = await cache.match(request, { ignoreVary: true });
   if (kept) return kept;
   const response = await fetch(request);
   if (response.status === 200 && response.type === 'basic') event.waitUntil(cache.put(request, response.clone()));
