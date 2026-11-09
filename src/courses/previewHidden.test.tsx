@@ -2,11 +2,12 @@ import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 import { afterEach, describe, expect, it, vi } from 'vitest';
+import type * as CoursesModule from '../content/courses';
 
 // A course that is not marked `open` stays what a hidden preview always was: invisible unless a
 // device turns it on at /preview/<id>. Here Digital World is made one, as a future draft course would be.
 vi.mock('../content/courses', async (importOriginal) => {
-  const original = await importOriginal<typeof import('../content/courses')>();
+  const original = await importOriginal<typeof CoursesModule>();
   const courses = original.COURSES.map((course) => (course.id === 'digital-world' ? { ...course, open: false } : course));
   const previews = courses.filter((course) => course.preview);
   return {
