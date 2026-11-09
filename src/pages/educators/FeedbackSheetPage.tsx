@@ -24,7 +24,7 @@ import { courseSummaries } from '../../content/catalog';
 import { COURSES, DEFAULT_COURSE_ID } from '../../content/courses';
 import { useCatalog } from '../../content/useCatalog';
 import { useI18n, withWords, type MessageKey } from '../../i18n';
-import { Link } from 'react-router';
+import { Button } from '../../components/ds';
 import { AnswerLines, PrintToolbar } from '../print/PrintToolbar';
 import '../print/print.css';
 import './ConsentFormPage.css';
@@ -117,7 +117,9 @@ export function FeedbackSheetPage() {
         </h1>
         <p className="body-lg">{t('feedbackSheet.intro')}</p>
         <p>
-          <Link to={contactPath()}>{t('feedbackSheet.sendLink')}</Link>
+          <Button variant="secondary" icon="Mail" href={contactPath()}>
+            {t('feedbackSheet.sendLink')}
+          </Button>
         </p>
       </section>
 

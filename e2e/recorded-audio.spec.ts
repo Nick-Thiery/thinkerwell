@@ -13,6 +13,13 @@ const index = JSON.parse(readFileSync(path.join(root, 'src', 'audio', 'recording
 const timings = JSON.parse(readFileSync(path.join(root, 'public', index.en!.timings), 'utf8')) as {
   sections: Record<string, { f: string; t: Array<[number, number] | 0> }>;
 };
+// Every course is open on every device (9 November 2026), so Settings downloads each course's recordings too.
+const courseIndex = JSON.parse(readFileSync(path.join(root, 'src', 'audio', 'courseRecordings.json'), 'utf8')) as Record<string, Record<string, { timings: string }>>;
+const courseSections = Object.values(courseIndex).reduce(
+  (sum, course) =>
+    sum + Object.keys((JSON.parse(readFileSync(path.join(root, 'public', course.en!.timings), 'utf8')) as { sections: Record<string, unknown> }).sections).length + 1,
+  0,
+);
 const PART_1 = timings.sections[`${L10.id}/standard/1`]!;
 
 const audio = (page: Page) => page.locator('audio.tw-read-audio');
@@ -146,6 +153,6 @@ test.describe('offline', () => {
     await audioPart.getByRole('button', { name: 'Download lesson audio' }).click();
     await expect(audioPart.getByText('All of it is on this device. Listen works here without the internet.')).toBeVisible({ timeout: 90_000 });
     const kept = await page.evaluate(async () => (await (await caches.open('thinkerwell-audio-v1')).keys()).length);
-    expect(kept).toBe(Object.keys(timings.sections).length + 1);
+    expect(kept).toBe(Object.keys(timings.sections).length + 1 + courseSections);
   });
 });
