@@ -1,128 +1,54 @@
 {
   "title": "Apa itu AI, dan apa yang bukan AI",
-  "essentialQuestion": "Bagaimanakah kamu boleh tahu apabila sesebuah mesin menggunakan AI?",
-  "learningGoal": "Terangkan bagaimana banyak alat AI membuat ramalan daripada corak dalam contoh, dan susun alat harian kepada AI dan bukan AI.",
-  "warmUp": {
-    "question": "Yang manakah antara ini yang kamu fikir menggunakan AI?",
-    "options": [
-      "Kalkulator",
-      "Alat yang menukar pertuturan kepada perkataan bertaip",
-      "Loceng kelas",
-      "Tidak pasti"
-    ]
-  },
+  "essentialQuestion": "Apakah AI, dan bagaimanakah banyak alat AI membuat tekaannya?",
+  "learningGoal": "Terangkan apa itu AI, dan bagaimana banyak alat AI hari ini membuat ramalan daripada corak dalam contoh.",
   "evidence": {
     "label": "Contoh rekaan yang dibuat untuk pelajaran ini.",
-    "question": "Alat manakah yang sentiasa melakukan perkara yang sama? Alat manakah yang perlu meneka?",
+    "question": "Pada langkah manakah kesilapan itu muncul? Siapakah yang mengesannya?",
     "cards": [
       {
-        "title": "Alat di Pusat Pembelajaran Hillview",
+        "title": "Cara alat menaip dengan suara Hillview berfungsi",
         "columns": [
-          "Alat",
-          "Apa yang dilakukannya"
+          "Langkah",
+          "Apa yang berlaku"
         ],
         "rows": [
           [
-            "Kalkulator",
-            "Menambah, menolak, mendarab dan membahagi nombor."
+            "1. Contoh (data)",
+            "Pembuatnya mengumpul rakaman ramai orang bercakap, berserta perkataan yang ditulis."
           ],
           [
-            "Alat menaip dengan suara",
-            "Menukar perkataan yang disebut kepada perkataan bertaip."
+            "2. Cari corak",
+            "Atur cara itu mencari bunyi yang biasanya datang bersama perkataan tertentu."
           ],
           [
-            "Alat terjemahan",
-            "Menukar ayat dalam satu bahasa kepada bahasa lain."
+            "3. Buat ramalan",
+            "Seorang pelajar berkata, “Pokok itu tinggi.” Alat itu belum pernah mendengar suara ini. Ia meneka perkataannya."
           ],
           [
-            "Loceng kelas",
-            "Berbunyi pada pukul sembilan setiap pagi."
-          ],
-          [
-            "Cadangan video",
-            "Laman video mencadangkan apa yang patut ditonton seterusnya, berdasarkan apa yang ditonton orang sebelum ini."
-          ],
-          [
-            "Lampu di tepi pintu",
-            "Menyala apabila seseorang lalu."
-          ],
-          [
-            "Penyusun foto",
-            "Mencari semua foto yang menunjukkan pokok."
-          ],
-          [
-            "Kipas “pintar”",
-            "Kotaknya tertulis “pintar”. Ia mula berpusing apabila bilik menjadi panas."
+            "4. Seseorang menyemak",
+            "Alat itu menaip “Pokok itu tiga.” Pelajar itu bercakap dengan cepat. Seorang guru ternampak kesilapan itu dan membetulkannya."
           ]
         ]
-      }
-    ]
-  },
-  "activity": {
-    "title": "AI atau bukan AI?",
-    "instructions": "Letakkan setiap alat Hillview dalam satu kumpulan. Tiada markah. Selepas kamu meletakkan sesuatu alat, kamu boleh melihat satu jawapan yang mungkin dan sebabnya.",
-    "groups": [
-      {
-        "label": "Menggunakan AI"
-      },
-      {
-        "label": "Bukan AI"
-      },
-      {
-        "label": "Sukar dikatakan"
-      }
-    ],
-    "items": [
-      {
-        "text": "Kalkulator",
-        "feedback": "Ia mengikut langkah tetap yang ditulis oleh seseorang, untuk kira-kira yang hanya ada satu jawapan betul. Ia tidak belajar daripada contoh."
-      },
-      {
-        "text": "Alat menaip dengan suara",
-        "feedback": "Setiap suara berbeza. Alat ini belajar daripada banyak rakaman, jadi ia boleh membuat tekaan yang teliti tentang perkataan yang disebut."
-      },
-      {
-        "text": "Alat terjemahan",
-        "feedback": "Ia belajar daripada banyak ayat. Jadi ia boleh membuat tekaan yang teliti tentang ayat yang baharu."
-      },
-      {
-        "text": "Loceng kelas",
-        "feedback": "Seseorang menetapkan pemasa. Ia berbunyi pada waktu yang sama setiap hari, dan ia tidak belajar atau menganggar apa-apa."
-      },
-      {
-        "text": "Cadangan video",
-        "feedback": "Ia mencari corak dalam apa yang ditonton orang dan menganggar apa yang mungkin mereka suka seterusnya."
-      },
-      {
-        "text": "Lampu di tepi pintu",
-        "feedback": "Ia mengikut satu peraturan mudah: jika ada sesuatu yang bergerak, nyalakan lampu. Ia tidak belajar atau menganggar."
-      },
-      {
-        "text": "Penyusun foto",
-        "feedback": "Setiap pokok kelihatan berbeza. Ia belajar daripada banyak foto dan membuat tekaan yang teliti tentang foto yang menunjukkan pokok."
-      },
-      {
-        "text": "Kipas “pintar”",
-        "feedback": "Mana-mana kumpulan boleh diberi alasan di sini. Kipas itu mungkin mengikut satu peraturan tentang panas, atau mungkin belajar. Perkataan “pintar” tidak memberitahu kamu."
       }
     ]
   },
   "read": {
     "sections": [
       {
-        "heading": "Banyak alat AI belajar daripada contoh",
-        "text": "AI ialah singkatan bagi artificial intelligence, iaitu kecerdasan buatan. Buatan bermaksud dibuat oleh manusia. AI ialah bidang yang besar dengan banyak kaedah. Banyak sistem AI yang digunakan hari ini belajar corak daripada data, dan pelajaran ini adalah tentang sistem itu. Orang memberi atur cara itu banyak data, seperti foto, ayat atau rakaman suara. Atur cara itu mencari corak dalam data. Kemudian ia menggunakan corak itu untuk membuat ramalan. Ramalan ialah tekaan yang teliti tentang sesuatu yang baharu, berdasarkan corak, bukan tekaan rawak. Di Pusat Pembelajaran Hillview, alat terjemahan belajar daripada banyak ayat dalam dua bahasa. Apabila kamu menaip ayat yang belum pernah dilihatnya, ia meramalkan terjemahan yang baik.",
-        "simpler": "AI bermaksud kecerdasan buatan. Manusia yang membuatnya. Ada banyak jenis AI. Banyak atur cara AI hari ini belajar daripada contoh. Pelajaran ini tentang atur cara itu. Orang memberinya banyak data, seperti foto atau suara. Ia mencari corak dalam data. Kemudian ia membuat ramalan. Ini tekaan yang teliti tentang sesuatu yang baharu. Ia bukan tekaan rawak. Alat terjemahan Hillview belajar daripada banyak ayat. Ia boleh meneka terjemahan ayat yang baharu."
+        "heading": "AI ialah bidang yang besar",
+        "text": "AI ialah singkatan bagi artificial intelligence, iaitu kecerdasan buatan, dan buatan bermaksud dibuat oleh manusia. AI ialah satu bidang besar dalam sains komputer, dan manusia telah mengusahakannya sejak tahun 1950-an, seperti yang ditunjukkan dalam Pelajaran 2. Ia merangkumi tugas seperti memahami pertuturan, menterjemah ayat dan mengecam benda dalam foto. Ada cara yang berbeza untuk membina AI. Sesetengah AI mengikut peraturan yang ditulis oleh manusia. Sebaliknya, banyak AI yang kamu temui hari ini belajar corak daripada data, dan ini dipanggil pembelajaran mesin. Orang memberi atur cara itu banyak contoh, seperti foto, ayat atau rakaman suara, dan atur cara itu mencari corak di dalamnya. Kemudian ia menggunakan corak itu untuk membuat ramalan: tekaan yang teliti tentang sesuatu yang baharu. Banyak alat menggabungkan kedua-dua cara, iaitu menggunakan peraturan dan pembelajaran bersama-sama.",
+        "simpler": "AI bermaksud kecerdasan buatan. Manusia yang membuatnya. Manusia sudah mengusahakan AI sejak tahun 1950-an. AI boleh menukar suara kepada tulisan, menterjemah dan mencari benda dalam foto. AI boleh dibina dengan cara yang berbeza. Sesetengah AI menggunakan peraturan yang ditulis oleh manusia. Banyak AI hari ini belajar daripada data. Ini dipanggil pembelajaran mesin. Atur cara diberi banyak contoh, seperti foto atau suara. Ia mencari corak di dalamnya. Kemudian ia membuat ramalan, iaitu tekaan yang teliti tentang sesuatu yang baharu. Banyak alat menggunakan peraturan dan pembelajaran bersama-sama."
       },
       {
-        "heading": "Bukan semua mesin menggunakan AI",
-        "text": "Banyak mesin bukan AI. Kalkulator mengikut langkah tetap yang ditulis oleh seseorang, untuk kira-kira yang hanya ada satu jawapan betul. Ia sentiasa memberi 12 untuk 7 + 5, dan ia tidak pernah mempelajarinya daripada contoh. Loceng di Hillview berbunyi pada pukul sembilan kerana seseorang telah menetapkan pemasa. Alat AI dalam pelajaran ini berbeza, kerana alat itu mesti menganggar. Suara atau foto yang baharu tidak pernah sama sepenuhnya dengan contohnya. Namun, mengikut peraturan tidak membuktikan sesuatu alat itu bukan AI. Sesetengah AI mengikut peraturan yang ditulis oleh manusia, dan sesetengahnya menggabungkan peraturan dengan pembelajaran. Kipas yang dipanggil “pintar” mungkin mengikut satu peraturan mudah, atau mungkin belajar. Kadang-kadang jawapan yang jujur ialah “sukar dikatakan”.",
-        "simpler": "Banyak mesin bukan AI. Kalkulator mengikut langkah yang ditulis oleh seseorang. Ia sentiasa kata 7 + 5 ialah 12. Ia tidak mempelajarinya. Loceng Hillview berbunyi pada pukul sembilan. Seseorang menetapkan pemasa. Alat AI di sini mesti membuat tekaan yang teliti. Foto baharu tidak pernah sama dengan contohnya. Tetapi sesetengah AI mengikut peraturan yang ditulis manusia. Ada yang menggunakan peraturan dan contoh. Jadi, kadang-kadang sukar untuk tahu. Kipas “pintar” mungkin mengikut satu peraturan, atau mungkin belajar."
+        "heading": "Contoh langkah demi langkah: menaip dengan suara",
+        "text": "Pusat Pembelajaran Hillview mempunyai alat menaip dengan suara: kamu bercakap, dan ia menaip perkataan kamu. Begini cara alat seperti ini dibuat dan digunakan. Mula-mula, pembuatnya memberinya satu set data yang sangat besar, iaitu rakaman ramai orang bercakap, setiap satu berserta perkataannya yang ditulis. Seterusnya, atur cara itu mencari corak, seperti bunyi yang biasanya datang bersama perkataan tertentu. Kemudian, apabila kamu bercakap, ia membuat ramalan tentang perkataan kamu. Ia belum pernah mendengar suara kamu, jadi ia tidak boleh mencari jawapannya begitu sahaja; ia meneka berdasarkan corak itu. Tekaan itu selalunya betul, tetapi tidak sentiasa. Jika kamu bercakap dengan cepat, jika bilik itu bising, atau jika suara kamu tidak seperti kebanyakan contohnya, ia mungkin menaip perkataan yang tidak betul. Jadi, seseorang masih membaca dan menyemak perkataan itu.",
+        "simpler": "Pusat Pembelajaran Hillview ada alat menaip dengan suara. Kamu bercakap, dan ia menaip. Pembuatnya memberinya banyak data. Data ini ialah rakaman ramai orang bercakap. Perkataannya juga ditulis. Atur cara itu mencari corak. Sesetengah bunyi biasanya datang bersama sesetengah perkataan. Sekarang kamu bercakap. Ia belum pernah mendengar suara kamu. Jadi ia membuat ramalan tentang perkataan kamu. Selalunya ia betul, tetapi tidak sentiasa. Cakap yang laju atau bilik yang bising boleh menyebabkan perkataan yang tidak betul. Begitu juga suara yang tidak seperti contohnya. Jadi seseorang masih menyemak perkataan itu."
       },
       {
-        "heading": "AI ialah alat, bukan manusia",
-        "text": "AI boleh kelihatan pandai, tetapi ia tidak berfikir atau merasa seperti manusia. Ia tidak memahami foto atau ayat seperti cara kamu memahaminya. Ia mencari corak dalam data dan membuat tekaan. Tekaan itu boleh tersilap, terutamanya apabila sesuatu itu baharu atau sangat berbeza daripada contohnya. Manusia yang menentukan tujuan sesuatu alat AI, data yang dipelajarinya dan bila jawapannya boleh dipercayai. Jadi, kamu boleh bertanya tiga soalan tentang mana-mana alat AI. Apakah yang diteka olehnya? Contoh apakah yang dipelajarinya? Siapakah yang menyemak sama ada ia betul?",
-        "simpler": "AI boleh kelihatan pandai. Tetapi ia tidak berfikir atau merasa seperti manusia. Ia mencari corak dan membuat tekaan. Tekaan itu boleh tersilap, lebih-lebih lagi apabila sesuatu itu baharu. Manusia memilih tujuan AI, datanya dan bila hendak mempercayainya. Tanya tiga soalan. Apa yang diteka olehnya? Ia belajar daripada apa? Siapa yang menyemaknya?"
+        "heading": "Peraturan, tekaan dan manusia",
+        "text": "Banyak mesin bukan AI. Kalkulator mengikut langkah tetap yang ditulis oleh seseorang: ia sentiasa memberi 12 untuk 7 + 5, dan ia tidak pernah mempelajarinya daripada contoh. Tetapi mengikut peraturan, atau memberi jawapan yang sama setiap kali, tidak membuktikan sesuatu alat itu bukan AI. Sesetengah AI menggunakan peraturan, dan sesetengah alat AI boleh ditetapkan supaya memberi jawapan yang sama setiap kali. Perkataan “pintar” pada kotak juga tidak memberitahu kamu. AI boleh kelihatan pandai, tetapi ia tidak berfikir atau merasa seperti manusia. Manusia yang menentukan tujuan sesuatu alat AI, data yang dipelajarinya dan bila ia boleh dipercayai. Jadi, kamu boleh bertanya tiga soalan tentang mana-mana alat AI. Apakah yang diteka olehnya? Contoh apakah yang dipelajarinya? Siapakah yang menyemak sama ada ia betul?",
+        "simpler": "Banyak mesin bukan AI. Kalkulator mengikut langkah yang ditulis oleh seseorang. Ia sentiasa kata 7 + 5 ialah 12. Ia tidak mempelajarinya. Tetapi sesetengah AI juga mengikut peraturan. Sesetengah AI memberi jawapan yang sama setiap kali. Jadi peraturan sahaja tidak memberitahu kamu. Label “pintar” juga tidak memberitahu kamu. AI tidak berfikir atau merasa seperti manusia. Manusia memilih tujuan AI, datanya dan bila hendak mempercayainya. Tanya tiga soalan. Apa yang ia teka? Ia belajar daripada apa? Siapa yang menyemak?"
       }
     ],
     "glossary": [
@@ -131,23 +57,23 @@
         "forms": [
           "AI"
         ],
-        "definition": "Sistem komputer yang melakukan tugas seperti melihat, bercakap atau membuat keputusan. Banyak yang belajar daripada contoh.",
-        "example": "Alat terjemahan Hillview menggunakan kecerdasan buatan."
-      },
-      {
-        "word": "atur cara",
-        "definition": "Satu set langkah yang memberitahu komputer apa yang perlu dilakukan.",
-        "example": "Atur cara kalkulator mengikut langkah yang sama setiap kali."
+        "definition": "Sistem komputer yang melakukan tugas seperti memahami pertuturan, menterjemah atau mencari benda dalam foto.",
+        "example": "Alat menaip dengan suara Hillview menggunakan kecerdasan buatan."
       },
       {
         "word": "data",
         "definition": "Fakta, perkataan, gambar atau bunyi yang boleh digunakan oleh komputer.",
-        "example": "Alat terjemahan belajar daripada data: banyak ayat dalam dua bahasa."
+        "example": "Alat menaip dengan suara belajar daripada data: banyak rakaman orang bercakap."
+      },
+      {
+        "word": "pembelajaran mesin",
+        "definition": "Apabila komputer belajar corak daripada banyak contoh, bukan hanya daripada langkah tetap.",
+        "example": "Alat menaip dengan suara dibina dengan pembelajaran mesin."
       },
       {
         "word": "corak",
         "definition": "Sesuatu yang berlaku berulang kali dengan cara yang serupa.",
-        "example": "Laman video mencari corak dalam apa yang ditonton orang."
+        "example": "Alat itu menjumpai satu corak: sesetengah bunyi biasanya datang bersama sesetengah perkataan."
       },
       {
         "word": "ramalan",
@@ -156,74 +82,41 @@
           "meramal"
         ],
         "definition": "Tekaan yang teliti, berdasarkan corak, tentang sesuatu yang belum kamu ketahui.",
-        "example": "Terjemahan itu ialah ramalan. Ia mungkin tidak betul."
+        "example": "Perkataan yang ditaip ialah ramalan. Ia mungkin tidak betul."
       }
     ],
     "checks": [
       {
-        "question": "Mengapakah alat terjemahan Hillview dikira sebagai AI?",
+        "question": "Bagaimanakah alat menaip dengan suara Hillview mengetahui apa yang kamu katakan?",
         "options": [
           {
-            "text": "Ia berjalan pada komputer riba yang dikongsi di pusat itu",
-            "feedback": "Belum tepat. Banyak atur cara pada komputer riba bukan AI. Lihat cara alat terjemahan itu belajar."
+            "text": "Ia mencari suara kamu dalam senarai semua suara",
+            "feedback": "Belum tepat. Ia belum pernah mendengar suara kamu, jadi tiada apa-apa untuk dicari. Baca petikan kedua sekali lagi."
           },
           {
-            "text": "Ia belajar corak daripada banyak contoh",
-            "feedback": "Betul. Ia belajar daripada banyak ayat. Kemudian ia menggunakan corak itu untuk meneka terjemahan bagi ayat yang baharu."
+            "text": "Ia meneka berdasarkan corak dalam banyak rakaman",
+            "feedback": "Betul. Ia menjumpai corak dalam rakaman ramai orang. Kemudian ia menggunakan corak itu untuk meneka perkataan dalam suara yang baharu."
           },
           {
-            "text": "Ia memberi jawapan yang sama setiap kali",
-            "feedback": "Belum tepat. Memberi jawapan yang sama tidak menjadikan sesuatu alat itu AI, dan tidak juga menjadikannya bukan AI. Lihat cara alat terjemahan itu belajar."
+            "text": "Seseorang menaip perkataan kamu untuknya",
+            "feedback": "Belum tepat. Alat itu sendiri yang menaip perkataannya. Seseorang menyemaknya selepas itu. Baca petikan kedua sekali lagi."
           }
         ]
-      },
-      {
-        "question": "Loceng Hillview berbunyi pada pukul sembilan setiap hari. Apakah cara terbaik untuk menerangkannya?",
-        "options": [
-          {
-            "text": "Ia belajar waktu daripada contoh",
-            "feedback": "Belum tepat. Tiada sesiapa yang memberi loceng itu contoh. Baca tentang loceng itu dalam petikan kedua."
-          },
-          {
-            "text": "Ia meneka bila pelajar akan tiba",
-            "feedback": "Belum tepat. Loceng itu tidak meneka. Baca tentang loceng itu dalam petikan kedua."
-          },
-          {
-            "text": "Ia mengikut langkah tetap yang ditetapkan oleh seseorang",
-            "feedback": "Betul. Seseorang menetapkan pemasa. Loceng itu tidak belajar daripada contoh atau menganggar apa-apa, jadi ia bukan AI."
-          }
-        ]
-      },
-      {
-        "question": "Pilih satu alat daripada pelajaran ini, atau alat yang pernah kamu lihat. Adakah kamu fikir ia menggunakan AI? Mengapa?",
-        "placeholder": "Saya fikir ___ menggunakan AI kerana ... / Saya fikir ___ bukan AI kerana ..."
       }
     ]
   },
   "write": {
-    "prompt": "Pilih satu alat daripada senarai Hillview. Terangkan sama ada ia menggunakan AI, dan berikan satu sebab daripada pelajaran ini.",
+    "prompt": "Pilih satu alat AI: alat menaip dengan suara Hillview, atau alat AI lain yang pernah kamu lihat atau dengar. Jawab tiga soalan daripada pelajaran ini tentang alat itu.",
     "sentenceStarters": [
-      "Saya memilih ...",
-      "Saya fikir ia menggunakan AI kerana ... / Saya fikir ia bukan AI kerana ... / Sukar dikatakan kerana ...",
-      "Ia belajar daripada ... / Ia mengikut ...",
-      "Satu kesilapan yang mungkin dilakukannya ialah ...",
-      "Seseorang perlu menyemak ..."
+      "Alat yang saya pilih ialah ...",
+      "Ia meneka ...",
+      "Ia belajar daripada ...",
+      "Orang yang patut menyemaknya ialah ..."
     ],
-    "planningBoxes": [
-      "Idea utama saya",
-      "Bukti daripada pelajaran",
-      "Mengapa ini penting",
-      "Soalan yang masih saya ada"
-    ],
-    "selfCheck": [
-      "Saya menamakan satu alat.",
-      "Saya menyatakan sama ada ia menggunakan AI dan memberi satu sebab.",
-      "Saya menamakan satu kesilapan yang mungkin dilakukannya atau satu perkara yang perlu disemak oleh seseorang."
-    ],
-    "example": "Saya memilih alat menaip dengan suara. Saya fikir ia menggunakan AI kerana ia perlu membuat tekaan yang teliti tentang perkataan daripada setiap suara baharu. Ia belajar daripada banyak rakaman suara dan mencari corak di dalamnya. Satu kesilapan yang mungkin dilakukannya ialah menaip perkataan yang tidak betul apabila seseorang bercakap dengan cepat atau dengan suara yang terlalu perlahan. Seseorang perlu menyemak perkataan yang ditaip sebelum menggunakannya. Kalkulator pula berbeza. Ia mengikut langkah yang ditulis oleh seseorang, dan ia tidak belajar daripada contoh."
+    "example": "Alat yang saya pilih ialah alat terjemahan. Ia meneka cara menyebut sesuatu ayat dalam bahasa lain. Ia belajar daripada banyak ayat dalam dua bahasa. Ia menjumpai corak di dalamnya, jadi ia boleh meneka ayat yang belum pernah dilihatnya. Ia mungkin tersilap dengan perkataan yang jarang digunakan atau dengan jenaka. Orang yang patut menyemaknya ialah seseorang yang fasih dalam kedua-dua bahasa, sebelum perkataan itu dimasukkan ke dalam notis yang penting."
   },
   "speak": {
-    "partnerTask": "Bergilir-gilir menamakan satu alat daripada senarai Hillview. Rakan kamu menyebut “AI”, “bukan AI” atau “sukar dikatakan”, dan memberi satu sebab.",
+    "partnerTask": "Bergilir-gilir. Terangkan kepada rakan kamu bagaimana alat menaip dengan suara membuat tekaannya. Gunakan perkataan contoh, corak dan ramalan. Rakan kamu menyebut satu perkara yang patut disemak oleh seseorang.",
     "independentTask": "Sebut dengan kuat apa itu AI dalam dua ayat. Kemudian namakan satu perkara yang tidak boleh dilakukan oleh AI."
   },
   "watch": {
@@ -241,40 +134,31 @@
   "reflect": {
     "prompts": [
       {
-        "text": "Satu perkara yang boleh dilakukan oleh AI ialah ... Satu perkara yang tidak boleh dilakukannya ialah ..."
+        "text": "Sebelum pelajaran ini, saya fikir AI ialah ... Sekarang saya fikir ..."
       },
       {
         "text": "Satu soalan yang saya ada tentang AI ialah ..."
       }
     ],
-    "completionMessage": "Kamu telah menamatkan Pelajaran 1. Kamu telah menerangkan apa itu AI dan menyusun alat kepada AI dan bukan AI."
+    "completionMessage": "Kamu telah menamatkan Pelajaran 1. Kamu telah menerangkan apa itu AI, dan bagaimana alat yang belajar daripada contoh membuat tekaan yang teliti."
   },
   "visual": {
-    "alt": "Rajah: contoh dimasukkan, komputer mencari corak, dan kemudian ia membuat tekaan yang teliti. Di bawah, kalkulator dan loceng mengikut langkah tetap yang ditulis oleh seseorang."
+    "alt": "Rajah: rakaman berserta perkataannya dimasukkan, komputer mencari corak, kemudian ia membuat tekaan yang teliti tentang suara baharu, dan seseorang menyemaknya. Di bawah, kalkulator mengikut langkah tetap yang ditulis oleh seseorang. Satu nota mengatakan sesetengah AI juga menggunakan peraturan."
   },
   "sources": [
     {
       "label": "Stanford HAI: What is artificial intelligence (AI)? (bidang yang luas, dan AI moden yang mencari corak dalam data)"
     },
     {
-      "label": "UNESCO: AI competency framework for students (rangka kerja kecekapan AI untuk pelajar, 2024)"
-    },
-    {
       "label": "OECD.AI: What is AI? Can you make a clear distinction between AI and non-AI systems? (bolehkah kita membezakan sistem AI dengan sistem bukan AI dengan jelas?)"
-    },
-    {
-      "label": "The Royal Society: Machine learning, the power and promise of computers that learn by example (pengenalan tentang pembelajaran mesin)"
-    },
-    {
-      "label": "UNICEF: AI guide for teens (panduan AI untuk remaja, 2021)"
     },
     {
       "label": "Thomas Haigh, Communications of the ACM 67(2), Februari 2024: How the AI boom went bust (sistem pakar tahun 1980-an, AI yang dibina daripada peraturan)"
     }
   ],
   "educatorNotes": [
-    "Tiada satu garis pemisah yang dipersetujui antara AI dengan atur cara lain (lihat sumber OECD). AI ialah bidang yang luas: Stanford HAI menyebutnya sistem komputer yang melakukan tugas dengan kecerdasan seperti manusia, dan berkata AI moden sering berfungsi dengan mencari corak dalam data. Pelajaran ini memperkenalkan jenis moden yang biasa itu (pembelajaran mesin); AI berasaskan peraturan, seperti sistem pakar dalam Pelajaran 2, juga AI. Terima jawapan “sukar dikatakan” dan hargai sebab yang diberi, bukan kumpulan yang dipilih pelajar. Aktiviti ini tiada markah.",
-    "Pelajar mungkin tidak mempunyai telefon sendiri. Setiap alat dalam senarai ini ialah alat yang mungkin mereka lihat di pusat pembelajaran atau di kedai, dan soalan fikir membolehkan mereka memilih alat daripada pelajaran ini.",
+    "Tiada satu garis pemisah yang dipersetujui antara AI dengan atur cara lain (lihat sumber OECD). AI ialah bidang yang luas: Stanford HAI menyebutnya sistem komputer yang melakukan tugas dengan kecerdasan seperti manusia, dan berkata AI moden sering berfungsi dengan mencari corak dalam data. Pelajaran ini mengajar jenis moden yang biasa itu (pembelajaran mesin) melalui satu contoh langkah demi langkah; AI berasaskan peraturan, seperti sistem pakar tahun 1980-an dalam Pelajaran 2, juga AI, dan banyak alat menggabungkan peraturan dengan pembelajaran. Jika pelajar bertanya sama ada sesuatu alat itu AI, “bergantung pada cara ia dibina” selalunya jawapan yang jujur.",
+    "Alat menaip dengan suara belajar daripada rakaman berserta perkataan yang ditulis: satu cara biasa untuk melatih alat seperti ini, bukan satu-satunya cara AI belajar (Pelajaran 3 memanggilnya pembelajaran berselia). Pelajar mungkin tidak mempunyai telefon sendiri, jadi tugasan Tulis membolehkan mereka menggunakan alat menaip dengan suara atau mana-mana alat lain yang pernah mereka lihat atau dengar.",
     "Video ini laju, dalam bahasa Inggeris penutur asli dan menamakan syarikat sebenar. Ringkasan bertulis merangkumi idea utamanya. Seorang ahli pasukan masih perlu menonton video ini sebelum digunakan (lihat content/courses/digital-world/README.md)."
   ]
 }

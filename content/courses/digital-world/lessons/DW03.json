@@ -5,10 +5,10 @@
   "section": "thinking-machines",
   "title": "How AI learns from examples",
   "essentialQuestion": "How can a computer learn from examples, and why do the examples matter?",
-  "learningGoal": "Train a tiny model with labelled examples, and explain why relevant, correctly labelled examples and fair tests matter.",
+  "learningGoal": "Explain how a model learns from labelled examples, and why relevant, correctly labelled examples and a test on new examples matter.",
   "estimatedMinutes": [
-    35,
-    55
+    25,
+    40
   ],
   "warmUp": {
     "question": "You want to teach a young child to tell a healthy leaf from a sick leaf. What would you do?",
@@ -22,7 +22,7 @@
   "evidence": {
     "fictional": true,
     "label": "Fictional example created for this lesson.",
-    "question": "What changed each time the model got more leaves right?",
+    "question": "What changed when the model had more examples, and what did the fresh test show?",
     "cards": [
       {
         "type": "table",
@@ -40,22 +40,12 @@
           ],
           [
             "Round 2",
-            "6 examples: the 2 from Round 1, plus a small new leaf and a green leaf with tiny marks (healthy), and a yellow leaf with no spots and a small spotted leaf (sick)",
+            "6 examples: the 2 from Round 1, plus 2 more healthy and 2 more sick leaves that look different",
             "6 of 6"
           ],
           [
-            "Round 2, a new plant",
-            "The same 6 examples",
-            "0 of 2 long, striped leaves"
-          ],
-          [
-            "Round 3",
-            "8 examples: the 6 from Round 2, plus a long striped leaf (healthy) and a long brown leaf with spots (sick)",
-            "8 of 8"
-          ],
-          [
-            "Round 4",
-            "The same 8 examples",
+            "Fresh test",
+            "8 examples, including 2 long, striped leaves from a new plant",
             "3 of 4 leaves nobody had used"
           ]
         ]
@@ -66,8 +56,8 @@
     "type": "train-model",
     "stage": "read",
     "placement": "after-evidence",
-    "title": "Train the leaf model",
-    "instructions": "Teach the model by giving each example leaf a label: healthy or sick. Then test it on new leaves and see how many it gets right. Nothing you do here is sent anywhere.",
+    "title": "Try the leaf model",
+    "instructions": "Teach the model by giving each example leaf a label: healthy or sick. Then test it on new leaves, round by round, and see how many it gets right. Nothing you do here is sent anywhere.",
     "labels": [
       {
         "id": "healthy",
@@ -441,7 +431,8 @@
     "freePlay": "After Round 4, the learner can take examples out, or change a label, and test again. The model follows the learner's labels, even when they differ from the gardener's.",
     "explainGuess": "After each guess, show the example the model thought was most like the new leaf: “It looked most like this example, so the model said sick.”",
     "saves": "Which rounds the learner finished, with the lesson's other answers. The labels are not needed again and can stay in memory.",
-    "offline": "Everything is in the lesson file and runs on the device. No camera, no upload, no network, no machine learning library."
+    "offline": "Everything is in the lesson file and runs on the device. No camera, no upload, no network, no machine learning library.",
+    "extension": true
   },
   "read": {
     "sections": [
@@ -451,14 +442,14 @@
         "simpler": "At Sunrise Garden, people collected training data. Each leaf picture has the right answer, called a label: “healthy” or “sick”. The computer uses them to make a model. It uses the model to guess. This is machine learning. Nobody tells it “spots mean sick”. It finds that in the examples. Learning from labels is called supervised learning. It is an old idea. A machine did it in 1958. This method was studied in 1967. It grew more useful after 2010."
       },
       {
-        "heading": "Test the model with new examples",
-        "text": "To find out whether a model works, you test it with new leaves it did not learn from. The first model learned from only two examples, a big dark green leaf and a brown leaf with spots. It guesses in a simple way: it finds the example most similar to the new leaf and copies its label. It got four of six new leaves right. It called a small, light green leaf “sick” and a yellow leaf with no spots “healthy”. The model was not broken. It had too few examples to compare with.",
-        "simpler": "Then you test the model on leaves it has not seen. The first model had only two examples. One was dark green. One was brown with spots. It finds the example most like the new leaf. It copies its label. It got four of six right. It called a small new leaf “sick” and a yellow leaf “healthy”. It had too few examples."
+        "heading": "Better examples, then a fair test",
+        "text": "The first model learned from only two examples. It guesses in a simple way: it finds the example most like the new leaf and copies its label. On six new leaves it got four right. It called a small, light green leaf “sick”, because it had too few examples to compare with. Then the team added four leaves that looked different, and it got all six right. But the team had already looked at those six test leaves while they improved the model. A fair test uses leaves that nobody has used yet. The team kept four leaves aside. The model got three of them right. It called a long leaf that was turning yellow “healthy”. A fresh test shows what a model still gets wrong. Four leaves are still a small test.",
+        "simpler": "The first model had only two examples. It finds the example most like a new leaf. It copies that label. It got four of six new leaves right. It had too few examples. Then the team added four different leaves. Now it got all six right. But the team had already seen those six leaves. A fair test uses new leaves. The team kept four leaves aside. The model got three of them right. A new test shows what it still gets wrong."
       },
       {
-        "heading": "Better examples help, but tests have limits",
-        "text": "Next, the team added four examples, such as a small new leaf and a yellow leaf. Now it got all six right. Then it was tested on two long, striped leaves from another plant. Both were healthy, but the model said “sick”: no example looked like them. With two striped examples, it got them right. On four leaves nobody had used, it got three right but called a long leaf turning yellow “healthy”. Relevant examples with correct labels help. More examples alone do not always help: a wrong label can make guesses worse. A small test cannot prove it works on every new plant.",
-        "simpler": "Next, the team added four examples. Now it got all six right. Then came a plant with long, striped leaves. They are healthy, but the model said “sick”. No example looked like them. With two striped examples, it got them right. On four leaves nobody had used, it got three right. Good examples with the right labels help. More examples alone do not always help. A wrong label can make it worse. A small test cannot prove it always works."
+        "heading": "Examples from the real world",
+        "text": "Real tools work in a similar way, at a much bigger size. In Tanzania, researchers from the International Institute of Tropical Agriculture and Penn State University made a free phone app called Nuru. It learned from pictures of the leaves of cassava, a food crop, taken in Tanzanian fields, and it works without the internet. When researchers tested it on plants in the field, it did much better when it looked at six leaves from a plant than at one. Relevant examples with correct labels help a model. More examples alone do not always help: a wrong label can make guesses worse. And a tool like this only helps people check leaves. Farmers and experts still decide what to do.",
+        "simpler": "Real tools work like this too, but they are much bigger. In Tanzania, researchers made a free phone app called Nuru. It learned from pictures of cassava leaves. Cassava is a plant that people grow for food. It works without the internet. In tests, it did better when it looked at six leaves from a plant. Good examples with the right labels help. A wrong label can make it worse. The app helps people check leaves. People still decide what to do."
       }
     ],
     "glossary": [
@@ -518,69 +509,52 @@
           {
             "text": "Small leaves are nearly always sick",
             "correct": false,
-            "feedback": "Not quite. The gardener says the small new leaf is healthy. Read about Round 1 in the second section."
+            "feedback": "Not quite. The gardener says the small new leaf is healthy. Read the start of the second section."
           },
           {
             "text": "The model was broken and needed fixing",
             "correct": false,
-            "feedback": "Not quite. The lesson says the model was not broken. Read the end of the second section."
+            "feedback": "Not quite. It had too few examples to compare with. Read the start of the second section."
           }
         ]
       },
       {
         "type": "choice",
-        "question": "What made the model better in Round 2?",
+        "question": "Why did the team test the model on four leaves nobody had used?",
         "options": [
           {
-            "text": "The team made all the leaf pictures brighter",
-            "correct": false,
-            "feedback": "Not quite. The pictures did not change. Look at what the team added in the third section."
-          },
-          {
-            "text": "The team added more, different examples",
+            "text": "To make the test fair, with leaves the team had not already looked at",
             "correct": true,
-            "feedback": "Yes. The new examples showed the model leaves that looked different, so it got all six right."
+            "feedback": "Yes. The team had already seen the first test leaves. New leaves show what the model still gets wrong."
           },
           {
-            "text": "The team wrote a rule about spots",
+            "text": "Because four leaves prove the model always works",
             "correct": false,
-            "feedback": "Not quite. In machine learning, nobody writes that rule. Look at what the team added in the third section."
+            "feedback": "Not quite. The lesson says four leaves are still a small test. Read the end of the second section."
+          },
+          {
+            "text": "Because the model forgets old leaves",
+            "correct": false,
+            "feedback": "Not quite. The model keeps its examples. Read about the fair test in the second section."
           }
         ]
-      },
-      {
-        "type": "think",
-        "question": "The garden grows a new plant with red leaves. What should the team do before they trust the model with it?",
-        "placeholder": "First they should ... Then they should ...",
-        "optional": true
       }
     ]
   },
   "write": {
-    "prompt": "Explain how the garden's model got better from Round 1 to Round 3. Use numbers from the lesson.",
+    "prompt": "Explain why the Sunrise Garden team kept four leaves aside for a fresh test. Use one number from the lesson.",
     "sentenceStarters": [
-      "In Round 1, the model learned from ...",
-      "It got ... right, because ...",
-      "In Round 2, the team added ...",
-      "The striped leaves show that ...",
-      "Good training data needs ... / A small test cannot show ..."
+      "The team had already seen ...",
+      "A fair test uses ...",
+      "On the fresh test, the model ..."
     ],
-    "planningBoxes": [
-      "My main idea",
-      "Evidence from the lesson",
-      "Why it matters",
-      "A question I still have"
-    ],
-    "selfCheck": [
-      "I described Round 1 and one of its mistakes.",
-      "I explained what changed in Round 2 and Round 3.",
-      "I said what good training data needs, or what a small test cannot show."
-    ],
-    "example": "In Round 1, the model learned from only two examples. It got four of six new leaves right, because it had too few examples to compare with. It called a small new leaf “sick”. In Round 2, the team added four different examples, and the model got all six right. The striped leaves show that a model makes mistakes when its examples leave something out. Good training data needs relevant examples of each kind, with correct labels. Even 8 of 8 on a small test does not prove it will work on every new plant."
+    "planningBoxes": [],
+    "selfCheck": [],
+    "example": "The team had already seen the first six test leaves while they improved the model, so getting all six right did not prove much. A fair test uses leaves that nobody has used yet. On the four fresh leaves, the model got three right and called a leaf that was turning yellow “healthy”. The fresh test showed a mistake the team would not have noticed. Four leaves are still a small test, so they should test it on more."
   },
   "speak": {
-    "partnerTask": "Tell your partner how you would train a model to sort two kinds of things, like ripe and unripe fruit. Your partner asks, “How will you test it?” Then switch.",
-    "independentTask": "Say out loud three steps: collect examples, train the model, test it. Give one example for each step."
+    "partnerTask": "Tell your partner how you would train a model to sort two kinds of things, like ripe and unripe fruit. Your partner asks, “How will you test it fairly?” Then switch.",
+    "independentTask": "Say out loud three steps: collect labelled examples, train the model, test it on new examples. Give one example for each step."
   },
   "watch": {
     "youtubeId": "2hXG8v8p0KM",
@@ -610,7 +584,7 @@
         "required": false
       }
     ],
-    "completionMessage": "You finished Lesson 3. You trained a model with examples and saw why the examples matter."
+    "completionMessage": "You finished Lesson 3. You saw how a model learns from examples, and why a fair test uses new ones."
   },
   "visual": {
     "type": "illustration",
@@ -632,23 +606,16 @@
       "url": "https://developers.google.com/machine-learning/crash-course/overfitting"
     },
     {
-      "label": "T. M. Cover and P. E. Hart, IEEE Transactions on Information Theory, January 1967: Nearest neighbor pattern classification (listed on Thomas Cover's publications page, Stanford)",
-      "url": "https://isl.stanford.edu/~cover/cover-papers.html"
-    },
-    {
-      "label": "Cornell University (2019): Professor's perceptron paved the way for AI, 60 years too soon (the perceptron, shown in July 1958)",
-      "url": "https://nbb.cornell.edu/news/professors-perceptron-paved-way-ai-60-years-too-soon"
-    },
-    {
-      "label": "DCMP: How Computer Vision Works (Code.org video, description)",
-      "url": "https://dcmp.org/media/25568-how-computer-vision-works"
+      "label": "IITA (2018): African farmers get new help against cassava diseases: Nuru, their artificially intelligent assistant",
+      "url": "https://iita.org/news-item/african-farmers-get-new-help-against-cassava-diseases-nuru-their-artificially-intelligent-assistant/"
     }
   ],
   "sensitiveNotes": [],
   "educatorNotes": [
-    "If the activity can't run (a printout, or a device without it), use the evidence table: it shows exactly what the activity does. Learners can also play it on paper: one learner is the model and may only copy the label of the most similar example card. Round 3 re-tests the same leaves the team had already seen; Round 4 is the fair check, on four leaves nobody has used. On paper, keep those four cards face down until Round 4.",
-    "The model in the activity is deliberately simple: a nearest-neighbour model (k = 1) that copies the label of the most similar example. It is one supervised method; Cover and Hart's 1967 paper studied this rule, and Rosenblatt's perceptron, shown in July 1958, also learned from labelled examples. Real AI is far bigger, and other kinds of machine learning don't need a label on every example, but the points about examples and testing are the same.",
-    "If a learner labels an example differently from the gardener, the model follows the learner. That is a good moment to ask: who decides the right label?"
+    "The leaf model is now an optional extension (Justin's brief of 4 November 2026): the reading teaches learning from examples and the fair test, and the activity is folded under “Try it yourself” for learners who want more. It has all four rounds and free play. On paper: one learner is the model and may only copy the label of the most similar example card; keep the four Round 4 cards face down until the fair test.",
+    "The model is deliberately simple: a nearest-neighbour model (k = 1) that copies the label of the most similar example. It is one supervised method; Cover and Hart's 1967 paper studied this rule, and Rosenblatt's perceptron, shown in July 1958, also learned from labelled examples. Real AI is far bigger, and other kinds of machine learning don't need a label on every example, but the points about examples and testing are the same.",
+    "Nuru: the evaluation in Tanzania (Mrisho and others, a bioRxiv preprint from 2020) found the app more accurate with six leaves per plant than with one leaf image. The lesson gives no percentages on purpose: the study's numbers depend on which test and which disease. The app supports diagnosis; it does not replace extension workers or farmers' decisions.",
+    "If a learner labels an example differently from the gardener in the extension, the model follows the learner. That is a good moment to ask: who decides the right label?"
   ],
   "changes": [
     "New lesson (Digital World draft 1). There is no Base44 original, so oldId is null.",
@@ -658,6 +625,7 @@
     "Needs review by an AI researcher for accuracy, and by Justin for level and tone.",
     "October 2026, social studies rebuild (Justin's brief: AI and the digital world through a social studies lens, at most 20 lessons): kept as Lesson 3 in \"Thinking machines\" (thinking-machines). The notes above about the old section ids are out of date.",
     "Revised on 1 November 2026 from Justin's review: a short, sourced bridge to Lesson 2 (learning from labelled examples is an old idea: the 1958 perceptron, Cover and Hart's 1967 study of the nearest-neighbour rule, far more useful after 2010); the reading and a new glossary word say this is supervised learning, one kind of machine learning; training data is now “examples used to build a model” (labels belong to this kind); the third section says relevant, correctly labelled examples help but more examples alone don't always, and that 8 of 8 on a small test can't prove the model works on every new plant (Round 3's debrief, the Write example and a teacher note on a fair new test say the same). The activity's cards and rounds are unchanged (still 4 of 6, 6 of 6, 0 of 2, 8 of 8, checked against the model); a genuinely new test set for Round 3 needs new leaf pictures and test changes in code, so it is a paper extension for now. Claim record: content/courses/digital-world/claims/DW03.md.",
-    "Added on 2 November 2026 from Justin's review (\"keep a genuinely new test set\"): Round 4 tests the eight-example model on four leaves nobody has used (t9–t12). It gets 3 of 4: a long leaf turning yellow looks most like the striped healthy example. The reading, the evidence table and the paper note say so; the reading was tightened to stay within the word limits."
+    "Added on 2 November 2026 from Justin's review (\"keep a genuinely new test set\"): Round 4 tests the eight-example model on four leaves nobody has used (t9–t12). It gets 3 of 4: a long leaf turning yellow looks most like the striped healthy example. The reading, the evidence table and the paper note say so; the reading was tightened to stay within the word limits.",
+    "8 November 2026 (Justin's brief of 4 November): the leaf model is an optional extension, folded under “Try it yourself”; the reading teaches the fair test itself, the evidence table has three rows instead of five, and a real case (Nuru, a cassava-leaf app tested in Tanzania) shows the idea in use. Write asks for one short explanation, with no planning boxes or checklist; the think question is gone."
   ]
 }

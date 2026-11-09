@@ -1,22 +1,13 @@
 {
   "title": "Kerja tersembunyi di sebalik AI",
   "essentialQuestion": "Siapakah orang yang membuat AI berfungsi, dan adakah mereka dilayan dengan adil?",
-  "learningGoal": "Huraikan pekerjaan tersembunyi yang diperlukan oleh alat AI, dan terangkan siapa yang mendapat manfaat dan siapa yang menanggung kosnya.",
-  "warmUp": {
-    "question": "Apabila kamu menggunakan alat yang menjawab soalan, siapakah yang kamu fikir membantu membuatnya?",
-    "options": [
-      "Komputer sahaja",
-      "Beberapa orang pakar di sebuah syarikat",
-      "Ramai orang di seluruh dunia",
-      "Tidak pasti"
-    ]
-  },
+  "learningGoal": "Huraikan pekerjaan tersembunyi yang diperlukan oleh alat AI, cara rantaian bekalannya berfungsi, dan apa yang ditemui oleh laporan tentang bayaran dan keadaan kerja pekerjanya.",
   "evidence": {
     "label": "Contoh rekaan yang dibuat untuk pelajaran ini.",
-    "question": "Antara orang ini, siapakah yang dilihat oleh pengguna alat Ask Me? Siapakah yang tidak pernah mereka lihat?",
+    "question": "Ikuti rantaian daripada Amara hingga Rosa. Kerja siapakah yang dilihat oleh pengguna alat Ask Me? Kerja siapakah yang kekal tersembunyi?",
     "cards": [
       {
-        "title": "Lima orang di sebalik alat Ask Me",
+        "title": "Empat orang di sebalik alat Ask Me",
         "cases": [
           {
             "name": "Amara, pelabel foto",
@@ -25,10 +16,6 @@
           {
             "name": "Tomas, moderator",
             "body": "Dia menyemak siaran yang melanggar peraturan, supaya alat itu belajar apa yang tidak boleh sekali-kali ditunjukkannya. Kerja itu berat, dan dia mahu lebih banyak masa untuk berehat."
-          },
-          {
-            "name": "Lin, penulis",
-            "body": "Bertahun-tahun dahulu, dia meletakkan cerita-ceritanya di internet. Cerita itu disalin ke dalam data latihan alat itu. Tiada sesiapa yang bertanya kepadanya, dan namanya tidak ditunjukkan."
           },
           {
             "name": "Sami, jurutera",
@@ -42,71 +29,22 @@
       }
     ]
   },
-  "activity": {
-    "title": "Dilihat atau tersembunyi?",
-    "instructions": "Letakkan setiap pekerjaan di sebalik alat Ask Me dalam satu kumpulan. Tiada markah. Selepas kamu meletakkan satu pekerjaan, kamu boleh melihat satu jawapan yang mungkin dan sebabnya.",
-    "groups": [
-      {
-        "label": "Dilihat oleh pengguna"
-      },
-      {
-        "label": "Tersembunyi daripada pengguna"
-      },
-      {
-        "label": "Sukar dikatakan"
-      }
-    ],
-    "items": [
-      {
-        "text": "Pemimpin yang memperkenalkan alat itu di atas pentas yang besar",
-        "feedback": "Nama dan wajahnya ada dalam berita, jadi orang mengaitkannya dengan alat itu."
-      },
-      {
-        "text": "Pekerja yang menanda beribu-ribu foto",
-        "feedback": "Alat itu belajar daripada labelnya, tetapi pengguna tidak pernah melihatnya atau tahu namanya."
-      },
-      {
-        "text": "Pekerja yang menyemak siaran yang melanggar peraturan",
-        "feedback": "Kerjanya menjauhkan siaran yang berbahaya daripada pengguna. Mereka tidak pernah melihat kerja itu berlaku."
-      },
-      {
-        "text": "Penulis yang ceritanya ada dalam data latihan",
-        "feedback": "Kata-katanya membantu alat itu belajar, tetapi namanya tidak ditunjukkan di mana-mana."
-      },
-      {
-        "text": "Jurutera di ibu pejabat syarikat itu",
-        "feedback": "Mana-mana kumpulan boleh betul di sini. Pasukannya kadang-kadang masuk berita, tetapi kebanyakan pengguna tidak tahu siapa dia."
-      },
-      {
-        "text": "Pekerja yang menanda jawapan alat itu sebagai baik atau tidak baik",
-        "feedback": "Tanda ini membantu menguji dan memperbaik jawapan alat itu, tetapi pekerja itu tidak pernah dinamakan."
-      },
-      {
-        "text": "Pengguna yang menekan “ibu jari ke atas” pada sesuatu jawapan",
-        "feedback": "Mana-mana kumpulan boleh betul di sini. Pengguna boleh melihat diri mereka sendiri. Tetapi ramai yang tidak tahu bahawa tekanan mereka mungkin membantu melatih alat itu."
-      },
-      {
-        "text": "Orang yang membina bangunan komputer tempat alat itu berjalan",
-        "feedback": "Pengguna tidak pernah melihat bangunan ini. Kamu akan belajar lebih lanjut tentangnya dalam pelajaran seterusnya."
-      }
-    ]
-  },
   "read": {
     "sections": [
       {
-        "heading": "AI memerlukan banyak kerja manusia",
-        "text": "Alat AI kelihatan berfungsi dengan sendirinya, tetapi ramai orang membantu membuatnya. Untuk sesetengah jenis latihan, orang menambah label pada setiap contoh. Seorang pekerja mungkin menanda beribu-ribu foto sebagai “bas”, “pokok” atau “orang”. Pekerja lain menilai jawapan sesuatu alat, untuk menguji dan memperbaikinya. Moderator menyemak siaran yang berbahaya, supaya alat itu belajar apa yang tidak boleh ditunjukkannya. Banyak alat juga belajar daripada perkataan dan gambar di internet. Sesetengah penulis dan artis berkata tiada sesiapa yang bertanya kepada mereka dahulu. Dalam alat rekaan Ask Me, Amara menambah label, Tomas ialah moderator, dan cerita-cerita Lin ada dalam data.",
-        "simpler": "Ramai orang membantu membuat alat AI. Untuk sesetengah latihan, orang menambah label pada contoh. Seorang pekerja mungkin menanda banyak foto sebagai “bas” atau “pokok”. Pekerja lain menyemak sama ada jawapan itu baik. Moderator menyemak siaran yang boleh menyakiti orang. Banyak alat juga belajar daripada perkataan dan gambar dalam talian. Sesetengah penulis dan artis berkata tiada sesiapa yang bertanya kepada mereka."
+        "heading": "Pekerjaan di sebalik alat AI",
+        "text": "Alat AI mungkin kelihatan berfungsi dengan sendirinya, tetapi ramai orang membantu membuatnya. Untuk sesetengah jenis latihan, pekerja menambah label pada setiap contoh, seperti “bas” atau “pokok” untuk sesuatu foto. Pekerja lain menilai jawapan sesuatu alat, supaya alat itu boleh diuji dan diperbaik. Moderator menyemak siaran yang berbahaya, supaya alat itu belajar apa yang tidak boleh ditunjukkannya. Banyak alat juga belajar daripada tulisan dan gambar yang ditemui dalam talian. Pada tahun 2023, sesetengah penulis dan artis berkata tiada sesiapa yang bertanya kepada mereka dahulu. Sesetengahnya pergi ke mahkamah, dan mahkamah masih memutuskan kes-kes ini.",
+        "simpler": "Ramai orang membantu membuat alat AI. Untuk sesetengah latihan, pekerja menambah label pada setiap contoh. Sesuatu foto mungkin mendapat label “bas” atau “pokok”. Pekerja lain menyemak sama ada jawapannya baik. Moderator menyemak siaran yang boleh menyakiti orang. Banyak alat juga belajar daripada perkataan dan gambar dalam talian. Pada tahun 2023, sesetengah penulis dan artis berkata tiada sesiapa yang bertanya kepada mereka. Sesetengahnya pergi ke mahkamah. Mahkamah masih membuat keputusan."
       },
       {
-        "heading": "Sesetengah kerja ini jauh dan bergaji rendah",
-        "text": "Banyak kerja ini dilakukan dalam talian di negara seperti Kenya dan Filipina, selalunya untuk syarikat di negara yang lebih kaya. Pada Januari 2023, sebuah majalah berita melaporkan tentang kira-kira tiga dozen pekerja di Kenya. Pada tahun 2021 dan 2022, mereka melabel teks yang berbahaya untuk penapis keselamatan sebuah alat AI yang terkenal. Mereka membawa pulang kira-kira 1.32 hingga 2 dolar AS sejam. Syarikat AI itu membayar syarikat perantara 12.50 dolar sejam untuk kerja mereka, dan syarikat perantara itu berkata wang itu juga membayar kos lain. Pada Ogos 2023, sebuah akhbar bercakap dengan 36 orang pekerja dalam talian di Filipina. Semua kecuali dua orang berkata sebahagian upah mereka lewat, dipotong atau tidak pernah dibayar. Platform mereka berkata perkara ini jarang berlaku.",
-        "simpler": "Banyak kerja ini dilakukan dalam talian, di Kenya, Filipina dan tempat lain. Selalunya, syarikat yang membayar berada di negara yang lebih kaya. Pada tahun 2023, sebuah majalah menulis tentang pekerja di Kenya. Mereka melabel teks yang berbahaya untuk sebuah alat AI. Mereka mendapat kurang daripada 2 dolar AS sejam. Syarikat AI itu membayar 12.50 dolar sejam kepada syarikat perantara. Syarikat itu berkata wang itu juga membayar kos lain. Di Filipina, sebuah akhbar bercakap dengan 36 orang pekerja. Hampir semua berkata sebahagian upah lewat, dipotong atau hilang. Syarikat itu berkata perkara ini jarang berlaku."
+        "heading": "Rantaian bekalan yang panjang",
+        "text": "Seperti pakaian, alat AI mempunyai rantaian bekalan. Syarikat yang membina sesuatu alat selalunya membayar syarikat lain, atau platform dalam talian, untuk mencari pekerja. Ramai daripada mereka tinggal jauh, di negara seperti Kenya dan Filipina. Pada Januari 2023, sebuah majalah berita melaporkan tentang kira-kira tiga dozen pekerja di Kenya. Pada tahun 2021 dan 2022, mereka melabel teks yang berbahaya untuk sebuah alat AI yang terkenal. Mereka membawa pulang kira-kira 1.32 hingga 2 dolar AS sejam. Syarikat AI itu membayar syarikat perantara 12.50 dolar sejam untuk kerja mereka. Syarikat perantara itu berkata wang ini juga membayar pejabat, pengurus dan kos lain. Pada Ogos 2023, sebuah akhbar bercakap dengan 36 orang pekerja dalam talian di Filipina. Semua kecuali dua orang berkata sebahagian upah mereka lewat, dipotong atau tidak pernah dibayar. Platform mereka berkata perkara ini jarang berlaku. Laporan ini menghuraikan pekerja dan syarikat tertentu, bukan setiap pekerjaan AI.",
+        "simpler": "Alat AI mempunyai rantaian bekalan, seperti pakaian. Syarikat itu selalunya membayar syarikat lain atau platform untuk mencari pekerja. Ramai tinggal jauh, di Kenya, Filipina dan tempat lain. Pada tahun 2023, sebuah majalah menulis tentang pekerja di Kenya. Mereka melabel teks yang berbahaya untuk sebuah alat AI. Mereka mendapat kurang daripada 2 dolar AS sejam. Syarikat AI itu membayar 12.50 dolar sejam kepada syarikat perantara. Syarikat itu berkata wang itu juga membayar kos lain. Sebuah akhbar bercakap dengan 36 orang pekerja di Filipina. Hampir semua berkata sebahagian upah lewat, dipotong atau hilang. Platform mereka berkata perkara ini jarang berlaku. Laporan ini tentang sesetengah pekerja, bukan semua."
       },
       {
-        "heading": "Soalan lama tentang kerja yang adil",
-        "text": "Kerja yang tidak adil bukan perkara baharu. Pada tahun 1800-an, orang di England mula memanggil kerja yang sangat berat dan bergaji sangat rendah sebagai “sweating” (memerah keringat), dan kemudian menyebut tentang “sweatshop”, atau kilang peluh. Hari ini, sesetengah orang memanggil kerja melabel dalam talian sebagai “kilang peluh digital”. Seperti pakaian, AI mempunyai rantaian bekalan yang panjang, dan pengguna jarang melihat orang di sebaliknya. Pada Julai 2023, penyelidik Oxford menilai 15 platform kerja dalam talian, sebahagiannya menjual kerja data AI. Mereka menyemak bayaran, keadaan kerja, kontrak, pengurusan dan suara untuk pekerja. Tiada satu pun yang memenuhi piawaian asas mereka; yang terbaik mendapat 5 daripada 10. Tetapi platform itu berbeza-beza: sesetengahnya mengubah peraturan selepas penyelidik bertanya, contohnya dengan menetapkan gaji minimum.",
-        "simpler": "Kerja yang tidak adil bukan perkara baharu. Pada tahun 1800-an, orang di England memanggil kerja bergaji sangat rendah sebagai “sweating” (memerah keringat). Kemudian datang perkataan “sweatshop”, atau kilang peluh. AI mempunyai rantaian bekalan yang panjang, seperti pakaian. Pada tahun 2023, penyelidik di Oxford menyemak 15 laman web kerja. Sesetengahnya menjual kerja AI. Mereka menyemak bayaran, keselamatan, kontrak dan suara untuk pekerja. Tiada satu pun yang memenuhi semua peraturan asas. Tetapi semuanya tidak sama. Sesetengahnya mengubah peraturan selepas kajian itu."
+        "heading": "Corak lama, dan kajian baharu",
+        "text": "Bayaran rendah bagi setiap cebisan kerja yang kecil bukan perkara baharu. Pada tahun 1800-an, orang di England memanggil kerja yang berat dan bergaji sangat rendah sebagai “sweating” (memerah keringat), dan kemudian menyebut tentang “sweatshop”, atau kilang peluh. Pekerja dan pembaharu mendesak supaya keadaan berubah. Pada tahun 1909, satu undang-undang British menetapkan gaji minimum dalam empat bidang kerja, seperti menjahit pakaian dan membuat rantai. Pada tahun 2023, penyelidik di Universiti Oxford menyemak 15 platform kerja dalam talian. Sesetengahnya menjual kerja data AI. Penyelidik itu meneliti bayaran, keadaan kerja, kontrak, pengurusan dan suara untuk pekerja. Tiada satu pun yang memenuhi piawaian asas mereka, dan yang terbaik mendapat 5 daripada 10. Mereka juga bertanya kepada 250 orang yang melakukan tugas kecil dalam talian tentang kerja mereka. Secara purata, pekerja ini memperoleh kira-kira 2.15 dolar AS sejam. Lebih daripada suku masa mereka tidak dibayar, seperti masa untuk mencari tugas. Selepas kajian itu, sesetengah platform mengubah peraturan mereka, contohnya dengan menetapkan gaji minimum.",
+        "simpler": "Bayaran yang sangat rendah bukan perkara baharu. Pada tahun 1800-an, orang di England memanggilnya “sweating” (memerah keringat). Kemudian datang perkataan “sweatshop”, atau kilang peluh. Pekerja mendesak supaya keadaan berubah. Pada tahun 1909, satu undang-undang British menetapkan gaji minimum dalam empat jenis kerja. Pada tahun 2023, penyelidik Oxford menyemak 15 platform kerja. Sesetengahnya menjual kerja AI. Tiada satu pun yang memenuhi semua peraturan asas mereka. Mereka juga bertanya kepada 250 orang pekerja tentang bayaran mereka. Secara purata, mereka mendapat kira-kira 2.15 dolar AS sejam. Banyak masa mereka tidak dibayar. Sesetengah platform mengubah peraturan selepas kajian itu."
       }
     ],
     "glossary": [
@@ -126,9 +64,14 @@
         "example": "Tomas ialah moderator untuk alat Ask Me."
       },
       {
-        "word": "upah",
-        "definition": "Wang yang dibayar kepada seseorang untuk kerjanya.",
-        "example": "Sesetengah pekerja di Filipina berkata upah mereka lewat."
+        "word": "rantaian bekalan",
+        "definition": "Semua orang dan tempat yang membantu membuat sesuatu barangan, langkah demi langkah.",
+        "example": "Amara, Tomas dan Sami semuanya sebahagian daripada rantaian bekalan alat Ask Me."
+      },
+      {
+        "word": "platform",
+        "definition": "Laman web atau aplikasi tempat orang mencari kerja, membeli barang atau berkongsi sesuatu.",
+        "example": "Amara mencari tugasnya di sebuah platform kerja dalam talian."
       },
       {
         "word": "kilang peluh",
@@ -136,38 +79,21 @@
         "example": "Sesetengah orang memanggil kerja melabel dalam talian sebagai “kilang peluh digital”."
       },
       {
-        "word": "rantaian bekalan",
-        "definition": "Semua orang dan tempat yang membantu membuat sesuatu barangan, langkah demi langkah.",
-        "example": "Amara, Tomas dan Sami semuanya sebahagian daripada rantaian bekalan alat Ask Me."
+        "word": "gaji minimum",
+        "definition": "Bayaran paling rendah bagi sejam kerja yang dibenarkan oleh undang-undang atau peraturan.",
+        "example": "Pada tahun 1909, satu undang-undang British menetapkan gaji minimum untuk pembuat rantai."
       }
     ],
     "checks": [
       {
-        "question": "Apakah yang dilakukan oleh moderator seperti Tomas?",
+        "question": "Apakah yang ditunjukkan oleh bayaran dalam laporan dari Kenya?",
         "options": [
           {
-            "text": "Memperkenalkan alat baharu itu kepada seluruh dunia",
-            "feedback": "Belum tepat. Itu Rosa, pemimpin syarikat. Baca tentang moderator dalam petikan pertama."
-          },
-          {
-            "text": "Menyemak siaran yang melanggar peraturan",
-            "feedback": "Betul. Moderator menyemak siaran yang berbahaya, supaya alat itu belajar apa yang tidak boleh ditunjukkannya."
-          },
-          {
-            "text": "Mereka bentuk cara alat itu belajar",
-            "feedback": "Belum tepat. Itu Sami, jurutera. Baca tentang moderator dalam petikan pertama."
-          }
-        ]
-      },
-      {
-        "question": "Dalam laporan dari Kenya pada Januari 2023, apakah yang ditunjukkan oleh bayaran itu?",
-        "options": [
-          {
-            "text": "Pekerja mendapat jauh lebih sedikit daripada syarikat perantara",
+            "text": "Pekerja mendapat jauh lebih sedikit daripada bayaran kepada syarikat perantara",
             "feedback": "Betul. Pekerja membawa pulang kurang daripada 2 dolar sejam. Syarikat perantara mendapat 12.50 dolar sejam untuk kerja mereka, walaupun syarikat itu berkata wang ini juga membayar kos lain."
           },
           {
-            "text": "Pekerja mendapat lebih banyak wang daripada yang dibayar oleh syarikat AI untuk mereka",
+            "text": "Pekerja mendapat lebih banyak wang daripada yang dibayar oleh syarikat AI kepada syarikat perantara untuk mereka",
             "feedback": "Belum tepat. Pekerja mendapat jauh lebih sedikit daripada yang dibayar oleh syarikat AI. Lihat nombor dalam petikan kedua."
           },
           {
@@ -175,38 +101,22 @@
             "feedback": "Belum tepat. Bayarannya sangat berbeza pada setiap langkah. Lihat nombor dalam petikan kedua."
           }
         ]
-      },
-      {
-        "question": "Pilih seorang pekerja tersembunyi daripada alat Ask Me. Apakah yang kamu mahu tanya kepadanya?",
-        "placeholder": "Saya akan bertanya kepada ___ ... kerana ..."
       }
     ]
   },
   "write": {
-    "prompt": "Pilih seorang pekerja tersembunyi di sebalik alat Ask Me. Terangkan bagaimana dia membantu alat itu, mengapa pengguna tidak melihatnya, dan satu perkara yang akan menjadikan kerjanya lebih adil.",
+    "prompt": "Pilih satu pekerjaan tersembunyi daripada pelajaran ini. Terangkan bagaimana pekerjaan itu membantu alat AI, apa yang ditemui oleh satu laporan tentang orang yang melakukannya, dan satu perubahan yang pada pendapat kamu akan menjadikan kerja itu lebih adil.",
     "sentenceStarters": [
       "Saya memilih ...",
-      "Dia membantu alat itu dengan ...",
-      "Pengguna tidak melihatnya kerana ...",
-      "Kerjanya mungkin tidak adil kerana ...",
-      "Satu perkara yang akan menjadikannya lebih adil ialah ..."
+      "Pekerjaan ini membantu alat itu dengan ...",
+      "Satu laporan mendapati bahawa ...",
+      "Satu perubahan yang boleh menjadikannya lebih adil ialah ..."
     ],
-    "planningBoxes": [
-      "Idea utama saya",
-      "Bukti daripada pelajaran",
-      "Mengapa ini penting",
-      "Soalan yang masih saya ada"
-    ],
-    "selfCheck": [
-      "Saya menamakan seorang pekerja tersembunyi dan cara dia membantu alat itu.",
-      "Saya menyatakan mengapa pengguna tidak melihatnya.",
-      "Saya memberi satu perkara yang akan menjadikan kerjanya lebih adil."
-    ],
-    "example": "Saya memilih Amara, pelabel foto. Dia membantu alat itu dengan menambah label pada beribu-ribu foto. Kemudian alat itu belajar rupa bas atau pokok. Pengguna tidak melihatnya kerana dia bekerja dalam talian, jauh dari syarikat itu. Namanya tidak pernah ditunjukkan. Kerjanya mungkin tidak adil kerana dia mendapat beberapa sen bagi setiap tugas. Kadang-kadang bayarannya lewat. Satu perkara yang akan menjadikannya lebih adil ialah upah yang adil, dibayar tepat pada masanya, setiap kali."
+    "example": "Saya memilih kerja melabel. Pelabel menambah satu perkataan pada setiap contoh. Kemudian alat itu boleh belajar apa yang ditunjukkan oleh sesuatu foto atau cebisan teks. Satu laporan dari Kenya pada tahun 2023 adalah tentang pekerja yang melabel teks yang berbahaya. Mereka membawa pulang kurang daripada 2 dolar sejam. Syarikat perantara mendapat 12.50 dolar sejam untuk kerja mereka, tetapi syarikat itu berkata wang ini juga membayar kos lain. Satu perubahan yang boleh menjadikannya lebih adil ialah gaji minimum di setiap platform kerja, dibayar tepat pada masanya."
   },
   "speak": {
-    "partnerTask": "Rakan kamu menamakan seorang di sebalik alat Ask Me. Kamu menyatakan sama ada pengguna melihat orang itu, dan satu perkara yang akan menjadikan kerjanya adil. Kemudian bertukar giliran.",
-    "independentTask": "Sebut dengan kuat apa itu rantaian bekalan. Kemudian namakan dua pekerjaan tersembunyi di sebalik sesuatu alat AI."
+    "partnerTask": "Rakan kamu bertanya bagaimana kerja data dalam talian sama seperti “sweating” pada tahun 1800-an. Kamu memberi satu cara kedua-duanya sama dan satu cara kedua-duanya berbeza. Kemudian bertukar giliran.",
+    "independentTask": "Sebut dengan kuat apa itu rantaian bekalan. Kemudian ikuti rantaian di sebalik sesuatu alat AI, daripada seorang pekerja hingga orang yang menggunakan alat itu."
   },
   "watch": {
     "why": "Dalam temu bual berita yang tenang selama enam minit, seorang pakar menerangkan apa yang dilakukan oleh pekerja data, di mana mereka bekerja dan mengapa bayaran dan layanan terhadap mereka penting.",
@@ -223,32 +133,29 @@
   "reflect": {
     "prompts": [
       {
-        "text": "Satu pekerjaan tersembunyi di sebalik AI ialah ... Ia penting kerana ..."
+        "text": "Sesuatu yang saya tidak tahu tentang orang yang membuat alat AI ialah ..."
       },
       {
         "text": "Satu soalan yang akan saya tanya kepada syarikat AI ialah ..."
       }
     ],
-    "completionMessage": "Kamu telah menamatkan Pelajaran 5. Kamu telah menemui orang tersembunyi di sebalik sebuah alat AI dan bertanya sama ada kerja mereka adil."
+    "completionMessage": "Kamu telah menamatkan Pelajaran 5. Kamu telah mengikuti rantaian bekalan di sebalik sebuah alat AI dan mengetahui apa yang ditemui oleh laporan tentang pekerja tersembunyinya."
   },
   "visual": {
-    "alt": "Rantaian bekalan daripada pelabel, moderator dan penulis kepada syarikat dan pengguna. Sehelai tirai menyembunyikan tiga yang pertama daripada pengguna."
+    "alt": "Rantaian bekalan daripada pekerja kepada syarikat perantara, syarikat itu dan pengguna. Sehelai tirai menyembunyikan pekerja dan syarikat perantara. Dalam satu laporan dari Kenya pada tahun 2023, syarikat itu membayar syarikat perantara 12.50 dolar AS sejam dan pekerja membawa pulang kira-kira 1.32 hingga 2 dolar."
   },
   "sources": [
     {
       "label": "TIME (18 Januari 2023): OpenAI used Kenyan workers on less than $2 per hour to make ChatGPT less toxic (pekerja di Kenya yang dibayar kurang daripada $2 sejam)"
     },
     {
-      "label": "The Washington Post (28 Ogos 2023): Behind the AI boom, an army of overseas workers in “digital sweatshops” (36 orang pekerja di Filipina)"
+      "label": "The Washington Post (Ogos 2023): Behind the AI boom, an army of overseas workers in “digital sweatshops” (36 orang pekerja di Filipina)"
     },
     {
-      "label": "Fairwork, Oxford Internet Institute (Julai 2023): Fairwork Cloudwork Ratings 2023, work in the planetary labour market (15 platform)"
+      "label": "Fairwork, Oxford Internet Institute (Julai 2023): Fairwork Cloudwork Ratings 2023, work in the planetary labour market (15 platform; tinjauan terhadap 752 orang pekerja)"
     },
     {
-      "label": "The Washington Post, melalui Anchorage Daily News (16 Julai 2023): AI learned from their work. Now they want compensation. (penulis dan artis yang mahukan pampasan)"
-    },
-    {
-      "label": "Britannica: Sweatshop (kilang peluh)"
+      "label": "Modern Records Centre, University of Warwick: the Trade Boards Act 1909 (gaji minimum dalam empat bidang kerja yang bergaji sangat rendah, atau “sweated”)"
     }
   ],
   "sensitiveNotes": [
@@ -256,7 +163,7 @@
     "Kerja dan wang: ramai pelajar tidak boleh bekerja secara sah, dan orang yang rapat dengan mereka mungkin melakukan kerja bergaji rendah, tidak formal atau dalam talian. Jangan sekali-kali bertanya tentang pekerjaan, gaji atau wang pelajar atau keluarga mereka. Kekalkan perbincangan pada pekerja rekaan Ask Me dan fakta yang dilaporkan. Perkataan seperti “kilang peluh” dan “bayaran yang tidak adil” mungkin terasa dekat dengan kehidupan mereka; biarkan pelajar bercakap jika mereka mahu, tanpa mendesak."
   ],
   "educatorNotes": [
-    "Fakta ini bertarikh dan skopnya penting. TIME (18 Januari 2023): kira-kira tiga dozen pekerja di sebuah firma penyumberan luar di Kenya melabel teks yang berbahaya untuk penapis keselamatan dari November 2021 hingga awal 2022 dan membawa pulang kira-kira $1.32 hingga $2 sejam; kontrak syarikat AI itu membayar firma tersebut $12.50 sejam. Firma itu berkata kadar tersebut merangkumi semua kosnya (pejabat, pengurus, faedah) dan pekerja memperoleh $1.46 hingga $3.74 sejam selepas cukai. The Washington Post (28 Ogos 2023): 34 daripada 36 pekerja bebas di Filipina berkata bayaran mereka telah ditangguhkan, dikurangkan atau dibatalkan; platform itu berkata kelewatan “amat jarang berlaku” dan ia membayar gaji sara hidup. Cloudwork Ratings oleh Fairwork (Oxford Internet Institute, Julai 2023) memberi markah kepada 15 platform kerja dalam talian, bukan semuanya kerja AI, berdasarkan bayaran yang adil, keadaan kerja, kontrak, pengurusan dan perwakilan: markah antara 0 hingga 5 daripada 10, tiada satu pun yang memenuhi piawaian minimumnya, dan empat platform membuat 17 perubahan selepas cadangan Fairwork (dua menerima pakai dasar gaji minimum). Laporan ini menghuraikan pekerja, firma dan platform tertentu, bukan setiap pekerjaan AI. Syarikat-syarikat itu (OpenAI, Sama, Scale AI dan platform Remotasks miliknya) hanya dinamakan dalam sumber dan di sini, seperti yang diminta oleh spesifikasi Digital World. Kerja penulis dan artis: pada tahun 2023 sesetengah penulis dan artis menyaman syarikat AI atau meminta persetujuan, pengiktirafan dan bayaran. Syarikat-syarikat tidak semuanya mengambil satu pendirian: ada yang berhujah bahawa melatih dengan bahan awam adalah sah (fair use di Amerika Syarikat), ada yang enggan mengulas, dan sebuah agensi berita memberi lesen arkibnya kepada sebuah syarikat AI (Anchorage Daily News, daripada The Washington Post, Julai 2023). Kes mahkamah telah berkembang sejak itu; semak perkembangan terkini sebelum mengajar bahagian itu, dan jangan beritahu pelajar bahawa semua karya kreatif diambil tanpa bertanya. Rekod dakwaan ada dalam content/courses/digital-world/claims/DW05.md.",
-    "Versi kertas aktiviti ini: tulis lapan pekerjaan itu pada kad dan susun ke dalam Dilihat oleh pengguna, Tersembunyi daripada pengguna dan Sukar dikatakan. Tiada markah; hargai sebab yang diberi. Seorang rakan boleh menambah contoh tempatan tentang barangan yang pembuatnya jauh daripada pembelinya, seperti pakaian."
+    "Fakta ini bertarikh dan skopnya penting; setiap laporan menghuraikan pekerja, firma, platform dan tahun tertentu, bukan setiap pekerjaan AI. Kenya: TIME (Billy Perrigo, 18 Januari 2023) melaporkan bahawa kira-kira tiga dozen pekerja di pejabat Nairobi sebuah firma penyumberan luar melabel teks yang berbahaya untuk penapis keselamatan dari November 2021 hingga awal 2022 dan membawa pulang kira-kira $1.32 hingga $2 sejam; kontrak syarikat AI itu membayar firma tersebut $12.50 sejam. Firma itu berkata kadar tersebut merangkumi semua kosnya (pejabat, gaji, faedah) dan pekerja memperoleh $1.46 hingga $3.74 sejam selepas cukai; sumber TIME mempertikaikannya. Filipina: The Washington Post (Rebecca Tan dan Regine Cabato, Ogos 2023) bercakap dengan 36 orang pekerja bebas, semasa dan dahulu, di sebuah platform; 34 orang berkata bayaran mereka telah ditangguhkan, dikurangkan atau dibatalkan, dan platform itu berkata kelewatan “amat jarang berlaku”. Syarikat-syarikat itu (OpenAI, Sama, Scale AI dan platform Remotasks miliknya) hanya dinamakan dalam sumber dan di sini, seperti yang diminta oleh spesifikasi Digital World. Kerja penulis dan artis: pada tahun 2023 sesetengah penulis dan artis menyaman syarikat AI atau menandatangani petisyen yang meminta persetujuan, pengiktirafan dan bayaran. Syarikat-syarikat tidak semuanya mengambil satu pendirian: ada yang berhujah bahawa melatih dengan bahan sedemikian adalah sah (fair use di Amerika Syarikat) atau berkata mereka menggunakan bahan berlesen dan awam, ada yang enggan mengulas, dan sebuah agensi berita memberi lesen arkibnya kepada sebuah syarikat AI (Anchorage Daily News, daripada The Washington Post, 16 Julai 2023). Kes mahkamah telah berkembang sejak itu; semak perkembangan terkini sebelum mengajar bahagian itu, dan jangan beritahu pelajar bahawa semua karya kreatif diambil tanpa bertanya. Rekod dakwaan ada dalam content/courses/digital-world/claims/DW05.md.",
+    "Cloudwork Ratings 2023 oleh Fairwork (Oxford Internet Institute, 20 Julai 2023) memberi markah kepada 15 platform kerja bebas dan kerja mikro dalam talian berdasarkan lima prinsip (bayaran yang adil, keadaan kerja, kontrak, pengurusan dan perwakilan); markah antara 0 hingga 5 daripada 10 (Comeup, Prolific dan Terawork tertinggi; Amazon Mechanical Turk, Freelancer, Microworkers dan Workana mendapat 0), dan tiada satu pun yang memenuhi piawaian minimumnya. Bukan semuanya menjual kerja AI; platform kerja mikro (Appen, Scale/Remotasks dan lain-lain) menjual kerja melabel data, penilaian model dan moderasi kandungan kepada syarikat AI. Tinjauannya (Februari hingga Mei 2023) mendapat maklum balas daripada 752 orang pekerja di 94 buah negara dan menyatakan bahawa ia tidak bertujuan untuk mewakili semua pekerja; 250 orang pekerja mikro dalam kalangan mereka (dari 51 buah negara) memperoleh purata $50.30 seminggu, yang dianggarkan oleh Fairwork sebagai kira-kira $2.15 sejam, dan 26.85% masa mereka di platform tidak dibayar (mencari tugas, ujian tanpa bayaran, memohon). Empat platform membuat 17 perubahan selepas cadangan Fairwork, dan dua menerima pakai dasar gaji minimum. Laporan itu sendiri menyatakan bahawa “precarious piece-rate work has a long legacy” (kerja tidak menentu yang dibayar mengikut tugas mempunyai sejarah yang panjang). Trade Boards Act 1909 menetapkan gaji minimum yang boleh dikuatkuasakan oleh undang-undang dalam pembuatan rantai, kemasan renda, pembuatan kotak kertas dan jahitan pakaian siap (Modern Records Centre, University of Warwick); perkataan “sweater” sudah digunakan di England menjelang tahun 1850 dan “sweating” tersebar pada tahun 1880-an (Britannica)."
   ]
 }

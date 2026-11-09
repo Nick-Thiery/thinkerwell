@@ -1,16 +1,7 @@
 {
   "title": "Siapakah yang membuat peraturan untuk AI?",
-  "essentialQuestion": "Siapakah yang patut menentukan cara AI digunakan, dan peraturan apakah yang menjadikannya adil?",
-  "learningGoal": "Bandingkan cara kumpulan yang berbeza membuat peraturan untuk AI, dan syorkan cara sesuatu penggunaan AI patut dikendalikan, secara berasingan daripada apa yang dikatakan oleh satu undang-undang.",
-  "warmUp": {
-    "question": "Pada pendapat kamu, siapakah yang patut membuat peraturan untuk AI?",
-    "options": [
-      "Kerajaan",
-      "Syarikat yang membuatnya",
-      "Orang yang terkesan olehnya",
-      "Tidak pasti"
-    ]
-  },
+  "essentialQuestion": "Siapakah yang membuat peraturan untuk AI, dan siapakah yang patut bersuara?",
+  "learningGoal": "Terangkan perbezaan antara undang-undang dengan garis panduan untuk AI, bandingkan panduan ASEAN dengan undang-undang AI Kesatuan Eropah, dan berikan syor kamu sendiri, secara berasingan daripada apa yang dikatakan oleh satu undang-undang.",
   "evidence": {
     "label": "Contoh rekaan yang dibuat untuk pelajaran ini.",
     "question": "Apakah yang dimahukan oleh setiap orang? Suara siapakah yang mungkin tidak didengar?",
@@ -31,10 +22,6 @@
             "“Jika alat AI memeriksa ujian kami, kami mahu seseorang menyemaknya. Kami mahu bersuara dalam membuat peraturan.”"
           ],
           [
-            "Seorang jururawat di klinik",
-            "“Alat boleh membantu kami melihat siapa yang perlu dibantu dahulu. Tetapi jururawat mesti sentiasa menyemaknya.”"
-          ],
-          [
             "Seorang jiran yang lebih tua",
             "“Sesetengah daripada kami tidak menggunakan telefon. Jangan jadikan AI satu-satunya cara untuk mendapat bantuan daripada majlis.”"
           ],
@@ -50,75 +37,22 @@
       }
     ]
   },
-  "activity": {
-    "title": "Bantu majlis Hillford",
-    "instructions": "Majlis Hillford ada beberapa idea untuk menggunakan AI. Letakkan setiap idea dalam kumpulan yang kamu syorkan. Tiada markah, dan lebih daripada satu jawapan boleh munasabah. Selepas kamu meletakkan satu idea, kamu melihat satu jawapan yang mungkin dan satu sebab. Kemudian, sebagai perkara berasingan, kamu melihat apa yang dikatakan oleh undang-undang AI Kesatuan Eropah (EU).",
-    "groups": [
-      {
-        "label": "Patut diharamkan"
-      },
-      {
-        "label": "Dibenarkan dengan peraturan ketat"
-      },
-      {
-        "label": "Dibenarkan"
-      }
-    ],
-    "items": [
-      {
-        "text": "Satu alat memberi setiap orang skor “warganegara yang baik”. Skor itu menentukan siapa yang mendapat bantuan.",
-        "feedback": "Skor seperti ini boleh tidak adil kepada seluruh kumpulan. Di EU, undang-undang mengharamkan skor seperti ini."
-      },
-      {
-        "text": "Kamera di dalam kelas membaca wajah pelajar untuk meneka perasaan mereka.",
-        "feedback": "Perasaan ialah hal peribadi, dan tekaan boleh silap. Ada yang berkata ia boleh mengesan pelajar yang memerlukan bantuan. Di EU, undang-undang mengharamkannya di sekolah, kecuali atas sebab kesihatan atau keselamatan."
-      },
-      {
-        "text": "Kamera polis di pasar mengecam setiap wajah, secara langsung, sepanjang hari.",
-        "feedback": "Ia memerhati semua orang, sepanjang hari. Orang lain berkata ia boleh menangkap pencuri, jadi pendapat orang berbeza. Di EU, undang-undang mengharamkannya bagi polis, kecuali dalam beberapa kes yang serius, seperti mencari orang yang hilang."
-      },
-      {
-        "text": "Satu alat memeriksa kertas peperiksaan pelajar.",
-        "feedback": "Markah yang tidak betul boleh mengubah masa depan pelajar, jadi seseorang patut menyemaknya. Di EU, undang-undang menganggapnya berisiko tinggi. Peraturan ketatnya untuk perkara ini bermula pada Disember 2027."
-      },
-      {
-        "text": "Satu alat membantu klinik melihat pesakit mana yang perlu dibantu dahulu.",
-        "feedback": "Kesilapan boleh menjejaskan kesihatan seseorang, jadi jururawat atau doktor patut menyemaknya. Di EU, undang-undang menganggap banyak alat kesihatan sebagai berisiko tinggi."
-      },
-      {
-        "text": "Satu alat mengisih laporan tentang lampu jalan yang rosak. Ia menghantar setiap laporan kepada pasukan yang betul.",
-        "feedback": "Ia boleh membantu laporan sampai kepada pasukan yang betul dengan lebih cepat, dan manusia masih membaiki lampu itu. Alat sebenar seperti ini digunakan di Thailand. Peraturan ketat juga boleh munasabah, jika alat itu menentukan masalah siapa yang didahulukan."
-      },
-      {
-        "text": "Chatbot di laman web majlis menjawab soalan tentang waktu bas.",
-        "feedback": "Ia membantu orang pada waktu malam, jika mereka tahu ia mesin. Di EU, undang-undang menyatakan bahawa orang mesti diberitahu bahawa ia mesin."
-      },
-      {
-        "text": "Satu penapis menghalang mesej sampah daripada sampai kepada majlis.",
-        "feedback": "Risikonya rendah dan ia menjimatkan masa. Di EU, undang-undang AI tiada peraturan khas untuknya. Tetapi undang-undang lain, seperti undang-undang privasi, masih terpakai."
-      },
-      {
-        "text": "Satu permainan di perpustakaan menggunakan AI untuk menggerakkan wataknya.",
-        "feedback": "Risikonya rendah dan hanya untuk suka-suka. Di EU, undang-undang AI tiada peraturan khas untuk permainan seperti ini."
-      }
-    ]
-  },
   "read": {
     "sections": [
       {
-        "heading": "Banyak kumpulan membuat peraturan untuk AI",
-        "text": "Teknologi baharu membawa persoalan tentang siapa yang dibantunya, siapa yang mungkin dirugikannya dan siapa yang membuat keputusan. Di Hillford, bandar rekaan, majlis bandar mahu menggunakan AI, jadi majlis mengadakan mesyuarat dahulu. Seorang pemilik kedai, pelajar, seorang jururawat, seorang jiran yang lebih tua dan seorang penduduk baharu yang tidak boleh mengundi semuanya memberi pandangan. Di dunia sebenar, banyak kumpulan membuat peraturan untuk AI. Kerajaan membuat undang-undang, yang mesti dipatuhi oleh semua orang. Syarikat menulis peraturan untuk alat mereka sendiri. Kumpulan negara bersetuju tentang garis panduan, iaitu nasihat yang boleh dipilih oleh negara untuk digunakan. Penduduk, termasuk anak muda, juga boleh berkongsi idea mereka.",
-        "simpler": "Siapakah yang dibantu atau dirugikan oleh alat baharu? Siapakah yang membuat keputusan? Di Hillford, bandar rekaan, majlis mengadakan mesyuarat tentang AI. Ramai penduduk berkongsi pandangan, termasuk sesetengah yang tidak boleh mengundi. Kerajaan membuat undang-undang. Semua orang mesti mematuhi undang-undang. Syarikat membuat peraturan untuk alat mereka. Kumpulan negara bersetuju tentang garis panduan. Garis panduan ialah nasihat. Anak muda juga boleh berkongsi idea."
+        "heading": "Siapakah yang membuat peraturan?",
+        "text": "Teknologi baharu menimbulkan persoalan tentang siapa yang dibantunya, siapa yang mungkin dirugikannya dan siapa yang membuat keputusan. Kerajaan atau parlimen membuat undang-undang, yang mesti dipatuhi oleh semua orang, dan mahkamah boleh bertindak apabila undang-undang dilanggar. Syarikat menulis peraturan untuk alat mereka sendiri. Kumpulan negara boleh bersetuju tentang garis panduan, iaitu nasihat yang boleh dipilih oleh setiap negara untuk digunakan. Pada tahun 2021, kesemua 193 negara anggota UNESCO menerima pakai satu garis panduan untuk AI. Penduduk, termasuk anak muda, juga boleh mengambil bahagian, dengan berkongsi pandangan mereka apabila pemimpin bertanya. Di Hillford, bandar rekaan, majlis bandar mengadakan mesyuarat sebelum menggunakan AI. Pelajar, seorang jiran yang lebih tua dan seorang penduduk baharu yang belum boleh mengundi semuanya bercakap.",
+        "simpler": "Siapakah yang dibantu atau dirugikan oleh alat baharu? Siapakah yang membuat keputusan? Kerajaan membuat undang-undang. Semua orang mesti mematuhi undang-undang. Syarikat membuat peraturan untuk alat mereka. Kumpulan negara bersetuju tentang garis panduan. Garis panduan ialah nasihat. Negara boleh memilih untuk menggunakannya. Pada tahun 2021, 193 negara bersetuju tentang satu garis panduan untuk AI di UNESCO. Anak muda juga boleh berkongsi idea. Di Hillford, bandar rekaan, majlis mengadakan mesyuarat tentang AI. Ramai orang bercakap, termasuk seorang penduduk yang belum boleh mengundi."
       },
       {
-        "heading": "Garis panduan, undang-undang dan tahap risiko",
-        "text": "Pada tahun 2021, kesemua 193 negara anggota UNESCO menerima pakai perjanjian global pertama tentang etika AI, yang menyatakan bahawa AI patut melindungi hak asasi manusia dan kekal di bawah kawalan manusia. Pada tahun 2024, negara-negara ASEAN di Asia Tenggara berkongsi satu panduan untuk AI, dengan idea seperti keadilan, privasi dan keselamatan. Kedua-duanya ialah garis panduan. Kesatuan Eropah (EU) membuat satu undang-undang yang berkuat kuasa pada Ogos 2024, dengan bahagian-bahagiannya bermula pada tarikh yang berbeza. Undang-undang itu mengasingkan penggunaan AI mengikut risiko, iaitu sejauh mana bahaya yang boleh ditimbulkannya. Sesetengah penggunaan diharamkan, seperti skor yang melayan orang secara tidak adil. Sesetengahnya berisiko tinggi, seperti memeriksa kertas peperiksaan, jadi semakan yang ketat diperlukan. Kebanyakan penggunaan, seperti penapis spam, tiada peraturan AI yang khas, tetapi undang-undang lain, seperti undang-undang privasi, masih terpakai.",
-        "simpler": "Pada tahun 2021, 193 negara bersetuju tentang idea untuk AI di UNESCO. AI patut melindungi hak asasi manusia. Manusia patut terus memegang kawalan. Pada tahun 2024, negara-negara di Asia Tenggara berkongsi satu panduan untuk AI. Ini ialah garis panduan. Kesatuan Eropah (EU) membuat undang-undang pada tahun 2024. Bahagiannya bermula pada masa yang berbeza. Ia mengasingkan AI mengikut risiko. Risiko bermaksud sejauh mana bahaya yang boleh ditimbulkannya. Sesetengah penggunaan diharamkan, seperti skor yang tidak adil. Sesetengahnya berisiko tinggi, seperti memeriksa peperiksaan. Kebanyakan penggunaan tiada peraturan AI yang khas. Tetapi undang-undang lain, seperti undang-undang privasi, masih terpakai."
+        "heading": "Dua pilihan serantau: panduan dan undang-undang",
+        "text": "Pada Februari 2024, menteri digital ASEAN, iaitu kumpulan negara di Asia Tenggara, berkongsi Panduan ASEAN tentang Tadbir Urus dan Etika AI. Panduan itu menggariskan tujuh idea, seperti keadilan, privasi, keselamatan dan mengutamakan manusia. Ia bersifat sukarela, dan setiap negara mengekalkan undang-undangnya sendiri. Ia juga menyatakan bahawa negara anggotanya berada pada tahap yang berbeza dalam teknologi digital. Kesatuan Eropah (EU) memilih undang-undang. Akta AI-nya berkuat kuasa pada Ogos 2024, dengan bahagian-bahagiannya bermula pada tarikh yang berbeza. Akta itu mengasingkan penggunaan AI mengikut risiko. Risiko bermaksud sejauh mana bahaya yang boleh ditimbulkannya. Sejak Februari 2025, sesetengah penggunaan diharamkan, seperti skor yang melayan orang secara tidak adil. Sejak Ogos 2026, chatbot mesti menjelaskan bahawa ia mesin. Semakan yang ketat bagi penggunaan berisiko tinggi, seperti memeriksa kertas peperiksaan, bermula pada Disember 2027. Kebanyakan penggunaan, seperti penapis spam, tiada peraturan AI yang khas, tetapi undang-undang lain, seperti undang-undang privasi, masih terpakai.",
+        "simpler": "Setiap rantau memilih cara yang berbeza. Pada tahun 2024, negara-negara di Asia Tenggara berkongsi panduan ASEAN untuk AI. Panduan itu menyenaraikan idea seperti keadilan, privasi dan keselamatan. Ia sukarela. Setiap negara mengekalkan undang-undangnya sendiri. Kesatuan Eropah (EU) membuat undang-undang pada tahun 2024. Bahagiannya bermula pada masa yang berbeza. Ia mengasingkan AI mengikut risiko. Risiko bermaksud sejauh mana bahaya yang boleh ditimbulkannya. Sejak tahun 2025, sesetengah penggunaan diharamkan, seperti skor yang tidak adil. Sejak tahun 2026, alat sembang mesti memberitahu bahawa ia mesin. Semakan yang ketat bagi pemeriksaan kertas peperiksaan bermula pada tahun 2027. Kebanyakan penggunaan tiada peraturan AI yang khas. Tetapi undang-undang lain, seperti undang-undang privasi, masih terpakai."
       },
       {
-        "heading": "Perkhidmatan sebenar, dan pandangan kamu sendiri",
-        "text": "Di Thailand, orang melaporkan masalah seperti jalan rosak, banjir atau lampu jalan di Traffy Fondue, sebuah platform awam yang dibina oleh sebuah agensi sains kebangsaan. AI-nya mengisih setiap laporan dan menghantarnya ke pejabat yang betul, tempat manusia masih memutuskan tindakan dan membaiki masalah itu. Pembuatnya berkata platform itu menerima lebih daripada 940,000 laporan dalam masa dua tahun. Itu menunjukkan ramai orang menggunakannya, bukan sejauh mana setiap masalah diselesaikan dengan baik. Apa yang dikatakan oleh undang-undang ialah satu jawapan. Syor kamu sendiri boleh berbeza, jika kamu memberi sebab.",
-        "simpler": "Di Thailand, orang melaporkan masalah seperti jalan rosak di Traffy Fondue, sebuah alat awam. AI-nya mengisih setiap laporan dan menghantarnya ke pejabat yang betul. Orang di sana masih membaiki masalah itu. Pembuatnya berkata ia menerima lebih daripada 940,000 laporan dalam dua tahun. Itu menunjukkan orang menggunakannya, bukan sejauh mana masalah dibaiki. Apa yang dikatakan oleh undang-undang ialah satu jawapan. Pandangan kamu boleh berbeza, dengan sebab."
+        "heading": "Peraturan untuk AI yang berguna, dan pandangan kamu sendiri",
+        "text": "Peraturan bukan hanya tentang menghalang bahaya. Panduan ASEAN menyatakan bahawa salah satu matlamatnya ialah membina kepercayaan, supaya orang dan kumpulan boleh menggunakan AI dengan berhati-hati. Di Thailand, Traffy Fondue, sebuah perkhidmatan awam yang dibina oleh sebuah agensi sains kebangsaan, menggunakan AI untuk mengisih laporan penduduk tentang masalah seperti banjir. Ia menghantar setiap laporan ke pejabat yang betul, tempat manusia memutuskan tindakan yang perlu diambil. Peraturan tentang privasi, dan tentang siapa yang menyemak kerja AI, bertujuan membantu orang mempercayai alat seperti ini. Asingkan dua soalan. “Apakah yang dikatakan oleh undang-undang EU tentang pemeriksaan kertas peperiksaan?” ada jawapan fakta. “Apakah yang patut dilakukan oleh Hillford?” meminta syor kamu, dan syor kamu boleh berbeza daripada mana-mana undang-undang, jika kamu memberi sebab.",
+        "simpler": "Peraturan bukan hanya tentang menghalang bahaya. Panduan ASEAN mahu orang mempercayai AI, supaya mereka boleh menggunakannya dengan baik. Di Thailand, Traffy Fondue ialah perkhidmatan awam. AI-nya mengisih laporan daripada penduduk tentang masalah seperti banjir. Ia menghantar setiap laporan ke pejabat yang betul. Orang di sana memutuskan apa yang perlu dilakukan. Peraturan tentang privasi dan semakan boleh membantu orang mempercayainya. Apakah yang dikatakan oleh undang-undang EU? Itu ada jawapan fakta. Apakah yang patut dilakukan oleh Hillford? Itu pandangan kamu. Ia boleh berbeza daripada undang-undang, jika kamu memberi sebab."
       }
     ],
     "glossary": [
@@ -130,7 +64,7 @@
       {
         "word": "garis panduan",
         "definition": "Nasihat tentang cara melakukan sesuatu. Orang boleh memilih untuk mengikutinya.",
-        "example": "Panduan daripada negara-negara di Asia Tenggara ialah garis panduan, bukan undang-undang."
+        "example": "Panduan ASEAN ialah garis panduan, bukan undang-undang."
       },
       {
         "word": "penduduk",
@@ -138,31 +72,31 @@
         "example": "Setiap penduduk Hillford dijemput ke mesyuarat itu, termasuk mereka yang tidak boleh mengundi."
       },
       {
+        "word": "sukarela",
+        "definition": "Dilakukan kerana kamu memilih untuk melakukannya, bukan kerana kamu mesti.",
+        "example": "Penggunaan panduan ASEAN adalah sukarela."
+      },
+      {
         "word": "risiko",
         "definition": "Kemungkinan sesuatu yang buruk boleh berlaku.",
         "example": "Alat yang memeriksa kertas peperiksaan berisiko tinggi."
-      },
-      {
-        "word": "hak",
-        "definition": "Perkara yang patut dimiliki oleh setiap orang atau bebas dilakukannya.",
-        "example": "Privasi ialah salah satu hak yang dilindungi oleh peraturan untuk AI."
       }
     ],
     "checks": [
       {
-        "question": "Bagaimanakah undang-undang AI Kesatuan Eropah mengasingkan penggunaan AI?",
+        "question": "Panduan ASEAN tentang AI bersifat sukarela. Apakah maksudnya?",
         "options": [
           {
-            "text": "Mengikut betapa baharunya alat itu",
-            "feedback": "Belum tepat. Usia alat itu tidak penting. Baca petikan kedua."
+            "text": "Setiap negara mesti mematuhinya mengikut undang-undang",
+            "feedback": "Belum tepat. Itu ialah undang-undang. Baca petikan kedua."
           },
           {
-            "text": "Mengikut syarikat yang membuatnya",
-            "feedback": "Belum tepat. Peraturan yang sama terpakai kepada setiap syarikat. Baca petikan kedua."
+            "text": "Hanya syarikat di luar Asia yang menggunakannya",
+            "feedback": "Belum tepat. Ia ditulis untuk Asia Tenggara. Baca petikan kedua."
           },
           {
-            "text": "Mengikut sejauh mana bahaya yang boleh ditimbulkannya",
-            "feedback": "Betul. Undang-undang itu mengasingkan AI mengikut risiko. Penggunaan yang boleh menimbulkan bahaya paling besar diharamkan."
+            "text": "Negara dan syarikat boleh memilih untuk menggunakannya",
+            "feedback": "Betul. Ia garis panduan, dan setiap negara mengekalkan undang-undangnya sendiri."
           }
         ]
       },
@@ -182,38 +116,21 @@
             "feedback": "Belum tepat. Penggunaan yang diharamkan ialah perkara seperti skor yang tidak adil. Baca petikan kedua."
           }
         ]
-      },
-      {
-        "question": "Siapakah yang patut bersuara dalam membuat peraturan untuk AI dalam sesebuah komuniti? Mengapa?",
-        "placeholder": "Saya fikir ___ patut bersuara, kerana ..."
       }
     ]
   },
   "write": {
-    "prompt": "Pilih satu idea Hillford untuk AI. Nyatakan apa yang kamu syorkan, dan sebabnya. Kemudian, sebagai perkara berasingan, nyatakan apa yang dikatakan oleh undang-undang EU dan pandangan siapa yang patut didengar oleh majlis.",
+    "prompt": "Pilih satu idea daripada mesyuarat Hillford, seperti kamera wajah di pasar atau alat yang memeriksa ujian. Nyatakan apa yang kamu syorkan supaya dilakukan oleh majlis, dan sebabnya. Kemudian nyatakan pandangan siapa yang patut didengar oleh majlis sebelum membuat keputusan.",
     "sentenceStarters": [
-      "Saya memilih ...",
-      "Saya mengesyorkan ... kerana ...",
+      "Saya mengesyorkan supaya majlis ... kerana ...",
       "Seseorang mungkin tidak bersetuju, kerana ...",
-      "Sebagai perkara berasingan, undang-undang EU menyatakan ...",
-      "Majlis patut mendengar ___, kerana ..."
+      "Sebelum membuat keputusan, majlis patut mendengar ___, kerana ..."
     ],
-    "planningBoxes": [
-      "Idea utama saya",
-      "Bukti daripada pelajaran",
-      "Mengapa ini penting",
-      "Soalan yang masih saya ada"
-    ],
-    "selfCheck": [
-      "Saya memberi syor saya dan satu sebab.",
-      "Saya menyatakan apa yang dikatakan oleh undang-undang, sebagai perkara berasingan.",
-      "Saya menyatakan pandangan siapa yang patut didengar oleh majlis."
-    ],
-    "example": "Saya memilih alat yang memeriksa kertas peperiksaan. Saya mengesyorkan supaya ia dibenarkan dengan peraturan ketat, kerana markah yang tidak betul boleh mengubah masa depan pelajar. Guru patut menyemak setiap markah. Seseorang mungkin tidak bersetuju, kerana alat itu menjimatkan masa. Sebagai perkara berasingan, undang-undang EU menyatakan bahawa memeriksa kertas peperiksaan berisiko tinggi, jadi semakan yang ketat diperlukan. Majlis patut mendengar pelajar, kerana alat itu paling memberi kesan kepada mereka."
+    "example": "Saya memilih alat yang memeriksa ujian. Saya mengesyorkan supaya majlis membenarkannya hanya jika guru menyemak setiap markah. Markah yang tidak betul boleh mengubah masa depan pelajar. Seseorang mungkin tidak bersetuju, kerana alat itu akan menjimatkan masa guru. Sebelum membuat keputusan, majlis patut mendengar majlis pelajar, kerana alat itu paling memberi kesan kepada pelajar. Majlis juga patut bertanya kepada orang yang belum boleh mengundi, seperti penduduk baharu itu. Mereka juga menggunakan perkhidmatan bandar."
   },
   "speak": {
-    "partnerTask": "Rakan kamu ialah ahli majlis Hillford. Pilih satu idea untuk AI dan nyatakan apa yang kamu syorkan, dengan satu sebab. Rakan kamu memberi sebab untuk pilihan yang lain. Kemudian bertukar giliran.",
-    "independentTask": "Sebut dengan kuat perbezaan antara undang-undang dengan garis panduan, dengan satu contoh setiap satu daripada pelajaran."
+    "partnerTask": "Rakan kamu ialah ahli majlis Hillford. Syorkan apa yang patut dilakukan tentang satu idea daripada mesyuarat itu, dengan satu sebab. Rakan kamu bercakap bagi pihak seseorang di mesyuarat itu yang mungkin tidak bersetuju. Kemudian bertukar giliran.",
+    "independentTask": "Sebut dengan kuat perbezaan antara undang-undang dengan garis panduan, dengan satu contoh sebenar setiap satu daripada pelajaran."
   },
   "watch": {
     "why": "UNESCO, yang membuat perjanjian global dalam pelajaran ini, melihat cara bahagian dunia yang berbeza membuat peraturan untuk AI.",
@@ -230,43 +147,40 @@
   "reflect": {
     "prompts": [
       {
-        "text": "Satu peraturan untuk AI yang saya fikir adil ialah ... kerana ..."
+        "text": "Satu perkara yang saya pelajari tentang siapa yang membuat peraturan untuk AI ialah ..."
       },
       {
         "text": "Apabila orang membuat peraturan untuk AI, saya fikir mereka juga patut mendengar ..."
       }
     ],
-    "completionMessage": "Kamu telah menamatkan Pelajaran 16. Kamu membandingkan cara kumpulan yang berbeza membuat peraturan untuk AI, dan memberi pandangan kamu sendiri, secara berasingan daripada apa yang dikatakan oleh satu undang-undang."
+    "completionMessage": "Kamu telah menamatkan Pelajaran 16. Kamu membandingkan garis panduan dengan undang-undang untuk AI, melihat cara orang boleh mengambil bahagian, dan memberi pandangan kamu sendiri, secara berasingan daripada apa yang dikatakan oleh satu undang-undang."
   },
   "visual": {
     "alt": "Satu contoh, undang-undang AI Kesatuan Eropah, sebagai piramid tahap risiko: penggunaan yang diharamkan di bahagian atas, kemudian penggunaan dengan peraturan ketat, kemudian penggunaan yang mesti menyatakan bahawa ia AI, dan kebanyakan penggunaan tanpa peraturan AI yang khas di bahagian bawah, tempat undang-undang lain masih terpakai."
   },
   "sources": [
     {
-      "label": "Suruhanjaya Eropah: AI Act, a risk-based regulatory framework for AI (Akta AI, rangka kerja kawal selia AI berasaskan risiko; berkuat kuasa 1 Ogos 2024; tarikh seperti yang diubah oleh AI Omnibus, berkuat kuasa 27 Julai 2026)"
+      "label": "Suruhanjaya Eropah: AI Act, a risk-based regulatory framework for AI (Akta AI, rangka kerja kawal selia AI berasaskan risiko; berkuat kuasa 1 Ogos 2024)"
     },
     {
-      "label": "AI Act Service Desk, Suruhanjaya Eropah: Article 2, scope (Perkara 2, skop; undang-undang EU yang lain, seperti perlindungan data dan perlindungan pengguna, masih terpakai)"
-    },
-    {
-      "label": "Suruhanjaya Kebangsaan New Zealand untuk UNESCO: Ethics of Artificial Intelligence Recommendation (Syor tentang Etika Kecerdasan Buatan; diterima pakai oleh kesemua 193 Negara Anggota, 2021)"
+      "label": "AI Act Service Desk, Suruhanjaya Eropah: timeline for the implementation of the AI Act (garis masa pelaksanaan Akta AI; tarikh selepas Digital Omnibus)"
     },
     {
       "label": "ASEAN (2024): ASEAN Guide on AI Governance and Ethics (Panduan ASEAN tentang Tadbir Urus dan Etika AI)"
     },
     {
-      "label": "NSTDA melalui ThaiPR.net (17 Julai 2024): ciri AI baharu Traffy Fondue dan angka penggunaannya (dalam bahasa Thai)"
+      "label": "Suruhanjaya Kebangsaan New Zealand untuk UNESCO: Ethics of Artificial Intelligence Recommendation (Syor tentang Etika Kecerdasan Buatan; diterima pakai oleh kesemua 193 Negara Anggota, 2021)"
     },
     {
-      "label": "Kementerian Komunikasi dan Digital (Indonesia): Surat Edaran Menteri Kominfo No. 9 Tahun 2023 tentang Etika Kecerdasan Artifisial (surat pekeliling menteri tentang etika kecerdasan buatan, dalam bahasa Indonesia)"
+      "label": "NSTDA melalui ThaiPR.net (17 Julai 2024): ciri AI baharu Traffy Fondue dan angka penggunaannya (dalam bahasa Thai)"
     }
   ],
   "sensitiveNotes": [
     "Peraturan tentang kamera, skor dan pengawasan mungkin dekat dengan kehidupan pelajar yang pernah hidup di bawah kawalan polis yang ketat, di kem atau di sempadan. Pastikan perbincangan tertumpu pada Hillford yang direka. Jangan sekali-kali bertanya kepada pelajar tentang undang-undang, polis atau kerajaan di mana-mana negara yang pernah mereka diami, atau cara mereka diperiksa atau direkodkan; biarkan mereka bercakap hanya jika mereka memilih untuk berbuat demikian."
   ],
   "educatorNotes": [
-    "Asingkan dua soalan: “Apakah yang kamu syorkan untuk Hillford?” (pandangan pelajar, dinilai berdasarkan sebab) dan “Apakah yang dikatakan oleh undang-undang Kesatuan Eropah?” (fakta tentang satu bidang kuasa). Jangan sekali-kali menganggap syor tidak betul kerana ia berbeza daripada undang-undang EU. Akta AI (berkuat kuasa 1 Ogos 2024) mengharamkan, mulai 2 Februari 2025, pemberian skor sosial yang membawa kepada layanan buruk yang tidak wajar atau tidak berkaitan, pengecaman emosi di tempat kerja dan sekolah kecuali atas sebab perubatan atau keselamatan, dan pengenalan wajah secara langsung oleh polis di tempat awam kecuali bagi tiga tujuan yang sempit (mencari mangsa atau orang hilang, mencegah ancaman yang hampir berlaku, dan mencari suspek jenayah serius). Peraturan ketelusan (chatbot, deepfake yang dilabel) terpakai mulai Ogos 2026. Selepas AI Omnibus (berkuat kuasa 27 Julai 2026), peraturan berisiko tinggi bagi penggunaan seperti pemarkahan peperiksaan terpakai mulai 2 Disember 2027, dan bagi AI dalam produk yang dikawal selia mulai 2 Ogos 2028; semak halaman Suruhanjaya sebelum memetik tarikh. Penggunaan berisiko minimum (penapis spam, permainan) tiada peraturan Akta AI, tetapi undang-undang perlindungan data, perlindungan pengguna dan keselamatan produk masih terpakai (Perkara 2). Item kamera pasar adalah tentang polis; kamera wajah milik majlis atau kedai akan tertakluk kepada peraturan lain. Versi di atas kertas: sembilan idea itu pada kad di bawah tiga tajuk.",
-    "Traffy Fondue (Thailand) dibangunkan oleh NECTEC, sebahagian daripada Agensi Pembangunan Sains dan Teknologi Kebangsaan Thailand (NSTDA). Penduduk membuat laporan melalui chatbot LINE dengan lokasi dan foto; sejak tahun 2024, AI-nya juga meringkaskan laporan, menyusunnya mengikut tahap kecemasan, mencadangkan cara pembaikan dan menapis perkataan kasar, selain mengelaskannya dan menghantar setiap laporan kepada agensi yang bertanggungjawab. NSTDA melaporkan lebih daripada 940,000 laporan dari Jun 2022 hingga Julai 2024, lebih 733,000 daripadanya “selesai” (77%), di 77 wilayah dan lebih daripada 15,000 agensi. Ini angka pengendali itu sendiri: “selesai” ialah status dalam sistem, bukan semakan bebas terhadap pembaikan. Ini perkhidmatan yang sedang beroperasi, bukan kesan yang telah diukur.",
-    "Untuk konteks tempatan: Menteri Komunikasi dan Informatika Indonesia mengeluarkan surat pekeliling tentang etika AI (Surat Edaran No. 9 Tahun 2023), dan Malaysia melancarkan garis panduan kebangsaan secara sukarela pada tahun 2024 (pautan dalam rekod dakwaan, content/courses/digital-world/claims/DW16.md). Seperti teks UNESCO dan ASEAN, kedua-duanya ialah panduan, bukan undang-undang. Bentangkan setiap pendekatan secara neutral; pelajaran ini membandingkan, bukan menyusun kedudukan negara."
+    "Asingkan dua soalan: “Apakah yang kamu syorkan untuk Hillford?” (pandangan pelajar, dinilai berdasarkan sebab) dan “Apakah yang dikatakan oleh undang-undang Kesatuan Eropah?” (fakta tentang satu bidang kuasa). Jangan sekali-kali menganggap syor tidak betul kerana ia berbeza daripada undang-undang EU. Akta AI (berkuat kuasa 1 Ogos 2024) mengharamkan, mulai 2 Februari 2025, pemberian skor sosial yang membawa kepada layanan buruk yang tidak wajar atau tidak berkaitan, pengecaman emosi di tempat kerja dan sekolah kecuali atas sebab perubatan atau keselamatan, dan pengenalan wajah secara langsung oleh polis di tempat awam kecuali bagi tiga tujuan yang sempit (mencari mangsa atau orang hilang, mencegah ancaman yang hampir berlaku, dan mencari suspek jenayah serius). Peraturan ketelusan (chatbot, deepfake yang dilabel) terpakai mulai 2 Ogos 2026. Selepas Digital Omnibus tentang AI, peraturan berisiko tinggi bagi penggunaan seperti pemarkahan peperiksaan (Lampiran III) terpakai mulai 2 Disember 2027, dan bagi AI dalam produk yang dikawal selia (Lampiran I) mulai 2 Ogos 2028 (garis masa AI Act Service Desk Suruhanjaya, dibaca 8 November 2026); semak garis masa itu sebelum memetik tarikh. Penggunaan berisiko minimum (penapis spam, permainan) tiada peraturan Akta AI, tetapi undang-undang perlindungan data, perlindungan pengguna dan keselamatan produk masih terpakai (Perkara 2). Kamera pasar pemilik kedai: pengenalan secara langsung oleh polis ialah apa yang diharamkan oleh Akta itu; kamera milik kedai atau majlis sendiri tertakluk kepada peraturan lain, seperti perlindungan data.",
+    "Panduan ASEAN tentang Tadbir Urus dan Etika AI dilancarkan pada Mesyuarat Menteri-Menteri Digital ASEAN ke-4 pada 2 Februari 2024. Panduan itu menyatakan bahawa penerimaannya adalah sukarela dan ia tidak mengatasi undang-undang negara atau sektor, dan menyebut dirinya dokumen hidup. Tujuh prinsipnya ialah ketelusan dan kebolehjelasan, keadilan dan kesaksamaan, sekuriti dan keselamatan, keutamaan kepada manusia, privasi dan tadbir urus data, akauntabiliti dan integriti, serta keteguhan dan kebolehpercayaan. Ia mengesyorkan langkah kebangsaan (melatih orang, menyokong syarikat baharu dan penyelidikan, meningkatkan kesedaran awam, alat yang membantu perniagaan mematuhi panduan itu) dan langkah serantau (kumpulan kerja ASEAN tentang tadbir urus AI, menyesuaikan panduan itu untuk AI generatif, koleksi kes penggunaan), dan meminta organisasi mempertimbangkan “tahap kematangan digital yang berbeza di seluruh ASEAN”. Traffy Fondue (Thailand) dibangunkan oleh NECTEC, sebahagian daripada NSTDA; AI-nya mengelaskan laporan penduduk dan menghantar setiap laporan kepada agensi yang bertanggungjawab, dan manusia membuat keputusan dan bertindak. NSTDA melaporkan lebih daripada 940,000 laporan dari Jun 2022 hingga Julai 2024, iaitu angkanya sendiri. Pelajaran 10 mungkin mengajarnya dengan lebih mendalam.",
+    "Untuk konteks tempatan: Menteri Komunikasi dan Informatika Indonesia mengeluarkan surat pekeliling tentang etika AI (Surat Edaran No. 9 Tahun 2023), dan Malaysia melancarkan garis panduan kebangsaan secara sukarela pada tahun 2024 (pautan dalam rekod dakwaan, content/courses/digital-world/claims/DW16.md). Seperti teks UNESCO dan ASEAN, kedua-duanya ialah panduan, bukan undang-undang. Bentangkan setiap pendekatan secara neutral: pelajaran ini membandingkan pilihan, bukan menyusun kedudukan negara atau rantau. Di atas kertas, mesyuarat Hillford boleh dibacakan dengan kuat sebagai main peranan; tiada tugasan mengisih."
   ]
 }

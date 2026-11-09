@@ -1,108 +1,60 @@
 {
   "title": "Ketika AI keliru",
   "essentialQuestion": "Mengapa AI kadang bekerja dengan baik untuk sebagian orang dan buruk untuk orang lain?",
-  "learningGoal": "Menjelaskan bagaimana contoh yang hilang dan penyebab lain bisa membuat sebuah alat AI bekerja lebih buruk untuk kelompok tertentu, dan mengusulkan cara menemukan dan memperbaiki penyebabnya.",
-  "warmUp": {
-    "question": "Sebuah alat bekerja dengan baik untuk orang dewasa, tetapi membuat banyak kesalahan untuk anak-anak. Mengapa bisa begitu?",
-    "options": [
-      "Alat itu terlalu sulit dibuat",
-      "Alat itu kebanyakan belajar dari orang dewasa",
-      "Hal lain",
-      "Tidak yakin"
-    ]
-  },
+  "learningGoal": "Menjelaskan bagaimana siapa yang ada dalam data, dan penyebab-penyebab lain, bisa membuat sebuah alat AI bekerja lebih buruk untuk sebagian kelompok orang, dan mengapa kesenjangan dalam hasil menunjukkan adanya masalah tetapi tidak menunjukkan penyebabnya.",
   "evidence": {
     "label": "Contoh fiksi yang dibuat untuk pelajaran ini.",
-    "question": "Untuk setiap alat, contoh dari siapa yang hilang?",
+    "question": "Kelompok mana yang paling sering salah diketik oleh alat itu? Apa yang diketahui tim itu tentang cara alat itu belajar?",
     "cards": [
       {
-        "title": "Tiga alat yang diuji di Pusat Belajar Riverbend",
+        "title": "Uji alat ketik suara di Pusat Belajar Riverbend",
         "columns": [
-          "Alat",
-          "Dari apa alat itu belajar",
-          "Apa yang terjadi"
+          "Siapa yang membaca 20 kata yang sama",
+          "Kata yang diketik dengan benar"
         ],
         "rows": [
           [
-            "Alat ketik suara",
-            "Kebanyakan rekaman orang dewasa yang membaca dengan suara keras",
-            "Alat itu bekerja dengan baik untuk para guru. Alat itu salah mengetik banyak kata untuk pelajar yang paling muda."
+            "Guru",
+            "19 dari 20"
           ],
           [
-            "Alat penerjemah",
-            "Banyak tulisan dalam beberapa bahasa, dan sangat sedikit dalam bahasa-bahasa lain",
-            "Alat itu bagus dalam bahasa yang punya banyak tulisan di internet. Alat itu membuat banyak kesalahan dalam bahasa yang hanya punya sedikit tulisan di internet."
+            "Pelajar yang lebih tua",
+            "16 dari 20"
           ],
           [
-            "Model daun dari Pelajaran 3 (Putaran 2)",
-            "Daun-daun dari satu jenis tanaman",
-            "Model itu menyebut daun bergaris yang sehat dari tanaman baru “sakit”."
+            "Pelajar yang paling muda",
+            "9 dari 20"
           ]
+        ]
+      },
+      {
+        "title": "Apa yang diketahui tim itu",
+        "items": [
+          "Alat itu kebanyakan belajar dari rekaman orang dewasa yang membaca dengan suara keras.",
+          "Setiap kelompok membaca kata-kata yang sama, di ruangan tenang yang sama."
         ]
       }
     ]
-  },
-  "activity": {
-    "title": "Uji alat ketik suara",
-    "instructions": "Tim Riverbend membacakan 20 kata yang sama kepada alat ketik suara. Setiap kelompok mendapat giliran. Ketuk kelompok yang paling sering salah diketik oleh alat itu.",
-    "measure": "Kata yang diketik dengan benar",
-    "groups": [
-      {
-        "label": "Guru"
-      },
-      {
-        "label": "Pelajar yang lebih tua"
-      },
-      {
-        "label": "Pelajar yang paling muda"
-      }
-    ],
-    "afterTap": {
-      "question": "Contoh dari siapa yang mungkin hilang dari data latih?",
-      "options": [
-        {
-          "text": "Rekaman suara anak-anak",
-          "feedback": "Benar. Tabel itu mengatakan alat itu kebanyakan belajar dari orang dewasa, jadi suara anak-anak masih baru baginya. Hasil-hasilnya saja tidak bisa memberi tahu kamu hal itu."
-        },
-        {
-          "text": "Rekaman suara para guru",
-          "feedback": "Belum tepat. Alat itu bekerja dengan baik untuk para guru. Cari kelompok dengan kesalahan paling banyak."
-        },
-        {
-          "text": "Lebih banyak dari 20 kata yang sama",
-          "feedback": "Belum tepat. Setiap kelompok membaca kata-kata yang sama. Bedanya adalah siapa yang berbicara."
-        }
-      ]
-    },
-    "extension": "Tidak wajib, dengan memakai lagi alat latih dari Pelajaran 3: beri satu daun contoh label yang salah, lalu uji lagi. Model itu meniru kesalahannya, dan ini memperlihatkan bagaimana label yang salah atau tidak adil dari seseorang masuk ke dalam model."
   },
   "read": {
     "sections": [
       {
-        "heading": "Kesalahan bisa berasal dari contoh yang hilang",
-        "text": "Di Pelajaran 3, model daun membuat kesalahan ketika data latihnya tidak mencakup sesuatu. Alat AI yang sungguhan bisa keliru dengan cara yang sama. Di Pusat Belajar Riverbend, sebuah alat ketik suara bekerja dengan baik untuk para guru yang sudah dewasa, tetapi alat itu salah mengetik banyak kata untuk pelajar yang paling muda. Alat itu kebanyakan belajar dari rekaman orang dewasa, jadi suara anak-anak masih baru baginya. Para peneliti juga menemukan masalah ini dalam kehidupan nyata. Banyak alat ucapan jauh kurang akurat untuk suara anak-anak. Salah satu alasannya adalah rekaman anak-anak yang bisa dipelajari alat-alat itu jauh lebih sedikit.",
-        "simpler": "Di Pelajaran 3, ada daun yang tidak dimasukkan ke dalam data latih. Di Riverbend, sebuah alat ketik suara bekerja dengan baik untuk para guru. Alat itu membuat banyak kesalahan untuk pelajar yang masih muda. Alat itu kebanyakan belajar dari suara orang dewasa. Jadi suara anak-anak masih baru baginya. Para peneliti juga menemukan hal ini dalam kehidupan nyata. Banyak alat ucapan kurang akurat untuk anak-anak. Salah satu alasannya adalah rekaman anak-anak lebih sedikit."
+        "heading": "Satu uji, tiga kelompok",
+        "text": "Di Pusat Belajar Riverbend, sebuah tim menguji sebuah alat ketik suara. Para guru, pelajar yang lebih tua, dan pelajar yang paling muda masing-masing membaca 20 kata yang sama. Alat itu akurat untuk para guru, dengan 19 kata yang benar. Untuk pelajar yang paling muda, alat itu hanya benar 9 kata. Kesenjangan ini menunjukkan bahwa alat itu bekerja lebih buruk untuk anak-anak kecil. Kesenjangan ini tidak menunjukkan mengapa. Jadi tim itu mencari penyebabnya. Alat itu kebanyakan belajar dari rekaman orang dewasa, jadi suara anak-anak masih baru baginya. Para peneliti juga menemukan hal ini pada alat-alat ucapan yang sungguhan. Dalam sebuah penelitian tahun 2024, sebuah alat yang banyak dipakai membuat kesalahan beberapa kali lebih banyak pada ucapan anak-anak daripada pada ucapan orang dewasa. Para peneliti memberi dua alasan: rekaman anak-anak jauh lebih sedikit, dan ucapan anak-anak banyak berubah selama mereka tumbuh.",
+        "simpler": "Di Riverbend, sebuah tim menguji sebuah alat ketik suara. Guru dan pelajar masing-masing membaca 20 kata yang sama. Alat itu akurat untuk para guru. Alat itu benar 19 kata. Untuk pelajar yang paling muda, alat itu hanya benar 9 kata. Kesenjangan ini menunjukkan ada masalah bagi anak-anak kecil. Tetapi kesenjangan ini tidak menunjukkan alasannya. Jadi tim itu mencari alasannya. Alat itu kebanyakan belajar dari suara orang dewasa. Suara anak-anak masih baru baginya. Pada tahun 2024, para peneliti menguji sebuah alat sungguhan. Alat itu membuat jauh lebih banyak kesalahan untuk anak-anak. Rekaman anak-anak lebih sedikit. Dan ucapan anak-anak berubah selama mereka tumbuh."
       },
       {
-        "heading": "Ketika sebuah kelompok tertinggal, AI bisa tidak adil",
-        "text": "Ketika sebuah alat bekerja dengan baik untuk sebagian kelompok orang dan buruk untuk kelompok lain, kita bilang alat itu punya bias. Contoh yang hilang adalah salah satu kemungkinan penyebabnya. Penyebab lain adalah label yang salah atau tidak adil, tujuan yang lebih cocok untuk sebagian orang daripada orang lain, pilihan dalam rancangannya, atau memakai alat di tempat yang bukan tujuan pembuatannya. Alat penerjemah di Riverbend membuat jauh lebih banyak kesalahan dalam bahasa yang hanya punya sedikit tulisan di internet. Para peneliti menemukan pola yang sama pada alat bahasa AI yang sungguhan. Bahkan ketika tidak ada yang bermaksud meninggalkan orang lain, hasilnya tetap bisa tidak adil.",
-        "simpler": "Ada alat yang bekerja dengan baik untuk sebagian orang dan buruk untuk orang lain. Ini disebut bias. Contoh yang hilang adalah salah satu penyebabnya. Label yang salah adalah penyebab lain. Begitu juga tujuan atau rancangan yang lebih cocok untuk sebagian orang. Memakai alat di tempat yang salah juga bisa menjadi penyebabnya. Alat penerjemah di Riverbend membuat lebih banyak kesalahan dalam beberapa bahasa. Bahasa-bahasa itu hanya punya sedikit tulisan di internet. Para peneliti juga menemukan hal ini pada alat-alat sungguhan. Walaupun tidak ada yang bermaksud meninggalkan orang lain, hasilnya bisa tidak adil."
+        "heading": "Siapa yang ada dalam data",
+        "text": "Ketika sebuah alat bekerja dengan baik untuk sebagian kelompok orang dan buruk untuk kelompok lain, kita bilang alat itu punya bias. Salah satu penyebabnya adalah data latih. Apakah data itu mewakili semua orang yang akan memakai alat itu? Sebuah kumpulan terkenal berisi lebih dari sejuta foto sudah dipakai untuk melatih banyak alat. Sekitar 45% fotonya diambil di Amerika Serikat, dan hanya sekitar 2% di India. Para peneliti menemukan bahwa alat yang dilatih dengan kumpulan foto itu lebih buruk dalam mengenali apa yang ada di foto-foto dari India atau Pakistan, misalnya pengantin pria di sebuah pernikahan. Hasilnya bisa tidak adil walaupun tidak ada yang merencanakannya.",
+        "simpler": "Ada alat yang bekerja dengan baik untuk sebagian orang dan buruk untuk orang lain. Ini disebut bias. Salah satu penyebabnya adalah data latih. Apakah data itu mewakili semua orang yang akan memakai alat itu? Satu kumpulan besar foto sudah melatih banyak alat. Hampir setengah fotonya berasal dari Amerika Serikat. Sangat sedikit yang berasal dari India. Alat yang dilatih dengannya lebih buruk untuk foto dari India atau Pakistan. Hasilnya bisa tidak adil, walaupun tidak ada yang berniat begitu."
       },
       {
-        "heading": "Menemukan dan memperbaiki masalahnya",
-        "text": "Untuk menemukan bias, orang menguji sebuah alat dengan banyak kelompok yang berbeda, bukan hanya dengan orang-orang yang membuatnya. Lalu mereka membandingkan hasilnya. Kesenjangan dalam hasil menunjukkan bahwa ada yang salah, tetapi tidak menunjukkan mengapa. Jadi mereka mencari penyebabnya. Apakah contoh dari sebagian orang hilang? Apakah labelnya salah? Apakah alat itu dibuat untuk tujuan atau tempat yang lain? Jika ada contoh yang hilang, mereka bisa mengumpulkan lebih banyak, tetapi hanya dengan izin dari orang-orangnya. Data yang lebih banyak tidak memperbaiki setiap penyebab. Jika labelnya tidak adil, lebih banyak contoh dengan label yang sama tidak akan membantu. Untuk keputusan yang penting, seseorang harus selalu memeriksa apa yang dikatakan AI.",
-        "simpler": "Untuk menemukan bias, uji alat itu dengan banyak kelompok dan bandingkan hasilnya. Kesenjangan menunjukkan ada yang salah, tetapi tidak menunjukkan mengapa. Jadi cari penyebabnya. Apakah ada contoh yang hilang? Apakah labelnya salah? Apakah alat itu dibuat untuk tujuan atau tempat lain? Contoh yang hilang bisa ditambahkan, jika orang-orangnya setuju. Tetapi data yang lebih banyak tidak memperbaiki semuanya. Label yang tidak adil tetap tidak adil. Untuk keputusan besar, seseorang harus memeriksa AI itu."
+        "heading": "Kesenjangan yang sama bisa punya penyebab yang berbeda",
+        "text": "Dua ilmuwan komputer menggambarkan dua kasus rekaan untuk menjelaskan hal ini. Dalam kasus pertama, sebuah alat di rumah sakit lebih sering gagal mengenali serangan jantung pada perempuan daripada pada laki-laki. Penelitinya menambahkan lebih banyak catatan dari perempuan, dan alat itu menjadi lebih baik. Dalam kasus kedua, sebuah alat untuk memilih pekerja baru mengatakan bahwa perempuan kurang cocok untuk pekerjaan. Alat itu belajar dari penilaian orang-orang terhadap pekerja di masa lalu, dan penilaian itu tidak adil terhadap perempuan. Menambahkan lebih banyak data dari jenis yang sama tidak membantu. Kedua alat itu memperlihatkan jenis kesenjangan yang sama, tetapi penyebabnya berbeda. Penyebab lain termasuk tujuan sebuah alat, rancangannya, atau memakainya di tempat yang bukan tujuan pembuatannya. Jadi orang menguji sebuah alat dengan banyak kelompok, mencari penyebabnya, dan memperbaiki penyebab itu.",
+        "simpler": "Dua ilmuwan mengarang dua kasus untuk menjelaskan hal ini. Dalam kasus pertama, sebuah alat rumah sakit lebih sering tidak mengenali serangan jantung pada perempuan. Mereka menambahkan lebih banyak catatan dari perempuan, dan alat itu menjadi lebih baik. Dalam kasus kedua, sebuah alat untuk memilih pekerja baru mengatakan bahwa perempuan kurang cocok. Alat itu belajar dari penilaian orang di masa lalu, yang tidak adil terhadap perempuan. Lebih banyak data yang sejenis tidak membantu. Kedua alat punya kesenjangan, tetapi penyebabnya berbeda. Tujuan atau rancangan juga bisa menjadi penyebabnya. Jadi orang menguji alat dengan banyak kelompok. Lalu mereka mencari penyebabnya dan memperbaikinya."
       }
     ],
     "glossary": [
-      {
-        "word": "data latih",
-        "definition": "Contoh-contoh yang dipakai untuk membangun sebuah model. Di sini, setiap contoh disertai jawabannya.",
-        "example": "Data latih alat suara itu kebanyakan berupa orang dewasa yang membaca dengan suara keras.",
-        "forms": [
-          "data latihnya"
-        ]
-      },
       {
         "word": "akurat",
         "forms": [
@@ -119,80 +71,85 @@
       {
         "word": "bias",
         "definition": "Ketika sebuah alat bekerja lebih baik untuk sebagian kelompok daripada kelompok lain.",
-        "example": "Alat penerjemah itu punya bias yang menguntungkan bahasa-bahasa dengan banyak tulisan di internet."
+        "example": "Alat suara itu punya bias yang menguntungkan suara orang dewasa."
       },
       {
-        "word": "adil",
-        "definition": "Memperlakukan semua orang dengan cara yang benar, sehingga tidak ada kelompok yang tertinggal.",
-        "example": "Alat suara yang adil bekerja dengan baik untuk anak-anak dan orang dewasa."
+        "word": "data latih",
+        "forms": [
+          "data latihnya"
+        ],
+        "definition": "Contoh-contoh yang dipakai untuk membangun sebuah alat AI, seperti rekaman atau foto.",
+        "example": "Data latih alat suara itu kebanyakan berupa orang dewasa yang membaca dengan suara keras."
+      },
+      {
+        "word": "mewakili",
+        "forms": [
+          "diwakili",
+          "terwakili",
+          "keterwakilan"
+        ],
+        "definition": "Memasukkan cukup banyak contoh dari sebuah kelompok, sehingga kelompok itu ditampilkan dengan adil.",
+        "example": "Foto-foto itu tidak mewakili orang-orang di India dengan baik."
+      },
+      {
+        "word": "tidak adil",
+        "forms": [
+          "adil"
+        ],
+        "definition": "Tidak memperlakukan orang dengan cara yang benar atau setara.",
+        "example": "Alat untuk memilih pekerja baru itu belajar dari penilaian yang tidak adil terhadap perempuan."
       }
     ],
     "checks": [
       {
-        "question": "Mengapa alat ketik suara membuat lebih banyak kesalahan untuk pelajar yang paling muda?",
+        "question": "Apa yang ditunjukkan oleh kesenjangan dalam uji di Riverbend?",
         "options": [
           {
-            "text": "Pelajar yang masih muda memakai kata-kata yang salah",
-            "feedback": "Belum tepat. Masalahnya ada pada alat itu, bukan pada pelajarnya. Lihat dari apa alat itu belajar."
+            "text": "Pelajar yang paling muda tidak membaca kata-katanya dengan jelas",
+            "feedback": "Belum tepat. Masalahnya ada pada alat itu, bukan pada pelajarnya. Baca bagian pertama."
           },
           {
-            "text": "Alat itu dimatikan selama beberapa waktu",
-            "feedback": "Belum tepat. Alat itu berjalan. Lihat dari apa alat itu belajar di bagian pertama."
+            "text": "Alat itu bekerja lebih buruk untuk anak-anak kecil, tetapi tidak menunjukkan mengapa",
+            "feedback": "Benar. Kesenjangan menunjukkan bahwa ada yang salah. Tim itu masih harus mencari penyebabnya."
           },
           {
-            "text": "Alat itu kebanyakan belajar dari rekaman orang dewasa",
-            "feedback": "Benar. Suara anak-anak masih baru bagi alat itu, karena data latihnya kebanyakan orang dewasa."
+            "text": "Alat itu berhenti bekerja untuk semua orang yang memakainya",
+            "feedback": "Belum tepat. Alat itu mengetik 19 dari 20 kata dengan benar untuk para guru. Baca bagian pertama."
           }
         ]
       },
       {
-        "question": "Sebuah alat membuat lebih banyak kesalahan untuk satu kelompok. Apa langkah pertama yang baik?",
+        "question": "Dalam kasus rekaan tentang alat untuk memilih pekerja baru, mengapa data yang lebih banyak tidak membantu?",
         "options": [
           {
-            "text": "Mencari penyebabnya, misalnya contoh yang hilang",
-            "feedback": "Benar. Kesenjangan menunjukkan ada yang salah, tetapi tidak menunjukkan mengapa. Periksa contoh-contohnya, labelnya, dan tujuan alat itu, lalu perbaiki penyebabnya dan uji lagi."
+            "text": "Alat itu belajar dari penilaian masa lalu yang tidak adil",
+            "feedback": "Benar. Masalahnya ada pada penilaian yang dipelajarinya, jadi lebih banyak data yang sejenis tetap membawa masalah yang sama."
           },
           {
-            "text": "Berhenti mengujinya dengan kelompok itu",
-            "feedback": "Belum tepat. Itu menyembunyikan masalahnya. Baca bagian ketiga tentang menemukan bias."
+            "text": "Alat itu sama sekali tidak punya contoh dari perempuan",
+            "feedback": "Belum tepat. Itu penyebab yang bisa diperbaiki dengan lebih banyak data. Baca bagian ketiga."
           },
           {
-            "text": "Menyuruh kelompok itu berbicara seperti orang dewasa",
-            "feedback": "Belum tepat. Alatnya yang harus berubah, bukan orangnya. Baca bagian ketiga tentang memperbaiki bias."
+            "text": "Catatan rumah sakit yang dibutuhkannya hilang",
+            "feedback": "Belum tepat. Rumah sakit itu kasus yang lain. Baca tentang alat untuk memilih pekerja baru di bagian ketiga."
           }
         ]
-      },
-      {
-        "question": "Pilih satu alat dari pelajaran ini. Siapa lagi yang sebaiknya mengujinya sebelum orang memercayainya?",
-        "placeholder": "___ juga sebaiknya diuji oleh ... karena ..."
       }
     ]
   },
   "write": {
-    "prompt": "Pilih satu alat dari tabel Riverbend. Jelaskan contoh dari siapa yang hilang, apa yang salah, dan satu cara untuk memperbaikinya.",
+    "prompt": "Pilih alat suara di Riverbend atau alat foto. Katakan untuk siapa alat itu bekerja lebih buruk dan satu kemungkinan penyebabnya. Lalu katakan bagaimana orang bisa memeriksa penyebab itu.",
     "sentenceStarters": [
       "Aku memilih ...",
-      "Alat itu kebanyakan belajar dari ...",
-      "Contoh dari ___ hilang, jadi ...",
-      "Ini penting bagi ___ karena ...",
-      "Satu cara untuk memperbaikinya adalah ..."
+      "Alat itu bekerja lebih buruk untuk ...",
+      "Satu kemungkinan penyebabnya adalah ...",
+      "Untuk memeriksanya, orang bisa ..."
     ],
-    "planningBoxes": [
-      "Ide utamaku",
-      "Bukti dari pelajaran",
-      "Mengapa ini penting",
-      "Pertanyaan yang masih aku punya"
-    ],
-    "selfCheck": [
-      "Aku menyebutkan satu alat dan dari apa alat itu belajar.",
-      "Aku mengatakan contoh dari siapa yang hilang dan apa yang salah.",
-      "Aku memberi satu cara untuk memperbaikinya."
-    ],
-    "example": "Aku memilih alat ketik suara. Alat itu kebanyakan belajar dari rekaman orang dewasa yang membaca dengan suara keras. Contoh dari suara anak-anak hilang, jadi alat itu salah mengetik banyak kata untuk pelajar yang paling muda. Alat itu benar 9 dari 20 kata untuk mereka, dan 19 untuk para guru. Ini penting bagi pelajar yang paling muda karena mereka mendapat alat yang membuat banyak kesalahan. Satu cara untuk memperbaikinya adalah menambahkan rekaman anak-anak, jika mereka dan keluarga mereka setuju. Lalu tim bisa mengujinya lagi."
+    "example": "Aku memilih alat suara di Riverbend. Alat itu bekerja lebih buruk untuk pelajar yang paling muda. Alat itu mengetik 9 dari 20 kata dengan benar untuk mereka, dan 19 untuk para guru. Satu kemungkinan penyebabnya adalah alat itu kebanyakan belajar dari suara orang dewasa, jadi suara anak-anak masih baru baginya. Untuk memeriksanya, orang bisa menambahkan rekaman anak-anak, jika mereka dan keluarga mereka setuju, lalu menguji alat itu lagi. Jika alat itu masih membuat banyak kesalahan, penyebabnya mungkin hal lain."
   },
   "speak": {
-    "partnerTask": "Temanmu menyebutkan satu alat dari tabel Riverbend. Kamu mengatakan contoh dari siapa yang hilang dan satu cara untuk memperbaikinya. Lalu bertukar.",
-    "independentTask": "Ucapkan dengan lantang apa arti bias. Berikan satu contoh dari pelajaran ini dan satu cara untuk memperbaikinya."
+    "partnerTask": "Temanmu menggambarkan sebuah alat yang membuat lebih banyak kesalahan untuk satu kelompok orang. Kamu menyebutkan dua kemungkinan penyebab yang berbeda. Lalu bertukar.",
+    "independentTask": "Ucapkan dengan lantang apa arti bias. Lalu jelaskan mengapa data yang lebih banyak membantu alat rumah sakit, tetapi tidak membantu alat untuk memilih pekerja baru."
   },
   "watch": {
     "why": "Dalam waktu kurang dari tiga menit, video ini menjelaskan bagaimana data latih yang kurang lengkap atau berat sebelah bisa membuat AI bekerja lebih buruk untuk sebagian orang.",
@@ -209,16 +166,16 @@
   "reflect": {
     "prompts": [
       {
-        "text": "Satu cara untuk membuat sebuah alat AI lebih adil adalah ..."
+        "text": "Satu hal yang sekarang aku pahami tentang bias dalam AI adalah ..."
       },
       {
-        "text": "Satu pertanyaan yang akan aku ajukan kepada orang-orang yang membuat alat AI adalah ..."
+        "text": "Satu kelompok yang menurutku sebaiknya ikut menguji alat AI adalah ... karena ..."
       }
     ],
-    "completionMessage": "Kamu sudah menyelesaikan Pelajaran 8. Kamu menemukan contoh dari siapa yang hilang dan menjelaskan cara membuat sebuah alat lebih adil."
+    "completionMessage": "Kamu sudah menyelesaikan Pelajaran 8. Kamu mempelajari bagaimana siapa yang ada dalam data, dan penyebab-penyebab lain, bisa membuat sebuah alat bekerja lebih buruk untuk sebagian orang, dan mengapa penyebab sebuah kesenjangan perlu dicari dengan cermat."
   },
   "visual": {
-    "alt": "Sebuah diagram batang: alat ketik suara benar 19 dari 20 kata untuk guru, 16 untuk pelajar yang lebih tua, dan 9 untuk pelajar yang paling muda. Data latihnya kebanyakan berisi suara orang dewasa."
+    "alt": "Sebuah diagram batang: alat ketik suara benar 19 dari 20 kata untuk guru, 16 untuk pelajar yang lebih tua, dan 9 untuk pelajar yang paling muda. Data latihnya kebanyakan berisi suara orang dewasa, salah satu kemungkinan penyebabnya."
   },
   "sources": [
     {
@@ -228,13 +185,10 @@
       "label": "Suresh dan Guttag (EAAMO 2021): A framework for understanding sources of harm throughout the machine learning life cycle (kerangka untuk memahami sumber-sumber kerugian dalam pembelajaran mesin)"
     },
     {
-      "label": "Stanford Report, dari Stanford HAI (2025): How AI is leaving non-English speakers behind (bagaimana AI meninggalkan penutur bahasa selain Inggris)"
+      "label": "Code.org: Machine learning and bias (rencana pelajaran tentang pembelajaran mesin dan bias, dengan video pelajaran ini)"
     },
     {
-      "label": "Code.org: Machine learning and bias (rencana pelajaran tentang pembelajaran mesin dan bias)"
-    },
-    {
-      "label": "Experience AI (Raspberry Pi Foundation): Lesson 3, Bias in, bias out (bias masuk, bias keluar)"
+      "label": "Experience AI (Raspberry Pi Foundation dan Google DeepMind): Lesson 3, Bias in, bias out (bias masuk, bias keluar)"
     }
   ],
   "sensitiveNotes": [
@@ -242,7 +196,7 @@
     "Bias pada alat-alat sungguhan bisa menyangkut ras, gender, dan identitas lain (video Pelajaran 3 menyebut pengenalan wajah). Jaga diskusi tetap pada bagaimana data latih menyebabkannya dan bagaimana memperbaikinya; jangan meminta pelajar menceritakan saat-saat mereka diperlakukan tidak adil."
   ],
   "educatorNotes": [
-    "Angka-angka dalam kegiatan ini (19, 16, dan 9 dari 20) adalah rekaan untuk memperlihatkan idenya; tabel Riverbend memberi tahu pelajar dari apa setiap alat belajar, jadi penyebabnya sudah diberikan, bukan disimpulkan dari nilainya. Penelitian nyata: Kid-Whisper (AIES 2024) menemukan bahwa sebuah alat ucapan yang banyak dipakai, tanpa pelatihan tambahan, membuat 3 sampai 10 kali lebih banyak kesalahan pada ucapan anak-anak daripada pada ucapan orang dewasa dalam uji-uji yang dipakainya, dan menyebut dua penyebab: sedikitnya rekaman anak-anak, dan ucapan anak-anak yang lebih beragam selama mereka tumbuh. Melatihnya dengan lebih banyak ucapan anak-anak mempersempit kesenjangannya, tetapi tidak menutupnya.",
-    "Contoh yang hilang adalah salah satu penyebab bias, bukan satu-satunya. Suresh dan Guttag (2021) menyebut tujuh sumber kerugian di sepanjang siklus hidup pembelajaran mesin, termasuk siapa yang ada dalam data (keterwakilan), bagaimana label dipilih atau diukur, tujuan model dilatih, bagaimana model diuji, dan bagaimana serta di mana model dipakai. Contoh mereka: sebuah model serangan jantung menjadi lebih baik ketika lebih banyak data dari perempuan ditambahkan, tetapi sebuah model penerimaan kerja yang dilatih dengan penilaian manusia tidak menjadi lebih baik, karena masalahnya ada pada label. Kesenjangan dalam hasil menunjukkan bahwa ada yang salah, bukan mengapa. Jangan katakan kepada pelajar bahwa bias selalu terjadi tanpa sengaja: pelajaran ini hanya mengatakan bahwa hasilnya bisa tidak adil walaupun tidak ada yang bermaksud begitu. Catatan klaimnya ada di content/courses/digital-world/claims/DW08.md. Model daun dari Pelajaran 3 sengaja dipakai lagi: pelajar bisa melihat satu penyebab (contoh yang hilang) pada model kecil yang mereka latih sendiri dan pada alat-alat sungguhan. Perluasan kegiatan ini (label salah yang ditiru model) memperlihatkan penyebab kedua, yaitu label."
+    "Uji di Riverbend dan angka-angkanya (19, 16, dan 9 dari 20) adalah rekaan; bukti dalam pelajaran memberi tahu pelajar dari apa alat itu belajar, jadi penyebabnya sudah diberikan, bukan disimpulkan dari nilainya. Penelitian nyata: Kid-Whisper (Attia dan lainnya, AIES 2024) menemukan bahwa model ucapan Whisper, tanpa pelatihan tambahan, punya tingkat kesalahan kata 6 sampai 10 kali tingkat kesalahan orang dewasa pada ucapan anak-anak yang membaca naskah, dan 3 sampai 5 kali pada ucapan anak-anak dalam percakapan, dalam kumpulan data uji yang dipakainya. Penelitian itu menyebut dua penyebab: basis data ucapan anak-anak terbatas dan sulit dikumpulkan, dan ucapan anak-anak berubah-ubah selama mereka berkembang. Pelatihan dengan ucapan anak-anak mengurangi kesalahan, dan para penulisnya mencantumkan tantangan yang masih ada. Foto: Suresh dan Guttag (2021) melaporkan bahwa sekitar 45% dari 1,2 juta gambar berlabel di ImageNet diambil di Amerika Serikat, 1% di Tiongkok, dan 2,1% di India, dan mengutip sebuah penelitian (Shankar dan lainnya) yang menemukan bahwa sebuah pengklasifikasi yang dilatih dengannya bekerja jauh lebih buruk pada gambar seperti “bridegroom” (pengantin pria) dari negara-negara yang kurang terwakili dalam sampel, seperti Pakistan atau India.",
+    "Contoh yang hilang adalah salah satu penyebab bias, bukan satu-satunya. Suresh dan Guttag menyebut tujuh sumber kerugian di sepanjang siklus hidup pembelajaran mesin: sejarah, keterwakilan, pengukuran (bagaimana label dipilih), penggabungan (agregasi), pembelajaran (tujuan model dilatih), evaluasi (bagaimana model diuji), dan penerapan (bagaimana dan di mana model dipakai). Contoh serangan jantung dan pemilihan pekerja baru dari mereka adalah “skenario yang disederhanakan” yang mereka karang untuk memperlihatkan bahwa gejala yang sama bisa punya penyebab yang berbeda: lebih banyak data dari perempuan membantu kasus pertama, tetapi tidak membantu kasus kedua, karena labelnya berasal dari penilaian manusia yang bias. Pelajaran ini mengatakannya. Kesenjangan dalam hasil menunjukkan bahwa ada yang salah, bukan mengapa. Jangan katakan kepada pelajar bahwa bias selalu terjadi tanpa sengaja: pelajaran ini hanya mengatakan bahwa hasilnya bisa tidak adil walaupun tidak ada yang merencanakannya. Pelajaran ini tidak lagi mengulang pengujian model dari Pelajaran 3; model daun dan alat penerjemah sudah dihapus. Catatan klaimnya ada di content/courses/digital-world/claims/DW08.md."
   ]
 }

@@ -11,8 +11,8 @@
     "flag": true
   },
   "learningGoal": {
-    "source": "Explain what AI data centres need from the planet, and weigh their benefits and costs for the places where they are built.",
-    "back": "Explain what AI data centres need from the planet, and weigh their benefits and costs for the places where they are built.",
+    "source": "Explain what AI data centres need from the planet, where they are built in Southeast Asia, and how governments weigh their benefits and costs.",
+    "back": "Explain what AI data centres need from the earth, where those data centres are built in Southeast Asia, and how governments weigh their benefits and costs.",
     "flag": true
   },
   "warmUp.question": {
@@ -107,126 +107,20 @@
     "back": "“That company will bring money to Coralton. But most people who use its AI tools live in other countries.”",
     "flag": true
   },
-  "activity.title": {
-    "source": "Benefit or cost?",
-    "back": "Benefit or cost?",
-    "flag": true
-  },
-  "activity.instructions": {
-    "source": "Put each sentence about the Coralton data centre into a group. There is no score. After you place one, you can see one possible answer and the reason.",
-    "back": "Put each sentence about the Coralton data centre into one group. There is no score. After you place one sentence, you can see one possible answer and its reason.",
-    "flag": true
-  },
-  "activity.groups.0.label": {
-    "source": "A benefit for the town",
-    "back": "A benefit for the town",
-    "flag": true
-  },
-  "activity.groups.1.label": {
-    "source": "A cost for the town",
-    "back": "A cost for the town",
-    "flag": true,
-    "note": "\"Biaya\" (cost) can read as money only; here it means any cost to the town (water, power, pollution). \"Kerugian\" (a loss) is an option."
-  },
-  "activity.groups.2.label": {
-    "source": "Both",
-    "back": "Both",
-    "flag": true
-  },
-  "activity.items.0.text": {
-    "source": "About 1,000 people get building work for two years.",
-    "back": "About 1,000 people get building work for two years.",
-    "flag": true
-  },
-  "activity.items.0.feedback": {
-    "source": "People earn money and learn skills, but the work ends when the building is finished. So you could also say both.",
-    "back": "People earn money and learn skills, but that work ends when the building is finished. So you could also say both.",
-    "flag": true
-  },
-  "activity.items.1.text": {
-    "source": "About 50 people get long-term jobs inside.",
-    "back": "About 50 people get long-term jobs inside it.",
-    "flag": true
-  },
-  "activity.items.1.feedback": {
-    "source": "Any group can be right here. Long-term jobs help, but 50 is a small number for such a huge building.",
-    "back": "Every group can be right here. Long-term jobs help, but 50 is a small number for a very big building.",
-    "flag": true
-  },
-  "activity.items.2.text": {
-    "source": "The data centre uses as much power as a small city.",
-    "back": "The data centre uses as much electricity as a small city.",
-    "flag": true
-  },
-  "activity.items.2.feedback": {
-    "source": "The town must share its power. Making more power may mean more pollution.",
-    "back": "The town must share its electricity. Making more electricity may mean more pollution.",
-    "flag": true
-  },
-  "activity.items.3.text": {
-    "source": "It takes river water to cool its computers.",
-    "back": "The data centre takes river water to cool its computers.",
-    "flag": true
-  },
-  "activity.items.3.feedback": {
-    "source": "In the dry season, there may be less water for farms and homes.",
-    "back": "In the dry season, the water for farms and homes may go down.",
-    "flag": true
-  },
-  "activity.items.4.text": {
-    "source": "The company puts solar panels on the roof.",
-    "back": "The company puts solar panels on its roof.",
-    "flag": true
-  },
-  "activity.items.4.feedback": {
-    "source": "Power from the sun is clean, so the data centre takes less power from the town.",
-    "back": "Electricity from the sun is clean, so the data centre takes less electricity from the town.",
-    "flag": true
-  },
-  "activity.items.5.text": {
-    "source": "It cleans waste water and uses it for cooling.",
-    "back": "The data centre cleans waste water and uses it for cooling.",
-    "flag": true
-  },
-  "activity.items.5.feedback": {
-    "source": "The river water stays for farms and homes.",
-    "back": "The river water stays available for farms and homes.",
-    "flag": true
-  },
-  "activity.items.6.text": {
-    "source": "A big company from abroad brings money to the town.",
-    "back": "A big company from abroad brings money to the town.",
-    "flag": true
-  },
-  "activity.items.6.feedback": {
-    "source": "Any group can be right here. New money can help the town grow. But much of what the company earns may go to other countries.",
-    "back": "Every group can be right here. New money can help the town grow. But much of that company's income may go to other countries.",
-    "flag": true
-  },
-  "activity.items.7.text": {
-    "source": "The company trains local young people to work inside.",
-    "back": "The company trains local young people to work inside it.",
-    "flag": true
-  },
-  "activity.items.7.feedback": {
-    "source": "People learn skills they can use in other jobs too. If only a few get places, you could also say both.",
-    "back": "People learn skills they can also use in other jobs. If only a few get places, you could also say both.",
-    "flag": true
-  },
   "read.sections.0.heading": {
-    "source": "AI runs in big buildings full of chips",
-    "back": "AI runs in big buildings full of chips",
+    "source": "Where an AI answer is made",
+    "back": "Where an AI answer is made",
     "flag": true
   },
   "read.sections.0.text": {
-    "source": "When you ask an AI tool a question, your device usually doesn't make the answer itself. Some small tools can. But most of the time, the question travels to a data centre, a large building full of computers. Inside are thousands of chips that do trillions of sums every second. They use a lot of electricity and get very hot, so many data centres use water to cool them. An international energy agency estimated that in 2024, all the world's data centres used about 1.5% of its electricity. Only part of that was for AI. Data centres also run websites, videos and messages. The agency expects data centres to use about twice as much by 2030, mostly because of AI. That is a forecast, not a measurement.",
-    "back": "When you ask an AI tool a question, usually your device does not make the answer itself. Some small tools can. But almost always, that question is sent to a data centre, a big building full of computers. Inside are thousands of chips that do trillions of calculations every second. Those chips use a lot of electricity and become very hot, so many data centres use water to cool them. An international energy agency estimated that in 2024, all the data centres in the world used about 1.5% of the world's electricity. Only part of that amount was for AI. Data centres also run websites, videos and messages. That agency expects data centres to use about twice as much by 2030, mainly because of AI. That is an estimate, not a measurement.",
+    "source": "When you ask an AI tool a question, your device usually doesn't make the answer itself. Some small tools can run on a phone or laptop. But most of the time, the question travels to a data centre, a large building full of computers. Its chips do huge numbers of sums each second. They use a lot of electricity and get very hot, so many data centres use water to cool them. The International Energy Agency estimated that in 2024, all the world's data centres used about 1.5% of its electricity. It thinks about 15% of that was for AI. The rest was for other work. Data centres also run websites, videos and messages. The agency expects data centres to use about twice as much by 2030, mostly because of AI. That is a forecast, not a measurement, and the agency says it is uncertain.",
+    "back": "When you ask an AI tool a question, your device usually doesn't make the answer itself. Some small tools can run on a phone or laptop. But more often, the question is sent to a data centre, a big building full of computers. Its chips do very large numbers of sums every second. The chips use a lot of electricity and get very hot, so many data centres use water to cool them. The International Energy Agency estimated that in 2024, all data centres in the world used about 1.5% of the world's electricity. According to the agency, about 15% of that was used for AI. The rest was for other work. Data centres also run websites, videos and messages. The agency expects data centres to use about twice as much by 2030, mostly because of AI. That is a forecast, not a measurement, and the agency says this forecast is not certain.",
     "flag": true,
-    "note": "\"Most of the time\" as \"hampir selalu\" (almost always), a little stronger; \"sering kali\" (often) is weaker. Reviewers: choose. \"Forecast\" and \"estimated\" are both \"perkiraan/memperkirakan\" in Indonesian; the point that it is not a measurement is kept."
+    "note": "\"Forecast\" (the new key word) as \"perkiraan\", as in \"perkiraan cuaca\" (weather forecast). \"Estimated\" and \"expects\" are both \"memperkirakan\", the verb from the same root; the key word is marked only as the noun \"perkiraan\"."
   },
   "read.sections.0.simpler": {
-    "source": "Usually, an AI answer is not made in your device. Some small tools do work on a phone. But most questions go to a data centre, a big building full of computers. Its chips do huge amounts of maths. They use a lot of power and get very hot. Water often helps to cool them. In 2024, all data centres used about 1.5% of the world's power. Only part was for AI. Experts think this may double by 2030, mostly because of AI. That is a forecast.",
-    "back": "Usually, an AI answer is not made in your phone or laptop. Some small tools do work on a phone. But most questions are sent to a data centre, a big building full of computers. Its chips do very many calculations. Those chips use a lot of electricity and become very hot. Water is often used so the chips stay cool. In 2024, all data centres used about 1.5% of the world's electricity. Only part was for AI. Experts expect this amount may double by 2030, mainly because of AI. That is an estimate.",
+    "source": "Usually, an AI answer is not made in your device. Some small tools do work on a phone. But most questions go to a data centre. This is a big building full of computers. Its chips do huge amounts of maths. They use a lot of power and get very hot. Water often helps to cool them. In 2024, all data centres used about 1.5% of the world's power. Only a small part was for AI. Data centres also run videos and messages. Experts think the power they use may double by 2030, mostly because of AI. That is a forecast. It is a guess, not a fact yet.",
+    "back": "Usually, an AI answer is not made in your phone or laptop. Some small tools do work on a phone. But most questions are sent to a data centre. This is a big building full of computers. Its chips do very many sums. The chips use a lot of electricity and get very hot. Water is often used to keep the chips cool. In 2024, all data centres used about 1.5% of the world's electricity. Only a small part was for AI. Data centres also run videos and messages. Experts think their electricity use may double by 2030. This is mostly because of AI. That is a forecast. It is a guess, not yet a fact.",
     "flag": true
   },
   "read.sections.1.heading": {
@@ -235,10 +129,9 @@
     "flag": true
   },
   "read.sections.1.text": {
-    "source": "Chips are made from materials dug out of the ground. Some need rare minerals, which are often mined in ways that harm nature. Very few factories can make the most powerful chips. In 2021, a chip industry study found that most of the world's most advanced chips were made in one place, Taiwan. So a problem in one place could cause chip shortages around the world. Old chips and computers also become electronic waste. This waste can contain harmful metals, such as mercury and lead.",
-    "back": "Chips are made from materials dug from the ground. Some need rare minerals, which are often mined in ways that damage nature. Very few factories can make the most advanced chips. In 2021, a chip industry study found that most of the world's most advanced chips were made in one place, Taiwan. So a problem in one place could cause chip shortages around the world. Old chips and computers also become electronic waste. This waste can contain dangerous metals, such as mercury and lead.",
-    "flag": true,
-    "note": "\"Most powerful\" as \"paling canggih\" (most advanced), as Indonesian says of chips."
+    "source": "Chips are made from materials dug out of the ground. Some need rare minerals, which are often mined in ways that harm nature. Very few factories can make the most powerful chips. A 2021 chip industry study found that 92% of the most advanced chips were made in Taiwan. So a problem in one place could slow chip supplies around the world. Old chips and computers also become electronic waste, which can contain harmful metals such as mercury and lead.",
+    "back": "Chips are made from materials dug out of the ground. Some need rare minerals, which are often mined in ways that damage nature. Very few factories can make the most advanced chips. A 2021 chip industry study found that 92% of the most advanced chips were made in Taiwan. So a problem in one place could slow chip supplies around the world. Old chips and computers also become electronic waste. This waste can contain harmful metals, such as mercury and lead.",
+    "flag": true
   },
   "read.sections.1.simpler": {
     "source": "Chips are made from things dug out of the ground. Some need rare minerals. Digging them up can harm nature. Only a few factories make the best chips. In 2021, a study found most are made in Taiwan. A problem there could slow chips everywhere. Old computers become waste. Some of it is harmful.",
@@ -246,19 +139,19 @@
     "flag": true
   },
   "read.sections.2.heading": {
-    "source": "Who gains, and who pays?",
-    "back": "Who gains, and who pays?",
+    "source": "Singapore, Johor and Batam make choices",
+    "back": "Singapore, Johor and Batam make choices",
     "flag": true
   },
   "read.sections.2.text": {
-    "source": "Data centres are being built fast in Southeast Asia. Singapore paused new ones in 2019, and in 2021 they used about 7% of its electricity. Many companies then built in Johor, in Malaysia, and on Batam, in Indonesia. Data centres bring investment, building work that ends when the building is finished, and some long-term jobs. Malaysia's government hopes they will help to modernise its economy. But critics say they create far fewer jobs than they promise. Many of their users live in other countries. Some people nearby worry about water shortages and power cuts. Companies can lower these costs with more efficient AI, power from the sun and wind, and cleaned, reused water.",
-    "back": "Data centres are being built fast in Southeast Asia. Singapore temporarily stopped the building of new data centres in 2019, and in 2021 data centres used about 7% of Singapore's electricity. After that, many companies built in Johor, Malaysia, and on Batam Island, Indonesia. Data centres bring investment, building work that ends when the building is finished, and some long-term jobs. Malaysia's government hopes data centres will help modernise its economy. But critics say data centres create far fewer jobs than promised. Many of their users live in other countries. Some people who live nearby worry about water shortages and power cuts. Companies can lower these costs with more efficient AI, electricity from the sun and wind, and water that is cleaned and reused.",
+    "source": "Data centres need land, power and water. So where they go is a choice for governments. By the early 2020s, data centres used about 7% of Singapore's electricity. Singapore paused new ones in 2019. From 2022, it let in only a few that met strict rules on saving energy. Many companies built across the border in Johor, in Malaysia, and on Batam, in Indonesia. In the first ten months of 2024, Malaysia drew more than 31 billion US dollars of investment in data centres. The energy agency expects data centres to cause as much as a fifth of the growth in Malaysia's power use by 2030. Building them brings work that ends when the building is finished. Running them brings some long-term jobs. These often need special training. Some experts say data centres bring far fewer jobs than they promise. People nearby worry about water and power cuts. In November 2025, Johor stopped saying yes to the most basic kinds of data centres. These can use far more water. The rules are still changing.",
+    "back": "Data centres need land, electricity and water. So where data centres are built is a choice for governments. In the early 2020s, data centres used about 7% of Singapore's electricity. Singapore paused building new data centres in 2019. From 2022, Singapore allowed only a few new data centres that met strict rules on saving energy. Many companies built across the border, in Johor, Malaysia, and on Batam Island, Indonesia. In the first ten months of 2024, Malaysia attracted more than 31 billion US dollars of investment for data centres. That energy agency expects data centres to cause up to a fifth of the growth in Malaysia's electricity use until 2030. Building them brings work that ends when the building is finished. Running them brings some long-term jobs. These jobs often need special training. Some experts say data centres bring far fewer jobs than promised. People who live nearby worry about water and power cuts. In November 2025, Johor stopped giving permits for the most basic kind of data centre. This kind can use far more water. The rules are still changing.",
     "flag": true,
-    "note": "Batam is in Indonesia, so Indonesian learners may know it well; the sensitive note asks teachers to keep this neutral."
+    "note": "\"Stopped saying yes\" as \"berhenti memberi izin\" (stopped giving permits). \"The most basic kinds\" are Tier 1 and Tier 2 in the teachers' note."
   },
   "read.sections.2.simpler": {
-    "source": "Singapore paused new data centres in 2019. So companies built in Johor, Malaysia, and Batam, Indonesia. Data centres bring investment. They bring building work for a few years, and some long-term jobs. Malaysia hopes they will help it grow richer. But some people say they bring fewer jobs than promised. Many users live in other countries. People nearby worry about water and power cuts. Companies can make AI more efficient. They can use sun and wind power, and clean and reuse water.",
-    "back": "Singapore temporarily stopped building new data centres in 2019. So companies built in Johor, Malaysia, and Batam, Indonesia. Data centres bring investment. Data centres bring building work for a few years, and some long-term jobs. Malaysia hopes data centres will help it become richer. But some say data centres bring fewer jobs than promised. Many of their users live in other countries. People nearby worry about water and power cuts. Companies can make AI more efficient. They can use electricity from the sun and wind, and clean and then reuse water.",
+    "source": "Data centres need land, power and water. So governments choose where they go. Singapore paused new data centres in 2019. They used a lot of its power. From 2022, it let in only a few that saved energy. So many companies built in Johor, Malaysia, and Batam, Indonesia. They brought a lot of investment. Building them gives work for a few years. Running them gives some long-term jobs. Some experts say there are fewer jobs than promised. People who live near them worry about water and power cuts. In 2025, Johor stopped saying yes to some data centres that use lots of water. These rules keep changing.",
+    "back": "Data centres need land, electricity and water. So governments choose where they go. Singapore paused new data centres in 2019. Data centres used a lot of its electricity. From 2022, Singapore allowed only a few data centres that save energy. So many companies built in Johor, Malaysia, and Batam, Indonesia. They brought a lot of investment. Building them gives work for a few years. Running them gives some long-term jobs. Some experts say there are fewer jobs than promised. People who live near them worry about water and power cuts. In 2025, Johor stopped giving permits for some data centres that use a lot of water. These rules keep changing.",
     "flag": true
   },
   "read.glossary.0.word": {
@@ -299,83 +192,84 @@
     "flag": true
   },
   "read.glossary.2.word": {
+    "source": "forecast",
+    "back": "forecast",
+    "flag": true,
+    "note": "\"Perkiraan\" as in \"perkiraan cuaca\" (weather forecast); \"ramalan\" and \"proyeksi\" are other options. TERMS.md's \"prediction\" is \"prediksi\"."
+  },
+  "read.glossary.2.definition": {
+    "source": "A careful guess about the future, based on evidence.",
+    "back": "A careful guess about the future, based on evidence.",
+    "flag": true
+  },
+  "read.glossary.2.example": {
+    "source": "The 2030 number is a forecast, not a measurement.",
+    "back": "The 2030 number is a forecast, not a measurement.",
+    "flag": true
+  },
+  "read.glossary.3.word": {
     "source": "mineral",
     "back": "mineral",
     "flag": true
   },
-  "read.glossary.2.definition": {
+  "read.glossary.3.definition": {
     "source": "A natural material that people dig out of the ground.",
     "back": "A natural material that people dig from the ground.",
     "flag": true
   },
-  "read.glossary.2.example": {
+  "read.glossary.3.example": {
     "source": "Some chips need rare minerals.",
     "back": "Some chips need rare minerals.",
     "flag": true
   },
-  "read.glossary.3.word": {
+  "read.glossary.4.word": {
     "source": "investment",
     "back": "investment",
     "flag": true
   },
-  "read.glossary.3.definition": {
+  "read.glossary.4.definition": {
     "source": "Money a company spends in a place, hoping to earn more later.",
     "back": "Money a company spends in a place, hoping to get more money later.",
     "flag": true
   },
-  "read.glossary.3.example": {
+  "read.glossary.4.example": {
     "source": "The data centre is a big investment in Coralton.",
     "back": "That data centre is a big investment in Coralton.",
     "flag": true
   },
-  "read.glossary.4.word": {
-    "source": "efficient",
-    "back": "efficient",
-    "flag": true
-  },
-  "read.glossary.4.definition": {
-    "source": "Doing a job well while using less power, water or time.",
-    "back": "Doing a job well while using less electricity, water or time.",
-    "flag": true
-  },
-  "read.glossary.4.example": {
-    "source": "A more efficient data centre uses less electricity for the same work.",
-    "back": "A more efficient data centre uses less electricity for the same work.",
-    "flag": true
-  },
   "read.checks.0.question": {
-    "source": "Why do many data centres use water?",
-    "back": "Why do many data centres use water?",
+    "source": "The energy agency says data centres may use twice as much power by 2030. What kind of number is this?",
+    "back": "The energy agency says data centres may use twice as much electricity by 2030. What kind of number is this?",
     "flag": true
   },
   "read.checks.0.options.0.text": {
-    "source": "To make electricity for the town",
-    "back": "To make electricity for the town",
+    "source": "A measurement of what already happened",
+    "back": "A measurement of what already happened",
     "flag": true
   },
   "read.checks.0.options.0.feedback": {
-    "source": "Not quite. Data centres use electricity. Read about the hot chips in the first section.",
-    "back": "Not quite. Data centres use electricity. Read about the hot chips in the first part.",
+    "source": "Not quite. 2030 hasn't happened yet. Read the end of the first section.",
+    "back": "Not quite. The year 2030 hasn't happened yet. Read the end of the first section.",
     "flag": true
   },
   "read.checks.0.options.1.text": {
-    "source": "To wash the computers each day",
-    "back": "To wash the computers every day",
+    "source": "A forecast about the future",
+    "back": "A forecast about the future",
     "flag": true
   },
   "read.checks.0.options.1.feedback": {
-    "source": "Not quite. The water is not for washing. Read about the hot chips in the first section.",
-    "back": "Not quite. That water is not for washing. Read about the hot chips in the first part.",
+    "source": "Yes. It is the agency's careful guess, and it says the guess is uncertain.",
+    "back": "Yes. It is the agency's careful guess, and the agency says this guess is not certain.",
     "flag": true
   },
   "read.checks.0.options.2.text": {
-    "source": "To cool chips that get very hot",
-    "back": "To cool chips that become very hot",
+    "source": "The power used by AI alone",
+    "back": "The electricity used by AI alone",
     "flag": true
   },
   "read.checks.0.options.2.feedback": {
-    "source": "Yes. The chips do so much work that they get very hot, so water helps to cool them.",
-    "back": "Yes. Those chips work so much that they become very hot, so water helps cool them.",
+    "source": "Not quite. It is for all data centres, which also run videos and messages. Read the first section.",
+    "back": "Not quite. That number is for all data centres, which also run videos and messages. Read the first section.",
     "flag": true
   },
   "read.checks.1.question": {
@@ -394,33 +288,23 @@
     "flag": true
   },
   "read.checks.1.options.1.text": {
-    "source": "It ends when the building is finished",
-    "back": "That work ends when the building is finished",
-    "flag": true
-  },
-  "read.checks.1.options.1.feedback": {
-    "source": "Yes. Many people build it for a few years. In Coralton, about 50 people will work there after it opens.",
-    "back": "Yes. Many people build it for a few years. In Coralton, about 50 people will work there after the building opens.",
-    "flag": true
-  },
-  "read.checks.1.options.2.text": {
     "source": "It is done by computers, not people",
     "back": "That work is done by computers, not people",
     "flag": true
   },
-  "read.checks.1.options.2.feedback": {
+  "read.checks.1.options.1.feedback": {
     "source": "Not quite. People build data centres. Read the third section.",
     "back": "Not quite. People build data centres. Read the third part.",
     "flag": true
   },
-  "read.checks.2.question": {
-    "source": "What promise would you ask the data centre company to make?",
-    "back": "What promise would you ask from that data centre company?",
+  "read.checks.1.options.2.text": {
+    "source": "It ends when the building is finished",
+    "back": "That work ends when the building is finished",
     "flag": true
   },
-  "read.checks.2.placeholder": {
-    "source": "I would ask the company to promise ... because ...",
-    "back": "I would ask that company to promise ... because ...",
+  "read.checks.1.options.2.feedback": {
+    "source": "Yes. Building work lasts a few years. After that, there are some long-term jobs inside.",
+    "back": "Yes. Building work lasts a few years. After that, there are some long-term jobs inside.",
     "flag": true
   },
   "write.prompt": {
@@ -449,59 +333,19 @@
     "back": "I would ask that company to promise ...",
     "flag": true
   },
-  "write.sentenceStarters.4": {
-    "source": "This matters because ...",
-    "back": "This matters because ...",
-    "flag": true
-  },
-  "write.planningBoxes.0": {
-    "source": "My main idea",
-    "back": "My main idea",
-    "flag": true
-  },
-  "write.planningBoxes.1": {
-    "source": "Evidence from the lesson",
-    "back": "Evidence from the lesson",
-    "flag": true
-  },
-  "write.planningBoxes.2": {
-    "source": "Why it matters",
-    "back": "Why this matters",
-    "flag": true
-  },
-  "write.planningBoxes.3": {
-    "source": "A question I still have",
-    "back": "A question I still have",
-    "flag": true
-  },
-  "write.selfCheck.0": {
-    "source": "I said yes, no or yes with a promise.",
-    "back": "I answered yes, no or yes with a promise.",
-    "flag": true
-  },
-  "write.selfCheck.1": {
-    "source": "I gave one benefit and one cost.",
-    "back": "I gave one benefit and one cost.",
-    "flag": true
-  },
-  "write.selfCheck.2": {
-    "source": "I gave one promise the company should make.",
-    "back": "I gave one promise that company should make.",
-    "flag": true
-  },
   "write.example": {
-    "source": "I think Coralton should say yes, but only with a promise. One benefit is that about 1,000 people get building work for two years, and people like Leo can learn new skills. One cost is that the data centre needs a lot of water to cool its chips. In the dry season, Hana's fish farm and the town's homes could get less. I would ask the company to promise to use cleaned waste water, not river water. This matters because the town needs water more than the AI tools do.",
-    "back": "I think Coralton should accept it, but only with a promise. One of its benefits is that about 1,000 people get building work for two years, and people like Leo can learn new skills. One of its costs is that the data centre needs a lot of water to cool its chips. In the dry season, Hana's fish pond and the town's homes could get less water. I would ask that company to promise to use waste water that has been cleaned, not river water. This matters because the town needs water more than the AI tools do.",
+    "source": "I think Coralton should say yes, but only with a promise. One benefit is that about 1,000 people get building work for two years, and people like Leo can learn new skills. One cost is that the data centre needs a lot of water to cool its chips. In the dry season, Hana's fish farm and the town's homes could get less. I would ask the company to promise to use cleaned waste water, not river water. Johor made rules about water too.",
+    "back": "I think Coralton should accept it, but only with a promise. One benefit is that about 1,000 people get building work for two years, and people like Leo can learn new skills. One cost is that the data centre needs a lot of water to cool its chips. In the dry season, Hana's fish farm and the town's homes could get less water. I would ask the company to promise to use cleaned waste water, not river water. Johor made rules about water too.",
     "flag": true
   },
   "speak.partnerTask": {
-    "source": "Your partner says one benefit of the Coralton data centre. You say one cost. Then switch.",
-    "back": "Your friend names one benefit of the Coralton data centre. You name one of its costs. Then swap.",
+    "source": "Your partner is Hana, the fish farmer, and says one worry about the data centre. You are the data centre company, and you answer with one promise. Then switch.",
+    "back": "Your partner plays Hana, the fish farmer, and names one worry about the data centre. You play the data centre company, and you answer with one promise. Then switch.",
     "flag": true
   },
   "speak.independentTask": {
-    "source": "Say out loud three things a data centre needs to work. Then say who might pay for them.",
-    "back": "Say out loud three things a data centre needs so that it can work. Then say who might bear their cost.",
+    "source": "Say out loud the difference between building jobs and long-term jobs at a data centre. Then say why the difference matters to a town.",
+    "back": "Say out loud the difference between building jobs and long-term jobs at a data centre. Then say why that difference matters to a town.",
     "flag": true
   },
   "watch.why": {
@@ -520,10 +364,10 @@
     "flag": true
   },
   "watch.summary": {
-    "source": "Since 2019, more than a thousand huge AI data centres have been built around the world. Each one can use as much water as a small town. It can use as much electricity as a small city. Inside, there are thousands of racks of computers with special chips. These chips do trillions of sums every second, to answer questions and to train AI. All this work makes the chips very hot. Engineers cool them with water towers, cold water in pipes, or special liquids. They also send data with light instead of copper wires, which wastes less power. But AI tools keep getting bigger, so they need more and more electricity. The video asks if we could build smaller tools for smaller jobs. It ends with a question: how much of the planet's resources should we use for smarter machines?",
-    "back": "Since 2019, more than a thousand very big AI data centres have been built around the world. Each data centre can use as much water as a small town. That data centre can use as much electricity as a small city. Inside, there are thousands of racks of computers with special chips. These chips do trillions of calculations every second, to answer questions and train AI. All this work makes the chips very hot. Engineers cool them with water towers, cold water in pipes, or special liquids. They also send data with light, not with copper cables, so less electricity is wasted. But AI tools keep becoming bigger, so those tools need more and more electricity. The video asks whether we could make smaller tools for smaller jobs. The video ends with a question: how many of the planet's resources should we use for smarter machines?",
+    "source": "This animated lesson explains why AI data centres use so much power. The video says that since 2019, more than a thousand huge AI data centres have been built. It says each one can use as much water as a small town, and as much power as a small city. Inside are thousands of computers with special chips. The chips do trillions of sums each second. All this work makes them very hot. Engineers cool them with water or special liquids. They also send data with light, which wastes less power. But AI tools keep getting bigger, so they need more and more power. The video asks if we could build smaller tools for smaller jobs. It ends with a question: how much of the planet should we use for smarter machines?",
+    "back": "This animated lesson explains why AI data centres use so much electricity. The video says that since 2019, more than a thousand very large AI data centres have been built. The video says each data centre can use as much water as a small town, and as much electricity as a small town. Inside there are thousands of computers with special chips. The chips do trillions of sums every second. All this work makes the chips very hot. Engineers cool them with water or special liquids. They also send data with light, which wastes less electricity. But AI tools keep getting bigger, so they need more and more electricity. The video asks whether we could make smaller tools for smaller jobs. The video ends with a question: how much of the earth's resources should we use for smarter machines?",
     "flag": true,
-    "note": "\"Smarter machines\" as \"mesin yang lebih pintar\"; \"resources\" as \"sumber daya\" (KEY_TERMS)."
+    "note": "English has \"a small town\" for water and \"a small city\" for power; Indonesian \"kota kecil\" covers both, as before."
   },
   "watch.keyPoints.0": {
     "source": "AI data centres use huge amounts of electricity and water.",
@@ -546,8 +390,8 @@
     "flag": true
   },
   "reflect.prompts.0.text": {
-    "source": "One thing AI needs from the planet is ... The people who pay for it are ...",
-    "back": "One thing AI needs from the planet is ... The people who bear its cost are ...",
+    "source": "One thing I learned about what AI needs from the planet is ...",
+    "back": "One thing I learned about what AI needs from the earth is ...",
     "flag": true
   },
   "reflect.prompts.1.text": {
@@ -556,18 +400,18 @@
     "flag": true
   },
   "reflect.completionMessage": {
-    "source": "You finished Lesson 6. You found out what AI needs from the planet and weighed who gains and who pays.",
-    "back": "You have finished Lesson 6. You found out what AI needs from the planet and weighed who gains and who pays.",
+    "source": "You finished Lesson 6. You found out what AI needs from the planet and how places in Southeast Asia are choosing where data centres go.",
+    "back": "You have finished Lesson 6. You found out what AI needs from the earth and how places in Southeast Asia choose where data centres are built.",
     "flag": true
   },
   "visual.alt": {
-    "source": "A chain from a mine to a chip factory, a data centre and a tablet. Electricity and water flow into the data centre, and heat comes out.",
-    "back": "A chain from a mine to a chip factory, a data centre and a tablet. Electricity and water flow into the data centre, and heat comes out.",
+    "source": "A map of Johor, Singapore and Batam. Singapore paused new data centres in 2019, and many were then built in Johor and on Batam. In 2025, Johor stopped approving the kinds that use the most water.",
+    "back": "A map of Johor, Singapore and Batam. Singapore paused new data centres in 2019, then many data centres were built in Johor and on Batam Island. In 2025, Johor stopped giving permits for the kinds that use the most water.",
     "flag": true
   },
   "sources.0.label": {
-    "source": "Scientific American, from Nature (10 April 2025): Data centers will use twice as much energy by 2030, driven by AI (reporting the International Energy Agency's Energy and AI report: all data centres, 2024 estimate and 2030 projection)",
-    "back": "Scientific American, from Nature (10 April 2025): Data centers will use twice as much energy by 2030, driven by AI (reporting the Energy and AI report from the International Energy Agency: all data centres, 2024 estimate and 2030 projection)",
+    "source": "Scientific American, from Nature (10 April 2025): Data centers will use twice as much energy by 2030, driven by AI (reporting the International Energy Agency's Energy and AI report: all data centres, 2024 estimate, AI's share and the 2030 forecast)",
+    "back": "Scientific American, from Nature (10 April 2025): Data centers will use twice as much energy by 2030, driven by AI (reporting the International Energy Agency's Energy and AI report: all data centres, the estimate for 2024, AI's share and the projection for 2030)",
     "flag": true
   },
   "sources.1.label": {
@@ -576,23 +420,13 @@
     "flag": true
   },
   "sources.2.label": {
-    "source": "UN Environment Programme (21 September 2024): AI has an environmental problem. Here's what the world can do about that.",
-    "back": "UN Environment Programme (21 September 2024): AI has an environmental problem. Here's what the world can do about that. (AI has an environmental problem, and what the world can do)",
-    "flag": true
-  },
-  "sources.3.label": {
-    "source": "Reuters, via Malay Mail (1 April 2021): Global chip supply chain increasingly vulnerable to massive disruption, study finds (Semiconductor Industry Association)",
-    "back": "Reuters, via Malay Mail (1 April 2021): Global chip supply chain increasingly vulnerable to massive disruption, study finds (Semiconductor Industry Association; the world's chip supply chain is more and more vulnerable)",
-    "flag": true
-  },
-  "sources.4.label": {
     "source": "Associated Press, via The Star (19 February 2025): Malaysia is betting on data centers to boost its economy. But experts warn they come at a price.",
     "back": "Associated Press, via The Star (19 February 2025): Malaysia is betting on data centers to boost its economy. But experts warn they come at a price. (Malaysia bets on data centres)",
     "flag": true
   },
-  "sources.5.label": {
-    "source": "Kontinentalist (2026): Thirsty, tired, wired: Singapore, Johor, Batam and the data centre boom",
-    "back": "Kontinentalist (2026): Thirsty, tired, wired: Singapore, Johor, Batam and the data centre boom (Singapore, Johor, Batam and the data centre boom)",
+  "sources.3.label": {
+    "source": "The Star (26 November 2025): Malaysia's data centre hub tightens approvals on water worries",
+    "back": "The Star (26 November 2025): Malaysia's data centre hub tightens approvals on water worries (Malaysia's main data centre area tightens permits because of worries about water)",
     "flag": true
   },
   "sensitiveNotes.0": {
@@ -601,19 +435,14 @@
     "flag": true
   },
   "educatorNotes.0": {
-    "source": "The numbers are dated and scoped. Electricity: the International Energy Agency's Energy and AI report (April 2025), as reported by Scientific American and Nature, estimated that all data centres used about 415 TWh in 2024, about 1.5% of the world's electricity, and projected about 945 TWh by 2030, roughly what Japan uses in a year now. The 1.5% is for all data centres, not AI alone: the IEA estimated that AI servers were about 15% of data-centre energy use in 2024, and one outside researcher thinks that is an underestimate. The 2030 figure is a projection with stated uncertainty, not a measurement. (The IEA's own pages could not be opened on 1 November 2026; check them, and its later Key questions on energy and AI, if you can.) On the device: some small models run on phones and laptops (for example Apple's roughly 3-billion-parameter model, 2024), while most large tools run in data centres. Taiwan's share of the most advanced chip-making (92%) is from a 2021 Semiconductor Industry Association study. Singapore paused new data centres in 2019; in 2021 they used about 7% of its electricity (Kontinentalist). The earlier draft's “30 to 50 long-term jobs” (Good Jobs First, via AP, scope not stated) and UNEP's “800 kg of materials for a 2 kg computer” (no source given) were removed. The fish farmer in the AP story worried about longer power cuts, like Hana.",
-    "back": "The numbers are dated and have a certain scope. Electricity: the International Energy Agency's (IEA) Energy and AI report (April 2025), as reported by Scientific American and Nature, estimated that all data centres used about 415 TWh in 2024, about 1.5% of the world's electricity, and projected about 945 TWh in 2030, roughly as much as Japan uses in a year now. The 1.5% is for all data centres, not AI alone: the IEA estimated that AI servers used about 15% of data-centre energy in 2024, and one outside researcher thinks that figure is too low. The 2030 figure is a projection with stated uncertainty, not a measurement. (The IEA's own pages could not be opened on 1 November 2026; check those pages, and the later Key questions on energy and AI, if possible.) On the device: some small models run on phones and laptops (for example Apple's model with about 3 billion parameters, 2024), while most big tools run in data centres. Taiwan's share of the most advanced chip-making (92%) comes from a 2021 Semiconductor Industry Association study. Singapore temporarily stopped new data centres in 2019; in 2021 data centres used about 7% of its electricity (Kontinentalist). The earlier draft's “30 to 50 long-term jobs” (Good Jobs First, via AP, scope not stated) and UNEP's “800 kg of materials for a 2 kg computer” (no source) have been removed. The fish farmer in the AP story worried about longer power cuts, like Hana.",
-    "flag": true,
-    "note": "Teachers' notes avoid both \"Anda\" and \"kamu\" where they can: the brief asks for \"Anda\", but the repository's checker (scripts/check_translation.py) refuses \"Anda\" in lesson files, and Our World's teachers' notes use \"kamu\"."
+    "source": "The numbers are dated and scoped. Electricity: the International Energy Agency's Energy and AI report (April 2025) estimated that all data centres used about 415 TWh in 2024, about 1.5% of the world's electricity; AI servers were about 15% of data-centre electricity (24% of server electricity) that year. It projects about 945 TWh by 2030, slightly more than Japan uses now, with AI the main driver and with stated uncertainty (the pace of AI use, efficiency gains, bottlenecks). These figures were read in Scientific American (10 April 2025) and AFP via The Star (10 April 2025); the IEA's own pages refused access on 8 November 2026, so check them if you can. At the launch, the IEA's head said data centres were on course to account for “as much as one-fifth” of Malaysia's electricity-demand growth to 2030 (a projection, not a measurement; reported by Hydrocarbon Engineering and GreenTechLead). On the device: some small models run on phones and laptops (for example Apple's roughly 3-billion-parameter model, 2024), while most large tools run in data centres. Taiwan's 92% of the most advanced chip-making is from a 2021 Semiconductor Industry Association study (Reuters, 1 April 2021). Minerals and e-waste (mercury, lead) are from UNEP (21 September 2024). UNEP's “800 kg of materials for a 2 kg computer” (no source given) stays out.",
+    "back": "The numbers are dated and have a particular scope. Electricity: the International Energy Agency's Energy and AI report (IEA, April 2025) estimated that all data centres used about 415 TWh in 2024, about 1.5% of the world's electricity; AI servers used about 15% of data-centre electricity (24% of server electricity) that year. The IEA projects about 945 TWh by 2030, slightly more than Japan uses now, with AI as the main driver and with stated uncertainty (the pace of AI use, efficiency gains, bottlenecks). These figures were read in Scientific American (10 April 2025) and AFP via The Star (10 April 2025); the IEA's own pages could not be opened on 8 November 2026, so check those pages if possible. At the launch, the IEA's head said data centres were on course to account for “up to a fifth” of the growth in Malaysia's electricity demand to 2030 (a projection, not a measurement; reported by Hydrocarbon Engineering and GreenTechLead). On the device: some small models run on phones and laptops (for example Apple's model with about 3 billion parameters, 2024), while most large tools run in data centres. The 92% figure for Taiwan in making the most advanced chips is from a 2021 Semiconductor Industry Association study (Reuters, 1 April 2021). Minerals and electronic waste (mercury, lead) are from UNEP (21 September 2024). UNEP's figure of “800 kg of materials for a 2 kg computer” (no source) is not used.",
+    "flag": true
   },
   "educatorNotes.1": {
-    "source": "Rules for data centres in Johor and Batam change quickly (in early 2026, after residents protested about water, Malaysia stopped new applications for non-AI data centres in Johor and tightened water approvals, Kontinentalist reports). Check the latest news before teaching the third section. Data centres also run websites, videos and messages, not only AI. Benefits are real too: investment (AP reports over US$31 billion for Malaysia in the first 10 months of 2024, from Knight Frank), building work and some long-term jobs; UNEP also notes that AI can help to monitor the environment. Some places give data centres large tax breaks, so ask who gains from a deal.",
-    "back": "Rules for data centres in Johor and Batam change quickly (in early 2026, after residents protested about water, Malaysia stopped accepting new applications for non-AI data centres in Johor and tightened water permits, Kontinentalist reports). Check the latest news before teaching the third part. Data centres also run websites, videos and messages, not only AI. The benefits are also real: investment (AP reports more than 31 billion US dollars for Malaysia in the first 10 months of 2024, from Knight Frank), building work and some long-term jobs; UNEP also notes that AI can help monitor the environment. Some places give data centres big tax breaks, so ask who benefits from a deal.",
-    "flag": true
-  },
-  "educatorNotes.2": {
-    "source": "Paper version of the activity: write the eight sentences on cards and sort them into Benefit, Cost and Both. There is no score; reward reasons, and accept a different group with a good reason. A partner could swap Coralton for a short, neutral local example, such as a new factory or mine. The claim record is in content/courses/digital-world/claims/DW06.md.",
-    "back": "Paper version of this activity: write the eight sentences on cards, then sort them into Benefit, Cost and Both. There is no score; value the reasons, and accept a different group if the reason is good. A partner organisation could replace Coralton with a short, neutral local example, such as a new factory or mine. Its claim record is in content/courses/digital-world/claims/DW06.md.",
-    "flag": true
+    "source": "Singapore, Johor and Batam: Singapore paused new data centres in 2019; reports put their share of its electricity at about 7% (AP dates it to 2019, Kontinentalist to 2021, DatacenterDynamics in 2022 says over 7%). From 2022 a pilot call admitted a few new ones that met strict efficiency rules (a PUE below 1.3, top green-building certification); about 80 MW went to four operators, and a 2024 Green Data Centre Roadmap promised at least 300 MW more. Johor grew from nearly nothing in 2019 to at least 1.6 GW planned (AP, February 2025), and Malaysia drew over US$31 billion of data-centre investment in the first 10 months of 2024 (Knight Frank, via AP). Jobs: building work ends when the building is finished; a typical data centre has 30 to 50 permanent jobs and large ones up to 200, according to Good Jobs First, a US group (via AP and an ISEAS commentary, March 2025). That figure is not measured for Johor, so it is not in the learner text. In November 2025 Johor stopped approving Tier 1 and Tier 2 data centres, which can use up to 200 times more water than higher tiers; in February 2026 Malaysia's prime minister said approvals for new non-AI data centres had been limited. Rules change quickly: check the latest before teaching the third section. Data centres also run websites, videos and messages, not only AI. The claim record is in content/courses/digital-world/claims/DW06.md.",
+    "back": "Singapore, Johor and Batam: Singapore paused new data centres in 2019; reports put data centres' share of its electricity use at about 7% (AP gives that figure for 2019, Kontinentalist for 2021, and DatacenterDynamics in 2022 says more than 7%). From 2022, a pilot selection admitted a few new data centres that met strict efficiency rules (a PUE below 1.3, the highest green-building certification); about 80 MW went to four operators, and the 2024 Green Data Centre Roadmap promised at least 300 MW more. Johor grew from almost nothing in 2019 to at least 1.6 GW planned (AP, February 2025), and Malaysia attracted more than 31 billion US dollars of data-centre investment in the first 10 months of 2024 (Knight Frank, via AP). Jobs: building work ends when the building is finished; a typical data centre has 30 to 50 permanent jobs, and large ones up to 200, according to Good Jobs First, a group in the United States (via AP and an ISEAS commentary, March 2025). That figure was not measured for Johor, so it is not in the learners' text. In November 2025, Johor stopped giving permits for Tier 1 and Tier 2 data centres, which can use up to 200 times more water than higher tiers; in February 2026, Malaysia's prime minister said permits for new data centres not for AI had been limited. The rules change quickly: check the latest before teaching the third section. Data centres also run websites, videos and messages, not only AI. The claim record is in content/courses/digital-world/claims/DW06.md.",
+    "flag": true,
+    "note": "\"Tier 1\" and \"Tier 2\" kept as the industry's names."
   }
 }

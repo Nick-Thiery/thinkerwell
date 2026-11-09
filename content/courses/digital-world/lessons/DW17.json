@@ -5,24 +5,15 @@
   "section": "truth-and-power",
   "title": "Project: design an AI helper",
   "essentialQuestion": "How would you design an AI helper that is useful, fair and safe?",
-  "learningGoal": "Plan a helper for a problem many people share: say who it helps, whether AI fits, how to check that it works, and how to improve it after feedback.",
+  "learningGoal": "Learn how two real Southeast Asian projects grew from a shared problem, then plan a helper of your own: who it helps, whether AI fits, how to check it works, and one improvement.",
   "estimatedMinutes": [
-    40,
-    60
+    30,
+    45
   ],
-  "warmUp": {
-    "question": "Which of these jobs could an AI helper do well?",
-    "options": [
-      "Sorting rubbish into the right bin",
-      "Choosing who should be friends",
-      "Guessing when a bus will come",
-      "Not sure"
-    ]
-  },
   "evidence": {
     "fictional": false,
     "label": null,
-    "question": "For each project, what problem does it start from, what does the AI do, and what do people still do? What evidence is there that it works?",
+    "question": "For each project, what problem does it start from, who built it, and what does the AI do? How far has it got, and what does the evidence show?",
     "cards": [
       {
         "type": "cases",
@@ -30,11 +21,11 @@
         "cases": [
           {
             "name": "Eco Pulse, Malaysia: a student prototype",
-            "body": "The problem: the students wanted to make recycling quicker and easier for the people who do it. Who built it: three 15-year-old students at SMK Sultan Ismail, a secondary school in Johor. What the AI does: an app looks at a photo of a recyclable item and estimates its weight and value. The evidence: it won an award in a 2024 student competition run by Samsung in Malaysia. The organiser says it is precise, but no test results have been published. A question: how well does it work with dirty or crushed items?"
+            "body": "The problem: the students wanted to make recycling quicker and easier. Who built it: three 15-year-old students at SMK Sultan Ismail, a secondary school in Johor, for a 2024 student competition run by Samsung with Universiti Malaya. What the AI does: an app looks at a photo of a recyclable item and estimates its weight and value. How far it has got: a prototype, a first working version. The evidence: it won first prize in the competition's recycling category. The organiser says it is precise, but no test results have been published. A question: how well does it work with dirty or crushed items?"
           },
           {
-            "name": "Traffy Fondue, Thailand: a public service in use",
-            "body": "The problem: residents see broken roads, floods and broken street lights, and need the right office to fix them. Who built and uses it: a national science agency built it. Residents send a report with a photo and a place, and city and local offices answer. What the AI does: it sorts each report by type and sends it to the right office. People there decide what to do and do the repairs. The evidence: its makers say it received over 940,000 reports from 2022 to 2024. That shows it is used, not how well each problem was fixed. A question: how can people without a smartphone or the internet report a problem?"
+            "name": "SELENA+, Singapore: tested, then put to use",
+            "body": "The problem: people with diabetes need regular eye checks, because the illness can harm their eyes, and checking every eye photo takes many trained people. Who built it: eye doctors and scientists at the Singapore Eye Research Institute and the Singapore National Eye Centre, with computer scientists from the National University of Singapore. What the AI does: it looks at photos of the back of the eye and marks the ones an eye specialist should see. How far it has got: in 2017 the team reported tests on about 500,000 eye photos from Singapore and other countries. In 2024 they reported that it was being used in Singapore's national eye-screening programme. The evidence: these are the team's own reports. A question: does it help patients keep their sight? The reports don't say yet."
           }
         ]
       }
@@ -45,7 +36,7 @@
     "stage": "write",
     "placement": "before-prompt",
     "title": "Plan your AI helper",
-    "instructions": "Plan a helper in five steps. Pick one of the made-up Maple Street problems, or a problem that many people share in a community you know. Don't write anyone's real name or private information. You can go back and change any step.",
+    "instructions": "Plan a helper in five steps. This plan is your main work for the lesson: Write and Speak use it. Pick one of the made-up Maple Street problems, or a problem that many people share in a community you know. Don't write anyone's real name or private information. You can go back and change any step.",
     "problems": [
       {
         "id": "bins",
@@ -85,11 +76,11 @@
           },
           {
             "text": "No, another way is better",
-            "feedback": "That is a good design choice too. Write the other way, and why it fits better, like the club's buddy group."
+            "feedback": "That is a good design choice too. Write the other way, such as a sign, a simple rule or a person, and why it fits better."
           },
           {
             "text": "Not sure yet",
-            "feedback": "That is fine. Write what you still need to find out, and decide again after step 4."
+            "feedback": "Go back to the three questions, and try your helper's main task against each one. You can choose again at any time."
           }
         ]
       },
@@ -104,14 +95,14 @@
         "id": "risks",
         "title": "4. Risks, tests and checks",
         "kind": "text",
-        "prompt": "What could go wrong? How would you test that it works? Who would check it, and how often?",
+        "prompt": "What could go wrong? How would you test it with examples it has never seen? Who would check it, and how often?",
         "starter": "One risk is ... To test it, ... ___ would check it by ..."
       },
       {
         "id": "feedback",
-        "title": "5. Feedback and version 2",
+        "title": "5. Look again and make version 2",
         "kind": "text",
-        "prompt": "Read your plan to a partner, or read it again yourself. Answer one of these questions. Then change one thing.",
+        "prompt": "Read your plan again. Answer one of these questions. Then change one thing.",
         "questions": [
           "Who might this helper leave out?",
           "What happens if it makes a mistake?",
@@ -127,29 +118,29 @@
   "read": {
     "sections": [
       {
-        "heading": "Start with the problem, not the tool",
-        "text": "In this project, you will plan a helper for a problem that many people share in a community. Good designers start with the problem and the people it affects, not the tool. In Malaysia, three 15-year-old students wanted to make recycling easier, so they built a prototype app, Eco Pulse, that estimates the weight and value of items from a photo. Then designers ask: should AI be used here at all? AI can help when a helper must recognise or guess from many examples. But sometimes a simple rule or a person does the job better. The made-up Maple Street design club decided a tool should not choose friends, because people should choose their own.",
-        "simpler": "You will plan a helper for a shared problem. Good designers start with the problem and the people it affects. In Malaysia, three 15-year-old students wanted easier recycling. They built a prototype app, Eco Pulse. From a photo of rubbish, it tries to tell the weight and value. Should AI be used here? AI can help when a helper must learn from many examples. Sometimes a simple rule or a person is better. The made-up Maple Street club said no to a tool that chooses friends. People should choose their own."
+        "heading": "Start with a problem people share",
+        "text": "In this project, you will plan a helper for a problem that many people in a community share. Good designers start with the problem and the people it affects, not with the tool. Two real projects from Southeast Asia show how. In Johor, Malaysia, three 15-year-old students wanted to make recycling easier. For a 2024 student competition, they built Eco Pulse, an app that looks at a photo of a recyclable item and estimates its weight and value. In Singapore, people with diabetes need regular eye checks, because the illness can harm their eyes, and checking every photo takes many trained people. Eye doctors and computer scientists there built SELENA+, which looks at photos of the back of the eye and marks the ones a specialist should see.",
+        "simpler": "You will plan a helper for a problem many people share. Good designers start with the problem, not the tool. Here are two real projects. In Johor, Malaysia, three 15-year-old students wanted easier recycling. They built an app called Eco Pulse. From a photo of an item, it tells its weight and value. In Singapore, people with diabetes need eye checks. The illness can harm their eyes. Checking every photo takes many trained people. Eye doctors and computer scientists built SELENA+. It marks the eye photos that a specialist should see."
       },
       {
-        "heading": "Plan what it learns and what could go wrong",
-        "text": "Next, a designer plans what the helper will learn from. The club's bin helper would learn from photos of rubbish that club members label “plastic” or “paper”. These labelled examples are its training data. As you learned in Lesson 8, a tool can fail for anything missing from its examples, so the club adds photos of crushed and dirty items too. Then the designer lists the risks: a camera near the bins must never film people's faces. Finally, the designer decides who checks the helper. The club will look inside the bins every Friday.",
-        "simpler": "The bin helper learns from photos of rubbish that club members label. These are its training data. A tool can fail when examples are missing. So the club adds crushed rubbish too. One risk: the camera must never film faces. Last, decide who checks it: the club looks in the bins every Friday."
+        "heading": "How far has a project got?",
+        "text": "A project grows in stages, and each stage needs its own evidence. A proposal is an idea on paper. A prototype is a first working version. Testing checks it carefully with new examples it has never seen. Being in use means real people rely on it. Showing impact means there is evidence that it made life better. Eco Pulse won first prize in its category, which shows that judges thought the prototype was strong. It doesn't show how well the app works with dirty or crushed items, or that people use it. SELENA+ has gone further. In 2017, its team reported tests on about 500,000 eye photos from Singapore and other countries. In 2024, they reported that it was being used in Singapore's national eye-screening programme. These are the team's own reports, and they don't yet show whether patients' eyesight is better.",
+        "simpler": "A project grows in stages. A proposal is just an idea. A prototype is the first version that works. Testing checks it with new examples. Then real people use it. Last, there may be evidence that it made life better. That is called impact. Eco Pulse won a prize, so judges liked the prototype. That does not show how well it works, or that people use it. SELENA+ has gone further. In 2017, its team tested it on about 500,000 eye photos. In 2024, they said Singapore's eye checks used it. These reports don't show if people can see better."
       },
       {
-        "heading": "Test, listen and improve",
-        "text": "Designers also ask what evidence shows that a helper works. Eco Pulse won a student award, but no test results have been published yet. In Thailand, Traffy Fondue's AI sorts residents' reports about problems such as floods and sends each to the right office, where people fix them. Its makers count over 940,000 reports, but a count shows use, not how well problems were fixed. Designers test their plan with users, listen to feedback, change it and test again. This is called iteration. When the club's bus-timing helper went wrong after new roadworks, they added new examples. Share your plan, change one thing, and you have version 2.",
-        "simpler": "What shows that it works? Eco Pulse won an award, but no test results are published yet. In Thailand, Traffy Fondue's AI sorts reports about problems like floods. It sends each to the right office, where people fix them. Its makers count over 940,000 reports. That shows use, not how well problems were fixed. Designers test with users, listen to feedback and change the plan. This is called iteration. Change one thing for version 2."
+        "heading": "Plan, check and improve",
+        "text": "Now it's your turn. First, decide whether AI should be used at all. AI can help when a helper must recognise or guess from many examples, like items in photos or signs of eye disease. But a sign, a simple rule or a person can be a better answer, and a well-explained simpler plan is a strong design. Then plan what your helper would learn from, what could go wrong and who would check it. Like SELENA+, it should be tested with examples it has never seen, from the people who will use it. Finally, look at your plan again, or listen to feedback. Designers change a plan and test it again. This is called iteration. Change one thing, and you have version 2.",
+        "simpler": "Should AI be used at all? AI can help when a helper must learn from many examples. But a sign, a rule or a person can be better. A simpler plan is fine, with reasons. Plan what it learns from, what could go wrong, and who checks it. Test it with new examples from its users. Then look at your plan again, or get feedback. Change it and test again. This is called iteration. Change one thing for version 2."
       }
     ],
     "glossary": [
       {
-        "word": "designer",
+        "word": "proposal",
         "forms": [
-          "designers"
+          "proposals"
         ],
-        "definition": "A person who plans how something will look and work.",
-        "example": "The Maple Street club are designers. They plan helpers."
+        "definition": "A plan or idea that has not been built yet.",
+        "example": "Your plan for a helper is a proposal."
       },
       {
         "word": "prototype",
@@ -160,105 +151,80 @@
         "example": "Eco Pulse is a prototype. It still needs testing."
       },
       {
-        "word": "training data",
-        "definition": "Examples used to build an AI tool, like labelled photos.",
-        "example": "The bin helper's training data is labelled photos of rubbish."
-      },
-      {
-        "word": "risk",
-        "forms": [
-          "risks"
-        ],
-        "definition": "The chance that something bad could happen.",
-        "example": "One risk is that the camera films people's faces."
+        "word": "impact",
+        "definition": "The real difference a project makes to people's lives.",
+        "example": "To show impact, SELENA+ would need evidence that people can see better."
       },
       {
         "word": "feedback",
         "definition": "What other people tell you about your work, to help you improve it.",
-        "example": "A partner's feedback helped the club change its plan."
+        "example": "A partner's feedback helped me change my plan."
       },
       {
         "word": "iteration",
         "definition": "Testing a plan, changing it, and testing it again, many times.",
-        "example": "After the roadworks, iteration made the bus helper better."
+        "example": "Iteration turns version 1 into version 2."
       }
     ],
     "checks": [
       {
         "type": "choice",
-        "question": "Why did the club drop the friend chooser?",
+        "question": "What does Eco Pulse's prize show?",
         "options": [
           {
-            "text": "The camera at the centre was broken that day",
+            "text": "It is used in recycling centres across Malaysia",
             "correct": false,
-            "feedback": "Not quite. The friend chooser had no camera. Read the first section."
+            "feedback": "Not quite. Nothing reports that people use it yet. Read the second section."
           },
           {
-            "text": "People should choose their own friends",
+            "text": "Judges thought the prototype was strong",
             "correct": true,
-            "feedback": "Yes. Some choices belong to people. The club planned a buddy group run by people instead."
+            "feedback": "Yes. A prize is a good start. It is not evidence that the app works well or that people use it."
           },
           {
-            "text": "Computers are too slow to choose friends",
+            "text": "Tests showed that it cuts waste",
             "correct": false,
-            "feedback": "Not quite. Speed was not the reason. Read the first section about when AI should not be used."
+            "feedback": "Not quite. No test results have been published. Read the second section."
           }
         ]
       },
       {
         "type": "choice",
-        "question": "What does the evidence show about Eco Pulse so far?",
+        "question": "What did the SELENA+ team report in 2017?",
         "options": [
           {
-            "text": "It is a prototype that won an award",
+            "text": "Tests on about 500,000 eye photos",
             "correct": true,
-            "feedback": "Yes. An award is a good start. It is not proof that the app works well for everyone."
+            "feedback": "Yes. They tested how well it marked eye photos. In 2024 they reported that it was in use."
           },
           {
-            "text": "It works well everywhere in Malaysia",
+            "text": "That patients' eyesight got better",
             "correct": false,
-            "feedback": "Not quite. It is a student prototype, and no test results are published yet. Read the third section."
+            "feedback": "Not quite. The tests looked at photos, not at patients' eyesight. Read the second section."
           },
           {
-            "text": "It was never built or tried",
+            "text": "That clinics all over the world use it",
             "correct": false,
-            "feedback": "Not quite. The students built a prototype app. Read the first section."
+            "feedback": "Not quite. The team reported its use in Singapore's eye checks, in 2024. Read the second section."
           }
         ]
-      },
-      {
-        "type": "think",
-        "question": "What problem that many people share could a helper help with? You can pick one from the lesson.",
-        "placeholder": "A problem many people share is ... A helper could ...",
-        "optional": true
       }
     ]
   },
   "write": {
-    "prompt": "Write your plan for a helper. Say the problem and who it helps, whether AI fits or what you still need to find out, how you would check it works, and one change after feedback.",
+    "prompt": "Look at your plan. Like Eco Pulse and SELENA+, a helper grows in stages. Say what stage your plan is at now, and what evidence it would need before people could rely on it.",
     "sentenceStarters": [
-      "The problem is ... It affects ...",
-      "A helper would make things better by ...",
-      "I think AI fits / another way fits / I still need to find out ..., because ...",
-      "To check it works, ___ would ...",
-      "After feedback, I changed ..."
+      "My plan is at the ___ stage, because ...",
+      "Before people rely on it, it would need ...",
+      "Evidence that it helps would be ..."
     ],
-    "planningBoxes": [
-      "My main idea",
-      "Evidence from the lesson",
-      "Why it matters",
-      "A question I still have"
-    ],
-    "selfCheck": [
-      "I said the problem, who it affects and how a helper would help.",
-      "I said if AI fits, or what I still need to find out, and why.",
-      "I said how to check it works, and one change after feedback."
-    ],
-    "example": "The problem is that plastic often goes in the paper bin at the centre. It affects the people who sort the bins by hand. A helper would make sorting faster. I think AI fits, because it must recognise many kinds of rubbish from photos. It would learn from photos we label “plastic” or “paper”. To check it works, the club would test it on new photos and look in the bins every Friday. After feedback, I changed my plan to add photos of crushed bottles."
+    "planningBoxes": [],
+    "selfCheck": [],
+    "example": "My plan is at the proposal stage, because it is an idea on paper for sorting plastic and paper at the centre. Before people rely on it, it would need a prototype. Then it would need tests with new photos it has never seen, such as crushed and dirty bottles. Like SELENA+, it should be tested with the people who will use it. Evidence that it helps would be fewer wrong items in the bins each week, counted by the club. A prize alone would not show that."
   },
   "speak": {
-    "partnerTask": "Explain your plan to a partner in one minute: the problem, who it helps, and why AI fits or not. Your partner asks one question from step 5. Change one thing, and say your version 2.",
-    "independentTask": "Say your plan out loud. Then ask yourself who it might leave out and how you would know it works, and answer."
+    "partnerTask": "Present your plan to a partner in one minute, as if at a community meeting. Your partner plays someone who would use your helper, and says one thing they like and one worry. Then switch.",
+    "independentTask": "Say your plan out loud in one minute, as if at a community meeting. Then answer one question about it: who might it leave out?"
   },
   "watch": {
     "youtubeId": "b0KaGBOU4Ys",
@@ -280,7 +246,7 @@
   "reflect": {
     "prompts": [
       {
-        "text": "If I could build one helper for a community, it would ... because ...",
+        "text": "One thing the two real projects taught me about design is ...",
         "required": true
       },
       {
@@ -288,7 +254,7 @@
         "required": false
       }
     ],
-    "completionMessage": "You finished Lesson 17. You planned a helper, decided whether AI fits, and improved your plan after feedback."
+    "completionMessage": "You finished Lesson 17. You saw how two real projects grew, planned your own helper, and improved it once."
   },
   "visual": {
     "type": "diagram",
@@ -298,28 +264,24 @@
   },
   "sources": [
     {
-      "label": "UNESCO: AI competency framework for students (2024)",
-      "url": "https://www.unesco.org/en/articles/ai-competency-framework-students"
-    },
-    {
-      "label": "UNICEF Innocenti (2025): Guidance on AI and children, version 3.0",
-      "url": "https://www.unicef.org/innocenti/reports/policy-guidance-ai-children"
-    },
-    {
       "label": "Samsung Malaysia newsroom (11 December 2024): 15-year-old students from Johor win at Samsung Solve for Tomorrow 2024 (Eco Pulse; the organiser's account)",
       "url": "https://news.samsung.com/my/15-years-old-students-from-johor-bags-most-innovative-award-in-samsung-solve-for-tomorrow-2024"
     },
     {
-      "label": "NSTDA via ThaiPR.net (17 July 2024): Traffy Fondue's new AI features and use figures (Thai)",
-      "url": "https://www.thaipr.net/?p=3497519"
+      "label": "Singapore National Eye Centre: AI and digital health research group (SELENA+)",
+      "url": "https://www.snec.com.sg/research-innovation/research-groups-platforms/research-groups/AI-digital-health"
     },
     {
-      "label": "Hansen and Dahiya (2025): Traffy Fondue, a smart city citizen engagement, Frontiers in Sustainable Cities",
-      "url": "https://www.frontiersin.org/articles/10.3389/frsc.2025.1491621/full"
+      "label": "Ting and others (2017): Development and validation of a deep learning system for diabetic retinopathy and related eye diseases, JAMA 318(22) (Duke University record)",
+      "url": "https://scholars.duke.edu/publication/1293398"
     },
     {
-      "label": "Common Sense Education: What is AI? (video page)",
-      "url": "https://www.commonsense.org/education/videos/what-is-ai"
+      "label": "Gunasekeran and others (2024): National use of artificial intelligence for eye screening in Singapore, NEJM AI (the developers' account; SMU record)",
+      "url": "https://ink.library.smu.edu.sg/sis_research/9566"
+    },
+    {
+      "label": "UNESCO: AI competency framework for students (2024)",
+      "url": "https://www.unesco.org/en/articles/ai-competency-framework-students"
     }
   ],
   "sensitiveNotes": [
@@ -327,8 +289,8 @@
     "Plans are saved with the learner's work on this device. Learners must not write real people's names or private information in them."
   ],
   "educatorNotes": [
-    "This is a design on paper: nothing is built, and coding is optional. Assess five things, not how impressive or how wary the plan sounds: the need (a real problem and who it affects), the intended benefit, technical fit (why AI helps, why another way fits better, or what the learner still needs to find out: all three are strong answers), evidence and checks (how they would test it, and who checks), and one improvement after feedback. It covers UNESCO's AI system design aspect at the Understand level and touches Create. Paper version: the five steps as a worksheet. Older or more confident learners can add a test plan (which new examples, and what result would count as working) or, optionally, build a tiny sorter with Lesson 3's nearest-neighbour idea.",
-    "The two real projects. Eco Pulse is known only from its organiser's account (Samsung Malaysia, 11 December 2024; also The Star, 26 January 2025): team TerraInnovators, three 15-year-olds at SMK Sultan Ismail, Johor, with an AI image-recognition app that estimates the weight and value of recyclable items, shown as a prototype at the Solve for Tomorrow 2024 final (run with Universiti Malaya). “With precision” is the organiser's claim; no test results are published, and it is not a working national service. Traffy Fondue (NECTEC, NSTDA) is an operating service: NSTDA reports over 940,000 reports from June 2022 to July 2024 and 77% “completed”, its own figures; a study of Bangkok's use (Hansen and Dahiya, 2025) notes it is digital-only, so people without smartphones or internet can be left out. Use each card's question for discussion, not as criticism of the people who built them."
+    "This is a design on paper: nothing is built, and coding is optional. The plan is the lesson's single working document: Write asks what stage it has reached and what evidence it would need, Speak presents it, and step 5 revises it once; no second plan is asked for. Assess five things, not how impressive or how wary the plan sounds: the need (a real problem and who it affects), the intended benefit, technical fit (why AI helps, why another way fits better, or what the learner still needs to find out: all three are strong answers), evidence and checks (how they would test it with unseen examples, and who checks), and one improvement. It covers UNESCO's AI system design aspect at the Understand level and touches Create. Paper version: the five steps as a worksheet. Older or more confident learners can add a test plan (which new examples, and what result would count as working).",
+    "The two real projects, and how far each has got. Eco Pulse is known only from its organiser's account (Samsung Malaysia, 11 December 2024, re-read 8 November 2026): team “Terralnnovators” (so spelled), three 15-year-olds at SMK Sultan Ismail, Johor, with an “AI-driven image recognition app” that estimates the value and weight of recyclable items; first prize in the Accessible Recycling category of Solve for Tomorrow 2024 (with Universiti Malaya; final 7 December 2024), where finalists presented prototypes. “With precision” is the organiser's claim; no test results, users or deployment are reported. SELENA+: developed and validated by SERI/SNEC with NUS computer scientists (Ting and others, JAMA, December 2017: 494,661 retinal images; primary validation in Singapore's national diabetic retinopathy screening programme, 14,880 patients; 10 further multiethnic datasets; “further research is necessary” in health care settings). Deployment comes from a separate source, the developers' own case study (Gunasekeran and others, NEJM AI, November 2024): SELENA+ in the Singapore Integrated Diabetic Retinopathy Programme with medical-device approval; in a pilot of the first 1,712 patients it was less sensitive and less specific than human graders for referable retinopathy (94.7% and 82.2%, against 98.9% and 97.2%) and more sensitive for vision-threatening retinopathy. Not an independent evaluation, and no patient outcomes. Don't attribute Lesson 10's made-up Sunvale eye helper's weaknesses to SELENA+."
   ],
   "changes": [
     "New lesson (Digital World draft). There is no Base44 original, so oldId is null.",
@@ -338,6 +300,8 @@
     "visual.src points to a picture that doesn't exist yet.",
     "Needs review by Justin for level and tone, and by an AI researcher for the design steps.",
     "October 2026, social studies rebuild (Justin's brief: AI and the digital world through a social studies lens, at most 20 lessons): kept as Lesson 17 in \"Truth, power and choices\" (truth-and-power). The notes above about the old section ids are out of date.",
-    "Revised on 1 November 2026 from Justin's review: the evidence is now two real Southeast Asian projects, each with the problem and the people affected, who built or used it and what the AI does, what evidence exists, and one realistic question: Eco Pulse (Malaysia; three 15-year-old students; a prototype with an award, accuracy claimed but not published) and Traffy Fondue (Thailand; an operating public service where AI sorts and routes residents' reports and people do the repairs; report counts are not problems fixed). So the evidence is fictional: false, and the made-up Maple Street plans stay in the reading (labelled made up) and as the activity's starter problems (now marked “made up”). The design steps, Write task, starters, self-check, example and teacher notes now assess need, benefit, technical fit, evidence and checks, and improvement, and accept “AI helps”, “another way fits better” or “I still need to find out” with reasons; coding stays optional. Training data is defined as examples used to build a tool, not as always having the right answer; “prototype” added to the glossary. The second quick check now asks what the evidence shows about Eco Pulse. The Kyiv Polytechnic commentary was dropped from the sources to make room."
+    "Revised on 1 November 2026 from Justin's review: the evidence is now two real Southeast Asian projects, each with the problem and the people affected, who built or used it and what the AI does, what evidence exists, and one realistic question: Eco Pulse (Malaysia; three 15-year-old students; a prototype with an award, accuracy claimed but not published) and Traffy Fondue (Thailand; an operating public service where AI sorts and routes residents' reports and people do the repairs; report counts are not problems fixed). So the evidence is fictional: false, and the made-up Maple Street plans stay in the reading (labelled made up) and as the activity's starter problems (now marked “made up”). The design steps, Write task, starters, self-check, example and teacher notes now assess need, benefit, technical fit, evidence and checks, and improvement, and accept “AI helps”, “another way fits better” or “I still need to find out” with reasons; coding stays optional. Training data is defined as examples used to build a tool, not as always having the right answer; “prototype” added to the glossary. The second quick check now asks what the evidence shows about Eco Pulse. The Kyiv Polytechnic commentary was dropped from the sources to make room.",
+    "Revised on 8 November 2026 (Justin's brief of 4 November): the design plan is now the single working document. Write no longer asks for the plan a second time (it asks what stage the plan has reached and what evidence it would need), Speak presents it to a partner playing a user, and step 5 revises it once on the learner's own (the partner part moved to Speak). The warm-up, the think question, the planning boxes, the self-check, the made-up Maple Street design club and its friend-chooser check are gone; the Maple Street problems stay in the activity as starter choices.",
+    "The real cases are now a youth project and a professional one from two countries, each introduced through its problem, people, place, purpose, what the AI contributes and what the evidence establishes: Eco Pulse (Malaysia, a student prototype with a prize, no published tests) and SELENA+ (Singapore, developed and validated in 2017, reported in national use by its developers in 2024, no patient outcomes reported). Traffy Fondue moved out of this lesson (Lesson 10 teaches it). A new reading section separates proposal, prototype, testing, use and impact; “proposal” and “impact” join the glossary (“designer”, “training data” and “risk” leave it). estimatedMinutes 30–45."
   ]
 }

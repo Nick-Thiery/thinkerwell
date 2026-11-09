@@ -1,19 +1,10 @@
 {
   "title": "Menyemak foto, video dan suara",
-  "essentialQuestion": "Bagaimanakah kamu boleh tahu sama ada foto, video atau suara itu benar?",
-  "learningGoal": "Terangkan cara AI boleh menghasilkan gambar, video dan suara yang realistik, dan semak sumbernya sebelum kamu mempercayai atau mengongsikannya.",
-  "warmUp": {
-    "question": "Kamu melihat foto sebiji labu sebesar kereta. Apakah yang kamu fikir dahulu?",
-    "options": [
-      "Ia benar",
-      "Ia palsu",
-      "Saya akan menyemaknya dahulu",
-      "Tidak pasti"
-    ]
-  },
+  "essentialQuestion": "Bagaimanakah kamu boleh menyemak foto, video atau suara sebelum kamu mempercayainya?",
+  "learningGoal": "Terangkan cara AI boleh menghasilkan gambar, video dan suara yang realistik, bezakan karya kreatif yang berlabel daripada kandungan palsu, dan semak sumbernya sebelum kamu mempercayai atau mengongsikannya.",
   "evidence": {
     "label": "Contoh rekaan yang dibuat untuk pelajaran ini.",
-    "question": "Siapakah yang menyiarkan setiap satu? Apakah yang boleh kamu semak? Yang manakah belum dapat kamu pastikan?",
+    "question": "Siapakah yang menyiarkan setiap satu? Apakah yang diberitahu oleh sumbernya? Siaran yang manakah menyatakan secara terbuka bahawa AI yang menghasilkannya?",
     "cards": [
       {
         "title": "Siaran dalam kumpulan berita Greenhill",
@@ -27,66 +18,14 @@
             "body": "Video seekor kambing yang berkata “Selamat pagi” dengan jelas. Kelab komedi Greenhill menyiarkannya. Kapsyennya berbunyi: “Dibuat dengan AI, sekadar suka-suka.”"
           },
           {
-            "name": "Siaran C: hujan di pasar",
-            "body": "Foto pasar dalam hujan lebat, disiarkan oleh halaman pasar itu sendiri pagi ini. Orang lain juga menyiarkan foto hujan yang sama."
-          },
-          {
-            "name": "Siaran D: mesej suara",
+            "name": "Siaran C: mesej suara",
             "body": "Mesej suara yang kedengaran seperti Jurulatih Ana. Mesej itu berkata: “Perlawanan bola sepak dipindahkan ke pukul enam pagi.” Mesej itu datang daripada nombor yang tiada sesiapa kenal. Papan kenyataan di pusat itu masih menyatakan pukul empat petang."
           },
           {
-            "name": "Siaran E: kucing di atas bumbung",
-            "body": "Foto seekor kucing yang tidur di atas bumbung. Tiada apa-apa yang kelihatan pelik. Tiada nama dan tiada tarikh."
-          },
-          {
-            "name": "Siaran F: penjual buah",
+            "name": "Siaran D: penjual buah",
             "body": "Foto seorang penjual buah. Kulitnya kelihatan sangat licin, dan latar belakangnya kabur. Kelab fotografi Greenhill menyiarkannya bersama nama jurugambarnya, dan menyatakan bahawa foto itu diambil dengan telefon pada waktu petang."
           }
         ]
-      }
-    ]
-  },
-  "activity": {
-    "title": "Semak setiap siaran",
-    "instructions": "Letakkan setiap siaran Greenhill dalam satu kumpulan. Tiada markah. Selepas kamu meletakkan satu siaran, kamu boleh melihat satu jawapan yang mungkin dan sebabnya.",
-    "groups": [
-      {
-        "label": "Mungkin benar"
-      },
-      {
-        "label": "Mungkin palsu"
-      },
-      {
-        "label": "Dibuat dengan AI, dan dinyatakan begitu"
-      },
-      {
-        "label": "Belum dapat dipastikan: semak dahulu"
-      }
-    ],
-    "items": [
-      {
-        "text": "Siaran A: labu gergasi",
-        "feedback": "Halaman ladang itu sendiri menyatakan bahawa ladang itu tidak menanam labu gergasi, dan halaman yang menyiarkannya tiada nama. Tangan yang pelik hanyalah sebab untuk menyemak. Foto sebenar juga boleh kelihatan pelik."
-      },
-      {
-        "text": "Siaran B: kambing yang bercakap",
-        "feedback": "Kelab komedi itu menyatakan dengan jelas bahawa ia menggunakan AI, untuk suka-suka. Itu bukan tipu helah. Ia akan menjadi tipu helah jika seseorang mengongsikannya tanpa label itu, seolah-olah ia benar."
-      },
-      {
-        "text": "Siaran C: hujan di pasar",
-        "feedback": "Ia datang daripada halaman pasar itu sendiri, dan orang lain menunjukkan hujan yang sama."
-      },
-      {
-        "text": "Siaran D: mesej suara",
-        "feedback": "Ia kedengaran seperti Jurulatih Ana, tetapi ia datang daripada nombor yang tidak dikenali. Papan kenyataan menyatakan perkara lain. Tanya dia secara bersemuka, atau telefon nombornya yang biasa."
-      },
-      {
-        "text": "Siaran E: kucing di atas bumbung",
-        "feedback": "Tiada apa-apa yang kelihatan pelik, tetapi kandungan palsu yang baharu boleh kelihatan sempurna. Tanpa nama dan tarikh, kamu belum dapat menyemak sumbernya. “Mungkin benar” juga boleh munasabah, jika kamu memberi sebab."
-      },
-      {
-        "text": "Siaran F: penjual buah",
-        "feedback": "Kelab fotografi itu menyatakan siapa yang mengambilnya dan caranya. Foto telefon yang sebenar juga boleh kelihatan licin dan kabur pada waktu petang."
       }
     ]
   },
@@ -94,25 +33,25 @@
     "sections": [
       {
         "heading": "AI boleh menghasilkan gambar, video dan suara",
-        "text": "Sesetengah alat AI boleh mencipta gambar, video dan suara yang baharu. Alat ini belajar daripada sejumlah besar contoh sebenar, jadi hasilnya boleh kelihatan dan kedengaran realistik. Ramai orang menggunakan alat ini secara terbuka untuk seni, filem atau pendidikan, dan menerangkan bahawa AI yang menghasilkan karya itu. Kandungan palsu pula berbeza: ia berpura-pura menunjukkan sesuatu yang benar yang tidak pernah berlaku. Deepfake ialah kandungan palsu yang meniru wajah atau suara orang sebenar, selalunya untuk menipu orang demi wang atau perhatian. Di Greenhill, kelab komedi menyiarkan kambing yang bercakap dengan label “Dibuat dengan AI, sekadar suka-suka”. Orang lain pula menyiarkan foto sebiji labu sebesar kereta. Adakah foto itu benar?",
-        "simpler": "Sesetengah alat AI menghasilkan gambar, video dan suara yang baharu. Alat ini belajar daripada banyak contoh sebenar. Jadi, hasilnya kelihatan realistik. Sesetengah orang berterus terang bahawa AI menghasilkan seni atau pelajaran mereka. Kandungan palsu berbeza. Ia menunjukkan sesuatu yang tidak pernah berlaku, seolah-olah ia benar. Deepfake meniru wajah atau suara orang sebenar untuk menipu orang. Di Greenhill, kambing yang bercakap oleh kelab komedi menyatakan bahawa AI menghasilkannya. Tetapi adakah labu besar itu benar?"
+        "text": "Sesetengah alat AI boleh mencipta gambar, video dan suara yang baharu. Alat ini belajar daripada sejumlah besar contoh sebenar, jadi hasilnya boleh kelihatan dan kedengaran realistik. Ramai orang menggunakan alat ini secara terbuka dan kreatif. Artis menghasilkan gambar, pembuat filem menambah kesan khas dan guru menyediakan pelajaran, dan mereka menyatakan bahawa AI membantu. Di Greenhill, kelab komedi menyiarkan kambing yang bercakap dengan label “Dibuat dengan AI, sekadar suka-suka”, jadi itu bukan helah. Kandungan palsu pula berbeza: ia berpura-pura menunjukkan sesuatu yang benar yang tidak pernah berlaku. Deepfake ialah kandungan palsu yang meniru wajah atau suara orang sebenar, selalunya untuk menipu orang demi wang atau perhatian. Label juga boleh hilang. Jika seseorang mengongsikan video kambing itu tanpa labelnya, seolah-olah ia benar, video itu boleh mengelirukan orang.",
+        "simpler": "Sesetengah alat AI menghasilkan gambar, video dan suara yang baharu. Alat ini belajar daripada banyak contoh sebenar. Jadi, hasilnya kelihatan realistik. Ramai orang menggunakan alat ini secara terbuka. Artis, pembuat filem dan guru memberitahu apabila AI membantu. Di Greenhill, kelab komedi menyiarkan kambing yang bercakap. Labelnya menyatakan AI yang menghasilkannya, sekadar suka-suka. Itu bukan helah. Kandungan palsu berbeza. Ia menunjukkan sesuatu yang tidak pernah berlaku, seolah-olah ia benar. Deepfake meniru wajah atau suara orang sebenar untuk menipu orang. Label juga boleh hilang. Jika dikongsi tanpa labelnya, video kambing itu boleh menipu orang."
       },
       {
         "heading": "Butiran yang pelik ialah petunjuk, bukan bukti",
-        "text": "Gambar AI kadangkala ada kesilapan kecil, seperti jari tambahan, huruf yang berselerak pada papan tanda atau latar belakang yang seolah-olah cair ke dalam dinding. Dalam video, mulut mungkin tidak bergerak mengikut perkataan. Butiran ini boleh menjadi petunjuk, tetapi bukan bukti. Alat yang lebih baharu membuat lebih sedikit kesilapan, jadi kandungan palsu boleh kelihatan sempurna. Foto sebenar juga boleh kelihatan pelik, contohnya apabila foto itu kabur atau diambil dalam cahaya yang malap. Dalam satu kajian pada tahun 2025, peserta tersilap melabel kira-kira satu daripada empat foto sebenar sebagai buatan AI. Foto penjual buah itu menunjukkan kulit yang sangat licin, tetapi kelab fotografi menyatakan bahawa sebuah telefon yang mengambilnya.",
-        "simpler": "Gambar AI kadangkala ada kesilapan, seperti enam jari atau huruf yang berselerak. Ini ialah petunjuk. Tetapi petunjuk bukan bukti. Alat baharu membuat lebih sedikit kesilapan. Foto sebenar juga boleh kelihatan pelik, apabila gelap atau tidak jelas. Dalam satu kajian pada tahun 2025, orang melihat foto sebenar. Mereka menyangka kira-kira satu daripada empat foto itu buatan AI. Penjual buah itu ada kulit yang sangat licin. Tetapi sebuah telefon yang mengambil foto itu."
+        "text": "Gambar AI kadangkala ada kesilapan kecil, seperti jari tambahan, huruf yang berselerak pada papan tanda atau latar belakang yang seolah-olah cair ke dalam dinding. Dalam video, mulut mungkin tidak bergerak mengikut perkataan. Butiran ini boleh menjadi petunjuk, tetapi bukan bukti. Alat yang lebih baharu membuat lebih sedikit kesilapan, jadi kandungan palsu boleh kelihatan sempurna. Foto sebenar juga boleh kelihatan pelik, contohnya apabila foto itu kabur atau diambil dalam cahaya yang malap. Dalam satu kajian pada tahun 2025 oleh penyelidik di Amerika Syarikat, lebih daripada 50,000 orang menilai foto sebenar dan gambar AI dalam talian. Mereka tersilap menyebut kira-kira satu daripada empat foto sebenar sebagai buatan AI, dan mereka juga tidak dapat mengesan kira-kira satu daripada empat gambar AI. Foto penjual buah itu menunjukkan kulit yang sangat licin, tetapi kelab fotografi menyatakan siapa yang mengambilnya, dengan telefon.",
+        "simpler": "Gambar AI kadangkala ada kesilapan, seperti enam jari atau huruf yang berselerak. Ini ialah petunjuk. Tetapi petunjuk bukan bukti. Alat baharu membuat lebih sedikit kesilapan. Foto sebenar juga boleh kelihatan pelik, apabila gelap atau tidak jelas. Dalam satu kajian pada tahun 2025, lebih daripada 50,000 orang melihat gambar dalam talian. Ada yang benar, dan ada yang dibuat oleh AI. Orang menyangka kira-kira satu daripada empat foto sebenar buatan AI. Mereka juga tidak perasan kira-kira satu daripada empat gambar AI. Penjual buah itu ada kulit yang sangat licin. Tetapi kelab fotografi kata sebuah telefon yang mengambil foto itu."
       },
       {
         "heading": "Semak sumbernya",
-        "text": "Semakan yang paling berguna ialah sumbernya. Siapakah yang menyiarkannya, dan bila? Bolehkah kamu mencari dari mana ia mula-mula datang? Adakah sumber lain yang boleh dipercayai menunjukkan perkara yang sama? Halaman ladang itu sendiri menyatakan bahawa ladang itu tidak menanam labu gergasi, jadi foto itu mungkin palsu. Foto hujan datang daripada halaman pasar itu sendiri, dan orang lain menyiarkan hujan yang sama, jadi foto itu mungkin benar. Untuk mesej suara, hubungi orang itu dengan cara lain. Mesej Jurulatih Ana datang daripada nombor yang tidak dikenali, jadi tanya dia secara bersemuka. Jika kamu masih belum pasti, katakan begitu, dan jangan kongsikannya dahulu.",
-        "simpler": "Jadi, semak sumbernya. Siapakah yang menyiarkannya? Bila? Dari mana ia mula-mula datang? Adakah orang yang kamu percayai menunjukkan perkara yang sama? Ladang itu kata ia tiada labu gergasi. Jadi, foto itu mungkin palsu. Foto hujan datang daripada pasar itu sendiri. Orang lain menyiarkan hujan yang sama. Mesej Jurulatih Ana datang daripada nombor yang tiada sesiapa kenal. Jadi, tanya dia secara bersemuka. Tidak pasti? Jangan kongsikannya dahulu."
+        "text": "Jadi, semakan yang paling berguna ialah sumbernya. Siapakah yang menyiarkannya, dan bila? Bolehkah kamu mencari dari mana ia mula-mula datang, dan adakah pembuatnya menyatakan cara ia dibuat? Adakah sumber lain yang boleh dipercayai menunjukkan perkara yang sama? Pastikan semuanya tidak menyalin satu siaran yang sama, kerana sepuluh salinan masih satu sumber. Kumpulan semakan fakta melakukan kerja ini untuk gambar yang tersebar luas. Di Greenhill, halaman ladang itu sendiri menyatakan bahawa ladang itu tidak menanam labu gergasi, dan sebuah halaman tanpa nama yang menyiarkan foto itu. Jadi, foto itu mungkin palsu. Untuk mesej suara, hubungi orang itu dengan cara lain. Mesej Jurulatih Ana datang daripada nombor yang tidak dikenali, jadi tanya dia secara bersemuka. Jika kamu masih belum pasti, katakan begitu, dan jangan kongsikannya dahulu.",
+        "simpler": "Jadi, semak sumbernya. Siapakah yang menyiarkannya? Bila? Dari mana ia mula-mula datang? Adakah orang yang kamu percayai menunjukkan perkara yang sama? Semak bahawa mereka bukan sekadar menyalin satu siaran. Ladang itu kata ia tidak menanam labu gergasi. Sebuah halaman tanpa nama menyiarkan foto itu. Jadi, foto itu mungkin palsu. Mesej Jurulatih Ana datang daripada nombor yang tiada sesiapa kenal. Jadi, tanya dia secara bersemuka. Tidak pasti? Katakan begitu, dan jangan kongsikannya dahulu."
       }
     ],
     "glossary": [
       {
         "word": "realistik",
         "definition": "Kelihatan atau kedengaran seperti benda yang sebenar.",
-        "example": "Foto labu itu kelihatan realistik pada mulanya."
+        "example": "Video kambing itu kelihatan realistik, tetapi labelnya menyatakan AI yang menghasilkannya."
       },
       {
         "word": "palsu",
@@ -140,70 +79,53 @@
     ],
     "checks": [
       {
-        "question": "Apakah sebab terbaik untuk berfikir bahawa foto labu itu palsu?",
+        "question": "Apakah sebab yang paling kukuh untuk meragui foto labu gergasi itu?",
         "options": [
-          {
-            "text": "Ladang itu kata ia tidak menanam labu gergasi",
-            "feedback": "Betul. Ladang itu ialah sumber terbaik tentang labunya sendiri, dan halaman yang menyiarkan foto itu tiada nama."
-          },
           {
             "text": "Tangan petani dalam foto itu kelihatan sedikit pelik",
             "feedback": "Belum tepat. Tangan yang pelik ialah sebab untuk menyemak, bukan bukti. Foto sebenar juga boleh kelihatan pelik. Baca petikan kedua."
           },
           {
-            "text": "Labu dalam foto itu berwarna oren yang sangat terang",
+            "text": "Ladang itu kata ia tidak menanam labu gergasi",
+            "feedback": "Betul. Ladang itu ialah sumber terbaik tentang labunya sendiri, dan halaman yang menyiarkan foto itu tiada nama."
+          },
+          {
+            "text": "Labu itu berwarna oren yang sangat terang",
             "feedback": "Belum tepat. Labu sebenar juga berwarna oren. Baca tentang menyemak sumber dalam petikan ketiga."
           }
         ]
       },
       {
-        "question": "Satu mesej suara kedengaran sama seperti Jurulatih Ana. Apakah perkara terbaik untuk dilakukan?",
+        "question": "Video kambing kelab komedi itu menyatakan “Dibuat dengan AI, sekadar suka-suka”. Adakah ia kandungan palsu?",
         "options": [
           {
-            "text": "Kongsikannya dengan seluruh pasukan sekarang",
-            "feedback": "Belum tepat. AI boleh meniru suara, jadi mungkin itu bukan dia. Baca petikan ketiga."
+            "text": "Ya, kerana AI yang menghasilkannya",
+            "feedback": "Belum tepat. AI yang menghasilkannya, tetapi kelab itu menyatakannya secara terbuka. Kandungan palsu berpura-pura benar. Baca petikan pertama."
           },
           {
-            "text": "Percaya kepadanya kerana ia kedengaran seperti dia",
-            "feedback": "Belum tepat. Kedengaran benar bukan bukti. Baca tentang mesej suara dalam petikan ketiga."
+            "text": "Ya, kerana kambing tidak boleh bercakap",
+            "feedback": "Belum tepat. Tiada sesiapa yang sepatutnya mempercayainya. Ia jenaka yang berlabel. Baca petikan pertama."
           },
           {
-            "text": "Tanya Jurulatih Ana secara bersemuka dahulu",
-            "feedback": "Betul. Menyemak dengan orang itu melalui cara lain ialah ujian terbaik bagi mesej suara."
+            "text": "Tidak, kerana ia menyatakan bahawa AI yang menghasilkannya",
+            "feedback": "Betul. Karya kreatif yang berlabel bukan helah. Ia boleh mengelirukan orang jika seseorang mengongsikannya tanpa label itu."
           }
         ]
-      },
-      {
-        "question": "Mengapakah butiran yang pelik dalam gambar tidak cukup untuk membuktikan bahawa gambar itu palsu?",
-        "placeholder": "Ia tidak cukup kerana ... Jadi, saya juga patut ..."
       }
     ]
   },
   "write": {
-    "prompt": "Pilih satu siaran daripada kumpulan berita Greenhill. Nyatakan kumpulan yang kamu pilih untuknya, dan terangkan cara kamu menyemaknya atau akan menyemaknya.",
+    "prompt": "Terangkan bagaimana video AI yang berlabel berbeza daripada kandungan palsu. Gunakan siaran Greenhill. Kemudian nyatakan cara kamu akan menyemak gambar yang mengejutkan sebelum kamu mengongsikannya.",
     "sentenceStarters": [
-      "Saya memilih ...",
-      "Saya meletakkannya dalam “___” kerana ...",
-      "Sumbernya ialah ...",
-      "Untuk menyemaknya, saya akan ...",
-      "Sebelum saya mengongsikannya, saya ..."
+      "Video kambing itu bukan kandungan palsu kerana ...",
+      "Kandungan palsu berbeza kerana ...",
+      "Sebelum saya mengongsikan gambar yang mengejutkan, saya akan menyemak ..."
     ],
-    "planningBoxes": [
-      "Idea utama saya",
-      "Bukti daripada pelajaran",
-      "Mengapa ini penting",
-      "Soalan yang masih saya ada"
-    ],
-    "selfCheck": [
-      "Saya menamakan satu siaran dan kumpulan yang saya pilih.",
-      "Saya memberi sebab daripada siaran itu.",
-      "Saya menyatakan cara saya akan menyemak sumbernya."
-    ],
-    "example": "Saya memilih Siaran A, labu gergasi. Saya meletakkannya dalam “Mungkin palsu” kerana halaman ladang itu sendiri menyatakan bahawa ladang itu tidak menanam labu gergasi tahun ini. Sumbernya ialah halaman tanpa nama, jadi saya tidak dapat melihat siapa yang membuatnya. Tangan petani itu kelihatan pelik, tetapi itu hanya sebab untuk menyemak, kerana foto sebenar juga boleh kelihatan pelik. Untuk menyemaknya, saya juga akan bertanya kepada seseorang di pasar. Sebelum saya mengongsikannya, saya akan tunggu sehingga saya tahu lebih banyak."
+    "example": "Video kambing itu bukan kandungan palsu kerana kelab komedi itu menyatakan secara terbuka bahawa AI yang menghasilkannya, sekadar suka-suka. Tiada sesiapa yang sepatutnya percaya bahawa kambing boleh bercakap. Kandungan palsu berbeza kerana ia berpura-pura menunjukkan sesuatu yang benar. Foto labu gergasi itu datang daripada halaman tanpa nama, dan ladang itu menyatakan bahawa ia tidak menanam labu gergasi. Sebelum saya mengongsikan gambar yang mengejutkan, saya akan menyemak siapa yang menyiarkannya dan dari mana ia mula-mula datang. Saya juga akan mencari sumber yang boleh dipercayai yang menunjukkan perkara yang sama."
   },
   "speak": {
-    "partnerTask": "Rakan kamu memilih satu siaran Greenhill. Kamu memilih satu kumpulan, memberi satu sebab, dan menyatakan cara kamu akan menyemaknya. Kemudian bertukar giliran.",
-    "independentTask": "Sebut dengan kuat tiga cara untuk menyemak gambar, video atau suara. Kemudian sebut mengapa butiran yang pelik bukan bukti."
+    "partnerTask": "Rakan kamu berlakon sebagai rakan sepasukan yang menerima mesej suara Jurulatih Ana dan mahu memberitahu semua orang. Terangkan cara menyemaknya dahulu. Kemudian bertukar giliran: rakan kamu menerangkan mengapa video kambing itu bukan kandungan palsu.",
+    "independentTask": "Sebut dengan kuat mengapa butiran yang pelik dalam gambar ialah petunjuk, bukan bukti. Kemudian sebut dua cara yang lebih baik untuk menyemak dari mana ia datang."
   },
   "watch": {
     "why": "Video ini dibuat bersama penyemak fakta remaja, dan ia menunjukkan petunjuk dalam gambar, video dan suara buatan AI.",
@@ -215,18 +137,18 @@
       "Untuk suara, dengar nada dan bunyi di latar belakang.",
       "Alat yang mengesan kandungan palsu tidak sentiasa betul, jadi manusia masih perlu menyemak."
     ],
-    "contentNote": "Bahasa Inggeris Amerika yang laju dengan contoh sebenar kandungan buatan AI. Video ini menyebut alat yang memerlukan internet (carian imej terbalik dan aplikasi pengesan AI); pada peranti luar talian, pelajar boleh bertanya kepada guru sebagai ganti. Ringkasan ditulis daripada rancangan pelajaran PBS NewsHour Classroom untuk video ini, bukan dengan menonton video. Pratonton dahulu; pelajar boleh membaca ringkasan bertulis sebagai ganti."
+    "contentNote": "Bahasa Inggeris Amerika yang laju dengan contoh sebenar kandungan buatan AI. Video ini menyebut alat yang memerlukan internet (carian imej terbalik dan aplikasi pengesan AI); pada peranti luar talian, pelajar boleh bertanya kepada guru sebagai ganti. Ringkasan ditulis daripada rancangan pelajaran PBS NewsHour Classroom untuk video ini, bukan dengan menonton video. Video ini mengajar petunjuk visual; pelajaran ini menganggapnya sebagai sebab untuk menyemak, tidak sekali-kali bukti. Pratonton dahulu; pelajar boleh membaca ringkasan bertulis sebagai ganti."
   },
   "reflect": {
     "prompts": [
       {
-        "text": "Sebelum saya mengongsikan gambar atau video yang mengejutkan, saya akan ..."
+        "text": "Sebelum saya mengongsikan siaran yang mengejutkan, saya akan ..."
       },
       {
-        "text": "Satu perkara tentang kandungan palsu AI yang mengejutkan saya ialah ..."
+        "text": "Satu perkara tentang gambar buatan AI yang mengejutkan saya ialah ..."
       }
     ],
-    "completionMessage": "Kamu telah menamatkan Pelajaran 13. Kamu menyemak dari mana gambar, video dan suara datang, dan melihat mengapa butiran yang pelik ialah petunjuk, bukan bukti."
+    "completionMessage": "Kamu telah menamatkan Pelajaran 13. Kamu membezakan karya AI yang berlabel daripada kandungan palsu, dan menyemak sumbernya, kerana butiran yang pelik ialah petunjuk, bukan bukti."
   },
   "visual": {
     "alt": "Siaran labu gergasi di sebelah kad yang menyuruh kita menyemak sumber: siapa yang menyiarkannya, bila, dari mana ia mula-mula datang, dan sama ada orang lain menunjukkan perkara yang sama. Satu nota menyatakan bahawa butiran yang ganjil ialah sebab untuk menyemak, bukan bukti."
@@ -252,7 +174,7 @@
     "Deepfake digunakan untuk menyakiti orang sebenar: gambar palsu yang memalukan seseorang, video palsu pemimpin, dan suara yang diklon dalam penipuan (contohnya panggilan yang kedengaran seperti saudara yang meminta wang; lihat sumber FTC). Pelajaran ini sengaja mengekalkan contoh yang lucu. Jangan tunjukkan deepfake sebenar tentang orang sebenar di dalam kelas. Jika pelajar berkata kandungan palsu telah dibuat tentang diri mereka atau orang yang mereka kenali, jangan bincangkan butirannya di dalam kelas; ikut proses perlindungan kanak-kanak organisasi rakan kongsi sendiri."
   ],
   "educatorNotes": [
-    "Ajar cara menyemak dahulu: siapa yang menyiarkannya, bila, dari mana ia mula-mula datang, sama ada sumber lain yang boleh dipercayai menunjukkan perkara yang sama, dan untuk suara, menghubungi orang itu dengan cara lain. Kecacatan visual (jari tambahan, huruf yang berselerak, kulit yang licin) ialah sebab untuk menyemak, tidak sekali-kali bukti: alat yang lebih baharu menghasilkan lebih sedikit kecacatan, dan foto sebenar juga boleh menunjukkan butiran yang ganjil. Dalam satu kajian pada tahun 2025 (Kamali dan rakan-rakan, CHI '25), orang dengan betul menyatakan foto sebenar sebagai benar sebanyak 74% daripada masa, jadi kira-kira satu daripada empat tersilap dianggap buatan AI. Terima “belum dapat dipastikan” sebagai jawapan yang kukuh; aktiviti ini tiada markah. Versi di atas kertas: enam siaran pada kad, diisih di bawah empat tajuk.",
-    "Karya AI yang dilabel (seni, filem, pelajaran, jenaka yang ditandakan dengan jelas “Dibuat dengan AI”) tidak sama dengan kandungan palsu yang berpura-pura benar atau meniru orang sebenar. Label boleh hilang apabila gambar disiarkan semula (News Literacy Project, 2026), jadi siaran yang berlabel boleh menjadi mengelirukan apabila dikongsi tanpa label itu. Di Indonesia, TurnBackHoax dan CekFakta oleh Mafindo menyemak gambar dan video tular, dan Mafindo menyatakan bahawa berita palsu berasaskan AI semakin sukar dibezakan (Liputan6, 2026). Guru yang ada internet boleh menunjukkan satu contoh yang telah disemak; pelajar tidak perlu masuk ke dalam talian."
+    "Ajar cara menyemak dahulu: siapa yang menyiarkannya, bila, dari mana ia mula-mula datang, sama ada pembuatnya menyatakan cara ia dibuat, sama ada sumber lain yang boleh dipercayai menunjukkan perkara yang sama (dan tidak semuanya menyalin satu siaran), dan untuk suara, menghubungi orang itu dengan cara lain. Kecacatan visual (jari tambahan, huruf yang berselerak, kulit yang licin) ialah sebab untuk menyemak, tidak sekali-kali bukti: alat yang lebih baharu menghasilkan lebih sedikit kecacatan, dan foto sebenar juga boleh menunjukkan butiran yang ganjil. Kajian dalam petikan 2 ialah Kamali dan rakan-rakan (CHI '25, Northwestern University): lebih daripada 50,000 peserta dalam talian menilai 450 imej buatan AI dan 149 imej sebenar; mereka menyatakan foto sebenar sebagai benar dalam 74% pemerhatian dan imej buatan AI sebagai buatan AI dalam 76%, jadi kira-kira satu daripada empat tersilap dinilai bagi setiap jenis. Ia satu kajian dalam talian dengan set imej penulisnya sendiri, bukan kadar umum. Terima “belum dapat dipastikan” sebagai jawapan yang kukuh. Di atas kertas, bacakan empat siaran Greenhill dengan kuat dan bincangkan apa yang diberitahu oleh setiap sumber; tiada tugasan mengisih.",
+    "Karya AI yang dilabel (seni, kesan khas dalam filem, pelajaran, jenaka yang ditandakan dengan jelas “Dibuat dengan AI”) tidak sama dengan kandungan palsu yang berpura-pura benar atau meniru orang sebenar. Label boleh hilang apabila gambar disiarkan semula (News Literacy Project, 2026), jadi siaran yang berlabel boleh menjadi mengelirukan apabila dikongsi tanpa label itu. Di Indonesia, TurnBackHoax dan CekFakta oleh Mafindo menyemak gambar dan video tular, dan Mafindo menyatakan bahawa berita palsu berasaskan AI semakin sukar dibezakan (Liputan6, 2026). Guru yang ada internet boleh menunjukkan satu contoh yang telah disemak; pelajar tidak perlu masuk ke dalam talian."
   ]
 }

@@ -1,112 +1,71 @@
 {
   "title": "Apakah AI bisa berbahasa seperti kamu?",
-  "essentialQuestion": "Mengapa AI bekerja lebih baik dalam beberapa bahasa daripada bahasa lain, dan apa yang dilakukan orang untuk mengatasinya?",
-  "learningGoal": "Menjelaskan mengapa alat AI bekerja lebih baik dalam beberapa bahasa daripada bahasa lain, dan menggambarkan bagaimana komunitas-komunitas membuat alat untuk bahasa mereka sendiri.",
-  "warmUp": {
-    "question": "Sebuah alat belajar dari banyak tulisan, dan sebagian besar tulisan itu dalam satu bahasa. Menurutmu, apa yang terjadi?",
-    "options": [
-      "Alat itu bekerja paling baik dalam bahasa itu",
-      "Alat itu bekerja sama baiknya dalam setiap bahasa",
-      "Hal lain",
-      "Tidak yakin"
-    ]
-  },
+  "essentialQuestion": "Mengapa alat AI punya lebih banyak bahan untuk dipelajari dalam beberapa bahasa daripada bahasa lain, dan apa yang dilakukan orang-orang di wilayah kita untuk mengatasinya?",
+  "learningGoal": "Menjelaskan bagaimana sekolah, penerbitan, pemerintah, dan internet memengaruhi berapa banyak tulisan yang dimiliki sebuah bahasa untuk alat AI, dan menggambarkan proyek-proyek nyata di wilayah ini untuk bahasa-bahasa Asia Tenggara.",
   "evidence": {
     "label": "Contoh fiksi yang dibuat untuk pelajaran ini.",
-    "question": "Bahasa mana yang punya penutur paling banyak? Bahasa mana yang punya tulisan paling banyak di internet?",
+    "question": "Bahasa mana yang punya penutur paling banyak? Bahasa mana yang punya tulisan paling banyak di internet? Mengapa keduanya bisa berbeda?",
     "cards": [
       {
-        "title": "Tiga bahasa di terminal bus Harbourside",
+        "title": "Tiga bahasa di Harbourside",
         "columns": [
           "Bahasa",
           "Siapa yang menuturkannya",
-          "Tulisan di internet"
+          "Di mana bahasa itu ditulis"
         ],
         "rows": [
           [
             "Bahasa A",
             "Banyak orang di Harbourside dan di seluruh dunia",
-            "Banyak: berita, buku, dan banyak situs web."
+            "Sekolah, kantor, buku, berita, dan banyak situs web."
           ],
           [
             "Bahasa B",
             "Banyak orang di wilayah itu",
-            "Ada sebagian: berita dan beberapa situs web."
+            "Sebagian sekolah, berita, dan beberapa situs web."
           ],
           [
             "Bahasa C",
             "Paling banyak orang di wilayah itu",
-            "Sangat sedikit. Orang-orang kebanyakan hanya menuturkannya secara lisan. Sekolah dan kantor memakai Bahasa A dan B."
+            "Sangat sedikit tempat. Orang-orang kebanyakan menuturkannya di rumah dan di pasar."
           ]
-        ]
-      },
-      {
-        "title": "Layar bantuan di terminal bus",
-        "items": [
-          "Kamu mengetik pertanyaan, misalnya “Kapan bus berikutnya ke pasar?”",
-          "Sebuah alat AI membaca pertanyaan itu dan menulis jawaban.",
-          "Alat itu belajar dari tulisan yang diambil dari internet."
         ]
       }
     ]
   },
-  "activity": {
-    "title": "Uji layar bantuan Harbourside",
-    "instructions": "Tim Harbourside mengajukan 20 pertanyaan yang sama kepada layar bantuan dalam setiap bahasa. Ketuk bahasa yang paling sering dijawabnya dengan salah.",
-    "measure": "Pertanyaan yang dijawab dengan baik",
-    "groups": [
-      {
-        "label": "Bahasa A"
-      },
-      {
-        "label": "Bahasa B"
-      },
-      {
-        "label": "Bahasa C"
-      }
-    ],
-    "afterTap": {
-      "question": "Mengapa layar bantuan membuat kesalahan paling banyak dalam Bahasa C?",
-      "options": [
-        {
-          "text": "Sangat sedikit orang yang menuturkan Bahasa C",
-          "feedback": "Belum tepat. Bahasa C punya penutur paling banyak di wilayah itu. Lihat berapa banyak tulisannya di internet."
-        },
-        {
-          "text": "Bahasa C adalah bahasa yang lebih sulit",
-          "feedback": "Belum tepat. Tabel itu menunjukkan berapa banyak tulisan setiap bahasa di internet. Tabel itu tidak mengatakan bahwa ada bahasa yang lebih sulit."
-        },
-        {
-          "text": "Alat itu belajar dari sangat sedikit tulisan dalam Bahasa C",
-          "feedback": "Benar. Bahasa C hanya punya sangat sedikit tulisan di internet, jadi alat itu punya sedikit contoh untuk dipelajari."
-        }
-      ]
-    },
-    "extension": "Versi kertas: bacakan ketiga hasilnya, tanyakan bahasa mana yang kesalahannya paling banyak, lalu ajukan pertanyaan di atas. Tunjukkan kembali tabel bukti: Bahasa C punya penutur paling banyak, tetapi tulisannya di internet paling sedikit."
-  },
   "read": {
     "sections": [
       {
-        "heading": "AI belajar bahasa dari tulisan",
-        "text": "Alat AI yang menulis, menjawab pertanyaan, atau menerjemahkan belajar dari data latih. Bagi alat-alat itu, data latih adalah tulisan dalam jumlah sangat besar, yang banyak di antaranya berasal dari internet. Orang menuturkan ribuan bahasa, tetapi sebagian besar alat AI yang besar terutama belajar dari bahasa Inggris. Bahasa bersumber daya rendah adalah bahasa yang hanya punya sedikit bahan digital yang bisa dipakai komputer untuk sebuah tugas. Bahan ini bisa berupa tulisan, rekaman, atau daftar kata. Nama ini tentang data, bukan tentang bahasanya atau para penuturnya. Sekitar 200 juta orang menuturkan bahasa Swahili, tetapi tulisan berbahasa Swahili di internet tidak cukup banyak supaya AI bisa belajar dengan baik. Di Harbourside, Bahasa C seperti ini.",
-        "simpler": "Alat yang menulis, menjawab, atau menerjemahkan belajar dari data latih. Data latih ini adalah banyak tulisan dari internet. Sebagian besar alat AI yang besar belajar dari bahasa Inggris. Ada bahasa yang hanya punya sedikit tulisan atau rekaman untuk komputer. Kita menyebutnya bahasa bersumber daya rendah. Nama ini tentang data. Nama ini bukan tentang bahasanya atau orang-orangnya. Sekitar 200 juta orang menuturkan bahasa Swahili. Tetapi tidak banyak tulisan dalam bahasa itu di internet."
+        "heading": "Mengapa sebagian bahasa punya lebih banyak tulisan",
+        "text": "Alat AI yang menulis, menjawab pertanyaan, atau menerjemahkan belajar dari data latih. Bagi alat-alat itu, data latih adalah tulisan dalam jumlah sangat besar, yang banyak di antaranya berasal dari internet. Sebagian besar alat AI yang besar terutama belajar dari bahasa Inggris. Berapa banyak tulisan yang dimiliki sebuah bahasa bergantung pada sejarah. Dalam bahasa apa sekolah mengajar? Dalam bahasa apa orang menerbitkan buku dan surat kabar? Bahasa apa yang dipakai pemerintah untuk undang-undang dan formulir? Dan dalam bahasa apa orang mengetik di internet? Di Harbourside, sekolah dan kantor memakai Bahasa A dan B, jadi hanya sedikit yang ditulis dalam Bahasa C. Masakhane adalah sebuah kelompok peneliti Afrika. Mereka mengatakan bahwa masa ketika negara-negara lain menguasai Afrika sangat merugikan bahasa-bahasa Afrika. Teknologi masih memperlihatkan kerugian itu.",
+        "simpler": "Alat yang menulis, menjawab, atau menerjemahkan belajar dari data latih. Data latih ini adalah banyak tulisan, sering dari internet. Sebagian besar alat AI yang besar belajar dari bahasa Inggris. Seberapa banyak sebuah bahasa ditulis bergantung pada sejarah. Bahasa apa yang dipakai sekolah? Dalam bahasa apa orang menerbitkan buku dan berita? Bahasa apa yang dipakai pemerintah? Bahasa apa yang diketik orang di internet? Di Harbourside, sekolah memakai Bahasa A dan B. Jadi hanya sedikit yang ditulis dalam Bahasa C. Beberapa ahli dari Afrika mengatakan bahwa masa lalu juga penting. Dulu negara-negara lain menguasai sebagian besar Afrika, dan ini merugikan bahasa-bahasa Afrika."
       },
       {
-        "heading": "Siapa yang tertinggal, dan mengapa",
-        "text": "Ketika sebuah alat bekerja buruk dalam suatu bahasa, para penuturnya mendapat bantuan yang lebih buruk. Berapa banyak tulisan sebuah bahasa di internet berkaitan dengan sejarah dan kekuasaan. Di Harbourside, sekolah dan kantor kebanyakan memakai Bahasa A dan B. Jadi hanya sedikit yang ditulis dalam Bahasa C. Masakhane adalah sebuah kelompok peneliti Afrika. Kelompok ini mengatakan bahwa bahasa-bahasa Afrika hanya punya tempat kecil dalam teknologi, sebagian karena penjajahan. Itu adalah masa ketika negara-negara lain menguasai sebagian besar Afrika. Orang-orang yang membuat alat AI juga memilih bahasa mana yang dimasukkan.",
-        "simpler": "Sebuah alat bisa bekerja buruk dalam suatu bahasa. Lalu orang yang memakai bahasa itu mendapat bantuan yang lebih buruk. Ini berkaitan dengan sejarah dan kekuasaan. Di Harbourside, sekolah memakai Bahasa A dan B. Beberapa ahli dari Afrika mengatakan bahwa masa lalu juga penting. Dulu negara-negara lain menguasai sebagian besar Afrika. Itu salah satu alasan bahasa-bahasa mereka tertinggal. Para pembuat AI memilih bahasa mana yang dipakai."
+        "heading": "Apa artinya bagi para penutur",
+        "text": "Bahasa bersumber daya rendah adalah bahasa yang hanya punya sedikit bahan digital yang bisa dipakai komputer untuk sebuah tugas. Nama ini tentang data, bukan tentang bahasanya atau para penuturnya. Sekitar 200 juta orang menuturkan bahasa Swahili. Tetapi para peneliti Stanford mengatakan bahwa tulisan berbahasa Swahili di internet tidak cukup banyak supaya AI bisa belajar dengan baik. Pada tahun 2025, mereka menemukan bahwa alat-alat AI yang besar bekerja dengan baik dalam bahasa Inggris. Alat-alat itu bekerja kurang baik dalam bahasa Vietnam, dan lebih buruk lagi dalam bahasa Nahuatl, sebuah bahasa di Meksiko. Data latih yang lebih sedikit adalah salah satu kemungkinan alasan kesenjangan seperti ini, tetapi bukan satu-satunya. Cara sebuah alat dibuat dan diuji juga penting. Menerjemahkan dari bahasa Inggris tidak memperbaiki semuanya. Terjemahan bisa melewatkan cara orang benar-benar berbicara.",
+        "simpler": "Ada bahasa yang hanya punya sedikit tulisan atau rekaman untuk komputer. Kita menyebutnya bahasa bersumber daya rendah. Nama ini tentang data. Nama ini bukan tentang bahasanya atau orang-orangnya. Jutaan orang menuturkan bahasa Swahili. Tetapi tidak banyak tulisan dalam bahasa itu di internet. Pada tahun 2025, para peneliti menemukan bahwa alat-alat besar bekerja paling baik dalam bahasa Inggris. Alat-alat itu kurang baik dalam bahasa Vietnam, dan lebih buruk dalam bahasa Nahuatl. Data yang lebih sedikit adalah salah satu alasan kesenjangan. Cara alat dibuat dan diuji juga penting. Menerjemahkan dari bahasa Inggris tidak memperbaiki semuanya."
       },
       {
-        "heading": "Orang-orang membuat alat untuk bahasa mereka sendiri",
-        "text": "Sekarang banyak orang membuat alat untuk bahasa mereka sendiri. Di Singapura, sebuah program yang dibiayai pemerintah, AI Singapore, membuat model-model bernama SEA-LION. Sebuah makalah tahun 2025 dari timnya mengatakan bahwa model-model itu mendukung 11 bahasa yang dipakai di wilayah ini, termasuk bahasa Burma, Khmer, Tamil, dan Vietnam. Tetapi belajar dari sebuah bahasa tidak sama dengan bekerja dengan baik dalam bahasa itu. Uji utama tim itu hanya mencakup empat dari bahasa-bahasa tersebut. Di Jakarta pada November 2024, dua perusahaan meluncurkan Sahabat-AI untuk bahasa Indonesia, Jawa, dan Sunda. Pembuatnya mengatakan model itu mengalahkan model-model yang serupa, tetapi masih dalam tahap awal. Nama Masakhane berarti “Kita membangun bersama” dalam bahasa isiZulu. Anggota-anggotanya membuat alat untuk bahasa-bahasa Afrika, bersama orang-orang yang menuturkannya. Para penutur bisa membantu sebuah alat agar sesuai dengan komunitas mereka, tetapi orang tetap perlu mengujinya.",
-        "simpler": "Sebuah tim di Singapura membuat model-model bernama SEA-LION. Sebuah laporan tahun 2025 mengatakan model-model itu mencakup 11 bahasa di wilayah ini. Tetapi belajar sebuah bahasa tidak berarti bekerja dengan baik dalam bahasa itu. Uji utama tim itu hanya memakai empat di antaranya. Pada tahun 2024, Sahabat-AI dimulai di Jakarta. Model ini untuk bahasa Indonesia dan dua bahasa lain. Pembuatnya bilang model ini masih baru. Masakhane berarti “Kita membangun bersama”. Masakhane membuat alat untuk bahasa-bahasa Afrika. Para penutur bisa membantu sebuah alat agar sesuai dengan komunitas mereka. Tetapi orang tetap harus mengujinya."
+        "heading": "Proyek-proyek di wilayah kita",
+        "text": "Di Singapura, sebuah program yang dibiayai pemerintah, AI Singapore, membuat model-model bernama SEA-LION. Model-model pertamanya dilatih dari nol. Model-model berikutnya mengambil model terbuka buatan perusahaan lain, lalu mengajarinya lebih banyak bahasa di wilayah ini. Sebuah makalah tahun 2025 dari timnya mengatakan bahwa model-model itu mendukung 11 bahasa, seperti bahasa Burma, Khmer, Lao, Tamil, dan Thai. Bersama mitra di Thailand dan Filipina, tim itu juga mengumpulkan tulisan dan rekaman suara dalam bahasa-bahasa di wilayah ini. Tetapi mencakup sebuah bahasa tidak sama dengan bekerja dengan baik dalam bahasa itu. Uji utama dalam makalah itu hanya mencakup empat bahasa. Pada November 2024, dua perusahaan di Jakarta meluncurkan Sahabat-AI. Model ini dibuat untuk bahasa Indonesia, Jawa, dan Sunda. Pembuatnya mengatakan model ini masih dalam tahap awal. Pada tahun 2025, mereka menambahkan bahasa Bali dan Batak, bersama universitas-universitas dan kelompok-kelompok media berita. Para penutur bisa membantu sebuah alat agar sesuai dengan komunitas mereka, tetapi orang tetap perlu mengujinya.",
+        "simpler": "Di Singapura, sebuah tim bernama AI Singapore membuat SEA-LION. Sebuah laporan tahun 2025 mengatakan SEA-LION mencakup 11 bahasa di wilayah ini. Tim itu juga mengumpulkan tulisan dan rekaman suara dalam bahasa-bahasa itu. Tetapi mencakup sebuah bahasa tidak berarti bekerja dengan baik dalam bahasa itu. Uji utama tim itu hanya memakai empat dari 11 bahasa itu. Pada tahun 2024, dua perusahaan di Jakarta membuat Sahabat-AI. Model ini untuk bahasa Indonesia dan dua bahasa lain. Pembuatnya bilang model ini masih baru. Para penutur bisa membantu sebuah alat agar sesuai dengan komunitas mereka. Tetapi orang tetap harus mengujinya."
       }
     ],
     "glossary": [
       {
         "word": "data latih",
         "definition": "Contoh-contoh yang dipakai untuk membangun sebuah alat AI, seperti tulisan atau gambar.",
-        "example": "Data latih layar bantuan itu hanya punya sangat sedikit tulisan dalam Bahasa C."
+        "example": "Data latih alat itu hanya punya sangat sedikit tulisan dalam Bahasa C."
+      },
+      {
+        "word": "menerbitkan",
+        "forms": [
+          "terbit",
+          "diterbitkan",
+          "penerbitan"
+        ],
+        "definition": "Mencetak atau mengeluarkan tulisan supaya dibaca banyak orang.",
+        "example": "Di Harbourside, hanya sedikit orang yang menerbitkan buku dalam Bahasa C."
       },
       {
         "word": "bahasa bersumber daya rendah",
@@ -117,20 +76,16 @@
         "word": "menerjemahkan",
         "forms": [
           "terjemahan",
-          "diterjemahkan"
+          "diterjemahkan",
+          "menerjemahkannya"
         ],
         "definition": "Mengubah kata-kata dari satu bahasa ke bahasa lain.",
-        "example": "Alat yang menerjemahkan dengan baik dalam satu bahasa mungkin membuat kesalahan dalam bahasa lain."
-      },
-      {
-        "word": "kekuasaan",
-        "definition": "Kemampuan untuk menentukan apa yang terjadi atau untuk mengendalikan sesuatu.",
-        "example": "Orang-orang yang membuat alat AI punya kekuasaan untuk memilih bahasa mana yang mereka masukkan."
+        "example": "Menerjemahkan dari bahasa Inggris bisa melewatkan cara orang benar-benar berbicara."
       },
       {
         "word": "komunitas",
         "definition": "Sekelompok orang yang tinggal di tempat yang sama atau punya kesamaan.",
-        "example": "Ketika sebuah komunitas membantu membuat sebuah alat, alat itu lebih sesuai dengan kebutuhan mereka."
+        "example": "Para penutur bisa membantu sebuah alat agar sesuai dengan komunitas mereka."
       }
     ],
     "checks": [
@@ -138,8 +93,8 @@
         "question": "Apa itu bahasa bersumber daya rendah?",
         "options": [
           {
-            "text": "Bahasa yang penuturnya sangat sedikit",
-            "feedback": "Belum tepat. Sekitar 200 juta orang menuturkan bahasa Swahili, dan bahasa itu tetap bersumber daya rendah. Baca lagi bagian pertama."
+            "text": "Bahasa yang hanya dituturkan oleh sangat sedikit orang",
+            "feedback": "Belum tepat. Sekitar 200 juta orang menuturkan bahasa Swahili, dan bahasa itu tetap bersumber daya rendah. Baca lagi bagian kedua."
           },
           {
             "text": "Bahasa yang hanya punya sedikit bahan digital untuk komputer",
@@ -152,53 +107,37 @@
         ]
       },
       {
-        "question": "Bagaimana sebagian orang membuat AI bekerja lebih baik dalam lebih banyak bahasa?",
+        "question": "Tim SEA-LION mengatakan model-modelnya mendukung 11 bahasa. Apa artinya hal itu?",
         "options": [
           {
-            "text": "Mereka meminta semua orang hanya memakai bahasa Inggris",
-            "feedback": "Belum tepat. Pelajaran ini memperlihatkan orang-orang yang mengubah alatnya, bukan bahasa mereka. Baca bagian ketiga."
+            "text": "Model-model itu bekerja sama baiknya dalam setiap bahasa dari 11 bahasa itu",
+            "feedback": "Belum tepat. Mencakup sebuah bahasa tidak sama dengan bekerja dengan baik dalam bahasa itu. Baca bagian ketiga."
           },
           {
-            "text": "Mereka berhenti memakai alat AI untuk bahasa apa pun",
-            "feedback": "Belum tepat. Orang-orang tetap memakai alat-alat itu dan membuatnya lebih baik. Baca bagian ketiga."
+            "text": "Model-model itu hanya untuk orang di Singapura",
+            "feedback": "Belum tepat. Bahasa-bahasa itu dipakai di seluruh Asia Tenggara. Baca bagian ketiga."
           },
           {
-            "text": "Mereka membuat alat untuk bahasa mereka sendiri",
-            "feedback": "Benar. Kelompok-kelompok seperti AI Singapore dan Masakhane membuat alat untuk bahasa-bahasa di wilayah mereka sendiri. Alat-alat itu tetap perlu diuji."
+            "text": "Model-model itu mempelajari bahasa-bahasa itu, tetapi setiap bahasa perlu diuji",
+            "feedback": "Benar. Uji utama tim itu hanya mencakup empat dari 11 bahasa, jadi orang masih perlu memeriksa bahasa-bahasa lainnya."
           }
         ]
-      },
-      {
-        "question": "Menurutmu, mengapa penting siapa yang membuat alat AI untuk sebuah bahasa?",
-        "placeholder": "Penting siapa yang membuatnya karena ..."
       }
     ]
   },
   "write": {
-    "prompt": "Pakai uji di Harbourside untuk menjelaskan mengapa alat AI bisa bekerja lebih baik dalam beberapa bahasa daripada bahasa lain. Lalu katakan kebutuhan siapa yang penting di sini, dan siapa yang sebaiknya membantu memperbaikinya.",
+    "prompt": "Jelaskan satu alasan mengapa sebuah bahasa bisa hanya punya sedikit tulisan untuk dipelajari alat AI. Lalu gambarkan satu proyek dari pelajaran ini dan apa yang masih dibutuhkannya.",
     "sentenceStarters": [
-      "Layar bantuan bekerja paling baik dalam ...",
-      "Layar bantuan membuat kesalahan paling banyak dalam ___, karena ...",
-      "Ini penting bagi ___ karena ...",
-      "Untuk memperbaikinya, ___ sebaiknya membantu, karena ...",
-      "Ini mirip dengan ..."
+      "Satu alasan sebuah bahasa bisa hanya punya sedikit tulisan adalah ...",
+      "Ini penting bagi para penuturnya karena ...",
+      "Satu proyek di wilayah kita adalah ...",
+      "Proyek itu masih membutuhkan ..."
     ],
-    "planningBoxes": [
-      "Ide utamaku",
-      "Bukti dari pelajaran",
-      "Mengapa ini penting",
-      "Pertanyaan yang masih aku punya"
-    ],
-    "selfCheck": [
-      "Aku menjelaskan mengapa alat itu bekerja lebih baik dalam satu bahasa.",
-      "Aku mengatakan mengapa ini penting bagi orang-orang yang menuturkan Bahasa C.",
-      "Aku mengatakan siapa yang sebaiknya membantu memperbaikinya, dan mengapa."
-    ],
-    "example": "Layar bantuan bekerja paling baik dalam Bahasa A. Layar itu menjawab 19 dari 20 pertanyaan dengan baik. Layar bantuan membuat kesalahan paling banyak dalam Bahasa C, karena data latihnya hanya punya sangat sedikit tulisan dalam bahasa itu. Ini penting bagi orang-orang yang menuturkan Bahasa C, karena mereka kelompok terbesar di wilayah itu, tetapi mendapat bantuan paling buruk di terminal bus. Untuk memperbaikinya, orang-orang yang menuturkan Bahasa C sebaiknya membantu, karena merekalah yang paling mengenal bahasa itu. Mereka bisa membagikan tulisan dan menguji jawaban-jawabannya. Ini mirip dengan kelompok Masakhane."
+    "example": "Satu alasan sebuah bahasa bisa hanya punya sedikit tulisan adalah sekolah dan kantor memakai bahasa lain. Di Harbourside, orang-orang kebanyakan menuturkan Bahasa C di rumah. Jadi hanya sedikit buku atau situs web dalam bahasa itu. Ini penting bagi para penuturnya karena sebuah alat mungkin hanya punya sedikit bahan untuk dipelajari dalam bahasa mereka. Satu proyek di wilayah kita adalah Sahabat-AI. Model ini dibuat untuk bahasa Indonesia, Jawa, dan Sunda. Proyek itu masih membutuhkan orang-orang yang menuturkan bahasa-bahasa ini untuk mengujinya."
   },
   "speak": {
-    "partnerTask": "Temanmu bertanya mengapa sebuah alat AI bekerja lebih buruk dalam beberapa bahasa. Kamu menjawab dengan satu alasan dari pelajaran ini. Lalu bertukar.",
-    "independentTask": "Ucapkan dengan lantang apa itu bahasa bersumber daya rendah. Lalu sebutkan satu kelompok dari pelajaran ini yang membuat alat untuk bahasa-bahasanya sendiri."
+    "partnerTask": "Temanmu menyebutkan satu tempat di mana orang menulis, misalnya sekolah, surat kabar, atau kantor pemerintah. Kamu menjelaskan bagaimana tempat itu memengaruhi bahasa mana yang bisa dipelajari alat AI. Lalu bertukar.",
+    "independentTask": "Ucapkan dengan lantang apa itu bahasa bersumber daya rendah. Lalu jelaskan mengapa alat yang mencakup sebuah bahasa mungkin tetap tidak bekerja dengan baik dalam bahasa itu."
   },
   "watch": {
     "why": "Video ini memperlihatkan, dengan contoh-contoh nyata, mengapa alat AI belajar jauh lebih banyak tentang segelintir bahasa besar daripada tentang sebagian besar bahasa lain, dan apa yang dilakukan sebagian orang untuk mengatasinya.",
@@ -215,16 +154,16 @@
   "reflect": {
     "prompts": [
       {
-        "text": "Penting bahasa apa saja yang bisa dipakai alat AI karena ..."
+        "text": "Satu hal yang sekarang aku pahami tentang bahasa dan AI adalah ..."
       },
       {
         "text": "Satu pertanyaan yang akan aku ajukan kepada orang-orang yang membuat alat bahasa AI adalah ..."
       }
     ],
-    "completionMessage": "Kamu sudah menyelesaikan Pelajaran 7. Kamu menjelaskan mengapa AI bekerja lebih baik dalam beberapa bahasa, dan bagaimana komunitas-komunitas mengubah hal itu."
+    "completionMessage": "Kamu sudah menyelesaikan Pelajaran 7. Kamu mempelajari bagaimana sejarah membentuk tulisan yang dipelajari alat AI, dan apa yang dilakukan proyek-proyek di wilayah kita untuk bahasa-bahasanya."
   },
   "visual": {
-    "alt": "Sebuah diagram tentang tiga bahasa. Bahasa A punya banyak tulisan di internet, dan layar bantuan menjawab 19 dari 20 dengan benar. Bahasa C punya penutur paling banyak, tetapi tulisannya sangat sedikit, dan hanya 6 dari 20 yang dijawab dengan benar."
+    "alt": "Dua bahasa. Bahasa A dipakai di sekolah, berita, pemerintahan, dan internet, jadi bahasa itu punya banyak tulisan untuk alat AI. Bahasa C punya penutur paling banyak, tetapi kebanyakan hanya dituturkan secara lisan, jadi tulisannya sangat sedikit."
   },
   "sources": [
     {
@@ -234,13 +173,10 @@
       "label": "AI Singapore dan lainnya (arXiv, versi 4, 30 Oktober 2025): SEA-LION, Southeast Asian Languages in One Network (11 bahasa; uji dan batasannya)"
     },
     {
-      "label": "Context (diperbarui 8 Februari 2024): Biased GPT? Singapore builds AI model to “represent” Southeast Asians (model SEA-LION yang pertama)"
+      "label": "AI Singapore: Southeast Asian Languages in One Network Data (SEALD), bersama Google Research dan mitra-mitra di wilayah ini (data bahasa-bahasa Asia Tenggara)"
     },
     {
       "label": "GoTo (15 November 2024): GoTo launches Sahabat-AI (siaran pers)"
-    },
-    {
-      "label": "Civic Tech Guide: Masakhane, a grassroots NLP community for Africa, by Africans (komunitas akar rumput untuk teknologi bahasa di Afrika)"
     }
   ],
   "sensitiveNotes": [
@@ -248,7 +184,7 @@
     "Bagian kedua menyebut penjajahan secara singkat, seperti yang dilakukan Masakhane. Jaga agar setiap diskusi tetap singkat dan sesuai fakta, dan jangan bertanya kepada pelajar tentang sejarah mereka sendiri atau politik negara mana pun."
   ],
   "educatorNotes": [
-    "Hasil-hasil di Harbourside (19, 15, dan 6 dari 20) adalah rekaan. Fakta-fakta nyatanya, dengan cakupannya: Stanford HAI (2025) mendefinisikan bahasa bersumber daya rendah sebagai bahasa dengan data yang bisa dibaca komputer yang terbatas, dan memberi bahasa Swahili (sekitar 200 juta penutur) sebagai contoh; “bersumber daya rendah” adalah tentang data untuk sebuah tugas (tulisan, rekaman, contoh berlabel), tidak pernah tentang nilai sebuah bahasa atau kemampuan para penuturnya, dan sebuah bahasa bisa bersumber daya rendah untuk satu tugas tetapi tidak untuk tugas lain. SEA-LION: makalah tahun 2025 (arXiv 2504.05747, versi 4, Oktober 2025) menggambarkan Llama-SEA-LION-8B-IT dan Gemma-SEA-LION-9B-IT, yang dibuat oleh AI Singapore bersama NUS dan didanai oleh National Research Foundation Singapura; keluarga model ini mendukung 11 bahasa (Inggris, Tionghoa, Indonesia, Vietnam, Melayu, Thai, Burma, Lao, Filipino, Tamil, dan Khmer). Mendukung sebuah bahasa dalam pelatihan bukan bukti bahwa model bekerja dengan baik dalam bahasa itu: tolok ukur utama makalah itu (SEA-HELM) hanya menguji bahasa Indonesia, Vietnam, Thai, dan Tamil, dan uji yang lebih luas (SEACrowd) mencakup 31 bahasa di wilayah ini tetapi hanya tugas-tugas bahasa klasik, bukan percakapan; para penulisnya mencantumkan ini sebagai keterbatasan. Model SEA-LION yang pertama (Context, Februari 2024) dilatih dengan teks yang sekitar 63% berbahasa Inggris, dan para pengkritik mengingatkan bahwa model-model regional bisa mengulang pandangan kelompok-kelompok yang berkuasa. Sahabat-AI: siaran pers GoTo (15 November 2024) mengatakan bahwa model ini dikembangkan bersama Indosat Ooredoo Hutchison, diluncurkan dengan model berukuran 8 dan 9 miliar parameter untuk bahasa Indonesia, Jawa, dan Sunda (bahasa Batak dan Bali direncanakan), bersifat sumber terbuka, dan “menunjukkan kinerja terdepan” dibandingkan model-model terbuka yang serupa; itu klaim pembuatnya, tanpa nilai yang diterbitkan dalam siaran pers itu, dan siaran pers itu menyebut proyeknya masih awal. Uraian Masakhane sendiri mengaitkan kecilnya tempat bahasa-bahasa Afrika dalam teknologi sebagian dengan penjajahan. Pelajar yang lebih tua bisa membahas siapa yang memiliki alat-alat ini dan siapa yang mengujinya.",
-    "Untuk uji coba di Jakarta, bahasa-bahasa Sahabat-AI adalah kaitan setempat, tetapi pelajar tidak pernah perlu menyebutkan bahasa yang mereka tuturkan. Dalam tugas Tulis, terima pandangan apa pun yang punya alasan tentang kebutuhan siapa yang penting (awal kalimatnya adalah “Ini penting bagi ___ karena …”, bukan “Ini tidak adil karena …”). Pelajaran 8 kembali membahas contoh yang hilang sebagai salah satu kemungkinan penyebab bias, di antara penyebab-penyebab lain. Catatan klaimnya ada di content/courses/digital-world/claims/DW07.md."
+    "Harbourside dan tiga bahasanya adalah rekaan. Fakta-fakta nyatanya, dengan cakupannya: Stanford HAI (2025, makalah kebijakan Sanmi Koyejo) mendefinisikan bahasa bersumber daya rendah sebagai bahasa dengan data yang bisa dibaca komputer yang terbatas, dan memberi bahasa Swahili (sekitar 200 juta penutur) sebagai contoh; makalah itu melaporkan bahwa model-model utama melayani bahasa Inggris dengan baik, bahasa Vietnam (97 juta penutur) kurang baik, dan bahasa Nahuatl (1,5 juta) lebih buruk, dan bahwa terjemahan “kemungkinan tidak akan menyelesaikan masalahnya”. “Bersumber daya rendah” adalah tentang data untuk sebuah tugas, tidak pernah tentang nilai sebuah bahasa, dan sebuah bahasa bisa bersumber daya rendah untuk satu tugas tetapi tidak untuk tugas lain. Data yang lebih sedikit adalah salah satu kemungkinan penyebab kesenjangan, bukan diagnosis yang lengkap: cara sebuah model dibuat, disetel, dan diuji juga penting (Pelajaran 8). Sekolah: Languages Matter dari UNESCO (21 Februari 2025) mengatakan bahwa 40% orang tidak mendapat pendidikan dalam bahasa pertama mereka atau bahasa yang paling mereka kuasai, dan angka ini naik sampai 90% di beberapa negara berpenghasilan rendah dan menengah; kaitan yang dibuat pelajaran ini antara sekolah, penerbitan, pemerintah, dan pemakaian online dengan tulisan yang tersedia adalah sebuah penjelasan, bukan hasil pengukuran. Uraian Masakhane sendiri mengatakan bahwa masa penjajahan “menghancurkan bahasa-bahasa Afrika” dalam teknologi; ini disajikan sebagai pandangan mereka.",
+    "SEA-LION: makalah tahun 2025 (arXiv 2504.05747, versi 4, 30 Oktober 2025) oleh AI Singapore (NUS) dan NTU, yang didanai oleh National Research Foundation, menggambarkan Llama-SEA-LION-8B-IT dan Gemma-SEA-LION-9B-IT; keluarga model ini mendukung 11 bahasa (Inggris, Tionghoa, Indonesia, Vietnam, Melayu, Thai, Burma, Lao, Filipino, Tamil, dan Khmer). Tolok ukur utamanya (SEA-HELM) “hanya mencakup empat bahasa”. GitHub AI Singapore mencantumkan versi-versi dari v1 (3B dan 7B, dilatih dari nol) sampai v4.8 (akhir 2026, dibangun di atas model NVIDIA Nemotron, yang menurut GitHub itu mencakup 13 bahasa di wilayah ini); versinya sering berubah, jadi pelajaran ini hanya memberi jumlah dari makalah itu. Halaman About milik SEA-LION sendiri (sea-lion.ai/about) tidak bisa dibuka lewat jalur yang disetujui pada 8 November 2026, jadi tidak ada isi pelajaran ini yang bergantung padanya. SEALD (AI Singapore bersama Google Research, VISTEC di Thailand, serta Ateneo dan XFORM di Filipina, sejak Maret 2024) mengumpulkan teks dan rekaman suara dalam sembilan bahasa di wilayah ini. Sahabat-AI: siaran pers GoTo (15 November 2024) mengatakan bahwa model ini dikembangkan bersama Indosat Ooredoo Hutchison, diluncurkan dengan model terbuka berukuran 8 dan 9 miliar parameter untuk bahasa Indonesia, Jawa, dan Sunda, “menunjukkan kinerja terdepan” dibandingkan model-model terbuka yang serupa (klaim pembuatnya, tanpa nilai yang diterbitkan), dan “masih dalam tahap awal”; pada 2 Juni 2025, versi berukuran 70 miliar parameter menambahkan bahasa Bali dan Batak, bersama enam universitas dan empat kelompok media. Ini uraian dari para pengembangnya, bukan uji yang independen. Untuk uji coba di Jakarta, bahasa-bahasa Sahabat-AI adalah kaitan setempat, tetapi pelajar tidak pernah perlu menyebutkan bahasa yang mereka tuturkan. Terima pandangan apa pun yang didukung alasan tentang apa yang masih dibutuhkan proyek-proyek ini. Catatan klaimnya ada di content/courses/digital-world/claims/DW07.md."
   ]
 }

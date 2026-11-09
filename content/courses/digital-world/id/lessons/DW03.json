@@ -1,7 +1,7 @@
 {
   "title": "Bagaimana AI belajar dari contoh",
   "essentialQuestion": "Bagaimana komputer bisa belajar dari contoh, dan mengapa contoh-contohnya penting?",
-  "learningGoal": "Melatih model kecil dengan contoh berlabel, dan menjelaskan mengapa contoh yang sesuai, label yang benar, dan pengujian yang adil itu penting.",
+  "learningGoal": "Menjelaskan bagaimana model belajar dari contoh berlabel, dan mengapa contoh yang sesuai dengan label yang benar serta uji dengan contoh baru itu penting.",
   "warmUp": {
     "question": "Kamu ingin mengajari anak kecil membedakan daun yang sehat dari daun yang sakit. Apa yang akan kamu lakukan?",
     "options": [
@@ -13,7 +13,7 @@
   },
   "evidence": {
     "label": "Contoh fiksi yang dibuat untuk pelajaran ini.",
-    "question": "Apa yang berubah setiap kali model menebak lebih banyak daun dengan benar?",
+    "question": "Apa yang berubah ketika model punya lebih banyak contoh, dan apa yang ditunjukkan oleh uji baru?",
     "cards": [
       {
         "title": "Model daun Kebun Sunrise",
@@ -30,22 +30,12 @@
           ],
           [
             "Putaran 2",
-            "6 contoh: 2 contoh dari Putaran 1, ditambah daun kecil yang baru tumbuh dan daun hijau dengan bekas-bekas kecil (sehat), serta daun kuning tanpa bintik dan daun kecil berbintik (sakit)",
+            "6 contoh: 2 contoh dari Putaran 1, ditambah 2 daun sehat dan 2 daun sakit lain yang terlihat berbeda",
             "6 dari 6"
           ],
           [
-            "Putaran 2, tanaman baru",
-            "6 contoh yang sama",
-            "0 dari 2 daun panjang bergaris"
-          ],
-          [
-            "Putaran 3",
-            "8 contoh: 6 contoh dari Putaran 2, ditambah daun panjang bergaris (sehat) dan daun panjang cokelat berbintik (sakit)",
-            "8 dari 8"
-          ],
-          [
-            "Putaran 4",
-            "8 contoh yang sama",
+            "Uji baru",
+            "8 contoh, termasuk 2 daun panjang bergaris dari tanaman baru",
             "3 dari 4 daun yang belum pernah dipakai siapa pun"
           ]
         ]
@@ -53,8 +43,8 @@
     ]
   },
   "activity": {
-    "title": "Latih model daun",
-    "instructions": "Ajari model dengan memberi label pada setiap daun contoh: sehat atau sakit. Lalu uji model itu dengan daun-daun baru dan lihat berapa banyak yang ditebaknya dengan benar. Apa pun yang kamu lakukan di sini tidak dikirim ke mana pun.",
+    "title": "Coba model daun",
+    "instructions": "Ajari model dengan memberi label pada setiap daun contoh: sehat atau sakit. Lalu uji model itu dengan daun-daun baru, putaran demi putaran, dan lihat berapa banyak yang ditebaknya dengan benar. Apa pun yang kamu lakukan di sini tidak dikirim ke mana pun.",
     "labels": [
       {
         "label": "Sehat"
@@ -178,14 +168,14 @@
         "simpler": "Di Kebun Sunrise, orang-orang mengumpulkan data latih. Setiap gambar daun punya jawaban yang benar, yang disebut label: “sehat” atau “sakit”. Komputer memakainya untuk membuat sebuah model. Komputer memakai model itu untuk menebak. Inilah pembelajaran mesin. Tidak ada yang bilang “bintik berarti sakit”. Komputer menemukannya sendiri dalam contoh-contoh. Belajar dari label disebut pembelajaran terawasi. Ini ide lama. Sebuah mesin melakukannya pada tahun 1958. Metode ini dipelajari pada tahun 1967. Metode ini menjadi lebih berguna setelah tahun 2010."
       },
       {
-        "heading": "Uji model dengan contoh-contoh baru",
-        "text": "Untuk mengetahui apakah sebuah model bekerja, kamu mengujinya dengan daun-daun baru yang tidak dipelajarinya. Model pertama hanya belajar dari dua contoh, daun besar berwarna hijau tua dan daun cokelat berbintik. Model ini menebak dengan cara yang sederhana: model mencari contoh yang paling mirip dengan daun baru itu, lalu menyalin labelnya. Model menebak empat dari enam daun baru dengan benar. Model menyebut daun kecil berwarna hijau muda “sakit” dan daun kuning tanpa bintik “sehat”. Model itu tidak rusak. Model itu punya terlalu sedikit contoh untuk dibandingkan.",
-        "simpler": "Lalu kamu menguji model dengan daun yang belum pernah dilihatnya. Model pertama hanya punya dua contoh. Satu berwarna hijau tua. Satu berwarna cokelat dengan bintik-bintik. Model mencari contoh yang paling mirip dengan daun baru. Model menyalin labelnya. Model benar empat dari enam. Model menyebut daun kecil yang baru tumbuh “sakit” dan daun kuning “sehat”. Contohnya terlalu sedikit."
+        "heading": "Contoh yang lebih baik, lalu uji yang adil",
+        "text": "Model pertama hanya belajar dari dua contoh. Model ini menebak dengan cara yang sederhana: model mencari contoh yang paling mirip dengan daun baru itu, lalu menyalin labelnya. Dari enam daun baru, model menebak empat dengan benar. Model menyebut daun kecil berwarna hijau muda “sakit”, karena contohnya terlalu sedikit untuk dibandingkan. Lalu tim menambahkan empat daun yang terlihat berbeda, dan model menebak keenamnya dengan benar. Tetapi tim sudah melihat keenam daun uji itu ketika mereka memperbaiki model. Uji yang adil memakai daun yang belum pernah dipakai siapa pun. Tim menyisihkan empat daun. Model menebak tiga di antaranya dengan benar. Model menyebut daun panjang yang mulai menguning “sehat”. Uji baru menunjukkan apa yang masih salah ditebak model. Empat daun masih merupakan uji yang kecil.",
+        "simpler": "Model pertama hanya punya dua contoh. Model mencari contoh yang paling mirip dengan daun baru. Model menyalin label itu. Model benar empat dari enam daun baru. Contohnya terlalu sedikit. Lalu tim menambahkan empat daun yang berbeda. Sekarang model benar untuk semua enam daun. Tetapi tim sudah pernah melihat enam daun itu. Uji yang adil memakai daun baru. Tim menyisihkan empat daun. Model benar tiga di antaranya. Uji baru menunjukkan apa yang masih salah."
       },
       {
-        "heading": "Contoh yang lebih baik membantu, tetapi pengujian ada batasnya",
-        "text": "Berikutnya, tim menambahkan empat contoh, seperti daun kecil yang baru tumbuh dan daun kuning. Sekarang model menebak keenamnya dengan benar. Lalu model diuji dengan dua daun panjang bergaris dari tanaman lain. Keduanya sehat, tetapi model bilang “sakit”: tidak ada contoh yang mirip dengannya. Dengan dua contoh daun bergaris, model menebaknya dengan benar. Pada empat daun yang belum pernah dipakai siapa pun, model benar tiga, tetapi menyebut daun panjang yang mulai menguning “sehat”. Contoh yang sesuai dengan label yang benar itu membantu. Contoh yang lebih banyak saja tidak selalu membantu: satu label yang salah bisa membuat tebakan lebih buruk. Pengujian yang kecil tidak bisa membuktikan bahwa model bekerja untuk setiap tanaman baru.",
-        "simpler": "Berikutnya, tim menambahkan empat contoh. Sekarang model benar untuk semua enam daun. Lalu datang tanaman dengan daun panjang bergaris. Daun-daun itu sehat, tetapi model bilang “sakit”. Tidak ada contoh yang mirip dengannya. Dengan dua contoh daun bergaris, model menebaknya dengan benar. Pada empat daun yang belum pernah dipakai, model benar tiga. Contoh yang baik dengan label yang benar itu membantu. Contoh yang lebih banyak saja tidak selalu membantu. Label yang salah bisa membuatnya lebih buruk. Uji yang kecil tidak bisa membuktikan model selalu bekerja."
+        "heading": "Contoh dari dunia nyata",
+        "text": "Alat-alat sungguhan bekerja dengan cara yang mirip, dalam ukuran yang jauh lebih besar. Di Tanzania, para peneliti dari International Institute of Tropical Agriculture (Institut Internasional Pertanian Tropis) dan Penn State University membuat aplikasi ponsel gratis bernama Nuru. Aplikasi ini belajar dari gambar-gambar daun singkong, sebuah tanaman pangan, yang diambil di ladang-ladang Tanzania, dan aplikasi ini bekerja tanpa internet. Ketika para peneliti mengujinya pada tanaman di ladang, hasilnya jauh lebih baik ketika aplikasi melihat enam daun dari satu tanaman daripada satu daun saja. Contoh yang sesuai dengan label yang benar membantu sebuah model. Contoh yang lebih banyak saja tidak selalu membantu: label yang salah bisa membuat tebakan lebih buruk. Dan alat seperti ini hanya membantu orang memeriksa daun. Petani dan para ahli tetap yang memutuskan apa yang harus dilakukan.",
+        "simpler": "Alat-alat sungguhan juga bekerja seperti ini, tetapi jauh lebih besar. Di Tanzania, para peneliti membuat aplikasi ponsel gratis bernama Nuru. Aplikasi ini belajar dari gambar daun singkong. Singkong adalah tanaman yang ditanam orang untuk makanan. Aplikasi ini bekerja tanpa internet. Dalam uji, hasilnya lebih baik ketika aplikasi melihat enam daun dari satu tanaman. Contoh yang baik dengan label yang benar itu membantu. Label yang salah bisa membuatnya lebih buruk. Aplikasi ini membantu orang memeriksa daun. Orang tetap yang memutuskan apa yang harus dilakukan."
       }
     ],
     "glossary": [
@@ -243,62 +233,45 @@
           },
           {
             "text": "Daun kecil hampir selalu sakit",
-            "feedback": "Belum tepat. Tukang kebun bilang daun kecil yang baru tumbuh itu sehat. Baca tentang Putaran 1 di bagian kedua."
+            "feedback": "Belum tepat. Tukang kebun bilang daun kecil yang baru tumbuh itu sehat. Baca awal bagian kedua."
           },
           {
             "text": "Model itu rusak dan perlu diperbaiki",
-            "feedback": "Belum tepat. Pelajaran ini mengatakan model itu tidak rusak. Baca bagian akhir dari bagian kedua."
+            "feedback": "Belum tepat. Contohnya terlalu sedikit untuk dibandingkan. Baca awal bagian kedua."
           }
         ]
       },
       {
-        "question": "Apa yang membuat model lebih baik pada Putaran 2?",
+        "question": "Mengapa tim menguji model dengan empat daun yang belum pernah dipakai siapa pun?",
         "options": [
           {
-            "text": "Tim membuat semua gambar daun lebih terang",
-            "feedback": "Belum tepat. Gambar-gambarnya tidak berubah. Lihat apa yang ditambahkan tim di bagian ketiga."
+            "text": "Supaya ujinya adil, dengan daun yang belum pernah dilihat tim",
+            "feedback": "Benar. Tim sudah pernah melihat daun-daun uji yang pertama. Daun baru menunjukkan apa yang masih salah ditebak model."
           },
           {
-            "text": "Tim menambahkan contoh yang lebih banyak dan berbeda-beda",
-            "feedback": "Benar. Contoh-contoh baru memperlihatkan daun-daun yang terlihat berbeda kepada model, jadi model menebak keenamnya dengan benar."
+            "text": "Karena empat daun membuktikan bahwa model selalu bekerja",
+            "feedback": "Belum tepat. Pelajaran ini mengatakan empat daun masih merupakan uji yang kecil. Baca bagian akhir dari bagian kedua."
           },
           {
-            "text": "Tim menulis aturan tentang bintik",
-            "feedback": "Belum tepat. Dalam pembelajaran mesin, tidak ada yang menulis aturan itu. Lihat apa yang ditambahkan tim di bagian ketiga."
+            "text": "Karena model melupakan daun-daun lama",
+            "feedback": "Belum tepat. Model menyimpan contoh-contohnya. Baca tentang uji yang adil di bagian kedua."
           }
         ]
-      },
-      {
-        "question": "Kebun itu menanam tanaman baru dengan daun merah. Apa yang harus dilakukan tim sebelum mereka memercayai model untuk tanaman itu?",
-        "placeholder": "Pertama mereka harus ... Lalu mereka harus ..."
       }
     ]
   },
   "write": {
-    "prompt": "Jelaskan bagaimana model milik kebun itu menjadi lebih baik dari Putaran 1 sampai Putaran 3. Pakai angka-angka dari pelajaran ini.",
+    "prompt": "Jelaskan mengapa tim Kebun Sunrise menyisihkan empat daun untuk uji baru. Pakai satu angka dari pelajaran ini.",
     "sentenceStarters": [
-      "Pada Putaran 1, model belajar dari ...",
-      "Model menebak ... dengan benar, karena ...",
-      "Pada Putaran 2, tim menambahkan ...",
-      "Daun-daun bergaris menunjukkan bahwa ...",
-      "Data latih yang baik membutuhkan ... / Uji yang kecil tidak bisa menunjukkan ..."
+      "Tim sudah pernah melihat ...",
+      "Uji yang adil memakai ...",
+      "Pada uji baru, model ..."
     ],
-    "planningBoxes": [
-      "Ide utamaku",
-      "Bukti dari pelajaran",
-      "Mengapa ini penting",
-      "Pertanyaan yang masih aku punya"
-    ],
-    "selfCheck": [
-      "Aku menggambarkan Putaran 1 dan salah satu kesalahannya.",
-      "Aku menjelaskan apa yang berubah pada Putaran 2 dan Putaran 3.",
-      "Aku mengatakan apa yang dibutuhkan data latih yang baik, atau apa yang tidak bisa ditunjukkan oleh uji yang kecil."
-    ],
-    "example": "Pada Putaran 1, model hanya belajar dari dua contoh. Model menebak empat dari enam daun baru dengan benar, karena contohnya terlalu sedikit untuk dibandingkan. Model menyebut daun kecil yang baru tumbuh “sakit”. Pada Putaran 2, tim menambahkan empat contoh yang berbeda, dan model menebak keenamnya dengan benar. Daun-daun bergaris menunjukkan bahwa model membuat kesalahan ketika contoh-contohnya tidak mencakup sesuatu. Data latih yang baik membutuhkan contoh yang sesuai dari setiap jenis, dengan label yang benar. Bahkan 8 dari 8 dalam uji yang kecil tidak membuktikan bahwa model akan bekerja untuk setiap tanaman baru."
+    "example": "Tim sudah melihat enam daun uji yang pertama ketika mereka memperbaiki model, jadi menebak keenamnya dengan benar tidak banyak membuktikan. Uji yang adil memakai daun yang belum pernah dipakai siapa pun. Pada empat daun baru, model menebak tiga dengan benar dan menyebut daun yang mulai menguning “sehat”. Uji baru itu menunjukkan kesalahan yang tidak akan disadari tim. Empat daun masih merupakan uji yang kecil, jadi tim sebaiknya mengujinya dengan lebih banyak daun."
   },
   "speak": {
-    "partnerTask": "Ceritakan kepada temanmu bagaimana kamu akan melatih model untuk memilah dua jenis benda, misalnya buah yang matang dan yang belum matang. Temanmu bertanya, “Bagaimana kamu akan mengujinya?” Lalu bertukar.",
-    "independentTask": "Ucapkan tiga langkah dengan lantang: kumpulkan contoh, latih modelnya, uji modelnya. Berikan satu contoh untuk setiap langkah."
+    "partnerTask": "Ceritakan kepada temanmu bagaimana kamu akan melatih model untuk memilah dua jenis benda, misalnya buah yang matang dan yang belum matang. Temanmu bertanya, “Bagaimana kamu akan mengujinya dengan adil?” Lalu bertukar.",
+    "independentTask": "Ucapkan tiga langkah dengan lantang: kumpulkan contoh berlabel, latih modelnya, uji modelnya dengan contoh baru. Berikan satu contoh untuk setiap langkah."
   },
   "watch": {
     "why": "Video ini memperlihatkan komputer yang belajar membedakan bentuk-bentuk dari contoh berlabel, ide yang sama dengan model daun.",
@@ -321,7 +294,7 @@
         "text": "Sesuatu yang ingin aku ajarkan kepada model untuk dipilah adalah ..."
       }
     ],
-    "completionMessage": "Kamu sudah menyelesaikan Pelajaran 3. Kamu melatih model dengan contoh-contoh dan melihat mengapa contohnya penting."
+    "completionMessage": "Kamu sudah menyelesaikan Pelajaran 3. Kamu melihat bagaimana model belajar dari contoh, dan mengapa uji yang adil memakai contoh baru."
   },
   "visual": {
     "alt": "Kartu-kartu daun dari Kebun Sunrise: daun hijau, hijau muda, kuning, cokelat, dan berbintik, serta dua daun panjang dengan garis-garis pucat, masing-masing diberi label sehat atau sakit."
@@ -337,18 +310,13 @@
       "label": "Google for Developers, Machine Learning Crash Course: Datasets, generalization and overfitting (kualitas data dan label; diperbarui Juli 2025)"
     },
     {
-      "label": "T. M. Cover dan P. E. Hart, IEEE Transactions on Information Theory, Januari 1967: Nearest neighbor pattern classification (tercantum di halaman publikasi Thomas Cover, Stanford)"
-    },
-    {
-      "label": "Cornell University (2019): Professor's perceptron paved the way for AI, 60 years too soon (perceptron, diperlihatkan pada Juli 1958)"
-    },
-    {
-      "label": "DCMP: How Computer Vision Works (video Code.org, deskripsi)"
+      "label": "IITA (2018): African farmers get new help against cassava diseases: Nuru, their artificially intelligent assistant (petani Afrika mendapat bantuan baru melawan penyakit singkong)"
     }
   ],
   "educatorNotes": [
-    "Jika kegiatan ini tidak bisa dijalankan (lembar cetak, atau perangkat yang tidak memilikinya), pakai tabel bukti: tabel itu memperlihatkan persis apa yang dilakukan kegiatan ini. Pelajar juga bisa memainkannya di kertas: satu pelajar menjadi model dan hanya boleh menyalin label dari kartu contoh yang paling mirip. Putaran 3 menguji ulang daun-daun yang sama yang sudah pernah dilihat tim; Putaran 4 adalah pemeriksaan yang adil, dengan empat daun yang belum pernah dipakai siapa pun. Di kertas, simpan keempat kartu itu tertutup sampai Putaran 4.",
-    "Model dalam kegiatan ini sengaja dibuat sederhana: model tetangga terdekat (k = 1) yang menyalin label dari contoh yang paling mirip. Ini salah satu metode pembelajaran terawasi; makalah Cover dan Hart tahun 1967 meneliti aturan ini, dan perceptron buatan Rosenblatt, yang diperlihatkan pada Juli 1958, juga belajar dari contoh berlabel. AI yang sebenarnya jauh lebih besar, dan jenis pembelajaran mesin lain tidak membutuhkan label pada setiap contoh, tetapi hal-hal tentang contoh dan pengujian tetap sama.",
-    "Jika seorang pelajar memberi label pada sebuah contoh secara berbeda dari tukang kebun, model mengikuti pelajar itu. Itu saat yang baik untuk bertanya: siapa yang menentukan label yang benar?"
+    "Model daun sekarang menjadi kegiatan tambahan yang tidak wajib (arahan Justin, 4 November 2026): bacaan mengajarkan cara belajar dari contoh dan uji yang adil, dan kegiatannya dilipat di bawah “Coba sendiri” untuk pelajar yang ingin lebih. Kegiatan itu punya keempat putaran dan main bebas. Di kertas: satu pelajar menjadi model dan hanya boleh menyalin label dari kartu contoh yang paling mirip; simpan keempat kartu Putaran 4 tertutup sampai uji yang adil.",
+    "Model ini sengaja dibuat sederhana: model tetangga terdekat (k = 1) yang menyalin label dari contoh yang paling mirip. Ini salah satu metode pembelajaran terawasi; makalah Cover dan Hart tahun 1967 meneliti aturan ini, dan perceptron buatan Rosenblatt, yang diperlihatkan pada Juli 1958, juga belajar dari contoh berlabel. AI yang sebenarnya jauh lebih besar, dan jenis pembelajaran mesin lain tidak membutuhkan label pada setiap contoh, tetapi hal-hal tentang contoh dan pengujian tetap sama.",
+    "Nuru: evaluasi di Tanzania (Mrisho dan kawan-kawan, pracetak bioRxiv dari tahun 2020) menemukan bahwa aplikasi ini lebih akurat dengan enam daun per tanaman daripada dengan satu gambar daun. Pelajaran ini sengaja tidak memberi persentase: angka-angka penelitian itu bergantung pada uji yang mana dan penyakit yang mana. Aplikasi ini mendukung diagnosis; aplikasi ini tidak menggantikan penyuluh pertanian atau keputusan petani.",
+    "Jika seorang pelajar memberi label pada sebuah contoh secara berbeda dari tukang kebun dalam kegiatan tambahan, model mengikuti pelajar itu. Itu saat yang baik untuk bertanya: siapa yang menentukan label yang benar?"
   ]
 }

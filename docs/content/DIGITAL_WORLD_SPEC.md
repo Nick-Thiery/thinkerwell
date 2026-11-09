@@ -63,10 +63,11 @@ The drafts use these ids. The section colours and icons are open (section 8).
 - `changes`: for drafts, notes for reviewers (what is new, what needs checking).
 - `visual.src`: the schema requires it, so drafts point to a planned path (`visuals/DW01.svg`) that doesn't exist yet, and say so in `visual.description`.
 - `activity`: optional, new (5.2).
+- **Since Justin's brief of 4 November 2026 ("a Read section does not need an activity"):** `warmUp` is optional; `read.checks` may be empty, or one or two choice questions then perhaps a think question; `write.planningBoxes` and `write.selfCheck` may be empty and `write.sentenceStarters` needs only 2–5; Reflect has one required prompt and at most one optional one; the reading may run to 400 words (simpler 270). Keep an activity only when it teaches something a worked example in the reading can't; don't move removed work into Write or Speak. Put the explanation before any judgment task.
 
 ### 5.2 The `activity` object
 
-At most one per lesson. Fields every activity has:
+At most one per lesson, and only where it teaches something the reading can't (since 8 November 2026: Lessons 3, 11, 14 and 17). `extension: true` makes it an optional extension, folded under "Try it yourself (optional)" and outside what the lesson needs (Lesson 3's leaf model; on paper it is headed "Optional extension"). Fields every activity has:
 
 | Field | Meaning |
 |---|---|
