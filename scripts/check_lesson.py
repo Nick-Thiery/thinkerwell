@@ -262,7 +262,7 @@ def check(path):
     notes = (L.get("sensitiveNotes") or []) + (L.get("educatorNotes") or [])
     if not notes:
         errs.append("sensitiveNotes and educatorNotes are both empty: add at least one note for teachers")
-    elif len(notes) > 4:
+    elif len(notes) > (4 if course != "art-architecture-society" else 6):
         warns.append(f"notes for teachers: aim for 1–4 in all, found {len(notes)}")
     if "visual" not in L:
         errs.append("missing visual (use null only if a picture would not help)")
@@ -459,17 +459,26 @@ def check(path):
     # reflect
     rf = L.get("reflect") or {}
     pr = rf.get("prompts") or []
-    if [p.get("required") for p in pr] != [True, False]:
+    # Another course may keep Reflect to its one required prompt (Justin's
+    # briefs of 4 and 7 November 2026: one insight or question, no more).
+    if course is None and [p.get("required") for p in pr] != [True, False]:
         errs.append("reflect.prompts: need exactly 2, first required true, second false")
+    elif course is not None and [p.get("required") for p in pr] not in ([True], [True, False]):
+        errs.append("reflect.prompts: need one required prompt, then at most one optional prompt")
     cm = rf.get("completionMessage", "")
     if not cm.startswith(f"You finished Lesson {L.get('number')}."):
         warns.append(f'reflect.completionMessage should start "You finished Lesson {L.get("number")}."')
 
     # visual
     vi = L.get("visual")
+    # Art, Architecture and Society teaches through real works: its first
+    # picture is a credited photograph too (brief of 7 November 2026).
+    photo_first = course == "art-architecture-society"
     if vi is not None:
-        if vi.get("type") not in VISUAL_TYPES:
+        if vi.get("type") not in VISUAL_TYPES | ({"photo"} if photo_first else set()):
             errs.append(f"visual.type must be one of {sorted(VISUAL_TYPES)}")
+        if photo_first and (vi.get("type") != "photo" or not isinstance(vi.get("credit"), dict)):
+            errs.append("visual: a photo of a real work with its credit (creator, licence, source)")
         if not vi.get("description") or not vi.get("alt"):
             errs.append("visual needs description and alt")
 
@@ -477,7 +486,8 @@ def check(path):
     sv = L.get("secondVisual")
     for key, v in (("visual", vi), ("secondVisual", sv)):
         if v is not None and course is not None and ("caption" in v or key == "secondVisual"):
-            for k in ("caption", "lookClosely"):
+            # Art, Architecture and Society's Read asks nothing: a caption, no question.
+            for k in ("caption",) + (() if photo_first else ("lookClosely",)):
                 if not v.get(k):
                     errs.append(f"{key} needs {k}")
     if sv is not None:

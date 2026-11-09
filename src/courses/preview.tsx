@@ -22,6 +22,7 @@ import type { PreviewCourseModule } from './types';
 const LOADERS: Readonly<Record<string, () => Promise<PreviewCourseModule>>> = {
   'digital-world': () => import('./digital-world/index').then((module) => module.course),
   'southeast-asia-through-time': () => import('./southeast-asia-through-time/index').then((module) => module.course),
+  'art-architecture-society': () => import('./art-architecture-society/index').then((module) => module.course),
 };
 
 const loaded = new Map<string, PreviewCourseModule>();

@@ -179,6 +179,17 @@ Details and the reasons are in `docs/notes/local-language-videos.md`. A lesson's
 
 **In Indonesian and Malay (November 2026)**, Southeast Asia Through Time is translated in full: lessons, section checks, course text and the diagrams' words, drafted by AI and flagged for native-speaker review, as Our World's are. Its Commons photos stay as they are, and it has no Watch step in either language until a video in that language is approved.
 
+### Art, Architecture and Society (8 November 2026)
+
+**Built from Justin's brief of 4 November 2026, expanded on 7 November, as a hidden preview** (`/preview/art-architecture-society`), like the other two. It is a focused art-history and social-studies course for ages 11 to 15: 20 lessons in four sections of five.
+
+- **Sections:** Objects, making and power; Buildings, belief and shared places; Stories, lives and public memory; Museums, heritage and connections.
+- **Two real works per lesson.** Each lesson teaches through two genuine, credited images (40 placements, 37 distinct files from the Met, the National Gallery of Art, the Walters, Saint Louis Art Museum, the Amon Carter Museum and Wikimedia Commons). Each image's rights were checked item by item, and the files are served from this site.
+- **Read teaches and asks nothing:** no warm-up and no quick check. Write, Speak and Reflect are short.
+- **No Watch step** until a video is screened and approved, and **no section checks or certificates**: the brief asks for no extra quiz.
+- **Indonesian and Malay** versions come as for the other courses.
+- **Before learners use it:** an art historian's and a partner organisation's review.
+
 ### Thinkerwell's own videos (October 2026)
 
 Details and the reasons are in `docs/notes/site-videos.md`. Three short videos the team made about Thinkerwell itself: **Explore your world** (1:53, why it exists and what is in it) on About (in a card headed "See Thinkerwell in action", beside the UN goals: no "Optional" tag or video title, the picture is the play button, and "Read instead" with the data it uses is one quiet line under it), **Run a session** (1:09, a session with a group from start to finish) on For educators and For organisations, and **Set up a device** (1:19, the checklist step by step) on "Set up this device", on screen only. They are the site's own files (`public/video/`, 720p, about 12 MB together), not YouTube embeds, so nothing is asked of another server, and they keep the lesson videos' promises: nothing downloads before the tap, captions are on, every word is on the page as a written version in the reader's language ("Read instead"), Save data turns them off, and offline or when a file can't play the written version shows instead. They are never in the offline copy, so they cost nothing to anyone who doesn't watch. Their words are the first interface words that load with the pages that show them rather than with the app's first chunk (`src/i18n/lazyGroups.ts`), to keep a first visit to the home page light. The videos stay English in Indonesian; the page says so.
@@ -207,7 +218,7 @@ Details: `docs/notes/digital-world-preview.md`.
 - **A course choice only where a preview is on**: "Courses on this device", Our World first, at the top of the course map, the learner home and "Just look around".
 - **Activities don't count towards a stage being done** (spec section 8, item 2, still open); their answers are saved with the lesson's work on the device. Lesson 2 has picture cards only, no drawing mode. Lesson 8's tool is a labelled pretend tool with pre-written answers.
 - **Sections** borrow Our World's four section colours, each with an icon of its own (How AI works amber with a light bulb, Check what you see sage with an eye, Use tools wisely rose with a hand, AI where you live sky with people), until the brand book has colours for them. "Digital World" is still the working name.
-- **No section checks or certificates** until they are drafted, and no recordings: Listen uses the device's voice.
+- **No section checks or certificates** until they are drafted. Listen plays recordings in English, Indonesian and Malay (8 November 2026), like the other preview courses.
 - **In Indonesian and Malay**, Digital World is translated in full, interface and lessons with their activities (AI-drafted and flagged, like the rest; November 2026), with no Watch step until a video in that language is approved. In any other language its lessons stay English, marked as English, with a line saying so in the banner.
 - **For reviewers**: each lesson's print view has its activity on paper, its teacher guide has the answers and the lesson's review notes, and "Print all lessons" prints the whole course.
 

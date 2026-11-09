@@ -156,20 +156,25 @@ describe('preview courses', () => {
     const { courseUtterances, listenUtterances, SKIPPED_COURSES } = await import('./utterances.ts');
     expect(SKIPPED_COURSES).toEqual([]);
     for (const language of listenUtterances()) {
-      expect(language.sections.filter((section) => /^(dw|sat)-/.test(section.key))).toEqual([]);
+      expect(language.sections.filter((section) => /^(dw|sat|aas)-/.test(section.key))).toEqual([]);
     }
     const tracks = courseUtterances();
     expect(tracks.map((track) => `${track.lang}/${track.course}`).sort()).toEqual([
+      'en/art-architecture-society',
       'en/digital-world',
       'en/southeast-asia-through-time',
+      'id/art-architecture-society',
       'id/digital-world',
       'id/southeast-asia-through-time',
+      'ms/art-architecture-society',
       'ms/digital-world',
       'ms/southeast-asia-through-time',
     ]);
     for (const track of tracks) {
-      const prefix = track.course === 'digital-world' ? 'dw-' : 'sat-';
-      expect(track.sections.every((section) => section.key.startsWith(prefix))).toBe(true);
+      const prefixes: Record<string, string> = { 'digital-world': 'dw-', 'southeast-asia-through-time': 'sat-', 'art-architecture-society': 'aas-' };
+      const prefix = prefixes[track.course];
+      expect(prefix).toBeDefined();
+      expect(track.sections.every((section) => section.key.startsWith(prefix!))).toBe(true);
       expect(track.sections.some((section) => section.key === 'sample')).toBe(false);
     }
   });

@@ -32,11 +32,12 @@ const lessonFile = (name: string) => structuredClone(dwLessons[`${DW}/lessons/${
 const retiredFile = (name: string) => structuredClone(read(DW, 'retired', name)) as DigitalWorldLesson;
 
 describe('the course list', () => {
-  it('has Our World first, as the default, then Digital World and Southeast Asia Through Time as preview courses', () => {
+  it('has Our World first, as the default, then the three preview courses', () => {
     expect(COURSES[0]).toMatchObject({ id: DEFAULT_COURSE_ID, dir: '', preview: false });
-    expect(PREVIEW_COURSES.map((course) => course.id)).toEqual(['digital-world', 'southeast-asia-through-time']);
+    expect(PREVIEW_COURSES.map((course) => course.id)).toEqual(['digital-world', 'southeast-asia-through-time', 'art-architecture-society']);
     expect(findPreviewCourse('digital-world')?.lessonIdPrefix).toBe('dw-');
     expect(findPreviewCourse('southeast-asia-through-time')?.lessonIdPrefix).toBe('sat-');
+    expect(findPreviewCourse('art-architecture-society')?.lessonIdPrefix).toBe('aas-');
   });
 
   it('never treats Our World, or an unknown id, as a preview course', () => {
@@ -194,6 +195,45 @@ describe('a lesson with no video', () => {
     });
     expect(content.stagesFor({ number: 1 })).toEqual(STAGES_WITHOUT_WATCH);
     expect(content.stagesFor({ number: 2 })).toEqual(STAGES);
+  });
+});
+
+describe('Art, Architecture and Society’s files', () => {
+  const AAS = 'content/courses/art-architecture-society';
+  const aasCourse = read(AAS, 'course.json') as AnyCourseFile;
+  const aasLessons = readLessons(`${AAS}/lessons`);
+
+  it('pass the build’s checks: 20 lessons in 4 sections of 5, ids from Justin’s brief', () => {
+    const loaded = loadCourse('art-architecture-society', aasCourse, aasLessons);
+    expect(loaded.lessons.map((lesson) => lesson.number)).toEqual(Array.from({ length: 20 }, (_, i) => i + 1));
+    expect(loaded.sections.map((section) => section.lessons)).toEqual([
+      [1, 2, 3, 4, 5],
+      [6, 7, 8, 9, 10],
+      [11, 12, 13, 14, 15],
+      [16, 17, 18, 19, 20],
+    ]);
+    // The four lessons added on 7 November have ids of their own; the earlier sixteen keep theirs.
+    expect(loaded.lessons.filter((lesson) => !/^aas-\d\d-/.test(lesson.id)).map((lesson) => lesson.number)).toEqual([5, 10, 15, 19]);
+  });
+
+  it('teach through two real, credited images each, with Read asking nothing and no Watch step', () => {
+    const loaded = loadCourse('art-architecture-society', aasCourse, aasLessons);
+    for (const lesson of loaded.lessons) {
+      expect(lesson.warmUp, lesson.id).toBeUndefined();
+      expect(lesson.read.checks, lesson.id).toEqual([]);
+      expect(lesson.watch, lesson.id).toBeNull();
+      for (const picture of [lesson.visual, lesson.secondVisual]) {
+        expect(picture?.type, lesson.id).toBe('photo');
+        expect(picture?.src, lesson.id).toMatch(/^visuals\/AAS-\d\d-[AB]\.jpg$/);
+        const credit = (picture as { credit?: { sourceUrl: string; licence: string } }).credit;
+        expect(credit?.sourceUrl, lesson.id).toMatch(/^https:\/\//);
+        expect(credit?.licence, lesson.id).toBeTruthy();
+      }
+    }
+    // Three placements revisit earlier works, honestly: Lesson 12 Lesson 1's painting, Lesson 20 Lesson 16's two works.
+    const at = (n: number) => loaded.lessons.find((lesson) => lesson.number === n)!;
+    expect(at(12).visual?.src).toBe('visuals/AAS-01-B.jpg');
+    expect([at(20).visual?.src, at(20).secondVisual?.src]).toEqual(['visuals/AAS-16-A.jpg', 'visuals/AAS-16-B.jpg']);
   });
 });
 

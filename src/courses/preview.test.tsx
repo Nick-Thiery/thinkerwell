@@ -68,15 +68,21 @@ describe('with the preview on', () => {
 
   it('lists every preview course this device has turned on, in course order', async () => {
     const store = await getStore();
-    await store.updateSettings({ previewCourses: ['southeast-asia-through-time', 'digital-world'] });
+    await store.updateSettings({ previewCourses: ['art-architecture-society', 'southeast-asia-through-time', 'digital-world'] });
     renderAt('/course/southeast-asia-through-time');
     const choice = await screen.findByRole('navigation', { name: 'Courses on this device' });
     const links = await waitFor(() => {
       const found = choice.querySelectorAll('a');
-      expect(found).toHaveLength(3);
+      expect(found).toHaveLength(4);
       return found;
     });
-    expect([...links].map((link) => link.getAttribute('href'))).toEqual(['/course', '/course/digital-world', '/course/southeast-asia-through-time']);
+    expect([...links].map((link) => link.getAttribute('href'))).toEqual([
+      '/course',
+      '/course/digital-world',
+      '/course/southeast-asia-through-time',
+      '/course/art-architecture-society',
+    ]);
+    expect(links[3]).toHaveTextContent('Art, Architecture and SocietyDraft');
     expect(links[2]).toHaveTextContent('Southeast Asia Through TimeDraft');
     expect(links[2]).toHaveAttribute('aria-current', 'page');
     expect(screen.getByRole('heading', { level: 1, name: 'Southeast Asia Through Time' })).toBeInTheDocument();

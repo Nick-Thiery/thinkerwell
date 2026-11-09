@@ -79,6 +79,8 @@ const FIXED_PATHS: ReadonlyArray<Path> = [
   // A preview course's: its second picture's plan and credit (a picture's own title and maker), and an activity's notes for the team.
   ['secondVisual', 'description'],
   ['secondVisual', 'credit'],
+  // Art, Architecture and Society's first picture is a credited photograph too.
+  ['visual', 'credit'],
   ['activity', 'saves'],
   ['activity', 'offline'],
 ];

@@ -453,7 +453,8 @@ def main(argv):
         if only and name not in only:
             continue
         src = ((T.load(eng_path).get("visual") or {}).get("src"))
-        if not src:
+        # A photograph of a real work (Art, Architecture and Society) has no words to translate.
+        if not src or not src.endswith(".svg"):
             continue
         lesson_tr = T.load(tr_path) if os.path.exists(tr_path) else None
         if not os.path.exists(os.path.join(content_dir(), src)):

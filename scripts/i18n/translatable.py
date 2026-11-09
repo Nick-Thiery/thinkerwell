@@ -46,6 +46,8 @@ FIXED_PATHS = {
     ("visual", "description"),
     # A preview course's: its second picture's plan and credit, and an activity's notes for the team.
     ("secondVisual", "description"), ("secondVisual", "credit"),
+    # Art, Architecture and Society's first picture is a credited photograph too.
+    ("visual", "credit"),
     ("activity", "saves"), ("activity", "offline"),
 }
 
