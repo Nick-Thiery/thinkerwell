@@ -29,6 +29,7 @@
  * any other chunk (keepFirstVisitLight in vite.config.ts).
  */
 import { PREVIEW_COURSES } from '../content/courses.ts';
+import type { CourseFile, CourseFilesManifest } from '../offline/courseCache.ts';
 
 /** The precache leaves these out (Workbox globIgnores). */
 export const PREVIEW_PRECACHE_IGNORES = ['assets/preview/**'];
@@ -101,4 +102,33 @@ export function previewAssetFileName(asset: { names?: readonly string[]; origina
   if (course) return `${PREVIEW_ASSET_DIR}${course}/[name]-[hash][extname]`;
   // The kit's stylesheet (src/courses/kit/previewCourse.css), which every preview course shares.
   return sources.some(isPreviewModule) ? `${PREVIEW_ASSET_DIR}[name]-[hash][extname]` : null;
+}
+
+/** The built list of every course's files (COURSE_MANIFEST_URL), served from the site's root. */
+export const COURSE_FILES_FILE = 'course-files.json';
+
+/**
+ * The list of the files a device keeps to use each course offline, from the
+ * built files under assets/preview/ (src/offline/courseCache.ts): what every
+ * course shares (the door and kit, their words and stylesheet) and each
+ * course's own folder. The reviewers' page is left out. A file in a folder
+ * that is no course stops the build, so nothing is quietly left out of an
+ * offline copy.
+ */
+export function courseFilesManifest(files: ReadonlyArray<{ fileName: string; bytes: number }>): CourseFilesManifest {
+  const manifest: CourseFilesManifest = { shared: [], courses: Object.fromEntries(PREVIEW_COURSES.map((course) => [course.id, [] as CourseFile[]])) };
+  for (const { fileName, bytes } of files) {
+    if (!fileName.startsWith(PREVIEW_ASSET_DIR)) continue;
+    const rest = fileName.slice(PREVIEW_ASSET_DIR.length);
+    const folder = rest.includes('/') ? rest.slice(0, rest.indexOf('/')) : null;
+    if (folder === VIDEO_REVIEW) continue;
+    const entry = { url: `/${fileName}`, bytes };
+    if (folder === null) manifest.shared.push(entry);
+    else if (manifest.courses[folder]) manifest.courses[folder].push(entry);
+    else throw new Error(`${fileName} is in assets/preview/${folder}/, which is no course in src/content/courses.ts.`);
+  }
+  const byUrl = (a: CourseFile, b: CourseFile) => (a.url < b.url ? -1 : a.url > b.url ? 1 : 0);
+  manifest.shared.sort(byUrl);
+  for (const list of Object.values(manifest.courses)) list.sort(byUrl);
+  return manifest;
 }

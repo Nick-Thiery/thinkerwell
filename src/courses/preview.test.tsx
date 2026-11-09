@@ -5,7 +5,7 @@ import { afterEach, describe, expect, it } from 'vitest';
 import { routes } from '../app/routes';
 import { LearnerSessionProvider, useLearnerSession } from '../session';
 import { deleteAllData } from '../storage';
-import { isPreviewModule, previewAssetFileName, previewChunkFileName, previewCourseOfModule, PREVIEW_PRECACHE_IGNORES } from './build';
+import { courseFilesManifest, isPreviewModule, previewAssetFileName, previewChunkFileName, previewCourseOfModule, PREVIEW_PRECACHE_IGNORES } from './build';
 
 // The courses every device shows (src/content/courses.ts, `open`), their pages,
 // and how the build keeps their code out of a first visit's download.
@@ -165,5 +165,26 @@ describe('the build', () => {
     expect(previewAssetFileName({ originalFileNames: ['src/courses/digital-world/digitalWorld.css'] })).toBe('assets/preview/digital-world/[name]-[hash][extname]');
     expect(previewAssetFileName({ originalFileNames: ['content/visuals/L01.svg'] })).toBeNull();
     expect(PREVIEW_PRECACHE_IGNORES).toEqual(['assets/preview/**']);
+  });
+
+  it('lists every course’s files for offline use, what the courses share apart, and leaves the reviewers’ page out', () => {
+    const manifest = courseFilesManifest([
+      { fileName: 'assets/index-abc.js', bytes: 9 },
+      { fileName: 'assets/preview/routes-1.js', bytes: 100 },
+      { fileName: 'assets/preview/previewCourse-1.css', bytes: 10 },
+      { fileName: 'assets/preview/digital-world/index-2.js', bytes: 300 },
+      { fileName: 'assets/preview/art-architecture-society/AAS-01-A-3.jpg', bytes: 5000 },
+      { fileName: 'assets/preview/video-review/index-4.js', bytes: 7 },
+    ]);
+    expect(manifest.shared).toEqual([
+      { url: '/assets/preview/previewCourse-1.css', bytes: 10 },
+      { url: '/assets/preview/routes-1.js', bytes: 100 },
+    ]);
+    expect(manifest.courses['digital-world']).toEqual([{ url: '/assets/preview/digital-world/index-2.js', bytes: 300 }]);
+    expect(manifest.courses['art-architecture-society']).toHaveLength(1);
+    expect(manifest.courses['southeast-asia-through-time']).toEqual([]);
+    expect(JSON.stringify(manifest)).not.toContain('video-review');
+    // A folder that is no course stops the build rather than being left out of an offline copy.
+    expect(() => courseFilesManifest([{ fileName: 'assets/preview/mystery/x.js', bytes: 1 }])).toThrow(/no course/);
   });
 });

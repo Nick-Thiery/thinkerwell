@@ -966,6 +966,24 @@
           }
         }
       },
+      "courseFiles": {
+        "title": "Courses for offline use",
+        "intro": "Our World is saved on this device after the first visit. The other courses are saved as they are opened. To use all of them without the internet, save them here, on good Wi-Fi. This saves the pages, lessons and pictures. Videos always need the internet, and the lesson audio is saved separately, below.",
+        "size": "All the courses: {size} MB.",
+        "stateSaved": "{course}: saved on this device ({size} MB).",
+        "statePart": "{course}: partly saved. Save the rest to open every lesson offline ({size} MB in all).",
+        "stateNone": "{course}: not saved yet ({size} MB).",
+        "savedAll": "All the courses are on this device. They open without the internet.",
+        "download": "Save the courses",
+        "stop": "Stop saving",
+        "progress": "Saving: {done} MB of {total} MB",
+        "progressLabel": "Courses saved",
+        "stopped": "Stopped. What was saved stays on this device.",
+        "failed": "Some files didn't save. Check the connection and try again. What was saved stays.",
+        "saveData": "Save data is on, so nothing downloads from here. Turn Save data off above to save the courses.",
+        "notReady": "This can start once the site is saved on this device for offline use, above.",
+        "unsupported": "This browser can't keep the courses, so they need the internet here."
+      },
       "lessonAudio": {
         "title": "Lesson audio",
         "intro": "Listen downloads each part's recording the first time it plays it. To use Listen without the internet, download all of them here, on good Wi-Fi.",

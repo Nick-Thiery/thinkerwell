@@ -19,6 +19,15 @@
  *   any more are deleted when a new version starts and whenever a
  *   language's new timings file arrives (pruneAudio). A new version never
  *   empties this cache: recordings that didn't change stay.
+ * - The other courses' files (COURSE_PREFIX, /assets/preview/: their code,
+ *   lessons, words, styles and pictures, about 10 MB, built apart so a first
+ *   visit stays light) are kept the same way, in COURSE_CACHE, the first time
+ *   the page fetches them (a learner opens the course) or all at once when a
+ *   teacher saves a course in Settings (src/offline/courseFiles.ts). Their
+ *   names carry a hash too. The list of the current files is
+ *   /course-files.json, built with the site; when a new version starts, kept
+ *   files it doesn't list are deleted (pruneCourses), and the list itself
+ *   is answered from the network, else from the copy kept last time.
  * - Nothing else is cached, and nothing is fetched from other servers.
  * - A new version waits until the page sends SKIP_WAITING ("Update now");
  *   the first install takes charge of the open page (clientsClaim).
@@ -38,6 +47,7 @@ import { cleanupOutdatedCaches, PrecacheController, PrecacheRoute, type Precache
 import { NavigationRoute, registerRoute } from 'workbox-routing';
 import { AUDIO_CACHE, AUDIO_PREFIX } from '../audio/cache';
 import courseRecordings from '../audio/courseRecordings.json';
+import { COURSE_CACHE, COURSE_MANIFEST_URL, isCourseFile, type CourseFilesManifest } from './courseCache';
 import recordings from '../audio/recordings.json';
 
 declare const self: ServiceWorkerGlobalScope & { __WB_MANIFEST: Array<PrecacheEntry | string> };
@@ -146,10 +156,63 @@ async function audioFromCache(request: Request, event: ExtendableEvent): Promise
   return response;
 }
 
+/** A course file: from the cache, else from the site, kept for next time. Files are named by hash, so a kept one is never stale. */
+async function courseFileFromCache(request: Request, event: ExtendableEvent): Promise<Response> {
+  const cache = await caches.open(COURSE_CACHE);
+  const kept = await cache.match(request);
+  if (kept) return kept;
+  const response = await fetch(request);
+  if (response.status === 200 && response.type === 'basic') event.waitUntil(cache.put(request, response.clone()));
+  return response;
+}
+
+/**
+ * The list of the current course files: from the network (and kept), else the
+ * copy kept the last time, else the network's own failure. Never from the
+ * browser's HTTP cache, so a new version's list is seen at once.
+ */
+async function courseManifest(request: Request, event: ExtendableEvent): Promise<Response> {
+  const cache = await caches.open(COURSE_CACHE);
+  try {
+    const response = await fetch(request, { cache: 'no-cache' });
+    if (response.status === 200 && response.type === 'basic') event.waitUntil(cache.put(COURSE_MANIFEST_URL, response.clone()));
+    return response;
+  } catch (error) {
+    const kept = await cache.match(COURSE_MANIFEST_URL);
+    if (kept) return kept;
+    throw error;
+  }
+}
+
+/**
+ * Deletes kept course files the current version doesn't list (a changed file
+ * has a new name), and everything but the list itself if the version lists no
+ * courses. Offline, nothing is decided: the files stay until the list arrives.
+ */
+async function pruneCourses(): Promise<void> {
+  let listed: CourseFilesManifest;
+  try {
+    const response = await fetch(COURSE_MANIFEST_URL, { cache: 'no-cache' });
+    if (!response.ok) return;
+    const cache = await caches.open(COURSE_CACHE);
+    await cache.put(COURSE_MANIFEST_URL, response.clone());
+    listed = (await response.json()) as CourseFilesManifest;
+  } catch {
+    return;
+  }
+  const keep = new Set([COURSE_MANIFEST_URL, ...listed.shared.map((file) => file.url), ...Object.values(listed.courses).flatMap((files) => files.map((file) => file.url))]);
+  const cache = await caches.open(COURSE_CACHE);
+  for (const request of await cache.keys()) {
+    const path = new URL(request.url).pathname;
+    if (!keep.has(path)) await cache.delete(request);
+  }
+}
+
 self.addEventListener('install', (event) => event.waitUntil(installPrecache(event)));
 self.addEventListener('activate', (event) => {
   event.waitUntil(precache.activate(event));
   event.waitUntil(pruneAudio(true).catch(() => undefined));
+  event.waitUntil(pruneCourses().catch(() => undefined));
 });
 
 self.addEventListener('message', (event) => {
@@ -164,6 +227,15 @@ registerRoute(
   ({ url, request, sameOrigin }) =>
     sameOrigin && url.pathname.startsWith(AUDIO_PREFIX) && request.method === 'GET' && !request.headers.has('range'),
   ({ request, event }) => audioFromCache(request, event),
+);
+// The other courses' files and the list of them (never in the precache).
+registerRoute(
+  ({ url, request, sameOrigin }) => sameOrigin && isCourseFile(url.pathname) && request.method === 'GET' && !request.headers.has('range'),
+  ({ request, event }) => courseFileFromCache(request, event),
+);
+registerRoute(
+  ({ url, request, sameOrigin }) => sameOrigin && url.pathname === COURSE_MANIFEST_URL && request.method === 'GET',
+  ({ request, event }) => courseManifest(request, event),
 );
 registerRoute(
   new NavigationRoute(precache.createHandlerBoundToURL('/index.html'), {

@@ -4,6 +4,7 @@ import { usePageTitle } from '../app/usePageTitle';
 import { useI18n } from '../i18n';
 import { useLearnerSession } from '../session';
 import { LanguageSetting } from './settings/LanguageSetting';
+import { CourseFilesSetting } from './settings/CourseFilesSetting';
 import { LessonAudioSetting } from './settings/LessonAudioSetting';
 import { ListenVoiceSetting } from './settings/ListenVoiceSetting';
 import { OfflineSetting } from './settings/OfflineSetting';
@@ -52,6 +53,7 @@ export function SettingsPage() {
       </div>
       <WorkFileSetting />
       <ListenVoiceSetting deviceSettings={deviceSettings} />
+      <CourseFilesSetting deviceSettings={deviceSettings} />
       <LessonAudioSetting deviceSettings={deviceSettings} />
       <SpeechToTextSetting deviceSettings={deviceSettings} />
       <PilotResultsSetting deviceSettings={deviceSettings} />

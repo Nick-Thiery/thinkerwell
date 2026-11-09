@@ -76,8 +76,12 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * Raised to 830 kB on 8 November 2026: 829.2 kB with lessons that may teach through the reading alone (the Read stage,
  * print view, teacher guide and session plan handle a missing warm-up, quick check, planning boxes and self-check, in
  * the shared lesson and teacher chunks; docs/notes/slow-internet.md).
+ * Raised to 832 kB on 9 November 2026: 830.9 kB with every course open on every device (the course choice on Home and
+ * on each course's map, the build-time course list, one honest line per course in place of the draft banner) and the
+ * Settings card for saving the other courses offline (its code and its words in three languages). The courses'
+ * own files (9.6 MB) are still in assets/preview/ and never precached; they are kept at run time (src/offline/courseCache.ts).
  */
-const PRECACHE_BUDGET = 830_000;
+const PRECACHE_BUDGET = 832_000;
 /**
  * Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before),
  * 210.5 kB after the language and pilot-day merges, 212.7 kB with the header's language switch and the one language
@@ -120,8 +124,11 @@ const PRECACHE_BUDGET = 830_000;
  * Raised to 228 kB with the pilot polish: 227.02 kB with it against 226.8 kB before, on the same machine. The
  * phone fixes' styles (the lesson step row, the section headers, the Educators address) are in the one stylesheet,
  * and en.json (in the first chunk) gained the teacher guide's note on translated lessons' steps; no page code.
+ * Raised to 229 kB on 9 November 2026: 228.4 kB with the course choice on Home (its code, its styles, the three courses'
+ * names in the build-time catalog and the label), which Justin's brief of 9 November asked for; nothing of a course's
+ * code, lessons or pictures is in a first visit.
  */
-const FIRST_VISIT_HOME_BUDGET = 228_000;
+const FIRST_VISIT_HOME_BUDGET = 229_000;
 
 const TEXT = /\.(html|js|css|svg|json|webmanifest)$/;
 

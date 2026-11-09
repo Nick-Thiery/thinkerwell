@@ -954,6 +954,24 @@
           }
         }
       },
+      "courseFiles": {
+        "title": "Kursus untuk digunakan tanpa internet",
+        "intro": "Kursus Our World disimpan pada peranti ini selepas lawatan pertama. Kursus lain disimpan apabila dibuka. Supaya semuanya boleh digunakan tanpa internet, simpan di sini, dengan Wi-Fi yang baik. Yang disimpan: halaman, pelajaran dan gambar. Video sentiasa memerlukan internet, dan audio pelajaran disimpan berasingan, di bawah.",
+        "size": "Semua kursus: {size} MB.",
+        "stateSaved": "{course}: disimpan pada peranti ini ({size} MB).",
+        "statePart": "{course}: sebahagian disimpan. Simpan selebihnya supaya semua pelajaran boleh dibuka tanpa internet ({size} MB keseluruhan).",
+        "stateNone": "{course}: belum disimpan ({size} MB).",
+        "savedAll": "Semua kursus ada pada peranti ini. Kursus boleh dibuka tanpa internet.",
+        "download": "Simpan kursus",
+        "stop": "Berhenti menyimpan",
+        "progress": "Menyimpan: {done} MB daripada {total} MB",
+        "progressLabel": "Kursus yang disimpan",
+        "stopped": "Dihentikan. Yang telah disimpan kekal pada peranti ini.",
+        "failed": "Sebahagian fail tidak disimpan. Semak sambungan dan cuba lagi. Yang telah disimpan kekal.",
+        "saveData": "Jimat data dihidupkan, jadi tiada apa dimuat turun dari sini. Matikan Jimat data di atas untuk menyimpan kursus.",
+        "notReady": "Ini boleh bermula selepas tapak disimpan pada peranti ini untuk kegunaan tanpa internet, di atas.",
+        "unsupported": "Pelayar ini tidak dapat menyimpan kursus, jadi di sini kursus memerlukan internet."
+      },
       "lessonAudio": {
         "title": "Audio pelajaran",
         "intro": "Dengar memuat turun rakaman setiap petikan pada kali pertama ia dimainkan. Untuk menggunakan Dengar tanpa internet, muat turun semuanya di sini, dengan Wi-Fi yang baik.",

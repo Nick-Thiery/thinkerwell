@@ -8,12 +8,14 @@ import { lazyChunkFor } from './src/app/lazy/firstPage.ts';
 import { LESSON_CATALOG_FIELDS, type CourseSummary } from './src/content/catalogFields.ts';
 import { COURSES, DEFAULT_COURSE_ID } from './src/content/courses.ts';
 import {
+  COURSE_FILES_FILE,
   COURSE_MESSAGES_ID,
   COURSE_MESSAGES_PREFIX,
   PREVIEW_ASSET_DIR,
   PREVIEW_PRECACHE_IGNORES,
   VIDEO_REVIEW_ID,
   VIDEO_REVIEW_MODULE,
+  courseFilesManifest,
   isPreviewModule,
   previewAssetFileName,
   previewChunkFileName,
@@ -245,6 +247,30 @@ function lessonCatalog(): Plugin {
         courses[course.id] = { titles, lessons: lessonFiles.length, sections: english.sections?.length ?? 0 };
       }
       return `export default ${JSON.stringify({ lessons, quizQuestions, courses })};`;
+    },
+  };
+}
+
+/**
+ * Writes course-files.json: every file of every course other than Our World
+ * (src/courses/build.ts, courseFilesManifest), with its size, so a device can
+ * save a course for offline use and the service worker can tell which kept
+ * files are current (src/offline/courseFiles.ts, sw.ts). It runs last, once
+ * the course stylesheets and pictures are in the bundle. Never precached.
+ */
+function courseFiles(): Plugin {
+  return {
+    name: 'thinkerwell:course-files',
+    apply: 'build',
+    enforce: 'post',
+    generateBundle(_options, bundle) {
+      const files = Object.values(bundle)
+        .filter((output) => output.fileName.startsWith(PREVIEW_ASSET_DIR))
+        .map((output) => {
+          const source = output.type === 'chunk' ? output.code : output.source;
+          return { fileName: output.fileName, bytes: typeof source === 'string' ? Buffer.byteLength(source) : source.byteLength };
+        });
+      this.emitFile({ type: 'asset', fileName: COURSE_FILES_FILE, source: JSON.stringify(courseFilesManifest(files)) });
     },
   };
 }
@@ -819,6 +845,7 @@ export default defineConfig({
     lazyMessages(),
     videoReview(),
     keepZodOutOfTheBrowser(),
+    courseFiles(),
     pseudoLocales(),
     keepFirstVisitLight(),
     preloadFirstPage(),
