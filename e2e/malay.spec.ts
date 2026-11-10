@@ -434,7 +434,7 @@ test.describe('with Malay on, every page is Malay and fits', () => {
     await expectAllMalay(page, 'new learner');
     await page.getByLabel(msg(ms, 'pages.home.newLearner.nameLabel')).fill(LEARNER);
     await page.getByRole('button', { name: msg(ms, 'pages.home.newLearner.submit') }).click();
-    await expect(page).toHaveURL(/\/$/);
+    await expect(page.locator('h1')).toHaveText(msg(ms, 'pages.home.dashboard.greeting', { name: LEARNER }));
     const allowed = [LEARNER, TYPED];
 
     // The Geography section, finished (so its certificate exists), with writing in the journal.

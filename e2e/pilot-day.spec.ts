@@ -114,7 +114,7 @@ test('a staff member works through the setup checklist, which asks the browser n
   await step(page, 'Add the learners who use this device').getByRole('button', { name: 'Add a learner' }).click();
   await page.getByLabel('First name or nickname').fill('Amina');
   await page.getByRole('button', { name: 'Create profile' }).click();
-  await expect(page).toHaveURL(/\/$/);
+  await expect(page.getByRole('heading', { level: 1, name: 'Hi Amina' })).toBeVisible();
   await page.goto('/educators/setup');
   const learners = step(page, 'Add the learners who use this device');
   await expect(learners.getByRole('status')).toContainText('Done');
@@ -138,7 +138,7 @@ test('the class view shows each learner by name without scores, and every certif
   await step(page, 'Add the learners who use this device').getByRole('button', { name: 'Add a learner' }).click();
   await page.getByLabel('First name or nickname').fill('Amina');
   await page.getByRole('button', { name: 'Create profile' }).click();
-  await expect(page).toHaveURL(/\/$/);
+  await expect(page.getByRole('heading', { level: 1, name: 'Hi Amina' })).toBeVisible();
   for (const lesson of sectionLessons('geography')) await finishLessonViaReflect(page, lesson);
   // Amina tries the Geography check.
   await page.goto('/section/geography/check');
