@@ -134,7 +134,7 @@ export function HomePage() {
           }}
         />
       ) : null}
-      {branch === 'guest' || branch === 'dashboard' ? <CourseChoice /> : null}
+      {branch === 'guest' ? <CourseChoice /> : null}
       {branch === 'guest' ? <GuestHome lesson1={lesson1} /> : null}
       {branch === 'dashboard' && session.activeLearner ? (
         <LearnerDashboard learner={session.activeLearner} progress={progressResult.progress} />

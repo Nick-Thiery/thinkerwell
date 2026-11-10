@@ -20,16 +20,10 @@ export interface PreviewCourseConfig {
   readonly contentFor?: (code: string) => LessonContent | undefined;
   /** Its own words (virtual:thinkerwell/course-messages/<id>), by language. */
   readonly words: Readonly<Record<string, MessageTree>>;
-  /**
-   * Its words that differ from course to course: the line on its map about
-   * what is still being checked, the switch page's two paragraphs (a hidden
-   * preview's), and what its teacher guides hold.
-   */
+  /** Its words that differ from course to course: the switch page's two paragraphs (a hidden preview's). */
   readonly wordKeys: {
-    readonly reviewNote: MessageKey;
     readonly switchOnBody: MessageKey;
     readonly switchReviewNote: MessageKey;
-    readonly forTeachersBody: MessageKey;
   };
   /** Its icon in the course choice. */
   readonly icon: IconName;

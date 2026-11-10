@@ -6,7 +6,7 @@
  * these stay easy to unit-test and easy to reuse from a component that
  * already has the data loaded.
  */
-import type { Lesson, Section } from '../content';
+import type { Lesson } from '../content';
 import { STAGES, stageAmong } from '../content/stages';
 
 /** What these helpers need of a lesson: a catalog entry (src/content/catalog.ts) or a whole lesson. */
@@ -101,7 +101,7 @@ export interface SectionProgress {
 
 /** How many of a section's lessons are complete, out of how many there are. */
 export function sectionProgress(
-  section: Pick<Section, 'lessons'>,
+  section: { readonly lessons: readonly number[] },
   lessons: readonly LessonRef[],
   progress: ProgressByLessonId,
 ): SectionProgress {

@@ -113,7 +113,7 @@ test('a learner keeps working offline: the dashboard says so, Watch opens on Rea
   await addLearnerViaUi(page, 'Amina');
   await waitUntilOfflineReady(page);
   await page.goto('/');
-  await expect(page.getByText('All 24 lessons work offline')).toBeVisible();
+  await expect(page.getByText('24 of 73 lessons ready offline')).toBeVisible();
 
   await context.setOffline(true);
   await page.reload();

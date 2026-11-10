@@ -1,13 +1,24 @@
 import { lessonPath, sectionCertificatePath, sectionCheckPath } from '../../app/lessonUrls';
-import type { LessonSummary, Section } from '../../content/catalog';
+import type { StageId } from '../../content/stages';
+import type { SectionId } from '../../components/ds';
 import { useCatalog } from '../../content/useCatalog';
 import { Button, LessonRow, SectionHeader } from '../../components/ds';
 import { En, useI18n } from '../../i18n';
 import { isLessonComplete, nextStageForLesson, sectionProgress, stagesDoneForLesson, type ProgressByLessonId } from '../../storage';
+import { SECTION_ICONS } from './sectionIcons';
+import type { OverviewLesson, OverviewSection, SectionLook } from './overviewTypes';
 
 export interface SectionCardProps {
-  section: Section;
-  lessons: readonly LessonSummary[];
+  section: OverviewSection;
+  lessons: readonly OverviewLesson[];
+  /** The section's tint and icon. Our World's own section ids are tints; another course gives its own. */
+  look?: SectionLook;
+  /** A lesson's steps. Our World's catalog by default; another course gives its own (it may have no Watch). */
+  stagesFor?: (lesson: OverviewLesson) => readonly StageId[];
+  /** Where the section's check is, or null when the section has none. The default is Our World's. */
+  checkPath?: string | null;
+  /** True when finishing the section offers a certificate (Our World's only). */
+  certificates?: boolean;
   progress: ProgressByLessonId;
   /** The one lesson to highlight (findContinueTarget's result), or undefined for a guest or a finished learner. */
   highlightLessonId?: string;
@@ -38,9 +49,25 @@ export interface SectionCardProps {
  * r2-rules-2), and left aria-controls pointing at an id that didn't exist
  * while collapsed.
  */
-export function SectionCard({ section, lessons, progress, highlightLessonId, hideProgress, expanded, onToggle }: SectionCardProps) {
+export function SectionCard({
+  section,
+  lessons,
+  look,
+  stagesFor,
+  checkPath,
+  certificates = true,
+  progress,
+  highlightLessonId,
+  hideProgress,
+  expanded,
+  onToggle,
+}: SectionCardProps) {
   const catalog = useCatalog();
   const { t, tx } = useI18n();
+  const tone = look?.tone ?? (section.id as SectionId);
+  const icon = look?.icon ?? SECTION_ICONS[tone];
+  const stagesOf = stagesFor ?? catalog.stagesFor;
+  const checkHref = checkPath === undefined ? sectionCheckPath(section.id) : checkPath;
   const { completed, total } = sectionProgress(section, lessons, progress);
   const firstLesson = section.lessons[0] ?? 0;
   const lastLesson = section.lessons[section.lessons.length - 1] ?? firstLesson;
@@ -53,7 +80,8 @@ export function SectionCard({ section, lessons, progress, highlightLessonId, hid
     <section id={section.id} aria-labelledby={`${section.id}-title`} className="tw-course-section">
       <SectionHeader
         titleId={`${section.id}-title`}
-        section={section.id}
+        section={tone}
+        icon={icon}
         number={section.number}
         title={section.title}
         question={section.question}
@@ -67,12 +95,12 @@ export function SectionCard({ section, lessons, progress, highlightLessonId, hid
           </p>
         )}
         <div className="tw-course-section-meta-actions">
-          {!expanded && !hideProgress && allDone ? (
-            <Button variant="secondary" href={sectionCheckPath(section.id)}>
+          {!expanded && !hideProgress && allDone && checkHref ? (
+            <Button variant="secondary" href={checkHref}>
               {t('pages.home.dashboard.startCheck')}
             </Button>
           ) : null}
-          {!hideProgress && allDone ? (
+          {certificates && !hideProgress && allDone ? (
             <Button
               variant="ghost"
               icon="Award"
@@ -97,7 +125,7 @@ export function SectionCard({ section, lessons, progress, highlightLessonId, hid
           // opened) or that's already finished has no "current" step to
           // show — only an in-progress lesson does.
           const inProgress = Boolean(record) && !done;
-          const stages = catalog.stagesFor(lesson);
+          const stages = stagesOf(lesson);
           return (
             <LessonRow
               key={lesson.id}
@@ -114,13 +142,15 @@ export function SectionCard({ section, lessons, progress, highlightLessonId, hid
             />
           );
         })}
-        <LessonRow
-          kind="quiz"
-          title={t('pages.course.sectionCheckRowTitle', { title: section.title })}
-          displayTitle={tx('pages.course.sectionCheckRowTitle', { title: <En>{section.title}</En> })}
-          question={t('pages.course.sectionCheckQuestion', { range })}
-          href={sectionCheckPath(section.id)}
-        />
+        {checkHref ? (
+          <LessonRow
+            kind="quiz"
+            title={t('pages.course.sectionCheckRowTitle', { title: section.title })}
+            displayTitle={tx('pages.course.sectionCheckRowTitle', { title: <En>{section.title}</En> })}
+            question={t('pages.course.sectionCheckQuestion', { range })}
+            href={checkHref}
+          />
+        ) : null}
       </div>
     </section>
   );

@@ -214,9 +214,11 @@ describe("a learner's home", () => {
     const learner = { id: 'a', name: 'Amina', colour: 'lemon' as const, createdAt: '2026-09-01T00:00:00.000Z' };
     render(
       <I18nProvider offered={englishOnly}>
-        <MemoryRouter>
-          <LearnerDashboard learner={learner} progress={new Map()} />
-        </MemoryRouter>
+        <LearnerSessionProvider>
+          <MemoryRouter>
+            <LearnerDashboard learner={learner} progress={new Map()} />
+          </MemoryRouter>
+        </LearnerSessionProvider>
       </I18nProvider>,
     );
     expect(screen.queryByRole('heading', { name: 'Your language' })).not.toBeInTheDocument();

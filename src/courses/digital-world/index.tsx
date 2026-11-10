@@ -52,10 +52,8 @@ export const course = createPreviewCourse(
     contentFor: digitalWorldIn,
     words,
     wordKeys: {
-      reviewNote: 'digitalWorld.reviewNote',
       switchOnBody: 'digitalWorld.switch.onBody',
       switchReviewNote: 'digitalWorld.switch.reviewNote',
-      forTeachersBody: 'digitalWorld.map.forTeachersBody',
     },
     icon: 'Lightbulb',
     path: COURSE_PATH,

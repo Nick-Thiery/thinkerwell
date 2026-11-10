@@ -24,10 +24,8 @@ export const course = createPreviewCourse(
     contentFor: southeastAsiaIn,
     words,
     wordKeys: {
-      reviewNote: 'southeastAsia.reviewNote',
       switchOnBody: 'southeastAsia.switch.onBody',
       switchReviewNote: 'southeastAsia.switch.reviewNote',
-      forTeachersBody: 'southeastAsia.map.forTeachersBody',
     },
     icon: 'Map',
     path: COURSE_PATH,

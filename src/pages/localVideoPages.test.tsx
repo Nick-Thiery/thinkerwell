@@ -84,7 +84,7 @@ describe('CreditsPage', () => {
     expect(link).toHaveAttribute('target', '_blank');
     expect(within(link).getByText(entry.title)).toHaveAttribute('lang', 'id');
     const english = englishContent.getLessonByNumber(5)!.watch;
-    const item = link.closest('li') as HTMLElement;
+    const item = link.closest('.tw-credits-lesson') as HTMLElement;
     expect(within(item).getByRole('link', { name: new RegExp(english.title.replace(/[.*+?^${}()|[\]\\|]/g, '\\$&')) })).toHaveAttribute(
       'href',
       `https://www.youtube.com/watch?v=${english.youtubeId}`,

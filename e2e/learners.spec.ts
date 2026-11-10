@@ -207,7 +207,8 @@ test.describe('new learner flow', () => {
     // Going back to "/" shows her own dashboard, pointed at the same lesson.
     await page.goto('/');
     await expect(page.getByRole('heading', { level: 1, name: 'Hi Amina' })).toBeVisible();
-    await expect(page.getByText('Start here')).toBeVisible();
+    await expect(page.getByRole('progressbar', { name: 'Your progress' })).toBeVisible();
+    await expect(page.getByText(/^(Start here|Resume here)$/)).toBeVisible();
 
     // Saved with the colour picked and the class code trimmed and upper-cased.
     const db = await dumpDb(page);
@@ -363,8 +364,7 @@ test.describe('course map opens the learner\'s current section', () => {
     // The switch is saved before the header changes: wait for it, or the
     // reload below can race the write and come back as Deng.
     await expect(page.getByRole('button', { name: 'Switch learner, current: Amina' })).toBeVisible();
-    await page.goto('/');
-    await page.locator('a.tw-section-row[href="/course#history"]').click();
+    await page.goto('/course#history');
     await expect(page).toHaveURL(/\/course#history$/);
     await expect(page.getByRole('link', { name: /Lesson 1:.*Completed\./ })).toBeVisible();
   });

@@ -315,14 +315,14 @@ export const pageTour: TourStop[] = [
     go: async (page, { ui }) => {
       await page.getByRole('link', { name: ui('pages.educators.guidesCta') }).click();
       await expect(page.locator('h1')).toHaveText(ui('pages.guides.title'));
-      await page.locator('details.tw-guides-geography > summary').click();
-      await expect(page.getByRole('link', { name: ui('pages.educators.teacherGuideLabel', { number: 10 }) })).toBeVisible();
+      await page.locator('#our-world details.tw-guides-geography > summary').click();
+      await expect(page.locator('#our-world').getByRole('link', { name: ui('pages.guides.teacherGuideLabel', { number: 10, title: L10.title }) })).toBeVisible();
     },
   },
   {
     name: 'educators: teacher guide',
     go: async (page, { ui }) => {
-      await page.getByRole('link', { name: ui('pages.educators.teacherGuideLabel', { number: 10 }) }).click();
+      await page.locator('#our-world').getByRole('link', { name: ui('pages.guides.teacherGuideLabel', { number: 10, title: L10.title }) }).click();
       await expect(page.locator('h1')).toHaveText(L10.title);
       await expect(page.getByRole('table')).toBeVisible();
     },

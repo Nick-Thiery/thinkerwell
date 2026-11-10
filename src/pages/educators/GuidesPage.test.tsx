@@ -31,8 +31,8 @@ describe('the list of teacher guides', () => {
     expect(fold).toHaveAttribute('open');
     for (const lesson of getSectionLessons(id)) {
       expect(within(fold).getByText(`Lesson ${lesson.number}: ${lesson.title}`)).toBeInTheDocument();
-      expect(within(fold).getByRole('link', { name: `Teacher guide for Lesson ${lesson.number}` })).toHaveAttribute('href', `/educators/lesson/${lesson.id}`);
-      expect(within(fold).getByRole('link', { name: `Print Lesson ${lesson.number}` })).toHaveAttribute('href', `/lesson/${lesson.id}/print`);
+      expect(within(fold).getByRole('link', { name: new RegExp(`^Teacher guide for Lesson ${lesson.number}:`) })).toHaveAttribute('href', `/educators/lesson/${lesson.id}`);
+      expect(within(fold).getByRole('link', { name: new RegExp(`^Print Lesson ${lesson.number}:`) })).toHaveAttribute('href', `/lesson/${lesson.id}/print`);
     }
     expect(within(fold).getAllByRole('link', { name: /^Teacher guide for Lesson/ })).toHaveLength(section.lessons.length);
     expect(within(fold).getByRole('link', { name: `Answer key for the ${section.title} section check` })).toHaveAttribute('href', `/educators/section/${id}/answers`);
@@ -46,17 +46,30 @@ describe('the list of teacher guides', () => {
 });
 
 describe('the other courses’ teacher guides', () => {
-  it('names each other course with its lesson count and links to its own page’s list of teacher guides', () => {
+  it('lists every course in the course choice’s order, each with its lesson count and its own sections', async () => {
     renderAt();
-    const others = screen.getByRole('region', { name: 'Other courses' });
-    expect(others).toHaveTextContent('Digital World');
-    expect(others).toHaveTextContent('17 lessons');
-    expect(within(others).getByRole('link', { name: 'Teacher guides for Digital World' })).toHaveAttribute('href', '/course/digital-world#teacher-guides');
-    expect(within(others).getByRole('link', { name: 'Teacher guides for Southeast Asia Through Time' })).toHaveAttribute(
-      'href',
-      '/course/southeast-asia-through-time#teacher-guides',
-    );
-    expect(within(others).getByRole('link', { name: 'Teacher guides for Art, Architecture and Society' })).toHaveTextContent('Teacher guides');
-    expect(screen.getByRole('heading', { level: 2, name: 'Exploring Our World' })).toBeInTheDocument();
+    const names = ['Exploring Our World', 'Digital World', 'Southeast Asia Through Time', 'Art, Architecture and Society'];
+    await screen.findByRole('heading', { level: 2, name: 'Art, Architecture and Society' });
+    expect(screen.getAllByRole('heading', { level: 2 }).map((h) => h.textContent)).toEqual(names);
+    const dw = screen.getByRole('region', { name: 'Digital World' });
+    expect(dw).toHaveAttribute('id', 'digital-world');
+    expect(dw).toHaveTextContent('17 lessons');
+    expect(within(dw).getByRole('link', { name: 'Print every lesson in Digital World' })).toHaveAttribute('href', '/course/digital-world/print');
+    expect(within(dw).getByRole('link', { name: /^Teacher guide for Lesson 3: How AI learns/ })).toHaveAttribute('href', '/educators/lesson/dw-how-ai-learns');
+    expect(within(dw).queryByRole('link', { name: /Answer key/ })).not.toBeInTheDocument();
+    const sat = screen.getByRole('region', { name: 'Southeast Asia Through Time' });
+    expect(within(sat).getAllByRole('link', { name: /^Answer key/ })).toHaveLength(4);
+  });
+
+  it('has a jump list to each course', async () => {
+    renderAt();
+    await screen.findByRole('heading', { level: 2, name: 'Digital World' });
+    const nav = screen.getByRole('navigation', { name: 'Courses' });
+    expect(within(nav).getAllByRole('link').map((a) => a.getAttribute('href'))).toEqual([
+      '#our-world',
+      '#digital-world',
+      '#southeast-asia-through-time',
+      '#art-architecture-society',
+    ]);
   });
 });

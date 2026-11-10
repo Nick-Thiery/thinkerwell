@@ -83,8 +83,8 @@ test.describe('with the course open', () => {
     await expect(page).toHaveURL(/\/course\/digital-world$/);
     await expect(page.getByRole('heading', { level: 1, name: 'Digital World' })).toBeVisible();
     await expect(banner(page)).toHaveCount(0);
-    await expect(page.getByText('Digital World is new. An AI researcher is still checking its facts.')).toBeVisible();
-    await expect(page.getByRole('heading', { level: 2 })).toHaveText(['How AI developed and how it works', 'Who builds AI, and at what cost', 'AI in daily life', 'Truth, power and choices', 'For teachers']);
+    await expect(page.getByText(/Digital World is new/)).toHaveCount(0);
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText(['How AI developed and how it works', 'Who builds AI, and at what cost', 'AI in daily life', 'Truth, power and choices']);
     await expect(page.getByText(/Section check:/)).toHaveCount(0);
     await expect(page.locator('.tw-course-section .tw-row:not(.tw-row-quiz)')).toHaveCount(17);
   });

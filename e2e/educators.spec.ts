@@ -13,8 +13,8 @@ test('a teacher goes from the Educators page to a teacher guide and back to the 
   await expect(page.locator('h1')).toHaveText('Teacher guides and answer keys');
   await expect(page).toHaveTitle('Teacher guides and answer keys | Thinkerwell');
 
-  await page.getByText('Geography & Our Environment', { exact: true }).click();
-  await page.getByRole('link', { name: 'Teacher guide for Lesson 10' }).click();
+  await page.locator('#guides-geography').click();
+  await page.locator('#our-world').getByRole('link', { name: /^Teacher guide for Lesson 10:/ }).click();
   await expect(page).toHaveURL(/\/educators\/lesson\/towns-near-rivers$/);
   await expect(page.locator('h1')).toHaveText(L10.title);
   await expect(page).toHaveTitle('Lesson 10: teacher guide | Thinkerwell');
@@ -22,9 +22,9 @@ test('a teacher goes from the Educators page to a teacher guide and back to the 
 
   await page.getByRole('link', { name: 'Back to teacher guides' }).click();
   await expect(page).toHaveURL(/\/educators\/guides\?section=geography$/);
-  await expect(page.locator('details.tw-guides-geography')).toHaveAttribute('open', '');
-  await expect(page.getByRole('link', { name: 'Teacher guide for Lesson 10' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Print Lesson 10' })).toHaveAttribute('href', '/lesson/towns-near-rivers/print');
+  await expect(page.locator('#our-world details.tw-guides-geography')).toHaveAttribute('open', '');
+  await expect(page.locator('#our-world').getByRole('link', { name: /^Teacher guide for Lesson 10:/ })).toBeVisible();
+  await expect(page.locator('#our-world').getByRole('link', { name: /^Print Lesson 10:/ })).toHaveAttribute('href', '/lesson/towns-near-rivers/print');
 });
 
 test('the old addresses of the session guide and the learning check still open them', async ({ page }) => {

@@ -6,7 +6,7 @@ import { CreditsPage } from './CreditsPage';
 describe('CreditsPage', () => {
   it('has a contents list that jumps to each part', () => {
     render(<CreditsPage />);
-    expect(screen.getByRole('heading', { level: 1, name: 'Credits' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1, name: 'Credits and sources' })).toBeInTheDocument();
     const contents = screen.getByRole('navigation', { name: 'On this page' });
     for (const [name, id] of [
       ['Lesson sources', 'sources'],
@@ -26,7 +26,7 @@ describe('CreditsPage', () => {
     const sources = screen.getByRole('region', { name: 'Lesson sources' });
     for (const lesson of getLessons()) {
       if (lesson.sources.length === 0) continue;
-      expect(within(sources).getByRole('heading', { level: 3, name: `Lesson ${lesson.number}: ${lesson.title}` })).toBeInTheDocument();
+      expect(within(sources).getByRole('heading', { level: 4, name: `Lesson ${lesson.number}: ${lesson.title}` })).toBeInTheDocument();
       for (const source of lesson.sources) {
         const link = within(sources).getAllByRole('link', { name: new RegExp(source.label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) }).find((a) => a.getAttribute('href') === source.url);
         expect(link, source.url).toBeDefined();

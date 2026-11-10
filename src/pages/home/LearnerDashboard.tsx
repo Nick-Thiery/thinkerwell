@@ -1,201 +1,294 @@
-import { createElement, useId, useState } from 'react';
+import { lazy, Suspense, useId, useMemo, useState, type CSSProperties, type ReactNode } from 'react';
 import { LanguageChoice, useHasLanguageChoice } from '../../app/LanguageChoice';
-import { courseCertificatePath, sectionCheckPath, lessonPath } from '../../app/lessonUrls';
+import { lessonPath } from '../../app/lessonUrls';
+import { courseSummaries } from '../../content/catalog';
+import { COURSES, DEFAULT_COURSE_ID } from '../../content/courses';
+import { useCourseOutlines } from '../../content/outline';
+import { STAGES, STAGES_WITHOUT_WATCH, type StageId } from '../../content/stages';
 import { useCatalog } from '../../content/useCatalog';
-import { Badge, Button, ContinueCard, Icon, ProgressRing, SectionBadge, useDsLinkComponent } from '../../components/ds';
-import { En, useI18n } from '../../i18n';
-import { useServiceWorker } from '../../offline';
+import { Badge, Button, Icon, StageDots, type IconName } from '../../components/ds';
+import { useI18n } from '../../i18n';
 import { useLearnerSession } from '../../session';
-import { SECTION_ICONS } from '../course/sectionIcons';
-import {
-  findContinueTarget,
-  latestJournalEntry,
-  sectionProgress,
-  stagesDoneForLesson,
-  totalLessonsCompleted,
-  type Learner,
-  type ProgressByLessonId,
-} from '../../storage';
+import { stagesDoneForLesson, type Learner, type ProgressByLessonId } from '../../storage';
+import { courseCount, homeTarget, latestWriting, platformCount, type PlatformCourse } from './platformProgress';
+
+// The offline count reads what is kept on the device (the Cache API, the course list): loaded after the first paint, so a first visit doesn't download it.
+const OfflineStatus = lazy(() => import('./OfflineStatus'));
+
+const MASCOT_SRC = '/images/thinkerwell-mascot-transparent.png';
 
 export interface LearnerDashboardProps {
   learner: Learner;
   progress: ProgressByLessonId;
 }
 
-/** The learner home (Dashboard.dc.html): greeting, continue card, progress by section. */
+/** A name that is course text: in the language on screen where the course has one, else English (marked). */
+function useNamed() {
+  const { contentLang, contentLocale } = useI18n();
+  return (titles: Readonly<Record<string, string>>): { node: ReactNode; text: string } => {
+    const translated = titles[contentLocale.code];
+    const text = translated ?? titles.en ?? '';
+    return { text, node: <span {...(translated ? contentLang : { lang: 'en' })}>{text}</span> };
+  };
+}
+
+/**
+ * The learner Home once a profile is chosen (Justin's brief of 10 November
+ * 2026, section 16): a greeting, one progress bar over every course, one card
+ * for where to go next, the four courses, the journal and the language.
+ * Everything is worked out from the saved progress and the build-time lesson
+ * lists (./platformProgress.ts), so no course has to be loaded to show it.
+ */
 export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
-  const { t, tx } = useI18n();
-  const LinkTag = useDsLinkComponent();
+  const { t, tx, contentLang, contentLocale } = useI18n();
   const catalog = useCatalog();
-  const lessons = catalog.getLessons();
-  const sections = catalog.getSections();
-  const target = findContinueTarget(lessons, progress, catalog.stagesFor);
-  const completedCount = totalLessonsCompleted(lessons, progress);
-  const currentSectionId = target ? catalog.getLessonSection(target.lesson).id : undefined;
-  const journalEntry = latestJournalEntry(lessons, progress);
-  const isNewLearner = completedCount === 0 && progress.size === 0;
-  // "Pick up where you left off" only for a lesson the learner has opened
-  // work in; the next lesson after the last one finished is "Up next".
-  const targetStarted = target ? progress.has(target.lesson.id) : false;
-  const { offline } = useServiceWorker();
+  const named = useNamed();
+  const { previewCourses } = useLearnerSession();
   const hasLanguageChoice = useHasLanguageChoice();
+  const coursesRef = useId();
 
-  const summary = !target
-    ? t('pages.home.dashboard.summaryDone')
-    : completedCount === 0
-      ? t('pages.home.dashboard.summaryNone', { number: target.lesson.number })
-      : t('pages.home.dashboard.summaryInProgress', { count: completedCount, number: target.lesson.number });
+  const ourWorldTitle = catalog.getCourse().course.title;
+  const ourWorldLessons = catalog.getLessons();
+  const courses: PlatformCourse[] = useMemo(
+    () => [
+      { id: DEFAULT_COURSE_ID, lessonIds: ourWorldLessons.map((lesson) => lesson.id) },
+      ...COURSES.filter((course) => course.id !== DEFAULT_COURSE_ID && previewCourses.includes(course.id) && courseSummaries[course.id]).map((course) => ({
+        id: course.id,
+        lessonIds: courseSummaries[course.id]!.lessonIds,
+      })),
+    ],
+    [ourWorldLessons, previewCourses],
+  );
 
-  const readySection = sections.find((section) => {
-    const { completed, total } = sectionProgress(section, lessons, progress);
-    return completed === total && total > 0;
-  });
+  const translated = contentLocale.code !== 'en';
+  const stagesOf = (courseId: string, lessonId: string, video?: boolean): readonly StageId[] => {
+    if (courseId === DEFAULT_COURSE_ID) {
+      const lesson = ourWorldLessons.find((l) => l.id === lessonId);
+      return lesson ? catalog.stagesFor(lesson) : STAGES;
+    }
+    return translated || video === false ? STAGES_WITHOUT_WATCH : STAGES;
+  };
+  const courseOf = (lessonId: string) => courses.find((course) => course.lessonIds.includes(lessonId))!;
+
+  const totals = platformCount(courses, progress);
+  const target = homeTarget(courses, progress, (lessonId) => stagesOf(courseOf(lessonId).id, lessonId));
+
+  // The titles of lessons in the other courses come from their build-time outline, loaded only when the card needs one.
+  const lessonCourse = target.kind === 'resume' || target.kind === 'next' ? target.courseId : null;
+  const { outlines } = useCourseOutlines(lessonCourse !== null && lessonCourse !== DEFAULT_COURSE_ID);
+
+  const courseName = (id: string) => (id === DEFAULT_COURSE_ID ? { node: <span {...contentLang}>{ourWorldTitle}</span>, text: ourWorldTitle } : named(courseSummaries[id]?.titles ?? {}));
+
+  const focusCourses = () => {
+    const heading = document.getElementById(coursesRef);
+    heading?.scrollIntoView({ block: 'start' });
+    heading?.focus({ preventScroll: true });
+  };
 
   return (
     <div className="tw-dash">
       <div className="tw-dash-head">
-        <div className="tw-dash-greeting">
-          <h1 className="h1" tabIndex={-1}>
-            {t('pages.home.dashboard.greeting', { name: learner.name })}
-          </h1>
-          <p className="body-lg">{summary}</p>
-        </div>
-        <div className="tw-dash-badges">
-          {/*
-            Every lesson is precached at once (vite.config.ts), so the badge
-            is about the whole course, not the lessons opened so far. Nothing
-            shows where this browser can't keep it offline.
-          */}
-          {offline === 'ready' ? (
-            <Badge tone="outline" icon="Download">
-              {t('pages.home.dashboard.offlineBadge', { count: lessons.length })}
-            </Badge>
-          ) : offline === 'preparing' ? (
-            <Badge tone="outline" icon="Clock">
-              {t('pages.home.dashboard.offlinePreparingBadge')}
-            </Badge>
-          ) : null}
-          <Badge tone="outline" icon="Lock">
-            {t('pages.home.dashboard.savedBadge')}
-          </Badge>
-        </div>
+        <h1 className="h1" tabIndex={-1}>
+          {t('pages.home.dashboard.greeting', { name: learner.name })}
+        </h1>
+        <Badge tone="outline" icon="Lock">
+          {t('pages.home.dashboard.savedBadge')}
+        </Badge>
       </div>
 
-      {target ? (
-        <ContinueCard
-          title={target.lesson.title}
-          eyebrow={t(
-            isNewLearner
-              ? 'pages.home.dashboard.startHere'
-              : targetStarted
-                ? 'pages.home.dashboard.continueEyebrow'
-                : 'pages.home.dashboard.upNext',
-          )}
-          lessonLabel={tx('pages.course.lessonLabel', { number: target.lesson.number, section: <En>{catalog.getLessonSection(target.lesson).title}</En> })}
-          done={stagesDoneForLesson(progress.get(target.lesson.id))}
-          stages={catalog.stagesFor(target.lesson)}
-          current={target.stage}
-          stageLabel={t('lesson.nextStep', { stage: t(`stages.${target.stage}`) })}
-          cta={isNewLearner || !targetStarted ? t('pages.home.dashboard.startCta') : undefined}
-          href={lessonPath(target.lesson.id, target.stage)}
-        />
-      ) : (
-        <section className="tw-dash-finished">
-          <h2 className="h2">{t('pages.home.dashboard.finishedTitle')}</h2>
-          <p className="body-lg">{t('pages.home.dashboard.finishedBody')}</p>
-          <div className="tw-dash-finished-actions">
-            <Button variant="primary" size="lg" href="/course">
-              {t('pages.home.dashboard.finishedCta')}
-            </Button>
-            <Button variant="secondary" size="lg" icon="Award" href={courseCertificatePath()}>
-              {t('certificates.offer.getCourseCertificate')}
-            </Button>
-          </div>
-        </section>
-      )}
+      <ProgressCard completed={totals.completed} total={totals.total} />
+
+      <NextCard
+        target={target}
+        courseName={courseName}
+        lessonInfo={(courseId, lessonId) => {
+          if (courseId === DEFAULT_COURSE_ID) {
+            const lesson = ourWorldLessons.find((l) => l.id === lessonId);
+            return lesson ? { number: lesson.number, title: <span {...contentLang}>{lesson.title}</span>, video: undefined } : null;
+          }
+          const lesson = outlines?.[courseId]?.lessons.find((l) => l.id === lessonId);
+          return lesson ? { number: lesson.number, title: named(lesson.titles).node, video: lesson.video } : null;
+        }}
+        stagesOf={stagesOf}
+        progress={progress}
+        onChoose={focusCourses}
+        tx={tx}
+      />
 
       <div className="tw-dash-grid">
-        <section aria-labelledby="dash-course-title" className="tw-dash-sections">
-          <div className="tw-dash-sections-head">
-            <h2 id="dash-course-title" className="h2">
-              {t('pages.home.dashboard.yourCourse')}
-            </h2>
-            <Button variant="ghost" href="/course">
-              {t('pages.home.dashboard.seeAll', { count: lessons.length })}
-            </Button>
-          </div>
-          {sections.map((section) => {
-            const { completed, total } = sectionProgress(section, lessons, progress);
-            const isHere = section.id === currentSectionId && completed < total;
-            // Not <Button>: it wraps every child in one inner <span> (fine for
-            // an icon plus a text label, its usual case), which would collapse
-            // this row's independent parts — the badge, "You are here" on the
-            // current section, and the ring — into plain inline flow instead of the flex row
-            // ".tw-section-row" below expects. Rendered directly with the
-            // "tw-btn" class for the same sizing, plus its own border colour
-            // (an ink border only for "You are here" — CLAUDE.md's lemon/ink
-            // rule keeps every other row to the plain line colour).
-            return createElement(
-              LinkTag,
-              {
-                key: section.id,
-                href: `/course#${section.id}`,
-                className: `tw-btn tw-section-row${isHere ? ' tw-section-row-current' : ''}`,
-              },
-              <SectionBadge key="badge" section={section.id} number={section.number} name={<En>{section.title}</En>} className="tw-section-row-badge" />,
-              // The ring already says "0/5" (and reads "0 of 5" aloud), so only
-              // the current section gets words beside it.
-              isHere ? (
-                <span key="status" className="body tw-section-row-status">
-                  {t('pages.home.dashboard.youAreHere')}
-                </span>
-              ) : null,
-              <ProgressRing key="ring" value={completed} max={total} />,
-            );
-          })}
+        <section aria-labelledby={coursesRef} className="tw-dash-sections">
+          <h2 id={coursesRef} className="h2" tabIndex={-1}>
+            {t('pages.home.dashboard.coursesTitle')}
+          </h2>
+          <ul className="tw-dash-courses" role="list">
+            {courses.map((course) => {
+              const { completed, total } = courseCount(course, progress);
+              const name = courseName(course.id);
+              const definition = COURSES.find((c) => c.id === course.id);
+              return (
+                <li key={course.id} className="tw-dash-course">
+                  <span className="tw-dash-course-icon">
+                    <Icon name={(course.id === DEFAULT_COURSE_ID ? 'Globe' : (definition?.icon ?? 'BookOpen')) as IconName} size={22} />
+                  </span>
+                  <span className="tw-dash-course-text">
+                    <span className="tw-dash-course-name">{name.node}</span>
+                    <span className="small tw-dash-course-count">{t('pages.home.dashboard.courseCount', { completed, total })}</span>
+                  </span>
+                  <Button
+                    variant="secondary"
+                    href={course.id === DEFAULT_COURSE_ID ? '/course' : `/course/${course.id}`}
+                    aria-label={t('pages.home.dashboard.openCourseLabel', { course: name.text })}
+                  >
+                    {t('pages.home.dashboard.openCourse')}
+                  </Button>
+                </li>
+              );
+            })}
+          </ul>
         </section>
         <aside className="tw-dash-aside">
-          {readySection ? (
-            <section aria-labelledby="dash-check-title" className="tw-check-card" style={{ background: `var(--sec-${readySection.id})` }}>
-              <span className="eyebrow tw-check-card-eyebrow" style={{ color: `var(--sec-${readySection.id}-ink)` }}>
-                <Icon name="ClipboardCheck" size={18} />
-                {t('pages.home.dashboard.sectionCheckReady')}
-              </span>
-              <h3 id="dash-check-title" className="h3 tw-check-card-title">
-                <Icon name={SECTION_ICONS[readySection.id]} size={20} />
-                <En>{readySection.title}</En>
-              </h3>
-              <p className="body">
-                {t('pages.home.dashboard.sectionCheckBody', {
-                  count: readySection.lessons.length,
-                  questions: catalog.getQuizQuestionCount(readySection.id),
-                })}
-              </p>
-              <Button variant="secondary" href={sectionCheckPath(readySection.id)}>
-                {t('pages.home.dashboard.startCheck')}
-              </Button>
-            </section>
-          ) : null}
-          <section aria-labelledby="dash-journal-title" className="tw-journal-card">
-            <h3 id="dash-journal-title" className="h3">
-              {t('pages.home.dashboard.fromJournal')}
-            </h3>
-            {journalEntry ? (
-              <>
-                <p className="small tw-journal-meta">{t('pages.home.dashboard.latestEntry', { stage: t(`stages.${journalEntry.stage}`), number: journalEntry.lessonNumber })}</p>
-                <p className="body tw-journal-snippet">{journalEntry.text.length > 160 ? `${journalEntry.text.slice(0, 160)}…` : journalEntry.text}</p>
-              </>
-            ) : (
-              <p className="body">{t('pages.home.dashboard.noJournalYet')}</p>
-            )}
-            <Button variant="ghost" href="/journal">
-              {t('pages.home.dashboard.openJournal')}
-            </Button>
-          </section>
+          <JournalPreview courses={courses} progress={progress} courseName={courseName} />
           {hasLanguageChoice ? <DashboardLanguage /> : null}
+          <Suspense fallback={null}>
+            <OfflineStatus courses={courses} />
+          </Suspense>
         </aside>
       </div>
     </div>
+  );
+}
+
+/**
+ * "Your progress": lessons finished out of every lesson in every course, as a
+ * slim bar. The mascot rides the end of the filled part as decoration only
+ * (hidden from assistive technology); the bar itself is the progressbar. It
+ * keeps inside the bar at none and at all, and doesn't glide with reduced motion.
+ */
+function ProgressCard({ completed, total }: { completed: number; total: number }) {
+  const { t } = useI18n();
+  const titleId = useId();
+  const share = total > 0 ? completed / total : 0;
+  const text = t('pages.home.dashboard.progressCount', { completed, total });
+  return (
+    <section className="tw-progress-card" aria-labelledby={titleId}>
+      <h2 id={titleId} className="h3">
+        {t('pages.home.dashboard.progressTitle')}
+      </h2>
+      <p className="body-lg tw-progress-text">{text}</p>
+      <div
+        className="tw-progress-track"
+        role="progressbar"
+        aria-labelledby={titleId}
+        aria-valuemin={0}
+        aria-valuemax={total}
+        aria-valuenow={completed}
+        aria-valuetext={text}
+        style={{ '--tw-share': share } as CSSProperties}
+      >
+        <span className="tw-progress-rail" aria-hidden="true">
+          <span className="tw-progress-fill" />
+        </span>
+        <img className="tw-progress-mascot" src={MASCOT_SRC} alt="" aria-hidden="true" width={44} height={44} />
+      </div>
+    </section>
+  );
+}
+
+interface NextCardProps {
+  target: ReturnType<typeof homeTarget>;
+  courseName: (id: string) => { node: ReactNode; text: string };
+  lessonInfo: (courseId: string, lessonId: string) => { number: number; title: ReactNode; video: boolean | undefined } | null;
+  stagesOf: (courseId: string, lessonId: string, video?: boolean) => readonly StageId[];
+  progress: ProgressByLessonId;
+  onChoose: () => void;
+  tx: ReturnType<typeof useI18n>['tx'];
+}
+
+/** The one card for where to go next: Start here, Resume here or Keep exploring. */
+function NextCard({ target, courseName, lessonInfo, stagesOf, progress, onChoose, tx }: NextCardProps) {
+  const { t } = useI18n();
+  const headingId = useId();
+  const toLesson = target.kind === 'resume' || target.kind === 'next';
+
+  let eyebrow = t('pages.home.dashboard.startHere');
+  let heading: ReactNode = t('pages.home.dashboard.chooseText');
+  let sentence: string | null = null;
+  let meta: ReactNode = null;
+  let action: ReactNode = (
+    <Button variant="primary" size="lg" iconRight="ChevronDown" onClick={onChoose}>
+      {t('pages.home.dashboard.chooseCourse')}
+    </Button>
+  );
+
+  if (target.kind === 'explore') {
+    eyebrow = t('pages.home.dashboard.keepExploring');
+    heading = t('pages.home.dashboard.finishedBody');
+  } else if (toLesson) {
+    const course = courseName(target.courseId);
+    const info = lessonInfo(target.courseId, target.lessonId);
+    const stages = stagesOf(target.courseId, target.lessonId, info?.video);
+    const stage = target.kind === 'resume' ? target.stage : 'read';
+    eyebrow = t('pages.home.dashboard.resumeHere');
+    heading = info?.title ?? course.node;
+    sentence = t('pages.home.dashboard.resumeText');
+    meta = (
+      <div className="tw-continue-meta">
+        {info ? <span>{tx('pages.course.lessonLabel', { number: info.number, section: course.node })}</span> : null}
+        {info ? <StageDots done={stagesDoneForLesson(progress.get(target.lessonId)).filter((s) => stages.includes(s))} current={stage} stages={stages} /> : null}
+        <span>{t('lesson.nextStep', { stage: t(`stages.${stage}`) })}</span>
+      </div>
+    );
+    action = (
+      <Button variant="primary" size="lg" iconRight="ArrowRight" href={lessonPath(target.lessonId, stage)}>
+        {t(target.kind === 'resume' ? 'pages.home.dashboard.resumeLesson' : 'pages.home.dashboard.startLesson')}
+      </Button>
+    );
+  }
+
+  return (
+    <section className="tw-continue" aria-labelledby={headingId}>
+      <div>
+        <span className="tw-continue-eyebrow">{eyebrow}</span>
+        <h2 id={headingId} className="tw-continue-title">
+          {heading}
+        </h2>
+        {sentence ? <p className="body-lg tw-continue-sentence">{sentence}</p> : null}
+        {meta}
+      </div>
+      {action}
+    </section>
+  );
+}
+
+/** "My journal": the latest saved writing in any course, with the way to the journal. */
+function JournalPreview({
+  courses,
+  progress,
+  courseName,
+}: {
+  courses: readonly PlatformCourse[];
+  progress: ProgressByLessonId;
+  courseName: (id: string) => { node: ReactNode; text: string };
+}) {
+  const { t, tx } = useI18n();
+  const entry = latestWriting(courses, progress);
+  return (
+    <section aria-labelledby="dash-journal-title" className="tw-journal-card">
+      <h2 id="dash-journal-title" className="h3">
+        {t('pages.home.dashboard.journalTitle')}
+      </h2>
+      {entry ? (
+        <>
+          <p className="small tw-journal-meta">{tx('pages.home.dashboard.latestEntry', { stage: t(`stages.${entry.stage}`), course: courseName(entry.courseId).node })}</p>
+          <p className="body tw-journal-snippet">{entry.text.length > 160 ? `${entry.text.slice(0, 160)}…` : entry.text}</p>
+        </>
+      ) : (
+        <p className="body">{t('pages.home.dashboard.noJournalYet')}</p>
+      )}
+      <Button variant="ghost" href="/journal">
+        {t('pages.home.dashboard.openJournal')}
+      </Button>
+    </section>
   );
 }
 
@@ -211,9 +304,9 @@ function DashboardLanguage() {
   const helpId = useId();
   return (
     <section aria-labelledby="dash-language-title" className="tw-journal-card">
-      <h3 id="dash-language-title" className="h3">
+      <h2 id="dash-language-title" className="h3">
         {t('pages.home.dashboard.languageTitle')}
-      </h3>
+      </h2>
       <LanguageChoice
         label={t('pages.home.dashboard.languageTitle')}
         describedBy={helpId}
