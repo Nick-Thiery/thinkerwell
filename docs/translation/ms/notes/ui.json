@@ -816,24 +816,14 @@
     "source": "Use letters, numbers and hyphens only, like ABC-07."
   },
   "pages.home.newLearner.submit": {
-    "back": "Start Lesson 1",
-    "source": "Start Lesson 1"
+    "source": "Create profile",
+    "back": "Create profile",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
   },
   "pages.home.newLearner.submitError": {
     "back": "Could not be saved. Try again.",
     "source": "That didn't save. Try again."
-  },
-  "pages.home.newLearner.startsWith": {
-    "back": "You will start with",
-    "source": "You will start with"
-  },
-  "pages.home.newLearner.startsWithLesson": {
-    "back": "Lesson {number}: {title}",
-    "source": "Lesson {number}: {title}"
-  },
-  "pages.home.newLearner.startsWithNote": {
-    "back": "You can open any lesson later from the course page.",
-    "source": "You can open any lesson later from the course page."
   },
   "pages.home.newLearner.privacyNote": {
     "back": "Your work stays on this device.",
@@ -6315,6 +6305,12 @@
   "pages.guides.teacherGuideLabel": {
     "source": "Teacher guide for Lesson {number}: {title}",
     "back": "Teacher guide for Lesson {number}: {title}",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.home.newLearner.thenChoose": {
+    "source": "Then choose a course from your home page.",
+    "back": "Then choose a course from your home page.",
     "flag": true,
     "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
   }

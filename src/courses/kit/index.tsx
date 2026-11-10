@@ -41,6 +41,7 @@ export function createPreviewCourse(course: PreviewCourseConfig, ready: Promise<
   return {
     id: course.id,
     ready,
+    contentIn: (locale) => course.contentFor?.(locale) ?? course.content,
     CourseMapPage: () => framed(<CourseMap />),
     CoursePrintPage: () => framed(<AllLessons />),
     PreviewSwitchPage: function PreviewSwitchPage() {

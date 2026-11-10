@@ -112,8 +112,11 @@ test.describe('long words from learners at 360px', () => {
     await page.goto('/');
     await page.getByRole('button', { name: "I'm new here" }).click();
     await page.getByLabel('First name or nickname').fill(name);
-    await page.getByRole('button', { name: 'Start Lesson 1' }).click();
-    await expect(page).toHaveURL(/\/read$/);
+    await page.getByRole('button', { name: 'Create profile' }).click();
+    await expect(page).toHaveURL(/\/$/);
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('Hi');
+    await check('Home with a long name in the header');
+    await page.goto('/lesson/finding-out-about-the-past/read');
     await check('Lesson 1 with a long name in the header');
 
     await page.goto('/lesson/towns-near-rivers/write');

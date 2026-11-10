@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { getLessons } from '../../content';
 import { deleteAllData, type Learner } from '../../storage';
 import { WhoIsLearningPicker } from './WhoIsLearningPicker';
 
@@ -14,7 +13,6 @@ function renderPicker(learners: Learner[]) {
     <MemoryRouter>
       <WhoIsLearningPicker
         learners={learners}
-        lesson1={getLessons()[0]!}
         onChoose={vi.fn()}
         onAdd={vi.fn(() => Promise.resolve())}
         onRemove={vi.fn(() => Promise.resolve())}

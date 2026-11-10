@@ -1,11 +1,9 @@
-import { useId, useState, type FormEvent, type ReactNode } from 'react';
+import { useId, useRef, useState, type FormEvent, type ReactNode } from 'react';
 import { useNavigate } from 'react-router';
 import { LanguageChoice, useHasLanguageChoice } from '../../app/LanguageChoice';
 import { useLearnerSession } from '../../session';
-import { lessonPath } from '../../app/lessonUrls';
-import type { LessonSummary } from '../../content/catalog';
 import { Button, Icon, TextField } from '../../components/ds';
-import { En, useI18n } from '../../i18n';
+import { useI18n } from '../../i18n';
 import { useMeasurementState } from '../../measurement/track';
 import type { LearnerColour, NewLearner } from '../../storage';
 import { ColourPicker } from './ColourPicker';
@@ -32,10 +30,8 @@ const CLASS_CODE_PATTERN = /^[A-Za-z0-9-]+$/;
 const DEFAULT_COLOUR: LearnerColour = 'paper';
 
 export interface NewLearnerFormProps {
-  /** LessonSummary 1, shown in the hero pane and used to label the submit button's target. */
-  lesson1: LessonSummary;
   onBack: () => void;
-  /** Resolves with where to go next, when it isn't Lesson 1 (back to a guest's work). */
+  /** Resolves with where to go next, only when there is somewhere to go (back to a guest's work). Otherwise the new learner stays on Home. */
   onSubmit: (input: NewLearner) => Promise<string | null | void>;
   /** The lesson a guest's work is being saved from ("Save my work"), which Start goes back to. */
   savingFrom?: number | null;
@@ -68,8 +64,8 @@ function FormOption({ summary, forceOpen = false, children }: { summary: string;
  * chosen yet), and the new learner keeps the language on screen; it starts
  * as the language already on screen.
  */
-export function NewLearnerForm({ lesson1, onBack, onSubmit, savingFrom = null }: NewLearnerFormProps) {
-  const { t, tx } = useI18n();
+export function NewLearnerForm({ onBack, onSubmit, savingFrom = null }: NewLearnerFormProps) {
+  const { t } = useI18n();
   const hasLanguageChoice = useHasLanguageChoice();
   const languageHelpId = useId();
   const { language, setLanguage } = useLearnerSession();
@@ -83,9 +79,13 @@ export function NewLearnerForm({ lesson1, onBack, onSubmit, savingFrom = null }:
   const [classCodeError, setClassCodeError] = useState<string | undefined>(undefined);
   const [submitError, setSubmitError] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  // Enter pressed twice, or a second tap, must not make a second profile: the
+  // state above is only read on the next render, this is read at once.
+  const inFlight = useRef(false);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (inFlight.current) return;
     const trimmedName = name.trim();
     if (!trimmedName) {
       setNameError(t('pages.home.newLearner.nameRequired'));
@@ -108,18 +108,21 @@ export function NewLearnerForm({ lesson1, onBack, onSubmit, savingFrom = null }:
     setClassCodeError(undefined);
     setSubmitError(false);
     setSubmitting(true);
+    inFlight.current = true;
     const input: NewLearner = { name: trimmedName, colour };
     if (trimmedCode) input.classCode = trimmedCode.toUpperCase();
     // Theirs from now on: the language on screen as they join.
     input.language = language;
     void onSubmit(input)
       .then((next) => {
-        // "Start Lesson 1": actually takes the new learner straight there,
-        // rather than leaving them on a dashboard the button never mentioned;
-        // or back to the work they asked to save, on the same step.
-        void navigate(next ?? lessonPath(lesson1.id, 'read'));
+        // "Create profile" makes the profile and chooses it; Home (where this
+        // form already is) then shows it, and the learner picks what to do
+        // (Justin's follow-up of 10 November 2026). The one place to go is back
+        // to the work a guest asked to save, on the same step.
+        if (next) void navigate(next);
       })
       .catch(() => {
+        inFlight.current = false;
         setSubmitting(false);
         setSubmitError(true);
       });
@@ -129,11 +132,7 @@ export function NewLearnerForm({ lesson1, onBack, onSubmit, savingFrom = null }:
     <>
       <HomeHero size={150}>
         <div className="tw-home-starts-with">
-          <span className="eyebrow">{t('pages.home.newLearner.startsWith')}</span>
-          <span className="tw-home-starts-with-lesson">
-            {tx('pages.home.newLearner.startsWithLesson', { number: lesson1.number, title: <En>{lesson1.title}</En> })}
-          </span>
-          <p className="body">{t('pages.home.newLearner.startsWithNote')}</p>
+          <p className="body">{t('pages.home.newLearner.thenChoose')}</p>
         </div>
       </HomeHero>
       <section aria-labelledby="home-panel-title" className="tw-home-panel">

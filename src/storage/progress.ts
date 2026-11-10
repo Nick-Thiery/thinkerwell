@@ -192,9 +192,22 @@ export interface JournalPiece {
   reflectionIndex?: number;
 }
 
+/**
+ * What the journal needs of a lesson: its id and number, the prompt Write
+ * asks and the prompts Reflect asks (a lesson of any course has them, and so
+ * can a stand-in made from an outline when the course's lessons can't be
+ * loaded: its prompts are then empty, the saved answers still shown).
+ */
+export interface JournalLessonSource {
+  id: string;
+  number: number;
+  write: { prompt: string };
+  reflect: { prompts: readonly { text: string }[] };
+}
+
 /** Everything a learner wrote in one lesson, for the journal. */
-export interface JournalLesson {
-  lesson: Lesson;
+export interface JournalLesson<L extends JournalLessonSource = Lesson> {
+  lesson: L;
   /** When the learner last saved work in this lesson. */
   updatedAt: string;
   /** Reflections first (in prompt order), then the writing: the newest stage first, as on Journal.dc.html. */
@@ -205,11 +218,12 @@ export interface JournalLesson {
  * The whole journal (CLAUDE.md: built from saved writing and reflections,
  * not stored separately): every lesson with something written in Write or
  * Reflect, the lesson worked on most recently first. Blank answers are left
- * out. The print view (/journal/print) uses it now; the journal page itself
- * is phase 7.
+ * out. The lessons may be those of any course: progress is kept per lesson
+ * id, so the journal page and its print view (/journal/print) pass every
+ * course's lessons (src/pages/journal/usePlatformJournal.tsx).
  */
-export function journalByLesson(lessons: readonly Lesson[], progress: ProgressByLessonId): JournalLesson[] {
-  const out: JournalLesson[] = [];
+export function journalByLesson<L extends JournalLessonSource>(lessons: readonly L[], progress: ProgressByLessonId): JournalLesson<L>[] {
+  const out: JournalLesson<L>[] = [];
   for (const lesson of lessons) {
     const record = progress.get(lesson.id);
     if (!record) continue;

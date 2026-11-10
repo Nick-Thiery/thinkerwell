@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { type LessonSummary } from '../../content/catalog';
 import { useCatalog } from '../../content/useCatalog';
 import { Button, Icon, LearnerTile } from '../../components/ds';
 import { useI18n } from '../../i18n';
@@ -12,9 +11,8 @@ type PickerView = { kind: 'grid' } | { kind: 'new' } | { kind: 'confirmRemove'; 
 
 export interface WhoIsLearningPickerProps {
   learners: Learner[];
-  lesson1: LessonSummary;
   onChoose: (id: string) => void;
-  /** Resolves with where to go next, when it isn't Lesson 1 (back to a guest's work, "Save my work"). */
+  /** Resolves with where to go next, only when there is somewhere to go (back to a guest's work, "Save my work"); otherwise the new learner stays on Home. */
   onAdd: (input: NewLearner) => Promise<string | null | void>;
   onRemove: (id: string) => Promise<void>;
   onLookAround: () => void;
@@ -31,7 +29,6 @@ export interface WhoIsLearningPickerProps {
  */
 export function WhoIsLearningPicker({
   learners,
-  lesson1,
   onChoose,
   onAdd,
   onRemove,
@@ -125,7 +122,6 @@ export function WhoIsLearningPicker({
   if (view.kind === 'new') {
     return (
       <NewLearnerForm
-        lesson1={lesson1}
         savingFrom={saving?.lessonNumber ?? null}
         onBack={() => setView({ kind: 'grid' })}
         onSubmit={(input) => onAdd(input)}

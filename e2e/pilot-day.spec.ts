@@ -113,8 +113,8 @@ test('a staff member works through the setup checklist, which asks the browser n
   // "Add a learner" opens the new-learner form, and the step then counts them.
   await step(page, 'Add the learners who use this device').getByRole('button', { name: 'Add a learner' }).click();
   await page.getByLabel('First name or nickname').fill('Amina');
-  await page.getByRole('button', { name: 'Start Lesson 1' }).click();
-  await expect(page).toHaveURL(/\/lesson\/.+\/read$/);
+  await page.getByRole('button', { name: 'Create profile' }).click();
+  await expect(page).toHaveURL(/\/$/);
   await page.goto('/educators/setup');
   const learners = step(page, 'Add the learners who use this device');
   await expect(learners.getByRole('status')).toContainText('Done');
@@ -137,8 +137,8 @@ test('the class view shows each learner by name without scores, and every certif
   await page.goto('/educators/setup');
   await step(page, 'Add the learners who use this device').getByRole('button', { name: 'Add a learner' }).click();
   await page.getByLabel('First name or nickname').fill('Amina');
-  await page.getByRole('button', { name: 'Start Lesson 1' }).click();
-  await expect(page).toHaveURL(/\/lesson\/.+\/read$/);
+  await page.getByRole('button', { name: 'Create profile' }).click();
+  await expect(page).toHaveURL(/\/$/);
   for (const lesson of sectionLessons('geography')) await finishLessonViaReflect(page, lesson);
   // Amina tries the Geography check.
   await page.goto('/section/geography/check');

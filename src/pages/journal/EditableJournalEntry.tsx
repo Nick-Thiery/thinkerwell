@@ -1,18 +1,18 @@
 import { useState } from 'react';
 import { Badge, Button, JournalEntry, WritingBox } from '../../components/ds';
-import type { Lesson } from '../../content';
 import { useI18n } from '../../i18n';
 import { useLearnerSession } from '../../session';
 import { getStore, type JournalPiece, type LessonProgress } from '../../storage';
 import './EditableJournalEntry.css';
 
 interface EditableJournalEntryProps {
-  lesson: Lesson;
+  /** Any course's lesson: its id and number are all that is used. */
+  lesson: { id: string; number: number };
   piece: JournalPiece;
   /** The whole "saved" line, already in the interface's language ("Saved today", "Saved Sep 20"). */
   savedLabel?: string;
-  /** Called with the lesson's updated record once a save succeeds, so the page can show it right away. */
-  onSaved: (lessonId: string, record: LessonProgress) => void;
+  /** Called with the learner it was saved for and the lesson's updated record once a save succeeds, so the page can show it right away (and only under that learner). */
+  onSaved: (learnerId: string, lessonId: string, record: LessonProgress) => void;
 }
 
 /**
@@ -54,6 +54,8 @@ export function EditableJournalEntry({ lesson, piece, savedLabel, onSaved }: Edi
   }
 
   async function save(): Promise<void> {
+    // Who it is saved for is settled here, at the tap: a switch to another
+    // learner while the write is pending cannot move it.
     const learnerId = activeLearner?.id;
     if (!learnerId || !draft.trim()) return;
     setSaving(true);
@@ -64,7 +66,7 @@ export function EditableJournalEntry({ lesson, piece, savedLabel, onSaved }: Edi
           ? { ...current, reflections: { ...current.reflections, [piece.reflectionIndex!]: draft } }
           : { ...current, writing: { ...current.writing, text: draft } },
       );
-      onSaved(lesson.id, record);
+      onSaved(learnerId, lesson.id, record);
       setEditing(false);
     } finally {
       setSaving(false);

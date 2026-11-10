@@ -1,4 +1,5 @@
 import type { ComponentType } from 'react';
+import type { LessonContent } from '../content/courseContent';
 import type { LangProps } from '../i18n';
 
 /** Our World's title in the language on screen, for the course choice (src/courses/kit/CourseChoice.tsx). */
@@ -18,6 +19,8 @@ export interface PreviewCourseModule {
   readonly id: string;
   /** Resolves once its stylesheet has loaded (or couldn't), so its pages never show unstyled. */
   readonly ready: Promise<void>;
+  /** Its lessons and sections in the language on screen: translated where the course is, else English. Read by the journal, which lists writing from every course. */
+  readonly contentIn: (locale: string) => LessonContent;
   /** /course/<id>: the course map, with the course choice. */
   readonly CourseMapPage: ComponentType;
   /** /course/<id>/print: every lesson on paper. */
