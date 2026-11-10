@@ -63,8 +63,9 @@ test('Lesson 10 from start to finish with the keyboard only', async ({ page }) =
   const name = page.getByLabel('First name or nickname');
   await tabTo(page, name);
   await page.keyboard.type('Amina');
-  await pressButton(page, 'Start Lesson 1');
-  await expect(page).toHaveURL(/\/lesson\/.+\/read$/);
+  await pressButton(page, 'Create profile');
+  // Wait for the learner's Home: the profile is saved by then, so the lesson below is theirs.
+  await expect(page.getByRole('heading', { level: 1, name: 'Hi Amina' })).toBeVisible();
 
   await page.goto(L10.path('read'));
   await expect(page.locator('h1')).toHaveText(L10.title);

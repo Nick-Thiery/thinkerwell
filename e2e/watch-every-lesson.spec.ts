@@ -92,7 +92,7 @@ for (const language of LANGUAGES) {
     await page.getByRole('button', { name: msg(messages, 'pages.home.newLearnerTile') }).click();
     await page.getByLabel(msg(messages, 'pages.home.newLearner.nameLabel')).fill(`Watcher ${language.code}`);
     await page.getByRole('button', { name: msg(messages, 'pages.home.newLearner.submit') }).click();
-    await expect(page).toHaveURL(/\/lesson\/.+\/read$/);
+    await expect(page.getByRole('heading', { level: 1 })).toContainText(`Watcher ${language.code}`);
 
     for (const lesson of expected(language.code)) {
       const where = `${language.code} ${lesson.id}`;

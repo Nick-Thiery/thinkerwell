@@ -133,8 +133,7 @@
   "pages.home.newLearner.classCodeInvalid": "Keep ABC-07 as it is.",
   "pages.home.newLearner.classCodePlaceholder": "ABC-07 is an example class code: keep it exactly as it is.",
   "pages.home.newLearner.nameLabel": "Learners may use a nickname: no real or full name is needed.",
-  "pages.home.newLearner.startsWithLesson": "{number} is a lesson number and {title} its title, which stays in English.",
-  "pages.home.newLearner.submit": "A button. The number 1 is the first lesson's number.",
+  "pages.home.newLearner.submit": "Submit button of the new learner form. It makes the profile and opens the learner's home page; it does not start a lesson.",
   "pages.home.remove.cancel": "A button. {name} is a learner's name.",
   "pages.home.remove.label": "Screen readers only. {name} is a learner's name.",
   "pages.home.tileAdded": "Shown only when two learners share a name. {date} is the day the learner was added, already written in your language.",
@@ -407,5 +406,6 @@
   "pages.home.dashboard.offlineSaveLink": "A link to Settings.",
   "pages.home.hero.footnote": "Under the first screen for a new visitor. {lessons} is the total rounded down to the nearest ten, so \"Over 70\".",
   "pages.guides.teacherGuideLabel": "Screen-reader name of a Teacher guide button. The title makes it different from the same lesson number in another course.",
-  "pages.guides.printLabel": "Screen-reader name of a Print button. The title makes it different from the same lesson number in another course."
+  "pages.guides.printLabel": "Screen-reader name of a Print button. The title makes it different from the same lesson number in another course.",
+  "pages.home.newLearner.thenChoose": "Short line beside the new learner form. Says what happens after the profile is made."
 }

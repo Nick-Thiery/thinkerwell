@@ -142,7 +142,6 @@ export function HomePage() {
       {branch === 'picker' ? (
         <WhoIsLearningPicker
           learners={session.learners}
-          lesson1={lesson1}
           initialView={wantsNewLearnerForm ? 'new' : undefined}
           saving={workToSave ? { lessonNumber: workToSave.lessonNumber, onDrop: dropWork } : null}
           onChoose={(id) => {

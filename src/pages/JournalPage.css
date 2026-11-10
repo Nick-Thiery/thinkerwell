@@ -67,6 +67,16 @@
   gap: var(--space-4);
 }
 
+.tw-journal-group-text {
+  display: flex;
+  flex-direction: column;
+  min-inline-size: 0;
+}
+
+.tw-journal-course {
+  font-weight: 400;
+}
+
 .tw-journal-group-label {
   display: flex;
   align-items: center;

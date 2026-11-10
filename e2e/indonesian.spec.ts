@@ -75,6 +75,9 @@ async function addLearner(page: Page, name: string, messages: Tree): Promise<voi
   await page.getByRole('button', { name: msg(messages, 'pages.home.newLearnerTile') }).click();
   await page.getByLabel(msg(messages, 'pages.home.newLearner.nameLabel')).fill(name);
   await page.getByRole('button', { name: msg(messages, 'pages.home.newLearner.submit') }).click();
+  // The learner's Home; then Lesson 1, where the specs below start.
+  await expect(page.getByRole('heading', { level: 1 })).toContainText(name);
+  await page.goto(`/lesson/${L1.id}/read`);
   await expect(page).toHaveURL(/\/lesson\/.+\/read$/);
 }
 
@@ -146,6 +149,10 @@ test.describe('one language setting, changed anywhere, followed at once', () => 
     await expect(page.locator('html')).toHaveAttribute('lang', 'id');
     await expect(page.getByLabel(msg(id, 'pages.home.newLearner.nameLabel'))).toHaveValue('Dewi');
     await page.getByRole('button', { name: msg(id, 'pages.home.newLearner.submit') }).click();
+    // The learner's Home, greeting them in the language they joined in, not Lesson 1.
+    await expect(page).toHaveURL(/\/$/);
+    await expect(page.locator('h1')).toHaveText(msg(id, 'pages.home.dashboard.greeting', { name: 'Dewi' }));
+    await page.goto(`/lesson/${L1.id}/read`);
     await expect(page.locator('h1')).toHaveText(L1.title);
     // The course text is the page's own language now: not marked English.
     await expect(page.locator('h1')).not.toHaveAttribute('lang', 'en');
@@ -423,7 +430,7 @@ test.describe('with Indonesian on, every page is Indonesian and fits', () => {
     await expectAllIndonesian(page, 'new learner');
     await page.getByLabel(msg(id, 'pages.home.newLearner.nameLabel')).fill(LEARNER);
     await page.getByRole('button', { name: msg(id, 'pages.home.newLearner.submit') }).click();
-    await expect(page).toHaveURL(/\/lesson\//);
+    await expect(page.locator('h1')).toHaveText(msg(id, 'pages.home.dashboard.greeting', { name: LEARNER }));
     const allowed = [LEARNER, TYPED];
 
     // The Geography section, finished (so its certificate exists), with writing in the journal.

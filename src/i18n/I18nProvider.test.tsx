@@ -17,7 +17,7 @@ function Probe() {
   return (
     <div>
       <p data-testid="nav">{t('nav.course')}</p>
-      <p data-testid="rich">{tx('pages.home.newLearner.startsWithLesson', { number: 10, title: <En>Towns near rivers</En> })}</p>
+      <p data-testid="rich">{tx('pages.guides.lesson', { number: 10, title: <En>Towns near rivers</En> })}</p>
       <p data-testid="content" {...contentLang}>
         Rivers give water.
         <span data-testid="ui" {...uiLang}>

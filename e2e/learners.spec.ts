@@ -156,9 +156,8 @@ async function fillNewLearnerForm(page: Page, name: string, options: { classCode
     await page.locator('summary', { hasText: 'Have a class code?' }).click();
     await page.getByLabel('Class code').fill(options.classCode);
   }
-  await page.getByRole('button', { name: 'Start Lesson 1' }).click();
-  await expect(page).toHaveURL(/\/lesson\/.+\/read$/);
-  await page.goto('/');
+  await page.getByRole('button', { name: 'Create profile' }).click();
+  await expect(page).toHaveURL(/\/$/);
   await expect(page.getByRole('heading', { level: 1, name: `Hi ${name}` })).toBeVisible();
 }
 
@@ -185,11 +184,11 @@ test.describe('new learner flow', () => {
     await expect(page.getByRole('heading', { level: 1, name: "What's your name?" })).toBeVisible();
 
     // The name is required.
-    await page.getByRole('button', { name: 'Start Lesson 1' }).click();
+    await page.getByRole('button', { name: 'Create profile' }).click();
     await expect(page.getByText('Type your name or a nickname.')).toBeVisible();
 
     // Start comes straight after the name; the rest is optional and folded away.
-    const start = page.getByRole('button', { name: 'Start Lesson 1' });
+    const start = page.getByRole('button', { name: 'Create profile' });
     await expect(start).toBeInViewport();
     await expect(page.getByRole('radio', { name: 'Green' })).toBeHidden();
     await expect(page.getByLabel('Class code')).toBeHidden();
@@ -201,14 +200,12 @@ test.describe('new learner flow', () => {
     await page.getByLabel('Class code').fill('abc-07');
     await start.click();
 
-    // "Start Lesson 1" does exactly that.
-    await expect(page).toHaveURL(/\/lesson\/.+\/read$/);
-
-    // Going back to "/" shows her own dashboard, pointed at the same lesson.
-    await page.goto('/');
+    // "Create profile" opens her own Home, not a lesson: nothing started, "Start here".
+    await expect(page).toHaveURL(/\/$/);
     await expect(page.getByRole('heading', { level: 1, name: 'Hi Amina' })).toBeVisible();
     await expect(page.getByRole('progressbar', { name: 'Your progress' })).toBeVisible();
-    await expect(page.getByText(/^(Start here|Resume here)$/)).toBeVisible();
+    await expect(page.getByText('Start here')).toBeVisible();
+    expect((await dumpDb(page)).progress).toHaveLength(0);
 
     // Saved with the colour picked and the class code trimmed and upper-cased.
     const db = await dumpDb(page);
@@ -220,7 +217,7 @@ test.describe('new learner flow', () => {
     await page.goto('/');
     await page.getByRole('button', { name: "I'm new here" }).click();
     await page.getByLabel('First name or nickname').fill('a'.repeat(31));
-    await page.getByRole('button', { name: 'Start Lesson 1' }).click();
+    await page.getByRole('button', { name: 'Create profile' }).click();
     await expect(page.getByText('Keep it to about 30 letters.')).toBeVisible();
     expect((await dumpDb(page)).learners).toHaveLength(0);
   });
@@ -233,7 +230,7 @@ test.describe('new learner flow', () => {
     await page.getByLabel('Class code').fill('not a code!');
     // Folded away again, the problem still opens it, so it is never hidden.
     await page.locator('summary', { hasText: 'Have a class code?' }).click();
-    await page.getByRole('button', { name: 'Start Lesson 1' }).click();
+    await page.getByRole('button', { name: 'Create profile' }).click();
     await expect(page.getByText('Use letters, numbers and hyphens only, like ABC-07.')).toBeVisible();
     expect((await dumpDb(page)).learners).toHaveLength(0);
   });
@@ -554,7 +551,7 @@ test.describe('keyboard only', () => {
     await tabUntilFocused(page, nameField);
     await page.keyboard.type('Zara');
     // Start comes straight after the name; the colour is folded under it ("Pick your colour").
-    const submit = page.getByRole('button', { name: 'Start Lesson 1' });
+    const submit = page.getByRole('button', { name: 'Create profile' });
     await page.keyboard.press('Tab');
     await expect(submit).toBeFocused();
     const colour = page.locator('summary', { hasText: 'Pick your colour' });
@@ -572,9 +569,8 @@ test.describe('keyboard only', () => {
     await expect(submit).toBeFocused();
     await page.keyboard.press('Enter');
 
-    // "Start Lesson 1" does exactly that.
-    await expect(page).toHaveURL(/\/lesson\/.+\/read$/);
-    await page.goto('/');
+    // "Create profile" opens her Home.
+    await expect(page).toHaveURL(/\/$/);
     await expect(page.getByRole('heading', { level: 1, name: 'Hi Zara' })).toBeVisible();
     const db = await dumpDb(page);
     expect(db.learners).toHaveLength(1);

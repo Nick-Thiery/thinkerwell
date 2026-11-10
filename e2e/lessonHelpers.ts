@@ -41,14 +41,19 @@ export async function horizontalOverflow(page: Page): Promise<number> {
 }
 
 /**
- * Creates a learner through the app's own "I'm new here" form. "Start
- * Lesson 1" lands on Lesson 1; the learner is then the current one.
+ * Creates a learner through the app's own "I'm new here" form. "Create
+ * profile" lands on the learner's Home (Justin's follow-up of 10 November
+ * 2026); the learner is then the current one, and this opens Lesson 1 so the
+ * specs that use it start where they always did.
  */
 export async function addLearnerViaUi(page: Page, name: string): Promise<void> {
   await page.goto('/');
   await page.getByRole('button', { name: "I'm new here" }).click();
   await page.getByLabel('First name or nickname').fill(name);
-  await page.getByRole('button', { name: 'Start Lesson 1' }).click();
+  await page.getByRole('button', { name: 'Create profile' }).click();
+  await expect(page).toHaveURL(/\/$/);
+  await expect(page.getByRole('heading', { level: 1, name: `Hi ${name}` })).toBeVisible();
+  await page.goto('/lesson/finding-out-about-the-past/read');
   await expect(page).toHaveURL(/\/lesson\/.+\/read$/);
 }
 

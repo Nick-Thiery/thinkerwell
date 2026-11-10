@@ -18,7 +18,7 @@ const MASCOT_SRC = '/images/thinkerwell-mascot-transparent.png';
  * 120px and 52px), so "Who's learning today?" isn't pushed a whole screen
  * down.
  */
-export function HomeHero({ size = 184, children }: { size?: number; children: ReactNode }) {
+export function HomeHero({ size = 184, children }: { size?: number; children?: ReactNode }) {
   const { t } = useI18n();
   const phone = useMediaQuery(LESSON_PHONE_QUERY);
   return (

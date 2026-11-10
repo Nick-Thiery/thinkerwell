@@ -100,8 +100,7 @@ export const pageTour: TourStop[] = [
     go: async (page, { ui }) => {
       await page.getByLabel(ui('pages.home.newLearner.nameLabel')).fill(TOUR_LEARNER);
       await page.getByRole('button', { name: ui('pages.home.newLearner.submit') }).click();
-      await expect(page).toHaveURL(/\/lesson\/.+\/read$/);
-      await openPath(page, '/', ui('pages.home.dashboard.greeting', { name: TOUR_LEARNER }));
+      await expect(page.getByRole('heading', { level: 1, name: ui('pages.home.dashboard.greeting', { name: TOUR_LEARNER }) })).toBeVisible();
     },
   },
   {

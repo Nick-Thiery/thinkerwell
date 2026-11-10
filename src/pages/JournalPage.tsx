@@ -1,21 +1,23 @@
 import { useMemo, useState } from 'react';
 import { usePageTitle } from '../app/usePageTitle';
 import { Button, Icon, SectionBadge, SegmentedControl } from '../components/ds';
-import { useContent } from '../content/useContent';
-import { En, useI18n } from '../i18n';
+import { useI18n } from '../i18n';
 import { useLearnerProgress, useLearnerSession } from '../session';
-import { journalByLesson, type LessonProgress } from '../storage';
+import type { LessonProgress } from '../storage';
 import './JournalPage.css';
+import { CourseTextSpan } from './journal/CourseTextSpan';
 import { EditableJournalEntry } from './journal/EditableJournalEntry';
 import { describeJournalDate, JOURNAL_DATE_FORMAT } from './journal/journalDate';
+import { usePlatformJournal } from './journal/usePlatformJournal';
 
 type Filter = 'All' | 'Writing' | 'Reflections';
 
 /**
  * My journal (docs/screens/Journal.dc.html): everything the current learner
- * saved in Write and Reflect, grouped by lesson and newest first
- * (journalByLesson, src/storage/progress.ts) — the journal has no store of
- * its own (CLAUDE.md). Entries are editable in place; "Print my journal"
+ * saved in Write and Reflect, in every course, grouped by lesson and newest
+ * first (usePlatformJournal, over journalByLesson in src/storage/progress.ts)
+ * — the journal has no store of its own (CLAUDE.md). Each lesson is named
+ * with its course. Entries are editable in place; "Print my journal"
  * goes to the paper version built in phase 6 (/journal/print).
  *
  * Look-around and nobody-chosen-yet both have nothing to show, since
@@ -24,7 +26,6 @@ type Filter = 'All' | 'Writing' | 'Reflections';
  */
 export function JournalPage() {
   const { t, tx, formatDate } = useI18n();
-  const content = useContent();
   usePageTitle(t('pages.journal.title'));
   const session = useLearnerSession();
   const learner = session.activeLearner;
@@ -33,19 +34,22 @@ export function JournalPage() {
   // Edits are written straight to the store; keeping the record each save
   // returns lets the page show it at once, without a way to refetch
   // useLearnerProgress's own snapshot (it only reloads on a learner change).
-  const [overrides, setOverrides] = useState<Record<string, LessonProgress>>({});
+  // Each is kept with the learner it was saved for, and only that learner's
+  // are ever shown: a save that finishes after a switch stays with its owner.
+  const [overrides, setOverrides] = useState<readonly { learnerId: string; lessonId: string; record: LessonProgress }[]>([]);
 
-  const loading = session.status === 'loading' || (learner !== null && status === 'loading');
-
-  const lessons = content.getLessons();
   const effectiveProgress = useMemo(() => {
-    if (Object.keys(overrides).length === 0) return progress;
+    const mine = overrides.filter((override) => override.learnerId === learner?.id);
+    if (mine.length === 0) return progress;
     const merged = new Map(progress);
-    for (const [lessonId, record] of Object.entries(overrides)) merged.set(lessonId, record);
+    for (const { lessonId, record } of mine) merged.set(lessonId, record);
     return merged;
-  }, [progress, overrides]);
+  }, [progress, overrides, learner?.id]);
 
-  const journal = learner ? journalByLesson(lessons, effectiveProgress) : [];
+  const platform = usePlatformJournal(learner?.id ?? null, effectiveProgress);
+  const loading = session.status === 'loading' || (learner !== null && (status === 'loading' || platform.status === 'loading'));
+
+  const journal = learner ? platform.entries : [];
   const filtered = journal
     .map((entry) => ({
       ...entry,
@@ -120,18 +124,28 @@ export function JournalPage() {
                       ? t('pages.journal.savedYesterday')
                       : t('ds.course.journalEntry.saved', { date: formatDate(when.date, JOURNAL_DATE_FORMAT) });
                 return (
-                  <section key={lesson.id} className="tw-journal-group">
+                  <section key={`${learner?.id ?? ''}:${lesson.id}`} className="tw-journal-group">
                     <div className="tw-journal-group-label">
-                      <SectionBadge section={content.getLessonSection(lesson).id} showName={false} size={36} />
-                      {tx('pages.journal.groupLabel', { number: lesson.number, title: <En>{lesson.title}</En> })}
+                      <SectionBadge section={lesson.tone} showName={false} size={36} />
+                      <span className="tw-journal-group-text">
+                        <span className="small tw-journal-course">
+                          <CourseTextSpan value={lesson.courseName} />
+                        </span>
+                        <span>
+                          {tx('pages.journal.groupLabel', {
+                            number: lesson.number,
+                            title: <CourseTextSpan value={lesson.title} />,
+                          })}
+                        </span>
+                      </span>
                     </div>
                     {pieces.map((piece) => (
                       <EditableJournalEntry
-                        key={piece.kind === 'reflection' ? `reflection-${piece.reflectionIndex}` : 'writing'}
+                        key={`${learner?.id ?? ''}:${piece.kind === 'reflection' ? `reflection-${piece.reflectionIndex}` : 'writing'}`}
                         lesson={lesson}
                         piece={piece}
                         savedLabel={savedLabel}
-                        onSaved={(lessonId, record) => setOverrides((prev) => ({ ...prev, [lessonId]: record }))}
+                        onSaved={(learnerId, lessonId, record) => setOverrides((prev) => [...prev, { learnerId, lessonId, record }])}
                       />
                     ))}
                   </section>

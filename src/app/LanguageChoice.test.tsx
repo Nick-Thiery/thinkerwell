@@ -2,7 +2,6 @@ import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { getLessons } from '../content';
 import { findLocale, I18nProvider, LOCALES, type LocaleDefinition } from '../i18n';
 import { NewLearnerForm } from '../pages/home/NewLearnerForm';
 import { LearnerDashboard } from '../pages/home/LearnerDashboard';
@@ -134,15 +133,13 @@ describe('Settings: the one language setting', () => {
 });
 
 describe('a new learner', () => {
-  const lesson1 = getLessons()[0]!;
-
   async function submit(chooseLanguage?: string): Promise<NewLearner> {
     const onSubmit = vi.fn((_input: NewLearner) => Promise.resolve());
     render(
       <I18nProvider>
         <LearnerSessionProvider>
           <MemoryRouter>
-            <NewLearnerForm lesson1={lesson1} onBack={() => undefined} onSubmit={onSubmit} />
+            <NewLearnerForm onBack={() => undefined} onSubmit={onSubmit} />
           </MemoryRouter>
           <Current />
         </LearnerSessionProvider>
@@ -158,7 +155,7 @@ describe('a new learner', () => {
       // The one setting: nobody is chosen yet, so it is the device's, and on screen at once.
       await waitFor(() => expect(state()).toHaveTextContent('id none id'));
     }
-    await user.click(screen.getByRole('button', { name: 'Start Lesson 1' }));
+    await user.click(screen.getByRole('button', { name: 'Create profile' }));
     return onSubmit.mock.calls[0]![0];
   }
 
@@ -175,7 +172,7 @@ describe('a new learner', () => {
       <I18nProvider offered={englishOnly}>
         <LearnerSessionProvider>
           <MemoryRouter>
-            <NewLearnerForm lesson1={lesson1} onBack={() => undefined} onSubmit={() => Promise.resolve()} />
+            <NewLearnerForm onBack={() => undefined} onSubmit={() => Promise.resolve()} />
           </MemoryRouter>
         </LearnerSessionProvider>
       </I18nProvider>,

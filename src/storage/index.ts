@@ -59,6 +59,7 @@ export {
   type ContinueTarget,
   type JournalEntry,
   type JournalLesson,
+  type JournalLessonSource,
   type JournalPiece,
   type LessonSetStatus,
   type ProgressByLessonId,
