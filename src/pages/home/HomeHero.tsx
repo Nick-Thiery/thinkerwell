@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { platformTotals, roundedDownToTen } from '../../content/platformCounts';
 import { useCatalog } from '../../content/useCatalog';
 import { Badge, Mascot, STAGE_ICON } from '../../components/ds';
 import { commonStages } from '../../content/stages';
@@ -34,8 +35,7 @@ export function HomeHero({ size = 184, children }: { size?: number; children: Re
 export function HomeHeroStages() {
   const { t } = useI18n();
   const catalog = useCatalog();
-  const totalLessons = catalog.getCourse().course.totalLessons;
-  const totalSections = catalog.getSections().length;
+  const totals = platformTotals(catalog.getLessons().length);
   const stages = commonStages(catalog.getLessons(), catalog.stagesFor);
   return (
     <div className="tw-home-stages">
@@ -47,7 +47,7 @@ export function HomeHeroStages() {
           </Badge>
         ))}
       </div>
-      <p className="small">{t('pages.home.hero.footnote', { lessons: totalLessons, sections: totalSections })}</p>
+      <p className="small">{t('pages.home.hero.footnote', { lessons: roundedDownToTen(totals.lessons), courses: totals.courses })}</p>
     </div>
   );
 }

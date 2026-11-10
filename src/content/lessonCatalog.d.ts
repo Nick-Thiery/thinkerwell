@@ -5,3 +5,13 @@ declare module 'virtual:thinkerwell/lesson-catalog' {
   const catalog: unknown;
   export default catalog;
 }
+
+declare module 'virtual:thinkerwell/course-outline' {
+  const outlines: unknown;
+  export default outlines;
+}
+
+declare module 'virtual:thinkerwell/course-credits' {
+  const credits: unknown;
+  export default credits;
+}

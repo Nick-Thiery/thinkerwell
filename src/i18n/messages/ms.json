@@ -230,7 +230,7 @@
         "description": "Pembelajaran kajian sosial percuma untuk belia di seluruh Asia Tenggara, terutamanya mereka yang menghadapi halangan dalam pendidikan. Terokai sejarah, geografi, budaya dan kehidupan sivik mengikut kadar kamu sendiri.",
         "stagesLabel": "Setiap pelajaran ada lima langkah",
         "stagesLabelNoWatch": "Setiap pelajaran ada empat langkah",
-        "footnote": "{lessons} pelajaran · {sections} bahagian · tidak perlu akaun"
+        "footnote": "Lebih daripada {lessons} pelajaran · {courses} kursus · tidak perlu akaun"
       },
       "lookAround": "Lihat-lihat sahaja (tiada apa-apa disimpan)",
       "lookAroundNote": "Hasil kerja disimpan pada peranti ini sahaja. Tiada kata laluan, tiada gambar.",
@@ -293,36 +293,44 @@
       },
       "dashboard": {
         "greeting": "Hai {name}",
-        "summaryNone": "Kamu belum memulakan sebarang pelajaran. Seterusnya ialah Pelajaran {number}.",
-        "summaryInProgress": {
-          "other": "Kamu telah menamatkan {count} pelajaran. Seterusnya ialah Pelajaran {number}."
-        },
-        "summaryDone": "Kamu telah menamatkan semua pelajaran. Syabas.",
         "startHere": "Mula di sini",
         "startCta": "Mula",
-        "continueEyebrow": "Sambung dari tempat kamu berhenti",
-        "upNext": "Seterusnya",
-        "finishedTitle": "Kamu telah menamatkan kursus ini",
         "finishedBody": "Kamu boleh kembali ke mana-mana pelajaran, atau cuba semakan bahagian sekali lagi.",
         "finishedCta": "Lihat kursus",
         "offlineBadge": "Semua {count} pelajaran boleh digunakan di luar talian",
         "offlinePreparingBadge": "Menyimpan pelajaran untuk kegunaan luar talian",
         "savedBadge": "Disimpan pada peranti ini",
-        "yourCourse": "Kursus kamu",
-        "seeAll": "Lihat semua {count} pelajaran",
-        "youAreHere": "Kamu di sini",
-        "sectionCheckReady": "Semakan bahagian sedia",
-        "sectionCheckBody": {
-          "other": "Kamu telah menamatkan semua {count} pelajaran. Cuba {questions} soalan untuk melihat apa yang kamu ingat. Buatlah seberapa banyak kali yang kamu mahu."
-        },
         "startCheck": "Mula semakan",
-        "fromJournal": "Daripada jurnal kamu",
         "openJournal": "Buka jurnal saya",
         "noJournalYet": "Belum ada apa-apa yang disimpan. Tulisan dan refleksi kamu akan dipaparkan di sini sebaik sahaja kamu bermula.",
-        "latestEntry": "{stage} · Pelajaran {number}",
+        "latestEntry": "{stage} · {course}",
         "languageTitle": "Bahasa kamu",
         "languageHelp": "Butang dan arahan dipaparkan dalam bahasa ini. Dalam bahasa Indonesia dan bahasa Melayu, pelajaran juga begitu. Dalam bahasa lain, pelajaran kekal dalam bahasa Inggeris, supaya kamu boleh berlatih bahasa Inggeris.",
-        "languageSaveFailed": "Tidak berjaya disimpan. Cuba lagi."
+        "languageSaveFailed": "Tidak berjaya disimpan. Cuba lagi.",
+        "progressTitle": "Kemajuan kamu",
+        "progressCount": {
+          "other": "{completed} daripada {total} pelajaran selesai"
+        },
+        "resumeHere": "Sambung di sini",
+        "keepExploring": "Teruskan meneroka",
+        "chooseText": "Pilih kursus untuk mula belajar.",
+        "resumeText": "Sambung dari tempat kamu berhenti.",
+        "chooseCourse": "Pilih kursus",
+        "resumeLesson": "Sambung pelajaran",
+        "startLesson": "Mula pelajaran",
+        "coursesTitle": "Kursus kamu",
+        "courseCount": {
+          "other": "{completed} daripada {total} pelajaran"
+        },
+        "openCourse": "Buka kursus",
+        "openCourseLabel": "Buka {course}",
+        "journalTitle": "Jurnal saya",
+        "offlinePartBadge": {
+          "other": "{ready} daripada {total} pelajaran sedia digunakan di luar talian"
+        },
+        "offlineSaveLink": "Simpan semua kursus untuk kegunaan luar talian",
+        "offlineHelp": "Simpan semua kursus dalam Tetapan dahulu. Video memerlukan internet. Muat turun audio pelajaran secara berasingan untuk mendengar di luar talian.",
+        "offlineHelpDone": "Video memerlukan internet. Muat turun audio pelajaran secara berasingan untuk mendengar di luar talian."
       },
       "saveWork": {
         "body": "Tekan nama kamu, atau Saya baru di sini, untuk menyimpan kerja kamu daripada Pelajaran {number}.",
@@ -1114,8 +1122,8 @@
       "creditsLinkCta": "Lihat penghargaan"
     },
     "credits": {
-      "title": "Penghargaan",
-      "intro": "Thinkerwell dibina atas hasil kerja ramai orang dan organisasi. Terima kasih kepada mereka semua. Halaman ini menyenaraikan sumber di sebalik pelajaran, video yang ditunjukkan dalam pelajaran, serta fon, gambar dan perisian yang digunakan untuk membina laman ini.",
+      "title": "Penghargaan dan sumber",
+      "intro": "Thinkerwell dibina atas hasil kerja ramai orang dan organisasi. Terima kasih kepada mereka semua. Halaman ini menyenaraikan sumber di sebalik pelajaran setiap kursus, video yang dipaparkan, gambar dan imej, serta fon dan perisian yang digunakan oleh laman ini.",
       "contents": "Dalam halaman ini",
       "sourcesTitle": "Sumber pelajaran",
       "sourcesBody": "Fakta dalam setiap pelajaran diambil daripada sumber-sumber ini. Pelajaran ditulis dengan kata-kata kami sendiri.",
@@ -1124,7 +1132,7 @@
       "videosBody": "Setiap pelajaran boleh memaparkan satu video pendek. Video ini dihasilkan oleh saluran YouTube berikut, bukan oleh Thinkerwell. Video dimainkan daripada YouTube, dan hanya apabila pelajar menekan butang main.",
       "videoBy": "Oleh {channel}",
       "picturesTitle": "Gambar dan reka bentuk",
-      "picturesBody": "Maskot Thinkerwell, gambar pelajaran dan reka bentuk laman ini dihasilkan untuk Thinkerwell.",
+      "picturesBody": "Maskot Thinkerwell, reka bentuk laman ini dan gambar yang dilukis untuk pelajaran dihasilkan untuk Thinkerwell. Foto, karya seni dan peta dalam sesetengah pelajaran bukan buatan Thinkerwell: semuanya datang daripada muzium, arkib dan Wikimedia Commons. Setiap satu disenaraikan di bawah mengikut kursus dan pelajaran, bersama pembuatnya, tempat ia disimpan, lesennya dan perubahan yang dibuat oleh Thinkerwell.",
       "goalsTitle": "Ikon Matlamat Pembangunan Mampan PBB",
       "goalsBody": "Ikon matlamat di halaman Tentang diambil daripada Pertubuhan Bangsa-Bangsa Bersatu dan digunakan mengikut garis panduannya. Thinkerwell tidak disokong secara rasmi oleh Pertubuhan Bangsa-Bangsa Bersatu.",
       "goalsStatement": "Kandungan penerbitan ini tidak diluluskan oleh Pertubuhan Bangsa-Bangsa Bersatu dan tidak mencerminkan pandangan Pertubuhan Bangsa-Bangsa Bersatu atau pegawainya atau Negara Anggotanya.",
@@ -1146,23 +1154,33 @@
       "voiceMalay": "Pelajaran dalam bahasa Melayu: {model} oleh Meta, sebahagian daripada Massively Multilingual Speech, di bawah {licence}. Lesen ini hanya membenarkan penggunaan bukan komersial. Thinkerwell percuma dan hanya menggunakannya dengan cara itu.",
       "translationTitle": "Terjemahan",
       "translationBody": "Versi Bahasa Indonesia mula-mula dirangka dengan bantuan AI. Penutur asli sedang menyemaknya.",
-      "translationBodyMalay": "Versi bahasa Melayu juga dirangka dengan bantuan AI, daripada bahasa Inggeris, dan disemak dengan menterjemahkannya semula ke dalam bahasa Inggeris. Versi ini masih menunggu semakan oleh penutur asli."
+      "translationBodyMalay": "Versi bahasa Melayu juga dirangka dengan bantuan AI, daripada bahasa Inggeris, dan disemak dengan menterjemahkannya semula ke dalam bahasa Inggeris. Versi ini masih menunggu semakan oleh penutur asli.",
+      "coursesContents": "Mengikut kursus",
+      "pictureFirst": "Gambar pertama",
+      "pictureSecond": "Gambar kedua",
+      "pictureOriginal": "{slot}: dihasilkan untuk Thinkerwell.",
+      "pictureWork": "{slot}: “{title}”, {creator}, {created}.",
+      "pictureHeldBy": "Disimpan oleh {institution}.",
+      "pictureRecord": "Lihat rekod atau fail asal",
+      "pictureLicence": "Lesen: {licence}",
+      "pictureChanges": "Perubahan: {changes}"
     },
     "placeholder": "Halaman ini akan tersedia tidak lama lagi.",
     "guides": {
       "title": "Panduan guru dan skema jawapan",
-      "intro": "Panduan guru setiap pelajaran mengandungi rancangan sesi, jawapan dan nota pengajaran, dan setiap pelajaran boleh dicetak. Buka satu bahagian untuk melihat pelajarannya.",
+      "intro": "Panduan guru setiap pelajaran mengandungi rancangan sesi, jawapan dan nota pengajaran, dan setiap pelajaran boleh dicetak. Pilih satu kursus, kemudian buka satu bahagian untuk melihat pelajarannya.",
       "lessons": "Pelajaran {range}",
       "lesson": "Pelajaran {number}: {title}",
       "print": "Cetak",
-      "printLabel": "Cetak Pelajaran {number}",
-      "otherTitle": "Kursus lain",
-      "otherBody": "Panduan guru, pelajaran sedia cetak dan skema jawapan untuk kursus lain ada pada halaman setiap kursus.",
+      "printLabel": "Cetak Pelajaran {number}: {title}",
       "lessonCount": {
         "other": "{count} pelajaran"
       },
-      "otherOpen": "Panduan guru",
-      "otherOpenLabel": "Panduan guru untuk {course}"
+      "printAll": "Cetak semua pelajaran",
+      "printAllLabel": "Cetak semua pelajaran dalam {course}",
+      "loading": "Memuatkan kursus lain",
+      "outlineFailed": "Senarai untuk kursus lain tidak berjaya dimuatkan. Buka halaman ini sekali lagi untuk mencuba semula.",
+      "teacherGuideLabel": "Panduan guru untuk Pelajaran {number}: {title}"
     }
   },
   "siteVideo": {
@@ -1665,15 +1683,6 @@
     "sheet": {
       "draft": "{title}: kursus baharu. Faktanya masih disemak."
     },
-    "map": {
-      "noChecks": "Kursus ini belum mempunyai semakan bahagian atau sijil.",
-      "noCertificates": "Kursus ini belum mempunyai sijil.",
-      "forTeachersTitle": "Untuk guru",
-      "printAll": "Cetak semua pelajaran",
-      "guideLink": "Panduan guru, Pelajaran {number}: {title}",
-      "answerKeyLink": "Skema jawapan: {title}",
-      "reviewAction": "Beritahu kami apa yang perlu dibetulkan"
-    },
     "printAll": {
       "back": "Kembali ke {title}",
       "intro": "Setiap pelajaran {title}, satu demi satu. Setiap pelajaran bermula pada halaman baharu. Cetak semuanya, atau simpan sebagai PDF.",
@@ -1707,7 +1716,6 @@
     }
   },
   "digitalWorld": {
-    "reviewNote": "Dunia Digital ialah kursus baharu. Seorang penyelidik AI masih menyemak faktanya.",
     "activity": {
       "eyebrow": "Aktiviti",
       "guideTitle": "Aktiviti ini",
@@ -1736,9 +1744,6 @@
       "mostMistakes": "Alat ini paling banyak membuat kesilapan untuk {group}.",
       "notMost": "Alat ini lebih baik untuk {group}. Cari kumpulan dengan paling sedikit jawapan betul.",
       "paperAnswer": "Kumpulan dengan kesilapan paling banyak:"
-    },
-    "map": {
-      "forTeachersBody": "Setiap pelajaran ada panduan guru dengan nota, jawapan, aktiviti di atas kertas dan nota untuk penyemak. Seluruh kursus juga boleh dicetak."
     },
     "plan": {
       "answerLabel": "Jawapan kamu",
@@ -1987,20 +1992,12 @@
     "honeypot": "Biarkan kosong"
   },
   "southeastAsia": {
-    "reviewNote": "Asia Tenggara Merentasi Zaman ialah kursus baharu. Seorang ahli sejarah masih menyemak faktanya.",
-    "map": {
-      "forTeachersBody": "Setiap pelajaran ada panduan guru dengan nota, jawapan, kedua-dua gambar berserta kreditnya, dan nota untuk penyemak. Seluruh kursus juga boleh dicetak."
-    },
     "switch": {
       "onBody": "Peranti ini kini memaparkan Asia Tenggara Merentasi Zaman, kursus draf tentang sejarah Asia Tenggara melalui objek, peta, foto dan surat yang sebenar. Orang lain tidak melihatnya, dan tiada apa-apa tentangnya dihantar ke mana-mana. Ia kekal hidup sehingga anda mematikannya.",
       "reviewNote": "Ia belum disemak lagi. Seorang ahli sejarah masih perlu menyemak faktanya, dan sebuah organisasi rakan kongsi perlu menyemak topik sensitifnya. Jangan gunakannya dengan pelajar dahulu."
     }
   },
   "artArchitecture": {
-    "reviewNote": "Seni, Seni Bina dan Masyarakat ialah kursus baharu. Seorang ahli sejarah seni masih menyemak faktanya.",
-    "map": {
-      "forTeachersBody": "Setiap pelajaran ada panduan guru dengan nota, perkara jawapan, kedua-dua gambar berserta maklumat sumbernya, dan nota untuk penyemak. Kamu juga boleh mencetak seluruh kursus."
-    },
     "switch": {
       "onBody": "Peranti ini kini memaparkan Seni, Seni Bina dan Masyarakat, sebuah kursus draf tentang apa yang boleh diajarkan oleh seni dan bangunan tentang masyarakat yang membuat, menggunakan dan menjaganya, melalui objek, lukisan, rumah dan jalan yang sebenar. Tiada orang lain yang melihatnya, dan tiada apa-apa tentangnya yang dihantar ke mana-mana. Kursus ini kekal hidup sehingga kamu mematikannya.",
       "reviewNote": "Kursus ini belum disemak. Seorang ahli sejarah seni masih perlu menyemak faktanya, dan sebuah organisasi rakan kongsi menyemak topik yang sensitif. Jangan gunakannya dengan pelajar lagi."

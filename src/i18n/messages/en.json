@@ -235,7 +235,7 @@
         "description": "Free social studies learning for youth across Southeast Asia, especially those facing barriers to education. Explore history, geography, culture and civic life at your own pace.",
         "stagesLabel": "Every lesson has five steps",
         "stagesLabelNoWatch": "Every lesson has four steps",
-        "footnote": "{lessons} lessons · {sections} sections · no account needed"
+        "footnote": "Over {lessons} lessons · {courses} courses · no account needed"
       },
       "lookAround": "Just look around (nothing is saved)",
       "lookAroundNote": "Work is saved on this device only. No passwords, no photos.",
@@ -298,38 +298,47 @@
       },
       "dashboard": {
         "greeting": "Hi {name}",
-        "summaryNone": "You haven't started a lesson yet. Next up is Lesson {number}.",
-        "summaryInProgress": {
-          "one": "You have finished {count} lesson. Next up is Lesson {number}.",
-          "other": "You have finished {count} lessons. Next up is Lesson {number}."
-        },
-        "summaryDone": "You have finished every lesson. Well done.",
         "startHere": "Start here",
         "startCta": "Start",
-        "continueEyebrow": "Pick up where you left off",
-        "upNext": "Up next",
-        "finishedTitle": "You've finished the course",
         "finishedBody": "You can go back to any lesson, or try the section checks again.",
         "finishedCta": "See the course",
         "offlineBadge": "All {count} lessons work offline",
         "offlinePreparingBadge": "Saving lessons for offline use",
         "savedBadge": "Saved on this device",
-        "yourCourse": "Your course",
-        "seeAll": "See all {count} lessons",
-        "youAreHere": "You are here",
-        "sectionCheckReady": "Section check ready",
-        "sectionCheckBody": {
-          "one": "You finished all {count} lesson. Try {questions} questions to see what you remember. Take it as many times as you like.",
-          "other": "You finished all {count} lessons. Try {questions} questions to see what you remember. Take it as many times as you like."
-        },
         "startCheck": "Start the check",
-        "fromJournal": "From your journal",
         "openJournal": "Open my journal",
         "noJournalYet": "Nothing saved yet. Your writing and reflections show up here once you start.",
-        "latestEntry": "{stage} · Lesson {number}",
+        "latestEntry": "{stage} · {course}",
         "languageTitle": "Your language",
         "languageHelp": "Buttons and instructions show in this language. In Indonesian and Malay, the lessons do too. In other languages they stay in English, so you can practise it.",
-        "languageSaveFailed": "That didn't save. Try again."
+        "languageSaveFailed": "That didn't save. Try again.",
+        "progressTitle": "Your progress",
+        "progressCount": {
+          "one": "{completed} of {total} lesson completed",
+          "other": "{completed} of {total} lessons completed"
+        },
+        "resumeHere": "Resume here",
+        "keepExploring": "Keep exploring",
+        "chooseText": "Choose a course to start learning.",
+        "resumeText": "Pick up where you left off.",
+        "chooseCourse": "Choose a course",
+        "resumeLesson": "Resume lesson",
+        "startLesson": "Start lesson",
+        "coursesTitle": "Your courses",
+        "courseCount": {
+          "one": "{completed} of {total} lesson",
+          "other": "{completed} of {total} lessons"
+        },
+        "openCourse": "Open course",
+        "openCourseLabel": "Open {course}",
+        "journalTitle": "My journal",
+        "offlinePartBadge": {
+          "one": "{ready} of {total} lesson ready offline",
+          "other": "{ready} of {total} lessons ready offline"
+        },
+        "offlineSaveLink": "Save all courses for offline use",
+        "offlineHelp": "Save all courses in Settings first. Videos need internet. Download lesson audio separately to listen offline.",
+        "offlineHelpDone": "Videos need internet. Download lesson audio separately to listen offline."
       }
     },
     "course": {
@@ -1129,8 +1138,8 @@
       "creditsLinkCta": "See the credits"
     },
     "credits": {
-      "title": "Credits",
-      "intro": "Thinkerwell is built on the work of many people and organisations. Thank you to all of them. This page lists the sources behind the lessons, the videos they show, and the fonts, pictures and software the site is made with.",
+      "title": "Credits and sources",
+      "intro": "Thinkerwell is built on the work of many people and organisations. Thank you to all of them. This page lists the sources behind the lessons of every course, the videos they show, the pictures and images, and the fonts and software the site is made with.",
       "contents": "On this page",
       "sourcesTitle": "Lesson sources",
       "sourcesBody": "The facts in each lesson come from these sources. The lessons are written in our own words.",
@@ -1139,7 +1148,7 @@
       "videosBody": "Each lesson can show one short video. The videos were made by these YouTube channels, not by Thinkerwell. They play from YouTube, and only when a learner taps play.",
       "videoBy": "By {channel}",
       "picturesTitle": "Pictures and design",
-      "picturesBody": "The Thinkerwell mascot, the lesson pictures and the site's design were made for Thinkerwell.",
+      "picturesBody": "The Thinkerwell mascot, the site's design and the pictures drawn for the lessons were made for Thinkerwell. The photographs, artworks and maps in some lessons are not: they come from museums, archives and Wikimedia Commons. Each one is listed below by course and lesson, with who made it, where it is held, its licence and what Thinkerwell changed.",
       "goalsTitle": "UN Sustainable Development Goals icons",
       "goalsBody": "The goal icons on the About page are from the United Nations, used as its guidelines allow. Thinkerwell is not endorsed by the United Nations.",
       "goalsStatement": "The content of this publication has not been approved by the United Nations and does not reflect the views of the United Nations or its officials or Member States.",
@@ -1161,24 +1170,34 @@
       "voiceMalay": "Bahasa Melayu lessons: {model} by Meta, part of Massively Multilingual Speech, under the {licence}. This licence allows only non-commercial use. Thinkerwell is free, and uses it only that way.",
       "translationTitle": "Translation",
       "translationBody": "The Bahasa Indonesia version was first drafted with the help of AI. Native speakers are checking it.",
-      "translationBodyMalay": "The Bahasa Melayu version was drafted with the help of AI too, from the English, and checked by translating it back into English. It is waiting for native speakers to check it."
+      "translationBodyMalay": "The Bahasa Melayu version was drafted with the help of AI too, from the English, and checked by translating it back into English. It is waiting for native speakers to check it.",
+      "coursesContents": "By course",
+      "pictureFirst": "First picture",
+      "pictureSecond": "Second picture",
+      "pictureOriginal": "{slot}: made for Thinkerwell.",
+      "pictureWork": "{slot}: “{title}”, {creator}, {created}.",
+      "pictureHeldBy": "Held by {institution}.",
+      "pictureRecord": "See the original record or file",
+      "pictureLicence": "Licence: {licence}",
+      "pictureChanges": "Changes: {changes}"
     },
     "placeholder": "This page is coming soon.",
     "guides": {
       "title": "Teacher guides and answer keys",
-      "intro": "Each lesson's teacher guide has a session plan, the answers and teaching notes, and each lesson prints. Open a section to see its lessons.",
+      "intro": "Each lesson's teacher guide has a session plan, the answers and teaching notes, and each lesson prints. Choose a course, then open a section to see its lessons.",
       "lessons": "Lessons {range}",
       "lesson": "Lesson {number}: {title}",
       "print": "Print",
-      "printLabel": "Print Lesson {number}",
-      "otherTitle": "Other courses",
-      "otherBody": "Teacher guides, printable lessons and answer keys for the other courses are on each course's own page.",
+      "printLabel": "Print Lesson {number}: {title}",
       "lessonCount": {
         "one": "{count} lesson",
         "other": "{count} lessons"
       },
-      "otherOpen": "Teacher guides",
-      "otherOpenLabel": "Teacher guides for {course}"
+      "printAll": "Print all lessons",
+      "printAllLabel": "Print every lesson in {course}",
+      "loading": "Loading the other courses",
+      "outlineFailed": "The lists for the other courses didn't load. Open this page again to try once more.",
+      "teacherGuideLabel": "Teacher guide for Lesson {number}: {title}"
     }
   },
   "siteVideo": {
@@ -1685,15 +1704,6 @@
     "sheet": {
       "draft": "{title}: a new course. Its facts are still being checked."
     },
-    "map": {
-      "noChecks": "This course has no section checks or certificates yet.",
-      "noCertificates": "This course has no certificates yet.",
-      "forTeachersTitle": "For teachers",
-      "printAll": "Print all lessons",
-      "guideLink": "Teacher guide, Lesson {number}: {title}",
-      "answerKeyLink": "Answer key: {title}",
-      "reviewAction": "Tell us what to fix"
-    },
     "printAll": {
       "back": "Back to {title}",
       "intro": "Every lesson of {title}, one after another. Each one starts on a new page. Print them, or save them as a PDF.",
@@ -1727,7 +1737,6 @@
     }
   },
   "digitalWorld": {
-    "reviewNote": "Digital World is new. An AI researcher is still checking its facts.",
     "activity": {
       "eyebrow": "Activity",
       "guideTitle": "The activity",
@@ -1756,9 +1765,6 @@
       "mostMistakes": "The tool made the most mistakes for {group}.",
       "notMost": "The tool did better for {group}. Look for the group with the fewest right.",
       "paperAnswer": "The group with the most mistakes:"
-    },
-    "map": {
-      "forTeachersBody": "Each lesson has a teacher guide with its notes, the answers, the activity on paper and notes for reviewers. You can also print the whole course."
     },
     "plan": {
       "answerLabel": "Your answer",
@@ -2012,20 +2018,12 @@
     "honeypot": "Leave this empty"
   },
   "southeastAsia": {
-    "reviewNote": "Southeast Asia Through Time is new. A historian is still checking its facts.",
-    "map": {
-      "forTeachersBody": "Each lesson has a teacher guide with its notes, the answers, both pictures with their credits, and notes for reviewers. You can also print the whole course."
-    },
     "switch": {
       "onBody": "This device now shows Southeast Asia Through Time, a draft course about the history of Southeast Asia through real objects, maps, photos and letters. Nobody else sees it, and nothing about it is sent anywhere. It stays on until you turn it off.",
       "reviewNote": "It hasn’t been reviewed yet. A historian still needs to check its facts, and a partner organisation its sensitive topics. Don’t use it with learners yet."
     }
   },
   "artArchitecture": {
-    "reviewNote": "Art, Architecture and Society is new. An art historian is still checking its facts.",
-    "map": {
-      "forTeachersBody": "Each lesson has a teacher guide with its notes, answer points, both images with their credits, and notes for reviewers. You can also print the whole course."
-    },
     "switch": {
       "onBody": "This device now shows Art, Architecture and Society, a draft course about what art and buildings teach us about the societies that make, use and keep them, through real objects, paintings, homes and streets. Nobody else sees it, and nothing about it is sent anywhere. It stays on until you turn it off.",
       "reviewNote": "It hasn’t been reviewed yet. An art historian still needs to check its facts, and a partner organisation its sensitive topics. Don’t use it with learners yet."

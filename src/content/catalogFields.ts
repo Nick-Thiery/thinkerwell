@@ -22,4 +22,6 @@ export interface CourseSummary {
   titles: Record<string, string>;
   lessons: number;
   sections: number;
+  /** Every lesson's id, in lesson order, so finished lessons can be counted without loading the course. */
+  lessonIds: readonly string[];
 }

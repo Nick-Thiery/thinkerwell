@@ -706,8 +706,10 @@
     "source": "Every lesson has five steps"
   },
   "pages.home.hero.footnote": {
-    "back": "{lessons} lessons · {sections} sections · no account needed",
-    "source": "{lessons} lessons · {sections} sections · no account needed"
+    "source": "Over {lessons} lessons · {courses} courses · no account needed",
+    "back": "Over {lessons} lessons · {courses} courses · no account needed",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
   },
   "pages.home.lookAround": {
     "back": "Just look around (nothing is saved)",
@@ -903,18 +905,6 @@
     "back": "Hi {name}",
     "source": "Hi {name}"
   },
-  "pages.home.dashboard.summaryNone": {
-    "back": "You have not started any lessons yet. Next is Lesson {number}.",
-    "source": "You haven't started a lesson yet. Next up is Lesson {number}."
-  },
-  "pages.home.dashboard.summaryInProgress": {
-    "back": "You have finished {count} lessons. Next is Lesson {number}.",
-    "source": "You have finished {count} lessons. Next up is Lesson {number}."
-  },
-  "pages.home.dashboard.summaryDone": {
-    "back": "You have finished all the lessons. Well done.",
-    "source": "You have finished every lesson. Well done."
-  },
   "pages.home.dashboard.startHere": {
     "back": "Start here",
     "source": "Start here"
@@ -922,18 +912,6 @@
   "pages.home.dashboard.startCta": {
     "back": "Start",
     "source": "Start"
-  },
-  "pages.home.dashboard.continueEyebrow": {
-    "back": "Continue from where you stopped",
-    "source": "Pick up where you left off"
-  },
-  "pages.home.dashboard.upNext": {
-    "back": "Next",
-    "source": "Up next"
-  },
-  "pages.home.dashboard.finishedTitle": {
-    "back": "You have finished this course",
-    "source": "You've finished the course"
   },
   "pages.home.dashboard.finishedBody": {
     "back": "You can go back to any lesson, or try the section check(s) once more.",
@@ -955,33 +933,9 @@
     "back": "Saved on this device",
     "source": "Saved on this device"
   },
-  "pages.home.dashboard.yourCourse": {
-    "back": "Your course",
-    "source": "Your course"
-  },
-  "pages.home.dashboard.seeAll": {
-    "back": "See all {count} lessons",
-    "source": "See all {count} lessons"
-  },
-  "pages.home.dashboard.youAreHere": {
-    "back": "You are here",
-    "source": "You are here"
-  },
-  "pages.home.dashboard.sectionCheckReady": {
-    "back": "Section check ready",
-    "source": "Section check ready"
-  },
-  "pages.home.dashboard.sectionCheckBody": {
-    "back": "You have finished all {count} lessons. Try {questions} questions to see what you remember. Do it as many times as you want.",
-    "source": "You finished all {count} lessons. Try {questions} questions to see what you remember. Take it as many times as you like."
-  },
   "pages.home.dashboard.startCheck": {
     "back": "Start check",
     "source": "Start the check"
-  },
-  "pages.home.dashboard.fromJournal": {
-    "back": "From your journal",
-    "source": "From your journal"
   },
   "pages.home.dashboard.openJournal": {
     "back": "Open my journal",
@@ -992,8 +946,10 @@
     "source": "Nothing saved yet. Your writing and reflections show up here once you start."
   },
   "pages.home.dashboard.latestEntry": {
-    "back": "{stage} · Lesson {number}",
-    "source": "{stage} · Lesson {number}"
+    "source": "{stage} · {course}",
+    "back": "{stage} · {course}",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
   },
   "pages.home.dashboard.languageTitle": {
     "back": "Your language",
@@ -3578,12 +3534,16 @@
     "source": "See the credits"
   },
   "pages.credits.title": {
-    "back": "Acknowledgements",
-    "source": "Credits"
+    "source": "Credits and sources",
+    "back": "Credits and sources",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
   },
   "pages.credits.intro": {
-    "back": "Thinkerwell is built on the work of many people and organisations. Thank you to all of them. This page lists the sources behind the lessons, the videos shown in the lessons, and the fonts, pictures and software used to build this site.",
-    "source": "Thinkerwell is built on the work of many people and organisations. Thank you to all of them. This page lists the sources behind the lessons, the videos they show, and the fonts, pictures and software the site is made with."
+    "source": "Thinkerwell is built on the work of many people and organisations. Thank you to all of them. This page lists the sources behind the lessons of every course, the videos they show, the pictures and images, and the fonts and software the site is made with.",
+    "back": "Thinkerwell is built on the work of many people and organisations. Thank you to all of them. This page lists the sources behind the lessons of every course, the videos they show, the pictures and images, and the fonts and software the site is made with.",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
   },
   "pages.credits.contents": {
     "back": "On this page",
@@ -3618,8 +3578,10 @@
     "source": "Pictures and design"
   },
   "pages.credits.picturesBody": {
-    "back": "The Thinkerwell mascot, the lesson pictures and the design of this site were produced for Thinkerwell.",
-    "source": "The Thinkerwell mascot, the lesson pictures and the site's design were made for Thinkerwell."
+    "source": "The Thinkerwell mascot, the site's design and the pictures drawn for the lessons were made for Thinkerwell. The photographs, artworks and maps in some lessons are not: they come from museums, archives and Wikimedia Commons. Each one is listed below by course and lesson, with who made it, where it is held, its licence and what Thinkerwell changed.",
+    "back": "The Thinkerwell mascot, the site's design and the pictures drawn for the lessons were made for Thinkerwell. The photographs, artworks and maps in some lessons are not: they come from museums, archives and Wikimedia Commons. Each one is listed below by course and lesson, with who made it, where it is held, its licence and what Thinkerwell changed.",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
   },
   "pages.credits.goalsTitle": {
     "back": "UN Sustainable Development Goal icons",
@@ -4740,42 +4702,6 @@
   "digitalWorld.compare.paperAnswer": {
     "back": "Group with the most mistakes:",
     "source": "The group with the most mistakes:"
-  },
-  "previewCourse.map.noChecks": {
-    "back": "There are no section checks or certificates in this draft yet.",
-    "source": "There are no section checks or certificates in this draft yet.",
-    "flag": true
-  },
-  "previewCourse.map.noCertificates": {
-    "source": "There are no certificates in this draft yet.",
-    "flag": true,
-    "note": "Preview courses (November 2026): drafted by AI, not yet reviewed by a native speaker."
-  },
-  "previewCourse.map.forTeachersTitle": {
-    "back": "For teachers and reviewers",
-    "source": "For teachers and reviewers",
-    "flag": true
-  },
-  "digitalWorld.map.forTeachersBody": {
-    "flag": true,
-    "note": "Translator: This item is marked for learners, but the text speaks to teachers. I wrote the last sentence without a pronoun ('Seluruh kursus juga boleh dicetak') so it uses neither 'kamu' nor 'anda'.",
-    "back": "Every lesson has a teacher's guide with notes, answers, paper activities and notes for reviewers. The whole course can also be printed.",
-    "source": "Each lesson has a teacher guide with its notes, the answers, the activity on paper and notes for reviewers. You can also print the whole course."
-  },
-  "previewCourse.map.printAll": {
-    "back": "Print all lessons",
-    "source": "Print all lessons",
-    "flag": true
-  },
-  "previewCourse.map.guideLink": {
-    "back": "Teacher's guide, Lesson {number}: {title}",
-    "source": "Teacher guide, Lesson {number}: {title}",
-    "flag": true
-  },
-  "previewCourse.map.answerKeyLink": {
-    "source": "Answer key: {title}",
-    "flag": true,
-    "note": "Preview courses (November 2026): drafted by AI, not yet reviewed by a native speaker. {title} is the section's name, in English."
   },
   "digitalWorld.plan.answerLabel": {
     "back": "Your answer",
@@ -5917,9 +5843,10 @@
     "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.guides.intro": {
-    "back": "Each lesson's teacher guide has a session plan, the answers and teaching notes, and each lesson prints. Open a section to see its lessons.",
-    "source": "Each lesson's teacher guide has a session plan, the answers and teaching notes, and each lesson prints. Open a section to see its lessons.",
-    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+    "source": "Each lesson's teacher guide has a session plan, the answers and teaching notes, and each lesson prints. Choose a course, then open a section to see its lessons.",
+    "back": "Each lesson's teacher guide has a session plan, the answers and teaching notes, and each lesson prints. Choose a course, then open a section to see its lessons.",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
   },
   "pages.guides.lessons": {
     "back": "Lessons {range}",
@@ -5937,9 +5864,10 @@
     "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.guides.printLabel": {
-    "back": "Print Lesson {number}",
-    "source": "Print Lesson {number}",
-    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
+    "source": "Print Lesson {number}: {title}",
+    "back": "Print Lesson {number}: {title}",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
   },
   "footer.contact": {
     "back": "Contact",
@@ -6176,11 +6104,6 @@
     "flag": true,
     "note": "Southeast Asia Through Time preview (November 2026): drafted by AI, not yet reviewed by a native speaker. The course name stays in English while its lessons are English."
   },
-  "southeastAsia.map.forTeachersBody": {
-    "source": "Each lesson has a teacher guide with its notes, the answers, both pictures with their credits, and notes for reviewers. You can also print the whole course.",
-    "flag": true,
-    "note": "Southeast Asia Through Time preview (November 2026): drafted by AI, not yet reviewed by a native speaker. The course name stays in English while its lessons are English."
-  },
   "southeastAsia.switch.onBody": {
     "source": "This device now shows Southeast Asia Through Time, a draft course about the history of Southeast Asia through real objects, maps, photos and letters. Nobody else sees it, and nothing about it is sent anywhere. It stays on until you turn it off.",
     "flag": true,
@@ -6202,5 +6125,197 @@
     "back": "Choose the courses and lessons to be taught (For educators, then {guides}).",
     "flag": true,
     "note": "Changed 9 November 2026 for the whole-platform pilot: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.guides.printAll": {
+    "source": "Print all lessons",
+    "back": "Print all lessons",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.guides.printAllLabel": {
+    "source": "Print every lesson in {course}",
+    "back": "Print every lesson in {course}",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.guides.loading": {
+    "source": "Loading the other courses",
+    "back": "Loading the other courses",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.guides.outlineFailed": {
+    "source": "The lists for the other courses didn't load. Open this page again to try once more.",
+    "back": "The lists for the other courses didn't load. Open this page again to try once more.",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.credits.coursesContents": {
+    "source": "By course",
+    "back": "By course",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.credits.pictureFirst": {
+    "source": "First picture",
+    "back": "First picture",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.credits.pictureSecond": {
+    "source": "Second picture",
+    "back": "Second picture",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.credits.pictureOriginal": {
+    "source": "{slot}: made for Thinkerwell.",
+    "back": "{slot}: made for Thinkerwell.",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.credits.pictureWork": {
+    "source": "{slot}: “{title}”, {creator}, {created}.",
+    "back": "{slot}: “{title}”, {creator}, {created}.",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.credits.pictureHeldBy": {
+    "source": "Held by {institution}.",
+    "back": "Held by {institution}.",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.credits.pictureRecord": {
+    "source": "See the original record or file",
+    "back": "See the original record or file",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.credits.pictureLicence": {
+    "source": "Licence: {licence}",
+    "back": "Licence: {licence}",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.credits.pictureChanges": {
+    "source": "Changes: {changes}",
+    "back": "Changes: {changes}",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.home.dashboard.progressTitle": {
+    "source": "Your progress",
+    "back": "Your progress",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.home.dashboard.progressCount": {
+    "source": "{\"one\": \"{completed} of {total} lesson completed\", \"other\": \"{completed} of {total} lessons completed\"}",
+    "back": "{\"one\": \"{completed} of {total} lesson completed\", \"other\": \"{completed} of {total} lessons completed\"}",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.home.dashboard.resumeHere": {
+    "source": "Resume here",
+    "back": "Resume here",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.home.dashboard.keepExploring": {
+    "source": "Keep exploring",
+    "back": "Keep exploring",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.home.dashboard.chooseText": {
+    "source": "Choose a course to start learning.",
+    "back": "Choose a course to start learning.",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.home.dashboard.resumeText": {
+    "source": "Pick up where you left off.",
+    "back": "Pick up where you left off.",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.home.dashboard.chooseCourse": {
+    "source": "Choose a course",
+    "back": "Choose a course",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.home.dashboard.resumeLesson": {
+    "source": "Resume lesson",
+    "back": "Resume lesson",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.home.dashboard.startLesson": {
+    "source": "Start lesson",
+    "back": "Start lesson",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.home.dashboard.coursesTitle": {
+    "source": "Your courses",
+    "back": "Your courses",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.home.dashboard.courseCount": {
+    "source": "{\"one\": \"{completed} of {total} lesson\", \"other\": \"{completed} of {total} lessons\"}",
+    "back": "{\"one\": \"{completed} of {total} lesson\", \"other\": \"{completed} of {total} lessons\"}",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.home.dashboard.openCourse": {
+    "source": "Open course",
+    "back": "Open course",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.home.dashboard.openCourseLabel": {
+    "source": "Open {course}",
+    "back": "Open {course}",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.home.dashboard.journalTitle": {
+    "source": "My journal",
+    "back": "My journal",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.home.dashboard.offlinePartBadge": {
+    "source": "{\"one\": \"{ready} of {total} lesson ready offline\", \"other\": \"{ready} of {total} lessons ready offline\"}",
+    "back": "{\"one\": \"{ready} of {total} lesson ready offline\", \"other\": \"{ready} of {total} lessons ready offline\"}",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.home.dashboard.offlineSaveLink": {
+    "source": "Save all courses for offline use",
+    "back": "Save all courses for offline use",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.home.dashboard.offlineHelp": {
+    "source": "Save all courses in Settings first. Videos need internet. Download lesson audio separately to listen offline.",
+    "back": "Save all courses in Settings first. Videos need internet. Download lesson audio separately to listen offline.",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.home.dashboard.offlineHelpDone": {
+    "source": "Videos need internet. Download lesson audio separately to listen offline.",
+    "back": "Videos need internet. Download lesson audio separately to listen offline.",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.guides.teacherGuideLabel": {
+    "source": "Teacher guide for Lesson {number}: {title}",
+    "back": "Teacher guide for Lesson {number}: {title}",
+    "flag": true,
+    "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
   }
 }

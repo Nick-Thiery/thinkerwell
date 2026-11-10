@@ -62,7 +62,6 @@ describe('withCourseWords', () => {
     );
     const { result } = renderHook(() => useI18n(), { wrapper });
     await waitFor(() => expect(result.current.locale).toBe('id'));
-    expect(result.current.t('previewCourse.map.reviewAction')).toBe('Beri tahu kami apa yang perlu diperbaiki');
     expect(result.current.t('previewCourse.switch.open', { title: 'Digital World' })).toBe('Buka Digital World');
     expect(result.current.t('digitalWorld.trainModel.score', { right: 4, of: 6 })).toBe('Model benar 4 dari 6.');
   });

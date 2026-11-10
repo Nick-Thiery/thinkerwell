@@ -1,11 +1,13 @@
 import { useEffect, useRef } from 'react';
-import type { Section } from '../../content';
-import { Icon } from '../../components/ds';
+import { Icon, type SectionId } from '../../components/ds';
 import { useI18n } from '../../i18n';
 import { SECTION_ICONS } from './sectionIcons';
+import type { OverviewSection, SectionLook } from './overviewTypes';
 
 export interface SectionChipsProps {
-  sections: readonly Section[];
+  sections: readonly OverviewSection[];
+  /** A section's tint and icon (Our World's own ids by default). */
+  looks?: (sectionId: string) => SectionLook;
   /** The section holding the learner's next step: shown pressed/ink, and scrolled into view. */
   currentSectionId?: string;
 }
@@ -19,7 +21,7 @@ export interface SectionChipsProps {
  * or see as a link. Hidden above 1024px in CoursePage.css in favour of
  * SectionsSidebar.
  */
-export function SectionChips({ sections, currentSectionId }: SectionChipsProps) {
+export function SectionChips({ sections, looks, currentSectionId }: SectionChipsProps) {
   const { t, contentLang } = useI18n();
   const currentRef = useRef<HTMLAnchorElement>(null);
 
@@ -33,7 +35,7 @@ export function SectionChips({ sections, currentSectionId }: SectionChipsProps) 
         const isCurrent = section.id === currentSectionId;
         return (
           <a key={section.id} href={`#${section.id}`} className="tw-chip" aria-current={isCurrent ? 'true' : undefined} ref={isCurrent ? currentRef : undefined}>
-            <Icon name={SECTION_ICONS[section.id]} size={18} />
+            <Icon name={looks?.(section.id).icon ?? SECTION_ICONS[section.id as SectionId]} size={18} />
             <span {...contentLang}>{section.title}</span>
           </a>
         );

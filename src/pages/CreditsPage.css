@@ -39,6 +39,10 @@
   margin: 0 0 var(--space-1);
 }
 
+.tw-credits-contents h3 {
+  margin: var(--space-3) 0 var(--space-1);
+}
+
 .tw-credits-contents ul {
   display: flex;
   flex-wrap: wrap;
@@ -171,4 +175,41 @@
   flex-direction: column;
   align-items: flex-start;
   margin-block-start: var(--space-2);
+}
+
+/* One course's lessons inside a card: its heading, then its four sections folded. */
+.tw-credits-course {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-block-start: var(--space-4);
+  scroll-margin-block-start: var(--space-6);
+}
+
+.tw-credits-card .tw-credits-course-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  margin: 0;
+}
+
+.tw-credits-card .tw-credits-lessons {
+  margin: 0;
+  gap: var(--space-5);
+}
+
+.tw-credits-card .tw-credits-lesson-heading {
+  margin: 0;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+/* A picture from another source: its credit as short lines, one under the other. */
+.tw-credits-picture {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-block-end: var(--space-2);
 }

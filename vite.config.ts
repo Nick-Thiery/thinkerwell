@@ -36,6 +36,7 @@ import { PSEUDO_TRANSFORMS, pseudoMessages } from './src/i18n/pseudo.ts';
 import { pageHead, seoPages, shellHead, sitemapXml, withHead, type SeoInput, type SeoLesson } from './src/seo/build.ts';
 import { SHELL_FILE } from './src/seo/site.ts';
 import { videoReviewData } from './tools/videos/reviewData.ts';
+import { buildCredits, buildOutlines, outlineSourceFiles } from './tools/outline/build.ts';
 
 /**
  * Which kind of content file a module is, and which course's
@@ -244,9 +245,48 @@ function lessonCatalog(): Plugin {
           const translated = path.join(dir, code, 'course.json');
           if (existsSync(translated)) titles[code] = read(`${code}/course.json`).course.title;
         }
-        courses[course.id] = { titles, lessons: lessonFiles.length, sections: english.sections?.length ?? 0 };
+        // Every lesson's id, in lesson order, so a device can count a course's finished lessons without loading it.
+        const lessonIds = lessonFiles
+          .map((name) => {
+            const file = path.join(dir, 'lessons', name);
+            this.addWatchFile(file);
+            const lesson = JSON.parse(readFileSync(file, 'utf8')) as { id: string; number: number };
+            return { id: lesson.id, number: lesson.number };
+          })
+          .sort((a, b) => a.number - b.number)
+          .map((lesson) => lesson.id);
+        courses[course.id] = { titles, lessons: lessonFiles.length, sections: english.sections?.length ?? 0, lessonIds };
       }
       return `export default ${JSON.stringify({ lessons, quizQuestions, courses })};`;
+    },
+  };
+}
+
+const COURSE_OUTLINE = 'virtual:thinkerwell/course-outline';
+const COURSE_CREDITS = 'virtual:thinkerwell/course-credits';
+
+/**
+ * The outline and the credits records of the courses other than Our World
+ * (src/content/outlineTypes.ts, tools/outline/build.ts): two virtual modules,
+ * each loaded with import() by the pages that need it (the learner home, the
+ * teacher guides, Credits), so no course's lessons are downloaded for them and
+ * nothing is kept by hand next to the lesson files.
+ */
+function courseOutline(): Plugin {
+  let root = process.cwd();
+  return {
+    name: 'thinkerwell:course-outline',
+    configResolved(config) {
+      root = config.root;
+    },
+    resolveId(id) {
+      return id === COURSE_OUTLINE || id === COURSE_CREDITS ? `\0${id}` : null;
+    },
+    load(id) {
+      if (id !== `\0${COURSE_OUTLINE}` && id !== `\0${COURSE_CREDITS}`) return null;
+      for (const file of outlineSourceFiles(root)) this.addWatchFile(file);
+      const data = id === `\0${COURSE_OUTLINE}` ? buildOutlines(root) : buildCredits(root);
+      return `export default ${JSON.stringify(data)};`;
     },
   };
 }
@@ -840,6 +880,7 @@ export default defineConfig({
     testLocalVideos(),
     checkContent(),
     lessonCatalog(),
+    courseOutline(),
     stripTeamOnlyLessonFields(),
     stripBuildOnlyMessages(),
     lazyMessages(),

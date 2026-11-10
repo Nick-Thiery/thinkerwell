@@ -45,23 +45,24 @@ describe('the courses every device shows', () => {
     expect(screen.getByRole('heading', { level: 1, name: 'Southeast Asia Through Time' })).toBeInTheDocument();
   });
 
-  it('shows Digital World’s map with its note about what is still being checked, its four sections and no section checks', async () => {
+  it('shows Digital World’s map in Our World’s layout: its four sections, with no overview-only notices, section checks or teacher directory', async () => {
     renderAt('/course/digital-world');
     expect(await screen.findByRole('heading', { level: 1, name: 'Digital World' })).toBeInTheDocument();
     expect(screen.queryByText(/Draft course/)).not.toBeInTheDocument();
     expect(screen.queryByRole('button', { name: 'Turn preview off' })).not.toBeInTheDocument();
-    expect(screen.getByText(/Digital World is new\. An AI researcher is still checking its facts\./)).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Tell us what to fix' })).toHaveAttribute('href', '/contact');
+    expect(screen.queryByText(/Digital World is new/)).not.toBeInTheDocument();
+    expect(screen.queryByText(/still checking its facts/)).not.toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: 'Tell us what to fix' })).not.toBeInTheDocument();
+    expect(screen.queryByText(/no section checks or certificates/)).not.toBeInTheDocument();
     expect(screen.getAllByRole('heading', { level: 2 }).map((h) => h.textContent)).toEqual([
       'How AI developed and how it works',
       'Who builds AI, and at what cost',
       'AI in daily life',
       'Truth, power and choices',
-      'For teachers',
     ]);
     expect(screen.queryByText(/Section check:/)).not.toBeInTheDocument();
-    expect(screen.getByText('This course has no section checks or certificates yet.')).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: /Teacher guide, Lesson 3: How AI learns from examples/ })).toHaveAttribute('href', '/educators/lesson/dw-how-ai-learns');
+    expect(screen.queryByRole('heading', { name: 'For teachers' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: /Teacher guide, Lesson 3/ })).not.toBeInTheDocument();
   });
 
   it('sends the old hidden address of a course to its map', async () => {

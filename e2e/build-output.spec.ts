@@ -83,8 +83,13 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * Raised to 837 kB later the same day: 836.1 kB with the educator copy for four courses (For organisations, the
  * Educators page, the session guide, the consent form and information sheet, the setup checklist) and the paper
  * session record and feedback sheet (a page in the Educators chunk and its words), all in English, Indonesian and Malay.
+ * Raised to 872 kB on 10 November 2026: 870.8 kB with Justin's course layout brief (+34.7 kB). 29.6 kB of it is data the
+ * build makes from the courses' own files so the Teacher guides and Credits pages can list all 73 lessons offline without
+ * downloading a course: every lesson's sources in three languages and every picture's credit (a chunk of 26.1 kB Brotli,
+ * loaded only by Credits) and the outline of the three other courses (3.5 kB, loaded by the guides and the learner Home).
+ * The rest is the pages' code and words in three languages (docs/notes/slow-internet.md).
  */
-const PRECACHE_BUDGET = 837_000;
+const PRECACHE_BUDGET = 872_000;
 /**
  * Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before),
  * 210.5 kB after the language and pilot-day merges, 212.7 kB with the header's language switch and the one language
@@ -131,8 +136,10 @@ const PRECACHE_BUDGET = 837_000;
  * names in the build-time catalog and the label), which Justin's brief of 9 November asked for; nothing of a course's
  * code, lessons or pictures is in a first visit. Raised to 230 kB later the same day: 229.0 kB once en.json (in the
  * first chunk) carried the educator and organisation copy for four courses.
+ * Raised to 232.5 kB on 10 November 2026: 231.6 kB with the new learner Home (the progress over all courses, the one
+ * "where to go next" card, the course rows) and the overview every course now shares. The course data itself is not in it.
  */
-const FIRST_VISIT_HOME_BUDGET = 230_000;
+const FIRST_VISIT_HOME_BUDGET = 232_500;
 
 const TEXT = /\.(html|js|css|svg|json|webmanifest)$/;
 
@@ -199,21 +206,18 @@ test('the production build has no source maps and no dev-only pages', { tag: '@o
 // (docs/notes/digital-world-preview.md): their lessons, activities, pictures,
 // words and styles, and the kit they share, are built into assets/preview/,
 // which the service worker never precaches, and load only on a device that
-// opened the course. These words and names appear nowhere else.
+// opened the course. These words and names appear nowhere else. (Lesson ids and titles are not markers: the build-time catalog and
+// outline list them, so Home, the teacher guides and Credits work without loading a course.)
 const DIGITAL_WORLD = [
-  'Digital World is new. An AI researcher',
-  'Dunia Digital adalah kursus baru',
-  "What AI is, and what it isn't",
   'Try the leaf model',
   'Plan your AI helper',
-  'dw-what-ai-is',
   'tw-dw-',
   'tw-pc-',
 ];
 // Southeast Asia Through Time, the second preview course: the same rule.
-const SOUTHEAST_ASIA = ['Southeast Asia Through Time is new. A historian', 'sat-01-ban-chiang-pot', 'SAT01-photo'];
+const SOUTHEAST_ASIA = ['Southeast Asia Through Time is new. A historian', 'SAT01-photo'];
 // Art, Architecture and Society, the third: the same rule.
-const ART_ARCHITECTURE = ['Art, Architecture and Society is new. An art historian', 'aas-01-art-and-context', 'AAS-01-A'];
+const ART_ARCHITECTURE = ['Art, Architecture and Society is new. An art historian', 'AAS-01-A'];
 
 // Vietnamese is a hidden preview language (ready: false, docs/notes/languages.md):
 // its messages, lessons and pictures are built into assets/locales/vi/, its font

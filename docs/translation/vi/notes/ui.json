@@ -754,8 +754,9 @@
     "back": "Every lesson has five steps"
   },
   "pages.home.hero.footnote": {
-    "source": "{lessons} lessons · {sections} sections · no account needed",
-    "back": "{lessons} lessons · {sections} sections · no account needed"
+    "source": "Over {lessons} lessons · {courses} courses · no account needed",
+    "back": "Over {lessons} lessons · {courses} courses · no account needed",
+    "flag": true
   },
   "pages.home.lookAround": {
     "source": "Just look around (nothing is saved)",
@@ -959,20 +960,6 @@
     "note": "'Chào {name}' with a bare name; check it is natural for a child (alt: Chào {name}, or Xin chào).",
     "back": "Hello {name}"
   },
-  "pages.home.dashboard.summaryNone": {
-    "source": "You haven't started a lesson yet. Next up is Lesson {number}.",
-    "back": "You haven't started any lesson. Next is Lesson {number}."
-  },
-  "pages.home.dashboard.summaryInProgress": {
-    "source": "You have finished {count} lessons. Next up is Lesson {number}.",
-    "back": "You have completed {count} lessons. Next is Lesson {number}."
-  },
-  "pages.home.dashboard.summaryDone": {
-    "source": "You have finished every lesson. Well done.",
-    "flag": true,
-    "note": "'Giỏi lắm' for 'Well done'. Check tone.",
-    "back": "You have completed all the lessons. Well done."
-  },
   "pages.home.dashboard.startHere": {
     "source": "Start here",
     "back": "Start here"
@@ -980,18 +967,6 @@
   "pages.home.dashboard.startCta": {
     "source": "Start",
     "back": "Start"
-  },
-  "pages.home.dashboard.continueEyebrow": {
-    "source": "Pick up where you left off",
-    "back": "Keep learning from where you stopped"
-  },
-  "pages.home.dashboard.upNext": {
-    "source": "Up next",
-    "back": "Next"
-  },
-  "pages.home.dashboard.finishedTitle": {
-    "source": "You've finished the course",
-    "back": "You have completed the course"
   },
   "pages.home.dashboard.finishedBody": {
     "source": "You can go back to any lesson, or try the section checks again.",
@@ -1015,35 +990,9 @@
     "source": "Saved on this device",
     "back": "Saved on this device"
   },
-  "pages.home.dashboard.yourCourse": {
-    "source": "Your course",
-    "back": "Your course"
-  },
-  "pages.home.dashboard.seeAll": {
-    "source": "See all {count} lessons",
-    "back": "See all {count} lessons"
-  },
-  "pages.home.dashboard.youAreHere": {
-    "source": "You are here",
-    "back": "You are here"
-  },
-  "pages.home.dashboard.sectionCheckReady": {
-    "source": "Section check ready",
-    "back": "Section review is ready"
-  },
-  "pages.home.dashboard.sectionCheckBody": {
-    "source": "You finished all {count} lessons. Try {questions} questions to see what you remember. Take it as many times as you like.",
-    "flag": true,
-    "note": "Plural only; 'Bạn làm bao nhiêu lần cũng được' for 'Take it as many times as you like'.",
-    "back": "You have finished all {count} lessons. Try {questions} questions to see what you remember. You can do it as many times as you like."
-  },
   "pages.home.dashboard.startCheck": {
     "source": "Start the check",
     "back": "Start review"
-  },
-  "pages.home.dashboard.fromJournal": {
-    "source": "From your journal",
-    "back": "From your journal"
   },
   "pages.home.dashboard.openJournal": {
     "source": "Open my journal",
@@ -1054,10 +1003,10 @@
     "back": "Nothing saved yet. Your writing and reflections will appear here once you start."
   },
   "pages.home.dashboard.latestEntry": {
-    "source": "{stage} · Lesson {number}",
+    "source": "{stage} · {course}",
     "flag": true,
     "note": "{stage} is a step name (Viết/Suy ngẫm).",
-    "back": "{stage} · Lesson {number}"
+    "back": "{stage} · {course}"
   },
   "pages.home.dashboard.languageTitle": {
     "source": "Your language",

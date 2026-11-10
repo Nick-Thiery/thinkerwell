@@ -5,6 +5,7 @@
  * lessons load only on a device that has turned the preview on.
  */
 import courseJson from '../../../content/courses/digital-world/course.json';
+import { COURSE_SECTION_LOOKS } from '../kit/courseLooks';
 import { createCourseContent, type LessonContent, type SectionLook } from '../../content/courseContent';
 import type { DigitalWorldCourseFile, DigitalWorldLesson, DigitalWorldSectionId } from '../../content/schema';
 import { translatedContents } from '../kit/translatedContent';
@@ -36,12 +37,7 @@ const pictureUrls = new Map(
  * sections use the same four tints in order, each beside its own icon and
  * name, as the brand book asks. Icons come from the design system's set.
  */
-export const SECTION_LOOKS: Readonly<Record<DigitalWorldSectionId, SectionLook>> = {
-  'thinking-machines': { tone: 'history', icon: 'Lightbulb' },
-  'who-builds-ai': { tone: 'geography', icon: 'Globe' },
-  'ai-in-daily-life': { tone: 'culture', icon: 'Users' },
-  'truth-and-power': { tone: 'civics', icon: 'Scale' },
-};
+export const SECTION_LOOKS: Readonly<Record<DigitalWorldSectionId, SectionLook>> = COURSE_SECTION_LOOKS['digital-world'];
 
 const coursePath = (sectionId?: string) => (sectionId ? `${COURSE_PATH}#${sectionId}` : COURSE_PATH);
 

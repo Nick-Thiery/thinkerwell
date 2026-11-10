@@ -226,7 +226,7 @@
         "description": "Học khoa học xã hội miễn phí cho thanh thiếu niên khắp Đông Nam Á, nhất là các bạn gặp rào cản trong việc học. Khám phá lịch sử, địa lí, văn hóa và đời sống công dân theo nhịp của riêng bạn.",
         "stagesLabel": "Bài học nào cũng có năm bước",
         "stagesLabelNoWatch": "Bài học nào cũng có bốn bước",
-        "footnote": "{lessons} bài học · {sections} phần · không cần tài khoản"
+        "footnote": "Hơn {lessons} bài học · {courses} khóa học · không cần tài khoản"
       },
       "lookAround": "Chỉ xem qua (không lưu gì cả)",
       "lookAroundNote": "Bài làm chỉ được lưu trên thiết bị này. Không mật khẩu, không ảnh.",
@@ -289,33 +289,17 @@
       },
       "dashboard": {
         "greeting": "Chào {name}",
-        "summaryNone": "Bạn chưa bắt đầu bài học nào. Tiếp theo là Bài {number}.",
-        "summaryInProgress": {
-          "other": "Bạn đã hoàn thành {count} bài học. Tiếp theo là Bài {number}."
-        },
-        "summaryDone": "Bạn đã hoàn thành mọi bài học. Giỏi lắm.",
         "startHere": "Bắt đầu từ đây",
         "startCta": "Bắt đầu",
-        "continueEyebrow": "Học tiếp từ chỗ bạn đã dừng",
-        "upNext": "Tiếp theo",
-        "finishedTitle": "Bạn đã hoàn thành khóa học",
         "finishedBody": "Bạn có thể quay lại bất kỳ bài học nào, hoặc làm lại các phần ôn tập.",
         "finishedCta": "Xem khóa học",
         "offlineBadge": "Cả {count} bài học dùng được khi không có mạng",
         "offlinePreparingBadge": "Đang lưu bài học để dùng khi không có mạng",
         "savedBadge": "Đã lưu trên thiết bị này",
-        "yourCourse": "Khóa học của bạn",
-        "seeAll": "Xem cả {count} bài học",
-        "youAreHere": "Bạn đang ở đây",
-        "sectionCheckReady": "Phần ôn tập đã sẵn sàng",
-        "sectionCheckBody": {
-          "other": "Bạn đã học hết {count} bài học. Thử {questions} câu hỏi để xem bạn nhớ được gì. Bạn làm bao nhiêu lần cũng được."
-        },
         "startCheck": "Bắt đầu ôn tập",
-        "fromJournal": "Từ nhật ký của bạn",
         "openJournal": "Mở nhật ký của mình",
         "noJournalYet": "Chưa lưu gì. Bài viết và phần suy ngẫm của bạn sẽ hiện ở đây khi bạn bắt đầu.",
-        "latestEntry": "{stage} · Bài {number}",
+        "latestEntry": "{stage} · {course}",
         "languageTitle": "Ngôn ngữ của bạn",
         "languageHelp": "Nút và hướng dẫn hiện bằng ngôn ngữ này. Với tiếng Việt và tiếng Indonesia, bài học cũng hiện bằng ngôn ngữ đó. Với các ngôn ngữ khác, bài học vẫn bằng tiếng Anh để bạn luyện tập.",
         "languageSaveFailed": "Chưa lưu được. Thử lại."
@@ -1439,15 +1423,6 @@
     "sheet": {
       "draft": "{title}: a new course. Its facts are still being checked."
     },
-    "map": {
-      "noChecks": "This course has no section checks or certificates yet.",
-      "noCertificates": "This course has no certificates yet.",
-      "forTeachersTitle": "For teachers",
-      "printAll": "In tất cả bài học",
-      "guideLink": "Hướng dẫn giáo viên, Bài {number}: {title}",
-      "answerKeyLink": "Đáp án: {title}",
-      "reviewAction": "Tell us what to fix"
-    },
     "printAll": {
       "back": "Quay lại {title}",
       "intro": "Mọi bài học {title}, lần lượt từng bài. Mỗi bài bắt đầu trên một trang mới. Bạn có thể in chúng, hoặc lưu thành tệp PDF.",
@@ -1481,7 +1456,6 @@
     }
   },
   "digitalWorld": {
-    "reviewNote": "Digital World is new. An AI researcher is still checking its facts.",
     "activity": {
       "eyebrow": "Hoạt động",
       "guideTitle": "Hoạt động",
@@ -1506,9 +1480,6 @@
       "mostMistakes": "Công cụ mắc nhiều lỗi nhất với {group}.",
       "notMost": "Công cụ làm tốt hơn với {group}. Hãy tìm nhóm có ít câu đúng nhất.",
       "paperAnswer": "Nhóm có nhiều lỗi nhất:"
-    },
-    "map": {
-      "forTeachersBody": "Mỗi bài học có một hướng dẫn giáo viên, gồm ghi chú, đáp án, hoạt động trên giấy và ghi chú cho người xem xét. Bạn cũng có thể in cả khóa học."
     },
     "plan": {
       "answerLabel": "Câu trả lời của bạn",
@@ -1657,20 +1628,12 @@
     "videoTitle": "Xem Thinkerwell trong thực tế"
   },
   "southeastAsia": {
-    "reviewNote": "Southeast Asia Through Time is new. A historian is still checking its facts.",
-    "map": {
-      "forTeachersBody": "Mỗi bài học có một hướng dẫn giáo viên, gồm ghi chú, đáp án, cả hai hình kèm nguồn, và ghi chú cho người xem xét. Bạn cũng có thể in cả khóa học."
-    },
     "switch": {
       "onBody": "Thiết bị này hiện đang hiển thị Southeast Asia Through Time, một khóa học nháp về lịch sử Đông Nam Á qua đồ vật, bản đồ, ảnh và thư thật. Không ai khác thấy nó, và không có gì về nó được gửi đi đâu cả. Chế độ này vẫn bật cho đến khi bạn tắt.",
       "reviewNote": "Khóa học chưa được xem xét. Một nhà sử học vẫn cần kiểm tra các dữ kiện của nó, và một tổ chức đối tác vẫn cần kiểm tra các chủ đề nhạy cảm. Chưa nên dùng với người học."
     }
   },
   "artArchitecture": {
-    "reviewNote": "Art, Architecture and Society is new. An art historian is still checking its facts.",
-    "map": {
-      "forTeachersBody": "Mỗi bài học có hướng dẫn cho giáo viên với ghi chú, ý chính của câu trả lời, cả hai hình ảnh kèm nguồn, và ghi chú cho người xem xét. Bạn cũng có thể in toàn bộ khóa học."
-    },
     "switch": {
       "onBody": "Thiết bị này giờ hiển thị Art, Architecture and Society, một khóa học nháp về những gì nghệ thuật và công trình kiến trúc cho ta biết về các xã hội đã tạo ra, sử dụng và gìn giữ chúng, qua đồ vật, tranh, nhà cửa và đường phố có thật. Không ai khác nhìn thấy nó, và không có gì về nó được gửi đi đâu. Nó vẫn bật cho đến khi bạn tắt.",
       "reviewNote": "Khóa học chưa được xem xét. Một nhà sử học nghệ thuật vẫn cần kiểm tra các dữ kiện, và một tổ chức đối tác kiểm tra các chủ đề nhạy cảm. Đừng dùng với học sinh lúc này."

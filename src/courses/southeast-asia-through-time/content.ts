@@ -6,6 +6,7 @@
  * on a device that has turned the preview on.
  */
 import courseJson from '../../../content/courses/southeast-asia-through-time/course.json';
+import { COURSE_SECTION_LOOKS } from '../kit/courseLooks';
 import { createCourseContent, type LessonContent, type SectionLook } from '../../content/courseContent';
 import type { AnyQuizFile, SoutheastAsiaCourseFile, SoutheastAsiaLesson, SoutheastAsiaSectionId } from '../../content/schema';
 import { translatedContents } from '../kit/translatedContent';
@@ -48,12 +49,7 @@ const pictureUrls = new Map(
  * four sections only, so the preview's sections use the same four tints in
  * order, each beside its own icon and name, as the brand book asks.
  */
-export const SECTION_LOOKS: Readonly<Record<SoutheastAsiaSectionId, SectionLook>> = {
-  'evidence-and-connections': { tone: 'history', icon: 'Search' },
-  'trade-and-power': { tone: 'geography', icon: 'Package' },
-  'war-and-independence': { tone: 'culture', icon: 'Landmark' },
-  'memory-and-shared-histories': { tone: 'civics', icon: 'Users' },
-};
+export const SECTION_LOOKS: Readonly<Record<SoutheastAsiaSectionId, SectionLook>> = COURSE_SECTION_LOOKS['southeast-asia-through-time'];
 
 const coursePath = (sectionId?: string) => (sectionId ? `${COURSE_PATH}#${sectionId}` : COURSE_PATH);
 

@@ -25,10 +25,8 @@ export const course = createPreviewCourse(
     contentFor: artArchitectureIn,
     words,
     wordKeys: {
-      reviewNote: 'artArchitecture.reviewNote',
       switchOnBody: 'artArchitecture.switch.onBody',
       switchReviewNote: 'artArchitecture.switch.reviewNote',
-      forTeachersBody: 'artArchitecture.map.forTeachersBody',
     },
     icon: 'Palette',
     path: COURSE_PATH,

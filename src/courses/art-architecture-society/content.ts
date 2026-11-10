@@ -6,6 +6,7 @@
  * on a device that has turned the preview on.
  */
 import courseJson from '../../../content/courses/art-architecture-society/course.json';
+import { COURSE_SECTION_LOOKS } from '../kit/courseLooks';
 import { createCourseContent, type LessonContent, type SectionLook } from '../../content/courseContent';
 import type { ArtCourseFile, ArtLesson, ArtSectionId } from '../../content/schema';
 import { translatedContents } from '../kit/translatedContent';
@@ -40,12 +41,7 @@ const pictureUrls = new Map(
  * four sections only, so the preview's sections use the same four tints in
  * order, each beside its own icon and name, as the brand book asks.
  */
-export const SECTION_LOOKS: Readonly<Record<ArtSectionId, SectionLook>> = {
-  'objects-making-power': { tone: 'history', icon: 'Palette' },
-  'buildings-belief-places': { tone: 'geography', icon: 'Landmark' },
-  'stories-lives-memory': { tone: 'culture', icon: 'BookOpen' },
-  'museums-heritage-connections': { tone: 'civics', icon: 'Globe' },
-};
+export const SECTION_LOOKS: Readonly<Record<ArtSectionId, SectionLook>> = COURSE_SECTION_LOOKS['art-architecture-society'];
 
 const coursePath = (sectionId?: string) => (sectionId ? `${COURSE_PATH}#${sectionId}` : COURSE_PATH);
 

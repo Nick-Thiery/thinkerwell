@@ -15,7 +15,7 @@ const pages: Array<[path: string, heading: string, title?: string]> = [
   ['/journal', 'My journal'],
   ['/educators', 'For educators', 'For Educators | Thinkerwell'],
   ['/about', 'About Thinkerwell', 'About Thinkerwell | Our Mission'],
-  ['/credits', 'Credits', 'Credits and Sources | Thinkerwell'],
+  ['/credits', 'Credits and sources', 'Credits and Sources | Thinkerwell'],
   ['/contact', 'Contact Thinkerwell', 'Contact Us | Thinkerwell'],
   ['/section/history/check', 'Section check: History & Human Stories'],
   ['/lesson/finding-out-about-the-past/read', 'How can we find out about the past?', 'Lesson 1: How can we find out about the past? | Thinkerwell'],
