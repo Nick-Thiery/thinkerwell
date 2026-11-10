@@ -126,7 +126,7 @@ export function CodeCardsPage() {
 
           <section className="tw-print-sheet tw-codes-list" aria-labelledby="codes-list-title">
             <header className="tw-print-head">
-              <p className="tw-print-brand">{t('print.brand')}</p>
+              <p className="tw-print-brand">{t('print.brandPlatform')}</p>
               <h2 id="codes-list-title" className="tw-print-title">
                 {t('pages.codeCards.listTitle')}
               </h2>

@@ -159,3 +159,44 @@ describe('earnedCertificates', () => {
     expect(earnedCertificates([], lessons, sections, 'en')).toEqual([]);
   });
 });
+
+describe('lessons finished in the other courses', () => {
+  const totals = { 'digital-world': 17, 'southeast-asia-through-time': 12, 'art-architecture-society': 20 };
+  const finishedIn = (learnerId: string, lessonId: string, at: string): LessonProgress => ({
+    ...emptyProgress(learnerId, lessonId),
+    stagesDone: ['read', 'write', 'speak', 'reflect'],
+    currentStage: 'reflect',
+    reflections: { 0: 'An answer.' },
+    startedAt: at,
+    updatedAt: at,
+    completedAt: at,
+  });
+
+  it('counts each other course a learner has opened a lesson of, out of how many it has, and leaves out the rest', () => {
+    const amina = learner('Amina');
+    const summary = summariseLearner(
+      work(amina, [
+        finishedIn(amina.id, 'dw-what-ai-is', day(5)),
+        finishedIn(amina.id, 'dw-history-of-ai', day(6)),
+        { ...emptyProgress(amina.id, 'dw-how-ai-learns'), stagesDone: ['read'], currentStage: 'write', startedAt: day(7), updatedAt: day(7) },
+        { ...emptyProgress(amina.id, 'aas-01-art-and-context'), stagesDone: ['read'], currentStage: 'write', startedAt: day(8), updatedAt: day(8) },
+      ]),
+      lessons,
+      sections,
+      undefined,
+      totals,
+    );
+    expect(summary.otherCourses).toEqual([
+      { courseId: 'digital-world', completed: 2, total: 17 },
+      { courseId: 'art-architecture-society', completed: 0, total: 20 },
+    ]);
+    // Our World's sections are unchanged by work in other courses.
+    expect(counts(summary)).toEqual({ history: '0 of 9', geography: '0 of 5', culture: '0 of 5', civics: '0 of 5' });
+  });
+
+  it('has none for a learner who has only used Our World, or when no course totals are given', () => {
+    const amina = learner('Amina');
+    expect(summariseLearner(work(amina, [finished(amina.id, 1, day(2))]), lessons, sections, undefined, totals).otherCourses).toEqual([]);
+    expect(summariseLearner(work(amina, [finishedIn(amina.id, 'dw-what-ai-is', day(2))]), lessons, sections).otherCourses).toEqual([]);
+  });
+});

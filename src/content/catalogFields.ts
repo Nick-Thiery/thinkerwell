@@ -10,3 +10,16 @@ export const LESSON_CATALOG_FIELDS = ['id', 'oldId', 'number', 'section', 'title
 
 /** A lesson as the catalog has it. A full Lesson is one too. */
 export type LessonSummary = Pick<Lesson, (typeof LESSON_CATALOG_FIELDS)[number]>;
+
+/**
+ * What the course choice needs to know about a course other than Our World
+ * without loading it: its name in each language it is translated into,
+ * and how many lessons and sections it has. Made at build time by the lesson
+ * catalog plugin in vite.config.ts, from the course's own files.
+ */
+export interface CourseSummary {
+  /** Its name by language code: always 'en', and 'id' and 'ms' where translated. */
+  titles: Record<string, string>;
+  lessons: number;
+  sections: number;
+}

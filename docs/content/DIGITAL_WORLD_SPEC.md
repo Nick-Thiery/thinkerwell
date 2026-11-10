@@ -1,6 +1,6 @@
 # Digital World: course spec (draft)
 
-Status: draft for Justin and Nick, written September 2026. Since October 2026 the 11 draft lessons are in the app as a **preview**: in `content/courses/digital-world/` (see its README), checked by the build, and shown only on a device that has visited `/preview/digital-world`, with a "Draft course: not yet reviewed" banner. Nobody else sees them, and they haven't been reviewed. How it works, the choices made where this spec is open, and what's left: `docs/notes/digital-world-preview.md`.
+Status: draft for Justin and Nick, written September 2026. The lessons are in `content/courses/digital-world/` (see its README), checked by the build, and since 9 November 2026 (the whole-platform pilot) open on every device at `/course/digital-world`. Its map says in plain words that the course is new and its facts are still being checked by an AI researcher. How it works, the choices made where this spec is open, and what's left: `docs/notes/digital-world-preview.md`, `docs/notes/offline-courses.md`.
 
 ## 1. What it is for, and who it's for
 

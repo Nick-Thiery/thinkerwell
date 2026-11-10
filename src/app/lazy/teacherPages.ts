@@ -11,6 +11,7 @@ export { EducatorsPage } from '../../pages/EducatorsPage';
 export { OrganisationsPage } from '../../pages/OrganisationsPage';
 export { CodeCardsPage } from '../../pages/educators/CodeCardsPage';
 export { ConsentFormPage } from '../../pages/educators/ConsentFormPage';
+export { FeedbackSheetPage } from '../../pages/educators/FeedbackSheetPage';
 export { PilotDayPage } from '../../pages/educators/PilotDayPage';
 export { PilotCheckPage } from '../../pages/educators/pilotCheck/PilotCheckPage';
 export { GuidesPage } from '../../pages/educators/GuidesPage';

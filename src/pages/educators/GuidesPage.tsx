@@ -12,7 +12,9 @@
 import { useSearchParams } from 'react-router';
 import { answerKeyPath, educatorsPath, lessonPrintPath, teacherGuidePath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
-import { Button, Icon } from '../../components/ds';
+import { Button, Icon, type IconName } from '../../components/ds';
+import { courseSummaries } from '../../content/catalog';
+import { COURSES, DEFAULT_COURSE_ID } from '../../content/courses';
 import { useContent } from '../../content/useContent';
 import { En, useI18n } from '../../i18n';
 import { SECTION_ICONS } from '../course/sectionIcons';
@@ -21,7 +23,7 @@ import '../EducatorsPage.css';
 import './GuidesPage.css';
 
 export function GuidesPage() {
-  const { t, tx, contentLang } = useI18n();
+  const { t, tx, contentLang, contentLocale } = useI18n();
   const content = useContent();
   const title = t('pages.guides.title');
   usePageTitle(title);
@@ -39,6 +41,9 @@ export function GuidesPage() {
         </h1>
         <p className="body-lg">{t('pages.guides.intro')}</p>
       </header>
+      <h2 className="h3 tw-guides-course-title" {...contentLang}>
+        {content.getCourse().course.title}
+      </h2>
       {content.getSections().map((section) => {
         const lessons = content.getSectionLessons(section.id);
         const quiz = content.getQuiz(section.id);
@@ -113,6 +118,39 @@ export function GuidesPage() {
           </LessonDisclosure>
         );
       })}
+      {/* The other courses' guides are on each course's own page (their lessons load with the course). */}
+      <section className="tw-guides-others" aria-labelledby="tw-guides-others-title">
+        <h2 id="tw-guides-others-title" className="h3">
+          {t('pages.guides.otherTitle')}
+        </h2>
+        <p className="body">{t('pages.guides.otherBody')}</p>
+        <ul className="tw-guides-lessons" role="list">
+          {COURSES.filter((course) => course.id !== DEFAULT_COURSE_ID && courseSummaries[course.id]).map((course) => {
+            const summary = courseSummaries[course.id]!;
+            const translated = summary.titles[contentLocale.code];
+            const name = translated ?? summary.titles.en ?? course.id;
+            return (
+              <li key={course.id} className="tw-guides-lesson">
+                <span className="tw-guides-lesson-title">
+                  <Icon name={(course.icon ?? 'BookOpen') as IconName} size={20} />{' '}
+                  <span {...(translated ? contentLang : {})}>{name}</span>
+                  <span className="small tw-guides-range"> {t('pages.guides.lessonCount', { count: summary.lessons })}</span>
+                </span>
+                <span className="tw-guides-actions">
+                  <Button
+                    variant="secondary"
+                    icon="GraduationCap"
+                    href={`/course/${course.id}#teacher-guides`}
+                    aria-label={t('pages.guides.otherOpenLabel', { course: name })}
+                  >
+                    {t('pages.guides.otherOpen')}
+                  </Button>
+                </span>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
     </div>
   );
 }

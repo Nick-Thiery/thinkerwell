@@ -34,6 +34,4 @@ export interface PreviewCourseModule {
   readonly SectionCheckRoute: ComponentType<{ sectionId: string }>;
   /** /educators/section/:id/answers for one of its sections. */
   readonly AnswerKeyRoute: ComponentType<{ sectionId: string }>;
-  /** Its link in the course choice (src/courses/kit/CourseChoice.tsx; `current`: the course map shown). */
-  readonly ChoiceLink: ComponentType<{ current?: string }>;
 }

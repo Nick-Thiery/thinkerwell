@@ -13,7 +13,9 @@
 import { useId } from 'react';
 import { allCertificatesPath, educatorsPath, setupPath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
-import { Button, Icon, SectionBadge } from '../../components/ds';
+import { Button, Icon, SectionBadge, type IconName } from '../../components/ds';
+import { COURSES } from '../../content/courses';
+import { courseSummaries } from '../../content/catalog';
 import { useContent } from '../../content/useContent';
 import { En, useI18n } from '../../i18n';
 import { addedOn, learnersWithSameName, useLearnerSession } from '../../session';
@@ -21,6 +23,11 @@ import { byName, summariseLearner, type LearnerSummary, type OnNow } from './cla
 import './ClassPage.css';
 import { useAddLearner } from './useAddLearner';
 import { useClassWork } from './useClassWork';
+
+/** How many lessons each other course has, from the build-time list (so no course's code loads for this page). */
+const courseLessonTotals: Readonly<Record<string, number>> = Object.fromEntries(
+  Object.entries(courseSummaries).map(([id, summary]) => [id, summary.lessons]),
+);
 
 export function ClassPage() {
   const { t, lang, formatDate } = useI18n();
@@ -38,7 +45,7 @@ export function ClassPage() {
   const lessons = content.getLessons();
   const sections = content.getSections();
   const summaries = byName(
-    work.map((each) => summariseLearner(each, lessons, sections, content.stagesFor)),
+    work.map((each) => summariseLearner(each, lessons, sections, content.stagesFor, courseLessonTotals)),
     lang,
   );
   const sameName = learnersWithSameName(work.map((each) => each.learner));
@@ -105,8 +112,8 @@ export function ClassPage() {
 }
 
 function LearnerCard({ summary, name }: { summary: LearnerSummary; name: string }) {
-  const { t, formatDate, contentLang } = useI18n();
-  const { learner, sections, onNow, lastActive, checksTried } = summary;
+  const { t, formatDate, contentLang, contentLocale } = useI18n();
+  const { learner, sections, otherCourses, onNow, lastActive, checksTried } = summary;
   const titleId = useId();
   const lessonsId = useId();
   const checksId = useId();
@@ -153,6 +160,19 @@ function LearnerCard({ summary, name }: { summary: LearnerSummary; name: string 
               <span className="tw-class-section-count">{t('pages.classView.lessonsOf', { completed, total })}</span>
             </li>
           ))}
+          {otherCourses.map(({ courseId, completed, total }) => {
+            const titles = courseSummaries[courseId]?.titles;
+            const translated = titles?.[contentLocale.code];
+            return (
+              <li key={courseId}>
+                <Icon name={(COURSES.find((course) => course.id === courseId)?.icon ?? 'BookOpen') as IconName} size={32} />
+                <span className="tw-class-section-name" {...(translated ? contentLang : {})}>
+                  {translated ?? titles?.en ?? courseId}
+                </span>
+                <span className="tw-class-section-count">{t('pages.classView.lessonsOf', { completed, total })}</span>
+              </li>
+            );
+          })}
         </ul>
       </section>
 

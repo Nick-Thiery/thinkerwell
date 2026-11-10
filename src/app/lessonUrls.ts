@@ -44,7 +44,7 @@ export function courseCertificatePath(): string {
 }
 
 /** A part of Settings that other pages link straight to. */
-export type SettingsPart = 'listen-voice' | 'lesson-audio' | 'say-it' | 'move-work' | 'share-results';
+export type SettingsPart = 'listen-voice' | 'course-files' | 'lesson-audio' | 'say-it' | 'move-work' | 'share-results';
 
 /** Settings for this device, or one part of it (/settings#say-it): the page scrolls to it once it has loaded. */
 export function settingsPath(part?: SettingsPart): string {
@@ -59,6 +59,11 @@ export function setupPath(): string {
 /** The staff's one-page guide for a session, to print: /educators/session-guide (it was /educators/pilot-day). */
 export function sessionGuidePath(): string {
   return '/educators/session-guide';
+}
+
+/** The session record and feedback sheet for educators, to print: /educators/feedback-sheet. */
+export function feedbackSheetPath(): string {
+  return '/educators/feedback-sheet';
 }
 
 /** The learning check's paper sheets and answer key, for the optional study, to print: /educators/learning-check (it was /educators/pilot-check). */

@@ -52,8 +52,7 @@ export const course = createPreviewCourse(
     contentFor: digitalWorldIn,
     words,
     wordKeys: {
-      bannerBody: 'digitalWorld.banner.body',
-      bannerBodyEnglishLessons: 'digitalWorld.banner.bodyEnglishLessons',
+      reviewNote: 'digitalWorld.reviewNote',
       switchOnBody: 'digitalWorld.switch.onBody',
       switchReviewNote: 'digitalWorld.switch.reviewNote',
       forTeachersBody: 'digitalWorld.map.forTeachersBody',

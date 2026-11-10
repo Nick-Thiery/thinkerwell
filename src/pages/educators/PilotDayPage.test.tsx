@@ -53,7 +53,7 @@ describe('the pilot day guide', () => {
 
   it('says what learners do: five stages, nothing locked, and how long', () => {
     const learn = part(renderPage(), 'What learners do');
-    expect(learn).toHaveTextContent('Every lesson has five stages: Read, Write, Speak, Watch, and Reflect.');
+    expect(learn).toHaveTextContent('Most lessons have five stages: Read, Write, Speak, Watch, and Reflect. A lesson with no video has four, without Watch.');
     expect(learn).toHaveTextContent('Nothing is locked. Learners can open any lesson and any stage, in any order, and try the quick checks again.');
     // The same range as the Educators page (the shortest to the longest lesson), and the teacher guides' plans.
     const lessons = getLessons();
@@ -78,7 +78,7 @@ describe('the pilot day guide', () => {
     ]);
     expect(items[0]).toHaveTextContent('Connect to the internet and tap Try again. Saved work stays on the device.');
     expect(items[1]).toHaveTextContent('Keep going.');
-    expect(items[1]).toHaveTextContent('work saves on the device');
+    expect(items[1]).toHaveTextContent('Work saves on the device');
     expect(items[2]).toHaveTextContent('Each learner taps their own tile on the home page.');
     expect(items[3]).toHaveTextContent(
       "If you saved a file, open Settings, tap Load my work and choose it. Look in the device's downloads for a name that starts with thinkerwell.",
@@ -92,7 +92,7 @@ describe('the pilot day guide', () => {
     const topics = part(renderPage(), 'Sensitive topics');
     expect(topics).toHaveTextContent('Never ask learners about their journey, home country, family, religion or ethnicity.');
     expect(topics).toHaveTextContent('It starts with Sensitive topics: read before class, and it says which videos to preview.');
-    expect(topics).toHaveTextContent('Lessons 4 and 19 ask for a local educator to review them first.');
+    expect(topics).toHaveTextContent('In Exploring Our World, Lessons 4 and 19 ask for a local educator to review them first.');
   });
 
   it('names the lessons whose guides ask for a review first, and no others', () => {

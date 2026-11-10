@@ -19,6 +19,8 @@ export const LAZY_MESSAGE_GROUPS = [
   'siteVideo',
   // The pilot day guide for staff (src/pages/educators/PilotDayPage.tsx): one printable page, in the Educators chunk.
   'pilotDay',
+  // The session record and feedback sheet (src/pages/educators/FeedbackSheetPage.tsx), in the Educators chunk.
+  'feedbackSheet',
   // The before-and-after check's sheets and answer key (src/pages/educators/pilotCheck/), in the Educators chunk.
   'pilotCheck',
   // About's "How our lessons work" card, its research and the video's heading (src/pages/AboutPage.tsx), in the Settings and About chunk.

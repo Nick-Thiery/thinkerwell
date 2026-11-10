@@ -23,25 +23,25 @@ describe('For organisations', () => {
     renderAt('/organisations', <OrganisationsPage />);
     expect(screen.getByText('For learning organisations')).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 1, name: 'Use Thinkerwell with your learners' })).toBeInTheDocument();
-    expect(screen.getByText(/Thinkerwell offers a free social studies course and educator resources for youth across Southeast Asia/)).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Browse the course' })).toHaveAttribute('href', '/course');
+    expect(screen.getByText(/Thinkerwell offers free social studies courses and educator resources for youth across Southeast Asia/)).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Browse the courses' })).toHaveAttribute('href', '/course');
     const who = screen.getByRole('region', { name: 'Who runs Thinkerwell?' });
     expect(within(who).getByText(/It is not a registered charity or nonprofit/)).toBeInTheDocument();
-    expect(screen.getByText(/One course, Exploring Our World: 24 lessons .* for learners aged about 10 to 17/)).toBeInTheDocument();
+    expect(screen.getByText(/Four courses for learners aged about 10 to 17\. Exploring Our World: 24 lessons/)).toBeInTheDocument();
     // The platform isn't presented as a pilot anywhere on the page.
     expect(document.body.textContent).not.toMatch(/pilot/i);
   });
 
   it('covers what you get, what you need to run a group, using the course and getting ready', () => {
     renderAt('/organisations', <OrganisationsPage />);
-    for (const name of ['What Thinkerwell offers', 'What you get', 'What you need to run a group', 'Using the course', 'Get ready']) {
+    for (const name of ['What Thinkerwell offers', 'What you get', 'What you need to run a group', 'Using Thinkerwell', 'Get ready']) {
       expect(screen.getByRole('heading', { level: 2, name })).toBeInTheDocument();
     }
     const need = screen.getByRole('region', { name: 'What you need to run a group' });
     expect(within(need).getByText('An educator or volunteer to lead each session.')).toBeInTheDocument();
     // No weeks-long commitment, and no study tasks, to use the course.
     expect(need.textContent).not.toMatch(/weeks|feedback|study/i);
-    const using = screen.getByRole('region', { name: 'Using the course' });
+    const using = screen.getByRole('region', { name: 'Using Thinkerwell' });
     expect(within(using).getByText(/Learners can use codes instead of names\. Each learner gets a code card/)).toBeInTheDocument();
     // Honest about the outside services a learner can reach: never "nothing leaves the device".
     expect(within(using).getByText(/Learners' work and progress stay on the device they use, and are not sent to Thinkerwell\. Online speech-to-text is off/)).toBeInTheDocument();
@@ -165,9 +165,9 @@ describe('the consent form', () => {
     renderAt('/educators/consent-form', <ConsentFormPage />);
     const parentPage = pages()[0]!;
     const parent = within(parentPage);
-    expect(parent.getByText(/is trying Thinkerwell, a free online course .* for youth aged about 10 to 17/)).toBeInTheDocument();
+    expect(parent.getByText(/is trying Thinkerwell, a free online learning platform for youth aged about 10 to 17/)).toBeInTheDocument();
     const study = part(parentPage, 'The pilot study');
-    expect(study).toHaveTextContent(/If you say yes to the study, then in the first and last sessions your child:/);
+    expect(study).toHaveTextContent(/If you say yes to the study, then in the first and last sessions of a class studying Exploring Our World, your child:/);
     for (const line of STUDY) expect(study).toHaveTextContent(line);
     const kept = part(parentPage, "What we keep, and what we don't");
     for (const line of KEPT) expect(kept).toHaveTextContent(line);

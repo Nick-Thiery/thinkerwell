@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router';
-import { answerKeyPath, lessonPath, sectionCheckPath, teacherGuidePath } from '../../app/lessonUrls';
+import { answerKeyPath, contactPath, lessonPath, sectionCheckPath, teacherGuidePath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
 import { Badge, Button, LessonRow, SectionHeader } from '../../components/ds';
 import { En, useI18n } from '../../i18n';
@@ -16,8 +16,7 @@ import {
 import type { CourseLesson, CourseSection } from '../../content';
 import { useLessonContent } from '../../content/useContent';
 import { usePreviewCourse } from './course';
-import { CourseChoice } from './CourseChoice';
-import { useOurWorldName } from './Frame';
+import { CourseChoice } from '../../app/CourseChoice';
 
 /**
  * /course/<id>: a preview course's map (inside its PreviewCourseFrame), as
@@ -36,7 +35,6 @@ export function CourseMap() {
   const learnerId = session.activeLearner?.id ?? null;
   const progressResult = useLearnerProgress(learnerId);
   const { hash } = useLocation();
-  const ourWorld = useOurWorldName();
   const loading = session.status === 'loading' || (learnerId !== null && progressResult.status === 'loading');
 
   const sections = content.getSections();
@@ -57,7 +55,8 @@ export function CourseMap() {
   useEffect(() => {
     if (loading) return undefined;
     const id = hash.slice(1);
-    if (!id || !sections.some((section) => section.id === id)) return undefined;
+    // A section's id, or "teacher-guides" (the list of teacher guides at the end, linked from Educators' list of guides).
+    if (!id || !(sections.some((section) => section.id === id) || id === 'teacher-guides')) return undefined;
     const frame = requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({ block: 'start' }));
     return () => cancelAnimationFrame(frame);
   }, [loading, hash, sections]);
@@ -66,7 +65,7 @@ export function CourseMap() {
 
   return (
     <div className="tw-course-page tw-pc-map">
-      <CourseChoice ourWorld={ourWorld} current={preview.id} />
+      <CourseChoice current={preview.id} />
       <header className="tw-course-intro">
         <span className="eyebrow">{t('pages.course.eyebrow')}</span>
         <h1 className="h1" tabIndex={-1} {...contentLang}>
@@ -85,6 +84,10 @@ export function CourseMap() {
         </div>
         {isGuest ? <p className="small tw-course-guest-note">{t(lookingAround ? 'pages.course.guestNote' : 'pages.course.noLearnerNote')}</p> : null}
         <p className="small tw-course-guest-note">{t(content.hasSectionChecks ? 'previewCourse.map.noCertificates' : 'previewCourse.map.noChecks')}</p>
+        {/* What is still being checked, said once here (a lesson page doesn't repeat it). */}
+        <p className="small tw-course-guest-note">
+          {t(preview.wordKeys.reviewNote)} <Link to={contactPath()}>{t('previewCourse.map.reviewAction')}</Link>
+        </p>
       </header>
 
       <div className="tw-course-sections">
@@ -100,7 +103,7 @@ export function CourseMap() {
         ))}
       </div>
 
-      <section className="tw-pc-reviewers" aria-labelledby="tw-pc-reviewers-title">
+      <section id="teacher-guides" className="tw-pc-reviewers" aria-labelledby="tw-pc-reviewers-title">
         <h2 id="tw-pc-reviewers-title" className="h2">
           {t('previewCourse.map.forTeachersTitle')}
         </h2>

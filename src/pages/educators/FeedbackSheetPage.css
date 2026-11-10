@@ -1,0 +1,104 @@
+/*
+ * The session record and feedback sheet (/educators/feedback-sheet). It uses
+ * the consent form's sheet and parts (ConsentFormPage.css); this gives it
+ * tick boxes, blanks and a table to write in. Black on white on paper,
+ * nothing under 14px (10.5pt).
+ */
+
+.tw-feedback .tw-fb-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3) var(--space-5);
+}
+
+.tw-fb-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.tw-fb-label {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.tw-fb-blank {
+  display: block;
+  min-block-size: 1.75rem;
+  border-block-end: 1px solid currentColor;
+}
+
+.tw-fb-choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  margin-inline-end: 0.9em;
+  white-space: nowrap;
+}
+
+.tw-fb-box {
+  display: inline-block;
+  inline-size: 1em;
+  block-size: 1em;
+  border: 1.5px solid currentColor;
+  border-radius: 2px;
+}
+
+.tw-fb-table {
+  inline-size: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.tw-fb-table th,
+.tw-fb-table td {
+  padding: var(--space-2);
+  border: 1px solid currentColor;
+  text-align: start;
+  vertical-align: middle;
+}
+
+.tw-fb-table tbody th {
+  font-weight: 700;
+  inline-size: 40%;
+}
+
+.tw-fb-table tbody td {
+  min-block-size: 2.25rem;
+  block-size: 2.25rem;
+}
+
+.tw-fb-question + .tw-fb-question {
+  margin-block-start: var(--space-3);
+}
+
+.tw-fb-q {
+  margin-block: var(--space-2) 0;
+}
+
+.tw-fb-more {
+  margin-block: var(--space-1) 0;
+  font-size: 0.875rem;
+}
+
+.tw-fb-note {
+  margin-block: var(--space-3) 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .tw-feedback .tw-fb-fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media print {
+  .tw-feedback .tw-fb-part {
+    break-inside: avoid;
+  }
+
+  .tw-feedback {
+    line-height: 1.3;
+  }
+}

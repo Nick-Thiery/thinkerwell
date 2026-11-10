@@ -9,6 +9,7 @@ import {
 } from '../storage';
 // Imported directly (not through src/lesson/index.ts) to keep this module
 // free of the lesson player's React code.
+import { OPEN_COURSE_IDS } from '../content/courses';
 import { clearGuestMemory, dropWorkToSave } from '../lesson/guestMemory';
 import { forgetLearner } from '../measurement/track';
 import { readyLocales, resolveLocale, SOURCE_LOCALE } from '../i18n/locales';
@@ -112,9 +113,11 @@ export interface LearnerSessionValue {
    */
   setLanguage: (code: string) => Promise<void>;
   /**
-   * The preview courses this device shows (settings.previewCourses), turned
-   * on at their hidden address (/preview/<id>, src/courses/). Empty on
-   * every other device: then nothing about them appears anywhere.
+   * The courses besides Our World that this device shows: every course
+   * marked `open` in src/content/courses.ts (all of them, since the
+   * whole-platform pilot of 9 November 2026), plus any other a device turned
+   * on at its hidden address (/preview/<id>, settings.previewCourses).
+   * The name is from when every one of them was a hidden preview.
    */
   previewCourses: readonly string[];
   /**
@@ -157,7 +160,9 @@ export function LearnerSessionProvider({ forceLookAround = false, children }: Le
   const [currentLearner, setCurrentLearner] = useState<Learner | null>(null);
   const [lookAround, setLookAround] = useState(forceLookAround);
   const [deviceLanguage, setDeviceLanguageState] = useState<string | null>(null);
-  const [previewCourses, setPreviewCourses] = useState<readonly string[]>([]);
+  // The courses this device turned on by address (settings.previewCourses); the open ones are added in the value below.
+  const [turnedOn, setPreviewCourses] = useState<readonly string[]>([]);
+  const previewCourses = useMemo(() => [...OPEN_COURSE_IDS, ...turnedOn.filter((id) => !OPEN_COURSE_IDS.includes(id))], [turnedOn]);
   const previewRef = useRef<readonly string[]>([]);
   // Guards every state update against firing after the provider (effectively
   // the whole app) has been torn down — most visible in tests, which unmount

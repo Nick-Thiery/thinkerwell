@@ -1677,8 +1677,10 @@
     "source": "For a parent or guardian"
   },
   "pages.consentForm.formIntro": {
-    "back": "{organisation} is trying out Thinkerwell, a free online course about history, geography, culture and civic life for youth aged about 10 to 17. Your child's class will use it a few sessions a week for 4 to 6 weeks. There is also a small study on how well it works.",
-    "source": "{organisation} is trying Thinkerwell, a free online course about history, geography, culture and civic life for youth aged about 10 to 17. Your child's class will use it a few sessions a week for 4 to 6 weeks. There is also a small study of how well it works."
+    "back": "{organisation} is trying Thinkerwell, a free online learning platform for youth aged about 10 to 17, with four social studies courses. Your child's class uses lessons from one or more courses, a few sessions a week for 4 to 6 weeks. There is also a small study of its effectiveness.",
+    "source": "{organisation} is trying Thinkerwell, a free online learning platform for youth aged about 10 to 17, with four social studies courses. Your child's class will use lessons from one or more of them a few sessions a week for 4 to 6 weeks. There is also a small study of how well it works.",
+    "flag": true,
+    "note": "Changed 9 November 2026 for the whole-platform pilot: drafted by AI, not yet reviewed by a native speaker."
   },
   "pages.consentForm.studyTitle": {
     "back": "Pilot study",
@@ -1807,8 +1809,10 @@
     "source": "Staff member's signature"
   },
   "pages.pilotStudy.intro": {
-    "back": "If you answer yes to this study, in the first and last sessions, your child:",
-    "source": "If you say yes to the study, then in the first and last sessions your child:"
+    "back": "If you answer yes to this study, then in the first and last sessions of a class studying Exploring Our World, your child:",
+    "source": "If you say yes to the study, then in the first and last sessions of a class studying Exploring Our World, your child:",
+    "flag": true,
+    "note": "Changed 9 November 2026 so the study's questions are tied to a class studying Exploring Our World: drafted by AI, not yet reviewed by a native speaker. A promise to families: check it says exactly what the English says."
   },
   "pages.pilotStudy.questions": {
     "back": "answers 16 short questions (about 15 minutes each time)",
@@ -5386,8 +5390,8 @@
   "pilotDay.wrongOffline": {
     "flag": true,
     "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker.",
-    "source": "Keep going. Once the course is saved on the device, every lesson works without the internet, and work saves on the device. Only videos need the internet.",
-    "back": "Carry on. Once the course is saved on the device, every lesson can be used without the internet, and work is saved on the device. Only videos need the internet."
+    "source": "Keep going. Work saves on the device, and only videos need the internet. Courses other than Exploring Our World need saving in Settings first.",
+    "back": "Carry on. Work is saved on the device, and only videos need the internet. Courses other than Exploring Our World need to be saved first in Settings."
   },
   "pilotDay.wrongSharedLead": {
     "flag": true,
@@ -6186,5 +6190,17 @@
     "source": "It hasn’t been reviewed yet. A historian still needs to check its facts, and a partner organisation its sensitive topics. Don’t use it with learners yet.",
     "flag": true,
     "note": "Southeast Asia Through Time preview (November 2026): drafted by AI, not yet reviewed by a native speaker. The course name stays in English while its lessons are English."
+  },
+  "pilotDay.endReview": {
+    "source": "For a course with no section check, ask aloud: the big question, one piece of evidence, what they still want to find out. Then fill in the session record ({educators}, then {feedback}).",
+    "back": "For a course with no section check, ask orally: the big question, one piece of evidence, what they still want to know. Then fill in the session record sheet (For educators, then Session record and feedback).",
+    "flag": true,
+    "note": "Changed 9 November 2026 for the whole-platform pilot: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pilotDay.beforeChoose": {
+    "source": "Choose the courses and lessons to teach ({educators}, then {guides}).",
+    "back": "Choose the courses and lessons to be taught (For educators, then {guides}).",
+    "flag": true,
+    "note": "Changed 9 November 2026 for the whole-platform pilot: drafted by AI, not yet reviewed by a native speaker."
   }
 }

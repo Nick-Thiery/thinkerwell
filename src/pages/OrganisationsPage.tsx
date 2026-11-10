@@ -28,6 +28,7 @@ import {
 } from '../app/lessonUrls';
 import { useFullPageTitle } from '../app/usePageTitle';
 import { Button, Icon, type IconName } from '../components/ds';
+import { courseSummaries } from '../content/catalog';
 import { useContent } from '../content/useContent';
 import { useI18n, type MessageKey } from '../i18n';
 import './OrganisationsPage.css';
@@ -85,7 +86,12 @@ export function OrganisationsPage() {
         <h2 id="org-what" className="h2">
           {t('pages.organisations.whatTitle')}
         </h2>
-        <p>{t('pages.organisations.whatBody', { lessons: lessons.length })}</p>
+        <p>{t('pages.organisations.whatBody', {
+            ourWorld: lessons.length,
+            digitalWorld: courseSummaries['digital-world']?.lessons ?? 0,
+            southeastAsia: courseSummaries['southeast-asia-through-time']?.lessons ?? 0,
+            art: courseSummaries['art-architecture-society']?.lessons ?? 0,
+          })}</p>
       </section>
 
       {/* "Run a session": what a session with a group looks like. */}

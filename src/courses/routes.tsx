@@ -19,10 +19,7 @@
  */
 import { lazy, Suspense } from 'react';
 import { useParams } from 'react-router';
-import { useCatalog } from '../content/useCatalog';
 import { previewCourseOfLesson, previewCourseOfSection } from '../content/courses';
-import { useI18n } from '../i18n';
-import { CourseChoice } from './kit/CourseChoice';
 import { PreviewCourse } from './preview';
 
 export function PreviewSwitchRoute() {
@@ -71,18 +68,6 @@ export function PreviewAnswerKeyRoute({ sectionId }: { sectionId: string }) {
 /** A preview course's teacher guide, /educators/lesson/:id. */
 export function PreviewTeacherGuideRoute({ lessonId }: { lessonId: string }) {
   return <PreviewCourse courseId={previewCourseOfLesson(lessonId)?.id}>{(course) => <course.TeacherGuideRoute lessonId={lessonId} />}</PreviewCourse>;
-}
-
-/**
- * The course choice on Our World's home and course map (src/app/PreviewCourses.tsx
- * loads this only where a preview course is on): Our World first, then every
- * preview course this device has turned on. Nothing while their code loads,
- * or if it can't.
- */
-export function PreviewCourseChoice({ current }: { current?: string }) {
-  const { contentLang } = useI18n();
-  const title = useCatalog().getCourse().course.title;
-  return <CourseChoice ourWorld={{ title, lang: contentLang }} current={current} />;
 }
 
 // The reviewers' page for local-language Watch videos: a chunk of its own in assets/preview/video-review/

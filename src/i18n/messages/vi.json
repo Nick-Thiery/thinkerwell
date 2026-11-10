@@ -468,7 +468,6 @@
       "intro": "Thinkerwell là một nền tảng do học sinh dẫn dắt, nỗ lực mở rộng cơ hội tiếp cận việc học khoa học xã hội kỹ thuật số miễn phí cho thanh thiếu niên thiếu điều kiện học tập trên khắp Đông Nam Á. Chúng tôi đang chuẩn bị thí điểm khóa học này cùng các tổ chức giáo dục. Trang này giải thích một đợt thí điểm gồm những gì.",
       "honesty": "Thinkerwell là một nền tảng do học sinh dẫn dắt. Đây không phải là tổ chức từ thiện đã đăng ký, cũng không phải tổ chức phi lợi nhuận đã đăng ký.",
       "whatTitle": "Thinkerwell là gì",
-      "whatBody": "Một khóa học, Khám phá thế giới của chúng ta: {lessons} bài học về lịch sử, địa lí, văn hóa và đời sống công dân, dành cho người học khoảng 10 đến 17 tuổi. Mỗi bài học có năm bước: đọc, viết, nói, xem và suy ngẫm. Khóa học chạy trên trình duyệt web, trên máy tính xách tay và máy tính bảng dùng chung, bằng tiếng Anh hoặc tiếng Indonesia. Các bài học dùng được khi không có mạng sau lần truy cập đầu tiên; các video không bắt buộc thì cần internet.",
       "getTitle": "Bạn nhận được gì",
       "get1": "Toàn bộ khóa học, miễn phí. Không tài khoản, không quảng cáo, và không có gì bị khóa.",
       "get2": "Một hướng dẫn giáo viên cho mỗi bài học, đáp án cho các bài ôn tập phần, và mọi bài học đều sẵn sàng để in.",
@@ -1437,24 +1436,17 @@
     }
   },
   "previewCourse": {
-    "banner": {
-      "title": "Khóa học nháp: chưa được xem xét",
-      "turnOff": "Tắt chế độ xem trước"
-    },
     "sheet": {
-      "draft": "{title}, khóa học nháp: chưa được xem xét. Chưa nên dùng với người học."
-    },
-    "choice": {
-      "label": "Các khóa học trên thiết bị này",
-      "draft": "Bản nháp"
+      "draft": "{title}: a new course. Its facts are still being checked."
     },
     "map": {
-      "noChecks": "Bản nháp này chưa có bài ôn tập phần hay giấy chứng nhận.",
-      "noCertificates": "Bản nháp này chưa có giấy chứng nhận.",
-      "forTeachersTitle": "Dành cho giáo viên và người xem xét",
+      "noChecks": "This course has no section checks or certificates yet.",
+      "noCertificates": "This course has no certificates yet.",
+      "forTeachersTitle": "For teachers",
       "printAll": "In tất cả bài học",
       "guideLink": "Hướng dẫn giáo viên, Bài {number}: {title}",
-      "answerKeyLink": "Đáp án: {title}"
+      "answerKeyLink": "Đáp án: {title}",
+      "reviewAction": "Tell us what to fix"
     },
     "printAll": {
       "back": "Quay lại {title}",
@@ -1489,14 +1481,11 @@
     }
   },
   "digitalWorld": {
+    "reviewNote": "Digital World is new. An AI researcher is still checking its facts.",
     "activity": {
       "eyebrow": "Hoạt động",
       "guideTitle": "Hoạt động",
       "guideIntro": "Những gì người học làm trên thiết bị, kèm một câu trả lời có thể và lý do. Cả lớp cũng có thể làm trên giấy từ bản in."
-    },
-    "banner": {
-      "body": "Digital World là bản nháp. Một nhà nghiên cứu AI và một tổ chức đối tác vẫn cần kiểm tra nó. Chỉ thiết bị này hiển thị nó.",
-      "bodyEnglishLessons": "Digital World là bản nháp. Một nhà nghiên cứu AI và một tổ chức đối tác vẫn cần kiểm tra nó. Chỉ thiết bị này hiển thị nó. Hiện các bài học vẫn bằng tiếng Anh."
     },
     "chart": {
       "viewsLabel": "Biểu đồ nào",
@@ -1668,10 +1657,7 @@
     "videoTitle": "Xem Thinkerwell trong thực tế"
   },
   "southeastAsia": {
-    "banner": {
-      "body": "Southeast Asia Through Time là bản nháp. Một nhà sử học và một tổ chức đối tác vẫn cần kiểm tra nó. Chỉ thiết bị này hiển thị nó.",
-      "bodyEnglishLessons": "Southeast Asia Through Time là bản nháp. Một nhà sử học và một tổ chức đối tác vẫn cần kiểm tra nó. Chỉ thiết bị này hiển thị nó. Hiện các bài học vẫn bằng tiếng Anh."
-    },
+    "reviewNote": "Southeast Asia Through Time is new. A historian is still checking its facts.",
     "map": {
       "forTeachersBody": "Mỗi bài học có một hướng dẫn giáo viên, gồm ghi chú, đáp án, cả hai hình kèm nguồn, và ghi chú cho người xem xét. Bạn cũng có thể in cả khóa học."
     },
@@ -1681,10 +1667,7 @@
     }
   },
   "artArchitecture": {
-    "banner": {
-      "body": "Art, Architecture and Society là bản nháp. Một nhà sử học nghệ thuật và một tổ chức đối tác vẫn cần kiểm tra nó. Chỉ thiết bị này hiển thị nó.",
-      "bodyEnglishLessons": "Art, Architecture and Society là bản nháp. Một nhà sử học nghệ thuật và một tổ chức đối tác vẫn cần kiểm tra nó. Chỉ thiết bị này hiển thị nó. Hiện tại, các bài học vẫn bằng tiếng Anh."
-    },
+    "reviewNote": "Art, Architecture and Society is new. An art historian is still checking its facts.",
     "map": {
       "forTeachersBody": "Mỗi bài học có hướng dẫn cho giáo viên với ghi chú, ý chính của câu trả lời, cả hai hình ảnh kèm nguồn, và ghi chú cho người xem xét. Bạn cũng có thể in toàn bộ khóa học."
     },

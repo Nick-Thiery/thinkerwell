@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { contentFor, getLesson, getLessons, STAGES, type LessonStep } from '../content';
 import { ID_VIDEOS_FIXTURE, translationWithVideos } from '../test/localVideoFixtures';
 import { resolveLessonPrintRoute, resolveLessonRoute, resolveTeacherGuideRoute } from './lessonRoutes';
-import { answerKeyPath, educatorsPath, guidesPath, learningCheckPath, lessonPath, sectionCheckPath, sessionGuidePath, teacherGuidePath } from './lessonUrls';
+import { answerKeyPath, educatorsPath, feedbackSheetPath, guidesPath, learningCheckPath, lessonPath, sectionCheckPath, sessionGuidePath, teacherGuidePath } from './lessonUrls';
 
 const STEPS: LessonStep[] = [...STAGES, 'complete'];
 const lessons = getLessons();
@@ -165,6 +165,7 @@ describe('teacher tools', () => {
     expect(guidesPath()).toBe('/educators/guides');
     expect(sessionGuidePath()).toBe('/educators/session-guide');
     expect(learningCheckPath()).toBe('/educators/learning-check');
+    expect(feedbackSheetPath()).toBe('/educators/feedback-sheet');
   });
 
   it('shows every lesson\'s teacher guide, and redirects old and differently cased ids', () => {

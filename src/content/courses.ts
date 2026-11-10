@@ -13,12 +13,17 @@
  * that start with its own prefix, so they never clash with Our World's and
  * its lessons share Our World's addresses (/lesson/dw-what-ai-is/read).
  *
- * A preview course (Digital World, a draft) is invisible unless a device
- * has turned its preview on by visiting /preview/<id> (a device setting,
- * `previewCourses`). Its lessons, its activities, its code and its own
- * interface words load only then, from files the service worker never
- * stores and a first visit never downloads (vite.config.ts,
- * docs/notes/digital-world-preview.md).
+ * A course other than Our World is built as a "preview" course: its
+ * lessons, its activities, its code and its own interface words are in
+ * chunks that load only when someone opens the course, from files outside
+ * the precache that a first visit never downloads (vite.config.ts,
+ * docs/notes/digital-world-preview.md). A device keeps them for offline use
+ * once they have been opened or saved (src/offline/courseFiles.ts).
+ *
+ * Whether a device shows a course is separate. A course marked `open` is
+ * shown on every device (the whole-platform pilot, 9 November 2026); one
+ * that is not stays invisible unless a device turns it on by visiting
+ * /preview/<id> (a device setting, `previewCourses`).
  */
 
 export interface CourseDefinition {
@@ -26,8 +31,19 @@ export interface CourseDefinition {
   readonly id: string;
   /** Its folder under content/ ('' for Our World, whose files sit in content/ itself). */
   readonly dir: string;
-  /** Shown only on devices that turned its preview on (/preview/<id>). */
+  /**
+   * Built apart from the app and loaded when opened (the course's code,
+   * lessons and words are in assets/preview/). True for every course but Our World.
+   */
   readonly preview: boolean;
+  /**
+   * Shown on every device, in the course choice, with no hidden address to
+   * visit first. A course without it is shown only on devices that turned it
+   * on at /preview/<id>.
+   */
+  readonly open?: boolean;
+  /** The icon beside its name in the course choice (a Lucide name). */
+  readonly icon?: string;
   /** Every lesson id starts with this ('dw-'); '' for Our World. */
   readonly lessonIdPrefix: string;
   /**
@@ -52,6 +68,8 @@ export const COURSES: readonly CourseDefinition[] = [
     id: 'digital-world',
     dir: 'courses/digital-world',
     preview: true,
+    open: true,
+    icon: 'Lightbulb',
     lessonIdPrefix: 'dw-',
     messages: 'digitalWorld',
     sectionIds: ['thinking-machines', 'who-builds-ai', 'ai-in-daily-life', 'truth-and-power'],
@@ -60,6 +78,8 @@ export const COURSES: readonly CourseDefinition[] = [
     id: 'southeast-asia-through-time',
     dir: 'courses/southeast-asia-through-time',
     preview: true,
+    open: true,
+    icon: 'Map',
     lessonIdPrefix: 'sat-',
     messages: 'southeastAsia',
     sectionIds: ['evidence-and-connections', 'trade-and-power', 'war-and-independence', 'memory-and-shared-histories'],
@@ -68,11 +88,16 @@ export const COURSES: readonly CourseDefinition[] = [
     id: 'art-architecture-society',
     dir: 'courses/art-architecture-society',
     preview: true,
+    open: true,
+    icon: 'Palette',
     lessonIdPrefix: 'aas-',
     messages: 'artArchitecture',
     sectionIds: ['objects-making-power', 'buildings-belief-places', 'stories-lives-memory', 'museums-heritage-connections'],
   },
 ];
+
+/** The courses every device shows (`open`), Our World first, then the others in order. */
+export const OPEN_COURSE_IDS: readonly string[] = COURSES.filter((course) => course.open).map((course) => course.id);
 
 /** The preview courses, in order. */
 export const PREVIEW_COURSES: readonly CourseDefinition[] = COURSES.filter((course) => course.preview);

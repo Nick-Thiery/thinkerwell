@@ -5,15 +5,17 @@ import { defineConfig, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 import { lazyChunkFor } from './src/app/lazy/firstPage.ts';
-import { LESSON_CATALOG_FIELDS } from './src/content/catalogFields.ts';
+import { LESSON_CATALOG_FIELDS, type CourseSummary } from './src/content/catalogFields.ts';
 import { COURSES, DEFAULT_COURSE_ID } from './src/content/courses.ts';
 import {
+  COURSE_FILES_FILE,
   COURSE_MESSAGES_ID,
   COURSE_MESSAGES_PREFIX,
   PREVIEW_ASSET_DIR,
   PREVIEW_PRECACHE_IGNORES,
   VIDEO_REVIEW_ID,
   VIDEO_REVIEW_MODULE,
+  courseFilesManifest,
   isPreviewModule,
   previewAssetFileName,
   previewChunkFileName,
@@ -224,7 +226,51 @@ function lessonCatalog(): Plugin {
         Object.fromEntries(LESSON_CATALOG_FIELDS.map((field) => [field, lesson[field]])),
       );
       const quizQuestions = Object.fromEntries((parsed('quizzes', 'quiz') as QuizFile[]).map((quiz) => [quiz.section, quiz.questions.length]));
-      return `export default ${JSON.stringify({ lessons, quizQuestions })};`;
+      // Each other course's name in English, Indonesian and Malay, and how many lessons and sections it has,
+      // so the course choice on the home page and the course map can list the courses without loading them.
+      const courses: Record<string, CourseSummary> = {};
+      for (const course of COURSES) {
+        if (course.id === DEFAULT_COURSE_ID) continue;
+        const dir = path.join(root, 'content', course.dir);
+        const read = (file: string): { course: { title: string }; sections?: unknown[] } => {
+          const full = path.join(dir, file);
+          this.addWatchFile(full);
+          return JSON.parse(readFileSync(full, 'utf8')) as { course: { title: string }; sections?: unknown[] };
+        };
+        const english = read('course.json');
+        const lessonFiles = readdirSync(path.join(dir, 'lessons')).filter((name) => name.endsWith('.json'));
+        const titles: Record<string, string> = { en: english.course.title };
+        for (const code of ['id', 'ms']) {
+          const translated = path.join(dir, code, 'course.json');
+          if (existsSync(translated)) titles[code] = read(`${code}/course.json`).course.title;
+        }
+        courses[course.id] = { titles, lessons: lessonFiles.length, sections: english.sections?.length ?? 0 };
+      }
+      return `export default ${JSON.stringify({ lessons, quizQuestions, courses })};`;
+    },
+  };
+}
+
+/**
+ * Writes course-files.json: every file of every course other than Our World
+ * (src/courses/build.ts, courseFilesManifest), with its size, so a device can
+ * save a course for offline use and the service worker can tell which kept
+ * files are current (src/offline/courseFiles.ts, sw.ts). It runs last, once
+ * the course stylesheets and pictures are in the bundle. Never precached.
+ */
+function courseFiles(): Plugin {
+  return {
+    name: 'thinkerwell:course-files',
+    apply: 'build',
+    enforce: 'post',
+    generateBundle(_options, bundle) {
+      const files = Object.values(bundle)
+        .filter((output) => output.fileName.startsWith(PREVIEW_ASSET_DIR))
+        .map((output) => {
+          const source = output.type === 'chunk' ? output.code : output.source;
+          return { fileName: output.fileName, bytes: typeof source === 'string' ? Buffer.byteLength(source) : source.byteLength };
+        });
+      this.emitFile({ type: 'asset', fileName: COURSE_FILES_FILE, source: JSON.stringify(courseFilesManifest(files)) });
     },
   };
 }
@@ -799,6 +845,7 @@ export default defineConfig({
     lazyMessages(),
     videoReview(),
     keepZodOutOfTheBrowser(),
+    courseFiles(),
     pseudoLocales(),
     keepFirstVisitLight(),
     preloadFirstPage(),
