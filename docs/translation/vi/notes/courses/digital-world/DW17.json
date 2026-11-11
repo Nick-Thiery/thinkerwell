@@ -1,0 +1,434 @@
+{
+  "title": {
+    "source": "Project: design an AI helper",
+    "flag": true
+  },
+  "essentialQuestion": {
+    "source": "How would you design an AI helper that is useful, fair and safe?",
+    "flag": true
+  },
+  "learningGoal": {
+    "source": "Learn how two real Southeast Asian projects grew from a shared problem, then plan a helper of your own: who it helps, whether AI fits, how to check it works, and one improvement.",
+    "flag": true
+  },
+  "evidence.question": {
+    "source": "For each project, what problem does it start from, who built it, and what does the AI do? How far has it got, and what does the evidence show?",
+    "flag": true
+  },
+  "evidence.cards.0.title": {
+    "source": "Two real projects in Southeast Asia",
+    "flag": true
+  },
+  "evidence.cards.0.cases.0.name": {
+    "source": "Eco Pulse, Malaysia: a student prototype",
+    "flag": true
+  },
+  "evidence.cards.0.cases.0.body": {
+    "source": "The problem: the students wanted to make recycling quicker and easier. Who built it: three 15-year-old students at SMK Sultan Ismail, a secondary school in Johor, for a 2024 student competition run by Samsung with Universiti Malaya. What the AI does: an app looks at a photo of a recyclable item and estimates its weight and value. How far it has got: a prototype, a first working version. The evidence: it won first prize in the competition's recycling category. The organiser says it is precise, but no test results have been published. A question: how well does it work with dirty or crushed items?",
+    "flag": true
+  },
+  "evidence.cards.0.cases.1.name": {
+    "source": "SELENA+, Singapore: tested, then put to use",
+    "flag": true
+  },
+  "evidence.cards.0.cases.1.body": {
+    "source": "The problem: people with diabetes need regular eye checks, because the illness can harm their eyes, and checking every eye photo takes many trained people. Who built it: eye doctors and scientists at the Singapore Eye Research Institute and the Singapore National Eye Centre, with computer scientists from the National University of Singapore. What the AI does: it looks at photos of the back of the eye and marks the ones an eye specialist should see. How far it has got: in 2017 the team reported tests on about 500,000 eye photos from Singapore and other countries. In 2024 they reported that it was being used in Singapore's national eye-screening programme. The evidence: these are the team's own reports. A question: does it help patients keep their sight? The reports don't say yet.",
+    "flag": true
+  },
+  "activity.title": {
+    "source": "Plan your AI helper",
+    "flag": true
+  },
+  "activity.instructions": {
+    "source": "Plan a helper in five steps. This plan is your main work for the lesson: Write and Speak use it. Pick one of the made-up Maple Street problems, or a problem that many people share in a community you know. Don't write anyone's real name or private information. You can go back and change any step.",
+    "flag": true
+  },
+  "activity.problems.0.text": {
+    "source": "Maple Street (made up): plastic often goes in the wrong bin at the centre.",
+    "flag": true
+  },
+  "activity.problems.1.text": {
+    "source": "Maple Street (made up): the bus is often late, and people wait in the rain.",
+    "flag": true
+  },
+  "activity.problems.2.text": {
+    "source": "Maple Street (made up): the garden tap at the centre is often left running.",
+    "flag": true
+  },
+  "activity.problems.3.text": {
+    "source": "A problem many people share in a community I know",
+    "flag": true
+  },
+  "activity.steps.0.title": {
+    "source": "1. The problem",
+    "flag": true
+  },
+  "activity.steps.0.prompt": {
+    "source": "What is the problem, and who does it affect? How would a helper make things better for them?",
+    "flag": true
+  },
+  "activity.steps.0.starter": {
+    "source": "The problem is ... It affects ...",
+    "flag": true
+  },
+  "activity.steps.1.title": {
+    "source": "2. Should AI be used?",
+    "flag": true
+  },
+  "activity.steps.1.prompt": {
+    "source": "Think about three questions. Does the helper need to recognise or guess from many examples? Could a simple rule or a person do it better? Could it hurt someone if it is wrong? Then decide.",
+    "flag": true
+  },
+  "activity.steps.1.options.0.text": {
+    "source": "Yes, AI could help",
+    "flag": true
+  },
+  "activity.steps.1.options.0.feedback": {
+    "source": "Go on to step 3. In your plan, say why AI fits: what must it recognise or guess?",
+    "flag": true
+  },
+  "activity.steps.1.options.1.text": {
+    "source": "No, another way is better",
+    "flag": true
+  },
+  "activity.steps.1.options.1.feedback": {
+    "source": "That is a good design choice too. Write the other way, such as a sign, a simple rule or a person, and why it fits better.",
+    "flag": true
+  },
+  "activity.steps.1.options.2.text": {
+    "source": "Not sure yet",
+    "flag": true
+  },
+  "activity.steps.1.options.2.feedback": {
+    "source": "Go back to the three questions, and try your helper's main task against each one. You can choose again at any time.",
+    "flag": true
+  },
+  "activity.steps.2.title": {
+    "source": "3. What it learns from",
+    "flag": true
+  },
+  "activity.steps.2.prompt": {
+    "source": "What examples would it learn from? Who would label them? Whose examples might be missing? If you chose another way, say what it needs instead.",
+    "flag": true
+  },
+  "activity.steps.2.starter": {
+    "source": "It would learn from ... Examples of ___ might be missing.",
+    "flag": true
+  },
+  "activity.steps.3.title": {
+    "source": "4. Risks, tests and checks",
+    "flag": true
+  },
+  "activity.steps.3.prompt": {
+    "source": "What could go wrong? How would you test it with examples it has never seen? Who would check it, and how often?",
+    "flag": true
+  },
+  "activity.steps.3.starter": {
+    "source": "One risk is ... To test it, ... ___ would check it by ...",
+    "flag": true
+  },
+  "activity.steps.4.title": {
+    "source": "5. Look again and make version 2",
+    "flag": true
+  },
+  "activity.steps.4.prompt": {
+    "source": "Read your plan again. Answer one of these questions. Then change one thing.",
+    "flag": true
+  },
+  "activity.steps.4.questions.0": {
+    "source": "Who might this helper leave out?",
+    "flag": true
+  },
+  "activity.steps.4.questions.1": {
+    "source": "What happens if it makes a mistake?",
+    "flag": true
+  },
+  "activity.steps.4.questions.2": {
+    "source": "Is there a simpler way without AI?",
+    "flag": true
+  },
+  "activity.steps.4.questions.3": {
+    "source": "What evidence would show that it helps?",
+    "flag": true
+  },
+  "activity.steps.4.starter": {
+    "source": "After feedback, I changed ... because ...",
+    "flag": true
+  },
+  "read.sections.0.heading": {
+    "source": "Start with a problem people share",
+    "flag": true
+  },
+  "read.sections.0.text": {
+    "source": "In this project, you will plan a helper for a problem that many people in a community share. Good designers start with the problem and the people it affects, not with the tool. Two real projects from Southeast Asia show how. In Johor, Malaysia, three 15-year-old students wanted to make recycling easier. For a 2024 student competition, they built Eco Pulse, an app that looks at a photo of a recyclable item and estimates its weight and value. In Singapore, people with diabetes need regular eye checks, because the illness can harm their eyes, and checking every photo takes many trained people. Eye doctors and computer scientists there built SELENA+, which looks at photos of the back of the eye and marks the ones a specialist should see.",
+    "flag": true
+  },
+  "read.sections.0.simpler": {
+    "source": "You will plan a helper for a problem many people share. Good designers start with the problem, not the tool. Here are two real projects. In Johor, Malaysia, three 15-year-old students wanted easier recycling. They built an app called Eco Pulse. From a photo of an item, it tells its weight and value. In Singapore, people with diabetes need eye checks. The illness can harm their eyes. Checking every photo takes many trained people. Eye doctors and computer scientists built SELENA+. It marks the eye photos that a specialist should see.",
+    "flag": true
+  },
+  "read.sections.1.heading": {
+    "source": "How far has a project got?",
+    "flag": true
+  },
+  "read.sections.1.text": {
+    "source": "A project grows in stages, and each stage needs its own evidence. A proposal is an idea on paper. A prototype is a first working version. Testing checks it carefully with new examples it has never seen. Being in use means real people rely on it. Showing impact means there is evidence that it made life better. Eco Pulse won first prize in its category, which shows that judges thought the prototype was strong. It doesn't show how well the app works with dirty or crushed items, or that people use it. SELENA+ has gone further. In 2017, its team reported tests on about 500,000 eye photos from Singapore and other countries. In 2024, they reported that it was being used in Singapore's national eye-screening programme. These are the team's own reports, and they don't yet show whether patients' eyesight is better.",
+    "flag": true
+  },
+  "read.sections.1.simpler": {
+    "source": "A project grows in stages. A proposal is just an idea. A prototype is the first version that works. Testing checks it with new examples. Then real people use it. Last, there may be evidence that it made life better. That is called impact. Eco Pulse won a prize, so judges liked the prototype. That does not show how well it works, or that people use it. SELENA+ has gone further. In 2017, its team tested it on about 500,000 eye photos. In 2024, they said Singapore's eye checks used it. These reports don't show if people can see better.",
+    "flag": true
+  },
+  "read.sections.2.heading": {
+    "source": "Plan, check and improve",
+    "flag": true
+  },
+  "read.sections.2.text": {
+    "source": "Now it's your turn. First, decide whether AI should be used at all. AI can help when a helper must recognise or guess from many examples, like items in photos or signs of eye disease. But a sign, a simple rule or a person can be a better answer, and a well-explained simpler plan is a strong design. Then plan what your helper would learn from, what could go wrong and who would check it. Like SELENA+, it should be tested with examples it has never seen, from the people who will use it. Finally, look at your plan again, or listen to feedback. Designers change a plan and test it again. This is called iteration. Change one thing, and you have version 2.",
+    "flag": true
+  },
+  "read.sections.2.simpler": {
+    "source": "Should AI be used at all? AI can help when a helper must learn from many examples. But a sign, a rule or a person can be better. A simpler plan is fine, with reasons. Plan what it learns from, what could go wrong, and who checks it. Test it with new examples from its users. Then look at your plan again, or get feedback. Change it and test again. This is called iteration. Change one thing for version 2.",
+    "flag": true
+  },
+  "read.glossary.0.word": {
+    "source": "proposal",
+    "flag": true
+  },
+  "read.glossary.0.forms": {
+    "source": [
+      "proposals"
+    ],
+    "flag": true
+  },
+  "read.glossary.0.definition": {
+    "source": "A plan or idea that has not been built yet.",
+    "flag": true
+  },
+  "read.glossary.0.example": {
+    "source": "Your plan for a helper is a proposal.",
+    "flag": true
+  },
+  "read.glossary.1.word": {
+    "source": "prototype",
+    "flag": true
+  },
+  "read.glossary.1.forms": {
+    "source": [
+      "prototypes"
+    ],
+    "flag": true
+  },
+  "read.glossary.1.definition": {
+    "source": "A first test version of something, made to try out an idea.",
+    "flag": true
+  },
+  "read.glossary.1.example": {
+    "source": "Eco Pulse is a prototype. It still needs testing.",
+    "flag": true
+  },
+  "read.glossary.2.word": {
+    "source": "impact",
+    "flag": true
+  },
+  "read.glossary.2.definition": {
+    "source": "The real difference a project makes to people's lives.",
+    "flag": true
+  },
+  "read.glossary.2.example": {
+    "source": "To show impact, SELENA+ would need evidence that people can see better.",
+    "flag": true
+  },
+  "read.glossary.3.word": {
+    "source": "feedback",
+    "flag": true
+  },
+  "read.glossary.3.definition": {
+    "source": "What other people tell you about your work, to help you improve it.",
+    "flag": true
+  },
+  "read.glossary.3.example": {
+    "source": "A partner's feedback helped me change my plan.",
+    "flag": true
+  },
+  "read.glossary.4.word": {
+    "source": "iteration",
+    "flag": true
+  },
+  "read.glossary.4.definition": {
+    "source": "Testing a plan, changing it, and testing it again, many times.",
+    "flag": true
+  },
+  "read.glossary.4.example": {
+    "source": "Iteration turns version 1 into version 2.",
+    "flag": true
+  },
+  "read.checks.0.question": {
+    "source": "What does Eco Pulse's prize show?",
+    "flag": true
+  },
+  "read.checks.0.options.0.text": {
+    "source": "It is used in recycling centres across Malaysia",
+    "flag": true
+  },
+  "read.checks.0.options.0.feedback": {
+    "source": "Not quite. Nothing reports that people use it yet. Read the second section.",
+    "flag": true
+  },
+  "read.checks.0.options.1.text": {
+    "source": "Judges thought the prototype was strong",
+    "flag": true
+  },
+  "read.checks.0.options.1.feedback": {
+    "source": "Yes. A prize is a good start. It is not evidence that the app works well or that people use it.",
+    "flag": true
+  },
+  "read.checks.0.options.2.text": {
+    "source": "Tests showed that it cuts waste",
+    "flag": true
+  },
+  "read.checks.0.options.2.feedback": {
+    "source": "Not quite. No test results have been published. Read the second section.",
+    "flag": true
+  },
+  "read.checks.1.question": {
+    "source": "What did the SELENA+ team report in 2017?",
+    "flag": true
+  },
+  "read.checks.1.options.0.text": {
+    "source": "Tests on about 500,000 eye photos",
+    "flag": true
+  },
+  "read.checks.1.options.0.feedback": {
+    "source": "Yes. They tested how well it marked eye photos. In 2024 they reported that it was in use.",
+    "flag": true
+  },
+  "read.checks.1.options.1.text": {
+    "source": "That patients' eyesight got better",
+    "flag": true
+  },
+  "read.checks.1.options.1.feedback": {
+    "source": "Not quite. The tests looked at photos, not at patients' eyesight. Read the second section.",
+    "flag": true
+  },
+  "read.checks.1.options.2.text": {
+    "source": "That clinics all over the world use it",
+    "flag": true
+  },
+  "read.checks.1.options.2.feedback": {
+    "source": "Not quite. The team reported its use in Singapore's eye checks, in 2024. Read the second section.",
+    "flag": true
+  },
+  "write.prompt": {
+    "source": "Look at your plan. Like Eco Pulse and SELENA+, a helper grows in stages. Say what stage your plan is at now, and what evidence it would need before people could rely on it.",
+    "flag": true
+  },
+  "write.sentenceStarters.0": {
+    "source": "My plan is at the ___ stage, because ...",
+    "flag": true
+  },
+  "write.sentenceStarters.1": {
+    "source": "Before people rely on it, it would need ...",
+    "flag": true
+  },
+  "write.sentenceStarters.2": {
+    "source": "Evidence that it helps would be ...",
+    "flag": true
+  },
+  "write.example": {
+    "source": "My plan is at the proposal stage, because it is an idea on paper for sorting plastic and paper at the centre. Before people rely on it, it would need a prototype. Then it would need tests with new photos it has never seen, such as crushed and dirty bottles. Like SELENA+, it should be tested with the people who will use it. Evidence that it helps would be fewer wrong items in the bins each week, counted by the club. A prize alone would not show that.",
+    "flag": true
+  },
+  "speak.partnerTask": {
+    "source": "Present your plan to a partner in one minute, as if at a community meeting. Your partner plays someone who would use your helper, and says one thing they like and one worry. Then switch.",
+    "flag": true
+  },
+  "speak.independentTask": {
+    "source": "Say your plan out loud in one minute, as if at a community meeting. Then answer one question about it: who might it leave out?",
+    "flag": true
+  },
+  "watch.why": {
+    "source": "This short cartoon goes over training data, and why people must use AI with care.",
+    "flag": true
+  },
+  "watch.beforeQuestion": {
+    "source": "What do you remember about how AI learns?",
+    "flag": true
+  },
+  "watch.afterQuestion": {
+    "source": "Why do people need to be careful when they make or use AI?",
+    "flag": true
+  },
+  "watch.summary": {
+    "source": "This short cartoon goes over the basics of AI. AI tools learn from training data. This is a large set of examples that helps them find patterns and make guesses. Some AI tools sort things or make guesses about them. Other tools, called generative AI, make new things, like writing or pictures. The video explains that AI can be very useful, but it is not perfect. It learns from what people give it, so it can repeat their mistakes. That is why the people who make and use AI need to be responsible. They need to check its answers and think about who it might affect. This is a good review before you design your own AI helper.",
+    "flag": true
+  },
+  "watch.keyPoints.0": {
+    "source": "AI learns patterns from training data.",
+    "flag": true
+  },
+  "watch.keyPoints.1": {
+    "source": "Generative AI makes new things, like writing or pictures.",
+    "flag": true
+  },
+  "watch.keyPoints.2": {
+    "source": "People who make and use AI must be responsible and check it.",
+    "flag": true
+  },
+  "watch.contentNote": {
+    "source": "An American cartoon for middle school, 2 minutes 37 seconds. It goes over ideas from Lessons 1 to 3 and mentions generative AI. The summary was written from Common Sense Education's description, not from watching it. Preview it first; learners can read the written summary instead.",
+    "flag": true
+  },
+  "reflect.prompts.0.text": {
+    "source": "One thing the two real projects taught me about design is ...",
+    "flag": true
+  },
+  "reflect.prompts.1.text": {
+    "source": "The most important thing I learned in Digital World is ...",
+    "flag": true
+  },
+  "reflect.completionMessage": {
+    "source": "You finished Lesson 17. You saw how two real projects grew, planned your own helper, and improved it once.",
+    "flag": true
+  },
+  "visual.alt": {
+    "source": "A five-step design loop: the problem, should AI be used, what it learns from, risks, tests and checks, and feedback, then back to the start for version 2.",
+    "flag": true
+  },
+  "sources.0.label": {
+    "source": "Samsung Malaysia newsroom (11 December 2024): 15-year-old students from Johor win at Samsung Solve for Tomorrow 2024 (Eco Pulse; the organiser's account)",
+    "flag": true
+  },
+  "sources.1.label": {
+    "source": "Singapore National Eye Centre: AI and digital health research group (SELENA+)",
+    "flag": true
+  },
+  "sources.2.label": {
+    "source": "Ting and others (2017): Development and validation of a deep learning system for diabetic retinopathy and related eye diseases, JAMA 318(22) (Duke University record)",
+    "flag": true
+  },
+  "sources.3.label": {
+    "source": "Gunasekeran and others (2024): National use of artificial intelligence for eye screening in Singapore, NEJM AI (the developers' account; SMU record)",
+    "flag": true
+  },
+  "sources.4.label": {
+    "source": "UNESCO: AI competency framework for students (2024)",
+    "flag": true
+  },
+  "sensitiveNotes.0": {
+    "source": "Problems must be ones that many people share in a community, not personal ones. Don't ask learners about problems in their own life, home or family. If a learner picks a problem about health, safety, legal matters or a particular person, gently steer them to one of the lesson's problems.",
+    "flag": true
+  },
+  "sensitiveNotes.1": {
+    "source": "Plans are saved with the learner's work on this device. Learners must not write real people's names or private information in them.",
+    "flag": true
+  },
+  "educatorNotes.0": {
+    "source": "This is a design on paper: nothing is built, and coding is optional. The plan is the lesson's single working document: Write asks what stage it has reached and what evidence it would need, Speak presents it, and step 5 revises it once; no second plan is asked for. Assess five things, not how impressive or how wary the plan sounds: the need (a real problem and who it affects), the intended benefit, technical fit (why AI helps, why another way fits better, or what the learner still needs to find out: all three are strong answers), evidence and checks (how they would test it with unseen examples, and who checks), and one improvement. It covers UNESCO's AI system design aspect at the Understand level and touches Create. Paper version: the five steps as a worksheet. Older or more confident learners can add a test plan (which new examples, and what result would count as working).",
+    "flag": true
+  },
+  "educatorNotes.1": {
+    "source": "The two real projects, and how far each has got. Eco Pulse is known only from its organiser's account (Samsung Malaysia, 11 December 2024, re-read 8 November 2026): team “Terralnnovators” (so spelled), three 15-year-olds at SMK Sultan Ismail, Johor, with an “AI-driven image recognition app” that estimates the value and weight of recyclable items; first prize in the Accessible Recycling category of Solve for Tomorrow 2024 (with Universiti Malaya; final 7 December 2024), where finalists presented prototypes. “With precision” is the organiser's claim; no test results, users or deployment are reported. SELENA+: developed and validated by SERI/SNEC with NUS computer scientists (Ting and others, JAMA, December 2017: 494,661 retinal images; primary validation in Singapore's national diabetic retinopathy screening programme, 14,880 patients; 10 further multiethnic datasets; “further research is necessary” in health care settings). Deployment comes from a separate source, the developers' own case study (Gunasekeran and others, NEJM AI, November 2024): SELENA+ in the Singapore Integrated Diabetic Retinopathy Programme with medical-device approval; in a pilot of the first 1,712 patients it was less sensitive and less specific than human graders for referable retinopathy (94.7% and 82.2%, against 98.9% and 97.2%) and more sensitive for vision-threatening retinopathy. Not an independent evaluation, and no patient outcomes. Don't attribute Lesson 10's made-up Sunvale eye helper's weaknesses to SELENA+.",
+    "flag": true
+  }
+}

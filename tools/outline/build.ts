@@ -8,6 +8,7 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { COURSE_SECTION_LOOKS } from '../../src/courses/kit/courseLooks.ts';
 import { COURSES, DEFAULT_COURSE_ID } from '../../src/content/courses.ts';
+import { LOCALES } from '../../src/i18n/locales.ts';
 import type {
   CourseCredits,
   CourseOutlines,
@@ -20,8 +21,14 @@ import type {
   Titles,
 } from '../../src/content/outlineTypes.ts';
 
-/** The languages whose course files are laid over the English ones (content/courses/<id>/<code>/). */
-const TRANSLATED = ['id', 'ms'] as const;
+/**
+ * The languages whose course files are laid over the English ones (content/courses/<id>/<code>/)
+ * and that learners can choose. A hidden preview language (Vietnamese, until a native speaker has
+ * reviewed it) is left out: these records are precached, and a hidden language adds nothing to the
+ * precache (src/i18n/build.ts). Its lessons still load from the course's own code; only the titles
+ * on the learner home, the guides and Credits stay English until it is ready.
+ */
+export const TRANSLATED: readonly string[] = LOCALES.filter((locale) => locale.content && locale.ready).map((locale) => locale.code);
 
 interface RawSection {
   id: string;

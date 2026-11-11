@@ -1,0 +1,224 @@
+{
+  "title": "Làm sao ta kể một lịch sử chung một cách công bằng?",
+  "essentialQuestion": "Một cuộc triển lãm nhỏ có thể nối các nguồn từ những nơi khác nhau như thế nào mà không khẳng định nhiều hơn điều bằng chứng cho thấy?",
+  "learningGoal": "Lên kế hoạch cho một bảng triển lãm nhỏ ghi nguồn hai nguồn, tạo một mối liên hệ mà chúng hỗ trợ, và nêu một hạn chế và một góc nhìn còn thiếu.",
+  "warmUp": {
+    "question": "Hãy tưởng tượng một tấm nhãn bên cạnh một đồ vật cũ. Điều gì giúp bạn tin nó?",
+    "options": [
+      "Nó nói đồ vật đến từ đâu",
+      "Nó ghi một ngày",
+      "Nó nêu ai đã làm ra hoặc giữ nó",
+      "Mình chưa chắc"
+    ]
+  },
+  "evidence": {
+    "question": "Chọn hai thẻ từ những nơi khác nhau. Mỗi thẻ có thể cho thấy gì, và không thể cho thấy gì?",
+    "cards": [
+      {
+        "title": "Sáu nguồn từ khóa học này",
+        "sources": [
+          {
+            "caption": "Thẻ A: Butuan, Philippines. Những tấm ván thuyền cũ, chụp năm 2015 (Bài 2)",
+            "details": [
+              "Một nhiếp ảnh gia tên Lee chụp bức ảnh này về những tấm ván của một chiếc thuyền cũ ở Butuan, đang được trưng bày tại Bảo tàng Đền Balangay ở Butuan.",
+              "Nó cho thấy: những tấm ván còn lại của một chiếc thuyền, được giữ và trưng bày ngày nay.",
+              "Nó không thể cho thấy: chiếc thuyền đã đi đâu, hay ai ở trên thuyền.",
+              "Ghi nguồn: Lee, 2015, Wikimedia Commons, CC BY 2.0."
+            ]
+          },
+          {
+            "caption": "Thẻ B: Melaka, Malaysia. Một bản đồ vẽ năm 1604 (Bài 3)",
+            "details": [
+              "Manuel Godinho de Herédia vẽ bản đồ này về thành phố Melaka và vùng đất quanh nó vào năm 1604, khi Bồ Đào Nha cai trị cảng.",
+              "Nó cho thấy: người vẽ bản đồ này đã chọn vẽ gì về cảng vào thời của ông.",
+              "Nó không thể cho thấy: Melaka của những năm 1400, hay mỗi người sống ở đó nhìn thành phố ra sao.",
+              "Ghi nguồn: Manuel Godinho de Herédia, 1604, Wikimedia Commons, CC0."
+            ]
+          },
+          {
+            "caption": "Thẻ C: Banda, Indonesia. Một bức tranh Hà Lan vẽ khoảng 1662–1663 (Bài 4)",
+            "details": [
+              "Một bức tranh về đảo Banda Neira với các tòa nhà của Công ty Đông Ấn Hà Lan, VOC, và một con tàu Hà Lan. Nó được ghi cho Johannes Vingboons và do Rijksmuseum ở Amsterdam giữ.",
+              "Nó cho thấy: những con tàu và tòa nhà, như một họa sĩ Hà Lan hình dung khoảng 40 năm sau năm 1621.",
+              "Nó không thể cho thấy: người dân Banda đã trải qua điều gì vào năm 1621, bằng chính lời của họ.",
+              "Ghi nguồn: Johannes Vingboons, khoảng 1662–1663, Rijksmuseum, thuộc phạm vi công cộng."
+            ]
+          },
+          {
+            "caption": "Thẻ D: Timor-Leste. Một ngôi trường, chụp năm 2024 (Bài 9)",
+            "details": [
+              "Một nhiếp ảnh gia tên Ponsyano chụp bức ảnh này về một tòa nhà trường học ở Timor-Leste vào ngày 21 tháng 11 năm 2024.",
+              "Nó cho thấy: một tòa nhà trường học ngày nay.",
+              "Nó không thể cho thấy: mọi đứa trẻ có đến trường được không, hay các trường được xây dựng lại thế nào sau năm 1999.",
+              "Ghi nguồn: Ponsyano, 2024, Wikimedia Commons, CC0."
+            ]
+          },
+          {
+            "caption": "Thẻ E: Hội An, Việt Nam. Một chiếc cầu có mái che, chụp năm 2018 (Bài 10)",
+            "details": [
+              "Một nhiếp ảnh gia tên Christophe95 chụp bức ảnh này về chiếc cầu có mái che ở Hội An vào ngày 27 tháng 7 năm 2018.",
+              "Nó cho thấy: một nơi từ cảng buôn bán xưa còn lại đến ngày nay.",
+              "Nó không thể cho thấy: các thương nhân và cư dân của những năm 1400 đến những năm 1800.",
+              "Ghi nguồn: Christophe95, 2018, Wikimedia Commons, CC BY-SA 4.0."
+            ]
+          },
+          {
+            "caption": "Thẻ F: Borobudur, Indonesia. Công việc bảo tồn, chụp năm 1976 (Bài 11)",
+            "details": [
+              "Gerard Bolla chụp bức ảnh đen trắng này về việc trùng tu Borobudur cho UNESCO vào năm 1976.",
+              "Nó cho thấy: một khoảnh khắc của công việc sửa chữa hiện đại, với giàn giáo trên công trình.",
+              "Nó không thể cho thấy: những người xây vào những năm 700 và 800 đã dự định hay nghĩ gì.",
+              "Ghi nguồn: UNESCO / Gerard Bolla, 1976, Wikimedia Commons, CC BY-SA 3.0 IGO."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Mỗi cuộc triển lãm đều đưa ra những lựa chọn",
+        "text": "Một cuộc triển lãm ở bảo tàng hay lớp học được làm từ những lựa chọn. Một người phụ trách triển lãm quyết định cho xem những nguồn nào, ghi ngày và ghi nguồn cho chúng ra sao, và đặt những câu hỏi nào. Một tấm nhãn tốt giúp khách tham quan phân biệt điều được nhìn thấy với điều được đoán. Không một đồ vật, bản đồ hay bức ảnh nào có thể kể toàn bộ lịch sử của một vùng. Bảo tàng Quốc gia Campuchia, ở Phnom Penh, là một ví dụ. Bảo tàng nói công việc của mình là giới thiệu, bảo vệ và giải thích các báu vật văn hóa của Campuchia. Nó giữ các tác phẩm điêu khắc, đồ gốm và những đồ vật khác. Đó là cách một bảo tàng giải thích bộ sưu tập của chính mình. Nó không nói thay cho mọi cộng đồng ở Đông Nam Á.",
+        "simpler": "Một cuộc triển lãm được làm từ những lựa chọn. Một người phụ trách triển lãm chọn các nguồn để cho xem. Người ấy ghi ngày và ghi nguồn cho mỗi nguồn. Một tấm nhãn tốt cho thấy điều ta thấy và điều ta đoán. Một đồ vật không thể kể câu chuyện của cả một vùng. Bảo tàng Quốc gia Campuchia là một ví dụ. Bảo tàng nói họ giới thiệu, bảo vệ và giải thích các báu vật của Campuchia. Đó là câu chuyện của một bảo tàng. Nó không nói thay cho mọi người."
+      },
+      {
+        "heading": "So sánh điều hai nguồn có thể cho thấy",
+        "text": "Hình thứ hai là một bức ảnh Bảo tàng Quốc gia Campuchia, chụp ngày 2 tháng 3 năm 2011 bởi một nhiếp ảnh gia dùng tên Dtfman. Bạn có thể thấy những tòa nhà đỏ với mái cao quanh một khu vườn. Bạn không thể thấy các đồ vật bên trong, hay cách các khu trưng bày được chọn. Mô tả của chính bảo tàng cho một loại thông tin khác. Nó nói các tòa nhà được dựng lên từ năm 1917 đến 1924, và bảo tàng mở cửa năm 1920. Nó cũng nói bảo tàng nhắm đến việc gì. Vậy một nguồn giúp biết nơi ấy trông thế nào. Nguồn kia giúp biết bảo tàng nói mình làm gì. Cả hai nguồn đều có hạn chế.",
+        "simpler": "Hình thứ hai là một bức ảnh bảo tàng từ năm 2011. Bạn có thể thấy những tòa nhà đỏ và một khu vườn. Bạn không thể thấy các đồ vật bên trong. Bảo tàng cũng viết về chính mình. Nó nói mình mở cửa năm 1920. Nó nói mình muốn làm gì. Vậy bức ảnh cho thấy nơi ấy trông thế nào. Bài viết cho ta biết bảo tàng làm gì. Mỗi nguồn đều có hạn chế."
+      },
+      {
+        "heading": "Tạo một mối liên hệ cẩn thận",
+        "text": "Các bài học Lịch sử Chung của UNESCO, được làm cùng giáo viên và nhà sử học từ Đông Nam Á, giúp người học tìm những mối liên hệ giữa con người và nơi chốn trong khu vực. Bây giờ bạn có thể là người phụ trách triển lãm. Chọn hai thẻ nguồn từ những nơi khác nhau hoặc những phần khác nhau của khóa học này. Giải thích một mối liên hệ cẩn thận: điều gì đó mà cả hai nguồn giúp ta đặt câu hỏi. Đừng bịa ra một cuộc gặp hay một chuyến đi mà các nguồn không cho thấy. Rồi nói điều gì vẫn còn chưa chắc, và góc nhìn của ai còn thiếu. Hãy đặt một dòng ghi nguồn dưới mỗi nguồn để người khác có thể kiểm tra. Bạn có thể làm bảng của mình trên giấy hoặc bằng lời. Một bản kể công bằng có thể nói: “Nguồn này không cho ta biết.”",
+        "simpler": "UNESCO đã làm các bài học Lịch sử Chung cùng giáo viên từ Đông Nam Á. Chúng giúp người học tìm mối liên hệ giữa các nơi. Bây giờ bạn là người phụ trách triển lãm. Chọn hai thẻ từ những nơi khác nhau. Nói một điều mà cả hai nguồn giúp ta đặt câu hỏi. Đừng bịa ra một chuyến đi. Nói điều ta vẫn chưa biết. Nói góc nhìn của ai còn thiếu. Đặt một dòng ghi nguồn dưới mỗi nguồn, để người khác có thể kiểm tra. Nói “Nguồn này không cho ta biết” là công bằng."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "người phụ trách triển lãm",
+        "definition": "Một người chọn các đồ vật cho một buổi trưng bày và giải thích chúng.",
+        "example": "Một người phụ trách triển lãm quyết định hai nguồn nào được đưa lên bảng."
+      },
+      {
+        "word": "nguồn",
+        "definition": "Điều gì đó từ quá khứ hoặc hiện tại mà ta có thể nghiên cứu như bằng chứng.",
+        "example": "Bản đồ Melaka năm 1604 là một nguồn về cảng."
+      },
+      {
+        "word": "góc nhìn",
+        "definition": "Cách một người nhìn sự việc, được định hình bởi nơi họ đang ở và lí do của họ.",
+        "example": "Góc nhìn của một thương nhân về một cảng có thể khác với góc nhìn của người vẽ bản đồ."
+      },
+      {
+        "word": "ghi nguồn",
+        "definition": "Một ghi chú nêu ai đã làm ra một nguồn và nó được giữ ở đâu.",
+        "example": "Dòng ghi nguồn dưới bức ảnh cây cầu nêu tên Christophe95 và năm 2018."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Một bức ảnh bên ngoài một bảo tàng có thể cho thấy tất cả những gì ở bên trong không?",
+        "options": [
+          {
+            "text": "Không, nó chỉ cho thấy bên ngoài",
+            "feedback": "Đúng rồi. Bạn có thể thấy các tòa nhà và khu vườn. Các đồ vật và những lựa chọn về cách trưng bày ở bên trong."
+          },
+          {
+            "text": "Có, nếu bức ảnh rất rõ",
+            "feedback": "Chưa đúng lắm. Ngay cả một bức ảnh rõ về bên ngoài cũng không thể cho thấy bên trong. Hãy nhìn phần thứ hai của bài đọc."
+          },
+          {
+            "text": "Có, vì đó là một bức ảnh thật",
+            "feedback": "Chưa đúng lắm. Một bức ảnh thật vẫn có hạn chế. Hãy nghĩ về điều máy ảnh không thể thấy."
+          }
+        ]
+      },
+      {
+        "question": "Vì sao bạn đặt một dòng ghi nguồn dưới mỗi nguồn trong bảng triển lãm của mình?",
+        "options": [
+          {
+            "text": "Để bảng trông dài hơn",
+            "feedback": "Chưa đúng lắm. Một dòng ghi nguồn có việc phải làm. Hãy nhìn cuối phần thứ ba của bài đọc."
+          },
+          {
+            "text": "Để người khác có thể tìm và kiểm tra nó",
+            "feedback": "Đúng rồi. Một dòng ghi nguồn nêu ai đã làm ra nguồn và nó được giữ ở đâu, để người khác có thể kiểm tra."
+          },
+          {
+            "text": "Để khách tham quan biết ý kiến của bạn",
+            "feedback": "Chưa đúng lắm. Ý tưởng của bạn nằm trong bảng của bạn. Dòng ghi nguồn nói về chính nguồn."
+          }
+        ]
+      },
+      {
+        "question": "Hai thẻ nào bạn có thể đặt cạnh nhau? Chúng có thể giúp bạn đặt câu hỏi gì?",
+        "placeholder": "Ví dụ: Thẻ ... và Thẻ ... cùng giúp ta đặt câu hỏi về ..."
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Chọn hai thẻ từ những nơi hoặc bài học khác nhau, và lên kế hoạch cho một bảng triển lãm. Ghi nguồn cho mỗi thẻ. Rồi viết một mối liên hệ mà cả hai nguồn hỗ trợ, một hạn chế và một góc nhìn còn thiếu.",
+    "sentenceStarters": [
+      "Nguồn thứ nhất của mình là ..., làm năm ... bởi ...",
+      "Nguồn thứ hai của mình là ..., làm năm ... bởi ...",
+      "Cả hai nguồn giúp ta đặt câu hỏi về ...",
+      "Một hạn chế là ...",
+      "Một góc nhìn còn thiếu là ..."
+    ],
+    "planningBoxes": [
+      "Hai nguồn của mình và dòng ghi nguồn của chúng",
+      "Một mối liên hệ mà cả hai nguồn hỗ trợ",
+      "Một hạn chế",
+      "Một góc nhìn còn thiếu"
+    ],
+    "selfCheck": [
+      "Mình đã chọn hai nguồn từ những nơi hoặc bài học khác nhau, với dòng ghi nguồn cho mỗi nguồn.",
+      "Mình đã tạo một mối liên hệ mà cả hai nguồn hỗ trợ.",
+      "Mình đã nêu một hạn chế và một góc nhìn còn thiếu."
+    ],
+    "example": "Nguồn thứ nhất của mình là một bức ảnh những tấm ván thuyền cũ từ Butuan, ở Philippines, do Lee chụp năm 2015. Nguồn thứ hai của mình là một bản đồ Melaka, do Manuel Godinho de Herédia vẽ năm 1604. Cả hai nguồn giúp ta đặt câu hỏi về cách con người đóng thuyền và dùng các cảng bên biển. Một hạn chế là chúng đến từ những nơi và thời gian khác nhau. Chúng không chứng minh chiếc thuyền này từng đến Melaka. Một góc nhìn còn thiếu là lời kể của chính một thủy thủ."
+  },
+  "speak": {
+    "partnerTask": "Trình bày bảng của bạn cho một bạn học trong khoảng một phút. Bạn học hỏi: “Điều gì hỗ trợ phần này?” và cho bạn một gợi ý.",
+    "independentTask": "Đọc to bảng của bạn cho chính mình nghe. Rồi viết câu trả lời cho câu hỏi: “Điều gì hỗ trợ phần này?”"
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Sau khi nghe một quan điểm khác, mình sẽ thay đổi ... vì ..."
+      },
+      {
+        "text": "Một nguồn nữa mình sẽ thêm vào bảng của mình là ... vì ..."
+      }
+    ],
+    "completionMessage": "Bạn đã hoàn thành Bài 12. Bạn đã lên kế hoạch cho một bảng triển lãm công bằng với các nguồn được ghi nguồn, một mối liên hệ cẩn thận và một hạn chế trung thực."
+  },
+  "visual": {
+    "alt": "Một mẫu cho một triển lãm ba bảng. Bảng 1 và 2 mỗi bảng có một ô hình trống với các dòng cho nơi chốn, ngày, người làm hoặc bộ sưu tập, và nguồn. Bảng 3 hỏi điều gì còn chưa chắc và quan điểm của ai còn thiếu.",
+    "caption": "Một mẫu của Thinkerwell cho một triển lãm nhỏ. Các ô trống dành cho hai nguồn bạn chọn.",
+    "lookClosely": "Bảng nào cho khách tham quan biết rằng câu chuyện của ta chưa đầy đủ?"
+  },
+  "secondVisual": {
+    "alt": "Sân vườn của Bảo tàng Quốc gia Campuchia. Những tòa nhà đỏ với mái cao, nhiều lớp, được trang trí đứng quanh một khu vườn có cây cọ, hàng rào cây cắt tỉa, một lối đi lát đá và vài khẩu pháo cũ trên bệ.",
+    "caption": "Một bảo tàng ở Phnom Penh, chụp năm 2011. Nó cho thấy các tòa nhà và khu vườn, không phải điều các khu trưng bày bên trong nói.",
+    "lookClosely": "Bên ngoài một bảo tàng có thể cho thấy tất cả các khu trưng bày của nó nói gì không?"
+  },
+  "sources": [
+    {
+      "label": "Ministry of Culture and Fine Arts, Cambodia: National Museum of Cambodia (Bộ Văn hóa và Mỹ thuật Campuchia: Bảo tàng Quốc gia Campuchia)"
+    },
+    {
+      "label": "UNESCO Bangkok (2019): Understanding shared histories, a teaching package for Southeast Asia, Unit 1: People and places (UNESCO Bangkok: Tìm hiểu các lịch sử chung, một bộ tài liệu giảng dạy cho Đông Nam Á, Chương 1: Con người và nơi chốn)"
+    },
+    {
+      "label": "Wikimedia Commons: National museum phnom penh cambodia (Dtfman, 2011) (Wikimedia Commons: Bảo tàng quốc gia Phnom Penh, Campuchia)"
+    }
+  ],
+  "sensitiveNotes": [
+    "Một số thẻ chạm đến lịch sử khó khăn: Banda năm 1621 (VOC giành quyền kiểm soát bằng vũ lực), Timor-Leste sau năm 1999, và sự cai trị thuộc địa ở Melaka. Hãy giữ các bảng ở điều mỗi nguồn có thể và không thể cho thấy, và đừng bao giờ yêu cầu người học nối một nguồn với trải nghiệm của chính họ hoặc gia đình họ về chiến tranh, di dời, đất nước, tôn giáo hay dân tộc. Nếu người học tra Bảo tàng Quốc gia trên trang của Bộ Văn hóa, hãy xem trước: phần “Lịch sử của Bảo tàng” hiện đang có một đoạn không liên quan về nhà tù S-21, không dành cho bài học này."
+  ],
+  "educatorNotes": [
+    "Mục tiêu: người học lên kế hoạch cho một bảng triển lãm ngắn, công bằng, có ghi nguồn, từ hai nguồn ở những nơi hoặc bài học khác nhau. Hướng đi về bằng chứng: làm mẫu một mối liên hệ giữa hai thẻ mà không bịa ra một chuyến đi trực tiếp (ví dụ những tấm ván Butuan và bản đồ Melaka năm 1604 giúp ta đặt câu hỏi về thuyền và cảng, nhưng không cái nào chứng minh chiếc thuyền đã đến Melaka). Thang đánh giá, bốn phần bằng nhau: ngày và nơi chính xác; hai nguồn được ghi nguồn đúng; một mối liên hệ mà bằng chứng hỗ trợ; một hạn chế hoặc một góc nhìn còn thiếu. Hãy phản hồi cụ thể, không chỉ cho điểm. Một bảng có thể được viết, vẽ trên giấy hoặc nói; 80 đến 120 từ trong bản yêu cầu chỉ là gợi ý, và ví dụ ngắn hơn.",
+    "Quan niệm sai cần giải quyết: rằng hai nguồn bất kì từ khu vực chứng minh có sự tiếp xúc trực tiếp giữa hai nơi của chúng. Lưu ý về nguồn: chi tiết của các thẻ lặp lại điều các Bài 2, 3, 4, 9, 10 và 11 nói; hãy đối chiếu với bản cuối của các bài đó. Mục tiêu và ngày của bảo tàng (các tòa nhà 1917 đến 1924, mở cửa 1920) đến từ Bộ Văn hóa và Mỹ thuật Campuchia. Bức ảnh cho thấy sân và vài khẩu pháo cũ đang trưng bày, không phải đồ vật nào từ bên trong. Bảo tàng Quốc gia là ví dụ của một tổ chức, không phải tiếng nói của mọi cộng đồng người Campuchia hay Đông Nam Á."
+  ]
+}

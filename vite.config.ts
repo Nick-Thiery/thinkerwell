@@ -36,7 +36,7 @@ import { PSEUDO_TRANSFORMS, pseudoMessages } from './src/i18n/pseudo.ts';
 import { pageHead, seoPages, shellHead, sitemapXml, withHead, type SeoInput, type SeoLesson } from './src/seo/build.ts';
 import { SHELL_FILE } from './src/seo/site.ts';
 import { videoReviewData } from './tools/videos/reviewData.ts';
-import { buildCredits, buildOutlines, outlineSourceFiles } from './tools/outline/build.ts';
+import { TRANSLATED, buildCredits, buildOutlines, outlineSourceFiles } from './tools/outline/build.ts';
 
 /**
  * Which kind of content file a module is, and which course's
@@ -241,7 +241,7 @@ function lessonCatalog(): Plugin {
         const english = read('course.json');
         const lessonFiles = readdirSync(path.join(dir, 'lessons')).filter((name) => name.endsWith('.json'));
         const titles: Record<string, string> = { en: english.course.title };
-        for (const code of ['id', 'ms']) {
+        for (const code of TRANSLATED) {
           const translated = path.join(dir, code, 'course.json');
           if (existsSync(translated)) titles[code] = read(`${code}/course.json`).course.title;
         }
@@ -576,6 +576,34 @@ function videoReview(): Plugin {
   };
 }
 
+/**
+ * A hidden preview language's course files (Vietnamese, until a native speaker has reviewed it:
+ * `ready: false` in src/i18n/locales.ts) stay out of the production build. A preview course's code
+ * imports every language folder of its content (content/courses/<id>/<code>/, translatedContents in
+ * src/courses/kit/translatedContent.ts), so without this each course's download, and Settings' "Courses
+ * for offline use", would carry a language nobody can choose. They become `null` (a language with no
+ * course file shows the English lessons) and their pictures an empty address. The dev server and the
+ * tests still have them, which is how a reviewer looks at one (`?locale=vi`); the build still checks
+ * them (the content plugin reads the files itself).
+ */
+function hiddenCourseLanguages(): Plugin {
+  const hidden = LOCALES.filter((locale) => locale.content && !locale.ready).map((locale) => locale.code);
+  const inHiddenLanguage = new RegExp(`[\\\\/]content[\\\\/]courses[\\\\/][^\\\\/]+[\\\\/](?:${hidden.join('|')})[\\\\/]`);
+  return {
+    name: 'thinkerwell:hidden-course-languages',
+    apply: 'build',
+    enforce: 'pre',
+    load(id) {
+      if (!hidden.length) return null;
+      const file = id.split('?')[0]!;
+      if (!inHiddenLanguage.test(file)) return null;
+      if (file.endsWith('.json')) return 'null';
+      if (file.endsWith('.svg')) return 'export default "";';
+      return null;
+    },
+  };
+}
+
 function lazyMessages(): Plugin {
   let root = process.cwd();
   let building = false;
@@ -883,6 +911,7 @@ export default defineConfig({
     courseOutline(),
     stripTeamOnlyLessonFields(),
     stripBuildOnlyMessages(),
+    hiddenCourseLanguages(),
     lazyMessages(),
     videoReview(),
     keepZodOutOfTheBrowser(),

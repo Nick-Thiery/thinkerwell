@@ -1,0 +1,164 @@
+{
+  "title": "Công việc ẩn sau AI",
+  "essentialQuestion": "Những ai làm cho AI hoạt động được, và họ có được đối xử công bằng không?",
+  "learningGoal": "Mô tả những công việc ẩn mà các công cụ AI phụ thuộc vào, chuỗi cung ứng của chúng hoạt động ra sao, và các báo cáo đã phát hiện gì về tiền công và điều kiện làm việc của người lao động.",
+  "evidence": {
+    "label": "Ví dụ hư cấu, được tạo riêng cho bài học này.",
+    "question": "Hãy lần theo chuỗi từ Amara đến Rosa. Người dùng công cụ Ask Me thấy công việc của ai? Công việc của ai vẫn bị giấu đi?",
+    "cards": [
+      {
+        "title": "Bốn người đứng sau công cụ Ask Me",
+        "cases": [
+          {
+            "name": "Amara, người gán nhãn ảnh",
+            "body": "Cô làm việc trực tuyến từ một thành phố rất xa công ty. Cả ngày, cô gắn thẻ cho các bức ảnh là “xe buýt”, “cây” hoặc “người”. Cô được trả vài xu cho mỗi nhiệm vụ, và đôi khi tiền công đến muộn."
+          },
+          {
+            "name": "Tomas, người kiểm duyệt nội dung",
+            "body": "Anh kiểm tra những bài đăng vi phạm quy tắc, để công cụ học được những gì nó không bao giờ được hiện ra. Công việc này nặng nề, và anh muốn có thêm thời gian nghỉ ngơi."
+          },
+          {
+            "name": "Sami, kĩ sư",
+            "body": "Anh làm việc ở trụ sở của công ty và thiết kế cách công cụ học. Anh được trả lương cao, và nhóm của anh thường xuất hiện trên báo chí."
+          },
+          {
+            "name": "Rosa, lãnh đạo công ty",
+            "body": "Cô giới thiệu công cụ mới với thế giới trên một sân khấu lớn. Nhiều người biết tên và khuôn mặt cô."
+          }
+        ]
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Những công việc đứng sau một công cụ AI",
+        "text": "Một công cụ AI có thể có vẻ tự hoạt động, nhưng có nhiều người giúp làm ra nó. Với một số kiểu huấn luyện, người lao động gắn một nhãn cho từng ví dụ, như “xe buýt” hoặc “cây” cho một bức ảnh. Những người lao động khác đánh giá các câu trả lời của một công cụ, để nó có thể được thử nghiệm và cải thiện. Những người kiểm duyệt kiểm tra các bài đăng có hại, để công cụ học được những gì nó không được hiện ra. Nhiều công cụ còn học từ chữ viết và hình ảnh tìm thấy trên mạng. Năm 2023, một số nhà văn và nghệ sĩ nói rằng không ai hỏi ý kiến họ trước. Một số người đã kiện ra tòa, và các tòa vẫn đang quyết định những vụ này.",
+        "simpler": "Nhiều người giúp làm ra các công cụ AI. Với một số việc huấn luyện, người lao động gắn một nhãn cho từng ví dụ. Một bức ảnh có thể được gắn nhãn “xe buýt” hoặc “cây”. Những người lao động khác kiểm tra xem câu trả lời của nó có tốt không. Những người kiểm duyệt kiểm tra các bài đăng có thể làm tổn thương mọi người. Nhiều công cụ còn học từ chữ viết và hình ảnh trên mạng. Năm 2023, một số nhà văn và nghệ sĩ nói không ai hỏi họ. Một số người đã kiện ra tòa. Các tòa vẫn đang quyết định."
+      },
+      {
+        "heading": "Một chuỗi cung ứng dài",
+        "text": "Giống như quần áo, một công cụ AI có một chuỗi cung ứng. Một công ty xây dựng một công cụ thường trả tiền cho một công ty khác, hoặc một nền tảng trực tuyến, để tìm người lao động. Nhiều người trong số họ sống rất xa, ở những nước như Kenya và Philippines. Tháng 1 năm 2023, một tạp chí tin tức đưa tin về khoảng ba chục người lao động ở Kenya. Năm 2021 và 2022, họ đã gắn nhãn cho văn bản có hại cho một công cụ AI nổi tiếng. Họ nhận về khoảng 1,32 đến 2 đô la Mỹ một giờ. Công ty AI trả cho công ty ở giữa 12,50 đô la một giờ cho công việc của họ. Công ty đó nói khoản này cũng dùng để trả cho văn phòng, quản lí và các chi phí khác. Tháng 8 năm 2023, một tờ báo đã nói chuyện với 36 người lao động trực tuyến ở Philippines. Chỉ trừ hai người, tất cả đều nói một phần tiền công của họ đến muộn, bị cắt bớt hoặc không bao giờ đến. Nền tảng của họ nói điều này hiếm khi xảy ra. Những báo cáo này mô tả một số người lao động và công ty nhất định, không phải mọi công việc AI.",
+        "simpler": "Một công cụ AI có một chuỗi cung ứng, giống như quần áo. Công ty thường trả tiền cho một công ty khác hoặc một nền tảng để tìm người lao động. Nhiều người sống rất xa, ở Kenya, Philippines và những nơi khác. Năm 2023, một tạp chí viết về những người lao động ở Kenya. Họ gắn nhãn cho văn bản có hại cho một công cụ AI. Họ nhận được chưa đến 2 đô la Mỹ một giờ. Công ty AI trả 12,50 đô la một giờ cho công ty ở giữa. Công ty đó nói số tiền này cũng dùng để trả các chi phí khác. Một tờ báo đã nói chuyện với 36 người lao động ở Philippines. Gần như tất cả đều nói một phần tiền công đến muộn, bị cắt hoặc bị mất. Nền tảng của họ nói điều này hiếm khi xảy ra. Các báo cáo nói về một số người lao động, không phải tất cả."
+      },
+      {
+        "heading": "Một mẫu hình cũ, và một nghiên cứu mới",
+        "text": "Trả công rất thấp cho mỗi phần việc nhỏ không phải là điều mới. Vào những năm 1800, người ở Anh gọi công việc nặng nhọc, trả công rất thấp là “sweating”, tức là “đổ mồ hôi”, và sau này nói đến một xưởng bóc lột sức lao động. Người lao động và những nhà cải cách đã thúc đẩy thay đổi. Năm 1909, một đạo luật của Anh đặt ra mức lương tối thiểu trong bốn ngành nghề, như may đo và làm xích. Năm 2023, các nhà nghiên cứu ở Đại học Oxford đã kiểm tra 15 nền tảng làm việc trực tuyến. Một số trong đó bán công việc dữ liệu cho AI. Các nhà nghiên cứu xem xét tiền công, điều kiện, hợp đồng, cách quản lí và tiếng nói của người lao động. Không nền tảng nào đạt các tiêu chuẩn cơ bản của họ, và nền tảng tốt nhất đạt 5 trên 10 điểm. Họ cũng hỏi 250 người làm những nhiệm vụ nhỏ trên mạng về công việc của họ. Trung bình, những người lao động này kiếm được khoảng 2,15 đô la Mỹ một giờ. Hơn một phần tư thời gian của họ không được trả tiền, như thời gian tìm nhiệm vụ. Sau nghiên cứu, một số nền tảng đã thay đổi quy tắc của mình, chẳng hạn đặt ra một mức lương tối thiểu.",
+        "simpler": "Trả công rất thấp không phải là điều mới. Vào những năm 1800, người ở Anh gọi nó là “sweating”, tức “đổ mồ hôi”. Sau đó có từ “xưởng bóc lột sức lao động”. Người lao động thúc đẩy thay đổi. Năm 1909, một đạo luật của Anh đặt ra mức lương tối thiểu trong bốn loại công việc. Năm 2023, các nhà nghiên cứu ở Oxford đã kiểm tra 15 nền tảng làm việc. Một số bán công việc cho AI. Không nền tảng nào đạt mọi quy tắc cơ bản của họ. Họ cũng hỏi 250 người lao động về tiền công của họ. Trung bình, họ nhận được khoảng 2,15 đô la Mỹ một giờ. Rất nhiều thời gian của họ không được trả tiền. Một số nền tảng đã thay đổi quy tắc sau nghiên cứu."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "nhãn",
+        "definition": "Một từ cho biết một bức ảnh hoặc một đoạn văn bản cho thấy điều gì.",
+        "example": "Amara gắn nhãn “xe buýt” cho mỗi bức ảnh chụp một chiếc xe buýt."
+      },
+      {
+        "word": "người kiểm duyệt",
+        "definition": "Người kiểm tra các bài đăng và gỡ bỏ những bài vi phạm quy tắc.",
+        "example": "Tomas là một người kiểm duyệt cho công cụ Ask Me."
+      },
+      {
+        "word": "chuỗi cung ứng",
+        "definition": "Tất cả những người và nơi chốn giúp làm ra một sản phẩm, từng bước một.",
+        "example": "Amara, Tomas và Sami đều là một phần của chuỗi cung ứng của công cụ Ask Me."
+      },
+      {
+        "word": "nền tảng",
+        "definition": "Một trang web hoặc ứng dụng nơi mọi người tìm việc, mua đồ hoặc chia sẻ đồ.",
+        "example": "Amara tìm các nhiệm vụ của mình trên một nền tảng làm việc trực tuyến."
+      },
+      {
+        "word": "xưởng bóc lột sức lao động",
+        "definition": "Nơi làm việc trả công rất thấp và có điều kiện không lành mạnh hoặc không công bằng.",
+        "example": "Một số người gọi công việc gán nhãn trực tuyến là một “xưởng bóc lột sức lao động kĩ thuật số”."
+      },
+      {
+        "word": "mức lương tối thiểu",
+        "definition": "Mức trả thấp nhất cho một giờ làm việc mà luật hoặc quy định cho phép.",
+        "example": "Năm 1909, một đạo luật của Anh đặt ra mức lương tối thiểu cho những người làm xích."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Số tiền công trong báo cáo về Kenya cho thấy điều gì?",
+        "options": [
+          {
+            "text": "Người lao động nhận ít hơn nhiều so với số tiền công ty ở giữa được trả",
+            "feedback": "Đúng rồi. Người lao động nhận về chưa đến 2 đô la một giờ. Công ty ở giữa nhận 12,50 đô la một giờ cho công việc của họ, dù nó nói khoản này cũng dùng để trả các chi phí khác."
+          },
+          {
+            "text": "Người lao động nhận được nhiều tiền hơn số tiền công ty AI đã trả cho công ty ở giữa để thuê họ",
+            "feedback": "Chưa đúng lắm. Người lao động nhận ít hơn nhiều so với số tiền công ty AI trả. Hãy nhìn các con số ở phần thứ hai."
+          },
+          {
+            "text": "Mọi người trong chuỗi nhận cùng một mức tiền công",
+            "feedback": "Chưa đúng lắm. Tiền công rất khác nhau ở mỗi bước. Hãy nhìn các con số ở phần thứ hai."
+          }
+        ]
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Chọn một công việc ẩn trong bài học. Giải thích nó giúp một công cụ AI như thế nào, một báo cáo đã phát hiện gì về những người làm nó, và một thay đổi bạn nghĩ sẽ làm cho công việc công bằng hơn.",
+    "sentenceStarters": [
+      "Mình chọn ...",
+      "Công việc này giúp công cụ bằng cách ...",
+      "Một báo cáo đã phát hiện rằng ...",
+      "Một thay đổi có thể làm cho nó công bằng hơn là ..."
+    ],
+    "example": "Mình chọn việc gán nhãn. Những người gán nhãn thêm một từ cho từng ví dụ. Nhờ vậy một công cụ có thể học được một bức ảnh hoặc một đoạn văn bản cho thấy điều gì. Một báo cáo từ Kenya năm 2023 nói về những người lao động gán nhãn cho văn bản có hại. Họ nhận về chưa đến 2 đô la một giờ. Công ty ở giữa nhận 12,50 đô la một giờ cho công việc của họ, nhưng nó nói khoản này cũng dùng để trả các chi phí khác. Một thay đổi có thể làm cho nó công bằng hơn là một mức lương tối thiểu trên mọi nền tảng làm việc, được trả đúng hạn."
+  },
+  "speak": {
+    "partnerTask": "Bạn học của bạn hỏi công việc dữ liệu trực tuyến giống “sweating” vào những năm 1800 ở điểm nào. Bạn nêu một điểm giống nhau và một điểm khác nhau. Rồi đổi vai.",
+    "independentTask": "Nói to chuỗi cung ứng là gì. Rồi lần theo chuỗi đứng sau một công cụ AI, từ một người lao động đến người dùng công cụ."
+  },
+  "watch": {
+    "why": "Trong một cuộc phỏng vấn thời sự bình tĩnh dài sáu phút, một chuyên gia giải thích những người làm việc với dữ liệu làm gì, họ làm việc ở đâu và vì sao tiền công cùng cách đối xử với họ quan trọng.",
+    "beforeQuestion": "Bạn nghĩ mọi người làm những công việc gì để giúp một công cụ AI học?",
+    "afterQuestion": "Vì sao chuyên gia nói AI thật ra được xây dựng trên công sức của con người?",
+    "summary": "Trong cuộc phỏng vấn thời sự này, một phóng viên nói chuyện với một chuyên gia. Chuyên gia này làm việc cho một nhóm muốn AI được dùng một cách công bằng. Bà giải thích rằng các công cụ AI cần rất nhiều dữ liệu. Một máy tính không tự biết một bức ảnh là con mèo hay con chó. Con người phải nhìn các bức ảnh và gán nhãn cho chúng, hết lần này đến lần khác. Rồi công cụ mới có thể học. Rất nhiều công việc này được làm trực tuyến, ở những vùng nghèo hơn của thế giới, vì tiền công ở đó thấp hơn. Một số người lao động phải nhìn những bài đăng có hại, để người khác không phải thấy chúng. Tiền công thường rất thấp. Người lao động không phải lúc nào cũng chắc mình sẽ được trả tiền. Chuyên gia nói AI thật ra được xây dựng trên công sức và suy nghĩ của con người. Bà hi vọng có những quy tắc rõ ràng để bảo vệ những người lao động này.",
+    "keyPoints": [
+      "Các công cụ AI học từ dữ liệu mà con người gán nhãn bằng tay.",
+      "Phần lớn công việc này được làm trực tuyến ở các nước nghèo hơn, thường với tiền công rất thấp.",
+      "AI được xây dựng trên công sức của con người, nên những người lao động này cần có quy tắc công bằng."
+    ],
+    "contentNote": "Khoảng 6 phút (5:56), một cuộc phỏng vấn thời sự của Hoa Kỳ từ tháng 2 năm 2023 (PBS News Weekend, với Sonam Jindal của Partnership on AI). Tiêu đề và kênh đã được xác nhận bằng oEmbed của YouTube ngày 31 tháng 10 năm 2026, và độ dài lấy từ danh sách của YouTube. Bản tóm tắt được viết từ bản ghi lời của PBS về đoạn phát sóng (https://www.pbs.org/newshour/show/concerns-rise-over-treatment-of-human-workers-behind-ai-technology), không phải từ việc xem video. Phần mở đầu nêu tên các công ty và sản phẩm của Hoa Kỳ và nhắc đến một chatbot đã bảo một phóng viên bỏ vợ; cuộc phỏng vấn nói một số người lao động thấy “nội dung độc hại” và hình ảnh y tế, mà không cho xem hay mô tả cái nào. Một người trong nhóm phải xem nó trước khi dùng; người học có thể đọc bản tóm tắt viết thay thế."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Một điều mình chưa biết về những người làm ra các công cụ AI là ..."
+      },
+      {
+        "text": "Một câu hỏi mình sẽ hỏi một công ty AI là ..."
+      }
+    ],
+    "completionMessage": "Bạn đã hoàn thành Bài 5. Bạn đã lần theo chuỗi cung ứng đứng sau một công cụ AI và biết các báo cáo đã phát hiện gì về những người lao động ẩn của nó."
+  },
+  "visual": {
+    "alt": "Một chuỗi cung ứng từ những người lao động đến một công ty ở giữa, công ty và người dùng. Một tấm màn che giấu những người lao động và công ty ở giữa. Trong một báo cáo năm 2023 từ Kenya, công ty trả cho công ty ở giữa 12,50 đô la Mỹ một giờ còn người lao động nhận về khoảng 1,32 đến 2 đô la."
+  },
+  "sources": [
+    {
+      "label": "TIME (18 tháng 1 năm 2023): OpenAI used Kenyan workers on less than $2 per hour to make ChatGPT less toxic"
+    },
+    {
+      "label": "The Washington Post (tháng 8 năm 2023): Behind the AI boom, an army of overseas workers in “digital sweatshops” (36 người lao động ở Philippines)"
+    },
+    {
+      "label": "Fairwork, Oxford Internet Institute (tháng 7 năm 2023): Fairwork Cloudwork Ratings 2023, work in the planetary labour market (15 nền tảng; một khảo sát 752 người lao động)"
+    },
+    {
+      "label": "Modern Records Centre, University of Warwick: the Trade Boards Act 1909 (mức lương tối thiểu trong bốn ngành nghề “bị bóc lột”)"
+    }
+  ],
+  "sensitiveNotes": [
+    "Người kiểm duyệt: ngoài đời thật, những người kiểm duyệt và một số người gán nhãn đã phải nhìn những nội dung bạo lực và xâm hại, và nhiều người cho biết sức khỏe tinh thần của họ bị tổn hại lâu dài (xem nguồn TIME). Bài học chỉ nói rằng họ kiểm tra “các bài đăng có hại”. Đừng mô tả những gì họ thấy và đừng để cuộc thảo luận đi theo hướng đó; nếu một người học hỏi, hãy nói đó là công việc nặng nhọc có thể làm tổn thương con người, và vì thế điều kiện công bằng và sự hỗ trợ là quan trọng.",
+    "Công việc và tiền bạc: nhiều người học không được làm việc hợp pháp, và những người thân cận với họ có thể làm công việc trả công thấp, phi chính thức hoặc trực tuyến. Đừng bao giờ hỏi về công việc, tiền công hay tiền bạc của người học hoặc gia đình họ. Hãy giữ cuộc thảo luận ở những người lao động Ask Me bịa ra và các sự kiện đã được báo cáo. Những từ như “xưởng bóc lột sức lao động” và “tiền công không công bằng” có thể gần với hoàn cảnh của họ; hãy để người học nói nếu họ muốn, đừng ép."
+  ],
+  "educatorNotes": [
+    "Các sự kiện có ghi ngày tháng và phạm vi của chúng quan trọng; mỗi báo cáo mô tả những người lao động, công ty, nền tảng và năm cụ thể, không phải mọi công việc AI. Kenya: TIME (Billy Perrigo, 18 tháng 1 năm 2023) đưa tin rằng khoảng ba chục người lao động tại văn phòng ở Nairobi của một công ty thuê ngoài đã gán nhãn văn bản có hại cho một bộ lọc an toàn từ tháng 11 năm 2021 đến đầu năm 2022 và nhận về khoảng 1,32 đến 2 đô la một giờ; các hợp đồng của công ty AI trả cho công ty đó 12,50 đô la một giờ. Công ty nói mức này bao gồm mọi chi phí của nó (văn phòng, lương, phúc lợi) và người lao động kiếm được 1,46 đến 3,74 đô la một giờ sau thuế; các nguồn tin của TIME phản bác điều đó. Philippines: The Washington Post (Rebecca Tan và Regine Cabato, tháng 8 năm 2023) đã nói chuyện với 36 người làm tự do hiện tại và trước đây trên một nền tảng; 34 người nói các khoản thanh toán đã bị trì hoãn, giảm bớt hoặc hủy, và nền tảng nói việc chậm trễ là “cực kì hiếm”. Các công ty (OpenAI, Sama, Scale AI và nền tảng Remotasks của nó) chỉ được nêu tên trong các nguồn và ở đây, như đặc tả của Digital World yêu cầu. Công trình của các nhà văn và nghệ sĩ: năm 2023, một số nhà văn và nghệ sĩ đã kiện các công ty AI hoặc kí các bản kiến nghị đòi sự đồng ý, ghi công và trả tiền. Các công ty không phải ai cũng có cùng một lập trường: một số lập luận rằng việc huấn luyện trên những tài liệu như vậy là hợp pháp (sử dụng hợp lí ở Hoa Kỳ) hoặc nói họ dùng tài liệu được cấp phép và công khai, một số từ chối bình luận, và một hãng thông tấn đã cấp phép kho lưu trữ của mình cho một công ty AI (Anchorage Daily News, từ The Washington Post, 16 tháng 7 năm 2023). Các vụ kiện đã tiến triển từ đó; hãy kiểm tra thông tin mới nhất trước khi dạy phần đó, và đừng nói với người học rằng mọi tác phẩm sáng tạo đều bị lấy mà không hỏi. Hồ sơ nhận định nằm ở content/courses/digital-world/claims/DW05.md.",
+    "Fairwork's Cloudwork Ratings 2023 (Oxford Internet Institute, 20 tháng 7 năm 2023) chấm điểm 15 nền tảng làm việc tự do và làm việc vi mô trực tuyến theo năm nguyên tắc (tiền công công bằng, điều kiện, hợp đồng, quản lí và đại diện); điểm từ 0 đến 5 trên 10 (Comeup, Prolific và Terawork cao nhất; Amazon Mechanical Turk, Freelancer, Microworkers và Workana ở mức 0), và không nền tảng nào đạt tiêu chuẩn tối thiểu của nó. Không phải tất cả đều bán công việc AI; các nền tảng làm việc vi mô (Appen, Scale/Remotasks và những nền tảng khác) bán dịch vụ gán nhãn dữ liệu, đánh giá mô hình và kiểm duyệt nội dung cho các công ty AI. Khảo sát của nó (tháng 2 đến tháng 5 năm 2023) lắng nghe 752 người lao động ở 94 nước và nói rằng nó không nhằm mục đích mang tính đại diện; 250 người làm việc vi mô trong số đó (51 nước) kiếm trung bình 50,30 đô la một tuần, mà Fairwork tính là khoảng 2,15 đô la một giờ, và 26,85% thời gian của họ trên nền tảng không được trả tiền (tìm nhiệm vụ, bài kiểm tra không được trả tiền, nộp đơn). Bốn nền tảng đã thực hiện 17 thay đổi sau các gợi ý của Fairwork, và hai nền tảng đã áp dụng chính sách lương tối thiểu. Chính báo cáo nói rằng “công việc trả theo sản phẩm bấp bênh có một di sản lâu dài”. Đạo luật Trade Boards Act 1909 đặt ra mức lương tối thiểu có hiệu lực pháp lí trong các ngành làm xích, hoàn thiện ren, làm hộp giấy và may đo may sẵn (Modern Records Centre, University of Warwick); “sweater” đã được dùng ở Anh vào năm 1850 và “sweating” lan rộng vào những năm 1880 (Britannica)."
+  ]
+}

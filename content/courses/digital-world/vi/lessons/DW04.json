@@ -1,0 +1,203 @@
+{
+  "title": "Mô hình ngôn ngữ lớn là gì",
+  "essentialQuestion": "Các chatbot viết câu trả lời như thế nào, và vì sao chúng có thể nghe rất chắc chắn mà vẫn sai?",
+  "learningGoal": "Giải thích một mô hình ngôn ngữ lớn viết bằng cách dự đoán token tiếp theo như thế nào, các chatbot đã phát triển từ quy tắc sang học máy ra sao, và vì sao câu trả lời của chúng cần được kiểm tra.",
+  "evidence": {
+    "label": "Ví dụ hư cấu, được tạo riêng cho bài học này.",
+    "question": "Trong trò chơi đồ chơi, từ nào sẽ xuất hiện nhiều nhất? Vì sao trợ lý có thể giải thích tỉ lệ bản đồ rất tốt, nhưng lại nêu tên một cuốn sách không tồn tại?",
+    "cards": [
+      {
+        "title": "Trò chơi từ ngữ ở Lakeside, một ví dụ đồ chơi: điều đứng sau “một tách”",
+        "columns": [
+          "Từ tiếp theo",
+          "Số lần trong các câu luyện tập"
+        ],
+        "rows": [
+          [
+            "trà",
+            "6"
+          ],
+          [
+            "nước",
+            "3"
+          ],
+          [
+            "cơm",
+            "1"
+          ]
+        ]
+      },
+      {
+        "title": "Ba câu trả lời từ trợ lý Lakeside, một chatbot giả định",
+        "cases": [
+          {
+            "name": "Giải thích một ý tưởng",
+            "body": "Một người học hỏi: “Tỉ lệ bản đồ là gì?” Trợ lý đưa ra một lời giải thích ngắn, rõ ràng. Một giáo viên đã kiểm tra, và nó đúng."
+          },
+          {
+            "name": "Dịch một thông báo",
+            "body": "Trợ lý chuyển một thông báo ngắn sang một ngôn ngữ khác. Một tình nguyện viên nói ngôn ngữ đó đã sửa hai từ."
+          },
+          {
+            "name": "Nêu tên một cuốn sách",
+            "body": "Một người học xin một cuốn sách về lịch sử của các dòng sông. Trợ lý nêu tên “The Long Blue Road” của Pella Raskin, xuất bản năm 2009. Nghe có vẻ rất chắc chắn. Người thủ thư không tìm thấy cuốn sách này ở đâu cả."
+          }
+        ]
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Từ quy tắc đến học từ văn bản",
+        "text": "Chatbot là một chương trình máy tính mà bạn có thể trò chuyện bằng chữ viết. Chatbot không phải là điều mới. Năm 1966, một chương trình tên là ELIZA trò chuyện bằng cách làm theo các quy tắc do con người viết ra. Ngày nay, nhiều chatbot được xây dựng trên một mô hình ngôn ngữ lớn, hay LLM, vốn dùng học máy thay cho quy tắc. Một LLM học các mẫu hình từ một lượng văn bản khổng lồ, như sách, bài báo và trang web, phần lớn do con người viết. LLM lớn lên từ cùng những thứ như các chương trình nhận ảnh trong Bài 2: rất nhiều dữ liệu số và các chip nhanh. Năm 2017, các nhà nghiên cứu công bố một thiết kế mới cho các việc về ngôn ngữ, và nhiều LLM sau đó được xây dựng trên nó. Tháng 11 năm 2022, công ty OpenAI phát hành ChatGPT, một chatbot được xây dựng trên một LLM.",
+        "simpler": "Chatbot là một chương trình bạn có thể trò chuyện cùng. Năm 1966, một chatbot tên là ELIZA làm theo các quy tắc do con người viết. Nhiều chatbot hiện nay dùng một mô hình ngôn ngữ lớn, hay LLM. Thay vào đó, một LLM học từ rất nhiều văn bản, như sách và trang web. Con người đã viết phần lớn số văn bản đó. Giống như các chương trình nhận ảnh trong Bài 2, LLM cần rất nhiều dữ liệu và các chip nhanh. Năm 2017, các nhà nghiên cứu tạo ra một thiết kế mới. Nhiều LLM sau đó dùng nó. ChatGPT, được xây dựng trên một LLM, ra mắt năm 2022."
+      },
+      {
+        "heading": "Nó viết từng mảnh một như thế nào",
+        "text": "Một LLM làm việc với những mảnh văn bản nhỏ gọi là token. Một token có thể là một từ hoặc một phần của một từ. Giả sử một người học hỏi: “Tỉ lệ bản đồ là gì?” Mô hình dự đoán một token đầu tiên có khả năng cao, chẳng hạn “Tỉ”. Nó thêm token đó vào, rồi dự đoán token tiếp theo, chẳng hạn “lệ”, dựa trên mọi thứ đã viết cho đến lúc đó. Nó tiếp tục như vậy, từng mảnh một, cho đến khi câu trả lời xong. Một ví dụ đồ chơi cho thấy ý tưởng này. Trong trò chơi từ ngữ ở Lakeside, “trà” đứng sau “một tách” sáu lần, “nước” ba lần và “cơm” một lần. Các mô hình thật không chỉ đếm từ; chúng học những mẫu hình phong phú hơn nhiều từ lượng văn bản lớn hơn nhiều. Thường thì mỗi token được chọn một phần là do ngẫu nhiên trong số những token có khả năng cao, nên cùng một câu hỏi có thể nhận được những câu trả lời khác nhau. Với các cài đặt khác, một mô hình có thể cho cùng một câu trả lời mỗi lần.",
+        "simpler": "Một LLM làm việc với các token. Một token là một từ hoặc một phần của một từ. Giả sử một người học hỏi tỉ lệ bản đồ là gì. Mô hình dự đoán một token đầu tiên có khả năng cao, như “Tỉ”. Rồi nó dự đoán token tiếp theo, như “lệ”. Nó tiếp tục từng mảnh một. Trò chơi từ ngữ ở Lakeside là một ví dụ đồ chơi. Trong đó, “trà” đứng sau “một tách” nhiều nhất. Các mô hình thật không chỉ đếm từ. Chúng học được nhiều hơn nhiều từ lượng văn bản lớn hơn nhiều. Thường thì chúng chọn một phần là do ngẫu nhiên, nên câu trả lời có thể thay đổi. Các cài đặt khác cho cùng một câu trả lời mỗi lần."
+      },
+      {
+        "heading": "Vì sao điều này quan trọng với việc viết, dịch thuật và thông tin",
+        "text": "Hiện nay, người ta dùng LLM để giúp viết, dịch thuật và tìm thông tin. Một chatbot có thể giải thích một ý tưởng bằng những từ đơn giản hơn, giúp viết bản nháp đầu tiên hoặc dịch một thông báo ngắn. Ở Lakeside, một giáo viên đã kiểm tra lời giải thích của trợ lý, và nó đúng. Một tình nguyện viên đã sửa hai từ trong bản dịch của nó. Nhiều LLM chủ yếu học từ tiếng Anh, và các nhà nghiên cứu đã thấy chúng thường hoạt động kém hơn ở những ngôn ngữ có ít chữ viết trên mạng. Một LLM cơ bản dự đoán những từ nghe có vẻ đúng; không có gì trong đó kiểm tra sự thật. Vì vậy nó có thể bịa ra điều gì đó mà vẫn nghe có vẻ tự tin, như trợ lý ở Lakeside đã nêu tên một cuốn sách không tồn tại. Một số công cụ còn tìm trên web và hiện các đường dẫn, nhưng các trang đó có thể sai hoặc bị hiểu nhầm. Hãy kiểm tra các câu trả lời quan trọng với một nguồn đáng tin cậy, như thư viện hoặc một giáo viên.",
+        "simpler": "Hiện nay, LLM giúp mọi người viết, dịch thuật và tìm thông tin. Ở Lakeside, trợ lý đã giải thích một ý tưởng rất tốt. Một tình nguyện viên đã sửa hai từ trong bản dịch của nó. Nhiều LLM học chủ yếu từ tiếng Anh. Chúng thường hoạt động kém hơn ở những ngôn ngữ có ít chữ viết trên mạng. Một LLM cơ bản chọn những từ nghe có vẻ đúng. Nó không kiểm tra sự thật. Vì vậy nó có thể bịa ra điều gì đó và nghe tự tin. Trợ lý ở Lakeside đã nêu tên một cuốn sách không tồn tại. Một số công cụ tìm trên web, nhưng các trang cũng có thể sai. Hãy kiểm tra các câu trả lời quan trọng với một nguồn đáng tin cậy."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "chatbot",
+        "definition": "Một chương trình máy tính bạn có thể trò chuyện bằng cách gõ chữ.",
+        "example": "Trợ lý ở Lakeside là một chatbot giả định."
+      },
+      {
+        "word": "mô hình ngôn ngữ lớn",
+        "forms": [
+          "LLM"
+        ],
+        "definition": "Một chương trình học các mẫu hình từ một lượng văn bản khổng lồ.",
+        "example": "Nhiều chatbot được xây dựng trên một mô hình ngôn ngữ lớn."
+      },
+      {
+        "word": "token",
+        "definition": "Một mảnh văn bản nhỏ: một từ hoặc một phần của một từ.",
+        "example": "Mô hình thêm từng token một, như “lệ”."
+      },
+      {
+        "word": "dự đoán",
+        "definition": "Đoán điều gì sẽ đến tiếp theo.",
+        "example": "Mô hình dự đoán token tiếp theo là “lệ”."
+      },
+      {
+        "word": "tự tin",
+        "definition": "Nghe hoặc cảm thấy rất chắc chắn.",
+        "example": "Trợ lý nghe có vẻ tự tin, nhưng cuốn sách không tồn tại."
+      },
+      {
+        "word": "nguồn",
+        "definition": "Nơi thông tin đến từ đó, như một cuốn sách hoặc một người.",
+        "example": "Thư viện là một nguồn đáng tin cậy để kiểm tra tên một cuốn sách."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Một mô hình ngôn ngữ lớn viết một câu trả lời bằng cách nào?",
+        "options": [
+          {
+            "text": "Nó dự đoán token tiếp theo, hết lần này đến lần khác",
+            "feedback": "Đúng rồi. Nó thêm từng token có khả năng cao, là một từ hoặc một phần của một từ, dựa trên các mẫu hình từ văn bản của nó."
+          },
+          {
+            "text": "Nó chép cả câu trả lời từ một cuốn sách lớn",
+            "feedback": "Chưa đúng lắm. Nó học các mẫu hình từ rất nhiều văn bản. Hãy đọc lại phần thứ hai."
+          },
+          {
+            "text": "Nó làm theo các quy tắc do con người viết, như ELIZA",
+            "feedback": "Chưa đúng lắm. ELIZA năm 1966 dùng quy tắc. Một LLM thì học các mẫu hình từ văn bản. Hãy đọc lại hai phần đầu."
+          }
+        ]
+      },
+      {
+        "question": "Vì sao nhiều LLM yếu hơn ở những ngôn ngữ có ít chữ viết trên mạng?",
+        "options": [
+          {
+            "text": "Những ngôn ngữ đó quá khó với máy tính",
+            "feedback": "Chưa đúng lắm. Không có ngôn ngữ nào tự nó quá khó. Hãy nghĩ xem mô hình đã học từ đâu. Hãy đọc lại phần thứ ba."
+          },
+          {
+            "text": "Chúng có ít văn bản bằng những ngôn ngữ đó để học",
+            "feedback": "Đúng rồi. Nhiều LLM học chủ yếu từ tiếng Anh. Có ít văn bản hơn bằng một ngôn ngữ là một lí do lớn khiến chúng yếu hơn ở ngôn ngữ đó."
+          },
+          {
+            "text": "Một chatbot chỉ dùng được một ngôn ngữ",
+            "feedback": "Chưa đúng lắm. Nhiều LLM dùng được nhiều ngôn ngữ, nhưng không giỏi như nhau. Hãy đọc lại phần thứ ba."
+          }
+        ]
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Giải thích một chatbot viết một câu trả lời như thế nào. Rồi nói vì sao điều này quan trọng khi mọi người dùng nó để viết, dịch hoặc tra cứu.",
+    "sentenceStarters": [
+      "Một chatbot được xây dựng trên một LLM viết bằng cách ...",
+      "Điều này quan trọng với ... vì ...",
+      "Vì vậy trước khi dùng câu trả lời của nó, một người nên ..."
+    ],
+    "example": "Một chatbot được xây dựng trên một LLM viết bằng cách dự đoán token tiếp theo, hết lần này đến lần khác. Một token là một từ hoặc một phần của một từ. Nó chọn những token có khả năng cao, từ các mẫu hình trong rất nhiều văn bản. Điều này quan trọng với việc dịch thuật. Nhiều LLM học chủ yếu từ tiếng Anh. Vì vậy một bản dịch sang một ngôn ngữ có ít chữ viết trên mạng có thể có nhiều lỗi hơn. Ở Lakeside, một tình nguyện viên đã sửa hai từ. Vì vậy trước khi dùng một thông báo đã dịch, một người nói ngôn ngữ đó nên kiểm tra nó."
+  },
+  "speak": {
+    "partnerTask": "Lần lượt nói. Một người giải thích ELIZA viết các câu trả lời của nó như thế nào vào năm 1966. Người kia giải thích một LLM viết ngày nay như thế nào. Rồi nói một điểm giống nhau và một điểm khác nhau của chúng.",
+    "independentTask": "Giải thích to, trong ba câu, một chatbot viết một câu trả lời như thế nào và vì sao nó có thể nghe chắc chắn mà vẫn sai."
+  },
+  "watch": {
+    "why": "Hai người xây dựng các công cụ AI cho thấy, bằng một ví dụ đơn giản, một mô hình ngôn ngữ viết bằng cách đoán điều gì đến tiếp theo như thế nào.",
+    "beforeQuestion": "Bạn nghĩ một chatbot biết phải viết gì bằng cách nào?",
+    "afterQuestion": "Vì sao câu trả lời của một chatbot có thể sai, ngay cả khi nghe rất hay?",
+    "summary": "Trong video này, hai người xây dựng các công cụ AI giải thích các chatbot hoạt động như thế nào. Một người làm việc ở công ty đã tạo ra ChatGPT. Một mô hình ngôn ngữ lớn học từ một lượng văn bản khổng lồ trên internet. Ý chính rất đơn giản. Nó dùng những con số về điều có khả năng xảy ra, được tính rất nhanh. Video cho xem một ví dụ nhỏ. Một chương trình đọc các vở kịch của nhà văn Shakespeare. Nó đếm xem chữ cái nào thường đứng sau mỗi chữ cái. Khi nó viết theo cách này, các từ trông kì lạ. Khi nó xem những đoạn dài hơn, như cả từ, các phỏng đoán của nó tốt lên nhiều. Các mô hình lớn dùng mạng nơ-ron, vốn được dựa phần nào trên bộ não. Con người cũng đã giúp làm cho các câu trả lời của ChatGPT tốt hơn. Nhưng các câu trả lời của nó vẫn đến từ điều có khả năng xảy ra, nên nó có thể mắc lỗi.",
+    "keyPoints": [
+      "Một mô hình ngôn ngữ lớn học từ một lượng văn bản khổng lồ trên internet.",
+      "Nó viết bằng cách đoán điều có khả năng đến tiếp theo, hết lần này đến lần khác.",
+      "Các câu trả lời của nó đến từ điều có khả năng xảy ra, nên chúng có thể sai."
+    ],
+    "contentNote": "Khoảng 7 phút 20 giây (DCMP). Tiêu đề và kênh đã được xác nhận bằng oEmbed của YouTube ngày 31 tháng 10 năm 2026; kênh là của Code.org, có tên “CodeAI” trên YouTube. Bản tóm tắt được viết từ phần mô tả của DCMP và một bản phác thảo video do AI tạo của bên thứ ba (videohighlight.com), không phải từ việc xem video, nên hãy kiểm tra ví dụ về Shakespeare và phút cuối trước khi dùng. Các diễn giả được giới thiệu là giám đốc công nghệ của OpenAI và giám đốc điều hành của Runway, một công ty video AI, nên video nêu tên ChatGPT và các công ty này, và nó mở đầu bằng những hi vọng của họ về AI. Một người trong nhóm phải xem nó trước khi dùng; người học có thể đọc bản tóm tắt viết thay thế."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Một điều bây giờ mình hiểu về cách các chatbot viết là ..."
+      },
+      {
+        "text": "Một câu hỏi mình có về việc các LLM học từ bài viết của ai là ..."
+      }
+    ],
+    "completionMessage": "Bạn đã hoàn thành Bài 4. Bạn đã giải thích một mô hình ngôn ngữ lớn viết như thế nào, các chatbot đã phát triển ra sao, và vì sao câu trả lời của chúng cần được kiểm tra."
+  },
+  "visual": {
+    "alt": "Một sơ đồ: sau “một tách”, mô hình cân nhắc “trà” (6), “nước” (3) và “cơm” (1), chọn một từ, rồi lại dự đoán từ tiếp theo. Bên dưới, một câu trả lời nghe chắc chắn nêu tên một cuốn sách, kèm lời nhắc phải kiểm tra nó."
+  },
+  "sources": [
+    {
+      "label": "Google for Developers, Machine Learning Crash Course: Introduction to large language models (token, dự đoán token tiếp theo, chọn token có khả năng cao nhất hoặc một token ngẫu nhiên trong số các token có khả năng cao; cập nhật tháng 1 năm 2026)"
+    },
+    {
+      "label": "Joseph Weizenbaum, Communications of the ACM 9(1), tháng 1 năm 1966: ELIZA, a computer program for the study of natural language communication between man and machine (bản sao tại UMBC)"
+    },
+    {
+      "label": "Vaswani và cộng sự (arXiv, 12 tháng 6 năm 2017): Attention is all you need (thiết kế transformer)"
+    },
+    {
+      "label": "The Centre for Computing History: OpenAI launches ChatGPT (30 tháng 11 năm 2022)"
+    },
+    {
+      "label": "Stanford Report (tháng 5 năm 2025): How AI is leaving non-English speakers behind"
+    }
+  ],
+  "sensitiveNotes": [
+    "Đừng bao giờ hỏi người học xem họ có dùng chatbot không, dùng cái nào, hay đã gõ gì vào đó. Một số em chưa từng dùng; những em khác có thể đã chia sẻ những điều riêng tư. Hãy dùng các ví dụ ở Lakeside.",
+    "Đừng hỏi người học nói những ngôn ngữ nào ở nhà, hay công cụ đã làm sai ngôn ngữ nào của họ. Hãy để các em tự nói nếu muốn."
+  ],
+  "educatorNotes": [
+    "Không có chatbot thật nào trong ứng dụng (docs/content/DIGITAL_WORLD_SPEC.md 5.6). Trò chơi từ ngữ ở Lakeside, các câu trả lời của trợ lý và cuốn sách “The Long Blue Road” đều là bịa ra. Trò chơi tách trà là một phép so sánh đồ chơi, không phải cách các mô hình thật hoạt động: các LLM thật học những mẫu hình phong phú hơn nhiều trên các token từ lượng văn bản lớn hơn nhiều, và không giữ bảng đếm nào. Không phải mọi văn bản huấn luyện đều do con người viết (một số mô hình còn học từ văn bản do máy tính tạo), nên bài học nói “phần lớn”. Một mô hình có thể lặp lại một câu trả lời: một ứng dụng có thể chọn token có khả năng cao nhất mỗi lần, hoặc chọn ngẫu nhiên trong số những token có khả năng cao (khóa học của Google).",
+    "Một mô hình cơ bản viết từ những gì nó đã học; một số công cụ còn tìm trên web hoặc trong một bộ tài liệu và hiện các đường dẫn. Một đường dẫn không phải là bằng chứng: hãy mở nó và kiểm tra, như trong Bài 14 (Stanford CRAFT, “How do I fact-check AI search results?”, 2025). Mạch lịch sử: ELIZA (1966) trò chuyện bằng các quy tắc do con người viết; các LLM dùng học máy, vốn lớn lên cùng văn bản số và các chip nhanh, như trong Bài 2; thiết kế năm 2017 là transformer (Vaswani và cộng sự), mà Machine Learning Crash Course của Google gọi là “kiến trúc thành công và được dùng rộng rãi nhất để xây dựng các LLM”. Bài 7 đi sâu hơn vào việc những công cụ này phục vụ tốt cho ngôn ngữ nào."
+  ]
+}

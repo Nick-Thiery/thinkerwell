@@ -152,7 +152,7 @@ describe('a language that is not ready (Vietnamese, a hidden preview)', () => {
 });
 
 describe('preview courses', () => {
-  it('are recorded apart from Our World: in English, Indonesian and Malay, each course on its own', async () => {
+  it('are recorded apart from Our World: in English, Indonesian, Malay and the hidden Vietnamese, each course on its own', async () => {
     const { courseUtterances, listenUtterances, SKIPPED_COURSES } = await import('./utterances.ts');
     expect(SKIPPED_COURSES).toEqual([]);
     for (const language of listenUtterances()) {
@@ -169,7 +169,13 @@ describe('preview courses', () => {
       'ms/art-architecture-society',
       'ms/digital-world',
       'ms/southeast-asia-through-time',
+      'vi/art-architecture-society',
+      'vi/digital-world',
+      'vi/southeast-asia-through-time',
     ]);
+    // Vietnamese is a hidden preview: exported so it can be recorded when asked for, but not ready.
+    expect(tracks.filter((track) => track.lang === 'vi').every((track) => track.ready === false)).toBe(true);
+    expect(tracks.filter((track) => track.lang !== 'vi').every((track) => track.ready === true)).toBe(true);
     for (const track of tracks) {
       const prefixes: Record<string, string> = { 'digital-world': 'dw-', 'southeast-asia-through-time': 'sat-', 'art-architecture-society': 'aas-' };
       const prefix = prefixes[track.course];
@@ -184,5 +190,16 @@ describe('preview courses', () => {
     const { courseUtterances } = await import('./utterances.ts');
     const [first] = courseUtterances();
     expect(courseAudioProblems([first!], { languages: {} }, '/nowhere')).toEqual([`${first!.lang}/${first!.course}: no recordings at all.`]);
+  });
+
+  it('leave a hidden language (Vietnamese) unchecked while it has no recordings, and check it once it has', async () => {
+    const { courseAudioProblems } = await import('./check.ts');
+    const { courseUtterances } = await import('./utterances.ts');
+    const vi = courseUtterances().find((track) => track.lang === 'vi');
+    expect(vi).toBeDefined();
+    expect(courseAudioProblems([vi!], { languages: {} }, '/nowhere')).toEqual([]);
+    // With recordings in the manifest it is checked like any other: a missing file is a problem.
+    const recorded = { [vi!.course]: { vi: { files: 1, bytes: 1, seconds: 1, timings: 'x', normaliser: vi!.normaliser, sections: {} } } };
+    expect(courseAudioProblems([vi!], { languages: {}, courses: recorded }, '/nowhere').length).toBeGreaterThan(0);
   });
 });

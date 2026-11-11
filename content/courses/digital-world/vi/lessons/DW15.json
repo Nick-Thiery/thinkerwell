@@ -1,0 +1,204 @@
+{
+  "title": "Bảng tin cho bạn thấy gì",
+  "essentialQuestion": "Các ứng dụng chọn những gì chúng ta thấy như thế nào, và vì sao điều đó quan trọng với một cộng đồng?",
+  "learningGoal": "Giải thích một bảng tin chọn bài đăng như thế nào, điều đó có thể giúp mọi người khám phá những điều mới ra sao, vì sao nó quan trọng với những gì một cộng đồng biết trước khi bỏ phiếu, và bằng chứng nói gì.",
+  "warmUp": {
+    "question": "Bạn nghĩ vì sao một số bài đăng được chia sẻ nhiều hơn hẳn những bài khác?",
+    "options": [
+      "Chúng đúng",
+      "Chúng gây ngạc nhiên",
+      "Chúng buồn cười",
+      "Mình không chắc"
+    ]
+  },
+  "evidence": {
+    "label": "Ví dụ hư cấu, được tạo riêng cho bài học này.",
+    "question": "Bài đăng nào được chia sẻ nhiều nhất? Bảng tin của Ravi và của Lena khác nhau như thế nào, và bảng tin của Lena đã giúp bạn ấy ra sao?",
+    "cards": [
+      {
+        "title": "Các bài đăng ở Maplebrook trong tuần của cuộc bỏ phiếu của thị trấn",
+        "columns": [
+          "Bài đăng",
+          "Lượt chia sẻ trong một ngày"
+        ],
+        "rows": [
+          [
+            "“GÂY SỐC. Cuộc bỏ phiếu đã dời sang thứ Sáu. Hãy chia sẻ ngay.” Không có tên và không có liên kết.",
+            "900"
+          ],
+          [
+            "Văn phòng bầu cử thị trấn: “Cuộc bỏ phiếu diễn ra vào thứ Bảy, từ 9 giờ đến 5 giờ, tại tòa thị chính.”",
+            "60"
+          ],
+          [
+            "Maplebrook Fact Check: “Sai. Cuộc bỏ phiếu không dời. Nó vẫn diễn ra vào thứ Bảy.”",
+            "40"
+          ],
+          [
+            "Một video vui về con dê đi vào thư viện",
+            "700"
+          ]
+        ]
+      },
+      {
+        "title": "Hai người bạn, hai bảng tin",
+        "cases": [
+          {
+            "name": "Ravi",
+            "body": "Tháng trước Ravi xem rất nhiều video bóng đá. Tuần này, bảng tin cho bạn thấy tám bài đăng về sân thể thao mới và một bài đăng về thư viện mới."
+          },
+          {
+            "name": "Lena",
+            "body": "Lena thích nhiều bài đăng về sách. Tuần này, bảng tin cho bạn thấy bảy bài đăng về thư viện mới và hai bài đăng về sân thể thao. Nó còn gợi ý một bài học video miễn phí về cách viết truyện, điều bạn đã tìm từ lâu."
+          }
+        ]
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Bảng tin của bạn được chọn cho bạn",
+        "text": "Mọi người đăng nhiều hơn bất kì ai có thể xem, nên nhiều ứng dụng dùng một thuật toán để chọn những gì vào bảng tin của bạn. Thuật toán là một chuỗi các bước mà máy tính làm theo. Nó học từ những gì bạn đã xem, đã thích hay đã bỏ qua trước đây. Rồi nó đoán bạn sẽ muốn xem gì. Các ứng dụng nhắm đến những mục tiêu khác nhau. Một số đếm bạn xem trong bao lâu, và một số còn hỏi mọi người xem họ có hài lòng với những gì đã thấy không. Một bảng tin có thể rất hữu ích. Nó có thể giúp bạn khám phá một kĩ năng, một bài hát hay tin tức địa phương mà bạn sẽ không bao giờ tìm ra. Ở thị trấn Maplebrook hư cấu, Lena thích các bài đăng về sách, và bảng tin đã tìm cho bạn một bài học video miễn phí về viết truyện. Ravi xem nhiều video bóng đá, nên bảng tin của bạn cho bạn thấy chủ yếu các bài đăng về sân thể thao mới.",
+        "simpler": "Mọi người đăng nhiều hơn bạn có thể xem. Nên nhiều ứng dụng dùng một thuật toán. Thuật toán là một chuỗi các bước cho máy tính. Nó chọn bài đăng từ những gì bạn đã xem trước đây. Các ứng dụng nhắm đến những mục tiêu khác nhau. Một số đếm bạn xem trong bao lâu. Một số hỏi bạn có thích không. Một bảng tin có thể giúp bạn tìm điều mới, như một kĩ năng hay tin tức địa phương. Ở Maplebrook hư cấu, Lena thích sách. Bảng tin của bạn tìm cho bạn một bài học miễn phí về viết truyện. Ravi xem bóng đá. Bảng tin của bạn cho bạn thấy các bài đăng về sân thể thao mới."
+      },
+      {
+        "heading": "Bảng tin và những gì một thị trấn biết",
+        "text": "Mỗi bảng tin được chọn cho một người. Nên hai người hàng xóm có thể thấy những bài đăng rất khác nhau về cùng một thị trấn, như Ravi và Lena trước cuộc bỏ phiếu của Maplebrook. Điều này quan trọng với đời sống công cộng. Để tham gia một cuộc bầu cử, mọi người cần một số sự thật chung, chính xác, chẳng hạn ngày bỏ phiếu. Một tin đồn có thể lan nhanh. Năm 2018, các nhà nghiên cứu ở MIT tại Hoa Kỳ công bố một nghiên cứu về khoảng 126.000 bản tin được chia sẻ trên Twitter từ năm 2006 đến 2017. Các tin sai lan xa hơn và nhanh hơn các tin đúng. Chủ yếu là con người chia sẻ, không phải các tài khoản robot. Nghiên cứu xem xét những gì mọi người chia sẻ trên một trang, nên nó không cho thấy bảng tin hay AI đã gây ra sự lan truyền.",
+        "simpler": "Mỗi bảng tin được chọn cho một người. Nên hai người hàng xóm có thể thấy những bài đăng khác nhau về cùng một thị trấn. Ravi và Lena đã vậy trước cuộc bỏ phiếu. Trong một cuộc bầu cử, mọi người cần những sự thật đúng giống nhau. Một sự thật là ngày bỏ phiếu. Một tin đồn có thể lan nhanh. Năm 2018, các nhà nghiên cứu ở MIT tại Hoa Kỳ đã nghiên cứu các bản tin trên Twitter. Các bản tin từ năm 2006 đến 2017. Các tin sai lan nhanh hơn các tin đúng. Con người chia sẻ chúng, không chỉ robot. Nghiên cứu xem xét những gì mọi người chia sẻ trên một trang. Nó không cho thấy bảng tin hay AI đã gây ra điều này."
+      },
+      {
+        "heading": "Bằng chứng nói gì, và điều gì giúp ích",
+        "text": "Một số người lo rằng bảng tin đặt mỗi chúng ta vào một bong bóng lọc, nơi chúng ta chỉ thấy một phía. Nhưng năm 2022, một tổng quan nhiều nghiên cứu của Viện Reuters tại Đại học Oxford thấy rằng bong bóng lọc thật sự ít phổ biến hơn nhiều người nghĩ. Những lựa chọn của chính mọi người về việc theo dõi ai cũng quan trọng. Một đạo luật của Liên minh châu Âu, được áp dụng đầy đủ từ năm 2024, nói rằng các ứng dụng rất lớn phải giải thích bảng tin của họ chọn bài đăng như thế nào. Họ cũng phải cung cấp một bảng tin không dựa trên những gì họ biết về bạn. Các ứng dụng thay đổi thường xuyên, nên một nghiên cứu từ vài năm trước có thể không mô tả chúng ngày nay. Bạn cũng có thể giúp: theo dõi những nguồn khác nhau, chia sẻ thông báo chính thức và kiểm tra trước khi chia sẻ.",
+        "simpler": "Một số người lo về bong bóng lọc. Trong một bong bóng, bạn chỉ thấy một phía. Nhưng năm 2022, các nhà nghiên cứu xem xét nhiều nghiên cứu. Họ thấy rằng bong bóng thật sự ít phổ biến hơn người ta nghĩ. Những gì mọi người chọn theo dõi cũng quan trọng. Từ năm 2024, các ứng dụng rất lớn ở Liên minh châu Âu phải giải thích bảng tin của họ. Họ cũng phải cung cấp một loại khác. Các ứng dụng thay đổi, nên các nghiên cứu cũ có thể không còn phù hợp ngày nay. Bạn có thể giúp. Hãy theo dõi những nguồn khác nhau. Hãy chia sẻ thông báo đúng. Hãy kiểm tra trước khi chia sẻ."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "thuật toán",
+        "definition": "Một chuỗi các bước mà máy tính làm theo để làm một việc.",
+        "example": "Một thuật toán đã chọn các bài đăng trong bảng tin của Ravi."
+      },
+      {
+        "word": "bảng tin",
+        "definition": "Danh sách các bài đăng và video mà một ứng dụng cho bạn xem.",
+        "example": "Bảng tin của Lena cho bạn thấy nhiều bài đăng về thư viện."
+      },
+      {
+        "word": "tin đồn",
+        "definition": "Một câu chuyện mà người ta truyền đi mà không biết nó có đúng không.",
+        "example": "Tin đồn nói cuộc bỏ phiếu đã dời sang thứ Sáu."
+      },
+      {
+        "word": "bầu cử",
+        "definition": "Lúc mọi người bỏ phiếu để cùng chọn một điều gì đó.",
+        "example": "Maplebrook tổ chức một cuộc bầu cử để chọn thư viện hay sân thể thao."
+      },
+      {
+        "word": "bong bóng lọc",
+        "definition": "Khi một bảng tin chỉ cho bạn thấy một phía của sự việc.",
+        "example": "Nếu Ravi chỉ thấy các bài đăng về sân thể thao, bạn ấy sẽ ở trong một bong bóng lọc."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Một thuật toán chọn các bài đăng trong bảng tin như thế nào?",
+        "options": [
+          {
+            "text": "Nó chọn bài đăng ngẫu nhiên",
+            "feedback": "Chưa đúng lắm. Nó không chọn ngẫu nhiên. Hãy đọc lại phần thứ nhất."
+          },
+          {
+            "text": "Nó đoán từ những gì bạn đã làm trước đây",
+            "feedback": "Đúng rồi. Nó học từ những gì bạn đã xem, đã thích hay đã bỏ qua, và đoán bạn sẽ muốn gì tiếp theo."
+          },
+          {
+            "text": "Một người kiểm tra từng bài đăng trước",
+            "feedback": "Chưa đúng lắm. Có quá nhiều bài đăng để làm vậy. Hãy đọc phần thứ nhất."
+          }
+        ]
+      },
+      {
+        "question": "Nghiên cứu năm 2018 về Twitter đã thấy gì?",
+        "options": [
+          {
+            "text": "Các tin sai lan nhanh hơn các tin đúng",
+            "feedback": "Đúng rồi. Trên Twitter từ năm 2006 đến 2017, các tin sai lan xa hơn và nhanh hơn. Chủ yếu là con người chia sẻ."
+          },
+          {
+            "text": "Bảng tin AI đã khiến các tin sai lan truyền",
+            "feedback": "Chưa đúng lắm. Nghiên cứu xem xét những gì mọi người chia sẻ. Nó không thử bảng tin hay AI. Hãy đọc phần thứ hai."
+          },
+          {
+            "text": "Chỉ các tài khoản robot chia sẻ tin sai",
+            "feedback": "Chưa đúng lắm. Con người cũng chia sẻ chúng. Hãy đọc lại phần thứ hai."
+          }
+        ]
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Ravi và Lena sống trong cùng một thị trấn, nhưng họ thấy những bài đăng khác nhau trước cuộc bỏ phiếu. Hãy giải thích vì sao. Rồi nói một điều có thể giúp mọi người ở Maplebrook biết những sự thật chính xác.",
+    "sentenceStarters": [
+      "Ravi và Lena thấy những bài đăng khác nhau vì ...",
+      "Điều này quan trọng trước một cuộc bỏ phiếu vì ...",
+      "Một điều có thể giúp là ..."
+    ],
+    "example": "Ravi và Lena thấy những bài đăng khác nhau vì thuật toán đoán từ những gì mỗi người đã thích trước đây. Ravi xem video bóng đá. Nên bạn ấy thấy chủ yếu các bài đăng về sân thể thao. Lena thích sách, nên bạn ấy thấy chủ yếu các bài đăng về thư viện. Điều này quan trọng trước một cuộc bỏ phiếu vì mọi người cần những sự thật chính xác, như ngày bỏ phiếu. Một điều có thể giúp là chia sẻ thông báo của văn phòng bầu cử. Nó chính xác, nhưng chỉ được chia sẻ 60 lần."
+  },
+  "speak": {
+    "partnerTask": "Nói chuyện với bạn học của bạn. Bảng tin của Lena đã giúp bạn ấy như thế nào? Bảng tin của Ravi có thể không cho bạn ấy thấy điều gì trước cuộc bỏ phiếu? Lần lượt nói, rồi đồng ý một cách để thấy nhiều hơn một phía.",
+    "independentTask": "Nói to một thuật toán làm gì trong một bảng tin. Nêu một cách nó có thể giúp một cộng đồng và một cách nó có thể gây vấn đề trước một cuộc bỏ phiếu."
+  },
+  "watch": {
+    "why": "Một video tin tức ngắn làm cho người trẻ, giải thích một thuật toán chọn những gì bạn thấy như thế nào.",
+    "beforeQuestion": "Bạn nghĩ ai chọn những gì bạn thấy khi bạn cuộn màn hình?",
+    "afterQuestion": "Vì sao một bảng tin có thể cố giữ bạn tiếp tục xem?",
+    "summary": "Video tin tức ngắn dành cho người trẻ này giải thích các thuật toán của mạng xã hội. Thuật toán là một bộ chỉ dẫn nói cho một chương trình máy tính biết phải làm gì. Trên nhiều ứng dụng, thuật toán quyết định bạn thấy những bài đăng nào và theo thứ tự nào. Nó cũng quyết định những bài đăng nào bạn không thấy. Vì vậy khi cuộn màn hình, bạn có thể nghĩ mình đang thấy tất cả. Thật ra, ai đó đã xây một hệ thống chọn thay cho bạn. Nó chọn như thế nào? Nó cố cho bạn thấy những bài đăng sẽ giữ bạn quan tâm, để bạn tiếp tục cuộn. Các chuyên gia trong video nói điều này không phải lúc nào cũng tốt. Bảng tin của bạn được chọn kĩ. Nó không phải là cái nhìn đầy đủ về thế giới. Biết bảng tin của bạn được chọn như thế nào có thể giúp bạn suy nghĩ về những gì bạn thấy.",
+    "keyPoints": [
+      "Thuật toán là một bộ chỉ dẫn cho máy tính.",
+      "Trên nhiều ứng dụng, một thuật toán chọn bạn thấy những bài đăng nào, và không thấy những bài nào.",
+      "Nó cố giữ bạn tiếp tục xem, điều không phải lúc nào cũng tốt cho bạn."
+    ],
+    "contentNote": "Khoảng 3 phút (182 giây, theo danh sách của YouTube), tiếng Anh Canada, năm 2021. Nó nêu tên các ứng dụng thật (TikTok, YouTube và Instagram). Tiêu đề và kênh đã được xác nhận bằng oEmbed của YouTube ngày 31 tháng 10 năm 2026. Bản tóm tắt được viết từ mô tả của chính CBC Kids News về video và trang web của nó, không phải từ việc xem video. Một người trong nhóm phải xem nó trước khi người học dùng; người học có thể đọc bản tóm tắt viết thay thế."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Một điều bây giờ mình hiểu về bảng tin và những gì một thị trấn biết là ..."
+      },
+      {
+        "text": "Một cách mình có thể thấy nhiều hơn một phía là ..."
+      }
+    ],
+    "completionMessage": "Bạn đã hoàn thành Bài 15. Bạn đã giải thích một bảng tin chọn bài đăng như thế nào, nó có thể giúp ích ra sao, và vì sao nó quan trọng với những gì một thị trấn biết trước một cuộc bỏ phiếu."
+  },
+  "visual": {
+    "alt": "Nhiều bài đăng đi vào một thuật toán, thuật toán đoán mỗi người sẽ muốn xem gì. Bảng tin của Ravi cho thấy chủ yếu các bài đăng về sân thể thao. Bảng tin của Lena cho thấy chủ yếu các bài đăng về thư viện và một bài học miễn phí về viết truyện."
+  },
+  "sources": [
+    {
+      "label": "CBC Kids News (2021): How do social media algorithms work? (thuật toán của mạng xã hội hoạt động như thế nào?)"
+    },
+    {
+      "label": "MIT News (8 tháng 3 năm 2018): Study, on Twitter, false news travels faster than true stories (Vosoughi, Roy và Aral, Science; nghiên cứu: trên Twitter, tin sai lan nhanh hơn tin đúng)"
+    },
+    {
+      "label": "Reuters Institute (2022): Echo chambers, filter bubbles, and polarisation: a literature review (Ross Arguedas, Robertson, Fletcher và Nielsen; buồng vang, bong bóng lọc và phân cực: một tổng quan tài liệu)"
+    },
+    {
+      "label": "European Parliament Legislative Observatory: summary of the Digital Services Act, Regulation (EU) 2022/2065 (tóm tắt Đạo luật Dịch vụ Kĩ thuật số)"
+    },
+    {
+      "label": "YouTube Help: How YouTube recommendations work (cách đề xuất của YouTube hoạt động; một ví dụ về các tín hiệu do một nền tảng nêu)"
+    }
+  ],
+  "sensitiveNotes": [
+    "Bầu cử và chính trị có thể là những chủ đề đau lòng hoặc nguy hiểm với một số người học. Hãy giữ cuộc thảo luận ở Maplebrook hư cấu. Đừng bao giờ hỏi người học về bầu cử, chính trị hay bỏ phiếu ở bất kì nước nào họ đã sống, hay người trong gia đình họ bỏ phiếu như thế nào, và đừng để một cuộc tranh luận về các ứng cử viên hay đảng phái thật bắt đầu; hãy kéo lại cách bảng tin và tin đồn hoạt động."
+  ],
+  "educatorNotes": [
+    "Nghiên cứu ở phần 2 là của Vosoughi, Roy và Aral (Science, tháng 3 năm 2018; MIT News, 8 tháng 3 năm 2018, đọc lại ngày 8 tháng 11 năm 2026): khoảng 126.000 chuỗi lan truyền của các bản tin trên Twitter, 2006 đến 2017, được đăng hơn 4,5 triệu lần bởi khoảng 3 triệu người, mỗi bản tin được sáu tổ chức kiểm chứng thông tin độc lập, đồng ý với nhau hơn 95% số lần, đánh giá là đúng hay sai. Tin sai có khả năng được đăng lại cao hơn 70%, và tin đúng mất khoảng gấp sáu lần thời gian để đến 1.500 người; khoảng cách vẫn còn khi loại bỏ bot. Phạm vi của nó: một nền tảng, những năm đó, và những bản tin mà các nhà kiểm chứng đã điều tra (các tin gây tranh cãi, không phải mọi bài đăng). Nó đo những gì người ta đăng lại, không phải thuật toán xếp hạng đã chọn bài đăng như thế nào, nên nó không cho thấy AI đã gây ra sự lan truyền; các tác giả nói các nền tảng khác cần được nghiên cứu riêng, và rằng họ “không thể khẳng định sự mới lạ gây ra việc đăng lại”.",
+    "Các ứng dụng xếp hạng bài đăng bằng những tín hiệu và mục tiêu khác nhau; đừng rút gọn chúng thành một động cơ. Ví dụ, trang trợ giúp của YouTube liệt kê lịch sử xem và tìm kiếm, đăng kí, lượt thích, không thích, “không quan tâm” và khảo sát mức độ hài lòng (để hiểu sự hài lòng, “không chỉ thời gian xem”). Bong bóng lọc: tổng quan năm 2022 của Viện Reuters (Ross Arguedas, Robertson, Fletcher và Nielsen) thấy buồng vang “ít phổ biến hơn nhiều so với thường được cho là”, “không ủng hộ giả thuyết bong bóng lọc”, và vai trò quan trọng của chính lựa chọn của mọi người (tự chọn lọc); nghiên cứu ngoài Hoa Kỳ còn hạn chế. Quy định của châu Âu là Đạo luật Dịch vụ Kĩ thuật số (Quy định (EU) 2022/2065): có hiệu lực ngày 16 tháng 11 năm 2022, áp dụng đầy đủ từ ngày 17 tháng 2 năm 2024, và sớm hơn với các nền tảng rất lớn (hơn 45 triệu người dùng hằng tháng ở EU), bốn tháng sau khi Ủy ban chỉ định họ; họ phải giải thích các thiết lập chính của hệ thống đề xuất, cung cấp một hệ thống không dựa trên việc lập hồ sơ, và đánh giá các rủi ro như thao túng bầu cử.",
+    "Điểm ở phần 3 rằng các ứng dụng thay đổi là quan trọng: những năm của nghiên cứu (2006 đến 2017) có trước các bảng tin ngày nay, và Twitter giờ được gọi là X. Để thảo luận hoặc làm trên giấy, hãy đặt bảng tin của Ravi và Lena cạnh nhau và hỏi mỗi người bạn thấy gì, có thể bỏ lỡ gì, và thông báo của văn phòng bầu cử có thể đến cả hai như thế nào. Không có bài tập phân loại."
+  ]
+}

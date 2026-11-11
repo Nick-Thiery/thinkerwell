@@ -1,0 +1,393 @@
+{
+  "title": {
+    "source": "AI at school: help or shortcut?",
+    "flag": true
+  },
+  "essentialQuestion": {
+    "source": "When does an AI tool help you learn, and when does it get in the way?",
+    "flag": true
+  },
+  "learningGoal": {
+    "source": "Explain what two studies of AI tutors found, in which setting, and why doing well with a tool is not the same as learning to do it yourself.",
+    "flag": true
+  },
+  "evidence.label": {
+    "source": "Fictional example created for this lesson.",
+    "flag": true
+  },
+  "evidence.question": {
+    "source": "Which student used the helper to learn? Which student used it as a shortcut?",
+    "flag": true
+  },
+  "evidence.cards.0.title": {
+    "source": "Three students and the Brightwater homework helper (a pretend tool)",
+    "flag": true
+  },
+  "evidence.cards.0.cases.0.name": {
+    "source": "Mira",
+    "flag": true
+  },
+  "evidence.cards.0.cases.0.body": {
+    "source": "Mira does not understand fractions. She asks the helper to explain them in a different way, with an example about sharing bread. Then she does the practice questions herself.",
+    "flag": true
+  },
+  "evidence.cards.0.cases.1.name": {
+    "source": "Jonah",
+    "flag": true
+  },
+  "evidence.cards.0.cases.1.body": {
+    "source": "Jonah asks the helper to write his whole essay about rivers. He hands it in as his own work. The next day, he can't answer his teacher's questions about it.",
+    "flag": true
+  },
+  "evidence.cards.0.cases.2.name": {
+    "source": "Ayla",
+    "flag": true
+  },
+  "evidence.cards.0.cases.2.body": {
+    "source": "Ayla asks the helper to translate a science page into a language she reads well. One word looks strange, so she checks it with her teacher.",
+    "flag": true
+  },
+  "activity.title": {
+    "source": "Try the pretend helper",
+    "flag": true
+  },
+  "activity.toolLabel": {
+    "source": "Pretend tool. Its answers were written in advance for this lesson. It is not a real AI, and nothing you choose is sent anywhere.",
+    "flag": true
+  },
+  "activity.instructions": {
+    "source": "First, choose the request that would help Jonah learn. Then check an answer from the tool.",
+    "flag": true
+  },
+  "activity.improve.start.prompt": {
+    "source": "Write my answer: why do many towns grow near rivers?",
+    "flag": true
+  },
+  "activity.improve.start.answer": {
+    "source": "Many towns grow near rivers because rivers give people water, food and a way to travel. Here is your finished answer. You can hand it in.",
+    "flag": true
+  },
+  "activity.improve.question": {
+    "source": "Which request would help Jonah learn the most?",
+    "flag": true
+  },
+  "activity.improve.options.0.prompt": {
+    "source": "Write a longer answer for me.",
+    "flag": true
+  },
+  "activity.improve.options.0.answer": {
+    "source": "Many towns grow near rivers. Rivers give water for drinking and farming. They give fish to eat. Boats can carry people and goods. Here is your longer answer.",
+    "flag": true
+  },
+  "activity.improve.options.0.feedback": {
+    "source": "Not quite. A longer answer is still the tool's work. Jonah does not have to think.",
+    "flag": true
+  },
+  "activity.improve.options.1.prompt": {
+    "source": "Give me a hint. Then let me try first.",
+    "flag": true
+  },
+  "activity.improve.options.1.answer": {
+    "source": "Hint: think about what people need every day. What can a river give them? Write your idea. Then I will ask you a question about it.",
+    "flag": true
+  },
+  "activity.improve.options.1.feedback": {
+    "source": "Yes. A hint helps Jonah think. He still does the learning himself.",
+    "flag": true
+  },
+  "activity.improve.options.2.prompt": {
+    "source": "Change the words so it looks like mine.",
+    "flag": true
+  },
+  "activity.improve.options.2.answer": {
+    "source": "Here is the same answer in new words. Towns often start beside rivers, because rivers bring water, food and travel.",
+    "flag": true
+  },
+  "activity.improve.options.2.feedback": {
+    "source": "Not quite. This hides who did the work. That is not honest, and Jonah learns nothing new.",
+    "flag": true
+  },
+  "activity.check.prompt": {
+    "source": "When was the old bridge in Brightwater built?",
+    "flag": true
+  },
+  "activity.check.answer": {
+    "source": "The old bridge in Brightwater was built in 1850. I am completely sure about this.",
+    "flag": true
+  },
+  "activity.check.trustedSource.name": {
+    "source": "The Brightwater town history book",
+    "flag": true
+  },
+  "activity.check.trustedSource.says": {
+    "source": "The old bridge was built in 1920. Before that, people crossed the river by boat.",
+    "flag": true
+  },
+  "activity.check.question": {
+    "source": "The tool sounds very sure. What should you do?",
+    "flag": true
+  },
+  "activity.check.options.0.text": {
+    "source": "Trust it, because it sounds sure",
+    "flag": true
+  },
+  "activity.check.options.0.feedback": {
+    "source": "Not quite. A tool can sound sure and still be wrong. Check a trusted source.",
+    "flag": true
+  },
+  "activity.check.options.1.text": {
+    "source": "Ask the tool to say it again",
+    "flag": true
+  },
+  "activity.check.options.1.feedback": {
+    "source": "Not quite. The tool may give the same wrong answer. Check a different source.",
+    "flag": true
+  },
+  "activity.check.options.2.text": {
+    "source": "Check the town history book",
+    "flag": true
+  },
+  "activity.check.options.2.feedback": {
+    "source": "Yes. The book says 1920. The tool made up a date, even though it sounded sure.",
+    "flag": true
+  },
+  "read.sections.0.heading": {
+    "source": "Schools are deciding how to use AI",
+    "flag": true
+  },
+  "read.sections.0.text": {
+    "source": "AI chat tools can answer questions, explain ideas and even write whole essays. So schools and families face a new question: how should students use them? In 2023, UNESCO, the United Nations organisation for education, asked more than 450 schools and universities. Fewer than 1 in 10 had any guidance about these tools. Later that year, UNESCO wrote guidance for governments. It asked them to protect students' privacy and to set a minimum age, such as 13, for children talking with these chat tools on their own. This is advice, not a law. Each country and school makes its own rules.",
+    "flag": true
+  },
+  "read.sections.0.simpler": {
+    "source": "AI chat tools can answer questions and even write essays. How should students use them? In 2023, UNESCO asked over 450 schools and universities. UNESCO is the United Nations group for education. Fewer than 1 in 10 had guidance about these tools. Then UNESCO wrote guidance for governments. Protect students' privacy, it said. Set an age, like 13, for children who chat with these tools alone. This is advice, not a law. Each country and school makes its own rules.",
+    "flag": true
+  },
+  "read.sections.1.heading": {
+    "source": "Nigeria: an AI tutor with teachers in the room",
+    "flag": true
+  },
+  "read.sections.1.text": {
+    "source": "In 2024, World Bank researchers tested an AI tutor in nine state schools in Benin City, Nigeria. The students were in their first year of senior secondary school, usually about 15 years old. For six weeks, they came to computer rooms after school, twice a week, to practise English with an AI chat tool. Teachers trained for the project started each session with a first question to ask the tool. Then they walked around, helping students stay on task. At the end, these students did better on an English test than similar students who were not chosen. The researchers say the result came from the whole programme, the tool and the teachers together.",
+    "flag": true
+  },
+  "read.sections.1.simpler": {
+    "source": "In 2024, researchers tested an AI tutor in Nigeria. The students were about 15 years old. For six weeks, they came after school, twice a week. They practised English with an AI chat tool. Trained teachers started each session. They gave a first question to ask the tool. Then they helped students stay on task. At the end, they took an English test. They did better than students who did not take part. The tool and the teachers worked together, the researchers say.",
+    "flag": true
+  },
+  "read.sections.2.heading": {
+    "source": "Türkiye: practice with a tool is not the same as learning",
+    "flag": true
+  },
+  "read.sections.2.text": {
+    "source": "In 2023, researchers worked with nearly 1,000 students in grades 9 to 11 at a high school in Türkiye. In four maths lessons, a teacher reviewed a topic, students did practice problems, and then they took a test with no books or computers. During practice, some students had only their books. Some had a chat tool that could give full answers. Others had a tutor version that gave hints, using answers and common mistakes written by their teachers. Both AI groups did much better in practice. But on the test alone, the full-answer group did worse than the books-only group. The tool had become a shortcut. The hint group did about as well as the books-only group. Each study was one subject in one place, so results elsewhere may differ.",
+    "flag": true
+  },
+  "read.sections.2.simpler": {
+    "source": "Another study was in Türkiye, with nearly 1,000 high school students. In four maths lessons, students did practice problems. Then they took a test with no help. Some practised with only books. Some had a chat tool that gave full answers. Others had a tool that gave hints. Their teachers helped to make it. Both tool groups did well in practice. On the test alone, the full-answer group did worse. The tool was a shortcut. The hint group did about the same as the books group. Each study was one subject in one place.",
+    "flag": true
+  },
+  "read.glossary.0.word": {
+    "source": "guidance",
+    "flag": true
+  },
+  "read.glossary.0.definition": {
+    "source": "Advice from a group about how something should be done.",
+    "flag": true
+  },
+  "read.glossary.0.example": {
+    "source": "UNESCO wrote guidance about AI tools in schools.",
+    "flag": true
+  },
+  "read.glossary.1.word": {
+    "source": "privacy",
+    "flag": true
+  },
+  "read.glossary.1.definition": {
+    "source": "Keeping your own information safe from people who should not see it.",
+    "flag": true
+  },
+  "read.glossary.1.example": {
+    "source": "Protecting privacy means never typing your address into a chat tool.",
+    "flag": true
+  },
+  "read.glossary.2.word": {
+    "source": "tutor",
+    "flag": true
+  },
+  "read.glossary.2.definition": {
+    "source": "A person or tool that helps one student, or a few, learn something.",
+    "flag": true
+  },
+  "read.glossary.2.example": {
+    "source": "In Nigeria, students used an AI tutor with their teachers' help.",
+    "flag": true
+  },
+  "read.glossary.3.word": {
+    "source": "practise",
+    "flag": true
+  },
+  "read.glossary.3.forms": {
+    "source": [
+      "practised",
+      "practice"
+    ],
+    "flag": true
+  },
+  "read.glossary.3.definition": {
+    "source": "To do something again and again to get better at it.",
+    "flag": true
+  },
+  "read.glossary.3.example": {
+    "source": "Mira does the practice questions herself.",
+    "flag": true
+  },
+  "read.glossary.4.word": {
+    "source": "shortcut",
+    "flag": true
+  },
+  "read.glossary.4.definition": {
+    "source": "A quicker way that skips some of the steps.",
+    "flag": true
+  },
+  "read.glossary.4.example": {
+    "source": "Jonah used the helper as a shortcut, so he learned nothing about rivers.",
+    "flag": true
+  },
+  "read.checks.0.question": {
+    "source": "In the study in Türkiye, what happened when the tool gave full answers?",
+    "flag": true
+  },
+  "read.checks.0.options.0.text": {
+    "source": "They did best of all on the test",
+    "flag": true
+  },
+  "read.checks.0.options.0.feedback": {
+    "source": "Not quite. They did well in practice, but not on the test. Read the third section.",
+    "flag": true
+  },
+  "read.checks.0.options.1.text": {
+    "source": "They did well in practice, but worse on the test alone",
+    "flag": true
+  },
+  "read.checks.0.options.1.feedback": {
+    "source": "Yes. The tool did much of the work in practice. On a test without it, they did worse than students who used only books.",
+    "flag": true
+  },
+  "read.checks.0.options.2.text": {
+    "source": "They never used the tool",
+    "flag": true
+  },
+  "read.checks.0.options.2.feedback": {
+    "source": "Not quite. They used it in practice. Read the third section again.",
+    "flag": true
+  },
+  "write.prompt": {
+    "source": "Write a short note to Jonah. Explain why the helper's essay didn't help him learn, using what one of the two studies found. Then suggest one better way for him to use the helper.",
+    "flag": true
+  },
+  "write.sentenceStarters.0": {
+    "source": "Jonah, the helper ...",
+    "flag": true
+  },
+  "write.sentenceStarters.1": {
+    "source": "In the study in ___, ...",
+    "flag": true
+  },
+  "write.sentenceStarters.2": {
+    "source": "Next time, you could ...",
+    "flag": true
+  },
+  "write.example": {
+    "source": "Jonah, the helper wrote your essay. So the helper did the thinking, not you. That is why you couldn't answer your teacher's questions the next day. In the study in Türkiye, some students had a tool that gave full answers. They did well in practice. But they did worse on a test without the tool. Next time, you could ask the helper for a hint. Then write your own answer, and ask it to check one part.",
+    "flag": true
+  },
+  "speak.partnerTask": {
+    "source": "Talk with your partner: in the Nigeria study, teachers started each session and helped students as they worked. Why might that have mattered? Each give one reason.",
+    "flag": true
+  },
+  "speak.independentTask": {
+    "source": "Say out loud what the teachers did in the Nigeria study, and why the researchers said the result came from the tool and the teachers together.",
+    "flag": true
+  },
+  "watch.why": {
+    "source": "This short cartoon explains why AI chat tools are made to sound like people, which can make their answers feel more true than they are.",
+    "flag": true
+  },
+  "watch.beforeQuestion": {
+    "source": "Why do you think an AI chat tool can sound like a real person?",
+    "flag": true
+  },
+  "watch.afterQuestion": {
+    "source": "Why should a student check what a chat tool says, even when it sounds sure?",
+    "flag": true
+  },
+  "watch.summary": {
+    "source": "This short cartoon is about AI chatbots. A chatbot is a computer program you can chat with in writing. It is a bit like sending messages to a person. The video explains what chatbots are and how they work. It also asks why many of them are made to sound like people. A chatbot can sound friendly and human. This can make it feel like a friend. It can also make its answers feel more true than they are. But a chatbot is not a person. It does not really know you, and it can be wrong. So notice how a chatbot makes you feel. And check what it says before you trust it.",
+    "flag": true
+  },
+  "watch.keyPoints.0": {
+    "source": "Many AI chatbots are made to sound like people.",
+    "flag": true
+  },
+  "watch.keyPoints.1": {
+    "source": "Sounding human and sure does not make an answer true.",
+    "flag": true
+  },
+  "watch.keyPoints.2": {
+    "source": "Notice how a chatbot makes you feel, and check what it says.",
+    "flag": true
+  },
+  "watch.contentNote": {
+    "source": "An American cartoon, 3 minutes 20 seconds (as listed on Common Sense Education's video page). The title and channel were checked with YouTube's oEmbed on 31 October 2026. The summary was written from Common Sense Education's description of the video (why chatbots are designed to sound so human-like, and how that might affect us) and the aims of the lesson that uses it, not from watching it. Someone on the team must watch it and check the summary before use. Learners can read the written summary instead.",
+    "flag": true
+  },
+  "reflect.prompts.0.text": {
+    "source": "One thing I now understand about using AI tools to learn is ...",
+    "flag": true
+  },
+  "reflect.prompts.1.text": {
+    "source": "A question I still have about AI at school is ...",
+    "flag": true
+  },
+  "reflect.completionMessage": {
+    "source": "You finished Lesson 11. You explained what two studies of AI tutors found, and why doing well with a tool is not the same as learning.",
+    "flag": true
+  },
+  "visual.alt": {
+    "source": "Two paths from the same homework. Asking for a hint leads to the student learning; asking for the whole answer leads to a test that is hard without the tool.",
+    "flag": true
+  },
+  "sources.0.label": {
+    "source": "UNESCO (7 September 2023): Governments must quickly regulate generative AI in schools (press release: the survey of over 450 schools and universities, and the age limit of 13; GCED Clearinghouse copy)",
+    "flag": true
+  },
+  "sources.1.label": {
+    "source": "UNESCO (2023): Guidance for generative AI in education and research (catalogue record: protecting data privacy and an age limit for independent conversations with these tools; GCED Clearinghouse)",
+    "flag": true
+  },
+  "sources.2.label": {
+    "source": "World Bank (May 2025): From chalkboards to chatbots, evaluating the impact of generative AI on learning outcomes in Nigeria (De Simone and others, Policy Research Working Paper 11125; reproducibility record)",
+    "flag": true
+  },
+  "sources.3.label": {
+    "source": "Bastani and others (PNAS, 2025): Generative AI without guardrails can harm learning, evidence from high school mathematics (record; reported by Knowledge at Wharton, August 2024)",
+    "flag": true
+  },
+  "sensitiveNotes.0": {
+    "source": "Don't ask learners whether or how they have used AI tools for schoolwork, and don't ask them to type questions into a real AI tool in class. UNESCO's 2023 guidance asks governments to set an age limit for children's independent conversations with generative AI tools; its press release names 13, and news reports said some argue for 16. It is advice to governments, not a law or a rule for every learning tool, and many learners are younger than 13. The pretend tool keeps everyone offline.",
+    "flag": true
+  },
+  "sensitiveNotes.1": {
+    "source": "Some learners have no device or internet where they live. Talk about access as a fairness question for schools, never as something to compare between learners.",
+    "flag": true
+  },
+  "educatorNotes.0": {
+    "source": "The Brightwater students, the pretend tool's answers and the 1850 bridge date are made up; the wrong date is written on purpose so learners practise checking. Paper version of the activity: read the requests and answers aloud and let learners choose.",
+    "flag": true
+  },
+  "educatorNotes.1": {
+    "source": "The two studies, simplified (claims/DW11.md). Nigeria (De Simone and others, World Bank, 2025): a randomised trial in nine public schools in Benin City, Edo State, June to July 2024, with first-year senior secondary students (typically 15). Students chosen at random could attend twelve 90-minute after-school sessions (at most two a week) using Microsoft Copilot (GPT-4). Teachers had three days' training, began each session with a prompt, guided students without teaching directly and circulated to keep them on task; monitors supervised the sessions. On a pen-and-paper test at the end, gains were 0.31 standard deviations overall and 0.23 on English, with better end-of-year exams too. The authors say the whole programme, tool and teacher guidance together, drove the result; they can't separate the AI's part from the teacher guidance, and don't know how long it lasts or whether it works in other subjects. Türkiye (Bastani and others, PNAS 2025; design from the 2024 working paper): nearly 1,000 students in grades 9 to 11 at one large high school, autumn 2023; four 90-minute sessions covering about 15% of the year's maths; the AI was available only during practice, with a teacher present. With GPT-4 in practice, grades rose 48% (plain chat tool) and 127% (hint tutor built with teachers' solutions and common mistakes); on the closed-book test afterwards, the plain-tool group scored 17% lower than the books-only group, and the tutor group about the same. Neither study shows an effect for every learner, subject or tool.",
+    "flag": true
+  }
+}

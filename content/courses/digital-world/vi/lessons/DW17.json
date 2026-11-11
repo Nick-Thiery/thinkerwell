@@ -1,0 +1,233 @@
+{
+  "title": "Dự án: thiết kế một trợ lý AI",
+  "essentialQuestion": "Bạn sẽ thiết kế một trợ lý AI hữu ích, công bằng và an toàn như thế nào?",
+  "learningGoal": "Tìm hiểu hai dự án thật ở Đông Nam Á đã lớn lên từ một vấn đề chung như thế nào, rồi lập kế hoạch cho một trợ lý của riêng bạn: nó giúp ai, AI có phù hợp không, kiểm tra nó hoạt động tốt ra sao, và một cải tiến.",
+  "evidence": {
+    "question": "Với mỗi dự án, nó bắt đầu từ vấn đề nào, ai đã xây dựng nó, và AI làm gì? Nó đã đi được đến đâu, và bằng chứng cho thấy điều gì?",
+    "cards": [
+      {
+        "title": "Hai dự án thật ở Đông Nam Á",
+        "cases": [
+          {
+            "name": "Eco Pulse, Malaysia: một bản mẫu của học sinh",
+            "body": "Vấn đề: các học sinh muốn làm cho việc tái chế nhanh hơn và dễ hơn. Ai xây dựng: ba học sinh 15 tuổi ở SMK Sultan Ismail, một trường trung học ở Johor, cho một cuộc thi học sinh năm 2024 do Samsung cùng Universiti Malaya tổ chức. AI làm gì: một ứng dụng nhìn vào ảnh của một món đồ có thể tái chế và ước tính cân nặng và giá trị của nó. Đã đi được đến đâu: một bản mẫu, phiên bản đầu tiên chạy được. Bằng chứng: nó giành giải nhất ở hạng mục tái chế của cuộc thi. Ban tổ chức nói nó chính xác, nhưng chưa có kết quả thử nghiệm nào được công bố. Một câu hỏi: nó hoạt động tốt đến đâu với những món đồ bẩn hoặc bị nghiền?"
+          },
+          {
+            "name": "SELENA+, Singapore: được thử nghiệm, rồi đưa vào sử dụng",
+            "body": "Vấn đề: người bị tiểu đường cần khám mắt thường xuyên, vì bệnh có thể gây hại cho mắt, và kiểm tra mọi ảnh mắt cần rất nhiều người được đào tạo. Ai xây dựng: các bác sĩ mắt và nhà khoa học tại Viện Nghiên cứu Mắt Singapore và Trung tâm Mắt Quốc gia Singapore, cùng các nhà khoa học máy tính của Đại học Quốc gia Singapore. AI làm gì: nó nhìn vào ảnh đáy mắt và đánh dấu những ảnh mà một bác sĩ chuyên khoa mắt nên xem. Đã đi được đến đâu: năm 2017, nhóm báo cáo các thử nghiệm trên khoảng 500.000 ảnh mắt từ Singapore và các nước khác. Năm 2024, họ báo cáo nó đang được dùng trong chương trình tầm soát mắt quốc gia của Singapore. Bằng chứng: đây là các báo cáo của chính nhóm. Một câu hỏi: nó có giúp bệnh nhân giữ được thị lực không? Các báo cáo chưa nói."
+          }
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "title": "Lập kế hoạch cho trợ lý AI của bạn",
+    "instructions": "Hãy lập kế hoạch cho một trợ lý qua năm bước. Kế hoạch này là phần việc chính của bạn trong bài học: Viết và Nói dùng nó. Chọn một trong các vấn đề hư cấu ở Maple Street, hoặc một vấn đề mà nhiều người cùng gặp trong một cộng đồng bạn biết. Đừng viết tên thật hay thông tin riêng tư của ai. Bạn có thể quay lại và thay đổi bất kì bước nào.",
+    "problems": [
+      {
+        "text": "Maple Street (hư cấu): nhựa thường bị bỏ nhầm thùng ở trung tâm."
+      },
+      {
+        "text": "Maple Street (hư cấu): xe buýt thường đến trễ, và mọi người đứng chờ dưới mưa."
+      },
+      {
+        "text": "Maple Street (hư cấu): vòi nước ở vườn của trung tâm thường bị để chảy."
+      },
+      {
+        "text": "Một vấn đề mà nhiều người cùng gặp trong một cộng đồng mình biết"
+      }
+    ],
+    "steps": [
+      {
+        "title": "1. Vấn đề",
+        "prompt": "Vấn đề là gì, và nó ảnh hưởng đến ai? Một trợ lý sẽ làm mọi thứ tốt hơn cho họ như thế nào?",
+        "starter": "Vấn đề là ... Nó ảnh hưởng đến ..."
+      },
+      {
+        "title": "2. Có nên dùng AI không?",
+        "prompt": "Hãy nghĩ về ba câu hỏi. Trợ lý có cần nhận ra hoặc đoán từ nhiều ví dụ không? Một quy tắc đơn giản hay một người có thể làm tốt hơn không? Nó có thể làm hại ai đó nếu nó sai không? Rồi quyết định.",
+        "options": [
+          {
+            "text": "Có, AI có thể giúp",
+            "feedback": "Hãy sang bước 3. Trong kế hoạch của bạn, hãy nói vì sao AI phù hợp: nó phải nhận ra hoặc đoán điều gì?"
+          },
+          {
+            "text": "Không, một cách khác tốt hơn",
+            "feedback": "Đó cũng là một lựa chọn thiết kế tốt. Hãy viết cách khác, như một biển báo, một quy tắc đơn giản hay một người, và vì sao nó phù hợp hơn."
+          },
+          {
+            "text": "Chưa chắc",
+            "feedback": "Hãy quay lại ba câu hỏi, và thử nhiệm vụ chính của trợ lý với từng câu. Bạn có thể chọn lại bất cứ lúc nào."
+          }
+        ]
+      },
+      {
+        "title": "3. Nó học từ đâu",
+        "prompt": "Nó sẽ học từ những ví dụ nào? Ai sẽ gắn nhãn cho chúng? Ví dụ của ai có thể đang thiếu? Nếu bạn chọn một cách khác, hãy nói nó cần gì thay vào đó.",
+        "starter": "Nó sẽ học từ ... Các ví dụ về ___ có thể đang thiếu."
+      },
+      {
+        "title": "4. Rủi ro, thử nghiệm và kiểm tra",
+        "prompt": "Điều gì có thể sai? Bạn sẽ thử nghiệm nó với những ví dụ nó chưa từng thấy như thế nào? Ai sẽ kiểm tra nó, và bao lâu một lần?",
+        "starter": "Một rủi ro là ... Để thử nghiệm nó, ... ___ sẽ kiểm tra nó bằng cách ..."
+      },
+      {
+        "title": "5. Xem lại và làm phiên bản 2",
+        "prompt": "Đọc lại kế hoạch của bạn. Trả lời một trong những câu hỏi này. Rồi thay đổi một điều.",
+        "questions": [
+          "Trợ lý này có thể bỏ sót ai?",
+          "Điều gì xảy ra nếu nó mắc lỗi?",
+          "Có cách nào đơn giản hơn mà không cần AI không?",
+          "Bằng chứng nào sẽ cho thấy nó có ích?"
+        ],
+        "starter": "Sau khi nhận phản hồi, mình đã thay đổi ... vì ..."
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Bắt đầu từ một vấn đề mà mọi người cùng gặp",
+        "text": "Trong dự án này, bạn sẽ lập kế hoạch cho một trợ lý giải quyết một vấn đề mà nhiều người trong một cộng đồng cùng gặp. Những nhà thiết kế giỏi bắt đầu từ vấn đề và những người nó ảnh hưởng, không phải từ công cụ. Hai dự án thật từ Đông Nam Á cho thấy điều này. Ở Johor, Malaysia, ba học sinh 15 tuổi muốn làm cho việc tái chế dễ hơn. Cho một cuộc thi học sinh năm 2024, các em đã xây dựng Eco Pulse, một ứng dụng nhìn vào ảnh của một món đồ có thể tái chế và ước tính cân nặng và giá trị của nó. Ở Singapore, người bị tiểu đường cần khám mắt thường xuyên, vì bệnh có thể gây hại cho mắt, và kiểm tra mọi ảnh cần rất nhiều người được đào tạo. Các bác sĩ mắt và nhà khoa học máy tính ở đó đã xây dựng SELENA+, nhìn vào ảnh đáy mắt và đánh dấu những ảnh mà một bác sĩ chuyên khoa nên xem.",
+        "simpler": "Bạn sẽ lập kế hoạch cho một trợ lý giải quyết một vấn đề nhiều người cùng gặp. Những nhà thiết kế giỏi bắt đầu từ vấn đề, không phải công cụ. Đây là hai dự án thật. Ở Johor, Malaysia, ba học sinh 15 tuổi muốn tái chế dễ hơn. Các em xây dựng một ứng dụng tên là Eco Pulse. Từ ảnh của một món đồ, nó cho biết cân nặng và giá trị. Ở Singapore, người bị tiểu đường cần khám mắt. Bệnh có thể gây hại cho mắt. Kiểm tra mọi ảnh cần rất nhiều người được đào tạo. Các bác sĩ mắt và nhà khoa học máy tính đã xây dựng SELENA+. Nó đánh dấu những ảnh mắt mà một bác sĩ chuyên khoa nên xem."
+      },
+      {
+        "heading": "Một dự án đã đi được đến đâu?",
+        "text": "Một dự án lớn lên theo từng giai đoạn, và mỗi giai đoạn cần bằng chứng riêng. Một bản đề xuất là một ý tưởng trên giấy. Một bản mẫu là phiên bản đầu tiên chạy được. Thử nghiệm kiểm tra nó cẩn thận với những ví dụ mới mà nó chưa từng thấy. Đang được sử dụng nghĩa là những người thật dựa vào nó. Cho thấy tác động nghĩa là có bằng chứng rằng nó làm cuộc sống tốt hơn. Eco Pulse giành giải nhất ở hạng mục của mình, điều cho thấy các giám khảo nghĩ bản mẫu này mạnh. Nó không cho thấy ứng dụng hoạt động tốt đến đâu với những món đồ bẩn hay bị nghiền, hay rằng mọi người dùng nó. SELENA+ đã đi xa hơn. Năm 2017, nhóm của nó báo cáo các thử nghiệm trên khoảng 500.000 ảnh mắt từ Singapore và các nước khác. Năm 2024, họ báo cáo nó đang được dùng trong chương trình tầm soát mắt quốc gia của Singapore. Đây là các báo cáo của chính nhóm, và chúng chưa cho thấy thị lực của bệnh nhân có tốt hơn không.",
+        "simpler": "Một dự án lớn lên theo từng giai đoạn. Một bản đề xuất chỉ là một ý tưởng. Một bản mẫu là phiên bản đầu tiên chạy được. Thử nghiệm kiểm tra nó với các ví dụ mới. Rồi những người thật dùng nó. Cuối cùng, có thể có bằng chứng rằng nó làm cuộc sống tốt hơn. Đó gọi là tác động. Eco Pulse giành một giải thưởng, nên các giám khảo thích bản mẫu. Điều đó không cho thấy nó hoạt động tốt đến đâu, hay rằng mọi người dùng nó. SELENA+ đã đi xa hơn. Năm 2017, nhóm của nó thử nghiệm nó trên khoảng 500.000 ảnh mắt. Năm 2024, họ nói việc khám mắt của Singapore dùng nó. Các báo cáo này không cho thấy mọi người có nhìn tốt hơn không."
+      },
+      {
+        "heading": "Lập kế hoạch, kiểm tra và cải tiến",
+        "text": "Giờ đến lượt bạn. Trước tiên, hãy quyết định có nên dùng AI hay không. AI có thể giúp khi một trợ lý phải nhận ra hoặc đoán từ nhiều ví dụ, như các món đồ trong ảnh hay dấu hiệu bệnh mắt. Nhưng một biển báo, một quy tắc đơn giản hay một người có thể là câu trả lời tốt hơn, và một kế hoạch đơn giản hơn được giải thích rõ là một thiết kế mạnh. Rồi hãy lập kế hoạch xem trợ lý của bạn sẽ học từ đâu, điều gì có thể sai và ai sẽ kiểm tra. Như SELENA+, nó nên được thử nghiệm với những ví dụ nó chưa từng thấy, từ chính những người sẽ dùng nó. Cuối cùng, hãy nhìn lại kế hoạch của bạn, hoặc lắng nghe phản hồi. Các nhà thiết kế thay đổi một kế hoạch và thử nghiệm lại. Điều này gọi là cải tiến lặp lại. Hãy thay đổi một điều, và bạn có phiên bản 2.",
+        "simpler": "Có nên dùng AI không? AI có thể giúp khi một trợ lý phải học từ nhiều ví dụ. Nhưng một biển báo, một quy tắc hay một người có thể tốt hơn. Một kế hoạch đơn giản hơn cũng ổn, nếu có lí do. Hãy lập kế hoạch xem nó học từ đâu, điều gì có thể sai, và ai kiểm tra. Thử nghiệm nó với các ví dụ mới từ những người dùng nó. Rồi nhìn lại kế hoạch của bạn, hoặc nhận phản hồi. Thay đổi nó và thử nghiệm lại. Điều này gọi là cải tiến lặp lại. Hãy thay đổi một điều cho phiên bản 2."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "bản đề xuất",
+        "definition": "Một kế hoạch hay ý tưởng chưa được xây dựng.",
+        "example": "Kế hoạch của bạn cho một trợ lý là một bản đề xuất."
+      },
+      {
+        "word": "bản mẫu",
+        "definition": "Một phiên bản thử nghiệm đầu tiên của một thứ, được làm ra để thử một ý tưởng.",
+        "example": "Eco Pulse là một bản mẫu. Nó vẫn cần được thử nghiệm."
+      },
+      {
+        "word": "tác động",
+        "definition": "Sự khác biệt thật mà một dự án mang lại cho cuộc sống của mọi người.",
+        "example": "Để cho thấy tác động, SELENA+ cần bằng chứng rằng mọi người nhìn tốt hơn."
+      },
+      {
+        "word": "phản hồi",
+        "definition": "Điều người khác nói với bạn về công việc của bạn, để giúp bạn cải thiện nó.",
+        "example": "Phản hồi của một bạn học đã giúp mình thay đổi kế hoạch."
+      },
+      {
+        "word": "cải tiến lặp lại",
+        "definition": "Thử nghiệm một kế hoạch, thay đổi nó, và thử nghiệm lại, nhiều lần.",
+        "example": "Cải tiến lặp lại biến phiên bản 1 thành phiên bản 2."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Giải thưởng của Eco Pulse cho thấy điều gì?",
+        "options": [
+          {
+            "text": "Nó được dùng ở các trung tâm tái chế khắp Malaysia",
+            "feedback": "Chưa đúng lắm. Chưa có gì báo cáo rằng mọi người dùng nó. Hãy đọc phần thứ hai."
+          },
+          {
+            "text": "Các giám khảo nghĩ bản mẫu này mạnh",
+            "feedback": "Đúng rồi. Một giải thưởng là khởi đầu tốt. Nó không phải là bằng chứng rằng ứng dụng hoạt động tốt hay mọi người dùng nó."
+          },
+          {
+            "text": "Các thử nghiệm cho thấy nó giảm rác thải",
+            "feedback": "Chưa đúng lắm. Chưa có kết quả thử nghiệm nào được công bố. Hãy đọc phần thứ hai."
+          }
+        ]
+      },
+      {
+        "question": "Nhóm SELENA+ đã báo cáo gì vào năm 2017?",
+        "options": [
+          {
+            "text": "Các thử nghiệm trên khoảng 500.000 ảnh mắt",
+            "feedback": "Đúng rồi. Họ thử xem nó đánh dấu các ảnh mắt tốt đến đâu. Năm 2024 họ báo cáo nó đang được sử dụng."
+          },
+          {
+            "text": "Rằng thị lực của bệnh nhân tốt hơn",
+            "feedback": "Chưa đúng lắm. Các thử nghiệm xem xét ảnh, không phải thị lực của bệnh nhân. Hãy đọc phần thứ hai."
+          },
+          {
+            "text": "Rằng các phòng khám trên khắp thế giới dùng nó",
+            "feedback": "Chưa đúng lắm. Nhóm báo cáo việc dùng nó trong chương trình khám mắt của Singapore, vào năm 2024. Hãy đọc phần thứ hai."
+          }
+        ]
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Nhìn vào kế hoạch của bạn. Như Eco Pulse và SELENA+, một trợ lý lớn lên theo từng giai đoạn. Hãy nói kế hoạch của bạn hiện đang ở giai đoạn nào, và nó cần bằng chứng gì trước khi mọi người có thể dựa vào nó.",
+    "sentenceStarters": [
+      "Kế hoạch của mình đang ở giai đoạn ___, vì ...",
+      "Trước khi mọi người dựa vào nó, nó cần ...",
+      "Bằng chứng cho thấy nó có ích sẽ là ..."
+    ],
+    "example": "Kế hoạch của mình đang ở giai đoạn đề xuất, vì nó là một ý tưởng trên giấy để phân loại nhựa và giấy ở trung tâm. Trước khi mọi người dựa vào nó, nó cần một bản mẫu. Rồi nó cần được thử nghiệm với những ảnh mới mà nó chưa từng thấy, như chai bị nghiền và bẩn. Như SELENA+, nó nên được thử nghiệm với chính những người sẽ dùng nó. Bằng chứng cho thấy nó có ích sẽ là mỗi tuần có ít món đồ sai thùng hơn, do câu lạc bộ đếm. Chỉ một giải thưởng thì không cho thấy điều đó."
+  },
+  "speak": {
+    "partnerTask": "Trình bày kế hoạch của bạn cho bạn học trong một phút, như ở một cuộc họp cộng đồng. Bạn học của bạn đóng vai một người sẽ dùng trợ lý của bạn, và nói một điều họ thích và một điều họ lo. Rồi đổi vai.",
+    "independentTask": "Nói to kế hoạch của bạn trong một phút, như ở một cuộc họp cộng đồng. Rồi trả lời một câu hỏi về nó: nó có thể bỏ sót ai?"
+  },
+  "watch": {
+    "why": "Phim hoạt hình ngắn này ôn lại dữ liệu huấn luyện, và vì sao mọi người phải dùng AI một cách cẩn thận.",
+    "beforeQuestion": "Bạn nhớ gì về cách AI học?",
+    "afterQuestion": "Vì sao mọi người cần cẩn thận khi làm hoặc dùng AI?",
+    "summary": "Phim hoạt hình ngắn này ôn lại những điều cơ bản về AI. Các công cụ AI học từ dữ liệu huấn luyện. Đó là một bộ ví dụ lớn giúp chúng tìm ra quy luật và đoán. Một số công cụ AI phân loại các thứ hoặc đoán về chúng. Những công cụ khác, gọi là AI tạo sinh, làm ra những thứ mới, như bài viết hay hình ảnh. Video giải thích rằng AI có thể rất hữu ích, nhưng nó không hoàn hảo. Nó học từ những gì con người đưa cho nó, nên nó có thể lặp lại lỗi của họ. Đó là vì sao những người làm ra và dùng AI cần có trách nhiệm. Họ cần kiểm tra các câu trả lời của nó và nghĩ xem nó có thể ảnh hưởng đến ai. Đây là một phần ôn tập tốt trước khi bạn thiết kế trợ lý AI của riêng mình.",
+    "keyPoints": [
+      "AI học các quy luật từ dữ liệu huấn luyện.",
+      "AI tạo sinh làm ra những thứ mới, như bài viết hay hình ảnh.",
+      "Những người làm ra và dùng AI phải có trách nhiệm và kiểm tra nó."
+    ],
+    "contentNote": "Một phim hoạt hình của Hoa Kỳ dành cho cấp hai, 2 phút 37 giây. Nó ôn lại những ý tưởng từ Bài 1 đến 3 và nhắc đến AI tạo sinh. Bản tóm tắt được viết từ mô tả của Common Sense Education, không phải từ việc xem video. Hãy xem trước; người học có thể đọc bản tóm tắt viết thay thế."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Một điều hai dự án thật đã dạy mình về thiết kế là ..."
+      },
+      {
+        "text": "Điều quan trọng nhất mình đã học trong Digital World là ..."
+      }
+    ],
+    "completionMessage": "Bạn đã hoàn thành Bài 17. Bạn đã thấy hai dự án thật lớn lên như thế nào, lập kế hoạch cho trợ lý của riêng bạn, và cải tiến nó một lần."
+  },
+  "visual": {
+    "alt": "Một vòng thiết kế năm bước: vấn đề, có nên dùng AI không, nó học từ đâu, rủi ro, thử nghiệm và kiểm tra, và phản hồi, rồi quay lại điểm bắt đầu cho phiên bản 2."
+  },
+  "sources": [
+    {
+      "label": "Samsung Malaysia newsroom (11 tháng 12 năm 2024): 15-year-old students from Johor win at Samsung Solve for Tomorrow 2024 (học sinh 15 tuổi ở Johor chiến thắng tại Samsung Solve for Tomorrow 2024; Eco Pulse; lời kể của ban tổ chức)"
+    },
+    {
+      "label": "Singapore National Eye Centre: AI and digital health research group (nhóm nghiên cứu AI và sức khỏe số; SELENA+)"
+    },
+    {
+      "label": "Ting và cộng sự (2017): Development and validation of a deep learning system for diabetic retinopathy and related eye diseases, JAMA 318(22) (phát triển và kiểm định một hệ thống học sâu cho bệnh võng mạc tiểu đường và các bệnh mắt liên quan; hồ sơ của Duke University)"
+    },
+    {
+      "label": "Gunasekeran và cộng sự (2024): National use of artificial intelligence for eye screening in Singapore, NEJM AI (việc dùng AI trên toàn quốc để tầm soát mắt ở Singapore; lời kể của các nhà phát triển; hồ sơ của SMU)"
+    },
+    {
+      "label": "UNESCO: AI competency framework for students (khung năng lực AI cho học sinh; 2024)"
+    }
+  ],
+  "sensitiveNotes": [
+    "Các vấn đề phải là những vấn đề mà nhiều người trong một cộng đồng cùng gặp, không phải vấn đề cá nhân. Đừng hỏi người học về những vấn đề trong cuộc sống, gia đình hay nhà của chính họ. Nếu một người học chọn một vấn đề về sức khỏe, an toàn, pháp lí hay một người cụ thể, hãy nhẹ nhàng hướng họ sang một trong các vấn đề của bài học.",
+    "Các kế hoạch được lưu cùng bài làm của người học trên thiết bị này. Người học không được viết tên thật hay thông tin riêng tư của ai trong đó."
+  ],
+  "educatorNotes": [
+    "Đây là một thiết kế trên giấy: không có gì được xây dựng, và lập trình là tùy chọn. Kế hoạch là tài liệu làm việc duy nhất của bài học: Viết hỏi nó đã đến giai đoạn nào và cần bằng chứng gì, Nói trình bày nó, và bước 5 sửa lại nó một lần; không yêu cầu kế hoạch thứ hai. Hãy đánh giá năm điều, không phải kế hoạch nghe ấn tượng hay thận trọng đến đâu: nhu cầu (một vấn đề thật và nó ảnh hưởng đến ai), lợi ích dự kiến, sự phù hợp về kĩ thuật (vì sao AI giúp được, vì sao một cách khác phù hợp hơn, hoặc người học còn cần tìm hiểu điều gì: cả ba đều là câu trả lời mạnh), bằng chứng và cách kiểm tra (họ sẽ thử nghiệm với các ví dụ chưa từng thấy như thế nào, và ai kiểm tra), và một cải tiến. Bài học bao quát khía cạnh thiết kế hệ thống AI của UNESCO ở mức Hiểu và chạm đến mức Tạo. Bản trên giấy: năm bước dưới dạng phiếu bài tập. Người học lớn hơn hoặc tự tin hơn có thể thêm một kế hoạch thử nghiệm (những ví dụ mới nào, và kết quả nào được tính là hoạt động tốt).",
+    "Hai dự án thật, và mỗi dự án đã đi được đến đâu. Eco Pulse chỉ được biết qua lời kể của ban tổ chức (Samsung Malaysia, 11 tháng 12 năm 2024, đọc lại ngày 8 tháng 11 năm 2026): đội “Terralnnovators” (viết đúng như vậy), ba bạn 15 tuổi ở SMK Sultan Ismail, Johor, với một “ứng dụng nhận dạng hình ảnh dùng AI” ước tính giá trị và cân nặng của các món đồ có thể tái chế; giải nhất hạng mục Accessible Recycling của Solve for Tomorrow 2024 (cùng Universiti Malaya; vòng chung kết ngày 7 tháng 12 năm 2024), nơi các đội vào chung kết trình bày bản mẫu. “Chính xác” là tuyên bố của ban tổ chức; không có kết quả thử nghiệm, người dùng hay việc triển khai nào được báo cáo. SELENA+: do SERI/SNEC phát triển và kiểm định cùng các nhà khoa học máy tính của NUS (Ting và cộng sự, JAMA, tháng 12 năm 2017: 494.661 ảnh võng mạc; kiểm định chính trong chương trình tầm soát bệnh võng mạc tiểu đường quốc gia của Singapore, 14.880 bệnh nhân; 10 bộ dữ liệu đa sắc tộc khác; “cần nghiên cứu thêm” trong bối cảnh chăm sóc sức khỏe). Việc triển khai đến từ một nguồn riêng, nghiên cứu tình huống của chính các nhà phát triển (Gunasekeran và cộng sự, NEJM AI, tháng 11 năm 2024): SELENA+ trong Chương trình Võng mạc Tiểu đường Tích hợp Singapore với giấy phép thiết bị y tế; trong một thử nghiệm với 1.712 bệnh nhân đầu tiên, nó kém nhạy và kém đặc hiệu hơn người chấm trong việc xác định bệnh võng mạc cần chuyển viện (94,7% và 82,2%, so với 98,9% và 97,2%) và nhạy hơn với bệnh võng mạc đe dọa thị lực. Không phải một đánh giá độc lập, và không có kết quả điều trị của bệnh nhân. Đừng gán những điểm yếu của trợ lý mắt Sunvale hư cấu trong Bài 10 cho SELENA+."
+  ]
+}
