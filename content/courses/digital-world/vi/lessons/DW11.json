@@ -1,0 +1,206 @@
+{
+  "title": "AI ở trường: giúp ích hay đường tắt?",
+  "essentialQuestion": "Khi nào một công cụ AI giúp bạn học, và khi nào nó cản trở?",
+  "learningGoal": "Giải thích hai nghiên cứu về gia sư AI đã thấy gì, trong bối cảnh nào, và vì sao làm tốt với một công cụ không giống với việc học để tự mình làm được.",
+  "evidence": {
+    "label": "Ví dụ hư cấu, được tạo riêng cho bài học này.",
+    "question": "Học sinh nào dùng trợ lý để học? Học sinh nào dùng nó như một đường tắt?",
+    "cards": [
+      {
+        "title": "Ba học sinh và trợ lý làm bài tập về nhà ở Brightwater (một công cụ giả định)",
+        "cases": [
+          {
+            "name": "Mira",
+            "body": "Mira không hiểu phân số. Bạn nhờ trợ lý giải thích theo một cách khác, với một ví dụ về chia bánh mì. Rồi bạn tự làm các câu hỏi luyện tập."
+          },
+          {
+            "name": "Jonah",
+            "body": "Jonah nhờ trợ lý viết cả bài luận về các dòng sông của mình. Bạn nộp nó như bài của mình. Ngày hôm sau, bạn không trả lời được các câu hỏi của giáo viên về bài đó."
+          },
+          {
+            "name": "Ayla",
+            "body": "Ayla nhờ trợ lý dịch một trang khoa học sang một ngôn ngữ bạn đọc tốt. Một từ trông lạ, nên bạn kiểm tra nó với giáo viên."
+          }
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "title": "Thử trợ lý giả định",
+    "toolLabel": "Công cụ giả định. Các câu trả lời của nó được viết sẵn cho bài học này. Nó không phải là AI thật, và không có gì bạn chọn được gửi đi đâu cả.",
+    "instructions": "Trước tiên, hãy chọn yêu cầu sẽ giúp Jonah học. Rồi kiểm tra một câu trả lời từ công cụ.",
+    "improve": {
+      "start": {
+        "prompt": "Viết câu trả lời của mình: vì sao nhiều thị trấn phát triển gần các dòng sông?",
+        "answer": "Nhiều thị trấn phát triển gần các dòng sông vì sông cho con người nước, thức ăn và một cách để đi lại. Đây là câu trả lời đã hoàn chỉnh của bạn. Bạn có thể nộp nó."
+      },
+      "question": "Yêu cầu nào sẽ giúp Jonah học được nhiều nhất?",
+      "options": [
+        {
+          "prompt": "Viết một câu trả lời dài hơn cho mình.",
+          "answer": "Nhiều thị trấn phát triển gần các dòng sông. Sông cho nước để uống và để làm nông. Chúng cho cá để ăn. Thuyền có thể chở người và hàng hóa. Đây là câu trả lời dài hơn của bạn.",
+          "feedback": "Chưa đúng lắm. Một câu trả lời dài hơn vẫn là việc của công cụ. Jonah không phải suy nghĩ."
+        },
+        {
+          "prompt": "Cho mình một gợi ý. Rồi để mình tự thử trước.",
+          "answer": "Gợi ý: hãy nghĩ xem mọi người cần gì mỗi ngày. Một dòng sông có thể cho họ điều gì? Hãy viết ý của bạn. Rồi mình sẽ hỏi bạn một câu về nó.",
+          "feedback": "Đúng rồi. Một gợi ý giúp Jonah suy nghĩ. Bạn vẫn tự mình học."
+        },
+        {
+          "prompt": "Đổi các từ để nó trông như của mình.",
+          "answer": "Đây là cùng câu trả lời đó bằng những từ mới. Các thị trấn thường bắt đầu bên các dòng sông, vì sông mang đến nước, thức ăn và đường đi lại.",
+          "feedback": "Chưa đúng lắm. Cách này che giấu ai đã làm việc. Như vậy là không trung thực, và Jonah không học được gì mới."
+        }
+      ]
+    },
+    "check": {
+      "prompt": "Cây cầu cũ ở Brightwater được xây khi nào?",
+      "answer": "Cây cầu cũ ở Brightwater được xây năm 1850. Mình hoàn toàn chắc chắn về điều này.",
+      "trustedSource": {
+        "name": "Cuốn sách lịch sử thị trấn Brightwater",
+        "says": "Cây cầu cũ được xây năm 1920. Trước đó, mọi người qua sông bằng thuyền."
+      },
+      "question": "Công cụ nghe rất chắc chắn. Bạn nên làm gì?",
+      "options": [
+        {
+          "text": "Tin nó, vì nó nghe chắc chắn",
+          "feedback": "Chưa đúng lắm. Một công cụ có thể nghe chắc chắn mà vẫn sai. Hãy kiểm tra một nguồn đáng tin cậy."
+        },
+        {
+          "text": "Bảo công cụ nói lại lần nữa",
+          "feedback": "Chưa đúng lắm. Công cụ có thể đưa ra cùng câu trả lời sai. Hãy kiểm tra một nguồn khác."
+        },
+        {
+          "text": "Kiểm tra cuốn sách lịch sử thị trấn",
+          "feedback": "Đúng rồi. Cuốn sách nói 1920. Công cụ đã bịa ra một ngày, dù nó nghe chắc chắn."
+        }
+      ]
+    }
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Các trường học đang quyết định cách dùng AI",
+        "text": "Các công cụ trò chuyện AI có thể trả lời câu hỏi, giải thích ý tưởng và thậm chí viết cả bài luận. Vì vậy các trường học và gia đình phải đối mặt với một câu hỏi mới: học sinh nên dùng chúng như thế nào? Năm 2023, UNESCO, tổ chức giáo dục của Liên Hợp Quốc, đã hỏi hơn 450 trường học và trường đại học. Chưa đến 1 trên 10 nơi có bất kì hướng dẫn nào về các công cụ này. Cuối năm đó, UNESCO viết hướng dẫn cho các chính phủ. Tổ chức này yêu cầu họ bảo vệ quyền riêng tư của học sinh và đặt ra một độ tuổi tối thiểu, như 13, để trẻ em tự trò chuyện với các công cụ trò chuyện này. Đây là lời khuyên, không phải luật. Mỗi nước và mỗi trường tự đặt ra quy định của mình.",
+        "simpler": "Các công cụ trò chuyện AI có thể trả lời câu hỏi và thậm chí viết bài luận. Học sinh nên dùng chúng như thế nào? Năm 2023, UNESCO đã hỏi hơn 450 trường học và trường đại học. UNESCO là tổ chức giáo dục của Liên Hợp Quốc. Chưa đến 1 trên 10 nơi có hướng dẫn về các công cụ này. Rồi UNESCO viết hướng dẫn cho các chính phủ. Hãy bảo vệ quyền riêng tư của học sinh, tổ chức này nói. Hãy đặt một độ tuổi, như 13, cho trẻ em tự trò chuyện với các công cụ này. Đây là lời khuyên, không phải luật. Mỗi nước và mỗi trường tự đặt ra quy định của mình."
+      },
+      {
+        "heading": "Nigeria: một gia sư AI với giáo viên có mặt trong phòng",
+        "text": "Năm 2024, các nhà nghiên cứu của Ngân hàng Thế giới đã thử một gia sư AI ở chín trường công lập tại Benin City, Nigeria. Các học sinh đang học năm đầu của bậc trung học phổ thông, thường khoảng 15 tuổi. Trong sáu tuần, các em đến phòng máy tính sau giờ học, hai lần một tuần, để luyện tập tiếng Anh với một công cụ trò chuyện AI. Các giáo viên được đào tạo cho dự án bắt đầu mỗi buổi bằng một câu hỏi đầu tiên để hỏi công cụ. Rồi họ đi quanh phòng, giúp học sinh tập trung vào nhiệm vụ. Cuối cùng, những học sinh này làm bài kiểm tra tiếng Anh tốt hơn những học sinh tương tự không được chọn. Các nhà nghiên cứu nói kết quả đến từ cả chương trình, công cụ và các giáo viên cùng với nhau.",
+        "simpler": "Năm 2024, các nhà nghiên cứu đã thử một gia sư AI ở Nigeria. Các học sinh khoảng 15 tuổi. Trong sáu tuần, các em đến sau giờ học, hai lần một tuần. Các em luyện tập tiếng Anh với một công cụ trò chuyện AI. Các giáo viên được đào tạo bắt đầu mỗi buổi. Họ đưa ra một câu hỏi đầu tiên để hỏi công cụ. Rồi họ giúp học sinh tập trung. Cuối cùng, các em làm một bài kiểm tra tiếng Anh. Các em làm tốt hơn những học sinh không tham gia. Công cụ và các giáo viên cùng làm việc với nhau, các nhà nghiên cứu nói."
+      },
+      {
+        "heading": "Thổ Nhĩ Kỳ: luyện tập với một công cụ không giống với việc học",
+        "text": "Năm 2023, các nhà nghiên cứu làm việc với gần 1.000 học sinh lớp 9 đến lớp 11 tại một trường trung học ở Thổ Nhĩ Kỳ. Trong bốn bài học toán, một giáo viên ôn lại một chủ đề, học sinh làm các bài tập luyện tập, rồi các em làm một bài kiểm tra không có sách hay máy tính. Trong lúc luyện tập, một số học sinh chỉ có sách của mình. Một số có một công cụ trò chuyện có thể cho đáp án đầy đủ. Những em khác có một phiên bản gia sư cho gợi ý, dùng các đáp án và những lỗi thường gặp do giáo viên của các em viết. Cả hai nhóm dùng AI đều làm tốt hơn nhiều trong lúc luyện tập. Nhưng ở bài kiểm tra một mình, nhóm có đáp án đầy đủ làm kém hơn nhóm chỉ có sách. Công cụ đã trở thành một đường tắt. Nhóm có gợi ý làm gần như bằng nhóm chỉ có sách. Mỗi nghiên cứu là một môn học ở một nơi, nên kết quả ở nơi khác có thể khác.",
+        "simpler": "Một nghiên cứu khác ở Thổ Nhĩ Kỳ, với gần 1.000 học sinh trung học. Trong bốn bài học toán, học sinh làm các bài tập luyện tập. Rồi các em làm một bài kiểm tra không có sự giúp đỡ. Một số luyện tập chỉ với sách. Một số có một công cụ trò chuyện cho đáp án đầy đủ. Những em khác có một công cụ cho gợi ý. Giáo viên của các em đã giúp làm ra nó. Cả hai nhóm dùng công cụ đều làm tốt trong lúc luyện tập. Ở bài kiểm tra một mình, nhóm có đáp án đầy đủ làm kém hơn. Công cụ là một đường tắt. Nhóm có gợi ý làm gần như bằng nhóm chỉ có sách. Mỗi nghiên cứu là một môn học ở một nơi."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "hướng dẫn",
+        "definition": "Lời khuyên từ một nhóm về việc nên làm một điều gì đó như thế nào.",
+        "example": "UNESCO đã viết hướng dẫn về các công cụ AI trong trường học."
+      },
+      {
+        "word": "quyền riêng tư",
+        "definition": "Giữ thông tin của chính bạn an toàn khỏi những người không nên thấy nó.",
+        "example": "Bảo vệ quyền riêng tư nghĩa là không bao giờ gõ địa chỉ của bạn vào một công cụ trò chuyện."
+      },
+      {
+        "word": "gia sư",
+        "definition": "Một người hoặc công cụ giúp một học sinh, hoặc một vài em, học một điều gì đó.",
+        "example": "Ở Nigeria, học sinh dùng một gia sư AI với sự giúp đỡ của giáo viên."
+      },
+      {
+        "word": "luyện tập",
+        "definition": "Làm một việc nhiều lần để giỏi hơn.",
+        "example": "Mira tự làm các câu hỏi luyện tập."
+      },
+      {
+        "word": "đường tắt",
+        "definition": "Một cách nhanh hơn bỏ qua một số bước.",
+        "example": "Jonah dùng trợ lý như một đường tắt, nên bạn không học được gì về các dòng sông."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Trong nghiên cứu ở Thổ Nhĩ Kỳ, điều gì đã xảy ra khi công cụ cho đáp án đầy đủ?",
+        "options": [
+          {
+            "text": "Các em làm tốt nhất trong bài kiểm tra",
+            "feedback": "Chưa đúng lắm. Các em làm tốt trong lúc luyện tập, nhưng không tốt ở bài kiểm tra. Hãy đọc phần thứ ba."
+          },
+          {
+            "text": "Các em làm tốt trong lúc luyện tập, nhưng kém hơn ở bài kiểm tra một mình",
+            "feedback": "Đúng rồi. Công cụ đã làm nhiều việc trong lúc luyện tập. Ở bài kiểm tra không có nó, các em làm kém hơn những học sinh chỉ dùng sách."
+          },
+          {
+            "text": "Các em không bao giờ dùng công cụ",
+            "feedback": "Chưa đúng lắm. Các em đã dùng nó trong lúc luyện tập. Hãy đọc lại phần thứ ba."
+          }
+        ]
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Viết một lời nhắn ngắn cho Jonah. Giải thích vì sao bài luận của trợ lý không giúp bạn học, dựa trên điều một trong hai nghiên cứu đã thấy. Rồi gợi ý một cách tốt hơn để bạn dùng trợ lý.",
+    "sentenceStarters": [
+      "Jonah, trợ lý ...",
+      "Trong nghiên cứu ở ___, ...",
+      "Lần sau, bạn có thể ..."
+    ],
+    "example": "Jonah, trợ lý đã viết bài luận của bạn. Vì vậy trợ lý là người suy nghĩ, không phải bạn. Đó là lí do bạn không trả lời được các câu hỏi của giáo viên vào ngày hôm sau. Trong nghiên cứu ở Thổ Nhĩ Kỳ, một số học sinh có một công cụ cho đáp án đầy đủ. Các em làm tốt trong lúc luyện tập. Nhưng các em làm kém hơn ở một bài kiểm tra không có công cụ. Lần sau, bạn có thể xin trợ lý một gợi ý. Rồi tự viết câu trả lời của bạn, và nhờ nó kiểm tra một phần."
+  },
+  "speak": {
+    "partnerTask": "Nói chuyện với bạn học của bạn: trong nghiên cứu ở Nigeria, các giáo viên bắt đầu mỗi buổi và giúp học sinh trong lúc các em làm việc. Vì sao điều đó có thể quan trọng? Mỗi người nêu một lí do.",
+    "independentTask": "Nói to các giáo viên đã làm gì trong nghiên cứu ở Nigeria, và vì sao các nhà nghiên cứu nói kết quả đến từ công cụ và các giáo viên cùng với nhau."
+  },
+  "watch": {
+    "why": "Phim hoạt hình ngắn này giải thích vì sao các công cụ trò chuyện AI được làm cho nghe giống con người, điều có thể khiến câu trả lời của chúng có vẻ đúng hơn thực tế.",
+    "beforeQuestion": "Bạn nghĩ vì sao một công cụ trò chuyện AI có thể nghe giống một người thật?",
+    "afterQuestion": "Vì sao một học sinh nên kiểm tra điều một công cụ trò chuyện nói, ngay cả khi nó nghe chắc chắn?",
+    "summary": "Phim hoạt hình ngắn này nói về các chatbot AI. Chatbot là một chương trình máy tính bạn có thể trò chuyện bằng chữ viết. Nó hơi giống nhắn tin cho một người. Video giải thích chatbot là gì và chúng hoạt động như thế nào. Nó cũng hỏi vì sao nhiều chatbot được làm cho nghe giống con người. Một chatbot có thể nghe thân thiện và giống người. Điều này có thể khiến nó có cảm giác như một người bạn. Nó cũng có thể khiến câu trả lời của nó có vẻ đúng hơn thực tế. Nhưng chatbot không phải là một người. Nó không thật sự biết bạn, và nó có thể sai. Vì vậy hãy để ý chatbot làm bạn cảm thấy thế nào. Và hãy kiểm tra điều nó nói trước khi bạn tin.",
+    "keyPoints": [
+      "Nhiều chatbot AI được làm cho nghe giống con người.",
+      "Nghe giống người và chắc chắn không làm cho một câu trả lời đúng.",
+      "Hãy để ý chatbot làm bạn cảm thấy thế nào, và kiểm tra điều nó nói."
+    ],
+    "contentNote": "Một phim hoạt hình của Hoa Kỳ, 3 phút 20 giây (như được ghi trên trang video của Common Sense Education). Tiêu đề và kênh đã được kiểm tra bằng oEmbed của YouTube ngày 31 tháng 10 năm 2026. Bản tóm tắt được viết từ phần mô tả video của Common Sense Education (vì sao các chatbot được thiết kế để nghe giống con người đến vậy, và điều đó có thể ảnh hưởng đến chúng ta như thế nào) và mục tiêu của bài học dùng nó, không phải từ việc xem video. Một người trong nhóm phải xem nó và kiểm tra bản tóm tắt trước khi dùng. Người học có thể đọc bản tóm tắt viết thay thế."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Một điều bây giờ mình hiểu về việc dùng các công cụ AI để học là ..."
+      },
+      {
+        "text": "Một câu hỏi mình vẫn còn về AI ở trường là ..."
+      }
+    ],
+    "completionMessage": "Bạn đã hoàn thành Bài 11. Bạn đã giải thích hai nghiên cứu về gia sư AI đã thấy gì, và vì sao làm tốt với một công cụ không giống với việc học."
+  },
+  "visual": {
+    "alt": "Hai con đường từ cùng một bài tập về nhà. Xin một gợi ý dẫn đến việc học sinh học được; xin cả đáp án dẫn đến một bài kiểm tra khó khi không có công cụ."
+  },
+  "sources": [
+    {
+      "label": "UNESCO (7 tháng 9 năm 2023): Governments must quickly regulate generative AI in schools (thông cáo báo chí: khảo sát hơn 450 trường học và trường đại học, và độ tuổi tối thiểu 13; bản sao của GCED Clearinghouse)"
+    },
+    {
+      "label": "UNESCO (2023): Guidance for generative AI in education and research (hồ sơ danh mục: bảo vệ quyền riêng tư dữ liệu và một độ tuổi tối thiểu cho các cuộc trò chuyện độc lập với những công cụ này; GCED Clearinghouse)"
+    },
+    {
+      "label": "World Bank (tháng 5 năm 2025): From chalkboards to chatbots, evaluating the impact of generative AI on learning outcomes in Nigeria (De Simone và cộng sự, Policy Research Working Paper 11125; hồ sơ khả năng tái lập)"
+    },
+    {
+      "label": "Bastani và cộng sự (PNAS, 2025): Generative AI without guardrails can harm learning, evidence from high school mathematics (hồ sơ; được Knowledge at Wharton đưa tin, tháng 8 năm 2024)"
+    }
+  ],
+  "sensitiveNotes": [
+    "Đừng hỏi người học xem họ đã dùng các công cụ AI cho bài vở hay chưa và dùng như thế nào, và đừng bảo họ gõ câu hỏi vào một công cụ AI thật trong lớp. Hướng dẫn năm 2023 của UNESCO yêu cầu các chính phủ đặt một độ tuổi tối thiểu cho các cuộc trò chuyện độc lập của trẻ em với các công cụ AI tạo sinh; thông cáo báo chí của tổ chức này nêu con số 13, và các bản tin cho biết một số người ủng hộ 16. Đó là lời khuyên cho các chính phủ, không phải luật hay quy định cho mọi công cụ học tập, và nhiều người học nhỏ hơn 13 tuổi. Công cụ giả định giữ mọi người ngoại tuyến.",
+    "Một số người học không có thiết bị hay internet ở nơi họ sống. Hãy nói về việc tiếp cận như một câu hỏi về sự công bằng của các trường học, đừng bao giờ như điều để so sánh giữa các người học."
+  ],
+  "educatorNotes": [
+    "Các học sinh ở Brightwater, các câu trả lời của công cụ giả định và ngày xây cầu năm 1850 là bịa ra; ngày sai được viết cố ý để người học luyện tập việc kiểm tra. Bản trên giấy của hoạt động: đọc to các yêu cầu và câu trả lời và để người học chọn.",
+    "Hai nghiên cứu, được đơn giản hóa (claims/DW11.md). Nigeria (De Simone và cộng sự, Ngân hàng Thế giới, 2025): một thử nghiệm ngẫu nhiên ở chín trường công lập tại Benin City, bang Edo, từ tháng 6 đến tháng 7 năm 2024, với học sinh năm đầu trung học phổ thông (thường 15 tuổi). Các học sinh được chọn ngẫu nhiên có thể tham dự mười hai buổi sau giờ học dài 90 phút (nhiều nhất hai buổi một tuần) dùng Microsoft Copilot (GPT-4). Giáo viên được đào tạo ba ngày, bắt đầu mỗi buổi bằng một câu mở đầu, hướng dẫn học sinh mà không trực tiếp dạy và đi quanh để giữ các em tập trung; các giám sát viên theo dõi các buổi học. Ở bài kiểm tra bằng bút và giấy vào cuối, mức tăng là 0,31 độ lệch chuẩn nói chung và 0,23 ở tiếng Anh, cùng với các kì thi cuối năm tốt hơn. Các tác giả nói cả chương trình, công cụ và sự hướng dẫn của giáo viên cùng với nhau, đã tạo nên kết quả; họ không thể tách phần của AI khỏi sự hướng dẫn của giáo viên, và không biết nó kéo dài bao lâu hay liệu nó có hiệu quả ở các môn khác không. Thổ Nhĩ Kỳ (Bastani và cộng sự, PNAS 2025; thiết kế từ bài thảo luận năm 2024): gần 1.000 học sinh lớp 9 đến lớp 11 tại một trường trung học lớn, mùa thu năm 2023; bốn buổi 90 phút bao gồm khoảng 15% chương trình toán của năm; AI chỉ có trong lúc luyện tập, với một giáo viên có mặt. Với GPT-4 trong lúc luyện tập, điểm tăng 48% (công cụ trò chuyện thường) và 127% (gia sư gợi ý được xây dựng với lời giải và những lỗi thường gặp của giáo viên); ở bài kiểm tra đóng sách sau đó, nhóm dùng công cụ thường đạt điểm thấp hơn 17% so với nhóm chỉ có sách, còn nhóm gia sư thì gần như bằng. Không nghiên cứu nào cho thấy một tác động với mọi người học, môn học hay công cụ."
+  ]
+}

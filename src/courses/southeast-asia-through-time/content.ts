@@ -89,7 +89,7 @@ const byLanguage = translatedContents(
       import: 'default',
     }),
   },
-  ['id', 'ms'],
+  ['id', 'ms', 'vi'],
   options,
 );
 

@@ -68,7 +68,7 @@ const byLanguage = translatedContents(
     translations: import.meta.glob('../../../content/courses/digital-world/*/{course.json,lessons/*.json}', { eager: true, import: 'default' }),
     translatedPictures: {},
   },
-  ['id', 'ms'],
+  ['id', 'ms', 'vi'],
   options,
 );
 

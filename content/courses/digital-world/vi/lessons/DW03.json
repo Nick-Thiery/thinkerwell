@@ -1,0 +1,309 @@
+{
+  "title": "AI học từ các ví dụ như thế nào",
+  "essentialQuestion": "Một máy tính học từ các ví dụ bằng cách nào, và vì sao các ví dụ quan trọng?",
+  "learningGoal": "Giải thích một mô hình học từ các ví dụ có gán nhãn như thế nào, và vì sao các ví dụ phù hợp, được gán nhãn đúng, cùng một lần thử nghiệm trên các ví dụ mới lại quan trọng.",
+  "warmUp": {
+    "question": "Bạn muốn dạy một em nhỏ phân biệt lá khỏe với lá bệnh. Bạn sẽ làm gì?",
+    "options": [
+      "Cho xem thật nhiều chiếc lá",
+      "Viết một danh sách quy tắc",
+      "Cho xem một chiếc lá",
+      "Điều khác"
+    ]
+  },
+  "evidence": {
+    "label": "Ví dụ hư cấu, được tạo riêng cho bài học này.",
+    "question": "Điều gì đã thay đổi khi mô hình có nhiều ví dụ hơn, và lần thử nghiệm mới cho thấy điều gì?",
+    "cards": [
+      {
+        "title": "Mô hình nhận biết lá ở Vườn Sunrise",
+        "columns": [
+          "Vòng",
+          "Các ví dụ nó học từ đó",
+          "Số lá mới nó đoán đúng"
+        ],
+        "rows": [
+          [
+            "Vòng 1",
+            "2 ví dụ: một chiếc lá to xanh đậm (khỏe) và một chiếc lá nâu có đốm (bệnh)",
+            "4 trên 6"
+          ],
+          [
+            "Vòng 2",
+            "6 ví dụ: 2 ví dụ của Vòng 1, cộng thêm 2 lá khỏe và 2 lá bệnh nữa trông khác đi",
+            "6 trên 6"
+          ],
+          [
+            "Thử nghiệm mới",
+            "8 ví dụ, trong đó có 2 chiếc lá dài, có sọc, từ một cây mới",
+            "3 trên 4 chiếc lá chưa ai dùng"
+          ]
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "title": "Thử mô hình nhận biết lá",
+    "instructions": "Hãy dạy mô hình bằng cách gán nhãn cho từng chiếc lá mẫu: khỏe hoặc bệnh. Rồi thử nó trên những chiếc lá mới, từng vòng một, và xem nó đoán đúng bao nhiêu. Không có gì bạn làm ở đây được gửi đi đâu cả.",
+    "labels": [
+      {
+        "label": "Khỏe"
+      },
+      {
+        "label": "Bệnh"
+      }
+    ],
+    "features": [
+      {
+        "label": "Độ xanh",
+        "scale": "0 là nâu hoặc vàng, 10 là xanh đậm"
+      },
+      {
+        "label": "Đốm",
+        "scale": "0 là không có, 10 là phủ kín"
+      },
+      {
+        "label": "Kích thước",
+        "scale": "0 là rất nhỏ, 10 là rất to"
+      },
+      {
+        "label": "Hình dạng",
+        "scale": "0 là tròn, 10 là dài và mảnh"
+      }
+    ],
+    "examples": [
+      {
+        "description": "Lá to xanh đậm"
+      },
+      {
+        "description": "Lá nâu có đốm"
+      },
+      {
+        "description": "Lá non nhỏ, xanh nhạt"
+      },
+      {
+        "description": "Lá vàng không có đốm"
+      },
+      {
+        "description": "Lá xanh có vài vết nhỏ li ti"
+      },
+      {
+        "description": "Lá nhỏ có nhiều đốm"
+      },
+      {
+        "description": "Lá dài, mảnh, có sọc nhạt"
+      },
+      {
+        "description": "Lá nâu dài, mảnh, có đốm"
+      }
+    ],
+    "tests": [
+      {
+        "description": "Lá xanh"
+      },
+      {
+        "description": "Lá nâu có đốm"
+      },
+      {
+        "description": "Lá non nhỏ, xanh nhạt"
+      },
+      {
+        "description": "Lá vàng không có đốm"
+      },
+      {
+        "description": "Lá xanh có vài vết nhỏ li ti"
+      },
+      {
+        "description": "Lá nhỏ có nhiều đốm"
+      },
+      {
+        "description": "Lá dài, mảnh, có sọc nhạt"
+      },
+      {
+        "description": "Lá dài, mảnh, có sọc nhạt"
+      },
+      {
+        "description": "Lá to xanh có một vết nhỏ li ti"
+      },
+      {
+        "description": "Lá có viền nâu và đốm"
+      },
+      {
+        "description": "Lá dài có sọc, có vài vết"
+      },
+      {
+        "description": "Lá dài, mảnh, đang ngả vàng"
+      }
+    ],
+    "rounds": [
+      {
+        "title": "Vòng 1: hai ví dụ",
+        "debrief": "Mô hình đoán đúng 4 trên 6. Nó chỉ có hai chiếc lá để so sánh, nên nó nhầm chiếc lá non nhỏ với chiếc lá vàng."
+      },
+      {
+        "title": "Vòng 2: nhiều ví dụ hơn, khác nhau hơn",
+        "debrief": "Lần này mô hình đoán đúng cả 6. Các ví dụ mới cho nó thấy những chiếc lá trông khác nhau."
+      },
+      {
+        "title": "Một cây mới",
+        "debrief": "Cả hai chiếc lá có sọc đều khỏe, nhưng mô hình nói “bệnh”. Không ví dụ nào của nó trông giống chúng."
+      },
+      {
+        "title": "Vòng 3: thêm cây mới",
+        "debrief": "Khi có các ví dụ về cây mới, mô hình đoán đúng cả 8. Nhưng nhóm đã thấy những chiếc lá thử nghiệm này rồi, và bài thử nghiệm thì nhỏ. Để kiểm tra cho công bằng, hãy thử nó trên những chiếc lá chưa ai dùng."
+      },
+      {
+        "title": "Vòng 4: những chiếc lá chưa ai dùng",
+        "debrief": "Trên bốn chiếc lá chưa ai dùng, mô hình đoán đúng 3 trên 4. Nó gọi một chiếc lá dài, mảnh đang ngả vàng là “khỏe”, vì nó trông giống nhất với ví dụ lá khỏe có sọc. Một lần thử nghiệm mới cho thấy mô hình vẫn còn đoán sai điều gì, và bốn chiếc lá vẫn là một bài thử nhỏ."
+      }
+    ],
+    "freePlay": "Sau Vòng 4, người học có thể bỏ bớt ví dụ, hoặc đổi một nhãn, rồi thử lại. Mô hình làm theo nhãn của người học, kể cả khi chúng khác với nhãn của người làm vườn.",
+    "explainGuess": "Sau mỗi lần đoán, hãy cho xem ví dụ mà mô hình cho là giống chiếc lá mới nhất: “Nó trông giống nhất với ví dụ này, nên mô hình nói là bệnh.”"
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Một mô hình học từ các ví dụ có gán nhãn",
+        "text": "Một số AI học hơi giống như học bằng thẻ ghi nhớ. Ở Vườn Sunrise, mọi người thu thập dữ liệu huấn luyện: những bức ảnh lá cây, mỗi bức kèm đáp án đúng, gọi là nhãn, là “khỏe” hoặc “bệnh”. Máy tính dùng những ví dụ này để xây dựng một mô hình. Nó dùng mô hình để dự đoán nhãn của một chiếc lá mà nó chưa từng thấy. Đây là học máy. Không ai viết quy tắc “có đốm là bệnh”; máy tính tự tìm ra những mẫu hình như thế trong các ví dụ. Học từ các ví dụ có gán nhãn được gọi là học có giám sát, một loại học máy. Đó là một ý tưởng cũ. Một cỗ máy tên là perceptron đã học từ những tấm thẻ được đánh dấu vào năm 1958, và các nhà nghiên cứu đã nghiên cứu phương pháp của bài học này vào năm 1967. Nó trở nên hữu ích hơn nhiều sau năm 2010, khi có nhiều dữ liệu hơn và máy tính nhanh hơn.",
+        "simpler": "Ở Vườn Sunrise, mọi người thu thập dữ liệu huấn luyện. Mỗi bức ảnh lá có đáp án đúng, gọi là nhãn: “khỏe” hoặc “bệnh”. Máy tính dùng chúng để làm ra một mô hình. Nó dùng mô hình để đoán. Đây là học máy. Không ai bảo nó “có đốm là bệnh”. Nó tự tìm ra điều đó trong các ví dụ. Học từ các nhãn được gọi là học có giám sát. Đó là một ý tưởng cũ. Một cỗ máy đã làm vậy vào năm 1958. Phương pháp này được nghiên cứu vào năm 1967. Nó trở nên hữu ích hơn sau năm 2010."
+      },
+      {
+        "heading": "Ví dụ tốt hơn, rồi một bài thử công bằng",
+        "text": "Mô hình đầu tiên chỉ học từ hai ví dụ. Nó đoán theo cách đơn giản: nó tìm ví dụ giống chiếc lá mới nhất và chép nhãn của ví dụ đó. Trên sáu chiếc lá mới, nó đoán đúng bốn. Nó gọi một chiếc lá nhỏ, xanh nhạt là “bệnh”, vì nó có quá ít ví dụ để so sánh. Rồi nhóm thêm bốn chiếc lá trông khác đi, và nó đoán đúng cả sáu. Nhưng nhóm đã xem sáu chiếc lá thử nghiệm đó trong lúc cải thiện mô hình. Một lần thử nghiệm công bằng dùng những chiếc lá mà chưa ai dùng. Nhóm để riêng bốn chiếc lá. Mô hình đoán đúng ba chiếc trong số đó. Nó gọi một chiếc lá dài đang ngả vàng là “khỏe”. Một lần thử nghiệm mới cho thấy mô hình vẫn còn đoán sai điều gì. Bốn chiếc lá vẫn là một bài thử nhỏ.",
+        "simpler": "Mô hình đầu tiên chỉ có hai ví dụ. Nó tìm ví dụ giống nhất với một chiếc lá mới. Nó chép nhãn đó. Nó đoán đúng bốn trên sáu chiếc lá mới. Nó có quá ít ví dụ. Rồi nhóm thêm bốn chiếc lá khác nhau. Lần này nó đoán đúng cả sáu. Nhưng nhóm đã thấy sáu chiếc lá đó rồi. Một thử nghiệm công bằng dùng những chiếc lá mới. Nhóm để riêng bốn chiếc lá. Mô hình đoán đúng ba chiếc trong số đó. Một thử nghiệm mới cho thấy nó vẫn còn đoán sai điều gì."
+      },
+      {
+        "heading": "Các ví dụ từ thế giới thật",
+        "text": "Các công cụ thật hoạt động theo cách tương tự, nhưng ở quy mô lớn hơn nhiều. Ở Tanzania, các nhà nghiên cứu của Viện Nông nghiệp Nhiệt đới Quốc tế và Đại học Penn State đã làm ra một ứng dụng điện thoại miễn phí tên là Nuru. Nó học từ những bức ảnh lá sắn, một cây lương thực, chụp ở các cánh đồng Tanzania, và nó chạy được mà không cần internet. Khi các nhà nghiên cứu thử nghiệm nó trên cây ngoài đồng, nó làm tốt hơn nhiều khi xem sáu chiếc lá của một cây so với xem một chiếc. Các ví dụ phù hợp với nhãn đúng giúp ích cho một mô hình. Chỉ có thêm nhiều ví dụ thì không phải lúc nào cũng giúp: một nhãn sai có thể làm các dự đoán tệ hơn. Và một công cụ như vậy chỉ giúp mọi người kiểm tra lá. Nông dân và các chuyên gia vẫn là người quyết định phải làm gì.",
+        "simpler": "Các công cụ thật cũng hoạt động như thế, nhưng lớn hơn nhiều. Ở Tanzania, các nhà nghiên cứu làm ra một ứng dụng điện thoại miễn phí tên là Nuru. Nó học từ những bức ảnh lá sắn. Sắn là cây mà người ta trồng để làm lương thực. Nó chạy được mà không cần internet. Trong các lần thử nghiệm, nó làm tốt hơn khi xem sáu chiếc lá của một cây. Ví dụ tốt với nhãn đúng sẽ giúp ích. Một nhãn sai có thể làm nó tệ hơn. Ứng dụng giúp mọi người kiểm tra lá. Mọi người vẫn quyết định phải làm gì."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "dữ liệu huấn luyện",
+        "definition": "Các ví dụ dùng để xây dựng một mô hình. Ở đây, mỗi ví dụ có một nhãn.",
+        "example": "Các bức ảnh lá và nhãn của chúng là dữ liệu huấn luyện."
+      },
+      {
+        "word": "nhãn",
+        "definition": "Đáp án được gán cho một ví dụ, như “khỏe” hoặc “bệnh”.",
+        "example": "Chiếc lá to xanh đậm có nhãn “khỏe”."
+      },
+      {
+        "word": "mô hình",
+        "definition": "Điều mà máy tính đã học được từ các ví dụ. Nó dùng điều đó để đoán.",
+        "example": "Mô hình của khu vườn đã đoán chiếc lá vàng là khỏe."
+      },
+      {
+        "word": "học máy",
+        "definition": "Một cách để máy tính học các mẫu hình từ các ví dụ, chứ không từ các quy tắc được viết sẵn.",
+        "example": "Mô hình nhận biết lá là một ví dụ về học máy."
+      },
+      {
+        "word": "học có giám sát",
+        "definition": "Học máy từ những ví dụ mà mỗi ví dụ đều có một nhãn.",
+        "example": "Mô hình nhận biết lá dùng học có giám sát: mọi ví dụ đều được gán nhãn khỏe hoặc bệnh."
+      },
+      {
+        "word": "thử nghiệm",
+        "definition": "Làm thử một điều gì đó với các ví dụ mới để xem nó có hiệu quả không.",
+        "example": "Nhóm đã thử nghiệm mô hình với sáu chiếc lá mới."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Vì sao ở Vòng 1 mô hình gọi chiếc lá non nhỏ là “bệnh”?",
+        "options": [
+          {
+            "text": "Nó chỉ có hai ví dụ để so sánh",
+            "feedback": "Đúng rồi. Chỉ với hai ví dụ, chiếc lá mới gần với chiếc lá nâu hơn. Thêm ví dụ đã sửa được điều này."
+          },
+          {
+            "text": "Lá nhỏ hầu như lúc nào cũng bệnh",
+            "feedback": "Chưa đúng lắm. Người làm vườn nói chiếc lá non nhỏ là khỏe. Hãy đọc đoạn đầu của phần thứ hai."
+          },
+          {
+            "text": "Mô hình bị hỏng và cần sửa",
+            "feedback": "Chưa đúng lắm. Nó có quá ít ví dụ để so sánh. Hãy đọc đoạn đầu của phần thứ hai."
+          }
+        ]
+      },
+      {
+        "question": "Vì sao nhóm thử mô hình trên bốn chiếc lá chưa ai dùng?",
+        "options": [
+          {
+            "text": "Để bài thử công bằng, với những chiếc lá nhóm chưa xem trước",
+            "feedback": "Đúng rồi. Nhóm đã thấy các chiếc lá thử nghiệm đầu tiên. Những chiếc lá mới cho thấy mô hình vẫn còn đoán sai điều gì."
+          },
+          {
+            "text": "Vì bốn chiếc lá chứng minh mô hình lúc nào cũng đúng",
+            "feedback": "Chưa đúng lắm. Bài học nói bốn chiếc lá vẫn là một bài thử nhỏ. Hãy đọc phần cuối của phần thứ hai."
+          },
+          {
+            "text": "Vì mô hình quên những chiếc lá cũ",
+            "feedback": "Chưa đúng lắm. Mô hình giữ lại các ví dụ của nó. Hãy đọc về bài thử công bằng ở phần thứ hai."
+          }
+        ]
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Giải thích vì sao nhóm ở Vườn Sunrise để riêng bốn chiếc lá cho một lần thử nghiệm mới. Dùng một con số trong bài học.",
+    "sentenceStarters": [
+      "Nhóm đã thấy ...",
+      "Một bài thử công bằng dùng ...",
+      "Trong lần thử nghiệm mới, mô hình ..."
+    ],
+    "example": "Nhóm đã thấy sáu chiếc lá thử nghiệm đầu tiên trong lúc cải thiện mô hình, nên việc đoán đúng cả sáu không chứng minh được nhiều. Một bài thử công bằng dùng những chiếc lá mà chưa ai dùng. Trên bốn chiếc lá mới, mô hình đoán đúng ba chiếc và gọi một chiếc lá đang ngả vàng là “khỏe”. Lần thử nghiệm mới cho thấy một lỗi mà nhóm sẽ không nhận ra. Bốn chiếc lá vẫn là một bài thử nhỏ, nên họ nên thử nó trên nhiều lá hơn."
+  },
+  "speak": {
+    "partnerTask": "Nói cho bạn học của bạn nghe bạn sẽ huấn luyện một mô hình phân loại hai loại vật như thế nào, ví dụ trái cây chín và chưa chín. Bạn học hỏi: “Bạn sẽ thử nó một cách công bằng bằng cách nào?” Rồi đổi vai.",
+    "independentTask": "Nói to ba bước: thu thập các ví dụ có gán nhãn, huấn luyện mô hình, thử nó trên các ví dụ mới. Cho một ví dụ cho mỗi bước."
+  },
+  "watch": {
+    "why": "Video cho thấy một máy tính học phân biệt các hình dạng từ những ví dụ có gán nhãn, cùng ý tưởng với mô hình nhận biết lá.",
+    "beforeQuestion": "Một máy tính có thể học phân biệt hai hình dạng bằng cách nào?",
+    "afterQuestion": "Vì sao khó viết ra các quy tắc chính xác cho một hình dạng, như chữ X?",
+    "summary": "Video này giải thích về thị giác máy tính. Thị giác máy tính là cách một máy tính tìm ra ý nghĩa trong các bức ảnh. Máy tính không nhìn một bức ảnh như bạn. Nó thấy một con số cho mỗi chấm màu nhỏ xíu. Viết ra các quy tắc chính xác cho một hình dạng, như chữ X, không hiệu quả, vì mọi người vẽ chữ X theo nhiều cách. Với học máy, máy tính học từ nhiều ví dụ có gán nhãn. Nó giống như học bằng thẻ ghi nhớ. Máy tính đoán, kiểm tra đáp án và dần dần tốt lên. Những bức ảnh khó hơn, như khuôn mặt, cần những mô hình lớn hơn. Video cho xem những rô-bốt nông trại phân biệt cây trồng với cỏ dại. Nó cũng cảnh báo về một vấn đề. Nếu dữ liệu huấn luyện bỏ sót một số người, công cụ có thể hoạt động không tốt với họ. Vì vậy dữ liệu huấn luyện phải lớn và đa dạng.",
+    "keyPoints": [
+      "Một máy tính thấy một bức ảnh dưới dạng các con số, mỗi chấm nhỏ một con số.",
+      "Với học máy, một máy tính học từ nhiều ví dụ có gán nhãn, giống như thẻ ghi nhớ.",
+      "Nếu dữ liệu huấn luyện bỏ sót một số người, công cụ có thể hoạt động không tốt với họ."
+    ],
+    "contentNote": "Khoảng sáu phút, dài hơn hầu hết các video của Thinkerwell. Các diễn giả làm việc cho một công ty rô-bốt nông trại và một công ty ô tô và nêu tên họ. Gần cuối, video nói nhận diện khuôn mặt có thể hoạt động không tốt với những nhóm người bị bỏ sót trong dữ liệu huấn luyện; Bài 8 và Bài 12 quay lại chuyện này. Hãy xem trước; người học có thể đọc bản tóm tắt viết thay thế."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Một điều mình đã học về dữ liệu huấn luyện là ..."
+      },
+      {
+        "text": "Một thứ mình muốn dạy một mô hình phân loại là ..."
+      }
+    ],
+    "completionMessage": "Bạn đã hoàn thành Bài 3. Bạn đã thấy một mô hình học từ các ví dụ như thế nào, và vì sao một bài thử công bằng dùng các ví dụ mới."
+  },
+  "visual": {
+    "alt": "Các thẻ lá của Vườn Sunrise: lá xanh, xanh nhạt, vàng, nâu và có đốm, cùng hai chiếc lá dài có sọc nhạt, mỗi thẻ được gán nhãn khỏe hoặc bệnh."
+  },
+  "sources": [
+    {
+      "label": "Experience AI (Raspberry Pi Foundation): Lesson 3, Bias in, bias out (dữ liệu huấn luyện, dữ liệu thử nghiệm, độ chính xác)"
+    },
+    {
+      "label": "The Royal Society: Machine learning, the power and promise of computers that learn by example (phần giới thiệu)"
+    },
+    {
+      "label": "Google for Developers, Machine Learning Crash Course: Datasets, generalization and overfitting (chất lượng dữ liệu và nhãn; cập nhật tháng 7 năm 2025)"
+    },
+    {
+      "label": "IITA (2018): African farmers get new help against cassava diseases: Nuru, their artificially intelligent assistant (nông dân châu Phi nhận được sự giúp đỡ mới chống bệnh sắn)"
+    }
+  ],
+  "educatorNotes": [
+    "Mô hình nhận biết lá bây giờ là một phần mở rộng không bắt buộc (bản yêu cầu của Justin ngày 4 tháng 11 năm 2026): phần đọc dạy việc học từ các ví dụ và bài thử công bằng, còn hoạt động được xếp gọn dưới “Tự thử” cho những người học muốn nhiều hơn. Nó có đủ bốn vòng và phần chơi tự do. Trên giấy: một người học đóng vai mô hình và chỉ được chép nhãn của thẻ ví dụ giống nhất; hãy úp bốn thẻ của Vòng 4 cho đến bài thử công bằng.",
+    "Mô hình cố ý đơn giản: một mô hình láng giềng gần nhất (k = 1) chép nhãn của ví dụ giống nhất. Đó là một phương pháp có giám sát; bài báo năm 1967 của Cover và Hart nghiên cứu quy tắc này, và perceptron của Rosenblatt, được trình diễn vào tháng 7 năm 1958, cũng học từ các ví dụ có gán nhãn. AI thật lớn hơn nhiều, và các loại học máy khác không cần nhãn trên mọi ví dụ, nhưng các điểm về ví dụ và thử nghiệm là như nhau.",
+    "Nuru: đánh giá ở Tanzania (Mrisho và cộng sự, một bản thảo trên bioRxiv năm 2020) thấy ứng dụng chính xác hơn với sáu chiếc lá mỗi cây so với một ảnh lá. Bài học cố ý không đưa ra tỉ lệ phần trăm: các con số của nghiên cứu phụ thuộc vào bài thử nào và bệnh nào. Ứng dụng hỗ trợ chẩn đoán; nó không thay thế cán bộ khuyến nông hay quyết định của nông dân.",
+    "Nếu một người học gán nhãn cho một ví dụ khác với người làm vườn trong phần mở rộng, mô hình làm theo người học. Đó là lúc tốt để hỏi: ai quyết định nhãn đúng?"
+  ]
+}

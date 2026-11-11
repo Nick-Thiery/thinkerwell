@@ -7,14 +7,16 @@ import { southeastAsia, southeastAsiaIn } from '../southeast-asia-through-time/c
 // The preview courses in Indonesian and Malay (content/courses/<id>/<code>/,
 // AI drafts flagged for native-speaker review): laid over the English as Our
 // World's translations are, with no Watch step (no approved video in either
-// language), and English in every other language.
+// language), and English in every other language. Vietnamese (hidden, AI draft)
+// is laid over them too; a production build leaves its files out
+// (hiddenCourseLanguages in vite.config.ts), which e2e/build-output.spec.ts checks.
 
 describe.each([
   ['Digital World', digitalWorld, digitalWorldIn],
   ['Southeast Asia Through Time', southeastAsia, southeastAsiaIn],
   ['Art, Architecture and Society', artArchitecture, artArchitectureIn],
 ] as const)('%s in other languages', (_name, english, inLanguage) => {
-  it.each(['id', 'ms'])('is translated into %s, lesson by lesson, with the same ids, numbers and sections', (code) => {
+  it.each(['id', 'ms', 'vi'])('is translated into %s, lesson by lesson, with the same ids, numbers and sections', (code) => {
     const translated = inLanguage(code);
     expect(translated).toBeDefined();
     if (!translated) return;
@@ -28,12 +30,12 @@ describe.each([
     }
   });
 
-  it.each(['id', 'ms'])('has no Watch step in %s, as Our World without an approved video', (code) => {
+  it.each(['id', 'ms', 'vi'])('has no Watch step in %s, as Our World without an approved video', (code) => {
     const translated = inLanguage(code);
     for (const lesson of translated?.getLessons() ?? []) expect(translated?.stagesFor(lesson)).toEqual(STAGES_WITHOUT_WATCH);
   });
 
-  it.each(['en', 'vi', 'en-XA'])('is English in %s', (code) => {
+  it.each(['en', 'en-XA'])('is English in %s', (code) => {
     expect(inLanguage(code)).toBeUndefined();
   });
 });

@@ -539,14 +539,23 @@ def main() -> int:
         out = Path(args.sample).resolve()
         if (out == ROOT or ROOT in out.parents) and CACHE.resolve() not in (out, *out.parents):
             parser.error("--sample writes listening files: point it outside the repository, or into .audio-cache/")
-        for language in languages:
+        if args.course or args.all_courses:
+            # A preview course's sections, one folder per course: <DIR>/<lang>/<course>/.
+            targets = [
+                (t, out / t["lang"] / t["course"])
+                for t in export.get("courses", [])
+                if (args.all_courses or t["course"] in args.course) and (not args.lang or t["lang"] in args.lang)
+            ]
+        else:
+            targets = [(language, out / language["lang"]) for language in languages]
+        for language, folder in targets:
             if language["lang"] not in VOICES:
                 log(f"No voice is set for {language['lang']} in scripts/audio/generate.py (VOICES).")
                 return 1
             chosen = [s for s in language["sections"] if not args.only or args.only in s["key"]][: args.limit]
             synthesise(language["lang"], chosen)
-            result = assemble(language["lang"], chosen, language["normaliser"], out_dir=out / language["lang"], prune=False)
-            log(f"[{language['lang']}] {result['files']} sample file(s) in {out / language['lang']}: {result['seconds'] / 60:.1f} min, voice {VOICES[language['lang']].get('voice', '')}")
+            result = assemble(language["lang"], chosen, language["normaliser"], out_dir=folder, prune=False)
+            log(f"[{language['lang']}] {result['files']} sample file(s) in {folder}: {result['seconds'] / 60:.1f} min, voice {VOICES[language['lang']].get('voice', '')}")
         return 0
 
     if args.course or args.all_courses:
@@ -592,7 +601,10 @@ def record_courses(export: dict, manifest: dict, args) -> int:
     """--course / --all-courses: records the preview courses into public/audio/<lang>/<course>/, leaving Our World's files as they are."""
     tracks = [
         t for t in export.get("courses", [])
-        if (args.all_courses or t["course"] in args.course) and (not args.lang or t["lang"] in args.lang)
+        if (args.all_courses or t["course"] in args.course)
+        and (not args.lang or t["lang"] in args.lang)
+        # A language that isn't ready (Vietnamese, a hidden preview) is recorded only when asked for with --lang, or once it has recordings.
+        and (t.get("ready", True) or (args.lang and t["lang"] in args.lang) or t["lang"] in manifest.get("courses", {}).get(t["course"], {}))
     ]
     if not tracks:
         log("No preview course matches --course/--lang in the export.")

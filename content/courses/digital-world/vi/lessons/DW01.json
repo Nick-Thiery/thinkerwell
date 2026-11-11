@@ -1,0 +1,160 @@
+{
+  "title": "AI là gì, và AI không phải là gì",
+  "essentialQuestion": "AI là gì, và nhiều công cụ AI đưa ra dự đoán của chúng bằng cách nào?",
+  "learningGoal": "Giải thích AI là gì, và nhiều công cụ AI ngày nay đưa ra dự đoán từ các mẫu hình trong các ví dụ như thế nào.",
+  "evidence": {
+    "label": "Ví dụ hư cấu, được tạo riêng cho bài học này.",
+    "question": "Lỗi xuất hiện ở bước nào? Ai đã phát hiện ra?",
+    "cards": [
+      {
+        "title": "Công cụ gõ bằng giọng nói ở Hillview hoạt động như thế nào",
+        "columns": [
+          "Bước",
+          "Điều xảy ra"
+        ],
+        "rows": [
+          [
+            "1. Các ví dụ (dữ liệu)",
+            "Những người tạo ra nó thu thập các bản ghi âm của nhiều người đang nói, kèm lời nói đã được viết ra."
+          ],
+          [
+            "2. Tìm mẫu hình",
+            "Chương trình tìm xem những âm nào thường đi với những từ nào."
+          ],
+          [
+            "3. Đưa ra dự đoán",
+            "Một người học nói: “Cái cây này cao.” Công cụ chưa từng nghe giọng này. Nó đoán các từ."
+          ],
+          [
+            "4. Một người kiểm tra",
+            "Công cụ gõ ra “Cái cầy này cao.” Người học đã nói nhanh. Một giáo viên nhìn thấy lỗi và sửa lại."
+          ]
+        ]
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "AI là một lĩnh vực rộng",
+        "text": "AI là viết tắt của artificial intelligence, tức trí tuệ nhân tạo, và nhân tạo nghĩa là do con người làm ra. AI là một lĩnh vực rộng của khoa học máy tính, và con người đã nghiên cứu nó từ những năm 1950, như Bài 2 cho thấy. AI bao gồm những việc như hiểu lời nói, dịch câu và nhận ra đồ vật trong ảnh. Có nhiều cách để xây dựng AI. Có AI làm theo các quy tắc do con người viết ra. Nhiều AI mà bạn gặp ngày nay thì học các mẫu hình từ dữ liệu, và việc này gọi là học máy. Người ta cho một chương trình thật nhiều ví dụ, như ảnh, câu hoặc bản ghi âm, và chương trình tìm ra các mẫu hình trong đó. Sau đó chương trình dùng các mẫu hình ấy để đưa ra dự đoán: một phỏng đoán cẩn thận về điều gì đó mới. Nhiều công cụ kết hợp cả hai cách, vừa dùng quy tắc vừa học.",
+        "simpler": "AI nghĩa là trí tuệ nhân tạo. Con người làm ra nó. Con người đã nghiên cứu AI từ những năm 1950. AI có thể biến lời nói thành chữ, dịch thuật và tìm đồ vật trong ảnh. AI có thể được làm theo nhiều cách khác nhau. Có AI dùng các quy tắc do con người viết. Nhiều AI ngày nay học từ dữ liệu. Việc này gọi là học máy. Một chương trình nhận được thật nhiều ví dụ, như ảnh hoặc giọng nói. Nó tìm ra các mẫu hình trong đó. Rồi nó đưa ra dự đoán, tức là một phỏng đoán cẩn thận về điều gì đó mới. Nhiều công cụ vừa dùng quy tắc vừa học."
+      },
+      {
+        "heading": "Một ví dụ từng bước: gõ bằng giọng nói",
+        "text": "Trung tâm học tập Hillview có một công cụ gõ bằng giọng nói: bạn nói, và nó gõ ra lời của bạn. Đây là cách một công cụ như thế được làm ra và được dùng. Trước tiên, những người tạo ra nó cho nó một bộ dữ liệu rất lớn, là các bản ghi âm của nhiều người đang nói, mỗi bản đều kèm lời nói đã được viết ra. Tiếp theo, chương trình tìm ra các mẫu hình, chẳng hạn những âm nào thường đi với những từ nào. Sau đó, khi bạn nói, nó đưa ra dự đoán về lời của bạn. Nó chưa từng nghe giọng bạn, nên nó không thể chỉ tra ra đáp án; nó đoán từ các mẫu hình. Phỏng đoán ấy thường đúng, nhưng không phải lúc nào cũng đúng. Nếu bạn nói nhanh, nếu căn phòng ồn, hoặc nếu giọng bạn không giống với phần lớn các ví dụ của nó, nó có thể gõ sai từ. Vì vậy vẫn cần một người đọc lại các từ và kiểm tra chúng.",
+        "simpler": "Trung tâm học tập Hillview có một công cụ gõ bằng giọng nói. Bạn nói, và nó gõ. Những người tạo ra nó đã cho nó rất nhiều dữ liệu. Đó là các bản ghi âm của nhiều người đang nói. Lời nói cũng được viết ra. Chương trình tìm ra các mẫu hình. Một số âm thường đi với một số từ. Bây giờ bạn nói. Nó chưa từng nghe giọng bạn. Vì vậy nó đưa ra dự đoán về lời của bạn. Thường thì nó đúng, nhưng không phải lúc nào cũng đúng. Nói nhanh hoặc phòng ồn có thể làm nó gõ sai từ. Giọng không giống các ví dụ của nó cũng vậy. Vì vậy vẫn cần một người kiểm tra các từ."
+      },
+      {
+        "heading": "Quy tắc, phỏng đoán và con người",
+        "text": "Nhiều máy móc không phải là AI. Máy tính bỏ túi làm theo các bước cố định do một người viết ra: nó luôn cho kết quả 12 với 7 + 5, và nó không học điều đó từ các ví dụ. Nhưng làm theo quy tắc, hay lúc nào cũng cho cùng một đáp án, không chứng minh được một công cụ không phải là AI. Có AI dùng quy tắc, và có công cụ AI có thể được đặt để lần nào cũng cho cùng một đáp án. Chữ “thông minh” in trên hộp cũng không cho bạn biết điều đó. AI có thể trông có vẻ khôn ngoan, nhưng nó không suy nghĩ hay cảm nhận như con người. Con người quyết định một công cụ AI dùng để làm gì, nó học từ dữ liệu nào và khi nào nên tin nó. Vì vậy bạn có thể hỏi ba câu hỏi về bất kì công cụ AI nào. Nó đoán điều gì? Nó đã học từ những ví dụ nào? Ai kiểm tra xem nó có đúng không?",
+        "simpler": "Nhiều máy móc không phải là AI. Máy tính bỏ túi làm theo các bước do một người viết. Nó luôn cho 7 + 5 là 12. Nó không học điều này. Nhưng cũng có AI làm theo quy tắc. Có AI lần nào cũng cho cùng một đáp án. Vì vậy chỉ riêng quy tắc thì chưa cho bạn biết gì. Nhãn “thông minh” cũng không cho bạn biết. AI không suy nghĩ hay cảm nhận như con người. Con người chọn nó dùng để làm gì, dữ liệu của nó và khi nào nên tin nó. Hãy hỏi ba câu. Nó đoán điều gì? Nó đã học từ đâu? Ai kiểm tra nó?"
+      }
+    ],
+    "glossary": [
+      {
+        "word": "trí tuệ nhân tạo",
+        "forms": [
+          "AI"
+        ],
+        "definition": "Các hệ thống máy tính làm những việc như hiểu lời nói, dịch thuật hoặc tìm đồ vật trong ảnh.",
+        "example": "Công cụ gõ bằng giọng nói ở Hillview dùng trí tuệ nhân tạo."
+      },
+      {
+        "word": "dữ liệu",
+        "definition": "Sự kiện, từ ngữ, hình ảnh hoặc âm thanh mà máy tính có thể dùng.",
+        "example": "Công cụ gõ bằng giọng nói đã học từ dữ liệu: rất nhiều bản ghi âm của người đang nói."
+      },
+      {
+        "word": "học máy",
+        "definition": "Khi máy tính học các mẫu hình từ nhiều ví dụ, chứ không chỉ từ các bước cố định.",
+        "example": "Công cụ gõ bằng giọng nói được xây dựng bằng học máy."
+      },
+      {
+        "word": "mẫu hình",
+        "definition": "Điều lặp đi lặp lại theo cách giống nhau.",
+        "example": "Công cụ đã tìm ra một mẫu hình: một số âm thường đi với một số từ."
+      },
+      {
+        "word": "dự đoán",
+        "definition": "Một phỏng đoán cẩn thận, dựa trên các mẫu hình, về điều bạn chưa biết.",
+        "example": "Các từ được gõ ra là một dự đoán. Chúng có thể không đúng."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Công cụ gõ bằng giọng nói ở Hillview tìm ra bạn đã nói gì bằng cách nào?",
+        "options": [
+          {
+            "text": "Nó tra giọng của bạn trong danh sách mọi giọng nói",
+            "feedback": "Chưa đúng lắm. Nó chưa từng nghe giọng của bạn, nên không có gì để tra. Hãy đọc lại phần thứ hai."
+          },
+          {
+            "text": "Nó đoán từ các mẫu hình trong nhiều bản ghi âm",
+            "feedback": "Đúng rồi. Nó đã tìm ra các mẫu hình trong bản ghi âm của nhiều người. Rồi nó dùng chúng để đoán các từ trong một giọng nói mới."
+          },
+          {
+            "text": "Một người gõ lời của bạn thay cho nó",
+            "feedback": "Chưa đúng lắm. Công cụ tự gõ các từ. Một người chỉ kiểm tra chúng sau đó. Hãy đọc lại phần thứ hai."
+          }
+        ]
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Chọn một công cụ AI: công cụ gõ bằng giọng nói ở Hillview, hoặc một công cụ AI khác mà bạn đã thấy hay đã nghe nói đến. Trả lời ba câu hỏi trong bài học về nó.",
+    "sentenceStarters": [
+      "Công cụ mình chọn là ...",
+      "Nó đoán ...",
+      "Nó đã học từ ...",
+      "Người nên kiểm tra nó là ..."
+    ],
+    "example": "Công cụ mình chọn là một công cụ dịch. Nó đoán cách nói một câu bằng ngôn ngữ khác. Nó đã học từ rất nhiều câu bằng hai ngôn ngữ. Nó tìm ra các mẫu hình trong đó, nên có thể đoán một câu mà nó chưa từng thấy. Nó có thể sai với một từ hiếm hoặc một câu đùa. Người nên kiểm tra nó là một người nói giỏi cả hai ngôn ngữ, trước khi các từ được đưa vào một thông báo quan trọng."
+  },
+  "speak": {
+    "partnerTask": "Lần lượt nói. Giải thích cho bạn học của mình công cụ gõ bằng giọng nói đưa ra phỏng đoán như thế nào. Dùng các từ ví dụ, mẫu hình và dự đoán. Bạn học của bạn nói một điều mà con người nên kiểm tra.",
+    "independentTask": "Nói to AI là gì trong hai câu. Rồi nêu một điều AI không làm được."
+  },
+  "watch": {
+    "why": "Hai người làm việc với AI giải thích, trong chưa đầy ba phút, rằng phần lớn AI ngày nay học các mẫu hình từ các ví dụ.",
+    "beforeQuestion": "Bạn nghĩ AI được dùng ở đâu mỗi ngày?",
+    "afterQuestion": "Học máy khác với một chương trình làm theo các bước cố định ở điểm nào?",
+    "summary": "Trong video ngắn này, hai người làm việc với AI nói về học máy. AI đã là một phần của đời sống hằng ngày. Nó giúp chọn những gì mọi người thấy trên mạng, chẳng hạn khi họ tìm kiếm. Nhiều người hình dung AI là một con rô-bốt biết suy nghĩ như con người. Các diễn giả nói loại AI đó vẫn còn cách rất nhiều năm nữa. Phần lớn AI ngày nay là học máy. Trước đây, con người phải viết từng bước cho máy tính. Với học máy, con người cho máy tính thật nhiều ví dụ. Máy tính tự tìm ra các mẫu hình trong các ví dụ. Việc này hơi giống cách bạn học từ việc luyện tập. Đó là một cách mới để làm cho máy tính làm được những việc hữu ích.",
+    "keyPoints": [
+      "AI đã là một phần của các công cụ hằng ngày, như tìm kiếm trên mạng.",
+      "Các diễn giả nói phần lớn AI ngày nay là học máy: nó tìm các mẫu hình trong các ví dụ.",
+      "Con người không viết từng bước. Họ cho máy tính các ví dụ."
+    ],
+    "contentNote": "Các diễn giả nêu tên những công ty họ làm việc, và nói rằng AI suy nghĩ như con người vẫn còn cách hàng chục năm nữa. Đó là ý kiến của họ, không phải điều đã được mọi người thống nhất. Hãy xem trước; người học có thể đọc bản tóm tắt viết thay thế."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Trước bài học này, mình nghĩ AI là ... Bây giờ mình nghĩ ..."
+      },
+      {
+        "text": "Một câu hỏi mình có về AI là ..."
+      }
+    ],
+    "completionMessage": "Bạn đã hoàn thành Bài 1. Bạn đã giải thích AI là gì, và một công cụ học từ các ví dụ đưa ra một phỏng đoán cẩn thận như thế nào."
+  },
+  "visual": {
+    "alt": "Một sơ đồ: các bản ghi âm kèm lời nói được đưa vào, máy tính tìm ra một mẫu hình, rồi đưa ra một phỏng đoán cẩn thận về một giọng nói mới, và một người kiểm tra. Bên dưới, một máy tính bỏ túi làm theo các bước cố định do một người viết. Một ghi chú nói rằng có AI cũng dùng quy tắc."
+  },
+  "sources": [
+    {
+      "label": "Stanford HAI: What is artificial intelligence (AI)? (lĩnh vực rộng, và AI hiện đại tìm mẫu hình trong dữ liệu)"
+    },
+    {
+      "label": "OECD.AI: What is AI? Can you make a clear distinction between AI and non-AI systems? (AI là gì, và có thể phân biệt rõ AI với các hệ thống không phải AI không)"
+    },
+    {
+      "label": "Thomas Haigh, Communications of the ACM 67(2), tháng 2 năm 2024: How the AI boom went bust (các hệ thống chuyên gia thập niên 1980, AI được xây dựng từ các quy tắc)"
+    }
+  ],
+  "educatorNotes": [
+    "Không có một ranh giới chung được thống nhất giữa AI và các chương trình khác (xem nguồn của OECD). AI là một lĩnh vực rộng: Stanford HAI gọi nó là các hệ thống máy tính làm những việc đòi hỏi trí tuệ giống con người, và nói rằng AI hiện đại thường hoạt động bằng cách tìm mẫu hình trong dữ liệu. Bài học này dạy loại hiện đại phổ biến đó (học máy) qua một ví dụ từng bước; AI dựa trên quy tắc, như các hệ thống chuyên gia thập niên 1980 trong Bài 2, cũng là AI, và nhiều công cụ trộn lẫn quy tắc với học. Nếu một người học hỏi một công cụ cụ thể có phải là AI không, “còn tùy nó được làm ra như thế nào” thường là câu trả lời trung thực.",
+    "Công cụ gõ bằng giọng nói đã học từ các bản ghi âm có lời nói được viết ra: một cách phổ biến để huấn luyện một công cụ như vậy, không phải cách duy nhất để AI học (Bài 3 gọi đây là học có giám sát). Người học có thể không có điện thoại, nên bài Viết cho phép họ dùng công cụ gõ bằng giọng nói hoặc bất kì công cụ nào khác mà họ đã thấy hay đã nghe nói đến.",
+    "Video nói tiếng Anh nhanh, của người bản ngữ, và nêu tên các công ty có thật. Bản tóm tắt viết nêu ý chính. Vẫn phải có một người trong nhóm xem nó trước khi dùng (xem content/courses/digital-world/README.md)."
+  ]
+}

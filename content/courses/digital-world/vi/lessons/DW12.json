@@ -1,0 +1,187 @@
+{
+  "title": "Camera nhận ra khuôn mặt",
+  "essentialQuestion": "Khi camera có thể nhận dạng khuôn mặt, chúng ta cân bằng giữa an toàn và quyền riêng tư như thế nào?",
+  "learningGoal": "Giải thích cách nhận dạng khuôn mặt khớp các khuôn mặt với nhau, và mô tả cách những nơi khác nhau đã chọn dùng hoặc hạn chế nó, và vì sao.",
+  "evidence": {
+    "question": "Mỗi nơi đã quyết định điều gì, và đặt ra những giới hạn nào?",
+    "cards": [
+      {
+        "title": "Ba nơi, ba lựa chọn về nhận dạng khuôn mặt",
+        "columns": [
+          "Nơi",
+          "Khi nào",
+          "Quyết định",
+          "Giới hạn"
+        ],
+        "rows": [
+          [
+            "San Francisco, Hoa Kỳ",
+            "2019",
+            "Các văn phòng của thành phố, kể cả cảnh sát, không được mua hay dùng nhận dạng khuôn mặt.",
+            "Sân bay và những nơi khác theo quy định quốc gia không nằm trong lệnh này. Camera an ninh vẫn được phép."
+          ],
+          [
+            "Liên minh châu Âu",
+            "Từ tháng 2 năm 2025",
+            "Cảnh sát không được dùng nhận dạng khuôn mặt trực tiếp ở nơi công cộng. Việc xây cơ sở dữ liệu khuôn mặt bằng cách sao chép hàng loạt ảnh bị cấm.",
+            "Một vài trường hợp nghiêm trọng được phép, nếu thẩm phán hoặc một viên chức độc lập đồng ý và luật của chính nước đó cho phép. Luật quyền riêng tư cũng bảo vệ dữ liệu khuôn mặt."
+          ],
+          [
+            "Singapore",
+            "Từ tháng 9 năm 2024",
+            "Ở sân bay Changi, du khách có thể qua cửa kiểm tra hộ chiếu bằng cách quét khuôn mặt và mắt.",
+            "Cư dân có thể dùng khi đến và khi đi; khách thăm chỉ khi đi. Du khách vẫn mang theo hộ chiếu."
+          ]
+        ]
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Camera khớp một khuôn mặt như thế nào",
+        "text": "Nhận dạng khuôn mặt là một loại AI cố gắng biết một người là ai từ khuôn mặt của họ. Trước tiên, phần mềm tìm một khuôn mặt trong một bức ảnh hay video. Rồi nó đo khuôn mặt, chẳng hạn khoảng cách giữa hai mắt. Nó biến các số đo này thành một bộ số gọi là mẫu. Tiếp theo, nó so mẫu đó với những mẫu khác và cho một điểm số về mức độ giống nhau. Một chiếc điện thoại mở bằng khuôn mặt của bạn kiểm tra một khuôn mặt với một mẫu, mẫu của chủ máy. Nó thường chỉ giữ mẫu, không giữ ảnh. Một cuộc tìm kiếm so một khuôn mặt với nhiều khuôn mặt trong một cơ sở dữ liệu. Dù cách nào, một kết quả khớp là phỏng đoán tốt nhất của phần mềm, không phải bằng chứng ai đó là ai.",
+        "simpler": "Nhận dạng khuôn mặt là AI cố gắng gọi tên một người từ khuôn mặt. Trước tiên, nó tìm một khuôn mặt trong ảnh. Rồi nó đo khuôn mặt, như hai mắt cách nhau bao xa. Nó biến việc này thành các con số, gọi là mẫu. Tiếp theo, nó so các mẫu. Nó chấm điểm xem chúng giống nhau đến đâu. Một chiếc điện thoại kiểm tra một khuôn mặt với mẫu của chủ máy. Nó thường giữ mẫu, không giữ ảnh. Một cuộc tìm kiếm kiểm tra một khuôn mặt với nhiều khuôn mặt trong cơ sở dữ liệu. Một kết quả khớp là một phỏng đoán, không phải bằng chứng."
+      },
+      {
+        "heading": "Nó được dùng ở đâu, và điều gì có thể sai",
+        "text": "Quét khuôn mặt giờ mở được điện thoại. Ở một số sân bay, nó thay cho việc đưa hộ chiếu. Ở sân bay Changi của Singapore, nhiều du khách giờ qua cửa kiểm tra hộ chiếu bằng cách quét khuôn mặt và mắt. Nhưng sai sót có thể nghiêm trọng. Năm 2019, một cơ quan khoa học của chính phủ Hoa Kỳ đã thử 189 công cụ nhận dạng khuôn mặt. Nhiều công cụ trong số đó khớp nhầm hai người khác nhau thường xuyên hơn với một số nhóm. Các nhóm này gồm phụ nữ, người lớn tuổi, trẻ em và những người thuộc một số nguồn gốc. Những công cụ tốt nhất mắc ít lỗi hơn nhiều. Một kết quả khớp sai trong một cuộc tìm kiếm của cảnh sát có thể khiến ai đó bị đổ lỗi cho điều họ không làm. Camera ở nơi công cộng cũng có thể nhận ra từng người trong đám đông mà họ không biết. Đó là một nguy cơ đối với quyền riêng tư.",
+        "simpler": "Quét khuôn mặt mở được điện thoại. Ở một số sân bay, nó thay cho hộ chiếu. Ở sân bay Changi tại Singapore, nhiều người quét khuôn mặt và mắt. Nhưng sai sót có thể nghiêm trọng. Năm 2019, một nhóm khoa học của Hoa Kỳ đã thử 189 công cụ. Nhiều công cụ khớp sai nhiều hơn với một số nhóm. Các nhóm này gồm phụ nữ, người già, trẻ em và những người thuộc một số nguồn gốc. Những công cụ tốt nhất mắc ít lỗi hơn nhiều. Một kết quả khớp sai có thể khiến ai đó bị đổ lỗi. Camera cũng có thể nhận ra từng người trong đám đông. Họ có thể không biết. Đó là một nguy cơ đối với quyền riêng tư."
+      },
+      {
+        "heading": "Các nơi đưa ra những lựa chọn khác nhau",
+        "text": "Vì những nguy cơ này, các nơi đã đưa ra những lựa chọn khác nhau. Năm 2019, San Francisco trở thành thành phố đầu tiên của Hoa Kỳ ngăn cảnh sát và các văn phòng khác của thành phố dùng nhận dạng khuôn mặt. Một đạo luật của Liên minh châu Âu đã cấm một số cách dùng từ tháng 2 năm 2025. Cảnh sát ở đó không được dùng nhận dạng khuôn mặt trực tiếp ở nơi công cộng. Một vài trường hợp nghiêm trọng được phép, chẳng hạn tìm một người mất tích. Một thẩm phán hoặc một viên chức khác không làm việc cho cảnh sát phải đồng ý trước. Luật cũng cấm xây cơ sở dữ liệu khuôn mặt bằng cách sao chép hàng loạt ảnh khuôn mặt từ internet hoặc từ camera an ninh. Những cách dùng không bị cấm vẫn phải theo các luật khác. Chẳng hạn, luật quyền riêng tư của Liên minh châu Âu bảo vệ dữ liệu khuôn mặt. Ngược lại, Singapore chọn dùng quét khuôn mặt ở sân bay của mình.",
+        "simpler": "Các nơi đưa ra những lựa chọn khác nhau. Năm 2019, San Francisco ngăn cảnh sát dùng quét khuôn mặt. Các văn phòng khác của thành phố cũng phải dừng. Từ năm 2025, một đạo luật của Liên minh châu Âu cấm một số cách dùng. Cảnh sát ở đó không được dùng quét khuôn mặt trực tiếp ở nơi công cộng. Một vài trường hợp nghiêm trọng được phép, như tìm một người mất tích. Một thẩm phán hoặc một viên chức phải đồng ý trước. Luật cũng cấm sao chép nhiều ảnh khuôn mặt để làm cơ sở dữ liệu khuôn mặt. Luật quyền riêng tư vẫn bảo vệ các cách dùng khác. Singapore chọn dùng quét khuôn mặt ở sân bay của mình."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "nhận dạng khuôn mặt",
+        "definition": "AI cố gắng biết một người là ai từ khuôn mặt của họ.",
+        "example": "Một chiếc điện thoại có thể dùng nhận dạng khuôn mặt để mở khóa."
+      },
+      {
+        "word": "mẫu",
+        "definition": "Một bộ số được lưu từ một khuôn mặt, dùng để kiểm tra nó về sau.",
+        "example": "Điện thoại giữ mẫu của chủ máy, không giữ ảnh."
+      },
+      {
+        "word": "cơ sở dữ liệu",
+        "definition": "Một kho thông tin lớn, có tổ chức trên máy tính.",
+        "example": "Một cuộc tìm kiếm so một khuôn mặt với cơ sở dữ liệu ảnh."
+      },
+      {
+        "word": "khớp",
+        "definition": "Khi một công cụ ước đoán rằng hai khuôn mặt là của cùng một người.",
+        "example": "Một kết quả khớp sai có thể khiến ai đó bị đổ lỗi nhầm."
+      },
+      {
+        "word": "quyền riêng tư",
+        "definition": "Giữ thông tin và cuộc sống của chính bạn an toàn khỏi những người không nên thấy chúng.",
+        "example": "Camera nhận ra từng người trong đám đông là một nguy cơ đối với quyền riêng tư."
+      },
+      {
+        "word": "cấm",
+        "definition": "Một quy định nói rằng điều gì đó không được phép.",
+        "example": "Liên minh châu Âu cấm một số cách dùng nhận dạng khuôn mặt."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Một chiếc điện thoại quyết định mở cho khuôn mặt của chủ máy như thế nào?",
+        "options": [
+          {
+            "text": "Nó kiểm tra khuôn mặt với mẫu mà nó đã lưu",
+            "feedback": "Đúng rồi. Một chiếc điện thoại kiểm tra một khuôn mặt với mẫu của chủ máy. Một cuộc tìm kiếm kiểm tra một khuôn mặt với nhiều khuôn mặt."
+          },
+          {
+            "text": "Nó hỏi cảnh sát người đó là ai",
+            "feedback": "Chưa đúng lắm. Điện thoại tự kiểm tra. Hãy đọc lại phần thứ nhất."
+          },
+          {
+            "text": "Nó tìm trong tất cả khuôn mặt của một cơ sở dữ liệu lớn",
+            "feedback": "Chưa đúng lắm. Đó là một cuộc tìm kiếm. Điện thoại chỉ kiểm tra mẫu của chủ máy. Hãy đọc phần thứ nhất."
+          }
+        ]
+      },
+      {
+        "question": "Theo luật của Liên minh châu Âu, khi nào cảnh sát được dùng quét khuôn mặt trực tiếp ở nơi công cộng?",
+        "options": [
+          {
+            "text": "Bất cứ khi nào họ muốn",
+            "feedback": "Chưa đúng lắm. Luật cấm phần lớn việc cảnh sát dùng nó ở nơi công cộng. Hãy đọc phần thứ ba."
+          },
+          {
+            "text": "Không bao giờ, trong mọi trường hợp",
+            "feedback": "Chưa đúng lắm. Luật cho phép một vài trường hợp nghiêm trọng. Hãy đọc phần thứ ba."
+          },
+          {
+            "text": "Trong một vài trường hợp nghiêm trọng, nếu thẩm phán đồng ý",
+            "feedback": "Đúng rồi. Một ví dụ là tìm một người mất tích. Một thẩm phán hoặc một viên chức phải đồng ý trước."
+          }
+        ]
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Giải thích một chiếc điện thoại mở bằng khuôn mặt của bạn khác với một camera tìm kiếm trong đám đông như thế nào. Rồi nói vì sao một đạo luật có thể đối xử với chúng khác nhau.",
+    "sentenceStarters": [
+      "Một chiếc điện thoại kiểm tra ...",
+      "Một camera tìm kiếm trong đám đông ...",
+      "Một đạo luật có thể đối xử với chúng khác nhau vì ..."
+    ],
+    "example": "Một chiếc điện thoại kiểm tra một khuôn mặt với một mẫu, mẫu của chủ máy. Mẫu thường ở lại trong điện thoại, và chủ máy đã chọn dùng nó. Một camera tìm kiếm trong đám đông kiểm tra mọi khuôn mặt với nhiều khuôn mặt trong một cơ sở dữ liệu. Những người đi ngang qua không được hỏi ý kiến. Một kết quả khớp sai có thể khiến một trong số họ bị đổ lỗi. Một đạo luật có thể đối xử với chúng khác nhau vì một cuộc tìm kiếm ảnh hưởng đến nhiều người không đồng ý. Đó là lí do Liên minh châu Âu chỉ cho cảnh sát làm vậy trong một vài trường hợp nghiêm trọng."
+  },
+  "speak": {
+    "partnerTask": "Nói chuyện với bạn học của bạn: cảnh sát có bao giờ nên được dùng camera khuôn mặt trực tiếp ở nơi công cộng không? Nếu có, trong những trường hợp nào, và ai nên đồng ý trước? Hãy dùng lựa chọn của San Francisco hoặc của Liên minh châu Âu làm ví dụ.",
+    "independentTask": "Ghi âm câu trả lời của bạn cho cùng câu hỏi đó: cảnh sát có bao giờ nên dùng camera khuôn mặt trực tiếp ở nơi công cộng không? Nêu một lí do và một quy tắc bạn muốn có."
+  },
+  "watch": {
+    "why": "Một chuyên gia về thị giác máy tính, cũng là luật sư, giải thích nhận dạng khuôn mặt hoạt động như thế nào, được dùng ra sao, và vì sao một số thành phố ở Hoa Kỳ đã cấm chính quyền dùng nó.",
+    "beforeQuestion": "Bạn nghĩ ai nên được dùng camera nhận ra khuôn mặt?",
+    "afterQuestion": "Chuyên gia nói đến hai loại lo ngại nào?",
+    "summary": "Trong video này, một phóng viên nói chuyện với một chuyên gia về thị giác máy tính, cũng là luật sư. Nhận dạng khuôn mặt được dùng để mở điện thoại, gọi tên bạn bè trong ảnh và giúp mọi người lên máy bay. Nó hoạt động bằng cách tìm các quy luật trong khuôn mặt. Để học chúng, nó cần nhiều ảnh, đôi khi hàng triệu, có nhãn nói ai ở trong đó. Cảnh sát thấy một lợi ích. Họ có thể tìm nhanh trong nhiều ảnh, và điều đó quan trọng trong các trường hợp nghiêm trọng. Nhưng chuyên gia nêu hai loại lo ngại. Nếu công cụ sai, nó có thể gọi nhầm tên một người. Nghiên cứu thấy nó hoạt động kém hơn với một số nhóm. Nếu công cụ đúng, người ta có thể bị theo dõi mà không biết. Một số thành phố ở Hoa Kỳ, như San Francisco, đã cấm chính quyền dùng nó. Chuyên gia nói mọi người nên cùng quyết định nó được dùng như thế nào.",
+    "keyPoints": [
+      "Nhận dạng khuôn mặt tìm các quy luật trong khuôn mặt và học từ nhiều bức ảnh có nhãn.",
+      "Nó có thể giúp ích, chẳng hạn trong các trường hợp nghiêm trọng, nhưng nó có thể gọi nhầm tên một người.",
+      "Một số nơi cấm một số cách dùng, và mọi người phải cùng quyết định nó được dùng như thế nào."
+    ],
+    "contentNote": "Khoảng 10 phút tiếng Anh Mỹ nói nhanh dành cho người lớn, dài hơn và khó hơn hầu hết video của Thinkerwell (WIRED, tháng 8 năm 2019). Tiêu đề và kênh đã được kiểm tra bằng oEmbed của YouTube ngày 31 tháng 10 năm 2026, còn độ dài và ngày thì kiểm tra trên trang video của chính WIRED. Bản tóm tắt được viết từ bản ghi lời trên trang của WIRED, không phải từ việc xem video; một người trong nhóm phải xem nó trước khi dùng. Video nhắc đến cảnh sát, biên giới, một vụ bắt giữ tại một buổi hòa nhạc ở Trung Quốc, một vụ cướp cửa hàng và các vụ bắt cóc, và những người sợ đến một nơi thờ phụng, một trung tâm cộng đồng hay một trung tâm LGBTQ ở nơi chính quyền thù địch với tôn giáo hoặc dân tộc của họ. Hãy xem trước; người học có thể đọc bản viết thay thế."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Một điều mình đã học về các quy tắc cho camera khuôn mặt là ..."
+      },
+      {
+        "text": "Một câu hỏi mình vẫn còn về camera nhận ra khuôn mặt là ..."
+      }
+    ],
+    "completionMessage": "Bạn đã hoàn thành Bài 12. Bạn đã giải thích cách nhận dạng khuôn mặt khớp các khuôn mặt, và cách những nơi khác nhau đã chọn dùng hoặc hạn chế nó."
+  },
+  "visual": {
+    "alt": "Một sơ đồ: phần mềm tìm một khuôn mặt, đo nó, biến nó thành các con số gọi là mẫu và so chúng với các khuôn mặt đã lưu để cho một điểm số. Một chiếc điện thoại so một khuôn mặt với mẫu của chủ máy; một cuộc tìm kiếm so một khuôn mặt với nhiều khuôn mặt."
+  },
+  "sources": [
+    {
+      "label": "NIST (tháng 12 năm 2019): Face Recognition Vendor Test, Part 3: Demographic effects (NISTIR 8280; 189 thuật toán; nhiều kết quả khớp sai hơn với phụ nữ, người lớn tuổi, trẻ em và một số nguồn gốc)"
+    },
+    {
+      "label": "Apple Platform Security: Facial matching security (Face ID giữ các biểu diễn toán học của khuôn mặt, không phải hình ảnh, trên thiết bị)"
+    },
+    {
+      "label": "Singapore Immigration & Checkpoints Authority (24 tháng 10 năm 2024): Passport-less clearance fully rolled out at Changi Airport"
+    },
+    {
+      "label": "Bundesnetzagentur (cơ quan thực thi Đạo luật AI của Đức): Prohibited practices under the EU AI Act, có hiệu lực từ ngày 2 tháng 2 năm 2025 (sao chép hàng loạt để lập cơ sở dữ liệu khuôn mặt; nhận dạng sinh trắc học từ xa theo thời gian thực và các ngoại lệ)"
+    }
+  ],
+  "sensitiveNotes": [
+    "Một số người học có thể đã sống qua sự giám sát, các cuộc kiểm tra của cảnh sát, kiểm tra biên giới hay giấy tờ tùy thân. Hãy giữ bài học ở mức chung và ở những nơi nó nêu tên. Ví dụ Singapore nói về việc kiểm tra hộ chiếu ở sân bay: hãy chỉ nói về cách hệ thống hoạt động, và đừng bao giờ hỏi về chuyến đi, hộ chiếu hay giấy tờ của người học. Đừng bao giờ hỏi người học về trải nghiệm riêng của họ với cảnh sát, biên giới, giấy tờ tùy thân hay camera, hoặc về tình trạng của họ. Nếu một người học chia sẻ điều gì, hãy lắng nghe bình tĩnh, đừng hỏi chi tiết hay bàn trong lớp, và theo quy trình bảo vệ của chính đơn vị đối tác.",
+    "Hãy xem trước bài học và video; video dành cho người lớn và nhắc đến cảnh sát, biên giới và nỗi sợ bị theo dõi (xem ghi chú của video). Người học có thể đọc bản viết thay thế. Phần thảo luận ở Nói là tùy chọn: hãy bỏ qua nếu chủ đề quá gần gũi, hoặc cả lớp cùng bàn về các quy định của Liên minh châu Âu thay vì quan điểm cá nhân."
+  ],
+  "educatorNotes": [
+    "Các sự thật thật, được đơn giản hóa (claims/DW12.md). NIST (tháng 12 năm 2019) đã thử 189 thuật toán, phần lớn thương mại, của 99 nhà phát triển: kết quả khớp sai thường xuất hiện nhiều hơn từ 10 đến hơn 100 lần với một số nhóm, tùy thuật toán; cao hơn ở phụ nữ so với nam giới, ở người cao tuổi và ở trẻ em, và cao nhất với khuôn mặt người Tây Phi, Đông Phi và Đông Á trong một bài thử (một số thuật toán do Trung Quốc phát triển cho kết quả ngược lại); các thuật toán chính xác nhất mắc ít lỗi hơn nhiều. Điện thoại: hướng dẫn bảo mật của Apple nói Face ID lưu các biểu diễn toán học của khuôn mặt, không phải hình ảnh, và chúng không bao giờ rời khỏi thiết bị; các điện thoại khác thì khác. Singapore (ICA, 24 tháng 10 năm 2024): làm thủ tục không cần hộ chiếu bằng khuôn mặt và mống mắt ở cả bốn nhà ga Changi từ ngày 30 tháng 9 năm 2024, cho cư dân khi đến và đi và khách thăm khi đi; thời gian làm thủ tục trung bình giảm từ 25 xuống 10 giây; du khách vẫn nên mang hộ chiếu. San Francisco (tháng 5 năm 2019): nhân viên thành phố, kể cả cảnh sát, không được mua hay dùng nhận dạng khuôn mặt; sân bay và những nơi khác do liên bang quản lý không nằm trong lệnh. Đạo luật AI của Liên minh châu Âu, Điều 5, có hiệu lực từ ngày 2 tháng 2 năm 2025: việc cảnh sát dùng nhận dạng sinh trắc học từ xa theo thời gian thực ở nơi công cộng bị cấm, trừ khi thật sự cần thiết để tìm nạn nhân bị bắt cóc, buôn người hoặc bóc lột tình dục hay người mất tích, để ngăn chặn một mối đe dọa cụ thể, đáng kể và sắp xảy ra đối với tính mạng hoặc một vụ tấn công khủng bố, hoặc để tìm nghi phạm của các tội nghiêm trọng được liệt kê; mỗi lần dùng cần có sự cho phép trước của một cơ quan tư pháp hoặc cơ quan hành chính độc lập (trong trường hợp khẩn cấp, xin trong vòng 24 giờ), và chỉ khi luật quốc gia cho phép. Lệnh cấm sao chép hàng loạt bao gồm việc xây dựng hoặc mở rộng cơ sở dữ liệu nhận dạng khuôn mặt bằng cách thu thập không có chủ đích từ internet hoặc camera CCTV. Những cách dùng mà Đạo luật AI không cấm vẫn thuộc các luật khác: GDPR coi dữ liệu sinh trắc học dùng để nhận dạng một người là dữ liệu nhạy cảm, nói chung không được xử lý nếu không có, chẳng hạn, sự đồng ý rõ ràng hoặc một đạo luật có biện pháp bảo vệ; việc nhận dạng người sau này từ các bản ghi hình là rủi ro cao theo Đạo luật AI, với các nghĩa vụ đến hạn từ ngày 2 tháng 12 năm 2027 sau Gói Omnibus AI năm 2026. Quy định thay đổi: hãy kiểm tra lại trước khi dạy.",
+    "Gợi ý thảo luận cho phần Nói: chấp nhận có, không hoặc có kèm quy tắc khi người học đưa ra một lí do; các câu hỏi gợi ý hữu ích là ai quyết định (thẩm phán, cảnh sát, hội đồng thành phố), dữ liệu được giữ bao lâu, và điều gì xảy ra sau một kết quả khớp sai. Bài 8 (vì sao các công cụ có thể hoạt động kém hơn với một số nhóm) và Bài 16 (ai đặt ra quy tắc cho AI) là những liên kết tốt."
+  ]
+}

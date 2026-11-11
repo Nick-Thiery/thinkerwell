@@ -88,8 +88,12 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * downloading a course: every lesson's sources in three languages and every picture's credit (a chunk of 26.1 kB Brotli,
  * loaded only by Credits) and the outline of the three other courses (3.5 kB, loaded by the guides and the learner Home).
  * The rest is the pages' code and words in three languages (docs/notes/slow-internet.md).
+ *
+ * Raised to 873 kB on 11 November 2026, by 1 kB, for no new content: main measured 871.97 kB, 28 bytes under 872 kB, and the
+ * Vietnamese branch 872.10 kB. A file-by-file comparison shows no file added and none of Vietnamese's in the list; 14 chunks
+ * differ by -14 to +64 bytes each, which is the hashes in chunk names changing and Brotli compressing them differently.
  */
-const PRECACHE_BUDGET = 872_000;
+const PRECACHE_BUDGET = 873_000;
 /**
  * Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before),
  * 210.5 kB after the language and pilot-day merges, 212.7 kB with the header's language switch and the one language

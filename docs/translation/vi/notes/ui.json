@@ -865,8 +865,8 @@
     "back": "Use only letters, numbers and hyphens, like ABC-07."
   },
   "pages.home.newLearner.submit": {
-    "source": "Start Lesson 1",
-    "back": "Start Lesson 1"
+    "source": "Create profile",
+    "flag": true
   },
   "pages.home.newLearner.submitError": {
     "source": "That didn't save. Try again.",
@@ -895,10 +895,8 @@
     "back": "Your language"
   },
   "pages.home.newLearner.languageHelper": {
-    "source": "Buttons and instructions show in this language. In Indonesian, the lessons do too. In other languages they stay in English, so you can practise it.",
-    "flag": true,
-    "note": "Says only Indonesian gets translated lessons; Vietnamese lessons now exist (content/vi). Wording must be updated when Vietnamese is made ready. Also 'tiếng Indonesia' vs 'tiếng In-đô-nê-xi-a'. | Review: English says only Indonesian lessons are translated; Vietnamese lessons are translated too, so the old text would have been false for this language. en.json itself needs this update when Vietnamese becomes ready. [Reviewer changed: Với tiếng Indonesia, ... → Với tiếng Việt và tiếng Indonesia, bài học cũng hiện bằng ngôn ngữ đó]",
-    "back": "Buttons and instructions appear in this language. With Indonesian, lessons also appear in Indonesian. With other languages, lessons stay in English so you can practise."
+    "source": "Buttons and instructions show in this language. In Indonesian and Malay, the lessons do too. In other languages they stay in English, so you can practise it.",
+    "flag": true
   },
   "pages.home.remove.action": {
     "source": "Remove",
@@ -1013,10 +1011,8 @@
     "back": "Your language"
   },
   "pages.home.dashboard.languageHelp": {
-    "source": "Buttons and instructions show in this language. In Indonesian, the lessons do too. In other languages they stay in English, so you can practise it.",
-    "flag": true,
-    "note": "Same as newLearner.languageHelper. | Review: Same as above. [Reviewer changed: same as newLearner.languageHelper]",
-    "back": "Buttons and instructions appear in this language. With Indonesian, lessons also appear in Indonesian. With other languages, lessons stay in English so you can practise."
+    "source": "Buttons and instructions show in this language. In Indonesian and Malay, the lessons do too. In other languages they stay in English, so you can practise it.",
+    "flag": true
   },
   "pages.home.dashboard.languageSaveFailed": {
     "source": "That didn't save. Try again.",
@@ -1354,22 +1350,20 @@
     "back": "Teach a Thinkerwell lesson to your group"
   },
   "pages.educators.heroBody": {
-    "source": "Use Thinkerwell's free social studies lessons with your group. Teach on one shared screen, in pairs or on separate devices, or print the lessons. No learner accounts are needed.",
-    "flag": true,
-    "note": "Sentence 'Dạy trên một màn hình chung, theo cặp hoặc trên từng thiết bị riêng' reworded for flow; check naturalness.",
-    "back": "Use Thinkerwell's free social science lessons with your group. You can teach on one shared screen, in pairs, or on each person's own device, or print the lessons on paper. Learners do not need to create an account."
+    "source": "Use Thinkerwell's free lessons with your group. Choose one course, several courses, or lessons from different courses. Teach on one shared screen, in pairs or on separate devices, or print the lessons. No learner accounts are needed.",
+    "flag": true
   },
   "pages.educators.pilotAboutTitle": {
-    "source": "For organisations",
-    "back": "For organisations"
+    "source": "Using Thinkerwell with a group",
+    "flag": true
   },
   "pages.educators.pilotAboutBody": {
-    "source": "What a pilot involves, what we ask, and how learners' privacy is kept.",
-    "back": "What a pilot includes, what we ask of you, and how learners' privacy is kept."
+    "source": "What Thinkerwell offers, what you need to run a group, and how learners' privacy is kept.",
+    "flag": true
   },
   "pages.educators.pilotAboutCta": {
-    "source": "Read about pilots",
-    "back": "Read about the pilot"
+    "source": "Read more",
+    "flag": true
   },
   "pages.educators.pilotConsentTitle": {
     "source": "Consent form",
@@ -1390,18 +1384,16 @@
     "back": "Information sheet"
   },
   "pages.educators.pilotSheetBody": {
-    "source": "What the pilot and its study involve, for each family to keep, with your organisation's name on it.",
-    "flag": true,
-    "note": "'Phiếu thông tin'; 'nghiên cứu' for 'study' per KEY_TERMS.",
-    "back": "What the pilot and the study include, for each family to keep, with your organisation's name printed on it."
+    "source": "What the study involves, for each family to keep, with your organisation's name on it.",
+    "flag": true
   },
   "pages.educators.pilotSheetCta": {
     "source": "Print information sheets",
     "back": "Print the information sheet"
   },
   "pages.educators.pilotCodesTitle": {
-    "source": "Code cards",
-    "back": "Code cards"
+    "source": "Learner code cards",
+    "flag": true
   },
   "pages.educators.pilotCodesBody": {
     "source": "A card with a code for each learner to use instead of their name, and a list for you to keep.",
@@ -1440,30 +1432,28 @@
     "back": "Internet for the first visit and for watching videos"
   },
   "pages.educators.howTitle": {
-    "source": "How a session works",
-    "back": "How a session goes"
+    "source": "Run a session",
+    "flag": true
   },
   "pages.educators.step1Title": {
-    "source": "Pick a lesson",
-    "back": "Choose a lesson"
+    "source": "Choose your lessons",
+    "flag": true
   },
   "pages.educators.step1Body": {
-    "source": "Lessons can go in any order. Choose one that fits your group, or follow the numbers.",
-    "back": "The lessons can be studied in any order. Choose the one that suits your group, or go by number."
+    "source": "Choose one course, several, or lessons from different courses. Lessons can go in any order. Choose ones that fit your group, or follow the numbers.",
+    "flag": true
   },
   "pages.educators.step2Title": {
-    "source": "Work through five steps",
-    "back": "Do the five steps"
+    "source": "Read, respond and discuss",
+    "flag": true
   },
   "pages.educators.step2Body": {
-    "source": "Read, Write, Speak, Watch, Reflect. Pair learners for Speak. Watch can be skipped.",
-    "flag": true,
-    "note": "Stage names Đọc, Viết, Nói, Xem, Suy ngẫm per KEY_TERMS (Suy ngẫm is still an open choice). 'Ghép cặp người học ở bước Nói' check.",
-    "back": "Read, Write, Speak, Watch, Reflect. Pair learners up at the Speak step. The Watch step can be skipped."
+    "source": "Learners read, write about what they read and talk it through in pairs. Watch is optional.",
+    "flag": true
   },
   "pages.educators.step3Title": {
-    "source": "Share and reflect",
-    "back": "Share and reflect"
+    "source": "Reflect together",
+    "flag": true
   },
   "pages.educators.step3Body": {
     "source": "Ask two or three learners to share their answer. Everyone writes one reflection.",
@@ -1488,8 +1478,8 @@
     "back": "Answers for section review {section}"
   },
   "pages.educators.feedbackTitle": {
-    "source": "Tell us what to fix",
-    "back": "Tell us what to fix"
+    "source": "Questions, or something to fix?",
+    "flag": true
   },
   "pages.educators.feedbackBody": {
     "source": "Something confusing, too difficult or broken? Tell us at {email}. Don't send learners' names or written answers.",
@@ -1498,10 +1488,8 @@
     "back": "Is anything confusing, too hard or broken? Tell us at {email}. Do not send learners' names or writing."
   },
   "pages.educators.toolsIntro": {
-    "source": "For the day you start, and every day after. Everything here stays on this device.",
-    "flag": true,
-    "note": "'chỉ nằm trên thiết bị này' (stays on this device); check wording.",
-    "back": "For the day you start and every day after. Everything here stays only on this device."
+    "source": "Progress stays on the device it was made on.",
+    "flag": true
   },
   "pages.educators.setupTitle": {
     "source": "Set up this device",
@@ -1540,18 +1528,16 @@
     "back": "Print all certificates"
   },
   "pages.organisations.title": {
-    "source": "For organisations",
-    "back": "For organisations"
+    "source": "Use Thinkerwell with your learners",
+    "flag": true
   },
   "pages.organisations.eyebrow": {
-    "source": "Starting a pilot",
-    "back": "Start a pilot"
+    "source": "For learning organisations",
+    "flag": true
   },
   "pages.organisations.intro": {
-    "source": "Thinkerwell is a student-led platform working to expand access to free digital social studies learning for underserved youth across Southeast Asia. We are preparing a pilot of our course with learning organisations. This page explains what a pilot involves.",
-    "flag": true,
-    "note": "'underserved youth' rendered as 'thanh thiếu niên thiếu điều kiện học tập'; no fixed term in KEY_TERMS, native should choose (also keep it not stigmatising). 'student-led' = 'do học sinh điều hành'. 'Platform' = nền tảng. 'Southeast Asia' = Đông Nam Á. | Review: 'student-led' = dẫn dắt (matches the consent form and information sheet); 'điều hành' meant 'run/manage'. 'thanh thiếu niên thiếu điều kiện học tập' for 'underserved youth' is acceptable but native should choose a non-stigmatising phrase. [Reviewer changed: do học sinh điều hành → do học sinh dẫn dắt]",
-    "back": "Thinkerwell is a student-run platform, striving to widen access to free digital social science learning for youth lacking learning conditions across Southeast Asia. We are preparing to pilot this course together with educational organisations. This page explains what a pilot includes."
+    "source": "Thinkerwell offers free social studies courses and educator resources for youth across Southeast Asia. Use them with a group on shared devices or in print. Explore the courses and teaching materials, or get in touch about using Thinkerwell in your learning space.",
+    "flag": true
   },
   "pages.organisations.honesty": {
     "source": "Thinkerwell is a student-led platform. It is not a registered charity or nonprofit.",
@@ -1560,24 +1546,20 @@
     "back": "Thinkerwell is a student-run platform. It is not a registered charity or non-profit organisation."
   },
   "pages.organisations.whatTitle": {
-    "source": "What Thinkerwell is",
-    "back": "What Thinkerwell is"
+    "source": "What Thinkerwell offers",
+    "flag": true
   },
   "pages.organisations.whatBody": {
-    "source": "One course, Exploring Our World: {lessons} lessons about history, geography, culture and civic life, for learners aged about 10 to 17. Each lesson has five steps: read, write, speak, watch and reflect. It runs in a web browser on shared laptops and tablets, in English or Bahasa Indonesia. Lessons work offline after the first visit; the optional videos need the internet.",
-    "flag": true,
-    "note": "Course title uses KEY_TERMS suggestion 'Khám phá thế giới của chúng ta'. 'Bahasa Indonesia' rendered 'tiếng Indonesia'; check. 'Optional videos' = 'video không bắt buộc'. | Review: 'tiếng Indonesia' for Bahasa Indonesia; English says the course runs in English or Bahasa Indonesia and does not list Vietnamese. Left as is (promise only what is true today); a human should decide whether the Vietnamese page should mention Vietnamese once it is ready.",
-    "back": "One course, Exploring Our World: {lessons} lessons on history, geography, culture and civic life, for learners about 10 to 17 years old. Each lesson has five steps: read, write, speak, watch and reflect. The course runs in a web browser, on shared laptops and tablets, in English or Indonesian. The lessons work without internet after the first visit; the optional videos need internet."
+    "source": "Four courses for learners aged about 10 to 17. Exploring Our World: {ourWorld} lessons about history, geography, culture and civic life. Digital World: {digitalWorld} lessons about AI and the digital world. Southeast Asia Through Time: {southeastAsia} lessons about the region's past, from real objects, maps and letters. Art, Architecture and Society: {art} lessons about works and buildings from around the world. Most lessons have five steps: read, write, speak, watch and reflect (four where a lesson has no video, as every lesson does in Bahasa Indonesia and Bahasa Melayu). It runs in a web browser on shared laptops and tablets, in English, Bahasa Indonesia or Bahasa Melayu. Lessons work offline once a course is saved on the device; the optional videos need the internet.",
+    "flag": true
   },
   "pages.organisations.getTitle": {
     "source": "What you get",
     "back": "What you get"
   },
   "pages.organisations.get1": {
-    "source": "The whole course, free. No accounts, no ads, and nothing locked.",
-    "flag": true,
-    "note": "Promise copy: 'không có gì bị khóa' = nothing locked; keep exactly.",
-    "back": "The whole course, free. No accounts, no ads, and nothing locked."
+    "source": "All four courses, free. No accounts, no ads, and nothing locked.",
+    "flag": true
   },
   "pages.organisations.get2": {
     "source": "A teacher guide for every lesson, answer keys for the section checks, and every lesson ready to print.",
@@ -1585,46 +1567,40 @@
     "note": "Review: Same repetition fix. [Reviewer changed: các phần ôn tập phần → các bài ôn tập phần]"
   },
   "pages.organisations.get3": {
-    "source": "What you need to start: an information sheet and a consent form for families, code cards for learners and a checklist for each device.",
-    "flag": true,
-    "note": "'danh sách kiểm tra' per KEY_TERMS.",
-    "back": "The things you need to start: an information sheet and consent form for families, code cards for learners, and a checklist for each device."
+    "source": "A checklist for setting up each device, learner code cards and a one-page session guide for staff.",
+    "flag": true
   },
   "pages.organisations.get4": {
-    "source": "Answers to your questions by email, and changes to the course based on what you tell us.",
-    "back": "Answers to your questions by email, and adjusting the course based on what you tell us."
+    "source": "Answers to your questions, and changes to the course based on what you tell us.",
+    "flag": true
   },
   "pages.organisations.askTitle": {
-    "source": "What we ask",
-    "back": "What we ask of you"
+    "source": "What you need to run a group",
+    "flag": true
   },
   "pages.organisations.ask1": {
-    "source": "One contact person at your organisation.",
-    "flag": true,
-    "note": "'Người liên hệ' = contact person per KEY_TERMS.",
-    "back": "A contact person at your organisation."
+    "source": "An educator or volunteer to lead each session.",
+    "flag": true
   },
   "pages.organisations.ask2": {
     "source": "Some laptops or tablets with a web browser. Learners can share them.",
     "back": "Some laptops or tablets with a web browser. Learners can share them."
   },
   "pages.organisations.ask3": {
-    "source": "A few sessions a week for 4 to 6 weeks. A lesson takes about {min}–{max} minutes.",
-    "back": "A few sessions each week for 4 to 6 weeks. A lesson takes about {min}–{max} minutes."
+    "source": "About {min}–{max} minutes for each lesson.",
+    "flag": true
   },
   "pages.organisations.ask4": {
-    "source": "Honest feedback: what worked, what didn't, and what confused learners.",
-    "back": "Frank feedback: what worked, what did not, and what confused learners."
+    "source": "The internet for the first visit on each device, and for the optional videos.",
+    "flag": true
   },
   "pages.organisations.privacyTitle": {
-    "source": "Privacy",
-    "back": "Privacy"
+    "source": "Using Thinkerwell",
+    "flag": true
   },
   "pages.organisations.privacy1": {
-    "source": "Pilot groups can use codes instead of names. Each learner gets a code card, like ABC-01, and types the code as their name. Only you keep the list that matches codes to names.",
-    "flag": true,
-    "note": "'Thẻ mã' for code card, 'ABC-01' kept.",
-    "back": "Pilot groups can use codes instead of names. Each learner gets a code card, such as ABC-01, and enters that code as their name. Only you keep the list matching codes to names."
+    "source": "Learners can use codes instead of names. Each learner gets a code card, like ABC-01, and types the code as their name. Only you keep the list that matches codes to names.",
+    "flag": true
   },
   "pages.organisations.privacy2": {
     "source": "No accounts, no email addresses and no ads. Learners' writing stays on the device they use, and voice recordings never leave it.",
@@ -1639,10 +1615,8 @@
     "back": "Parents' consent. Before any learning data is shared with Thinkerwell, the parent or guardian signs a consent form, and the learner agrees too. The research uses only data tied to a code, never tied to a name: short questions and a few written sentences in the first and last sessions, and, in every session, how the learner uses Thinkerwell: time, lessons and steps, answers, the help they use, videos and word counts, never what they write."
   },
   "pages.organisations.privacyNow": {
-    "source": "Learners' work and progress are not sent to Thinkerwell. The one exception is a pilot run with you: once families have signed the consent form, and only when your staff turn on “Share pilot results” in Settings, the site sends how learners use it, linked to a code and never a name. Online speech-to-text is off unless your staff turn it on; when it is on, what learners say goes to the browser maker's service. We will tell you before anything else changes.",
-    "back": "Learners' work and progress are not sent to Thinkerwell. The only exception is a pilot run with you: after families have signed the consent form, and only when your staff turn on “Share pilot results” in Settings, the website sends how learners use it, linked to a code and never to a name. Online speech-to-text is off unless your staff turn it on; when on, what learners say is sent to the browser maker's service. We will tell you before anything else changes.",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording. Changed in October 2026 to describe the pilot exception."
+    "source": "Learners' work and progress stay on the device they use, and are not sent to Thinkerwell. Online speech-to-text is off unless your staff turn it on; when it is on, what learners say goes to the browser maker's service. We will tell you before anything else changes.",
+    "flag": true
   },
   "pages.organisations.privacy4": {
     "source": "Videos are optional. They play from YouTube, only when a learner taps play, and every video has a written version.",
@@ -1655,18 +1629,16 @@
     "back": "Getting ready"
   },
   "pages.organisations.startBody": {
-    "source": "Print what you need, and set up each device before the first session.",
-    "back": "Print what you need, and set up each device before the first session."
+    "source": "Set up each device before the first session, and print what you need.",
+    "flag": true
   },
   "pages.organisations.contactTitle": {
-    "source": "Contact us",
-    "back": "Contact us"
+    "source": "Get in touch",
+    "flag": true
   },
   "pages.organisations.contactBody": {
-    "source": "Email us to start a pilot or to ask a question. Tell us your organisation's name, where you are, and about how many learners would take part.",
-    "flag": true,
-    "note": "'Gửi email cho chúng tôi'; check.",
-    "back": "Email us to start a pilot or ask a question. Tell us your organisation's name, where you are, and about how many learners will take part."
+    "source": "Ask a question, or tell us about your organisation: where you are, and about how many learners would use Thinkerwell.",
+    "flag": true
   },
   "pages.consentForm.title": {
     "source": "Consent form",
@@ -1721,10 +1693,8 @@
     "back": "For the parent or guardian"
   },
   "pages.consentForm.formIntro": {
-    "source": "{organisation} is trying Thinkerwell, a free online course about history, geography, culture and civic life for youth aged about 10 to 17. Your child's class will use it a few sessions a week for 4 to 6 weeks. There is also a small study of how well it works.",
-    "flag": true,
-    "note": "PARENT-FACING. 'thanh thiếu niên' for 'youth'; 'con bạn' for 'your child' with 'bạn' per brief; reviewer to decide if parents should be addressed another way. Also 'hiệu quả đến đâu' for 'how well it works'. | Review: Faithful. 'thanh thiếu niên' for youth aged 10 to 17 is fine. Adult register 'bạn'; reviewers may prefer another address for parents.",
-    "back": "{organisation} is trying out Thinkerwell, a free online course about history, geography, culture and civic life for young people aged about 10 to 17. Your child's class will use Thinkerwell a few sessions each week for 4 to 6 weeks. There is also a small study to see how well Thinkerwell works."
+    "source": "{organisation} is trying Thinkerwell, a free online learning platform for youth aged about 10 to 17, with four social studies courses. Your child's class will use lessons from one or more of them a few sessions a week for 4 to 6 weeks. There is also a small study of how well it works.",
+    "flag": true
   },
   "pages.consentForm.studyTitle": {
     "source": "The pilot study",
@@ -1871,10 +1841,8 @@
     "back": "Staff signature"
   },
   "pages.pilotStudy.intro": {
-    "source": "If you say yes to the study, then in the first and last sessions your child:",
-    "flag": true,
-    "note": "PROMISE. 'đồng ý cho con tham gia nghiên cứu' for 'say yes to the study'. Check the sentence leads into the three lines naturally ('con bạn: trả lời ...').",
-    "back": "If you agree for your child to take part in the study, then in the first session and the last session, your child:"
+    "source": "If you say yes to the study, then in the first and last sessions of a class studying Exploring Our World, your child:",
+    "flag": true
   },
   "pages.pilotStudy.questions": {
     "source": "answers 16 short questions (about 15 minutes each time)",
@@ -2037,10 +2005,8 @@
     "back": "What is Thinkerwell?"
   },
   "pages.infoSheet.whatBody": {
-    "source": "Thinkerwell is a free learning website. It teaches history, maps and places, cultures, and how communities make decisions. Learners read, write, speak, watch short videos and think about what they learned, in simple English or Bahasa Indonesia. It is made by a small team of students in Singapore.",
-    "flag": true,
-    "note": "PARENT-FACING. 'tiếng Indonesia (Bahasa Indonesia)': I named the language both ways; confirm. 'do một nhóm nhỏ học sinh ở Singapore thực hiện' for 'made by a small team of students in Singapore'. | Review: Lists 'tiếng Anh đơn giản hoặc tiếng Indonesia (Bahasa Indonesia)', as the English. In Vietnamese the lessons are also translated, so a human must decide whether Vietnamese should be named here, and only if Vietnamese will really be offered to the pilot families.",
-    "back": "Thinkerwell is a free learning website. It teaches history, maps and places, cultures, and how communities make decisions. Learners read, write, speak, watch short videos and reflect on what they have learned, in simple English or Indonesian (Bahasa Indonesia). It is made by a small team of students in Singapore."
+    "source": "Thinkerwell is a free learning website. Its courses teach history, maps and places, cultures, how communities make decisions, the past of Southeast Asia, art and buildings, and how digital technology and AI work. Learners read, write, speak, watch short videos and think about what they learned, in simple English, Bahasa Indonesia or Bahasa Melayu. It is made by a small team of students in Singapore.",
+    "flag": true
   },
   "pages.infoSheet.happenTitle": {
     "source": "What will happen?",
@@ -3121,16 +3087,12 @@
     "back": "{name}'s language"
   },
   "pages.settings.language.help": {
-    "source": "Everything shows in this language at once: buttons, instructions and, in Indonesian, the lessons too. It is kept for this device, for the first page and anyone who hasn't chosen who's learning.",
-    "flag": true,
-    "note": "Says the lessons show in the language only for Indonesian; check it reads clearly. | Review: Lessons are also translated in Vietnamese, so the lessons follow the language in Vietnamese as well as Indonesian (the English says only Indonesian). [Reviewer changed: Mọi thứ hiện ngay bằng ngôn ngữ này: nút, hướng dẫn và, với tiếng Indonesia, cả các bài học. Lựa chọn được giữ cho thiết bị này, cho trang đầu tiên và cho những ai chưa chọn người học. → Mọi thứ hiện ngay bằng ngôn ngữ này: nút, hướng dẫn và, với tiếng Việt và tiếng Indonesia, cả các bài học. Lựa chọn được giữ cho thiết bị này, cho trang đầu tiên và cho những ai chưa chọn người học.]",
-    "back": "Everything appears at once in this language: buttons, instructions and, with Indonesian, the lessons too. The choice is kept for this device, for the first page and for those who have not chosen a learner."
+    "source": "Everything shows in this language at once: buttons, instructions and, in Indonesian and Malay, the lessons too. It is kept for this device, for the first page and anyone who hasn't chosen who's learning.",
+    "flag": true
   },
   "pages.settings.language.helpLearner": {
-    "source": "Everything shows in this language at once: buttons, instructions and, in Indonesian, the lessons too. It is kept for {name}, and changes back when someone else is chosen.",
-    "back": "Everything appears at once in this language: buttons, instructions and, with Indonesian, the lessons too. The choice is kept for {name} and goes back to how it was when someone else is chosen.",
-    "flag": true,
-    "note": "Review: Same as language.help. [Reviewer changed: Mọi thứ hiện ngay bằng ngôn ngữ này: nút, hướng dẫn và, với tiếng Indonesia, cả các bài học. Lựa chọn được giữ cho {name} và quay lại như cũ khi có người khác được chọn. → Mọi thứ hiện ngay bằng ngôn ngữ này: nút, hướng dẫn và, với tiếng Việt và tiếng Indonesia, cả các bài học. Lựa chọn được giữ cho {name} và quay lại như cũ khi có người khác được chọn.]"
+    "source": "Everything shows in this language at once: buttons, instructions and, in Indonesian and Malay, the lessons too. It is kept for {name}, and changes back when someone else is chosen.",
+    "flag": true
   },
   "pages.settings.offline.title": {
     "source": "Offline and data",
@@ -3297,10 +3259,8 @@
     "back": "iPad or iPhone"
   },
   "pages.settings.listenVoice.better.apple.steps": {
-    "source": "Open Settings, then Accessibility, then Spoken Content (called Read & Speak on newer versions), then Voices. Choose English or Indonesian, then a voice marked Enhanced or Premium, and download it.",
-    "flag": true,
-    "note": "Menu names are my best guess at the Vietnamese iOS wording (Cài đặt > Trợ năng > Nội dung được đọc > Giọng nói; Đọc & Nói; Nâng cao / Cao cấp). Verify on a real iPad set to Vietnamese. | Review: Check every iOS menu name on a real Vietnamese iPad/iPhone: Trợ năng, Nội dung được đọc (Spoken Content), Đọc & Nói (Read & Speak), Giọng nói, and the labels Nâng cao and Cao cấp (Enhanced, Premium).",
-    "back": "Open Settings, then Accessibility, then Spoken Content (called Read & Speak on newer versions), then Voices. Choose English or Indonesian, then choose a voice labelled Enhanced or Premium, and download it."
+    "source": "Open Settings, then Accessibility, then Spoken Content (called Read & Speak on newer versions), then Voices. Choose English, Indonesian or Malay, then a voice marked Enhanced or Premium, and download it.",
+    "flag": true
   },
   "pages.settings.listenVoice.better.apple.note": {
     "source": "Safari doesn't let websites use every voice you download. If the new voice isn't in the list above, keep the one you have.",
@@ -3315,10 +3275,8 @@
     "back": "Android tablet or phone"
   },
   "pages.settings.listenVoice.better.android.steps": {
-    "source": "Open Settings and search for text-to-speech. Next to Preferred engine, tap the settings button, then Install voice data. Choose English or Indonesian, then download a voice.",
-    "flag": true,
-    "note": "'Chuyển văn bản thành giọng nói', 'Công cụ ưu tiên' and 'Cài đặt dữ liệu giọng nói' are guesses at Android's Vietnamese menu names, which vary by maker. Verify on a real device. | Review: 'nhấn' → 'chạm vào' for a touchscreen. All Android menu names (Chuyển văn bản thành giọng nói, Công cụ ưu tiên, Cài đặt dữ liệu giọng nói = 'Install voice data') must be checked on a real Vietnamese-language device; 'Cài đặt dữ liệu giọng nói' could read as 'Settings' rather than 'Install'. [Reviewer changed: Mở Cài đặt và tìm chuyển văn bản thành giọng nói. Cạnh Công cụ ưu tiên, nhấn nút cài đặt, rồi Cài đặt dữ liệu giọng nói. Chọn tiếng Anh hoặc tiếng Indonesia, rồi tải một giọng. → Mở Cài đặt và tìm chuyển văn bản thành giọng nói. Cạnh Công cụ ưu tiên, chạm vào nút cài đặt, rồi Cài đặt dữ liệu giọng nói. Chọn tiếng Anh hoặc tiếng Indonesia, rồi tải một giọng.]",
-    "back": "Open Settings and look for text to speech. Next to Preferred tool, tap the settings button, then Voice data settings. Choose English or Indonesian, then download a voice."
+    "source": "Open Settings and search for text-to-speech. Next to Preferred engine, tap the settings button, then Install voice data. Choose English, Indonesian or Malay, then download a voice.",
+    "flag": true
   },
   "pages.settings.listenVoice.better.windows.name": {
     "source": "Windows laptop",
@@ -3327,20 +3285,16 @@
     "back": "Windows laptop"
   },
   "pages.settings.listenVoice.better.windows.steps": {
-    "source": "Open Settings, then Time & language, then Speech. Next to Manage voices, choose Add voices, then English (United Kingdom) or Indonesian. You may need an administrator account. Then close the browser and open it again.",
-    "flag": true,
-    "note": "Menu names (Thời gian & ngôn ngữ, Giọng nói, Quản lý giọng nói, Thêm giọng nói, Tiếng Anh (Vương quốc Anh)) must be checked against Windows 11 in Vietnamese. | Review: Check against a real Vietnamese Windows: Thời gian & ngôn ngữ, Giọng nói, Quản lý giọng nói, Thêm giọng nói, Tiếng Anh (Vương quốc Anh), Tiếng Indonesia.",
-    "back": "Open Settings, then Time & language, then Speech. Next to Manage voices, choose Add voices, then English (United Kingdom) or Indonesian. You may need an administrator account. Then close the browser and open it again."
+    "source": "Open Settings, then Time & language, then Speech. Next to Manage voices, choose Add voices, then English (United Kingdom), Indonesian or Malay. You may need an administrator account. Then close the browser and open it again.",
+    "flag": true
   },
   "pages.settings.listenVoice.better.chromebook.name": {
     "source": "Chromebook",
     "back": "Chromebook"
   },
   "pages.settings.listenVoice.better.chromebook.steps": {
-    "source": "Open Settings, then Accessibility, then Text-to-Speech, then Text-to-Speech voice settings. Install the voices for English or Indonesian.",
-    "flag": true,
-    "note": "ChromeOS menu names in Vietnamese are guesses (Trợ năng, Chuyển văn bản thành giọng nói, Cài đặt giọng chuyển văn bản thành giọng nói). Verify on a real Chromebook. | Review: Check against a real Vietnamese ChromeOS: Trợ năng, Chuyển văn bản thành giọng nói, Cài đặt giọng chuyển văn bản thành giọng nói.",
-    "back": "Open Settings, then Accessibility, then Text to speech, then Text-to-speech settings. Install the English or Indonesian voices."
+    "source": "Open Settings, then Accessibility, then Text-to-Speech, then Text-to-Speech voice settings. Install the voices for English, Indonesian or Malay.",
+    "flag": true
   },
   "pages.settings.lessonAudio.title": {
     "source": "Lesson audio",
@@ -3889,14 +3843,12 @@
     "back": "See the credits"
   },
   "pages.credits.title": {
-    "source": "Credits",
-    "flag": true,
-    "note": "'Ghi công' for Credits.",
-    "back": "Credits"
+    "source": "Credits and sources",
+    "flag": true
   },
   "pages.credits.intro": {
-    "source": "Thinkerwell is built on the work of many people and organisations. Thank you to all of them. This page lists the sources behind the lessons, the videos they show, and the fonts, pictures and software the site is made with.",
-    "back": "Thinkerwell is built on the work of many people and organisations. Thanks to all of them. This page lists the sources behind the lessons, the videos shown, plus the fonts, images and software that make the website."
+    "source": "Thinkerwell is built on the work of many people and organisations. Thank you to all of them. This page lists the sources behind the lessons of every course, the videos they show, the pictures and images, and the fonts and software the site is made with.",
+    "flag": true
   },
   "pages.credits.contents": {
     "source": "On this page",
@@ -3931,8 +3883,8 @@
     "back": "Images and design"
   },
   "pages.credits.picturesBody": {
-    "source": "The Thinkerwell mascot, the lesson pictures and the site's design were made for Thinkerwell.",
-    "back": "Thinkerwell's mascot, the illustrations in the lessons and the website's design were made specially for Thinkerwell."
+    "source": "The Thinkerwell mascot, the site's design and the pictures drawn for the lessons were made for Thinkerwell. The photographs, artworks and maps in some lessons are not: they come from museums, archives and Wikimedia Commons. Each one is listed below by course and lesson, with who made it, where it is held, its licence and what Thinkerwell changed.",
+    "flag": true
   },
   "pages.credits.goalsTitle": {
     "source": "UN Sustainable Development Goals icons",
@@ -4416,10 +4368,8 @@
     "back": "For organisations | Thinkerwell"
   },
   "seo.organisations.description": {
-    "source": "Learn how a pilot with Thinkerwell could support social studies learning for youth facing barriers to education.",
-    "flag": true,
-    "note": "'chương trình thí điểm' for a pilot; check it does not promise anything.",
-    "back": "Find out how a pilot programme with Thinkerwell can support social science learning for teenagers and young people who face barriers in learning."
+    "source": "Use Thinkerwell's free social studies course and educator resources with your learners, on shared devices or in print.",
+    "flag": true
   },
   "seo.credits.title": {
     "source": "Credits and Sources | Thinkerwell",
@@ -4486,10 +4436,8 @@
     "back": "{stage}, done"
   },
   "ds.chrome.stageDots.progressLabel": {
-    "source": "{count} of 5 steps done",
-    "flag": true,
-    "note": "Check.",
-    "back": "{count} of 5 steps done"
+    "source": "{count} of {total} steps done",
+    "flag": true
   },
   "ds.chrome.progressRing.ariaLabel": {
     "source": "{value} of {max} done",
@@ -5069,9 +5017,7 @@
     "flag": true
   },
   "previewCourse.sheet.draft": {
-    "source": "{title}, draft course: not yet reviewed. Don't use it with learners yet.",
-    "back": "{title}, draft course: not yet reviewed. Not yet used with learners.",
-    "note": "Review: English is an instruction (\"Don't use it with learners yet\"); old text was a statement. [Reviewer changed: Digital World, khóa học nháp: chưa được xem xét. Chưa dùng với người học. → Digital World, khóa học nháp: chưa được xem xét. Chưa nên dùng với người học.]",
+    "source": "{title}: a new course. Its facts are still being checked.",
     "flag": true
   },
   "previewCourse.choice.label": {
@@ -5637,16 +5583,12 @@
     "back": "Some of your labels differ from the gardener's labels. The model learned your labels, so its predictions follow them too."
   },
   "pilotResults.title": {
-    "source": "Share pilot results",
-    "back": "Share pilot results",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+    "source": "Share optional study data",
+    "flag": true
   },
   "pilotResults.intro": {
-    "source": "Use this only for a pilot your organisation runs with Thinkerwell, after every family has signed the consent form. It is off until you turn it on.",
-    "back": "Use this section only for a pilot that your organisation runs with Thinkerwell, after every family has signed the consent form. This section is off until you turn it on.",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+    "source": "Use this only for a learning study your organisation takes part in with Thinkerwell, after every family has signed the consent form. It is off until you turn it on.",
+    "flag": true
   },
   "pilotResults.codeLabel": {
     "source": "Organisation code",
@@ -5679,10 +5621,8 @@
     "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
   },
   "pilotResults.shareLabel": {
-    "source": "Share pilot results from this device",
-    "back": "Share pilot results from this device",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+    "source": "Share optional study data from this device",
+    "flag": true
   },
   "pilotResults.shareNeedsCode": {
     "source": "Save an organisation code first.",
@@ -5691,10 +5631,8 @@
     "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
   },
   "pilotResults.shareHelp": {
-    "source": "When this is on, a learner who types a pilot code like HLP-01 as their name sends how they use Thinkerwell to the Thinkerwell team: how long, which lessons and steps they open and finish, their answers to quick checks and quizzes, whether they use the simpler reading or Listen, whether they watch videos or read instead, and how many words they write. It goes with their code and your organisation code. It never includes names, writing or recordings. Learners who look around, or who use any other name, send nothing.",
-    "back": "When on, learners who type a pilot code like HLP-01 as their name send the Thinkerwell team how they use Thinkerwell: how long, which lessons and steps they open and finish, answers to quick checks and section reviews, whether they use the easier reading or listen to it read aloud, whether they watch video or read instead, and how many words they write. All is sent with their code and your organisation code. Never names, writing or voice recordings. Learners who only look around, or use another name, send nothing.",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+    "source": "When this is on, a learner who types a learner code like HLP-01 as their name sends how they use Thinkerwell to the Thinkerwell team: how long, which lessons and steps they open and finish, their answers to quick checks and quizzes, whether they use the simpler reading or Listen, whether they watch videos or read instead, and how many words they write. It goes with their code and your organisation code. It never includes names, writing or recordings. Learners who look around, or who use any other name, send nothing.",
+    "flag": true
   },
   "pilotResults.shareOffHelp": {
     "source": "Turning this off also deletes any results still waiting to be sent from this device.",
@@ -5733,10 +5671,8 @@
     "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
   },
   "pilotResults.deleteHelp": {
-    "source": "Deletes results that haven't been sent yet. Results already sent are deleted within 6 months after the pilot ends.",
-    "back": "Deletes results that have not been sent. Results already sent are deleted within 6 months after the pilot ends.",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+    "source": "Deletes results that haven't been sent yet. Results already sent are deleted within 6 months after the study ends.",
+    "flag": true
   },
   "pilotResults.deleted": {
     "source": "Waiting results deleted.",
@@ -5745,16 +5681,12 @@
     "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
   },
   "pages.home.newLearner.privacyNotePilot": {
-    "source": "Your writing and recordings stay on this device. If you use a pilot code, Thinkerwell also counts how you use it. It never gets your name.",
-    "back": "Your writing and recordings stay only on this device. If you use a pilot code, Thinkerwell also counts how you use it. Thinkerwell never receives your name.",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+    "source": "Your writing and recordings stay on this device. If you use a learner code for a study, Thinkerwell also counts how you use it. It never gets your name.",
+    "flag": true
   },
   "pages.sectionCheck.factPrivatePilot": {
-    "source": "Your score is saved here. Your pilot also counts it, by code and not by name.",
-    "back": "Your score is saved here. The pilot also counts this score, by code and not by name.",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
+    "source": "Your score is saved here. The study also counts it, by code and not by name.",
+    "flag": true
   },
   "ds.course.lessonRow.badge.notStarted": {
     "source": "Not started",
@@ -5817,10 +5749,8 @@
     "note": "New or changed in October 2026: simpler pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
   },
   "pages.settings.moreIntro": {
-    "source": "Moving work to another device, the Listen voice, lesson audio for offline use, speech-to-text and pilot results.",
-    "back": "Moving work to another device, the Listen voice, lesson audio for use without the network, speech-to-text and pilot results.",
-    "flag": true,
-    "note": "New or changed in October 2026: simpler pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+    "source": "Moving work to another device, the Listen voice, lesson audio for offline use, speech-to-text and optional study data.",
+    "flag": true
   },
   "lessonPlayer.shell.stepOf": {
     "source": "Step {number} of {total} · {stage}",
@@ -5948,5 +5878,1309 @@
     "source": "It hasn’t been reviewed yet. A historian still needs to check its facts, and a partner organisation its sensitive topics. Don’t use it with learners yet.",
     "flag": true,
     "note": "Southeast Asia Through Time preview (November 2026): drafted by AI, not yet reviewed by a native speaker. The course name stays in English while its lessons are English."
+  },
+  "pages.home.dashboard.progressTitle": {
+    "source": "Your progress",
+    "flag": true
+  },
+  "pages.home.dashboard.progressCount.other": {
+    "source": "{completed} of {total} lessons completed",
+    "flag": true
+  },
+  "pages.home.dashboard.resumeHere": {
+    "source": "Resume here",
+    "flag": true
+  },
+  "pages.home.dashboard.keepExploring": {
+    "source": "Keep exploring",
+    "flag": true
+  },
+  "pages.home.dashboard.chooseText": {
+    "source": "Choose a course to start learning.",
+    "flag": true
+  },
+  "pages.home.dashboard.resumeText": {
+    "source": "Pick up where you left off.",
+    "flag": true
+  },
+  "pages.home.dashboard.chooseCourse": {
+    "source": "Choose a course",
+    "flag": true
+  },
+  "pages.home.dashboard.resumeLesson": {
+    "source": "Resume lesson",
+    "flag": true
+  },
+  "pages.home.dashboard.startLesson": {
+    "source": "Start lesson",
+    "flag": true
+  },
+  "pages.home.dashboard.coursesTitle": {
+    "source": "Your courses",
+    "flag": true
+  },
+  "pages.home.dashboard.courseCount.other": {
+    "source": "{completed} of {total} lessons",
+    "flag": true
+  },
+  "pages.home.dashboard.openCourse": {
+    "source": "Open course",
+    "flag": true
+  },
+  "pages.home.dashboard.openCourseLabel": {
+    "source": "Open {course}",
+    "flag": true
+  },
+  "pages.home.dashboard.journalTitle": {
+    "source": "My journal",
+    "flag": true
+  },
+  "pages.home.dashboard.offlinePartBadge.other": {
+    "source": "{ready} of {total} lessons ready offline",
+    "flag": true
+  },
+  "pages.home.dashboard.offlineSaveLink": {
+    "source": "Save all courses for offline use",
+    "flag": true
+  },
+  "pages.home.dashboard.offlineHelp": {
+    "source": "Save all courses in Settings first. Videos need internet. Download lesson audio separately to listen offline.",
+    "flag": true
+  },
+  "pages.home.dashboard.offlineHelpDone": {
+    "source": "Videos need internet. Download lesson audio separately to listen offline.",
+    "flag": true
+  },
+  "pages.educators.pilotDayTitle": {
+    "source": "Session guide",
+    "flag": true
+  },
+  "pages.educators.pilotDayBody": {
+    "source": "One page for the adults running a session: before, during and after, and what to do if something goes wrong.",
+    "flag": true
+  },
+  "pages.educators.pilotDayCta": {
+    "source": "Print the guide",
+    "flag": true
+  },
+  "pages.educators.pilotCheckTitle": {
+    "source": "Learning check",
+    "flag": true
+  },
+  "pages.educators.pilotCheckBody": {
+    "source": "Paper sheets for the first and last sessions of a study of Exploring Our World: 16 questions, a short piece of writing and 5 faces, by learner code. With the answer key for the team. Not for groups using other courses.",
+    "flag": true
+  },
+  "pages.educators.pilotCheckCta": {
+    "source": "Print the check",
+    "flag": true
+  },
+  "pages.educators.sendEnquiry": {
+    "source": "Send an enquiry",
+    "flag": true
+  },
+  "pages.educators.browseCourse": {
+    "source": "Browse the courses",
+    "flag": true
+  },
+  "pages.educators.setupDevice": {
+    "source": "Set up a device",
+    "flag": true
+  },
+  "pages.educators.overview": {
+    "source": "Watch a one-minute overview (optional)",
+    "flag": true
+  },
+  "pages.educators.materialsTitle": {
+    "source": "Teaching materials",
+    "flag": true
+  },
+  "pages.educators.guidesTitle": {
+    "source": "Teacher guides and answer keys",
+    "flag": true
+  },
+  "pages.educators.guidesBody": {
+    "source": "A teacher guide for every lesson in every course, with a session plan and the answers; every lesson ready to print; and an answer key for each section check.",
+    "flag": true
+  },
+  "pages.educators.guidesCta": {
+    "source": "Open the list",
+    "flag": true
+  },
+  "pages.educators.deviceTitle": {
+    "source": "On this device",
+    "flag": true
+  },
+  "pages.educators.groupTitle": {
+    "source": "Resources for your group",
+    "flag": true
+  },
+  "pages.educators.groupIntro": {
+    "source": "Everything here prints on A4, in black and white.",
+    "flag": true
+  },
+  "pages.educators.studyTitle": {
+    "source": "Optional learning study",
+    "flag": true
+  },
+  "pages.educators.studyIntro": {
+    "source": "Only for an organisation taking part in a learning study with Thinkerwell. You don't need any of this to teach a lesson.",
+    "flag": true
+  },
+  "pages.educators.feedbackSheetTitle": {
+    "source": "Session record and feedback",
+    "flag": true
+  },
+  "pages.educators.feedbackSheetBody": {
+    "source": "One sheet for each group: which courses and lessons you used, how it went, and what to fix. You fill it in by hand.",
+    "flag": true
+  },
+  "pages.educators.feedbackSheetCta": {
+    "source": "Print the sheet",
+    "flag": true
+  },
+  "pages.organisations.getInTouch": {
+    "source": "Get in touch",
+    "flag": true
+  },
+  "pages.organisations.whoTitle": {
+    "source": "Who runs Thinkerwell?",
+    "flag": true
+  },
+  "pages.organisations.studyTitle": {
+    "source": "Optional learning study and data sharing",
+    "flag": true
+  },
+  "pages.organisations.studyIntro": {
+    "source": "Only for organisations that choose to take part in a learning study with Thinkerwell. It isn't needed to use the course.",
+    "flag": true
+  },
+  "pages.organisations.studyShare": {
+    "source": "Once families have signed the consent form, and only when your staff turn on “Share optional study data” in Settings, the site sends how learners use it, linked to a learner code and never a name. Coded data is not anonymous: your organisation keeps the list that matches codes to names.",
+    "flag": true
+  },
+  "pages.teacherTools.backToGuides": {
+    "source": "Back to teacher guides",
+    "flag": true
+  },
+  "pages.teacherGuide.planShorterNoWatch": {
+    "source": "Only 30 minutes? Use the 30 min column: take a little time off each step.",
+    "flag": true
+  },
+  "pages.teacherGuide.planOtherLanguages": {
+    "source": "In Bahasa Indonesia and Bahasa Melayu, a lesson has no Watch step unless it has a video in that language. Open this guide in that language to see its plan.",
+    "flag": true
+  },
+  "pages.teacherGuide.planDo.read.one": {
+    "source": "Read the text in Standard or Simpler English. Look at the evidence and the picture together.",
+    "flag": true
+  },
+  "pages.teacherGuide.planDo.check.one": {
+    "source": "Learners answer the quick-check question, then talk about the answer.",
+    "flag": true
+  },
+  "pages.setup.offline.courses": {
+    "source": "If your group will use the other courses, also save them: in Settings, under Courses for offline use. A course you only open is saved as far as you went.",
+    "flag": true
+  },
+  "pages.setup.offline.coursesOpen": {
+    "source": "Courses for offline use in Settings",
+    "flag": true
+  },
+  "pages.settings.courseFiles.title": {
+    "source": "Courses for offline use",
+    "flag": true
+  },
+  "pages.settings.courseFiles.intro": {
+    "source": "Our World is saved on this device after the first visit. The other courses are saved as they are opened. To use all of them without the internet, save them here, on good Wi-Fi. This saves the pages, lessons and pictures. Videos always need the internet, and the lesson audio is saved separately, below.",
+    "flag": true
+  },
+  "pages.settings.courseFiles.size": {
+    "source": "All the courses: {size} MB.",
+    "flag": true
+  },
+  "pages.settings.courseFiles.stateSaved": {
+    "source": "{course}: saved on this device ({size} MB).",
+    "flag": true
+  },
+  "pages.settings.courseFiles.statePart": {
+    "source": "{course}: partly saved. Save the rest to open every lesson offline ({size} MB in all).",
+    "flag": true
+  },
+  "pages.settings.courseFiles.stateNone": {
+    "source": "{course}: not saved yet ({size} MB).",
+    "flag": true
+  },
+  "pages.settings.courseFiles.savedAll": {
+    "source": "All the courses are on this device. They open without the internet.",
+    "flag": true
+  },
+  "pages.settings.courseFiles.download": {
+    "source": "Save the courses",
+    "flag": true
+  },
+  "pages.settings.courseFiles.stop": {
+    "source": "Stop saving",
+    "flag": true
+  },
+  "pages.settings.courseFiles.progress": {
+    "source": "Saving: {done} MB of {total} MB",
+    "flag": true
+  },
+  "pages.settings.courseFiles.progressLabel": {
+    "source": "Courses saved",
+    "flag": true
+  },
+  "pages.settings.courseFiles.stopped": {
+    "source": "Stopped. What was saved stays on this device.",
+    "flag": true
+  },
+  "pages.settings.courseFiles.failed": {
+    "source": "Some files didn't save. Check the connection and try again. What was saved stays.",
+    "flag": true
+  },
+  "pages.settings.courseFiles.saveData": {
+    "source": "Save data is on, so nothing downloads from here. Turn Save data off above to save the courses.",
+    "flag": true
+  },
+  "pages.settings.courseFiles.notReady": {
+    "source": "This can start once the site is saved on this device for offline use, above.",
+    "flag": true
+  },
+  "pages.settings.courseFiles.unsupported": {
+    "source": "This browser can't keep the courses, so they need the internet here.",
+    "flag": true
+  },
+  "pages.credits.coursesContents": {
+    "source": "By course",
+    "flag": true
+  },
+  "pages.credits.pictureFirst": {
+    "source": "First picture",
+    "flag": true
+  },
+  "pages.credits.pictureSecond": {
+    "source": "Second picture",
+    "flag": true
+  },
+  "pages.credits.pictureOriginal": {
+    "source": "{slot}: made for Thinkerwell.",
+    "flag": true
+  },
+  "pages.credits.pictureWork": {
+    "source": "{slot}: “{title}”, {creator}, {created}.",
+    "flag": true
+  },
+  "pages.credits.pictureHeldBy": {
+    "source": "Held by {institution}.",
+    "flag": true
+  },
+  "pages.credits.pictureRecord": {
+    "source": "See the original record or file",
+    "flag": true
+  },
+  "pages.credits.pictureLicence": {
+    "source": "Licence: {licence}",
+    "flag": true
+  },
+  "pages.credits.pictureChanges": {
+    "source": "Changes: {changes}",
+    "flag": true
+  },
+  "pages.guides.title": {
+    "source": "Teacher guides and answer keys",
+    "flag": true
+  },
+  "pages.guides.intro": {
+    "source": "Each lesson's teacher guide has a session plan, the answers and teaching notes, and each lesson prints. Choose a course, then open a section to see its lessons.",
+    "flag": true
+  },
+  "pages.guides.lessons": {
+    "source": "Lessons {range}",
+    "flag": true
+  },
+  "pages.guides.lesson": {
+    "source": "Lesson {number}: {title}",
+    "flag": true
+  },
+  "pages.guides.print": {
+    "source": "Print",
+    "flag": true
+  },
+  "pages.guides.printLabel": {
+    "source": "Print Lesson {number}: {title}",
+    "flag": true
+  },
+  "pages.guides.lessonCount.other": {
+    "source": "{count} lessons",
+    "flag": true
+  },
+  "pages.guides.printAll": {
+    "source": "Print all lessons",
+    "flag": true
+  },
+  "pages.guides.printAllLabel": {
+    "source": "Print every lesson in {course}",
+    "flag": true
+  },
+  "pages.guides.loading": {
+    "source": "Loading the other courses",
+    "flag": true
+  },
+  "pages.guides.outlineFailed": {
+    "source": "The lists for the other courses didn't load. Open this page again to try once more.",
+    "flag": true
+  },
+  "pages.guides.teacherGuideLabel": {
+    "source": "Teacher guide for Lesson {number}: {title}",
+    "flag": true
+  },
+  "pages.settings.transfer.load.skipped.other": {
+    "source": "{count} pieces of work are for lessons or checks that this version of Thinkerwell doesn't have. They will be left out.",
+    "flag": true
+  },
+  "aboutPage.researchNote": {
+    "source": "Research on content-rich literacy, writing from memory, self-explanation, purposeful video, and guided reflection informs this design.",
+    "flag": true
+  },
+  "pages.setup.homeScreen.why.other": {
+    "source": "Then it opens like an app. On iPad and iPhone, this also stops Safari deleting saved work after {count} days without a visit.",
+    "flag": true
+  },
+  "pilotDay.title": {
+    "source": "Session guide",
+    "flag": true
+  },
+  "pilotDay.intro": {
+    "source": "One page for the adults running a session. Print it and keep it with the devices.",
+    "flag": true
+  },
+  "pilotDay.sheetTitle": {
+    "source": "A one-page guide for staff",
+    "flag": true
+  },
+  "pilotDay.sheetFor": {
+    "source": "For the adults running a session",
+    "flag": true
+  },
+  "pilotDay.beforeTitle": {
+    "source": "Before the session",
+    "flag": true
+  },
+  "pilotDay.beforeSetup": {
+    "source": "Set up each device once: open {educators}, then {setup}. The checklist shows what is done on that device.",
+    "flag": true
+  },
+  "pilotDay.beforeCodes": {
+    "source": "Print the code cards from {educators}. Each learner types their code as their name.",
+    "flag": true
+  },
+  "pilotDay.beforeConsent": {
+    "source": "Check that every family has the information sheet and has answered the consent form. If a learner says no, that is the answer, even if the family said yes.",
+    "flag": true
+  },
+  "pilotDay.beforeChoose": {
+    "source": "Choose the courses and lessons to teach ({educators}, then {guides}).",
+    "flag": true
+  },
+  "pilotDay.startTitle": {
+    "source": "Start of the session",
+    "flag": true
+  },
+  "pilotDay.startWho": {
+    "source": "Open Thinkerwell on each device. The home page asks {who} Each learner taps their own tile.",
+    "flag": true
+  },
+  "pilotDay.startNew": {
+    "source": "New learners tap {new} and type their name or code.",
+    "flag": true
+  },
+  "pilotDay.startLook": {
+    "source": "{look} is for visitors. Nothing is saved while someone looks around, so learners should not use it for their own work.",
+    "flag": true
+  },
+  "pilotDay.learnTitle": {
+    "source": "What learners do",
+    "flag": true
+  },
+  "pilotDay.learnStages": {
+    "source": "Most lessons have five stages: {stages}. A lesson with no video has four, without {watch}. Answering the {reflect} question finishes the lesson.",
+    "flag": true
+  },
+  "pilotDay.learnStagesNoWatch": {
+    "source": "Every lesson has four stages: {stages}. Answering the {reflect} question finishes the lesson.",
+    "flag": true
+  },
+  "pilotDay.learnOrder": {
+    "source": "Nothing is locked. Learners can open any lesson and any stage, in any order, and try the quick checks again.",
+    "flag": true
+  },
+  "pilotDay.learnTime": {
+    "source": "A lesson takes about {min}–{max} minutes. Each teacher guide has a plan for {full} minutes and a shorter one for {short}.",
+    "flag": true
+  },
+  "pilotDay.wrongTitle": {
+    "source": "If something goes wrong",
+    "flag": true
+  },
+  "pilotDay.wrongDownloadLead": {
+    "source": "A page hasn't downloaded yet.",
+    "flag": true
+  },
+  "pilotDay.wrongDownload": {
+    "source": "Connect to the internet and tap {retry}. Saved work stays on the device.",
+    "flag": true
+  },
+  "pilotDay.wrongOfflineLead": {
+    "source": "No internet.",
+    "flag": true
+  },
+  "pilotDay.wrongOffline": {
+    "source": "Keep going. Work saves on the device, and only videos need the internet. Courses other than Exploring Our World need saving in Settings first.",
+    "flag": true
+  },
+  "pilotDay.wrongSharedLead": {
+    "source": "Several learners, one device.",
+    "flag": true
+  },
+  "pilotDay.wrongShared": {
+    "source": "Each learner taps their own tile on the home page. Each learner's work is kept apart.",
+    "flag": true
+  },
+  "pilotDay.wrongLostLead": {
+    "source": "Work seems to be missing.",
+    "flag": true
+  },
+  "pilotDay.wrongLost": {
+    "source": "Work is saved on the device only, never online. If you saved a file, open {settings}, tap {load} and choose it. Look in the device's downloads for a name that starts with {file}.",
+    "flag": true
+  },
+  "pilotDay.wrongVideoLead": {
+    "source": "A video won't play.",
+    "flag": true
+  },
+  "pilotDay.wrongVideo": {
+    "source": "Tap {readInstead}. It has the same ideas and works without the internet.",
+    "flag": true
+  },
+  "pilotDay.wrongSoundLead": {
+    "source": "No sound, or no {sayIt} button.",
+    "flag": true
+  },
+  "pilotDay.wrongSound": {
+    "source": "This is normal. {listen} and {sayIt} show only where the device can do them. Learners can read and type instead.",
+    "flag": true
+  },
+  "pilotDay.topicsTitle": {
+    "source": "Sensitive topics",
+    "flag": true
+  },
+  "pilotDay.topicsNever": {
+    "source": "Never ask learners about their journey, home country, family, religion or ethnicity. Thinkerwell never asks them either.",
+    "flag": true
+  },
+  "pilotDay.topicsGuide": {
+    "source": "Before you teach a lesson, read its teacher guide. It starts with {sensitive}, and it says which videos to preview.",
+    "flag": true
+  },
+  "pilotDay.topicsGuideNoWatch": {
+    "source": "Before you teach a lesson, read its teacher guide. It starts with {sensitive}.",
+    "flag": true
+  },
+  "pilotDay.topicsReview": {
+    "source": "In Exploring Our World, Lessons {first} and {second} ask for a local educator to review them first.",
+    "flag": true
+  },
+  "pilotDay.topicsShare": {
+    "source": "If a learner shares something personal, thank them and move on. If you are worried, follow your organisation's safeguarding steps.",
+    "flag": true
+  },
+  "pilotDay.endTitle": {
+    "source": "End of the session",
+    "flag": true
+  },
+  "pilotDay.endSave": {
+    "source": "Before you reset a device or give it back, save the work to a file: open {settings}, then {transfer}, then {save}. Load the file on the next device.",
+    "flag": true
+  },
+  "pilotDay.endCertificates": {
+    "source": "Print certificates for finished sections: open {educators}, then {certificates}.",
+    "flag": true
+  },
+  "pilotDay.endClass": {
+    "source": "See where everyone is: open {educators}, then {class}. It shows no scores.",
+    "flag": true
+  },
+  "pilotDay.endReview": {
+    "source": "For a course with no section check, ask aloud: the big question, one piece of evidence, what they still want to find out. Then fill in the session record ({educators}, then {feedback}).",
+    "flag": true
+  },
+  "pilotCheck.title": {
+    "source": "Learning check",
+    "flag": true
+  },
+  "pilotCheck.intro": {
+    "source": "Paper sheets for the first and last sessions of a learning study: 16 questions, a short piece of writing and 5 faces, by learner code, never by name. They help the team see learners' answers at the start and the end; on their own, they don't prove what learners learned.",
+    "flag": true
+  },
+  "pilotCheck.howTitle": {
+    "source": "How to run it",
+    "flag": true
+  },
+  "pilotCheck.how1": {
+    "source": "Use the same sheets in the first session, before the first lesson, and in the last session. Tick \"First session\" or \"Last session\" at the top.",
+    "flag": true
+  },
+  "pilotCheck.how2": {
+    "source": "Each learner writes their learner code at the top of each part, never their name. Staple each learner's pages together.",
+    "flag": true
+  },
+  "pilotCheck.how3": {
+    "source": "Allow about 25 minutes: 15 for the questions, 8 for the writing and 2 for the faces. There is no time limit.",
+    "flag": true
+  },
+  "pilotCheck.how4": {
+    "source": "You may read the questions aloud. Don't explain words from the questions or help with answers, and don't mark the sheets or say any scores.",
+    "flag": true
+  },
+  "pilotCheck.how5": {
+    "source": "Collect every sheet and keep them safe. The Thinkerwell team marks them. Print the answer key only for the team.",
+    "flag": true
+  },
+  "pilotCheck.printLabel": {
+    "source": "Print",
+    "flag": true
+  },
+  "pilotCheck.printLearners": {
+    "source": "Sheets for learners",
+    "flag": true
+  },
+  "pilotCheck.printKey": {
+    "source": "Answer key for the team",
+    "flag": true
+  },
+  "pilotCheck.sheetTitle": {
+    "source": "My learning check",
+    "flag": true
+  },
+  "pilotCheck.codeLabel": {
+    "source": "My code:",
+    "flag": true
+  },
+  "pilotCheck.sessionFirst": {
+    "source": "First session",
+    "flag": true
+  },
+  "pilotCheck.sessionLast": {
+    "source": "Last session",
+    "flag": true
+  },
+  "pilotCheck.dateLabel": {
+    "source": "Date:",
+    "flag": true
+  },
+  "pilotCheck.noName": {
+    "source": "Write your code, not your name.",
+    "flag": true
+  },
+  "pilotCheck.part1Title": {
+    "source": "Part 1: Questions",
+    "flag": true
+  },
+  "pilotCheck.part1Help": {
+    "source": "Read each question. Circle one answer: A, B or C. If you are not sure, choose the answer you think is best. This is not a test, and it doesn't change anything for you.",
+    "flag": true
+  },
+  "pilotCheck.part2Title": {
+    "source": "Part 2: Writing",
+    "flag": true
+  },
+  "pilotCheck.part2Help": {
+    "source": "Read the clues. Then write your answer on the lines. You can write in the language you like best.",
+    "flag": true
+  },
+  "pilotCheck.part3Title": {
+    "source": "Part 3: How sure do you feel?",
+    "flag": true
+  },
+  "pilotCheck.part3Help": {
+    "source": "For each sentence, circle the face that is most like you. There are no wrong answers.",
+    "flag": true
+  },
+  "pilotCheck.face1": {
+    "source": "Not yet",
+    "flag": true
+  },
+  "pilotCheck.face2": {
+    "source": "A little",
+    "flag": true
+  },
+  "pilotCheck.face3": {
+    "source": "Mostly",
+    "flag": true
+  },
+  "pilotCheck.face4": {
+    "source": "Yes",
+    "flag": true
+  },
+  "pilotCheck.thanks": {
+    "source": "Thank you. Give your sheets to your teacher.",
+    "flag": true
+  },
+  "pilotCheck.keyTitle": {
+    "source": "Before-and-after check: answer key",
+    "flag": true
+  },
+  "pilotCheck.keyFor": {
+    "source": "For the Thinkerwell team only",
+    "flag": true
+  },
+  "pilotCheck.keyIntro": {
+    "source": "Don't give this page to learners. Score 1 point for each correct answer, out of 16.",
+    "flag": true
+  },
+  "pilotCheck.keyQuestion": {
+    "source": "Question",
+    "flag": true
+  },
+  "pilotCheck.keyAnswer": {
+    "source": "Answer",
+    "flag": true
+  },
+  "pilotCheck.keyLesson": {
+    "source": "Lesson",
+    "flag": true
+  },
+  "pilotCheck.keyTaught": {
+    "source": "Taught in the sessions",
+    "flag": true
+  },
+  "pilotCheck.taughtYes": {
+    "source": "Yes",
+    "flag": true
+  },
+  "pilotCheck.taughtNo": {
+    "source": "No",
+    "flag": true
+  },
+  "pilotCheck.keyUntaught": {
+    "source": "Questions from lessons the sessions don't teach are a comparison: if scores rise only on the taught questions, the lessons are the likely reason.",
+    "flag": true
+  },
+  "pilotCheck.rubricTitle": {
+    "source": "The writing: how to mark it",
+    "flag": true
+  },
+  "pilotCheck.rubricIntro": {
+    "source": "Two team members mark every piece of writing without seeing the code or which session it is from. Give 0, 1 or 2 points for each part, out of 6. Answers in any language count.",
+    "flag": true
+  },
+  "pilotCheck.rubricPart": {
+    "source": "Part",
+    "flag": true
+  },
+  "pilotCheck.points.other": {
+    "source": "{count} points",
+    "flag": true
+  },
+  "pilotCheck.scoring": {
+    "source": "Type each learner's answers, writing marks and faces into the scoring spreadsheet. It works out the scores and the change from the first session to the last.",
+    "flag": true
+  },
+  "pilotCheck.scope": {
+    "source": "These sheets are about Exploring Our World, so use them only with groups that study its lessons. If your group uses another course, don't use them: the session guide has a short way to review instead. Scores from this check are never added to, or compared with, any other check.",
+    "flag": true
+  },
+  "feedbackSheet.title": {
+    "source": "Session record and feedback",
+    "flag": true
+  },
+  "feedbackSheet.intro": {
+    "source": "One sheet for each group. Fill it in by hand, after each session or after the last one. Keep it, or send it to us. Don't write learners' names, or anything they wrote or said.",
+    "flag": true
+  },
+  "feedbackSheet.sendLink": {
+    "source": "Send us your answers",
+    "flag": true
+  },
+  "feedbackSheet.sheetTitle": {
+    "source": "Session record and feedback",
+    "flag": true
+  },
+  "feedbackSheet.sheetFor": {
+    "source": "For the educator",
+    "flag": true
+  },
+  "feedbackSheet.whoTitle": {
+    "source": "Your group",
+    "flag": true
+  },
+  "feedbackSheet.organisation": {
+    "source": "Organisation",
+    "flag": true
+  },
+  "feedbackSheet.group": {
+    "source": "Group or class code",
+    "flag": true
+  },
+  "feedbackSheet.dates": {
+    "source": "Dates of the sessions",
+    "flag": true
+  },
+  "feedbackSheet.learners": {
+    "source": "Number of learners",
+    "flag": true
+  },
+  "feedbackSheet.usedTitle": {
+    "source": "What your group used",
+    "flag": true
+  },
+  "feedbackSheet.usedHelp": {
+    "source": "For each course, write the lesson numbers your group used, and how many sessions.",
+    "flag": true
+  },
+  "feedbackSheet.colCourse": {
+    "source": "Course",
+    "flag": true
+  },
+  "feedbackSheet.colLessons": {
+    "source": "Lesson numbers used",
+    "flag": true
+  },
+  "feedbackSheet.colSessions": {
+    "source": "Sessions",
+    "flag": true
+  },
+  "feedbackSheet.checksTitle": {
+    "source": "Checks",
+    "flag": true
+  },
+  "feedbackSheet.checkLearning": {
+    "source": "Did the group do the learning check? It is only for groups using Exploring Our World.",
+    "flag": true
+  },
+  "feedbackSheet.checkSection": {
+    "source": "Did learners try any section checks?",
+    "flag": true
+  },
+  "feedbackSheet.checkReview": {
+    "source": "For a course with no section check, did you use the three review questions from the session guide?",
+    "flag": true
+  },
+  "feedbackSheet.yes": {
+    "source": "Yes",
+    "flag": true
+  },
+  "feedbackSheet.no": {
+    "source": "No",
+    "flag": true
+  },
+  "feedbackSheet.notSure": {
+    "source": "Not sure",
+    "flag": true
+  },
+  "feedbackSheet.notUsed": {
+    "source": "Not used",
+    "flag": true
+  },
+  "feedbackSheet.howTitle": {
+    "source": "How it went",
+    "flag": true
+  },
+  "feedbackSheet.ease.ask": {
+    "source": "Was Thinkerwell easy to use? Think about setting up, finding lessons and starting a session.",
+    "flag": true
+  },
+  "feedbackSheet.ease.easy": {
+    "source": "Easy",
+    "flag": true
+  },
+  "feedbackSheet.ease.mostly": {
+    "source": "Mostly easy",
+    "flag": true
+  },
+  "feedbackSheet.ease.hard": {
+    "source": "Hard",
+    "flag": true
+  },
+  "feedbackSheet.ease.more": {
+    "source": "What was hard, or what would help?",
+    "flag": true
+  },
+  "feedbackSheet.switch.ask": {
+    "source": "Was it clear how to move between courses?",
+    "flag": true
+  },
+  "feedbackSheet.switch.more": {
+    "source": "What would make it clearer?",
+    "flag": true
+  },
+  "feedbackSheet.content.ask": {
+    "source": "Were the lessons right for your learners?",
+    "flag": true
+  },
+  "feedbackSheet.content.mostly": {
+    "source": "Mostly",
+    "flag": true
+  },
+  "feedbackSheet.content.some": {
+    "source": "Some were",
+    "flag": true
+  },
+  "feedbackSheet.content.few": {
+    "source": "Few were",
+    "flag": true
+  },
+  "feedbackSheet.content.more": {
+    "source": "Which lessons were too hard, too easy, or needed care? Write the course and the lesson number.",
+    "flag": true
+  },
+  "feedbackSheet.engage.ask": {
+    "source": "Did the learners stay interested?",
+    "flag": true
+  },
+  "feedbackSheet.engage.most": {
+    "source": "Most did",
+    "flag": true
+  },
+  "feedbackSheet.engage.some": {
+    "source": "Some did",
+    "flag": true
+  },
+  "feedbackSheet.engage.few": {
+    "source": "Few did",
+    "flag": true
+  },
+  "feedbackSheet.engage.more": {
+    "source": "Which lessons held their attention? Which did not?",
+    "flag": true
+  },
+  "feedbackSheet.practical.ask": {
+    "source": "What got in the way? Devices, the internet, time, sound, the room, or anything else.",
+    "flag": true
+  },
+  "feedbackSheet.anything.ask": {
+    "source": "Is there anything else we should know?",
+    "flag": true
+  },
+  "feedbackSheet.privacy": {
+    "source": "Don't write learners' names, or anything they wrote or said. Keep this sheet, or send your answers to Thinkerwell through the contact form.",
+    "flag": true
+  },
+  "contact.eyebrow": {
+    "source": "Get in touch",
+    "flag": true
+  },
+  "contact.title": {
+    "source": "Contact Thinkerwell",
+    "flag": true
+  },
+  "contact.intro": {
+    "source": "Have a question or want to work with us? Send us a message, and we'll use the contact details you give to reply.",
+    "flag": true
+  },
+  "contact.topicLabel": {
+    "source": "What is it about?",
+    "flag": true
+  },
+  "contact.topicPlaceholder": {
+    "source": "Choose a topic",
+    "flag": true
+  },
+  "contact.topicGeneral": {
+    "source": "General question",
+    "flag": true
+  },
+  "contact.topicEducator": {
+    "source": "Educator or classroom use",
+    "flag": true
+  },
+  "contact.topicOrganisation": {
+    "source": "Learning organisation or NGO",
+    "flag": true
+  },
+  "contact.topicPartnership": {
+    "source": "Company or partnership",
+    "flag": true
+  },
+  "contact.topicFeedback": {
+    "source": "Feedback or technical issue",
+    "flag": true
+  },
+  "contact.topicOther": {
+    "source": "Other",
+    "flag": true
+  },
+  "contact.nameLabel": {
+    "source": "Your name",
+    "flag": true
+  },
+  "contact.contactLabel": {
+    "source": "Email or WhatsApp number",
+    "flag": true
+  },
+  "contact.contactHelp": {
+    "source": "For WhatsApp, start with your country code, such as +65.",
+    "flag": true
+  },
+  "contact.messageLabel": {
+    "source": "Your message",
+    "flag": true
+  },
+  "contact.messagePlaceholder": {
+    "source": "Tell us what you'd like to ask or discuss.",
+    "flag": true
+  },
+  "contact.send": {
+    "source": "Send enquiry",
+    "flag": true
+  },
+  "contact.sending": {
+    "source": "Sending…",
+    "flag": true
+  },
+  "contact.note": {
+    "source": "Your message and contact details are emailed to the Thinkerwell team so we can reply. Don't include a learner's personal information.",
+    "flag": true
+  },
+  "contact.orEmail": {
+    "source": "You can also write to us at {email}.",
+    "flag": true
+  },
+  "contact.sent": {
+    "source": "Thanks. Your message has been sent. We'll reply using the contact details you gave.",
+    "flag": true
+  },
+  "contact.sendAnother": {
+    "source": "Send another message",
+    "flag": true
+  },
+  "contact.failed": {
+    "source": "We couldn't send your message. Try again, or write to us at {email}.",
+    "flag": true
+  },
+  "contact.busy": {
+    "source": "Too many messages have been sent from here for now. Try again in a few minutes, or write to us at {email}.",
+    "flag": true
+  },
+  "contact.error.topic": {
+    "source": "Choose a topic.",
+    "flag": true
+  },
+  "contact.error.nameMissing": {
+    "source": "Write your name.",
+    "flag": true
+  },
+  "contact.error.nameShort": {
+    "source": "Write at least 2 letters.",
+    "flag": true
+  },
+  "contact.error.nameLong": {
+    "source": "Keep your name under 100 characters.",
+    "flag": true
+  },
+  "contact.error.contactMissing": {
+    "source": "Write an email address or a WhatsApp number.",
+    "flag": true
+  },
+  "contact.error.contactInvalid": {
+    "source": "Enter a valid email, or a WhatsApp number that starts with a country code, such as +65.",
+    "flag": true
+  },
+  "contact.error.messageMissing": {
+    "source": "Write your message.",
+    "flag": true
+  },
+  "contact.error.messageShort": {
+    "source": "Write a little more: at least 10 characters.",
+    "flag": true
+  },
+  "contact.error.messageLong": {
+    "source": "Keep your message under 3,000 characters.",
+    "flag": true
+  },
+  "contact.error.summary": {
+    "source": "Check the fields marked below.",
+    "flag": true
+  },
+  "contact.honeypot": {
+    "source": "Leave this empty",
+    "flag": true
+  },
+  "lessonPlayer.watch.watchInEnglish": {
+    "source": "Watch the video in English",
+    "flag": true
+  },
+  "courseChoice.label": {
+    "source": "Courses",
+    "flag": true
+  },
+  "footer.contact": {
+    "source": "Contact",
+    "flag": true
+  },
+  "seo.contact.title": {
+    "source": "Contact Us | Thinkerwell",
+    "flag": true
+  },
+  "seo.contact.description": {
+    "source": "Ask a question or get in touch about using Thinkerwell, a free social studies platform for youth facing barriers to education.",
+    "flag": true
+  },
+  "print.brandPlatform": {
+    "source": "Thinkerwell",
+    "flag": true
+  },
+  "digitalWorld.activity.extensionEyebrow": {
+    "source": "Optional extension",
+    "flag": true
+  },
+  "digitalWorld.activity.extensionSummary": {
+    "source": "Try it yourself (optional)",
+    "flag": true
+  },
+  "digitalWorld.activity.extensionIntro": {
+    "source": "You don't need this to finish the lesson. It's here if you want to try the idea yourself.",
+    "flag": true
+  },
+  "digitalWorld.activity.guideTitleExtension": {
+    "source": "The optional extension",
+    "flag": true
+  },
+  "aboutPage.lessonsIntroNoWatch": {
+    "source": "Every lesson begins with a question and gives learners four ways to explore it. Each step asks them to work with an idea in a different way.",
+    "flag": true
+  },
+  "videoReview.pageTitle": {
+    "source": "Review the Watch videos",
+    "flag": true
+  },
+  "videoReview.eyebrow": {
+    "source": "For reviewers only",
+    "flag": true
+  },
+  "videoReview.title": {
+    "source": "Watch videos in {language}",
+    "flag": true
+  },
+  "videoReview.intro": {
+    "source": "Every lesson has a short video. Today it is in English. We found videos in {language} for many lessons. Watch each one here and tell us if it is right for learners aged 10 to 17. Learners don't see these videos until you say yes and we add them.",
+    "flag": true
+  },
+  "videoReview.chooseLanguage": {
+    "source": "The videos to review are in Bahasa Indonesia and Bahasa Melayu. Choose one of them with the language button at the top of the page.",
+    "flag": true
+  },
+  "videoReview.howTitle": {
+    "source": "How to review",
+    "flag": true
+  },
+  "videoReview.how1": {
+    "source": "Watch the part of the video shown here, with the sound and captions on, on the kind of device learners use.",
+    "flag": true
+  },
+  "videoReview.how2": {
+    "source": "Check that it is correct and right for learners aged 10 to 17, some of them refugees.",
+    "flag": true
+  },
+  "videoReview.how3": {
+    "source": "Read the questions and the written version. Write anything that should change in the box.",
+    "flag": true
+  },
+  "videoReview.how4": {
+    "source": "Choose “Use it”, “Use it with changes” or “Don't use it”. Your answers are saved on this device as you go.",
+    "flag": true
+  },
+  "videoReview.reviewerLabel": {
+    "source": "Your name",
+    "flag": true
+  },
+  "videoReview.reviewerHelp": {
+    "source": "We put your name on the videos you approve.",
+    "flag": true
+  },
+  "videoReview.progress": {
+    "source": "Reviewed: {done} of {total}",
+    "flag": true
+  },
+  "videoReview.lessonLabel": {
+    "source": "Lesson",
+    "flag": true
+  },
+  "videoReview.lessonOption": {
+    "source": "Lesson {number}: {title}",
+    "flag": true
+  },
+  "videoReview.lessonHeading": {
+    "source": "Lesson {number}: {title}",
+    "flag": true
+  },
+  "videoReview.approvedNote": {
+    "source": "A video for this lesson has already been approved.",
+    "flag": true
+  },
+  "videoReview.suggested": {
+    "source": "The video we suggest",
+    "flag": true
+  },
+  "videoReview.part": {
+    "source": "Watch from {start} to {end} ({length}).",
+    "flag": true
+  },
+  "videoReview.whole": {
+    "source": "Watch the whole video ({length}).",
+    "flag": true
+  },
+  "videoReview.by": {
+    "source": "By {channel}",
+    "flag": true
+  },
+  "videoReview.dubWarning": {
+    "source": "YouTube has made an English voice for this video. When it plays, check that you hear {language}. If you hear English, choose “Don't use it”.",
+    "flag": true
+  },
+  "videoReview.weakFit": {
+    "source": "This video covers only part of the lesson. Say if the English video would be better.",
+    "flag": true
+  },
+  "videoReview.noCaptions": {
+    "source": "This video has no captions, so its written version was written from its description. Check it carefully.",
+    "flag": true
+  },
+  "videoReview.whyTitle": {
+    "source": "Why this video (learners see this)",
+    "flag": true
+  },
+  "videoReview.questionsTitle": {
+    "source": "The questions",
+    "flag": true
+  },
+  "videoReview.before": {
+    "source": "Think first",
+    "flag": true
+  },
+  "videoReview.after": {
+    "source": "After you watch",
+    "flag": true
+  },
+  "videoReview.ownQuestion": {
+    "source": "The lesson's own question.",
+    "flag": true
+  },
+  "videoReview.newQuestion": {
+    "source": "Written for this video.",
+    "flag": true
+  },
+  "videoReview.writtenTitle": {
+    "source": "The written version (for learners who read instead)",
+    "flag": true
+  },
+  "videoReview.keyPoints": {
+    "source": "Key points",
+    "flag": true
+  },
+  "videoReview.teacherNote": {
+    "source": "Note for teachers",
+    "flag": true
+  },
+  "videoReview.answerLabel": {
+    "source": "Your answer",
+    "flag": true
+  },
+  "videoReview.use": {
+    "source": "Use it",
+    "flag": true
+  },
+  "videoReview.change": {
+    "source": "Use it with changes",
+    "flag": true
+  },
+  "videoReview.no": {
+    "source": "Don't use it",
+    "flag": true
+  },
+  "videoReview.commentLabel": {
+    "source": "What should change? Anything wrong in the questions or the written version?",
+    "flag": true
+  },
+  "videoReview.saved": {
+    "source": "Saved on this device.",
+    "flag": true
+  },
+  "videoReview.noVideo": {
+    "source": "We haven't found a good video in {language} for this lesson. Learners see the English video, with the written version in {language}.",
+    "flag": true
+  },
+  "videoReview.otherTitle": {
+    "source": "Other videos that may fit",
+    "flag": true
+  },
+  "videoReview.otherHelp": {
+    "source": "If you like one of these better, or know a better video, write it in the box.",
+    "flag": true
+  },
+  "videoReview.notChecked": {
+    "source": "Not checked yet: it has no captions.",
+    "flag": true
+  },
+  "videoReview.openYouTube": {
+    "source": "Open on YouTube",
+    "flag": true
+  },
+  "videoReview.previous": {
+    "source": "Previous lesson",
+    "flag": true
+  },
+  "videoReview.next": {
+    "source": "Next lesson",
+    "flag": true
+  },
+  "videoReview.sendTitle": {
+    "source": "Send us your answers",
+    "flag": true
+  },
+  "videoReview.sendBody": {
+    "source": "When you have finished, or want to stop for now, copy your answers and send them to the Thinkerwell team in a message. Nothing is sent from this page.",
+    "flag": true
+  },
+  "videoReview.copy": {
+    "source": "Copy my answers",
+    "flag": true
+  },
+  "videoReview.copied": {
+    "source": "Copied. Paste them into your message.",
+    "flag": true
+  },
+  "videoReview.copyFailed": {
+    "source": "That didn't copy. Select the text below and copy it.",
+    "flag": true
+  },
+  "videoReview.summaryLabel": {
+    "source": "Your answers",
+    "flag": true
+  },
+  "videoReview.summaryTitle": {
+    "source": "Review of the Watch videos in {language}",
+    "flag": true
+  },
+  "videoReview.summaryReviewer": {
+    "source": "Reviewer: {name}",
+    "flag": true
+  },
+  "videoReview.summaryLesson": {
+    "source": "Lesson {number} ({video}): {answer}",
+    "flag": true
+  },
+  "videoReview.summaryComment": {
+    "source": "Comment: {comment}",
+    "flag": true
+  },
+  "videoReview.summaryNotYet": {
+    "source": "Not reviewed yet",
+    "flag": true
+  },
+  "videoReview.summaryNoVideo": {
+    "source": "no video to review",
+    "flag": true
   }
 }

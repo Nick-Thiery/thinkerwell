@@ -141,6 +141,8 @@ export function courseAudioProblems(courses: readonly CourseUtterances[], manife
   const problems: string[] = [];
   const recordedCourses = manifest?.courses ?? {};
   for (const track of courses) {
+    // A hidden preview language with no recordings yet (Vietnamese) is left out, as for Our World (checkedLanguages).
+    if (track.ready === false && !recordedCourses[track.course]?.[track.lang]) continue;
     const recorded = recordedCourses[track.course]?.[track.lang];
     const where = `${track.lang}/${track.course}`;
     if (!recorded) problems.push(`${where}: no recordings at all.`);

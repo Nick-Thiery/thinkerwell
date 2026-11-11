@@ -1,0 +1,191 @@
+{
+  "title": "Khi AI làm sai",
+  "essentialQuestion": "Vì sao AI đôi khi hoạt động tốt với một số người và tệ với những người khác?",
+  "learningGoal": "Giải thích việc ai có mặt trong dữ liệu, và các nguyên nhân khác, có thể khiến một công cụ AI hoạt động kém hơn với một số nhóm người ra sao, và vì sao một khoảng cách trong kết quả cho thấy một vấn đề nhưng không cho thấy nguyên nhân của nó.",
+  "evidence": {
+    "label": "Ví dụ hư cấu, được tạo riêng cho bài học này.",
+    "question": "Công cụ làm sai nhiều nhất ở nhóm nào? Nhóm biết gì về cách công cụ đã học?",
+    "cards": [
+      {
+        "title": "Bài thử gõ bằng giọng nói ở Trung tâm học tập Riverbend",
+        "columns": [
+          "Ai đã đọc cùng 20 từ",
+          "Số từ được gõ đúng"
+        ],
+        "rows": [
+          [
+            "Giáo viên",
+            "19 trên 20"
+          ],
+          [
+            "Người học lớn hơn",
+            "16 trên 20"
+          ],
+          [
+            "Người học nhỏ tuổi nhất",
+            "9 trên 20"
+          ]
+        ]
+      },
+      {
+        "title": "Điều nhóm đã biết",
+        "items": [
+          "Công cụ đã học chủ yếu từ các bản ghi âm người lớn đọc to.",
+          "Mọi nhóm đều đọc cùng những từ, trong cùng một căn phòng yên tĩnh."
+        ]
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Một bài thử, ba nhóm",
+        "text": "Ở Trung tâm học tập Riverbend, một nhóm đã thử một công cụ gõ bằng giọng nói. Giáo viên, người học lớn hơn và người học nhỏ tuổi nhất, mỗi nhóm đọc cùng 20 từ. Công cụ chính xác với giáo viên, đúng 19 từ. Với những người học nhỏ tuổi nhất, nó chỉ đúng 9 từ. Khoảng cách này cho thấy công cụ hoạt động kém hơn với trẻ nhỏ. Nó không cho thấy vì sao. Vì vậy nhóm đã đi tìm nguyên nhân. Công cụ đã học chủ yếu từ các bản ghi âm của người lớn, nên giọng nói của trẻ em còn mới với nó. Các nhà nghiên cứu cũng đã thấy điều này ở các công cụ nhận dạng giọng nói thật. Trong một nghiên cứu năm 2024, một công cụ được dùng rộng rãi mắc lỗi với giọng nói của trẻ em nhiều gấp mấy lần so với giọng nói của người lớn. Các nhà nghiên cứu đưa ra hai lí do: có ít bản ghi âm của trẻ em hơn nhiều, và giọng nói của trẻ em thay đổi rất nhiều khi các em lớn lên.",
+        "simpler": "Ở Riverbend, một nhóm đã thử một công cụ gõ bằng giọng nói. Giáo viên và người học, mỗi nhóm đọc cùng 20 từ. Công cụ chính xác với giáo viên. Nó đúng 19 từ. Với những người học nhỏ tuổi nhất, nó chỉ đúng 9 từ. Khoảng cách này cho thấy một vấn đề với trẻ nhỏ. Nhưng nó không cho thấy lí do. Vì vậy nhóm đã đi tìm một lí do. Công cụ đã học chủ yếu từ giọng người lớn. Giọng của trẻ em còn mới với nó. Năm 2024, các nhà nghiên cứu thấy một công cụ thật mắc lỗi với trẻ em nhiều hơn nhiều. Có ít bản ghi âm của trẻ em hơn. Và giọng nói của trẻ em thay đổi khi các em lớn lên."
+      },
+      {
+        "heading": "Ai có mặt trong dữ liệu",
+        "text": "Khi một công cụ hoạt động tốt với một số nhóm người và tệ với những nhóm khác, chúng ta nói nó có thiên kiến. Một nguyên nhân là dữ liệu huấn luyện. Nó có đại diện cho tất cả những người sẽ dùng công cụ không? Một bộ sưu tập nổi tiếng với hơn một triệu bức ảnh đã được dùng để huấn luyện nhiều công cụ. Khoảng 45% số ảnh của nó được chụp ở Hoa Kỳ, và chỉ khoảng 2% ở Ấn Độ. Các nhà nghiên cứu thấy một công cụ được huấn luyện trên đó kém hơn trong việc gọi tên các vật trong ảnh từ Ấn Độ hoặc Pakistan, như một chú rể trong đám cưới. Không ai phải lên kế hoạch cho điều này thì kết quả mới không công bằng.",
+        "simpler": "Một số công cụ hoạt động tốt với một số người và tệ với những người khác. Điều này gọi là thiên kiến. Một nguyên nhân là dữ liệu huấn luyện. Dữ liệu có đại diện cho tất cả những người sẽ dùng công cụ không? Một bộ ảnh lớn đã huấn luyện nhiều công cụ. Gần một nửa số ảnh của nó đến từ Hoa Kỳ. Rất ít đến từ Ấn Độ. Một công cụ được huấn luyện trên đó làm kém hơn với các bức ảnh từ Ấn Độ hoặc Pakistan. Không ai phải lên kế hoạch cho điều này thì nó mới không công bằng."
+      },
+      {
+        "heading": "Cùng một khoảng cách có thể có những nguyên nhân khác nhau",
+        "text": "Hai nhà khoa học máy tính đã mô tả hai trường hợp bịa ra để giải thích điều này. Trong trường hợp thứ nhất, một công cụ của bệnh viện bỏ sót nhiều cơn đau tim ở phụ nữ hơn ở nam giới. Nhà nghiên cứu thêm nhiều hồ sơ của phụ nữ hơn, và công cụ tốt lên. Trong trường hợp thứ hai, một công cụ tuyển dụng nói phụ nữ ít phù hợp với công việc hơn. Nó đã học từ những đánh giá người lao động trong quá khứ của mọi người, và những đánh giá đó không công bằng với phụ nữ. Thêm nhiều dữ liệu cùng loại không giúp ích gì. Cả hai công cụ cho thấy cùng một kiểu khoảng cách, nhưng nguyên nhân khác nhau. Những nguyên nhân khác gồm mục tiêu của một công cụ, thiết kế của nó, hoặc việc dùng nó ở nơi nó không được làm ra cho. Vì vậy người ta thử một công cụ với nhiều nhóm, tìm nguyên nhân, và sửa nguyên nhân đó.",
+        "simpler": "Hai nhà khoa học bịa ra hai trường hợp để giải thích điều này. Trong trường hợp thứ nhất, một công cụ của bệnh viện bỏ sót nhiều cơn đau tim ở phụ nữ hơn. Họ thêm nhiều hồ sơ của phụ nữ hơn, và nó tốt lên. Trong trường hợp thứ hai, một công cụ tuyển dụng nói phụ nữ ít phù hợp hơn. Nó học từ những đánh giá trong quá khứ của mọi người, vốn không công bằng với phụ nữ. Thêm nhiều dữ liệu cùng loại không giúp ích gì. Cả hai công cụ đều có khoảng cách, nhưng nguyên nhân khác nhau. Một mục tiêu hay một thiết kế cũng có thể gây ra nó. Vì vậy người ta thử một công cụ với nhiều nhóm. Rồi họ tìm nguyên nhân và sửa nó."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "chính xác",
+        "definition": "Đúng, có ít hoặc không có lỗi.",
+        "example": "Công cụ giọng nói chính xác với giáo viên, nhưng không chính xác với người học nhỏ tuổi."
+      },
+      {
+        "word": "nhà nghiên cứu",
+        "definition": "Người có công việc là nghiên cứu một điều gì đó cẩn thận để tìm ra những sự thật mới.",
+        "example": "Các nhà nghiên cứu đã thử các công cụ giọng nói với giọng của trẻ em."
+      },
+      {
+        "word": "thiên kiến",
+        "definition": "Khi một công cụ hoạt động tốt hơn với một số nhóm so với những nhóm khác.",
+        "example": "Công cụ giọng nói có thiên kiến nghiêng về giọng người lớn."
+      },
+      {
+        "word": "dữ liệu huấn luyện",
+        "definition": "Các ví dụ dùng để xây dựng một công cụ AI, như bản ghi âm hoặc ảnh.",
+        "example": "Dữ liệu huấn luyện của công cụ giọng nói chủ yếu là người lớn đọc to."
+      },
+      {
+        "word": "đại diện",
+        "definition": "Có đủ ví dụ về một nhóm, để nhóm đó được thể hiện một cách công bằng.",
+        "example": "Các bức ảnh không đại diện tốt cho người dân ở Ấn Độ."
+      },
+      {
+        "word": "không công bằng",
+        "forms": [
+          "công bằng"
+        ],
+        "definition": "Không đối xử với mọi người theo cách đúng đắn hoặc bình đẳng.",
+        "example": "Công cụ tuyển dụng đã học từ những đánh giá không công bằng với phụ nữ."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Khoảng cách trong bài thử ở Riverbend cho thấy điều gì?",
+        "options": [
+          {
+            "text": "Những người học nhỏ tuổi nhất đã không đọc rõ các từ",
+            "feedback": "Chưa đúng lắm. Vấn đề nằm ở công cụ, không phải ở người học. Hãy đọc phần thứ nhất."
+          },
+          {
+            "text": "Công cụ hoạt động kém hơn với trẻ nhỏ, nhưng không cho biết vì sao",
+            "feedback": "Đúng rồi. Một khoảng cách cho thấy có điều gì đó không ổn. Nhóm vẫn phải tìm nguyên nhân."
+          },
+          {
+            "text": "Công cụ đã ngừng hoạt động với tất cả những ai dùng nó",
+            "feedback": "Chưa đúng lắm. Nó đã gõ đúng 19 trên 20 từ cho giáo viên. Hãy đọc phần thứ nhất."
+          }
+        ]
+      },
+      {
+        "question": "Trong trường hợp tuyển dụng bịa ra, vì sao thêm dữ liệu không giúp ích?",
+        "options": [
+          {
+            "text": "Công cụ đã học từ những đánh giá trong quá khứ vốn không công bằng",
+            "feedback": "Đúng rồi. Vấn đề nằm ở những đánh giá mà nó học từ đó, nên thêm dữ liệu cùng loại vẫn giữ nguyên vấn đề."
+          },
+          {
+            "text": "Nó hoàn toàn không có ví dụ nào về phụ nữ",
+            "feedback": "Chưa đúng lắm. Đó sẽ là một nguyên nhân mà thêm dữ liệu có thể sửa được. Hãy đọc phần thứ ba."
+          },
+          {
+            "text": "Các hồ sơ bệnh viện nó cần đã bị mất",
+            "feedback": "Chưa đúng lắm. Bệnh viện là trường hợp còn lại. Hãy đọc về công cụ tuyển dụng ở phần thứ ba."
+          }
+        ]
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Chọn công cụ giọng nói ở Riverbend hoặc công cụ ảnh. Nói xem nó hoạt động kém hơn với ai và một nguyên nhân có thể. Rồi nói mọi người có thể kiểm tra nguyên nhân đó bằng cách nào.",
+    "sentenceStarters": [
+      "Mình chọn ...",
+      "Nó hoạt động kém hơn với ...",
+      "Một nguyên nhân có thể là ...",
+      "Để kiểm tra, mọi người có thể ..."
+    ],
+    "example": "Mình chọn công cụ giọng nói ở Riverbend. Nó hoạt động kém hơn với những người học nhỏ tuổi nhất. Nó gõ đúng 9 trên 20 từ cho họ, và 19 cho giáo viên. Một nguyên nhân có thể là nó đã học chủ yếu từ giọng người lớn, nên giọng của trẻ em còn mới với nó. Để kiểm tra, mọi người có thể thêm các bản ghi âm của trẻ em, nếu các em và gia đình đồng ý, rồi thử công cụ lại. Nếu nó vẫn mắc nhiều lỗi, nguyên nhân có thể là điều khác."
+  },
+  "speak": {
+    "partnerTask": "Bạn học của bạn mô tả một công cụ mắc nhiều lỗi hơn với một nhóm người. Bạn đưa ra hai nguyên nhân có thể khác nhau. Rồi đổi vai.",
+    "independentTask": "Nói to thiên kiến nghĩa là gì. Rồi giải thích vì sao thêm dữ liệu giúp công cụ của bệnh viện nhưng không giúp công cụ tuyển dụng."
+  },
+  "watch": {
+    "why": "Trong chưa đầy ba phút, video giải thích dữ liệu huấn luyện bị thiếu hoặc một chiều có thể khiến AI hoạt động kém hơn với một số người như thế nào.",
+    "beforeQuestion": "Bạn nghĩ các ví dụ cho một công cụ AI đến từ đâu?",
+    "afterQuestion": "Hai câu hỏi nào bạn nên đặt ra về bất kì dữ liệu huấn luyện nào?",
+    "summary": "Video này giải thích vì sao dữ liệu huấn luyện quan trọng đến vậy. Một công cụ học máy chỉ tốt bằng dữ liệu mà nó học từ đó. Dữ liệu có thể đến từ nhiều nơi. Ví dụ, một trang video ghi lại những gì mọi người xem, đôi khi mà họ không biết. Rồi nó dùng dữ liệu đó để gợi ý thêm video. Trong chăm sóc sức khỏe, các chuyên gia gán nhãn cho hàng nghìn bức ảnh y tế, để một máy tính có thể học cách phát hiện bệnh. Nhưng có một vấn đề. Giả sử phần lớn các bức ảnh chụp X-quang đến từ nam giới. Khi đó công cụ có thể mắc nhiều lỗi hơn với phụ nữ. Con người có thể đưa thiên kiến của chính mình vào dữ liệu huấn luyện mà không cố ý. Vì vậy video đặt ra hai câu hỏi về bất kì dữ liệu huấn luyện nào. Có đủ dữ liệu không? Nó có bao gồm nhiều loại người và nhiều tình huống không?",
+    "keyPoints": [
+      "Một công cụ AI chỉ tốt bằng dữ liệu huấn luyện của nó.",
+      "Nếu một số người bị thiếu trong dữ liệu, công cụ có thể hoạt động kém hơn với họ.",
+      "Hãy hỏi: có đủ dữ liệu không, và nó có bao gồm nhiều loại người không?"
+    ],
+    "contentNote": "Video nhắc rằng các công ty thu thập dữ liệu về những gì mọi người xem, đôi khi mà họ không biết, và dùng một ví dụ y tế (ảnh X-quang chủ yếu từ nam giới). Hãy xem trước; người học có thể đọc bản tóm tắt viết thay thế."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Một điều bây giờ mình hiểu về thiên kiến trong AI là ..."
+      },
+      {
+        "text": "Một nhóm mình nghĩ nên giúp thử các công cụ AI là ... vì ..."
+      }
+    ],
+    "completionMessage": "Bạn đã hoàn thành Bài 8. Bạn đã biết việc ai có mặt trong dữ liệu, và các nguyên nhân khác, có thể khiến một công cụ hoạt động kém hơn với một số người như thế nào, và vì sao một khoảng cách cần được tìm nguyên nhân một cách cẩn thận."
+  },
+  "visual": {
+    "alt": "Một biểu đồ cột: công cụ gõ bằng giọng nói đúng 19 trên 20 từ với giáo viên, 16 với người học lớn hơn và 9 với người học nhỏ tuổi nhất. Dữ liệu huấn luyện của nó chủ yếu là giọng người lớn, một nguyên nhân có thể."
+  },
+  "sources": [
+    {
+      "label": "Attia và cộng sự (AIES 2024): Kid-Whisper, towards bridging the gap in speech recognition between children and adults"
+    },
+    {
+      "label": "Suresh và Guttag (EAAMO 2021): A framework for understanding sources of harm throughout the machine learning life cycle"
+    },
+    {
+      "label": "Code.org: Machine learning and bias (giáo án, kèm video của bài học)"
+    },
+    {
+      "label": "Experience AI (Raspberry Pi Foundation và Google DeepMind): Lesson 3, Bias in, bias out"
+    }
+  ],
+  "sensitiveNotes": [
+    "Một số người học có thể đã thấy các công cụ hoạt động tệ với ngôn ngữ hoặc giọng của chính họ. Hãy để họ nói nếu muốn, nhưng đừng bao giờ hỏi họ nói ngôn ngữ nào ở nhà, họ đến từ đâu hay về gia đình họ. Bài học chỉ làm việc với các công cụ hư cấu ở Riverbend.",
+    "Thiên kiến trong các công cụ thật có thể chạm đến chủng tộc, giới tính và các bản sắc khác (video của Bài 3 nhắc đến nhận diện khuôn mặt). Hãy giữ cuộc thảo luận ở việc dữ liệu huấn luyện gây ra nó như thế nào và cách sửa; đừng yêu cầu người học chia sẻ những lần họ bị đối xử không công bằng."
+  ],
+  "educatorNotes": [
+    "Bài thử ở Riverbend và các con số của nó (19, 16 và 9 trên 20) là bịa ra; phần bằng chứng cho người học biết công cụ đã học từ đâu, nên nguyên nhân được cho sẵn, không phải suy ra từ điểm số. Nghiên cứu thật: Kid-Whisper (Attia và cộng sự, AIES 2024) thấy các mô hình giọng nói Whisper, khi chưa được huấn luyện thêm, có tỉ lệ lỗi từ gấp 6 đến 10 lần của người lớn trên giọng nói trẻ em đọc theo kịch bản và gấp 3 đến 5 lần trên giọng nói trẻ em trò chuyện trong các bộ thử nghiệm nó dùng. Nó nêu hai nguyên nhân: các cơ sở dữ liệu giọng nói trẻ em còn hạn chế và khó thu thập, và giọng nói của trẻ em thay đổi theo sự phát triển. Huấn luyện trên giọng nói trẻ em làm giảm lỗi, và các tác giả liệt kê những thách thức còn lại. Ảnh: Suresh và Guttag (2021) báo cáo rằng khoảng 45% trong 1,2 triệu ảnh có gán nhãn của ImageNet được chụp ở Hoa Kỳ, 1% ở Trung Quốc và 2,1% ở Ấn Độ, và dẫn một nghiên cứu (Shankar và cộng sự) thấy rằng một bộ phân loại được huấn luyện trên đó làm kém hơn đáng kể với những ảnh như “bridegroom” (chú rể) từ các nước bị lấy mẫu ít như Pakistan hay Ấn Độ.",
+    "Việc thiếu ví dụ là một nguyên nhân của thiên kiến, không phải nguyên nhân duy nhất. Suresh và Guttag liệt kê bảy nguồn gây hại trong toàn bộ vòng đời học máy: lịch sử, đại diện, đo lường (cách chọn nhãn), tổng hợp, học (mục tiêu mà một mô hình được huấn luyện), đánh giá (cách nó được thử nghiệm) và triển khai (cách và nơi nó được dùng). Các ví dụ về cơn đau tim và tuyển dụng của họ là một “kịch bản đơn giản hóa” do họ bịa ra để cho thấy cùng một triệu chứng có thể có những nguyên nhân khác nhau: thêm dữ liệu của phụ nữ giúp ích cho trường hợp thứ nhất, nhưng không giúp trường hợp thứ hai, nơi các nhãn đến từ những đánh giá thiên lệch của con người. Bài học nói như vậy. Một khoảng cách trong kết quả cho thấy có điều gì đó không ổn, không cho thấy vì sao. Đừng nói với người học rằng thiên kiến luôn là một sự vô tình: bài học chỉ nói rằng một kết quả có thể không công bằng ngay cả khi không ai lên kế hoạch cho nó. Bài học này không còn lặp lại việc thử mô hình của Bài 3; mô hình nhận biết lá và công cụ dịch đã được bỏ ra. Hồ sơ nhận định nằm ở content/courses/digital-world/claims/DW08.md."
+  ]
+}

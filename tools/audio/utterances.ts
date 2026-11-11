@@ -102,15 +102,18 @@ function labelPrefix(course: CourseDefinition): string {
 }
 
 /**
- * A preview course's recorded languages: English, and each ready language
- * its lessons are translated into (content/courses/<id>/<code>/lessons).
+ * A preview course's recorded languages: English, and each language its lessons are translated into
+ * (content/courses/<id>/<code>/lessons). `ready` says whether learners can choose the language; a hidden
+ * preview (Vietnamese, until a native speaker has reviewed it) is listed so it can be recorded when asked for,
+ * and is checked only once it has recordings (./check.ts), like Our World's.
  */
-function courseLanguages(course: CourseDefinition, root: string): string[] {
+function courseLanguages(course: CourseDefinition, root: string): { lang: string; ready: boolean }[] {
   return [
-    'en',
-    ...LOCALES.filter((locale) => locale.code !== 'en' && !locale.pseudo && locale.ready && existsSync(path.join(root, 'content', course.dir, locale.code, 'lessons'))).map(
-      (locale) => locale.code,
-    ),
+    { lang: 'en', ready: true },
+    ...LOCALES.filter((locale) => locale.code !== 'en' && !locale.pseudo && existsSync(path.join(root, 'content', course.dir, locale.code, 'lessons'))).map((locale) => ({
+      lang: locale.code,
+      ready: locale.ready,
+    })),
   ];
 }
 
@@ -208,10 +211,10 @@ export interface CourseUtterances extends LanguageUtterances {
 export function courseUtterances(root = ROOT): CourseUtterances[] {
   return RECORDED_COURSES.flatMap((course) => {
     const english = englishLessons(root, course);
-    return courseLanguages(course, root).map((lang) => ({
+    return courseLanguages(course, root).map(({ lang, ready }) => ({
       course: course.id,
       lang,
-      ready: true,
+      ready,
       normaliser: NORMALISER_VERSION,
       sections: lessonSections(lang, lessonsIn(lang, english, root, course), course),
     }));

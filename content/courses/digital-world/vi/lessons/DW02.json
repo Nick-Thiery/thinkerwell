@@ -1,0 +1,237 @@
+{
+  "title": "Giấc mơ về những cỗ máy biết suy nghĩ",
+  "essentialQuestion": "Con người đã cố tạo ra những cỗ máy biết suy nghĩ như thế nào, và vì sao việc đó mất nhiều thời gian đến vậy?",
+  "learningGoal": "Mô tả AI đã phát triển từ thập niên 1950 đến thập niên 2010 như thế nào, và giải thích hi vọng, tiền bạc, máy tính và dữ liệu đã định hình nó ra sao.",
+  "warmUp": {
+    "question": "Bạn nghĩ con người bắt đầu nghiên cứu AI từ khi nào?",
+    "options": [
+      "Vào những năm 1950",
+      "Vào những năm 1990",
+      "Vào những năm 2020",
+      "Mình không chắc"
+    ]
+  },
+  "evidence": {
+    "question": "Những người viết bản đề xuất hi vọng làm được gì chỉ trong một mùa hè? Hãy dùng dòng thời gian: một số hi vọng ấy mất bao lâu?",
+    "cards": [
+      {
+        "title": "Một nguồn thật: bản đề xuất Dartmouth",
+        "sources": [
+          {
+            "caption": "Bản đề xuất cho Dự án nghiên cứu mùa hè Dartmouth về trí tuệ nhân tạo, viết ngày 31 tháng 8 năm 1955",
+            "details": [
+              "Ai viết: John McCarthy (Trường Đại học Dartmouth), Marvin Minsky (Đại học Harvard), Nathaniel Rochester (IBM) và Claude Shannon (Phòng thí nghiệm Bell Telephone). Cả bốn người đều làm việc ở Hoa Kỳ.",
+              "Bản đề xuất xin gì: 10 người cùng làm việc trong hai tháng tại Trường Đại học Dartmouth vào mùa hè năm 1956.",
+              "Họ hi vọng nghiên cứu gì: cách làm cho máy móc dùng ngôn ngữ, hình thành ý tưởng (“khái niệm trừu tượng và khái niệm”), giải những bài toán mà khi đó chỉ con người giải được, và tự cải thiện bản thân. Một chủ đề khác là “mạng nơ-ron”, một ý tưởng ban đầu về những cỗ máy biết học.",
+              "Họ mong đợi gì: rằng “một nhóm nhà khoa học được chọn lựa kĩ” làm việc cùng nhau trong một mùa hè có thể đạt được tiến bộ thật sự.",
+              "Ai trả tiền: Quỹ Rockefeller, một tổ chức từ thiện tư nhân ở Hoa Kỳ, cấp một khoản tài trợ 7.500 đô la, chủ yếu cho các nhà nghiên cứu ở trường đại học. IBM và Phòng thí nghiệm Bell tự trả cho các nhà nghiên cứu của họ.",
+              "Thông tin về tiền bạc đến từ đâu: một cuốn lịch sử năm 1999 của Hội đồng Nghiên cứu Quốc gia Hoa Kỳ. McCarthy sau này viết rằng quỹ đã cấp một nửa số tiền họ xin.",
+              "Đó là một kế hoạch, không phải một kết quả. Dự án mùa hè diễn ra vào năm 1956."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Một số sự kiện có thật trong lịch sử của AI",
+        "events": [
+          {
+            "year": "1950",
+            "text": "Alan Turing hỏi: “Máy móc có thể suy nghĩ không?”"
+          },
+          {
+            "year": "1955",
+            "text": "Bản đề xuất Dartmouth được viết."
+          },
+          {
+            "year": "1956",
+            "text": "Dự án mùa hè ở Dartmouth diễn ra."
+          },
+          {
+            "year": "1958",
+            "text": "Perceptron, một cỗ máy học từ các ví dụ, được trình diễn ở Hoa Kỳ."
+          },
+          {
+            "year": "1965",
+            "text": "Tại Đại học Stanford, một nhóm xây dựng DENDRAL, một hệ thống chuyên gia thời kì đầu. Nó dùng các quy tắc “nếu thì” từ các chuyên gia hóa học."
+          },
+          {
+            "year": "1973",
+            "text": "Một báo cáo của Anh chỉ trích nhiều nghiên cứu về AI. Kinh phí cho một phần trong đó bị giảm."
+          },
+          {
+            "year": "Thập niên 1980",
+            "text": "Các công ty và chính phủ, trong đó có chính phủ Nhật Bản, chi rất nhiều cho các hệ thống chuyên gia. Cuối thập niên 1980, thị trường của chúng sụt giảm."
+          },
+          {
+            "year": "1992",
+            "text": "Nhật Bản chấm dứt dự án máy tính Thế hệ thứ năm, sau khi chi hàng trăm triệu đô la."
+          },
+          {
+            "year": "1997",
+            "text": "Máy tính chơi cờ vua Deep Blue của IBM, có thể xét 200 triệu thế cờ mỗi giây, đánh bại nhà vô địch thế giới."
+          },
+          {
+            "year": "2009",
+            "text": "Các nhà nghiên cứu chia sẻ một bộ sưu tập hàng triệu bức ảnh có gán nhãn."
+          },
+          {
+            "year": "2012",
+            "text": "Một chương trình học gọi tên các vật trong ảnh tốt hơn nhiều so với trước."
+          }
+        ]
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Một kế hoạch cho một mùa hè",
+        "text": "Năm 1950, một nhà khoa học người Anh tên là Alan Turing hỏi: “Máy móc có thể suy nghĩ không?” Khi ấy, máy tính còn mới, khổng lồ và chậm, và rất ít nơi có một chiếc. Ngày 31 tháng 8 năm 1955, bốn nhà nghiên cứu ở Hoa Kỳ viết một bản đề xuất. Hai người làm việc ở một trường cao đẳng và một trường đại học, hai người làm việc ở các công ty lớn. Họ xin 10 người cùng nghiên cứu “trí tuệ nhân tạo” trong hai tháng. Họ hi vọng tìm ra cách để máy móc dùng ngôn ngữ, hình thành ý tưởng, giải quyết vấn đề và tự trở nên tốt hơn. Họ tin rằng một mùa hè có thể mang lại tiến bộ thật sự. Các nhà nghiên cứu xin tiền một tổ chức từ thiện tư nhân, Quỹ Rockefeller, và quỹ đã đồng ý. Dự án diễn ra tại Trường Đại học Dartmouth năm 1956. Nó không giải quyết được những vấn đề ấy. Nhưng cái tên trong bản đề xuất vẫn được dùng đến ngày nay.",
+        "simpler": "Năm 1950, một nhà khoa học người Anh, Alan Turing, hỏi: máy móc có thể suy nghĩ không? Máy tính khi ấy còn mới, khổng lồ và chậm. Năm 1955, bốn nhà nghiên cứu viết một kế hoạch. Bản đề xuất này xin 10 người làm việc trong hai tháng. Họ sẽ nghiên cứu “trí tuệ nhân tạo”. Máy móc có dùng được ngôn ngữ không? Chúng có giải được vấn đề và tự trở nên tốt hơn không? Nhóm hi vọng làm được nhiều việc trong một mùa hè. Một tổ chức từ thiện, Quỹ Rockefeller, trả tiền. Dự án diễn ra ở Trường Đại học Dartmouth năm 1956. Nó không giải quyết được những vấn đề này. Nhưng chúng ta vẫn dùng tên của nó."
+      },
+      {
+        "heading": "Những thời kì bùng nổ và mùa đông AI",
+        "text": "Sau năm 1956, các nhà nghiên cứu thử những ý tưởng khác nhau cùng một lúc. Một số người viết quy tắc cho máy tính làm theo. Những người khác chế tạo máy học từ các ví dụ, như perceptron, được Hải quân Hoa Kỳ trình diễn năm 1958. Phần lớn tiền đến từ các chính phủ. Ở Hoa Kỳ, một cơ quan quân sự trả tiền cho công việc về AI ở các trường đại học như MIT và Stanford. Một số nhà nghiên cứu hứa hẹn rất lớn, nhưng các vấn đề thật khó hơn dự kiến. Máy tính chậm, và có rất ít dữ liệu. Năm 1973, một báo cáo của Anh chỉ trích nhiều nghiên cứu về AI, và nước Anh sau đó cắt kinh phí cho một phần trong đó. Các hệ thống chuyên gia, được xây dựng từ những quy tắc do chuyên gia đưa ra, bắt đầu từ thập niên 1960. Vào thập niên 1980, các công ty và chính phủ, trong đó có chính phủ Nhật Bản, chi rất nhiều cho chúng. Chúng tốn nhiều tiền để duy trì, và thị trường của chúng sụt giảm vào cuối thập niên 1980. Những thời kì như thế, khi tiền bạc và sự quan tâm giảm đi, được gọi là mùa đông AI. Các nhà sử học vẫn tranh luận về thời điểm chính xác và nguyên nhân của chúng.",
+        "simpler": "Sau năm 1956, người ta thử nhiều ý tưởng cùng lúc. Một số người viết quy tắc cho máy tính. Những người khác chế tạo máy học từ các ví dụ. Các chính phủ cho phần lớn số tiền. Có người hứa hẹn rất lớn. Nhưng các vấn đề thật rất khó. Máy tính chậm. Không có nhiều dữ liệu. Năm 1973, một báo cáo của Anh nói nhiều công việc về AI còn yếu. Nước Anh sau đó cắt một phần kinh phí. Vào thập niên 1980, các công ty trả tiền cho các hệ thống chuyên gia. Chúng dùng các quy tắc từ chuyên gia. Chúng tốn nhiều tiền để duy trì. Thị trường của chúng sụt giảm vào cuối thập niên 1980. Những thời kì chậm lại này được gọi là mùa đông AI. Người ta vẫn tranh luận về thời điểm của chúng."
+      },
+      {
+        "heading": "Dữ liệu, chip và sự trở lại của việc học",
+        "text": "AI chỉ là một phần của một câu chuyện lớn hơn. Máy tính, internet và dữ liệu số mỗi thứ đều có lịch sử riêng. AI cần cả ba. Cũng có những thành công lớn. Năm 1997, một máy tính chơi cờ vua tên là Deep Blue đánh bại nhà vô địch thế giới, Garry Kasparov, dù nó chỉ biết chơi cờ vua. Học máy, một ý tưởng từ thập niên 1950, trở nên mạnh hơn nhiều sau năm 2010. Internet giúp các nhà nghiên cứu thu thập hàng triệu bức ảnh có gán nhãn, và các chip đồ họa làm cho công việc nhanh hơn. Năm 2012, một nhóm ở một trường đại học tạo ra một chương trình gọi tên các vật trong ảnh giỏi hơn nhiều. Các quy tắc không biến mất. Nhiều công cụ ngày nay trộn lẫn quy tắc và việc học. Ngày nay, các nhóm ở nhiều nơi xây dựng AI, kể cả ở Đông Nam Á.",
+        "simpler": "AI là một phần của một câu chuyện lớn hơn. Nó cần máy tính, internet và dữ liệu số. Cũng có những thắng lợi lớn. Năm 1997, một máy tính chơi cờ vua đánh bại nhà vô địch thế giới. Nhưng nó chỉ biết chơi cờ vua. Học máy là một ý tưởng cũ. Sau năm 2010, nó trở nên mạnh hơn nhiều. Internet cho hàng triệu bức ảnh có gán nhãn. Các chip mới làm cho công việc nhanh hơn. Năm 2012, một nhóm tạo ra một chương trình nhận ảnh tốt hơn nhiều. Các quy tắc không biến mất. Nhiều công cụ dùng cả hai. Nhiều nhóm hiện nay xây dựng AI, kể cả ở Đông Nam Á."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "nghiên cứu",
+        "definition": "Việc tìm hiểu cẩn thận để biết thêm những điều mới.",
+        "example": "Bốn nhà nghiên cứu đã viết bản đề xuất Dartmouth."
+      },
+      {
+        "word": "bản đề xuất",
+        "definition": "Một kế hoạch viết ra để xin điều gì đó, như thời gian hoặc tiền.",
+        "example": "Bản đề xuất Dartmouth được viết năm 1955, trước dự án năm 1956."
+      },
+      {
+        "word": "kinh phí",
+        "definition": "Tiền được cấp để chi trả cho một dự án hoặc cho việc nghiên cứu.",
+        "example": "Sau báo cáo năm 1973, nước Anh cắt kinh phí cho một phần nghiên cứu về AI."
+      },
+      {
+        "word": "hệ thống chuyên gia",
+        "definition": "Một chương trình máy tính được xây dựng từ những quy tắc do chuyên gia đưa ra.",
+        "example": "Vào thập niên 1980, các công ty trả tiền cho các hệ thống chuyên gia."
+      },
+      {
+        "word": "mùa đông AI",
+        "definition": "Một thời kì mà người ta không còn cho nhiều tiền hay sự quan tâm cho AI.",
+        "example": "Nhiều nhà sử học gọi giữa thập niên 1970 là một mùa đông AI."
+      },
+      {
+        "word": "học máy",
+        "definition": "Khi máy tính học các mẫu hình từ nhiều ví dụ, chứ không từ các bước cố định.",
+        "example": "Perceptron, được trình diễn năm 1958, là một dạng học máy thời kì đầu."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Mùa đông AI là gì?",
+        "options": [
+          {
+            "text": "Một thời kì máy tính chỉ chạy được khi trời lạnh",
+            "feedback": "Chưa đúng lắm. Ở đây, mùa đông có nghĩa là một thời kì chậm và vắng lặng. Hãy đọc lại phần thứ hai."
+          },
+          {
+            "text": "Một thời kì tiền bạc và sự quan tâm dành cho AI giảm đi",
+            "feedback": "Đúng rồi. Khi tiền bạc và sự quan tâm giảm đi, tiến bộ chậm lại. Các nhà sử học vẫn tranh luận về thời điểm chính xác."
+          },
+          {
+            "text": "Một thời kì máy tính học nhanh nhất",
+            "feedback": "Chưa đúng lắm. Trong một mùa đông AI, tiến bộ chậm lại. Hãy đọc lại phần thứ hai."
+          }
+        ]
+      },
+      {
+        "question": "Vì sao học máy trở nên mạnh hơn nhiều sau năm 2010?",
+        "options": [
+          {
+            "text": "Đó là một ý tưởng mới, lần đầu được thử vào năm 2010",
+            "feedback": "Chưa đúng lắm. Học máy là một ý tưởng cũ: perceptron đã học từ các ví dụ vào năm 1958. Hãy đọc lại phần thứ ba."
+          },
+          {
+            "text": "Mọi người thôi dùng quy tắc trong máy tính",
+            "feedback": "Chưa đúng lắm. Các quy tắc không biến mất. Nhiều công cụ trộn lẫn quy tắc và việc học. Hãy đọc lại phần thứ ba."
+          },
+          {
+            "text": "Có nhiều dữ liệu hơn nhiều, và các chip nhanh hơn",
+            "feedback": "Đúng rồi. Internet giúp mọi người thu thập hàng triệu bức ảnh có gán nhãn. Các chip mới làm cho công việc nhanh hơn."
+          }
+        ]
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Năm 1955, nhóm Dartmouth hi vọng làm được nhiều việc trong một mùa hè. Hãy giải thích vì sao AI mất nhiều thời gian hơn thế nhiều. Dùng những điều bài học nói về máy tính, dữ liệu, tiền bạc hoặc ý tưởng.",
+    "sentenceStarters": [
+      "Năm 1955, các nhà nghiên cứu hi vọng ...",
+      "Nó mất nhiều thời gian hơn vì ...",
+      "Sau đó, AI phát triển nhanh hơn khi ...",
+      "Mình nghĩ điều này cho thấy ..."
+    ],
+    "example": "Năm 1955, các nhà nghiên cứu hi vọng một nhóm nhỏ có thể làm được nhiều việc trong một mùa hè. Họ muốn máy móc dùng ngôn ngữ và giải quyết vấn đề. Nó mất nhiều thời gian hơn vì máy tính chậm và có rất ít dữ liệu. Một số lời hứa quá lớn, nên tiền bạc giảm đi trong các mùa đông AI. Sau đó, AI phát triển nhanh hơn. Internet cho hàng triệu bức ảnh có gán nhãn, và các chip mới làm cho công việc nhanh hơn. Mình nghĩ điều này cho thấy những ý tưởng hay cũng cần đúng loại máy tính, dữ liệu và tiền bạc."
+  },
+  "speak": {
+    "partnerTask": "Bạn học của bạn đóng vai một nhà nghiên cứu ở Dartmouth năm 1955. Hãy kể cho họ một điều xảy ra sau này mà họ không ngờ tới, và vì sao nó xảy ra. Rồi đổi vai.",
+    "independentTask": "Kể to câu chuyện của AI trong bốn câu: một kế hoạch, một mùa đông, sự trở lại và điều đã giúp nó."
+  },
+  "watch": {
+    "why": "Video giải thích cái tên AI đến từ đâu, vì sao những hi vọng ban đầu quá lớn, và vì sao dữ liệu cùng máy tính nhanh đã đưa AI trở lại.",
+    "beforeQuestion": "Bạn nghĩ vì sao phải mất nhiều thời gian đến vậy mới tạo ra được những cỗ máy có vẻ thông minh?",
+    "afterQuestion": "Hai thứ nào mà các nhà nghiên cứu AI thời kì đầu không có đủ?",
+    "summary": "Trong video này, một người dẫn chương trình tên Jabril và một rô-bốt tên John Green Bot nói về AI. AI đã là một phần của đời sống hằng ngày. Nó gợi ý video, hoàn thành từ khi bạn gõ, và giúp quyết định một số việc về tiền bạc và công việc. Mọi người có cả hi vọng lẫn nỗi lo về nó. Video gắn cái tên trí tuệ nhân tạo với một dự án mùa hè ở Trường Đại học Dartmouth năm 1956. Các nhà khoa học ở đó rất đầy hi vọng. Một số người nói máy móc sẽ sớm thông minh như con người. Nhưng họ không biết AI cần bao nhiêu dữ liệu và sức mạnh máy tính. Vì vậy trong một thời gian dài, tiến bộ rất chậm. Điều này được gọi là mùa đông AI. Rồi máy tính trở nên nhanh hơn nhiều, và internet tạo ra một lượng dữ liệu khổng lồ. Đó là một lí do lớn khiến AI phát triển nhanh như vậy.",
+    "keyPoints": [
+      "Cái tên trí tuệ nhân tạo đến từ dự án Dartmouth, được lên kế hoạch năm 1955 và tổ chức năm 1956.",
+      "Các nhà nghiên cứu thời kì đầu hứa hẹn rất lớn, nhưng họ không có đủ dữ liệu hay sức mạnh máy tính.",
+      "Máy tính nhanh hơn và rất nhiều dữ liệu từ internet đã giúp AI phát triển trở lại."
+    ],
+    "contentNote": "Khoảng 11 đến 12 phút (PBS ghi bản của họ là 11 phút 25 giây; phụ đề dài đến 11:42), nên durationSeconds được để là null. Tiêu đề và kênh đã được xác nhận bằng oEmbed của YouTube ngày 31 tháng 10 năm 2026. Bản tóm tắt được viết từ một bản phụ đề tiếng Anh của video (amara.org) và phần mô tả của PBS, không phải từ việc xem video. Video nói tiếng Anh nhanh, của người bản ngữ. Video nói AI bị “đóng băng” trong một mùa đông AI cho đến khoảng năm 2010, đơn giản hơn so với hai mùa đông trong bài học, có một thời kì bùng nổ ở giữa. Video có nhắc đến việc AI được dùng để quyết định các khoản vay, bảo hiểm và hồ sơ xin việc. Một người trong nhóm phải xem nó trước khi dùng; người học có thể đọc bản tóm tắt viết thay thế. Video xác định cái tên vào năm 1956; bản đề xuất dùng cái tên đó được viết ngày 31 tháng 8 năm 1955 (thẻ nguồn của bài học)."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Một điều làm mình ngạc nhiên về lịch sử của AI là ..."
+      },
+      {
+        "text": "Một lời hứa về một công cụ mới ngày nay mà mình muốn kiểm tra là ..."
+      }
+    ],
+    "completionMessage": "Bạn đã hoàn thành Bài 2. Bạn đã giải thích hi vọng, tiền bạc, máy tính và dữ liệu đã định hình lịch sử của AI như thế nào."
+  },
+  "visual": {
+    "alt": "Một dòng thời gian lượn sóng của AI từ năm 1950 đến 2015. Các ý tưởng dựa trên quy tắc và việc học từ các ví dụ chạy song song. Đường đi lên với câu hỏi của Turing năm 1950, bản đề xuất năm 1955 và dự án năm 1956, perceptron năm 1958, các hệ thống chuyên gia thập niên 1980, máy tính chơi cờ vua năm 1997 và các chương trình nhận ảnh tốt hơn năm 2012, và đi xuống trong các mùa đông AI giữa thập niên 1970 và cuối thập niên 1980."
+  },
+  "sources": [
+    {
+      "label": "McCarthy, Minsky, Rochester và Shannon, 31 tháng 8 năm 1955: A proposal for the Dartmouth Summer Research Project on Artificial Intelligence (văn bản do Đại học Stanford lưu trữ)"
+    },
+    {
+      "label": "US National Research Council (1999): Funding a Revolution, chương 9, Developments in artificial intelligence (khoản tài trợ của Rockefeller, DARPA và nghiên cứu ở các trường đại học)"
+    },
+    {
+      "label": "Computer History Museum: Timeline of AI and robotics (DENDRAL 1965, dự án Thế hệ thứ năm của Nhật Bản 1992, Deep Blue 1997)"
+    },
+    {
+      "label": "Thomas Haigh, Communications of the ACM 67(2), tháng 2 năm 2024: How the AI boom went bust (các hệ thống chuyên gia và mùa đông AI cuối thập niên 1980)"
+    },
+    {
+      "label": "Toosi và cộng sự (2021, được PET Clinics chấp nhận): A brief history of AI, how to prevent another winter (từ Turing 1950 đến AlexNet 2012)"
+    }
+  ],
+  "sensitiveNotes": [
+    "Cuộc đời của Turing ngoài bài báo này (công việc thời chiến của ông và cách ông bị đối xử sau đó) được kể trong phim và sách, và một số người học có thể biết. Bài học này không nhắc đến. Nếu chuyện này được nêu ra, hãy nói ngắn gọn và đúng sự thật, và đừng hỏi người học về đời tư của bất kì ai."
+  ],
+  "educatorNotes": [
+    "Dành cho giáo viên muốn biết thêm: từ thập niên 1960 đến thập niên 1990, DARPA, một cơ quan nghiên cứu quân sự của Hoa Kỳ, cấp phần lớn tiền của chính phủ Hoa Kỳ cho nghiên cứu về AI, tại MIT, Stanford, Carnegie Mellon và những nơi khác (National Research Council, 1999). Báo cáo Lighthill được nộp vào tháng 3 năm 1972 và công bố năm 1973; người ta thường nói nó gây ra mùa đông AI đầu tiên của nước Anh, nhưng Agar (BJHS, 2020; liên kết trong hồ sơ nhận định) cho thấy khi đó Hội đồng Nghiên cứu Khoa học tài trợ cho một số loại AI mà không tài trợ cho những loại khác. Haigh (2024) lập luận rằng mùa đông sâu hơn đến vào cuối thập niên 1980, sau một đợt bùng nổ hệ thống chuyên gia mà dự án Thế hệ thứ năm của Nhật Bản và Sáng kiến Điện toán Chiến lược của DARPA đã góp phần chi trả; Nhật Bản chấm dứt dự án của mình năm 1992 (Computer History Museum).",
+    "Bằng chứng là thật: bản đề xuất Dartmouth (ngày 31 tháng 8 năm 1955; khoản tài trợ 7.500 đô la của Rockefeller, và việc các nhà nghiên cứu trong ngành do công ty của họ trả tiền, đến từ cuốn lịch sử năm 1999 của National Research Council, không phải từ bản đề xuất) và một dòng thời gian có ghi ngày tháng. Hãy dạy những hi vọng của bản đề xuất, những con người và tổ chức đứng sau nó và ai trả tiền, không phải những cái tên và ngày tháng để học thuộc. Chính các chủ đề của nó đã đặt “mạng nơ-ron” (việc học) bên cạnh các chương trình làm theo quy tắc: các cách tiếp cận đã chồng lên nhau ngay từ đầu. Một chủ đề thảo luận có thể có: vì sao những kế hoạch tự tin có thể giúp các nhà nghiên cứu xin được tiền, và điều gì xảy ra khi kết quả đến chậm hơn?",
+    "Video khá dài (khoảng 11 đến 12 phút). Một lựa chọn ngắn hơn mà nhóm có thể cân nhắc là “The Turing test: Can a computer pass for a human?” của TED-Ed (youtube.com/watch?v=3wLqsRLvV-c, khoảng 4,5 phút, tiêu đề và kênh đã được xác nhận bằng oEmbed), chỉ nói về phép thử Turing và các chatbot thời kì đầu. Chưa có video nào được xem."
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "title": "Kiểm tra một nhận định trước khi chia sẻ",
+  "essentialQuestion": "Làm thế nào bạn biết một câu chuyện có đúng không trước khi chia sẻ nó?",
+  "learningGoal": "Dùng đọc ngang để kiểm tra một bản tin bịa đặt với các nguồn khác, giải thích vì sao các bản sao không thêm bằng chứng, và quyết định có chia sẻ nó hay không.",
+  "warmUp": {
+    "question": "Một người bạn gửi cho bạn một câu chuyện gây ngạc nhiên. Bạn làm gì trước tiên?",
+    "options": [
+      "Chia sẻ nó",
+      "Kiểm tra nó",
+      "Bỏ qua nó",
+      "Mình không chắc"
+    ]
+  },
+  "evidence": {
+    "label": "Ví dụ hư cấu, được tạo riêng cho bài học này.",
+    "question": "Bài đăng nói gì? Nó còn thiếu điều gì?",
+    "cards": [
+      {
+        "title": "Một bài đăng được chia sẻ ở Brightwater",
+        "cases": [
+          {
+            "name": "Brightwater Daily Truth",
+            "body": "“TIN LỚN. Cây cầu Brightwater đóng cửa CẢ MỘT NĂM từ ngày mai. Hãy chia sẻ trước khi họ xóa nó.” Không có tên ai, và không có liên kết đến hội đồng thị trấn."
+          }
+        ]
+      }
+    ]
+  },
+  "activity": {
+    "title": "Đọc ngang",
+    "instructions": "Đây là một bài đăng về cây cầu Brightwater. Trước khi quyết định, hãy mở lần lượt các nguồn khác, như một người kiểm chứng thông tin mở các trang mới. Rồi trả lời câu hỏi. Bạn có thể mở chúng theo thứ tự nào cũng được.",
+    "claim": {
+      "from": "Brightwater Daily Truth",
+      "text": "TIN LỚN. Cây cầu Brightwater đóng cửa CẢ MỘT NĂM từ ngày mai. Hãy chia sẻ trước khi họ xóa nó."
+    },
+    "askFirst": [
+      "Ai đứng sau nó?",
+      "Bằng chứng là gì?",
+      "Các nguồn khác nói gì?"
+    ],
+    "sources": [
+      {
+        "name": "Về Brightwater Daily Truth",
+        "who": "Trang không nói ai điều hành nó.",
+        "says": "Nó đăng một câu chuyện gây sốc mỗi ngày. Nhiều chuyện là sai."
+      },
+      {
+        "name": "Thông báo của hội đồng thị trấn",
+        "who": "Nhóm điều hành thị trấn và trông coi cây cầu.",
+        "says": "Cây cầu đóng cửa để sửa chữa vào ngày 3 và 4 tháng 5. Nó mở lại vào ngày 5 tháng 5."
+      },
+      {
+        "name": "Bản tin Brightwater Radio",
+        "who": "Một nhóm tin tức địa phương. Họ nêu tên các phóng viên.",
+        "says": "Hội đồng nói với chúng tôi: công nhân sẽ sửa cây cầu vào ngày 3 và 4 tháng 5. Hãy đi phà trong hai ngày đó."
+      },
+      {
+        "name": "Brightwater Fact Check",
+        "who": "Một nhóm kiểm tra những câu chuyện mọi người chia sẻ.",
+        "says": "Sai. Chúng tôi đã hỏi hội đồng thị trấn. Cây cầu đóng cửa hai ngày, không phải một năm."
+      },
+      {
+        "name": "Trang trò chuyện của thị trấn",
+        "who": "Một trang mà ai cũng có thể đăng bài.",
+        "says": "Cùng những từ như bài đăng của Daily Truth, sao chép từng chữ. Không có tên, không có liên kết."
+      }
+    ],
+    "question": {
+      "question": "Các nguồn khác nói gì về cây cầu?",
+      "options": [
+        {
+          "text": "Nó đóng cửa cả một năm",
+          "feedback": "Chưa đúng lắm. Chỉ bài đăng đầu tiên nói vậy, và trang trò chuyện chỉ sao chép nó. Hãy mở thông báo của hội đồng và xem nó nói gì."
+        },
+        {
+          "text": "Nó đóng cửa hai ngày, không phải một năm",
+          "feedback": "Đúng rồi. Hội đồng trông coi cây cầu, nên họ biết các ngày. Đài phát thanh và những người kiểm chứng thông tin đã hỏi hội đồng. Trang trò chuyện chỉ sao chép bài đăng."
+        },
+        {
+          "text": "Chưa ai biết",
+          "feedback": "Chưa đúng lắm. Hội đồng trông coi cây cầu, và họ đưa ra các ngày. Đài phát thanh và những người kiểm chứng thông tin đưa ra cùng các ngày."
+        }
+      ]
+    }
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "Hỏi ba câu trước khi chia sẻ",
+        "text": "Tin nhắn có thể lan truyền rất nhanh, và một câu chuyện gây sốc thường đi nhanh nhất. Ở Brightwater, một trang tên là Brightwater Daily Truth đã đăng rằng cây cầu của thị trấn sẽ đóng cửa cả một năm. Nó nói: “Hãy chia sẻ trước khi họ xóa nó.” Những lời như thế thúc giục người ta vội vàng, và vội vàng khiến dễ chia sẻ điều sai. Trước khi chia sẻ, hãy hỏi ba câu. Ai đứng sau thông tin? Bằng chứng là gì? Các nguồn khác nói gì? Bài đăng ở Brightwater không có tên ai, không có bằng chứng và không có liên kết đến hội đồng thị trấn, nơi trông coi cây cầu.",
+        "simpler": "Tin nhắn lan truyền nhanh. Những câu chuyện gây sốc lan nhanh nhất. Một trang ở Brightwater nói cây cầu sẽ đóng cửa một năm. Nó nói: “Hãy chia sẻ trước khi họ xóa nó.” Những lời như thế khiến bạn vội. Rồi bạn có thể chia sẻ điều sai. Trước tiên, hãy hỏi ba câu. Ai đứng sau nó? Bằng chứng là gì? Các nguồn khác nói gì? Bài đăng ở Brightwater không có tên ai và không có bằng chứng."
+      },
+      {
+        "heading": "Đọc ngang, như một người kiểm chứng thông tin",
+        "text": "Năm 2017, các nhà nghiên cứu ở Đại học Stanford tại Hoa Kỳ đã quan sát 45 người đánh giá các trang web thật về những vấn đề xã hội. Có 10 nhà sử học dạy ở các trường đại học, 10 người kiểm chứng thông tin chuyên nghiệp của các tổ chức báo chí và 25 sinh viên Stanford. Trong một nhiệm vụ, họ so sánh trang web của hai nhóm bác sĩ đưa ra lời khuyên về bắt nạt. Hầu hết các nhà sử học nghĩ cả hai trang đều đáng tin. Những người kiểm chứng thông tin nhanh chóng rời mỗi trang và mở các nguồn khác để tìm ra ai đứng sau nó. Cách này gọi là đọc ngang, nghĩa là đọc theo chiều ngang qua nhiều nguồn thay vì đọc xuống một trang. Những người kiểm chứng thông tin đạt được câu trả lời tốt hơn trong thời gian ngắn hơn nhiều. Các nhà nghiên cứu cố ý chọn một nhóm nhỏ, nên nghiên cứu cho thấy các chuyên gia này làm việc như thế nào, không phải mọi người đọc như thế nào.",
+        "simpler": "Năm 2017, các nhà nghiên cứu ở Đại học Stanford tại Hoa Kỳ đã quan sát 45 người kiểm tra các trang web thật. Có 10 nhà sử học dạy ở các trường đại học. Có 10 người kiểm chứng thông tin và 25 sinh viên. Trong một nhiệm vụ, họ xem trang web của hai nhóm bác sĩ về bắt nạt. Hầu hết các nhà sử học nghĩ cả hai trang đều tốt. Những người kiểm chứng thông tin rời mỗi trang rất nhanh. Họ mở các nguồn khác để tìm ra ai làm ra nó. Cách này gọi là đọc ngang. Nó nghĩa là đọc theo chiều ngang. Những người kiểm chứng thông tin có câu trả lời tốt hơn, nhanh hơn. Nhóm này nhỏ, nên nghiên cứu cho thấy các chuyên gia này làm việc như thế nào. Nó không cho thấy mọi người đọc như thế nào."
+      },
+      {
+        "heading": "Quyết định chia sẻ gì",
+        "text": "Sự đồng thuận chỉ giúp ích khi các nguồn có bằng chứng của riêng họ. Nhiều trang web có thể lặp lại cùng một nhận định vì tất cả đều sao chép một bài đăng, và mười bản sao vẫn chỉ là một nguồn. Hội đồng thị trấn trông coi cây cầu, nên họ biết các ngày: hai ngày sửa chữa, không phải cả một năm. Đài phát thanh và những người kiểm chứng thông tin đã hỏi hội đồng và nói giống vậy. Trang trò chuyện chỉ sao chép bài đăng đầu tiên từng chữ, nên nó không thêm bằng chứng nào. Vậy bài đăng đầu tiên là sai. Đừng chia sẻ nó; hãy chia sẻ thông báo của hội đồng thay vào đó. Đôi khi bạn không thể kiểm tra một nhận định, chẳng hạn khi không có internet. Khi đó hãy hỏi giáo viên hoặc chờ. Tin tức có thể thay đổi, nên hãy kiểm tra lại sau, chẳng hạn nếu việc sửa chữa kéo dài hơn.",
+        "simpler": "Các nguồn có đồng ý không? Điều đó chỉ giúp ích nếu họ có bằng chứng của riêng mình. Nhiều trang có thể sao chép một bài đăng. Mười bản sao vẫn là một nguồn. Hội đồng trông coi cây cầu. Họ nói hai ngày. Đài phát thanh và những người kiểm chứng thông tin đã hỏi hội đồng. Một trang trò chuyện đã sao chép bài đăng. Sao chép không thêm bằng chứng. Vậy bài đăng đầu tiên là sai. Đừng chia sẻ nó. Hãy chia sẻ thông báo của hội đồng. Đôi khi bạn không thể kiểm tra một nhận định, như khi không có internet. Hãy hỏi giáo viên, hoặc chờ. Tin tức có thể thay đổi. Vậy hãy kiểm tra lại sau."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "nhận định",
+        "definition": "Điều mà một người nói là đúng. Nó có thể đúng hoặc sai.",
+        "example": "“Cây cầu đóng cửa cả một năm” là một nhận định."
+      },
+      {
+        "word": "bằng chứng",
+        "definition": "Sự thật hoặc dấu vết cho thấy một điều có đúng hay không.",
+        "example": "Thông báo của hội đồng đưa ra các ngày sửa chữa. Đó là bằng chứng."
+      },
+      {
+        "word": "nguồn",
+        "definition": "Người hoặc nơi mà thông tin đến từ đó.",
+        "example": "Hội đồng là nguồn tốt nhất về cây cầu, vì họ trông coi nó."
+      },
+      {
+        "word": "người kiểm chứng thông tin",
+        "definition": "Một người có công việc là tìm ra các nhận định có đúng không.",
+        "example": "Những người kiểm chứng thông tin nói bài đăng về cây cầu là sai."
+      },
+      {
+        "word": "đọc ngang",
+        "definition": "Kiểm tra một trang bằng cách xem các nguồn khác nói gì về nó.",
+        "example": "Đọc ngang cho thấy cây cầu đóng cửa hai ngày."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Những người kiểm chứng thông tin đã làm điều gì khác?",
+        "options": [
+          {
+            "text": "Đọc chậm từng chữ trên trang",
+            "feedback": "Chưa đúng lắm. Đó là điều hầu hết các nhà sử học và sinh viên đã làm. Hãy đọc lại phần thứ hai."
+          },
+          {
+            "text": "Mở các nguồn khác để kiểm tra",
+            "feedback": "Đúng rồi. Họ rời trang và đọc theo chiều ngang qua các nguồn khác. Đây là đọc ngang."
+          },
+          {
+            "text": "Xem kĩ các bức ảnh",
+            "feedback": "Chưa đúng lắm. Một trang sai vẫn có thể có ảnh đẹp. Hãy đọc về điều những người kiểm chứng thông tin đã làm."
+          }
+        ]
+      },
+      {
+        "question": "Hai trang nói cây cầu đóng cửa một năm, nhưng một trang sao chép trang kia. Điều đó có làm nó dễ đúng hơn không?",
+        "options": [
+          {
+            "text": "Không, vì sao chép không thêm bằng chứng",
+            "feedback": "Đúng rồi. Sự đồng thuận chỉ giúp ích khi mỗi nguồn có bằng chứng của riêng nó, như hội đồng."
+          },
+          {
+            "text": "Có, vì hai trang khác nhau nói vậy",
+            "feedback": "Chưa đúng lắm. Trang trò chuyện chỉ sao chép bài đăng, nên nó không thêm bằng chứng nào. Hãy đọc phần thứ ba."
+          },
+          {
+            "text": "Có, vì nó được chia sẻ nhiều",
+            "feedback": "Chưa đúng lắm. Được chia sẻ không làm một nhận định thành đúng. Hãy đọc phần thứ ba."
+          }
+        ]
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Bạn của bạn muốn chia sẻ bài đăng về cây cầu Brightwater. Hãy viết cho họ một tin nhắn ngắn. Dùng những gì bạn tìm thấy khi mở các nguồn khác.",
+    "sentenceStarters": [
+      "Mình đã kiểm tra bài đăng, và ...",
+      "Nguồn tốt nhất là ___ vì ...",
+      "Trang trò chuyện không tính vì ...",
+      "Thay vào đó, bạn có thể chia sẻ ..."
+    ],
+    "example": "Mình đã kiểm tra bài đăng, và nó không đúng. Nó không có tên ai và không có liên kết đến hội đồng. Nguồn tốt nhất là hội đồng thị trấn vì họ trông coi cây cầu. Thông báo của họ nói cây cầu đóng cửa vào ngày 3 và 4 tháng 5 để sửa chữa, không phải một năm. Đài phát thanh và những người kiểm chứng thông tin đã hỏi hội đồng và nói giống vậy. Trang trò chuyện không tính vì nó chỉ sao chép bài đăng đầu tiên. Thay vào đó, bạn có thể chia sẻ thông báo của hội đồng, để mọi người biết đi phà trong hai ngày đó."
+  },
+  "speak": {
+    "partnerTask": "Bạn học của bạn đóng vai người bạn và nói: “Nhưng trang trò chuyện cũng nói một năm mà.” Hãy giải thích vì sao đó không phải là thêm bằng chứng. Rồi đổi vai: bạn học của bạn giải thích vì sao hội đồng là nguồn tốt nhất.",
+    "independentTask": "Nói to đọc ngang nghĩa là gì. Rồi nói một điều mà những người kiểm chứng thông tin trong nghiên cứu ở Stanford đã làm mà bạn cũng có thể làm."
+  },
+  "watch": {
+    "why": "Nó đến từ nhóm đã nghiên cứu những người kiểm chứng thông tin trong bài học này. Nó giải thích đọc ngang.",
+    "beforeQuestion": "Bạn quyết định một trang web có đáng tin không bằng cách nào?",
+    "afterQuestion": "Đọc theo chiều ngang khác với đọc xuống một trang như thế nào?",
+    "summary": "Video ngắn này giải thích đọc ngang. Đó là một cách kiểm tra thông tin mà những người kiểm chứng thông tin chuyên nghiệp dùng. Nhiều người kiểm tra một trang web bằng cách đọc xuống trang. Họ xem nó trông như thế nào và nó tự nói gì về mình. Nhưng một trang có thể trông nghiêm túc mà vẫn đưa thông tin sai hoặc thiên lệch. Những người kiểm chứng thông tin làm khác. Sau một cái nhìn nhanh, họ rời trang. Họ mở các trang mới và tìm xem các nguồn khác nói gì về nó và về ai đứng sau nó. Bằng cách đọc ít hơn trên trang và đọc nhiều hơn về nó, họ học được nhiều hơn, và học nhanh hơn. Bạn có thể làm điều tương tự. Trước khi tin một trang, hãy tìm xem ai đã làm ra nó và người khác nói gì về nó.",
+    "keyPoints": [
+      "Một trang có thể đánh lừa bạn, ngay cả khi nó trông nghiêm túc.",
+      "Những người kiểm chứng thông tin rời trang và đọc xem các nguồn khác nói gì về nó.",
+      "Hãy tìm xem ai đứng sau thông tin trước khi tin nó."
+    ],
+    "contentNote": "Tiếng Anh Mỹ nói nhanh, làm cho học sinh trung học. Video cho thấy việc tìm kiếm trên mạng, điều mà người học trên một thiết bị ngoại tuyến không thể làm; các thẻ nguồn của hoạt động thay cho các trang mới. Bản tóm tắt được viết từ mô tả của chính Digital Inquiry Group và nghiên cứu mà nó dựa trên, không phải từ việc xem video, và độ dài chưa được xác nhận. Hãy xem trước; người học có thể đọc bản tóm tắt viết thay thế."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Trước khi chia sẻ một câu chuyện, mình sẽ hỏi ..."
+      },
+      {
+        "text": "Một loại nguồn mình sẽ tin là ... vì ..."
+      }
+    ],
+    "completionMessage": "Bạn đã hoàn thành Bài 14. Bạn đã đọc ngang để kiểm tra một câu chuyện trước khi chia sẻ nó."
+  },
+  "visual": {
+    "alt": "Đọc xuống một trang so với đọc theo chiều ngang: hội đồng, nơi trông coi cây cầu, nói nó đóng cửa hai ngày; đài phát thanh và những người kiểm chứng thông tin đã hỏi hội đồng; một trang trò chuyện chỉ sao chép bài đăng sai."
+  },
+  "sources": [
+    {
+      "label": "Digital Inquiry Group: Civic Online Reasoning (ba câu hỏi)"
+    },
+    {
+      "label": "Wineburg và McGrew (2017): Lateral reading, reading less and learning more when evaluating digital information, Stanford History Education Group working paper 2017-A1 (bản do Hendrix College lưu trữ; đọc ngang, đọc ít hơn và học nhiều hơn khi đánh giá thông tin số)"
+    },
+    {
+      "label": "Stanford Digital Repository: Wineburg và McGrew, Lateral reading and the nature of expertise (bản của Teachers College Record; đọc ngang và bản chất của chuyên môn)"
+    },
+    {
+      "label": "Digital Inquiry Group: Lateral reading video (video đọc ngang)"
+    },
+    {
+      "label": "Liputan6 Cek Fakta (2026): Mafindo về cách kiểm tra tin giả (tiếng Indonesia)"
+    }
+  ],
+  "sensitiveNotes": [
+    "Chỉ dùng những câu chuyện vô hại, bịa ra. Đừng dùng tin đồn thật về các chủ đề nhạy cảm như thủ tục pháp lí, viện trợ, tái định cư hay dịch vụ chính thức, vì có thể quá gần với hoàn cảnh của người học. Nếu một người học nêu ra, đừng tranh luận chi tiết; hãy chỉ họ đến tổ chức chính thức điều hành dịch vụ đó."
+  ],
+  "educatorNotes": [
+    "Bài này dựa trên Bài 23 của Our World (Điều gì làm thông tin đáng tin?), dạy về nguồn, ngày và bối cảnh. Bài này thêm đọc ngang, và việc sự đồng thuận chỉ tính khi các nguồn có bằng chứng của riêng họ: đài phát thanh và những người kiểm chứng thông tin đều đã hỏi hội đồng, còn trang trò chuyện chỉ sao chép bài đăng. Nếu một lớp dùng cả hai khóa học, hãy bắt đầu bằng việc nhắc lại các cách kiểm tra của Bài 23.",
+    "Nghiên cứu ở phần 2 là của Wineburg và McGrew (Stanford History Education Group working paper, 2017; một bản rút gọn trong Teachers College Record, 2018–19). 45 người tham gia, được chọn có chủ ý thay vì ngẫu nhiên, gồm 10 nhà sử học có bằng tiến sĩ dạy ở các trường đại học ở California và Washington, 10 người kiểm chứng thông tin chuyên nghiệp ở các tổ chức tin tức và kiểm chứng thông tin và 25 sinh viên đại học Stanford. Họ đánh giá các trang web trực tiếp và tìm kiếm trên mạng về các vấn đề xã hội và chính trị: ví dụ, American Academy of Pediatrics và American College of Pediatricians nhỏ hơn nhiều về bắt nạt (hầu hết các nhà sử học nghĩ cả hai đáng tin; hầu hết sinh viên đánh giá trang thứ hai đáng tin hơn), và ai đã trả tiền cho một vụ kiện về chế độ biên chế giáo viên. Các tác giả ghi chú các mẫu nhỏ và các nhiệm vụ có giới hạn thời gian. Nhóm này trở thành Digital Inquiry Group độc lập vào tháng 1 năm 2024.",
+    "Đọc ngang thường cần internet. Trên một thiết bị ngoại tuyến, các thẻ nguồn của hoạt động thay cho các trang mới, và bản in liệt kê chúng để làm việc trên giấy; giáo viên cũng có thể đóng vai “các nguồn khác”. Phần bằng chứng chỉ cho thấy bài đăng, nên người học gặp các nguồn khác trong hoạt động. Viết và Nói dùng những gì người học tìm thấy ở đó thay vì lặp lại việc kiểm tra. Ở Indonesia, Mafindo khuyến nghị các trang kiểm chứng thông tin như TurnBackHoax và CekFakta (Liputan6, 2026)."
+  ]
+}

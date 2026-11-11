@@ -1,0 +1,177 @@
+{
+  "title": "Kiểm tra ảnh, video và giọng nói",
+  "essentialQuestion": "Bạn có thể kiểm tra một bức ảnh, video hay giọng nói như thế nào trước khi tin nó?",
+  "learningGoal": "Giải thích AI có thể tạo ra hình ảnh, video và giọng nói giống thật như thế nào, phân biệt một tác phẩm sáng tạo có ghi nhãn với đồ giả, và kiểm tra nguồn trước khi tin hoặc chia sẻ.",
+  "evidence": {
+    "label": "Ví dụ hư cấu, được tạo riêng cho bài học này.",
+    "question": "Ai đã đăng từng bài? Nguồn cho bạn biết điều gì? Bài nào nói rõ ràng rằng AI đã tạo ra nó?",
+    "cards": [
+      {
+        "title": "Các bài đăng trong nhóm tin tức Greenhill",
+        "cases": [
+          {
+            "name": "Bài A: một quả bí ngô khổng lồ",
+            "body": "Một bức ảnh quả bí ngô to bằng chiếc xe hơi, được đăng bởi một trang không có tên. Trang của nông trại Greenhill nói năm nay họ không trồng quả bí ngô khổng lồ nào. Bàn tay của người nông dân trong ảnh trông hơi lạ."
+          },
+          {
+            "name": "Bài B: một con dê biết nói",
+            "body": "Một video con dê nói “Chào buổi sáng” bằng những từ rõ ràng. Câu lạc bộ hài Greenhill đã đăng nó. Chú thích ghi: “Làm bằng AI, chỉ để cho vui.”"
+          },
+          {
+            "name": "Bài C: một tin nhắn thoại",
+            "body": "Một tin nhắn thoại nghe giống huấn luyện viên Ana. Nó nói: “Trận bóng đá chuyển sang sáu giờ sáng.” Nó đến từ một số điện thoại không ai biết. Bảng thông báo ở trung tâm vẫn ghi bốn giờ chiều."
+          },
+          {
+            "name": "Bài D: một người bán trái cây",
+            "body": "Một bức ảnh người bán trái cây. Da của bà trông rất mịn, và nền thì mờ. Câu lạc bộ ảnh Greenhill đã đăng nó cùng tên người chụp, và nói nó được chụp bằng điện thoại vào buổi tối."
+          }
+        ]
+      }
+    ]
+  },
+  "read": {
+    "sections": [
+      {
+        "heading": "AI có thể tạo ra hình ảnh, video và giọng nói",
+        "text": "Một số công cụ AI có thể tạo ra hình ảnh, video và giọng nói mới. Những công cụ này đã học từ vô số ví dụ thật, nên những gì chúng tạo ra có thể trông và nghe giống thật. Nhiều người dùng những công cụ này một cách công khai và sáng tạo. Nghệ sĩ làm tranh, nhà làm phim thêm hiệu ứng và giáo viên làm bài học, và họ nói rằng AI đã giúp. Ở Greenhill, câu lạc bộ hài đã đăng một con dê biết nói với nhãn “Làm bằng AI, chỉ để cho vui”, nên đó không phải là một mánh khóe. Đồ giả thì khác: nó giả vờ cho thấy một điều có thật nhưng chưa từng xảy ra. Deepfake là đồ giả sao chép khuôn mặt hoặc giọng nói của một người thật, thường để lừa người ta lấy tiền hoặc sự chú ý. Nhãn cũng có thể bị mất. Nếu ai đó chia sẻ video con dê mà không có nhãn của nó, như thể nó là thật, nó có thể đánh lừa mọi người.",
+        "simpler": "Một số công cụ AI tạo ra hình ảnh, video và giọng nói mới. Chúng đã học từ nhiều ví dụ thật. Nên những thứ mới trông giống thật. Nhiều người dùng những công cụ này công khai. Nghệ sĩ, nhà làm phim và giáo viên nói khi AI đã giúp. Ở Greenhill, câu lạc bộ hài đã đăng một con dê biết nói. Nhãn của nó ghi AI làm ra, chỉ để cho vui. Đó không phải là mánh khóe. Đồ giả thì khác. Nó cho thấy một điều chưa từng xảy ra, như thể nó là thật. Deepfake sao chép khuôn mặt hoặc giọng nói của một người thật để lừa người ta. Nhãn cũng có thể bị mất. Khi bị chia sẻ mà không có nhãn, video con dê có thể đánh lừa mọi người."
+      },
+      {
+        "heading": "Chi tiết lạ là manh mối, không phải bằng chứng",
+        "text": "Hình ảnh AI đôi khi có những lỗi nhỏ, chẳng hạn một ngón tay thừa, chữ lộn xộn trên một tấm biển hay phần nền tan vào bức tường. Trong video, miệng có thể không cử động khớp với lời nói. Những chi tiết này có thể là manh mối, nhưng không phải bằng chứng. Các công cụ mới hơn mắc ít lỗi hơn, nên một món đồ giả có thể trông hoàn hảo. Ảnh thật cũng có thể trông lạ, chẳng hạn khi chúng bị mờ hoặc chụp trong ánh sáng yếu. Trong một nghiên cứu năm 2025 của các nhà nghiên cứu ở Hoa Kỳ, hơn 50.000 người đã đánh giá ảnh thật và hình ảnh AI trên mạng. Họ gọi nhầm khoảng một trong bốn bức ảnh thật là do AI làm, và họ cũng bỏ sót khoảng một trong bốn hình ảnh AI. Ảnh người bán trái cây có làn da rất mịn, nhưng câu lạc bộ ảnh nói ai đã chụp nó, bằng điện thoại.",
+        "simpler": "Hình ảnh AI đôi khi có lỗi, như sáu ngón tay hay chữ lộn xộn. Đây là manh mối. Nhưng manh mối không phải bằng chứng. Các công cụ mới mắc ít lỗi hơn. Ảnh thật cũng có thể trông lạ, khi chúng tối hoặc không nét. Trong một nghiên cứu năm 2025, hơn 50.000 người xem các hình ảnh trên mạng. Một số là thật, và một số là do AI. Người ta gọi nhầm khoảng một trong bốn ảnh thật là do AI làm. Họ cũng bỏ sót khoảng một trong bốn hình ảnh AI. Người bán trái cây có làn da rất mịn. Nhưng câu lạc bộ ảnh nói một chiếc điện thoại đã chụp nó."
+      },
+      {
+        "heading": "Kiểm tra nguồn",
+        "text": "Vì vậy cách kiểm tra hữu ích nhất là nguồn. Ai đã đăng nó, và khi nào? Bạn có thể tìm ra nó đầu tiên đến từ đâu không, và người làm ra nó có nói nó được làm như thế nào không? Những nguồn đáng tin khác có cho thấy cùng một điều không? Hãy chắc rằng họ không chỉ sao chép cùng một bài đăng, vì mười bản sao vẫn chỉ là một nguồn. Các nhóm kiểm chứng thông tin làm việc này với những hình ảnh lan truyền rộng. Ở Greenhill, trang của chính nông trại nói họ không trồng quả bí ngô khổng lồ nào, và một trang không có tên đã đăng bức ảnh. Vậy bức ảnh đó có lẽ là đồ giả. Với một tin nhắn thoại, hãy liên lạc với người đó bằng cách khác. Tin nhắn của huấn luyện viên Ana đến từ một số lạ, nên hãy hỏi trực tiếp cô ấy. Nếu bạn vẫn không biết chắc, hãy nói vậy, và đừng chia sẻ nó vội.",
+        "simpler": "Vậy hãy kiểm tra nguồn. Ai đã đăng nó? Khi nào? Ban đầu nó đến từ đâu? Những người bạn tin có cho thấy cùng một điều không? Hãy kiểm tra xem họ có chỉ sao chép một bài đăng không. Nông trại nói họ không trồng quả bí ngô khổng lồ nào. Một trang không có tên đã đăng bức ảnh. Vậy nó có lẽ là đồ giả. Tin nhắn của huấn luyện viên Ana đến từ một số không ai biết. Vậy hãy hỏi trực tiếp cô ấy. Không chắc? Hãy nói vậy, và đừng chia sẻ nó vội."
+      }
+    ],
+    "glossary": [
+      {
+        "word": "giống thật",
+        "definition": "Trông hoặc nghe như thứ thật.",
+        "example": "Video con dê trông giống thật, nhưng nhãn của nó ghi AI đã làm ra."
+      },
+      {
+        "word": "đồ giả",
+        "definition": "Được làm ra để trông như thật, nhưng nó không phải thật.",
+        "example": "Bức ảnh quả bí ngô có lẽ là đồ giả."
+      },
+      {
+        "word": "deepfake",
+        "definition": "Một hình ảnh, video hoặc giọng nói giả sao chép một người thật, được làm bằng AI.",
+        "example": "Một deepfake giọng nói của huấn luyện viên Ana có thể đánh lừa đội bóng."
+      },
+      {
+        "word": "manh mối",
+        "definition": "Một dấu hiệu nhỏ giúp bạn tìm ra điều gì đó.",
+        "example": "Một ngón tay thừa là manh mối để kiểm tra một bức ảnh. Nó không phải bằng chứng."
+      },
+      {
+        "word": "nguồn",
+        "definition": "Người hoặc nơi mà thông tin đến từ đó.",
+        "example": "Trang của chính nông trại là một nguồn tốt về những quả bí ngô của họ."
+      }
+    ],
+    "checks": [
+      {
+        "question": "Lí do mạnh nhất để nghi ngờ bức ảnh quả bí ngô khổng lồ là gì?",
+        "options": [
+          {
+            "text": "Bàn tay của người nông dân trong ảnh trông hơi lạ",
+            "feedback": "Chưa đúng lắm. Một bàn tay lạ là lí do để kiểm tra, không phải bằng chứng. Ảnh thật cũng có thể trông lạ. Hãy đọc phần thứ hai."
+          },
+          {
+            "text": "Nông trại nói họ không trồng quả bí ngô khổng lồ nào",
+            "feedback": "Đúng rồi. Nông trại là nguồn tốt nhất về những quả bí ngô của chính họ, và trang đã đăng bức ảnh không có tên."
+          },
+          {
+            "text": "Quả bí ngô có màu cam rất sáng",
+            "feedback": "Chưa đúng lắm. Bí ngô thật cũng có màu cam. Hãy đọc về việc kiểm tra nguồn ở phần thứ ba."
+          }
+        ]
+      },
+      {
+        "question": "Video con dê của câu lạc bộ hài ghi “Làm bằng AI, chỉ để cho vui”. Nó có phải là đồ giả không?",
+        "options": [
+          {
+            "text": "Có, vì AI đã làm ra nó",
+            "feedback": "Chưa đúng lắm. AI đã làm ra nó, nhưng câu lạc bộ nói rõ điều đó. Đồ giả thì giả vờ là thật. Hãy đọc phần thứ nhất."
+          },
+          {
+            "text": "Có, vì dê không biết nói",
+            "feedback": "Chưa đúng lắm. Không ai định để người ta tin nó. Đó là một trò đùa có ghi nhãn. Hãy đọc phần thứ nhất."
+          },
+          {
+            "text": "Không, vì nó ghi rằng AI đã làm ra nó",
+            "feedback": "Đúng rồi. Một tác phẩm sáng tạo có ghi nhãn không phải là mánh khóe. Nó có thể đánh lừa mọi người nếu ai đó chia sẻ nó mà không có nhãn."
+          }
+        ]
+      }
+    ]
+  },
+  "write": {
+    "prompt": "Giải thích một video AI có ghi nhãn khác với đồ giả như thế nào. Hãy dùng các bài đăng ở Greenhill. Rồi nói bạn sẽ kiểm tra một bức ảnh gây ngạc nhiên như thế nào trước khi chia sẻ nó.",
+    "sentenceStarters": [
+      "Video con dê không phải là đồ giả vì ...",
+      "Đồ giả thì khác vì ...",
+      "Trước khi chia sẻ một bức ảnh gây ngạc nhiên, mình sẽ kiểm tra ..."
+    ],
+    "example": "Video con dê không phải là đồ giả vì câu lạc bộ hài nói rõ ràng rằng AI đã làm ra nó, chỉ để cho vui. Không ai định để người ta tin một con dê có thể nói. Đồ giả thì khác vì nó giả vờ cho thấy một điều có thật. Bức ảnh quả bí ngô khổng lồ đến từ một trang không có tên, và nông trại nói họ không trồng quả bí ngô khổng lồ nào. Trước khi chia sẻ một bức ảnh gây ngạc nhiên, mình sẽ kiểm tra ai đã đăng nó và ban đầu nó đến từ đâu. Mình cũng sẽ tìm những nguồn đáng tin cho thấy cùng một điều."
+  },
+  "speak": {
+    "partnerTask": "Bạn học của bạn đóng vai một người trong đội đã nhận tin nhắn thoại của huấn luyện viên Ana và muốn nói với mọi người. Hãy giải thích cách kiểm tra nó trước. Rồi đổi vai: bạn học của bạn giải thích vì sao video con dê không phải là đồ giả.",
+    "independentTask": "Nói to vì sao một chi tiết lạ trong bức ảnh là manh mối, không phải bằng chứng. Rồi nói hai cách tốt hơn để kiểm tra nó đến từ đâu."
+  },
+  "watch": {
+    "why": "Nó được làm cùng các bạn thiếu niên kiểm chứng thông tin, và cho thấy các manh mối trong hình ảnh, video và giọng nói do AI tạo ra.",
+    "beforeQuestion": "Bạn nghĩ một video giả có thể làm sai điều gì?",
+    "afterQuestion": "Vì sao chỉ tin một công cụ nói điều gì đó là giả thì chưa đủ?",
+    "summary": "Video này nằm trong một loạt phim làm cùng một nhóm thiếu niên kiểm chứng thông tin. Nó giải thích rằng có người dùng AI để làm ra hình ảnh, video và âm thanh giả. Họ thường làm vậy để kiếm tiền, sự chú ý hoặc quyền lực. Video chỉ ra những manh mối cần tìm. Hình ảnh AI có thể có bàn tay lạ, bóng đổ kì quặc và nền kì lạ. Trong video AI, hãy tìm những đường viền bị mờ hoặc nhấp nháy. Hãy kiểm tra bóng đổ, và xem môi có cử động khớp với lời nói không. Với giọng nói AI, hãy nghe giọng điệu và các âm thanh ở nền. Video cũng giới thiệu những công cụ có thể giúp, như tìm kiếm cho biết một bức ảnh còn xuất hiện ở đâu khác trên mạng. Nhưng những công cụ này không phải lúc nào cũng đúng. Một con người vẫn cần suy nghĩ và kiểm tra trước khi chia sẻ.",
+    "keyPoints": [
+      "Đồ giả do AI làm có thể có manh mối: bàn tay, bóng đổ, phần nền, đường viền hay môi lạ.",
+      "Với một giọng nói, hãy nghe giọng điệu và âm thanh ở nền.",
+      "Các công cụ phát hiện đồ giả không phải lúc nào cũng đúng, nên một con người vẫn cần kiểm tra."
+    ],
+    "contentNote": "Tiếng Anh Mỹ nói nhanh với các ví dụ thật về nội dung do AI tạo ra. Video nhắc đến những công cụ cần internet (tìm kiếm ảnh ngược và ứng dụng phát hiện AI); trên một thiết bị ngoại tuyến, người học có thể hỏi giáo viên. Bản tóm tắt được viết từ giáo án của PBS NewsHour Classroom cho video này, không phải từ việc xem nó. Video dạy các manh mối bằng hình ảnh; bài học coi chúng là lí do để kiểm tra, không bao giờ là bằng chứng. Hãy xem trước; người học có thể đọc bản tóm tắt viết thay thế."
+  },
+  "reflect": {
+    "prompts": [
+      {
+        "text": "Trước khi chia sẻ một bài đăng gây ngạc nhiên, mình sẽ ..."
+      },
+      {
+        "text": "Một điều về hình ảnh do AI tạo ra làm mình ngạc nhiên là ..."
+      }
+    ],
+    "completionMessage": "Bạn đã hoàn thành Bài 13. Bạn đã phân biệt tác phẩm AI có ghi nhãn với đồ giả, và kiểm tra nguồn, vì chi tiết lạ là manh mối, không phải bằng chứng."
+  },
+  "visual": {
+    "alt": "Bài đăng quả bí ngô khổng lồ bên cạnh một tấm thẻ nói hãy kiểm tra nguồn: ai đã đăng, khi nào, ban đầu nó đến từ đâu, và những người khác có cho thấy cùng một điều không. Một ghi chú nói một chi tiết lạ là lí do để kiểm tra, không phải bằng chứng."
+  },
+  "sources": [
+    {
+      "label": "Kamali, Nakamura, Kumar, Chatzimparmpas, Hullman và Groh (2025): Characterizing photorealism and artifacts in diffusion model-generated images, CHI '25"
+    },
+    {
+      "label": "News Literacy Project (10 tháng 3 năm 2026): Scroll smarter, AI frustrations"
+    },
+    {
+      "label": "PBS NewsHour Classroom: Lesson plan, AI Unlocked, how to recognize AI-generated content (giáo án: cách nhận biết nội dung do AI tạo ra; 2025)"
+    },
+    {
+      "label": "US Federal Trade Commission: Family emergency scams (Ủy ban Thương mại Liên bang Hoa Kỳ: lừa đảo khẩn cấp gia đình; nhân bản giọng nói)"
+    },
+    {
+      "label": "Liputan6 Cek Fakta (2026): Mafindo on hoaxes and AI-based hoaxes (tiếng Indonesia)"
+    }
+  ],
+  "sensitiveNotes": [
+    "Deepfake được dùng để làm hại người thật: những bức ảnh giả làm ai đó xấu hổ, video giả về các nhà lãnh đạo, và giọng nói bị nhân bản trong các vụ lừa đảo (ví dụ một cuộc gọi nghe như người thân xin tiền; xem nguồn của FTC). Bài học cố ý giữ các ví dụ ngớ ngẩn. Đừng cho xem deepfake thật về người thật trong lớp. Nếu một người học nói có đồ giả được làm về họ hoặc về người họ quen, đừng bàn chi tiết trong lớp; hãy theo quy trình bảo vệ của chính đơn vị đối tác."
+  ],
+  "educatorNotes": [
+    "Hãy dạy kiểm tra trước: ai đã đăng, khi nào, ban đầu nó đến từ đâu, người làm ra có nói nó được làm như thế nào không, các nguồn đáng tin khác có cho thấy cùng một điều không (và không phải tất cả chỉ sao chép một bài đăng), và với một giọng nói, liên lạc với người đó bằng cách khác. Các lỗi hình ảnh (ngón tay thừa, chữ lộn xộn, làn da mịn) là lí do để kiểm tra, không bao giờ là bằng chứng: các công cụ mới hơn mắc ít lỗi đó hơn, và ảnh thật cũng có thể có chi tiết lạ. Nghiên cứu ở phần 2 là của Kamali và cộng sự (CHI '25, Đại học Northwestern): hơn 50.000 người tham gia trực tuyến đã đánh giá 450 hình ảnh do AI tạo và 149 hình ảnh thật; họ gọi ảnh chụp thật là thật trong 74% các lần quan sát và hình ảnh do AI tạo là do AI tạo trong 76%, nên khoảng một trong bốn bị đánh giá sai ở mỗi chiều. Đó là một nghiên cứu trực tuyến với bộ hình ảnh của chính các tác giả, không phải một tỉ lệ chung. Hãy chấp nhận “chưa biết chắc” như một câu trả lời mạnh. Trên giấy, hãy đọc to bốn bài đăng ở Greenhill và bàn xem mỗi nguồn cho bạn biết điều gì; không có bài tập phân loại.",
+    "Tác phẩm AI có ghi nhãn (nghệ thuật, hiệu ứng phim, bài học, một trò đùa được ghi rõ “Làm bằng AI”) không giống đồ giả giả vờ là thật hoặc sao chép một người thật. Nhãn có thể bị mất khi một bức ảnh được đăng lại (News Literacy Project, 2026), nên một bài đăng có nhãn có thể trở nên gây hiểu lầm khi được chia sẻ mà không có nó. Ở Indonesia, TurnBackHoax và CekFakta của Mafindo kiểm tra các hình ảnh và video lan truyền, và Mafindo nói tin giả dựa trên AI ngày càng khó phân biệt (Liputan6, 2026). Một giáo viên có internet có thể cho xem một ví dụ đã được kiểm tra; người học không cần lên mạng."
+  ]
+}
