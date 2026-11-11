@@ -262,7 +262,7 @@ describe('videos:apply', () => {
 describe('videos:report', () => {
   it('lists every lesson as English until a video is approved', () => {
     const report = videoReport(root);
-    expect(report.map((r) => r.language)).toEqual(['id', 'ms']);
+    expect(report.map((r) => r.language)).toEqual(['id', 'ms', 'vi']);
     for (const language of report) {
       expect(language.lessons.map((l) => l.source)).toEqual(['english', 'english', 'english']);
       expect(language.problems).toEqual([]);

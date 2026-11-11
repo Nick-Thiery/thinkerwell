@@ -67,6 +67,8 @@ function optionValue(voice: Pick<SpeechSynthesisVoice, 'name' | 'voiceURI'>): st
 const NO_VOICE: Readonly<Record<string, { recorded: MessageKey; none: MessageKey }>> = {
   id: { recorded: 'pages.settings.listenVoice.noVoiceIndonesianRecorded', none: 'pages.settings.listenVoice.noVoiceIndonesian' },
   ms: { recorded: 'pages.settings.listenVoice.noVoiceMalayRecorded', none: 'pages.settings.listenVoice.noVoiceMalay' },
+  // Vietnamese has no recordings, so only the first sentence is ever shown.
+  vi: { recorded: 'pages.settings.listenVoice.noVoiceVietnamese', none: 'pages.settings.listenVoice.noVoiceVietnamese' },
 };
 
 export function ListenVoiceSetting({ deviceSettings }: { deviceSettings: DeviceSettingsState }) {

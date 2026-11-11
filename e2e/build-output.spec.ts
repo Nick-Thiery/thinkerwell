@@ -92,8 +92,16 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * Raised to 873 kB on 11 November 2026, by 1 kB, for no new content: main measured 871.97 kB, 28 bytes under 872 kB, and the
  * Vietnamese branch 872.10 kB. A file-by-file comparison shows no file added and none of Vietnamese's in the list; 14 chunks
  * differ by -14 to +64 bytes each, which is the hashes in chunk names changing and Brotli compressing them differently.
+ *
+ * Raised to 1,275 kB on 11 November 2026 (+401 kB, 873.0 to 1,274 kB) because Vietnamese is offered (ready: true), and an
+ * offered language is kept for offline use like Indonesian and Malay: its messages, lessons and section checks (a 99 kB chunk),
+ * its 23 translated lesson pictures (45 kB), the three other courses' titles and credits in the build records (9 kB) and
+ * Be Vietnam Pro, 15 font files (237 kB, woff2 which can't be compressed further). The language itself costs what Indonesian
+ * and Malay each cost (about 140 kB); the font is the rest. None of it reaches a first visit (the test below). The way to
+ * take it off every other device is to cache Vietnamese at run time when it is first chosen: not done, it needs worker code
+ * (docs/notes/slow-internet.md, "Vietnamese").
  */
-const PRECACHE_BUDGET = 873_000;
+const PRECACHE_BUDGET = 1_275_000;
 /**
  * Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before),
  * 210.5 kB after the language and pilot-day merges, 212.7 kB with the header's language switch and the one language
@@ -223,21 +231,16 @@ const SOUTHEAST_ASIA = ['Southeast Asia Through Time is new. A historian', 'SAT0
 // Art, Architecture and Society, the third: the same rule.
 const ART_ARCHITECTURE = ['Art, Architecture and Society is new. An art historian', 'AAS-01-A'];
 
-// Vietnamese is a hidden preview language (ready: false, docs/notes/languages.md):
-// its messages, lessons and pictures are built into assets/locales/vi/, its font
-// into assets/fonts-vietnamese/, and none of it is precached or fetched by an
-// English visit. (Its few words in app code, like the quick-check verdicts and
-// the Listen sample, are not markers here.)
-const VIETNAMESE = ['Khám phá thế giới của chúng ta', 'Hai phút về lý do chúng mình', 'Ví dụ hư cấu', 'Be Vietnam Pro', 'be-vietnam-pro'];
+// Vietnamese is offered since 11 November 2026 (ready: true, docs/notes/languages.md), like Indonesian and Malay: its
+// messages, lessons and pictures are built into assets/locales/vi/ and its font into assets/fonts-vietnamese/, and
+// they are precached for a device that uses it, but an English visit does not fetch them. (Its few words in app code,
+// like the quick-check verdicts and the Listen sample, are not markers here.)
+const VIETNAMESE = ['Khám phá thế giới của chúng ta', 'Hai phút về lý do chúng mình', 'Ví dụ hư cấu', 'be-vietnam-pro'];  // (the Credits line naming the font is in en.json)
 
-test('no Vietnamese preview content is precached or reaches a first visit', { tag: '@own-size' }, async ({ page, request, baseURL }) => {
+test('no Vietnamese content or font reaches a first visit in English, and it is precached for those who use it', { tag: '@own-size' }, async ({ page, request, baseURL }) => {
   const urls = await precacheList(request);
-  expect(urls.filter((url) => url.includes('/locales/vi/') || url.includes('/fonts-vietnamese/'))).toEqual([]);
-  for (const url of urls.filter((u) => TEXT.test(u))) {
-    const text = (await sentSize(request, url)).body.toString('utf8');
-    for (const marker of VIETNAMESE) expect(text.includes(marker), `${url} has "${marker}"`).toBe(false);
-  }
-
+  expect(urls.some((url) => url.includes('/locales/vi/'))).toBe(true);
+  expect(urls.some((url) => url.includes('/fonts-vietnamese/'))).toBe(true);
   const origin = new URL(baseURL ?? 'http://localhost').origin;
   const firstVisit = new Set<string>();
   page.on('request', (r) => {
@@ -249,6 +252,11 @@ test('no Vietnamese preview content is precached or reaches a first visit', { ta
     await page.waitForLoadState('networkidle');
   }
   expect([...firstVisit].filter((url) => url.includes('/locales/vi/') || url.includes('/fonts-vietnamese/'))).toEqual([]);
+  // Nor does any code or words of a first visit hold a Vietnamese title (the Educators pages' chunk does, for the guides).
+  for (const url of [...firstVisit].filter((u) => TEXT.test(u))) {
+    const text = (await sentSize(request, url)).body.toString('utf8');
+    for (const marker of VIETNAMESE) expect(text.includes(marker), `${url} has "${marker}"`).toBe(false);
+  }
 });
 
 test('no preview course content or code is precached or reaches a first visit', { tag: '@own-size' }, async ({ page, request, baseURL }) => {

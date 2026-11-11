@@ -151,10 +151,10 @@ describe('the Vietnamese font (Be Vietnam Pro)', () => {
     expect(arabic).not.toMatch(/be-vietnam-pro|Be Vietnam Pro/i);
   });
 
-  it('is the font of every language with the vietnamese key, which is not offered yet', () => {
+  it('is the font of every language with the vietnamese key, which is offered', () => {
     const wanting = LOCALES.filter((locale) => locale.font === 'vietnamese');
     expect(wanting.map((locale) => locale.code)).toEqual(['vi']);
-    expect(wanting.every((locale) => !locale.ready)).toBe(true);
+    expect(wanting.every((locale) => locale.ready)).toBe(true);
   });
 });
 

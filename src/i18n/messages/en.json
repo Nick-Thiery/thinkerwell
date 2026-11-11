@@ -272,7 +272,7 @@
         "privacyNote": "Your work stays on this device.",
         "languageLabel": "Your language",
         "languageSummary": "Change language",
-        "languageHelper": "Buttons and instructions show in this language. In Indonesian and Malay, the lessons do too. In other languages they stay in English, so you can practise it.",
+        "languageHelper": "Buttons and instructions show in this language. In Indonesian, Malay and Vietnamese, the lessons do too. In other languages they stay in English, so you can practise it.",
         "privacyNotePilot": "Your writing and recordings stay on this device. If you use a learner code for a study, Thinkerwell also counts how you use it. It never gets your name.",
         "thenChoose": "Then choose a course from your home page."
       },
@@ -308,7 +308,7 @@
         "noJournalYet": "Nothing saved yet. Your writing and reflections show up here once you start.",
         "latestEntry": "{stage} · {course}",
         "languageTitle": "Your language",
-        "languageHelp": "Buttons and instructions show in this language. In Indonesian and Malay, the lessons do too. In other languages they stay in English, so you can practise it.",
+        "languageHelp": "Buttons and instructions show in this language. In Indonesian, Malay and Vietnamese, the lessons do too. In other languages they stay in English, so you can practise it.",
         "languageSaveFailed": "That didn't save. Try again.",
         "progressTitle": "Your progress",
         "progressCount": {
@@ -508,7 +508,7 @@
       "intro": "Thinkerwell offers free social studies courses and educator resources for youth across Southeast Asia. Use them with a group on shared devices or in print. Explore the courses and teaching materials, or get in touch about using Thinkerwell in your learning space.",
       "honesty": "Thinkerwell is a student-led platform. It is not a registered charity or nonprofit.",
       "whatTitle": "What Thinkerwell offers",
-      "whatBody": "Four courses for learners aged about 10 to 17. Exploring Our World: {ourWorld} lessons about history, geography, culture and civic life. Digital World: {digitalWorld} lessons about AI and the digital world. Southeast Asia Through Time: {southeastAsia} lessons about the region's past, from real objects, maps and letters. Art, Architecture and Society: {art} lessons about works and buildings from around the world. Most lessons have five steps: read, write, speak, watch and reflect (four where a lesson has no video, as every lesson does in Bahasa Indonesia and Bahasa Melayu). It runs in a web browser on shared laptops and tablets, in English, Bahasa Indonesia or Bahasa Melayu. Lessons work offline once a course is saved on the device; the optional videos need the internet.",
+      "whatBody": "Four courses for learners aged about 10 to 17. Exploring Our World: {ourWorld} lessons about history, geography, culture and civic life. Digital World: {digitalWorld} lessons about AI and the digital world. Southeast Asia Through Time: {southeastAsia} lessons about the region's past, from real objects, maps and letters. Art, Architecture and Society: {art} lessons about works and buildings from around the world. Most lessons have five steps: read, write, speak, watch and reflect (four where a lesson has no video, as every lesson does in Bahasa Indonesia, Bahasa Melayu and Tiếng Việt). It runs in a web browser on shared laptops and tablets, in English, Bahasa Indonesia, Bahasa Melayu or Tiếng Việt. Lessons work offline once a course is saved on the device; the optional videos need the internet.",
       "getTitle": "What you get",
       "get1": "All four courses, free. No accounts, no ads, and nothing locked.",
       "get2": "A teacher guide for every lesson, answer keys for the section checks, and every lesson ready to print.",
@@ -677,7 +677,7 @@
       "planSkip": "Skip",
       "planShorter": "Only 30 minutes? Use the 30 min column: skip Watch or read instead, and take a little time off the other steps. Learners can open Watch later, because nothing is locked.",
       "planShorterNoWatch": "Only 30 minutes? Use the 30 min column: take a little time off each step.",
-      "planOtherLanguages": "In Bahasa Indonesia and Bahasa Melayu, a lesson has no Watch step unless it has a video in that language. Open this guide in that language to see its plan.",
+      "planOtherLanguages": "In Bahasa Indonesia, Bahasa Melayu and Tiếng Việt, a lesson has no Watch step unless it has a video in that language. Open this guide in that language to see its plan.",
       "planSteps": {
         "warmUp": "Warm-up",
         "read": "Read in parts",
@@ -911,8 +911,8 @@
         "title": "Language",
         "label": "Language on this device",
         "labelLearner": "Language for {name}",
-        "help": "Everything shows in this language at once: buttons, instructions and, in Indonesian and Malay, the lessons too. It is kept for this device, for the first page and anyone who hasn't chosen who's learning.",
-        "helpLearner": "Everything shows in this language at once: buttons, instructions and, in Indonesian and Malay, the lessons too. It is kept for {name}, and changes back when someone else is chosen."
+        "help": "Everything shows in this language at once: buttons, instructions and, in Indonesian, Malay and Vietnamese, the lessons too. It is kept for this device, for the first page and anyone who hasn't chosen who's learning.",
+        "helpLearner": "Everything shows in this language at once: buttons, instructions and, in Indonesian, Malay and Vietnamese, the lessons too. It is kept for {name}, and changes back when someone else is chosen."
       },
       "offline": {
         "title": "Offline and data",
@@ -940,7 +940,8 @@
         "voiceFor": {
           "en": "Voice for English lessons",
           "id": "Voice for Indonesian lessons",
-          "ms": "Voice for Malay lessons"
+          "ms": "Voice for Malay lessons",
+          "vi": "Voice for Vietnamese lessons"
         },
         "recordedWith": "Listen plays recordings made with {voice}.",
         "deviceVoice": "Device voice, when there's no recording",
@@ -955,26 +956,27 @@
         "noVoiceIndonesian": "This device has no Indonesian voice yet, so Listen can't read Indonesian lessons. The steps below add one.",
         "noVoiceIndonesianRecorded": "This device has no Indonesian voice. Listen still plays the recordings, but can't read a part whose recording isn't on this device while there's no internet. The steps below add a voice.",
         "noVoiceMalay": "This device has no Malay voice yet, so Listen can't read Malay lessons. The steps below add one.",
+        "noVoiceVietnamese": "This device has no Vietnamese voice yet, so Listen can't read Vietnamese lessons. The steps below add one.",
         "noVoiceMalayRecorded": "This device has no Malay voice. Listen still plays the recordings, but can't read a part whose recording isn't on this device while there's no internet. The steps below add a voice.",
         "better": {
           "title": "Get a clearer voice",
           "intro": "Most devices can download better voices for free. Voices can be large, so use good Wi-Fi. Then open this page again and choose the new voice.",
           "apple": {
             "name": "iPad or iPhone",
-            "steps": "Open Settings, then Accessibility, then Spoken Content (called Read & Speak on newer versions), then Voices. Choose English, Indonesian or Malay, then a voice marked Enhanced or Premium, and download it.",
+            "steps": "Open Settings, then Accessibility, then Spoken Content (called Read & Speak on newer versions), then Voices. Choose English, Indonesian, Malay or Vietnamese, then a voice marked Enhanced or Premium, and download it.",
             "note": "Safari doesn't let websites use every voice you download. If the new voice isn't in the list above, keep the one you have."
           },
           "android": {
             "name": "Android tablet or phone",
-            "steps": "Open Settings and search for text-to-speech. Next to Preferred engine, tap the settings button, then Install voice data. Choose English, Indonesian or Malay, then download a voice."
+            "steps": "Open Settings and search for text-to-speech. Next to Preferred engine, tap the settings button, then Install voice data. Choose English, Indonesian, Malay or Vietnamese, then download a voice."
           },
           "windows": {
             "name": "Windows laptop",
-            "steps": "Open Settings, then Time & language, then Speech. Next to Manage voices, choose Add voices, then English (United Kingdom), Indonesian or Malay. You may need an administrator account. Then close the browser and open it again."
+            "steps": "Open Settings, then Time & language, then Speech. Next to Manage voices, choose Add voices, then English (United Kingdom), Indonesian, Malay or Vietnamese. You may need an administrator account. Then close the browser and open it again."
           },
           "chromebook": {
             "name": "Chromebook",
-            "steps": "Open Settings, then Accessibility, then Text-to-Speech, then Text-to-Speech voice settings. Install the voices for English, Indonesian or Malay."
+            "steps": "Open Settings, then Accessibility, then Text-to-Speech, then Text-to-Speech voice settings. Install the voices for English, Indonesian, Malay or Vietnamese."
           }
         }
       },
@@ -1157,6 +1159,7 @@
       "fontAtkinson": "Atkinson Hyperlegible Next, by the Atkinson Hyperlegible Next Project Authors (most text)",
       "fontEczar": "Eczar, by the Eczar Project Authors (the Thinkerwell name)",
       "fontVazirmatn": "Vazirmatn, by the Vazirmatn Project Authors (Arabic letters, only when a language written in them is shown)",
+      "fontBeVietnam": "Be Vietnam Pro, by the Be Vietnam Pro Project Authors (Vietnamese letters, only while Vietnamese is shown)",
       "fontsLicenceLink": "Read the SIL Open Font License",
       "softwareTitle": "Software",
       "softwareBody": "The site is built with these free, open-source tools:",
@@ -1168,6 +1171,7 @@
       "voiceMalay": "Bahasa Melayu lessons: {model} by Meta, part of Massively Multilingual Speech, under the {licence}. This licence allows only non-commercial use. Thinkerwell is free, and uses it only that way.",
       "translationTitle": "Translation",
       "translationBody": "The Bahasa Indonesia version was first drafted with the help of AI. Native speakers are checking it.",
+      "translationBodyVietnamese": "The Tiếng Việt version was drafted with the help of AI too, from the English, and checked by AI by translating it back into English. It is waiting for native speakers to check it.",
       "translationBodyMalay": "The Bahasa Melayu version was drafted with the help of AI too, from the English, and checked by translating it back into English. It is waiting for native speakers to check it.",
       "coursesContents": "By course",
       "pictureFirst": "First picture",

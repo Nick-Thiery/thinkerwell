@@ -267,7 +267,7 @@
         "privacyNote": "Hasil kerja kamu kekal pada peranti ini.",
         "languageLabel": "Bahasa kamu",
         "languageSummary": "Tukar bahasa",
-        "languageHelper": "Butang dan arahan dipaparkan dalam bahasa ini. Dalam bahasa Indonesia dan bahasa Melayu, pelajaran juga begitu. Dalam bahasa lain, pelajaran kekal dalam bahasa Inggeris, supaya kamu boleh berlatih bahasa Inggeris.",
+        "languageHelper": "Butang dan arahan dipaparkan dalam bahasa ini. Dalam bahasa Indonesia, bahasa Melayu dan bahasa Vietnam, pelajaran juga begitu. Dalam bahasa lain, pelajaran kekal dalam bahasa Inggeris, supaya kamu boleh berlatih bahasa Inggeris.",
         "privacyNotePilot": "Tulisan dan rakaman kamu kekal pada peranti ini. Jika kamu menggunakan kod pelajar untuk kajian, Thinkerwell juga mengira cara kamu menggunakannya. Thinkerwell tidak sekali-kali mendapat nama kamu.",
         "thenChoose": "Selepas itu, pilih kursus daripada halaman utama kamu."
       },
@@ -303,7 +303,7 @@
         "noJournalYet": "Belum ada apa-apa yang disimpan. Tulisan dan refleksi kamu akan dipaparkan di sini sebaik sahaja kamu bermula.",
         "latestEntry": "{stage} · {course}",
         "languageTitle": "Bahasa kamu",
-        "languageHelp": "Butang dan arahan dipaparkan dalam bahasa ini. Dalam bahasa Indonesia dan bahasa Melayu, pelajaran juga begitu. Dalam bahasa lain, pelajaran kekal dalam bahasa Inggeris, supaya kamu boleh berlatih bahasa Inggeris.",
+        "languageHelp": "Butang dan arahan dipaparkan dalam bahasa ini. Dalam bahasa Indonesia, bahasa Melayu dan bahasa Vietnam, pelajaran juga begitu. Dalam bahasa lain, pelajaran kekal dalam bahasa Inggeris, supaya kamu boleh berlatih bahasa Inggeris.",
         "languageSaveFailed": "Tidak berjaya disimpan. Cuba lagi.",
         "progressTitle": "Kemajuan kamu",
         "progressCount": {
@@ -500,7 +500,7 @@
       "intro": "Thinkerwell menawarkan kursus kajian sosial percuma dan sumber untuk pendidik, bagi belia di seluruh Asia Tenggara. Gunakannya bersama kumpulan pada peranti yang dikongsi atau dalam bentuk cetakan. Terokai kursus dan bahan pengajaran, atau hubungi kami tentang penggunaan Thinkerwell di tempat pembelajaran anda.",
       "honesty": "Thinkerwell ialah platform yang diterajui pelajar. Ia bukan badan amal atau pertubuhan bukan berasaskan keuntungan yang berdaftar.",
       "whatTitle": "Apa yang ditawarkan Thinkerwell",
-      "whatBody": "Empat kursus untuk pelajar berumur kira-kira 10 hingga 17 tahun. Meneroka Dunia Kita: {ourWorld} pelajaran tentang sejarah, geografi, budaya dan kehidupan sivik. Dunia Digital: {digitalWorld} pelajaran tentang AI dan dunia digital. Asia Tenggara Merentasi Zaman: {southeastAsia} pelajaran tentang masa lalu rantau ini, daripada benda, peta dan surat yang sebenar. Seni, Seni Bina dan Masyarakat: {art} pelajaran tentang karya dan bangunan dari seluruh dunia. Kebanyakan pelajaran mempunyai lima langkah: baca, tulis, cakap, tonton dan refleksi (empat jika pelajaran tiada video, seperti semua pelajaran dalam bahasa Indonesia dan bahasa Melayu). Semuanya berfungsi dalam pelayar web pada laptop dan tablet yang dikongsi, dalam bahasa Inggeris, bahasa Indonesia atau bahasa Melayu. Pelajaran boleh digunakan di luar talian selepas kursusnya disimpan pada peranti; video pilihan memerlukan internet.",
+      "whatBody": "Empat kursus untuk pelajar berumur kira-kira 10 hingga 17 tahun. Meneroka Dunia Kita: {ourWorld} pelajaran tentang sejarah, geografi, budaya dan kehidupan sivik. Dunia Digital: {digitalWorld} pelajaran tentang AI dan dunia digital. Asia Tenggara Merentasi Zaman: {southeastAsia} pelajaran tentang masa lalu rantau ini, daripada benda, peta dan surat yang sebenar. Seni, Seni Bina dan Masyarakat: {art} pelajaran tentang karya dan bangunan dari seluruh dunia. Kebanyakan pelajaran mempunyai lima langkah: baca, tulis, cakap, tonton dan refleksi (empat jika pelajaran tiada video, seperti semua pelajaran dalam bahasa Indonesia, bahasa Melayu dan Tiếng Việt). Semuanya berfungsi dalam pelayar web pada laptop dan tablet yang dikongsi, dalam bahasa Inggeris, bahasa Indonesia, bahasa Melayu atau Tiếng Việt. Pelajaran boleh digunakan di luar talian selepas kursusnya disimpan pada peranti; video pilihan memerlukan internet.",
       "getTitle": "Apa yang anda dapat",
       "get1": "Keempat-empat kursus, percuma. Tiada akaun, tiada iklan dan tiada apa-apa yang dikunci.",
       "get2": "Panduan guru untuk setiap pelajaran, skema jawapan untuk semakan bahagian, dan setiap pelajaran sedia untuk dicetak.",
@@ -669,7 +669,7 @@
       "planSkip": "Langkau",
       "planShorter": "Hanya ada 30 minit? Gunakan lajur 30 min: langkau langkah “Tonton atau baca versi bertulis”, dan kurangkan sedikit masa untuk langkah lain. Pelajar boleh membuka Tonton kemudian, kerana tiada apa-apa yang dikunci.",
       "planShorterNoWatch": "Hanya ada 30 minit? Gunakan lajur 30 min: kurangkan sedikit masa untuk setiap langkah.",
-      "planOtherLanguages": "Dalam bahasa Indonesia dan bahasa Melayu, pelajaran tiada langkah Tonton melainkan ada video dalam bahasa itu. Buka panduan ini dalam bahasa tersebut untuk melihat rancangannya.",
+      "planOtherLanguages": "Dalam bahasa Indonesia, bahasa Melayu dan Tiếng Việt, pelajaran tiada langkah Tonton melainkan ada video dalam bahasa itu. Buka panduan ini dalam bahasa tersebut untuk melihat rancangannya.",
       "planSteps": {
         "warmUp": "Pemanasan",
         "read": "Baca mengikut petikan",
@@ -898,8 +898,8 @@
         "title": "Bahasa",
         "label": "Bahasa pada peranti ini",
         "labelLearner": "Bahasa untuk {name}",
-        "help": "Semuanya dipaparkan dalam bahasa ini serta-merta: butang, arahan dan, dalam bahasa Indonesia dan bahasa Melayu, pelajaran juga. Pilihan ini disimpan untuk peranti ini, untuk halaman pertama dan untuk sesiapa yang belum memilih siapa yang belajar.",
-        "helpLearner": "Semuanya dipaparkan dalam bahasa ini serta-merta: butang, arahan dan, dalam bahasa Indonesia dan bahasa Melayu, pelajaran juga. Pilihan ini disimpan untuk {name}, dan bertukar semula apabila orang lain dipilih."
+        "help": "Semuanya dipaparkan dalam bahasa ini serta-merta: butang, arahan dan, dalam bahasa Indonesia, bahasa Melayu dan bahasa Vietnam, pelajaran juga. Pilihan ini disimpan untuk peranti ini, untuk halaman pertama dan untuk sesiapa yang belum memilih siapa yang belajar.",
+        "helpLearner": "Semuanya dipaparkan dalam bahasa ini serta-merta: butang, arahan dan, dalam bahasa Indonesia, bahasa Melayu dan bahasa Vietnam, pelajaran juga. Pilihan ini disimpan untuk {name}, dan bertukar semula apabila orang lain dipilih."
       },
       "offline": {
         "title": "Luar talian dan data",
@@ -927,7 +927,8 @@
         "voiceFor": {
           "en": "Suara untuk pelajaran dalam bahasa Inggeris",
           "id": "Suara untuk pelajaran dalam bahasa Indonesia",
-          "ms": "Suara untuk pelajaran dalam bahasa Melayu"
+          "ms": "Suara untuk pelajaran dalam bahasa Melayu",
+          "vi": "Suara untuk pelajaran bahasa Vietnam"
         },
         "recordedWith": "Dengar memainkan rakaman yang dibuat dengan {voice}.",
         "deviceVoice": "Suara peranti, apabila tiada rakaman",
@@ -948,22 +949,23 @@
           "intro": "Kebanyakan peranti boleh memuat turun suara yang lebih baik secara percuma. Saiz suara boleh menjadi besar, jadi gunakan Wi-Fi yang baik. Kemudian buka halaman ini semula dan pilih suara baharu itu.",
           "apple": {
             "name": "iPad atau iPhone",
-            "steps": "Buka Tetapan, kemudian Kebolehcapaian, kemudian Kandungan Dituturkan (dipanggil Baca & Tutur pada versi lebih baharu), kemudian Suara. Pilih bahasa Inggeris, bahasa Indonesia atau bahasa Melayu, kemudian suara yang bertanda Dipertingkat atau Premium, dan muat turun suara itu.",
+            "steps": "Buka Tetapan, kemudian Kebolehcapaian, kemudian Kandungan Dituturkan (dipanggil Baca & Tutur pada versi lebih baharu), kemudian Suara. Pilih bahasa Inggeris, bahasa Indonesia, bahasa Melayu atau bahasa Vietnam, kemudian suara yang bertanda Dipertingkat atau Premium, dan muat turun suara itu.",
             "note": "Safari tidak membenarkan laman web menggunakan setiap suara yang anda muat turun. Jika suara baharu itu tiada dalam senarai di atas, kekalkan suara yang anda ada."
           },
           "android": {
             "name": "Tablet atau telefon Android",
-            "steps": "Buka Tetapan dan cari teks ke pertuturan. Di sebelah Enjin pilihan, tekan butang tetapan, kemudian Pasang data suara. Pilih bahasa Inggeris, bahasa Indonesia atau bahasa Melayu, kemudian muat turun suara."
+            "steps": "Buka Tetapan dan cari teks ke pertuturan. Di sebelah Enjin pilihan, tekan butang tetapan, kemudian Pasang data suara. Pilih bahasa Inggeris, bahasa Indonesia, bahasa Melayu atau bahasa Vietnam, kemudian muat turun suara."
           },
           "windows": {
             "name": "Komputer riba Windows",
-            "steps": "Buka Tetapan, kemudian Masa & bahasa, kemudian Pertuturan. Di sebelah Urus suara, pilih Tambah suara, kemudian bahasa Inggeris (United Kingdom), bahasa Indonesia atau bahasa Melayu. Akaun pentadbir mungkin diperlukan. Kemudian tutup pelayar dan buka semula."
+            "steps": "Buka Tetapan, kemudian Masa & bahasa, kemudian Pertuturan. Di sebelah Urus suara, pilih Tambah suara, kemudian bahasa Inggeris (United Kingdom), bahasa Indonesia, bahasa Melayu atau bahasa Vietnam. Akaun pentadbir mungkin diperlukan. Kemudian tutup pelayar dan buka semula."
           },
           "chromebook": {
             "name": "Chromebook",
-            "steps": "Buka Tetapan, kemudian Kebolehcapaian, kemudian Teks ke Pertuturan, kemudian Tetapan suara Teks ke Pertuturan. Pasang suara untuk bahasa Inggeris, bahasa Indonesia atau bahasa Melayu."
+            "steps": "Buka Tetapan, kemudian Kebolehcapaian, kemudian Teks ke Pertuturan, kemudian Tetapan suara Teks ke Pertuturan. Pasang suara untuk bahasa Inggeris, bahasa Indonesia, bahasa Melayu atau bahasa Vietnam."
           }
-        }
+        },
+        "noVoiceVietnamese": "Peranti ini belum mempunyai suara bahasa Vietnam, jadi Listen tidak dapat membacakan pelajaran bahasa Vietnam. Langkah di bawah menambahnya."
       },
       "courseFiles": {
         "title": "Kursus untuk digunakan tanpa internet",
@@ -1161,7 +1163,9 @@
       "pictureHeldBy": "Disimpan oleh {institution}.",
       "pictureRecord": "Lihat rekod atau fail asal",
       "pictureLicence": "Lesen: {licence}",
-      "pictureChanges": "Perubahan: {changes}"
+      "pictureChanges": "Perubahan: {changes}",
+      "fontBeVietnam": "Be Vietnam Pro, oleh Be Vietnam Pro Project Authors (huruf bahasa Vietnam, hanya semasa bahasa Vietnam dipaparkan)",
+      "translationBodyVietnamese": "Versi Tiếng Việt juga dirangka dengan bantuan AI, daripada bahasa Inggeris, dan disemak oleh AI dengan menterjemahkannya semula ke dalam bahasa Inggeris. Versi ini menunggu penutur asli untuk menyemaknya."
     },
     "placeholder": "Halaman ini akan tersedia tidak lama lagi.",
     "guides": {

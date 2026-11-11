@@ -29,7 +29,7 @@ function leaves(tree: Tree): string[] {
 const englishMessages = leaves(readJson<Tree>('src', 'i18n', 'messages', 'en.json'));
 
 /** The languages whose pages this can check: the interface and the lessons are both translated. */
-export type TranslatedLang = 'id' | 'ms';
+export type TranslatedLang = 'id' | 'ms' | 'vi';
 
 /** English messages as patterns ({placeholders} match anything), leaving out any that read the same in the language ("Menu"). */
 export function englishMessagePatterns(lang: TranslatedLang): string[] {
@@ -99,7 +99,7 @@ export async function englishOnPage(page: Page, allowed: readonly string[], lang
       // Allowed text becomes a one-letter stand-in, so a message around it ("Watch: {title}") still matches.
       const strip = (text: string) =>
         allowed
-          .concat(['Thinkerwell'])
+          .concat(['Thinkerwell', 'Be Vietnam Pro'])
           .reduce((rest, name) => rest.split(name).join(' X '), text)
           .replace(/\s+/g, ' ')
           .trim();

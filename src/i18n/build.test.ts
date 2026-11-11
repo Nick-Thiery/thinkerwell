@@ -70,33 +70,32 @@ describe('a language\'s own videos', () => {
   });
 
   it('are precached only once the language is ready, like its lessons', () => {
-    expect(languagePrecacheIgnores([])).toContain('assets/locales/vi/**');
+    expect(languagePrecacheIgnores([])).toContain('assets/locales/so/**');
     expect(languagePrecacheIgnores([])).not.toContain('assets/locales/id/**');
+    expect(languagePrecacheIgnores([])).not.toContain('assets/locales/vi/**');
   });
 });
 
 describe('what the service worker precaches', () => {
-  it('today keeps Indonesian and leaves out every other language, the test languages and the Arabic and Vietnamese fonts', () => {
+  it('today keeps Indonesian, Malay and Vietnamese and leaves out every other language, the test languages and the Arabic font', () => {
     expect(languagePrecacheIgnores([])).toEqual([
       'assets/pseudo/**',
       'assets/locales/ar/**',
       'assets/locales/fa-AF/**',
       'assets/locales/so/**',
-      'assets/locales/vi/**',
       'assets/fonts-arabic/**',
-      'assets/fonts-vietnamese/**',
     ]);
   });
 
-  it('keeps the Vietnamese font out of the precache while Vietnamese is a hidden preview, and in once it is ready', () => {
-    expect(languagePrecacheIgnores(['vi'])).toContain('assets/fonts-vietnamese/**');
-    expect(languagePrecacheIgnores(['vi'])).toContain('assets/locales/vi/**');
-    const viReady: LocaleDefinition[] = LOCALES.map((locale) => (locale.code === 'vi' ? { ...locale, ready: true } : locale));
-    const ignores = languagePrecacheIgnores(['vi'], viReady);
-    expect(ignores).not.toContain('assets/fonts-vietnamese/**');
-    expect(ignores).not.toContain('assets/locales/vi/**');
-    // The Arabic font is a different file set: Vietnamese being ready doesn't bring it in.
-    expect(ignores).toContain('assets/fonts-arabic/**');
+  it('keeps the Vietnamese font in the precache while Vietnamese is ready, and out once it is not', () => {
+    expect(languagePrecacheIgnores(['vi'])).not.toContain('assets/fonts-vietnamese/**');
+    expect(languagePrecacheIgnores(['vi'])).not.toContain('assets/locales/vi/**');
+    const viHidden: LocaleDefinition[] = LOCALES.map((locale) => (locale.code === 'vi' ? { ...locale, ready: false } : locale));
+    const ignores = languagePrecacheIgnores(['vi'], viHidden);
+    expect(ignores).toContain('assets/fonts-vietnamese/**');
+    expect(ignores).toContain('assets/locales/vi/**');
+    // The Arabic font is a different file set: Vietnamese does not bring it in.
+    expect(languagePrecacheIgnores(['vi'])).toContain('assets/fonts-arabic/**');
   });
 
   it('keeps a ready language and, for a right-to-left one, the Arabic font', () => {
@@ -105,8 +104,6 @@ describe('what the service worker precaches', () => {
       'assets/pseudo/**',
       'assets/locales/ar/**',
       'assets/locales/so/**',
-      'assets/locales/vi/**',
-      'assets/fonts-vietnamese/**',
     ]);
     const somaliReady: LocaleDefinition[] = LOCALES.map((locale) => (locale.code === 'so' ? { ...locale, ready: true } : locale));
     expect(languagePrecacheIgnores(['so'], somaliReady)).toContain('assets/fonts-arabic/**');

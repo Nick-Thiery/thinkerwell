@@ -59,6 +59,13 @@ export interface LocaleDefinition {
    * English (en-US).
    */
   speechLang?: string;
+  /**
+   * `false`: no recordings of the lessons are made in this language (yet), so
+   * Listen reads with a voice on the device, and the audio checker leaves the
+   * language alone until recordings exist (tools/audio/check.ts). Left out
+   * for a language that has recordings.
+   */
+  recordings?: false;
   /** A made-up test language (src/i18n/pseudo.ts): never offered to learners. */
   pseudo?: boolean;
   /** The Intl locale for plurals, numbers and dates, when it differs from `code` (pseudo-languages format like English). */
@@ -90,11 +97,13 @@ export const LOCALES: readonly LocaleDefinition[] = [
   // offered to everyone while native speakers review it, as Indonesian is
   // (docs/translation/ms/). Malaysians call it "Bahasa Melayu" (CLDR: "Melayu").
   { code: 'ms', englishName: 'Malay', endonym: 'Bahasa Melayu', dir: 'ltr', font: 'latin', ready: true, content: true, speechLang: 'ms-MY' },
-  // Tiếng Việt: a hidden preview. Drafted by AI and cross-checked by AI; it is
-  // never offered (ready: false) until a native speaker has reviewed it
-  // (docs/translation/vi/, docs/notes/vietnamese-preview.md). Unlike
-  // Indonesian, it is not an exception to "no machine translation for learners".
-  { code: 'vi', englishName: 'Vietnamese', endonym: 'Tiếng Việt', dir: 'ltr', font: 'vietnamese', ready: false, content: true, speechLang: 'vi-VN' },
+  // Tiếng Việt: the interface, all four courses and their section checks.
+  // Drafted by AI and cross-checked by AI, and offered to everyone while a
+  // native speaker reviews it, as Indonesian and Malay are (11 November 2026:
+  // docs/translation/vi/, docs/notes/vietnamese-preview.md). No recordings of
+  // the lessons yet (recordings: false): Listen reads with a Vietnamese voice
+  // on the device, where there is one.
+  { code: 'vi', englishName: 'Vietnamese', endonym: 'Tiếng Việt', dir: 'ltr', font: 'vietnamese', ready: true, content: true, speechLang: 'vi-VN', recordings: false },
 ];
 
 /**

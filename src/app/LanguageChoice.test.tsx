@@ -32,7 +32,7 @@ describe('LanguageChoice', () => {
     expect(container).toBeEmptyDOMElement();
   });
 
-  it('offers English, Indonesian and Malay today, each by its own name', () => {
+  it('offers English, Indonesian, Malay and Vietnamese today, each by its own name', () => {
     render(
       <I18nProvider>
         <LanguageChoice label="Your language" value="en" onChange={() => undefined} />
@@ -43,6 +43,7 @@ describe('LanguageChoice', () => {
       ['English', 'en'],
       ['Bahasa Indonesia', 'id'],
       ['Bahasa Melayu', 'ms'],
+      ['Tiếng Việt', 'vi'],
     ]);
   });
 
