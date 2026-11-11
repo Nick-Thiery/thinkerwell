@@ -37,7 +37,7 @@ describe('loadLocale', () => {
     expect(loadedLocale('de')).toBeUndefined();
   });
 
-  it('finds a message file for Indonesian and Malay, and for Vietnamese (a hidden preview, not ready)', () => {
+  it('finds a message file for Indonesian and Malay, and Vietnamese', () => {
     expect(messageFileCodes()).toEqual(['id', 'ms', 'vi']);
   });
 

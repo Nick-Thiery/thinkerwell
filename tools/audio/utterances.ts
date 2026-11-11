@@ -112,7 +112,7 @@ function courseLanguages(course: CourseDefinition, root: string): { lang: string
     { lang: 'en', ready: true },
     ...LOCALES.filter((locale) => locale.code !== 'en' && !locale.pseudo && existsSync(path.join(root, 'content', course.dir, locale.code, 'lessons'))).map((locale) => ({
       lang: locale.code,
-      ready: locale.ready,
+      ready: locale.ready && locale.recordings !== false,
     })),
   ];
 }
@@ -196,7 +196,8 @@ export function listenUtterances(root = ROOT): LanguageUtterances[] {
     const sections = lessonSections(lang, lessonsIn(lang, english, root, ourWorld), ourWorld);
     const sample = LISTEN_SAMPLES[lang];
     if (sample) sections.push(sectionOf(lang, 'sample', 'Settings sample', [sample], ['end']));
-    const ready = LOCALES.find((locale) => locale.code === lang)?.ready ?? false;
+    const locale = LOCALES.find((candidate) => candidate.code === lang);
+    const ready = (locale?.ready ?? false) && locale?.recordings !== false;
     return { lang, ready, normaliser: NORMALISER_VERSION, sections };
   });
 }

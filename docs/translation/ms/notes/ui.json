@@ -834,8 +834,9 @@
     "source": "Your language"
   },
   "pages.home.newLearner.languageHelper": {
-    "back": "Buttons and instructions are displayed in this language. In Indonesian and Malay, the lessons are too. In other languages, the lessons stay in English, so that you can practise English.",
-    "source": "Buttons and instructions show in this language. In Indonesian and Malay, the lessons do too. In other languages they stay in English, so you can practise it."
+    "source": "Buttons and instructions show in this language. In Indonesian, Malay and Vietnamese, the lessons do too. In other languages they stay in English, so you can practise it.",
+    "flag": true,
+    "note": "11 November 2026: the English now names Vietnamese too and the translation was changed to match; the earlier back-translation was dropped as out of date."
   },
   "pages.home.remove.action": {
     "flag": true,
@@ -946,8 +947,9 @@
     "source": "Your language"
   },
   "pages.home.dashboard.languageHelp": {
-    "back": "Buttons and instructions are displayed in this language. In Indonesian and Malay, the lessons are too. In other languages, the lessons stay in English, so that you can practise English.",
-    "source": "Buttons and instructions show in this language. In Indonesian and Malay, the lessons do too. In other languages they stay in English, so you can practise it."
+    "source": "Buttons and instructions show in this language. In Indonesian, Malay and Vietnamese, the lessons do too. In other languages they stay in English, so you can practise it.",
+    "flag": true,
+    "note": "11 November 2026: the English now names Vietnamese too and the translation was changed to match; the earlier back-translation was dropped as out of date."
   },
   "pages.home.dashboard.languageSaveFailed": {
     "back": "Could not be saved. Try again.",
@@ -1474,10 +1476,9 @@
     "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.organisations.whatBody": {
-    "flag": "October 2026: lessons in Indonesian and Malay have no Watch step unless the language has an approved video of its own for the lesson, so these words say four steps or drop the video. Drafted by AI with no second AI review: check.",
-    "note": "Back-translation check: Changed 'berjalan' (a calque of 'runs') to 'berfungsi' and lower-cased the language names. Check that the lower-case step names (baca, tulis, cakap, tonton, refleksi) are fine in running text.",
-    "back": "One course, Exploring Our World: {lessons} lessons about history, geography, culture and civic life, for learners aged about 10 to 17. Each lesson has four steps: read, write, speak and reflect. The course runs in a web browser on shared laptops and tablets, in English, Indonesian or Malay. Lessons can be used offline after the first visit.",
-    "source": "One course, Exploring Our World: {lessons} lessons about history, geography, culture and civic life, for learners aged about 10 to 17. Each lesson has five steps: read, write, speak, watch and reflect (four in Bahasa Indonesia and Bahasa Melayu, without watch). It runs in a web browser on shared laptops and tablets, in English, Bahasa Indonesia or Bahasa Melayu. Lessons work offline after the first visit; the optional videos need the internet."
+    "flag": true,
+    "note": "Back-translation check: Changed 'berjalan' (a calque of 'runs') to 'berfungsi' and lower-cased the language names. Check that the lower-case step names (baca, tulis, cakap, tonton, refleksi) are fine in running text. 11 November 2026: the English now names Vietnamese too and the translation was changed to match; the earlier back-translation was dropped as out of date.",
+    "source": "Four courses for learners aged about 10 to 17. Exploring Our World: {ourWorld} lessons about history, geography, culture and civic life. Digital World: {digitalWorld} lessons about AI and the digital world. Southeast Asia Through Time: {southeastAsia} lessons about the region's past, from real objects, maps and letters. Art, Architecture and Society: {art} lessons about works and buildings from around the world. Most lessons have five steps: read, write, speak, watch and reflect (four where a lesson has no video, as every lesson does in Bahasa Indonesia, Bahasa Melayu and Tiếng Việt). It runs in a web browser on shared laptops and tablets, in English, Bahasa Indonesia, Bahasa Melayu or Tiếng Việt. Lessons work offline once a course is saved on the device; the optional videos need the internet."
   },
   "pages.organisations.getTitle": {
     "back": "What you get",
@@ -2866,13 +2867,13 @@
   },
   "pages.settings.language.help": {
     "flag": true,
-    "note": "Translator: The note mentions only Indonesian as a translated lesson language, but the English also says Malay. I followed the English. Back-translation check: The translator's flag still stands: the source note mentioned only Indonesian, but the English names Malay too, and the translation follows the English. Also, 'sesiapa yang belum memilih siapa yang belajar' mirrors the English but reads oddly. A native reviewer should check it.",
-    "back": "Everything is displayed in this language immediately: buttons, instructions and, in Indonesian and Malay, the lessons too. This choice is saved for this device, for the first page and for anyone who has not yet chosen who is learning.",
-    "source": "Everything shows in this language at once: buttons, instructions and, in Indonesian and Malay, the lessons too. It is kept for this device, for the first page and anyone who hasn't chosen who's learning."
+    "note": "Translator: The note mentions only Indonesian as a translated lesson language, but the English also says Malay. I followed the English. Back-translation check: The translator's flag still stands: the source note mentioned only Indonesian, but the English names Malay too, and the translation follows the English. Also, 'sesiapa yang belum memilih siapa yang belajar' mirrors the English but reads oddly. A native reviewer should check it. 11 November 2026: the English now names Vietnamese too and the translation was changed to match; the earlier back-translation was dropped as out of date.",
+    "source": "Everything shows in this language at once: buttons, instructions and, in Indonesian, Malay and Vietnamese, the lessons too. It is kept for this device, for the first page and anyone who hasn't chosen who's learning."
   },
   "pages.settings.language.helpLearner": {
-    "back": "Everything is displayed in this language immediately: buttons, instructions and, in Indonesian and Malay, the lessons too. This choice is saved for {name}, and changes back when someone else is chosen.",
-    "source": "Everything shows in this language at once: buttons, instructions and, in Indonesian and Malay, the lessons too. It is kept for {name}, and changes back when someone else is chosen."
+    "source": "Everything shows in this language at once: buttons, instructions and, in Indonesian, Malay and Vietnamese, the lessons too. It is kept for {name}, and changes back when someone else is chosen.",
+    "flag": true,
+    "note": "11 November 2026: the English now names Vietnamese too and the translation was changed to match; the earlier back-translation was dropped as out of date."
   },
   "pages.settings.offline.title": {
     "back": "Offline and data",
@@ -3017,9 +3018,8 @@
   },
   "pages.settings.listenVoice.better.apple.steps": {
     "flag": true,
-    "note": "Translator: iPadOS Malay menu names need checking on a real device: Kebolehcapaian, Kandungan Dituturkan, Suara, and the voice labels Dipertingkat/Premium. 'Baca & Tutur' (Read & Speak) is a guess. Back-translation check: Check the iPadOS Malay menu labels on a real device: Kebolehcapaian, Kandungan Dituturkan, Baca & Tutur (a guess), Suara, Dipertingkat/Premium.",
-    "back": "Open Settings, then Accessibility, then Spoken Content (called Read & Speak in newer versions), then Voices. Choose English, Indonesian or Malay, then a voice marked Enhanced or Premium, and download that voice.",
-    "source": "Open Settings, then Accessibility, then Spoken Content (called Read & Speak on newer versions), then Voices. Choose English, Indonesian or Malay, then a voice marked Enhanced or Premium, and download it."
+    "note": "Translator: iPadOS Malay menu names need checking on a real device: Kebolehcapaian, Kandungan Dituturkan, Suara, and the voice labels Dipertingkat/Premium. 'Baca & Tutur' (Read & Speak) is a guess. Back-translation check: Check the iPadOS Malay menu labels on a real device: Kebolehcapaian, Kandungan Dituturkan, Baca & Tutur (a guess), Suara, Dipertingkat/Premium. 11 November 2026: the English now names Vietnamese too and the translation was changed to match; the earlier back-translation was dropped as out of date.",
+    "source": "Open Settings, then Accessibility, then Spoken Content (called Read & Speak on newer versions), then Voices. Choose English, Indonesian, Malay or Vietnamese, then a voice marked Enhanced or Premium, and download it."
   },
   "pages.settings.listenVoice.better.apple.note": {
     "back": "Safari does not let websites use every voice you download. If the new voice is not in the list above, keep the voice you have.",
@@ -3031,9 +3031,8 @@
   },
   "pages.settings.listenVoice.better.android.steps": {
     "flag": true,
-    "note": "Translator: Check the Android Malay labels on a real device: 'teks ke pertuturan', 'Enjin pilihan', 'Pasang data suara'. They vary by manufacturer. Back-translation check: Check the Android Malay labels on real devices, since they vary by manufacturer: 'teks ke pertuturan', 'Enjin pilihan' (could also read as 'engine options'), 'Pasang data suara'.",
-    "back": "Open Settings and search for text to speech. Next to Preferred engine, press the settings button, then Install voice data. Choose English, Indonesian or Malay, then download the voice.",
-    "source": "Open Settings and search for text-to-speech. Next to Preferred engine, tap the settings button, then Install voice data. Choose English, Indonesian or Malay, then download a voice."
+    "note": "Translator: Check the Android Malay labels on a real device: 'teks ke pertuturan', 'Enjin pilihan', 'Pasang data suara'. They vary by manufacturer. Back-translation check: Check the Android Malay labels on real devices, since they vary by manufacturer: 'teks ke pertuturan', 'Enjin pilihan' (could also read as 'engine options'), 'Pasang data suara'. 11 November 2026: the English now names Vietnamese too and the translation was changed to match; the earlier back-translation was dropped as out of date.",
+    "source": "Open Settings and search for text-to-speech. Next to Preferred engine, tap the settings button, then Install voice data. Choose English, Indonesian, Malay or Vietnamese, then download a voice."
   },
   "pages.settings.listenVoice.better.windows.name": {
     "back": "Windows laptop",
@@ -3041,9 +3040,8 @@
   },
   "pages.settings.listenVoice.better.windows.steps": {
     "flag": true,
-    "note": "Translator: Check the Windows Malay labels (Masa & bahasa, Pertuturan, Urus suara, Tambah suara). Windows may not have a full Malay display language, so the menus may show in English. Back-translation check: Lower-cased 'bahasa Inggeris' for consistency. Check the Windows Malay labels (Masa & bahasa, Pertuturan, Urus suara, Tambah suara). Windows may show these menus in English.",
-    "back": "Open Settings, then Time & language, then Speech. Next to Manage voices, choose Add voices, then English (United Kingdom), Indonesian or Malay. An administrator account may be needed. Then close the browser and open it again.",
-    "source": "Open Settings, then Time & language, then Speech. Next to Manage voices, choose Add voices, then English (United Kingdom), Indonesian or Malay. You may need an administrator account. Then close the browser and open it again."
+    "note": "Translator: Check the Windows Malay labels (Masa & bahasa, Pertuturan, Urus suara, Tambah suara). Windows may not have a full Malay display language, so the menus may show in English. Back-translation check: Lower-cased 'bahasa Inggeris' for consistency. Check the Windows Malay labels (Masa & bahasa, Pertuturan, Urus suara, Tambah suara). Windows may show these menus in English. 11 November 2026: the English now names Vietnamese too and the translation was changed to match; the earlier back-translation was dropped as out of date.",
+    "source": "Open Settings, then Time & language, then Speech. Next to Manage voices, choose Add voices, then English (United Kingdom), Indonesian, Malay or Vietnamese. You may need an administrator account. Then close the browser and open it again."
   },
   "pages.settings.listenVoice.better.chromebook.name": {
     "back": "Chromebook",
@@ -3051,9 +3049,8 @@
   },
   "pages.settings.listenVoice.better.chromebook.steps": {
     "flag": true,
-    "note": "Translator: Check the ChromeOS Malay labels for Kebolehcapaian, Teks ke Pertuturan and the voice settings item on a real Chromebook. Back-translation check: Check the ChromeOS Malay labels (Kebolehcapaian, Teks ke Pertuturan, Tetapan suara Teks ke Pertuturan) on a real Chromebook.",
-    "back": "Open Settings, then Accessibility, then Text to Speech, then Text to Speech voice settings. Install a voice for English, Indonesian or Malay.",
-    "source": "Open Settings, then Accessibility, then Text-to-Speech, then Text-to-Speech voice settings. Install the voices for English, Indonesian or Malay."
+    "note": "Translator: Check the ChromeOS Malay labels for Kebolehcapaian, Teks ke Pertuturan and the voice settings item on a real Chromebook. Back-translation check: Check the ChromeOS Malay labels (Kebolehcapaian, Teks ke Pertuturan, Tetapan suara Teks ke Pertuturan) on a real Chromebook. 11 November 2026: the English now names Vietnamese too and the translation was changed to match; the earlier back-translation was dropped as out of date.",
+    "source": "Open Settings, then Accessibility, then Text-to-Speech, then Text-to-Speech voice settings. Install the voices for English, Indonesian, Malay or Vietnamese."
   },
   "pages.settings.lessonAudio.title": {
     "back": "Lesson audio",
@@ -6080,9 +6077,9 @@
     "flag": "October 2026, from a check of the pilot pages: clearer wording, or no mention of videos now that Indonesian and Malay lessons have no Watch step. Drafted by AI with no second AI review: check."
   },
   "pages.teacherGuide.planOtherLanguages": {
-    "back": "In Indonesian and Malay, a lesson has no Watch step unless there is a video in that language. Open this guide in that language to see its plan.",
-    "source": "In Bahasa Indonesia and Bahasa Melayu, a lesson has no Watch step unless it has a video in that language. Open this guide in that language to see its plan.",
-    "flag": "October 2026: says that lessons in Indonesian and Malay have four steps, without Watch, for a teacher reading in one language whose learners use another. Drafted by AI with no second AI review: check."
+    "source": "In Bahasa Indonesia, Bahasa Melayu and Tiếng Việt, a lesson has no Watch step unless it has a video in that language. Open this guide in that language to see its plan.",
+    "flag": true,
+    "note": "11 November 2026: the English now names Vietnamese too and the translation was changed to match; the earlier back-translation was dropped as out of date."
   },
   "southeastAsia.banner.body": {
     "source": "Southeast Asia Through Time is a draft. A historian and a partner organisation still need to check it. Only this device shows it.",
@@ -6313,5 +6310,21 @@
     "back": "Then choose a course from your home page.",
     "flag": true,
     "note": "Added 10 November 2026 for the course layout brief: drafted by AI, not yet reviewed by a native speaker."
+  },
+  "pages.settings.listenVoice.voiceFor.vi": {
+    "source": "Voice for Vietnamese lessons",
+    "flag": true
+  },
+  "pages.settings.listenVoice.noVoiceVietnamese": {
+    "source": "This device has no Vietnamese voice yet, so Listen can't read Vietnamese lessons. The steps below add one.",
+    "flag": true
+  },
+  "pages.credits.fontBeVietnam": {
+    "source": "Be Vietnam Pro, by the Be Vietnam Pro Project Authors (Vietnamese letters, only while Vietnamese is shown)",
+    "flag": true
+  },
+  "pages.credits.translationBodyVietnamese": {
+    "source": "The Tiếng Việt version was drafted with the help of AI too, from the English, and checked by AI by translating it back into English. It is waiting for native speakers to check it.",
+    "flag": true
   }
 }

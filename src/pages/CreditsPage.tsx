@@ -44,6 +44,7 @@ const FONT_KEYS: readonly MessageKey[] = [
   'pages.credits.fontAtkinson',
   'pages.credits.fontEczar',
   'pages.credits.fontVazirmatn',
+  'pages.credits.fontBeVietnam',
 ];
 
 /** The open-source libraries that reach the browser (package.json; licences from each package). */
@@ -559,6 +560,7 @@ export function CreditsPage() {
           </h2>
           <p>{t('pages.credits.translationBody')}</p>
           <p>{t('pages.credits.translationBodyMalay')}</p>
+          <p>{t('pages.credits.translationBodyVietnamese')}</p>
         </section>
       </div>
     </div>

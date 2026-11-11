@@ -895,7 +895,7 @@
     "back": "Your language"
   },
   "pages.home.newLearner.languageHelper": {
-    "source": "Buttons and instructions show in this language. In Indonesian and Malay, the lessons do too. In other languages they stay in English, so you can practise it.",
+    "source": "Buttons and instructions show in this language. In Indonesian, Malay and Vietnamese, the lessons do too. In other languages they stay in English, so you can practise it.",
     "flag": true
   },
   "pages.home.remove.action": {
@@ -1011,7 +1011,7 @@
     "back": "Your language"
   },
   "pages.home.dashboard.languageHelp": {
-    "source": "Buttons and instructions show in this language. In Indonesian and Malay, the lessons do too. In other languages they stay in English, so you can practise it.",
+    "source": "Buttons and instructions show in this language. In Indonesian, Malay and Vietnamese, the lessons do too. In other languages they stay in English, so you can practise it.",
     "flag": true
   },
   "pages.home.dashboard.languageSaveFailed": {
@@ -1550,7 +1550,7 @@
     "flag": true
   },
   "pages.organisations.whatBody": {
-    "source": "Four courses for learners aged about 10 to 17. Exploring Our World: {ourWorld} lessons about history, geography, culture and civic life. Digital World: {digitalWorld} lessons about AI and the digital world. Southeast Asia Through Time: {southeastAsia} lessons about the region's past, from real objects, maps and letters. Art, Architecture and Society: {art} lessons about works and buildings from around the world. Most lessons have five steps: read, write, speak, watch and reflect (four where a lesson has no video, as every lesson does in Bahasa Indonesia and Bahasa Melayu). It runs in a web browser on shared laptops and tablets, in English, Bahasa Indonesia or Bahasa Melayu. Lessons work offline once a course is saved on the device; the optional videos need the internet.",
+    "source": "Four courses for learners aged about 10 to 17. Exploring Our World: {ourWorld} lessons about history, geography, culture and civic life. Digital World: {digitalWorld} lessons about AI and the digital world. Southeast Asia Through Time: {southeastAsia} lessons about the region's past, from real objects, maps and letters. Art, Architecture and Society: {art} lessons about works and buildings from around the world. Most lessons have five steps: read, write, speak, watch and reflect (four where a lesson has no video, as every lesson does in Bahasa Indonesia, Bahasa Melayu and Tiếng Việt). It runs in a web browser on shared laptops and tablets, in English, Bahasa Indonesia, Bahasa Melayu or Tiếng Việt. Lessons work offline once a course is saved on the device; the optional videos need the internet.",
     "flag": true
   },
   "pages.organisations.getTitle": {
@@ -3087,11 +3087,11 @@
     "back": "{name}'s language"
   },
   "pages.settings.language.help": {
-    "source": "Everything shows in this language at once: buttons, instructions and, in Indonesian and Malay, the lessons too. It is kept for this device, for the first page and anyone who hasn't chosen who's learning.",
+    "source": "Everything shows in this language at once: buttons, instructions and, in Indonesian, Malay and Vietnamese, the lessons too. It is kept for this device, for the first page and anyone who hasn't chosen who's learning.",
     "flag": true
   },
   "pages.settings.language.helpLearner": {
-    "source": "Everything shows in this language at once: buttons, instructions and, in Indonesian and Malay, the lessons too. It is kept for {name}, and changes back when someone else is chosen.",
+    "source": "Everything shows in this language at once: buttons, instructions and, in Indonesian, Malay and Vietnamese, the lessons too. It is kept for {name}, and changes back when someone else is chosen.",
     "flag": true
   },
   "pages.settings.offline.title": {
@@ -3259,7 +3259,7 @@
     "back": "iPad or iPhone"
   },
   "pages.settings.listenVoice.better.apple.steps": {
-    "source": "Open Settings, then Accessibility, then Spoken Content (called Read & Speak on newer versions), then Voices. Choose English, Indonesian or Malay, then a voice marked Enhanced or Premium, and download it.",
+    "source": "Open Settings, then Accessibility, then Spoken Content (called Read & Speak on newer versions), then Voices. Choose English, Indonesian, Malay or Vietnamese, then a voice marked Enhanced or Premium, and download it.",
     "flag": true
   },
   "pages.settings.listenVoice.better.apple.note": {
@@ -3275,7 +3275,7 @@
     "back": "Android tablet or phone"
   },
   "pages.settings.listenVoice.better.android.steps": {
-    "source": "Open Settings and search for text-to-speech. Next to Preferred engine, tap the settings button, then Install voice data. Choose English, Indonesian or Malay, then download a voice.",
+    "source": "Open Settings and search for text-to-speech. Next to Preferred engine, tap the settings button, then Install voice data. Choose English, Indonesian, Malay or Vietnamese, then download a voice.",
     "flag": true
   },
   "pages.settings.listenVoice.better.windows.name": {
@@ -3285,7 +3285,7 @@
     "back": "Windows laptop"
   },
   "pages.settings.listenVoice.better.windows.steps": {
-    "source": "Open Settings, then Time & language, then Speech. Next to Manage voices, choose Add voices, then English (United Kingdom), Indonesian or Malay. You may need an administrator account. Then close the browser and open it again.",
+    "source": "Open Settings, then Time & language, then Speech. Next to Manage voices, choose Add voices, then English (United Kingdom), Indonesian, Malay or Vietnamese. You may need an administrator account. Then close the browser and open it again.",
     "flag": true
   },
   "pages.settings.listenVoice.better.chromebook.name": {
@@ -3293,7 +3293,7 @@
     "back": "Chromebook"
   },
   "pages.settings.listenVoice.better.chromebook.steps": {
-    "source": "Open Settings, then Accessibility, then Text-to-Speech, then Text-to-Speech voice settings. Install the voices for English, Indonesian or Malay.",
+    "source": "Open Settings, then Accessibility, then Text-to-Speech, then Text-to-Speech voice settings. Install the voices for English, Indonesian, Malay or Vietnamese.",
     "flag": true
   },
   "pages.settings.lessonAudio.title": {
@@ -6068,7 +6068,7 @@
     "flag": true
   },
   "pages.teacherGuide.planOtherLanguages": {
-    "source": "In Bahasa Indonesia and Bahasa Melayu, a lesson has no Watch step unless it has a video in that language. Open this guide in that language to see its plan.",
+    "source": "In Bahasa Indonesia, Bahasa Melayu and Tiếng Việt, a lesson has no Watch step unless it has a video in that language. Open this guide in that language to see its plan.",
     "flag": true
   },
   "pages.teacherGuide.planDo.read.one": {
@@ -7181,6 +7181,22 @@
   },
   "videoReview.summaryNoVideo": {
     "source": "no video to review",
+    "flag": true
+  },
+  "pages.settings.listenVoice.voiceFor.vi": {
+    "source": "Voice for Vietnamese lessons",
+    "flag": true
+  },
+  "pages.settings.listenVoice.noVoiceVietnamese": {
+    "source": "This device has no Vietnamese voice yet, so Listen can't read Vietnamese lessons. The steps below add one.",
+    "flag": true
+  },
+  "pages.credits.fontBeVietnam": {
+    "source": "Be Vietnam Pro, by the Be Vietnam Pro Project Authors (Vietnamese letters, only while Vietnamese is shown)",
+    "flag": true
+  },
+  "pages.credits.translationBodyVietnamese": {
+    "source": "The Tiếng Việt version was drafted with the help of AI too, from the English, and checked by AI by translating it back into English. It is waiting for native speakers to check it.",
     "flag": true
   }
 }

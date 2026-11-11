@@ -248,9 +248,9 @@ describe('checking a videos file (what stops the build)', () => {
 });
 
 describe('the real content/<code>/videos.json files', () => {
-  it('exist for Indonesian and Malay and pass the checks, and none is a test fixture', () => {
+  it('exist for Indonesian, Malay and Vietnamese and pass the checks, and none is a test fixture', () => {
     const codes = Object.keys(realVideos).map((path) => path.replace(/^.*\/content\/([^/]+)\/videos\.json$/, '$1')).sort();
-    expect(codes).toEqual(['id', 'ms']);
+    expect(codes).toEqual(['id', 'ms', 'vi']);
     for (const [path, raw] of Object.entries(realVideos)) {
       const code = path.replace(/^.*\/content\/([^/]+)\/videos\.json$/, '$1');
       const file = check(raw, code);

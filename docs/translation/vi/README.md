@@ -1,6 +1,6 @@
-# Vietnamese: a hidden preview, not yet offered
+# Vietnamese: offered while it is reviewed
 
-Vietnamese (Tiếng Việt) is **fully translated by AI and not yet reviewed by anyone**: the interface, Our World (24 lessons, the four section checks, the course text and the 24 lesson pictures) and, since 11 November 2026, the three other courses: Digital World (17 lessons), Southeast Asia Through Time (12 lessons, its four section checks and 12 diagrams) and Art, Architecture and Society (20 lessons). It is **not offered to anyone**: its entry in `src/i18n/locales.ts` has `ready: false` (and `content: true`), so the language switch, Settings, the new-learner form and the offline precache do not include it, and nothing of it reaches a first visit or the service worker's cache (`e2e/build-output.spec.ts`: "no Vietnamese preview content is precached or reaches a first visit"). This is not an exception to the no-machine-translation rule, as Indonesian is: it stays hidden until a native Vietnamese speaker has reviewed it and a partner needs it.
+Vietnamese (Tiếng Việt) is **fully translated by AI and not yet reviewed by anyone**: the interface, Our World (24 lessons, the four section checks, the course text and the 24 lesson pictures) and, since 11 November 2026, the three other courses: Digital World (17 lessons), Southeast Asia Through Time (12 lessons, its four section checks and 12 diagrams) and Art, Architecture and Society (20 lessons). **Since 11 November 2026 it is offered to everyone** (Nick's instruction): `ready: true` and `recordings: false` in `src/i18n/locales.ts`, so the language switch, Settings and the new-learner form list it, its words, lessons and font are in the offline copy, and nothing of it reaches a first visit in English (`e2e/build-output.spec.ts`; the walk is `e2e/vietnamese.spec.ts`). That makes it an exception to the no-machine-translation rule in the same way as Indonesian and Malay, **but unlike them nobody has yet checked any of it with a native speaker, and the three other courses were not back-translated**. Setting `ready: false` hides it again and nothing else needs to change.
 
 To look at it on a development machine: `npm run dev`, then add `?locale=vi` to any address.
 
@@ -47,10 +47,14 @@ None of this replaces a native speaker.
 3. Have a person from each faith that Lesson 4 names read it.
 4. Check the interface on real phones set to Vietnamese: the browser menu names in the setup guide and Settings (Safari, Chrome, Edge, Android, Windows), the long labels in the header and tabs at 390px ("Dành cho nhà giáo dục", "Nhật ký của mình"), and the date format ("Thêm ngày {date}" must not read "ngày ngày").
 
-## What has to happen before Vietnamese is offered
+## What was done to offer it, and what is still open
 
-- A native reviewer's changes applied; a decision on the open points in `KEY_TERMS.md`.
-- Recordings for Listen (or the decision to use device voices only): `docs/notes/vietnamese-preview.md`. All four courses can now be recorded: about 5 hours on two CPU cores in all.
-- Settings' "Listen voice" and "Lesson audio" lists have no Vietnamese entry yet (only English and Indonesian); a developer decision.
-- Public strings that name only English and Indonesian as the lesson languages (Credits' translation text, the About and For organisations text, the information sheet) made accurate for Vietnamese, and Credits' entries added for Be Vietnam Pro and for whatever recordings are used (see `docs/notes/vietnamese-preview.md`: the font line did not fit the first-visit budget, so it waits).
-- `ready` set to `true` in `src/i18n/locales.ts` (this adds it to the switch and the precache; check the size budgets in `e2e/build-output.spec.ts` and `docs/notes/slow-internet.md`).
+Done on 11 November 2026: `ready: true`; Settings' Listen voice has a Vietnamese entry and a "no Vietnamese voice" message (Lesson audio lists only languages that have recordings, so Vietnamese is not there); Credits lists Be Vietnam Pro and says the Vietnamese was drafted and back-checked by AI; the strings that named only Indonesian and Malay as lesson languages (the language help texts, For organisations, the teacher guide's plan note, the Listen voice steps) now name Vietnamese, in all four languages; the size budget was raised for it.
+
+Still open:
+
+- **A native reviewer.** Their changes applied; a decision on the open points in `KEY_TERMS.md`; then take the "AI draft" caveat out of the Credits line.
+- **Recordings for Listen**, or the decision to use device voices only (then say so here): `docs/notes/vietnamese-preview.md`. All four courses can be recorded in about 5 hours on two CPU cores; nobody has listened to the voice yet, so do not commit recordings before they have.
+- **The information sheet** (`pages.infoSheet`, "in simple English, Bahasa Indonesia or Bahasa Melayu") still names two languages: the study's owners review that wording, so it was left alone.
+- **The optional learning study** has no Vietnamese questions (`content/pilot-check/`); a Vietnamese learner sees them in English, marked `lang="en"`.
+- **No local-language Watch videos** have been looked for in Vietnamese (`docs/notes/local-videos/vi.json` does not exist); every Vietnamese lesson has four steps.
