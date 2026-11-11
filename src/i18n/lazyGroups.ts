@@ -21,16 +21,14 @@ export const LAZY_MESSAGE_GROUPS = [
   'pilotDay',
   // The session record and feedback sheet (src/pages/educators/FeedbackSheetPage.tsx), in the Educators chunk.
   'feedbackSheet',
-  // The before-and-after check's sheets and answer key (src/pages/educators/pilotCheck/), in the Educators chunk.
-  'pilotCheck',
   // About's "How our lessons work" card, its research and the video's heading (src/pages/AboutPage.tsx), in the Settings and About chunk.
   'aboutPage',
   // The reviewers' page for local-language Watch videos (src/courses/video-review/, /review/videos): built into assets/preview/, never precached.
   'videoReview',
-  // Settings' "Share pilot results" (src/pages/settings/PilotResultsSetting.tsx): educators only.
-  'pilotResults',
   // The contact form (src/pages/contact/ContactPage.tsx, /contact), in the Educators chunk.
   'contact',
+  // Privacy & Child Safeguarding (src/pages/privacy/PrivacyPage.tsx, /privacy-and-safeguarding), in the Educators chunk.
+  'privacy',
   // What every preview course's pages share (src/courses/kit/): the draft banner, the course choice, the switch page.
   // Built into assets/preview/ with that code, never precached.
   'previewCourse',

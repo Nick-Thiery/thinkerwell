@@ -27,13 +27,10 @@ test('a teacher goes from the Educators page to a teacher guide and back to the 
   await expect(page.locator('#our-world').getByRole('link', { name: /^Print Lesson 10:/ })).toHaveAttribute('href', '/lesson/towns-near-rivers/print');
 });
 
-test('the old addresses of the session guide and the learning check still open them', async ({ page }) => {
+test('the old address of the session guide still opens it', async ({ page }) => {
   await page.goto('/educators/pilot-day');
   await expect(page).toHaveURL(/\/educators\/session-guide$/);
   await expect(page.locator('h1')).toHaveText('Session guide');
-  await page.goto('/educators/pilot-check');
-  await expect(page).toHaveURL(/\/educators\/learning-check$/);
-  await expect(page.locator('h1')).toHaveText('Learning check');
 });
 
 test("a section's answer key opens from the list of teacher guides, and its questions lead to the lessons' guides", async ({ page }) => {

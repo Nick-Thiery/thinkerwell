@@ -44,7 +44,7 @@ export function courseCertificatePath(): string {
 }
 
 /** A part of Settings that other pages link straight to. */
-export type SettingsPart = 'listen-voice' | 'course-files' | 'lesson-audio' | 'say-it' | 'move-work' | 'share-results';
+export type SettingsPart = 'listen-voice' | 'course-files' | 'lesson-audio' | 'say-it' | 'move-work';
 
 /** Settings for this device, or one part of it (/settings#say-it): the page scrolls to it once it has loaded. */
 export function settingsPath(part?: SettingsPart): string {
@@ -66,15 +66,22 @@ export function feedbackSheetPath(): string {
   return '/educators/feedback-sheet';
 }
 
-/** The learning check's paper sheets and answer key, for the optional study, to print: /educators/learning-check (it was /educators/pilot-check). */
-export function learningCheckPath(): string {
-  return '/educators/learning-check';
-}
+/** The address the session guide had until October 2026; it still opens the new one. */
+export const OLD_EDUCATOR_PATHS: ReadonlyArray<readonly [old: string, now: string]> = [['/educators/pilot-day', '/educators/session-guide']];
 
-/** The addresses those two had until October 2026; they still open the new ones. */
-export const OLD_EDUCATOR_PATHS: ReadonlyArray<readonly [old: string, now: string]> = [
-  ['/educators/pilot-day', '/educators/session-guide'],
-  ['/educators/pilot-check', '/educators/learning-check'],
+/**
+ * The addresses of the optional learning study's information sheet, consent
+ * form and learning check, which were retired on 11 November 2026 (Justin's
+ * brief): the public site no longer serves them. They send a visitor to For
+ * organisations, where each organisation's pilot is introduced
+ * (vercel.json does the same for links from outside the app). Matched
+ * without regard to case, like every route.
+ */
+export const RETIRED_STUDY_PATHS: readonly string[] = [
+  '/educators/information-sheet',
+  '/educators/consent-form',
+  '/educators/learning-check',
+  '/educators/pilot-check',
 ];
 
 /** Every lesson's teacher guide and print view, and every section check's answer key: /educators/guides, a section open with `?section=`. */
@@ -112,19 +119,14 @@ export function contactPath(): string {
   return '/contact';
 }
 
-/** What a pilot involves, for organisations thinking of one: /organisations. */
+/** Privacy & Child Safeguarding, linked from the footer on every page: /privacy-and-safeguarding. */
+export function privacyPath(): string {
+  return '/privacy-and-safeguarding';
+}
+
+/** For organisations thinking of a pilot: /organisations. */
 export function organisationsPath(): string {
   return '/organisations';
-}
-
-/** The parents' and guardians' consent form to print: /educators/consent-form. */
-export function consentFormPath(): string {
-  return '/educators/consent-form';
-}
-
-/** The information sheet for families, given with the consent form, to print: /educators/information-sheet. */
-export function informationSheetPath(): string {
-  return '/educators/information-sheet';
 }
 
 /** Learners' code cards and the list of names to keep, to print: /educators/code-cards. */

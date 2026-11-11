@@ -5,10 +5,9 @@ import { pdfPageOrientations } from './lessonHelpers';
 import { settle } from './pageTour';
 
 // The partner kit (docs/notes/partner-kit.md): For organisations, reached
-// from the footer of the first page and from the Educators page; on paper,
-// in English, Indonesian and Malay, the information sheet (one page) and the
-// consent form (two pages) on A4 and Letter with nothing smaller than the
-// site's smallest text, and code cards on A4, all black on white; and the
+// from the footer of the first page and from the Educators page; the retired
+// study addresses; on paper, in English, Indonesian and Malay, code cards on
+// A4, black on white; and the
 // device setup checklist still one page in Indonesian and Malay. The kit's pages on
 // screen (layout, tap sizes, axe, right to left, no English in Indonesian)
 // are in the page tour (e2e/pageTour.ts), indonesian.spec.ts and malay.spec.ts.
@@ -30,43 +29,6 @@ async function useLanguage(page: Page, locale: keyof typeof OTHER_LANGUAGES): Pr
   await page.getByRole('button', { name: /^(Language|Bahasa): / }).click();
   await page.locator('.tw-language-switch-panel').getByRole('radio', { name: OTHER_LANGUAGES[locale] }).click();
   await expect(page.locator('html')).toHaveAttribute('lang', locale);
-}
-
-/**
- * The longest organisation name the information sheet and consent form take (60 characters), as a partner's might be
- * in each language (the name is the organisation's own, in any language, whatever language the form is printed in).
- */
-const LONGEST_ORGANISATION = {
-  en: 'Foundation for the Education and Welfare of Refugee Children',
-  id: 'Yayasan Pendidikan dan Pemberdayaan Anak Pengungsi Indonesia',
-  ms: 'Pertubuhan Pendidikan dan Pembangunan Murid Pelarian Kuantan',
-} as const;
-/** A date as the organisation would type it: dates are printed as typed. */
-const START_DATE = { en: '13 October 2026', id: '13 Oktober 2026', ms: '13 Oktober 2026' } as const;
-const END_DATE = { en: '21 November 2026', id: '21 November 2026', ms: '21 November 2026' } as const;
-
-/** How many pages the page prints on, on A4 and on Letter (Chromium's own PDF, print media). */
-async function pageCounts(page: Page): Promise<{ A4: number; Letter: number }> {
-  await page.emulateMedia({ media: 'print' });
-  await settle(page);
-  const A4 = pdfPageOrientations(await page.pdf({ format: 'A4' })).length;
-  const Letter = pdfPageOrientations(await page.pdf({ format: 'Letter' })).length;
-  await page.emulateMedia({ media: 'screen' });
-  return { A4, Letter };
-}
-
-/** Printed text smaller than the site's smallest, 14px (10.5pt): none, on the partner kit's printouts. */
-async function printedTooSmall(page: Page): Promise<string[]> {
-  await page.emulateMedia({ media: 'print' });
-  const small = await page.evaluate(() =>
-    [...document.body.querySelectorAll('*')]
-      .filter((el): el is HTMLElement => el instanceof HTMLElement && el.checkVisibility() && !el.closest('.tw-visually-hidden'))
-      .filter((el) => [...el.childNodes].some((n) => n.nodeType === Node.TEXT_NODE && n.textContent!.trim()))
-      .filter((el) => parseFloat(getComputedStyle(el).fontSize) < 14)
-      .map((el) => `${el.tagName.toLowerCase()}.${el.className} ${getComputedStyle(el).fontSize}: ${el.textContent.trim().slice(0, 40)}`),
-  );
-  await page.emulateMedia({ media: 'screen' });
-  return small;
 }
 
 /** The page as it prints on A4: its pages' orientations, and whether any colour is left. */
@@ -100,15 +62,16 @@ test('an organisation finds what it needs from the first page, in the footer and
   await expect(page.locator('h1')).toHaveText('Use Thinkerwell with your learners');
   await expect(page.getByText('Thinkerwell is a student-led platform. It is not a registered charity or nonprofit.')).toBeVisible();
   await expect(page.getByText(/\[CONTACT EMAIL\]/)).toHaveCount(0);
-  await expect(page.getByText(/pilot/i)).toHaveCount(0);
 
-  // Getting ready is for everyone; the study's papers are in their own part.
+  // The pilot is introduced in one sentence, beside the contact link: the study package was retired on 11 November 2026.
+  await expect(page.getByText(/initial pilot is for selected partner organisations/)).toHaveCount(1);
+  await expect(page.getByText(/pilot/i)).toHaveCount(1);
+  for (const gone of ['Optional learning study', 'Optional learning study and data sharing', 'Print information sheets', 'Print consent forms', 'Print the check']) {
+    await expect(page.getByText(gone)).toHaveCount(0);
+  }
   const ready = page.getByRole('region', { name: 'Get ready' });
   await expect(ready.getByRole('link', { name: 'Open the checklist' })).toHaveAttribute('href', '/educators/setup');
   await expect(ready.getByRole('link', { name: 'Print the guide' })).toHaveAttribute('href', '/educators/session-guide');
-  const study = page.getByRole('region', { name: 'Optional learning study and data sharing' });
-  await expect(study.getByRole('link', { name: 'Print information sheets' })).toHaveAttribute('href', '/educators/information-sheet');
-  await expect(study.getByRole('link', { name: 'Print consent forms' })).toHaveAttribute('href', '/educators/consent-form');
 
   await page.goto('/educators');
   const group = page.getByRole('region', { name: 'Resources for your group' });
@@ -119,80 +82,35 @@ test('an organisation finds what it needs from the first page, in the footer and
   ] as const) {
     await expect(group.getByRole('link', { name: cta })).toHaveAttribute('href', url);
   }
-  // The study's papers are folded away, in one clearly named place.
-  await expect(group.getByRole('link', { name: 'Print consent forms' })).toBeHidden();
-  await group.getByText('Optional learning study').click();
-  await expect(group.getByRole('link', { name: 'Print information sheets' })).toHaveAttribute('href', '/educators/information-sheet');
-  await expect(group.getByRole('link', { name: 'Print consent forms' })).toHaveAttribute('href', '/educators/consent-form');
+  for (const gone of ['Optional learning study', 'Print information sheets', 'Print consent forms', 'Print the check']) {
+    await expect(page.getByText(gone)).toHaveCount(0);
+  }
   // Setting up a device is the hero's second button.
   await expect(page.getByRole('link', { name: 'Set up a device' })).toHaveAttribute('href', '/educators/setup');
+});
+
+test('the retired study addresses open For organisations, in the app and after a reload, and nothing of the old pages is served', async ({ page, request }) => {
+  for (const address of ['/educators/information-sheet', '/educators/consent-form', '/educators/learning-check', '/educators/pilot-check']) {
+    await page.goto(address);
+    await expect(page).toHaveURL(/\/organisations$/);
+    await expect(page.locator('h1')).toHaveText('Use Thinkerwell with your learners');
+    await expect(page.getByText(/consent form|information sheet|learning check/i)).toHaveCount(0);
+    // The server answers the old address with a redirect, not the old page.
+    const response = await request.get(address, { maxRedirects: 0 });
+    expect([301, 302, 307, 308]).toContain(response.status());
+    expect(response.headers().location).toBe('/organisations');
+  }
+  // Nothing is left on the site for the old pages' words.
+  for (const asset of ['/consent-form.pdf', '/information-sheet.pdf', '/learning-check.pdf']) {
+    const response = await request.get(asset);
+    expect(response.headers()['content-type'] ?? '').not.toContain('pdf');
+  }
 });
 
 for (const locale of ['en', 'id', 'ms'] as const) {
   test.describe(`on paper (${locale})`, { tag: '@chromium-only' }, () => {
     test.beforeEach(async ({ page }) => {
       if (locale !== 'en') await useLanguage(page, locale);
-    });
-
-    test('the consent form is two pages, A4 or Letter, black on white, with the organisation’s name and without the staff note', async ({
-      page,
-    }) => {
-      await page.goto('/educators/consent-form');
-      const name = page.getByRole('textbox', { name: msg(locale, 'pages.consentForm.orgLabel') });
-      await name.fill('Safe Harbour Learning Centre');
-      const result = await printed(page);
-      // Page 1 for the parent or guardian; page 2 for the learner's own answer and the witness line.
-      expect(result.pages).toEqual(['portrait', 'portrait']);
-      expect(result.colours).toEqual([]);
-      expect(await printedTooSmall(page)).toEqual([]);
-      await page.emulateMedia({ media: 'print' });
-      await expect(page.getByText(msg(locale, 'pages.consentForm.staffTitle'))).toBeHidden();
-      await expect(page.getByRole('button', { name: msg(locale, 'print.print') })).toBeHidden();
-      await expect(page.locator('.tw-consent').first().locator('strong', { hasText: 'Safe Harbour Learning Centre' })).toHaveCount(8);
-      await expect(page.locator('.tw-consent').nth(1).locator('strong', { hasText: 'Safe Harbour Learning Centre' })).toHaveCount(1);
-      await expect(page.getByText(msg(locale, 'pages.consentForm.yes'), { exact: true })).toHaveCount(3);
-      await expect(page.getByText(msg(locale, 'pages.consentForm.pageOf', { page: 2, count: 2 }))).toBeVisible();
-      await page.emulateMedia({ media: 'screen' });
-
-      // Still two pages with the name left to write by hand, or the longest name the box takes, on either paper.
-      expect(await pageCounts(page)).toEqual({ A4: 2, Letter: 2 });
-      await name.fill('');
-      expect(await pageCounts(page)).toEqual({ A4: 2, Letter: 2 });
-      await name.fill(LONGEST_ORGANISATION[locale] + ' and more');
-      await expect(name).toHaveValue(LONGEST_ORGANISATION[locale]);
-      expect(await pageCounts(page)).toEqual({ A4: 2, Letter: 2 });
-    });
-
-    test('the information sheet is one page, A4 or Letter, black on white, with what staff typed and without the staff note', async ({ page }) => {
-      await page.goto('/educators/information-sheet');
-      await expect(page.locator('h1')).toHaveText(msg(locale, 'pages.infoSheet.title'));
-      // Empty boxes print lines to write on.
-      expect(await pageCounts(page)).toEqual({ A4: 1, Letter: 1 });
-      const fill = async (organisation: string, contact: string) => {
-        for (const [key, value] of [
-          ['pages.consentForm.orgLabel', organisation],
-          ['pages.infoSheet.startLabel', START_DATE[locale]],
-          ['pages.infoSheet.endLabel', END_DATE[locale]],
-          ['pages.infoSheet.sessionsLabel', '12'],
-          ['pages.infoSheet.contactLabel', contact],
-        ] as const) {
-          await page.getByRole('textbox', { name: msg(locale, key) }).fill(value);
-        }
-      };
-      await fill(LONGEST_ORGANISATION[locale], 'Puan Sari Wulandari binti Abdurrahman');
-      expect(await pageCounts(page)).toEqual({ A4: 1, Letter: 1 });
-      await fill('Safe Harbour Learning Centre', 'Sari');
-      const result = await printed(page);
-      expect(result.pages).toEqual(['portrait']);
-      expect(result.colours).toEqual([]);
-      expect(await printedTooSmall(page)).toEqual([]);
-      await page.emulateMedia({ media: 'print' });
-      await expect(page.getByText(msg(locale, 'pages.consentForm.staffTitle'))).toBeHidden();
-      await expect(page.getByRole('group', { name: msg(locale, 'pages.infoSheet.fieldsTitle') })).toBeHidden();
-      await expect(page.locator('.tw-sheet strong', { hasText: 'Safe Harbour Learning Centre' })).toHaveCount(5);
-      await expect(page.locator('.tw-sheet strong', { hasText: 'Sari' })).toHaveCount(1);
-      await expect(page.getByText(msg(locale, 'pages.infoSheet.runBy'))).toBeVisible();
-      await page.emulateMedia({ media: 'screen' });
     });
 
     test('code cards print ten to an A4 page, then the list of codes and names', async ({ page }) => {

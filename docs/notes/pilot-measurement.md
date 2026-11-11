@@ -1,3 +1,5 @@
+> **Paused for everyone, 11 November 2026** (Justin's brief, `docs/notes/privacy-page.md`). `STUDY_COLLECTION_PAUSED` in `src/measurement/paused.ts` shuts the gate in the app (`src/measurement/gate.ts`: no collector download, nothing queued or sent, whatever the stored preference) and in `api/_lib/events.ts` (503 `paused`). The Settings control, the consent form, the information sheet and the learning check are removed. Stored preferences and any queued events are left untouched, not deleted. Before it is switched on again it needs a collection agreed with the organisation, the consent wording rewritten, and the founders' say-so. The rest of this note describes how it worked and is the starting point for rebuilding it.
+
 # Pilot measurement
 
 Built October 2026 from `docs/research/MEASUREMENT_PLAN.md` (section 4, "In-app usage data"). **Off by default, and safe to merge without switching anything on.** Nothing is live until the "Switch on" checklist at the end of this note is done by a person.

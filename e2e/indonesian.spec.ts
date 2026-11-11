@@ -472,10 +472,8 @@ test.describe('with Indonesian on, every page is Indonesian and fits', () => {
       '/educators',
       '/educators/setup',
       '/educators/session-guide',
-      '/educators/learning-check',
       '/educators/guides?section=civics',
-      '/educators/information-sheet',
-      '/educators/consent-form',
+      '/privacy-and-safeguarding',
       '/educators/code-cards?prefix=ABC&count=12',
       '/educators/class',
       '/educators/class/certificates',
@@ -492,23 +490,6 @@ test.describe('with Indonesian on, every page is Indonesian and fits', () => {
       await expect(page.locator('h1').first()).toBeVisible();
       await expectAllIndonesian(page, address, allowed);
     }
-
-    // The consent form with an organisation's name typed in (the name is theirs, in any language).
-    await page.goto('/educators/consent-form');
-    await page.getByRole('textbox', { name: msg(id, 'pages.consentForm.orgLabel') }).fill('HELP for Refugees');
-    await expectAllIndonesian(page, 'consent form, with a name', [...allowed, 'HELP for Refugees']);
-    // The information sheet with every box filled in.
-    await page.goto('/educators/information-sheet');
-    for (const [key, value] of [
-      ['pages.consentForm.orgLabel', 'HELP for Refugees'],
-      ['pages.infoSheet.startLabel', '13 Oktober 2026'],
-      ['pages.infoSheet.endLabel', '21 November 2026'],
-      ['pages.infoSheet.sessionsLabel', '12'],
-      ['pages.infoSheet.contactLabel', 'Sari'],
-    ] as const) {
-      await page.getByRole('textbox', { name: msg(id, key) }).fill(value);
-    }
-    await expectAllIndonesian(page, 'information sheet, filled in', [...allowed, 'HELP for Refugees']);
 
     // What opens: a key word's meaning, the language panel, the learner switcher, the phone menu.
     await page.goto(`/lesson/${L10.id}/read?part=1`);

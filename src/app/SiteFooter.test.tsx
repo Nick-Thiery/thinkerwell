@@ -10,10 +10,13 @@ function renderFooter() {
 }
 
 describe('SiteFooter', () => {
-  it('links For organisations and Credits', () => {
+  it('links For organisations, Contact, Credits and Privacy & Child Safeguarding, in that order, then LinkedIn', () => {
     renderFooter();
     expect(screen.getByRole('link', { name: 'For organisations' })).toHaveAttribute('href', '/organisations');
     expect(screen.getByRole('link', { name: 'Credits' })).toHaveAttribute('href', '/credits');
+    expect(screen.getByRole('link', { name: 'Privacy & Child Safeguarding' })).toHaveAttribute('href', '/privacy-and-safeguarding');
+    const names = screen.getAllByRole('link').map((link) => link.textContent?.replace(/\s*\(opens in a new tab\)$/, ''));
+    expect(names).toEqual(['For organisations', 'Contact', 'Credits', 'Privacy & Child Safeguarding', 'Thinkerwell on LinkedIn']);
   });
 
   it("links Thinkerwell's LinkedIn Page once, in a new tab, with no referrer", () => {

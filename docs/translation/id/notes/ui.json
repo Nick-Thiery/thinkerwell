@@ -3803,38 +3803,6 @@
     "source": "Read more",
     "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
-  "pages.educators.pilotConsentTitle": {
-    "back": "Consent form",
-    "source": "Consent form"
-  },
-  "pages.educators.pilotConsentBody": {
-    "back": "Form to be signed by the parent or guardian of each learner, with one page for the learner's own answer, and your organization's name in it.",
-    "source": "A form for each learner's parent or guardian to sign, and a page for the learner's own answer, with your organisation's name on it.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.educators.pilotConsentCta": {
-    "back": "Print the consent form",
-    "source": "Print consent forms"
-  },
-  "pages.educators.pilotSheetTitle": {
-    "back": "Information sheet",
-    "source": "Information sheet",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.educators.pilotSheetBody": {
-    "back": "What the study involves, for each family to keep, with your organisation's name on it.",
-    "source": "What the study involves, for each family to keep, with your organisation's name on it.",
-    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.educators.pilotSheetCta": {
-    "back": "Print information sheet",
-    "source": "Print information sheets",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
   "pages.educators.pilotCodesTitle": {
     "back": "Learner code cards",
     "source": "Learner code cards",
@@ -3948,12 +3916,6 @@
     "flag": true,
     "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults. Changed in October 2026 to describe the pilot exception."
   },
-  "pages.organisations.privacy3": {
-    "back": "Parental consent. Before any learning data is shared to Thinkerwell, the parent or guardian signs a consent form, and the learner also agrees. This research will only use data that is connected with a code, never with a name: short questions and some sentences in the first and last sessions, and, in each session, the way the learner uses Thinkerwell: time, lessons and steps, answers, help that is used, videos, and number of words, but never the content of their writing.",
-    "source": "Parental consent. Before any learning data is shared with Thinkerwell, a parent or guardian signs a consent form, and the learner says yes too. The study would only use data linked to a code, never a name: short questions and a few sentences in the first and last sessions, and, in every session, how learners use Thinkerwell: time, lessons and steps, answers, the help they use, videos and word counts, never what they write.",
-    "flag": true,
-    "note": "Changed in October 2026 so the promise covers everything the pilot's measurement logs in every session (docs/research/MEASUREMENT_PLAN.md, section 4): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. Second AI's doubt: \"beberapa kalimat\" (a few sentences) doesn't say what they are; the English is as short on purpose (the consent form and information sheet explain the writing task)."
-  },
   "pages.organisations.privacyNow": {
     "source": "Learners' work and progress stay on the device they use, and are not sent to Thinkerwell. Online speech-to-text is off unless your staff turn it on; when it is on, what learners say goes to the browser maker's service. We will tell you before anything else changes.",
     "back": "Learners' work and progress stay on the device they use, and are not sent to Thinkerwell. Online speech-to-text is off unless your staff turn it on; when it is on, what learners say goes to the browser maker's service. We will tell you before anything else changes.",
@@ -3982,492 +3944,6 @@
     "back": "Ask a question, or tell us about your organisation: where you are, and about how many learners would use Thinkerwell.",
     "source": "Ask a question, or tell us about your organisation: where you are, and about how many learners would use Thinkerwell.",
     "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
-  },
-  "pages.consentForm.title": {
-    "back": "Consent form",
-    "source": "Consent form"
-  },
-  "pages.consentForm.intro": {
-    "back": "Print one form for each learner before the trial begins: one page for the parent or guardian, and one page for the learner. Type your organization's name so it prints on the form, or leave blank to be handwritten.",
-    "source": "Print one form for each learner before the pilot starts: a page for the parent or guardian, and a page for the learner. Type your organisation's name to put it on the form, or leave it empty to write it by hand.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.consentForm.orgLabel": {
-    "back": "Your organisation's name",
-    "source": "Your organisation's name",
-    "flag": true,
-    "note": "Changed from \"kamu\" to \"Anda\" (September 2026): pages for adults (educators, partners, parents) use \"Anda\"; pages for learners keep \"kamu\". Drafted by AI, not yet reviewed."
-  },
-  "pages.consentForm.orgHelper": {
-    "back": "This name is only used on this form, and is not saved.",
-    "source": "It is only used on this form, and is not saved."
-  },
-  "pages.consentForm.staffTitle": {
-    "back": "For staff: this is a template",
-    "source": "For staff: this is a template"
-  },
-  "pages.consentForm.staffBody": {
-    "flag": true,
-    "note": "Changed from \"kamu\" to \"Anda\" (September 2026): pages for adults (educators, partners, parents) use \"Anda\"; pages for learners keep \"kamu\". Drafted by AI, not yet reviewed. New in the partner kit (September 2026). Legal disclaimer wording needs a native check; 'templat' and 'nasihat hukum' should be confirmed as natural.",
-    "back": "This is not legal advice. Before using it, check this form against your organisation's own rules and the data protection law where you work, then change anything that doesn't fit. Signed forms contain names: keep them safe. Thinkerwell never sees them.",
-    "source": "It is not legal advice. Before you use it, check it against your organisation's own rules and the data protection law where you work, and change anything that doesn't fit. Signed forms have names on them: keep them safe. Thinkerwell never sees them."
-  },
-  "pages.consentForm.staffUse": {
-    "back": "Give the information sheet to each family together with this form. If the parent or guardian cannot read, read both in their language, then sign the witness section on page 2. Students aged 18 years and above sign themselves. This form does not cover online voice to text, so make sure that option stays off in Settings.",
-    "source": "Give each family the information sheet with the form. If a parent or guardian can't read, read both aloud in their language, and sign as a witness on page 2. Learners aged 18 or older sign for themselves. The form doesn't cover online speech-to-text, so keep it off in Settings.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. Changed after the first back-translation: \"biarkan pilihan itu mati\" read as informal, so \"pastikan pilihan itu tetap mati\". The second back-translation still found \"mati\" (off) informal; it is the word Settings uses (\"Mati kecuali Anda menyalakannya\"), so it was kept."
-  },
-  "pages.consentForm.orgBlank": {
-    "back": "organisation name",
-    "source": "organisation's name"
-  },
-  "pages.consentForm.pageOf": {
-    "back": "Page {page} of {count}",
-    "source": "Page {page} of {count}",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.consentForm.formTitle": {
-    "flag": true,
-    "note": "New in the partner kit (September 2026). The printed form is read by parents and guardians: it uses \"Anda\". Check it reads as a clear, respectful form.",
-    "back": "Taking part in the Thinkerwell pilot",
-    "source": "Taking part in the Thinkerwell pilot"
-  },
-  "pages.consentForm.formFor": {
-    "back": "For parents or guardians",
-    "source": "For a parent or guardian"
-  },
-  "pages.consentForm.formIntro": {
-    "back": "{organisation} is trying Thinkerwell, a free online learning platform for youth aged about 10 to 17, with four social studies courses. Your child's class will use lessons from one or more courses, a few sessions a week for 4 to 6 weeks. There is also a small study of its benefit.",
-    "source": "{organisation} is trying Thinkerwell, a free online learning platform for youth aged about 10 to 17, with four social studies courses. Your child's class will use lessons from one or more of them a few sessions a week for 4 to 6 weeks. There is also a small study of how well it works.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. \"seberapa bermanfaat Thinkerwell\" (how useful Thinkerwell is) stands for \"how well it works\": check."
-  },
-  "pages.consentForm.studyTitle": {
-    "back": "Pilot study",
-    "source": "The pilot study",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. \"penelitian uji coba\" for \"the pilot study\" (docs/translation/id/KEY_TERMS.md: \"uji coba\" is the pilot, \"penelitian\" the study)."
-  },
-  "pages.consentForm.choiceTitle": {
-    "back": "This is your choice",
-    "source": "It is your choice"
-  },
-  "pages.consentForm.choiceBody": {
-    "back": "Answering no to one of the questions below will not affect your child's other activities at {organisation}. If you answer no to the research, your child can still use Thinkerwell in class, only their answers won't be used. You can change your mind anytime, even after the trial finishes: inform {organisation}, and your child's answers will be deleted. Your child may also refuse, and their refusal remains valid.",
-    "source": "Saying no to either question below won't affect anything else your child does at {organisation}. If you say no to the study, your child can still use Thinkerwell in class; their answers just aren't used. You can change your mind at any time, even after the pilot: tell {organisation}, and your child's answers are deleted. Your child can say no too, and their no counts.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. \"penolakannya tetap berlaku\" (their refusal still stands) for \"their no counts\": check it is clear and kind."
-  },
-  "pages.consentForm.questions": {
-    "back": "Any questions? Ask {organisation}.",
-    "source": "Questions? Ask {organisation}.",
-    "flag": true,
-    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed."
-  },
-  "pages.consentForm.questionsEmail": {
-    "flag": true,
-    "note": "Public copy update (October 2026, from Justin's copy guide): drafted by AI, not yet reviewed.",
-    "back": "Any questions? Ask {organisation}, or send an email to Thinkerwell at {email}.",
-    "source": "Questions? Ask {organisation}, or email Thinkerwell at {email}."
-  },
-  "pages.consentForm.honesty": {
-    "back": "Thinkerwell is a platform led by students, not a registered charity.",
-    "source": "Thinkerwell is a student-led platform, not a registered charity.",
-    "flag": true,
-    "note": "About page mission and \"platform\" wording (7 October 2026): drafted by AI, not yet reviewed by a native speaker."
-  },
-  "pages.consentForm.answerTitle": {
-    "back": "Your answers",
-    "source": "Your answers",
-    "flag": true,
-    "note": "The English became plural (\"Your answers\": there are two questions now, October 2026); \"Jawaban Anda\" covers both. Drafted by AI, not yet reviewed."
-  },
-  "pages.consentForm.classQuestion": {
-    "back": "My child may use Thinkerwell in class at {organisation}.",
-    "source": "My child can use Thinkerwell in class at {organisation}.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
-  },
-  "pages.consentForm.studyQuestion": {
-    "back": "My child may participate in the pilot study. The answers are used with a code, never with their name.",
-    "source": "My child can take part in the pilot study. Their answers are used with a code, never their name.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. \"penelitian uji coba\" for \"the pilot study\"."
-  },
-  "pages.consentForm.yes": {
-    "back": "Yes",
-    "source": "Yes",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.consentForm.no": {
-    "back": "No",
-    "source": "No",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.consentForm.childName": {
-    "back": "Child's name",
-    "source": "Child's name"
-  },
-  "pages.consentForm.pilotCode": {
-    "back": "Trial code (filled in by organization): {code}",
-    "source": "Pilot code (the organisation fills this in): {code}",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. \"kode uji coba\" for \"pilot code\". {code} is a line to write the code on."
-  },
-  "pages.consentForm.parentName": {
-    "back": "Name of parent or guardian",
-    "source": "Parent or guardian's name"
-  },
-  "pages.consentForm.signature": {
-    "back": "Signature or thumbprint",
-    "source": "Signature or thumbprint",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. \"cap jempol\" (thumbprint): confirm it is the word families and staff use, or \"cap ibu jari\"."
-  },
-  "pages.consentForm.date": {
-    "back": "Date",
-    "source": "Date"
-  },
-  "pages.consentForm.keep": {
-    "back": "{organisation} keeps this form in a locked place. Thinkerwell never sees it.",
-    "source": "{organisation} keeps this form somewhere locked. Thinkerwell never sees it.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
-  },
-  "pages.consentForm.learnerTitle": {
-    "back": "The learner's own answer",
-    "source": "The learner's own answer",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.consentForm.learnerFor": {
-    "back": "Filled in by staff",
-    "source": "For staff to fill in",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.consentForm.learnerIntro": {
-    "back": "Read this to the learner, in their language:",
-    "source": "Read this aloud to the learner, in their language:",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. \"Bacakan\" is \"read aloud to\"."
-  },
-  "pages.consentForm.learnerScript": {
-    "back": "We are trying a new learning site called Thinkerwell. In the first and last lessons, you will answer some questions and write some sentences. This is not an exam, and nothing is graded. We use a number, not your name. You may refuse, or stop anytime, and you can still use Thinkerwell and come to class. Do you want your answers to be part of this research?",
-    "source": "We're trying a new learning website called Thinkerwell. In the first and last lessons, you'll answer some questions and write a few sentences. It isn't a test, and nobody gets a mark. We use a number, not your name. You can say no, or stop at any time, and you can still use Thinkerwell and come to class. Do you want your answers to be part of the study?",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. Read aloud by staff to a child, so \"kamu\" and spoken words: \"Kamu boleh menolak\" for \"You can say no\", \"bukan ujian\" for \"isn't a test\", \"tidak ada yang diberi nilai\" for \"nobody gets a mark\". Check it sounds natural said aloud to a 10-year-old."
-  },
-  "pages.consentForm.learnerAnswer": {
-    "back": "Learner's answer",
-    "source": "The learner's answer",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.consentForm.staffInitials": {
-    "back": "Staff initials",
-    "source": "Staff initials",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. \"Paraf\" for initials."
-  },
-  "pages.consentForm.learnerWins": {
-    "back": "If the parent answers yes and the learner answers no, the learner's no answer is the one that applies.",
-    "source": "If the parent says yes and the learner says no, the learner's no wins.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. A rule for staff: keep it as firm as the English."
-  },
-  "pages.consentForm.witnessTitle": {
-    "back": "If the parent or guardian cannot read or write",
-    "source": "If the parent or guardian can't read or write",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.consentForm.witnessBody": {
-    "back": "I have read out the information sheet and this form in {language} language. The parent or guardian has understood and given answers on page 1.",
-    "source": "I read the information sheet and this form aloud in {language} (language). The parent or guardian understood and gave the answers on page 1.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. Changed after the first back-translation, which read it as present tense: \"telah\" makes it past. The line after \"dalam bahasa\" is left empty to write the language on. Second AI's doubt: \"dalam bahasa {language}\" includes the word \"bahasa\" (language) before the placeholder. If {language} is filled with just the language name (\"Indonesia\", \"Inggris\"), this is correct. If {language} already includes \"Bahasa\" (\"Bahasa Indonesia\"), it will read redundantly as \"in Bahasa Indonesian language\". Consider using just \"dalam {language}\" if the placeholder includes \"Bahasa\"."
-  },
-  "pages.consentForm.languageBlank": {
-    "back": "language",
-    "source": "language",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.consentForm.codeBlank": {
-    "back": "trial code",
-    "source": "pilot code",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. Read out by screen readers only, where the printed form has a line for the code."
-  },
-  "pages.consentForm.staffName": {
-    "back": "Staff name",
-    "source": "Staff member's name",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.consentForm.staffSignature": {
-    "back": "Staff signature",
-    "source": "Staff member's signature",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.pilotStudy.intro": {
-    "back": "If you answer yes to the research, then in the first and last sessions of a class studying Exploring Our World, your child:",
-    "source": "If you say yes to the study, then in the first and last sessions of a class studying Exploring Our World, your child:",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
-  },
-  "pages.pilotStudy.questions": {
-    "back": "answers 16 short questions (about 15 minutes each time)",
-    "source": "answers 16 short questions (about 15 minutes each time)",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
-  },
-  "pages.pilotStudy.writing": {
-    "back": "writes several sentences about a fictional city, on paper (about 8 minutes)",
-    "source": "writes a few sentences about a made-up town, on paper (about 8 minutes)",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
-  },
-  "pages.pilotStudy.faces": {
-    "back": "chooses a face picture for each of 5 sentences, such as \"I can use a map to find information\" (about 1 minute)",
-    "source": "chooses a face for each of 5 sentences, like “I can use a map to find information” (about 1 minute)",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. The sentence in quotation marks is one the learner reads, so \"Aku ...\"."
-  },
-  "pages.pilotStudy.site": {
-    "back": "In each session, Thinkerwell also records the way your child uses it: how long, which lessons and steps they open and complete, their answers on quick checks and quizzes, whether they use easier readings or listen to the text being read aloud, whether they watch videos (and how much) or read the written version, and how many words they write, but never the content of their writing.",
-    "source": "In every session, Thinkerwell also notes how your child uses it: how long, which lessons and steps they open and finish, their answers to quick checks and quizzes, whether they use the simpler reading or have it read aloud, whether they watch the videos (and how much) or read instead, and how many words they write, never the words themselves.",
-    "flag": true,
-    "note": "Changed in October 2026 so the promise covers everything the pilot's measurement logs in every session (docs/research/MEASUREMENT_PLAN.md, section 4): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. \"cek cepat\" is the quick check (KEY_TERMS.md); \"bacaan yang lebih mudah\" the Simpler reading; \"mendengarkan teksnya dibacakan\" is Listen; \"membaca versi tulisannya\" the written version (\"Baca saja\"). \"tetapi tidak pernah isi tulisannya\" (never what they wrote) for \"never the words themselves\"."
-  },
-  "pages.pilotStudy.notTest": {
-    "back": "All of this is not an exam. Nothing depends on the answers.",
-    "source": "None of this is a test. Nothing depends on the answers.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. \"Semua ini bukan ujian\" for \"None of this is a test\": the back-translation gave \"All of this is not an exam\"; check it reads as \"none of it\"."
-  },
-  "pages.pilotStudy.keepTitle": {
-    "back": "What we keep, and what we don't",
-    "source": "What we keep, and what we don't",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.pilotStudy.keepCode": {
-    "back": "Your child's answers are connected with a code, like {code}, never with their name.",
-    "source": "Your child's answers are linked to a code, like {code}, never to their name.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. {code} is the example code ABC-01."
-  },
-  "pages.pilotStudy.keepList": {
-    "back": "{organisation} keeps the list of names and codes on paper. Thinkerwell never sees it.",
-    "source": "{organisation} keeps the list of names and codes on paper. Thinkerwell never sees it.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
-  },
-  "pages.pilotStudy.keepNeverAsk": {
-    "back": "Thinkerwell never asks about family, journey, country of origin, religion, or ethnicity.",
-    "source": "Thinkerwell never asks about family, journey, home country, religion or ethnicity.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. \"perjalanan\" (journey) means how a family travelled here: check it reads that way, and gently. \"suku\" for ethnicity: confirm, or \"suku atau etnis\"."
-  },
-  "pages.pilotStudy.keepNoDocuments": {
-    "back": "Thinkerwell never asks for UNHCR number or any documents.",
-    "source": "Thinkerwell never asks for UNHCR numbers or any documents.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. Families may know the UNHCR card by another name (\"kartu UNHCR\"): check \"nomor UNHCR\" is clear."
-  },
-  "pages.pilotStudy.keepNoPhotos": {
-    "back": "Thinkerwell never collects your child's photos, or their location.",
-    "source": "Thinkerwell never collects photos of your child, or where they are.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
-  },
-  "pages.pilotStudy.keepDevice": {
-    "back": "What your child writes and records in the lessons stays on the device they use.",
-    "source": "What your child writes and records in the lessons stays on the device they use.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
-  },
-  "pages.pilotStudy.keepGroup": {
-    "back": "Only the Thinkerwell team sees the answers. {organisation} receives results for the whole group, never for one child.",
-    "source": "Only the Thinkerwell team sees the answers. {organisation} gets results for the whole group, never for one child.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
-  },
-  "pages.pilotStudy.keepDelete": {
-    "back": "Everything kept for the research is deleted at the latest 6 months after the trial finishes.",
-    "source": "Everything the study keeps is deleted within 6 months after the pilot ends.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
-  },
-  "pages.pilotStudy.keepVideo": {
-    "back": "Some lessons have YouTube videos that are not mandatory to watch. When a video is played, YouTube (owned by Google) receives some information, such as the internet address (IP address) of the device. Every video has a written version: choosing \"{readInstead}\" doesn't send anything to YouTube.",
-    "source": "Some lessons have an optional YouTube video. When one plays, YouTube (owned by Google) gets some information, such as the device's internet (IP) address. Every video has a written version: choosing “{readInstead}” sends nothing to YouTube.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger."
-  },
-  "pages.infoSheet.title": {
-    "back": "Information sheet",
-    "source": "Information sheet",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.infoSheet.intro": {
-    "back": "Print one sheet for each learner's family, to be given together with the consent form. Fill in what you already know so it prints on this sheet, or leave the boxes empty to be handwritten.",
-    "source": "Print one for each learner's family, to give with the consent form. Fill in what you know to put it on the sheet, or leave a box empty to write it by hand.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.infoSheet.fieldsTitle": {
-    "back": "Before printing",
-    "source": "Before you print",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.infoSheet.fieldsHelper": {
-    "back": "Only used on this sheet, and not saved.",
-    "source": "Only used on this sheet, and not saved.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.infoSheet.startLabel": {
-    "back": "Start date",
-    "source": "Start date",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.infoSheet.endLabel": {
-    "back": "End date",
-    "source": "End date",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.infoSheet.sessionsLabel": {
-    "back": "Number of sessions",
-    "source": "Number of sessions",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.infoSheet.contactLabel": {
-    "back": "Contact person",
-    "source": "Contact person",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. \"Narahubung\" (contact person) is formal: confirm staff use it."
-  },
-  "pages.infoSheet.staffBody": {
-    "back": "This is not legal advice. Check this sheet against your own organization's rules, then change anything that doesn't fit. If the parent or guardian cannot read, read this sheet in their language.",
-    "source": "It is not legal advice. Check it against your organisation's own rules, and change anything that doesn't fit. If a parent or guardian can't read, read it aloud in their language.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.infoSheet.startBlank": {
-    "back": "start date",
-    "source": "start date",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.infoSheet.endBlank": {
-    "back": "end date",
-    "source": "end date",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.infoSheet.sessionsBlank": {
-    "back": "number of sessions",
-    "source": "number of sessions",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.infoSheet.contactBlank": {
-    "back": "contact person's name",
-    "source": "contact person's name",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.infoSheet.sheetTitle": {
-    "back": "About the Thinkerwell trial",
-    "source": "About the Thinkerwell pilot",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.infoSheet.sheetFor": {
-    "back": "To be kept by parent or guardian",
-    "source": "For a parent or guardian to keep",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.infoSheet.whatTitle": {
-    "back": "What is Thinkerwell?",
-    "source": "What is Thinkerwell?",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.infoSheet.whatBody": {
-    "back": "Thinkerwell is a free learning site. Thinkerwell teaches history, maps and places, culture, and how societies make decisions. Learners read, write, speak, watch short videos, and think about what they learn, in simple English or Indonesian language. Thinkerwell is made by a small team of students in Singapore.",
-    "source": "Thinkerwell is a free learning website. It teaches history, maps and places, cultures, and how communities make decisions. Learners read, write, speak, watch short videos and think about what they learned, in simple English, Bahasa Indonesia or Bahasa Melayu. It is made by a small team of students in Singapore.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. \"pelajar\" here means the students who make Thinkerwell (as in \"proyek yang dipimpin oleh pelajar\"); elsewhere it means learners. Check it isn't confusing. October 2026: the English now names Malay too (Bahasa Melayu was added); the Indonesian was changed to match by the session that added Malay."
-  },
-  "pages.infoSheet.happenTitle": {
-    "back": "What will happen?",
-    "source": "What will happen?",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.infoSheet.happenBody": {
-    "back": "From {start} to {end}, your child's class at {organisation} will use Thinkerwell on tablets and laptops owned by the organization, around {sessions} times. A teacher from {organisation} leads each session.",
-    "source": "From {start} to {end}, your child's class at {organisation} will use Thinkerwell on its tablets and laptops, about {sessions} times. A teacher from {organisation} leads every session.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. \"milik organisasi\" (belonging to the organisation) for \"its\"."
-  },
-  "pages.infoSheet.studyTitle": {
-    "back": "Pilot study: You choose",
-    "source": "The pilot study: you choose",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.infoSheet.choiceTitle": {
-    "back": "Answering yes or no",
-    "source": "Saying yes or no",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.infoSheet.choiceBody": {
-    "back": "This is your choice, and you answer it on the consent form. If you answer no to the research, your child still comes to class and can still use Thinkerwell. Just that the answers are not used in the research. You can change your mind anytime, even after the trial finishes. Tell a teacher, and your child's answers will be deleted. Your child may also refuse, and their refusal still stands.",
-    "source": "It is your choice, and you answer on the consent form. If you say no to the study, your child still comes to class and can still use Thinkerwell. Their answers just aren't used in the study. You can change your mind at any time, even after the pilot. Tell a teacher, and your child's answers are deleted. Your child can also say no, and their no counts.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. \"penolakannya tetap berlaku\" (their refusal still stands) for \"their no counts\": check it is clear and kind."
-  },
-  "pages.infoSheet.questionsTitle": {
-    "back": "Questions",
-    "source": "Questions",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.infoSheet.questions": {
-    "back": "Ask {contact} at {organisation}.",
-    "source": "Ask {contact} at {organisation}.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.infoSheet.questionsEmail": {
-    "back": "Ask {contact} at {organisation}, or send an email to Thinkerwell at {email}.",
-    "source": "Ask {contact} at {organisation}, or write to Thinkerwell at {email}.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker."
-  },
-  "pages.infoSheet.runBy": {
-    "back": "Thinkerwell is run by Justin Park and Nick Thiery. Thinkerwell is a student-led platform, not a registered charity.",
-    "source": "Thinkerwell is run by Justin Park and Nick Thiery. It is a student-led platform, not a registered charity.",
-    "flag": true,
-    "note": "New or changed for the consent form's study parts and the information sheet (October 2026): drafted by AI, back-translated by a second AI that didn't see the English, not yet reviewed by a native speaker. A promise to refugee families: check it says exactly what the English says, no softer and no stronger. Changed \"project\" to \"platform\" (7 October 2026): drafted by AI, not yet reviewed."
   },
   "pages.codeCards.title": {
     "back": "Code cards",
@@ -5853,10 +5329,8 @@
     "back": "Print the code cards from {educators}. Each learner types their code as a name."
   },
   "pilotDay.beforeConsent": {
-    "flag": "October 2026, from a check of the pilot pages: clearer wording, or no mention of videos now that Indonesian and Malay lessons have no Watch step. Drafted by AI with no second AI review: check.",
-    "note": "New in October 2026: the pilot day guide for staff (/educators/pilot-day). Drafted by AI. The back-translation was written by the same drafter, from the translation alone, not by an independent second pass. Not yet reviewed by a native speaker. 'Jawaban tidak dari pelajar sendiri yang berlaku' follows pages.consentForm.learnerWins (the learner's no wins).",
-    "source": "Check that every family has the information sheet and has answered the consent form. If a learner says no, that is the answer, even if the family said yes.",
-    "back": "Make sure every family has received the information sheet and answered the consent form. If the learner answers no, that is the answer, even if the family answered yes."
+    "source": "Check that the permissions agreed with your organisation are in place. If a learner says no, that is the answer, even if the family said yes.",
+    "flag": "November 2026: changed when the optional learning study pages were retired. Drafted by AI with no back-translation: check."
   },
   "pilotDay.startTitle": {
     "flag": true,
@@ -6056,114 +5530,6 @@
     "source": "Print the guide",
     "back": "Print the guide"
   },
-  "pilotResults.title": {
-    "source": "Share optional study data",
-    "back": "Share optional study data",
-    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
-  },
-  "pilotResults.intro": {
-    "source": "Use this only for a learning study your organisation takes part in with Thinkerwell, after every family has signed the consent form. It is off until you turn it on.",
-    "back": "Use this only for a learning study your organisation takes part in with Thinkerwell, after every family has signed the consent form. It is off until you turn it on.",
-    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
-  },
-  "pilotResults.codeLabel": {
-    "source": "Organisation code",
-    "back": "Organisation code",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
-  },
-  "pilotResults.codeHelp": {
-    "source": "Thinkerwell gives you this code, like help-jakarta.",
-    "back": "Thinkerwell gives you this code, like help-jakarta.",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
-  },
-  "pilotResults.codeInvalid": {
-    "source": "Use letters, numbers and hyphens, 2 to 32 in all, like help-jakarta.",
-    "back": "Use letters, numbers and hyphens, 2 to 32 characters, like help-jakarta.",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
-  },
-  "pilotResults.codeSave": {
-    "source": "Save code",
-    "back": "Save code",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
-  },
-  "pilotResults.codeSaved": {
-    "source": "Code saved.",
-    "back": "Code saved.",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
-  },
-  "pilotResults.shareLabel": {
-    "source": "Share optional study data from this device",
-    "back": "Share optional study data from this device",
-    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
-  },
-  "pilotResults.shareNeedsCode": {
-    "source": "Save an organisation code first.",
-    "back": "Save the organisation code first.",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
-  },
-  "pilotResults.shareHelp": {
-    "source": "When this is on, a learner who types a learner code like HLP-01 as their name sends how they use Thinkerwell to the Thinkerwell team: how long, which lessons and steps they open and finish, their answers to quick checks and quizzes, whether they use the simpler reading or Listen, whether they watch videos or read instead, and how many words they write. It goes with their code and your organisation code. It never includes names, writing or recordings. Learners who look around, or who use any other name, send nothing.",
-    "back": "When this is on, a learner who types a learner code like HLP-01 as their name sends how they use Thinkerwell to the Thinkerwell team: how long, which lessons and steps they open and finish, their answers to quick checks and quizzes, whether they use the simpler reading or Listen, whether they watch videos or read instead, and how many words they write. It goes with their code and your organisation code. It never includes names, writing or recordings. Learners who look around, or who use any other name, send nothing.",
-    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
-  },
-  "pilotResults.shareOffHelp": {
-    "source": "Turning this off also deletes any results still waiting to be sent from this device.",
-    "back": "If it is turned off, results still waiting to be sent from this device are also deleted.",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
-  },
-  "pilotResults.statusOff": {
-    "source": "Sharing is off. Nothing is sent.",
-    "back": "Sharing is off. Nothing is sent.",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
-  },
-  "pilotResults.statusOn": {
-    "source": "Sharing with {org}.",
-    "back": "Sharing with {org}.",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
-  },
-  "pilotResults.waiting": {
-    "source": "Results waiting to be sent: {count}",
-    "back": "Results waiting to be sent: {count}",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
-  },
-  "pilotResults.paused": {
-    "source": "Sending is paused because Thinkerwell can't take results yet. It tries again later.",
-    "back": "Sending is paused because Thinkerwell can't receive results yet. Sending is tried again later.",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
-  },
-  "pilotResults.delete": {
-    "source": "Delete waiting results",
-    "back": "Delete waiting results",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
-  },
-  "pilotResults.deleteHelp": {
-    "source": "Deletes results that haven't been sent yet. Results already sent are deleted within 6 months after the study ends.",
-    "back": "Deletes results that haven't been sent yet. Results already sent are deleted within 6 months after the study ends.",
-    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
-  },
-  "pilotResults.deleted": {
-    "source": "Waiting results deleted.",
-    "back": "The waiting results have been deleted.",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed. Register: Anda, for adults."
-  },
   "pages.home.newLearner.privacyNotePilot": {
     "source": "Your writing and recordings stay on this device. If you use a learner code for a study, Thinkerwell also counts how you use it. It never gets your name.",
     "back": "Your writing and recordings stay on this device. If you use a learner code for a study, Thinkerwell also counts how you use it. It never gets your name.",
@@ -6237,10 +5603,8 @@
     "note": "New or changed in October 2026: simpler pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
   },
   "pages.settings.moreIntro": {
-    "source": "Moving work to another device, the Listen voice, lesson audio for offline use, speech-to-text and optional study data.",
-    "back": "Moving work to another device, the Listen voice, lesson audio for offline use, speech-to-text and optional study data.",
-    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check.",
-    "note": "New or changed in October 2026: simpler pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
+    "source": "Moving work to another device, the Listen voice, lesson audio for offline use and speech-to-text.",
+    "flag": "November 2026: changed when the optional learning study pages were retired. Drafted by AI with no back-translation: check."
   },
   "lessonPlayer.shell.stepOf": {
     "source": "Step {number} of {total} · {stage}",
@@ -6344,21 +5708,6 @@
     "flag": true,
     "note": "New in October 2026: keeping a guest's work with \"Save my work\" (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
   },
-  "pages.educators.pilotCheckTitle": {
-    "back": "Learning check",
-    "source": "Learning check",
-    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
-  },
-  "pages.educators.pilotCheckBody": {
-    "back": "Paper sheets for the first and last sessions of a study: 16 questions, a short piece of writing and 5 faces, by learner code. With the answer key for the team.",
-    "source": "Paper sheets for the first and last sessions of a study: 16 questions, a short piece of writing and 5 faces, by learner code. With the answer key for the team.",
-    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
-  },
-  "pages.educators.pilotCheckCta": {
-    "back": "Print the check",
-    "source": "Print the check",
-    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
-  },
   "pages.educators.sendEnquiry": {
     "back": "Send an enquiry",
     "source": "Send an enquiry",
@@ -6414,16 +5763,6 @@
     "source": "Everything here prints on A4, in black and white.",
     "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
-  "pages.educators.studyTitle": {
-    "back": "Optional learning study",
-    "source": "Optional learning study",
-    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
-  },
-  "pages.educators.studyIntro": {
-    "back": "Only for an organisation taking part in a learning study with Thinkerwell. You don't need any of this to teach a lesson.",
-    "source": "Only for an organisation taking part in a learning study with Thinkerwell. You don't need any of this to teach a lesson.",
-    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
-  },
   "pages.organisations.getInTouch": {
     "back": "Get in touch",
     "source": "Get in touch",
@@ -6432,21 +5771,6 @@
   "pages.organisations.whoTitle": {
     "back": "Who runs Thinkerwell?",
     "source": "Who runs Thinkerwell?",
-    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
-  },
-  "pages.organisations.studyTitle": {
-    "back": "Optional learning study and data sharing",
-    "source": "Optional learning study and data sharing",
-    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
-  },
-  "pages.organisations.studyIntro": {
-    "back": "Only for organisations that choose to take part in a learning study with Thinkerwell. It isn't needed to use the course.",
-    "source": "Only for organisations that choose to take part in a learning study with Thinkerwell. It isn't needed to use the course.",
-    "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
-  },
-  "pages.organisations.studyShare": {
-    "back": "Once families have signed the consent form, and only when your staff turn on “Share optional study data” in Settings, the site sends how learners use it, linked to a learner code and never a name. Coded data is not anonymous: your organisation keeps the list that matches codes to names.",
-    "source": "Once families have signed the consent form, and only when your staff turn on “Share optional study data” in Settings, the site sends how learners use it, linked to a learner code and never a name. Coded data is not anonymous: your organisation keeps the list that matches codes to names.",
     "flag": "Rewritten in October 2026, when the public pages stopped calling the platform a pilot, or added then (the contact form, the guides list). Drafted by AI with no second AI review: check."
   },
   "pages.teacherTools.backToGuides": {
@@ -6956,5 +6280,337 @@
   "pages.credits.translationBodyVietnamese": {
     "source": "The Tiếng Việt version was drafted with the help of AI too, from the English, and checked by AI by translating it back into English. It is waiting for native speakers to check it.",
     "flag": true
+  },
+  "privacy.title": {
+    "source": "Privacy & Child Safeguarding",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.intro": {
+    "source": "Thinkerwell provides free social studies learning for youth across Southeast Asia. We are committed to respecting learners’ privacy, dignity and safety. This policy covers our website, communications and learning activities. Its safeguarding commitments apply to everyone under 18 and to anyone working on Thinkerwell’s behalf.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.dates": {
+    "source": "Effective {effective}. Last updated {updated}.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.learnersLead": {
+    "source": "For learners:",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.learnersBody": {
+    "source": "Use a nickname, avoid sharing sensitive personal information, and remember that others using your device may see your saved work. You can skip uncomfortable questions and ask a trusted adult for help.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s1.title": {
+    "source": "1. Information and privacy",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s1.p1": {
+    "source": "Learner profiles, preferences, progress and journal responses are saved in the browser on the device used. Shared-device profiles should not be treated as password-protected accounts. Avoid entering addresses, contact details, identity documents or sensitive family information into learning activities.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s1.p2": {
+    "source": "If you contact us, we receive the information you choose to provide, such as your email address and message. Website hosting and external services may also process technical information, including IP addresses and browser details. Thinkerwell uses information only for the purposes described in this policy.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s2.title": {
+    "source": "2. How information is used",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s2.p1": {
+    "source": "We limit personal information to what is necessary to provide learning, operate and secure Thinkerwell, respond to enquiries and address safety concerns. We do not sell learners’ personal information or distribute it for advertising or unrelated purposes. Limited sharing is restricted to the service, safeguarding and legal purposes described here. We do not use personal information for targeted advertising or identifiable learner work to train third-party, non-local AI models.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s2.statsLead": {
+    "source": "Planned usage statistics.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s2.stats": {
+    "source": "We will collect anonymised, aggregated numerical statistics about platform usage and engagement, such as total visits, lesson activity and feature usage. These statistics help us understand Thinkerwell’s reach and improve the learning experience. They will exclude names, contact details and journal content, and will not identify individual learners. We will not attempt to re-identify anyone from this information.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s2.statsNow": {
+    "source": "Thinkerwell does not collect these statistics yet. Nothing on the site counts visits, lessons or features today.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s2.coded": {
+    "source": "An optional feature for pilot partners could link usage data to learner codes. It is switched off for everyone, and nothing is collected through it. Coded data is not anonymous, so it is separate from the statistics above. Any pilot data collection is agreed with each organisation first, with the permissions it needs.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s2.p3": {
+    "source": "Where consent is required, we explain the purpose clearly and obtain appropriate consent, including from a parent or legal guardian for children under 13 and whenever otherwise required.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s3.title": {
+    "source": "3. External services",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s3.p1": {
+    "source": "Audio, embedded videos and external links may involve other providers, whose privacy practices also apply. We identify relevant providers, cookies or analytics and explain what information they receive. Providers handling information on our behalf must receive only what they need, with appropriate safeguards, including for overseas processing.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s3.whoTitle": {
+    "source": "Who receives information today",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s3.whoIntro": {
+    "source": "These are the only services that receive information from using Thinkerwell. Thinkerwell does not set cookies, and has no ads or analytics from other companies.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s3.retention": {
+    "source": "Thinkerwell’s own server keeps nothing from the contact form. Copies held by the email services are kept only as long as needed to answer, then deleted. Hosting records are kept by the hosting provider as its policy describes.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s3.deviceTitle": {
+    "source": "Handled on the device, not sent to a service",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s3.device1": {
+    "source": "Saved work. Profiles, preferences, progress, journal responses and the latest speaking recording stay in the browser’s storage on the device (IndexedDB, with a few small settings in local storage). Nothing is uploaded.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s3.device2": {
+    "source": "Listen. It reads lessons aloud with recordings delivered with the site, or with a voice already on the device. No lesson text or learner writing is sent to a voice service.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s3.device3": {
+    "source": "Record yourself. The microphone is used only when a learner taps Start. The clip stays on the device and is never uploaded.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s3.device4": {
+    "source": "Fonts, pictures and audio. They come from Thinkerwell’s own servers.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s3.device5": {
+    "source": "AI. No AI service receives learner information. The pretend tool in the Digital World course gives pre-written answers.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.purposeLabel": {
+    "source": "What it does",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.getsLabel": {
+    "source": "What it receives",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.whereLabel": {
+    "source": "Where",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.vercel.name": {
+    "source": "Vercel (website hosting)",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.vercel.purpose": {
+    "source": "Delivers the website and its files.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.vercel.gets": {
+    "source": "Like any web server, it sees the IP address, browser and device details, and the pages requested.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.vercel.where": {
+    "source": "Vercel runs servers in several countries, so this may be processed outside the country you are in.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.vercel.link": {
+    "source": "Vercel privacy policy",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.resend.name": {
+    "source": "Resend (contact form delivery)",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.resend.purpose": {
+    "source": "Sends messages from the contact form to our team.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.resend.gets": {
+    "source": "What you type in the form: the topic, your name, your email address or WhatsApp number, and your message.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.resend.where": {
+    "source": "Resend may process it outside the country you are in.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.resend.link": {
+    "source": "Resend privacy policy",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.google.name": {
+    "source": "Google (our email inbox)",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.google.purpose": {
+    "source": "Holds the team’s inbox, so we can read and answer you.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.google.gets": {
+    "source": "Every email you send us, and the messages from the contact form.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.google.where": {
+    "source": "Google processes information in many countries.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.google.link": {
+    "source": "Google privacy policy",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.youtube.name": {
+    "source": "YouTube (optional videos)",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.youtube.purpose": {
+    "source": "Plays a lesson video, only after a learner taps play. Every video has a written version.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.youtube.gets": {
+    "source": "The player comes from youtube-nocookie.com. Once a video plays, YouTube receives the IP address and browser details, and may use cookies or similar storage on the device.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.youtube.where": {
+    "source": "Google processes information in many countries.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.youtube.link": {
+    "source": "Google privacy policy",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.speech.name": {
+    "source": "Your browser’s speech service (only if turned on)",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.speech.purpose": {
+    "source": "Turns speech into text for the Say it button.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.speech.gets": {
+    "source": "Off unless an educator turns on “Allow online speech-to-text” in Settings. When it is on, what a learner says is sent to the browser maker’s service.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.services.speech.where": {
+    "source": "This depends on the browser. Read its maker’s privacy policy.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s4.title": {
+    "source": "4. Security, retention and choices",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s4.p1": {
+    "source": "We restrict access to information we hold and use reasonable security measures. We retain it only as long as needed for its stated purpose or legal obligations, then delete or anonymise it. If a data breach occurs, we assess it and notify affected people and authorities where required.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s4.p2": {
+    "source": "Contact us to request access, correction, deletion or withdrawal of consent. We will explain any applicable limits. Clearing Thinkerwell’s browser data can remove all locally saved profiles and work on that browser. We cannot remotely retrieve or erase information held only on your device. Others with access to that browser may still be able to see it.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s4.remove": {
+    "source": "On the “Who’s learning today?” screen, Remove deletes one learner’s lesson work, journal, section check scores and recordings from that device. It cannot be undone.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s5.title": {
+    "source": "5. Keeping children safe",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s5.p1": {
+    "source": "We prohibit abuse, exploitation, harassment, bullying and discrimination. Team members must follow safeguarding conduct rules and receive preparation and suitability checks appropriate to their roles. Direct learner sessions must have responsible adult supervision; secret contact and unsupervised private sessions are prohibited.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s5.p2": {
+    "source": "We review materials for age suitability. Learners and organisations may skip sensitive activities or use fictional examples without sharing personal experiences. Partners and Thinkerwell must agree on supervision, consent and local reporting arrangements before joint activities.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s6.title": {
+    "source": "6. Images, recordings and stories",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s6.p1": {
+    "source": "We do not routinely record learner sessions. Using identifiable images, recordings, quotations or work requires specific parent or guardian permission and the child’s agreement. Refusing does not affect learning access. Permission never justifies material that could put a child at risk.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s7.title": {
+    "source": "7. Questions and concerns",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s7.p1": {
+    "source": "Contact {email} for privacy requests, unsuitable content or safeguarding concerns. Share only necessary details. Reports will be taken seriously, handled without retaliation and shared only with people who need to respond. Absolute secrecy cannot be promised where protection or legal reporting requires disclosure. Concerns involving team members must receive independent handling.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s7.p2": {
+    "source": "Journals are not monitored for safety concerns, and our inbox is not an emergency service. For immediate danger, contact local emergency services or a safe, trusted adult.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.s7.p3": {
+    "source": "We review this policy annually and after significant changes or incidents, and publish its latest revision date.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.refs.title": {
+    "source": "Guidance and further reading",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.refs.intro": {
+    "source": "The following guidance informed this policy and provides further reading for educators, families and partner organisations. These organisations have not endorsed or certified Thinkerwell.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.refs.englishOnly": {
+    "source": "These sources are published in English.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.refs.pdpcChildren.name": {
+    "source": "Singapore PDPC — Children’s Personal Data in the Digital Environment (PDF)",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.refs.pdpcChildren.desc": {
+    "source": "Guidance on understandable privacy information, consent and protecting children’s personal data online.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.refs.pdpcAnon.name": {
+    "source": "Singapore PDPC — Basic Anonymisation",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.refs.pdpcAnon.desc": {
+    "source": "Guidance on anonymising data and reducing the risk that individuals can be identified from it.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.refs.unicefDigital.name": {
+    "source": "UNICEF — Child Protection in Digital Education",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.refs.unicefDigital.desc": {
+    "source": "A policy brief and technical note on managing child-protection risks in digital learning.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.refs.kcs.name": {
+    "source": "Keeping Children Safe — International Child Safeguarding Standards",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.refs.kcs.desc": {
+    "source": "A framework covering safeguarding policy, people, procedures and accountability.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.refs.unicefToolkit.name": {
+    "source": "UNICEF — Child Safeguarding Toolkit for Business",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "privacy.refs.unicefToolkit.desc": {
+    "source": "Practical guidance on assessing risks, assigning responsibilities and responding to concerns.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "footer.privacy": {
+    "source": "Privacy & Child Safeguarding",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "seo.privacy.title": {
+    "source": "Privacy & Child Safeguarding | Thinkerwell",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "seo.privacy.description": {
+    "source": "How Thinkerwell protects learners’ privacy and keeps children safe: what is saved on the device, which services are involved and who to contact.",
+    "flag": "November 2026: the privacy and child safeguarding page, from Justin's policy text. Drafted by AI with no back-translation and no second AI review. Not yet reviewed by a native speaker: check, with the policy's legal terms."
+  },
+  "pages.organisations.pilotNote": {
+    "source": "Thinkerwell’s initial pilot is for selected partner organisations. Lessons, timing, feedback, any data collection and required permissions are agreed directly with each organisation before its pilot begins.",
+    "flag": "November 2026: changed when the optional learning study pages were retired. Drafted by AI with no back-translation: check."
   }
 }

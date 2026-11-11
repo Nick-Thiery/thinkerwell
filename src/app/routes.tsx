@@ -6,7 +6,7 @@ import { NotFoundPage } from '../pages/NotFoundPage';
 import { RouteErrorPage } from '../pages/RouteErrorPage';
 import { AppLayout } from './AppLayout';
 import { lazyPage as page } from './lazyPage';
-import { OLD_EDUCATOR_PATHS } from './lessonUrls';
+import { OLD_EDUCATOR_PATHS, organisationsPath, RETIRED_STUDY_PATHS } from './lessonUrls';
 import { loadPreviewDoor } from './previewDoor';
 
 // Three chunks rather than one per page: fewer files to fetch and keep,
@@ -107,17 +107,16 @@ export const routes: RouteObject[] = [
       { path: 'educators/section/:id/answers', ...page(teacherPages, (m) => m.AnswerKeyRoute) },
       // Pilot-day tools: setting up a device, the class on it and all its
       // certificates (docs/notes/pilot-day-tools.md), and the partner kit
-      // (For organisations, the information sheet, the consent form and code
-      // cards), with the other Educators pages.
+      // (For organisations and code cards), with the other Educators pages.
       { path: 'educators/setup', ...page(teacherPages, (m) => m.SetupPage) },
       { path: 'educators/session-guide', ...page(teacherPages, (m) => m.PilotDayPage) },
       { path: 'educators/feedback-sheet', ...page(teacherPages, (m) => m.FeedbackSheetPage) },
-      { path: 'educators/learning-check', ...page(teacherPages, (m) => m.PilotCheckPage) },
-      // Their addresses until October 2026 (vercel.json redirects them too, for links from outside).
+      // The session guide's address until October 2026 (vercel.json redirects it too, for links from outside).
       ...OLD_EDUCATOR_PATHS.map(([old, now]) => ({ path: old.slice(1), element: <Navigate to={now} replace /> })),
+      // The optional learning study's pages were retired in November 2026: their addresses open For organisations,
+      // never the old content (also for a device still holding an older copy of the app's links).
+      ...RETIRED_STUDY_PATHS.map((old) => ({ path: old.slice(1), element: <Navigate to={organisationsPath()} replace /> })),
       { path: 'educators/guides', ...page(teacherPages, (m) => m.GuidesPage) },
-      { path: 'educators/information-sheet', ...page(teacherPages, (m) => m.InformationSheetPage) },
-      { path: 'educators/consent-form', ...page(teacherPages, (m) => m.ConsentFormPage) },
       { path: 'educators/code-cards', ...page(teacherPages, (m) => m.CodeCardsPage) },
       { path: 'organisations', ...page(teacherPages, (m) => m.OrganisationsPage) },
       { path: 'educators/class', ...page(teacherPages, (m) => m.ClassPage) },
@@ -127,6 +126,8 @@ export const routes: RouteObject[] = [
       { path: 'credits', ...page(teacherPages, (m) => m.CreditsPage) },
       // The contact form (docs/notes/contact-form.md), linked from the footer, For organisations and the Educators page.
       { path: 'contact', ...page(teacherPages, (m) => m.ContactPage) },
+      // Privacy & Child Safeguarding, linked from the footer; public, no learner needed.
+      { path: 'privacy-and-safeguarding', ...page(teacherPages, (m) => m.PrivacyPage) },
       { path: 'settings', ...page(morePages, (m) => m.SettingsPage) },
       // A preview course (src/courses/): its map, its lessons on paper, and
       // the hidden address that turns it on for this device. "This page

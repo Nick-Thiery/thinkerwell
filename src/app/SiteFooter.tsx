@@ -1,13 +1,14 @@
 import { Link, useLocation } from 'react-router';
 import { useI18n } from '../i18n';
 import { THINKERWELL_LINKEDIN } from '../seo/site';
-import { contactPath, creditsPath, organisationsPath } from './lessonUrls';
+import { contactPath, creditsPath, organisationsPath, privacyPath } from './lessonUrls';
 import './SiteFooter.css';
 
 /**
  * The foot of every page: For organisations, for the adults deciding on a
  * pilot (the header already links For educators and About), Contact (the
- * contact form, /contact), Credits, and
+ * contact form, /contact), Credits, Privacy & Child Safeguarding
+ * (/privacy-and-safeguarding), and
  * Thinkerwell's LinkedIn Page (src/seo/site.ts), which opens in a new tab.
  * A plain link: no LinkedIn script, feed or button. Never printed.
  */
@@ -18,6 +19,7 @@ export function SiteFooter() {
     { href: organisationsPath(), label: t('footer.organisations') },
     { href: contactPath(), label: t('footer.contact') },
     { href: creditsPath(), label: t('footer.credits') },
+    { href: privacyPath(), label: t('footer.privacy') },
   ];
   return (
     <footer className="tw-site-footer">

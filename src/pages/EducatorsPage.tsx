@@ -5,12 +5,9 @@ import {
   classPath,
   codeCardsPath,
   feedbackSheetPath,
-  consentFormPath,
   contactPath,
   coursePath,
   guidesPath,
-  informationSheetPath,
-  learningCheckPath,
   lessonPrintPath,
   organisationsPath,
   sessionGuidePath,
@@ -30,9 +27,9 @@ import { SiteVideo } from './siteVideo/SiteVideo';
  * session" folded away, ./siteVideo/), the teaching materials (one link to
  * every teacher guide, printable lesson and answer key: /educators/guides),
  * the class on this device, resources for running a group (For
- * organisations, the session guide, learner code cards), the optional
- * learning study folded away (information sheet, consent form, learning
- * check: never needed to teach a lesson), and how to reach the team.
+ * organisations, the session guide, learner code cards), and how to reach
+ * the team. (The optional learning study's fold was removed on 11 November
+ * 2026; each organisation's pilot is agreed with it directly.)
  * Collects nothing itself: questions go to the contact form (/contact).
  */
 export function EducatorsPage() {
@@ -68,30 +65,6 @@ export function EducatorsPage() {
       body: t('pages.educators.pilotCodesBody'),
       cta: t('pages.educators.pilotCodesCta'),
       href: codeCardsPath(),
-    },
-  ];
-  // The optional learning study: only for an organisation taking part (docs/notes/partner-kit.md).
-  const study: Tool[] = [
-    {
-      icon: 'BookOpen',
-      title: t('pages.educators.pilotSheetTitle'),
-      body: t('pages.educators.pilotSheetBody'),
-      cta: t('pages.educators.pilotSheetCta'),
-      href: informationSheetPath(),
-    },
-    {
-      icon: 'FileText',
-      title: t('pages.educators.pilotConsentTitle'),
-      body: t('pages.educators.pilotConsentBody'),
-      cta: t('pages.educators.pilotConsentCta'),
-      href: consentFormPath(),
-    },
-    {
-      icon: 'ClipboardCheck',
-      title: t('pages.educators.pilotCheckTitle'),
-      body: t('pages.educators.pilotCheckBody'),
-      cta: t('pages.educators.pilotCheckCta'),
-      href: learningCheckPath(),
     },
   ];
   // Following the group on this device (docs/notes/pilot-day-tools.md).
@@ -216,11 +189,6 @@ export function EducatorsPage() {
         </h2>
         <p className="tw-edu-preview-intro">{t('pages.educators.groupIntro')}</p>
         <ToolList tools={group} />
-        {/* The optional learning study: one clearly named fold, never in the way of teaching. */}
-        <LessonDisclosure icon="FileText" summary={t('pages.educators.studyTitle')} className="tw-edu-fold tw-edu-study">
-          <p className="tw-edu-preview-intro">{t('pages.educators.studyIntro')}</p>
-          <ToolList tools={study} />
-        </LessonDisclosure>
       </section>
 
       <section aria-labelledby="fb-title" className="tw-edu-card tw-edu-card-feedback">

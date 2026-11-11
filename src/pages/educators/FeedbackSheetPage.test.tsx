@@ -38,9 +38,9 @@ describe('the session record and feedback sheet', () => {
     expect(within(table).getAllByRole('columnheader').map((cell) => cell.textContent)).toEqual(['Course', 'Lesson numbers used', 'Sessions']);
   });
 
-  it('keeps the learning check to Our World, and asks about ease, switching courses, content, interest and practical trouble', () => {
+  it('asks about ease, switching courses, content, interest and practical trouble', () => {
     const sheet = renderPage();
-    expect(sheet).toHaveTextContent('It is only for groups using Exploring Our World.');
+    expect(sheet).not.toHaveTextContent('learning check');
     for (const question of [
       'Was Thinkerwell easy to use?',
       'Was it clear how to move between courses?',

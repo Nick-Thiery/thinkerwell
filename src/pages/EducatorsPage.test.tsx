@@ -66,21 +66,19 @@ describe('EducatorsPage', () => {
     expect(within(device).getByRole('link', { name: 'Print all certificates' })).toHaveAttribute('href', '/educators/class/certificates');
   });
 
-  it('puts the resources for a group first, and the optional learning study in one closed fold', () => {
+  it('lists the resources for a group, with no learning study package', () => {
     renderAt();
     const group = screen.getByRole('region', { name: 'Resources for your group' });
     const titles = [...group.querySelectorAll('.tw-edu-check-title')].map((title) => title.textContent);
-    expect(titles).toEqual(['Using Thinkerwell with a group', 'Session guide', 'Session record and feedback', 'Learner code cards', 'Information sheet', 'Consent form', 'Learning check']);
+    expect(titles).toEqual(['Using Thinkerwell with a group', 'Session guide', 'Session record and feedback', 'Learner code cards']);
     expect(within(group).getByRole('link', { name: 'Read more' })).toHaveAttribute('href', '/organisations');
     expect(within(group).getByRole('link', { name: 'Print the guide' })).toHaveAttribute('href', '/educators/session-guide');
     expect(within(group).getByRole('link', { name: 'Make code cards' })).toHaveAttribute('href', '/educators/code-cards');
 
-    const study = within(group).getByText('Optional learning study').closest('details')!;
-    expect(study).not.toHaveAttribute('open');
-    expect(study).toHaveTextContent("You don't need any of this to teach a lesson.");
-    expect(within(study).getByRole('link', { name: 'Print information sheets' })).toHaveAttribute('href', '/educators/information-sheet');
-    expect(within(study).getByRole('link', { name: 'Print consent forms' })).toHaveAttribute('href', '/educators/consent-form');
-    expect(within(study).getByRole('link', { name: 'Print the check' })).toHaveAttribute('href', '/educators/learning-check');
+    // The optional learning study (information sheet, consent form, learning check) was retired on 11 November 2026.
+    expect(document.body.textContent).not.toMatch(/learning study|Information sheet|Consent form|Learning check|Print the check|Print consent forms|Print information sheets/i);
+    expect(document.querySelector('a[href*="consent-form"], a[href*="information-sheet"], a[href*="learning-check"]')).toBeNull();
+    expect(document.querySelector('.tw-edu-study')).toBeNull();
   });
 
   it('says nothing about pilots, or what codes will do later', () => {

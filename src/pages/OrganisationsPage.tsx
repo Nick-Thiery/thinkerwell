@@ -4,25 +4,22 @@
  * "remove pilot framing": the page no longer presents the platform as a
  * pilot). What Thinkerwell offers, a short video of a session (the site's
  * own file, played only when tapped: ./siteVideo/), what you get and what
- * you need to run a group, using the course and its privacy, the optional
- * learning study and its data sharing (only for an organisation taking
- * part, with the consent form's promise kept word for word), getting ready,
+ * you need to run a group, using the course and its privacy, getting ready,
  * who runs Thinkerwell, and getting in touch (the contact form, /contact,
- * and the team's address). Linked from the Educators page and the footer.
+ * and the team's address), where one sentence says how the initial pilot
+ * works (agreed directly with each organisation, Justin's brief of 11
+ * November 2026). The optional learning study's section was removed then.
+ * Linked from the Educators page and the footer.
  *
  * Honest about scope (CLAUDE.md rule 8): a student-led platform, not a
  * registered charity. Honest about data too: learners' work and progress
- * stay on the device; the study's coded data is not called anonymous. The
- * wording follows docs/content/PUBLIC_COPY.md.
+ * stay on the device. The wording follows docs/content/PUBLIC_COPY.md.
  */
 import { CONTACT_EMAIL } from '../app/contact';
 import {
   codeCardsPath,
-  consentFormPath,
   contactPath,
   coursePath,
-  informationSheetPath,
-  learningCheckPath,
   sessionGuidePath,
   setupPath,
 } from '../app/lessonUrls';
@@ -159,35 +156,6 @@ export function OrganisationsPage() {
         </div>
       </section>
 
-      {/* The optional learning study: only for an organisation taking part. The consent form's promise, kept as it is. */}
-      <section aria-labelledby="org-study" className="tw-org-card tw-org-study">
-        <h2 id="org-study" className="h2">
-          {t('pages.organisations.studyTitle')}
-        </h2>
-        <p>{t('pages.organisations.studyIntro')}</p>
-        <ul className="tw-org-list" role="list">
-          <li>
-            <Icon name="FileText" size={22} />
-            <span>{t('pages.organisations.privacy3')}</span>
-          </li>
-          <li>
-            <Icon name="Lock" size={22} />
-            <span>{t('pages.organisations.studyShare')}</span>
-          </li>
-        </ul>
-        <div className="tw-org-actions">
-          <Button variant="secondary" icon="BookOpen" href={informationSheetPath()}>
-            {t('pages.educators.pilotSheetCta')}
-          </Button>
-          <Button variant="secondary" icon="FileText" href={consentFormPath()}>
-            {t('pages.educators.pilotConsentCta')}
-          </Button>
-          <Button variant="secondary" icon="ClipboardCheck" href={learningCheckPath()}>
-            {t('pages.educators.pilotCheckCta')}
-          </Button>
-        </div>
-      </section>
-
       <section aria-labelledby="org-who" className="tw-org-card tw-org-who">
         <h2 id="org-who" className="h2">
           {t('pages.organisations.whoTitle')}
@@ -199,6 +167,7 @@ export function OrganisationsPage() {
         <h2 id="org-contact" className="h2">
           {t('pages.organisations.contactTitle')}
         </h2>
+        <p>{t('pages.organisations.pilotNote')}</p>
         <p>{t('pages.organisations.contactBody')}</p>
         <div className="tw-org-actions">
           <Button variant="secondary" icon="Mail" href={contactPath()}>

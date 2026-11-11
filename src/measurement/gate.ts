@@ -11,8 +11,14 @@
  *   3. an organisation code is set there (settings.partner.organisationCode).
  * Otherwise nothing is queued and nothing is sent. Look-around and nobody
  * chosen have no learner, so they never qualify.
+ *
+ * Since November 2026 none of this runs: ./paused.ts keeps coded study
+ * collection off for every device, including one whose saved preference is
+ * still "on". The conditions stay here, tested, for when it is switched
+ * back on.
  */
 import { ORG_CODE_PATTERN, PILOT_CODE_PATTERN } from './codes';
+import { STUDY_COLLECTION_PAUSED } from './paused';
 
 /** The device-level options, as settings.partner holds them. */
 export interface SharingSettings {
@@ -43,15 +49,20 @@ export function pilotCodeFor(learner: { name: string } | null | undefined): stri
 }
 
 /** The organisation's code when this device is set to share results (turned on, with a valid code), else null. */
-export function sharingOrg(partner: SharingSettings | null | undefined): string | null {
+export function sharingOrg(partner: SharingSettings | null | undefined, paused: boolean = STUDY_COLLECTION_PAUSED): string | null {
+  if (paused) return null;
   if (!partner || partner.sharePilotResults !== true) return null;
   const org = partner.organisationCode;
   return typeof org === 'string' && isValidOrgCode(org) ? org : null;
 }
 
 /** All three conditions: the gate for this learner on this device, or null. */
-export function gateFor(partner: SharingSettings | null | undefined, learner: { name: string } | null | undefined): Gate | null {
-  const org = sharingOrg(partner);
+export function gateFor(
+  partner: SharingSettings | null | undefined,
+  learner: { name: string } | null | undefined,
+  paused: boolean = STUDY_COLLECTION_PAUSED,
+): Gate | null {
+  const org = sharingOrg(partner, paused);
   const pilotCode = pilotCodeFor(learner);
   return org && pilotCode ? { org, pilotCode } : null;
 }
