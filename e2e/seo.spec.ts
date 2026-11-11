@@ -60,7 +60,6 @@ test.describe('raw HTML @own-size', () => {
       '/educators/class',
       '/educators/lesson/towns-near-rivers',
       '/educators/section/history/answers',
-      '/educators/consent-form',
       '/educators/code-cards',
       '/certificate/course',
       '/section/history/check',

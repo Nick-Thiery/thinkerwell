@@ -434,21 +434,12 @@
       "pilotAboutTitle": "Menggunakan Thinkerwell bersama kumpulan",
       "pilotAboutBody": "Apa yang ditawarkan Thinkerwell, apa yang anda perlukan untuk menjalankan kumpulan, dan cara privasi pelajar dijaga.",
       "pilotAboutCta": "Baca lagi",
-      "pilotConsentTitle": "Borang persetujuan",
-      "pilotConsentBody": "Borang untuk ditandatangani oleh ibu bapa atau penjaga setiap pelajar, dan satu halaman untuk jawapan pelajar sendiri, dengan nama organisasi anda padanya.",
-      "pilotConsentCta": "Cetak borang persetujuan",
-      "pilotSheetTitle": "Helaian maklumat",
-      "pilotSheetBody": "Perkara yang terlibat dalam kajian, untuk disimpan oleh setiap keluarga, dengan nama organisasi anda padanya.",
-      "pilotSheetCta": "Cetak helaian maklumat",
       "pilotCodesTitle": "Kad kod pelajar",
       "pilotCodesBody": "Kad dengan kod untuk digunakan oleh setiap pelajar sebagai ganti nama mereka, dan senarai untuk anda simpan.",
       "pilotCodesCta": "Buat kad kod",
       "pilotDayTitle": "Panduan sesi",
       "pilotDayBody": "Satu halaman untuk orang dewasa yang menjalankan sesi: sebelum, semasa dan selepasnya, serta apa yang perlu dilakukan jika ada yang tidak kena.",
       "pilotDayCta": "Cetak panduan",
-      "pilotCheckTitle": "Semakan pembelajaran",
-      "pilotCheckBody": "Helaian kertas untuk sesi pertama dan terakhir kajian tentang Meneroka Dunia Kita: 16 soalan, satu penulisan pendek dan 5 wajah, dengan kod pelajar. Dengan skema jawapan untuk pasukan. Bukan untuk kumpulan yang menggunakan kursus lain.",
-      "pilotCheckCta": "Cetak semakan",
       "printLesson": "Lihat pelajaran versi cetak",
       "needTitle": "Perkara yang anda perlukan",
       "need1": "Satu peranti bagi setiap 1 hingga 3 pelajar, atau satu skrin besar",
@@ -488,8 +479,6 @@
       "deviceTitle": "Pada peranti ini",
       "groupTitle": "Sumber untuk kumpulan anda",
       "groupIntro": "Semua di sini boleh dicetak pada kertas A4, hitam putih.",
-      "studyTitle": "Kajian pembelajaran (pilihan)",
-      "studyIntro": "Hanya untuk organisasi yang mengambil bahagian dalam kajian pembelajaran bersama Thinkerwell. Anda tidak memerlukan semua ini untuk mengajar pelajaran.",
       "feedbackSheetTitle": "Rekod sesi dan maklum balas",
       "feedbackSheetBody": "Satu helaian untuk setiap kumpulan: kursus dan pelajaran yang digunakan, bagaimana sesi berjalan, dan apa yang perlu dibaiki. Diisi dengan tulisan tangan.",
       "feedbackSheetCta": "Cetak helaian"
@@ -514,7 +503,6 @@
       "privacyTitle": "Menggunakan Thinkerwell",
       "privacy1": "Pelajar boleh menggunakan kod dan bukan nama. Setiap pelajar mendapat kad kod, seperti ABC-01, dan menaip kod itu sebagai nama mereka. Hanya anda yang menyimpan senarai yang memadankan kod dengan nama.",
       "privacy2": "Tiada akaun, tiada alamat e-mel dan tiada iklan. Tulisan pelajar kekal pada peranti yang mereka gunakan, dan rakaman suara tidak sekali-kali keluar daripada peranti itu.",
-      "privacy3": "Persetujuan ibu bapa. Sebelum sebarang data pembelajaran dikongsi dengan Thinkerwell, ibu bapa atau penjaga menandatangani borang persetujuan, dan pelajar juga berkata ya. Kajian ini hanya akan menggunakan data yang dikaitkan dengan kod, tidak sekali-kali dengan nama: soalan pendek dan beberapa ayat dalam sesi pertama dan terakhir, dan, dalam setiap sesi, cara pelajar menggunakan Thinkerwell: masa, pelajaran dan langkah, jawapan, bantuan yang mereka gunakan, video dan bilangan perkataan, tidak sekali-kali apa yang mereka tulis.",
       "privacyNow": "Hasil kerja dan kemajuan pelajar kekal pada peranti yang mereka gunakan, dan tidak dihantar kepada Thinkerwell. Pertuturan ke teks dalam talian dimatikan melainkan kakitangan anda menghidupkannya; apabila ia dihidupkan, apa yang dikatakan pelajar dihantar ke perkhidmatan syarikat pembuat pelayar. Kami akan memberitahu anda sebelum apa-apa lagi berubah.",
       "privacy4": "Video tidak wajib. Video dimainkan dari YouTube, hanya apabila pelajar menekan butang main, dan setiap video ada versi bertulis.",
       "startTitle": "Bersedia",
@@ -523,99 +511,7 @@
       "contactBody": "Tanya soalan, atau beritahu kami tentang organisasi anda: lokasi anda, dan kira-kira berapa ramai pelajar yang akan menggunakan Thinkerwell.",
       "getInTouch": "Hubungi kami",
       "whoTitle": "Siapakah yang menjalankan Thinkerwell?",
-      "studyTitle": "Kajian pembelajaran dan perkongsian data (pilihan)",
-      "studyIntro": "Hanya untuk organisasi yang memilih untuk mengambil bahagian dalam kajian pembelajaran bersama Thinkerwell. Kajian ini tidak diperlukan untuk menggunakan kursus.",
-      "studyShare": "Selepas keluarga menandatangani borang persetujuan, dan hanya apabila kakitangan anda menghidupkan “Kongsi data kajian pilihan” dalam Tetapan, tapak ini menghantar cara pelajar menggunakannya, dikaitkan dengan kod pelajar dan tidak sekali-kali dengan nama. Data berkod tidak tanpa nama: organisasi anda menyimpan senarai yang memadankan kod dengan nama."
-    },
-    "consentForm": {
-      "title": "Borang persetujuan",
-      "intro": "Cetak satu borang untuk setiap pelajar sebelum program rintis bermula: satu halaman untuk ibu bapa atau penjaga, dan satu halaman untuk pelajar. Taip nama organisasi anda untuk memaparkannya pada borang, atau biarkan kosong untuk menulisnya dengan tangan.",
-      "orgLabel": "Nama organisasi anda",
-      "orgHelper": "Ia hanya digunakan pada borang ini, dan tidak disimpan.",
-      "staffTitle": "Untuk kakitangan: ini ialah templat",
-      "staffBody": "Ini bukan nasihat undang-undang. Sebelum menggunakannya, semak borang ini dengan peraturan organisasi anda sendiri dan undang-undang perlindungan data di tempat anda bekerja, dan ubah apa-apa yang tidak sesuai. Borang yang ditandatangani mengandungi nama: simpan dengan selamat. Thinkerwell tidak pernah melihatnya.",
-      "staffUse": "Berikan helaian maklumat bersama borang ini kepada setiap keluarga. Jika ibu bapa atau penjaga tidak boleh membaca, bacakan kedua-duanya dengan kuat dalam bahasa mereka, dan turunkan tandatangan sebagai saksi di halaman 2. Pelajar berumur 18 tahun ke atas menandatangani untuk diri sendiri. Borang ini tidak meliputi pertuturan ke teks dalam talian, jadi pastikan ciri itu dimatikan dalam Tetapan.",
-      "orgBlank": "nama organisasi",
-      "pageOf": "Halaman {page} daripada {count}",
-      "formTitle": "Menyertai program rintis Thinkerwell",
-      "formFor": "Untuk ibu bapa atau penjaga",
-      "formIntro": "{organisation} sedang mencuba Thinkerwell, platform pembelajaran dalam talian percuma untuk belia berumur kira-kira 10 hingga 17 tahun, dengan empat kursus kajian sosial. Kelas anak anda menggunakan pelajaran daripada satu kursus atau lebih, beberapa sesi seminggu selama 4 hingga 6 minggu. Ada juga kajian kecil tentang keberkesanannya.",
-      "studyTitle": "Kajian rintis",
-      "choiceTitle": "Ini pilihan anda",
-      "choiceBody": "Jika anda menjawab tidak kepada mana-mana soalan di bawah, ini tidak akan menjejaskan apa-apa lagi yang anak anda lakukan di {organisation}. Jika anda menjawab tidak kepada kajian ini, anak anda masih boleh menggunakan Thinkerwell di dalam kelas; cuma jawapannya tidak digunakan. Anda boleh mengubah fikiran pada bila-bila masa, walaupun selepas program rintis: beritahu {organisation}, dan jawapan anak anda akan dipadam. Anak anda juga boleh berkata tidak, dan keputusannya itu dihormati.",
-      "questions": "Ada soalan? Tanya {organisation}.",
-      "questionsEmail": "Ada soalan? Tanya {organisation}, atau hantar e-mel kepada Thinkerwell di {email}.",
-      "honesty": "Thinkerwell ialah platform yang diterajui pelajar, bukan badan amal berdaftar.",
-      "answerTitle": "Jawapan anda",
-      "classQuestion": "Anak saya boleh menggunakan Thinkerwell di dalam kelas di {organisation}.",
-      "studyQuestion": "Anak saya boleh menyertai kajian rintis. Jawapannya digunakan dengan kod, tidak sekali-kali dengan namanya.",
-      "yes": "Ya",
-      "no": "Tidak",
-      "childName": "Nama anak",
-      "pilotCode": "Kod rintis (diisi oleh organisasi): {code}",
-      "parentName": "Nama ibu bapa atau penjaga",
-      "signature": "Tandatangan atau cap jari",
-      "date": "Tarikh",
-      "keep": "{organisation} menyimpan borang ini di tempat berkunci. Thinkerwell tidak pernah melihatnya.",
-      "learnerTitle": "Jawapan pelajar sendiri",
-      "learnerFor": "Untuk diisi oleh kakitangan",
-      "learnerIntro": "Bacakan ini dengan kuat kepada pelajar, dalam bahasa mereka:",
-      "learnerScript": "Kami sedang mencuba laman web pembelajaran baharu bernama Thinkerwell. Dalam pelajaran pertama dan terakhir, kamu akan menjawab beberapa soalan dan menulis beberapa ayat. Ini bukan ujian, dan tiada siapa yang diberi markah. Kami menggunakan nombor, bukan nama kamu. Kamu boleh berkata tidak, atau berhenti pada bila-bila masa, dan kamu masih boleh menggunakan Thinkerwell dan datang ke kelas. Adakah kamu mahu jawapan kamu menjadi sebahagian daripada kajian ini?",
-      "learnerAnswer": "Jawapan pelajar",
-      "staffInitials": "Parap kakitangan",
-      "learnerWins": "Jika ibu bapa berkata ya tetapi pelajar berkata tidak, keputusan pelajar itu yang diikut.",
-      "witnessTitle": "Jika ibu bapa atau penjaga tidak boleh membaca atau menulis",
-      "witnessBody": "Saya telah membacakan helaian maklumat dan borang ini dengan kuat dalam {language} (bahasa). Ibu bapa atau penjaga itu faham dan telah memberikan jawapan di halaman 1.",
-      "languageBlank": "bahasa",
-      "codeBlank": "kod rintis",
-      "staffName": "Nama kakitangan",
-      "staffSignature": "Tandatangan kakitangan"
-    },
-    "pilotStudy": {
-      "intro": "Jika anda menjawab ya untuk kajian, maka pada sesi pertama dan terakhir kelas yang mempelajari Meneroka Dunia Kita, anak anda:",
-      "questions": "menjawab 16 soalan pendek (kira-kira 15 minit setiap kali)",
-      "writing": "menulis beberapa ayat tentang sebuah bandar rekaan, di atas kertas (kira-kira 8 minit)",
-      "faces": "memilih satu muka bagi setiap satu daripada 5 ayat, seperti “Saya boleh menggunakan peta untuk mencari maklumat” (kira-kira 1 minit)",
-      "site": "Dalam setiap sesi, Thinkerwell juga mencatat cara anak anda menggunakannya: berapa lama, pelajaran dan langkah mana yang dibuka dan diselesaikannya, jawapannya kepada semakan pantas dan kuiz, sama ada dia menggunakan versi bacaan lebih mudah atau mendengar teks dibacakan, sama ada dia menonton video (dan berapa banyak) atau membaca versi bertulis, dan berapa banyak perkataan yang ditulisnya, tidak sekali-kali perkataan itu sendiri.",
-      "notTest": "Semua ini bukan ujian. Tiada apa-apa yang bergantung pada jawapannya.",
-      "keepTitle": "Apa yang kami simpan, dan apa yang tidak",
-      "keepCode": "Jawapan anak anda dikaitkan dengan kod, seperti {code}, tidak sekali-kali dengan namanya.",
-      "keepList": "{organisation} menyimpan senarai nama dan kod di atas kertas. Thinkerwell tidak pernah melihatnya.",
-      "keepNeverAsk": "Thinkerwell tidak sekali-kali bertanya tentang keluarga, perjalanan, negara asal, agama atau etnik.",
-      "keepNoDocuments": "Thinkerwell tidak sekali-kali meminta nombor UNHCR atau apa-apa dokumen.",
-      "keepNoPhotos": "Thinkerwell tidak sekali-kali mengumpul gambar anak anda, atau lokasinya.",
-      "keepDevice": "Apa yang anak anda tulis dan rakam dalam pelajaran kekal pada peranti yang digunakannya.",
-      "keepGroup": "Hanya pasukan Thinkerwell yang melihat jawapan. {organisation} menerima keputusan untuk seluruh kumpulan, tidak sekali-kali untuk seorang kanak-kanak sahaja.",
-      "keepDelete": "Semua yang disimpan oleh kajian ini dipadam dalam tempoh 6 bulan selepas program rintis tamat.",
-      "keepVideo": "Sesetengah pelajaran ada video YouTube yang tidak wajib. Apabila video dimainkan, YouTube (milik Google) menerima beberapa maklumat, seperti alamat internet (IP) peranti. Setiap video ada versi bertulis: memilih “{readInstead}” tidak menghantar apa-apa kepada YouTube."
-    },
-    "infoSheet": {
-      "title": "Helaian maklumat",
-      "intro": "Cetak satu untuk keluarga setiap pelajar, untuk diberikan bersama borang persetujuan. Isi maklumat yang anda tahu untuk memaparkannya pada helaian, atau biarkan kotak kosong untuk menulisnya dengan tangan.",
-      "fieldsTitle": "Sebelum anda mencetak",
-      "fieldsHelper": "Hanya digunakan pada helaian ini, dan tidak disimpan.",
-      "startLabel": "Tarikh mula",
-      "endLabel": "Tarikh tamat",
-      "sessionsLabel": "Bilangan sesi",
-      "contactLabel": "Orang hubungan",
-      "staffBody": "Ini bukan nasihat undang-undang. Semak helaian ini dengan peraturan organisasi anda sendiri, dan ubah apa-apa yang tidak sesuai. Jika ibu bapa atau penjaga tidak boleh membaca, bacakan helaian ini dengan kuat dalam bahasa mereka.",
-      "startBlank": "tarikh mula",
-      "endBlank": "tarikh tamat",
-      "sessionsBlank": "bilangan sesi",
-      "contactBlank": "nama orang hubungan",
-      "sheetTitle": "Tentang program rintis Thinkerwell",
-      "sheetFor": "Untuk disimpan oleh ibu bapa atau penjaga",
-      "whatTitle": "Apa itu Thinkerwell?",
-      "whatBody": "Thinkerwell ialah laman web pembelajaran percuma. Kursus-kursusnya mengajar sejarah, peta dan tempat, budaya, cara komuniti membuat keputusan, masa lalu Asia Tenggara, seni dan bangunan, serta cara teknologi digital dan AI berfungsi. Pelajar membaca, menulis, bercakap, menonton video pendek dan memikirkan apa yang telah mereka pelajari, dalam bahasa Inggeris yang mudah, bahasa Indonesia atau bahasa Melayu. Ia dibuat oleh sebuah pasukan kecil pelajar di Singapura.",
-      "happenTitle": "Apa yang akan berlaku?",
-      "happenBody": "Dari {start} hingga {end}, kelas anak anda di {organisation} akan menggunakan Thinkerwell pada tablet dan komputer riba kelas itu, kira-kira {sessions} kali. Seorang guru dari {organisation} memimpin setiap sesi.",
-      "studyTitle": "Kajian rintis: anda yang memilih",
-      "choiceTitle": "Berkata ya atau tidak",
-      "choiceBody": "Ini pilihan anda, dan anda menjawab pada borang persetujuan. Jika anda berkata tidak kepada kajian ini, anak anda masih datang ke kelas dan masih boleh menggunakan Thinkerwell. Cuma jawapannya tidak digunakan dalam kajian. Anda boleh mengubah fikiran pada bila-bila masa, walaupun selepas program rintis. Beritahu guru, dan jawapan anak anda akan dipadam. Anak anda juga boleh berkata tidak, dan keputusannya itu dihormati.",
-      "questionsTitle": "Soalan",
-      "questions": "Tanya {contact} di {organisation}.",
-      "questionsEmail": "Tanya {contact} di {organisation}, atau tulis kepada Thinkerwell di {email}.",
-      "runBy": "Thinkerwell dikendalikan oleh Justin Park dan Nick Thiery. Ia ialah platform yang diterajui pelajar, bukan badan amal berdaftar."
+      "pilotNote": "Perintis awal Thinkerwell adalah untuk organisasi rakan kongsi terpilih. Pelajaran, masa, maklum balas, sebarang pengumpulan data dan kebenaran yang diperlukan dipersetujui secara langsung dengan setiap organisasi sebelum perintisnya bermula."
     },
     "codeCards": {
       "title": "Kad kod",
@@ -891,7 +787,7 @@
       "title": "Tetapan untuk peranti ini",
       "intro": "Tetapan ini untuk guru dan sukarelawan. Ia terpakai kepada semua orang yang menggunakan peranti ini, dan kekal pada peranti ini.",
       "moreTitle": "Untuk pendidik yang menyediakan peranti ini",
-      "moreIntro": "Memindahkan kerja ke peranti lain, suara Dengar, audio pelajaran untuk digunakan tanpa internet, pertuturan ke teks dan data kajian pilihan.",
+      "moreIntro": "Memindahkan kerja ke peranti lain, suara Dengar, audio pelajaran untuk digunakan tanpa internet dan pertuturan ke teks.",
       "noStorage": "Tetingkap pelayar ini tidak dapat menyimpan tetapan.",
       "saveFailed": "Perubahan itu tidak dapat disimpan. Cuba lagi.",
       "language": {
@@ -1251,7 +1147,7 @@
     "beforeTitle": "Sebelum sesi",
     "beforeSetup": "Sediakan setiap peranti sekali sahaja: buka {educators}, kemudian {setup}. Senarai semak itu menunjukkan apa yang sudah siap pada peranti tersebut.",
     "beforeCodes": "Cetak kad kod daripada {educators}. Setiap pelajar menaip kod mereka sebagai nama.",
-    "beforeConsent": "Pastikan setiap keluarga telah menerima helaian maklumat dan telah menjawab borang persetujuan. Jika pelajar menjawab tidak, itulah jawapannya, walaupun keluarganya menjawab ya.",
+    "beforeConsent": "Pastikan kebenaran yang dipersetujui dengan organisasi anda telah ada. Jika pelajar menjawab tidak, itulah jawapannya, walaupun keluarganya menjawab ya.",
     "startTitle": "Permulaan sesi",
     "startWho": "Buka Thinkerwell pada setiap peranti. Laman utama bertanya {who} Setiap pelajar menekan petaknya sendiri.",
     "startNew": "Pelajar baharu menekan {new} dan menaip nama atau kod mereka.",
@@ -1287,54 +1183,6 @@
     "beforeChoose": "Pilih kursus dan pelajaran yang diajar ({educators}, kemudian {guides}).",
     "endReview": "Untuk kursus tanpa semakan bahagian, tanya secara lisan: soalan besar, satu bukti, apa yang masih ingin diketahui. Kemudian isi helaian rekod sesi ({educators}, kemudian {feedback})."
   },
-  "pilotCheck": {
-    "title": "Semakan pembelajaran",
-    "intro": "Helaian kertas untuk sesi pertama dan terakhir kajian pembelajaran: 16 soalan, satu penulisan pendek dan 5 wajah, dengan kod pelajar, tidak pernah dengan nama. Helaian ini membantu pasukan melihat jawapan murid pada awal dan akhir; helaian ini sahaja tidak membuktikan apa yang dipelajari murid.",
-    "howTitle": "Cara menjalankannya",
-    "how1": "Gunakan helaian yang sama dalam sesi pertama, sebelum pelajaran pertama, dan dalam sesi terakhir. Tandakan \"Sesi pertama\" atau \"Sesi terakhir\" di bahagian atas.",
-    "how2": "Setiap murid menulis kod pelajarnya di bahagian atas setiap bahagian, tidak pernah namanya. Kokot halaman setiap murid bersama-sama.",
-    "how3": "Peruntukkan kira-kira 25 minit: 15 untuk soalan, 8 untuk penulisan dan 2 untuk wajah. Tiada had masa.",
-    "how4": "Soalan boleh dibacakan dengan kuat. Jangan terangkan perkataan dalam soalan atau bantu menjawab, dan jangan tanda helaian itu atau sebut apa-apa markah.",
-    "how5": "Kumpulkan setiap helaian dan simpan dengan selamat. Pasukan Thinkerwell yang menandanya. Cetak skema jawapan untuk pasukan sahaja.",
-    "printLabel": "Cetak",
-    "printLearners": "Helaian untuk murid",
-    "printKey": "Skema jawapan untuk pasukan",
-    "sheetTitle": "Semakan pembelajaran saya",
-    "codeLabel": "Kod saya:",
-    "sessionFirst": "Sesi pertama",
-    "sessionLast": "Sesi terakhir",
-    "dateLabel": "Tarikh:",
-    "noName": "Tulis kod kamu, bukan nama kamu.",
-    "part1Title": "Bahagian 1: Soalan",
-    "part1Help": "Baca setiap soalan. Bulatkan satu jawapan: A, B atau C. Jika kamu tidak pasti, pilih jawapan yang kamu rasa paling baik. Ini bukan ujian, dan ia tidak mengubah apa-apa untuk kamu.",
-    "part2Title": "Bahagian 2: Penulisan",
-    "part2Help": "Baca petunjuk itu. Kemudian tulis jawapan kamu pada garisan. Kamu boleh menulis dalam bahasa yang paling kamu suka.",
-    "part3Title": "Bahagian 3: Sejauh mana kamu yakin?",
-    "part3Help": "Untuk setiap ayat, bulatkan wajah yang paling sama dengan kamu. Tiada jawapan yang salah.",
-    "face1": "Belum",
-    "face2": "Sedikit",
-    "face3": "Hampir",
-    "face4": "Ya",
-    "thanks": "Terima kasih. Berikan helaian kamu kepada guru kamu.",
-    "keyTitle": "Semakan sebelum dan selepas: skema jawapan",
-    "keyFor": "Untuk pasukan Thinkerwell sahaja",
-    "keyIntro": "Jangan berikan halaman ini kepada murid. Beri 1 mata untuk setiap jawapan yang betul, daripada 16.",
-    "keyQuestion": "Soalan",
-    "keyAnswer": "Jawapan",
-    "keyLesson": "Pelajaran",
-    "keyTaught": "Diajar dalam sesi",
-    "taughtYes": "Ya",
-    "taughtNo": "Tidak",
-    "keyUntaught": "Soalan daripada pelajaran yang tidak diajar dalam sesi ialah perbandingan: jika markah naik hanya pada soalan yang diajar, pelajaran itulah sebab yang paling mungkin.",
-    "rubricTitle": "Penulisan: cara menandanya",
-    "rubricIntro": "Dua ahli pasukan menanda setiap penulisan tanpa melihat kodnya atau sesi mana penulisan itu. Beri 0, 1 atau 2 mata untuk setiap bahagian, daripada 6. Jawapan dalam apa-apa bahasa dikira.",
-    "rubricPart": "Bahagian",
-    "points": {
-      "other": "{count} mata"
-    },
-    "scoring": "Taip jawapan, markah penulisan dan wajah setiap murid ke dalam hamparan pemarkahan. Hamparan itu mengira markah dan perubahannya dari sesi pertama ke sesi terakhir.",
-    "scope": "Helaian ini tentang Meneroka Dunia Kita, jadi gunakan hanya untuk kumpulan yang mempelajari pelajarannya. Jika kumpulan anda menggunakan kursus lain, jangan gunakannya: panduan sesi ada cara ringkas untuk menyemak. Markah daripada semakan ini tidak pernah digabungkan atau dibandingkan dengan semakan lain."
-  },
   "feedbackSheet": {
     "title": "Rekod sesi dan maklum balas",
     "intro": "Satu helaian untuk setiap kumpulan. Isi dengan tulisan tangan, selepas setiap sesi atau selepas sesi terakhir. Simpan sendiri, atau hantar kepada kami. Jangan tulis nama pelajar, atau apa-apa yang mereka tulis atau katakan.",
@@ -1352,7 +1200,6 @@
     "colLessons": "Nombor pelajaran yang digunakan",
     "colSessions": "Sesi",
     "checksTitle": "Semakan",
-    "checkLearning": "Adakah kumpulan melakukan semakan pembelajaran? Ia hanya untuk kumpulan yang menggunakan Meneroka Dunia Kita.",
     "checkSection": "Adakah pelajar mencuba mana-mana semakan bahagian?",
     "checkReview": "Untuk kursus tanpa semakan bahagian, adakah anda menggunakan tiga soalan ulang kaji daripada panduan sesi?",
     "yes": "Ya",
@@ -1421,7 +1268,8 @@
     "organisations": "Untuk organisasi",
     "credits": "Penghargaan",
     "linkedin": "Thinkerwell di LinkedIn",
-    "contact": "Hubungi"
+    "contact": "Hubungi",
+    "privacy": "Privasi & Perlindungan Kanak-kanak"
   },
   "seo": {
     "home": {
@@ -1454,6 +1302,10 @@
     "contact": {
       "title": "Hubungi Kami | Thinkerwell",
       "description": "Tanya soalan atau hubungi kami tentang penggunaan Thinkerwell, platform kajian sosial percuma untuk belia yang menghadapi halangan pendidikan."
+    },
+    "privacy": {
+      "title": "Privasi & Perlindungan Kanak-kanak | Thinkerwell",
+      "description": "Cara Thinkerwell melindungi privasi pelajar dan memastikan kanak-kanak selamat: apa yang disimpan pada peranti, perkhidmatan yang terlibat dan siapa yang boleh dihubungi."
     }
   },
   "dev": {
@@ -1851,26 +1703,6 @@
       "yourLabelsDiffer": "Sebahagian label kamu berbeza daripada label tukang kebun. Model mempelajari label kamu, jadi tekaannya mengikut label itu."
     }
   },
-  "pilotResults": {
-    "title": "Kongsi data kajian pilihan",
-    "intro": "Gunakan ini hanya untuk kajian pembelajaran yang disertai organisasi anda bersama Thinkerwell, selepas setiap keluarga menandatangani borang persetujuan. Ia dimatikan sehingga anda menghidupkannya.",
-    "codeLabel": "Kod organisasi",
-    "codeHelp": "Thinkerwell memberi anda kod ini, seperti help-jakarta.",
-    "codeInvalid": "Gunakan huruf, nombor dan tanda sempang, 2 hingga 32 aksara, seperti help-jakarta.",
-    "codeSave": "Simpan kod",
-    "codeSaved": "Kod disimpan.",
-    "shareLabel": "Kongsi data kajian daripada peranti ini",
-    "shareNeedsCode": "Simpan kod organisasi dahulu.",
-    "shareHelp": "Apabila dihidupkan, pelajar yang menaip kod pelajar seperti HLP-01 sebagai nama mereka menghantar cara mereka menggunakan Thinkerwell kepada pasukan Thinkerwell: berapa lama, pelajaran dan langkah mana yang mereka buka dan selesaikan, jawapan mereka kepada semakan pantas dan kuiz, sama ada mereka menggunakan versi bacaan lebih mudah atau Dengar, sama ada mereka menonton video atau membaca versi bertulis, dan berapa banyak perkataan yang mereka tulis. Semua itu dihantar bersama kod mereka dan kod organisasi anda. Tidak sekali-kali ada nama, tulisan atau rakaman. Pelajar yang hanya melihat-lihat, atau menggunakan nama lain, tidak menghantar apa-apa.",
-    "shareOffHelp": "Apabila dimatikan, hasil yang masih menunggu untuk dihantar daripada peranti ini turut dipadam.",
-    "statusOff": "Perkongsian dimatikan. Tiada apa-apa dihantar.",
-    "statusOn": "Berkongsi dengan {org}.",
-    "waiting": "Hasil yang menunggu untuk dihantar: {count}",
-    "paused": "Penghantaran dijeda kerana Thinkerwell belum dapat menerima hasil. Ia dicuba lagi kemudian.",
-    "delete": "Padam hasil yang menunggu",
-    "deleteHelp": "Memadam hasil yang belum dihantar. Hasil yang sudah dihantar dipadam dalam tempoh 6 bulan selepas kajian tamat.",
-    "deleted": "Hasil yang menunggu telah dipadam."
-  },
   "aboutPage": {
     "lessonsTitle": "Cara pelajaran kami berjalan",
     "lessonsIntro": "Setiap pelajaran bermula dengan satu soalan dan memberi pelajar lima cara untuk menerokanya. Setiap langkah mengajak mereka mengolah satu idea dengan cara yang berlainan.",
@@ -2003,6 +1835,125 @@
     "switch": {
       "onBody": "Peranti ini kini memaparkan Seni, Seni Bina dan Masyarakat, sebuah kursus draf tentang apa yang boleh diajarkan oleh seni dan bangunan tentang masyarakat yang membuat, menggunakan dan menjaganya, melalui objek, lukisan, rumah dan jalan yang sebenar. Tiada orang lain yang melihatnya, dan tiada apa-apa tentangnya yang dihantar ke mana-mana. Kursus ini kekal hidup sehingga kamu mematikannya.",
       "reviewNote": "Kursus ini belum disemak. Seorang ahli sejarah seni masih perlu menyemak faktanya, dan sebuah organisasi rakan kongsi menyemak topik yang sensitif. Jangan gunakannya dengan pelajar lagi."
+    }
+  },
+  "privacy": {
+    "title": "Privasi & Perlindungan Kanak-kanak",
+    "intro": "Thinkerwell menyediakan pembelajaran kajian sosial percuma untuk belia di seluruh Asia Tenggara. Kami komited menghormati privasi, maruah dan keselamatan pelajar. Dasar ini meliputi tapak web, komunikasi dan aktiviti pembelajaran kami. Komitmen perlindungan kanak-kanak di dalamnya terpakai kepada semua orang di bawah umur 18 tahun dan kepada sesiapa yang bekerja bagi pihak Thinkerwell.",
+    "dates": "Berkuat kuasa {effective}. Dikemas kini kali terakhir {updated}.",
+    "learnersLead": "Untuk pelajar:",
+    "learnersBody": "Guna nama panggilan, jangan kongsi maklumat peribadi yang sensitif, dan ingat bahawa orang lain yang menggunakan peranti kamu boleh melihat hasil kerja kamu yang disimpan. Kamu boleh melangkau soalan yang membuat kamu tidak selesa dan meminta bantuan orang dewasa yang kamu percayai.",
+    "s1": {
+      "title": "1. Maklumat dan privasi",
+      "p1": "Profil pelajar, pilihan, kemajuan dan jawapan jurnal disimpan dalam pelayar pada peranti yang digunakan. Profil pada peranti kongsi tidak boleh dianggap sebagai akaun yang dilindungi kata laluan. Jangan masukkan alamat, butiran hubungan, dokumen pengenalan atau maklumat keluarga yang sensitif ke dalam aktiviti pembelajaran.",
+      "p2": "Jika anda menghubungi kami, kami menerima maklumat yang anda pilih untuk diberikan, seperti alamat e-mel dan mesej anda. Pengehosan tapak web dan perkhidmatan luar juga mungkin memproses maklumat teknikal, termasuk alamat IP dan butiran pelayar. Thinkerwell menggunakan maklumat hanya untuk tujuan yang diterangkan dalam dasar ini."
+    },
+    "s2": {
+      "title": "2. Cara maklumat digunakan",
+      "p1": "Kami mengehadkan maklumat peribadi kepada yang perlu untuk menyediakan pembelajaran, mengendalikan dan melindungi Thinkerwell, menjawab pertanyaan dan menangani kebimbangan keselamatan. Kami tidak menjual maklumat peribadi pelajar atau mengedarkannya untuk pengiklanan atau tujuan lain yang tidak berkaitan. Perkongsian yang terhad hanya untuk tujuan perkhidmatan, perlindungan dan undang-undang yang diterangkan di sini. Kami tidak menggunakan maklumat peribadi untuk pengiklanan bersasar, dan tidak menggunakan hasil kerja pelajar yang boleh dikenal pasti untuk melatih model AI pihak ketiga yang tidak berjalan secara setempat.",
+      "statsLead": "Statistik penggunaan yang dirancang.",
+      "stats": "Kami akan mengumpulkan statistik berangka yang dinyahkenal pasti dan dikumpulkan tentang penggunaan dan penglibatan di platform, seperti jumlah lawatan, aktiviti pelajaran dan penggunaan ciri. Statistik ini membantu kami memahami capaian Thinkerwell dan memperbaik pengalaman pembelajaran. Statistik ini tidak akan memuatkan nama, butiran hubungan atau kandungan jurnal, dan tidak akan mengenal pasti pelajar secara individu. Kami tidak akan cuba mengenal pasti semula sesiapa daripada maklumat ini.",
+      "statsNow": "Thinkerwell belum mengumpulkan statistik ini. Pada masa ini tiada apa-apa pada tapak yang mengira lawatan, pelajaran atau ciri.",
+      "coded": "Satu ciri pilihan untuk rakan perintis boleh memautkan data penggunaan kepada kod pelajar. Ciri ini dimatikan untuk semua orang, dan tiada apa-apa dikumpulkan melaluinya. Data berkod tidak tanpa nama, jadi ia berasingan daripada statistik di atas. Setiap pengumpulan data perintis dipersetujui dahulu dengan setiap organisasi, bersama kebenaran yang diperlukan.",
+      "p3": "Apabila persetujuan diperlukan, kami menerangkan tujuannya dengan jelas dan mendapatkan persetujuan yang sesuai, termasuk daripada ibu bapa atau penjaga sah bagi kanak-kanak di bawah 13 tahun dan pada bila-bila masa lain yang diwajibkan."
+    },
+    "s3": {
+      "title": "3. Perkhidmatan luar",
+      "p1": "Audio, video tertanam dan pautan luar mungkin melibatkan penyedia lain, yang amalan privasinya juga terpakai. Kami menyatakan penyedia, kuki atau analitik yang berkaitan dan menerangkan maklumat apa yang mereka terima. Penyedia yang mengendalikan maklumat bagi pihak kami hanya boleh menerima apa yang mereka perlukan, dengan perlindungan yang sesuai, termasuk untuk pemprosesan di luar negara.",
+      "whoTitle": "Siapa yang menerima maklumat pada masa ini",
+      "whoIntro": "Hanya perkhidmatan berikut menerima maklumat daripada penggunaan Thinkerwell. Thinkerwell tidak menetapkan kuki, dan tidak mempunyai iklan atau analitik daripada syarikat lain.",
+      "retention": "Pelayan Thinkerwell sendiri tidak menyimpan apa-apa daripada borang hubungan. Salinan yang dipegang oleh perkhidmatan e-mel disimpan hanya selagi perlu untuk menjawab, kemudian dipadam. Rekod pengehosan disimpan oleh penyedia pengehosan seperti yang diterangkan dalam dasarnya.",
+      "deviceTitle": "Dikendalikan pada peranti, tidak dihantar kepada perkhidmatan",
+      "device1": "Hasil kerja yang disimpan. Profil, pilihan, kemajuan, jawapan jurnal dan rakaman bercakap terbaru kekal dalam storan pelayar pada peranti (IndexedDB, dengan beberapa tetapan kecil dalam storan setempat). Tiada apa-apa dimuat naik.",
+      "device2": "Dengar. Ciri ini membacakan pelajaran dengan rakaman yang dihantar bersama tapak, atau dengan suara yang sudah ada pada peranti. Teks pelajaran dan tulisan pelajar tidak dihantar kepada perkhidmatan suara.",
+      "device3": "Rakam suara kamu. Mikrofon digunakan hanya apabila pelajar mengetik Mula. Klip kekal pada peranti dan tidak pernah dimuat naik.",
+      "device4": "Fon, gambar dan audio. Semuanya datang daripada pelayan Thinkerwell sendiri.",
+      "device5": "AI. Tiada perkhidmatan AI yang menerima maklumat pelajar. Alat olok-olok dalam kursus Dunia Digital memberikan jawapan yang telah ditulis lebih awal."
+    },
+    "services": {
+      "purposeLabel": "Fungsinya",
+      "getsLabel": "Apa yang diterimanya",
+      "whereLabel": "Di mana",
+      "vercel": {
+        "name": "Vercel (pengehosan tapak web)",
+        "purpose": "Menghantar tapak web dan failnya.",
+        "gets": "Seperti pelayan web lain, Vercel melihat alamat IP, butiran pelayar dan peranti, serta halaman yang diminta.",
+        "where": "Vercel menjalankan pelayan di beberapa negara, jadi maklumat ini mungkin diproses di luar negara tempat anda berada.",
+        "link": "Dasar privasi Vercel"
+      },
+      "resend": {
+        "name": "Resend (penghantaran borang hubungan)",
+        "purpose": "Menghantar mesej daripada borang hubungan kepada pasukan kami.",
+        "gets": "Apa yang anda taip dalam borang: topik, nama, alamat e-mel atau nombor WhatsApp, dan mesej anda.",
+        "where": "Resend mungkin memprosesnya di luar negara tempat anda berada.",
+        "link": "Dasar privasi Resend"
+      },
+      "google": {
+        "name": "Google (peti masuk e-mel kami)",
+        "purpose": "Menyimpan peti masuk pasukan, supaya kami boleh membaca dan menjawab anda.",
+        "gets": "Setiap e-mel yang anda hantar kepada kami, dan mesej daripada borang hubungan.",
+        "where": "Google memproses maklumat di banyak negara.",
+        "link": "Dasar privasi Google"
+      },
+      "youtube": {
+        "name": "YouTube (video pilihan)",
+        "purpose": "Memainkan video pelajaran, hanya selepas pelajar mengetik main. Setiap video ada versi bertulis.",
+        "gets": "Pemain datang daripada youtube-nocookie.com. Sebaik sahaja video dimainkan, YouTube menerima alamat IP dan butiran pelayar, dan mungkin menggunakan kuki atau storan serupa pada peranti.",
+        "where": "Google memproses maklumat di banyak negara.",
+        "link": "Dasar privasi Google"
+      },
+      "speech": {
+        "name": "Perkhidmatan pertuturan pelayar anda (hanya jika dihidupkan)",
+        "purpose": "Menukar pertuturan kepada teks untuk butang Sebut.",
+        "gets": "Mati melainkan pendidik menghidupkan “Benarkan pertuturan ke teks dalam talian” dalam Tetapan. Apabila dihidupkan, apa yang disebut oleh pelajar dihantar kepada perkhidmatan pembuat pelayar.",
+        "where": "Ini bergantung pada pelayar. Baca dasar privasi pembuatnya."
+      }
+    },
+    "s4": {
+      "title": "4. Keselamatan, penyimpanan dan pilihan",
+      "p1": "Kami menyekat akses kepada maklumat yang kami pegang dan menggunakan langkah keselamatan yang munasabah. Kami menyimpannya hanya selagi perlu untuk tujuan yang dinyatakan atau kewajipan undang-undang, kemudian memadam atau menyahkenal pastinya. Jika berlaku pelanggaran data, kami menilainya dan memaklumkan orang yang terjejas serta pihak berkuasa jika diwajibkan.",
+      "p2": "Hubungi kami untuk meminta akses, pembetulan, pemadaman atau penarikan balik persetujuan. Kami akan menerangkan sebarang had yang terpakai. Mengosongkan data pelayar Thinkerwell boleh membuang semua profil dan hasil kerja yang disimpan secara setempat pada pelayar itu. Kami tidak boleh mengambil semula atau memadam dari jauh maklumat yang hanya ada pada peranti anda. Orang lain yang boleh mengakses pelayar itu mungkin masih dapat melihatnya.",
+      "remove": "Pada skrin “Siapa yang belajar hari ini?”, Keluarkan memadam hasil kerja pelajaran, jurnal, markah semakan bahagian dan rakaman seorang pelajar daripada peranti itu. Tindakan ini tidak boleh dibatalkan."
+    },
+    "s5": {
+      "title": "5. Memastikan kanak-kanak selamat",
+      "p1": "Kami melarang penderaan, eksploitasi, gangguan, buli dan diskriminasi. Ahli pasukan mesti mengikut peraturan tingkah laku perlindungan kanak-kanak dan menjalani persediaan serta semakan kesesuaian yang bersesuaian dengan peranan mereka. Sesi langsung dengan pelajar mesti diawasi oleh orang dewasa yang bertanggungjawab; hubungan rahsia dan sesi peribadi tanpa pengawasan adalah dilarang.",
+      "p2": "Kami menyemak bahan untuk kesesuaian umur. Pelajar dan organisasi boleh melangkau aktiviti yang sensitif atau menggunakan contoh rekaan tanpa berkongsi pengalaman peribadi. Rakan dan Thinkerwell mesti bersetuju tentang penyeliaan, persetujuan dan peraturan pelaporan setempat sebelum aktiviti bersama."
+    },
+    "s6": {
+      "title": "6. Gambar, rakaman dan cerita",
+      "p1": "Kami tidak merakam sesi pelajar secara rutin. Menggunakan gambar, rakaman, petikan atau hasil kerja yang boleh dikenal pasti memerlukan kebenaran khusus daripada ibu bapa atau penjaga dan persetujuan kanak-kanak itu. Menolak tidak menjejaskan akses kepada pembelajaran. Kebenaran tidak pernah mewajarkan bahan yang boleh membahayakan kanak-kanak."
+    },
+    "s7": {
+      "title": "7. Soalan dan kebimbangan",
+      "p1": "Hubungi {email} untuk permintaan berkaitan privasi, kandungan yang tidak sesuai atau kebimbangan perlindungan kanak-kanak. Kongsikan hanya butiran yang perlu. Laporan akan diambil serius, dikendalikan tanpa tindakan balas dan dikongsi hanya dengan orang yang perlu bertindak. Kerahsiaan mutlak tidak boleh dijanjikan apabila perlindungan atau pelaporan undang-undang memerlukan pendedahan. Kebimbangan yang melibatkan ahli pasukan mesti dikendalikan secara bebas.",
+      "p2": "Jurnal tidak dipantau untuk kebimbangan keselamatan, dan peti masuk kami bukan perkhidmatan kecemasan. Untuk bahaya segera, hubungi perkhidmatan kecemasan setempat atau orang dewasa yang selamat dan dipercayai.",
+      "p3": "Kami menyemak dasar ini setiap tahun dan selepas perubahan atau insiden penting, serta menerbitkan tarikh semakan terbarunya."
+    },
+    "refs": {
+      "title": "Panduan dan bacaan lanjut",
+      "intro": "Panduan berikut menjadi asas dasar ini dan menjadi bacaan lanjut untuk pendidik, keluarga dan organisasi rakan kongsi. Organisasi-organisasi ini tidak menyokong atau mengesahkan Thinkerwell.",
+      "englishOnly": "Sumber-sumber ini diterbitkan dalam bahasa Inggeris.",
+      "pdpcChildren": {
+        "name": "Singapore PDPC — Children’s Personal Data in the Digital Environment (PDF)",
+        "desc": "Panduan tentang maklumat privasi yang mudah difahami, persetujuan dan perlindungan data peribadi kanak-kanak dalam talian."
+      },
+      "pdpcAnon": {
+        "name": "Singapore PDPC — Basic Anonymisation",
+        "desc": "Panduan tentang menyahkenal pasti data dan mengurangkan risiko individu dapat dikenal pasti daripadanya."
+      },
+      "unicefDigital": {
+        "name": "UNICEF — Child Protection in Digital Education",
+        "desc": "Ringkasan dasar dan nota teknikal tentang mengurus risiko perlindungan kanak-kanak dalam pembelajaran digital."
+      },
+      "kcs": {
+        "name": "Keeping Children Safe — International Child Safeguarding Standards",
+        "desc": "Rangka kerja yang merangkumi dasar perlindungan kanak-kanak, orang, prosedur dan akauntabiliti."
+      },
+      "unicefToolkit": {
+        "name": "UNICEF — Child Safeguarding Toolkit for Business",
+        "desc": "Panduan praktikal untuk menilai risiko, menetapkan tanggungjawab dan bertindak balas terhadap kebimbangan."
+      }
     }
   }
 }

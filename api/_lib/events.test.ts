@@ -3,6 +3,10 @@ import { describe, expect, it, vi } from 'vitest';
 import type { MeasurementEvent } from '../../src/measurement/events.js';
 import { handleEvents, MAX_EVENTS_PER_MINUTE, type EventsDb } from './events.js';
 
+// These tests check the endpoint as it will work when study collection is switched back on;
+// events.paused.test.ts checks it as it is now (src/measurement/paused.ts).
+vi.mock('../../src/measurement/paused.js', () => ({ STUDY_COLLECTION_PAUSED: false }));
+
 const URL_ = 'https://thinkerwell.example/api/events';
 const ENV = { DATABASE_URL: 'postgres://user:secret@db.example/thinkerwell', MEASUREMENT_ORGS: 'help-jakarta, my-partner' };
 

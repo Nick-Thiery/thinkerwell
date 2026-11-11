@@ -1365,32 +1365,6 @@
     "source": "Read more",
     "flag": true
   },
-  "pages.educators.pilotConsentTitle": {
-    "source": "Consent form",
-    "back": "Consent form"
-  },
-  "pages.educators.pilotConsentBody": {
-    "source": "A form for each learner's parent or guardian to sign, and a page for the learner's own answer, with your organisation's name on it.",
-    "flag": true,
-    "note": "'Phiếu đồng ý' and 'phụ huynh hoặc người giám hộ' per KEY_TERMS; check the whole sentence.",
-    "back": "A form for each learner's parent or guardian to sign, and a page for the learner's own answer, with your organisation's name printed on it."
-  },
-  "pages.educators.pilotConsentCta": {
-    "source": "Print consent forms",
-    "back": "Print the consent form"
-  },
-  "pages.educators.pilotSheetTitle": {
-    "source": "Information sheet",
-    "back": "Information sheet"
-  },
-  "pages.educators.pilotSheetBody": {
-    "source": "What the study involves, for each family to keep, with your organisation's name on it.",
-    "flag": true
-  },
-  "pages.educators.pilotSheetCta": {
-    "source": "Print information sheets",
-    "back": "Print the information sheet"
-  },
   "pages.educators.pilotCodesTitle": {
     "source": "Learner code cards",
     "flag": true
@@ -1608,12 +1582,6 @@
     "flag": true,
     "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording. Changed in October 2026 to describe the pilot exception."
   },
-  "pages.organisations.privacy3": {
-    "source": "Parental consent. Before any learning data is shared with Thinkerwell, a parent or guardian signs a consent form, and the learner says yes too. The study would only use data linked to a code, never a name: short questions and a few sentences in the first and last sessions, and, in every session, how learners use Thinkerwell: time, lessons and steps, answers, the help they use, videos and word counts, never what they write.",
-    "flag": true,
-    "note": "Long privacy/consent sentence; must match the consent form wording (pages.pilotStudy). Check 'dữ liệu học tập', 'sự trợ giúp họ dùng' (the help they use) and 'số từ' (word counts) read naturally, and that 'không bao giờ là nội dung họ viết' is clear. | Review: English is conditional ('would only use'); Vietnamese stated it as already happening. Must match consent form wording. [Reviewer changed: Nghiên cứu chỉ dùng → Nghiên cứu sẽ chỉ dùng]",
-    "back": "Parents' consent. Before any learning data is shared with Thinkerwell, the parent or guardian signs a consent form, and the learner agrees too. The research uses only data tied to a code, never tied to a name: short questions and a few written sentences in the first and last sessions, and, in every session, how the learner uses Thinkerwell: time, lessons and steps, answers, the help they use, videos and word counts, never what they write."
-  },
   "pages.organisations.privacyNow": {
     "source": "Learners' work and progress stay on the device they use, and are not sent to Thinkerwell. Online speech-to-text is off unless your staff turn it on; when it is on, what learners say goes to the browser maker's service. We will tell you before anything else changes.",
     "flag": true
@@ -1639,418 +1607,6 @@
   "pages.organisations.contactBody": {
     "source": "Ask a question, or tell us about your organisation: where you are, and about how many learners would use Thinkerwell.",
     "flag": true
-  },
-  "pages.consentForm.title": {
-    "source": "Consent form",
-    "back": "Consent form"
-  },
-  "pages.consentForm.intro": {
-    "source": "Print one form for each learner before the pilot starts: a page for the parent or guardian, and a page for the learner. Type your organisation's name to put it on the form, or leave it empty to write it by hand.",
-    "flag": true,
-    "note": "Register for staff/organisation readers: 'bạn'.",
-    "back": "Print one form for each learner before the pilot begins: one page for the parent or guardian, and one page for the learner. Type your organisation's name to print it on the form, or leave it blank to write by hand."
-  },
-  "pages.consentForm.orgLabel": {
-    "source": "Your organisation's name",
-    "back": "Your organisation's name"
-  },
-  "pages.consentForm.orgHelper": {
-    "source": "It is only used on this form, and is not saved.",
-    "back": "Only used on this form and not saved."
-  },
-  "pages.consentForm.staffTitle": {
-    "source": "For staff: this is a template",
-    "back": "For staff: this is a template"
-  },
-  "pages.consentForm.staffBody": {
-    "source": "It is not legal advice. Before you use it, check it against your organisation's own rules and the data protection law where you work, and change anything that doesn't fit. Signed forms have names on them: keep them safe. Thinkerwell never sees them.",
-    "flag": true,
-    "note": "Legal-ish disclaimer; native check for tone and 'luật bảo vệ dữ liệu'.",
-    "back": "This is not legal advice. Before using it, check it against your organisation's own rules and the data protection law where you work, then change what does not fit. Signed forms have names on them: keep them carefully. Thinkerwell never sees them."
-  },
-  "pages.consentForm.staffUse": {
-    "source": "Give each family the information sheet with the form. If a parent or guardian can't read, read both aloud in their language, and sign as a witness on page 2. Learners aged 18 or older sign for themselves. The form doesn't cover online speech-to-text, so keep it off in Settings.",
-    "flag": true,
-    "note": "'Người làm chứng' for witness, per KEY_TERMS.",
-    "back": "Give each family the information sheet together with the consent form. If the parent or guardian cannot read, read both aloud in their language, and sign as witness on page 2. Learners aged 18 and over sign for themselves. This form does not cover online speech to text, so leave that feature turned off in Settings."
-  },
-  "pages.consentForm.orgBlank": {
-    "source": "organisation's name",
-    "back": "organisation name"
-  },
-  "pages.consentForm.pageOf": {
-    "source": "Page {page} of {count}",
-    "back": "Page {page} of {count}"
-  },
-  "pages.consentForm.formTitle": {
-    "source": "Taking part in the Thinkerwell pilot",
-    "flag": true,
-    "note": "'đợt thí điểm' for 'the pilot'; KEY_TERMS gives 'thí điểm'. Check.",
-    "back": "Taking part in the Thinkerwell pilot"
-  },
-  "pages.consentForm.formFor": {
-    "source": "For a parent or guardian",
-    "back": "For the parent or guardian"
-  },
-  "pages.consentForm.formIntro": {
-    "source": "{organisation} is trying Thinkerwell, a free online learning platform for youth aged about 10 to 17, with four social studies courses. Your child's class will use lessons from one or more of them a few sessions a week for 4 to 6 weeks. There is also a small study of how well it works.",
-    "flag": true
-  },
-  "pages.consentForm.studyTitle": {
-    "source": "The pilot study",
-    "back": "The pilot study"
-  },
-  "pages.consentForm.choiceTitle": {
-    "source": "It is your choice",
-    "back": "The choice is yours"
-  },
-  "pages.consentForm.choiceBody": {
-    "source": "Saying no to either question below won't affect anything else your child does at {organisation}. If you say no to the study, your child can still use Thinkerwell in class; their answers just aren't used. You can change your mind at any time, even after the pilot: tell {organisation}, and your child's answers are deleted. Your child can say no too, and their no counts.",
-    "flag": true,
-    "note": "PARENT-FACING PROMISE. Check every sentence: 'lời từ chối của con được tính' for 'their no counts' (meaning: the child's refusal is respected); 'trả lời Không' matches the Có/Không boxes; deletion promise 'sẽ bị xóa'.",
-    "back": "If you answer No to one of the two questions below, it will not affect anything else your child does at {organisation}. If you answer No to the study, your child can still use Thinkerwell in class; it is just that their answers are not used. You can change your mind at any time, even after the pilot has ended: tell {organisation}, and your child's answers will be deleted. Your child can also say no, and their refusal counts."
-  },
-  "pages.consentForm.questions": {
-    "source": "Questions? Ask {organisation}.",
-    "back": "Have questions? Ask {organisation}."
-  },
-  "pages.consentForm.questionsEmail": {
-    "source": "Questions? Ask {organisation}, or email Thinkerwell at {email}.",
-    "back": "Have questions? Ask {organisation}, or email Thinkerwell at {email}."
-  },
-  "pages.consentForm.honesty": {
-    "source": "Thinkerwell is a student-led platform, not a registered charity.",
-    "flag": true,
-    "note": "'nền tảng do học sinh dẫn dắt' (student-led platform) and 'tổ chức từ thiện đã đăng ký' (registered charity): legally sensitive honesty statement; native/legal check. Must keep 'nền tảng', never 'dự án'.",
-    "back": "Thinkerwell is a platform led by students, not a registered charity."
-  },
-  "pages.consentForm.answerTitle": {
-    "source": "Your answers",
-    "back": "Your answers"
-  },
-  "pages.consentForm.classQuestion": {
-    "source": "My child can use Thinkerwell in class at {organisation}.",
-    "flag": true,
-    "note": "PROMISE/ANSWER TO FAMILIES, translated exactly. Written in the parent's voice: 'Con tôi'.",
-    "back": "My child may use Thinkerwell in class at {organisation}."
-  },
-  "pages.consentForm.studyQuestion": {
-    "source": "My child can take part in the pilot study. Their answers are used with a code, never their name.",
-    "flag": true,
-    "note": "PROMISE/ANSWER TO FAMILIES, translated exactly. 'được dùng kèm một mã, không bao giờ kèm tên'. Native check.",
-    "back": "My child may take part in the pilot study. Their answers are used with a code, never with a name."
-  },
-  "pages.consentForm.yes": {
-    "source": "Yes",
-    "flag": true,
-    "note": "'Có' for Yes on a form: check that Có/Không is the natural pair for tick boxes.",
-    "back": "Yes"
-  },
-  "pages.consentForm.no": {
-    "source": "No",
-    "back": "No"
-  },
-  "pages.consentForm.childName": {
-    "source": "Child's name",
-    "flag": true,
-    "note": "'Tên của con' written in the parent's voice.",
-    "back": "Child's name"
-  },
-  "pages.consentForm.pilotCode": {
-    "source": "Pilot code (the organisation fills this in): {code}",
-    "back": "Pilot code (filled in by the organisation): {code}"
-  },
-  "pages.consentForm.parentName": {
-    "source": "Parent or guardian's name",
-    "back": "Name of parent or guardian"
-  },
-  "pages.consentForm.signature": {
-    "source": "Signature or thumbprint",
-    "flag": true,
-    "note": "Per KEY_TERMS 'chữ ký hoặc dấu vân tay'; alternative 'điểm chỉ'.",
-    "back": "Signature or fingerprint"
-  },
-  "pages.consentForm.date": {
-    "source": "Date",
-    "back": "Date"
-  },
-  "pages.consentForm.keep": {
-    "source": "{organisation} keeps this form somewhere locked. Thinkerwell never sees it.",
-    "flag": true,
-    "note": "'ở nơi có khóa' for 'somewhere locked'; check natural phrasing (e.g. 'trong nơi khóa an toàn').",
-    "back": "{organisation} keeps this form in a locked place. Thinkerwell never sees this form."
-  },
-  "pages.consentForm.learnerTitle": {
-    "source": "The learner's own answer",
-    "back": "The learner's own answer"
-  },
-  "pages.consentForm.learnerFor": {
-    "source": "For staff to fill in",
-    "back": "For staff to fill in"
-  },
-  "pages.consentForm.learnerIntro": {
-    "source": "Read this aloud to the learner, in their language:",
-    "back": "Read this paragraph aloud to the learner, in the learner's language:"
-  },
-  "pages.consentForm.learnerScript": {
-    "source": "We're trying a new learning website called Thinkerwell. In the first and last lessons, you'll answer some questions and write a few sentences. It isn't a test, and nobody gets a mark. We use a number, not your name. You can say no, or stop at any time, and you can still use Thinkerwell and come to class. Do you want your answers to be part of the study?",
-    "flag": true,
-    "note": "Read aloud to a child. 'Chúng mình' for staff 'we', 'bạn' to the learner. 'một mã số' for 'a number' (the pilot code); 'không ai bị chấm điểm' for 'nobody gets a mark'; 'bài kiểm tra' used for test here. Native check on warmth and exactness. | Review: Faithful; promises match (code not name, may say no or stop, still comes to class). Uses 'bạn/chúng mình'. 'Bài kiểm tra' is the natural word for 'test'; consistent with the aim.",
-    "back": "We are trying a new learning website called Thinkerwell. In the first lesson and the last lesson, you will answer some questions and write a few sentences. This is not an exam, and no one is given marks. We use a number code, not your name. You can say no, or stop at any time, and you can still use Thinkerwell and come to class as usual. Would you like your answers to be part of the study?"
-  },
-  "pages.consentForm.learnerAnswer": {
-    "source": "The learner's answer",
-    "back": "The learner's answer"
-  },
-  "pages.consentForm.staffInitials": {
-    "source": "Staff initials",
-    "flag": true,
-    "note": "Per KEY_TERMS 'chữ ký tắt của nhân viên'.",
-    "back": "Staff short signature"
-  },
-  "pages.consentForm.learnerWins": {
-    "source": "If the parent says yes and the learner says no, the learner's no wins.",
-    "flag": true,
-    "note": "RULE FOR STAFF. 'được làm theo' (is followed) for 'wins': check it is as firm as the English. | Review: 'được làm theo' is firm enough; a native speaker may prefer 'được ưu tiên'.",
-    "back": "If the parent agrees but the learner answers no, the learner's no answer is followed."
-  },
-  "pages.consentForm.witnessTitle": {
-    "source": "If the parent or guardian can't read or write",
-    "back": "If the parent or guardian cannot read or write"
-  },
-  "pages.consentForm.witnessBody": {
-    "source": "I read the information sheet and this form aloud in {language} (language). The parent or guardian understood and gave the answers on page 1.",
-    "flag": true,
-    "note": "'(ngôn ngữ)' label after the language placeholder; written in the staff witness's voice.",
-    "back": "I read the information sheet and this form aloud in {language} (language). The parent or guardian understood and gave the answers on page 1."
-  },
-  "pages.consentForm.languageBlank": {
-    "source": "language",
-    "back": "language"
-  },
-  "pages.consentForm.codeBlank": {
-    "source": "pilot code",
-    "back": "pilot code"
-  },
-  "pages.consentForm.staffName": {
-    "source": "Staff member's name",
-    "back": "Staff name"
-  },
-  "pages.consentForm.staffSignature": {
-    "source": "Staff member's signature",
-    "back": "Staff signature"
-  },
-  "pages.pilotStudy.intro": {
-    "source": "If you say yes to the study, then in the first and last sessions of a class studying Exploring Our World, your child:",
-    "flag": true
-  },
-  "pages.pilotStudy.questions": {
-    "source": "answers 16 short questions (about 15 minutes each time)",
-    "flag": true,
-    "note": "PROMISE: 16 questions, about 15 minutes. Verify numbers unchanged.",
-    "back": "answers 16 short questions (about 15 minutes each time)"
-  },
-  "pages.pilotStudy.writing": {
-    "source": "writes a few sentences about a made-up town, on paper (about 8 minutes)",
-    "flag": true,
-    "note": "PROMISE: 'thị trấn hư cấu' for 'made-up town'; on paper, about 8 minutes.",
-    "back": "writes a few sentences about a fictional town, on paper (about 8 minutes)"
-  },
-  "pages.pilotStudy.faces": {
-    "source": "chooses a face for each of 5 sentences, like “I can use a map to find information” (about 1 minute)",
-    "flag": true,
-    "note": "PROMISE: 5 sentences, about 1 minute. Example sentence is in the learner's voice (Mình có thể ...); check it matches the self-check wording in the real instrument.",
-    "back": "chooses a face for each of 5 questions, for example \"I can use a map to find information\" (about 1 minute)"
-  },
-  "pages.pilotStudy.site": {
-    "source": "In every session, Thinkerwell also notes how your child uses it: how long, which lessons and steps they open and finish, their answers to quick checks and quizzes, whether they use the simpler reading or have it read aloud, whether they watch the videos (and how much) or read instead, and how many words they write, never the words themselves.",
-    "flag": true,
-    "note": "PROMISE covering all measurement logging: time, lessons and steps opened/finished, quick-check and quiz answers ('ôn tập phần' for quizzes), simpler reading, Listen ('nghe đọc to'), videos or read instead, word counts never the words. Must stay in step with MEASUREMENT_PLAN. Native + team check. | Review: Promise checked item by item against English: time, lessons and steps opened and finished, quick-check and section-check answers, simpler reading, Listen, videos or reading instead, word counts and never the words. All present. 'ôn tập phần' renders 'quizzes' (the section check term).",
-    "back": "In every session, Thinkerwell also records how your child uses it: how long they use it, which lessons and steps they open and complete, the answers to quick checks and section reviews, whether they use the easier reading version or listening aloud, whether they watch videos (and how much) or read instead, and how many words they write, never recording those words themselves."
-  },
-  "pages.pilotStudy.notTest": {
-    "source": "None of this is a test. Nothing depends on the answers.",
-    "flag": true,
-    "note": "PROMISE. 'bài kiểm tra' for test; native check that 'Không có gì phụ thuộc vào các câu trả lời' reads as 'nothing depends on the answers'.",
-    "back": "None of this is a test. Nothing depends on the answers."
-  },
-  "pages.pilotStudy.keepTitle": {
-    "source": "What we keep, and what we don't",
-    "flag": true,
-    "note": "'chúng tôi' (we) here is the Thinkerwell team; check register.",
-    "back": "What we keep, and what we do not"
-  },
-  "pages.pilotStudy.keepCode": {
-    "source": "Your child's answers are linked to a code, like {code}, never to their name.",
-    "flag": true,
-    "note": "PROMISE: answers linked to a code, never a name.",
-    "back": "Your child's answers are attached to a code, like {code}, never attached to their name."
-  },
-  "pages.pilotStudy.keepList": {
-    "source": "{organisation} keeps the list of names and codes on paper. Thinkerwell never sees it.",
-    "flag": true,
-    "note": "PROMISE: list of names and codes kept on paper by the organisation; Thinkerwell never sees it.",
-    "back": "{organisation} keeps the list of names and codes on paper. Thinkerwell never sees this list."
-  },
-  "pages.pilotStudy.keepNeverAsk": {
-    "source": "Thinkerwell never asks about family, journey, home country, religion or ethnicity.",
-    "flag": true,
-    "note": "PROMISE. 'hành trình' (journey) is vague alone; a native may want 'hành trình di cư' but that would add meaning. 'quê hương' for home country, 'dân tộc' for ethnicity (in Vietnamese it can also mean ethnic minority group): check. | Review: English 'home country'. 'Quê hương' alone can mean hometown or village. Promise wording tightened. Native check wanted; 'hành trình' (journey) may read as a trip rather than the flight/migration journey, which is intended. [Reviewer changed: quê hương → đất nước quê hương]",
-    "back": "Thinkerwell never asks about family, journey, hometown, religion or ethnicity."
-  },
-  "pages.pilotStudy.keepNoDocuments": {
-    "source": "Thinkerwell never asks for UNHCR numbers or any documents.",
-    "flag": true,
-    "note": "PROMISE: never asks for UNHCR numbers or documents.",
-    "back": "Thinkerwell never asks for a UNHCR number or any documents."
-  },
-  "pages.pilotStudy.keepNoPhotos": {
-    "source": "Thinkerwell never collects photos of your child, or where they are.",
-    "flag": true,
-    "note": "PROMISE. 'vị trí của con' for 'where they are' (location): check it means where the child physically is.",
-    "back": "Thinkerwell never collects photos of your child, or their location."
-  },
-  "pages.pilotStudy.keepDevice": {
-    "source": "What your child writes and records in the lessons stays on the device they use.",
-    "flag": true,
-    "note": "PROMISE: writing and recordings stay on the device.",
-    "back": "What your child writes and records in the lessons stays on the device they use."
-  },
-  "pages.pilotStudy.keepGroup": {
-    "source": "Only the Thinkerwell team sees the answers. {organisation} gets results for the whole group, never for one child.",
-    "flag": true,
-    "note": "PROMISE: only the Thinkerwell team sees answers; the organisation gets group results, never for one child ('một em nào').",
-    "back": "Only the Thinkerwell team can see the answers. {organisation} receives the results of the whole group, never the results of any one child."
-  },
-  "pages.pilotStudy.keepDelete": {
-    "source": "Everything the study keeps is deleted within 6 months after the pilot ends.",
-    "flag": true,
-    "note": "PROMISE: deletion within 6 months after the pilot ends. Check 'trong vòng 6 tháng' = within 6 months.",
-    "back": "Everything the study keeps will be deleted within 6 months after the pilot ends."
-  },
-  "pages.pilotStudy.keepVideo": {
-    "source": "Some lessons have an optional YouTube video. When one plays, YouTube (owned by Google) gets some information, such as the device's internet (IP) address. Every video has a written version: choosing “{readInstead}” sends nothing to YouTube.",
-    "flag": true,
-    "note": "PROMISE: YouTube gets information such as the IP address when a video plays; read-instead sends nothing. {readInstead} must equal the Vietnamese 'Đọc thay thế' button.",
-    "back": "Some lessons have optional YouTube videos. When a video plays, YouTube (owned by Google) receives some information, such as the device's internet address (IP). Every video has a written version: choose \"{readInstead}\" and nothing is sent to YouTube."
-  },
-  "pages.infoSheet.title": {
-    "source": "Information sheet",
-    "back": "Information sheet"
-  },
-  "pages.infoSheet.intro": {
-    "source": "Print one for each learner's family, to give with the consent form. Fill in what you know to put it on the sheet, or leave a box empty to write it by hand.",
-    "flag": true,
-    "note": "Staff-facing.",
-    "back": "Print one sheet for each learner's family, to give together with the consent form. Fill in what you know to print on the sheet, or leave the boxes blank to write by hand."
-  },
-  "pages.infoSheet.fieldsTitle": {
-    "source": "Before you print",
-    "back": "Before printing"
-  },
-  "pages.infoSheet.fieldsHelper": {
-    "source": "Only used on this sheet, and not saved.",
-    "back": "Only used on this sheet and not saved."
-  },
-  "pages.infoSheet.startLabel": {
-    "source": "Start date",
-    "back": "Start date"
-  },
-  "pages.infoSheet.endLabel": {
-    "source": "End date",
-    "back": "End date"
-  },
-  "pages.infoSheet.sessionsLabel": {
-    "source": "Number of sessions",
-    "back": "Number of sessions"
-  },
-  "pages.infoSheet.contactLabel": {
-    "source": "Contact person",
-    "back": "Contact person"
-  },
-  "pages.infoSheet.staffBody": {
-    "source": "It is not legal advice. Check it against your organisation's own rules, and change anything that doesn't fit. If a parent or guardian can't read, read it aloud in their language.",
-    "flag": true,
-    "note": "Staff-facing; legal disclaimer.",
-    "back": "This is not legal advice. Check it against your organisation's own rules, and change what does not fit. If the parent or guardian cannot read, read it aloud to them in their language."
-  },
-  "pages.infoSheet.startBlank": {
-    "source": "start date",
-    "back": "start date"
-  },
-  "pages.infoSheet.endBlank": {
-    "source": "end date",
-    "back": "end date"
-  },
-  "pages.infoSheet.sessionsBlank": {
-    "source": "number of sessions",
-    "back": "number of sessions"
-  },
-  "pages.infoSheet.contactBlank": {
-    "source": "contact person's name",
-    "back": "contact person's name"
-  },
-  "pages.infoSheet.sheetTitle": {
-    "source": "About the Thinkerwell pilot",
-    "back": "About the Thinkerwell pilot"
-  },
-  "pages.infoSheet.sheetFor": {
-    "source": "For a parent or guardian to keep",
-    "flag": true,
-    "note": "Check phrasing 'giữ lại'.",
-    "back": "For the parent or guardian to keep"
-  },
-  "pages.infoSheet.whatTitle": {
-    "source": "What is Thinkerwell?",
-    "back": "What is Thinkerwell?"
-  },
-  "pages.infoSheet.whatBody": {
-    "source": "Thinkerwell is a free learning website. Its courses teach history, maps and places, cultures, how communities make decisions, the past of Southeast Asia, art and buildings, and how digital technology and AI work. Learners read, write, speak, watch short videos and think about what they learned, in simple English, Bahasa Indonesia or Bahasa Melayu. It is made by a small team of students in Singapore.",
-    "flag": true
-  },
-  "pages.infoSheet.happenTitle": {
-    "source": "What will happen?",
-    "back": "What will happen?"
-  },
-  "pages.infoSheet.happenBody": {
-    "source": "From {start} to {end}, your child's class at {organisation} will use Thinkerwell on its tablets and laptops, about {sessions} times. A teacher from {organisation} leads every session.",
-    "flag": true,
-    "note": "PARENT-FACING. {start}/{end}/{sessions} are typed by staff or blank lines; check sentence works with lines.",
-    "back": "From {start} to {end}, your child's class at {organisation} will use Thinkerwell on the class's tablets and laptops, about {sessions} sessions. A teacher from {organisation} leads every session."
-  },
-  "pages.infoSheet.studyTitle": {
-    "source": "The pilot study: you choose",
-    "back": "The pilot study: you choose"
-  },
-  "pages.infoSheet.choiceTitle": {
-    "source": "Saying yes or no",
-    "back": "Answer Yes or No"
-  },
-  "pages.infoSheet.choiceBody": {
-    "source": "It is your choice, and you answer on the consent form. If you say no to the study, your child still comes to class and can still use Thinkerwell. Their answers just aren't used in the study. You can change your mind at any time, even after the pilot. Tell a teacher, and your child's answers are deleted. Your child can also say no, and their no counts.",
-    "flag": true,
-    "note": "PARENT-FACING PROMISE, same as the consent form: refusal has no effect, answers not used, can change mind and answers deleted, child's no counts. Check it matches consentForm.choiceBody.",
-    "back": "The choice is yours, and you answer on the consent form. If you answer No to the study, your child still comes to class and can still use Thinkerwell. It is just that their answers are not used in the study. You can change your mind at any time, even after the pilot has ended. Tell a teacher, and your child's answers will be deleted. Your child can also say no, and their refusal counts."
-  },
-  "pages.infoSheet.questionsTitle": {
-    "source": "Questions",
-    "back": "Questions"
-  },
-  "pages.infoSheet.questions": {
-    "source": "Ask {contact} at {organisation}.",
-    "flag": true,
-    "note": "'Hãy hỏi' (imperative with Hãy) used since a bare command would sound blunt; check.",
-    "back": "Ask {contact} at {organisation}."
-  },
-  "pages.infoSheet.questionsEmail": {
-    "source": "Ask {contact} at {organisation}, or write to Thinkerwell at {email}.",
-    "back": "Ask {contact} at {organisation}, or write to Thinkerwell at {email}."
-  },
-  "pages.infoSheet.runBy": {
-    "source": "Thinkerwell is run by Justin Park and Nick Thiery. It is a student-led platform, not a registered charity.",
-    "flag": true,
-    "note": "HONESTY STATEMENT: platform, not a registered charity. Names unchanged. Legal check.",
-    "back": "Thinkerwell is run by Justin Park and Nick Thiery. It is a platform led by students, not a registered charity."
   },
   "pages.codeCards.title": {
     "source": "Code cards",
@@ -5582,104 +5138,6 @@
     "source": "Some of your labels are different from the gardener's. The model learned your labels, so its guesses follow them.",
     "back": "Some of your labels differ from the gardener's labels. The model learned your labels, so its predictions follow them too."
   },
-  "pilotResults.title": {
-    "source": "Share optional study data",
-    "flag": true
-  },
-  "pilotResults.intro": {
-    "source": "Use this only for a learning study your organisation takes part in with Thinkerwell, after every family has signed the consent form. It is off until you turn it on.",
-    "flag": true
-  },
-  "pilotResults.codeLabel": {
-    "source": "Organisation code",
-    "back": "Organisation code",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
-  },
-  "pilotResults.codeHelp": {
-    "source": "Thinkerwell gives you this code, like help-jakarta.",
-    "back": "Thinkerwell gives you this code, for example help-jakarta.",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
-  },
-  "pilotResults.codeInvalid": {
-    "source": "Use letters, numbers and hyphens, 2 to 32 in all, like help-jakarta.",
-    "back": "Use letters, numbers and hyphens, from 2 to 32 characters, for example help-jakarta.",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
-  },
-  "pilotResults.codeSave": {
-    "source": "Save code",
-    "back": "Save code",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
-  },
-  "pilotResults.codeSaved": {
-    "source": "Code saved.",
-    "back": "Code saved.",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
-  },
-  "pilotResults.shareLabel": {
-    "source": "Share optional study data from this device",
-    "flag": true
-  },
-  "pilotResults.shareNeedsCode": {
-    "source": "Save an organisation code first.",
-    "back": "Save the organisation code first.",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
-  },
-  "pilotResults.shareHelp": {
-    "source": "When this is on, a learner who types a learner code like HLP-01 as their name sends how they use Thinkerwell to the Thinkerwell team: how long, which lessons and steps they open and finish, their answers to quick checks and quizzes, whether they use the simpler reading or Listen, whether they watch videos or read instead, and how many words they write. It goes with their code and your organisation code. It never includes names, writing or recordings. Learners who look around, or who use any other name, send nothing.",
-    "flag": true
-  },
-  "pilotResults.shareOffHelp": {
-    "source": "Turning this off also deletes any results still waiting to be sent from this device.",
-    "back": "When off, results still waiting to be sent on this device are also deleted.",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
-  },
-  "pilotResults.statusOff": {
-    "source": "Sharing is off. Nothing is sent.",
-    "back": "Sharing is off. Nothing is sent.",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
-  },
-  "pilotResults.statusOn": {
-    "source": "Sharing with {org}.",
-    "back": "Sharing with {org}.",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
-  },
-  "pilotResults.waiting": {
-    "source": "Results waiting to be sent: {count}",
-    "back": "Results waiting to be sent: {count}",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
-  },
-  "pilotResults.paused": {
-    "source": "Sending is paused because Thinkerwell can't take results yet. It tries again later.",
-    "back": "Sending is paused because Thinkerwell cannot receive results yet. It will try again later.",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
-  },
-  "pilotResults.delete": {
-    "source": "Delete waiting results",
-    "back": "Delete waiting results",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
-  },
-  "pilotResults.deleteHelp": {
-    "source": "Deletes results that haven't been sent yet. Results already sent are deleted within 6 months after the study ends.",
-    "flag": true
-  },
-  "pilotResults.deleted": {
-    "source": "Waiting results deleted.",
-    "back": "Waiting results have been deleted.",
-    "flag": true,
-    "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording."
-  },
   "pages.home.newLearner.privacyNotePilot": {
     "source": "Your writing and recordings stay on this device. If you use a learner code for a study, Thinkerwell also counts how you use it. It never gets your name.",
     "flag": true
@@ -5749,7 +5207,7 @@
     "note": "New or changed in October 2026: simpler pages (docs/notes/simpler-lessons.md). Drafted by AI, back-translation by the same drafter; not yet reviewed by a native speaker."
   },
   "pages.settings.moreIntro": {
-    "source": "Moving work to another device, the Listen voice, lesson audio for offline use, speech-to-text and optional study data.",
+    "source": "Moving work to another device, the Listen voice, lesson audio for offline use and speech-to-text.",
     "flag": true
   },
   "lessonPlayer.shell.stepOf": {
@@ -5963,18 +5421,6 @@
     "source": "Print the guide",
     "flag": true
   },
-  "pages.educators.pilotCheckTitle": {
-    "source": "Learning check",
-    "flag": true
-  },
-  "pages.educators.pilotCheckBody": {
-    "source": "Paper sheets for the first and last sessions of a study of Exploring Our World: 16 questions, a short piece of writing and 5 faces, by learner code. With the answer key for the team. Not for groups using other courses.",
-    "flag": true
-  },
-  "pages.educators.pilotCheckCta": {
-    "source": "Print the check",
-    "flag": true
-  },
   "pages.educators.sendEnquiry": {
     "source": "Send an enquiry",
     "flag": true
@@ -6019,14 +5465,6 @@
     "source": "Everything here prints on A4, in black and white.",
     "flag": true
   },
-  "pages.educators.studyTitle": {
-    "source": "Optional learning study",
-    "flag": true
-  },
-  "pages.educators.studyIntro": {
-    "source": "Only for an organisation taking part in a learning study with Thinkerwell. You don't need any of this to teach a lesson.",
-    "flag": true
-  },
   "pages.educators.feedbackSheetTitle": {
     "source": "Session record and feedback",
     "flag": true
@@ -6045,18 +5483,6 @@
   },
   "pages.organisations.whoTitle": {
     "source": "Who runs Thinkerwell?",
-    "flag": true
-  },
-  "pages.organisations.studyTitle": {
-    "source": "Optional learning study and data sharing",
-    "flag": true
-  },
-  "pages.organisations.studyIntro": {
-    "source": "Only for organisations that choose to take part in a learning study with Thinkerwell. It isn't needed to use the course.",
-    "flag": true
-  },
-  "pages.organisations.studyShare": {
-    "source": "Once families have signed the consent form, and only when your staff turn on “Share optional study data” in Settings, the site sends how learners use it, linked to a learner code and never a name. Coded data is not anonymous: your organisation keeps the list that matches codes to names.",
     "flag": true
   },
   "pages.teacherTools.backToGuides": {
@@ -6276,7 +5702,7 @@
     "flag": true
   },
   "pilotDay.beforeConsent": {
-    "source": "Check that every family has the information sheet and has answered the consent form. If a learner says no, that is the answer, even if the family said yes.",
+    "source": "Check that the permissions agreed with your organisation are in place. If a learner says no, that is the answer, even if the family said yes.",
     "flag": true
   },
   "pilotDay.beforeChoose": {
@@ -6415,182 +5841,6 @@
     "source": "For a course with no section check, ask aloud: the big question, one piece of evidence, what they still want to find out. Then fill in the session record ({educators}, then {feedback}).",
     "flag": true
   },
-  "pilotCheck.title": {
-    "source": "Learning check",
-    "flag": true
-  },
-  "pilotCheck.intro": {
-    "source": "Paper sheets for the first and last sessions of a learning study: 16 questions, a short piece of writing and 5 faces, by learner code, never by name. They help the team see learners' answers at the start and the end; on their own, they don't prove what learners learned.",
-    "flag": true
-  },
-  "pilotCheck.howTitle": {
-    "source": "How to run it",
-    "flag": true
-  },
-  "pilotCheck.how1": {
-    "source": "Use the same sheets in the first session, before the first lesson, and in the last session. Tick \"First session\" or \"Last session\" at the top.",
-    "flag": true
-  },
-  "pilotCheck.how2": {
-    "source": "Each learner writes their learner code at the top of each part, never their name. Staple each learner's pages together.",
-    "flag": true
-  },
-  "pilotCheck.how3": {
-    "source": "Allow about 25 minutes: 15 for the questions, 8 for the writing and 2 for the faces. There is no time limit.",
-    "flag": true
-  },
-  "pilotCheck.how4": {
-    "source": "You may read the questions aloud. Don't explain words from the questions or help with answers, and don't mark the sheets or say any scores.",
-    "flag": true
-  },
-  "pilotCheck.how5": {
-    "source": "Collect every sheet and keep them safe. The Thinkerwell team marks them. Print the answer key only for the team.",
-    "flag": true
-  },
-  "pilotCheck.printLabel": {
-    "source": "Print",
-    "flag": true
-  },
-  "pilotCheck.printLearners": {
-    "source": "Sheets for learners",
-    "flag": true
-  },
-  "pilotCheck.printKey": {
-    "source": "Answer key for the team",
-    "flag": true
-  },
-  "pilotCheck.sheetTitle": {
-    "source": "My learning check",
-    "flag": true
-  },
-  "pilotCheck.codeLabel": {
-    "source": "My code:",
-    "flag": true
-  },
-  "pilotCheck.sessionFirst": {
-    "source": "First session",
-    "flag": true
-  },
-  "pilotCheck.sessionLast": {
-    "source": "Last session",
-    "flag": true
-  },
-  "pilotCheck.dateLabel": {
-    "source": "Date:",
-    "flag": true
-  },
-  "pilotCheck.noName": {
-    "source": "Write your code, not your name.",
-    "flag": true
-  },
-  "pilotCheck.part1Title": {
-    "source": "Part 1: Questions",
-    "flag": true
-  },
-  "pilotCheck.part1Help": {
-    "source": "Read each question. Circle one answer: A, B or C. If you are not sure, choose the answer you think is best. This is not a test, and it doesn't change anything for you.",
-    "flag": true
-  },
-  "pilotCheck.part2Title": {
-    "source": "Part 2: Writing",
-    "flag": true
-  },
-  "pilotCheck.part2Help": {
-    "source": "Read the clues. Then write your answer on the lines. You can write in the language you like best.",
-    "flag": true
-  },
-  "pilotCheck.part3Title": {
-    "source": "Part 3: How sure do you feel?",
-    "flag": true
-  },
-  "pilotCheck.part3Help": {
-    "source": "For each sentence, circle the face that is most like you. There are no wrong answers.",
-    "flag": true
-  },
-  "pilotCheck.face1": {
-    "source": "Not yet",
-    "flag": true
-  },
-  "pilotCheck.face2": {
-    "source": "A little",
-    "flag": true
-  },
-  "pilotCheck.face3": {
-    "source": "Mostly",
-    "flag": true
-  },
-  "pilotCheck.face4": {
-    "source": "Yes",
-    "flag": true
-  },
-  "pilotCheck.thanks": {
-    "source": "Thank you. Give your sheets to your teacher.",
-    "flag": true
-  },
-  "pilotCheck.keyTitle": {
-    "source": "Before-and-after check: answer key",
-    "flag": true
-  },
-  "pilotCheck.keyFor": {
-    "source": "For the Thinkerwell team only",
-    "flag": true
-  },
-  "pilotCheck.keyIntro": {
-    "source": "Don't give this page to learners. Score 1 point for each correct answer, out of 16.",
-    "flag": true
-  },
-  "pilotCheck.keyQuestion": {
-    "source": "Question",
-    "flag": true
-  },
-  "pilotCheck.keyAnswer": {
-    "source": "Answer",
-    "flag": true
-  },
-  "pilotCheck.keyLesson": {
-    "source": "Lesson",
-    "flag": true
-  },
-  "pilotCheck.keyTaught": {
-    "source": "Taught in the sessions",
-    "flag": true
-  },
-  "pilotCheck.taughtYes": {
-    "source": "Yes",
-    "flag": true
-  },
-  "pilotCheck.taughtNo": {
-    "source": "No",
-    "flag": true
-  },
-  "pilotCheck.keyUntaught": {
-    "source": "Questions from lessons the sessions don't teach are a comparison: if scores rise only on the taught questions, the lessons are the likely reason.",
-    "flag": true
-  },
-  "pilotCheck.rubricTitle": {
-    "source": "The writing: how to mark it",
-    "flag": true
-  },
-  "pilotCheck.rubricIntro": {
-    "source": "Two team members mark every piece of writing without seeing the code or which session it is from. Give 0, 1 or 2 points for each part, out of 6. Answers in any language count.",
-    "flag": true
-  },
-  "pilotCheck.rubricPart": {
-    "source": "Part",
-    "flag": true
-  },
-  "pilotCheck.points.other": {
-    "source": "{count} points",
-    "flag": true
-  },
-  "pilotCheck.scoring": {
-    "source": "Type each learner's answers, writing marks and faces into the scoring spreadsheet. It works out the scores and the change from the first session to the last.",
-    "flag": true
-  },
-  "pilotCheck.scope": {
-    "source": "These sheets are about Exploring Our World, so use them only with groups that study its lessons. If your group uses another course, don't use them: the session guide has a short way to review instead. Scores from this check are never added to, or compared with, any other check.",
-    "flag": true
-  },
   "feedbackSheet.title": {
     "source": "Session record and feedback",
     "flag": true
@@ -6653,10 +5903,6 @@
   },
   "feedbackSheet.checksTitle": {
     "source": "Checks",
-    "flag": true
-  },
-  "feedbackSheet.checkLearning": {
-    "source": "Did the group do the learning check? It is only for groups using Exploring Our World.",
     "flag": true
   },
   "feedbackSheet.checkSection": {
@@ -7197,6 +6443,338 @@
   },
   "pages.credits.translationBodyVietnamese": {
     "source": "The Tiếng Việt version was drafted with the help of AI too, from the English, and checked by AI by translating it back into English. It is waiting for native speakers to check it.",
+    "flag": true
+  },
+  "privacy.title": {
+    "source": "Privacy & Child Safeguarding",
+    "flag": true
+  },
+  "privacy.intro": {
+    "source": "Thinkerwell provides free social studies learning for youth across Southeast Asia. We are committed to respecting learners’ privacy, dignity and safety. This policy covers our website, communications and learning activities. Its safeguarding commitments apply to everyone under 18 and to anyone working on Thinkerwell’s behalf.",
+    "flag": true
+  },
+  "privacy.dates": {
+    "source": "Effective {effective}. Last updated {updated}.",
+    "flag": true
+  },
+  "privacy.learnersLead": {
+    "source": "For learners:",
+    "flag": true
+  },
+  "privacy.learnersBody": {
+    "source": "Use a nickname, avoid sharing sensitive personal information, and remember that others using your device may see your saved work. You can skip uncomfortable questions and ask a trusted adult for help.",
+    "flag": true
+  },
+  "privacy.s1.title": {
+    "source": "1. Information and privacy",
+    "flag": true
+  },
+  "privacy.s1.p1": {
+    "source": "Learner profiles, preferences, progress and journal responses are saved in the browser on the device used. Shared-device profiles should not be treated as password-protected accounts. Avoid entering addresses, contact details, identity documents or sensitive family information into learning activities.",
+    "flag": true
+  },
+  "privacy.s1.p2": {
+    "source": "If you contact us, we receive the information you choose to provide, such as your email address and message. Website hosting and external services may also process technical information, including IP addresses and browser details. Thinkerwell uses information only for the purposes described in this policy.",
+    "flag": true
+  },
+  "privacy.s2.title": {
+    "source": "2. How information is used",
+    "flag": true
+  },
+  "privacy.s2.p1": {
+    "source": "We limit personal information to what is necessary to provide learning, operate and secure Thinkerwell, respond to enquiries and address safety concerns. We do not sell learners’ personal information or distribute it for advertising or unrelated purposes. Limited sharing is restricted to the service, safeguarding and legal purposes described here. We do not use personal information for targeted advertising or identifiable learner work to train third-party, non-local AI models.",
+    "flag": true
+  },
+  "privacy.s2.statsLead": {
+    "source": "Planned usage statistics.",
+    "flag": true
+  },
+  "privacy.s2.stats": {
+    "source": "We will collect anonymised, aggregated numerical statistics about platform usage and engagement, such as total visits, lesson activity and feature usage. These statistics help us understand Thinkerwell’s reach and improve the learning experience. They will exclude names, contact details and journal content, and will not identify individual learners. We will not attempt to re-identify anyone from this information.",
+    "flag": true
+  },
+  "privacy.s2.statsNow": {
+    "source": "Thinkerwell does not collect these statistics yet. Nothing on the site counts visits, lessons or features today.",
+    "flag": true
+  },
+  "privacy.s2.coded": {
+    "source": "An optional feature for pilot partners could link usage data to learner codes. It is switched off for everyone, and nothing is collected through it. Coded data is not anonymous, so it is separate from the statistics above. Any pilot data collection is agreed with each organisation first, with the permissions it needs.",
+    "flag": true
+  },
+  "privacy.s2.p3": {
+    "source": "Where consent is required, we explain the purpose clearly and obtain appropriate consent, including from a parent or legal guardian for children under 13 and whenever otherwise required.",
+    "flag": true
+  },
+  "privacy.s3.title": {
+    "source": "3. External services",
+    "flag": true
+  },
+  "privacy.s3.p1": {
+    "source": "Audio, embedded videos and external links may involve other providers, whose privacy practices also apply. We identify relevant providers, cookies or analytics and explain what information they receive. Providers handling information on our behalf must receive only what they need, with appropriate safeguards, including for overseas processing.",
+    "flag": true
+  },
+  "privacy.s3.whoTitle": {
+    "source": "Who receives information today",
+    "flag": true
+  },
+  "privacy.s3.whoIntro": {
+    "source": "These are the only services that receive information from using Thinkerwell. Thinkerwell does not set cookies, and has no ads or analytics from other companies.",
+    "flag": true
+  },
+  "privacy.s3.retention": {
+    "source": "Thinkerwell’s own server keeps nothing from the contact form. Copies held by the email services are kept only as long as needed to answer, then deleted. Hosting records are kept by the hosting provider as its policy describes.",
+    "flag": true
+  },
+  "privacy.s3.deviceTitle": {
+    "source": "Handled on the device, not sent to a service",
+    "flag": true
+  },
+  "privacy.s3.device1": {
+    "source": "Saved work. Profiles, preferences, progress, journal responses and the latest speaking recording stay in the browser’s storage on the device (IndexedDB, with a few small settings in local storage). Nothing is uploaded.",
+    "flag": true
+  },
+  "privacy.s3.device2": {
+    "source": "Listen. It reads lessons aloud with recordings delivered with the site, or with a voice already on the device. No lesson text or learner writing is sent to a voice service.",
+    "flag": true
+  },
+  "privacy.s3.device3": {
+    "source": "Record yourself. The microphone is used only when a learner taps Start. The clip stays on the device and is never uploaded.",
+    "flag": true
+  },
+  "privacy.s3.device4": {
+    "source": "Fonts, pictures and audio. They come from Thinkerwell’s own servers.",
+    "flag": true
+  },
+  "privacy.s3.device5": {
+    "source": "AI. No AI service receives learner information. The pretend tool in the Digital World course gives pre-written answers.",
+    "flag": true
+  },
+  "privacy.services.purposeLabel": {
+    "source": "What it does",
+    "flag": true
+  },
+  "privacy.services.getsLabel": {
+    "source": "What it receives",
+    "flag": true
+  },
+  "privacy.services.whereLabel": {
+    "source": "Where",
+    "flag": true
+  },
+  "privacy.services.vercel.name": {
+    "source": "Vercel (website hosting)",
+    "flag": true
+  },
+  "privacy.services.vercel.purpose": {
+    "source": "Delivers the website and its files.",
+    "flag": true
+  },
+  "privacy.services.vercel.gets": {
+    "source": "Like any web server, it sees the IP address, browser and device details, and the pages requested.",
+    "flag": true
+  },
+  "privacy.services.vercel.where": {
+    "source": "Vercel runs servers in several countries, so this may be processed outside the country you are in.",
+    "flag": true
+  },
+  "privacy.services.vercel.link": {
+    "source": "Vercel privacy policy",
+    "flag": true
+  },
+  "privacy.services.resend.name": {
+    "source": "Resend (contact form delivery)",
+    "flag": true
+  },
+  "privacy.services.resend.purpose": {
+    "source": "Sends messages from the contact form to our team.",
+    "flag": true
+  },
+  "privacy.services.resend.gets": {
+    "source": "What you type in the form: the topic, your name, your email address or WhatsApp number, and your message.",
+    "flag": true
+  },
+  "privacy.services.resend.where": {
+    "source": "Resend may process it outside the country you are in.",
+    "flag": true
+  },
+  "privacy.services.resend.link": {
+    "source": "Resend privacy policy",
+    "flag": true
+  },
+  "privacy.services.google.name": {
+    "source": "Google (our email inbox)",
+    "flag": true
+  },
+  "privacy.services.google.purpose": {
+    "source": "Holds the team’s inbox, so we can read and answer you.",
+    "flag": true
+  },
+  "privacy.services.google.gets": {
+    "source": "Every email you send us, and the messages from the contact form.",
+    "flag": true
+  },
+  "privacy.services.google.where": {
+    "source": "Google processes information in many countries.",
+    "flag": true
+  },
+  "privacy.services.google.link": {
+    "source": "Google privacy policy",
+    "flag": true
+  },
+  "privacy.services.youtube.name": {
+    "source": "YouTube (optional videos)",
+    "flag": true
+  },
+  "privacy.services.youtube.purpose": {
+    "source": "Plays a lesson video, only after a learner taps play. Every video has a written version.",
+    "flag": true
+  },
+  "privacy.services.youtube.gets": {
+    "source": "The player comes from youtube-nocookie.com. Once a video plays, YouTube receives the IP address and browser details, and may use cookies or similar storage on the device.",
+    "flag": true
+  },
+  "privacy.services.youtube.where": {
+    "source": "Google processes information in many countries.",
+    "flag": true
+  },
+  "privacy.services.youtube.link": {
+    "source": "Google privacy policy",
+    "flag": true
+  },
+  "privacy.services.speech.name": {
+    "source": "Your browser’s speech service (only if turned on)",
+    "flag": true
+  },
+  "privacy.services.speech.purpose": {
+    "source": "Turns speech into text for the Say it button.",
+    "flag": true
+  },
+  "privacy.services.speech.gets": {
+    "source": "Off unless an educator turns on “Allow online speech-to-text” in Settings. When it is on, what a learner says is sent to the browser maker’s service.",
+    "flag": true
+  },
+  "privacy.services.speech.where": {
+    "source": "This depends on the browser. Read its maker’s privacy policy.",
+    "flag": true
+  },
+  "privacy.s4.title": {
+    "source": "4. Security, retention and choices",
+    "flag": true
+  },
+  "privacy.s4.p1": {
+    "source": "We restrict access to information we hold and use reasonable security measures. We retain it only as long as needed for its stated purpose or legal obligations, then delete or anonymise it. If a data breach occurs, we assess it and notify affected people and authorities where required.",
+    "flag": true
+  },
+  "privacy.s4.p2": {
+    "source": "Contact us to request access, correction, deletion or withdrawal of consent. We will explain any applicable limits. Clearing Thinkerwell’s browser data can remove all locally saved profiles and work on that browser. We cannot remotely retrieve or erase information held only on your device. Others with access to that browser may still be able to see it.",
+    "flag": true
+  },
+  "privacy.s4.remove": {
+    "source": "On the “Who’s learning today?” screen, Remove deletes one learner’s lesson work, journal, section check scores and recordings from that device. It cannot be undone.",
+    "flag": true
+  },
+  "privacy.s5.title": {
+    "source": "5. Keeping children safe",
+    "flag": true
+  },
+  "privacy.s5.p1": {
+    "source": "We prohibit abuse, exploitation, harassment, bullying and discrimination. Team members must follow safeguarding conduct rules and receive preparation and suitability checks appropriate to their roles. Direct learner sessions must have responsible adult supervision; secret contact and unsupervised private sessions are prohibited.",
+    "flag": true
+  },
+  "privacy.s5.p2": {
+    "source": "We review materials for age suitability. Learners and organisations may skip sensitive activities or use fictional examples without sharing personal experiences. Partners and Thinkerwell must agree on supervision, consent and local reporting arrangements before joint activities.",
+    "flag": true
+  },
+  "privacy.s6.title": {
+    "source": "6. Images, recordings and stories",
+    "flag": true
+  },
+  "privacy.s6.p1": {
+    "source": "We do not routinely record learner sessions. Using identifiable images, recordings, quotations or work requires specific parent or guardian permission and the child’s agreement. Refusing does not affect learning access. Permission never justifies material that could put a child at risk.",
+    "flag": true
+  },
+  "privacy.s7.title": {
+    "source": "7. Questions and concerns",
+    "flag": true
+  },
+  "privacy.s7.p1": {
+    "source": "Contact {email} for privacy requests, unsuitable content or safeguarding concerns. Share only necessary details. Reports will be taken seriously, handled without retaliation and shared only with people who need to respond. Absolute secrecy cannot be promised where protection or legal reporting requires disclosure. Concerns involving team members must receive independent handling.",
+    "flag": true
+  },
+  "privacy.s7.p2": {
+    "source": "Journals are not monitored for safety concerns, and our inbox is not an emergency service. For immediate danger, contact local emergency services or a safe, trusted adult.",
+    "flag": true
+  },
+  "privacy.s7.p3": {
+    "source": "We review this policy annually and after significant changes or incidents, and publish its latest revision date.",
+    "flag": true
+  },
+  "privacy.refs.title": {
+    "source": "Guidance and further reading",
+    "flag": true
+  },
+  "privacy.refs.intro": {
+    "source": "The following guidance informed this policy and provides further reading for educators, families and partner organisations. These organisations have not endorsed or certified Thinkerwell.",
+    "flag": true
+  },
+  "privacy.refs.englishOnly": {
+    "source": "These sources are published in English.",
+    "flag": true
+  },
+  "privacy.refs.pdpcChildren.name": {
+    "source": "Singapore PDPC — Children’s Personal Data in the Digital Environment (PDF)",
+    "flag": true
+  },
+  "privacy.refs.pdpcChildren.desc": {
+    "source": "Guidance on understandable privacy information, consent and protecting children’s personal data online.",
+    "flag": true
+  },
+  "privacy.refs.pdpcAnon.name": {
+    "source": "Singapore PDPC — Basic Anonymisation",
+    "flag": true
+  },
+  "privacy.refs.pdpcAnon.desc": {
+    "source": "Guidance on anonymising data and reducing the risk that individuals can be identified from it.",
+    "flag": true
+  },
+  "privacy.refs.unicefDigital.name": {
+    "source": "UNICEF — Child Protection in Digital Education",
+    "flag": true
+  },
+  "privacy.refs.unicefDigital.desc": {
+    "source": "A policy brief and technical note on managing child-protection risks in digital learning.",
+    "flag": true
+  },
+  "privacy.refs.kcs.name": {
+    "source": "Keeping Children Safe — International Child Safeguarding Standards",
+    "flag": true
+  },
+  "privacy.refs.kcs.desc": {
+    "source": "A framework covering safeguarding policy, people, procedures and accountability.",
+    "flag": true
+  },
+  "privacy.refs.unicefToolkit.name": {
+    "source": "UNICEF — Child Safeguarding Toolkit for Business",
+    "flag": true
+  },
+  "privacy.refs.unicefToolkit.desc": {
+    "source": "Practical guidance on assessing risks, assigning responsibilities and responding to concerns.",
+    "flag": true
+  },
+  "footer.privacy": {
+    "source": "Privacy & Child Safeguarding",
+    "flag": true
+  },
+  "seo.privacy.title": {
+    "source": "Privacy & Child Safeguarding | Thinkerwell",
+    "flag": true
+  },
+  "seo.privacy.description": {
+    "source": "How Thinkerwell protects learners’ privacy and keeps children safe: what is saved on the device, which services are involved and who to contact.",
+    "flag": true
+  },
+  "pages.organisations.pilotNote": {
+    "source": "Thinkerwell’s initial pilot is for selected partner organisations. Lessons, timing, feedback, any data collection and required permissions are agreed directly with each organisation before its pilot begins.",
     "flag": true
   }
 }

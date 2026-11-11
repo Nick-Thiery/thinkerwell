@@ -1,3 +1,5 @@
+> **Retired 11 November 2026.** The public learning study (information sheet, consent form, learning check, "Share optional study data") was removed from the site on Justin's brief, and study data collection is paused for every device (`src/measurement/paused.ts`). The pages and routes below no longer exist (they redirect to `/organisations`); this note is kept as the record of how they worked and what the templates in the repo history contain.
+
 # The before-and-after check
 
 The consent form promises (`pages.pilotStudy`) that in the first and last sessions of a pilot, each learner whose family said yes:

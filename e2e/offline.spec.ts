@@ -185,13 +185,10 @@ test('the setup checklist, the class view, all certificates and the partner kit 
   await page.goto('/educators/class/certificates');
   await expect(page.locator('.tw-cert-name')).toHaveText('Amina');
 
-  // The partner kit's printouts, saved with the rest of the course.
-  await page.goto('/educators/information-sheet');
-  await expect(page.locator('h1')).toHaveText('Information sheet');
-  await expect(page.getByRole('heading', { name: 'About the Thinkerwell pilot' })).toBeVisible();
-  await page.goto('/educators/consent-form');
-  await expect(page.locator('h1')).toHaveText('Consent form');
-  await expect(page.getByRole('article')).toHaveCount(2);
+  // The policy page, saved with the rest of the course.
+  await page.goto('/privacy-and-safeguarding');
+  await expect(page.locator('h1')).toHaveText('Privacy & Child Safeguarding');
+  await expect(page.getByRole('heading', { level: 2, name: '3. External services' })).toBeVisible();
   // The staff's one-page guide, whose words come with the page.
   await page.goto('/educators/session-guide');
   await expect(page.locator('h1')).toHaveText('Session guide');

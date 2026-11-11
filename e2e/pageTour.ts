@@ -39,9 +39,6 @@ export interface TourStop {
 /** A long name, so every place that shows it (header, greeting, switcher) is tested at its widest. */
 export const TOUR_LEARNER = 'Mohammed Abdirahman';
 
-/** An organisation's name for the consent form and the information sheet: long, and in Indonesian, as a Jakarta partner's might be. */
-export const TOUR_ORGANISATION = 'Yayasan Pendidikan Anak Pengungsi Jakarta Selatan';
-
 /** What the tour types in Write and Reflect: the learner's own words, in any language. */
 export const TOUR_WRITING = 'I would build the town by the river because of the water.';
 export const TOUR_REFLECTION = 'It has water and fertile land.';
@@ -383,41 +380,21 @@ export const pageTour: TourStop[] = [
     },
   },
   {
-    // For organisations, from the footer: using Thinkerwell with a group, and the optional study's papers.
+    // Privacy & Child Safeguarding, from the footer: public, one column, every section and the five sources.
+    name: 'privacy and child safeguarding',
+    go: async (page, { ui }) => {
+      await page.locator('.tw-site-footer').getByRole('link', { name: ui('footer.privacy') }).click();
+      await expect(page.locator('h1')).toHaveText(ui('privacy.title'));
+      await expect(page.getByRole('heading', { level: 2 })).toHaveCount(8);
+      await expect(page.locator('.tw-privacy-refs').getByRole('link')).toHaveCount(5);
+    },
+  },
+  {
+    // For organisations, from the footer: using Thinkerwell with a group.
     name: 'for organisations',
     go: async (page, { ui }) => {
       await page.locator('.tw-site-footer').getByRole('link', { name: ui('footer.organisations') }).click();
       await expect(page.locator('h1')).toHaveText(ui('pages.organisations.title'));
-    },
-  },
-  {
-    // A long organisation name, so the form is tested at its widest.
-    name: 'educators: consent form',
-    go: async (page, { ui }) => {
-      await page.getByRole('link', { name: ui('pages.educators.pilotConsentCta') }).click();
-      await expect(page.locator('h1')).toHaveText(ui('pages.consentForm.title'));
-      await page.getByRole('textbox', { name: ui('pages.consentForm.orgLabel') }).fill(TOUR_ORGANISATION);
-      await expect(page.locator('.tw-consent strong').first()).toHaveText(TOUR_ORGANISATION);
-    },
-  },
-  {
-    // Every box filled, with long words, so the sheet is tested at its widest.
-    name: 'educators: information sheet',
-    go: async (page, { ui }) => {
-      await openPath(page, '/educators', ui('pages.educators.title'));
-      await page.locator('details.tw-edu-study > summary').click();
-      await page.locator('.tw-edu-study').getByRole('link', { name: ui('pages.educators.pilotSheetCta') }).click();
-      await expect(page.locator('h1')).toHaveText(ui('pages.infoSheet.title'));
-      for (const [label, value] of [
-        ['pages.consentForm.orgLabel', TOUR_ORGANISATION],
-        ['pages.infoSheet.startLabel', 'Senin, 13 Oktober 2026'],
-        ['pages.infoSheet.endLabel', 'Jumat, 21 November 2026'],
-        ['pages.infoSheet.sessionsLabel', '12'],
-        ['pages.infoSheet.contactLabel', TOUR_LEARNER],
-      ] as const) {
-        await page.getByRole('textbox', { name: ui(label) }).fill(value);
-      }
-      await expect(page.locator('.tw-sheet strong').first()).toHaveText('Senin, 13 Oktober 2026');
     },
   },
   {
@@ -441,19 +418,6 @@ export const pageTour: TourStop[] = [
       await expect(page.locator('h1')).toHaveText(ui('feedbackSheet.title'));
       // A row for Our World and each other course.
       await expect(page.locator('.tw-fb-table tbody tr')).toHaveCount(4);
-    },
-  },
-  {
-    // The learning check's paper sheets, from the optional study's fold: its words load with the page (the lazily
-    // loaded `pilotCheck` group), its questions with it too (content/pilot-check/), in the language on screen or else
-    // English, marked as English.
-    name: 'educators: learning check',
-    go: async (page, { ui }) => {
-      await openPath(page, '/educators', ui('pages.educators.title'));
-      await page.locator('details.tw-edu-study > summary').click();
-      await page.locator('.tw-edu-study').getByRole('link', { name: ui('pages.educators.pilotCheckCta') }).click();
-      await expect(page.locator('h1')).toHaveText(ui('pilotCheck.title'));
-      await expect(page.locator('.tw-check-question')).toHaveCount(16);
     },
   },
   {

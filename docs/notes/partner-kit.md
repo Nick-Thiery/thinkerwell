@@ -1,3 +1,5 @@
+> **Changed 11 November 2026.** The information sheet and the consent form (and their routes) were removed from the site; the partner kit is now For organisations and the code cards. For organisations carries one sentence about the initial pilot (`pages.organisations.pilotNote`). Parts of this note about those two documents are history.
+
 # Partner kit
 
 Branch `partner-kit`. Built on 30 September 2026.

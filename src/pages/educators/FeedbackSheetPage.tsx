@@ -170,10 +170,6 @@ export function FeedbackSheetPage() {
         <section className="tw-consent-part tw-fb-part" aria-labelledby="fb-checks">
           <h3 id="fb-checks">{t('feedbackSheet.checksTitle')}</h3>
           <p className="tw-fb-q">
-            <strong>{t('feedbackSheet.checkLearning')}</strong>{' '}
-            <Choice>{t('feedbackSheet.yes')}</Choice> <Choice>{t('feedbackSheet.no')}</Choice> <Choice>{t('feedbackSheet.notUsed')}</Choice>
-          </p>
-          <p className="tw-fb-q">
             <strong>{t('feedbackSheet.checkSection')}</strong> <Choice>{t('feedbackSheet.yes')}</Choice> <Choice>{t('feedbackSheet.no')}</Choice>
           </p>
           <p className="tw-fb-q">

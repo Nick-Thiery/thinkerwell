@@ -10,11 +10,12 @@
  *   413  the body is over 32 kB
  *   415  not JSON
  *   429  too many events for one pilot code this minute (Retry-After)
- *   503  not set up: no DATABASE_URL or no MEASUREMENT_ORGS
+ *   503  paused (src/measurement/paused.ts), or not set up: no DATABASE_URL or no MEASUREMENT_ORGS
  * Nothing is echoed back from the body, and nothing about the sender is
  * stored: no address, no browser, no cookie.
  */
 import { checkBatch, MAX_BODY_BYTES, type MeasurementEvent } from '../../src/measurement/events.js';
+import { STUDY_COLLECTION_PAUSED } from '../../src/measurement/paused.js';
 import { allowedOrgs, isConfigured, isCrossSite, json, readLimitedText, type Env } from './http.js';
 
 /** The most events one pilot code may send in a minute (a busy learner makes about 5 a minute). */
@@ -35,6 +36,9 @@ export interface EventsDeps {
 export async function handleEvents(request: Request, deps: EventsDeps): Promise<Response> {
   const { env } = deps;
   if (request.method !== 'POST') return json(405, { error: 'method_not_allowed' }, { allow: 'POST' });
+  // Coded study collection is paused for every device (src/measurement/paused.ts): an older copy of the app
+  // still running from a device's offline copy gets the answer that makes it back off for hours, and nothing is stored.
+  if (STUDY_COLLECTION_PAUSED) return json(503, { error: 'paused' });
   if (!isConfigured(env)) return json(503, { error: 'not_configured' });
   if (isCrossSite(request)) return json(403, { error: 'cross_site' });
   if (!(request.headers.get('content-type') ?? '').toLowerCase().startsWith('application/json')) return json(415, { error: 'not_json' });

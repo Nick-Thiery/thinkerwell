@@ -296,7 +296,7 @@ test('no preview course content or code is precached or reaches a first visit', 
   for (const marker of DIGITAL_WORLD) expect(previewText, marker).toContain(marker);
 });
 
-// Pilot measurement (docs/notes/pilot-measurement.md) is off by default: the collector, the queue and the sender
+// Pilot measurement (docs/notes/pilot-measurement.md) is paused for everyone (e2e/measurement.spec.ts): the collector, the queue and the sender
 // are one chunk that loads only on a device set to share results, so a first visit (and a lesson, with sharing
 // off) never downloads it, and nothing in what it does download knows the endpoint.
 test('the pilot measurement collector is not in a first visit, nor in a lesson with sharing off', { tag: '@own-size' }, async ({ page, request, baseURL }) => {

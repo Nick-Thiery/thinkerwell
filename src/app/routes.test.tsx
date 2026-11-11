@@ -216,13 +216,21 @@ describe('pilot-day tools for educators', () => {
     ['/educators/class', 'The class on this device'],
     ['/educators/class/certificates', 'All certificates'],
     ['/educators/session-guide', 'Session guide'],
-    ['/educators/learning-check', 'Learning check'],
     ['/educators/feedback-sheet', 'Session record and feedback'],
     ['/educators/guides', 'Teacher guides and answer keys'],
   ])('%s shows one h1 with its title', async (path, title) => {
     await renderAt(path);
     await waitFor(() => expect(heading()).toHaveTextContent(title));
     expect(document.title).toBe(`${title} | Thinkerwell`);
+  });
+});
+
+describe('Privacy & Child Safeguarding', () => {
+  it('shows one h1, its own search title in the tab, and needs no learner', async () => {
+    await renderAt('/privacy-and-safeguarding');
+    await waitFor(() => expect(heading()).toHaveTextContent('Privacy & Child Safeguarding'));
+    expect(document.title).toBe('Privacy & Child Safeguarding | Thinkerwell');
+    expect(document.querySelectorAll('h1')).toHaveLength(1);
   });
 });
 
@@ -237,12 +245,23 @@ describe('the contact form', () => {
 describe('the educators pages renamed in October 2026', () => {
   it.each([
     ['/educators/pilot-day', '/educators/session-guide', 'Session guide'],
-    ['/educators/pilot-check', '/educators/learning-check', 'Learning check'],
   ])('%s opens %s', async (old, now, title) => {
     const router = await renderAt(old);
     await waitFor(() => expect(heading()).toHaveTextContent(title));
     expect(router.state.location.pathname).toBe(now);
   });
+});
+
+describe('the optional learning study pages, retired on 11 November 2026', () => {
+  it.each(['/educators/information-sheet', '/educators/consent-form', '/educators/learning-check', '/educators/pilot-check', '/Educators/Consent-Form'])(
+    '%s opens For organisations, never the old content',
+    async (old) => {
+      const router = await renderAt(old);
+      await waitFor(() => expect(heading()).toHaveTextContent('Use Thinkerwell with your learners'));
+      expect(router.state.location.pathname).toBe('/organisations');
+      expect(document.body.textContent).not.toMatch(/consent form|information sheet|learning check/i);
+    },
+  );
 });
 
 describe('not found', () => {

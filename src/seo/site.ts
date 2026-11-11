@@ -24,6 +24,7 @@ export const PUBLIC_PAGES = [
   { key: 'organisations', path: '/organisations', file: 'organisations.html' },
   { key: 'credits', path: '/credits', file: 'credits.html' },
   { key: 'contact', path: '/contact', file: 'contact.html' },
+  { key: 'privacy', path: '/privacy-and-safeguarding', file: 'privacy-and-safeguarding.html' },
 ] as const;
 
 export type PublicPageKey = (typeof PUBLIC_PAGES)[number]['key'];

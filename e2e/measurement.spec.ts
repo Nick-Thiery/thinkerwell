@@ -1,47 +1,94 @@
 import { expect, test, type Page } from '@playwright/test';
-import { addLearnerViaUi, L10, lessonSteps } from './lessonHelpers';
+import { addLearnerViaUi } from './lessonHelpers';
 
-// Pilot measurement (docs/notes/pilot-measurement.md). It is OFF by default: with it off the app must make
-// no request to /api/ and must not even create the queue's database. ON takes three things together (a
-// pilot code as the learner's name, "Share pilot results" in Settings, an organisation code); the /api/events
-// endpoint is always a stand-in here, because the tests never need a real server or database.
+// Coded study collection is PAUSED for everyone (11 November 2026, Justin's brief; src/measurement/paused.ts).
+// Whatever a device's old "Share optional study data" preference says, the app makes no request to /api/,
+// never downloads the collector, never creates or reads the queue's database and never sends what was
+// already queued on reload, reconnect or in the background. Nothing is deleted: the preference and the
+// queue stay on the device for when a pilot's collection is agreed and built.
+// /api/events is always a stand-in here, because the tests never need a real server or database.
 
 const QUEUE_DB = 'thinkerwell-measurement';
-const WRITING = 'My secret river story about Amina and her family';
+const WRITING_A = 'My river story, written by the first learner';
+const WRITING_B = 'My mountain story, written by the second learner';
 
-interface SentEvent {
-  id: string;
-  org: string;
-  pilotCode: string;
-  type: string;
-  lessonId?: string;
-  stage?: string;
-  value: Record<string, unknown>;
-}
-
-/** Answers /api/events itself and keeps what it was sent. */
-async function standInForServer(page: Page, status = 202): Promise<{ batches: Array<{ v: number; events: SentEvent[] }>; requests: string[] }> {
-  const seen = { batches: [] as Array<{ v: number; events: SentEvent[] }>, requests: [] as string[] };
+/** Answers every /api/ request itself and keeps what it was asked. */
+async function standInForServer(page: Page): Promise<string[]> {
+  const requests: string[] = [];
   await page.route('**/api/**', (route) => {
     const request = route.request();
-    seen.requests.push(`${request.method()} ${new URL(request.url()).pathname}`);
-    try {
-      seen.batches.push(JSON.parse(request.postData() ?? '{}') as { v: number; events: SentEvent[] });
-    } catch {
-      // Not JSON: the test that cares looks at `requests`.
-    }
-    return route.fulfill({ status, contentType: 'application/json', body: '{}' });
+    requests.push(`${request.method()} ${new URL(request.url()).pathname}`);
+    return route.fulfill({ status: 202, contentType: 'application/json', body: '{}' });
   });
-  return seen;
+  return requests;
 }
-
-const allEvents = (seen: { batches: Array<{ events: SentEvent[] }> }): SentEvent[] => seen.batches.flatMap((batch) => batch.events);
 
 async function databaseNames(page: Page): Promise<string[]> {
   return page.evaluate(async () => (await indexedDB.databases()).map((entry) => entry.name ?? ''));
 }
 
-/** How many results wait in the queue's database on this device (0 if there is none). */
+/** Turns the old preference ON the way an older version of the app left it: partner.sharePilotResults and an organisation code. */
+async function seedLegacyOnPreference(page: Page): Promise<void> {
+  await page.evaluate(
+    () =>
+      new Promise<void>((resolve, reject) => {
+        const open = indexedDB.open('thinkerwell');
+        open.onerror = () => reject(new Error(String(open.error)));
+        open.onsuccess = () => {
+          const db = open.result;
+          const tx = db.transaction('settings', 'readwrite');
+          const store = tx.objectStore('settings');
+          const get = store.get('device');
+          get.onsuccess = () => {
+            const current = (get.result ?? {}) as { partner?: Record<string, unknown> };
+            store.put({ ...current, partner: { ...(current.partner ?? {}), sharePilotResults: true, organisationCode: 'help-jakarta' } }, 'device');
+          };
+          tx.oncomplete = () => {
+            db.close();
+            resolve();
+          };
+          tx.onerror = () => reject(new Error(String(tx.error)));
+        };
+      }),
+  );
+}
+
+/** Leaves results waiting in the queue's database, as a device that shared before the pause would have. */
+async function seedQueuedEvents(page: Page, count: number): Promise<void> {
+  await page.evaluate(
+    (n) =>
+      new Promise<void>((resolve, reject) => {
+        const open = indexedDB.open('thinkerwell-measurement', 1);
+        open.onupgradeneeded = () => {
+          open.result.createObjectStore('events', { autoIncrement: true });
+          open.result.createObjectStore('meta');
+        };
+        open.onerror = () => reject(new Error(String(open.error)));
+        open.onsuccess = () => {
+          const db = open.result;
+          const tx = db.transaction('events', 'readwrite');
+          for (let i = 0; i < n; i += 1) {
+            tx.objectStore('events').add({
+              id: `00000000-0000-4000-8000-${String(i).padStart(12, '0')}`,
+              org: 'help-jakarta',
+              pilotCode: 'HLP-01',
+              type: 'lesson_open',
+              lessonId: 'towns-near-rivers',
+              value: {},
+              ts: 1_790_000_000_000,
+            });
+          }
+          tx.oncomplete = () => {
+            db.close();
+            resolve();
+          };
+          tx.onerror = () => reject(new Error(String(tx.error)));
+        };
+      }),
+    count,
+  );
+}
+
 async function queuedCount(page: Page): Promise<number> {
   return page.evaluate(
     () =>
@@ -64,190 +111,152 @@ async function queuedCount(page: Page): Promise<number> {
   );
 }
 
-/** An educator's steps in Settings: save the organisation code, then turn sharing on. */
-async function turnSharingOn(page: Page, org = 'help-jakarta'): Promise<void> {
-  await page.goto('/settings');
-  const code = page.getByLabel('Organisation code');
-  await expect(code).toBeEnabled();
-  await code.fill(org);
-  await page.getByRole('button', { name: 'Save code' }).click();
-  const share = page.getByRole('checkbox', { name: 'Share optional study data from this device' });
-  await expect(share).toBeEnabled();
-  await share.check();
-  await expect(page.getByText(`Sharing with ${org}.`)).toBeVisible();
+async function storedPreference(page: Page): Promise<{ sharePilotResults?: boolean; organisationCode?: string }> {
+  return page.evaluate(
+    () =>
+      new Promise((resolve) => {
+        const open = indexedDB.open('thinkerwell');
+        open.onsuccess = () => {
+          const db = open.result;
+          const get = db.transaction('settings').objectStore('settings').get('device');
+          get.onsuccess = () => {
+            db.close();
+            resolve(((get.result ?? {}) as { partner?: object }).partner ?? {});
+          };
+        };
+      }),
+  );
 }
 
-test.describe('pilot measurement: off by default, and gated by all three', () => {
-  test('a learner who uses a pilot code, and every page, make no /api request and no queue', async ({ page }) => {
+/** A learner opens lessons, finishes steps, writes, reloads and goes offline and back. Returns every request made. */
+async function useTheSite(page: Page, urls: string[]): Promise<void> {
+  for (const route of ['/lesson/towns-near-rivers/read', '/lesson/towns-near-rivers/write', '/lesson/towns-near-rivers/watch', '/course', '/section/history/check', '/settings', '/journal']) {
+    await page.goto(route);
+    await expect(page.locator('h1')).toHaveCount(1);
+  }
+  await page.goto('/lesson/towns-near-rivers/write');
+  await page.getByRole('textbox', { name: 'Your answer' }).fill(WRITING_A);
+  await page.reload();
+  await expect(page.getByRole('textbox', { name: 'Your answer' })).toHaveValue(WRITING_A);
+  await page.context().setOffline(true);
+  await page.waitForTimeout(500);
+  await page.context().setOffline(false);
+  // Longer than the sender's wait (5 s), its retry, and the writing count's quiet moment: anything that would be sent has been.
+  await page.waitForTimeout(8_000);
+  expect(urls.filter((url) => new URL(url).pathname.startsWith('/api/'))).toEqual([]);
+}
+
+test.describe('coded study collection is paused for every device', () => {
+  test('with the old preference OFF: no /api request, no collector, no queue database', async ({ page }) => {
+    test.slow();
     const seen = await standInForServer(page);
     const urls: string[] = [];
     page.on('request', (request) => urls.push(request.url()));
 
     await addLearnerViaUi(page, 'HLP-01');
-    for (const route of ['/lesson/towns-near-rivers/write', '/lesson/towns-near-rivers/watch', '/course', '/section/history/check', '/settings', '/journal']) {
-      await page.goto(route);
-      await expect(page.locator('h1')).toHaveCount(1);
-    }
-    await page.goto('/lesson/towns-near-rivers/write');
-    await page.getByRole('textbox', { name: 'Your answer' }).fill(WRITING);
-    // Longer than the sender's wait and the writing count's quiet moment, so anything that would be sent has been.
-    await page.waitForTimeout(8_000);
+    await useTheSite(page, urls);
 
-    expect(urls.filter((url) => new URL(url).pathname.startsWith('/api/'))).toEqual([]);
-    expect(seen.requests).toEqual([]);
+    expect(seen).toEqual([]);
     expect(await databaseNames(page)).not.toContain(QUEUE_DB);
+    // The collector is never even downloaded.
+    expect(urls.filter((url) => /measurementCollector|measurement-/i.test(url))).toEqual([]);
   });
 
-  test('"Share optional study data" is off and cannot be turned on without an organisation code', async ({ page }) => {
-    await page.goto('/settings');
-    const share = page.getByRole('checkbox', { name: 'Share optional study data from this device' });
-    await expect(share).toBeDisabled();
-    await expect(share).not.toBeChecked();
-    await expect(page.getByText('Sharing is off. Nothing is sent.')).toBeVisible();
-  });
-
-  test('turned on, a learner with a real name sends nothing', async ({ page }) => {
+  test('with the old preference ON and a pilot code as the name: still nothing is sent, queued or downloaded, and nothing is deleted', async ({ page }) => {
     test.slow();
     const seen = await standInForServer(page);
-    await turnSharingOn(page);
-    await addLearnerViaUi(page, 'Amina');
+    const urls: string[] = [];
+    page.on('request', (request) => urls.push(request.url()));
+
+    await addLearnerViaUi(page, 'HLP-01');
+    await seedLegacyOnPreference(page);
+    await page.reload();
+    await useTheSite(page, urls);
+
+    expect(seen).toEqual([]);
+    expect(await databaseNames(page)).not.toContain(QUEUE_DB);
+    expect(urls.filter((url) => /measurementCollector|measurement-/i.test(url))).toEqual([]);
+    // The preference is kept as it was: this is a pause, not a deletion.
+    expect(await storedPreference(page)).toMatchObject({ sharePilotResults: true, organisationCode: 'help-jakarta' });
+  });
+
+  test('results queued before the pause stay on the device and are not sent on reload, reconnect or in the background', async ({ page }) => {
+    test.slow();
+    const seen = await standInForServer(page);
+    const urls: string[] = [];
+    page.on('request', (request) => urls.push(request.url()));
+
+    await addLearnerViaUi(page, 'HLP-01');
+    await seedLegacyOnPreference(page);
+    await seedQueuedEvents(page, 3);
+    await page.reload();
+    await useTheSite(page, urls);
+
+    expect(seen).toEqual([]);
+    expect(await queuedCount(page)).toBe(3);
+  });
+
+  test('the server refuses an older copy of the app that still tries (503, nothing stored)', async ({ page }) => {
+    // vite preview has no /api, so this only checks the site answers; api/_lib/events.paused.test.ts checks the real handler.
+    const response = await page.request.post('/api/events', { data: { v: 1, events: [] }, failOnStatusCode: false });
+    expect([404, 503]).toContain(response.status());
+  });
+
+  test('Settings has no study-sharing control, and the old address of that part is harmless', async ({ page }) => {
+    await page.goto('/settings#share-results');
+    await expect(page.getByRole('heading', { level: 1, name: 'Settings' })).toBeVisible();
+    await expect(page.getByText(/Share optional study data|study data|Organisation code/i)).toHaveCount(0);
+    await expect(page.getByRole('checkbox', { name: /study data/i })).toHaveCount(0);
+  });
+
+  test('two profiles keep their own writing while one has the old preference on, and switching and language still work', async ({ page }) => {
+    test.slow();
+    const seen = await standInForServer(page);
+    await addLearnerViaUi(page, 'HLP-01');
+    await seedLegacyOnPreference(page);
     await page.goto('/lesson/towns-near-rivers/write');
-    await page.getByRole('textbox', { name: 'Your answer' }).fill(WRITING);
-    await page.waitForTimeout(12_000);
-    expect(seen.requests).toEqual([]);
-    expect(await queuedCount(page)).toBe(0);
-  });
+    await page.getByRole('textbox', { name: 'Your answer' }).fill(WRITING_A);
+    await expect(page.getByRole('textbox', { name: 'Your answer' })).toHaveValue(WRITING_A);
 
-  test('turned on, a look-around sends nothing', async ({ page }) => {
-    test.slow();
-    const seen = await standInForServer(page);
-    await turnSharingOn(page);
-    await page.goto('/');
-    await page.getByRole('button', { name: 'Just look around' }).click();
-    await page.goto('/lesson/towns-near-rivers/read');
-    await (await lessonSteps(page)).getByRole('link', { name: /^Write/ }).click();
-    await page.waitForTimeout(8_000);
-    expect(seen.requests).toEqual([]);
-    expect(await queuedCount(page)).toBe(0);
+    // A second profile on the same device.
+    await page.locator('.tw-learner-chip').click();
+    await page.getByRole('button', { name: "I'm new here" }).click();
+    await page.getByLabel('First name or nickname').fill('Amina');
+    await page.getByRole('button', { name: 'Create profile' }).click();
+    await expect(page.getByRole('heading', { level: 1, name: 'Hi Amina' })).toBeVisible();
+    await page.goto('/lesson/towns-near-rivers/write');
+    await expect(page.getByRole('textbox', { name: 'Your answer' })).toHaveValue('');
+    await page.getByRole('textbox', { name: 'Your answer' }).fill(WRITING_B);
+    await expect(page.getByRole('textbox', { name: 'Your answer' })).toHaveValue(WRITING_B);
+
+    // Back to the first: their words, untouched.
+    await page.locator('.tw-learner-chip').click();
+    await page.getByRole('dialog', { name: 'Switch learner' }).getByRole('button', { name: 'HLP-01' }).click();
+    await page.reload();
+    await expect(page.getByRole('textbox', { name: 'Your answer' })).toHaveValue(WRITING_A);
+
+    // Another language still works for the chosen learner, and the words stay.
+    await page.getByRole('button', { name: /^(Language|Bahasa): / }).click();
+    await page.locator('.tw-language-switch-panel').getByRole('radio', { name: 'Bahasa Indonesia' }).click();
+    await expect(page.locator('html')).toHaveAttribute('lang', 'id');
+    await expect(page.getByRole('textbox').first()).toHaveValue(WRITING_A);
+
+    await page.waitForTimeout(6_000);
+    expect(seen).toEqual([]);
   });
 });
 
-test('a same-origin POST to /api/events needs no change to the Content-Security-Policy', async ({ page }) => {
+test('a same-origin POST to /api/events still needs no change to the Content-Security-Policy', async ({ page }) => {
   // Under the real policy (`vite preview` sends vercel.json's headers). The preview has no /api, so it answers 404,
   // which is a real answer from this site: a blocked request would be a network error and a violation report.
   await page.goto('/');
   const result = await page.evaluate(async () => {
     const violations: string[] = [];
     document.addEventListener('securitypolicyviolation', (event) => violations.push(event.violatedDirective));
-    try {
-      const response = await fetch('/api/events', { method: 'POST', headers: { 'content-type': 'application/json' }, body: '{}' });
-      return { status: response.status, violations };
-    } catch (error) {
-      return { status: 0, violations, error: String(error) };
-    }
+    const response = await fetch('/api/events', { method: 'POST', headers: { 'content-type': 'application/json' }, body: '{}' });
+    await new Promise((resolve) => setTimeout(resolve, 200));
+    return { status: response.status, violations };
   });
+  expect([404, 503]).toContain(result.status);
   expect(result.violations).toEqual([]);
-  expect(result.status).toBe(404);
-});
-
-test.describe('pilot measurement: on', () => {
-  test('sends only the promised events, with the codes, and never a name or any writing', async ({ page }) => {
-    test.slow();
-    const seen = await standInForServer(page);
-    await turnSharingOn(page, 'my-partner');
-    await addLearnerViaUi(page, 'HLP-01');
-    await expect.poll(() => allEvents(seen).some((event) => event.type === 'lesson_open'), { timeout: 20_000 }).toBe(true);
-
-    // Write something, then read instead of watching.
-    await page.goto('/lesson/towns-near-rivers/write');
-    await page.getByRole('textbox', { name: 'Your answer' }).fill(WRITING);
-    // The word count goes in the queue after a quiet moment (10 s), not at the last keystroke.
-    await page.waitForTimeout(11_000);
-    await page.goto(L10.path('watch'));
-    await page.getByRole('button', { name: 'Read instead' }).click();
-    await page.goto('/course');
-
-    await expect
-      .poll(() => allEvents(seen).some((event) => event.type === 'writing_saved'), { timeout: 30_000 })
-      .toBe(true);
-    await expect.poll(() => allEvents(seen).some((event) => event.type === 'video_choice'), { timeout: 30_000 }).toBe(true);
-
-    const events = allEvents(seen);
-    const types = new Set(events.map((event) => event.type));
-    expect(types).toContain('session_start');
-    expect(types).toContain('lesson_open');
-    expect(types).toContain('stage_enter');
-    for (const event of events) {
-      expect(event.org).toBe('my-partner');
-      expect(event.pilotCode).toBe('HLP-01');
-    }
-    expect(events.find((event) => event.type === 'writing_saved')).toMatchObject({ stage: 'write', value: { words: 9 } });
-    expect(events.find((event) => event.type === 'video_choice')).toMatchObject({ lessonId: L10.id, value: { choice: 'read' } });
-
-    // Nothing a learner wrote or was called, anywhere in anything sent.
-    const everything = JSON.stringify(seen.batches);
-    for (const secret of ['secret', 'Amina', 'river story', 'recording', 'email']) expect(everything).not.toContain(secret);
-    for (const batch of seen.batches) {
-      expect(batch.v).toBe(1);
-      expect(batch.events.length).toBeLessThanOrEqual(50);
-    }
-    // Only this site's /api/events was asked.
-    expect(new Set(seen.requests)).toEqual(new Set(['POST /api/events']));
-  });
-
-  test('turning sharing off deletes what was waiting and sends nothing more', async ({ page }) => {
-    test.slow();
-    // The server "is not set up" (503), so results stay in the queue.
-    const seen = await standInForServer(page, 503);
-    await turnSharingOn(page);
-    await addLearnerViaUi(page, 'HLP-02');
-    await expect.poll(() => seen.requests.length, { timeout: 20_000 }).toBe(1);
-    await page.goto('/settings');
-    const share = page.getByRole('checkbox', { name: 'Share optional study data from this device' });
-    await expect(share).toBeChecked();
-    await expect(page.getByText(/Results waiting to be sent: [1-9]/)).toBeVisible();
-    await share.uncheck();
-    await expect(page.getByText('Sharing is off. Nothing is sent.')).toBeVisible();
-    // Deleting is a moment's work in the background (a few milliseconds).
-    await expect.poll(() => queuedCount(page)).toBe(0);
-    seen.requests.length = 0;
-    await page.goto('/lesson/towns-near-rivers/read');
-    await page.waitForTimeout(8_000);
-    expect(seen.requests).toEqual([]);
-    // The queue is empty.
-    expect(await queuedCount(page)).toBe(0);
-  });
-
-  test('keeps results while offline and sends them when the connection is back', async ({ page, context }) => {
-    test.slow();
-    const seen = await standInForServer(page);
-    await turnSharingOn(page);
-    await addLearnerViaUi(page, 'HLP-03');
-    await expect.poll(() => allEvents(seen).length, { timeout: 20_000 }).toBeGreaterThan(0);
-    const before = allEvents(seen).length;
-
-    await context.setOffline(true);
-    // Client-side moves between lessons need no network.
-    await (await lessonSteps(page)).getByRole('link', { name: /^Write/ }).click();
-    await expect(page).toHaveURL(/\/write$/);
-    await page.waitForTimeout(8_000);
-    expect(allEvents(seen).length).toBe(before);
-
-    await context.setOffline(false);
-    await expect.poll(() => allEvents(seen).some((event) => event.type === 'stage_enter' && event.stage === 'write'), { timeout: 30_000 }).toBe(true);
-  });
-
-  test('stops quietly when the server is not set up (503): one try, then no more', async ({ page }) => {
-    test.slow();
-    const seen = await standInForServer(page, 503);
-    await turnSharingOn(page);
-    await addLearnerViaUi(page, 'HLP-04');
-    await expect.poll(() => seen.requests.length, { timeout: 20_000 }).toBe(1);
-    // More activity does not make more requests, and nothing on the page complains.
-    await page.goto('/lesson/towns-near-rivers/write');
-    await page.getByRole('textbox', { name: 'Your answer' }).fill('some words here');
-    await page.waitForTimeout(8_000);
-    expect(seen.requests).toHaveLength(1);
-    await expect(page.getByRole('alert')).toHaveCount(0);
-  });
 });

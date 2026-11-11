@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { gateFor, isValidOrgCode, normaliseOrgCode, pilotCodeFor, sharingOrg } from './gate';
+import { STUDY_COLLECTION_PAUSED } from './paused';
 
 describe('pilotCodeFor', () => {
   it('reads a code card code typed as the name', () => {
@@ -38,31 +39,38 @@ describe('the gate', () => {
   const on = { sharePilotResults: true, organisationCode: 'help-jakarta' };
 
   it('opens only with all three: a pilot code, the opt-in and an organisation code', () => {
-    expect(gateFor(on, learner)).toEqual({ org: 'help-jakarta', pilotCode: 'HLP-01' });
+    expect(gateFor(on, learner, false)).toEqual({ org: 'help-jakarta', pilotCode: 'HLP-01' });
     // No opt-in.
-    expect(gateFor({ organisationCode: 'help-jakarta' }, learner)).toBeNull();
-    expect(gateFor({ sharePilotResults: false, organisationCode: 'help-jakarta' }, learner)).toBeNull();
+    expect(gateFor({ organisationCode: 'help-jakarta' }, learner, false)).toBeNull();
+    expect(gateFor({ sharePilotResults: false, organisationCode: 'help-jakarta' }, learner, false)).toBeNull();
     // No organisation code, or a bad one.
-    expect(gateFor({ sharePilotResults: true }, learner)).toBeNull();
-    expect(gateFor({ sharePilotResults: true, organisationCode: '' }, learner)).toBeNull();
-    expect(gateFor({ sharePilotResults: true, organisationCode: 'Help Jakarta' }, learner)).toBeNull();
+    expect(gateFor({ sharePilotResults: true }, learner, false)).toBeNull();
+    expect(gateFor({ sharePilotResults: true, organisationCode: '' }, learner, false)).toBeNull();
+    expect(gateFor({ sharePilotResults: true, organisationCode: 'Help Jakarta' }, learner, false)).toBeNull();
     // No pilot code: a learner with a real name, a guest, nobody.
-    expect(gateFor(on, { name: 'Amina' })).toBeNull();
-    expect(gateFor(on, null)).toBeNull();
+    expect(gateFor(on, { name: 'Amina' }, false)).toBeNull();
+    expect(gateFor(on, null, false)).toBeNull();
     // Nothing set up at all.
-    expect(gateFor(undefined, learner)).toBeNull();
-    expect(gateFor({}, learner)).toBeNull();
+    expect(gateFor(undefined, learner, false)).toBeNull();
+    expect(gateFor({}, learner, false)).toBeNull();
   });
 
   it('the opt-in must be exactly true', () => {
     for (const value of [1, 'true', 'yes', {}, []]) {
-      expect(sharingOrg({ sharePilotResults: value as unknown as boolean, organisationCode: 'help-jakarta' })).toBeNull();
+      expect(sharingOrg({ sharePilotResults: value as unknown as boolean, organisationCode: 'help-jakarta' }, false)).toBeNull();
     }
   });
 
   it('sharingOrg needs no learner (sending needs only the device options)', () => {
-    expect(sharingOrg(on)).toBe('help-jakarta');
-    expect(sharingOrg({ sharePilotResults: true })).toBeNull();
-    expect(sharingOrg(null)).toBeNull();
+    expect(sharingOrg(on, false)).toBe('help-jakarta');
+    expect(sharingOrg({ sharePilotResults: true }, false)).toBeNull();
+    expect(sharingOrg(null, false)).toBeNull();
+  });
+
+  it('is paused for everyone while study collection is retired (src/measurement/paused.ts)', () => {
+    expect(STUDY_COLLECTION_PAUSED).toBe(true);
+    // A device whose old preference is still "on", with a learner who has a pilot code.
+    expect(gateFor(on, learner)).toBeNull();
+    expect(sharingOrg(on)).toBeNull();
   });
 });

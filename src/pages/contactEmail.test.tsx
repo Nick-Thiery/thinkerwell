@@ -1,16 +1,13 @@
-import { render, screen, within } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import type { ReactNode } from 'react';
 import { createMemoryRouter, RouterProvider } from 'react-router';
 import { describe, expect, it } from 'vitest';
 import { CONTACT_EMAIL } from '../app/contact';
 import { EducatorsPage } from './EducatorsPage';
-import { ConsentFormPage } from './educators/ConsentFormPage';
-import { InformationSheetPage } from './educators/InformationSheetPage';
 import { OrganisationsPage } from './OrganisationsPage';
 
 // The team's real address (src/app/contact.ts, October 2026) is shown on the
-// four pages that offer it, as a mail link or in the printed text, and never
-// as a placeholder.
+// pages that offer it, as a mail link, and never as a placeholder.
 
 function renderAt(path: string, element: ReactNode) {
   const router = createMemoryRouter([{ path, element }], { initialEntries: [path] });
@@ -30,17 +27,5 @@ describe('the contact address', () => {
   it('is on For organisations, as a mail link', () => {
     renderAt('/organisations', <OrganisationsPage />);
     expect(screen.getByRole('link', { name: 'thinkerwell.hello@gmail.com' })).toHaveAttribute('href', 'mailto:thinkerwell.hello@gmail.com');
-  });
-
-  it('is printed on the consent form', () => {
-    renderAt('/educators/consent-form', <ConsentFormPage />);
-    expect(screen.getAllByRole('article')[0]).toHaveTextContent('thinkerwell.hello@gmail.com');
-  });
-
-  it('is printed on the information sheet', () => {
-    renderAt('/educators/information-sheet', <InformationSheetPage />);
-    const sheet = screen.getByRole('article');
-    expect(sheet).toHaveTextContent('thinkerwell.hello@gmail.com');
-    expect(within(sheet).queryByText(/\[CONTACT EMAIL\]/)).toBeNull();
   });
 });
