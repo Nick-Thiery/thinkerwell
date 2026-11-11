@@ -95,10 +95,11 @@ test('the retired study addresses open For organisations, in the app and after a
     await expect(page).toHaveURL(/\/organisations$/);
     await expect(page.locator('h1')).toHaveText('Use Thinkerwell with your learners');
     await expect(page.getByText(/consent form|information sheet|learning check/i)).toHaveCount(0);
-    // The server answers the old address with a redirect, not the old page.
-    const response = await request.get(address, { maxRedirects: 0 });
-    expect([301, 302, 307, 308]).toContain(response.status());
-    expect(response.headers().location).toBe('/organisations');
+  }
+  // On Vercel the server answers each old address with a redirect (vite preview doesn't run vercel.json's redirects, so the file itself is checked).
+  const { redirects } = JSON.parse(readFileSync(path.join(import.meta.dirname, '..', 'vercel.json'), 'utf8')) as { redirects: Array<{ source: string; destination: string; permanent: boolean }> };
+  for (const address of ['/educators/information-sheet', '/educators/consent-form', '/educators/learning-check', '/educators/pilot-check']) {
+    expect(redirects.find((r) => r.source === address), address).toMatchObject({ destination: '/organisations', permanent: false });
   }
   // Nothing is left on the site for the old pages' words.
   for (const asset of ['/consent-form.pdf', '/information-sheet.pdf', '/learning-check.pdf']) {
