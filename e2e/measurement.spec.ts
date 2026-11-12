@@ -232,6 +232,8 @@ test.describe('coded study collection is paused for every device', () => {
     // Back to the first: their words, untouched.
     await page.locator('.tw-learner-chip').click();
     await page.getByRole('dialog', { name: 'Switch learner' }).getByRole('button', { name: 'HLP-01' }).click();
+    // The switch has to show on the page (and so be saved) before the reload, or a slow machine reloads as the second learner.
+    await expect(page.getByRole('textbox', { name: 'Your answer' })).toHaveValue(WRITING_A);
     await page.reload();
     await expect(page.getByRole('textbox', { name: 'Your answer' })).toHaveValue(WRITING_A);
 
