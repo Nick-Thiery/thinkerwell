@@ -80,13 +80,22 @@ export function LessonAudioSetting({ deviceSettings }: { deviceSettings: DeviceS
 
   useEffect(() => {
     let current = true;
-    void storedAudio(tracksKey ? tracksKey.split(' ') : []).then((bytes) => {
-      if (current) setStored(bytes);
-    });
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    // Just after a download the service worker may still be writing its last files into the cache, so the first
+    // count can fall a little short: count again for a few seconds until everything is there.
+    const measure = (retries: number) => {
+      void storedAudio(tracksKey ? tracksKey.split(' ') : []).then((bytes) => {
+        if (!current) return;
+        setStored(bytes);
+        if (result === 'done' && bytes < total && retries > 0) timer = setTimeout(() => measure(retries - 1), 500);
+      });
+    };
+    measure(result === 'done' ? 20 : 0);
     return () => {
       current = false;
+      clearTimeout(timer);
     };
-  }, [tracksKey, result]);
+  }, [tracksKey, result, total]);
 
   // Leaving the page stops a download (what has arrived stays).
   useEffect(() => () => stopper.current?.abort(), []);
