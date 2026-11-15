@@ -49,7 +49,7 @@ Two small additions make these inputs usable:
 - **Read aloud:** every stimulus, question and option, with Listen under Read's on-device voice rules (section checks don't have Listen today; reuse Read's `useListen`).
 - **Skippable:** "Skip for now" on the offer, "Stop" on every question. A part-finished check saves nothing.
 - **No right/wrong shown during it**, like the pilot's pre-check. At the end the learner sees suggestions, not a score.
-- **Questions:** from the pilot's 16-question pre/post check (`docs/research/MEASUREMENT_PLAN.md`): the 8 items that best showed who found the lessons easy or hard, rewritten on new examples. In `content/start/check.json`, Indonesian in `content/id/start/`.
+- **Questions:** from the retired 16-question pre/post check (`content/pilot-check/`, kept as a template; `docs/research/MEASUREMENT_PLAN.md`): the 8 items that best showed who found the lessons easy or hard, rewritten on new examples. In `content/start/check.json`, Indonesian in `content/id/start/`.
 
 ## 3. What it changes
 
@@ -127,11 +127,12 @@ Estimates are **worked out from saved work each time, never stored**, like the j
 
 ## 6. Measuring whether it helps
 
-The consent form promises anonymous data only: time spent, lessons finished and quiz scores, linked to a code, seen only by the team and deleted within 6 months of the pilot ending. Measurement of Suggestions must keep to that.
+**Updated 14 November 2026.** This section used to rely on the consent form and the paper learning check. Both were removed from the site on 11 November 2026, and study data collection is paused for every device (`src/measurement/paused.ts`). So nothing below may be collected until it is agreed with the partner organisation and, if learner data would leave the device, rebuilt and approved by both founders (`CLAUDE.md`, rule 1).
 
-- **With what the form already covers:** compare, by code, lessons finished, active time and section-check scores between devices with Suggestions on and off (the Settings switch, set by the educator per tablet). With about 20 learners this is descriptive, not proof: "learners with Suggestions finished X lessons, versus Y", never "Suggestions raised scores".
-- **Not collected unless the form changes first:** which suggestions were shown, taken or turned down, and per-question answers. The form doesn't name them. Change the form, get new consent, then collect.
-- **Without learner data:** add one question to the educator's weekly log ("Did any suggestion help or get in the way? What happened?"). That is staff feedback, not learner data.
+- **Now, with no new data:** the class page and each educator's own notes (the session feedback sheet, `/educators/feedback-sheet`, on paper) are the only evidence. Compare, by session, what a teacher says about learners on devices with Suggestions on and off (the Settings switch). With about 20 learners this is descriptive, never "Suggestions raised scores".
+- **Later, only if agreed:** lessons finished, active time and section-check results by code, and which suggestions were shown, taken or turned down. Each needs a new written agreement with the organisation (what, why, who sees it, how long it is kept) before any collection is switched on again. Nothing about what a learner wrote or said.
+- **Without learner data:** add one question to the educator's feedback sheet ("Did any suggestion help or get in the way? What happened?"). That is staff feedback, not learner data.
+- **The question bank:** the 16 pre/post check questions (`content/pilot-check/`) stay in the repository as a template. They are no longer on the site, so the starting check's items are rewritten from them and reviewed like any other lesson content.
 
 ## 7. Risks and how they're handled
 
