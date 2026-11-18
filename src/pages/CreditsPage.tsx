@@ -86,6 +86,15 @@ const VOICES = [
     licence: 'Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC 4.0)',
     licenceUrl: 'https://creativecommons.org/licenses/by-nc/4.0/',
   },
+  {
+    // VieNeu-TTS v3 Turbo, its codec (MOSS Audio Tokenizer Nano) and sea-g2p
+    // are all Apache-2.0, which asks for the licence and the origin to be kept.
+    key: 'pages.credits.voiceVietnamese',
+    model: 'VieNeu-TTS v3 Turbo',
+    url: 'https://huggingface.co/pnnbao-ump/VieNeu-TTS-v3-Turbo',
+    licence: 'Apache License 2.0',
+    licenceUrl: 'https://www.apache.org/licenses/LICENSE-2.0',
+  },
 ] as const satisfies ReadonlyArray<{ key: MessageKey; model: string; url: string; licence: string; licenceUrl: string }>;
 
 const SECTIONS = ['sources', 'videos', 'pictures', 'fonts', 'software', 'voices', 'translation'] as const;

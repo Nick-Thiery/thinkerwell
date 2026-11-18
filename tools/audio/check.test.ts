@@ -173,9 +173,8 @@ describe('preview courses', () => {
       'vi/digital-world',
       'vi/southeast-asia-through-time',
     ]);
-    // Vietnamese has no recordings yet (recordings: false in locales.ts): exported so it can be recorded when asked for, but not counted as recorded.
-    expect(tracks.filter((track) => track.lang === 'vi').every((track) => track.ready === false)).toBe(true);
-    expect(tracks.filter((track) => track.lang !== 'vi').every((track) => track.ready === true)).toBe(true);
+    // Every ready language has recordings (Vietnamese since 18 November 2026), so every track is checked.
+    expect(tracks.every((track) => track.ready === true)).toBe(true);
     for (const track of tracks) {
       const prefixes: Record<string, string> = { 'digital-world': 'dw-', 'southeast-asia-through-time': 'sat-', 'art-architecture-society': 'aas-' };
       const prefix = prefixes[track.course];
@@ -192,14 +191,16 @@ describe('preview courses', () => {
     expect(courseAudioProblems([first!], { languages: {} }, '/nowhere')).toEqual([`${first!.lang}/${first!.course}: no recordings at all.`]);
   });
 
-  it('leave a language without recordings (Vietnamese) unchecked while it has no recordings, and check it once it has', async () => {
+  it('leave a language without recordings unchecked while it has none (as Vietnamese was), and check it once it has', async () => {
     const { courseAudioProblems } = await import('./check.ts');
     const { courseUtterances } = await import('./utterances.ts');
-    const vi = courseUtterances().find((track) => track.lang === 'vi');
-    expect(vi).toBeDefined();
-    expect(courseAudioProblems([vi!], { languages: {} }, '/nowhere')).toEqual([]);
+    const found = courseUtterances().find((track) => track.lang === 'vi');
+    expect(found).toBeDefined();
+    // A language marked `recordings: false` in locales.ts is exported with ready: false.
+    const vi = { ...found!, ready: false };
+    expect(courseAudioProblems([vi], { languages: {} }, '/nowhere')).toEqual([]);
     // With recordings in the manifest it is checked like any other: a missing file is a problem.
-    const recorded = { [vi!.course]: { vi: { files: 1, bytes: 1, seconds: 1, timings: 'x', normaliser: vi!.normaliser, sections: {} } } };
-    expect(courseAudioProblems([vi!], { languages: {}, courses: recorded }, '/nowhere').length).toBeGreaterThan(0);
+    const recorded = { [vi.course]: { vi: { files: 1, bytes: 1, seconds: 1, timings: 'x', normaliser: vi.normaliser, sections: {} } } };
+    expect(courseAudioProblems([vi], { languages: {}, courses: recorded }, '/nowhere').length).toBeGreaterThan(0);
   });
 });
