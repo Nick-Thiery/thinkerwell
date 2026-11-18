@@ -15,7 +15,7 @@ The site's fonts have no Vietnamese letters (stacked tone marks). Be Vietnam Pro
 
 ## Recordings
 
-Not made, and not on `main`. VieNeu-TTS v3 Turbo (Apache-2.0) can record Our World's 145 sections in about an hour on two CPU cores, about 70 minutes and 17 MB of audio. **All four courses** (`npm run audio:generate -- --lang vi`, then `-- --all-courses --lang vi`; the preview courses are exported for Vietnamese but, like Our World's, only recorded when asked for with `--lang vi`, and `check:audio` leaves them unchecked until they have recordings) come to 4,400 different pieces and about 315,000 characters, which is about 4 hours of speech and 5 hours of recording on two cores, and roughly 50 MB of MP3. Samples of each course are made with `--sample DIR --all-courses --lang vi` and were sent to Nick for a native speaker to hear. Three sample voices were made for the team to listen to. Choosing the voice, recording and why they wait for review: `docs/notes/recorded-audio.md`, "Vietnamese", and `scripts/audio/README.md`. Until then Listen reads Vietnamese with a Vietnamese voice on the device, or says why it can't.
+Made on 18 November 2026 for all four courses, on Nick's instruction, before anyone had listened to the voice in full: VieNeu-TTS v3 Turbo (Apache-2.0), preset voice "Trúc Ly", into `public/audio/vi/` and `public/audio/vi/<course>/`, checked by `npm run check:audio` like the other languages. How, sizes and what is left: `docs/notes/recorded-audio.md`, "Vietnamese", and `scripts/audio/README.md`. Without a recording (not downloaded and offline, Save data) Listen reads Vietnamese with a Vietnamese voice on the device, or says why it can't.
 
 ## Still to do before it is offered
 

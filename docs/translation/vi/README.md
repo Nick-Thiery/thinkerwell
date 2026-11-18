@@ -22,7 +22,7 @@ Same layout as Indonesian (`docs/translation/README.md`):
 | Per-string notes: back-translation, flags, reviewer changes, the English each string was translated from | `docs/translation/vi/notes/*.json` (Our World and the interface: `ui.json`), `notes/courses/<course id>/*.json` (the other courses: `source` and `flag` only, no back-translations yet) |
 | Review spreadsheet | `npm run review:export -- vi` writes `docs/translation/vi/review/thinkerwell-vi-review.xlsx` |
 | Letters the site fonts lack | Be Vietnam Pro, loaded only while Vietnamese is shown: `docs/notes/languages.md`, "Vietnamese fonts" |
-| Recordings (Listen) | none on `main` by design; the voice and how to record every course: `docs/notes/vietnamese-preview.md`, `docs/notes/recorded-audio.md` |
+| Recordings (Listen) | all four courses, recorded 18 November 2026 with VieNeu-TTS v3 Turbo (voice Trúc Ly), not yet heard by a native speaker: `docs/notes/vietnamese-preview.md`, `docs/notes/recorded-audio.md` |
 
 ## How it was made (October 2026)
 
@@ -49,12 +49,12 @@ None of this replaces a native speaker.
 
 ## What was done to offer it, and what is still open
 
-Done on 11 November 2026: `ready: true`; Settings' Listen voice has a Vietnamese entry and a "no Vietnamese voice" message (Lesson audio lists only languages that have recordings, so Vietnamese is not there); Credits lists Be Vietnam Pro and says the Vietnamese was drafted and back-checked by AI; the strings that named only Indonesian and Malay as lesson languages (the language help texts, For organisations, the teacher guide's plan note, the Listen voice steps) now name Vietnamese, in all four languages; the size budget was raised for it.
+Done on 11 November 2026: `ready: true`; Settings' Listen voice has a Vietnamese entry and a "no Vietnamese voice" message (Lesson audio lists only languages that have recordings, so Vietnamese was not there until the recordings of 18 November); Credits lists Be Vietnam Pro and says the Vietnamese was drafted and back-checked by AI; the strings that named only Indonesian and Malay as lesson languages (the language help texts, For organisations, the teacher guide's plan note, the Listen voice steps) now name Vietnamese, in all four languages; the size budget was raised for it.
 
 Still open:
 
 - **A native reviewer.** Their changes applied; a decision on the open points in `KEY_TERMS.md`; then take the "AI draft" caveat out of the Credits line.
-- **Recordings for Listen**, or the decision to use device voices only (then say so here): `docs/notes/vietnamese-preview.md`. All four courses can be recorded in about 5 hours on two CPU cores; nobody has listened to the voice yet, so do not commit recordings before they have.
+- **Recordings for Listen**: made for all four courses on 18 November 2026 (Nick's call, before anyone listened in full). A native reviewer should listen to a few parts of each course; a changed sentence is recorded again with `npm run audio:generate -- --lang vi` (and `-- --all-courses --lang vi`).
 - **The information sheet** (`pages.infoSheet`, "in simple English, Bahasa Indonesia or Bahasa Melayu") still names two languages: the study's owners review that wording, so it was left alone.
 - **The optional learning study** has no Vietnamese questions (`content/pilot-check/`); a Vietnamese learner sees them in English, marked `lang="en"`.
 - **No local-language Watch videos** have been looked for in Vietnamese (`docs/notes/local-videos/vi.json` does not exist); every Vietnamese lesson has four steps.

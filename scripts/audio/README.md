@@ -1,11 +1,11 @@
 # Listen's recordings
 
-Listen plays recordings of a natural voice for everything it reads: every reading section of every lesson, in English and Bahasa Indonesia (and Vietnamese, once it is ready), at both reading levels, and the sample sentence in Settings. They are made here, on a computer, and committed to the repository (`public/audio/`). How they are played, downloaded and kept offline is in `docs/notes/recorded-audio.md`.
+Listen plays recordings of a natural voice for everything it reads: every reading section of every lesson, in English, Bahasa Indonesia, Bahasa Melayu and Tiếng Việt, in all four courses, at both reading levels, and the sample sentence in Settings. They are made here, on a computer, and committed to the repository (`public/audio/`). How they are played, downloaded and kept offline is in `docs/notes/recorded-audio.md`.
 
 - **English**: Kokoro-82M (`hexgrad/Kokoro-82M`, Apache-2.0), voice `af_heart` (American English, `lang_code='a'`), speed 0.92.
 - **Bahasa Indonesia**: Meta's MMS-TTS (`facebook/mms-tts-ind`, CC BY-NC 4.0: non-commercial use only, with attribution; see `docs/PRODUCT.md`).
 - **Bahasa Melayu** (Malaysian Malay): MMS-TTS too (`facebook/mms-tts-zlm`, the same licence and the same `Mms` class; why this voice: `docs/notes/recorded-audio.md`, "Malay").
-- **Vietnamese** (hidden preview; recorded only when asked for, see below): VieNeu-TTS v3 Turbo (`pnnbao-ump/VieNeu-TTS-v3-Turbo`, Apache-2.0, PyPI `vieneu` 3.8.3), a preset voice (`VI_VOICE` in `generate.py`, "Trúc Ly" until the team has listened and chosen).
+- **Tiếng Việt**: VieNeu-TTS v3 Turbo (`pnnbao-ump/VieNeu-TTS-v3-Turbo`, Apache-2.0, PyPI `vieneu` 3.8.3), a preset voice (`VI_VOICE` in `generate.py`, "Trúc Ly"; recorded on 18 November 2026, see below).
 
 These are the founders' choices. Changing a voice, its speed or the encoding in `generate.py` (`VOICES`, `GAPS`, `BITRATE`) records everything in that language again.
 
@@ -35,7 +35,7 @@ npm run audio:generate -- --lang id    # only Indonesian (the other languages' f
 npm run audio:generate -- --lang ms    # only Malay
 npm run audio:generate -- --all-courses             # the preview courses (Digital World, Southeast Asia Through Time), into public/audio/<lang>/<course>/
 npm run audio:generate -- --course digital-world --lang id   # one course, one language
-npm run audio:generate -- --lang vi    # Vietnamese (a hidden preview: only when asked for, see below)
+npm run audio:generate -- --lang vi    # only Vietnamese
 AUDIO_THREADS=1 npm run audio:generate -- --lang en   # one CPU thread (run en and id side by side)
 ```
 
@@ -66,7 +66,9 @@ git add public/audio tools/audio/manifest.json src/audio/recordings.json
 
 ## Vietnamese
 
-Vietnamese is a hidden preview (`ready: false` in `src/i18n/locales.ts`), so its recordings are kept out of `main` until a native speaker has reviewed the lessons (`docs/notes/recorded-audio.md`, "Vietnamese"). `npm run audio:generate` skips a language that isn't ready and has no recordings yet, and `npm run check:audio` doesn't check it; once it has recordings (on the preview's branch), both treat it like the others.
+Recorded for all four courses on 18 November 2026, with the preset voice "Trúc Ly", and checked by `npm run check:audio` like the other languages (`docs/notes/recorded-audio.md`, "Vietnamese"). The translation is still waiting for a native speaker's review: when a reviewer changes a sentence, `check:audio` fails and `npm run audio:generate -- --lang vi` (and `-- --all-courses --lang vi`) records just what changed.
+
+**Speed.** VieNeu's ONNX engine keeps one CPU core busy, so on a two-core machine run Our World and the courses side by side: `--lang vi` in one terminal, `--all-courses --lang vi --synth-only` in another, then `--all-courses --lang vi` once both are done (it finds every piece already recorded and only joins the files; never run two runs that write files at the same time, since both write `tools/audio/manifest.json`). That way the whole of Vietnamese (5,055 different pieces, about 300,000 characters) took about two hours.
 
 **Choosing the voice.** The preset voices are listed by `--list-vi-voices`. Make a few short samples without touching the repository and listen to them:
 

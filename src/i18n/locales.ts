@@ -100,10 +100,10 @@ export const LOCALES: readonly LocaleDefinition[] = [
   // Tiếng Việt: the interface, all four courses and their section checks.
   // Drafted by AI and cross-checked by AI, and offered to everyone while a
   // native speaker reviews it, as Indonesian and Malay are (11 November 2026:
-  // docs/translation/vi/, docs/notes/vietnamese-preview.md). No recordings of
-  // the lessons yet (recordings: false): Listen reads with a Vietnamese voice
-  // on the device, where there is one.
-  { code: 'vi', englishName: 'Vietnamese', endonym: 'Tiếng Việt', dir: 'ltr', font: 'vietnamese', ready: true, content: true, speechLang: 'vi-VN', recordings: false },
+  // docs/translation/vi/, docs/notes/vietnamese-preview.md). Listen plays
+  // recordings of all four courses (VieNeu-TTS v3 Turbo, 18 November 2026:
+  // docs/notes/recorded-audio.md, "Vietnamese").
+  { code: 'vi', englishName: 'Vietnamese', endonym: 'Tiếng Việt', dir: 'ltr', font: 'vietnamese', ready: true, content: true, speechLang: 'vi-VN' },
 ];
 
 /**

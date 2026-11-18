@@ -10,10 +10,11 @@ import { fakeVoices, IPAD_VOICES, spoken } from './voiceFake';
 const IPAD_WITH_VIETNAMESE = [...IPAD_VOICES, { name: 'Linh', lang: 'vi-VN', uri: 'com.apple.voice.compact.vi-VN.Linh', isDefault: true }];
 
 // Tiếng Việt (docs/notes/languages.md, docs/translation/vi/README.md): the interface and all four
-// courses, drafted by AI and offered to everyone while native speakers review it, with no recordings
-// of its own yet (Listen reads with a voice on the device). A shorter walk than malay.spec.ts, on the
-// same lines: the one language setting, Be Vietnam Pro, Listen without recordings, lessons with no
-// Watch step, and the pages fitting the screen with no English left on them.
+// courses, drafted by AI and offered to everyone while native speakers review it, with Listen's
+// recordings of all four courses (VieNeu-TTS, docs/notes/recorded-audio.md). A shorter walk than
+// malay.spec.ts, on the same lines: the one language setting, Be Vietnam Pro, Listen with its
+// recordings and a device voice when they can't be had, lessons with no Watch step, and the pages
+// fitting the screen with no English left on them.
 
 const root = path.join(import.meta.dirname, '..');
 const readJson = <T>(...parts: string[]) => JSON.parse(readFileSync(path.join(root, ...parts), 'utf8')) as T;
@@ -92,8 +93,25 @@ test.describe('the language switch offers Vietnamese', () => {
   });
 });
 
-test.describe('Listen has no recordings in Vietnamese, so it uses a voice on the device', () => {
-  test('reads Vietnamese with a Vietnamese voice, and says so when there is none', async ({ page }) => {
+test.describe('Listen in Vietnamese: the recordings, and a voice on the device without them', () => {
+  test('plays the Vietnamese recordings, from this site', async ({ page }) => {
+    await fakeVoices(page, IPAD_VOICES);
+    const audio: string[] = [];
+    page.on('request', (request) => {
+      const { pathname } = new URL(request.url());
+      if (pathname.startsWith('/audio/')) audio.push(pathname);
+    });
+    await page.goto(`/lesson/${L10.id}/read`);
+    await page.getByRole('button', { name: msg(en, 'header.language.button', { language: ENGLISH }) }).click();
+    await page.locator('.tw-language-switch-panel').getByRole('radio', { name: VIETNAMESE }).click();
+    await page.getByRole('button', { name: msg(vi, 'lessonPlayer.read.listen') }).click();
+    await expect.poll(() => audio.some((file) => /^\/audio\/vi\/timings\.[0-9a-f]+\.json$/.test(file))).toBe(true);
+    await expect.poll(() => audio.some((file) => file.startsWith(`/audio/vi/${L10.id}-standard-1.`) && file.endsWith('.mp3'))).toBe(true);
+    // The recording plays, so the device's voice says nothing.
+    expect(await spoken(page)).toEqual([]);
+  });
+
+  test("reads Vietnamese with a Vietnamese voice on the device when the recordings can't be had", async ({ page }) => {
     await fakeVoices(page, IPAD_WITH_VIETNAMESE);
     await page.route('**/audio/**', (route) => route.abort());
     await page.goto(`/lesson/${L10.id}/read`);
@@ -104,23 +122,25 @@ test.describe('Listen has no recordings in Vietnamese, so it uses a voice on the
     expect((await spoken(page))[0]?.voice).toBe('Linh');
   });
 
-  test('with no Vietnamese voice, Listen is not shown and the Read step says why, in Vietnamese', async ({ page }) => {
+  test('with no Vietnamese voice, Listen still shows, for the recordings', async ({ page }) => {
     await fakeVoices(page, IPAD_VOICES);
     await page.goto(`/lesson/${L10.id}/read`);
     await page.getByRole('button', { name: msg(en, 'header.language.button', { language: ENGLISH }) }).click();
     await page.locator('.tw-language-switch-panel').getByRole('radio', { name: VIETNAMESE }).click();
-    await expect(page.getByText(msg(vi, 'lessonPlayer.read.listenNoVoice'))).toBeVisible({ timeout: 8000 });
-    await expect(page.getByRole('button', { name: msg(vi, 'lessonPlayer.read.listen') })).toHaveCount(0);
+    await expect(page.getByRole('button', { name: msg(vi, 'lessonPlayer.read.listen') })).toBeVisible({ timeout: 8000 });
+    await expect(page.getByText(msg(vi, 'lessonPlayer.read.listenNoVoice'))).toHaveCount(0);
   });
 
-  test("Settings' Listen voice offers a Vietnamese voice, and says so when the device has none", async ({ page }) => {
+  test("Settings' Listen voice offers a Vietnamese voice, and with none keeps the recorded one and says so", async ({ page }) => {
     await fakeVoices(page, IPAD_WITH_VIETNAMESE);
     await page.goto('/settings#listen-voice');
     await page.getByRole('radio', { name: VIETNAMESE }).check();
     await expect(page.getByRole('combobox', { name: msg(vi, 'pages.settings.listenVoice.voiceFor.vi') })).toBeEnabled({ timeout: 8000 });
     await fakeVoices(page, IPAD_VOICES);
     await page.reload();
-    await expect(page.getByText(msg(vi, 'pages.settings.listenVoice.noVoiceVietnamese'))).toBeVisible({ timeout: 8000 });
+    await expect(page.getByText(msg(vi, 'pages.settings.listenVoice.noVoiceVietnameseRecorded'))).toBeVisible({ timeout: 8000 });
+    await expect(page.getByRole('combobox', { name: msg(vi, 'pages.settings.listenVoice.voiceFor.vi') })).toHaveCount(0);
+    await expect(page.getByRole('group', { name: msg(vi, 'pages.settings.listenVoice.voiceFor.vi') }).getByRole('button', { name: msg(vi, 'pages.settings.listenVoice.sample') })).toBeVisible();
   });
 });
 
