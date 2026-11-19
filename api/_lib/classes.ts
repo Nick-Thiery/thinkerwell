@@ -34,6 +34,8 @@ export interface ClassesEnv {
 export interface ClassesDeps {
   env: ClassesEnv;
   db: (url: string) => ClassesDb;
+  /** Makes sure the tables exist before the first query (ensureClassesSchema); the tests make them themselves. */
+  prepare?: (url: string) => Promise<void>;
   limit: Limiter;
   now: () => Date;
 }
@@ -132,6 +134,13 @@ export async function handleClasses(request: Request, deps: ClassesDeps): Promis
     action = typeof body.action === 'string' ? body.action : '';
   }
 
+  if (deps.prepare) {
+    try {
+      await deps.prepare(env.DATABASE_URL!);
+    } catch {
+      return json(503, { error: 'database' });
+    }
+  }
   const db = deps.db(env.DATABASE_URL!);
 
   // Anyone: a learner's device.

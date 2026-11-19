@@ -5,10 +5,13 @@
  * pooler or Vercel Postgres) and, in the tests, on PGlite in memory.
  */
 import postgres from 'postgres';
+import { CLASSES_SCHEMA } from './classesSchema.js';
 import type { AdminStats, ClassDetail, ClassSummary, OrgSummary, ProgramOverview, SyncLearner, SyncStage, ViewLearner } from '../../src/classes/protocol.js';
 
 export interface Runner {
   query<T = Record<string, unknown>>(text: string, params?: readonly unknown[]): Promise<T[]>;
+  /** Runs several statements with no parameters (the schema). */
+  exec(text: string): Promise<void>;
   transaction<R>(work: (runner: Runner) => Promise<R>): Promise<R>;
 }
 
@@ -32,12 +35,29 @@ export function postgresRunner(url: string): Runner {
     async query<T>(text: string, params: readonly unknown[] = []) {
       return (await run.unsafe(text, params as postgres.ParameterOrJSON<never>[])) as unknown as T[];
     },
+    async exec(text: string) {
+      await run.unsafe(text).simple();
+    },
     async transaction<R>(work: (runner: Runner) => Promise<R>) {
       if ('begin' in run) return (await run.begin((tx) => work(wrap(tx)))) as R;
       return work(wrap(run));
     },
   });
   return wrap(sql);
+}
+
+/**
+ * Makes the online classes' tables if they aren't there yet (db/classes.sql,
+ * all "if not exists"). Two new instances may race to make them; the loser's
+ * error is harmless, so it checks again once before giving up.
+ */
+export async function ensureClassesSchema(db: Runner): Promise<void> {
+  try {
+    await db.exec(CLASSES_SCHEMA);
+  } catch {
+    await new Promise((resolve) => setTimeout(resolve, 300));
+    await db.exec(CLASSES_SCHEMA);
+  }
 }
 
 export interface OpenClass {
@@ -151,10 +171,11 @@ export function classesDb(db: Runner): ClassesDb {
         // The device sends the whole picture each time, so what it no longer has goes.
         await tx.query(`delete from cv_progress where learner_id = $1`, [learner.id]);
         for (const p of learner.progress) {
+          // The steps go as an array: both drivers send it to a jsonb parameter as JSON themselves.
           await tx.query(
             `insert into cv_progress (learner_id, lesson_id, course_id, stages_done, current_stage, started_at, updated_at, completed_at)
              values ($1, $2, $3, array(select jsonb_array_elements_text($4::jsonb)), $5, $6, $7, $8)`,
-            [learner.id, p.lessonId, p.courseId, JSON.stringify(p.stagesDone), p.currentStage, clamp(p.startedAt), clamp(p.updatedAt), clamp(p.completedAt)],
+            [learner.id, p.lessonId, p.courseId, p.stagesDone, p.currentStage, clamp(p.startedAt), clamp(p.updatedAt), clamp(p.completedAt)],
           );
         }
         await tx.query(`delete from cv_checks where learner_id = $1`, [learner.id]);

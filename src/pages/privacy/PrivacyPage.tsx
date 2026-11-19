@@ -40,8 +40,8 @@ const DATE_FORMAT: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'long',
 
 const SERVICES: ReadonlyArray<{ id: 'vercel' | 'classes' | 'resend' | 'google' | 'youtube' | 'speech'; href: string | null }> = [
   { id: 'vercel', href: 'https://vercel.com/legal/privacy-policy' },
-  // Online classes (docs/notes/online-classes.md): name the database company here when one is chosen.
-  { id: 'classes', href: null },
+  // Online classes (docs/notes/online-classes.md): the Neon database in Singapore, through Vercel.
+  { id: 'classes', href: 'https://neon.com/privacy-policy' },
   { id: 'resend', href: 'https://resend.com/legal/privacy-policy' },
   { id: 'google', href: 'https://policies.google.com/privacy' },
   { id: 'youtube', href: 'https://policies.google.com/privacy' },

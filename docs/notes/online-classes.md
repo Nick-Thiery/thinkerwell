@@ -31,13 +31,17 @@ admin    /admin#key   ──GET admin───────▶ numbers, organisat
 
 ## Switching it on
 
-Nothing here is live until someone does all of this, with an organisation that has agreed:
+Decided with Nick on 19 November 2026: online classes use the **Neon database Thinkerwell already has** (`thinkerwell-pilot`, Vercel's Neon integration, free plan, Singapore `sin1`, made in October for pilot measurement). Its `DATABASE_URL` is already in Vercel for Production and Preview, so no password is copied anywhere. The `cv_` tables sit beside measurement's `events` table, which stays empty while study collection is paused. (A Supabase project was made the same day and is not used.)
 
-1. Choose a Postgres host (Neon, Supabase in Singapore, or Vercel Postgres), make a database and run `psql "$DATABASE_URL" -f db/classes.sql`. Name the company on the Privacy page (`privacy.services.classes.where` in every language, and `POLICY_UPDATED`) before the first class uses it.
-2. In Vercel, set `DATABASE_URL` and `CLASSES_ADMIN_TOKEN` (at least 32 random characters: `openssl rand -base64 32 | tr '+/' '-_' | tr -d '='`). Redeploy.
-3. Open `https://thinkerwell.app/admin#key=<CLASSES_ADMIN_TOKEN>`, add the organisation and send its lead their link. They add classes and send each teacher their link; the teacher gives learners the class code.
+1. **Tables**: none to make by hand. The function runs `db/classes.sql` (its copy, `api/_lib/classesSchema.ts`, checked against the file by a test) the first time each instance is asked anything; every statement is "if not exists". Answers 503 `database` if that fails.
+2. **`CLASSES_ADMIN_TOKEN`** in Vercel (Production only, sensitive): set on 19 November 2026. To change it: `openssl rand -base64 32 | tr '+/' '-_' | tr -d '='`, replace it in Vercel and redeploy; the old admin link stops working.
+3. Once deployed, open `https://thinkerwell.app/admin#key=<CLASSES_ADMIN_TOKEN>`, add an organisation that has agreed, and send its lead their link. They add classes and send each teacher their link; the teacher gives learners the class code.
+
+Preview deployments have `DATABASE_URL` but no admin token, so `/api/classes` answers 503 there.
 
 Keep the admin link private (a password manager, never chat). A leaked organisation or teacher link: make a new one from the page above it.
+
+`api/_lib/classes.integration.test.ts` runs the whole flow through the real driver (`postgres.js`) when `TEST_DATABASE_URL` points at a scratch Postgres (PGlite's socket server, `@electric-sql/pglite-socket`, is enough); it found that a jsonb parameter must be passed as an array, not a JSON string.
 
 ## Not done yet
 

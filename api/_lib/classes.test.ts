@@ -5,7 +5,8 @@ import { PGlite } from '@electric-sql/pglite';
 import { beforeEach, describe, expect, it } from 'vitest';
 import type { AdminStats, ClassDetail, ProgramOverview, SyncLearner } from '../../src/classes/protocol.js';
 import { BAD_KEYS_PER_CONNECTION, Limiter, handleClasses, hashKey } from './classes.js';
-import { classesDb, type Runner } from './classesDb.js';
+import { classesDb, ensureClassesSchema, type Runner } from './classesDb.js';
+import { CLASSES_SCHEMA } from './classesSchema.js';
 
 const ADMIN = 'admin-token-for-the-tests-0123456789abcdef';
 const ENV = { DATABASE_URL: 'pglite://memory', CLASSES_ADMIN_TOKEN: ADMIN };
@@ -15,6 +16,9 @@ const BASE = 'https://thinkerwell.example/api/classes';
 
 function pgliteRunner(pg: PGlite | Parameters<Parameters<PGlite['transaction']>[0]>[0]): Runner {
   return {
+    async exec(text: string) {
+      await pg.exec(text);
+    },
     async query<T>(text: string, params: readonly unknown[] = []) {
       return (await pg.query(text, params as unknown[])).rows as T[];
     },
@@ -101,6 +105,15 @@ function learner(code: string, over: Partial<SyncLearner> = {}): SyncLearner {
 }
 
 describe('/api/classes', () => {
+  it('makes its own tables from a copy of db/classes.sql that still matches it, safely twice', async () => {
+    expect(CLASSES_SCHEMA).toBe(SCHEMA);
+    const fresh = new PGlite();
+    await ensureClassesSchema(pgliteRunner(fresh));
+    await ensureClassesSchema(pgliteRunner(fresh));
+    const tables = await fresh.query<{ tablename: string }>(`select tablename from pg_tables where tablename like 'cv_%' order by 1`);
+    expect(tables.rows.map((r) => r.tablename)).toEqual(['cv_active_days', 'cv_checks', 'cv_classes', 'cv_learners', 'cv_orgs', 'cv_progress', 'cv_removed']);
+  });
+
   it('answers 503 until the database and the admin key are both set', async () => {
     for (const env of [{}, { DATABASE_URL: 'x' }, { CLASSES_ADMIN_TOKEN: ADMIN }, { DATABASE_URL: 'x', CLASSES_ADMIN_TOKEN: 'short' }]) {
       expect((await call('GET', '?action=lookup&code=K7M-Q4P', undefined, undefined, env)).status).toBe(503);
