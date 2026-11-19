@@ -16,7 +16,7 @@ A free social-studies course, "Exploring Our World", for refugee, displaced and 
 
 - Learners about 10–17, many learning English, many with interrupted schooling. Home languages include Dari/Farsi, Rohingya, Somali and Arabic. Many live in "transit" countries where they can't work legally or open a bank account and don't know where they will live next.
 - They use shared laptops and tablets, often with a volunteer teacher, on unreliable Wi-Fi.
-- Educators at partner organisations run sessions and may want simple progress information. The class view shows it for each device, without scores.
+- Educators at partner organisations run sessions and may want simple progress information. The class view shows it for each device, without scores. Online classes (19 November 2026, below) show it across devices for an organisation that has agreed to use them.
 - Details in `docs/research/LEARNER_CONTEXT.md`.
 
 ## First pilot
@@ -31,6 +31,7 @@ A second, prospective partner in Malaysia would use the Malay version. The partn
 - Fonts: Funnel Display for headings, Atkinson Hyperlegible Next for everything else, Eczar for the wordmark.
 - Culture's section colour is rose, so lavender always means "help".
 - Shared-device learner tiles; no accounts. An optional class code links a learner to a partner group for the pilot.
+- **Online classes** (19 November 2026, Nick's brief; `docs/notes/online-classes.md`): teachers and organisations see everyone in their class or program on any device, and Thinkerwell has an admin dashboard for growth and patterns. Decided with Nick: off by default (Thinkerwell adds an organisation only once it has agreed; it adds classes; a learner joins only by entering the class code and tapping "Join class" after seeing what the teacher will see); a teacher sees the name on the device (it may be a nickname) and progress (lessons and steps finished and when, what they're working on, section-check tries, last active), never writing, answers, scores or recordings; secret links for teachers, organisations and the admin, no accounts; the admin dashboard has numbers across every organisation and any class with learners numbered, never named; never a ranking. "Stop sharing", removing the learner from the device, a teacher taking them out, closing the class or switching the organisation off all stop it, and the first three delete what the server holds. It changes rule 1 and the Privacy & Child Safeguarding page, which Justin approves in the same pull request. Not live until a database is set up (`DATABASE_URL`, `CLASSES_ADMIN_TOKEN`) and the Privacy page names its company.
 - Learner avatar colours: Yellow, Sand, Green, Blue and White, as on the NewLearner screen, with White as the default. Sand, Green and Blue reuse the History, Geography and Civics tints, which the brand book keeps for section places, and the brand book gives avatars lavender, so this is a recorded exception. **Open for Justin and Nick to confirm**; the alternative is lavender avatars told apart by initial.
 - Nothing is locked; checks never block.
 - The old keyword "Learning Guide" is removed; AI features come later.

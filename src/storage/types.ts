@@ -294,6 +294,42 @@ export interface DeviceSettings {
     reviewer?: string;
     answers: Record<string, { decision?: 'use' | 'change' | 'no'; comment?: string }>;
   };
+  /**
+   * Online classes (docs/notes/online-classes.md): each learner on this
+   * device who joined one, by the device's learner id. Missing everywhere
+   * no one joined; records saved before it existed need no migration. Not
+   * in the work file.
+   */
+  classLinks?: Record<string, ClassLink>;
+  /**
+   * Learners who stopped sharing or were removed from this device, whose
+   * data the server hasn't yet been told to delete (sent with the next sync).
+   */
+  classRemovals?: Array<{ id: string; secret: string }>;
+}
+
+/**
+ * A learner's place in an online class (docs/notes/online-classes.md), made
+ * when they tap "Join class" with a code an organisation gave them. The
+ * device sends their progress to Thinkerwell's server under `id` and
+ * `secret` (src/classes/runner.ts); never their writing or recordings.
+ */
+export interface ClassLink {
+  /** Random: what the server knows this learner by in this class (not the device's learner id). */
+  id: string;
+  /** Random; the server keeps only its hash. */
+  secret: string;
+  /** The class's code ("K7M-Q4P"). */
+  code: string;
+  className: string;
+  orgName: string;
+  joinedAt: string;
+  /** When the server last took this learner's progress. */
+  lastSentAt?: string;
+  /** A fingerprint of what was last sent, so nothing unchanged is sent again. */
+  lastSentHash?: string;
+  /** Set when the teacher removed them or the class closed: nothing more is sent, and Home says so once. */
+  ended?: 'removed';
 }
 
 /** A change to the settings: any of them, and for the partner options only the ones that change. */

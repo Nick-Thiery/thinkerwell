@@ -1847,7 +1847,7 @@
     "learnersBody": "Pakai nama panggilan, jangan membagikan informasi pribadi yang sensitif, dan ingat bahwa orang lain yang memakai perangkatmu bisa melihat hasil kerjamu yang tersimpan. Kamu boleh melewati pertanyaan yang membuatmu tidak nyaman dan meminta bantuan orang dewasa yang kamu percaya.",
     "s1": {
       "title": "1. Informasi dan privasi",
-      "p1": "Profil pelajar, preferensi, kemajuan, dan jawaban jurnal disimpan di peramban pada perangkat yang dipakai. Profil di perangkat bersama tidak boleh dianggap sebagai akun yang dilindungi kata sandi. Jangan memasukkan alamat, data kontak, dokumen identitas, atau informasi sensitif tentang keluarga ke dalam kegiatan belajar.",
+      "p1": "Profil pelajar, preferensi, kemajuan, dan jawaban jurnal disimpan di peramban pada perangkat yang dipakai. Profil di perangkat bersama tidak boleh dianggap sebagai akun yang dilindungi kata sandi. Jangan memasukkan alamat, data kontak, dokumen identitas, atau informasi sensitif tentang keluarga ke dalam kegiatan belajar. Jika seorang pelajar bergabung dengan kelas online memakai kode dari gurunya, sebagian kemajuannya dibagikan dengan kelas itu (bagian 3).",
       "p2": "Jika Anda menghubungi kami, kami menerima informasi yang Anda pilih untuk diberikan, seperti alamat email dan pesan Anda. Penyedia hosting situs web dan layanan eksternal juga dapat memproses informasi teknis, termasuk alamat IP dan detail peramban. Thinkerwell memakai informasi hanya untuk tujuan yang dijelaskan dalam kebijakan ini."
     },
     "s2": {
@@ -1866,7 +1866,7 @@
       "whoIntro": "Hanya layanan berikut yang menerima informasi dari penggunaan Thinkerwell. Thinkerwell tidak memasang cookie, dan tidak memiliki iklan atau analitik dari perusahaan lain.",
       "retention": "Server Thinkerwell sendiri tidak menyimpan apa pun dari formulir kontak. Salinan yang dipegang layanan email disimpan hanya selama diperlukan untuk menjawab, lalu dihapus. Catatan hosting disimpan oleh penyedia hosting seperti dijelaskan dalam kebijakannya.",
       "deviceTitle": "Ditangani di perangkat, tidak dikirim ke layanan",
-      "device1": "Hasil kerja yang tersimpan. Profil, preferensi, kemajuan, jawaban jurnal, dan rekaman berbicara terbaru tetap berada di penyimpanan peramban pada perangkat (IndexedDB, dengan beberapa pengaturan kecil di penyimpanan lokal). Tidak ada yang diunggah.",
+      "device1": "Hasil kerja yang tersimpan. Profil, preferensi, kemajuan, jawaban jurnal, dan rekaman berbicara terbaru tetap berada di penyimpanan peramban pada perangkat (IndexedDB, dengan beberapa pengaturan kecil di penyimpanan lokal). Tidak ada yang diunggah, kecuali jika pelajar bergabung dengan kelas online (di atas).",
       "device2": "Dengarkan. Fitur ini membacakan pelajaran dengan rekaman yang dikirim bersama situs, atau dengan suara yang sudah ada di perangkat. Teks pelajaran dan tulisan pelajar tidak dikirim ke layanan suara.",
       "device3": "Rekam suaramu. Mikrofon dipakai hanya saat pelajar mengetuk Mulai. Rekaman tetap di perangkat dan tidak pernah diunggah.",
       "device4": "Font, gambar, dan audio. Semuanya berasal dari server Thinkerwell sendiri.",
@@ -1882,6 +1882,12 @@
         "gets": "Seperti server web pada umumnya, Vercel melihat alamat IP, detail peramban dan perangkat, serta halaman yang diminta.",
         "where": "Vercel menjalankan server di beberapa negara, jadi informasi ini dapat diproses di luar negara tempat Anda berada.",
         "link": "Kebijakan privasi Vercel"
+      },
+      "classes": {
+        "name": "Kelas online Thinkerwell (hanya jika organisasi Anda menggunakannya)",
+        "purpose": "Memungkinkan guru dan organisasinya melihat sejauh mana setiap pelajar di kelasnya sudah belajar. Fitur ini mati kecuali organisasi sudah menyepakatinya dengan Thinkerwell, dan pelajar hanya bergabung dengan memasukkan kode kelasnya lalu mengetuk Gabung ke kelas.",
+        "gets": "Untuk setiap pelajar yang bergabung: nama yang mereka pakai di perangkat (boleh nama panggilan), bahasa dan tingkat bacaan mereka, pelajaran dan langkah yang sudah mereka selesaikan dan kapan, berapa kali mereka mencoba setiap cek bagian, dan hari-hari mereka belajar. Tidak pernah tulisan, jawaban, nilai, atau rekaman mereka. Tampilan Thinkerwell sendiri menunjukkan angka-angka ini tanpa nama. Berhenti berbagi, atau guru mengeluarkan pelajar dari kelas, akan menghapusnya.",
+        "where": "Disimpan di basis data pada hosting Thinkerwell. Belum ada organisasi yang menggunakan kelas online; nama perusahaan basis datanya akan dicantumkan di sini sebelum ada yang menggunakannya."
       },
       "resend": {
         "name": "Resend (pengiriman formulir kontak)",
@@ -1956,6 +1962,197 @@
         "name": "UNICEF — Child Safeguarding Toolkit for Business",
         "desc": "Panduan praktis untuk menilai risiko, menetapkan tanggung jawab, dan menanggapi kekhawatiran."
       }
+    }
+  },
+  "classJoin": {
+    "title": "Kelasmu",
+    "intro": "Kalau gurumu memberimu kode kelas, kamu bisa bergabung dengan kelasnya secara online. Lalu gurumu bisa melihat sejauh mana kamu belajar.",
+    "open": "Gabung ke kelas",
+    "codeLabel": "Kode kelas",
+    "codePlaceholder": "Misalnya K7M-Q4P",
+    "codeHelper": "Gurumu yang memberikan kode ini.",
+    "find": "Cari kelas",
+    "looking": "Mencari…",
+    "whatTeacherSees": "Kalau kamu bergabung, gurumu melihat namamu, {name}, dan pelajaran serta langkah yang sudah kamu selesaikan.",
+    "whatTheyDontSee": "Gurumu tidak melihat tulisanmu, jawabanmu, atau rekamanmu. Kamu bisa berhenti berbagi kapan saja.",
+    "join": "Gabung ke kelas",
+    "cancel": "Nanti saja",
+    "sharing": "Gurumu bisa melihat namamu dan pelajaran serta langkah yang sudah kamu selesaikan. Bukan tulisan atau rekamanmu.",
+    "stopOpen": "Berhenti berbagi",
+    "stopQuestion": "Berhenti berbagi dengan kelas ini? Gurumu tidak akan melihat kemajuanmu lagi, dan datanya dihapus dari server Thinkerwell. Pekerjaanmu tetap ada di perangkat ini.",
+    "stop": "Berhenti berbagi",
+    "keep": "Tetap berbagi",
+    "ended": "Kamu sudah tidak ada di kelas {className}. Gurumu mengeluarkanmu dari kelas, atau kelasnya sudah ditutup. Pekerjaanmu masih ada di perangkat ini.",
+    "endedOk": "Oke",
+    "problem": {
+      "bad-code": "Kode kelas terdiri dari enam huruf dan angka, seperti K7M-Q4P.",
+      "not-found": "Kelas itu tidak ditemukan. Periksa kodenya dengan gurumu.",
+      "offline": "Kamu sedang offline. Coba lagi saat ada internet.",
+      "not-configured": "Kelas online belum diaktifkan. Pekerjaanmu tetap tersimpan di perangkat ini.",
+      "too-many": "Terlalu banyak percobaan. Tunggu satu menit, lalu coba lagi.",
+      "wrong-key": "Ada yang tidak beres. Coba lagi.",
+      "failed": "Ada yang tidak beres. Coba lagi."
+    }
+  },
+  "classViews": {
+    "common": {
+      "loading": "Memuat…",
+      "retry": "Coba lagi",
+      "refresh": "Muat ulang",
+      "copy": "Salin",
+      "copied": "Tersalin",
+      "whatYouSee": "Anda melihat nama setiap pelajar, pelajaran dan langkah yang sudah mereka selesaikan, dan kapan. Bukan tulisan, jawaban, nilai, atau rekaman mereka.",
+      "keepPrivate": "Jaga kerahasiaan tautan halaman ini: siapa pun yang memilikinya bisa melihat halaman ini."
+    },
+    "problem": {
+      "noKey": "Halaman ini hanya terbuka dengan tautannya sendiri. Gunakan tautan yang dikirimkan kepada Anda.",
+      "wrong-key": "Tautan ini sudah tidak berlaku. Mintalah tautan baru.",
+      "offline": "Anda sedang offline. Halaman ini memerlukan internet.",
+      "not-configured": "Kelas online belum diaktifkan.",
+      "not-found": "Itu sudah tidak ada di sini.",
+      "too-many": "Terlalu banyak percobaan. Tunggu satu menit, lalu coba lagi.",
+      "failed": "Ada yang tidak beres. Coba lagi."
+    },
+    "levels": {
+      "standard": "Standar",
+      "simpler": "Lebih sederhana"
+    },
+    "teacher": {
+      "eyebrow": "Kelas online",
+      "pageTitle": "Kelas Anda"
+    },
+    "class": {
+      "codeLabel": "Kode kelas",
+      "codeHelp": "Pelajar bergabung dari Beranda mereka: \"Kelasmu\", lalu \"Gabung ke kelas\".",
+      "closedNote": "Kelas ini sudah ditutup. Tidak ada yang bisa bergabung lagi, dan pelajarnya sudah berhenti berbagi.",
+      "learnersLabel": {
+        "other": "pelajar"
+      },
+      "activeLabel": {
+        "other": "aktif minggu ini"
+      },
+      "finishedLabel": {
+        "other": "pelajaran selesai"
+      },
+      "empty": "Belum ada yang bergabung. Berikan kode kelas kepada pelajar.",
+      "courseLabel": "Kursus",
+      "allCourses": "Semua kursus"
+    },
+    "learner": {
+      "anonymous": "Pelajar {number}",
+      "lastActive": "Terakhir aktif {date}",
+      "notStarted": "Belum mulai",
+      "finished": {
+        "other": "{done} dari {count} pelajaran selesai"
+      },
+      "working": "Sedang mengerjakan Pelajaran {number}: {title} · {stage}",
+      "details": "Selengkapnya tentang {name}",
+      "joined": "Bergabung {date}",
+      "language": "Bahasa: {language}",
+      "level": "Tingkat bacaan: {level}",
+      "sectionCount": "{done} dari {count}",
+      "checkTries": {
+        "other": "cek bagian dicoba {count} kali"
+      },
+      "remove": "Keluarkan dari kelas",
+      "removeQuestion": "Keluarkan {name} dari kelas ini? Kemajuannya dihapus dari server Thinkerwell. Pekerjaannya tetap ada di perangkatnya.",
+      "removeConfirm": "Keluarkan",
+      "removeCancel": "Jangan"
+    },
+    "program": {
+      "eyebrow": "Organisasi",
+      "pageTitle": "Kelas-kelas Anda",
+      "classesTitle": "Kelas",
+      "noClasses": "Belum ada kelas.",
+      "code": "Kode {code}",
+      "closed": "Ditutup",
+      "classStats": "Pelajar: {learners} · Aktif minggu ini: {active} · Pelajaran selesai: {finished}",
+      "open": "Buka",
+      "openLabel": "Buka {name}",
+      "back": "Kembali ke {name}",
+      "addTitle": "Tambah kelas",
+      "nameLabel": "Nama kelas",
+      "namePlaceholder": "Misalnya Kelompok pagi",
+      "nameInvalid": "Beri nama kelas, paling banyak 80 karakter.",
+      "add": "Tambah kelas",
+      "adding": "Menambahkan…",
+      "created": "{name} sudah siap.",
+      "teacherLink": "Tautan guru",
+      "teacherLinkHelp": "Kirim tautan ini kepada guru kelas tersebut. Tautan ini hanya ditampilkan sekarang. Kalau hilang, buat yang baru.",
+      "manageTitle": "Kelola kelas ini",
+      "newLink": "Tautan guru baru",
+      "newLinkHelp": "Tautan guru yang baru membuat tautan lama tidak berlaku.",
+      "rename": "Ganti nama",
+      "renameSave": "Simpan nama",
+      "close": "Tutup kelas",
+      "reopen": "Buka kelas lagi",
+      "closeHelp": "Kelas yang ditutup tidak menerima pelajar baru, dan pelajarnya berhenti berbagi."
+    },
+    "admin": {
+      "eyebrow": "Thinkerwell",
+      "pageTitle": "Dasbor admin",
+      "intro": "Bagaimana kelas online digunakan, di semua organisasi. Pelajar diberi nomor, tidak pernah disebut namanya.",
+      "generated": "Diperbarui {time}",
+      "totalsTitle": "Jumlah",
+      "totals": {
+        "learners": "Pelajar",
+        "active7": "Aktif dalam 7 hari terakhir",
+        "active30": "Aktif dalam 30 hari terakhir",
+        "orgs": "Organisasi",
+        "classes": "Kelas",
+        "started": "Pelajaran dimulai",
+        "finished": "Pelajaran selesai",
+        "rate": "Selesai dari yang dimulai",
+        "perLearner": "Pelajaran selesai per pelajar",
+        "stages": "Langkah selesai",
+        "checks": "Percobaan cek bagian"
+      },
+      "weeksTitle": "12 minggu terakhir",
+      "weeksTable": "Angkanya, minggu demi minggu",
+      "weeks": {
+        "week": "Minggu mulai",
+        "active": "Pelajar aktif",
+        "newLearners": "Pelajar baru",
+        "finished": "Pelajaran selesai"
+      },
+      "coursesTitle": "Per kursus",
+      "course": "Kursus",
+      "languagesTitle": "Per bahasa",
+      "levelsTitle": "Per tingkat bacaan",
+      "bandsTitle": "Pelajaran selesai per pelajar",
+      "band": "{band} pelajaran",
+      "stagesTitle": "Langkah yang dicapai",
+      "stagesHelp": "Dari semua pelajaran yang dibuka pelajar, berapa yang mencapai setiap langkah. Hanya pelajaran berbahasa Inggris dengan video yang punya langkah Tonton.",
+      "opened": "Dibuka",
+      "retentionTitle": "Kembali lagi",
+      "retention": {
+        "other": "{returned} dari {count} pelajar yang bergabung 2 sampai 12 minggu lalu kembali lagi seminggu atau lebih setelah bergabung."
+      },
+      "retentionEmpty": "Belum ada yang bergabung 2 sampai 12 minggu lalu.",
+      "dropTitle": "Pelajaran yang paling sering tidak diselesaikan",
+      "dropHelp": "Pelajaran yang dibuka setidaknya tiga pelajar, yang paling sering tidak diselesaikan lebih dulu.",
+      "dropEmpty": "Belum cukup pelajaran yang dibuka.",
+      "lesson": "Pelajaran",
+      "lessonName": "{course}, Pelajaran {number}: {title}",
+      "notFinished": "Tidak selesai",
+      "nothingYet": "Belum ada.",
+      "orgsTitle": "Organisasi",
+      "orgsEmpty": "Belum ada organisasi.",
+      "orgStats": "Kelas: {classes} · Pelajar: {learners} · Aktif minggu ini: {active} · Pelajaran selesai: {finished}",
+      "viewClasses": "Lihat kelas",
+      "newOrgLink": "Tautan baru",
+      "switchOff": "Nonaktifkan",
+      "switchOn": "Aktifkan",
+      "switchedOff": "Nonaktif",
+      "switchOffHelp": "Kalau dinonaktifkan, tautan organisasi itu tidak berlaku dan pelajarnya berhenti berbagi. Tautan baru membuat tautan lama tidak berlaku.",
+      "orgName": "Nama organisasi",
+      "orgNameInvalid": "Beri nama organisasi, paling banyak 80 karakter.",
+      "agreementNote": "Tambahkan organisasi hanya setelah organisasi itu setuju menggunakan kelas online.",
+      "addOrg": "Tambah organisasi",
+      "orgLink": "Tautan {name}",
+      "orgLinkHelp": "Kirim tautan ini kepada pemimpin organisasi. Tautan ini hanya ditampilkan sekarang. Kalau hilang, buat yang baru.",
+      "backToDashboard": "Kembali ke dasbor",
+      "anonymousNote": "Pelajar diberi nomor sesuai urutan bergabung. Nama mereka tidak pernah dikirim ke sini."
     }
   }
 }

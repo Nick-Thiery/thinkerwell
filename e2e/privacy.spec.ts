@@ -79,7 +79,11 @@ test('no page type asks any other server for anything, and a tap on play asks on
   const elsewhere = urls.filter((url) => !isOwnOrigin(url, origin));
   expect(elsewhere, `Requests to other servers:\n${elsewhere.join('\n')}`).toEqual([]);
   // Nothing is sent to this site's own server either: pilot measurement is off by default (e2e/measurement.spec.ts).
-  expect(urls.filter((url) => new URL(url).pathname.startsWith('/api/'))).toEqual([]);
+  // The one exception is the tour's own online-class stops, which look up a class code and open the class views
+  // with their links (a stand-in answers them); e2e/online-classes.spec.ts checks a learner who hasn't joined sends nothing.
+  const api = urls.filter((url) => new URL(url).pathname.startsWith('/api/'));
+  expect(api.filter((url) => !new URL(url).pathname.startsWith('/api/classes'))).toEqual([]);
+  expect(api.filter((url) => new URL(url).searchParams.get('action') === null)).toEqual([]);
 
   // Stand in for YouTube, so the test never depends on (or contacts) it.
   await page.route(/youtube-nocookie\.com/, (route) =>

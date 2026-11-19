@@ -1,0 +1,515 @@
+/*
+ * The class views (/teach, /program, /admin; docs/notes/online-classes.md).
+ * A stylesheet of its own, added with a <link> by ./stylesheet.ts, so it
+ * never reaches the site's one stylesheet or a learner's device. Every class
+ * starts "tw-cv-" (the build stops if one reaches the site's stylesheet).
+ * Charts use the brand's own colours, never red; every number is also
+ * written out.
+ */
+
+.tw-cv-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-inline-size: 1040px;
+}
+
+.tw-cv-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tw-cv-head h1,
+.tw-cv-head p,
+.tw-cv-section h2,
+.tw-cv-section h3,
+.tw-cv-section p,
+.tw-cv-admin h2 {
+  margin: 0;
+}
+
+.tw-cv-code {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--lavender-wash);
+  align-self: flex-start;
+}
+
+.tw-cv-code p {
+  margin: 0;
+}
+
+.tw-cv-code-value {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+}
+
+.tw-cv-refresh {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.tw-cv-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tw-cv-stats strong {
+  font-family: var(--font-display);
+  font-size: 24px;
+}
+
+.tw-cv-class {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.tw-cv-empty,
+.tw-cv-problem,
+.tw-cv-made,
+.tw-cv-confirm {
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.tw-cv-empty,
+.tw-cv-problem p,
+.tw-cv-made p,
+.tw-cv-confirm p {
+  margin: 0;
+}
+
+.tw-cv-filter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  align-self: flex-start;
+}
+
+.tw-cv-filter label {
+  font-weight: 700;
+}
+
+.tw-cv-filter select {
+  min-block-size: var(--target-min);
+  padding-inline: var(--space-3);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+  font: inherit;
+  max-inline-size: 100%;
+}
+
+.tw-cv-learners,
+.tw-cv-classes,
+.tw-cv-sections,
+.tw-cv-facts,
+.tw-cv-tiles,
+.tw-cv-hbars,
+.tw-cv-legend {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tw-cv-learners {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+}
+
+.tw-cv-learner,
+.tw-cv-class-row,
+.tw-cv-tile,
+.tw-cv-section {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+}
+
+.tw-cv-learner {
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-inline-size: 0;
+}
+
+.tw-cv-learner-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.tw-cv-learner-name {
+  font-weight: 700;
+  font-size: 18px;
+  overflow-wrap: anywhere;
+}
+
+.tw-cv-active {
+  color: var(--ink-muted);
+}
+
+.tw-cv-active.is-recent {
+  color: var(--correct);
+  font-weight: 700;
+}
+
+.tw-cv-learner-line {
+  margin: 0;
+}
+
+.tw-cv-bar,
+.tw-cv-hbar {
+  display: block;
+  block-size: 8px;
+  border-radius: var(--radius-pill);
+  background: var(--lavender-soft);
+  overflow: hidden;
+}
+
+.tw-cv-bar > span,
+.tw-cv-hbar > span {
+  display: block;
+  block-size: 100%;
+  background: var(--violet);
+  border-radius: var(--radius-pill);
+}
+
+.tw-cv-details summary {
+  min-block-size: var(--target-min);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.tw-cv-details[open] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tw-cv-facts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: 16px;
+}
+
+.tw-cv-course-title {
+  margin: 0 0 var(--space-2);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.tw-cv-sections li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-3);
+  padding-block: var(--space-1);
+  border-block-end: 1px solid var(--line);
+  font-size: 16px;
+}
+
+.tw-cv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.tw-cv-note {
+  margin: 0;
+  color: var(--ink-muted);
+}
+
+.tw-cv-section {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-inline-size: 0;
+}
+
+.tw-cv-classes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tw-cv-class-row {
+  padding: var(--space-4);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.tw-cv-class-row.is-archived {
+  background: var(--canvas);
+}
+
+.tw-cv-class-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-inline-size: 0;
+}
+
+.tw-cv-class-name {
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.tw-cv-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-3);
+}
+
+.tw-cv-form > :first-child {
+  flex: 1 1 260px;
+}
+
+.tw-cv-link {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-cv-link-label {
+  font-weight: 700;
+}
+
+.tw-cv-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.tw-cv-link-row input {
+  flex: 1 1 240px;
+  min-inline-size: 0;
+  min-block-size: var(--target-min);
+  padding-inline: var(--space-3);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-md);
+  font: inherit;
+  font-size: 16px;
+}
+
+.tw-cv-link p {
+  margin: 0;
+}
+
+/* The admin dashboard. */
+
+.tw-cv-admin {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  align-items: stretch;
+}
+
+.tw-cv-admin > .tw-btn,
+.tw-cv-page > .tw-btn {
+  align-self: flex-start;
+}
+
+.tw-cv-tiles {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 150px), 1fr));
+}
+
+.tw-cv-tile {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.tw-cv-tile-value {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.tw-cv-admin-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+}
+
+.tw-cv-wide {
+  grid-column: 1 / -1;
+}
+
+.tw-cv-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  font-size: 16px;
+}
+
+.tw-cv-legend li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.tw-cv-swatch {
+  inline-size: 14px;
+  block-size: 14px;
+  border-radius: 4px;
+}
+
+.tw-cv-swatch.is-active,
+.tw-cv-week-bars .is-active {
+  background: var(--violet);
+}
+
+.tw-cv-swatch.is-new,
+.tw-cv-week-bars .is-new {
+  background: var(--lavender);
+  border: 1px solid var(--violet);
+}
+
+.tw-cv-swatch.is-finished,
+.tw-cv-week-bars .is-finished {
+  background: var(--correct);
+}
+
+.tw-cv-weeks {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--space-1);
+  block-size: 180px;
+  align-items: end;
+}
+
+.tw-cv-week {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  block-size: 100%;
+  min-inline-size: 0;
+}
+
+.tw-cv-week-bars {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+  border-block-end: 1px solid var(--line-strong);
+}
+
+.tw-cv-week-bars span {
+  flex: 1;
+  max-inline-size: 12px;
+  min-block-size: 1px;
+  border-radius: 3px 3px 0 0;
+}
+
+.tw-cv-week-label {
+  font-size: 14px;
+  color: var(--ink-muted);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+.tw-cv-table-box {
+  overflow-x: auto;
+  max-inline-size: 100%;
+}
+
+.tw-cv-table {
+  border-collapse: collapse;
+  inline-size: 100%;
+  font-size: 16px;
+}
+
+.tw-cv-table th,
+.tw-cv-table td {
+  padding: var(--space-2) var(--space-3);
+  border-block-end: 1px solid var(--line);
+  text-align: start;
+  vertical-align: top;
+}
+
+.tw-cv-table td {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.tw-cv-table thead th {
+  font-size: 14px;
+  color: var(--ink-muted);
+}
+
+.tw-cv-hbars {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tw-cv-hbars li {
+  display: grid;
+  grid-template-columns: minmax(0, 8rem) 1fr auto;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 16px;
+}
+
+.tw-cv-hbar-label {
+  overflow-wrap: anywhere;
+}
+
+.tw-cv-hbar-value {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 480px) {
+  /* Week labels stand on end, so twelve fit across a phone. In vertical writing, inline-size is their height. */
+  .tw-cv-week-label {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    inline-size: 4.5em;
+    align-self: center;
+  }
+
+  .tw-cv-code-value {
+    font-size: 28px;
+  }
+}

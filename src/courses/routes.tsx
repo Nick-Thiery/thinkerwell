@@ -88,3 +88,38 @@ export function VideoReviewRoute() {
     </Suspense>
   );
 }
+
+// The class views for teachers, organisations and Thinkerwell (src/courses/class-views/,
+// docs/notes/online-classes.md): a chunk of their own in assets/preview/class-views/
+// (src/courses/build.ts), loaded only when someone opens one with its secret link.
+const ClassViewsPages = () => import('./class-views/ClassViewsPages');
+const TeacherPage = lazy(() => ClassViewsPages().then((m) => ({ default: m.TeacherPage })));
+const ProgramPage = lazy(() => ClassViewsPages().then((m) => ({ default: m.ProgramPage })));
+const AdminPage = lazy(() => ClassViewsPages().then((m) => ({ default: m.AdminPage })));
+
+/** /teach#key=…: a teacher's class. */
+export function TeacherRoute() {
+  return (
+    <Suspense fallback={null}>
+      <TeacherPage />
+    </Suspense>
+  );
+}
+
+/** /program#key=…: an organisation's classes. */
+export function ProgramRoute() {
+  return (
+    <Suspense fallback={null}>
+      <ProgramPage />
+    </Suspense>
+  );
+}
+
+/** /admin#key=…: Thinkerwell's admin dashboard. */
+export function AdminRoute() {
+  return (
+    <Suspense fallback={null}>
+      <AdminPage />
+    </Suspense>
+  );
+}

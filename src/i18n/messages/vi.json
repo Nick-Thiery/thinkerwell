@@ -1847,7 +1847,7 @@
     "learnersBody": "Hãy dùng biệt danh, tránh chia sẻ thông tin cá nhân nhạy cảm, và nhớ rằng những người khác dùng thiết bị của bạn có thể thấy bài làm đã lưu của bạn. Bạn có thể bỏ qua những câu hỏi làm bạn không thoải mái và nhờ một người lớn đáng tin cậy giúp đỡ.",
     "s1": {
       "title": "1. Thông tin và quyền riêng tư",
-      "p1": "Hồ sơ người học, tùy chọn, tiến độ và các câu trả lời trong nhật ký được lưu trong trình duyệt trên thiết bị đang dùng. Hồ sơ trên thiết bị dùng chung không nên được coi là tài khoản có mật khẩu bảo vệ. Tránh nhập địa chỉ, thông tin liên lạc, giấy tờ tùy thân hoặc thông tin nhạy cảm về gia đình vào các hoạt động học tập.",
+      "p1": "Hồ sơ người học, tùy chọn, tiến độ và các câu trả lời trong nhật ký được lưu trong trình duyệt trên thiết bị đang dùng. Hồ sơ trên thiết bị dùng chung không nên được coi là tài khoản có mật khẩu bảo vệ. Tránh nhập địa chỉ, thông tin liên lạc, giấy tờ tùy thân hoặc thông tin nhạy cảm về gia đình vào các hoạt động học tập. Nếu người học tham gia một lớp học trực tuyến bằng mã của thầy cô, một phần tiến độ của họ được chia sẻ với lớp đó (mục 3).",
       "p2": "Nếu bạn liên hệ với chúng tôi, chúng tôi nhận được thông tin bạn chọn cung cấp, chẳng hạn địa chỉ email và tin nhắn của bạn. Dịch vụ lưu trữ trang web và các dịch vụ bên ngoài cũng có thể xử lý thông tin kỹ thuật, gồm địa chỉ IP và thông tin trình duyệt. Thinkerwell chỉ dùng thông tin cho những mục đích được nêu trong chính sách này."
     },
     "s2": {
@@ -1866,7 +1866,7 @@
       "whoIntro": "Đây là những dịch vụ duy nhất nhận thông tin từ việc dùng Thinkerwell. Thinkerwell không đặt cookie, và không có quảng cáo hay công cụ phân tích của các công ty khác.",
       "retention": "Máy chủ của Thinkerwell không giữ gì từ biểu mẫu liên hệ. Các bản sao do dịch vụ email giữ chỉ được lưu trong thời gian cần để trả lời, rồi bị xóa. Nhật ký lưu trữ do nhà cung cấp lưu trữ giữ theo cách chính sách của họ mô tả.",
       "deviceTitle": "Xử lý trên thiết bị, không gửi đến dịch vụ nào",
-      "device1": "Bài làm đã lưu. Hồ sơ, tùy chọn, tiến độ, câu trả lời trong nhật ký và bản ghi âm nói gần nhất nằm trong bộ nhớ của trình duyệt trên thiết bị (IndexedDB, cùng vài thiết lập nhỏ trong bộ nhớ cục bộ). Không có gì được tải lên.",
+      "device1": "Bài làm đã lưu. Hồ sơ, tùy chọn, tiến độ, câu trả lời trong nhật ký và bản ghi âm nói gần nhất nằm trong bộ nhớ của trình duyệt trên thiết bị (IndexedDB, cùng vài thiết lập nhỏ trong bộ nhớ cục bộ). Không có gì được tải lên, trừ khi người học tham gia một lớp học trực tuyến (ở trên).",
       "device2": "Nghe. Tính năng này đọc bài học thành tiếng bằng các bản ghi âm đi kèm trang web, hoặc bằng giọng đọc có sẵn trên thiết bị. Văn bản bài học và bài viết của người học không được gửi đến dịch vụ giọng đọc nào.",
       "device3": "Ghi âm giọng của bạn. Micrô chỉ được dùng khi người học chạm vào Bắt đầu. Đoạn ghi âm nằm trên thiết bị và không bao giờ được tải lên.",
       "device4": "Phông chữ, hình ảnh và âm thanh. Tất cả đến từ máy chủ của chính Thinkerwell.",
@@ -1882,6 +1882,12 @@
         "gets": "Như mọi máy chủ web, Vercel thấy địa chỉ IP, thông tin trình duyệt và thiết bị, cùng các trang được yêu cầu.",
         "where": "Vercel vận hành máy chủ ở nhiều nước, nên thông tin này có thể được xử lý bên ngoài nước bạn đang ở.",
         "link": "Chính sách quyền riêng tư của Vercel"
+      },
+      "classes": {
+        "name": "Lớp học trực tuyến của Thinkerwell (chỉ khi tổ chức của bạn sử dụng)",
+        "purpose": "Giúp giáo viên và tổ chức của họ thấy từng người học trong lớp đã học đến đâu. Tính năng này tắt trừ khi tổ chức đã thỏa thuận với Thinkerwell, và người học chỉ tham gia bằng cách nhập mã lớp rồi chạm Tham gia lớp.",
+        "gets": "Với mỗi người học tham gia: tên họ dùng trên thiết bị (có thể là biệt danh), ngôn ngữ và mức đọc, những bài học và bước học đã hoàn thành và khi nào, số lần làm mỗi bài kiểm tra phần, và những ngày họ học. Không bao giờ có bài viết, câu trả lời, điểm hay bản ghi âm của họ. Trang riêng của Thinkerwell chỉ hiện các con số này, không có tên. Ngừng chia sẻ, hoặc giáo viên đưa người học ra khỏi lớp, sẽ xóa các dữ liệu này.",
+        "where": "Lưu trong một cơ sở dữ liệu trên hệ thống lưu trữ của Thinkerwell. Chưa có tổ chức nào dùng lớp học trực tuyến; tên công ty cơ sở dữ liệu sẽ được ghi ở đây trước khi có tổ chức dùng."
       },
       "resend": {
         "name": "Resend (gửi biểu mẫu liên hệ)",
@@ -1956,6 +1962,197 @@
         "name": "UNICEF — Child Safeguarding Toolkit for Business",
         "desc": "Hướng dẫn thực tế để đánh giá rủi ro, phân công trách nhiệm và xử lý các mối lo ngại."
       }
+    }
+  },
+  "classJoin": {
+    "title": "Lớp của bạn",
+    "intro": "Nếu thầy cô đưa cho bạn mã lớp, bạn có thể tham gia lớp của họ trực tuyến. Khi đó thầy cô có thể thấy bạn đã học đến đâu.",
+    "open": "Tham gia lớp",
+    "codeLabel": "Mã lớp",
+    "codePlaceholder": "Ví dụ K7M-Q4P",
+    "codeHelper": "Thầy cô sẽ đưa mã này cho bạn.",
+    "find": "Tìm lớp",
+    "looking": "Đang tìm…",
+    "whatTeacherSees": "Nếu bạn tham gia, thầy cô sẽ thấy tên bạn, {name}, và những bài học, bước học bạn đã hoàn thành.",
+    "whatTheyDontSee": "Thầy cô không thấy những gì bạn viết, câu trả lời hay bản ghi âm của bạn. Bạn có thể ngừng chia sẻ bất cứ lúc nào.",
+    "join": "Tham gia lớp",
+    "cancel": "Để sau",
+    "sharing": "Thầy cô có thể thấy tên bạn và những bài học, bước học bạn đã hoàn thành. Không thấy bài viết hay bản ghi âm của bạn.",
+    "stopOpen": "Ngừng chia sẻ",
+    "stopQuestion": "Ngừng chia sẻ với lớp này? Thầy cô sẽ không thấy tiến độ của bạn nữa, và dữ liệu sẽ bị xóa khỏi máy chủ của Thinkerwell. Bài làm của bạn vẫn ở trên thiết bị này.",
+    "stop": "Ngừng chia sẻ",
+    "keep": "Tiếp tục chia sẻ",
+    "ended": "Bạn không còn ở lớp {className} nữa. Thầy cô đã đưa bạn ra khỏi lớp, hoặc lớp đã đóng. Bài làm của bạn vẫn ở trên thiết bị này.",
+    "endedOk": "OK",
+    "problem": {
+      "bad-code": "Mã lớp có sáu chữ cái và chữ số, như K7M-Q4P.",
+      "not-found": "Không tìm thấy lớp đó. Hãy kiểm tra lại mã với thầy cô.",
+      "offline": "Bạn đang ngoại tuyến. Hãy thử lại khi có internet.",
+      "not-configured": "Lớp học trực tuyến chưa được bật. Bài làm của bạn vẫn được lưu trên thiết bị này.",
+      "too-many": "Thử quá nhiều lần. Đợi một phút rồi thử lại.",
+      "wrong-key": "Đã có lỗi. Hãy thử lại.",
+      "failed": "Đã có lỗi. Hãy thử lại."
+    }
+  },
+  "classViews": {
+    "common": {
+      "loading": "Đang tải…",
+      "retry": "Thử lại",
+      "refresh": "Làm mới",
+      "copy": "Sao chép",
+      "copied": "Đã sao chép",
+      "whatYouSee": "Bạn thấy tên từng người học, những bài học và bước học họ đã hoàn thành, và khi nào. Không thấy bài viết, câu trả lời, điểm hay bản ghi âm của họ.",
+      "keepPrivate": "Hãy giữ kín đường link của trang này: ai có link cũng xem được trang này."
+    },
+    "problem": {
+      "noKey": "Trang này chỉ mở được bằng đường link riêng của nó. Hãy dùng đường link đã được gửi cho bạn.",
+      "wrong-key": "Đường link này không còn dùng được. Hãy xin một đường link mới.",
+      "offline": "Bạn đang ngoại tuyến. Trang này cần internet.",
+      "not-configured": "Lớp học trực tuyến chưa được bật.",
+      "not-found": "Mục đó không còn ở đây nữa.",
+      "too-many": "Thử quá nhiều lần. Đợi một phút rồi thử lại.",
+      "failed": "Đã có lỗi. Hãy thử lại."
+    },
+    "levels": {
+      "standard": "Tiêu chuẩn",
+      "simpler": "Đơn giản hơn"
+    },
+    "teacher": {
+      "eyebrow": "Lớp học trực tuyến",
+      "pageTitle": "Lớp của bạn"
+    },
+    "class": {
+      "codeLabel": "Mã lớp",
+      "codeHelp": "Người học tham gia từ Trang chủ của họ: \"Lớp của bạn\", rồi \"Tham gia lớp\".",
+      "closedNote": "Lớp này đã đóng. Không ai tham gia thêm được nữa, và người học của lớp đã ngừng chia sẻ.",
+      "learnersLabel": {
+        "other": "người học"
+      },
+      "activeLabel": {
+        "other": "hoạt động tuần này"
+      },
+      "finishedLabel": {
+        "other": "bài học đã hoàn thành"
+      },
+      "empty": "Chưa có ai tham gia. Hãy đưa mã lớp cho người học.",
+      "courseLabel": "Khóa học",
+      "allCourses": "Tất cả khóa học"
+    },
+    "learner": {
+      "anonymous": "Người học {number}",
+      "lastActive": "Hoạt động gần nhất {date}",
+      "notStarted": "Chưa bắt đầu",
+      "finished": {
+        "other": "Đã hoàn thành {done} trên {count} bài học"
+      },
+      "working": "Đang học Bài {number}: {title} · {stage}",
+      "details": "Thêm về {name}",
+      "joined": "Tham gia ngày {date}",
+      "language": "Ngôn ngữ: {language}",
+      "level": "Mức đọc: {level}",
+      "sectionCount": "{done} trên {count}",
+      "checkTries": {
+        "other": "đã làm bài kiểm tra phần {count} lần"
+      },
+      "remove": "Đưa ra khỏi lớp",
+      "removeQuestion": "Đưa {name} ra khỏi lớp này? Tiến độ của họ sẽ bị xóa khỏi máy chủ của Thinkerwell. Bài làm của họ vẫn ở trên thiết bị của họ.",
+      "removeConfirm": "Đưa ra",
+      "removeCancel": "Giữ lại"
+    },
+    "program": {
+      "eyebrow": "Tổ chức",
+      "pageTitle": "Các lớp của bạn",
+      "classesTitle": "Các lớp",
+      "noClasses": "Chưa có lớp nào.",
+      "code": "Mã {code}",
+      "closed": "Đã đóng",
+      "classStats": "Người học: {learners} · Hoạt động tuần này: {active} · Bài học đã hoàn thành: {finished}",
+      "open": "Mở",
+      "openLabel": "Mở {name}",
+      "back": "Quay lại {name}",
+      "addTitle": "Thêm lớp",
+      "nameLabel": "Tên lớp",
+      "namePlaceholder": "Ví dụ Nhóm buổi sáng",
+      "nameInvalid": "Hãy đặt tên lớp, tối đa 80 ký tự.",
+      "add": "Thêm lớp",
+      "adding": "Đang thêm…",
+      "created": "{name} đã sẵn sàng.",
+      "teacherLink": "Đường link cho giáo viên",
+      "teacherLinkHelp": "Gửi đường link này cho giáo viên của lớp. Link chỉ hiện lúc này. Nếu bị mất, hãy tạo link mới.",
+      "manageTitle": "Quản lý lớp này",
+      "newLink": "Link giáo viên mới",
+      "newLinkHelp": "Link giáo viên mới sẽ làm link cũ không dùng được nữa.",
+      "rename": "Đổi tên",
+      "renameSave": "Lưu tên",
+      "close": "Đóng lớp",
+      "reopen": "Mở lại lớp",
+      "closeHelp": "Lớp đã đóng không nhận thêm ai, và người học của lớp ngừng chia sẻ."
+    },
+    "admin": {
+      "eyebrow": "Thinkerwell",
+      "pageTitle": "Bảng điều khiển quản trị",
+      "intro": "Lớp học trực tuyến được dùng như thế nào, ở mọi tổ chức. Người học được đánh số, không bao giờ hiện tên.",
+      "generated": "Cập nhật {time}",
+      "totalsTitle": "Tổng số",
+      "totals": {
+        "learners": "Người học",
+        "active7": "Hoạt động trong 7 ngày qua",
+        "active30": "Hoạt động trong 30 ngày qua",
+        "orgs": "Tổ chức",
+        "classes": "Lớp",
+        "started": "Bài học đã bắt đầu",
+        "finished": "Bài học đã hoàn thành",
+        "rate": "Hoàn thành trên số đã bắt đầu",
+        "perLearner": "Bài học hoàn thành trên mỗi người học",
+        "stages": "Bước đã hoàn thành",
+        "checks": "Lượt làm bài kiểm tra phần"
+      },
+      "weeksTitle": "12 tuần qua",
+      "weeksTable": "Các con số, theo từng tuần",
+      "weeks": {
+        "week": "Tuần bắt đầu",
+        "active": "Người học hoạt động",
+        "newLearners": "Người học mới",
+        "finished": "Bài học đã hoàn thành"
+      },
+      "coursesTitle": "Theo khóa học",
+      "course": "Khóa học",
+      "languagesTitle": "Theo ngôn ngữ",
+      "levelsTitle": "Theo mức đọc",
+      "bandsTitle": "Bài học hoàn thành trên mỗi người học",
+      "band": "{band} bài học",
+      "stagesTitle": "Các bước đã đạt tới",
+      "stagesHelp": "Trong tất cả bài học người học đã mở, bao nhiêu bài đạt tới từng bước. Chỉ những bài học tiếng Anh có video mới có bước Xem.",
+      "opened": "Đã mở",
+      "retentionTitle": "Quay lại",
+      "retention": {
+        "other": "{returned} trên {count} người học tham gia từ 2 đến 12 tuần trước đã quay lại một tuần hoặc lâu hơn sau khi tham gia."
+      },
+      "retentionEmpty": "Chưa có ai tham gia từ 2 đến 12 tuần trước.",
+      "dropTitle": "Những bài học hay bị bỏ dở nhất",
+      "dropHelp": "Những bài học có ít nhất ba người học đã mở, bài hay bị bỏ dở nhất đứng đầu.",
+      "dropEmpty": "Chưa có đủ bài học được mở.",
+      "lesson": "Bài học",
+      "lessonName": "{course}, Bài {number}: {title}",
+      "notFinished": "Chưa hoàn thành",
+      "nothingYet": "Chưa có gì.",
+      "orgsTitle": "Tổ chức",
+      "orgsEmpty": "Chưa có tổ chức nào.",
+      "orgStats": "Lớp: {classes} · Người học: {learners} · Hoạt động tuần này: {active} · Bài học đã hoàn thành: {finished}",
+      "viewClasses": "Xem các lớp",
+      "newOrgLink": "Link mới",
+      "switchOff": "Tắt",
+      "switchOn": "Bật",
+      "switchedOff": "Đã tắt",
+      "switchOffHelp": "Khi bị tắt, các đường link của tổ chức đó không dùng được và người học ngừng chia sẻ. Link mới sẽ làm link cũ không dùng được nữa.",
+      "orgName": "Tên tổ chức",
+      "orgNameInvalid": "Hãy đặt tên tổ chức, tối đa 80 ký tự.",
+      "agreementNote": "Chỉ thêm một tổ chức khi tổ chức đó đã đồng ý dùng lớp học trực tuyến.",
+      "addOrg": "Thêm tổ chức",
+      "orgLink": "Đường link của {name}",
+      "orgLinkHelp": "Gửi đường link này cho người phụ trách tổ chức. Link chỉ hiện lúc này. Nếu bị mất, hãy tạo link mới.",
+      "backToDashboard": "Quay lại bảng điều khiển",
+      "anonymousNote": "Người học được đánh số theo thứ tự tham gia. Tên của họ không bao giờ được gửi tới đây."
     }
   }
 }

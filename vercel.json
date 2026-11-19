@@ -8,7 +8,8 @@
   "functions": {
     "api/events.ts": { "maxDuration": 10 },
     "api/export.ts": { "maxDuration": 60 },
-    "api/contact.ts": { "maxDuration": 10 }
+    "api/contact.ts": { "maxDuration": 10 },
+    "api/classes.ts": { "maxDuration": 15 }
   },
   "redirects": [
     { "source": "/:path(.*)", "has": [{ "type": "host", "value": "thinkerwell.vercel.app" }], "destination": "https://thinkerwell.app/:path", "permanent": true },

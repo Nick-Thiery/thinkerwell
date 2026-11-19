@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { Link, NavigationType, Outlet, ScrollRestoration, useLocation, useNavigate, useNavigationType } from 'react-router';
+import { ClassSyncGate } from '../classes/ClassSyncGate';
 import { DsLinkProvider, Icon, SiteHeader, StatusBanner } from '../components/ds';
 import { I18nProvider, readDevDirection, readDevLocale, readyLocales, useI18n, type Direction } from '../i18n';
 import { ConnectionBanner, UpdateBanner } from '../offline';
@@ -38,6 +39,7 @@ export function AppLayout() {
   return (
     <LearnerSessionProvider forceLookAround={forceLookAround}>
       <MeasurementGate />
+      <ClassSyncGate />
       <LanguageForSession devLocale={devLocale} devDir={devDir}>
         <DsLinkProvider link={RouterDsLink}>
           <Shell devRtl={devDir === 'rtl'} devLocale={devLocale} />

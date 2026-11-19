@@ -1,6 +1,7 @@
 import { readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { expect, type Page } from '@playwright/test';
+import { FAKE_KEY, standInForClasses } from './classesFake';
 import { finishLessonViaReflect, L10, nextButton } from './lessonHelpers';
 import { uiPattern, uiText, type TestLocale, type UiParams, type UiText } from './uiText';
 import { fakeVoices } from './voiceFake';
@@ -98,6 +99,18 @@ export const pageTour: TourStop[] = [
       await page.getByLabel(ui('pages.home.newLearner.nameLabel')).fill(TOUR_LEARNER);
       await page.getByRole('button', { name: ui('pages.home.newLearner.submit') }).click();
       await expect(page.getByRole('heading', { level: 1, name: ui('pages.home.dashboard.greeting', { name: TOUR_LEARNER }) })).toBeVisible();
+    },
+  },
+  {
+    // Joining an online class (docs/notes/online-classes.md), against a stand-in for /api/classes: the
+    // confirmation that says what the teacher will see. Nothing is joined, so nothing is sent.
+    name: 'learner home: joining a class',
+    go: async (page, { ui }) => {
+      await standInForClasses(page);
+      await page.getByRole('button', { name: ui('classJoin.open') }).click();
+      await page.getByLabel(ui('classJoin.codeLabel')).fill('K7M-Q4P');
+      await page.getByRole('button', { name: ui('classJoin.find') }).click();
+      await expect(page.getByRole('button', { name: ui('classJoin.join') })).toBeVisible();
     },
   },
   {
@@ -395,6 +408,31 @@ export const pageTour: TourStop[] = [
     go: async (page, { ui }) => {
       await page.locator('.tw-site-footer').getByRole('link', { name: ui('footer.organisations') }).click();
       await expect(page.locator('h1')).toHaveText(ui('pages.organisations.title'));
+    },
+  },
+  {
+    // Online classes' views, each opened with its secret link, against a stand-in for /api/classes.
+    name: 'class view: a teacher\'s class, a learner opened',
+    go: async (page, { ui }) => {
+      await standInForClasses(page);
+      await page.goto(`/teach#key=${FAKE_KEY}`);
+      await expect(page.locator('.tw-cv-learner').first()).toBeVisible();
+      await page.locator('.tw-cv-details summary').first().click();
+      await expect(page.getByRole('button', { name: ui('classViews.learner.remove') }).first()).toBeVisible();
+    },
+  },
+  {
+    name: 'class view: an organisation\'s classes',
+    go: async (page, { ui }) => {
+      await page.goto(`/program#key=${FAKE_KEY}`);
+      await expect(page.getByRole('heading', { name: ui('classViews.program.addTitle') })).toBeVisible();
+    },
+  },
+  {
+    name: 'class view: the admin dashboard',
+    go: async (page, { ui }) => {
+      await page.goto(`/admin#key=${FAKE_KEY}`);
+      await expect(page.getByRole('heading', { name: ui('classViews.admin.orgsTitle') })).toBeVisible();
     },
   },
   {

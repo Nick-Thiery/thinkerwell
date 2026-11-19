@@ -14,6 +14,8 @@ import { courseCount, homeTarget, latestWriting, platformCount, type PlatformCou
 
 // The offline count reads what is kept on the device (the Cache API, the course list): loaded after the first paint, so a first visit doesn't download it.
 const OfflineStatus = lazy(() => import('./OfflineStatus'));
+// Joining an online class (docs/notes/online-classes.md), with its own words: loaded after the first paint too.
+const ClassCard = lazy(() => import('../../classes/ClassCard'));
 
 const MASCOT_SRC = '/images/thinkerwell-mascot-transparent.png';
 
@@ -148,6 +150,9 @@ export function LearnerDashboard({ learner, progress }: LearnerDashboardProps) {
         </section>
         <aside className="tw-dash-aside">
           <JournalPreview courses={courses} progress={progress} courseName={courseName} />
+          <Suspense fallback={null}>
+            <ClassCard learner={learner} />
+          </Suspense>
           {hasLanguageChoice ? <DashboardLanguage /> : null}
           <Suspense fallback={null}>
             <OfflineStatus courses={courses} />

@@ -199,6 +199,8 @@ The same-origin POST is covered by the existing `connect-src 'self'`: **no host 
 | Request | When |
 | --- | --- |
 | `POST /api/contact` (this site only, `application/json`) | Once per press of "Send enquiry", after the page has checked the fields: the topic, the name, one reply address (email or WhatsApp number), the message, and the empty hidden field. The function emails them to the team through Resend (`api.resend.com`, server to server: the browser never talks to Resend). Answers 503 until `RESEND_API_KEY` and `CONTACT_FROM_EMAIL` are set |
+| `GET /api/classes?action=lookup` and `POST /api/classes` (this site only, `application/json`, no cookies) | Online classes (`docs/notes/online-classes.md`), only on a device where a learner typed a class code: the lookup sends the code alone; after the learner taps "Join class", a sync about 3 seconds after the app opens, every 2 minutes while it is on screen and something changed, when it comes back online and as the page is hidden: the name on the device, language, reading level, lessons' finished steps and times, section-check tries, active days, a random id and secret. Never writing, answers, scores or recordings. Answers 503 until `DATABASE_URL` and `CLASSES_ADMIN_TOKEN` are set |
+| `GET`/`POST /api/classes` with `Authorization: Bearer <key>` (this site only) | Only on `/teach`, `/program` and `/admin`, opened with their secret link (the key is in the address's fragment, which no server sees): the class, the organisation's classes or the admin numbers, and the changes made on those pages |
 
 Same origin again: **no host was added to the Content-Security-Policy**.
 

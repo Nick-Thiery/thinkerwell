@@ -39,6 +39,13 @@ export const PREVIEW_ASSET_DIR = 'assets/preview/';
 
 /** The reviewers' page for local-language Watch videos: kept out of everyone's download like a preview course. */
 export const VIDEO_REVIEW = 'video-review';
+/**
+ * The class views (/teach, /program, /admin; src/courses/class-views/,
+ * docs/notes/online-classes.md): pages for teachers, organisations and
+ * Thinkerwell that need the internet anyway, kept out of everyone's download
+ * like a preview course.
+ */
+export const CLASS_VIEWS = 'class-views';
 /** `import data from 'virtual:thinkerwell/video-review'`: the candidates the reviewers' page shows (vite.config.ts). */
 export const VIDEO_REVIEW_MODULE = 'virtual:thinkerwell/video-review';
 /** The resolved id of that module. */
@@ -48,6 +55,9 @@ export const VIDEO_REVIEW_ID = '\0tw-video-review';
 export const COURSE_MESSAGES_PREFIX = 'virtual:thinkerwell/course-messages/';
 /** The resolved id of that module (rolldown's convention for a virtual module). */
 export const COURSE_MESSAGES_ID = '\0tw-course-messages:';
+
+/** The resolved id of the class views' words (the `classViews` group, src/i18n/lazyGroups.ts). */
+export const CLASS_VIEWS_MESSAGES_ID = '\0tw-messages:classViews';
 
 /** The resolved id of the words every preview course shares (the `previewCourse` group, src/i18n/lazyGroups.ts). */
 export const PREVIEW_KIT_MESSAGES_ID = '\0tw-messages:previewCourse';
@@ -70,6 +80,7 @@ export function isPreviewModule(moduleId: string): boolean {
 export function previewCourseOfModule(moduleId: string): string | null {
   const id = moduleId.replace(/\\/g, '/');
   if (id.includes(`/src/courses/${VIDEO_REVIEW}/`) || id === VIDEO_REVIEW_ID) return VIDEO_REVIEW;
+  if (id.includes(`/src/courses/${CLASS_VIEWS}/`) || id === CLASS_VIEWS_MESSAGES_ID) return CLASS_VIEWS;
   for (const course of PREVIEW_COURSES) {
     if (id.includes(`/src/courses/${course.id}/`) || id.includes(`/content/${course.dir}/`) || id === `${COURSE_MESSAGES_ID}${course.id}`) {
       return course.id;
@@ -111,7 +122,7 @@ export const COURSE_FILES_FILE = 'course-files.json';
  * The list of the files a device keeps to use each course offline, from the
  * built files under assets/preview/ (src/offline/courseCache.ts): what every
  * course shares (the door and kit, their words and stylesheet) and each
- * course's own folder. The reviewers' page is left out. A file in a folder
+ * course's own folder. The reviewers' page and the class views are left out. A file in a folder
  * that is no course stops the build, so nothing is quietly left out of an
  * offline copy.
  */
@@ -121,7 +132,7 @@ export function courseFilesManifest(files: ReadonlyArray<{ fileName: string; byt
     if (!fileName.startsWith(PREVIEW_ASSET_DIR)) continue;
     const rest = fileName.slice(PREVIEW_ASSET_DIR.length);
     const folder = rest.includes('/') ? rest.slice(0, rest.indexOf('/')) : null;
-    if (folder === VIDEO_REVIEW) continue;
+    if (folder === VIDEO_REVIEW || folder === CLASS_VIEWS) continue;
     const entry = { url: `/${fileName}`, bytes };
     if (folder === null) manifest.shared.push(entry);
     else if (manifest.courses[folder]) manifest.courses[folder].push(entry);
