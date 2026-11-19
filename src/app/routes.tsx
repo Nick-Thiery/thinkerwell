@@ -138,6 +138,12 @@ export const routes: RouteObject[] = [
       // For the people who review the local-language Watch videos (src/courses/video-review/): never linked,
       // and like a preview course never stored offline or downloaded by anyone else.
       { path: 'review/videos', ...page(previewPages, (m) => m.VideoReviewRoute) },
+      // Online classes (docs/notes/online-classes.md): a teacher's class, an organisation's classes and
+      // Thinkerwell's admin dashboard, each opened with its secret link (#key=…). Never linked from the site,
+      // never stored offline, and nothing is fetched without the key.
+      { path: 'teach', ...page(previewPages, (m) => m.TeacherRoute) },
+      { path: 'program', ...page(previewPages, (m) => m.ProgramRoute) },
+      { path: 'admin', ...page(previewPages, (m) => m.AdminRoute) },
       // Old Base44 paths.
       { path: 'onboarding', element: <Navigate replace to="/" /> },
       { path: 'courses', element: <Navigate replace to="/course" /> },

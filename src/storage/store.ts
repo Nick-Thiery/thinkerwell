@@ -103,6 +103,12 @@ export interface ThinkerwellStore {
   getSettings(): Promise<DeviceSettings>;
   /** Merges the patch in (partner options merged key by key) and returns the result. */
   updateSettings(patch: SettingsPatch): Promise<DeviceSettings>;
+  /**
+   * Read-modify-write in one transaction: `change` gets the saved settings and
+   * returns the patch to merge in; it must not be async. For settings two
+   * parts of the app may change at once (online classes, src/classes/).
+   */
+  changeSettings(change: (current: DeviceSettings) => SettingsPatch): Promise<DeviceSettings>;
 
   // Device values
   /** The current learner, or null if none is set or that learner was removed. */
@@ -455,6 +461,15 @@ function createStore(db: IDBPDatabase<ThinkerwellDB>): ThinkerwellStore {
       const tx = db.transaction('settings', 'readwrite');
       const current = mergeSettings(DEFAULT_SETTINGS, await tx.store.get(SETTINGS_KEY));
       const next = mergeSettings(current, patch);
+      await Promise.all([tx.store.put(next, SETTINGS_KEY), tx.done]);
+      announceSettings(next);
+      return next;
+    },
+
+    async changeSettings(change) {
+      const tx = db.transaction('settings', 'readwrite');
+      const current = mergeSettings(DEFAULT_SETTINGS, await tx.store.get(SETTINGS_KEY));
+      const next = mergeSettings(current, change(current));
       await Promise.all([tx.store.put(next, SETTINGS_KEY), tx.done]);
       announceSettings(next);
       return next;

@@ -1872,7 +1872,7 @@
     "learnersBody": "Use a nickname, avoid sharing sensitive personal information, and remember that others using your device may see your saved work. You can skip uncomfortable questions and ask a trusted adult for help.",
     "s1": {
       "title": "1. Information and privacy",
-      "p1": "Learner profiles, preferences, progress and journal responses are saved in the browser on the device used. Shared-device profiles should not be treated as password-protected accounts. Avoid entering addresses, contact details, identity documents or sensitive family information into learning activities.",
+      "p1": "Learner profiles, preferences, progress and journal responses are saved in the browser on the device used. Shared-device profiles should not be treated as password-protected accounts. Avoid entering addresses, contact details, identity documents or sensitive family information into learning activities. If a learner joins an online class with a code from their teacher, part of their progress is shared with that class (section 3).",
       "p2": "If you contact us, we receive the information you choose to provide, such as your email address and message. Website hosting and external services may also process technical information, including IP addresses and browser details. Thinkerwell uses information only for the purposes described in this policy."
     },
     "s2": {
@@ -1891,7 +1891,7 @@
       "whoIntro": "These are the only services that receive information from using Thinkerwell. Thinkerwell does not set cookies, and has no ads or analytics from other companies.",
       "retention": "Thinkerwell’s own server keeps nothing from the contact form. Copies held by the email services are kept only as long as needed to answer, then deleted. Hosting records are kept by the hosting provider as its policy describes.",
       "deviceTitle": "Handled on the device, not sent to a service",
-      "device1": "Saved work. Profiles, preferences, progress, journal responses and the latest speaking recording stay in the browser’s storage on the device (IndexedDB, with a few small settings in local storage). Nothing is uploaded.",
+      "device1": "Saved work. Profiles, preferences, progress, journal responses and the latest speaking recording stay in the browser’s storage on the device (IndexedDB, with a few small settings in local storage). Nothing is uploaded, unless a learner joins an online class (above).",
       "device2": "Listen. It reads lessons aloud with recordings delivered with the site, or with a voice already on the device. No lesson text or learner writing is sent to a voice service.",
       "device3": "Record yourself. The microphone is used only when a learner taps Start. The clip stays on the device and is never uploaded.",
       "device4": "Fonts, pictures and audio. They come from Thinkerwell’s own servers.",
@@ -1907,6 +1907,13 @@
         "gets": "Like any web server, it sees the IP address, browser and device details, and the pages requested.",
         "where": "Vercel runs servers in several countries, so this may be processed outside the country you are in.",
         "link": "Vercel privacy policy"
+      },
+      "classes": {
+        "name": "Thinkerwell’s online classes (only if your organisation uses them)",
+        "purpose": "Lets a teacher and their organisation see how far each learner in their class has got. It is off unless an organisation has agreed it with Thinkerwell, and a learner joins only by entering their class code and tapping Join class.",
+        "gets": "For each learner who joins: the name they use on the device (it can be a nickname), their language and reading level, which lessons and steps they finished and when, how many times they tried each section check, and the days they worked. Never their writing, answers, scores or recordings. Thinkerwell’s own view shows these numbers without names. Stopping sharing, or a teacher taking a learner out of the class, deletes it.",
+        "where": "Kept in a Neon database in Singapore, which Thinkerwell uses through its website hosting.",
+        "link": "Neon privacy policy"
       },
       "resend": {
         "name": "Resend (contact form delivery)",
@@ -1981,6 +1988,203 @@
         "name": "UNICEF — Child Safeguarding Toolkit for Business",
         "desc": "Practical guidance on assessing risks, assigning responsibilities and responding to concerns."
       }
+    }
+  },
+  "classJoin": {
+    "title": "Your class",
+    "intro": "If your teacher gave you a class code, you can join their class online. Then your teacher can see how far you've got.",
+    "open": "Join a class",
+    "codeLabel": "Class code",
+    "codePlaceholder": "For example K7M-Q4P",
+    "codeHelper": "Your teacher gives you this code.",
+    "find": "Find class",
+    "looking": "Finding…",
+    "whatTeacherSees": "If you join, your teacher sees your name, {name}, and which lessons and steps you finish.",
+    "whatTheyDontSee": "They don't see what you write, your answers or your recordings. You can stop sharing at any time.",
+    "join": "Join class",
+    "cancel": "Not now",
+    "sharing": "Your teacher can see your name and which lessons and steps you finish. Not your writing or recordings.",
+    "stopOpen": "Stop sharing",
+    "stopQuestion": "Stop sharing with this class? Your teacher won't see your progress any more, and it is deleted from Thinkerwell's server. Your work stays on this device.",
+    "stop": "Stop sharing",
+    "keep": "Keep sharing",
+    "ended": "You're no longer in {className}. Your teacher took you out of the class, or it closed. Your work is still on this device.",
+    "endedOk": "OK",
+    "problem": {
+      "bad-code": "A class code has six letters and numbers, like K7M-Q4P.",
+      "not-found": "We couldn't find that class. Check the code with your teacher.",
+      "offline": "You're offline. Try again when you have internet.",
+      "not-configured": "Online classes aren't switched on yet. Your work is still saved on this device.",
+      "too-many": "Too many tries. Wait a minute, then try again.",
+      "wrong-key": "Something went wrong. Try again.",
+      "failed": "Something went wrong. Try again."
+    }
+  },
+  "classViews": {
+    "common": {
+      "loading": "Loading…",
+      "retry": "Try again",
+      "refresh": "Refresh",
+      "copy": "Copy",
+      "copied": "Copied",
+      "whatYouSee": "You see each learner's name, which lessons and steps they finished, and when. Not their writing, answers, scores or recordings.",
+      "keepPrivate": "Keep this page's link private: anyone with it can see this page."
+    },
+    "problem": {
+      "noKey": "This page opens only with its own link. Use the link you were sent.",
+      "wrong-key": "This link doesn't work any more. Ask for a new one.",
+      "offline": "You're offline. This page needs the internet.",
+      "not-configured": "Online classes aren't switched on yet.",
+      "not-found": "That isn't here any more.",
+      "too-many": "Too many tries. Wait a minute, then try again.",
+      "failed": "Something went wrong. Try again."
+    },
+    "levels": {
+      "standard": "Standard",
+      "simpler": "Simpler"
+    },
+    "teacher": {
+      "eyebrow": "Online class",
+      "pageTitle": "Your class"
+    },
+    "class": {
+      "codeLabel": "Class code",
+      "codeHelp": "Learners join on their Home: \"Your class\", then \"Join a class\".",
+      "closedNote": "This class is closed. No one new can join, and its learners have stopped sharing.",
+      "learnersLabel": {
+        "one": "learner",
+        "other": "learners"
+      },
+      "activeLabel": {
+        "one": "active this week",
+        "other": "active this week"
+      },
+      "finishedLabel": {
+        "one": "lesson finished",
+        "other": "lessons finished"
+      },
+      "empty": "No one has joined yet. Give learners the class code.",
+      "courseLabel": "Course",
+      "allCourses": "All courses"
+    },
+    "learner": {
+      "anonymous": "Learner {number}",
+      "lastActive": "Last active {date}",
+      "notStarted": "Not started yet",
+      "finished": {
+        "one": "{done} of {count} lesson finished",
+        "other": "{done} of {count} lessons finished"
+      },
+      "working": "Working on Lesson {number}: {title} · {stage}",
+      "details": "More about {name}",
+      "joined": "Joined {date}",
+      "language": "Language: {language}",
+      "level": "Reading level: {level}",
+      "sectionCount": "{done} of {count}",
+      "checkTries": {
+        "one": "check tried once",
+        "other": "check tried {count} times"
+      },
+      "remove": "Take out of class",
+      "removeQuestion": "Take {name} out of this class? Their progress is deleted from Thinkerwell's server. Their work stays on their device.",
+      "removeConfirm": "Take out",
+      "removeCancel": "Keep"
+    },
+    "program": {
+      "eyebrow": "Organisation",
+      "pageTitle": "Your classes",
+      "classesTitle": "Classes",
+      "noClasses": "No classes yet.",
+      "code": "Code {code}",
+      "closed": "Closed",
+      "classStats": "Learners: {learners} · Active this week: {active} · Lessons finished: {finished}",
+      "open": "Open",
+      "openLabel": "Open {name}",
+      "back": "Back to {name}",
+      "addTitle": "Add a class",
+      "nameLabel": "Class name",
+      "namePlaceholder": "For example Morning group",
+      "nameInvalid": "Give the class a name of up to 80 characters.",
+      "add": "Add class",
+      "adding": "Adding…",
+      "created": "{name} is ready.",
+      "teacherLink": "Teacher's link",
+      "teacherLinkHelp": "Send this link to the class's teacher. It is shown only now. If it is lost, make a new one.",
+      "manageTitle": "Manage this class",
+      "newLink": "New teacher link",
+      "newLinkHelp": "A new teacher link stops the old one working.",
+      "rename": "Rename",
+      "renameSave": "Save name",
+      "close": "Close class",
+      "reopen": "Open class again",
+      "closeHelp": "A closed class takes no one new, and its learners stop sharing."
+    },
+    "admin": {
+      "eyebrow": "Thinkerwell",
+      "pageTitle": "Admin dashboard",
+      "intro": "How online classes are used, across every organisation. Learners are numbered, never named.",
+      "generated": "Updated {time}",
+      "totalsTitle": "Totals",
+      "totals": {
+        "learners": "Learners",
+        "active7": "Active in the last 7 days",
+        "active30": "Active in the last 30 days",
+        "orgs": "Organisations",
+        "classes": "Classes",
+        "started": "Lessons started",
+        "finished": "Lessons finished",
+        "rate": "Finished of started",
+        "perLearner": "Lessons finished per learner",
+        "stages": "Steps finished",
+        "checks": "Section check tries"
+      },
+      "weeksTitle": "The last 12 weeks",
+      "weeksTable": "The numbers, week by week",
+      "weeks": {
+        "week": "Week of",
+        "active": "Active learners",
+        "newLearners": "New learners",
+        "finished": "Lessons finished"
+      },
+      "coursesTitle": "By course",
+      "course": "Course",
+      "languagesTitle": "By language",
+      "levelsTitle": "By reading level",
+      "bandsTitle": "Lessons finished per learner",
+      "band": "{band} lessons",
+      "stagesTitle": "Steps reached",
+      "stagesHelp": "Of all the lessons learners opened, how many reached each step. Only English lessons with a video have Watch.",
+      "opened": "Opened",
+      "retentionTitle": "Coming back",
+      "retention": {
+        "one": "{returned} of {count} learner who joined 2 to 12 weeks ago came back a week or more after joining.",
+        "other": "{returned} of {count} learners who joined 2 to 12 weeks ago came back a week or more after joining."
+      },
+      "retentionEmpty": "No one joined 2 to 12 weeks ago yet.",
+      "dropTitle": "Lessons most often left unfinished",
+      "dropHelp": "Lessons at least three learners opened, most often left unfinished first.",
+      "dropEmpty": "Not enough lessons opened yet.",
+      "lesson": "Lesson",
+      "lessonName": "{course}, Lesson {number}: {title}",
+      "notFinished": "Not finished",
+      "nothingYet": "Nothing yet.",
+      "orgsTitle": "Organisations",
+      "orgsEmpty": "No organisations yet.",
+      "orgStats": "Classes: {classes} · Learners: {learners} · Active this week: {active} · Lessons finished: {finished}",
+      "viewClasses": "View classes",
+      "newOrgLink": "New link",
+      "switchOff": "Switch off",
+      "switchOn": "Switch on",
+      "switchedOff": "Switched off",
+      "switchOffHelp": "Switched off, an organisation's links stop working and its learners stop sharing. A new link stops the old one working.",
+      "orgName": "Organisation name",
+      "orgNameInvalid": "Give the organisation a name of up to 80 characters.",
+      "agreementNote": "Add an organisation only once it has agreed to use online classes.",
+      "addOrg": "Add organisation",
+      "orgLink": "{name}'s link",
+      "orgLinkHelp": "Send this link to the organisation's lead. It is shown only now. If it is lost, make a new one.",
+      "backToDashboard": "Back to the dashboard",
+      "anonymousNote": "Learners are numbered in the order they joined. Their names are never sent here."
     }
   }
 }

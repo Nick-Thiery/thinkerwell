@@ -25,6 +25,11 @@ export const LAZY_MESSAGE_GROUPS = [
   'aboutPage',
   // The reviewers' page for local-language Watch videos (src/courses/video-review/, /review/videos): built into assets/preview/, never precached.
   'videoReview',
+  // Joining an online class, on the learner's Home (src/classes/ClassCard.tsx), loaded after the first paint.
+  'classJoin',
+  // The class views for teachers, organisations and Thinkerwell (src/courses/class-views/, /teach, /program, /admin):
+  // built into assets/preview/class-views/, never precached.
+  'classViews',
   // The contact form (src/pages/contact/ContactPage.tsx, /contact), in the Educators chunk.
   'contact',
   // Privacy & Child Safeguarding (src/pages/privacy/PrivacyPage.tsx, /privacy-and-safeguarding), in the Educators chunk.

@@ -1,3 +1,4 @@
+import { FAKE_TYPED } from './classesFake';
 import { expect, test, type Page } from '@playwright/test';
 import { FINISH_ANSWER, L10, recordRequests } from './lessonHelpers';
 import { overflowReport } from './overflow';
@@ -19,7 +20,8 @@ import type { TestLocale } from './uiText';
 // (src/i18n/devLocale.ts). Tagged @own-size: they set their own size.
 
 /** Text the tour's learner typed, or their name: theirs, in whatever language. */
-const LEARNER_TEXT = [TOUR_LEARNER, TOUR_WRITING, TOUR_REFLECTION, FINISH_ANSWER];
+// What people typed: the tour's learner and writing, and the names and code the online-class stand-in shows.
+const LEARNER_TEXT = [TOUR_LEARNER, TOUR_WRITING, TOUR_REFLECTION, FINISH_ANSWER, ...FAKE_TYPED];
 
 /**
  * Interface text on screen that isn't pseudo-localised: visible text, and

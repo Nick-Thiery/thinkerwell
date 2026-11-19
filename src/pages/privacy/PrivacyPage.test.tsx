@@ -35,7 +35,7 @@ describe('Privacy & Child Safeguarding', () => {
 
   it('shows fixed dates, never today’s', () => {
     renderPage();
-    expect(screen.getByText('Effective November 11, 2026. Last updated November 11, 2026.')).toBeInTheDocument();
+    expect(screen.getByText('Effective November 11, 2026. Last updated November 19, 2026.')).toBeInTheDocument();
   });
 
   it('labels the usage statistics as planned, says none are collected yet, and keeps coded data apart from them', () => {
