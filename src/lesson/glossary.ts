@@ -63,7 +63,10 @@ function buildMatcher(
   });
   if (byForm.size === 0) return null;
   const alternatives = [...byForm.keys()].sort((a, b) => b.length - a.length).map(escapeRegExp);
-  const regex = new RegExp(`(?<!${WORD_CHAR})(?:${alternatives.join('|')})(?!${WORD_CHAR})`, 'giu');
+  // Thai is written without spaces between words, so a Thai form is found anywhere in the text.
+  const boundary = (form: string) =>
+    /[\u0E00-\u0E7F]/.test(form) ? form : `(?<!${WORD_CHAR})${form}(?!${WORD_CHAR})`;
+  const regex = new RegExp(`(?:${alternatives.map(boundary).join('|')})`, 'giu');
   return { regex, byForm };
 }
 

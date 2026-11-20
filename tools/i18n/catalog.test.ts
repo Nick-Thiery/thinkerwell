@@ -36,7 +36,7 @@ describe('the real message files', () => {
   });
 
   it('has the Indonesian and Malay translations, and the Vietnamese preview', () => {
-    expect(translatedCodes()).toEqual(['id', 'ms', 'vi']);
+    expect(translatedCodes()).toEqual(['id', 'ms', 'th', 'vi']);
   });
 });
 

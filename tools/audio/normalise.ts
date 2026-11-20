@@ -313,10 +313,29 @@ function normaliseEnglish(text: string): string {
     .trim();
 }
 
-/** What the recording voice for `lang` ("en", "id", "ms", "vi") is given for `text`. */
+/**
+ * Thai: the voice's own preprocessing (PyThaiTTS) turns numbers into words and expands ๆ; here only what
+ * it would read wrongly: a thousands comma goes ("1,000", which it reads digit by digit), ค.ศ. and พ.ศ. are said in
+ * full, a range's dash ("1400–1499") is "ถึง", "&" is "และ", "%" is "เปอร์เซ็นต์".
+ */
+function normaliseThai(text: string): string {
+  return text
+    .normalize('NFC')
+    .replace(/(\d),(?=\d{3}(?!\d))/g, '$1')
+    .replace(/ค\.ศ\./g, 'คริสต์ศักราช')
+    .replace(/พ\.ศ\./g, 'พุทธศักราช')
+    .replace(/(\d)\s*[–-]\s*(?=\d)/g, '$1 ถึง ')
+    .replace(/\s*&\s*/g, ' และ ')
+    .replace(/(\d)\s*%/g, '$1 เปอร์เซ็นต์')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/** What the recording voice for `lang` ("en", "id", "ms", "vi", "th") is given for `text`. */
 export function speechInput(text: string, lang: string): string {
   if (lang === 'id') return normaliseIndonesian(text);
   if (lang === 'ms') return normaliseMalay(text);
   if (lang === 'vi') return normaliseVietnamese(text);
+  if (lang === 'th') return normaliseThai(text);
   return normaliseEnglish(text);
 }

@@ -30,9 +30,11 @@ export type Direction = 'ltr' | 'rtl';
  * Arabic (src/i18n/fonts/arabic.css), loaded only while such a language is
  * in use. 'vietnamese' replaces the Latin letters with Be Vietnam Pro
  * (src/i18n/fonts/vietnamese.css), because the site's two fonts lack most of
- * Vietnamese's letters (ơ, ư and every dotted or hooked vowel).
+ * Vietnamese's letters (ơ, ư and every dotted or hooked vowel). 'thai' adds
+ * Sarabun's Thai letters to the site's two families (src/i18n/fonts/thai.css),
+ * the way 'arabic' does.
  */
-export type FontKey = 'latin' | 'arabic' | 'vietnamese';
+export type FontKey = 'latin' | 'arabic' | 'vietnamese' | 'thai';
 
 export interface LocaleDefinition {
   /** BCP 47 tag: <html lang>, the message file's name and the Intl locale. */
@@ -104,6 +106,10 @@ export const LOCALES: readonly LocaleDefinition[] = [
   // recordings of all four courses (VieNeu-TTS v3 Turbo, 18 November 2026:
   // docs/notes/recorded-audio.md, "Vietnamese").
   { code: 'vi', englishName: 'Vietnamese', endonym: 'Tiếng Việt', dir: 'ltr', font: 'vietnamese', ready: true, content: true, speechLang: 'vi-VN' },
+  // Thai: drafted by AI and back-checked by a second AI pass (November 2026,
+  // Nick's instruction, docs/translation/th/), offered while native-speaker
+  // review is in progress, like Vietnamese.
+  { code: 'th', englishName: 'Thai', endonym: 'ไทย', dir: 'ltr', font: 'thai', ready: true, content: true, speechLang: 'th-TH', recordings: false },
 ];
 
 /**

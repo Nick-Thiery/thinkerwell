@@ -38,7 +38,7 @@ describe('loadLocale', () => {
   });
 
   it('finds a message file for Indonesian and Malay, and Vietnamese', () => {
-    expect(messageFileCodes()).toEqual(['id', 'ms', 'vi']);
+    expect(messageFileCodes()).toEqual(['id', 'ms', 'th', 'vi']);
   });
 
   it("loads Indonesian's messages together with its translated lessons, section checks and pictures", async () => {

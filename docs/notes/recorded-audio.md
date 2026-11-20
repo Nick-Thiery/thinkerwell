@@ -206,6 +206,23 @@ Not tried here: VoxCPM2 (Apache-2.0) ran out of memory on an 8 GB machine; VieNe
 
 **Not done.** Not heard by a person in full: only checked by numbers (length against text, loudness, no clipped or silent piece; the `CHECK:` lines of the run). A native speaker should listen to a few parts of each course, names and numbers especially, with the translation review. The accent (Northern) is the preset's; whether it suits the learners is the reviewers' call.
 
+## Thai
+
+**Voice.** MakHam (`pythainlp/MakHamTTS`, Apache-2.0, pinned revision): Kokoro-82M, the model of the English voice, retrained for Thai by PyThaiNLP with FastThaiG2P's five-tone phonemes, run with onnxruntime on the CPU (`MakHam` in `scripts/audio/generate.py`, `VOICES["th"]`). The female voice (`newvoice_female`; `AUDIO_TH_VOICE=newvoice_male` for the male one). PyThaiTTS 1.0.0 (Apache-2.0) phonemises the text and turns numbers into words and expands ๆ before the voice reads it; `speechInput()` (`tools/audio/normalise.ts`) only drops thousands commas, says ค.ศ. and พ.ศ. in full and reads a range's dash, "&" and "%". It is deterministic (no sampling), so a piece sounds the same each time. Thai pieces are shorter than other languages' because Listen splits Thai at every space between Thai letters (a sentence or a clause, `src/speech/sentences.ts`); a piece too long for the model (510 phonemes) is split again at spaces or PyThaiNLP's words.
+
+**Choosing the voice (20 November 2026).** One Thai paragraph (Lesson 10's rivers), read clause by clause by each candidate on a two-core machine, loudness-matched, and transcribed by faster-whisper large-v3-turbo (letters misheard, CER; Thai has no spaces, so letters, not words):
+
+| Sample | Model and voice | Letters misheard | Notes |
+|---|---|---|---|
+| **A** | **MakHam (Kokoro Thai), female (chosen unless the team picks another)** | 9% | Apache-2.0; about 2 s a piece on two cores |
+| B | MakHam, male | 17% | |
+| C | MakHam Paradee (8M distilled, female) | 16% | very fast, a little flatter |
+| D | Meta MMS-TTS (`facebook/mms-tts-tha`) | 10–16% | CC BY-NC 4.0 like Indonesian and Malay; needs ำ decomposed and ๆ expanded |
+| E, F | VachanaTTS (MIT), female 2 and male 2 | 24%, 58% | female 1 and male 1 worse |
+| G | F5-TTS-THAI (CC BY 4.0), voice cloned from the model card's sample | 13–26% | most natural, but clones an unknown speaker and took 188 s for 16 s of speech on two cores (about 60 hours for every piece) |
+
+Not usable here: FastThaiG2P's own Kokoro release (GitHub, blocked from the recording machine), ThonburianTTS and KhanomTan 1.0 (non-commercial share-alike), Typhoon2-Audio (Llama licence), SiangTTS (VoxCPM2, too big for 8 GB). A voice cloned from a consenting Thai speaker's recording would be the next step up.
+
 ## Not done, or for later
 
 - **Not heard by a person in this branch.** The recordings were checked by numbers (length against text, loudness, no clipped or silent piece) and the approved samples' settings were used exactly; someone should listen to a few parts in each language, Indonesian numbers especially, before the pilot. Samples: `/tmp/tw-audio-samples/` on the build machine (not committed).

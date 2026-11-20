@@ -18,13 +18,13 @@ const fixture: LocaleDefinition[] = [
 ];
 
 describe('the language list', () => {
-  it('starts with English, and offers English, Indonesian, Malay and Vietnamese today', () => {
+  it('starts with English, and offers English, Indonesian, Malay, Vietnamese and Thai today', () => {
     expect(LOCALES[0]).toMatchObject({ code: 'en', dir: 'ltr', font: 'latin', ready: true });
-    expect(readyLocales().map((locale) => locale.code)).toEqual(['en', 'id', 'ms', 'vi']);
+    expect(readyLocales().map((locale) => locale.code)).toEqual(['en', 'id', 'ms', 'vi', 'th']);
     expect(SOURCE_LOCALE).toBe('en');
   });
 
-  it('lists the languages the pilot plan names, and Indonesian, Malay and Vietnamese, the only ones ready besides English', () => {
+  it('lists the languages the pilot plan names, and Indonesian, Malay, Vietnamese and Thai, the only ones ready besides English', () => {
     expect(LOCALES.map((locale) => [locale.code, locale.dir, locale.font, locale.ready])).toEqual([
       ['en', 'ltr', 'latin', true],
       ['fa-AF', 'rtl', 'arabic', false],
@@ -33,6 +33,7 @@ describe('the language list', () => {
       ['id', 'ltr', 'latin', true],
       ['ms', 'ltr', 'latin', true],
       ['vi', 'ltr', 'vietnamese', true],
+      ['th', 'ltr', 'thai', true],
     ]);
   });
 
@@ -53,7 +54,7 @@ describe('the language list', () => {
 
   it('never offers a pseudo-language, even one marked ready', () => {
     expect(PSEUDO_LOCALES.every((locale) => locale.pseudo && !locale.ready)).toBe(true);
-    expect(readyLocales([...LOCALES, { ...PSEUDO_LOCALES[0]!, ready: true }]).map((locale) => locale.code)).toEqual(['en', 'id', 'ms', 'vi']);
+    expect(readyLocales([...LOCALES, { ...PSEUDO_LOCALES[0]!, ready: true }]).map((locale) => locale.code)).toEqual(['en', 'id', 'ms', 'vi', 'th']);
   });
 
   it('formats pseudo-languages like English and every other language as itself', () => {
@@ -97,11 +98,12 @@ describe('resolveLocale', () => {
 });
 
 describe('languages whose lessons are translated too', () => {
-  it('is Indonesian, Malay and Vietnamese (all ready), which read and listen in id-ID, ms-MY and vi-VN', () => {
+  it('is Indonesian, Malay, Vietnamese and Thai (all ready), which read and listen in id-ID, ms-MY, vi-VN and th-TH', () => {
     expect(LOCALES.filter((locale) => locale.content).map((locale) => [locale.code, locale.speechLang, locale.ready])).toEqual([
       ['id', 'id-ID', true],
       ['ms', 'ms-MY', true],
       ['vi', 'vi-VN', true],
+      ['th', 'th-TH', true],
     ]);
   });
 

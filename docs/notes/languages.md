@@ -87,6 +87,12 @@ Why Be Vietnam Pro: it was designed for Vietnamese, with the marks drawn to sit 
 
 Credits lists it (`pages.credits.fontBeVietnam`), beside Vazirmatn's line. It is precached with the language, 15 files and 237 kB (`docs/notes/slow-internet.md`); dropping the `latin-ext` files (about 67 kB) would be the first saving if the offline copy must shrink.
 
+### Thai fonts (`src/i18n/fonts/thai.css`)
+
+The site's fonts have no Thai letters. For any language with the `thai` font key (today `th`, offered since 20 November 2026), **Sarabun** (SIL Open Font License 1.1, by Cadson Demak, `@fontsource/sarabun` 5.3.0) supplies them. Unlike Vietnamese, Thai letters never sit inside a Latin word, so Sarabun's Thai files are added to the site's own two families with `unicode-range` (U+0E01-0E5B, the zero-width joiners and the dotted circle), as Vazirmatn's Arabic letters are: Latin letters, digits and punctuation keep Atkinson Hyperlegible Next and Funnel Display, the tokens are untouched, and a browser downloads a Thai file only once a page shows Thai letters in that weight (6 files, 51 kB in all). Sarabun is a looped Thai typeface, the kind Thai schools teach children to read, and the standard font of Thai official documents. Headings drop their tight tracking and get more line height for `:lang(th)`, because Thai vowels and tone marks stack above and below the letters. It is loaded like the Arabic and Vietnamese stylesheets (`?url`, a `<link>` only while Thai is shown; the build stops if Sarabun reaches the site's one stylesheet). Credits lists it (`pages.credits.fontSarabun`).
+
+Thai is written without spaces between words and with a space, not a full stop, between sentences. So a glossary word is marked wherever its Thai form is in the text (`src/lesson/glossary.ts`), Listen splits Thai at the spaces between Thai letters (`src/speech/sentences.ts`), and the translation checker counts words with PyThaiNLP (`scripts/check_translation.py`).
+
 ### Test languages (`src/i18n/pseudo.ts`)
 
 Made from en.json whenever the site is built, served or tested (the `pseudoLocales` plugin in `vite.config.ts`), never written by hand:

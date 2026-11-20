@@ -13,3 +13,7 @@ sea-g2p==0.10.0
 soxr
 onnxruntime==1.31.0
 huggingface_hub
+# Thai (MakHam, Kokoro-82M retrained for Thai, Apache-2.0): PyThaiTTS (Apache-2.0) phonemises and preprocesses the text
+# and runs the ONNX model; PyThaiNLP splits a piece that is too long. Pinned: their output decides the recording.
+pythaitts==1.0.0
+pythainlp

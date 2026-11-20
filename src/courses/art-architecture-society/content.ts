@@ -72,7 +72,7 @@ const byLanguage = translatedContents(
     // Its images are photographs of real works, the same in every language.
     translatedPictures: {},
   },
-  ['id', 'ms', 'vi'],
+  ['id', 'ms', 'vi', 'th'],
   options,
 );
 

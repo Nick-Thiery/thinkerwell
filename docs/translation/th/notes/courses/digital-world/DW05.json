@@ -1,0 +1,363 @@
+{
+  "title": {
+    "source": "The hidden work behind AI",
+    "back": "The hidden work behind AI"
+  },
+  "essentialQuestion": {
+    "source": "Who are the people who make AI work, and are they treated fairly?",
+    "back": "Who are the people who make AI work, and are they treated fairly?"
+  },
+  "learningGoal": {
+    "source": "Describe the hidden jobs that AI tools depend on, how their supply chains work, and what reports have found about the workers' pay and conditions.",
+    "back": "Describe the hidden work AI tools depend on, how the supply chain of that work operates, and what reports have found about workers' pay and working conditions."
+  },
+  "evidence.label": {
+    "source": "Fictional example created for this lesson.",
+    "back": "A fictional example created for this lesson"
+  },
+  "evidence.question": {
+    "source": "Follow the chain from Amara to Rosa. Whose work do users of the Ask Me tool see? Whose work stays hidden?",
+    "back": "Trace the chain from Amara to Rosa. Whose work does a user of the Ask Me tool see? Whose work stays hidden?"
+  },
+  "evidence.cards.0.title": {
+    "source": "Four people behind the Ask Me tool",
+    "back": "Four people behind the Ask Me tool"
+  },
+  "evidence.cards.0.cases.0.name": {
+    "source": "Amara, photo labeller",
+    "back": "Amara, image labeller"
+  },
+  "evidence.cards.0.cases.0.body": {
+    "source": "She works online from a city far from the company. All day, she tags photos as “bus”, “tree” or “person”. She is paid a few cents for each task, and sometimes her pay comes late.",
+    "back": "She works online from a city far from the company. All day she labels pictures “bus”, “tree” or “person”. She is paid a few cents per task, and sometimes the pay comes late.",
+    "flag": true,
+    "note": "“a few cents”: ไม่กี่เซ็นต์ (US cents). Check whether a Thai reader would prefer a plainer phrase such as เงินนิดเดียว."
+  },
+  "evidence.cards.0.cases.1.name": {
+    "source": "Tomas, moderator",
+    "back": "Tomas, content moderator"
+  },
+  "evidence.cards.0.cases.1.body": {
+    "source": "He checks posts that break the rules, so the tool learns what it must never show. The work is hard, and he would like more time to rest.",
+    "back": "He checks posts that break the rules, so the tool learns what it must never show. The work is hard, and he wishes he had more breaks."
+  },
+  "evidence.cards.0.cases.2.name": {
+    "source": "Sami, engineer",
+    "back": "Sami, engineer"
+  },
+  "evidence.cards.0.cases.2.body": {
+    "source": "He works at the company's head office and designs how the tool learns. He is paid well, and his team is often in the news.",
+    "back": "He works at the company's headquarters and designs how the tool learns. He is well paid, and his team is often in the news."
+  },
+  "evidence.cards.0.cases.3.name": {
+    "source": "Rosa, company leader",
+    "back": "Rosa, company leader"
+  },
+  "evidence.cards.0.cases.3.body": {
+    "source": "She shows the new tool to the world on a big stage. Many people know her name and her face.",
+    "back": "She launches the new tool for the world to see on a big stage. Many people know her name and face."
+  },
+  "read.sections.0.heading": {
+    "source": "The jobs behind an AI tool",
+    "back": "The jobs behind AI tools"
+  },
+  "read.sections.0.text": {
+    "source": "An AI tool can seem to work by itself, but many people help to make it. For some kinds of training, workers add a label to each example, such as “bus” or “tree” for a photo. Other workers rate a tool's answers, so it can be tested and improved. Moderators check harmful posts, so a tool learns what it must not show. Many tools also learned from writing and pictures found online. In 2023, some writers and artists said nobody had asked them first. Some went to court, and courts are still deciding these cases.",
+    "back": "AI tools may seem to work by themselves, but many people help build them. For some kinds of training, workers must label each example, such as “bus” or “tree” for a photo. Another group of workers rates the tool's answers so it can be tested and improved. Content moderators check harmful posts so the tool learns what it must not show. Many tools also learn from writing and pictures found online. In 2023 some writers and artists said no one had asked their permission first. Some sued in court, and the courts are still considering these cases."
+  },
+  "read.sections.0.simpler": {
+    "source": "Many people help to make AI tools. For some training, workers add a label to each example. A photo may get the label “bus” or “tree”. Other workers check if its answers are good. Moderators check posts that could hurt people. Many tools also learned from words and pictures online. In 2023, some writers and artists said nobody asked them. Some went to court. Courts are still deciding.",
+    "back": "Many people help build AI tools. For some kinds of training, workers label each example. A picture may get the label “bus” or “tree”. Another group of workers checks whether its answers are good. Content moderators check posts that might hurt people. Many tools also learn from words and pictures online. In 2023 some writers and artists said no one asked their permission. Some went to court. The courts are still considering it."
+  },
+  "read.sections.1.heading": {
+    "source": "A long supply chain",
+    "back": "A long supply chain"
+  },
+  "read.sections.1.text": {
+    "source": "Like clothes, an AI tool has a supply chain. A company that builds a tool often pays another firm, or an online platform, to find workers. Many of them live far away, in countries such as Kenya and the Philippines. In January 2023, a news magazine reported on about three dozen workers in Kenya. In 2021 and 2022, they labelled harmful text for a well-known AI tool. They took home about 1.32 to 2 US dollars an hour. The AI company paid the firm in the middle 12.50 dollars an hour for their work. The firm said this also paid for offices, managers and other costs. In August 2023, a newspaper spoke to 36 online workers in the Philippines. All but two said some of their pay came late, was cut or never came. Their platform said this was rare. These reports describe certain workers and firms, not every AI job.",
+    "back": "AI tools have a supply chain, like clothes. The company that builds a tool often pays another company or an online platform to find workers. Many workers live far away, in countries such as Kenya and the Philippines. In January 2023 a news magazine reported on some thirty-odd workers in Kenya. In 2021 and 2022 they labelled harmful text for a well-known AI tool and took home about 1.32 to 2 US dollars an hour. The AI company paid the middleman company 12.50 dollars an hour for their work. The middleman company said this money also paid for offices, managers and other costs. In August 2023 a newspaper talked to 36 online workers in the Philippines. Nearly all, except two, said some of their pay came late, was cut, or never came at all. Their platform said this happens very rarely. These reports describe some workers and companies, not every AI job.",
+    "flag": true,
+    "note": "“the firm in the middle” is บริษัทตัวกลาง throughout. “about three dozen workers” is คนงานราวสามสิบกว่าคน. Kenya เคนยา, the Philippines ฟิลิปปินส์."
+  },
+  "read.sections.1.simpler": {
+    "source": "An AI tool has a supply chain, like clothes. The company often pays another firm or a platform to find workers. Many live far away, in Kenya, the Philippines and other places. In 2023, a magazine wrote about Kenyan workers. They labelled harmful text for an AI tool. They got less than 2 US dollars an hour. The AI firm paid 12.50 dollars an hour to the firm in the middle. That firm said the money also paid other costs. A newspaper spoke to 36 workers in the Philippines. Nearly all said some pay was late, cut or missing. Their platform said this was rare. The reports are about some workers, not all.",
+    "back": "AI tools have a supply chain, like clothes. Companies often pay another company or a platform to find workers. Many workers are far away, such as in Kenya, the Philippines and elsewhere. In 2023 a magazine wrote about workers in Kenya. They labelled harmful text for an AI tool. They got less than 2 US dollars an hour. The AI company paid 12.50 dollars an hour to the middleman company. That company said this money also paid other costs. A newspaper talked to 36 workers in the Philippines. Nearly all said some of their pay came late, was cut or disappeared. Their platform said this happens very rarely. These reports describe some workers, not all."
+  },
+  "read.sections.2.heading": {
+    "source": "An old pattern, and a new study",
+    "back": "An old pattern, and a new study"
+  },
+  "read.sections.2.text": {
+    "source": "Low pay for each small piece of work is not new. In the 1800s, people in England called very low-paid, hard work “sweating”, and later spoke of a sweatshop. Workers and reformers pushed for change. In 1909, a British law set a minimum wage in four trades, such as tailoring and making chains. In 2023, researchers at the University of Oxford checked 15 online work platforms. Some of them sell AI data work. The researchers looked at pay, conditions, contracts, management and a voice for workers. None met their basic standards, and the best scored 5 out of 10. They also asked 250 people who do small online tasks about their work. On average, these workers earned about 2.15 US dollars an hour. More than a quarter of their time was unpaid, such as time spent looking for tasks. After the study, some platforms changed their rules, for example by setting a minimum wage.",
+    "back": "Low pay for each small piece of work is not new. In the 1800s people in England called very low-paid hard work “sweating”, and later spoke of sweatshops. Workers and reformers pushed for change. In 1909 a British law set minimum wages in four kinds of work, such as clothes-making and chain-making. In 2023 researchers at Oxford University checked 15 online work platforms, some of which sell data work for AI. The researchers looked at pay, working conditions, contracts, management, and whether workers have a voice. No platform passed their basic standards, and the best platform scored 5 out of 10. The researchers also asked 250 people who do small online tasks about their work. On average these workers earned about 2.15 US dollars an hour, and more than a quarter of their time was unpaid, such as time spent looking for work. After the study, some platforms changed their rules, such as setting a minimum wage.",
+    "flag": true,
+    "note": "“the 1800s” written as ช่วงปี 1800 ถึง 1899, following KEY_TERMS for “the 1400s” (check); also in speak.partnerTask. “a voice for workers” as การที่คนงานมีสิทธิ์มีเสียง."
+  },
+  "read.sections.2.simpler": {
+    "source": "Very low pay is not new. In the 1800s, people in England called it “sweating”. Later came the word “sweatshop”. Workers pushed for change. In 1909, a British law set a minimum wage in four kinds of work. In 2023, Oxford researchers checked 15 work platforms. Some sell AI work. None met all their basic rules. They also asked 250 workers about their pay. On average, they got about 2.15 US dollars an hour. A lot of their time was not paid. Some platforms changed their rules after the study.",
+    "back": "Very low pay is not new. In the 1800s people in England called this “sweating”. Later the word “sweatshop” came about. Workers pushed for change. In 1909 a British law set minimum wages in four kinds of work. In 2023 researchers from Oxford checked 15 work platforms. Some sell AI work. None passed all their basic rules. They also asked 250 workers about pay. On average they got about 2.15 US dollars an hour. Much of their time was unpaid. After this study some platforms changed their rules."
+  },
+  "read.glossary.0.word": {
+    "source": "label",
+    "back": "label"
+  },
+  "read.glossary.0.forms": {
+    "source": [
+      "labels",
+      "labelled",
+      "labeller",
+      "labelling"
+    ],
+    "back": "label"
+  },
+  "read.glossary.0.definition": {
+    "source": "A word that says what a picture or a piece of text shows.",
+    "back": "A word that says what a picture or piece of text shows."
+  },
+  "read.glossary.0.example": {
+    "source": "Amara adds the label “bus” to each photo of a bus.",
+    "back": "Amara labels every picture of a bus “bus”."
+  },
+  "read.glossary.1.word": {
+    "source": "moderator",
+    "back": "content moderator",
+    "flag": true,
+    "note": "moderator: ผู้ตรวจสอบเนื้อหา (KEY_TERMS)."
+  },
+  "read.glossary.1.forms": {
+    "source": [
+      "moderators"
+    ],
+    "back": "content moderator"
+  },
+  "read.glossary.1.definition": {
+    "source": "A person who checks posts and removes ones that break the rules.",
+    "back": "A person who checks posts and removes posts that break the rules."
+  },
+  "read.glossary.1.example": {
+    "source": "Tomas is a moderator for the Ask Me tool.",
+    "back": "Tomas is a content moderator for the Ask Me tool."
+  },
+  "read.glossary.2.word": {
+    "source": "supply chain",
+    "back": "supply chain"
+  },
+  "read.glossary.2.forms": {
+    "source": [
+      "supply chains"
+    ],
+    "back": "supply chain"
+  },
+  "read.glossary.2.definition": {
+    "source": "All the people and places that help to make a product, step by step.",
+    "back": "All the people and places that together make a product, step by step."
+  },
+  "read.glossary.2.example": {
+    "source": "Amara, Tomas and Sami are all part of the Ask Me tool's supply chain.",
+    "back": "Amara, Tomas and Sami are all part of the Ask Me tool's supply chain."
+  },
+  "read.glossary.3.word": {
+    "source": "platform",
+    "back": "platform"
+  },
+  "read.glossary.3.forms": {
+    "source": [
+      "platforms"
+    ],
+    "back": "platform"
+  },
+  "read.glossary.3.definition": {
+    "source": "A website or app where people find work, buy things or share things.",
+    "back": "A website or app people use to find work, buy things or share things."
+  },
+  "read.glossary.3.example": {
+    "source": "Amara finds her tasks on an online work platform.",
+    "back": "Amara finds her work on an online work platform."
+  },
+  "read.glossary.4.word": {
+    "source": "sweatshop",
+    "back": "sweatshop",
+    "flag": true,
+    "note": "sweatshop: โรงงานรีดเหงื่อ, and “sweating” is การรีดเหงื่อ, from the Thai idiom รีดเหงื่อ (to squeeze sweat out of workers, exploit them), so the old English word and the glossary word stay linked. โรงงานนรก is the common popular word but sounds dramatic; โรงงานกดขี่แรงงาน is plainer. A native speaker should choose."
+  },
+  "read.glossary.4.forms": {
+    "source": [
+      "sweatshops"
+    ],
+    "back": "sweatshop"
+  },
+  "read.glossary.4.definition": {
+    "source": "A workplace with very low pay and unhealthy or unfair conditions.",
+    "back": "A workplace that pays very little and has unhealthy or unfair conditions."
+  },
+  "read.glossary.4.example": {
+    "source": "Some people call online labelling work a “digital sweatshop”.",
+    "back": "Some people call online labelling work a “digital sweatshop”."
+  },
+  "read.glossary.5.word": {
+    "source": "minimum wage",
+    "back": "minimum wage"
+  },
+  "read.glossary.5.forms": {
+    "source": [
+      "minimum wages"
+    ],
+    "back": "minimum wage"
+  },
+  "read.glossary.5.definition": {
+    "source": "The lowest pay for an hour of work that a law or rule allows.",
+    "back": "The lowest pay per hour that a law or rule allows."
+  },
+  "read.glossary.5.example": {
+    "source": "In 1909, a British law set a minimum wage for chain makers.",
+    "back": "In 1909 a British law set a minimum wage for chain-makers."
+  },
+  "read.checks.0.question": {
+    "source": "What does the pay in the Kenya report show?",
+    "back": "What does the pay in the report from Kenya show?"
+  },
+  "read.checks.0.options.0.text": {
+    "source": "Workers got far less than the firm in the middle was paid",
+    "back": "The workers got much less money than the middleman company received"
+  },
+  "read.checks.0.options.0.feedback": {
+    "source": "Yes. The workers took home less than 2 dollars an hour. The firm in the middle got 12.50 dollars an hour for their work, though it said this also paid other costs.",
+    "back": "Correct. The workers took home less than 2 dollars an hour, while the middleman company got 12.50 dollars an hour for their work, though the company said this money also paid other costs."
+  },
+  "read.checks.0.options.1.text": {
+    "source": "Workers got more money than the AI company paid the firm for them",
+    "back": "The workers got more money than the AI company paid the middleman company for them"
+  },
+  "read.checks.0.options.1.feedback": {
+    "source": "Not quite. The workers got much less than the AI company paid. Look at the numbers in the second section.",
+    "back": "Not quite. The workers got much less than the AI company paid. Look at the numbers in the second part."
+  },
+  "read.checks.0.options.2.text": {
+    "source": "Everyone in the chain got the same pay",
+    "back": "Everyone in the chain got the same pay"
+  },
+  "read.checks.0.options.2.feedback": {
+    "source": "Not quite. The pay was very different at each step. Look at the numbers in the second section.",
+    "back": "Not quite. Pay at each step was very different. Look at the numbers in the second part."
+  },
+  "write.prompt": {
+    "source": "Choose one hidden job from the lesson. Explain how it helps an AI tool, what one report found about the people who do it, and one change you think would make the work fairer.",
+    "back": "Choose one hidden job from the lesson. Explain how that job helps an AI tool, what a report found about the people who do that job, and one change you think would make that job fairer."
+  },
+  "write.sentenceStarters.0": {
+    "source": "I chose ...",
+    "back": "I chose ...",
+    "note": "Reviewer: Spacing/wording unified across the course: “...” joined to the Thai word before it (KEY_TERMS style, as in most lessons), and “ส่วนแรก” for “the first section”."
+  },
+  "write.sentenceStarters.1": {
+    "source": "This job helps the tool by ...",
+    "back": "This job helps the tool by ...",
+    "note": "Reviewer: Spacing/wording unified across the course: “...” joined to the Thai word before it (KEY_TERMS style, as in most lessons), and “ส่วนแรก” for “the first section”."
+  },
+  "write.sentenceStarters.2": {
+    "source": "A report found that ...",
+    "back": "A report found that ...",
+    "note": "Reviewer: Spacing/wording unified across the course: “...” joined to the Thai word before it (KEY_TERMS style, as in most lessons), and “ส่วนแรก” for “the first section”."
+  },
+  "write.sentenceStarters.3": {
+    "source": "One change that could make it fairer is ...",
+    "back": "One change that could make it fairer is ...",
+    "note": "Reviewer: Spacing/wording unified across the course: “...” joined to the Thai word before it (KEY_TERMS style, as in most lessons), and “ส่วนแรก” for “the first section”."
+  },
+  "write.example": {
+    "source": "I chose labelling. Labellers add a word to each example. Then a tool can learn what a photo or a piece of text shows. A report from Kenya in 2023 was about workers who labelled harmful text. They took home less than 2 dollars an hour. The firm in the middle got 12.50 dollars an hour for their work, but it said this also paid other costs. One change that could make it fairer is a minimum wage on every work platform, paid on time.",
+    "back": "I chose labelling. A labeller puts a word on each example, and then the tool can learn what a picture or piece of text shows. A 2023 report from Kenya described workers who labelled harmful text. They took home less than 2 dollars an hour. The middleman company got 12.50 dollars an hour for their work, but the company said this money also paid other costs. One change that could make it fairer is having a minimum wage on every work platform, and paying on time."
+  },
+  "speak.partnerTask": {
+    "source": "Your partner asks how online data work is like “sweating” in the 1800s. You give one way they are alike and one way they are different. Then switch.",
+    "back": "Your partner asks how online data work is like “sweating” in the 1800s. You say one thing that is the same and one thing that is different. Then swap."
+  },
+  "speak.independentTask": {
+    "source": "Say out loud what a supply chain is. Then follow the chain behind an AI tool, from a worker to the person who uses the tool.",
+    "back": "Say aloud what a supply chain is, then trace the chain behind an AI tool from the workers to the people who use the tool."
+  },
+  "watch.why": {
+    "source": "In a calm six-minute news interview, an expert explains what data workers do, where they work and why their pay and treatment matter.",
+    "back": "In a calm six-minute news interview, an expert explains what data workers do, where they work, and why their pay and treatment matter."
+  },
+  "watch.beforeQuestion": {
+    "source": "What jobs do you think people do to help an AI tool learn?",
+    "back": "What work do you think people do to help AI tools learn?"
+  },
+  "watch.afterQuestion": {
+    "source": "Why does the expert say AI is really built on human work?",
+    "back": "Why does the expert say AI is really built from human work?"
+  },
+  "watch.summary": {
+    "source": "In this news interview, a reporter talks with an expert. The expert works for a group that wants AI to be used in a fair way. She explains that AI tools need lots of data. A computer does not know by itself if a picture shows a cat or a dog. People must look at the pictures and label them, again and again. Then the tool can learn. A lot of this work is done online, in poorer parts of the world, because the pay there is lower. Some workers must look at harmful posts, so other people don't have to see them. The pay is often very low. Workers are not always sure they will be paid. The expert says AI is really built on human work and human thinking. She hopes for clear rules to protect these workers.",
+    "back": "In this news interview a reporter talks with an expert. The expert works for a group that wants AI used fairly. She explains that AI tools need lots of data. A computer does not know by itself whether a picture is a cat or a dog. People must look at pictures and label them again and again; then the tool can learn. Much of this work is done online in poorer parts of the world, because pay there is lower. Some workers have to look at harmful posts so others do not have to see them. Pay is often very low, and workers are not always sure they will be paid. The expert says AI is really built from human work and thought. She hopes there will be clear rules to protect these workers."
+  },
+  "watch.keyPoints.0": {
+    "source": "AI tools learn from data that people label by hand.",
+    "back": "AI tools learn from data that people labelled by hand."
+  },
+  "watch.keyPoints.1": {
+    "source": "Much of this work is done online in poorer countries, often for very low pay.",
+    "back": "Much of this work is done online in poorer countries, and is often very low paid."
+  },
+  "watch.keyPoints.2": {
+    "source": "AI is built on human work, so these workers need fair rules.",
+    "back": "AI is built from human work, so these workers need fair rules."
+  },
+  "watch.contentNote": {
+    "source": "About 6 minutes (5:56), a US news interview from February 2023 (PBS News Weekend, with Sonam Jindal of the Partnership on AI). The title and channel were confirmed with YouTube's oEmbed on 31 October 2026, and the length is from YouTube's listing. The summary was written from PBS's published transcript of the segment (https://www.pbs.org/newshour/show/concerns-rise-over-treatment-of-human-workers-behind-ai-technology), not from watching it. The opening names US companies and products and mentions a chatbot that told a reporter to leave his wife; the interview says some workers see “toxic content” and medical images, without showing or describing any. Someone on the team must watch it before use; learners can read the written summary instead.",
+    "back": "About 6 minutes (5:56), a US news interview from February 2023 (PBS News Weekend with Sonam Jindal of Partnership on AI). Title and channel confirmed with YouTube oEmbed on 31 October 2026, and the length is from YouTube's listing. This summary was written from the transcript PBS published (https://www.pbs.org/newshour/show/concerns-rise-over-treatment-of-human-workers-behind-ai-technology), not from watching the video. The opening names US companies and products and mentions a chatbot that told a reporter to leave his wife. The interview says some workers must look at “toxic content” and medical images, without showing or describing them. The team must have someone watch the video before use. Learners can read the written summary instead."
+  },
+  "reflect.prompts.0.text": {
+    "source": "Something I didn't know about the people who make AI tools is ...",
+    "back": "Something I never knew about the people who build AI tools is ...",
+    "note": "Reviewer: Spacing/wording unified across the course: “...” joined to the Thai word before it (KEY_TERMS style, as in most lessons), and “ส่วนแรก” for “the first section”."
+  },
+  "reflect.prompts.1.text": {
+    "source": "A question I would ask an AI company is ...",
+    "back": "A question I would like to ask an AI company is ...",
+    "note": "Reviewer: Spacing/wording unified across the course: “...” joined to the Thai word before it (KEY_TERMS style, as in most lessons), and “ส่วนแรก” for “the first section”."
+  },
+  "reflect.completionMessage": {
+    "source": "You finished Lesson 5. You followed the supply chain behind an AI tool and learned what reports found about its hidden workers.",
+    "back": "You finished Lesson 5. You traced the supply chain behind an AI tool and learned what reports found about the hidden workers."
+  },
+  "visual.alt": {
+    "source": "A supply chain from workers to a firm in the middle, the company and the user. A curtain hides the workers and the firm. In one 2023 report from Kenya, the company paid the firm 12.50 US dollars an hour and the workers took home about 1.32 to 2 dollars.",
+    "back": "A supply chain from workers to a middleman company, a company and users. A curtain hides the workers and the middleman company. In one 2023 report from Kenya, the company paid the middleman company 12.50 US dollars an hour, and workers took home about 1.32 to 2 dollars."
+  },
+  "sources.0.label": {
+    "source": "TIME (18 January 2023): OpenAI used Kenyan workers on less than $2 per hour to make ChatGPT less toxic",
+    "back": "TIME (18 January 2023): OpenAI used Kenyan workers on less than $2 per hour to make ChatGPT less toxic (OpenAI used workers in Kenya paid less than 2 dollars an hour to reduce toxic content in ChatGPT)"
+  },
+  "sources.1.label": {
+    "source": "The Washington Post (August 2023): Behind the AI boom, an army of overseas workers in “digital sweatshops” (36 workers in the Philippines)",
+    "back": "The Washington Post (August 2023): Behind the AI boom, an army of overseas workers in “digital sweatshops” (36 workers in the Philippines)"
+  },
+  "sources.2.label": {
+    "source": "Fairwork, Oxford Internet Institute (July 2023): Fairwork Cloudwork Ratings 2023, work in the planetary labour market (15 platforms; a survey of 752 workers)",
+    "back": "Fairwork, Oxford Internet Institute (July 2023): Fairwork Cloudwork Ratings 2023, work in the planetary labour market (15 platforms and a survey of 752 workers)"
+  },
+  "sources.3.label": {
+    "source": "Modern Records Centre, University of Warwick: the Trade Boards Act 1909 (minimum wages in four “sweated” trades)",
+    "back": "Modern Records Centre, University of Warwick: the Trade Boards Act 1909 (minimum wages in four “sweated” kinds of work)"
+  },
+  "sensitiveNotes.0": {
+    "source": "Moderators: in real life, moderators and some labellers have had to look at violent and abusive material, and many report lasting harm to their mental health (see the TIME source). The lesson says only that they check “harmful posts”. Don't describe what they see and don't let the discussion go there; if a learner asks, say it is hard work that can hurt people, which is why fair conditions and support matter.",
+    "back": "Content moderators: in real life some content moderators and labellers must look at violent and abusive content, and many report long-lasting effects on mental health (see the TIME source). The lesson only says they check “harmful posts”. Do not describe what they see, and do not let the discussion go there. If learners ask, say it is hard work that can hurt people, so it needs fair working conditions and support."
+  },
+  "sensitiveNotes.1": {
+    "source": "Work and money: many learners can't work legally, and people close to them may do low-paid, informal or online work. Never ask about learners' or their families' jobs, pay or money. Keep the discussion on the made-up Ask Me workers and the reported facts. Words like “sweatshop” and “unfair pay” may feel close to home; let learners speak if they want to, without pressing.",
+    "back": "Work and money: many learners cannot work legally, and people close to them may do low-paid, informal or online work. Do not ask about learners' or families' work, pay or money. Keep the discussion on the fictional Ask Me workers and reported facts. Words like “sweatshop” and “unfair pay” may feel close to home; let learners speak if they want to, without pressure.",
+    "flag": true,
+    "note": "Sensitive: learners' and families' work and money. Translated closely; a reviewer should check the tone is gentle."
+  },
+  "educatorNotes.0": {
+    "source": "The facts are dated and their scope matters; each report describes particular workers, firms, platforms and years, not every AI job. Kenya: TIME (Billy Perrigo, 18 January 2023) reported that about three dozen workers at an outsourcing firm's Nairobi office labelled harmful text for a safety filter from November 2021 to early 2022 and took home about $1.32 to $2 an hour; the AI company's contracts paid the firm $12.50 an hour. The firm said that rate covered all its costs (offices, salaries, benefits) and that workers earned $1.46 to $3.74 an hour after tax; TIME's sources disputed that. Philippines: The Washington Post (Rebecca Tan and Regine Cabato, August 2023) spoke to 36 current and former freelancers on one platform; 34 said payments had been delayed, reduced or cancelled, and the platform said delays were “exceedingly rare”. The companies (OpenAI, Sama, Scale AI and its Remotasks platform) are named only in sources and here, as the Digital World spec asks. Writers' and artists' work: in 2023 some writers and artists sued AI companies or signed petitions asking for consent, credit and pay. The companies did not all take one position: some argued that training on such material is lawful (fair use in the US) or said they used licensed and public material, some declined to comment, and one news agency licensed its archive to an AI company (Anchorage Daily News, from The Washington Post, 16 July 2023). Court cases have moved on since; check the latest before teaching that part, and don't tell learners that all creative work was taken without asking. The claim record is in content/courses/digital-world/claims/DW05.md.",
+    "back": "These facts are dated, and their scope matters: each report describes specific workers, companies, platforms and years, not every AI job. Kenya: TIME (Billy Perrigo, 18 January 2023) reported that some thirty-odd workers at an outsourcing company's Nairobi office labelled harmful text for a safety filter from November 2021 to early 2022 and took home about 1.32 to 2 US dollars an hour. The AI company's contract paid that company 12.50 dollars an hour. That company said this rate covered all costs (office, salaries, benefits) and that workers got 1.46 to 3.74 dollars an hour after tax; TIME's sources disputed this. Philippines: The Washington Post (Rebecca Tan and Regine Cabato, August 2023) talked to 36 current and former freelancers on one platform; 34 said payments were delayed, reduced or cancelled, and the platform said delays were “exceedingly rare”. Company names (OpenAI, Sama, Scale AI and its platform Remotasks) appear only in the sources and here, as the Digital World spec asks. Writers' and artists' work: in 2023 some writers and artists sued AI companies or signed petitions asking for consent, credit and compensation. Companies did not all take the same position: some argued that training on these works is legal (fair use in the US) or said they used licensed and public works, some declined to comment, and one news organisation licensed its archive to an AI company (Anchorage Daily News from The Washington Post, 16 July 2023). The court cases have moved on since then; check the latest before teaching that part, and do not tell learners all creative work was used without permission. The claims log is in content/courses/digital-world/claims/DW05.md."
+  },
+  "educatorNotes.1": {
+    "source": "Fairwork's Cloudwork Ratings 2023 (Oxford Internet Institute, 20 July 2023) scored 15 online freelance and microwork platforms on five principles (fair pay, conditions, contracts, management and representation); scores ran from 0 to 5 out of 10 (Comeup, Prolific and Terawork highest; Amazon Mechanical Turk, Freelancer, Microworkers and Workana at 0), and none met its minimum standards. Not all of them sell AI work; the microwork platforms (Appen, Scale/Remotasks and others) sell data labelling, model evaluation and content moderation to AI companies. Its survey (February to May 2023) heard from 752 workers in 94 countries and says it does not aim to be representative; the 250 microworkers among them (51 countries) averaged $50.30 a week, which Fairwork gives as about $2.15 an hour, and 26.85% of their platform time was unpaid (looking for tasks, unpaid tests, applying). Four platforms made 17 changes after Fairwork's suggestions, and two adopted minimum-wage policies. The report itself says that “precarious piece-rate work has a long legacy”. The 1909 Trade Boards Act set legally enforceable minimum wages in chainmaking, lace finishing, paper box making and ready-made tailoring (Modern Records Centre, University of Warwick); “sweater” was used in England by 1850 and “sweating” spread in the 1880s (Britannica).",
+    "back": "Fairwork's Cloudwork Ratings 2023 (Oxford Internet Institute, 20 July 2023) scored 15 online freelance and microtask platforms on five principles (fair pay, conditions, contracts, management and representation). Scores ranged from 0 to 5 out of 10 (Comeup, Prolific and Terawork highest; Amazon Mechanical Turk, Freelancer, Microworkers and Workana got 0) and none passed the minimum standards. Not all sell AI work, but microtask platforms (Appen, Scale/Remotasks and others) sell data labelling, model evaluation and content moderation to AI companies. Fairwork's survey (February to May 2023) heard from 752 workers in 94 countries and says it is not meant to represent everyone. The 250 microworkers in this group (51 countries) earned on average 50.30 dollars a week, which Fairwork works out as about 2.15 dollars an hour, and 26.85 percent of their time on platforms was unpaid (finding work, unpaid tests and applying). Four platforms made 17 changes after Fairwork's recommendations, and two adopted minimum wage policies. The report itself says “precarious piece-rate work has a long history”. The Trade Boards Act 1909 set legally enforceable minimum wages in chain-making, lace finishing, paper box-making and ready-made tailoring (Modern Records Centre, University of Warwick). The word “sweater” was used in England from 1850 and “sweating” spread in the 1880s (Britannica)."
+  }
+}

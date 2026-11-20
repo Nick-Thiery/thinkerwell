@@ -52,8 +52,32 @@ export function paragraphRanges(text: string): TextRange[] {
   return ranges;
 }
 
+// Thai writes no full stop: a space between two Thai letters ends a sentence or a clause.
+const THAI_SENTENCE_BREAK = /(?<=[\u0E00-\u0E7F])\s+(?=[\u0E00-\u0E7F])/g;
+
+/** Splits each range that has Thai in it at the spaces between Thai letters (other text is left as it is). */
+function splitThai(text: string, ranges: TextRange[]): TextRange[] {
+  if (!/[\u0E00-\u0E7F]/.test(text)) return ranges;
+  return ranges.flatMap((range) => {
+    const part = text.slice(range.start, range.end);
+    const out: TextRange[] = [];
+    let from = 0;
+    for (const match of part.matchAll(THAI_SENTENCE_BREAK)) {
+      const end = match.index + match[0].length;
+      out.push({ start: range.start + from, end: range.start + end });
+      from = end;
+    }
+    out.push({ start: range.start + from, end: range.end });
+    return out;
+  });
+}
+
 /** Sentence ranges within one paragraph's text (relative to it), before trimming. */
 function splitSentences(text: string): TextRange[] {
+  return splitThai(text, splitLatinSentences(text));
+}
+
+function splitLatinSentences(text: string): TextRange[] {
   if (typeof Intl !== 'undefined' && typeof Intl.Segmenter === 'function') {
     const segmenter = new Intl.Segmenter('en', { granularity: 'sentence' });
     return Array.from(segmenter.segment(text), (s) => ({ start: s.index, end: s.index + s.segment.length }));

@@ -1,0 +1,385 @@
+{
+  "title": {
+    "source": "AI at work: jobs that change",
+    "back": "AI at work: jobs that change"
+  },
+  "essentialQuestion": {
+    "source": "How might AI change people's jobs, and who gains or loses?",
+    "back": "How might AI change people's jobs, and who gains or loses?"
+  },
+  "learningGoal": {
+    "source": "Use examples from history and a 2025 study to explain how new technology changes the tasks in jobs, and why the change is uneven.",
+    "back": "Use examples from history and 2025 research to explain how new technology changes the tasks within each job, and why the change is uneven."
+  },
+  "warmUp.question": {
+    "source": "A new machine can do part of a worker's job. What do you think happens to the worker?",
+    "back": "A new machine can do part of a worker's job. What do you think happens to that worker?"
+  },
+  "warmUp.options.0": {
+    "source": "They lose their work",
+    "back": "They lose their job"
+  },
+  "warmUp.options.1": {
+    "source": "Their work changes",
+    "back": "Their job changes"
+  },
+  "warmUp.options.2": {
+    "source": "They do something new",
+    "back": "They get to do something new"
+  },
+  "warmUp.options.3": {
+    "source": "Not sure",
+    "back": "Not sure"
+  },
+  "evidence.label": {
+    "source": "Fictional example created for this lesson.",
+    "back": "A fictional example created for this lesson"
+  },
+  "evidence.question": {
+    "source": "For each worker, which tasks changed? Who gained, and who lost?",
+    "back": "For each worker, which task changed? Who gains, and who loses?"
+  },
+  "evidence.cards.0.title": {
+    "source": "Three workers in the town of Millbrook",
+    "back": "Three workers in the town of Millbrook"
+  },
+  "evidence.cards.0.cases.0.name": {
+    "source": "Clerks at the water office",
+    "back": "Clerks at the water office",
+    "flag": true,
+    "note": "clerks = พนักงานธุรการ; water office = สำนักงานการประปา; help desk = โต๊ะช่วยเหลือ (check: จุดบริการช่วยเหลือ may be more natural)."
+  },
+  "evidence.cards.0.cases.0.body": {
+    "source": "Ines and two other clerks typed up customer forms. Now an AI tool reads most forms and fills in the details. The office needs fewer clerks. After some training, Ines and one other clerk moved to the help desk, where they help people with hard problems. The third clerk lost her work.",
+    "back": "Ines and two other clerks used to type up customers' forms. Now an AI tool reads most forms and fills in the details, so the office needs fewer clerks. After training, Ines and another clerk moved to the help desk, where they help people with hard problems. The third clerk lost her job."
+  },
+  "evidence.cards.0.cases.1.name": {
+    "source": "Teacher at the learning centre",
+    "back": "A teacher at the learning centre"
+  },
+  "evidence.cards.0.cases.1.body": {
+    "source": "Ms Rana uses an AI tool to make practice questions. She checks every question, because the tool sometimes makes mistakes. She now has more time to help learners one by one.",
+    "back": "Teacher Rana uses an AI tool to make practice questions. She checks every question, because the tool sometimes makes mistakes. Now she has more time to help learners one by one."
+  },
+  "evidence.cards.0.cases.2.name": {
+    "source": "Tailor at the market",
+    "back": "A tailor at the market"
+  },
+  "evidence.cards.0.cases.2.body": {
+    "source": "Sami makes and mends clothes. A translation tool helps him talk with customers who speak other languages, so he has more customers. The tool can't sew, and it can't measure a person.",
+    "back": "Sami cuts and mends clothes. A translation tool helps him talk with customers who speak other languages, so he has more customers. The tool cannot sew and cannot measure people."
+  },
+  "read.sections.0.heading": {
+    "source": "New machines have changed work before",
+    "back": "New machines have changed jobs before"
+  },
+  "read.sections.0.text": {
+    "source": "AI is not the first technology to change people's work. In England in the early 1800s, new machines in cloth factories began to do work that skilled cloth workers had done by hand. Between 1811 and 1816, some of these workers, known as Luddites, broke machines in protest, because the machines were taking their work. Much later, from the 1970s, cash machines slowly spread to banks in the United States. Many people expected bank tellers, who handle money at the counter, to disappear. Instead, a study from 2015 found that the number of tellers stayed about the same and even grew a little. Each branch needed fewer tellers, so banks could open more branches. Tellers spent less time counting cash and more time helping customers. That was one machine in one country, so it can't tell us what AI will do.",
+    "back": "AI is not the first technology to change people's jobs. In England shortly after 1800, new machines in cloth factories began doing work skilled weavers had done by hand. Between 1811 and 1816 a group of workers called Luddites smashed machines in protest because the machines were taking their jobs. Much later, from the 1970s, cash machines slowly spread through banks in the United States. Many expected that bank tellers, who handle money at the counter, would disappear. But a 2015 study found the number of tellers stayed about the same and even rose a little. Each branch needed fewer staff, so banks could open more branches. Tellers spent less time counting cash and more time helping customers. That was one kind of machine in one country, so it cannot tell us what AI will do.",
+    "flag": true,
+    "note": "Luddites = ลัดไดต์ in Thai script (the checker warns that the Latin name is missing; expected). \"early 1800s\" = ช่วงหลังปี 1800 ไม่นาน (\"shortly after 1800\"), and the simpler \"1800s\" = ช่วงปี 1800 ถึง 1899 per KEY_TERMS. bank tellers = พนักงานรับฝากถอนเงิน; cash machines = ตู้กดเงิน."
+  },
+  "read.sections.0.simpler": {
+    "source": "AI is not the first technology to change work. In the 1800s, new machines in England did the work of skilled cloth workers. Some workers, called Luddites, broke machines in protest. From the 1970s, banks in the United States got cash machines. Many thought bank workers at the counter would disappear. But a 2015 study found there were still about as many. Banks opened more branches. The workers counted less cash and helped customers more. That was one machine in one country. It can't tell us what AI will do.",
+    "back": "AI is not the first technology to change jobs. In the 1800s new machines in England did the work of skilled weavers. Some workers called Luddites smashed machines in protest. From the 1970s banks in the United States had cash machines. Many people thought bank counter staff would disappear. But a 2015 study found there were still about as many staff as before. Banks opened more branches. Staff counted less money and helped customers more. That was one kind of machine in one country. It cannot tell what AI will do."
+  },
+  "read.sections.1.heading": {
+    "source": "AI changes tasks inside jobs",
+    "back": "AI changes the tasks in each job"
+  },
+  "read.sections.1.text": {
+    "source": "Most jobs are made of many tasks. A new technology may automate some tasks, but not the whole job. When spreadsheets came to office computers in the United States, many bookkeepers lost their work, but the number of accountants grew. In 2025, the ILO, the United Nations agency for work, studied AI tools that write and make things. Its researchers scored about 30,000 tasks for how much of each one these tools could do. They found that about one in four of the world's jobs has some exposure to these tools. Office jobs, such as clerks who type in data, have the most. Exposure tells us what the tools could do. It is not a count of jobs lost. The ILO says most of these jobs are more likely to change than to disappear, because people are still needed for many tasks.",
+    "back": "Most jobs are made up of many tasks. A new technology may automate some tasks but not the whole job. When spreadsheet programs arrived on office computers in the United States, many bookkeepers lost their jobs but the number of accountants grew. In 2025 the ILO, the United Nations agency for labour, studied AI tools that can write and create things. ILO researchers scored about 30,000 tasks on how much these tools could do each one. They found about a quarter of the world's jobs have some exposure to these tools. Office jobs, such as clerks who type data into computers, have the most exposure. Exposure tells us what tools can do, but not the number of jobs lost. The ILO says most of these jobs are more likely to change than to disappear, because many tasks still need people.",
+    "flag": true,
+    "note": "spreadsheets = โปรแกรมตารางคำนวณ; bookkeepers = พนักงานทำบัญชี, accountants = นักบัญชี. ILO kept as Latin and explained once as หน่วยงานของสหประชาชาติด้านแรงงาน."
+  },
+  "read.sections.1.simpler": {
+    "source": "A job is made of many tasks. A new technology may automate some tasks, not the whole job. Spreadsheets did sums for office workers. Some people who added up numbers lost their work. But there were more accountants. In 2025, a United Nations group for work studied AI that writes and makes things. It checked about 30,000 tasks. About one in four jobs has some exposure to these tools. That means the tools could do some of the tasks. Office jobs have the most. This is not a count of lost jobs. Most of these jobs will likely change, not disappear.",
+    "back": "A job is made of many tasks. A new technology may automate some tasks, but not the whole job. Spreadsheet programs did sums for office workers. Some people who used to add up numbers lost their jobs, but there came to be more accountants. In 2025 the United Nations' labour agency studied AI that can write and create things. It checked about 30,000 tasks. About a quarter of jobs have some exposure to these tools. That means the tools might do some tasks. Office jobs have the most exposure. This is not the number of jobs lost. Most of these jobs will probably change, not disappear."
+  },
+  "read.sections.2.heading": {
+    "source": "The change is uneven",
+    "back": "The change is uneven"
+  },
+  "read.sections.2.text": {
+    "source": "The same change can affect people very differently. The ILO found that exposure is higher in richer countries: about one in three jobs, against about one in ten in the poorest countries. In richer countries, more of women's jobs than men's are in the most exposed group. Change can be uneven inside one office too. In the made-up town of Millbrook, the water office now works faster. After training, two clerks moved to the help desk, but the third lost her work. The ILO says talks between workers, employers and governments can help to manage these changes. Who gains depends partly on the choices people make.",
+    "back": "The same change can affect people very differently. The ILO found exposure is higher in richer countries, about a third of jobs, compared with about a tenth in the poorest countries. In richer countries a higher share of women's jobs than men's jobs are in the most exposed group. Change can be uneven even within one office. In Millbrook, a fictional town, the water office now works faster. After training two clerks moved to the help desk, but the third lost her job. The ILO says talks between workers, employers and governments can help manage these changes. So who gains depends partly on the choices people make."
+  },
+  "read.sections.2.simpler": {
+    "source": "Change can affect people in different ways. The ILO found more exposure in richer countries. There, about one in three jobs has some. In the poorest countries, it is about one in ten. In richer countries, more women's jobs than men's are very exposed. In made-up Millbrook, the water office works faster now. After training, two clerks moved to the help desk. The third clerk lost her work. Workers, employers and leaders can plan these changes together, the ILO says.",
+    "back": "Change can affect people differently. The ILO found richer countries have more exposure. There about a third of jobs have some exposure. In the poorest countries it is about a tenth. In richer countries there are more highly exposed women's jobs than men's. In Millbrook, a fictional town, the water office now works faster. After training two clerks moved to the help desk. The third clerk lost her job. The ILO says workers, employers and leaders can plan these changes together."
+  },
+  "read.glossary.0.word": {
+    "source": "technology",
+    "back": "technology"
+  },
+  "read.glossary.0.definition": {
+    "source": "Tools and machines that people make to solve problems.",
+    "back": "Tools and machines people make to solve problems."
+  },
+  "read.glossary.0.example": {
+    "source": "Cash machines were a new technology in banks.",
+    "back": "Cash machines were a new technology in banks."
+  },
+  "read.glossary.1.word": {
+    "source": "automate",
+    "back": "automatic (automate)",
+    "flag": true,
+    "note": "automate: the glossary word is อัตโนมัติ (\"automatic\"), used in the reading as ทำให้...เป็นอัตโนมัติ. A verb such as ทำให้เป็นอัตโนมัติ would be more exact but does not sit contiguously in natural sentences. Check."
+  },
+  "read.glossary.1.forms": {
+    "source": [
+      "automated",
+      "automation"
+    ],
+    "back": "(no forms in the Thai)"
+  },
+  "read.glossary.1.definition": {
+    "source": "To make a machine do work that people used to do.",
+    "back": "When a machine can do by itself work people used to do."
+  },
+  "read.glossary.1.example": {
+    "source": "The water office used AI to automate reading forms.",
+    "back": "The water office uses AI to make reading forms automatic."
+  },
+  "read.glossary.2.word": {
+    "source": "task",
+    "back": "task",
+    "flag": true,
+    "note": "task = งานย่อย (\"sub-piece of work\") so it differs from งาน (job, work). Not in KEY_TERMS; ภารกิจ felt too formal for 12-year-olds."
+  },
+  "read.glossary.2.forms": {
+    "source": [
+      "tasks"
+    ],
+    "back": "(no forms in the Thai)"
+  },
+  "read.glossary.2.definition": {
+    "source": "One piece of work that is part of a job.",
+    "back": "A piece of work that is part of a job."
+  },
+  "read.glossary.2.example": {
+    "source": "Typing up forms was one task for the Millbrook clerks.",
+    "back": "Typing forms is one task of the clerks in Millbrook."
+  },
+  "read.glossary.3.word": {
+    "source": "exposure",
+    "back": "exposure",
+    "flag": true,
+    "note": "exposure (the ILO's term) = การสัมผัส. Hard choice: it is close to Thai news wording on the ILO report (สัมผัสกับ AI) but can read as \"touch\". Avoided การได้รับผลกระทบ (\"being affected\"), because the lesson stresses exposure is not job loss. A native speaker should decide; it is used throughout the lesson and the checks."
+  },
+  "read.glossary.3.forms": {
+    "source": [
+      "exposed"
+    ],
+    "back": "(no forms in the Thai)"
+  },
+  "read.glossary.3.definition": {
+    "source": "When a new tool could do some of the tasks in a job.",
+    "back": "When a new tool might do some tasks in a job."
+  },
+  "read.glossary.3.example": {
+    "source": "Office jobs have the most exposure to AI tools that write.",
+    "back": "Office jobs have the most exposure to AI tools that can write."
+  },
+  "read.glossary.4.word": {
+    "source": "training",
+    "back": "training"
+  },
+  "read.glossary.4.definition": {
+    "source": "Lessons that teach people the skills for new work.",
+    "back": "Lessons that teach people skills for a new job."
+  },
+  "read.glossary.4.example": {
+    "source": "After training, two Millbrook clerks moved to the help desk.",
+    "back": "After training two clerks in Millbrook moved to the help desk."
+  },
+  "read.glossary.5.word": {
+    "source": "employer",
+    "back": "employer"
+  },
+  "read.glossary.5.forms": {
+    "source": [
+      "employers"
+    ],
+    "back": "(no forms in the Thai)"
+  },
+  "read.glossary.5.definition": {
+    "source": "A person or company that pays people to work for them.",
+    "back": "A person or company that pays other people to work for them."
+  },
+  "read.glossary.5.example": {
+    "source": "The water office is the clerks' employer.",
+    "back": "The water office is the clerks' employer."
+  },
+  "read.checks.0.question": {
+    "source": "What happened to bank tellers in the United States as cash machines spread?",
+    "back": "What happened to bank tellers in the United States when cash machines spread?"
+  },
+  "read.checks.0.options.0.text": {
+    "source": "Their work changed to helping customers",
+    "back": "Their work changed to helping customers"
+  },
+  "read.checks.0.options.0.feedback": {
+    "source": "Yes. A 2015 study found about as many tellers, and they spent more time helping customers.",
+    "back": "Correct. A 2015 study found the number of tellers stayed about the same, and they spent more time helping customers."
+  },
+  "read.checks.0.options.1.text": {
+    "source": "All of the tellers lost their work",
+    "back": "All the tellers lost their jobs"
+  },
+  "read.checks.0.options.1.feedback": {
+    "source": "Not quite. Many people expected this, but it didn't happen. Read the end of the first section.",
+    "back": "Not quite. Many expected this, but it did not happen. Try reading the end of the first part."
+  },
+  "read.checks.0.options.2.text": {
+    "source": "Tellers began to build cash machines",
+    "back": "Tellers started building cash machines"
+  },
+  "read.checks.0.options.2.feedback": {
+    "source": "Not quite. Tellers still worked in banks. Read what they spent more time doing.",
+    "back": "Not quite. Tellers still worked in banks. Try reading what they spent more time doing."
+  },
+  "read.checks.1.question": {
+    "source": "When the ILO says a job has some exposure to AI tools, what does it mean?",
+    "back": "When the ILO says a job has some exposure to AI tools, what does it mean?"
+  },
+  "read.checks.1.options.0.text": {
+    "source": "The job has already been lost",
+    "back": "The job has already disappeared"
+  },
+  "read.checks.1.options.0.feedback": {
+    "source": "Not quite. Exposure is not a count of lost jobs. Read the second section.",
+    "back": "Not quite. Exposure is not the number of jobs lost. Try reading the second part."
+  },
+  "read.checks.1.options.1.text": {
+    "source": "The worker uses a computer every day",
+    "back": "People in that job use computers every day"
+  },
+  "read.checks.1.options.1.feedback": {
+    "source": "Not quite. Exposure is about the tasks in the job. Read the second section.",
+    "back": "Not quite. Exposure is about the tasks in the job. Try reading the second part."
+  },
+  "read.checks.1.options.2.text": {
+    "source": "The tools could do some of its tasks",
+    "back": "Tools might do some tasks of that job"
+  },
+  "read.checks.1.options.2.feedback": {
+    "source": "Yes. Exposure tells us what the tools could do. Most of these jobs are more likely to change than to disappear.",
+    "back": "Correct. Exposure tells us what tools can do. Most of these jobs are more likely to change than disappear."
+  },
+  "write.prompt": {
+    "source": "Choose one Millbrook worker. Explain which of their tasks changed, and who gained or lost. Then say how it is like or unlike one change from history in the lesson.",
+    "back": "Choose one worker in Millbrook. Explain which of their tasks changed and who gained or lost. Then say how this is like or unlike one historical change in the lesson."
+  },
+  "write.sentenceStarters.0": {
+    "source": "I chose ...",
+    "back": "I chose..."
+  },
+  "write.sentenceStarters.1": {
+    "source": "The task that changed was ...",
+    "back": "The task that changed is..."
+  },
+  "write.sentenceStarters.2": {
+    "source": "___ gained, and ___ lost, because ...",
+    "back": "___ gained and ___ lost, because..."
+  },
+  "write.sentenceStarters.3": {
+    "source": "This is like (or unlike) ___ because ...",
+    "back": "This is like (or unlike) ___ because..."
+  },
+  "write.example": {
+    "source": "I chose the clerks at the Millbrook water office. The task that changed was typing up forms, because an AI tool now reads most of them. The office gained, because the work is faster. Ines gained too, because after training she moved to the help desk. The third clerk lost her work. This is like the bank tellers, because Ines's work moved towards helping people. It is also unlike them, because one clerk lost her job, while the number of tellers did not fall.",
+    "back": "I chose the clerks at the water office in Millbrook. The task that changed is typing forms, because now an AI tool reads most forms. The office gained, because work is faster. Ines gained too, because after training she moved to the help desk. The third clerk lost her job. This is like the bank tellers, because Ines's work changed to helping people. But it is also different, because one clerk lost her job, while the number of bank tellers did not fall."
+  },
+  "speak.partnerTask": {
+    "source": "Talk with your partner: what could the Millbrook water office have done so that the third clerk kept her work? Each give one idea, and say who would need to agree to it.",
+    "back": "Talk with your partner about what the water office in Millbrook could do so the third clerk still has work. Each of you suggests one idea and says who would have to agree."
+  },
+  "speak.independentTask": {
+    "source": "Say out loud what the ILO means by exposure, and why it is not the same as losing a job.",
+    "back": "Say aloud what the ILO means by exposure and why it is not the same as losing a job."
+  },
+  "watch.why": {
+    "source": "It looks back at a hundred years of worry about machines taking jobs, and asks who gains from new technology.",
+    "back": "This video looks back at a hundred years of worry that machines will take jobs, and asks who gains from new technology."
+  },
+  "watch.beforeQuestion": {
+    "source": "Do you think new machines make more jobs or fewer jobs? Why?",
+    "back": "Do you think new machines make more jobs or fewer? Why?"
+  },
+  "watch.afterQuestion": {
+    "source": "Why does the video say that who gains from technology depends on people's choices?",
+    "back": "Why does the video say who gains from technology depends on people's choices?"
+  },
+  "watch.summary": {
+    "source": "This video asks if machines and AI will take away people's jobs. People have worried about this many times before. In the United States, machines replaced many workers in the 1920s and 1930s. It happened again around 1960. Machines took work on farms, in factories and on telephone lines. But most people still found work. Technology makes some new jobs, such as building and fixing machines. It also makes things cheaper. Then people spend money on other things, like haircuts or eating out, and those need workers too. Some experts say AI is different, because it can do many kinds of work. The video says the bigger question may be who gains. The gains from technology have not been shared fairly. The rules people choose can change that.",
+    "back": "This video asks whether machines and AI will take people's jobs. People have worried about this many times. In the United States machines replaced many workers in the 1920s and 1930s, and again around 1960. Machines came to work on farms, in factories and on telephone lines, but most people still found work. Technology created some new jobs, such as building and fixing machines. It also made things cheaper, and then people spent money on other things, such as haircuts or eating out, which also need workers. Some experts say AI is different because it can do many kinds of work. The video says the bigger question may be who gains. The gains from technology have not been shared fairly. The rules people choose can change this."
+  },
+  "watch.keyPoints.0": {
+    "source": "People have worried about machines taking jobs many times before.",
+    "back": "People have worried many times that machines would take jobs."
+  },
+  "watch.keyPoints.1": {
+    "source": "New technology removes some jobs but also helps create new ones.",
+    "back": "New technology makes some jobs disappear but also helps create new ones."
+  },
+  "watch.keyPoints.2": {
+    "source": "Who gains from technology depends on the rules and choices people make.",
+    "back": "Who gains from technology depends on the rules and choices people make."
+  },
+  "watch.contentNote": {
+    "source": "Vox, 2017: made before today's AI chat tools, and about the United States. Title and channel confirmed with YouTube's oEmbed (October 2026); the length, about 9 minutes, comes from Rosetta's transcript archive and is not confirmed on YouTube. It mentions IBM's Watson, a 2013 Oxford study and US income figures. The summary was written from that archive's transcript summary, not from watching it. Someone on the team must watch it before use; learners can read the written summary instead.",
+    "back": "Vox, 2017, made before today's AI chat tools, and about the United States. Video title and channel confirmed with YouTube oEmbed (October 2026). The length of about 9 minutes comes from Rosetta's transcript archive and is not yet confirmed on YouTube. The video mentions IBM's Watson, a 2013 Oxford study and US income figures. The summary was written from the transcript summary in that archive, not from watching the video. The team must have someone watch the video before use. Learners can read the written summary instead.",
+    "note": "Reviewer: Last sentences unified with the other lessons' content notes (สรุปฉบับข้อความ, the KEY_TERMS word for written version)."
+  },
+  "reflect.prompts.0.text": {
+    "source": "One thing that changed my thinking about AI and jobs is ...",
+    "back": "One thing that changed my thinking about AI and work is..."
+  },
+  "reflect.prompts.1.text": {
+    "source": "A task I think will always need a person is ... because ...",
+    "back": "A task I think will always need people is... because..."
+  },
+  "reflect.completionMessage": {
+    "source": "You finished Lesson 9. You used history and a 2025 study to explain how AI can change the tasks in jobs, and why the change is uneven.",
+    "back": "You finished Lesson 9. You used history and 2025 research to explain how AI changes the tasks in jobs, and why the change is uneven."
+  },
+  "visual.alt": {
+    "source": "A timeline of three changes at work: machines in cloth factories in the 1810s, cash machines in banks from about 1970, and AI tools in offices in the 2020s. Each one took away some work and changed or created other work.",
+    "back": "A timeline of three changes at work: machines in cloth factories in the 1810s, cash machines in banks from around 1970, and AI tools in offices in the 2020s. Each made some jobs disappear and changed or created others."
+  },
+  "sources.0.label": {
+    "source": "Britannica: Luddite",
+    "back": "Britannica: Luddite"
+  },
+  "sources.1.label": {
+    "source": "The Conversable Economist (2015): ATMs and a rising number of bank tellers? (on James Bessen's research in the IMF's Finance & Development)",
+    "back": "The Conversable Economist (2015): ATMs and a rising number of bank tellers? (about James Bessen's research in the IMF's Finance & Development)"
+  },
+  "sources.2.label": {
+    "source": "International Labour Organization (20 May 2025): Generative AI and jobs, a 2025 update (research brief; potential exposure of tasks, not job losses)",
+    "back": "International Labour Organization (20 May 2025): Generative AI and jobs, a 2025 update (research brief; potential exposure of tasks, not job loss)"
+  },
+  "sources.3.label": {
+    "source": "ILO Working Paper 140 (2025): Generative AI and jobs, a refined global index of occupational exposure (Gmyrek and others; figures by country income group and by sex)",
+    "back": "ILO Working Paper 140 (2025): Generative AI and jobs, a refined global index of occupational exposure (Gmyrek et al.; figures by country income group and by sex)"
+  },
+  "sensitiveNotes.0": {
+    "source": "Many learners may not be allowed to work where they live, and work and money can be painful topics for families. Never ask learners about their own or their family's jobs, income or plans for work. The lesson uses made-up Millbrook workers, and the Speak discussion is about them.",
+    "back": "Many learners may not be allowed to work where they live, and work and money may be painful topics for families. Do not ask learners about their own or their families' jobs, income or work plans. This lesson uses fictional workers in Millbrook, and the discussion in the Speak step is about them."
+  },
+  "sensitiveNotes.1": {
+    "source": "Britannica notes that the government punished the Luddites harshly, including hangings. The lesson leaves this out; if learners ask, keep it short and factual.",
+    "back": "Britannica says the government punished the Luddites harshly, including by hanging. The lesson does not mention this. If learners ask, answer briefly and factually."
+  },
+  "educatorNotes.0": {
+    "source": "One estimate in learner text, on purpose: the ILO's Generative AI and jobs, a 2025 update (Gmyrek and others, 20 May 2025, with Poland's NASK; ILO Working Paper 140). It scored nearly 30,000 tasks for how far generative AI could do them. 25% of the world's jobs are in occupations with some exposure (34% in high-income countries, 11% in low-income ones); 3.3% are in the most exposed group, mostly clerical jobs such as data entry clerks and typists; in high-income countries that group is 9.6% of women's jobs and 3.5% of men's. The ILO says the figures reflect potential exposure, an upper limit, not the actual effect on employment; it expects most jobs to be transformed rather than made redundant, though efficiency gains could still reduce demand for workers. Other estimates, such as the IMF's (January 2024: almost 40% of jobs exposed to AI in general), cover a wider set of technologies and use another method, so they can't be set beside the ILO's number; the lesson uses only the ILO's. The bank teller example is US data from the 1970s to the 2000s (James Bessen, 2015), and the spreadsheet example is from NPR (2015); each is one past case, not a forecast for AI.",
+    "back": "There is one set of estimates in the learner text on purpose: the ILO's Generative AI and jobs, a 2025 update (Gmyrek et al., 20 May 2025, with Poland's NASK, ILO Working Paper 140). It scored nearly 30,000 tasks on how much generative AI could do. 25 percent of jobs worldwide are in occupations with some exposure (34 percent in high-income countries, 11 percent in low-income ones). 3.3 percent are in the most exposed group, mostly clerical jobs such as data entry clerks and typists; in high-income countries this group is 9.6 percent of women's jobs and 3.5 percent of men's. The ILO says these figures reflect potential exposure, an upper limit, not actual employment effects, and expects most jobs to be transformed rather than made redundant, though efficiency gains may still cut labour demand. Other estimates, such as the IMF's (January 2024: nearly 40 percent of jobs exposed to AI overall), cover broader technology and use other methods, so they cannot be set beside the ILO's; the lesson uses only the ILO's. The bank teller example is US data from the 1970s to the 2000s (James Bessen, 2015) and the spreadsheet example is from NPR (2015). Each is one past case, not a prediction for AI.",
+    "note": "Reviewer: generative AI unified as AI ที่สร้างเนื้อหาได้, as in Lessons 11, 16 and 17 (it was written three ways across the course)."
+  },
+  "educatorNotes.1": {
+    "source": "The Speak discussion has no single right answer. Ideas might include retraining the clerk for another task, moving more slowly, or sharing the remaining work; ask who would have to agree (the employer, the workers, a union or the government), which links to the ILO's point about talks between them. A teacher could add a local example of a tool that changed work, without asking about anyone's own job.",
+    "back": "The Speak discussion has no single right answer. Possible ideas: train the clerk for other tasks, make the change more slowly, or share the remaining work. Ask who would need to agree (employer, workers, a union or government), which links to the ILO's point about talks between these parties. Teachers might add local examples of tools changing jobs, without asking about anyone's own job."
+  }
+}

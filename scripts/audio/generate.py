@@ -120,6 +120,20 @@ VOICES = {
         "modelSampleRate": 48000,
         "sampleRate": 24000,
     },
+    # Thai: MakHam (pythainlp/MakHamTTS, Apache-2.0), Kokoro-82M retrained for Thai with FastThaiG2P's
+    # five-tone phonemes, run with onnxruntime on the CPU. Chosen from samples on 20 November 2026
+    # (docs/notes/recorded-audio.md, "Thai"). PyThaiTTS (Apache-2.0) supplies the phonemiser and the text
+    # preprocessing (numbers to words, ๆ); its version is pinned, because its output decides the recording.
+    "th": {
+        "engine": "makham-kokoro-thai",
+        "package": "pythaitts==1.0.0",
+        "model": "pythainlp/MakHamTTS",
+        "modelRevision": "cd812941e8848bffe0dcc9182720ba7cc8ddd13e",
+        "licence": "Apache-2.0",
+        "voice": os.environ.get("AUDIO_TH_VOICE") or "newvoice_female",
+        "speed": 1.0,
+        "sampleRate": 24000,
+    },
 }
 
 # Where VieNeu's model files are kept: real files, not the Hugging Face cache's symlinks (see fetch_vieneu_models).
@@ -330,11 +344,66 @@ class VieNeu:
         return soxr.resample(wave, v["modelSampleRate"], v["sampleRate"], quality="VHQ").astype(np.float32)
 
 
+class MakHam:
+    """Thai: Kokoro-82M Thai (MakHam) through PyThaiTTS's phonemiser, ONNX on the CPU. Deterministic."""
+
+    MAX_PHONEMES = 500  # the model's limit is 510
+
+    def __init__(self) -> None:
+        from huggingface_hub import hf_hub_download
+        from pythaitts.pretrained.makham import MakHamTTS
+
+        v = VOICES["th"]
+
+        def fetch(name: str) -> str:
+            return hf_hub_download(repo_id=v["model"], filename=f"fastthaig2p_model/{name}", revision=v["modelRevision"])
+
+        self.tts = MakHamTTS(
+            model_path=fetch("kokoro_thai.onnx"),
+            voicepack_path=fetch(f"{v['voice']}.npy"),
+            config_path=fetch("config.json"),
+            speed=v["speed"],
+            intra_op_threads=THREADS,
+            speaker_idx=v["voice"],
+        )
+        self.rate = v["sampleRate"]
+
+    def _chunks(self, text: str) -> list[str]:
+        """The text in pieces short enough for the model: whole, or split at spaces, or at PyThaiNLP's words."""
+        if len(self.tts._text_to_phonemes(text)) <= self.MAX_PHONEMES:
+            return [text]
+        parts = text.split(" ")
+        if len(parts) == 1:
+            from pythainlp.tokenize import word_tokenize
+
+            words = word_tokenize(text, keep_whitespace=False)
+            half = len(words) // 2
+            parts = ["".join(words[:half]), "".join(words[half:])]
+        half = len(parts) // 2
+        return self._chunks(" ".join(parts[:half])) + self._chunks(" ".join(parts[half:]))
+
+    def say(self, text: str) -> np.ndarray:
+        from pythaitts.preprocess import preprocess_text
+
+        spoken = preprocess_text(text)
+        gap = np.zeros(int(0.12 * self.rate), dtype=np.float32)
+        out: list[np.ndarray] = []
+        for chunk in self._chunks(spoken):
+            audio = self.tts.generate(chunk)
+            if len(audio):
+                out += [np.asarray(audio, dtype=np.float32), gap]
+        if not out:
+            raise RuntimeError(f"MakHam said nothing for {text!r}")
+        return np.concatenate(out[:-1])
+
+
 def engine_for(lang: str):
     if lang == "en":
         return Kokoro()
     if lang == "vi":
         return VieNeu()
+    if lang == "th":
+        return MakHam()
     return Mms(lang)
 
 

@@ -1,0 +1,330 @@
+{
+  "title": {
+    "source": "What AI is, and what it isn't",
+    "back": "What AI is, and what it is not"
+  },
+  "essentialQuestion": {
+    "source": "What is AI, and how do many AI tools make their guesses?",
+    "back": "What is AI, and how do many AI tools guess answers?"
+  },
+  "learningGoal": {
+    "source": "Explain what AI is, and how many AI tools today make predictions from patterns in examples.",
+    "back": "Explain what AI is, and how many AI tools today make predictions from patterns in examples."
+  },
+  "evidence.label": {
+    "source": "Fictional example created for this lesson.",
+    "back": "A fictional example created for this lesson"
+  },
+  "evidence.question": {
+    "source": "At which step did the mistake show up? Who caught it?",
+    "back": "At which step did the mistake appear? Who was the one who found it?"
+  },
+  "evidence.cards.0.title": {
+    "source": "How the Hillview voice typing tool works",
+    "back": "How Hillview's voice typing tool works"
+  },
+  "evidence.cards.0.columns.0": {
+    "source": "Step",
+    "back": "Step"
+  },
+  "evidence.cards.0.columns.1": {
+    "source": "What happens",
+    "back": "What happens"
+  },
+  "evidence.cards.0.rows.0.0": {
+    "source": "1. Examples (data)",
+    "back": "1. Examples (data)"
+  },
+  "evidence.cards.0.rows.0.1": {
+    "source": "Its makers collect recordings of many people speaking, with the words written down.",
+    "back": "The makers collect recordings of many people speaking, with the words written to go with them."
+  },
+  "evidence.cards.0.rows.1.0": {
+    "source": "2. Find patterns",
+    "back": "2. Find patterns"
+  },
+  "evidence.cards.0.rows.1.1": {
+    "source": "The program finds which sounds usually go with which words.",
+    "back": "The program finds which sounds usually go with which words."
+  },
+  "evidence.cards.0.rows.2.0": {
+    "source": "3. Make a prediction",
+    "back": "3. Predict"
+  },
+  "evidence.cards.0.rows.2.1": {
+    "source": "A learner says, “The tree is tall.” The tool has never heard this voice before. It guesses the words.",
+    "back": "A learner says “This shirt is pretty.” The tool has never heard this voice before, so it guesses what the words are.",
+    "flag": true,
+    "note": "The English mistake (“The tree is tall” typed as “The three is tall”) only works in English. Like the Vietnamese, I used a Thai near-sound pair instead: “เสื้อตัวนี้สวย” (this shirt is pretty) typed as “เสือตัวนี้สวย” (this tiger is pretty), a tone mark a fast speaker or a tool can miss. Check it reads naturally; the planned picture (visuals/DW01.svg) shows the English sentence and will need the same change."
+  },
+  "evidence.cards.0.rows.3.0": {
+    "source": "4. A person checks",
+    "back": "4. A person checks"
+  },
+  "evidence.cards.0.rows.3.1": {
+    "source": "The tool typed “The three is tall.” The learner spoke fast. A teacher spotted the mistake and fixed it.",
+    "back": "The tool types “This tiger is pretty” because the learner spoke fast. A teacher sees the mistake and corrects it.",
+    "flag": true,
+    "note": "Goes with rows.2.1: เสือ for เสื้อ."
+  },
+  "read.sections.0.heading": {
+    "source": "AI is a big field",
+    "back": "AI is a big field"
+  },
+  "read.sections.0.text": {
+    "source": "AI stands for artificial intelligence, and artificial means made by people. AI is a big field of computer science, and people have worked on it since the 1950s, as Lesson 2 shows. It covers tasks such as understanding speech, translating sentences and recognising things in photos. There are different ways to build AI. Some AI follows rules that people wrote. Much of the AI you meet today learns patterns from data instead, and this is called machine learning. People give a program many examples, such as photos, sentences or voice recordings, and the program finds patterns in them. Then it uses those patterns to make a prediction: a careful guess about something new. Many tools combine both approaches, using rules and learning together.",
+    "back": "AI is artificial intelligence (ปัญญาประดิษฐ์), and the word 'artificial' means something people made. AI is a big field of computer science, and people have worked on it since the 1950s, as Lesson 2 will tell. AI covers tasks like understanding speech, translating sentences and recognising things in photos. AI can be built in many ways. Some AI follows rules people wrote, but much of the AI you meet today learns patterns from data instead; this is called machine learning. People give a program many examples, such as photos, sentences or recordings, and the program finds patterns in those examples. Then it uses those patterns to make predictions, that is, careful guesses about something new. Many tools use both methods together, using rules and learning at the same time.",
+    "flag": true,
+    "note": "The English explains the word “artificial”. I explained ประดิษฐ์ (made by people) instead and left out the English words, since the reading is read aloud in Thai."
+  },
+  "read.sections.0.simpler": {
+    "source": "AI means artificial intelligence. People make it. People have worked on AI since the 1950s. AI can turn speech into words, translate and find things in photos. AI can be built in different ways. Some AI uses rules that people wrote. Much AI today learns from data. This is called machine learning. A program gets many examples, like photos or voices. It finds patterns in them. Then it makes a prediction, a careful guess about something new. Many tools use rules and learning together.",
+    "back": "AI is artificial intelligence. People are the ones who made it. People have worked on AI since the 1950s. AI can turn speech into words, translate languages and find things in pictures. AI can be built in many ways. Some AI uses rules people wrote. Today much AI learns from data. This way is called machine learning. A program gets many examples, such as pictures or sounds. It finds patterns in those examples. Then it makes predictions, that is, careful guesses about something new. Many tools use both rules and learning."
+  },
+  "read.sections.1.heading": {
+    "source": "A worked example: voice typing",
+    "back": "A real example: voice typing"
+  },
+  "read.sections.1.text": {
+    "source": "Hillview Learning Centre has a voice typing tool: you speak, and it types your words. Here is how a tool like this is made and used. First, its makers gave it a huge set of data, recordings of many people speaking, each with the words written down. Next, the program found patterns, such as which sounds usually go with which words. Then, when you speak, it makes a prediction about your words. It has never heard your voice before, so it cannot simply look up the answer; it guesses from the patterns. The guess is often right, but not always. If you speak quickly, if the room is noisy, or if your voice is unlike most of its examples, it may type the wrong word. So a person still reads the words and checks them.",
+    "back": "The Hillview learning centre has a voice typing tool: when you speak, it types your words out. Here is how a tool like this is built and used. First, the makers give it a very large set of data: recordings of many people speaking, each with the words written along with it. Next, the program finds patterns, such as which sounds usually go with which words. Then when you speak, it predicts which words you said. It has never heard your voice before, so it cannot simply look up the answer; it has to guess from the patterns it found. That guess is usually right but not every time. If you speak fast, if the room is noisy, or if your voice is not like most of its examples, it may type the wrong word. So people still need to read those words and check again."
+  },
+  "read.sections.1.simpler": {
+    "source": "Hillview Learning Centre has a voice typing tool. You talk, and it types. Its makers gave it lots of data. This was recordings of many people talking. The words were written down too. The program found patterns. Some sounds usually go with some words. Now you talk. It has never heard your voice. So it makes a prediction about your words. Often it is right, but not always. Fast talk or a noisy room can lead to a wrong word. So can a voice that is not like its examples. So a person still checks the words.",
+    "back": "The Hillview learning centre has a voice typing tool. You speak, and it types. The makers gave it a lot of data. This data is recordings of many people, with the words written along too. The program finds patterns. Some sounds usually go with some words. Now you speak. It has never heard your voice, so it predicts what you said. It is usually right, but not every time. Speaking fast or a noisy room can give wrong words. A voice unlike its examples too. So people still need to check those words."
+  },
+  "read.sections.2.heading": {
+    "source": "Rules, guesses and people",
+    "back": "Rules, guesses and people"
+  },
+  "read.sections.2.text": {
+    "source": "Many machines are not AI. A calculator follows fixed steps that a person wrote: it always gives 12 for 7 + 5, and it never learned that from examples. But following rules, or giving the same answer every time, does not prove a tool is not AI. Some AI uses rules, and some AI tools can be set to give the same answer each time. The word “smart” on a box does not tell you either. AI can seem clever, but it does not think or feel like a person. People decide what an AI tool is for, what data it learns from and when to trust it. So you can ask three questions about any AI tool. What does it guess? What examples did it learn from? Who checks whether it is right?",
+    "back": "Many machines are not AI. A calculator follows fixed steps people wrote. It gives the answer 12 every time you press 7 plus 5, and it never learned this from examples. But following rules or giving the same answer every time does not prove a tool is not AI, because some AI uses rules too, and some AI tools can be set to answer the same way every time. The word “smart” on a box cannot tell you either. AI may look clever, but it does not think or feel like a person. People decide what an AI tool is for, what data it learns from, and when it should be trusted. So you can ask these three questions of any AI tool. What does it guess? What examples did it learn from? Who checks whether it is right?",
+    "flag": true,
+    "note": "“smart” on a box: I wrote “สมาร์ท”, the word Thai shops print on products (สมาร์ททีวี). “อัจฉริยะ” is the other common choice. Also in the simpler text. Reviewer: สมาร์ท respelled สมาร์ต (Royal Institute spelling, as in สมาร์ตโฟน in Lesson 10). The flag on the word choice stays."
+  },
+  "read.sections.2.simpler": {
+    "source": "Many machines are not AI. A calculator follows steps a person wrote. It always says 7 + 5 is 12. It did not learn this. But some AI follows rules too. Some AI gives the same answer every time. So rules alone do not tell you. A “smart” label does not tell you either. AI does not think or feel like a person. People choose what it is for, its data and when to trust it. Ask three questions. What does it guess? What did it learn from? Who checks it?",
+    "back": "Many machines are not AI. A calculator follows steps people wrote. It always says 7 plus 5 makes 12. It did not learn this. But some AI follows rules too. Some AI gives the same answer every time. So rules alone cannot tell you. A label saying “smart” cannot tell you either. AI does not think or feel like a person. People choose what it is for, what data it uses and when to trust it. Ask these three questions. What does it guess? What did it learn from? Who checks it?",
+    "note": "Reviewer: สมาร์ท respelled สมาร์ต, as in the standard text."
+  },
+  "read.glossary.0.word": {
+    "source": "artificial intelligence",
+    "back": "artificial intelligence"
+  },
+  "read.glossary.0.forms": {
+    "source": [
+      "AI"
+    ],
+    "back": "AI"
+  },
+  "read.glossary.0.definition": {
+    "source": "Computer systems that do tasks like understanding speech, translating or finding things in photos.",
+    "back": "A computer system that does tasks like understanding speech, translating, or finding things in photos."
+  },
+  "read.glossary.0.example": {
+    "source": "The Hillview voice typing tool uses artificial intelligence.",
+    "back": "Hillview's voice typing tool uses artificial intelligence."
+  },
+  "read.glossary.1.word": {
+    "source": "data",
+    "back": "data"
+  },
+  "read.glossary.1.definition": {
+    "source": "Facts, words, pictures or sounds that a computer can use.",
+    "back": "Facts, words, pictures or sounds that a computer can use."
+  },
+  "read.glossary.1.example": {
+    "source": "The voice typing tool learned from data: many recordings of people speaking.",
+    "back": "The voice typing tool learns from data: recordings of many people speaking."
+  },
+  "read.glossary.2.word": {
+    "source": "machine learning",
+    "back": "machine learning"
+  },
+  "read.glossary.2.definition": {
+    "source": "When a computer learns patterns from many examples, not only from fixed steps.",
+    "back": "A computer learning patterns from many examples, not only using fixed steps."
+  },
+  "read.glossary.2.example": {
+    "source": "The voice typing tool was built with machine learning.",
+    "back": "The voice typing tool was built with machine learning."
+  },
+  "read.glossary.3.word": {
+    "source": "pattern",
+    "back": "pattern"
+  },
+  "read.glossary.3.forms": {
+    "source": [
+      "patterns"
+    ],
+    "back": "pattern"
+  },
+  "read.glossary.3.definition": {
+    "source": "Something that happens again and again in a similar way.",
+    "back": "Something that happens again and again in a similar way."
+  },
+  "read.glossary.3.example": {
+    "source": "The tool found a pattern: some sounds usually go with some words.",
+    "back": "The tool found a pattern: some sounds usually go with some words."
+  },
+  "read.glossary.4.word": {
+    "source": "prediction",
+    "back": "prediction"
+  },
+  "read.glossary.4.forms": {
+    "source": [
+      "predictions"
+    ],
+    "back": "predict"
+  },
+  "read.glossary.4.definition": {
+    "source": "A careful guess, based on patterns, about something you do not know yet.",
+    "back": "A careful guess, from patterns, about something you do not know yet.",
+    "note": "Reviewer: Changed จากสิ่งที่เกิดซ้ำๆ to จากรูปแบบ so the definition uses the lesson's key word, as the English (based on patterns) does."
+  },
+  "read.glossary.4.example": {
+    "source": "The typed words are a prediction. They may not be right.",
+    "back": "The typed words are a prediction, which may not be right."
+  },
+  "read.checks.0.question": {
+    "source": "How does the Hillview voice typing tool work out what you said?",
+    "back": "How does Hillview's voice typing tool know what you said?"
+  },
+  "read.checks.0.options.0.text": {
+    "source": "It looks up your voice in a list of all voices",
+    "back": "It looks up your voice in a list of all voices."
+  },
+  "read.checks.0.options.0.feedback": {
+    "source": "Not quite. It has never heard your voice before, so there is nothing to look up. Read the second section again.",
+    "back": "Not quite. It has never heard your voice before, so there is nothing to look up. Try reading the second part again."
+  },
+  "read.checks.0.options.1.text": {
+    "source": "It guesses from patterns in many recordings",
+    "back": "It guesses from patterns in many recordings."
+  },
+  "read.checks.0.options.1.feedback": {
+    "source": "Yes. It found patterns in recordings of many people. Then it uses them to guess the words in a new voice.",
+    "back": "Correct. It found patterns in recordings of many people, then used those patterns to guess words from a new voice."
+  },
+  "read.checks.0.options.2.text": {
+    "source": "A person types your words for it",
+    "back": "Someone types your words for it."
+  },
+  "read.checks.0.options.2.feedback": {
+    "source": "Not quite. The tool types the words itself. A person checks them afterwards. Read the second section again.",
+    "back": "Not quite. The tool types the words itself; people check later. Try reading the second part again."
+  },
+  "write.prompt": {
+    "source": "Choose one AI tool: the Hillview voice typing tool, or another AI tool you have seen or heard about. Answer the three questions from the lesson about it.",
+    "back": "Choose one AI tool: Hillview's voice typing tool or another AI tool you have seen or heard of. Then answer the three questions from the lesson about that tool."
+  },
+  "write.sentenceStarters.0": {
+    "source": "The tool I chose is ...",
+    "back": "The tool I chose is ...",
+    "note": "Reviewer: Spacing/wording unified across the course: “...” joined to the Thai word before it (KEY_TERMS style, as in most lessons), and “ส่วนแรก” for “the first section”."
+  },
+  "write.sentenceStarters.1": {
+    "source": "It guesses ...",
+    "back": "It guesses ...",
+    "note": "Reviewer: Spacing/wording unified across the course: “...” joined to the Thai word before it (KEY_TERMS style, as in most lessons), and “ส่วนแรก” for “the first section”."
+  },
+  "write.sentenceStarters.2": {
+    "source": "It learned from ...",
+    "back": "It learned from ...",
+    "note": "Reviewer: Spacing/wording unified across the course: “...” joined to the Thai word before it (KEY_TERMS style, as in most lessons), and “ส่วนแรก” for “the first section”."
+  },
+  "write.sentenceStarters.3": {
+    "source": "The person who should check it is ...",
+    "back": "The person who should check it is ...",
+    "note": "Reviewer: Spacing/wording unified across the course: “...” joined to the Thai word before it (KEY_TERMS style, as in most lessons), and “ส่วนแรก” for “the first section”."
+  },
+  "write.example": {
+    "source": "The tool I chose is a translation tool. It guesses how to say a sentence in another language. It learned from many sentences in two languages. It found patterns in them, so it can guess a sentence it has never seen. It may be wrong with a rare word or a joke. The person who should check it is someone who speaks both languages well, before the words go into an important notice.",
+    "back": "The tool I chose is a translation tool. It guesses how to say a sentence in another language. It learned from many sentences in two languages. It found patterns in those sentences, so it can guess sentences it has never seen. It may slip up with rarely used words or jokes. The person who should check it is someone who speaks both languages well, before the text goes into an important notice."
+  },
+  "speak.partnerTask": {
+    "source": "Take turns. Explain to your partner how the voice typing tool makes its guess. Use the words examples, pattern and prediction. Your partner says one thing a person should check.",
+    "back": "Take turns speaking. Explain to your partner how the voice typing tool guesses. Use the words examples, pattern and prediction. Then your partner says one thing people should check."
+  },
+  "speak.independentTask": {
+    "source": "Say out loud what AI is in two sentences. Then name one thing AI cannot do.",
+    "back": "Say aloud what AI is in two sentences, then say one thing AI cannot do."
+  },
+  "watch.why": {
+    "source": "Two people who work with AI explain, in under three minutes, that most AI today learns patterns from examples.",
+    "back": "Two people who work with AI explain in under three minutes that most AI today learns patterns from examples."
+  },
+  "watch.beforeQuestion": {
+    "source": "Where do you think AI is used every day?",
+    "back": "Where do you think AI is used every day?"
+  },
+  "watch.afterQuestion": {
+    "source": "How is machine learning different from a program that follows fixed steps?",
+    "back": "How is machine learning different from a program that follows fixed steps?"
+  },
+  "watch.summary": {
+    "source": "In this short video, two people who work with AI talk about machine learning. AI is already part of everyday life. It helps choose what people see online, for example when they search. Many people imagine AI as a robot that thinks like a person. The speakers say that kind of AI is still many years away. Most AI today is machine learning. In the past, people had to write every step for a computer. With machine learning, people give the computer lots of examples. The computer finds patterns in the examples by itself. This is a bit like how you learn from practice. It is a new way to get computers to do useful jobs.",
+    "back": "In this short video, two people who work with AI talk about machine learning. AI is already part of daily life. It helps choose what people see online, such as when searching. Many people picture AI as a robot that can think like a person. The speakers say that kind of AI is still many years ahead. Most AI today is machine learning. In the past, people had to write every step for the computer, but in machine learning people give the computer many examples and the computer finds patterns in those examples itself, similar to how you learn from practice. This is a new way that lets computers do useful tasks."
+  },
+  "watch.keyPoints.0": {
+    "source": "AI is already part of everyday tools, like internet searches.",
+    "back": "AI is already part of everyday tools, such as searching on the internet."
+  },
+  "watch.keyPoints.1": {
+    "source": "The speakers say most AI today is machine learning: it finds patterns in examples.",
+    "back": "The speakers say most AI today is machine learning, which finds patterns in examples."
+  },
+  "watch.keyPoints.2": {
+    "source": "People do not write every step. They give the computer examples.",
+    "back": "People do not write every step; they give the computer examples."
+  },
+  "watch.contentNote": {
+    "source": "The speakers name the companies they work for, and say that AI that thinks like a person is still decades away. That is their opinion, not a settled fact. Preview it first; learners can read the written summary instead.",
+    "back": "The speakers name the company they work at, and say AI that can think like a person is still decades away. That is their opinion, not a settled fact. Watch the video before using it. Learners can read the written summary instead."
+  },
+  "reflect.prompts.0.text": {
+    "source": "Before this lesson, I thought AI was ... Now I think ...",
+    "back": "Before this lesson I thought AI was ... Now I think ...",
+    "note": "Reviewer: Spacing/wording unified across the course: “...” joined to the Thai word before it (KEY_TERMS style, as in most lessons), and “ส่วนแรก” for “the first section”."
+  },
+  "reflect.prompts.1.text": {
+    "source": "A question I have about AI is ...",
+    "back": "A question I have about AI is ...",
+    "note": "Reviewer: Spacing/wording unified across the course: “...” joined to the Thai word before it (KEY_TERMS style, as in most lessons), and “ส่วนแรก” for “the first section”."
+  },
+  "reflect.completionMessage": {
+    "source": "You finished Lesson 1. You explained what AI is, and how a tool that learns from examples makes a careful guess.",
+    "back": "You finished Lesson 1. You explained what AI is, and how tools that learn from examples make careful guesses."
+  },
+  "visual.alt": {
+    "source": "A diagram: recordings with their words go in, the computer finds a pattern, then it makes a careful guess at a new voice, and a person checks it. Below, a calculator follows fixed steps that a person wrote. A note says some AI uses rules too.",
+    "back": "Diagram: recordings with their words are put in, a computer finds patterns, then makes a careful guess about a new voice, and a person checks. Below, a calculator follows fixed steps people wrote, with a note saying some AI uses rules too."
+  },
+  "sources.0.label": {
+    "source": "Stanford HAI: What is artificial intelligence (AI)? (the broad field, and modern AI that finds patterns in data)",
+    "back": "Stanford HAI: What is artificial intelligence (AI)? (a wide field, and modern AI that finds patterns in data)"
+  },
+  "sources.1.label": {
+    "source": "OECD.AI: What is AI? Can you make a clear distinction between AI and non-AI systems?",
+    "back": "OECD.AI: What is AI? Can you make a clear distinction between AI and non-AI systems? (what AI is, and whether AI can be clearly separated from non-AI systems)"
+  },
+  "sources.2.label": {
+    "source": "Thomas Haigh, Communications of the ACM 67(2), February 2024: How the AI boom went bust (1980s expert systems, AI built from rules)",
+    "back": "Thomas Haigh, Communications of the ACM 67(2), February 2024: How the AI boom went bust (expert systems in the 1980s, or AI built from rules)"
+  },
+  "educatorNotes.0": {
+    "source": "There is no single agreed line between AI and other programs (see the OECD source). AI is a broad field: Stanford HAI calls it computer systems that do tasks with human-like intelligence, and says modern AI often works by finding patterns in data. This lesson teaches that common modern kind (machine learning) through one worked example; rule-based AI, such as the 1980s expert systems in Lesson 2, is AI too, and many tools mix rules and learning. If a learner asks whether a particular tool is AI, “it depends on how it was built” is often the honest answer.",
+    "back": "There is no line everyone agrees on between AI and other programs (see the OECD source). AI is a wide field. Stanford HAI calls AI computer systems that work with human-like intelligence, and says modern AI often works by finding patterns in data. This lesson teaches the common kind of modern AI (machine learning) through one example. Rule-built AI, such as the 1980s expert systems in Lesson 2, is AI too, and many tools use both rules and learning. If a learner asks whether a tool is AI, the most honest answer is often “it depends on how it was built”."
+  },
+  "educatorNotes.1": {
+    "source": "The voice typing tool learned from recordings with the words written down: one common way to train such a tool, not the only way AI learns (Lesson 3 calls this supervised learning). Learners may not own a phone, so the Write task lets them use the voice typing tool or any other tool they have seen or heard about.",
+    "back": "The voice typing tool learns from recordings with written words, which is one common way to train tools like this, not the only way AI learns (Lesson 3 calls this supervised learning). Learners may not have their own phones, so the writing task lets them choose the voice typing tool or another tool they have seen or heard of.",
+    "flag": true,
+    "note": "supervised learning: การเรียนรู้แบบมีผู้สอน, the usual Thai term (also used in DW03)."
+  },
+  "educatorNotes.2": {
+    "source": "The video is fast, native-speaker English and names real companies. The written summary covers the main idea. Someone on the team must still watch it before use (see content/courses/digital-world/README.md).",
+    "back": "The video speaks fast, in native-speaker English, and names a real company. The written summary covers the main points. The team must have someone watch the video before it is used (see content/courses/digital-world/README.md)."
+  }
+}

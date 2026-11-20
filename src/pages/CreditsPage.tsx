@@ -45,6 +45,7 @@ const FONT_KEYS: readonly MessageKey[] = [
   'pages.credits.fontEczar',
   'pages.credits.fontVazirmatn',
   'pages.credits.fontBeVietnam',
+  'pages.credits.fontSarabun',
 ];
 
 /** The open-source libraries that reach the browser (package.json; licences from each package). */
@@ -92,6 +93,14 @@ const VOICES = [
     key: 'pages.credits.voiceVietnamese',
     model: 'VieNeu-TTS v3 Turbo',
     url: 'https://huggingface.co/pnnbao-ump/VieNeu-TTS-v3-Turbo',
+    licence: 'Apache License 2.0',
+    licenceUrl: 'https://www.apache.org/licenses/LICENSE-2.0',
+  },
+  {
+    // MakHam (Kokoro-82M retrained for Thai) and PyThaiTTS, both Apache-2.0.
+    key: 'pages.credits.voiceThai',
+    model: 'MakHam (Kokoro-82M Thai)',
+    url: 'https://huggingface.co/pythainlp/MakHamTTS',
     licence: 'Apache License 2.0',
     licenceUrl: 'https://www.apache.org/licenses/LICENSE-2.0',
   },
@@ -570,6 +579,7 @@ export function CreditsPage() {
           <p>{t('pages.credits.translationBody')}</p>
           <p>{t('pages.credits.translationBodyMalay')}</p>
           <p>{t('pages.credits.translationBodyVietnamese')}</p>
+          <p>{t('pages.credits.translationBodyThai')}</p>
         </section>
       </div>
     </div>

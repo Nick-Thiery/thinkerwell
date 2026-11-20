@@ -1,0 +1,415 @@
+{
+  "title": {
+    "source": "What a large language model is",
+    "back": "What is a large language model?"
+  },
+  "essentialQuestion": {
+    "source": "How do chatbots write answers, and why can they sound sure and still be wrong?",
+    "back": "How does a chatbot write answers, and why can it sound confident but still be wrong?"
+  },
+  "learningGoal": {
+    "source": "Explain how a large language model writes by predicting the next token, how chatbots developed from rules to machine learning, and why their answers need checking.",
+    "back": "Explain how a large language model writes by predicting the next token, how chatbots developed from using rules to machine learning, and why their answers must be checked."
+  },
+  "evidence.label": {
+    "source": "Fictional example created for this lesson.",
+    "back": "A fictional example created for this lesson"
+  },
+  "evidence.question": {
+    "source": "In the toy game, which word would come up most often? Why could the helper explain a map scale well, but name a book that does not exist?",
+    "back": "In this model game, which word would come out most often? Why did the assistant explain map scale well but then name a book that does not exist?"
+  },
+  "evidence.cards.0.title": {
+    "source": "The Lakeside word game, a toy example: what came after “a cup of”",
+    "back": "Lakeside's word game, a model example: words that come after “in the cup there is”",
+    "flag": true,
+    "note": "The toy word game is changed for Thai: “a cup of” → tea / water / rice does not work as Thai next-word order, so I used “ในถ้วยมี” (in the cup there is) → ชา (6) / น้ำ (3) / ข้าว (1), keeping the numbers. Same in read.sections.1, visual.alt and educatorNotes.0. Any picture with the English words will need the same change."
+  },
+  "evidence.cards.0.columns.0": {
+    "source": "Next word",
+    "back": "Next word"
+  },
+  "evidence.cards.0.columns.1": {
+    "source": "Times in the practice sentences",
+    "back": "Number of times in the training sentences"
+  },
+  "evidence.cards.0.rows.0.0": {
+    "source": "tea",
+    "back": "tea"
+  },
+  "evidence.cards.0.rows.0.1": {
+    "source": "6",
+    "back": "6"
+  },
+  "evidence.cards.0.rows.1.0": {
+    "source": "water",
+    "back": "water"
+  },
+  "evidence.cards.0.rows.1.1": {
+    "source": "3",
+    "back": "3"
+  },
+  "evidence.cards.0.rows.2.0": {
+    "source": "rice",
+    "back": "rice"
+  },
+  "evidence.cards.0.rows.2.1": {
+    "source": "1",
+    "back": "1"
+  },
+  "evidence.cards.1.title": {
+    "source": "Three answers from the Lakeside helper, a pretend chatbot",
+    "back": "Three answers from the Lakeside assistant, a fictional chatbot"
+  },
+  "evidence.cards.1.cases.0.name": {
+    "source": "Explain an idea",
+    "back": "Explaining an idea"
+  },
+  "evidence.cards.1.cases.0.body": {
+    "source": "A learner asked, “What is a map scale?” The helper gave a short, clear explanation. A teacher checked it, and it was right.",
+    "back": "A learner asks “What is a map's scale?” The assistant gives a short, clear explanation. A teacher checked it, and the explanation is correct."
+  },
+  "evidence.cards.1.cases.1.name": {
+    "source": "Translate a notice",
+    "back": "Translating a notice"
+  },
+  "evidence.cards.1.cases.1.body": {
+    "source": "The helper turned a short notice into another language. A volunteer who speaks that language fixed two words.",
+    "back": "The assistant translates a short notice into another language. A volunteer who speaks that language fixed two words."
+  },
+  "evidence.cards.1.cases.2.name": {
+    "source": "Name a book",
+    "back": "Naming a book"
+  },
+  "evidence.cards.1.cases.2.body": {
+    "source": "A learner asked for a book about the history of rivers. The helper named “The Long Blue Road” by Pella Raskin, from 2009. It sounded very sure. The librarian could not find this book anywhere.",
+    "back": "A learner asks for a book about the history of a river. The assistant names the book “The Long Blue Road” by Pella Raskin from 2009. It sounds very confident, but the librarian cannot find this book anywhere.",
+    "flag": true,
+    "note": "The made-up book keeps its English title and author (“The Long Blue Road”, Pella Raskin), as names stay in Latin."
+  },
+  "read.sections.0.heading": {
+    "source": "From rules to learning from text",
+    "back": "From rules to learning from text"
+  },
+  "read.sections.0.text": {
+    "source": "A chatbot is a computer program that you can chat with in writing. Chatbots are not new. In 1966, a program called ELIZA chatted by following rules that people wrote. Today, many chatbots are built on a large language model, or LLM, which uses machine learning instead. An LLM learns patterns from a huge amount of text, such as books, articles and web pages, much of it written by people. LLMs grew from the same things as the photo programs in Lesson 2: lots of digital data and fast chips. In 2017, researchers published a new design for language tasks, and many later LLMs were built on it. In November 2022, the company OpenAI released ChatGPT, a chatbot built on an LLM.",
+    "back": "A chatbot is a computer program you can talk to by writing. Chatbots are not new. In 1966 a program called ELIZA talked with people by following rules people wrote. Today many chatbots are built on a large language model, or LLM, which uses machine learning instead. A model like this learns patterns from huge amounts of text, such as books, articles and web pages, much of which was written by people. Large language models grew from the same things as the picture program in Lesson 2: lots of digital data and fast chips. In 2017 researchers published a new design for language tasks, and many later large language models were built on this design. In November 2022 the company OpenAI launched ChatGPT, a chatbot built on a large language model.",
+    "note": "Reviewer: “much of it written by people”: ส่วนใหญ่ (most) changed to จำนวนมาก (much); the English avoids saying most on purpose (educatorNotes.0)."
+  },
+  "read.sections.0.simpler": {
+    "source": "A chatbot is a program you can chat with. In 1966, a chatbot called ELIZA followed rules that people wrote. Many chatbots now use a large language model, or LLM. An LLM learns from lots of text instead, like books and web pages. People wrote much of it. Like the photo programs in Lesson 2, LLMs needed lots of data and fast chips. In 2017, researchers made a new design. Many later LLMs used it. ChatGPT, built on an LLM, came out in 2022.",
+    "back": "A chatbot is a program you can talk to. In 1966 a chatbot called ELIZA followed rules people wrote. Today many chatbots use a large language model. This kind of model learns from lots of text instead, such as books and web pages. Much of the text was written by people. Like the picture program in Lesson 2, this model needs lots of data and fast chips. In 2017 researchers thought up a new design. Many later models used this design. In 2022 ChatGPT came out. It is a chatbot that uses a large language model.",
+    "note": "Reviewer: ส่วนใหญ่ changed to จำนวนมาก (much), and ChatGPT's last sentence now says it is built on a large language model, as the English does."
+  },
+  "read.sections.1.heading": {
+    "source": "How it writes, one piece at a time",
+    "back": "How it writes, one piece at a time"
+  },
+  "read.sections.1.text": {
+    "source": "An LLM works with small pieces of text called tokens. A token may be a word or part of a word. Suppose a learner asks, “What is a map scale?” The model predicts a likely first token, such as “A”. It adds it, then predicts the next one, such as “map”, using everything written so far. It goes on, piece by piece, until the answer is finished. A toy example shows the idea. In the Lakeside word game, “tea” came after “a cup of” six times, “water” three times and “rice” once. Real models do not just count words; they learn far richer patterns from far more text. Often each token is picked partly by chance from the likely ones, so the same question can get different answers. With other settings, a model can give the same answer every time.",
+    "back": "A large language model works with small pieces of text called tokens. A token may be one word or part of a word. Suppose a learner asks “What is a map's scale (มาตราส่วน)?” The model predicts a likely first token, such as “มาตรา”. It adds that token, then predicts the next token, such as “ส่วน”, by looking at everything written so far. It goes on like this, one piece at a time, until the answer is finished. A model example helps you picture it. In Lakeside's word game, the word “tea” follows “in the cup there is” six times, “water” three times and “rice” once. A real model does not just count words; it learns much more complex patterns from much more text. Often each token is chosen partly by chance from the likely ones, so the same question can get different answers. But with other settings, the model can give the same answer every time.",
+    "flag": true,
+    "note": "Token example: the English answer starts “A” then “map”. In Thai the answer starts “มาตราส่วน...”, so the tokens are “มาตรา” then “ส่วน”, which also shows a token being part of a word. Also in glossary examples 2 and 3. Check this split sounds right to a reader who knows how Thai is tokenised."
+  },
+  "read.sections.1.simpler": {
+    "source": "An LLM works with tokens. A token is a word or part of a word. Say a learner asks what a map scale is. The model predicts a likely first token, like “A”. Then it predicts the next one, like “map”. It goes on, piece by piece. The Lakeside word game is a toy example. In it, “tea” came after “a cup of” most often. Real models do not just count words. They learn much more from much more text. Often they pick partly by chance, so answers can change. Other settings give the same answer each time.",
+    "back": "A large language model works with tokens. A token is one word or part of a word. Suppose a learner asks what a map's scale is. The model predicts a likely first token, such as “มาตรา”. Then it predicts the next one, such as “ส่วน”. It keeps going one piece at a time. Lakeside's word game is a model example. In this game “tea” follows “in the cup there is” most often. A real model does not just count words. It learns much more from much more text. Often it chooses partly by chance, so answers can change. Other settings give the same answer every time."
+  },
+  "read.sections.2.heading": {
+    "source": "Why it matters for writing, translation and information",
+    "back": "Why this matters for writing, translating and information"
+  },
+  "read.sections.2.text": {
+    "source": "LLMs are now used to help people write, translate and look for information. A chatbot can explain an idea in simpler words, help with a first draft or translate a short notice. At Lakeside, a teacher checked the helper's explanation, and it was right. A volunteer fixed two words in its translation. Many LLMs learned mainly from English, and researchers have found they usually work worse in languages with little writing online. A basic LLM predicts words that sound right; nothing in that checks the facts. So it can make things up and still sound confident, like the Lakeside helper that named a book that does not exist. Some tools also search the web and show links, but the pages can be wrong or misread. Check important answers with a trusted source, such as a library or a teacher.",
+    "back": "Today large language models are used to help people write, translate and find information. A chatbot can explain an idea in simpler words, help draft a first version, or translate a short notice. At Lakeside a teacher checked the assistant's explanation, and it was correct. A volunteer fixed two words in its translation. Many large language models learned mainly from English, and researchers found they often work worse in languages with little writing online. A base model predicts words that sound right, but no part of that process checks facts. So it can make things up and still sound confident, like the Lakeside assistant naming a book that does not exist. Some tools search the web and show links too, but those pages may be wrong or misread. Check important answers against a reliable source, such as a library or a teacher."
+  },
+  "read.sections.2.simpler": {
+    "source": "LLMs now help people write, translate and find information. At Lakeside, the helper explained an idea well. A volunteer fixed two words in its translation. Many LLMs learned mostly from English. They usually work worse in languages with little writing online. A basic LLM picks words that sound right. It does not check facts. So it can make things up and sound confident. The Lakeside helper named a book that does not exist. Some tools search the web, but pages can be wrong too. Check important answers with a trusted source.",
+    "back": "Today large language models help people write, translate and find information. At Lakeside the assistant explained an idea well. A volunteer fixed two words in its translation. Many models learned mostly from English. They often work worse in languages with little writing online. A base model chooses words that sound right. It does not check facts. So it can make things up and sound confident. The Lakeside assistant named a book that does not exist. Some tools search the web, but web pages can be wrong too. Check important answers against a reliable source."
+  },
+  "read.glossary.0.word": {
+    "source": "chatbot",
+    "back": "chatbot",
+    "flag": true,
+    "note": "chatbot: แชตบอต (KEY_TERMS). LLM is kept in Latin only as a form and once in the standard reading; elsewhere I wrote โมเดลภาษาขนาดใหญ่ in full because the reading is read aloud."
+  },
+  "read.glossary.0.forms": {
+    "source": [
+      "chatbots"
+    ],
+    "back": "chatbot"
+  },
+  "read.glossary.0.definition": {
+    "source": "A computer program you can talk to by typing.",
+    "back": "A computer program you can talk to by typing."
+  },
+  "read.glossary.0.example": {
+    "source": "The Lakeside helper is a pretend chatbot.",
+    "back": "The Lakeside assistant is a fictional chatbot."
+  },
+  "read.glossary.1.word": {
+    "source": "large language model",
+    "back": "large language model"
+  },
+  "read.glossary.1.forms": {
+    "source": [
+      "LLM",
+      "LLMs"
+    ],
+    "back": "LLM"
+  },
+  "read.glossary.1.definition": {
+    "source": "A program that learns patterns from a huge amount of text.",
+    "back": "A program that learns patterns from huge amounts of text."
+  },
+  "read.glossary.1.example": {
+    "source": "Many chatbots are built on a large language model.",
+    "back": "Many chatbots are built on a large language model."
+  },
+  "read.glossary.2.word": {
+    "source": "token",
+    "back": "token"
+  },
+  "read.glossary.2.forms": {
+    "source": [
+      "tokens"
+    ],
+    "back": "token"
+  },
+  "read.glossary.2.definition": {
+    "source": "A small piece of text: a word or part of a word.",
+    "back": "A small piece of text, which is one word or part of a word."
+  },
+  "read.glossary.2.example": {
+    "source": "The model adds one token at a time, like “map”.",
+    "back": "The model adds one token at a time, such as “ส่วน”."
+  },
+  "read.glossary.3.word": {
+    "source": "predict",
+    "back": "predict"
+  },
+  "read.glossary.3.forms": {
+    "source": [
+      "predicts",
+      "prediction"
+    ],
+    "back": "prediction"
+  },
+  "read.glossary.3.definition": {
+    "source": "To guess what will come next.",
+    "back": "To guess what will come next."
+  },
+  "read.glossary.3.example": {
+    "source": "The model predicts that the next token is “map”.",
+    "back": "The model predicts that the next token is “ส่วน”."
+  },
+  "read.glossary.4.word": {
+    "source": "confident",
+    "back": "confident",
+    "flag": true,
+    "note": "confident: มั่นใจ (not in KEY_TERMS)."
+  },
+  "read.glossary.4.definition": {
+    "source": "Sounding or feeling very sure.",
+    "back": "Sounding or feeling very sure."
+  },
+  "read.glossary.4.example": {
+    "source": "The helper sounded confident, but the book did not exist.",
+    "back": "The assistant sounded confident, but that book does not exist."
+  },
+  "read.glossary.5.word": {
+    "source": "source",
+    "back": "source"
+  },
+  "read.glossary.5.forms": {
+    "source": [
+      "sources"
+    ],
+    "back": "source"
+  },
+  "read.glossary.5.definition": {
+    "source": "A place where information comes from, like a book or a person.",
+    "back": "The place information comes from, such as a book or a person."
+  },
+  "read.glossary.5.example": {
+    "source": "The library is a trusted source for checking a book's name.",
+    "back": "A library is a reliable source for checking book titles."
+  },
+  "read.checks.0.question": {
+    "source": "How does a large language model write an answer?",
+    "back": "How does a large language model write an answer?"
+  },
+  "read.checks.0.options.0.text": {
+    "source": "It predicts the next token, again and again",
+    "back": "It predicts the next token again and again"
+  },
+  "read.checks.0.options.0.feedback": {
+    "source": "Yes. It adds one likely token, a word or part of a word, at a time, using patterns from its text.",
+    "back": "Correct. It adds a likely token one at a time, a word or part of a word, using patterns from the text it learned."
+  },
+  "read.checks.0.options.1.text": {
+    "source": "It copies the whole answer from one big book",
+    "back": "It copies the whole answer from one big book"
+  },
+  "read.checks.0.options.1.feedback": {
+    "source": "Not quite. It learns patterns from lots of text. Read the second section again.",
+    "back": "Not quite. It learned patterns from lots of text. Try reading the second part again."
+  },
+  "read.checks.0.options.2.text": {
+    "source": "It follows rules that people wrote, like ELIZA",
+    "back": "It follows rules people wrote, like ELIZA"
+  },
+  "read.checks.0.options.2.feedback": {
+    "source": "Not quite. ELIZA in 1966 used rules. An LLM learns patterns from text instead. Read the first two sections again.",
+    "back": "Not quite. ELIZA in 1966 used rules, but a large language model learns patterns from text instead. Try reading the first two parts again."
+  },
+  "read.checks.1.question": {
+    "source": "Why are many LLMs weaker in languages with little writing online?",
+    "back": "Why do many large language models do poorly in languages with little writing online?"
+  },
+  "read.checks.1.options.0.text": {
+    "source": "Those languages are too hard for computers",
+    "back": "Those languages are too hard for computers"
+  },
+  "read.checks.1.options.0.feedback": {
+    "source": "Not quite. No language is too hard in itself. Think about what the model learned from. Read the third section again.",
+    "back": "Not quite. No language is too hard in itself. Think about what the model learned from, then read the third part again."
+  },
+  "read.checks.1.options.1.text": {
+    "source": "They had less text in those languages to learn from",
+    "back": "It has less text in those languages to learn from"
+  },
+  "read.checks.1.options.1.feedback": {
+    "source": "Yes. Many LLMs learned mainly from English. Having less text in a language is one big reason they are weaker in it.",
+    "back": "Correct. Many models learned mainly from English. Having little text in a language is one important reason it does poorly in that language."
+  },
+  "read.checks.1.options.2.text": {
+    "source": "A chatbot can only use one language",
+    "back": "Chatbots can only use one language"
+  },
+  "read.checks.1.options.2.feedback": {
+    "source": "Not quite. Many LLMs can use many languages, but not equally well. Read the third section again.",
+    "back": "Not quite. Many models can use many languages, but not equally well in all of them. Try reading the third part again."
+  },
+  "write.prompt": {
+    "source": "Explain how a chatbot writes an answer. Then say why this matters when people use one to write, translate or look things up.",
+    "back": "Explain how a chatbot writes an answer, then say why this matters when people use chatbots to write, translate or find information."
+  },
+  "write.sentenceStarters.0": {
+    "source": "A chatbot built on an LLM writes by ...",
+    "back": "A chatbot built on a large language model writes by ...",
+    "note": "Reviewer: Spacing/wording unified across the course: “...” joined to the Thai word before it (KEY_TERMS style, as in most lessons), and “ส่วนแรก” for “the first section”."
+  },
+  "write.sentenceStarters.1": {
+    "source": "This matters for ... because ...",
+    "back": "This matters for ... because ...",
+    "note": "Reviewer: Spacing/wording unified across the course: “...” joined to the Thai word before it (KEY_TERMS style, as in most lessons), and “ส่วนแรก” for “the first section”."
+  },
+  "write.sentenceStarters.2": {
+    "source": "So before using its answer, a person should ...",
+    "back": "So before using its answer, people should ...",
+    "note": "Reviewer: Spacing/wording unified across the course: “...” joined to the Thai word before it (KEY_TERMS style, as in most lessons), and “ส่วนแรก” for “the first section”."
+  },
+  "write.example": {
+    "source": "A chatbot built on an LLM writes by predicting the next token, again and again. A token is a word or part of a word. It picks likely tokens, from patterns in lots of text. This matters for translation. Many LLMs learned mostly from English. So a translation into a language with little writing online may have more mistakes. At Lakeside, a volunteer fixed two words. So before you use a translated notice, someone who speaks the language should check it.",
+    "back": "A chatbot built on a large language model writes by predicting the next token again and again. A token is one word or part of a word. It chooses likely tokens from patterns in lots of text. This matters for translation. Many models learned mostly from English, so translations into languages with little writing online may have more mistakes. At Lakeside a volunteer fixed two words. So before using a translated notice, someone who speaks that language should check it first."
+  },
+  "speak.partnerTask": {
+    "source": "Take turns. One of you explains how ELIZA wrote its answers in 1966. The other explains how an LLM writes today. Then say one way they are the same and one way they are different.",
+    "back": "Take turns. One person explains how ELIZA wrote answers in 1966. The other explains how a large language model writes today. Then say one thing that is the same and one thing that is different."
+  },
+  "speak.independentTask": {
+    "source": "Explain out loud, in three sentences, how a chatbot writes an answer and why it can sound sure but still be wrong.",
+    "back": "Explain aloud in three sentences how a chatbot writes answers, and why it can sound confident but still be wrong."
+  },
+  "watch.why": {
+    "source": "Two people who build AI tools show, with a simple example, how a language model writes by guessing what comes next.",
+    "back": "Two people who build AI tools use a simple example to show that a language model writes by guessing what comes next."
+  },
+  "watch.beforeQuestion": {
+    "source": "How do you think a chatbot knows what to write?",
+    "back": "How do you think a chatbot knows what to write?"
+  },
+  "watch.afterQuestion": {
+    "source": "Why can a chatbot's answer be wrong, even when it sounds good?",
+    "back": "Why can a chatbot's answer be wrong even if it sounds good?"
+  },
+  "watch.summary": {
+    "source": "In this video, two people who build AI tools explain how chatbots work. One works at the company that made ChatGPT. A large language model learns from a huge amount of text from the internet. The main idea is simple. It uses numbers about what is likely, worked out very fast. The video shows a small example. A program reads plays by the writer Shakespeare. It counts which letter often comes after each letter. When it writes this way, the words look strange. When it looks at longer pieces, like whole words, its guesses get much better. Big models use neural networks, which are loosely based on the brain. People also helped to make ChatGPT's answers better. But its answers still come from what is likely, so it can make mistakes.",
+    "back": "In this video, two people who build AI tools explain how chatbots work. One works at the company that made ChatGPT. A large language model learns from huge amounts of text from the internet. The main idea is simple: it uses numbers that say what is likely to happen, which can be calculated very fast. The video shows a small example. A program reads plays by a writer named Shakespeare. It counts which letters usually follow each letter. When it writes this way, the words look odd. But when it looks at longer pieces, such as whole words, its guesses get much better. Large models use neural networks, which take a rough idea from the brain. People also help make ChatGPT's answers better. But its answers still come from what is likely, so it can make mistakes.",
+    "flag": true,
+    "note": "neural networks: โครงข่ายประสาทเทียม, the usual Thai term (not in KEY_TERMS)."
+  },
+  "watch.keyPoints.0": {
+    "source": "A large language model learns from a huge amount of text from the internet.",
+    "back": "A large language model learns from huge amounts of text from the internet."
+  },
+  "watch.keyPoints.1": {
+    "source": "It writes by guessing what is likely to come next, again and again.",
+    "back": "It writes by guessing what is likely to come next, again and again."
+  },
+  "watch.keyPoints.2": {
+    "source": "Its answers come from what is likely, so they can be wrong.",
+    "back": "Its answers come from what is likely, so they may be wrong."
+  },
+  "watch.contentNote": {
+    "source": "About 7 minutes 20 seconds (DCMP). Title and channel confirmed with YouTube's oEmbed on 31 October 2026; the channel is Code.org's, named “CodeAI” on YouTube. The summary was written from DCMP's description and a third-party, AI-made outline of the video (videohighlight.com), not from watching it, so check the Shakespeare example and the last minute before use. The speakers are introduced as OpenAI's chief technology officer and the chief executive of Runway, an AI video company, so the video names ChatGPT and these companies, and it opens with their hopes for AI. Someone on the team must watch it before use; learners can read the written summary instead.",
+    "back": "About 7 minutes 20 seconds (DCMP). Title and channel confirmed with YouTube oEmbed on 31 October 2026. The channel belongs to Code.org, which on YouTube is called “CodeAI”. This summary was written from DCMP's description and a video outline made by a third party's AI (videohighlight.com), not from watching the video, so check the Shakespeare example and the last minute before use. The speakers are introduced as OpenAI's chief technology officer and the chief executive of Runway, an AI video company, so the video names ChatGPT and these companies, and opens with their hopes for AI. The team must have someone watch the video before use. Learners can read the written summary instead."
+  },
+  "reflect.prompts.0.text": {
+    "source": "One thing I now understand about how chatbots write is ...",
+    "back": "One thing I now understand about how chatbots write is ...",
+    "note": "Reviewer: Spacing/wording unified across the course: “...” joined to the Thai word before it (KEY_TERMS style, as in most lessons), and “ส่วนแรก” for “the first section”."
+  },
+  "reflect.prompts.1.text": {
+    "source": "A question I have about whose writing LLMs learn from is ...",
+    "back": "A question I have about whose writing large language models learn from is ...",
+    "note": "Reviewer: Spacing/wording unified across the course: “...” joined to the Thai word before it (KEY_TERMS style, as in most lessons), and “ส่วนแรก” for “the first section”."
+  },
+  "reflect.completionMessage": {
+    "source": "You finished Lesson 4. You explained how a large language model writes, how chatbots developed, and why their answers need checking.",
+    "back": "You finished Lesson 4. You explained how a large language model writes, how chatbots developed, and why their answers must be checked."
+  },
+  "visual.alt": {
+    "source": "A diagram: after “a cup of”, the model weighs “tea” (6), “water” (3) and “rice” (1), picks a word, then predicts the next one again. Below, a sure-sounding answer names a book, with a reminder to check it.",
+    "back": "Diagram: after the words “in the cup there is”, the model weighs “tea” (6), “water” (3) and “rice” (1), then chooses one word, then predicts the next word again. Below, a confident-sounding answer names a book, with a warning to check."
+  },
+  "sources.0.label": {
+    "source": "Google for Developers, Machine Learning Crash Course: Introduction to large language models (tokens, predicting the next token, picking the likeliest or a random likely one; updated January 2026)",
+    "back": "Google for Developers, Machine Learning Crash Course: Introduction to large language models (tokens, next-token prediction, and choosing the most likely or sampling from likely ones, updated January 2026)"
+  },
+  "sources.1.label": {
+    "source": "Joseph Weizenbaum, Communications of the ACM 9(1), January 1966: ELIZA, a computer program for the study of natural language communication between man and machine (copy at UMBC)",
+    "back": "Joseph Weizenbaum, Communications of the ACM 9(1), January 1966: ELIZA, a computer program for the study of natural language communication between man and machine (copy at UMBC)"
+  },
+  "sources.2.label": {
+    "source": "Vaswani and others (arXiv, 12 June 2017): Attention is all you need (the transformer design)",
+    "back": "Vaswani et al. (arXiv, 12 June 2017): Attention is all you need (the transformer design)"
+  },
+  "sources.3.label": {
+    "source": "The Centre for Computing History: OpenAI launches ChatGPT (30 November 2022)",
+    "back": "The Centre for Computing History: OpenAI launches ChatGPT (OpenAI launches ChatGPT, 30 November 2022)"
+  },
+  "sources.4.label": {
+    "source": "Stanford Report (May 2025): How AI is leaving non-English speakers behind",
+    "back": "Stanford Report (May 2025): How AI is leaving non-English speakers behind (how AI leaves people who don't speak English behind)"
+  },
+  "sensitiveNotes.0": {
+    "source": "Never ask learners whether they use chatbots, which ones, or what they have typed into one. Some have never used one; others may have shared private things. Use the Lakeside examples.",
+    "back": "Do not ask learners whether they use chatbots, which ones, or what they have typed in. Some have never used one; some may have shared personal things. Use the Lakeside example instead."
+  },
+  "sensitiveNotes.1": {
+    "source": "Don't ask which languages learners speak at home, or which language a tool got wrong for them. Let them say so if they want to.",
+    "back": "Do not ask what languages learners speak at home, or which language a tool has got wrong for them. Let them tell if they want to.",
+    "note": "Reviewer: The English asks not to ask which language a tool got wrong, not which tool; fixed."
+  },
+  "educatorNotes.0": {
+    "source": "There is no real chatbot in the app (docs/content/DIGITAL_WORLD_SPEC.md 5.6). The Lakeside word game, the helper's answers and the book “The Long Blue Road” are made up. The cup-of-tea game is a toy analogy, not how real models work: real LLMs learn far richer patterns over tokens from far more text, and keep no table of counts. Not all training text is written by people (some models also learn from computer-made text), so the lesson says “much of it”. A model can repeat an answer: an app can pick the likeliest token every time, or pick at random among likely ones (Google's course).",
+    "back": "There is no real chatbot in the app (docs/content/DIGITAL_WORLD_SPEC.md 5.6). Lakeside's word game, the assistant's answers and the book “The Long Blue Road” are fictional. The “in the cup there is” word game is a simple comparison, not how real models work. Real large language models learn much more complex token patterns from much more text, and do not keep a table of counts. The training text was not all written by people (some models learn from computer-made text too), so the lesson says “much”. A model can repeat the same answer because the app may pick the most likely token every time, or sample from the likely ones (Google's course). In the Thai version the word game uses “ในถ้วยมี” instead of the English “a cup of”, and the token example is “มาตรา” and “ส่วน” instead of “A” and “map”.",
+    "note": "Reviewer: Follows the change in read.sections.0 (จำนวนมาก, “much of it”)."
+  },
+  "educatorNotes.1": {
+    "source": "A basic model writes from what it learned; some tools also search the web or a set of documents and show links. A link is not proof: open it and check it, as in Lesson 14 (Stanford CRAFT, “How do I fact-check AI search results?”, 2025). The history thread: ELIZA (1966) chatted by rules people wrote; LLMs use machine learning, which grew with digital text and fast chips, as in Lesson 2; the 2017 design is the transformer (Vaswani and others), which Google's Machine Learning Crash Course calls “the most successful and widely used architecture for building LLMs”. Lesson 7 goes further into which languages these tools serve well.",
+    "back": "A base model writes from what it has learned. Some tools also search the web or a set of documents and show links. Links are not evidence: open and check them as in Lesson 14 (Stanford CRAFT, “How do I fact-check AI search results?”, 2025). The history thread: ELIZA (1966) talked using rules people wrote, while large language models use machine learning, which grew along with digital text and fast chips, as in Lesson 2. The 2017 design is the transformer (Vaswani et al.), which Google's Machine Learning Crash Course calls “the most successful and widely used architecture for building large language models”. Lesson 7 goes deeper into which languages these tools work well in."
+  }
+}

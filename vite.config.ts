@@ -406,10 +406,15 @@ function keepFirstVisitLight(): Plugin {
     // The site's stylesheet is made after the other plugins' generateBundle.
     writeBundle(_options, bundle) {
       for (const output of Object.values(bundle)) {
-        if (output.type !== 'asset' || !output.fileName.endsWith('.css') || /^assets\/fonts-(arabic|vietnamese)\//.test(output.fileName)) continue;
+        if (output.type !== 'asset' || !output.fileName.endsWith('.css') || /^assets\/fonts-(arabic|vietnamese|thai)\//.test(output.fileName)) continue;
         if (/vazirmatn/i.test(String(output.source))) {
           this.error(
             `The Arabic font is in the site's stylesheet (${output.fileName}). Import src/i18n/fonts/arabic.css only with ?url (src/i18n/fonts/index.ts).`,
+          );
+        }
+        if (/sarabun/i.test(String(output.source))) {
+          this.error(
+            `The Thai font is in the site's stylesheet (${output.fileName}). Import src/i18n/fonts/thai.css only with ?url (src/i18n/fonts/index.ts).`,
           );
         }
         if (/be vietnam pro|be-vietnam-pro/i.test(String(output.source))) {

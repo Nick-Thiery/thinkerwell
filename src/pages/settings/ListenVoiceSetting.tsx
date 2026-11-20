@@ -56,7 +56,13 @@ const AUTOMATIC = '';
 const DEVICES = ['apple', 'android', 'windows', 'chromebook'] as const;
 
 /** The recorded voice of each language, by its own name (not translated). */
-const RECORDED_VOICE: Readonly<Record<string, string>> = { en: 'Kokoro (Heart)', id: 'MMS-TTS (Meta)', ms: 'MMS-TTS (Meta)' };
+const RECORDED_VOICE: Readonly<Record<string, string>> = {
+  en: 'Kokoro (Heart)',
+  id: 'MMS-TTS (Meta)',
+  ms: 'MMS-TTS (Meta)',
+  vi: 'VieNeu-TTS (Ngọc Huyền)',
+  th: 'MakHam (Kokoro Thai)',
+};
 
 /** A voice's value in the select: what the browser calls it. */
 function optionValue(voice: Pick<SpeechSynthesisVoice, 'name' | 'voiceURI'>): string {
@@ -68,6 +74,7 @@ const NO_VOICE: Readonly<Record<string, { recorded: MessageKey; none: MessageKey
   id: { recorded: 'pages.settings.listenVoice.noVoiceIndonesianRecorded', none: 'pages.settings.listenVoice.noVoiceIndonesian' },
   ms: { recorded: 'pages.settings.listenVoice.noVoiceMalayRecorded', none: 'pages.settings.listenVoice.noVoiceMalay' },
   vi: { recorded: 'pages.settings.listenVoice.noVoiceVietnameseRecorded', none: 'pages.settings.listenVoice.noVoiceVietnamese' },
+  th: { recorded: 'pages.settings.listenVoice.noVoiceThaiRecorded', none: 'pages.settings.listenVoice.noVoiceThai' },
 };
 
 export function ListenVoiceSetting({ deviceSettings }: { deviceSettings: DeviceSettingsState }) {

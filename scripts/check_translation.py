@@ -25,6 +25,14 @@ try:
 except Exception:  # pragma: no cover
     zipf_frequency = None
 
+
+def _zipf(word, lang, missing):
+    """wordfreq's frequency of a word, or `missing` for a language it has no list for (Thai)."""
+    try:
+        return zipf_frequency(word, lang)
+    except LookupError:
+        return missing
+
 # Words (and stems, as regular expressions) that are Indonesian rather than
 # Malaysian Malay: in the Malay they are mistakes (docs/translation/ms/BRIEF.md
 # has the Malaysian word for each). Kept to words that are wrong in Malaysia in
@@ -70,6 +78,18 @@ STYLE = {
         "simple_avg_warn": 14,
         "simple_long_warn": 22,
     },
+    "th": {
+        # Thai (docs/translation/th/): "คุณ" for the learner, "ฉัน" when the learner speaks, no "please" (กรุณา, โปรด).
+        "correct_lead": "ถูกต้อง",
+        "retry_lead": "ยังไม่ถูก",
+        "completion": "คุณเรียนจบบทเรียนที่ {n} แล้ว",
+        "self_check_start": "ฉัน",
+        "forbidden": [r"กรุณา", r"โปรด(?!แกรม)", r"(?<!เ)ท่าน(?!กลาง|้ำ|ั่ง)"],
+        "voice_hint": 'speak to the learner as "คุณ", without "please" (กรุณา, โปรด) or "ท่าน"',
+        # Thai has no spaces between words: words are counted with PyThaiNLP, and a "sentence" is a run between spaces.
+        "simple_avg_warn": 12,
+        "simple_long_warn": 20,
+    },
     "ms": {
         "correct_lead": "Betul.",
         "retry_lead": "Belum tepat.",
@@ -87,17 +107,38 @@ STYLE = {
 WORD = r"[^\W\d_]+(?:-[^\W\d_]+)*"
 
 
+THAI = re.compile(r"[\u0E00-\u0E7F]")
+THAI_RUN = re.compile(r"[\u0E00-\u0E7F]+")
+
+try:  # Thai is written without spaces between words; PyThaiNLP finds them (scripts/setup-python.sh).
+    from pythainlp.tokenize import word_tokenize as _thai_words
+except ImportError:  # pragma: no cover
+    _thai_words = None
+
+
 def words(t):
-    return re.findall(WORD, t)
+    if not THAI.search(t):
+        return re.findall(WORD, t)
+    out = re.findall(WORD, THAI_RUN.sub(" ", t))
+    for run in THAI_RUN.findall(t):
+        if _thai_words:
+            out += [w for w in _thai_words(run, keep_whitespace=False) if THAI.search(w)]
+        else:  # roughly one word per four letters, without PyThaiNLP
+            out += [run[i:i + 4] for i in range(0, len(run), 4)]
+    return out
 
 
 def sentences(t):
-    parts = [s for s in re.split(r"(?<=[.!?])\s+|\n+", t.strip()) if words(s)]
+    # Thai marks the end of a sentence (or a clause) with a space, not a full stop.
+    parts = [s for s in re.split(r"(?<=[.!?])\s+|\n+|(?<=[\u0E00-\u0E7F])\s+(?=[\u0E00-\u0E7F])", t.strip()) if words(s)]
     return parts or [t]
 
 
 def has_form(text, forms):
     for f in forms:
+        # Thai has no spaces between words, so a Thai form only has to be in the text.
+        if THAI.search(f) and f in text:
+            return True
         if re.search(r"(?<![\w-])" + re.escape(f) + r"(?![\w])", text, re.I):
             return True
     return False
@@ -238,7 +279,7 @@ def check_lesson(lang, eng_path, tr_path):
     # Uncommon words in the simpler text.
     if zipf_frequency:
         rare = sorted({w for w in words(simp) if w[0].islower() and w.lower() not in gforms
-                       and "-" not in w and zipf_frequency(w.lower(), lang) < 2.5})
+                       and "-" not in w and _zipf(w.lower(), lang, 99) < 2.5})
         if rare:
             warns.append("uncommon words in simpler (swap or explain): " + ", ".join(rare[:12]))
 
@@ -303,7 +344,7 @@ def check_visual(lang, eng_svg, tr_svg, lesson_tr):
     if len(R["text"]) < len(E["text"]):
         warns.append(f"{rel}: has {len(R['text'])} labels, the English has {len(E['text'])}")
     left = [t for t in R["text"] if t in E["text"] and len(words(t)) > 1 and zipf_frequency and
-            any(zipf_frequency(w.lower(), "en") > 4 and zipf_frequency(w.lower(), lang) < 3 for w in words(t))]
+            any(zipf_frequency(w.lower(), "en") > 4 and _zipf(w.lower(), lang, 0) < 3 for w in words(t))]
     if left:
         warns.append(f"{rel}: still English: {', '.join(left[:5])}")
     return errs, warns
