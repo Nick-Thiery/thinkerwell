@@ -11,7 +11,8 @@
  * - Its own words are the `pilotDay` group (src/i18n/lazyGroups.ts): they
  *   load with this page, not with the app.
  * - It names no organisation and no place, and says nothing about
- *   measurement beyond what the consent form says (pages.pilotStudy).
+ *   measurement (study collection is paused; the consent form and its words,
+ *   pages.pilotStudy, were removed in November 2026).
  * - Who to contact: shown only once there is an address (CONTACT_EMAIL in
  *   src/app/contact.ts), with the Educators page's own words. Never a
  *   placeholder.
