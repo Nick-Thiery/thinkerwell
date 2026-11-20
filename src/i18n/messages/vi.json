@@ -1885,7 +1885,7 @@
       },
       "classes": {
         "name": "Lớp học trực tuyến của Thinkerwell (chỉ khi tổ chức của bạn sử dụng)",
-        "purpose": "Giúp giáo viên và tổ chức của họ thấy từng người học trong lớp đã học đến đâu. Tính năng này tắt trừ khi tổ chức đã thỏa thuận với Thinkerwell, và người học chỉ tham gia bằng cách nhập mã lớp rồi chạm Tham gia lớp.",
+        "purpose": "Giúp giáo viên và tổ chức của họ thấy từng người học trong lớp đã học đến đâu. Tính năng này tắt trừ khi tổ chức đã thỏa thuận với Thinkerwell, và người học chỉ tham gia bằng cách nhập mã lớp rồi chạm Tham gia lớp này.",
         "gets": "Với mỗi người học tham gia: tên họ dùng trên thiết bị (có thể là biệt danh), ngôn ngữ và mức đọc, những bài học và bước học đã hoàn thành và khi nào, số lần làm mỗi bài kiểm tra phần, và những ngày họ học. Không bao giờ có bài viết, câu trả lời, điểm hay bản ghi âm của họ. Trang riêng của Thinkerwell chỉ hiện các con số này, không có tên. Ngừng chia sẻ, hoặc giáo viên đưa người học ra khỏi lớp, sẽ xóa các dữ liệu này.",
         "where": "Lưu trong một cơ sở dữ liệu Neon ở Singapore, mà Thinkerwell dùng qua dịch vụ lưu trữ trang web của mình.",
         "link": "Chính sách quyền riêng tư của Neon"
@@ -1974,11 +1974,11 @@
     "codeHelper": "Thầy cô sẽ đưa mã này cho bạn.",
     "find": "Tìm lớp",
     "looking": "Đang tìm…",
-    "whatTeacherSees": "Nếu bạn tham gia, thầy cô sẽ thấy tên bạn, {name}, và những bài học, bước học bạn đã hoàn thành.",
-    "whatTheyDontSee": "Thầy cô không thấy những gì bạn viết, câu trả lời hay bản ghi âm của bạn. Bạn có thể ngừng chia sẻ bất cứ lúc nào.",
-    "join": "Tham gia lớp",
+    "whatTeacherSees": "Nếu bạn tham gia, thầy cô sẽ thấy tên bạn, {name}, những bài học, bước học bạn hoàn thành và khi nào, số lần bạn làm bài kiểm tra phần, và ngôn ngữ, mức đọc của bạn.",
+    "whatTheyDontSee": "Thầy cô không thấy những gì bạn viết, câu trả lời, điểm hay bản ghi âm của bạn. Bạn có thể ngừng chia sẻ bất cứ lúc nào.",
+    "join": "Tham gia lớp này",
     "cancel": "Để sau",
-    "sharing": "Thầy cô có thể thấy tên bạn và những bài học, bước học bạn đã hoàn thành. Không thấy bài viết hay bản ghi âm của bạn.",
+    "sharing": "Thầy cô có thể thấy tên bạn, những bài học, bước học bạn hoàn thành và khi nào, số lần bạn làm bài kiểm tra phần, và ngôn ngữ, mức đọc của bạn. Không thấy bài viết, câu trả lời, điểm hay bản ghi âm của bạn.",
     "stopOpen": "Ngừng chia sẻ",
     "stopQuestion": "Ngừng chia sẻ với lớp này? Thầy cô sẽ không thấy tiến độ của bạn nữa, và dữ liệu sẽ bị xóa khỏi máy chủ của Thinkerwell. Bài làm của bạn vẫn ở trên thiết bị này.",
     "stop": "Ngừng chia sẻ",
@@ -2002,7 +2002,9 @@
       "refresh": "Làm mới",
       "copy": "Sao chép",
       "copied": "Đã sao chép",
-      "whatYouSee": "Bạn thấy tên từng người học, những bài học và bước học họ đã hoàn thành, và khi nào. Không thấy bài viết, câu trả lời, điểm hay bản ghi âm của họ.",
+      "notNow": "Để sau",
+      "makeNewLink": "Tạo link mới",
+      "whatYouSee": "Bạn thấy tên từng người học, những bài học, bước học họ đã hoàn thành và khi nào, số lần họ làm bài kiểm tra phần, và ngôn ngữ, mức đọc của họ. Không thấy bài viết, câu trả lời, điểm hay bản ghi âm của họ.",
       "keepPrivate": "Hãy giữ kín đường link của trang này: ai có link cũng xem được trang này."
     },
     "problem": {
@@ -2024,7 +2026,7 @@
     },
     "class": {
       "codeLabel": "Mã lớp",
-      "codeHelp": "Người học tham gia từ Trang chủ của họ: \"Lớp của bạn\", rồi \"Tham gia lớp\".",
+      "codeHelp": "Mỗi người học tham gia từ Trang chủ của riêng mình: \"Lớp của bạn\", rồi \"Tham gia lớp\".",
       "closedNote": "Lớp này đã đóng. Không ai tham gia thêm được nữa, và người học của lớp đã ngừng chia sẻ.",
       "learnersLabel": {
         "other": "người học"
@@ -2063,6 +2065,7 @@
     "program": {
       "eyebrow": "Tổ chức",
       "pageTitle": "Các lớp của bạn",
+      "intro": "Thêm một lớp cho mỗi nhóm. Mỗi lớp có một mã cho người học và một đường link cho giáo viên.",
       "classesTitle": "Các lớp",
       "noClasses": "Chưa có lớp nào.",
       "code": "Mã {code}",
@@ -2082,10 +2085,12 @@
       "teacherLinkHelp": "Gửi đường link này cho giáo viên của lớp. Link chỉ hiện lúc này. Nếu bị mất, hãy tạo link mới.",
       "manageTitle": "Quản lý lớp này",
       "newLink": "Link giáo viên mới",
+      "newLinkQuestion": "Tạo link giáo viên mới? Link bạn đã gửi trước đó sẽ không dùng được nữa.",
       "newLinkHelp": "Link giáo viên mới sẽ làm link cũ không dùng được nữa.",
       "rename": "Đổi tên",
       "renameSave": "Lưu tên",
       "close": "Đóng lớp",
+      "closeQuestion": "Đóng {name}? Không ai có thể tham gia thêm, và người học ngừng chia sẻ: muốn chia sẻ lại, mỗi người phải tham gia lại. Những gì họ đã chia sẻ vẫn còn, và bạn có thể mở lại lớp.",
       "reopen": "Mở lại lớp",
       "closeHelp": "Lớp đã đóng không nhận thêm ai, và người học của lớp ngừng chia sẻ."
     },
@@ -2142,7 +2147,9 @@
       "orgStats": "Lớp: {classes} · Người học: {learners} · Hoạt động tuần này: {active} · Bài học đã hoàn thành: {finished}",
       "viewClasses": "Xem các lớp",
       "newOrgLink": "Link mới",
+      "newOrgLinkQuestion": "Tạo link mới cho {name}? Link bạn đã gửi trước đó sẽ không dùng được nữa.",
       "switchOff": "Tắt",
+      "switchOffQuestion": "Tắt {name}? Các link của tổ chức sẽ không dùng được, và người học ngừng chia sẻ: muốn chia sẻ lại, mỗi người phải tham gia lại. Những gì họ đã chia sẻ vẫn còn, và bạn có thể bật lại.",
       "switchOn": "Bật",
       "switchedOff": "Đã tắt",
       "switchOffHelp": "Khi bị tắt, các đường link của tổ chức đó không dùng được và người học ngừng chia sẻ. Link mới sẽ làm link cũ không dùng được nữa.",

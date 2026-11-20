@@ -1885,7 +1885,7 @@
       },
       "classes": {
         "name": "Kelas online Thinkerwell (hanya jika organisasi Anda menggunakannya)",
-        "purpose": "Memungkinkan guru dan organisasinya melihat sejauh mana setiap pelajar di kelasnya sudah belajar. Fitur ini mati kecuali organisasi sudah menyepakatinya dengan Thinkerwell, dan pelajar hanya bergabung dengan memasukkan kode kelasnya lalu mengetuk Gabung ke kelas.",
+        "purpose": "Memungkinkan guru dan organisasinya melihat sejauh mana setiap pelajar di kelasnya sudah belajar. Fitur ini mati kecuali organisasi sudah menyepakatinya dengan Thinkerwell, dan pelajar hanya bergabung dengan memasukkan kode kelasnya lalu mengetuk Gabung ke kelas ini.",
         "gets": "Untuk setiap pelajar yang bergabung: nama yang mereka pakai di perangkat (boleh nama panggilan), bahasa dan tingkat bacaan mereka, pelajaran dan langkah yang sudah mereka selesaikan dan kapan, berapa kali mereka mencoba setiap cek bagian, dan hari-hari mereka belajar. Tidak pernah tulisan, jawaban, nilai, atau rekaman mereka. Tampilan Thinkerwell sendiri menunjukkan angka-angka ini tanpa nama. Berhenti berbagi, atau guru mengeluarkan pelajar dari kelas, akan menghapusnya.",
         "where": "Disimpan di basis data Neon di Singapura, yang digunakan Thinkerwell melalui hosting situs webnya.",
         "link": "Kebijakan privasi Neon"
@@ -1974,11 +1974,11 @@
     "codeHelper": "Gurumu yang memberikan kode ini.",
     "find": "Cari kelas",
     "looking": "Mencari…",
-    "whatTeacherSees": "Kalau kamu bergabung, gurumu melihat namamu, {name}, dan pelajaran serta langkah yang sudah kamu selesaikan.",
-    "whatTheyDontSee": "Gurumu tidak melihat tulisanmu, jawabanmu, atau rekamanmu. Kamu bisa berhenti berbagi kapan saja.",
-    "join": "Gabung ke kelas",
+    "whatTeacherSees": "Kalau kamu bergabung, gurumu melihat namamu, {name}, pelajaran dan langkah yang kamu selesaikan dan kapan, berapa kali kamu mencoba cek bagian, serta bahasa dan tingkat bacaanmu.",
+    "whatTheyDontSee": "Gurumu tidak melihat tulisanmu, jawabanmu, nilaimu, atau rekamanmu. Kamu bisa berhenti berbagi kapan saja.",
+    "join": "Gabung ke kelas ini",
     "cancel": "Nanti saja",
-    "sharing": "Gurumu bisa melihat namamu dan pelajaran serta langkah yang sudah kamu selesaikan. Bukan tulisan atau rekamanmu.",
+    "sharing": "Gurumu bisa melihat namamu, pelajaran dan langkah yang kamu selesaikan dan kapan, percobaan cek bagianmu, serta bahasa dan tingkat bacaanmu. Bukan tulisan, jawaban, nilai, atau rekamanmu.",
     "stopOpen": "Berhenti berbagi",
     "stopQuestion": "Berhenti berbagi dengan kelas ini? Gurumu tidak akan melihat kemajuanmu lagi, dan datanya dihapus dari server Thinkerwell. Pekerjaanmu tetap ada di perangkat ini.",
     "stop": "Berhenti berbagi",
@@ -2002,7 +2002,9 @@
       "refresh": "Muat ulang",
       "copy": "Salin",
       "copied": "Tersalin",
-      "whatYouSee": "Anda melihat nama setiap pelajar, pelajaran dan langkah yang sudah mereka selesaikan, dan kapan. Bukan tulisan, jawaban, nilai, atau rekaman mereka.",
+      "notNow": "Nanti saja",
+      "makeNewLink": "Buat tautan baru",
+      "whatYouSee": "Anda melihat nama setiap pelajar, pelajaran dan langkah yang sudah mereka selesaikan dan kapan, berapa kali mereka mencoba cek bagian, serta bahasa dan tingkat bacaan mereka. Bukan tulisan, jawaban, nilai, atau rekaman mereka.",
       "keepPrivate": "Jaga kerahasiaan tautan halaman ini: siapa pun yang memilikinya bisa melihat halaman ini."
     },
     "problem": {
@@ -2024,7 +2026,7 @@
     },
     "class": {
       "codeLabel": "Kode kelas",
-      "codeHelp": "Pelajar bergabung dari Beranda mereka: \"Kelasmu\", lalu \"Gabung ke kelas\".",
+      "codeHelp": "Setiap pelajar bergabung dari Beranda mereka sendiri: \"Kelasmu\", lalu \"Gabung ke kelas\".",
       "closedNote": "Kelas ini sudah ditutup. Tidak ada yang bisa bergabung lagi, dan pelajarnya sudah berhenti berbagi.",
       "learnersLabel": {
         "other": "pelajar"
@@ -2063,6 +2065,7 @@
     "program": {
       "eyebrow": "Organisasi",
       "pageTitle": "Kelas-kelas Anda",
+      "intro": "Tambahkan satu kelas untuk setiap kelompok. Setiap kelas mendapat kode untuk pelajarnya dan tautan untuk gurunya.",
       "classesTitle": "Kelas",
       "noClasses": "Belum ada kelas.",
       "code": "Kode {code}",
@@ -2082,10 +2085,12 @@
       "teacherLinkHelp": "Kirim tautan ini kepada guru kelas tersebut. Tautan ini hanya ditampilkan sekarang. Kalau hilang, buat yang baru.",
       "manageTitle": "Kelola kelas ini",
       "newLink": "Tautan guru baru",
+      "newLinkQuestion": "Buat tautan guru baru? Tautan yang Anda kirim sebelumnya tidak berlaku lagi.",
       "newLinkHelp": "Tautan guru yang baru membuat tautan lama tidak berlaku.",
       "rename": "Ganti nama",
       "renameSave": "Simpan nama",
       "close": "Tutup kelas",
+      "closeQuestion": "Tutup {name}? Tidak ada yang bisa bergabung lagi, dan pelajarnya berhenti berbagi: untuk berbagi lagi, setiap pelajar harus bergabung lagi. Yang sudah mereka bagikan tetap ada, dan Anda bisa membuka kelas ini lagi.",
       "reopen": "Buka kelas lagi",
       "closeHelp": "Kelas yang ditutup tidak menerima pelajar baru, dan pelajarnya berhenti berbagi."
     },
@@ -2142,7 +2147,9 @@
       "orgStats": "Kelas: {classes} · Pelajar: {learners} · Aktif minggu ini: {active} · Pelajaran selesai: {finished}",
       "viewClasses": "Lihat kelas",
       "newOrgLink": "Tautan baru",
+      "newOrgLinkQuestion": "Buat tautan baru untuk {name}? Tautan yang Anda kirim sebelumnya tidak berlaku lagi.",
       "switchOff": "Nonaktifkan",
+      "switchOffQuestion": "Nonaktifkan {name}? Tautannya tidak berlaku lagi, dan pelajarnya berhenti berbagi: untuk berbagi lagi, setiap pelajar harus bergabung lagi. Yang sudah mereka bagikan tetap ada, dan Anda bisa mengaktifkannya lagi.",
       "switchOn": "Aktifkan",
       "switchedOff": "Nonaktif",
       "switchOffHelp": "Kalau dinonaktifkan, tautan organisasi itu tidak berlaku dan pelajarnya berhenti berbagi. Tautan baru membuat tautan lama tidak berlaku.",

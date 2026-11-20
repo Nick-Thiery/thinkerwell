@@ -6776,5 +6776,61 @@
   "pages.organisations.pilotNote": {
     "source": "Thinkerwell’s initial pilot is for selected partner organisations. Lessons, timing, feedback, any data collection and required permissions are agreed directly with each organisation before its pilot begins.",
     "flag": true
+  },
+  "classJoin.join": {
+    "source": "Join this class",
+    "flag": true
+  },
+  "classJoin.whatTeacherSees": {
+    "source": "If you join, your teacher sees your name, {name}, which lessons and steps you finish and when, how many times you try a section check, and your language and reading level.",
+    "flag": true
+  },
+  "classJoin.whatTheyDontSee": {
+    "source": "They don't see what you write, your answers, your scores or your recordings. You can stop sharing at any time.",
+    "flag": true
+  },
+  "classJoin.sharing": {
+    "source": "Your teacher can see your name, which lessons and steps you finish and when, your section check tries, and your language and reading level. Not your writing, answers, scores or recordings.",
+    "flag": true
+  },
+  "classViews.common.whatYouSee": {
+    "source": "You see each learner's name, which lessons and steps they finished and when, how many times they tried a section check, and their language and reading level. Not their writing, answers, scores or recordings.",
+    "flag": true
+  },
+  "classViews.class.codeHelp": {
+    "source": "Each learner joins on their own Home: \"Your class\", then \"Join a class\".",
+    "flag": true
+  },
+  "classViews.common.notNow": {
+    "source": "Not now",
+    "flag": true
+  },
+  "classViews.common.makeNewLink": {
+    "source": "Make a new link",
+    "flag": true
+  },
+  "classViews.admin.newOrgLinkQuestion": {
+    "source": "Make a new link for {name}? The link you sent before stops working.",
+    "flag": true
+  },
+  "classViews.admin.switchOffQuestion": {
+    "source": "Switch off {name}? Its links stop working, and its learners stop sharing: to share again, each would join again. What they shared stays, and you can switch it on again.",
+    "flag": true
+  },
+  "classViews.program.intro": {
+    "source": "Add a class for each group. Each class gets a code for its learners and a link for its teacher.",
+    "flag": true
+  },
+  "classViews.program.newLinkQuestion": {
+    "source": "Make a new teacher link? The link you sent before stops working.",
+    "flag": true
+  },
+  "classViews.program.closeQuestion": {
+    "source": "Close {name}? No one new can join, and its learners stop sharing: to share again, each would join again. What they shared stays, and you can open the class again.",
+    "flag": true
+  },
+  "privacy.services.classes.purpose": {
+    "source": "Lets a teacher and their organisation see how far each learner in their class has got. It is off unless an organisation has agreed it with Thinkerwell, and a learner joins only by entering their class code and tapping Join this class.",
+    "flag": true
   }
 }

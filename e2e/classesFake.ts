@@ -217,6 +217,10 @@ export async function standInForClasses(page: Page): Promise<Request[]> {
           code: 'PW3-9RT',
           teacherKey: 't'.repeat(43),
         });
+      case 'program.newTeacherLink':
+        return json(200, { teacherKey: 'n'.repeat(43) });
+      case 'admin.newOrgLink':
+        return json(200, { orgKey: 'o'.repeat(43) });
       default:
         return json(200, { ok: true });
     }

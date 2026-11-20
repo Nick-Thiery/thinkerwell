@@ -15,7 +15,7 @@ Decided with Nick on 19 November 2026 (before anything was built):
 ```
 learner's device                         /api/classes (Vercel function)          Postgres (db/classes.sql)
   Home › "Your class" › code ──lookup──▶  class name + organisation's name   ◀─  cv_classes, cv_orgs
-  "Join class" (settings.classLinks)
+  "Join this class" (settings.classLinks)
   runner: every 2 min while on screen,
   when back online, as the page hides ──sync──▶ checks every field, saves    ──▶ cv_learners, cv_progress,
                                                                                 cv_checks, cv_active_days
@@ -43,8 +43,46 @@ Keep the admin link private (a password manager, never chat). A leaked organisat
 
 `api/_lib/classes.integration.test.ts` runs the whole flow through the real driver (`postgres.js`) when `TEST_DATABASE_URL` points at a scratch Postgres (PGlite's socket server, `@electric-sql/pglite-socket`, is enough); it found that a jsonb parameter must be passed as an array, not a JSON string.
 
+## Making HELP's organisation link (how-to)
+
+For Nick or Justin, once HELP for Refugees has agreed in writing to use online classes, and what its teachers will see (below). The same steps work for the partner in Malaysia. Nothing is sent from any learner's device until a learner joins a class, so making the link changes nothing on HELP's devices by itself.
+
+**Before you start**
+
+- Agree with HELP that its teachers and its lead will see, for each learner who joins: the name on the device (it can be a nickname, or a code from the code cards: `/educators/code-cards`), which lessons and steps they finish and when, how many times they try a section check, their language and reading level. Never their writing, answers, scores or recordings. The learner sees the same list before they tap "Join this class", and the Privacy & Child Safeguarding page says it in section 3.
+- Have the admin link to hand: `https://thinkerwell.app/admin#key=<CLASSES_ADMIN_TOKEN>`, from the password manager. Never paste it into a chat or an email.
+
+**Steps**
+
+1. Open the admin link on a laptop or phone. The page is "Admin dashboard". If it says "Online classes aren't switched on yet", the token or database isn't set in Vercel (see "Switching it on" above).
+2. Scroll to **Organisations**. Under **Organisation name**, type `HELP for Refugees` (up to 80 characters; it is what HELP's lead, its teachers and its learners see, on the class code screen).
+3. Tap **Add organisation**. A box appears at the top of Organisations: **HELP for Refugees's link**, with the link and **Copy**.
+4. Tap **Copy**, and send the link to HELP's lead the way you agreed (WhatsApp to the lead directly, or email). **It is shown only this once.** If you lose it before sending, tap **New link** on HELP's row, then **Make a new link**: the page asks first, because the old link stops working.
+5. Tell the lead what to do with it: open the link (save it as a bookmark; anyone with it can see HELP's classes), type a class name for each group (for example "Morning group"), tap **Add class**, then send each class's **Teacher's link** to its teacher. Each class has a **class code** (like `K7M-Q4P`) for its learners.
+6. Each learner joins on their own Home on the device: choose their name under "Who's learning today?", then **Your class**, **Join a class**, type the code, **Find class**, read what their teacher will see, and **Join this class**.
+
+**Afterwards**
+
+- HELP's row on the admin page shows its classes, learners, how many were active this week and lessons finished. **View classes** shows each class with learners numbered (Learner 1, Learner 2 …), never named: the admin page never gets names.
+- A link that leaks or is lost: **New link** (for the organisation) or **New teacher link** (inside a class, on HELP's page). Both ask first.
+- To stop: **Switch off** on HELP's row (it asks first). HELP's links stop working and its learners' devices stop sharing; what was shared stays, and **Switch on** brings the links back, though each learner would have to join again. A learner can stop sharing at any time on their Home; a teacher can **Take out of class**, which deletes that learner's progress from the server.
+
+Don't make a test organisation on the live site: every organisation shows on the admin page and in its numbers, and there is no delete. To try the steps first, use a local build with the stand-in in `api/_lib/classes.integration.test.ts`, or the end-to-end stand-in (`e2e/classesFake.ts`).
+
+## Changed after the walkthrough (20 November 2026)
+
+The whole flow (admin, organisation, teacher, a learner joining and finishing a lesson) was walked at 390px and 820px in English and Bahasa Indonesia, against the real handler on an in-memory database. Fixed:
+
+- **The button that joins** was "Join class", next to "Join a class", which opens the code box; in Indonesian, Malay and Vietnamese both were the same words. It is now "Join this class" (`classJoin.join`).
+- **What a learner is told** before and after joining, and the teacher's "You see …" line, now list everything the teacher's page shows: the name, which lessons and steps and when, section-check tries, language and reading level (before: only the name and the lessons and steps).
+- **"0 of 0 lessons finished"** on every learner of a class where nobody had started a lesson yet: now only "Not started yet" until there is something to count.
+- **New link, New teacher link, Close class and Switch off** acted on one tap. A mis-tap stopped a link someone else had, or every learner's sharing. They now ask first, like "Take out of class", and say so if they fail instead of doing nothing (`ConfirmAction.tsx`). Switching on and opening a class again still take one tap.
+- **The organisation page** says what to do first: "Add a class for each group. Each class gets a code for its learners and a link for its teacher."
+- The teacher's code note says each learner joins on **their own** Home.
+
 ## Not done yet
 
 - Native-speaker review of the Indonesian, Malay and Vietnamese words (AI-drafted, like the rest of the interface).
 - No export or download of a class's data (on purpose, for now).
 - Nothing about online classes on the Educators page, the setup checklist or the session guide: an organisation learns about it from Thinkerwell when it agrees to use it.
+- No way to delete an organisation or a class from the pages (only switch off or close).
