@@ -221,6 +221,8 @@ Not tried here: VoxCPM2 (Apache-2.0) ran out of memory on an 8 GB machine; VieNe
 | E, F | VachanaTTS (MIT), female 2 and male 2 | 24%, 58% | female 1 and male 1 worse |
 | G | F5-TTS-THAI (CC BY 4.0), voice cloned from the model card's sample | 13–26% | most natural, but clones an unknown speaker and took 188 s for 16 s of speech on two cores (about 60 hours for every piece) |
 
+**Recorded (20 November 2026).** Our World 145 files, 22.3 MB, 93 minutes; Digital World 102 files, 19.1 MB, 79 minutes; Southeast Asia Through Time 72 files, 11.6 MB, 48 minutes; Art, Architecture and Society 120 files, 34.7 MB, 144 minutes: 439 files, 87.7 MB and about 6 hours 5 minutes of speech, from 6,859 different pieces (more than other languages, because Thai pieces are clauses), recorded in about 2 hours 40 minutes on two cores. `npm run check:audio` passes. The `CHECK:` lines of the run are all one-word pieces (a list such as "ชา ไห ผ้า" splits into words), short by nature. Not heard in full by a person: a native speaker should listen to a few parts of each course with the translation review.
+
 Not usable here: FastThaiG2P's own Kokoro release (GitHub, blocked from the recording machine), ThonburianTTS and KhanomTan 1.0 (non-commercial share-alike), Typhoon2-Audio (Llama licence), SiangTTS (VoxCPM2, too big for 8 GB). A voice cloned from a consenting Thai speaker's recording would be the next step up.
 
 ## Not done, or for later

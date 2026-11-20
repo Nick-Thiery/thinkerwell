@@ -109,7 +109,7 @@ export const LOCALES: readonly LocaleDefinition[] = [
   // Thai: drafted by AI and back-checked by a second AI pass (November 2026,
   // Nick's instruction, docs/translation/th/), offered while native-speaker
   // review is in progress, like Vietnamese.
-  { code: 'th', englishName: 'Thai', endonym: 'ไทย', dir: 'ltr', font: 'thai', ready: true, content: true, speechLang: 'th-TH', recordings: false },
+  { code: 'th', englishName: 'Thai', endonym: 'ไทย', dir: 'ltr', font: 'thai', ready: true, content: true, speechLang: 'th-TH' },
 ];
 
 /**
