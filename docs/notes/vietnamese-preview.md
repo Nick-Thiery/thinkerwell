@@ -15,7 +15,7 @@ The site's fonts have no Vietnamese letters (stacked tone marks). Be Vietnam Pro
 
 ## Recordings
 
-Made on 18 November 2026 for all four courses, on Nick's instruction, before anyone had listened to the voice in full: VieNeu-TTS v3 Turbo (Apache-2.0), preset voice "Trúc Ly", into `public/audio/vi/` and `public/audio/vi/<course>/`, checked by `npm run check:audio` like the other languages. How, sizes and what is left: `docs/notes/recorded-audio.md`, "Vietnamese", and `scripts/audio/README.md`. Without a recording (not downloaded and offline, Save data) Listen reads Vietnamese with a Vietnamese voice on the device, or says why it can't.
+Made on 18 November 2026 for all four courses, on Nick's instruction, before anyone had listened to the voice in full: VieNeu-TTS v3 Turbo (Apache-2.0), preset voice "Trúc Ly" (recorded again on 20 November 2026 with "Ngọc Huyền", which Nick chose from samples; `docs/notes/recorded-audio.md`, "Vietnamese"), into `public/audio/vi/` and `public/audio/vi/<course>/`, checked by `npm run check:audio` like the other languages. How, sizes and what is left: `docs/notes/recorded-audio.md`, "Vietnamese", and `scripts/audio/README.md`. Without a recording (not downloaded and offline, Save data) Listen reads Vietnamese with a Vietnamese voice on the device, or says why it can't.
 
 ## Still to do before it is offered
 

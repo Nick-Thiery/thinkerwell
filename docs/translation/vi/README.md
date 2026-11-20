@@ -22,7 +22,7 @@ Same layout as Indonesian (`docs/translation/README.md`):
 | Per-string notes: back-translation, flags, reviewer changes, the English each string was translated from | `docs/translation/vi/notes/*.json` (Our World and the interface: `ui.json`), `notes/courses/<course id>/*.json` (the other courses: `source` and `flag` only, no back-translations yet) |
 | Review spreadsheet | `npm run review:export -- vi` writes `docs/translation/vi/review/thinkerwell-vi-review.xlsx` |
 | Letters the site fonts lack | Be Vietnam Pro, loaded only while Vietnamese is shown: `docs/notes/languages.md`, "Vietnamese fonts" |
-| Recordings (Listen) | all four courses, recorded 18 November 2026 with VieNeu-TTS v3 Turbo (voice Trúc Ly), not yet heard by a native speaker: `docs/notes/vietnamese-preview.md`, `docs/notes/recorded-audio.md` |
+| Recordings (Listen) | all four courses, recorded 18 November 2026 with VieNeu-TTS v3 Turbo and again on 20 November 2026 with the voice Ngọc Huyền, not yet heard by a native speaker: `docs/notes/vietnamese-preview.md`, `docs/notes/recorded-audio.md` |
 
 ## How it was made (October 2026)
 
