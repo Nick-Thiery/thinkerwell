@@ -477,6 +477,8 @@
       "certificatesBody": "Every certificate earned on this device, one to a page.",
       "certificatesCta": "Print all certificates",
       "sendEnquiry": "Send an enquiry",
+      "pilotFeedbackBody": "Running a pilot with Thinkerwell? Tell us what worked and what to change.",
+      "pilotFeedback": "Send pilot feedback",
       "browseCourse": "Browse the courses",
       "setupDevice": "Set up a device",
       "overview": "Watch a one-minute overview (optional)",
@@ -1200,7 +1202,9 @@
     "endCertificates": "Print certificates for finished sections: open {educators}, then {certificates}.",
     "endClass": "See where everyone is: open {educators}, then {class}. It shows no scores.",
     "beforeChoose": "Choose the courses and lessons to teach ({educators}, then {guides}).",
-    "endReview": "For a course with no section check, ask aloud: the big question, one piece of evidence, what they still want to find out. Then fill in the session record ({educators}, then {feedback})."
+    "endReview": "For a course with no section check, ask aloud: the big question, one piece of evidence, what they still want to find out. Then fill in the session record ({educators}, then {feedback}).",
+    "endFeedback": "Tell us what worked and what to change: {address}, then choose {topic}.",
+    "feedbackTopic": "Pilot feedback"
   },
   "feedbackSheet": {
     "title": "Session record and feedback",
@@ -1822,6 +1826,7 @@
     "topicGeneral": "General question",
     "topicEducator": "Educator or classroom use",
     "topicOrganisation": "Learning organisation or NGO",
+    "topicPilot": "Pilot feedback",
     "topicPartnership": "Company or partnership",
     "topicFeedback": "Feedback or technical issue",
     "topicOther": "Other",
@@ -1830,6 +1835,8 @@
     "contactHelp": "For WhatsApp, start with your country code, such as +65.",
     "messageLabel": "Your message",
     "messagePlaceholder": "Tell us what you'd like to ask or discuss.",
+    "pilotNote": "For an organisation running a pilot: tell us what worked, what was hard to use and what to change. Don't write learners' names, their work or anything else about a learner.",
+    "pilotPlaceholder": "For example: which courses and lessons you used, what worked, what to change.",
     "send": "Send enquiry",
     "sending": "Sending…",
     "note": "Your message and contact details are emailed to the Thinkerwell team so we can reply. Don't include a learner's personal information.",

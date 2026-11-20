@@ -111,6 +111,13 @@ describe('the pilot day guide', () => {
     expect(end).toHaveTextContent('See where everyone is: open For educators, then The class on this device. It shows no scores.');
   });
 
+  it('ends with where to send pilot feedback: the contact form, with its topic chosen, its address written out for paper', () => {
+    const end = part(renderPage(), 'End of the session');
+    expect(end).toHaveTextContent('Tell us what worked and what to change: thinkerwell.app/contact, then choose Pilot feedback.');
+    expect(within(end).getByRole('link', { name: 'thinkerwell.app/contact' })).toHaveAttribute('href', '/contact?topic=pilot');
+    expect(within(end).getByText('Pilot feedback').tagName).toBe('STRONG');
+  });
+
   it('is plain: no "please", no exclamation marks, no placeholder, no organisation or place, nothing about measurement', () => {
     const sheet = renderPage();
     const text = sheet.textContent ?? '';
@@ -124,7 +131,8 @@ describe('the pilot day guide', () => {
   it('leaves out who to contact while there is no address, and shows no placeholder', () => {
     const sheet = renderPage();
     expect(within(sheet).queryByRole('region', { name: 'Questions, or something to fix?' })).not.toBeInTheDocument();
-    expect(within(sheet).queryByRole('link')).not.toBeInTheDocument();
+    // The one link is to the contact form, for pilot feedback; no email address and no placeholder.
+    expect(within(sheet).getAllByRole('link').map((link) => link.getAttribute('href'))).toEqual(['/contact?topic=pilot']);
     expect(sheet.textContent).not.toMatch(/@|CONTACT/);
   });
 

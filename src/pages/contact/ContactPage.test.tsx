@@ -7,8 +7,8 @@ import { ContactPage } from './ContactPage';
 
 /** The contact form (/contact, docs/notes/contact-form.md). */
 
-function renderPage(locale?: string) {
-  const router = createMemoryRouter([{ path: '/contact', element: <ContactPage /> }], { initialEntries: ['/contact'] });
+function renderPage(locale?: string, address = '/contact') {
+  const router = createMemoryRouter([{ path: '/contact', element: <ContactPage /> }], { initialEntries: [address] });
   const page = <RouterProvider router={router} />;
   render(locale ? <I18nProvider locale={locale}>{page}</I18nProvider> : page);
 }
@@ -29,6 +29,50 @@ afterEach(() => {
 });
 
 describe('the contact form', () => {
+  it('opens with Pilot feedback chosen from its link, says what to send and that nothing about a learner belongs in it', async () => {
+    renderPage(undefined, '/contact?topic=pilot');
+    const topic = screen.getByLabelText('What is it about?');
+    expect(topic).toHaveValue('pilot');
+    expect(topic).toHaveAccessibleDescription(
+      "For an organisation running a pilot: tell us what worked, what was hard to use and what to change. Don't write learners' names, their work or anything else about a learner.",
+    );
+    expect(screen.getByLabelText('Your message')).toHaveAttribute('placeholder', 'For example: which courses and lessons you used, what worked, what to change.');
+    // The same four fields as any other topic: nothing more is asked.
+    expect(screen.getAllByRole('textbox')).toHaveLength(3);
+    // Choosing another topic takes the note away.
+    await userEvent.setup().selectOptions(topic, 'General question');
+    expect(screen.queryByText(/For an organisation running a pilot/)).not.toBeInTheDocument();
+    expect(screen.getByLabelText('Your message')).toHaveAttribute('placeholder', "Tell us what you'd like to ask or discuss.");
+  });
+
+  it('ignores a topic in the address it doesn\'t know', () => {
+    renderPage(undefined, '/contact?topic=sales');
+    expect(screen.getByLabelText('What is it about?')).toHaveValue('');
+  });
+
+  it('sends Pilot feedback as the topic "pilot", with the same fields as any other', async () => {
+    const fetchMock = answer(200, { ok: true });
+    vi.stubGlobal('fetch', fetchMock);
+    const user = userEvent.setup();
+    renderPage(undefined, '/contact?topic=pilot');
+    await user.type(screen.getByLabelText('Your name'), 'Siti Rahma');
+    await user.type(screen.getByLabelText('Email or WhatsApp number'), 'siti@example.org');
+    await user.type(screen.getByLabelText('Your message'), 'We used Lessons 1 to 3. The steps were easy to follow.');
+    await user.click(screen.getByRole('button', { name: 'Send enquiry' }));
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    const body = JSON.parse((fetchMock.mock.calls[0] as unknown as [string, RequestInit])[1].body as string) as Record<string, string>;
+    expect(body).toEqual({ topic: 'pilot', name: 'Siti Rahma', contact: 'siti@example.org', message: 'We used Lessons 1 to 3. The steps were easy to follow.', website: '' });
+    // After sending, another message starts on the same topic.
+    await user.click(await screen.findByRole('button', { name: 'Send another message' }));
+    expect(screen.getByLabelText('What is it about?')).toHaveValue('pilot');
+  });
+
+  it('says it in Bahasa Indonesia too', async () => {
+    renderPage('id', '/contact?topic=pilot');
+    expect(await screen.findByRole('option', { name: 'Masukan pilot' })).toHaveProperty('selected', true);
+    expect(screen.getByText(/Jangan menulis nama pelajar/)).toBeInTheDocument();
+  });
+
   it('asks for a topic, a name, one way to reply and a message, and nothing about a learner', () => {
     renderPage();
     expect(screen.getByRole('heading', { level: 1, name: 'Contact Thinkerwell' })).toBeInTheDocument();
@@ -38,6 +82,7 @@ describe('the contact form', () => {
       'General question',
       'Educator or classroom use',
       'Learning organisation or NGO',
+      'Pilot feedback',
       'Company or partnership',
       'Feedback or technical issue',
       'Other',
