@@ -61,7 +61,7 @@ async function switchTo(page: Page, name: string): Promise<void> {
   await expect(page.locator('.tw-learner-chip')).toHaveAttribute('aria-label', new RegExp(`${name}$`));
 }
 
-test('a new profile opens Home with no lesson activity, and the journal keeps every learner and course apart', async ({ page }) => {
+test('a new profile opens Home with no lesson activity, and the journal keeps every learner and course apart', async ({ page, browserName }) => {
   test.setTimeout(180_000);
   const visited: string[] = [];
   page.on('framenavigated', (frame) => {
@@ -119,7 +119,9 @@ test('a new profile opens Home with no lesson activity, and the journal keeps ev
   await expect(page.getByText(SAT1_ID.title)).toBeVisible();
   // Three lessons numbered 1 or 10 in three courses stay separate groups.
   await expect(page.locator('.tw-journal-group')).toHaveCount(3);
-  await page.screenshot({ path: test.info().outputPath('bao-journal.png'), fullPage: true });
+  // A picture for reviewers. Not in WebKit, where Playwright's screenshot adds a <style> of its own that the
+  // Content-Security-Policy refuses, which the browser logs as an error (docs/notes/safari-testing.md).
+  if (browserName !== 'webkit') await page.screenshot({ path: test.info().outputPath('bao-journal.png'), fullPage: true });
 
   // Cleo, in Malay, with the keyboard.
   await openSwitcher(page);
