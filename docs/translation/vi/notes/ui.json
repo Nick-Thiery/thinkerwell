@@ -6797,12 +6797,12 @@
     "source": "Send pilot feedback",
     "flag": true
   },
-  "pilotDay.endFeedback": {
-    "source": "Tell us what worked and what to change: {address}, then choose {topic}.",
-    "flag": true
-  },
   "pilotDay.feedbackTopic": {
     "source": "Pilot feedback",
+    "flag": true
+  },
+  "pilotDay.contactBody": {
+    "source": "Something confusing or broken, or feedback on a pilot? Tell us at {email}, or at {address} (choose {topic}). Don't send learners' names or written answers.",
     "flag": true
   }
 }

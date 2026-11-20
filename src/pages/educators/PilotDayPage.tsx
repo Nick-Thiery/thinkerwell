@@ -186,17 +186,6 @@ export function PilotDayPage() {
               <li>{tx('pilotDay.endCertificates', { educators, certificates: ui(parent.t('pages.educators.certificatesCta')) })}</li>
               <li>{tx('pilotDay.endClass', { educators, class: ui(parent.t('pages.educators.classTitle')) })}</li>
               <li>{tx('pilotDay.endReview', { educators, feedback: ui(parent.t('pages.educators.feedbackSheetTitle')) })}</li>
-              <li>
-                {tx('pilotDay.endFeedback', {
-                  // The address is written out, so it can be typed from the printed page; the link opens the form with the topic chosen.
-                  address: (
-                    <a href={contactPath('pilot')} translate="no">
-                      {CONTACT_FORM_ADDRESS}
-                    </a>
-                  ),
-                  topic: ui(t('pilotDay.feedbackTopic')),
-                })}
-              </li>
             </ul>
           </section>
 
@@ -204,12 +193,20 @@ export function PilotDayPage() {
             <section className="tw-consent-part" aria-labelledby="pilotday-contact">
               <h3 id="pilotday-contact">{parent.t('pages.educators.feedbackTitle')}</h3>
               <p>
-                {parent.tx('pages.educators.feedbackBody', {
+                {/* The Educators page's line, plus pilot feedback (20 November 2026), in one sentence so the guide stays one page. */}
+                {tx('pilotDay.contactBody', {
                   email: (
                     <a href={`mailto:${CONTACT_EMAIL}`} translate="no">
                       {CONTACT_EMAIL}
                     </a>
                   ),
+                  // Written out, so it can be typed from the printed page; the link opens the form with the topic chosen.
+                  address: (
+                    <a href={contactPath('pilot')} translate="no">
+                      {CONTACT_FORM_ADDRESS}
+                    </a>
+                  ),
+                  topic: ui(t('pilotDay.feedbackTopic')),
                 })}
               </p>
             </section>

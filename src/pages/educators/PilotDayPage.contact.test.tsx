@@ -13,7 +13,12 @@ describe('the pilot day guide, with a contact address', () => {
     render(<RouterProvider router={router} />);
     const sheet = screen.getByRole('article');
     const contact = within(sheet).getByRole('region', { name: 'Questions, or something to fix?' });
-    expect(contact).toHaveTextContent("Tell us at team@example.org. Don't send learners' names or written answers.");
+    expect(contact).toHaveTextContent(
+      "Something confusing or broken, or feedback on a pilot? Tell us at team@example.org, or at thinkerwell.app/contact (choose Pilot feedback). Don't send learners' names or written answers.",
+    );
     expect(within(contact).getByRole('link', { name: 'team@example.org' })).toHaveAttribute('href', 'mailto:team@example.org');
+    // Pilot feedback (20 November 2026): the contact form's address written out for paper, a link that opens it with the topic chosen.
+    expect(within(contact).getByRole('link', { name: 'thinkerwell.app/contact' })).toHaveAttribute('href', '/contact?topic=pilot');
+    expect(within(contact).getByText('Pilot feedback').tagName).toBe('STRONG');
   });
 });
