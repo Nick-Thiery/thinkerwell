@@ -6832,5 +6832,113 @@
   "privacy.services.classes.purpose": {
     "source": "Lets a teacher and their organisation see how far each learner in their class has got. It is off unless an organisation has agreed it with Thinkerwell, and a learner joins only by entering their class code and tapping Join this class.",
     "flag": true
+  },
+  "classViews.snapshot.title": {
+    "source": "Impact snapshot",
+    "flag": true
+  },
+  "classViews.snapshot.intro": {
+    "source": "A one-page summary of a month, to print or share: counts only, never names.",
+    "flag": true
+  },
+  "classViews.snapshot.monthLabel": {
+    "source": "Month",
+    "flag": true
+  },
+  "classViews.snapshot.orgLabel": {
+    "source": "Organisation",
+    "flag": true
+  },
+  "classViews.snapshot.allOrgs": {
+    "source": "All organisations",
+    "flag": true
+  },
+  "classViews.snapshot.show": {
+    "source": "Show the snapshot",
+    "flag": true
+  },
+  "classViews.snapshot.print": {
+    "source": "Print",
+    "flag": true
+  },
+  "classViews.snapshot.eyebrow": {
+    "source": "Thinkerwell · Impact snapshot",
+    "flag": true
+  },
+  "classViews.snapshot.sheetTitle": {
+    "source": "{name}, {month}",
+    "flag": true
+  },
+  "classViews.snapshot.active": {
+    "source": "Active learners",
+    "flag": true
+  },
+  "classViews.snapshot.activeHelp": {
+    "source": "Learners who worked on a lesson on at least one day of the month.",
+    "flag": true
+  },
+  "classViews.snapshot.finished": {
+    "source": "Lessons finished",
+    "flag": true
+  },
+  "classViews.snapshot.finishedHelp": {
+    "source": "Lessons finished during the month.",
+    "flag": true
+  },
+  "classViews.snapshot.cameBack": {
+    "source": "Came back the next week",
+    "flag": true
+  },
+  "classViews.snapshot.cameBackValue": {
+    "source": "{returned} of {counted}",
+    "flag": true
+  },
+  "classViews.snapshot.cameBackHelp": {
+    "source": "Of the month's active learners, how many worked again 7 to 13 days after their first day that month.",
+    "flag": true
+  },
+  "classViews.snapshot.coursesTitle": {
+    "source": "Courses used",
+    "flag": true
+  },
+  "classViews.snapshot.coursesHelp": {
+    "source": "Learners who started, worked on or finished a lesson of each course during the month.",
+    "flag": true
+  },
+  "classViews.snapshot.learners": {
+    "source": "Learners",
+    "flag": true
+  },
+  "classViews.snapshot.languagesTitle": {
+    "source": "Languages used",
+    "flag": true
+  },
+  "classViews.snapshot.languagesHelp": {
+    "source": "The month's active learners, by the language they use now.",
+    "flag": true
+  },
+  "classViews.snapshot.language": {
+    "source": "Language",
+    "flag": true
+  },
+  "classViews.snapshot.none": {
+    "source": "Nothing this month.",
+    "flag": true
+  },
+  "classViews.snapshot.privacy": {
+    "source": "Counts only: no names, nicknames, writing or answers. A learner who stopped sharing, or was taken out of a class, isn't counted: their numbers were deleted.",
+    "flag": true
+  },
+  "classViews.snapshot.made": {
+    "source": "Made on {date}.",
+    "flag": true
+  },
+  "classViews.snapshot.tooRecent": {
+    "source": "Not counted yet: {count} learners whose next week isn't over.",
+    "flag": true
+  },
+  "privacy.services.classes.gets": {
+    "source": "For each learner who joins: the name they use on the device (it can be a nickname), their language and reading level, which lessons and steps they finished and when, how many times they tried each section check, and the days they worked. Never their writing, answers, scores or recordings. Thinkerwell’s own view shows these numbers without names, and so does the monthly impact snapshot that Thinkerwell and the organisation can print: counts only, such as how many learners were active and which courses and languages were used. Stopping sharing, or a teacher taking a learner out of the class, deletes it.",
+    "flag": true
   }
 }

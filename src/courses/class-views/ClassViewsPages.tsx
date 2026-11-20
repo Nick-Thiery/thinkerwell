@@ -8,6 +8,7 @@ import { useI18n, withWords, type I18nContextValue } from '../../i18n';
 import { AdminDashboard } from './AdminDashboard';
 import { ClassView, CopyLink, ProblemNote, Typed } from './ClassView';
 import { ConfirmAction } from './ConfirmAction';
+import { SnapshotPage, SnapshotPicker, type SnapshotChoice } from './ImpactSnapshot';
 import { useFlatCourses } from './courses';
 import './stylesheet';
 import { linkFor, useApi, useLinkKey } from './useApi';
@@ -111,6 +112,7 @@ export function ProgramPage() {
   const courses = useFlatCourses();
   const [state, reload] = useApi<ProgramOverview>('program', key);
   const [openClass, setOpenClass] = useState<string | null>(null);
+  const [snapshot, setSnapshot] = useState<SnapshotChoice | null>(null);
   usePageTitle(state.status === 'ready' ? state.data.name : t('classViews.program.pageTitle'));
 
   if (!key) {
@@ -129,6 +131,19 @@ export function ProgramPage() {
   }
   const program = state.data;
 
+  if (snapshot) {
+    return (
+      <SnapshotPage
+        action="program.snapshot"
+        linkKey={key}
+        choice={snapshot}
+        courses={courses}
+        backLabel={t('classViews.program.back', { name: program.name })}
+        onBack={() => setSnapshot(null)}
+        i18n={i18n}
+      />
+    );
+  }
   if (openClass) {
     return <ProgramClass orgKey={key} classId={openClass} orgName={program.name} onBack={() => (setOpenClass(null), reload())} i18n={i18n} />;
   }
@@ -185,6 +200,7 @@ export function ProgramPage() {
         )}
       </section>
       <AddClass orgKey={key} onAdded={reload} i18n={i18n} />
+      {program.classes.length > 0 ? <SnapshotPicker onOpen={setSnapshot} i18n={i18n} /> : null}
       <p className="small tw-cv-note">{t('classViews.common.whatYouSee')}</p>
       <p className="small tw-cv-note">{t('classViews.common.keepPrivate')}</p>
     </Frame>

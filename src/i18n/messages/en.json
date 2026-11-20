@@ -1911,7 +1911,7 @@
       "classes": {
         "name": "Thinkerwell’s online classes (only if your organisation uses them)",
         "purpose": "Lets a teacher and their organisation see how far each learner in their class has got. It is off unless an organisation has agreed it with Thinkerwell, and a learner joins only by entering their class code and tapping Join this class.",
-        "gets": "For each learner who joins: the name they use on the device (it can be a nickname), their language and reading level, which lessons and steps they finished and when, how many times they tried each section check, and the days they worked. Never their writing, answers, scores or recordings. Thinkerwell’s own view shows these numbers without names. Stopping sharing, or a teacher taking a learner out of the class, deletes it.",
+        "gets": "For each learner who joins: the name they use on the device (it can be a nickname), their language and reading level, which lessons and steps they finished and when, how many times they tried each section check, and the days they worked. Never their writing, answers, scores or recordings. Thinkerwell’s own view shows these numbers without names, and so does the monthly impact snapshot that Thinkerwell and the organisation can print: counts only, such as how many learners were active and which courses and languages were used. Stopping sharing, or a teacher taking a learner out of the class, deletes it.",
         "where": "Kept in a Neon database in Singapore, which Thinkerwell uses through its website hosting.",
         "link": "Neon privacy policy"
       },
@@ -2192,6 +2192,37 @@
       "orgLinkHelp": "Send this link to the organisation's lead. It is shown only now. If it is lost, make a new one.",
       "backToDashboard": "Back to the dashboard",
       "anonymousNote": "Learners are numbered in the order they joined. Their names are never sent here."
+    },
+    "snapshot": {
+      "title": "Impact snapshot",
+      "intro": "A one-page summary of a month, to print or share: counts only, never names.",
+      "monthLabel": "Month",
+      "orgLabel": "Organisation",
+      "allOrgs": "All organisations",
+      "show": "Show the snapshot",
+      "print": "Print",
+      "eyebrow": "Thinkerwell · Impact snapshot",
+      "sheetTitle": "{name}, {month}",
+      "active": "Active learners",
+      "activeHelp": "Learners who worked on a lesson on at least one day of the month.",
+      "finished": "Lessons finished",
+      "finishedHelp": "Lessons finished during the month.",
+      "cameBack": "Came back the next week",
+      "cameBackValue": "{returned} of {counted}",
+      "cameBackHelp": "Of the month's active learners, how many worked again 7 to 13 days after their first day that month.",
+      "tooRecent": {
+        "one": "Not counted yet: {count} learner whose next week isn't over.",
+        "other": "Not counted yet: {count} learners whose next week isn't over."
+      },
+      "coursesTitle": "Courses used",
+      "coursesHelp": "Learners who started, worked on or finished a lesson of each course during the month.",
+      "learners": "Learners",
+      "languagesTitle": "Languages used",
+      "languagesHelp": "The month's active learners, by the language they use now.",
+      "language": "Language",
+      "none": "Nothing this month.",
+      "privacy": "Counts only: no names, nicknames, writing or answers. A learner who stopped sharing, or was taken out of a class, isn't counted: their numbers were deleted.",
+      "made": "Made on {date}."
     }
   }
 }

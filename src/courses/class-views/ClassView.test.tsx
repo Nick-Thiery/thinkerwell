@@ -108,3 +108,11 @@ describe('what a learner is told before joining', () => {
     }
   });
 });
+
+describe('the impact snapshot', () => {
+  it('offers every month from November 2026 to this one, newest first', async () => {
+    const { snapshotMonths } = await import('./ImpactSnapshot');
+    expect(snapshotMonths(new Date('2026-11-20T00:00:00Z'))).toEqual(['2026-11']);
+    expect(snapshotMonths(new Date('2027-02-03T00:00:00Z'))).toEqual(['2027-02', '2027-01', '2026-12', '2026-11']);
+  });
+});

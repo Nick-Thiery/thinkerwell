@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 import { FAKE_CLASS, FAKE_CODE, FAKE_KEY, FAKE_ORG, standInForClasses } from './classesFake';
-import { L10 } from './lessonHelpers';
+import { L10, pdfPageOrientations } from './lessonHelpers';
 
 // Online classes (docs/notes/online-classes.md), against a stand-in for
 // /api/classes: a learner joins with a code and their progress is sent, a
@@ -171,4 +171,52 @@ test('the admin is asked before a new organisation link stops the old one, or an
   await expect(page.getByText(new RegExp(`^Switch off ${FAKE_ORG}\\? Its links stop working`))).toBeVisible();
   await page.getByRole('button', { name: 'Not now' }).click();
   expect(posted()).toEqual(['admin.newOrgLink']);
+});
+
+test('an organisation prints a month\'s impact snapshot: counts only, on one page', { tag: '@chromium-only' }, async ({ page }) => {
+  const seen = await standInForClasses(page);
+  await page.goto(`/program#key=${FAKE_KEY}`);
+  const part = page.getByRole('region', { name: 'Impact snapshot' });
+  await part.getByLabel('Month').selectOption('2026-11');
+  await part.getByRole('button', { name: 'Show the snapshot' }).click();
+  await expect(page.getByRole('heading', { level: 1, name: `${FAKE_ORG}, November 2026` })).toBeVisible();
+  const read = seen.find((r) => new URL(r.url()).searchParams.get('action') === 'program.snapshot')!;
+  expect(new URL(read.url()).searchParams.get('month')).toBe('2026-11');
+
+  const sheet = page.getByRole('article');
+  await expect(sheet.getByText('14', { exact: true })).toBeVisible();
+  await expect(sheet.getByText('8 of 11', { exact: true })).toBeVisible();
+  await expect(sheet.getByText("Not counted yet: 3 learners whose next week isn't over.")).toBeVisible();
+  await expect(sheet.getByRole('row', { name: /Southeast Asia Through Time 5 7/ })).toBeVisible();
+  await expect(sheet.getByRole('row', { name: /Bahasa Indonesia 9/ })).toBeVisible();
+  // No names: not the learners' (the stand-in's class has Mohammed Abdirahman and Amira), not anyone's.
+  await expect(sheet).not.toContainText(/Mohammed|Amira/);
+
+  // On paper: one portrait page, A4 or Letter, without the buttons.
+  await page.emulateMedia({ media: 'print' });
+  await expect(page.getByRole('button', { name: 'Print' })).toBeHidden();
+  expect(pdfPageOrientations(await page.pdf({ format: 'A4' }))).toEqual(['portrait']);
+  expect(pdfPageOrientations(await page.pdf({ format: 'Letter' }))).toEqual(['portrait']);
+  await page.emulateMedia({ media: 'screen' });
+
+  await page.getByRole('button', { name: `Back to ${FAKE_ORG}` }).click();
+  await expect(page.getByRole('heading', { level: 1, name: FAKE_ORG })).toBeVisible();
+});
+
+test('the admin opens the snapshot of every organisation, or one', async ({ page }) => {
+  const seen = await standInForClasses(page);
+  await page.goto(`/admin#key=${FAKE_KEY}`);
+  const part = page.getByRole('region', { name: 'Impact snapshot' });
+  await expect(part.getByLabel('Organisation')).toHaveValue('');
+  await part.getByRole('button', { name: 'Show the snapshot' }).click();
+  await expect(page.getByRole('heading', { level: 1, name: /^All organisations, / })).toBeVisible();
+  // Its own title replaces the dashboard's.
+  await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1);
+  await page.getByRole('button', { name: 'Back to the dashboard' }).click();
+  await page.getByRole('region', { name: 'Impact snapshot' }).getByLabel('Organisation').selectOption({ label: FAKE_ORG });
+  await page.getByRole('region', { name: 'Impact snapshot' }).getByRole('button', { name: 'Show the snapshot' }).click();
+  await expect(page.getByRole('heading', { level: 1, name: new RegExp(`^${FAKE_ORG}, `) })).toBeVisible();
+  const reads = seen.filter((r) => new URL(r.url()).searchParams.get('action') === 'admin.snapshot').map((r) => new URL(r.url()).searchParams.get('org'));
+  expect(reads[0]).toBeNull();
+  expect(reads[1]).toMatch(/^[0-9a-f-]{36}$/);
 });
