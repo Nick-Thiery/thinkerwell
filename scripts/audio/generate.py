@@ -65,7 +65,7 @@ COURSE_INDEX = ROOT / "src" / "audio" / "courseRecordings.json"
 # `--list-vi-voices`). The team chooses it after listening to samples
 # (`--sample`); override it with the AUDIO_VI_VOICE environment variable or
 # `--vi-voice`. Changing it records every Vietnamese piece again.
-VI_VOICE = "Trúc Ly"
+VI_VOICE = "Ngọc Huyền"
 
 # The voices the founders approved (docs/notes/recorded-audio.md). Changing
 # any of these records everything in that language again.
@@ -109,8 +109,10 @@ VOICES = {
         # Sampling, fixed so that a piece sounds the same each time it is recorded (and a change records again).
         # Each piece is also seeded from its own words (VieNeu.say).
         "seed": 1,
-        "temperature": 0.6,
-        "topK": 25,
+        # 0.8 and 50 (the library's defaults) after the team compared samples on 19 November 2026: 0.6 and 25
+        # sounded flatter. Still seeded per piece, so a piece sounds the same each time.
+        "temperature": 0.8,
+        "topK": 50,
         "topP": 0.95,
         "repetitionPenalty": 1.2,
         "silenceP": 0.15,
