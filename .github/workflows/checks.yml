@@ -15,7 +15,9 @@ concurrency:
 jobs:
   checks:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # A full run takes 26 to 30 minutes (the end-to-end tests at three sizes are most of it), and two
+    # runs on main were cancelled at the old 30-minute limit in November 2026. 45 leaves room.
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
 
