@@ -52,7 +52,7 @@ test.describe('Teacher guides and Credits list every course', () => {
     await expect(page.getByRole('heading', { level: 2 })).toHaveText(COURSES.map((course) => course.title));
     await expect(page.locator('a[href^="/educators/lesson/"]')).toHaveCount(73);
     await expect(page.locator('a[href^="/lesson/"][href$="/print"]')).toHaveCount(73);
-    await expect(page.locator('a[href^="/educators/section/"][href$="/answers"]')).toHaveCount(8);
+    await expect(page.locator('a[href^="/educators/section/"][href$="/answers"]')).toHaveCount(16);
     for (const course of COURSES.slice(1)) {
       await expect(page.locator(`a[href="/course/${course.id}/print"]`)).toHaveCount(1);
     }

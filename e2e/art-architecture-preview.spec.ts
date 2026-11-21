@@ -32,7 +32,7 @@ test('on a device that has never visited it, none of its files are downloaded un
 });
 
 test.describe('with the course open', () => {
-  test('the course choice lists it, and its map has four sections of five lessons and no section checks', async ({ page }) => {
+  test('the course choice lists it, and its map has four sections of five lessons, each with its section check', async ({ page }) => {
     const errors = watchErrors(page);
     await page.goto('/course');
     const choice = page.getByRole('navigation', { name: 'Courses' });
@@ -42,7 +42,7 @@ test.describe('with the course open', () => {
     await expect(page.getByText('Draft course: not yet reviewed', { exact: true })).toHaveCount(0);
     await expect(page.locator('.tw-course-section')).toHaveCount(4);
     await expect(page.locator('.tw-course-section .tw-row:not(.tw-row-quiz)')).toHaveCount(20);
-    await expect(page.locator('.tw-course-section .tw-row-quiz')).toHaveCount(0);
+    await expect(page.locator('.tw-course-section .tw-row-quiz')).toHaveCount(4);
     expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
     const axe = await new AxeBuilder({ page }).include('main').analyze();
     expect(axe.violations.map((violation) => violation.id)).toEqual([]);
@@ -106,4 +106,18 @@ test.describe('with the course open', () => {
     await page.getByRole('menuitemradio', { name: /Bahasa Melayu/ }).or(page.getByRole('radio', { name: /Bahasa Melayu/ })).first().click();
     await expect(page.getByRole('heading', { level: 1, name: 'Bagaimanakah jalan perdagangan menyatukan kehidupan yang berbeza?' })).toBeVisible();
   });
+});
+
+test('its section checks: a check opens after its section, with ten questions and an answer key for teachers', async ({ page }) => {
+  const errors = watchErrors(page);
+  await page.goto('/section/objects-making-power/check');
+  await expect(page.getByRole('heading', { level: 1, name: 'Section check: Objects, making and power' })).toBeVisible();
+  await expect(page.getByRole('listitem').filter({ hasText: '10 questions about Lessons 1–5' })).toBeVisible();
+  await page.getByRole('button', { name: 'Start the check' }).click();
+  await expect(page.getByText("Hokusai's wave print has many impressions. What is an impression?")).toBeVisible();
+  expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
+
+  await page.goto('/educators/section/objects-making-power/answers');
+  await expect(page.locator('.tw-key-option-correct').getByText('Correct answer')).toHaveCount(10);
+  expect(errors).toEqual([]);
 });

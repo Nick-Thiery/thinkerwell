@@ -56,9 +56,10 @@ describe('the other courses’ teacher guides', () => {
     expect(dw).toHaveTextContent('17 lessons');
     expect(within(dw).getByRole('link', { name: 'Print every lesson in Digital World' })).toHaveAttribute('href', '/course/digital-world/print');
     expect(within(dw).getByRole('link', { name: /^Teacher guide for Lesson 3: How AI learns/ })).toHaveAttribute('href', '/educators/lesson/dw-how-ai-learns');
-    expect(within(dw).queryByRole('link', { name: /Answer key/ })).not.toBeInTheDocument();
+    expect(within(dw).getAllByRole('link', { name: /^Answer key/ })).toHaveLength(4);
     const sat = screen.getByRole('region', { name: 'Southeast Asia Through Time' });
     expect(within(sat).getAllByRole('link', { name: /^Answer key/ })).toHaveLength(4);
+    expect(within(screen.getByRole('region', { name: 'Art, Architecture and Society' })).getAllByRole('link', { name: /^Answer key/ })).toHaveLength(4);
   });
 
   it('has a jump list to each course', async () => {

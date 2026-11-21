@@ -1,0 +1,155 @@
+{
+  "title": "Ôn tập phần: AI đã phát triển như thế nào và hoạt động ra sao",
+  "intro": "8 câu hỏi về Bài 1–4. Cứ thong thả. Bạn có thể xem lại các bài học và thử lại bao nhiêu lần cũng được.",
+  "questions": [
+    {
+      "question": "Một công cụ dùng các mẫu hình để đoán cẩn thận về một điều mới. Phỏng đoán đó gọi là gì?",
+      "options": [
+        {
+          "text": "Một mẫu hình trong dữ liệu",
+          "feedback": "Chưa đúng lắm. Mẫu hình là điều lặp đi lặp lại. Công cụ dùng các mẫu hình để đưa ra phỏng đoán của nó. Xem lại Bài 1."
+        },
+        {
+          "text": "Một dự đoán",
+          "feedback": "Đúng rồi. Dự đoán là một phỏng đoán cẩn thận về một điều mới. Công cụ đưa ra nó từ các mẫu hình trong dữ liệu của nó."
+        },
+        {
+          "text": "Một quy tắc do con người viết",
+          "feedback": "Chưa đúng lắm. Quy tắc là một bước do con người viết ra. Một phỏng đoán từ các mẫu hình được gọi là dự đoán. Xem lại Bài 1."
+        }
+      ]
+    },
+    {
+      "stimulus": {
+        "title": "Một công cụ tự nghĩ ra ở thư viện",
+        "body": "Đây là một ví dụ tự nghĩ ra. Thư viện Palmgrove tự nghĩ ra có một công cụ mới. Nó đọc những ghi chép viết tay cũ và đánh máy lại. Nó đã học từ nhiều trang chữ viết tay, có các từ được đánh máy bên cạnh. Trên hộp ghi “Công cụ thông minh”."
+      },
+      "question": "Thư viện nên làm gì với những ghi chép mà công cụ đánh máy?",
+      "options": [
+        {
+          "text": "Nhờ một người đọc và kiểm tra chúng",
+          "feedback": "Đúng rồi. Công cụ đoán từ các mẫu hình, nên nó có thể sai. Một người nên kiểm tra công việc của nó."
+        },
+        {
+          "text": "Tin chúng, vì trên hộp ghi “thông minh”",
+          "feedback": "Chưa đúng lắm. Chữ “thông minh” trên hộp không cho bạn biết gì cả. Công cụ vẫn có thể đánh sai từ. Xem lại Bài 1."
+        },
+        {
+          "text": "Dùng nguyên như vậy nếu nó đánh máy nhanh",
+          "feedback": "Chưa đúng lắm. Đánh máy nhanh không có nghĩa là các từ đúng. Vẫn cần một người kiểm tra chúng. Xem lại Bài 1."
+        }
+      ]
+    },
+    {
+      "question": "Vào thập niên 1980, các công ty chi rất nhiều tiền cho các hệ thống chuyên gia. Hệ thống chuyên gia là gì?",
+      "options": [
+        {
+          "text": "Một cỗ máy học từ những bức ảnh có gán nhãn",
+          "feedback": "Chưa đúng lắm. Việc học từ hàng triệu bức ảnh có gán nhãn phát triển muộn hơn nhiều, sau năm 2010. Hệ thống chuyên gia dùng quy tắc. Xem lại Bài 2."
+        },
+        {
+          "text": "Một máy tính chơi cờ vua đã thắng nhà vô địch thế giới",
+          "feedback": "Chưa đúng lắm. Đó là Deep Blue, năm 1997. Nó chỉ biết chơi cờ vua. Xem lại Bài 2."
+        },
+        {
+          "text": "Một chương trình dùng quy tắc do chuyên gia đưa ra",
+          "feedback": "Đúng rồi. Các chuyên gia đưa ra quy tắc, và chương trình làm theo. Những hệ thống này tốn nhiều tiền để duy trì."
+        }
+      ]
+    },
+    {
+      "question": "Bản đề xuất Dartmouth là một nguồn thật từ năm 1955. Nó có thể cho bạn thấy điều gì?",
+      "options": [
+        {
+          "text": "Điều những người viết hi vọng làm trong một mùa hè",
+          "feedback": "Đúng rồi. Đó là một kế hoạch, được viết trước dự án. Nó cho thấy bốn người viết đã hi vọng điều gì."
+        },
+        {
+          "text": "Điều dự án mùa hè đã tìm ra vào năm 1956",
+          "feedback": "Chưa đúng lắm. Nó được viết năm 1955, trước khi dự án diễn ra. Đó là một kế hoạch, không phải một kết quả. Xem lại Bài 2."
+        },
+        {
+          "text": "Các chatbot ngày nay học từ văn bản như thế nào",
+          "feedback": "Chưa đúng lắm. Nó có từ năm 1955, rất lâu trước các chatbot ngày nay. Nó cho thấy kế hoạch của những người viết. Xem lại Bài 2."
+        }
+      ]
+    },
+    {
+      "question": "Thay đổi nào có thể làm cho các phỏng đoán của một mô hình nhận biết lá kém đi?",
+      "options": [
+        {
+          "text": "Thêm những chiếc lá trông khác nhau",
+          "feedback": "Chưa đúng lắm. Ở Vườn Sunrise, những chiếc lá khác nhau đã giúp ích. Sau đó mô hình đoán đúng cả sáu. Xem lại Bài 3."
+        },
+        {
+          "text": "Gắn nhãn sai cho một số chiếc lá",
+          "feedback": "Đúng rồi. Một mô hình học từ các nhãn của nó. Một nhãn sai dạy nó đáp án sai."
+        },
+        {
+          "text": "Để riêng một số chiếc lá cho bài thử",
+          "feedback": "Chưa đúng lắm. Để riêng một số chiếc lá giúp bài thử công bằng. Việc đó không thay đổi các phỏng đoán của mô hình. Xem lại Bài 3."
+        }
+      ]
+    },
+    {
+      "stimulus": {
+        "title": "Một mô hình trái cây tự nghĩ ra",
+        "body": "Đây là một ví dụ tự nghĩ ra. Ở Chợ Hilltop tự nghĩ ra, một nhóm đã làm một mô hình. Nó phân loại ảnh xoài thành “chín” hoặc “chưa chín”. Họ thay đổi nó cho đến khi nó đoán đúng cả 20 ảnh thử. Nhưng họ đã xem 20 ảnh đó trong lúc thay đổi nó."
+      },
+      "question": "Nhóm nên làm gì để thử mô hình một cách công bằng?",
+      "options": [
+        {
+          "text": "Thử lại nó với cùng 20 ảnh đó",
+          "feedback": "Chưa đúng lắm. Nhóm đã xem những ảnh đó rồi. Một bài thử công bằng cần những ảnh chưa ai dùng. Xem lại Bài 3."
+        },
+        {
+          "text": "Nói rằng giờ mô hình luôn đúng",
+          "feedback": "Chưa đúng lắm. Đoán đúng những ảnh nhóm đã biết không chứng minh được điều đó. Một bài thử mới cho thấy nó vẫn đoán sai điều gì. Xem lại Bài 3."
+        },
+        {
+          "text": "Thử nó với những ảnh chưa ai dùng",
+          "feedback": "Đúng rồi. Ảnh mới làm cho bài thử công bằng. Chúng cho thấy mô hình vẫn đoán sai điều gì."
+        }
+      ]
+    },
+    {
+      "question": "Bạn hỏi một chatbot cùng một câu hai lần và nhận được hai câu trả lời khác nhau. Vì sao điều này có thể xảy ra?",
+      "options": [
+        {
+          "text": "Nó quên cách viết sau mỗi câu trả lời",
+          "feedback": "Chưa đúng lắm. Lần nào nó cũng vẫn viết tốt. Câu trả lời thay đổi vì cách nó chọn token. Xem lại Bài 4."
+        },
+        {
+          "text": "Nó chọn token một phần là do ngẫu nhiên",
+          "feedback": "Đúng rồi. Nó thường chọn mỗi token một phần là do ngẫu nhiên, trong số những token có khả năng cao. Vì vậy cùng một câu hỏi có thể nhận được những câu trả lời khác nhau."
+        },
+        {
+          "text": "Mỗi lần có một người viết lại câu trả lời",
+          "feedback": "Chưa đúng lắm. Mô hình tự viết câu trả lời, từng token một. Xem lại Bài 4."
+        }
+      ]
+    },
+    {
+      "question": "Trợ lý Lakeside nêu tên một cuốn sách, “The Long Blue Road”. Người thủ thư không tìm thấy nó. Trường hợp này cho thấy điều gì?",
+      "options": [
+        {
+          "text": "Nó có thể nghe chắc chắn mà vẫn sai",
+          "feedback": "Đúng rồi. Một LLM cơ bản dự đoán những từ nghe có vẻ đúng. Không có gì trong đó kiểm tra sự thật."
+        },
+        {
+          "text": "Thư viện đã làm mất rất nhiều sách",
+          "feedback": "Chưa đúng lắm. Cuốn sách không hề tồn tại. Trợ lý đã bịa ra nó. Xem lại Bài 4."
+        },
+        {
+          "text": "Chatbot chỉ mắc lỗi về bản đồ",
+          "feedback": "Chưa đúng lắm. Trợ lý đã giải thích tỉ lệ bản đồ rất tốt. Lỗi của nó là về một cuốn sách. Xem lại Bài 4."
+        }
+      ]
+    }
+  ],
+  "results": {
+    "high": "Làm tốt lắm. Bạn biết AI đã phát triển như thế nào, và một mô hình học và đưa ra phỏng đoán ra sao.",
+    "middle": "Tốt lắm. Bạn đã trả lời đúng nhiều câu. Hãy xem lại các bài học về những câu bạn chưa làm đúng, và thử lại nếu bạn muốn.",
+    "low": "Cảm ơn bạn đã thử. Xem lại Bài 1–4 rồi thử lại nhé. Bạn có thể dành bao nhiêu thời gian tùy ý."
+  }
+}

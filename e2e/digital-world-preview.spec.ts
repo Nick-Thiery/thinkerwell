@@ -85,7 +85,7 @@ test.describe('with the course open', () => {
     await expect(banner(page)).toHaveCount(0);
     await expect(page.getByText(/Digital World is new/)).toHaveCount(0);
     await expect(page.getByRole('heading', { level: 2 })).toHaveText(['How AI developed and how it works', 'Who builds AI, and at what cost', 'AI in daily life', 'Truth, power and choices']);
-    await expect(page.getByText(/Section check:/)).toHaveCount(0);
+    await expect(page.locator('.tw-course-section .tw-row-quiz')).toHaveCount(4);
     await expect(page.locator('.tw-course-section .tw-row:not(.tw-row-quiz)')).toHaveCount(17);
   });
 
@@ -124,7 +124,7 @@ test.describe('with the course open', () => {
     await page.getByRole('button', { name: 'Finish lesson' }).click();
 
     await expect(page.getByRole('heading', { level: 1, name: 'You finished Lesson 1.' })).toBeVisible();
-    // No section check or certificate in the draft; the next lesson is up next.
+    // Lesson 1 doesn't end its section, so no section check is offered (and the course has no certificates); the next lesson is up next.
     await expect(page.getByText(/Section check/)).toHaveCount(0);
     await expect(page.getByRole('link', { name: /Dreams of thinking machines/ })).toBeVisible();
     await page.getByRole('link', { name: 'Back to the course' }).click();
@@ -320,4 +320,16 @@ test.describe('every page and activity', { tag: '@own-size' }, () => {
       expect(small, id).toEqual([]);
     }
   });
+});
+
+test('its section checks are translated: the first one opens in Thai', async ({ page }) => {
+  const errors = watchErrors(page);
+  await page.goto('/section/thinking-machines/check');
+  await expect(page.getByRole('heading', { level: 1, name: 'Section check: How AI developed and how it works' })).toBeVisible();
+  await page.getByRole('button', { name: /Language/ }).first().click();
+  await page.getByRole('menuitemradio', { name: /ไทย/ }).or(page.getByRole('radio', { name: /ไทย/ })).first().click();
+  await expect(page.getByRole('heading', { level: 1, name: 'เช็กความรู้ท้ายหน่วย: AI พัฒนามาอย่างไรและทำงานอย่างไร' })).toBeVisible();
+  await expect(page.locator('html')).toHaveAttribute('lang', 'th');
+  expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
+  expect(errors).toEqual([]);
 });

@@ -5557,8 +5557,8 @@
     "note": "Southeast Asia Through Time preview (November 2026): drafted by AI, not yet reviewed by a native speaker. The course name stays in English while its lessons are English."
   },
   "pilotDay.endReview": {
-    "source": "For a course with no section check, ask aloud: the big question, one piece of evidence, what they still want to find out. Then fill in the session record ({educators}, then {feedback}).",
-    "back": "For a course with no section check, ask orally: the big question, one piece of evidence, what they still want to know. Then fill in the session record sheet (For educators, then Session record and feedback).",
+    "source": "When a session doesn't end with a section check, ask aloud: the big question, one piece of evidence, what they still want to find out. Then fill in the session record ({educators}, then {feedback}).",
+    "back": "If the session doesn't end with a section check, ask aloud: the big question, one piece of evidence, what they still want to know. Then fill in the session record sheet ({educators}, then {feedback}).",
     "flag": true,
     "note": "Changed 9 November 2026 for the whole-platform pilot: drafted by AI, not yet reviewed by a native speaker."
   },
@@ -6305,5 +6305,8 @@
   "pilotDay.contactBody": {
     "source": "Something confusing or broken, or feedback on a pilot? Tell us at {email}, or at {address} (choose {topic}). Don't send learners' names or written answers.",
     "flag": "New on 20 November 2026: the contact form's Pilot feedback topic and its links. Drafted by AI with no back-translation: check."
+  },
+  "feedbackSheet.checkReview": {
+    "source": "When a session didn't end with a section check, did you use the three review questions from the session guide?"
   }
 }

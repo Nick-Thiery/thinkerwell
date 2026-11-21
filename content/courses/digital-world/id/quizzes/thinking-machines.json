@@ -1,0 +1,155 @@
+{
+  "title": "Cek bagian: Bagaimana AI berkembang dan cara kerjanya",
+  "intro": "8 pertanyaan tentang Pelajaran 1–4. Tidak perlu terburu-buru. Kamu boleh melihat lagi pelajarannya dan mencoba lagi sesering yang kamu mau.",
+  "questions": [
+    {
+      "question": "Sebuah alat memakai pola untuk membuat tebakan yang cermat tentang sesuatu yang baru. Apa nama tebakan itu?",
+      "options": [
+        {
+          "text": "Sebuah pola dalam data",
+          "feedback": "Belum tepat. Pola adalah sesuatu yang terjadi berulang-ulang. Alat itu memakai pola untuk membuat tebakannya. Lihat lagi Pelajaran 1."
+        },
+        {
+          "text": "Sebuah prediksi",
+          "feedback": "Benar. Prediksi adalah tebakan yang cermat tentang sesuatu yang baru. Alat itu membuatnya dari pola dalam datanya."
+        },
+        {
+          "text": "Aturan yang ditulis seseorang",
+          "feedback": "Belum tepat. Aturan adalah langkah yang ditulis seseorang. Tebakan dari pola disebut prediksi. Lihat lagi Pelajaran 1."
+        }
+      ]
+    },
+    {
+      "stimulus": {
+        "title": "Alat perpustakaan rekaan",
+        "body": "Ini contoh rekaan. Perpustakaan Palmgrove yang rekaan punya alat baru. Alat itu membaca catatan lama yang ditulis tangan dan mengetiknya. Alat itu belajar dari banyak halaman tulisan tangan, dengan kata-katanya yang sudah diketik di sebelahnya. Kotaknya bertuliskan “Alat pintar”."
+      },
+      "question": "Apa yang sebaiknya dilakukan perpustakaan dengan catatan yang diketik alat itu?",
+      "options": [
+        {
+          "text": "Meminta seseorang membaca dan memeriksanya",
+          "feedback": "Benar. Alat itu menebak dari pola, jadi alat itu bisa salah. Seseorang sebaiknya memeriksa hasil kerjanya."
+        },
+        {
+          "text": "Memercayainya, karena kotaknya bertuliskan “pintar”",
+          "feedback": "Belum tepat. Kata “pintar” pada sebuah kotak tidak memberi tahu kamu apa pun. Alat itu tetap bisa salah mengetik kata. Lihat lagi Pelajaran 1."
+        },
+        {
+          "text": "Memakainya begitu saja kalau ketikannya cepat",
+          "feedback": "Belum tepat. Mengetik dengan cepat tidak berarti kata-katanya benar. Seseorang tetap perlu memeriksanya. Lihat lagi Pelajaran 1."
+        }
+      ]
+    },
+    {
+      "question": "Pada tahun 1980-an, perusahaan-perusahaan menghabiskan banyak uang untuk sistem pakar. Apa itu sistem pakar?",
+      "options": [
+        {
+          "text": "Mesin yang belajar dari foto-foto berlabel",
+          "feedback": "Belum tepat. Belajar dari jutaan foto berlabel berkembang jauh kemudian, setelah tahun 2010. Sistem pakar memakai aturan. Lihat lagi Pelajaran 2."
+        },
+        {
+          "text": "Komputer catur yang mengalahkan juara dunia",
+          "feedback": "Belum tepat. Itu Deep Blue, pada tahun 1997. Komputer itu hanya bisa bermain catur. Lihat lagi Pelajaran 2."
+        },
+        {
+          "text": "Program yang memakai aturan dari para ahli",
+          "feedback": "Benar. Para ahli memberi aturannya, dan program itu mengikutinya. Biaya untuk terus merawat sistem seperti ini sangat mahal."
+        }
+      ]
+    },
+    {
+      "question": "Proposal Dartmouth adalah sumber nyata dari tahun 1955. Apa yang bisa ditunjukkannya kepadamu?",
+      "options": [
+        {
+          "text": "Apa yang diharapkan penulisnya dalam satu musim panas",
+          "feedback": "Benar. Proposal itu sebuah rencana, yang ditulis sebelum proyeknya. Proposal itu menunjukkan apa yang diharapkan keempat penulisnya."
+        },
+        {
+          "text": "Apa yang ditemukan proyek musim panas itu tahun 1956",
+          "feedback": "Belum tepat. Proposal itu ditulis pada tahun 1955, sebelum proyeknya berlangsung. Proposal itu rencana, bukan hasil. Lihat lagi Pelajaran 2."
+        },
+        {
+          "text": "Bagaimana chatbot masa kini belajar dari teks",
+          "feedback": "Belum tepat. Proposal itu dari tahun 1955, jauh sebelum chatbot masa kini. Proposal itu menunjukkan rencana para penulisnya. Lihat lagi Pelajaran 2."
+        }
+      ]
+    },
+    {
+      "question": "Perubahan mana yang bisa membuat tebakan model daun menjadi lebih buruk?",
+      "options": [
+        {
+          "text": "Menambahkan daun yang terlihat berbeda",
+          "feedback": "Belum tepat. Di Kebun Sunrise, daun-daun yang berbeda justru membantu. Sesudah itu, model menebak keenam daun dengan benar. Lihat lagi Pelajaran 3."
+        },
+        {
+          "text": "Memberi label yang salah pada beberapa daun",
+          "feedback": "Benar. Model belajar dari labelnya. Label yang salah mengajarkan jawaban yang salah kepadanya."
+        },
+        {
+          "text": "Menyisihkan beberapa daun untuk menguji",
+          "feedback": "Belum tepat. Menyisihkan daun membuat ujinya adil. Itu tidak mengubah tebakan model. Lihat lagi Pelajaran 3."
+        }
+      ]
+    },
+    {
+      "stimulus": {
+        "title": "Model buah rekaan",
+        "body": "Ini contoh rekaan. Di Pasar Hilltop yang rekaan, sebuah tim membuat sebuah model. Model itu mengelompokkan foto mangga menjadi “matang” atau “belum matang”. Mereka mengubah model itu sampai model itu menebak ke-20 foto uji dengan benar. Tetapi mereka melihat ke-20 foto itu selama mereka mengubahnya."
+      },
+      "question": "Apa yang sebaiknya dilakukan tim itu supaya ujinya adil?",
+      "options": [
+        {
+          "text": "Mengujinya lagi dengan 20 foto yang sama",
+          "feedback": "Belum tepat. Tim itu sudah melihat foto-foto itu. Uji yang adil membutuhkan foto yang belum pernah dipakai siapa pun. Lihat lagi Pelajaran 3."
+        },
+        {
+          "text": "Mengatakan bahwa model itu sekarang selalu berhasil",
+          "feedback": "Belum tepat. Menebak dengan benar foto-foto yang sudah dikenal tim tidak membuktikan hal itu. Uji baru menunjukkan apa yang masih salah ditebaknya. Lihat lagi Pelajaran 3."
+        },
+        {
+          "text": "Mencobanya pada foto yang belum dipakai siapa pun",
+          "feedback": "Benar. Foto-foto baru membuat ujinya adil. Foto-foto itu menunjukkan apa yang masih salah ditebak model itu."
+        }
+      ]
+    },
+    {
+      "question": "Kamu mengajukan pertanyaan yang sama dua kali kepada sebuah chatbot dan mendapat dua jawaban yang berbeda. Mengapa ini bisa terjadi?",
+      "options": [
+        {
+          "text": "Chatbot itu lupa cara menulis setelah setiap jawaban",
+          "feedback": "Belum tepat. Chatbot itu tetap menulis dengan baik setiap kali. Jawabannya berubah karena cara chatbot itu memilih token. Lihat lagi Pelajaran 4."
+        },
+        {
+          "text": "Chatbot itu memilih token sebagian secara acak",
+          "feedback": "Benar. Sering kali setiap token dipilih sebagian secara acak dari token-token yang mungkin. Jadi pertanyaan yang sama bisa mendapat jawaban yang berbeda."
+        },
+        {
+          "text": "Seseorang menulis ulang jawabannya setiap kali",
+          "feedback": "Belum tepat. Model itu menulis jawabannya sendiri, satu token demi satu token. Lihat lagi Pelajaran 4."
+        }
+      ]
+    },
+    {
+      "question": "Alat bantu Lakeside menyebutkan sebuah buku, “The Long Blue Road”. Pustakawan tidak bisa menemukannya. Apa yang ditunjukkan kasus ini?",
+      "options": [
+        {
+          "text": "Alat itu bisa terdengar yakin dan tetap salah",
+          "feedback": "Benar. LLM dasar memprediksi kata-kata yang terdengar benar. Tidak ada bagian dari cara itu yang memeriksa fakta."
+        },
+        {
+          "text": "Perpustakaan itu kehilangan banyak bukunya",
+          "feedback": "Belum tepat. Buku itu tidak ada di mana pun. Alat bantu itu mengarangnya. Lihat lagi Pelajaran 4."
+        },
+        {
+          "text": "Chatbot hanya membuat kesalahan tentang peta",
+          "feedback": "Belum tepat. Alat bantu itu menjelaskan skala peta dengan baik. Kesalahannya tentang sebuah buku. Lihat lagi Pelajaran 4."
+        }
+      ]
+    }
+  ],
+  "results": {
+    "high": "Bagus sekali. Kamu tahu bagaimana AI berkembang, dan bagaimana sebuah model belajar dan membuat tebakannya.",
+    "middle": "Kerja bagus. Kamu menjawab banyak pertanyaan dengan benar. Lihat lagi pelajaran untuk pertanyaan yang jawabannya belum tepat, lalu coba lagi kalau kamu mau.",
+    "low": "Terima kasih sudah mencoba. Lihat lagi Pelajaran 1–4, lalu coba lagi. Kamu boleh memakai waktu selama yang kamu perlukan."
+  }
+}

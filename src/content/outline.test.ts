@@ -18,11 +18,11 @@ describe('the courses’ outline', () => {
     }
   });
 
-  it('says which sections have a check: Southeast Asia Through Time’s four, none of the others', async () => {
+  it('says which sections have a check: every section of the three courses beside Our World', async () => {
     const outlines = await loadCourseOutlines();
-    expect(outlines['southeast-asia-through-time']!.sections.every((section) => (section.checkQuestions ?? 0) > 0)).toBe(true);
-    expect(outlines['digital-world']!.sections.every((section) => section.checkQuestions === null)).toBe(true);
-    expect(outlines['art-architecture-society']!.sections.every((section) => section.checkQuestions === null)).toBe(true);
+    for (const id of ['southeast-asia-through-time', 'digital-world', 'art-architecture-society']) {
+      expect(outlines[id]!.sections.every((section) => (section.checkQuestions ?? 0) > 0), id).toBe(true);
+    }
   });
 
   it('gives each lesson’s credits, and a credit for every real picture', async () => {

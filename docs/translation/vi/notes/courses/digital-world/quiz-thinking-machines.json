@@ -1,0 +1,266 @@
+{
+  "title": {
+    "source": "Section check: How AI developed and how it works",
+    "flag": true
+  },
+  "intro": {
+    "source": "8 questions about Lessons 1–4. Take your time. You can look back at the lessons and try again as often as you like.",
+    "flag": true
+  },
+  "questions.0.question": {
+    "source": "A tool uses patterns to make a careful guess about something new. What is that guess called?",
+    "flag": true
+  },
+  "questions.0.options.0.text": {
+    "source": "A pattern in the data",
+    "flag": true
+  },
+  "questions.0.options.0.feedback": {
+    "source": "Not quite. A pattern is something that happens again and again. The tool uses patterns to make its guess. Look back at Lesson 1.",
+    "flag": true
+  },
+  "questions.0.options.1.text": {
+    "source": "A prediction",
+    "flag": true
+  },
+  "questions.0.options.1.feedback": {
+    "source": "Yes. A prediction is a careful guess about something new. The tool makes it from patterns in its data.",
+    "flag": true
+  },
+  "questions.0.options.2.text": {
+    "source": "A rule a person wrote",
+    "flag": true
+  },
+  "questions.0.options.2.feedback": {
+    "source": "Not quite. A rule is a step that a person wrote. A guess from patterns is called a prediction. Look back at Lesson 1.",
+    "flag": true
+  },
+  "questions.1.stimulus.title": {
+    "source": "A made-up library tool",
+    "flag": true
+  },
+  "questions.1.stimulus.body": {
+    "source": "This is a made-up example. The made-up Palmgrove Library has a new tool. It reads old hand-written notes and types them out. It learned from many pages of hand-writing, with the words typed next to them. The box says “Smart tool”.",
+    "flag": true,
+    "note": "“Smart tool” is translated (“Công cụ thông minh”) so the learner can read the label; the option and feedback quote “thông minh” to match."
+  },
+  "questions.1.question": {
+    "source": "What should the library do with the notes the tool types?",
+    "flag": true
+  },
+  "questions.1.options.0.text": {
+    "source": "Ask a person to read and check them",
+    "flag": true
+  },
+  "questions.1.options.0.feedback": {
+    "source": "Yes. The tool guesses from patterns, so it can be wrong. A person should check its work.",
+    "flag": true
+  },
+  "questions.1.options.1.text": {
+    "source": "Trust them, because the box says “smart”",
+    "flag": true
+  },
+  "questions.1.options.1.feedback": {
+    "source": "Not quite. The word “smart” on a box tells you nothing. The tool can still get words wrong. Look back at Lesson 1.",
+    "flag": true
+  },
+  "questions.1.options.2.text": {
+    "source": "Use them as they are if it types fast",
+    "flag": true
+  },
+  "questions.1.options.2.feedback": {
+    "source": "Not quite. Fast typing does not mean the words are right. A person still needs to check them. Look back at Lesson 1.",
+    "flag": true
+  },
+  "questions.2.question": {
+    "source": "In the 1980s, companies spent a lot on expert systems. What was an expert system?",
+    "flag": true
+  },
+  "questions.2.options.0.text": {
+    "source": "A machine that learned from labelled photos",
+    "flag": true
+  },
+  "questions.2.options.0.feedback": {
+    "source": "Not quite. Learning from millions of labelled photos grew much later, after 2010. Expert systems used rules. Look back at Lesson 2.",
+    "flag": true
+  },
+  "questions.2.options.1.text": {
+    "source": "A chess computer that beat a world champion",
+    "flag": true,
+    "note": "“beat” as “đã thắng”; Lesson 2 uses “đánh bại”. Either is fine."
+  },
+  "questions.2.options.1.feedback": {
+    "source": "Not quite. That was Deep Blue, in 1997. It could only play chess. Look back at Lesson 2.",
+    "flag": true
+  },
+  "questions.2.options.2.text": {
+    "source": "A program using rules that experts gave",
+    "flag": true
+  },
+  "questions.2.options.2.feedback": {
+    "source": "Yes. Experts gave the rules, and the program followed them. These systems cost a lot to keep up.",
+    "flag": true
+  },
+  "questions.3.question": {
+    "source": "The Dartmouth proposal is a real source from 1955. What can it show you?",
+    "flag": true
+  },
+  "questions.3.options.0.text": {
+    "source": "What its writers hoped to do in one summer",
+    "flag": true
+  },
+  "questions.3.options.0.feedback": {
+    "source": "Yes. It is a plan, written before the project. It shows what the four writers hoped for.",
+    "flag": true
+  },
+  "questions.3.options.1.text": {
+    "source": "What the summer project found out in 1956",
+    "flag": true
+  },
+  "questions.3.options.1.feedback": {
+    "source": "Not quite. It was written in 1955, before the project took place. It is a plan, not a result. Look back at Lesson 2.",
+    "flag": true
+  },
+  "questions.3.options.2.text": {
+    "source": "How today's chatbots learn from text",
+    "flag": true
+  },
+  "questions.3.options.2.feedback": {
+    "source": "Not quite. It is from 1955, long before today's chatbots. It shows the writers' plans. Look back at Lesson 2.",
+    "flag": true
+  },
+  "questions.4.question": {
+    "source": "Which change could make a leaf model's guesses worse?",
+    "flag": true
+  },
+  "questions.4.options.0.text": {
+    "source": "Adding leaves that look different",
+    "flag": true
+  },
+  "questions.4.options.0.feedback": {
+    "source": "Not quite. At Sunrise Garden, different leaves helped. The model got all six right after that. Look back at Lesson 3.",
+    "flag": true
+  },
+  "questions.4.options.1.text": {
+    "source": "Giving some leaves the wrong label",
+    "flag": true
+  },
+  "questions.4.options.1.feedback": {
+    "source": "Yes. A model learns from its labels. A wrong label teaches it the wrong answer.",
+    "flag": true
+  },
+  "questions.4.options.2.text": {
+    "source": "Keeping some leaves aside for a test",
+    "flag": true
+  },
+  "questions.4.options.2.feedback": {
+    "source": "Not quite. Keeping leaves aside makes the test fair. It does not change the model's guesses. Look back at Lesson 3.",
+    "flag": true
+  },
+  "questions.5.stimulus.title": {
+    "source": "A made-up fruit model",
+    "flag": true
+  },
+  "questions.5.stimulus.body": {
+    "source": "This is a made-up example. At the made-up Hilltop Market, a team built a model. It sorts photos of mangoes as “ripe” or “not ripe”. They changed it until it got all 20 test photos right. But they looked at those 20 photos while they changed it.",
+    "flag": true
+  },
+  "questions.5.question": {
+    "source": "What should the team do to test the model fairly?",
+    "flag": true
+  },
+  "questions.5.options.0.text": {
+    "source": "Test it again on the same 20 photos",
+    "flag": true
+  },
+  "questions.5.options.0.feedback": {
+    "source": "Not quite. The team has already looked at those photos. A fair test needs photos nobody has used. Look back at Lesson 3.",
+    "flag": true
+  },
+  "questions.5.options.1.text": {
+    "source": "Say that the model now always works",
+    "flag": true,
+    "note": "“the model now always works” rendered as “giờ mô hình luôn đúng” (always right), to keep the options short; a reviewer may prefer “luôn hoạt động tốt”."
+  },
+  "questions.5.options.1.feedback": {
+    "source": "Not quite. Getting photos right that the team knew does not prove that. A fresh test shows what it still gets wrong. Look back at Lesson 3.",
+    "flag": true
+  },
+  "questions.5.options.2.text": {
+    "source": "Try it on photos nobody has used",
+    "flag": true
+  },
+  "questions.5.options.2.feedback": {
+    "source": "Yes. New photos make the test fair. They show what the model still gets wrong.",
+    "flag": true
+  },
+  "questions.6.question": {
+    "source": "You ask a chatbot the same question twice and get two different answers. Why can this happen?",
+    "flag": true
+  },
+  "questions.6.options.0.text": {
+    "source": "It forgets how to write after each answer",
+    "flag": true
+  },
+  "questions.6.options.0.feedback": {
+    "source": "Not quite. It still writes well each time. The answers change because of how it picks tokens. Look back at Lesson 4.",
+    "flag": true
+  },
+  "questions.6.options.1.text": {
+    "source": "It picks tokens partly by chance",
+    "flag": true
+  },
+  "questions.6.options.1.feedback": {
+    "source": "Yes. It often picks each token partly by chance from the likely ones. So the same question can get different answers.",
+    "flag": true
+  },
+  "questions.6.options.2.text": {
+    "source": "A person rewrites its answers each time",
+    "flag": true
+  },
+  "questions.6.options.2.feedback": {
+    "source": "Not quite. The model writes the answer itself, one token at a time. Look back at Lesson 4.",
+    "flag": true
+  },
+  "questions.7.question": {
+    "source": "The Lakeside helper named a book, “The Long Blue Road”. The librarian could not find it. What does this case show?",
+    "flag": true
+  },
+  "questions.7.options.0.text": {
+    "source": "It can sound sure and still be wrong",
+    "flag": true,
+    "note": "“sound sure” as “nghe chắc chắn”; Lesson 4 uses “nghe tự tin” for confident."
+  },
+  "questions.7.options.0.feedback": {
+    "source": "Yes. A basic LLM predicts words that sound right. Nothing in that checks the facts.",
+    "flag": true
+  },
+  "questions.7.options.1.text": {
+    "source": "The library has lost a lot of its books",
+    "flag": true
+  },
+  "questions.7.options.1.feedback": {
+    "source": "Not quite. The book does not exist anywhere. The helper made it up. Look back at Lesson 4.",
+    "flag": true
+  },
+  "questions.7.options.2.text": {
+    "source": "Chatbots only make mistakes about maps",
+    "flag": true
+  },
+  "questions.7.options.2.feedback": {
+    "source": "Not quite. The helper explained a map scale well. Its mistake was about a book. Look back at Lesson 4.",
+    "flag": true
+  },
+  "results.high": {
+    "source": "Well done. You know how AI grew, and how a model learns and makes its guesses.",
+    "flag": true
+  },
+  "results.middle": {
+    "source": "Good work. You got many questions right. Look back at the lessons for the ones you missed, and try again if you like.",
+    "flag": true
+  },
+  "results.low": {
+    "source": "Thank you for trying. Look back at Lessons 1–4, then try again. You can take as long as you need.",
+    "flag": true
+  }
+}

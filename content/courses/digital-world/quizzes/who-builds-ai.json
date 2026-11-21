@@ -1,0 +1,212 @@
+{
+  "section": "who-builds-ai",
+  "title": "Section check: Who builds AI, and at what cost",
+  "intro": "8 questions about Lessons 5–8. Take your time. You can look back at the lessons and try again as often as you like.",
+  "questions": [
+    {
+      "id": "who-builds-ai-01",
+      "lesson": 5,
+      "skill": "vocabulary",
+      "stimulus": null,
+      "question": "Like clothes, an AI tool has a supply chain. What is a supply chain?",
+      "options": [
+        {
+          "text": "The people who help make it, step by step",
+          "correct": true,
+          "feedback": "Yes. A supply chain is all the people and places that help to make a product. Some of them stay hidden."
+        },
+        {
+          "text": "A list of rules that say how the tool must work",
+          "correct": false,
+          "feedback": "Not quite. Rules are not a supply chain. A supply chain is the people who help make a product. Look back at Lesson 5."
+        },
+        {
+          "text": "A shop where people can buy the tool",
+          "correct": false,
+          "feedback": "Not quite. A shop sells a product. A supply chain is all the people who help to make it. Look back at Lesson 5."
+        }
+      ]
+    },
+    {
+      "id": "who-builds-ai-02",
+      "lesson": 5,
+      "skill": "evidence",
+      "stimulus": null,
+      "question": "In 2023, Oxford researchers checked 15 online work platforms. What did they find?",
+      "options": [
+        {
+          "text": "Every platform paid all workers fairly",
+          "correct": false,
+          "feedback": "Not quite. The researchers found low pay and a lot of unpaid time. Look back at Lesson 5."
+        },
+        {
+          "text": "Workers were paid for every hour they spent",
+          "correct": false,
+          "feedback": "Not quite. More than a quarter of the workers' time was unpaid, such as time looking for tasks. Look back at Lesson 5."
+        },
+        {
+          "text": "None met all of their basic standards",
+          "correct": true,
+          "feedback": "Yes. The best platform scored only 5 out of 10. Some platforms changed their rules after the study."
+        }
+      ]
+    },
+    {
+      "id": "who-builds-ai-03",
+      "lesson": 6,
+      "skill": "understand",
+      "stimulus": null,
+      "question": "Why do many data centres use water?",
+      "options": [
+        {
+          "text": "To make the power that the chips use",
+          "correct": false,
+          "feedback": "Not quite. Data centres use a lot of electricity, but the water does not make it. Look back at Lesson 6."
+        },
+        {
+          "text": "To cool chips that get very hot",
+          "correct": true,
+          "feedback": "Yes. The chips use a lot of electricity and get very hot. Water helps to cool them."
+        },
+        {
+          "text": "To wash the dust off the computers",
+          "correct": false,
+          "feedback": "Not quite. The water is not for cleaning. It helps with the heat. Look back at Lesson 6."
+        }
+      ]
+    },
+    {
+      "id": "who-builds-ai-04",
+      "lesson": 6,
+      "skill": "apply",
+      "stimulus": {
+        "type": "text",
+        "title": "A made-up data centre plan",
+        "body": "This is a made-up example. A company plans a data centre in the made-up town of Westvale. It says about 800 people will help to build it over two years. About 40 people will work there after it opens."
+      },
+      "question": "A man in the town says, “This will give 800 people work for years.” What is wrong with this?",
+      "options": [
+        {
+          "text": "The building work lasts only two years",
+          "correct": true,
+          "feedback": "Yes. Building work ends when the building is finished. After that, there are only about 40 jobs."
+        },
+        {
+          "text": "Data centres need nobody to build them",
+          "correct": false,
+          "feedback": "Not quite. The company says about 800 people will help to build it. Look back at Lesson 6."
+        },
+        {
+          "text": "All 800 people will work inside it later",
+          "correct": false,
+          "feedback": "Not quite. Only about 40 people will work there after it opens. Look back at Lesson 6."
+        }
+      ]
+    },
+    {
+      "id": "who-builds-ai-05",
+      "lesson": 7,
+      "skill": "vocabulary",
+      "stimulus": null,
+      "question": "In Harbourside, few people publish books in Language C. What does “publish” mean?",
+      "options": [
+        {
+          "text": "To speak a language at home",
+          "correct": false,
+          "feedback": "Not quite. People speak Language C a lot. To publish means to put out writing. Look back at Lesson 7."
+        },
+        {
+          "text": "To change words into another language",
+          "correct": false,
+          "feedback": "Not quite. That is to translate. To publish is to put out writing for many people. Look back at Lesson 7."
+        },
+        {
+          "text": "To put out writing for many to read",
+          "correct": true,
+          "feedback": "Yes. To publish is to print or put out writing. Little is published in Language C, so AI has little to learn from."
+        }
+      ]
+    },
+    {
+      "id": "who-builds-ai-06",
+      "lesson": 7,
+      "skill": "understand",
+      "stimulus": null,
+      "question": "Why do some languages have much more writing than others?",
+      "options": [
+        {
+          "text": "Some languages are much harder to write",
+          "correct": false,
+          "feedback": "Not quite. It is not about how hard a language is. It depends on how a language has been used. Look back at Lesson 7."
+        },
+        {
+          "text": "History, such as which ones schools use",
+          "correct": true,
+          "feedback": "Yes. It depends on history: which languages schools, books, news and governments use, and what people type online."
+        },
+        {
+          "text": "The more speakers, the more writing",
+          "correct": false,
+          "feedback": "Not quite. In Harbourside, Language C has the most speakers but very little writing. Look back at Lesson 7."
+        }
+      ]
+    },
+    {
+      "id": "who-builds-ai-07",
+      "lesson": 8,
+      "skill": "evidence",
+      "stimulus": null,
+      "question": "About 45% of a famous photo collection came from the United States, and about 2% from India. What does this help to explain?",
+      "options": [
+        {
+          "text": "Why a tool did worse with photos from India",
+          "correct": true,
+          "feedback": "Yes. Few photos came from India, so the data did not represent it well. A tool trained on it did worse there."
+        },
+        {
+          "text": "Why the tool did better with photos from India",
+          "correct": false,
+          "feedback": "Not quite. With so few photos from India, the tool did worse there, not better. Look back at Lesson 8."
+        },
+        {
+          "text": "Why people in India took fewer photos",
+          "correct": false,
+          "feedback": "Not quite. The numbers show what is in the collection. They do not show how many photos people took. Look back at Lesson 8."
+        }
+      ]
+    },
+    {
+      "id": "who-builds-ai-08",
+      "lesson": 8,
+      "skill": "apply",
+      "stimulus": {
+        "type": "text",
+        "title": "A made-up fish tool",
+        "body": "This is a made-up example. At the made-up Stonebay market, a tool names fish from photos. It names river fish well, but it often gets sea fish wrong. Almost all of its training photos show river fish."
+      },
+      "question": "What would most likely help the tool?",
+      "options": [
+        {
+          "text": "Add more photos of river fish",
+          "correct": false,
+          "feedback": "Not quite. It already knows river fish well. More of the same kind will not fill the gap. Look back at Lesson 8."
+        },
+        {
+          "text": "Add labelled photos of sea fish",
+          "correct": true,
+          "feedback": "Yes. Its training data does not represent sea fish. Labelled photos of sea fish can fill that gap."
+        },
+        {
+          "text": "Use the tool only when it is sunny",
+          "correct": false,
+          "feedback": "Not quite. The light is not the problem. The problem is what its training photos show. Look back at Lesson 8."
+        }
+      ]
+    }
+  ],
+  "results": {
+    "high": "Well done. You can see the people, the planet and the languages behind AI tools.",
+    "middle": "Good work. You got many questions right. Look back at the lessons for the ones you missed, and try again if you like.",
+    "low": "Thank you for trying. Look back at Lessons 5–8, then try again. You can take as long as you need."
+  }
+}
