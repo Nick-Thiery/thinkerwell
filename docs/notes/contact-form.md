@@ -2,7 +2,7 @@
 
 `/contact` is one form for everyone: educators, learning organisations, companies, people with feedback. Built in October 2026 from Justin's brief ("Thinkerwell: simplify For Educators and add a contact form"), with the team's address instead of the school inbox the brief named. That address is **thinkerwell.hello@gmail.com** since 31 October 2026 (it was hello@thinkerwell.app, which had no mailbox: thinkerwell.app has no MX records, so mail to it bounced).
 
-Linked from the footer of every page ("Contact"), the top and bottom of For organisations ("Get in touch") and the Educators page ("Send an enquiry"). It is a public page, indexed like the others (`PUBLIC_PAGES` in `src/seo/site.ts`, `seo.contact` in en.json, a rewrite in `vercel.json`).
+Linked from the footer of every page ("Contact"), the top and bottom of For organisations ("Get in touch"), the Educators page ("Send an enquiry", and "Send pilot feedback") and the session guide (pilot feedback). It is a public page, indexed like the others (`PUBLIC_PAGES` in `src/seo/site.ts`, `seo.contact` in en.json, a rewrite in `vercel.json`).
 
 ## What it asks
 
@@ -10,7 +10,7 @@ Four fields, in one column, labels above:
 
 | Field | |
 | --- | --- |
-| What is it about? | A topic: general question, educator or classroom use, learning organisation or NGO, company or partnership, feedback or technical issue, other. |
+| What is it about? | A topic: general question, educator or classroom use, learning organisation or NGO, pilot feedback, company or partnership, feedback or technical issue, other. |
 | Your name | 2 to 100 characters. |
 | Email or WhatsApp number | **One** way to reply: an email address, or a WhatsApp number that starts with its country code (+62, +60, +65 …). Never a login. |
 | Your message | 10 to 3,000 characters. |
@@ -19,7 +19,9 @@ And a hidden field (`website`) that people never see and bots fill in: an enquir
 
 The page checks the fields with the server's own checker (`src/contact/enquiry.ts`, by hand: no zod), says each problem under its field, and puts focus on the first. While sending, the button says "Sending…" and can't be pressed again. If the message can't be sent, for any reason (offline, not set up yet, the provider refused), everything typed stays and the page gives the team's address to write to instead. After a send, it thanks the person and offers "Send another message".
 
-The words are the lazily loaded `contact` group, in English, Indonesian and Malay.
+The words are the lazily loaded `contact` group, in every ready language (English, Indonesian, Malay and Vietnamese).
+
+**Pilot feedback** (20 November 2026, for the pilots with HELP and the partner in Malaysia). A topic like the others (`pilot` in `ENQUIRY_TOPICS`, subject line "Pilot feedback"), for an organisation running a pilot to say what worked, what was hard to use and what to change. `/contact?topic=pilot` opens the form with it chosen: the session guide's contact part says so in one sentence and links there (with the address written out, `thinkerwell.app/contact`, for the printed page; `pilotDay.contactBody`, its own words so the guide stays one page) and so does a button in the Educators page's questions card ("Send pilot feedback"). Choosing it adds one line under the topic saying what to send and that learners' names, their work or anything else about a learner don't belong in it, and a placeholder in the message box. It asks for nothing more than any other topic: the same four fields. The session guide names the topic with its own copy of the words (`pilotDay.feedbackTopic`, which a test keeps equal to `contact.topicPilot` in every language), because the contact words load only with the contact page.
 
 ## Where it goes
 

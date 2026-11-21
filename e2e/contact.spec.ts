@@ -27,6 +27,19 @@ test('people find the form from For organisations, the Educators page and the fo
   await expect(page.locator('h1')).toHaveText('Contact Thinkerwell');
 });
 
+test('pilot feedback: the session guide and the Educators page open the form with its topic chosen', async ({ page }) => {
+  await page.goto('/educators');
+  await page.getByRole('link', { name: 'Send pilot feedback' }).click();
+  await expect(page).toHaveURL(/\/contact\?topic=pilot$/);
+  await expect(page.getByLabel('What is it about?')).toHaveValue('pilot');
+  await expect(page.getByText(/For an organisation running a pilot: tell us what worked/)).toBeVisible();
+
+  await page.goto('/educators/session-guide');
+  await page.getByRole('link', { name: 'thinkerwell.app/contact' }).click();
+  await expect(page.locator('h1')).toHaveText('Contact Thinkerwell');
+  await expect(page.getByLabel('What is it about?')).toHaveValue('pilot');
+});
+
 test('an enquiry is sent to this site only, once, and the page says so', async ({ page }) => {
   const bodies: unknown[] = [];
   const hosts = new Set<string>();
