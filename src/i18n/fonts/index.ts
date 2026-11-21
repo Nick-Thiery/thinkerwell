@@ -15,10 +15,12 @@
 import type { FontKey } from '../locales';
 import arabicStylesheet from './arabic.css?url';
 import vietnameseStylesheet from './vietnamese.css?url';
+import thaiStylesheet from './thai.css?url';
 
 const stylesheets: Record<Exclude<FontKey, 'latin'>, string> = {
   arabic: arabicStylesheet,
   vietnamese: vietnameseStylesheet,
+  thai: thaiStylesheet,
 };
 
 const started = new Map<FontKey, Promise<void>>();

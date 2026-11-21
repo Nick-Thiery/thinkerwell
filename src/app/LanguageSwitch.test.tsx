@@ -40,6 +40,7 @@ describe('the header’s language switch', () => {
       ['Bahasa Indonesia', 'id'],
       ['Bahasa Melayu', 'ms'],
       ['Tiếng Việt', 'vi'],
+      ['ไทย', 'th'],
     ]);
     // The chosen one has focus, for the arrow keys.
     expect(within(group).getByRole('radio', { name: 'English' })).toHaveFocus();

@@ -1,0 +1,26 @@
+{
+  "late 700s–early 900s": {
+    "th": "ปลายปี 700–799 / ถึงต้นปี 900–999",
+    "flag": true,
+    "note": "Second pass: the course now writes centuries one way (the 1400s = ช่วงปี 1400 ถึง 1499; a run of centuries = ช่วงปี 900 ถึง 1100 กว่า), so this label became two lines, ปลายปี 700–799 / ถึงต้นปี 900–999 (ช่วง dropped to fit). The boats box was made one line taller and moved up 32 units, the wares box one line taller and moved up 12; render_svg's overlap notes are the Thai font's tall line boxes, the render shows no real overlap.",
+    "back": "late years 700–799 / to early years 900–999"
+  },
+  "Mainland": {
+    "th": "เอเชียตะวันออกเฉียงใต้",
+    "flag": true,
+    "note": "'Mainland / Southeast Asia' became เอเชียตะวันออกเฉียงใต้ / ภาคพื้นทวีป (Thai order). render_svg reports overlaps between stacked Thai lines; they come from the Thai font's tall line box, the render shows no real overlap.",
+    "back": "Southeast Asia / mainland"
+  },
+  "N": {
+    "th": "เหนือ",
+    "flag": true,
+    "note": "Direction written in full, as KEY_TERMS asks.",
+    "back": "North"
+  },
+  "many 900s–1100s,": {
+    "th": "จำนวนมาก / ปี 900–1100 กว่า",
+    "back": "many / years 900 to 1100-something",
+    "flag": true,
+    "note": "Second pass: was ส่วนมากช่วงปี 900–1100 ('mostly', a meaning shift, and it ran past the box): now จำนวนมาก (many) on its own line, then ปี 900–1100 กว่า."
+  }
+}

@@ -1,0 +1,383 @@
+{
+  "title": {
+    "source": "When AI gets it wrong",
+    "back": "When AI gets it wrong"
+  },
+  "essentialQuestion": {
+    "source": "Why does AI sometimes work well for some people and badly for others?",
+    "back": "Why does AI sometimes work well for some groups of people but badly for others?"
+  },
+  "learningGoal": {
+    "source": "Explain how who is in the data, and other causes, can make an AI tool work worse for some groups of people, and why a gap in results shows a problem but not its cause.",
+    "back": "Explain how who is in the data, and other causes, can make AI tools work worse for some groups, and why a gap in results says there is a problem but not its cause."
+  },
+  "evidence.label": {
+    "source": "Fictional example created for this lesson.",
+    "back": "A fictional example created for this lesson"
+  },
+  "evidence.question": {
+    "source": "Which group did the tool get wrong most often? What did the team know about how the tool learned?",
+    "back": "Which group did the tool make mistakes with most often? What does the team know about how the tool learned?"
+  },
+  "evidence.cards.0.title": {
+    "source": "The voice typing test at Riverbend Learning Centre",
+    "back": "Testing a voice typing tool at the Riverbend learning centre",
+    "flag": true,
+    "note": "voice typing tool = เครื่องมือพิมพ์ด้วยเสียง (KEY_TERMS has พูดแทนพิมพ์ only for the app's Say it button). Riverbend Learning Centre = ศูนย์การเรียนรู้ Riverbend, keeping the invented name in Latin letters."
+  },
+  "evidence.cards.0.columns.0": {
+    "source": "Who read the same 20 words",
+    "back": "Who read the same 20 words"
+  },
+  "evidence.cards.0.columns.1": {
+    "source": "Words typed correctly",
+    "back": "Words typed correctly"
+  },
+  "evidence.cards.0.rows.0.0": {
+    "source": "Teachers",
+    "back": "Teachers"
+  },
+  "evidence.cards.0.rows.0.1": {
+    "source": "19 of 20",
+    "back": "19 of 20"
+  },
+  "evidence.cards.0.rows.1.0": {
+    "source": "Older learners",
+    "back": "Older learners"
+  },
+  "evidence.cards.0.rows.1.1": {
+    "source": "16 of 20",
+    "back": "16 of 20"
+  },
+  "evidence.cards.0.rows.2.0": {
+    "source": "Youngest learners",
+    "back": "Youngest learners"
+  },
+  "evidence.cards.0.rows.2.1": {
+    "source": "9 of 20",
+    "back": "9 of 20"
+  },
+  "evidence.cards.1.title": {
+    "source": "What the team knew",
+    "back": "What the team knows"
+  },
+  "evidence.cards.1.items.0": {
+    "source": "The tool learned mostly from recordings of adults reading aloud.",
+    "back": "This tool learned mostly from recordings of adults reading aloud."
+  },
+  "evidence.cards.1.items.1": {
+    "source": "Every group read the same words, in the same quiet room.",
+    "back": "Every group read the same words in the same quiet room."
+  },
+  "read.sections.0.heading": {
+    "source": "One test, three groups",
+    "back": "One test, three groups"
+  },
+  "read.sections.0.text": {
+    "source": "At Riverbend Learning Centre, a team tested a voice typing tool. Teachers, older learners and the youngest learners each read the same 20 words. The tool was accurate for the teachers, with 19 words right. For the youngest learners, it got only 9 right. The gap shows that the tool works worse for young children. It does not show why. So the team looked for a cause. The tool had learned mostly from recordings of adults, so children's voices were new to it. Researchers have found this in real speech tools too. In a 2024 study, a widely used tool made several times as many mistakes with children's speech as with adults'. The researchers gave two reasons: there are far fewer recordings of children, and children's speech changes a lot as they grow.",
+    "back": "At the Riverbend learning centre a team tested a voice typing tool. Teachers, older learners and the youngest learners all read the same 20 words. The tool was accurate for the teachers, typing as many as 19 words correctly, but for the youngest learners it typed only 9 correctly. This gap shows the tool works worse with young children but does not say why, so the team set out to find the cause. The tool learned mostly from recordings of adults, so children's voices were new to it. Researchers have found this in real speech tools too. In a 2024 study a widely used tool made several times more mistakes with children's speech than with adults' voices. The researchers gave two reasons: there are far fewer recordings of children, and children's speech changes a lot as they grow."
+  },
+  "read.sections.0.simpler": {
+    "source": "At Riverbend, a team tested a voice typing tool. Teachers and learners each read the same 20 words. The tool was accurate for the teachers. It got 19 right. For the youngest learners, it got only 9 right. The gap shows a problem for young children. But it does not show the reason. So the team looked for one. The tool learned mostly from adult voices. Children's voices were new to it. In 2024, researchers found a real tool made many more mistakes with children. There are fewer recordings of children. And children's speech changes as they grow.",
+    "back": "At Riverbend a team tested a voice typing tool. Teachers and learners read the same 20 words. The tool was accurate for teachers: it typed 19 words correctly. For the youngest learners it typed only 9 correctly. This gap shows there is a problem with young children, but does not give the reason. So the team looked for the reason. The tool learned mostly from adult voices, so children's voices were new to it. In 2024 researchers found that a real tool made many more mistakes with children. There are fewer recordings of children, and children's speech changes as they grow."
+  },
+  "read.sections.1.heading": {
+    "source": "Who is in the data",
+    "back": "Who is in the data"
+  },
+  "read.sections.1.text": {
+    "source": "When a tool works well for some groups of people and badly for others, we say it has a bias. One cause is the training data. Does it represent everyone who will use the tool? A famous collection of more than a million photos has been used to train many tools. About 45% of its photos were taken in the United States, and only about 2% in India. Researchers found that a tool trained on it was worse at naming things in photos from India or Pakistan, such as a bridegroom at a wedding. Nobody had to plan this for the result to be unfair.",
+    "back": "When a tool works well for some groups but badly for others, we say the tool has bias. One cause is the training data: does that data represent everyone who will use the tool? A famous photo collection of more than a million pictures was used to train many tools. About 45 percent of the photos were taken in the United States, and only about 2 percent in India. Researchers found that tools trained on this collection named things in pictures from India or Pakistan worse, such as a groom at a wedding. No one needs to have planned anything for the result to be unfair."
+  },
+  "read.sections.1.simpler": {
+    "source": "Some tools work well for some people and badly for others. This is called bias. One cause is the training data. Does the data represent all the people who will use the tool? One big set of photos has trained many tools. Almost half its photos came from the United States. Very few came from India. A tool trained on it did worse with photos from India or Pakistan. Nobody had to plan this for it to be unfair.",
+    "back": "Some tools work well for some people but badly for others. We call this bias. One cause is the training data. Does the data represent everyone who will use the tool? One big photo collection was used to train many tools. Almost half the photos came from the United States. Very few came from India. Tools trained on this collection did worse with pictures from India or Pakistan. No one has to plan it; it can still be unfair."
+  },
+  "read.sections.2.heading": {
+    "source": "The same gap can have different causes",
+    "back": "The same gap can have different causes"
+  },
+  "read.sections.2.text": {
+    "source": "Two computer scientists described two made-up cases to explain this. In the first, a hospital tool missed more heart attacks in women than in men. The researcher added more records from women, and the tool improved. In the second, a hiring tool said women were less suitable for jobs. It had learned from people's past ratings of workers, and those ratings were unfair to women. Adding more of the same kind of data did not help. Both tools showed the same kind of gap, but the causes were different. Other causes include a tool's goal, its design, or using it in a place it wasn't made for. So people test a tool with many groups, look for the cause, and fix that.",
+    "back": "Two computer scientists tell two made-up cases to explain this. In the first case a hospital tool missed heart attacks in women more often than in men. The researchers added more records of women and the tool improved. In the second case a hiring tool said women were less suited to the job. The tool learned from scores people had given employees in the past, and those scores were unfair to women, so adding more of the same data did not help. The two tools show the same kind of gap but have different causes. Other causes also include the tool's goal, its design, or using it in places it was not built for. So people test tools with many groups, look for the cause, and then fix the cause.",
+    "flag": true,
+    "note": "hiring tool = เครื่องมือคัดเลือกคนเข้าทำงาน (simpler: เครื่องมือคัดคนเข้าทำงาน); \"missed more heart attacks\" = ตรวจไม่พบภาวะหัวใจวายในผู้หญิงบ่อยกว่า. Check both read naturally."
+  },
+  "read.sections.2.simpler": {
+    "source": "Two scientists made up two cases to explain this. In the first, a hospital tool missed more heart attacks in women. They added more records from women, and it got better. In the second, a hiring tool said women were less suitable. It learned from people's past ratings, which were unfair to women. More of the same data did not help. Both tools had a gap, but the causes were different. A goal or design can cause it too. So people test a tool with many groups. Then they find the cause and fix it.",
+    "back": "Two scientists made up two cases to explain this. In the first case a hospital tool missed heart attacks in women more often. They added women's records, and it got better. In the second case a hiring tool said women were less suited. It learned from scores people gave in the past. Those scores were unfair to women. So more of the same data did not help. Both tools have a gap, but the causes differ. A goal or a design can be a cause too. So people test tools with many groups, then find the cause and fix it."
+  },
+  "read.glossary.0.word": {
+    "source": "accurate",
+    "back": "accurate",
+    "flag": true,
+    "note": "accurate = แม่นยำ (not in KEY_TERMS). Definition avoids ผิด (\"wrong\") and says พลาดน้อยหรือไม่พลาดเลย. English forms lists left out in this lesson: Thai does not inflect."
+  },
+  "read.glossary.0.forms": {
+    "source": [
+      "accuracy"
+    ],
+    "back": "(no forms in the Thai)"
+  },
+  "read.glossary.0.definition": {
+    "source": "Correct, with few or no mistakes.",
+    "back": "Correct, with few or no mistakes."
+  },
+  "read.glossary.0.example": {
+    "source": "The voice tool was accurate for teachers, but not for young learners.",
+    "back": "This voice tool is accurate for teachers but not accurate for young learners."
+  },
+  "read.glossary.1.word": {
+    "source": "researcher",
+    "back": "researcher"
+  },
+  "read.glossary.1.forms": {
+    "source": [
+      "researchers"
+    ],
+    "back": "(no forms in the Thai)"
+  },
+  "read.glossary.1.definition": {
+    "source": "A person whose job is to study something carefully to find new facts.",
+    "back": "A person whose job is to study something carefully to find new facts."
+  },
+  "read.glossary.1.example": {
+    "source": "Researchers tested speech tools with children's voices.",
+    "back": "Researchers tested a speech tool with children's voices."
+  },
+  "read.glossary.2.word": {
+    "source": "bias",
+    "back": "bias"
+  },
+  "read.glossary.2.definition": {
+    "source": "When a tool works better for some groups than for others.",
+    "back": "When a tool works better for some groups than others."
+  },
+  "read.glossary.2.example": {
+    "source": "The voice tool has a bias towards adult voices.",
+    "back": "This voice tool has a bias in favour of adults' voices."
+  },
+  "read.glossary.3.word": {
+    "source": "training data",
+    "back": "training data"
+  },
+  "read.glossary.3.definition": {
+    "source": "The examples used to build an AI tool, such as recordings or photos.",
+    "back": "Examples used to build an AI tool, such as recordings or photos."
+  },
+  "read.glossary.3.example": {
+    "source": "The voice tool's training data was mostly adults reading aloud.",
+    "back": "This voice tool's training data is mostly adults reading aloud."
+  },
+  "read.glossary.4.word": {
+    "source": "represent",
+    "back": "represent (be representative of)",
+    "flag": true,
+    "note": "represent = เป็นตัวแทน (\"be representative of\"), not in KEY_TERMS. Check that ข้อมูลเป็นตัวแทนของทุกคน reads naturally to a 12-year-old; an alternative is ข้อมูลครอบคลุมทุกคน, but that loses the term."
+  },
+  "read.glossary.4.forms": {
+    "source": [
+      "represents",
+      "represented",
+      "representation"
+    ],
+    "back": "(no forms in the Thai)"
+  },
+  "read.glossary.4.definition": {
+    "source": "To include enough examples of a group, so that it is shown fairly.",
+    "back": "To have enough examples of a group for that group to appear fairly."
+  },
+  "read.glossary.4.example": {
+    "source": "The photos did not represent people in India well.",
+    "back": "This photo collection did not represent people in India well."
+  },
+  "read.glossary.5.word": {
+    "source": "unfair",
+    "back": "unfair"
+  },
+  "read.glossary.5.forms": {
+    "source": [
+      "fair"
+    ],
+    "back": "(no forms in the Thai)"
+  },
+  "read.glossary.5.definition": {
+    "source": "Not treating people in the right or equal way.",
+    "back": "Not treating people rightly or equally."
+  },
+  "read.glossary.5.example": {
+    "source": "The hiring tool learned from ratings that were unfair to women.",
+    "back": "The hiring tool learned from scores that were unfair to women."
+  },
+  "read.checks.0.question": {
+    "source": "What does the gap in the Riverbend test show?",
+    "back": "What does the gap in the Riverbend test show?"
+  },
+  "read.checks.0.options.0.text": {
+    "source": "The youngest learners did not read the words clearly",
+    "back": "The youngest learners did not read the words clearly"
+  },
+  "read.checks.0.options.0.feedback": {
+    "source": "Not quite. The problem was in the tool, not the learners. Read the first section.",
+    "back": "Not quite. The problem is with the tool, not the learners. Try reading the first part."
+  },
+  "read.checks.0.options.1.text": {
+    "source": "The tool works worse for young children, but not why",
+    "back": "The tool works worse with young children, but does not say why"
+  },
+  "read.checks.0.options.1.feedback": {
+    "source": "Yes. A gap shows that something is wrong. The team still had to look for the cause.",
+    "back": "Correct. The gap shows something is not right; the team still has to look for the cause."
+  },
+  "read.checks.0.options.2.text": {
+    "source": "The tool stopped working for everyone who used it",
+    "back": "The tool does not work at all for anyone who uses it"
+  },
+  "read.checks.0.options.2.feedback": {
+    "source": "Not quite. It typed 19 of 20 words correctly for the teachers. Read the first section.",
+    "back": "Not quite. It typed 19 of 20 words correctly for the teachers. Try reading the first part."
+  },
+  "read.checks.1.question": {
+    "source": "In the made-up hiring case, why didn't more data help?",
+    "back": "In the made-up hiring case, why did adding data not help?"
+  },
+  "read.checks.1.options.0.text": {
+    "source": "The tool learned from past ratings that were unfair",
+    "back": "The tool learned from unfair past scores"
+  },
+  "read.checks.1.options.0.feedback": {
+    "source": "Yes. The problem was in the ratings it learned from, so more data of the same kind kept the same problem.",
+    "back": "Correct. The problem is in the scores it learned from, so more of the same data still has the same problem."
+  },
+  "read.checks.1.options.1.text": {
+    "source": "It had no examples of women at all",
+    "back": "It had no examples of women at all"
+  },
+  "read.checks.1.options.1.feedback": {
+    "source": "Not quite. That would be a cause that more data could fix. Read the third section.",
+    "back": "Not quite. If that were so, adding data would help fix it. Try reading the third part."
+  },
+  "read.checks.1.options.2.text": {
+    "source": "The hospital records it needed had gone missing",
+    "back": "The hospital records it needed went missing"
+  },
+  "read.checks.1.options.2.feedback": {
+    "source": "Not quite. The hospital was the other case. Read about the hiring tool in the third section.",
+    "back": "Not quite. The hospital is the other case. Try reading about the hiring tool in the third part."
+  },
+  "write.prompt": {
+    "source": "Choose the Riverbend voice tool or the photo tool. Say who it worked worse for and one possible cause. Then say how people could check that cause.",
+    "back": "Choose the voice tool at Riverbend or the photo tool. Say who the tool works worse for and one possible cause. Then say how people could check that cause."
+  },
+  "write.sentenceStarters.0": {
+    "source": "I chose ...",
+    "back": "I chose..."
+  },
+  "write.sentenceStarters.1": {
+    "source": "It worked worse for ...",
+    "back": "It works worse for..."
+  },
+  "write.sentenceStarters.2": {
+    "source": "One possible cause is ...",
+    "back": "One possible cause is..."
+  },
+  "write.sentenceStarters.3": {
+    "source": "To check, people could ...",
+    "back": "To check, people could..."
+  },
+  "write.example": {
+    "source": "I chose the Riverbend voice tool. It worked worse for the youngest learners. It typed 9 of 20 words correctly for them, and 19 for the teachers. One possible cause is that it learned mostly from adult voices, so children's voices were new to it. To check, people could add recordings of children, if they and their families agree, and then test the tool again. If it still makes many mistakes, the cause may be something else.",
+    "back": "I chose the voice tool at Riverbend. It works worse for the youngest learners. It typed 9 of 20 words correctly for them but 19 for the teachers. One possible cause is that it learned mostly from adult voices, so children's voices were new to it. To check, people could add recordings of children, if the children and families agree, then test the tool again. If it still makes many mistakes, the cause may be something else."
+  },
+  "speak.partnerTask": {
+    "source": "Your partner describes a tool that makes more mistakes for one group of people. You give two different possible causes. Then switch.",
+    "back": "Your partner describes a tool that makes more mistakes with one group of people. You give two different possible causes. Then swap."
+  },
+  "speak.independentTask": {
+    "source": "Say out loud what bias means. Then explain why more data helped the hospital tool but not the hiring tool.",
+    "back": "Say aloud what bias means, then explain why adding data helped the hospital tool but not the hiring tool."
+  },
+  "watch.why": {
+    "source": "In under three minutes, it explains how missing or one-sided training data can make AI work worse for some people.",
+    "back": "This video explains in under three minutes how missing or one-sided training data can make AI work worse for some people."
+  },
+  "watch.beforeQuestion": {
+    "source": "Where do you think the examples for an AI tool come from?",
+    "back": "Where do you think the examples used to build AI tools come from?"
+  },
+  "watch.afterQuestion": {
+    "source": "What two questions should you ask about any training data?",
+    "back": "What two questions should you ask about any training data?"
+  },
+  "watch.summary": {
+    "source": "This video explains why training data matters so much. A machine learning tool is only as good as the data it learns from. Data can come from many places. For example, a video site keeps track of what people watch, sometimes without them knowing. Then it uses that data to suggest more videos. In health care, experts label thousands of medical pictures, so a computer can learn to spot illness. But there is a problem. Suppose most of the X-ray pictures come from men. Then the tool may make more mistakes for women. People can put their own bias into training data without meaning to. So the video asks two questions about any training data. Is there enough of it? Does it include many kinds of people and situations?",
+    "back": "This video explains why training data matters so much. A machine learning tool can only be as good as the data it learns from. Data can come from many places. For example, a video website collects data about what people watch, sometimes without them knowing, and uses it to recommend more videos. In health, experts label thousands of medical images so a computer learns to spot illness. But there is a problem. Suppose most X-rays come from men; the tool may make more mistakes with women. People may put their own bias into training data without meaning to. So the video asks two questions about any training data: is there enough data? Does it include many kinds of people and situations?"
+  },
+  "watch.keyPoints.0": {
+    "source": "An AI tool is only as good as its training data.",
+    "back": "An AI tool can only be as good as its training data."
+  },
+  "watch.keyPoints.1": {
+    "source": "If some people are missing from the data, the tool can work worse for them.",
+    "back": "If some groups of people are not in the data, the tool may work worse for them."
+  },
+  "watch.keyPoints.2": {
+    "source": "Ask: is there enough data, and does it include many kinds of people?",
+    "back": "Ask whether there is enough data and whether it includes many kinds of people."
+  },
+  "watch.contentNote": {
+    "source": "The video mentions that companies collect data about what people watch, sometimes without them knowing, and uses a medical example (X-rays mostly from men). Preview it first; learners can read the written summary instead.",
+    "back": "The video talks about companies collecting data on what people watch, sometimes without them knowing, and uses a medical example (X-rays mostly from men). Watch the video before using it. Learners can read the written summary instead.",
+    "note": "Reviewer: “Preview it first; learners can read the written summary instead” unified with the same sentence in Lessons 1 and 3 (สรุปฉบับข้อความ, the KEY_TERMS word)."
+  },
+  "reflect.prompts.0.text": {
+    "source": "One thing I now understand about bias in AI is ...",
+    "back": "One thing I now understand about bias in AI is..."
+  },
+  "reflect.prompts.1.text": {
+    "source": "A group I think should help to test AI tools is ... because ...",
+    "back": "A group of people I think should help test AI tools is... because..."
+  },
+  "reflect.completionMessage": {
+    "source": "You finished Lesson 8. You learned how who is in the data, and other causes, can make a tool work worse for some people, and why a gap needs a careful search for its cause.",
+    "back": "You finished Lesson 8. You learned how who is in the data, and other causes, can make tools work worse for some people, and why when you see a gap you must look for the cause carefully."
+  },
+  "visual.alt": {
+    "source": "A bar chart: the voice typing tool got 19 of 20 words right for teachers, 16 for older learners and 9 for the youngest learners. Its training data had mostly adult voices, one possible cause.",
+    "back": "A bar chart. The voice typing tool typed 19 of 20 words correctly for teachers, 16 for older learners and 9 for the youngest learners. Its training data is mostly adult voices, which is one possible cause."
+  },
+  "sources.0.label": {
+    "source": "Attia and others (AIES 2024): Kid-Whisper, towards bridging the gap in speech recognition between children and adults",
+    "back": "Attia et al. (AIES 2024): Kid-Whisper, towards bridging the gap in speech recognition between children and adults"
+  },
+  "sources.1.label": {
+    "source": "Suresh and Guttag (EAAMO 2021): A framework for understanding sources of harm throughout the machine learning life cycle",
+    "back": "Suresh and Guttag (EAAMO 2021): A framework for understanding sources of harm throughout the machine learning life cycle"
+  },
+  "sources.2.label": {
+    "source": "Code.org: Machine learning and bias (lesson plan, with the lesson's video)",
+    "back": "Code.org: Machine learning and bias (lesson plan, with the lesson's video)"
+  },
+  "sources.3.label": {
+    "source": "Experience AI (Raspberry Pi Foundation and Google DeepMind): Lesson 3, Bias in, bias out",
+    "back": "Experience AI (Raspberry Pi Foundation and Google DeepMind): Lesson 3, Bias in, bias out"
+  },
+  "sensitiveNotes.0": {
+    "source": "Some learners may have found that tools work badly in their own language or for their accent. Let them say so if they want to, but never ask which language they speak at home, where they come from or about their family. The lesson works with the fictional Riverbend tools alone.",
+    "back": "Some learners may have found tools work poorly in their own language or with their accent. Let them tell if they want to, but do not ask what language they speak at home, where they are from, or about their family. This lesson uses only Riverbend's fictional tool, and that is enough."
+  },
+  "sensitiveNotes.1": {
+    "source": "Bias in real tools can touch race, gender and other identities (the Lesson 3 video mentions face recognition). Keep the discussion on how training data causes it and how to fix it; don't ask learners to share times they were treated unfairly.",
+    "back": "Bias in real tools can involve race, gender and other identities (Lesson 3's video mentions facial recognition). Keep the discussion on how training data can cause bias and how to fix it. Do not ask learners to tell of times they were treated unfairly."
+  },
+  "educatorNotes.0": {
+    "source": "The Riverbend test and its numbers (19, 16 and 9 of 20) are made up; the evidence tells learners what the tool learned from, so the cause is given, not worked out from the scores. Real research: Kid-Whisper (Attia and others, AIES 2024) found that Whisper speech models, without extra training, had word error rates 6 to 10 times adults' on scripted children's speech and 3 to 5 times on conversational children's speech in the test sets it used. It names two causes: child speech databases are limited and hard to collect, and children's speech varies as they develop. Training on children's speech reduced errors, and the authors list remaining challenges. Photos: Suresh and Guttag (2021) report that about 45% of ImageNet's 1.2 million labelled images were taken in the United States, 1% in China and 2.1% in India, and cite a study (Shankar and others) finding that a classifier trained on it did significantly worse on images such as “bridegroom” from under-sampled countries like Pakistan or India.",
+    "back": "The Riverbend test and its numbers (19, 16 and 9 of 20) are fictional. The evidence tells learners what the tool learned from, so it gives the cause; learners do not work it out from the scores. Real research: Kid-Whisper (Attia et al., AIES 2024) found the Whisper speech model without extra training had a word error rate 6 to 10 times higher than adults' for children's scripted speech and 3 to 5 times higher for children's conversational speech, on the test sets used. The study names two causes: children's speech databases are limited and hard to collect, and children's speech changes with development. Training on children's speech reduced errors, and the authors name the challenges that remain. Photos: Suresh and Guttag (2021) report that of ImageNet's 1.2 million labelled images about 45 percent were taken in the US, 1 percent in China and 2.1 percent in India, and cite research (Shankar et al.) finding that classifiers trained on it performed significantly worse on images like “groom” from under-represented countries such as Pakistan or India.",
+    "flag": true,
+    "note": "word error rate kept in English in brackets after อัตราคำที่ถอดพลาด; classifier = ตัวจำแนกภาพ. Technical terms for adults: check against usual Thai ML usage."
+  },
+  "educatorNotes.1": {
+    "source": "Missing examples are one cause of bias, not the only one. Suresh and Guttag list seven sources of harm across the machine-learning life cycle: historical, representation, measurement (how labels are chosen), aggregation, learning (the goal a model is trained for), evaluation (how it is tested) and deployment (how and where it is used). Their heart-attack and hiring examples are a “simplified scenario” they made up to show that the same symptom can have different causes: more data from women helped the first, but not the second, where the labels came from biased human ratings. The lesson says so. A gap in results shows something is wrong, not why. Don't tell learners that bias is always an accident: the lesson says only that a result can be unfair even when nobody planned it. This lesson no longer repeats Lesson 3's model testing; the leaf model and the translation tool were taken out. The claim record is in content/courses/digital-world/claims/DW08.md.",
+    "back": "Missing examples are one cause of bias, not the only one. Suresh and Guttag name seven sources of harm across the machine learning life cycle: historical, representation, measurement (how labels are chosen), aggregation, learning (the goal the model is trained for), evaluation (how it is tested) and deployment (how and where it is used). The heart-attack and hiring examples are “simplified scenarios” they made up to show that the same symptom can have different causes. More data on women helps the first case but not the second, where labels come from biased human scores; the lesson says this. A gap in results shows something is not right but not why. Do not tell learners bias is always an accident; the lesson only says results can be unfair even if no one planned it. This lesson no longer repeats Lesson 3's model test; the leaf model and translation tool were removed. The claims log is in content/courses/digital-world/claims/DW08.md."
+  }
+}

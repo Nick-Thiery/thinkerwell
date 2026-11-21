@@ -28,5 +28,5 @@ fi
 echo "Using $PY ($("$PY" --version 2>&1))"
 "$PY" -m venv .venv
 .venv/bin/python -m pip install --quiet --upgrade pip
-.venv/bin/python -m pip install --quiet wordfreq openpyxl
+.venv/bin/python -m pip install --quiet wordfreq openpyxl pythainlp
 .venv/bin/python -c "from wordfreq import zipf_frequency; import openpyxl; print('wordfreq and openpyxl ok')"

@@ -100,8 +100,13 @@ import { expect, test, type APIRequestContext } from '@playwright/test';
  * and Malay each cost (about 140 kB); the font is the rest. None of it reaches a first visit (the test below). The way to
  * take it off every other device is to cache Vietnamese at run time when it is first chosen: not done, it needs worker code
  * (docs/notes/slow-internet.md, "Vietnamese").
+ *
+ * Raised to 1,495 kB on 20 November 2026 (+216 kB, to 1,490.0 kB) because Thai is offered (ready: true): its messages,
+ * lessons and section checks (a 99 kB chunk), its 24 translated lesson pictures (50 kB), Sarabun's Thai letters (6 font
+ * files, 51 kB, loaded only while Thai is shown) and the courses' Thai titles and credits in the build records (16 kB).
+ * None of it reaches a first visit (docs/notes/slow-internet.md, "Thai on").
  */
-const PRECACHE_BUDGET = 1_275_000;
+const PRECACHE_BUDGET = 1_495_000;
 /**
  * Every file a first visit to the home page fetches, before and after the first screen: 204.5 kB when set (315.0 kB before),
  * 210.5 kB after the language and pilot-day merges, 212.7 kB with the header's language switch and the one language

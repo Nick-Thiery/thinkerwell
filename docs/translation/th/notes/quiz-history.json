@@ -1,0 +1,431 @@
+{
+  "title": {
+    "source": "Section check: History & Human Stories",
+    "back": "Section check: History and people's stories",
+    "flag": true,
+    "note": "\"Section check\" as เช็กความรู้ท้ายหน่วย (KEY_TERMS). The same title pattern is used in all four checks."
+  },
+  "intro": {
+    "source": "12 questions about Lessons 1–9. Take your time. You can look back at the lessons and try again as often as you like.",
+    "back": "12 questions about Lessons 1–9. No need to hurry. You can go back to the lessons and try again as many times as you like.",
+    "flag": true,
+    "note": "\"Take your time\" as ไม่ต้องรีบ (don't hurry). Same intro wording in all four checks."
+  },
+  "questions.0.question": {
+    "source": "The Riverstone drawing shows a river. The diary says traders came by boat. What do these two clues suggest together?",
+    "back": "The drawing of Riverstone market has a river. The diary says traders came by boat. Looking at these two clues together, what do they point to?",
+    "flag": false,
+    "note": "\"diary\" as บันทึกประจำวัน and \"traders\" as พ่อค้าแม่ค้า (gender-neutral pair). Check these match the words chosen in Lesson 1. Second pass: Now ภาพวาดตลาด Riverstone, as Lesson 1 names the source (แหล่งข้อมูลที่ 1: ภาพวาดตลาด Riverstone); it said ภาพวาดเมือง (drawing of the town). Second pass: Checked: Lesson 1 uses บันทึกประจำวัน and พ่อค้าแม่ค้า. Flag removed."
+  },
+  "questions.0.options.0.text": {
+    "source": "The river helped traders bring goods.",
+    "back": "The river helped traders bring goods"
+  },
+  "questions.0.options.0.feedback": {
+    "source": "Yes. The drawing shows a river, and the diary talks about boats. Together, they suggest the river helped traders reach the market.",
+    "back": "Correct. The drawing has a river and the diary mentions boats. Together they point to the river helping traders reach the market."
+  },
+  "questions.0.options.1.text": {
+    "source": "The market was quiet, with few people.",
+    "back": "The market was quiet, with few people coming"
+  },
+  "questions.0.options.1.feedback": {
+    "source": "Not quite. These two clues are about the river and boats. The diary also says market day was crowded. Look back at Lesson 1.",
+    "back": "Not quite. These two clues are about the river and boats. The diary also says market day was crowded. Go back to Lesson 1."
+  },
+  "questions.0.options.2.text": {
+    "source": "Most traders came by cart, not boat.",
+    "back": "Most traders came by cart, not boat"
+  },
+  "questions.0.options.2.feedback": {
+    "source": "Not quite. The drawing shows one cart, but the diary says traders came by boat. Look back at Lesson 1.",
+    "back": "Not quite. The drawing has one cart, but the diary says traders came by boat. Go back to Lesson 1."
+  },
+  "questions.1.stimulus.title": {
+    "source": "A made-up source: a poster from the town of Norrin, about 40 years ago",
+    "back": "Fictional source: a poster from the town of Norrin, about 40 years ago"
+  },
+  "questions.1.stimulus.items.0": {
+    "source": "Norrin Book Fair.",
+    "back": "Norrin Book Fair"
+  },
+  "questions.1.stimulus.items.1": {
+    "source": "On Saturday, in the town hall.",
+    "back": "Saturday, at the town hall",
+    "flag": true,
+    "note": "\"town hall\" as หอประชุมเมือง (ศาลากลาง would suggest a provincial government office). Check."
+  },
+  "questions.1.stimulus.items.2": {
+    "source": "Story time for children at 10:00.",
+    "back": "Storytelling for children at 10:00"
+  },
+  "questions.1.stimulus.items.3": {
+    "source": "Free for everyone.",
+    "back": "Free entry for everyone"
+  },
+  "questions.1.question": {
+    "source": "A historian finds this poster. Which question needs a different source to answer?",
+    "back": "A historian finds this poster. Which question needs another source to answer?"
+  },
+  "questions.1.options.0.text": {
+    "source": "Where was the book fair?",
+    "back": "Where was the book fair held?"
+  },
+  "questions.1.options.0.feedback": {
+    "source": "Not quite. The poster says the fair was in the town hall. So the poster can answer this. Look back at Lesson 1.",
+    "back": "Not quite. The poster says it was at the town hall, so the poster answers this question. Go back to Lesson 1."
+  },
+  "questions.1.options.1.text": {
+    "source": "What time did story time start?",
+    "back": "What time did the storytelling start?"
+  },
+  "questions.1.options.1.feedback": {
+    "source": "Not quite. The poster says story time was at 10:00. So the poster can answer this. Look back at Lesson 1.",
+    "back": "Not quite. The poster says storytelling was at 10:00, so the poster answers this question. Go back to Lesson 1."
+  },
+  "questions.1.options.2.text": {
+    "source": "How many people came to it?",
+    "back": "How many people came to the fair?"
+  },
+  "questions.1.options.2.feedback": {
+    "source": "Yes. The poster does not say how many people came. A historian would need another source, like a diary or a photo.",
+    "back": "Correct. The poster doesn't say how many people came. The historian needs another source, such as a diary or a photo."
+  },
+  "questions.2.stimulus.title": {
+    "source": "A made-up object: a wooden spoon from the village of Tavi",
+    "back": "Fictional object: a wooden spoon from the village of Tavi"
+  },
+  "questions.2.stimulus.items.0": {
+    "source": "A long wooden spoon.",
+    "back": "A long-handled wooden spoon"
+  },
+  "questions.2.stimulus.items.1": {
+    "source": "One end is dark and burned.",
+    "back": "One end is black and burnt"
+  },
+  "questions.2.stimulus.items.2": {
+    "source": "There is a small crack in the handle.",
+    "back": "There is a small crack on the handle"
+  },
+  "questions.2.stimulus.items.3": {
+    "source": "A star is cut into the handle.",
+    "back": "A star is carved on the handle"
+  },
+  "questions.2.question": {
+    "source": "Which sentence about the spoon is an inference?",
+    "back": "Which sentence about the spoon is an inference?"
+  },
+  "questions.2.options.0.text": {
+    "source": "The handle has a star cut into it.",
+    "back": "A star is carved on the handle"
+  },
+  "questions.2.options.0.feedback": {
+    "source": "Not quite. You can see the star on the handle, so this is an observation. Look back at Lesson 2.",
+    "back": "Not quite. You can see the star on the handle, so this sentence is an observation. Go back to Lesson 2."
+  },
+  "questions.2.options.1.text": {
+    "source": "It may have been used near a fire.",
+    "back": "This spoon may have been used near a fire"
+  },
+  "questions.2.options.1.feedback": {
+    "source": "Yes. Nobody can see the fire now. You build this idea from a clue, the burned end. That makes it an inference.",
+    "back": "Correct. No one can see that fire now. You thought of this from a clue, the burnt end, so this sentence is an inference."
+  },
+  "questions.2.options.2.text": {
+    "source": "There is a small crack in the handle.",
+    "back": "There is a small crack on the handle"
+  },
+  "questions.2.options.2.feedback": {
+    "source": "Not quite. You can see the crack for yourself, so this is an observation. Look back at Lesson 2.",
+    "back": "Not quite. You can see the crack yourself, so this sentence is an observation. Go back to Lesson 2."
+  },
+  "questions.3.question": {
+    "source": "What can a close view of the past show that a wide view may hide?",
+    "back": "What can a close-up view show about the past that a wide view might hide?",
+    "flag": false,
+    "note": "\"close view\" / \"wide view\" as มุมมองระยะใกล้ / มุมมองแบบกว้าง. These are not in KEY_TERMS; make them match whatever Lesson 3 uses. Second pass: \"close view\" now มุมมองแบบใกล้, the words Lesson 3 uses (beside มุมมองแบบกว้าง); it said มุมมองระยะใกล้. Second pass: Flag removed: it now matches Lesson 3."
+  },
+  "questions.3.options.0.text": {
+    "source": "How a town grew over 100 years",
+    "back": "How a town grew over 100 years"
+  },
+  "questions.3.options.0.feedback": {
+    "source": "Not quite. Growth over 100 years is a pattern. A wide view is good at showing patterns. Look back at Lesson 3.",
+    "back": "Not quite. Growth over 100 years is a pattern. A wide view helps you see patterns well. Go back to Lesson 3."
+  },
+  "questions.3.options.1.text": {
+    "source": "One person's choices and feelings",
+    "back": "One person's decisions and feelings"
+  },
+  "questions.3.options.1.feedback": {
+    "source": "Yes. A close view, like one diary, shows one person's choices and feelings. A wide view can hide people.",
+    "back": "Correct. A close-up view, such as one diary, shows one person's decisions and feelings. A wide view may hide people.",
+    "note": "Second pass: มุมมองแบบใกล้, as in Lesson 3."
+  },
+  "questions.3.options.2.text": {
+    "source": "How a river moved over a long time",
+    "back": "How a river changed its course over a long time"
+  },
+  "questions.3.options.2.feedback": {
+    "source": "Not quite. A river that moves over hundreds of years is a pattern. A wide view shows this best. Look back at Lesson 3.",
+    "back": "Not quite. A river changing course over hundreds of years is a pattern. A wide view shows this best. Go back to Lesson 3."
+  },
+  "questions.4.question": {
+    "source": "Each kind of account answers its own kind of question. Which of these would a historian ask about an origin account?",
+    "back": "Each kind of explanation answers a different kind of question. Which question would a historian ask about an origin account?",
+    "flag": true,
+    "note": "Lesson 4 (sensitive). \"origin account\" as คำอธิบายเรื่องจุดกำเนิด (KEY_TERMS, marked check)."
+  },
+  "questions.4.options.0.text": {
+    "source": "How did the sun and the planets form?",
+    "back": "How did the sun and planets form?"
+  },
+  "questions.4.options.0.feedback": {
+    "source": "Not quite. Scientists ask questions like this about nature. Historians ask who told an account, when and why. Look back at Lesson 4.",
+    "back": "Not quite. Scientists ask this kind of question about nature. A historian asks who told the account, when and why. Go back to Lesson 4."
+  },
+  "questions.4.options.1.text": {
+    "source": "How should people live?",
+    "back": "How should people live?"
+  },
+  "questions.4.options.1.feedback": {
+    "source": "Not quite. Faith accounts and cultural accounts often answer questions like this. Historians ask who told an account, and why. Look back at Lesson 4.",
+    "back": "Not quite. Faith-based and cultural accounts often answer this kind of question. A historian asks who told the account and why. Go back to Lesson 4.",
+    "flag": true,
+    "note": "Lesson 4 (sensitive). \"Faith accounts\" as คำอธิบายตามความเชื่อทางศาสนา. Check with the Lesson 4 reviewer that it matches the lesson's wording and is respectful. Second pass: \"Faith accounts\" now คำอธิบายทางความเชื่อ, Lesson 4's words; it said คำอธิบายตามความเชื่อทางศาสนา, which Lesson 4 never uses."
+  },
+  "questions.4.options.2.text": {
+    "source": "Who told this account, and why?",
+    "back": "Who told this account, and why?"
+  },
+  "questions.4.options.2.feedback": {
+    "source": "Yes. Historians ask who told an account, when and why. Each kind of question needs its own kind of answer.",
+    "back": "Correct. A historian asks who told the account, when and why. Each kind of question needs its own kind of answer."
+  },
+  "questions.5.question": {
+    "source": "A young person learns a skill from an older person. She makes it better. Then she teaches it to her friends. What is this called?",
+    "back": "A young woman learns a skill from an older person. She makes the skill better, then teaches it to her friends. What is this called?"
+  },
+  "questions.5.options.0.text": {
+    "source": "Collective learning",
+    "back": "Collective learning",
+    "flag": true,
+    "note": "KEY_TERMS gives การเรียนรู้ร่วมกัน for \"collective learning\"; in everyday Thai it can just mean \"learning together\", which makes the wrong options look a little less plausible than in English. Check."
+  },
+  "questions.5.options.0.feedback": {
+    "source": "Yes. In collective learning, people share what they know, make it better and pass it on. This is how knowledge grows.",
+    "back": "Correct. In collective learning, people share what they know, improve it and pass it on. This is how knowledge grows."
+  },
+  "questions.5.options.1.text": {
+    "source": "Trading with other groups",
+    "back": "Trading with another group"
+  },
+  "questions.5.options.1.feedback": {
+    "source": "Not quite. Trade means you give something and get something back. Here, a skill is shared and made better. Look back at Lesson 5.",
+    "back": "Not quite. Trade is giving something and getting something back. Here, a skill is shared and improved. Go back to Lesson 5."
+  },
+  "questions.5.options.2.text": {
+    "source": "Foraging for wild food",
+    "back": "Foraging for food"
+  },
+  "questions.5.options.2.feedback": {
+    "source": "Not quite. Foraging means finding wild food. This example is about sharing a skill and making it better. Look back at Lesson 5.",
+    "back": "Not quite. Foraging is finding food from nature. This example is about sharing a skill and improving it. Go back to Lesson 5."
+  },
+  "questions.6.question": {
+    "source": "Archaeologists found these clues at early human sites. Which clue could show what people cooked?",
+    "back": "An archaeologist finds these clues where early humans lived. Which clue can tell what food people cooked?"
+  },
+  "questions.6.options.0.text": {
+    "source": "The handprints on a rock wall",
+    "back": "Handprints on a rock wall"
+  },
+  "questions.6.options.0.feedback": {
+    "source": "Not quite. Handprints are a kind of art. They tell us other things, not what people cooked. Look back at Lesson 5.",
+    "back": "Not quite. Handprints are a kind of art; they tell us other things, not what food people cooked. Go back to Lesson 5."
+  },
+  "questions.6.options.1.text": {
+    "source": "The hearth with its burned seeds",
+    "back": "A hearth with burnt seeds"
+  },
+  "questions.6.options.1.feedback": {
+    "source": "Yes. A hearth is a place where people made a fire. Burned seeds in a hearth can show what people cooked.",
+    "back": "Correct. A hearth is where people made fires. Burnt seeds in a hearth can tell what food people cooked."
+  },
+  "questions.6.options.2.text": {
+    "source": "Tools of the same shape, far apart",
+    "back": "Tools of the same shape found far apart"
+  },
+  "questions.6.options.2.feedback": {
+    "source": "Not quite. These tools may show that people shared ideas. They do not show what people cooked. Look back at Lesson 5.",
+    "back": "Not quite. These tools may show people shared ideas, but they don't tell what food people cooked. Go back to Lesson 5."
+  },
+  "questions.7.question": {
+    "source": "After a good harvest, a farming village may have a surplus. What is a surplus?",
+    "back": "After a good harvest, a farming village may have a surplus. What is a surplus?"
+  },
+  "questions.7.options.0.text": {
+    "source": "More food than people need right now",
+    "back": "More food than people need now"
+  },
+  "questions.7.options.0.feedback": {
+    "source": "Yes. A surplus is extra food. People can store it, so not everyone has to farm.",
+    "back": "Correct. A surplus is food left over. People can store it, so not everyone has to farm."
+  },
+  "questions.7.options.1.text": {
+    "source": "A plant that people grow for food",
+    "back": "Plants people grow for food"
+  },
+  "questions.7.options.1.feedback": {
+    "source": "Not quite. A plant that people grow for food is a crop. A surplus is extra food or goods. Look back at Lesson 6.",
+    "back": "Not quite. Plants people grow for food are crops. A surplus is food or goods left over. Go back to Lesson 6."
+  },
+  "questions.7.options.2.text": {
+    "source": "Finding wild food instead of growing it",
+    "back": "Going to find food in the wild instead of growing it"
+  },
+  "questions.7.options.2.feedback": {
+    "source": "Not quite. Finding wild food is called foraging. A surplus is more food than people need right now. Look back at Lesson 6.",
+    "back": "Not quite. Finding food in the wild is called foraging. A surplus is more food than people need now. Go back to Lesson 6."
+  },
+  "questions.8.question": {
+    "source": "Banwa is a made-up city. Many things change there over time. Which of these changes shows that some people gained more power than others?",
+    "back": "Banwa is a fictional town where many things changed over time. Which change shows that some people had more power than others?"
+  },
+  "questions.8.options.0.text": {
+    "source": "Farms grow extra grain for several good years",
+    "back": "Fields gave spare grain in several good years in a row"
+  },
+  "questions.8.options.0.feedback": {
+    "source": "Not quite. Extra grain helped Banwa grow. It does not show who has more power. Look back at Lesson 7.",
+    "back": "Not quite. Spare grain helped Banwa grow, but doesn't show who had more power. Go back to Lesson 7."
+  },
+  "questions.8.options.1.text": {
+    "source": "People build a shared storehouse",
+    "back": "People built a shared granary",
+    "flag": false,
+    "note": "\"storehouse\" as ยุ้งฉาง (granary). Check it matches Lesson 7. Second pass: Checked: Lesson 7 uses ยุ้งฉาง. Flag removed."
+  },
+  "questions.8.options.1.feedback": {
+    "source": "Not quite. A shared storehouse shows people working together. It does not show who has more power. Look back at Lesson 7.",
+    "back": "Not quite. A shared granary shows people worked together, but doesn't show who had more power. Go back to Lesson 7."
+  },
+  "questions.8.options.2.text": {
+    "source": "Some families control more land and grain",
+    "back": "Some families controlled more land and grain"
+  },
+  "questions.8.options.2.feedback": {
+    "source": "Yes. Families with more land and grain have more power. In early cities, power was not shared equally.",
+    "back": "Correct. Families with more land and grain had more power. In early towns, power wasn't shared equally."
+  },
+  "questions.9.question": {
+    "source": "In Babylon, King Hammurabi had rules carved on a tall stone. Everyone had to follow them. What are rules like these called?",
+    "back": "In Babylon, King Hammurabi had regulations carved on a tall stone. Everyone had to follow them. What are regulations like this called?",
+    "flag": true,
+    "note": "\"rules\" as ข้อบังคับ so the question does not contain กฎ, which would give away the answer กฎหมาย. Royal vocabulary kept plain (สั่งให้สลัก) as KEY_TERMS asks. Second pass: kept ข้อบังคับ for that reason, although the feedback defines law with กฎ."
+  },
+  "questions.9.options.0.text": {
+    "source": "Taxes",
+    "back": "Taxes"
+  },
+  "questions.9.options.0.feedback": {
+    "source": "Not quite. A tax is something people give to their government, like grain or work. Look back at Lesson 7.",
+    "back": "Not quite. Taxes are what people give to the government, such as grain or labour. Go back to Lesson 7."
+  },
+  "questions.9.options.1.text": {
+    "source": "Laws",
+    "back": "Laws"
+  },
+  "questions.9.options.1.feedback": {
+    "source": "Yes. A law is a rule that everyone in a place must follow. Hammurabi had about 280 laws carved on a stone.",
+    "back": "Correct. Laws are rules everyone in a place must follow. Hammurabi had about 280 laws carved on the stone."
+  },
+  "questions.9.options.2.text": {
+    "source": "Goods",
+    "back": "Goods"
+  },
+  "questions.9.options.2.feedback": {
+    "source": "Not quite. Goods are things people make or grow, like jars or cloth. Look back at Lesson 7.",
+    "back": "Not quite. Goods are things people make or grow, such as jars or cloth. Go back to Lesson 7."
+  },
+  "questions.10.question": {
+    "source": "Paper was first made in China. How did the idea of papermaking reach the Middle East and Europe?",
+    "back": "Paper was first made in China. How did knowledge of papermaking reach the Middle East and Europe?",
+    "flag": true,
+    "note": "\"the idea of papermaking\" as ความรู้เรื่องการทำกระดาษ (knowledge of papermaking), which reads more naturally than ความคิด here."
+  },
+  "questions.10.options.0.text": {
+    "source": "It spread along the trade routes.",
+    "back": "It spread along trade routes"
+  },
+  "questions.10.options.0.feedback": {
+    "source": "Yes. Traders carried ideas as well as goods. Papermaking spread along the routes to other lands.",
+    "back": "Correct. Traders carried ideas, not just goods. Papermaking spread along routes to other lands."
+  },
+  "questions.10.options.1.text": {
+    "source": "Each place made it at the same time.",
+    "back": "Every place made paper at the same time"
+  },
+  "questions.10.options.1.feedback": {
+    "source": "Not quite. Paper was first made in China. The idea reached other lands later. Look back at Lesson 8.",
+    "back": "Not quite. Paper was first made in China; this knowledge reached other lands later. Go back to Lesson 8."
+  },
+  "questions.10.options.2.text": {
+    "source": "One trader took it on one long trip.",
+    "back": "One trader took it on a single long journey"
+  },
+  "questions.10.options.2.feedback": {
+    "source": "Not quite. The idea did not travel in one trip. It moved along trade routes, from place to place. Look back at Lesson 8.",
+    "back": "Not quite. The knowledge didn't arrive in a single journey; it moved slowly along trade routes, from place to place. Go back to Lesson 8."
+  },
+  "questions.11.stimulus.title": {
+    "source": "A made-up town: a new ticket machine",
+    "back": "Fictional town: a new ticket machine"
+  },
+  "questions.11.stimulus.body": {
+    "source": "The made-up town of Pellow puts a new ticket machine at its bus stop. Before, buying a ticket took 10 minutes. Now it takes one minute. But the screen shows words in only one language. It has no pictures to help.",
+    "back": "A fictional town called Pellow put a new ticket machine at the bus stop. Before, buying a ticket took 10 minutes. Now it takes just one minute. But the screen shows words in only one language and has no pictures to help."
+  },
+  "questions.11.question": {
+    "source": "Who might find the new machine hard to use?",
+    "back": "Who might find the new machine hard to use?"
+  },
+  "questions.11.options.0.text": {
+    "source": "People who want to buy tickets quickly",
+    "back": "People who want to buy tickets quickly"
+  },
+  "questions.11.options.0.feedback": {
+    "source": "Not quite. The machine is faster, so this is a benefit for these people. Look back at Lesson 9.",
+    "back": "Not quite. The machine is faster, so it benefits these people. Go back to Lesson 9."
+  },
+  "questions.11.options.1.text": {
+    "source": "People who ride the bus every day",
+    "back": "People who take the bus every day"
+  },
+  "questions.11.options.1.feedback": {
+    "source": "Not quite. People who ride often can save time every day. That is a benefit. Look back at Lesson 9.",
+    "back": "Not quite. People who take the bus often save time every day. That is a benefit. Go back to Lesson 9."
+  },
+  "questions.11.options.2.text": {
+    "source": "People who cannot read that language",
+    "back": "People who can't read that language"
+  },
+  "questions.11.options.2.feedback": {
+    "source": "Yes. The screen uses only one language, so it is a barrier for some people. An invention only helps people who can use it.",
+    "back": "Correct. The screen uses one language, so it is a barrier for some people. An invention helps only the people who can use it."
+  },
+  "results.high": {
+    "source": "Well done. You know a lot about how we learn about the past and how early communities changed.",
+    "back": "Very well done. You know a lot about how we learn about the past and how early communities changed."
+  },
+  "results.middle": {
+    "source": "Good work. You got many questions right. Look back at the lessons for the ones you missed, and try again if you like.",
+    "back": "Well done. You got many right. Go back to the lessons for the ones you missed, then try again if you want.",
+    "flag": true,
+    "note": "\"the ones you missed\" as ข้อที่พลาดไป. Same results wording in all four checks."
+  },
+  "results.low": {
+    "source": "Thank you for trying. Look back at Lessons 1–9, then try again. You can take as long as you need.",
+    "back": "Thanks for trying. Go back to Lessons 1–9, then try again. Take as long as you need."
+  }
+}

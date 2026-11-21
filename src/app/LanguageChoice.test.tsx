@@ -44,6 +44,7 @@ describe('LanguageChoice', () => {
       ['Bahasa Indonesia', 'id'],
       ['Bahasa Melayu', 'ms'],
       ['Tiếng Việt', 'vi'],
+      ['ไทย', 'th'],
     ]);
   });
 

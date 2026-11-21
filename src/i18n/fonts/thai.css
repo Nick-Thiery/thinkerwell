@@ -1,0 +1,82 @@
+/*
+ * Thai: Sarabun (SIL Open Font License 1.1, self-hosted from
+ * @fontsource/sarabun), a looped Thai typeface of the kind Thai schools teach
+ * children to read, and the standard font of Thai official documents.
+ *
+ * Loaded by src/i18n/fonts/index.ts only while a language with the 'thai'
+ * font key is shown (src/i18n/locales.ts), and precached only once such a
+ * language is ready (vite.config.ts). Nothing here downloads for an English
+ * visit.
+ *
+ * Only Sarabun's Thai letters, added to the site's own two families with
+ * unicode-range, as Vazirmatn's Arabic letters are (arabic.css). So every
+ * heading (Funnel Display) and every other text (Atkinson Hyperlegible Next)
+ * keeps its Latin letters, digits and punctuation from the site's fonts, gets
+ * its Thai letters from Sarabun, and the design tokens stay as they are. A
+ * browser downloads one of these files only once a page shows Thai letters in
+ * that weight.
+ */
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("@fontsource/sarabun/files/sarabun-thai-400-normal.woff2") format("woff2");
+  unicode-range: U+0E01-0E5B,U+200C-200D,U+25CC;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url("@fontsource/sarabun/files/sarabun-thai-400-italic.woff2") format("woff2");
+  unicode-range: U+0E01-0E5B,U+200C-200D,U+25CC;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url("@fontsource/sarabun/files/sarabun-thai-500-normal.woff2") format("woff2");
+  unicode-range: U+0E01-0E5B,U+200C-200D,U+25CC;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url("@fontsource/sarabun/files/sarabun-thai-700-normal.woff2") format("woff2");
+  unicode-range: U+0E01-0E5B,U+200C-200D,U+25CC;
+}
+
+@font-face {
+  font-family: "Funnel Display";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url("@fontsource/sarabun/files/sarabun-thai-500-normal.woff2") format("woff2");
+  unicode-range: U+0E01-0E5B,U+200C-200D,U+25CC;
+}
+
+@font-face {
+  font-family: "Funnel Display";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url("@fontsource/sarabun/files/sarabun-thai-600-normal.woff2") format("woff2");
+  unicode-range: U+0E01-0E5B,U+200C-200D,U+25CC;
+}
+
+/*
+ * Thai vowels and tone marks stack above and below the letters, so the
+ * headings' tight tracking and line height would make them collide. English
+ * inside such a page (lang="en") keeps its own.
+ */
+:is(.hero, .display, .h1, .h2, .h3, .eyebrow):lang(th) {
+  letter-spacing: normal;
+  line-height: 1.35;
+}

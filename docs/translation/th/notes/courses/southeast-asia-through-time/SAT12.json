@@ -1,0 +1,464 @@
+{
+  "title": {
+    "source": "How can we tell a shared history fairly?",
+    "back": "How can we tell shared histories fairly?"
+  },
+  "essentialQuestion": {
+    "source": "How can a small exhibition connect sources from different places without claiming more than the evidence shows?",
+    "back": "How can a small exhibition connect sources from different places without claiming more than the evidence shows?"
+  },
+  "learningGoal": {
+    "source": "Plan a small exhibit panel that credits two sources, makes one connection they support, and names one limit and one missing perspective.",
+    "back": "Plan one small exhibition panel that credits two sources, makes one connection the sources support, and names one limit and one missing point of view."
+  },
+  "warmUp.question": {
+    "source": "Imagine a label next to an old object. What would help you trust it?",
+    "back": "Think of a label next to an old object. What would help you trust that label?"
+  },
+  "warmUp.options.0": {
+    "source": "It says where the object is from",
+    "back": "The label says where the object came from"
+  },
+  "warmUp.options.1": {
+    "source": "It gives a date",
+    "back": "The label gives the date"
+  },
+  "warmUp.options.2": {
+    "source": "It names who made or kept it",
+    "back": "The label names who made or keeps the object"
+  },
+  "warmUp.options.3": {
+    "source": "Not sure yet",
+    "back": "Not sure yet"
+  },
+  "evidence.question": {
+    "source": "Pick two cards from different places. What can each one show, and what can it not show?",
+    "back": "Choose two cards from different places. What can each one show, and what can it not show?"
+  },
+  "evidence.cards.0.title": {
+    "source": "Six sources from this course",
+    "back": "Six sources from this course"
+  },
+  "evidence.cards.0.sources.0.caption": {
+    "flag": true,
+    "note": "Place names in the cards: Butuan บูตวน, Balangay Shrine Museum พิพิธภัณฑ์ศาลเจ้าบาลางาย, Banda Neira บันดาเนรา, Rijksmuseum ไรก์สมิวเซียม (each with the Latin once), Phnom Penh พนมเปญ. Check spellings; the cards repeat Lessons 2, 3, 4 (translated by other agents), so match their spellings. Second pass: matched to Lessons 2 to 4: the Balangay Shrine Museum is now พิพิธภัณฑ์บาลังไกย์ชไรน์ (as in SAT02's reading; balangay = บาลังไกย์, SAT02's glossary word) instead of พิพิธภัณฑ์ศาลเจ้าบาลางาย; Melaka and Borobudur now carry the Latin once in Cards B and F, like Butuan in Card A (this also clears the checker's two name warnings).",
+    "source": "Card A: Butuan, the Philippines. Old boat planks, photographed in 2015 (Lesson 2)",
+    "back": "Card A: Butuan (Butuan), Philippines, ancient boat planks, photographed in 2015 (Lesson 2)"
+  },
+  "evidence.cards.0.sources.0.details.0": {
+    "source": "A photographer called Lee took this photo of planks from an old Butuan boat on display at the Balangay Shrine Museum in Butuan.",
+    "back": "A photographer using the name Lee photographed these planks from an ancient Butuan boat, displayed at the Balangay Shrine Museum (Balangay Shrine Museum) in Butuan."
+  },
+  "evidence.cards.0.sources.0.details.1": {
+    "source": "It shows: surviving planks of a boat, kept and shown today.",
+    "back": "Can show: boat planks that survive, kept and displayed today."
+  },
+  "evidence.cards.0.sources.0.details.2": {
+    "source": "It cannot show: where the boat sailed, or who was on board.",
+    "back": "Cannot show: where the boat sailed or who was on it."
+  },
+  "evidence.cards.0.sources.0.details.3": {
+    "source": "Credit: Lee, 2015, Wikimedia Commons, CC BY 2.0.",
+    "back": "Credit: Lee, 2015, Wikimedia Commons, CC BY 2.0"
+  },
+  "evidence.cards.0.sources.1.caption": {
+    "source": "Card B: Melaka, Malaysia. A map made in 1604 (Lesson 3)",
+    "back": "Card B: Melaka (Melaka), Malaysia, a map made in 1604 (Lesson 3)"
+  },
+  "evidence.cards.0.sources.1.details.0": {
+    "source": "Manuel Godinho de Herédia drew this map of the city of Melaka and the land around it in 1604, when Portugal ruled the port.",
+    "back": "Manuel Godinho de Herédia drew this map of the town of Melaka and the land around it in 1604, when Portugal ruled this port town."
+  },
+  "evidence.cards.0.sources.1.details.1": {
+    "source": "It shows: what this mapmaker chose to draw of the port in his own time.",
+    "back": "Can show: what this mapmaker chose to draw about the port town in his time."
+  },
+  "evidence.cards.0.sources.1.details.2": {
+    "source": "It cannot show: the Melaka of the 1400s, or how each person living there saw the city.",
+    "back": "Cannot show: Melaka in the 1400s, or how each person who lived there saw the town."
+  },
+  "evidence.cards.0.sources.1.details.3": {
+    "source": "Credit: Manuel Godinho de Herédia, 1604, Wikimedia Commons, CC0.",
+    "back": "Credit: Manuel Godinho de Herédia, 1604, Wikimedia Commons, CC0"
+  },
+  "evidence.cards.0.sources.2.caption": {
+    "source": "Card C: Banda, Indonesia. A Dutch painting made about 1662–1663 (Lesson 4)",
+    "back": "Card C: Banda, Indonesia, a Dutch painting made around 1662–1663 (Lesson 4)"
+  },
+  "evidence.cards.0.sources.2.details.0": {
+    "source": "A painting of the island of Banda Neira with the buildings of the Dutch East India Company, the VOC, and a Dutch ship. It is credited to Johannes Vingboons and kept by the Rijksmuseum in Amsterdam.",
+    "back": "A painting of the island of Banda Neira (Banda Neira) with buildings of the Dutch East India Company, or VOC, and Dutch ships. It is attributed to Johannes Vingboons and kept at the Rijksmuseum (Rijksmuseum) in Amsterdam."
+  },
+  "evidence.cards.0.sources.2.details.1": {
+    "source": "It shows: ships and buildings, as a Dutch artist pictured them about 40 years after 1621.",
+    "back": "Can show: ships and buildings, as a Dutch artist painted them about 40 years after 1621."
+  },
+  "evidence.cards.0.sources.2.details.2": {
+    "source": "It cannot show: what the people of Banda went through in 1621, told in their own words.",
+    "back": "Cannot show: what the Bandanese went through in 1621, told in their own words."
+  },
+  "evidence.cards.0.sources.2.details.3": {
+    "source": "Credit: Johannes Vingboons, about 1662–1663, Rijksmuseum, public domain.",
+    "back": "Credit: Johannes Vingboons, around 1662–1663, Rijksmuseum, public domain"
+  },
+  "evidence.cards.0.sources.3.caption": {
+    "source": "Card D: Timor-Leste. A school, photographed in 2024 (Lesson 9)",
+    "back": "Card D: Timor-Leste, a school, photographed in 2024 (Lesson 9)"
+  },
+  "evidence.cards.0.sources.3.details.0": {
+    "source": "A photographer called Ponsyano took this photo of a school building in Timor-Leste on 21 November 2024.",
+    "back": "A photographer using the name Ponsyano photographed this school building in Timor-Leste on 21 November 2024."
+  },
+  "evidence.cards.0.sources.3.details.1": {
+    "source": "It shows: one school building today.",
+    "back": "Can show: one school building today."
+  },
+  "evidence.cards.0.sources.3.details.2": {
+    "source": "It cannot show: whether every child can go to school, or how schools were rebuilt after 1999.",
+    "back": "Cannot show: whether every child can go to school, or how schools were rebuilt after 1999."
+  },
+  "evidence.cards.0.sources.3.details.3": {
+    "source": "Credit: Ponsyano, 2024, Wikimedia Commons, CC0.",
+    "back": "Credit: Ponsyano, 2024, Wikimedia Commons, CC0"
+  },
+  "evidence.cards.0.sources.4.caption": {
+    "source": "Card E: Hội An, Viet Nam. A covered bridge, photographed in 2018 (Lesson 10)",
+    "back": "Card E: Hội An, Vietnam, a covered bridge, photographed in 2018 (Lesson 10)"
+  },
+  "evidence.cards.0.sources.4.details.0": {
+    "source": "A photographer called Christophe95 took this photo of the covered bridge in Hội An on 27 July 2018.",
+    "back": "A photographer using the name Christophe95 photographed this covered bridge in Hội An on 27 July 2018."
+  },
+  "evidence.cards.0.sources.4.details.1": {
+    "source": "It shows: a place from the old trading port that survives today.",
+    "back": "Can show: a place from the old trading port town that still stands today."
+  },
+  "evidence.cards.0.sources.4.details.2": {
+    "source": "It cannot show: the traders and residents of the 1400s to the 1800s.",
+    "back": "Cannot show: traders and residents in the 1400s to the 1800s.",
+    "flag": true,
+    "note": "Second pass: centuries written in the course's one style (ช่วงปี 1400 ถึง 1800 กว่า, ช่วงปี 700 ถึง 800 กว่า); see SAT02 evidence.cards.0.sources.0.details.1."
+  },
+  "evidence.cards.0.sources.4.details.3": {
+    "source": "Credit: Christophe95, 2018, Wikimedia Commons, CC BY-SA 4.0.",
+    "back": "Credit: Christophe95, 2018, Wikimedia Commons, CC BY-SA 4.0"
+  },
+  "evidence.cards.0.sources.5.caption": {
+    "source": "Card F: Borobudur, Indonesia. Conservation work, photographed in 1976 (Lesson 11)",
+    "back": "Card F: Borobudur (Borobudur), Indonesia, conservation work, photographed in 1976 (Lesson 11)"
+  },
+  "evidence.cards.0.sources.5.details.0": {
+    "source": "Gerard Bolla took this black-and-white photo of the restoration of Borobudur for UNESCO in 1976.",
+    "back": "Gerard Bolla took this black-and-white photo of the restoration of Borobudur for UNESCO in 1976."
+  },
+  "evidence.cards.0.sources.5.details.1": {
+    "source": "It shows: a moment of modern repair work, with scaffolding on the monument.",
+    "back": "Can show: one moment of modern repair work, with scaffolding on the monument."
+  },
+  "evidence.cards.0.sources.5.details.2": {
+    "source": "It cannot show: what the builders of the 700s and 800s planned or thought.",
+    "back": "Cannot show: what the builders in the 700s and 800s planned or thought."
+  },
+  "evidence.cards.0.sources.5.details.3": {
+    "source": "Credit: UNESCO / Gerard Bolla, 1976, Wikimedia Commons, CC BY-SA 3.0 IGO.",
+    "back": "Credit: UNESCO / Gerard Bolla, 1976, Wikimedia Commons, CC BY-SA 3.0 IGO"
+  },
+  "read.sections.0.heading": {
+    "source": "Every exhibition makes choices",
+    "back": "Every exhibition comes from choices"
+  },
+  "read.sections.0.text": {
+    "source": "A museum or classroom exhibition is made from choices. A curator decides which sources to show, how to date and credit them, and which questions to ask. A good label lets a visitor tell what is seen from what is guessed. No single object, map or photo can tell the whole history of a region. The National Museum of Cambodia, in Phnom Penh, is one example. It says its work is to show, protect and explain Cambodia's cultural treasures. It holds sculptures, pottery and other objects. That is how one museum explains its own collection. It does not speak for every community in Southeast Asia.",
+    "back": "An exhibition in a museum or a classroom comes from choices. A curator decides which sources to show, how to date and credit them, and what questions to ask. A good label helps viewers tell what is seen from what is guessed. No object, map or photo can tell the whole history of a region. The National Museum of Cambodia in Phnom Penh is one example. The museum says its job is to display, protect and explain Cambodia's cultural treasures. It has sculptures, pottery and other objects. That is how one museum describes its own collection. It does not speak for every community in Southeast Asia."
+  },
+  "read.sections.0.simpler": {
+    "source": "An exhibition is made from choices. A curator picks the sources to show. The curator gives each one a date and a credit. A good label shows what we see and what we guess. One object cannot tell the story of a whole region. The National Museum of Cambodia is one example. It says it shows, protects and explains Cambodia's treasures. That is the story of one museum. It does not speak for everyone.",
+    "back": "An exhibition comes from choices. A curator chooses the sources to show. The curator puts a date and credit on each one. A good label says what we see and what we guess. One object cannot tell the story of a whole region. The National Museum of Cambodia is one example. The museum says it displays, protects and explains Cambodia's treasures. That is the story of one museum. It does not speak for everyone."
+  },
+  "read.sections.1.heading": {
+    "source": "Compare what two sources can show",
+    "back": "Compare what two sources can show"
+  },
+  "read.sections.1.text": {
+    "source": "The second picture is a photo of the National Museum of Cambodia, taken on 2 March 2011 by a photographer who uses the name Dtfman. You can see red buildings with tall roofs around a garden. You cannot see the objects inside, or how the displays were chosen. The museum's own description gives a different kind of information. It says the buildings went up between 1917 and 1924, and the museum opened in 1920. It also says what the museum aims to do. So one source helps with what the place looks like. The other helps with what the museum says it does. Both sources have limits.",
+    "back": "The second picture is a photo of the National Museum of Cambodia, taken on 2 March 2011 by a photographer using the name Dtfman. You will see red buildings with tall roofs around a garden, but you will not see the objects inside, or how the displays were chosen. The museum's own description gives another kind of information. It says the building was built between 1917 and 1924 and the museum opened in 1920, and it also says what the museum aims to do. So one source helps with what the place looks like; the other helps with what the museum says it does. Both sources have limits."
+  },
+  "read.sections.1.simpler": {
+    "source": "The second picture is a photo of the museum from 2011. You can see red buildings and a garden. You cannot see the objects inside. The museum also wrote about itself. It says it opened in 1920. It says what it wants to do. So the photo shows what the place looks like. The writing tells us what the museum does. Each source has limits.",
+    "back": "The second picture is a photo of the museum from 2011. You see red buildings and a garden. You do not see the objects inside. The museum also wrote about itself. It says the museum opened in 1920 and says what it wants to do. So the photo shows what the place looks like. The text tells us what the museum does. Each source has limits."
+  },
+  "read.sections.2.heading": {
+    "source": "Build a careful connection",
+    "back": "Make a careful connection"
+  },
+  "read.sections.2.text": {
+    "flag": true,
+    "note": "UNESCO's Shared Histories kept in Latin with ประวัติศาสตร์ร่วมกัน in brackets the first time.",
+    "source": "UNESCO's Shared Histories lessons, made with teachers and historians from Southeast Asia, help learners look for links between people and places across the region. Now you can be the curator. Choose two source cards from different places or different parts of this course. Explain a careful connection: something both sources help us ask about. Do not invent a meeting or a journey that the sources do not show. Then say what is still uncertain, and whose perspective is missing. Put a credit under each source so someone else can check it. You can make your panel on paper or out loud. A fair account can say, \"This source does not tell us.\"",
+    "back": "UNESCO's Shared Histories (Shared histories) lessons, made with teachers and historians from Southeast Asia, help learners look for connections between people and places across the region. Now you can be a curator. Choose two source cards from different places, or from different parts of this course. Explain a careful connection: something both sources help us ask questions about. Don't invent a meeting or a journey the sources do not show. Then say what is still uncertain and whose point of view is missing. Put a credit under each source so others can check. You can make the panel on paper or say it aloud. A fair story can say, \"This source does not tell us.\""
+  },
+  "read.sections.2.simpler": {
+    "source": "UNESCO made Shared Histories lessons with teachers from Southeast Asia. They help learners find links between places. Now you are the curator. Choose two cards from different places. Say one thing both sources help us ask about. Do not invent a trip. Say what we still do not know. Say whose perspective is missing. Put a credit under each source, so others can check it. It is fair to say, \"This source does not tell us.\"",
+    "back": "UNESCO made the Shared Histories lessons with teachers from Southeast Asia. These lessons help learners find connections between places. Now you are a curator. Choose two cards from different places. Say one thing both sources help us ask questions about. Don't invent a journey. Say what we still don't know. Say whose point of view is missing. Put a credit under each source so others can check. Saying \"This source does not tell us\" is fair."
+  },
+  "read.glossary.0.word": {
+    "source": "curator",
+    "back": "curator"
+  },
+  "read.glossary.0.forms": {
+    "source": [
+      "curators"
+    ]
+  },
+  "read.glossary.0.definition": {
+    "source": "A person who chooses objects for a display and explains them.",
+    "back": "A person who chooses objects to display and explains them."
+  },
+  "read.glossary.0.example": {
+    "source": "A curator decides which two sources go on the panel.",
+    "back": "The curator decides which two sources go on the exhibition panel."
+  },
+  "read.glossary.1.word": {
+    "source": "source",
+    "back": "source"
+  },
+  "read.glossary.1.forms": {
+    "source": [
+      "sources"
+    ]
+  },
+  "read.glossary.1.definition": {
+    "source": "Something from the past or present that we can study as evidence.",
+    "back": "Something from the past or present that we can study as evidence."
+  },
+  "read.glossary.1.example": {
+    "source": "The 1604 map of Melaka is a source about the port.",
+    "back": "The 1604 map of Melaka is a source about this port town."
+  },
+  "read.glossary.2.word": {
+    "source": "perspective",
+    "back": "point of view"
+  },
+  "read.glossary.2.forms": {
+    "source": [
+      "perspectives"
+    ]
+  },
+  "read.glossary.2.definition": {
+    "source": "How a person sees things, shaped by where they are and why.",
+    "back": "The way a person sees things, which depends on where they are and why."
+  },
+  "read.glossary.2.example": {
+    "source": "A trader's perspective on a port may differ from a mapmaker's.",
+    "back": "A trader's point of view on a port town might differ from a mapmaker's."
+  },
+  "read.glossary.3.word": {
+    "flag": true,
+    "note": "credit: เครดิต, as in the site's Credits page (เครดิตและแหล่งที่มา). curator: ภัณฑารักษ์ (KEY_TERMS).",
+    "source": "credit",
+    "back": "credit"
+  },
+  "read.glossary.3.forms": {
+    "source": [
+      "credits"
+    ]
+  },
+  "read.glossary.3.definition": {
+    "source": "A note that names who made a source and where it is kept.",
+    "back": "Text that names who made a source and where it is kept."
+  },
+  "read.glossary.3.example": {
+    "source": "The credit under the bridge photo names Christophe95 and the year 2018.",
+    "back": "The credit under the photo of the bridge names Christophe95 and 2018."
+  },
+  "read.checks.0.question": {
+    "source": "Can a photo of a museum's outside show all that is inside?",
+    "back": "Can a photo of the outside of a museum show everything inside?"
+  },
+  "read.checks.0.options.0.text": {
+    "source": "No, it shows the outside only",
+    "back": "No. It shows only the outside."
+  },
+  "read.checks.0.options.0.feedback": {
+    "source": "Yes. You can see buildings and a garden. The objects and the choices about displays are inside.",
+    "back": "Correct. You see the buildings and the garden, but the objects and the choices of what to display are inside."
+  },
+  "read.checks.0.options.1.text": {
+    "source": "Yes, if the photo is very clear",
+    "back": "Yes, if the photo is very clear"
+  },
+  "read.checks.0.options.1.feedback": {
+    "source": "Not quite. Even a clear photo of the outside cannot show what is inside. Look at the second part of the reading.",
+    "back": "Not quite. Even if a picture of the outside is clear, it cannot show what is inside. Look at the second part of the reading."
+  },
+  "read.checks.0.options.2.text": {
+    "source": "Yes, because it is a real photo",
+    "back": "Yes, because it is a real photo"
+  },
+  "read.checks.0.options.2.feedback": {
+    "source": "Not quite. A real photo still has limits. Think about what the camera could not see.",
+    "back": "Not quite. A real photo still has limits. Think about what the camera cannot see."
+  },
+  "read.checks.1.question": {
+    "source": "Why do you put a credit under each source in your exhibit?",
+    "back": "Why do you put a credit under each source in an exhibition?"
+  },
+  "read.checks.1.options.0.text": {
+    "source": "To make the panel look longer",
+    "back": "To make the panel look longer"
+  },
+  "read.checks.1.options.0.feedback": {
+    "source": "Not quite. A credit has a job to do. Look at the end of the third part of the reading.",
+    "back": "Not quite. A credit has a job. Look at the end of the third part of the reading."
+  },
+  "read.checks.1.options.1.text": {
+    "source": "So others can find and check it",
+    "back": "So others can find and check it"
+  },
+  "read.checks.1.options.1.feedback": {
+    "source": "Yes. A credit names who made the source and where it is kept, so others can check it.",
+    "back": "Correct. A credit names who made the source and where it is kept, so others can check."
+  },
+  "read.checks.1.options.2.text": {
+    "source": "So visitors know your opinion",
+    "back": "So viewers know your opinion"
+  },
+  "read.checks.1.options.2.feedback": {
+    "source": "Not quite. Your ideas go in your panel. The credit is about the source itself.",
+    "back": "Not quite. Your ideas are in the exhibition panel; the credit is about the source itself."
+  },
+  "read.checks.2.question": {
+    "source": "Which two cards could you put side by side? What could they help you ask?",
+    "back": "Which two cards could you place side by side? What questions do they help you ask?"
+  },
+  "read.checks.2.placeholder": {
+    "source": "For example: Card ... and Card ... both help us ask about ...",
+    "back": "Example: Card... and card... help us ask questions about..."
+  },
+  "write.prompt": {
+    "source": "Pick two cards from different places or lessons, and plan a panel. Give each card a credit. Then write one link both sources support, one limit and one missing perspective.",
+    "back": "Choose two cards from different places or different lessons, and plan an exhibition panel. Credit each card. Then write one connection both sources support, one limit and one missing point of view."
+  },
+  "write.sentenceStarters.0": {
+    "source": "My first source is ..., made in ... by ...",
+    "back": "My first source is... made in... by..."
+  },
+  "write.sentenceStarters.1": {
+    "source": "My second source is ..., made in ... by ...",
+    "back": "My second source is... made in... by..."
+  },
+  "write.sentenceStarters.2": {
+    "source": "Both sources help us ask about ...",
+    "back": "Both sources help us ask questions about..."
+  },
+  "write.sentenceStarters.3": {
+    "source": "One limit is that ...",
+    "back": "One limit is..."
+  },
+  "write.sentenceStarters.4": {
+    "source": "A perspective that is missing is ...",
+    "back": "The missing point of view is..."
+  },
+  "write.planningBoxes.0": {
+    "source": "My two sources and their credits",
+    "back": "My two sources and credits"
+  },
+  "write.planningBoxes.1": {
+    "source": "A connection both sources support",
+    "back": "The connection both sources support"
+  },
+  "write.planningBoxes.2": {
+    "source": "One limit",
+    "back": "One limit"
+  },
+  "write.planningBoxes.3": {
+    "source": "A missing perspective",
+    "back": "The missing point of view"
+  },
+  "write.selfCheck.0": {
+    "source": "I chose two sources from different places or lessons, with a credit for each.",
+    "back": "I chose two sources from different places or different lessons and credited each."
+  },
+  "write.selfCheck.1": {
+    "source": "I made one connection that both sources support.",
+    "back": "I made one connection both sources support."
+  },
+  "write.selfCheck.2": {
+    "source": "I named one limit and one missing perspective.",
+    "back": "I named one limit and one missing point of view."
+  },
+  "write.example": {
+    "source": "My first source is a photo of old boat planks from Butuan, in the Philippines, taken by Lee in 2015. My second source is a map of Melaka, made in 1604 by Manuel Godinho de Herédia. Both sources help us ask how people built boats and used ports by the sea. One limit is that they come from different places and times. They do not prove that this boat ever went to Melaka. A perspective that is missing is a sailor's own account.",
+    "back": "My first source is a photo of ancient boat planks from Butuan in the Philippines, taken by Lee in 2015. My second source is a map of Melaka, made in 1604 by Manuel Godinho de Herédia. Both sources help us ask how people built boats and used port towns by the sea. One limit is that the two sources come from different places and times, so they cannot prove this boat ever went to Melaka. The missing point of view is the sailors' own stories."
+  },
+  "speak.partnerTask": {
+    "source": "Present your panel to a partner in about one minute. Your partner asks, \"What supports this part?\" and gives you one suggestion.",
+    "back": "Present your exhibition panel to a partner for about one minute. Your partner asks, \"What supports this part?\" and gives you one suggestion."
+  },
+  "speak.independentTask": {
+    "source": "Read your panel aloud to yourself. Then write an answer to the question, \"What supports this part?\"",
+    "back": "Read your exhibition panel aloud to yourself. Then write an answer to the question \"What supports this part?\""
+  },
+  "reflect.prompts.0.text": {
+    "source": "After hearing another view, I would change ... because ...",
+    "back": "After hearing another point of view, I would change... because..."
+  },
+  "reflect.prompts.1.text": {
+    "source": "One more source I would add to my panel is ... because ...",
+    "back": "One more source I would add to my panel is... because..."
+  },
+  "reflect.completionMessage": {
+    "source": "You finished Lesson 12. You planned a fair exhibit panel with credited sources, a careful connection and an honest limit.",
+    "back": "You finished Lesson 12. You planned a fair exhibition panel with credited sources, a careful connection and honestly stated limits."
+  },
+  "visual.alt": {
+    "source": "A template for a three-panel exhibit. Panels 1 and 2 each have an empty picture box with lines for place, date, maker or collection, and source. Panel 3 asks what is uncertain and whose view is missing.",
+    "back": "A template for a three-panel exhibition. Panels 1 and 2 each have an empty picture frame and lines for place, date, maker or keeper, and source. Panel 3 asks what is still uncertain and whose point of view is missing."
+  },
+  "visual.caption": {
+    "source": "A Thinkerwell template for a small exhibit. The empty boxes are for the two sources you choose.",
+    "back": "A Thinkerwell template for a small exhibition. The empty frames are for the two sources you choose."
+  },
+  "visual.lookClosely": {
+    "source": "Which panel tells a visitor that our story is incomplete?",
+    "back": "Which panel tells viewers that our story is not complete?"
+  },
+  "secondVisual.alt": {
+    "source": "The garden courtyard of the National Museum of Cambodia. Red buildings with tall, layered, decorated roofs stand around a garden with palm trees, trimmed hedges, a paved path and a few old cannons on stands.",
+    "back": "The garden courtyard of the National Museum of Cambodia. Red buildings with tall, layered, beautifully decorated roofs stand around a garden with palm trees, trimmed bushes, paved paths and a few old cannons on stands."
+  },
+  "secondVisual.caption": {
+    "source": "A museum in Phnom Penh, photographed in 2011. It shows the buildings and garden, not what the displays inside say.",
+    "back": "A museum in Phnom Penh, photographed in 2011. It shows the buildings and the garden, not what the displays inside say."
+  },
+  "secondVisual.lookClosely": {
+    "source": "Can the outside of a museum show what all its displays say?",
+    "back": "Can the outside of a museum show what all its displays say?"
+  },
+  "sources.0.label": {
+    "source": "Ministry of Culture and Fine Arts, Cambodia: National Museum of Cambodia",
+    "back": "[English title] (Ministry of Culture and Fine Arts, Cambodia: National Museum of Cambodia)"
+  },
+  "sources.1.label": {
+    "source": "UNESCO Bangkok (2019): Understanding shared histories, a teaching package for Southeast Asia, Unit 1: People and places",
+    "back": "[English title] (UNESCO Bangkok: Understanding shared histories, a teaching package for Southeast Asia, Unit 1: people and places)"
+  },
+  "sources.2.label": {
+    "source": "Wikimedia Commons: National museum phnom penh cambodia (Dtfman, 2011)",
+    "back": "[English title] (Wikimedia Commons: national museum, Phnom Penh, Cambodia)"
+  },
+  "sensitiveNotes.0": {
+    "flag": true,
+    "note": "Mentions Banda 1621, Timor-Leste after 1999, colonial Melaka and the S-21 prison page (teachers only). Translated plainly without adding detail.",
+    "source": "Some cards touch hard history: Banda in 1621 (the VOC took control by force), Timor-Leste after 1999, and colonial rule in Melaka. Keep panels about what each source can and cannot show, and never ask learners to connect a source to their own or their family's experiences of war, displacement, home country, religion or ethnicity. If learners look up the National Museum on the Ministry of Culture's page, preview it first: its \"History of the Museum\" part currently holds an unrelated passage about the S-21 prison, which is not for this lesson.",
+    "back": "Some cards involve difficult history: Banda in 1621 (the VOC took power by force), Timor-Leste after 1999 and colonial rule in Melaka. Keep the exhibition panels on what each source can and cannot show, and don't have learners connect the sources with their own or their family's experiences of war or displacement, or with home country, religion or ethnicity. If learners will look up the National Museum on the Ministry of Culture's web page, check it first: the \"History of the Museum\" section currently has unrelated text about S-21 prison, which is not suitable for this lesson."
+  },
+  "educatorNotes.0": {
+    "source": "Aim: learners plan a short, fair, credited exhibit panel from two sources in different places or lessons. Evidence move: model a connection between two cards without inventing a direct voyage (for example Butuan planks and the 1604 Melaka map help us ask about boats and ports, but neither proves the boat went to Melaka). Rubric, four equal parts: accurate dates and places; two properly credited sources; a connection the evidence supports; a limit or missing perspective. Give concrete feedback, not a score alone. A panel can be written, drawn on paper or spoken; the brief's 80 to 120 words is a guide, and the example is shorter.",
+    "back": "Goal: learners plan a short, fair, credited exhibition panel from two sources from different places or different lessons. Evidence method: model how to connect two cards without inventing a direct journey (for example, the planks from Butuan and the 1604 map of Melaka help us ask about boats and port towns, but neither proves that boat went to Melaka). An assessment rubric of four equal parts: correct dates and places, two properly credited sources, a connection the evidence supports, and a limit or missing point of view. Give concrete feedback, not just a score. The panel may be written, drawn on paper or spoken. The 80 to 120 words in the task are only a guide, and the example is shorter."
+  },
+  "educatorNotes.1": {
+    "source": "Misconception to address: that any two sources from the region prove direct contact between their places. Source caveats: the card details repeat what Lessons 2, 3, 4, 9, 10 and 11 say; check them against those lessons' final versions. The museum's aims and dates (buildings 1917 to 1924, opened 1920) come from Cambodia's Ministry of Culture and Fine Arts. The photo shows the courtyard and a few old cannons on display, not any object from inside. The National Museum is one institution's example, not the voice of every Cambodian or Southeast Asian community.",
+    "back": "Misconception to address: that any two sources from this region prove their places were in direct contact. Source caution: the details on the cards repeat what Lessons 2, 3, 4, 9, 10 and 11 say; check them against the final versions of those lessons. The museum's aims and dates (building built 1917 to 1924, opened 1920) come from Cambodia's Ministry of Culture and Fine Arts. The photo shows the courtyard and a few old cannons on display, not objects from inside. The National Museum is an example of one institution, not the voice of every community in Cambodia or Southeast Asia."
+  }
+}

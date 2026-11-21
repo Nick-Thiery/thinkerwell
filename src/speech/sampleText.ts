@@ -9,4 +9,5 @@ export const LISTEN_SAMPLES: Readonly<Record<string, string>> = {
   id: 'Ini suara yang membacakan pelajaran.',
   ms: 'Inilah suara yang membacakan pelajaran.',
   vi: 'Đây là giọng đọc các bài học cho bạn nghe.',
+  th: 'นี่คือเสียงที่อ่านบทเรียนให้คุณฟัง',
 };

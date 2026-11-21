@@ -25,7 +25,7 @@ import { LOCALES, readyLocales, type LocaleDefinition } from './locales.ts';
  * videos of every language without that language's lessons.
  */
 export const LANGUAGE_MODULE =
-  /(?:[\\/]src[\\/]i18n[\\/](?:messages[\\/][^\\/]+\.json|pseudo\.ts|fonts[\\/](?:arabic|vietnamese)\.css)|[\\/]content[\\/][a-z]{2,3}(?:-[A-Za-z0-9]+)*[\\/](?:course\.json|videos\.json|(?:lessons|quizzes)[\\/][^\\/]+\.json|visuals[\\/][^\\/]+\.svg\?url)|tw-pseudo-locale:[^\\/]+)$/;
+  /(?:[\\/]src[\\/]i18n[\\/](?:messages[\\/][^\\/]+\.json|pseudo\.ts|fonts[\\/](?:arabic|vietnamese|thai)\.css)|[\\/]content[\\/][a-z]{2,3}(?:-[A-Za-z0-9]+)*[\\/](?:course\.json|videos\.json|(?:lessons|quizzes)[\\/][^\\/]+\.json|visuals[\\/][^\\/]+\.svg\?url)|tw-pseudo-locale:[^\\/]+)$/;
 
 /** A language's translated content file (content/<code>/...), by its code, or null. */
 function contentLanguage(id: string): string | null {
@@ -51,6 +51,7 @@ export function languageChunkName(moduleId: string): string | null {
   if (/\/src\/i18n\/pseudo\.ts$/.test(id)) return 'pseudo';
   if (/\/src\/i18n\/fonts\/arabic\.css$/.test(id)) return 'font-arabic';
   if (/\/src\/i18n\/fonts\/vietnamese\.css$/.test(id)) return 'font-vietnamese';
+  if (/\/src\/i18n\/fonts\/thai\.css$/.test(id)) return 'font-thai';
   return null;
 }
 
@@ -61,6 +62,7 @@ export function languageChunkFileName(chunkName: string): string {
   if (chunkName === 'pseudo' || chunkName.startsWith('pseudo-')) return 'assets/pseudo/[name]-[hash].js';
   if (chunkName === 'font-arabic') return 'assets/fonts-arabic/[name]-[hash].js';
   if (chunkName === 'font-vietnamese') return 'assets/fonts-vietnamese/[name]-[hash].js';
+  if (chunkName === 'font-thai') return 'assets/fonts-thai/[name]-[hash].js';
   return 'assets/[name]-[hash].js';
 }
 
@@ -79,6 +81,9 @@ export function languageAssetFileName(asset: { names?: readonly string[]; origin
   }
   if (sources.some((name) => /@fontsource\/be-vietnam-pro\/|(?:^|\/)be-vietnam-pro-|(?:^|\/)font-vietnamese\.css$|\/src\/i18n\/fonts\/vietnamese\.css$/.test(name))) {
     return 'assets/fonts-vietnamese/[name]-[hash][extname]';
+  }
+  if (sources.some((name) => /@fontsource\/sarabun\/|(?:^|\/)sarabun-|(?:^|\/)font-thai\.css$|\/src\/i18n\/fonts\/thai\.css$/.test(name))) {
+    return 'assets/fonts-thai/[name]-[hash][extname]';
   }
   return 'assets/[name]-[hash][extname]';
 }
@@ -99,5 +104,6 @@ export function languagePrecacheIgnores(
     ...[...notReady].sort().map((code) => `assets/locales/${code}/**`),
     ...(ready.some((locale) => locale.font === 'arabic') ? [] : ['assets/fonts-arabic/**']),
     ...(ready.some((locale) => locale.font === 'vietnamese') ? [] : ['assets/fonts-vietnamese/**']),
+    ...(ready.some((locale) => locale.font === 'thai') ? [] : ['assets/fonts-thai/**']),
   ];
 }
