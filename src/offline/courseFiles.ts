@@ -115,14 +115,15 @@ export async function downloadCourses(
   }
   onProgress?.({ done, total });
   let failed = false;
-  const controlled = typeof navigator !== 'undefined' && !!navigator.serviceWorker?.controller;
   const worker = async (): Promise<void> => {
     for (let file = queue.shift(); file && !signal?.aborted; file = queue.shift()) {
       try {
         const response = await fetch(file.url, { signal });
         if (!response.ok) throw new Error(`${file.url}: ${response.status}`);
-        if (controlled) await response.blob();
-        else await cache.put(file.url, response);
+        // Kept here even where the service worker keeps it too (sw.ts, courseFileFromCache): the worker
+        // writes its copy only after it has answered, so Settings, which looks in the cache as soon as this
+        // returns, could find the last few files missing and say "partly saved" after a full download.
+        await cache.put(file.url, response);
         done += file.bytes;
         onProgress?.({ done, total });
       } catch {
