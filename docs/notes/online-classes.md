@@ -80,6 +80,22 @@ The whole flow (admin, organisation, teacher, a learner joining and finishing a 
 - **The organisation page** says what to do first: "Add a class for each group. Each class gets a code for its learners and a link for its teacher."
 - The teacher's code note says each learner joins on **their own** Home.
 
+## The monthly impact snapshot (20 November 2026)
+
+A printable one-page summary of a month, **counts only**, for reports to funders and partners. On the organisation page (`/program`, its own classes; shown once it has a class) and the admin dashboard (`/admin`: every organisation together, or one), under "Impact snapshot": choose the month (November 2026 to this month) and, on the admin page, the organisation, then **Show the snapshot**, then **Print**. One portrait page on A4 or Letter (`e2e/online-classes.spec.ts` checks), black on white, nothing under 10.5pt.
+
+What it counts, all in UTC like the rest (`snapshot` in `api/_lib/classesDb.ts`, `GET program.snapshot` and `GET admin.snapshot` in `api/_lib/classes.ts`; `ImpactSnapshot.tsx`):
+
+| Number | How it is worked out |
+| --- | --- |
+| Active learners | Learners with at least one active day (a day of lesson work, `cv_active_days`) in the month |
+| Lessons finished | Lessons whose `completed_at` falls in the month |
+| Courses used | Per course: learners who started, worked on (last change) or finished one of its lessons in the month, and lessons finished |
+| Languages used | The month's active learners by the language they use **now** (only the latest is kept) |
+| Came back the next week | Of the month's active learners, by their first active day in the month: how many had an active day 7 to 13 days later. Learners whose next week isn't over are left out and counted apart ("Not counted yet: …") |
+
+Never names, nicknames, writing, answers, a learner's id or anything about one learner: the server sends only the counts. It counts only learners still sharing: a learner who stops sharing or is taken out of a class is deleted, with their numbers, so a month's snapshot can go down later. "Worked on" uses a lesson's last change, so a lesson started in October and finished in December counts in neither month's "Courses used" for November. The Privacy page says the snapshot exists, in its online-classes entry (`privacy.services.classes.gets`). The month is checked on the server (`snapshotMonth`): November 2026 to the current month, nothing else.
+
 ## Not done yet
 
 - Native-speaker review of the Indonesian, Malay and Vietnamese words (AI-drafted, like the rest of the interface).

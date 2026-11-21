@@ -1893,7 +1893,7 @@
       "classes": {
         "name": "Lớp học trực tuyến của Thinkerwell (chỉ khi tổ chức của bạn sử dụng)",
         "purpose": "Giúp giáo viên và tổ chức của họ thấy từng người học trong lớp đã học đến đâu. Tính năng này tắt trừ khi tổ chức đã thỏa thuận với Thinkerwell, và người học chỉ tham gia bằng cách nhập mã lớp rồi chạm Tham gia lớp này.",
-        "gets": "Với mỗi người học tham gia: tên họ dùng trên thiết bị (có thể là biệt danh), ngôn ngữ và mức đọc, những bài học và bước học đã hoàn thành và khi nào, số lần làm mỗi bài kiểm tra phần, và những ngày họ học. Không bao giờ có bài viết, câu trả lời, điểm hay bản ghi âm của họ. Trang riêng của Thinkerwell chỉ hiện các con số này, không có tên. Ngừng chia sẻ, hoặc giáo viên đưa người học ra khỏi lớp, sẽ xóa các dữ liệu này.",
+        "gets": "Với mỗi người học tham gia: tên họ dùng trên thiết bị (có thể là biệt danh), ngôn ngữ và mức đọc, những bài học và bước học đã hoàn thành và khi nào, số lần làm mỗi bài kiểm tra phần, và những ngày họ học. Không bao giờ có bài viết, câu trả lời, điểm hay bản ghi âm của họ. Trang riêng của Thinkerwell chỉ hiện các con số này, không có tên, và bản tóm tắt tác động hằng tháng mà Thinkerwell và tổ chức có thể in cũng vậy: chỉ có số liệu, như bao nhiêu người học tích cực và những khóa học, ngôn ngữ nào đã được dùng. Ngừng chia sẻ, hoặc giáo viên đưa người học ra khỏi lớp, sẽ xóa các dữ liệu này.",
         "where": "Lưu trong một cơ sở dữ liệu Neon ở Singapore, mà Thinkerwell dùng qua dịch vụ lưu trữ trang web của mình.",
         "link": "Chính sách quyền riêng tư của Neon"
       },
@@ -2168,6 +2168,36 @@
       "orgLinkHelp": "Gửi đường link này cho người phụ trách tổ chức. Link chỉ hiện lúc này. Nếu bị mất, hãy tạo link mới.",
       "backToDashboard": "Quay lại bảng điều khiển",
       "anonymousNote": "Người học được đánh số theo thứ tự tham gia. Tên của họ không bao giờ được gửi tới đây."
+    },
+    "snapshot": {
+      "title": "Tóm tắt tác động",
+      "intro": "Bản tóm tắt một trang cho một tháng, để in hoặc chia sẻ: chỉ có số liệu, không bao giờ có tên.",
+      "monthLabel": "Tháng",
+      "orgLabel": "Tổ chức",
+      "allOrgs": "Tất cả tổ chức",
+      "show": "Xem bản tóm tắt",
+      "print": "In",
+      "eyebrow": "Thinkerwell · Tóm tắt tác động",
+      "sheetTitle": "{name}, {month}",
+      "active": "Người học tích cực",
+      "activeHelp": "Người học đã học một bài vào ít nhất một ngày trong tháng.",
+      "finished": "Bài học đã hoàn thành",
+      "finishedHelp": "Số bài học đã hoàn thành trong tháng.",
+      "cameBack": "Quay lại vào tuần sau",
+      "cameBackValue": "{returned} trên {counted}",
+      "cameBackHelp": "Trong số người học tích cực của tháng, bao nhiêu người học lại từ 7 đến 13 ngày sau ngày đầu tiên của họ trong tháng đó.",
+      "tooRecent": {
+        "other": "Chưa tính: {count} người học mà tuần sau của họ chưa kết thúc."
+      },
+      "coursesTitle": "Các khóa học đã dùng",
+      "coursesHelp": "Người học đã bắt đầu, học hoặc hoàn thành một bài của từng khóa học trong tháng.",
+      "learners": "Người học",
+      "languagesTitle": "Các ngôn ngữ đã dùng",
+      "languagesHelp": "Người học tích cực của tháng, theo ngôn ngữ họ đang dùng.",
+      "language": "Ngôn ngữ",
+      "none": "Không có gì trong tháng này.",
+      "privacy": "Chỉ có số liệu: không có tên, biệt danh, bài viết hay câu trả lời. Người học đã ngừng chia sẻ, hoặc bị đưa ra khỏi lớp, không được tính: số liệu của họ đã bị xóa.",
+      "made": "Tạo ngày {date}."
     }
   }
 }

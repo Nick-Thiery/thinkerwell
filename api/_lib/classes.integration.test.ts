@@ -64,5 +64,17 @@ describe.skipIf(!URL_)('/api/classes through postgres.js', () => {
     expect(s.totals.learners).toBeGreaterThanOrEqual(1);
     expect(s.totals.active7).toBeGreaterThanOrEqual(1);
     expect(s.weeks).toHaveLength(12);
+
+    // The monthly impact snapshot: a date and an organisation id that may be null, through the real driver.
+    const month = new Date().toISOString().slice(0, 7);
+    const all = await call('GET', `?action=admin.snapshot&month=${month}`, undefined, ADMIN);
+    expect(all.status).toBe(200);
+    expect(((await all.json()) as { activeLearners: number }).activeLearners).toBeGreaterThanOrEqual(1);
+    const own = (await (await call('GET', `?action=program.snapshot&month=${month}`, undefined, org.orgKey)).json()) as {
+      orgName: string;
+      activeLearners: number;
+      languages: Array<{ language: string; learners: number }>;
+    };
+    expect(own).toMatchObject({ orgName: 'Org', activeLearners: 1, languages: [{ language: 'id', learners: 1 }] });
   }, 30000);
 });

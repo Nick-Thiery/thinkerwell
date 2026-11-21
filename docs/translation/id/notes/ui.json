@@ -6668,6 +6668,114 @@
     "source": "Lets a teacher and their organisation see how far each learner in their class has got. It is off unless an organisation has agreed it with Thinkerwell, and a learner joins only by entering their class code and tapping Join this class.",
     "flag": "Only the button's name changed (20 November 2026): it must match classJoin.join. Check."
   },
+  "classViews.snapshot.title": {
+    "source": "Impact snapshot",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.intro": {
+    "source": "A one-page summary of a month, to print or share: counts only, never names.",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.monthLabel": {
+    "source": "Month",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.orgLabel": {
+    "source": "Organisation",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.allOrgs": {
+    "source": "All organisations",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.show": {
+    "source": "Show the snapshot",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.print": {
+    "source": "Print",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.eyebrow": {
+    "source": "Thinkerwell · Impact snapshot",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.sheetTitle": {
+    "source": "{name}, {month}",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.active": {
+    "source": "Active learners",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.activeHelp": {
+    "source": "Learners who worked on a lesson on at least one day of the month.",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.finished": {
+    "source": "Lessons finished",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.finishedHelp": {
+    "source": "Lessons finished during the month.",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.cameBack": {
+    "source": "Came back the next week",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.cameBackValue": {
+    "source": "{returned} of {counted}",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.cameBackHelp": {
+    "source": "Of the month's active learners, how many worked again 7 to 13 days after their first day that month.",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.coursesTitle": {
+    "source": "Courses used",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.coursesHelp": {
+    "source": "Learners who started, worked on or finished a lesson of each course during the month.",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.learners": {
+    "source": "Learners",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.languagesTitle": {
+    "source": "Languages used",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.languagesHelp": {
+    "source": "The month's active learners, by the language they use now.",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.language": {
+    "source": "Language",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.none": {
+    "source": "Nothing this month.",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.privacy": {
+    "source": "Counts only: no names, nicknames, writing or answers. A learner who stopped sharing, or was taken out of a class, isn't counted: their numbers were deleted.",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.made": {
+    "source": "Made on {date}.",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "classViews.snapshot.tooRecent": {
+    "source": "Not counted yet: {count} learners whose next week isn't over.",
+    "flag": "Impact snapshot, 20 November 2026. Drafted by AI, not back-translated: check."
+  },
+  "privacy.services.classes.gets": {
+    "source": "For each learner who joins: the name they use on the device (it can be a nickname), their language and reading level, which lessons and steps they finished and when, how many times they tried each section check, and the days they worked. Never their writing, answers, scores or recordings. Thinkerwell’s own view shows these numbers without names, and so does the monthly impact snapshot that Thinkerwell and the organisation can print: counts only, such as how many learners were active and which courses and languages were used. Stopping sharing, or a teacher taking a learner out of the class, deletes it.",
+    "flag": "Adds the monthly impact snapshot (20 November 2026). Drafted by AI, not back-translated: check."
+  },
   "contact.topicPilot": {
     "source": "Pilot feedback",
     "flag": "New on 20 November 2026: the contact form's Pilot feedback topic and its links. Drafted by AI with no back-translation: check."

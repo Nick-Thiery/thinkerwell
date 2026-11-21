@@ -1893,7 +1893,7 @@
       "classes": {
         "name": "Kelas online Thinkerwell (hanya jika organisasi Anda menggunakannya)",
         "purpose": "Memungkinkan guru dan organisasinya melihat sejauh mana setiap pelajar di kelasnya sudah belajar. Fitur ini mati kecuali organisasi sudah menyepakatinya dengan Thinkerwell, dan pelajar hanya bergabung dengan memasukkan kode kelasnya lalu mengetuk Gabung ke kelas ini.",
-        "gets": "Untuk setiap pelajar yang bergabung: nama yang mereka pakai di perangkat (boleh nama panggilan), bahasa dan tingkat bacaan mereka, pelajaran dan langkah yang sudah mereka selesaikan dan kapan, berapa kali mereka mencoba setiap cek bagian, dan hari-hari mereka belajar. Tidak pernah tulisan, jawaban, nilai, atau rekaman mereka. Tampilan Thinkerwell sendiri menunjukkan angka-angka ini tanpa nama. Berhenti berbagi, atau guru mengeluarkan pelajar dari kelas, akan menghapusnya.",
+        "gets": "Untuk setiap pelajar yang bergabung: nama yang mereka pakai di perangkat (boleh nama panggilan), bahasa dan tingkat bacaan mereka, pelajaran dan langkah yang sudah mereka selesaikan dan kapan, berapa kali mereka mencoba setiap cek bagian, dan hari-hari mereka belajar. Tidak pernah tulisan, jawaban, nilai, atau rekaman mereka. Tampilan Thinkerwell sendiri menunjukkan angka-angka ini tanpa nama, begitu juga ringkasan dampak bulanan yang bisa dicetak oleh Thinkerwell dan organisasi: hanya angka, seperti berapa pelajar yang aktif serta kursus dan bahasa apa yang dipakai. Berhenti berbagi, atau guru mengeluarkan pelajar dari kelas, akan menghapusnya.",
         "where": "Disimpan di basis data Neon di Singapura, yang digunakan Thinkerwell melalui hosting situs webnya.",
         "link": "Kebijakan privasi Neon"
       },
@@ -2168,6 +2168,36 @@
       "orgLinkHelp": "Kirim tautan ini kepada pemimpin organisasi. Tautan ini hanya ditampilkan sekarang. Kalau hilang, buat yang baru.",
       "backToDashboard": "Kembali ke dasbor",
       "anonymousNote": "Pelajar diberi nomor sesuai urutan bergabung. Nama mereka tidak pernah dikirim ke sini."
+    },
+    "snapshot": {
+      "title": "Ringkasan dampak",
+      "intro": "Ringkasan satu halaman untuk satu bulan, untuk dicetak atau dibagikan: hanya angka, tanpa nama.",
+      "monthLabel": "Bulan",
+      "orgLabel": "Organisasi",
+      "allOrgs": "Semua organisasi",
+      "show": "Tampilkan ringkasan",
+      "print": "Cetak",
+      "eyebrow": "Thinkerwell · Ringkasan dampak",
+      "sheetTitle": "{name}, {month}",
+      "active": "Pelajar aktif",
+      "activeHelp": "Pelajar yang mengerjakan pelajaran setidaknya pada satu hari dalam bulan ini.",
+      "finished": "Pelajaran selesai",
+      "finishedHelp": "Pelajaran yang diselesaikan selama bulan ini.",
+      "cameBack": "Kembali minggu berikutnya",
+      "cameBackValue": "{returned} dari {counted}",
+      "cameBackHelp": "Dari pelajar aktif bulan ini, berapa yang belajar lagi 7 sampai 13 hari setelah hari pertama mereka di bulan itu.",
+      "tooRecent": {
+        "other": "Belum dihitung: {count} pelajar yang minggu berikutnya belum selesai."
+      },
+      "coursesTitle": "Kursus yang dipakai",
+      "coursesHelp": "Pelajar yang memulai, mengerjakan, atau menyelesaikan pelajaran dari setiap kursus selama bulan ini.",
+      "learners": "Pelajar",
+      "languagesTitle": "Bahasa yang dipakai",
+      "languagesHelp": "Pelajar aktif bulan ini, menurut bahasa yang mereka pakai sekarang.",
+      "language": "Bahasa",
+      "none": "Belum ada bulan ini.",
+      "privacy": "Hanya angka: tanpa nama, nama panggilan, tulisan, atau jawaban. Pelajar yang berhenti berbagi, atau dikeluarkan dari kelas, tidak dihitung: angkanya sudah dihapus.",
+      "made": "Dibuat pada {date}."
     }
   }
 }
