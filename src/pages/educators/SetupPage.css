@@ -238,7 +238,7 @@
   }
 
   .tw-print-sheet.tw-setup {
-    gap: 4mm;
+    gap: 3mm;
     font-size: 10pt;
     line-height: 1.35;
   }
@@ -267,9 +267,14 @@
     margin-inline-end: 6mm;
   }
 
-  /* 3mm (3.5mm before the optional Listen voice step) keeps six steps on one A4 page, in Indonesian too. */
+  /*
+   * The sheet's 3mm, the steps' 2.5mm, the device columns' 3mm and the box's
+   * 2mm keep six steps and the box on one A4 page in every ready language:
+   * Vietnamese was about 12mm over before November 2026, and Indonesian and
+   * Malay had about 1mm to spare (docs/notes/pilot-day-tools.md).
+   */
   .tw-setup-steps {
-    gap: 3mm;
+    gap: 2.5mm;
   }
 
   .tw-setup-step,
@@ -282,7 +287,7 @@
   }
 
   .tw-setup-later {
-    padding: 2.5mm 3.5mm;
+    padding: 2mm 3mm;
     border: 0.4mm solid #000;
     border-inline-start-width: 1.5mm;
     border-radius: 2mm;
@@ -328,7 +333,7 @@
   .tw-setup-platforms-paper {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 4mm;
+    gap: 3mm;
     margin-block-start: 1mm;
   }
 
