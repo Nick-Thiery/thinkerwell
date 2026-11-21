@@ -899,7 +899,7 @@
     "back": "Change language"
   },
   "pages.home.newLearner.languageHelper": {
-    "source": "Buttons and instructions show in this language. In Indonesian, Malay and Vietnamese, the lessons do too. In other languages they stay in English, so you can practise it.",
+    "source": "Buttons and instructions show in this language. In Indonesian, Malay, Vietnamese and Thai, the lessons do too. In other languages they stay in English, so you can practise it.",
     "back": "Buttons and instructions will show in this language. In Thai, Indonesian, Malay and Vietnamese, the lessons show in that language too. In other languages the lessons stay in English so you can practise English.",
     "flag": true,
     "note": "Reviewer (second pass): added ไทย / ภาษาไทย to the list of languages whose lessons are translated (and, in whatBody, to the languages the site runs in), because Thai is ready with content: true and the English, which lists only Indonesian, Malay and Vietnamese, would be untrue on a Thai screen. For the team: en.json and the other languages should add Thai here too."
@@ -1015,7 +1015,7 @@
     "back": "Your language"
   },
   "pages.home.dashboard.languageHelp": {
-    "source": "Buttons and instructions show in this language. In Indonesian, Malay and Vietnamese, the lessons do too. In other languages they stay in English, so you can practise it.",
+    "source": "Buttons and instructions show in this language. In Indonesian, Malay, Vietnamese and Thai, the lessons do too. In other languages they stay in English, so you can practise it.",
     "back": "Buttons and instructions will show in this language. In Thai, Indonesian, Malay and Vietnamese, the lessons show in that language too. In other languages the lessons stay in English so you can practise English.",
     "flag": true,
     "note": "Reviewer (second pass): added ไทย / ภาษาไทย to the list of languages whose lessons are translated (and, in whatBody, to the languages the site runs in), because Thai is ready with content: true and the English, which lists only Indonesian, Malay and Vietnamese, would be untrue on a Thai screen. For the team: en.json and the other languages should add Thai here too."
@@ -1658,7 +1658,7 @@
     "back": "What Thinkerwell offers"
   },
   "pages.organisations.whatBody": {
-    "source": "Four courses for learners aged about 10 to 17. Exploring Our World: {ourWorld} lessons about history, geography, culture and civic life. Digital World: {digitalWorld} lessons about AI and the digital world. Southeast Asia Through Time: {southeastAsia} lessons about the region's past, from real objects, maps and letters. Art, Architecture and Society: {art} lessons about works and buildings from around the world. Most lessons have five steps: read, write, speak, watch and reflect (four where a lesson has no video, as every lesson does in Bahasa Indonesia, Bahasa Melayu and Tiếng Việt). It runs in a web browser on shared laptops and tablets, in English, Bahasa Indonesia, Bahasa Melayu or Tiếng Việt. Lessons work offline once a course is saved on the device; the optional videos need the internet.",
+    "source": "Four courses for learners aged about 10 to 17. Exploring Our World: {ourWorld} lessons about history, geography, culture and civic life. Digital World: {digitalWorld} lessons about AI and the digital world. Southeast Asia Through Time: {southeastAsia} lessons about the region's past, from real objects, maps and letters. Art, Architecture and Society: {art} lessons about works and buildings from around the world. Most lessons have five steps: read, write, speak, watch and reflect (four where a lesson has no video, as every lesson does in Bahasa Indonesia, Bahasa Melayu, Tiếng Việt and ภาษาไทย). It runs in a web browser on shared laptops and tablets, in English, Bahasa Indonesia, Bahasa Melayu, Tiếng Việt or ภาษาไทย. Lessons work offline once a course is saved on the device; the optional videos need the internet.",
     "back": "4 courses for learners aged about 10 to 17. Exploring our world: {ourWorld} lessons about history, geography, culture and civic life. Digital world: {digitalWorld} lessons about AI and the digital world. Southeast Asia through time: {southeastAsia} lessons about the region's past, through real objects, maps and letters. Art, architecture and society: {art} lessons about works and buildings from around the world. Most lessons have 5 steps: read, write, speak, watch and reflect (4 steps in lessons with no video, which is the case for every lesson in Thai, Indonesian, Malay and Vietnamese). It is used in a web browser on shared laptops and tablets, in English, Thai, Indonesian, Malay or Vietnamese. Lessons work even without internet once the course is saved on the device; the optional videos need the internet.",
     "flag": true,
     "note": "Reviewer (second pass): added ไทย / ภาษาไทย to the list of languages whose lessons are translated (and, in whatBody, to the languages the site runs in), because Thai is ready with content: true and the English, which lists only Indonesian, Malay and Vietnamese, would be untrue on a Thai screen. For the team: en.json and the other languages should add Thai here too."
@@ -1716,7 +1716,7 @@
     "back": "No accounts, no email and no ads. Learners' writing stays on the device used, and recordings never leave that device."
   },
   "pages.organisations.privacyNow": {
-    "source": "Learners' work and progress stay on the device they use, and are not sent to Thinkerwell. Online speech-to-text is off unless your staff turn it on; when it is on, what learners say goes to the browser maker's service. We will tell you before anything else changes.",
+    "source": "Learners' work stays on the device they use. Their progress is sent to Thinkerwell only if your organisation agrees to use online classes and a learner joins one with their teacher's class code: then the teacher sees the name on the device and which lessons and steps the learner finishes, never their writing, answers, scores or recordings. Online speech-to-text is off unless your staff turn it on; when it is on, what learners say goes to the browser maker's service. We will tell you before anything else changes.",
     "back": "Learners' work and progress stay on the device used and are not sent to Thinkerwell. Online speech-to-text is off unless your staff turn it on themselves. Once it is on, what learners say is sent to the browser maker's service. We will tell you first if anything else changes."
   },
   "pages.organisations.privacy4": {
@@ -1946,7 +1946,7 @@
     "back": "Only 30 minutes? Use the 30-minute column: cut each step down a little."
   },
   "pages.teacherGuide.planOtherLanguages": {
-    "source": "In Bahasa Indonesia, Bahasa Melayu and Tiếng Việt, a lesson has no Watch step unless it has a video in that language. Open this guide in that language to see its plan.",
+    "source": "In Bahasa Indonesia, Bahasa Melayu, Tiếng Việt and ภาษาไทย, a lesson has no Watch step unless it has a video in that language. Open this guide in that language to see its plan.",
     "back": "In Thai, Indonesian, Malay and Vietnamese, lessons have no Watch step unless there is a video in that language. Open this guide in that language to see the session plan.",
     "flag": true,
     "note": "Language names Bahasa Indonesia, Bahasa Melayu, Tiếng Việt written as Thai names ภาษาอินโดนีเซีย ภาษามลายู ภาษาเวียดนาม (also in organisations.whatBody, credits.voice*, credits.translation*, settings.lessonAudio.for*). Check ภาษามลายู is right for Malaysian Malay (not ภาษามาเลย์). Reviewer (second pass): added ไทย / ภาษาไทย to the list of languages whose lessons are translated (and, in whatBody, to the languages the site runs in), because Thai is ready with content: true and the English, which lists only Indonesian, Malay and Vietnamese, would be untrue on a Thai screen. For the team: en.json and the other languages should add Thai here too."
@@ -2347,8 +2347,8 @@
     "back": "Download the course for offline use"
   },
   "pages.setup.offline.why": {
-    "source": "Then every lesson works without the internet. Only the videos need it.",
-    "back": "Then every lesson works even without internet. Only the videos need the internet."
+    "source": "Then Exploring Our World works without the internet. Only the videos need it.",
+    "back": "Then the Exploring Our World course works even without the internet. Only the videos need the internet."
   },
   "pages.setup.offline.how": {
     "source": "Open Thinkerwell with the internet on, and keep it open until the lessons are saved. It does this by itself.",
@@ -2705,13 +2705,13 @@
     "back": "Language for {name}"
   },
   "pages.settings.language.help": {
-    "source": "Everything shows in this language at once: buttons, instructions and, in Indonesian, Malay and Vietnamese, the lessons too. It is kept for this device, for the first page and anyone who hasn't chosen who's learning.",
+    "source": "Everything shows in this language at once: buttons, instructions and, in Indonesian, Malay, Vietnamese and Thai, the lessons too. It is kept for this device, for the first page and anyone who hasn't chosen who's learning.",
     "back": "Everything shows in this language at once: buttons, instructions and, in Thai, Indonesian, Malay and Vietnamese, the lessons too. This language is kept for this device, used for the home page and for everyone who hasn't chosen who is learning.",
     "flag": true,
     "note": "Reviewer (second pass): added ไทย / ภาษาไทย to the list of languages whose lessons are translated (and, in whatBody, to the languages the site runs in), because Thai is ready with content: true and the English, which lists only Indonesian, Malay and Vietnamese, would be untrue on a Thai screen. For the team: en.json and the other languages should add Thai here too."
   },
   "pages.settings.language.helpLearner": {
-    "source": "Everything shows in this language at once: buttons, instructions and, in Indonesian, Malay and Vietnamese, the lessons too. It is kept for {name}, and changes back when someone else is chosen.",
+    "source": "Everything shows in this language at once: buttons, instructions and, in Indonesian, Malay, Vietnamese and Thai, the lessons too. It is kept for {name}, and changes back when someone else is chosen.",
     "back": "Everything shows in this language at once: buttons, instructions and, in Thai, Indonesian, Malay and Vietnamese, the lessons too. This language is kept for {name} and changes back when someone else is chosen.",
     "flag": true,
     "note": "Reviewer (second pass): added ไทย / ภาษาไทย to the list of languages whose lessons are translated (and, in whatBody, to the languages the site runs in), because Thai is ready with content: true and the English, which lists only Indonesian, Malay and Vietnamese, would be untrue on a Thai screen. For the team: en.json and the other languages should add Thai here too."
@@ -2887,7 +2887,7 @@
     "back": "iPad or iPhone"
   },
   "pages.settings.listenVoice.better.apple.steps": {
-    "source": "Open Settings, then Accessibility, then Spoken Content (called Read & Speak on newer versions), then Voices. Choose English, Indonesian, Malay or Vietnamese, then a voice marked Enhanced or Premium, and download it.",
+    "source": "Open Settings, then Accessibility, then Spoken Content (called Read & Speak on newer versions), then Voices. Choose English, Indonesian, Malay, Vietnamese or Thai, then a voice marked Enhanced or Premium, and download it.",
     "back": "Open \"Settings\", then go to \"Accessibility\", then \"Spoken Content\" (called \"Read & Speak\" in newer versions), then \"Voices\". Choose Thai, English, Indonesian, Malay or Vietnamese, then choose a voice marked \"Enhanced\" or \"Premium\", and download it.",
     "flag": true,
     "note": "iPad menu names guessed (การตั้งค่า, การช่วยการเข้าถึง, เนื้อหาที่พูด, อ่านและพูด, เสียง, ปรับปรุงแล้ว, พรีเมียม). Check on an iPad set to Thai. Reviewer (second pass): added ภาษาไทย to the languages to install a voice for: Thai lessons rely on a device voice where there is no recording. For the team: add Thai to en.json too."
@@ -2901,7 +2901,7 @@
     "back": "Android tablet or phone"
   },
   "pages.settings.listenVoice.better.android.steps": {
-    "source": "Open Settings and search for text-to-speech. Next to Preferred engine, tap the settings button, then Install voice data. Choose English, Indonesian, Malay or Vietnamese, then download a voice.",
+    "source": "Open Settings and search for text-to-speech. Next to Preferred engine, tap the settings button, then Install voice data. Choose English, Indonesian, Malay, Vietnamese or Thai, then download a voice.",
     "back": "Open \"Settings\" and search for \"Text-to-speech output\". Next to \"Preferred engine\", tap the settings button, then \"Install voice data\". Choose Thai, English, Indonesian, Malay or Vietnamese, then download a voice.",
     "flag": true,
     "note": "Android menu names guessed (การอ่านออกเสียงข้อความ, เครื่องมือที่ต้องการ, ติดตั้งข้อมูลเสียง). Check on a device set to Thai. Reviewer (second pass): added ภาษาไทย to the languages to install a voice for: Thai lessons rely on a device voice where there is no recording. For the team: add Thai to en.json too."
@@ -2911,7 +2911,7 @@
     "back": "Windows laptop"
   },
   "pages.settings.listenVoice.better.windows.steps": {
-    "source": "Open Settings, then Time & language, then Speech. Next to Manage voices, choose Add voices, then English (United Kingdom), Indonesian, Malay or Vietnamese. You may need an administrator account. Then close the browser and open it again.",
+    "source": "Open Settings, then Time & language, then Speech. Next to Manage voices, choose Add voices, then English (United Kingdom), Indonesian, Malay, Vietnamese or Thai. You may need an administrator account. Then close the browser and open it again.",
     "back": "Open \"Settings\", then go to \"Time & language\", then \"Speech\". Next to \"Manage voices\", choose \"Add voices\", then choose Thai, \"English (United Kingdom)\", Indonesian, Malay or Vietnamese. You may need an administrator account. Then close the browser and open it again.",
     "flag": true,
     "note": "Windows menu names guessed (เวลาและภาษา, คำพูด, จัดการเสียง, เพิ่มเสียง, อังกฤษ (สหราชอาณาจักร)). Check on Windows set to Thai. Reviewer (second pass): added ภาษาไทย to the languages to install a voice for: Thai lessons rely on a device voice where there is no recording. For the team: add Thai to en.json too."
@@ -2921,7 +2921,7 @@
     "back": "Chromebook"
   },
   "pages.settings.listenVoice.better.chromebook.steps": {
-    "source": "Open Settings, then Accessibility, then Text-to-Speech, then Text-to-Speech voice settings. Install the voices for English, Indonesian, Malay or Vietnamese.",
+    "source": "Open Settings, then Accessibility, then Text-to-Speech, then Text-to-Speech voice settings. Install the voices for English, Indonesian, Malay, Vietnamese or Thai.",
     "back": "Open \"Settings\", then go to \"Accessibility\", then \"Text-to-speech\", then \"Text-to-speech voice settings\". Install voices for Thai, English, Indonesian, Malay or Vietnamese.",
     "flag": true,
     "note": "ChromeOS menu names guessed (การช่วยเหลือพิเศษ, การอ่านออกเสียงข้อความ, การตั้งค่าเสียงอ่านออกเสียงข้อความ). Check on a Chromebook set to Thai. Reviewer (second pass): added ภาษาไทย to the languages to install a voice for: Thai lessons rely on a device voice where there is no recording. For the team: add Thai to en.json too."
@@ -6127,11 +6127,11 @@
     "back": "Thinkerwell online classes (only when your organisation uses them)"
   },
   "privacy.services.classes.purpose": {
-    "source": "Lets a teacher and their organisation see how far each learner in their class has got. It is off unless an organisation has agreed it with Thinkerwell, and a learner joins only by entering their class code and tapping Join class.",
+    "source": "Lets a teacher and their organisation see how far each learner in their class has got. It is off unless an organisation has agreed it with Thinkerwell, and a learner joins only by entering their class code and tapping Join this class.",
     "back": "Lets teachers and their organisation see how far each learner in the class has got. This feature is off unless the organisation has agreed it with Thinkerwell, and a learner can join only by entering the class code and tapping \"Join class\"."
   },
   "privacy.services.classes.gets": {
-    "source": "For each learner who joins: the name they use on the device (it can be a nickname), their language and reading level, which lessons and steps they finished and when, how many times they tried each section check, and the days they worked. Never their writing, answers, scores or recordings. Thinkerwell’s own view shows these numbers without names. Stopping sharing, or a teacher taking a learner out of the class, deletes it.",
+    "source": "For each learner who joins: the name they use on the device (it can be a nickname), their language and reading level, which lessons and steps they finished and when, how many times they tried each section check, and the days they worked. Never their writing, answers, scores or recordings. Thinkerwell’s own view shows these numbers without names, and so does the monthly impact snapshot that Thinkerwell and the organisation can print: counts only, such as how many learners were active and which courses and languages were used. Stopping sharing, or a teacher taking a learner out of the class, deletes it.",
     "back": "For each learner who joins: the name used on the device (can be a nickname), language and reading level, lessons and steps finished and when, how many times each section check was tried, and the days they came to learn. Not including writing, answers, scores or recordings. Thinkerwell's own page shows these numbers without names. Stopping sharing, or a teacher removing a learner from the class, deletes this information."
   },
   "privacy.services.classes.where": {
@@ -6358,24 +6358,24 @@
     "back": "Finding…"
   },
   "classJoin.whatTeacherSees": {
-    "source": "If you join, your teacher sees your name, {name}, and which lessons and steps you finish.",
-    "back": "If you join, your teacher will see your name ({name}) and which lessons and steps you finished"
+    "source": "If you join, your teacher sees your name, {name}, which lessons and steps you finish and when, how many times you try a section check, and your language and reading level.",
+    "back": "If you join, your teacher sees your name ({name}), the lessons and steps you finish and when, how many times you try a section check, and your language and reading level."
   },
   "classJoin.whatTheyDontSee": {
-    "source": "They don't see what you write, your answers or your recordings. You can stop sharing at any time.",
-    "back": "Your teacher won't see what you write, your answers or your recordings. You can stop sharing any time."
+    "source": "They don't see what you write, your answers, your scores or your recordings. You can stop sharing at any time.",
+    "back": "Your teacher won't see what you write, your answers, scores or the recordings you made. You can stop sharing at any time."
   },
   "classJoin.join": {
-    "source": "Join class",
-    "back": "Join class"
+    "source": "Join this class",
+    "back": "Join this class"
   },
   "classJoin.cancel": {
     "source": "Not now",
     "back": "Later"
   },
   "classJoin.sharing": {
-    "source": "Your teacher can see your name and which lessons and steps you finish. Not your writing or recordings.",
-    "back": "Your teacher sees your name and which lessons and steps you finished, but not your writing or recordings"
+    "source": "Your teacher can see your name, which lessons and steps you finish and when, your section check tries, and your language and reading level. Not your writing, answers, scores or recordings.",
+    "back": "Your teacher sees your name, the lessons and steps you finish and when, how many times you tried a section check, and your language and reading level, but not your writing, answers, scores or recordings."
   },
   "classJoin.stopOpen": {
     "source": "Stop sharing",
@@ -6450,8 +6450,8 @@
     "back": "Copied"
   },
   "classViews.common.whatYouSee": {
-    "source": "You see each learner's name, which lessons and steps they finished, and when. Not their writing, answers, scores or recordings.",
-    "back": "You see each learner's name, which lessons and steps they finished, and when, but not their writing, answers, scores or recordings"
+    "source": "You see each learner's name, which lessons and steps they finished and when, how many times they tried a section check, and their language and reading level. Not their writing, answers, scores or recordings.",
+    "back": "You see each learner's name, the lessons and steps they finished and when, how many times they tried a section check, and their language and reading level, but not their writing, answers, scores or recordings."
   },
   "classViews.common.keepPrivate": {
     "source": "Keep this page's link private: anyone with it can see this page.",
@@ -6506,8 +6506,8 @@
     "back": "Class code"
   },
   "classViews.class.codeHelp": {
-    "source": "Learners join on their Home: \"Your class\", then \"Join a class\".",
-    "back": "Learners join on their own home page: \"Your class\", then \"Join class\""
+    "source": "Each learner joins on their own Home: \"Your class\", then \"Join a class\".",
+    "back": "Each learner joins on their own Home page: \"Your class\", then \"Join a class\"."
   },
   "classViews.class.closedNote": {
     "source": "This class is closed. No one new can join, and its learners have stopped sharing.",
@@ -6956,5 +6956,168 @@
   "classViews.admin.anonymousNote": {
     "source": "Learners are numbered in the order they joined. Their names are never sent here.",
     "back": "Learners have numbers in the order they joined. Their names are never sent here."
+  },
+  "pages.educators.pilotFeedbackBody": {
+    "source": "Running a pilot with Thinkerwell? Tell us what worked and what to change.",
+    "back": "Piloting with Thinkerwell? Tell us what worked and what should change."
+  },
+  "pages.educators.pilotFeedback": {
+    "source": "Send pilot feedback",
+    "back": "Send feedback about the pilot"
+  },
+  "pilotDay.contactBody": {
+    "source": "Something confusing or broken, or feedback on a pilot? Tell us at {email}, or at {address} (choose {topic}). Don't send learners' names or written answers.",
+    "back": "Anything confusing or not working, or feedback about the pilot? Tell us at {email} or at {address} (choose {topic}). Don't send learners' names or the answers they wrote."
+  },
+  "pilotDay.feedbackTopic": {
+    "source": "Pilot feedback",
+    "back": "Feedback about the pilot"
+  },
+  "contact.topicPilot": {
+    "source": "Pilot feedback",
+    "back": "Feedback about the pilot"
+  },
+  "contact.pilotNote": {
+    "source": "For an organisation running a pilot: tell us what worked, what was hard to use and what to change. Don't write learners' names, their work or anything else about a learner.",
+    "back": "For an organisation that is piloting: tell us what worked, what was hard to use and what should change. Don't write learners' names, their work or any other information about a learner."
+  },
+  "contact.pilotPlaceholder": {
+    "source": "For example: which courses and lessons you used, what worked, what to change.",
+    "back": "For example: which courses and lessons you used, what worked and what should change"
+  },
+  "classViews.common.notNow": {
+    "source": "Not now",
+    "back": "Later"
+  },
+  "classViews.common.makeNewLink": {
+    "source": "Make a new link",
+    "back": "Make a new link"
+  },
+  "classViews.program.intro": {
+    "source": "Add a class for each group. Each class gets a code for its learners and a link for its teacher.",
+    "back": "Add a class for each group. Each class gets a code for its learners and a link for its teacher."
+  },
+  "classViews.program.newLinkQuestion": {
+    "source": "Make a new teacher link? The link you sent before stops working.",
+    "back": "Make a new link for the teacher? The link you sent before will no longer work."
+  },
+  "classViews.program.closeQuestion": {
+    "source": "Close {name}? No one new can join, and its learners stop sharing: to share again, each would join again. What they shared stays, and you can open the class again.",
+    "back": "Close {name}? No one new can join, and the learners in the class stop sharing. To share again, each learner must join again. What was already shared stays, and you can open the class again."
+  },
+  "classViews.admin.newOrgLinkQuestion": {
+    "source": "Make a new link for {name}? The link you sent before stops working.",
+    "back": "Make a new link for {name}? The link you sent before will no longer work."
+  },
+  "classViews.admin.switchOffQuestion": {
+    "source": "Switch off {name}? Its links stop working, and its learners stop sharing: to share again, each would join again. What they shared stays, and you can switch it on again.",
+    "back": "Switch off {name}? This organisation's links stop working, and its learners stop sharing. To share again, each learner must join again. What was already shared stays, and you can switch it on again."
+  },
+  "classViews.snapshot.title": {
+    "source": "Impact snapshot",
+    "back": "Results summary"
+  },
+  "classViews.snapshot.intro": {
+    "source": "A one-page summary of a month, to print or share: counts only, never names.",
+    "back": "A one-page summary of one month, to print or share. Numbers only, no names."
+  },
+  "classViews.snapshot.monthLabel": {
+    "source": "Month",
+    "back": "Month"
+  },
+  "classViews.snapshot.orgLabel": {
+    "source": "Organisation",
+    "back": "Organisation"
+  },
+  "classViews.snapshot.allOrgs": {
+    "source": "All organisations",
+    "back": "All organisations"
+  },
+  "classViews.snapshot.show": {
+    "source": "Show the snapshot",
+    "back": "Show the summary"
+  },
+  "classViews.snapshot.print": {
+    "source": "Print",
+    "back": "Print"
+  },
+  "classViews.snapshot.eyebrow": {
+    "source": "Thinkerwell · Impact snapshot",
+    "back": "Thinkerwell · Results summary"
+  },
+  "classViews.snapshot.sheetTitle": {
+    "source": "{name}, {month}",
+    "back": "{name} · {month}"
+  },
+  "classViews.snapshot.active": {
+    "source": "Active learners",
+    "back": "Learners who came to learn"
+  },
+  "classViews.snapshot.activeHelp": {
+    "source": "Learners who worked on a lesson on at least one day of the month.",
+    "back": "Learners who studied a lesson on at least one day that month."
+  },
+  "classViews.snapshot.finished": {
+    "source": "Lessons finished",
+    "back": "Lessons finished"
+  },
+  "classViews.snapshot.finishedHelp": {
+    "source": "Lessons finished during the month.",
+    "back": "Lessons finished that month."
+  },
+  "classViews.snapshot.cameBack": {
+    "source": "Came back the next week",
+    "back": "Came back to learn the next week"
+  },
+  "classViews.snapshot.cameBackValue": {
+    "source": "{returned} of {counted}",
+    "back": "{returned} of {counted}"
+  },
+  "classViews.snapshot.cameBackHelp": {
+    "source": "Of the month's active learners, how many worked again 7 to 13 days after their first day that month.",
+    "back": "Of the learners who came that month, how many came back to learn 7 to 13 days after their first day of learning that month."
+  },
+  "classViews.snapshot.tooRecent": {
+    "source": {
+      "one": "Not counted yet: {count} learner whose next week isn't over.",
+      "other": "Not counted yet: {count} learners whose next week isn't over."
+    },
+    "back": "Not counted yet: {count} learners whose next week hasn't ended."
+  },
+  "classViews.snapshot.coursesTitle": {
+    "source": "Courses used",
+    "back": "Courses used"
+  },
+  "classViews.snapshot.coursesHelp": {
+    "source": "Learners who started, worked on or finished a lesson of each course during the month.",
+    "back": "Learners who started, studied or finished a lesson of each course that month."
+  },
+  "classViews.snapshot.learners": {
+    "source": "Learners",
+    "back": "Learners"
+  },
+  "classViews.snapshot.languagesTitle": {
+    "source": "Languages used",
+    "back": "Languages used"
+  },
+  "classViews.snapshot.languagesHelp": {
+    "source": "The month's active learners, by the language they use now.",
+    "back": "The learners who came that month, by the language they use now."
+  },
+  "classViews.snapshot.language": {
+    "source": "Language",
+    "back": "Language"
+  },
+  "classViews.snapshot.none": {
+    "source": "Nothing this month.",
+    "back": "No data this month."
+  },
+  "classViews.snapshot.privacy": {
+    "source": "Counts only: no names, nicknames, writing or answers. A learner who stopped sharing, or was taken out of a class, isn't counted: their numbers were deleted.",
+    "back": "Numbers only: no names, nicknames, writing or answers. A learner who stopped sharing, or was taken out of a class, isn't counted, because that learner's numbers have been deleted."
+  },
+  "classViews.snapshot.made": {
+    "source": "Made on {date}.",
+    "back": "Made on {date}"
   }
 }
