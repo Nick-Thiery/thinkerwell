@@ -7,7 +7,7 @@
 import courseJson from '../../../content/courses/digital-world/course.json';
 import { COURSE_SECTION_LOOKS } from '../kit/courseLooks';
 import { createCourseContent, type LessonContent, type SectionLook } from '../../content/courseContent';
-import type { DigitalWorldCourseFile, DigitalWorldLesson, DigitalWorldSectionId } from '../../content/schema';
+import type { AnyQuizFile, DigitalWorldCourseFile, DigitalWorldLesson, DigitalWorldSectionId } from '../../content/schema';
 import { translatedContents } from '../kit/translatedContent';
 
 export const COURSE_ID = 'digital-world';
@@ -19,6 +19,12 @@ export const COURSE_PRINT_PATH = `${COURSE_PATH}/print`;
 export const PREVIEW_PATH = `/preview/${COURSE_ID}`;
 
 const lessonModules = import.meta.glob<DigitalWorldLesson>('../../../content/courses/digital-world/lessons/*.json', {
+  eager: true,
+  import: 'default',
+});
+
+/** Its four section checks (content/courses/digital-world/quizzes/, November 2026). */
+const quizModules = import.meta.glob<AnyQuizFile>('../../../content/courses/digital-world/quizzes/*.json', {
   eager: true,
   import: 'default',
 });
@@ -43,8 +49,8 @@ const coursePath = (sectionId?: string) => (sectionId ? `${COURSE_PATH}#${sectio
 
 const options = {
   courseId: COURSE_ID,
-  // No section checks or certificates are drafted yet.
-  hasSectionChecks: false,
+  // Its section checks (no certificates).
+  hasSectionChecks: true,
   sectionLook: (sectionId: string) => SECTION_LOOKS[sectionId as DigitalWorldSectionId] ?? SECTION_LOOKS['thinking-machines'],
   // No Educators page for a preview course: a teacher guide goes back to the course map.
   coursePath,
@@ -53,6 +59,7 @@ const options = {
 export const digitalWorld = createCourseContent(courseJson as unknown as DigitalWorldCourseFile, Object.values(lessonModules), {
   ...options,
   pictureUrls,
+  quizzes: Object.values(quizModules),
 });
 
 /**
@@ -64,8 +71,9 @@ const byLanguage = translatedContents(
   {
     course: courseJson as unknown as DigitalWorldCourseFile,
     lessons: lessonModules,
+    quizzes: quizModules,
     pictureUrls,
-    translations: import.meta.glob('../../../content/courses/digital-world/*/{course.json,lessons/*.json}', { eager: true, import: 'default' }),
+    translations: import.meta.glob('../../../content/courses/digital-world/*/{course.json,lessons/*.json,quizzes/*.json}', { eager: true, import: 'default' }),
     translatedPictures: {},
   },
   ['id', 'ms', 'vi', 'th'],

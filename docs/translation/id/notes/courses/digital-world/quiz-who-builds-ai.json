@@ -1,0 +1,276 @@
+{
+  "title": {
+    "source": "Section check: Who builds AI, and at what cost",
+    "back": "Section check: Who makes AI, and at what price",
+    "flag": true,
+    "note": "The section's Indonesian title from course.json (“Siapa yang membuat AI, dan apa harganya”, literally “and what its price is”)."
+  },
+  "intro": {
+    "source": "8 questions about Lessons 5–8. Take your time. You can look back at the lessons and try again as often as you like.",
+    "back": "8 questions about Lessons 5–8. No need to hurry. You may look at the lessons again and try again as often as you like."
+  },
+  "questions.0.question": {
+    "source": "Like clothes, an AI tool has a supply chain. What is a supply chain?",
+    "back": "Like clothes, an AI tool has a supply chain. What is a supply chain?"
+  },
+  "questions.0.options.0.text": {
+    "source": "The people who help make it, step by step",
+    "back": "The people who help make it, step by step"
+  },
+  "questions.0.options.0.feedback": {
+    "source": "Yes. A supply chain is all the people and places that help to make a product. Some of them stay hidden.",
+    "back": "Yes. A supply chain is all the people and places that help make a product. Some of them stay hidden."
+  },
+  "questions.0.options.1.text": {
+    "source": "A list of rules that say how the tool must work",
+    "back": "A list of rules about how the tool must work"
+  },
+  "questions.0.options.1.feedback": {
+    "source": "Not quite. Rules are not a supply chain. A supply chain is the people who help make a product. Look back at Lesson 5.",
+    "back": "Not quite. Rules are not a supply chain. A supply chain is the people who help make a product. Look at Lesson 5 again."
+  },
+  "questions.0.options.2.text": {
+    "source": "A shop where people can buy the tool",
+    "back": "A shop where people can buy the tool"
+  },
+  "questions.0.options.2.feedback": {
+    "source": "Not quite. A shop sells a product. A supply chain is all the people who help to make it. Look back at Lesson 5.",
+    "back": "Not quite. A shop sells a product. A supply chain is all the people who help make it. Look at Lesson 5 again."
+  },
+  "questions.1.question": {
+    "source": "In 2023, Oxford researchers checked 15 online work platforms. What did they find?",
+    "back": "In 2023, Oxford researchers checked 15 online work platforms. What did they find?"
+  },
+  "questions.1.options.0.text": {
+    "source": "Every platform paid all workers fairly",
+    "back": "Every platform paid all workers fairly"
+  },
+  "questions.1.options.0.feedback": {
+    "source": "Not quite. The researchers found low pay and a lot of unpaid time. Look back at Lesson 5.",
+    "back": "Not quite. The researchers found low pay and a lot of unpaid time. Look at Lesson 5 again."
+  },
+  "questions.1.options.1.text": {
+    "source": "Workers were paid for every hour they spent",
+    "back": "Workers were paid for every hour of their work"
+  },
+  "questions.1.options.1.feedback": {
+    "source": "Not quite. More than a quarter of the workers' time was unpaid, such as time looking for tasks. Look back at Lesson 5.",
+    "back": "Not quite. More than a quarter of the workers' time was unpaid, for example time spent looking for tasks. Look at Lesson 5 again."
+  },
+  "questions.1.options.2.text": {
+    "source": "None met all of their basic standards",
+    "back": "None met all of their basic standards"
+  },
+  "questions.1.options.2.feedback": {
+    "source": "Yes. The best platform scored only 5 out of 10. Some platforms changed their rules after the study.",
+    "back": "Yes. The best platform only scored 5 out of 10. Some platforms changed their rules after the study."
+  },
+  "questions.2.question": {
+    "source": "Why do many data centres use water?",
+    "back": "Why do many data centres use water?"
+  },
+  "questions.2.options.0.text": {
+    "source": "To make the power that the chips use",
+    "back": "To make the electricity the chips use"
+  },
+  "questions.2.options.0.feedback": {
+    "source": "Not quite. Data centres use a lot of electricity, but the water does not make it. Look back at Lesson 6.",
+    "back": "Not quite. Data centres use a lot of electricity, but the water does not produce that electricity. Look at Lesson 6 again."
+  },
+  "questions.2.options.1.text": {
+    "source": "To cool chips that get very hot",
+    "back": "To cool chips that are very hot"
+  },
+  "questions.2.options.1.feedback": {
+    "source": "Yes. The chips use a lot of electricity and get very hot. Water helps to cool them.",
+    "back": "Yes. The chips use a lot of electricity and become very hot. Water helps to cool them."
+  },
+  "questions.2.options.2.text": {
+    "source": "To wash the dust off the computers",
+    "back": "To clean dust off the computers"
+  },
+  "questions.2.options.2.feedback": {
+    "source": "Not quite. The water is not for cleaning. It helps with the heat. Look back at Lesson 6.",
+    "back": "Not quite. The water is not for cleaning. It helps to deal with the heat. Look at Lesson 6 again."
+  },
+  "questions.3.stimulus.title": {
+    "source": "A made-up data centre plan",
+    "back": "A made-up data centre plan"
+  },
+  "questions.3.stimulus.body": {
+    "source": "This is a made-up example. A company plans a data centre in the made-up town of Westvale. It says about 800 people will help to build it over two years. About 40 people will work there after it opens.",
+    "back": "This is a made-up example. A company plans a data centre in the made-up town of Westvale. The company says about 800 people will help to build it over two years. About 40 people will work there after the data centre opens."
+  },
+  "questions.3.question": {
+    "source": "A man in the town says, “This will give 800 people work for years.” What is wrong with this?",
+    "back": "A man in the town says, “This will give work to 800 people for years.” What is wrong with this statement?",
+    "flag": true,
+    "note": "“What is wrong with this?” → “Apa yang salah dengan perkataan ini?” (what is wrong with this statement), so it is clear “this” is the man's words."
+  },
+  "questions.3.options.0.text": {
+    "source": "The building work lasts only two years",
+    "back": "The building work only lasts two years"
+  },
+  "questions.3.options.0.feedback": {
+    "source": "Yes. Building work ends when the building is finished. After that, there are only about 40 jobs.",
+    "back": "Yes. Building work ends when the building is finished. After that, there are only about 40 jobs."
+  },
+  "questions.3.options.1.text": {
+    "source": "Data centres need nobody to build them",
+    "back": "Data centres need no people to build them"
+  },
+  "questions.3.options.1.feedback": {
+    "source": "Not quite. The company says about 800 people will help to build it. Look back at Lesson 6.",
+    "back": "Not quite. The company says about 800 people will help to build it. Look at Lesson 6 again."
+  },
+  "questions.3.options.2.text": {
+    "source": "All 800 people will work inside it later",
+    "back": "All 800 people will later work inside it"
+  },
+  "questions.3.options.2.feedback": {
+    "source": "Not quite. Only about 40 people will work there after it opens. Look back at Lesson 6.",
+    "back": "Not quite. Only about 40 people will work there after the data centre opens. Look at Lesson 6 again."
+  },
+  "questions.4.question": {
+    "source": "In Harbourside, few people publish books in Language C. What does “publish” mean?",
+    "back": "In Harbourside, only a few people publish books in Language C. What does “publish” mean?"
+  },
+  "questions.4.options.0.text": {
+    "source": "To speak a language at home",
+    "back": "To speak a language in your own home",
+    "flag": true,
+    "note": "“at home” → “di rumah sendiri” (in your own home), a little longer so the three options are closer in length."
+  },
+  "questions.4.options.0.feedback": {
+    "source": "Not quite. People speak Language C a lot. To publish means to put out writing. Look back at Lesson 7.",
+    "back": "Not quite. People speak Language C a lot. To publish means to put out writing. Look at Lesson 7 again."
+  },
+  "questions.4.options.1.text": {
+    "source": "To change words into another language",
+    "back": "To change words into another language"
+  },
+  "questions.4.options.1.feedback": {
+    "source": "Not quite. That is to translate. To publish is to put out writing for many people. Look back at Lesson 7.",
+    "back": "Not quite. That is translating. To publish means to put out writing for many people. Look at Lesson 7 again."
+  },
+  "questions.4.options.2.text": {
+    "source": "To put out writing for many to read",
+    "back": "To put out writing for many people to read"
+  },
+  "questions.4.options.2.feedback": {
+    "source": "Yes. To publish is to print or put out writing. Little is published in Language C, so AI has little to learn from.",
+    "back": "Yes. To publish means to print or put out writing. Only a little is published in Language C, so AI has only a little material to learn from."
+  },
+  "questions.5.question": {
+    "source": "Why do some languages have much more writing than others?",
+    "back": "Why do some languages have much more writing than other languages?"
+  },
+  "questions.5.options.0.text": {
+    "source": "Some languages are much harder to write",
+    "back": "Some languages are much harder to write"
+  },
+  "questions.5.options.0.feedback": {
+    "source": "Not quite. It is not about how hard a language is. It depends on how a language has been used. Look back at Lesson 7.",
+    "back": "Not quite. It is not about how hard a language is. It depends on how the language has been used so far. Look at Lesson 7 again."
+  },
+  "questions.5.options.1.text": {
+    "source": "History, such as which ones schools use",
+    "back": "History, for example which language schools use",
+    "flag": true,
+    "note": "“which ones schools use” → “bahasa apa yang dipakai sekolah” (which language schools use)."
+  },
+  "questions.5.options.1.feedback": {
+    "source": "Yes. It depends on history: which languages schools, books, news and governments use, and what people type online.",
+    "back": "Yes. It depends on history: which languages schools, books, news and governments use, and what people type on the internet."
+  },
+  "questions.5.options.2.text": {
+    "source": "The more speakers, the more writing",
+    "back": "The more speakers, the more writing"
+  },
+  "questions.5.options.2.feedback": {
+    "source": "Not quite. In Harbourside, Language C has the most speakers but very little writing. Look back at Lesson 7.",
+    "back": "Not quite. In Harbourside, Language C has the most speakers, but very little writing. Look at Lesson 7 again."
+  },
+  "questions.6.question": {
+    "source": "About 45% of a famous photo collection came from the United States, and about 2% from India. What does this help to explain?",
+    "back": "About 45% of the photos in a famous photo collection came from the United States, and about 2% from India. What can these numbers explain?",
+    "flag": true,
+    "note": "“What does this help to explain?” → “Apa yang bisa dijelaskan oleh angka-angka ini?” (what can these numbers explain); “help to” dropped for a plain question."
+  },
+  "questions.6.options.0.text": {
+    "source": "Why a tool did worse with photos from India",
+    "back": "Why a tool was worse for photos from India"
+  },
+  "questions.6.options.0.feedback": {
+    "source": "Yes. Few photos came from India, so the data did not represent it well. A tool trained on it did worse there.",
+    "back": "Yes. Only a few photos came from India, so the data did not represent India well. A tool trained on that data worked worse there."
+  },
+  "questions.6.options.1.text": {
+    "source": "Why the tool did better with photos from India",
+    "back": "Why the tool was better for photos from India"
+  },
+  "questions.6.options.1.feedback": {
+    "source": "Not quite. With so few photos from India, the tool did worse there, not better. Look back at Lesson 8.",
+    "back": "Not quite. With so few photos from India, the tool worked worse there, not better. Look at Lesson 8 again."
+  },
+  "questions.6.options.2.text": {
+    "source": "Why people in India took fewer photos",
+    "back": "Why people in India took fewer photos"
+  },
+  "questions.6.options.2.feedback": {
+    "source": "Not quite. The numbers show what is in the collection. They do not show how many photos people took. Look back at Lesson 8.",
+    "back": "Not quite. The numbers show what is in the photo collection. They do not show how many photos people took. Look at Lesson 8 again."
+  },
+  "questions.7.stimulus.title": {
+    "source": "A made-up fish tool",
+    "back": "A made-up fish tool"
+  },
+  "questions.7.stimulus.body": {
+    "source": "This is a made-up example. At the made-up Stonebay market, a tool names fish from photos. It names river fish well, but it often gets sea fish wrong. Almost all of its training photos show river fish.",
+    "back": "This is a made-up example. At the made-up Stonebay market, a tool names fish from photos. The tool is good at naming river fish, but it often names sea fish wrongly. Almost all the photos in its training data show river fish."
+  },
+  "questions.7.question": {
+    "source": "What would most likely help the tool?",
+    "back": "What would most likely help the tool?"
+  },
+  "questions.7.options.0.text": {
+    "source": "Add more photos of river fish",
+    "back": "Add more photos of river fish"
+  },
+  "questions.7.options.0.feedback": {
+    "source": "Not quite. It already knows river fish well. More of the same kind will not fill the gap. Look back at Lesson 8.",
+    "back": "Not quite. The tool already knows river fish well. More photos of the same kind will not fill that gap. Look at Lesson 8 again.",
+    "flag": true,
+    "note": "“fill the gap” → “mengisi kekosongan itu” (fill that emptiness); “kesenjangan” is Lesson 8's word for a gap in results, so it is not used for missing data here."
+  },
+  "questions.7.options.1.text": {
+    "source": "Add labelled photos of sea fish",
+    "back": "Add labelled photos of sea fish"
+  },
+  "questions.7.options.1.feedback": {
+    "source": "Yes. Its training data does not represent sea fish. Labelled photos of sea fish can fill that gap.",
+    "back": "Yes. Its training data does not represent sea fish. Labelled photos of sea fish can fill that gap."
+  },
+  "questions.7.options.2.text": {
+    "source": "Use the tool only when it is sunny",
+    "back": "Use the tool only when the weather is sunny"
+  },
+  "questions.7.options.2.feedback": {
+    "source": "Not quite. The light is not the problem. The problem is what its training photos show. Look back at Lesson 8.",
+    "back": "Not quite. The light is not the problem. The problem is what the photos in its training data show. Look at Lesson 8 again."
+  },
+  "results.high": {
+    "source": "Well done. You can see the people, the planet and the languages behind AI tools.",
+    "back": "Very good. You can see the people, the earth and the languages behind AI tools.",
+    "flag": true,
+    "note": "“the planet” → “bumi” (the earth)."
+  },
+  "results.middle": {
+    "source": "Good work. You got many questions right. Look back at the lessons for the ones you missed, and try again if you like.",
+    "back": "Good work. You answered many questions correctly. Look at the lessons again for the questions whose answers were not quite right, then try again if you want."
+  },
+  "results.low": {
+    "source": "Thank you for trying. Look back at Lessons 5–8, then try again. You can take as long as you need.",
+    "back": "Thank you for trying. Look at Lessons 5–8 again, then try again. You may use as much time as you need."
+  }
+}

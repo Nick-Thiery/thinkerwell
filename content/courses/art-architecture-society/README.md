@@ -10,7 +10,7 @@ An open course (since 9 November 2026, the whole-platform pilot: `/course/art-ar
   - The standard reading is the brief's own, lightly edited for plain words. The simpler reading was written for this build, with the same meaning.
   - Write, Speak and Reflect are the brief's: one short task each, with no planning boxes or checklists, and one required Reflect prompt.
 - **No Watch step:** no video has been screened or approved (`watch: null`), so every lesson has four steps.
-- **No section checks or certificates:** the brief asks for no extra quiz.
+- **Section checks, no certificates:** the lessons keep no warm-up or quick check, as the brief asks; on 21 November 2026 Nick asked for a section check after each section, so that every course has one (`quizzes/`, two questions per lesson, translated like the lessons).
 - **Two real images per lesson, 40 placements from 37 distinct files.**
   - `visual` (image A) appears with the evidence, before the reading.
   - `secondVisual` (image B) appears after the last reading part, in the print view and in the teacher guide.

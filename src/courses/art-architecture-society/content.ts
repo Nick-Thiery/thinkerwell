@@ -8,7 +8,7 @@
 import courseJson from '../../../content/courses/art-architecture-society/course.json';
 import { COURSE_SECTION_LOOKS } from '../kit/courseLooks';
 import { createCourseContent, type LessonContent, type SectionLook } from '../../content/courseContent';
-import type { ArtCourseFile, ArtLesson, ArtSectionId } from '../../content/schema';
+import type { AnyQuizFile, ArtCourseFile, ArtLesson, ArtSectionId } from '../../content/schema';
 import { translatedContents } from '../kit/translatedContent';
 
 export const COURSE_ID = 'art-architecture-society';
@@ -18,6 +18,16 @@ export const COURSE_PATH = `/course/${COURSE_ID}`;
 export const COURSE_PRINT_PATH = `${COURSE_PATH}/print`;
 
 const lessonModules = import.meta.glob<ArtLesson>('../../../content/courses/art-architecture-society/lessons/*.json', {
+  eager: true,
+  import: 'default',
+});
+
+/**
+ * Its four section checks (content/courses/art-architecture-society/quizzes/,
+ * November 2026): the course's only quiz, for practice, since its lessons have
+ * no warm-up or quick check (Justin's brief of 4 November).
+ */
+const quizModules = import.meta.glob<AnyQuizFile>('../../../content/courses/art-architecture-society/quizzes/*.json', {
   eager: true,
   import: 'default',
 });
@@ -47,8 +57,8 @@ const coursePath = (sectionId?: string) => (sectionId ? `${COURSE_PATH}#${sectio
 
 const options = {
   courseId: COURSE_ID,
-  // No section checks: Justin's brief asks for no extra quiz.
-  hasSectionChecks: false,
+  // Its section checks (no certificates).
+  hasSectionChecks: true,
   sectionLook: (sectionId: string) => SECTION_LOOKS[sectionId as ArtSectionId] ?? SECTION_LOOKS['objects-making-power'],
   // No Educators page for a preview course: a teacher guide goes back to the course map.
   coursePath,
@@ -57,6 +67,7 @@ const options = {
 export const artArchitecture = createCourseContent(courseJson as unknown as ArtCourseFile, Object.values(lessonModules), {
   ...options,
   pictureUrls,
+  quizzes: Object.values(quizModules),
 });
 
 /** The course in Indonesian and Malay (content/courses/art-architecture-society/<code>/), when translated. */
@@ -64,8 +75,9 @@ const byLanguage = translatedContents(
   {
     course: courseJson as unknown as ArtCourseFile,
     lessons: lessonModules,
+    quizzes: quizModules,
     pictureUrls,
-    translations: import.meta.glob('../../../content/courses/art-architecture-society/*/{course.json,lessons/*.json}', {
+    translations: import.meta.glob('../../../content/courses/art-architecture-society/*/{course.json,lessons/*.json,quizzes/*.json}', {
       eager: true,
       import: 'default',
     }),

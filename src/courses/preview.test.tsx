@@ -45,7 +45,7 @@ describe('the courses every device shows', () => {
     expect(screen.getByRole('heading', { level: 1, name: 'Southeast Asia Through Time' })).toBeInTheDocument();
   });
 
-  it('shows Digital World’s map in Our World’s layout: its four sections, with no overview-only notices, section checks or teacher directory', async () => {
+  it('shows Digital World’s map in Our World’s layout: its four sections, each with its section check, and no overview-only notices or teacher directory', async () => {
     renderAt('/course/digital-world');
     expect(await screen.findByRole('heading', { level: 1, name: 'Digital World' })).toBeInTheDocument();
     expect(screen.queryByText(/Draft course/)).not.toBeInTheDocument();
@@ -60,7 +60,7 @@ describe('the courses every device shows', () => {
       'AI in daily life',
       'Truth, power and choices',
     ]);
-    expect(screen.queryByText(/Section check:/)).not.toBeInTheDocument();
+    expect(screen.getAllByText(/^Section check:/)).toHaveLength(4);
     expect(screen.queryByRole('heading', { name: 'For teachers' })).not.toBeInTheDocument();
     expect(screen.queryByRole('link', { name: /Teacher guide, Lesson 3/ })).not.toBeInTheDocument();
   });

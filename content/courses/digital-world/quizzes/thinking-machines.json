@@ -1,0 +1,212 @@
+{
+  "section": "thinking-machines",
+  "title": "Section check: How AI developed and how it works",
+  "intro": "8 questions about Lessons 1–4. Take your time. You can look back at the lessons and try again as often as you like.",
+  "questions": [
+    {
+      "id": "thinking-machines-01",
+      "lesson": 1,
+      "skill": "vocabulary",
+      "stimulus": null,
+      "question": "A tool uses patterns to make a careful guess about something new. What is that guess called?",
+      "options": [
+        {
+          "text": "A pattern in the data",
+          "correct": false,
+          "feedback": "Not quite. A pattern is something that happens again and again. The tool uses patterns to make its guess. Look back at Lesson 1."
+        },
+        {
+          "text": "A prediction",
+          "correct": true,
+          "feedback": "Yes. A prediction is a careful guess about something new. The tool makes it from patterns in its data."
+        },
+        {
+          "text": "A rule a person wrote",
+          "correct": false,
+          "feedback": "Not quite. A rule is a step that a person wrote. A guess from patterns is called a prediction. Look back at Lesson 1."
+        }
+      ]
+    },
+    {
+      "id": "thinking-machines-02",
+      "lesson": 1,
+      "skill": "apply",
+      "stimulus": {
+        "type": "text",
+        "title": "A made-up library tool",
+        "body": "This is a made-up example. The made-up Palmgrove Library has a new tool. It reads old hand-written notes and types them out. It learned from many pages of hand-writing, with the words typed next to them. The box says “Smart tool”."
+      },
+      "question": "What should the library do with the notes the tool types?",
+      "options": [
+        {
+          "text": "Ask a person to read and check them",
+          "correct": true,
+          "feedback": "Yes. The tool guesses from patterns, so it can be wrong. A person should check its work."
+        },
+        {
+          "text": "Trust them, because the box says “smart”",
+          "correct": false,
+          "feedback": "Not quite. The word “smart” on a box tells you nothing. The tool can still get words wrong. Look back at Lesson 1."
+        },
+        {
+          "text": "Use them as they are if it types fast",
+          "correct": false,
+          "feedback": "Not quite. Fast typing does not mean the words are right. A person still needs to check them. Look back at Lesson 1."
+        }
+      ]
+    },
+    {
+      "id": "thinking-machines-03",
+      "lesson": 2,
+      "skill": "vocabulary",
+      "stimulus": null,
+      "question": "In the 1980s, companies spent a lot on expert systems. What was an expert system?",
+      "options": [
+        {
+          "text": "A machine that learned from labelled photos",
+          "correct": false,
+          "feedback": "Not quite. Learning from millions of labelled photos grew much later, after 2010. Expert systems used rules. Look back at Lesson 2."
+        },
+        {
+          "text": "A chess computer that beat a world champion",
+          "correct": false,
+          "feedback": "Not quite. That was Deep Blue, in 1997. It could only play chess. Look back at Lesson 2."
+        },
+        {
+          "text": "A program using rules that experts gave",
+          "correct": true,
+          "feedback": "Yes. Experts gave the rules, and the program followed them. These systems cost a lot to keep up."
+        }
+      ]
+    },
+    {
+      "id": "thinking-machines-04",
+      "lesson": 2,
+      "skill": "evidence",
+      "stimulus": null,
+      "question": "The Dartmouth proposal is a real source from 1955. What can it show you?",
+      "options": [
+        {
+          "text": "What its writers hoped to do in one summer",
+          "correct": true,
+          "feedback": "Yes. It is a plan, written before the project. It shows what the four writers hoped for."
+        },
+        {
+          "text": "What the summer project found out in 1956",
+          "correct": false,
+          "feedback": "Not quite. It was written in 1955, before the project took place. It is a plan, not a result. Look back at Lesson 2."
+        },
+        {
+          "text": "How today's chatbots learn from text",
+          "correct": false,
+          "feedback": "Not quite. It is from 1955, long before today's chatbots. It shows the writers' plans. Look back at Lesson 2."
+        }
+      ]
+    },
+    {
+      "id": "thinking-machines-05",
+      "lesson": 3,
+      "skill": "understand",
+      "stimulus": null,
+      "question": "Which change could make a leaf model's guesses worse?",
+      "options": [
+        {
+          "text": "Adding leaves that look different",
+          "correct": false,
+          "feedback": "Not quite. At Sunrise Garden, different leaves helped. The model got all six right after that. Look back at Lesson 3."
+        },
+        {
+          "text": "Giving some leaves the wrong label",
+          "correct": true,
+          "feedback": "Yes. A model learns from its labels. A wrong label teaches it the wrong answer."
+        },
+        {
+          "text": "Keeping some leaves aside for a test",
+          "correct": false,
+          "feedback": "Not quite. Keeping leaves aside makes the test fair. It does not change the model's guesses. Look back at Lesson 3."
+        }
+      ]
+    },
+    {
+      "id": "thinking-machines-06",
+      "lesson": 3,
+      "skill": "apply",
+      "stimulus": {
+        "type": "text",
+        "title": "A made-up fruit model",
+        "body": "This is a made-up example. At the made-up Hilltop Market, a team built a model. It sorts photos of mangoes as “ripe” or “not ripe”. They changed it until it got all 20 test photos right. But they looked at those 20 photos while they changed it."
+      },
+      "question": "What should the team do to test the model fairly?",
+      "options": [
+        {
+          "text": "Test it again on the same 20 photos",
+          "correct": false,
+          "feedback": "Not quite. The team has already looked at those photos. A fair test needs photos nobody has used. Look back at Lesson 3."
+        },
+        {
+          "text": "Say that the model now always works",
+          "correct": false,
+          "feedback": "Not quite. Getting photos right that the team knew does not prove that. A fresh test shows what it still gets wrong. Look back at Lesson 3."
+        },
+        {
+          "text": "Try it on photos nobody has used",
+          "correct": true,
+          "feedback": "Yes. New photos make the test fair. They show what the model still gets wrong."
+        }
+      ]
+    },
+    {
+      "id": "thinking-machines-07",
+      "lesson": 4,
+      "skill": "understand",
+      "stimulus": null,
+      "question": "You ask a chatbot the same question twice and get two different answers. Why can this happen?",
+      "options": [
+        {
+          "text": "It forgets how to write after each answer",
+          "correct": false,
+          "feedback": "Not quite. It still writes well each time. The answers change because of how it picks tokens. Look back at Lesson 4."
+        },
+        {
+          "text": "It picks tokens partly by chance",
+          "correct": true,
+          "feedback": "Yes. It often picks each token partly by chance from the likely ones. So the same question can get different answers."
+        },
+        {
+          "text": "A person rewrites its answers each time",
+          "correct": false,
+          "feedback": "Not quite. The model writes the answer itself, one token at a time. Look back at Lesson 4."
+        }
+      ]
+    },
+    {
+      "id": "thinking-machines-08",
+      "lesson": 4,
+      "skill": "evidence",
+      "stimulus": null,
+      "question": "The Lakeside helper named a book, “The Long Blue Road”. The librarian could not find it. What does this case show?",
+      "options": [
+        {
+          "text": "It can sound sure and still be wrong",
+          "correct": true,
+          "feedback": "Yes. A basic LLM predicts words that sound right. Nothing in that checks the facts."
+        },
+        {
+          "text": "The library has lost a lot of its books",
+          "correct": false,
+          "feedback": "Not quite. The book does not exist anywhere. The helper made it up. Look back at Lesson 4."
+        },
+        {
+          "text": "Chatbots only make mistakes about maps",
+          "correct": false,
+          "feedback": "Not quite. The helper explained a map scale well. Its mistake was about a book. Look back at Lesson 4."
+        }
+      ]
+    }
+  ],
+  "results": {
+    "high": "Well done. You know how AI grew, and how a model learns and makes its guesses.",
+    "middle": "Good work. You got many questions right. Look back at the lessons for the ones you missed, and try again if you like.",
+    "low": "Thank you for trying. Look back at Lessons 1–4, then try again. You can take as long as you need."
+  }
+}

@@ -1,0 +1,274 @@
+{
+  "title": {
+    "source": "Section check: How AI developed and how it works",
+    "back": "Section check: How AI developed and how it works",
+    "flag": true,
+    "note": "The section's Indonesian title from course.json (“Bagaimana AI berkembang dan cara kerjanya”)."
+  },
+  "intro": {
+    "source": "8 questions about Lessons 1–4. Take your time. You can look back at the lessons and try again as often as you like.",
+    "back": "8 questions about Lessons 1–4. No need to hurry. You may look at the lessons again and try again as often as you like."
+  },
+  "questions.0.question": {
+    "source": "A tool uses patterns to make a careful guess about something new. What is that guess called?",
+    "back": "A tool uses patterns to make a careful guess about something new. What is that guess called?"
+  },
+  "questions.0.options.0.text": {
+    "source": "A pattern in the data",
+    "back": "A pattern in the data"
+  },
+  "questions.0.options.0.feedback": {
+    "source": "Not quite. A pattern is something that happens again and again. The tool uses patterns to make its guess. Look back at Lesson 1.",
+    "back": "Not quite. A pattern is something that happens again and again. The tool uses patterns to make its guess. Look at Lesson 1 again."
+  },
+  "questions.0.options.1.text": {
+    "source": "A prediction",
+    "back": "A prediction"
+  },
+  "questions.0.options.1.feedback": {
+    "source": "Yes. A prediction is a careful guess about something new. The tool makes it from patterns in its data.",
+    "back": "Yes. A prediction is a careful guess about something new. The tool makes it from patterns in its data."
+  },
+  "questions.0.options.2.text": {
+    "source": "A rule a person wrote",
+    "back": "A rule someone wrote"
+  },
+  "questions.0.options.2.feedback": {
+    "source": "Not quite. A rule is a step that a person wrote. A guess from patterns is called a prediction. Look back at Lesson 1.",
+    "back": "Not quite. A rule is a step that someone wrote. A guess from patterns is called a prediction. Look at Lesson 1 again."
+  },
+  "questions.1.stimulus.title": {
+    "source": "A made-up library tool",
+    "back": "A made-up library tool"
+  },
+  "questions.1.stimulus.body": {
+    "source": "This is a made-up example. The made-up Palmgrove Library has a new tool. It reads old hand-written notes and types them out. It learned from many pages of hand-writing, with the words typed next to them. The box says “Smart tool”.",
+    "back": "This is a made-up example. The made-up Palmgrove Library has a new tool. The tool reads old hand-written notes and types them. The tool learned from many pages of hand-writing, with their words already typed next to them. Its box says “Smart tool”.",
+    "flag": true,
+    "note": "“Smart tool” is “Alat pintar”, keeping TERMS's “pintar” for a product label (cerdas is for real cleverness)."
+  },
+  "questions.1.question": {
+    "source": "What should the library do with the notes the tool types?",
+    "back": "What should the library do with the notes the tool types?"
+  },
+  "questions.1.options.0.text": {
+    "source": "Ask a person to read and check them",
+    "back": "Ask someone to read and check them"
+  },
+  "questions.1.options.0.feedback": {
+    "source": "Yes. The tool guesses from patterns, so it can be wrong. A person should check its work.",
+    "back": "Yes. The tool guesses from patterns, so it can be wrong. Someone should check its work."
+  },
+  "questions.1.options.1.text": {
+    "source": "Trust them, because the box says “smart”",
+    "back": "Trust them, because its box says “smart”"
+  },
+  "questions.1.options.1.feedback": {
+    "source": "Not quite. The word “smart” on a box tells you nothing. The tool can still get words wrong. Look back at Lesson 1.",
+    "back": "Not quite. The word “smart” on a box tells you nothing. The tool can still type words wrongly. Look at Lesson 1 again."
+  },
+  "questions.1.options.2.text": {
+    "source": "Use them as they are if it types fast",
+    "back": "Use them as they are if its typing is fast"
+  },
+  "questions.1.options.2.feedback": {
+    "source": "Not quite. Fast typing does not mean the words are right. A person still needs to check them. Look back at Lesson 1.",
+    "back": "Not quite. Typing fast does not mean the words are right. Someone still needs to check them. Look at Lesson 1 again."
+  },
+  "questions.2.question": {
+    "source": "In the 1980s, companies spent a lot on expert systems. What was an expert system?",
+    "back": "In the 1980s, companies spent a lot of money on expert systems. What is an expert system?"
+  },
+  "questions.2.options.0.text": {
+    "source": "A machine that learned from labelled photos",
+    "back": "A machine that learned from labelled photos"
+  },
+  "questions.2.options.0.feedback": {
+    "source": "Not quite. Learning from millions of labelled photos grew much later, after 2010. Expert systems used rules. Look back at Lesson 2.",
+    "back": "Not quite. Learning from millions of labelled photos grew much later, after 2010. Expert systems used rules. Look at Lesson 2 again."
+  },
+  "questions.2.options.1.text": {
+    "source": "A chess computer that beat a world champion",
+    "back": "A chess computer that beat a world champion"
+  },
+  "questions.2.options.1.feedback": {
+    "source": "Not quite. That was Deep Blue, in 1997. It could only play chess. Look back at Lesson 2.",
+    "back": "Not quite. That was Deep Blue, in 1997. That computer could only play chess. Look at Lesson 2 again."
+  },
+  "questions.2.options.2.text": {
+    "source": "A program using rules that experts gave",
+    "back": "A program that uses rules from experts"
+  },
+  "questions.2.options.2.feedback": {
+    "source": "Yes. Experts gave the rules, and the program followed them. These systems cost a lot to keep up.",
+    "back": "Yes. Experts gave the rules, and the program followed them. The cost of keeping systems like this going was very high.",
+    "flag": true,
+    "note": "“These systems cost a lot to keep up” → “Biaya untuk terus merawat sistem seperti ini sangat mahal” (the cost of keeping such systems going was very high)."
+  },
+  "questions.3.question": {
+    "source": "The Dartmouth proposal is a real source from 1955. What can it show you?",
+    "back": "The Dartmouth proposal is a real source from 1955. What can it show you?"
+  },
+  "questions.3.options.0.text": {
+    "source": "What its writers hoped to do in one summer",
+    "back": "What its writers hoped for in one summer",
+    "flag": true,
+    "note": "“hoped to do” shortened to “diharapkan” (hoped for), so the correct option is not the longest."
+  },
+  "questions.3.options.0.feedback": {
+    "source": "Yes. It is a plan, written before the project. It shows what the four writers hoped for.",
+    "back": "Yes. The proposal is a plan, written before the project. It shows what its four writers hoped for."
+  },
+  "questions.3.options.1.text": {
+    "source": "What the summer project found out in 1956",
+    "back": "What the summer project found in 1956"
+  },
+  "questions.3.options.1.feedback": {
+    "source": "Not quite. It was written in 1955, before the project took place. It is a plan, not a result. Look back at Lesson 2.",
+    "back": "Not quite. The proposal was written in 1955, before the project took place. It is a plan, not a result. Look at Lesson 2 again."
+  },
+  "questions.3.options.2.text": {
+    "source": "How today's chatbots learn from text",
+    "back": "How today's chatbots learn from text"
+  },
+  "questions.3.options.2.feedback": {
+    "source": "Not quite. It is from 1955, long before today's chatbots. It shows the writers' plans. Look back at Lesson 2.",
+    "back": "Not quite. The proposal is from 1955, long before today's chatbots. It shows its writers' plans. Look at Lesson 2 again."
+  },
+  "questions.4.question": {
+    "source": "Which change could make a leaf model's guesses worse?",
+    "back": "Which change could make the leaf model's guesses worse?"
+  },
+  "questions.4.options.0.text": {
+    "source": "Adding leaves that look different",
+    "back": "Adding leaves that look different"
+  },
+  "questions.4.options.0.feedback": {
+    "source": "Not quite. At Sunrise Garden, different leaves helped. The model got all six right after that. Look back at Lesson 3.",
+    "back": "Not quite. At Sunrise Garden, the different leaves actually helped. After that, the model guessed all six leaves correctly. Look at Lesson 3 again."
+  },
+  "questions.4.options.1.text": {
+    "source": "Giving some leaves the wrong label",
+    "back": "Giving some leaves the wrong label"
+  },
+  "questions.4.options.1.feedback": {
+    "source": "Yes. A model learns from its labels. A wrong label teaches it the wrong answer.",
+    "back": "Yes. A model learns from its labels. A wrong label teaches it the wrong answer."
+  },
+  "questions.4.options.2.text": {
+    "source": "Keeping some leaves aside for a test",
+    "back": "Setting some leaves aside for testing",
+    "flag": true,
+    "note": "“Keeping some leaves aside for a test” → “Menyisihkan beberapa daun untuk menguji” (setting some leaves aside to test); “menyisihkan” is Lesson 3's verb."
+  },
+  "questions.4.options.2.feedback": {
+    "source": "Not quite. Keeping leaves aside makes the test fair. It does not change the model's guesses. Look back at Lesson 3.",
+    "back": "Not quite. Setting leaves aside makes the test fair. It does not change the model's guesses. Look at Lesson 3 again."
+  },
+  "questions.5.stimulus.title": {
+    "source": "A made-up fruit model",
+    "back": "A made-up fruit model"
+  },
+  "questions.5.stimulus.body": {
+    "source": "This is a made-up example. At the made-up Hilltop Market, a team built a model. It sorts photos of mangoes as “ripe” or “not ripe”. They changed it until it got all 20 test photos right. But they looked at those 20 photos while they changed it.",
+    "back": "This is a made-up example. At the made-up Hilltop Market, a team made a model. The model sorts photos of mangoes into “ripe” or “not ripe”. They changed the model until it guessed all 20 test photos correctly. But they looked at those 20 photos while they changed it."
+  },
+  "questions.5.question": {
+    "source": "What should the team do to test the model fairly?",
+    "back": "What should the team do so that the test is fair?"
+  },
+  "questions.5.options.0.text": {
+    "source": "Test it again on the same 20 photos",
+    "back": "Test it again with the same 20 photos"
+  },
+  "questions.5.options.0.feedback": {
+    "source": "Not quite. The team has already looked at those photos. A fair test needs photos nobody has used. Look back at Lesson 3.",
+    "back": "Not quite. The team has already seen those photos. A fair test needs photos that nobody has used yet. Look at Lesson 3 again."
+  },
+  "questions.5.options.1.text": {
+    "source": "Say that the model now always works",
+    "back": "Say that the model now always works"
+  },
+  "questions.5.options.1.feedback": {
+    "source": "Not quite. Getting photos right that the team knew does not prove that. A fresh test shows what it still gets wrong. Look back at Lesson 3.",
+    "back": "Not quite. Guessing correctly on photos the team already knew does not prove that. A fresh test shows what it still guesses wrong. Look at Lesson 3 again."
+  },
+  "questions.5.options.2.text": {
+    "source": "Try it on photos nobody has used",
+    "back": "Try it on photos nobody has used yet"
+  },
+  "questions.5.options.2.feedback": {
+    "source": "Yes. New photos make the test fair. They show what the model still gets wrong.",
+    "back": "Yes. New photos make the test fair. They show what the model still guesses wrong."
+  },
+  "questions.6.question": {
+    "source": "You ask a chatbot the same question twice and get two different answers. Why can this happen?",
+    "back": "You ask a chatbot the same question twice and get two different answers. Why can this happen?"
+  },
+  "questions.6.options.0.text": {
+    "source": "It forgets how to write after each answer",
+    "back": "The chatbot forgets how to write after each answer"
+  },
+  "questions.6.options.0.feedback": {
+    "source": "Not quite. It still writes well each time. The answers change because of how it picks tokens. Look back at Lesson 4.",
+    "back": "Not quite. The chatbot still writes well each time. The answers change because of how the chatbot picks tokens. Look at Lesson 4 again."
+  },
+  "questions.6.options.1.text": {
+    "source": "It picks tokens partly by chance",
+    "back": "The chatbot picks tokens partly at random",
+    "flag": true,
+    "note": "“partly by chance” → “sebagian secara acak” (partly at random), Lesson 4's wording."
+  },
+  "questions.6.options.1.feedback": {
+    "source": "Yes. It often picks each token partly by chance from the likely ones. So the same question can get different answers.",
+    "back": "Yes. Often each token is picked partly at random from the likely tokens. So the same question can get different answers."
+  },
+  "questions.6.options.2.text": {
+    "source": "A person rewrites its answers each time",
+    "back": "Someone rewrites its answers each time"
+  },
+  "questions.6.options.2.feedback": {
+    "source": "Not quite. The model writes the answer itself, one token at a time. Look back at Lesson 4.",
+    "back": "Not quite. The model writes its answer itself, one token after another. Look at Lesson 4 again."
+  },
+  "questions.7.question": {
+    "source": "The Lakeside helper named a book, “The Long Blue Road”. The librarian could not find it. What does this case show?",
+    "back": "The Lakeside helper named a book, “The Long Blue Road”. The librarian could not find it. What does this case show?"
+  },
+  "questions.7.options.0.text": {
+    "source": "It can sound sure and still be wrong",
+    "back": "The tool can sound sure and still be wrong"
+  },
+  "questions.7.options.0.feedback": {
+    "source": "Yes. A basic LLM predicts words that sound right. Nothing in that checks the facts.",
+    "back": "Yes. A basic LLM predicts words that sound right. No part of that way checks the facts."
+  },
+  "questions.7.options.1.text": {
+    "source": "The library has lost a lot of its books",
+    "back": "The library lost many of its books"
+  },
+  "questions.7.options.1.feedback": {
+    "source": "Not quite. The book does not exist anywhere. The helper made it up. Look back at Lesson 4.",
+    "back": "Not quite. The book does not exist anywhere. The helper made it up. Look at Lesson 4 again."
+  },
+  "questions.7.options.2.text": {
+    "source": "Chatbots only make mistakes about maps",
+    "back": "Chatbots only make mistakes about maps"
+  },
+  "questions.7.options.2.feedback": {
+    "source": "Not quite. The helper explained a map scale well. Its mistake was about a book. Look back at Lesson 4.",
+    "back": "Not quite. The helper explained a map scale well. Its mistake was about a book. Look at Lesson 4 again."
+  },
+  "results.high": {
+    "source": "Well done. You know how AI grew, and how a model learns and makes its guesses.",
+    "back": "Very good. You know how AI developed, and how a model learns and makes its guesses."
+  },
+  "results.middle": {
+    "source": "Good work. You got many questions right. Look back at the lessons for the ones you missed, and try again if you like.",
+    "back": "Good work. You answered many questions correctly. Look at the lessons again for the questions whose answers were not quite right, then try again if you want."
+  },
+  "results.low": {
+    "source": "Thank you for trying. Look back at Lessons 1–4, then try again. You can take as long as you need.",
+    "back": "Thank you for trying. Look at Lessons 1–4 again, then try again. You may use as much time as you need."
+  }
+}
