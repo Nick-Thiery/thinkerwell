@@ -127,6 +127,41 @@ test('a staff member works through the setup checklist, which asks the browser n
   await expect(page.getByRole('button', { name: 'Save my work to a file' })).toBeInViewport();
 });
 
+// The checklist on screen in every browser, Safari's engine on an iPad included
+// (the test above prints and fakes Chrome's speech recognition, so it is Chromium only).
+test('on screen in any browser, the checklist gives each step a state and the home screen steps for this device', async ({ page, browserName }) => {
+  await fakePersistentStorage(page);
+  await page.goto('/educators/setup');
+  await expect(page.locator('h1')).toHaveText('Set up this device');
+
+  // The home screen steps for this kind of device: an iPad in WebKit, else Android or a laptop.
+  const home = step(page, 'Add Thinkerwell to the home screen');
+  await expect(home.getByRole('status')).toContainText('Thinkerwell is open in the browser.');
+  const device = browserName === 'webkit' ? 'iPad or iPhone (Safari)' : /Android tablet or phone|Windows laptop or Chromebook/;
+  const thisDevice = page.locator('.tw-setup-platforms > .tw-setup-platform');
+  await expect(thisDevice.getByRole('heading', { level: 3 })).toHaveText(typeof device === 'string' ? `Steps for this device: ${device}` : device);
+  await expect(thisDevice.getByRole('listitem')).toHaveCount(5);
+  if (browserName === 'webkit') {
+    await expect(thisDevice.getByRole('listitem').nth(1)).toHaveText(/Tap Share: the square with an arrow pointing up\./);
+  }
+  // The other devices' steps, folded away and opened on a tap.
+  await page.getByText('Steps for other devices').click();
+  await expect(page.locator('.tw-setup-more .tw-setup-platform')).toHaveCount(2);
+
+  // Every step settles on a state: none is left "Checking" once the browser has listed its voices.
+  await expect(page.locator('.tw-setup-step').getByRole('status')).toHaveCount(6);
+  await expect(page.locator('.tw-setup-step').getByRole('status').filter({ hasText: 'Checking' })).toHaveCount(0, { timeout: 10_000 });
+  await settle(page);
+  expect(await horizontalOverflow(page)).toBeLessThanOrEqual(0);
+
+  // "Keep work safe" asks the browser only on the tap.
+  expect((await storageLog(page)).persist).toBe(0);
+  const storage = step(page, 'Keep saved work safe');
+  await storage.getByRole('button', { name: 'Keep work safe' }).click();
+  await expect(storage.getByRole('status')).toContainText('The browser keeps saved work on this device');
+  expect((await storageLog(page)).persist).toBe(1);
+});
+
 test('the class view shows each learner by name without scores, and every certificate prints on its own landscape page', { tag: '@chromium-only' }, async ({ page }) => {
   // Yusuf is added first; the class view still lists Amina first.
   await addLearnerViaUi(page, 'Yusuf');
