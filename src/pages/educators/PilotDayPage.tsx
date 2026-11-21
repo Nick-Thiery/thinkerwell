@@ -21,11 +21,12 @@
 import { useMemo, type ReactNode } from 'react';
 import words from 'virtual:thinkerwell/messages/pilotDay';
 import { CONTACT_EMAIL } from '../../app/contact';
-import { educatorsPath } from '../../app/lessonUrls';
+import { contactPath, educatorsPath } from '../../app/lessonUrls';
 import { usePageTitle } from '../../app/usePageTitle';
 import { commonStages } from '../../content/stages';
 import { useContent } from '../../content/useContent';
 import { useI18n, withWords } from '../../i18n';
+import { SITE_ORIGIN } from '../../seo/site';
 import { PrintToolbar } from '../print/PrintToolbar';
 import '../print/print.css';
 import './ConsentFormPage.css';
@@ -38,6 +39,9 @@ import { SESSION_MINUTES, SHORT_SESSION_MINUTES } from './sessionPlan';
  * checks the lesson files still say so.
  */
 export const REVIEW_FIRST_LESSONS = [4, 19] as const;
+
+/** The contact form's address as the printed guide shows it, to type in (the link itself opens it with "Pilot feedback" chosen). */
+export const CONTACT_FORM_ADDRESS = `${new URL(SITE_ORIGIN).host}/contact`;
 
 /** A name the app shows (a button, a page), set in bold so staff can find it on the screen. */
 function ui(label: string): ReactNode {
@@ -189,12 +193,20 @@ export function PilotDayPage() {
             <section className="tw-consent-part" aria-labelledby="pilotday-contact">
               <h3 id="pilotday-contact">{parent.t('pages.educators.feedbackTitle')}</h3>
               <p>
-                {parent.tx('pages.educators.feedbackBody', {
+                {/* The Educators page's line, plus pilot feedback (20 November 2026), in one sentence so the guide stays one page. */}
+                {tx('pilotDay.contactBody', {
                   email: (
                     <a href={`mailto:${CONTACT_EMAIL}`} translate="no">
                       {CONTACT_EMAIL}
                     </a>
                   ),
+                  // Written out, so it can be typed from the printed page; the link opens the form with the topic chosen.
+                  address: (
+                    <a href={contactPath('pilot')} translate="no">
+                      {CONTACT_FORM_ADDRESS}
+                    </a>
+                  ),
+                  topic: ui(t('pilotDay.feedbackTopic')),
                 })}
               </p>
             </section>

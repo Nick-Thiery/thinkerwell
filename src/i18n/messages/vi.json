@@ -469,6 +469,8 @@
       "certificatesBody": "Mọi giấy chứng nhận đã đạt được trên thiết bị này, mỗi giấy một trang.",
       "certificatesCta": "In tất cả giấy chứng nhận",
       "sendEnquiry": "Gửi câu hỏi",
+      "pilotFeedbackBody": "Bạn đang chạy chương trình thí điểm với Thinkerwell? Hãy cho chúng tôi biết điều gì hiệu quả và điều gì cần thay đổi.",
+      "pilotFeedback": "Gửi phản hồi thí điểm",
       "browseCourse": "Xem các khóa học",
       "setupDevice": "Thiết lập một thiết bị",
       "overview": "Xem phần giới thiệu một phút (không bắt buộc)",
@@ -1183,7 +1185,9 @@
     "endCertificates": "In giấy chứng nhận cho các phần đã hoàn thành: mở {educators}, rồi {certificates}.",
     "endClass": "Xem mọi người đang ở đâu: mở {educators}, rồi {class}. Nó không hiện điểm số.",
     "beforeChoose": "Chọn các khóa học và bài học sẽ dạy ({educators}, rồi {guides}).",
-    "endReview": "Với một khóa học không có bài ôn tập phần, hãy hỏi miệng: câu hỏi lớn, một bằng chứng, và điều các em còn muốn tìm hiểu. Rồi điền vào phiếu ghi buổi học ({educators}, rồi {feedback})."
+    "endReview": "Với một khóa học không có bài ôn tập phần, hãy hỏi miệng: câu hỏi lớn, một bằng chứng, và điều các em còn muốn tìm hiểu. Rồi điền vào phiếu ghi buổi học ({educators}, rồi {feedback}).",
+    "contactBody": "Có gì khó hiểu, bị lỗi, hay phản hồi thí điểm? Hãy báo qua {email}, hoặc tại {address} (chọn {topic}). Đừng gửi tên hay bài viết của người học.",
+    "feedbackTopic": "Phản hồi thí điểm"
   },
   "feedbackSheet": {
     "title": "Phiếu ghi buổi học và phản hồi",
@@ -1797,6 +1801,7 @@
     "topicGeneral": "Câu hỏi chung",
     "topicEducator": "Nhà giáo dục hoặc dùng trong lớp học",
     "topicOrganisation": "Tổ chức giáo dục hoặc tổ chức phi chính phủ",
+    "topicPilot": "Phản hồi thí điểm",
     "topicPartnership": "Công ty hoặc hợp tác",
     "topicFeedback": "Phản hồi hoặc sự cố kỹ thuật",
     "topicOther": "Khác",
@@ -1805,6 +1810,8 @@
     "contactHelp": "Với WhatsApp, hãy bắt đầu bằng mã quốc gia, ví dụ +65.",
     "messageLabel": "Tin nhắn của bạn",
     "messagePlaceholder": "Hãy cho chúng tôi biết bạn muốn hỏi hoặc trao đổi điều gì.",
+    "pilotNote": "Dành cho tổ chức đang chạy chương trình thí điểm: hãy cho chúng tôi biết điều gì hiệu quả, điều gì khó dùng và điều gì cần thay đổi. Đừng ghi tên người học, bài làm của họ hay bất cứ điều gì khác về một người học.",
+    "pilotPlaceholder": "Ví dụ: bạn đã dùng những khóa học và bài học nào, điều gì hiệu quả, điều gì cần thay đổi.",
     "send": "Gửi câu hỏi",
     "sending": "Đang gửi…",
     "note": "Tin nhắn và thông tin liên hệ của bạn được gửi qua email cho nhóm Thinkerwell để chúng tôi trả lời. Đừng ghi thông tin cá nhân của người học.",

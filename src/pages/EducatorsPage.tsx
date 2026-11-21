@@ -209,6 +209,11 @@ export function EducatorsPage() {
         <Button variant="secondary" icon="Mail" href={contactPath()} className="tw-edu-card-action">
           {t('pages.educators.sendEnquiry')}
         </Button>
+        {/* For an organisation running a pilot: the contact form opens with "Pilot feedback" chosen. */}
+        <p className="tw-edu-card-pilot">{t('pages.educators.pilotFeedbackBody')}</p>
+        <Button variant="secondary" icon="MessageCircle" href={contactPath('pilot')} className="tw-edu-card-action">
+          {t('pages.educators.pilotFeedback')}
+        </Button>
       </section>
     </div>
   );
