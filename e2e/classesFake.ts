@@ -177,6 +177,26 @@ export function fakeStats(): AdminStats {
 }
 
 /** Answers /api/classes like the server would; returns the requests it saw. */
+/** A month's impact snapshot: counts only, as the server sends it (api/_lib/classesDb.ts). */
+function fakeSnapshot(orgName: string | null, month: string | null) {
+  return {
+    month: month ?? '2026-11',
+    orgName,
+    generatedAt: '2026-11-30T04:00:00.000Z',
+    activeLearners: 14,
+    lessonsFinished: 37,
+    courses: [
+      { courseId: 'our-world', learners: 12, lessonsFinished: 30 },
+      { courseId: 'southeast-asia-through-time', learners: 5, lessonsFinished: 7 },
+    ],
+    languages: [
+      { language: 'id', learners: 9 },
+      { language: 'en', learners: 5 },
+    ],
+    cameBack: { returned: 8, counted: 11, tooRecent: 3 },
+  };
+}
+
 export async function standInForClasses(page: Page): Promise<Request[]> {
   const seen: Request[] = [];
   await page.route('**/api/classes**', async (route) => {
@@ -217,6 +237,14 @@ export async function standInForClasses(page: Page): Promise<Request[]> {
           code: 'PW3-9RT',
           teacherKey: 't'.repeat(43),
         });
+      case 'program.snapshot':
+        return json(200, fakeSnapshot(FAKE_ORG, url.searchParams.get('month')));
+      case 'admin.snapshot':
+        return json(200, fakeSnapshot(url.searchParams.get('org') ? FAKE_ORG : null, url.searchParams.get('month')));
+      case 'program.newTeacherLink':
+        return json(200, { teacherKey: 'n'.repeat(43) });
+      case 'admin.newOrgLink':
+        return json(200, { orgKey: 'o'.repeat(43) });
       default:
         return json(200, { ok: true });
     }

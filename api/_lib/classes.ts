@@ -16,7 +16,7 @@
  *
  * Answers 503 until DATABASE_URL and CLASSES_ADMIN_TOKEN are both set, and
  * nothing is kept about anyone until Thinkerwell makes an organisation, it
- * makes a class, and a learner taps "Join class" with the class's code.
+ * makes a class, and a learner taps "Join this class" with the class's code.
  * Keys are kept only as their sha256; a connection's address is held in
  * memory, only to count its requests.
  */
@@ -108,6 +108,19 @@ export function isConfigured(env: ClassesEnv): boolean {
 }
 
 type Who = { kind: 'teacher'; classId: string; orgId: string } | { kind: 'program'; orgId: string } | { kind: 'admin' };
+
+/**
+ * A snapshot's month, "YYYY-MM": from November 2026 (when online classes began) to the current month (UTC).
+ * Anything else is refused, so a query never ranges over a made-up date.
+ */
+export function snapshotMonth(value: string | null, now: Date): string | null {
+  if (!value || !/^\d{4}-(0[1-9]|1[0-2])$/.test(value)) return null;
+  const current = now.toISOString().slice(0, 7);
+  return value >= FIRST_SNAPSHOT_MONTH && value <= current ? value : null;
+}
+
+/** Online classes were merged on 19 November 2026: no month before it has anything to count. */
+export const FIRST_SNAPSHOT_MONTH = '2026-11';
 
 export async function handleClasses(request: Request, deps: ClassesDeps): Promise<Response> {
   const { env } = deps;
@@ -235,6 +248,12 @@ export async function handleClasses(request: Request, deps: ClassesDeps): Promis
       if (who.kind !== 'program') break;
       return json(200, await db.program(who.orgId, now));
     }
+    case 'GET program.snapshot': {
+      // The organisation's own classes only; counts, never names.
+      if (who.kind !== 'program') break;
+      const month = snapshotMonth(url.searchParams.get('month'), now);
+      return month ? json(200, await db.snapshot(who.orgId, month, now)) : notFound();
+    }
     case 'GET program.class': {
       const classId = await theirClass(url.searchParams.get('id'));
       return classId ? json(200, await db.classDetail(classId, true)) : notFound();
@@ -281,6 +300,16 @@ export async function handleClasses(request: Request, deps: ClassesDeps): Promis
     case 'GET admin': {
       if (who.kind !== 'admin') break;
       return json(200, await db.adminStats(now));
+    }
+    case 'GET admin.snapshot': {
+      // Every organisation's counts, or one's (`org`): numbers only, like the rest of the admin dashboard.
+      if (who.kind !== 'admin') break;
+      const month = snapshotMonth(url.searchParams.get('month'), now);
+      const org = url.searchParams.get('org');
+      const orgId = org === null ? null : id(org);
+      if (!month || (org !== null && !orgId)) return notFound();
+      const snapshot = await db.snapshot(orgId, month, now);
+      return orgId && snapshot.orgName === null ? notFound() : json(200, snapshot);
     }
     case 'GET admin.org': {
       if (who.kind !== 'admin') break;

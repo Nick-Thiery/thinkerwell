@@ -5,7 +5,7 @@
  * with no imports but the course list, and checked by hand: the browser
  * never runs zod.
  *
- * What leaves a device, and only for a learner who tapped "Join class"
+ * What leaves a device, and only for a learner who tapped "Join this class"
  * with a code an organisation made: the name they use on the device (it
  * may be a nickname), their language and reading level, which lessons and
  * steps they have finished and when, and how many times they tried each
@@ -169,6 +169,35 @@ export interface WeekPoint {
   newLearners: number;
   activeLearners: number;
   lessonsFinished: number;
+}
+
+/**
+ * A month's impact snapshot (November 2026): anonymous counts only, for an
+ * organisation's own classes or (on the admin dashboard) for every
+ * organisation or one. No names, nicknames, writing or answers: nothing in
+ * it is about one learner. Counts only learners still sharing: a learner who
+ * stops sharing or is taken out of a class is deleted with their numbers.
+ */
+export interface ImpactSnapshot {
+  /** "2026-11". */
+  month: string;
+  /** The organisation it covers, or null for every organisation (admin only). */
+  orgName: string | null;
+  generatedAt: string;
+  /** Learners with at least one day of lesson work in the month. */
+  activeLearners: number;
+  /** Lessons finished in the month. */
+  lessonsFinished: number;
+  /** Per course: learners who started, worked on or finished one of its lessons in the month, and lessons finished. */
+  courses: Array<{ courseId: string; learners: number; lessonsFinished: number }>;
+  /** The month's active learners by the language they use now. */
+  languages: Array<{ language: string; learners: number }>;
+  /**
+   * Of the month's active learners, by their first day of work in the month:
+   * how many worked again 7 to 13 days later (the next week). Learners whose
+   * next week isn't over yet are counted apart, in `tooRecent`.
+   */
+  cameBack: { returned: number; counted: number; tooRecent: number };
 }
 
 export interface AdminStats {

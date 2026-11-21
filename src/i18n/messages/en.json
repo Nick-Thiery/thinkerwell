@@ -477,6 +477,8 @@
       "certificatesBody": "Every certificate earned on this device, one to a page.",
       "certificatesCta": "Print all certificates",
       "sendEnquiry": "Send an enquiry",
+      "pilotFeedbackBody": "Running a pilot with Thinkerwell? Tell us what worked and what to change.",
+      "pilotFeedback": "Send pilot feedback",
       "browseCourse": "Browse the courses",
       "setupDevice": "Set up a device",
       "overview": "Watch a one-minute overview (optional)",
@@ -511,7 +513,7 @@
       "privacyTitle": "Using Thinkerwell",
       "privacy1": "Learners can use codes instead of names. Each learner gets a code card, like ABC-01, and types the code as their name. Only you keep the list that matches codes to names.",
       "privacy2": "No accounts, no email addresses and no ads. Learners' writing stays on the device they use, and voice recordings never leave it.",
-      "privacyNow": "Learners' work and progress stay on the device they use, and are not sent to Thinkerwell. Online speech-to-text is off unless your staff turn it on; when it is on, what learners say goes to the browser maker's service. We will tell you before anything else changes.",
+      "privacyNow": "Learners' work stays on the device they use. Their progress is sent to Thinkerwell only if your organisation agrees to use online classes and a learner joins one with their teacher's class code: then the teacher sees the name on the device and which lessons and steps the learner finishes, never their writing, answers, scores or recordings. Online speech-to-text is off unless your staff turn it on; when it is on, what learners say goes to the browser maker's service. We will tell you before anything else changes.",
       "privacy4": "Videos are optional. They play from YouTube, only when a learner taps play, and every video has a written version.",
       "startTitle": "Get ready",
       "startBody": "Set up each device before the first session, and print what you need.",
@@ -696,7 +698,7 @@
       },
       "offline": {
         "title": "Download the course for offline use",
-        "why": "Then every lesson works without the internet. Only the videos need it.",
+        "why": "Then Exploring Our World works without the internet. Only the videos need it.",
         "how": "Open Thinkerwell with the internet on, and keep it open until the lessons are saved. It does this by itself.",
         "audio": "For Listen without the internet, also download the lesson audio: in Settings, under Lesson audio.",
         "audioOpen": "Lesson audio in Settings",
@@ -1206,7 +1208,9 @@
     "endCertificates": "Print certificates for finished sections: open {educators}, then {certificates}.",
     "endClass": "See where everyone is: open {educators}, then {class}. It shows no scores.",
     "beforeChoose": "Choose the courses and lessons to teach ({educators}, then {guides}).",
-    "endReview": "For a course with no section check, ask aloud: the big question, one piece of evidence, what they still want to find out. Then fill in the session record ({educators}, then {feedback})."
+    "endReview": "For a course with no section check, ask aloud: the big question, one piece of evidence, what they still want to find out. Then fill in the session record ({educators}, then {feedback}).",
+    "contactBody": "Something confusing or broken, or feedback on a pilot? Tell us at {email}, or at {address} (choose {topic}). Don't send learners' names or written answers.",
+    "feedbackTopic": "Pilot feedback"
   },
   "feedbackSheet": {
     "title": "Session record and feedback",
@@ -1828,6 +1832,7 @@
     "topicGeneral": "General question",
     "topicEducator": "Educator or classroom use",
     "topicOrganisation": "Learning organisation or NGO",
+    "topicPilot": "Pilot feedback",
     "topicPartnership": "Company or partnership",
     "topicFeedback": "Feedback or technical issue",
     "topicOther": "Other",
@@ -1836,6 +1841,8 @@
     "contactHelp": "For WhatsApp, start with your country code, such as +65.",
     "messageLabel": "Your message",
     "messagePlaceholder": "Tell us what you'd like to ask or discuss.",
+    "pilotNote": "For an organisation running a pilot: tell us what worked, what was hard to use and what to change. Don't write learners' names, their work or anything else about a learner.",
+    "pilotPlaceholder": "For example: which courses and lessons you used, what worked, what to change.",
     "send": "Send enquiry",
     "sending": "Sending…",
     "note": "Your message and contact details are emailed to the Thinkerwell team so we can reply. Don't include a learner's personal information.",
@@ -1916,8 +1923,8 @@
       },
       "classes": {
         "name": "Thinkerwell’s online classes (only if your organisation uses them)",
-        "purpose": "Lets a teacher and their organisation see how far each learner in their class has got. It is off unless an organisation has agreed it with Thinkerwell, and a learner joins only by entering their class code and tapping Join class.",
-        "gets": "For each learner who joins: the name they use on the device (it can be a nickname), their language and reading level, which lessons and steps they finished and when, how many times they tried each section check, and the days they worked. Never their writing, answers, scores or recordings. Thinkerwell’s own view shows these numbers without names. Stopping sharing, or a teacher taking a learner out of the class, deletes it.",
+        "purpose": "Lets a teacher and their organisation see how far each learner in their class has got. It is off unless an organisation has agreed it with Thinkerwell, and a learner joins only by entering their class code and tapping Join this class.",
+        "gets": "For each learner who joins: the name they use on the device (it can be a nickname), their language and reading level, which lessons and steps they finished and when, how many times they tried each section check, and the days they worked. Never their writing, answers, scores or recordings. Thinkerwell’s own view shows these numbers without names, and so does the monthly impact snapshot that Thinkerwell and the organisation can print: counts only, such as how many learners were active and which courses and languages were used. Stopping sharing, or a teacher taking a learner out of the class, deletes it.",
         "where": "Kept in a Neon database in Singapore, which Thinkerwell uses through its website hosting.",
         "link": "Neon privacy policy"
       },
@@ -2005,11 +2012,11 @@
     "codeHelper": "Your teacher gives you this code.",
     "find": "Find class",
     "looking": "Finding…",
-    "whatTeacherSees": "If you join, your teacher sees your name, {name}, and which lessons and steps you finish.",
-    "whatTheyDontSee": "They don't see what you write, your answers or your recordings. You can stop sharing at any time.",
-    "join": "Join class",
+    "whatTeacherSees": "If you join, your teacher sees your name, {name}, which lessons and steps you finish and when, how many times you try a section check, and your language and reading level.",
+    "whatTheyDontSee": "They don't see what you write, your answers, your scores or your recordings. You can stop sharing at any time.",
+    "join": "Join this class",
     "cancel": "Not now",
-    "sharing": "Your teacher can see your name and which lessons and steps you finish. Not your writing or recordings.",
+    "sharing": "Your teacher can see your name, which lessons and steps you finish and when, your section check tries, and your language and reading level. Not your writing, answers, scores or recordings.",
     "stopOpen": "Stop sharing",
     "stopQuestion": "Stop sharing with this class? Your teacher won't see your progress any more, and it is deleted from Thinkerwell's server. Your work stays on this device.",
     "stop": "Stop sharing",
@@ -2033,7 +2040,9 @@
       "refresh": "Refresh",
       "copy": "Copy",
       "copied": "Copied",
-      "whatYouSee": "You see each learner's name, which lessons and steps they finished, and when. Not their writing, answers, scores or recordings.",
+      "notNow": "Not now",
+      "makeNewLink": "Make a new link",
+      "whatYouSee": "You see each learner's name, which lessons and steps they finished and when, how many times they tried a section check, and their language and reading level. Not their writing, answers, scores or recordings.",
       "keepPrivate": "Keep this page's link private: anyone with it can see this page."
     },
     "problem": {
@@ -2055,7 +2064,7 @@
     },
     "class": {
       "codeLabel": "Class code",
-      "codeHelp": "Learners join on their Home: \"Your class\", then \"Join a class\".",
+      "codeHelp": "Each learner joins on their own Home: \"Your class\", then \"Join a class\".",
       "closedNote": "This class is closed. No one new can join, and its learners have stopped sharing.",
       "learnersLabel": {
         "one": "learner",
@@ -2099,6 +2108,7 @@
     "program": {
       "eyebrow": "Organisation",
       "pageTitle": "Your classes",
+      "intro": "Add a class for each group. Each class gets a code for its learners and a link for its teacher.",
       "classesTitle": "Classes",
       "noClasses": "No classes yet.",
       "code": "Code {code}",
@@ -2118,10 +2128,12 @@
       "teacherLinkHelp": "Send this link to the class's teacher. It is shown only now. If it is lost, make a new one.",
       "manageTitle": "Manage this class",
       "newLink": "New teacher link",
+      "newLinkQuestion": "Make a new teacher link? The link you sent before stops working.",
       "newLinkHelp": "A new teacher link stops the old one working.",
       "rename": "Rename",
       "renameSave": "Save name",
       "close": "Close class",
+      "closeQuestion": "Close {name}? No one new can join, and its learners stop sharing: to share again, each would join again. What they shared stays, and you can open the class again.",
       "reopen": "Open class again",
       "closeHelp": "A closed class takes no one new, and its learners stop sharing."
     },
@@ -2179,7 +2191,9 @@
       "orgStats": "Classes: {classes} · Learners: {learners} · Active this week: {active} · Lessons finished: {finished}",
       "viewClasses": "View classes",
       "newOrgLink": "New link",
+      "newOrgLinkQuestion": "Make a new link for {name}? The link you sent before stops working.",
       "switchOff": "Switch off",
+      "switchOffQuestion": "Switch off {name}? Its links stop working, and its learners stop sharing: to share again, each would join again. What they shared stays, and you can switch it on again.",
       "switchOn": "Switch on",
       "switchedOff": "Switched off",
       "switchOffHelp": "Switched off, an organisation's links stop working and its learners stop sharing. A new link stops the old one working.",
@@ -2191,6 +2205,37 @@
       "orgLinkHelp": "Send this link to the organisation's lead. It is shown only now. If it is lost, make a new one.",
       "backToDashboard": "Back to the dashboard",
       "anonymousNote": "Learners are numbered in the order they joined. Their names are never sent here."
+    },
+    "snapshot": {
+      "title": "Impact snapshot",
+      "intro": "A one-page summary of a month, to print or share: counts only, never names.",
+      "monthLabel": "Month",
+      "orgLabel": "Organisation",
+      "allOrgs": "All organisations",
+      "show": "Show the snapshot",
+      "print": "Print",
+      "eyebrow": "Thinkerwell · Impact snapshot",
+      "sheetTitle": "{name}, {month}",
+      "active": "Active learners",
+      "activeHelp": "Learners who worked on a lesson on at least one day of the month.",
+      "finished": "Lessons finished",
+      "finishedHelp": "Lessons finished during the month.",
+      "cameBack": "Came back the next week",
+      "cameBackValue": "{returned} of {counted}",
+      "cameBackHelp": "Of the month's active learners, how many worked again 7 to 13 days after their first day that month.",
+      "tooRecent": {
+        "one": "Not counted yet: {count} learner whose next week isn't over.",
+        "other": "Not counted yet: {count} learners whose next week isn't over."
+      },
+      "coursesTitle": "Courses used",
+      "coursesHelp": "Learners who started, worked on or finished a lesson of each course during the month.",
+      "learners": "Learners",
+      "languagesTitle": "Languages used",
+      "languagesHelp": "The month's active learners, by the language they use now.",
+      "language": "Language",
+      "none": "Nothing this month.",
+      "privacy": "Counts only: no names, nicknames, writing or answers. A learner who stopped sharing, or was taken out of a class, isn't counted: their numbers were deleted.",
+      "made": "Made on {date}."
     }
   }
 }

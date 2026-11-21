@@ -513,3 +513,117 @@
     font-size: 28px;
   }
 }
+
+/* The monthly impact snapshot (ImpactSnapshot.tsx): one page of counts, for the screen and for paper. */
+.tw-cv-snapshot-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+/* On the admin dashboard the snapshot is inside the dashboard's frame: its own title replaces the frame's. */
+.tw-cv-page:has(> .tw-cv-page .tw-cv-snapshot) > .tw-cv-head {
+  display: none;
+}
+
+.tw-cv-snapshot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--space-6);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+}
+
+.tw-cv-snapshot-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-cv-snapshot-head h1,
+.tw-cv-snapshot p {
+  margin: 0;
+}
+
+.tw-cv-snapshot-numbers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: var(--space-5);
+  margin: 0;
+}
+
+.tw-cv-snapshot-numbers > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.tw-cv-snapshot-numbers dt {
+  font-weight: 700;
+}
+
+.tw-cv-snapshot-numbers dd {
+  margin: 0;
+}
+
+.tw-cv-snapshot-number {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.tw-cv-snapshot-part {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tw-cv-snapshot-part h2 {
+  margin: 0;
+}
+
+.tw-cv-snapshot-foot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-block-start: var(--space-3);
+  border-block-start: 1px solid var(--line);
+}
+
+@media print {
+  /* One page, black on white, nothing below 14px (10.5pt). */
+  .tw-cv-page:has(.tw-cv-snapshot) {
+    gap: 0;
+    max-inline-size: none;
+  }
+
+  .tw-cv-snapshot {
+    padding: 0;
+    border: 0;
+    gap: 6mm;
+    color: #000;
+    background: #fff;
+    font-size: 10.5pt;
+  }
+
+  .tw-cv-snapshot .small {
+    font-size: 10.5pt;
+  }
+
+  .tw-cv-snapshot-number {
+    font-size: 24pt;
+  }
+
+  .tw-cv-snapshot .tw-cv-table th,
+  .tw-cv-snapshot .tw-cv-table td {
+    color: #000;
+  }
+
+  .tw-cv-snapshot-part,
+  .tw-cv-snapshot-numbers > div {
+    break-inside: avoid;
+  }
+}

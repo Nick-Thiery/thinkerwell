@@ -1,5 +1,9 @@
 import { describe, expect, it } from 'vitest';
-import { checkEnquiry, contactKind, MESSAGE_MAX, NAME_MAX } from './enquiry';
+import en from '../i18n/messages/en.json';
+import id from '../i18n/messages/id.json';
+import ms from '../i18n/messages/ms.json';
+import vi from '../i18n/messages/vi.json';
+import { checkEnquiry, contactKind, ENQUIRY_TOPICS, MESSAGE_MAX, NAME_MAX, TOPIC_SUBJECT } from './enquiry';
 
 const good = { topic: 'organisation', name: 'Siti Rahma', contact: 'siti@example.org', message: 'We would like to use Thinkerwell with our learners.', website: '' };
 
@@ -59,5 +63,21 @@ describe('a reply address', () => {
 
   it.each(['name@example', 'name example.org', '<a@b.co>', '081234567890', '+0812345678', '+12', 'call me', '@example.org'])('%s is neither', (contact) => {
     expect(contactKind(contact)).toBeNull();
+  });
+});
+
+describe('the pilot feedback topic', () => {
+  it('is accepted like any other topic, and has an English subject line for the team', () => {
+    const checked = checkEnquiry({ topic: 'pilot', name: 'Siti Rahma', contact: 'siti@example.org', message: 'Lessons 1 to 3 went well.', website: '' });
+    expect(checked.ok && checked.value.topic).toBe('pilot');
+    expect(TOPIC_SUBJECT.pilot).toBe('Pilot feedback');
+    for (const topic of ENQUIRY_TOPICS) expect(TOPIC_SUBJECT[topic]).toBeTruthy();
+  });
+
+  it('has its words in every ready language, and the session guide names it with the same words', () => {
+    for (const messages of [en, id, ms, vi]) {
+      expect(messages.contact.topicPilot).toBeTruthy();
+      expect(messages.pilotDay.feedbackTopic).toBe(messages.contact.topicPilot);
+    }
   });
 });

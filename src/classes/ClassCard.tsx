@@ -14,7 +14,7 @@ type Step = { kind: 'idle' } | { kind: 'looking' } | { kind: 'found'; code: stri
  * "Your class" on the learner's Home (docs/notes/online-classes.md): join
  * an online class with the code a teacher gave, see that you're sharing and
  * stop, or learn that the class has ended. Nothing is sent until the learner
- * has seen what their teacher will see and tapped "Join class". Loaded after
+ * has seen what their teacher will see and tapped "Join this class". Loaded after
  * the first paint, with its own words.
  */
 export default function ClassCard({ learner }: { learner: Learner }) {

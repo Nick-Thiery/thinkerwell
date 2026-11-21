@@ -469,6 +469,8 @@
       "certificatesBody": "Setiap sijil yang diperoleh pada peranti ini, satu bagi setiap halaman.",
       "certificatesCta": "Cetak semua sijil",
       "sendEnquiry": "Hantar mesej",
+      "pilotFeedbackBody": "Menjalankan perintis bersama Thinkerwell? Beritahu kami apa yang berkesan dan apa yang perlu diubah.",
+      "pilotFeedback": "Hantar maklum balas perintis",
       "browseCourse": "Lihat kursus-kursus",
       "setupDevice": "Sediakan peranti",
       "overview": "Tonton gambaran ringkas satu minit (pilihan)",
@@ -503,7 +505,7 @@
       "privacyTitle": "Menggunakan Thinkerwell",
       "privacy1": "Pelajar boleh menggunakan kod dan bukan nama. Setiap pelajar mendapat kad kod, seperti ABC-01, dan menaip kod itu sebagai nama mereka. Hanya anda yang menyimpan senarai yang memadankan kod dengan nama.",
       "privacy2": "Tiada akaun, tiada alamat e-mel dan tiada iklan. Tulisan pelajar kekal pada peranti yang mereka gunakan, dan rakaman suara tidak sekali-kali keluar daripada peranti itu.",
-      "privacyNow": "Hasil kerja dan kemajuan pelajar kekal pada peranti yang mereka gunakan, dan tidak dihantar kepada Thinkerwell. Pertuturan ke teks dalam talian dimatikan melainkan kakitangan anda menghidupkannya; apabila ia dihidupkan, apa yang dikatakan pelajar dihantar ke perkhidmatan syarikat pembuat pelayar. Kami akan memberitahu anda sebelum apa-apa lagi berubah.",
+      "privacyNow": "Hasil kerja pelajar kekal pada peranti yang mereka gunakan. Kemajuan mereka dihantar kepada Thinkerwell hanya jika organisasi anda bersetuju menggunakan kelas dalam talian dan seorang pelajar menyertainya dengan kod kelas daripada gurunya: kemudian guru itu melihat nama pada peranti dan pelajaran serta langkah yang diselesaikan oleh pelajar itu, tidak sekali-kali tulisan, jawapan, markah atau rakamannya. Pertuturan ke teks dalam talian dimatikan melainkan kakitangan anda menghidupkannya; apabila ia dihidupkan, apa yang dikatakan pelajar dihantar ke perkhidmatan syarikat pembuat pelayar. Kami akan memberitahu anda sebelum apa-apa lagi berubah.",
       "privacy4": "Video tidak wajib. Video dimainkan dari YouTube, hanya apabila pelajar menekan butang main, dan setiap video ada versi bertulis.",
       "startTitle": "Bersedia",
       "startBody": "Sediakan setiap peranti sebelum sesi pertama, dan cetak apa yang anda perlukan.",
@@ -685,7 +687,7 @@
       },
       "offline": {
         "title": "Muat turun kursus untuk kegunaan luar talian",
-        "why": "Selepas itu, setiap pelajaran boleh digunakan tanpa internet. Hanya video yang memerlukannya.",
+        "why": "Selepas itu, Meneroka Dunia Kita boleh digunakan tanpa internet. Hanya video yang memerlukannya.",
         "how": "Buka Thinkerwell semasa internet bersambung, dan biarkan ia terbuka sehingga pelajaran disimpan. Ia melakukannya sendiri.",
         "audio": "Untuk menggunakan Dengar tanpa internet, muat turun juga audio pelajaran: dalam Tetapan, di bawah Audio pelajaran.",
         "audioOpen": "Audio pelajaran dalam Tetapan",
@@ -1189,7 +1191,9 @@
     "endCertificates": "Cetak sijil untuk bahagian yang telah selesai: buka {educators}, kemudian {certificates}.",
     "endClass": "Lihat kedudukan setiap pelajar: buka {educators}, kemudian {class}. Ia tidak menunjukkan markah.",
     "beforeChoose": "Pilih kursus dan pelajaran yang diajar ({educators}, kemudian {guides}).",
-    "endReview": "Untuk kursus tanpa semakan bahagian, tanya secara lisan: soalan besar, satu bukti, apa yang masih ingin diketahui. Kemudian isi helaian rekod sesi ({educators}, kemudian {feedback})."
+    "endReview": "Untuk kursus tanpa semakan bahagian, tanya secara lisan: soalan besar, satu bukti, apa yang masih ingin diketahui. Kemudian isi helaian rekod sesi ({educators}, kemudian {feedback}).",
+    "contactBody": "Ada yang mengelirukan atau rosak, atau maklum balas tentang perintis? Beritahu kami di {email}, atau di {address} (pilih {topic}). Jangan hantar nama pelajar atau jawapan bertulis mereka.",
+    "feedbackTopic": "Maklum balas perintis"
   },
   "feedbackSheet": {
     "title": "Rekod sesi dan maklum balas",
@@ -1803,6 +1807,7 @@
     "topicGeneral": "Soalan umum",
     "topicEducator": "Pendidik atau penggunaan di kelas",
     "topicOrganisation": "Organisasi pembelajaran atau NGO",
+    "topicPilot": "Maklum balas perintis",
     "topicPartnership": "Syarikat atau perkongsian",
     "topicFeedback": "Maklum balas atau masalah teknikal",
     "topicOther": "Lain-lain",
@@ -1811,6 +1816,8 @@
     "contactHelp": "Untuk WhatsApp, mulakan dengan kod negara, contohnya +60.",
     "messageLabel": "Mesej kamu",
     "messagePlaceholder": "Beritahu kami perkara yang ingin kamu tanya atau bincangkan.",
+    "pilotNote": "Untuk organisasi yang menjalankan perintis: beritahu kami apa yang berkesan, apa yang sukar digunakan dan apa yang perlu diubah. Jangan tulis nama murid, hasil kerja mereka atau apa-apa lagi tentang seseorang murid.",
+    "pilotPlaceholder": "Contohnya: kursus dan pelajaran yang kamu gunakan, apa yang berkesan, apa yang perlu diubah.",
     "send": "Hantar mesej",
     "sending": "Menghantar…",
     "note": "Mesej dan butiran hubungan kamu dihantar melalui e-mel kepada pasukan Thinkerwell supaya kami boleh membalas. Jangan masukkan maklumat peribadi murid.",
@@ -1891,8 +1898,8 @@
       },
       "classes": {
         "name": "Kelas dalam talian Thinkerwell (hanya jika organisasi anda menggunakannya)",
-        "purpose": "Membolehkan guru dan organisasinya melihat sejauh mana setiap pelajar dalam kelasnya telah belajar. Ia dimatikan kecuali organisasi telah bersetuju dengan Thinkerwell, dan pelajar hanya menyertai dengan memasukkan kod kelasnya dan mengetik Sertai kelas.",
-        "gets": "Bagi setiap pelajar yang menyertai: nama yang mereka gunakan pada peranti (boleh jadi nama panggilan), bahasa dan tahap bacaan mereka, pelajaran dan langkah yang telah mereka selesaikan dan bila, berapa kali mereka mencuba setiap semakan bahagian, dan hari-hari mereka belajar. Tidak sekali-kali tulisan, jawapan, markah atau rakaman mereka. Paparan Thinkerwell sendiri menunjukkan angka ini tanpa nama. Berhenti berkongsi, atau guru mengeluarkan pelajar daripada kelas, akan memadamnya.",
+        "purpose": "Membolehkan guru dan organisasinya melihat sejauh mana setiap pelajar dalam kelasnya telah belajar. Ia dimatikan kecuali organisasi telah bersetuju dengan Thinkerwell, dan pelajar hanya menyertai dengan memasukkan kod kelasnya dan mengetik Sertai kelas ini.",
+        "gets": "Bagi setiap pelajar yang menyertai: nama yang mereka gunakan pada peranti (boleh jadi nama panggilan), bahasa dan tahap bacaan mereka, pelajaran dan langkah yang telah mereka selesaikan dan bila, berapa kali mereka mencuba setiap semakan bahagian, dan hari-hari mereka belajar. Tidak sekali-kali tulisan, jawapan, markah atau rakaman mereka. Paparan Thinkerwell sendiri menunjukkan angka ini tanpa nama, begitu juga ringkasan impak bulanan yang boleh dicetak oleh Thinkerwell dan organisasi: angka sahaja, seperti berapa ramai pelajar yang aktif serta kursus dan bahasa yang digunakan. Berhenti berkongsi, atau guru mengeluarkan pelajar daripada kelas, akan memadamnya.",
         "where": "Disimpan dalam pangkalan data Neon di Singapura, yang digunakan Thinkerwell melalui pengehosan tapak webnya.",
         "link": "Dasar privasi Neon"
       },
@@ -1980,11 +1987,11 @@
     "codeHelper": "Guru kamu yang memberikan kod ini.",
     "find": "Cari kelas",
     "looking": "Mencari…",
-    "whatTeacherSees": "Jika kamu menyertai, guru kamu melihat nama kamu, {name}, dan pelajaran serta langkah yang telah kamu selesaikan.",
-    "whatTheyDontSee": "Guru kamu tidak melihat tulisan, jawapan atau rakaman kamu. Kamu boleh berhenti berkongsi pada bila-bila masa.",
-    "join": "Sertai kelas",
+    "whatTeacherSees": "Jika kamu menyertai, guru kamu melihat nama kamu, {name}, pelajaran dan langkah yang kamu selesaikan dan bila, berapa kali kamu mencuba semakan bahagian, serta bahasa dan tahap bacaan kamu.",
+    "whatTheyDontSee": "Guru kamu tidak melihat tulisan, jawapan, markah atau rakaman kamu. Kamu boleh berhenti berkongsi pada bila-bila masa.",
+    "join": "Sertai kelas ini",
     "cancel": "Bukan sekarang",
-    "sharing": "Guru kamu boleh melihat nama kamu dan pelajaran serta langkah yang telah kamu selesaikan. Bukan tulisan atau rakaman kamu.",
+    "sharing": "Guru kamu boleh melihat nama kamu, pelajaran dan langkah yang kamu selesaikan dan bila, cubaan semakan bahagian kamu, serta bahasa dan tahap bacaan kamu. Bukan tulisan, jawapan, markah atau rakaman kamu.",
     "stopOpen": "Berhenti berkongsi",
     "stopQuestion": "Berhenti berkongsi dengan kelas ini? Guru kamu tidak akan melihat kemajuan kamu lagi, dan datanya dipadam daripada pelayan Thinkerwell. Kerja kamu kekal pada peranti ini.",
     "stop": "Berhenti berkongsi",
@@ -2008,7 +2015,9 @@
       "refresh": "Muat semula",
       "copy": "Salin",
       "copied": "Disalin",
-      "whatYouSee": "Anda melihat nama setiap pelajar, pelajaran dan langkah yang telah mereka selesaikan, dan bila. Bukan tulisan, jawapan, markah atau rakaman mereka.",
+      "notNow": "Bukan sekarang",
+      "makeNewLink": "Buat pautan baharu",
+      "whatYouSee": "Anda melihat nama setiap pelajar, pelajaran dan langkah yang telah mereka selesaikan dan bila, berapa kali mereka mencuba semakan bahagian, serta bahasa dan tahap bacaan mereka. Bukan tulisan, jawapan, markah atau rakaman mereka.",
       "keepPrivate": "Rahsiakan pautan halaman ini: sesiapa yang memilikinya boleh melihat halaman ini."
     },
     "problem": {
@@ -2030,7 +2039,7 @@
     },
     "class": {
       "codeLabel": "Kod kelas",
-      "codeHelp": "Pelajar menyertai dari Laman Utama mereka: \"Kelas kamu\", kemudian \"Sertai kelas\".",
+      "codeHelp": "Setiap pelajar menyertai dari Laman Utama mereka sendiri: \"Kelas kamu\", kemudian \"Sertai kelas\".",
       "closedNote": "Kelas ini telah ditutup. Tiada sesiapa yang boleh menyertai lagi, dan pelajarnya telah berhenti berkongsi.",
       "learnersLabel": {
         "other": "pelajar"
@@ -2069,6 +2078,7 @@
     "program": {
       "eyebrow": "Organisasi",
       "pageTitle": "Kelas-kelas anda",
+      "intro": "Tambah satu kelas bagi setiap kumpulan. Setiap kelas mendapat kod untuk pelajarnya dan pautan untuk gurunya.",
       "classesTitle": "Kelas",
       "noClasses": "Belum ada kelas.",
       "code": "Kod {code}",
@@ -2088,10 +2098,12 @@
       "teacherLinkHelp": "Hantar pautan ini kepada guru kelas itu. Ia hanya ditunjukkan sekarang. Jika hilang, buat yang baharu.",
       "manageTitle": "Urus kelas ini",
       "newLink": "Pautan guru baharu",
+      "newLinkQuestion": "Buat pautan guru baharu? Pautan yang anda hantar sebelum ini tidak berfungsi lagi.",
       "newLinkHelp": "Pautan guru baharu menyebabkan pautan lama tidak berfungsi.",
       "rename": "Tukar nama",
       "renameSave": "Simpan nama",
       "close": "Tutup kelas",
+      "closeQuestion": "Tutup {name}? Tiada sesiapa yang boleh menyertai lagi, dan pelajarnya berhenti berkongsi: untuk berkongsi semula, setiap pelajar perlu menyertai semula. Apa yang telah mereka kongsi kekal, dan anda boleh membuka kelas ini semula.",
       "reopen": "Buka kelas semula",
       "closeHelp": "Kelas yang ditutup tidak menerima pelajar baharu, dan pelajarnya berhenti berkongsi."
     },
@@ -2148,7 +2160,9 @@
       "orgStats": "Kelas: {classes} · Pelajar: {learners} · Aktif minggu ini: {active} · Pelajaran selesai: {finished}",
       "viewClasses": "Lihat kelas",
       "newOrgLink": "Pautan baharu",
+      "newOrgLinkQuestion": "Buat pautan baharu untuk {name}? Pautan yang anda hantar sebelum ini tidak berfungsi lagi.",
       "switchOff": "Matikan",
+      "switchOffQuestion": "Matikan {name}? Pautannya tidak berfungsi lagi, dan pelajarnya berhenti berkongsi: untuk berkongsi semula, setiap pelajar perlu menyertai semula. Apa yang telah mereka kongsi kekal, dan anda boleh menghidupkannya semula.",
       "switchOn": "Hidupkan",
       "switchedOff": "Dimatikan",
       "switchOffHelp": "Apabila dimatikan, pautan organisasi itu tidak berfungsi dan pelajarnya berhenti berkongsi. Pautan baharu menyebabkan pautan lama tidak berfungsi.",
@@ -2160,6 +2174,36 @@
       "orgLinkHelp": "Hantar pautan ini kepada ketua organisasi. Ia hanya ditunjukkan sekarang. Jika hilang, buat yang baharu.",
       "backToDashboard": "Kembali ke papan pemuka",
       "anonymousNote": "Pelajar diberi nombor mengikut urutan mereka menyertai. Nama mereka tidak pernah dihantar ke sini."
+    },
+    "snapshot": {
+      "title": "Ringkasan impak",
+      "intro": "Ringkasan satu halaman bagi satu bulan, untuk dicetak atau dikongsi: angka sahaja, tanpa nama.",
+      "monthLabel": "Bulan",
+      "orgLabel": "Organisasi",
+      "allOrgs": "Semua organisasi",
+      "show": "Tunjukkan ringkasan",
+      "print": "Cetak",
+      "eyebrow": "Thinkerwell · Ringkasan impak",
+      "sheetTitle": "{name}, {month}",
+      "active": "Pelajar aktif",
+      "activeHelp": "Pelajar yang mengusahakan pelajaran sekurang-kurangnya pada satu hari dalam bulan ini.",
+      "finished": "Pelajaran selesai",
+      "finishedHelp": "Pelajaran yang diselesaikan sepanjang bulan ini.",
+      "cameBack": "Kembali minggu berikutnya",
+      "cameBackValue": "{returned} daripada {counted}",
+      "cameBackHelp": "Daripada pelajar aktif bulan ini, berapa ramai yang belajar semula 7 hingga 13 hari selepas hari pertama mereka pada bulan itu.",
+      "tooRecent": {
+        "other": "Belum dikira: {count} pelajar yang minggu berikutnya belum tamat."
+      },
+      "coursesTitle": "Kursus yang digunakan",
+      "coursesHelp": "Pelajar yang memulakan, mengusahakan atau menyelesaikan pelajaran setiap kursus sepanjang bulan ini.",
+      "learners": "Pelajar",
+      "languagesTitle": "Bahasa yang digunakan",
+      "languagesHelp": "Pelajar aktif bulan ini, mengikut bahasa yang mereka gunakan sekarang.",
+      "language": "Bahasa",
+      "none": "Tiada apa-apa bulan ini.",
+      "privacy": "Angka sahaja: tiada nama, nama panggilan, tulisan atau jawapan. Pelajar yang berhenti berkongsi, atau dikeluarkan daripada kelas, tidak dikira: angkanya telah dipadam.",
+      "made": "Dibuat pada {date}."
     }
   }
 }

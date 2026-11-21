@@ -5,10 +5,16 @@ import { Button, TextField } from '../../components/ds';
 import type { I18nContextValue } from '../../i18n';
 import { findLocale } from '../../i18n/locales';
 import { ClassView, CopyLink, ProblemNote, Typed } from './ClassView';
+import { ConfirmAction } from './ConfirmAction';
+import { SnapshotPage, SnapshotPicker } from './ImpactSnapshot';
 import { useFlatCourses, type FlatCourses } from './courses';
 import { linkFor, useApi } from './useApi';
 
-type View = { kind: 'home' } | { kind: 'org'; id: string; name: string } | { kind: 'class'; id: string; orgId: string; orgName: string };
+type View =
+  | { kind: 'home' }
+  | { kind: 'org'; id: string; name: string }
+  | { kind: 'class'; id: string; orgId: string; orgName: string }
+  | { kind: 'snapshot'; month: string; orgId: string | null };
 
 /**
  * The admin dashboard's body: how Thinkerwell's online classes are used,
@@ -40,6 +46,19 @@ export function AdminDashboard({ adminKey, i18n }: { adminKey: string; i18n: I18
         onBack={() => setView({ kind: 'org', id: view.orgId, name: view.orgName })}
         backLabel={view.orgName}
         courses={courses}
+        i18n={i18n}
+      />
+    );
+
+  if (view.kind === 'snapshot' && courses)
+    return (
+      <SnapshotPage
+        action="admin.snapshot"
+        linkKey={adminKey}
+        choice={view}
+        courses={courses}
+        backLabel={t('classViews.admin.backToDashboard')}
+        onBack={() => setView({ kind: 'home' })}
         i18n={i18n}
       />
     );
@@ -86,6 +105,7 @@ export function AdminDashboard({ adminKey, i18n }: { adminKey: string; i18n: I18
       </div>
       <DropOff stats={stats} courses={courses} i18n={i18n} />
       <Orgs stats={stats} adminKey={adminKey} onChanged={reload} onOpen={(id, name) => setView({ kind: 'org', id, name })} i18n={i18n} />
+      {stats.orgs.length > 0 ? <SnapshotPicker orgs={stats.orgs} onOpen={(choice) => setView({ kind: 'snapshot', ...choice })} i18n={i18n} /> : null}
     </div>
   );
 }
@@ -434,25 +454,36 @@ function Orgs({
                 <Button variant="secondary" onClick={() => onOpen(org.id, org.name)}>
                   {t('classViews.admin.viewClasses')}
                 </Button>
-                <Button
+                <ConfirmAction
                   variant="ghost"
-                  onClick={() => {
-                    void postWithKey<{ orgKey: string }>('admin.newOrgLink', adminKey, { orgId: org.id }).then(
-                      (result) => setLink({ name: org.name, key: result.orgKey }),
-                      () => undefined,
-                    );
-                  }}
-                >
-                  {t('classViews.admin.newOrgLink')}
-                </Button>
-                <Button
-                  variant="ghost"
-                  onClick={() => {
-                    void postWithKey('admin.setOrgEnabled', adminKey, { orgId: org.id, enabled: !org.enabled }).then(onChanged, () => undefined);
-                  }}
-                >
-                  {org.enabled ? t('classViews.admin.switchOff') : t('classViews.admin.switchOn')}
-                </Button>
+                  i18n={i18n}
+                  label={t('classViews.admin.newOrgLink')}
+                  question={i18n.tx('classViews.admin.newOrgLinkQuestion', { name: <Typed>{org.name}</Typed> })}
+                  confirm={t('classViews.common.makeNewLink')}
+                  onConfirm={() =>
+                    postWithKey<{ orgKey: string }>('admin.newOrgLink', adminKey, { orgId: org.id }).then((result) => setLink({ name: org.name, key: result.orgKey }))
+                  }
+                />
+                {org.enabled ? (
+                  <ConfirmAction
+                    variant="ghost"
+                    i18n={i18n}
+                    label={t('classViews.admin.switchOff')}
+                    question={i18n.tx('classViews.admin.switchOffQuestion', { name: <Typed>{org.name}</Typed> })}
+                    confirm={t('classViews.admin.switchOff')}
+                    onConfirm={() => postWithKey('admin.setOrgEnabled', adminKey, { orgId: org.id, enabled: false }).then(onChanged)}
+                  />
+                ) : (
+                  // Switching back on takes nothing away, so it doesn't ask.
+                  <Button
+                    variant="ghost"
+                    onClick={() => {
+                      void postWithKey('admin.setOrgEnabled', adminKey, { orgId: org.id, enabled: true }).then(onChanged, () => undefined);
+                    }}
+                  >
+                    {t('classViews.admin.switchOn')}
+                  </Button>
+                )}
               </div>
             </li>
           ))}

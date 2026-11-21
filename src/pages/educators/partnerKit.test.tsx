@@ -42,7 +42,9 @@ describe('For organisations', () => {
     const using = screen.getByRole('region', { name: 'Using Thinkerwell' });
     expect(within(using).getByText(/Learners can use codes instead of names\. Each learner gets a code card/)).toBeInTheDocument();
     // Honest about the outside services a learner can reach: never "nothing leaves the device".
-    expect(within(using).getByText(/Learners' work and progress stay on the device they use, and are not sent to Thinkerwell\. Online speech-to-text is off/)).toBeInTheDocument();
+    // And true about online classes (19 November 2026): progress goes to Thinkerwell only for a learner who joins one.
+    expect(within(using).getByText(/Learners' work stays on the device they use\. Their progress is sent to Thinkerwell only if your organisation agrees to use online classes/)).toBeInTheDocument();
+    expect(within(using).getByText(/never their writing, answers, scores or recordings\. Online speech-to-text is off/)).toBeInTheDocument();
     expect(within(using).getByText(/They play from YouTube/)).toBeInTheDocument();
     expect(screen.queryByText(/nothing at all leaves the device/)).not.toBeInTheDocument();
     const ready = screen.getByRole('region', { name: 'Get ready' });

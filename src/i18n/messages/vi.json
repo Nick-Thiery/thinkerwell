@@ -469,6 +469,8 @@
       "certificatesBody": "Mọi giấy chứng nhận đã đạt được trên thiết bị này, mỗi giấy một trang.",
       "certificatesCta": "In tất cả giấy chứng nhận",
       "sendEnquiry": "Gửi câu hỏi",
+      "pilotFeedbackBody": "Bạn đang chạy chương trình thí điểm với Thinkerwell? Hãy cho chúng tôi biết điều gì hiệu quả và điều gì cần thay đổi.",
+      "pilotFeedback": "Gửi phản hồi thí điểm",
       "browseCourse": "Xem các khóa học",
       "setupDevice": "Thiết lập một thiết bị",
       "overview": "Xem phần giới thiệu một phút (không bắt buộc)",
@@ -503,7 +505,7 @@
       "privacyTitle": "Dùng Thinkerwell",
       "privacy1": "Người học có thể dùng mã thay cho tên. Mỗi người học nhận một thẻ mã, như ABC-01, và gõ mã đó làm tên. Chỉ bạn giữ danh sách ghép mã với tên.",
       "privacy2": "Không tài khoản, không địa chỉ email và không quảng cáo. Bài viết của người học ở lại trên thiết bị họ dùng, và bản ghi âm giọng nói không bao giờ rời khỏi thiết bị.",
-      "privacyNow": "Bài làm và tiến độ của người học nằm trên thiết bị họ dùng, và không được gửi đến Thinkerwell. Chuyển giọng nói thành văn bản trực tuyến tắt trừ khi nhân viên của bạn bật; khi bật, những gì người học nói sẽ được gửi đến dịch vụ của nhà sản xuất trình duyệt. Chúng tôi sẽ báo cho bạn trước khi có bất kỳ thay đổi nào khác.",
+      "privacyNow": "Bài làm của người học nằm trên thiết bị họ dùng. Tiến độ của họ chỉ được gửi đến Thinkerwell nếu tổ chức của bạn đồng ý dùng lớp học trực tuyến và một người học tham gia lớp bằng mã lớp của thầy cô: khi đó thầy cô thấy tên trên thiết bị và những bài học, bước học mà người học đã hoàn thành, không bao giờ thấy bài viết, câu trả lời, điểm hay bản ghi âm của họ. Chuyển giọng nói thành văn bản trực tuyến tắt trừ khi nhân viên của bạn bật; khi bật, những gì người học nói sẽ được gửi đến dịch vụ của nhà sản xuất trình duyệt. Chúng tôi sẽ báo cho bạn trước khi có bất kỳ thay đổi nào khác.",
       "privacy4": "Video không bắt buộc. Video phát từ YouTube, chỉ khi người học bấm phát, và mỗi video đều có bản viết.",
       "startTitle": "Chuẩn bị",
       "startBody": "Thiết lập từng thiết bị trước buổi học đầu tiên, và in những thứ bạn cần.",
@@ -685,7 +687,7 @@
       },
       "offline": {
         "title": "Tải khóa học để dùng khi không có mạng",
-        "why": "Khi đó mọi bài học đều dùng được mà không cần internet. Chỉ video cần có internet.",
+        "why": "Khi đó Khám phá thế giới của chúng ta dùng được mà không cần internet. Chỉ video cần có internet.",
         "how": "Mở Thinkerwell khi có internet và để nó mở cho đến khi các bài học được lưu xong. Thinkerwell tự làm việc này.",
         "audio": "Để dùng Nghe khi không có internet, hãy tải cả âm thanh bài học: trong Cài đặt, ở mục Âm thanh bài học.",
         "audioOpen": "Âm thanh bài học trong Cài đặt",
@@ -1189,7 +1191,9 @@
     "endCertificates": "In giấy chứng nhận cho các phần đã hoàn thành: mở {educators}, rồi {certificates}.",
     "endClass": "Xem mọi người đang ở đâu: mở {educators}, rồi {class}. Nó không hiện điểm số.",
     "beforeChoose": "Chọn các khóa học và bài học sẽ dạy ({educators}, rồi {guides}).",
-    "endReview": "Với một khóa học không có bài ôn tập phần, hãy hỏi miệng: câu hỏi lớn, một bằng chứng, và điều các em còn muốn tìm hiểu. Rồi điền vào phiếu ghi buổi học ({educators}, rồi {feedback})."
+    "endReview": "Với một khóa học không có bài ôn tập phần, hãy hỏi miệng: câu hỏi lớn, một bằng chứng, và điều các em còn muốn tìm hiểu. Rồi điền vào phiếu ghi buổi học ({educators}, rồi {feedback}).",
+    "contactBody": "Có gì khó hiểu, bị lỗi, hay phản hồi thí điểm? Hãy báo qua {email}, hoặc tại {address} (chọn {topic}). Đừng gửi tên hay bài viết của người học.",
+    "feedbackTopic": "Phản hồi thí điểm"
   },
   "feedbackSheet": {
     "title": "Phiếu ghi buổi học và phản hồi",
@@ -1803,6 +1807,7 @@
     "topicGeneral": "Câu hỏi chung",
     "topicEducator": "Nhà giáo dục hoặc dùng trong lớp học",
     "topicOrganisation": "Tổ chức giáo dục hoặc tổ chức phi chính phủ",
+    "topicPilot": "Phản hồi thí điểm",
     "topicPartnership": "Công ty hoặc hợp tác",
     "topicFeedback": "Phản hồi hoặc sự cố kỹ thuật",
     "topicOther": "Khác",
@@ -1811,6 +1816,8 @@
     "contactHelp": "Với WhatsApp, hãy bắt đầu bằng mã quốc gia, ví dụ +65.",
     "messageLabel": "Tin nhắn của bạn",
     "messagePlaceholder": "Hãy cho chúng tôi biết bạn muốn hỏi hoặc trao đổi điều gì.",
+    "pilotNote": "Dành cho tổ chức đang chạy chương trình thí điểm: hãy cho chúng tôi biết điều gì hiệu quả, điều gì khó dùng và điều gì cần thay đổi. Đừng ghi tên người học, bài làm của họ hay bất cứ điều gì khác về một người học.",
+    "pilotPlaceholder": "Ví dụ: bạn đã dùng những khóa học và bài học nào, điều gì hiệu quả, điều gì cần thay đổi.",
     "send": "Gửi câu hỏi",
     "sending": "Đang gửi…",
     "note": "Tin nhắn và thông tin liên hệ của bạn được gửi qua email cho nhóm Thinkerwell để chúng tôi trả lời. Đừng ghi thông tin cá nhân của người học.",
@@ -1891,8 +1898,8 @@
       },
       "classes": {
         "name": "Lớp học trực tuyến của Thinkerwell (chỉ khi tổ chức của bạn sử dụng)",
-        "purpose": "Giúp giáo viên và tổ chức của họ thấy từng người học trong lớp đã học đến đâu. Tính năng này tắt trừ khi tổ chức đã thỏa thuận với Thinkerwell, và người học chỉ tham gia bằng cách nhập mã lớp rồi chạm Tham gia lớp.",
-        "gets": "Với mỗi người học tham gia: tên họ dùng trên thiết bị (có thể là biệt danh), ngôn ngữ và mức đọc, những bài học và bước học đã hoàn thành và khi nào, số lần làm mỗi bài kiểm tra phần, và những ngày họ học. Không bao giờ có bài viết, câu trả lời, điểm hay bản ghi âm của họ. Trang riêng của Thinkerwell chỉ hiện các con số này, không có tên. Ngừng chia sẻ, hoặc giáo viên đưa người học ra khỏi lớp, sẽ xóa các dữ liệu này.",
+        "purpose": "Giúp giáo viên và tổ chức của họ thấy từng người học trong lớp đã học đến đâu. Tính năng này tắt trừ khi tổ chức đã thỏa thuận với Thinkerwell, và người học chỉ tham gia bằng cách nhập mã lớp rồi chạm Tham gia lớp này.",
+        "gets": "Với mỗi người học tham gia: tên họ dùng trên thiết bị (có thể là biệt danh), ngôn ngữ và mức đọc, những bài học và bước học đã hoàn thành và khi nào, số lần làm mỗi bài kiểm tra phần, và những ngày họ học. Không bao giờ có bài viết, câu trả lời, điểm hay bản ghi âm của họ. Trang riêng của Thinkerwell chỉ hiện các con số này, không có tên, và bản tóm tắt tác động hằng tháng mà Thinkerwell và tổ chức có thể in cũng vậy: chỉ có số liệu, như bao nhiêu người học tích cực và những khóa học, ngôn ngữ nào đã được dùng. Ngừng chia sẻ, hoặc giáo viên đưa người học ra khỏi lớp, sẽ xóa các dữ liệu này.",
         "where": "Lưu trong một cơ sở dữ liệu Neon ở Singapore, mà Thinkerwell dùng qua dịch vụ lưu trữ trang web của mình.",
         "link": "Chính sách quyền riêng tư của Neon"
       },
@@ -1980,11 +1987,11 @@
     "codeHelper": "Thầy cô sẽ đưa mã này cho bạn.",
     "find": "Tìm lớp",
     "looking": "Đang tìm…",
-    "whatTeacherSees": "Nếu bạn tham gia, thầy cô sẽ thấy tên bạn, {name}, và những bài học, bước học bạn đã hoàn thành.",
-    "whatTheyDontSee": "Thầy cô không thấy những gì bạn viết, câu trả lời hay bản ghi âm của bạn. Bạn có thể ngừng chia sẻ bất cứ lúc nào.",
-    "join": "Tham gia lớp",
+    "whatTeacherSees": "Nếu bạn tham gia, thầy cô sẽ thấy tên bạn, {name}, những bài học, bước học bạn hoàn thành và khi nào, số lần bạn làm bài kiểm tra phần, và ngôn ngữ, mức đọc của bạn.",
+    "whatTheyDontSee": "Thầy cô không thấy những gì bạn viết, câu trả lời, điểm hay bản ghi âm của bạn. Bạn có thể ngừng chia sẻ bất cứ lúc nào.",
+    "join": "Tham gia lớp này",
     "cancel": "Để sau",
-    "sharing": "Thầy cô có thể thấy tên bạn và những bài học, bước học bạn đã hoàn thành. Không thấy bài viết hay bản ghi âm của bạn.",
+    "sharing": "Thầy cô có thể thấy tên bạn, những bài học, bước học bạn hoàn thành và khi nào, số lần bạn làm bài kiểm tra phần, và ngôn ngữ, mức đọc của bạn. Không thấy bài viết, câu trả lời, điểm hay bản ghi âm của bạn.",
     "stopOpen": "Ngừng chia sẻ",
     "stopQuestion": "Ngừng chia sẻ với lớp này? Thầy cô sẽ không thấy tiến độ của bạn nữa, và dữ liệu sẽ bị xóa khỏi máy chủ của Thinkerwell. Bài làm của bạn vẫn ở trên thiết bị này.",
     "stop": "Ngừng chia sẻ",
@@ -2008,7 +2015,9 @@
       "refresh": "Làm mới",
       "copy": "Sao chép",
       "copied": "Đã sao chép",
-      "whatYouSee": "Bạn thấy tên từng người học, những bài học và bước học họ đã hoàn thành, và khi nào. Không thấy bài viết, câu trả lời, điểm hay bản ghi âm của họ.",
+      "notNow": "Để sau",
+      "makeNewLink": "Tạo link mới",
+      "whatYouSee": "Bạn thấy tên từng người học, những bài học, bước học họ đã hoàn thành và khi nào, số lần họ làm bài kiểm tra phần, và ngôn ngữ, mức đọc của họ. Không thấy bài viết, câu trả lời, điểm hay bản ghi âm của họ.",
       "keepPrivate": "Hãy giữ kín đường link của trang này: ai có link cũng xem được trang này."
     },
     "problem": {
@@ -2030,7 +2039,7 @@
     },
     "class": {
       "codeLabel": "Mã lớp",
-      "codeHelp": "Người học tham gia từ Trang chủ của họ: \"Lớp của bạn\", rồi \"Tham gia lớp\".",
+      "codeHelp": "Mỗi người học tham gia từ Trang chủ của riêng mình: \"Lớp của bạn\", rồi \"Tham gia lớp\".",
       "closedNote": "Lớp này đã đóng. Không ai tham gia thêm được nữa, và người học của lớp đã ngừng chia sẻ.",
       "learnersLabel": {
         "other": "người học"
@@ -2069,6 +2078,7 @@
     "program": {
       "eyebrow": "Tổ chức",
       "pageTitle": "Các lớp của bạn",
+      "intro": "Thêm một lớp cho mỗi nhóm. Mỗi lớp có một mã cho người học và một đường link cho giáo viên.",
       "classesTitle": "Các lớp",
       "noClasses": "Chưa có lớp nào.",
       "code": "Mã {code}",
@@ -2088,10 +2098,12 @@
       "teacherLinkHelp": "Gửi đường link này cho giáo viên của lớp. Link chỉ hiện lúc này. Nếu bị mất, hãy tạo link mới.",
       "manageTitle": "Quản lý lớp này",
       "newLink": "Link giáo viên mới",
+      "newLinkQuestion": "Tạo link giáo viên mới? Link bạn đã gửi trước đó sẽ không dùng được nữa.",
       "newLinkHelp": "Link giáo viên mới sẽ làm link cũ không dùng được nữa.",
       "rename": "Đổi tên",
       "renameSave": "Lưu tên",
       "close": "Đóng lớp",
+      "closeQuestion": "Đóng {name}? Không ai có thể tham gia thêm, và người học ngừng chia sẻ: muốn chia sẻ lại, mỗi người phải tham gia lại. Những gì họ đã chia sẻ vẫn còn, và bạn có thể mở lại lớp.",
       "reopen": "Mở lại lớp",
       "closeHelp": "Lớp đã đóng không nhận thêm ai, và người học của lớp ngừng chia sẻ."
     },
@@ -2148,7 +2160,9 @@
       "orgStats": "Lớp: {classes} · Người học: {learners} · Hoạt động tuần này: {active} · Bài học đã hoàn thành: {finished}",
       "viewClasses": "Xem các lớp",
       "newOrgLink": "Link mới",
+      "newOrgLinkQuestion": "Tạo link mới cho {name}? Link bạn đã gửi trước đó sẽ không dùng được nữa.",
       "switchOff": "Tắt",
+      "switchOffQuestion": "Tắt {name}? Các link của tổ chức sẽ không dùng được, và người học ngừng chia sẻ: muốn chia sẻ lại, mỗi người phải tham gia lại. Những gì họ đã chia sẻ vẫn còn, và bạn có thể bật lại.",
       "switchOn": "Bật",
       "switchedOff": "Đã tắt",
       "switchOffHelp": "Khi bị tắt, các đường link của tổ chức đó không dùng được và người học ngừng chia sẻ. Link mới sẽ làm link cũ không dùng được nữa.",
@@ -2160,6 +2174,36 @@
       "orgLinkHelp": "Gửi đường link này cho người phụ trách tổ chức. Link chỉ hiện lúc này. Nếu bị mất, hãy tạo link mới.",
       "backToDashboard": "Quay lại bảng điều khiển",
       "anonymousNote": "Người học được đánh số theo thứ tự tham gia. Tên của họ không bao giờ được gửi tới đây."
+    },
+    "snapshot": {
+      "title": "Tóm tắt tác động",
+      "intro": "Bản tóm tắt một trang cho một tháng, để in hoặc chia sẻ: chỉ có số liệu, không bao giờ có tên.",
+      "monthLabel": "Tháng",
+      "orgLabel": "Tổ chức",
+      "allOrgs": "Tất cả tổ chức",
+      "show": "Xem bản tóm tắt",
+      "print": "In",
+      "eyebrow": "Thinkerwell · Tóm tắt tác động",
+      "sheetTitle": "{name}, {month}",
+      "active": "Người học tích cực",
+      "activeHelp": "Người học đã học một bài vào ít nhất một ngày trong tháng.",
+      "finished": "Bài học đã hoàn thành",
+      "finishedHelp": "Số bài học đã hoàn thành trong tháng.",
+      "cameBack": "Quay lại vào tuần sau",
+      "cameBackValue": "{returned} trên {counted}",
+      "cameBackHelp": "Trong số người học tích cực của tháng, bao nhiêu người học lại từ 7 đến 13 ngày sau ngày đầu tiên của họ trong tháng đó.",
+      "tooRecent": {
+        "other": "Chưa tính: {count} người học mà tuần sau của họ chưa kết thúc."
+      },
+      "coursesTitle": "Các khóa học đã dùng",
+      "coursesHelp": "Người học đã bắt đầu, học hoặc hoàn thành một bài của từng khóa học trong tháng.",
+      "learners": "Người học",
+      "languagesTitle": "Các ngôn ngữ đã dùng",
+      "languagesHelp": "Người học tích cực của tháng, theo ngôn ngữ họ đang dùng.",
+      "language": "Ngôn ngữ",
+      "none": "Không có gì trong tháng này.",
+      "privacy": "Chỉ có số liệu: không có tên, biệt danh, bài viết hay câu trả lời. Người học đã ngừng chia sẻ, hoặc bị đưa ra khỏi lớp, không được tính: số liệu của họ đã bị xóa.",
+      "made": "Tạo ngày {date}."
     }
   }
 }

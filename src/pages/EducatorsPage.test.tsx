@@ -81,9 +81,15 @@ describe('EducatorsPage', () => {
     expect(document.querySelector('.tw-edu-study')).toBeNull();
   });
 
-  it('says nothing about pilots, or what codes will do later', () => {
+  it('says nothing about pilots except where to send pilot feedback, and nothing about what codes will do later', () => {
     renderAt();
-    expect(document.body.textContent).not.toMatch(/pilot|Later, codes/i);
+    const card = screen.getByRole('region', { name: 'Questions, or something to fix?' });
+    // For an organisation running a pilot (20 November 2026): one line and one button, in the questions card.
+    expect(within(card).getByText('Running a pilot with Thinkerwell? Tell us what worked and what to change.')).toBeInTheDocument();
+    expect(within(card).getByRole('link', { name: 'Send pilot feedback' })).toHaveAttribute('href', '/contact?topic=pilot');
+    const outside = document.body.textContent.replace(card.textContent, '');
+    expect(outside).not.toMatch(/pilot|Later, codes/i);
+    expect(card.textContent.match(/pilot/gi)).toHaveLength(2);
   });
 
   it('sends questions to the contact form, and shows no placeholder or form of its own while there is no address', () => {

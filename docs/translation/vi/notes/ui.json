@@ -1583,7 +1583,7 @@
     "note": "New in October 2026: pilot measurement (Settings, for educators). Drafted by AI, not yet reviewed by a native speaker. Sensitive privacy wording. Changed in October 2026 to describe the pilot exception."
   },
   "pages.organisations.privacyNow": {
-    "source": "Learners' work and progress stay on the device they use, and are not sent to Thinkerwell. Online speech-to-text is off unless your staff turn it on; when it is on, what learners say goes to the browser maker's service. We will tell you before anything else changes.",
+    "source": "Learners' work stays on the device they use. Their progress is sent to Thinkerwell only if your organisation agrees to use online classes and a learner joins one with their teacher's class code: then the teacher sees the name on the device and which lessons and steps the learner finishes, never their writing, answers, scores or recordings. Online speech-to-text is off unless your staff turn it on; when it is on, what learners say goes to the browser maker's service. We will tell you before anything else changes.",
     "flag": true
   },
   "pages.organisations.privacy4": {
@@ -2248,9 +2248,9 @@
     "back": "Download the course to use without a connection"
   },
   "pages.setup.offline.why": {
-    "source": "Then every lesson works without the internet. Only the videos need it.",
-    "back": "Then all the lessons can be used without internet. Only the videos need it.",
-    "note": "Review: Original was elliptical; clearer. [Reviewer changed: Chỉ video là cần. → Chỉ video cần có internet.]"
+    "source": "Then Exploring Our World works without the internet. Only the videos need it.",
+    "note": "Review: Original was elliptical; clearer. [Reviewer changed: Chỉ video là cần. → Chỉ video cần có internet.]",
+    "flag": true
   },
   "pages.setup.offline.how": {
     "source": "Open Thinkerwell with the internet on, and keep it open until the lessons are saved. It does this by itself.",
@@ -6775,6 +6775,198 @@
   },
   "pages.organisations.pilotNote": {
     "source": "Thinkerwell’s initial pilot is for selected partner organisations. Lessons, timing, feedback, any data collection and required permissions are agreed directly with each organisation before its pilot begins.",
+    "flag": true
+  },
+  "classJoin.join": {
+    "source": "Join this class",
+    "flag": true
+  },
+  "classJoin.whatTeacherSees": {
+    "source": "If you join, your teacher sees your name, {name}, which lessons and steps you finish and when, how many times you try a section check, and your language and reading level.",
+    "flag": true
+  },
+  "classJoin.whatTheyDontSee": {
+    "source": "They don't see what you write, your answers, your scores or your recordings. You can stop sharing at any time.",
+    "flag": true
+  },
+  "classJoin.sharing": {
+    "source": "Your teacher can see your name, which lessons and steps you finish and when, your section check tries, and your language and reading level. Not your writing, answers, scores or recordings.",
+    "flag": true
+  },
+  "classViews.common.whatYouSee": {
+    "source": "You see each learner's name, which lessons and steps they finished and when, how many times they tried a section check, and their language and reading level. Not their writing, answers, scores or recordings.",
+    "flag": true
+  },
+  "classViews.class.codeHelp": {
+    "source": "Each learner joins on their own Home: \"Your class\", then \"Join a class\".",
+    "flag": true
+  },
+  "classViews.common.notNow": {
+    "source": "Not now",
+    "flag": true
+  },
+  "classViews.common.makeNewLink": {
+    "source": "Make a new link",
+    "flag": true
+  },
+  "classViews.admin.newOrgLinkQuestion": {
+    "source": "Make a new link for {name}? The link you sent before stops working.",
+    "flag": true
+  },
+  "classViews.admin.switchOffQuestion": {
+    "source": "Switch off {name}? Its links stop working, and its learners stop sharing: to share again, each would join again. What they shared stays, and you can switch it on again.",
+    "flag": true
+  },
+  "classViews.program.intro": {
+    "source": "Add a class for each group. Each class gets a code for its learners and a link for its teacher.",
+    "flag": true
+  },
+  "classViews.program.newLinkQuestion": {
+    "source": "Make a new teacher link? The link you sent before stops working.",
+    "flag": true
+  },
+  "classViews.program.closeQuestion": {
+    "source": "Close {name}? No one new can join, and its learners stop sharing: to share again, each would join again. What they shared stays, and you can open the class again.",
+    "flag": true
+  },
+  "privacy.services.classes.purpose": {
+    "source": "Lets a teacher and their organisation see how far each learner in their class has got. It is off unless an organisation has agreed it with Thinkerwell, and a learner joins only by entering their class code and tapping Join this class.",
+    "flag": true
+  },
+  "classViews.snapshot.title": {
+    "source": "Impact snapshot",
+    "flag": true
+  },
+  "classViews.snapshot.intro": {
+    "source": "A one-page summary of a month, to print or share: counts only, never names.",
+    "flag": true
+  },
+  "classViews.snapshot.monthLabel": {
+    "source": "Month",
+    "flag": true
+  },
+  "classViews.snapshot.orgLabel": {
+    "source": "Organisation",
+    "flag": true
+  },
+  "classViews.snapshot.allOrgs": {
+    "source": "All organisations",
+    "flag": true
+  },
+  "classViews.snapshot.show": {
+    "source": "Show the snapshot",
+    "flag": true
+  },
+  "classViews.snapshot.print": {
+    "source": "Print",
+    "flag": true
+  },
+  "classViews.snapshot.eyebrow": {
+    "source": "Thinkerwell · Impact snapshot",
+    "flag": true
+  },
+  "classViews.snapshot.sheetTitle": {
+    "source": "{name}, {month}",
+    "flag": true
+  },
+  "classViews.snapshot.active": {
+    "source": "Active learners",
+    "flag": true
+  },
+  "classViews.snapshot.activeHelp": {
+    "source": "Learners who worked on a lesson on at least one day of the month.",
+    "flag": true
+  },
+  "classViews.snapshot.finished": {
+    "source": "Lessons finished",
+    "flag": true
+  },
+  "classViews.snapshot.finishedHelp": {
+    "source": "Lessons finished during the month.",
+    "flag": true
+  },
+  "classViews.snapshot.cameBack": {
+    "source": "Came back the next week",
+    "flag": true
+  },
+  "classViews.snapshot.cameBackValue": {
+    "source": "{returned} of {counted}",
+    "flag": true
+  },
+  "classViews.snapshot.cameBackHelp": {
+    "source": "Of the month's active learners, how many worked again 7 to 13 days after their first day that month.",
+    "flag": true
+  },
+  "classViews.snapshot.coursesTitle": {
+    "source": "Courses used",
+    "flag": true
+  },
+  "classViews.snapshot.coursesHelp": {
+    "source": "Learners who started, worked on or finished a lesson of each course during the month.",
+    "flag": true
+  },
+  "classViews.snapshot.learners": {
+    "source": "Learners",
+    "flag": true
+  },
+  "classViews.snapshot.languagesTitle": {
+    "source": "Languages used",
+    "flag": true
+  },
+  "classViews.snapshot.languagesHelp": {
+    "source": "The month's active learners, by the language they use now.",
+    "flag": true
+  },
+  "classViews.snapshot.language": {
+    "source": "Language",
+    "flag": true
+  },
+  "classViews.snapshot.none": {
+    "source": "Nothing this month.",
+    "flag": true
+  },
+  "classViews.snapshot.privacy": {
+    "source": "Counts only: no names, nicknames, writing or answers. A learner who stopped sharing, or was taken out of a class, isn't counted: their numbers were deleted.",
+    "flag": true
+  },
+  "classViews.snapshot.made": {
+    "source": "Made on {date}.",
+    "flag": true
+  },
+  "classViews.snapshot.tooRecent": {
+    "source": "Not counted yet: {count} learners whose next week isn't over.",
+    "flag": true
+  },
+  "privacy.services.classes.gets": {
+    "source": "For each learner who joins: the name they use on the device (it can be a nickname), their language and reading level, which lessons and steps they finished and when, how many times they tried each section check, and the days they worked. Never their writing, answers, scores or recordings. Thinkerwell’s own view shows these numbers without names, and so does the monthly impact snapshot that Thinkerwell and the organisation can print: counts only, such as how many learners were active and which courses and languages were used. Stopping sharing, or a teacher taking a learner out of the class, deletes it.",
+    "flag": true
+  },
+  "contact.topicPilot": {
+    "source": "Pilot feedback",
+    "flag": true
+  },
+  "contact.pilotNote": {
+    "source": "For an organisation running a pilot: tell us what worked, what was hard to use and what to change. Don't write learners' names, their work or anything else about a learner.",
+    "flag": true
+  },
+  "contact.pilotPlaceholder": {
+    "source": "For example: which courses and lessons you used, what worked, what to change.",
+    "flag": true
+  },
+  "pages.educators.pilotFeedbackBody": {
+    "source": "Running a pilot with Thinkerwell? Tell us what worked and what to change.",
+    "flag": true
+  },
+  "pages.educators.pilotFeedback": {
+    "source": "Send pilot feedback",
+    "flag": true
+  },
+  "pilotDay.feedbackTopic": {
+    "source": "Pilot feedback",
+    "flag": true
+  },
+  "pilotDay.contactBody": {
+    "source": "Something confusing or broken, or feedback on a pilot? Tell us at {email}, or at {address} (choose {topic}). Don't send learners' names or written answers.",
     "flag": true
   }
 }

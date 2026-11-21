@@ -6,7 +6,7 @@
  */
 import postgres from 'postgres';
 import { CLASSES_SCHEMA } from './classesSchema.js';
-import type { AdminStats, ClassDetail, ClassSummary, OrgSummary, ProgramOverview, SyncLearner, SyncStage, ViewLearner } from '../../src/classes/protocol.js';
+import type { AdminStats, ClassDetail, ImpactSnapshot, ClassSummary, OrgSummary, ProgramOverview, SyncLearner, SyncStage, ViewLearner } from '../../src/classes/protocol.js';
 
 export interface Runner {
   query<T = Record<string, unknown>>(text: string, params?: readonly unknown[]): Promise<T[]>;
@@ -93,6 +93,8 @@ export interface ClassesDb {
   createOrg(name: string, keyHash: string): Promise<string>;
   setOrgKey(orgId: string, keyHash: string): Promise<boolean>;
   setOrgEnabled(orgId: string, enabled: boolean): Promise<boolean>;
+  /** A month's anonymous counts, for one organisation or (null) every one. `month` is "YYYY-MM", checked by the caller. */
+  snapshot(orgId: string | null, month: string, now: Date): Promise<ImpactSnapshot>;
   adminStats(now: Date): Promise<AdminStats>;
 }
 
@@ -335,6 +337,63 @@ export function classesDb(db: Runner): ClassesDb {
 
     async setOrgEnabled(orgId, enabled) {
       return (await db.query(`update cv_orgs set enabled = $2 where id = $1 returning id`, [orgId, enabled])).length > 0;
+    },
+
+    async snapshot(orgId, month, now) {
+      // Month bounds as dates (the active days are dates) and as times (progress is timestamped), in UTC like the rest.
+      const start = `${month}-01`;
+      const scope = `join cv_learners l on l.id = x.learner_id join cv_classes c on c.id = l.class_id where ($2::uuid is null or c.org_id = $2::uuid)`;
+      const params = [start, orgId];
+      const [totals] = await db.query<Record<string, unknown>>(
+        `select
+           (select count(distinct x.learner_id) from cv_active_days x ${scope}
+              and x.day >= $1::date and x.day < ($1::date + interval '1 month')::date) as active,
+           (select count(*) from cv_progress x ${scope}
+              and x.completed_at >= $1::date and x.completed_at < $1::date + interval '1 month') as finished,
+           (select name from cv_orgs where id = $2::uuid) as org_name`,
+        params,
+      );
+      const courses = await db.query<Record<string, unknown>>(
+        `select x.course_id, count(distinct x.learner_id) as learners,
+           count(*) filter (where x.completed_at >= $1::date and x.completed_at < $1::date + interval '1 month') as finished
+         from cv_progress x ${scope}
+           and ((x.started_at >= $1::date and x.started_at < $1::date + interval '1 month')
+             or (x.updated_at >= $1::date and x.updated_at < $1::date + interval '1 month')
+             or (x.completed_at >= $1::date and x.completed_at < $1::date + interval '1 month'))
+         group by x.course_id order by count(distinct x.learner_id) desc, x.course_id`,
+        params,
+      );
+      const languages = await db.query<Record<string, unknown>>(
+        `select coalesce(l.language, 'en') as language, count(distinct l.id) as learners
+         from cv_active_days x ${scope}
+           and x.day >= $1::date and x.day < ($1::date + interval '1 month')::date
+         group by 1 order by 2 desc, 1`,
+        params,
+      );
+      const [back] = await db.query<Record<string, unknown>>(
+        `with first as (
+           select x.learner_id, min(x.day) as day from cv_active_days x ${scope}
+             and x.day >= $1::date and x.day < ($1::date + interval '1 month')::date
+           group by x.learner_id
+         )
+         select
+           count(*) filter (where f.day + 13 < $3::timestamptz::date) as counted,
+           count(*) filter (where f.day + 13 < $3::timestamptz::date and exists (
+             select 1 from cv_active_days d where d.learner_id = f.learner_id and d.day between f.day + 7 and f.day + 13)) as returned,
+           count(*) filter (where f.day + 13 >= $3::timestamptz::date) as too_recent
+         from first f`,
+        [...params, now.toISOString()],
+      );
+      return {
+        month,
+        orgName: orgId ? ((totals?.org_name as string | null) ?? null) : null,
+        generatedAt: now.toISOString(),
+        activeLearners: n(totals?.active),
+        lessonsFinished: n(totals?.finished),
+        courses: courses.map((row) => ({ courseId: String(row.course_id), learners: n(row.learners), lessonsFinished: n(row.finished) })),
+        languages: languages.map((row) => ({ language: String(row.language), learners: n(row.learners) })),
+        cameBack: { returned: n(back?.returned), counted: n(back?.counted), tooRecent: n(back?.too_recent) },
+      };
     },
 
     async adminStats(now) {
