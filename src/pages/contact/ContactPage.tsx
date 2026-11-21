@@ -6,6 +6,9 @@
  * - Four fields: a topic, a name, ONE way to reply (an email address or a
  *   WhatsApp number with its country code) and the message; plus a hidden
  *   field only bots fill in. Nothing about a learner, no account, no upload.
+ * - `?topic=pilot` (from the session guide and the Educators page) opens the
+ *   form with "Pilot feedback" chosen. That topic adds one line under the
+ *   field saying what to send and that nothing about a learner belongs in it.
  * - Checked here with the server's own checker (src/contact/enquiry.ts):
  *   each problem is said under its field, and focus goes to the first one.
  * - Sent to this site's /api/contact only (the Content-Security-Policy's
@@ -16,11 +19,12 @@
  *   everything typed stays, and the page gives the team's email address.
  */
 import { useId, useMemo, useRef, useState, type FormEvent } from 'react';
+import { useSearchParams } from 'react-router';
 import words from 'virtual:thinkerwell/messages/contact';
 import { CONTACT_EMAIL } from '../../app/contact';
 import { useFullPageTitle } from '../../app/usePageTitle';
 import { Button, Icon, TextField } from '../../components/ds';
-import { checkEnquiry, ENQUIRY_FIELDS, ENQUIRY_TOPICS, MESSAGE_MAX, NAME_MAX, CONTACT_MAX, type EnquiryErrors, type EnquiryField } from '../../contact/enquiry';
+import { checkEnquiry, ENQUIRY_FIELDS, ENQUIRY_TOPICS, isTopic, MESSAGE_MAX, NAME_MAX, CONTACT_MAX, type EnquiryErrors, type EnquiryField } from '../../contact/enquiry';
 import { useI18n, withWords, type MessageKey } from '../../i18n';
 import './ContactPage.css';
 
@@ -50,7 +54,11 @@ export function ContactPage() {
   const { t, tx } = i18n;
   useFullPageTitle(t('seo.contact.title'));
 
-  const [fields, setFields] = useState<Fields>(EMPTY);
+  const [searchParams] = useSearchParams();
+  /** The topic the address asks for (`?topic=pilot`), if it is one the form knows. */
+  const linkedTopic = searchParams.get('topic');
+  const startFields: Fields = isTopic(linkedTopic) ? { ...EMPTY, topic: linkedTopic } : EMPTY;
+  const [fields, setFields] = useState<Fields>(startFields);
   const [errors, setErrors] = useState<EnquiryErrors>({});
   /** Once someone has pressed Send, problems are updated as they type. */
   const [checked, setChecked] = useState(false);
@@ -119,7 +127,7 @@ export function ContactPage() {
     }
     sending.current = false;
     setStatus(next);
-    if (next === 'sent') setFields(EMPTY);
+    if (next === 'sent') setFields(startFields);
     // Say what happened where focus is, so a keyboard or screen reader user hears it.
     requestAnimationFrame(() => statusRef.current?.focus());
   };
@@ -177,7 +185,7 @@ export function ContactPage() {
                 value={fields.topic}
                 required
                 aria-invalid={errors.topic ? 'true' : undefined}
-                aria-describedby={describedBy('topic')}
+                aria-describedby={describedBy('topic', fields.topic === 'pilot' ? `${ids}-pilot-note` : undefined)}
                 onChange={(event) => set('topic')(event.target.value)}
               >
                 <option value="" disabled>
@@ -190,6 +198,11 @@ export function ContactPage() {
                 ))}
               </select>
               {fieldError('topic')}
+              {fields.topic === 'pilot' ? (
+                <span className="tw-help" id={`${ids}-pilot-note`}>
+                  {t('contact.pilotNote')}
+                </span>
+              ) : null}
             </div>
 
             <TextField
@@ -225,7 +238,7 @@ export function ContactPage() {
                 className="tw-contact-message"
                 rows={6}
                 value={fields.message}
-                placeholder={t('contact.messagePlaceholder')}
+                placeholder={t(fields.topic === 'pilot' ? 'contact.pilotPlaceholder' : 'contact.messagePlaceholder')}
                 maxLength={MESSAGE_MAX + 200}
                 required
                 aria-invalid={errors.message ? 'true' : undefined}

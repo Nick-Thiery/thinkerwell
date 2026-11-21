@@ -469,6 +469,8 @@
       "certificatesBody": "Semua sertifikat yang diraih di perangkat ini, satu per halaman.",
       "certificatesCta": "Cetak semua sertifikat",
       "sendEnquiry": "Kirim pesan",
+      "pilotFeedbackBody": "Sedang menjalankan pilot dengan Thinkerwell? Ceritakan apa yang berhasil dan apa yang perlu diubah.",
+      "pilotFeedback": "Kirim masukan pilot",
       "browseCourse": "Lihat kursus-kursusnya",
       "setupDevice": "Siapkan perangkat",
       "overview": "Tonton gambaran satu menit (tidak wajib)",
@@ -1183,7 +1185,9 @@
     "endCertificates": "Cetak sertifikat untuk bagian yang sudah selesai: buka {educators}, lalu {certificates}.",
     "endClass": "Lihat posisi semua pelajar: buka {educators}, lalu {class}. Tidak ada nilai yang ditampilkan.",
     "beforeChoose": "Pilih kursus dan pelajaran yang diajarkan ({educators}, lalu {guides}).",
-    "endReview": "Untuk kursus tanpa cek bagian, tanyakan lisan: pertanyaan besar, satu bukti, yang masih ingin diketahui. Lalu isi lembar catatan sesi ({educators}, lalu {feedback})."
+    "endReview": "Untuk kursus tanpa cek bagian, tanyakan lisan: pertanyaan besar, satu bukti, yang masih ingin diketahui. Lalu isi lembar catatan sesi ({educators}, lalu {feedback}).",
+    "contactBody": "Ada yang membingungkan atau rusak, atau masukan tentang pilot? Beri tahu kami di {email}, atau di {address} (pilih {topic}). Jangan kirim nama pelajar atau jawaban tertulis mereka.",
+    "feedbackTopic": "Masukan pilot"
   },
   "feedbackSheet": {
     "title": "Catatan sesi dan masukan",
@@ -1797,6 +1801,7 @@
     "topicGeneral": "Pertanyaan umum",
     "topicEducator": "Pendidik atau penggunaan di kelas",
     "topicOrganisation": "Lembaga belajar atau LSM",
+    "topicPilot": "Masukan pilot",
     "topicPartnership": "Perusahaan atau kemitraan",
     "topicFeedback": "Masukan atau masalah teknis",
     "topicOther": "Lainnya",
@@ -1805,6 +1810,8 @@
     "contactHelp": "Untuk WhatsApp, awali dengan kode negara, misalnya +62.",
     "messageLabel": "Pesanmu",
     "messagePlaceholder": "Ceritakan apa yang ingin kamu tanyakan atau bicarakan.",
+    "pilotNote": "Untuk organisasi yang menjalankan pilot: ceritakan apa yang berhasil, apa yang sulit dipakai, dan apa yang perlu diubah. Jangan menulis nama pelajar, hasil kerja mereka, atau hal lain tentang seorang pelajar.",
+    "pilotPlaceholder": "Misalnya: kursus dan pelajaran yang kamu pakai, apa yang berhasil, apa yang perlu diubah.",
     "send": "Kirim pesan",
     "sending": "Mengirim…",
     "note": "Pesan dan kontakmu dikirim lewat email ke tim Thinkerwell agar kami bisa membalas. Jangan menulis data pribadi pelajar.",

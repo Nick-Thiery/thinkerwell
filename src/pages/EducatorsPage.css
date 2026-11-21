@@ -256,3 +256,8 @@
 .tw-edu-fold {
   margin-block-start: var(--space-2);
 }
+
+/* "Running a pilot with Thinkerwell?" sits under the enquiry button, with a little room above it. */
+.tw-edu-card-pilot {
+  margin-block-start: var(--space-2);
+}

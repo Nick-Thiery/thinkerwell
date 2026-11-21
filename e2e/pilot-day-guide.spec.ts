@@ -15,7 +15,7 @@ import { settle } from './pageTour';
 type Tree = { [key: string]: string | Tree };
 const messages = (locale: string) =>
   JSON.parse(readFileSync(path.join(import.meta.dirname, '..', 'src', 'i18n', 'messages', `${locale}.json`), 'utf8')) as Tree;
-const LOCALES = { en: messages('en'), id: messages('id'), ms: messages('ms') };
+const LOCALES = { en: messages('en'), id: messages('id'), ms: messages('ms'), vi: messages('vi') };
 type Locale = keyof typeof LOCALES;
 function msg(locale: Locale, key: string, params: Record<string, string | number> = {}): string {
   const text = key.split('.').reduce<string | Tree>((node, part) => (node as Tree)[part]!, LOCALES[locale]) as string;
@@ -25,6 +25,7 @@ function msg(locale: Locale, key: string, params: Record<string, string | number
 const LANGUAGE_NAMES: Record<Exclude<Locale, 'en'>, { name: string; code: string }> = {
   id: { name: 'Bahasa Indonesia', code: 'id' },
   ms: { name: 'Bahasa Melayu', code: 'ms' },
+  vi: { name: 'Tiếng Việt', code: 'vi' },
 };
 
 async function useLanguage(page: Page, locale: Locale): Promise<void> {
@@ -76,7 +77,8 @@ test('staff find the guide under "Resources for your group" on the Educators pag
   await expect(page.locator('h1')).toHaveText('For educators');
 });
 
-for (const locale of ['en', 'id', 'ms'] as const) {
+// Every ready language: Vietnamese was left out until November 2026, and had spilled onto a second Letter page.
+for (const locale of ['en', 'id', 'ms', 'vi'] as const) {
   // Prints to PDF, which only Chromium can (docs/notes/safari-testing.md).
   test(`the guide is one page on A4 and on Letter, black on white, with nothing under 14px (${locale})`, { tag: '@chromium-only' }, async ({ page }) => {
     await useLanguage(page, locale);

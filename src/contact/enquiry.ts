@@ -9,8 +9,12 @@
  * an account or a login, and no field asks about a learner.
  */
 
-/** The topics, as the server knows them; each has its words in `contact.topic<Key>` (contact.topicGeneral, …). */
-export const ENQUIRY_TOPICS = ['general', 'educator', 'organisation', 'partnership', 'feedback', 'other'] as const;
+/**
+ * The topics, as the server knows them; each has its words in `contact.topic<Key>` (contact.topicGeneral, …).
+ * `pilot` (November 2026) is for an organisation running a pilot: the session guide and the Educators page link
+ * to `/contact?topic=pilot`, which opens the form with it chosen. Like every topic, it asks nothing about learners.
+ */
+export const ENQUIRY_TOPICS = ['general', 'educator', 'organisation', 'pilot', 'partnership', 'feedback', 'other'] as const;
 export type EnquiryTopic = (typeof ENQUIRY_TOPICS)[number];
 
 /** The English name of each topic, for the email's subject line (the team reads English). */
@@ -18,6 +22,7 @@ export const TOPIC_SUBJECT: Readonly<Record<EnquiryTopic, string>> = {
   general: 'General question',
   educator: 'Educator or classroom use',
   organisation: 'Learning organisation or NGO',
+  pilot: 'Pilot feedback',
   partnership: 'Company or partnership',
   feedback: 'Feedback or technical issue',
   other: 'Other',
@@ -72,7 +77,7 @@ export function normalisedPhone(contact: string): string {
   return contact.trim().replace(PHONE_SEPARATORS, '');
 }
 
-const isTopic = (value: unknown): value is EnquiryTopic => typeof value === 'string' && (ENQUIRY_TOPICS as readonly string[]).includes(value);
+export const isTopic = (value: unknown): value is EnquiryTopic => typeof value === 'string' && (ENQUIRY_TOPICS as readonly string[]).includes(value);
 
 /** Checks an enquiry as the browser builds it or as the server receives it. Unknown keys are refused, so nothing else slips through. */
 export function checkEnquiry(body: unknown): CheckedEnquiry {

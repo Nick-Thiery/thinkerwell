@@ -114,9 +114,12 @@ export function creditsPath(): string {
   return '/credits';
 }
 
-/** The contact form, for anyone with a question: /contact. */
-export function contactPath(): string {
-  return '/contact';
+/**
+ * The contact form, for anyone with a question: /contact. With a topic, the form opens with it chosen
+ * (`/contact?topic=pilot` for pilot feedback, from the session guide and the Educators page).
+ */
+export function contactPath(topic?: 'pilot'): string {
+  return topic ? `/contact?topic=${topic}` : '/contact';
 }
 
 /** Privacy & Child Safeguarding, linked from the footer on every page: /privacy-and-safeguarding. */
