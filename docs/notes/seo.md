@@ -57,7 +57,7 @@ The Read step has the lesson's reading, evidence, picture and key words, so it's
 
 **Not indexed (`noindex`):**
 - **Personal pages:** the journal and its print view, Settings, the class view, all certificates.
-- **Teacher tools:** teacher guides, answer keys, the setup checklist, the consent form, the information sheet, code cards. They are print-oriented, and the guides and keys contain answers that learners shouldn't find through search.
+- **Teacher tools:** teacher guides, answer keys, the setup checklist, the session guide, code cards (and, until 11 November 2026, the consent form and information sheet). They are print-oriented, and the guides and keys contain answers that learners shouldn't find through search.
 - **Section checks.**
 - **The other lesson steps (Write, Speak, Watch, Reflect, Complete).** They are short prompts around the same lesson, so each is thin on its own. They aren't pointed at the Read step with a canonical link either: they are different pages, just not worth a search result.
 - **Lesson print views**, which duplicate the Read step.

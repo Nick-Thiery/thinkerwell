@@ -1,6 +1,6 @@
 # Thinkerwell
 
-A free social-studies course, "Exploring Our World", for refugee, displaced and under-served young people. It works offline after the first visit, has no accounts, and keeps every learner's work on the device.
+A free social studies platform for refugee, displaced and under-served youth: four courses ("Exploring Our World", "Digital World", "Southeast Asia Through Time" and "Art, Architecture and Society", 73 lessons), in English, Bahasa Indonesia, Bahasa Melayu and Tiếng Việt. Exploring Our World works offline after the first visit, and the other courses once saved in Settings. It has no accounts and keeps every learner's work on the device; the only learner data that ever leaves it is the progress of a learner who joins an online class (`docs/notes/online-classes.md`). Background: `docs/PRODUCT.md`; rules for working here: `CLAUDE.md`.
 
 - Project rules (privacy, offline, accessibility, copy): `CLAUDE.md`
 - Who it's for and decisions so far: `docs/PRODUCT.md`
@@ -96,7 +96,7 @@ The phase-2 design-system components that link somewhere internally (`Button` wi
 
 ## The lesson player
 
-`/lesson/:id/:stage` is one template for all 24 lessons (phase 4). Every lesson string comes from `content/lessons/*.json` and `content/course.json`, every UI string from `en.json`; there is no per-lesson code.
+`/lesson/:id/:stage` is one template for every lesson of every course (phase 4, for Exploring Our World's 24). Every lesson string comes from `content/lessons/*.json` and `content/course.json`, every UI string from `en.json`; there is no per-lesson code.
 
 - `src/app/LessonRoute.tsx` wraps the page in `LessonPlayerProvider` (keyed by lesson, so moving between stages keeps the loaded progress) and keys `LessonPage` by stage.
 - `src/lesson/LessonPlayerContext.tsx` holds the lesson, the learner's progress, the reading level and the device settings; stages read them with `useLessonPlayer()` and change progress with `update(change)` (pure functions, queued), `stageEvent(event)` and `goTo(step)`.
@@ -159,7 +159,7 @@ e2e-dev/                 Playwright tests for the dev-only /dev/* routes (npm ru
 
 `/`, `/course`, `/lesson/:id/:stage` (stages: read, write, speak, watch, reflect, plus `complete`), `/section/:id/check`, `/journal`, `/journal/print`, `/educators`, `/educators/lesson/:id` (a teacher guide), `/educators/section/:id/answers` (an answer key), `/educators/setup` (set up this device), `/educators/class` (the class on this device) and `/educators/class/certificates` (all its certificates), `/about`, `/settings` (settings for this device, for educators, in the header menu; `#say-it` and `#move-work` go to those parts), `/lesson/:id/print` (the lesson on paper), `/certificate/section/:id` and `/certificate/course` (printable certificates). `/lesson/:id` opens Read. Old Base44 links such as `/lesson/l6` or `/lesson/history-scale` redirect to the new lesson (`/lesson/l6` is Lesson 10, `/lesson/towns-near-rivers/read`), keeping any query string such as `?preview=true`. `/onboarding` goes to `/` and `/courses` to `/course`. Anything else shows a friendly "can't find that page".
 
-Digital World, a preview course, adds `/preview/digital-world` (turns its preview on for this device; linked from nowhere), `/course/digital-world` and `/course/digital-world/print`, and its lessons at `/lesson/dw-…`. On a device without the preview they all show "can't find that page" (`docs/notes/digital-world-preview.md`).
+The other three courses, open on every device since 9 November 2026, add `/course/<id>` and `/course/<id>/print` (`digital-world`, `southeast-asia-through-time`, `art-architecture-society`) and their lessons at `/lesson/<id>/:stage`; `/preview/<id>` goes to the course's map (`docs/notes/digital-world-preview.md`). Also `/contact` (the contact form), `/privacy-and-safeguarding`, `/organisations`, `/educators/guides`, `/educators/session-guide`, `/educators/code-cards`, `/educators/feedback-sheet`, and the online classes' pages, opened only with their secret links: `/teach`, `/program` and `/admin` (`docs/notes/online-classes.md`).
 
 ## Offline
 
