@@ -7,6 +7,7 @@ import { Button, TextField } from '../../components/ds';
 import { useI18n, withWords, type I18nContextValue } from '../../i18n';
 import { AdminDashboard } from './AdminDashboard';
 import { ClassView, CopyLink, ProblemNote, Typed } from './ClassView';
+import { ConfirmAction } from './ConfirmAction';
 import { useFlatCourses } from './courses';
 import './stylesheet';
 import { linkFor, useApi, useLinkKey } from './useApi';
@@ -133,7 +134,12 @@ export function ProgramPage() {
   }
 
   return (
-    <Frame eyebrow={t('classViews.program.eyebrow')} title={<Typed>{program.name}</Typed>}>
+    <Frame
+      eyebrow={t('classViews.program.eyebrow')}
+      title={<Typed>{program.name}</Typed>}
+      // What an organisation's lead does here, for someone opening their link for the first time (20 November 2026).
+      intro={<p className="body-lg">{t('classViews.program.intro')}</p>}
+    >
       <RefreshRow onRefresh={reload} i18n={i18n} />
       <section className="tw-cv-section" aria-labelledby="tw-cv-classes">
         <h2 id="tw-cv-classes" className="h2">
@@ -307,24 +313,31 @@ function ProgramClass({ orgKey, classId, orgName, onBack, i18n }: { orgKey: stri
           <CopyLink label={t('classViews.program.teacherLink')} link={linkFor('/teach', teacherKey)} help={t('classViews.program.teacherLinkHelp')} i18n={i18n} />
         ) : null}
         <div className="tw-cv-actions">
-          <Button
-            variant="secondary"
+          <ConfirmAction
             icon="RefreshCw"
-            onClick={() => {
-              void postWithKey<{ teacherKey: string }>('program.newTeacherLink', orgKey, { classId }).then(
-                (result) => setTeacherKey(result.teacherKey),
-                () => undefined,
-              );
-            }}
-          >
-            {t('classViews.program.newLink')}
-          </Button>
+            i18n={i18n}
+            label={t('classViews.program.newLink')}
+            question={t('classViews.program.newLinkQuestion')}
+            confirm={t('classViews.common.makeNewLink')}
+            onConfirm={() => postWithKey<{ teacherKey: string }>('program.newTeacherLink', orgKey, { classId }).then((result) => setTeacherKey(result.teacherKey))}
+          />
           <Button variant="secondary" onClick={() => (setRenaming(true), setNewName(detail.name))}>
             {t('classViews.program.rename')}
           </Button>
-          <Button variant="secondary" onClick={() => void act('program.archiveClass', { archived: !detail.archived })}>
-            {detail.archived ? t('classViews.program.reopen') : t('classViews.program.close')}
-          </Button>
+          {detail.archived ? (
+            // Opening a class again takes nothing away, so it doesn't ask.
+            <Button variant="secondary" onClick={() => void act('program.archiveClass', { archived: false })}>
+              {t('classViews.program.reopen')}
+            </Button>
+          ) : (
+            <ConfirmAction
+              i18n={i18n}
+              label={t('classViews.program.close')}
+              question={i18n.tx('classViews.program.closeQuestion', { name: <Typed>{detail.name}</Typed> })}
+              confirm={t('classViews.program.close')}
+              onConfirm={() => postWithKey('program.archiveClass', orgKey, { classId, archived: true }).then(reload)}
+            />
+          )}
         </div>
         <p className="small">{t('classViews.program.newLinkHelp')}</p>
         <p className="small">{t('classViews.program.closeHelp')}</p>

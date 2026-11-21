@@ -5,6 +5,7 @@ import { Button, TextField } from '../../components/ds';
 import type { I18nContextValue } from '../../i18n';
 import { findLocale } from '../../i18n/locales';
 import { ClassView, CopyLink, ProblemNote, Typed } from './ClassView';
+import { ConfirmAction } from './ConfirmAction';
 import { useFlatCourses, type FlatCourses } from './courses';
 import { linkFor, useApi } from './useApi';
 
@@ -434,25 +435,36 @@ function Orgs({
                 <Button variant="secondary" onClick={() => onOpen(org.id, org.name)}>
                   {t('classViews.admin.viewClasses')}
                 </Button>
-                <Button
+                <ConfirmAction
                   variant="ghost"
-                  onClick={() => {
-                    void postWithKey<{ orgKey: string }>('admin.newOrgLink', adminKey, { orgId: org.id }).then(
-                      (result) => setLink({ name: org.name, key: result.orgKey }),
-                      () => undefined,
-                    );
-                  }}
-                >
-                  {t('classViews.admin.newOrgLink')}
-                </Button>
-                <Button
-                  variant="ghost"
-                  onClick={() => {
-                    void postWithKey('admin.setOrgEnabled', adminKey, { orgId: org.id, enabled: !org.enabled }).then(onChanged, () => undefined);
-                  }}
-                >
-                  {org.enabled ? t('classViews.admin.switchOff') : t('classViews.admin.switchOn')}
-                </Button>
+                  i18n={i18n}
+                  label={t('classViews.admin.newOrgLink')}
+                  question={i18n.tx('classViews.admin.newOrgLinkQuestion', { name: <Typed>{org.name}</Typed> })}
+                  confirm={t('classViews.common.makeNewLink')}
+                  onConfirm={() =>
+                    postWithKey<{ orgKey: string }>('admin.newOrgLink', adminKey, { orgId: org.id }).then((result) => setLink({ name: org.name, key: result.orgKey }))
+                  }
+                />
+                {org.enabled ? (
+                  <ConfirmAction
+                    variant="ghost"
+                    i18n={i18n}
+                    label={t('classViews.admin.switchOff')}
+                    question={i18n.tx('classViews.admin.switchOffQuestion', { name: <Typed>{org.name}</Typed> })}
+                    confirm={t('classViews.admin.switchOff')}
+                    onConfirm={() => postWithKey('admin.setOrgEnabled', adminKey, { orgId: org.id, enabled: false }).then(onChanged)}
+                  />
+                ) : (
+                  // Switching back on takes nothing away, so it doesn't ask.
+                  <Button
+                    variant="ghost"
+                    onClick={() => {
+                      void postWithKey('admin.setOrgEnabled', adminKey, { orgId: org.id, enabled: true }).then(onChanged, () => undefined);
+                    }}
+                  >
+                    {t('classViews.admin.switchOn')}
+                  </Button>
+                )}
               </div>
             </li>
           ))}

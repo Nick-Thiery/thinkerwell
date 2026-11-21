@@ -35,7 +35,7 @@ import './PrivacyPage.css';
 
 /** When this policy took effect, and when it was last changed. Fixed on purpose: never a date that moves with the visitor. */
 export const POLICY_EFFECTIVE = new Date(Date.UTC(2026, 10, 11));
-export const POLICY_UPDATED = new Date(Date.UTC(2026, 10, 19));
+export const POLICY_UPDATED = new Date(Date.UTC(2026, 10, 20));
 const DATE_FORMAT: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' };
 
 const SERVICES: ReadonlyArray<{ id: 'vercel' | 'classes' | 'resend' | 'google' | 'youtube' | 'speech'; href: string | null }> = [

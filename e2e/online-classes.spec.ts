@@ -36,11 +36,22 @@ test('a learner sees what their teacher will see, joins, and their progress is s
   await page.getByRole('button', { name: 'Find class' }).click();
   await expect(page.getByText(FAKE_CLASS)).toBeVisible();
   await expect(page.getByText(FAKE_ORG)).toBeVisible();
-  await expect(page.getByText('If you join, your teacher sees your name, Amira, and which lessons and steps you finish.')).toBeVisible();
+  // Everything the teacher's page shows, and nothing more (src/courses/class-views/ClassView.tsx).
+  await expect(
+    page.getByText(
+      'If you join, your teacher sees your name, Amira, which lessons and steps you finish and when, how many times you try a section check, and your language and reading level.',
+    ),
+  ).toBeVisible();
+  // The button that joins is not the one that opened the code box.
+  await expect(page.getByRole('button', { name: 'Join a class' })).toHaveCount(0);
   // Nothing about the learner has gone anywhere yet: only the code was looked up.
   expect(seen.every((r) => r.method() === 'GET')).toBe(true);
-  await page.getByRole('button', { name: 'Join class' }).click();
-  await expect(page.getByText('Your teacher can see your name and which lessons and steps you finish. Not your writing or recordings.')).toBeVisible();
+  await page.getByRole('button', { name: 'Join this class' }).click();
+  await expect(
+    page.getByText(
+      'Your teacher can see your name, which lessons and steps you finish and when, your section check tries, and your language and reading level. Not your writing, answers, scores or recordings.',
+    ),
+  ).toBeVisible();
 
   const sync = page.waitForRequest((r) => r.url().includes('/api/classes') && r.method() === 'POST', { timeout: 15_000 });
   const body = (await sync).postDataJSON() as {
@@ -97,6 +108,7 @@ test('an organisation sees its classes, opens one, and adds a class with a teach
   await standInForClasses(page);
   await page.goto(`/program#key=${FAKE_KEY}`);
   await expect(page.getByRole('heading', { level: 1, name: FAKE_ORG })).toBeVisible();
+  await expect(page.getByText('Add a class for each group. Each class gets a code for its learners and a link for its teacher.')).toBeVisible();
   await expect(page.getByText('Afternoon group')).toBeVisible();
   await page.getByLabel('Class name').fill('Evening group');
   await page.getByRole('button', { name: 'Add class' }).click();
@@ -106,6 +118,28 @@ test('an organisation sees its classes, opens one, and adds a class with a teach
   await page.getByRole('button', { name: `Open ${FAKE_CLASS}` }).click();
   await expect(page.getByRole('heading', { level: 1, name: FAKE_CLASS })).toBeVisible();
   await expect(page.locator('.tw-cv-learner-name').getByText('Mohammed Abdirahman')).toBeVisible();
+});
+
+test('an organisation is asked before a new teacher link stops the old one, or a class closes', async ({ page }) => {
+  const seen = await standInForClasses(page);
+  const posted = () => seen.filter((r) => r.method() === 'POST').map((r) => (r.postDataJSON() as { action: string }).action);
+  await page.goto(`/program#key=${FAKE_KEY}`);
+  await page.getByRole('button', { name: `Open ${FAKE_CLASS}` }).click();
+  await expect(page.getByRole('heading', { level: 1, name: FAKE_CLASS })).toBeVisible();
+
+  await page.getByRole('button', { name: 'New teacher link' }).click();
+  await expect(page.getByText('Make a new teacher link? The link you sent before stops working.')).toBeVisible();
+  await page.getByRole('button', { name: 'Not now' }).click();
+  expect(posted()).toEqual([]);
+  await page.getByRole('button', { name: 'New teacher link' }).click();
+  await page.getByRole('button', { name: 'Make a new link' }).click();
+  await expect(page.getByLabel("Teacher's link")).toHaveValue(/\/teach#key=n{43}$/);
+  expect(posted()).toEqual(['program.newTeacherLink']);
+
+  await page.getByRole('button', { name: 'Close class' }).click();
+  await expect(page.getByText(/^Close Morning group\? No one new can join/)).toBeVisible();
+  await page.getByRole('button', { name: 'Close class' }).click();
+  await expect.poll(posted).toEqual(['program.newTeacherLink', 'program.archiveClass']);
 });
 
 test('the admin dashboard shows the numbers, and any class with its learners numbered, never named', async ({ page }) => {
@@ -121,4 +155,20 @@ test('the admin dashboard shows the numbers, and any class with its learners num
   await expect(page.getByText('Learner 2', { exact: true })).toBeVisible();
   await expect(page.getByText('Mohammed Abdirahman')).toHaveCount(0);
   await expect(page.getByRole('button', { name: 'Take out of class' })).toHaveCount(0);
+});
+
+test('the admin is asked before a new organisation link stops the old one, or an organisation is switched off', async ({ page }) => {
+  const seen = await standInForClasses(page);
+  const posted = () => seen.filter((r) => r.method() === 'POST').map((r) => (r.postDataJSON() as { action: string }).action);
+  await page.goto(`/admin#key=${FAKE_KEY}`);
+  await expect(page.getByRole('heading', { level: 1, name: 'Admin dashboard' })).toBeVisible();
+  await page.getByRole('button', { name: 'New link' }).click();
+  await expect(page.getByText(`Make a new link for ${FAKE_ORG}? The link you sent before stops working.`)).toBeVisible();
+  await page.getByRole('button', { name: 'Make a new link' }).click();
+  await expect(page.getByLabel(`${FAKE_ORG}'s link`)).toHaveValue(/\/program#key=o{43}$/);
+
+  await page.getByRole('button', { name: 'Switch off' }).click();
+  await expect(page.getByText(new RegExp(`^Switch off ${FAKE_ORG}\\? Its links stop working`))).toBeVisible();
+  await page.getByRole('button', { name: 'Not now' }).click();
+  expect(posted()).toEqual(['admin.newOrgLink']);
 });

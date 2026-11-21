@@ -16,7 +16,7 @@
  *
  * Answers 503 until DATABASE_URL and CLASSES_ADMIN_TOKEN are both set, and
  * nothing is kept about anyone until Thinkerwell makes an organisation, it
- * makes a class, and a learner taps "Join class" with the class's code.
+ * makes a class, and a learner taps "Join this class" with the class's code.
  * Keys are kept only as their sha256; a connection's address is held in
  * memory, only to count its requests.
  */

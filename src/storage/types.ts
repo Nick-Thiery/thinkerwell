@@ -310,7 +310,7 @@ export interface DeviceSettings {
 
 /**
  * A learner's place in an online class (docs/notes/online-classes.md), made
- * when they tap "Join class" with a code an organisation gave them. The
+ * when they tap "Join this class" with a code an organisation gave them. The
  * device sends their progress to Thinkerwell's server under `id` and
  * `secret` (src/classes/runner.ts); never their writing or recordings.
  */

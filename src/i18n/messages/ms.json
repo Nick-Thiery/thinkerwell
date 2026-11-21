@@ -1892,7 +1892,7 @@
       },
       "classes": {
         "name": "Kelas dalam talian Thinkerwell (hanya jika organisasi anda menggunakannya)",
-        "purpose": "Membolehkan guru dan organisasinya melihat sejauh mana setiap pelajar dalam kelasnya telah belajar. Ia dimatikan kecuali organisasi telah bersetuju dengan Thinkerwell, dan pelajar hanya menyertai dengan memasukkan kod kelasnya dan mengetik Sertai kelas.",
+        "purpose": "Membolehkan guru dan organisasinya melihat sejauh mana setiap pelajar dalam kelasnya telah belajar. Ia dimatikan kecuali organisasi telah bersetuju dengan Thinkerwell, dan pelajar hanya menyertai dengan memasukkan kod kelasnya dan mengetik Sertai kelas ini.",
         "gets": "Bagi setiap pelajar yang menyertai: nama yang mereka gunakan pada peranti (boleh jadi nama panggilan), bahasa dan tahap bacaan mereka, pelajaran dan langkah yang telah mereka selesaikan dan bila, berapa kali mereka mencuba setiap semakan bahagian, dan hari-hari mereka belajar. Tidak sekali-kali tulisan, jawapan, markah atau rakaman mereka. Paparan Thinkerwell sendiri menunjukkan angka ini tanpa nama. Berhenti berkongsi, atau guru mengeluarkan pelajar daripada kelas, akan memadamnya.",
         "where": "Disimpan dalam pangkalan data Neon di Singapura, yang digunakan Thinkerwell melalui pengehosan tapak webnya.",
         "link": "Dasar privasi Neon"
@@ -1981,11 +1981,11 @@
     "codeHelper": "Guru kamu yang memberikan kod ini.",
     "find": "Cari kelas",
     "looking": "Mencari…",
-    "whatTeacherSees": "Jika kamu menyertai, guru kamu melihat nama kamu, {name}, dan pelajaran serta langkah yang telah kamu selesaikan.",
-    "whatTheyDontSee": "Guru kamu tidak melihat tulisan, jawapan atau rakaman kamu. Kamu boleh berhenti berkongsi pada bila-bila masa.",
-    "join": "Sertai kelas",
+    "whatTeacherSees": "Jika kamu menyertai, guru kamu melihat nama kamu, {name}, pelajaran dan langkah yang kamu selesaikan dan bila, berapa kali kamu mencuba semakan bahagian, serta bahasa dan tahap bacaan kamu.",
+    "whatTheyDontSee": "Guru kamu tidak melihat tulisan, jawapan, markah atau rakaman kamu. Kamu boleh berhenti berkongsi pada bila-bila masa.",
+    "join": "Sertai kelas ini",
     "cancel": "Bukan sekarang",
-    "sharing": "Guru kamu boleh melihat nama kamu dan pelajaran serta langkah yang telah kamu selesaikan. Bukan tulisan atau rakaman kamu.",
+    "sharing": "Guru kamu boleh melihat nama kamu, pelajaran dan langkah yang kamu selesaikan dan bila, cubaan semakan bahagian kamu, serta bahasa dan tahap bacaan kamu. Bukan tulisan, jawapan, markah atau rakaman kamu.",
     "stopOpen": "Berhenti berkongsi",
     "stopQuestion": "Berhenti berkongsi dengan kelas ini? Guru kamu tidak akan melihat kemajuan kamu lagi, dan datanya dipadam daripada pelayan Thinkerwell. Kerja kamu kekal pada peranti ini.",
     "stop": "Berhenti berkongsi",
@@ -2009,7 +2009,9 @@
       "refresh": "Muat semula",
       "copy": "Salin",
       "copied": "Disalin",
-      "whatYouSee": "Anda melihat nama setiap pelajar, pelajaran dan langkah yang telah mereka selesaikan, dan bila. Bukan tulisan, jawapan, markah atau rakaman mereka.",
+      "notNow": "Bukan sekarang",
+      "makeNewLink": "Buat pautan baharu",
+      "whatYouSee": "Anda melihat nama setiap pelajar, pelajaran dan langkah yang telah mereka selesaikan dan bila, berapa kali mereka mencuba semakan bahagian, serta bahasa dan tahap bacaan mereka. Bukan tulisan, jawapan, markah atau rakaman mereka.",
       "keepPrivate": "Rahsiakan pautan halaman ini: sesiapa yang memilikinya boleh melihat halaman ini."
     },
     "problem": {
@@ -2031,7 +2033,7 @@
     },
     "class": {
       "codeLabel": "Kod kelas",
-      "codeHelp": "Pelajar menyertai dari Laman Utama mereka: \"Kelas kamu\", kemudian \"Sertai kelas\".",
+      "codeHelp": "Setiap pelajar menyertai dari Laman Utama mereka sendiri: \"Kelas kamu\", kemudian \"Sertai kelas\".",
       "closedNote": "Kelas ini telah ditutup. Tiada sesiapa yang boleh menyertai lagi, dan pelajarnya telah berhenti berkongsi.",
       "learnersLabel": {
         "other": "pelajar"
@@ -2070,6 +2072,7 @@
     "program": {
       "eyebrow": "Organisasi",
       "pageTitle": "Kelas-kelas anda",
+      "intro": "Tambah satu kelas bagi setiap kumpulan. Setiap kelas mendapat kod untuk pelajarnya dan pautan untuk gurunya.",
       "classesTitle": "Kelas",
       "noClasses": "Belum ada kelas.",
       "code": "Kod {code}",
@@ -2089,10 +2092,12 @@
       "teacherLinkHelp": "Hantar pautan ini kepada guru kelas itu. Ia hanya ditunjukkan sekarang. Jika hilang, buat yang baharu.",
       "manageTitle": "Urus kelas ini",
       "newLink": "Pautan guru baharu",
+      "newLinkQuestion": "Buat pautan guru baharu? Pautan yang anda hantar sebelum ini tidak berfungsi lagi.",
       "newLinkHelp": "Pautan guru baharu menyebabkan pautan lama tidak berfungsi.",
       "rename": "Tukar nama",
       "renameSave": "Simpan nama",
       "close": "Tutup kelas",
+      "closeQuestion": "Tutup {name}? Tiada sesiapa yang boleh menyertai lagi, dan pelajarnya berhenti berkongsi: untuk berkongsi semula, setiap pelajar perlu menyertai semula. Apa yang telah mereka kongsi kekal, dan anda boleh membuka kelas ini semula.",
       "reopen": "Buka kelas semula",
       "closeHelp": "Kelas yang ditutup tidak menerima pelajar baharu, dan pelajarnya berhenti berkongsi."
     },
@@ -2149,7 +2154,9 @@
       "orgStats": "Kelas: {classes} · Pelajar: {learners} · Aktif minggu ini: {active} · Pelajaran selesai: {finished}",
       "viewClasses": "Lihat kelas",
       "newOrgLink": "Pautan baharu",
+      "newOrgLinkQuestion": "Buat pautan baharu untuk {name}? Pautan yang anda hantar sebelum ini tidak berfungsi lagi.",
       "switchOff": "Matikan",
+      "switchOffQuestion": "Matikan {name}? Pautannya tidak berfungsi lagi, dan pelajarnya berhenti berkongsi: untuk berkongsi semula, setiap pelajar perlu menyertai semula. Apa yang telah mereka kongsi kekal, dan anda boleh menghidupkannya semula.",
       "switchOn": "Hidupkan",
       "switchedOff": "Dimatikan",
       "switchOffHelp": "Apabila dimatikan, pautan organisasi itu tidak berfungsi dan pelajarnya berhenti berkongsi. Pautan baharu menyebabkan pautan lama tidak berfungsi.",

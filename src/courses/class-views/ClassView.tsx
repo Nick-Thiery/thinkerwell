@@ -135,14 +135,20 @@ function LearnerRow({
             : t('classViews.learner.notStarted')}
         </span>
       </div>
-      <div className="tw-cv-bar" aria-hidden="true">
-        <span
-          style={{
-            inlineSize: `${total ? Math.round((done / total) * 100) : 0}%`,
-          }}
-        />
-      </div>
-      <p className="small tw-cv-learner-line">{t('classViews.learner.finished', { done, count: total })}</p>
+      {/* With "All courses", the total counts the courses this class has used, so before anyone has
+          started there is nothing to count: the head says "Not started yet", never "0 of 0". */}
+      {total > 0 ? (
+        <>
+          <div className="tw-cv-bar" aria-hidden="true">
+            <span
+              style={{
+                inlineSize: `${Math.round((done / total) * 100)}%`,
+              }}
+            />
+          </div>
+          <p className="small tw-cv-learner-line">{t('classViews.learner.finished', { done, count: total })}</p>
+        </>
+      ) : null}
       {working && workingLesson ? (
         <p className="small tw-cv-learner-line">
           {tx('classViews.learner.working', {

@@ -5,7 +5,7 @@
  * with no imports but the course list, and checked by hand: the browser
  * never runs zod.
  *
- * What leaves a device, and only for a learner who tapped "Join class"
+ * What leaves a device, and only for a learner who tapped "Join this class"
  * with a code an organisation made: the name they use on the device (it
  * may be a nickname), their language and reading level, which lessons and
  * steps they have finished and when, and how many times they tried each
