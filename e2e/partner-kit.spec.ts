@@ -6,23 +6,23 @@ import { settle } from './pageTour';
 
 // The partner kit (docs/notes/partner-kit.md): For organisations, reached
 // from the footer of the first page and from the Educators page; the retired
-// study addresses; on paper, in English, Indonesian and Malay, code cards on
+// study addresses; on paper, in English, Indonesian, Malay and Vietnamese, code cards on
 // A4, black on white; and the
-// device setup checklist still one page in Indonesian and Malay. The kit's pages on
+// device setup checklist still one page in every ready language. The kit's pages on
 // screen (layout, tap sizes, axe, right to left, no English in Indonesian)
 // are in the page tour (e2e/pageTour.ts), indonesian.spec.ts and malay.spec.ts.
 
 type Tree = { [key: string]: string | Tree };
 const messages = (locale: string) =>
   JSON.parse(readFileSync(path.join(import.meta.dirname, '..', 'src', 'i18n', 'messages', `${locale}.json`), 'utf8')) as Tree;
-const LOCALES = { en: messages('en'), id: messages('id'), ms: messages('ms') };
+const LOCALES = { en: messages('en'), id: messages('id'), ms: messages('ms'), vi: messages('vi') };
 function msg(locale: keyof typeof LOCALES, key: string, params: Record<string, string | number> = {}): string {
   const text = key.split('.').reduce<string | Tree>((node, part) => (node as Tree)[part]!, LOCALES[locale]) as string;
   return text.replace(/\{(\w+)\}/g, (_, name: string) => String(params[name]));
 }
 
 /** The languages after English, by the name the language switch shows. */
-const OTHER_LANGUAGES = { id: 'Bahasa Indonesia', ms: 'Bahasa Melayu' } as const;
+const OTHER_LANGUAGES = { id: 'Bahasa Indonesia', ms: 'Bahasa Melayu', vi: 'Tiếng Việt' } as const;
 
 async function useLanguage(page: Page, locale: keyof typeof OTHER_LANGUAGES): Promise<void> {
   await page.goto('/');
@@ -108,7 +108,7 @@ test('the retired study addresses open For organisations, in the app and after a
   }
 });
 
-for (const locale of ['en', 'id', 'ms'] as const) {
+for (const locale of ['en', 'id', 'ms', 'vi'] as const) {
   test.describe(`on paper (${locale})`, { tag: '@chromium-only' }, () => {
     test.beforeEach(async ({ page }) => {
       if (locale !== 'en') await useLanguage(page, locale);
